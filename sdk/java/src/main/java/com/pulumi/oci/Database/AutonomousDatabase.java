@@ -51,7 +51,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * The current amount of storage in use for user and system data, in terabytes (TB).
      * 
      */
-    @Export(name="actualUsedDataStorageSizeInTbs", type=Double.class, parameters={})
+    @Export(name="actualUsedDataStorageSizeInTbs", refs={Double.class}, tree="[0]")
     private Output<Double> actualUsedDataStorageSizeInTbs;
 
     /**
@@ -65,7 +65,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * (Updatable) The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (&#34;) or the username &#34;admin&#34;, regardless of casing. The password is mandatory if source value is &#34;BACKUP_FROM_ID&#34;, &#34;BACKUP_FROM_TIMESTAMP&#34;, &#34;DATABASE&#34; or &#34;NONE&#34;.
      * 
      */
-    @Export(name="adminPassword", type=String.class, parameters={})
+    @Export(name="adminPassword", refs={String.class}, tree="[0]")
     private Output<String> adminPassword;
 
     /**
@@ -79,7 +79,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * The amount of storage currently allocated for the database tables and billed for, rounded up. When auto-scaling is not enabled, this value is equal to the `dataStorageSizeInTBs` value. You can compare this value to the `actualUsedDataStorageSizeInTBs` value to determine if a manual shrink operation is appropriate for your allocated storage.
      * 
      */
-    @Export(name="allocatedStorageSizeInTbs", type=Double.class, parameters={})
+    @Export(name="allocatedStorageSizeInTbs", refs={Double.class}, tree="[0]")
     private Output<Double> allocatedStorageSizeInTbs;
 
     /**
@@ -93,7 +93,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * Information about Oracle APEX Application Development.
      * 
      */
-    @Export(name="apexDetails", type=List.class, parameters={AutonomousDatabaseApexDetail.class})
+    @Export(name="apexDetails", refs={List.class,AutonomousDatabaseApexDetail.class}, tree="[0,1]")
     private Output<List<AutonomousDatabaseApexDetail>> apexDetails;
 
     /**
@@ -107,7 +107,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * (Updatable) This field will be null if the Autonomous Database is not Data Guard enabled or Access Control is disabled. It&#39;s value would be `TRUE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses primary IP access control list (ACL) for standby. It&#39;s value would be `FALSE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses different IP access control list (ACL) for standby compared to primary.
      * 
      */
-    @Export(name="arePrimaryWhitelistedIpsUsed", type=Boolean.class, parameters={})
+    @Export(name="arePrimaryWhitelistedIpsUsed", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> arePrimaryWhitelistedIpsUsed;
 
     /**
@@ -121,7 +121,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    @Export(name="autonomousContainerDatabaseId", type=String.class, parameters={})
+    @Export(name="autonomousContainerDatabaseId", refs={String.class}, tree="[0]")
     private Output<String> autonomousContainerDatabaseId;
 
     /**
@@ -135,7 +135,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database Backup that you will clone to create a new Autonomous Database.
      * 
      */
-    @Export(name="autonomousDatabaseBackupId", type=String.class, parameters={})
+    @Export(name="autonomousDatabaseBackupId", refs={String.class}, tree="[0]")
     private Output<String> autonomousDatabaseBackupId;
 
     /**
@@ -149,7 +149,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that you will clone to create a new Autonomous Database.
      * 
      */
-    @Export(name="autonomousDatabaseId", type=String.class, parameters={})
+    @Export(name="autonomousDatabaseId", refs={String.class}, tree="[0]")
     private Output<String> autonomousDatabaseId;
 
     /**
@@ -163,7 +163,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * The maintenance schedule type of the Autonomous Database on shared Exadata infrastructure. The EARLY maintenance schedule of this Autonomous Database follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.
      * 
      */
-    @Export(name="autonomousMaintenanceScheduleType", type=String.class, parameters={})
+    @Export(name="autonomousMaintenanceScheduleType", refs={String.class}, tree="[0]")
     private Output<String> autonomousMaintenanceScheduleType;
 
     /**
@@ -177,7 +177,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
      * 
      */
-    @Export(name="availableUpgradeVersions", type=List.class, parameters={String.class})
+    @Export(name="availableUpgradeVersions", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> availableUpgradeVersions;
 
     /**
@@ -191,7 +191,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
      * 
      */
-    @Export(name="backupConfigs", type=List.class, parameters={AutonomousDatabaseBackupConfig.class})
+    @Export(name="backupConfigs", refs={List.class,AutonomousDatabaseBackupConfig.class}, tree="[0,1]")
     private Output<List<AutonomousDatabaseBackupConfig>> backupConfigs;
 
     /**
@@ -205,7 +205,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * (Updatable) Retention period, in days, for backups.
      * 
      */
-    @Export(name="backupRetentionPeriodInDays", type=Integer.class, parameters={})
+    @Export(name="backupRetentionPeriodInDays", refs={Integer.class}, tree="[0]")
     private Output<Integer> backupRetentionPeriodInDays;
 
     /**
@@ -223,7 +223,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
      * 
      */
-    @Export(name="characterSet", type=String.class, parameters={})
+    @Export(name="characterSet", refs={String.class}, tree="[0]")
     private Output<String> characterSet;
 
     /**
@@ -241,7 +241,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * The Autonomous Database clone type.
      * 
      */
-    @Export(name="cloneType", type=String.class, parameters={})
+    @Export(name="cloneType", refs={String.class}, tree="[0]")
     private Output<String> cloneType;
 
     /**
@@ -255,7 +255,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Autonomous Database.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -269,7 +269,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the &#39;ECPU&#39; compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
      * 
      */
-    @Export(name="computeCount", type=Double.class, parameters={})
+    @Export(name="computeCount", refs={Double.class}, tree="[0]")
     private Output<Double> computeCount;
 
     /**
@@ -283,7 +283,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * (Updatable) The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
      * 
      */
-    @Export(name="computeModel", type=String.class, parameters={})
+    @Export(name="computeModel", refs={String.class}, tree="[0]")
     private Output<String> computeModel;
 
     /**
@@ -297,7 +297,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
      * 
      */
-    @Export(name="connectionStrings", type=List.class, parameters={AutonomousDatabaseConnectionString.class})
+    @Export(name="connectionStrings", refs={List.class,AutonomousDatabaseConnectionString.class}, tree="[0,1]")
     private Output<List<AutonomousDatabaseConnectionString>> connectionStrings;
 
     /**
@@ -311,7 +311,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are provided by the console only for databases on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).  Example: `{&#34;sqlDevWebUrl&#34;: &#34;https://&lt;hostname&gt;/ords...&#34;, &#34;apexUrl&#34;, &#34;https://&lt;hostname&gt;/ords...&#34;}`
      * 
      */
-    @Export(name="connectionUrls", type=List.class, parameters={AutonomousDatabaseConnectionUrl.class})
+    @Export(name="connectionUrls", refs={List.class,AutonomousDatabaseConnectionUrl.class}, tree="[0,1]")
     private Output<List<AutonomousDatabaseConnectionUrl>> connectionUrls;
 
     /**
@@ -332,7 +332,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * * Autonomous Databases on dedicated Exadata infrastructure: The maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
      * 
      */
-    @Export(name="cpuCoreCount", type=Integer.class, parameters={})
+    @Export(name="cpuCoreCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> cpuCoreCount;
 
     /**
@@ -353,7 +353,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * (Updatable) Customer Contacts.
      * 
      */
-    @Export(name="customerContacts", type=List.class, parameters={AutonomousDatabaseCustomerContact.class})
+    @Export(name="customerContacts", refs={List.class,AutonomousDatabaseCustomerContact.class}, tree="[0,1]")
     private Output<List<AutonomousDatabaseCustomerContact>> customerContacts;
 
     /**
@@ -367,7 +367,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * (Updatable) Status of the Data Safe registration for this Autonomous Database. Could be REGISTERED or NOT_REGISTERED.
      * 
      */
-    @Export(name="dataSafeStatus", type=String.class, parameters={})
+    @Export(name="dataSafeStatus", refs={String.class}, tree="[0]")
     private Output<String> dataSafeStatus;
 
     /**
@@ -385,7 +385,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * * This parameter cannot be used with the `dataStorageSizeInTBs` parameter.
      * 
      */
-    @Export(name="dataStorageSizeInGb", type=Integer.class, parameters={})
+    @Export(name="dataStorageSizeInGb", refs={Integer.class}, tree="[0]")
     private Output<Integer> dataStorageSizeInGb;
 
     /**
@@ -405,7 +405,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * **Note:** This parameter cannot be used with the `dataStorageSizeInGBs` parameter. This input is ignored for Always Free resources.
      * 
      */
-    @Export(name="dataStorageSizeInTbs", type=Integer.class, parameters={})
+    @Export(name="dataStorageSizeInTbs", refs={Integer.class}, tree="[0]")
     private Output<Integer> dataStorageSizeInTbs;
 
     /**
@@ -421,7 +421,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * (Updatable) The Oracle Database Edition that applies to the Autonomous databases.
      * 
      */
-    @Export(name="databaseEdition", type=String.class, parameters={})
+    @Export(name="databaseEdition", refs={String.class}, tree="[0]")
     private Output<String> databaseEdition;
 
     /**
@@ -435,7 +435,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * Status of Database Management for this Autonomous Database.
      * 
      */
-    @Export(name="databaseManagementStatus", type=String.class, parameters={})
+    @Export(name="databaseManagementStatus", refs={String.class}, tree="[0]")
     private Output<String> databaseManagementStatus;
 
     /**
@@ -449,7 +449,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Databases on shared Exadata infrastructure, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Data Guard association, and cannot be performed when the database using the &#34;primary&#34; role is operating in a remote Data Guard standby region.
      * 
      */
-    @Export(name="dataguardRegionType", type=String.class, parameters={})
+    @Export(name="dataguardRegionType", refs={String.class}, tree="[0]")
     private Output<String> dataguardRegionType;
 
     /**
@@ -463,7 +463,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * (Updatable) Specify the database name; it must consist of letters and numbers only. The maximum length is 30 characters. The same database name cannot be used for multiple Autonomous Databases in the same tenancy in the same region.
      * 
      */
-    @Export(name="dbName", type=String.class, parameters={})
+    @Export(name="dbName", refs={String.class}, tree="[0]")
     private Output<String> dbName;
 
     /**
@@ -477,7 +477,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * (Updatable) A valid Oracle Database version for Autonomous Database.`db_workload` AJD and APEX are only supported for `db_version` `19c` and above.
      * 
      */
-    @Export(name="dbVersion", type=String.class, parameters={})
+    @Export(name="dbVersion", refs={String.class}, tree="[0]")
     private Output<String> dbVersion;
 
     /**
@@ -497,7 +497,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. *Note: `db_workload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
      * 
      */
-    @Export(name="dbWorkload", type=String.class, parameters={})
+    @Export(name="dbWorkload", refs={String.class}, tree="[0]")
     private Output<String> dbWorkload;
 
     /**
@@ -517,7 +517,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -531,7 +531,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
      * 
      */
-    @Export(name="disasterRecoveryRegionType", type=String.class, parameters={})
+    @Export(name="disasterRecoveryRegionType", refs={String.class}, tree="[0]")
     private Output<String> disasterRecoveryRegionType;
 
     /**
@@ -545,7 +545,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -559,7 +559,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * Indicates the number of seconds of data loss for a Data Guard failover.
      * 
      */
-    @Export(name="failedDataRecoveryInSeconds", type=Integer.class, parameters={})
+    @Export(name="failedDataRecoveryInSeconds", refs={Integer.class}, tree="[0]")
     private Output<Integer> failedDataRecoveryInSeconds;
 
     /**
@@ -573,7 +573,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -587,7 +587,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * The area assigned to In-Memory tables in Autonomous Database.
      * 
      */
-    @Export(name="inMemoryAreaInGbs", type=Integer.class, parameters={})
+    @Export(name="inMemoryAreaInGbs", refs={Integer.class}, tree="[0]")
     private Output<Integer> inMemoryAreaInGbs;
 
     /**
@@ -601,7 +601,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
      * 
      */
-    @Export(name="inMemoryPercentage", type=Integer.class, parameters={})
+    @Export(name="inMemoryPercentage", refs={Integer.class}, tree="[0]")
     private Output<Integer> inMemoryPercentage;
 
     /**
@@ -615,7 +615,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * The infrastructure type this resource belongs to.
      * 
      */
-    @Export(name="infrastructureType", type=String.class, parameters={})
+    @Export(name="infrastructureType", refs={String.class}, tree="[0]")
     private Output<String> infrastructureType;
 
     /**
@@ -631,7 +631,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
      * 
      */
-    @Export(name="isAccessControlEnabled", type=Boolean.class, parameters={})
+    @Export(name="isAccessControlEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isAccessControlEnabled;
 
     /**
@@ -647,7 +647,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * (Updatable) Indicates if auto scaling is enabled for the Autonomous Database OCPU core count. The default value is `FALSE`.
      * 
      */
-    @Export(name="isAutoScalingEnabled", type=Boolean.class, parameters={})
+    @Export(name="isAutoScalingEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isAutoScalingEnabled;
 
     /**
@@ -661,7 +661,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * (Updatable) Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
      * 
      */
-    @Export(name="isAutoScalingForStorageEnabled", type=Boolean.class, parameters={})
+    @Export(name="isAutoScalingForStorageEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isAutoScalingForStorageEnabled;
 
     /**
@@ -675,7 +675,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * (Updatable) **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      * 
      */
-    @Export(name="isDataGuardEnabled", type=Boolean.class, parameters={})
+    @Export(name="isDataGuardEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isDataGuardEnabled;
 
     /**
@@ -689,7 +689,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * True if the database is on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adbddoverview.htm).
      * 
      */
-    @Export(name="isDedicated", type=Boolean.class, parameters={})
+    @Export(name="isDedicated", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isDedicated;
 
     /**
@@ -703,7 +703,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * (Updatable) Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled. When `db_workload` is `AJD` or `APEX` it cannot be `true`.
      * 
      */
-    @Export(name="isFreeTier", type=Boolean.class, parameters={})
+    @Export(name="isFreeTier", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isFreeTier;
 
     /**
@@ -717,7 +717,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * (Updatable) Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      * 
      */
-    @Export(name="isLocalDataGuardEnabled", type=Boolean.class, parameters={})
+    @Export(name="isLocalDataGuardEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isLocalDataGuardEnabled;
 
     /**
@@ -731,7 +731,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * (Updatable) Indicates whether the Autonomous Database requires mTLS connections.
      * 
      */
-    @Export(name="isMtlsConnectionRequired", type=Boolean.class, parameters={})
+    @Export(name="isMtlsConnectionRequired", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isMtlsConnectionRequired;
 
     /**
@@ -745,7 +745,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * Indicates if the Autonomous Database version is a preview version.
      * 
      */
-    @Export(name="isPreview", type=Boolean.class, parameters={})
+    @Export(name="isPreview", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isPreview;
 
     /**
@@ -759,7 +759,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * If set to `TRUE`, indicates that an Autonomous Database preview version is being provisioned, and that the preview version&#39;s terms of service have been accepted. Note that preview version software is only available for databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
      * 
      */
-    @Export(name="isPreviewVersionWithServiceTermsAccepted", type=Boolean.class, parameters={})
+    @Export(name="isPreviewVersionWithServiceTermsAccepted", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isPreviewVersionWithServiceTermsAccepted;
 
     /**
@@ -773,7 +773,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * Indicates if the refreshable clone can be reconnected to its source database.
      * 
      */
-    @Export(name="isReconnectCloneEnabled", type=Boolean.class, parameters={})
+    @Export(name="isReconnectCloneEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isReconnectCloneEnabled;
 
     /**
@@ -787,7 +787,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * (Updatable) True for creating a refreshable clone and False for detaching the clone from source Autonomous Database. Detaching is one time operation and clone becomes a regular Autonomous Database.
      * 
      */
-    @Export(name="isRefreshableClone", type=Boolean.class, parameters={})
+    @Export(name="isRefreshableClone", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isRefreshableClone;
 
     /**
@@ -801,7 +801,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      * 
      */
-    @Export(name="isRemoteDataGuardEnabled", type=Boolean.class, parameters={})
+    @Export(name="isRemoteDataGuardEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isRemoteDataGuardEnabled;
 
     /**
@@ -818,7 +818,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="isShrinkOnly", type=Boolean.class, parameters={})
+    @Export(name="isShrinkOnly", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> isShrinkOnly;
 
     /**
@@ -835,7 +835,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * Key History Entry.
      * 
      */
-    @Export(name="keyHistoryEntries", type=List.class, parameters={AutonomousDatabaseKeyHistoryEntry.class})
+    @Export(name="keyHistoryEntries", refs={List.class,AutonomousDatabaseKeyHistoryEntry.class}, tree="[0,1]")
     private Output<List<AutonomousDatabaseKeyHistoryEntry>> keyHistoryEntries;
 
     /**
@@ -849,7 +849,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
      * 
      */
-    @Export(name="keyStoreId", type=String.class, parameters={})
+    @Export(name="keyStoreId", refs={String.class}, tree="[0]")
     private Output<String> keyStoreId;
 
     /**
@@ -863,7 +863,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * The wallet name for Oracle Key Vault.
      * 
      */
-    @Export(name="keyStoreWalletName", type=String.class, parameters={})
+    @Export(name="keyStoreWalletName", refs={String.class}, tree="[0]")
     private Output<String> keyStoreWalletName;
 
     /**
@@ -877,7 +877,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
-    @Export(name="kmsKeyId", type=String.class, parameters={})
+    @Export(name="kmsKeyId", refs={String.class}, tree="[0]")
     private Output<String> kmsKeyId;
 
     /**
@@ -891,7 +891,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * KMS key lifecycle details.
      * 
      */
-    @Export(name="kmsKeyLifecycleDetails", type=String.class, parameters={})
+    @Export(name="kmsKeyLifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> kmsKeyLifecycleDetails;
 
     /**
@@ -905,7 +905,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
      * 
      */
-    @Export(name="kmsKeyVersionId", type=String.class, parameters={})
+    @Export(name="kmsKeyVersionId", refs={String.class}, tree="[0]")
     private Output<String> kmsKeyVersionId;
 
     /**
@@ -919,7 +919,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adbddoverview.htm), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adboverview.htm#AEI), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`. It is a required field when `db_workload` is AJD and needs to be set to `LICENSE_INCLUDED` as AJD does not support default `license_model` value `BRING_YOUR_OWN_LICENSE`.
      * 
      */
-    @Export(name="licenseModel", type=String.class, parameters={})
+    @Export(name="licenseModel", refs={String.class}, tree="[0]")
     private Output<String> licenseModel;
 
     /**
@@ -933,7 +933,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * Additional information about the current lifecycle state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -947,7 +947,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
      * 
      */
-    @Export(name="localAdgAutoFailoverMaxDataLossLimit", type=Integer.class, parameters={})
+    @Export(name="localAdgAutoFailoverMaxDataLossLimit", refs={Integer.class}, tree="[0]")
     private Output<Integer> localAdgAutoFailoverMaxDataLossLimit;
 
     /**
@@ -961,7 +961,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      * 
      */
-    @Export(name="localDisasterRecoveryType", type=String.class, parameters={})
+    @Export(name="localDisasterRecoveryType", refs={String.class}, tree="[0]")
     private Output<String> localDisasterRecoveryType;
 
     /**
@@ -975,7 +975,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * Autonomous Data Guard standby database details.
      * 
      */
-    @Export(name="localStandbyDbs", type=List.class, parameters={AutonomousDatabaseLocalStandbyDb.class})
+    @Export(name="localStandbyDbs", refs={List.class,AutonomousDatabaseLocalStandbyDb.class}, tree="[0,1]")
     private Output<List<AutonomousDatabaseLocalStandbyDb>> localStandbyDbs;
 
     /**
@@ -989,7 +989,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * Details for the long-term backup schedule.
      * 
      */
-    @Export(name="longTermBackupSchedules", type=List.class, parameters={AutonomousDatabaseLongTermBackupSchedule.class})
+    @Export(name="longTermBackupSchedules", refs={List.class,AutonomousDatabaseLongTermBackupSchedule.class}, tree="[0,1]")
     private Output<List<AutonomousDatabaseLongTermBackupSchedule>> longTermBackupSchedules;
 
     /**
@@ -1003,7 +1003,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * (Updatable) The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
      * 
      */
-    @Export(name="maxCpuCoreCount", type=Integer.class, parameters={})
+    @Export(name="maxCpuCoreCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxCpuCoreCount;
 
     /**
@@ -1017,7 +1017,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
      * 
      */
-    @Export(name="memoryPerOracleComputeUnitInGbs", type=Integer.class, parameters={})
+    @Export(name="memoryPerOracleComputeUnitInGbs", refs={Integer.class}, tree="[0]")
     private Output<Integer> memoryPerOracleComputeUnitInGbs;
 
     /**
@@ -1031,7 +1031,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
      * 
      */
-    @Export(name="ncharacterSet", type=String.class, parameters={})
+    @Export(name="ncharacterSet", refs={String.class}, tree="[0]")
     private Output<String> ncharacterSet;
 
     /**
@@ -1045,7 +1045,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * The date and time when the next long-term backup would be created.
      * 
      */
-    @Export(name="nextLongTermBackupTimeStamp", type=String.class, parameters={})
+    @Export(name="nextLongTermBackupTimeStamp", refs={String.class}, tree="[0]")
     private Output<String> nextLongTermBackupTimeStamp;
 
     /**
@@ -1060,7 +1060,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      * 
      */
-    @Export(name="nsgIds", type=List.class, parameters={String.class})
+    @Export(name="nsgIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> nsgIds;
 
     /**
@@ -1083,7 +1083,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * **Note:** This parameter cannot be used with the `cpuCoreCount` parameter.
      * 
      */
-    @Export(name="ocpuCount", type=Double.class, parameters={})
+    @Export(name="ocpuCount", refs={Double.class}, tree="[0]")
     private Output<Double> ocpuCount;
 
     /**
@@ -1105,7 +1105,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
      * 
      */
-    @Export(name="openMode", type=String.class, parameters={})
+    @Export(name="openMode", refs={String.class}, tree="[0]")
     private Output<String> openMode;
 
     /**
@@ -1119,7 +1119,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * (Updatable) Status of Operations Insights for this Autonomous Database. Values supported are `ENABLED` and `NOT_ENABLED`
      * 
      */
-    @Export(name="operationsInsightsStatus", type=String.class, parameters={})
+    @Export(name="operationsInsightsStatus", refs={String.class}, tree="[0]")
     private Output<String> operationsInsightsStatus;
 
     /**
@@ -1133,7 +1133,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for shared Exadata infrastructure, standby databases located in the same region as the source primary database do not have OCIDs.
      * 
      */
-    @Export(name="peerDbIds", type=List.class, parameters={String.class})
+    @Export(name="peerDbIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> peerDbIds;
 
     /**
@@ -1147,7 +1147,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * The Autonomous Database permission level. Restricted mode allows access only by admin users.
      * 
      */
-    @Export(name="permissionLevel", type=String.class, parameters={})
+    @Export(name="permissionLevel", refs={String.class}, tree="[0]")
     private Output<String> permissionLevel;
 
     /**
@@ -1161,7 +1161,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * The private endpoint for the resource.
      * 
      */
-    @Export(name="privateEndpoint", type=String.class, parameters={})
+    @Export(name="privateEndpoint", refs={String.class}, tree="[0]")
     private Output<String> privateEndpoint;
 
     /**
@@ -1175,7 +1175,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * The private endpoint Ip address for the resource.
      * 
      */
-    @Export(name="privateEndpointIp", type=String.class, parameters={})
+    @Export(name="privateEndpointIp", refs={String.class}, tree="[0]")
     private Output<String> privateEndpointIp;
 
     /**
@@ -1189,7 +1189,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * (Updatable) The private endpoint label for the resource.
      * 
      */
-    @Export(name="privateEndpointLabel", type=String.class, parameters={})
+    @Export(name="privateEndpointLabel", refs={String.class}, tree="[0]")
     private Output<String> privateEndpointLabel;
 
     /**
@@ -1203,7 +1203,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * An array of CPU values that an Autonomous Database can be scaled to.
      * 
      */
-    @Export(name="provisionableCpuses", type=List.class, parameters={Double.class})
+    @Export(name="provisionableCpuses", refs={List.class,Double.class}, tree="[0,1]")
     private Output<List<Double>> provisionableCpuses;
 
     /**
@@ -1217,7 +1217,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * (Updatable) The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
      * 
      */
-    @Export(name="refreshableMode", type=String.class, parameters={})
+    @Export(name="refreshableMode", refs={String.class}, tree="[0]")
     private Output<String> refreshableMode;
 
     /**
@@ -1231,7 +1231,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
      * 
      */
-    @Export(name="refreshableStatus", type=String.class, parameters={})
+    @Export(name="refreshableStatus", refs={String.class}, tree="[0]")
     private Output<String> refreshableStatus;
 
     /**
@@ -1245,7 +1245,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * Configurations of a Disaster Recovery.
      * 
      */
-    @Export(name="remoteDisasterRecoveryConfigurations", type=List.class, parameters={AutonomousDatabaseRemoteDisasterRecoveryConfiguration.class})
+    @Export(name="remoteDisasterRecoveryConfigurations", refs={List.class,AutonomousDatabaseRemoteDisasterRecoveryConfiguration.class}, tree="[0,1]")
     private Output<List<AutonomousDatabaseRemoteDisasterRecoveryConfiguration>> remoteDisasterRecoveryConfigurations;
 
     /**
@@ -1259,7 +1259,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      * 
      */
-    @Export(name="remoteDisasterRecoveryType", type=String.class, parameters={})
+    @Export(name="remoteDisasterRecoveryType", refs={String.class}, tree="[0]")
     private Output<String> remoteDisasterRecoveryType;
 
     /**
@@ -1273,7 +1273,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      * 
      */
-    @Export(name="role", type=String.class, parameters={})
+    @Export(name="role", refs={String.class}, tree="[0]")
     private Output<String> role;
 
     /**
@@ -1287,7 +1287,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `is_dedicated` is true.
      * 
      */
-    @Export(name="rotateKeyTrigger", type=Boolean.class, parameters={})
+    @Export(name="rotateKeyTrigger", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> rotateKeyTrigger;
 
     /**
@@ -1303,7 +1303,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
      * 
      */
-    @Export(name="scheduledOperations", type=List.class, parameters={AutonomousDatabaseScheduledOperation.class})
+    @Export(name="scheduledOperations", refs={List.class,AutonomousDatabaseScheduledOperation.class}, tree="[0,1]")
     private Output<List<AutonomousDatabaseScheduledOperation>> scheduledOperations;
 
     /**
@@ -1319,7 +1319,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
      * 
      */
-    @Export(name="secretId", type=String.class, parameters={})
+    @Export(name="secretId", refs={String.class}, tree="[0]")
     private Output<String> secretId;
 
     /**
@@ -1333,7 +1333,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
      * 
      */
-    @Export(name="secretVersionNumber", type=Integer.class, parameters={})
+    @Export(name="secretVersionNumber", refs={Integer.class}, tree="[0]")
     private Output<Integer> secretVersionNumber;
 
     /**
@@ -1347,7 +1347,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * The URL of the Service Console for the Autonomous Database.
      * 
      */
-    @Export(name="serviceConsoleUrl", type=String.class, parameters={})
+    @Export(name="serviceConsoleUrl", refs={String.class}, tree="[0]")
     private Output<String> serviceConsoleUrl;
 
     /**
@@ -1363,7 +1363,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * For Autonomous Databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), the following cloning options are available: Use `BACKUP_FROM_ID` for creating a new Autonomous Database from a specified backup. Use `BACKUP_FROM_TIMESTAMP` for creating a point-in-time Autonomous Database clone using backups. For more information, see [Cloning and Moving an Autonomous Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/clone-autonomous-database.html#GUID-D771796F-5081-4CFB-A7FF-0F893EABD7BC).
      * 
      */
-    @Export(name="source", type=String.class, parameters={})
+    @Export(name="source", refs={String.class}, tree="[0]")
     private Output<String> source;
 
     /**
@@ -1379,7 +1379,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that will be used to create a new standby database for the Data Guard association.
      * 
      */
-    @Export(name="sourceId", type=String.class, parameters={})
+    @Export(name="sourceId", refs={String.class}, tree="[0]")
     private Output<String> sourceId;
 
     /**
@@ -1393,7 +1393,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * **Deprecated** Autonomous Data Guard standby database details.
      * 
      */
-    @Export(name="standbyDbs", type=List.class, parameters={AutonomousDatabaseStandbyDb.class})
+    @Export(name="standbyDbs", refs={List.class,AutonomousDatabaseStandbyDb.class}, tree="[0,1]")
     private Output<List<AutonomousDatabaseStandbyDb>> standbyDbs;
 
     /**
@@ -1413,7 +1413,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
      * 
      */
-    @Export(name="standbyWhitelistedIps", type=List.class, parameters={String.class})
+    @Export(name="standbyWhitelistedIps", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> standbyWhitelistedIps;
 
     /**
@@ -1433,7 +1433,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * The current state of the Autonomous Database.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -1454,7 +1454,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
      * 
      */
-    @Export(name="subnetId", type=String.class, parameters={})
+    @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
@@ -1475,7 +1475,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * The list of regions that support the creation of an Autonomous Database clone or an Autonomous Data Guard standby database.
      * 
      */
-    @Export(name="supportedRegionsToCloneTos", type=List.class, parameters={String.class})
+    @Export(name="supportedRegionsToCloneTos", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> supportedRegionsToCloneTos;
 
     /**
@@ -1489,7 +1489,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * It is applicable only when `is_data_guard_enabled` is true. Could be set to `PRIMARY` or `STANDBY`. Default value is `PRIMARY`.
      * 
      */
-    @Export(name="switchoverTo", type=String.class, parameters={})
+    @Export(name="switchoverTo", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> switchoverTo;
 
     /**
@@ -1503,7 +1503,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * (Updatable) It is applicable only when `dataguard_region_type` and `role` are set, and `is_dedicated` is false. It takes the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the remote peer to switchover to.
      * 
      */
-    @Export(name="switchoverToRemotePeerId", type=String.class, parameters={})
+    @Export(name="switchoverToRemotePeerId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> switchoverToRemotePeerId;
 
     /**
@@ -1517,7 +1517,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -1531,7 +1531,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * The date and time the Autonomous Database was created.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -1545,7 +1545,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the &#34;primary&#34; role in the primary Data Guard region, or database located in the remote Data Guard standby region.
      * 
      */
-    @Export(name="timeDataGuardRoleChanged", type=String.class, parameters={})
+    @Export(name="timeDataGuardRoleChanged", refs={String.class}, tree="[0]")
     private Output<String> timeDataGuardRoleChanged;
 
     /**
@@ -1559,7 +1559,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * The date and time the Always Free database will be automatically deleted because of inactivity. If the database is in the STOPPED state and without activity until this time, it will be deleted.
      * 
      */
-    @Export(name="timeDeletionOfFreeAutonomousDatabase", type=String.class, parameters={})
+    @Export(name="timeDeletionOfFreeAutonomousDatabase", refs={String.class}, tree="[0]")
     private Output<String> timeDeletionOfFreeAutonomousDatabase;
 
     /**
@@ -1573,7 +1573,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
      * 
      */
-    @Export(name="timeDisasterRecoveryRoleChanged", type=String.class, parameters={})
+    @Export(name="timeDisasterRecoveryRoleChanged", refs={String.class}, tree="[0]")
     private Output<String> timeDisasterRecoveryRoleChanged;
 
     /**
@@ -1587,7 +1587,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
      * 
      */
-    @Export(name="timeLocalDataGuardEnabled", type=String.class, parameters={})
+    @Export(name="timeLocalDataGuardEnabled", refs={String.class}, tree="[0]")
     private Output<String> timeLocalDataGuardEnabled;
 
     /**
@@ -1601,7 +1601,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * The date and time when maintenance will begin.
      * 
      */
-    @Export(name="timeMaintenanceBegin", type=String.class, parameters={})
+    @Export(name="timeMaintenanceBegin", refs={String.class}, tree="[0]")
     private Output<String> timeMaintenanceBegin;
 
     /**
@@ -1615,7 +1615,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * The date and time when maintenance will end.
      * 
      */
-    @Export(name="timeMaintenanceEnd", type=String.class, parameters={})
+    @Export(name="timeMaintenanceEnd", refs={String.class}, tree="[0]")
     private Output<String> timeMaintenanceEnd;
 
     /**
@@ -1629,7 +1629,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * The timestamp of the last failover operation.
      * 
      */
-    @Export(name="timeOfLastFailover", type=String.class, parameters={})
+    @Export(name="timeOfLastFailover", refs={String.class}, tree="[0]")
     private Output<String> timeOfLastFailover;
 
     /**
@@ -1643,7 +1643,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * The date and time when last refresh happened.
      * 
      */
-    @Export(name="timeOfLastRefresh", type=String.class, parameters={})
+    @Export(name="timeOfLastRefresh", refs={String.class}, tree="[0]")
     private Output<String> timeOfLastRefresh;
 
     /**
@@ -1657,7 +1657,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * The refresh point timestamp (UTC). The refresh point is the time to which the database was most recently refreshed. Data created after the refresh point is not included in the refresh.
      * 
      */
-    @Export(name="timeOfLastRefreshPoint", type=String.class, parameters={})
+    @Export(name="timeOfLastRefreshPoint", refs={String.class}, tree="[0]")
     private Output<String> timeOfLastRefreshPoint;
 
     /**
@@ -1671,7 +1671,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * The timestamp of the last switchover operation for the Autonomous Database.
      * 
      */
-    @Export(name="timeOfLastSwitchover", type=String.class, parameters={})
+    @Export(name="timeOfLastSwitchover", refs={String.class}, tree="[0]")
     private Output<String> timeOfLastSwitchover;
 
     /**
@@ -1685,7 +1685,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * The date and time of next refresh.
      * 
      */
-    @Export(name="timeOfNextRefresh", type=String.class, parameters={})
+    @Export(name="timeOfNextRefresh", refs={String.class}, tree="[0]")
     private Output<String> timeOfNextRefresh;
 
     /**
@@ -1699,7 +1699,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
      * 
      */
-    @Export(name="timeReclamationOfFreeAutonomousDatabase", type=String.class, parameters={})
+    @Export(name="timeReclamationOfFreeAutonomousDatabase", refs={String.class}, tree="[0]")
     private Output<String> timeReclamationOfFreeAutonomousDatabase;
 
     /**
@@ -1713,7 +1713,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * The time and date as an RFC3339 formatted string, e.g., 2022-01-01T12:00:00.000Z, to set the limit for a refreshable clone to be reconnected to its source database.
      * 
      */
-    @Export(name="timeUntilReconnectCloneEnabled", type=String.class, parameters={})
+    @Export(name="timeUntilReconnectCloneEnabled", refs={String.class}, tree="[0]")
     private Output<String> timeUntilReconnectCloneEnabled;
 
     /**
@@ -1727,7 +1727,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * The timestamp specified for the point-in-time clone of the source Autonomous Database. The timestamp must be in the past.
      * 
      */
-    @Export(name="timestamp", type=String.class, parameters={})
+    @Export(name="timestamp", refs={String.class}, tree="[0]")
     private Output<String> timestamp;
 
     /**
@@ -1741,7 +1741,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * The backup storage to the database.
      * 
      */
-    @Export(name="totalBackupStorageSizeInGbs", type=Double.class, parameters={})
+    @Export(name="totalBackupStorageSizeInGbs", refs={Double.class}, tree="[0]")
     private Output<Double> totalBackupStorageSizeInGbs;
 
     /**
@@ -1755,7 +1755,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * Clone from latest available backup timestamp.
      * 
      */
-    @Export(name="useLatestAvailableBackupTimeStamp", type=Boolean.class, parameters={})
+    @Export(name="useLatestAvailableBackupTimeStamp", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> useLatestAvailableBackupTimeStamp;
 
     /**
@@ -1769,7 +1769,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * The storage space consumed by Autonomous Database in GBs.
      * 
      */
-    @Export(name="usedDataStorageSizeInGbs", type=Integer.class, parameters={})
+    @Export(name="usedDataStorageSizeInGbs", refs={Integer.class}, tree="[0]")
     private Output<Integer> usedDataStorageSizeInGbs;
 
     /**
@@ -1783,7 +1783,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * The amount of storage that has been used, in terabytes.
      * 
      */
-    @Export(name="usedDataStorageSizeInTbs", type=Integer.class, parameters={})
+    @Export(name="usedDataStorageSizeInTbs", refs={Integer.class}, tree="[0]")
     private Output<Integer> usedDataStorageSizeInTbs;
 
     /**
@@ -1797,7 +1797,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
-    @Export(name="vaultId", type=String.class, parameters={})
+    @Export(name="vaultId", refs={String.class}, tree="[0]")
     private Output<String> vaultId;
 
     /**
@@ -1819,7 +1819,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. To remove all whitelisted IPs, set the field to a list with an empty string `[&#34;&#34;]`.
      * 
      */
-    @Export(name="whitelistedIps", type=List.class, parameters={String.class})
+    @Export(name="whitelistedIps", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> whitelistedIps;
 
     /**

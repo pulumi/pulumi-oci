@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Externalpluggabledatabases Stack Monitoring resource in Oracle Cloud Infrastructure Database service.
@@ -175,6 +176,12 @@ func (i *ExternalPluggableDatabasesStackMonitoring) ToExternalPluggableDatabases
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalPluggableDatabasesStackMonitoringOutput)
 }
 
+func (i *ExternalPluggableDatabasesStackMonitoring) ToOutput(ctx context.Context) pulumix.Output[*ExternalPluggableDatabasesStackMonitoring] {
+	return pulumix.Output[*ExternalPluggableDatabasesStackMonitoring]{
+		OutputState: i.ToExternalPluggableDatabasesStackMonitoringOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ExternalPluggableDatabasesStackMonitoringArrayInput is an input type that accepts ExternalPluggableDatabasesStackMonitoringArray and ExternalPluggableDatabasesStackMonitoringArrayOutput values.
 // You can construct a concrete instance of `ExternalPluggableDatabasesStackMonitoringArrayInput` via:
 //
@@ -198,6 +205,12 @@ func (i ExternalPluggableDatabasesStackMonitoringArray) ToExternalPluggableDatab
 
 func (i ExternalPluggableDatabasesStackMonitoringArray) ToExternalPluggableDatabasesStackMonitoringArrayOutputWithContext(ctx context.Context) ExternalPluggableDatabasesStackMonitoringArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalPluggableDatabasesStackMonitoringArrayOutput)
+}
+
+func (i ExternalPluggableDatabasesStackMonitoringArray) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalPluggableDatabasesStackMonitoring] {
+	return pulumix.Output[[]*ExternalPluggableDatabasesStackMonitoring]{
+		OutputState: i.ToExternalPluggableDatabasesStackMonitoringArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // ExternalPluggableDatabasesStackMonitoringMapInput is an input type that accepts ExternalPluggableDatabasesStackMonitoringMap and ExternalPluggableDatabasesStackMonitoringMapOutput values.
@@ -225,6 +238,12 @@ func (i ExternalPluggableDatabasesStackMonitoringMap) ToExternalPluggableDatabas
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalPluggableDatabasesStackMonitoringMapOutput)
 }
 
+func (i ExternalPluggableDatabasesStackMonitoringMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalPluggableDatabasesStackMonitoring] {
+	return pulumix.Output[map[string]*ExternalPluggableDatabasesStackMonitoring]{
+		OutputState: i.ToExternalPluggableDatabasesStackMonitoringMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ExternalPluggableDatabasesStackMonitoringOutput struct{ *pulumi.OutputState }
 
 func (ExternalPluggableDatabasesStackMonitoringOutput) ElementType() reflect.Type {
@@ -237,6 +256,12 @@ func (o ExternalPluggableDatabasesStackMonitoringOutput) ToExternalPluggableData
 
 func (o ExternalPluggableDatabasesStackMonitoringOutput) ToExternalPluggableDatabasesStackMonitoringOutputWithContext(ctx context.Context) ExternalPluggableDatabasesStackMonitoringOutput {
 	return o
+}
+
+func (o ExternalPluggableDatabasesStackMonitoringOutput) ToOutput(ctx context.Context) pulumix.Output[*ExternalPluggableDatabasesStackMonitoring] {
+	return pulumix.Output[*ExternalPluggableDatabasesStackMonitoring]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Enabling Stack Monitoring on External Pluggable Databases . Requires boolean value "true" or "false".
@@ -275,6 +300,12 @@ func (o ExternalPluggableDatabasesStackMonitoringArrayOutput) ToExternalPluggabl
 	return o
 }
 
+func (o ExternalPluggableDatabasesStackMonitoringArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalPluggableDatabasesStackMonitoring] {
+	return pulumix.Output[[]*ExternalPluggableDatabasesStackMonitoring]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o ExternalPluggableDatabasesStackMonitoringArrayOutput) Index(i pulumi.IntInput) ExternalPluggableDatabasesStackMonitoringOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ExternalPluggableDatabasesStackMonitoring {
 		return vs[0].([]*ExternalPluggableDatabasesStackMonitoring)[vs[1].(int)]
@@ -293,6 +324,12 @@ func (o ExternalPluggableDatabasesStackMonitoringMapOutput) ToExternalPluggableD
 
 func (o ExternalPluggableDatabasesStackMonitoringMapOutput) ToExternalPluggableDatabasesStackMonitoringMapOutputWithContext(ctx context.Context) ExternalPluggableDatabasesStackMonitoringMapOutput {
 	return o
+}
+
+func (o ExternalPluggableDatabasesStackMonitoringMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalPluggableDatabasesStackMonitoring] {
+	return pulumix.Output[map[string]*ExternalPluggableDatabasesStackMonitoring]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ExternalPluggableDatabasesStackMonitoringMapOutput) MapIndex(k pulumi.StringInput) ExternalPluggableDatabasesStackMonitoringOutput {

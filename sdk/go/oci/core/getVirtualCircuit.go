@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Virtual Circuit resource in Oracle Cloud Infrastructure Core service.
@@ -159,6 +160,12 @@ func (o LookupVirtualCircuitResultOutput) ToLookupVirtualCircuitResultOutput() L
 
 func (o LookupVirtualCircuitResultOutput) ToLookupVirtualCircuitResultOutputWithContext(ctx context.Context) LookupVirtualCircuitResultOutput {
 	return o
+}
+
+func (o LookupVirtualCircuitResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupVirtualCircuitResult] {
+	return pulumix.Output[LookupVirtualCircuitResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The provisioned data rate of the connection. To get a list of the available bandwidth levels (that is, shapes), see [ListFastConnectProviderServiceVirtualCircuitBandwidthShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes).  Example: `10 Gbps`

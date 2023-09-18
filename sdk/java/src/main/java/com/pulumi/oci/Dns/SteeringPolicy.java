@@ -104,7 +104,7 @@ public class SteeringPolicy extends com.pulumi.resources.CustomResource {
      * The set of all answers that can potentially issue from the steering policy.
      * 
      */
-    @Export(name="answers", type=List.class, parameters={SteeringPolicyAnswer.class})
+    @Export(name="answers", refs={List.class,SteeringPolicyAnswer.class}, tree="[0,1]")
     private Output<List<SteeringPolicyAnswer>> answers;
 
     /**
@@ -118,7 +118,7 @@ public class SteeringPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the compartment containing the steering policy.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -132,7 +132,7 @@ public class SteeringPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -146,7 +146,7 @@ public class SteeringPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-friendly name for the steering policy. Does not have to be unique and can be changed. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -160,7 +160,7 @@ public class SteeringPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -176,7 +176,7 @@ public class SteeringPolicy extends com.pulumi.resources.CustomResource {
      * **Note:** To use the Health Check monitoring feature in a steering policy, a monitor must be created using the Health Checks service first. For more information on how to create a monitor, please see [Managing Health Checks](https://docs.cloud.oracle.com/iaas/Content/HealthChecks/Tasks/managinghealthchecks.htm).
      * 
      */
-    @Export(name="healthCheckMonitorId", type=String.class, parameters={})
+    @Export(name="healthCheckMonitorId", refs={String.class}, tree="[0]")
     private Output<String> healthCheckMonitorId;
 
     /**
@@ -194,7 +194,7 @@ public class SteeringPolicy extends com.pulumi.resources.CustomResource {
      * The first rule receives a shuffled list of all answers, and every other rule receives the list of answers emitted by the one preceding it. The last rule populates the response.
      * 
      */
-    @Export(name="rules", type=List.class, parameters={SteeringPolicyRule.class})
+    @Export(name="rules", refs={List.class,SteeringPolicyRule.class}, tree="[0,1]")
     private Output<List<SteeringPolicyRule>> rules;
 
     /**
@@ -210,7 +210,7 @@ public class SteeringPolicy extends com.pulumi.resources.CustomResource {
      * The canonical absolute URL of the resource.
      * 
      */
-    @Export(name="self", type=String.class, parameters={})
+    @Export(name="self", refs={String.class}, tree="[0]")
     private Output<String> self;
 
     /**
@@ -224,7 +224,7 @@ public class SteeringPolicy extends com.pulumi.resources.CustomResource {
      * The current state of the resource.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -246,7 +246,7 @@ public class SteeringPolicy extends com.pulumi.resources.CustomResource {
      * **Template Types**
      * 
      */
-    @Export(name="template", type=String.class, parameters={})
+    @Export(name="template", refs={String.class}, tree="[0]")
     private Output<String> template;
 
     /**
@@ -268,7 +268,7 @@ public class SteeringPolicy extends com.pulumi.resources.CustomResource {
      * The date and time the resource was created, expressed in RFC 3339 timestamp format.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -285,7 +285,7 @@ public class SteeringPolicy extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="ttl", type=Integer.class, parameters={})
+    @Export(name="ttl", refs={Integer.class}, tree="[0]")
     private Output<Integer> ttl;
 
     /**

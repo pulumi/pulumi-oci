@@ -48,7 +48,7 @@ public class DrgAttachment extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the DRG attachment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -62,7 +62,7 @@ public class DrgAttachment extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -76,7 +76,7 @@ public class DrgAttachment extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -90,7 +90,7 @@ public class DrgAttachment extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
      * 
      */
-    @Export(name="drgId", type=String.class, parameters={})
+    @Export(name="drgId", refs={String.class}, tree="[0]")
     private Output<String> drgId;
 
     /**
@@ -106,7 +106,7 @@ public class DrgAttachment extends com.pulumi.resources.CustomResource {
      * The DRG route table manages traffic inside the DRG.
      * 
      */
-    @Export(name="drgRouteTableId", type=String.class, parameters={})
+    @Export(name="drgRouteTableId", refs={String.class}, tree="[0]")
     private Output<String> drgRouteTableId;
 
     /**
@@ -123,7 +123,7 @@ public class DrgAttachment extends com.pulumi.resources.CustomResource {
      * This field cannot be set by the user while creating the resource and gets a default value on creation. This can be only be updated to its default value. If this fields needs to be set to null, remove_export_drg_route_distribution_trigger needs to be used.
      * 
      */
-    @Export(name="exportDrgRouteDistributionId", type=String.class, parameters={})
+    @Export(name="exportDrgRouteDistributionId", refs={String.class}, tree="[0]")
     private Output<String> exportDrgRouteDistributionId;
 
     /**
@@ -138,7 +138,7 @@ public class DrgAttachment extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -152,7 +152,7 @@ public class DrgAttachment extends com.pulumi.resources.CustomResource {
      * Indicates whether the DRG attachment and attached network live in a different tenancy than the DRG.  Example: `false`
      * 
      */
-    @Export(name="isCrossTenancy", type=Boolean.class, parameters={})
+    @Export(name="isCrossTenancy", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isCrossTenancy;
 
     /**
@@ -166,7 +166,7 @@ public class DrgAttachment extends com.pulumi.resources.CustomResource {
      * (Updatable)
      * 
      */
-    @Export(name="networkDetails", type=DrgAttachmentNetworkDetails.class, parameters={})
+    @Export(name="networkDetails", refs={DrgAttachmentNetworkDetails.class}, tree="[0]")
     private Output<DrgAttachmentNetworkDetails> networkDetails;
 
     /**
@@ -183,7 +183,7 @@ public class DrgAttachment extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="removeExportDrgRouteDistributionTrigger", type=Boolean.class, parameters={})
+    @Export(name="removeExportDrgRouteDistributionTrigger", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> removeExportDrgRouteDistributionTrigger;
 
     /**
@@ -205,7 +205,7 @@ public class DrgAttachment extends com.pulumi.resources.CustomResource {
      *   This field is deprecated. Instead, use the networkDetails field to specify the VCN route table for this attachment.
      * 
      */
-    @Export(name="routeTableId", type=String.class, parameters={})
+    @Export(name="routeTableId", refs={String.class}, tree="[0]")
     private Output<String> routeTableId;
 
     /**
@@ -224,7 +224,7 @@ public class DrgAttachment extends com.pulumi.resources.CustomResource {
      * The DRG attachment&#39;s current state.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -238,7 +238,7 @@ public class DrgAttachment extends com.pulumi.resources.CustomResource {
      * The date and time the DRG attachment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -252,7 +252,7 @@ public class DrgAttachment extends com.pulumi.resources.CustomResource {
      * (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN. This field is deprecated. Instead, use the `networkDetails` field to specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
      * 
      */
-    @Export(name="vcnId", type=String.class, parameters={})
+    @Export(name="vcnId", refs={String.class}, tree="[0]")
     private Output<String> vcnId;
 
     /**

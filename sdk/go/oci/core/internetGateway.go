@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Internet Gateway resource in Oracle Cloud Infrastructure Core service.
@@ -257,6 +258,12 @@ func (i *InternetGateway) ToInternetGatewayOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(InternetGatewayOutput)
 }
 
+func (i *InternetGateway) ToOutput(ctx context.Context) pulumix.Output[*InternetGateway] {
+	return pulumix.Output[*InternetGateway]{
+		OutputState: i.ToInternetGatewayOutputWithContext(ctx).OutputState,
+	}
+}
+
 // InternetGatewayArrayInput is an input type that accepts InternetGatewayArray and InternetGatewayArrayOutput values.
 // You can construct a concrete instance of `InternetGatewayArrayInput` via:
 //
@@ -280,6 +287,12 @@ func (i InternetGatewayArray) ToInternetGatewayArrayOutput() InternetGatewayArra
 
 func (i InternetGatewayArray) ToInternetGatewayArrayOutputWithContext(ctx context.Context) InternetGatewayArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(InternetGatewayArrayOutput)
+}
+
+func (i InternetGatewayArray) ToOutput(ctx context.Context) pulumix.Output[[]*InternetGateway] {
+	return pulumix.Output[[]*InternetGateway]{
+		OutputState: i.ToInternetGatewayArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // InternetGatewayMapInput is an input type that accepts InternetGatewayMap and InternetGatewayMapOutput values.
@@ -307,6 +320,12 @@ func (i InternetGatewayMap) ToInternetGatewayMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(InternetGatewayMapOutput)
 }
 
+func (i InternetGatewayMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*InternetGateway] {
+	return pulumix.Output[map[string]*InternetGateway]{
+		OutputState: i.ToInternetGatewayMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type InternetGatewayOutput struct{ *pulumi.OutputState }
 
 func (InternetGatewayOutput) ElementType() reflect.Type {
@@ -319,6 +338,12 @@ func (o InternetGatewayOutput) ToInternetGatewayOutput() InternetGatewayOutput {
 
 func (o InternetGatewayOutput) ToInternetGatewayOutputWithContext(ctx context.Context) InternetGatewayOutput {
 	return o
+}
+
+func (o InternetGatewayOutput) ToOutput(ctx context.Context) pulumix.Output[*InternetGateway] {
+	return pulumix.Output[*InternetGateway]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the internet gateway.
@@ -383,6 +408,12 @@ func (o InternetGatewayArrayOutput) ToInternetGatewayArrayOutputWithContext(ctx 
 	return o
 }
 
+func (o InternetGatewayArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*InternetGateway] {
+	return pulumix.Output[[]*InternetGateway]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o InternetGatewayArrayOutput) Index(i pulumi.IntInput) InternetGatewayOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *InternetGateway {
 		return vs[0].([]*InternetGateway)[vs[1].(int)]
@@ -401,6 +432,12 @@ func (o InternetGatewayMapOutput) ToInternetGatewayMapOutput() InternetGatewayMa
 
 func (o InternetGatewayMapOutput) ToInternetGatewayMapOutputWithContext(ctx context.Context) InternetGatewayMapOutput {
 	return o
+}
+
+func (o InternetGatewayMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*InternetGateway] {
+	return pulumix.Output[map[string]*InternetGateway]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o InternetGatewayMapOutput) MapIndex(k pulumi.StringInput) InternetGatewayOutput {

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Filesystem Snapshot Policies in Oracle Cloud Infrastructure File Storage service.
@@ -131,6 +132,12 @@ func (o GetFilesystemSnapshotPoliciesResultOutput) ToGetFilesystemSnapshotPolici
 
 func (o GetFilesystemSnapshotPoliciesResultOutput) ToGetFilesystemSnapshotPoliciesResultOutputWithContext(ctx context.Context) GetFilesystemSnapshotPoliciesResultOutput {
 	return o
+}
+
+func (o GetFilesystemSnapshotPoliciesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFilesystemSnapshotPoliciesResult] {
+	return pulumix.Output[GetFilesystemSnapshotPoliciesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The availability domain that the file system snapshot policy is in. May be unset using a blank or NULL value.  Example: `Uocm:PHX-AD-2`

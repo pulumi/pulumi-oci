@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Audit Profile resource in Oracle Cloud Infrastructure Data Safe service.
@@ -263,6 +264,12 @@ func (i *AuditProfile) ToAuditProfileOutputWithContext(ctx context.Context) Audi
 	return pulumi.ToOutputWithContext(ctx, i).(AuditProfileOutput)
 }
 
+func (i *AuditProfile) ToOutput(ctx context.Context) pulumix.Output[*AuditProfile] {
+	return pulumix.Output[*AuditProfile]{
+		OutputState: i.ToAuditProfileOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AuditProfileArrayInput is an input type that accepts AuditProfileArray and AuditProfileArrayOutput values.
 // You can construct a concrete instance of `AuditProfileArrayInput` via:
 //
@@ -286,6 +293,12 @@ func (i AuditProfileArray) ToAuditProfileArrayOutput() AuditProfileArrayOutput {
 
 func (i AuditProfileArray) ToAuditProfileArrayOutputWithContext(ctx context.Context) AuditProfileArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AuditProfileArrayOutput)
+}
+
+func (i AuditProfileArray) ToOutput(ctx context.Context) pulumix.Output[[]*AuditProfile] {
+	return pulumix.Output[[]*AuditProfile]{
+		OutputState: i.ToAuditProfileArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // AuditProfileMapInput is an input type that accepts AuditProfileMap and AuditProfileMapOutput values.
@@ -313,6 +326,12 @@ func (i AuditProfileMap) ToAuditProfileMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(AuditProfileMapOutput)
 }
 
+func (i AuditProfileMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AuditProfile] {
+	return pulumix.Output[map[string]*AuditProfile]{
+		OutputState: i.ToAuditProfileMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AuditProfileOutput struct{ *pulumi.OutputState }
 
 func (AuditProfileOutput) ElementType() reflect.Type {
@@ -325,6 +344,12 @@ func (o AuditProfileOutput) ToAuditProfileOutput() AuditProfileOutput {
 
 func (o AuditProfileOutput) ToAuditProfileOutputWithContext(ctx context.Context) AuditProfileOutput {
 	return o
+}
+
+func (o AuditProfileOutput) ToOutput(ctx context.Context) pulumix.Output[*AuditProfile] {
+	return pulumix.Output[*AuditProfile]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Indicates number of audit records collected by Data Safe in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
@@ -439,6 +464,12 @@ func (o AuditProfileArrayOutput) ToAuditProfileArrayOutputWithContext(ctx contex
 	return o
 }
 
+func (o AuditProfileArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AuditProfile] {
+	return pulumix.Output[[]*AuditProfile]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AuditProfileArrayOutput) Index(i pulumi.IntInput) AuditProfileOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AuditProfile {
 		return vs[0].([]*AuditProfile)[vs[1].(int)]
@@ -457,6 +488,12 @@ func (o AuditProfileMapOutput) ToAuditProfileMapOutput() AuditProfileMapOutput {
 
 func (o AuditProfileMapOutput) ToAuditProfileMapOutputWithContext(ctx context.Context) AuditProfileMapOutput {
 	return o
+}
+
+func (o AuditProfileMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AuditProfile] {
+	return pulumix.Output[map[string]*AuditProfile]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AuditProfileMapOutput) MapIndex(k pulumi.StringInput) AuditProfileOutput {

@@ -70,7 +70,7 @@ public class ManagementDashboardsImport extends com.pulumi.resources.CustomResou
      * Array of Dashboards to import. The `import_details` is mandatory if `import_details_path` is not passed. Value should be stringified JSON of [ManagementDashboardImportDetails](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/managementdashboard/20200901/ManagementDashboardImportDetails/)
      * 
      */
-    @Export(name="importDetails", type=String.class, parameters={})
+    @Export(name="importDetails", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> importDetails;
 
     /**
@@ -80,7 +80,7 @@ public class ManagementDashboardsImport extends com.pulumi.resources.CustomResou
     public Output<Optional<String>> importDetails() {
         return Codegen.optional(this.importDetails);
     }
-    @Export(name="importDetailsFile", type=String.class, parameters={})
+    @Export(name="importDetailsFile", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> importDetailsFile;
 
     public Output<Optional<String>> importDetailsFile() {

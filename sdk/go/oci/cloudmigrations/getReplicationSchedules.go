@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Replication Schedules in Oracle Cloud Infrastructure Cloud Migrations service.
@@ -125,6 +126,12 @@ func (o GetReplicationSchedulesResultOutput) ToGetReplicationSchedulesResultOutp
 
 func (o GetReplicationSchedulesResultOutput) ToGetReplicationSchedulesResultOutputWithContext(ctx context.Context) GetReplicationSchedulesResultOutput {
 	return o
+}
+
+func (o GetReplicationSchedulesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetReplicationSchedulesResult] {
+	return pulumix.Output[GetReplicationSchedulesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the replication schedule exists.

@@ -69,7 +69,7 @@ public class EmailDomain extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DKIM key that will be used to sign mail sent from this email domain.
      * 
      */
-    @Export(name="activeDkimId", type=String.class, parameters={})
+    @Export(name="activeDkimId", refs={String.class}, tree="[0]")
     private Output<String> activeDkimId;
 
     /**
@@ -83,7 +83,7 @@ public class EmailDomain extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this email domain.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -97,7 +97,7 @@ public class EmailDomain extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -111,7 +111,7 @@ public class EmailDomain extends com.pulumi.resources.CustomResource {
      * (Updatable) A string that describes the details about the domain. It does not have to be unique, and you can change it. Avoid entering confidential information.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -125,7 +125,7 @@ public class EmailDomain extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -139,7 +139,7 @@ public class EmailDomain extends com.pulumi.resources.CustomResource {
      * Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
      * 
      */
-    @Export(name="isSpf", type=Boolean.class, parameters={})
+    @Export(name="isSpf", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isSpf;
 
     /**
@@ -156,7 +156,7 @@ public class EmailDomain extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -173,7 +173,7 @@ public class EmailDomain extends com.pulumi.resources.CustomResource {
      * The current state of the email domain.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -187,7 +187,7 @@ public class EmailDomain extends com.pulumi.resources.CustomResource {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -201,7 +201,7 @@ public class EmailDomain extends com.pulumi.resources.CustomResource {
      * The time the email domain was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, &#34;YYYY-MM-ddThh:mmZ&#34;.  Example: `2021-02-12T22:47:12.613Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**

@@ -103,7 +103,7 @@ public class Config extends com.pulumi.resources.CustomResource {
      * (Updatable) The APM Domain ID the request is intended for.
      * 
      */
-    @Export(name="apmDomainId", type=String.class, parameters={})
+    @Export(name="apmDomainId", refs={String.class}, tree="[0]")
     private Output<String> apmDomainId;
 
     /**
@@ -117,7 +117,7 @@ public class Config extends com.pulumi.resources.CustomResource {
      * (Updatable) The type of configuration item.
      * 
      */
-    @Export(name="configType", type=String.class, parameters={})
+    @Export(name="configType", refs={String.class}, tree="[0]")
     private Output<String> configType;
 
     /**
@@ -131,7 +131,7 @@ public class Config extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
      * 
      */
-    @Export(name="createdBy", type=String.class, parameters={})
+    @Export(name="createdBy", refs={String.class}, tree="[0]")
     private Output<String> createdBy;
 
     /**
@@ -145,7 +145,7 @@ public class Config extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -159,7 +159,7 @@ public class Config extends com.pulumi.resources.CustomResource {
      * (Updatable) A description of the metric.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -173,7 +173,7 @@ public class Config extends com.pulumi.resources.CustomResource {
      * (Updatable) A list of dimensions for the metric. This variable should not be used.
      * 
      */
-    @Export(name="dimensions", type=List.class, parameters={ConfigDimension.class})
+    @Export(name="dimensions", refs={List.class,ConfigDimension.class}, tree="[0,1]")
     private Output<List<ConfigDimension>> dimensions;
 
     /**
@@ -187,7 +187,7 @@ public class Config extends com.pulumi.resources.CustomResource {
      * (Updatable) The name by which a configuration entity is displayed to the end user.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -201,7 +201,7 @@ public class Config extends com.pulumi.resources.CustomResource {
      * For optimistic concurrency control. See `if-match`.
      * 
      */
-    @Export(name="etag", type=String.class, parameters={})
+    @Export(name="etag", refs={String.class}, tree="[0]")
     private Output<String> etag;
 
     /**
@@ -215,7 +215,7 @@ public class Config extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
      * 
      */
-    @Export(name="filterId", type=String.class, parameters={})
+    @Export(name="filterId", refs={String.class}, tree="[0]")
     private Output<String> filterId;
 
     /**
@@ -229,7 +229,7 @@ public class Config extends com.pulumi.resources.CustomResource {
      * (Updatable) The string that defines the Span Filter expression.
      * 
      */
-    @Export(name="filterText", type=String.class, parameters={})
+    @Export(name="filterText", refs={String.class}, tree="[0]")
     private Output<String> filterText;
 
     /**
@@ -243,7 +243,7 @@ public class Config extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -257,7 +257,7 @@ public class Config extends com.pulumi.resources.CustomResource {
      * (Updatable) A string that specifies the group that an OPTIONS item belongs to.
      * 
      */
-    @Export(name="group", type=String.class, parameters={})
+    @Export(name="group", refs={String.class}, tree="[0]")
     private Output<String> group;
 
     /**
@@ -271,7 +271,7 @@ public class Config extends com.pulumi.resources.CustomResource {
      * The list of configuration items that reference the span filter.
      * 
      */
-    @Export(name="inUseBies", type=List.class, parameters={ConfigInUseBy.class})
+    @Export(name="inUseBies", refs={List.class,ConfigInUseBy.class}, tree="[0,1]")
     private Output<List<ConfigInUseBy>> inUseBies;
 
     /**
@@ -285,7 +285,7 @@ public class Config extends com.pulumi.resources.CustomResource {
      * (Updatable) The list of metrics in this group.
      * 
      */
-    @Export(name="metrics", type=List.class, parameters={ConfigMetric.class})
+    @Export(name="metrics", refs={List.class,ConfigMetric.class}, tree="[0,1]")
     private Output<List<ConfigMetric>> metrics;
 
     /**
@@ -299,7 +299,7 @@ public class Config extends com.pulumi.resources.CustomResource {
      * (Updatable) The namespace to which the metrics are published. It must be one of several predefined namespaces.
      * 
      */
-    @Export(name="namespace", type=String.class, parameters={})
+    @Export(name="namespace", refs={String.class}, tree="[0]")
     private Output<String> namespace;
 
     /**
@@ -313,7 +313,7 @@ public class Config extends com.pulumi.resources.CustomResource {
      * (Updatable) Indicates that the request is a dry run, if set to &#34;true&#34;. A dry run request does not modify the configuration item details and is used only to perform validation on the submitted data.
      * 
      */
-    @Export(name="opcDryRun", type=String.class, parameters={})
+    @Export(name="opcDryRun", refs={String.class}, tree="[0]")
     private Output<String> opcDryRun;
 
     /**
@@ -327,7 +327,7 @@ public class Config extends com.pulumi.resources.CustomResource {
      * (Updatable) The options are stored here as JSON.
      * 
      */
-    @Export(name="options", type=String.class, parameters={})
+    @Export(name="options", refs={String.class}, tree="[0]")
     private Output<String> options;
 
     /**
@@ -341,7 +341,7 @@ public class Config extends com.pulumi.resources.CustomResource {
      * (Updatable)
      * 
      */
-    @Export(name="rules", type=List.class, parameters={ConfigRule.class})
+    @Export(name="rules", refs={List.class,ConfigRule.class}, tree="[0,1]")
     private Output<List<ConfigRule>> rules;
 
     /**
@@ -355,7 +355,7 @@ public class Config extends com.pulumi.resources.CustomResource {
      * The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -369,7 +369,7 @@ public class Config extends com.pulumi.resources.CustomResource {
      * The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -383,7 +383,7 @@ public class Config extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
      * 
      */
-    @Export(name="updatedBy", type=String.class, parameters={})
+    @Export(name="updatedBy", refs={String.class}, tree="[0]")
     private Output<String> updatedBy;
 
     /**

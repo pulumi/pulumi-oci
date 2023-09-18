@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Script resource in Oracle Cloud Infrastructure Apm Synthetics service.
@@ -129,6 +130,12 @@ func (o LookupScriptResultOutput) ToLookupScriptResultOutput() LookupScriptResul
 
 func (o LookupScriptResultOutput) ToLookupScriptResultOutputWithContext(ctx context.Context) LookupScriptResultOutput {
 	return o
+}
+
+func (o LookupScriptResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupScriptResult] {
+	return pulumix.Output[LookupScriptResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o LookupScriptResultOutput) ApmDomainId() pulumi.StringOutput {

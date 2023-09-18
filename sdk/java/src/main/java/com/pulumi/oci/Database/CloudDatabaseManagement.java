@@ -75,7 +75,7 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:Database/cloudDatabaseManagement:CloudDatabaseManagement")
 public class CloudDatabaseManagement extends com.pulumi.resources.CustomResource {
-    @Export(name="credentialdetails", type=CloudDatabaseManagementCredentialdetails.class, parameters={})
+    @Export(name="credentialdetails", refs={CloudDatabaseManagementCredentialdetails.class}, tree="[0]")
     private Output<CloudDatabaseManagementCredentialdetails> credentialdetails;
 
     public Output<CloudDatabaseManagementCredentialdetails> credentialdetails() {
@@ -85,7 +85,7 @@ public class CloudDatabaseManagement extends com.pulumi.resources.CustomResource
      * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    @Export(name="databaseId", type=String.class, parameters={})
+    @Export(name="databaseId", refs={String.class}, tree="[0]")
     private Output<String> databaseId;
 
     /**
@@ -102,7 +102,7 @@ public class CloudDatabaseManagement extends com.pulumi.resources.CustomResource
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="enableManagement", type=Boolean.class, parameters={})
+    @Export(name="enableManagement", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableManagement;
 
     /**
@@ -120,7 +120,7 @@ public class CloudDatabaseManagement extends com.pulumi.resources.CustomResource
      * enum:
      * 
      */
-    @Export(name="managementType", type=String.class, parameters={})
+    @Export(name="managementType", refs={String.class}, tree="[0]")
     private Output<String> managementType;
 
     /**
@@ -135,7 +135,7 @@ public class CloudDatabaseManagement extends com.pulumi.resources.CustomResource
      * The port used to connect to the database.
      * 
      */
-    @Export(name="port", type=Integer.class, parameters={})
+    @Export(name="port", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> port;
 
     /**
@@ -149,7 +149,7 @@ public class CloudDatabaseManagement extends com.pulumi.resources.CustomResource
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
      * 
      */
-    @Export(name="privateEndPointId", type=String.class, parameters={})
+    @Export(name="privateEndPointId", refs={String.class}, tree="[0]")
     private Output<String> privateEndPointId;
 
     /**
@@ -163,7 +163,7 @@ public class CloudDatabaseManagement extends com.pulumi.resources.CustomResource
      * Protocol used by the database connection.
      * 
      */
-    @Export(name="protocol", type=String.class, parameters={})
+    @Export(name="protocol", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> protocol;
 
     /**
@@ -177,7 +177,7 @@ public class CloudDatabaseManagement extends com.pulumi.resources.CustomResource
      * The role of the user that will be connecting to the database.
      * 
      */
-    @Export(name="role", type=String.class, parameters={})
+    @Export(name="role", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> role;
 
     /**
@@ -191,7 +191,7 @@ public class CloudDatabaseManagement extends com.pulumi.resources.CustomResource
      * The name of the Oracle Database service that will be used to connect to the database.
      * 
      */
-    @Export(name="serviceName", type=String.class, parameters={})
+    @Export(name="serviceName", refs={String.class}, tree="[0]")
     private Output<String> serviceName;
 
     /**
@@ -205,7 +205,7 @@ public class CloudDatabaseManagement extends com.pulumi.resources.CustomResource
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
-    @Export(name="sslSecretId", type=String.class, parameters={})
+    @Export(name="sslSecretId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> sslSecretId;
 
     /**

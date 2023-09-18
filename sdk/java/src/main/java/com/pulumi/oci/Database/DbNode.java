@@ -36,7 +36,7 @@ public class DbNode extends com.pulumi.resources.CustomResource {
      * Additional information about the planned maintenance.
      * 
      */
-    @Export(name="additionalDetails", type=String.class, parameters={})
+    @Export(name="additionalDetails", refs={String.class}, tree="[0]")
     private Output<String> additionalDetails;
 
     /**
@@ -50,7 +50,7 @@ public class DbNode extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IP address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
      * 
      */
-    @Export(name="backupIpId", type=String.class, parameters={})
+    @Export(name="backupIpId", refs={String.class}, tree="[0]")
     private Output<String> backupIpId;
 
     /**
@@ -64,7 +64,7 @@ public class DbNode extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second backup VNIC.
      * 
      */
-    @Export(name="backupVnic2id", type=String.class, parameters={})
+    @Export(name="backupVnic2id", refs={String.class}, tree="[0]")
     private Output<String> backupVnic2id;
 
     /**
@@ -78,7 +78,7 @@ public class DbNode extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup VNIC.
      * 
      */
-    @Export(name="backupVnicId", type=String.class, parameters={})
+    @Export(name="backupVnicId", refs={String.class}, tree="[0]")
     private Output<String> backupVnicId;
 
     /**
@@ -92,7 +92,7 @@ public class DbNode extends com.pulumi.resources.CustomResource {
      * The number of CPU cores enabled on the Db node.
      * 
      */
-    @Export(name="cpuCoreCount", type=Integer.class, parameters={})
+    @Export(name="cpuCoreCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> cpuCoreCount;
 
     /**
@@ -106,7 +106,7 @@ public class DbNode extends com.pulumi.resources.CustomResource {
      * The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    @Export(name="dbNodeId", type=String.class, parameters={})
+    @Export(name="dbNodeId", refs={String.class}, tree="[0]")
     private Output<String> dbNodeId;
 
     /**
@@ -120,7 +120,7 @@ public class DbNode extends com.pulumi.resources.CustomResource {
      * The allocated local node storage in GBs on the Db node.
      * 
      */
-    @Export(name="dbNodeStorageSizeInGbs", type=Integer.class, parameters={})
+    @Export(name="dbNodeStorageSizeInGbs", refs={Integer.class}, tree="[0]")
     private Output<Integer> dbNodeStorageSizeInGbs;
 
     /**
@@ -134,7 +134,7 @@ public class DbNode extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exacc Db server associated with the database node.
      * 
      */
-    @Export(name="dbServerId", type=String.class, parameters={})
+    @Export(name="dbServerId", refs={String.class}, tree="[0]")
     private Output<String> dbServerId;
 
     /**
@@ -148,7 +148,7 @@ public class DbNode extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      * 
      */
-    @Export(name="dbSystemId", type=String.class, parameters={})
+    @Export(name="dbSystemId", refs={String.class}, tree="[0]")
     private Output<String> dbSystemId;
 
     /**
@@ -162,7 +162,7 @@ public class DbNode extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -176,7 +176,7 @@ public class DbNode extends com.pulumi.resources.CustomResource {
      * The name of the Fault Domain the instance is contained in.
      * 
      */
-    @Export(name="faultDomain", type=String.class, parameters={})
+    @Export(name="faultDomain", refs={String.class}, tree="[0]")
     private Output<String> faultDomain;
 
     /**
@@ -193,7 +193,7 @@ public class DbNode extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -210,7 +210,7 @@ public class DbNode extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the  [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
      * 
      */
-    @Export(name="hostIpId", type=String.class, parameters={})
+    @Export(name="hostIpId", refs={String.class}, tree="[0]")
     private Output<String> hostIpId;
 
     /**
@@ -224,7 +224,7 @@ public class DbNode extends com.pulumi.resources.CustomResource {
      * The host name for the database node.
      * 
      */
-    @Export(name="hostname", type=String.class, parameters={})
+    @Export(name="hostname", refs={String.class}, tree="[0]")
     private Output<String> hostname;
 
     /**
@@ -238,7 +238,7 @@ public class DbNode extends com.pulumi.resources.CustomResource {
      * Information about the current lifecycle state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -252,7 +252,7 @@ public class DbNode extends com.pulumi.resources.CustomResource {
      * The type of database node maintenance.
      * 
      */
-    @Export(name="maintenanceType", type=String.class, parameters={})
+    @Export(name="maintenanceType", refs={String.class}, tree="[0]")
     private Output<String> maintenanceType;
 
     /**
@@ -266,7 +266,7 @@ public class DbNode extends com.pulumi.resources.CustomResource {
      * The allocated memory in GBs on the Db node.
      * 
      */
-    @Export(name="memorySizeInGbs", type=Integer.class, parameters={})
+    @Export(name="memorySizeInGbs", refs={Integer.class}, tree="[0]")
     private Output<Integer> memorySizeInGbs;
 
     /**
@@ -280,7 +280,7 @@ public class DbNode extends com.pulumi.resources.CustomResource {
      * The size (in GB) of the block storage volume allocation for the DB system. This attribute applies only for virtual machine DB systems.
      * 
      */
-    @Export(name="softwareStorageSizeInGb", type=Integer.class, parameters={})
+    @Export(name="softwareStorageSizeInGb", refs={Integer.class}, tree="[0]")
     private Output<Integer> softwareStorageSizeInGb;
 
     /**
@@ -294,7 +294,7 @@ public class DbNode extends com.pulumi.resources.CustomResource {
      * The current state of the database node.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -308,7 +308,7 @@ public class DbNode extends com.pulumi.resources.CustomResource {
      * The date and time that the database node was created.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -322,7 +322,7 @@ public class DbNode extends com.pulumi.resources.CustomResource {
      * End date and time of maintenance window.
      * 
      */
-    @Export(name="timeMaintenanceWindowEnd", type=String.class, parameters={})
+    @Export(name="timeMaintenanceWindowEnd", refs={String.class}, tree="[0]")
     private Output<String> timeMaintenanceWindowEnd;
 
     /**
@@ -336,7 +336,7 @@ public class DbNode extends com.pulumi.resources.CustomResource {
      * Start date and time of maintenance window.
      * 
      */
-    @Export(name="timeMaintenanceWindowStart", type=String.class, parameters={})
+    @Export(name="timeMaintenanceWindowStart", refs={String.class}, tree="[0]")
     private Output<String> timeMaintenanceWindowStart;
 
     /**
@@ -350,7 +350,7 @@ public class DbNode extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second VNIC.
      * 
      */
-    @Export(name="vnic2id", type=String.class, parameters={})
+    @Export(name="vnic2id", refs={String.class}, tree="[0]")
     private Output<String> vnic2id;
 
     /**
@@ -364,7 +364,7 @@ public class DbNode extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
      * 
      */
-    @Export(name="vnicId", type=String.class, parameters={})
+    @Export(name="vnicId", refs={String.class}, tree="[0]")
     private Output<String> vnicId;
 
     /**

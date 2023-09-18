@@ -91,7 +91,7 @@ public class Function extends com.pulumi.resources.CustomResource {
      * The OCID of the application this function belongs to.
      * 
      */
-    @Export(name="applicationId", type=String.class, parameters={})
+    @Export(name="applicationId", refs={String.class}, tree="[0]")
     private Output<String> applicationId;
 
     /**
@@ -105,7 +105,7 @@ public class Function extends com.pulumi.resources.CustomResource {
      * The OCID of the compartment that contains the function.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -121,7 +121,7 @@ public class Function extends com.pulumi.resources.CustomResource {
      * The maximum size for all configuration keys and values is limited to 4KB. This is measured as the sum of octets necessary to represent each key and value in UTF-8.
      * 
      */
-    @Export(name="config", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="config", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> config;
 
     /**
@@ -137,7 +137,7 @@ public class Function extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -151,7 +151,7 @@ public class Function extends com.pulumi.resources.CustomResource {
      * The display name of the function. The display name must be unique within the application containing the function. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -165,7 +165,7 @@ public class Function extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -179,7 +179,7 @@ public class Function extends com.pulumi.resources.CustomResource {
      * (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if image_digest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
      * 
      */
-    @Export(name="image", type=String.class, parameters={})
+    @Export(name="image", refs={String.class}, tree="[0]")
     private Output<String> image;
 
     /**
@@ -193,7 +193,7 @@ public class Function extends com.pulumi.resources.CustomResource {
      * (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. This field must be updated if image is updated. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
      * 
      */
-    @Export(name="imageDigest", type=String.class, parameters={})
+    @Export(name="imageDigest", refs={String.class}, tree="[0]")
     private Output<String> imageDigest;
 
     /**
@@ -207,7 +207,7 @@ public class Function extends com.pulumi.resources.CustomResource {
      * The base https invoke URL to set on a client in order to invoke a function. This URL will never change over the lifetime of the function and can be cached.
      * 
      */
-    @Export(name="invokeEndpoint", type=String.class, parameters={})
+    @Export(name="invokeEndpoint", refs={String.class}, tree="[0]")
     private Output<String> invokeEndpoint;
 
     /**
@@ -221,7 +221,7 @@ public class Function extends com.pulumi.resources.CustomResource {
      * (Updatable) Maximum usable memory for the function (MiB).
      * 
      */
-    @Export(name="memoryInMbs", type=String.class, parameters={})
+    @Export(name="memoryInMbs", refs={String.class}, tree="[0]")
     private Output<String> memoryInMbs;
 
     /**
@@ -235,7 +235,7 @@ public class Function extends com.pulumi.resources.CustomResource {
      * (Updatable) Define the strategy for provisioned concurrency for the function.
      * 
      */
-    @Export(name="provisionedConcurrencyConfig", type=FunctionProvisionedConcurrencyConfig.class, parameters={})
+    @Export(name="provisionedConcurrencyConfig", refs={FunctionProvisionedConcurrencyConfig.class}, tree="[0]")
     private Output<FunctionProvisionedConcurrencyConfig> provisionedConcurrencyConfig;
 
     /**
@@ -249,7 +249,7 @@ public class Function extends com.pulumi.resources.CustomResource {
      * The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
      * 
      */
-    @Export(name="shape", type=String.class, parameters={})
+    @Export(name="shape", refs={String.class}, tree="[0]")
     private Output<String> shape;
 
     /**
@@ -263,7 +263,7 @@ public class Function extends com.pulumi.resources.CustomResource {
      * The source details for the Function. The function can be created from various sources.
      * 
      */
-    @Export(name="sourceDetails", type=FunctionSourceDetails.class, parameters={})
+    @Export(name="sourceDetails", refs={FunctionSourceDetails.class}, tree="[0]")
     private Output<FunctionSourceDetails> sourceDetails;
 
     /**
@@ -277,7 +277,7 @@ public class Function extends com.pulumi.resources.CustomResource {
      * The current state of the function.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -291,7 +291,7 @@ public class Function extends com.pulumi.resources.CustomResource {
      * The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -305,7 +305,7 @@ public class Function extends com.pulumi.resources.CustomResource {
      * The time the function was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -319,7 +319,7 @@ public class Function extends com.pulumi.resources.CustomResource {
      * (Updatable) Timeout for executions of the function. Value in seconds.
      * 
      */
-    @Export(name="timeoutInSeconds", type=Integer.class, parameters={})
+    @Export(name="timeoutInSeconds", refs={Integer.class}, tree="[0]")
     private Output<Integer> timeoutInSeconds;
 
     /**
@@ -333,7 +333,7 @@ public class Function extends com.pulumi.resources.CustomResource {
      * (Updatable) Define the tracing configuration for a function.
      * 
      */
-    @Export(name="traceConfig", type=FunctionTraceConfig.class, parameters={})
+    @Export(name="traceConfig", refs={FunctionTraceConfig.class}, tree="[0]")
     private Output<FunctionTraceConfig> traceConfig;
 
     /**

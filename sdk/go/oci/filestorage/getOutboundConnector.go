@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Outbound Connector resource in Oracle Cloud Infrastructure File Storage service.
@@ -123,6 +124,12 @@ func (o LookupOutboundConnectorResultOutput) ToLookupOutboundConnectorResultOutp
 
 func (o LookupOutboundConnectorResultOutput) ToLookupOutboundConnectorResultOutputWithContext(ctx context.Context) LookupOutboundConnectorResultOutput {
 	return o
+}
+
+func (o LookupOutboundConnectorResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupOutboundConnectorResult] {
+	return pulumix.Output[LookupOutboundConnectorResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The availability domain the outbound connector is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`

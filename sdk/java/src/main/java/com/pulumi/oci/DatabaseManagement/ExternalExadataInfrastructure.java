@@ -79,7 +79,7 @@ public class ExternalExadataInfrastructure extends com.pulumi.resources.CustomRe
      * The additional details of the resource defined in `{&#34;key&#34;: &#34;value&#34;}` format. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="additionalDetails", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="additionalDetails", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> additionalDetails;
 
     /**
@@ -93,7 +93,7 @@ public class ExternalExadataInfrastructure extends com.pulumi.resources.CustomRe
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -107,7 +107,7 @@ public class ExternalExadataInfrastructure extends com.pulumi.resources.CustomRe
      * The list of [OCIDs] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
      * 
      */
-    @Export(name="databaseCompartments", type=List.class, parameters={String.class})
+    @Export(name="databaseCompartments", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> databaseCompartments;
 
     /**
@@ -121,7 +121,7 @@ public class ExternalExadataInfrastructure extends com.pulumi.resources.CustomRe
      * A list of DB systems.
      * 
      */
-    @Export(name="databaseSystems", type=List.class, parameters={ExternalExadataInfrastructureDatabaseSystem.class})
+    @Export(name="databaseSystems", refs={List.class,ExternalExadataInfrastructureDatabaseSystem.class}, tree="[0,1]")
     private Output<List<ExternalExadataInfrastructureDatabaseSystem>> databaseSystems;
 
     /**
@@ -135,7 +135,7 @@ public class ExternalExadataInfrastructure extends com.pulumi.resources.CustomRe
      * (Updatable) The list of DB systems in the Exadata infrastructure.
      * 
      */
-    @Export(name="dbSystemIds", type=List.class, parameters={String.class})
+    @Export(name="dbSystemIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> dbSystemIds;
 
     /**
@@ -149,7 +149,7 @@ public class ExternalExadataInfrastructure extends com.pulumi.resources.CustomRe
      * (Updatable) The unique key of the discovery request.
      * 
      */
-    @Export(name="discoveryKey", type=String.class, parameters={})
+    @Export(name="discoveryKey", refs={String.class}, tree="[0]")
     private Output<String> discoveryKey;
 
     /**
@@ -163,7 +163,7 @@ public class ExternalExadataInfrastructure extends com.pulumi.resources.CustomRe
      * (Updatable) The name of the Exadata infrastructure.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -177,7 +177,7 @@ public class ExternalExadataInfrastructure extends com.pulumi.resources.CustomRe
      * The internal ID of the Exadata resource.
      * 
      */
-    @Export(name="internalId", type=String.class, parameters={})
+    @Export(name="internalId", refs={String.class}, tree="[0]")
     private Output<String> internalId;
 
     /**
@@ -191,7 +191,7 @@ public class ExternalExadataInfrastructure extends com.pulumi.resources.CustomRe
      * (Updatable) The Oracle license model that applies to the database management resources.
      * 
      */
-    @Export(name="licenseModel", type=String.class, parameters={})
+    @Export(name="licenseModel", refs={String.class}, tree="[0]")
     private Output<String> licenseModel;
 
     /**
@@ -205,7 +205,7 @@ public class ExternalExadataInfrastructure extends com.pulumi.resources.CustomRe
      * The details of the lifecycle state of the Exadata resource.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -219,7 +219,7 @@ public class ExternalExadataInfrastructure extends com.pulumi.resources.CustomRe
      * The rack size of the Exadata infrastructure.
      * 
      */
-    @Export(name="rackSize", type=String.class, parameters={})
+    @Export(name="rackSize", refs={String.class}, tree="[0]")
     private Output<String> rackSize;
 
     /**
@@ -233,7 +233,7 @@ public class ExternalExadataInfrastructure extends com.pulumi.resources.CustomRe
      * The current lifecycle state of the database resource.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -247,7 +247,7 @@ public class ExternalExadataInfrastructure extends com.pulumi.resources.CustomRe
      * The status of the Exadata resource.
      * 
      */
-    @Export(name="status", type=String.class, parameters={})
+    @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
@@ -261,7 +261,7 @@ public class ExternalExadataInfrastructure extends com.pulumi.resources.CustomRe
      * The Exadata storage server grid of the Exadata infrastructure.
      * 
      */
-    @Export(name="storageGrids", type=List.class, parameters={ExternalExadataInfrastructureStorageGrid.class})
+    @Export(name="storageGrids", refs={List.class,ExternalExadataInfrastructureStorageGrid.class}, tree="[0,1]")
     private Output<List<ExternalExadataInfrastructureStorageGrid>> storageGrids;
 
     /**
@@ -278,7 +278,7 @@ public class ExternalExadataInfrastructure extends com.pulumi.resources.CustomRe
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="storageServerNames", type=List.class, parameters={String.class})
+    @Export(name="storageServerNames", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> storageServerNames;
 
     /**
@@ -295,7 +295,7 @@ public class ExternalExadataInfrastructure extends com.pulumi.resources.CustomRe
      * The timestamp of the creation of the Exadata resource.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -309,7 +309,7 @@ public class ExternalExadataInfrastructure extends com.pulumi.resources.CustomRe
      * The timestamp of the last update of the Exadata resource.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -323,7 +323,7 @@ public class ExternalExadataInfrastructure extends com.pulumi.resources.CustomRe
      * The version of the Exadata resource.
      * 
      */
-    @Export(name="version", type=String.class, parameters={})
+    @Export(name="version", refs={String.class}, tree="[0]")
     private Output<String> version;
 
     /**

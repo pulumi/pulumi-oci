@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Fusion Environment Data Masking Activity resource in Oracle Cloud Infrastructure Fusion Apps service.
@@ -113,6 +114,12 @@ func (o GetFusionEnvironmentDataMaskingActivityResultOutput) ToGetFusionEnvironm
 
 func (o GetFusionEnvironmentDataMaskingActivityResultOutput) ToGetFusionEnvironmentDataMaskingActivityResultOutputWithContext(ctx context.Context) GetFusionEnvironmentDataMaskingActivityResultOutput {
 	return o
+}
+
+func (o GetFusionEnvironmentDataMaskingActivityResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentDataMaskingActivityResult] {
+	return pulumix.Output[GetFusionEnvironmentDataMaskingActivityResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetFusionEnvironmentDataMaskingActivityResultOutput) DataMaskingActivityId() pulumi.StringOutput {

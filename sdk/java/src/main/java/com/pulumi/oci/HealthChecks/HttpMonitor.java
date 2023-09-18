@@ -83,7 +83,7 @@ public class HttpMonitor extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -97,7 +97,7 @@ public class HttpMonitor extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -111,7 +111,7 @@ public class HttpMonitor extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-friendly and mutable name suitable for display in a user interface.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -125,7 +125,7 @@ public class HttpMonitor extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -141,7 +141,7 @@ public class HttpMonitor extends com.pulumi.resources.CustomResource {
      * *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
      * 
      */
-    @Export(name="headers", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="headers", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> headers;
 
     /**
@@ -157,7 +157,7 @@ public class HttpMonitor extends com.pulumi.resources.CustomResource {
      * The region where updates must be made and where results must be fetched from.
      * 
      */
-    @Export(name="homeRegion", type=String.class, parameters={})
+    @Export(name="homeRegion", refs={String.class}, tree="[0]")
     private Output<String> homeRegion;
 
     /**
@@ -171,7 +171,7 @@ public class HttpMonitor extends com.pulumi.resources.CustomResource {
      * (Updatable) The monitor interval in seconds. Valid values: 10, 30, and 60.
      * 
      */
-    @Export(name="intervalInSeconds", type=Integer.class, parameters={})
+    @Export(name="intervalInSeconds", refs={Integer.class}, tree="[0]")
     private Output<Integer> intervalInSeconds;
 
     /**
@@ -185,7 +185,7 @@ public class HttpMonitor extends com.pulumi.resources.CustomResource {
      * (Updatable) Enables or disables the monitor. Set to &#39;true&#39; to launch monitoring.
      * 
      */
-    @Export(name="isEnabled", type=Boolean.class, parameters={})
+    @Export(name="isEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isEnabled;
 
     /**
@@ -199,7 +199,7 @@ public class HttpMonitor extends com.pulumi.resources.CustomResource {
      * (Updatable) The supported HTTP methods available for probes.
      * 
      */
-    @Export(name="method", type=String.class, parameters={})
+    @Export(name="method", refs={String.class}, tree="[0]")
     private Output<String> method;
 
     /**
@@ -213,7 +213,7 @@ public class HttpMonitor extends com.pulumi.resources.CustomResource {
      * (Updatable) The optional URL path to probe, including query parameters.
      * 
      */
-    @Export(name="path", type=String.class, parameters={})
+    @Export(name="path", refs={String.class}, tree="[0]")
     private Output<String> path;
 
     /**
@@ -227,7 +227,7 @@ public class HttpMonitor extends com.pulumi.resources.CustomResource {
      * (Updatable) The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
      * 
      */
-    @Export(name="port", type=Integer.class, parameters={})
+    @Export(name="port", refs={Integer.class}, tree="[0]")
     private Output<Integer> port;
 
     /**
@@ -241,7 +241,7 @@ public class HttpMonitor extends com.pulumi.resources.CustomResource {
      * (Updatable) The supported protocols available for HTTP probes.
      * 
      */
-    @Export(name="protocol", type=String.class, parameters={})
+    @Export(name="protocol", refs={String.class}, tree="[0]")
     private Output<String> protocol;
 
     /**
@@ -255,7 +255,7 @@ public class HttpMonitor extends com.pulumi.resources.CustomResource {
      * A URL for fetching the probe results.
      * 
      */
-    @Export(name="resultsUrl", type=String.class, parameters={})
+    @Export(name="resultsUrl", refs={String.class}, tree="[0]")
     private Output<String> resultsUrl;
 
     /**
@@ -269,7 +269,7 @@ public class HttpMonitor extends com.pulumi.resources.CustomResource {
      * (Updatable) A list of targets (hostnames or IP addresses) of the probe.
      * 
      */
-    @Export(name="targets", type=List.class, parameters={String.class})
+    @Export(name="targets", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> targets;
 
     /**
@@ -283,7 +283,7 @@ public class HttpMonitor extends com.pulumi.resources.CustomResource {
      * The RFC 3339-formatted creation date and time of the probe.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -297,7 +297,7 @@ public class HttpMonitor extends com.pulumi.resources.CustomResource {
      * (Updatable) The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
      * 
      */
-    @Export(name="timeoutInSeconds", type=Integer.class, parameters={})
+    @Export(name="timeoutInSeconds", refs={Integer.class}, tree="[0]")
     private Output<Integer> timeoutInSeconds;
 
     /**
@@ -314,7 +314,7 @@ public class HttpMonitor extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="vantagePointNames", type=List.class, parameters={String.class})
+    @Export(name="vantagePointNames", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> vantagePointNames;
 
     /**

@@ -81,7 +81,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID for the ai model&#39;s compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -95,7 +95,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -109,7 +109,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * (Updatable) A short description of the ai model.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -123,7 +123,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -137,7 +137,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -151,7 +151,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -165,7 +165,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * Specifies the details of the MSET model during the create call.
      * 
      */
-    @Export(name="modelTrainingDetails", type=ModelModelTrainingDetails.class, parameters={})
+    @Export(name="modelTrainingDetails", refs={ModelModelTrainingDetails.class}, tree="[0]")
     private Output<ModelModelTrainingDetails> modelTrainingDetails;
 
     /**
@@ -179,7 +179,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * Specifies the details for an Anomaly Detection model trained with MSET.
      * 
      */
-    @Export(name="modelTrainingResults", type=List.class, parameters={ModelModelTrainingResult.class})
+    @Export(name="modelTrainingResults", refs={List.class,ModelModelTrainingResult.class}, tree="[0,1]")
     private Output<List<ModelModelTrainingResult>> modelTrainingResults;
 
     /**
@@ -196,7 +196,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="projectId", type=String.class, parameters={})
+    @Export(name="projectId", refs={String.class}, tree="[0]")
     private Output<String> projectId;
 
     /**
@@ -213,7 +213,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * The state of the model.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -227,7 +227,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -241,7 +241,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * The time the the Model was created. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -255,7 +255,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * The time the Model was updated. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

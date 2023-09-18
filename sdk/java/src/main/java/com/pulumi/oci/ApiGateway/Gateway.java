@@ -97,7 +97,7 @@ public class Gateway extends com.pulumi.resources.CustomResource {
      * (Updatable) An array of CA bundles that should be used on the Gateway for TLS validation.
      * 
      */
-    @Export(name="caBundles", type=List.class, parameters={GatewayCaBundle.class})
+    @Export(name="caBundles", refs={List.class,GatewayCaBundle.class}, tree="[0,1]")
     private Output<List<GatewayCaBundle>> caBundles;
 
     /**
@@ -111,7 +111,7 @@ public class Gateway extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
      * 
      */
-    @Export(name="certificateId", type=String.class, parameters={})
+    @Export(name="certificateId", refs={String.class}, tree="[0]")
     private Output<String> certificateId;
 
     /**
@@ -125,7 +125,7 @@ public class Gateway extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -139,7 +139,7 @@ public class Gateway extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -153,7 +153,7 @@ public class Gateway extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.  Example: `My new resource`
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -167,7 +167,7 @@ public class Gateway extends com.pulumi.resources.CustomResource {
      * Gateway endpoint type. `PUBLIC` will have a public ip address assigned to it, while `PRIVATE` will only be accessible on a private IP address on the subnet.  Example: `PUBLIC` or `PRIVATE`
      * 
      */
-    @Export(name="endpointType", type=String.class, parameters={})
+    @Export(name="endpointType", refs={String.class}, tree="[0]")
     private Output<String> endpointType;
 
     /**
@@ -181,7 +181,7 @@ public class Gateway extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -195,7 +195,7 @@ public class Gateway extends com.pulumi.resources.CustomResource {
      * The hostname for APIs deployed on the gateway.
      * 
      */
-    @Export(name="hostname", type=String.class, parameters={})
+    @Export(name="hostname", refs={String.class}, tree="[0]")
     private Output<String> hostname;
 
     /**
@@ -209,7 +209,7 @@ public class Gateway extends com.pulumi.resources.CustomResource {
      * An array of IP addresses associated with the gateway.
      * 
      */
-    @Export(name="ipAddresses", type=List.class, parameters={GatewayIpAddress.class})
+    @Export(name="ipAddresses", refs={List.class,GatewayIpAddress.class}, tree="[0,1]")
     private Output<List<GatewayIpAddress>> ipAddresses;
 
     /**
@@ -223,7 +223,7 @@ public class Gateway extends com.pulumi.resources.CustomResource {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -237,7 +237,7 @@ public class Gateway extends com.pulumi.resources.CustomResource {
      * (Updatable) An array of Network Security Groups OCIDs associated with this API Gateway.
      * 
      */
-    @Export(name="networkSecurityGroupIds", type=List.class, parameters={String.class})
+    @Export(name="networkSecurityGroupIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> networkSecurityGroupIds;
 
     /**
@@ -251,7 +251,7 @@ public class Gateway extends com.pulumi.resources.CustomResource {
      * (Updatable) Base Gateway response cache.
      * 
      */
-    @Export(name="responseCacheDetails", type=GatewayResponseCacheDetails.class, parameters={})
+    @Export(name="responseCacheDetails", refs={GatewayResponseCacheDetails.class}, tree="[0]")
     private Output<GatewayResponseCacheDetails> responseCacheDetails;
 
     /**
@@ -265,7 +265,7 @@ public class Gateway extends com.pulumi.resources.CustomResource {
      * The current state of the gateway.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -282,7 +282,7 @@ public class Gateway extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="subnetId", type=String.class, parameters={})
+    @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
@@ -299,7 +299,7 @@ public class Gateway extends com.pulumi.resources.CustomResource {
      * The time this resource was created. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -313,7 +313,7 @@ public class Gateway extends com.pulumi.resources.CustomResource {
      * The time this resource was last updated. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

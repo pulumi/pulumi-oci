@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Osns in Oracle Cloud Infrastructure Blockchain service.
@@ -110,6 +111,12 @@ func (o GetOsnsResultOutput) ToGetOsnsResultOutput() GetOsnsResultOutput {
 
 func (o GetOsnsResultOutput) ToGetOsnsResultOutputWithContext(ctx context.Context) GetOsnsResultOutput {
 	return o
+}
+
+func (o GetOsnsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetOsnsResult] {
+	return pulumix.Output[GetOsnsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetOsnsResultOutput) BlockchainPlatformId() pulumi.StringOutput {

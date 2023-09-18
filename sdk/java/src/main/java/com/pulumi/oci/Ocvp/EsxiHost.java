@@ -42,7 +42,7 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
      * Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku` becomes the new `currentSKU` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="billingContractEndDate", type=String.class, parameters={})
+    @Export(name="billingContractEndDate", refs={String.class}, tree="[0]")
     private Output<String> billingContractEndDate;
 
     /**
@@ -56,7 +56,7 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
      * 
      */
-    @Export(name="billingDonorHostId", type=String.class, parameters={})
+    @Export(name="billingDonorHostId", refs={String.class}, tree="[0]")
     private Output<String> billingDonorHostId;
 
     /**
@@ -70,7 +70,7 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
      * 
      */
-    @Export(name="capacityReservationId", type=String.class, parameters={})
+    @Export(name="capacityReservationId", refs={String.class}, tree="[0]")
     private Output<String> capacityReservationId;
 
     /**
@@ -84,7 +84,7 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -98,7 +98,7 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
      * The availability domain to create the ESXi host in. If keep empty, for AD-specific SDDC, new ESXi host will be created in the same availability domain; for multi-AD SDDC, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
      * 
      */
-    @Export(name="computeAvailabilityDomain", type=String.class, parameters={})
+    @Export(name="computeAvailabilityDomain", refs={String.class}, tree="[0]")
     private Output<String> computeAvailabilityDomain;
 
     /**
@@ -112,7 +112,7 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
      * In terms of implementation, an ESXi host is a Compute instance that is configured with the chosen bundle of VMware software. The `computeInstanceId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that Compute instance.
      * 
      */
-    @Export(name="computeInstanceId", type=String.class, parameters={})
+    @Export(name="computeInstanceId", refs={String.class}, tree="[0]")
     private Output<String> computeInstanceId;
 
     /**
@@ -126,7 +126,7 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
      * The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
      * 
      */
-    @Export(name="currentSku", type=String.class, parameters={})
+    @Export(name="currentSku", refs={String.class}, tree="[0]")
     private Output<String> currentSku;
 
     /**
@@ -140,7 +140,7 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -158,7 +158,7 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
      * Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -176,7 +176,7 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
      * 
      */
-    @Export(name="failedEsxiHostId", type=String.class, parameters={})
+    @Export(name="failedEsxiHostId", refs={String.class}, tree="[0]")
     private Output<String> failedEsxiHostId;
 
     /**
@@ -190,7 +190,7 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -204,7 +204,7 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
      * The date and time when the new esxi host should start billing cycle. [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2021-07-25T21:10:29.600Z`
      * 
      */
-    @Export(name="gracePeriodEndDate", type=String.class, parameters={})
+    @Export(name="gracePeriodEndDate", refs={String.class}, tree="[0]")
     private Output<String> gracePeriodEndDate;
 
     /**
@@ -218,7 +218,7 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
      * The OCPU count of the ESXi host.
      * 
      */
-    @Export(name="hostOcpuCount", type=Double.class, parameters={})
+    @Export(name="hostOcpuCount", refs={Double.class}, tree="[0]")
     private Output<Double> hostOcpuCount;
 
     /**
@@ -232,7 +232,7 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
      * The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
      * 
      */
-    @Export(name="hostShapeName", type=String.class, parameters={})
+    @Export(name="hostShapeName", refs={String.class}, tree="[0]")
     private Output<String> hostShapeName;
 
     /**
@@ -246,7 +246,7 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
      * Indicates whether this host is in the progress of billing continuation.
      * 
      */
-    @Export(name="isBillingContinuationInProgress", type=Boolean.class, parameters={})
+    @Export(name="isBillingContinuationInProgress", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isBillingContinuationInProgress;
 
     /**
@@ -260,7 +260,7 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
      * Indicates whether this host is in the progress of swapping billing.
      * 
      */
-    @Export(name="isBillingSwappingInProgress", type=Boolean.class, parameters={})
+    @Export(name="isBillingSwappingInProgress", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isBillingSwappingInProgress;
 
     /**
@@ -274,7 +274,7 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
      * The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
      * 
      */
-    @Export(name="nextSku", type=String.class, parameters={})
+    @Export(name="nextSku", refs={String.class}, tree="[0]")
     private Output<String> nextSku;
 
     /**
@@ -288,7 +288,7 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
      * 
      */
-    @Export(name="nonUpgradedEsxiHostId", type=String.class, parameters={})
+    @Export(name="nonUpgradedEsxiHostId", refs={String.class}, tree="[0]")
     private Output<String> nonUpgradedEsxiHostId;
 
     /**
@@ -302,7 +302,7 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
      * 
      */
-    @Export(name="replacementEsxiHostId", type=String.class, parameters={})
+    @Export(name="replacementEsxiHostId", refs={String.class}, tree="[0]")
     private Output<String> replacementEsxiHostId;
 
     /**
@@ -319,7 +319,7 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="sddcId", type=String.class, parameters={})
+    @Export(name="sddcId", refs={String.class}, tree="[0]")
     private Output<String> sddcId;
 
     /**
@@ -336,7 +336,7 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
      * The current state of the ESXi host.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -350,7 +350,7 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
      * 
      */
-    @Export(name="swapBillingHostId", type=String.class, parameters={})
+    @Export(name="swapBillingHostId", refs={String.class}, tree="[0]")
     private Output<String> swapBillingHostId;
 
     /**
@@ -364,7 +364,7 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
      * The date and time the ESXi host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -378,7 +378,7 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
      * The date and time the ESXi host was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -392,7 +392,7 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
      * 
      */
-    @Export(name="upgradedReplacementEsxiHostId", type=String.class, parameters={})
+    @Export(name="upgradedReplacementEsxiHostId", refs={String.class}, tree="[0]")
     private Output<String> upgradedReplacementEsxiHostId;
 
     /**
@@ -406,7 +406,7 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
      * The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
      * 
      */
-    @Export(name="vmwareSoftwareVersion", type=String.class, parameters={})
+    @Export(name="vmwareSoftwareVersion", refs={String.class}, tree="[0]")
     private Output<String> vmwareSoftwareVersion;
 
     /**

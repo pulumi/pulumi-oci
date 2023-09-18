@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Node Pool resource in Oracle Cloud Infrastructure Container Engine service.
@@ -150,6 +151,12 @@ func (o LookupNodePoolResultOutput) ToLookupNodePoolResultOutput() LookupNodePoo
 
 func (o LookupNodePoolResultOutput) ToLookupNodePoolResultOutputWithContext(ctx context.Context) LookupNodePoolResultOutput {
 	return o
+}
+
+func (o LookupNodePoolResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupNodePoolResult] {
+	return pulumix.Output[LookupNodePoolResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the cluster to which this node pool is attached.

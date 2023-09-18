@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Http Monitor resource in Oracle Cloud Infrastructure Health Checks service.
@@ -342,6 +343,12 @@ func (i *HttpMonitor) ToHttpMonitorOutputWithContext(ctx context.Context) HttpMo
 	return pulumi.ToOutputWithContext(ctx, i).(HttpMonitorOutput)
 }
 
+func (i *HttpMonitor) ToOutput(ctx context.Context) pulumix.Output[*HttpMonitor] {
+	return pulumix.Output[*HttpMonitor]{
+		OutputState: i.ToHttpMonitorOutputWithContext(ctx).OutputState,
+	}
+}
+
 // HttpMonitorArrayInput is an input type that accepts HttpMonitorArray and HttpMonitorArrayOutput values.
 // You can construct a concrete instance of `HttpMonitorArrayInput` via:
 //
@@ -365,6 +372,12 @@ func (i HttpMonitorArray) ToHttpMonitorArrayOutput() HttpMonitorArrayOutput {
 
 func (i HttpMonitorArray) ToHttpMonitorArrayOutputWithContext(ctx context.Context) HttpMonitorArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(HttpMonitorArrayOutput)
+}
+
+func (i HttpMonitorArray) ToOutput(ctx context.Context) pulumix.Output[[]*HttpMonitor] {
+	return pulumix.Output[[]*HttpMonitor]{
+		OutputState: i.ToHttpMonitorArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // HttpMonitorMapInput is an input type that accepts HttpMonitorMap and HttpMonitorMapOutput values.
@@ -392,6 +405,12 @@ func (i HttpMonitorMap) ToHttpMonitorMapOutputWithContext(ctx context.Context) H
 	return pulumi.ToOutputWithContext(ctx, i).(HttpMonitorMapOutput)
 }
 
+func (i HttpMonitorMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*HttpMonitor] {
+	return pulumix.Output[map[string]*HttpMonitor]{
+		OutputState: i.ToHttpMonitorMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type HttpMonitorOutput struct{ *pulumi.OutputState }
 
 func (HttpMonitorOutput) ElementType() reflect.Type {
@@ -404,6 +423,12 @@ func (o HttpMonitorOutput) ToHttpMonitorOutput() HttpMonitorOutput {
 
 func (o HttpMonitorOutput) ToHttpMonitorOutputWithContext(ctx context.Context) HttpMonitorOutput {
 	return o
+}
+
+func (o HttpMonitorOutput) ToOutput(ctx context.Context) pulumix.Output[*HttpMonitor] {
+	return pulumix.Output[*HttpMonitor]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The OCID of the compartment.
@@ -510,6 +535,12 @@ func (o HttpMonitorArrayOutput) ToHttpMonitorArrayOutputWithContext(ctx context.
 	return o
 }
 
+func (o HttpMonitorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*HttpMonitor] {
+	return pulumix.Output[[]*HttpMonitor]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o HttpMonitorArrayOutput) Index(i pulumi.IntInput) HttpMonitorOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *HttpMonitor {
 		return vs[0].([]*HttpMonitor)[vs[1].(int)]
@@ -528,6 +559,12 @@ func (o HttpMonitorMapOutput) ToHttpMonitorMapOutput() HttpMonitorMapOutput {
 
 func (o HttpMonitorMapOutput) ToHttpMonitorMapOutputWithContext(ctx context.Context) HttpMonitorMapOutput {
 	return o
+}
+
+func (o HttpMonitorMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*HttpMonitor] {
+	return pulumix.Output[map[string]*HttpMonitor]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o HttpMonitorMapOutput) MapIndex(k pulumi.StringInput) HttpMonitorOutput {

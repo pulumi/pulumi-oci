@@ -38,6 +38,34 @@ namespace Pulumi.Oci.ServiceMesh
         /// </summary>
         public static Task<GetProxyDetailResult> InvokeAsync(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetProxyDetailResult>("oci:ServiceMesh/getProxyDetail:getProxyDetail", InvokeArgs.Empty, options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Proxy Detail resource in Oracle Cloud Infrastructure Service Mesh service.
+        /// 
+        /// Returns the attributes of the Proxy such as proxy image version.
+        /// 
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testProxyDetail = Oci.ServiceMesh.GetProxyDetail.Invoke();
+        /// 
+        /// });
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// </summary>
+        public static Output<GetProxyDetailResult> Invoke(InvokeOptions? options = null)
+            => global::Pulumi.Deployment.Instance.Invoke<GetProxyDetailResult>("oci:ServiceMesh/getProxyDetail:getProxyDetail", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

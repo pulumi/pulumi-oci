@@ -64,7 +64,7 @@ public class UserGroupMembership extends com.pulumi.resources.CustomResource {
      * The OCID of the tenancy containing the user, group, and membership object.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -78,7 +78,7 @@ public class UserGroupMembership extends com.pulumi.resources.CustomResource {
      * The OCID of the group.
      * 
      */
-    @Export(name="groupId", type=String.class, parameters={})
+    @Export(name="groupId", refs={String.class}, tree="[0]")
     private Output<String> groupId;
 
     /**
@@ -92,7 +92,7 @@ public class UserGroupMembership extends com.pulumi.resources.CustomResource {
      * The detailed status of INACTIVE lifecycleState.
      * 
      */
-    @Export(name="inactiveState", type=String.class, parameters={})
+    @Export(name="inactiveState", refs={String.class}, tree="[0]")
     private Output<String> inactiveState;
 
     /**
@@ -106,7 +106,7 @@ public class UserGroupMembership extends com.pulumi.resources.CustomResource {
      * The membership&#39;s current state.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -120,7 +120,7 @@ public class UserGroupMembership extends com.pulumi.resources.CustomResource {
      * Date and time the membership was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -137,7 +137,7 @@ public class UserGroupMembership extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="userId", type=String.class, parameters={})
+    @Export(name="userId", refs={String.class}, tree="[0]")
     private Output<String> userId;
 
     /**

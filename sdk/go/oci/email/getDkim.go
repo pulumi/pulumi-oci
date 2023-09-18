@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Dkim resource in Oracle Cloud Infrastructure Email service.
@@ -127,6 +128,12 @@ func (o LookupDkimResultOutput) ToLookupDkimResultOutput() LookupDkimResultOutpu
 
 func (o LookupDkimResultOutput) ToLookupDkimResultOutputWithContext(ctx context.Context) LookupDkimResultOutput {
 	return o
+}
+
+func (o LookupDkimResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDkimResult] {
+	return pulumix.Output[LookupDkimResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The DNS CNAME record value to provision to the DKIM DNS subdomain, when using the CNAME method for DKIM setup (preferred).

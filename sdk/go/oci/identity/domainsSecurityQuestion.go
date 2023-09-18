@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Security Question resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -908,6 +909,12 @@ func (i *DomainsSecurityQuestion) ToDomainsSecurityQuestionOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsSecurityQuestionOutput)
 }
 
+func (i *DomainsSecurityQuestion) ToOutput(ctx context.Context) pulumix.Output[*DomainsSecurityQuestion] {
+	return pulumix.Output[*DomainsSecurityQuestion]{
+		OutputState: i.ToDomainsSecurityQuestionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // DomainsSecurityQuestionArrayInput is an input type that accepts DomainsSecurityQuestionArray and DomainsSecurityQuestionArrayOutput values.
 // You can construct a concrete instance of `DomainsSecurityQuestionArrayInput` via:
 //
@@ -931,6 +938,12 @@ func (i DomainsSecurityQuestionArray) ToDomainsSecurityQuestionArrayOutput() Dom
 
 func (i DomainsSecurityQuestionArray) ToDomainsSecurityQuestionArrayOutputWithContext(ctx context.Context) DomainsSecurityQuestionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsSecurityQuestionArrayOutput)
+}
+
+func (i DomainsSecurityQuestionArray) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsSecurityQuestion] {
+	return pulumix.Output[[]*DomainsSecurityQuestion]{
+		OutputState: i.ToDomainsSecurityQuestionArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // DomainsSecurityQuestionMapInput is an input type that accepts DomainsSecurityQuestionMap and DomainsSecurityQuestionMapOutput values.
@@ -958,6 +971,12 @@ func (i DomainsSecurityQuestionMap) ToDomainsSecurityQuestionMapOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsSecurityQuestionMapOutput)
 }
 
+func (i DomainsSecurityQuestionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsSecurityQuestion] {
+	return pulumix.Output[map[string]*DomainsSecurityQuestion]{
+		OutputState: i.ToDomainsSecurityQuestionMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type DomainsSecurityQuestionOutput struct{ *pulumi.OutputState }
 
 func (DomainsSecurityQuestionOutput) ElementType() reflect.Type {
@@ -970,6 +989,12 @@ func (o DomainsSecurityQuestionOutput) ToDomainsSecurityQuestionOutput() Domains
 
 func (o DomainsSecurityQuestionOutput) ToDomainsSecurityQuestionOutputWithContext(ctx context.Context) DomainsSecurityQuestionOutput {
 	return o
+}
+
+func (o DomainsSecurityQuestionOutput) ToOutput(ctx context.Context) pulumix.Output[*DomainsSecurityQuestion] {
+	return pulumix.Output[*DomainsSecurityQuestion]{
+		OutputState: o.OutputState,
+	}
 }
 
 // This indicates if the question is selected by the Security Admin and is available for the end user.
@@ -1255,6 +1280,12 @@ func (o DomainsSecurityQuestionArrayOutput) ToDomainsSecurityQuestionArrayOutput
 	return o
 }
 
+func (o DomainsSecurityQuestionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsSecurityQuestion] {
+	return pulumix.Output[[]*DomainsSecurityQuestion]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o DomainsSecurityQuestionArrayOutput) Index(i pulumi.IntInput) DomainsSecurityQuestionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DomainsSecurityQuestion {
 		return vs[0].([]*DomainsSecurityQuestion)[vs[1].(int)]
@@ -1273,6 +1304,12 @@ func (o DomainsSecurityQuestionMapOutput) ToDomainsSecurityQuestionMapOutput() D
 
 func (o DomainsSecurityQuestionMapOutput) ToDomainsSecurityQuestionMapOutputWithContext(ctx context.Context) DomainsSecurityQuestionMapOutput {
 	return o
+}
+
+func (o DomainsSecurityQuestionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsSecurityQuestion] {
+	return pulumix.Output[map[string]*DomainsSecurityQuestion]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o DomainsSecurityQuestionMapOutput) MapIndex(k pulumi.StringInput) DomainsSecurityQuestionOutput {

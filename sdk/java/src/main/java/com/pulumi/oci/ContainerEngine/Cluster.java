@@ -43,7 +43,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * Available Kubernetes versions to which the clusters masters may be upgraded.
      * 
      */
-    @Export(name="availableKubernetesUpgrades", type=List.class, parameters={String.class})
+    @Export(name="availableKubernetesUpgrades", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> availableKubernetesUpgrades;
 
     /**
@@ -57,7 +57,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * Available CNIs and network options for existing and new node pools of the cluster
      * 
      */
-    @Export(name="clusterPodNetworkOptions", type=List.class, parameters={ClusterClusterPodNetworkOption.class})
+    @Export(name="clusterPodNetworkOptions", refs={List.class,ClusterClusterPodNetworkOption.class}, tree="[0,1]")
     private Output<List<ClusterClusterPodNetworkOption>> clusterPodNetworkOptions;
 
     /**
@@ -71,7 +71,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * The OCID of the compartment in which to create the cluster.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -85,7 +85,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -99,7 +99,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * The network configuration for access to the Cluster control plane.
      * 
      */
-    @Export(name="endpointConfig", type=ClusterEndpointConfig.class, parameters={})
+    @Export(name="endpointConfig", refs={ClusterEndpointConfig.class}, tree="[0]")
     private Output</* @Nullable */ ClusterEndpointConfig> endpointConfig;
 
     /**
@@ -113,7 +113,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * Endpoints served up by the cluster masters.
      * 
      */
-    @Export(name="endpoints", type=List.class, parameters={ClusterEndpoint.class})
+    @Export(name="endpoints", refs={List.class,ClusterEndpoint.class}, tree="[0,1]")
     private Output<List<ClusterEndpoint>> endpoints;
 
     /**
@@ -127,7 +127,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -141,7 +141,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * (Updatable) The image verification policy for signature validation. Once a policy is created and enabled with one or more kms keys, the policy will ensure all images deployed has been signed with the key(s) attached to the policy.
      * 
      */
-    @Export(name="imagePolicyConfig", type=ClusterImagePolicyConfig.class, parameters={})
+    @Export(name="imagePolicyConfig", refs={ClusterImagePolicyConfig.class}, tree="[0]")
     private Output<ClusterImagePolicyConfig> imagePolicyConfig;
 
     /**
@@ -155,7 +155,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption. When used, `kubernetesVersion` must be at least `v1.13.0`.
      * 
      */
-    @Export(name="kmsKeyId", type=String.class, parameters={})
+    @Export(name="kmsKeyId", refs={String.class}, tree="[0]")
     private Output<String> kmsKeyId;
 
     /**
@@ -169,7 +169,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * (Updatable) The version of Kubernetes to install into the cluster masters.
      * 
      */
-    @Export(name="kubernetesVersion", type=String.class, parameters={})
+    @Export(name="kubernetesVersion", refs={String.class}, tree="[0]")
     private Output<String> kubernetesVersion;
 
     /**
@@ -183,7 +183,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * Details about the state of the cluster masters.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -197,7 +197,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * Metadata about the cluster.
      * 
      */
-    @Export(name="metadatas", type=List.class, parameters={ClusterMetadata.class})
+    @Export(name="metadatas", refs={List.class,ClusterMetadata.class}, tree="[0,1]")
     private Output<List<ClusterMetadata>> metadatas;
 
     /**
@@ -211,7 +211,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * (Updatable) The name of the cluster. Avoid entering confidential information.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -225,7 +225,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * (Updatable) Optional attributes for the cluster.
      * 
      */
-    @Export(name="options", type=ClusterOptions.class, parameters={})
+    @Export(name="options", refs={ClusterOptions.class}, tree="[0]")
     private Output<ClusterOptions> options;
 
     /**
@@ -239,7 +239,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * The state of the cluster masters.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -253,7 +253,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * (Updatable) Type of cluster
      * 
      */
-    @Export(name="type", type=String.class, parameters={})
+    @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**
@@ -270,7 +270,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="vcnId", type=String.class, parameters={})
+    @Export(name="vcnId", refs={String.class}, tree="[0]")
     private Output<String> vcnId;
 
     /**

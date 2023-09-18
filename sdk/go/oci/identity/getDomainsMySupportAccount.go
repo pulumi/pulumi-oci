@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific My Support Account resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -149,6 +150,12 @@ func (o LookupDomainsMySupportAccountResultOutput) ToLookupDomainsMySupportAccou
 
 func (o LookupDomainsMySupportAccountResultOutput) ToLookupDomainsMySupportAccountResultOutputWithContext(ctx context.Context) LookupDomainsMySupportAccountResultOutput {
 	return o
+}
+
+func (o LookupDomainsMySupportAccountResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDomainsMySupportAccountResult] {
+	return pulumix.Output[LookupDomainsMySupportAccountResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o LookupDomainsMySupportAccountResultOutput) Authorization() pulumi.StringPtrOutput {

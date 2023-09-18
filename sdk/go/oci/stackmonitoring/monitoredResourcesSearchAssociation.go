@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Monitored Resources Search Association resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -236,6 +237,12 @@ func (i *MonitoredResourcesSearchAssociation) ToMonitoredResourcesSearchAssociat
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcesSearchAssociationOutput)
 }
 
+func (i *MonitoredResourcesSearchAssociation) ToOutput(ctx context.Context) pulumix.Output[*MonitoredResourcesSearchAssociation] {
+	return pulumix.Output[*MonitoredResourcesSearchAssociation]{
+		OutputState: i.ToMonitoredResourcesSearchAssociationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MonitoredResourcesSearchAssociationArrayInput is an input type that accepts MonitoredResourcesSearchAssociationArray and MonitoredResourcesSearchAssociationArrayOutput values.
 // You can construct a concrete instance of `MonitoredResourcesSearchAssociationArrayInput` via:
 //
@@ -259,6 +266,12 @@ func (i MonitoredResourcesSearchAssociationArray) ToMonitoredResourcesSearchAsso
 
 func (i MonitoredResourcesSearchAssociationArray) ToMonitoredResourcesSearchAssociationArrayOutputWithContext(ctx context.Context) MonitoredResourcesSearchAssociationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcesSearchAssociationArrayOutput)
+}
+
+func (i MonitoredResourcesSearchAssociationArray) ToOutput(ctx context.Context) pulumix.Output[[]*MonitoredResourcesSearchAssociation] {
+	return pulumix.Output[[]*MonitoredResourcesSearchAssociation]{
+		OutputState: i.ToMonitoredResourcesSearchAssociationArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // MonitoredResourcesSearchAssociationMapInput is an input type that accepts MonitoredResourcesSearchAssociationMap and MonitoredResourcesSearchAssociationMapOutput values.
@@ -286,6 +299,12 @@ func (i MonitoredResourcesSearchAssociationMap) ToMonitoredResourcesSearchAssoci
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcesSearchAssociationMapOutput)
 }
 
+func (i MonitoredResourcesSearchAssociationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*MonitoredResourcesSearchAssociation] {
+	return pulumix.Output[map[string]*MonitoredResourcesSearchAssociation]{
+		OutputState: i.ToMonitoredResourcesSearchAssociationMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MonitoredResourcesSearchAssociationOutput struct{ *pulumi.OutputState }
 
 func (MonitoredResourcesSearchAssociationOutput) ElementType() reflect.Type {
@@ -298,6 +317,12 @@ func (o MonitoredResourcesSearchAssociationOutput) ToMonitoredResourcesSearchAss
 
 func (o MonitoredResourcesSearchAssociationOutput) ToMonitoredResourcesSearchAssociationOutputWithContext(ctx context.Context) MonitoredResourcesSearchAssociationOutput {
 	return o
+}
+
+func (o MonitoredResourcesSearchAssociationOutput) ToOutput(ctx context.Context) pulumix.Output[*MonitoredResourcesSearchAssociation] {
+	return pulumix.Output[*MonitoredResourcesSearchAssociation]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Association type filter to search associated resources.
@@ -364,6 +389,12 @@ func (o MonitoredResourcesSearchAssociationArrayOutput) ToMonitoredResourcesSear
 	return o
 }
 
+func (o MonitoredResourcesSearchAssociationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*MonitoredResourcesSearchAssociation] {
+	return pulumix.Output[[]*MonitoredResourcesSearchAssociation]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o MonitoredResourcesSearchAssociationArrayOutput) Index(i pulumi.IntInput) MonitoredResourcesSearchAssociationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *MonitoredResourcesSearchAssociation {
 		return vs[0].([]*MonitoredResourcesSearchAssociation)[vs[1].(int)]
@@ -382,6 +413,12 @@ func (o MonitoredResourcesSearchAssociationMapOutput) ToMonitoredResourcesSearch
 
 func (o MonitoredResourcesSearchAssociationMapOutput) ToMonitoredResourcesSearchAssociationMapOutputWithContext(ctx context.Context) MonitoredResourcesSearchAssociationMapOutput {
 	return o
+}
+
+func (o MonitoredResourcesSearchAssociationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*MonitoredResourcesSearchAssociation] {
+	return pulumix.Output[map[string]*MonitoredResourcesSearchAssociation]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MonitoredResourcesSearchAssociationMapOutput) MapIndex(k pulumi.StringInput) MonitoredResourcesSearchAssociationOutput {

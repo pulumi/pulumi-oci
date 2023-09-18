@@ -249,7 +249,7 @@ public class Migration extends com.pulumi.resources.CustomResource {
      * (Updatable) Optional Pre-Migration advisor settings.
      * 
      */
-    @Export(name="advisorSettings", type=MigrationAdvisorSettings.class, parameters={})
+    @Export(name="advisorSettings", refs={MigrationAdvisorSettings.class}, tree="[0]")
     private Output<MigrationAdvisorSettings> advisorSettings;
 
     /**
@@ -263,7 +263,7 @@ public class Migration extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the registered ODMS Agent. Only valid for Offline Logical Migrations.
      * 
      */
-    @Export(name="agentId", type=String.class, parameters={})
+    @Export(name="agentId", refs={String.class}, tree="[0]")
     private Output<String> agentId;
 
     /**
@@ -277,7 +277,7 @@ public class Migration extends com.pulumi.resources.CustomResource {
      * (Updatable) OCID of the compartment where the secret containing the credentials will be created.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -291,7 +291,7 @@ public class Migration extends com.pulumi.resources.CustomResource {
      * OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Migration credentials. Used to store GoldenGate administrator user credentials.
      * 
      */
-    @Export(name="credentialsSecretId", type=String.class, parameters={})
+    @Export(name="credentialsSecretId", refs={String.class}, tree="[0]")
     private Output<String> credentialsSecretId;
 
     /**
@@ -305,7 +305,7 @@ public class Migration extends com.pulumi.resources.CustomResource {
      * Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
      * 
      */
-    @Export(name="csvText", type=String.class, parameters={})
+    @Export(name="csvText", refs={String.class}, tree="[0]")
     private Output<String> csvText;
 
     /**
@@ -319,7 +319,7 @@ public class Migration extends com.pulumi.resources.CustomResource {
      * (Updatable) Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type of data transfer medium can be specified.
      * 
      */
-    @Export(name="dataTransferMediumDetails", type=MigrationDataTransferMediumDetails.class, parameters={})
+    @Export(name="dataTransferMediumDetails", refs={MigrationDataTransferMediumDetails.class}, tree="[0]")
     private Output<MigrationDataTransferMediumDetails> dataTransferMediumDetails;
 
     /**
@@ -333,7 +333,7 @@ public class Migration extends com.pulumi.resources.CustomResource {
      * (Updatable) Optional settings for Data Pump Export and Import jobs
      * 
      */
-    @Export(name="datapumpSettings", type=MigrationDatapumpSettings.class, parameters={})
+    @Export(name="datapumpSettings", refs={MigrationDatapumpSettings.class}, tree="[0]")
     private Output<MigrationDatapumpSettings> datapumpSettings;
 
     /**
@@ -347,7 +347,7 @@ public class Migration extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -361,7 +361,7 @@ public class Migration extends com.pulumi.resources.CustomResource {
      * (Updatable) Migration Display Name
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -375,7 +375,7 @@ public class Migration extends com.pulumi.resources.CustomResource {
      * (Updatable) Optional additional properties for dump transfer.
      * 
      */
-    @Export(name="dumpTransferDetails", type=MigrationDumpTransferDetails.class, parameters={})
+    @Export(name="dumpTransferDetails", refs={MigrationDumpTransferDetails.class}, tree="[0]")
     private Output<MigrationDumpTransferDetails> dumpTransferDetails;
 
     /**
@@ -389,7 +389,7 @@ public class Migration extends com.pulumi.resources.CustomResource {
      * (Updatable) Database objects to exclude from migration, cannot be specified alongside &#39;includeObjects&#39;
      * 
      */
-    @Export(name="excludeObjects", type=List.class, parameters={MigrationExcludeObject.class})
+    @Export(name="excludeObjects", refs={List.class,MigrationExcludeObject.class}, tree="[0,1]")
     private Output<List<MigrationExcludeObject>> excludeObjects;
 
     /**
@@ -403,7 +403,7 @@ public class Migration extends com.pulumi.resources.CustomResource {
      * OCID of the current ODMS Job in execution for the Migration, if any.
      * 
      */
-    @Export(name="executingJobId", type=String.class, parameters={})
+    @Export(name="executingJobId", refs={String.class}, tree="[0]")
     private Output<String> executingJobId;
 
     /**
@@ -417,7 +417,7 @@ public class Migration extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -431,7 +431,7 @@ public class Migration extends com.pulumi.resources.CustomResource {
      * (Updatable) Details about Oracle GoldenGate Microservices. Required for online logical migration.
      * 
      */
-    @Export(name="goldenGateDetails", type=MigrationGoldenGateDetails.class, parameters={})
+    @Export(name="goldenGateDetails", refs={MigrationGoldenGateDetails.class}, tree="[0]")
     private Output<MigrationGoldenGateDetails> goldenGateDetails;
 
     /**
@@ -445,7 +445,7 @@ public class Migration extends com.pulumi.resources.CustomResource {
      * (Updatable) Details about Oracle GoldenGate GGS Deployment.
      * 
      */
-    @Export(name="goldenGateServiceDetails", type=MigrationGoldenGateServiceDetails.class, parameters={})
+    @Export(name="goldenGateServiceDetails", refs={MigrationGoldenGateServiceDetails.class}, tree="[0]")
     private Output<MigrationGoldenGateServiceDetails> goldenGateServiceDetails;
 
     /**
@@ -459,7 +459,7 @@ public class Migration extends com.pulumi.resources.CustomResource {
      * (Updatable) Database objects to include from migration, cannot be specified alongside &#39;excludeObjects&#39;
      * 
      */
-    @Export(name="includeObjects", type=List.class, parameters={MigrationIncludeObject.class})
+    @Export(name="includeObjects", refs={List.class,MigrationIncludeObject.class}, tree="[0,1]")
     private Output<List<MigrationIncludeObject>> includeObjects;
 
     /**
@@ -473,7 +473,7 @@ public class Migration extends com.pulumi.resources.CustomResource {
      * Additional status related to the execution and current state of the Migration.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -487,7 +487,7 @@ public class Migration extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the Source Container Database Connection. Only used for Online migrations. Only Connections of type Non-Autonomous can be used as source container databases.
      * 
      */
-    @Export(name="sourceContainerDatabaseConnectionId", type=String.class, parameters={})
+    @Export(name="sourceContainerDatabaseConnectionId", refs={String.class}, tree="[0]")
     private Output<String> sourceContainerDatabaseConnectionId;
 
     /**
@@ -501,7 +501,7 @@ public class Migration extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the Source Database Connection.
      * 
      */
-    @Export(name="sourceDatabaseConnectionId", type=String.class, parameters={})
+    @Export(name="sourceDatabaseConnectionId", refs={String.class}, tree="[0]")
     private Output<String> sourceDatabaseConnectionId;
 
     /**
@@ -515,7 +515,7 @@ public class Migration extends com.pulumi.resources.CustomResource {
      * The current state of the Migration resource.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -529,7 +529,7 @@ public class Migration extends com.pulumi.resources.CustomResource {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -543,7 +543,7 @@ public class Migration extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the Target Database Connection.
      * 
      */
-    @Export(name="targetDatabaseConnectionId", type=String.class, parameters={})
+    @Export(name="targetDatabaseConnectionId", refs={String.class}, tree="[0]")
     private Output<String> targetDatabaseConnectionId;
 
     /**
@@ -557,7 +557,7 @@ public class Migration extends com.pulumi.resources.CustomResource {
      * The time the Migration was created. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -571,7 +571,7 @@ public class Migration extends com.pulumi.resources.CustomResource {
      * The time of last Migration. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeLastMigration", type=String.class, parameters={})
+    @Export(name="timeLastMigration", refs={String.class}, tree="[0]")
     private Output<String> timeLastMigration;
 
     /**
@@ -585,7 +585,7 @@ public class Migration extends com.pulumi.resources.CustomResource {
      * The time of the last Migration details update. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -599,7 +599,7 @@ public class Migration extends com.pulumi.resources.CustomResource {
      * (Updatable) Migration type.
      * 
      */
-    @Export(name="type", type=String.class, parameters={})
+    @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**
@@ -613,7 +613,7 @@ public class Migration extends com.pulumi.resources.CustomResource {
      * (Updatable) Oracle Cloud Infrastructure Vault details to store migration and connection credentials secrets
      * 
      */
-    @Export(name="vaultDetails", type=MigrationVaultDetails.class, parameters={})
+    @Export(name="vaultDetails", refs={MigrationVaultDetails.class}, tree="[0]")
     private Output<MigrationVaultDetails> vaultDetails;
 
     /**
@@ -627,7 +627,7 @@ public class Migration extends com.pulumi.resources.CustomResource {
      * Name of a migration phase. The Job will wait after executing this phase until the Resume Job endpoint is called.
      * 
      */
-    @Export(name="waitAfter", type=String.class, parameters={})
+    @Export(name="waitAfter", refs={String.class}, tree="[0]")
     private Output<String> waitAfter;
 
     /**

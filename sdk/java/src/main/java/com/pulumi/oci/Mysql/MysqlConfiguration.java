@@ -159,7 +159,7 @@ public class MysqlConfiguration extends com.pulumi.resources.CustomResource {
      * The OCID of the compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -173,7 +173,7 @@ public class MysqlConfiguration extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -187,7 +187,7 @@ public class MysqlConfiguration extends com.pulumi.resources.CustomResource {
      * (Updatable) User-provided data about the Configuration.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -201,7 +201,7 @@ public class MysqlConfiguration extends com.pulumi.resources.CustomResource {
      * (Updatable) The display name of the Configuration.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -215,7 +215,7 @@ public class MysqlConfiguration extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -229,7 +229,7 @@ public class MysqlConfiguration extends com.pulumi.resources.CustomResource {
      * User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
      * 
      */
-    @Export(name="initVariables", type=MysqlConfigurationInitVariables.class, parameters={})
+    @Export(name="initVariables", refs={MysqlConfigurationInitVariables.class}, tree="[0]")
     private Output<MysqlConfigurationInitVariables> initVariables;
 
     /**
@@ -243,7 +243,7 @@ public class MysqlConfiguration extends com.pulumi.resources.CustomResource {
      * The OCID of the Configuration from which the new Configuration is derived. The values in CreateConfigurationDetails.variables supersede the variables of the parent Configuration.
      * 
      */
-    @Export(name="parentConfigurationId", type=String.class, parameters={})
+    @Export(name="parentConfigurationId", refs={String.class}, tree="[0]")
     private Output<String> parentConfigurationId;
 
     /**
@@ -257,7 +257,7 @@ public class MysqlConfiguration extends com.pulumi.resources.CustomResource {
      * The name of the associated Shape.
      * 
      */
-    @Export(name="shapeName", type=String.class, parameters={})
+    @Export(name="shapeName", refs={String.class}, tree="[0]")
     private Output<String> shapeName;
 
     /**
@@ -271,7 +271,7 @@ public class MysqlConfiguration extends com.pulumi.resources.CustomResource {
      * The current state of the Configuration.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -285,7 +285,7 @@ public class MysqlConfiguration extends com.pulumi.resources.CustomResource {
      * The date and time the Configuration was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -299,7 +299,7 @@ public class MysqlConfiguration extends com.pulumi.resources.CustomResource {
      * The date and time the Configuration was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -313,7 +313,7 @@ public class MysqlConfiguration extends com.pulumi.resources.CustomResource {
      * The Configuration type, DEFAULT or CUSTOM.
      * 
      */
-    @Export(name="type", type=String.class, parameters={})
+    @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**
@@ -327,7 +327,7 @@ public class MysqlConfiguration extends com.pulumi.resources.CustomResource {
      * User-defined service variables.
      * 
      */
-    @Export(name="variables", type=MysqlConfigurationVariables.class, parameters={})
+    @Export(name="variables", refs={MysqlConfigurationVariables.class}, tree="[0]")
     private Output<MysqlConfigurationVariables> variables;
 
     /**

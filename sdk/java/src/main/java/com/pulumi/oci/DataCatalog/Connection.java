@@ -75,7 +75,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * Unique catalog identifier.
      * 
      */
-    @Export(name="catalogId", type=String.class, parameters={})
+    @Export(name="catalogId", refs={String.class}, tree="[0]")
     private Output<String> catalogId;
 
     /**
@@ -89,7 +89,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * OCID of the user who created the connection.
      * 
      */
-    @Export(name="createdById", type=String.class, parameters={})
+    @Export(name="createdById", refs={String.class}, tree="[0]")
     private Output<String> createdById;
 
     /**
@@ -103,7 +103,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * Unique data asset key.
      * 
      */
-    @Export(name="dataAssetKey", type=String.class, parameters={})
+    @Export(name="dataAssetKey", refs={String.class}, tree="[0]")
     private Output<String> dataAssetKey;
 
     /**
@@ -117,7 +117,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) A description of the connection.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -131,7 +131,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-friendly display name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -145,7 +145,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) A map of maps that contains the encrypted values for sensitive properties which are specific to the connection type. Each connection type definition defines it&#39;s set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the &#34;default&#34; category. To determine the set of optional and required properties for a connection type, a query can be done on &#39;/types?type=connection&#39; that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it&#39;s properties, can be identified from this collection. Example: `{&#34;encProperties&#34;: { &#34;default&#34;: { &#34;password&#34;: &#34;example-password&#34;}}}`
      * 
      */
-    @Export(name="encProperties", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="encProperties", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output</* @Nullable */ Map<String,Object>> encProperties;
 
     /**
@@ -159,7 +159,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * Unique external key of this object from the source system.
      * 
      */
-    @Export(name="externalKey", type=String.class, parameters={})
+    @Export(name="externalKey", refs={String.class}, tree="[0]")
     private Output<String> externalKey;
 
     /**
@@ -173,7 +173,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) Indicates whether this connection is the default connection. The first connection of a data asset defaults to being the default, subsequent connections default to not being the default. If a default connection already exists, then trying to create a connection as the default will fail. In this case the default connection would need to be updated not to be the default and then the new connection can then be created as the default.
      * 
      */
-    @Export(name="isDefault", type=Boolean.class, parameters={})
+    @Export(name="isDefault", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isDefault;
 
     /**
@@ -187,7 +187,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * Unique connection key that is immutable.
      * 
      */
-    @Export(name="key", type=String.class, parameters={})
+    @Export(name="key", refs={String.class}, tree="[0]")
     private Output<String> key;
 
     /**
@@ -201,7 +201,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * A map of maps that contains the properties which are specific to the connection type. Each connection type definition defines it&#39;s set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the &#34;default&#34; category. Example: `{&#34;properties&#34;: { &#34;default&#34;: { &#34;username&#34;: &#34;user1&#34;}}}`
      * 
      */
-    @Export(name="properties", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="properties", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> properties;
 
     /**
@@ -215,7 +215,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * The current state of the connection.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -229,7 +229,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * The date and time the connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2019-03-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -243,7 +243,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * Time that the connections status was last updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      * 
      */
-    @Export(name="timeStatusUpdated", type=String.class, parameters={})
+    @Export(name="timeStatusUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeStatusUpdated;
 
     /**
@@ -257,7 +257,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * The last time that any change was made to the connection. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -274,7 +274,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="typeKey", type=String.class, parameters={})
+    @Export(name="typeKey", refs={String.class}, tree="[0]")
     private Output<String> typeKey;
 
     /**
@@ -291,7 +291,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * OCID of the user who modified the connection.
      * 
      */
-    @Export(name="updatedById", type=String.class, parameters={})
+    @Export(name="updatedById", refs={String.class}, tree="[0]")
     private Output<String> updatedById;
 
     /**
@@ -305,7 +305,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * URI to the connection instance in the API.
      * 
      */
-    @Export(name="uri", type=String.class, parameters={})
+    @Export(name="uri", refs={String.class}, tree="[0]")
     private Output<String> uri;
 
     /**

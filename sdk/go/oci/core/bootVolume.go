@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Boot Volume resource in Oracle Cloud Infrastructure Core service.
@@ -365,6 +366,12 @@ func (i *BootVolume) ToBootVolumeOutputWithContext(ctx context.Context) BootVolu
 	return pulumi.ToOutputWithContext(ctx, i).(BootVolumeOutput)
 }
 
+func (i *BootVolume) ToOutput(ctx context.Context) pulumix.Output[*BootVolume] {
+	return pulumix.Output[*BootVolume]{
+		OutputState: i.ToBootVolumeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // BootVolumeArrayInput is an input type that accepts BootVolumeArray and BootVolumeArrayOutput values.
 // You can construct a concrete instance of `BootVolumeArrayInput` via:
 //
@@ -388,6 +395,12 @@ func (i BootVolumeArray) ToBootVolumeArrayOutput() BootVolumeArrayOutput {
 
 func (i BootVolumeArray) ToBootVolumeArrayOutputWithContext(ctx context.Context) BootVolumeArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BootVolumeArrayOutput)
+}
+
+func (i BootVolumeArray) ToOutput(ctx context.Context) pulumix.Output[[]*BootVolume] {
+	return pulumix.Output[[]*BootVolume]{
+		OutputState: i.ToBootVolumeArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // BootVolumeMapInput is an input type that accepts BootVolumeMap and BootVolumeMapOutput values.
@@ -415,6 +428,12 @@ func (i BootVolumeMap) ToBootVolumeMapOutputWithContext(ctx context.Context) Boo
 	return pulumi.ToOutputWithContext(ctx, i).(BootVolumeMapOutput)
 }
 
+func (i BootVolumeMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*BootVolume] {
+	return pulumix.Output[map[string]*BootVolume]{
+		OutputState: i.ToBootVolumeMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type BootVolumeOutput struct{ *pulumi.OutputState }
 
 func (BootVolumeOutput) ElementType() reflect.Type {
@@ -427,6 +446,12 @@ func (o BootVolumeOutput) ToBootVolumeOutput() BootVolumeOutput {
 
 func (o BootVolumeOutput) ToBootVolumeOutputWithContext(ctx context.Context) BootVolumeOutput {
 	return o
+}
+
+func (o BootVolumeOutput) ToOutput(ctx context.Context) pulumix.Output[*BootVolume] {
+	return pulumix.Output[*BootVolume]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The number of Volume Performance Units per GB that this boot volume is effectively tuned to.
@@ -555,6 +580,12 @@ func (o BootVolumeArrayOutput) ToBootVolumeArrayOutputWithContext(ctx context.Co
 	return o
 }
 
+func (o BootVolumeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*BootVolume] {
+	return pulumix.Output[[]*BootVolume]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o BootVolumeArrayOutput) Index(i pulumi.IntInput) BootVolumeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *BootVolume {
 		return vs[0].([]*BootVolume)[vs[1].(int)]
@@ -573,6 +604,12 @@ func (o BootVolumeMapOutput) ToBootVolumeMapOutput() BootVolumeMapOutput {
 
 func (o BootVolumeMapOutput) ToBootVolumeMapOutputWithContext(ctx context.Context) BootVolumeMapOutput {
 	return o
+}
+
+func (o BootVolumeMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*BootVolume] {
+	return pulumix.Output[map[string]*BootVolume]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o BootVolumeMapOutput) MapIndex(k pulumi.StringInput) BootVolumeOutput {

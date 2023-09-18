@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Action Create Zone From Zone File resource in Oracle Cloud Infrastructure DNS service.
@@ -275,6 +276,12 @@ func (i *ActionCreateZoneFromZoneFile) ToActionCreateZoneFromZoneFileOutputWithC
 	return pulumi.ToOutputWithContext(ctx, i).(ActionCreateZoneFromZoneFileOutput)
 }
 
+func (i *ActionCreateZoneFromZoneFile) ToOutput(ctx context.Context) pulumix.Output[*ActionCreateZoneFromZoneFile] {
+	return pulumix.Output[*ActionCreateZoneFromZoneFile]{
+		OutputState: i.ToActionCreateZoneFromZoneFileOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ActionCreateZoneFromZoneFileArrayInput is an input type that accepts ActionCreateZoneFromZoneFileArray and ActionCreateZoneFromZoneFileArrayOutput values.
 // You can construct a concrete instance of `ActionCreateZoneFromZoneFileArrayInput` via:
 //
@@ -298,6 +305,12 @@ func (i ActionCreateZoneFromZoneFileArray) ToActionCreateZoneFromZoneFileArrayOu
 
 func (i ActionCreateZoneFromZoneFileArray) ToActionCreateZoneFromZoneFileArrayOutputWithContext(ctx context.Context) ActionCreateZoneFromZoneFileArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ActionCreateZoneFromZoneFileArrayOutput)
+}
+
+func (i ActionCreateZoneFromZoneFileArray) ToOutput(ctx context.Context) pulumix.Output[[]*ActionCreateZoneFromZoneFile] {
+	return pulumix.Output[[]*ActionCreateZoneFromZoneFile]{
+		OutputState: i.ToActionCreateZoneFromZoneFileArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // ActionCreateZoneFromZoneFileMapInput is an input type that accepts ActionCreateZoneFromZoneFileMap and ActionCreateZoneFromZoneFileMapOutput values.
@@ -325,6 +338,12 @@ func (i ActionCreateZoneFromZoneFileMap) ToActionCreateZoneFromZoneFileMapOutput
 	return pulumi.ToOutputWithContext(ctx, i).(ActionCreateZoneFromZoneFileMapOutput)
 }
 
+func (i ActionCreateZoneFromZoneFileMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ActionCreateZoneFromZoneFile] {
+	return pulumix.Output[map[string]*ActionCreateZoneFromZoneFile]{
+		OutputState: i.ToActionCreateZoneFromZoneFileMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ActionCreateZoneFromZoneFileOutput struct{ *pulumi.OutputState }
 
 func (ActionCreateZoneFromZoneFileOutput) ElementType() reflect.Type {
@@ -337,6 +356,12 @@ func (o ActionCreateZoneFromZoneFileOutput) ToActionCreateZoneFromZoneFileOutput
 
 func (o ActionCreateZoneFromZoneFileOutput) ToActionCreateZoneFromZoneFileOutputWithContext(ctx context.Context) ActionCreateZoneFromZoneFileOutput {
 	return o
+}
+
+func (o ActionCreateZoneFromZoneFileOutput) ToOutput(ctx context.Context) pulumix.Output[*ActionCreateZoneFromZoneFile] {
+	return pulumix.Output[*ActionCreateZoneFromZoneFile]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the compartment the resource belongs to.
@@ -454,6 +479,12 @@ func (o ActionCreateZoneFromZoneFileArrayOutput) ToActionCreateZoneFromZoneFileA
 	return o
 }
 
+func (o ActionCreateZoneFromZoneFileArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ActionCreateZoneFromZoneFile] {
+	return pulumix.Output[[]*ActionCreateZoneFromZoneFile]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o ActionCreateZoneFromZoneFileArrayOutput) Index(i pulumi.IntInput) ActionCreateZoneFromZoneFileOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ActionCreateZoneFromZoneFile {
 		return vs[0].([]*ActionCreateZoneFromZoneFile)[vs[1].(int)]
@@ -472,6 +503,12 @@ func (o ActionCreateZoneFromZoneFileMapOutput) ToActionCreateZoneFromZoneFileMap
 
 func (o ActionCreateZoneFromZoneFileMapOutput) ToActionCreateZoneFromZoneFileMapOutputWithContext(ctx context.Context) ActionCreateZoneFromZoneFileMapOutput {
 	return o
+}
+
+func (o ActionCreateZoneFromZoneFileMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ActionCreateZoneFromZoneFile] {
+	return pulumix.Output[map[string]*ActionCreateZoneFromZoneFile]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ActionCreateZoneFromZoneFileMapOutput) MapIndex(k pulumi.StringInput) ActionCreateZoneFromZoneFileOutput {

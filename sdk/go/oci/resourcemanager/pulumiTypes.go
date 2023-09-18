@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -48,6 +49,12 @@ func (i GetPrivateEndpointsFilterArgs) ToGetPrivateEndpointsFilterOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateEndpointsFilterOutput)
 }
 
+func (i GetPrivateEndpointsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetPrivateEndpointsFilter] {
+	return pulumix.Output[GetPrivateEndpointsFilter]{
+		OutputState: i.ToGetPrivateEndpointsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPrivateEndpointsFilterArrayInput is an input type that accepts GetPrivateEndpointsFilterArray and GetPrivateEndpointsFilterArrayOutput values.
 // You can construct a concrete instance of `GetPrivateEndpointsFilterArrayInput` via:
 //
@@ -73,6 +80,12 @@ func (i GetPrivateEndpointsFilterArray) ToGetPrivateEndpointsFilterArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateEndpointsFilterArrayOutput)
 }
 
+func (i GetPrivateEndpointsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPrivateEndpointsFilter] {
+	return pulumix.Output[[]GetPrivateEndpointsFilter]{
+		OutputState: i.ToGetPrivateEndpointsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPrivateEndpointsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetPrivateEndpointsFilterOutput) ElementType() reflect.Type {
@@ -85,6 +98,12 @@ func (o GetPrivateEndpointsFilterOutput) ToGetPrivateEndpointsFilterOutput() Get
 
 func (o GetPrivateEndpointsFilterOutput) ToGetPrivateEndpointsFilterOutputWithContext(ctx context.Context) GetPrivateEndpointsFilterOutput {
 	return o
+}
+
+func (o GetPrivateEndpointsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetPrivateEndpointsFilter] {
+	return pulumix.Output[GetPrivateEndpointsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPrivateEndpointsFilterOutput) Name() pulumi.StringOutput {
@@ -111,6 +130,12 @@ func (o GetPrivateEndpointsFilterArrayOutput) ToGetPrivateEndpointsFilterArrayOu
 
 func (o GetPrivateEndpointsFilterArrayOutput) ToGetPrivateEndpointsFilterArrayOutputWithContext(ctx context.Context) GetPrivateEndpointsFilterArrayOutput {
 	return o
+}
+
+func (o GetPrivateEndpointsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPrivateEndpointsFilter] {
+	return pulumix.Output[[]GetPrivateEndpointsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPrivateEndpointsFilterArrayOutput) Index(i pulumi.IntInput) GetPrivateEndpointsFilterOutput {
@@ -150,6 +175,12 @@ func (i GetPrivateEndpointsPrivateEndpointCollectionArgs) ToGetPrivateEndpointsP
 	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateEndpointsPrivateEndpointCollectionOutput)
 }
 
+func (i GetPrivateEndpointsPrivateEndpointCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetPrivateEndpointsPrivateEndpointCollection] {
+	return pulumix.Output[GetPrivateEndpointsPrivateEndpointCollection]{
+		OutputState: i.ToGetPrivateEndpointsPrivateEndpointCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPrivateEndpointsPrivateEndpointCollectionArrayInput is an input type that accepts GetPrivateEndpointsPrivateEndpointCollectionArray and GetPrivateEndpointsPrivateEndpointCollectionArrayOutput values.
 // You can construct a concrete instance of `GetPrivateEndpointsPrivateEndpointCollectionArrayInput` via:
 //
@@ -175,6 +206,12 @@ func (i GetPrivateEndpointsPrivateEndpointCollectionArray) ToGetPrivateEndpoints
 	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateEndpointsPrivateEndpointCollectionArrayOutput)
 }
 
+func (i GetPrivateEndpointsPrivateEndpointCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPrivateEndpointsPrivateEndpointCollection] {
+	return pulumix.Output[[]GetPrivateEndpointsPrivateEndpointCollection]{
+		OutputState: i.ToGetPrivateEndpointsPrivateEndpointCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPrivateEndpointsPrivateEndpointCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetPrivateEndpointsPrivateEndpointCollectionOutput) ElementType() reflect.Type {
@@ -187,6 +224,12 @@ func (o GetPrivateEndpointsPrivateEndpointCollectionOutput) ToGetPrivateEndpoint
 
 func (o GetPrivateEndpointsPrivateEndpointCollectionOutput) ToGetPrivateEndpointsPrivateEndpointCollectionOutputWithContext(ctx context.Context) GetPrivateEndpointsPrivateEndpointCollectionOutput {
 	return o
+}
+
+func (o GetPrivateEndpointsPrivateEndpointCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetPrivateEndpointsPrivateEndpointCollection] {
+	return pulumix.Output[GetPrivateEndpointsPrivateEndpointCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPrivateEndpointsPrivateEndpointCollectionOutput) Items() GetPrivateEndpointsPrivateEndpointCollectionItemArrayOutput {
@@ -207,6 +250,12 @@ func (o GetPrivateEndpointsPrivateEndpointCollectionArrayOutput) ToGetPrivateEnd
 
 func (o GetPrivateEndpointsPrivateEndpointCollectionArrayOutput) ToGetPrivateEndpointsPrivateEndpointCollectionArrayOutputWithContext(ctx context.Context) GetPrivateEndpointsPrivateEndpointCollectionArrayOutput {
 	return o
+}
+
+func (o GetPrivateEndpointsPrivateEndpointCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPrivateEndpointsPrivateEndpointCollection] {
+	return pulumix.Output[[]GetPrivateEndpointsPrivateEndpointCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPrivateEndpointsPrivateEndpointCollectionArrayOutput) Index(i pulumi.IntInput) GetPrivateEndpointsPrivateEndpointCollectionOutput {
@@ -300,6 +349,12 @@ func (i GetPrivateEndpointsPrivateEndpointCollectionItemArgs) ToGetPrivateEndpoi
 	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateEndpointsPrivateEndpointCollectionItemOutput)
 }
 
+func (i GetPrivateEndpointsPrivateEndpointCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetPrivateEndpointsPrivateEndpointCollectionItem] {
+	return pulumix.Output[GetPrivateEndpointsPrivateEndpointCollectionItem]{
+		OutputState: i.ToGetPrivateEndpointsPrivateEndpointCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPrivateEndpointsPrivateEndpointCollectionItemArrayInput is an input type that accepts GetPrivateEndpointsPrivateEndpointCollectionItemArray and GetPrivateEndpointsPrivateEndpointCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetPrivateEndpointsPrivateEndpointCollectionItemArrayInput` via:
 //
@@ -325,6 +380,12 @@ func (i GetPrivateEndpointsPrivateEndpointCollectionItemArray) ToGetPrivateEndpo
 	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateEndpointsPrivateEndpointCollectionItemArrayOutput)
 }
 
+func (i GetPrivateEndpointsPrivateEndpointCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPrivateEndpointsPrivateEndpointCollectionItem] {
+	return pulumix.Output[[]GetPrivateEndpointsPrivateEndpointCollectionItem]{
+		OutputState: i.ToGetPrivateEndpointsPrivateEndpointCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPrivateEndpointsPrivateEndpointCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetPrivateEndpointsPrivateEndpointCollectionItemOutput) ElementType() reflect.Type {
@@ -337,6 +398,12 @@ func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) ToGetPrivateEndp
 
 func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) ToGetPrivateEndpointsPrivateEndpointCollectionItemOutputWithContext(ctx context.Context) GetPrivateEndpointsPrivateEndpointCollectionItemOutput {
 	return o
+}
+
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetPrivateEndpointsPrivateEndpointCollectionItem] {
+	return pulumix.Output[GetPrivateEndpointsPrivateEndpointCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A filter to return only resources that exist in the compartment, identified by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -425,6 +492,12 @@ func (o GetPrivateEndpointsPrivateEndpointCollectionItemArrayOutput) ToGetPrivat
 	return o
 }
 
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPrivateEndpointsPrivateEndpointCollectionItem] {
+	return pulumix.Output[[]GetPrivateEndpointsPrivateEndpointCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetPrivateEndpointsPrivateEndpointCollectionItemArrayOutput) Index(i pulumi.IntInput) GetPrivateEndpointsPrivateEndpointCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPrivateEndpointsPrivateEndpointCollectionItem {
 		return vs[0].([]GetPrivateEndpointsPrivateEndpointCollectionItem)[vs[1].(int)]
@@ -466,6 +539,12 @@ func (i GetStackConfigSourceArgs) ToGetStackConfigSourceOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetStackConfigSourceOutput)
 }
 
+func (i GetStackConfigSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetStackConfigSource] {
+	return pulumix.Output[GetStackConfigSource]{
+		OutputState: i.ToGetStackConfigSourceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetStackConfigSourceArrayInput is an input type that accepts GetStackConfigSourceArray and GetStackConfigSourceArrayOutput values.
 // You can construct a concrete instance of `GetStackConfigSourceArrayInput` via:
 //
@@ -491,6 +570,12 @@ func (i GetStackConfigSourceArray) ToGetStackConfigSourceArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetStackConfigSourceArrayOutput)
 }
 
+func (i GetStackConfigSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStackConfigSource] {
+	return pulumix.Output[[]GetStackConfigSource]{
+		OutputState: i.ToGetStackConfigSourceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetStackConfigSourceOutput struct{ *pulumi.OutputState }
 
 func (GetStackConfigSourceOutput) ElementType() reflect.Type {
@@ -503,6 +588,12 @@ func (o GetStackConfigSourceOutput) ToGetStackConfigSourceOutput() GetStackConfi
 
 func (o GetStackConfigSourceOutput) ToGetStackConfigSourceOutputWithContext(ctx context.Context) GetStackConfigSourceOutput {
 	return o
+}
+
+func (o GetStackConfigSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetStackConfigSource] {
+	return pulumix.Output[GetStackConfigSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetStackConfigSourceOutput) ConfigSourceType() pulumi.StringOutput {
@@ -529,6 +620,12 @@ func (o GetStackConfigSourceArrayOutput) ToGetStackConfigSourceArrayOutput() Get
 
 func (o GetStackConfigSourceArrayOutput) ToGetStackConfigSourceArrayOutputWithContext(ctx context.Context) GetStackConfigSourceArrayOutput {
 	return o
+}
+
+func (o GetStackConfigSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStackConfigSource] {
+	return pulumix.Output[[]GetStackConfigSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetStackConfigSourceArrayOutput) Index(i pulumi.IntInput) GetStackConfigSourceOutput {
@@ -572,6 +669,12 @@ func (i GetStacksFilterArgs) ToGetStacksFilterOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetStacksFilterOutput)
 }
 
+func (i GetStacksFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetStacksFilter] {
+	return pulumix.Output[GetStacksFilter]{
+		OutputState: i.ToGetStacksFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetStacksFilterArrayInput is an input type that accepts GetStacksFilterArray and GetStacksFilterArrayOutput values.
 // You can construct a concrete instance of `GetStacksFilterArrayInput` via:
 //
@@ -597,6 +700,12 @@ func (i GetStacksFilterArray) ToGetStacksFilterArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetStacksFilterArrayOutput)
 }
 
+func (i GetStacksFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStacksFilter] {
+	return pulumix.Output[[]GetStacksFilter]{
+		OutputState: i.ToGetStacksFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetStacksFilterOutput struct{ *pulumi.OutputState }
 
 func (GetStacksFilterOutput) ElementType() reflect.Type {
@@ -609,6 +718,12 @@ func (o GetStacksFilterOutput) ToGetStacksFilterOutput() GetStacksFilterOutput {
 
 func (o GetStacksFilterOutput) ToGetStacksFilterOutputWithContext(ctx context.Context) GetStacksFilterOutput {
 	return o
+}
+
+func (o GetStacksFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetStacksFilter] {
+	return pulumix.Output[GetStacksFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetStacksFilterOutput) Name() pulumi.StringOutput {
@@ -635,6 +750,12 @@ func (o GetStacksFilterArrayOutput) ToGetStacksFilterArrayOutput() GetStacksFilt
 
 func (o GetStacksFilterArrayOutput) ToGetStacksFilterArrayOutputWithContext(ctx context.Context) GetStacksFilterArrayOutput {
 	return o
+}
+
+func (o GetStacksFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStacksFilter] {
+	return pulumix.Output[[]GetStacksFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetStacksFilterArrayOutput) Index(i pulumi.IntInput) GetStacksFilterOutput {
@@ -720,6 +841,12 @@ func (i GetStacksStackArgs) ToGetStacksStackOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetStacksStackOutput)
 }
 
+func (i GetStacksStackArgs) ToOutput(ctx context.Context) pulumix.Output[GetStacksStack] {
+	return pulumix.Output[GetStacksStack]{
+		OutputState: i.ToGetStacksStackOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetStacksStackArrayInput is an input type that accepts GetStacksStackArray and GetStacksStackArrayOutput values.
 // You can construct a concrete instance of `GetStacksStackArrayInput` via:
 //
@@ -745,6 +872,12 @@ func (i GetStacksStackArray) ToGetStacksStackArrayOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetStacksStackArrayOutput)
 }
 
+func (i GetStacksStackArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStacksStack] {
+	return pulumix.Output[[]GetStacksStack]{
+		OutputState: i.ToGetStacksStackArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetStacksStackOutput struct{ *pulumi.OutputState }
 
 func (GetStacksStackOutput) ElementType() reflect.Type {
@@ -757,6 +890,12 @@ func (o GetStacksStackOutput) ToGetStacksStackOutput() GetStacksStackOutput {
 
 func (o GetStacksStackOutput) ToGetStacksStackOutputWithContext(ctx context.Context) GetStacksStackOutput {
 	return o
+}
+
+func (o GetStacksStackOutput) ToOutput(ctx context.Context) pulumix.Output[GetStacksStack] {
+	return pulumix.Output[GetStacksStack]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on which to filter.
@@ -827,6 +966,12 @@ func (o GetStacksStackArrayOutput) ToGetStacksStackArrayOutputWithContext(ctx co
 	return o
 }
 
+func (o GetStacksStackArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStacksStack] {
+	return pulumix.Output[[]GetStacksStack]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetStacksStackArrayOutput) Index(i pulumi.IntInput) GetStacksStackOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStacksStack {
 		return vs[0].([]GetStacksStack)[vs[1].(int)]
@@ -868,6 +1013,12 @@ func (i GetStacksStackConfigSourceArgs) ToGetStacksStackConfigSourceOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetStacksStackConfigSourceOutput)
 }
 
+func (i GetStacksStackConfigSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetStacksStackConfigSource] {
+	return pulumix.Output[GetStacksStackConfigSource]{
+		OutputState: i.ToGetStacksStackConfigSourceOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetStacksStackConfigSourceOutput struct{ *pulumi.OutputState }
 
 func (GetStacksStackConfigSourceOutput) ElementType() reflect.Type {
@@ -880,6 +1031,12 @@ func (o GetStacksStackConfigSourceOutput) ToGetStacksStackConfigSourceOutput() G
 
 func (o GetStacksStackConfigSourceOutput) ToGetStacksStackConfigSourceOutputWithContext(ctx context.Context) GetStacksStackConfigSourceOutput {
 	return o
+}
+
+func (o GetStacksStackConfigSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetStacksStackConfigSource] {
+	return pulumix.Output[GetStacksStackConfigSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetStacksStackConfigSourceOutput) ConfigSourceType() pulumi.StringOutput {

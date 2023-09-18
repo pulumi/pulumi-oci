@@ -40,7 +40,7 @@ public class Subscription extends com.pulumi.resources.CustomResource {
      * (Updatable) Account type.
      * 
      */
-    @Export(name="accountType", type=String.class, parameters={})
+    @Export(name="accountType", refs={String.class}, tree="[0]")
     private Output<String> accountType;
 
     /**
@@ -54,7 +54,7 @@ public class Subscription extends com.pulumi.resources.CustomResource {
      * (Updatable) Bill to customer Account id.
      * 
      */
-    @Export(name="billToCustAccountId", type=String.class, parameters={})
+    @Export(name="billToCustAccountId", refs={String.class}, tree="[0]")
     private Output<String> billToCustAccountId;
 
     /**
@@ -68,7 +68,7 @@ public class Subscription extends com.pulumi.resources.CustomResource {
      * (Updatable) Address details model.
      * 
      */
-    @Export(name="billingAddresses", type=List.class, parameters={SubscriptionBillingAddress.class})
+    @Export(name="billingAddresses", refs={List.class,SubscriptionBillingAddress.class}, tree="[0,1]")
     private Output<List<SubscriptionBillingAddress>> billingAddresses;
 
     /**
@@ -82,7 +82,7 @@ public class Subscription extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -96,7 +96,7 @@ public class Subscription extends com.pulumi.resources.CustomResource {
      * (Updatable) Currency code
      * 
      */
-    @Export(name="currencyCode", type=String.class, parameters={})
+    @Export(name="currencyCode", refs={String.class}, tree="[0]")
     private Output<String> currencyCode;
 
     /**
@@ -110,7 +110,7 @@ public class Subscription extends com.pulumi.resources.CustomResource {
      * (Updatable) User email
      * 
      */
-    @Export(name="email", type=String.class, parameters={})
+    @Export(name="email", refs={String.class}, tree="[0]")
     private Output<String> email;
 
     /**
@@ -124,7 +124,7 @@ public class Subscription extends com.pulumi.resources.CustomResource {
      * (Updatable) GSI Subscription external code.
      * 
      */
-    @Export(name="gsiOrgCode", type=String.class, parameters={})
+    @Export(name="gsiOrgCode", refs={String.class}, tree="[0]")
     private Output<String> gsiOrgCode;
 
     /**
@@ -138,7 +138,7 @@ public class Subscription extends com.pulumi.resources.CustomResource {
      * (Updatable) Payment intension.
      * 
      */
-    @Export(name="isIntentToPay", type=Boolean.class, parameters={})
+    @Export(name="isIntentToPay", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isIntentToPay;
 
     /**
@@ -152,7 +152,7 @@ public class Subscription extends com.pulumi.resources.CustomResource {
      * (Updatable) Language short code (en, de, hu, etc)
      * 
      */
-    @Export(name="languageCode", type=String.class, parameters={})
+    @Export(name="languageCode", refs={String.class}, tree="[0]")
     private Output<String> languageCode;
 
     /**
@@ -166,7 +166,7 @@ public class Subscription extends com.pulumi.resources.CustomResource {
      * (Updatable) GSI organization external identifier.
      * 
      */
-    @Export(name="organizationId", type=String.class, parameters={})
+    @Export(name="organizationId", refs={String.class}, tree="[0]")
     private Output<String> organizationId;
 
     /**
@@ -180,7 +180,7 @@ public class Subscription extends com.pulumi.resources.CustomResource {
      * (Updatable) The home region&#39;s public name of the logged in user.
      * 
      */
-    @Export(name="ospHomeRegion", type=String.class, parameters={})
+    @Export(name="ospHomeRegion", refs={String.class}, tree="[0]")
     private Output<String> ospHomeRegion;
 
     /**
@@ -194,7 +194,7 @@ public class Subscription extends com.pulumi.resources.CustomResource {
      * (Updatable) Payment gateway details.
      * 
      */
-    @Export(name="paymentGateways", type=List.class, parameters={SubscriptionPaymentGateway.class})
+    @Export(name="paymentGateways", refs={List.class,SubscriptionPaymentGateway.class}, tree="[0,1]")
     private Output<List<SubscriptionPaymentGateway>> paymentGateways;
 
     /**
@@ -208,7 +208,7 @@ public class Subscription extends com.pulumi.resources.CustomResource {
      * (Updatable) Payment option list of a subscription.
      * 
      */
-    @Export(name="paymentOptions", type=List.class, parameters={SubscriptionPaymentOption.class})
+    @Export(name="paymentOptions", refs={List.class,SubscriptionPaymentOption.class}, tree="[0,1]")
     private Output<List<SubscriptionPaymentOption>> paymentOptions;
 
     /**
@@ -222,7 +222,7 @@ public class Subscription extends com.pulumi.resources.CustomResource {
      * (Updatable) Subscription plan type.
      * 
      */
-    @Export(name="planType", type=String.class, parameters={})
+    @Export(name="planType", refs={String.class}, tree="[0]")
     private Output<String> planType;
 
     /**
@@ -236,7 +236,7 @@ public class Subscription extends com.pulumi.resources.CustomResource {
      * (Updatable) Ship to customer account role.
      * 
      */
-    @Export(name="shipToCustAcctRoleId", type=String.class, parameters={})
+    @Export(name="shipToCustAcctRoleId", refs={String.class}, tree="[0]")
     private Output<String> shipToCustAcctRoleId;
 
     /**
@@ -250,7 +250,7 @@ public class Subscription extends com.pulumi.resources.CustomResource {
      * (Updatable) Ship to customer account site address id.
      * 
      */
-    @Export(name="shipToCustAcctSiteId", type=String.class, parameters={})
+    @Export(name="shipToCustAcctSiteId", refs={String.class}, tree="[0]")
     private Output<String> shipToCustAcctSiteId;
 
     /**
@@ -264,7 +264,7 @@ public class Subscription extends com.pulumi.resources.CustomResource {
      * (Updatable) Subscription details object which extends the SubscriptionSummary
      * 
      */
-    @Export(name="subscription", type=SubscriptionSubscription.class, parameters={})
+    @Export(name="subscription", refs={SubscriptionSubscription.class}, tree="[0]")
     private Output<SubscriptionSubscription> subscription;
 
     /**
@@ -281,7 +281,7 @@ public class Subscription extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="subscriptionId", type=String.class, parameters={})
+    @Export(name="subscriptionId", refs={String.class}, tree="[0]")
     private Output<String> subscriptionId;
 
     /**
@@ -298,7 +298,7 @@ public class Subscription extends com.pulumi.resources.CustomResource {
      * (Updatable) Subscription plan number.
      * 
      */
-    @Export(name="subscriptionPlanNumber", type=String.class, parameters={})
+    @Export(name="subscriptionPlanNumber", refs={String.class}, tree="[0]")
     private Output<String> subscriptionPlanNumber;
 
     /**
@@ -312,7 +312,7 @@ public class Subscription extends com.pulumi.resources.CustomResource {
      * (Updatable) Tax details.
      * 
      */
-    @Export(name="taxInfos", type=List.class, parameters={SubscriptionTaxInfo.class})
+    @Export(name="taxInfos", refs={List.class,SubscriptionTaxInfo.class}, tree="[0,1]")
     private Output<List<SubscriptionTaxInfo>> taxInfos;
 
     /**
@@ -326,7 +326,7 @@ public class Subscription extends com.pulumi.resources.CustomResource {
      * (Updatable) Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
      * 
      */
-    @Export(name="timePersonalToCorporateConv", type=String.class, parameters={})
+    @Export(name="timePersonalToCorporateConv", refs={String.class}, tree="[0]")
     private Output<String> timePersonalToCorporateConv;
 
     /**
@@ -340,7 +340,7 @@ public class Subscription extends com.pulumi.resources.CustomResource {
      * (Updatable) Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
      * 
      */
-    @Export(name="timePlanUpgrade", type=String.class, parameters={})
+    @Export(name="timePlanUpgrade", refs={String.class}, tree="[0]")
     private Output<String> timePlanUpgrade;
 
     /**
@@ -354,7 +354,7 @@ public class Subscription extends com.pulumi.resources.CustomResource {
      * (Updatable) Start date of the subscription.
      * 
      */
-    @Export(name="timeStart", type=String.class, parameters={})
+    @Export(name="timeStart", refs={String.class}, tree="[0]")
     private Output<String> timeStart;
 
     /**
@@ -368,7 +368,7 @@ public class Subscription extends com.pulumi.resources.CustomResource {
      * (Updatable) Status of the upgrade.
      * 
      */
-    @Export(name="upgradeState", type=String.class, parameters={})
+    @Export(name="upgradeState", refs={String.class}, tree="[0]")
     private Output<String> upgradeState;
 
     /**
@@ -382,7 +382,7 @@ public class Subscription extends com.pulumi.resources.CustomResource {
      * (Updatable) This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
      * 
      */
-    @Export(name="upgradeStateDetails", type=String.class, parameters={})
+    @Export(name="upgradeStateDetails", refs={String.class}, tree="[0]")
     private Output<String> upgradeStateDetails;
 
     /**

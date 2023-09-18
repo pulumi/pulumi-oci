@@ -114,7 +114,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
      * 
      */
-    @Export(name="actualEsxiHostsCount", type=Integer.class, parameters={})
+    @Export(name="actualEsxiHostsCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> actualEsxiHostsCount;
 
     /**
@@ -128,7 +128,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
      * 
      */
-    @Export(name="capacityReservationId", type=String.class, parameters={})
+    @Export(name="capacityReservationId", refs={String.class}, tree="[0]")
     private Output<String> capacityReservationId;
 
     /**
@@ -142,7 +142,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the SDDC.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -156,7 +156,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * The availability domain to create the SDDC&#39;s ESXi hosts in. For multi-AD SDDC deployment, set to `multi-AD`.
      * 
      */
-    @Export(name="computeAvailabilityDomain", type=String.class, parameters={})
+    @Export(name="computeAvailabilityDomain", refs={String.class}, tree="[0]")
     private Output<String> computeAvailabilityDomain;
 
     /**
@@ -170,7 +170,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape.
      * 
      */
-    @Export(name="datastores", type=List.class, parameters={SddcDatastore.class})
+    @Export(name="datastores", refs={List.class,SddcDatastore.class}, tree="[0,1]")
     private Output<List<SddcDatastore>> datastores;
 
     /**
@@ -184,7 +184,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -198,7 +198,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * (Updatable) A descriptive name for the SDDC. SDDC name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -214,7 +214,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * **Note:** If you later delete EXSi hosts from a production SDDC to total less than 3, you are still billed for the 3 minimum recommended ESXi hosts. Also, you cannot add more VMware workloads to the SDDC until it again has at least 3 ESXi hosts.
      * 
      */
-    @Export(name="esxiHostsCount", type=Integer.class, parameters={})
+    @Export(name="esxiHostsCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> esxiHostsCount;
 
     /**
@@ -230,7 +230,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -244,7 +244,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * (Updatable) The action to be performed upon HCX licenses. &#34;UPGRADE&#34; will upgrade the SDDC from HCX Advanced to HCX Enterprise. &#34;DOWNGRADE&#34; will downgrade the SDDC from HCX Enterprise to HCX Advanced after current HCX Enterprise billing cycle end date. &#34;CANCEL_DOWNGRADE&#34; will cancel the pending downgrade of HCX licenses. The action will only be performed when its value is changed. This field can also be used to enable HCX Enterprise during SDDC creation. If &#34;UPGRADE&#34; is set during SDDC creation, the SDDC will be created with HCX Enterprise enable. Supported actions during update: UPGRADE, DOWNGRADE, CANCEL_DOWNGRADE. Supported actions during creation: UPGRADE.
      * 
      */
-    @Export(name="hcxAction", type=String.class, parameters={})
+    @Export(name="hcxAction", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> hcxAction;
 
     /**
@@ -258,7 +258,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * The FQDN for HCX Manager.  Example: `hcx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
      * 
      */
-    @Export(name="hcxFqdn", type=String.class, parameters={})
+    @Export(name="hcxFqdn", refs={String.class}, tree="[0]")
     private Output<String> hcxFqdn;
 
     /**
@@ -272,7 +272,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * The SDDC includes an administrator username and initial password for HCX Manager. Make sure to change this initial HCX Manager password to a different value.
      * 
      */
-    @Export(name="hcxInitialPassword", type=String.class, parameters={})
+    @Export(name="hcxInitialPassword", refs={String.class}, tree="[0]")
     private Output<String> hcxInitialPassword;
 
     /**
@@ -286,7 +286,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * The activation keys to use on the on-premises HCX Enterprise appliances you site pair with HCX Manager in your VMware Solution. The number of keys provided depends on the HCX license type. HCX Advanced provides 3 activation keys. HCX Enterprise provides 10 activation keys.
      * 
      */
-    @Export(name="hcxOnPremKey", type=String.class, parameters={})
+    @Export(name="hcxOnPremKey", refs={String.class}, tree="[0]")
     private Output<String> hcxOnPremKey;
 
     /**
@@ -300,7 +300,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * The activation licenses to use on the on-premises HCX Enterprise appliance you site pair with HCX Manager in your VMware Solution.
      * 
      */
-    @Export(name="hcxOnPremLicenses", type=List.class, parameters={SddcHcxOnPremLicense.class})
+    @Export(name="hcxOnPremLicenses", refs={List.class,SddcHcxOnPremLicense.class}, tree="[0,1]")
     private Output<List<SddcHcxOnPremLicense>> hcxOnPremLicenses;
 
     /**
@@ -314,7 +314,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for HCX Manager. For information about `PrivateIp` objects, see the Core Services API.
      * 
      */
-    @Export(name="hcxPrivateIpId", type=String.class, parameters={})
+    @Export(name="hcxPrivateIpId", refs={String.class}, tree="[0]")
     private Output<String> hcxPrivateIpId;
 
     /**
@@ -328,7 +328,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the HCX component of the VMware environment. This value is required only when `isHcxEnabled` is true.
      * 
      */
-    @Export(name="hcxVlanId", type=String.class, parameters={})
+    @Export(name="hcxVlanId", refs={String.class}, tree="[0]")
     private Output<String> hcxVlanId;
 
     /**
@@ -342,7 +342,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * The initial OCPU count of the SDDC&#39;s ESXi hosts.
      * 
      */
-    @Export(name="initialHostOcpuCount", type=Double.class, parameters={})
+    @Export(name="initialHostOcpuCount", refs={Double.class}, tree="[0]")
     private Output<Double> initialHostOcpuCount;
 
     /**
@@ -356,7 +356,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * The initial compute shape of the SDDC&#39;s ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
      * 
      */
-    @Export(name="initialHostShapeName", type=String.class, parameters={})
+    @Export(name="initialHostShapeName", refs={String.class}, tree="[0]")
     private Output<String> initialHostShapeName;
 
     /**
@@ -370,7 +370,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
      * 
      */
-    @Export(name="initialSku", type=String.class, parameters={})
+    @Export(name="initialSku", refs={String.class}, tree="[0]")
     private Output<String> initialSku;
 
     /**
@@ -386,7 +386,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * For example, if the value is `mySDDC`, the ESXi hosts are named `mySDDC-1`, `mySDDC-2`, and so on.
      * 
      */
-    @Export(name="instanceDisplayNamePrefix", type=String.class, parameters={})
+    @Export(name="instanceDisplayNamePrefix", refs={String.class}, tree="[0]")
     private Output<String> instanceDisplayNamePrefix;
 
     /**
@@ -402,7 +402,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
      * 
      */
-    @Export(name="isHcxEnabled", type=Boolean.class, parameters={})
+    @Export(name="isHcxEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isHcxEnabled;
 
     /**
@@ -416,7 +416,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * Indicates whether HCX Enterprise is enabled for this SDDC.
      * 
      */
-    @Export(name="isHcxEnterpriseEnabled", type=Boolean.class, parameters={})
+    @Export(name="isHcxEnterpriseEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isHcxEnterpriseEnabled;
 
     /**
@@ -430,7 +430,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * Indicates whether SDDC is pending downgrade from HCX Enterprise to HCX Advanced.
      * 
      */
-    @Export(name="isHcxPendingDowngrade", type=Boolean.class, parameters={})
+    @Export(name="isHcxPendingDowngrade", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isHcxPendingDowngrade;
 
     /**
@@ -444,7 +444,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * Indicates whether shielded instance is enabled for this SDDC.
      * 
      */
-    @Export(name="isShieldedInstanceEnabled", type=Boolean.class, parameters={})
+    @Export(name="isShieldedInstanceEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isShieldedInstanceEnabled;
 
     /**
@@ -458,7 +458,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * Indicates whether this SDDC is designated for only single ESXi host.
      * 
      */
-    @Export(name="isSingleHostSddc", type=Boolean.class, parameters={})
+    @Export(name="isSingleHostSddc", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isSingleHostSddc;
 
     /**
@@ -472,7 +472,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 1 component of the VMware environment.
      * 
      */
-    @Export(name="nsxEdgeUplink1vlanId", type=String.class, parameters={})
+    @Export(name="nsxEdgeUplink1vlanId", refs={String.class}, tree="[0]")
     private Output<String> nsxEdgeUplink1vlanId;
 
     /**
@@ -488,7 +488,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * **Note:** This VLAN is reserved for future use to deploy public-facing applications on the VMware SDDC.
      * 
      */
-    @Export(name="nsxEdgeUplink2vlanId", type=String.class, parameters={})
+    @Export(name="nsxEdgeUplink2vlanId", refs={String.class}, tree="[0]")
     private Output<String> nsxEdgeUplink2vlanId;
 
     /**
@@ -504,7 +504,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for the NSX Edge Uplink. Use this OCID as the route target for route table rules when setting up connectivity between the SDDC and other networks. For information about `PrivateIp` objects, see the Core Services API.
      * 
      */
-    @Export(name="nsxEdgeUplinkIpId", type=String.class, parameters={})
+    @Export(name="nsxEdgeUplinkIpId", refs={String.class}, tree="[0]")
     private Output<String> nsxEdgeUplinkIpId;
 
     /**
@@ -518,7 +518,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge VTEP component of the VMware environment.
      * 
      */
-    @Export(name="nsxEdgeVtepVlanId", type=String.class, parameters={})
+    @Export(name="nsxEdgeVtepVlanId", refs={String.class}, tree="[0]")
     private Output<String> nsxEdgeVtepVlanId;
 
     /**
@@ -532,7 +532,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * The FQDN for NSX Manager.  Example: `nsx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
      * 
      */
-    @Export(name="nsxManagerFqdn", type=String.class, parameters={})
+    @Export(name="nsxManagerFqdn", refs={String.class}, tree="[0]")
     private Output<String> nsxManagerFqdn;
 
     /**
@@ -546,7 +546,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * The SDDC includes an administrator username and initial password for NSX Manager. Make sure to change this initial NSX Manager password to a different value.
      * 
      */
-    @Export(name="nsxManagerInitialPassword", type=String.class, parameters={})
+    @Export(name="nsxManagerInitialPassword", refs={String.class}, tree="[0]")
     private Output<String> nsxManagerInitialPassword;
 
     /**
@@ -560,7 +560,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for NSX Manager. For information about `PrivateIp` objects, see the Core Services API.
      * 
      */
-    @Export(name="nsxManagerPrivateIpId", type=String.class, parameters={})
+    @Export(name="nsxManagerPrivateIpId", refs={String.class}, tree="[0]")
     private Output<String> nsxManagerPrivateIpId;
 
     /**
@@ -574,7 +574,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * The SDDC includes an administrator username and initial password for NSX Manager. You can change this initial username to a different value in NSX Manager.
      * 
      */
-    @Export(name="nsxManagerUsername", type=String.class, parameters={})
+    @Export(name="nsxManagerUsername", refs={String.class}, tree="[0]")
     private Output<String> nsxManagerUsername;
 
     /**
@@ -588,7 +588,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * The VMware NSX overlay workload segment to host your application. Connect to workload portgroup in vCenter to access this overlay segment.
      * 
      */
-    @Export(name="nsxOverlaySegmentName", type=String.class, parameters={})
+    @Export(name="nsxOverlaySegmentName", refs={String.class}, tree="[0]")
     private Output<String> nsxOverlaySegmentName;
 
     /**
@@ -602,7 +602,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX VTEP component of the VMware environment.
      * 
      */
-    @Export(name="nsxVtepVlanId", type=String.class, parameters={})
+    @Export(name="nsxVtepVlanId", refs={String.class}, tree="[0]")
     private Output<String> nsxVtepVlanId;
 
     /**
@@ -616,7 +616,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet to use for provisioning the SDDC.
      * 
      */
-    @Export(name="provisioningSubnetId", type=String.class, parameters={})
+    @Export(name="provisioningSubnetId", refs={String.class}, tree="[0]")
     private Output<String> provisioningSubnetId;
 
     /**
@@ -630,7 +630,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment.
      * 
      */
-    @Export(name="provisioningVlanId", type=String.class, parameters={})
+    @Export(name="provisioningVlanId", refs={String.class}, tree="[0]")
     private Output<String> provisioningVlanId;
 
     /**
@@ -644,7 +644,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * (Updatable) HCX on-premise licenses status will be refreshed whenever the value of this field is changed.
      * 
      */
-    @Export(name="refreshHcxLicenseStatus", type=Boolean.class, parameters={})
+    @Export(name="refreshHcxLicenseStatus", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> refreshHcxLicenseStatus;
 
     /**
@@ -658,7 +658,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment.
      * 
      */
-    @Export(name="replicationVlanId", type=String.class, parameters={})
+    @Export(name="replicationVlanId", refs={String.class}, tree="[0]")
     private Output<String> replicationVlanId;
 
     /**
@@ -672,7 +672,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * (Updatable) The HCX on-premise licenses to be reserved when downgrade from HCX Enterprise to HCX Advanced. It should not be provided during resource creation. It is required and can only be set when the hcx_action is &#34;DOWNGRADE&#34;. Its value can only be changed when hcx_action is updated.
      * 
      */
-    @Export(name="reservingHcxOnPremiseLicenseKeys", type=List.class, parameters={String.class})
+    @Export(name="reservingHcxOnPremiseLicenseKeys", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> reservingHcxOnPremiseLicenseKeys;
 
     /**
@@ -686,7 +686,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * (Updatable) One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on each ESXi host. Use a newline character to separate multiple keys. The SSH keys must be in the format required for the `authorized_keys` file
      * 
      */
-    @Export(name="sshAuthorizedKeys", type=String.class, parameters={})
+    @Export(name="sshAuthorizedKeys", refs={String.class}, tree="[0]")
     private Output<String> sshAuthorizedKeys;
 
     /**
@@ -700,7 +700,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * The current state of the SDDC.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -714,7 +714,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * The date and time the SDDC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -728,7 +728,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * The date and time current HCX Enterprise billing cycle ends, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeHcxBillingCycleEnd", type=String.class, parameters={})
+    @Export(name="timeHcxBillingCycleEnd", refs={String.class}, tree="[0]")
     private Output<String> timeHcxBillingCycleEnd;
 
     /**
@@ -742,7 +742,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * The date and time the SDDC&#39;s HCX on-premise license status was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeHcxLicenseStatusUpdated", type=String.class, parameters={})
+    @Export(name="timeHcxLicenseStatusUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeHcxLicenseStatusUpdated;
 
     /**
@@ -756,7 +756,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * The date and time the SDDC was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -770,7 +770,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * The vSphere licenses to use when upgrading the SDDC.
      * 
      */
-    @Export(name="upgradeLicenses", type=List.class, parameters={SddcUpgradeLicense.class})
+    @Export(name="upgradeLicenses", refs={List.class,SddcUpgradeLicense.class}, tree="[0,1]")
     private Output<List<SddcUpgradeLicense>> upgradeLicenses;
 
     /**
@@ -784,7 +784,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * The FQDN for vCenter.  Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
      * 
      */
-    @Export(name="vcenterFqdn", type=String.class, parameters={})
+    @Export(name="vcenterFqdn", refs={String.class}, tree="[0]")
     private Output<String> vcenterFqdn;
 
     /**
@@ -798,7 +798,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * The SDDC includes an administrator username and initial password for vCenter. Make sure to change this initial vCenter password to a different value.
      * 
      */
-    @Export(name="vcenterInitialPassword", type=String.class, parameters={})
+    @Export(name="vcenterInitialPassword", refs={String.class}, tree="[0]")
     private Output<String> vcenterInitialPassword;
 
     /**
@@ -812,7 +812,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for vCenter. For information about `PrivateIp` objects, see the Core Services API.
      * 
      */
-    @Export(name="vcenterPrivateIpId", type=String.class, parameters={})
+    @Export(name="vcenterPrivateIpId", refs={String.class}, tree="[0]")
     private Output<String> vcenterPrivateIpId;
 
     /**
@@ -826,7 +826,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * The SDDC includes an administrator username and initial password for vCenter. You can change this initial username to a different value in vCenter.
      * 
      */
-    @Export(name="vcenterUsername", type=String.class, parameters={})
+    @Export(name="vcenterUsername", refs={String.class}, tree="[0]")
     private Output<String> vcenterUsername;
 
     /**
@@ -840,7 +840,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vMotion component of the VMware environment.
      * 
      */
-    @Export(name="vmotionVlanId", type=String.class, parameters={})
+    @Export(name="vmotionVlanId", refs={String.class}, tree="[0]")
     private Output<String> vmotionVlanId;
 
     /**
@@ -854,7 +854,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * (Updatable) The VMware software bundle to install on the ESXi hosts in the SDDC. To get a list of the available versions, use [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions).
      * 
      */
-    @Export(name="vmwareSoftwareVersion", type=String.class, parameters={})
+    @Export(name="vmwareSoftwareVersion", refs={String.class}, tree="[0]")
     private Output<String> vmwareSoftwareVersion;
 
     /**
@@ -868,7 +868,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSAN component of the VMware environment.
      * 
      */
-    @Export(name="vsanVlanId", type=String.class, parameters={})
+    @Export(name="vsanVlanId", refs={String.class}, tree="[0]")
     private Output<String> vsanVlanId;
 
     /**
@@ -882,7 +882,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * The link to guidance for upgrading vSphere.
      * 
      */
-    @Export(name="vsphereUpgradeGuide", type=String.class, parameters={})
+    @Export(name="vsphereUpgradeGuide", refs={String.class}, tree="[0]")
     private Output<String> vsphereUpgradeGuide;
 
     /**
@@ -896,7 +896,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * The links to binary objects needed to upgrade vSphere.
      * 
      */
-    @Export(name="vsphereUpgradeObjects", type=List.class, parameters={SddcVsphereUpgradeObject.class})
+    @Export(name="vsphereUpgradeObjects", refs={List.class,SddcVsphereUpgradeObject.class}, tree="[0,1]")
     private Output<List<SddcVsphereUpgradeObject>> vsphereUpgradeObjects;
 
     /**
@@ -910,7 +910,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment.
      * 
      */
-    @Export(name="vsphereVlanId", type=String.class, parameters={})
+    @Export(name="vsphereVlanId", refs={String.class}, tree="[0]")
     private Output<String> vsphereVlanId;
 
     /**
@@ -927,7 +927,7 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="workloadNetworkCidr", type=String.class, parameters={})
+    @Export(name="workloadNetworkCidr", refs={String.class}, tree="[0]")
     private Output<String> workloadNetworkCidr;
 
     /**

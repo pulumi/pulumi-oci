@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Network Source resource in Oracle Cloud Infrastructure Identity service.
@@ -270,6 +271,12 @@ func (i *NetworkSource) ToNetworkSourceOutputWithContext(ctx context.Context) Ne
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkSourceOutput)
 }
 
+func (i *NetworkSource) ToOutput(ctx context.Context) pulumix.Output[*NetworkSource] {
+	return pulumix.Output[*NetworkSource]{
+		OutputState: i.ToNetworkSourceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // NetworkSourceArrayInput is an input type that accepts NetworkSourceArray and NetworkSourceArrayOutput values.
 // You can construct a concrete instance of `NetworkSourceArrayInput` via:
 //
@@ -293,6 +300,12 @@ func (i NetworkSourceArray) ToNetworkSourceArrayOutput() NetworkSourceArrayOutpu
 
 func (i NetworkSourceArray) ToNetworkSourceArrayOutputWithContext(ctx context.Context) NetworkSourceArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkSourceArrayOutput)
+}
+
+func (i NetworkSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]*NetworkSource] {
+	return pulumix.Output[[]*NetworkSource]{
+		OutputState: i.ToNetworkSourceArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // NetworkSourceMapInput is an input type that accepts NetworkSourceMap and NetworkSourceMapOutput values.
@@ -320,6 +333,12 @@ func (i NetworkSourceMap) ToNetworkSourceMapOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkSourceMapOutput)
 }
 
+func (i NetworkSourceMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*NetworkSource] {
+	return pulumix.Output[map[string]*NetworkSource]{
+		OutputState: i.ToNetworkSourceMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type NetworkSourceOutput struct{ *pulumi.OutputState }
 
 func (NetworkSourceOutput) ElementType() reflect.Type {
@@ -332,6 +351,12 @@ func (o NetworkSourceOutput) ToNetworkSourceOutput() NetworkSourceOutput {
 
 func (o NetworkSourceOutput) ToNetworkSourceOutputWithContext(ctx context.Context) NetworkSourceOutput {
 	return o
+}
+
+func (o NetworkSourceOutput) ToOutput(ctx context.Context) pulumix.Output[*NetworkSource] {
+	return pulumix.Output[*NetworkSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the tenancy (root compartment) containing the network source object.
@@ -406,6 +431,12 @@ func (o NetworkSourceArrayOutput) ToNetworkSourceArrayOutputWithContext(ctx cont
 	return o
 }
 
+func (o NetworkSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*NetworkSource] {
+	return pulumix.Output[[]*NetworkSource]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o NetworkSourceArrayOutput) Index(i pulumi.IntInput) NetworkSourceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *NetworkSource {
 		return vs[0].([]*NetworkSource)[vs[1].(int)]
@@ -424,6 +455,12 @@ func (o NetworkSourceMapOutput) ToNetworkSourceMapOutput() NetworkSourceMapOutpu
 
 func (o NetworkSourceMapOutput) ToNetworkSourceMapOutputWithContext(ctx context.Context) NetworkSourceMapOutput {
 	return o
+}
+
+func (o NetworkSourceMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*NetworkSource] {
+	return pulumix.Output[map[string]*NetworkSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o NetworkSourceMapOutput) MapIndex(k pulumi.StringInput) NetworkSourceOutput {

@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Unset Security Assessment Baseline resource in Oracle Cloud Infrastructure Data Safe service.
@@ -154,6 +155,12 @@ func (i *UnsetSecurityAssessmentBaseline) ToUnsetSecurityAssessmentBaselineOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(UnsetSecurityAssessmentBaselineOutput)
 }
 
+func (i *UnsetSecurityAssessmentBaseline) ToOutput(ctx context.Context) pulumix.Output[*UnsetSecurityAssessmentBaseline] {
+	return pulumix.Output[*UnsetSecurityAssessmentBaseline]{
+		OutputState: i.ToUnsetSecurityAssessmentBaselineOutputWithContext(ctx).OutputState,
+	}
+}
+
 // UnsetSecurityAssessmentBaselineArrayInput is an input type that accepts UnsetSecurityAssessmentBaselineArray and UnsetSecurityAssessmentBaselineArrayOutput values.
 // You can construct a concrete instance of `UnsetSecurityAssessmentBaselineArrayInput` via:
 //
@@ -177,6 +184,12 @@ func (i UnsetSecurityAssessmentBaselineArray) ToUnsetSecurityAssessmentBaselineA
 
 func (i UnsetSecurityAssessmentBaselineArray) ToUnsetSecurityAssessmentBaselineArrayOutputWithContext(ctx context.Context) UnsetSecurityAssessmentBaselineArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(UnsetSecurityAssessmentBaselineArrayOutput)
+}
+
+func (i UnsetSecurityAssessmentBaselineArray) ToOutput(ctx context.Context) pulumix.Output[[]*UnsetSecurityAssessmentBaseline] {
+	return pulumix.Output[[]*UnsetSecurityAssessmentBaseline]{
+		OutputState: i.ToUnsetSecurityAssessmentBaselineArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // UnsetSecurityAssessmentBaselineMapInput is an input type that accepts UnsetSecurityAssessmentBaselineMap and UnsetSecurityAssessmentBaselineMapOutput values.
@@ -204,6 +217,12 @@ func (i UnsetSecurityAssessmentBaselineMap) ToUnsetSecurityAssessmentBaselineMap
 	return pulumi.ToOutputWithContext(ctx, i).(UnsetSecurityAssessmentBaselineMapOutput)
 }
 
+func (i UnsetSecurityAssessmentBaselineMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*UnsetSecurityAssessmentBaseline] {
+	return pulumix.Output[map[string]*UnsetSecurityAssessmentBaseline]{
+		OutputState: i.ToUnsetSecurityAssessmentBaselineMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type UnsetSecurityAssessmentBaselineOutput struct{ *pulumi.OutputState }
 
 func (UnsetSecurityAssessmentBaselineOutput) ElementType() reflect.Type {
@@ -216,6 +235,12 @@ func (o UnsetSecurityAssessmentBaselineOutput) ToUnsetSecurityAssessmentBaseline
 
 func (o UnsetSecurityAssessmentBaselineOutput) ToUnsetSecurityAssessmentBaselineOutputWithContext(ctx context.Context) UnsetSecurityAssessmentBaselineOutput {
 	return o
+}
+
+func (o UnsetSecurityAssessmentBaselineOutput) ToOutput(ctx context.Context) pulumix.Output[*UnsetSecurityAssessmentBaseline] {
+	return pulumix.Output[*UnsetSecurityAssessmentBaseline]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the security assessment.
@@ -240,6 +265,12 @@ func (o UnsetSecurityAssessmentBaselineArrayOutput) ToUnsetSecurityAssessmentBas
 	return o
 }
 
+func (o UnsetSecurityAssessmentBaselineArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*UnsetSecurityAssessmentBaseline] {
+	return pulumix.Output[[]*UnsetSecurityAssessmentBaseline]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o UnsetSecurityAssessmentBaselineArrayOutput) Index(i pulumi.IntInput) UnsetSecurityAssessmentBaselineOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *UnsetSecurityAssessmentBaseline {
 		return vs[0].([]*UnsetSecurityAssessmentBaseline)[vs[1].(int)]
@@ -258,6 +289,12 @@ func (o UnsetSecurityAssessmentBaselineMapOutput) ToUnsetSecurityAssessmentBasel
 
 func (o UnsetSecurityAssessmentBaselineMapOutput) ToUnsetSecurityAssessmentBaselineMapOutputWithContext(ctx context.Context) UnsetSecurityAssessmentBaselineMapOutput {
 	return o
+}
+
+func (o UnsetSecurityAssessmentBaselineMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*UnsetSecurityAssessmentBaseline] {
+	return pulumix.Output[map[string]*UnsetSecurityAssessmentBaseline]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o UnsetSecurityAssessmentBaselineMapOutput) MapIndex(k pulumi.StringInput) UnsetSecurityAssessmentBaselineOutput {

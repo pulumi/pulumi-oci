@@ -104,7 +104,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * Average precision of the trained model
      * 
      */
-    @Export(name="averagePrecision", type=Double.class, parameters={})
+    @Export(name="averagePrecision", refs={Double.class}, tree="[0]")
     private Output<Double> averagePrecision;
 
     /**
@@ -118,7 +118,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * (Updatable) Compartment Identifier
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -132,7 +132,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * Confidence ratio of the calculation
      * 
      */
-    @Export(name="confidenceThreshold", type=Double.class, parameters={})
+    @Export(name="confidenceThreshold", refs={Double.class}, tree="[0]")
     private Output<Double> confidenceThreshold;
 
     /**
@@ -146,7 +146,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -160,7 +160,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * (Updatable) A short description of the Model.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -174,7 +174,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * (Updatable) Model Identifier
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -188,7 +188,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -202,7 +202,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * If It&#39;s true, Training is set for recommended epochs needed for quick training.
      * 
      */
-    @Export(name="isQuickMode", type=Boolean.class, parameters={})
+    @Export(name="isQuickMode", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isQuickMode;
 
     /**
@@ -216,7 +216,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -230,7 +230,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * The maximum duration in hours for which the training will run.
      * 
      */
-    @Export(name="maxTrainingDurationInHours", type=Double.class, parameters={})
+    @Export(name="maxTrainingDurationInHours", refs={Double.class}, tree="[0]")
     private Output<Double> maxTrainingDurationInHours;
 
     /**
@@ -244,7 +244,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * Complete Training Metrics for successful trained model
      * 
      */
-    @Export(name="metrics", type=String.class, parameters={})
+    @Export(name="metrics", refs={String.class}, tree="[0]")
     private Output<String> metrics;
 
     /**
@@ -258,7 +258,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * The  type of the model.
      * 
      */
-    @Export(name="modelType", type=String.class, parameters={})
+    @Export(name="modelType", refs={String.class}, tree="[0]")
     private Output<String> modelType;
 
     /**
@@ -272,7 +272,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * Model version.
      * 
      */
-    @Export(name="modelVersion", type=String.class, parameters={})
+    @Export(name="modelVersion", refs={String.class}, tree="[0]")
     private Output<String> modelVersion;
 
     /**
@@ -286,7 +286,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * Precision of the trained model
      * 
      */
-    @Export(name="precision", type=Double.class, parameters={})
+    @Export(name="precision", refs={Double.class}, tree="[0]")
     private Output<Double> precision;
 
     /**
@@ -300,7 +300,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
      * 
      */
-    @Export(name="projectId", type=String.class, parameters={})
+    @Export(name="projectId", refs={String.class}, tree="[0]")
     private Output<String> projectId;
 
     /**
@@ -314,7 +314,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * Recall of the trained model
      * 
      */
-    @Export(name="recall", type=Double.class, parameters={})
+    @Export(name="recall", refs={Double.class}, tree="[0]")
     private Output<Double> recall;
 
     /**
@@ -328,7 +328,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * The current state of the Model.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -342,7 +342,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -356,7 +356,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * Total number of testing Images
      * 
      */
-    @Export(name="testImageCount", type=Integer.class, parameters={})
+    @Export(name="testImageCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> testImageCount;
 
     /**
@@ -370,7 +370,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * The base entity for a Dataset, which is the input for Model creation.
      * 
      */
-    @Export(name="testingDataset", type=ModelTestingDataset.class, parameters={})
+    @Export(name="testingDataset", refs={ModelTestingDataset.class}, tree="[0]")
     private Output<ModelTestingDataset> testingDataset;
 
     /**
@@ -384,7 +384,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * The time the Model was created. An RFC3339 formatted datetime string
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -398,7 +398,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * The time the Model was updated. An RFC3339 formatted datetime string
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -412,7 +412,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * Total number of training Images
      * 
      */
-    @Export(name="totalImageCount", type=Integer.class, parameters={})
+    @Export(name="totalImageCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> totalImageCount;
 
     /**
@@ -426,7 +426,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * Total hours actually used for training
      * 
      */
-    @Export(name="trainedDurationInHours", type=Double.class, parameters={})
+    @Export(name="trainedDurationInHours", refs={Double.class}, tree="[0]")
     private Output<Double> trainedDurationInHours;
 
     /**
@@ -440,7 +440,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * The base entity for a Dataset, which is the input for Model creation.
      * 
      */
-    @Export(name="trainingDataset", type=ModelTrainingDataset.class, parameters={})
+    @Export(name="trainingDataset", refs={ModelTrainingDataset.class}, tree="[0]")
     private Output<ModelTrainingDataset> trainingDataset;
 
     /**
@@ -454,7 +454,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * The base entity for a Dataset, which is the input for Model creation.
      * 
      */
-    @Export(name="validationDataset", type=ModelValidationDataset.class, parameters={})
+    @Export(name="validationDataset", refs={ModelValidationDataset.class}, tree="[0]")
     private Output<ModelValidationDataset> validationDataset;
 
     /**

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Repository Diffs in Oracle Cloud Infrastructure Devops service.
@@ -122,6 +123,12 @@ func (o GetRepositoryDiffsResultOutput) ToGetRepositoryDiffsResultOutput() GetRe
 
 func (o GetRepositoryDiffsResultOutput) ToGetRepositoryDiffsResultOutputWithContext(ctx context.Context) GetRepositoryDiffsResultOutput {
 	return o
+}
+
+func (o GetRepositoryDiffsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRepositoryDiffsResult] {
+	return pulumix.Output[GetRepositoryDiffsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetRepositoryDiffsResultOutput) BaseVersion() pulumi.StringOutput {

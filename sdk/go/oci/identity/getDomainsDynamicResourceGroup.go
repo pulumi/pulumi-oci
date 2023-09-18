@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Dynamic Resource Group resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -165,6 +166,12 @@ func (o LookupDomainsDynamicResourceGroupResultOutput) ToLookupDomainsDynamicRes
 
 func (o LookupDomainsDynamicResourceGroupResultOutput) ToLookupDomainsDynamicResourceGroupResultOutputWithContext(ctx context.Context) LookupDomainsDynamicResourceGroupResultOutput {
 	return o
+}
+
+func (o LookupDomainsDynamicResourceGroupResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDomainsDynamicResourceGroupResult] {
+	return pulumix.Output[LookupDomainsDynamicResourceGroupResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o LookupDomainsDynamicResourceGroupResultOutput) AttributeSets() pulumi.StringArrayOutput {

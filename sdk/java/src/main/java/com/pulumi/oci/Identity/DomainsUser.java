@@ -401,7 +401,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="active", type=Boolean.class, parameters={})
+    @Export(name="active", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> active;
 
     /**
@@ -437,7 +437,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="addresses", type=List.class, parameters={DomainsUserAddress.class})
+    @Export(name="addresses", refs={List.class,DomainsUserAddress.class}, tree="[0,1]")
     private Output<List<DomainsUserAddress>> addresses;
 
     /**
@@ -462,7 +462,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If &#39;attributes&#39; query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      * 
      */
-    @Export(name="attributeSets", type=List.class, parameters={String.class})
+    @Export(name="attributeSets", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> attributeSets;
 
     /**
@@ -476,7 +476,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      * 
      */
-    @Export(name="attributes", type=String.class, parameters={})
+    @Export(name="attributes", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> attributes;
 
     /**
@@ -490,7 +490,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      * 
      */
-    @Export(name="authorization", type=String.class, parameters={})
+    @Export(name="authorization", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> authorization;
 
     /**
@@ -514,7 +514,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="compartmentOcid", type=String.class, parameters={})
+    @Export(name="compartmentOcid", refs={String.class}, tree="[0]")
     private Output<String> compartmentOcid;
 
     /**
@@ -548,7 +548,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="deleteInProgress", type=Boolean.class, parameters={})
+    @Export(name="deleteInProgress", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> deleteInProgress;
 
     /**
@@ -585,7 +585,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -621,7 +621,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -654,7 +654,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="domainOcid", type=String.class, parameters={})
+    @Export(name="domainOcid", refs={String.class}, tree="[0]")
     private Output<String> domainOcid;
 
     /**
@@ -689,7 +689,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="emails", type=List.class, parameters={DomainsUserEmail.class})
+    @Export(name="emails", refs={List.class,DomainsUserEmail.class}, tree="[0,1]")
     private Output<List<DomainsUserEmail>> emails;
 
     /**
@@ -723,7 +723,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="entitlements", type=List.class, parameters={DomainsUserEntitlement.class})
+    @Export(name="entitlements", refs={List.class,DomainsUserEntitlement.class}, tree="[0,1]")
     private Output<List<DomainsUserEntitlement>> entitlements;
 
     /**
@@ -757,7 +757,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="externalId", type=String.class, parameters={})
+    @Export(name="externalId", refs={String.class}, tree="[0]")
     private Output<String> externalId;
 
     /**
@@ -792,7 +792,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="groups", type=List.class, parameters={DomainsUserGroup.class})
+    @Export(name="groups", refs={List.class,DomainsUserGroup.class}, tree="[0,1]")
     private Output<List<DomainsUserGroup>> groups;
 
     /**
@@ -824,7 +824,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    @Export(name="idcsCreatedBies", type=List.class, parameters={DomainsUserIdcsCreatedBy.class})
+    @Export(name="idcsCreatedBies", refs={List.class,DomainsUserIdcsCreatedBy.class}, tree="[0,1]")
     private Output<List<DomainsUserIdcsCreatedBy>> idcsCreatedBies;
 
     /**
@@ -846,7 +846,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * The basic endpoint for the identity domain
      * 
      */
-    @Export(name="idcsEndpoint", type=String.class, parameters={})
+    @Export(name="idcsEndpoint", refs={String.class}, tree="[0]")
     private Output<String> idcsEndpoint;
 
     /**
@@ -868,7 +868,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    @Export(name="idcsLastModifiedBies", type=List.class, parameters={DomainsUserIdcsLastModifiedBy.class})
+    @Export(name="idcsLastModifiedBies", refs={List.class,DomainsUserIdcsLastModifiedBy.class}, tree="[0,1]")
     private Output<List<DomainsUserIdcsLastModifiedBy>> idcsLastModifiedBies;
 
     /**
@@ -900,7 +900,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="idcsLastUpgradedInRelease", type=String.class, parameters={})
+    @Export(name="idcsLastUpgradedInRelease", refs={String.class}, tree="[0]")
     private Output<String> idcsLastUpgradedInRelease;
 
     /**
@@ -933,7 +933,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="idcsPreventedOperations", type=List.class, parameters={String.class})
+    @Export(name="idcsPreventedOperations", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> idcsPreventedOperations;
 
     /**
@@ -966,7 +966,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="ims", type=List.class, parameters={DomainsUserIm.class})
+    @Export(name="ims", refs={List.class,DomainsUserIm.class}, tree="[0,1]")
     private Output<List<DomainsUserIm>> ims;
 
     /**
@@ -1002,7 +1002,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="locale", type=String.class, parameters={})
+    @Export(name="locale", refs={String.class}, tree="[0]")
     private Output<String> locale;
 
     /**
@@ -1038,7 +1038,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    @Export(name="metas", type=List.class, parameters={DomainsUserMeta.class})
+    @Export(name="metas", refs={List.class,DomainsUserMeta.class}, tree="[0,1]")
     private Output<List<DomainsUserMeta>> metas;
 
     /**
@@ -1074,7 +1074,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="name", type=DomainsUserName.class, parameters={})
+    @Export(name="name", refs={DomainsUserName.class}, tree="[0]")
     private Output<DomainsUserName> name;
 
     /**
@@ -1113,7 +1113,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="nickName", type=String.class, parameters={})
+    @Export(name="nickName", refs={String.class}, tree="[0]")
     private Output<String> nickName;
 
     /**
@@ -1152,7 +1152,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="ocid", type=String.class, parameters={})
+    @Export(name="ocid", refs={String.class}, tree="[0]")
     private Output<String> ocid;
 
     /**
@@ -1191,7 +1191,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="password", type=String.class, parameters={})
+    @Export(name="password", refs={String.class}, tree="[0]")
     private Output<String> password;
 
     /**
@@ -1229,7 +1229,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="phoneNumbers", type=List.class, parameters={DomainsUserPhoneNumber.class})
+    @Export(name="phoneNumbers", refs={List.class,DomainsUserPhoneNumber.class}, tree="[0,1]")
     private Output<List<DomainsUserPhoneNumber>> phoneNumbers;
 
     /**
@@ -1264,7 +1264,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="photos", type=List.class, parameters={DomainsUserPhoto.class})
+    @Export(name="photos", refs={List.class,DomainsUserPhoto.class}, tree="[0,1]")
     private Output<List<DomainsUserPhoto>> photos;
 
     /**
@@ -1300,7 +1300,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="preferredLanguage", type=String.class, parameters={})
+    @Export(name="preferredLanguage", refs={String.class}, tree="[0]")
     private Output<String> preferredLanguage;
 
     /**
@@ -1339,7 +1339,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="profileUrl", type=String.class, parameters={})
+    @Export(name="profileUrl", refs={String.class}, tree="[0]")
     private Output<String> profileUrl;
 
     /**
@@ -1366,7 +1366,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      * 
      */
-    @Export(name="resourceTypeSchemaVersion", type=String.class, parameters={})
+    @Export(name="resourceTypeSchemaVersion", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> resourceTypeSchemaVersion;
 
     /**
@@ -1389,7 +1389,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="roles", type=List.class, parameters={DomainsUserRole.class})
+    @Export(name="roles", refs={List.class,DomainsUserRole.class}, tree="[0,1]")
     private Output<List<DomainsUserRole>> roles;
 
     /**
@@ -1422,7 +1422,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="schemas", type=List.class, parameters={String.class})
+    @Export(name="schemas", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> schemas;
 
     /**
@@ -1456,7 +1456,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="tags", type=List.class, parameters={DomainsUserTag.class})
+    @Export(name="tags", refs={List.class,DomainsUserTag.class}, tree="[0,1]")
     private Output<List<DomainsUserTag>> tags;
 
     /**
@@ -1490,7 +1490,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="tenancyOcid", type=String.class, parameters={})
+    @Export(name="tenancyOcid", refs={String.class}, tree="[0]")
     private Output<String> tenancyOcid;
 
     /**
@@ -1528,7 +1528,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="timezone", type=String.class, parameters={})
+    @Export(name="timezone", refs={String.class}, tree="[0]")
     private Output<String> timezone;
 
     /**
@@ -1569,7 +1569,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="title", type=String.class, parameters={})
+    @Export(name="title", refs={String.class}, tree="[0]")
     private Output<String> title;
 
     /**
@@ -1596,7 +1596,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * (Updatable) Enterprise User
      * 
      */
-    @Export(name="urnietfparamsscimschemasextensionenterprise20user", type=DomainsUserUrnietfparamsscimschemasextensionenterprise20user.class, parameters={})
+    @Export(name="urnietfparamsscimschemasextensionenterprise20user", refs={DomainsUserUrnietfparamsscimschemasextensionenterprise20user.class}, tree="[0]")
     private Output<DomainsUserUrnietfparamsscimschemasextensionenterprise20user> urnietfparamsscimschemasextensionenterprise20user;
 
     /**
@@ -1610,7 +1610,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * (Updatable) Oracle Cloud Infrastructure Tags.
      * 
      */
-    @Export(name="urnietfparamsscimschemasoracleidcsextensionOciTags", type=DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags.class, parameters={})
+    @Export(name="urnietfparamsscimschemasoracleidcsextensionOciTags", refs={DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags.class}, tree="[0]")
     private Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags> urnietfparamsscimschemasoracleidcsextensionOciTags;
 
     /**
@@ -1624,7 +1624,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * (Updatable) This extension defines attributes to manage user&#39;s risk score.
      * 
      */
-    @Export(name="urnietfparamsscimschemasoracleidcsextensionadaptiveUser", type=DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser.class, parameters={})
+    @Export(name="urnietfparamsscimschemasoracleidcsextensionadaptiveUser", refs={DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser.class}, tree="[0]")
     private Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser> urnietfparamsscimschemasoracleidcsextensionadaptiveUser;
 
     /**
@@ -1638,7 +1638,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * (Updatable) User&#39;s Capabilities
      * 
      */
-    @Export(name="urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser", type=DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser.class, parameters={})
+    @Export(name="urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser", refs={DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser.class}, tree="[0]")
     private Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser> urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser;
 
     /**
@@ -1652,7 +1652,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * (Updatable) The database credentials user extension.
      * 
      */
-    @Export(name="urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser", type=DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser.class, parameters={})
+    @Export(name="urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser", refs={DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser.class}, tree="[0]")
     private Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser> urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser;
 
     /**
@@ -1666,7 +1666,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * (Updatable) DB User extension
      * 
      */
-    @Export(name="urnietfparamsscimschemasoracleidcsextensiondbUserUsers", type=List.class, parameters={DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser.class})
+    @Export(name="urnietfparamsscimschemasoracleidcsextensiondbUserUsers", refs={List.class,DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser.class}, tree="[0,1]")
     private Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser>> urnietfparamsscimschemasoracleidcsextensiondbUserUsers;
 
     /**
@@ -1680,7 +1680,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * (Updatable) Kerberos User extension
      * 
      */
-    @Export(name="urnietfparamsscimschemasoracleidcsextensionkerberosUserUser", type=DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser.class, parameters={})
+    @Export(name="urnietfparamsscimschemasoracleidcsextensionkerberosUserUser", refs={DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser.class}, tree="[0]")
     private Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser> urnietfparamsscimschemasoracleidcsextensionkerberosUserUser;
 
     /**
@@ -1694,7 +1694,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * (Updatable) This extension defines attributes used to manage Multi-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
      * 
      */
-    @Export(name="urnietfparamsscimschemasoracleidcsextensionmfaUser", type=DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser.class, parameters={})
+    @Export(name="urnietfparamsscimschemasoracleidcsextensionmfaUser", refs={DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser.class}, tree="[0]")
     private Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser> urnietfparamsscimschemasoracleidcsextensionmfaUser;
 
     /**
@@ -1708,7 +1708,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * (Updatable) This extension defines attributes used to manage account passwords within a Service Provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
      * 
      */
-    @Export(name="urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers", type=List.class, parameters={DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser.class})
+    @Export(name="urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers", refs={List.class,DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser.class}, tree="[0,1]")
     private Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser>> urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers;
 
     /**
@@ -1722,7 +1722,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * (Updatable) This extension defines attributes used to manage Passwordless-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
      * 
      */
-    @Export(name="urnietfparamsscimschemasoracleidcsextensionpasswordlessUser", type=DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser.class, parameters={})
+    @Export(name="urnietfparamsscimschemasoracleidcsextensionpasswordlessUser", refs={DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser.class}, tree="[0]")
     private Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser> urnietfparamsscimschemasoracleidcsextensionpasswordlessUser;
 
     /**
@@ -1736,7 +1736,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * (Updatable) POSIX User extension
      * 
      */
-    @Export(name="urnietfparamsscimschemasoracleidcsextensionposixUser", type=DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUser.class, parameters={})
+    @Export(name="urnietfparamsscimschemasoracleidcsextensionposixUser", refs={DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUser.class}, tree="[0]")
     private Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUser> urnietfparamsscimschemasoracleidcsextensionposixUser;
 
     /**
@@ -1750,7 +1750,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * (Updatable) This extension defines the attributes used to store the security questions of a user.
      * 
      */
-    @Export(name="urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser", type=DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser.class, parameters={})
+    @Export(name="urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser", refs={DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser.class}, tree="[0]")
     private Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser> urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser;
 
     /**
@@ -1764,7 +1764,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * (Updatable) Controls whether a user can update themselves or not via User related APIs
      * 
      */
-    @Export(name="urnietfparamsscimschemasoracleidcsextensionselfChangeUser", type=DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser.class, parameters={})
+    @Export(name="urnietfparamsscimschemasoracleidcsextensionselfChangeUser", refs={DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser.class}, tree="[0]")
     private Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser> urnietfparamsscimschemasoracleidcsextensionselfChangeUser;
 
     /**
@@ -1778,7 +1778,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * (Updatable) This extension defines attributes used to manage self registration profile linked to the user.
      * 
      */
-    @Export(name="urnietfparamsscimschemasoracleidcsextensionselfRegistrationUser", type=DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser.class, parameters={})
+    @Export(name="urnietfparamsscimschemasoracleidcsextensionselfRegistrationUser", refs={DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser.class}, tree="[0]")
     private Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser> urnietfparamsscimschemasoracleidcsextensionselfRegistrationUser;
 
     /**
@@ -1792,7 +1792,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * (Updatable) SFF Auth Keys User extension
      * 
      */
-    @Export(name="urnietfparamsscimschemasoracleidcsextensionsffUser", type=DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUser.class, parameters={})
+    @Export(name="urnietfparamsscimschemasoracleidcsextensionsffUser", refs={DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUser.class}, tree="[0]")
     private Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUser> urnietfparamsscimschemasoracleidcsextensionsffUser;
 
     /**
@@ -1806,7 +1806,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * (Updatable) Social User extension
      * 
      */
-    @Export(name="urnietfparamsscimschemasoracleidcsextensionsocialAccountUser", type=DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser.class, parameters={})
+    @Export(name="urnietfparamsscimschemasoracleidcsextensionsocialAccountUser", refs={DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser.class}, tree="[0]")
     private Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser> urnietfparamsscimschemasoracleidcsextensionsocialAccountUser;
 
     /**
@@ -1820,7 +1820,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * (Updatable) Terms Of Use extension
      * 
      */
-    @Export(name="urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser", type=DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser.class, parameters={})
+    @Export(name="urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser", refs={DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser.class}, tree="[0]")
     private Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser> urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser;
 
     /**
@@ -1834,7 +1834,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * (Updatable) User&#39;s credentials
      * 
      */
-    @Export(name="urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers", type=List.class, parameters={DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser.class})
+    @Export(name="urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers", refs={List.class,DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser.class}, tree="[0,1]")
     private Output<List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser>> urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers;
 
     /**
@@ -1848,7 +1848,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * (Updatable) This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
      * 
      */
-    @Export(name="urnietfparamsscimschemasoracleidcsextensionuserStateUser", type=DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser.class, parameters={})
+    @Export(name="urnietfparamsscimschemasoracleidcsextensionuserStateUser", refs={DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser.class}, tree="[0]")
     private Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser> urnietfparamsscimschemasoracleidcsextensionuserStateUser;
 
     /**
@@ -1862,7 +1862,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * (Updatable) Oracle Identity Cloud Service User
      * 
      */
-    @Export(name="urnietfparamsscimschemasoracleidcsextensionuserUser", type=DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser.class, parameters={})
+    @Export(name="urnietfparamsscimschemasoracleidcsextensionuserUser", refs={DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser.class}, tree="[0]")
     private Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser> urnietfparamsscimschemasoracleidcsextensionuserUser;
 
     /**
@@ -1889,7 +1889,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: global
      * 
      */
-    @Export(name="userName", type=String.class, parameters={})
+    @Export(name="userName", refs={String.class}, tree="[0]")
     private Output<String> userName;
 
     /**
@@ -1929,7 +1929,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="userType", type=String.class, parameters={})
+    @Export(name="userType", refs={String.class}, tree="[0]")
     private Output<String> userType;
 
     /**
@@ -1965,7 +1965,7 @@ public class DomainsUser extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="x509certificates", type=List.class, parameters={DomainsUserX509certificate.class})
+    @Export(name="x509certificates", refs={List.class,DomainsUserX509certificate.class}, tree="[0,1]")
     private Output<List<DomainsUserX509certificate>> x509certificates;
 
     /**

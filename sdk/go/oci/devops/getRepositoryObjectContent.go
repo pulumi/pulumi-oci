@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Repository Object Content resource in Oracle Cloud Infrastructure Devops service.
@@ -111,6 +112,12 @@ func (o GetRepositoryObjectContentResultOutput) ToGetRepositoryObjectContentResu
 
 func (o GetRepositoryObjectContentResultOutput) ToGetRepositoryObjectContentResultOutputWithContext(ctx context.Context) GetRepositoryObjectContentResultOutput {
 	return o
+}
+
+func (o GetRepositoryObjectContentResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRepositoryObjectContentResult] {
+	return pulumix.Output[GetRepositoryObjectContentResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetRepositoryObjectContentResultOutput) FilePath() pulumi.StringPtrOutput {

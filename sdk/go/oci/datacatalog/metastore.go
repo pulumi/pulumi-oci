@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Metastore resource in Oracle Cloud Infrastructure Data Catalog service.
@@ -242,6 +243,12 @@ func (i *Metastore) ToMetastoreOutputWithContext(ctx context.Context) MetastoreO
 	return pulumi.ToOutputWithContext(ctx, i).(MetastoreOutput)
 }
 
+func (i *Metastore) ToOutput(ctx context.Context) pulumix.Output[*Metastore] {
+	return pulumix.Output[*Metastore]{
+		OutputState: i.ToMetastoreOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MetastoreArrayInput is an input type that accepts MetastoreArray and MetastoreArrayOutput values.
 // You can construct a concrete instance of `MetastoreArrayInput` via:
 //
@@ -265,6 +272,12 @@ func (i MetastoreArray) ToMetastoreArrayOutput() MetastoreArrayOutput {
 
 func (i MetastoreArray) ToMetastoreArrayOutputWithContext(ctx context.Context) MetastoreArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(MetastoreArrayOutput)
+}
+
+func (i MetastoreArray) ToOutput(ctx context.Context) pulumix.Output[[]*Metastore] {
+	return pulumix.Output[[]*Metastore]{
+		OutputState: i.ToMetastoreArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // MetastoreMapInput is an input type that accepts MetastoreMap and MetastoreMapOutput values.
@@ -292,6 +305,12 @@ func (i MetastoreMap) ToMetastoreMapOutputWithContext(ctx context.Context) Metas
 	return pulumi.ToOutputWithContext(ctx, i).(MetastoreMapOutput)
 }
 
+func (i MetastoreMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Metastore] {
+	return pulumix.Output[map[string]*Metastore]{
+		OutputState: i.ToMetastoreMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MetastoreOutput struct{ *pulumi.OutputState }
 
 func (MetastoreOutput) ElementType() reflect.Type {
@@ -304,6 +323,12 @@ func (o MetastoreOutput) ToMetastoreOutput() MetastoreOutput {
 
 func (o MetastoreOutput) ToMetastoreOutputWithContext(ctx context.Context) MetastoreOutput {
 	return o
+}
+
+func (o MetastoreOutput) ToOutput(ctx context.Context) pulumix.Output[*Metastore] {
+	return pulumix.Output[*Metastore]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) OCID of the compartment which holds the metastore.
@@ -373,6 +398,12 @@ func (o MetastoreArrayOutput) ToMetastoreArrayOutputWithContext(ctx context.Cont
 	return o
 }
 
+func (o MetastoreArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Metastore] {
+	return pulumix.Output[[]*Metastore]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o MetastoreArrayOutput) Index(i pulumi.IntInput) MetastoreOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Metastore {
 		return vs[0].([]*Metastore)[vs[1].(int)]
@@ -391,6 +422,12 @@ func (o MetastoreMapOutput) ToMetastoreMapOutput() MetastoreMapOutput {
 
 func (o MetastoreMapOutput) ToMetastoreMapOutputWithContext(ctx context.Context) MetastoreMapOutput {
 	return o
+}
+
+func (o MetastoreMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Metastore] {
+	return pulumix.Output[map[string]*Metastore]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MetastoreMapOutput) MapIndex(k pulumi.StringInput) MetastoreOutput {

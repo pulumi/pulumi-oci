@@ -140,7 +140,7 @@ public class NodePool extends com.pulumi.resources.CustomResource {
      * The OCID of the cluster to which this node pool is attached.
      * 
      */
-    @Export(name="clusterId", type=String.class, parameters={})
+    @Export(name="clusterId", refs={String.class}, tree="[0]")
     private Output<String> clusterId;
 
     /**
@@ -154,7 +154,7 @@ public class NodePool extends com.pulumi.resources.CustomResource {
      * The OCID of the compartment in which the node pool exists.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -168,7 +168,7 @@ public class NodePool extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -182,7 +182,7 @@ public class NodePool extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -196,7 +196,7 @@ public class NodePool extends com.pulumi.resources.CustomResource {
      * (Updatable) A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
      * 
      */
-    @Export(name="initialNodeLabels", type=List.class, parameters={NodePoolInitialNodeLabel.class})
+    @Export(name="initialNodeLabels", refs={List.class,NodePoolInitialNodeLabel.class}, tree="[0,1]")
     private Output<List<NodePoolInitialNodeLabel>> initialNodeLabels;
 
     /**
@@ -210,7 +210,7 @@ public class NodePool extends com.pulumi.resources.CustomResource {
      * (Updatable) The version of Kubernetes to install on the nodes in the node pool.
      * 
      */
-    @Export(name="kubernetesVersion", type=String.class, parameters={})
+    @Export(name="kubernetesVersion", refs={String.class}, tree="[0]")
     private Output<String> kubernetesVersion;
 
     /**
@@ -224,7 +224,7 @@ public class NodePool extends com.pulumi.resources.CustomResource {
      * Details about the state of the node.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -238,7 +238,7 @@ public class NodePool extends com.pulumi.resources.CustomResource {
      * (Updatable) The name of the node pool. Avoid entering confidential information.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -252,7 +252,7 @@ public class NodePool extends com.pulumi.resources.CustomResource {
      * (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
      * 
      */
-    @Export(name="nodeConfigDetails", type=NodePoolNodeConfigDetails.class, parameters={})
+    @Export(name="nodeConfigDetails", refs={NodePoolNodeConfigDetails.class}, tree="[0]")
     private Output<NodePoolNodeConfigDetails> nodeConfigDetails;
 
     /**
@@ -266,7 +266,7 @@ public class NodePool extends com.pulumi.resources.CustomResource {
      * (Updatable) Node Eviction Details configuration
      * 
      */
-    @Export(name="nodeEvictionNodePoolSettings", type=NodePoolNodeEvictionNodePoolSettings.class, parameters={})
+    @Export(name="nodeEvictionNodePoolSettings", refs={NodePoolNodeEvictionNodePoolSettings.class}, tree="[0]")
     private Output<NodePoolNodeEvictionNodePoolSettings> nodeEvictionNodePoolSettings;
 
     /**
@@ -284,7 +284,7 @@ public class NodePool extends com.pulumi.resources.CustomResource {
      * 
      */
     @Deprecated /* The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used. */
-    @Export(name="nodeImageId", type=String.class, parameters={})
+    @Export(name="nodeImageId", refs={String.class}, tree="[0]")
     private Output<String> nodeImageId;
 
     /**
@@ -302,7 +302,7 @@ public class NodePool extends com.pulumi.resources.CustomResource {
      * 
      */
     @Deprecated /* The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used. */
-    @Export(name="nodeImageName", type=String.class, parameters={})
+    @Export(name="nodeImageName", refs={String.class}, tree="[0]")
     private Output<String> nodeImageName;
 
     /**
@@ -316,7 +316,7 @@ public class NodePool extends com.pulumi.resources.CustomResource {
      * (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
      * 
      */
-    @Export(name="nodeMetadata", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="nodeMetadata", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> nodeMetadata;
 
     /**
@@ -330,7 +330,7 @@ public class NodePool extends com.pulumi.resources.CustomResource {
      * (Updatable) Node Pool Cycling Details
      * 
      */
-    @Export(name="nodePoolCyclingDetails", type=NodePoolNodePoolCyclingDetails.class, parameters={})
+    @Export(name="nodePoolCyclingDetails", refs={NodePoolNodePoolCyclingDetails.class}, tree="[0]")
     private Output<NodePoolNodePoolCyclingDetails> nodePoolCyclingDetails;
 
     /**
@@ -344,7 +344,7 @@ public class NodePool extends com.pulumi.resources.CustomResource {
      * (Updatable) The name of the node shape of the nodes in the node pool.
      * 
      */
-    @Export(name="nodeShape", type=String.class, parameters={})
+    @Export(name="nodeShape", refs={String.class}, tree="[0]")
     private Output<String> nodeShape;
 
     /**
@@ -358,7 +358,7 @@ public class NodePool extends com.pulumi.resources.CustomResource {
      * (Updatable) Specify the configuration of the shape to launch nodes in the node pool.
      * 
      */
-    @Export(name="nodeShapeConfig", type=NodePoolNodeShapeConfig.class, parameters={})
+    @Export(name="nodeShapeConfig", refs={NodePoolNodeShapeConfig.class}, tree="[0]")
     private Output<NodePoolNodeShapeConfig> nodeShapeConfig;
 
     /**
@@ -372,7 +372,7 @@ public class NodePool extends com.pulumi.resources.CustomResource {
      * (Updatable) Specify the source to use to launch nodes in the node pool. Currently, image is the only supported source.
      * 
      */
-    @Export(name="nodeSourceDetails", type=NodePoolNodeSourceDetails.class, parameters={})
+    @Export(name="nodeSourceDetails", refs={NodePoolNodeSourceDetails.class}, tree="[0]")
     private Output<NodePoolNodeSourceDetails> nodeSourceDetails;
 
     /**
@@ -386,7 +386,7 @@ public class NodePool extends com.pulumi.resources.CustomResource {
      * Deprecated. see `nodeSourceDetails`. Source running on the nodes in the node pool.
      * 
      */
-    @Export(name="nodeSources", type=List.class, parameters={NodePoolNodeSource.class})
+    @Export(name="nodeSources", refs={List.class,NodePoolNodeSource.class}, tree="[0,1]")
     private Output<List<NodePoolNodeSource>> nodeSources;
 
     /**
@@ -400,7 +400,7 @@ public class NodePool extends com.pulumi.resources.CustomResource {
      * The nodes in the node pool.
      * 
      */
-    @Export(name="nodes", type=List.class, parameters={NodePoolNode.class})
+    @Export(name="nodes", refs={List.class,NodePoolNode.class}, tree="[0,1]")
     private Output<List<NodePoolNode>> nodes;
 
     /**
@@ -414,7 +414,7 @@ public class NodePool extends com.pulumi.resources.CustomResource {
      * (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
      * 
      */
-    @Export(name="quantityPerSubnet", type=Integer.class, parameters={})
+    @Export(name="quantityPerSubnet", refs={Integer.class}, tree="[0]")
     private Output<Integer> quantityPerSubnet;
 
     /**
@@ -428,7 +428,7 @@ public class NodePool extends com.pulumi.resources.CustomResource {
      * (Updatable) The SSH public key on each node in the node pool on launch.
      * 
      */
-    @Export(name="sshPublicKey", type=String.class, parameters={})
+    @Export(name="sshPublicKey", refs={String.class}, tree="[0]")
     private Output<String> sshPublicKey;
 
     /**
@@ -442,7 +442,7 @@ public class NodePool extends com.pulumi.resources.CustomResource {
      * The state of the nodepool.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -459,7 +459,7 @@ public class NodePool extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="subnetIds", type=List.class, parameters={String.class})
+    @Export(name="subnetIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> subnetIds;
 
     /**

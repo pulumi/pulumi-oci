@@ -90,7 +90,7 @@ public class StreamPool extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the compartment that contains the stream.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -104,7 +104,7 @@ public class StreamPool extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the custom encryption key to be used or deleted if currently being used.
      * 
      */
-    @Export(name="customEncryptionKey", type=StreamPoolCustomEncryptionKey.class, parameters={})
+    @Export(name="customEncryptionKey", refs={StreamPoolCustomEncryptionKey.class}, tree="[0]")
     private Output<StreamPoolCustomEncryptionKey> customEncryptionKey;
 
     /**
@@ -118,7 +118,7 @@ public class StreamPool extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -132,7 +132,7 @@ public class StreamPool extends com.pulumi.resources.CustomResource {
      * The FQDN used to access the streams inside the stream pool (same FQDN as the messagesEndpoint attribute of a [Stream](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/Stream) object). If the stream pool is private, the FQDN is customized and can only be accessed from inside the associated subnetId, otherwise the FQDN is publicly resolvable. Depending on which protocol you attempt to use, you need to either prepend https or append the Kafka port.
      * 
      */
-    @Export(name="endpointFqdn", type=String.class, parameters={})
+    @Export(name="endpointFqdn", refs={String.class}, tree="[0]")
     private Output<String> endpointFqdn;
 
     /**
@@ -146,7 +146,7 @@ public class StreamPool extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -160,7 +160,7 @@ public class StreamPool extends com.pulumi.resources.CustomResource {
      * True if the stream pool is private, false otherwise. The associated endpoint and subnetId of a private stream pool can be retrieved through the [GetStreamPool](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/StreamPool/GetStreamPool) API.
      * 
      */
-    @Export(name="isPrivate", type=Boolean.class, parameters={})
+    @Export(name="isPrivate", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isPrivate;
 
     /**
@@ -174,7 +174,7 @@ public class StreamPool extends com.pulumi.resources.CustomResource {
      * (Updatable) Settings for the Kafka compatibility layer.
      * 
      */
-    @Export(name="kafkaSettings", type=StreamPoolKafkaSettings.class, parameters={})
+    @Export(name="kafkaSettings", refs={StreamPoolKafkaSettings.class}, tree="[0]")
     private Output<StreamPoolKafkaSettings> kafkaSettings;
 
     /**
@@ -188,7 +188,7 @@ public class StreamPool extends com.pulumi.resources.CustomResource {
      * Any additional details about the current state of the stream.
      * 
      */
-    @Export(name="lifecycleStateDetails", type=String.class, parameters={})
+    @Export(name="lifecycleStateDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleStateDetails;
 
     /**
@@ -202,7 +202,7 @@ public class StreamPool extends com.pulumi.resources.CustomResource {
      * (Updatable) The name of the stream pool. Avoid entering confidential information.  Example: `MyStreamPool`
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -216,7 +216,7 @@ public class StreamPool extends com.pulumi.resources.CustomResource {
      * Optional parameters if a private stream pool is requested.
      * 
      */
-    @Export(name="privateEndpointSettings", type=StreamPoolPrivateEndpointSettings.class, parameters={})
+    @Export(name="privateEndpointSettings", refs={StreamPoolPrivateEndpointSettings.class}, tree="[0]")
     private Output<StreamPoolPrivateEndpointSettings> privateEndpointSettings;
 
     /**
@@ -230,7 +230,7 @@ public class StreamPool extends com.pulumi.resources.CustomResource {
      * The current state of the stream pool.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -244,7 +244,7 @@ public class StreamPool extends com.pulumi.resources.CustomResource {
      * The date and time the stream pool was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**

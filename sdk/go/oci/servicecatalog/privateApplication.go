@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Private Application resource in Oracle Cloud Infrastructure Service Catalog service.
@@ -277,6 +278,12 @@ func (i *PrivateApplication) ToPrivateApplicationOutputWithContext(ctx context.C
 	return pulumi.ToOutputWithContext(ctx, i).(PrivateApplicationOutput)
 }
 
+func (i *PrivateApplication) ToOutput(ctx context.Context) pulumix.Output[*PrivateApplication] {
+	return pulumix.Output[*PrivateApplication]{
+		OutputState: i.ToPrivateApplicationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // PrivateApplicationArrayInput is an input type that accepts PrivateApplicationArray and PrivateApplicationArrayOutput values.
 // You can construct a concrete instance of `PrivateApplicationArrayInput` via:
 //
@@ -300,6 +307,12 @@ func (i PrivateApplicationArray) ToPrivateApplicationArrayOutput() PrivateApplic
 
 func (i PrivateApplicationArray) ToPrivateApplicationArrayOutputWithContext(ctx context.Context) PrivateApplicationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(PrivateApplicationArrayOutput)
+}
+
+func (i PrivateApplicationArray) ToOutput(ctx context.Context) pulumix.Output[[]*PrivateApplication] {
+	return pulumix.Output[[]*PrivateApplication]{
+		OutputState: i.ToPrivateApplicationArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // PrivateApplicationMapInput is an input type that accepts PrivateApplicationMap and PrivateApplicationMapOutput values.
@@ -327,6 +340,12 @@ func (i PrivateApplicationMap) ToPrivateApplicationMapOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(PrivateApplicationMapOutput)
 }
 
+func (i PrivateApplicationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*PrivateApplication] {
+	return pulumix.Output[map[string]*PrivateApplication]{
+		OutputState: i.ToPrivateApplicationMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type PrivateApplicationOutput struct{ *pulumi.OutputState }
 
 func (PrivateApplicationOutput) ElementType() reflect.Type {
@@ -339,6 +358,12 @@ func (o PrivateApplicationOutput) ToPrivateApplicationOutput() PrivateApplicatio
 
 func (o PrivateApplicationOutput) ToPrivateApplicationOutputWithContext(ctx context.Context) PrivateApplicationOutput {
 	return o
+}
+
+func (o PrivateApplicationOutput) ToOutput(ctx context.Context) pulumix.Output[*PrivateApplication] {
+	return pulumix.Output[*PrivateApplication]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the private application.
@@ -423,6 +448,12 @@ func (o PrivateApplicationArrayOutput) ToPrivateApplicationArrayOutputWithContex
 	return o
 }
 
+func (o PrivateApplicationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*PrivateApplication] {
+	return pulumix.Output[[]*PrivateApplication]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o PrivateApplicationArrayOutput) Index(i pulumi.IntInput) PrivateApplicationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *PrivateApplication {
 		return vs[0].([]*PrivateApplication)[vs[1].(int)]
@@ -441,6 +472,12 @@ func (o PrivateApplicationMapOutput) ToPrivateApplicationMapOutput() PrivateAppl
 
 func (o PrivateApplicationMapOutput) ToPrivateApplicationMapOutputWithContext(ctx context.Context) PrivateApplicationMapOutput {
 	return o
+}
+
+func (o PrivateApplicationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*PrivateApplication] {
+	return pulumix.Output[map[string]*PrivateApplication]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o PrivateApplicationMapOutput) MapIndex(k pulumi.StringInput) PrivateApplicationOutput {

@@ -105,7 +105,7 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * The name of the availability domain that the cloud Exadata infrastructure resource is located in.
      * 
      */
-    @Export(name="availabilityDomain", type=String.class, parameters={})
+    @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
     private Output<String> availabilityDomain;
 
     /**
@@ -119,7 +119,7 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
      * 
      */
-    @Export(name="backupNetworkNsgIds", type=List.class, parameters={String.class})
+    @Export(name="backupNetworkNsgIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> backupNetworkNsgIds;
 
     /**
@@ -133,7 +133,7 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the cloud VM cluster.
      * 
      */
-    @Export(name="backupSubnetId", type=String.class, parameters={})
+    @Export(name="backupSubnetId", refs={String.class}, tree="[0]")
     private Output<String> backupSubnetId;
 
     /**
@@ -147,7 +147,7 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.
      * 
      */
-    @Export(name="cloudExadataInfrastructureId", type=String.class, parameters={})
+    @Export(name="cloudExadataInfrastructureId", refs={String.class}, tree="[0]")
     private Output<String> cloudExadataInfrastructureId;
 
     /**
@@ -161,7 +161,7 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * The cluster name for cloud VM cluster. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
      * 
      */
-    @Export(name="clusterName", type=String.class, parameters={})
+    @Export(name="clusterName", refs={String.class}, tree="[0]")
     private Output<String> clusterName;
 
     /**
@@ -175,7 +175,7 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -196,7 +196,7 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
      * 
      */
-    @Export(name="cpuCoreCount", type=Integer.class, parameters={})
+    @Export(name="cpuCoreCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> cpuCoreCount;
 
     /**
@@ -213,7 +213,7 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
     public Output<Integer> cpuCoreCount() {
         return this.cpuCoreCount;
     }
-    @Export(name="createAsync", type=Boolean.class, parameters={})
+    @Export(name="createAsync", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> createAsync;
 
     public Output<Optional<Boolean>> createAsync() {
@@ -223,7 +223,7 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
      * 
      */
-    @Export(name="dataCollectionOptions", type=CloudVmClusterDataCollectionOptions.class, parameters={})
+    @Export(name="dataCollectionOptions", refs={CloudVmClusterDataCollectionOptions.class}, tree="[0]")
     private Output<CloudVmClusterDataCollectionOptions> dataCollectionOptions;
 
     /**
@@ -237,7 +237,7 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
      * 
      */
-    @Export(name="dataStoragePercentage", type=Integer.class, parameters={})
+    @Export(name="dataStoragePercentage", refs={Integer.class}, tree="[0]")
     private Output<Integer> dataStoragePercentage;
 
     /**
@@ -251,7 +251,7 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * (Updatable) The data disk group size to be allocated in TBs.
      * 
      */
-    @Export(name="dataStorageSizeInTbs", type=Double.class, parameters={})
+    @Export(name="dataStorageSizeInTbs", refs={Double.class}, tree="[0]")
     private Output<Double> dataStorageSizeInTbs;
 
     /**
@@ -265,7 +265,7 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * (Updatable) The local node storage to be allocated in GBs.
      * 
      */
-    @Export(name="dbNodeStorageSizeInGbs", type=Integer.class, parameters={})
+    @Export(name="dbNodeStorageSizeInGbs", refs={Integer.class}, tree="[0]")
     private Output<Integer> dbNodeStorageSizeInGbs;
 
     /**
@@ -279,7 +279,7 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * The list of DB servers.
      * 
      */
-    @Export(name="dbServers", type=List.class, parameters={String.class})
+    @Export(name="dbServers", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> dbServers;
 
     /**
@@ -293,7 +293,7 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -307,7 +307,7 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * The type of redundancy configured for the cloud Vm cluster. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
      * 
      */
-    @Export(name="diskRedundancy", type=String.class, parameters={})
+    @Export(name="diskRedundancy", refs={String.class}, tree="[0]")
     private Output<String> diskRedundancy;
 
     /**
@@ -321,7 +321,7 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * (Updatable) The user-friendly name for the cloud VM cluster. The name does not need to be unique.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -335,7 +335,7 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted. Applies to Exadata Cloud Service instances only.
      * 
      */
-    @Export(name="domain", type=String.class, parameters={})
+    @Export(name="domain", refs={String.class}, tree="[0]")
     private Output<String> domain;
 
     /**
@@ -349,7 +349,7 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -363,7 +363,7 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * A valid Oracle Grid Infrastructure (GI) software version.
      * 
      */
-    @Export(name="giVersion", type=String.class, parameters={})
+    @Export(name="giVersion", refs={String.class}, tree="[0]")
     private Output<String> giVersion;
 
     /**
@@ -381,7 +381,7 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * **Note:** The hostname must be unique within the subnet. If it is not unique, the cloud VM Cluster will fail to provision.
      * 
      */
-    @Export(name="hostname", type=String.class, parameters={})
+    @Export(name="hostname", refs={String.class}, tree="[0]")
     private Output<String> hostname;
 
     /**
@@ -399,7 +399,7 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * The IORM settings of the Exadata DB system.
      * 
      */
-    @Export(name="iormConfigCaches", type=List.class, parameters={CloudVmClusterIormConfigCach.class})
+    @Export(name="iormConfigCaches", refs={List.class,CloudVmClusterIormConfigCach.class}, tree="[0,1]")
     private Output<List<CloudVmClusterIormConfigCach>> iormConfigCaches;
 
     /**
@@ -413,7 +413,7 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
      * 
      */
-    @Export(name="isLocalBackupEnabled", type=Boolean.class, parameters={})
+    @Export(name="isLocalBackupEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isLocalBackupEnabled;
 
     /**
@@ -427,7 +427,7 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
      * 
      */
-    @Export(name="isSparseDiskgroupEnabled", type=Boolean.class, parameters={})
+    @Export(name="isSparseDiskgroupEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isSparseDiskgroupEnabled;
 
     /**
@@ -441,7 +441,7 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
      * 
      */
-    @Export(name="lastUpdateHistoryEntryId", type=String.class, parameters={})
+    @Export(name="lastUpdateHistoryEntryId", refs={String.class}, tree="[0]")
     private Output<String> lastUpdateHistoryEntryId;
 
     /**
@@ -455,7 +455,7 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * (Updatable) The Oracle license model that applies to the cloud VM cluster. The default is BRING_YOUR_OWN_LICENSE.
      * 
      */
-    @Export(name="licenseModel", type=String.class, parameters={})
+    @Export(name="licenseModel", refs={String.class}, tree="[0]")
     private Output<String> licenseModel;
 
     /**
@@ -469,7 +469,7 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * Additional information about the current lifecycle state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -483,7 +483,7 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * The port number configured for the listener on the cloud VM cluster.
      * 
      */
-    @Export(name="listenerPort", type=String.class, parameters={})
+    @Export(name="listenerPort", refs={String.class}, tree="[0]")
     private Output<String> listenerPort;
 
     /**
@@ -497,7 +497,7 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * (Updatable) The memory to be allocated in GBs.
      * 
      */
-    @Export(name="memorySizeInGbs", type=Integer.class, parameters={})
+    @Export(name="memorySizeInGbs", refs={Integer.class}, tree="[0]")
     private Output<Integer> memorySizeInGbs;
 
     /**
@@ -511,7 +511,7 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * The number of nodes in the cloud VM cluster.
      * 
      */
-    @Export(name="nodeCount", type=Integer.class, parameters={})
+    @Export(name="nodeCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> nodeCount;
 
     /**
@@ -526,7 +526,7 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      * 
      */
-    @Export(name="nsgIds", type=List.class, parameters={String.class})
+    @Export(name="nsgIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> nsgIds;
 
     /**
@@ -541,7 +541,7 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * (Updatable) The number of OCPU cores to enable for a cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
      * 
      */
-    @Export(name="ocpuCount", type=Double.class, parameters={})
+    @Export(name="ocpuCount", refs={Double.class}, tree="[0]")
     private Output<Double> ocpuCount;
 
     /**
@@ -555,7 +555,7 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * The private zone id in which DNS records need to be created.
      * 
      */
-    @Export(name="privateZoneId", type=String.class, parameters={})
+    @Export(name="privateZoneId", refs={String.class}, tree="[0]")
     private Output<String> privateZoneId;
 
     /**
@@ -569,7 +569,7 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
      * 
      */
-    @Export(name="scanDnsName", type=String.class, parameters={})
+    @Export(name="scanDnsName", refs={String.class}, tree="[0]")
     private Output<String> scanDnsName;
 
     /**
@@ -583,7 +583,7 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
      * 
      */
-    @Export(name="scanDnsRecordId", type=String.class, parameters={})
+    @Export(name="scanDnsRecordId", refs={String.class}, tree="[0]")
     private Output<String> scanDnsRecordId;
 
     /**
@@ -597,7 +597,7 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the cloud VM cluster. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
      * 
      */
-    @Export(name="scanIpIds", type=List.class, parameters={String.class})
+    @Export(name="scanIpIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> scanIpIds;
 
     /**
@@ -611,7 +611,7 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * The TCP Single Client Access Name (SCAN) port. The default port is 1521.
      * 
      */
-    @Export(name="scanListenerPortTcp", type=Integer.class, parameters={})
+    @Export(name="scanListenerPortTcp", refs={Integer.class}, tree="[0]")
     private Output<Integer> scanListenerPortTcp;
 
     /**
@@ -625,7 +625,7 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * The TCPS Single Client Access Name (SCAN) port. The default port is 2484.
      * 
      */
-    @Export(name="scanListenerPortTcpSsl", type=Integer.class, parameters={})
+    @Export(name="scanListenerPortTcpSsl", refs={Integer.class}, tree="[0]")
     private Output<Integer> scanListenerPortTcpSsl;
 
     /**
@@ -639,7 +639,7 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * The model name of the Exadata hardware running the cloud VM cluster.
      * 
      */
-    @Export(name="shape", type=String.class, parameters={})
+    @Export(name="shape", refs={String.class}, tree="[0]")
     private Output<String> shape;
 
     /**
@@ -653,7 +653,7 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * (Updatable) The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
      * 
      */
-    @Export(name="sshPublicKeys", type=List.class, parameters={String.class})
+    @Export(name="sshPublicKeys", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> sshPublicKeys;
 
     /**
@@ -667,7 +667,7 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * The current state of the cloud VM cluster.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -681,7 +681,7 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * The storage allocation for the disk group, in gigabytes (GB).
      * 
      */
-    @Export(name="storageSizeInGbs", type=Integer.class, parameters={})
+    @Export(name="storageSizeInGbs", refs={Integer.class}, tree="[0]")
     private Output<Integer> storageSizeInGbs;
 
     /**
@@ -695,7 +695,7 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster.
      * 
      */
-    @Export(name="subnetId", type=String.class, parameters={})
+    @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
@@ -709,7 +709,7 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * Operating system version of the image.
      * 
      */
-    @Export(name="systemVersion", type=String.class, parameters={})
+    @Export(name="systemVersion", refs={String.class}, tree="[0]")
     private Output<String> systemVersion;
 
     /**
@@ -723,7 +723,7 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * The date and time that the cloud VM cluster was created.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -740,7 +740,7 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="timeZone", type=String.class, parameters={})
+    @Export(name="timeZone", refs={String.class}, tree="[0]")
     private Output<String> timeZone;
 
     /**
@@ -757,7 +757,7 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
      * 
      */
-    @Export(name="vipIds", type=List.class, parameters={String.class})
+    @Export(name="vipIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> vipIds;
 
     /**
@@ -771,7 +771,7 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * The OCID of the zone the cloud VM cluster is associated with.
      * 
      */
-    @Export(name="zoneId", type=String.class, parameters={})
+    @Export(name="zoneId", refs={String.class}, tree="[0]")
     private Output<String> zoneId;
 
     /**

@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Autonomous Container Database Dataguard Association Operation resource in Oracle Cloud Infrastructure Database service.
@@ -160,6 +161,12 @@ func (i *AutonomousContainerDatabaseDataguardAssociationOperation) ToAutonomousC
 	return pulumi.ToOutputWithContext(ctx, i).(AutonomousContainerDatabaseDataguardAssociationOperationOutput)
 }
 
+func (i *AutonomousContainerDatabaseDataguardAssociationOperation) ToOutput(ctx context.Context) pulumix.Output[*AutonomousContainerDatabaseDataguardAssociationOperation] {
+	return pulumix.Output[*AutonomousContainerDatabaseDataguardAssociationOperation]{
+		OutputState: i.ToAutonomousContainerDatabaseDataguardAssociationOperationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AutonomousContainerDatabaseDataguardAssociationOperationArrayInput is an input type that accepts AutonomousContainerDatabaseDataguardAssociationOperationArray and AutonomousContainerDatabaseDataguardAssociationOperationArrayOutput values.
 // You can construct a concrete instance of `AutonomousContainerDatabaseDataguardAssociationOperationArrayInput` via:
 //
@@ -183,6 +190,12 @@ func (i AutonomousContainerDatabaseDataguardAssociationOperationArray) ToAutonom
 
 func (i AutonomousContainerDatabaseDataguardAssociationOperationArray) ToAutonomousContainerDatabaseDataguardAssociationOperationArrayOutputWithContext(ctx context.Context) AutonomousContainerDatabaseDataguardAssociationOperationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AutonomousContainerDatabaseDataguardAssociationOperationArrayOutput)
+}
+
+func (i AutonomousContainerDatabaseDataguardAssociationOperationArray) ToOutput(ctx context.Context) pulumix.Output[[]*AutonomousContainerDatabaseDataguardAssociationOperation] {
+	return pulumix.Output[[]*AutonomousContainerDatabaseDataguardAssociationOperation]{
+		OutputState: i.ToAutonomousContainerDatabaseDataguardAssociationOperationArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // AutonomousContainerDatabaseDataguardAssociationOperationMapInput is an input type that accepts AutonomousContainerDatabaseDataguardAssociationOperationMap and AutonomousContainerDatabaseDataguardAssociationOperationMapOutput values.
@@ -210,6 +223,12 @@ func (i AutonomousContainerDatabaseDataguardAssociationOperationMap) ToAutonomou
 	return pulumi.ToOutputWithContext(ctx, i).(AutonomousContainerDatabaseDataguardAssociationOperationMapOutput)
 }
 
+func (i AutonomousContainerDatabaseDataguardAssociationOperationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AutonomousContainerDatabaseDataguardAssociationOperation] {
+	return pulumix.Output[map[string]*AutonomousContainerDatabaseDataguardAssociationOperation]{
+		OutputState: i.ToAutonomousContainerDatabaseDataguardAssociationOperationMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AutonomousContainerDatabaseDataguardAssociationOperationOutput struct{ *pulumi.OutputState }
 
 func (AutonomousContainerDatabaseDataguardAssociationOperationOutput) ElementType() reflect.Type {
@@ -222,6 +241,12 @@ func (o AutonomousContainerDatabaseDataguardAssociationOperationOutput) ToAutono
 
 func (o AutonomousContainerDatabaseDataguardAssociationOperationOutput) ToAutonomousContainerDatabaseDataguardAssociationOperationOutputWithContext(ctx context.Context) AutonomousContainerDatabaseDataguardAssociationOperationOutput {
 	return o
+}
+
+func (o AutonomousContainerDatabaseDataguardAssociationOperationOutput) ToOutput(ctx context.Context) pulumix.Output[*AutonomousContainerDatabaseDataguardAssociationOperation] {
+	return pulumix.Output[*AutonomousContainerDatabaseDataguardAssociationOperation]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The Autonomous Container Database Dataguard Association [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This attribute is a forcenew attribute.
@@ -259,6 +284,12 @@ func (o AutonomousContainerDatabaseDataguardAssociationOperationArrayOutput) ToA
 	return o
 }
 
+func (o AutonomousContainerDatabaseDataguardAssociationOperationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AutonomousContainerDatabaseDataguardAssociationOperation] {
+	return pulumix.Output[[]*AutonomousContainerDatabaseDataguardAssociationOperation]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AutonomousContainerDatabaseDataguardAssociationOperationArrayOutput) Index(i pulumi.IntInput) AutonomousContainerDatabaseDataguardAssociationOperationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AutonomousContainerDatabaseDataguardAssociationOperation {
 		return vs[0].([]*AutonomousContainerDatabaseDataguardAssociationOperation)[vs[1].(int)]
@@ -277,6 +308,12 @@ func (o AutonomousContainerDatabaseDataguardAssociationOperationMapOutput) ToAut
 
 func (o AutonomousContainerDatabaseDataguardAssociationOperationMapOutput) ToAutonomousContainerDatabaseDataguardAssociationOperationMapOutputWithContext(ctx context.Context) AutonomousContainerDatabaseDataguardAssociationOperationMapOutput {
 	return o
+}
+
+func (o AutonomousContainerDatabaseDataguardAssociationOperationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AutonomousContainerDatabaseDataguardAssociationOperation] {
+	return pulumix.Output[map[string]*AutonomousContainerDatabaseDataguardAssociationOperation]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AutonomousContainerDatabaseDataguardAssociationOperationMapOutput) MapIndex(k pulumi.StringInput) AutonomousContainerDatabaseDataguardAssociationOperationOutput {

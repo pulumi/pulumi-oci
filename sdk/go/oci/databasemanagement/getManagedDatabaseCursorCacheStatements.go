@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Managed Database Cursor Cache Statements in Oracle Cloud Infrastructure Database Management service.
@@ -114,6 +115,12 @@ func (o GetManagedDatabaseCursorCacheStatementsResultOutput) ToGetManagedDatabas
 
 func (o GetManagedDatabaseCursorCacheStatementsResultOutput) ToGetManagedDatabaseCursorCacheStatementsResultOutputWithContext(ctx context.Context) GetManagedDatabaseCursorCacheStatementsResultOutput {
 	return o
+}
+
+func (o GetManagedDatabaseCursorCacheStatementsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseCursorCacheStatementsResult] {
+	return pulumix.Output[GetManagedDatabaseCursorCacheStatementsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The list of cursor_cache_statement_collection.

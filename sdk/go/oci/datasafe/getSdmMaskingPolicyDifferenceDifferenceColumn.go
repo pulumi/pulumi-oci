@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Sdm Masking Policy Difference Difference Column resource in Oracle Cloud Infrastructure Data Safe service.
@@ -127,6 +128,12 @@ func (o GetSdmMaskingPolicyDifferenceDifferenceColumnResultOutput) ToGetSdmMaski
 
 func (o GetSdmMaskingPolicyDifferenceDifferenceColumnResultOutput) ToGetSdmMaskingPolicyDifferenceDifferenceColumnResultOutputWithContext(ctx context.Context) GetSdmMaskingPolicyDifferenceDifferenceColumnResultOutput {
 	return o
+}
+
+func (o GetSdmMaskingPolicyDifferenceDifferenceColumnResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSdmMaskingPolicyDifferenceDifferenceColumnResult] {
+	return pulumix.Output[GetSdmMaskingPolicyDifferenceDifferenceColumnResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the difference column.

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Deployment Type resource in Oracle Cloud Infrastructure Golden Gate service.
@@ -108,6 +109,12 @@ func (o GetDeploymentTypeResultOutput) ToGetDeploymentTypeResultOutput() GetDepl
 
 func (o GetDeploymentTypeResultOutput) ToGetDeploymentTypeResultOutputWithContext(ctx context.Context) GetDeploymentTypeResultOutput {
 	return o
+}
+
+func (o GetDeploymentTypeResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDeploymentTypeResult] {
+	return pulumix.Output[GetDeploymentTypeResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDeploymentTypeResultOutput) CompartmentId() pulumi.StringOutput {

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Repository Author resource in Oracle Cloud Infrastructure Devops service.
@@ -107,6 +108,12 @@ func (o GetRepositoryAuthorResultOutput) ToGetRepositoryAuthorResultOutput() Get
 
 func (o GetRepositoryAuthorResultOutput) ToGetRepositoryAuthorResultOutputWithContext(ctx context.Context) GetRepositoryAuthorResultOutput {
 	return o
+}
+
+func (o GetRepositoryAuthorResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRepositoryAuthorResult] {
+	return pulumix.Output[GetRepositoryAuthorResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The provider-assigned unique ID for this managed resource.

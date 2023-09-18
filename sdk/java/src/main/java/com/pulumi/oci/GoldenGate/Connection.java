@@ -145,7 +145,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) Access key ID to access the Amazon S3 bucket. e.g.: &#34;this-is-not-the-secret&#34;
      * 
      */
-    @Export(name="accessKeyId", type=String.class, parameters={})
+    @Export(name="accessKeyId", refs={String.class}, tree="[0]")
     private Output<String> accessKeyId;
 
     /**
@@ -159,7 +159,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) Azure storage account key. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_KEY&#39;. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
      * 
      */
-    @Export(name="accountKey", type=String.class, parameters={})
+    @Export(name="accountKey", refs={String.class}, tree="[0]")
     private Output<String> accountKey;
 
     /**
@@ -173,7 +173,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) Sets the Azure storage account name.
      * 
      */
-    @Export(name="accountName", type=String.class, parameters={})
+    @Export(name="accountName", refs={String.class}, tree="[0]")
     private Output<String> accountName;
 
     /**
@@ -187,7 +187,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) An array of name-value pair attribute entries. Used as additional parameters in connection string.
      * 
      */
-    @Export(name="additionalAttributes", type=List.class, parameters={ConnectionAdditionalAttribute.class})
+    @Export(name="additionalAttributes", refs={List.class,ConnectionAdditionalAttribute.class}, tree="[0,1]")
     private Output<List<ConnectionAdditionalAttribute>> additionalAttributes;
 
     /**
@@ -201,7 +201,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) Used authentication mechanism.
      * 
      */
-    @Export(name="authenticationType", type=String.class, parameters={})
+    @Export(name="authenticationType", refs={String.class}, tree="[0]")
     private Output<String> authenticationType;
 
     /**
@@ -215,7 +215,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) Azure tenant ID of the application. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
      * 
      */
-    @Export(name="azureTenantId", type=String.class, parameters={})
+    @Export(name="azureTenantId", refs={String.class}, tree="[0]")
     private Output<String> azureTenantId;
 
     /**
@@ -229,7 +229,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `&#34;server1.example.com:9092,server2.example.com:9092&#34;`
      * 
      */
-    @Export(name="bootstrapServers", type=List.class, parameters={ConnectionBootstrapServer.class})
+    @Export(name="bootstrapServers", refs={List.class,ConnectionBootstrapServer.class}, tree="[0,1]")
     private Output<List<ConnectionBootstrapServer>> bootstrapServers;
 
     /**
@@ -243,7 +243,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) Azure client ID of the application. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
      * 
      */
-    @Export(name="clientId", type=String.class, parameters={})
+    @Export(name="clientId", refs={String.class}, tree="[0]")
     private Output<String> clientId;
 
     /**
@@ -257,7 +257,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) Azure client secret (aka application password) for authentication. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
      * 
      */
-    @Export(name="clientSecret", type=String.class, parameters={})
+    @Export(name="clientSecret", refs={String.class}, tree="[0]")
     private Output<String> clientSecret;
 
     /**
@@ -271,7 +271,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -285,7 +285,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: &#39;com.stc.jmsjca.core.JConnectionFactoryXA&#39;
      * 
      */
-    @Export(name="connectionFactory", type=String.class, parameters={})
+    @Export(name="connectionFactory", refs={String.class}, tree="[0]")
     private Output<String> connectionFactory;
 
     /**
@@ -299,7 +299,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: &#39;jdbc:sqlserver://&lt;synapse-workspace&gt;.sql.azuresynapse.net:1433;database=&lt;db-name&gt;;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;&#39;, MONGODB e.g.: &#39;mongodb://mongodb0.example.com:27017/recordsrecords&#39;.
      * 
      */
-    @Export(name="connectionString", type=String.class, parameters={})
+    @Export(name="connectionString", refs={String.class}, tree="[0]")
     private Output<String> connectionString;
 
     /**
@@ -313,7 +313,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) The connection type.
      * 
      */
-    @Export(name="connectionType", type=String.class, parameters={})
+    @Export(name="connectionType", refs={String.class}, tree="[0]")
     private Output<String> connectionType;
 
     /**
@@ -327,7 +327,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: &#39;mq://myjms.host.domain:7676&#39;, SNOWFLAKE: JDBC connection URL. e.g.: &#39;jdbc:snowflake://&lt;account_name&gt;.snowflakecomputing.com/?warehouse=&lt;warehouse-name&gt;&amp;db=&lt;db-name&gt;&#39;
      * 
      */
-    @Export(name="connectionUrl", type=String.class, parameters={})
+    @Export(name="connectionUrl", refs={String.class}, tree="[0]")
     private Output<String> connectionUrl;
 
     /**
@@ -341,7 +341,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) The base64 encoded content of the consumer.properties file.
      * 
      */
-    @Export(name="consumerProperties", type=String.class, parameters={})
+    @Export(name="consumerProperties", refs={String.class}, tree="[0]")
     private Output<String> consumerProperties;
 
     /**
@@ -355,7 +355,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml).
      * 
      */
-    @Export(name="coreSiteXml", type=String.class, parameters={})
+    @Export(name="coreSiteXml", refs={String.class}, tree="[0]")
     private Output<String> coreSiteXml;
 
     /**
@@ -369,7 +369,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
      * 
      */
-    @Export(name="databaseId", type=String.class, parameters={})
+    @Export(name="databaseId", refs={String.class}, tree="[0]")
     private Output<String> databaseId;
 
     /**
@@ -383,7 +383,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) The name of the database.
      * 
      */
-    @Export(name="databaseName", type=String.class, parameters={})
+    @Export(name="databaseName", refs={String.class}, tree="[0]")
     private Output<String> databaseName;
 
     /**
@@ -397,7 +397,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system being referenced.
      * 
      */
-    @Export(name="dbSystemId", type=String.class, parameters={})
+    @Export(name="dbSystemId", refs={String.class}, tree="[0]")
     private Output<String> dbSystemId;
 
     /**
@@ -411,7 +411,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -425,7 +425,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      * 
      */
-    @Export(name="deploymentId", type=String.class, parameters={})
+    @Export(name="deploymentId", refs={String.class}, tree="[0]")
     private Output<String> deploymentId;
 
     /**
@@ -439,7 +439,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) Metadata about this specific object.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -453,7 +453,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) An object&#39;s Display Name.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -467,7 +467,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
      * 
      */
-    @Export(name="endpoint", type=String.class, parameters={})
+    @Export(name="endpoint", refs={String.class}, tree="[0]")
     private Output<String> endpoint;
 
     /**
@@ -481,7 +481,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -495,7 +495,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) The name or address of a host.
      * 
      */
-    @Export(name="host", type=String.class, parameters={})
+    @Export(name="host", refs={String.class}, tree="[0]")
     private Output<String> host;
 
     /**
@@ -509,7 +509,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * List of ingress IP addresses from where the GoldenGate deployment connects to this connection&#39;s privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
      * 
      */
-    @Export(name="ingressIps", type=List.class, parameters={ConnectionIngressIp.class})
+    @Export(name="ingressIps", refs={List.class,ConnectionIngressIp.class}, tree="[0,1]")
     private Output<List<ConnectionIngressIp>> ingressIps;
 
     /**
@@ -523,7 +523,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) The Connection Factory can be looked up using this name. e.g.: &#39;ConnectionFactory&#39;
      * 
      */
-    @Export(name="jndiConnectionFactory", type=String.class, parameters={})
+    @Export(name="jndiConnectionFactory", refs={String.class}, tree="[0]")
     private Output<String> jndiConnectionFactory;
 
     /**
@@ -537,7 +537,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: &#39;org.apache.activemq.jndi.ActiveMQInitialContextFactory&#39;
      * 
      */
-    @Export(name="jndiInitialContextFactory", type=String.class, parameters={})
+    @Export(name="jndiInitialContextFactory", refs={String.class}, tree="[0]")
     private Output<String> jndiInitialContextFactory;
 
     /**
@@ -551,7 +551,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) The URL that Java Message Service will use to contact the JNDI provider. e.g.: &#39;tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000&#39;
      * 
      */
-    @Export(name="jndiProviderUrl", type=String.class, parameters={})
+    @Export(name="jndiProviderUrl", refs={String.class}, tree="[0]")
     private Output<String> jndiProviderUrl;
 
     /**
@@ -565,7 +565,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) The password associated to the principal.
      * 
      */
-    @Export(name="jndiSecurityCredentials", type=String.class, parameters={})
+    @Export(name="jndiSecurityCredentials", refs={String.class}, tree="[0]")
     private Output<String> jndiSecurityCredentials;
 
     /**
@@ -579,7 +579,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) Specifies the identity of the principal (user) to be authenticated. e.g.: &#39;admin2&#39;
      * 
      */
-    @Export(name="jndiSecurityPrincipal", type=String.class, parameters={})
+    @Export(name="jndiSecurityPrincipal", refs={String.class}, tree="[0]")
     private Output<String> jndiSecurityPrincipal;
 
     /**
@@ -593,7 +593,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) Refers to the customer&#39;s master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
      * 
      */
-    @Export(name="keyId", type=String.class, parameters={})
+    @Export(name="keyId", refs={String.class}, tree="[0]")
     private Output<String> keyId;
 
     /**
@@ -607,7 +607,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) The base64 encoded content of the KeyStore file.
      * 
      */
-    @Export(name="keyStore", type=String.class, parameters={})
+    @Export(name="keyStore", refs={String.class}, tree="[0]")
     private Output<String> keyStore;
 
     /**
@@ -621,7 +621,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) The KeyStore password.
      * 
      */
-    @Export(name="keyStorePassword", type=String.class, parameters={})
+    @Export(name="keyStorePassword", refs={String.class}, tree="[0]")
     private Output<String> keyStorePassword;
 
     /**
@@ -635,7 +635,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * Describes the object&#39;s current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -649,7 +649,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
      * 
      */
-    @Export(name="nsgIds", type=List.class, parameters={String.class})
+    @Export(name="nsgIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> nsgIds;
 
     /**
@@ -663,7 +663,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
      * 
      */
-    @Export(name="password", type=String.class, parameters={})
+    @Export(name="password", refs={String.class}, tree="[0]")
     private Output<String> password;
 
     /**
@@ -677,7 +677,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) The port of an endpoint usually specified for a connection.
      * 
      */
-    @Export(name="port", type=Integer.class, parameters={})
+    @Export(name="port", refs={Integer.class}, tree="[0]")
     private Output<Integer> port;
 
     /**
@@ -691,7 +691,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) The private IP address of the connection&#39;s endpoint in the customer&#39;s VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
      * 
      */
-    @Export(name="privateIp", type=String.class, parameters={})
+    @Export(name="privateIp", refs={String.class}, tree="[0]")
     private Output<String> privateIp;
 
     /**
@@ -705,7 +705,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) The base64 encoded content of private key file in PEM format.
      * 
      */
-    @Export(name="privateKeyFile", type=String.class, parameters={})
+    @Export(name="privateKeyFile", refs={String.class}, tree="[0]")
     private Output<String> privateKeyFile;
 
     /**
@@ -719,7 +719,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) Password if the private key file is encrypted.
      * 
      */
-    @Export(name="privateKeyPassphrase", type=String.class, parameters={})
+    @Export(name="privateKeyPassphrase", refs={String.class}, tree="[0]")
     private Output<String> privateKeyPassphrase;
 
     /**
@@ -733,7 +733,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) The base64 encoded content of the producer.properties file.
      * 
      */
-    @Export(name="producerProperties", type=String.class, parameters={})
+    @Export(name="producerProperties", refs={String.class}, tree="[0]")
     private Output<String> producerProperties;
 
     /**
@@ -747,7 +747,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
      * 
      */
-    @Export(name="publicKeyFingerprint", type=String.class, parameters={})
+    @Export(name="publicKeyFingerprint", refs={String.class}, tree="[0]")
     private Output<String> publicKeyFingerprint;
 
     /**
@@ -761,7 +761,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) The name of the region. e.g.: us-ashburn-1
      * 
      */
-    @Export(name="region", type=String.class, parameters={})
+    @Export(name="region", refs={String.class}, tree="[0]")
     private Output<String> region;
 
     /**
@@ -775,7 +775,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_ACCESS_SIGNATURE&#39;. e.g.: ?sv=2020-06-08&amp;ss=bfqt&amp;srt=sco&amp;sp=rwdlacupyx&amp;se=2020-09-10T20:27:28Z&amp;st=2022-08-05T12:27:28Z&amp;spr=https&amp;sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
      * 
      */
-    @Export(name="sasToken", type=String.class, parameters={})
+    @Export(name="sasToken", refs={String.class}, tree="[0]")
     private Output<String> sasToken;
 
     /**
@@ -789,7 +789,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: &#34;this-is-not-the-secret&#34;
      * 
      */
-    @Export(name="secretAccessKey", type=String.class, parameters={})
+    @Export(name="secretAccessKey", refs={String.class}, tree="[0]")
     private Output<String> secretAccessKey;
 
     /**
@@ -803,7 +803,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) Security Protocol.
      * 
      */
-    @Export(name="securityProtocol", type=String.class, parameters={})
+    @Export(name="securityProtocol", refs={String.class}, tree="[0]")
     private Output<String> securityProtocol;
 
     /**
@@ -817,7 +817,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) The mode of the database connection session to be established by the data client. &#39;REDIRECT&#39; - for a RAC database, &#39;DIRECT&#39; - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
      * 
      */
-    @Export(name="sessionMode", type=String.class, parameters={})
+    @Export(name="sessionMode", refs={String.class}, tree="[0]")
     private Output<String> sessionMode;
 
     /**
@@ -831,7 +831,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
      * 
      */
-    @Export(name="shouldUseJndi", type=Boolean.class, parameters={})
+    @Export(name="shouldUseJndi", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> shouldUseJndi;
 
     /**
@@ -845,7 +845,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
      * 
      */
-    @Export(name="shouldValidateServerCertificate", type=Boolean.class, parameters={})
+    @Export(name="shouldValidateServerCertificate", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> shouldValidateServerCertificate;
 
     /**
@@ -859,7 +859,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
      * 
      */
-    @Export(name="sslCa", type=String.class, parameters={})
+    @Export(name="sslCa", refs={String.class}, tree="[0]")
     private Output<String> sslCa;
 
     /**
@@ -873,7 +873,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) Client Certificate - The base64 encoded content of client-cert.pem file  containing the client public key (for 2-way SSL).
      * 
      */
-    @Export(name="sslCert", type=String.class, parameters={})
+    @Export(name="sslCert", refs={String.class}, tree="[0]")
     private Output<String> sslCert;
 
     /**
@@ -887,7 +887,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
      * 
      */
-    @Export(name="sslCrl", type=String.class, parameters={})
+    @Export(name="sslCrl", refs={String.class}, tree="[0]")
     private Output<String> sslCrl;
 
     /**
@@ -901,7 +901,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) Client Key - The client-key.pem containing the client private key (for 2-way SSL).
      * 
      */
-    @Export(name="sslKey", type=String.class, parameters={})
+    @Export(name="sslKey", refs={String.class}, tree="[0]")
     private Output<String> sslKey;
 
     /**
@@ -915,7 +915,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided.
      * 
      */
-    @Export(name="sslKeyPassword", type=String.class, parameters={})
+    @Export(name="sslKeyPassword", refs={String.class}, tree="[0]")
     private Output<String> sslKeyPassword;
 
     /**
@@ -929,7 +929,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) SSL modes for PostgreSQL.
      * 
      */
-    @Export(name="sslMode", type=String.class, parameters={})
+    @Export(name="sslMode", refs={String.class}, tree="[0]")
     private Output<String> sslMode;
 
     /**
@@ -943,7 +943,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * Possible lifecycle states for connection.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -957,7 +957,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
      * 
      */
-    @Export(name="streamPoolId", type=String.class, parameters={})
+    @Export(name="streamPoolId", refs={String.class}, tree="[0]")
     private Output<String> streamPoolId;
 
     /**
@@ -971,7 +971,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
      * 
      */
-    @Export(name="subnetId", type=String.class, parameters={})
+    @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
@@ -985,7 +985,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -999,7 +999,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * The Kafka (e.g. Confluent) Schema Registry technology type.
      * 
      */
-    @Export(name="technologyType", type=String.class, parameters={})
+    @Export(name="technologyType", refs={String.class}, tree="[0]")
     private Output<String> technologyType;
 
     /**
@@ -1013,7 +1013,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
      * 
      */
-    @Export(name="tenancyId", type=String.class, parameters={})
+    @Export(name="tenancyId", refs={String.class}, tree="[0]")
     private Output<String> tenancyId;
 
     /**
@@ -1027,7 +1027,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -1041,7 +1041,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -1055,7 +1055,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) The base64 encoded content of the TrustStore file.
      * 
      */
-    @Export(name="trustStore", type=String.class, parameters={})
+    @Export(name="trustStore", refs={String.class}, tree="[0]")
     private Output<String> trustStore;
 
     /**
@@ -1069,7 +1069,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) The TrustStore password.
      * 
      */
-    @Export(name="trustStorePassword", type=String.class, parameters={})
+    @Export(name="trustStorePassword", refs={String.class}, tree="[0]")
     private Output<String> trustStorePassword;
 
     /**
@@ -1083,7 +1083,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) Kafka Schema Registry URL. e.g.: &#39;https://server1.us.oracle.com:8081&#39;
      * 
      */
-    @Export(name="url", type=String.class, parameters={})
+    @Export(name="url", refs={String.class}, tree="[0]")
     private Output<String> url;
 
     /**
@@ -1097,7 +1097,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/ Object Storage. The user must have write access.
      * 
      */
-    @Export(name="userId", type=String.class, parameters={})
+    @Export(name="userId", refs={String.class}, tree="[0]")
     private Output<String> userId;
 
     /**
@@ -1111,7 +1111,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
      * 
      */
-    @Export(name="username", type=String.class, parameters={})
+    @Export(name="username", refs={String.class}, tree="[0]")
     private Output<String> username;
 
     /**
@@ -1125,7 +1125,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) Refers to the customer&#39;s vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
      * 
      */
-    @Export(name="vaultId", type=String.class, parameters={})
+    @Export(name="vaultId", refs={String.class}, tree="[0]")
     private Output<String> vaultId;
 
     /**
@@ -1142,7 +1142,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="wallet", type=String.class, parameters={})
+    @Export(name="wallet", refs={String.class}, tree="[0]")
     private Output<String> wallet;
 
     /**

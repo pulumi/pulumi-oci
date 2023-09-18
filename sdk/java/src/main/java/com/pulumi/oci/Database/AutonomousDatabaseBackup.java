@@ -70,7 +70,7 @@ public class AutonomousDatabaseBackup extends com.pulumi.resources.CustomResourc
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
      * 
      */
-    @Export(name="autonomousDatabaseId", type=String.class, parameters={})
+    @Export(name="autonomousDatabaseId", refs={String.class}, tree="[0]")
     private Output<String> autonomousDatabaseId;
 
     /**
@@ -84,7 +84,7 @@ public class AutonomousDatabaseBackup extends com.pulumi.resources.CustomResourc
      * Backup destination details
      * 
      */
-    @Export(name="backupDestinationDetails", type=AutonomousDatabaseBackupBackupDestinationDetails.class, parameters={})
+    @Export(name="backupDestinationDetails", refs={AutonomousDatabaseBackupBackupDestinationDetails.class}, tree="[0]")
     private Output<AutonomousDatabaseBackupBackupDestinationDetails> backupDestinationDetails;
 
     /**
@@ -98,7 +98,7 @@ public class AutonomousDatabaseBackup extends com.pulumi.resources.CustomResourc
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -112,7 +112,7 @@ public class AutonomousDatabaseBackup extends com.pulumi.resources.CustomResourc
      * The size of the database in terabytes at the time the backup was taken.
      * 
      */
-    @Export(name="databaseSizeInTbs", type=Double.class, parameters={})
+    @Export(name="databaseSizeInTbs", refs={Double.class}, tree="[0]")
     private Output<Double> databaseSizeInTbs;
 
     /**
@@ -126,7 +126,7 @@ public class AutonomousDatabaseBackup extends com.pulumi.resources.CustomResourc
      * A valid Oracle Database version for Autonomous Database.
      * 
      */
-    @Export(name="dbVersion", type=String.class, parameters={})
+    @Export(name="dbVersion", refs={String.class}, tree="[0]")
     private Output<String> dbVersion;
 
     /**
@@ -140,7 +140,7 @@ public class AutonomousDatabaseBackup extends com.pulumi.resources.CustomResourc
      * The user-friendly name for the backup. The name does not have to be unique.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -154,7 +154,7 @@ public class AutonomousDatabaseBackup extends com.pulumi.resources.CustomResourc
      * Indicates whether the backup is user-initiated or automatic.
      * 
      */
-    @Export(name="isAutomatic", type=Boolean.class, parameters={})
+    @Export(name="isAutomatic", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isAutomatic;
 
     /**
@@ -168,7 +168,7 @@ public class AutonomousDatabaseBackup extends com.pulumi.resources.CustomResourc
      * Indicates whether the backup is long-term
      * 
      */
-    @Export(name="isLongTermBackup", type=Boolean.class, parameters={})
+    @Export(name="isLongTermBackup", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isLongTermBackup;
 
     /**
@@ -182,7 +182,7 @@ public class AutonomousDatabaseBackup extends com.pulumi.resources.CustomResourc
      * Indicates whether the backup can be used to restore the associated Autonomous Database.
      * 
      */
-    @Export(name="isRestorable", type=Boolean.class, parameters={})
+    @Export(name="isRestorable", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isRestorable;
 
     /**
@@ -196,7 +196,7 @@ public class AutonomousDatabaseBackup extends com.pulumi.resources.CustomResourc
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
      * 
      */
-    @Export(name="keyStoreId", type=String.class, parameters={})
+    @Export(name="keyStoreId", refs={String.class}, tree="[0]")
     private Output<String> keyStoreId;
 
     /**
@@ -210,7 +210,7 @@ public class AutonomousDatabaseBackup extends com.pulumi.resources.CustomResourc
      * The wallet name for Oracle Key Vault.
      * 
      */
-    @Export(name="keyStoreWalletName", type=String.class, parameters={})
+    @Export(name="keyStoreWalletName", refs={String.class}, tree="[0]")
     private Output<String> keyStoreWalletName;
 
     /**
@@ -224,7 +224,7 @@ public class AutonomousDatabaseBackup extends com.pulumi.resources.CustomResourc
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
-    @Export(name="kmsKeyId", type=String.class, parameters={})
+    @Export(name="kmsKeyId", refs={String.class}, tree="[0]")
     private Output<String> kmsKeyId;
 
     /**
@@ -238,7 +238,7 @@ public class AutonomousDatabaseBackup extends com.pulumi.resources.CustomResourc
      * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
      * 
      */
-    @Export(name="kmsKeyVersionId", type=String.class, parameters={})
+    @Export(name="kmsKeyVersionId", refs={String.class}, tree="[0]")
     private Output<String> kmsKeyVersionId;
 
     /**
@@ -252,7 +252,7 @@ public class AutonomousDatabaseBackup extends com.pulumi.resources.CustomResourc
      * Additional information about the current lifecycle state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -269,7 +269,7 @@ public class AutonomousDatabaseBackup extends com.pulumi.resources.CustomResourc
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="retentionPeriodInDays", type=Integer.class, parameters={})
+    @Export(name="retentionPeriodInDays", refs={Integer.class}, tree="[0]")
     private Output<Integer> retentionPeriodInDays;
 
     /**
@@ -286,7 +286,7 @@ public class AutonomousDatabaseBackup extends com.pulumi.resources.CustomResourc
      * The backup size in terrabytes (TB).
      * 
      */
-    @Export(name="sizeInTbs", type=Double.class, parameters={})
+    @Export(name="sizeInTbs", refs={Double.class}, tree="[0]")
     private Output<Double> sizeInTbs;
 
     /**
@@ -300,7 +300,7 @@ public class AutonomousDatabaseBackup extends com.pulumi.resources.CustomResourc
      * The current state of the backup.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -314,7 +314,7 @@ public class AutonomousDatabaseBackup extends com.pulumi.resources.CustomResourc
      * Timestamp until when the backup will be available
      * 
      */
-    @Export(name="timeAvailableTill", type=String.class, parameters={})
+    @Export(name="timeAvailableTill", refs={String.class}, tree="[0]")
     private Output<String> timeAvailableTill;
 
     /**
@@ -328,7 +328,7 @@ public class AutonomousDatabaseBackup extends com.pulumi.resources.CustomResourc
      * The date and time the backup completed.
      * 
      */
-    @Export(name="timeEnded", type=String.class, parameters={})
+    @Export(name="timeEnded", refs={String.class}, tree="[0]")
     private Output<String> timeEnded;
 
     /**
@@ -342,7 +342,7 @@ public class AutonomousDatabaseBackup extends com.pulumi.resources.CustomResourc
      * The date and time the backup started.
      * 
      */
-    @Export(name="timeStarted", type=String.class, parameters={})
+    @Export(name="timeStarted", refs={String.class}, tree="[0]")
     private Output<String> timeStarted;
 
     /**
@@ -356,7 +356,7 @@ public class AutonomousDatabaseBackup extends com.pulumi.resources.CustomResourc
      * The type of backup.
      * 
      */
-    @Export(name="type", type=String.class, parameters={})
+    @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**
@@ -370,7 +370,7 @@ public class AutonomousDatabaseBackup extends com.pulumi.resources.CustomResourc
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
-    @Export(name="vaultId", type=String.class, parameters={})
+    @Export(name="vaultId", refs={String.class}, tree="[0]")
     private Output<String> vaultId;
 
     /**

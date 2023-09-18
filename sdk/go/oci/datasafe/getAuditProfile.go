@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Audit Profile resource in Oracle Cloud Infrastructure Data Safe service.
@@ -135,6 +136,12 @@ func (o LookupAuditProfileResultOutput) ToLookupAuditProfileResultOutput() Looku
 
 func (o LookupAuditProfileResultOutput) ToLookupAuditProfileResultOutputWithContext(ctx context.Context) LookupAuditProfileResultOutput {
 	return o
+}
+
+func (o LookupAuditProfileResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAuditProfileResult] {
+	return pulumix.Output[LookupAuditProfileResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Indicates number of audit records collected by Data Safe in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.

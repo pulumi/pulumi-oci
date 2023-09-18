@@ -65,7 +65,7 @@ public class CatalogAssociation extends com.pulumi.resources.CustomResource {
      * Identifier of the entity being associated with service catalog.
      * 
      */
-    @Export(name="entityId", type=String.class, parameters={})
+    @Export(name="entityId", refs={String.class}, tree="[0]")
     private Output<String> entityId;
 
     /**
@@ -79,7 +79,7 @@ public class CatalogAssociation extends com.pulumi.resources.CustomResource {
      * The type of the entity that is associated with the service catalog.
      * 
      */
-    @Export(name="entityType", type=String.class, parameters={})
+    @Export(name="entityType", refs={String.class}, tree="[0]")
     private Output<String> entityType;
 
     /**
@@ -96,7 +96,7 @@ public class CatalogAssociation extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="serviceCatalogId", type=String.class, parameters={})
+    @Export(name="serviceCatalogId", refs={String.class}, tree="[0]")
     private Output<String> serviceCatalogId;
 
     /**
@@ -113,7 +113,7 @@ public class CatalogAssociation extends com.pulumi.resources.CustomResource {
      * Timestamp of when the resource was associated with service catalog.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**

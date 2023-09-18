@@ -127,7 +127,7 @@ public class Pipeline extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -141,7 +141,7 @@ public class Pipeline extends com.pulumi.resources.CustomResource {
      * (Updatable) The configuration details of a pipeline.
      * 
      */
-    @Export(name="configurationDetails", type=PipelineConfigurationDetails.class, parameters={})
+    @Export(name="configurationDetails", refs={PipelineConfigurationDetails.class}, tree="[0]")
     private Output<PipelineConfigurationDetails> configurationDetails;
 
     /**
@@ -155,7 +155,7 @@ public class Pipeline extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the pipeline.
      * 
      */
-    @Export(name="createdBy", type=String.class, parameters={})
+    @Export(name="createdBy", refs={String.class}, tree="[0]")
     private Output<String> createdBy;
 
     /**
@@ -169,7 +169,7 @@ public class Pipeline extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -179,7 +179,7 @@ public class Pipeline extends com.pulumi.resources.CustomResource {
     public Output<Map<String,Object>> definedTags() {
         return this.definedTags;
     }
-    @Export(name="deleteRelatedPipelineRuns", type=Boolean.class, parameters={})
+    @Export(name="deleteRelatedPipelineRuns", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> deleteRelatedPipelineRuns;
 
     public Output<Optional<Boolean>> deleteRelatedPipelineRuns() {
@@ -189,7 +189,7 @@ public class Pipeline extends com.pulumi.resources.CustomResource {
      * (Updatable) A short description of the step.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -203,7 +203,7 @@ public class Pipeline extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-friendly display name for the resource.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -217,7 +217,7 @@ public class Pipeline extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -231,7 +231,7 @@ public class Pipeline extends com.pulumi.resources.CustomResource {
      * The infrastructure configuration details of a pipeline or a step.
      * 
      */
-    @Export(name="infrastructureConfigurationDetails", type=PipelineInfrastructureConfigurationDetails.class, parameters={})
+    @Export(name="infrastructureConfigurationDetails", refs={PipelineInfrastructureConfigurationDetails.class}, tree="[0]")
     private Output<PipelineInfrastructureConfigurationDetails> infrastructureConfigurationDetails;
 
     /**
@@ -245,7 +245,7 @@ public class Pipeline extends com.pulumi.resources.CustomResource {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in &#39;Failed&#39; state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -259,7 +259,7 @@ public class Pipeline extends com.pulumi.resources.CustomResource {
      * (Updatable) The pipeline log configuration details.
      * 
      */
-    @Export(name="logConfigurationDetails", type=PipelineLogConfigurationDetails.class, parameters={})
+    @Export(name="logConfigurationDetails", refs={PipelineLogConfigurationDetails.class}, tree="[0]")
     private Output<PipelineLogConfigurationDetails> logConfigurationDetails;
 
     /**
@@ -273,7 +273,7 @@ public class Pipeline extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
      * 
      */
-    @Export(name="projectId", type=String.class, parameters={})
+    @Export(name="projectId", refs={String.class}, tree="[0]")
     private Output<String> projectId;
 
     /**
@@ -287,7 +287,7 @@ public class Pipeline extends com.pulumi.resources.CustomResource {
      * The current state of the pipeline.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -297,7 +297,7 @@ public class Pipeline extends com.pulumi.resources.CustomResource {
     public Output<String> state() {
         return this.state;
     }
-    @Export(name="stepArtifact", type=PipelineStepArtifact.class, parameters={})
+    @Export(name="stepArtifact", refs={PipelineStepArtifact.class}, tree="[0]")
     private Output<PipelineStepArtifact> stepArtifact;
 
     public Output<PipelineStepArtifact> stepArtifact() {
@@ -307,7 +307,7 @@ public class Pipeline extends com.pulumi.resources.CustomResource {
      * (Updatable) Array of step details for each step.
      * 
      */
-    @Export(name="stepDetails", type=List.class, parameters={PipelineStepDetail.class})
+    @Export(name="stepDetails", refs={List.class,PipelineStepDetail.class}, tree="[0,1]")
     private Output<List<PipelineStepDetail>> stepDetails;
 
     /**
@@ -321,7 +321,7 @@ public class Pipeline extends com.pulumi.resources.CustomResource {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -335,7 +335,7 @@ public class Pipeline extends com.pulumi.resources.CustomResource {
      * The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -349,7 +349,7 @@ public class Pipeline extends com.pulumi.resources.CustomResource {
      * The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

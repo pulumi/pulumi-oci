@@ -75,7 +75,7 @@ public class Stream extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the compartment that contains the stream.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -89,7 +89,7 @@ public class Stream extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -103,7 +103,7 @@ public class Stream extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -117,7 +117,7 @@ public class Stream extends com.pulumi.resources.CustomResource {
      * Any additional details about the current state of the stream.
      * 
      */
-    @Export(name="lifecycleStateDetails", type=String.class, parameters={})
+    @Export(name="lifecycleStateDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleStateDetails;
 
     /**
@@ -131,7 +131,7 @@ public class Stream extends com.pulumi.resources.CustomResource {
      * The endpoint to use when creating the StreamClient to consume or publish messages in the stream. If the associated stream pool is private, the endpoint is also private and can only be accessed from inside the stream pool&#39;s associated subnet.
      * 
      */
-    @Export(name="messagesEndpoint", type=String.class, parameters={})
+    @Export(name="messagesEndpoint", refs={String.class}, tree="[0]")
     private Output<String> messagesEndpoint;
 
     /**
@@ -145,7 +145,7 @@ public class Stream extends com.pulumi.resources.CustomResource {
      * The name of the stream. Avoid entering confidential information.  Example: `TelemetryEvents`
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -159,7 +159,7 @@ public class Stream extends com.pulumi.resources.CustomResource {
      * The number of partitions in the stream.
      * 
      */
-    @Export(name="partitions", type=Integer.class, parameters={})
+    @Export(name="partitions", refs={Integer.class}, tree="[0]")
     private Output<Integer> partitions;
 
     /**
@@ -173,7 +173,7 @@ public class Stream extends com.pulumi.resources.CustomResource {
      * The retention period of the stream, in hours. Accepted values are between 24 and 168 (7 days). If not specified, the stream will have a retention period of 24 hours.
      * 
      */
-    @Export(name="retentionInHours", type=Integer.class, parameters={})
+    @Export(name="retentionInHours", refs={Integer.class}, tree="[0]")
     private Output<Integer> retentionInHours;
 
     /**
@@ -187,7 +187,7 @@ public class Stream extends com.pulumi.resources.CustomResource {
      * The current state of the stream.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -204,7 +204,7 @@ public class Stream extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="streamPoolId", type=String.class, parameters={})
+    @Export(name="streamPoolId", refs={String.class}, tree="[0]")
     private Output<String> streamPoolId;
 
     /**
@@ -221,7 +221,7 @@ public class Stream extends com.pulumi.resources.CustomResource {
      * The date and time the stream was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**

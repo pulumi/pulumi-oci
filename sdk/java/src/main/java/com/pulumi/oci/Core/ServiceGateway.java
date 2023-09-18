@@ -85,7 +85,7 @@ public class ServiceGateway extends com.pulumi.resources.CustomResource {
      * Whether the service gateway blocks all traffic through it. The default is `false`. When this is `true`, traffic is not routed to any services, regardless of route rules.  Example: `true`
      * 
      */
-    @Export(name="blockTraffic", type=Boolean.class, parameters={})
+    @Export(name="blockTraffic", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> blockTraffic;
 
     /**
@@ -99,7 +99,7 @@ public class ServiceGateway extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the service gateway.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -113,7 +113,7 @@ public class ServiceGateway extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -127,7 +127,7 @@ public class ServiceGateway extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -141,7 +141,7 @@ public class ServiceGateway extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -159,7 +159,7 @@ public class ServiceGateway extends com.pulumi.resources.CustomResource {
      * For information about why you would associate a route table with a service gateway, see [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm).
      * 
      */
-    @Export(name="routeTableId", type=String.class, parameters={})
+    @Export(name="routeTableId", refs={String.class}, tree="[0]")
     private Output<String> routeTableId;
 
     /**
@@ -179,7 +179,7 @@ public class ServiceGateway extends com.pulumi.resources.CustomResource {
      * For each enabled `Service`, make sure there&#39;s a route rule with the `Service` object&#39;s `cidrBlock` as the rule&#39;s destination and the service gateway as the rule&#39;s target. See [Route Table](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/RouteTable/).
      * 
      */
-    @Export(name="services", type=List.class, parameters={ServiceGatewayService.class})
+    @Export(name="services", refs={List.class,ServiceGatewayService.class}, tree="[0,1]")
     private Output<List<ServiceGatewayService>> services;
 
     /**
@@ -195,7 +195,7 @@ public class ServiceGateway extends com.pulumi.resources.CustomResource {
      * The service gateway&#39;s current state.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -209,7 +209,7 @@ public class ServiceGateway extends com.pulumi.resources.CustomResource {
      * The date and time the service gateway was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -226,7 +226,7 @@ public class ServiceGateway extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="vcnId", type=String.class, parameters={})
+    @Export(name="vcnId", refs={String.class}, tree="[0]")
     private Output<String> vcnId;
 
     /**

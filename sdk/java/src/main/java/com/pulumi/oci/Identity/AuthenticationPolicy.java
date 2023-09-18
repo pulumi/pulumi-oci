@@ -78,7 +78,7 @@ public class AuthenticationPolicy extends com.pulumi.resources.CustomResource {
      * The OCID of the compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -92,7 +92,7 @@ public class AuthenticationPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) Network policy, Consists of a list of Network Source ids.
      * 
      */
-    @Export(name="networkPolicy", type=AuthenticationPolicyNetworkPolicy.class, parameters={})
+    @Export(name="networkPolicy", refs={AuthenticationPolicyNetworkPolicy.class}, tree="[0]")
     private Output<AuthenticationPolicyNetworkPolicy> networkPolicy;
 
     /**
@@ -106,7 +106,7 @@ public class AuthenticationPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) Password policy, currently set for the given compartment.
      * 
      */
-    @Export(name="passwordPolicy", type=AuthenticationPolicyPasswordPolicy.class, parameters={})
+    @Export(name="passwordPolicy", refs={AuthenticationPolicyPasswordPolicy.class}, tree="[0]")
     private Output<AuthenticationPolicyPasswordPolicy> passwordPolicy;
 
     /**

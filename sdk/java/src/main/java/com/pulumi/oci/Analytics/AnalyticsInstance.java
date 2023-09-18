@@ -96,7 +96,7 @@ public class AnalyticsInstance extends com.pulumi.resources.CustomResource {
      * Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
      * 
      */
-    @Export(name="capacity", type=AnalyticsInstanceCapacity.class, parameters={})
+    @Export(name="capacity", refs={AnalyticsInstanceCapacity.class}, tree="[0]")
     private Output<AnalyticsInstanceCapacity> capacity;
 
     /**
@@ -110,7 +110,7 @@ public class AnalyticsInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -124,7 +124,7 @@ public class AnalyticsInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -138,7 +138,7 @@ public class AnalyticsInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) Optional description.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -152,7 +152,7 @@ public class AnalyticsInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) Email address receiving notifications.
      * 
      */
-    @Export(name="emailNotification", type=String.class, parameters={})
+    @Export(name="emailNotification", refs={String.class}, tree="[0]")
     private Output<String> emailNotification;
 
     /**
@@ -166,7 +166,7 @@ public class AnalyticsInstance extends com.pulumi.resources.CustomResource {
      * Analytics feature set.
      * 
      */
-    @Export(name="featureSet", type=String.class, parameters={})
+    @Export(name="featureSet", refs={String.class}, tree="[0]")
     private Output<String> featureSet;
 
     /**
@@ -180,7 +180,7 @@ public class AnalyticsInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -194,7 +194,7 @@ public class AnalyticsInstance extends com.pulumi.resources.CustomResource {
      * IDCS access token identifying a stripe and service administrator user.
      * 
      */
-    @Export(name="idcsAccessToken", type=String.class, parameters={})
+    @Export(name="idcsAccessToken", refs={String.class}, tree="[0]")
     private Output<String> idcsAccessToken;
 
     /**
@@ -208,7 +208,7 @@ public class AnalyticsInstance extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. Omitting this value or specifying an empty string (i.e. &#34;&#34;) indicates to use Oracle managed default encryption.
      * 
      */
-    @Export(name="kmsKeyId", type=String.class, parameters={})
+    @Export(name="kmsKeyId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> kmsKeyId;
 
     /**
@@ -222,7 +222,7 @@ public class AnalyticsInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) The license used for the service.
      * 
      */
-    @Export(name="licenseType", type=String.class, parameters={})
+    @Export(name="licenseType", refs={String.class}, tree="[0]")
     private Output<String> licenseType;
 
     /**
@@ -236,7 +236,7 @@ public class AnalyticsInstance extends com.pulumi.resources.CustomResource {
      * The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -250,7 +250,7 @@ public class AnalyticsInstance extends com.pulumi.resources.CustomResource {
      * Base representation of a network endpoint.
      * 
      */
-    @Export(name="networkEndpointDetails", type=AnalyticsInstanceNetworkEndpointDetails.class, parameters={})
+    @Export(name="networkEndpointDetails", refs={AnalyticsInstanceNetworkEndpointDetails.class}, tree="[0]")
     private Output<AnalyticsInstanceNetworkEndpointDetails> networkEndpointDetails;
 
     /**
@@ -264,7 +264,7 @@ public class AnalyticsInstance extends com.pulumi.resources.CustomResource {
      * URL of the Analytics service.
      * 
      */
-    @Export(name="serviceUrl", type=String.class, parameters={})
+    @Export(name="serviceUrl", refs={String.class}, tree="[0]")
     private Output<String> serviceUrl;
 
     /**
@@ -281,7 +281,7 @@ public class AnalyticsInstance extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -298,7 +298,7 @@ public class AnalyticsInstance extends com.pulumi.resources.CustomResource {
      * The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -312,7 +312,7 @@ public class AnalyticsInstance extends com.pulumi.resources.CustomResource {
      * The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

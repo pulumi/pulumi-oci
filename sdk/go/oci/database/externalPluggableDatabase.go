@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the External Pluggable Database resource in Oracle Cloud Infrastructure Database service.
@@ -307,6 +308,12 @@ func (i *ExternalPluggableDatabase) ToExternalPluggableDatabaseOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalPluggableDatabaseOutput)
 }
 
+func (i *ExternalPluggableDatabase) ToOutput(ctx context.Context) pulumix.Output[*ExternalPluggableDatabase] {
+	return pulumix.Output[*ExternalPluggableDatabase]{
+		OutputState: i.ToExternalPluggableDatabaseOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ExternalPluggableDatabaseArrayInput is an input type that accepts ExternalPluggableDatabaseArray and ExternalPluggableDatabaseArrayOutput values.
 // You can construct a concrete instance of `ExternalPluggableDatabaseArrayInput` via:
 //
@@ -330,6 +337,12 @@ func (i ExternalPluggableDatabaseArray) ToExternalPluggableDatabaseArrayOutput()
 
 func (i ExternalPluggableDatabaseArray) ToExternalPluggableDatabaseArrayOutputWithContext(ctx context.Context) ExternalPluggableDatabaseArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalPluggableDatabaseArrayOutput)
+}
+
+func (i ExternalPluggableDatabaseArray) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalPluggableDatabase] {
+	return pulumix.Output[[]*ExternalPluggableDatabase]{
+		OutputState: i.ToExternalPluggableDatabaseArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // ExternalPluggableDatabaseMapInput is an input type that accepts ExternalPluggableDatabaseMap and ExternalPluggableDatabaseMapOutput values.
@@ -357,6 +370,12 @@ func (i ExternalPluggableDatabaseMap) ToExternalPluggableDatabaseMapOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalPluggableDatabaseMapOutput)
 }
 
+func (i ExternalPluggableDatabaseMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalPluggableDatabase] {
+	return pulumix.Output[map[string]*ExternalPluggableDatabase]{
+		OutputState: i.ToExternalPluggableDatabaseMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ExternalPluggableDatabaseOutput struct{ *pulumi.OutputState }
 
 func (ExternalPluggableDatabaseOutput) ElementType() reflect.Type {
@@ -369,6 +388,12 @@ func (o ExternalPluggableDatabaseOutput) ToExternalPluggableDatabaseOutput() Ext
 
 func (o ExternalPluggableDatabaseOutput) ToExternalPluggableDatabaseOutputWithContext(ctx context.Context) ExternalPluggableDatabaseOutput {
 	return o
+}
+
+func (o ExternalPluggableDatabaseOutput) ToOutput(ctx context.Context) pulumix.Output[*ExternalPluggableDatabase] {
+	return pulumix.Output[*ExternalPluggableDatabase]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The character set of the external database.
@@ -499,6 +524,12 @@ func (o ExternalPluggableDatabaseArrayOutput) ToExternalPluggableDatabaseArrayOu
 	return o
 }
 
+func (o ExternalPluggableDatabaseArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalPluggableDatabase] {
+	return pulumix.Output[[]*ExternalPluggableDatabase]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o ExternalPluggableDatabaseArrayOutput) Index(i pulumi.IntInput) ExternalPluggableDatabaseOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ExternalPluggableDatabase {
 		return vs[0].([]*ExternalPluggableDatabase)[vs[1].(int)]
@@ -517,6 +548,12 @@ func (o ExternalPluggableDatabaseMapOutput) ToExternalPluggableDatabaseMapOutput
 
 func (o ExternalPluggableDatabaseMapOutput) ToExternalPluggableDatabaseMapOutputWithContext(ctx context.Context) ExternalPluggableDatabaseMapOutput {
 	return o
+}
+
+func (o ExternalPluggableDatabaseMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalPluggableDatabase] {
+	return pulumix.Output[map[string]*ExternalPluggableDatabase]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ExternalPluggableDatabaseMapOutput) MapIndex(k pulumi.StringInput) ExternalPluggableDatabaseOutput {

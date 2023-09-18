@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Applications in Oracle Cloud Infrastructure Functions service.
@@ -124,6 +125,12 @@ func (o GetApplicationsResultOutput) ToGetApplicationsResultOutput() GetApplicat
 
 func (o GetApplicationsResultOutput) ToGetApplicationsResultOutputWithContext(ctx context.Context) GetApplicationsResultOutput {
 	return o
+}
+
+func (o GetApplicationsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetApplicationsResult] {
+	return pulumix.Output[GetApplicationsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The list of applications.

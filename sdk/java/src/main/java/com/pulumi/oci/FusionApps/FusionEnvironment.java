@@ -102,7 +102,7 @@ public class FusionEnvironment extends com.pulumi.resources.CustomResource {
      * (Updatable) Language packs.
      * 
      */
-    @Export(name="additionalLanguagePacks", type=List.class, parameters={String.class})
+    @Export(name="additionalLanguagePacks", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> additionalLanguagePacks;
 
     /**
@@ -116,7 +116,7 @@ public class FusionEnvironment extends com.pulumi.resources.CustomResource {
      * Patch bundle names
      * 
      */
-    @Export(name="appliedPatchBundles", type=List.class, parameters={String.class})
+    @Export(name="appliedPatchBundles", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> appliedPatchBundles;
 
     /**
@@ -130,7 +130,7 @@ public class FusionEnvironment extends com.pulumi.resources.CustomResource {
      * (Updatable) The unique identifier (OCID) of the compartment where the Fusion Environment is located.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -144,7 +144,7 @@ public class FusionEnvironment extends com.pulumi.resources.CustomResource {
      * The credentials for the Fusion Applications service administrator.
      * 
      */
-    @Export(name="createFusionEnvironmentAdminUserDetails", type=FusionEnvironmentCreateFusionEnvironmentAdminUserDetails.class, parameters={})
+    @Export(name="createFusionEnvironmentAdminUserDetails", refs={FusionEnvironmentCreateFusionEnvironmentAdminUserDetails.class}, tree="[0]")
     private Output<FusionEnvironmentCreateFusionEnvironmentAdminUserDetails> createFusionEnvironmentAdminUserDetails;
 
     /**
@@ -158,7 +158,7 @@ public class FusionEnvironment extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -172,7 +172,7 @@ public class FusionEnvironment extends com.pulumi.resources.CustomResource {
      * (Updatable) FusionEnvironment Identifier can be renamed.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -186,7 +186,7 @@ public class FusionEnvironment extends com.pulumi.resources.CustomResource {
      * DNS prefix.
      * 
      */
-    @Export(name="dnsPrefix", type=String.class, parameters={})
+    @Export(name="dnsPrefix", refs={String.class}, tree="[0]")
     private Output<String> dnsPrefix;
 
     /**
@@ -200,7 +200,7 @@ public class FusionEnvironment extends com.pulumi.resources.CustomResource {
      * The IDCS domain created for the fusion instance
      * 
      */
-    @Export(name="domainId", type=String.class, parameters={})
+    @Export(name="domainId", refs={String.class}, tree="[0]")
     private Output<String> domainId;
 
     /**
@@ -214,7 +214,7 @@ public class FusionEnvironment extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -228,7 +228,7 @@ public class FusionEnvironment extends com.pulumi.resources.CustomResource {
      * The unique identifier (OCID) of the Fusion Environment Family that the Fusion Environment belongs to.
      * 
      */
-    @Export(name="fusionEnvironmentFamilyId", type=String.class, parameters={})
+    @Export(name="fusionEnvironmentFamilyId", refs={String.class}, tree="[0]")
     private Output<String> fusionEnvironmentFamilyId;
 
     /**
@@ -242,7 +242,7 @@ public class FusionEnvironment extends com.pulumi.resources.CustomResource {
      * The type of environment. Valid values are Production, Test, or Development.
      * 
      */
-    @Export(name="fusionEnvironmentType", type=String.class, parameters={})
+    @Export(name="fusionEnvironmentType", refs={String.class}, tree="[0]")
     private Output<String> fusionEnvironmentType;
 
     /**
@@ -256,7 +256,7 @@ public class FusionEnvironment extends com.pulumi.resources.CustomResource {
      * The IDCS Domain URL
      * 
      */
-    @Export(name="idcsDomainUrl", type=String.class, parameters={})
+    @Export(name="idcsDomainUrl", refs={String.class}, tree="[0]")
     private Output<String> idcsDomainUrl;
 
     /**
@@ -270,7 +270,7 @@ public class FusionEnvironment extends com.pulumi.resources.CustomResource {
      * If it&#39;s true, then the Break Glass feature is enabled
      * 
      */
-    @Export(name="isBreakGlassEnabled", type=Boolean.class, parameters={})
+    @Export(name="isBreakGlassEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isBreakGlassEnabled;
 
     /**
@@ -284,7 +284,7 @@ public class FusionEnvironment extends com.pulumi.resources.CustomResource {
      * (Updatable) byok kms keyId
      * 
      */
-    @Export(name="kmsKeyId", type=String.class, parameters={})
+    @Export(name="kmsKeyId", refs={String.class}, tree="[0]")
     private Output<String> kmsKeyId;
 
     /**
@@ -298,7 +298,7 @@ public class FusionEnvironment extends com.pulumi.resources.CustomResource {
      * BYOK key info
      * 
      */
-    @Export(name="kmsKeyInfos", type=List.class, parameters={FusionEnvironmentKmsKeyInfo.class})
+    @Export(name="kmsKeyInfos", refs={List.class,FusionEnvironmentKmsKeyInfo.class}, tree="[0,1]")
     private Output<List<FusionEnvironmentKmsKeyInfo>> kmsKeyInfos;
 
     /**
@@ -312,7 +312,7 @@ public class FusionEnvironment extends com.pulumi.resources.CustomResource {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -326,7 +326,7 @@ public class FusionEnvironment extends com.pulumi.resources.CustomResource {
      * The lockbox Id of this fusion environment. If there&#39;s no lockbox id, this field will be null
      * 
      */
-    @Export(name="lockboxId", type=String.class, parameters={})
+    @Export(name="lockboxId", refs={String.class}, tree="[0]")
     private Output<String> lockboxId;
 
     /**
@@ -340,7 +340,7 @@ public class FusionEnvironment extends com.pulumi.resources.CustomResource {
      * (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
      * 
      */
-    @Export(name="maintenancePolicy", type=FusionEnvironmentMaintenancePolicy.class, parameters={})
+    @Export(name="maintenancePolicy", refs={FusionEnvironmentMaintenancePolicy.class}, tree="[0]")
     private Output<FusionEnvironmentMaintenancePolicy> maintenancePolicy;
 
     /**
@@ -354,7 +354,7 @@ public class FusionEnvironment extends com.pulumi.resources.CustomResource {
      * Public URL
      * 
      */
-    @Export(name="publicUrl", type=String.class, parameters={})
+    @Export(name="publicUrl", refs={String.class}, tree="[0]")
     private Output<String> publicUrl;
 
     /**
@@ -368,7 +368,7 @@ public class FusionEnvironment extends com.pulumi.resources.CustomResource {
      * Describes a refresh of a fusion environment
      * 
      */
-    @Export(name="refreshes", type=List.class, parameters={FusionEnvironmentRefresh.class})
+    @Export(name="refreshes", refs={List.class,FusionEnvironmentRefresh.class}, tree="[0,1]")
     private Output<List<FusionEnvironmentRefresh>> refreshes;
 
     /**
@@ -382,7 +382,7 @@ public class FusionEnvironment extends com.pulumi.resources.CustomResource {
      * (Updatable) Rules.
      * 
      */
-    @Export(name="rules", type=List.class, parameters={FusionEnvironmentRule.class})
+    @Export(name="rules", refs={List.class,FusionEnvironmentRule.class}, tree="[0,1]")
     private Output<List<FusionEnvironmentRule>> rules;
 
     /**
@@ -396,7 +396,7 @@ public class FusionEnvironment extends com.pulumi.resources.CustomResource {
      * The current state of the ServiceInstance.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -410,7 +410,7 @@ public class FusionEnvironment extends com.pulumi.resources.CustomResource {
      * List of subscription IDs.
      * 
      */
-    @Export(name="subscriptionIds", type=List.class, parameters={String.class})
+    @Export(name="subscriptionIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> subscriptionIds;
 
     /**
@@ -424,7 +424,7 @@ public class FusionEnvironment extends com.pulumi.resources.CustomResource {
      * Environment Specific Guid/ System Name
      * 
      */
-    @Export(name="systemName", type=String.class, parameters={})
+    @Export(name="systemName", refs={String.class}, tree="[0]")
     private Output<String> systemName;
 
     /**
@@ -438,7 +438,7 @@ public class FusionEnvironment extends com.pulumi.resources.CustomResource {
      * The time the the FusionEnvironment was created. An RFC3339 formatted datetime string
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -452,7 +452,7 @@ public class FusionEnvironment extends com.pulumi.resources.CustomResource {
      * The next maintenance for this environment
      * 
      */
-    @Export(name="timeUpcomingMaintenance", type=String.class, parameters={})
+    @Export(name="timeUpcomingMaintenance", refs={String.class}, tree="[0]")
     private Output<String> timeUpcomingMaintenance;
 
     /**
@@ -466,7 +466,7 @@ public class FusionEnvironment extends com.pulumi.resources.CustomResource {
      * The time the FusionEnvironment was updated. An RFC3339 formatted datetime string
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -480,7 +480,7 @@ public class FusionEnvironment extends com.pulumi.resources.CustomResource {
      * Version of Fusion Apps used by this environment
      * 
      */
-    @Export(name="version", type=String.class, parameters={})
+    @Export(name="version", refs={String.class}, tree="[0]")
     private Output<String> version;
 
     /**

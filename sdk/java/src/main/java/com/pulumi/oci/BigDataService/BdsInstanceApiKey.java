@@ -68,7 +68,7 @@ public class BdsInstanceApiKey extends com.pulumi.resources.CustomResource {
      * The OCID of the cluster.
      * 
      */
-    @Export(name="bdsInstanceId", type=String.class, parameters={})
+    @Export(name="bdsInstanceId", refs={String.class}, tree="[0]")
     private Output<String> bdsInstanceId;
 
     /**
@@ -82,7 +82,7 @@ public class BdsInstanceApiKey extends com.pulumi.resources.CustomResource {
      * The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional information.
      * 
      */
-    @Export(name="defaultRegion", type=String.class, parameters={})
+    @Export(name="defaultRegion", refs={String.class}, tree="[0]")
     private Output<String> defaultRegion;
 
     /**
@@ -96,7 +96,7 @@ public class BdsInstanceApiKey extends com.pulumi.resources.CustomResource {
      * The fingerprint that corresponds to the public API key requested.
      * 
      */
-    @Export(name="fingerprint", type=String.class, parameters={})
+    @Export(name="fingerprint", refs={String.class}, tree="[0]")
     private Output<String> fingerprint;
 
     /**
@@ -110,7 +110,7 @@ public class BdsInstanceApiKey extends com.pulumi.resources.CustomResource {
      * User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces allowed.
      * 
      */
-    @Export(name="keyAlias", type=String.class, parameters={})
+    @Export(name="keyAlias", refs={String.class}, tree="[0]")
     private Output<String> keyAlias;
 
     /**
@@ -124,7 +124,7 @@ public class BdsInstanceApiKey extends com.pulumi.resources.CustomResource {
      * Base64 passphrase used to secure the private key which will be created on user behalf.
      * 
      */
-    @Export(name="passphrase", type=String.class, parameters={})
+    @Export(name="passphrase", refs={String.class}, tree="[0]")
     private Output<String> passphrase;
 
     /**
@@ -138,7 +138,7 @@ public class BdsInstanceApiKey extends com.pulumi.resources.CustomResource {
      * The full path and file name of the private key used for authentication. This location will be automatically selected on the BDS local file system.
      * 
      */
-    @Export(name="pemfilepath", type=String.class, parameters={})
+    @Export(name="pemfilepath", refs={String.class}, tree="[0]")
     private Output<String> pemfilepath;
 
     /**
@@ -152,7 +152,7 @@ public class BdsInstanceApiKey extends com.pulumi.resources.CustomResource {
      * The current status of the API key.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -166,7 +166,7 @@ public class BdsInstanceApiKey extends com.pulumi.resources.CustomResource {
      * The OCID of your tenancy.
      * 
      */
-    @Export(name="tenantId", type=String.class, parameters={})
+    @Export(name="tenantId", refs={String.class}, tree="[0]")
     private Output<String> tenantId;
 
     /**
@@ -180,7 +180,7 @@ public class BdsInstanceApiKey extends com.pulumi.resources.CustomResource {
      * The time the API key was created, shown as an RFC 3339 formatted datetime string.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -197,7 +197,7 @@ public class BdsInstanceApiKey extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="userId", type=String.class, parameters={})
+    @Export(name="userId", refs={String.class}, tree="[0]")
     private Output<String> userId;
 
     /**

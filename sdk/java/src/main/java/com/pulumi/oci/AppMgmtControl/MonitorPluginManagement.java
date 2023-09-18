@@ -57,19 +57,19 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:AppMgmtControl/monitorPluginManagement:MonitorPluginManagement")
 public class MonitorPluginManagement extends com.pulumi.resources.CustomResource {
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     public Output<String> compartmentId() {
         return this.compartmentId;
     }
-    @Export(name="monitoredInstanceDescription", type=String.class, parameters={})
+    @Export(name="monitoredInstanceDescription", refs={String.class}, tree="[0]")
     private Output<String> monitoredInstanceDescription;
 
     public Output<String> monitoredInstanceDescription() {
         return this.monitoredInstanceDescription;
     }
-    @Export(name="monitoredInstanceDisplayName", type=String.class, parameters={})
+    @Export(name="monitoredInstanceDisplayName", refs={String.class}, tree="[0]")
     private Output<String> monitoredInstanceDisplayName;
 
     public Output<String> monitoredInstanceDisplayName() {
@@ -82,7 +82,7 @@ public class MonitorPluginManagement extends com.pulumi.resources.CustomResource
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="monitoredInstanceId", type=String.class, parameters={})
+    @Export(name="monitoredInstanceId", refs={String.class}, tree="[0]")
     private Output<String> monitoredInstanceId;
 
     /**
@@ -95,13 +95,13 @@ public class MonitorPluginManagement extends com.pulumi.resources.CustomResource
     public Output<String> monitoredInstanceId() {
         return this.monitoredInstanceId;
     }
-    @Export(name="monitoredInstanceManagementAgentId", type=String.class, parameters={})
+    @Export(name="monitoredInstanceManagementAgentId", refs={String.class}, tree="[0]")
     private Output<String> monitoredInstanceManagementAgentId;
 
     public Output<String> monitoredInstanceManagementAgentId() {
         return this.monitoredInstanceManagementAgentId;
     }
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     public Output<String> state() {

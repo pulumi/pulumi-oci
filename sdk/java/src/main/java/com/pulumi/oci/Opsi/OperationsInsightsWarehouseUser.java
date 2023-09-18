@@ -75,7 +75,7 @@ public class OperationsInsightsWarehouseUser extends com.pulumi.resources.Custom
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -89,7 +89,7 @@ public class OperationsInsightsWarehouseUser extends com.pulumi.resources.Custom
      * (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
      * 
      */
-    @Export(name="connectionPassword", type=String.class, parameters={})
+    @Export(name="connectionPassword", refs={String.class}, tree="[0]")
     private Output<String> connectionPassword;
 
     /**
@@ -103,7 +103,7 @@ public class OperationsInsightsWarehouseUser extends com.pulumi.resources.Custom
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -117,7 +117,7 @@ public class OperationsInsightsWarehouseUser extends com.pulumi.resources.Custom
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -131,7 +131,7 @@ public class OperationsInsightsWarehouseUser extends com.pulumi.resources.Custom
      * (Updatable) Indicate whether user has access to AWR data.
      * 
      */
-    @Export(name="isAwrDataAccess", type=Boolean.class, parameters={})
+    @Export(name="isAwrDataAccess", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isAwrDataAccess;
 
     /**
@@ -145,7 +145,7 @@ public class OperationsInsightsWarehouseUser extends com.pulumi.resources.Custom
      * (Updatable) Indicate whether user has access to EM data.
      * 
      */
-    @Export(name="isEmDataAccess", type=Boolean.class, parameters={})
+    @Export(name="isEmDataAccess", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isEmDataAccess;
 
     /**
@@ -159,7 +159,7 @@ public class OperationsInsightsWarehouseUser extends com.pulumi.resources.Custom
      * (Updatable) Indicate whether user has access to OPSI data.
      * 
      */
-    @Export(name="isOpsiDataAccess", type=Boolean.class, parameters={})
+    @Export(name="isOpsiDataAccess", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isOpsiDataAccess;
 
     /**
@@ -173,7 +173,7 @@ public class OperationsInsightsWarehouseUser extends com.pulumi.resources.Custom
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -187,7 +187,7 @@ public class OperationsInsightsWarehouseUser extends com.pulumi.resources.Custom
      * Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -204,7 +204,7 @@ public class OperationsInsightsWarehouseUser extends com.pulumi.resources.Custom
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="operationsInsightsWarehouseId", type=String.class, parameters={})
+    @Export(name="operationsInsightsWarehouseId", refs={String.class}, tree="[0]")
     private Output<String> operationsInsightsWarehouseId;
 
     /**
@@ -221,7 +221,7 @@ public class OperationsInsightsWarehouseUser extends com.pulumi.resources.Custom
      * Possible lifecycle states
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -235,7 +235,7 @@ public class OperationsInsightsWarehouseUser extends com.pulumi.resources.Custom
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -249,7 +249,7 @@ public class OperationsInsightsWarehouseUser extends com.pulumi.resources.Custom
      * The time at which the resource was first created. An RFC3339 formatted datetime string
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -263,7 +263,7 @@ public class OperationsInsightsWarehouseUser extends com.pulumi.resources.Custom
      * The time at which the resource was last updated. An RFC3339 formatted datetime string
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

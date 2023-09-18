@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Query resource in Oracle Cloud Infrastructure Metering Computation service.
@@ -103,6 +104,12 @@ func (o LookupQueryResultOutput) ToLookupQueryResultOutput() LookupQueryResultOu
 
 func (o LookupQueryResultOutput) ToLookupQueryResultOutputWithContext(ctx context.Context) LookupQueryResultOutput {
 	return o
+}
+
+func (o LookupQueryResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupQueryResult] {
+	return pulumix.Output[LookupQueryResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The compartment OCID.

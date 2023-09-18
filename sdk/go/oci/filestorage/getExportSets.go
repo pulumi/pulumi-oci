@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Export Sets in Oracle Cloud Infrastructure File Storage service.
@@ -131,6 +132,12 @@ func (o GetExportSetsResultOutput) ToGetExportSetsResultOutput() GetExportSetsRe
 
 func (o GetExportSetsResultOutput) ToGetExportSetsResultOutputWithContext(ctx context.Context) GetExportSetsResultOutput {
 	return o
+}
+
+func (o GetExportSetsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetExportSetsResult] {
+	return pulumix.Output[GetExportSetsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The availability domain the export set is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`

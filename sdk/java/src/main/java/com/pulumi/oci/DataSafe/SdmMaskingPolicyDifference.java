@@ -74,7 +74,7 @@ public class SdmMaskingPolicyDifference extends com.pulumi.resources.CustomResou
      * (Updatable) The OCID of the compartment where the SDM masking policy difference resource should be created.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -88,7 +88,7 @@ public class SdmMaskingPolicyDifference extends com.pulumi.resources.CustomResou
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -102,7 +102,7 @@ public class SdmMaskingPolicyDifference extends com.pulumi.resources.CustomResou
      * The type of the SDM masking policy difference. It defines the difference scope. NEW identifies new sensitive columns in the sensitive data model that are not in the masking policy. DELETED identifies columns that are present in the masking policy but have been deleted from the sensitive data model. MODIFIED identifies columns that are present in the sensitive data model as well as the masking policy but some of their attributes have been modified. ALL covers all the above three scenarios and reports new, deleted and modified columns.
      * 
      */
-    @Export(name="differenceType", type=String.class, parameters={})
+    @Export(name="differenceType", refs={String.class}, tree="[0]")
     private Output<String> differenceType;
 
     /**
@@ -116,7 +116,7 @@ public class SdmMaskingPolicyDifference extends com.pulumi.resources.CustomResou
      * (Updatable) A user-friendly name for the SDM masking policy difference. Does not have to be unique, and it is changeable. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -130,7 +130,7 @@ public class SdmMaskingPolicyDifference extends com.pulumi.resources.CustomResou
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -147,7 +147,7 @@ public class SdmMaskingPolicyDifference extends com.pulumi.resources.CustomResou
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="maskingPolicyId", type=String.class, parameters={})
+    @Export(name="maskingPolicyId", refs={String.class}, tree="[0]")
     private Output<String> maskingPolicyId;
 
     /**
@@ -164,7 +164,7 @@ public class SdmMaskingPolicyDifference extends com.pulumi.resources.CustomResou
      * The OCID of the sensitive data model associated with the SDM masking policy difference.
      * 
      */
-    @Export(name="sensitiveDataModelId", type=String.class, parameters={})
+    @Export(name="sensitiveDataModelId", refs={String.class}, tree="[0]")
     private Output<String> sensitiveDataModelId;
 
     /**
@@ -178,7 +178,7 @@ public class SdmMaskingPolicyDifference extends com.pulumi.resources.CustomResou
      * The current state of the SDM masking policy difference.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -192,7 +192,7 @@ public class SdmMaskingPolicyDifference extends com.pulumi.resources.CustomResou
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -206,7 +206,7 @@ public class SdmMaskingPolicyDifference extends com.pulumi.resources.CustomResou
      * The date and time the SDM masking policy difference was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -220,7 +220,7 @@ public class SdmMaskingPolicyDifference extends com.pulumi.resources.CustomResou
      * The date and time the SDM masking policy difference creation started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    @Export(name="timeCreationStarted", type=String.class, parameters={})
+    @Export(name="timeCreationStarted", refs={String.class}, tree="[0]")
     private Output<String> timeCreationStarted;
 
     /**

@@ -51,7 +51,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If &#39;attributes&#39; query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      * 
      */
-    @Export(name="attributeSets", type=List.class, parameters={String.class})
+    @Export(name="attributeSets", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> attributeSets;
 
     /**
@@ -65,7 +65,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      * 
      */
-    @Export(name="attributes", type=String.class, parameters={})
+    @Export(name="attributes", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> attributes;
 
     /**
@@ -79,7 +79,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * ID of the resource
      * 
      */
-    @Export(name="authenticationFactorSettingId", type=String.class, parameters={})
+    @Export(name="authenticationFactorSettingId", refs={String.class}, tree="[0]")
     private Output<String> authenticationFactorSettingId;
 
     /**
@@ -93,7 +93,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      * 
      */
-    @Export(name="authorization", type=String.class, parameters={})
+    @Export(name="authorization", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> authorization;
 
     /**
@@ -118,7 +118,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * uniqueness: none
      * 
      */
-    @Export(name="autoEnrollEmailFactorDisabled", type=Boolean.class, parameters={})
+    @Export(name="autoEnrollEmailFactorDisabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> autoEnrollEmailFactorDisabled;
 
     /**
@@ -152,7 +152,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * uniqueness: none
      * 
      */
-    @Export(name="bypassCodeEnabled", type=Boolean.class, parameters={})
+    @Export(name="bypassCodeEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> bypassCodeEnabled;
 
     /**
@@ -184,7 +184,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * uniqueness: none
      * 
      */
-    @Export(name="bypassCodeSettings", type=DomainsAuthenticationFactorSettingBypassCodeSettings.class, parameters={})
+    @Export(name="bypassCodeSettings", refs={DomainsAuthenticationFactorSettingBypassCodeSettings.class}, tree="[0]")
     private Output<DomainsAuthenticationFactorSettingBypassCodeSettings> bypassCodeSettings;
 
     /**
@@ -216,7 +216,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * uniqueness: none
      * 
      */
-    @Export(name="clientAppSettings", type=DomainsAuthenticationFactorSettingClientAppSettings.class, parameters={})
+    @Export(name="clientAppSettings", refs={DomainsAuthenticationFactorSettingClientAppSettings.class}, tree="[0]")
     private Output<DomainsAuthenticationFactorSettingClientAppSettings> clientAppSettings;
 
     /**
@@ -249,7 +249,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * uniqueness: none
      * 
      */
-    @Export(name="compartmentOcid", type=String.class, parameters={})
+    @Export(name="compartmentOcid", refs={String.class}, tree="[0]")
     private Output<String> compartmentOcid;
 
     /**
@@ -283,7 +283,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * uniqueness: none
      * 
      */
-    @Export(name="compliancePolicies", type=List.class, parameters={DomainsAuthenticationFactorSettingCompliancePolicy.class})
+    @Export(name="compliancePolicies", refs={List.class,DomainsAuthenticationFactorSettingCompliancePolicy.class}, tree="[0,1]")
     private Output<List<DomainsAuthenticationFactorSettingCompliancePolicy>> compliancePolicies;
 
     /**
@@ -317,7 +317,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * uniqueness: none
      * 
      */
-    @Export(name="deleteInProgress", type=Boolean.class, parameters={})
+    @Export(name="deleteInProgress", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> deleteInProgress;
 
     /**
@@ -351,7 +351,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * uniqueness: none
      * 
      */
-    @Export(name="domainOcid", type=String.class, parameters={})
+    @Export(name="domainOcid", refs={String.class}, tree="[0]")
     private Output<String> domainOcid;
 
     /**
@@ -386,7 +386,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * uniqueness: none
      * 
      */
-    @Export(name="emailEnabled", type=Boolean.class, parameters={})
+    @Export(name="emailEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> emailEnabled;
 
     /**
@@ -422,7 +422,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * uniqueness: none
      * 
      */
-    @Export(name="emailSettings", type=DomainsAuthenticationFactorSettingEmailSettings.class, parameters={})
+    @Export(name="emailSettings", refs={DomainsAuthenticationFactorSettingEmailSettings.class}, tree="[0]")
     private Output<DomainsAuthenticationFactorSettingEmailSettings> emailSettings;
 
     /**
@@ -456,7 +456,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * uniqueness: none
      * 
      */
-    @Export(name="endpointRestrictions", type=DomainsAuthenticationFactorSettingEndpointRestrictions.class, parameters={})
+    @Export(name="endpointRestrictions", refs={DomainsAuthenticationFactorSettingEndpointRestrictions.class}, tree="[0]")
     private Output<DomainsAuthenticationFactorSettingEndpointRestrictions> endpointRestrictions;
 
     /**
@@ -490,7 +490,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * uniqueness: none
      * 
      */
-    @Export(name="fidoAuthenticatorEnabled", type=Boolean.class, parameters={})
+    @Export(name="fidoAuthenticatorEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> fidoAuthenticatorEnabled;
 
     /**
@@ -526,7 +526,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * uniqueness: none
      * 
      */
-    @Export(name="hideBackupFactorEnabled", type=Boolean.class, parameters={})
+    @Export(name="hideBackupFactorEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> hideBackupFactorEnabled;
 
     /**
@@ -559,7 +559,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * type: complex
      * 
      */
-    @Export(name="idcsCreatedBies", type=List.class, parameters={DomainsAuthenticationFactorSettingIdcsCreatedBy.class})
+    @Export(name="idcsCreatedBies", refs={List.class,DomainsAuthenticationFactorSettingIdcsCreatedBy.class}, tree="[0,1]")
     private Output<List<DomainsAuthenticationFactorSettingIdcsCreatedBy>> idcsCreatedBies;
 
     /**
@@ -581,7 +581,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * The basic endpoint for the identity domain
      * 
      */
-    @Export(name="idcsEndpoint", type=String.class, parameters={})
+    @Export(name="idcsEndpoint", refs={String.class}, tree="[0]")
     private Output<String> idcsEndpoint;
 
     /**
@@ -603,7 +603,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * type: complex
      * 
      */
-    @Export(name="idcsLastModifiedBies", type=List.class, parameters={DomainsAuthenticationFactorSettingIdcsLastModifiedBy.class})
+    @Export(name="idcsLastModifiedBies", refs={List.class,DomainsAuthenticationFactorSettingIdcsLastModifiedBy.class}, tree="[0,1]")
     private Output<List<DomainsAuthenticationFactorSettingIdcsLastModifiedBy>> idcsLastModifiedBies;
 
     /**
@@ -635,7 +635,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * uniqueness: none
      * 
      */
-    @Export(name="idcsLastUpgradedInRelease", type=String.class, parameters={})
+    @Export(name="idcsLastUpgradedInRelease", refs={String.class}, tree="[0]")
     private Output<String> idcsLastUpgradedInRelease;
 
     /**
@@ -668,7 +668,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * uniqueness: none
      * 
      */
-    @Export(name="idcsPreventedOperations", type=List.class, parameters={String.class})
+    @Export(name="idcsPreventedOperations", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> idcsPreventedOperations;
 
     /**
@@ -700,7 +700,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * uniqueness: none
      * 
      */
-    @Export(name="identityStoreSettings", type=DomainsAuthenticationFactorSettingIdentityStoreSettings.class, parameters={})
+    @Export(name="identityStoreSettings", refs={DomainsAuthenticationFactorSettingIdentityStoreSettings.class}, tree="[0]")
     private Output<DomainsAuthenticationFactorSettingIdentityStoreSettings> identityStoreSettings;
 
     /**
@@ -733,7 +733,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * type: complex
      * 
      */
-    @Export(name="metas", type=List.class, parameters={DomainsAuthenticationFactorSettingMeta.class})
+    @Export(name="metas", refs={List.class,DomainsAuthenticationFactorSettingMeta.class}, tree="[0,1]")
     private Output<List<DomainsAuthenticationFactorSettingMeta>> metas;
 
     /**
@@ -768,7 +768,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * uniqueness: none
      * 
      */
-    @Export(name="mfaEnabledCategory", type=String.class, parameters={})
+    @Export(name="mfaEnabledCategory", refs={String.class}, tree="[0]")
     private Output<String> mfaEnabledCategory;
 
     /**
@@ -806,7 +806,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * uniqueness: none
      * 
      */
-    @Export(name="mfaEnrollmentType", type=String.class, parameters={})
+    @Export(name="mfaEnrollmentType", refs={String.class}, tree="[0]")
     private Output<String> mfaEnrollmentType;
 
     /**
@@ -844,7 +844,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * uniqueness: none
      * 
      */
-    @Export(name="notificationSettings", type=DomainsAuthenticationFactorSettingNotificationSettings.class, parameters={})
+    @Export(name="notificationSettings", refs={DomainsAuthenticationFactorSettingNotificationSettings.class}, tree="[0]")
     private Output<DomainsAuthenticationFactorSettingNotificationSettings> notificationSettings;
 
     /**
@@ -879,7 +879,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * uniqueness: global
      * 
      */
-    @Export(name="ocid", type=String.class, parameters={})
+    @Export(name="ocid", refs={String.class}, tree="[0]")
     private Output<String> ocid;
 
     /**
@@ -914,7 +914,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * uniqueness: none
      * 
      */
-    @Export(name="phoneCallEnabled", type=Boolean.class, parameters={})
+    @Export(name="phoneCallEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> phoneCallEnabled;
 
     /**
@@ -948,7 +948,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * uniqueness: none
      * 
      */
-    @Export(name="pushEnabled", type=Boolean.class, parameters={})
+    @Export(name="pushEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> pushEnabled;
 
     /**
@@ -971,7 +971,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      * 
      */
-    @Export(name="resourceTypeSchemaVersion", type=String.class, parameters={})
+    @Export(name="resourceTypeSchemaVersion", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> resourceTypeSchemaVersion;
 
     /**
@@ -995,7 +995,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * uniqueness: none
      * 
      */
-    @Export(name="schemas", type=List.class, parameters={String.class})
+    @Export(name="schemas", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> schemas;
 
     /**
@@ -1028,7 +1028,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * uniqueness: none
      * 
      */
-    @Export(name="securityQuestionsEnabled", type=Boolean.class, parameters={})
+    @Export(name="securityQuestionsEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> securityQuestionsEnabled;
 
     /**
@@ -1060,7 +1060,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * uniqueness: none
      * 
      */
-    @Export(name="smsEnabled", type=Boolean.class, parameters={})
+    @Export(name="smsEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> smsEnabled;
 
     /**
@@ -1093,7 +1093,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * uniqueness: none
      * 
      */
-    @Export(name="tags", type=List.class, parameters={DomainsAuthenticationFactorSettingTag.class})
+    @Export(name="tags", refs={List.class,DomainsAuthenticationFactorSettingTag.class}, tree="[0,1]")
     private Output<List<DomainsAuthenticationFactorSettingTag>> tags;
 
     /**
@@ -1127,7 +1127,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * uniqueness: none
      * 
      */
-    @Export(name="tenancyOcid", type=String.class, parameters={})
+    @Export(name="tenancyOcid", refs={String.class}, tree="[0]")
     private Output<String> tenancyOcid;
 
     /**
@@ -1162,7 +1162,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * uniqueness: none
      * 
      */
-    @Export(name="thirdPartyFactor", type=DomainsAuthenticationFactorSettingThirdPartyFactor.class, parameters={})
+    @Export(name="thirdPartyFactor", refs={DomainsAuthenticationFactorSettingThirdPartyFactor.class}, tree="[0]")
     private Output<DomainsAuthenticationFactorSettingThirdPartyFactor> thirdPartyFactor;
 
     /**
@@ -1196,7 +1196,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * uniqueness: none
      * 
      */
-    @Export(name="totpEnabled", type=Boolean.class, parameters={})
+    @Export(name="totpEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> totpEnabled;
 
     /**
@@ -1228,7 +1228,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * uniqueness: none
      * 
      */
-    @Export(name="totpSettings", type=DomainsAuthenticationFactorSettingTotpSettings.class, parameters={})
+    @Export(name="totpSettings", refs={DomainsAuthenticationFactorSettingTotpSettings.class}, tree="[0]")
     private Output<DomainsAuthenticationFactorSettingTotpSettings> totpSettings;
 
     /**
@@ -1251,7 +1251,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * (Updatable) This extension defines attributes used to manage Multi-Factor Authentication settings of fido authentication
      * 
      */
-    @Export(name="urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings", type=DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings.class, parameters={})
+    @Export(name="urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings", refs={DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings.class}, tree="[0]")
     private Output<DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings> urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings;
 
     /**
@@ -1265,7 +1265,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * (Updatable) This extension defines attributes used to manage Multi-Factor Authentication settings of third party provider
      * 
      */
-    @Export(name="urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings", type=DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings.class, parameters={})
+    @Export(name="urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings", refs={DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings.class}, tree="[0]")
     private Output<DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings> urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings;
 
     /**
@@ -1290,7 +1290,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * uniqueness: none
      * 
      */
-    @Export(name="userEnrollmentDisabledFactors", type=List.class, parameters={String.class})
+    @Export(name="userEnrollmentDisabledFactors", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> userEnrollmentDisabledFactors;
 
     /**
@@ -1329,7 +1329,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="yubicoOtpEnabled", type=Boolean.class, parameters={})
+    @Export(name="yubicoOtpEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> yubicoOtpEnabled;
 
     /**

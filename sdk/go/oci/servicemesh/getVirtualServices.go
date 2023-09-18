@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Virtual Services in Oracle Cloud Infrastructure Service Mesh service.
@@ -131,6 +132,12 @@ func (o GetVirtualServicesResultOutput) ToGetVirtualServicesResultOutput() GetVi
 
 func (o GetVirtualServicesResultOutput) ToGetVirtualServicesResultOutputWithContext(ctx context.Context) GetVirtualServicesResultOutput {
 	return o
+}
+
+func (o GetVirtualServicesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualServicesResult] {
+	return pulumix.Output[GetVirtualServicesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

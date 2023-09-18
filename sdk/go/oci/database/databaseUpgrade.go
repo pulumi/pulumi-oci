@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Database Upgrade resource in Oracle Cloud Infrastructure Database service.
@@ -314,6 +315,12 @@ func (i *DatabaseUpgrade) ToDatabaseUpgradeOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseUpgradeOutput)
 }
 
+func (i *DatabaseUpgrade) ToOutput(ctx context.Context) pulumix.Output[*DatabaseUpgrade] {
+	return pulumix.Output[*DatabaseUpgrade]{
+		OutputState: i.ToDatabaseUpgradeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // DatabaseUpgradeArrayInput is an input type that accepts DatabaseUpgradeArray and DatabaseUpgradeArrayOutput values.
 // You can construct a concrete instance of `DatabaseUpgradeArrayInput` via:
 //
@@ -337,6 +344,12 @@ func (i DatabaseUpgradeArray) ToDatabaseUpgradeArrayOutput() DatabaseUpgradeArra
 
 func (i DatabaseUpgradeArray) ToDatabaseUpgradeArrayOutputWithContext(ctx context.Context) DatabaseUpgradeArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseUpgradeArrayOutput)
+}
+
+func (i DatabaseUpgradeArray) ToOutput(ctx context.Context) pulumix.Output[[]*DatabaseUpgrade] {
+	return pulumix.Output[[]*DatabaseUpgrade]{
+		OutputState: i.ToDatabaseUpgradeArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // DatabaseUpgradeMapInput is an input type that accepts DatabaseUpgradeMap and DatabaseUpgradeMapOutput values.
@@ -364,6 +377,12 @@ func (i DatabaseUpgradeMap) ToDatabaseUpgradeMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseUpgradeMapOutput)
 }
 
+func (i DatabaseUpgradeMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DatabaseUpgrade] {
+	return pulumix.Output[map[string]*DatabaseUpgrade]{
+		OutputState: i.ToDatabaseUpgradeMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type DatabaseUpgradeOutput struct{ *pulumi.OutputState }
 
 func (DatabaseUpgradeOutput) ElementType() reflect.Type {
@@ -376,6 +395,12 @@ func (o DatabaseUpgradeOutput) ToDatabaseUpgradeOutput() DatabaseUpgradeOutput {
 
 func (o DatabaseUpgradeOutput) ToDatabaseUpgradeOutputWithContext(ctx context.Context) DatabaseUpgradeOutput {
 	return o
+}
+
+func (o DatabaseUpgradeOutput) ToOutput(ctx context.Context) pulumix.Output[*DatabaseUpgrade] {
+	return pulumix.Output[*DatabaseUpgrade]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The database upgrade action.
@@ -554,6 +579,12 @@ func (o DatabaseUpgradeArrayOutput) ToDatabaseUpgradeArrayOutputWithContext(ctx 
 	return o
 }
 
+func (o DatabaseUpgradeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DatabaseUpgrade] {
+	return pulumix.Output[[]*DatabaseUpgrade]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o DatabaseUpgradeArrayOutput) Index(i pulumi.IntInput) DatabaseUpgradeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DatabaseUpgrade {
 		return vs[0].([]*DatabaseUpgrade)[vs[1].(int)]
@@ -572,6 +603,12 @@ func (o DatabaseUpgradeMapOutput) ToDatabaseUpgradeMapOutput() DatabaseUpgradeMa
 
 func (o DatabaseUpgradeMapOutput) ToDatabaseUpgradeMapOutputWithContext(ctx context.Context) DatabaseUpgradeMapOutput {
 	return o
+}
+
+func (o DatabaseUpgradeMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DatabaseUpgrade] {
+	return pulumix.Output[map[string]*DatabaseUpgrade]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o DatabaseUpgradeMapOutput) MapIndex(k pulumi.StringInput) DatabaseUpgradeOutput {

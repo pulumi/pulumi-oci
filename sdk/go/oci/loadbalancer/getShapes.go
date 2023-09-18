@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Load Balancer Shapes in Oracle Cloud Infrastructure Load Balancer service.
@@ -104,6 +105,12 @@ func (o GetShapesResultOutput) ToGetShapesResultOutput() GetShapesResultOutput {
 
 func (o GetShapesResultOutput) ToGetShapesResultOutputWithContext(ctx context.Context) GetShapesResultOutput {
 	return o
+}
+
+func (o GetShapesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetShapesResult] {
+	return pulumix.Output[GetShapesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapesResultOutput) CompartmentId() pulumi.StringOutput {

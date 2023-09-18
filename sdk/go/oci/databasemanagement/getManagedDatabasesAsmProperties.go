@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Managed Databases Asm Properties in Oracle Cloud Infrastructure Database Management service.
@@ -110,6 +111,12 @@ func (o GetManagedDatabasesAsmPropertiesResultOutput) ToGetManagedDatabasesAsmPr
 
 func (o GetManagedDatabasesAsmPropertiesResultOutput) ToGetManagedDatabasesAsmPropertiesResultOutputWithContext(ctx context.Context) GetManagedDatabasesAsmPropertiesResultOutput {
 	return o
+}
+
+func (o GetManagedDatabasesAsmPropertiesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabasesAsmPropertiesResult] {
+	return pulumix.Output[GetManagedDatabasesAsmPropertiesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The list of asm_property_collection.

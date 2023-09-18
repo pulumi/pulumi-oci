@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Protection Rules in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
@@ -118,6 +119,12 @@ func (o GetProtectionRulesResultOutput) ToGetProtectionRulesResultOutput() GetPr
 
 func (o GetProtectionRulesResultOutput) ToGetProtectionRulesResultOutputWithContext(ctx context.Context) GetProtectionRulesResultOutput {
 	return o
+}
+
+func (o GetProtectionRulesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetProtectionRulesResult] {
+	return pulumix.Output[GetProtectionRulesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The action to take when the traffic is detected as malicious. If unspecified, defaults to `OFF`.

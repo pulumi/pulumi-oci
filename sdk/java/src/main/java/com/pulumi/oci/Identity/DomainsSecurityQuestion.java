@@ -102,7 +102,7 @@ public class DomainsSecurityQuestion extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="active", type=Boolean.class, parameters={})
+    @Export(name="active", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> active;
 
     /**
@@ -125,7 +125,7 @@ public class DomainsSecurityQuestion extends com.pulumi.resources.CustomResource
      * A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If &#39;attributes&#39; query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      * 
      */
-    @Export(name="attributeSets", type=List.class, parameters={String.class})
+    @Export(name="attributeSets", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> attributeSets;
 
     /**
@@ -139,7 +139,7 @@ public class DomainsSecurityQuestion extends com.pulumi.resources.CustomResource
      * A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      * 
      */
-    @Export(name="attributes", type=String.class, parameters={})
+    @Export(name="attributes", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> attributes;
 
     /**
@@ -153,7 +153,7 @@ public class DomainsSecurityQuestion extends com.pulumi.resources.CustomResource
      * The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      * 
      */
-    @Export(name="authorization", type=String.class, parameters={})
+    @Export(name="authorization", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> authorization;
 
     /**
@@ -177,7 +177,7 @@ public class DomainsSecurityQuestion extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="compartmentOcid", type=String.class, parameters={})
+    @Export(name="compartmentOcid", refs={String.class}, tree="[0]")
     private Output<String> compartmentOcid;
 
     /**
@@ -211,7 +211,7 @@ public class DomainsSecurityQuestion extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="deleteInProgress", type=Boolean.class, parameters={})
+    @Export(name="deleteInProgress", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> deleteInProgress;
 
     /**
@@ -245,7 +245,7 @@ public class DomainsSecurityQuestion extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="domainOcid", type=String.class, parameters={})
+    @Export(name="domainOcid", refs={String.class}, tree="[0]")
     private Output<String> domainOcid;
 
     /**
@@ -279,7 +279,7 @@ public class DomainsSecurityQuestion extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="externalId", type=String.class, parameters={})
+    @Export(name="externalId", refs={String.class}, tree="[0]")
     private Output<String> externalId;
 
     /**
@@ -311,7 +311,7 @@ public class DomainsSecurityQuestion extends com.pulumi.resources.CustomResource
      * * type: complex
      * 
      */
-    @Export(name="idcsCreatedBies", type=List.class, parameters={DomainsSecurityQuestionIdcsCreatedBy.class})
+    @Export(name="idcsCreatedBies", refs={List.class,DomainsSecurityQuestionIdcsCreatedBy.class}, tree="[0,1]")
     private Output<List<DomainsSecurityQuestionIdcsCreatedBy>> idcsCreatedBies;
 
     /**
@@ -333,7 +333,7 @@ public class DomainsSecurityQuestion extends com.pulumi.resources.CustomResource
      * The basic endpoint for the identity domain
      * 
      */
-    @Export(name="idcsEndpoint", type=String.class, parameters={})
+    @Export(name="idcsEndpoint", refs={String.class}, tree="[0]")
     private Output<String> idcsEndpoint;
 
     /**
@@ -355,7 +355,7 @@ public class DomainsSecurityQuestion extends com.pulumi.resources.CustomResource
      * * type: complex
      * 
      */
-    @Export(name="idcsLastModifiedBies", type=List.class, parameters={DomainsSecurityQuestionIdcsLastModifiedBy.class})
+    @Export(name="idcsLastModifiedBies", refs={List.class,DomainsSecurityQuestionIdcsLastModifiedBy.class}, tree="[0,1]")
     private Output<List<DomainsSecurityQuestionIdcsLastModifiedBy>> idcsLastModifiedBies;
 
     /**
@@ -387,7 +387,7 @@ public class DomainsSecurityQuestion extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="idcsLastUpgradedInRelease", type=String.class, parameters={})
+    @Export(name="idcsLastUpgradedInRelease", refs={String.class}, tree="[0]")
     private Output<String> idcsLastUpgradedInRelease;
 
     /**
@@ -420,7 +420,7 @@ public class DomainsSecurityQuestion extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="idcsPreventedOperations", type=List.class, parameters={String.class})
+    @Export(name="idcsPreventedOperations", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> idcsPreventedOperations;
 
     /**
@@ -453,7 +453,7 @@ public class DomainsSecurityQuestion extends com.pulumi.resources.CustomResource
      * * type: complex
      * 
      */
-    @Export(name="metas", type=List.class, parameters={DomainsSecurityQuestionMeta.class})
+    @Export(name="metas", refs={List.class,DomainsSecurityQuestionMeta.class}, tree="[0,1]")
     private Output<List<DomainsSecurityQuestionMeta>> metas;
 
     /**
@@ -487,7 +487,7 @@ public class DomainsSecurityQuestion extends com.pulumi.resources.CustomResource
      * * uniqueness: global
      * 
      */
-    @Export(name="ocid", type=String.class, parameters={})
+    @Export(name="ocid", refs={String.class}, tree="[0]")
     private Output<String> ocid;
 
     /**
@@ -522,7 +522,7 @@ public class DomainsSecurityQuestion extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="questionTexts", type=List.class, parameters={DomainsSecurityQuestionQuestionText.class})
+    @Export(name="questionTexts", refs={List.class,DomainsSecurityQuestionQuestionText.class}, tree="[0,1]")
     private Output<List<DomainsSecurityQuestionQuestionText>> questionTexts;
 
     /**
@@ -547,7 +547,7 @@ public class DomainsSecurityQuestion extends com.pulumi.resources.CustomResource
      * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      * 
      */
-    @Export(name="resourceTypeSchemaVersion", type=String.class, parameters={})
+    @Export(name="resourceTypeSchemaVersion", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> resourceTypeSchemaVersion;
 
     /**
@@ -571,7 +571,7 @@ public class DomainsSecurityQuestion extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="schemas", type=List.class, parameters={String.class})
+    @Export(name="schemas", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> schemas;
 
     /**
@@ -605,7 +605,7 @@ public class DomainsSecurityQuestion extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="tags", type=List.class, parameters={DomainsSecurityQuestionTag.class})
+    @Export(name="tags", refs={List.class,DomainsSecurityQuestionTag.class}, tree="[0,1]")
     private Output<List<DomainsSecurityQuestionTag>> tags;
 
     /**
@@ -639,7 +639,7 @@ public class DomainsSecurityQuestion extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="tenancyOcid", type=String.class, parameters={})
+    @Export(name="tenancyOcid", refs={String.class}, tree="[0]")
     private Output<String> tenancyOcid;
 
     /**
@@ -676,7 +676,7 @@ public class DomainsSecurityQuestion extends com.pulumi.resources.CustomResource
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="type", type=String.class, parameters={})
+    @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**

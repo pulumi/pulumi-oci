@@ -96,7 +96,7 @@ public class Domain extends com.pulumi.resources.CustomResource {
      * The admin email address
      * 
      */
-    @Export(name="adminEmail", type=String.class, parameters={})
+    @Export(name="adminEmail", refs={String.class}, tree="[0]")
     private Output<String> adminEmail;
 
     /**
@@ -110,7 +110,7 @@ public class Domain extends com.pulumi.resources.CustomResource {
      * The admin first name
      * 
      */
-    @Export(name="adminFirstName", type=String.class, parameters={})
+    @Export(name="adminFirstName", refs={String.class}, tree="[0]")
     private Output<String> adminFirstName;
 
     /**
@@ -124,7 +124,7 @@ public class Domain extends com.pulumi.resources.CustomResource {
      * The admin last name
      * 
      */
-    @Export(name="adminLastName", type=String.class, parameters={})
+    @Export(name="adminLastName", refs={String.class}, tree="[0]")
     private Output<String> adminLastName;
 
     /**
@@ -138,7 +138,7 @@ public class Domain extends com.pulumi.resources.CustomResource {
      * The admin user name
      * 
      */
-    @Export(name="adminUserName", type=String.class, parameters={})
+    @Export(name="adminUserName", refs={String.class}, tree="[0]")
     private Output<String> adminUserName;
 
     /**
@@ -152,7 +152,7 @@ public class Domain extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the Compartment where domain is created
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -166,7 +166,7 @@ public class Domain extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -180,7 +180,7 @@ public class Domain extends com.pulumi.resources.CustomResource {
      * (Updatable) Domain entity description
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -194,7 +194,7 @@ public class Domain extends com.pulumi.resources.CustomResource {
      * (Updatable) The mutable display name of the domain.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -208,7 +208,7 @@ public class Domain extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -222,7 +222,7 @@ public class Domain extends com.pulumi.resources.CustomResource {
      * The region&#39;s name. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
      * 
      */
-    @Export(name="homeRegion", type=String.class, parameters={})
+    @Export(name="homeRegion", refs={String.class}, tree="[0]")
     private Output<String> homeRegion;
 
     /**
@@ -236,7 +236,7 @@ public class Domain extends com.pulumi.resources.CustomResource {
      * Region specific domain URL.
      * 
      */
-    @Export(name="homeRegionUrl", type=String.class, parameters={})
+    @Export(name="homeRegionUrl", refs={String.class}, tree="[0]")
     private Output<String> homeRegionUrl;
 
     /**
@@ -250,7 +250,7 @@ public class Domain extends com.pulumi.resources.CustomResource {
      * (Updatable) Indicates whether domain is hidden on login screen or not.
      * 
      */
-    @Export(name="isHiddenOnLogin", type=Boolean.class, parameters={})
+    @Export(name="isHiddenOnLogin", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isHiddenOnLogin;
 
     /**
@@ -264,7 +264,7 @@ public class Domain extends com.pulumi.resources.CustomResource {
      * Indicates if admin user created in IDCS stripe would like to receive notification like welcome email or not. Required field only if admin information is provided, otherwise optional.
      * 
      */
-    @Export(name="isNotificationBypassed", type=Boolean.class, parameters={})
+    @Export(name="isNotificationBypassed", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isNotificationBypassed;
 
     /**
@@ -278,7 +278,7 @@ public class Domain extends com.pulumi.resources.CustomResource {
      * Optional field to indicate whether users in the domain are required to have a primary email address or not Defaults to true
      * 
      */
-    @Export(name="isPrimaryEmailRequired", type=Boolean.class, parameters={})
+    @Export(name="isPrimaryEmailRequired", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isPrimaryEmailRequired;
 
     /**
@@ -295,7 +295,7 @@ public class Domain extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="licenseType", type=String.class, parameters={})
+    @Export(name="licenseType", refs={String.class}, tree="[0]")
     private Output<String> licenseType;
 
     /**
@@ -312,7 +312,7 @@ public class Domain extends com.pulumi.resources.CustomResource {
      * Any additional details about the current state of the Domain.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -326,7 +326,7 @@ public class Domain extends com.pulumi.resources.CustomResource {
      * The regions domain is replication to.
      * 
      */
-    @Export(name="replicaRegions", type=List.class, parameters={DomainReplicaRegion.class})
+    @Export(name="replicaRegions", refs={List.class,DomainReplicaRegion.class}, tree="[0,1]")
     private Output<List<DomainReplicaRegion>> replicaRegions;
 
     /**
@@ -340,7 +340,7 @@ public class Domain extends com.pulumi.resources.CustomResource {
      * The current state.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -354,7 +354,7 @@ public class Domain extends com.pulumi.resources.CustomResource {
      * Date and time the domain was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -368,7 +368,7 @@ public class Domain extends com.pulumi.resources.CustomResource {
      * The type of the domain.
      * 
      */
-    @Export(name="type", type=String.class, parameters={})
+    @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**
@@ -382,7 +382,7 @@ public class Domain extends com.pulumi.resources.CustomResource {
      * Region agnostic domain URL.
      * 
      */
-    @Export(name="url", type=String.class, parameters={})
+    @Export(name="url", refs={String.class}, tree="[0]")
     private Output<String> url;
 
     /**

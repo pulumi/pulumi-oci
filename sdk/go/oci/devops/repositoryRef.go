@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Repository Ref resource in Oracle Cloud Infrastructure Devops service.
@@ -221,6 +222,12 @@ func (i *RepositoryRef) ToRepositoryRefOutputWithContext(ctx context.Context) Re
 	return pulumi.ToOutputWithContext(ctx, i).(RepositoryRefOutput)
 }
 
+func (i *RepositoryRef) ToOutput(ctx context.Context) pulumix.Output[*RepositoryRef] {
+	return pulumix.Output[*RepositoryRef]{
+		OutputState: i.ToRepositoryRefOutputWithContext(ctx).OutputState,
+	}
+}
+
 // RepositoryRefArrayInput is an input type that accepts RepositoryRefArray and RepositoryRefArrayOutput values.
 // You can construct a concrete instance of `RepositoryRefArrayInput` via:
 //
@@ -244,6 +251,12 @@ func (i RepositoryRefArray) ToRepositoryRefArrayOutput() RepositoryRefArrayOutpu
 
 func (i RepositoryRefArray) ToRepositoryRefArrayOutputWithContext(ctx context.Context) RepositoryRefArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(RepositoryRefArrayOutput)
+}
+
+func (i RepositoryRefArray) ToOutput(ctx context.Context) pulumix.Output[[]*RepositoryRef] {
+	return pulumix.Output[[]*RepositoryRef]{
+		OutputState: i.ToRepositoryRefArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // RepositoryRefMapInput is an input type that accepts RepositoryRefMap and RepositoryRefMapOutput values.
@@ -271,6 +284,12 @@ func (i RepositoryRefMap) ToRepositoryRefMapOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(RepositoryRefMapOutput)
 }
 
+func (i RepositoryRefMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*RepositoryRef] {
+	return pulumix.Output[map[string]*RepositoryRef]{
+		OutputState: i.ToRepositoryRefMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type RepositoryRefOutput struct{ *pulumi.OutputState }
 
 func (RepositoryRefOutput) ElementType() reflect.Type {
@@ -283,6 +302,12 @@ func (o RepositoryRefOutput) ToRepositoryRefOutput() RepositoryRefOutput {
 
 func (o RepositoryRefOutput) ToRepositoryRefOutputWithContext(ctx context.Context) RepositoryRefOutput {
 	return o
+}
+
+func (o RepositoryRefOutput) ToOutput(ctx context.Context) pulumix.Output[*RepositoryRef] {
+	return pulumix.Output[*RepositoryRef]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Commit ID pointed to by the new branch.
@@ -342,6 +367,12 @@ func (o RepositoryRefArrayOutput) ToRepositoryRefArrayOutputWithContext(ctx cont
 	return o
 }
 
+func (o RepositoryRefArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*RepositoryRef] {
+	return pulumix.Output[[]*RepositoryRef]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o RepositoryRefArrayOutput) Index(i pulumi.IntInput) RepositoryRefOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *RepositoryRef {
 		return vs[0].([]*RepositoryRef)[vs[1].(int)]
@@ -360,6 +391,12 @@ func (o RepositoryRefMapOutput) ToRepositoryRefMapOutput() RepositoryRefMapOutpu
 
 func (o RepositoryRefMapOutput) ToRepositoryRefMapOutputWithContext(ctx context.Context) RepositoryRefMapOutput {
 	return o
+}
+
+func (o RepositoryRefMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*RepositoryRef] {
+	return pulumix.Output[map[string]*RepositoryRef]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o RepositoryRefMapOutput) MapIndex(k pulumi.StringInput) RepositoryRefOutput {

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Model Evaluation Results in Oracle Cloud Infrastructure Ai Language service.
@@ -104,6 +105,12 @@ func (o GetModelEvaluationResultsResultOutput) ToGetModelEvaluationResultsResult
 
 func (o GetModelEvaluationResultsResultOutput) ToGetModelEvaluationResultsResultOutputWithContext(ctx context.Context) GetModelEvaluationResultsResultOutput {
 	return o
+}
+
+func (o GetModelEvaluationResultsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetModelEvaluationResultsResult] {
+	return pulumix.Output[GetModelEvaluationResultsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The list of evaluation_result_collection.

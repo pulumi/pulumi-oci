@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Console History resource in Oracle Cloud Infrastructure Core service.
@@ -230,6 +231,12 @@ func (i *ConsoleHistory) ToConsoleHistoryOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(ConsoleHistoryOutput)
 }
 
+func (i *ConsoleHistory) ToOutput(ctx context.Context) pulumix.Output[*ConsoleHistory] {
+	return pulumix.Output[*ConsoleHistory]{
+		OutputState: i.ToConsoleHistoryOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ConsoleHistoryArrayInput is an input type that accepts ConsoleHistoryArray and ConsoleHistoryArrayOutput values.
 // You can construct a concrete instance of `ConsoleHistoryArrayInput` via:
 //
@@ -253,6 +260,12 @@ func (i ConsoleHistoryArray) ToConsoleHistoryArrayOutput() ConsoleHistoryArrayOu
 
 func (i ConsoleHistoryArray) ToConsoleHistoryArrayOutputWithContext(ctx context.Context) ConsoleHistoryArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ConsoleHistoryArrayOutput)
+}
+
+func (i ConsoleHistoryArray) ToOutput(ctx context.Context) pulumix.Output[[]*ConsoleHistory] {
+	return pulumix.Output[[]*ConsoleHistory]{
+		OutputState: i.ToConsoleHistoryArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // ConsoleHistoryMapInput is an input type that accepts ConsoleHistoryMap and ConsoleHistoryMapOutput values.
@@ -280,6 +293,12 @@ func (i ConsoleHistoryMap) ToConsoleHistoryMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(ConsoleHistoryMapOutput)
 }
 
+func (i ConsoleHistoryMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ConsoleHistory] {
+	return pulumix.Output[map[string]*ConsoleHistory]{
+		OutputState: i.ToConsoleHistoryMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ConsoleHistoryOutput struct{ *pulumi.OutputState }
 
 func (ConsoleHistoryOutput) ElementType() reflect.Type {
@@ -292,6 +311,12 @@ func (o ConsoleHistoryOutput) ToConsoleHistoryOutput() ConsoleHistoryOutput {
 
 func (o ConsoleHistoryOutput) ToConsoleHistoryOutputWithContext(ctx context.Context) ConsoleHistoryOutput {
 	return o
+}
+
+func (o ConsoleHistoryOutput) ToOutput(ctx context.Context) pulumix.Output[*ConsoleHistory] {
+	return pulumix.Output[*ConsoleHistory]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The availability domain of an instance.  Example: `Uocm:PHX-AD-1`
@@ -351,6 +376,12 @@ func (o ConsoleHistoryArrayOutput) ToConsoleHistoryArrayOutputWithContext(ctx co
 	return o
 }
 
+func (o ConsoleHistoryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ConsoleHistory] {
+	return pulumix.Output[[]*ConsoleHistory]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o ConsoleHistoryArrayOutput) Index(i pulumi.IntInput) ConsoleHistoryOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ConsoleHistory {
 		return vs[0].([]*ConsoleHistory)[vs[1].(int)]
@@ -369,6 +400,12 @@ func (o ConsoleHistoryMapOutput) ToConsoleHistoryMapOutput() ConsoleHistoryMapOu
 
 func (o ConsoleHistoryMapOutput) ToConsoleHistoryMapOutputWithContext(ctx context.Context) ConsoleHistoryMapOutput {
 	return o
+}
+
+func (o ConsoleHistoryMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ConsoleHistory] {
+	return pulumix.Output[map[string]*ConsoleHistory]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ConsoleHistoryMapOutput) MapIndex(k pulumi.StringInput) ConsoleHistoryOutput {

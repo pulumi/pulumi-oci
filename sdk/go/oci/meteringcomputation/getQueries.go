@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Queries in Oracle Cloud Infrastructure Metering Computation service.
@@ -108,6 +109,12 @@ func (o GetQueriesResultOutput) ToGetQueriesResultOutput() GetQueriesResultOutpu
 
 func (o GetQueriesResultOutput) ToGetQueriesResultOutputWithContext(ctx context.Context) GetQueriesResultOutput {
 	return o
+}
+
+func (o GetQueriesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetQueriesResult] {
+	return pulumix.Output[GetQueriesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The compartment OCID.

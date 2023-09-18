@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Work Request Log Entries in Oracle Cloud Infrastructure Container Engine service.
@@ -110,6 +111,12 @@ func (o GetWorkRequestLogEntriesResultOutput) ToGetWorkRequestLogEntriesResultOu
 
 func (o GetWorkRequestLogEntriesResultOutput) ToGetWorkRequestLogEntriesResultOutputWithContext(ctx context.Context) GetWorkRequestLogEntriesResultOutput {
 	return o
+}
+
+func (o GetWorkRequestLogEntriesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkRequestLogEntriesResult] {
+	return pulumix.Output[GetWorkRequestLogEntriesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetWorkRequestLogEntriesResultOutput) CompartmentId() pulumi.StringOutput {

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Managed Lists in Oracle Cloud Infrastructure Cloud Guard service.
@@ -157,6 +158,12 @@ func (o GetManagedListsResultOutput) ToGetManagedListsResultOutput() GetManagedL
 
 func (o GetManagedListsResultOutput) ToGetManagedListsResultOutputWithContext(ctx context.Context) GetManagedListsResultOutput {
 	return o
+}
+
+func (o GetManagedListsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedListsResult] {
+	return pulumix.Output[GetManagedListsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetManagedListsResultOutput) AccessLevel() pulumi.StringPtrOutput {

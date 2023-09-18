@@ -69,7 +69,7 @@ public class Sender extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the compartment that contains the sender.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -83,7 +83,7 @@ public class Sender extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -97,7 +97,7 @@ public class Sender extends com.pulumi.resources.CustomResource {
      * The email address of the sender.
      * 
      */
-    @Export(name="emailAddress", type=String.class, parameters={})
+    @Export(name="emailAddress", refs={String.class}, tree="[0]")
     private Output<String> emailAddress;
 
     /**
@@ -111,7 +111,7 @@ public class Sender extends com.pulumi.resources.CustomResource {
      * The email domain used to assert responsibility for emails sent from this sender.
      * 
      */
-    @Export(name="emailDomainId", type=String.class, parameters={})
+    @Export(name="emailDomainId", refs={String.class}, tree="[0]")
     private Output<String> emailDomainId;
 
     /**
@@ -128,7 +128,7 @@ public class Sender extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -145,7 +145,7 @@ public class Sender extends com.pulumi.resources.CustomResource {
      * Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
      * 
      */
-    @Export(name="isSpf", type=Boolean.class, parameters={})
+    @Export(name="isSpf", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isSpf;
 
     /**
@@ -159,7 +159,7 @@ public class Sender extends com.pulumi.resources.CustomResource {
      * The current status of the approved sender.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -173,7 +173,7 @@ public class Sender extends com.pulumi.resources.CustomResource {
      * The date and time the approved sender was added in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**

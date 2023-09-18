@@ -81,7 +81,7 @@ public class ObjectLifecyclePolicy extends com.pulumi.resources.CustomResource {
      * The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
      * 
      */
-    @Export(name="bucket", type=String.class, parameters={})
+    @Export(name="bucket", refs={String.class}, tree="[0]")
     private Output<String> bucket;
 
     /**
@@ -95,7 +95,7 @@ public class ObjectLifecyclePolicy extends com.pulumi.resources.CustomResource {
      * The Object Storage namespace used for the request.
      * 
      */
-    @Export(name="namespace", type=String.class, parameters={})
+    @Export(name="namespace", refs={String.class}, tree="[0]")
     private Output<String> namespace;
 
     /**
@@ -109,7 +109,7 @@ public class ObjectLifecyclePolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) The bucket&#39;s set of lifecycle policy rules.
      * 
      */
-    @Export(name="rules", type=List.class, parameters={ObjectLifecyclePolicyRule.class})
+    @Export(name="rules", refs={List.class,ObjectLifecyclePolicyRule.class}, tree="[0,1]")
     private Output<List<ObjectLifecyclePolicyRule>> rules;
 
     /**
@@ -123,7 +123,7 @@ public class ObjectLifecyclePolicy extends com.pulumi.resources.CustomResource {
      * The date and time the object lifecycle policy was created, as described in [RFC 3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**

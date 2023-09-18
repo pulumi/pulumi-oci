@@ -106,7 +106,7 @@ public class CrossConnect extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the compartment to contain the cross-connect.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -120,7 +120,7 @@ public class CrossConnect extends com.pulumi.resources.CustomResource {
      * The OCID of the cross-connect group to put this cross-connect in.
      * 
      */
-    @Export(name="crossConnectGroupId", type=String.class, parameters={})
+    @Export(name="crossConnectGroupId", refs={String.class}, tree="[0]")
     private Output<String> crossConnectGroupId;
 
     /**
@@ -134,7 +134,7 @@ public class CrossConnect extends com.pulumi.resources.CustomResource {
      * (Updatable) A reference name or identifier for the physical fiber connection that this cross-connect uses.
      * 
      */
-    @Export(name="customerReferenceName", type=String.class, parameters={})
+    @Export(name="customerReferenceName", refs={String.class}, tree="[0]")
     private Output<String> customerReferenceName;
 
     /**
@@ -148,7 +148,7 @@ public class CrossConnect extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -162,7 +162,7 @@ public class CrossConnect extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -176,7 +176,7 @@ public class CrossConnect extends com.pulumi.resources.CustomResource {
      * If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on a different router (for the purposes of redundancy), provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
      * 
      */
-    @Export(name="farCrossConnectOrCrossConnectGroupId", type=String.class, parameters={})
+    @Export(name="farCrossConnectOrCrossConnectGroupId", refs={String.class}, tree="[0]")
     private Output<String> farCrossConnectOrCrossConnectGroupId;
 
     /**
@@ -190,7 +190,7 @@ public class CrossConnect extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -204,7 +204,7 @@ public class CrossConnect extends com.pulumi.resources.CustomResource {
      * (Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you&#39;ve confirmed the cross-connect&#39;s light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready.
      * 
      */
-    @Export(name="isActive", type=Boolean.class, parameters={})
+    @Export(name="isActive", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> isActive;
 
     /**
@@ -218,7 +218,7 @@ public class CrossConnect extends com.pulumi.resources.CustomResource {
      * The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
      * 
      */
-    @Export(name="locationName", type=String.class, parameters={})
+    @Export(name="locationName", refs={String.class}, tree="[0]")
     private Output<String> locationName;
 
     /**
@@ -232,7 +232,7 @@ public class CrossConnect extends com.pulumi.resources.CustomResource {
      * (Updatable) Properties used to configure MACsec (if capable).
      * 
      */
-    @Export(name="macsecProperties", type=CrossConnectMacsecProperties.class, parameters={})
+    @Export(name="macsecProperties", refs={CrossConnectMacsecProperties.class}, tree="[0]")
     private Output<CrossConnectMacsecProperties> macsecProperties;
 
     /**
@@ -246,7 +246,7 @@ public class CrossConnect extends com.pulumi.resources.CustomResource {
      * If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
      * 
      */
-    @Export(name="nearCrossConnectOrCrossConnectGroupId", type=String.class, parameters={})
+    @Export(name="nearCrossConnectOrCrossConnectGroupId", refs={String.class}, tree="[0]")
     private Output<String> nearCrossConnectOrCrossConnectGroupId;
 
     /**
@@ -260,7 +260,7 @@ public class CrossConnect extends com.pulumi.resources.CustomResource {
      * The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
      * 
      */
-    @Export(name="ociLogicalDeviceName", type=String.class, parameters={})
+    @Export(name="ociLogicalDeviceName", refs={String.class}, tree="[0]")
     private Output<String> ociLogicalDeviceName;
 
     /**
@@ -274,7 +274,7 @@ public class CrossConnect extends com.pulumi.resources.CustomResource {
      * The FastConnect device that terminates the physical connection.
      * 
      */
-    @Export(name="ociPhysicalDeviceName", type=String.class, parameters={})
+    @Export(name="ociPhysicalDeviceName", refs={String.class}, tree="[0]")
     private Output<String> ociPhysicalDeviceName;
 
     /**
@@ -288,7 +288,7 @@ public class CrossConnect extends com.pulumi.resources.CustomResource {
      * A string identifying the meet-me room port for this cross-connect.
      * 
      */
-    @Export(name="portName", type=String.class, parameters={})
+    @Export(name="portName", refs={String.class}, tree="[0]")
     private Output<String> portName;
 
     /**
@@ -305,7 +305,7 @@ public class CrossConnect extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="portSpeedShapeName", type=String.class, parameters={})
+    @Export(name="portSpeedShapeName", refs={String.class}, tree="[0]")
     private Output<String> portSpeedShapeName;
 
     /**
@@ -322,7 +322,7 @@ public class CrossConnect extends com.pulumi.resources.CustomResource {
      * (Updatable) Indicates whether or not MACsec is enabled.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -336,7 +336,7 @@ public class CrossConnect extends com.pulumi.resources.CustomResource {
      * The date and time the cross-connect was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**

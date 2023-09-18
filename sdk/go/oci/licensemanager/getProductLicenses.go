@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Product Licenses in Oracle Cloud Infrastructure License Manager service.
@@ -111,6 +112,12 @@ func (o GetProductLicensesResultOutput) ToGetProductLicensesResultOutput() GetPr
 
 func (o GetProductLicensesResultOutput) ToGetProductLicensesResultOutputWithContext(ctx context.Context) GetProductLicensesResultOutput {
 	return o
+}
+
+func (o GetProductLicensesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetProductLicensesResult] {
+	return pulumix.Output[GetProductLicensesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the product license is created.

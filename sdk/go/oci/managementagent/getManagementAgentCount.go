@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Management Agent Count resource in Oracle Cloud Infrastructure Management Agent service.
@@ -122,6 +123,12 @@ func (o GetManagementAgentCountResultOutput) ToGetManagementAgentCountResultOutp
 
 func (o GetManagementAgentCountResultOutput) ToGetManagementAgentCountResultOutputWithContext(ctx context.Context) GetManagementAgentCountResultOutput {
 	return o
+}
+
+func (o GetManagementAgentCountResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentCountResult] {
+	return pulumix.Output[GetManagementAgentCountResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetManagementAgentCountResultOutput) CompartmentId() pulumi.StringOutput {

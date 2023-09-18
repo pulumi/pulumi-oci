@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type AutonomousContainerDatabaseDataguardRoleChange struct {
@@ -115,6 +116,12 @@ func (i *AutonomousContainerDatabaseDataguardRoleChange) ToAutonomousContainerDa
 	return pulumi.ToOutputWithContext(ctx, i).(AutonomousContainerDatabaseDataguardRoleChangeOutput)
 }
 
+func (i *AutonomousContainerDatabaseDataguardRoleChange) ToOutput(ctx context.Context) pulumix.Output[*AutonomousContainerDatabaseDataguardRoleChange] {
+	return pulumix.Output[*AutonomousContainerDatabaseDataguardRoleChange]{
+		OutputState: i.ToAutonomousContainerDatabaseDataguardRoleChangeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AutonomousContainerDatabaseDataguardRoleChangeArrayInput is an input type that accepts AutonomousContainerDatabaseDataguardRoleChangeArray and AutonomousContainerDatabaseDataguardRoleChangeArrayOutput values.
 // You can construct a concrete instance of `AutonomousContainerDatabaseDataguardRoleChangeArrayInput` via:
 //
@@ -138,6 +145,12 @@ func (i AutonomousContainerDatabaseDataguardRoleChangeArray) ToAutonomousContain
 
 func (i AutonomousContainerDatabaseDataguardRoleChangeArray) ToAutonomousContainerDatabaseDataguardRoleChangeArrayOutputWithContext(ctx context.Context) AutonomousContainerDatabaseDataguardRoleChangeArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AutonomousContainerDatabaseDataguardRoleChangeArrayOutput)
+}
+
+func (i AutonomousContainerDatabaseDataguardRoleChangeArray) ToOutput(ctx context.Context) pulumix.Output[[]*AutonomousContainerDatabaseDataguardRoleChange] {
+	return pulumix.Output[[]*AutonomousContainerDatabaseDataguardRoleChange]{
+		OutputState: i.ToAutonomousContainerDatabaseDataguardRoleChangeArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // AutonomousContainerDatabaseDataguardRoleChangeMapInput is an input type that accepts AutonomousContainerDatabaseDataguardRoleChangeMap and AutonomousContainerDatabaseDataguardRoleChangeMapOutput values.
@@ -165,6 +178,12 @@ func (i AutonomousContainerDatabaseDataguardRoleChangeMap) ToAutonomousContainer
 	return pulumi.ToOutputWithContext(ctx, i).(AutonomousContainerDatabaseDataguardRoleChangeMapOutput)
 }
 
+func (i AutonomousContainerDatabaseDataguardRoleChangeMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AutonomousContainerDatabaseDataguardRoleChange] {
+	return pulumix.Output[map[string]*AutonomousContainerDatabaseDataguardRoleChange]{
+		OutputState: i.ToAutonomousContainerDatabaseDataguardRoleChangeMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AutonomousContainerDatabaseDataguardRoleChangeOutput struct{ *pulumi.OutputState }
 
 func (AutonomousContainerDatabaseDataguardRoleChangeOutput) ElementType() reflect.Type {
@@ -177,6 +196,12 @@ func (o AutonomousContainerDatabaseDataguardRoleChangeOutput) ToAutonomousContai
 
 func (o AutonomousContainerDatabaseDataguardRoleChangeOutput) ToAutonomousContainerDatabaseDataguardRoleChangeOutputWithContext(ctx context.Context) AutonomousContainerDatabaseDataguardRoleChangeOutput {
 	return o
+}
+
+func (o AutonomousContainerDatabaseDataguardRoleChangeOutput) ToOutput(ctx context.Context) pulumix.Output[*AutonomousContainerDatabaseDataguardRoleChange] {
+	return pulumix.Output[*AutonomousContainerDatabaseDataguardRoleChange]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AutonomousContainerDatabaseDataguardRoleChangeOutput) AutonomousContainerDatabaseDataguardAssociationId() pulumi.StringOutput {
@@ -215,6 +240,12 @@ func (o AutonomousContainerDatabaseDataguardRoleChangeArrayOutput) ToAutonomousC
 	return o
 }
 
+func (o AutonomousContainerDatabaseDataguardRoleChangeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AutonomousContainerDatabaseDataguardRoleChange] {
+	return pulumix.Output[[]*AutonomousContainerDatabaseDataguardRoleChange]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AutonomousContainerDatabaseDataguardRoleChangeArrayOutput) Index(i pulumi.IntInput) AutonomousContainerDatabaseDataguardRoleChangeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AutonomousContainerDatabaseDataguardRoleChange {
 		return vs[0].([]*AutonomousContainerDatabaseDataguardRoleChange)[vs[1].(int)]
@@ -233,6 +264,12 @@ func (o AutonomousContainerDatabaseDataguardRoleChangeMapOutput) ToAutonomousCon
 
 func (o AutonomousContainerDatabaseDataguardRoleChangeMapOutput) ToAutonomousContainerDatabaseDataguardRoleChangeMapOutputWithContext(ctx context.Context) AutonomousContainerDatabaseDataguardRoleChangeMapOutput {
 	return o
+}
+
+func (o AutonomousContainerDatabaseDataguardRoleChangeMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AutonomousContainerDatabaseDataguardRoleChange] {
+	return pulumix.Output[map[string]*AutonomousContainerDatabaseDataguardRoleChange]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AutonomousContainerDatabaseDataguardRoleChangeMapOutput) MapIndex(k pulumi.StringInput) AutonomousContainerDatabaseDataguardRoleChangeOutput {

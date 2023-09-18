@@ -104,7 +104,7 @@ public class PipelineRun extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline run.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -118,7 +118,7 @@ public class PipelineRun extends com.pulumi.resources.CustomResource {
      * The configuration details of a pipeline.
      * 
      */
-    @Export(name="configurationDetails", type=List.class, parameters={PipelineRunConfigurationDetail.class})
+    @Export(name="configurationDetails", refs={List.class,PipelineRunConfigurationDetail.class}, tree="[0,1]")
     private Output<List<PipelineRunConfigurationDetail>> configurationDetails;
 
     /**
@@ -132,7 +132,7 @@ public class PipelineRun extends com.pulumi.resources.CustomResource {
      * The configuration details of a pipeline.
      * 
      */
-    @Export(name="configurationOverrideDetails", type=PipelineRunConfigurationOverrideDetails.class, parameters={})
+    @Export(name="configurationOverrideDetails", refs={PipelineRunConfigurationOverrideDetails.class}, tree="[0]")
     private Output<PipelineRunConfigurationOverrideDetails> configurationOverrideDetails;
 
     /**
@@ -146,7 +146,7 @@ public class PipelineRun extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the pipeline run.
      * 
      */
-    @Export(name="createdBy", type=String.class, parameters={})
+    @Export(name="createdBy", refs={String.class}, tree="[0]")
     private Output<String> createdBy;
 
     /**
@@ -160,7 +160,7 @@ public class PipelineRun extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -170,7 +170,7 @@ public class PipelineRun extends com.pulumi.resources.CustomResource {
     public Output<Map<String,Object>> definedTags() {
         return this.definedTags;
     }
-    @Export(name="deleteRelatedJobRuns", type=Boolean.class, parameters={})
+    @Export(name="deleteRelatedJobRuns", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> deleteRelatedJobRuns;
 
     public Output<Optional<Boolean>> deleteRelatedJobRuns() {
@@ -180,7 +180,7 @@ public class PipelineRun extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-friendly display name for the resource.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -194,7 +194,7 @@ public class PipelineRun extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -208,7 +208,7 @@ public class PipelineRun extends com.pulumi.resources.CustomResource {
      * Details of the state of the step run.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -222,7 +222,7 @@ public class PipelineRun extends com.pulumi.resources.CustomResource {
      * The pipeline log configuration details.
      * 
      */
-    @Export(name="logConfigurationOverrideDetails", type=PipelineRunLogConfigurationOverrideDetails.class, parameters={})
+    @Export(name="logConfigurationOverrideDetails", refs={PipelineRunLogConfigurationOverrideDetails.class}, tree="[0]")
     private Output<PipelineRunLogConfigurationOverrideDetails> logConfigurationOverrideDetails;
 
     /**
@@ -236,7 +236,7 @@ public class PipelineRun extends com.pulumi.resources.CustomResource {
      * Customer logging details for pipeline run.
      * 
      */
-    @Export(name="logDetails", type=List.class, parameters={PipelineRunLogDetail.class})
+    @Export(name="logDetails", refs={List.class,PipelineRunLogDetail.class}, tree="[0,1]")
     private Output<List<PipelineRunLogDetail>> logDetails;
 
     /**
@@ -250,7 +250,7 @@ public class PipelineRun extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
      * 
      */
-    @Export(name="pipelineId", type=String.class, parameters={})
+    @Export(name="pipelineId", refs={String.class}, tree="[0]")
     private Output<String> pipelineId;
 
     /**
@@ -264,7 +264,7 @@ public class PipelineRun extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
      * 
      */
-    @Export(name="projectId", type=String.class, parameters={})
+    @Export(name="projectId", refs={String.class}, tree="[0]")
     private Output<String> projectId;
 
     /**
@@ -278,7 +278,7 @@ public class PipelineRun extends com.pulumi.resources.CustomResource {
      * The state of the step run.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -292,7 +292,7 @@ public class PipelineRun extends com.pulumi.resources.CustomResource {
      * Array of step override details. Only Step Configuration is allowed to be overridden.
      * 
      */
-    @Export(name="stepOverrideDetails", type=List.class, parameters={PipelineRunStepOverrideDetail.class})
+    @Export(name="stepOverrideDetails", refs={List.class,PipelineRunStepOverrideDetail.class}, tree="[0,1]")
     private Output<List<PipelineRunStepOverrideDetail>> stepOverrideDetails;
 
     /**
@@ -306,7 +306,7 @@ public class PipelineRun extends com.pulumi.resources.CustomResource {
      * Array of StepRun object for each step.
      * 
      */
-    @Export(name="stepRuns", type=List.class, parameters={PipelineRunStepRun.class})
+    @Export(name="stepRuns", refs={List.class,PipelineRunStepRun.class}, tree="[0,1]")
     private Output<List<PipelineRunStepRun>> stepRuns;
 
     /**
@@ -323,7 +323,7 @@ public class PipelineRun extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -340,7 +340,7 @@ public class PipelineRun extends com.pulumi.resources.CustomResource {
      * The date and time the pipeline run was accepted in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    @Export(name="timeAccepted", type=String.class, parameters={})
+    @Export(name="timeAccepted", refs={String.class}, tree="[0]")
     private Output<String> timeAccepted;
 
     /**
@@ -354,7 +354,7 @@ public class PipelineRun extends com.pulumi.resources.CustomResource {
      * The date and time the pipeline run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    @Export(name="timeFinished", type=String.class, parameters={})
+    @Export(name="timeFinished", refs={String.class}, tree="[0]")
     private Output<String> timeFinished;
 
     /**
@@ -368,7 +368,7 @@ public class PipelineRun extends com.pulumi.resources.CustomResource {
      * The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    @Export(name="timeStarted", type=String.class, parameters={})
+    @Export(name="timeStarted", refs={String.class}, tree="[0]")
     private Output<String> timeStarted;
 
     /**
@@ -382,7 +382,7 @@ public class PipelineRun extends com.pulumi.resources.CustomResource {
      * The date and time the pipeline run was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

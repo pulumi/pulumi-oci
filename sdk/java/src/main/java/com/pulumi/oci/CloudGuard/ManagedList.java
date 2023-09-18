@@ -37,7 +37,7 @@ public class ManagedList extends com.pulumi.resources.CustomResource {
      * (Updatable) Compartment Identifier
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -51,7 +51,7 @@ public class ManagedList extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -67,7 +67,7 @@ public class ManagedList extends com.pulumi.resources.CustomResource {
      * Avoid entering confidential information.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -85,7 +85,7 @@ public class ManagedList extends com.pulumi.resources.CustomResource {
      * Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -101,7 +101,7 @@ public class ManagedList extends com.pulumi.resources.CustomResource {
      * provider of the feed
      * 
      */
-    @Export(name="feedProvider", type=String.class, parameters={})
+    @Export(name="feedProvider", refs={String.class}, tree="[0]")
     private Output<String> feedProvider;
 
     /**
@@ -117,7 +117,7 @@ public class ManagedList extends com.pulumi.resources.CustomResource {
      * Avoid entering confidential information.
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -133,7 +133,7 @@ public class ManagedList extends com.pulumi.resources.CustomResource {
      * If this list is editable or not
      * 
      */
-    @Export(name="isEditable", type=Boolean.class, parameters={})
+    @Export(name="isEditable", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isEditable;
 
     /**
@@ -147,7 +147,7 @@ public class ManagedList extends com.pulumi.resources.CustomResource {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    @Export(name="lifecyleDetails", type=String.class, parameters={})
+    @Export(name="lifecyleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecyleDetails;
 
     /**
@@ -161,7 +161,7 @@ public class ManagedList extends com.pulumi.resources.CustomResource {
      * (Updatable) List of ManagedListItem
      * 
      */
-    @Export(name="listItems", type=List.class, parameters={String.class})
+    @Export(name="listItems", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> listItems;
 
     /**
@@ -175,7 +175,7 @@ public class ManagedList extends com.pulumi.resources.CustomResource {
      * type of the list
      * 
      */
-    @Export(name="listType", type=String.class, parameters={})
+    @Export(name="listType", refs={String.class}, tree="[0]")
     private Output<String> listType;
 
     /**
@@ -192,7 +192,7 @@ public class ManagedList extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="sourceManagedListId", type=String.class, parameters={})
+    @Export(name="sourceManagedListId", refs={String.class}, tree="[0]")
     private Output<String> sourceManagedListId;
 
     /**
@@ -209,7 +209,7 @@ public class ManagedList extends com.pulumi.resources.CustomResource {
      * The current state of the resource.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -223,7 +223,7 @@ public class ManagedList extends com.pulumi.resources.CustomResource {
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -237,7 +237,7 @@ public class ManagedList extends com.pulumi.resources.CustomResource {
      * The date and time the managed list was created. Format defined by RFC3339.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -251,7 +251,7 @@ public class ManagedList extends com.pulumi.resources.CustomResource {
      * The date and time the managed list was updated. Format defined by RFC3339.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

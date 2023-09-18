@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Generated Key resource in Oracle Cloud Infrastructure Kms service.
@@ -233,6 +234,12 @@ func (i *GeneratedKey) ToGeneratedKeyOutputWithContext(ctx context.Context) Gene
 	return pulumi.ToOutputWithContext(ctx, i).(GeneratedKeyOutput)
 }
 
+func (i *GeneratedKey) ToOutput(ctx context.Context) pulumix.Output[*GeneratedKey] {
+	return pulumix.Output[*GeneratedKey]{
+		OutputState: i.ToGeneratedKeyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GeneratedKeyArrayInput is an input type that accepts GeneratedKeyArray and GeneratedKeyArrayOutput values.
 // You can construct a concrete instance of `GeneratedKeyArrayInput` via:
 //
@@ -256,6 +263,12 @@ func (i GeneratedKeyArray) ToGeneratedKeyArrayOutput() GeneratedKeyArrayOutput {
 
 func (i GeneratedKeyArray) ToGeneratedKeyArrayOutputWithContext(ctx context.Context) GeneratedKeyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GeneratedKeyArrayOutput)
+}
+
+func (i GeneratedKeyArray) ToOutput(ctx context.Context) pulumix.Output[[]*GeneratedKey] {
+	return pulumix.Output[[]*GeneratedKey]{
+		OutputState: i.ToGeneratedKeyArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // GeneratedKeyMapInput is an input type that accepts GeneratedKeyMap and GeneratedKeyMapOutput values.
@@ -283,6 +296,12 @@ func (i GeneratedKeyMap) ToGeneratedKeyMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(GeneratedKeyMapOutput)
 }
 
+func (i GeneratedKeyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*GeneratedKey] {
+	return pulumix.Output[map[string]*GeneratedKey]{
+		OutputState: i.ToGeneratedKeyMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GeneratedKeyOutput struct{ *pulumi.OutputState }
 
 func (GeneratedKeyOutput) ElementType() reflect.Type {
@@ -295,6 +314,12 @@ func (o GeneratedKeyOutput) ToGeneratedKeyOutput() GeneratedKeyOutput {
 
 func (o GeneratedKeyOutput) ToGeneratedKeyOutputWithContext(ctx context.Context) GeneratedKeyOutput {
 	return o
+}
+
+func (o GeneratedKeyOutput) ToOutput(ctx context.Context) pulumix.Output[*GeneratedKey] {
+	return pulumix.Output[*GeneratedKey]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
@@ -359,6 +384,12 @@ func (o GeneratedKeyArrayOutput) ToGeneratedKeyArrayOutputWithContext(ctx contex
 	return o
 }
 
+func (o GeneratedKeyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*GeneratedKey] {
+	return pulumix.Output[[]*GeneratedKey]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GeneratedKeyArrayOutput) Index(i pulumi.IntInput) GeneratedKeyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *GeneratedKey {
 		return vs[0].([]*GeneratedKey)[vs[1].(int)]
@@ -377,6 +408,12 @@ func (o GeneratedKeyMapOutput) ToGeneratedKeyMapOutput() GeneratedKeyMapOutput {
 
 func (o GeneratedKeyMapOutput) ToGeneratedKeyMapOutputWithContext(ctx context.Context) GeneratedKeyMapOutput {
 	return o
+}
+
+func (o GeneratedKeyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*GeneratedKey] {
+	return pulumix.Output[map[string]*GeneratedKey]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GeneratedKeyMapOutput) MapIndex(k pulumi.StringInput) GeneratedKeyOutput {

@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the User Db Credential resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -1114,6 +1115,12 @@ func (i *DomainsUserDbCredential) ToDomainsUserDbCredentialOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsUserDbCredentialOutput)
 }
 
+func (i *DomainsUserDbCredential) ToOutput(ctx context.Context) pulumix.Output[*DomainsUserDbCredential] {
+	return pulumix.Output[*DomainsUserDbCredential]{
+		OutputState: i.ToDomainsUserDbCredentialOutputWithContext(ctx).OutputState,
+	}
+}
+
 // DomainsUserDbCredentialArrayInput is an input type that accepts DomainsUserDbCredentialArray and DomainsUserDbCredentialArrayOutput values.
 // You can construct a concrete instance of `DomainsUserDbCredentialArrayInput` via:
 //
@@ -1137,6 +1144,12 @@ func (i DomainsUserDbCredentialArray) ToDomainsUserDbCredentialArrayOutput() Dom
 
 func (i DomainsUserDbCredentialArray) ToDomainsUserDbCredentialArrayOutputWithContext(ctx context.Context) DomainsUserDbCredentialArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsUserDbCredentialArrayOutput)
+}
+
+func (i DomainsUserDbCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsUserDbCredential] {
+	return pulumix.Output[[]*DomainsUserDbCredential]{
+		OutputState: i.ToDomainsUserDbCredentialArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // DomainsUserDbCredentialMapInput is an input type that accepts DomainsUserDbCredentialMap and DomainsUserDbCredentialMapOutput values.
@@ -1164,6 +1177,12 @@ func (i DomainsUserDbCredentialMap) ToDomainsUserDbCredentialMapOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsUserDbCredentialMapOutput)
 }
 
+func (i DomainsUserDbCredentialMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsUserDbCredential] {
+	return pulumix.Output[map[string]*DomainsUserDbCredential]{
+		OutputState: i.ToDomainsUserDbCredentialMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type DomainsUserDbCredentialOutput struct{ *pulumi.OutputState }
 
 func (DomainsUserDbCredentialOutput) ElementType() reflect.Type {
@@ -1176,6 +1195,12 @@ func (o DomainsUserDbCredentialOutput) ToDomainsUserDbCredentialOutput() Domains
 
 func (o DomainsUserDbCredentialOutput) ToDomainsUserDbCredentialOutputWithContext(ctx context.Context) DomainsUserDbCredentialOutput {
 	return o
+}
+
+func (o DomainsUserDbCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[*DomainsUserDbCredential] {
+	return pulumix.Output[*DomainsUserDbCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
@@ -1546,6 +1571,12 @@ func (o DomainsUserDbCredentialArrayOutput) ToDomainsUserDbCredentialArrayOutput
 	return o
 }
 
+func (o DomainsUserDbCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsUserDbCredential] {
+	return pulumix.Output[[]*DomainsUserDbCredential]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o DomainsUserDbCredentialArrayOutput) Index(i pulumi.IntInput) DomainsUserDbCredentialOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DomainsUserDbCredential {
 		return vs[0].([]*DomainsUserDbCredential)[vs[1].(int)]
@@ -1564,6 +1595,12 @@ func (o DomainsUserDbCredentialMapOutput) ToDomainsUserDbCredentialMapOutput() D
 
 func (o DomainsUserDbCredentialMapOutput) ToDomainsUserDbCredentialMapOutputWithContext(ctx context.Context) DomainsUserDbCredentialMapOutput {
 	return o
+}
+
+func (o DomainsUserDbCredentialMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsUserDbCredential] {
+	return pulumix.Output[map[string]*DomainsUserDbCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o DomainsUserDbCredentialMapOutput) MapIndex(k pulumi.StringInput) DomainsUserDbCredentialOutput {

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Vb Instances in Oracle Cloud Infrastructure Visual Builder service.
@@ -119,6 +120,12 @@ func (o GetVbInstancesResultOutput) ToGetVbInstancesResultOutput() GetVbInstance
 
 func (o GetVbInstancesResultOutput) ToGetVbInstancesResultOutputWithContext(ctx context.Context) GetVbInstancesResultOutput {
 	return o
+}
+
+func (o GetVbInstancesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVbInstancesResult] {
+	return pulumix.Output[GetVbInstancesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Compartment Identifier.

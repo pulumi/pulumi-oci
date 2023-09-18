@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Kmsi Settings in Oracle Cloud Infrastructure Identity Domains service.
@@ -133,6 +134,12 @@ func (o GetDomainsKmsiSettingsResultOutput) ToGetDomainsKmsiSettingsResultOutput
 
 func (o GetDomainsKmsiSettingsResultOutput) ToGetDomainsKmsiSettingsResultOutputWithContext(ctx context.Context) GetDomainsKmsiSettingsResultOutput {
 	return o
+}
+
+func (o GetDomainsKmsiSettingsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsKmsiSettingsResult] {
+	return pulumix.Output[GetDomainsKmsiSettingsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsKmsiSettingsResultOutput) AttributeSets() pulumi.StringArrayOutput {

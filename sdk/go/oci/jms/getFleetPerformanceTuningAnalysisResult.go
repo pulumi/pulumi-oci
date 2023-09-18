@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Fleet Performance Tuning Analysis Result resource in Oracle Cloud Infrastructure Jms service.
@@ -136,6 +137,12 @@ func (o GetFleetPerformanceTuningAnalysisResultResultOutput) ToGetFleetPerforman
 
 func (o GetFleetPerformanceTuningAnalysisResultResultOutput) ToGetFleetPerformanceTuningAnalysisResultResultOutputWithContext(ctx context.Context) GetFleetPerformanceTuningAnalysisResultResultOutput {
 	return o
+}
+
+func (o GetFleetPerformanceTuningAnalysisResultResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetPerformanceTuningAnalysisResultResult] {
+	return pulumix.Output[GetFleetPerformanceTuningAnalysisResultResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the application for which the report has been generated.

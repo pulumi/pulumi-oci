@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Managed Database User Consumer Group Privilege resource in Oracle Cloud Infrastructure Database Management service.
@@ -114,6 +115,12 @@ func (o GetManagedDatabaseUserConsumerGroupPrivilegeResultOutput) ToGetManagedDa
 
 func (o GetManagedDatabaseUserConsumerGroupPrivilegeResultOutput) ToGetManagedDatabaseUserConsumerGroupPrivilegeResultOutputWithContext(ctx context.Context) GetManagedDatabaseUserConsumerGroupPrivilegeResultOutput {
 	return o
+}
+
+func (o GetManagedDatabaseUserConsumerGroupPrivilegeResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseUserConsumerGroupPrivilegeResult] {
+	return pulumix.Output[GetManagedDatabaseUserConsumerGroupPrivilegeResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The provider-assigned unique ID for this managed resource.

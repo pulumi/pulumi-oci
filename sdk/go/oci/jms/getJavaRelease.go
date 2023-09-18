@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Java Release resource in Oracle Cloud Infrastructure Jms service.
@@ -122,6 +123,12 @@ func (o GetJavaReleaseResultOutput) ToGetJavaReleaseResultOutput() GetJavaReleas
 
 func (o GetJavaReleaseResultOutput) ToGetJavaReleaseResultOutputWithContext(ctx context.Context) GetJavaReleaseResultOutput {
 	return o
+}
+
+func (o GetJavaReleaseResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetJavaReleaseResult] {
+	return pulumix.Output[GetJavaReleaseResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Artifact content types for the Java version.

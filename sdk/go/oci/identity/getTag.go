@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Tag resource in Oracle Cloud Infrastructure Identity service.
@@ -124,6 +125,12 @@ func (o LookupTagResultOutput) ToLookupTagResultOutput() LookupTagResultOutput {
 
 func (o LookupTagResultOutput) ToLookupTagResultOutputWithContext(ctx context.Context) LookupTagResultOutput {
 	return o
+}
+
+func (o LookupTagResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupTagResult] {
+	return pulumix.Output[LookupTagResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`

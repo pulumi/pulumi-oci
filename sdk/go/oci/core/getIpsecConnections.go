@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Ip Sec Connections in Oracle Cloud Infrastructure Core service.
@@ -120,6 +121,12 @@ func (o GetIpsecConnectionsResultOutput) ToGetIpsecConnectionsResultOutput() Get
 
 func (o GetIpsecConnectionsResultOutput) ToGetIpsecConnectionsResultOutputWithContext(ctx context.Context) GetIpsecConnectionsResultOutput {
 	return o
+}
+
+func (o GetIpsecConnectionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetIpsecConnectionsResult] {
+	return pulumix.Output[GetIpsecConnectionsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPSec connection.

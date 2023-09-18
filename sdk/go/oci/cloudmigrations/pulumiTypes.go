@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -54,6 +55,12 @@ func (i MigrationPlanMigrationPlanStatArgs) ToMigrationPlanMigrationPlanStatOutp
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationPlanMigrationPlanStatOutput)
 }
 
+func (i MigrationPlanMigrationPlanStatArgs) ToOutput(ctx context.Context) pulumix.Output[MigrationPlanMigrationPlanStat] {
+	return pulumix.Output[MigrationPlanMigrationPlanStat]{
+		OutputState: i.ToMigrationPlanMigrationPlanStatOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MigrationPlanMigrationPlanStatArrayInput is an input type that accepts MigrationPlanMigrationPlanStatArray and MigrationPlanMigrationPlanStatArrayOutput values.
 // You can construct a concrete instance of `MigrationPlanMigrationPlanStatArrayInput` via:
 //
@@ -79,6 +86,12 @@ func (i MigrationPlanMigrationPlanStatArray) ToMigrationPlanMigrationPlanStatArr
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationPlanMigrationPlanStatArrayOutput)
 }
 
+func (i MigrationPlanMigrationPlanStatArray) ToOutput(ctx context.Context) pulumix.Output[[]MigrationPlanMigrationPlanStat] {
+	return pulumix.Output[[]MigrationPlanMigrationPlanStat]{
+		OutputState: i.ToMigrationPlanMigrationPlanStatArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MigrationPlanMigrationPlanStatOutput struct{ *pulumi.OutputState }
 
 func (MigrationPlanMigrationPlanStatOutput) ElementType() reflect.Type {
@@ -91,6 +104,12 @@ func (o MigrationPlanMigrationPlanStatOutput) ToMigrationPlanMigrationPlanStatOu
 
 func (o MigrationPlanMigrationPlanStatOutput) ToMigrationPlanMigrationPlanStatOutputWithContext(ctx context.Context) MigrationPlanMigrationPlanStatOutput {
 	return o
+}
+
+func (o MigrationPlanMigrationPlanStatOutput) ToOutput(ctx context.Context) pulumix.Output[MigrationPlanMigrationPlanStat] {
+	return pulumix.Output[MigrationPlanMigrationPlanStat]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The time when the migration plan was updated. An RFC3339 formatted datetime string.
@@ -122,6 +141,12 @@ func (o MigrationPlanMigrationPlanStatArrayOutput) ToMigrationPlanMigrationPlanS
 
 func (o MigrationPlanMigrationPlanStatArrayOutput) ToMigrationPlanMigrationPlanStatArrayOutputWithContext(ctx context.Context) MigrationPlanMigrationPlanStatArrayOutput {
 	return o
+}
+
+func (o MigrationPlanMigrationPlanStatArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MigrationPlanMigrationPlanStat] {
+	return pulumix.Output[[]MigrationPlanMigrationPlanStat]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MigrationPlanMigrationPlanStatArrayOutput) Index(i pulumi.IntInput) MigrationPlanMigrationPlanStatOutput {
@@ -187,6 +212,12 @@ func (i MigrationPlanMigrationPlanStatTotalEstimatedCostArgs) ToMigrationPlanMig
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationPlanMigrationPlanStatTotalEstimatedCostOutput)
 }
 
+func (i MigrationPlanMigrationPlanStatTotalEstimatedCostArgs) ToOutput(ctx context.Context) pulumix.Output[MigrationPlanMigrationPlanStatTotalEstimatedCost] {
+	return pulumix.Output[MigrationPlanMigrationPlanStatTotalEstimatedCost]{
+		OutputState: i.ToMigrationPlanMigrationPlanStatTotalEstimatedCostOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MigrationPlanMigrationPlanStatTotalEstimatedCostArrayInput is an input type that accepts MigrationPlanMigrationPlanStatTotalEstimatedCostArray and MigrationPlanMigrationPlanStatTotalEstimatedCostArrayOutput values.
 // You can construct a concrete instance of `MigrationPlanMigrationPlanStatTotalEstimatedCostArrayInput` via:
 //
@@ -212,6 +243,12 @@ func (i MigrationPlanMigrationPlanStatTotalEstimatedCostArray) ToMigrationPlanMi
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationPlanMigrationPlanStatTotalEstimatedCostArrayOutput)
 }
 
+func (i MigrationPlanMigrationPlanStatTotalEstimatedCostArray) ToOutput(ctx context.Context) pulumix.Output[[]MigrationPlanMigrationPlanStatTotalEstimatedCost] {
+	return pulumix.Output[[]MigrationPlanMigrationPlanStatTotalEstimatedCost]{
+		OutputState: i.ToMigrationPlanMigrationPlanStatTotalEstimatedCostArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MigrationPlanMigrationPlanStatTotalEstimatedCostOutput struct{ *pulumi.OutputState }
 
 func (MigrationPlanMigrationPlanStatTotalEstimatedCostOutput) ElementType() reflect.Type {
@@ -224,6 +261,12 @@ func (o MigrationPlanMigrationPlanStatTotalEstimatedCostOutput) ToMigrationPlanM
 
 func (o MigrationPlanMigrationPlanStatTotalEstimatedCostOutput) ToMigrationPlanMigrationPlanStatTotalEstimatedCostOutputWithContext(ctx context.Context) MigrationPlanMigrationPlanStatTotalEstimatedCostOutput {
 	return o
+}
+
+func (o MigrationPlanMigrationPlanStatTotalEstimatedCostOutput) ToOutput(ctx context.Context) pulumix.Output[MigrationPlanMigrationPlanStatTotalEstimatedCost] {
+	return pulumix.Output[MigrationPlanMigrationPlanStatTotalEstimatedCost]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Cost estimation for compute
@@ -281,6 +324,12 @@ func (o MigrationPlanMigrationPlanStatTotalEstimatedCostArrayOutput) ToMigration
 
 func (o MigrationPlanMigrationPlanStatTotalEstimatedCostArrayOutput) ToMigrationPlanMigrationPlanStatTotalEstimatedCostArrayOutputWithContext(ctx context.Context) MigrationPlanMigrationPlanStatTotalEstimatedCostArrayOutput {
 	return o
+}
+
+func (o MigrationPlanMigrationPlanStatTotalEstimatedCostArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MigrationPlanMigrationPlanStatTotalEstimatedCost] {
+	return pulumix.Output[[]MigrationPlanMigrationPlanStatTotalEstimatedCost]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MigrationPlanMigrationPlanStatTotalEstimatedCostArrayOutput) Index(i pulumi.IntInput) MigrationPlanMigrationPlanStatTotalEstimatedCostOutput {
@@ -362,6 +411,12 @@ func (i MigrationPlanMigrationPlanStatTotalEstimatedCostComputeArgs) ToMigration
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationPlanMigrationPlanStatTotalEstimatedCostComputeOutput)
 }
 
+func (i MigrationPlanMigrationPlanStatTotalEstimatedCostComputeArgs) ToOutput(ctx context.Context) pulumix.Output[MigrationPlanMigrationPlanStatTotalEstimatedCostCompute] {
+	return pulumix.Output[MigrationPlanMigrationPlanStatTotalEstimatedCostCompute]{
+		OutputState: i.ToMigrationPlanMigrationPlanStatTotalEstimatedCostComputeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MigrationPlanMigrationPlanStatTotalEstimatedCostComputeArrayInput is an input type that accepts MigrationPlanMigrationPlanStatTotalEstimatedCostComputeArray and MigrationPlanMigrationPlanStatTotalEstimatedCostComputeArrayOutput values.
 // You can construct a concrete instance of `MigrationPlanMigrationPlanStatTotalEstimatedCostComputeArrayInput` via:
 //
@@ -387,6 +442,12 @@ func (i MigrationPlanMigrationPlanStatTotalEstimatedCostComputeArray) ToMigratio
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationPlanMigrationPlanStatTotalEstimatedCostComputeArrayOutput)
 }
 
+func (i MigrationPlanMigrationPlanStatTotalEstimatedCostComputeArray) ToOutput(ctx context.Context) pulumix.Output[[]MigrationPlanMigrationPlanStatTotalEstimatedCostCompute] {
+	return pulumix.Output[[]MigrationPlanMigrationPlanStatTotalEstimatedCostCompute]{
+		OutputState: i.ToMigrationPlanMigrationPlanStatTotalEstimatedCostComputeArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MigrationPlanMigrationPlanStatTotalEstimatedCostComputeOutput struct{ *pulumi.OutputState }
 
 func (MigrationPlanMigrationPlanStatTotalEstimatedCostComputeOutput) ElementType() reflect.Type {
@@ -399,6 +460,12 @@ func (o MigrationPlanMigrationPlanStatTotalEstimatedCostComputeOutput) ToMigrati
 
 func (o MigrationPlanMigrationPlanStatTotalEstimatedCostComputeOutput) ToMigrationPlanMigrationPlanStatTotalEstimatedCostComputeOutputWithContext(ctx context.Context) MigrationPlanMigrationPlanStatTotalEstimatedCostComputeOutput {
 	return o
+}
+
+func (o MigrationPlanMigrationPlanStatTotalEstimatedCostComputeOutput) ToOutput(ctx context.Context) pulumix.Output[MigrationPlanMigrationPlanStatTotalEstimatedCostCompute] {
+	return pulumix.Output[MigrationPlanMigrationPlanStatTotalEstimatedCostCompute]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Total number of GPU
@@ -478,6 +545,12 @@ func (o MigrationPlanMigrationPlanStatTotalEstimatedCostComputeArrayOutput) ToMi
 	return o
 }
 
+func (o MigrationPlanMigrationPlanStatTotalEstimatedCostComputeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MigrationPlanMigrationPlanStatTotalEstimatedCostCompute] {
+	return pulumix.Output[[]MigrationPlanMigrationPlanStatTotalEstimatedCostCompute]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o MigrationPlanMigrationPlanStatTotalEstimatedCostComputeArrayOutput) Index(i pulumi.IntInput) MigrationPlanMigrationPlanStatTotalEstimatedCostComputeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MigrationPlanMigrationPlanStatTotalEstimatedCostCompute {
 		return vs[0].([]MigrationPlanMigrationPlanStatTotalEstimatedCostCompute)[vs[1].(int)]
@@ -521,6 +594,12 @@ func (i MigrationPlanMigrationPlanStatTotalEstimatedCostOsImageArgs) ToMigration
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationPlanMigrationPlanStatTotalEstimatedCostOsImageOutput)
 }
 
+func (i MigrationPlanMigrationPlanStatTotalEstimatedCostOsImageArgs) ToOutput(ctx context.Context) pulumix.Output[MigrationPlanMigrationPlanStatTotalEstimatedCostOsImage] {
+	return pulumix.Output[MigrationPlanMigrationPlanStatTotalEstimatedCostOsImage]{
+		OutputState: i.ToMigrationPlanMigrationPlanStatTotalEstimatedCostOsImageOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MigrationPlanMigrationPlanStatTotalEstimatedCostOsImageArrayInput is an input type that accepts MigrationPlanMigrationPlanStatTotalEstimatedCostOsImageArray and MigrationPlanMigrationPlanStatTotalEstimatedCostOsImageArrayOutput values.
 // You can construct a concrete instance of `MigrationPlanMigrationPlanStatTotalEstimatedCostOsImageArrayInput` via:
 //
@@ -546,6 +625,12 @@ func (i MigrationPlanMigrationPlanStatTotalEstimatedCostOsImageArray) ToMigratio
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationPlanMigrationPlanStatTotalEstimatedCostOsImageArrayOutput)
 }
 
+func (i MigrationPlanMigrationPlanStatTotalEstimatedCostOsImageArray) ToOutput(ctx context.Context) pulumix.Output[[]MigrationPlanMigrationPlanStatTotalEstimatedCostOsImage] {
+	return pulumix.Output[[]MigrationPlanMigrationPlanStatTotalEstimatedCostOsImage]{
+		OutputState: i.ToMigrationPlanMigrationPlanStatTotalEstimatedCostOsImageArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MigrationPlanMigrationPlanStatTotalEstimatedCostOsImageOutput struct{ *pulumi.OutputState }
 
 func (MigrationPlanMigrationPlanStatTotalEstimatedCostOsImageOutput) ElementType() reflect.Type {
@@ -558,6 +643,12 @@ func (o MigrationPlanMigrationPlanStatTotalEstimatedCostOsImageOutput) ToMigrati
 
 func (o MigrationPlanMigrationPlanStatTotalEstimatedCostOsImageOutput) ToMigrationPlanMigrationPlanStatTotalEstimatedCostOsImageOutputWithContext(ctx context.Context) MigrationPlanMigrationPlanStatTotalEstimatedCostOsImageOutput {
 	return o
+}
+
+func (o MigrationPlanMigrationPlanStatTotalEstimatedCostOsImageOutput) ToOutput(ctx context.Context) pulumix.Output[MigrationPlanMigrationPlanStatTotalEstimatedCostOsImage] {
+	return pulumix.Output[MigrationPlanMigrationPlanStatTotalEstimatedCostOsImage]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Total price per hour
@@ -584,6 +675,12 @@ func (o MigrationPlanMigrationPlanStatTotalEstimatedCostOsImageArrayOutput) ToMi
 
 func (o MigrationPlanMigrationPlanStatTotalEstimatedCostOsImageArrayOutput) ToMigrationPlanMigrationPlanStatTotalEstimatedCostOsImageArrayOutputWithContext(ctx context.Context) MigrationPlanMigrationPlanStatTotalEstimatedCostOsImageArrayOutput {
 	return o
+}
+
+func (o MigrationPlanMigrationPlanStatTotalEstimatedCostOsImageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MigrationPlanMigrationPlanStatTotalEstimatedCostOsImage] {
+	return pulumix.Output[[]MigrationPlanMigrationPlanStatTotalEstimatedCostOsImage]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MigrationPlanMigrationPlanStatTotalEstimatedCostOsImageArrayOutput) Index(i pulumi.IntInput) MigrationPlanMigrationPlanStatTotalEstimatedCostOsImageOutput {
@@ -633,6 +730,12 @@ func (i MigrationPlanMigrationPlanStatTotalEstimatedCostStorageArgs) ToMigration
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationPlanMigrationPlanStatTotalEstimatedCostStorageOutput)
 }
 
+func (i MigrationPlanMigrationPlanStatTotalEstimatedCostStorageArgs) ToOutput(ctx context.Context) pulumix.Output[MigrationPlanMigrationPlanStatTotalEstimatedCostStorage] {
+	return pulumix.Output[MigrationPlanMigrationPlanStatTotalEstimatedCostStorage]{
+		OutputState: i.ToMigrationPlanMigrationPlanStatTotalEstimatedCostStorageOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MigrationPlanMigrationPlanStatTotalEstimatedCostStorageArrayInput is an input type that accepts MigrationPlanMigrationPlanStatTotalEstimatedCostStorageArray and MigrationPlanMigrationPlanStatTotalEstimatedCostStorageArrayOutput values.
 // You can construct a concrete instance of `MigrationPlanMigrationPlanStatTotalEstimatedCostStorageArrayInput` via:
 //
@@ -658,6 +761,12 @@ func (i MigrationPlanMigrationPlanStatTotalEstimatedCostStorageArray) ToMigratio
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationPlanMigrationPlanStatTotalEstimatedCostStorageArrayOutput)
 }
 
+func (i MigrationPlanMigrationPlanStatTotalEstimatedCostStorageArray) ToOutput(ctx context.Context) pulumix.Output[[]MigrationPlanMigrationPlanStatTotalEstimatedCostStorage] {
+	return pulumix.Output[[]MigrationPlanMigrationPlanStatTotalEstimatedCostStorage]{
+		OutputState: i.ToMigrationPlanMigrationPlanStatTotalEstimatedCostStorageArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MigrationPlanMigrationPlanStatTotalEstimatedCostStorageOutput struct{ *pulumi.OutputState }
 
 func (MigrationPlanMigrationPlanStatTotalEstimatedCostStorageOutput) ElementType() reflect.Type {
@@ -670,6 +779,12 @@ func (o MigrationPlanMigrationPlanStatTotalEstimatedCostStorageOutput) ToMigrati
 
 func (o MigrationPlanMigrationPlanStatTotalEstimatedCostStorageOutput) ToMigrationPlanMigrationPlanStatTotalEstimatedCostStorageOutputWithContext(ctx context.Context) MigrationPlanMigrationPlanStatTotalEstimatedCostStorageOutput {
 	return o
+}
+
+func (o MigrationPlanMigrationPlanStatTotalEstimatedCostStorageOutput) ToOutput(ctx context.Context) pulumix.Output[MigrationPlanMigrationPlanStatTotalEstimatedCostStorage] {
+	return pulumix.Output[MigrationPlanMigrationPlanStatTotalEstimatedCostStorage]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Gigabyte storage capacity per month.
@@ -703,6 +818,12 @@ func (o MigrationPlanMigrationPlanStatTotalEstimatedCostStorageArrayOutput) ToMi
 
 func (o MigrationPlanMigrationPlanStatTotalEstimatedCostStorageArrayOutput) ToMigrationPlanMigrationPlanStatTotalEstimatedCostStorageArrayOutputWithContext(ctx context.Context) MigrationPlanMigrationPlanStatTotalEstimatedCostStorageArrayOutput {
 	return o
+}
+
+func (o MigrationPlanMigrationPlanStatTotalEstimatedCostStorageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MigrationPlanMigrationPlanStatTotalEstimatedCostStorage] {
+	return pulumix.Output[[]MigrationPlanMigrationPlanStatTotalEstimatedCostStorage]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MigrationPlanMigrationPlanStatTotalEstimatedCostStorageArrayOutput) Index(i pulumi.IntInput) MigrationPlanMigrationPlanStatTotalEstimatedCostStorageOutput {
@@ -756,6 +877,12 @@ func (i MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeArgs) ToMig
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeOutput)
 }
 
+func (i MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeArgs) ToOutput(ctx context.Context) pulumix.Output[MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolume] {
+	return pulumix.Output[MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolume]{
+		OutputState: i.ToMigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeArrayInput is an input type that accepts MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeArray and MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeArrayOutput values.
 // You can construct a concrete instance of `MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeArrayInput` via:
 //
@@ -781,6 +908,12 @@ func (i MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeArray) ToMi
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeArrayOutput)
 }
 
+func (i MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeArray) ToOutput(ctx context.Context) pulumix.Output[[]MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolume] {
+	return pulumix.Output[[]MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolume]{
+		OutputState: i.ToMigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeOutput struct{ *pulumi.OutputState }
 
 func (MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeOutput) ElementType() reflect.Type {
@@ -793,6 +926,12 @@ func (o MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeOutput) ToM
 
 func (o MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeOutput) ToMigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeOutputWithContext(ctx context.Context) MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeOutput {
 	return o
+}
+
+func (o MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeOutput) ToOutput(ctx context.Context) pulumix.Output[MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolume] {
+	return pulumix.Output[MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolume]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Gigabyte storage capacity
@@ -831,6 +970,12 @@ func (o MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeArrayOutput
 
 func (o MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeArrayOutput) ToMigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeArrayOutputWithContext(ctx context.Context) MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeArrayOutput {
 	return o
+}
+
+func (o MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolume] {
+	return pulumix.Output[[]MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolume]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeArrayOutput) Index(i pulumi.IntInput) MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeOutput {
@@ -892,6 +1037,12 @@ func (i MigrationPlanStrategyArgs) ToMigrationPlanStrategyOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationPlanStrategyOutput)
 }
 
+func (i MigrationPlanStrategyArgs) ToOutput(ctx context.Context) pulumix.Output[MigrationPlanStrategy] {
+	return pulumix.Output[MigrationPlanStrategy]{
+		OutputState: i.ToMigrationPlanStrategyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MigrationPlanStrategyArrayInput is an input type that accepts MigrationPlanStrategyArray and MigrationPlanStrategyArrayOutput values.
 // You can construct a concrete instance of `MigrationPlanStrategyArrayInput` via:
 //
@@ -917,6 +1068,12 @@ func (i MigrationPlanStrategyArray) ToMigrationPlanStrategyArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationPlanStrategyArrayOutput)
 }
 
+func (i MigrationPlanStrategyArray) ToOutput(ctx context.Context) pulumix.Output[[]MigrationPlanStrategy] {
+	return pulumix.Output[[]MigrationPlanStrategy]{
+		OutputState: i.ToMigrationPlanStrategyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MigrationPlanStrategyOutput struct{ *pulumi.OutputState }
 
 func (MigrationPlanStrategyOutput) ElementType() reflect.Type {
@@ -929,6 +1086,12 @@ func (o MigrationPlanStrategyOutput) ToMigrationPlanStrategyOutput() MigrationPl
 
 func (o MigrationPlanStrategyOutput) ToMigrationPlanStrategyOutputWithContext(ctx context.Context) MigrationPlanStrategyOutput {
 	return o
+}
+
+func (o MigrationPlanStrategyOutput) ToOutput(ctx context.Context) pulumix.Output[MigrationPlanStrategy] {
+	return pulumix.Output[MigrationPlanStrategy]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The real resource usage is multiplied to this number before making any recommendation.
@@ -973,6 +1136,12 @@ func (o MigrationPlanStrategyArrayOutput) ToMigrationPlanStrategyArrayOutput() M
 
 func (o MigrationPlanStrategyArrayOutput) ToMigrationPlanStrategyArrayOutputWithContext(ctx context.Context) MigrationPlanStrategyArrayOutput {
 	return o
+}
+
+func (o MigrationPlanStrategyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MigrationPlanStrategy] {
+	return pulumix.Output[[]MigrationPlanStrategy]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MigrationPlanStrategyArrayOutput) Index(i pulumi.IntInput) MigrationPlanStrategyOutput {
@@ -1052,6 +1221,12 @@ func (i MigrationPlanTargetEnvironmentArgs) ToMigrationPlanTargetEnvironmentOutp
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationPlanTargetEnvironmentOutput)
 }
 
+func (i MigrationPlanTargetEnvironmentArgs) ToOutput(ctx context.Context) pulumix.Output[MigrationPlanTargetEnvironment] {
+	return pulumix.Output[MigrationPlanTargetEnvironment]{
+		OutputState: i.ToMigrationPlanTargetEnvironmentOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MigrationPlanTargetEnvironmentArrayInput is an input type that accepts MigrationPlanTargetEnvironmentArray and MigrationPlanTargetEnvironmentArrayOutput values.
 // You can construct a concrete instance of `MigrationPlanTargetEnvironmentArrayInput` via:
 //
@@ -1077,6 +1252,12 @@ func (i MigrationPlanTargetEnvironmentArray) ToMigrationPlanTargetEnvironmentArr
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationPlanTargetEnvironmentArrayOutput)
 }
 
+func (i MigrationPlanTargetEnvironmentArray) ToOutput(ctx context.Context) pulumix.Output[[]MigrationPlanTargetEnvironment] {
+	return pulumix.Output[[]MigrationPlanTargetEnvironment]{
+		OutputState: i.ToMigrationPlanTargetEnvironmentArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MigrationPlanTargetEnvironmentOutput struct{ *pulumi.OutputState }
 
 func (MigrationPlanTargetEnvironmentOutput) ElementType() reflect.Type {
@@ -1089,6 +1270,12 @@ func (o MigrationPlanTargetEnvironmentOutput) ToMigrationPlanTargetEnvironmentOu
 
 func (o MigrationPlanTargetEnvironmentOutput) ToMigrationPlanTargetEnvironmentOutputWithContext(ctx context.Context) MigrationPlanTargetEnvironmentOutput {
 	return o
+}
+
+func (o MigrationPlanTargetEnvironmentOutput) ToOutput(ctx context.Context) pulumix.Output[MigrationPlanTargetEnvironment] {
+	return pulumix.Output[MigrationPlanTargetEnvironment]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Availability Domain of the VM configuration.
@@ -1153,6 +1340,12 @@ func (o MigrationPlanTargetEnvironmentArrayOutput) ToMigrationPlanTargetEnvironm
 	return o
 }
 
+func (o MigrationPlanTargetEnvironmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MigrationPlanTargetEnvironment] {
+	return pulumix.Output[[]MigrationPlanTargetEnvironment]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o MigrationPlanTargetEnvironmentArrayOutput) Index(i pulumi.IntInput) MigrationPlanTargetEnvironmentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MigrationPlanTargetEnvironment {
 		return vs[0].([]MigrationPlanTargetEnvironment)[vs[1].(int)]
@@ -1200,6 +1393,12 @@ func (i TargetAssetCompatibilityMessageArgs) ToTargetAssetCompatibilityMessageOu
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetCompatibilityMessageOutput)
 }
 
+func (i TargetAssetCompatibilityMessageArgs) ToOutput(ctx context.Context) pulumix.Output[TargetAssetCompatibilityMessage] {
+	return pulumix.Output[TargetAssetCompatibilityMessage]{
+		OutputState: i.ToTargetAssetCompatibilityMessageOutputWithContext(ctx).OutputState,
+	}
+}
+
 // TargetAssetCompatibilityMessageArrayInput is an input type that accepts TargetAssetCompatibilityMessageArray and TargetAssetCompatibilityMessageArrayOutput values.
 // You can construct a concrete instance of `TargetAssetCompatibilityMessageArrayInput` via:
 //
@@ -1225,6 +1424,12 @@ func (i TargetAssetCompatibilityMessageArray) ToTargetAssetCompatibilityMessageA
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetCompatibilityMessageArrayOutput)
 }
 
+func (i TargetAssetCompatibilityMessageArray) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetCompatibilityMessage] {
+	return pulumix.Output[[]TargetAssetCompatibilityMessage]{
+		OutputState: i.ToTargetAssetCompatibilityMessageArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type TargetAssetCompatibilityMessageOutput struct{ *pulumi.OutputState }
 
 func (TargetAssetCompatibilityMessageOutput) ElementType() reflect.Type {
@@ -1237,6 +1442,12 @@ func (o TargetAssetCompatibilityMessageOutput) ToTargetAssetCompatibilityMessage
 
 func (o TargetAssetCompatibilityMessageOutput) ToTargetAssetCompatibilityMessageOutputWithContext(ctx context.Context) TargetAssetCompatibilityMessageOutput {
 	return o
+}
+
+func (o TargetAssetCompatibilityMessageOutput) ToOutput(ctx context.Context) pulumix.Output[TargetAssetCompatibilityMessage] {
+	return pulumix.Output[TargetAssetCompatibilityMessage]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Detailed description of the compatibility issue.
@@ -1266,6 +1477,12 @@ func (o TargetAssetCompatibilityMessageArrayOutput) ToTargetAssetCompatibilityMe
 
 func (o TargetAssetCompatibilityMessageArrayOutput) ToTargetAssetCompatibilityMessageArrayOutputWithContext(ctx context.Context) TargetAssetCompatibilityMessageArrayOutput {
 	return o
+}
+
+func (o TargetAssetCompatibilityMessageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetCompatibilityMessage] {
+	return pulumix.Output[[]TargetAssetCompatibilityMessage]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o TargetAssetCompatibilityMessageArrayOutput) Index(i pulumi.IntInput) TargetAssetCompatibilityMessageOutput {
@@ -1331,6 +1548,12 @@ func (i TargetAssetEstimatedCostArgs) ToTargetAssetEstimatedCostOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetEstimatedCostOutput)
 }
 
+func (i TargetAssetEstimatedCostArgs) ToOutput(ctx context.Context) pulumix.Output[TargetAssetEstimatedCost] {
+	return pulumix.Output[TargetAssetEstimatedCost]{
+		OutputState: i.ToTargetAssetEstimatedCostOutputWithContext(ctx).OutputState,
+	}
+}
+
 // TargetAssetEstimatedCostArrayInput is an input type that accepts TargetAssetEstimatedCostArray and TargetAssetEstimatedCostArrayOutput values.
 // You can construct a concrete instance of `TargetAssetEstimatedCostArrayInput` via:
 //
@@ -1356,6 +1579,12 @@ func (i TargetAssetEstimatedCostArray) ToTargetAssetEstimatedCostArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetEstimatedCostArrayOutput)
 }
 
+func (i TargetAssetEstimatedCostArray) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetEstimatedCost] {
+	return pulumix.Output[[]TargetAssetEstimatedCost]{
+		OutputState: i.ToTargetAssetEstimatedCostArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type TargetAssetEstimatedCostOutput struct{ *pulumi.OutputState }
 
 func (TargetAssetEstimatedCostOutput) ElementType() reflect.Type {
@@ -1368,6 +1597,12 @@ func (o TargetAssetEstimatedCostOutput) ToTargetAssetEstimatedCostOutput() Targe
 
 func (o TargetAssetEstimatedCostOutput) ToTargetAssetEstimatedCostOutputWithContext(ctx context.Context) TargetAssetEstimatedCostOutput {
 	return o
+}
+
+func (o TargetAssetEstimatedCostOutput) ToOutput(ctx context.Context) pulumix.Output[TargetAssetEstimatedCost] {
+	return pulumix.Output[TargetAssetEstimatedCost]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Cost estimation for compute
@@ -1417,6 +1652,12 @@ func (o TargetAssetEstimatedCostArrayOutput) ToTargetAssetEstimatedCostArrayOutp
 
 func (o TargetAssetEstimatedCostArrayOutput) ToTargetAssetEstimatedCostArrayOutputWithContext(ctx context.Context) TargetAssetEstimatedCostArrayOutput {
 	return o
+}
+
+func (o TargetAssetEstimatedCostArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetEstimatedCost] {
+	return pulumix.Output[[]TargetAssetEstimatedCost]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o TargetAssetEstimatedCostArrayOutput) Index(i pulumi.IntInput) TargetAssetEstimatedCostOutput {
@@ -1498,6 +1739,12 @@ func (i TargetAssetEstimatedCostComputeArgs) ToTargetAssetEstimatedCostComputeOu
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetEstimatedCostComputeOutput)
 }
 
+func (i TargetAssetEstimatedCostComputeArgs) ToOutput(ctx context.Context) pulumix.Output[TargetAssetEstimatedCostCompute] {
+	return pulumix.Output[TargetAssetEstimatedCostCompute]{
+		OutputState: i.ToTargetAssetEstimatedCostComputeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // TargetAssetEstimatedCostComputeArrayInput is an input type that accepts TargetAssetEstimatedCostComputeArray and TargetAssetEstimatedCostComputeArrayOutput values.
 // You can construct a concrete instance of `TargetAssetEstimatedCostComputeArrayInput` via:
 //
@@ -1523,6 +1770,12 @@ func (i TargetAssetEstimatedCostComputeArray) ToTargetAssetEstimatedCostComputeA
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetEstimatedCostComputeArrayOutput)
 }
 
+func (i TargetAssetEstimatedCostComputeArray) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetEstimatedCostCompute] {
+	return pulumix.Output[[]TargetAssetEstimatedCostCompute]{
+		OutputState: i.ToTargetAssetEstimatedCostComputeArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type TargetAssetEstimatedCostComputeOutput struct{ *pulumi.OutputState }
 
 func (TargetAssetEstimatedCostComputeOutput) ElementType() reflect.Type {
@@ -1535,6 +1788,12 @@ func (o TargetAssetEstimatedCostComputeOutput) ToTargetAssetEstimatedCostCompute
 
 func (o TargetAssetEstimatedCostComputeOutput) ToTargetAssetEstimatedCostComputeOutputWithContext(ctx context.Context) TargetAssetEstimatedCostComputeOutput {
 	return o
+}
+
+func (o TargetAssetEstimatedCostComputeOutput) ToOutput(ctx context.Context) pulumix.Output[TargetAssetEstimatedCostCompute] {
+	return pulumix.Output[TargetAssetEstimatedCostCompute]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Total number of GPU
@@ -1606,6 +1865,12 @@ func (o TargetAssetEstimatedCostComputeArrayOutput) ToTargetAssetEstimatedCostCo
 	return o
 }
 
+func (o TargetAssetEstimatedCostComputeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetEstimatedCostCompute] {
+	return pulumix.Output[[]TargetAssetEstimatedCostCompute]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o TargetAssetEstimatedCostComputeArrayOutput) Index(i pulumi.IntInput) TargetAssetEstimatedCostComputeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TargetAssetEstimatedCostCompute {
 		return vs[0].([]TargetAssetEstimatedCostCompute)[vs[1].(int)]
@@ -1649,6 +1914,12 @@ func (i TargetAssetEstimatedCostOsImageArgs) ToTargetAssetEstimatedCostOsImageOu
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetEstimatedCostOsImageOutput)
 }
 
+func (i TargetAssetEstimatedCostOsImageArgs) ToOutput(ctx context.Context) pulumix.Output[TargetAssetEstimatedCostOsImage] {
+	return pulumix.Output[TargetAssetEstimatedCostOsImage]{
+		OutputState: i.ToTargetAssetEstimatedCostOsImageOutputWithContext(ctx).OutputState,
+	}
+}
+
 // TargetAssetEstimatedCostOsImageArrayInput is an input type that accepts TargetAssetEstimatedCostOsImageArray and TargetAssetEstimatedCostOsImageArrayOutput values.
 // You can construct a concrete instance of `TargetAssetEstimatedCostOsImageArrayInput` via:
 //
@@ -1674,6 +1945,12 @@ func (i TargetAssetEstimatedCostOsImageArray) ToTargetAssetEstimatedCostOsImageA
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetEstimatedCostOsImageArrayOutput)
 }
 
+func (i TargetAssetEstimatedCostOsImageArray) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetEstimatedCostOsImage] {
+	return pulumix.Output[[]TargetAssetEstimatedCostOsImage]{
+		OutputState: i.ToTargetAssetEstimatedCostOsImageArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type TargetAssetEstimatedCostOsImageOutput struct{ *pulumi.OutputState }
 
 func (TargetAssetEstimatedCostOsImageOutput) ElementType() reflect.Type {
@@ -1686,6 +1963,12 @@ func (o TargetAssetEstimatedCostOsImageOutput) ToTargetAssetEstimatedCostOsImage
 
 func (o TargetAssetEstimatedCostOsImageOutput) ToTargetAssetEstimatedCostOsImageOutputWithContext(ctx context.Context) TargetAssetEstimatedCostOsImageOutput {
 	return o
+}
+
+func (o TargetAssetEstimatedCostOsImageOutput) ToOutput(ctx context.Context) pulumix.Output[TargetAssetEstimatedCostOsImage] {
+	return pulumix.Output[TargetAssetEstimatedCostOsImage]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Total price per hour
@@ -1710,6 +1993,12 @@ func (o TargetAssetEstimatedCostOsImageArrayOutput) ToTargetAssetEstimatedCostOs
 
 func (o TargetAssetEstimatedCostOsImageArrayOutput) ToTargetAssetEstimatedCostOsImageArrayOutputWithContext(ctx context.Context) TargetAssetEstimatedCostOsImageArrayOutput {
 	return o
+}
+
+func (o TargetAssetEstimatedCostOsImageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetEstimatedCostOsImage] {
+	return pulumix.Output[[]TargetAssetEstimatedCostOsImage]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o TargetAssetEstimatedCostOsImageArrayOutput) Index(i pulumi.IntInput) TargetAssetEstimatedCostOsImageOutput {
@@ -1759,6 +2048,12 @@ func (i TargetAssetEstimatedCostStorageArgs) ToTargetAssetEstimatedCostStorageOu
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetEstimatedCostStorageOutput)
 }
 
+func (i TargetAssetEstimatedCostStorageArgs) ToOutput(ctx context.Context) pulumix.Output[TargetAssetEstimatedCostStorage] {
+	return pulumix.Output[TargetAssetEstimatedCostStorage]{
+		OutputState: i.ToTargetAssetEstimatedCostStorageOutputWithContext(ctx).OutputState,
+	}
+}
+
 // TargetAssetEstimatedCostStorageArrayInput is an input type that accepts TargetAssetEstimatedCostStorageArray and TargetAssetEstimatedCostStorageArrayOutput values.
 // You can construct a concrete instance of `TargetAssetEstimatedCostStorageArrayInput` via:
 //
@@ -1784,6 +2079,12 @@ func (i TargetAssetEstimatedCostStorageArray) ToTargetAssetEstimatedCostStorageA
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetEstimatedCostStorageArrayOutput)
 }
 
+func (i TargetAssetEstimatedCostStorageArray) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetEstimatedCostStorage] {
+	return pulumix.Output[[]TargetAssetEstimatedCostStorage]{
+		OutputState: i.ToTargetAssetEstimatedCostStorageArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type TargetAssetEstimatedCostStorageOutput struct{ *pulumi.OutputState }
 
 func (TargetAssetEstimatedCostStorageOutput) ElementType() reflect.Type {
@@ -1796,6 +2097,12 @@ func (o TargetAssetEstimatedCostStorageOutput) ToTargetAssetEstimatedCostStorage
 
 func (o TargetAssetEstimatedCostStorageOutput) ToTargetAssetEstimatedCostStorageOutputWithContext(ctx context.Context) TargetAssetEstimatedCostStorageOutput {
 	return o
+}
+
+func (o TargetAssetEstimatedCostStorageOutput) ToOutput(ctx context.Context) pulumix.Output[TargetAssetEstimatedCostStorage] {
+	return pulumix.Output[TargetAssetEstimatedCostStorage]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Gigabyte storage capacity per month.
@@ -1825,6 +2132,12 @@ func (o TargetAssetEstimatedCostStorageArrayOutput) ToTargetAssetEstimatedCostSt
 
 func (o TargetAssetEstimatedCostStorageArrayOutput) ToTargetAssetEstimatedCostStorageArrayOutputWithContext(ctx context.Context) TargetAssetEstimatedCostStorageArrayOutput {
 	return o
+}
+
+func (o TargetAssetEstimatedCostStorageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetEstimatedCostStorage] {
+	return pulumix.Output[[]TargetAssetEstimatedCostStorage]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o TargetAssetEstimatedCostStorageArrayOutput) Index(i pulumi.IntInput) TargetAssetEstimatedCostStorageOutput {
@@ -1878,6 +2191,12 @@ func (i TargetAssetEstimatedCostStorageVolumeArgs) ToTargetAssetEstimatedCostSto
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetEstimatedCostStorageVolumeOutput)
 }
 
+func (i TargetAssetEstimatedCostStorageVolumeArgs) ToOutput(ctx context.Context) pulumix.Output[TargetAssetEstimatedCostStorageVolume] {
+	return pulumix.Output[TargetAssetEstimatedCostStorageVolume]{
+		OutputState: i.ToTargetAssetEstimatedCostStorageVolumeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // TargetAssetEstimatedCostStorageVolumeArrayInput is an input type that accepts TargetAssetEstimatedCostStorageVolumeArray and TargetAssetEstimatedCostStorageVolumeArrayOutput values.
 // You can construct a concrete instance of `TargetAssetEstimatedCostStorageVolumeArrayInput` via:
 //
@@ -1903,6 +2222,12 @@ func (i TargetAssetEstimatedCostStorageVolumeArray) ToTargetAssetEstimatedCostSt
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetEstimatedCostStorageVolumeArrayOutput)
 }
 
+func (i TargetAssetEstimatedCostStorageVolumeArray) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetEstimatedCostStorageVolume] {
+	return pulumix.Output[[]TargetAssetEstimatedCostStorageVolume]{
+		OutputState: i.ToTargetAssetEstimatedCostStorageVolumeArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type TargetAssetEstimatedCostStorageVolumeOutput struct{ *pulumi.OutputState }
 
 func (TargetAssetEstimatedCostStorageVolumeOutput) ElementType() reflect.Type {
@@ -1915,6 +2240,12 @@ func (o TargetAssetEstimatedCostStorageVolumeOutput) ToTargetAssetEstimatedCostS
 
 func (o TargetAssetEstimatedCostStorageVolumeOutput) ToTargetAssetEstimatedCostStorageVolumeOutputWithContext(ctx context.Context) TargetAssetEstimatedCostStorageVolumeOutput {
 	return o
+}
+
+func (o TargetAssetEstimatedCostStorageVolumeOutput) ToOutput(ctx context.Context) pulumix.Output[TargetAssetEstimatedCostStorageVolume] {
+	return pulumix.Output[TargetAssetEstimatedCostStorageVolume]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Gigabyte storage capacity
@@ -1949,6 +2280,12 @@ func (o TargetAssetEstimatedCostStorageVolumeArrayOutput) ToTargetAssetEstimated
 
 func (o TargetAssetEstimatedCostStorageVolumeArrayOutput) ToTargetAssetEstimatedCostStorageVolumeArrayOutputWithContext(ctx context.Context) TargetAssetEstimatedCostStorageVolumeArrayOutput {
 	return o
+}
+
+func (o TargetAssetEstimatedCostStorageVolumeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetEstimatedCostStorageVolume] {
+	return pulumix.Output[[]TargetAssetEstimatedCostStorageVolume]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o TargetAssetEstimatedCostStorageVolumeArrayOutput) Index(i pulumi.IntInput) TargetAssetEstimatedCostStorageVolumeOutput {
@@ -2070,6 +2407,12 @@ func (i TargetAssetMigrationAssetArgs) ToTargetAssetMigrationAssetOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetMigrationAssetOutput)
 }
 
+func (i TargetAssetMigrationAssetArgs) ToOutput(ctx context.Context) pulumix.Output[TargetAssetMigrationAsset] {
+	return pulumix.Output[TargetAssetMigrationAsset]{
+		OutputState: i.ToTargetAssetMigrationAssetOutputWithContext(ctx).OutputState,
+	}
+}
+
 // TargetAssetMigrationAssetArrayInput is an input type that accepts TargetAssetMigrationAssetArray and TargetAssetMigrationAssetArrayOutput values.
 // You can construct a concrete instance of `TargetAssetMigrationAssetArrayInput` via:
 //
@@ -2095,6 +2438,12 @@ func (i TargetAssetMigrationAssetArray) ToTargetAssetMigrationAssetArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetMigrationAssetArrayOutput)
 }
 
+func (i TargetAssetMigrationAssetArray) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetMigrationAsset] {
+	return pulumix.Output[[]TargetAssetMigrationAsset]{
+		OutputState: i.ToTargetAssetMigrationAssetArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type TargetAssetMigrationAssetOutput struct{ *pulumi.OutputState }
 
 func (TargetAssetMigrationAssetOutput) ElementType() reflect.Type {
@@ -2107,6 +2456,12 @@ func (o TargetAssetMigrationAssetOutput) ToTargetAssetMigrationAssetOutput() Tar
 
 func (o TargetAssetMigrationAssetOutput) ToTargetAssetMigrationAssetOutputWithContext(ctx context.Context) TargetAssetMigrationAssetOutput {
 	return o
+}
+
+func (o TargetAssetMigrationAssetOutput) ToOutput(ctx context.Context) pulumix.Output[TargetAssetMigrationAsset] {
+	return pulumix.Output[TargetAssetMigrationAsset]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
@@ -2226,6 +2581,12 @@ func (o TargetAssetMigrationAssetArrayOutput) ToTargetAssetMigrationAssetArrayOu
 
 func (o TargetAssetMigrationAssetArrayOutput) ToTargetAssetMigrationAssetArrayOutputWithContext(ctx context.Context) TargetAssetMigrationAssetArrayOutput {
 	return o
+}
+
+func (o TargetAssetMigrationAssetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetMigrationAsset] {
+	return pulumix.Output[[]TargetAssetMigrationAsset]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o TargetAssetMigrationAssetArrayOutput) Index(i pulumi.IntInput) TargetAssetMigrationAssetOutput {
@@ -2383,6 +2744,12 @@ func (i TargetAssetRecommendedSpecArgs) ToTargetAssetRecommendedSpecOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetRecommendedSpecOutput)
 }
 
+func (i TargetAssetRecommendedSpecArgs) ToOutput(ctx context.Context) pulumix.Output[TargetAssetRecommendedSpec] {
+	return pulumix.Output[TargetAssetRecommendedSpec]{
+		OutputState: i.ToTargetAssetRecommendedSpecOutputWithContext(ctx).OutputState,
+	}
+}
+
 // TargetAssetRecommendedSpecArrayInput is an input type that accepts TargetAssetRecommendedSpecArray and TargetAssetRecommendedSpecArrayOutput values.
 // You can construct a concrete instance of `TargetAssetRecommendedSpecArrayInput` via:
 //
@@ -2408,6 +2775,12 @@ func (i TargetAssetRecommendedSpecArray) ToTargetAssetRecommendedSpecArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetRecommendedSpecArrayOutput)
 }
 
+func (i TargetAssetRecommendedSpecArray) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetRecommendedSpec] {
+	return pulumix.Output[[]TargetAssetRecommendedSpec]{
+		OutputState: i.ToTargetAssetRecommendedSpecArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type TargetAssetRecommendedSpecOutput struct{ *pulumi.OutputState }
 
 func (TargetAssetRecommendedSpecOutput) ElementType() reflect.Type {
@@ -2420,6 +2793,12 @@ func (o TargetAssetRecommendedSpecOutput) ToTargetAssetRecommendedSpecOutput() T
 
 func (o TargetAssetRecommendedSpecOutput) ToTargetAssetRecommendedSpecOutputWithContext(ctx context.Context) TargetAssetRecommendedSpecOutput {
 	return o
+}
+
+func (o TargetAssetRecommendedSpecOutput) ToOutput(ctx context.Context) pulumix.Output[TargetAssetRecommendedSpec] {
+	return pulumix.Output[TargetAssetRecommendedSpec]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Configuration options for the Oracle Cloud Agent software running on the instance.
@@ -2556,6 +2935,12 @@ func (o TargetAssetRecommendedSpecArrayOutput) ToTargetAssetRecommendedSpecArray
 	return o
 }
 
+func (o TargetAssetRecommendedSpecArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetRecommendedSpec] {
+	return pulumix.Output[[]TargetAssetRecommendedSpec]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o TargetAssetRecommendedSpecArrayOutput) Index(i pulumi.IntInput) TargetAssetRecommendedSpecOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TargetAssetRecommendedSpec {
 		return vs[0].([]TargetAssetRecommendedSpec)[vs[1].(int)]
@@ -2635,6 +3020,12 @@ func (i TargetAssetRecommendedSpecAgentConfigArgs) ToTargetAssetRecommendedSpecA
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetRecommendedSpecAgentConfigOutput)
 }
 
+func (i TargetAssetRecommendedSpecAgentConfigArgs) ToOutput(ctx context.Context) pulumix.Output[TargetAssetRecommendedSpecAgentConfig] {
+	return pulumix.Output[TargetAssetRecommendedSpecAgentConfig]{
+		OutputState: i.ToTargetAssetRecommendedSpecAgentConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // TargetAssetRecommendedSpecAgentConfigArrayInput is an input type that accepts TargetAssetRecommendedSpecAgentConfigArray and TargetAssetRecommendedSpecAgentConfigArrayOutput values.
 // You can construct a concrete instance of `TargetAssetRecommendedSpecAgentConfigArrayInput` via:
 //
@@ -2660,6 +3051,12 @@ func (i TargetAssetRecommendedSpecAgentConfigArray) ToTargetAssetRecommendedSpec
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetRecommendedSpecAgentConfigArrayOutput)
 }
 
+func (i TargetAssetRecommendedSpecAgentConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetRecommendedSpecAgentConfig] {
+	return pulumix.Output[[]TargetAssetRecommendedSpecAgentConfig]{
+		OutputState: i.ToTargetAssetRecommendedSpecAgentConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type TargetAssetRecommendedSpecAgentConfigOutput struct{ *pulumi.OutputState }
 
 func (TargetAssetRecommendedSpecAgentConfigOutput) ElementType() reflect.Type {
@@ -2672,6 +3069,12 @@ func (o TargetAssetRecommendedSpecAgentConfigOutput) ToTargetAssetRecommendedSpe
 
 func (o TargetAssetRecommendedSpecAgentConfigOutput) ToTargetAssetRecommendedSpecAgentConfigOutputWithContext(ctx context.Context) TargetAssetRecommendedSpecAgentConfigOutput {
 	return o
+}
+
+func (o TargetAssetRecommendedSpecAgentConfigOutput) ToOutput(ctx context.Context) pulumix.Output[TargetAssetRecommendedSpecAgentConfig] {
+	return pulumix.Output[TargetAssetRecommendedSpecAgentConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
@@ -2724,6 +3127,12 @@ func (o TargetAssetRecommendedSpecAgentConfigArrayOutput) ToTargetAssetRecommend
 	return o
 }
 
+func (o TargetAssetRecommendedSpecAgentConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetRecommendedSpecAgentConfig] {
+	return pulumix.Output[[]TargetAssetRecommendedSpecAgentConfig]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o TargetAssetRecommendedSpecAgentConfigArrayOutput) Index(i pulumi.IntInput) TargetAssetRecommendedSpecAgentConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TargetAssetRecommendedSpecAgentConfig {
 		return vs[0].([]TargetAssetRecommendedSpecAgentConfig)[vs[1].(int)]
@@ -2771,6 +3180,12 @@ func (i TargetAssetRecommendedSpecAgentConfigPluginsConfigArgs) ToTargetAssetRec
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetRecommendedSpecAgentConfigPluginsConfigOutput)
 }
 
+func (i TargetAssetRecommendedSpecAgentConfigPluginsConfigArgs) ToOutput(ctx context.Context) pulumix.Output[TargetAssetRecommendedSpecAgentConfigPluginsConfig] {
+	return pulumix.Output[TargetAssetRecommendedSpecAgentConfigPluginsConfig]{
+		OutputState: i.ToTargetAssetRecommendedSpecAgentConfigPluginsConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // TargetAssetRecommendedSpecAgentConfigPluginsConfigArrayInput is an input type that accepts TargetAssetRecommendedSpecAgentConfigPluginsConfigArray and TargetAssetRecommendedSpecAgentConfigPluginsConfigArrayOutput values.
 // You can construct a concrete instance of `TargetAssetRecommendedSpecAgentConfigPluginsConfigArrayInput` via:
 //
@@ -2796,6 +3211,12 @@ func (i TargetAssetRecommendedSpecAgentConfigPluginsConfigArray) ToTargetAssetRe
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetRecommendedSpecAgentConfigPluginsConfigArrayOutput)
 }
 
+func (i TargetAssetRecommendedSpecAgentConfigPluginsConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetRecommendedSpecAgentConfigPluginsConfig] {
+	return pulumix.Output[[]TargetAssetRecommendedSpecAgentConfigPluginsConfig]{
+		OutputState: i.ToTargetAssetRecommendedSpecAgentConfigPluginsConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type TargetAssetRecommendedSpecAgentConfigPluginsConfigOutput struct{ *pulumi.OutputState }
 
 func (TargetAssetRecommendedSpecAgentConfigPluginsConfigOutput) ElementType() reflect.Type {
@@ -2808,6 +3229,12 @@ func (o TargetAssetRecommendedSpecAgentConfigPluginsConfigOutput) ToTargetAssetR
 
 func (o TargetAssetRecommendedSpecAgentConfigPluginsConfigOutput) ToTargetAssetRecommendedSpecAgentConfigPluginsConfigOutputWithContext(ctx context.Context) TargetAssetRecommendedSpecAgentConfigPluginsConfigOutput {
 	return o
+}
+
+func (o TargetAssetRecommendedSpecAgentConfigPluginsConfigOutput) ToOutput(ctx context.Context) pulumix.Output[TargetAssetRecommendedSpecAgentConfigPluginsConfig] {
+	return pulumix.Output[TargetAssetRecommendedSpecAgentConfigPluginsConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Whether the plugin should be enabled or disabled.
@@ -2834,6 +3261,12 @@ func (o TargetAssetRecommendedSpecAgentConfigPluginsConfigArrayOutput) ToTargetA
 
 func (o TargetAssetRecommendedSpecAgentConfigPluginsConfigArrayOutput) ToTargetAssetRecommendedSpecAgentConfigPluginsConfigArrayOutputWithContext(ctx context.Context) TargetAssetRecommendedSpecAgentConfigPluginsConfigArrayOutput {
 	return o
+}
+
+func (o TargetAssetRecommendedSpecAgentConfigPluginsConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetRecommendedSpecAgentConfigPluginsConfig] {
+	return pulumix.Output[[]TargetAssetRecommendedSpecAgentConfigPluginsConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o TargetAssetRecommendedSpecAgentConfigPluginsConfigArrayOutput) Index(i pulumi.IntInput) TargetAssetRecommendedSpecAgentConfigPluginsConfigOutput {
@@ -2963,6 +3396,12 @@ func (i TargetAssetRecommendedSpecCreateVnicDetailArgs) ToTargetAssetRecommended
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetRecommendedSpecCreateVnicDetailOutput)
 }
 
+func (i TargetAssetRecommendedSpecCreateVnicDetailArgs) ToOutput(ctx context.Context) pulumix.Output[TargetAssetRecommendedSpecCreateVnicDetail] {
+	return pulumix.Output[TargetAssetRecommendedSpecCreateVnicDetail]{
+		OutputState: i.ToTargetAssetRecommendedSpecCreateVnicDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // TargetAssetRecommendedSpecCreateVnicDetailArrayInput is an input type that accepts TargetAssetRecommendedSpecCreateVnicDetailArray and TargetAssetRecommendedSpecCreateVnicDetailArrayOutput values.
 // You can construct a concrete instance of `TargetAssetRecommendedSpecCreateVnicDetailArrayInput` via:
 //
@@ -2988,6 +3427,12 @@ func (i TargetAssetRecommendedSpecCreateVnicDetailArray) ToTargetAssetRecommende
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetRecommendedSpecCreateVnicDetailArrayOutput)
 }
 
+func (i TargetAssetRecommendedSpecCreateVnicDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetRecommendedSpecCreateVnicDetail] {
+	return pulumix.Output[[]TargetAssetRecommendedSpecCreateVnicDetail]{
+		OutputState: i.ToTargetAssetRecommendedSpecCreateVnicDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type TargetAssetRecommendedSpecCreateVnicDetailOutput struct{ *pulumi.OutputState }
 
 func (TargetAssetRecommendedSpecCreateVnicDetailOutput) ElementType() reflect.Type {
@@ -3000,6 +3445,12 @@ func (o TargetAssetRecommendedSpecCreateVnicDetailOutput) ToTargetAssetRecommend
 
 func (o TargetAssetRecommendedSpecCreateVnicDetailOutput) ToTargetAssetRecommendedSpecCreateVnicDetailOutputWithContext(ctx context.Context) TargetAssetRecommendedSpecCreateVnicDetailOutput {
 	return o
+}
+
+func (o TargetAssetRecommendedSpecCreateVnicDetailOutput) ToOutput(ctx context.Context) pulumix.Output[TargetAssetRecommendedSpecCreateVnicDetail] {
+	return pulumix.Output[TargetAssetRecommendedSpecCreateVnicDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Whether the VNIC should be assigned a DNS record. If set to false, there will be no DNS record registration for the VNIC. If set to true, the DNS record will be registered. By default, the value is true.
@@ -3095,6 +3546,12 @@ func (o TargetAssetRecommendedSpecCreateVnicDetailArrayOutput) ToTargetAssetReco
 	return o
 }
 
+func (o TargetAssetRecommendedSpecCreateVnicDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetRecommendedSpecCreateVnicDetail] {
+	return pulumix.Output[[]TargetAssetRecommendedSpecCreateVnicDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o TargetAssetRecommendedSpecCreateVnicDetailArrayOutput) Index(i pulumi.IntInput) TargetAssetRecommendedSpecCreateVnicDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TargetAssetRecommendedSpecCreateVnicDetail {
 		return vs[0].([]TargetAssetRecommendedSpecCreateVnicDetail)[vs[1].(int)]
@@ -3134,6 +3591,12 @@ func (i TargetAssetRecommendedSpecInstanceOptionArgs) ToTargetAssetRecommendedSp
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetRecommendedSpecInstanceOptionOutput)
 }
 
+func (i TargetAssetRecommendedSpecInstanceOptionArgs) ToOutput(ctx context.Context) pulumix.Output[TargetAssetRecommendedSpecInstanceOption] {
+	return pulumix.Output[TargetAssetRecommendedSpecInstanceOption]{
+		OutputState: i.ToTargetAssetRecommendedSpecInstanceOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // TargetAssetRecommendedSpecInstanceOptionArrayInput is an input type that accepts TargetAssetRecommendedSpecInstanceOptionArray and TargetAssetRecommendedSpecInstanceOptionArrayOutput values.
 // You can construct a concrete instance of `TargetAssetRecommendedSpecInstanceOptionArrayInput` via:
 //
@@ -3159,6 +3622,12 @@ func (i TargetAssetRecommendedSpecInstanceOptionArray) ToTargetAssetRecommendedS
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetRecommendedSpecInstanceOptionArrayOutput)
 }
 
+func (i TargetAssetRecommendedSpecInstanceOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetRecommendedSpecInstanceOption] {
+	return pulumix.Output[[]TargetAssetRecommendedSpecInstanceOption]{
+		OutputState: i.ToTargetAssetRecommendedSpecInstanceOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type TargetAssetRecommendedSpecInstanceOptionOutput struct{ *pulumi.OutputState }
 
 func (TargetAssetRecommendedSpecInstanceOptionOutput) ElementType() reflect.Type {
@@ -3171,6 +3640,12 @@ func (o TargetAssetRecommendedSpecInstanceOptionOutput) ToTargetAssetRecommended
 
 func (o TargetAssetRecommendedSpecInstanceOptionOutput) ToTargetAssetRecommendedSpecInstanceOptionOutputWithContext(ctx context.Context) TargetAssetRecommendedSpecInstanceOptionOutput {
 	return o
+}
+
+func (o TargetAssetRecommendedSpecInstanceOptionOutput) ToOutput(ctx context.Context) pulumix.Output[TargetAssetRecommendedSpecInstanceOption] {
+	return pulumix.Output[TargetAssetRecommendedSpecInstanceOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
@@ -3190,6 +3665,12 @@ func (o TargetAssetRecommendedSpecInstanceOptionArrayOutput) ToTargetAssetRecomm
 
 func (o TargetAssetRecommendedSpecInstanceOptionArrayOutput) ToTargetAssetRecommendedSpecInstanceOptionArrayOutputWithContext(ctx context.Context) TargetAssetRecommendedSpecInstanceOptionArrayOutput {
 	return o
+}
+
+func (o TargetAssetRecommendedSpecInstanceOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetRecommendedSpecInstanceOption] {
+	return pulumix.Output[[]TargetAssetRecommendedSpecInstanceOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o TargetAssetRecommendedSpecInstanceOptionArrayOutput) Index(i pulumi.IntInput) TargetAssetRecommendedSpecInstanceOptionOutput {
@@ -3231,6 +3712,12 @@ func (i TargetAssetRecommendedSpecPreemptibleInstanceConfigArgs) ToTargetAssetRe
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetRecommendedSpecPreemptibleInstanceConfigOutput)
 }
 
+func (i TargetAssetRecommendedSpecPreemptibleInstanceConfigArgs) ToOutput(ctx context.Context) pulumix.Output[TargetAssetRecommendedSpecPreemptibleInstanceConfig] {
+	return pulumix.Output[TargetAssetRecommendedSpecPreemptibleInstanceConfig]{
+		OutputState: i.ToTargetAssetRecommendedSpecPreemptibleInstanceConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // TargetAssetRecommendedSpecPreemptibleInstanceConfigArrayInput is an input type that accepts TargetAssetRecommendedSpecPreemptibleInstanceConfigArray and TargetAssetRecommendedSpecPreemptibleInstanceConfigArrayOutput values.
 // You can construct a concrete instance of `TargetAssetRecommendedSpecPreemptibleInstanceConfigArrayInput` via:
 //
@@ -3256,6 +3743,12 @@ func (i TargetAssetRecommendedSpecPreemptibleInstanceConfigArray) ToTargetAssetR
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetRecommendedSpecPreemptibleInstanceConfigArrayOutput)
 }
 
+func (i TargetAssetRecommendedSpecPreemptibleInstanceConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetRecommendedSpecPreemptibleInstanceConfig] {
+	return pulumix.Output[[]TargetAssetRecommendedSpecPreemptibleInstanceConfig]{
+		OutputState: i.ToTargetAssetRecommendedSpecPreemptibleInstanceConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type TargetAssetRecommendedSpecPreemptibleInstanceConfigOutput struct{ *pulumi.OutputState }
 
 func (TargetAssetRecommendedSpecPreemptibleInstanceConfigOutput) ElementType() reflect.Type {
@@ -3268,6 +3761,12 @@ func (o TargetAssetRecommendedSpecPreemptibleInstanceConfigOutput) ToTargetAsset
 
 func (o TargetAssetRecommendedSpecPreemptibleInstanceConfigOutput) ToTargetAssetRecommendedSpecPreemptibleInstanceConfigOutputWithContext(ctx context.Context) TargetAssetRecommendedSpecPreemptibleInstanceConfigOutput {
 	return o
+}
+
+func (o TargetAssetRecommendedSpecPreemptibleInstanceConfigOutput) ToOutput(ctx context.Context) pulumix.Output[TargetAssetRecommendedSpecPreemptibleInstanceConfig] {
+	return pulumix.Output[TargetAssetRecommendedSpecPreemptibleInstanceConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The action to run when the preemptible instance is interrupted for eviction.
@@ -3289,6 +3788,12 @@ func (o TargetAssetRecommendedSpecPreemptibleInstanceConfigArrayOutput) ToTarget
 
 func (o TargetAssetRecommendedSpecPreemptibleInstanceConfigArrayOutput) ToTargetAssetRecommendedSpecPreemptibleInstanceConfigArrayOutputWithContext(ctx context.Context) TargetAssetRecommendedSpecPreemptibleInstanceConfigArrayOutput {
 	return o
+}
+
+func (o TargetAssetRecommendedSpecPreemptibleInstanceConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetRecommendedSpecPreemptibleInstanceConfig] {
+	return pulumix.Output[[]TargetAssetRecommendedSpecPreemptibleInstanceConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o TargetAssetRecommendedSpecPreemptibleInstanceConfigArrayOutput) Index(i pulumi.IntInput) TargetAssetRecommendedSpecPreemptibleInstanceConfigOutput {
@@ -3334,6 +3839,12 @@ func (i TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionArgs)
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionOutput)
 }
 
+func (i TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionArgs) ToOutput(ctx context.Context) pulumix.Output[TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionAction] {
+	return pulumix.Output[TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionAction]{
+		OutputState: i.ToTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionArrayInput is an input type that accepts TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionArray and TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionArrayOutput values.
 // You can construct a concrete instance of `TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionArrayInput` via:
 //
@@ -3359,6 +3870,12 @@ func (i TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionArray
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionArrayOutput)
 }
 
+func (i TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionArray) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionAction] {
+	return pulumix.Output[[]TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionAction]{
+		OutputState: i.ToTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionOutput struct{ *pulumi.OutputState }
 
 func (TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionOutput) ElementType() reflect.Type {
@@ -3371,6 +3888,12 @@ func (o TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionOutpu
 
 func (o TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionOutput) ToTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionOutputWithContext(ctx context.Context) TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionOutput {
 	return o
+}
+
+func (o TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionOutput) ToOutput(ctx context.Context) pulumix.Output[TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionAction] {
+	return pulumix.Output[TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionAction]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. By default, it is false if not specified.
@@ -3397,6 +3920,12 @@ func (o TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionArray
 
 func (o TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionArrayOutput) ToTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionArrayOutputWithContext(ctx context.Context) TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionArrayOutput {
 	return o
+}
+
+func (o TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionAction] {
+	return pulumix.Output[[]TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionAction]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionArrayOutput) Index(i pulumi.IntInput) TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionOutput {
@@ -3450,6 +3979,12 @@ func (i TargetAssetRecommendedSpecShapeConfigArgs) ToTargetAssetRecommendedSpecS
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetRecommendedSpecShapeConfigOutput)
 }
 
+func (i TargetAssetRecommendedSpecShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[TargetAssetRecommendedSpecShapeConfig] {
+	return pulumix.Output[TargetAssetRecommendedSpecShapeConfig]{
+		OutputState: i.ToTargetAssetRecommendedSpecShapeConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // TargetAssetRecommendedSpecShapeConfigArrayInput is an input type that accepts TargetAssetRecommendedSpecShapeConfigArray and TargetAssetRecommendedSpecShapeConfigArrayOutput values.
 // You can construct a concrete instance of `TargetAssetRecommendedSpecShapeConfigArrayInput` via:
 //
@@ -3475,6 +4010,12 @@ func (i TargetAssetRecommendedSpecShapeConfigArray) ToTargetAssetRecommendedSpec
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetRecommendedSpecShapeConfigArrayOutput)
 }
 
+func (i TargetAssetRecommendedSpecShapeConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetRecommendedSpecShapeConfig] {
+	return pulumix.Output[[]TargetAssetRecommendedSpecShapeConfig]{
+		OutputState: i.ToTargetAssetRecommendedSpecShapeConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type TargetAssetRecommendedSpecShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (TargetAssetRecommendedSpecShapeConfigOutput) ElementType() reflect.Type {
@@ -3487,6 +4028,12 @@ func (o TargetAssetRecommendedSpecShapeConfigOutput) ToTargetAssetRecommendedSpe
 
 func (o TargetAssetRecommendedSpecShapeConfigOutput) ToTargetAssetRecommendedSpecShapeConfigOutputWithContext(ctx context.Context) TargetAssetRecommendedSpecShapeConfigOutput {
 	return o
+}
+
+func (o TargetAssetRecommendedSpecShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[TargetAssetRecommendedSpecShapeConfig] {
+	return pulumix.Output[TargetAssetRecommendedSpecShapeConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
@@ -3518,6 +4065,12 @@ func (o TargetAssetRecommendedSpecShapeConfigArrayOutput) ToTargetAssetRecommend
 
 func (o TargetAssetRecommendedSpecShapeConfigArrayOutput) ToTargetAssetRecommendedSpecShapeConfigArrayOutputWithContext(ctx context.Context) TargetAssetRecommendedSpecShapeConfigArrayOutput {
 	return o
+}
+
+func (o TargetAssetRecommendedSpecShapeConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetRecommendedSpecShapeConfig] {
+	return pulumix.Output[[]TargetAssetRecommendedSpecShapeConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o TargetAssetRecommendedSpecShapeConfigArrayOutput) Index(i pulumi.IntInput) TargetAssetRecommendedSpecShapeConfigOutput {
@@ -3589,6 +4142,12 @@ func (i TargetAssetRecommendedSpecSourceDetailArgs) ToTargetAssetRecommendedSpec
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetRecommendedSpecSourceDetailOutput)
 }
 
+func (i TargetAssetRecommendedSpecSourceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[TargetAssetRecommendedSpecSourceDetail] {
+	return pulumix.Output[TargetAssetRecommendedSpecSourceDetail]{
+		OutputState: i.ToTargetAssetRecommendedSpecSourceDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // TargetAssetRecommendedSpecSourceDetailArrayInput is an input type that accepts TargetAssetRecommendedSpecSourceDetailArray and TargetAssetRecommendedSpecSourceDetailArrayOutput values.
 // You can construct a concrete instance of `TargetAssetRecommendedSpecSourceDetailArrayInput` via:
 //
@@ -3614,6 +4173,12 @@ func (i TargetAssetRecommendedSpecSourceDetailArray) ToTargetAssetRecommendedSpe
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetRecommendedSpecSourceDetailArrayOutput)
 }
 
+func (i TargetAssetRecommendedSpecSourceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetRecommendedSpecSourceDetail] {
+	return pulumix.Output[[]TargetAssetRecommendedSpecSourceDetail]{
+		OutputState: i.ToTargetAssetRecommendedSpecSourceDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type TargetAssetRecommendedSpecSourceDetailOutput struct{ *pulumi.OutputState }
 
 func (TargetAssetRecommendedSpecSourceDetailOutput) ElementType() reflect.Type {
@@ -3626,6 +4191,12 @@ func (o TargetAssetRecommendedSpecSourceDetailOutput) ToTargetAssetRecommendedSp
 
 func (o TargetAssetRecommendedSpecSourceDetailOutput) ToTargetAssetRecommendedSpecSourceDetailOutputWithContext(ctx context.Context) TargetAssetRecommendedSpecSourceDetailOutput {
 	return o
+}
+
+func (o TargetAssetRecommendedSpecSourceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[TargetAssetRecommendedSpecSourceDetail] {
+	return pulumix.Output[TargetAssetRecommendedSpecSourceDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The OCID of the boot volume used to boot the instance.
@@ -3675,6 +4246,12 @@ func (o TargetAssetRecommendedSpecSourceDetailArrayOutput) ToTargetAssetRecommen
 
 func (o TargetAssetRecommendedSpecSourceDetailArrayOutput) ToTargetAssetRecommendedSpecSourceDetailArrayOutputWithContext(ctx context.Context) TargetAssetRecommendedSpecSourceDetailArrayOutput {
 	return o
+}
+
+func (o TargetAssetRecommendedSpecSourceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetRecommendedSpecSourceDetail] {
+	return pulumix.Output[[]TargetAssetRecommendedSpecSourceDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o TargetAssetRecommendedSpecSourceDetailArrayOutput) Index(i pulumi.IntInput) TargetAssetRecommendedSpecSourceDetailOutput {
@@ -3832,6 +4409,12 @@ func (i TargetAssetTestSpecArgs) ToTargetAssetTestSpecOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetTestSpecOutput)
 }
 
+func (i TargetAssetTestSpecArgs) ToOutput(ctx context.Context) pulumix.Output[TargetAssetTestSpec] {
+	return pulumix.Output[TargetAssetTestSpec]{
+		OutputState: i.ToTargetAssetTestSpecOutputWithContext(ctx).OutputState,
+	}
+}
+
 // TargetAssetTestSpecArrayInput is an input type that accepts TargetAssetTestSpecArray and TargetAssetTestSpecArrayOutput values.
 // You can construct a concrete instance of `TargetAssetTestSpecArrayInput` via:
 //
@@ -3857,6 +4440,12 @@ func (i TargetAssetTestSpecArray) ToTargetAssetTestSpecArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetTestSpecArrayOutput)
 }
 
+func (i TargetAssetTestSpecArray) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetTestSpec] {
+	return pulumix.Output[[]TargetAssetTestSpec]{
+		OutputState: i.ToTargetAssetTestSpecArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type TargetAssetTestSpecOutput struct{ *pulumi.OutputState }
 
 func (TargetAssetTestSpecOutput) ElementType() reflect.Type {
@@ -3869,6 +4458,12 @@ func (o TargetAssetTestSpecOutput) ToTargetAssetTestSpecOutput() TargetAssetTest
 
 func (o TargetAssetTestSpecOutput) ToTargetAssetTestSpecOutputWithContext(ctx context.Context) TargetAssetTestSpecOutput {
 	return o
+}
+
+func (o TargetAssetTestSpecOutput) ToOutput(ctx context.Context) pulumix.Output[TargetAssetTestSpec] {
+	return pulumix.Output[TargetAssetTestSpec]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Configuration options for the Oracle Cloud Agent software running on the instance.
@@ -4001,6 +4596,12 @@ func (o TargetAssetTestSpecArrayOutput) ToTargetAssetTestSpecArrayOutputWithCont
 	return o
 }
 
+func (o TargetAssetTestSpecArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetTestSpec] {
+	return pulumix.Output[[]TargetAssetTestSpec]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o TargetAssetTestSpecArrayOutput) Index(i pulumi.IntInput) TargetAssetTestSpecOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TargetAssetTestSpec {
 		return vs[0].([]TargetAssetTestSpec)[vs[1].(int)]
@@ -4080,6 +4681,12 @@ func (i TargetAssetTestSpecAgentConfigArgs) ToTargetAssetTestSpecAgentConfigOutp
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetTestSpecAgentConfigOutput)
 }
 
+func (i TargetAssetTestSpecAgentConfigArgs) ToOutput(ctx context.Context) pulumix.Output[TargetAssetTestSpecAgentConfig] {
+	return pulumix.Output[TargetAssetTestSpecAgentConfig]{
+		OutputState: i.ToTargetAssetTestSpecAgentConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // TargetAssetTestSpecAgentConfigArrayInput is an input type that accepts TargetAssetTestSpecAgentConfigArray and TargetAssetTestSpecAgentConfigArrayOutput values.
 // You can construct a concrete instance of `TargetAssetTestSpecAgentConfigArrayInput` via:
 //
@@ -4105,6 +4712,12 @@ func (i TargetAssetTestSpecAgentConfigArray) ToTargetAssetTestSpecAgentConfigArr
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetTestSpecAgentConfigArrayOutput)
 }
 
+func (i TargetAssetTestSpecAgentConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetTestSpecAgentConfig] {
+	return pulumix.Output[[]TargetAssetTestSpecAgentConfig]{
+		OutputState: i.ToTargetAssetTestSpecAgentConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type TargetAssetTestSpecAgentConfigOutput struct{ *pulumi.OutputState }
 
 func (TargetAssetTestSpecAgentConfigOutput) ElementType() reflect.Type {
@@ -4117,6 +4730,12 @@ func (o TargetAssetTestSpecAgentConfigOutput) ToTargetAssetTestSpecAgentConfigOu
 
 func (o TargetAssetTestSpecAgentConfigOutput) ToTargetAssetTestSpecAgentConfigOutputWithContext(ctx context.Context) TargetAssetTestSpecAgentConfigOutput {
 	return o
+}
+
+func (o TargetAssetTestSpecAgentConfigOutput) ToOutput(ctx context.Context) pulumix.Output[TargetAssetTestSpecAgentConfig] {
+	return pulumix.Output[TargetAssetTestSpecAgentConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
@@ -4169,6 +4788,12 @@ func (o TargetAssetTestSpecAgentConfigArrayOutput) ToTargetAssetTestSpecAgentCon
 	return o
 }
 
+func (o TargetAssetTestSpecAgentConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetTestSpecAgentConfig] {
+	return pulumix.Output[[]TargetAssetTestSpecAgentConfig]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o TargetAssetTestSpecAgentConfigArrayOutput) Index(i pulumi.IntInput) TargetAssetTestSpecAgentConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TargetAssetTestSpecAgentConfig {
 		return vs[0].([]TargetAssetTestSpecAgentConfig)[vs[1].(int)]
@@ -4216,6 +4841,12 @@ func (i TargetAssetTestSpecAgentConfigPluginsConfigArgs) ToTargetAssetTestSpecAg
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetTestSpecAgentConfigPluginsConfigOutput)
 }
 
+func (i TargetAssetTestSpecAgentConfigPluginsConfigArgs) ToOutput(ctx context.Context) pulumix.Output[TargetAssetTestSpecAgentConfigPluginsConfig] {
+	return pulumix.Output[TargetAssetTestSpecAgentConfigPluginsConfig]{
+		OutputState: i.ToTargetAssetTestSpecAgentConfigPluginsConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // TargetAssetTestSpecAgentConfigPluginsConfigArrayInput is an input type that accepts TargetAssetTestSpecAgentConfigPluginsConfigArray and TargetAssetTestSpecAgentConfigPluginsConfigArrayOutput values.
 // You can construct a concrete instance of `TargetAssetTestSpecAgentConfigPluginsConfigArrayInput` via:
 //
@@ -4241,6 +4872,12 @@ func (i TargetAssetTestSpecAgentConfigPluginsConfigArray) ToTargetAssetTestSpecA
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetTestSpecAgentConfigPluginsConfigArrayOutput)
 }
 
+func (i TargetAssetTestSpecAgentConfigPluginsConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetTestSpecAgentConfigPluginsConfig] {
+	return pulumix.Output[[]TargetAssetTestSpecAgentConfigPluginsConfig]{
+		OutputState: i.ToTargetAssetTestSpecAgentConfigPluginsConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type TargetAssetTestSpecAgentConfigPluginsConfigOutput struct{ *pulumi.OutputState }
 
 func (TargetAssetTestSpecAgentConfigPluginsConfigOutput) ElementType() reflect.Type {
@@ -4253,6 +4890,12 @@ func (o TargetAssetTestSpecAgentConfigPluginsConfigOutput) ToTargetAssetTestSpec
 
 func (o TargetAssetTestSpecAgentConfigPluginsConfigOutput) ToTargetAssetTestSpecAgentConfigPluginsConfigOutputWithContext(ctx context.Context) TargetAssetTestSpecAgentConfigPluginsConfigOutput {
 	return o
+}
+
+func (o TargetAssetTestSpecAgentConfigPluginsConfigOutput) ToOutput(ctx context.Context) pulumix.Output[TargetAssetTestSpecAgentConfigPluginsConfig] {
+	return pulumix.Output[TargetAssetTestSpecAgentConfigPluginsConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Whether the plugin should be enabled or disabled.
@@ -4279,6 +4922,12 @@ func (o TargetAssetTestSpecAgentConfigPluginsConfigArrayOutput) ToTargetAssetTes
 
 func (o TargetAssetTestSpecAgentConfigPluginsConfigArrayOutput) ToTargetAssetTestSpecAgentConfigPluginsConfigArrayOutputWithContext(ctx context.Context) TargetAssetTestSpecAgentConfigPluginsConfigArrayOutput {
 	return o
+}
+
+func (o TargetAssetTestSpecAgentConfigPluginsConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetTestSpecAgentConfigPluginsConfig] {
+	return pulumix.Output[[]TargetAssetTestSpecAgentConfigPluginsConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o TargetAssetTestSpecAgentConfigPluginsConfigArrayOutput) Index(i pulumi.IntInput) TargetAssetTestSpecAgentConfigPluginsConfigOutput {
@@ -4408,6 +5057,12 @@ func (i TargetAssetTestSpecCreateVnicDetailArgs) ToTargetAssetTestSpecCreateVnic
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetTestSpecCreateVnicDetailOutput)
 }
 
+func (i TargetAssetTestSpecCreateVnicDetailArgs) ToOutput(ctx context.Context) pulumix.Output[TargetAssetTestSpecCreateVnicDetail] {
+	return pulumix.Output[TargetAssetTestSpecCreateVnicDetail]{
+		OutputState: i.ToTargetAssetTestSpecCreateVnicDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // TargetAssetTestSpecCreateVnicDetailArrayInput is an input type that accepts TargetAssetTestSpecCreateVnicDetailArray and TargetAssetTestSpecCreateVnicDetailArrayOutput values.
 // You can construct a concrete instance of `TargetAssetTestSpecCreateVnicDetailArrayInput` via:
 //
@@ -4433,6 +5088,12 @@ func (i TargetAssetTestSpecCreateVnicDetailArray) ToTargetAssetTestSpecCreateVni
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetTestSpecCreateVnicDetailArrayOutput)
 }
 
+func (i TargetAssetTestSpecCreateVnicDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetTestSpecCreateVnicDetail] {
+	return pulumix.Output[[]TargetAssetTestSpecCreateVnicDetail]{
+		OutputState: i.ToTargetAssetTestSpecCreateVnicDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type TargetAssetTestSpecCreateVnicDetailOutput struct{ *pulumi.OutputState }
 
 func (TargetAssetTestSpecCreateVnicDetailOutput) ElementType() reflect.Type {
@@ -4445,6 +5106,12 @@ func (o TargetAssetTestSpecCreateVnicDetailOutput) ToTargetAssetTestSpecCreateVn
 
 func (o TargetAssetTestSpecCreateVnicDetailOutput) ToTargetAssetTestSpecCreateVnicDetailOutputWithContext(ctx context.Context) TargetAssetTestSpecCreateVnicDetailOutput {
 	return o
+}
+
+func (o TargetAssetTestSpecCreateVnicDetailOutput) ToOutput(ctx context.Context) pulumix.Output[TargetAssetTestSpecCreateVnicDetail] {
+	return pulumix.Output[TargetAssetTestSpecCreateVnicDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Whether the VNIC should be assigned a DNS record. If set to false, there will be no DNS record registration for the VNIC. If set to true, the DNS record will be registered. By default, the value is true.
@@ -4540,6 +5207,12 @@ func (o TargetAssetTestSpecCreateVnicDetailArrayOutput) ToTargetAssetTestSpecCre
 	return o
 }
 
+func (o TargetAssetTestSpecCreateVnicDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetTestSpecCreateVnicDetail] {
+	return pulumix.Output[[]TargetAssetTestSpecCreateVnicDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o TargetAssetTestSpecCreateVnicDetailArrayOutput) Index(i pulumi.IntInput) TargetAssetTestSpecCreateVnicDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TargetAssetTestSpecCreateVnicDetail {
 		return vs[0].([]TargetAssetTestSpecCreateVnicDetail)[vs[1].(int)]
@@ -4579,6 +5252,12 @@ func (i TargetAssetTestSpecInstanceOptionArgs) ToTargetAssetTestSpecInstanceOpti
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetTestSpecInstanceOptionOutput)
 }
 
+func (i TargetAssetTestSpecInstanceOptionArgs) ToOutput(ctx context.Context) pulumix.Output[TargetAssetTestSpecInstanceOption] {
+	return pulumix.Output[TargetAssetTestSpecInstanceOption]{
+		OutputState: i.ToTargetAssetTestSpecInstanceOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // TargetAssetTestSpecInstanceOptionArrayInput is an input type that accepts TargetAssetTestSpecInstanceOptionArray and TargetAssetTestSpecInstanceOptionArrayOutput values.
 // You can construct a concrete instance of `TargetAssetTestSpecInstanceOptionArrayInput` via:
 //
@@ -4604,6 +5283,12 @@ func (i TargetAssetTestSpecInstanceOptionArray) ToTargetAssetTestSpecInstanceOpt
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetTestSpecInstanceOptionArrayOutput)
 }
 
+func (i TargetAssetTestSpecInstanceOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetTestSpecInstanceOption] {
+	return pulumix.Output[[]TargetAssetTestSpecInstanceOption]{
+		OutputState: i.ToTargetAssetTestSpecInstanceOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type TargetAssetTestSpecInstanceOptionOutput struct{ *pulumi.OutputState }
 
 func (TargetAssetTestSpecInstanceOptionOutput) ElementType() reflect.Type {
@@ -4616,6 +5301,12 @@ func (o TargetAssetTestSpecInstanceOptionOutput) ToTargetAssetTestSpecInstanceOp
 
 func (o TargetAssetTestSpecInstanceOptionOutput) ToTargetAssetTestSpecInstanceOptionOutputWithContext(ctx context.Context) TargetAssetTestSpecInstanceOptionOutput {
 	return o
+}
+
+func (o TargetAssetTestSpecInstanceOptionOutput) ToOutput(ctx context.Context) pulumix.Output[TargetAssetTestSpecInstanceOption] {
+	return pulumix.Output[TargetAssetTestSpecInstanceOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
@@ -4635,6 +5326,12 @@ func (o TargetAssetTestSpecInstanceOptionArrayOutput) ToTargetAssetTestSpecInsta
 
 func (o TargetAssetTestSpecInstanceOptionArrayOutput) ToTargetAssetTestSpecInstanceOptionArrayOutputWithContext(ctx context.Context) TargetAssetTestSpecInstanceOptionArrayOutput {
 	return o
+}
+
+func (o TargetAssetTestSpecInstanceOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetTestSpecInstanceOption] {
+	return pulumix.Output[[]TargetAssetTestSpecInstanceOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o TargetAssetTestSpecInstanceOptionArrayOutput) Index(i pulumi.IntInput) TargetAssetTestSpecInstanceOptionOutput {
@@ -4676,6 +5373,12 @@ func (i TargetAssetTestSpecPreemptibleInstanceConfigArgs) ToTargetAssetTestSpecP
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetTestSpecPreemptibleInstanceConfigOutput)
 }
 
+func (i TargetAssetTestSpecPreemptibleInstanceConfigArgs) ToOutput(ctx context.Context) pulumix.Output[TargetAssetTestSpecPreemptibleInstanceConfig] {
+	return pulumix.Output[TargetAssetTestSpecPreemptibleInstanceConfig]{
+		OutputState: i.ToTargetAssetTestSpecPreemptibleInstanceConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // TargetAssetTestSpecPreemptibleInstanceConfigArrayInput is an input type that accepts TargetAssetTestSpecPreemptibleInstanceConfigArray and TargetAssetTestSpecPreemptibleInstanceConfigArrayOutput values.
 // You can construct a concrete instance of `TargetAssetTestSpecPreemptibleInstanceConfigArrayInput` via:
 //
@@ -4701,6 +5404,12 @@ func (i TargetAssetTestSpecPreemptibleInstanceConfigArray) ToTargetAssetTestSpec
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetTestSpecPreemptibleInstanceConfigArrayOutput)
 }
 
+func (i TargetAssetTestSpecPreemptibleInstanceConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetTestSpecPreemptibleInstanceConfig] {
+	return pulumix.Output[[]TargetAssetTestSpecPreemptibleInstanceConfig]{
+		OutputState: i.ToTargetAssetTestSpecPreemptibleInstanceConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type TargetAssetTestSpecPreemptibleInstanceConfigOutput struct{ *pulumi.OutputState }
 
 func (TargetAssetTestSpecPreemptibleInstanceConfigOutput) ElementType() reflect.Type {
@@ -4713,6 +5422,12 @@ func (o TargetAssetTestSpecPreemptibleInstanceConfigOutput) ToTargetAssetTestSpe
 
 func (o TargetAssetTestSpecPreemptibleInstanceConfigOutput) ToTargetAssetTestSpecPreemptibleInstanceConfigOutputWithContext(ctx context.Context) TargetAssetTestSpecPreemptibleInstanceConfigOutput {
 	return o
+}
+
+func (o TargetAssetTestSpecPreemptibleInstanceConfigOutput) ToOutput(ctx context.Context) pulumix.Output[TargetAssetTestSpecPreemptibleInstanceConfig] {
+	return pulumix.Output[TargetAssetTestSpecPreemptibleInstanceConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The action to run when the preemptible instance is interrupted for eviction.
@@ -4734,6 +5449,12 @@ func (o TargetAssetTestSpecPreemptibleInstanceConfigArrayOutput) ToTargetAssetTe
 
 func (o TargetAssetTestSpecPreemptibleInstanceConfigArrayOutput) ToTargetAssetTestSpecPreemptibleInstanceConfigArrayOutputWithContext(ctx context.Context) TargetAssetTestSpecPreemptibleInstanceConfigArrayOutput {
 	return o
+}
+
+func (o TargetAssetTestSpecPreemptibleInstanceConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetTestSpecPreemptibleInstanceConfig] {
+	return pulumix.Output[[]TargetAssetTestSpecPreemptibleInstanceConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o TargetAssetTestSpecPreemptibleInstanceConfigArrayOutput) Index(i pulumi.IntInput) TargetAssetTestSpecPreemptibleInstanceConfigOutput {
@@ -4779,6 +5500,12 @@ func (i TargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionArgs) ToTarg
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionOutput)
 }
 
+func (i TargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionArgs) ToOutput(ctx context.Context) pulumix.Output[TargetAssetTestSpecPreemptibleInstanceConfigPreemptionAction] {
+	return pulumix.Output[TargetAssetTestSpecPreemptibleInstanceConfigPreemptionAction]{
+		OutputState: i.ToTargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // TargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionArrayInput is an input type that accepts TargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionArray and TargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionArrayOutput values.
 // You can construct a concrete instance of `TargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionArrayInput` via:
 //
@@ -4804,6 +5531,12 @@ func (i TargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionArray) ToTar
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionArrayOutput)
 }
 
+func (i TargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionArray) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetTestSpecPreemptibleInstanceConfigPreemptionAction] {
+	return pulumix.Output[[]TargetAssetTestSpecPreemptibleInstanceConfigPreemptionAction]{
+		OutputState: i.ToTargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type TargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionOutput struct{ *pulumi.OutputState }
 
 func (TargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionOutput) ElementType() reflect.Type {
@@ -4816,6 +5549,12 @@ func (o TargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionOutput) ToTa
 
 func (o TargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionOutput) ToTargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionOutputWithContext(ctx context.Context) TargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionOutput {
 	return o
+}
+
+func (o TargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionOutput) ToOutput(ctx context.Context) pulumix.Output[TargetAssetTestSpecPreemptibleInstanceConfigPreemptionAction] {
+	return pulumix.Output[TargetAssetTestSpecPreemptibleInstanceConfigPreemptionAction]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. By default, it is false if not specified.
@@ -4842,6 +5581,12 @@ func (o TargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionArrayOutput)
 
 func (o TargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionArrayOutput) ToTargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionArrayOutputWithContext(ctx context.Context) TargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionArrayOutput {
 	return o
+}
+
+func (o TargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetTestSpecPreemptibleInstanceConfigPreemptionAction] {
+	return pulumix.Output[[]TargetAssetTestSpecPreemptibleInstanceConfigPreemptionAction]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o TargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionArrayOutput) Index(i pulumi.IntInput) TargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionOutput {
@@ -4895,6 +5640,12 @@ func (i TargetAssetTestSpecShapeConfigArgs) ToTargetAssetTestSpecShapeConfigOutp
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetTestSpecShapeConfigOutput)
 }
 
+func (i TargetAssetTestSpecShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[TargetAssetTestSpecShapeConfig] {
+	return pulumix.Output[TargetAssetTestSpecShapeConfig]{
+		OutputState: i.ToTargetAssetTestSpecShapeConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // TargetAssetTestSpecShapeConfigArrayInput is an input type that accepts TargetAssetTestSpecShapeConfigArray and TargetAssetTestSpecShapeConfigArrayOutput values.
 // You can construct a concrete instance of `TargetAssetTestSpecShapeConfigArrayInput` via:
 //
@@ -4920,6 +5671,12 @@ func (i TargetAssetTestSpecShapeConfigArray) ToTargetAssetTestSpecShapeConfigArr
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetTestSpecShapeConfigArrayOutput)
 }
 
+func (i TargetAssetTestSpecShapeConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetTestSpecShapeConfig] {
+	return pulumix.Output[[]TargetAssetTestSpecShapeConfig]{
+		OutputState: i.ToTargetAssetTestSpecShapeConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type TargetAssetTestSpecShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (TargetAssetTestSpecShapeConfigOutput) ElementType() reflect.Type {
@@ -4932,6 +5689,12 @@ func (o TargetAssetTestSpecShapeConfigOutput) ToTargetAssetTestSpecShapeConfigOu
 
 func (o TargetAssetTestSpecShapeConfigOutput) ToTargetAssetTestSpecShapeConfigOutputWithContext(ctx context.Context) TargetAssetTestSpecShapeConfigOutput {
 	return o
+}
+
+func (o TargetAssetTestSpecShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[TargetAssetTestSpecShapeConfig] {
+	return pulumix.Output[TargetAssetTestSpecShapeConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
@@ -4963,6 +5726,12 @@ func (o TargetAssetTestSpecShapeConfigArrayOutput) ToTargetAssetTestSpecShapeCon
 
 func (o TargetAssetTestSpecShapeConfigArrayOutput) ToTargetAssetTestSpecShapeConfigArrayOutputWithContext(ctx context.Context) TargetAssetTestSpecShapeConfigArrayOutput {
 	return o
+}
+
+func (o TargetAssetTestSpecShapeConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetTestSpecShapeConfig] {
+	return pulumix.Output[[]TargetAssetTestSpecShapeConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o TargetAssetTestSpecShapeConfigArrayOutput) Index(i pulumi.IntInput) TargetAssetTestSpecShapeConfigOutput {
@@ -5034,6 +5803,12 @@ func (i TargetAssetTestSpecSourceDetailArgs) ToTargetAssetTestSpecSourceDetailOu
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetTestSpecSourceDetailOutput)
 }
 
+func (i TargetAssetTestSpecSourceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[TargetAssetTestSpecSourceDetail] {
+	return pulumix.Output[TargetAssetTestSpecSourceDetail]{
+		OutputState: i.ToTargetAssetTestSpecSourceDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // TargetAssetTestSpecSourceDetailArrayInput is an input type that accepts TargetAssetTestSpecSourceDetailArray and TargetAssetTestSpecSourceDetailArrayOutput values.
 // You can construct a concrete instance of `TargetAssetTestSpecSourceDetailArrayInput` via:
 //
@@ -5059,6 +5834,12 @@ func (i TargetAssetTestSpecSourceDetailArray) ToTargetAssetTestSpecSourceDetailA
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetTestSpecSourceDetailArrayOutput)
 }
 
+func (i TargetAssetTestSpecSourceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetTestSpecSourceDetail] {
+	return pulumix.Output[[]TargetAssetTestSpecSourceDetail]{
+		OutputState: i.ToTargetAssetTestSpecSourceDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type TargetAssetTestSpecSourceDetailOutput struct{ *pulumi.OutputState }
 
 func (TargetAssetTestSpecSourceDetailOutput) ElementType() reflect.Type {
@@ -5071,6 +5852,12 @@ func (o TargetAssetTestSpecSourceDetailOutput) ToTargetAssetTestSpecSourceDetail
 
 func (o TargetAssetTestSpecSourceDetailOutput) ToTargetAssetTestSpecSourceDetailOutputWithContext(ctx context.Context) TargetAssetTestSpecSourceDetailOutput {
 	return o
+}
+
+func (o TargetAssetTestSpecSourceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[TargetAssetTestSpecSourceDetail] {
+	return pulumix.Output[TargetAssetTestSpecSourceDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The OCID of the boot volume used to boot the instance.
@@ -5120,6 +5907,12 @@ func (o TargetAssetTestSpecSourceDetailArrayOutput) ToTargetAssetTestSpecSourceD
 
 func (o TargetAssetTestSpecSourceDetailArrayOutput) ToTargetAssetTestSpecSourceDetailArrayOutputWithContext(ctx context.Context) TargetAssetTestSpecSourceDetailArrayOutput {
 	return o
+}
+
+func (o TargetAssetTestSpecSourceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetTestSpecSourceDetail] {
+	return pulumix.Output[[]TargetAssetTestSpecSourceDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o TargetAssetTestSpecSourceDetailArrayOutput) Index(i pulumi.IntInput) TargetAssetTestSpecSourceDetailOutput {
@@ -5277,6 +6070,12 @@ func (i TargetAssetUserSpecArgs) ToTargetAssetUserSpecOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetUserSpecOutput)
 }
 
+func (i TargetAssetUserSpecArgs) ToOutput(ctx context.Context) pulumix.Output[TargetAssetUserSpec] {
+	return pulumix.Output[TargetAssetUserSpec]{
+		OutputState: i.ToTargetAssetUserSpecOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i TargetAssetUserSpecArgs) ToTargetAssetUserSpecPtrOutput() TargetAssetUserSpecPtrOutput {
 	return i.ToTargetAssetUserSpecPtrOutputWithContext(context.Background())
 }
@@ -5318,6 +6117,12 @@ func (i *targetAssetUserSpecPtrType) ToTargetAssetUserSpecPtrOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetUserSpecPtrOutput)
 }
 
+func (i *targetAssetUserSpecPtrType) ToOutput(ctx context.Context) pulumix.Output[*TargetAssetUserSpec] {
+	return pulumix.Output[*TargetAssetUserSpec]{
+		OutputState: i.ToTargetAssetUserSpecPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type TargetAssetUserSpecOutput struct{ *pulumi.OutputState }
 
 func (TargetAssetUserSpecOutput) ElementType() reflect.Type {
@@ -5340,6 +6145,12 @@ func (o TargetAssetUserSpecOutput) ToTargetAssetUserSpecPtrOutputWithContext(ctx
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v TargetAssetUserSpec) *TargetAssetUserSpec {
 		return &v
 	}).(TargetAssetUserSpecPtrOutput)
+}
+
+func (o TargetAssetUserSpecOutput) ToOutput(ctx context.Context) pulumix.Output[TargetAssetUserSpec] {
+	return pulumix.Output[TargetAssetUserSpec]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Configuration options for the Oracle Cloud Agent software running on the instance.
@@ -5470,6 +6281,12 @@ func (o TargetAssetUserSpecPtrOutput) ToTargetAssetUserSpecPtrOutput() TargetAss
 
 func (o TargetAssetUserSpecPtrOutput) ToTargetAssetUserSpecPtrOutputWithContext(ctx context.Context) TargetAssetUserSpecPtrOutput {
 	return o
+}
+
+func (o TargetAssetUserSpecPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*TargetAssetUserSpec] {
+	return pulumix.Output[*TargetAssetUserSpec]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o TargetAssetUserSpecPtrOutput) Elem() TargetAssetUserSpecOutput {
@@ -5759,6 +6576,12 @@ func (i TargetAssetUserSpecAgentConfigArgs) ToTargetAssetUserSpecAgentConfigOutp
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetUserSpecAgentConfigOutput)
 }
 
+func (i TargetAssetUserSpecAgentConfigArgs) ToOutput(ctx context.Context) pulumix.Output[TargetAssetUserSpecAgentConfig] {
+	return pulumix.Output[TargetAssetUserSpecAgentConfig]{
+		OutputState: i.ToTargetAssetUserSpecAgentConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i TargetAssetUserSpecAgentConfigArgs) ToTargetAssetUserSpecAgentConfigPtrOutput() TargetAssetUserSpecAgentConfigPtrOutput {
 	return i.ToTargetAssetUserSpecAgentConfigPtrOutputWithContext(context.Background())
 }
@@ -5800,6 +6623,12 @@ func (i *targetAssetUserSpecAgentConfigPtrType) ToTargetAssetUserSpecAgentConfig
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetUserSpecAgentConfigPtrOutput)
 }
 
+func (i *targetAssetUserSpecAgentConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*TargetAssetUserSpecAgentConfig] {
+	return pulumix.Output[*TargetAssetUserSpecAgentConfig]{
+		OutputState: i.ToTargetAssetUserSpecAgentConfigPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type TargetAssetUserSpecAgentConfigOutput struct{ *pulumi.OutputState }
 
 func (TargetAssetUserSpecAgentConfigOutput) ElementType() reflect.Type {
@@ -5822,6 +6651,12 @@ func (o TargetAssetUserSpecAgentConfigOutput) ToTargetAssetUserSpecAgentConfigPt
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v TargetAssetUserSpecAgentConfig) *TargetAssetUserSpecAgentConfig {
 		return &v
 	}).(TargetAssetUserSpecAgentConfigPtrOutput)
+}
+
+func (o TargetAssetUserSpecAgentConfigOutput) ToOutput(ctx context.Context) pulumix.Output[TargetAssetUserSpecAgentConfig] {
+	return pulumix.Output[TargetAssetUserSpecAgentConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
@@ -5872,6 +6707,12 @@ func (o TargetAssetUserSpecAgentConfigPtrOutput) ToTargetAssetUserSpecAgentConfi
 
 func (o TargetAssetUserSpecAgentConfigPtrOutput) ToTargetAssetUserSpecAgentConfigPtrOutputWithContext(ctx context.Context) TargetAssetUserSpecAgentConfigPtrOutput {
 	return o
+}
+
+func (o TargetAssetUserSpecAgentConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*TargetAssetUserSpecAgentConfig] {
+	return pulumix.Output[*TargetAssetUserSpecAgentConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o TargetAssetUserSpecAgentConfigPtrOutput) Elem() TargetAssetUserSpecAgentConfigOutput {
@@ -5979,6 +6820,12 @@ func (i TargetAssetUserSpecAgentConfigPluginsConfigArgs) ToTargetAssetUserSpecAg
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetUserSpecAgentConfigPluginsConfigOutput)
 }
 
+func (i TargetAssetUserSpecAgentConfigPluginsConfigArgs) ToOutput(ctx context.Context) pulumix.Output[TargetAssetUserSpecAgentConfigPluginsConfig] {
+	return pulumix.Output[TargetAssetUserSpecAgentConfigPluginsConfig]{
+		OutputState: i.ToTargetAssetUserSpecAgentConfigPluginsConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // TargetAssetUserSpecAgentConfigPluginsConfigArrayInput is an input type that accepts TargetAssetUserSpecAgentConfigPluginsConfigArray and TargetAssetUserSpecAgentConfigPluginsConfigArrayOutput values.
 // You can construct a concrete instance of `TargetAssetUserSpecAgentConfigPluginsConfigArrayInput` via:
 //
@@ -6004,6 +6851,12 @@ func (i TargetAssetUserSpecAgentConfigPluginsConfigArray) ToTargetAssetUserSpecA
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetUserSpecAgentConfigPluginsConfigArrayOutput)
 }
 
+func (i TargetAssetUserSpecAgentConfigPluginsConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetUserSpecAgentConfigPluginsConfig] {
+	return pulumix.Output[[]TargetAssetUserSpecAgentConfigPluginsConfig]{
+		OutputState: i.ToTargetAssetUserSpecAgentConfigPluginsConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type TargetAssetUserSpecAgentConfigPluginsConfigOutput struct{ *pulumi.OutputState }
 
 func (TargetAssetUserSpecAgentConfigPluginsConfigOutput) ElementType() reflect.Type {
@@ -6016,6 +6869,12 @@ func (o TargetAssetUserSpecAgentConfigPluginsConfigOutput) ToTargetAssetUserSpec
 
 func (o TargetAssetUserSpecAgentConfigPluginsConfigOutput) ToTargetAssetUserSpecAgentConfigPluginsConfigOutputWithContext(ctx context.Context) TargetAssetUserSpecAgentConfigPluginsConfigOutput {
 	return o
+}
+
+func (o TargetAssetUserSpecAgentConfigPluginsConfigOutput) ToOutput(ctx context.Context) pulumix.Output[TargetAssetUserSpecAgentConfigPluginsConfig] {
+	return pulumix.Output[TargetAssetUserSpecAgentConfigPluginsConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Whether the plugin should be enabled or disabled.
@@ -6042,6 +6901,12 @@ func (o TargetAssetUserSpecAgentConfigPluginsConfigArrayOutput) ToTargetAssetUse
 
 func (o TargetAssetUserSpecAgentConfigPluginsConfigArrayOutput) ToTargetAssetUserSpecAgentConfigPluginsConfigArrayOutputWithContext(ctx context.Context) TargetAssetUserSpecAgentConfigPluginsConfigArrayOutput {
 	return o
+}
+
+func (o TargetAssetUserSpecAgentConfigPluginsConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]TargetAssetUserSpecAgentConfigPluginsConfig] {
+	return pulumix.Output[[]TargetAssetUserSpecAgentConfigPluginsConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o TargetAssetUserSpecAgentConfigPluginsConfigArrayOutput) Index(i pulumi.IntInput) TargetAssetUserSpecAgentConfigPluginsConfigOutput {
@@ -6171,6 +7036,12 @@ func (i TargetAssetUserSpecCreateVnicDetailsArgs) ToTargetAssetUserSpecCreateVni
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetUserSpecCreateVnicDetailsOutput)
 }
 
+func (i TargetAssetUserSpecCreateVnicDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[TargetAssetUserSpecCreateVnicDetails] {
+	return pulumix.Output[TargetAssetUserSpecCreateVnicDetails]{
+		OutputState: i.ToTargetAssetUserSpecCreateVnicDetailsOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i TargetAssetUserSpecCreateVnicDetailsArgs) ToTargetAssetUserSpecCreateVnicDetailsPtrOutput() TargetAssetUserSpecCreateVnicDetailsPtrOutput {
 	return i.ToTargetAssetUserSpecCreateVnicDetailsPtrOutputWithContext(context.Background())
 }
@@ -6212,6 +7083,12 @@ func (i *targetAssetUserSpecCreateVnicDetailsPtrType) ToTargetAssetUserSpecCreat
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetUserSpecCreateVnicDetailsPtrOutput)
 }
 
+func (i *targetAssetUserSpecCreateVnicDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*TargetAssetUserSpecCreateVnicDetails] {
+	return pulumix.Output[*TargetAssetUserSpecCreateVnicDetails]{
+		OutputState: i.ToTargetAssetUserSpecCreateVnicDetailsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type TargetAssetUserSpecCreateVnicDetailsOutput struct{ *pulumi.OutputState }
 
 func (TargetAssetUserSpecCreateVnicDetailsOutput) ElementType() reflect.Type {
@@ -6234,6 +7111,12 @@ func (o TargetAssetUserSpecCreateVnicDetailsOutput) ToTargetAssetUserSpecCreateV
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v TargetAssetUserSpecCreateVnicDetails) *TargetAssetUserSpecCreateVnicDetails {
 		return &v
 	}).(TargetAssetUserSpecCreateVnicDetailsPtrOutput)
+}
+
+func (o TargetAssetUserSpecCreateVnicDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[TargetAssetUserSpecCreateVnicDetails] {
+	return pulumix.Output[TargetAssetUserSpecCreateVnicDetails]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Whether the VNIC should be assigned a DNS record. If set to false, there will be no DNS record registration for the VNIC. If set to true, the DNS record will be registered. By default, the value is true.
@@ -6327,6 +7210,12 @@ func (o TargetAssetUserSpecCreateVnicDetailsPtrOutput) ToTargetAssetUserSpecCrea
 
 func (o TargetAssetUserSpecCreateVnicDetailsPtrOutput) ToTargetAssetUserSpecCreateVnicDetailsPtrOutputWithContext(ctx context.Context) TargetAssetUserSpecCreateVnicDetailsPtrOutput {
 	return o
+}
+
+func (o TargetAssetUserSpecCreateVnicDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*TargetAssetUserSpecCreateVnicDetails] {
+	return pulumix.Output[*TargetAssetUserSpecCreateVnicDetails]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o TargetAssetUserSpecCreateVnicDetailsPtrOutput) Elem() TargetAssetUserSpecCreateVnicDetailsOutput {
@@ -6506,6 +7395,12 @@ func (i TargetAssetUserSpecInstanceOptionsArgs) ToTargetAssetUserSpecInstanceOpt
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetUserSpecInstanceOptionsOutput)
 }
 
+func (i TargetAssetUserSpecInstanceOptionsArgs) ToOutput(ctx context.Context) pulumix.Output[TargetAssetUserSpecInstanceOptions] {
+	return pulumix.Output[TargetAssetUserSpecInstanceOptions]{
+		OutputState: i.ToTargetAssetUserSpecInstanceOptionsOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i TargetAssetUserSpecInstanceOptionsArgs) ToTargetAssetUserSpecInstanceOptionsPtrOutput() TargetAssetUserSpecInstanceOptionsPtrOutput {
 	return i.ToTargetAssetUserSpecInstanceOptionsPtrOutputWithContext(context.Background())
 }
@@ -6547,6 +7442,12 @@ func (i *targetAssetUserSpecInstanceOptionsPtrType) ToTargetAssetUserSpecInstanc
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetUserSpecInstanceOptionsPtrOutput)
 }
 
+func (i *targetAssetUserSpecInstanceOptionsPtrType) ToOutput(ctx context.Context) pulumix.Output[*TargetAssetUserSpecInstanceOptions] {
+	return pulumix.Output[*TargetAssetUserSpecInstanceOptions]{
+		OutputState: i.ToTargetAssetUserSpecInstanceOptionsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type TargetAssetUserSpecInstanceOptionsOutput struct{ *pulumi.OutputState }
 
 func (TargetAssetUserSpecInstanceOptionsOutput) ElementType() reflect.Type {
@@ -6571,6 +7472,12 @@ func (o TargetAssetUserSpecInstanceOptionsOutput) ToTargetAssetUserSpecInstanceO
 	}).(TargetAssetUserSpecInstanceOptionsPtrOutput)
 }
 
+func (o TargetAssetUserSpecInstanceOptionsOutput) ToOutput(ctx context.Context) pulumix.Output[TargetAssetUserSpecInstanceOptions] {
+	return pulumix.Output[TargetAssetUserSpecInstanceOptions]{
+		OutputState: o.OutputState,
+	}
+}
+
 // (Updatable) Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
 func (o TargetAssetUserSpecInstanceOptionsOutput) AreLegacyImdsEndpointsDisabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v TargetAssetUserSpecInstanceOptions) *bool { return v.AreLegacyImdsEndpointsDisabled }).(pulumi.BoolPtrOutput)
@@ -6588,6 +7495,12 @@ func (o TargetAssetUserSpecInstanceOptionsPtrOutput) ToTargetAssetUserSpecInstan
 
 func (o TargetAssetUserSpecInstanceOptionsPtrOutput) ToTargetAssetUserSpecInstanceOptionsPtrOutputWithContext(ctx context.Context) TargetAssetUserSpecInstanceOptionsPtrOutput {
 	return o
+}
+
+func (o TargetAssetUserSpecInstanceOptionsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*TargetAssetUserSpecInstanceOptions] {
+	return pulumix.Output[*TargetAssetUserSpecInstanceOptions]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o TargetAssetUserSpecInstanceOptionsPtrOutput) Elem() TargetAssetUserSpecInstanceOptionsOutput {
@@ -6643,6 +7556,12 @@ func (i TargetAssetUserSpecPreemptibleInstanceConfigArgs) ToTargetAssetUserSpecP
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetUserSpecPreemptibleInstanceConfigOutput)
 }
 
+func (i TargetAssetUserSpecPreemptibleInstanceConfigArgs) ToOutput(ctx context.Context) pulumix.Output[TargetAssetUserSpecPreemptibleInstanceConfig] {
+	return pulumix.Output[TargetAssetUserSpecPreemptibleInstanceConfig]{
+		OutputState: i.ToTargetAssetUserSpecPreemptibleInstanceConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i TargetAssetUserSpecPreemptibleInstanceConfigArgs) ToTargetAssetUserSpecPreemptibleInstanceConfigPtrOutput() TargetAssetUserSpecPreemptibleInstanceConfigPtrOutput {
 	return i.ToTargetAssetUserSpecPreemptibleInstanceConfigPtrOutputWithContext(context.Background())
 }
@@ -6684,6 +7603,12 @@ func (i *targetAssetUserSpecPreemptibleInstanceConfigPtrType) ToTargetAssetUserS
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetUserSpecPreemptibleInstanceConfigPtrOutput)
 }
 
+func (i *targetAssetUserSpecPreemptibleInstanceConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*TargetAssetUserSpecPreemptibleInstanceConfig] {
+	return pulumix.Output[*TargetAssetUserSpecPreemptibleInstanceConfig]{
+		OutputState: i.ToTargetAssetUserSpecPreemptibleInstanceConfigPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type TargetAssetUserSpecPreemptibleInstanceConfigOutput struct{ *pulumi.OutputState }
 
 func (TargetAssetUserSpecPreemptibleInstanceConfigOutput) ElementType() reflect.Type {
@@ -6708,6 +7633,12 @@ func (o TargetAssetUserSpecPreemptibleInstanceConfigOutput) ToTargetAssetUserSpe
 	}).(TargetAssetUserSpecPreemptibleInstanceConfigPtrOutput)
 }
 
+func (o TargetAssetUserSpecPreemptibleInstanceConfigOutput) ToOutput(ctx context.Context) pulumix.Output[TargetAssetUserSpecPreemptibleInstanceConfig] {
+	return pulumix.Output[TargetAssetUserSpecPreemptibleInstanceConfig]{
+		OutputState: o.OutputState,
+	}
+}
+
 // (Updatable) The action to run when the preemptible instance is interrupted for eviction.
 func (o TargetAssetUserSpecPreemptibleInstanceConfigOutput) PreemptionAction() TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionOutput {
 	return o.ApplyT(func(v TargetAssetUserSpecPreemptibleInstanceConfig) TargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction {
@@ -6727,6 +7658,12 @@ func (o TargetAssetUserSpecPreemptibleInstanceConfigPtrOutput) ToTargetAssetUser
 
 func (o TargetAssetUserSpecPreemptibleInstanceConfigPtrOutput) ToTargetAssetUserSpecPreemptibleInstanceConfigPtrOutputWithContext(ctx context.Context) TargetAssetUserSpecPreemptibleInstanceConfigPtrOutput {
 	return o
+}
+
+func (o TargetAssetUserSpecPreemptibleInstanceConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*TargetAssetUserSpecPreemptibleInstanceConfig] {
+	return pulumix.Output[*TargetAssetUserSpecPreemptibleInstanceConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o TargetAssetUserSpecPreemptibleInstanceConfigPtrOutput) Elem() TargetAssetUserSpecPreemptibleInstanceConfigOutput {
@@ -6786,6 +7723,12 @@ func (i TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArgs) ToTarg
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionOutput)
 }
 
+func (i TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArgs) ToOutput(ctx context.Context) pulumix.Output[TargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction] {
+	return pulumix.Output[TargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction]{
+		OutputState: i.ToTargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArgs) ToTargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionPtrOutput() TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionPtrOutput {
 	return i.ToTargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionPtrOutputWithContext(context.Background())
 }
@@ -6827,6 +7770,12 @@ func (i *targetAssetUserSpecPreemptibleInstanceConfigPreemptionActionPtrType) To
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionPtrOutput)
 }
 
+func (i *targetAssetUserSpecPreemptibleInstanceConfigPreemptionActionPtrType) ToOutput(ctx context.Context) pulumix.Output[*TargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction] {
+	return pulumix.Output[*TargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction]{
+		OutputState: i.ToTargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionOutput struct{ *pulumi.OutputState }
 
 func (TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionOutput) ElementType() reflect.Type {
@@ -6849,6 +7798,12 @@ func (o TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionOutput) ToTa
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v TargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction) *TargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction {
 		return &v
 	}).(TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionPtrOutput)
+}
+
+func (o TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionOutput) ToOutput(ctx context.Context) pulumix.Output[TargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction] {
+	return pulumix.Output[TargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. By default, it is false if not specified.
@@ -6875,6 +7830,12 @@ func (o TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionPtrOutput) T
 
 func (o TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionPtrOutput) ToTargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionPtrOutputWithContext(ctx context.Context) TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionPtrOutput {
 	return o
+}
+
+func (o TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*TargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction] {
+	return pulumix.Output[*TargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionPtrOutput) Elem() TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionOutput {
@@ -6952,6 +7913,12 @@ func (i TargetAssetUserSpecShapeConfigArgs) ToTargetAssetUserSpecShapeConfigOutp
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetUserSpecShapeConfigOutput)
 }
 
+func (i TargetAssetUserSpecShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[TargetAssetUserSpecShapeConfig] {
+	return pulumix.Output[TargetAssetUserSpecShapeConfig]{
+		OutputState: i.ToTargetAssetUserSpecShapeConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i TargetAssetUserSpecShapeConfigArgs) ToTargetAssetUserSpecShapeConfigPtrOutput() TargetAssetUserSpecShapeConfigPtrOutput {
 	return i.ToTargetAssetUserSpecShapeConfigPtrOutputWithContext(context.Background())
 }
@@ -6993,6 +7960,12 @@ func (i *targetAssetUserSpecShapeConfigPtrType) ToTargetAssetUserSpecShapeConfig
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetUserSpecShapeConfigPtrOutput)
 }
 
+func (i *targetAssetUserSpecShapeConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*TargetAssetUserSpecShapeConfig] {
+	return pulumix.Output[*TargetAssetUserSpecShapeConfig]{
+		OutputState: i.ToTargetAssetUserSpecShapeConfigPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type TargetAssetUserSpecShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (TargetAssetUserSpecShapeConfigOutput) ElementType() reflect.Type {
@@ -7015,6 +7988,12 @@ func (o TargetAssetUserSpecShapeConfigOutput) ToTargetAssetUserSpecShapeConfigPt
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v TargetAssetUserSpecShapeConfig) *TargetAssetUserSpecShapeConfig {
 		return &v
 	}).(TargetAssetUserSpecShapeConfigPtrOutput)
+}
+
+func (o TargetAssetUserSpecShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[TargetAssetUserSpecShapeConfig] {
+	return pulumix.Output[TargetAssetUserSpecShapeConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
@@ -7046,6 +8025,12 @@ func (o TargetAssetUserSpecShapeConfigPtrOutput) ToTargetAssetUserSpecShapeConfi
 
 func (o TargetAssetUserSpecShapeConfigPtrOutput) ToTargetAssetUserSpecShapeConfigPtrOutputWithContext(ctx context.Context) TargetAssetUserSpecShapeConfigPtrOutput {
 	return o
+}
+
+func (o TargetAssetUserSpecShapeConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*TargetAssetUserSpecShapeConfig] {
+	return pulumix.Output[*TargetAssetUserSpecShapeConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o TargetAssetUserSpecShapeConfigPtrOutput) Elem() TargetAssetUserSpecShapeConfigOutput {
@@ -7153,6 +8138,12 @@ func (i TargetAssetUserSpecSourceDetailsArgs) ToTargetAssetUserSpecSourceDetails
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetUserSpecSourceDetailsOutput)
 }
 
+func (i TargetAssetUserSpecSourceDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[TargetAssetUserSpecSourceDetails] {
+	return pulumix.Output[TargetAssetUserSpecSourceDetails]{
+		OutputState: i.ToTargetAssetUserSpecSourceDetailsOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i TargetAssetUserSpecSourceDetailsArgs) ToTargetAssetUserSpecSourceDetailsPtrOutput() TargetAssetUserSpecSourceDetailsPtrOutput {
 	return i.ToTargetAssetUserSpecSourceDetailsPtrOutputWithContext(context.Background())
 }
@@ -7194,6 +8185,12 @@ func (i *targetAssetUserSpecSourceDetailsPtrType) ToTargetAssetUserSpecSourceDet
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetUserSpecSourceDetailsPtrOutput)
 }
 
+func (i *targetAssetUserSpecSourceDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*TargetAssetUserSpecSourceDetails] {
+	return pulumix.Output[*TargetAssetUserSpecSourceDetails]{
+		OutputState: i.ToTargetAssetUserSpecSourceDetailsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type TargetAssetUserSpecSourceDetailsOutput struct{ *pulumi.OutputState }
 
 func (TargetAssetUserSpecSourceDetailsOutput) ElementType() reflect.Type {
@@ -7216,6 +8213,12 @@ func (o TargetAssetUserSpecSourceDetailsOutput) ToTargetAssetUserSpecSourceDetai
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v TargetAssetUserSpecSourceDetails) *TargetAssetUserSpecSourceDetails {
 		return &v
 	}).(TargetAssetUserSpecSourceDetailsPtrOutput)
+}
+
+func (o TargetAssetUserSpecSourceDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[TargetAssetUserSpecSourceDetails] {
+	return pulumix.Output[TargetAssetUserSpecSourceDetails]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The OCID of the boot volume used to boot the instance.
@@ -7265,6 +8268,12 @@ func (o TargetAssetUserSpecSourceDetailsPtrOutput) ToTargetAssetUserSpecSourceDe
 
 func (o TargetAssetUserSpecSourceDetailsPtrOutput) ToTargetAssetUserSpecSourceDetailsPtrOutputWithContext(ctx context.Context) TargetAssetUserSpecSourceDetailsPtrOutput {
 	return o
+}
+
+func (o TargetAssetUserSpecSourceDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*TargetAssetUserSpecSourceDetails] {
+	return pulumix.Output[*TargetAssetUserSpecSourceDetails]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o TargetAssetUserSpecSourceDetailsPtrOutput) Elem() TargetAssetUserSpecSourceDetailsOutput {
@@ -7377,6 +8386,12 @@ func (i GetMigrationAssetsFilterArgs) ToGetMigrationAssetsFilterOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationAssetsFilterOutput)
 }
 
+func (i GetMigrationAssetsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationAssetsFilter] {
+	return pulumix.Output[GetMigrationAssetsFilter]{
+		OutputState: i.ToGetMigrationAssetsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationAssetsFilterArrayInput is an input type that accepts GetMigrationAssetsFilterArray and GetMigrationAssetsFilterArrayOutput values.
 // You can construct a concrete instance of `GetMigrationAssetsFilterArrayInput` via:
 //
@@ -7402,6 +8417,12 @@ func (i GetMigrationAssetsFilterArray) ToGetMigrationAssetsFilterArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationAssetsFilterArrayOutput)
 }
 
+func (i GetMigrationAssetsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationAssetsFilter] {
+	return pulumix.Output[[]GetMigrationAssetsFilter]{
+		OutputState: i.ToGetMigrationAssetsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationAssetsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationAssetsFilterOutput) ElementType() reflect.Type {
@@ -7414,6 +8435,12 @@ func (o GetMigrationAssetsFilterOutput) ToGetMigrationAssetsFilterOutput() GetMi
 
 func (o GetMigrationAssetsFilterOutput) ToGetMigrationAssetsFilterOutputWithContext(ctx context.Context) GetMigrationAssetsFilterOutput {
 	return o
+}
+
+func (o GetMigrationAssetsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationAssetsFilter] {
+	return pulumix.Output[GetMigrationAssetsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationAssetsFilterOutput) Name() pulumi.StringOutput {
@@ -7440,6 +8467,12 @@ func (o GetMigrationAssetsFilterArrayOutput) ToGetMigrationAssetsFilterArrayOutp
 
 func (o GetMigrationAssetsFilterArrayOutput) ToGetMigrationAssetsFilterArrayOutputWithContext(ctx context.Context) GetMigrationAssetsFilterArrayOutput {
 	return o
+}
+
+func (o GetMigrationAssetsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationAssetsFilter] {
+	return pulumix.Output[[]GetMigrationAssetsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationAssetsFilterArrayOutput) Index(i pulumi.IntInput) GetMigrationAssetsFilterOutput {
@@ -7479,6 +8512,12 @@ func (i GetMigrationAssetsMigrationAssetCollectionArgs) ToGetMigrationAssetsMigr
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationAssetsMigrationAssetCollectionOutput)
 }
 
+func (i GetMigrationAssetsMigrationAssetCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationAssetsMigrationAssetCollection] {
+	return pulumix.Output[GetMigrationAssetsMigrationAssetCollection]{
+		OutputState: i.ToGetMigrationAssetsMigrationAssetCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationAssetsMigrationAssetCollectionArrayInput is an input type that accepts GetMigrationAssetsMigrationAssetCollectionArray and GetMigrationAssetsMigrationAssetCollectionArrayOutput values.
 // You can construct a concrete instance of `GetMigrationAssetsMigrationAssetCollectionArrayInput` via:
 //
@@ -7504,6 +8543,12 @@ func (i GetMigrationAssetsMigrationAssetCollectionArray) ToGetMigrationAssetsMig
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationAssetsMigrationAssetCollectionArrayOutput)
 }
 
+func (i GetMigrationAssetsMigrationAssetCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationAssetsMigrationAssetCollection] {
+	return pulumix.Output[[]GetMigrationAssetsMigrationAssetCollection]{
+		OutputState: i.ToGetMigrationAssetsMigrationAssetCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationAssetsMigrationAssetCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationAssetsMigrationAssetCollectionOutput) ElementType() reflect.Type {
@@ -7516,6 +8561,12 @@ func (o GetMigrationAssetsMigrationAssetCollectionOutput) ToGetMigrationAssetsMi
 
 func (o GetMigrationAssetsMigrationAssetCollectionOutput) ToGetMigrationAssetsMigrationAssetCollectionOutputWithContext(ctx context.Context) GetMigrationAssetsMigrationAssetCollectionOutput {
 	return o
+}
+
+func (o GetMigrationAssetsMigrationAssetCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationAssetsMigrationAssetCollection] {
+	return pulumix.Output[GetMigrationAssetsMigrationAssetCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationAssetsMigrationAssetCollectionOutput) Items() GetMigrationAssetsMigrationAssetCollectionItemArrayOutput {
@@ -7536,6 +8587,12 @@ func (o GetMigrationAssetsMigrationAssetCollectionArrayOutput) ToGetMigrationAss
 
 func (o GetMigrationAssetsMigrationAssetCollectionArrayOutput) ToGetMigrationAssetsMigrationAssetCollectionArrayOutputWithContext(ctx context.Context) GetMigrationAssetsMigrationAssetCollectionArrayOutput {
 	return o
+}
+
+func (o GetMigrationAssetsMigrationAssetCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationAssetsMigrationAssetCollection] {
+	return pulumix.Output[[]GetMigrationAssetsMigrationAssetCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationAssetsMigrationAssetCollectionArrayOutput) Index(i pulumi.IntInput) GetMigrationAssetsMigrationAssetCollectionOutput {
@@ -7653,6 +8710,12 @@ func (i GetMigrationAssetsMigrationAssetCollectionItemArgs) ToGetMigrationAssets
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationAssetsMigrationAssetCollectionItemOutput)
 }
 
+func (i GetMigrationAssetsMigrationAssetCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationAssetsMigrationAssetCollectionItem] {
+	return pulumix.Output[GetMigrationAssetsMigrationAssetCollectionItem]{
+		OutputState: i.ToGetMigrationAssetsMigrationAssetCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationAssetsMigrationAssetCollectionItemArrayInput is an input type that accepts GetMigrationAssetsMigrationAssetCollectionItemArray and GetMigrationAssetsMigrationAssetCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetMigrationAssetsMigrationAssetCollectionItemArrayInput` via:
 //
@@ -7678,6 +8741,12 @@ func (i GetMigrationAssetsMigrationAssetCollectionItemArray) ToGetMigrationAsset
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationAssetsMigrationAssetCollectionItemArrayOutput)
 }
 
+func (i GetMigrationAssetsMigrationAssetCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationAssetsMigrationAssetCollectionItem] {
+	return pulumix.Output[[]GetMigrationAssetsMigrationAssetCollectionItem]{
+		OutputState: i.ToGetMigrationAssetsMigrationAssetCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationAssetsMigrationAssetCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationAssetsMigrationAssetCollectionItemOutput) ElementType() reflect.Type {
@@ -7690,6 +8759,12 @@ func (o GetMigrationAssetsMigrationAssetCollectionItemOutput) ToGetMigrationAsse
 
 func (o GetMigrationAssetsMigrationAssetCollectionItemOutput) ToGetMigrationAssetsMigrationAssetCollectionItemOutputWithContext(ctx context.Context) GetMigrationAssetsMigrationAssetCollectionItemOutput {
 	return o
+}
+
+func (o GetMigrationAssetsMigrationAssetCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationAssetsMigrationAssetCollectionItem] {
+	return pulumix.Output[GetMigrationAssetsMigrationAssetCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Availability domain
@@ -7809,6 +8884,12 @@ func (o GetMigrationAssetsMigrationAssetCollectionItemArrayOutput) ToGetMigratio
 	return o
 }
 
+func (o GetMigrationAssetsMigrationAssetCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationAssetsMigrationAssetCollectionItem] {
+	return pulumix.Output[[]GetMigrationAssetsMigrationAssetCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetMigrationAssetsMigrationAssetCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMigrationAssetsMigrationAssetCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationAssetsMigrationAssetCollectionItem {
 		return vs[0].([]GetMigrationAssetsMigrationAssetCollectionItem)[vs[1].(int)]
@@ -7912,6 +8993,12 @@ func (i GetMigrationPlanAvailableShapeItemArgs) ToGetMigrationPlanAvailableShape
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlanAvailableShapeItemOutput)
 }
 
+func (i GetMigrationPlanAvailableShapeItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationPlanAvailableShapeItem] {
+	return pulumix.Output[GetMigrationPlanAvailableShapeItem]{
+		OutputState: i.ToGetMigrationPlanAvailableShapeItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationPlanAvailableShapeItemArrayInput is an input type that accepts GetMigrationPlanAvailableShapeItemArray and GetMigrationPlanAvailableShapeItemArrayOutput values.
 // You can construct a concrete instance of `GetMigrationPlanAvailableShapeItemArrayInput` via:
 //
@@ -7937,6 +9024,12 @@ func (i GetMigrationPlanAvailableShapeItemArray) ToGetMigrationPlanAvailableShap
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlanAvailableShapeItemArrayOutput)
 }
 
+func (i GetMigrationPlanAvailableShapeItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationPlanAvailableShapeItem] {
+	return pulumix.Output[[]GetMigrationPlanAvailableShapeItem]{
+		OutputState: i.ToGetMigrationPlanAvailableShapeItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationPlanAvailableShapeItemOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationPlanAvailableShapeItemOutput) ElementType() reflect.Type {
@@ -7949,6 +9042,12 @@ func (o GetMigrationPlanAvailableShapeItemOutput) ToGetMigrationPlanAvailableSha
 
 func (o GetMigrationPlanAvailableShapeItemOutput) ToGetMigrationPlanAvailableShapeItemOutputWithContext(ctx context.Context) GetMigrationPlanAvailableShapeItemOutput {
 	return o
+}
+
+func (o GetMigrationPlanAvailableShapeItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationPlanAvailableShapeItem] {
+	return pulumix.Output[GetMigrationPlanAvailableShapeItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The availability domain in which to list resources.
@@ -8050,6 +9149,12 @@ func (o GetMigrationPlanAvailableShapeItemArrayOutput) ToGetMigrationPlanAvailab
 	return o
 }
 
+func (o GetMigrationPlanAvailableShapeItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationPlanAvailableShapeItem] {
+	return pulumix.Output[[]GetMigrationPlanAvailableShapeItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetMigrationPlanAvailableShapeItemArrayOutput) Index(i pulumi.IntInput) GetMigrationPlanAvailableShapeItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationPlanAvailableShapeItem {
 		return vs[0].([]GetMigrationPlanAvailableShapeItem)[vs[1].(int)]
@@ -8089,6 +9194,12 @@ func (i GetMigrationPlanAvailableShapesAvailableShapesCollectionArgs) ToGetMigra
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlanAvailableShapesAvailableShapesCollectionOutput)
 }
 
+func (i GetMigrationPlanAvailableShapesAvailableShapesCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationPlanAvailableShapesAvailableShapesCollection] {
+	return pulumix.Output[GetMigrationPlanAvailableShapesAvailableShapesCollection]{
+		OutputState: i.ToGetMigrationPlanAvailableShapesAvailableShapesCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationPlanAvailableShapesAvailableShapesCollectionArrayInput is an input type that accepts GetMigrationPlanAvailableShapesAvailableShapesCollectionArray and GetMigrationPlanAvailableShapesAvailableShapesCollectionArrayOutput values.
 // You can construct a concrete instance of `GetMigrationPlanAvailableShapesAvailableShapesCollectionArrayInput` via:
 //
@@ -8114,6 +9225,12 @@ func (i GetMigrationPlanAvailableShapesAvailableShapesCollectionArray) ToGetMigr
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlanAvailableShapesAvailableShapesCollectionArrayOutput)
 }
 
+func (i GetMigrationPlanAvailableShapesAvailableShapesCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationPlanAvailableShapesAvailableShapesCollection] {
+	return pulumix.Output[[]GetMigrationPlanAvailableShapesAvailableShapesCollection]{
+		OutputState: i.ToGetMigrationPlanAvailableShapesAvailableShapesCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationPlanAvailableShapesAvailableShapesCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationPlanAvailableShapesAvailableShapesCollectionOutput) ElementType() reflect.Type {
@@ -8126,6 +9243,12 @@ func (o GetMigrationPlanAvailableShapesAvailableShapesCollectionOutput) ToGetMig
 
 func (o GetMigrationPlanAvailableShapesAvailableShapesCollectionOutput) ToGetMigrationPlanAvailableShapesAvailableShapesCollectionOutputWithContext(ctx context.Context) GetMigrationPlanAvailableShapesAvailableShapesCollectionOutput {
 	return o
+}
+
+func (o GetMigrationPlanAvailableShapesAvailableShapesCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationPlanAvailableShapesAvailableShapesCollection] {
+	return pulumix.Output[GetMigrationPlanAvailableShapesAvailableShapesCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Available shapes list.
@@ -8147,6 +9270,12 @@ func (o GetMigrationPlanAvailableShapesAvailableShapesCollectionArrayOutput) ToG
 
 func (o GetMigrationPlanAvailableShapesAvailableShapesCollectionArrayOutput) ToGetMigrationPlanAvailableShapesAvailableShapesCollectionArrayOutputWithContext(ctx context.Context) GetMigrationPlanAvailableShapesAvailableShapesCollectionArrayOutput {
 	return o
+}
+
+func (o GetMigrationPlanAvailableShapesAvailableShapesCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationPlanAvailableShapesAvailableShapesCollection] {
+	return pulumix.Output[[]GetMigrationPlanAvailableShapesAvailableShapesCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationPlanAvailableShapesAvailableShapesCollectionArrayOutput) Index(i pulumi.IntInput) GetMigrationPlanAvailableShapesAvailableShapesCollectionOutput {
@@ -8252,6 +9381,12 @@ func (i GetMigrationPlanAvailableShapesAvailableShapesCollectionItemArgs) ToGetM
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlanAvailableShapesAvailableShapesCollectionItemOutput)
 }
 
+func (i GetMigrationPlanAvailableShapesAvailableShapesCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationPlanAvailableShapesAvailableShapesCollectionItem] {
+	return pulumix.Output[GetMigrationPlanAvailableShapesAvailableShapesCollectionItem]{
+		OutputState: i.ToGetMigrationPlanAvailableShapesAvailableShapesCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationPlanAvailableShapesAvailableShapesCollectionItemArrayInput is an input type that accepts GetMigrationPlanAvailableShapesAvailableShapesCollectionItemArray and GetMigrationPlanAvailableShapesAvailableShapesCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetMigrationPlanAvailableShapesAvailableShapesCollectionItemArrayInput` via:
 //
@@ -8277,6 +9412,12 @@ func (i GetMigrationPlanAvailableShapesAvailableShapesCollectionItemArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlanAvailableShapesAvailableShapesCollectionItemArrayOutput)
 }
 
+func (i GetMigrationPlanAvailableShapesAvailableShapesCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationPlanAvailableShapesAvailableShapesCollectionItem] {
+	return pulumix.Output[[]GetMigrationPlanAvailableShapesAvailableShapesCollectionItem]{
+		OutputState: i.ToGetMigrationPlanAvailableShapesAvailableShapesCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationPlanAvailableShapesAvailableShapesCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationPlanAvailableShapesAvailableShapesCollectionItemOutput) ElementType() reflect.Type {
@@ -8289,6 +9430,12 @@ func (o GetMigrationPlanAvailableShapesAvailableShapesCollectionItemOutput) ToGe
 
 func (o GetMigrationPlanAvailableShapesAvailableShapesCollectionItemOutput) ToGetMigrationPlanAvailableShapesAvailableShapesCollectionItemOutputWithContext(ctx context.Context) GetMigrationPlanAvailableShapesAvailableShapesCollectionItemOutput {
 	return o
+}
+
+func (o GetMigrationPlanAvailableShapesAvailableShapesCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationPlanAvailableShapesAvailableShapesCollectionItem] {
+	return pulumix.Output[GetMigrationPlanAvailableShapesAvailableShapesCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The availability domain in which to list resources.
@@ -8408,6 +9555,12 @@ func (o GetMigrationPlanAvailableShapesAvailableShapesCollectionItemArrayOutput)
 	return o
 }
 
+func (o GetMigrationPlanAvailableShapesAvailableShapesCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationPlanAvailableShapesAvailableShapesCollectionItem] {
+	return pulumix.Output[[]GetMigrationPlanAvailableShapesAvailableShapesCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetMigrationPlanAvailableShapesAvailableShapesCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMigrationPlanAvailableShapesAvailableShapesCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationPlanAvailableShapesAvailableShapesCollectionItem {
 		return vs[0].([]GetMigrationPlanAvailableShapesAvailableShapesCollectionItem)[vs[1].(int)]
@@ -8449,6 +9602,12 @@ func (i GetMigrationPlanAvailableShapesFilterArgs) ToGetMigrationPlanAvailableSh
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlanAvailableShapesFilterOutput)
 }
 
+func (i GetMigrationPlanAvailableShapesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationPlanAvailableShapesFilter] {
+	return pulumix.Output[GetMigrationPlanAvailableShapesFilter]{
+		OutputState: i.ToGetMigrationPlanAvailableShapesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationPlanAvailableShapesFilterArrayInput is an input type that accepts GetMigrationPlanAvailableShapesFilterArray and GetMigrationPlanAvailableShapesFilterArrayOutput values.
 // You can construct a concrete instance of `GetMigrationPlanAvailableShapesFilterArrayInput` via:
 //
@@ -8474,6 +9633,12 @@ func (i GetMigrationPlanAvailableShapesFilterArray) ToGetMigrationPlanAvailableS
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlanAvailableShapesFilterArrayOutput)
 }
 
+func (i GetMigrationPlanAvailableShapesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationPlanAvailableShapesFilter] {
+	return pulumix.Output[[]GetMigrationPlanAvailableShapesFilter]{
+		OutputState: i.ToGetMigrationPlanAvailableShapesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationPlanAvailableShapesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationPlanAvailableShapesFilterOutput) ElementType() reflect.Type {
@@ -8486,6 +9651,12 @@ func (o GetMigrationPlanAvailableShapesFilterOutput) ToGetMigrationPlanAvailable
 
 func (o GetMigrationPlanAvailableShapesFilterOutput) ToGetMigrationPlanAvailableShapesFilterOutputWithContext(ctx context.Context) GetMigrationPlanAvailableShapesFilterOutput {
 	return o
+}
+
+func (o GetMigrationPlanAvailableShapesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationPlanAvailableShapesFilter] {
+	return pulumix.Output[GetMigrationPlanAvailableShapesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationPlanAvailableShapesFilterOutput) Name() pulumi.StringOutput {
@@ -8512,6 +9683,12 @@ func (o GetMigrationPlanAvailableShapesFilterArrayOutput) ToGetMigrationPlanAvai
 
 func (o GetMigrationPlanAvailableShapesFilterArrayOutput) ToGetMigrationPlanAvailableShapesFilterArrayOutputWithContext(ctx context.Context) GetMigrationPlanAvailableShapesFilterArrayOutput {
 	return o
+}
+
+func (o GetMigrationPlanAvailableShapesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationPlanAvailableShapesFilter] {
+	return pulumix.Output[[]GetMigrationPlanAvailableShapesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationPlanAvailableShapesFilterArrayOutput) Index(i pulumi.IntInput) GetMigrationPlanAvailableShapesFilterOutput {
@@ -8561,6 +9738,12 @@ func (i GetMigrationPlanMigrationPlanStatArgs) ToGetMigrationPlanMigrationPlanSt
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlanMigrationPlanStatOutput)
 }
 
+func (i GetMigrationPlanMigrationPlanStatArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationPlanMigrationPlanStat] {
+	return pulumix.Output[GetMigrationPlanMigrationPlanStat]{
+		OutputState: i.ToGetMigrationPlanMigrationPlanStatOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationPlanMigrationPlanStatArrayInput is an input type that accepts GetMigrationPlanMigrationPlanStatArray and GetMigrationPlanMigrationPlanStatArrayOutput values.
 // You can construct a concrete instance of `GetMigrationPlanMigrationPlanStatArrayInput` via:
 //
@@ -8586,6 +9769,12 @@ func (i GetMigrationPlanMigrationPlanStatArray) ToGetMigrationPlanMigrationPlanS
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlanMigrationPlanStatArrayOutput)
 }
 
+func (i GetMigrationPlanMigrationPlanStatArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationPlanMigrationPlanStat] {
+	return pulumix.Output[[]GetMigrationPlanMigrationPlanStat]{
+		OutputState: i.ToGetMigrationPlanMigrationPlanStatArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationPlanMigrationPlanStatOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationPlanMigrationPlanStatOutput) ElementType() reflect.Type {
@@ -8598,6 +9787,12 @@ func (o GetMigrationPlanMigrationPlanStatOutput) ToGetMigrationPlanMigrationPlan
 
 func (o GetMigrationPlanMigrationPlanStatOutput) ToGetMigrationPlanMigrationPlanStatOutputWithContext(ctx context.Context) GetMigrationPlanMigrationPlanStatOutput {
 	return o
+}
+
+func (o GetMigrationPlanMigrationPlanStatOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationPlanMigrationPlanStat] {
+	return pulumix.Output[GetMigrationPlanMigrationPlanStat]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The time when the migration plan was updated. An RFC3339 formatted datetime string.
@@ -8629,6 +9824,12 @@ func (o GetMigrationPlanMigrationPlanStatArrayOutput) ToGetMigrationPlanMigratio
 
 func (o GetMigrationPlanMigrationPlanStatArrayOutput) ToGetMigrationPlanMigrationPlanStatArrayOutputWithContext(ctx context.Context) GetMigrationPlanMigrationPlanStatArrayOutput {
 	return o
+}
+
+func (o GetMigrationPlanMigrationPlanStatArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationPlanMigrationPlanStat] {
+	return pulumix.Output[[]GetMigrationPlanMigrationPlanStat]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationPlanMigrationPlanStatArrayOutput) Index(i pulumi.IntInput) GetMigrationPlanMigrationPlanStatOutput {
@@ -8694,6 +9895,12 @@ func (i GetMigrationPlanMigrationPlanStatTotalEstimatedCostArgs) ToGetMigrationP
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlanMigrationPlanStatTotalEstimatedCostOutput)
 }
 
+func (i GetMigrationPlanMigrationPlanStatTotalEstimatedCostArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationPlanMigrationPlanStatTotalEstimatedCost] {
+	return pulumix.Output[GetMigrationPlanMigrationPlanStatTotalEstimatedCost]{
+		OutputState: i.ToGetMigrationPlanMigrationPlanStatTotalEstimatedCostOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationPlanMigrationPlanStatTotalEstimatedCostArrayInput is an input type that accepts GetMigrationPlanMigrationPlanStatTotalEstimatedCostArray and GetMigrationPlanMigrationPlanStatTotalEstimatedCostArrayOutput values.
 // You can construct a concrete instance of `GetMigrationPlanMigrationPlanStatTotalEstimatedCostArrayInput` via:
 //
@@ -8719,6 +9926,12 @@ func (i GetMigrationPlanMigrationPlanStatTotalEstimatedCostArray) ToGetMigration
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlanMigrationPlanStatTotalEstimatedCostArrayOutput)
 }
 
+func (i GetMigrationPlanMigrationPlanStatTotalEstimatedCostArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationPlanMigrationPlanStatTotalEstimatedCost] {
+	return pulumix.Output[[]GetMigrationPlanMigrationPlanStatTotalEstimatedCost]{
+		OutputState: i.ToGetMigrationPlanMigrationPlanStatTotalEstimatedCostArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationPlanMigrationPlanStatTotalEstimatedCostOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationPlanMigrationPlanStatTotalEstimatedCostOutput) ElementType() reflect.Type {
@@ -8731,6 +9944,12 @@ func (o GetMigrationPlanMigrationPlanStatTotalEstimatedCostOutput) ToGetMigratio
 
 func (o GetMigrationPlanMigrationPlanStatTotalEstimatedCostOutput) ToGetMigrationPlanMigrationPlanStatTotalEstimatedCostOutputWithContext(ctx context.Context) GetMigrationPlanMigrationPlanStatTotalEstimatedCostOutput {
 	return o
+}
+
+func (o GetMigrationPlanMigrationPlanStatTotalEstimatedCostOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationPlanMigrationPlanStatTotalEstimatedCost] {
+	return pulumix.Output[GetMigrationPlanMigrationPlanStatTotalEstimatedCost]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Cost estimation for compute
@@ -8788,6 +10007,12 @@ func (o GetMigrationPlanMigrationPlanStatTotalEstimatedCostArrayOutput) ToGetMig
 
 func (o GetMigrationPlanMigrationPlanStatTotalEstimatedCostArrayOutput) ToGetMigrationPlanMigrationPlanStatTotalEstimatedCostArrayOutputWithContext(ctx context.Context) GetMigrationPlanMigrationPlanStatTotalEstimatedCostArrayOutput {
 	return o
+}
+
+func (o GetMigrationPlanMigrationPlanStatTotalEstimatedCostArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationPlanMigrationPlanStatTotalEstimatedCost] {
+	return pulumix.Output[[]GetMigrationPlanMigrationPlanStatTotalEstimatedCost]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationPlanMigrationPlanStatTotalEstimatedCostArrayOutput) Index(i pulumi.IntInput) GetMigrationPlanMigrationPlanStatTotalEstimatedCostOutput {
@@ -8869,6 +10094,12 @@ func (i GetMigrationPlanMigrationPlanStatTotalEstimatedCostComputeArgs) ToGetMig
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlanMigrationPlanStatTotalEstimatedCostComputeOutput)
 }
 
+func (i GetMigrationPlanMigrationPlanStatTotalEstimatedCostComputeArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationPlanMigrationPlanStatTotalEstimatedCostCompute] {
+	return pulumix.Output[GetMigrationPlanMigrationPlanStatTotalEstimatedCostCompute]{
+		OutputState: i.ToGetMigrationPlanMigrationPlanStatTotalEstimatedCostComputeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationPlanMigrationPlanStatTotalEstimatedCostComputeArrayInput is an input type that accepts GetMigrationPlanMigrationPlanStatTotalEstimatedCostComputeArray and GetMigrationPlanMigrationPlanStatTotalEstimatedCostComputeArrayOutput values.
 // You can construct a concrete instance of `GetMigrationPlanMigrationPlanStatTotalEstimatedCostComputeArrayInput` via:
 //
@@ -8894,6 +10125,12 @@ func (i GetMigrationPlanMigrationPlanStatTotalEstimatedCostComputeArray) ToGetMi
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlanMigrationPlanStatTotalEstimatedCostComputeArrayOutput)
 }
 
+func (i GetMigrationPlanMigrationPlanStatTotalEstimatedCostComputeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationPlanMigrationPlanStatTotalEstimatedCostCompute] {
+	return pulumix.Output[[]GetMigrationPlanMigrationPlanStatTotalEstimatedCostCompute]{
+		OutputState: i.ToGetMigrationPlanMigrationPlanStatTotalEstimatedCostComputeArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationPlanMigrationPlanStatTotalEstimatedCostComputeOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationPlanMigrationPlanStatTotalEstimatedCostComputeOutput) ElementType() reflect.Type {
@@ -8906,6 +10143,12 @@ func (o GetMigrationPlanMigrationPlanStatTotalEstimatedCostComputeOutput) ToGetM
 
 func (o GetMigrationPlanMigrationPlanStatTotalEstimatedCostComputeOutput) ToGetMigrationPlanMigrationPlanStatTotalEstimatedCostComputeOutputWithContext(ctx context.Context) GetMigrationPlanMigrationPlanStatTotalEstimatedCostComputeOutput {
 	return o
+}
+
+func (o GetMigrationPlanMigrationPlanStatTotalEstimatedCostComputeOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationPlanMigrationPlanStatTotalEstimatedCostCompute] {
+	return pulumix.Output[GetMigrationPlanMigrationPlanStatTotalEstimatedCostCompute]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Total number of GPU
@@ -8985,6 +10228,12 @@ func (o GetMigrationPlanMigrationPlanStatTotalEstimatedCostComputeArrayOutput) T
 	return o
 }
 
+func (o GetMigrationPlanMigrationPlanStatTotalEstimatedCostComputeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationPlanMigrationPlanStatTotalEstimatedCostCompute] {
+	return pulumix.Output[[]GetMigrationPlanMigrationPlanStatTotalEstimatedCostCompute]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetMigrationPlanMigrationPlanStatTotalEstimatedCostComputeArrayOutput) Index(i pulumi.IntInput) GetMigrationPlanMigrationPlanStatTotalEstimatedCostComputeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationPlanMigrationPlanStatTotalEstimatedCostCompute {
 		return vs[0].([]GetMigrationPlanMigrationPlanStatTotalEstimatedCostCompute)[vs[1].(int)]
@@ -9028,6 +10277,12 @@ func (i GetMigrationPlanMigrationPlanStatTotalEstimatedCostOsImageArgs) ToGetMig
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlanMigrationPlanStatTotalEstimatedCostOsImageOutput)
 }
 
+func (i GetMigrationPlanMigrationPlanStatTotalEstimatedCostOsImageArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationPlanMigrationPlanStatTotalEstimatedCostOsImage] {
+	return pulumix.Output[GetMigrationPlanMigrationPlanStatTotalEstimatedCostOsImage]{
+		OutputState: i.ToGetMigrationPlanMigrationPlanStatTotalEstimatedCostOsImageOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationPlanMigrationPlanStatTotalEstimatedCostOsImageArrayInput is an input type that accepts GetMigrationPlanMigrationPlanStatTotalEstimatedCostOsImageArray and GetMigrationPlanMigrationPlanStatTotalEstimatedCostOsImageArrayOutput values.
 // You can construct a concrete instance of `GetMigrationPlanMigrationPlanStatTotalEstimatedCostOsImageArrayInput` via:
 //
@@ -9053,6 +10308,12 @@ func (i GetMigrationPlanMigrationPlanStatTotalEstimatedCostOsImageArray) ToGetMi
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlanMigrationPlanStatTotalEstimatedCostOsImageArrayOutput)
 }
 
+func (i GetMigrationPlanMigrationPlanStatTotalEstimatedCostOsImageArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationPlanMigrationPlanStatTotalEstimatedCostOsImage] {
+	return pulumix.Output[[]GetMigrationPlanMigrationPlanStatTotalEstimatedCostOsImage]{
+		OutputState: i.ToGetMigrationPlanMigrationPlanStatTotalEstimatedCostOsImageArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationPlanMigrationPlanStatTotalEstimatedCostOsImageOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationPlanMigrationPlanStatTotalEstimatedCostOsImageOutput) ElementType() reflect.Type {
@@ -9065,6 +10326,12 @@ func (o GetMigrationPlanMigrationPlanStatTotalEstimatedCostOsImageOutput) ToGetM
 
 func (o GetMigrationPlanMigrationPlanStatTotalEstimatedCostOsImageOutput) ToGetMigrationPlanMigrationPlanStatTotalEstimatedCostOsImageOutputWithContext(ctx context.Context) GetMigrationPlanMigrationPlanStatTotalEstimatedCostOsImageOutput {
 	return o
+}
+
+func (o GetMigrationPlanMigrationPlanStatTotalEstimatedCostOsImageOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationPlanMigrationPlanStatTotalEstimatedCostOsImage] {
+	return pulumix.Output[GetMigrationPlanMigrationPlanStatTotalEstimatedCostOsImage]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Total price per hour
@@ -9091,6 +10358,12 @@ func (o GetMigrationPlanMigrationPlanStatTotalEstimatedCostOsImageArrayOutput) T
 
 func (o GetMigrationPlanMigrationPlanStatTotalEstimatedCostOsImageArrayOutput) ToGetMigrationPlanMigrationPlanStatTotalEstimatedCostOsImageArrayOutputWithContext(ctx context.Context) GetMigrationPlanMigrationPlanStatTotalEstimatedCostOsImageArrayOutput {
 	return o
+}
+
+func (o GetMigrationPlanMigrationPlanStatTotalEstimatedCostOsImageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationPlanMigrationPlanStatTotalEstimatedCostOsImage] {
+	return pulumix.Output[[]GetMigrationPlanMigrationPlanStatTotalEstimatedCostOsImage]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationPlanMigrationPlanStatTotalEstimatedCostOsImageArrayOutput) Index(i pulumi.IntInput) GetMigrationPlanMigrationPlanStatTotalEstimatedCostOsImageOutput {
@@ -9140,6 +10413,12 @@ func (i GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageArgs) ToGetMig
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageOutput)
 }
 
+func (i GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorage] {
+	return pulumix.Output[GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorage]{
+		OutputState: i.ToGetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageArrayInput is an input type that accepts GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageArray and GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageArrayOutput values.
 // You can construct a concrete instance of `GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageArrayInput` via:
 //
@@ -9165,6 +10444,12 @@ func (i GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageArray) ToGetMi
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageArrayOutput)
 }
 
+func (i GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorage] {
+	return pulumix.Output[[]GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorage]{
+		OutputState: i.ToGetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageOutput) ElementType() reflect.Type {
@@ -9177,6 +10462,12 @@ func (o GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageOutput) ToGetM
 
 func (o GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageOutput) ToGetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageOutputWithContext(ctx context.Context) GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageOutput {
 	return o
+}
+
+func (o GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorage] {
+	return pulumix.Output[GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorage]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Gigabyte storage capacity per month.
@@ -9210,6 +10501,12 @@ func (o GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageArrayOutput) T
 
 func (o GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageArrayOutput) ToGetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageArrayOutputWithContext(ctx context.Context) GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageArrayOutput {
 	return o
+}
+
+func (o GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorage] {
+	return pulumix.Output[[]GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorage]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageArrayOutput) Index(i pulumi.IntInput) GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageOutput {
@@ -9263,6 +10560,12 @@ func (i GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeArgs) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeOutput)
 }
 
+func (i GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolume] {
+	return pulumix.Output[GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolume]{
+		OutputState: i.ToGetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeArrayInput is an input type that accepts GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeArray and GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeArrayOutput values.
 // You can construct a concrete instance of `GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeArrayInput` via:
 //
@@ -9288,6 +10591,12 @@ func (i GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeArray) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeArrayOutput)
 }
 
+func (i GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolume] {
+	return pulumix.Output[[]GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolume]{
+		OutputState: i.ToGetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeOutput) ElementType() reflect.Type {
@@ -9300,6 +10609,12 @@ func (o GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeOutput) 
 
 func (o GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeOutput) ToGetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeOutputWithContext(ctx context.Context) GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeOutput {
 	return o
+}
+
+func (o GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolume] {
+	return pulumix.Output[GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolume]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Gigabyte storage capacity
@@ -9338,6 +10653,12 @@ func (o GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeArrayOut
 
 func (o GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeArrayOutput) ToGetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeArrayOutputWithContext(ctx context.Context) GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeArrayOutput {
 	return o
+}
+
+func (o GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolume] {
+	return pulumix.Output[[]GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolume]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeArrayOutput) Index(i pulumi.IntInput) GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeOutput {
@@ -9399,6 +10720,12 @@ func (i GetMigrationPlanStrategyArgs) ToGetMigrationPlanStrategyOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlanStrategyOutput)
 }
 
+func (i GetMigrationPlanStrategyArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationPlanStrategy] {
+	return pulumix.Output[GetMigrationPlanStrategy]{
+		OutputState: i.ToGetMigrationPlanStrategyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationPlanStrategyArrayInput is an input type that accepts GetMigrationPlanStrategyArray and GetMigrationPlanStrategyArrayOutput values.
 // You can construct a concrete instance of `GetMigrationPlanStrategyArrayInput` via:
 //
@@ -9424,6 +10751,12 @@ func (i GetMigrationPlanStrategyArray) ToGetMigrationPlanStrategyArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlanStrategyArrayOutput)
 }
 
+func (i GetMigrationPlanStrategyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationPlanStrategy] {
+	return pulumix.Output[[]GetMigrationPlanStrategy]{
+		OutputState: i.ToGetMigrationPlanStrategyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationPlanStrategyOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationPlanStrategyOutput) ElementType() reflect.Type {
@@ -9436,6 +10769,12 @@ func (o GetMigrationPlanStrategyOutput) ToGetMigrationPlanStrategyOutput() GetMi
 
 func (o GetMigrationPlanStrategyOutput) ToGetMigrationPlanStrategyOutputWithContext(ctx context.Context) GetMigrationPlanStrategyOutput {
 	return o
+}
+
+func (o GetMigrationPlanStrategyOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationPlanStrategy] {
+	return pulumix.Output[GetMigrationPlanStrategy]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The real resource usage is multiplied to this number before making any recommendation.
@@ -9480,6 +10819,12 @@ func (o GetMigrationPlanStrategyArrayOutput) ToGetMigrationPlanStrategyArrayOutp
 
 func (o GetMigrationPlanStrategyArrayOutput) ToGetMigrationPlanStrategyArrayOutputWithContext(ctx context.Context) GetMigrationPlanStrategyArrayOutput {
 	return o
+}
+
+func (o GetMigrationPlanStrategyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationPlanStrategy] {
+	return pulumix.Output[[]GetMigrationPlanStrategy]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationPlanStrategyArrayOutput) Index(i pulumi.IntInput) GetMigrationPlanStrategyOutput {
@@ -9553,6 +10898,12 @@ func (i GetMigrationPlanTargetEnvironmentArgs) ToGetMigrationPlanTargetEnvironme
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlanTargetEnvironmentOutput)
 }
 
+func (i GetMigrationPlanTargetEnvironmentArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationPlanTargetEnvironment] {
+	return pulumix.Output[GetMigrationPlanTargetEnvironment]{
+		OutputState: i.ToGetMigrationPlanTargetEnvironmentOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationPlanTargetEnvironmentArrayInput is an input type that accepts GetMigrationPlanTargetEnvironmentArray and GetMigrationPlanTargetEnvironmentArrayOutput values.
 // You can construct a concrete instance of `GetMigrationPlanTargetEnvironmentArrayInput` via:
 //
@@ -9578,6 +10929,12 @@ func (i GetMigrationPlanTargetEnvironmentArray) ToGetMigrationPlanTargetEnvironm
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlanTargetEnvironmentArrayOutput)
 }
 
+func (i GetMigrationPlanTargetEnvironmentArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationPlanTargetEnvironment] {
+	return pulumix.Output[[]GetMigrationPlanTargetEnvironment]{
+		OutputState: i.ToGetMigrationPlanTargetEnvironmentArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationPlanTargetEnvironmentOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationPlanTargetEnvironmentOutput) ElementType() reflect.Type {
@@ -9590,6 +10947,12 @@ func (o GetMigrationPlanTargetEnvironmentOutput) ToGetMigrationPlanTargetEnviron
 
 func (o GetMigrationPlanTargetEnvironmentOutput) ToGetMigrationPlanTargetEnvironmentOutputWithContext(ctx context.Context) GetMigrationPlanTargetEnvironmentOutput {
 	return o
+}
+
+func (o GetMigrationPlanTargetEnvironmentOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationPlanTargetEnvironment] {
+	return pulumix.Output[GetMigrationPlanTargetEnvironment]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Availability Domain of the VM configuration.
@@ -9651,6 +11014,12 @@ func (o GetMigrationPlanTargetEnvironmentArrayOutput) ToGetMigrationPlanTargetEn
 	return o
 }
 
+func (o GetMigrationPlanTargetEnvironmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationPlanTargetEnvironment] {
+	return pulumix.Output[[]GetMigrationPlanTargetEnvironment]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetMigrationPlanTargetEnvironmentArrayOutput) Index(i pulumi.IntInput) GetMigrationPlanTargetEnvironmentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationPlanTargetEnvironment {
 		return vs[0].([]GetMigrationPlanTargetEnvironment)[vs[1].(int)]
@@ -9692,6 +11061,12 @@ func (i GetMigrationPlansFilterArgs) ToGetMigrationPlansFilterOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlansFilterOutput)
 }
 
+func (i GetMigrationPlansFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationPlansFilter] {
+	return pulumix.Output[GetMigrationPlansFilter]{
+		OutputState: i.ToGetMigrationPlansFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationPlansFilterArrayInput is an input type that accepts GetMigrationPlansFilterArray and GetMigrationPlansFilterArrayOutput values.
 // You can construct a concrete instance of `GetMigrationPlansFilterArrayInput` via:
 //
@@ -9717,6 +11092,12 @@ func (i GetMigrationPlansFilterArray) ToGetMigrationPlansFilterArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlansFilterArrayOutput)
 }
 
+func (i GetMigrationPlansFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationPlansFilter] {
+	return pulumix.Output[[]GetMigrationPlansFilter]{
+		OutputState: i.ToGetMigrationPlansFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationPlansFilterOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationPlansFilterOutput) ElementType() reflect.Type {
@@ -9729,6 +11110,12 @@ func (o GetMigrationPlansFilterOutput) ToGetMigrationPlansFilterOutput() GetMigr
 
 func (o GetMigrationPlansFilterOutput) ToGetMigrationPlansFilterOutputWithContext(ctx context.Context) GetMigrationPlansFilterOutput {
 	return o
+}
+
+func (o GetMigrationPlansFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationPlansFilter] {
+	return pulumix.Output[GetMigrationPlansFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationPlansFilterOutput) Name() pulumi.StringOutput {
@@ -9755,6 +11142,12 @@ func (o GetMigrationPlansFilterArrayOutput) ToGetMigrationPlansFilterArrayOutput
 
 func (o GetMigrationPlansFilterArrayOutput) ToGetMigrationPlansFilterArrayOutputWithContext(ctx context.Context) GetMigrationPlansFilterArrayOutput {
 	return o
+}
+
+func (o GetMigrationPlansFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationPlansFilter] {
+	return pulumix.Output[[]GetMigrationPlansFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationPlansFilterArrayOutput) Index(i pulumi.IntInput) GetMigrationPlansFilterOutput {
@@ -9794,6 +11187,12 @@ func (i GetMigrationPlansMigrationPlanCollectionArgs) ToGetMigrationPlansMigrati
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlansMigrationPlanCollectionOutput)
 }
 
+func (i GetMigrationPlansMigrationPlanCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationPlansMigrationPlanCollection] {
+	return pulumix.Output[GetMigrationPlansMigrationPlanCollection]{
+		OutputState: i.ToGetMigrationPlansMigrationPlanCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationPlansMigrationPlanCollectionArrayInput is an input type that accepts GetMigrationPlansMigrationPlanCollectionArray and GetMigrationPlansMigrationPlanCollectionArrayOutput values.
 // You can construct a concrete instance of `GetMigrationPlansMigrationPlanCollectionArrayInput` via:
 //
@@ -9819,6 +11218,12 @@ func (i GetMigrationPlansMigrationPlanCollectionArray) ToGetMigrationPlansMigrat
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlansMigrationPlanCollectionArrayOutput)
 }
 
+func (i GetMigrationPlansMigrationPlanCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationPlansMigrationPlanCollection] {
+	return pulumix.Output[[]GetMigrationPlansMigrationPlanCollection]{
+		OutputState: i.ToGetMigrationPlansMigrationPlanCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationPlansMigrationPlanCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationPlansMigrationPlanCollectionOutput) ElementType() reflect.Type {
@@ -9831,6 +11236,12 @@ func (o GetMigrationPlansMigrationPlanCollectionOutput) ToGetMigrationPlansMigra
 
 func (o GetMigrationPlansMigrationPlanCollectionOutput) ToGetMigrationPlansMigrationPlanCollectionOutputWithContext(ctx context.Context) GetMigrationPlansMigrationPlanCollectionOutput {
 	return o
+}
+
+func (o GetMigrationPlansMigrationPlanCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationPlansMigrationPlanCollection] {
+	return pulumix.Output[GetMigrationPlansMigrationPlanCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationPlansMigrationPlanCollectionOutput) Items() GetMigrationPlansMigrationPlanCollectionItemArrayOutput {
@@ -9851,6 +11262,12 @@ func (o GetMigrationPlansMigrationPlanCollectionArrayOutput) ToGetMigrationPlans
 
 func (o GetMigrationPlansMigrationPlanCollectionArrayOutput) ToGetMigrationPlansMigrationPlanCollectionArrayOutputWithContext(ctx context.Context) GetMigrationPlansMigrationPlanCollectionArrayOutput {
 	return o
+}
+
+func (o GetMigrationPlansMigrationPlanCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationPlansMigrationPlanCollection] {
+	return pulumix.Output[[]GetMigrationPlansMigrationPlanCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationPlansMigrationPlanCollectionArrayOutput) Index(i pulumi.IntInput) GetMigrationPlansMigrationPlanCollectionOutput {
@@ -9956,6 +11373,12 @@ func (i GetMigrationPlansMigrationPlanCollectionItemArgs) ToGetMigrationPlansMig
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlansMigrationPlanCollectionItemOutput)
 }
 
+func (i GetMigrationPlansMigrationPlanCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationPlansMigrationPlanCollectionItem] {
+	return pulumix.Output[GetMigrationPlansMigrationPlanCollectionItem]{
+		OutputState: i.ToGetMigrationPlansMigrationPlanCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationPlansMigrationPlanCollectionItemArrayInput is an input type that accepts GetMigrationPlansMigrationPlanCollectionItemArray and GetMigrationPlansMigrationPlanCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetMigrationPlansMigrationPlanCollectionItemArrayInput` via:
 //
@@ -9981,6 +11404,12 @@ func (i GetMigrationPlansMigrationPlanCollectionItemArray) ToGetMigrationPlansMi
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlansMigrationPlanCollectionItemArrayOutput)
 }
 
+func (i GetMigrationPlansMigrationPlanCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationPlansMigrationPlanCollectionItem] {
+	return pulumix.Output[[]GetMigrationPlansMigrationPlanCollectionItem]{
+		OutputState: i.ToGetMigrationPlansMigrationPlanCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationPlansMigrationPlanCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationPlansMigrationPlanCollectionItemOutput) ElementType() reflect.Type {
@@ -9993,6 +11422,12 @@ func (o GetMigrationPlansMigrationPlanCollectionItemOutput) ToGetMigrationPlansM
 
 func (o GetMigrationPlansMigrationPlanCollectionItemOutput) ToGetMigrationPlansMigrationPlanCollectionItemOutputWithContext(ctx context.Context) GetMigrationPlansMigrationPlanCollectionItemOutput {
 	return o
+}
+
+func (o GetMigrationPlansMigrationPlanCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationPlansMigrationPlanCollectionItem] {
+	return pulumix.Output[GetMigrationPlansMigrationPlanCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Limits of the resources that are needed for migration. Example: {"BlockVolume": 2, "VCN": 1}
@@ -10100,6 +11535,12 @@ func (o GetMigrationPlansMigrationPlanCollectionItemArrayOutput) ToGetMigrationP
 	return o
 }
 
+func (o GetMigrationPlansMigrationPlanCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationPlansMigrationPlanCollectionItem] {
+	return pulumix.Output[[]GetMigrationPlansMigrationPlanCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetMigrationPlansMigrationPlanCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMigrationPlansMigrationPlanCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationPlansMigrationPlanCollectionItem {
 		return vs[0].([]GetMigrationPlansMigrationPlanCollectionItem)[vs[1].(int)]
@@ -10147,6 +11588,12 @@ func (i GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatArgs) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatOutput)
 }
 
+func (i GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStat] {
+	return pulumix.Output[GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStat]{
+		OutputState: i.ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatArrayInput is an input type that accepts GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatArray and GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatArrayOutput values.
 // You can construct a concrete instance of `GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatArrayInput` via:
 //
@@ -10172,6 +11619,12 @@ func (i GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatArray) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatArrayOutput)
 }
 
+func (i GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStat] {
+	return pulumix.Output[[]GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStat]{
+		OutputState: i.ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatOutput) ElementType() reflect.Type {
@@ -10184,6 +11637,12 @@ func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatOutput) ToG
 
 func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatOutput) ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatOutputWithContext(ctx context.Context) GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatOutput {
 	return o
+}
+
+func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStat] {
+	return pulumix.Output[GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStat]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The time when the migration plan was updated. An RFC3339 formatted datetime string.
@@ -10215,6 +11674,12 @@ func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatArrayOutput
 
 func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatArrayOutput) ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatArrayOutputWithContext(ctx context.Context) GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatArrayOutput {
 	return o
+}
+
+func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStat] {
+	return pulumix.Output[[]GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStat]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatArrayOutput) Index(i pulumi.IntInput) GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatOutput {
@@ -10280,6 +11745,12 @@ func (i GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstima
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOutput)
 }
 
+func (i GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCost] {
+	return pulumix.Output[GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCost]{
+		OutputState: i.ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostArrayInput is an input type that accepts GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostArray and GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostArrayOutput values.
 // You can construct a concrete instance of `GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostArrayInput` via:
 //
@@ -10305,6 +11776,12 @@ func (i GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstima
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostArrayOutput)
 }
 
+func (i GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCost] {
+	return pulumix.Output[[]GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCost]{
+		OutputState: i.ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOutput) ElementType() reflect.Type {
@@ -10317,6 +11794,12 @@ func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstima
 
 func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOutput) ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOutputWithContext(ctx context.Context) GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOutput {
 	return o
+}
+
+func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCost] {
+	return pulumix.Output[GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCost]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Cost estimation for compute
@@ -10380,6 +11863,12 @@ func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstima
 
 func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostArrayOutput) ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostArrayOutputWithContext(ctx context.Context) GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostArrayOutput {
 	return o
+}
+
+func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCost] {
+	return pulumix.Output[[]GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCost]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostArrayOutput) Index(i pulumi.IntInput) GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOutput {
@@ -10461,6 +11950,12 @@ func (i GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstima
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostComputeOutput)
 }
 
+func (i GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostComputeArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostCompute] {
+	return pulumix.Output[GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostCompute]{
+		OutputState: i.ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostComputeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostComputeArrayInput is an input type that accepts GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostComputeArray and GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostComputeArrayOutput values.
 // You can construct a concrete instance of `GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostComputeArrayInput` via:
 //
@@ -10486,6 +11981,12 @@ func (i GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstima
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostComputeArrayOutput)
 }
 
+func (i GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostComputeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostCompute] {
+	return pulumix.Output[[]GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostCompute]{
+		OutputState: i.ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostComputeArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostComputeOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostComputeOutput) ElementType() reflect.Type {
@@ -10498,6 +11999,12 @@ func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstima
 
 func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostComputeOutput) ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostComputeOutputWithContext(ctx context.Context) GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostComputeOutput {
 	return o
+}
+
+func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostComputeOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostCompute] {
+	return pulumix.Output[GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostCompute]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Total number of GPU
@@ -10591,6 +12098,12 @@ func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstima
 	return o
 }
 
+func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostComputeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostCompute] {
+	return pulumix.Output[[]GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostCompute]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostComputeArrayOutput) Index(i pulumi.IntInput) GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostComputeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostCompute {
 		return vs[0].([]GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostCompute)[vs[1].(int)]
@@ -10634,6 +12147,12 @@ func (i GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstima
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOsImageOutput)
 }
 
+func (i GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOsImageArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOsImage] {
+	return pulumix.Output[GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOsImage]{
+		OutputState: i.ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOsImageOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOsImageArrayInput is an input type that accepts GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOsImageArray and GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOsImageArrayOutput values.
 // You can construct a concrete instance of `GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOsImageArrayInput` via:
 //
@@ -10659,6 +12178,12 @@ func (i GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstima
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOsImageArrayOutput)
 }
 
+func (i GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOsImageArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOsImage] {
+	return pulumix.Output[[]GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOsImage]{
+		OutputState: i.ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOsImageArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOsImageOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOsImageOutput) ElementType() reflect.Type {
@@ -10671,6 +12196,12 @@ func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstima
 
 func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOsImageOutput) ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOsImageOutputWithContext(ctx context.Context) GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOsImageOutput {
 	return o
+}
+
+func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOsImageOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOsImage] {
+	return pulumix.Output[GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOsImage]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Total price per hour
@@ -10699,6 +12230,12 @@ func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstima
 
 func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOsImageArrayOutput) ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOsImageArrayOutputWithContext(ctx context.Context) GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOsImageArrayOutput {
 	return o
+}
+
+func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOsImageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOsImage] {
+	return pulumix.Output[[]GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOsImage]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOsImageArrayOutput) Index(i pulumi.IntInput) GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOsImageOutput {
@@ -10748,6 +12285,12 @@ func (i GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstima
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageOutput)
 }
 
+func (i GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorage] {
+	return pulumix.Output[GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorage]{
+		OutputState: i.ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageArrayInput is an input type that accepts GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageArray and GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageArrayOutput values.
 // You can construct a concrete instance of `GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageArrayInput` via:
 //
@@ -10773,6 +12316,12 @@ func (i GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstima
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageArrayOutput)
 }
 
+func (i GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorage] {
+	return pulumix.Output[[]GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorage]{
+		OutputState: i.ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageOutput) ElementType() reflect.Type {
@@ -10785,6 +12334,12 @@ func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstima
 
 func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageOutput) ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageOutputWithContext(ctx context.Context) GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageOutput {
 	return o
+}
+
+func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorage] {
+	return pulumix.Output[GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorage]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Gigabyte storage capacity per month.
@@ -10820,6 +12375,12 @@ func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstima
 
 func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageArrayOutput) ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageArrayOutputWithContext(ctx context.Context) GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageArrayOutput {
 	return o
+}
+
+func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorage] {
+	return pulumix.Output[[]GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorage]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageArrayOutput) Index(i pulumi.IntInput) GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageOutput {
@@ -10873,6 +12434,12 @@ func (i GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstima
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageVolumeOutput)
 }
 
+func (i GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageVolumeArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageVolume] {
+	return pulumix.Output[GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageVolume]{
+		OutputState: i.ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageVolumeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageVolumeArrayInput is an input type that accepts GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageVolumeArray and GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageVolumeArrayOutput values.
 // You can construct a concrete instance of `GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageVolumeArrayInput` via:
 //
@@ -10898,6 +12465,12 @@ func (i GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstima
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageVolumeArrayOutput)
 }
 
+func (i GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageVolumeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageVolume] {
+	return pulumix.Output[[]GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageVolume]{
+		OutputState: i.ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageVolumeArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageVolumeOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageVolumeOutput) ElementType() reflect.Type {
@@ -10910,6 +12483,12 @@ func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstima
 
 func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageVolumeOutput) ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageVolumeOutputWithContext(ctx context.Context) GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageVolumeOutput {
 	return o
+}
+
+func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageVolumeOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageVolume] {
+	return pulumix.Output[GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageVolume]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Gigabyte storage capacity
@@ -10952,6 +12531,12 @@ func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstima
 
 func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageVolumeArrayOutput) ToGetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageVolumeArrayOutputWithContext(ctx context.Context) GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageVolumeArrayOutput {
 	return o
+}
+
+func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageVolumeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageVolume] {
+	return pulumix.Output[[]GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageVolume]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageVolumeArrayOutput) Index(i pulumi.IntInput) GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostStorageVolumeOutput {
@@ -11013,6 +12598,12 @@ func (i GetMigrationPlansMigrationPlanCollectionItemStrategyArgs) ToGetMigration
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlansMigrationPlanCollectionItemStrategyOutput)
 }
 
+func (i GetMigrationPlansMigrationPlanCollectionItemStrategyArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationPlansMigrationPlanCollectionItemStrategy] {
+	return pulumix.Output[GetMigrationPlansMigrationPlanCollectionItemStrategy]{
+		OutputState: i.ToGetMigrationPlansMigrationPlanCollectionItemStrategyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationPlansMigrationPlanCollectionItemStrategyArrayInput is an input type that accepts GetMigrationPlansMigrationPlanCollectionItemStrategyArray and GetMigrationPlansMigrationPlanCollectionItemStrategyArrayOutput values.
 // You can construct a concrete instance of `GetMigrationPlansMigrationPlanCollectionItemStrategyArrayInput` via:
 //
@@ -11038,6 +12629,12 @@ func (i GetMigrationPlansMigrationPlanCollectionItemStrategyArray) ToGetMigratio
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlansMigrationPlanCollectionItemStrategyArrayOutput)
 }
 
+func (i GetMigrationPlansMigrationPlanCollectionItemStrategyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationPlansMigrationPlanCollectionItemStrategy] {
+	return pulumix.Output[[]GetMigrationPlansMigrationPlanCollectionItemStrategy]{
+		OutputState: i.ToGetMigrationPlansMigrationPlanCollectionItemStrategyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationPlansMigrationPlanCollectionItemStrategyOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationPlansMigrationPlanCollectionItemStrategyOutput) ElementType() reflect.Type {
@@ -11050,6 +12647,12 @@ func (o GetMigrationPlansMigrationPlanCollectionItemStrategyOutput) ToGetMigrati
 
 func (o GetMigrationPlansMigrationPlanCollectionItemStrategyOutput) ToGetMigrationPlansMigrationPlanCollectionItemStrategyOutputWithContext(ctx context.Context) GetMigrationPlansMigrationPlanCollectionItemStrategyOutput {
 	return o
+}
+
+func (o GetMigrationPlansMigrationPlanCollectionItemStrategyOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationPlansMigrationPlanCollectionItemStrategy] {
+	return pulumix.Output[GetMigrationPlansMigrationPlanCollectionItemStrategy]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The real resource usage is multiplied to this number before making any recommendation.
@@ -11094,6 +12697,12 @@ func (o GetMigrationPlansMigrationPlanCollectionItemStrategyArrayOutput) ToGetMi
 
 func (o GetMigrationPlansMigrationPlanCollectionItemStrategyArrayOutput) ToGetMigrationPlansMigrationPlanCollectionItemStrategyArrayOutputWithContext(ctx context.Context) GetMigrationPlansMigrationPlanCollectionItemStrategyArrayOutput {
 	return o
+}
+
+func (o GetMigrationPlansMigrationPlanCollectionItemStrategyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationPlansMigrationPlanCollectionItemStrategy] {
+	return pulumix.Output[[]GetMigrationPlansMigrationPlanCollectionItemStrategy]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationPlansMigrationPlanCollectionItemStrategyArrayOutput) Index(i pulumi.IntInput) GetMigrationPlansMigrationPlanCollectionItemStrategyOutput {
@@ -11167,6 +12776,12 @@ func (i GetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentArgs) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentOutput)
 }
 
+func (i GetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationPlansMigrationPlanCollectionItemTargetEnvironment] {
+	return pulumix.Output[GetMigrationPlansMigrationPlanCollectionItemTargetEnvironment]{
+		OutputState: i.ToGetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentArrayInput is an input type that accepts GetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentArray and GetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentArrayOutput values.
 // You can construct a concrete instance of `GetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentArrayInput` via:
 //
@@ -11192,6 +12807,12 @@ func (i GetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentArray) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentArrayOutput)
 }
 
+func (i GetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationPlansMigrationPlanCollectionItemTargetEnvironment] {
+	return pulumix.Output[[]GetMigrationPlansMigrationPlanCollectionItemTargetEnvironment]{
+		OutputState: i.ToGetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentOutput) ElementType() reflect.Type {
@@ -11204,6 +12825,12 @@ func (o GetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentOutput) ToG
 
 func (o GetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentOutput) ToGetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentOutputWithContext(ctx context.Context) GetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentOutput {
 	return o
+}
+
+func (o GetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationPlansMigrationPlanCollectionItemTargetEnvironment] {
+	return pulumix.Output[GetMigrationPlansMigrationPlanCollectionItemTargetEnvironment]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Availability Domain of the VM configuration.
@@ -11273,6 +12900,12 @@ func (o GetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentArrayOutput
 	return o
 }
 
+func (o GetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationPlansMigrationPlanCollectionItemTargetEnvironment] {
+	return pulumix.Output[[]GetMigrationPlansMigrationPlanCollectionItemTargetEnvironment]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentArrayOutput) Index(i pulumi.IntInput) GetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationPlansMigrationPlanCollectionItemTargetEnvironment {
 		return vs[0].([]GetMigrationPlansMigrationPlanCollectionItemTargetEnvironment)[vs[1].(int)]
@@ -11314,6 +12947,12 @@ func (i GetMigrationsFilterArgs) ToGetMigrationsFilterOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsFilterOutput)
 }
 
+func (i GetMigrationsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsFilter] {
+	return pulumix.Output[GetMigrationsFilter]{
+		OutputState: i.ToGetMigrationsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationsFilterArrayInput is an input type that accepts GetMigrationsFilterArray and GetMigrationsFilterArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsFilterArrayInput` via:
 //
@@ -11339,6 +12978,12 @@ func (i GetMigrationsFilterArray) ToGetMigrationsFilterArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsFilterArrayOutput)
 }
 
+func (i GetMigrationsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsFilter] {
+	return pulumix.Output[[]GetMigrationsFilter]{
+		OutputState: i.ToGetMigrationsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationsFilterOutput) ElementType() reflect.Type {
@@ -11351,6 +12996,12 @@ func (o GetMigrationsFilterOutput) ToGetMigrationsFilterOutput() GetMigrationsFi
 
 func (o GetMigrationsFilterOutput) ToGetMigrationsFilterOutputWithContext(ctx context.Context) GetMigrationsFilterOutput {
 	return o
+}
+
+func (o GetMigrationsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsFilter] {
+	return pulumix.Output[GetMigrationsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationsFilterOutput) Name() pulumi.StringOutput {
@@ -11377,6 +13028,12 @@ func (o GetMigrationsFilterArrayOutput) ToGetMigrationsFilterArrayOutput() GetMi
 
 func (o GetMigrationsFilterArrayOutput) ToGetMigrationsFilterArrayOutputWithContext(ctx context.Context) GetMigrationsFilterArrayOutput {
 	return o
+}
+
+func (o GetMigrationsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsFilter] {
+	return pulumix.Output[[]GetMigrationsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationsFilterArrayOutput) Index(i pulumi.IntInput) GetMigrationsFilterOutput {
@@ -11416,6 +13073,12 @@ func (i GetMigrationsMigrationCollectionArgs) ToGetMigrationsMigrationCollection
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionOutput)
 }
 
+func (i GetMigrationsMigrationCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollection] {
+	return pulumix.Output[GetMigrationsMigrationCollection]{
+		OutputState: i.ToGetMigrationsMigrationCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationsMigrationCollectionArrayInput is an input type that accepts GetMigrationsMigrationCollectionArray and GetMigrationsMigrationCollectionArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionArrayInput` via:
 //
@@ -11441,6 +13104,12 @@ func (i GetMigrationsMigrationCollectionArray) ToGetMigrationsMigrationCollectio
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionArrayOutput)
 }
 
+func (i GetMigrationsMigrationCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollection] {
+	return pulumix.Output[[]GetMigrationsMigrationCollection]{
+		OutputState: i.ToGetMigrationsMigrationCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationsMigrationCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationsMigrationCollectionOutput) ElementType() reflect.Type {
@@ -11453,6 +13122,12 @@ func (o GetMigrationsMigrationCollectionOutput) ToGetMigrationsMigrationCollecti
 
 func (o GetMigrationsMigrationCollectionOutput) ToGetMigrationsMigrationCollectionOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollection] {
+	return pulumix.Output[GetMigrationsMigrationCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationsMigrationCollectionOutput) Items() GetMigrationsMigrationCollectionItemArrayOutput {
@@ -11471,6 +13146,12 @@ func (o GetMigrationsMigrationCollectionArrayOutput) ToGetMigrationsMigrationCol
 
 func (o GetMigrationsMigrationCollectionArrayOutput) ToGetMigrationsMigrationCollectionArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionArrayOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollection] {
+	return pulumix.Output[[]GetMigrationsMigrationCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationsMigrationCollectionArrayOutput) Index(i pulumi.IntInput) GetMigrationsMigrationCollectionOutput {
@@ -11556,6 +13237,12 @@ func (i GetMigrationsMigrationCollectionItemArgs) ToGetMigrationsMigrationCollec
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItem] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItem]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationsMigrationCollectionItemArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemArray and GetMigrationsMigrationCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemArrayInput` via:
 //
@@ -11581,6 +13268,12 @@ func (i GetMigrationsMigrationCollectionItemArray) ToGetMigrationsMigrationColle
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemArrayOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItem] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItem]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationsMigrationCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationsMigrationCollectionItemOutput) ElementType() reflect.Type {
@@ -11593,6 +13286,12 @@ func (o GetMigrationsMigrationCollectionItemOutput) ToGetMigrationsMigrationColl
 
 func (o GetMigrationsMigrationCollectionItemOutput) ToGetMigrationsMigrationCollectionItemOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItem] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -11669,6 +13368,12 @@ func (o GetMigrationsMigrationCollectionItemArrayOutput) ToGetMigrationsMigratio
 	return o
 }
 
+func (o GetMigrationsMigrationCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItem] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetMigrationsMigrationCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMigrationsMigrationCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationsMigrationCollectionItem {
 		return vs[0].([]GetMigrationsMigrationCollectionItem)[vs[1].(int)]
@@ -11710,6 +13415,12 @@ func (i GetReplicationSchedulesFilterArgs) ToGetReplicationSchedulesFilterOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetReplicationSchedulesFilterOutput)
 }
 
+func (i GetReplicationSchedulesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetReplicationSchedulesFilter] {
+	return pulumix.Output[GetReplicationSchedulesFilter]{
+		OutputState: i.ToGetReplicationSchedulesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetReplicationSchedulesFilterArrayInput is an input type that accepts GetReplicationSchedulesFilterArray and GetReplicationSchedulesFilterArrayOutput values.
 // You can construct a concrete instance of `GetReplicationSchedulesFilterArrayInput` via:
 //
@@ -11735,6 +13446,12 @@ func (i GetReplicationSchedulesFilterArray) ToGetReplicationSchedulesFilterArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetReplicationSchedulesFilterArrayOutput)
 }
 
+func (i GetReplicationSchedulesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetReplicationSchedulesFilter] {
+	return pulumix.Output[[]GetReplicationSchedulesFilter]{
+		OutputState: i.ToGetReplicationSchedulesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetReplicationSchedulesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetReplicationSchedulesFilterOutput) ElementType() reflect.Type {
@@ -11747,6 +13464,12 @@ func (o GetReplicationSchedulesFilterOutput) ToGetReplicationSchedulesFilterOutp
 
 func (o GetReplicationSchedulesFilterOutput) ToGetReplicationSchedulesFilterOutputWithContext(ctx context.Context) GetReplicationSchedulesFilterOutput {
 	return o
+}
+
+func (o GetReplicationSchedulesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetReplicationSchedulesFilter] {
+	return pulumix.Output[GetReplicationSchedulesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetReplicationSchedulesFilterOutput) Name() pulumi.StringOutput {
@@ -11773,6 +13496,12 @@ func (o GetReplicationSchedulesFilterArrayOutput) ToGetReplicationSchedulesFilte
 
 func (o GetReplicationSchedulesFilterArrayOutput) ToGetReplicationSchedulesFilterArrayOutputWithContext(ctx context.Context) GetReplicationSchedulesFilterArrayOutput {
 	return o
+}
+
+func (o GetReplicationSchedulesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetReplicationSchedulesFilter] {
+	return pulumix.Output[[]GetReplicationSchedulesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetReplicationSchedulesFilterArrayOutput) Index(i pulumi.IntInput) GetReplicationSchedulesFilterOutput {
@@ -11812,6 +13541,12 @@ func (i GetReplicationSchedulesReplicationScheduleCollectionArgs) ToGetReplicati
 	return pulumi.ToOutputWithContext(ctx, i).(GetReplicationSchedulesReplicationScheduleCollectionOutput)
 }
 
+func (i GetReplicationSchedulesReplicationScheduleCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetReplicationSchedulesReplicationScheduleCollection] {
+	return pulumix.Output[GetReplicationSchedulesReplicationScheduleCollection]{
+		OutputState: i.ToGetReplicationSchedulesReplicationScheduleCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetReplicationSchedulesReplicationScheduleCollectionArrayInput is an input type that accepts GetReplicationSchedulesReplicationScheduleCollectionArray and GetReplicationSchedulesReplicationScheduleCollectionArrayOutput values.
 // You can construct a concrete instance of `GetReplicationSchedulesReplicationScheduleCollectionArrayInput` via:
 //
@@ -11837,6 +13572,12 @@ func (i GetReplicationSchedulesReplicationScheduleCollectionArray) ToGetReplicat
 	return pulumi.ToOutputWithContext(ctx, i).(GetReplicationSchedulesReplicationScheduleCollectionArrayOutput)
 }
 
+func (i GetReplicationSchedulesReplicationScheduleCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetReplicationSchedulesReplicationScheduleCollection] {
+	return pulumix.Output[[]GetReplicationSchedulesReplicationScheduleCollection]{
+		OutputState: i.ToGetReplicationSchedulesReplicationScheduleCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetReplicationSchedulesReplicationScheduleCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetReplicationSchedulesReplicationScheduleCollectionOutput) ElementType() reflect.Type {
@@ -11849,6 +13590,12 @@ func (o GetReplicationSchedulesReplicationScheduleCollectionOutput) ToGetReplica
 
 func (o GetReplicationSchedulesReplicationScheduleCollectionOutput) ToGetReplicationSchedulesReplicationScheduleCollectionOutputWithContext(ctx context.Context) GetReplicationSchedulesReplicationScheduleCollectionOutput {
 	return o
+}
+
+func (o GetReplicationSchedulesReplicationScheduleCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetReplicationSchedulesReplicationScheduleCollection] {
+	return pulumix.Output[GetReplicationSchedulesReplicationScheduleCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetReplicationSchedulesReplicationScheduleCollectionOutput) Items() GetReplicationSchedulesReplicationScheduleCollectionItemArrayOutput {
@@ -11869,6 +13616,12 @@ func (o GetReplicationSchedulesReplicationScheduleCollectionArrayOutput) ToGetRe
 
 func (o GetReplicationSchedulesReplicationScheduleCollectionArrayOutput) ToGetReplicationSchedulesReplicationScheduleCollectionArrayOutputWithContext(ctx context.Context) GetReplicationSchedulesReplicationScheduleCollectionArrayOutput {
 	return o
+}
+
+func (o GetReplicationSchedulesReplicationScheduleCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetReplicationSchedulesReplicationScheduleCollection] {
+	return pulumix.Output[[]GetReplicationSchedulesReplicationScheduleCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetReplicationSchedulesReplicationScheduleCollectionArrayOutput) Index(i pulumi.IntInput) GetReplicationSchedulesReplicationScheduleCollectionOutput {
@@ -11950,6 +13703,12 @@ func (i GetReplicationSchedulesReplicationScheduleCollectionItemArgs) ToGetRepli
 	return pulumi.ToOutputWithContext(ctx, i).(GetReplicationSchedulesReplicationScheduleCollectionItemOutput)
 }
 
+func (i GetReplicationSchedulesReplicationScheduleCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetReplicationSchedulesReplicationScheduleCollectionItem] {
+	return pulumix.Output[GetReplicationSchedulesReplicationScheduleCollectionItem]{
+		OutputState: i.ToGetReplicationSchedulesReplicationScheduleCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetReplicationSchedulesReplicationScheduleCollectionItemArrayInput is an input type that accepts GetReplicationSchedulesReplicationScheduleCollectionItemArray and GetReplicationSchedulesReplicationScheduleCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetReplicationSchedulesReplicationScheduleCollectionItemArrayInput` via:
 //
@@ -11975,6 +13734,12 @@ func (i GetReplicationSchedulesReplicationScheduleCollectionItemArray) ToGetRepl
 	return pulumi.ToOutputWithContext(ctx, i).(GetReplicationSchedulesReplicationScheduleCollectionItemArrayOutput)
 }
 
+func (i GetReplicationSchedulesReplicationScheduleCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetReplicationSchedulesReplicationScheduleCollectionItem] {
+	return pulumix.Output[[]GetReplicationSchedulesReplicationScheduleCollectionItem]{
+		OutputState: i.ToGetReplicationSchedulesReplicationScheduleCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetReplicationSchedulesReplicationScheduleCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetReplicationSchedulesReplicationScheduleCollectionItemOutput) ElementType() reflect.Type {
@@ -11987,6 +13752,12 @@ func (o GetReplicationSchedulesReplicationScheduleCollectionItemOutput) ToGetRep
 
 func (o GetReplicationSchedulesReplicationScheduleCollectionItemOutput) ToGetReplicationSchedulesReplicationScheduleCollectionItemOutputWithContext(ctx context.Context) GetReplicationSchedulesReplicationScheduleCollectionItemOutput {
 	return o
+}
+
+func (o GetReplicationSchedulesReplicationScheduleCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetReplicationSchedulesReplicationScheduleCollectionItem] {
+	return pulumix.Output[GetReplicationSchedulesReplicationScheduleCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -12064,6 +13835,12 @@ func (o GetReplicationSchedulesReplicationScheduleCollectionItemArrayOutput) ToG
 	return o
 }
 
+func (o GetReplicationSchedulesReplicationScheduleCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetReplicationSchedulesReplicationScheduleCollectionItem] {
+	return pulumix.Output[[]GetReplicationSchedulesReplicationScheduleCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetReplicationSchedulesReplicationScheduleCollectionItemArrayOutput) Index(i pulumi.IntInput) GetReplicationSchedulesReplicationScheduleCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReplicationSchedulesReplicationScheduleCollectionItem {
 		return vs[0].([]GetReplicationSchedulesReplicationScheduleCollectionItem)[vs[1].(int)]
@@ -12111,6 +13888,12 @@ func (i GetTargetAssetCompatibilityMessageArgs) ToGetTargetAssetCompatibilityMes
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetCompatibilityMessageOutput)
 }
 
+func (i GetTargetAssetCompatibilityMessageArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetCompatibilityMessage] {
+	return pulumix.Output[GetTargetAssetCompatibilityMessage]{
+		OutputState: i.ToGetTargetAssetCompatibilityMessageOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetCompatibilityMessageArrayInput is an input type that accepts GetTargetAssetCompatibilityMessageArray and GetTargetAssetCompatibilityMessageArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetCompatibilityMessageArrayInput` via:
 //
@@ -12136,6 +13919,12 @@ func (i GetTargetAssetCompatibilityMessageArray) ToGetTargetAssetCompatibilityMe
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetCompatibilityMessageArrayOutput)
 }
 
+func (i GetTargetAssetCompatibilityMessageArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetCompatibilityMessage] {
+	return pulumix.Output[[]GetTargetAssetCompatibilityMessage]{
+		OutputState: i.ToGetTargetAssetCompatibilityMessageArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetCompatibilityMessageOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetCompatibilityMessageOutput) ElementType() reflect.Type {
@@ -12148,6 +13937,12 @@ func (o GetTargetAssetCompatibilityMessageOutput) ToGetTargetAssetCompatibilityM
 
 func (o GetTargetAssetCompatibilityMessageOutput) ToGetTargetAssetCompatibilityMessageOutputWithContext(ctx context.Context) GetTargetAssetCompatibilityMessageOutput {
 	return o
+}
+
+func (o GetTargetAssetCompatibilityMessageOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetCompatibilityMessage] {
+	return pulumix.Output[GetTargetAssetCompatibilityMessage]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Detailed description of the compatibility issue.
@@ -12177,6 +13972,12 @@ func (o GetTargetAssetCompatibilityMessageArrayOutput) ToGetTargetAssetCompatibi
 
 func (o GetTargetAssetCompatibilityMessageArrayOutput) ToGetTargetAssetCompatibilityMessageArrayOutputWithContext(ctx context.Context) GetTargetAssetCompatibilityMessageArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetCompatibilityMessageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetCompatibilityMessage] {
+	return pulumix.Output[[]GetTargetAssetCompatibilityMessage]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetCompatibilityMessageArrayOutput) Index(i pulumi.IntInput) GetTargetAssetCompatibilityMessageOutput {
@@ -12242,6 +14043,12 @@ func (i GetTargetAssetEstimatedCostArgs) ToGetTargetAssetEstimatedCostOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetEstimatedCostOutput)
 }
 
+func (i GetTargetAssetEstimatedCostArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetEstimatedCost] {
+	return pulumix.Output[GetTargetAssetEstimatedCost]{
+		OutputState: i.ToGetTargetAssetEstimatedCostOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetEstimatedCostArrayInput is an input type that accepts GetTargetAssetEstimatedCostArray and GetTargetAssetEstimatedCostArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetEstimatedCostArrayInput` via:
 //
@@ -12267,6 +14074,12 @@ func (i GetTargetAssetEstimatedCostArray) ToGetTargetAssetEstimatedCostArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetEstimatedCostArrayOutput)
 }
 
+func (i GetTargetAssetEstimatedCostArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetEstimatedCost] {
+	return pulumix.Output[[]GetTargetAssetEstimatedCost]{
+		OutputState: i.ToGetTargetAssetEstimatedCostArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetEstimatedCostOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetEstimatedCostOutput) ElementType() reflect.Type {
@@ -12279,6 +14092,12 @@ func (o GetTargetAssetEstimatedCostOutput) ToGetTargetAssetEstimatedCostOutput()
 
 func (o GetTargetAssetEstimatedCostOutput) ToGetTargetAssetEstimatedCostOutputWithContext(ctx context.Context) GetTargetAssetEstimatedCostOutput {
 	return o
+}
+
+func (o GetTargetAssetEstimatedCostOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetEstimatedCost] {
+	return pulumix.Output[GetTargetAssetEstimatedCost]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Cost estimation for compute
@@ -12328,6 +14147,12 @@ func (o GetTargetAssetEstimatedCostArrayOutput) ToGetTargetAssetEstimatedCostArr
 
 func (o GetTargetAssetEstimatedCostArrayOutput) ToGetTargetAssetEstimatedCostArrayOutputWithContext(ctx context.Context) GetTargetAssetEstimatedCostArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetEstimatedCostArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetEstimatedCost] {
+	return pulumix.Output[[]GetTargetAssetEstimatedCost]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetEstimatedCostArrayOutput) Index(i pulumi.IntInput) GetTargetAssetEstimatedCostOutput {
@@ -12409,6 +14234,12 @@ func (i GetTargetAssetEstimatedCostComputeArgs) ToGetTargetAssetEstimatedCostCom
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetEstimatedCostComputeOutput)
 }
 
+func (i GetTargetAssetEstimatedCostComputeArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetEstimatedCostCompute] {
+	return pulumix.Output[GetTargetAssetEstimatedCostCompute]{
+		OutputState: i.ToGetTargetAssetEstimatedCostComputeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetEstimatedCostComputeArrayInput is an input type that accepts GetTargetAssetEstimatedCostComputeArray and GetTargetAssetEstimatedCostComputeArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetEstimatedCostComputeArrayInput` via:
 //
@@ -12434,6 +14265,12 @@ func (i GetTargetAssetEstimatedCostComputeArray) ToGetTargetAssetEstimatedCostCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetEstimatedCostComputeArrayOutput)
 }
 
+func (i GetTargetAssetEstimatedCostComputeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetEstimatedCostCompute] {
+	return pulumix.Output[[]GetTargetAssetEstimatedCostCompute]{
+		OutputState: i.ToGetTargetAssetEstimatedCostComputeArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetEstimatedCostComputeOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetEstimatedCostComputeOutput) ElementType() reflect.Type {
@@ -12446,6 +14283,12 @@ func (o GetTargetAssetEstimatedCostComputeOutput) ToGetTargetAssetEstimatedCostC
 
 func (o GetTargetAssetEstimatedCostComputeOutput) ToGetTargetAssetEstimatedCostComputeOutputWithContext(ctx context.Context) GetTargetAssetEstimatedCostComputeOutput {
 	return o
+}
+
+func (o GetTargetAssetEstimatedCostComputeOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetEstimatedCostCompute] {
+	return pulumix.Output[GetTargetAssetEstimatedCostCompute]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Total number of GPU
@@ -12517,6 +14360,12 @@ func (o GetTargetAssetEstimatedCostComputeArrayOutput) ToGetTargetAssetEstimated
 	return o
 }
 
+func (o GetTargetAssetEstimatedCostComputeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetEstimatedCostCompute] {
+	return pulumix.Output[[]GetTargetAssetEstimatedCostCompute]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetTargetAssetEstimatedCostComputeArrayOutput) Index(i pulumi.IntInput) GetTargetAssetEstimatedCostComputeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetAssetEstimatedCostCompute {
 		return vs[0].([]GetTargetAssetEstimatedCostCompute)[vs[1].(int)]
@@ -12560,6 +14409,12 @@ func (i GetTargetAssetEstimatedCostOsImageArgs) ToGetTargetAssetEstimatedCostOsI
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetEstimatedCostOsImageOutput)
 }
 
+func (i GetTargetAssetEstimatedCostOsImageArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetEstimatedCostOsImage] {
+	return pulumix.Output[GetTargetAssetEstimatedCostOsImage]{
+		OutputState: i.ToGetTargetAssetEstimatedCostOsImageOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetEstimatedCostOsImageArrayInput is an input type that accepts GetTargetAssetEstimatedCostOsImageArray and GetTargetAssetEstimatedCostOsImageArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetEstimatedCostOsImageArrayInput` via:
 //
@@ -12585,6 +14440,12 @@ func (i GetTargetAssetEstimatedCostOsImageArray) ToGetTargetAssetEstimatedCostOs
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetEstimatedCostOsImageArrayOutput)
 }
 
+func (i GetTargetAssetEstimatedCostOsImageArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetEstimatedCostOsImage] {
+	return pulumix.Output[[]GetTargetAssetEstimatedCostOsImage]{
+		OutputState: i.ToGetTargetAssetEstimatedCostOsImageArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetEstimatedCostOsImageOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetEstimatedCostOsImageOutput) ElementType() reflect.Type {
@@ -12597,6 +14458,12 @@ func (o GetTargetAssetEstimatedCostOsImageOutput) ToGetTargetAssetEstimatedCostO
 
 func (o GetTargetAssetEstimatedCostOsImageOutput) ToGetTargetAssetEstimatedCostOsImageOutputWithContext(ctx context.Context) GetTargetAssetEstimatedCostOsImageOutput {
 	return o
+}
+
+func (o GetTargetAssetEstimatedCostOsImageOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetEstimatedCostOsImage] {
+	return pulumix.Output[GetTargetAssetEstimatedCostOsImage]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Total price per hour
@@ -12621,6 +14488,12 @@ func (o GetTargetAssetEstimatedCostOsImageArrayOutput) ToGetTargetAssetEstimated
 
 func (o GetTargetAssetEstimatedCostOsImageArrayOutput) ToGetTargetAssetEstimatedCostOsImageArrayOutputWithContext(ctx context.Context) GetTargetAssetEstimatedCostOsImageArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetEstimatedCostOsImageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetEstimatedCostOsImage] {
+	return pulumix.Output[[]GetTargetAssetEstimatedCostOsImage]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetEstimatedCostOsImageArrayOutput) Index(i pulumi.IntInput) GetTargetAssetEstimatedCostOsImageOutput {
@@ -12670,6 +14543,12 @@ func (i GetTargetAssetEstimatedCostStorageArgs) ToGetTargetAssetEstimatedCostSto
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetEstimatedCostStorageOutput)
 }
 
+func (i GetTargetAssetEstimatedCostStorageArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetEstimatedCostStorage] {
+	return pulumix.Output[GetTargetAssetEstimatedCostStorage]{
+		OutputState: i.ToGetTargetAssetEstimatedCostStorageOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetEstimatedCostStorageArrayInput is an input type that accepts GetTargetAssetEstimatedCostStorageArray and GetTargetAssetEstimatedCostStorageArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetEstimatedCostStorageArrayInput` via:
 //
@@ -12695,6 +14574,12 @@ func (i GetTargetAssetEstimatedCostStorageArray) ToGetTargetAssetEstimatedCostSt
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetEstimatedCostStorageArrayOutput)
 }
 
+func (i GetTargetAssetEstimatedCostStorageArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetEstimatedCostStorage] {
+	return pulumix.Output[[]GetTargetAssetEstimatedCostStorage]{
+		OutputState: i.ToGetTargetAssetEstimatedCostStorageArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetEstimatedCostStorageOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetEstimatedCostStorageOutput) ElementType() reflect.Type {
@@ -12707,6 +14592,12 @@ func (o GetTargetAssetEstimatedCostStorageOutput) ToGetTargetAssetEstimatedCostS
 
 func (o GetTargetAssetEstimatedCostStorageOutput) ToGetTargetAssetEstimatedCostStorageOutputWithContext(ctx context.Context) GetTargetAssetEstimatedCostStorageOutput {
 	return o
+}
+
+func (o GetTargetAssetEstimatedCostStorageOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetEstimatedCostStorage] {
+	return pulumix.Output[GetTargetAssetEstimatedCostStorage]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Gigabyte storage capacity per month.
@@ -12738,6 +14629,12 @@ func (o GetTargetAssetEstimatedCostStorageArrayOutput) ToGetTargetAssetEstimated
 
 func (o GetTargetAssetEstimatedCostStorageArrayOutput) ToGetTargetAssetEstimatedCostStorageArrayOutputWithContext(ctx context.Context) GetTargetAssetEstimatedCostStorageArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetEstimatedCostStorageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetEstimatedCostStorage] {
+	return pulumix.Output[[]GetTargetAssetEstimatedCostStorage]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetEstimatedCostStorageArrayOutput) Index(i pulumi.IntInput) GetTargetAssetEstimatedCostStorageOutput {
@@ -12791,6 +14688,12 @@ func (i GetTargetAssetEstimatedCostStorageVolumeArgs) ToGetTargetAssetEstimatedC
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetEstimatedCostStorageVolumeOutput)
 }
 
+func (i GetTargetAssetEstimatedCostStorageVolumeArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetEstimatedCostStorageVolume] {
+	return pulumix.Output[GetTargetAssetEstimatedCostStorageVolume]{
+		OutputState: i.ToGetTargetAssetEstimatedCostStorageVolumeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetEstimatedCostStorageVolumeArrayInput is an input type that accepts GetTargetAssetEstimatedCostStorageVolumeArray and GetTargetAssetEstimatedCostStorageVolumeArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetEstimatedCostStorageVolumeArrayInput` via:
 //
@@ -12816,6 +14719,12 @@ func (i GetTargetAssetEstimatedCostStorageVolumeArray) ToGetTargetAssetEstimated
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetEstimatedCostStorageVolumeArrayOutput)
 }
 
+func (i GetTargetAssetEstimatedCostStorageVolumeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetEstimatedCostStorageVolume] {
+	return pulumix.Output[[]GetTargetAssetEstimatedCostStorageVolume]{
+		OutputState: i.ToGetTargetAssetEstimatedCostStorageVolumeArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetEstimatedCostStorageVolumeOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetEstimatedCostStorageVolumeOutput) ElementType() reflect.Type {
@@ -12828,6 +14737,12 @@ func (o GetTargetAssetEstimatedCostStorageVolumeOutput) ToGetTargetAssetEstimate
 
 func (o GetTargetAssetEstimatedCostStorageVolumeOutput) ToGetTargetAssetEstimatedCostStorageVolumeOutputWithContext(ctx context.Context) GetTargetAssetEstimatedCostStorageVolumeOutput {
 	return o
+}
+
+func (o GetTargetAssetEstimatedCostStorageVolumeOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetEstimatedCostStorageVolume] {
+	return pulumix.Output[GetTargetAssetEstimatedCostStorageVolume]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Gigabyte storage capacity
@@ -12862,6 +14777,12 @@ func (o GetTargetAssetEstimatedCostStorageVolumeArrayOutput) ToGetTargetAssetEst
 
 func (o GetTargetAssetEstimatedCostStorageVolumeArrayOutput) ToGetTargetAssetEstimatedCostStorageVolumeArrayOutputWithContext(ctx context.Context) GetTargetAssetEstimatedCostStorageVolumeArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetEstimatedCostStorageVolumeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetEstimatedCostStorageVolume] {
+	return pulumix.Output[[]GetTargetAssetEstimatedCostStorageVolume]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetEstimatedCostStorageVolumeArrayOutput) Index(i pulumi.IntInput) GetTargetAssetEstimatedCostStorageVolumeOutput {
@@ -12983,6 +14904,12 @@ func (i GetTargetAssetMigrationAssetArgs) ToGetTargetAssetMigrationAssetOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetMigrationAssetOutput)
 }
 
+func (i GetTargetAssetMigrationAssetArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetMigrationAsset] {
+	return pulumix.Output[GetTargetAssetMigrationAsset]{
+		OutputState: i.ToGetTargetAssetMigrationAssetOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetMigrationAssetArrayInput is an input type that accepts GetTargetAssetMigrationAssetArray and GetTargetAssetMigrationAssetArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetMigrationAssetArrayInput` via:
 //
@@ -13008,6 +14935,12 @@ func (i GetTargetAssetMigrationAssetArray) ToGetTargetAssetMigrationAssetArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetMigrationAssetArrayOutput)
 }
 
+func (i GetTargetAssetMigrationAssetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetMigrationAsset] {
+	return pulumix.Output[[]GetTargetAssetMigrationAsset]{
+		OutputState: i.ToGetTargetAssetMigrationAssetArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetMigrationAssetOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetMigrationAssetOutput) ElementType() reflect.Type {
@@ -13020,6 +14953,12 @@ func (o GetTargetAssetMigrationAssetOutput) ToGetTargetAssetMigrationAssetOutput
 
 func (o GetTargetAssetMigrationAssetOutput) ToGetTargetAssetMigrationAssetOutputWithContext(ctx context.Context) GetTargetAssetMigrationAssetOutput {
 	return o
+}
+
+func (o GetTargetAssetMigrationAssetOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetMigrationAsset] {
+	return pulumix.Output[GetTargetAssetMigrationAsset]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
@@ -13141,6 +15080,12 @@ func (o GetTargetAssetMigrationAssetArrayOutput) ToGetTargetAssetMigrationAssetA
 	return o
 }
 
+func (o GetTargetAssetMigrationAssetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetMigrationAsset] {
+	return pulumix.Output[[]GetTargetAssetMigrationAsset]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetTargetAssetMigrationAssetArrayOutput) Index(i pulumi.IntInput) GetTargetAssetMigrationAssetOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetAssetMigrationAsset {
 		return vs[0].([]GetTargetAssetMigrationAsset)[vs[1].(int)]
@@ -13246,6 +15191,12 @@ func (i GetTargetAssetRecommendedSpecArgs) ToGetTargetAssetRecommendedSpecOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetRecommendedSpecOutput)
 }
 
+func (i GetTargetAssetRecommendedSpecArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetRecommendedSpec] {
+	return pulumix.Output[GetTargetAssetRecommendedSpec]{
+		OutputState: i.ToGetTargetAssetRecommendedSpecOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetRecommendedSpecArrayInput is an input type that accepts GetTargetAssetRecommendedSpecArray and GetTargetAssetRecommendedSpecArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetRecommendedSpecArrayInput` via:
 //
@@ -13271,6 +15222,12 @@ func (i GetTargetAssetRecommendedSpecArray) ToGetTargetAssetRecommendedSpecArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetRecommendedSpecArrayOutput)
 }
 
+func (i GetTargetAssetRecommendedSpecArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetRecommendedSpec] {
+	return pulumix.Output[[]GetTargetAssetRecommendedSpec]{
+		OutputState: i.ToGetTargetAssetRecommendedSpecArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetRecommendedSpecOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetRecommendedSpecOutput) ElementType() reflect.Type {
@@ -13283,6 +15240,12 @@ func (o GetTargetAssetRecommendedSpecOutput) ToGetTargetAssetRecommendedSpecOutp
 
 func (o GetTargetAssetRecommendedSpecOutput) ToGetTargetAssetRecommendedSpecOutputWithContext(ctx context.Context) GetTargetAssetRecommendedSpecOutput {
 	return o
+}
+
+func (o GetTargetAssetRecommendedSpecOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetRecommendedSpec] {
+	return pulumix.Output[GetTargetAssetRecommendedSpec]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Configuration options for the Oracle Cloud Agent software running on the instance.
@@ -13400,6 +15363,12 @@ func (o GetTargetAssetRecommendedSpecArrayOutput) ToGetTargetAssetRecommendedSpe
 	return o
 }
 
+func (o GetTargetAssetRecommendedSpecArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetRecommendedSpec] {
+	return pulumix.Output[[]GetTargetAssetRecommendedSpec]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetTargetAssetRecommendedSpecArrayOutput) Index(i pulumi.IntInput) GetTargetAssetRecommendedSpecOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetAssetRecommendedSpec {
 		return vs[0].([]GetTargetAssetRecommendedSpec)[vs[1].(int)]
@@ -13451,6 +15420,12 @@ func (i GetTargetAssetRecommendedSpecAgentConfigArgs) ToGetTargetAssetRecommende
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetRecommendedSpecAgentConfigOutput)
 }
 
+func (i GetTargetAssetRecommendedSpecAgentConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetRecommendedSpecAgentConfig] {
+	return pulumix.Output[GetTargetAssetRecommendedSpecAgentConfig]{
+		OutputState: i.ToGetTargetAssetRecommendedSpecAgentConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetRecommendedSpecAgentConfigArrayInput is an input type that accepts GetTargetAssetRecommendedSpecAgentConfigArray and GetTargetAssetRecommendedSpecAgentConfigArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetRecommendedSpecAgentConfigArrayInput` via:
 //
@@ -13476,6 +15451,12 @@ func (i GetTargetAssetRecommendedSpecAgentConfigArray) ToGetTargetAssetRecommend
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetRecommendedSpecAgentConfigArrayOutput)
 }
 
+func (i GetTargetAssetRecommendedSpecAgentConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetRecommendedSpecAgentConfig] {
+	return pulumix.Output[[]GetTargetAssetRecommendedSpecAgentConfig]{
+		OutputState: i.ToGetTargetAssetRecommendedSpecAgentConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetRecommendedSpecAgentConfigOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetRecommendedSpecAgentConfigOutput) ElementType() reflect.Type {
@@ -13488,6 +15469,12 @@ func (o GetTargetAssetRecommendedSpecAgentConfigOutput) ToGetTargetAssetRecommen
 
 func (o GetTargetAssetRecommendedSpecAgentConfigOutput) ToGetTargetAssetRecommendedSpecAgentConfigOutputWithContext(ctx context.Context) GetTargetAssetRecommendedSpecAgentConfigOutput {
 	return o
+}
+
+func (o GetTargetAssetRecommendedSpecAgentConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetRecommendedSpecAgentConfig] {
+	return pulumix.Output[GetTargetAssetRecommendedSpecAgentConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
@@ -13524,6 +15511,12 @@ func (o GetTargetAssetRecommendedSpecAgentConfigArrayOutput) ToGetTargetAssetRec
 
 func (o GetTargetAssetRecommendedSpecAgentConfigArrayOutput) ToGetTargetAssetRecommendedSpecAgentConfigArrayOutputWithContext(ctx context.Context) GetTargetAssetRecommendedSpecAgentConfigArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetRecommendedSpecAgentConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetRecommendedSpecAgentConfig] {
+	return pulumix.Output[[]GetTargetAssetRecommendedSpecAgentConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetRecommendedSpecAgentConfigArrayOutput) Index(i pulumi.IntInput) GetTargetAssetRecommendedSpecAgentConfigOutput {
@@ -13569,6 +15562,12 @@ func (i GetTargetAssetRecommendedSpecAgentConfigPluginsConfigArgs) ToGetTargetAs
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetRecommendedSpecAgentConfigPluginsConfigOutput)
 }
 
+func (i GetTargetAssetRecommendedSpecAgentConfigPluginsConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetRecommendedSpecAgentConfigPluginsConfig] {
+	return pulumix.Output[GetTargetAssetRecommendedSpecAgentConfigPluginsConfig]{
+		OutputState: i.ToGetTargetAssetRecommendedSpecAgentConfigPluginsConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetRecommendedSpecAgentConfigPluginsConfigArrayInput is an input type that accepts GetTargetAssetRecommendedSpecAgentConfigPluginsConfigArray and GetTargetAssetRecommendedSpecAgentConfigPluginsConfigArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetRecommendedSpecAgentConfigPluginsConfigArrayInput` via:
 //
@@ -13594,6 +15593,12 @@ func (i GetTargetAssetRecommendedSpecAgentConfigPluginsConfigArray) ToGetTargetA
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetRecommendedSpecAgentConfigPluginsConfigArrayOutput)
 }
 
+func (i GetTargetAssetRecommendedSpecAgentConfigPluginsConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetRecommendedSpecAgentConfigPluginsConfig] {
+	return pulumix.Output[[]GetTargetAssetRecommendedSpecAgentConfigPluginsConfig]{
+		OutputState: i.ToGetTargetAssetRecommendedSpecAgentConfigPluginsConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetRecommendedSpecAgentConfigPluginsConfigOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetRecommendedSpecAgentConfigPluginsConfigOutput) ElementType() reflect.Type {
@@ -13606,6 +15611,12 @@ func (o GetTargetAssetRecommendedSpecAgentConfigPluginsConfigOutput) ToGetTarget
 
 func (o GetTargetAssetRecommendedSpecAgentConfigPluginsConfigOutput) ToGetTargetAssetRecommendedSpecAgentConfigPluginsConfigOutputWithContext(ctx context.Context) GetTargetAssetRecommendedSpecAgentConfigPluginsConfigOutput {
 	return o
+}
+
+func (o GetTargetAssetRecommendedSpecAgentConfigPluginsConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetRecommendedSpecAgentConfigPluginsConfig] {
+	return pulumix.Output[GetTargetAssetRecommendedSpecAgentConfigPluginsConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether the plugin should be enabled or disabled.
@@ -13630,6 +15641,12 @@ func (o GetTargetAssetRecommendedSpecAgentConfigPluginsConfigArrayOutput) ToGetT
 
 func (o GetTargetAssetRecommendedSpecAgentConfigPluginsConfigArrayOutput) ToGetTargetAssetRecommendedSpecAgentConfigPluginsConfigArrayOutputWithContext(ctx context.Context) GetTargetAssetRecommendedSpecAgentConfigPluginsConfigArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetRecommendedSpecAgentConfigPluginsConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetRecommendedSpecAgentConfigPluginsConfig] {
+	return pulumix.Output[[]GetTargetAssetRecommendedSpecAgentConfigPluginsConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetRecommendedSpecAgentConfigPluginsConfigArrayOutput) Index(i pulumi.IntInput) GetTargetAssetRecommendedSpecAgentConfigPluginsConfigOutput {
@@ -13711,6 +15728,12 @@ func (i GetTargetAssetRecommendedSpecCreateVnicDetailArgs) ToGetTargetAssetRecom
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetRecommendedSpecCreateVnicDetailOutput)
 }
 
+func (i GetTargetAssetRecommendedSpecCreateVnicDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetRecommendedSpecCreateVnicDetail] {
+	return pulumix.Output[GetTargetAssetRecommendedSpecCreateVnicDetail]{
+		OutputState: i.ToGetTargetAssetRecommendedSpecCreateVnicDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetRecommendedSpecCreateVnicDetailArrayInput is an input type that accepts GetTargetAssetRecommendedSpecCreateVnicDetailArray and GetTargetAssetRecommendedSpecCreateVnicDetailArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetRecommendedSpecCreateVnicDetailArrayInput` via:
 //
@@ -13736,6 +15759,12 @@ func (i GetTargetAssetRecommendedSpecCreateVnicDetailArray) ToGetTargetAssetReco
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetRecommendedSpecCreateVnicDetailArrayOutput)
 }
 
+func (i GetTargetAssetRecommendedSpecCreateVnicDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetRecommendedSpecCreateVnicDetail] {
+	return pulumix.Output[[]GetTargetAssetRecommendedSpecCreateVnicDetail]{
+		OutputState: i.ToGetTargetAssetRecommendedSpecCreateVnicDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetRecommendedSpecCreateVnicDetailOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetRecommendedSpecCreateVnicDetailOutput) ElementType() reflect.Type {
@@ -13748,6 +15777,12 @@ func (o GetTargetAssetRecommendedSpecCreateVnicDetailOutput) ToGetTargetAssetRec
 
 func (o GetTargetAssetRecommendedSpecCreateVnicDetailOutput) ToGetTargetAssetRecommendedSpecCreateVnicDetailOutputWithContext(ctx context.Context) GetTargetAssetRecommendedSpecCreateVnicDetailOutput {
 	return o
+}
+
+func (o GetTargetAssetRecommendedSpecCreateVnicDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetRecommendedSpecCreateVnicDetail] {
+	return pulumix.Output[GetTargetAssetRecommendedSpecCreateVnicDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether the VNIC should be assigned a DNS record. If set to false, there will be no DNS record registration for the VNIC. If set to true, the DNS record will be registered. By default, the value is true.
@@ -13819,6 +15854,12 @@ func (o GetTargetAssetRecommendedSpecCreateVnicDetailArrayOutput) ToGetTargetAss
 	return o
 }
 
+func (o GetTargetAssetRecommendedSpecCreateVnicDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetRecommendedSpecCreateVnicDetail] {
+	return pulumix.Output[[]GetTargetAssetRecommendedSpecCreateVnicDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetTargetAssetRecommendedSpecCreateVnicDetailArrayOutput) Index(i pulumi.IntInput) GetTargetAssetRecommendedSpecCreateVnicDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetAssetRecommendedSpecCreateVnicDetail {
 		return vs[0].([]GetTargetAssetRecommendedSpecCreateVnicDetail)[vs[1].(int)]
@@ -13858,6 +15899,12 @@ func (i GetTargetAssetRecommendedSpecInstanceOptionArgs) ToGetTargetAssetRecomme
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetRecommendedSpecInstanceOptionOutput)
 }
 
+func (i GetTargetAssetRecommendedSpecInstanceOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetRecommendedSpecInstanceOption] {
+	return pulumix.Output[GetTargetAssetRecommendedSpecInstanceOption]{
+		OutputState: i.ToGetTargetAssetRecommendedSpecInstanceOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetRecommendedSpecInstanceOptionArrayInput is an input type that accepts GetTargetAssetRecommendedSpecInstanceOptionArray and GetTargetAssetRecommendedSpecInstanceOptionArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetRecommendedSpecInstanceOptionArrayInput` via:
 //
@@ -13883,6 +15930,12 @@ func (i GetTargetAssetRecommendedSpecInstanceOptionArray) ToGetTargetAssetRecomm
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetRecommendedSpecInstanceOptionArrayOutput)
 }
 
+func (i GetTargetAssetRecommendedSpecInstanceOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetRecommendedSpecInstanceOption] {
+	return pulumix.Output[[]GetTargetAssetRecommendedSpecInstanceOption]{
+		OutputState: i.ToGetTargetAssetRecommendedSpecInstanceOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetRecommendedSpecInstanceOptionOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetRecommendedSpecInstanceOptionOutput) ElementType() reflect.Type {
@@ -13895,6 +15948,12 @@ func (o GetTargetAssetRecommendedSpecInstanceOptionOutput) ToGetTargetAssetRecom
 
 func (o GetTargetAssetRecommendedSpecInstanceOptionOutput) ToGetTargetAssetRecommendedSpecInstanceOptionOutputWithContext(ctx context.Context) GetTargetAssetRecommendedSpecInstanceOptionOutput {
 	return o
+}
+
+func (o GetTargetAssetRecommendedSpecInstanceOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetRecommendedSpecInstanceOption] {
+	return pulumix.Output[GetTargetAssetRecommendedSpecInstanceOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
@@ -13914,6 +15973,12 @@ func (o GetTargetAssetRecommendedSpecInstanceOptionArrayOutput) ToGetTargetAsset
 
 func (o GetTargetAssetRecommendedSpecInstanceOptionArrayOutput) ToGetTargetAssetRecommendedSpecInstanceOptionArrayOutputWithContext(ctx context.Context) GetTargetAssetRecommendedSpecInstanceOptionArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetRecommendedSpecInstanceOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetRecommendedSpecInstanceOption] {
+	return pulumix.Output[[]GetTargetAssetRecommendedSpecInstanceOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetRecommendedSpecInstanceOptionArrayOutput) Index(i pulumi.IntInput) GetTargetAssetRecommendedSpecInstanceOptionOutput {
@@ -13955,6 +16020,12 @@ func (i GetTargetAssetRecommendedSpecPreemptibleInstanceConfigArgs) ToGetTargetA
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetRecommendedSpecPreemptibleInstanceConfigOutput)
 }
 
+func (i GetTargetAssetRecommendedSpecPreemptibleInstanceConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetRecommendedSpecPreemptibleInstanceConfig] {
+	return pulumix.Output[GetTargetAssetRecommendedSpecPreemptibleInstanceConfig]{
+		OutputState: i.ToGetTargetAssetRecommendedSpecPreemptibleInstanceConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetRecommendedSpecPreemptibleInstanceConfigArrayInput is an input type that accepts GetTargetAssetRecommendedSpecPreemptibleInstanceConfigArray and GetTargetAssetRecommendedSpecPreemptibleInstanceConfigArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetRecommendedSpecPreemptibleInstanceConfigArrayInput` via:
 //
@@ -13980,6 +16051,12 @@ func (i GetTargetAssetRecommendedSpecPreemptibleInstanceConfigArray) ToGetTarget
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetRecommendedSpecPreemptibleInstanceConfigArrayOutput)
 }
 
+func (i GetTargetAssetRecommendedSpecPreemptibleInstanceConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetRecommendedSpecPreemptibleInstanceConfig] {
+	return pulumix.Output[[]GetTargetAssetRecommendedSpecPreemptibleInstanceConfig]{
+		OutputState: i.ToGetTargetAssetRecommendedSpecPreemptibleInstanceConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetRecommendedSpecPreemptibleInstanceConfigOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetRecommendedSpecPreemptibleInstanceConfigOutput) ElementType() reflect.Type {
@@ -13992,6 +16069,12 @@ func (o GetTargetAssetRecommendedSpecPreemptibleInstanceConfigOutput) ToGetTarge
 
 func (o GetTargetAssetRecommendedSpecPreemptibleInstanceConfigOutput) ToGetTargetAssetRecommendedSpecPreemptibleInstanceConfigOutputWithContext(ctx context.Context) GetTargetAssetRecommendedSpecPreemptibleInstanceConfigOutput {
 	return o
+}
+
+func (o GetTargetAssetRecommendedSpecPreemptibleInstanceConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetRecommendedSpecPreemptibleInstanceConfig] {
+	return pulumix.Output[GetTargetAssetRecommendedSpecPreemptibleInstanceConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The action to run when the preemptible instance is interrupted for eviction.
@@ -14013,6 +16096,12 @@ func (o GetTargetAssetRecommendedSpecPreemptibleInstanceConfigArrayOutput) ToGet
 
 func (o GetTargetAssetRecommendedSpecPreemptibleInstanceConfigArrayOutput) ToGetTargetAssetRecommendedSpecPreemptibleInstanceConfigArrayOutputWithContext(ctx context.Context) GetTargetAssetRecommendedSpecPreemptibleInstanceConfigArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetRecommendedSpecPreemptibleInstanceConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetRecommendedSpecPreemptibleInstanceConfig] {
+	return pulumix.Output[[]GetTargetAssetRecommendedSpecPreemptibleInstanceConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetRecommendedSpecPreemptibleInstanceConfigArrayOutput) Index(i pulumi.IntInput) GetTargetAssetRecommendedSpecPreemptibleInstanceConfigOutput {
@@ -14058,6 +16147,12 @@ func (i GetTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionOutput)
 }
 
+func (i GetTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionAction] {
+	return pulumix.Output[GetTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionAction]{
+		OutputState: i.ToGetTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionArrayInput is an input type that accepts GetTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionArray and GetTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionArrayInput` via:
 //
@@ -14083,6 +16178,12 @@ func (i GetTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionArrayOutput)
 }
 
+func (i GetTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionAction] {
+	return pulumix.Output[[]GetTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionAction]{
+		OutputState: i.ToGetTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionOutput) ElementType() reflect.Type {
@@ -14095,6 +16196,12 @@ func (o GetTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionOu
 
 func (o GetTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionOutput) ToGetTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionOutputWithContext(ctx context.Context) GetTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionOutput {
 	return o
+}
+
+func (o GetTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionAction] {
+	return pulumix.Output[GetTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionAction]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. By default, it is false if not specified.
@@ -14121,6 +16228,12 @@ func (o GetTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionAr
 
 func (o GetTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionArrayOutput) ToGetTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionArrayOutputWithContext(ctx context.Context) GetTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionAction] {
+	return pulumix.Output[[]GetTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionAction]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionArrayOutput) Index(i pulumi.IntInput) GetTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionOutput {
@@ -14170,6 +16283,12 @@ func (i GetTargetAssetRecommendedSpecShapeConfigArgs) ToGetTargetAssetRecommende
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetRecommendedSpecShapeConfigOutput)
 }
 
+func (i GetTargetAssetRecommendedSpecShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetRecommendedSpecShapeConfig] {
+	return pulumix.Output[GetTargetAssetRecommendedSpecShapeConfig]{
+		OutputState: i.ToGetTargetAssetRecommendedSpecShapeConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetRecommendedSpecShapeConfigArrayInput is an input type that accepts GetTargetAssetRecommendedSpecShapeConfigArray and GetTargetAssetRecommendedSpecShapeConfigArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetRecommendedSpecShapeConfigArrayInput` via:
 //
@@ -14195,6 +16314,12 @@ func (i GetTargetAssetRecommendedSpecShapeConfigArray) ToGetTargetAssetRecommend
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetRecommendedSpecShapeConfigArrayOutput)
 }
 
+func (i GetTargetAssetRecommendedSpecShapeConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetRecommendedSpecShapeConfig] {
+	return pulumix.Output[[]GetTargetAssetRecommendedSpecShapeConfig]{
+		OutputState: i.ToGetTargetAssetRecommendedSpecShapeConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetRecommendedSpecShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetRecommendedSpecShapeConfigOutput) ElementType() reflect.Type {
@@ -14207,6 +16332,12 @@ func (o GetTargetAssetRecommendedSpecShapeConfigOutput) ToGetTargetAssetRecommen
 
 func (o GetTargetAssetRecommendedSpecShapeConfigOutput) ToGetTargetAssetRecommendedSpecShapeConfigOutputWithContext(ctx context.Context) GetTargetAssetRecommendedSpecShapeConfigOutput {
 	return o
+}
+
+func (o GetTargetAssetRecommendedSpecShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetRecommendedSpecShapeConfig] {
+	return pulumix.Output[GetTargetAssetRecommendedSpecShapeConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
@@ -14236,6 +16367,12 @@ func (o GetTargetAssetRecommendedSpecShapeConfigArrayOutput) ToGetTargetAssetRec
 
 func (o GetTargetAssetRecommendedSpecShapeConfigArrayOutput) ToGetTargetAssetRecommendedSpecShapeConfigArrayOutputWithContext(ctx context.Context) GetTargetAssetRecommendedSpecShapeConfigArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetRecommendedSpecShapeConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetRecommendedSpecShapeConfig] {
+	return pulumix.Output[[]GetTargetAssetRecommendedSpecShapeConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetRecommendedSpecShapeConfigArrayOutput) Index(i pulumi.IntInput) GetTargetAssetRecommendedSpecShapeConfigOutput {
@@ -14297,6 +16434,12 @@ func (i GetTargetAssetRecommendedSpecSourceDetailArgs) ToGetTargetAssetRecommend
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetRecommendedSpecSourceDetailOutput)
 }
 
+func (i GetTargetAssetRecommendedSpecSourceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetRecommendedSpecSourceDetail] {
+	return pulumix.Output[GetTargetAssetRecommendedSpecSourceDetail]{
+		OutputState: i.ToGetTargetAssetRecommendedSpecSourceDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetRecommendedSpecSourceDetailArrayInput is an input type that accepts GetTargetAssetRecommendedSpecSourceDetailArray and GetTargetAssetRecommendedSpecSourceDetailArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetRecommendedSpecSourceDetailArrayInput` via:
 //
@@ -14322,6 +16465,12 @@ func (i GetTargetAssetRecommendedSpecSourceDetailArray) ToGetTargetAssetRecommen
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetRecommendedSpecSourceDetailArrayOutput)
 }
 
+func (i GetTargetAssetRecommendedSpecSourceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetRecommendedSpecSourceDetail] {
+	return pulumix.Output[[]GetTargetAssetRecommendedSpecSourceDetail]{
+		OutputState: i.ToGetTargetAssetRecommendedSpecSourceDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetRecommendedSpecSourceDetailOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetRecommendedSpecSourceDetailOutput) ElementType() reflect.Type {
@@ -14334,6 +16483,12 @@ func (o GetTargetAssetRecommendedSpecSourceDetailOutput) ToGetTargetAssetRecomme
 
 func (o GetTargetAssetRecommendedSpecSourceDetailOutput) ToGetTargetAssetRecommendedSpecSourceDetailOutputWithContext(ctx context.Context) GetTargetAssetRecommendedSpecSourceDetailOutput {
 	return o
+}
+
+func (o GetTargetAssetRecommendedSpecSourceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetRecommendedSpecSourceDetail] {
+	return pulumix.Output[GetTargetAssetRecommendedSpecSourceDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the boot volume used to boot the instance.
@@ -14378,6 +16533,12 @@ func (o GetTargetAssetRecommendedSpecSourceDetailArrayOutput) ToGetTargetAssetRe
 
 func (o GetTargetAssetRecommendedSpecSourceDetailArrayOutput) ToGetTargetAssetRecommendedSpecSourceDetailArrayOutputWithContext(ctx context.Context) GetTargetAssetRecommendedSpecSourceDetailArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetRecommendedSpecSourceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetRecommendedSpecSourceDetail] {
+	return pulumix.Output[[]GetTargetAssetRecommendedSpecSourceDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetRecommendedSpecSourceDetailArrayOutput) Index(i pulumi.IntInput) GetTargetAssetRecommendedSpecSourceDetailOutput {
@@ -14485,6 +16646,12 @@ func (i GetTargetAssetTestSpecArgs) ToGetTargetAssetTestSpecOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetTestSpecOutput)
 }
 
+func (i GetTargetAssetTestSpecArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetTestSpec] {
+	return pulumix.Output[GetTargetAssetTestSpec]{
+		OutputState: i.ToGetTargetAssetTestSpecOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetTestSpecArrayInput is an input type that accepts GetTargetAssetTestSpecArray and GetTargetAssetTestSpecArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetTestSpecArrayInput` via:
 //
@@ -14510,6 +16677,12 @@ func (i GetTargetAssetTestSpecArray) ToGetTargetAssetTestSpecArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetTestSpecArrayOutput)
 }
 
+func (i GetTargetAssetTestSpecArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetTestSpec] {
+	return pulumix.Output[[]GetTargetAssetTestSpec]{
+		OutputState: i.ToGetTargetAssetTestSpecArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetTestSpecOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetTestSpecOutput) ElementType() reflect.Type {
@@ -14522,6 +16695,12 @@ func (o GetTargetAssetTestSpecOutput) ToGetTargetAssetTestSpecOutput() GetTarget
 
 func (o GetTargetAssetTestSpecOutput) ToGetTargetAssetTestSpecOutputWithContext(ctx context.Context) GetTargetAssetTestSpecOutput {
 	return o
+}
+
+func (o GetTargetAssetTestSpecOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetTestSpec] {
+	return pulumix.Output[GetTargetAssetTestSpec]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Configuration options for the Oracle Cloud Agent software running on the instance.
@@ -14629,6 +16808,12 @@ func (o GetTargetAssetTestSpecArrayOutput) ToGetTargetAssetTestSpecArrayOutputWi
 	return o
 }
 
+func (o GetTargetAssetTestSpecArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetTestSpec] {
+	return pulumix.Output[[]GetTargetAssetTestSpec]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetTargetAssetTestSpecArrayOutput) Index(i pulumi.IntInput) GetTargetAssetTestSpecOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetAssetTestSpec {
 		return vs[0].([]GetTargetAssetTestSpec)[vs[1].(int)]
@@ -14680,6 +16865,12 @@ func (i GetTargetAssetTestSpecAgentConfigArgs) ToGetTargetAssetTestSpecAgentConf
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetTestSpecAgentConfigOutput)
 }
 
+func (i GetTargetAssetTestSpecAgentConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetTestSpecAgentConfig] {
+	return pulumix.Output[GetTargetAssetTestSpecAgentConfig]{
+		OutputState: i.ToGetTargetAssetTestSpecAgentConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetTestSpecAgentConfigArrayInput is an input type that accepts GetTargetAssetTestSpecAgentConfigArray and GetTargetAssetTestSpecAgentConfigArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetTestSpecAgentConfigArrayInput` via:
 //
@@ -14705,6 +16896,12 @@ func (i GetTargetAssetTestSpecAgentConfigArray) ToGetTargetAssetTestSpecAgentCon
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetTestSpecAgentConfigArrayOutput)
 }
 
+func (i GetTargetAssetTestSpecAgentConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetTestSpecAgentConfig] {
+	return pulumix.Output[[]GetTargetAssetTestSpecAgentConfig]{
+		OutputState: i.ToGetTargetAssetTestSpecAgentConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetTestSpecAgentConfigOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetTestSpecAgentConfigOutput) ElementType() reflect.Type {
@@ -14717,6 +16914,12 @@ func (o GetTargetAssetTestSpecAgentConfigOutput) ToGetTargetAssetTestSpecAgentCo
 
 func (o GetTargetAssetTestSpecAgentConfigOutput) ToGetTargetAssetTestSpecAgentConfigOutputWithContext(ctx context.Context) GetTargetAssetTestSpecAgentConfigOutput {
 	return o
+}
+
+func (o GetTargetAssetTestSpecAgentConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetTestSpecAgentConfig] {
+	return pulumix.Output[GetTargetAssetTestSpecAgentConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
@@ -14753,6 +16956,12 @@ func (o GetTargetAssetTestSpecAgentConfigArrayOutput) ToGetTargetAssetTestSpecAg
 
 func (o GetTargetAssetTestSpecAgentConfigArrayOutput) ToGetTargetAssetTestSpecAgentConfigArrayOutputWithContext(ctx context.Context) GetTargetAssetTestSpecAgentConfigArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetTestSpecAgentConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetTestSpecAgentConfig] {
+	return pulumix.Output[[]GetTargetAssetTestSpecAgentConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetTestSpecAgentConfigArrayOutput) Index(i pulumi.IntInput) GetTargetAssetTestSpecAgentConfigOutput {
@@ -14798,6 +17007,12 @@ func (i GetTargetAssetTestSpecAgentConfigPluginsConfigArgs) ToGetTargetAssetTest
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetTestSpecAgentConfigPluginsConfigOutput)
 }
 
+func (i GetTargetAssetTestSpecAgentConfigPluginsConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetTestSpecAgentConfigPluginsConfig] {
+	return pulumix.Output[GetTargetAssetTestSpecAgentConfigPluginsConfig]{
+		OutputState: i.ToGetTargetAssetTestSpecAgentConfigPluginsConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetTestSpecAgentConfigPluginsConfigArrayInput is an input type that accepts GetTargetAssetTestSpecAgentConfigPluginsConfigArray and GetTargetAssetTestSpecAgentConfigPluginsConfigArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetTestSpecAgentConfigPluginsConfigArrayInput` via:
 //
@@ -14823,6 +17038,12 @@ func (i GetTargetAssetTestSpecAgentConfigPluginsConfigArray) ToGetTargetAssetTes
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetTestSpecAgentConfigPluginsConfigArrayOutput)
 }
 
+func (i GetTargetAssetTestSpecAgentConfigPluginsConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetTestSpecAgentConfigPluginsConfig] {
+	return pulumix.Output[[]GetTargetAssetTestSpecAgentConfigPluginsConfig]{
+		OutputState: i.ToGetTargetAssetTestSpecAgentConfigPluginsConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetTestSpecAgentConfigPluginsConfigOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetTestSpecAgentConfigPluginsConfigOutput) ElementType() reflect.Type {
@@ -14835,6 +17056,12 @@ func (o GetTargetAssetTestSpecAgentConfigPluginsConfigOutput) ToGetTargetAssetTe
 
 func (o GetTargetAssetTestSpecAgentConfigPluginsConfigOutput) ToGetTargetAssetTestSpecAgentConfigPluginsConfigOutputWithContext(ctx context.Context) GetTargetAssetTestSpecAgentConfigPluginsConfigOutput {
 	return o
+}
+
+func (o GetTargetAssetTestSpecAgentConfigPluginsConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetTestSpecAgentConfigPluginsConfig] {
+	return pulumix.Output[GetTargetAssetTestSpecAgentConfigPluginsConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether the plugin should be enabled or disabled.
@@ -14859,6 +17086,12 @@ func (o GetTargetAssetTestSpecAgentConfigPluginsConfigArrayOutput) ToGetTargetAs
 
 func (o GetTargetAssetTestSpecAgentConfigPluginsConfigArrayOutput) ToGetTargetAssetTestSpecAgentConfigPluginsConfigArrayOutputWithContext(ctx context.Context) GetTargetAssetTestSpecAgentConfigPluginsConfigArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetTestSpecAgentConfigPluginsConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetTestSpecAgentConfigPluginsConfig] {
+	return pulumix.Output[[]GetTargetAssetTestSpecAgentConfigPluginsConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetTestSpecAgentConfigPluginsConfigArrayOutput) Index(i pulumi.IntInput) GetTargetAssetTestSpecAgentConfigPluginsConfigOutput {
@@ -14940,6 +17173,12 @@ func (i GetTargetAssetTestSpecCreateVnicDetailArgs) ToGetTargetAssetTestSpecCrea
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetTestSpecCreateVnicDetailOutput)
 }
 
+func (i GetTargetAssetTestSpecCreateVnicDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetTestSpecCreateVnicDetail] {
+	return pulumix.Output[GetTargetAssetTestSpecCreateVnicDetail]{
+		OutputState: i.ToGetTargetAssetTestSpecCreateVnicDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetTestSpecCreateVnicDetailArrayInput is an input type that accepts GetTargetAssetTestSpecCreateVnicDetailArray and GetTargetAssetTestSpecCreateVnicDetailArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetTestSpecCreateVnicDetailArrayInput` via:
 //
@@ -14965,6 +17204,12 @@ func (i GetTargetAssetTestSpecCreateVnicDetailArray) ToGetTargetAssetTestSpecCre
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetTestSpecCreateVnicDetailArrayOutput)
 }
 
+func (i GetTargetAssetTestSpecCreateVnicDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetTestSpecCreateVnicDetail] {
+	return pulumix.Output[[]GetTargetAssetTestSpecCreateVnicDetail]{
+		OutputState: i.ToGetTargetAssetTestSpecCreateVnicDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetTestSpecCreateVnicDetailOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetTestSpecCreateVnicDetailOutput) ElementType() reflect.Type {
@@ -14977,6 +17222,12 @@ func (o GetTargetAssetTestSpecCreateVnicDetailOutput) ToGetTargetAssetTestSpecCr
 
 func (o GetTargetAssetTestSpecCreateVnicDetailOutput) ToGetTargetAssetTestSpecCreateVnicDetailOutputWithContext(ctx context.Context) GetTargetAssetTestSpecCreateVnicDetailOutput {
 	return o
+}
+
+func (o GetTargetAssetTestSpecCreateVnicDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetTestSpecCreateVnicDetail] {
+	return pulumix.Output[GetTargetAssetTestSpecCreateVnicDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether the VNIC should be assigned a DNS record. If set to false, there will be no DNS record registration for the VNIC. If set to true, the DNS record will be registered. By default, the value is true.
@@ -15048,6 +17299,12 @@ func (o GetTargetAssetTestSpecCreateVnicDetailArrayOutput) ToGetTargetAssetTestS
 	return o
 }
 
+func (o GetTargetAssetTestSpecCreateVnicDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetTestSpecCreateVnicDetail] {
+	return pulumix.Output[[]GetTargetAssetTestSpecCreateVnicDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetTargetAssetTestSpecCreateVnicDetailArrayOutput) Index(i pulumi.IntInput) GetTargetAssetTestSpecCreateVnicDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetAssetTestSpecCreateVnicDetail {
 		return vs[0].([]GetTargetAssetTestSpecCreateVnicDetail)[vs[1].(int)]
@@ -15087,6 +17344,12 @@ func (i GetTargetAssetTestSpecInstanceOptionArgs) ToGetTargetAssetTestSpecInstan
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetTestSpecInstanceOptionOutput)
 }
 
+func (i GetTargetAssetTestSpecInstanceOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetTestSpecInstanceOption] {
+	return pulumix.Output[GetTargetAssetTestSpecInstanceOption]{
+		OutputState: i.ToGetTargetAssetTestSpecInstanceOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetTestSpecInstanceOptionArrayInput is an input type that accepts GetTargetAssetTestSpecInstanceOptionArray and GetTargetAssetTestSpecInstanceOptionArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetTestSpecInstanceOptionArrayInput` via:
 //
@@ -15112,6 +17375,12 @@ func (i GetTargetAssetTestSpecInstanceOptionArray) ToGetTargetAssetTestSpecInsta
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetTestSpecInstanceOptionArrayOutput)
 }
 
+func (i GetTargetAssetTestSpecInstanceOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetTestSpecInstanceOption] {
+	return pulumix.Output[[]GetTargetAssetTestSpecInstanceOption]{
+		OutputState: i.ToGetTargetAssetTestSpecInstanceOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetTestSpecInstanceOptionOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetTestSpecInstanceOptionOutput) ElementType() reflect.Type {
@@ -15124,6 +17393,12 @@ func (o GetTargetAssetTestSpecInstanceOptionOutput) ToGetTargetAssetTestSpecInst
 
 func (o GetTargetAssetTestSpecInstanceOptionOutput) ToGetTargetAssetTestSpecInstanceOptionOutputWithContext(ctx context.Context) GetTargetAssetTestSpecInstanceOptionOutput {
 	return o
+}
+
+func (o GetTargetAssetTestSpecInstanceOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetTestSpecInstanceOption] {
+	return pulumix.Output[GetTargetAssetTestSpecInstanceOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
@@ -15143,6 +17418,12 @@ func (o GetTargetAssetTestSpecInstanceOptionArrayOutput) ToGetTargetAssetTestSpe
 
 func (o GetTargetAssetTestSpecInstanceOptionArrayOutput) ToGetTargetAssetTestSpecInstanceOptionArrayOutputWithContext(ctx context.Context) GetTargetAssetTestSpecInstanceOptionArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetTestSpecInstanceOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetTestSpecInstanceOption] {
+	return pulumix.Output[[]GetTargetAssetTestSpecInstanceOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetTestSpecInstanceOptionArrayOutput) Index(i pulumi.IntInput) GetTargetAssetTestSpecInstanceOptionOutput {
@@ -15184,6 +17465,12 @@ func (i GetTargetAssetTestSpecPreemptibleInstanceConfigArgs) ToGetTargetAssetTes
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetTestSpecPreemptibleInstanceConfigOutput)
 }
 
+func (i GetTargetAssetTestSpecPreemptibleInstanceConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetTestSpecPreemptibleInstanceConfig] {
+	return pulumix.Output[GetTargetAssetTestSpecPreemptibleInstanceConfig]{
+		OutputState: i.ToGetTargetAssetTestSpecPreemptibleInstanceConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetTestSpecPreemptibleInstanceConfigArrayInput is an input type that accepts GetTargetAssetTestSpecPreemptibleInstanceConfigArray and GetTargetAssetTestSpecPreemptibleInstanceConfigArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetTestSpecPreemptibleInstanceConfigArrayInput` via:
 //
@@ -15209,6 +17496,12 @@ func (i GetTargetAssetTestSpecPreemptibleInstanceConfigArray) ToGetTargetAssetTe
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetTestSpecPreemptibleInstanceConfigArrayOutput)
 }
 
+func (i GetTargetAssetTestSpecPreemptibleInstanceConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetTestSpecPreemptibleInstanceConfig] {
+	return pulumix.Output[[]GetTargetAssetTestSpecPreemptibleInstanceConfig]{
+		OutputState: i.ToGetTargetAssetTestSpecPreemptibleInstanceConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetTestSpecPreemptibleInstanceConfigOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetTestSpecPreemptibleInstanceConfigOutput) ElementType() reflect.Type {
@@ -15221,6 +17514,12 @@ func (o GetTargetAssetTestSpecPreemptibleInstanceConfigOutput) ToGetTargetAssetT
 
 func (o GetTargetAssetTestSpecPreemptibleInstanceConfigOutput) ToGetTargetAssetTestSpecPreemptibleInstanceConfigOutputWithContext(ctx context.Context) GetTargetAssetTestSpecPreemptibleInstanceConfigOutput {
 	return o
+}
+
+func (o GetTargetAssetTestSpecPreemptibleInstanceConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetTestSpecPreemptibleInstanceConfig] {
+	return pulumix.Output[GetTargetAssetTestSpecPreemptibleInstanceConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The action to run when the preemptible instance is interrupted for eviction.
@@ -15242,6 +17541,12 @@ func (o GetTargetAssetTestSpecPreemptibleInstanceConfigArrayOutput) ToGetTargetA
 
 func (o GetTargetAssetTestSpecPreemptibleInstanceConfigArrayOutput) ToGetTargetAssetTestSpecPreemptibleInstanceConfigArrayOutputWithContext(ctx context.Context) GetTargetAssetTestSpecPreemptibleInstanceConfigArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetTestSpecPreemptibleInstanceConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetTestSpecPreemptibleInstanceConfig] {
+	return pulumix.Output[[]GetTargetAssetTestSpecPreemptibleInstanceConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetTestSpecPreemptibleInstanceConfigArrayOutput) Index(i pulumi.IntInput) GetTargetAssetTestSpecPreemptibleInstanceConfigOutput {
@@ -15287,6 +17592,12 @@ func (i GetTargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionArgs) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionOutput)
 }
 
+func (i GetTargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetTestSpecPreemptibleInstanceConfigPreemptionAction] {
+	return pulumix.Output[GetTargetAssetTestSpecPreemptibleInstanceConfigPreemptionAction]{
+		OutputState: i.ToGetTargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionArrayInput is an input type that accepts GetTargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionArray and GetTargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionArrayInput` via:
 //
@@ -15312,6 +17623,12 @@ func (i GetTargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionArray) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionArrayOutput)
 }
 
+func (i GetTargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetTestSpecPreemptibleInstanceConfigPreemptionAction] {
+	return pulumix.Output[[]GetTargetAssetTestSpecPreemptibleInstanceConfigPreemptionAction]{
+		OutputState: i.ToGetTargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionOutput) ElementType() reflect.Type {
@@ -15324,6 +17641,12 @@ func (o GetTargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionOutput) T
 
 func (o GetTargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionOutput) ToGetTargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionOutputWithContext(ctx context.Context) GetTargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionOutput {
 	return o
+}
+
+func (o GetTargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetTestSpecPreemptibleInstanceConfigPreemptionAction] {
+	return pulumix.Output[GetTargetAssetTestSpecPreemptibleInstanceConfigPreemptionAction]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. By default, it is false if not specified.
@@ -15350,6 +17673,12 @@ func (o GetTargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionArrayOutp
 
 func (o GetTargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionArrayOutput) ToGetTargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionArrayOutputWithContext(ctx context.Context) GetTargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetTestSpecPreemptibleInstanceConfigPreemptionAction] {
+	return pulumix.Output[[]GetTargetAssetTestSpecPreemptibleInstanceConfigPreemptionAction]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionArrayOutput) Index(i pulumi.IntInput) GetTargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionOutput {
@@ -15399,6 +17728,12 @@ func (i GetTargetAssetTestSpecShapeConfigArgs) ToGetTargetAssetTestSpecShapeConf
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetTestSpecShapeConfigOutput)
 }
 
+func (i GetTargetAssetTestSpecShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetTestSpecShapeConfig] {
+	return pulumix.Output[GetTargetAssetTestSpecShapeConfig]{
+		OutputState: i.ToGetTargetAssetTestSpecShapeConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetTestSpecShapeConfigArrayInput is an input type that accepts GetTargetAssetTestSpecShapeConfigArray and GetTargetAssetTestSpecShapeConfigArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetTestSpecShapeConfigArrayInput` via:
 //
@@ -15424,6 +17759,12 @@ func (i GetTargetAssetTestSpecShapeConfigArray) ToGetTargetAssetTestSpecShapeCon
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetTestSpecShapeConfigArrayOutput)
 }
 
+func (i GetTargetAssetTestSpecShapeConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetTestSpecShapeConfig] {
+	return pulumix.Output[[]GetTargetAssetTestSpecShapeConfig]{
+		OutputState: i.ToGetTargetAssetTestSpecShapeConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetTestSpecShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetTestSpecShapeConfigOutput) ElementType() reflect.Type {
@@ -15436,6 +17777,12 @@ func (o GetTargetAssetTestSpecShapeConfigOutput) ToGetTargetAssetTestSpecShapeCo
 
 func (o GetTargetAssetTestSpecShapeConfigOutput) ToGetTargetAssetTestSpecShapeConfigOutputWithContext(ctx context.Context) GetTargetAssetTestSpecShapeConfigOutput {
 	return o
+}
+
+func (o GetTargetAssetTestSpecShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetTestSpecShapeConfig] {
+	return pulumix.Output[GetTargetAssetTestSpecShapeConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
@@ -15465,6 +17812,12 @@ func (o GetTargetAssetTestSpecShapeConfigArrayOutput) ToGetTargetAssetTestSpecSh
 
 func (o GetTargetAssetTestSpecShapeConfigArrayOutput) ToGetTargetAssetTestSpecShapeConfigArrayOutputWithContext(ctx context.Context) GetTargetAssetTestSpecShapeConfigArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetTestSpecShapeConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetTestSpecShapeConfig] {
+	return pulumix.Output[[]GetTargetAssetTestSpecShapeConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetTestSpecShapeConfigArrayOutput) Index(i pulumi.IntInput) GetTargetAssetTestSpecShapeConfigOutput {
@@ -15526,6 +17879,12 @@ func (i GetTargetAssetTestSpecSourceDetailArgs) ToGetTargetAssetTestSpecSourceDe
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetTestSpecSourceDetailOutput)
 }
 
+func (i GetTargetAssetTestSpecSourceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetTestSpecSourceDetail] {
+	return pulumix.Output[GetTargetAssetTestSpecSourceDetail]{
+		OutputState: i.ToGetTargetAssetTestSpecSourceDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetTestSpecSourceDetailArrayInput is an input type that accepts GetTargetAssetTestSpecSourceDetailArray and GetTargetAssetTestSpecSourceDetailArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetTestSpecSourceDetailArrayInput` via:
 //
@@ -15551,6 +17910,12 @@ func (i GetTargetAssetTestSpecSourceDetailArray) ToGetTargetAssetTestSpecSourceD
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetTestSpecSourceDetailArrayOutput)
 }
 
+func (i GetTargetAssetTestSpecSourceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetTestSpecSourceDetail] {
+	return pulumix.Output[[]GetTargetAssetTestSpecSourceDetail]{
+		OutputState: i.ToGetTargetAssetTestSpecSourceDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetTestSpecSourceDetailOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetTestSpecSourceDetailOutput) ElementType() reflect.Type {
@@ -15563,6 +17928,12 @@ func (o GetTargetAssetTestSpecSourceDetailOutput) ToGetTargetAssetTestSpecSource
 
 func (o GetTargetAssetTestSpecSourceDetailOutput) ToGetTargetAssetTestSpecSourceDetailOutputWithContext(ctx context.Context) GetTargetAssetTestSpecSourceDetailOutput {
 	return o
+}
+
+func (o GetTargetAssetTestSpecSourceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetTestSpecSourceDetail] {
+	return pulumix.Output[GetTargetAssetTestSpecSourceDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the boot volume used to boot the instance.
@@ -15607,6 +17978,12 @@ func (o GetTargetAssetTestSpecSourceDetailArrayOutput) ToGetTargetAssetTestSpecS
 
 func (o GetTargetAssetTestSpecSourceDetailArrayOutput) ToGetTargetAssetTestSpecSourceDetailArrayOutputWithContext(ctx context.Context) GetTargetAssetTestSpecSourceDetailArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetTestSpecSourceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetTestSpecSourceDetail] {
+	return pulumix.Output[[]GetTargetAssetTestSpecSourceDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetTestSpecSourceDetailArrayOutput) Index(i pulumi.IntInput) GetTargetAssetTestSpecSourceDetailOutput {
@@ -15714,6 +18091,12 @@ func (i GetTargetAssetUserSpecArgs) ToGetTargetAssetUserSpecOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetUserSpecOutput)
 }
 
+func (i GetTargetAssetUserSpecArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetUserSpec] {
+	return pulumix.Output[GetTargetAssetUserSpec]{
+		OutputState: i.ToGetTargetAssetUserSpecOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetUserSpecArrayInput is an input type that accepts GetTargetAssetUserSpecArray and GetTargetAssetUserSpecArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetUserSpecArrayInput` via:
 //
@@ -15739,6 +18122,12 @@ func (i GetTargetAssetUserSpecArray) ToGetTargetAssetUserSpecArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetUserSpecArrayOutput)
 }
 
+func (i GetTargetAssetUserSpecArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetUserSpec] {
+	return pulumix.Output[[]GetTargetAssetUserSpec]{
+		OutputState: i.ToGetTargetAssetUserSpecArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetUserSpecOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetUserSpecOutput) ElementType() reflect.Type {
@@ -15751,6 +18140,12 @@ func (o GetTargetAssetUserSpecOutput) ToGetTargetAssetUserSpecOutput() GetTarget
 
 func (o GetTargetAssetUserSpecOutput) ToGetTargetAssetUserSpecOutputWithContext(ctx context.Context) GetTargetAssetUserSpecOutput {
 	return o
+}
+
+func (o GetTargetAssetUserSpecOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetUserSpec] {
+	return pulumix.Output[GetTargetAssetUserSpec]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Configuration options for the Oracle Cloud Agent software running on the instance.
@@ -15858,6 +18253,12 @@ func (o GetTargetAssetUserSpecArrayOutput) ToGetTargetAssetUserSpecArrayOutputWi
 	return o
 }
 
+func (o GetTargetAssetUserSpecArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetUserSpec] {
+	return pulumix.Output[[]GetTargetAssetUserSpec]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetTargetAssetUserSpecArrayOutput) Index(i pulumi.IntInput) GetTargetAssetUserSpecOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetAssetUserSpec {
 		return vs[0].([]GetTargetAssetUserSpec)[vs[1].(int)]
@@ -15909,6 +18310,12 @@ func (i GetTargetAssetUserSpecAgentConfigArgs) ToGetTargetAssetUserSpecAgentConf
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetUserSpecAgentConfigOutput)
 }
 
+func (i GetTargetAssetUserSpecAgentConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetUserSpecAgentConfig] {
+	return pulumix.Output[GetTargetAssetUserSpecAgentConfig]{
+		OutputState: i.ToGetTargetAssetUserSpecAgentConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetUserSpecAgentConfigArrayInput is an input type that accepts GetTargetAssetUserSpecAgentConfigArray and GetTargetAssetUserSpecAgentConfigArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetUserSpecAgentConfigArrayInput` via:
 //
@@ -15934,6 +18341,12 @@ func (i GetTargetAssetUserSpecAgentConfigArray) ToGetTargetAssetUserSpecAgentCon
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetUserSpecAgentConfigArrayOutput)
 }
 
+func (i GetTargetAssetUserSpecAgentConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetUserSpecAgentConfig] {
+	return pulumix.Output[[]GetTargetAssetUserSpecAgentConfig]{
+		OutputState: i.ToGetTargetAssetUserSpecAgentConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetUserSpecAgentConfigOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetUserSpecAgentConfigOutput) ElementType() reflect.Type {
@@ -15946,6 +18359,12 @@ func (o GetTargetAssetUserSpecAgentConfigOutput) ToGetTargetAssetUserSpecAgentCo
 
 func (o GetTargetAssetUserSpecAgentConfigOutput) ToGetTargetAssetUserSpecAgentConfigOutputWithContext(ctx context.Context) GetTargetAssetUserSpecAgentConfigOutput {
 	return o
+}
+
+func (o GetTargetAssetUserSpecAgentConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetUserSpecAgentConfig] {
+	return pulumix.Output[GetTargetAssetUserSpecAgentConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
@@ -15982,6 +18401,12 @@ func (o GetTargetAssetUserSpecAgentConfigArrayOutput) ToGetTargetAssetUserSpecAg
 
 func (o GetTargetAssetUserSpecAgentConfigArrayOutput) ToGetTargetAssetUserSpecAgentConfigArrayOutputWithContext(ctx context.Context) GetTargetAssetUserSpecAgentConfigArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetUserSpecAgentConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetUserSpecAgentConfig] {
+	return pulumix.Output[[]GetTargetAssetUserSpecAgentConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetUserSpecAgentConfigArrayOutput) Index(i pulumi.IntInput) GetTargetAssetUserSpecAgentConfigOutput {
@@ -16027,6 +18452,12 @@ func (i GetTargetAssetUserSpecAgentConfigPluginsConfigArgs) ToGetTargetAssetUser
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetUserSpecAgentConfigPluginsConfigOutput)
 }
 
+func (i GetTargetAssetUserSpecAgentConfigPluginsConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetUserSpecAgentConfigPluginsConfig] {
+	return pulumix.Output[GetTargetAssetUserSpecAgentConfigPluginsConfig]{
+		OutputState: i.ToGetTargetAssetUserSpecAgentConfigPluginsConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetUserSpecAgentConfigPluginsConfigArrayInput is an input type that accepts GetTargetAssetUserSpecAgentConfigPluginsConfigArray and GetTargetAssetUserSpecAgentConfigPluginsConfigArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetUserSpecAgentConfigPluginsConfigArrayInput` via:
 //
@@ -16052,6 +18483,12 @@ func (i GetTargetAssetUserSpecAgentConfigPluginsConfigArray) ToGetTargetAssetUse
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetUserSpecAgentConfigPluginsConfigArrayOutput)
 }
 
+func (i GetTargetAssetUserSpecAgentConfigPluginsConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetUserSpecAgentConfigPluginsConfig] {
+	return pulumix.Output[[]GetTargetAssetUserSpecAgentConfigPluginsConfig]{
+		OutputState: i.ToGetTargetAssetUserSpecAgentConfigPluginsConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetUserSpecAgentConfigPluginsConfigOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetUserSpecAgentConfigPluginsConfigOutput) ElementType() reflect.Type {
@@ -16064,6 +18501,12 @@ func (o GetTargetAssetUserSpecAgentConfigPluginsConfigOutput) ToGetTargetAssetUs
 
 func (o GetTargetAssetUserSpecAgentConfigPluginsConfigOutput) ToGetTargetAssetUserSpecAgentConfigPluginsConfigOutputWithContext(ctx context.Context) GetTargetAssetUserSpecAgentConfigPluginsConfigOutput {
 	return o
+}
+
+func (o GetTargetAssetUserSpecAgentConfigPluginsConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetUserSpecAgentConfigPluginsConfig] {
+	return pulumix.Output[GetTargetAssetUserSpecAgentConfigPluginsConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether the plugin should be enabled or disabled.
@@ -16088,6 +18531,12 @@ func (o GetTargetAssetUserSpecAgentConfigPluginsConfigArrayOutput) ToGetTargetAs
 
 func (o GetTargetAssetUserSpecAgentConfigPluginsConfigArrayOutput) ToGetTargetAssetUserSpecAgentConfigPluginsConfigArrayOutputWithContext(ctx context.Context) GetTargetAssetUserSpecAgentConfigPluginsConfigArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetUserSpecAgentConfigPluginsConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetUserSpecAgentConfigPluginsConfig] {
+	return pulumix.Output[[]GetTargetAssetUserSpecAgentConfigPluginsConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetUserSpecAgentConfigPluginsConfigArrayOutput) Index(i pulumi.IntInput) GetTargetAssetUserSpecAgentConfigPluginsConfigOutput {
@@ -16169,6 +18618,12 @@ func (i GetTargetAssetUserSpecCreateVnicDetailArgs) ToGetTargetAssetUserSpecCrea
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetUserSpecCreateVnicDetailOutput)
 }
 
+func (i GetTargetAssetUserSpecCreateVnicDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetUserSpecCreateVnicDetail] {
+	return pulumix.Output[GetTargetAssetUserSpecCreateVnicDetail]{
+		OutputState: i.ToGetTargetAssetUserSpecCreateVnicDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetUserSpecCreateVnicDetailArrayInput is an input type that accepts GetTargetAssetUserSpecCreateVnicDetailArray and GetTargetAssetUserSpecCreateVnicDetailArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetUserSpecCreateVnicDetailArrayInput` via:
 //
@@ -16194,6 +18649,12 @@ func (i GetTargetAssetUserSpecCreateVnicDetailArray) ToGetTargetAssetUserSpecCre
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetUserSpecCreateVnicDetailArrayOutput)
 }
 
+func (i GetTargetAssetUserSpecCreateVnicDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetUserSpecCreateVnicDetail] {
+	return pulumix.Output[[]GetTargetAssetUserSpecCreateVnicDetail]{
+		OutputState: i.ToGetTargetAssetUserSpecCreateVnicDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetUserSpecCreateVnicDetailOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetUserSpecCreateVnicDetailOutput) ElementType() reflect.Type {
@@ -16206,6 +18667,12 @@ func (o GetTargetAssetUserSpecCreateVnicDetailOutput) ToGetTargetAssetUserSpecCr
 
 func (o GetTargetAssetUserSpecCreateVnicDetailOutput) ToGetTargetAssetUserSpecCreateVnicDetailOutputWithContext(ctx context.Context) GetTargetAssetUserSpecCreateVnicDetailOutput {
 	return o
+}
+
+func (o GetTargetAssetUserSpecCreateVnicDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetUserSpecCreateVnicDetail] {
+	return pulumix.Output[GetTargetAssetUserSpecCreateVnicDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether the VNIC should be assigned a DNS record. If set to false, there will be no DNS record registration for the VNIC. If set to true, the DNS record will be registered. By default, the value is true.
@@ -16277,6 +18744,12 @@ func (o GetTargetAssetUserSpecCreateVnicDetailArrayOutput) ToGetTargetAssetUserS
 	return o
 }
 
+func (o GetTargetAssetUserSpecCreateVnicDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetUserSpecCreateVnicDetail] {
+	return pulumix.Output[[]GetTargetAssetUserSpecCreateVnicDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetTargetAssetUserSpecCreateVnicDetailArrayOutput) Index(i pulumi.IntInput) GetTargetAssetUserSpecCreateVnicDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetAssetUserSpecCreateVnicDetail {
 		return vs[0].([]GetTargetAssetUserSpecCreateVnicDetail)[vs[1].(int)]
@@ -16316,6 +18789,12 @@ func (i GetTargetAssetUserSpecInstanceOptionArgs) ToGetTargetAssetUserSpecInstan
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetUserSpecInstanceOptionOutput)
 }
 
+func (i GetTargetAssetUserSpecInstanceOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetUserSpecInstanceOption] {
+	return pulumix.Output[GetTargetAssetUserSpecInstanceOption]{
+		OutputState: i.ToGetTargetAssetUserSpecInstanceOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetUserSpecInstanceOptionArrayInput is an input type that accepts GetTargetAssetUserSpecInstanceOptionArray and GetTargetAssetUserSpecInstanceOptionArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetUserSpecInstanceOptionArrayInput` via:
 //
@@ -16341,6 +18820,12 @@ func (i GetTargetAssetUserSpecInstanceOptionArray) ToGetTargetAssetUserSpecInsta
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetUserSpecInstanceOptionArrayOutput)
 }
 
+func (i GetTargetAssetUserSpecInstanceOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetUserSpecInstanceOption] {
+	return pulumix.Output[[]GetTargetAssetUserSpecInstanceOption]{
+		OutputState: i.ToGetTargetAssetUserSpecInstanceOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetUserSpecInstanceOptionOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetUserSpecInstanceOptionOutput) ElementType() reflect.Type {
@@ -16353,6 +18838,12 @@ func (o GetTargetAssetUserSpecInstanceOptionOutput) ToGetTargetAssetUserSpecInst
 
 func (o GetTargetAssetUserSpecInstanceOptionOutput) ToGetTargetAssetUserSpecInstanceOptionOutputWithContext(ctx context.Context) GetTargetAssetUserSpecInstanceOptionOutput {
 	return o
+}
+
+func (o GetTargetAssetUserSpecInstanceOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetUserSpecInstanceOption] {
+	return pulumix.Output[GetTargetAssetUserSpecInstanceOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
@@ -16372,6 +18863,12 @@ func (o GetTargetAssetUserSpecInstanceOptionArrayOutput) ToGetTargetAssetUserSpe
 
 func (o GetTargetAssetUserSpecInstanceOptionArrayOutput) ToGetTargetAssetUserSpecInstanceOptionArrayOutputWithContext(ctx context.Context) GetTargetAssetUserSpecInstanceOptionArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetUserSpecInstanceOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetUserSpecInstanceOption] {
+	return pulumix.Output[[]GetTargetAssetUserSpecInstanceOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetUserSpecInstanceOptionArrayOutput) Index(i pulumi.IntInput) GetTargetAssetUserSpecInstanceOptionOutput {
@@ -16413,6 +18910,12 @@ func (i GetTargetAssetUserSpecPreemptibleInstanceConfigArgs) ToGetTargetAssetUse
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetUserSpecPreemptibleInstanceConfigOutput)
 }
 
+func (i GetTargetAssetUserSpecPreemptibleInstanceConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetUserSpecPreemptibleInstanceConfig] {
+	return pulumix.Output[GetTargetAssetUserSpecPreemptibleInstanceConfig]{
+		OutputState: i.ToGetTargetAssetUserSpecPreemptibleInstanceConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetUserSpecPreemptibleInstanceConfigArrayInput is an input type that accepts GetTargetAssetUserSpecPreemptibleInstanceConfigArray and GetTargetAssetUserSpecPreemptibleInstanceConfigArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetUserSpecPreemptibleInstanceConfigArrayInput` via:
 //
@@ -16438,6 +18941,12 @@ func (i GetTargetAssetUserSpecPreemptibleInstanceConfigArray) ToGetTargetAssetUs
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetUserSpecPreemptibleInstanceConfigArrayOutput)
 }
 
+func (i GetTargetAssetUserSpecPreemptibleInstanceConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetUserSpecPreemptibleInstanceConfig] {
+	return pulumix.Output[[]GetTargetAssetUserSpecPreemptibleInstanceConfig]{
+		OutputState: i.ToGetTargetAssetUserSpecPreemptibleInstanceConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetUserSpecPreemptibleInstanceConfigOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetUserSpecPreemptibleInstanceConfigOutput) ElementType() reflect.Type {
@@ -16450,6 +18959,12 @@ func (o GetTargetAssetUserSpecPreemptibleInstanceConfigOutput) ToGetTargetAssetU
 
 func (o GetTargetAssetUserSpecPreemptibleInstanceConfigOutput) ToGetTargetAssetUserSpecPreemptibleInstanceConfigOutputWithContext(ctx context.Context) GetTargetAssetUserSpecPreemptibleInstanceConfigOutput {
 	return o
+}
+
+func (o GetTargetAssetUserSpecPreemptibleInstanceConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetUserSpecPreemptibleInstanceConfig] {
+	return pulumix.Output[GetTargetAssetUserSpecPreemptibleInstanceConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The action to run when the preemptible instance is interrupted for eviction.
@@ -16471,6 +18986,12 @@ func (o GetTargetAssetUserSpecPreemptibleInstanceConfigArrayOutput) ToGetTargetA
 
 func (o GetTargetAssetUserSpecPreemptibleInstanceConfigArrayOutput) ToGetTargetAssetUserSpecPreemptibleInstanceConfigArrayOutputWithContext(ctx context.Context) GetTargetAssetUserSpecPreemptibleInstanceConfigArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetUserSpecPreemptibleInstanceConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetUserSpecPreemptibleInstanceConfig] {
+	return pulumix.Output[[]GetTargetAssetUserSpecPreemptibleInstanceConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetUserSpecPreemptibleInstanceConfigArrayOutput) Index(i pulumi.IntInput) GetTargetAssetUserSpecPreemptibleInstanceConfigOutput {
@@ -16516,6 +19037,12 @@ func (i GetTargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArgs) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionOutput)
 }
 
+func (i GetTargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction] {
+	return pulumix.Output[GetTargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction]{
+		OutputState: i.ToGetTargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArrayInput is an input type that accepts GetTargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArray and GetTargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArrayInput` via:
 //
@@ -16541,6 +19068,12 @@ func (i GetTargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArray) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArrayOutput)
 }
 
+func (i GetTargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction] {
+	return pulumix.Output[[]GetTargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction]{
+		OutputState: i.ToGetTargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionOutput) ElementType() reflect.Type {
@@ -16553,6 +19086,12 @@ func (o GetTargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionOutput) T
 
 func (o GetTargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionOutput) ToGetTargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionOutputWithContext(ctx context.Context) GetTargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionOutput {
 	return o
+}
+
+func (o GetTargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction] {
+	return pulumix.Output[GetTargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. By default, it is false if not specified.
@@ -16579,6 +19118,12 @@ func (o GetTargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArrayOutp
 
 func (o GetTargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArrayOutput) ToGetTargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArrayOutputWithContext(ctx context.Context) GetTargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction] {
+	return pulumix.Output[[]GetTargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArrayOutput) Index(i pulumi.IntInput) GetTargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionOutput {
@@ -16628,6 +19173,12 @@ func (i GetTargetAssetUserSpecShapeConfigArgs) ToGetTargetAssetUserSpecShapeConf
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetUserSpecShapeConfigOutput)
 }
 
+func (i GetTargetAssetUserSpecShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetUserSpecShapeConfig] {
+	return pulumix.Output[GetTargetAssetUserSpecShapeConfig]{
+		OutputState: i.ToGetTargetAssetUserSpecShapeConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetUserSpecShapeConfigArrayInput is an input type that accepts GetTargetAssetUserSpecShapeConfigArray and GetTargetAssetUserSpecShapeConfigArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetUserSpecShapeConfigArrayInput` via:
 //
@@ -16653,6 +19204,12 @@ func (i GetTargetAssetUserSpecShapeConfigArray) ToGetTargetAssetUserSpecShapeCon
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetUserSpecShapeConfigArrayOutput)
 }
 
+func (i GetTargetAssetUserSpecShapeConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetUserSpecShapeConfig] {
+	return pulumix.Output[[]GetTargetAssetUserSpecShapeConfig]{
+		OutputState: i.ToGetTargetAssetUserSpecShapeConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetUserSpecShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetUserSpecShapeConfigOutput) ElementType() reflect.Type {
@@ -16665,6 +19222,12 @@ func (o GetTargetAssetUserSpecShapeConfigOutput) ToGetTargetAssetUserSpecShapeCo
 
 func (o GetTargetAssetUserSpecShapeConfigOutput) ToGetTargetAssetUserSpecShapeConfigOutputWithContext(ctx context.Context) GetTargetAssetUserSpecShapeConfigOutput {
 	return o
+}
+
+func (o GetTargetAssetUserSpecShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetUserSpecShapeConfig] {
+	return pulumix.Output[GetTargetAssetUserSpecShapeConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
@@ -16694,6 +19257,12 @@ func (o GetTargetAssetUserSpecShapeConfigArrayOutput) ToGetTargetAssetUserSpecSh
 
 func (o GetTargetAssetUserSpecShapeConfigArrayOutput) ToGetTargetAssetUserSpecShapeConfigArrayOutputWithContext(ctx context.Context) GetTargetAssetUserSpecShapeConfigArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetUserSpecShapeConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetUserSpecShapeConfig] {
+	return pulumix.Output[[]GetTargetAssetUserSpecShapeConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetUserSpecShapeConfigArrayOutput) Index(i pulumi.IntInput) GetTargetAssetUserSpecShapeConfigOutput {
@@ -16755,6 +19324,12 @@ func (i GetTargetAssetUserSpecSourceDetailArgs) ToGetTargetAssetUserSpecSourceDe
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetUserSpecSourceDetailOutput)
 }
 
+func (i GetTargetAssetUserSpecSourceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetUserSpecSourceDetail] {
+	return pulumix.Output[GetTargetAssetUserSpecSourceDetail]{
+		OutputState: i.ToGetTargetAssetUserSpecSourceDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetUserSpecSourceDetailArrayInput is an input type that accepts GetTargetAssetUserSpecSourceDetailArray and GetTargetAssetUserSpecSourceDetailArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetUserSpecSourceDetailArrayInput` via:
 //
@@ -16780,6 +19355,12 @@ func (i GetTargetAssetUserSpecSourceDetailArray) ToGetTargetAssetUserSpecSourceD
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetUserSpecSourceDetailArrayOutput)
 }
 
+func (i GetTargetAssetUserSpecSourceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetUserSpecSourceDetail] {
+	return pulumix.Output[[]GetTargetAssetUserSpecSourceDetail]{
+		OutputState: i.ToGetTargetAssetUserSpecSourceDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetUserSpecSourceDetailOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetUserSpecSourceDetailOutput) ElementType() reflect.Type {
@@ -16792,6 +19373,12 @@ func (o GetTargetAssetUserSpecSourceDetailOutput) ToGetTargetAssetUserSpecSource
 
 func (o GetTargetAssetUserSpecSourceDetailOutput) ToGetTargetAssetUserSpecSourceDetailOutputWithContext(ctx context.Context) GetTargetAssetUserSpecSourceDetailOutput {
 	return o
+}
+
+func (o GetTargetAssetUserSpecSourceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetUserSpecSourceDetail] {
+	return pulumix.Output[GetTargetAssetUserSpecSourceDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the boot volume used to boot the instance.
@@ -16838,6 +19425,12 @@ func (o GetTargetAssetUserSpecSourceDetailArrayOutput) ToGetTargetAssetUserSpecS
 	return o
 }
 
+func (o GetTargetAssetUserSpecSourceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetUserSpecSourceDetail] {
+	return pulumix.Output[[]GetTargetAssetUserSpecSourceDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetTargetAssetUserSpecSourceDetailArrayOutput) Index(i pulumi.IntInput) GetTargetAssetUserSpecSourceDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetAssetUserSpecSourceDetail {
 		return vs[0].([]GetTargetAssetUserSpecSourceDetail)[vs[1].(int)]
@@ -16881,6 +19474,12 @@ func (i GetTargetAssetsFilterArgs) ToGetTargetAssetsFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsFilterOutput)
 }
 
+func (i GetTargetAssetsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsFilter] {
+	return pulumix.Output[GetTargetAssetsFilter]{
+		OutputState: i.ToGetTargetAssetsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetsFilterArrayInput is an input type that accepts GetTargetAssetsFilterArray and GetTargetAssetsFilterArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetsFilterArrayInput` via:
 //
@@ -16906,6 +19505,12 @@ func (i GetTargetAssetsFilterArray) ToGetTargetAssetsFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsFilterArrayOutput)
 }
 
+func (i GetTargetAssetsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsFilter] {
+	return pulumix.Output[[]GetTargetAssetsFilter]{
+		OutputState: i.ToGetTargetAssetsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetsFilterOutput) ElementType() reflect.Type {
@@ -16918,6 +19523,12 @@ func (o GetTargetAssetsFilterOutput) ToGetTargetAssetsFilterOutput() GetTargetAs
 
 func (o GetTargetAssetsFilterOutput) ToGetTargetAssetsFilterOutputWithContext(ctx context.Context) GetTargetAssetsFilterOutput {
 	return o
+}
+
+func (o GetTargetAssetsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsFilter] {
+	return pulumix.Output[GetTargetAssetsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
@@ -16945,6 +19556,12 @@ func (o GetTargetAssetsFilterArrayOutput) ToGetTargetAssetsFilterArrayOutput() G
 
 func (o GetTargetAssetsFilterArrayOutput) ToGetTargetAssetsFilterArrayOutputWithContext(ctx context.Context) GetTargetAssetsFilterArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsFilter] {
+	return pulumix.Output[[]GetTargetAssetsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetsFilterArrayOutput) Index(i pulumi.IntInput) GetTargetAssetsFilterOutput {
@@ -16984,6 +19601,12 @@ func (i GetTargetAssetsTargetAssetCollectionArgs) ToGetTargetAssetsTargetAssetCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollection] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollection]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetsTargetAssetCollectionArrayInput is an input type that accepts GetTargetAssetsTargetAssetCollectionArray and GetTargetAssetsTargetAssetCollectionArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetsTargetAssetCollectionArrayInput` via:
 //
@@ -17009,6 +19632,12 @@ func (i GetTargetAssetsTargetAssetCollectionArray) ToGetTargetAssetsTargetAssetC
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionArrayOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollection] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollection]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetsTargetAssetCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetsTargetAssetCollectionOutput) ElementType() reflect.Type {
@@ -17021,6 +19650,12 @@ func (o GetTargetAssetsTargetAssetCollectionOutput) ToGetTargetAssetsTargetAsset
 
 func (o GetTargetAssetsTargetAssetCollectionOutput) ToGetTargetAssetsTargetAssetCollectionOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollection] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetsTargetAssetCollectionOutput) Items() GetTargetAssetsTargetAssetCollectionItemArrayOutput {
@@ -17041,6 +19676,12 @@ func (o GetTargetAssetsTargetAssetCollectionArrayOutput) ToGetTargetAssetsTarget
 
 func (o GetTargetAssetsTargetAssetCollectionArrayOutput) ToGetTargetAssetsTargetAssetCollectionArrayOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollection] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetsTargetAssetCollectionArrayOutput) Index(i pulumi.IntInput) GetTargetAssetsTargetAssetCollectionOutput {
@@ -17162,6 +19803,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemArgs) ToGetTargetAssetsTargetAss
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItem] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItem]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetsTargetAssetCollectionItemArrayInput is an input type that accepts GetTargetAssetsTargetAssetCollectionItemArray and GetTargetAssetsTargetAssetCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetsTargetAssetCollectionItemArrayInput` via:
 //
@@ -17187,6 +19834,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemArray) ToGetTargetAssetsTargetAs
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemArrayOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItem] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItem]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetsTargetAssetCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetsTargetAssetCollectionItemOutput) ElementType() reflect.Type {
@@ -17199,6 +19852,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemOutput) ToGetTargetAssetsTargetA
 
 func (o GetTargetAssetsTargetAssetCollectionItemOutput) ToGetTargetAssetsTargetAssetCollectionItemOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItem] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Performance of the block volumes.
@@ -17332,6 +19991,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemArrayOutput) ToGetTargetAssetsTa
 	return o
 }
 
+func (o GetTargetAssetsTargetAssetCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItem] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetTargetAssetsTargetAssetCollectionItemArrayOutput) Index(i pulumi.IntInput) GetTargetAssetsTargetAssetCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetAssetsTargetAssetCollectionItem {
 		return vs[0].([]GetTargetAssetsTargetAssetCollectionItem)[vs[1].(int)]
@@ -17379,6 +20044,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemCompatibilityMessageArgs) ToGetT
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemCompatibilityMessageOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemCompatibilityMessageArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemCompatibilityMessage] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemCompatibilityMessage]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemCompatibilityMessageOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetsTargetAssetCollectionItemCompatibilityMessageArrayInput is an input type that accepts GetTargetAssetsTargetAssetCollectionItemCompatibilityMessageArray and GetTargetAssetsTargetAssetCollectionItemCompatibilityMessageArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetsTargetAssetCollectionItemCompatibilityMessageArrayInput` via:
 //
@@ -17404,6 +20075,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemCompatibilityMessageArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemCompatibilityMessageArrayOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemCompatibilityMessageArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemCompatibilityMessage] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemCompatibilityMessage]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemCompatibilityMessageArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetsTargetAssetCollectionItemCompatibilityMessageOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetsTargetAssetCollectionItemCompatibilityMessageOutput) ElementType() reflect.Type {
@@ -17416,6 +20093,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemCompatibilityMessageOutput) ToGe
 
 func (o GetTargetAssetsTargetAssetCollectionItemCompatibilityMessageOutput) ToGetTargetAssetsTargetAssetCollectionItemCompatibilityMessageOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemCompatibilityMessageOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemCompatibilityMessageOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemCompatibilityMessage] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemCompatibilityMessage]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Detailed description of the compatibility issue.
@@ -17445,6 +20128,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemCompatibilityMessageArrayOutput)
 
 func (o GetTargetAssetsTargetAssetCollectionItemCompatibilityMessageArrayOutput) ToGetTargetAssetsTargetAssetCollectionItemCompatibilityMessageArrayOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemCompatibilityMessageArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemCompatibilityMessageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemCompatibilityMessage] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemCompatibilityMessage]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetsTargetAssetCollectionItemCompatibilityMessageArrayOutput) Index(i pulumi.IntInput) GetTargetAssetsTargetAssetCollectionItemCompatibilityMessageOutput {
@@ -17510,6 +20199,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemEstimatedCostArgs) ToGetTargetAs
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemEstimatedCostOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemEstimatedCostArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemEstimatedCost] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemEstimatedCost]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemEstimatedCostOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetsTargetAssetCollectionItemEstimatedCostArrayInput is an input type that accepts GetTargetAssetsTargetAssetCollectionItemEstimatedCostArray and GetTargetAssetsTargetAssetCollectionItemEstimatedCostArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetsTargetAssetCollectionItemEstimatedCostArrayInput` via:
 //
@@ -17535,6 +20230,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemEstimatedCostArray) ToGetTargetA
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemEstimatedCostArrayOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemEstimatedCostArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemEstimatedCost] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemEstimatedCost]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemEstimatedCostArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetsTargetAssetCollectionItemEstimatedCostOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetsTargetAssetCollectionItemEstimatedCostOutput) ElementType() reflect.Type {
@@ -17547,6 +20248,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemEstimatedCostOutput) ToGetTarget
 
 func (o GetTargetAssetsTargetAssetCollectionItemEstimatedCostOutput) ToGetTargetAssetsTargetAssetCollectionItemEstimatedCostOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemEstimatedCostOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemEstimatedCostOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemEstimatedCost] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemEstimatedCost]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Cost estimation for compute
@@ -17606,6 +20313,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemEstimatedCostArrayOutput) ToGetT
 
 func (o GetTargetAssetsTargetAssetCollectionItemEstimatedCostArrayOutput) ToGetTargetAssetsTargetAssetCollectionItemEstimatedCostArrayOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemEstimatedCostArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemEstimatedCostArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemEstimatedCost] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemEstimatedCost]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetsTargetAssetCollectionItemEstimatedCostArrayOutput) Index(i pulumi.IntInput) GetTargetAssetsTargetAssetCollectionItemEstimatedCostOutput {
@@ -17687,6 +20400,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemEstimatedCostComputeArgs) ToGetT
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemEstimatedCostComputeOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemEstimatedCostComputeArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemEstimatedCostCompute] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemEstimatedCostCompute]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemEstimatedCostComputeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetsTargetAssetCollectionItemEstimatedCostComputeArrayInput is an input type that accepts GetTargetAssetsTargetAssetCollectionItemEstimatedCostComputeArray and GetTargetAssetsTargetAssetCollectionItemEstimatedCostComputeArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetsTargetAssetCollectionItemEstimatedCostComputeArrayInput` via:
 //
@@ -17712,6 +20431,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemEstimatedCostComputeArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemEstimatedCostComputeArrayOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemEstimatedCostComputeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemEstimatedCostCompute] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemEstimatedCostCompute]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemEstimatedCostComputeArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetsTargetAssetCollectionItemEstimatedCostComputeOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetsTargetAssetCollectionItemEstimatedCostComputeOutput) ElementType() reflect.Type {
@@ -17724,6 +20449,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemEstimatedCostComputeOutput) ToGe
 
 func (o GetTargetAssetsTargetAssetCollectionItemEstimatedCostComputeOutput) ToGetTargetAssetsTargetAssetCollectionItemEstimatedCostComputeOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemEstimatedCostComputeOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemEstimatedCostComputeOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemEstimatedCostCompute] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemEstimatedCostCompute]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Total number of GPU
@@ -17803,6 +20534,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemEstimatedCostComputeArrayOutput)
 	return o
 }
 
+func (o GetTargetAssetsTargetAssetCollectionItemEstimatedCostComputeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemEstimatedCostCompute] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemEstimatedCostCompute]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetTargetAssetsTargetAssetCollectionItemEstimatedCostComputeArrayOutput) Index(i pulumi.IntInput) GetTargetAssetsTargetAssetCollectionItemEstimatedCostComputeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetAssetsTargetAssetCollectionItemEstimatedCostCompute {
 		return vs[0].([]GetTargetAssetsTargetAssetCollectionItemEstimatedCostCompute)[vs[1].(int)]
@@ -17846,6 +20583,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemEstimatedCostOsImageArgs) ToGetT
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemEstimatedCostOsImageOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemEstimatedCostOsImageArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemEstimatedCostOsImage] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemEstimatedCostOsImage]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemEstimatedCostOsImageOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetsTargetAssetCollectionItemEstimatedCostOsImageArrayInput is an input type that accepts GetTargetAssetsTargetAssetCollectionItemEstimatedCostOsImageArray and GetTargetAssetsTargetAssetCollectionItemEstimatedCostOsImageArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetsTargetAssetCollectionItemEstimatedCostOsImageArrayInput` via:
 //
@@ -17871,6 +20614,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemEstimatedCostOsImageArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemEstimatedCostOsImageArrayOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemEstimatedCostOsImageArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemEstimatedCostOsImage] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemEstimatedCostOsImage]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemEstimatedCostOsImageArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetsTargetAssetCollectionItemEstimatedCostOsImageOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetsTargetAssetCollectionItemEstimatedCostOsImageOutput) ElementType() reflect.Type {
@@ -17883,6 +20632,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemEstimatedCostOsImageOutput) ToGe
 
 func (o GetTargetAssetsTargetAssetCollectionItemEstimatedCostOsImageOutput) ToGetTargetAssetsTargetAssetCollectionItemEstimatedCostOsImageOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemEstimatedCostOsImageOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemEstimatedCostOsImageOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemEstimatedCostOsImage] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemEstimatedCostOsImage]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Total price per hour
@@ -17909,6 +20664,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemEstimatedCostOsImageArrayOutput)
 
 func (o GetTargetAssetsTargetAssetCollectionItemEstimatedCostOsImageArrayOutput) ToGetTargetAssetsTargetAssetCollectionItemEstimatedCostOsImageArrayOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemEstimatedCostOsImageArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemEstimatedCostOsImageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemEstimatedCostOsImage] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemEstimatedCostOsImage]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetsTargetAssetCollectionItemEstimatedCostOsImageArrayOutput) Index(i pulumi.IntInput) GetTargetAssetsTargetAssetCollectionItemEstimatedCostOsImageOutput {
@@ -17958,6 +20719,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageArgs) ToGetT
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorage] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorage]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageArrayInput is an input type that accepts GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageArray and GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageArrayInput` via:
 //
@@ -17983,6 +20750,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageArrayOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorage] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorage]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageOutput) ElementType() reflect.Type {
@@ -17995,6 +20768,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageOutput) ToGe
 
 func (o GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageOutput) ToGetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorage] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorage]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Gigabyte storage capacity per month.
@@ -18028,6 +20807,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageArrayOutput)
 
 func (o GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageArrayOutput) ToGetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageArrayOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorage] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorage]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageArrayOutput) Index(i pulumi.IntInput) GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageOutput {
@@ -18081,6 +20866,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolumeArgs) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolumeOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolumeArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolume] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolume]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolumeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolumeArrayInput is an input type that accepts GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolumeArray and GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolumeArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolumeArrayInput` via:
 //
@@ -18106,6 +20897,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolumeArray)
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolumeArrayOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolumeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolume] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolume]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolumeArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolumeOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolumeOutput) ElementType() reflect.Type {
@@ -18118,6 +20915,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolumeOutput
 
 func (o GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolumeOutput) ToGetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolumeOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolumeOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolumeOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolume] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolume]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Gigabyte storage capacity
@@ -18160,6 +20963,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolumeArrayO
 
 func (o GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolumeArrayOutput) ToGetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolumeArrayOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolumeArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolumeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolume] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolume]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolumeArrayOutput) Index(i pulumi.IntInput) GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorageVolumeOutput {
@@ -18281,6 +21090,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemMigrationAssetArgs) ToGetTargetA
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemMigrationAssetOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemMigrationAssetArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemMigrationAsset] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemMigrationAsset]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemMigrationAssetOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetsTargetAssetCollectionItemMigrationAssetArrayInput is an input type that accepts GetTargetAssetsTargetAssetCollectionItemMigrationAssetArray and GetTargetAssetsTargetAssetCollectionItemMigrationAssetArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetsTargetAssetCollectionItemMigrationAssetArrayInput` via:
 //
@@ -18306,6 +21121,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemMigrationAssetArray) ToGetTarget
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemMigrationAssetArrayOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemMigrationAssetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemMigrationAsset] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemMigrationAsset]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemMigrationAssetArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetsTargetAssetCollectionItemMigrationAssetOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetsTargetAssetCollectionItemMigrationAssetOutput) ElementType() reflect.Type {
@@ -18318,6 +21139,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemMigrationAssetOutput) ToGetTarge
 
 func (o GetTargetAssetsTargetAssetCollectionItemMigrationAssetOutput) ToGetTargetAssetsTargetAssetCollectionItemMigrationAssetOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemMigrationAssetOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemMigrationAssetOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemMigrationAsset] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemMigrationAsset]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
@@ -18445,6 +21272,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemMigrationAssetArrayOutput) ToGet
 	return o
 }
 
+func (o GetTargetAssetsTargetAssetCollectionItemMigrationAssetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemMigrationAsset] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemMigrationAsset]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetTargetAssetsTargetAssetCollectionItemMigrationAssetArrayOutput) Index(i pulumi.IntInput) GetTargetAssetsTargetAssetCollectionItemMigrationAssetOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetAssetsTargetAssetCollectionItemMigrationAsset {
 		return vs[0].([]GetTargetAssetsTargetAssetCollectionItemMigrationAsset)[vs[1].(int)]
@@ -18550,6 +21383,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemRecommendedSpecArgs) ToGetTarget
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemRecommendedSpecOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemRecommendedSpecArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemRecommendedSpec] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemRecommendedSpec]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemRecommendedSpecOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetsTargetAssetCollectionItemRecommendedSpecArrayInput is an input type that accepts GetTargetAssetsTargetAssetCollectionItemRecommendedSpecArray and GetTargetAssetsTargetAssetCollectionItemRecommendedSpecArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetsTargetAssetCollectionItemRecommendedSpecArrayInput` via:
 //
@@ -18575,6 +21414,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemRecommendedSpecArray) ToGetTarge
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemRecommendedSpecArrayOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemRecommendedSpecArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemRecommendedSpec] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemRecommendedSpec]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemRecommendedSpecArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetsTargetAssetCollectionItemRecommendedSpecOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetsTargetAssetCollectionItemRecommendedSpecOutput) ElementType() reflect.Type {
@@ -18587,6 +21432,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecOutput) ToGetTarg
 
 func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecOutput) ToGetTargetAssetsTargetAssetCollectionItemRecommendedSpecOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemRecommendedSpecOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemRecommendedSpec] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemRecommendedSpec]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Configuration options for the Oracle Cloud Agent software running on the instance.
@@ -18710,6 +21561,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecArrayOutput) ToGe
 	return o
 }
 
+func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemRecommendedSpec] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemRecommendedSpec]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecArrayOutput) Index(i pulumi.IntInput) GetTargetAssetsTargetAssetCollectionItemRecommendedSpecOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetAssetsTargetAssetCollectionItemRecommendedSpec {
 		return vs[0].([]GetTargetAssetsTargetAssetCollectionItemRecommendedSpec)[vs[1].(int)]
@@ -18761,6 +21618,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigArgs) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfig] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfig]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigArrayInput is an input type that accepts GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigArray and GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigArrayInput` via:
 //
@@ -18786,6 +21649,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigArray)
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigArrayOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfig] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfig]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigOutput) ElementType() reflect.Type {
@@ -18798,6 +21667,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigOutput
 
 func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigOutput) ToGetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfig] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
@@ -18840,6 +21715,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigArrayO
 
 func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigArrayOutput) ToGetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigArrayOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfig] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigArrayOutput) Index(i pulumi.IntInput) GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigOutput {
@@ -18885,6 +21766,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigPlugin
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigPluginsConfigOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigPluginsConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigPluginsConfig] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigPluginsConfig]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigPluginsConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigPluginsConfigArrayInput is an input type that accepts GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigPluginsConfigArray and GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigPluginsConfigArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigPluginsConfigArrayInput` via:
 //
@@ -18910,6 +21797,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigPlugin
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigPluginsConfigArrayOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigPluginsConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigPluginsConfig] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigPluginsConfig]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigPluginsConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigPluginsConfigOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigPluginsConfigOutput) ElementType() reflect.Type {
@@ -18922,6 +21815,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigPlugin
 
 func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigPluginsConfigOutput) ToGetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigPluginsConfigOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigPluginsConfigOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigPluginsConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigPluginsConfig] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigPluginsConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether the plugin should be enabled or disabled.
@@ -18950,6 +21849,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigPlugin
 
 func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigPluginsConfigArrayOutput) ToGetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigPluginsConfigArrayOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigPluginsConfigArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigPluginsConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigPluginsConfig] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigPluginsConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigPluginsConfigArrayOutput) Index(i pulumi.IntInput) GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigPluginsConfigOutput {
@@ -19031,6 +21936,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetailA
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetailOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetail] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetail]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetailArrayInput is an input type that accepts GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetailArray and GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetailArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetailArrayInput` via:
 //
@@ -19056,6 +21967,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetailA
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetailArrayOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetail] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetail]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetailOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetailOutput) ElementType() reflect.Type {
@@ -19068,6 +21985,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetailO
 
 func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetailOutput) ToGetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetailOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetailOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetail] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether the VNIC should be assigned a DNS record. If set to false, there will be no DNS record registration for the VNIC. If set to true, the DNS record will be registered. By default, the value is true.
@@ -19161,6 +22084,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetailA
 	return o
 }
 
+func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetail] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetailArrayOutput) Index(i pulumi.IntInput) GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetail {
 		return vs[0].([]GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetail)[vs[1].(int)]
@@ -19200,6 +22129,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemRecommendedSpecInstanceOptionArg
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemRecommendedSpecInstanceOptionOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemRecommendedSpecInstanceOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemRecommendedSpecInstanceOption] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemRecommendedSpecInstanceOption]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemRecommendedSpecInstanceOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetsTargetAssetCollectionItemRecommendedSpecInstanceOptionArrayInput is an input type that accepts GetTargetAssetsTargetAssetCollectionItemRecommendedSpecInstanceOptionArray and GetTargetAssetsTargetAssetCollectionItemRecommendedSpecInstanceOptionArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetsTargetAssetCollectionItemRecommendedSpecInstanceOptionArrayInput` via:
 //
@@ -19225,6 +22160,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemRecommendedSpecInstanceOptionArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemRecommendedSpecInstanceOptionArrayOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemRecommendedSpecInstanceOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemRecommendedSpecInstanceOption] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemRecommendedSpecInstanceOption]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemRecommendedSpecInstanceOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetsTargetAssetCollectionItemRecommendedSpecInstanceOptionOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetsTargetAssetCollectionItemRecommendedSpecInstanceOptionOutput) ElementType() reflect.Type {
@@ -19237,6 +22178,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecInstanceOptionOut
 
 func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecInstanceOptionOutput) ToGetTargetAssetsTargetAssetCollectionItemRecommendedSpecInstanceOptionOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemRecommendedSpecInstanceOptionOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecInstanceOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemRecommendedSpecInstanceOption] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemRecommendedSpecInstanceOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
@@ -19258,6 +22205,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecInstanceOptionArr
 
 func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecInstanceOptionArrayOutput) ToGetTargetAssetsTargetAssetCollectionItemRecommendedSpecInstanceOptionArrayOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemRecommendedSpecInstanceOptionArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecInstanceOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemRecommendedSpecInstanceOption] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemRecommendedSpecInstanceOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecInstanceOptionArrayOutput) Index(i pulumi.IntInput) GetTargetAssetsTargetAssetCollectionItemRecommendedSpecInstanceOptionOutput {
@@ -19299,6 +22252,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstan
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfig] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfig]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigArrayInput is an input type that accepts GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigArray and GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigArrayInput` via:
 //
@@ -19324,6 +22283,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstan
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigArrayOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfig] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfig]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigOutput) ElementType() reflect.Type {
@@ -19336,6 +22301,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstan
 
 func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigOutput) ToGetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfig] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The action to run when the preemptible instance is interrupted for eviction.
@@ -19357,6 +22328,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstan
 
 func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigArrayOutput) ToGetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigArrayOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfig] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigArrayOutput) Index(i pulumi.IntInput) GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigOutput {
@@ -19402,6 +22379,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstan
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigPreemptionActionOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigPreemptionActionArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigPreemptionAction] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigPreemptionAction]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigPreemptionActionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigPreemptionActionArrayInput is an input type that accepts GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigPreemptionActionArray and GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigPreemptionActionArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigPreemptionActionArrayInput` via:
 //
@@ -19427,6 +22410,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstan
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigPreemptionActionArrayOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigPreemptionActionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigPreemptionAction] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigPreemptionAction]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigPreemptionActionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigPreemptionActionOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigPreemptionActionOutput) ElementType() reflect.Type {
@@ -19439,6 +22428,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstan
 
 func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigPreemptionActionOutput) ToGetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigPreemptionActionOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigPreemptionActionOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigPreemptionActionOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigPreemptionAction] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigPreemptionAction]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. By default, it is false if not specified.
@@ -19467,6 +22462,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstan
 
 func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigPreemptionActionArrayOutput) ToGetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigPreemptionActionArrayOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigPreemptionActionArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigPreemptionActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigPreemptionAction] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigPreemptionAction]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigPreemptionActionArrayOutput) Index(i pulumi.IntInput) GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigPreemptionActionOutput {
@@ -19516,6 +22517,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemRecommendedSpecShapeConfigArgs) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemRecommendedSpecShapeConfigOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemRecommendedSpecShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemRecommendedSpecShapeConfig] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemRecommendedSpecShapeConfig]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemRecommendedSpecShapeConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetsTargetAssetCollectionItemRecommendedSpecShapeConfigArrayInput is an input type that accepts GetTargetAssetsTargetAssetCollectionItemRecommendedSpecShapeConfigArray and GetTargetAssetsTargetAssetCollectionItemRecommendedSpecShapeConfigArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetsTargetAssetCollectionItemRecommendedSpecShapeConfigArrayInput` via:
 //
@@ -19541,6 +22548,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemRecommendedSpecShapeConfigArray)
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemRecommendedSpecShapeConfigArrayOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemRecommendedSpecShapeConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemRecommendedSpecShapeConfig] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemRecommendedSpecShapeConfig]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemRecommendedSpecShapeConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetsTargetAssetCollectionItemRecommendedSpecShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetsTargetAssetCollectionItemRecommendedSpecShapeConfigOutput) ElementType() reflect.Type {
@@ -19553,6 +22566,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecShapeConfigOutput
 
 func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecShapeConfigOutput) ToGetTargetAssetsTargetAssetCollectionItemRecommendedSpecShapeConfigOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemRecommendedSpecShapeConfigOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemRecommendedSpecShapeConfig] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemRecommendedSpecShapeConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
@@ -19586,6 +22605,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecShapeConfigArrayO
 
 func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecShapeConfigArrayOutput) ToGetTargetAssetsTargetAssetCollectionItemRecommendedSpecShapeConfigArrayOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemRecommendedSpecShapeConfigArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecShapeConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemRecommendedSpecShapeConfig] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemRecommendedSpecShapeConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecShapeConfigArrayOutput) Index(i pulumi.IntInput) GetTargetAssetsTargetAssetCollectionItemRecommendedSpecShapeConfigOutput {
@@ -19647,6 +22672,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemRecommendedSpecSourceDetailArgs)
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemRecommendedSpecSourceDetailOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemRecommendedSpecSourceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemRecommendedSpecSourceDetail] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemRecommendedSpecSourceDetail]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemRecommendedSpecSourceDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetsTargetAssetCollectionItemRecommendedSpecSourceDetailArrayInput is an input type that accepts GetTargetAssetsTargetAssetCollectionItemRecommendedSpecSourceDetailArray and GetTargetAssetsTargetAssetCollectionItemRecommendedSpecSourceDetailArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetsTargetAssetCollectionItemRecommendedSpecSourceDetailArrayInput` via:
 //
@@ -19672,6 +22703,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemRecommendedSpecSourceDetailArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemRecommendedSpecSourceDetailArrayOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemRecommendedSpecSourceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemRecommendedSpecSourceDetail] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemRecommendedSpecSourceDetail]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemRecommendedSpecSourceDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetsTargetAssetCollectionItemRecommendedSpecSourceDetailOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetsTargetAssetCollectionItemRecommendedSpecSourceDetailOutput) ElementType() reflect.Type {
@@ -19684,6 +22721,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecSourceDetailOutpu
 
 func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecSourceDetailOutput) ToGetTargetAssetsTargetAssetCollectionItemRecommendedSpecSourceDetailOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemRecommendedSpecSourceDetailOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecSourceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemRecommendedSpecSourceDetail] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemRecommendedSpecSourceDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the boot volume used to boot the instance.
@@ -19736,6 +22779,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecSourceDetailArray
 
 func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecSourceDetailArrayOutput) ToGetTargetAssetsTargetAssetCollectionItemRecommendedSpecSourceDetailArrayOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemRecommendedSpecSourceDetailArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecSourceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemRecommendedSpecSourceDetail] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemRecommendedSpecSourceDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecSourceDetailArrayOutput) Index(i pulumi.IntInput) GetTargetAssetsTargetAssetCollectionItemRecommendedSpecSourceDetailOutput {
@@ -19843,6 +22892,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemTestSpecArgs) ToGetTargetAssetsT
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemTestSpecOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemTestSpecArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemTestSpec] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemTestSpec]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemTestSpecOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetsTargetAssetCollectionItemTestSpecArrayInput is an input type that accepts GetTargetAssetsTargetAssetCollectionItemTestSpecArray and GetTargetAssetsTargetAssetCollectionItemTestSpecArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetsTargetAssetCollectionItemTestSpecArrayInput` via:
 //
@@ -19868,6 +22923,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemTestSpecArray) ToGetTargetAssets
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemTestSpecArrayOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemTestSpecArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemTestSpec] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemTestSpec]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemTestSpecArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetsTargetAssetCollectionItemTestSpecOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetsTargetAssetCollectionItemTestSpecOutput) ElementType() reflect.Type {
@@ -19880,6 +22941,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemTestSpecOutput) ToGetTargetAsset
 
 func (o GetTargetAssetsTargetAssetCollectionItemTestSpecOutput) ToGetTargetAssetsTargetAssetCollectionItemTestSpecOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemTestSpecOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemTestSpecOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemTestSpec] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemTestSpec]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Configuration options for the Oracle Cloud Agent software running on the instance.
@@ -19997,6 +23064,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemTestSpecArrayOutput) ToGetTarget
 	return o
 }
 
+func (o GetTargetAssetsTargetAssetCollectionItemTestSpecArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemTestSpec] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemTestSpec]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetTargetAssetsTargetAssetCollectionItemTestSpecArrayOutput) Index(i pulumi.IntInput) GetTargetAssetsTargetAssetCollectionItemTestSpecOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetAssetsTargetAssetCollectionItemTestSpec {
 		return vs[0].([]GetTargetAssetsTargetAssetCollectionItemTestSpec)[vs[1].(int)]
@@ -20048,6 +23121,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigArgs) ToGetTa
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfig] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfig]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigArrayInput is an input type that accepts GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigArray and GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigArrayInput` via:
 //
@@ -20073,6 +23152,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigArray) ToGetT
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigArrayOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfig] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfig]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigOutput) ElementType() reflect.Type {
@@ -20085,6 +23170,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigOutput) ToGet
 
 func (o GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigOutput) ToGetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfig] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
@@ -20127,6 +23218,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigArrayOutput) 
 
 func (o GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigArrayOutput) ToGetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigArrayOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfig] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigArrayOutput) Index(i pulumi.IntInput) GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigOutput {
@@ -20172,6 +23269,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigPluginsConfig
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigPluginsConfigOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigPluginsConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigPluginsConfig] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigPluginsConfig]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigPluginsConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigPluginsConfigArrayInput is an input type that accepts GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigPluginsConfigArray and GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigPluginsConfigArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigPluginsConfigArrayInput` via:
 //
@@ -20197,6 +23300,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigPluginsConfig
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigPluginsConfigArrayOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigPluginsConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigPluginsConfig] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigPluginsConfig]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigPluginsConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigPluginsConfigOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigPluginsConfigOutput) ElementType() reflect.Type {
@@ -20209,6 +23318,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigPluginsConfig
 
 func (o GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigPluginsConfigOutput) ToGetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigPluginsConfigOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigPluginsConfigOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigPluginsConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigPluginsConfig] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigPluginsConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether the plugin should be enabled or disabled.
@@ -20235,6 +23350,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigPluginsConfig
 
 func (o GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigPluginsConfigArrayOutput) ToGetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigPluginsConfigArrayOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigPluginsConfigArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigPluginsConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigPluginsConfig] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigPluginsConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigPluginsConfigArrayOutput) Index(i pulumi.IntInput) GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigPluginsConfigOutput {
@@ -20316,6 +23437,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetailArgs) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetailOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetail] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetail]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetailArrayInput is an input type that accepts GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetailArray and GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetailArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetailArrayInput` via:
 //
@@ -20341,6 +23468,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetailArray) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetailArrayOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetail] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetail]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetailOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetailOutput) ElementType() reflect.Type {
@@ -20353,6 +23486,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetailOutput) 
 
 func (o GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetailOutput) ToGetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetailOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetailOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetail] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether the VNIC should be assigned a DNS record. If set to false, there will be no DNS record registration for the VNIC. If set to true, the DNS record will be registered. By default, the value is true.
@@ -20434,6 +23573,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetailArrayOut
 	return o
 }
 
+func (o GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetail] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetailArrayOutput) Index(i pulumi.IntInput) GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetail {
 		return vs[0].([]GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetail)[vs[1].(int)]
@@ -20473,6 +23618,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOptionArgs) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOptionOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOption] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOption]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOptionArrayInput is an input type that accepts GetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOptionArray and GetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOptionArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOptionArrayInput` via:
 //
@@ -20498,6 +23649,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOptionArray) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOptionArrayOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOption] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOption]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOptionOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOptionOutput) ElementType() reflect.Type {
@@ -20510,6 +23667,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOptionOutput) To
 
 func (o GetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOptionOutput) ToGetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOptionOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOptionOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOption] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
@@ -20531,6 +23694,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOptionArrayOutpu
 
 func (o GetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOptionArrayOutput) ToGetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOptionArrayOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOptionArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOption] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOptionArrayOutput) Index(i pulumi.IntInput) GetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOptionOutput {
@@ -20572,6 +23741,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfi
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfig] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfig]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigArrayInput is an input type that accepts GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigArray and GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigArrayInput` via:
 //
@@ -20597,6 +23772,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfi
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigArrayOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfig] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfig]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigOutput) ElementType() reflect.Type {
@@ -20609,6 +23790,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfi
 
 func (o GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigOutput) ToGetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfig] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The action to run when the preemptible instance is interrupted for eviction.
@@ -20630,6 +23817,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfi
 
 func (o GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigArrayOutput) ToGetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigArrayOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfig] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigArrayOutput) Index(i pulumi.IntInput) GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigOutput {
@@ -20675,6 +23868,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfi
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigPreemptionActionOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigPreemptionActionArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigPreemptionAction] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigPreemptionAction]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigPreemptionActionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigPreemptionActionArrayInput is an input type that accepts GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigPreemptionActionArray and GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigPreemptionActionArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigPreemptionActionArrayInput` via:
 //
@@ -20700,6 +23899,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfi
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigPreemptionActionArrayOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigPreemptionActionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigPreemptionAction] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigPreemptionAction]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigPreemptionActionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigPreemptionActionOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigPreemptionActionOutput) ElementType() reflect.Type {
@@ -20712,6 +23917,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfi
 
 func (o GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigPreemptionActionOutput) ToGetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigPreemptionActionOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigPreemptionActionOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigPreemptionActionOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigPreemptionAction] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigPreemptionAction]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. By default, it is false if not specified.
@@ -20740,6 +23951,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfi
 
 func (o GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigPreemptionActionArrayOutput) ToGetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigPreemptionActionArrayOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigPreemptionActionArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigPreemptionActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigPreemptionAction] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigPreemptionAction]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigPreemptionActionArrayOutput) Index(i pulumi.IntInput) GetTargetAssetsTargetAssetCollectionItemTestSpecPreemptibleInstanceConfigPreemptionActionOutput {
@@ -20789,6 +24006,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemTestSpecShapeConfigArgs) ToGetTa
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemTestSpecShapeConfigOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemTestSpecShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemTestSpecShapeConfig] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemTestSpecShapeConfig]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemTestSpecShapeConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetsTargetAssetCollectionItemTestSpecShapeConfigArrayInput is an input type that accepts GetTargetAssetsTargetAssetCollectionItemTestSpecShapeConfigArray and GetTargetAssetsTargetAssetCollectionItemTestSpecShapeConfigArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetsTargetAssetCollectionItemTestSpecShapeConfigArrayInput` via:
 //
@@ -20814,6 +24037,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemTestSpecShapeConfigArray) ToGetT
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemTestSpecShapeConfigArrayOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemTestSpecShapeConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemTestSpecShapeConfig] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemTestSpecShapeConfig]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemTestSpecShapeConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetsTargetAssetCollectionItemTestSpecShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetsTargetAssetCollectionItemTestSpecShapeConfigOutput) ElementType() reflect.Type {
@@ -20826,6 +24055,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemTestSpecShapeConfigOutput) ToGet
 
 func (o GetTargetAssetsTargetAssetCollectionItemTestSpecShapeConfigOutput) ToGetTargetAssetsTargetAssetCollectionItemTestSpecShapeConfigOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemTestSpecShapeConfigOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemTestSpecShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemTestSpecShapeConfig] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemTestSpecShapeConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
@@ -20857,6 +24092,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemTestSpecShapeConfigArrayOutput) 
 
 func (o GetTargetAssetsTargetAssetCollectionItemTestSpecShapeConfigArrayOutput) ToGetTargetAssetsTargetAssetCollectionItemTestSpecShapeConfigArrayOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemTestSpecShapeConfigArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemTestSpecShapeConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemTestSpecShapeConfig] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemTestSpecShapeConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetsTargetAssetCollectionItemTestSpecShapeConfigArrayOutput) Index(i pulumi.IntInput) GetTargetAssetsTargetAssetCollectionItemTestSpecShapeConfigOutput {
@@ -20918,6 +24159,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemTestSpecSourceDetailArgs) ToGetT
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemTestSpecSourceDetailOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemTestSpecSourceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemTestSpecSourceDetail] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemTestSpecSourceDetail]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemTestSpecSourceDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetsTargetAssetCollectionItemTestSpecSourceDetailArrayInput is an input type that accepts GetTargetAssetsTargetAssetCollectionItemTestSpecSourceDetailArray and GetTargetAssetsTargetAssetCollectionItemTestSpecSourceDetailArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetsTargetAssetCollectionItemTestSpecSourceDetailArrayInput` via:
 //
@@ -20943,6 +24190,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemTestSpecSourceDetailArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemTestSpecSourceDetailArrayOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemTestSpecSourceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemTestSpecSourceDetail] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemTestSpecSourceDetail]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemTestSpecSourceDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetsTargetAssetCollectionItemTestSpecSourceDetailOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetsTargetAssetCollectionItemTestSpecSourceDetailOutput) ElementType() reflect.Type {
@@ -20955,6 +24208,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemTestSpecSourceDetailOutput) ToGe
 
 func (o GetTargetAssetsTargetAssetCollectionItemTestSpecSourceDetailOutput) ToGetTargetAssetsTargetAssetCollectionItemTestSpecSourceDetailOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemTestSpecSourceDetailOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemTestSpecSourceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemTestSpecSourceDetail] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemTestSpecSourceDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the boot volume used to boot the instance.
@@ -21003,6 +24262,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemTestSpecSourceDetailArrayOutput)
 
 func (o GetTargetAssetsTargetAssetCollectionItemTestSpecSourceDetailArrayOutput) ToGetTargetAssetsTargetAssetCollectionItemTestSpecSourceDetailArrayOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemTestSpecSourceDetailArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemTestSpecSourceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemTestSpecSourceDetail] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemTestSpecSourceDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetsTargetAssetCollectionItemTestSpecSourceDetailArrayOutput) Index(i pulumi.IntInput) GetTargetAssetsTargetAssetCollectionItemTestSpecSourceDetailOutput {
@@ -21110,6 +24375,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemUserSpecArgs) ToGetTargetAssetsT
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemUserSpecOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemUserSpecArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemUserSpec] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemUserSpec]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemUserSpecOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetsTargetAssetCollectionItemUserSpecArrayInput is an input type that accepts GetTargetAssetsTargetAssetCollectionItemUserSpecArray and GetTargetAssetsTargetAssetCollectionItemUserSpecArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetsTargetAssetCollectionItemUserSpecArrayInput` via:
 //
@@ -21135,6 +24406,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemUserSpecArray) ToGetTargetAssets
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemUserSpecArrayOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemUserSpecArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemUserSpec] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemUserSpec]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemUserSpecArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetsTargetAssetCollectionItemUserSpecOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetsTargetAssetCollectionItemUserSpecOutput) ElementType() reflect.Type {
@@ -21147,6 +24424,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemUserSpecOutput) ToGetTargetAsset
 
 func (o GetTargetAssetsTargetAssetCollectionItemUserSpecOutput) ToGetTargetAssetsTargetAssetCollectionItemUserSpecOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemUserSpecOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemUserSpecOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemUserSpec] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemUserSpec]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Configuration options for the Oracle Cloud Agent software running on the instance.
@@ -21264,6 +24547,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemUserSpecArrayOutput) ToGetTarget
 	return o
 }
 
+func (o GetTargetAssetsTargetAssetCollectionItemUserSpecArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemUserSpec] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemUserSpec]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetTargetAssetsTargetAssetCollectionItemUserSpecArrayOutput) Index(i pulumi.IntInput) GetTargetAssetsTargetAssetCollectionItemUserSpecOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetAssetsTargetAssetCollectionItemUserSpec {
 		return vs[0].([]GetTargetAssetsTargetAssetCollectionItemUserSpec)[vs[1].(int)]
@@ -21315,6 +24604,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigArgs) ToGetTa
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfig] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfig]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigArrayInput is an input type that accepts GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigArray and GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigArrayInput` via:
 //
@@ -21340,6 +24635,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigArray) ToGetT
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigArrayOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfig] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfig]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigOutput) ElementType() reflect.Type {
@@ -21352,6 +24653,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigOutput) ToGet
 
 func (o GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigOutput) ToGetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfig] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
@@ -21394,6 +24701,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigArrayOutput) 
 
 func (o GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigArrayOutput) ToGetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigArrayOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfig] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigArrayOutput) Index(i pulumi.IntInput) GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigOutput {
@@ -21439,6 +24752,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigPluginsConfig
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigPluginsConfigOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigPluginsConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigPluginsConfig] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigPluginsConfig]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigPluginsConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigPluginsConfigArrayInput is an input type that accepts GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigPluginsConfigArray and GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigPluginsConfigArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigPluginsConfigArrayInput` via:
 //
@@ -21464,6 +24783,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigPluginsConfig
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigPluginsConfigArrayOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigPluginsConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigPluginsConfig] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigPluginsConfig]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigPluginsConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigPluginsConfigOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigPluginsConfigOutput) ElementType() reflect.Type {
@@ -21476,6 +24801,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigPluginsConfig
 
 func (o GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigPluginsConfigOutput) ToGetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigPluginsConfigOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigPluginsConfigOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigPluginsConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigPluginsConfig] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigPluginsConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether the plugin should be enabled or disabled.
@@ -21502,6 +24833,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigPluginsConfig
 
 func (o GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigPluginsConfigArrayOutput) ToGetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigPluginsConfigArrayOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigPluginsConfigArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigPluginsConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigPluginsConfig] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigPluginsConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigPluginsConfigArrayOutput) Index(i pulumi.IntInput) GetTargetAssetsTargetAssetCollectionItemUserSpecAgentConfigPluginsConfigOutput {
@@ -21583,6 +24920,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetailArgs) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetailOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetail] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetail]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetailArrayInput is an input type that accepts GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetailArray and GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetailArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetailArrayInput` via:
 //
@@ -21608,6 +24951,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetailArray) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetailArrayOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetail] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetail]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetailOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetailOutput) ElementType() reflect.Type {
@@ -21620,6 +24969,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetailOutput) 
 
 func (o GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetailOutput) ToGetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetailOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetailOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetail] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether the VNIC should be assigned a DNS record. If set to false, there will be no DNS record registration for the VNIC. If set to true, the DNS record will be registered. By default, the value is true.
@@ -21701,6 +25056,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetailArrayOut
 	return o
 }
 
+func (o GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetail] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetailArrayOutput) Index(i pulumi.IntInput) GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetail {
 		return vs[0].([]GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetail)[vs[1].(int)]
@@ -21740,6 +25101,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemUserSpecInstanceOptionArgs) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemUserSpecInstanceOptionOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemUserSpecInstanceOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemUserSpecInstanceOption] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemUserSpecInstanceOption]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemUserSpecInstanceOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetsTargetAssetCollectionItemUserSpecInstanceOptionArrayInput is an input type that accepts GetTargetAssetsTargetAssetCollectionItemUserSpecInstanceOptionArray and GetTargetAssetsTargetAssetCollectionItemUserSpecInstanceOptionArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetsTargetAssetCollectionItemUserSpecInstanceOptionArrayInput` via:
 //
@@ -21765,6 +25132,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemUserSpecInstanceOptionArray) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemUserSpecInstanceOptionArrayOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemUserSpecInstanceOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemUserSpecInstanceOption] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemUserSpecInstanceOption]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemUserSpecInstanceOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetsTargetAssetCollectionItemUserSpecInstanceOptionOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetsTargetAssetCollectionItemUserSpecInstanceOptionOutput) ElementType() reflect.Type {
@@ -21777,6 +25150,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemUserSpecInstanceOptionOutput) To
 
 func (o GetTargetAssetsTargetAssetCollectionItemUserSpecInstanceOptionOutput) ToGetTargetAssetsTargetAssetCollectionItemUserSpecInstanceOptionOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemUserSpecInstanceOptionOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemUserSpecInstanceOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemUserSpecInstanceOption] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemUserSpecInstanceOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
@@ -21798,6 +25177,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemUserSpecInstanceOptionArrayOutpu
 
 func (o GetTargetAssetsTargetAssetCollectionItemUserSpecInstanceOptionArrayOutput) ToGetTargetAssetsTargetAssetCollectionItemUserSpecInstanceOptionArrayOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemUserSpecInstanceOptionArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemUserSpecInstanceOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemUserSpecInstanceOption] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemUserSpecInstanceOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetsTargetAssetCollectionItemUserSpecInstanceOptionArrayOutput) Index(i pulumi.IntInput) GetTargetAssetsTargetAssetCollectionItemUserSpecInstanceOptionOutput {
@@ -21839,6 +25224,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfi
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfig] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfig]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigArrayInput is an input type that accepts GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigArray and GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigArrayInput` via:
 //
@@ -21864,6 +25255,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfi
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigArrayOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfig] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfig]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigOutput) ElementType() reflect.Type {
@@ -21876,6 +25273,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfi
 
 func (o GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigOutput) ToGetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfig] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The action to run when the preemptible instance is interrupted for eviction.
@@ -21897,6 +25300,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfi
 
 func (o GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigArrayOutput) ToGetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigArrayOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfig] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigArrayOutput) Index(i pulumi.IntInput) GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigOutput {
@@ -21942,6 +25351,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfi
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigPreemptionActionOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigPreemptionActionArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigPreemptionAction] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigPreemptionAction]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigPreemptionActionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigPreemptionActionArrayInput is an input type that accepts GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigPreemptionActionArray and GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigPreemptionActionArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigPreemptionActionArrayInput` via:
 //
@@ -21967,6 +25382,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfi
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigPreemptionActionArrayOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigPreemptionActionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigPreemptionAction] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigPreemptionAction]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigPreemptionActionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigPreemptionActionOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigPreemptionActionOutput) ElementType() reflect.Type {
@@ -21979,6 +25400,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfi
 
 func (o GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigPreemptionActionOutput) ToGetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigPreemptionActionOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigPreemptionActionOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigPreemptionActionOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigPreemptionAction] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigPreemptionAction]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. By default, it is false if not specified.
@@ -22007,6 +25434,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfi
 
 func (o GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigPreemptionActionArrayOutput) ToGetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigPreemptionActionArrayOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigPreemptionActionArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigPreemptionActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigPreemptionAction] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigPreemptionAction]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigPreemptionActionArrayOutput) Index(i pulumi.IntInput) GetTargetAssetsTargetAssetCollectionItemUserSpecPreemptibleInstanceConfigPreemptionActionOutput {
@@ -22056,6 +25489,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemUserSpecShapeConfigArgs) ToGetTa
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemUserSpecShapeConfigOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemUserSpecShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemUserSpecShapeConfig] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemUserSpecShapeConfig]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemUserSpecShapeConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetsTargetAssetCollectionItemUserSpecShapeConfigArrayInput is an input type that accepts GetTargetAssetsTargetAssetCollectionItemUserSpecShapeConfigArray and GetTargetAssetsTargetAssetCollectionItemUserSpecShapeConfigArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetsTargetAssetCollectionItemUserSpecShapeConfigArrayInput` via:
 //
@@ -22081,6 +25520,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemUserSpecShapeConfigArray) ToGetT
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemUserSpecShapeConfigArrayOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemUserSpecShapeConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemUserSpecShapeConfig] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemUserSpecShapeConfig]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemUserSpecShapeConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetsTargetAssetCollectionItemUserSpecShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetsTargetAssetCollectionItemUserSpecShapeConfigOutput) ElementType() reflect.Type {
@@ -22093,6 +25538,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemUserSpecShapeConfigOutput) ToGet
 
 func (o GetTargetAssetsTargetAssetCollectionItemUserSpecShapeConfigOutput) ToGetTargetAssetsTargetAssetCollectionItemUserSpecShapeConfigOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemUserSpecShapeConfigOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemUserSpecShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemUserSpecShapeConfig] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemUserSpecShapeConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
@@ -22124,6 +25575,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemUserSpecShapeConfigArrayOutput) 
 
 func (o GetTargetAssetsTargetAssetCollectionItemUserSpecShapeConfigArrayOutput) ToGetTargetAssetsTargetAssetCollectionItemUserSpecShapeConfigArrayOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemUserSpecShapeConfigArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemUserSpecShapeConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemUserSpecShapeConfig] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemUserSpecShapeConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetsTargetAssetCollectionItemUserSpecShapeConfigArrayOutput) Index(i pulumi.IntInput) GetTargetAssetsTargetAssetCollectionItemUserSpecShapeConfigOutput {
@@ -22185,6 +25642,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetailArgs) ToGetT
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetailOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetail] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetail]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetailArrayInput is an input type that accepts GetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetailArray and GetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetailArrayOutput values.
 // You can construct a concrete instance of `GetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetailArrayInput` via:
 //
@@ -22210,6 +25673,12 @@ func (i GetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetailArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetailArrayOutput)
 }
 
+func (i GetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetail] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetail]{
+		OutputState: i.ToGetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetailOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetailOutput) ElementType() reflect.Type {
@@ -22222,6 +25691,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetailOutput) ToGe
 
 func (o GetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetailOutput) ToGetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetailOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetailOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetail] {
+	return pulumix.Output[GetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the boot volume used to boot the instance.
@@ -22270,6 +25745,12 @@ func (o GetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetailArrayOutput)
 
 func (o GetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetailArrayOutput) ToGetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetailArrayOutputWithContext(ctx context.Context) GetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetailArrayOutput {
 	return o
+}
+
+func (o GetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetail] {
+	return pulumix.Output[[]GetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetailArrayOutput) Index(i pulumi.IntInput) GetTargetAssetsTargetAssetCollectionItemUserSpecSourceDetailOutput {

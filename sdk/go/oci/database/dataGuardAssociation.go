@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Data Guard Association resource in Oracle Cloud Infrastructure Database service.
@@ -730,6 +731,12 @@ func (i *DataGuardAssociation) ToDataGuardAssociationOutputWithContext(ctx conte
 	return pulumi.ToOutputWithContext(ctx, i).(DataGuardAssociationOutput)
 }
 
+func (i *DataGuardAssociation) ToOutput(ctx context.Context) pulumix.Output[*DataGuardAssociation] {
+	return pulumix.Output[*DataGuardAssociation]{
+		OutputState: i.ToDataGuardAssociationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // DataGuardAssociationArrayInput is an input type that accepts DataGuardAssociationArray and DataGuardAssociationArrayOutput values.
 // You can construct a concrete instance of `DataGuardAssociationArrayInput` via:
 //
@@ -753,6 +760,12 @@ func (i DataGuardAssociationArray) ToDataGuardAssociationArrayOutput() DataGuard
 
 func (i DataGuardAssociationArray) ToDataGuardAssociationArrayOutputWithContext(ctx context.Context) DataGuardAssociationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DataGuardAssociationArrayOutput)
+}
+
+func (i DataGuardAssociationArray) ToOutput(ctx context.Context) pulumix.Output[[]*DataGuardAssociation] {
+	return pulumix.Output[[]*DataGuardAssociation]{
+		OutputState: i.ToDataGuardAssociationArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // DataGuardAssociationMapInput is an input type that accepts DataGuardAssociationMap and DataGuardAssociationMapOutput values.
@@ -780,6 +793,12 @@ func (i DataGuardAssociationMap) ToDataGuardAssociationMapOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(DataGuardAssociationMapOutput)
 }
 
+func (i DataGuardAssociationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DataGuardAssociation] {
+	return pulumix.Output[map[string]*DataGuardAssociation]{
+		OutputState: i.ToDataGuardAssociationMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type DataGuardAssociationOutput struct{ *pulumi.OutputState }
 
 func (DataGuardAssociationOutput) ElementType() reflect.Type {
@@ -792,6 +811,12 @@ func (o DataGuardAssociationOutput) ToDataGuardAssociationOutput() DataGuardAsso
 
 func (o DataGuardAssociationOutput) ToDataGuardAssociationOutputWithContext(ctx context.Context) DataGuardAssociationOutput {
 	return o
+}
+
+func (o DataGuardAssociationOutput) ToOutput(ctx context.Context) pulumix.Output[*DataGuardAssociation] {
+	return pulumix.Output[*DataGuardAssociation]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `9 seconds`
@@ -1052,6 +1077,12 @@ func (o DataGuardAssociationArrayOutput) ToDataGuardAssociationArrayOutputWithCo
 	return o
 }
 
+func (o DataGuardAssociationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DataGuardAssociation] {
+	return pulumix.Output[[]*DataGuardAssociation]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o DataGuardAssociationArrayOutput) Index(i pulumi.IntInput) DataGuardAssociationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DataGuardAssociation {
 		return vs[0].([]*DataGuardAssociation)[vs[1].(int)]
@@ -1070,6 +1101,12 @@ func (o DataGuardAssociationMapOutput) ToDataGuardAssociationMapOutput() DataGua
 
 func (o DataGuardAssociationMapOutput) ToDataGuardAssociationMapOutputWithContext(ctx context.Context) DataGuardAssociationMapOutput {
 	return o
+}
+
+func (o DataGuardAssociationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DataGuardAssociation] {
+	return pulumix.Output[map[string]*DataGuardAssociation]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o DataGuardAssociationMapOutput) MapIndex(k pulumi.StringInput) DataGuardAssociationOutput {

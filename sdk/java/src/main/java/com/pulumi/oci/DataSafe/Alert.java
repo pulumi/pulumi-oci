@@ -36,7 +36,7 @@ public class Alert extends com.pulumi.resources.CustomResource {
      * The OCID of alert.
      * 
      */
-    @Export(name="alertId", type=String.class, parameters={})
+    @Export(name="alertId", refs={String.class}, tree="[0]")
     private Output<String> alertId;
 
     /**
@@ -50,7 +50,7 @@ public class Alert extends com.pulumi.resources.CustomResource {
      * Type of the alert. Indicates the Data Safe feature triggering the alert.
      * 
      */
-    @Export(name="alertType", type=String.class, parameters={})
+    @Export(name="alertType", refs={String.class}, tree="[0]")
     private Output<String> alertType;
 
     /**
@@ -64,7 +64,7 @@ public class Alert extends com.pulumi.resources.CustomResource {
      * (Updatable) A comment can be entered to track the alert changes done by the user.
      * 
      */
-    @Export(name="comment", type=String.class, parameters={})
+    @Export(name="comment", refs={String.class}, tree="[0]")
     private Output<String> comment;
 
     /**
@@ -78,7 +78,7 @@ public class Alert extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the compartment that contains the alert.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -92,7 +92,7 @@ public class Alert extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -106,7 +106,7 @@ public class Alert extends com.pulumi.resources.CustomResource {
      * The description of the alert.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -120,7 +120,7 @@ public class Alert extends com.pulumi.resources.CustomResource {
      * The display name of the alert.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -134,7 +134,7 @@ public class Alert extends com.pulumi.resources.CustomResource {
      * Map that contains maps of values. Example: `{&#34;Operations&#34;: {&#34;CostCenter&#34;: &#34;42&#34;}}`
      * 
      */
-    @Export(name="featureDetails", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="featureDetails", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> featureDetails;
 
     /**
@@ -148,7 +148,7 @@ public class Alert extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -162,7 +162,7 @@ public class Alert extends com.pulumi.resources.CustomResource {
      * The operation (event) that triggered alert.
      * 
      */
-    @Export(name="operation", type=String.class, parameters={})
+    @Export(name="operation", refs={String.class}, tree="[0]")
     private Output<String> operation;
 
     /**
@@ -176,7 +176,7 @@ public class Alert extends com.pulumi.resources.CustomResource {
      * The result of the operation (event) that triggered alert.
      * 
      */
-    @Export(name="operationStatus", type=String.class, parameters={})
+    @Export(name="operationStatus", refs={String.class}, tree="[0]")
     private Output<String> operationStatus;
 
     /**
@@ -190,7 +190,7 @@ public class Alert extends com.pulumi.resources.CustomResource {
      * Creation date and time of the operation that triggered alert, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    @Export(name="operationTime", type=String.class, parameters={})
+    @Export(name="operationTime", refs={String.class}, tree="[0]")
     private Output<String> operationTime;
 
     /**
@@ -204,7 +204,7 @@ public class Alert extends com.pulumi.resources.CustomResource {
      * The OCID of the policy that triggered alert.
      * 
      */
-    @Export(name="policyId", type=String.class, parameters={})
+    @Export(name="policyId", refs={String.class}, tree="[0]")
     private Output<String> policyId;
 
     /**
@@ -218,7 +218,7 @@ public class Alert extends com.pulumi.resources.CustomResource {
      * The resource endpoint that triggered the alert.
      * 
      */
-    @Export(name="resourceName", type=String.class, parameters={})
+    @Export(name="resourceName", refs={String.class}, tree="[0]")
     private Output<String> resourceName;
 
     /**
@@ -232,7 +232,7 @@ public class Alert extends com.pulumi.resources.CustomResource {
      * Severity level of the alert.
      * 
      */
-    @Export(name="severity", type=String.class, parameters={})
+    @Export(name="severity", refs={String.class}, tree="[0]")
     private Output<String> severity;
 
     /**
@@ -246,7 +246,7 @@ public class Alert extends com.pulumi.resources.CustomResource {
      * The current state of the alert.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -263,7 +263,7 @@ public class Alert extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="status", type=String.class, parameters={})
+    @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
@@ -280,7 +280,7 @@ public class Alert extends com.pulumi.resources.CustomResource {
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -294,7 +294,7 @@ public class Alert extends com.pulumi.resources.CustomResource {
      * Array of OCIDs of the target database which are associated with the alert.
      * 
      */
-    @Export(name="targetIds", type=List.class, parameters={String.class})
+    @Export(name="targetIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> targetIds;
 
     /**
@@ -308,7 +308,7 @@ public class Alert extends com.pulumi.resources.CustomResource {
      * Array of names of the target database.
      * 
      */
-    @Export(name="targetNames", type=List.class, parameters={String.class})
+    @Export(name="targetNames", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> targetNames;
 
     /**
@@ -322,7 +322,7 @@ public class Alert extends com.pulumi.resources.CustomResource {
      * Creation date and time of the alert, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -336,7 +336,7 @@ public class Alert extends com.pulumi.resources.CustomResource {
      * Last date and time the alert was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

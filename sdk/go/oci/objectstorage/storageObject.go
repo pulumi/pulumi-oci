@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Object resource in Oracle Cloud Infrastructure Object Storage service.
@@ -348,6 +349,12 @@ func (i *StorageObject) ToStorageObjectOutputWithContext(ctx context.Context) St
 	return pulumi.ToOutputWithContext(ctx, i).(StorageObjectOutput)
 }
 
+func (i *StorageObject) ToOutput(ctx context.Context) pulumix.Output[*StorageObject] {
+	return pulumix.Output[*StorageObject]{
+		OutputState: i.ToStorageObjectOutputWithContext(ctx).OutputState,
+	}
+}
+
 // StorageObjectArrayInput is an input type that accepts StorageObjectArray and StorageObjectArrayOutput values.
 // You can construct a concrete instance of `StorageObjectArrayInput` via:
 //
@@ -371,6 +378,12 @@ func (i StorageObjectArray) ToStorageObjectArrayOutput() StorageObjectArrayOutpu
 
 func (i StorageObjectArray) ToStorageObjectArrayOutputWithContext(ctx context.Context) StorageObjectArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(StorageObjectArrayOutput)
+}
+
+func (i StorageObjectArray) ToOutput(ctx context.Context) pulumix.Output[[]*StorageObject] {
+	return pulumix.Output[[]*StorageObject]{
+		OutputState: i.ToStorageObjectArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // StorageObjectMapInput is an input type that accepts StorageObjectMap and StorageObjectMapOutput values.
@@ -398,6 +411,12 @@ func (i StorageObjectMap) ToStorageObjectMapOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(StorageObjectMapOutput)
 }
 
+func (i StorageObjectMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*StorageObject] {
+	return pulumix.Output[map[string]*StorageObject]{
+		OutputState: i.ToStorageObjectMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type StorageObjectOutput struct{ *pulumi.OutputState }
 
 func (StorageObjectOutput) ElementType() reflect.Type {
@@ -410,6 +429,12 @@ func (o StorageObjectOutput) ToStorageObjectOutput() StorageObjectOutput {
 
 func (o StorageObjectOutput) ToStorageObjectOutputWithContext(ctx context.Context) StorageObjectOutput {
 	return o
+}
+
+func (o StorageObjectOutput) ToOutput(ctx context.Context) pulumix.Output[*StorageObject] {
+	return pulumix.Output[*StorageObject]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the bucket for the source object.
@@ -527,6 +552,12 @@ func (o StorageObjectArrayOutput) ToStorageObjectArrayOutputWithContext(ctx cont
 	return o
 }
 
+func (o StorageObjectArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*StorageObject] {
+	return pulumix.Output[[]*StorageObject]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o StorageObjectArrayOutput) Index(i pulumi.IntInput) StorageObjectOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *StorageObject {
 		return vs[0].([]*StorageObject)[vs[1].(int)]
@@ -545,6 +576,12 @@ func (o StorageObjectMapOutput) ToStorageObjectMapOutput() StorageObjectMapOutpu
 
 func (o StorageObjectMapOutput) ToStorageObjectMapOutputWithContext(ctx context.Context) StorageObjectMapOutput {
 	return o
+}
+
+func (o StorageObjectMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*StorageObject] {
+	return pulumix.Output[map[string]*StorageObject]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o StorageObjectMapOutput) MapIndex(k pulumi.StringInput) StorageObjectOutput {

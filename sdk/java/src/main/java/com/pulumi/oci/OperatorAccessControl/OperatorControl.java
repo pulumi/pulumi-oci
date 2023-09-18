@@ -37,7 +37,7 @@ public class OperatorControl extends com.pulumi.resources.CustomResource {
      * List of operator actions that need explicit approval. Any operator action not in the pre-approved list will require explicit approval. Access requests associated with a resource governed by this operator control will be require explicit approval if the access request contains any operator action in this list.
      * 
      */
-    @Export(name="approvalRequiredOpActionLists", type=List.class, parameters={String.class})
+    @Export(name="approvalRequiredOpActionLists", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> approvalRequiredOpActionLists;
 
     /**
@@ -51,7 +51,7 @@ public class OperatorControl extends com.pulumi.resources.CustomResource {
      * (Updatable) List of user groups who can approve an access request associated with a resource governed by this operator control.
      * 
      */
-    @Export(name="approverGroupsLists", type=List.class, parameters={String.class})
+    @Export(name="approverGroupsLists", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> approverGroupsLists;
 
     /**
@@ -65,7 +65,7 @@ public class OperatorControl extends com.pulumi.resources.CustomResource {
      * (Updatable) List of users who can approve an access request associated with a resource governed by this operator control.
      * 
      */
-    @Export(name="approversLists", type=List.class, parameters={String.class})
+    @Export(name="approversLists", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> approversLists;
 
     /**
@@ -79,7 +79,7 @@ public class OperatorControl extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the compartment that contains this operator control.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -93,7 +93,7 @@ public class OperatorControl extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -107,7 +107,7 @@ public class OperatorControl extends com.pulumi.resources.CustomResource {
      * (Updatable) Description of the operator control.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -121,7 +121,7 @@ public class OperatorControl extends com.pulumi.resources.CustomResource {
      * (Updatable) List of emailId.
      * 
      */
-    @Export(name="emailIdLists", type=List.class, parameters={String.class})
+    @Export(name="emailIdLists", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> emailIdLists;
 
     /**
@@ -135,7 +135,7 @@ public class OperatorControl extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -149,7 +149,7 @@ public class OperatorControl extends com.pulumi.resources.CustomResource {
      * Whether the operator control is a default Operator Control.
      * 
      */
-    @Export(name="isDefaultOperatorControl", type=Boolean.class, parameters={})
+    @Export(name="isDefaultOperatorControl", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isDefaultOperatorControl;
 
     /**
@@ -163,7 +163,7 @@ public class OperatorControl extends com.pulumi.resources.CustomResource {
      * (Updatable) Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
      * 
      */
-    @Export(name="isFullyPreApproved", type=Boolean.class, parameters={})
+    @Export(name="isFullyPreApproved", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isFullyPreApproved;
 
     /**
@@ -177,7 +177,7 @@ public class OperatorControl extends com.pulumi.resources.CustomResource {
      * Description associated with the latest modification of the operator control.
      * 
      */
-    @Export(name="lastModifiedInfo", type=String.class, parameters={})
+    @Export(name="lastModifiedInfo", refs={String.class}, tree="[0]")
     private Output<String> lastModifiedInfo;
 
     /**
@@ -191,7 +191,7 @@ public class OperatorControl extends com.pulumi.resources.CustomResource {
      * (Updatable) Name of the operator control.
      * 
      */
-    @Export(name="operatorControlName", type=String.class, parameters={})
+    @Export(name="operatorControlName", refs={String.class}, tree="[0]")
     private Output<String> operatorControlName;
 
     /**
@@ -205,7 +205,7 @@ public class OperatorControl extends com.pulumi.resources.CustomResource {
      * (Updatable) List of pre-approved operator actions. Access requests associated with a resource governed by this operator control will be auto-approved if the access request only contain operator actions in the pre-approved list.
      * 
      */
-    @Export(name="preApprovedOpActionLists", type=List.class, parameters={String.class})
+    @Export(name="preApprovedOpActionLists", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> preApprovedOpActionLists;
 
     /**
@@ -219,7 +219,7 @@ public class OperatorControl extends com.pulumi.resources.CustomResource {
      * resourceType for which the OperatorControl is applicable
      * 
      */
-    @Export(name="resourceType", type=String.class, parameters={})
+    @Export(name="resourceType", refs={String.class}, tree="[0]")
     private Output<String> resourceType;
 
     /**
@@ -233,7 +233,7 @@ public class OperatorControl extends com.pulumi.resources.CustomResource {
      * The current lifecycle state of the operator control.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -250,7 +250,7 @@ public class OperatorControl extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="systemMessage", type=String.class, parameters={})
+    @Export(name="systemMessage", refs={String.class}, tree="[0]")
     private Output<String> systemMessage;
 
     /**
@@ -267,7 +267,7 @@ public class OperatorControl extends com.pulumi.resources.CustomResource {
      * Time when the operator control was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
-    @Export(name="timeOfCreation", type=String.class, parameters={})
+    @Export(name="timeOfCreation", refs={String.class}, tree="[0]")
     private Output<String> timeOfCreation;
 
     /**
@@ -281,7 +281,7 @@ public class OperatorControl extends com.pulumi.resources.CustomResource {
      * Time when deleted expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: &#39;2020-05-22T21:10:29.600Z&#39;. Note a deleted operator control still stays in the system, so that you can still audit operator actions associated with access requests raised on target resources governed by the deleted operator control.
      * 
      */
-    @Export(name="timeOfDeletion", type=String.class, parameters={})
+    @Export(name="timeOfDeletion", refs={String.class}, tree="[0]")
     private Output<String> timeOfDeletion;
 
     /**
@@ -295,7 +295,7 @@ public class OperatorControl extends com.pulumi.resources.CustomResource {
      * Time when the operator control was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
-    @Export(name="timeOfModification", type=String.class, parameters={})
+    @Export(name="timeOfModification", refs={String.class}, tree="[0]")
     private Output<String> timeOfModification;
 
     /**

@@ -65,7 +65,7 @@ public class DrgAttachmentsList extends com.pulumi.resources.CustomResource {
      * The type for the network resource attached to the DRG.
      * 
      */
-    @Export(name="attachmentType", type=String.class, parameters={})
+    @Export(name="attachmentType", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> attachmentType;
 
     /**
@@ -79,7 +79,7 @@ public class DrgAttachmentsList extends com.pulumi.resources.CustomResource {
      * The list of drg_attachments.
      * 
      */
-    @Export(name="drgAllAttachments", type=List.class, parameters={DrgAttachmentsListDrgAllAttachment.class})
+    @Export(name="drgAllAttachments", refs={List.class,DrgAttachmentsListDrgAllAttachment.class}, tree="[0,1]")
     private Output<List<DrgAttachmentsListDrgAllAttachment>> drgAllAttachments;
 
     /**
@@ -93,7 +93,7 @@ public class DrgAttachmentsList extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
      * 
      */
-    @Export(name="drgId", type=String.class, parameters={})
+    @Export(name="drgId", refs={String.class}, tree="[0]")
     private Output<String> drgId;
 
     /**
@@ -110,7 +110,7 @@ public class DrgAttachmentsList extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="isCrossTenancy", type=Boolean.class, parameters={})
+    @Export(name="isCrossTenancy", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> isCrossTenancy;
 
     /**

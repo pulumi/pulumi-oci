@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Rule Sets in Oracle Cloud Infrastructure Load Balancer service.
@@ -104,6 +105,12 @@ func (o GetRuleSetsResultOutput) ToGetRuleSetsResultOutput() GetRuleSetsResultOu
 
 func (o GetRuleSetsResultOutput) ToGetRuleSetsResultOutputWithContext(ctx context.Context) GetRuleSetsResultOutput {
 	return o
+}
+
+func (o GetRuleSetsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRuleSetsResult] {
+	return pulumix.Output[GetRuleSetsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetRuleSetsResultOutput) Filters() GetRuleSetsFilterArrayOutput {

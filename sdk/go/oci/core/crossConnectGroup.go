@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Cross Connect Group resource in Oracle Cloud Infrastructure Core service.
@@ -252,6 +253,12 @@ func (i *CrossConnectGroup) ToCrossConnectGroupOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(CrossConnectGroupOutput)
 }
 
+func (i *CrossConnectGroup) ToOutput(ctx context.Context) pulumix.Output[*CrossConnectGroup] {
+	return pulumix.Output[*CrossConnectGroup]{
+		OutputState: i.ToCrossConnectGroupOutputWithContext(ctx).OutputState,
+	}
+}
+
 // CrossConnectGroupArrayInput is an input type that accepts CrossConnectGroupArray and CrossConnectGroupArrayOutput values.
 // You can construct a concrete instance of `CrossConnectGroupArrayInput` via:
 //
@@ -275,6 +282,12 @@ func (i CrossConnectGroupArray) ToCrossConnectGroupArrayOutput() CrossConnectGro
 
 func (i CrossConnectGroupArray) ToCrossConnectGroupArrayOutputWithContext(ctx context.Context) CrossConnectGroupArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CrossConnectGroupArrayOutput)
+}
+
+func (i CrossConnectGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]*CrossConnectGroup] {
+	return pulumix.Output[[]*CrossConnectGroup]{
+		OutputState: i.ToCrossConnectGroupArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // CrossConnectGroupMapInput is an input type that accepts CrossConnectGroupMap and CrossConnectGroupMapOutput values.
@@ -302,6 +315,12 @@ func (i CrossConnectGroupMap) ToCrossConnectGroupMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(CrossConnectGroupMapOutput)
 }
 
+func (i CrossConnectGroupMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*CrossConnectGroup] {
+	return pulumix.Output[map[string]*CrossConnectGroup]{
+		OutputState: i.ToCrossConnectGroupMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type CrossConnectGroupOutput struct{ *pulumi.OutputState }
 
 func (CrossConnectGroupOutput) ElementType() reflect.Type {
@@ -314,6 +333,12 @@ func (o CrossConnectGroupOutput) ToCrossConnectGroupOutput() CrossConnectGroupOu
 
 func (o CrossConnectGroupOutput) ToCrossConnectGroupOutputWithContext(ctx context.Context) CrossConnectGroupOutput {
 	return o
+}
+
+func (o CrossConnectGroupOutput) ToOutput(ctx context.Context) pulumix.Output[*CrossConnectGroup] {
+	return pulumix.Output[*CrossConnectGroup]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the cross-connect group.
@@ -383,6 +408,12 @@ func (o CrossConnectGroupArrayOutput) ToCrossConnectGroupArrayOutputWithContext(
 	return o
 }
 
+func (o CrossConnectGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*CrossConnectGroup] {
+	return pulumix.Output[[]*CrossConnectGroup]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o CrossConnectGroupArrayOutput) Index(i pulumi.IntInput) CrossConnectGroupOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CrossConnectGroup {
 		return vs[0].([]*CrossConnectGroup)[vs[1].(int)]
@@ -401,6 +432,12 @@ func (o CrossConnectGroupMapOutput) ToCrossConnectGroupMapOutput() CrossConnectG
 
 func (o CrossConnectGroupMapOutput) ToCrossConnectGroupMapOutputWithContext(ctx context.Context) CrossConnectGroupMapOutput {
 	return o
+}
+
+func (o CrossConnectGroupMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*CrossConnectGroup] {
+	return pulumix.Output[map[string]*CrossConnectGroup]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o CrossConnectGroupMapOutput) MapIndex(k pulumi.StringInput) CrossConnectGroupOutput {

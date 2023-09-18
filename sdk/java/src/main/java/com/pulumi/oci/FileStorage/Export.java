@@ -87,7 +87,7 @@ public class Export extends com.pulumi.resources.CustomResource {
      * The export&#39;s `exportOptions` can be changed after creation using the `UpdateExport` operation.
      * 
      */
-    @com.pulumi.core.annotations.Export(name="exportOptions", type=List.class, parameters={ExportExportOption.class})
+    @com.pulumi.core.annotations.Export(name="exportOptions", refs={List.class,ExportExportOption.class}, tree="[0,1]")
     private Output<List<ExportExportOption>> exportOptions;
 
     /**
@@ -108,7 +108,7 @@ public class Export extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export&#39;s export set.
      * 
      */
-    @com.pulumi.core.annotations.Export(name="exportSetId", type=String.class, parameters={})
+    @com.pulumi.core.annotations.Export(name="exportSetId", refs={String.class}, tree="[0]")
     private Output<String> exportSetId;
 
     /**
@@ -122,7 +122,7 @@ public class Export extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export&#39;s file system.
      * 
      */
-    @com.pulumi.core.annotations.Export(name="fileSystemId", type=String.class, parameters={})
+    @com.pulumi.core.annotations.Export(name="fileSystemId", refs={String.class}, tree="[0]")
     private Output<String> fileSystemId;
 
     /**
@@ -136,7 +136,7 @@ public class Export extends com.pulumi.resources.CustomResource {
      * (Updatable) Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request&#39;s RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
      * 
      */
-    @com.pulumi.core.annotations.Export(name="isIdmapGroupsForSysAuth", type=Boolean.class, parameters={})
+    @com.pulumi.core.annotations.Export(name="isIdmapGroupsForSysAuth", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isIdmapGroupsForSysAuth;
 
     /**
@@ -157,7 +157,7 @@ public class Export extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @com.pulumi.core.annotations.Export(name="path", type=String.class, parameters={})
+    @com.pulumi.core.annotations.Export(name="path", refs={String.class}, tree="[0]")
     private Output<String> path;
 
     /**
@@ -178,7 +178,7 @@ public class Export extends com.pulumi.resources.CustomResource {
      * The current state of this export.
      * 
      */
-    @com.pulumi.core.annotations.Export(name="state", type=String.class, parameters={})
+    @com.pulumi.core.annotations.Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -192,7 +192,7 @@ public class Export extends com.pulumi.resources.CustomResource {
      * The date and time the export was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @com.pulumi.core.annotations.Export(name="timeCreated", type=String.class, parameters={})
+    @com.pulumi.core.annotations.Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**

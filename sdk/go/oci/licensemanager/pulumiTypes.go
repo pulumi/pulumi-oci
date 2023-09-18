@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -62,6 +63,12 @@ func (i ProductLicenseImageArgs) ToProductLicenseImageOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(ProductLicenseImageOutput)
 }
 
+func (i ProductLicenseImageArgs) ToOutput(ctx context.Context) pulumix.Output[ProductLicenseImage] {
+	return pulumix.Output[ProductLicenseImage]{
+		OutputState: i.ToProductLicenseImageOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ProductLicenseImageArrayInput is an input type that accepts ProductLicenseImageArray and ProductLicenseImageArrayOutput values.
 // You can construct a concrete instance of `ProductLicenseImageArrayInput` via:
 //
@@ -87,6 +94,12 @@ func (i ProductLicenseImageArray) ToProductLicenseImageArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(ProductLicenseImageArrayOutput)
 }
 
+func (i ProductLicenseImageArray) ToOutput(ctx context.Context) pulumix.Output[[]ProductLicenseImage] {
+	return pulumix.Output[[]ProductLicenseImage]{
+		OutputState: i.ToProductLicenseImageArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ProductLicenseImageOutput struct{ *pulumi.OutputState }
 
 func (ProductLicenseImageOutput) ElementType() reflect.Type {
@@ -99,6 +112,12 @@ func (o ProductLicenseImageOutput) ToProductLicenseImageOutput() ProductLicenseI
 
 func (o ProductLicenseImageOutput) ToProductLicenseImageOutputWithContext(ctx context.Context) ProductLicenseImageOutput {
 	return o
+}
+
+func (o ProductLicenseImageOutput) ToOutput(ctx context.Context) pulumix.Output[ProductLicenseImage] {
+	return pulumix.Output[ProductLicenseImage]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The image ID associated with the product license.
@@ -138,6 +157,12 @@ func (o ProductLicenseImageArrayOutput) ToProductLicenseImageArrayOutput() Produ
 
 func (o ProductLicenseImageArrayOutput) ToProductLicenseImageArrayOutputWithContext(ctx context.Context) ProductLicenseImageArrayOutput {
 	return o
+}
+
+func (o ProductLicenseImageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ProductLicenseImage] {
+	return pulumix.Output[[]ProductLicenseImage]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ProductLicenseImageArrayOutput) Index(i pulumi.IntInput) ProductLicenseImageOutput {
@@ -181,6 +206,12 @@ func (i GetLicenseRecordsFilterArgs) ToGetLicenseRecordsFilterOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetLicenseRecordsFilterOutput)
 }
 
+func (i GetLicenseRecordsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetLicenseRecordsFilter] {
+	return pulumix.Output[GetLicenseRecordsFilter]{
+		OutputState: i.ToGetLicenseRecordsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetLicenseRecordsFilterArrayInput is an input type that accepts GetLicenseRecordsFilterArray and GetLicenseRecordsFilterArrayOutput values.
 // You can construct a concrete instance of `GetLicenseRecordsFilterArrayInput` via:
 //
@@ -206,6 +237,12 @@ func (i GetLicenseRecordsFilterArray) ToGetLicenseRecordsFilterArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetLicenseRecordsFilterArrayOutput)
 }
 
+func (i GetLicenseRecordsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLicenseRecordsFilter] {
+	return pulumix.Output[[]GetLicenseRecordsFilter]{
+		OutputState: i.ToGetLicenseRecordsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetLicenseRecordsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetLicenseRecordsFilterOutput) ElementType() reflect.Type {
@@ -218,6 +255,12 @@ func (o GetLicenseRecordsFilterOutput) ToGetLicenseRecordsFilterOutput() GetLice
 
 func (o GetLicenseRecordsFilterOutput) ToGetLicenseRecordsFilterOutputWithContext(ctx context.Context) GetLicenseRecordsFilterOutput {
 	return o
+}
+
+func (o GetLicenseRecordsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetLicenseRecordsFilter] {
+	return pulumix.Output[GetLicenseRecordsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetLicenseRecordsFilterOutput) Name() pulumi.StringOutput {
@@ -244,6 +287,12 @@ func (o GetLicenseRecordsFilterArrayOutput) ToGetLicenseRecordsFilterArrayOutput
 
 func (o GetLicenseRecordsFilterArrayOutput) ToGetLicenseRecordsFilterArrayOutputWithContext(ctx context.Context) GetLicenseRecordsFilterArrayOutput {
 	return o
+}
+
+func (o GetLicenseRecordsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLicenseRecordsFilter] {
+	return pulumix.Output[[]GetLicenseRecordsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetLicenseRecordsFilterArrayOutput) Index(i pulumi.IntInput) GetLicenseRecordsFilterOutput {
@@ -283,6 +332,12 @@ func (i GetLicenseRecordsLicenseRecordCollectionArgs) ToGetLicenseRecordsLicense
 	return pulumi.ToOutputWithContext(ctx, i).(GetLicenseRecordsLicenseRecordCollectionOutput)
 }
 
+func (i GetLicenseRecordsLicenseRecordCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetLicenseRecordsLicenseRecordCollection] {
+	return pulumix.Output[GetLicenseRecordsLicenseRecordCollection]{
+		OutputState: i.ToGetLicenseRecordsLicenseRecordCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetLicenseRecordsLicenseRecordCollectionArrayInput is an input type that accepts GetLicenseRecordsLicenseRecordCollectionArray and GetLicenseRecordsLicenseRecordCollectionArrayOutput values.
 // You can construct a concrete instance of `GetLicenseRecordsLicenseRecordCollectionArrayInput` via:
 //
@@ -308,6 +363,12 @@ func (i GetLicenseRecordsLicenseRecordCollectionArray) ToGetLicenseRecordsLicens
 	return pulumi.ToOutputWithContext(ctx, i).(GetLicenseRecordsLicenseRecordCollectionArrayOutput)
 }
 
+func (i GetLicenseRecordsLicenseRecordCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLicenseRecordsLicenseRecordCollection] {
+	return pulumix.Output[[]GetLicenseRecordsLicenseRecordCollection]{
+		OutputState: i.ToGetLicenseRecordsLicenseRecordCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetLicenseRecordsLicenseRecordCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetLicenseRecordsLicenseRecordCollectionOutput) ElementType() reflect.Type {
@@ -320,6 +381,12 @@ func (o GetLicenseRecordsLicenseRecordCollectionOutput) ToGetLicenseRecordsLicen
 
 func (o GetLicenseRecordsLicenseRecordCollectionOutput) ToGetLicenseRecordsLicenseRecordCollectionOutputWithContext(ctx context.Context) GetLicenseRecordsLicenseRecordCollectionOutput {
 	return o
+}
+
+func (o GetLicenseRecordsLicenseRecordCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetLicenseRecordsLicenseRecordCollection] {
+	return pulumix.Output[GetLicenseRecordsLicenseRecordCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetLicenseRecordsLicenseRecordCollectionOutput) Items() GetLicenseRecordsLicenseRecordCollectionItemArrayOutput {
@@ -340,6 +407,12 @@ func (o GetLicenseRecordsLicenseRecordCollectionArrayOutput) ToGetLicenseRecords
 
 func (o GetLicenseRecordsLicenseRecordCollectionArrayOutput) ToGetLicenseRecordsLicenseRecordCollectionArrayOutputWithContext(ctx context.Context) GetLicenseRecordsLicenseRecordCollectionArrayOutput {
 	return o
+}
+
+func (o GetLicenseRecordsLicenseRecordCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLicenseRecordsLicenseRecordCollection] {
+	return pulumix.Output[[]GetLicenseRecordsLicenseRecordCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetLicenseRecordsLicenseRecordCollectionArrayOutput) Index(i pulumi.IntInput) GetLicenseRecordsLicenseRecordCollectionOutput {
@@ -449,6 +522,12 @@ func (i GetLicenseRecordsLicenseRecordCollectionItemArgs) ToGetLicenseRecordsLic
 	return pulumi.ToOutputWithContext(ctx, i).(GetLicenseRecordsLicenseRecordCollectionItemOutput)
 }
 
+func (i GetLicenseRecordsLicenseRecordCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetLicenseRecordsLicenseRecordCollectionItem] {
+	return pulumix.Output[GetLicenseRecordsLicenseRecordCollectionItem]{
+		OutputState: i.ToGetLicenseRecordsLicenseRecordCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetLicenseRecordsLicenseRecordCollectionItemArrayInput is an input type that accepts GetLicenseRecordsLicenseRecordCollectionItemArray and GetLicenseRecordsLicenseRecordCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetLicenseRecordsLicenseRecordCollectionItemArrayInput` via:
 //
@@ -474,6 +553,12 @@ func (i GetLicenseRecordsLicenseRecordCollectionItemArray) ToGetLicenseRecordsLi
 	return pulumi.ToOutputWithContext(ctx, i).(GetLicenseRecordsLicenseRecordCollectionItemArrayOutput)
 }
 
+func (i GetLicenseRecordsLicenseRecordCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLicenseRecordsLicenseRecordCollectionItem] {
+	return pulumix.Output[[]GetLicenseRecordsLicenseRecordCollectionItem]{
+		OutputState: i.ToGetLicenseRecordsLicenseRecordCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetLicenseRecordsLicenseRecordCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetLicenseRecordsLicenseRecordCollectionItemOutput) ElementType() reflect.Type {
@@ -486,6 +571,12 @@ func (o GetLicenseRecordsLicenseRecordCollectionItemOutput) ToGetLicenseRecordsL
 
 func (o GetLicenseRecordsLicenseRecordCollectionItemOutput) ToGetLicenseRecordsLicenseRecordCollectionItemOutputWithContext(ctx context.Context) GetLicenseRecordsLicenseRecordCollectionItemOutput {
 	return o
+}
+
+func (o GetLicenseRecordsLicenseRecordCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetLicenseRecordsLicenseRecordCollectionItem] {
+	return pulumix.Output[GetLicenseRecordsLicenseRecordCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the license record is created.
@@ -592,6 +683,12 @@ func (o GetLicenseRecordsLicenseRecordCollectionItemArrayOutput) ToGetLicenseRec
 	return o
 }
 
+func (o GetLicenseRecordsLicenseRecordCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLicenseRecordsLicenseRecordCollectionItem] {
+	return pulumix.Output[[]GetLicenseRecordsLicenseRecordCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetLicenseRecordsLicenseRecordCollectionItemArrayOutput) Index(i pulumi.IntInput) GetLicenseRecordsLicenseRecordCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLicenseRecordsLicenseRecordCollectionItem {
 		return vs[0].([]GetLicenseRecordsLicenseRecordCollectionItem)[vs[1].(int)]
@@ -675,6 +772,12 @@ func (i GetProductLicenseConsumersItemArgs) ToGetProductLicenseConsumersItemOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetProductLicenseConsumersItemOutput)
 }
 
+func (i GetProductLicenseConsumersItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetProductLicenseConsumersItem] {
+	return pulumix.Output[GetProductLicenseConsumersItem]{
+		OutputState: i.ToGetProductLicenseConsumersItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetProductLicenseConsumersItemArrayInput is an input type that accepts GetProductLicenseConsumersItemArray and GetProductLicenseConsumersItemArrayOutput values.
 // You can construct a concrete instance of `GetProductLicenseConsumersItemArrayInput` via:
 //
@@ -700,6 +803,12 @@ func (i GetProductLicenseConsumersItemArray) ToGetProductLicenseConsumersItemArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetProductLicenseConsumersItemArrayOutput)
 }
 
+func (i GetProductLicenseConsumersItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProductLicenseConsumersItem] {
+	return pulumix.Output[[]GetProductLicenseConsumersItem]{
+		OutputState: i.ToGetProductLicenseConsumersItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetProductLicenseConsumersItemOutput struct{ *pulumi.OutputState }
 
 func (GetProductLicenseConsumersItemOutput) ElementType() reflect.Type {
@@ -712,6 +821,12 @@ func (o GetProductLicenseConsumersItemOutput) ToGetProductLicenseConsumersItemOu
 
 func (o GetProductLicenseConsumersItemOutput) ToGetProductLicenseConsumersItemOutputWithContext(ctx context.Context) GetProductLicenseConsumersItemOutput {
 	return o
+}
+
+func (o GetProductLicenseConsumersItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetProductLicenseConsumersItem] {
+	return pulumix.Output[GetProductLicenseConsumersItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Specifies if all options are available.
@@ -790,6 +905,12 @@ func (o GetProductLicenseConsumersItemArrayOutput) ToGetProductLicenseConsumersI
 	return o
 }
 
+func (o GetProductLicenseConsumersItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProductLicenseConsumersItem] {
+	return pulumix.Output[[]GetProductLicenseConsumersItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetProductLicenseConsumersItemArrayOutput) Index(i pulumi.IntInput) GetProductLicenseConsumersItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProductLicenseConsumersItem {
 		return vs[0].([]GetProductLicenseConsumersItem)[vs[1].(int)]
@@ -837,6 +958,12 @@ func (i GetProductLicenseConsumersItemMissingProductArgs) ToGetProductLicenseCon
 	return pulumi.ToOutputWithContext(ctx, i).(GetProductLicenseConsumersItemMissingProductOutput)
 }
 
+func (i GetProductLicenseConsumersItemMissingProductArgs) ToOutput(ctx context.Context) pulumix.Output[GetProductLicenseConsumersItemMissingProduct] {
+	return pulumix.Output[GetProductLicenseConsumersItemMissingProduct]{
+		OutputState: i.ToGetProductLicenseConsumersItemMissingProductOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetProductLicenseConsumersItemMissingProductArrayInput is an input type that accepts GetProductLicenseConsumersItemMissingProductArray and GetProductLicenseConsumersItemMissingProductArrayOutput values.
 // You can construct a concrete instance of `GetProductLicenseConsumersItemMissingProductArrayInput` via:
 //
@@ -862,6 +989,12 @@ func (i GetProductLicenseConsumersItemMissingProductArray) ToGetProductLicenseCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetProductLicenseConsumersItemMissingProductArrayOutput)
 }
 
+func (i GetProductLicenseConsumersItemMissingProductArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProductLicenseConsumersItemMissingProduct] {
+	return pulumix.Output[[]GetProductLicenseConsumersItemMissingProduct]{
+		OutputState: i.ToGetProductLicenseConsumersItemMissingProductArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetProductLicenseConsumersItemMissingProductOutput struct{ *pulumi.OutputState }
 
 func (GetProductLicenseConsumersItemMissingProductOutput) ElementType() reflect.Type {
@@ -874,6 +1007,12 @@ func (o GetProductLicenseConsumersItemMissingProductOutput) ToGetProductLicenseC
 
 func (o GetProductLicenseConsumersItemMissingProductOutput) ToGetProductLicenseConsumersItemMissingProductOutputWithContext(ctx context.Context) GetProductLicenseConsumersItemMissingProductOutput {
 	return o
+}
+
+func (o GetProductLicenseConsumersItemMissingProductOutput) ToOutput(ctx context.Context) pulumix.Output[GetProductLicenseConsumersItemMissingProduct] {
+	return pulumix.Output[GetProductLicenseConsumersItemMissingProduct]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Product category base or option.
@@ -903,6 +1042,12 @@ func (o GetProductLicenseConsumersItemMissingProductArrayOutput) ToGetProductLic
 
 func (o GetProductLicenseConsumersItemMissingProductArrayOutput) ToGetProductLicenseConsumersItemMissingProductArrayOutputWithContext(ctx context.Context) GetProductLicenseConsumersItemMissingProductArrayOutput {
 	return o
+}
+
+func (o GetProductLicenseConsumersItemMissingProductArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProductLicenseConsumersItemMissingProduct] {
+	return pulumix.Output[[]GetProductLicenseConsumersItemMissingProduct]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetProductLicenseConsumersItemMissingProductArrayOutput) Index(i pulumi.IntInput) GetProductLicenseConsumersItemMissingProductOutput {
@@ -960,6 +1105,12 @@ func (i GetProductLicenseImageArgs) ToGetProductLicenseImageOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetProductLicenseImageOutput)
 }
 
+func (i GetProductLicenseImageArgs) ToOutput(ctx context.Context) pulumix.Output[GetProductLicenseImage] {
+	return pulumix.Output[GetProductLicenseImage]{
+		OutputState: i.ToGetProductLicenseImageOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetProductLicenseImageArrayInput is an input type that accepts GetProductLicenseImageArray and GetProductLicenseImageArrayOutput values.
 // You can construct a concrete instance of `GetProductLicenseImageArrayInput` via:
 //
@@ -985,6 +1136,12 @@ func (i GetProductLicenseImageArray) ToGetProductLicenseImageArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetProductLicenseImageArrayOutput)
 }
 
+func (i GetProductLicenseImageArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProductLicenseImage] {
+	return pulumix.Output[[]GetProductLicenseImage]{
+		OutputState: i.ToGetProductLicenseImageArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetProductLicenseImageOutput struct{ *pulumi.OutputState }
 
 func (GetProductLicenseImageOutput) ElementType() reflect.Type {
@@ -997,6 +1154,12 @@ func (o GetProductLicenseImageOutput) ToGetProductLicenseImageOutput() GetProduc
 
 func (o GetProductLicenseImageOutput) ToGetProductLicenseImageOutputWithContext(ctx context.Context) GetProductLicenseImageOutput {
 	return o
+}
+
+func (o GetProductLicenseImageOutput) ToOutput(ctx context.Context) pulumix.Output[GetProductLicenseImage] {
+	return pulumix.Output[GetProductLicenseImage]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The image ID associated with the product license.
@@ -1036,6 +1199,12 @@ func (o GetProductLicenseImageArrayOutput) ToGetProductLicenseImageArrayOutput()
 
 func (o GetProductLicenseImageArrayOutput) ToGetProductLicenseImageArrayOutputWithContext(ctx context.Context) GetProductLicenseImageArrayOutput {
 	return o
+}
+
+func (o GetProductLicenseImageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProductLicenseImage] {
+	return pulumix.Output[[]GetProductLicenseImage]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetProductLicenseImageArrayOutput) Index(i pulumi.IntInput) GetProductLicenseImageOutput {
@@ -1079,6 +1248,12 @@ func (i GetProductLicensesFilterArgs) ToGetProductLicensesFilterOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetProductLicensesFilterOutput)
 }
 
+func (i GetProductLicensesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetProductLicensesFilter] {
+	return pulumix.Output[GetProductLicensesFilter]{
+		OutputState: i.ToGetProductLicensesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetProductLicensesFilterArrayInput is an input type that accepts GetProductLicensesFilterArray and GetProductLicensesFilterArrayOutput values.
 // You can construct a concrete instance of `GetProductLicensesFilterArrayInput` via:
 //
@@ -1104,6 +1279,12 @@ func (i GetProductLicensesFilterArray) ToGetProductLicensesFilterArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetProductLicensesFilterArrayOutput)
 }
 
+func (i GetProductLicensesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProductLicensesFilter] {
+	return pulumix.Output[[]GetProductLicensesFilter]{
+		OutputState: i.ToGetProductLicensesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetProductLicensesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetProductLicensesFilterOutput) ElementType() reflect.Type {
@@ -1116,6 +1297,12 @@ func (o GetProductLicensesFilterOutput) ToGetProductLicensesFilterOutput() GetPr
 
 func (o GetProductLicensesFilterOutput) ToGetProductLicensesFilterOutputWithContext(ctx context.Context) GetProductLicensesFilterOutput {
 	return o
+}
+
+func (o GetProductLicensesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetProductLicensesFilter] {
+	return pulumix.Output[GetProductLicensesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetProductLicensesFilterOutput) Name() pulumi.StringOutput {
@@ -1142,6 +1329,12 @@ func (o GetProductLicensesFilterArrayOutput) ToGetProductLicensesFilterArrayOutp
 
 func (o GetProductLicensesFilterArrayOutput) ToGetProductLicensesFilterArrayOutputWithContext(ctx context.Context) GetProductLicensesFilterArrayOutput {
 	return o
+}
+
+func (o GetProductLicensesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProductLicensesFilter] {
+	return pulumix.Output[[]GetProductLicensesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetProductLicensesFilterArrayOutput) Index(i pulumi.IntInput) GetProductLicensesFilterOutput {
@@ -1181,6 +1374,12 @@ func (i GetProductLicensesProductLicenseCollectionArgs) ToGetProductLicensesProd
 	return pulumi.ToOutputWithContext(ctx, i).(GetProductLicensesProductLicenseCollectionOutput)
 }
 
+func (i GetProductLicensesProductLicenseCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetProductLicensesProductLicenseCollection] {
+	return pulumix.Output[GetProductLicensesProductLicenseCollection]{
+		OutputState: i.ToGetProductLicensesProductLicenseCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetProductLicensesProductLicenseCollectionArrayInput is an input type that accepts GetProductLicensesProductLicenseCollectionArray and GetProductLicensesProductLicenseCollectionArrayOutput values.
 // You can construct a concrete instance of `GetProductLicensesProductLicenseCollectionArrayInput` via:
 //
@@ -1206,6 +1405,12 @@ func (i GetProductLicensesProductLicenseCollectionArray) ToGetProductLicensesPro
 	return pulumi.ToOutputWithContext(ctx, i).(GetProductLicensesProductLicenseCollectionArrayOutput)
 }
 
+func (i GetProductLicensesProductLicenseCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProductLicensesProductLicenseCollection] {
+	return pulumix.Output[[]GetProductLicensesProductLicenseCollection]{
+		OutputState: i.ToGetProductLicensesProductLicenseCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetProductLicensesProductLicenseCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetProductLicensesProductLicenseCollectionOutput) ElementType() reflect.Type {
@@ -1218,6 +1423,12 @@ func (o GetProductLicensesProductLicenseCollectionOutput) ToGetProductLicensesPr
 
 func (o GetProductLicensesProductLicenseCollectionOutput) ToGetProductLicensesProductLicenseCollectionOutputWithContext(ctx context.Context) GetProductLicensesProductLicenseCollectionOutput {
 	return o
+}
+
+func (o GetProductLicensesProductLicenseCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetProductLicensesProductLicenseCollection] {
+	return pulumix.Output[GetProductLicensesProductLicenseCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetProductLicensesProductLicenseCollectionOutput) Items() GetProductLicensesProductLicenseCollectionItemArrayOutput {
@@ -1238,6 +1449,12 @@ func (o GetProductLicensesProductLicenseCollectionArrayOutput) ToGetProductLicen
 
 func (o GetProductLicensesProductLicenseCollectionArrayOutput) ToGetProductLicensesProductLicenseCollectionArrayOutputWithContext(ctx context.Context) GetProductLicensesProductLicenseCollectionArrayOutput {
 	return o
+}
+
+func (o GetProductLicensesProductLicenseCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProductLicensesProductLicenseCollection] {
+	return pulumix.Output[[]GetProductLicensesProductLicenseCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetProductLicensesProductLicenseCollectionArrayOutput) Index(i pulumi.IntInput) GetProductLicensesProductLicenseCollectionOutput {
@@ -1359,6 +1576,12 @@ func (i GetProductLicensesProductLicenseCollectionItemArgs) ToGetProductLicenses
 	return pulumi.ToOutputWithContext(ctx, i).(GetProductLicensesProductLicenseCollectionItemOutput)
 }
 
+func (i GetProductLicensesProductLicenseCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetProductLicensesProductLicenseCollectionItem] {
+	return pulumix.Output[GetProductLicensesProductLicenseCollectionItem]{
+		OutputState: i.ToGetProductLicensesProductLicenseCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetProductLicensesProductLicenseCollectionItemArrayInput is an input type that accepts GetProductLicensesProductLicenseCollectionItemArray and GetProductLicensesProductLicenseCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetProductLicensesProductLicenseCollectionItemArrayInput` via:
 //
@@ -1384,6 +1607,12 @@ func (i GetProductLicensesProductLicenseCollectionItemArray) ToGetProductLicense
 	return pulumi.ToOutputWithContext(ctx, i).(GetProductLicensesProductLicenseCollectionItemArrayOutput)
 }
 
+func (i GetProductLicensesProductLicenseCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProductLicensesProductLicenseCollectionItem] {
+	return pulumix.Output[[]GetProductLicensesProductLicenseCollectionItem]{
+		OutputState: i.ToGetProductLicensesProductLicenseCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetProductLicensesProductLicenseCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetProductLicensesProductLicenseCollectionItemOutput) ElementType() reflect.Type {
@@ -1396,6 +1625,12 @@ func (o GetProductLicensesProductLicenseCollectionItemOutput) ToGetProductLicens
 
 func (o GetProductLicensesProductLicenseCollectionItemOutput) ToGetProductLicensesProductLicenseCollectionItemOutputWithContext(ctx context.Context) GetProductLicensesProductLicenseCollectionItemOutput {
 	return o
+}
+
+func (o GetProductLicensesProductLicenseCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetProductLicensesProductLicenseCollectionItem] {
+	return pulumix.Output[GetProductLicensesProductLicenseCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The number of active license records associated with the product license.
@@ -1519,6 +1754,12 @@ func (o GetProductLicensesProductLicenseCollectionItemArrayOutput) ToGetProductL
 	return o
 }
 
+func (o GetProductLicensesProductLicenseCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProductLicensesProductLicenseCollectionItem] {
+	return pulumix.Output[[]GetProductLicensesProductLicenseCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetProductLicensesProductLicenseCollectionItemArrayOutput) Index(i pulumi.IntInput) GetProductLicensesProductLicenseCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProductLicensesProductLicenseCollectionItem {
 		return vs[0].([]GetProductLicensesProductLicenseCollectionItem)[vs[1].(int)]
@@ -1574,6 +1815,12 @@ func (i GetProductLicensesProductLicenseCollectionItemImageArgs) ToGetProductLic
 	return pulumi.ToOutputWithContext(ctx, i).(GetProductLicensesProductLicenseCollectionItemImageOutput)
 }
 
+func (i GetProductLicensesProductLicenseCollectionItemImageArgs) ToOutput(ctx context.Context) pulumix.Output[GetProductLicensesProductLicenseCollectionItemImage] {
+	return pulumix.Output[GetProductLicensesProductLicenseCollectionItemImage]{
+		OutputState: i.ToGetProductLicensesProductLicenseCollectionItemImageOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetProductLicensesProductLicenseCollectionItemImageArrayInput is an input type that accepts GetProductLicensesProductLicenseCollectionItemImageArray and GetProductLicensesProductLicenseCollectionItemImageArrayOutput values.
 // You can construct a concrete instance of `GetProductLicensesProductLicenseCollectionItemImageArrayInput` via:
 //
@@ -1599,6 +1846,12 @@ func (i GetProductLicensesProductLicenseCollectionItemImageArray) ToGetProductLi
 	return pulumi.ToOutputWithContext(ctx, i).(GetProductLicensesProductLicenseCollectionItemImageArrayOutput)
 }
 
+func (i GetProductLicensesProductLicenseCollectionItemImageArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProductLicensesProductLicenseCollectionItemImage] {
+	return pulumix.Output[[]GetProductLicensesProductLicenseCollectionItemImage]{
+		OutputState: i.ToGetProductLicensesProductLicenseCollectionItemImageArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetProductLicensesProductLicenseCollectionItemImageOutput struct{ *pulumi.OutputState }
 
 func (GetProductLicensesProductLicenseCollectionItemImageOutput) ElementType() reflect.Type {
@@ -1611,6 +1864,12 @@ func (o GetProductLicensesProductLicenseCollectionItemImageOutput) ToGetProductL
 
 func (o GetProductLicensesProductLicenseCollectionItemImageOutput) ToGetProductLicensesProductLicenseCollectionItemImageOutputWithContext(ctx context.Context) GetProductLicensesProductLicenseCollectionItemImageOutput {
 	return o
+}
+
+func (o GetProductLicensesProductLicenseCollectionItemImageOutput) ToOutput(ctx context.Context) pulumix.Output[GetProductLicensesProductLicenseCollectionItemImage] {
+	return pulumix.Output[GetProductLicensesProductLicenseCollectionItemImage]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The image ID associated with the product license.
@@ -1650,6 +1909,12 @@ func (o GetProductLicensesProductLicenseCollectionItemImageArrayOutput) ToGetPro
 
 func (o GetProductLicensesProductLicenseCollectionItemImageArrayOutput) ToGetProductLicensesProductLicenseCollectionItemImageArrayOutputWithContext(ctx context.Context) GetProductLicensesProductLicenseCollectionItemImageArrayOutput {
 	return o
+}
+
+func (o GetProductLicensesProductLicenseCollectionItemImageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProductLicensesProductLicenseCollectionItemImage] {
+	return pulumix.Output[[]GetProductLicensesProductLicenseCollectionItemImage]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetProductLicensesProductLicenseCollectionItemImageArrayOutput) Index(i pulumi.IntInput) GetProductLicensesProductLicenseCollectionItemImageOutput {
@@ -1715,6 +1980,12 @@ func (i GetTopUtilizedProductLicensesItemArgs) ToGetTopUtilizedProductLicensesIt
 	return pulumi.ToOutputWithContext(ctx, i).(GetTopUtilizedProductLicensesItemOutput)
 }
 
+func (i GetTopUtilizedProductLicensesItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetTopUtilizedProductLicensesItem] {
+	return pulumix.Output[GetTopUtilizedProductLicensesItem]{
+		OutputState: i.ToGetTopUtilizedProductLicensesItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTopUtilizedProductLicensesItemArrayInput is an input type that accepts GetTopUtilizedProductLicensesItemArray and GetTopUtilizedProductLicensesItemArrayOutput values.
 // You can construct a concrete instance of `GetTopUtilizedProductLicensesItemArrayInput` via:
 //
@@ -1740,6 +2011,12 @@ func (i GetTopUtilizedProductLicensesItemArray) ToGetTopUtilizedProductLicensesI
 	return pulumi.ToOutputWithContext(ctx, i).(GetTopUtilizedProductLicensesItemArrayOutput)
 }
 
+func (i GetTopUtilizedProductLicensesItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTopUtilizedProductLicensesItem] {
+	return pulumix.Output[[]GetTopUtilizedProductLicensesItem]{
+		OutputState: i.ToGetTopUtilizedProductLicensesItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTopUtilizedProductLicensesItemOutput struct{ *pulumi.OutputState }
 
 func (GetTopUtilizedProductLicensesItemOutput) ElementType() reflect.Type {
@@ -1752,6 +2029,12 @@ func (o GetTopUtilizedProductLicensesItemOutput) ToGetTopUtilizedProductLicenses
 
 func (o GetTopUtilizedProductLicensesItemOutput) ToGetTopUtilizedProductLicensesItemOutputWithContext(ctx context.Context) GetTopUtilizedProductLicensesItemOutput {
 	return o
+}
+
+func (o GetTopUtilizedProductLicensesItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetTopUtilizedProductLicensesItem] {
+	return pulumix.Output[GetTopUtilizedProductLicensesItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Specifies if the license unit count is unlimited.
@@ -1801,6 +2084,12 @@ func (o GetTopUtilizedProductLicensesItemArrayOutput) ToGetTopUtilizedProductLic
 
 func (o GetTopUtilizedProductLicensesItemArrayOutput) ToGetTopUtilizedProductLicensesItemArrayOutputWithContext(ctx context.Context) GetTopUtilizedProductLicensesItemArrayOutput {
 	return o
+}
+
+func (o GetTopUtilizedProductLicensesItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTopUtilizedProductLicensesItem] {
+	return pulumix.Output[[]GetTopUtilizedProductLicensesItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTopUtilizedProductLicensesItemArrayOutput) Index(i pulumi.IntInput) GetTopUtilizedProductLicensesItemOutput {
@@ -1862,6 +2151,12 @@ func (i GetTopUtilizedResourcesItemArgs) ToGetTopUtilizedResourcesItemOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetTopUtilizedResourcesItemOutput)
 }
 
+func (i GetTopUtilizedResourcesItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetTopUtilizedResourcesItem] {
+	return pulumix.Output[GetTopUtilizedResourcesItem]{
+		OutputState: i.ToGetTopUtilizedResourcesItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTopUtilizedResourcesItemArrayInput is an input type that accepts GetTopUtilizedResourcesItemArray and GetTopUtilizedResourcesItemArrayOutput values.
 // You can construct a concrete instance of `GetTopUtilizedResourcesItemArrayInput` via:
 //
@@ -1887,6 +2182,12 @@ func (i GetTopUtilizedResourcesItemArray) ToGetTopUtilizedResourcesItemArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetTopUtilizedResourcesItemArrayOutput)
 }
 
+func (i GetTopUtilizedResourcesItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTopUtilizedResourcesItem] {
+	return pulumix.Output[[]GetTopUtilizedResourcesItem]{
+		OutputState: i.ToGetTopUtilizedResourcesItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTopUtilizedResourcesItemOutput struct{ *pulumi.OutputState }
 
 func (GetTopUtilizedResourcesItemOutput) ElementType() reflect.Type {
@@ -1899,6 +2200,12 @@ func (o GetTopUtilizedResourcesItemOutput) ToGetTopUtilizedResourcesItemOutput()
 
 func (o GetTopUtilizedResourcesItemOutput) ToGetTopUtilizedResourcesItemOutputWithContext(ctx context.Context) GetTopUtilizedResourcesItemOutput {
 	return o
+}
+
+func (o GetTopUtilizedResourcesItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetTopUtilizedResourcesItem] {
+	return pulumix.Output[GetTopUtilizedResourcesItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that contains the resource.
@@ -1943,6 +2250,12 @@ func (o GetTopUtilizedResourcesItemArrayOutput) ToGetTopUtilizedResourcesItemArr
 
 func (o GetTopUtilizedResourcesItemArrayOutput) ToGetTopUtilizedResourcesItemArrayOutputWithContext(ctx context.Context) GetTopUtilizedResourcesItemArrayOutput {
 	return o
+}
+
+func (o GetTopUtilizedResourcesItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTopUtilizedResourcesItem] {
+	return pulumix.Output[[]GetTopUtilizedResourcesItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTopUtilizedResourcesItemArrayOutput) Index(i pulumi.IntInput) GetTopUtilizedResourcesItemOutput {

@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the External Exadata Infrastructure resource in Oracle Cloud Infrastructure Database Management service.
@@ -292,6 +293,12 @@ func (i *ExternalExadataInfrastructure) ToExternalExadataInfrastructureOutputWit
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalExadataInfrastructureOutput)
 }
 
+func (i *ExternalExadataInfrastructure) ToOutput(ctx context.Context) pulumix.Output[*ExternalExadataInfrastructure] {
+	return pulumix.Output[*ExternalExadataInfrastructure]{
+		OutputState: i.ToExternalExadataInfrastructureOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ExternalExadataInfrastructureArrayInput is an input type that accepts ExternalExadataInfrastructureArray and ExternalExadataInfrastructureArrayOutput values.
 // You can construct a concrete instance of `ExternalExadataInfrastructureArrayInput` via:
 //
@@ -315,6 +322,12 @@ func (i ExternalExadataInfrastructureArray) ToExternalExadataInfrastructureArray
 
 func (i ExternalExadataInfrastructureArray) ToExternalExadataInfrastructureArrayOutputWithContext(ctx context.Context) ExternalExadataInfrastructureArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalExadataInfrastructureArrayOutput)
+}
+
+func (i ExternalExadataInfrastructureArray) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalExadataInfrastructure] {
+	return pulumix.Output[[]*ExternalExadataInfrastructure]{
+		OutputState: i.ToExternalExadataInfrastructureArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // ExternalExadataInfrastructureMapInput is an input type that accepts ExternalExadataInfrastructureMap and ExternalExadataInfrastructureMapOutput values.
@@ -342,6 +355,12 @@ func (i ExternalExadataInfrastructureMap) ToExternalExadataInfrastructureMapOutp
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalExadataInfrastructureMapOutput)
 }
 
+func (i ExternalExadataInfrastructureMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalExadataInfrastructure] {
+	return pulumix.Output[map[string]*ExternalExadataInfrastructure]{
+		OutputState: i.ToExternalExadataInfrastructureMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ExternalExadataInfrastructureOutput struct{ *pulumi.OutputState }
 
 func (ExternalExadataInfrastructureOutput) ElementType() reflect.Type {
@@ -354,6 +373,12 @@ func (o ExternalExadataInfrastructureOutput) ToExternalExadataInfrastructureOutp
 
 func (o ExternalExadataInfrastructureOutput) ToExternalExadataInfrastructureOutputWithContext(ctx context.Context) ExternalExadataInfrastructureOutput {
 	return o
+}
+
+func (o ExternalExadataInfrastructureOutput) ToOutput(ctx context.Context) pulumix.Output[*ExternalExadataInfrastructure] {
+	return pulumix.Output[*ExternalExadataInfrastructure]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
@@ -467,6 +492,12 @@ func (o ExternalExadataInfrastructureArrayOutput) ToExternalExadataInfrastructur
 	return o
 }
 
+func (o ExternalExadataInfrastructureArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalExadataInfrastructure] {
+	return pulumix.Output[[]*ExternalExadataInfrastructure]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o ExternalExadataInfrastructureArrayOutput) Index(i pulumi.IntInput) ExternalExadataInfrastructureOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ExternalExadataInfrastructure {
 		return vs[0].([]*ExternalExadataInfrastructure)[vs[1].(int)]
@@ -485,6 +516,12 @@ func (o ExternalExadataInfrastructureMapOutput) ToExternalExadataInfrastructureM
 
 func (o ExternalExadataInfrastructureMapOutput) ToExternalExadataInfrastructureMapOutputWithContext(ctx context.Context) ExternalExadataInfrastructureMapOutput {
 	return o
+}
+
+func (o ExternalExadataInfrastructureMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalExadataInfrastructure] {
+	return pulumix.Output[map[string]*ExternalExadataInfrastructure]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ExternalExadataInfrastructureMapOutput) MapIndex(k pulumi.StringInput) ExternalExadataInfrastructureOutput {

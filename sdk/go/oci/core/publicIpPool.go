@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Public Ip Pool resource in Oracle Cloud Infrastructure Core service.
@@ -208,6 +209,12 @@ func (i *PublicIpPool) ToPublicIpPoolOutputWithContext(ctx context.Context) Publ
 	return pulumi.ToOutputWithContext(ctx, i).(PublicIpPoolOutput)
 }
 
+func (i *PublicIpPool) ToOutput(ctx context.Context) pulumix.Output[*PublicIpPool] {
+	return pulumix.Output[*PublicIpPool]{
+		OutputState: i.ToPublicIpPoolOutputWithContext(ctx).OutputState,
+	}
+}
+
 // PublicIpPoolArrayInput is an input type that accepts PublicIpPoolArray and PublicIpPoolArrayOutput values.
 // You can construct a concrete instance of `PublicIpPoolArrayInput` via:
 //
@@ -231,6 +238,12 @@ func (i PublicIpPoolArray) ToPublicIpPoolArrayOutput() PublicIpPoolArrayOutput {
 
 func (i PublicIpPoolArray) ToPublicIpPoolArrayOutputWithContext(ctx context.Context) PublicIpPoolArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(PublicIpPoolArrayOutput)
+}
+
+func (i PublicIpPoolArray) ToOutput(ctx context.Context) pulumix.Output[[]*PublicIpPool] {
+	return pulumix.Output[[]*PublicIpPool]{
+		OutputState: i.ToPublicIpPoolArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // PublicIpPoolMapInput is an input type that accepts PublicIpPoolMap and PublicIpPoolMapOutput values.
@@ -258,6 +271,12 @@ func (i PublicIpPoolMap) ToPublicIpPoolMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(PublicIpPoolMapOutput)
 }
 
+func (i PublicIpPoolMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*PublicIpPool] {
+	return pulumix.Output[map[string]*PublicIpPool]{
+		OutputState: i.ToPublicIpPoolMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type PublicIpPoolOutput struct{ *pulumi.OutputState }
 
 func (PublicIpPoolOutput) ElementType() reflect.Type {
@@ -270,6 +289,12 @@ func (o PublicIpPoolOutput) ToPublicIpPoolOutput() PublicIpPoolOutput {
 
 func (o PublicIpPoolOutput) ToPublicIpPoolOutputWithContext(ctx context.Context) PublicIpPoolOutput {
 	return o
+}
+
+func (o PublicIpPoolOutput) ToOutput(ctx context.Context) pulumix.Output[*PublicIpPool] {
+	return pulumix.Output[*PublicIpPool]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The CIDR blocks added to this pool. This could be all or a portion of a BYOIP CIDR block.
@@ -324,6 +349,12 @@ func (o PublicIpPoolArrayOutput) ToPublicIpPoolArrayOutputWithContext(ctx contex
 	return o
 }
 
+func (o PublicIpPoolArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*PublicIpPool] {
+	return pulumix.Output[[]*PublicIpPool]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o PublicIpPoolArrayOutput) Index(i pulumi.IntInput) PublicIpPoolOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *PublicIpPool {
 		return vs[0].([]*PublicIpPool)[vs[1].(int)]
@@ -342,6 +373,12 @@ func (o PublicIpPoolMapOutput) ToPublicIpPoolMapOutput() PublicIpPoolMapOutput {
 
 func (o PublicIpPoolMapOutput) ToPublicIpPoolMapOutputWithContext(ctx context.Context) PublicIpPoolMapOutput {
 	return o
+}
+
+func (o PublicIpPoolMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*PublicIpPool] {
+	return pulumix.Output[map[string]*PublicIpPool]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o PublicIpPoolMapOutput) MapIndex(k pulumi.StringInput) PublicIpPoolOutput {

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Resolver Endpoints in Oracle Cloud Infrastructure DNS service.
@@ -127,6 +128,12 @@ func (o GetResolverEndpointsResultOutput) ToGetResolverEndpointsResultOutput() G
 
 func (o GetResolverEndpointsResultOutput) ToGetResolverEndpointsResultOutputWithContext(ctx context.Context) GetResolverEndpointsResultOutput {
 	return o
+}
+
+func (o GetResolverEndpointsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetResolverEndpointsResult] {
+	return pulumix.Output[GetResolverEndpointsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetResolverEndpointsResultOutput) Filters() GetResolverEndpointsFilterArrayOutput {

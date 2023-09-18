@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Fleet Advanced Feature Configuration resource in Oracle Cloud Infrastructure Jms service.
@@ -117,6 +118,12 @@ func (o GetFleetAdvancedFeatureConfigurationResultOutput) ToGetFleetAdvancedFeat
 
 func (o GetFleetAdvancedFeatureConfigurationResultOutput) ToGetFleetAdvancedFeatureConfigurationResultOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationResultOutput {
 	return o
+}
+
+func (o GetFleetAdvancedFeatureConfigurationResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationResult] {
+	return pulumix.Output[GetFleetAdvancedFeatureConfigurationResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // AdvancedUsageTracking configuration

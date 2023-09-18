@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Managed List resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -272,6 +273,12 @@ func (i *ManagedList) ToManagedListOutputWithContext(ctx context.Context) Manage
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedListOutput)
 }
 
+func (i *ManagedList) ToOutput(ctx context.Context) pulumix.Output[*ManagedList] {
+	return pulumix.Output[*ManagedList]{
+		OutputState: i.ToManagedListOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ManagedListArrayInput is an input type that accepts ManagedListArray and ManagedListArrayOutput values.
 // You can construct a concrete instance of `ManagedListArrayInput` via:
 //
@@ -295,6 +302,12 @@ func (i ManagedListArray) ToManagedListArrayOutput() ManagedListArrayOutput {
 
 func (i ManagedListArray) ToManagedListArrayOutputWithContext(ctx context.Context) ManagedListArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedListArrayOutput)
+}
+
+func (i ManagedListArray) ToOutput(ctx context.Context) pulumix.Output[[]*ManagedList] {
+	return pulumix.Output[[]*ManagedList]{
+		OutputState: i.ToManagedListArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // ManagedListMapInput is an input type that accepts ManagedListMap and ManagedListMapOutput values.
@@ -322,6 +335,12 @@ func (i ManagedListMap) ToManagedListMapOutputWithContext(ctx context.Context) M
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedListMapOutput)
 }
 
+func (i ManagedListMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ManagedList] {
+	return pulumix.Output[map[string]*ManagedList]{
+		OutputState: i.ToManagedListMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ManagedListOutput struct{ *pulumi.OutputState }
 
 func (ManagedListOutput) ElementType() reflect.Type {
@@ -334,6 +353,12 @@ func (o ManagedListOutput) ToManagedListOutput() ManagedListOutput {
 
 func (o ManagedListOutput) ToManagedListOutputWithContext(ctx context.Context) ManagedListOutput {
 	return o
+}
+
+func (o ManagedListOutput) ToOutput(ctx context.Context) pulumix.Output[*ManagedList] {
+	return pulumix.Output[*ManagedList]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Compartment Identifier
@@ -434,6 +459,12 @@ func (o ManagedListArrayOutput) ToManagedListArrayOutputWithContext(ctx context.
 	return o
 }
 
+func (o ManagedListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ManagedList] {
+	return pulumix.Output[[]*ManagedList]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o ManagedListArrayOutput) Index(i pulumi.IntInput) ManagedListOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ManagedList {
 		return vs[0].([]*ManagedList)[vs[1].(int)]
@@ -452,6 +483,12 @@ func (o ManagedListMapOutput) ToManagedListMapOutput() ManagedListMapOutput {
 
 func (o ManagedListMapOutput) ToManagedListMapOutputWithContext(ctx context.Context) ManagedListMapOutput {
 	return o
+}
+
+func (o ManagedListMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ManagedList] {
+	return pulumix.Output[map[string]*ManagedList]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ManagedListMapOutput) MapIndex(k pulumi.StringInput) ManagedListOutput {

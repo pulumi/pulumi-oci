@@ -63,7 +63,7 @@ public class PurgeCache extends com.pulumi.resources.CustomResource {
      * A resource to purge, specified by either a hostless absolute path starting with a single slash (Example: `/path/to/resource`) or by a relative path in which the first component will be interpreted as a domain protected by the WAAS policy (Example: `example.com/path/to/resource`).
      * 
      */
-    @Export(name="resources", type=List.class, parameters={String.class})
+    @Export(name="resources", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> resources;
 
     /**
@@ -80,7 +80,7 @@ public class PurgeCache extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="waasPolicyId", type=String.class, parameters={})
+    @Export(name="waasPolicyId", refs={String.class}, tree="[0]")
     private Output<String> waasPolicyId;
 
     /**

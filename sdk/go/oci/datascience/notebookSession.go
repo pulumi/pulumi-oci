@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Notebook Session resource in Oracle Cloud Infrastructure Data Science service.
@@ -296,6 +297,12 @@ func (i *NotebookSession) ToNotebookSessionOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(NotebookSessionOutput)
 }
 
+func (i *NotebookSession) ToOutput(ctx context.Context) pulumix.Output[*NotebookSession] {
+	return pulumix.Output[*NotebookSession]{
+		OutputState: i.ToNotebookSessionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // NotebookSessionArrayInput is an input type that accepts NotebookSessionArray and NotebookSessionArrayOutput values.
 // You can construct a concrete instance of `NotebookSessionArrayInput` via:
 //
@@ -319,6 +326,12 @@ func (i NotebookSessionArray) ToNotebookSessionArrayOutput() NotebookSessionArra
 
 func (i NotebookSessionArray) ToNotebookSessionArrayOutputWithContext(ctx context.Context) NotebookSessionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(NotebookSessionArrayOutput)
+}
+
+func (i NotebookSessionArray) ToOutput(ctx context.Context) pulumix.Output[[]*NotebookSession] {
+	return pulumix.Output[[]*NotebookSession]{
+		OutputState: i.ToNotebookSessionArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // NotebookSessionMapInput is an input type that accepts NotebookSessionMap and NotebookSessionMapOutput values.
@@ -346,6 +359,12 @@ func (i NotebookSessionMap) ToNotebookSessionMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(NotebookSessionMapOutput)
 }
 
+func (i NotebookSessionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*NotebookSession] {
+	return pulumix.Output[map[string]*NotebookSession]{
+		OutputState: i.ToNotebookSessionMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type NotebookSessionOutput struct{ *pulumi.OutputState }
 
 func (NotebookSessionOutput) ElementType() reflect.Type {
@@ -358,6 +377,12 @@ func (o NotebookSessionOutput) ToNotebookSessionOutput() NotebookSessionOutput {
 
 func (o NotebookSessionOutput) ToNotebookSessionOutputWithContext(ctx context.Context) NotebookSessionOutput {
 	return o
+}
+
+func (o NotebookSessionOutput) ToOutput(ctx context.Context) pulumix.Output[*NotebookSession] {
+	return pulumix.Output[*NotebookSession]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the notebook session.
@@ -448,6 +473,12 @@ func (o NotebookSessionArrayOutput) ToNotebookSessionArrayOutputWithContext(ctx 
 	return o
 }
 
+func (o NotebookSessionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*NotebookSession] {
+	return pulumix.Output[[]*NotebookSession]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o NotebookSessionArrayOutput) Index(i pulumi.IntInput) NotebookSessionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *NotebookSession {
 		return vs[0].([]*NotebookSession)[vs[1].(int)]
@@ -466,6 +497,12 @@ func (o NotebookSessionMapOutput) ToNotebookSessionMapOutput() NotebookSessionMa
 
 func (o NotebookSessionMapOutput) ToNotebookSessionMapOutputWithContext(ctx context.Context) NotebookSessionMapOutput {
 	return o
+}
+
+func (o NotebookSessionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*NotebookSession] {
+	return pulumix.Output[map[string]*NotebookSession]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o NotebookSessionMapOutput) MapIndex(k pulumi.StringInput) NotebookSessionOutput {

@@ -81,7 +81,7 @@ public class Budget extends com.pulumi.resources.CustomResource {
      * The actual spend in currency for the current budget cycle.
      * 
      */
-    @Export(name="actualSpend", type=Double.class, parameters={})
+    @Export(name="actualSpend", refs={Double.class}, tree="[0]")
     private Output<Double> actualSpend;
 
     /**
@@ -95,7 +95,7 @@ public class Budget extends com.pulumi.resources.CustomResource {
      * The total number of alert rules in the budget.
      * 
      */
-    @Export(name="alertRuleCount", type=Integer.class, parameters={})
+    @Export(name="alertRuleCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> alertRuleCount;
 
     /**
@@ -109,7 +109,7 @@ public class Budget extends com.pulumi.resources.CustomResource {
      * (Updatable) The amount of the budget expressed as a whole number in the currency of the customer&#39;s rate card.
      * 
      */
-    @Export(name="amount", type=Integer.class, parameters={})
+    @Export(name="amount", refs={Integer.class}, tree="[0]")
     private Output<Integer> amount;
 
     /**
@@ -123,7 +123,7 @@ public class Budget extends com.pulumi.resources.CustomResource {
      * (Updatable) The number of days offset from the first day of the month, at which the budget processing period starts. In months that have fewer days than this value, processing will begin on the last day of that month. For example, for a value of 12, processing starts every month on the 12th at midnight.
      * 
      */
-    @Export(name="budgetProcessingPeriodStartOffset", type=Integer.class, parameters={})
+    @Export(name="budgetProcessingPeriodStartOffset", refs={Integer.class}, tree="[0]")
     private Output<Integer> budgetProcessingPeriodStartOffset;
 
     /**
@@ -137,7 +137,7 @@ public class Budget extends com.pulumi.resources.CustomResource {
      * The OCID of the compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -151,7 +151,7 @@ public class Budget extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -165,7 +165,7 @@ public class Budget extends com.pulumi.resources.CustomResource {
      * (Updatable) The description of the budget.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -179,7 +179,7 @@ public class Budget extends com.pulumi.resources.CustomResource {
      * (Updatable) The displayName of the budget. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -193,7 +193,7 @@ public class Budget extends com.pulumi.resources.CustomResource {
      * (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
      * 
      */
-    @Export(name="endDate", type=String.class, parameters={})
+    @Export(name="endDate", refs={String.class}, tree="[0]")
     private Output<String> endDate;
 
     /**
@@ -207,7 +207,7 @@ public class Budget extends com.pulumi.resources.CustomResource {
      * The forecasted spend in currency by the end of the current budget cycle.
      * 
      */
-    @Export(name="forecastedSpend", type=Double.class, parameters={})
+    @Export(name="forecastedSpend", refs={Double.class}, tree="[0]")
     private Output<Double> forecastedSpend;
 
     /**
@@ -221,7 +221,7 @@ public class Budget extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -235,7 +235,7 @@ public class Budget extends com.pulumi.resources.CustomResource {
      * (Updatable) The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
      * 
      */
-    @Export(name="processingPeriodType", type=String.class, parameters={})
+    @Export(name="processingPeriodType", refs={String.class}, tree="[0]")
     private Output<String> processingPeriodType;
 
     /**
@@ -249,7 +249,7 @@ public class Budget extends com.pulumi.resources.CustomResource {
      * (Updatable) The reset period for the budget. Valid value is MONTHLY.
      * 
      */
-    @Export(name="resetPeriod", type=String.class, parameters={})
+    @Export(name="resetPeriod", refs={String.class}, tree="[0]")
     private Output<String> resetPeriod;
 
     /**
@@ -263,7 +263,7 @@ public class Budget extends com.pulumi.resources.CustomResource {
      * (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
      * 
      */
-    @Export(name="startDate", type=String.class, parameters={})
+    @Export(name="startDate", refs={String.class}, tree="[0]")
     private Output<String> startDate;
 
     /**
@@ -277,7 +277,7 @@ public class Budget extends com.pulumi.resources.CustomResource {
      * The current state of the budget.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -295,7 +295,7 @@ public class Budget extends com.pulumi.resources.CustomResource {
      * 
      */
     @Deprecated /* The 'target_compartment_id' field has been deprecated. Please use 'targets' instead. */
-    @Export(name="targetCompartmentId", type=String.class, parameters={})
+    @Export(name="targetCompartmentId", refs={String.class}, tree="[0]")
     private Output<String> targetCompartmentId;
 
     /**
@@ -309,7 +309,7 @@ public class Budget extends com.pulumi.resources.CustomResource {
      * The type of target on which the budget is applied.
      * 
      */
-    @Export(name="targetType", type=String.class, parameters={})
+    @Export(name="targetType", refs={String.class}, tree="[0]")
     private Output<String> targetType;
 
     /**
@@ -326,7 +326,7 @@ public class Budget extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="targets", type=List.class, parameters={String.class})
+    @Export(name="targets", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> targets;
 
     /**
@@ -343,7 +343,7 @@ public class Budget extends com.pulumi.resources.CustomResource {
      * The time that the budget was created.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -357,7 +357,7 @@ public class Budget extends com.pulumi.resources.CustomResource {
      * The time that the budget spend was last computed.
      * 
      */
-    @Export(name="timeSpendComputed", type=String.class, parameters={})
+    @Export(name="timeSpendComputed", refs={String.class}, tree="[0]")
     private Output<String> timeSpendComputed;
 
     /**
@@ -371,7 +371,7 @@ public class Budget extends com.pulumi.resources.CustomResource {
      * The time that the budget was updated.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -385,7 +385,7 @@ public class Budget extends com.pulumi.resources.CustomResource {
      * The version of the budget. Starts from 1 and increments by 1.
      * 
      */
-    @Export(name="version", type=Integer.class, parameters={})
+    @Export(name="version", refs={Integer.class}, tree="[0]")
     private Output<Integer> version;
 
     /**

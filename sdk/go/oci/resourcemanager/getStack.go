@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Stack resource in Oracle Cloud Infrastructure Resource Manager service.
@@ -115,6 +116,12 @@ func (o GetStackResultOutput) ToGetStackResultOutput() GetStackResultOutput {
 
 func (o GetStackResultOutput) ToGetStackResultOutputWithContext(ctx context.Context) GetStackResultOutput {
 	return o
+}
+
+func (o GetStackResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetStackResult] {
+	return pulumix.Output[GetStackResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for the compartment where the stack is located.

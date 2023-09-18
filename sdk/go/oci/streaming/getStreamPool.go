@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Stream Pool resource in Oracle Cloud Infrastructure Streaming service.
@@ -123,6 +124,12 @@ func (o LookupStreamPoolResultOutput) ToLookupStreamPoolResultOutput() LookupStr
 
 func (o LookupStreamPoolResultOutput) ToLookupStreamPoolResultOutputWithContext(ctx context.Context) LookupStreamPoolResultOutput {
 	return o
+}
+
+func (o LookupStreamPoolResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupStreamPoolResult] {
+	return pulumix.Output[LookupStreamPoolResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Compartment OCID that the pool belongs to.

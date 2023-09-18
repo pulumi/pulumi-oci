@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Managed Database Optimizer Statistics Collection Operation resource in Oracle Cloud Infrastructure Database Management service.
@@ -133,6 +134,12 @@ func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationResultOutput) To
 
 func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationResultOutput) ToGetManagedDatabaseOptimizerStatisticsCollectionOperationResultOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsCollectionOperationResultOutput {
 	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionOperationResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseOptimizerStatisticsCollectionOperationResult] {
+	return pulumix.Output[GetManagedDatabaseOptimizerStatisticsCollectionOperationResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The number of objects for which statistics collection is completed.

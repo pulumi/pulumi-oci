@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Audit Archive Retrieval resource in Oracle Cloud Infrastructure Data Safe service.
@@ -293,6 +294,12 @@ func (i *AuditArchiveRetrieval) ToAuditArchiveRetrievalOutputWithContext(ctx con
 	return pulumi.ToOutputWithContext(ctx, i).(AuditArchiveRetrievalOutput)
 }
 
+func (i *AuditArchiveRetrieval) ToOutput(ctx context.Context) pulumix.Output[*AuditArchiveRetrieval] {
+	return pulumix.Output[*AuditArchiveRetrieval]{
+		OutputState: i.ToAuditArchiveRetrievalOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AuditArchiveRetrievalArrayInput is an input type that accepts AuditArchiveRetrievalArray and AuditArchiveRetrievalArrayOutput values.
 // You can construct a concrete instance of `AuditArchiveRetrievalArrayInput` via:
 //
@@ -316,6 +323,12 @@ func (i AuditArchiveRetrievalArray) ToAuditArchiveRetrievalArrayOutput() AuditAr
 
 func (i AuditArchiveRetrievalArray) ToAuditArchiveRetrievalArrayOutputWithContext(ctx context.Context) AuditArchiveRetrievalArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AuditArchiveRetrievalArrayOutput)
+}
+
+func (i AuditArchiveRetrievalArray) ToOutput(ctx context.Context) pulumix.Output[[]*AuditArchiveRetrieval] {
+	return pulumix.Output[[]*AuditArchiveRetrieval]{
+		OutputState: i.ToAuditArchiveRetrievalArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // AuditArchiveRetrievalMapInput is an input type that accepts AuditArchiveRetrievalMap and AuditArchiveRetrievalMapOutput values.
@@ -343,6 +356,12 @@ func (i AuditArchiveRetrievalMap) ToAuditArchiveRetrievalMapOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(AuditArchiveRetrievalMapOutput)
 }
 
+func (i AuditArchiveRetrievalMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AuditArchiveRetrieval] {
+	return pulumix.Output[map[string]*AuditArchiveRetrieval]{
+		OutputState: i.ToAuditArchiveRetrievalMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AuditArchiveRetrievalOutput struct{ *pulumi.OutputState }
 
 func (AuditArchiveRetrievalOutput) ElementType() reflect.Type {
@@ -355,6 +374,12 @@ func (o AuditArchiveRetrievalOutput) ToAuditArchiveRetrievalOutput() AuditArchiv
 
 func (o AuditArchiveRetrievalOutput) ToAuditArchiveRetrievalOutputWithContext(ctx context.Context) AuditArchiveRetrievalOutput {
 	return o
+}
+
+func (o AuditArchiveRetrievalOutput) ToOutput(ctx context.Context) pulumix.Output[*AuditArchiveRetrieval] {
+	return pulumix.Output[*AuditArchiveRetrieval]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Total count of audit events to be retrieved from the archive for the specified date range.
@@ -454,6 +479,12 @@ func (o AuditArchiveRetrievalArrayOutput) ToAuditArchiveRetrievalArrayOutputWith
 	return o
 }
 
+func (o AuditArchiveRetrievalArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AuditArchiveRetrieval] {
+	return pulumix.Output[[]*AuditArchiveRetrieval]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AuditArchiveRetrievalArrayOutput) Index(i pulumi.IntInput) AuditArchiveRetrievalOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AuditArchiveRetrieval {
 		return vs[0].([]*AuditArchiveRetrieval)[vs[1].(int)]
@@ -472,6 +503,12 @@ func (o AuditArchiveRetrievalMapOutput) ToAuditArchiveRetrievalMapOutput() Audit
 
 func (o AuditArchiveRetrievalMapOutput) ToAuditArchiveRetrievalMapOutputWithContext(ctx context.Context) AuditArchiveRetrievalMapOutput {
 	return o
+}
+
+func (o AuditArchiveRetrievalMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AuditArchiveRetrieval] {
+	return pulumix.Output[map[string]*AuditArchiveRetrieval]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AuditArchiveRetrievalMapOutput) MapIndex(k pulumi.StringInput) AuditArchiveRetrievalOutput {

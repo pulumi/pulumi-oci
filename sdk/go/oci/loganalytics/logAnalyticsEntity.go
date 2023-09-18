@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Log Analytics Entity resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -331,6 +332,12 @@ func (i *LogAnalyticsEntity) ToLogAnalyticsEntityOutputWithContext(ctx context.C
 	return pulumi.ToOutputWithContext(ctx, i).(LogAnalyticsEntityOutput)
 }
 
+func (i *LogAnalyticsEntity) ToOutput(ctx context.Context) pulumix.Output[*LogAnalyticsEntity] {
+	return pulumix.Output[*LogAnalyticsEntity]{
+		OutputState: i.ToLogAnalyticsEntityOutputWithContext(ctx).OutputState,
+	}
+}
+
 // LogAnalyticsEntityArrayInput is an input type that accepts LogAnalyticsEntityArray and LogAnalyticsEntityArrayOutput values.
 // You can construct a concrete instance of `LogAnalyticsEntityArrayInput` via:
 //
@@ -354,6 +361,12 @@ func (i LogAnalyticsEntityArray) ToLogAnalyticsEntityArrayOutput() LogAnalyticsE
 
 func (i LogAnalyticsEntityArray) ToLogAnalyticsEntityArrayOutputWithContext(ctx context.Context) LogAnalyticsEntityArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(LogAnalyticsEntityArrayOutput)
+}
+
+func (i LogAnalyticsEntityArray) ToOutput(ctx context.Context) pulumix.Output[[]*LogAnalyticsEntity] {
+	return pulumix.Output[[]*LogAnalyticsEntity]{
+		OutputState: i.ToLogAnalyticsEntityArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // LogAnalyticsEntityMapInput is an input type that accepts LogAnalyticsEntityMap and LogAnalyticsEntityMapOutput values.
@@ -381,6 +394,12 @@ func (i LogAnalyticsEntityMap) ToLogAnalyticsEntityMapOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(LogAnalyticsEntityMapOutput)
 }
 
+func (i LogAnalyticsEntityMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*LogAnalyticsEntity] {
+	return pulumix.Output[map[string]*LogAnalyticsEntity]{
+		OutputState: i.ToLogAnalyticsEntityMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type LogAnalyticsEntityOutput struct{ *pulumi.OutputState }
 
 func (LogAnalyticsEntityOutput) ElementType() reflect.Type {
@@ -393,6 +412,12 @@ func (o LogAnalyticsEntityOutput) ToLogAnalyticsEntityOutput() LogAnalyticsEntit
 
 func (o LogAnalyticsEntityOutput) ToLogAnalyticsEntityOutputWithContext(ctx context.Context) LogAnalyticsEntityOutput {
 	return o
+}
+
+func (o LogAnalyticsEntityOutput) ToOutput(ctx context.Context) pulumix.Output[*LogAnalyticsEntity] {
+	return pulumix.Output[*LogAnalyticsEntity]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
@@ -512,6 +537,12 @@ func (o LogAnalyticsEntityArrayOutput) ToLogAnalyticsEntityArrayOutputWithContex
 	return o
 }
 
+func (o LogAnalyticsEntityArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*LogAnalyticsEntity] {
+	return pulumix.Output[[]*LogAnalyticsEntity]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o LogAnalyticsEntityArrayOutput) Index(i pulumi.IntInput) LogAnalyticsEntityOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *LogAnalyticsEntity {
 		return vs[0].([]*LogAnalyticsEntity)[vs[1].(int)]
@@ -530,6 +561,12 @@ func (o LogAnalyticsEntityMapOutput) ToLogAnalyticsEntityMapOutput() LogAnalytic
 
 func (o LogAnalyticsEntityMapOutput) ToLogAnalyticsEntityMapOutputWithContext(ctx context.Context) LogAnalyticsEntityMapOutput {
 	return o
+}
+
+func (o LogAnalyticsEntityMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*LogAnalyticsEntity] {
+	return pulumix.Output[map[string]*LogAnalyticsEntity]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o LogAnalyticsEntityMapOutput) MapIndex(k pulumi.StringInput) LogAnalyticsEntityOutput {

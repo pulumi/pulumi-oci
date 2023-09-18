@@ -67,7 +67,7 @@ public class SmtpCredential extends com.pulumi.resources.CustomResource {
      * (Updatable) The description you assign to the SMTP credentials during creation. Does not have to be unique, and it&#39;s changeable.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -81,7 +81,7 @@ public class SmtpCredential extends com.pulumi.resources.CustomResource {
      * The detailed status of INACTIVE lifecycleState.
      * 
      */
-    @Export(name="inactiveState", type=String.class, parameters={})
+    @Export(name="inactiveState", refs={String.class}, tree="[0]")
     private Output<String> inactiveState;
 
     /**
@@ -95,7 +95,7 @@ public class SmtpCredential extends com.pulumi.resources.CustomResource {
      * The SMTP password.
      * 
      */
-    @Export(name="password", type=String.class, parameters={})
+    @Export(name="password", refs={String.class}, tree="[0]")
     private Output<String> password;
 
     /**
@@ -109,7 +109,7 @@ public class SmtpCredential extends com.pulumi.resources.CustomResource {
      * The credential&#39;s current state.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -123,7 +123,7 @@ public class SmtpCredential extends com.pulumi.resources.CustomResource {
      * Date and time the `SmtpCredential` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -137,7 +137,7 @@ public class SmtpCredential extends com.pulumi.resources.CustomResource {
      * Date and time when this credential will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeExpires", type=String.class, parameters={})
+    @Export(name="timeExpires", refs={String.class}, tree="[0]")
     private Output<String> timeExpires;
 
     /**
@@ -154,7 +154,7 @@ public class SmtpCredential extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="userId", type=String.class, parameters={})
+    @Export(name="userId", refs={String.class}, tree="[0]")
     private Output<String> userId;
 
     /**
@@ -171,7 +171,7 @@ public class SmtpCredential extends com.pulumi.resources.CustomResource {
      * The SMTP user name.
      * 
      */
-    @Export(name="username", type=String.class, parameters={})
+    @Export(name="username", refs={String.class}, tree="[0]")
     private Output<String> username;
 
     /**

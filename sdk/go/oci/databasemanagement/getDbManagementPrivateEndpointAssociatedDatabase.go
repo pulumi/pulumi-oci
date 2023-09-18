@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Db Management Private Endpoint Associated Database resource in Oracle Cloud Infrastructure Database Management service.
@@ -108,6 +109,12 @@ func (o GetDbManagementPrivateEndpointAssociatedDatabaseResultOutput) ToGetDbMan
 
 func (o GetDbManagementPrivateEndpointAssociatedDatabaseResultOutput) ToGetDbManagementPrivateEndpointAssociatedDatabaseResultOutputWithContext(ctx context.Context) GetDbManagementPrivateEndpointAssociatedDatabaseResultOutput {
 	return o
+}
+
+func (o GetDbManagementPrivateEndpointAssociatedDatabaseResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDbManagementPrivateEndpointAssociatedDatabaseResult] {
+	return pulumix.Output[GetDbManagementPrivateEndpointAssociatedDatabaseResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.

@@ -38,7 +38,7 @@ public class Channel extends com.pulumi.resources.CustomResource {
      * The OCID of the compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -52,7 +52,7 @@ public class Channel extends com.pulumi.resources.CustomResource {
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -66,7 +66,7 @@ public class Channel extends com.pulumi.resources.CustomResource {
      * (Updatable) User provided information about the Channel.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -80,7 +80,7 @@ public class Channel extends com.pulumi.resources.CustomResource {
      * (Updatable) The user-friendly name for the Channel. It does not have to be unique.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -94,7 +94,7 @@ public class Channel extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -108,7 +108,7 @@ public class Channel extends com.pulumi.resources.CustomResource {
      * (Updatable) Whether the Channel should be enabled upon creation. If set to true, the Channel will be asynchronously started as a result of the create Channel operation.
      * 
      */
-    @Export(name="isEnabled", type=Boolean.class, parameters={})
+    @Export(name="isEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isEnabled;
 
     /**
@@ -122,7 +122,7 @@ public class Channel extends com.pulumi.resources.CustomResource {
      * A message describing the state of the Channel.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -136,7 +136,7 @@ public class Channel extends com.pulumi.resources.CustomResource {
      * (Updatable) Parameters detailing how to provision the source for the given Channel.
      * 
      */
-    @Export(name="source", type=ChannelSource.class, parameters={})
+    @Export(name="source", refs={ChannelSource.class}, tree="[0]")
     private Output<ChannelSource> source;
 
     /**
@@ -150,7 +150,7 @@ public class Channel extends com.pulumi.resources.CustomResource {
      * The state of the Channel.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -164,7 +164,7 @@ public class Channel extends com.pulumi.resources.CustomResource {
      * (Updatable) Parameters detailing how to provision the target for the given Channel.
      * 
      */
-    @Export(name="target", type=ChannelTarget.class, parameters={})
+    @Export(name="target", refs={ChannelTarget.class}, tree="[0]")
     private Output<ChannelTarget> target;
 
     /**
@@ -178,7 +178,7 @@ public class Channel extends com.pulumi.resources.CustomResource {
      * The date and time the Channel was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -192,7 +192,7 @@ public class Channel extends com.pulumi.resources.CustomResource {
      * The time the Channel was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

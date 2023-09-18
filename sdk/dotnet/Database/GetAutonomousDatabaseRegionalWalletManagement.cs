@@ -38,6 +38,34 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public static Task<GetAutonomousDatabaseRegionalWalletManagementResult> InvokeAsync(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAutonomousDatabaseRegionalWalletManagementResult>("oci:Database/getAutonomousDatabaseRegionalWalletManagement:getAutonomousDatabaseRegionalWalletManagement", InvokeArgs.Empty, options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Autonomous Database Regional Wallet Management resource in Oracle Cloud Infrastructure Database service.
+        /// 
+        /// Gets the Autonomous Database regional wallet details.
+        /// 
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAutonomousDatabaseRegionalWalletManagement = Oci.Database.GetAutonomousDatabaseRegionalWalletManagement.Invoke();
+        /// 
+        /// });
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// </summary>
+        public static Output<GetAutonomousDatabaseRegionalWalletManagementResult> Invoke(InvokeOptions? options = null)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousDatabaseRegionalWalletManagementResult>("oci:Database/getAutonomousDatabaseRegionalWalletManagement:getAutonomousDatabaseRegionalWalletManagement", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

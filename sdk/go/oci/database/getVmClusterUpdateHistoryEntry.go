@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Vm Cluster Update History Entry resource in Oracle Cloud Infrastructure Database service.
@@ -119,6 +120,12 @@ func (o GetVmClusterUpdateHistoryEntryResultOutput) ToGetVmClusterUpdateHistoryE
 
 func (o GetVmClusterUpdateHistoryEntryResultOutput) ToGetVmClusterUpdateHistoryEntryResultOutputWithContext(ctx context.Context) GetVmClusterUpdateHistoryEntryResultOutput {
 	return o
+}
+
+func (o GetVmClusterUpdateHistoryEntryResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterUpdateHistoryEntryResult] {
+	return pulumix.Output[GetVmClusterUpdateHistoryEntryResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The provider-assigned unique ID for this managed resource.

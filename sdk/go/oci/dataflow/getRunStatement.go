@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Run Statement resource in Oracle Cloud Infrastructure Data Flow service.
@@ -118,6 +119,12 @@ func (o LookupRunStatementResultOutput) ToLookupRunStatementResultOutput() Looku
 
 func (o LookupRunStatementResultOutput) ToLookupRunStatementResultOutputWithContext(ctx context.Context) LookupRunStatementResultOutput {
 	return o
+}
+
+func (o LookupRunStatementResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupRunStatementResult] {
+	return pulumix.Output[LookupRunStatementResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The statement code to execute. Example: `println(sc.version)`

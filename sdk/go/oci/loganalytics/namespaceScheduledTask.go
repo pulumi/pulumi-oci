@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Namespace Scheduled Task resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -271,6 +272,12 @@ func (i *NamespaceScheduledTask) ToNamespaceScheduledTaskOutputWithContext(ctx c
 	return pulumi.ToOutputWithContext(ctx, i).(NamespaceScheduledTaskOutput)
 }
 
+func (i *NamespaceScheduledTask) ToOutput(ctx context.Context) pulumix.Output[*NamespaceScheduledTask] {
+	return pulumix.Output[*NamespaceScheduledTask]{
+		OutputState: i.ToNamespaceScheduledTaskOutputWithContext(ctx).OutputState,
+	}
+}
+
 // NamespaceScheduledTaskArrayInput is an input type that accepts NamespaceScheduledTaskArray and NamespaceScheduledTaskArrayOutput values.
 // You can construct a concrete instance of `NamespaceScheduledTaskArrayInput` via:
 //
@@ -294,6 +301,12 @@ func (i NamespaceScheduledTaskArray) ToNamespaceScheduledTaskArrayOutput() Names
 
 func (i NamespaceScheduledTaskArray) ToNamespaceScheduledTaskArrayOutputWithContext(ctx context.Context) NamespaceScheduledTaskArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(NamespaceScheduledTaskArrayOutput)
+}
+
+func (i NamespaceScheduledTaskArray) ToOutput(ctx context.Context) pulumix.Output[[]*NamespaceScheduledTask] {
+	return pulumix.Output[[]*NamespaceScheduledTask]{
+		OutputState: i.ToNamespaceScheduledTaskArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // NamespaceScheduledTaskMapInput is an input type that accepts NamespaceScheduledTaskMap and NamespaceScheduledTaskMapOutput values.
@@ -321,6 +334,12 @@ func (i NamespaceScheduledTaskMap) ToNamespaceScheduledTaskMapOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(NamespaceScheduledTaskMapOutput)
 }
 
+func (i NamespaceScheduledTaskMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*NamespaceScheduledTask] {
+	return pulumix.Output[map[string]*NamespaceScheduledTask]{
+		OutputState: i.ToNamespaceScheduledTaskMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type NamespaceScheduledTaskOutput struct{ *pulumi.OutputState }
 
 func (NamespaceScheduledTaskOutput) ElementType() reflect.Type {
@@ -333,6 +352,12 @@ func (o NamespaceScheduledTaskOutput) ToNamespaceScheduledTaskOutput() Namespace
 
 func (o NamespaceScheduledTaskOutput) ToNamespaceScheduledTaskOutputWithContext(ctx context.Context) NamespaceScheduledTaskOutput {
 	return o
+}
+
+func (o NamespaceScheduledTaskOutput) ToOutput(ctx context.Context) pulumix.Output[*NamespaceScheduledTask] {
+	return pulumix.Output[*NamespaceScheduledTask]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Action for scheduled task.
@@ -436,6 +461,12 @@ func (o NamespaceScheduledTaskArrayOutput) ToNamespaceScheduledTaskArrayOutputWi
 	return o
 }
 
+func (o NamespaceScheduledTaskArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*NamespaceScheduledTask] {
+	return pulumix.Output[[]*NamespaceScheduledTask]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o NamespaceScheduledTaskArrayOutput) Index(i pulumi.IntInput) NamespaceScheduledTaskOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *NamespaceScheduledTask {
 		return vs[0].([]*NamespaceScheduledTask)[vs[1].(int)]
@@ -454,6 +485,12 @@ func (o NamespaceScheduledTaskMapOutput) ToNamespaceScheduledTaskMapOutput() Nam
 
 func (o NamespaceScheduledTaskMapOutput) ToNamespaceScheduledTaskMapOutputWithContext(ctx context.Context) NamespaceScheduledTaskMapOutput {
 	return o
+}
+
+func (o NamespaceScheduledTaskMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*NamespaceScheduledTask] {
+	return pulumix.Output[map[string]*NamespaceScheduledTask]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o NamespaceScheduledTaskMapOutput) MapIndex(k pulumi.StringInput) NamespaceScheduledTaskOutput {

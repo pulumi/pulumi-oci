@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Resolvers in Oracle Cloud Infrastructure DNS service.
@@ -135,6 +136,12 @@ func (o GetResolversResultOutput) ToGetResolversResultOutput() GetResolversResul
 
 func (o GetResolversResultOutput) ToGetResolversResultOutputWithContext(ctx context.Context) GetResolversResultOutput {
 	return o
+}
+
+func (o GetResolversResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetResolversResult] {
+	return pulumix.Output[GetResolversResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the owning compartment.

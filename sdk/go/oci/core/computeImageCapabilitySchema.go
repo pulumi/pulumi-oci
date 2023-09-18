@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Compute Image Capability Schema resource in Oracle Cloud Infrastructure Core service.
@@ -236,6 +237,12 @@ func (i *ComputeImageCapabilitySchema) ToComputeImageCapabilitySchemaOutputWithC
 	return pulumi.ToOutputWithContext(ctx, i).(ComputeImageCapabilitySchemaOutput)
 }
 
+func (i *ComputeImageCapabilitySchema) ToOutput(ctx context.Context) pulumix.Output[*ComputeImageCapabilitySchema] {
+	return pulumix.Output[*ComputeImageCapabilitySchema]{
+		OutputState: i.ToComputeImageCapabilitySchemaOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ComputeImageCapabilitySchemaArrayInput is an input type that accepts ComputeImageCapabilitySchemaArray and ComputeImageCapabilitySchemaArrayOutput values.
 // You can construct a concrete instance of `ComputeImageCapabilitySchemaArrayInput` via:
 //
@@ -259,6 +266,12 @@ func (i ComputeImageCapabilitySchemaArray) ToComputeImageCapabilitySchemaArrayOu
 
 func (i ComputeImageCapabilitySchemaArray) ToComputeImageCapabilitySchemaArrayOutputWithContext(ctx context.Context) ComputeImageCapabilitySchemaArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ComputeImageCapabilitySchemaArrayOutput)
+}
+
+func (i ComputeImageCapabilitySchemaArray) ToOutput(ctx context.Context) pulumix.Output[[]*ComputeImageCapabilitySchema] {
+	return pulumix.Output[[]*ComputeImageCapabilitySchema]{
+		OutputState: i.ToComputeImageCapabilitySchemaArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // ComputeImageCapabilitySchemaMapInput is an input type that accepts ComputeImageCapabilitySchemaMap and ComputeImageCapabilitySchemaMapOutput values.
@@ -286,6 +299,12 @@ func (i ComputeImageCapabilitySchemaMap) ToComputeImageCapabilitySchemaMapOutput
 	return pulumi.ToOutputWithContext(ctx, i).(ComputeImageCapabilitySchemaMapOutput)
 }
 
+func (i ComputeImageCapabilitySchemaMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ComputeImageCapabilitySchema] {
+	return pulumix.Output[map[string]*ComputeImageCapabilitySchema]{
+		OutputState: i.ToComputeImageCapabilitySchemaMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ComputeImageCapabilitySchemaOutput struct{ *pulumi.OutputState }
 
 func (ComputeImageCapabilitySchemaOutput) ElementType() reflect.Type {
@@ -298,6 +317,12 @@ func (o ComputeImageCapabilitySchemaOutput) ToComputeImageCapabilitySchemaOutput
 
 func (o ComputeImageCapabilitySchemaOutput) ToComputeImageCapabilitySchemaOutputWithContext(ctx context.Context) ComputeImageCapabilitySchemaOutput {
 	return o
+}
+
+func (o ComputeImageCapabilitySchemaOutput) ToOutput(ctx context.Context) pulumix.Output[*ComputeImageCapabilitySchema] {
+	return pulumix.Output[*ComputeImageCapabilitySchema]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The OCID of the compartment that contains the resource.
@@ -363,6 +388,12 @@ func (o ComputeImageCapabilitySchemaArrayOutput) ToComputeImageCapabilitySchemaA
 	return o
 }
 
+func (o ComputeImageCapabilitySchemaArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ComputeImageCapabilitySchema] {
+	return pulumix.Output[[]*ComputeImageCapabilitySchema]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o ComputeImageCapabilitySchemaArrayOutput) Index(i pulumi.IntInput) ComputeImageCapabilitySchemaOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ComputeImageCapabilitySchema {
 		return vs[0].([]*ComputeImageCapabilitySchema)[vs[1].(int)]
@@ -381,6 +412,12 @@ func (o ComputeImageCapabilitySchemaMapOutput) ToComputeImageCapabilitySchemaMap
 
 func (o ComputeImageCapabilitySchemaMapOutput) ToComputeImageCapabilitySchemaMapOutputWithContext(ctx context.Context) ComputeImageCapabilitySchemaMapOutput {
 	return o
+}
+
+func (o ComputeImageCapabilitySchemaMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ComputeImageCapabilitySchema] {
+	return pulumix.Output[map[string]*ComputeImageCapabilitySchema]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ComputeImageCapabilitySchemaMapOutput) MapIndex(k pulumi.StringInput) ComputeImageCapabilitySchemaOutput {

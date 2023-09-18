@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Private Ips in Oracle Cloud Infrastructure Core service.
@@ -187,6 +188,12 @@ func (o GetPrivateIpsResultOutput) ToGetPrivateIpsResultOutput() GetPrivateIpsRe
 
 func (o GetPrivateIpsResultOutput) ToGetPrivateIpsResultOutputWithContext(ctx context.Context) GetPrivateIpsResultOutput {
 	return o
+}
+
+func (o GetPrivateIpsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPrivateIpsResult] {
+	return pulumix.Output[GetPrivateIpsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPrivateIpsResultOutput) Filters() GetPrivateIpsFilterArrayOutput {

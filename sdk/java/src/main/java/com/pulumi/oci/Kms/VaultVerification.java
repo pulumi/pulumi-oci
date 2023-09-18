@@ -61,7 +61,7 @@ public class VaultVerification extends com.pulumi.resources.CustomResource {
      * replica will be deleted from old region, and created to updated region.
      * 
      */
-    @Export(name="replicaRegion", type=String.class, parameters={})
+    @Export(name="replicaRegion", refs={String.class}, tree="[0]")
     private Output<String> replicaRegion;
 
     /**
@@ -76,7 +76,7 @@ public class VaultVerification extends com.pulumi.resources.CustomResource {
      * The OCID of the primary vault to create replica from.
      * 
      */
-    @Export(name="vaultId", type=String.class, parameters={})
+    @Export(name="vaultId", refs={String.class}, tree="[0]")
     private Output<String> vaultId;
 
     /**

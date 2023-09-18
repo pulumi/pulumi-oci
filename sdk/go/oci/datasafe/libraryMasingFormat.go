@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Library Masking Format resource in Oracle Cloud Infrastructure Data Safe service.
@@ -218,6 +219,12 @@ func (i *LibraryMasingFormat) ToLibraryMasingFormatOutputWithContext(ctx context
 	return pulumi.ToOutputWithContext(ctx, i).(LibraryMasingFormatOutput)
 }
 
+func (i *LibraryMasingFormat) ToOutput(ctx context.Context) pulumix.Output[*LibraryMasingFormat] {
+	return pulumix.Output[*LibraryMasingFormat]{
+		OutputState: i.ToLibraryMasingFormatOutputWithContext(ctx).OutputState,
+	}
+}
+
 // LibraryMasingFormatArrayInput is an input type that accepts LibraryMasingFormatArray and LibraryMasingFormatArrayOutput values.
 // You can construct a concrete instance of `LibraryMasingFormatArrayInput` via:
 //
@@ -241,6 +248,12 @@ func (i LibraryMasingFormatArray) ToLibraryMasingFormatArrayOutput() LibraryMasi
 
 func (i LibraryMasingFormatArray) ToLibraryMasingFormatArrayOutputWithContext(ctx context.Context) LibraryMasingFormatArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(LibraryMasingFormatArrayOutput)
+}
+
+func (i LibraryMasingFormatArray) ToOutput(ctx context.Context) pulumix.Output[[]*LibraryMasingFormat] {
+	return pulumix.Output[[]*LibraryMasingFormat]{
+		OutputState: i.ToLibraryMasingFormatArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // LibraryMasingFormatMapInput is an input type that accepts LibraryMasingFormatMap and LibraryMasingFormatMapOutput values.
@@ -268,6 +281,12 @@ func (i LibraryMasingFormatMap) ToLibraryMasingFormatMapOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(LibraryMasingFormatMapOutput)
 }
 
+func (i LibraryMasingFormatMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*LibraryMasingFormat] {
+	return pulumix.Output[map[string]*LibraryMasingFormat]{
+		OutputState: i.ToLibraryMasingFormatMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type LibraryMasingFormatOutput struct{ *pulumi.OutputState }
 
 func (LibraryMasingFormatOutput) ElementType() reflect.Type {
@@ -280,6 +299,12 @@ func (o LibraryMasingFormatOutput) ToLibraryMasingFormatOutput() LibraryMasingFo
 
 func (o LibraryMasingFormatOutput) ToLibraryMasingFormatOutputWithContext(ctx context.Context) LibraryMasingFormatOutput {
 	return o
+}
+
+func (o LibraryMasingFormatOutput) ToOutput(ctx context.Context) pulumix.Output[*LibraryMasingFormat] {
+	return pulumix.Output[*LibraryMasingFormat]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The OCID of the compartment where the library masking format should be created.
@@ -354,6 +379,12 @@ func (o LibraryMasingFormatArrayOutput) ToLibraryMasingFormatArrayOutputWithCont
 	return o
 }
 
+func (o LibraryMasingFormatArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*LibraryMasingFormat] {
+	return pulumix.Output[[]*LibraryMasingFormat]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o LibraryMasingFormatArrayOutput) Index(i pulumi.IntInput) LibraryMasingFormatOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *LibraryMasingFormat {
 		return vs[0].([]*LibraryMasingFormat)[vs[1].(int)]
@@ -372,6 +403,12 @@ func (o LibraryMasingFormatMapOutput) ToLibraryMasingFormatMapOutput() LibraryMa
 
 func (o LibraryMasingFormatMapOutput) ToLibraryMasingFormatMapOutputWithContext(ctx context.Context) LibraryMasingFormatMapOutput {
 	return o
+}
+
+func (o LibraryMasingFormatMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*LibraryMasingFormat] {
+	return pulumix.Output[map[string]*LibraryMasingFormat]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o LibraryMasingFormatMapOutput) MapIndex(k pulumi.StringInput) LibraryMasingFormatOutput {

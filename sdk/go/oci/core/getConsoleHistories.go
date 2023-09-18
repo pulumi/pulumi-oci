@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Console Histories in Oracle Cloud Infrastructure Core service.
@@ -126,6 +127,12 @@ func (o GetConsoleHistoriesResultOutput) ToGetConsoleHistoriesResultOutput() Get
 
 func (o GetConsoleHistoriesResultOutput) ToGetConsoleHistoriesResultOutputWithContext(ctx context.Context) GetConsoleHistoriesResultOutput {
 	return o
+}
+
+func (o GetConsoleHistoriesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetConsoleHistoriesResult] {
+	return pulumix.Output[GetConsoleHistoriesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The availability domain of an instance.  Example: `Uocm:PHX-AD-1`

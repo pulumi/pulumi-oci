@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Log Analytics Log Groups Summary resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -106,6 +107,12 @@ func (o GetLogAnalyticsLogGroupsSummaryResultOutput) ToGetLogAnalyticsLogGroupsS
 
 func (o GetLogAnalyticsLogGroupsSummaryResultOutput) ToGetLogAnalyticsLogGroupsSummaryResultOutputWithContext(ctx context.Context) GetLogAnalyticsLogGroupsSummaryResultOutput {
 	return o
+}
+
+func (o GetLogAnalyticsLogGroupsSummaryResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsLogGroupsSummaryResult] {
+	return pulumix.Output[GetLogAnalyticsLogGroupsSummaryResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetLogAnalyticsLogGroupsSummaryResultOutput) CompartmentId() pulumi.StringOutput {

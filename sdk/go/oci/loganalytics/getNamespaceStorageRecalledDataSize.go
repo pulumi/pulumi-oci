@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Namespace Storage Recalled Data Size resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -117,6 +118,12 @@ func (o GetNamespaceStorageRecalledDataSizeResultOutput) ToGetNamespaceStorageRe
 
 func (o GetNamespaceStorageRecalledDataSizeResultOutput) ToGetNamespaceStorageRecalledDataSizeResultOutputWithContext(ctx context.Context) GetNamespaceStorageRecalledDataSizeResultOutput {
 	return o
+}
+
+func (o GetNamespaceStorageRecalledDataSizeResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceStorageRecalledDataSizeResult] {
+	return pulumix.Output[GetNamespaceStorageRecalledDataSizeResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The provider-assigned unique ID for this managed resource.

@@ -82,7 +82,7 @@ public class ComputeCapacityReport extends com.pulumi.resources.CustomResource {
      * The availability domain for the capacity report.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    @Export(name="availabilityDomain", type=String.class, parameters={})
+    @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
     private Output<String> availabilityDomain;
 
     /**
@@ -96,7 +96,7 @@ public class ComputeCapacityReport extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -110,7 +110,7 @@ public class ComputeCapacityReport extends com.pulumi.resources.CustomResource {
      * Information about the shapes in the capacity report.
      * 
      */
-    @Export(name="shapeAvailabilities", type=List.class, parameters={ComputeCapacityReportShapeAvailability.class})
+    @Export(name="shapeAvailabilities", refs={List.class,ComputeCapacityReportShapeAvailability.class}, tree="[0,1]")
     private Output<List<ComputeCapacityReportShapeAvailability>> shapeAvailabilities;
 
     /**
@@ -124,7 +124,7 @@ public class ComputeCapacityReport extends com.pulumi.resources.CustomResource {
      * The date and time the capacity report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**

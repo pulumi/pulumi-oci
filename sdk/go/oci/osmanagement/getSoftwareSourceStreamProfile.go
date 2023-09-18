@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Software Source Stream Profiles in Oracle Cloud Infrastructure OS Management service.
@@ -143,6 +144,12 @@ func (o GetSoftwareSourceStreamProfileResultOutput) ToGetSoftwareSourceStreamPro
 
 func (o GetSoftwareSourceStreamProfileResultOutput) ToGetSoftwareSourceStreamProfileResultOutputWithContext(ctx context.Context) GetSoftwareSourceStreamProfileResultOutput {
 	return o
+}
+
+func (o GetSoftwareSourceStreamProfileResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceStreamProfileResult] {
+	return pulumix.Output[GetSoftwareSourceStreamProfileResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSoftwareSourceStreamProfileResultOutput) CompartmentId() pulumi.StringPtrOutput {

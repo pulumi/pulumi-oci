@@ -74,7 +74,7 @@ public class BdsInstanceMetastoreConfig extends com.pulumi.resources.CustomResou
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="activateTrigger", type=Integer.class, parameters={})
+    @Export(name="activateTrigger", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> activateTrigger;
 
     /**
@@ -91,7 +91,7 @@ public class BdsInstanceMetastoreConfig extends com.pulumi.resources.CustomResou
      * (Updatable) The ID of BDS Api Key used for Data Catalog metastore integration.
      * 
      */
-    @Export(name="bdsApiKeyId", type=String.class, parameters={})
+    @Export(name="bdsApiKeyId", refs={String.class}, tree="[0]")
     private Output<String> bdsApiKeyId;
 
     /**
@@ -105,7 +105,7 @@ public class BdsInstanceMetastoreConfig extends com.pulumi.resources.CustomResou
      * (Updatable) Base-64 encoded passphrase of the BDS Api Key.
      * 
      */
-    @Export(name="bdsApiKeyPassphrase", type=String.class, parameters={})
+    @Export(name="bdsApiKeyPassphrase", refs={String.class}, tree="[0]")
     private Output<String> bdsApiKeyPassphrase;
 
     /**
@@ -119,7 +119,7 @@ public class BdsInstanceMetastoreConfig extends com.pulumi.resources.CustomResou
      * The OCID of the cluster.
      * 
      */
-    @Export(name="bdsInstanceId", type=String.class, parameters={})
+    @Export(name="bdsInstanceId", refs={String.class}, tree="[0]")
     private Output<String> bdsInstanceId;
 
     /**
@@ -133,7 +133,7 @@ public class BdsInstanceMetastoreConfig extends com.pulumi.resources.CustomResou
      * (Updatable) Base-64 encoded password for the cluster admin user.
      * 
      */
-    @Export(name="clusterAdminPassword", type=String.class, parameters={})
+    @Export(name="clusterAdminPassword", refs={String.class}, tree="[0]")
     private Output<String> clusterAdminPassword;
 
     /**
@@ -147,7 +147,7 @@ public class BdsInstanceMetastoreConfig extends com.pulumi.resources.CustomResou
      * (Updatable) The display name of the metastore configuration
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -161,7 +161,7 @@ public class BdsInstanceMetastoreConfig extends com.pulumi.resources.CustomResou
      * The OCID of the Data Catalog metastore.
      * 
      */
-    @Export(name="metastoreId", type=String.class, parameters={})
+    @Export(name="metastoreId", refs={String.class}, tree="[0]")
     private Output<String> metastoreId;
 
     /**
@@ -175,7 +175,7 @@ public class BdsInstanceMetastoreConfig extends com.pulumi.resources.CustomResou
      * The type of the metastore in the metastore configuration.
      * 
      */
-    @Export(name="metastoreType", type=String.class, parameters={})
+    @Export(name="metastoreType", refs={String.class}, tree="[0]")
     private Output<String> metastoreType;
 
     /**
@@ -189,7 +189,7 @@ public class BdsInstanceMetastoreConfig extends com.pulumi.resources.CustomResou
      * the lifecycle state of the metastore configuration.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -203,7 +203,7 @@ public class BdsInstanceMetastoreConfig extends com.pulumi.resources.CustomResou
      * The time when the configuration was created, shown as an RFC 3339 formatted datetime string.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -217,7 +217,7 @@ public class BdsInstanceMetastoreConfig extends com.pulumi.resources.CustomResou
      * The time when the configuration was updated, shown as an RFC 3339 formatted datetime string.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

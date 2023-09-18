@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Ssl Cipher Suite resource in Oracle Cloud Infrastructure Load Balancer service.
@@ -112,6 +113,12 @@ func (o LookupSslCipherSuiteResultOutput) ToLookupSslCipherSuiteResultOutput() L
 
 func (o LookupSslCipherSuiteResultOutput) ToLookupSslCipherSuiteResultOutputWithContext(ctx context.Context) LookupSslCipherSuiteResultOutput {
 	return o
+}
+
+func (o LookupSslCipherSuiteResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupSslCipherSuiteResult] {
+	return pulumix.Output[LookupSslCipherSuiteResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.

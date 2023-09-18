@@ -143,7 +143,7 @@ public class TargetAsset extends com.pulumi.resources.CustomResource {
      * (Updatable) Performance of the block volumes.
      * 
      */
-    @Export(name="blockVolumesPerformance", type=Integer.class, parameters={})
+    @Export(name="blockVolumesPerformance", refs={Integer.class}, tree="[0]")
     private Output<Integer> blockVolumesPerformance;
 
     /**
@@ -157,7 +157,7 @@ public class TargetAsset extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -171,7 +171,7 @@ public class TargetAsset extends com.pulumi.resources.CustomResource {
      * Messages about the compatibility issues.
      * 
      */
-    @Export(name="compatibilityMessages", type=List.class, parameters={TargetAssetCompatibilityMessage.class})
+    @Export(name="compatibilityMessages", refs={List.class,TargetAssetCompatibilityMessage.class}, tree="[0,1]")
     private Output<List<TargetAssetCompatibilityMessage>> compatibilityMessages;
 
     /**
@@ -185,7 +185,7 @@ public class TargetAsset extends com.pulumi.resources.CustomResource {
      * Created resource identifier
      * 
      */
-    @Export(name="createdResourceId", type=String.class, parameters={})
+    @Export(name="createdResourceId", refs={String.class}, tree="[0]")
     private Output<String> createdResourceId;
 
     /**
@@ -199,7 +199,7 @@ public class TargetAsset extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -213,7 +213,7 @@ public class TargetAsset extends com.pulumi.resources.CustomResource {
      * Cost estimation description
      * 
      */
-    @Export(name="estimatedCosts", type=List.class, parameters={TargetAssetEstimatedCost.class})
+    @Export(name="estimatedCosts", refs={List.class,TargetAssetEstimatedCost.class}, tree="[0,1]")
     private Output<List<TargetAssetEstimatedCost>> estimatedCosts;
 
     /**
@@ -227,7 +227,7 @@ public class TargetAsset extends com.pulumi.resources.CustomResource {
      * (Updatable) A boolean indicating whether the asset should be migrated.
      * 
      */
-    @Export(name="isExcludedFromExecution", type=Boolean.class, parameters={})
+    @Export(name="isExcludedFromExecution", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isExcludedFromExecution;
 
     /**
@@ -241,7 +241,7 @@ public class TargetAsset extends com.pulumi.resources.CustomResource {
      * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -255,7 +255,7 @@ public class TargetAsset extends com.pulumi.resources.CustomResource {
      * Description of the migration asset.
      * 
      */
-    @Export(name="migrationAssets", type=List.class, parameters={TargetAssetMigrationAsset.class})
+    @Export(name="migrationAssets", refs={List.class,TargetAssetMigrationAsset.class}, tree="[0,1]")
     private Output<List<TargetAssetMigrationAsset>> migrationAssets;
 
     /**
@@ -269,7 +269,7 @@ public class TargetAsset extends com.pulumi.resources.CustomResource {
      * OCID of the associated migration plan.
      * 
      */
-    @Export(name="migrationPlanId", type=String.class, parameters={})
+    @Export(name="migrationPlanId", refs={String.class}, tree="[0]")
     private Output<String> migrationPlanId;
 
     /**
@@ -283,7 +283,7 @@ public class TargetAsset extends com.pulumi.resources.CustomResource {
      * (Updatable) Microsoft license for the VM configuration.
      * 
      */
-    @Export(name="msLicense", type=String.class, parameters={})
+    @Export(name="msLicense", refs={String.class}, tree="[0]")
     private Output<String> msLicense;
 
     /**
@@ -297,7 +297,7 @@ public class TargetAsset extends com.pulumi.resources.CustomResource {
      * (Updatable) Preferred VM shape type that you provide.
      * 
      */
-    @Export(name="preferredShapeType", type=String.class, parameters={})
+    @Export(name="preferredShapeType", refs={String.class}, tree="[0]")
     private Output<String> preferredShapeType;
 
     /**
@@ -311,7 +311,7 @@ public class TargetAsset extends com.pulumi.resources.CustomResource {
      * Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
      * 
      */
-    @Export(name="recommendedSpecs", type=List.class, parameters={TargetAssetRecommendedSpec.class})
+    @Export(name="recommendedSpecs", refs={List.class,TargetAssetRecommendedSpec.class}, tree="[0,1]")
     private Output<List<TargetAssetRecommendedSpec>> recommendedSpecs;
 
     /**
@@ -325,7 +325,7 @@ public class TargetAsset extends com.pulumi.resources.CustomResource {
      * The current state of the target asset.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -339,7 +339,7 @@ public class TargetAsset extends com.pulumi.resources.CustomResource {
      * Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
      * 
      */
-    @Export(name="testSpecs", type=List.class, parameters={TargetAssetTestSpec.class})
+    @Export(name="testSpecs", refs={List.class,TargetAssetTestSpec.class}, tree="[0,1]")
     private Output<List<TargetAssetTestSpec>> testSpecs;
 
     /**
@@ -353,7 +353,7 @@ public class TargetAsset extends com.pulumi.resources.CustomResource {
      * The time when the assessment was done. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeAssessed", type=String.class, parameters={})
+    @Export(name="timeAssessed", refs={String.class}, tree="[0]")
     private Output<String> timeAssessed;
 
     /**
@@ -367,7 +367,7 @@ public class TargetAsset extends com.pulumi.resources.CustomResource {
      * The time when the target asset was created. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -381,7 +381,7 @@ public class TargetAsset extends com.pulumi.resources.CustomResource {
      * The time when the target asset was updated. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -395,7 +395,7 @@ public class TargetAsset extends com.pulumi.resources.CustomResource {
      * (Updatable) The type of action to run when the instance is interrupted for eviction.
      * 
      */
-    @Export(name="type", type=String.class, parameters={})
+    @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**
@@ -409,7 +409,7 @@ public class TargetAsset extends com.pulumi.resources.CustomResource {
      * (Updatable) Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
      * 
      */
-    @Export(name="userSpec", type=TargetAssetUserSpec.class, parameters={})
+    @Export(name="userSpec", refs={TargetAssetUserSpec.class}, tree="[0]")
     private Output<TargetAssetUserSpec> userSpec;
 
     /**

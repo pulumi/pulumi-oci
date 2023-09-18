@@ -38,7 +38,7 @@ public class Secret extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the compartment where you want to create the secret.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -52,7 +52,7 @@ public class Secret extends com.pulumi.resources.CustomResource {
      * The version number of the secret version that&#39;s currently in use.
      * 
      */
-    @Export(name="currentVersionNumber", type=String.class, parameters={})
+    @Export(name="currentVersionNumber", refs={String.class}, tree="[0]")
     private Output<String> currentVersionNumber;
 
     /**
@@ -66,7 +66,7 @@ public class Secret extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -80,7 +80,7 @@ public class Secret extends com.pulumi.resources.CustomResource {
      * (Updatable) A brief description of the secret. Avoid entering confidential information.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -94,7 +94,7 @@ public class Secret extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -108,7 +108,7 @@ public class Secret extends com.pulumi.resources.CustomResource {
      * The OCID of the master encryption key that is used to encrypt the secret.
      * 
      */
-    @Export(name="keyId", type=String.class, parameters={})
+    @Export(name="keyId", refs={String.class}, tree="[0]")
     private Output<String> keyId;
 
     /**
@@ -122,7 +122,7 @@ public class Secret extends com.pulumi.resources.CustomResource {
      * Additional information about the current lifecycle state of the secret.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -136,7 +136,7 @@ public class Secret extends com.pulumi.resources.CustomResource {
      * (Updatable) Additional metadata that you can use to provide context about how to use the secret during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
      * 
      */
-    @Export(name="metadata", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="metadata", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> metadata;
 
     /**
@@ -150,7 +150,7 @@ public class Secret extends com.pulumi.resources.CustomResource {
      * (Updatable) The content of the secret and metadata to help identify it.
      * 
      */
-    @Export(name="secretContent", type=SecretSecretContent.class, parameters={})
+    @Export(name="secretContent", refs={SecretSecretContent.class}, tree="[0]")
     private Output<SecretSecretContent> secretContent;
 
     /**
@@ -164,7 +164,7 @@ public class Secret extends com.pulumi.resources.CustomResource {
      * A user-friendly name for the secret. Secret names should be unique within a vault. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
      * 
      */
-    @Export(name="secretName", type=String.class, parameters={})
+    @Export(name="secretName", refs={String.class}, tree="[0]")
     private Output<String> secretName;
 
     /**
@@ -178,7 +178,7 @@ public class Secret extends com.pulumi.resources.CustomResource {
      * (Updatable) A list of rules to control how the secret is used and managed.
      * 
      */
-    @Export(name="secretRules", type=List.class, parameters={SecretSecretRule.class})
+    @Export(name="secretRules", refs={List.class,SecretSecretRule.class}, tree="[0,1]")
     private Output<List<SecretSecretRule>> secretRules;
 
     /**
@@ -192,7 +192,7 @@ public class Secret extends com.pulumi.resources.CustomResource {
      * The current lifecycle state of the secret.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -206,7 +206,7 @@ public class Secret extends com.pulumi.resources.CustomResource {
      * A property indicating when the secret was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -220,7 +220,7 @@ public class Secret extends com.pulumi.resources.CustomResource {
      * An optional property indicating when the current secret version will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
-    @Export(name="timeOfCurrentVersionExpiry", type=String.class, parameters={})
+    @Export(name="timeOfCurrentVersionExpiry", refs={String.class}, tree="[0]")
     private Output<String> timeOfCurrentVersionExpiry;
 
     /**
@@ -234,7 +234,7 @@ public class Secret extends com.pulumi.resources.CustomResource {
      * An optional property indicating when to delete the secret, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
-    @Export(name="timeOfDeletion", type=String.class, parameters={})
+    @Export(name="timeOfDeletion", refs={String.class}, tree="[0]")
     private Output<String> timeOfDeletion;
 
     /**
@@ -251,7 +251,7 @@ public class Secret extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="vaultId", type=String.class, parameters={})
+    @Export(name="vaultId", refs={String.class}, tree="[0]")
     private Output<String> vaultId;
 
     /**

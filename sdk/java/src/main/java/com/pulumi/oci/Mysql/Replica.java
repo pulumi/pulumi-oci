@@ -72,7 +72,7 @@ public class Replica extends com.pulumi.resources.CustomResource {
      * The name of the Availability Domain the read replica is located in.
      * 
      */
-    @Export(name="availabilityDomain", type=String.class, parameters={})
+    @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
     private Output<String> availabilityDomain;
 
     /**
@@ -86,7 +86,7 @@ public class Replica extends com.pulumi.resources.CustomResource {
      * The OCID of the compartment that contains the read replica.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -100,7 +100,7 @@ public class Replica extends com.pulumi.resources.CustomResource {
      * The OCID of the DB System the read replica is associated with.
      * 
      */
-    @Export(name="dbSystemId", type=String.class, parameters={})
+    @Export(name="dbSystemId", refs={String.class}, tree="[0]")
     private Output<String> dbSystemId;
 
     /**
@@ -114,7 +114,7 @@ public class Replica extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -128,7 +128,7 @@ public class Replica extends com.pulumi.resources.CustomResource {
      * (Updatable) User provided description of the read replica.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -142,7 +142,7 @@ public class Replica extends com.pulumi.resources.CustomResource {
      * (Updatable) The user-friendly name for the read replica. It does not have to be unique.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -156,7 +156,7 @@ public class Replica extends com.pulumi.resources.CustomResource {
      * The name of the Fault Domain the read replica is located in.
      * 
      */
-    @Export(name="faultDomain", type=String.class, parameters={})
+    @Export(name="faultDomain", refs={String.class}, tree="[0]")
     private Output<String> faultDomain;
 
     /**
@@ -170,7 +170,7 @@ public class Replica extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -184,7 +184,7 @@ public class Replica extends com.pulumi.resources.CustomResource {
      * The IP address the read replica is configured to listen on.
      * 
      */
-    @Export(name="ipAddress", type=String.class, parameters={})
+    @Export(name="ipAddress", refs={String.class}, tree="[0]")
     private Output<String> ipAddress;
 
     /**
@@ -201,7 +201,7 @@ public class Replica extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="isDeleteProtected", type=Boolean.class, parameters={})
+    @Export(name="isDeleteProtected", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isDeleteProtected;
 
     /**
@@ -218,7 +218,7 @@ public class Replica extends com.pulumi.resources.CustomResource {
      * A message describing the state of the read replica.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -232,7 +232,7 @@ public class Replica extends com.pulumi.resources.CustomResource {
      * The MySQL version used by the read replica.
      * 
      */
-    @Export(name="mysqlVersion", type=String.class, parameters={})
+    @Export(name="mysqlVersion", refs={String.class}, tree="[0]")
     private Output<String> mysqlVersion;
 
     /**
@@ -246,7 +246,7 @@ public class Replica extends com.pulumi.resources.CustomResource {
      * The port the read replica is configured to listen on.
      * 
      */
-    @Export(name="port", type=Integer.class, parameters={})
+    @Export(name="port", refs={Integer.class}, tree="[0]")
     private Output<Integer> port;
 
     /**
@@ -260,7 +260,7 @@ public class Replica extends com.pulumi.resources.CustomResource {
      * The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
      * 
      */
-    @Export(name="portX", type=Integer.class, parameters={})
+    @Export(name="portX", refs={Integer.class}, tree="[0]")
     private Output<Integer> portX;
 
     /**
@@ -274,7 +274,7 @@ public class Replica extends com.pulumi.resources.CustomResource {
      * The state of the read replica.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -288,7 +288,7 @@ public class Replica extends com.pulumi.resources.CustomResource {
      * The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -302,7 +302,7 @@ public class Replica extends com.pulumi.resources.CustomResource {
      * The time the read replica was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

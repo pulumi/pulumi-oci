@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Autonomous Database resource in Oracle Cloud Infrastructure Database service.
@@ -1400,6 +1401,12 @@ func (i *AutonomousDatabase) ToAutonomousDatabaseOutputWithContext(ctx context.C
 	return pulumi.ToOutputWithContext(ctx, i).(AutonomousDatabaseOutput)
 }
 
+func (i *AutonomousDatabase) ToOutput(ctx context.Context) pulumix.Output[*AutonomousDatabase] {
+	return pulumix.Output[*AutonomousDatabase]{
+		OutputState: i.ToAutonomousDatabaseOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AutonomousDatabaseArrayInput is an input type that accepts AutonomousDatabaseArray and AutonomousDatabaseArrayOutput values.
 // You can construct a concrete instance of `AutonomousDatabaseArrayInput` via:
 //
@@ -1423,6 +1430,12 @@ func (i AutonomousDatabaseArray) ToAutonomousDatabaseArrayOutput() AutonomousDat
 
 func (i AutonomousDatabaseArray) ToAutonomousDatabaseArrayOutputWithContext(ctx context.Context) AutonomousDatabaseArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AutonomousDatabaseArrayOutput)
+}
+
+func (i AutonomousDatabaseArray) ToOutput(ctx context.Context) pulumix.Output[[]*AutonomousDatabase] {
+	return pulumix.Output[[]*AutonomousDatabase]{
+		OutputState: i.ToAutonomousDatabaseArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // AutonomousDatabaseMapInput is an input type that accepts AutonomousDatabaseMap and AutonomousDatabaseMapOutput values.
@@ -1450,6 +1463,12 @@ func (i AutonomousDatabaseMap) ToAutonomousDatabaseMapOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(AutonomousDatabaseMapOutput)
 }
 
+func (i AutonomousDatabaseMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AutonomousDatabase] {
+	return pulumix.Output[map[string]*AutonomousDatabase]{
+		OutputState: i.ToAutonomousDatabaseMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AutonomousDatabaseOutput struct{ *pulumi.OutputState }
 
 func (AutonomousDatabaseOutput) ElementType() reflect.Type {
@@ -1462,6 +1481,12 @@ func (o AutonomousDatabaseOutput) ToAutonomousDatabaseOutput() AutonomousDatabas
 
 func (o AutonomousDatabaseOutput) ToAutonomousDatabaseOutputWithContext(ctx context.Context) AutonomousDatabaseOutput {
 	return o
+}
+
+func (o AutonomousDatabaseOutput) ToOutput(ctx context.Context) pulumix.Output[*AutonomousDatabase] {
+	return pulumix.Output[*AutonomousDatabase]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The current amount of storage in use for user and system data, in terabytes (TB).
@@ -2141,6 +2166,12 @@ func (o AutonomousDatabaseArrayOutput) ToAutonomousDatabaseArrayOutputWithContex
 	return o
 }
 
+func (o AutonomousDatabaseArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AutonomousDatabase] {
+	return pulumix.Output[[]*AutonomousDatabase]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AutonomousDatabaseArrayOutput) Index(i pulumi.IntInput) AutonomousDatabaseOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AutonomousDatabase {
 		return vs[0].([]*AutonomousDatabase)[vs[1].(int)]
@@ -2159,6 +2190,12 @@ func (o AutonomousDatabaseMapOutput) ToAutonomousDatabaseMapOutput() AutonomousD
 
 func (o AutonomousDatabaseMapOutput) ToAutonomousDatabaseMapOutputWithContext(ctx context.Context) AutonomousDatabaseMapOutput {
 	return o
+}
+
+func (o AutonomousDatabaseMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AutonomousDatabase] {
+	return pulumix.Output[map[string]*AutonomousDatabase]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AutonomousDatabaseMapOutput) MapIndex(k pulumi.StringInput) AutonomousDatabaseOutput {

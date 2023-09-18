@@ -89,7 +89,7 @@ public class NetworkSource extends com.pulumi.resources.CustomResource {
      * The OCID of the tenancy (root compartment) containing the network source object.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -103,7 +103,7 @@ public class NetworkSource extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -117,7 +117,7 @@ public class NetworkSource extends com.pulumi.resources.CustomResource {
      * (Updatable) The description you assign to the network source during creation. Does not have to be unique, and it&#39;s changeable.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -131,7 +131,7 @@ public class NetworkSource extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -145,7 +145,7 @@ public class NetworkSource extends com.pulumi.resources.CustomResource {
      * The detailed status of INACTIVE lifecycleState.
      * 
      */
-    @Export(name="inactiveState", type=String.class, parameters={})
+    @Export(name="inactiveState", refs={String.class}, tree="[0]")
     private Output<String> inactiveState;
 
     /**
@@ -159,7 +159,7 @@ public class NetworkSource extends com.pulumi.resources.CustomResource {
      * The name you assign to the network source during creation. The name must be unique across all groups in the tenancy and cannot be changed.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -173,7 +173,7 @@ public class NetworkSource extends com.pulumi.resources.CustomResource {
      * (Updatable) A list of allowed public IP addresses and CIDR ranges.
      * 
      */
-    @Export(name="publicSourceLists", type=List.class, parameters={String.class})
+    @Export(name="publicSourceLists", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> publicSourceLists;
 
     /**
@@ -187,7 +187,7 @@ public class NetworkSource extends com.pulumi.resources.CustomResource {
      * (Updatable) A list of services allowed to make on-behalf-of requests. These requests can have different source IP addresses than those listed in the network source. Currently, only `all` and `none` are supported. The default is `all`.
      * 
      */
-    @Export(name="services", type=List.class, parameters={String.class})
+    @Export(name="services", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> services;
 
     /**
@@ -201,7 +201,7 @@ public class NetworkSource extends com.pulumi.resources.CustomResource {
      * The network source object&#39;s current state. After creating a network source, make sure its `lifecycleState` changes from CREATING to ACTIVE before using it.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -215,7 +215,7 @@ public class NetworkSource extends com.pulumi.resources.CustomResource {
      * Date and time the group was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -232,7 +232,7 @@ public class NetworkSource extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="virtualSourceLists", type=List.class, parameters={NetworkSourceVirtualSourceList.class})
+    @Export(name="virtualSourceLists", refs={List.class,NetworkSourceVirtualSourceList.class}, tree="[0,1]")
     private Output<List<NetworkSourceVirtualSourceList>> virtualSourceLists;
 
     /**

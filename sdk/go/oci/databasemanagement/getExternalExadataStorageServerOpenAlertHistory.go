@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific External Exadata Storage Server Open Alert History resource in Oracle Cloud Infrastructure Database Management service.
@@ -101,6 +102,12 @@ func (o GetExternalExadataStorageServerOpenAlertHistoryResultOutput) ToGetExtern
 
 func (o GetExternalExadataStorageServerOpenAlertHistoryResultOutput) ToGetExternalExadataStorageServerOpenAlertHistoryResultOutputWithContext(ctx context.Context) GetExternalExadataStorageServerOpenAlertHistoryResultOutput {
 	return o
+}
+
+func (o GetExternalExadataStorageServerOpenAlertHistoryResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetExternalExadataStorageServerOpenAlertHistoryResult] {
+	return pulumix.Output[GetExternalExadataStorageServerOpenAlertHistoryResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A list of open alerts.

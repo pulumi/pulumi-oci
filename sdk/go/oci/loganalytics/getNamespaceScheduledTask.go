@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Namespace Scheduled Task resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -136,6 +137,12 @@ func (o LookupNamespaceScheduledTaskResultOutput) ToLookupNamespaceScheduledTask
 
 func (o LookupNamespaceScheduledTaskResultOutput) ToLookupNamespaceScheduledTaskResultOutputWithContext(ctx context.Context) LookupNamespaceScheduledTaskResultOutput {
 	return o
+}
+
+func (o LookupNamespaceScheduledTaskResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupNamespaceScheduledTaskResult] {
+	return pulumix.Output[LookupNamespaceScheduledTaskResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Action for scheduled task.

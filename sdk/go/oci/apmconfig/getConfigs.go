@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Configs in Oracle Cloud Infrastructure Apm Config service.
@@ -149,6 +150,12 @@ func (o GetConfigsResultOutput) ToGetConfigsResultOutput() GetConfigsResultOutpu
 
 func (o GetConfigsResultOutput) ToGetConfigsResultOutputWithContext(ctx context.Context) GetConfigsResultOutput {
 	return o
+}
+
+func (o GetConfigsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetConfigsResult] {
+	return pulumix.Output[GetConfigsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetConfigsResultOutput) ApmDomainId() pulumi.StringOutput {

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Security Question resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -163,6 +164,12 @@ func (o LookupDomainsSecurityQuestionResultOutput) ToLookupDomainsSecurityQuesti
 
 func (o LookupDomainsSecurityQuestionResultOutput) ToLookupDomainsSecurityQuestionResultOutputWithContext(ctx context.Context) LookupDomainsSecurityQuestionResultOutput {
 	return o
+}
+
+func (o LookupDomainsSecurityQuestionResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDomainsSecurityQuestionResult] {
+	return pulumix.Output[LookupDomainsSecurityQuestionResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // This indicates if the question is selected by the Security Admin and is available for the end user.

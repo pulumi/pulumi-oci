@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Generic Artifact resource in Oracle Cloud Infrastructure Artifacts service.
@@ -231,6 +232,12 @@ func (i *GenericArtifact) ToGenericArtifactOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(GenericArtifactOutput)
 }
 
+func (i *GenericArtifact) ToOutput(ctx context.Context) pulumix.Output[*GenericArtifact] {
+	return pulumix.Output[*GenericArtifact]{
+		OutputState: i.ToGenericArtifactOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GenericArtifactArrayInput is an input type that accepts GenericArtifactArray and GenericArtifactArrayOutput values.
 // You can construct a concrete instance of `GenericArtifactArrayInput` via:
 //
@@ -254,6 +261,12 @@ func (i GenericArtifactArray) ToGenericArtifactArrayOutput() GenericArtifactArra
 
 func (i GenericArtifactArray) ToGenericArtifactArrayOutputWithContext(ctx context.Context) GenericArtifactArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GenericArtifactArrayOutput)
+}
+
+func (i GenericArtifactArray) ToOutput(ctx context.Context) pulumix.Output[[]*GenericArtifact] {
+	return pulumix.Output[[]*GenericArtifact]{
+		OutputState: i.ToGenericArtifactArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // GenericArtifactMapInput is an input type that accepts GenericArtifactMap and GenericArtifactMapOutput values.
@@ -281,6 +294,12 @@ func (i GenericArtifactMap) ToGenericArtifactMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GenericArtifactMapOutput)
 }
 
+func (i GenericArtifactMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*GenericArtifact] {
+	return pulumix.Output[map[string]*GenericArtifact]{
+		OutputState: i.ToGenericArtifactMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GenericArtifactOutput struct{ *pulumi.OutputState }
 
 func (GenericArtifactOutput) ElementType() reflect.Type {
@@ -293,6 +312,12 @@ func (o GenericArtifactOutput) ToGenericArtifactOutput() GenericArtifactOutput {
 
 func (o GenericArtifactOutput) ToGenericArtifactOutputWithContext(ctx context.Context) GenericArtifactOutput {
 	return o
+}
+
+func (o GenericArtifactOutput) ToOutput(ctx context.Context) pulumix.Output[*GenericArtifact] {
+	return pulumix.Output[*GenericArtifact]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the artifact.  Example: `ocid1.genericartifact.oc1..exampleuniqueID`
@@ -372,6 +397,12 @@ func (o GenericArtifactArrayOutput) ToGenericArtifactArrayOutputWithContext(ctx 
 	return o
 }
 
+func (o GenericArtifactArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*GenericArtifact] {
+	return pulumix.Output[[]*GenericArtifact]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GenericArtifactArrayOutput) Index(i pulumi.IntInput) GenericArtifactOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *GenericArtifact {
 		return vs[0].([]*GenericArtifact)[vs[1].(int)]
@@ -390,6 +421,12 @@ func (o GenericArtifactMapOutput) ToGenericArtifactMapOutput() GenericArtifactMa
 
 func (o GenericArtifactMapOutput) ToGenericArtifactMapOutputWithContext(ctx context.Context) GenericArtifactMapOutput {
 	return o
+}
+
+func (o GenericArtifactMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*GenericArtifact] {
+	return pulumix.Output[map[string]*GenericArtifact]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GenericArtifactMapOutput) MapIndex(k pulumi.StringInput) GenericArtifactOutput {

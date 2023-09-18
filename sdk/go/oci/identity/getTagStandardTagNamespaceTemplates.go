@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Tag Standard Tag Namespace Templates in Oracle Cloud Infrastructure Identity service.
@@ -104,6 +105,12 @@ func (o GetTagStandardTagNamespaceTemplatesResultOutput) ToGetTagStandardTagName
 
 func (o GetTagStandardTagNamespaceTemplatesResultOutput) ToGetTagStandardTagNamespaceTemplatesResultOutputWithContext(ctx context.Context) GetTagStandardTagNamespaceTemplatesResultOutput {
 	return o
+}
+
+func (o GetTagStandardTagNamespaceTemplatesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetTagStandardTagNamespaceTemplatesResult] {
+	return pulumix.Output[GetTagStandardTagNamespaceTemplatesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTagStandardTagNamespaceTemplatesResultOutput) CompartmentId() pulumi.StringOutput {

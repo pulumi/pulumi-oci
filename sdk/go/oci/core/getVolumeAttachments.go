@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Volume Attachments in Oracle Cloud Infrastructure Core service.
@@ -130,6 +131,12 @@ func (o GetVolumeAttachmentsResultOutput) ToGetVolumeAttachmentsResultOutput() G
 
 func (o GetVolumeAttachmentsResultOutput) ToGetVolumeAttachmentsResultOutputWithContext(ctx context.Context) GetVolumeAttachmentsResultOutput {
 	return o
+}
+
+func (o GetVolumeAttachmentsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVolumeAttachmentsResult] {
+	return pulumix.Output[GetVolumeAttachmentsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The availability domain of an instance.  Example: `Uocm:PHX-AD-1`

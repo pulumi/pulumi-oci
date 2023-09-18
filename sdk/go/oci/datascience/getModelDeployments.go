@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Model Deployments in Oracle Cloud Infrastructure Datascience service.
@@ -138,6 +139,12 @@ func (o GetModelDeploymentsResultOutput) ToGetModelDeploymentsResultOutput() Get
 
 func (o GetModelDeploymentsResultOutput) ToGetModelDeploymentsResultOutputWithContext(ctx context.Context) GetModelDeploymentsResultOutput {
 	return o
+}
+
+func (o GetModelDeploymentsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetModelDeploymentsResult] {
+	return pulumix.Output[GetModelDeploymentsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model deployment's compartment.

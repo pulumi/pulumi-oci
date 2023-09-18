@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Preauthenticated Request resource in Oracle Cloud Infrastructure Object Storage service.
@@ -132,6 +133,12 @@ func (o LookupPreauthrequestResultOutput) ToLookupPreauthrequestResultOutput() L
 
 func (o LookupPreauthrequestResultOutput) ToLookupPreauthrequestResultOutputWithContext(ctx context.Context) LookupPreauthrequestResultOutput {
 	return o
+}
+
+func (o LookupPreauthrequestResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupPreauthrequestResult] {
+	return pulumix.Output[LookupPreauthrequestResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The operation that can be performed on this resource.

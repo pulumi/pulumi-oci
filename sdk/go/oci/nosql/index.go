@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Index resource in Oracle Cloud Infrastructure NoSQL Database service.
@@ -229,6 +230,12 @@ func (i *Index) ToIndexOutputWithContext(ctx context.Context) IndexOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(IndexOutput)
 }
 
+func (i *Index) ToOutput(ctx context.Context) pulumix.Output[*Index] {
+	return pulumix.Output[*Index]{
+		OutputState: i.ToIndexOutputWithContext(ctx).OutputState,
+	}
+}
+
 // IndexArrayInput is an input type that accepts IndexArray and IndexArrayOutput values.
 // You can construct a concrete instance of `IndexArrayInput` via:
 //
@@ -252,6 +259,12 @@ func (i IndexArray) ToIndexArrayOutput() IndexArrayOutput {
 
 func (i IndexArray) ToIndexArrayOutputWithContext(ctx context.Context) IndexArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(IndexArrayOutput)
+}
+
+func (i IndexArray) ToOutput(ctx context.Context) pulumix.Output[[]*Index] {
+	return pulumix.Output[[]*Index]{
+		OutputState: i.ToIndexArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // IndexMapInput is an input type that accepts IndexMap and IndexMapOutput values.
@@ -279,6 +292,12 @@ func (i IndexMap) ToIndexMapOutputWithContext(ctx context.Context) IndexMapOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(IndexMapOutput)
 }
 
+func (i IndexMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Index] {
+	return pulumix.Output[map[string]*Index]{
+		OutputState: i.ToIndexMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type IndexOutput struct{ *pulumi.OutputState }
 
 func (IndexOutput) ElementType() reflect.Type {
@@ -291,6 +310,12 @@ func (o IndexOutput) ToIndexOutput() IndexOutput {
 
 func (o IndexOutput) ToIndexOutputWithContext(ctx context.Context) IndexOutput {
 	return o
+}
+
+func (o IndexOutput) ToOutput(ctx context.Context) pulumix.Output[*Index] {
+	return pulumix.Output[*Index]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
@@ -355,6 +380,12 @@ func (o IndexArrayOutput) ToIndexArrayOutputWithContext(ctx context.Context) Ind
 	return o
 }
 
+func (o IndexArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Index] {
+	return pulumix.Output[[]*Index]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o IndexArrayOutput) Index(i pulumi.IntInput) IndexOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Index {
 		return vs[0].([]*Index)[vs[1].(int)]
@@ -373,6 +404,12 @@ func (o IndexMapOutput) ToIndexMapOutput() IndexMapOutput {
 
 func (o IndexMapOutput) ToIndexMapOutputWithContext(ctx context.Context) IndexMapOutput {
 	return o
+}
+
+func (o IndexMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Index] {
+	return pulumix.Output[map[string]*Index]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o IndexMapOutput) MapIndex(k pulumi.StringInput) IndexOutput {

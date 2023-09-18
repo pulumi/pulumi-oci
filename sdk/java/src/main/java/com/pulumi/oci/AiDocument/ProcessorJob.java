@@ -98,7 +98,7 @@ public class ProcessorJob extends com.pulumi.resources.CustomResource {
      * The compartment identifier.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -112,7 +112,7 @@ public class ProcessorJob extends com.pulumi.resources.CustomResource {
      * The display name of the processor job.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -126,7 +126,7 @@ public class ProcessorJob extends com.pulumi.resources.CustomResource {
      * The location of the inputs.
      * 
      */
-    @Export(name="inputLocation", type=ProcessorJobInputLocation.class, parameters={})
+    @Export(name="inputLocation", refs={ProcessorJobInputLocation.class}, tree="[0]")
     private Output<ProcessorJobInputLocation> inputLocation;
 
     /**
@@ -140,7 +140,7 @@ public class ProcessorJob extends com.pulumi.resources.CustomResource {
      * The detailed status of FAILED state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -154,7 +154,7 @@ public class ProcessorJob extends com.pulumi.resources.CustomResource {
      * The object storage location where to store analysis results.
      * 
      */
-    @Export(name="outputLocation", type=ProcessorJobOutputLocation.class, parameters={})
+    @Export(name="outputLocation", refs={ProcessorJobOutputLocation.class}, tree="[0]")
     private Output<ProcessorJobOutputLocation> outputLocation;
 
     /**
@@ -168,7 +168,7 @@ public class ProcessorJob extends com.pulumi.resources.CustomResource {
      * How much progress the operation has made, compared to the total amount of work to be performed.
      * 
      */
-    @Export(name="percentComplete", type=Double.class, parameters={})
+    @Export(name="percentComplete", refs={Double.class}, tree="[0]")
     private Output<Double> percentComplete;
 
     /**
@@ -182,7 +182,7 @@ public class ProcessorJob extends com.pulumi.resources.CustomResource {
      * The configuration of a processor.
      * 
      */
-    @Export(name="processorConfig", type=ProcessorJobProcessorConfig.class, parameters={})
+    @Export(name="processorConfig", refs={ProcessorJobProcessorConfig.class}, tree="[0]")
     private Output<ProcessorJobProcessorConfig> processorConfig;
 
     /**
@@ -196,7 +196,7 @@ public class ProcessorJob extends com.pulumi.resources.CustomResource {
      * The current state of the processor job.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -210,7 +210,7 @@ public class ProcessorJob extends com.pulumi.resources.CustomResource {
      * The job acceptance time.
      * 
      */
-    @Export(name="timeAccepted", type=String.class, parameters={})
+    @Export(name="timeAccepted", refs={String.class}, tree="[0]")
     private Output<String> timeAccepted;
 
     /**
@@ -224,7 +224,7 @@ public class ProcessorJob extends com.pulumi.resources.CustomResource {
      * The job finish time.
      * 
      */
-    @Export(name="timeFinished", type=String.class, parameters={})
+    @Export(name="timeFinished", refs={String.class}, tree="[0]")
     private Output<String> timeFinished;
 
     /**
@@ -238,7 +238,7 @@ public class ProcessorJob extends com.pulumi.resources.CustomResource {
      * The job start time.
      * 
      */
-    @Export(name="timeStarted", type=String.class, parameters={})
+    @Export(name="timeStarted", refs={String.class}, tree="[0]")
     private Output<String> timeStarted;
 
     /**

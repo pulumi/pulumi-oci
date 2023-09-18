@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Compute Capacity Report resource in Oracle Cloud Infrastructure Core service.
@@ -187,6 +188,12 @@ func (i *ComputeCapacityReport) ToComputeCapacityReportOutputWithContext(ctx con
 	return pulumi.ToOutputWithContext(ctx, i).(ComputeCapacityReportOutput)
 }
 
+func (i *ComputeCapacityReport) ToOutput(ctx context.Context) pulumix.Output[*ComputeCapacityReport] {
+	return pulumix.Output[*ComputeCapacityReport]{
+		OutputState: i.ToComputeCapacityReportOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ComputeCapacityReportArrayInput is an input type that accepts ComputeCapacityReportArray and ComputeCapacityReportArrayOutput values.
 // You can construct a concrete instance of `ComputeCapacityReportArrayInput` via:
 //
@@ -210,6 +217,12 @@ func (i ComputeCapacityReportArray) ToComputeCapacityReportArrayOutput() Compute
 
 func (i ComputeCapacityReportArray) ToComputeCapacityReportArrayOutputWithContext(ctx context.Context) ComputeCapacityReportArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ComputeCapacityReportArrayOutput)
+}
+
+func (i ComputeCapacityReportArray) ToOutput(ctx context.Context) pulumix.Output[[]*ComputeCapacityReport] {
+	return pulumix.Output[[]*ComputeCapacityReport]{
+		OutputState: i.ToComputeCapacityReportArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // ComputeCapacityReportMapInput is an input type that accepts ComputeCapacityReportMap and ComputeCapacityReportMapOutput values.
@@ -237,6 +250,12 @@ func (i ComputeCapacityReportMap) ToComputeCapacityReportMapOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(ComputeCapacityReportMapOutput)
 }
 
+func (i ComputeCapacityReportMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ComputeCapacityReport] {
+	return pulumix.Output[map[string]*ComputeCapacityReport]{
+		OutputState: i.ToComputeCapacityReportMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ComputeCapacityReportOutput struct{ *pulumi.OutputState }
 
 func (ComputeCapacityReportOutput) ElementType() reflect.Type {
@@ -249,6 +268,12 @@ func (o ComputeCapacityReportOutput) ToComputeCapacityReportOutput() ComputeCapa
 
 func (o ComputeCapacityReportOutput) ToComputeCapacityReportOutputWithContext(ctx context.Context) ComputeCapacityReportOutput {
 	return o
+}
+
+func (o ComputeCapacityReportOutput) ToOutput(ctx context.Context) pulumix.Output[*ComputeCapacityReport] {
+	return pulumix.Output[*ComputeCapacityReport]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The availability domain for the capacity report.  Example: `Uocm:PHX-AD-1`
@@ -287,6 +312,12 @@ func (o ComputeCapacityReportArrayOutput) ToComputeCapacityReportArrayOutputWith
 	return o
 }
 
+func (o ComputeCapacityReportArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ComputeCapacityReport] {
+	return pulumix.Output[[]*ComputeCapacityReport]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o ComputeCapacityReportArrayOutput) Index(i pulumi.IntInput) ComputeCapacityReportOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ComputeCapacityReport {
 		return vs[0].([]*ComputeCapacityReport)[vs[1].(int)]
@@ -305,6 +336,12 @@ func (o ComputeCapacityReportMapOutput) ToComputeCapacityReportMapOutput() Compu
 
 func (o ComputeCapacityReportMapOutput) ToComputeCapacityReportMapOutputWithContext(ctx context.Context) ComputeCapacityReportMapOutput {
 	return o
+}
+
+func (o ComputeCapacityReportMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ComputeCapacityReport] {
+	return pulumix.Output[map[string]*ComputeCapacityReport]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ComputeCapacityReportMapOutput) MapIndex(k pulumi.StringInput) ComputeCapacityReportOutput {

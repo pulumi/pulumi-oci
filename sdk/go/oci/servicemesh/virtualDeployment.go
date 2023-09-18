@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Virtual Deployment resource in Oracle Cloud Infrastructure Service Mesh service.
@@ -289,6 +290,12 @@ func (i *VirtualDeployment) ToVirtualDeploymentOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualDeploymentOutput)
 }
 
+func (i *VirtualDeployment) ToOutput(ctx context.Context) pulumix.Output[*VirtualDeployment] {
+	return pulumix.Output[*VirtualDeployment]{
+		OutputState: i.ToVirtualDeploymentOutputWithContext(ctx).OutputState,
+	}
+}
+
 // VirtualDeploymentArrayInput is an input type that accepts VirtualDeploymentArray and VirtualDeploymentArrayOutput values.
 // You can construct a concrete instance of `VirtualDeploymentArrayInput` via:
 //
@@ -312,6 +319,12 @@ func (i VirtualDeploymentArray) ToVirtualDeploymentArrayOutput() VirtualDeployme
 
 func (i VirtualDeploymentArray) ToVirtualDeploymentArrayOutputWithContext(ctx context.Context) VirtualDeploymentArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualDeploymentArrayOutput)
+}
+
+func (i VirtualDeploymentArray) ToOutput(ctx context.Context) pulumix.Output[[]*VirtualDeployment] {
+	return pulumix.Output[[]*VirtualDeployment]{
+		OutputState: i.ToVirtualDeploymentArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // VirtualDeploymentMapInput is an input type that accepts VirtualDeploymentMap and VirtualDeploymentMapOutput values.
@@ -339,6 +352,12 @@ func (i VirtualDeploymentMap) ToVirtualDeploymentMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualDeploymentMapOutput)
 }
 
+func (i VirtualDeploymentMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*VirtualDeployment] {
+	return pulumix.Output[map[string]*VirtualDeployment]{
+		OutputState: i.ToVirtualDeploymentMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type VirtualDeploymentOutput struct{ *pulumi.OutputState }
 
 func (VirtualDeploymentOutput) ElementType() reflect.Type {
@@ -351,6 +370,12 @@ func (o VirtualDeploymentOutput) ToVirtualDeploymentOutput() VirtualDeploymentOu
 
 func (o VirtualDeploymentOutput) ToVirtualDeploymentOutputWithContext(ctx context.Context) VirtualDeploymentOutput {
 	return o
+}
+
+func (o VirtualDeploymentOutput) ToOutput(ctx context.Context) pulumix.Output[*VirtualDeployment] {
+	return pulumix.Output[*VirtualDeployment]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) This configuration determines if logging is enabled and where the logs will be output.
@@ -440,6 +465,12 @@ func (o VirtualDeploymentArrayOutput) ToVirtualDeploymentArrayOutputWithContext(
 	return o
 }
 
+func (o VirtualDeploymentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*VirtualDeployment] {
+	return pulumix.Output[[]*VirtualDeployment]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o VirtualDeploymentArrayOutput) Index(i pulumi.IntInput) VirtualDeploymentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *VirtualDeployment {
 		return vs[0].([]*VirtualDeployment)[vs[1].(int)]
@@ -458,6 +489,12 @@ func (o VirtualDeploymentMapOutput) ToVirtualDeploymentMapOutput() VirtualDeploy
 
 func (o VirtualDeploymentMapOutput) ToVirtualDeploymentMapOutputWithContext(ctx context.Context) VirtualDeploymentMapOutput {
 	return o
+}
+
+func (o VirtualDeploymentMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*VirtualDeployment] {
+	return pulumix.Output[map[string]*VirtualDeployment]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o VirtualDeploymentMapOutput) MapIndex(k pulumi.StringInput) VirtualDeploymentOutput {

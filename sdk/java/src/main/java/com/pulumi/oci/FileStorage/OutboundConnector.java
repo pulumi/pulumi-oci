@@ -100,7 +100,7 @@ public class OutboundConnector extends com.pulumi.resources.CustomResource {
      * The availability domain the outbound connector is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    @Export(name="availabilityDomain", type=String.class, parameters={})
+    @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
     private Output<String> availabilityDomain;
 
     /**
@@ -114,7 +114,7 @@ public class OutboundConnector extends com.pulumi.resources.CustomResource {
      * The LDAP Distinguished Name of the bind account.
      * 
      */
-    @Export(name="bindDistinguishedName", type=String.class, parameters={})
+    @Export(name="bindDistinguishedName", refs={String.class}, tree="[0]")
     private Output<String> bindDistinguishedName;
 
     /**
@@ -128,7 +128,7 @@ public class OutboundConnector extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the outbound connector.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -142,7 +142,7 @@ public class OutboundConnector extends com.pulumi.resources.CustomResource {
      * The account type of this outbound connector.
      * 
      */
-    @Export(name="connectorType", type=String.class, parameters={})
+    @Export(name="connectorType", refs={String.class}, tree="[0]")
     private Output<String> connectorType;
 
     /**
@@ -156,7 +156,7 @@ public class OutboundConnector extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -170,7 +170,7 @@ public class OutboundConnector extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My outbound connector`
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -184,7 +184,7 @@ public class OutboundConnector extends com.pulumi.resources.CustomResource {
      * Array of server endpoints to use when connecting with the LDAP bind account.
      * 
      */
-    @Export(name="endpoints", type=List.class, parameters={OutboundConnectorEndpoint.class})
+    @Export(name="endpoints", refs={List.class,OutboundConnectorEndpoint.class}, tree="[0,1]")
     private Output<List<OutboundConnectorEndpoint>> endpoints;
 
     /**
@@ -198,7 +198,7 @@ public class OutboundConnector extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -212,7 +212,7 @@ public class OutboundConnector extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
      * 
      */
-    @Export(name="passwordSecretId", type=String.class, parameters={})
+    @Export(name="passwordSecretId", refs={String.class}, tree="[0]")
     private Output<String> passwordSecretId;
 
     /**
@@ -229,7 +229,7 @@ public class OutboundConnector extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="passwordSecretVersion", type=Integer.class, parameters={})
+    @Export(name="passwordSecretVersion", refs={Integer.class}, tree="[0]")
     private Output<Integer> passwordSecretVersion;
 
     /**
@@ -246,7 +246,7 @@ public class OutboundConnector extends com.pulumi.resources.CustomResource {
      * The current state of this outbound connector.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -260,7 +260,7 @@ public class OutboundConnector extends com.pulumi.resources.CustomResource {
      * The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**

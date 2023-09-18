@@ -71,7 +71,7 @@ public class View extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the owning compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -87,7 +87,7 @@ public class View extends com.pulumi.resources.CustomResource {
      * **Example:** `{&#34;Operations&#34;: {&#34;CostCenter&#34;: &#34;42&#34;}}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -103,7 +103,7 @@ public class View extends com.pulumi.resources.CustomResource {
      * (Updatable) The display name of the view.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -119,7 +119,7 @@ public class View extends com.pulumi.resources.CustomResource {
      * **Example:** `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -135,7 +135,7 @@ public class View extends com.pulumi.resources.CustomResource {
      * A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
      * 
      */
-    @Export(name="isProtected", type=Boolean.class, parameters={})
+    @Export(name="isProtected", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isProtected;
 
     /**
@@ -152,7 +152,7 @@ public class View extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="scope", type=String.class, parameters={})
+    @Export(name="scope", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> scope;
 
     /**
@@ -169,7 +169,7 @@ public class View extends com.pulumi.resources.CustomResource {
      * The canonical absolute URL of the resource.
      * 
      */
-    @Export(name="self", type=String.class, parameters={})
+    @Export(name="self", refs={String.class}, tree="[0]")
     private Output<String> self;
 
     /**
@@ -183,7 +183,7 @@ public class View extends com.pulumi.resources.CustomResource {
      * The current state of the resource.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -197,7 +197,7 @@ public class View extends com.pulumi.resources.CustomResource {
      * The date and time the resource was created in &#34;YYYY-MM-ddThh:mm:ssZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -211,7 +211,7 @@ public class View extends com.pulumi.resources.CustomResource {
      * The date and time the resource was last updated in &#34;YYYY-MM-ddThh:mm:ssZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

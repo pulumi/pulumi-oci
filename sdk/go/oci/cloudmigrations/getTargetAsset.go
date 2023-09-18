@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Target Asset resource in Oracle Cloud Infrastructure Cloud Migrations service.
@@ -139,6 +140,12 @@ func (o LookupTargetAssetResultOutput) ToLookupTargetAssetResultOutput() LookupT
 
 func (o LookupTargetAssetResultOutput) ToLookupTargetAssetResultOutputWithContext(ctx context.Context) LookupTargetAssetResultOutput {
 	return o
+}
+
+func (o LookupTargetAssetResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupTargetAssetResult] {
+	return pulumix.Output[LookupTargetAssetResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Performance of the block volumes.

@@ -70,7 +70,7 @@ public class Metastore extends com.pulumi.resources.CustomResource {
      * (Updatable) OCID of the compartment which holds the metastore.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -84,7 +84,7 @@ public class Metastore extends com.pulumi.resources.CustomResource {
      * Location under which external tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
      * 
      */
-    @Export(name="defaultExternalTableLocation", type=String.class, parameters={})
+    @Export(name="defaultExternalTableLocation", refs={String.class}, tree="[0]")
     private Output<String> defaultExternalTableLocation;
 
     /**
@@ -98,7 +98,7 @@ public class Metastore extends com.pulumi.resources.CustomResource {
      * Location under which managed tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
      * 
      */
-    @Export(name="defaultManagedTableLocation", type=String.class, parameters={})
+    @Export(name="defaultManagedTableLocation", refs={String.class}, tree="[0]")
     private Output<String> defaultManagedTableLocation;
 
     /**
@@ -112,7 +112,7 @@ public class Metastore extends com.pulumi.resources.CustomResource {
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -126,7 +126,7 @@ public class Metastore extends com.pulumi.resources.CustomResource {
      * (Updatable) Mutable name of the metastore.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -143,7 +143,7 @@ public class Metastore extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -160,7 +160,7 @@ public class Metastore extends com.pulumi.resources.CustomResource {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -174,7 +174,7 @@ public class Metastore extends com.pulumi.resources.CustomResource {
      * The current state of the metastore.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -188,7 +188,7 @@ public class Metastore extends com.pulumi.resources.CustomResource {
      * Time at which the metastore was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -202,7 +202,7 @@ public class Metastore extends com.pulumi.resources.CustomResource {
      * Time at which the metastore was last modified. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

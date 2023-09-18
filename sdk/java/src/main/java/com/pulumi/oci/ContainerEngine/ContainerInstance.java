@@ -172,7 +172,7 @@ public class ContainerInstance extends com.pulumi.resources.CustomResource {
      * The availability domain where the container instance runs.
      * 
      */
-    @Export(name="availabilityDomain", type=String.class, parameters={})
+    @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
     private Output<String> availabilityDomain;
 
     /**
@@ -186,7 +186,7 @@ public class ContainerInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) The compartment OCID.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -200,7 +200,7 @@ public class ContainerInstance extends com.pulumi.resources.CustomResource {
      * The number of containers on the container instance.
      * 
      */
-    @Export(name="containerCount", type=Integer.class, parameters={})
+    @Export(name="containerCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> containerCount;
 
     /**
@@ -214,7 +214,7 @@ public class ContainerInstance extends com.pulumi.resources.CustomResource {
      * Container restart policy
      * 
      */
-    @Export(name="containerRestartPolicy", type=String.class, parameters={})
+    @Export(name="containerRestartPolicy", refs={String.class}, tree="[0]")
     private Output<String> containerRestartPolicy;
 
     /**
@@ -228,7 +228,7 @@ public class ContainerInstance extends com.pulumi.resources.CustomResource {
      * The containers to create on this container instance.
      * 
      */
-    @Export(name="containers", type=List.class, parameters={ContainerInstanceContainer.class})
+    @Export(name="containers", refs={List.class,ContainerInstanceContainer.class}, tree="[0,1]")
     private Output<List<ContainerInstanceContainer>> containers;
 
     /**
@@ -242,7 +242,7 @@ public class ContainerInstance extends com.pulumi.resources.CustomResource {
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`.
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -256,7 +256,7 @@ public class ContainerInstance extends com.pulumi.resources.CustomResource {
      * A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -270,7 +270,7 @@ public class ContainerInstance extends com.pulumi.resources.CustomResource {
      * Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
      * 
      */
-    @Export(name="dnsConfig", type=ContainerInstanceDnsConfig.class, parameters={})
+    @Export(name="dnsConfig", refs={ContainerInstanceDnsConfig.class}, tree="[0]")
     private Output<ContainerInstanceDnsConfig> dnsConfig;
 
     /**
@@ -284,7 +284,7 @@ public class ContainerInstance extends com.pulumi.resources.CustomResource {
      * The fault domain where the container instance runs.
      * 
      */
-    @Export(name="faultDomain", type=String.class, parameters={})
+    @Export(name="faultDomain", refs={String.class}, tree="[0]")
     private Output<String> faultDomain;
 
     /**
@@ -298,7 +298,7 @@ public class ContainerInstance extends com.pulumi.resources.CustomResource {
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -312,7 +312,7 @@ public class ContainerInstance extends com.pulumi.resources.CustomResource {
      * The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
      * 
      */
-    @Export(name="gracefulShutdownTimeoutInSeconds", type=String.class, parameters={})
+    @Export(name="gracefulShutdownTimeoutInSeconds", refs={String.class}, tree="[0]")
     private Output<String> gracefulShutdownTimeoutInSeconds;
 
     /**
@@ -326,7 +326,7 @@ public class ContainerInstance extends com.pulumi.resources.CustomResource {
      * The image pulls secrets so you can access private registry to pull container images.
      * 
      */
-    @Export(name="imagePullSecrets", type=List.class, parameters={ContainerInstanceImagePullSecret.class})
+    @Export(name="imagePullSecrets", refs={List.class,ContainerInstanceImagePullSecret.class}, tree="[0,1]")
     private Output<List<ContainerInstanceImagePullSecret>> imagePullSecrets;
 
     /**
@@ -340,7 +340,7 @@ public class ContainerInstance extends com.pulumi.resources.CustomResource {
      * A message that describes the current state of the container in more detail. Can be used to provide actionable information.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -354,7 +354,7 @@ public class ContainerInstance extends com.pulumi.resources.CustomResource {
      * The shape of the container instance. The shape determines the resources available to the container instance.
      * 
      */
-    @Export(name="shape", type=String.class, parameters={})
+    @Export(name="shape", refs={String.class}, tree="[0]")
     private Output<String> shape;
 
     /**
@@ -368,7 +368,7 @@ public class ContainerInstance extends com.pulumi.resources.CustomResource {
      * The size and amount of resources available to the container instance.
      * 
      */
-    @Export(name="shapeConfig", type=ContainerInstanceShapeConfig.class, parameters={})
+    @Export(name="shapeConfig", refs={ContainerInstanceShapeConfig.class}, tree="[0]")
     private Output<ContainerInstanceShapeConfig> shapeConfig;
 
     /**
@@ -385,7 +385,7 @@ public class ContainerInstance extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -402,7 +402,7 @@ public class ContainerInstance extends com.pulumi.resources.CustomResource {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`.
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -416,7 +416,7 @@ public class ContainerInstance extends com.pulumi.resources.CustomResource {
      * The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -430,7 +430,7 @@ public class ContainerInstance extends com.pulumi.resources.CustomResource {
      * The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -444,7 +444,7 @@ public class ContainerInstance extends com.pulumi.resources.CustomResource {
      * The networks available to containers on this container instance.
      * 
      */
-    @Export(name="vnics", type=List.class, parameters={ContainerInstanceVnic.class})
+    @Export(name="vnics", refs={List.class,ContainerInstanceVnic.class}, tree="[0,1]")
     private Output<List<ContainerInstanceVnic>> vnics;
 
     /**
@@ -458,7 +458,7 @@ public class ContainerInstance extends com.pulumi.resources.CustomResource {
      * The number of volumes that are attached to the container instance.
      * 
      */
-    @Export(name="volumeCount", type=Integer.class, parameters={})
+    @Export(name="volumeCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> volumeCount;
 
     /**
@@ -474,7 +474,7 @@ public class ContainerInstance extends com.pulumi.resources.CustomResource {
      * You can attach up to 32 volumes to single container instance.
      * 
      */
-    @Export(name="volumes", type=List.class, parameters={ContainerInstanceVolume.class})
+    @Export(name="volumes", refs={List.class,ContainerInstanceVolume.class}, tree="[0,1]")
     private Output<List<ContainerInstanceVolume>> volumes;
 
     /**

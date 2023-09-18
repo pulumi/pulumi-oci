@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Compartment resource in Oracle Cloud Infrastructure Identity service.
@@ -123,6 +124,12 @@ func (o LookupCompartmentResultOutput) ToLookupCompartmentResultOutput() LookupC
 
 func (o LookupCompartmentResultOutput) ToLookupCompartmentResultOutputWithContext(ctx context.Context) LookupCompartmentResultOutput {
 	return o
+}
+
+func (o LookupCompartmentResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupCompartmentResult] {
+	return pulumix.Output[LookupCompartmentResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the parent compartment containing the compartment.

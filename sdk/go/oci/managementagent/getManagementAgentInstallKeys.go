@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Management Agent Install Keys in Oracle Cloud Infrastructure Management Agent service.
@@ -131,6 +132,12 @@ func (o GetManagementAgentInstallKeysResultOutput) ToGetManagementAgentInstallKe
 
 func (o GetManagementAgentInstallKeysResultOutput) ToGetManagementAgentInstallKeysResultOutputWithContext(ctx context.Context) GetManagementAgentInstallKeysResultOutput {
 	return o
+}
+
+func (o GetManagementAgentInstallKeysResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentInstallKeysResult] {
+	return pulumix.Output[GetManagementAgentInstallKeysResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetManagementAgentInstallKeysResultOutput) AccessLevel() pulumi.StringPtrOutput {

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Ipv6s in Oracle Cloud Infrastructure Core service.
@@ -126,6 +127,12 @@ func (o GetIpv6sResultOutput) ToGetIpv6sResultOutput() GetIpv6sResultOutput {
 
 func (o GetIpv6sResultOutput) ToGetIpv6sResultOutputWithContext(ctx context.Context) GetIpv6sResultOutput {
 	return o
+}
+
+func (o GetIpv6sResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetIpv6sResult] {
+	return pulumix.Output[GetIpv6sResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetIpv6sResultOutput) Filters() GetIpv6sFilterArrayOutput {

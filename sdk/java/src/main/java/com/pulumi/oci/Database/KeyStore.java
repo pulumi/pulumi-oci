@@ -79,7 +79,7 @@ public class KeyStore extends com.pulumi.resources.CustomResource {
      * List of databases associated with the key store.
      * 
      */
-    @Export(name="associatedDatabases", type=List.class, parameters={KeyStoreAssociatedDatabase.class})
+    @Export(name="associatedDatabases", refs={List.class,KeyStoreAssociatedDatabase.class}, tree="[0,1]")
     private Output<List<KeyStoreAssociatedDatabase>> associatedDatabases;
 
     /**
@@ -93,7 +93,7 @@ public class KeyStore extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -107,7 +107,7 @@ public class KeyStore extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -121,7 +121,7 @@ public class KeyStore extends com.pulumi.resources.CustomResource {
      * The user-friendly name for the key store. The name does not need to be unique.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -135,7 +135,7 @@ public class KeyStore extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -149,7 +149,7 @@ public class KeyStore extends com.pulumi.resources.CustomResource {
      * Additional information about the current lifecycle state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -163,7 +163,7 @@ public class KeyStore extends com.pulumi.resources.CustomResource {
      * The current state of the key store.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -177,7 +177,7 @@ public class KeyStore extends com.pulumi.resources.CustomResource {
      * The date and time that the key store was created.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -191,7 +191,7 @@ public class KeyStore extends com.pulumi.resources.CustomResource {
      * (Updatable) Key store type details.
      * 
      */
-    @Export(name="typeDetails", type=KeyStoreTypeDetails.class, parameters={})
+    @Export(name="typeDetails", refs={KeyStoreTypeDetails.class}, tree="[0]")
     private Output<KeyStoreTypeDetails> typeDetails;
 
     /**

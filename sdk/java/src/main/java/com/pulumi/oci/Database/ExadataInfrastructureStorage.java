@@ -23,217 +23,217 @@ import javax.annotation.Nullable;
 
 @ResourceType(type="oci:Database/exadataInfrastructureStorage:ExadataInfrastructureStorage")
 public class ExadataInfrastructureStorage extends com.pulumi.resources.CustomResource {
-    @Export(name="activatedStorageCount", type=Integer.class, parameters={})
+    @Export(name="activatedStorageCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> activatedStorageCount;
 
     public Output<Integer> activatedStorageCount() {
         return this.activatedStorageCount;
     }
-    @Export(name="activationFile", type=String.class, parameters={})
+    @Export(name="activationFile", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> activationFile;
 
     public Output<Optional<String>> activationFile() {
         return Codegen.optional(this.activationFile);
     }
-    @Export(name="additionalStorageCount", type=Integer.class, parameters={})
+    @Export(name="additionalStorageCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> additionalStorageCount;
 
     public Output<Integer> additionalStorageCount() {
         return this.additionalStorageCount;
     }
-    @Export(name="adminNetworkCidr", type=String.class, parameters={})
+    @Export(name="adminNetworkCidr", refs={String.class}, tree="[0]")
     private Output<String> adminNetworkCidr;
 
     public Output<String> adminNetworkCidr() {
         return this.adminNetworkCidr;
     }
-    @Export(name="cloudControlPlaneServer1", type=String.class, parameters={})
+    @Export(name="cloudControlPlaneServer1", refs={String.class}, tree="[0]")
     private Output<String> cloudControlPlaneServer1;
 
     public Output<String> cloudControlPlaneServer1() {
         return this.cloudControlPlaneServer1;
     }
-    @Export(name="cloudControlPlaneServer2", type=String.class, parameters={})
+    @Export(name="cloudControlPlaneServer2", refs={String.class}, tree="[0]")
     private Output<String> cloudControlPlaneServer2;
 
     public Output<String> cloudControlPlaneServer2() {
         return this.cloudControlPlaneServer2;
     }
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     public Output<String> compartmentId() {
         return this.compartmentId;
     }
-    @Export(name="computeCount", type=Integer.class, parameters={})
+    @Export(name="computeCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> computeCount;
 
     public Output<Integer> computeCount() {
         return this.computeCount;
     }
-    @Export(name="contacts", type=List.class, parameters={ExadataInfrastructureStorageContact.class})
+    @Export(name="contacts", refs={List.class,ExadataInfrastructureStorageContact.class}, tree="[0,1]")
     private Output</* @Nullable */ List<ExadataInfrastructureStorageContact>> contacts;
 
     public Output<Optional<List<ExadataInfrastructureStorageContact>>> contacts() {
         return Codegen.optional(this.contacts);
     }
-    @Export(name="corporateProxy", type=String.class, parameters={})
+    @Export(name="corporateProxy", refs={String.class}, tree="[0]")
     private Output<String> corporateProxy;
 
     public Output<String> corporateProxy() {
         return this.corporateProxy;
     }
-    @Export(name="cpusEnabled", type=Integer.class, parameters={})
+    @Export(name="cpusEnabled", refs={Integer.class}, tree="[0]")
     private Output<Integer> cpusEnabled;
 
     public Output<Integer> cpusEnabled() {
         return this.cpusEnabled;
     }
-    @Export(name="csiNumber", type=String.class, parameters={})
+    @Export(name="csiNumber", refs={String.class}, tree="[0]")
     private Output<String> csiNumber;
 
     public Output<String> csiNumber() {
         return this.csiNumber;
     }
-    @Export(name="dataStorageSizeInTbs", type=Double.class, parameters={})
+    @Export(name="dataStorageSizeInTbs", refs={Double.class}, tree="[0]")
     private Output<Double> dataStorageSizeInTbs;
 
     public Output<Double> dataStorageSizeInTbs() {
         return this.dataStorageSizeInTbs;
     }
-    @Export(name="dbNodeStorageSizeInGbs", type=Integer.class, parameters={})
+    @Export(name="dbNodeStorageSizeInGbs", refs={Integer.class}, tree="[0]")
     private Output<Integer> dbNodeStorageSizeInGbs;
 
     public Output<Integer> dbNodeStorageSizeInGbs() {
         return this.dbNodeStorageSizeInGbs;
     }
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     public Output<Map<String,Object>> definedTags() {
         return this.definedTags;
     }
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     public Output<String> displayName() {
         return this.displayName;
     }
-    @Export(name="dnsServers", type=List.class, parameters={String.class})
+    @Export(name="dnsServers", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> dnsServers;
 
     public Output<List<String>> dnsServers() {
         return this.dnsServers;
     }
-    @Export(name="exadataInfrastructureId", type=String.class, parameters={})
+    @Export(name="exadataInfrastructureId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> exadataInfrastructureId;
 
     public Output<Optional<String>> exadataInfrastructureId() {
         return Codegen.optional(this.exadataInfrastructureId);
     }
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     public Output<Map<String,Object>> freeformTags() {
         return this.freeformTags;
     }
-    @Export(name="gateway", type=String.class, parameters={})
+    @Export(name="gateway", refs={String.class}, tree="[0]")
     private Output<String> gateway;
 
     public Output<String> gateway() {
         return this.gateway;
     }
-    @Export(name="infiniBandNetworkCidr", type=String.class, parameters={})
+    @Export(name="infiniBandNetworkCidr", refs={String.class}, tree="[0]")
     private Output<String> infiniBandNetworkCidr;
 
     public Output<String> infiniBandNetworkCidr() {
         return this.infiniBandNetworkCidr;
     }
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
     }
-    @Export(name="maintenanceSloStatus", type=String.class, parameters={})
+    @Export(name="maintenanceSloStatus", refs={String.class}, tree="[0]")
     private Output<String> maintenanceSloStatus;
 
     public Output<String> maintenanceSloStatus() {
         return this.maintenanceSloStatus;
     }
-    @Export(name="maintenanceWindow", type=ExadataInfrastructureStorageMaintenanceWindow.class, parameters={})
+    @Export(name="maintenanceWindow", refs={ExadataInfrastructureStorageMaintenanceWindow.class}, tree="[0]")
     private Output<ExadataInfrastructureStorageMaintenanceWindow> maintenanceWindow;
 
     public Output<ExadataInfrastructureStorageMaintenanceWindow> maintenanceWindow() {
         return this.maintenanceWindow;
     }
-    @Export(name="maxCpuCount", type=Integer.class, parameters={})
+    @Export(name="maxCpuCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxCpuCount;
 
     public Output<Integer> maxCpuCount() {
         return this.maxCpuCount;
     }
-    @Export(name="maxDataStorageInTbs", type=Double.class, parameters={})
+    @Export(name="maxDataStorageInTbs", refs={Double.class}, tree="[0]")
     private Output<Double> maxDataStorageInTbs;
 
     public Output<Double> maxDataStorageInTbs() {
         return this.maxDataStorageInTbs;
     }
-    @Export(name="maxDbNodeStorageInGbs", type=Integer.class, parameters={})
+    @Export(name="maxDbNodeStorageInGbs", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxDbNodeStorageInGbs;
 
     public Output<Integer> maxDbNodeStorageInGbs() {
         return this.maxDbNodeStorageInGbs;
     }
-    @Export(name="maxMemoryInGbs", type=Integer.class, parameters={})
+    @Export(name="maxMemoryInGbs", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxMemoryInGbs;
 
     public Output<Integer> maxMemoryInGbs() {
         return this.maxMemoryInGbs;
     }
-    @Export(name="memorySizeInGbs", type=Integer.class, parameters={})
+    @Export(name="memorySizeInGbs", refs={Integer.class}, tree="[0]")
     private Output<Integer> memorySizeInGbs;
 
     public Output<Integer> memorySizeInGbs() {
         return this.memorySizeInGbs;
     }
-    @Export(name="netmask", type=String.class, parameters={})
+    @Export(name="netmask", refs={String.class}, tree="[0]")
     private Output<String> netmask;
 
     public Output<String> netmask() {
         return this.netmask;
     }
-    @Export(name="ntpServers", type=List.class, parameters={String.class})
+    @Export(name="ntpServers", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> ntpServers;
 
     public Output<List<String>> ntpServers() {
         return this.ntpServers;
     }
-    @Export(name="shape", type=String.class, parameters={})
+    @Export(name="shape", refs={String.class}, tree="[0]")
     private Output<String> shape;
 
     public Output<String> shape() {
         return this.shape;
     }
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     public Output<String> state() {
         return this.state;
     }
-    @Export(name="storageCount", type=Integer.class, parameters={})
+    @Export(name="storageCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> storageCount;
 
     public Output<Integer> storageCount() {
         return this.storageCount;
     }
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     public Output<String> timeCreated() {
         return this.timeCreated;
     }
-    @Export(name="timeZone", type=String.class, parameters={})
+    @Export(name="timeZone", refs={String.class}, tree="[0]")
     private Output<String> timeZone;
 
     public Output<String> timeZone() {

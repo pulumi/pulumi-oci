@@ -75,7 +75,7 @@ public class OdaPrivateEndpoint extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that the ODA private endpoint belongs to.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -89,7 +89,7 @@ public class OdaPrivateEndpoint extends com.pulumi.resources.CustomResource {
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -103,7 +103,7 @@ public class OdaPrivateEndpoint extends com.pulumi.resources.CustomResource {
      * (Updatable) Description of the ODA private endpoint.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -117,7 +117,7 @@ public class OdaPrivateEndpoint extends com.pulumi.resources.CustomResource {
      * (Updatable) User-defined name for the ODA private endpoint. Avoid entering confidential information. You can change this value.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -131,7 +131,7 @@ public class OdaPrivateEndpoint extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -145,7 +145,7 @@ public class OdaPrivateEndpoint extends com.pulumi.resources.CustomResource {
      * (Updatable) List of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of [network security groups](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
      * 
      */
-    @Export(name="nsgIds", type=List.class, parameters={String.class})
+    @Export(name="nsgIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> nsgIds;
 
     /**
@@ -159,7 +159,7 @@ public class OdaPrivateEndpoint extends com.pulumi.resources.CustomResource {
      * The current state of the ODA private endpoint.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -176,7 +176,7 @@ public class OdaPrivateEndpoint extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="subnetId", type=String.class, parameters={})
+    @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
@@ -193,7 +193,7 @@ public class OdaPrivateEndpoint extends com.pulumi.resources.CustomResource {
      * When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -207,7 +207,7 @@ public class OdaPrivateEndpoint extends com.pulumi.resources.CustomResource {
      * When the resource was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

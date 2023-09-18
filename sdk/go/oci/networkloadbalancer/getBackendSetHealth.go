@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetBackendSetHealth(ctx *pulumi.Context, args *GetBackendSetHealthArgs, opts ...pulumi.InvokeOption) (*GetBackendSetHealthResult, error) {
@@ -76,6 +77,12 @@ func (o GetBackendSetHealthResultOutput) ToGetBackendSetHealthResultOutput() Get
 
 func (o GetBackendSetHealthResultOutput) ToGetBackendSetHealthResultOutputWithContext(ctx context.Context) GetBackendSetHealthResultOutput {
 	return o
+}
+
+func (o GetBackendSetHealthResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetBackendSetHealthResult] {
+	return pulumix.Output[GetBackendSetHealthResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetBackendSetHealthResultOutput) BackendSetName() pulumi.StringOutput {

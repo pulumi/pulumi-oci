@@ -115,7 +115,7 @@ public class LoadBalancer extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the load balancer.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -129,7 +129,7 @@ public class LoadBalancer extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -143,7 +143,7 @@ public class LoadBalancer extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `example_load_balancer`
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -157,7 +157,7 @@ public class LoadBalancer extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -171,7 +171,7 @@ public class LoadBalancer extends com.pulumi.resources.CustomResource {
      * An array of IP addresses.
      * 
      */
-    @Export(name="ipAddressDetails", type=List.class, parameters={LoadBalancerIpAddressDetail.class})
+    @Export(name="ipAddressDetails", refs={List.class,LoadBalancerIpAddressDetail.class}, tree="[0,1]")
     private Output<List<LoadBalancerIpAddressDetail>> ipAddressDetails;
 
     /**
@@ -189,7 +189,7 @@ public class LoadBalancer extends com.pulumi.resources.CustomResource {
      * 
      */
     @Deprecated /* The 'ip_addresses' field has been deprecated. Please use 'ip_address_details' instead. */
-    @Export(name="ipAddresses", type=List.class, parameters={String.class})
+    @Export(name="ipAddresses", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> ipAddresses;
 
     /**
@@ -209,7 +209,7 @@ public class LoadBalancer extends com.pulumi.resources.CustomResource {
      * Example: &#34;ipMode&#34;:&#34;IPV6&#34;
      * 
      */
-    @Export(name="ipMode", type=String.class, parameters={})
+    @Export(name="ipMode", refs={String.class}, tree="[0]")
     private Output<String> ipMode;
 
     /**
@@ -237,7 +237,7 @@ public class LoadBalancer extends com.pulumi.resources.CustomResource {
      * Example: `true`
      * 
      */
-    @Export(name="isPrivate", type=Boolean.class, parameters={})
+    @Export(name="isPrivate", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isPrivate;
 
     /**
@@ -267,7 +267,7 @@ public class LoadBalancer extends com.pulumi.resources.CustomResource {
      * Example: `[&#34;ocid1.nsg.oc1.phx.unique_ID&#34;]`
      * 
      */
-    @Export(name="networkSecurityGroupIds", type=List.class, parameters={String.class})
+    @Export(name="networkSecurityGroupIds", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> networkSecurityGroupIds;
 
     /**
@@ -289,7 +289,7 @@ public class LoadBalancer extends com.pulumi.resources.CustomResource {
      * An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
      * 
      */
-    @Export(name="reservedIps", type=List.class, parameters={LoadBalancerReservedIp.class})
+    @Export(name="reservedIps", refs={List.class,LoadBalancerReservedIp.class}, tree="[0,1]")
     private Output</* @Nullable */ List<LoadBalancerReservedIp>> reservedIps;
 
     /**
@@ -303,7 +303,7 @@ public class LoadBalancer extends com.pulumi.resources.CustomResource {
      * (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: Starting May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
      * 
      */
-    @Export(name="shape", type=String.class, parameters={})
+    @Export(name="shape", refs={String.class}, tree="[0]")
     private Output<String> shape;
 
     /**
@@ -317,7 +317,7 @@ public class LoadBalancer extends com.pulumi.resources.CustomResource {
      * (Updatable) The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
      * 
      */
-    @Export(name="shapeDetails", type=LoadBalancerShapeDetails.class, parameters={})
+    @Export(name="shapeDetails", refs={LoadBalancerShapeDetails.class}, tree="[0]")
     private Output<LoadBalancerShapeDetails> shapeDetails;
 
     /**
@@ -331,7 +331,7 @@ public class LoadBalancer extends com.pulumi.resources.CustomResource {
      * The current state of the load balancer.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -348,7 +348,7 @@ public class LoadBalancer extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="subnetIds", type=List.class, parameters={String.class})
+    @Export(name="subnetIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> subnetIds;
 
     /**
@@ -365,7 +365,7 @@ public class LoadBalancer extends com.pulumi.resources.CustomResource {
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -379,7 +379,7 @@ public class LoadBalancer extends com.pulumi.resources.CustomResource {
      * The date and time the load balancer was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**

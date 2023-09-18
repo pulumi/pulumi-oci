@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Autonomous Database resource in Oracle Cloud Infrastructure Database service.
@@ -326,6 +327,12 @@ func (o LookupAutonomousDatabaseResultOutput) ToLookupAutonomousDatabaseResultOu
 
 func (o LookupAutonomousDatabaseResultOutput) ToLookupAutonomousDatabaseResultOutputWithContext(ctx context.Context) LookupAutonomousDatabaseResultOutput {
 	return o
+}
+
+func (o LookupAutonomousDatabaseResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAutonomousDatabaseResult] {
+	return pulumix.Output[LookupAutonomousDatabaseResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The current amount of storage in use for user and system data, in terabytes (TB).

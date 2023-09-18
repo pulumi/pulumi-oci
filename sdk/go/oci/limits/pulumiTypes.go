@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -58,6 +59,12 @@ func (i QuotaLockArgs) ToQuotaLockOutputWithContext(ctx context.Context) QuotaLo
 	return pulumi.ToOutputWithContext(ctx, i).(QuotaLockOutput)
 }
 
+func (i QuotaLockArgs) ToOutput(ctx context.Context) pulumix.Output[QuotaLock] {
+	return pulumix.Output[QuotaLock]{
+		OutputState: i.ToQuotaLockOutputWithContext(ctx).OutputState,
+	}
+}
+
 // QuotaLockArrayInput is an input type that accepts QuotaLockArray and QuotaLockArrayOutput values.
 // You can construct a concrete instance of `QuotaLockArrayInput` via:
 //
@@ -83,6 +90,12 @@ func (i QuotaLockArray) ToQuotaLockArrayOutputWithContext(ctx context.Context) Q
 	return pulumi.ToOutputWithContext(ctx, i).(QuotaLockArrayOutput)
 }
 
+func (i QuotaLockArray) ToOutput(ctx context.Context) pulumix.Output[[]QuotaLock] {
+	return pulumix.Output[[]QuotaLock]{
+		OutputState: i.ToQuotaLockArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type QuotaLockOutput struct{ *pulumi.OutputState }
 
 func (QuotaLockOutput) ElementType() reflect.Type {
@@ -95,6 +108,12 @@ func (o QuotaLockOutput) ToQuotaLockOutput() QuotaLockOutput {
 
 func (o QuotaLockOutput) ToQuotaLockOutputWithContext(ctx context.Context) QuotaLockOutput {
 	return o
+}
+
+func (o QuotaLockOutput) ToOutput(ctx context.Context) pulumix.Output[QuotaLock] {
+	return pulumix.Output[QuotaLock]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A message added by the lock creator. The message typically gives an indication of why the resource is locked.
@@ -129,6 +148,12 @@ func (o QuotaLockArrayOutput) ToQuotaLockArrayOutput() QuotaLockArrayOutput {
 
 func (o QuotaLockArrayOutput) ToQuotaLockArrayOutputWithContext(ctx context.Context) QuotaLockArrayOutput {
 	return o
+}
+
+func (o QuotaLockArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]QuotaLock] {
+	return pulumix.Output[[]QuotaLock]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o QuotaLockArrayOutput) Index(i pulumi.IntInput) QuotaLockOutput {
@@ -174,6 +199,12 @@ func (i GetLimitDefinitionsFilterArgs) ToGetLimitDefinitionsFilterOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetLimitDefinitionsFilterOutput)
 }
 
+func (i GetLimitDefinitionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetLimitDefinitionsFilter] {
+	return pulumix.Output[GetLimitDefinitionsFilter]{
+		OutputState: i.ToGetLimitDefinitionsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetLimitDefinitionsFilterArrayInput is an input type that accepts GetLimitDefinitionsFilterArray and GetLimitDefinitionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetLimitDefinitionsFilterArrayInput` via:
 //
@@ -199,6 +230,12 @@ func (i GetLimitDefinitionsFilterArray) ToGetLimitDefinitionsFilterArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetLimitDefinitionsFilterArrayOutput)
 }
 
+func (i GetLimitDefinitionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLimitDefinitionsFilter] {
+	return pulumix.Output[[]GetLimitDefinitionsFilter]{
+		OutputState: i.ToGetLimitDefinitionsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetLimitDefinitionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetLimitDefinitionsFilterOutput) ElementType() reflect.Type {
@@ -211,6 +248,12 @@ func (o GetLimitDefinitionsFilterOutput) ToGetLimitDefinitionsFilterOutput() Get
 
 func (o GetLimitDefinitionsFilterOutput) ToGetLimitDefinitionsFilterOutputWithContext(ctx context.Context) GetLimitDefinitionsFilterOutput {
 	return o
+}
+
+func (o GetLimitDefinitionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetLimitDefinitionsFilter] {
+	return pulumix.Output[GetLimitDefinitionsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Optional field, filter for a specific resource limit.
@@ -238,6 +281,12 @@ func (o GetLimitDefinitionsFilterArrayOutput) ToGetLimitDefinitionsFilterArrayOu
 
 func (o GetLimitDefinitionsFilterArrayOutput) ToGetLimitDefinitionsFilterArrayOutputWithContext(ctx context.Context) GetLimitDefinitionsFilterArrayOutput {
 	return o
+}
+
+func (o GetLimitDefinitionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLimitDefinitionsFilter] {
+	return pulumix.Output[[]GetLimitDefinitionsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetLimitDefinitionsFilterArrayOutput) Index(i pulumi.IntInput) GetLimitDefinitionsFilterOutput {
@@ -311,6 +360,12 @@ func (i GetLimitDefinitionsLimitDefinitionArgs) ToGetLimitDefinitionsLimitDefini
 	return pulumi.ToOutputWithContext(ctx, i).(GetLimitDefinitionsLimitDefinitionOutput)
 }
 
+func (i GetLimitDefinitionsLimitDefinitionArgs) ToOutput(ctx context.Context) pulumix.Output[GetLimitDefinitionsLimitDefinition] {
+	return pulumix.Output[GetLimitDefinitionsLimitDefinition]{
+		OutputState: i.ToGetLimitDefinitionsLimitDefinitionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetLimitDefinitionsLimitDefinitionArrayInput is an input type that accepts GetLimitDefinitionsLimitDefinitionArray and GetLimitDefinitionsLimitDefinitionArrayOutput values.
 // You can construct a concrete instance of `GetLimitDefinitionsLimitDefinitionArrayInput` via:
 //
@@ -336,6 +391,12 @@ func (i GetLimitDefinitionsLimitDefinitionArray) ToGetLimitDefinitionsLimitDefin
 	return pulumi.ToOutputWithContext(ctx, i).(GetLimitDefinitionsLimitDefinitionArrayOutput)
 }
 
+func (i GetLimitDefinitionsLimitDefinitionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLimitDefinitionsLimitDefinition] {
+	return pulumix.Output[[]GetLimitDefinitionsLimitDefinition]{
+		OutputState: i.ToGetLimitDefinitionsLimitDefinitionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetLimitDefinitionsLimitDefinitionOutput struct{ *pulumi.OutputState }
 
 func (GetLimitDefinitionsLimitDefinitionOutput) ElementType() reflect.Type {
@@ -348,6 +409,12 @@ func (o GetLimitDefinitionsLimitDefinitionOutput) ToGetLimitDefinitionsLimitDefi
 
 func (o GetLimitDefinitionsLimitDefinitionOutput) ToGetLimitDefinitionsLimitDefinitionOutputWithContext(ctx context.Context) GetLimitDefinitionsLimitDefinitionOutput {
 	return o
+}
+
+func (o GetLimitDefinitionsLimitDefinitionOutput) ToOutput(ctx context.Context) pulumix.Output[GetLimitDefinitionsLimitDefinition] {
+	return pulumix.Output[GetLimitDefinitionsLimitDefinition]{
+		OutputState: o.OutputState,
+	}
 }
 
 // If true, quota policies can be created on top of this resource limit.
@@ -409,6 +476,12 @@ func (o GetLimitDefinitionsLimitDefinitionArrayOutput) ToGetLimitDefinitionsLimi
 	return o
 }
 
+func (o GetLimitDefinitionsLimitDefinitionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLimitDefinitionsLimitDefinition] {
+	return pulumix.Output[[]GetLimitDefinitionsLimitDefinition]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetLimitDefinitionsLimitDefinitionArrayOutput) Index(i pulumi.IntInput) GetLimitDefinitionsLimitDefinitionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLimitDefinitionsLimitDefinition {
 		return vs[0].([]GetLimitDefinitionsLimitDefinition)[vs[1].(int)]
@@ -452,6 +525,12 @@ func (i GetLimitValuesFilterArgs) ToGetLimitValuesFilterOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetLimitValuesFilterOutput)
 }
 
+func (i GetLimitValuesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetLimitValuesFilter] {
+	return pulumix.Output[GetLimitValuesFilter]{
+		OutputState: i.ToGetLimitValuesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetLimitValuesFilterArrayInput is an input type that accepts GetLimitValuesFilterArray and GetLimitValuesFilterArrayOutput values.
 // You can construct a concrete instance of `GetLimitValuesFilterArrayInput` via:
 //
@@ -477,6 +556,12 @@ func (i GetLimitValuesFilterArray) ToGetLimitValuesFilterArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetLimitValuesFilterArrayOutput)
 }
 
+func (i GetLimitValuesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLimitValuesFilter] {
+	return pulumix.Output[[]GetLimitValuesFilter]{
+		OutputState: i.ToGetLimitValuesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetLimitValuesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetLimitValuesFilterOutput) ElementType() reflect.Type {
@@ -489,6 +574,12 @@ func (o GetLimitValuesFilterOutput) ToGetLimitValuesFilterOutput() GetLimitValue
 
 func (o GetLimitValuesFilterOutput) ToGetLimitValuesFilterOutputWithContext(ctx context.Context) GetLimitValuesFilterOutput {
 	return o
+}
+
+func (o GetLimitValuesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetLimitValuesFilter] {
+	return pulumix.Output[GetLimitValuesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Optional field, can be used to see a specific resource limit value.
@@ -516,6 +607,12 @@ func (o GetLimitValuesFilterArrayOutput) ToGetLimitValuesFilterArrayOutput() Get
 
 func (o GetLimitValuesFilterArrayOutput) ToGetLimitValuesFilterArrayOutputWithContext(ctx context.Context) GetLimitValuesFilterArrayOutput {
 	return o
+}
+
+func (o GetLimitValuesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLimitValuesFilter] {
+	return pulumix.Output[[]GetLimitValuesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetLimitValuesFilterArrayOutput) Index(i pulumi.IntInput) GetLimitValuesFilterOutput {
@@ -569,6 +666,12 @@ func (i GetLimitValuesLimitValueArgs) ToGetLimitValuesLimitValueOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetLimitValuesLimitValueOutput)
 }
 
+func (i GetLimitValuesLimitValueArgs) ToOutput(ctx context.Context) pulumix.Output[GetLimitValuesLimitValue] {
+	return pulumix.Output[GetLimitValuesLimitValue]{
+		OutputState: i.ToGetLimitValuesLimitValueOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetLimitValuesLimitValueArrayInput is an input type that accepts GetLimitValuesLimitValueArray and GetLimitValuesLimitValueArrayOutput values.
 // You can construct a concrete instance of `GetLimitValuesLimitValueArrayInput` via:
 //
@@ -594,6 +697,12 @@ func (i GetLimitValuesLimitValueArray) ToGetLimitValuesLimitValueArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetLimitValuesLimitValueArrayOutput)
 }
 
+func (i GetLimitValuesLimitValueArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLimitValuesLimitValue] {
+	return pulumix.Output[[]GetLimitValuesLimitValue]{
+		OutputState: i.ToGetLimitValuesLimitValueArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetLimitValuesLimitValueOutput struct{ *pulumi.OutputState }
 
 func (GetLimitValuesLimitValueOutput) ElementType() reflect.Type {
@@ -606,6 +715,12 @@ func (o GetLimitValuesLimitValueOutput) ToGetLimitValuesLimitValueOutput() GetLi
 
 func (o GetLimitValuesLimitValueOutput) ToGetLimitValuesLimitValueOutputWithContext(ctx context.Context) GetLimitValuesLimitValueOutput {
 	return o
+}
+
+func (o GetLimitValuesLimitValueOutput) ToOutput(ctx context.Context) pulumix.Output[GetLimitValuesLimitValue] {
+	return pulumix.Output[GetLimitValuesLimitValue]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Filter entries by availability domain. This implies that only AD-specific values are returned.
@@ -640,6 +755,12 @@ func (o GetLimitValuesLimitValueArrayOutput) ToGetLimitValuesLimitValueArrayOutp
 
 func (o GetLimitValuesLimitValueArrayOutput) ToGetLimitValuesLimitValueArrayOutputWithContext(ctx context.Context) GetLimitValuesLimitValueArrayOutput {
 	return o
+}
+
+func (o GetLimitValuesLimitValueArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLimitValuesLimitValue] {
+	return pulumix.Output[[]GetLimitValuesLimitValue]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetLimitValuesLimitValueArrayOutput) Index(i pulumi.IntInput) GetLimitValuesLimitValueOutput {
@@ -693,6 +814,12 @@ func (i GetQuotaLockArgs) ToGetQuotaLockOutputWithContext(ctx context.Context) G
 	return pulumi.ToOutputWithContext(ctx, i).(GetQuotaLockOutput)
 }
 
+func (i GetQuotaLockArgs) ToOutput(ctx context.Context) pulumix.Output[GetQuotaLock] {
+	return pulumix.Output[GetQuotaLock]{
+		OutputState: i.ToGetQuotaLockOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetQuotaLockArrayInput is an input type that accepts GetQuotaLockArray and GetQuotaLockArrayOutput values.
 // You can construct a concrete instance of `GetQuotaLockArrayInput` via:
 //
@@ -718,6 +845,12 @@ func (i GetQuotaLockArray) ToGetQuotaLockArrayOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetQuotaLockArrayOutput)
 }
 
+func (i GetQuotaLockArray) ToOutput(ctx context.Context) pulumix.Output[[]GetQuotaLock] {
+	return pulumix.Output[[]GetQuotaLock]{
+		OutputState: i.ToGetQuotaLockArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetQuotaLockOutput struct{ *pulumi.OutputState }
 
 func (GetQuotaLockOutput) ElementType() reflect.Type {
@@ -730,6 +863,12 @@ func (o GetQuotaLockOutput) ToGetQuotaLockOutput() GetQuotaLockOutput {
 
 func (o GetQuotaLockOutput) ToGetQuotaLockOutputWithContext(ctx context.Context) GetQuotaLockOutput {
 	return o
+}
+
+func (o GetQuotaLockOutput) ToOutput(ctx context.Context) pulumix.Output[GetQuotaLock] {
+	return pulumix.Output[GetQuotaLock]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A message added by the lock creator. The message typically gives an indication of why the resource is locked.
@@ -764,6 +903,12 @@ func (o GetQuotaLockArrayOutput) ToGetQuotaLockArrayOutput() GetQuotaLockArrayOu
 
 func (o GetQuotaLockArrayOutput) ToGetQuotaLockArrayOutputWithContext(ctx context.Context) GetQuotaLockArrayOutput {
 	return o
+}
+
+func (o GetQuotaLockArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetQuotaLock] {
+	return pulumix.Output[[]GetQuotaLock]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetQuotaLockArrayOutput) Index(i pulumi.IntInput) GetQuotaLockOutput {
@@ -809,6 +954,12 @@ func (i GetQuotasFilterArgs) ToGetQuotasFilterOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetQuotasFilterOutput)
 }
 
+func (i GetQuotasFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetQuotasFilter] {
+	return pulumix.Output[GetQuotasFilter]{
+		OutputState: i.ToGetQuotasFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetQuotasFilterArrayInput is an input type that accepts GetQuotasFilterArray and GetQuotasFilterArrayOutput values.
 // You can construct a concrete instance of `GetQuotasFilterArrayInput` via:
 //
@@ -834,6 +985,12 @@ func (i GetQuotasFilterArray) ToGetQuotasFilterArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetQuotasFilterArrayOutput)
 }
 
+func (i GetQuotasFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetQuotasFilter] {
+	return pulumix.Output[[]GetQuotasFilter]{
+		OutputState: i.ToGetQuotasFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetQuotasFilterOutput struct{ *pulumi.OutputState }
 
 func (GetQuotasFilterOutput) ElementType() reflect.Type {
@@ -846,6 +1003,12 @@ func (o GetQuotasFilterOutput) ToGetQuotasFilterOutput() GetQuotasFilterOutput {
 
 func (o GetQuotasFilterOutput) ToGetQuotasFilterOutputWithContext(ctx context.Context) GetQuotasFilterOutput {
 	return o
+}
+
+func (o GetQuotasFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetQuotasFilter] {
+	return pulumix.Output[GetQuotasFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // name
@@ -873,6 +1036,12 @@ func (o GetQuotasFilterArrayOutput) ToGetQuotasFilterArrayOutput() GetQuotasFilt
 
 func (o GetQuotasFilterArrayOutput) ToGetQuotasFilterArrayOutputWithContext(ctx context.Context) GetQuotasFilterArrayOutput {
 	return o
+}
+
+func (o GetQuotasFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetQuotasFilter] {
+	return pulumix.Output[[]GetQuotasFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetQuotasFilterArrayOutput) Index(i pulumi.IntInput) GetQuotasFilterOutput {
@@ -952,6 +1121,12 @@ func (i GetQuotasQuotaArgs) ToGetQuotasQuotaOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetQuotasQuotaOutput)
 }
 
+func (i GetQuotasQuotaArgs) ToOutput(ctx context.Context) pulumix.Output[GetQuotasQuota] {
+	return pulumix.Output[GetQuotasQuota]{
+		OutputState: i.ToGetQuotasQuotaOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetQuotasQuotaArrayInput is an input type that accepts GetQuotasQuotaArray and GetQuotasQuotaArrayOutput values.
 // You can construct a concrete instance of `GetQuotasQuotaArrayInput` via:
 //
@@ -977,6 +1152,12 @@ func (i GetQuotasQuotaArray) ToGetQuotasQuotaArrayOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetQuotasQuotaArrayOutput)
 }
 
+func (i GetQuotasQuotaArray) ToOutput(ctx context.Context) pulumix.Output[[]GetQuotasQuota] {
+	return pulumix.Output[[]GetQuotasQuota]{
+		OutputState: i.ToGetQuotasQuotaArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetQuotasQuotaOutput struct{ *pulumi.OutputState }
 
 func (GetQuotasQuotaOutput) ElementType() reflect.Type {
@@ -989,6 +1170,12 @@ func (o GetQuotasQuotaOutput) ToGetQuotasQuotaOutput() GetQuotasQuotaOutput {
 
 func (o GetQuotasQuotaOutput) ToGetQuotasQuotaOutputWithContext(ctx context.Context) GetQuotasQuotaOutput {
 	return o
+}
+
+func (o GetQuotasQuotaOutput) ToOutput(ctx context.Context) pulumix.Output[GetQuotasQuota] {
+	return pulumix.Output[GetQuotasQuota]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
@@ -1059,6 +1246,12 @@ func (o GetQuotasQuotaArrayOutput) ToGetQuotasQuotaArrayOutputWithContext(ctx co
 	return o
 }
 
+func (o GetQuotasQuotaArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetQuotasQuota] {
+	return pulumix.Output[[]GetQuotasQuota]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetQuotasQuotaArrayOutput) Index(i pulumi.IntInput) GetQuotasQuotaOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetQuotasQuota {
 		return vs[0].([]GetQuotasQuota)[vs[1].(int)]
@@ -1110,6 +1303,12 @@ func (i GetQuotasQuotaLockArgs) ToGetQuotasQuotaLockOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetQuotasQuotaLockOutput)
 }
 
+func (i GetQuotasQuotaLockArgs) ToOutput(ctx context.Context) pulumix.Output[GetQuotasQuotaLock] {
+	return pulumix.Output[GetQuotasQuotaLock]{
+		OutputState: i.ToGetQuotasQuotaLockOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetQuotasQuotaLockArrayInput is an input type that accepts GetQuotasQuotaLockArray and GetQuotasQuotaLockArrayOutput values.
 // You can construct a concrete instance of `GetQuotasQuotaLockArrayInput` via:
 //
@@ -1135,6 +1334,12 @@ func (i GetQuotasQuotaLockArray) ToGetQuotasQuotaLockArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetQuotasQuotaLockArrayOutput)
 }
 
+func (i GetQuotasQuotaLockArray) ToOutput(ctx context.Context) pulumix.Output[[]GetQuotasQuotaLock] {
+	return pulumix.Output[[]GetQuotasQuotaLock]{
+		OutputState: i.ToGetQuotasQuotaLockArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetQuotasQuotaLockOutput struct{ *pulumi.OutputState }
 
 func (GetQuotasQuotaLockOutput) ElementType() reflect.Type {
@@ -1147,6 +1352,12 @@ func (o GetQuotasQuotaLockOutput) ToGetQuotasQuotaLockOutput() GetQuotasQuotaLoc
 
 func (o GetQuotasQuotaLockOutput) ToGetQuotasQuotaLockOutputWithContext(ctx context.Context) GetQuotasQuotaLockOutput {
 	return o
+}
+
+func (o GetQuotasQuotaLockOutput) ToOutput(ctx context.Context) pulumix.Output[GetQuotasQuotaLock] {
+	return pulumix.Output[GetQuotasQuotaLock]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A message added by the lock creator. The message typically gives an indication of why the resource is locked.
@@ -1181,6 +1392,12 @@ func (o GetQuotasQuotaLockArrayOutput) ToGetQuotasQuotaLockArrayOutput() GetQuot
 
 func (o GetQuotasQuotaLockArrayOutput) ToGetQuotasQuotaLockArrayOutputWithContext(ctx context.Context) GetQuotasQuotaLockArrayOutput {
 	return o
+}
+
+func (o GetQuotasQuotaLockArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetQuotasQuotaLock] {
+	return pulumix.Output[[]GetQuotasQuotaLock]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetQuotasQuotaLockArrayOutput) Index(i pulumi.IntInput) GetQuotasQuotaLockOutput {
@@ -1226,6 +1443,12 @@ func (i GetServicesFilterArgs) ToGetServicesFilterOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetServicesFilterOutput)
 }
 
+func (i GetServicesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetServicesFilter] {
+	return pulumix.Output[GetServicesFilter]{
+		OutputState: i.ToGetServicesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetServicesFilterArrayInput is an input type that accepts GetServicesFilterArray and GetServicesFilterArrayOutput values.
 // You can construct a concrete instance of `GetServicesFilterArrayInput` via:
 //
@@ -1251,6 +1474,12 @@ func (i GetServicesFilterArray) ToGetServicesFilterArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetServicesFilterArrayOutput)
 }
 
+func (i GetServicesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetServicesFilter] {
+	return pulumix.Output[[]GetServicesFilter]{
+		OutputState: i.ToGetServicesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetServicesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetServicesFilterOutput) ElementType() reflect.Type {
@@ -1263,6 +1492,12 @@ func (o GetServicesFilterOutput) ToGetServicesFilterOutput() GetServicesFilterOu
 
 func (o GetServicesFilterOutput) ToGetServicesFilterOutputWithContext(ctx context.Context) GetServicesFilterOutput {
 	return o
+}
+
+func (o GetServicesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetServicesFilter] {
+	return pulumix.Output[GetServicesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The service name. Use this when calling other APIs.
@@ -1290,6 +1525,12 @@ func (o GetServicesFilterArrayOutput) ToGetServicesFilterArrayOutput() GetServic
 
 func (o GetServicesFilterArrayOutput) ToGetServicesFilterArrayOutputWithContext(ctx context.Context) GetServicesFilterArrayOutput {
 	return o
+}
+
+func (o GetServicesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetServicesFilter] {
+	return pulumix.Output[[]GetServicesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetServicesFilterArrayOutput) Index(i pulumi.IntInput) GetServicesFilterOutput {
@@ -1335,6 +1576,12 @@ func (i GetServicesServiceArgs) ToGetServicesServiceOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetServicesServiceOutput)
 }
 
+func (i GetServicesServiceArgs) ToOutput(ctx context.Context) pulumix.Output[GetServicesService] {
+	return pulumix.Output[GetServicesService]{
+		OutputState: i.ToGetServicesServiceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetServicesServiceArrayInput is an input type that accepts GetServicesServiceArray and GetServicesServiceArrayOutput values.
 // You can construct a concrete instance of `GetServicesServiceArrayInput` via:
 //
@@ -1360,6 +1607,12 @@ func (i GetServicesServiceArray) ToGetServicesServiceArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetServicesServiceArrayOutput)
 }
 
+func (i GetServicesServiceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetServicesService] {
+	return pulumix.Output[[]GetServicesService]{
+		OutputState: i.ToGetServicesServiceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetServicesServiceOutput struct{ *pulumi.OutputState }
 
 func (GetServicesServiceOutput) ElementType() reflect.Type {
@@ -1372,6 +1625,12 @@ func (o GetServicesServiceOutput) ToGetServicesServiceOutput() GetServicesServic
 
 func (o GetServicesServiceOutput) ToGetServicesServiceOutputWithContext(ctx context.Context) GetServicesServiceOutput {
 	return o
+}
+
+func (o GetServicesServiceOutput) ToOutput(ctx context.Context) pulumix.Output[GetServicesService] {
+	return pulumix.Output[GetServicesService]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The friendly service name.
@@ -1396,6 +1655,12 @@ func (o GetServicesServiceArrayOutput) ToGetServicesServiceArrayOutput() GetServ
 
 func (o GetServicesServiceArrayOutput) ToGetServicesServiceArrayOutputWithContext(ctx context.Context) GetServicesServiceArrayOutput {
 	return o
+}
+
+func (o GetServicesServiceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetServicesService] {
+	return pulumix.Output[[]GetServicesService]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetServicesServiceArrayOutput) Index(i pulumi.IntInput) GetServicesServiceOutput {

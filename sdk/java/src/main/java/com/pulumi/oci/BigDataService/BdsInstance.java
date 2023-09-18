@@ -175,7 +175,7 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
      * 
      */
-    @Export(name="bootstrapScriptUrl", type=String.class, parameters={})
+    @Export(name="bootstrapScriptUrl", refs={String.class}, tree="[0]")
     private Output<String> bootstrapScriptUrl;
 
     /**
@@ -189,7 +189,7 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
      * The information about added Cloud SQL capability
      * 
      */
-    @Export(name="cloudSqlDetails", type=List.class, parameters={BdsInstanceCloudSqlDetail.class})
+    @Export(name="cloudSqlDetails", refs={List.class,BdsInstanceCloudSqlDetail.class}, tree="[0,1]")
     private Output<List<BdsInstanceCloudSqlDetail>> cloudSqlDetails;
 
     /**
@@ -203,7 +203,7 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
      * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
      * 
      */
-    @Export(name="clusterAdminPassword", type=String.class, parameters={})
+    @Export(name="clusterAdminPassword", refs={String.class}, tree="[0]")
     private Output<String> clusterAdminPassword;
 
     /**
@@ -217,7 +217,7 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
      * Specific info about a Hadoop cluster
      * 
      */
-    @Export(name="clusterDetails", type=List.class, parameters={BdsInstanceClusterDetail.class})
+    @Export(name="clusterDetails", refs={List.class,BdsInstanceClusterDetail.class}, tree="[0,1]")
     private Output<List<BdsInstanceClusterDetail>> clusterDetails;
 
     /**
@@ -231,7 +231,7 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
      * Profile of the Big Data Service cluster.
      * 
      */
-    @Export(name="clusterProfile", type=String.class, parameters={})
+    @Export(name="clusterProfile", refs={String.class}, tree="[0]")
     private Output<String> clusterProfile;
 
     /**
@@ -245,7 +245,7 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
      * The SSH public key used to authenticate the cluster connection.
      * 
      */
-    @Export(name="clusterPublicKey", type=String.class, parameters={})
+    @Export(name="clusterPublicKey", refs={String.class}, tree="[0]")
     private Output<String> clusterPublicKey;
 
     /**
@@ -259,7 +259,7 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
      * Version of the Hadoop distribution
      * 
      */
-    @Export(name="clusterVersion", type=String.class, parameters={})
+    @Export(name="clusterVersion", refs={String.class}, tree="[0]")
     private Output<String> clusterVersion;
 
     /**
@@ -273,7 +273,7 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the compartment
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -283,7 +283,7 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
     public Output<String> compartmentId() {
         return this.compartmentId;
     }
-    @Export(name="computeOnlyWorkerNode", type=BdsInstanceComputeOnlyWorkerNode.class, parameters={})
+    @Export(name="computeOnlyWorkerNode", refs={BdsInstanceComputeOnlyWorkerNode.class}, tree="[0]")
     private Output</* @Nullable */ BdsInstanceComputeOnlyWorkerNode> computeOnlyWorkerNode;
 
     public Output<Optional<BdsInstanceComputeOnlyWorkerNode>> computeOnlyWorkerNode() {
@@ -293,7 +293,7 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
      * The user who created the cluster.
      * 
      */
-    @Export(name="createdBy", type=String.class, parameters={})
+    @Export(name="createdBy", refs={String.class}, tree="[0]")
     private Output<String> createdBy;
 
     /**
@@ -307,7 +307,7 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -321,7 +321,7 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) Name of the BDS instance
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -331,7 +331,7 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
     public Output<String> displayName() {
         return this.displayName;
     }
-    @Export(name="edgeNode", type=BdsInstanceEdgeNode.class, parameters={})
+    @Export(name="edgeNode", refs={BdsInstanceEdgeNode.class}, tree="[0]")
     private Output</* @Nullable */ BdsInstanceEdgeNode> edgeNode;
 
     public Output<Optional<BdsInstanceEdgeNode>> edgeNode() {
@@ -341,7 +341,7 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -355,7 +355,7 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
      * 
      */
-    @Export(name="isCloudSqlConfigured", type=Boolean.class, parameters={})
+    @Export(name="isCloudSqlConfigured", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isCloudSqlConfigured;
 
     /**
@@ -369,7 +369,7 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
      * 
      */
-    @Export(name="isForceStopJobs", type=Boolean.class, parameters={})
+    @Export(name="isForceStopJobs", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> isForceStopJobs;
 
     /**
@@ -383,7 +383,7 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
      * Boolean flag specifying whether or not the cluster is HA
      * 
      */
-    @Export(name="isHighAvailability", type=Boolean.class, parameters={})
+    @Export(name="isHighAvailability", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isHighAvailability;
 
     /**
@@ -397,7 +397,7 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
      * Boolean flag specifying whether or not Kafka should be configured.
      * 
      */
-    @Export(name="isKafkaConfigured", type=Boolean.class, parameters={})
+    @Export(name="isKafkaConfigured", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> isKafkaConfigured;
 
     /**
@@ -411,7 +411,7 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
      * Boolean flag specifying whether or not the cluster should be setup as secure.
      * 
      */
-    @Export(name="isSecure", type=Boolean.class, parameters={})
+    @Export(name="isSecure", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isSecure;
 
     /**
@@ -425,7 +425,7 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
      * The kafka broker node in the BDS instance
      * 
      */
-    @Export(name="kafkaBrokerNode", type=BdsInstanceKafkaBrokerNode.class, parameters={})
+    @Export(name="kafkaBrokerNode", refs={BdsInstanceKafkaBrokerNode.class}, tree="[0]")
     private Output</* @Nullable */ BdsInstanceKafkaBrokerNode> kafkaBrokerNode;
 
     /**
@@ -439,7 +439,7 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
      * The user-defined kerberos realm name.
      * 
      */
-    @Export(name="kerberosRealmName", type=String.class, parameters={})
+    @Export(name="kerberosRealmName", refs={String.class}, tree="[0]")
     private Output<String> kerberosRealmName;
 
     /**
@@ -453,7 +453,7 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the Key Management master encryption key.
      * 
      */
-    @Export(name="kmsKeyId", type=String.class, parameters={})
+    @Export(name="kmsKeyId", refs={String.class}, tree="[0]")
     private Output<String> kmsKeyId;
 
     /**
@@ -467,7 +467,7 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
      * The master node in the BDS instance
      * 
      */
-    @Export(name="masterNode", type=BdsInstanceMasterNode.class, parameters={})
+    @Export(name="masterNode", refs={BdsInstanceMasterNode.class}, tree="[0]")
     private Output<BdsInstanceMasterNode> masterNode;
 
     /**
@@ -481,7 +481,7 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
      * Additional configuration of the user&#39;s network.
      * 
      */
-    @Export(name="networkConfig", type=BdsInstanceNetworkConfig.class, parameters={})
+    @Export(name="networkConfig", refs={BdsInstanceNetworkConfig.class}, tree="[0]")
     private Output<BdsInstanceNetworkConfig> networkConfig;
 
     /**
@@ -495,7 +495,7 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
      * The list of nodes in the Big Data Service cluster.
      * 
      */
-    @Export(name="nodes", type=List.class, parameters={BdsInstanceNode.class})
+    @Export(name="nodes", refs={List.class,BdsInstanceNode.class}, tree="[0,1]")
     private Output<List<BdsInstanceNode>> nodes;
 
     /**
@@ -509,7 +509,7 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
      * The amount of worker nodes should be created
      * 
      */
-    @Export(name="numberOfNodes", type=Integer.class, parameters={})
+    @Export(name="numberOfNodes", refs={Integer.class}, tree="[0]")
     private Output<Integer> numberOfNodes;
 
     /**
@@ -523,7 +523,7 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
      * Number of nodes that require a maintenance reboot
      * 
      */
-    @Export(name="numberOfNodesRequiringMaintenanceReboot", type=Integer.class, parameters={})
+    @Export(name="numberOfNodesRequiringMaintenanceReboot", refs={Integer.class}, tree="[0]")
     private Output<Integer> numberOfNodesRequiringMaintenanceReboot;
 
     /**
@@ -537,7 +537,7 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) The version of the patch to be upated.
      * 
      */
-    @Export(name="osPatchVersion", type=String.class, parameters={})
+    @Export(name="osPatchVersion", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> osPatchVersion;
 
     /**
@@ -551,7 +551,7 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -565,7 +565,7 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
      * The time the BDS instance was created. An RFC3339 formatted datetime string
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -579,7 +579,7 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
      * The time the BDS instance was updated. An RFC3339 formatted datetime string
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -593,7 +593,7 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
      * The utility node in the BDS instance
      * 
      */
-    @Export(name="utilNode", type=BdsInstanceUtilNode.class, parameters={})
+    @Export(name="utilNode", refs={BdsInstanceUtilNode.class}, tree="[0]")
     private Output<BdsInstanceUtilNode> utilNode;
 
     /**
@@ -603,7 +603,7 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
     public Output<BdsInstanceUtilNode> utilNode() {
         return this.utilNode;
     }
-    @Export(name="workerNode", type=BdsInstanceWorkerNode.class, parameters={})
+    @Export(name="workerNode", refs={BdsInstanceWorkerNode.class}, tree="[0]")
     private Output<BdsInstanceWorkerNode> workerNode;
 
     public Output<BdsInstanceWorkerNode> workerNode() {

@@ -73,7 +73,7 @@ public class MonitoredResourcesSearchAssociation extends com.pulumi.resources.Cu
      * Association type filter to search associated resources.
      * 
      */
-    @Export(name="associationType", type=String.class, parameters={})
+    @Export(name="associationType", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> associationType;
 
     /**
@@ -87,7 +87,7 @@ public class MonitoredResourcesSearchAssociation extends com.pulumi.resources.Cu
      * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -101,7 +101,7 @@ public class MonitoredResourcesSearchAssociation extends com.pulumi.resources.Cu
      * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    @Export(name="destinationResourceId", type=String.class, parameters={})
+    @Export(name="destinationResourceId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> destinationResourceId;
 
     /**
@@ -115,7 +115,7 @@ public class MonitoredResourcesSearchAssociation extends com.pulumi.resources.Cu
      * Source Monitored Resource Name.
      * 
      */
-    @Export(name="destinationResourceName", type=String.class, parameters={})
+    @Export(name="destinationResourceName", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> destinationResourceName;
 
     /**
@@ -129,7 +129,7 @@ public class MonitoredResourcesSearchAssociation extends com.pulumi.resources.Cu
      * Source Monitored Resource Type.
      * 
      */
-    @Export(name="destinationResourceType", type=String.class, parameters={})
+    @Export(name="destinationResourceType", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> destinationResourceType;
 
     /**
@@ -143,7 +143,7 @@ public class MonitoredResourcesSearchAssociation extends com.pulumi.resources.Cu
      * List of Monitored Resource Associations.
      * 
      */
-    @Export(name="items", type=List.class, parameters={MonitoredResourcesSearchAssociationItem.class})
+    @Export(name="items", refs={List.class,MonitoredResourcesSearchAssociationItem.class}, tree="[0,1]")
     private Output<List<MonitoredResourcesSearchAssociationItem>> items;
 
     /**
@@ -157,7 +157,7 @@ public class MonitoredResourcesSearchAssociation extends com.pulumi.resources.Cu
      * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    @Export(name="sourceResourceId", type=String.class, parameters={})
+    @Export(name="sourceResourceId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> sourceResourceId;
 
     /**
@@ -171,7 +171,7 @@ public class MonitoredResourcesSearchAssociation extends com.pulumi.resources.Cu
      * Source Monitored Resource Name.
      * 
      */
-    @Export(name="sourceResourceName", type=String.class, parameters={})
+    @Export(name="sourceResourceName", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> sourceResourceName;
 
     /**
@@ -188,7 +188,7 @@ public class MonitoredResourcesSearchAssociation extends com.pulumi.resources.Cu
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="sourceResourceType", type=String.class, parameters={})
+    @Export(name="sourceResourceType", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> sourceResourceType;
 
     /**

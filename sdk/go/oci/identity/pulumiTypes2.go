@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -54,6 +55,12 @@ func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentials
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyOutput)
 }
 
+func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKey] {
+	return pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKey]{
+		OutputState: i.ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyArrayInput is an input type that accepts GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyArray and GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyArrayInput` via:
 //
@@ -79,6 +86,12 @@ func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentials
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyArrayOutput)
 }
 
+func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKey] {
+	return pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKey]{
+		OutputState: i.ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyOutput) ElementType() reflect.Type {
@@ -91,6 +104,12 @@ func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentials
 
 func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyOutput) ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyOutputWithContext(ctx context.Context) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyOutput {
 	return o
+}
+
+func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKey] {
+	return pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKey]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the user's support account.
@@ -126,6 +145,12 @@ func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentials
 
 func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyArrayOutput) ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyArrayOutputWithContext(ctx context.Context) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyArrayOutput {
 	return o
+}
+
+func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKey] {
+	return pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKey]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyArrayOutput) Index(i pulumi.IntInput) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyOutput {
@@ -175,6 +200,12 @@ func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentials
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialOutput)
 }
 
+func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredential] {
+	return pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredential]{
+		OutputState: i.ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialArrayInput is an input type that accepts GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialArray and GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialArrayInput` via:
 //
@@ -200,6 +231,12 @@ func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentials
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialArrayOutput)
 }
 
+func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredential] {
+	return pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredential]{
+		OutputState: i.ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialOutput) ElementType() reflect.Type {
@@ -212,6 +249,12 @@ func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentials
 
 func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialOutput) ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialOutputWithContext(ctx context.Context) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialOutput {
 	return o
+}
+
+func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredential] {
+	return pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the user's support account.
@@ -247,6 +290,12 @@ func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentials
 
 func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialArrayOutput) ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialArrayOutputWithContext(ctx context.Context) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialArrayOutput {
 	return o
+}
+
+func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredential] {
+	return pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialArrayOutput) Index(i pulumi.IntInput) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialOutput {
@@ -296,6 +345,12 @@ func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentials
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialOutput)
 }
 
+func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredential] {
+	return pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredential]{
+		OutputState: i.ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialArrayInput is an input type that accepts GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialArray and GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialArrayInput` via:
 //
@@ -321,6 +376,12 @@ func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentials
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialArrayOutput)
 }
 
+func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredential] {
+	return pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredential]{
+		OutputState: i.ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialOutput) ElementType() reflect.Type {
@@ -333,6 +394,12 @@ func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentials
 
 func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialOutput) ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialOutputWithContext(ctx context.Context) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialOutput {
 	return o
+}
+
+func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredential] {
+	return pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the user's support account.
@@ -368,6 +435,12 @@ func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentials
 
 func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialArrayOutput) ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialArrayOutputWithContext(ctx context.Context) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialArrayOutput {
 	return o
+}
+
+func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredential] {
+	return pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialArrayOutput) Index(i pulumi.IntInput) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialOutput {
@@ -417,6 +490,12 @@ func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentials
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialOutput)
 }
 
+func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredential] {
+	return pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredential]{
+		OutputState: i.ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialArrayInput is an input type that accepts GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialArray and GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialArrayInput` via:
 //
@@ -442,6 +521,12 @@ func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentials
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialArrayOutput)
 }
 
+func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredential] {
+	return pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredential]{
+		OutputState: i.ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialOutput) ElementType() reflect.Type {
@@ -454,6 +539,12 @@ func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentials
 
 func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialOutput) ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialOutputWithContext(ctx context.Context) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialOutput {
 	return o
+}
+
+func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredential] {
+	return pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the user's support account.
@@ -489,6 +580,12 @@ func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentials
 
 func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialArrayOutput) ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialArrayOutputWithContext(ctx context.Context) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialArrayOutput {
 	return o
+}
+
+func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredential] {
+	return pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialArrayOutput) Index(i pulumi.IntInput) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialOutput {
@@ -562,6 +659,12 @@ func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserOutput)
 }
 
+func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser] {
+	return pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser]{
+		OutputState: i.ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArrayInput is an input type that accepts GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArray and GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArrayInput` via:
 //
@@ -587,6 +690,12 @@ func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArrayOutput)
 }
 
+func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser] {
+	return pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser]{
+		OutputState: i.ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserOutput) ElementType() reflect.Type {
@@ -599,6 +708,12 @@ func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserOu
 
 func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserOutput) ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserOutputWithContext(ctx context.Context) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserOutput {
 	return o
+}
+
+func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser] {
+	return pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The last failed login date.
@@ -678,6 +793,12 @@ func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserAr
 	return o
 }
 
+func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser] {
+	return pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArrayOutput) Index(i pulumi.IntInput) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser {
 		return vs[0].([]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser)[vs[1].(int)]
@@ -729,6 +850,12 @@ func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLo
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedOutput)
 }
 
+func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked] {
+	return pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked]{
+		OutputState: i.ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedArrayInput is an input type that accepts GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedArray and GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedArrayInput` via:
 //
@@ -754,6 +881,12 @@ func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLo
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedArrayOutput)
 }
 
+func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked] {
+	return pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked]{
+		OutputState: i.ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedOutput) ElementType() reflect.Type {
@@ -766,6 +899,12 @@ func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLo
 
 func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedOutput) ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedOutputWithContext(ctx context.Context) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedOutput {
 	return o
+}
+
+func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked] {
+	return pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Indicates whether the user password is expired. If this value is false, password expiry is still evaluated during user login.
@@ -806,6 +945,12 @@ func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLo
 
 func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedArrayOutput) ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedArrayOutputWithContext(ctx context.Context) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedArrayOutput {
 	return o
+}
+
+func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked] {
+	return pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedArrayOutput) Index(i pulumi.IntInput) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedOutput {
@@ -851,6 +996,12 @@ func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRe
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedOutput)
 }
 
+func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked] {
+	return pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked]{
+		OutputState: i.ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedArrayInput is an input type that accepts GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedArray and GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedArrayInput` via:
 //
@@ -876,6 +1027,12 @@ func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRe
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedArrayOutput)
 }
 
+func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked] {
+	return pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked]{
+		OutputState: i.ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedOutput) ElementType() reflect.Type {
@@ -888,6 +1045,12 @@ func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRe
 
 func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedOutput) ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedOutputWithContext(ctx context.Context) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedOutput {
 	return o
+}
+
+func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked] {
+	return pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The date and time that the current resource was locked.
@@ -916,6 +1079,12 @@ func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRe
 
 func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedArrayOutput) ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedArrayOutputWithContext(ctx context.Context) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedArrayOutput {
 	return o
+}
+
+func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked] {
+	return pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedArrayOutput) Index(i pulumi.IntInput) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedOutput {
@@ -1049,6 +1218,12 @@ func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserOutput)
 }
 
+func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser] {
+	return pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser]{
+		OutputState: i.ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArrayInput is an input type that accepts GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArray and GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArrayInput` via:
 //
@@ -1074,6 +1249,12 @@ func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArray) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArrayOutput)
 }
 
+func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser] {
+	return pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser]{
+		OutputState: i.ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserOutput) ElementType() reflect.Type {
@@ -1086,6 +1267,12 @@ func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserOutput)
 
 func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserOutput) ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserOutputWithContext(ctx context.Context) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserOutput {
 	return o
+}
+
+func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser] {
+	return pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Boolean value to prompt user to setup account recovery during login.
@@ -1268,6 +1455,12 @@ func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArrayOu
 	return o
 }
 
+func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser] {
+	return pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArrayOutput) Index(i pulumi.IntInput) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser {
 		return vs[0].([]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser)[vs[1].(int)]
@@ -1323,6 +1516,12 @@ func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccount
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountOutput)
 }
 
+func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccount] {
+	return pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccount]{
+		OutputState: i.ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountArrayInput is an input type that accepts GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountArray and GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountArrayInput` via:
 //
@@ -1348,6 +1547,12 @@ func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccount
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountArrayOutput)
 }
 
+func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccount] {
+	return pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccount]{
+		OutputState: i.ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountOutput) ElementType() reflect.Type {
@@ -1360,6 +1565,12 @@ func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccount
 
 func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountOutput) ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountOutputWithContext(ctx context.Context) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountOutput {
 	return o
+}
+
+func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccount] {
+	return pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccount]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Status of the account
@@ -1403,6 +1614,12 @@ func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccount
 
 func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountArrayOutput) ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountArrayOutputWithContext(ctx context.Context) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountArrayOutput {
 	return o
+}
+
+func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccount] {
+	return pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccount]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountArrayOutput) Index(i pulumi.IntInput) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountOutput {
@@ -1472,6 +1689,12 @@ func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRole
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleOutput)
 }
 
+func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRole] {
+	return pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRole]{
+		OutputState: i.ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleArrayInput is an input type that accepts GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleArray and GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleArrayInput` via:
 //
@@ -1497,6 +1720,12 @@ func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRole
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleArrayOutput)
 }
 
+func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRole] {
+	return pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRole]{
+		OutputState: i.ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleOutput) ElementType() reflect.Type {
@@ -1509,6 +1738,12 @@ func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRole
 
 func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleOutput) ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleOutputWithContext(ctx context.Context) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleOutput {
 	return o
+}
+
+func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRole] {
+	return pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRole]{
+		OutputState: o.OutputState,
+	}
 }
 
 // If true, then the role provides administrative access privileges. READ-ONLY.
@@ -1577,6 +1812,12 @@ func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRole
 	return o
 }
 
+func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRole] {
+	return pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRole]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleArrayOutput) Index(i pulumi.IntInput) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRole {
 		return vs[0].([]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRole)[vs[1].(int)]
@@ -1632,6 +1873,12 @@ func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplica
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppOutput)
 }
 
+func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetApp] {
+	return pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetApp]{
+		OutputState: i.ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppArrayInput is an input type that accepts GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppArray and GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppArrayInput` via:
 //
@@ -1657,6 +1904,12 @@ func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplica
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppArrayOutput)
 }
 
+func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetApp] {
+	return pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetApp]{
+		OutputState: i.ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppOutput) ElementType() reflect.Type {
@@ -1669,6 +1922,12 @@ func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplica
 
 func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppOutput) ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppOutputWithContext(ctx context.Context) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppOutput {
 	return o
+}
+
+func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetApp] {
+	return pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetApp]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A human readable name, primarily used for display purposes.
@@ -1718,6 +1977,12 @@ func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplica
 
 func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppArrayOutput) ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppArrayOutputWithContext(ctx context.Context) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppArrayOutput {
 	return o
+}
+
+func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetApp] {
+	return pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetApp]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppArrayOutput) Index(i pulumi.IntInput) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppOutput {
@@ -1771,6 +2036,12 @@ func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegat
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppOutput)
 }
 
+func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetApp] {
+	return pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetApp]{
+		OutputState: i.ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppArrayInput is an input type that accepts GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppArray and GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppArrayInput` via:
 //
@@ -1796,6 +2067,12 @@ func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegat
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppArrayOutput)
 }
 
+func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetApp] {
+	return pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetApp]{
+		OutputState: i.ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppOutput) ElementType() reflect.Type {
@@ -1808,6 +2085,12 @@ func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegat
 
 func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppOutput) ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppOutputWithContext(ctx context.Context) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppOutput {
 	return o
+}
+
+func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetApp] {
+	return pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetApp]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A human readable name, primarily used for display purposes.
@@ -1850,6 +2133,12 @@ func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegat
 
 func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppArrayOutput) ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppArrayOutputWithContext(ctx context.Context) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppArrayOutput {
 	return o
+}
+
+func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetApp] {
+	return pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetApp]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppArrayOutput) Index(i pulumi.IntInput) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppOutput {
@@ -1913,6 +2202,12 @@ func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantOutput)
 }
 
+func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrant] {
+	return pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrant]{
+		OutputState: i.ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantArrayInput is an input type that accepts GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantArray and GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantArrayInput` via:
 //
@@ -1938,6 +2233,12 @@ func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantArrayOutput)
 }
 
+func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrant] {
+	return pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrant]{
+		OutputState: i.ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantOutput) ElementType() reflect.Type {
@@ -1950,6 +2251,12 @@ func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantOu
 
 func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantOutput) ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantOutputWithContext(ctx context.Context) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantOutput {
 	return o
+}
+
+func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrant] {
+	return pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrant]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The ID of the App in this Grant.
@@ -1996,6 +2303,12 @@ func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantAr
 
 func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantArrayOutput) ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantArrayOutputWithContext(ctx context.Context) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantArrayOutput {
 	return o
+}
+
+func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrant] {
+	return pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrant]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantArrayOutput) Index(i pulumi.IntInput) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantOutput {
@@ -2053,6 +2366,12 @@ func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsApp
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupOutput)
 }
 
+func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroup] {
+	return pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroup]{
+		OutputState: i.ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupArrayInput is an input type that accepts GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupArray and GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupArrayInput` via:
 //
@@ -2078,6 +2397,12 @@ func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsApp
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupArrayOutput)
 }
 
+func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroup] {
+	return pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroup]{
+		OutputState: i.ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupOutput) ElementType() reflect.Type {
@@ -2090,6 +2415,12 @@ func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsApp
 
 func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupOutput) ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupOutputWithContext(ctx context.Context) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupOutput {
 	return o
+}
+
+func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroup] {
+	return pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroup]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A human readable name, primarily used for display purposes.
@@ -2139,6 +2470,12 @@ func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsApp
 
 func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupArrayOutput) ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupArrayOutputWithContext(ctx context.Context) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupArrayOutput {
 	return o
+}
+
+func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroup] {
+	return pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroup]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupArrayOutput) Index(i pulumi.IntInput) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupOutput {
@@ -2196,6 +2533,12 @@ func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupport
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountOutput)
 }
 
+func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccount] {
+	return pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccount]{
+		OutputState: i.ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountArrayInput is an input type that accepts GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountArray and GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountArrayInput` via:
 //
@@ -2221,6 +2564,12 @@ func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupport
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountArrayOutput)
 }
 
+func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccount] {
+	return pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccount]{
+		OutputState: i.ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountOutput) ElementType() reflect.Type {
@@ -2233,6 +2582,12 @@ func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupport
 
 func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountOutput) ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountOutputWithContext(ctx context.Context) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountOutput {
 	return o
+}
+
+func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccount] {
+	return pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccount]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the user's support account.
@@ -2282,6 +2637,12 @@ func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupport
 
 func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountArrayOutput) ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountArrayOutputWithContext(ctx context.Context) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountArrayOutput {
 	return o
+}
+
+func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccount] {
+	return pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccount]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountArrayOutput) Index(i pulumi.IntInput) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountOutput {
@@ -2335,6 +2696,12 @@ func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedF
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppOutput)
 }
 
+func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromApp] {
+	return pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromApp]{
+		OutputState: i.ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppArrayInput is an input type that accepts GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppArray and GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppArrayInput` via:
 //
@@ -2360,6 +2727,12 @@ func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedF
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppArrayOutput)
 }
 
+func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromApp] {
+	return pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromApp]{
+		OutputState: i.ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppOutput) ElementType() reflect.Type {
@@ -2372,6 +2745,12 @@ func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedF
 
 func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppOutput) ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppOutputWithContext(ctx context.Context) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppOutput {
 	return o
+}
+
+func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromApp] {
+	return pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromApp]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A human readable name, primarily used for display purposes.
@@ -2414,6 +2793,12 @@ func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedF
 
 func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppArrayOutput) ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppArrayOutputWithContext(ctx context.Context) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppArrayOutput {
 	return o
+}
+
+func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromApp] {
+	return pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromApp]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppArrayOutput) Index(i pulumi.IntInput) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppOutput {
@@ -2459,6 +2844,12 @@ func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTok
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenOutput)
 }
 
+func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserToken] {
+	return pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserToken]{
+		OutputState: i.ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArrayInput is an input type that accepts GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArray and GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArrayInput` via:
 //
@@ -2484,6 +2875,12 @@ func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTok
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArrayOutput)
 }
 
+func (i GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserToken] {
+	return pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserToken]{
+		OutputState: i.ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenOutput) ElementType() reflect.Type {
@@ -2496,6 +2893,12 @@ func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTok
 
 func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenOutput) ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenOutputWithContext(ctx context.Context) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenOutput {
 	return o
+}
+
+func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserToken] {
+	return pulumix.Output[GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserToken]{
+		OutputState: o.OutputState,
+	}
 }
 
 // User Token URI
@@ -2524,6 +2927,12 @@ func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTok
 
 func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArrayOutput) ToGetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArrayOutputWithContext(ctx context.Context) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArrayOutput {
 	return o
+}
+
+func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserToken] {
+	return pulumix.Output[[]GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserToken]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArrayOutput) Index(i pulumi.IntInput) GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenOutput {
@@ -2577,6 +2986,12 @@ func (i GetDomainsUserX509certificateArgs) ToGetDomainsUserX509certificateOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUserX509certificateOutput)
 }
 
+func (i GetDomainsUserX509certificateArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUserX509certificate] {
+	return pulumix.Output[GetDomainsUserX509certificate]{
+		OutputState: i.ToGetDomainsUserX509certificateOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUserX509certificateArrayInput is an input type that accepts GetDomainsUserX509certificateArray and GetDomainsUserX509certificateArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUserX509certificateArrayInput` via:
 //
@@ -2602,6 +3017,12 @@ func (i GetDomainsUserX509certificateArray) ToGetDomainsUserX509certificateArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUserX509certificateArrayOutput)
 }
 
+func (i GetDomainsUserX509certificateArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUserX509certificate] {
+	return pulumix.Output[[]GetDomainsUserX509certificate]{
+		OutputState: i.ToGetDomainsUserX509certificateArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUserX509certificateOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUserX509certificateOutput) ElementType() reflect.Type {
@@ -2614,6 +3035,12 @@ func (o GetDomainsUserX509certificateOutput) ToGetDomainsUserX509certificateOutp
 
 func (o GetDomainsUserX509certificateOutput) ToGetDomainsUserX509certificateOutputWithContext(ctx context.Context) GetDomainsUserX509certificateOutput {
 	return o
+}
+
+func (o GetDomainsUserX509certificateOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUserX509certificate] {
+	return pulumix.Output[GetDomainsUserX509certificate]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A human readable name, primarily used for display purposes.
@@ -2648,6 +3075,12 @@ func (o GetDomainsUserX509certificateArrayOutput) ToGetDomainsUserX509certificat
 
 func (o GetDomainsUserX509certificateArrayOutput) ToGetDomainsUserX509certificateArrayOutputWithContext(ctx context.Context) GetDomainsUserX509certificateArrayOutput {
 	return o
+}
+
+func (o GetDomainsUserX509certificateArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUserX509certificate] {
+	return pulumix.Output[[]GetDomainsUserX509certificate]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUserX509certificateArrayOutput) Index(i pulumi.IntInput) GetDomainsUserX509certificateOutput {
@@ -2929,6 +3362,12 @@ func (i GetDomainsUsersUserArgs) ToGetDomainsUsersUserOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserOutput)
 }
 
+func (i GetDomainsUsersUserArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUser] {
+	return pulumix.Output[GetDomainsUsersUser]{
+		OutputState: i.ToGetDomainsUsersUserOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserArrayInput is an input type that accepts GetDomainsUsersUserArray and GetDomainsUsersUserArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserArrayInput` via:
 //
@@ -2954,6 +3393,12 @@ func (i GetDomainsUsersUserArray) ToGetDomainsUsersUserArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserArrayOutput)
 }
 
+func (i GetDomainsUsersUserArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUser] {
+	return pulumix.Output[[]GetDomainsUsersUser]{
+		OutputState: i.ToGetDomainsUsersUserArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserOutput) ElementType() reflect.Type {
@@ -2966,6 +3411,12 @@ func (o GetDomainsUsersUserOutput) ToGetDomainsUsersUserOutput() GetDomainsUsers
 
 func (o GetDomainsUsersUserOutput) ToGetDomainsUsersUserOutputWithContext(ctx context.Context) GetDomainsUsersUserOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUser] {
+	return pulumix.Output[GetDomainsUsersUser]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Status of the account
@@ -3327,6 +3778,12 @@ func (o GetDomainsUsersUserArrayOutput) ToGetDomainsUsersUserArrayOutputWithCont
 	return o
 }
 
+func (o GetDomainsUsersUserArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUser] {
+	return pulumix.Output[[]GetDomainsUsersUser]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetDomainsUsersUserArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUser {
 		return vs[0].([]GetDomainsUsersUser)[vs[1].(int)]
@@ -3394,6 +3851,12 @@ func (i GetDomainsUsersUserAddressArgs) ToGetDomainsUsersUserAddressOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserAddressOutput)
 }
 
+func (i GetDomainsUsersUserAddressArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserAddress] {
+	return pulumix.Output[GetDomainsUsersUserAddress]{
+		OutputState: i.ToGetDomainsUsersUserAddressOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserAddressArrayInput is an input type that accepts GetDomainsUsersUserAddressArray and GetDomainsUsersUserAddressArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserAddressArrayInput` via:
 //
@@ -3419,6 +3882,12 @@ func (i GetDomainsUsersUserAddressArray) ToGetDomainsUsersUserAddressArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserAddressArrayOutput)
 }
 
+func (i GetDomainsUsersUserAddressArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserAddress] {
+	return pulumix.Output[[]GetDomainsUsersUserAddress]{
+		OutputState: i.ToGetDomainsUsersUserAddressArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserAddressOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserAddressOutput) ElementType() reflect.Type {
@@ -3431,6 +3900,12 @@ func (o GetDomainsUsersUserAddressOutput) ToGetDomainsUsersUserAddressOutput() G
 
 func (o GetDomainsUsersUserAddressOutput) ToGetDomainsUsersUserAddressOutputWithContext(ctx context.Context) GetDomainsUsersUserAddressOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserAddressOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserAddress] {
+	return pulumix.Output[GetDomainsUsersUserAddress]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The country name component.
@@ -3485,6 +3960,12 @@ func (o GetDomainsUsersUserAddressArrayOutput) ToGetDomainsUsersUserAddressArray
 
 func (o GetDomainsUsersUserAddressArrayOutput) ToGetDomainsUsersUserAddressArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserAddressArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserAddressArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserAddress] {
+	return pulumix.Output[[]GetDomainsUsersUserAddress]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserAddressArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserAddressOutput {
@@ -3546,6 +4027,12 @@ func (i GetDomainsUsersUserEmailArgs) ToGetDomainsUsersUserEmailOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserEmailOutput)
 }
 
+func (i GetDomainsUsersUserEmailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserEmail] {
+	return pulumix.Output[GetDomainsUsersUserEmail]{
+		OutputState: i.ToGetDomainsUsersUserEmailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserEmailArrayInput is an input type that accepts GetDomainsUsersUserEmailArray and GetDomainsUsersUserEmailArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserEmailArrayInput` via:
 //
@@ -3571,6 +4058,12 @@ func (i GetDomainsUsersUserEmailArray) ToGetDomainsUsersUserEmailArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserEmailArrayOutput)
 }
 
+func (i GetDomainsUsersUserEmailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserEmail] {
+	return pulumix.Output[[]GetDomainsUsersUserEmail]{
+		OutputState: i.ToGetDomainsUsersUserEmailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserEmailOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserEmailOutput) ElementType() reflect.Type {
@@ -3583,6 +4076,12 @@ func (o GetDomainsUsersUserEmailOutput) ToGetDomainsUsersUserEmailOutput() GetDo
 
 func (o GetDomainsUsersUserEmailOutput) ToGetDomainsUsersUserEmailOutputWithContext(ctx context.Context) GetDomainsUsersUserEmailOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserEmailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserEmail] {
+	return pulumix.Output[GetDomainsUsersUserEmail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Pending e-mail address verification
@@ -3627,6 +4126,12 @@ func (o GetDomainsUsersUserEmailArrayOutput) ToGetDomainsUsersUserEmailArrayOutp
 
 func (o GetDomainsUsersUserEmailArrayOutput) ToGetDomainsUsersUserEmailArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserEmailArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserEmailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserEmail] {
+	return pulumix.Output[[]GetDomainsUsersUserEmail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserEmailArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserEmailOutput {
@@ -3680,6 +4185,12 @@ func (i GetDomainsUsersUserEntitlementArgs) ToGetDomainsUsersUserEntitlementOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserEntitlementOutput)
 }
 
+func (i GetDomainsUsersUserEntitlementArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserEntitlement] {
+	return pulumix.Output[GetDomainsUsersUserEntitlement]{
+		OutputState: i.ToGetDomainsUsersUserEntitlementOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserEntitlementArrayInput is an input type that accepts GetDomainsUsersUserEntitlementArray and GetDomainsUsersUserEntitlementArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserEntitlementArrayInput` via:
 //
@@ -3705,6 +4216,12 @@ func (i GetDomainsUsersUserEntitlementArray) ToGetDomainsUsersUserEntitlementArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserEntitlementArrayOutput)
 }
 
+func (i GetDomainsUsersUserEntitlementArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserEntitlement] {
+	return pulumix.Output[[]GetDomainsUsersUserEntitlement]{
+		OutputState: i.ToGetDomainsUsersUserEntitlementArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserEntitlementOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserEntitlementOutput) ElementType() reflect.Type {
@@ -3717,6 +4234,12 @@ func (o GetDomainsUsersUserEntitlementOutput) ToGetDomainsUsersUserEntitlementOu
 
 func (o GetDomainsUsersUserEntitlementOutput) ToGetDomainsUsersUserEntitlementOutputWithContext(ctx context.Context) GetDomainsUsersUserEntitlementOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserEntitlementOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserEntitlement] {
+	return pulumix.Output[GetDomainsUsersUserEntitlement]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A human readable name, primarily used for display purposes.
@@ -3751,6 +4274,12 @@ func (o GetDomainsUsersUserEntitlementArrayOutput) ToGetDomainsUsersUserEntitlem
 
 func (o GetDomainsUsersUserEntitlementArrayOutput) ToGetDomainsUsersUserEntitlementArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserEntitlementArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserEntitlementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserEntitlement] {
+	return pulumix.Output[[]GetDomainsUsersUserEntitlement]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserEntitlementArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserEntitlementOutput {
@@ -3824,6 +4353,12 @@ func (i GetDomainsUsersUserGroupArgs) ToGetDomainsUsersUserGroupOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserGroupOutput)
 }
 
+func (i GetDomainsUsersUserGroupArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserGroup] {
+	return pulumix.Output[GetDomainsUsersUserGroup]{
+		OutputState: i.ToGetDomainsUsersUserGroupOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserGroupArrayInput is an input type that accepts GetDomainsUsersUserGroupArray and GetDomainsUsersUserGroupArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserGroupArrayInput` via:
 //
@@ -3849,6 +4384,12 @@ func (i GetDomainsUsersUserGroupArray) ToGetDomainsUsersUserGroupArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserGroupArrayOutput)
 }
 
+func (i GetDomainsUsersUserGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserGroup] {
+	return pulumix.Output[[]GetDomainsUsersUserGroup]{
+		OutputState: i.ToGetDomainsUsersUserGroupArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserGroupOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserGroupOutput) ElementType() reflect.Type {
@@ -3861,6 +4402,12 @@ func (o GetDomainsUsersUserGroupOutput) ToGetDomainsUsersUserGroupOutput() GetDo
 
 func (o GetDomainsUsersUserGroupOutput) ToGetDomainsUsersUserGroupOutputWithContext(ctx context.Context) GetDomainsUsersUserGroupOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserGroupOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserGroup] {
+	return pulumix.Output[GetDomainsUsersUserGroup]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Date when the member is Added to the group
@@ -3922,6 +4469,12 @@ func (o GetDomainsUsersUserGroupArrayOutput) ToGetDomainsUsersUserGroupArrayOutp
 	return o
 }
 
+func (o GetDomainsUsersUserGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserGroup] {
+	return pulumix.Output[[]GetDomainsUsersUserGroup]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetDomainsUsersUserGroupArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserGroupOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserGroup {
 		return vs[0].([]GetDomainsUsersUserGroup)[vs[1].(int)]
@@ -3977,6 +4530,12 @@ func (i GetDomainsUsersUserIdcsCreatedByArgs) ToGetDomainsUsersUserIdcsCreatedBy
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserIdcsCreatedByOutput)
 }
 
+func (i GetDomainsUsersUserIdcsCreatedByArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserIdcsCreatedBy] {
+	return pulumix.Output[GetDomainsUsersUserIdcsCreatedBy]{
+		OutputState: i.ToGetDomainsUsersUserIdcsCreatedByOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserIdcsCreatedByArrayInput is an input type that accepts GetDomainsUsersUserIdcsCreatedByArray and GetDomainsUsersUserIdcsCreatedByArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserIdcsCreatedByArrayInput` via:
 //
@@ -4002,6 +4561,12 @@ func (i GetDomainsUsersUserIdcsCreatedByArray) ToGetDomainsUsersUserIdcsCreatedB
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserIdcsCreatedByArrayOutput)
 }
 
+func (i GetDomainsUsersUserIdcsCreatedByArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserIdcsCreatedBy] {
+	return pulumix.Output[[]GetDomainsUsersUserIdcsCreatedBy]{
+		OutputState: i.ToGetDomainsUsersUserIdcsCreatedByArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserIdcsCreatedByOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserIdcsCreatedByOutput) ElementType() reflect.Type {
@@ -4014,6 +4579,12 @@ func (o GetDomainsUsersUserIdcsCreatedByOutput) ToGetDomainsUsersUserIdcsCreated
 
 func (o GetDomainsUsersUserIdcsCreatedByOutput) ToGetDomainsUsersUserIdcsCreatedByOutputWithContext(ctx context.Context) GetDomainsUsersUserIdcsCreatedByOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserIdcsCreatedByOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserIdcsCreatedBy] {
+	return pulumix.Output[GetDomainsUsersUserIdcsCreatedBy]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A human readable name, primarily used for display purposes.
@@ -4053,6 +4624,12 @@ func (o GetDomainsUsersUserIdcsCreatedByArrayOutput) ToGetDomainsUsersUserIdcsCr
 
 func (o GetDomainsUsersUserIdcsCreatedByArrayOutput) ToGetDomainsUsersUserIdcsCreatedByArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserIdcsCreatedByArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserIdcsCreatedByArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserIdcsCreatedBy] {
+	return pulumix.Output[[]GetDomainsUsersUserIdcsCreatedBy]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserIdcsCreatedByArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserIdcsCreatedByOutput {
@@ -4110,6 +4687,12 @@ func (i GetDomainsUsersUserIdcsLastModifiedByArgs) ToGetDomainsUsersUserIdcsLast
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserIdcsLastModifiedByOutput)
 }
 
+func (i GetDomainsUsersUserIdcsLastModifiedByArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserIdcsLastModifiedBy] {
+	return pulumix.Output[GetDomainsUsersUserIdcsLastModifiedBy]{
+		OutputState: i.ToGetDomainsUsersUserIdcsLastModifiedByOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserIdcsLastModifiedByArrayInput is an input type that accepts GetDomainsUsersUserIdcsLastModifiedByArray and GetDomainsUsersUserIdcsLastModifiedByArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserIdcsLastModifiedByArrayInput` via:
 //
@@ -4135,6 +4718,12 @@ func (i GetDomainsUsersUserIdcsLastModifiedByArray) ToGetDomainsUsersUserIdcsLas
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserIdcsLastModifiedByArrayOutput)
 }
 
+func (i GetDomainsUsersUserIdcsLastModifiedByArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserIdcsLastModifiedBy] {
+	return pulumix.Output[[]GetDomainsUsersUserIdcsLastModifiedBy]{
+		OutputState: i.ToGetDomainsUsersUserIdcsLastModifiedByArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserIdcsLastModifiedByOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserIdcsLastModifiedByOutput) ElementType() reflect.Type {
@@ -4147,6 +4736,12 @@ func (o GetDomainsUsersUserIdcsLastModifiedByOutput) ToGetDomainsUsersUserIdcsLa
 
 func (o GetDomainsUsersUserIdcsLastModifiedByOutput) ToGetDomainsUsersUserIdcsLastModifiedByOutputWithContext(ctx context.Context) GetDomainsUsersUserIdcsLastModifiedByOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserIdcsLastModifiedByOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserIdcsLastModifiedBy] {
+	return pulumix.Output[GetDomainsUsersUserIdcsLastModifiedBy]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A human readable name, primarily used for display purposes.
@@ -4186,6 +4781,12 @@ func (o GetDomainsUsersUserIdcsLastModifiedByArrayOutput) ToGetDomainsUsersUserI
 
 func (o GetDomainsUsersUserIdcsLastModifiedByArrayOutput) ToGetDomainsUsersUserIdcsLastModifiedByArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserIdcsLastModifiedByArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserIdcsLastModifiedByArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserIdcsLastModifiedBy] {
+	return pulumix.Output[[]GetDomainsUsersUserIdcsLastModifiedBy]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserIdcsLastModifiedByArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserIdcsLastModifiedByOutput {
@@ -4239,6 +4840,12 @@ func (i GetDomainsUsersUserImArgs) ToGetDomainsUsersUserImOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserImOutput)
 }
 
+func (i GetDomainsUsersUserImArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserIm] {
+	return pulumix.Output[GetDomainsUsersUserIm]{
+		OutputState: i.ToGetDomainsUsersUserImOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserImArrayInput is an input type that accepts GetDomainsUsersUserImArray and GetDomainsUsersUserImArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserImArrayInput` via:
 //
@@ -4264,6 +4871,12 @@ func (i GetDomainsUsersUserImArray) ToGetDomainsUsersUserImArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserImArrayOutput)
 }
 
+func (i GetDomainsUsersUserImArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserIm] {
+	return pulumix.Output[[]GetDomainsUsersUserIm]{
+		OutputState: i.ToGetDomainsUsersUserImArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserImOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserImOutput) ElementType() reflect.Type {
@@ -4276,6 +4889,12 @@ func (o GetDomainsUsersUserImOutput) ToGetDomainsUsersUserImOutput() GetDomainsU
 
 func (o GetDomainsUsersUserImOutput) ToGetDomainsUsersUserImOutputWithContext(ctx context.Context) GetDomainsUsersUserImOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserImOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserIm] {
+	return pulumix.Output[GetDomainsUsersUserIm]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A human readable name, primarily used for display purposes.
@@ -4310,6 +4929,12 @@ func (o GetDomainsUsersUserImArrayOutput) ToGetDomainsUsersUserImArrayOutput() G
 
 func (o GetDomainsUsersUserImArrayOutput) ToGetDomainsUsersUserImArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserImArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserImArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserIm] {
+	return pulumix.Output[[]GetDomainsUsersUserIm]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserImArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserImOutput {
@@ -4367,6 +4992,12 @@ func (i GetDomainsUsersUserMetaArgs) ToGetDomainsUsersUserMetaOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserMetaOutput)
 }
 
+func (i GetDomainsUsersUserMetaArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserMeta] {
+	return pulumix.Output[GetDomainsUsersUserMeta]{
+		OutputState: i.ToGetDomainsUsersUserMetaOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserMetaArrayInput is an input type that accepts GetDomainsUsersUserMetaArray and GetDomainsUsersUserMetaArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserMetaArrayInput` via:
 //
@@ -4392,6 +5023,12 @@ func (i GetDomainsUsersUserMetaArray) ToGetDomainsUsersUserMetaArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserMetaArrayOutput)
 }
 
+func (i GetDomainsUsersUserMetaArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserMeta] {
+	return pulumix.Output[[]GetDomainsUsersUserMeta]{
+		OutputState: i.ToGetDomainsUsersUserMetaArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserMetaOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserMetaOutput) ElementType() reflect.Type {
@@ -4404,6 +5041,12 @@ func (o GetDomainsUsersUserMetaOutput) ToGetDomainsUsersUserMetaOutput() GetDoma
 
 func (o GetDomainsUsersUserMetaOutput) ToGetDomainsUsersUserMetaOutputWithContext(ctx context.Context) GetDomainsUsersUserMetaOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserMetaOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserMeta] {
+	return pulumix.Output[GetDomainsUsersUserMeta]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The DateTime the Resource was added to the Service Provider
@@ -4443,6 +5086,12 @@ func (o GetDomainsUsersUserMetaArrayOutput) ToGetDomainsUsersUserMetaArrayOutput
 
 func (o GetDomainsUsersUserMetaArrayOutput) ToGetDomainsUsersUserMetaArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserMetaArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserMetaArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserMeta] {
+	return pulumix.Output[[]GetDomainsUsersUserMeta]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserMetaArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserMetaOutput {
@@ -4504,6 +5153,12 @@ func (i GetDomainsUsersUserNameArgs) ToGetDomainsUsersUserNameOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserNameOutput)
 }
 
+func (i GetDomainsUsersUserNameArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserName] {
+	return pulumix.Output[GetDomainsUsersUserName]{
+		OutputState: i.ToGetDomainsUsersUserNameOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserNameArrayInput is an input type that accepts GetDomainsUsersUserNameArray and GetDomainsUsersUserNameArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserNameArrayInput` via:
 //
@@ -4529,6 +5184,12 @@ func (i GetDomainsUsersUserNameArray) ToGetDomainsUsersUserNameArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserNameArrayOutput)
 }
 
+func (i GetDomainsUsersUserNameArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserName] {
+	return pulumix.Output[[]GetDomainsUsersUserName]{
+		OutputState: i.ToGetDomainsUsersUserNameArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserNameOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserNameOutput) ElementType() reflect.Type {
@@ -4541,6 +5202,12 @@ func (o GetDomainsUsersUserNameOutput) ToGetDomainsUsersUserNameOutput() GetDoma
 
 func (o GetDomainsUsersUserNameOutput) ToGetDomainsUsersUserNameOutputWithContext(ctx context.Context) GetDomainsUsersUserNameOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserNameOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserName] {
+	return pulumix.Output[GetDomainsUsersUserName]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Last name
@@ -4585,6 +5252,12 @@ func (o GetDomainsUsersUserNameArrayOutput) ToGetDomainsUsersUserNameArrayOutput
 
 func (o GetDomainsUsersUserNameArrayOutput) ToGetDomainsUsersUserNameArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserNameArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserNameArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserName] {
+	return pulumix.Output[[]GetDomainsUsersUserName]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserNameArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserNameOutput {
@@ -4642,6 +5315,12 @@ func (i GetDomainsUsersUserPhoneNumberArgs) ToGetDomainsUsersUserPhoneNumberOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserPhoneNumberOutput)
 }
 
+func (i GetDomainsUsersUserPhoneNumberArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserPhoneNumber] {
+	return pulumix.Output[GetDomainsUsersUserPhoneNumber]{
+		OutputState: i.ToGetDomainsUsersUserPhoneNumberOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserPhoneNumberArrayInput is an input type that accepts GetDomainsUsersUserPhoneNumberArray and GetDomainsUsersUserPhoneNumberArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserPhoneNumberArrayInput` via:
 //
@@ -4667,6 +5346,12 @@ func (i GetDomainsUsersUserPhoneNumberArray) ToGetDomainsUsersUserPhoneNumberArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserPhoneNumberArrayOutput)
 }
 
+func (i GetDomainsUsersUserPhoneNumberArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserPhoneNumber] {
+	return pulumix.Output[[]GetDomainsUsersUserPhoneNumber]{
+		OutputState: i.ToGetDomainsUsersUserPhoneNumberArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserPhoneNumberOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserPhoneNumberOutput) ElementType() reflect.Type {
@@ -4679,6 +5364,12 @@ func (o GetDomainsUsersUserPhoneNumberOutput) ToGetDomainsUsersUserPhoneNumberOu
 
 func (o GetDomainsUsersUserPhoneNumberOutput) ToGetDomainsUsersUserPhoneNumberOutputWithContext(ctx context.Context) GetDomainsUsersUserPhoneNumberOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserPhoneNumberOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserPhoneNumber] {
+	return pulumix.Output[GetDomainsUsersUserPhoneNumber]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A human readable name, primarily used for display purposes.
@@ -4718,6 +5409,12 @@ func (o GetDomainsUsersUserPhoneNumberArrayOutput) ToGetDomainsUsersUserPhoneNum
 
 func (o GetDomainsUsersUserPhoneNumberArrayOutput) ToGetDomainsUsersUserPhoneNumberArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserPhoneNumberArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserPhoneNumberArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserPhoneNumber] {
+	return pulumix.Output[[]GetDomainsUsersUserPhoneNumber]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserPhoneNumberArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserPhoneNumberOutput {
@@ -4771,6 +5468,12 @@ func (i GetDomainsUsersUserPhotoArgs) ToGetDomainsUsersUserPhotoOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserPhotoOutput)
 }
 
+func (i GetDomainsUsersUserPhotoArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserPhoto] {
+	return pulumix.Output[GetDomainsUsersUserPhoto]{
+		OutputState: i.ToGetDomainsUsersUserPhotoOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserPhotoArrayInput is an input type that accepts GetDomainsUsersUserPhotoArray and GetDomainsUsersUserPhotoArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserPhotoArrayInput` via:
 //
@@ -4796,6 +5499,12 @@ func (i GetDomainsUsersUserPhotoArray) ToGetDomainsUsersUserPhotoArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserPhotoArrayOutput)
 }
 
+func (i GetDomainsUsersUserPhotoArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserPhoto] {
+	return pulumix.Output[[]GetDomainsUsersUserPhoto]{
+		OutputState: i.ToGetDomainsUsersUserPhotoArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserPhotoOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserPhotoOutput) ElementType() reflect.Type {
@@ -4808,6 +5517,12 @@ func (o GetDomainsUsersUserPhotoOutput) ToGetDomainsUsersUserPhotoOutput() GetDo
 
 func (o GetDomainsUsersUserPhotoOutput) ToGetDomainsUsersUserPhotoOutputWithContext(ctx context.Context) GetDomainsUsersUserPhotoOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserPhotoOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserPhoto] {
+	return pulumix.Output[GetDomainsUsersUserPhoto]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A human readable name, primarily used for display purposes.
@@ -4842,6 +5557,12 @@ func (o GetDomainsUsersUserPhotoArrayOutput) ToGetDomainsUsersUserPhotoArrayOutp
 
 func (o GetDomainsUsersUserPhotoArrayOutput) ToGetDomainsUsersUserPhotoArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserPhotoArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserPhotoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserPhoto] {
+	return pulumix.Output[[]GetDomainsUsersUserPhoto]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserPhotoArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserPhotoOutput {
@@ -4895,6 +5616,12 @@ func (i GetDomainsUsersUserRoleArgs) ToGetDomainsUsersUserRoleOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserRoleOutput)
 }
 
+func (i GetDomainsUsersUserRoleArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserRole] {
+	return pulumix.Output[GetDomainsUsersUserRole]{
+		OutputState: i.ToGetDomainsUsersUserRoleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserRoleArrayInput is an input type that accepts GetDomainsUsersUserRoleArray and GetDomainsUsersUserRoleArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserRoleArrayInput` via:
 //
@@ -4920,6 +5647,12 @@ func (i GetDomainsUsersUserRoleArray) ToGetDomainsUsersUserRoleArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserRoleArrayOutput)
 }
 
+func (i GetDomainsUsersUserRoleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserRole] {
+	return pulumix.Output[[]GetDomainsUsersUserRole]{
+		OutputState: i.ToGetDomainsUsersUserRoleArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserRoleOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserRoleOutput) ElementType() reflect.Type {
@@ -4932,6 +5665,12 @@ func (o GetDomainsUsersUserRoleOutput) ToGetDomainsUsersUserRoleOutput() GetDoma
 
 func (o GetDomainsUsersUserRoleOutput) ToGetDomainsUsersUserRoleOutputWithContext(ctx context.Context) GetDomainsUsersUserRoleOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserRoleOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserRole] {
+	return pulumix.Output[GetDomainsUsersUserRole]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A human readable name, primarily used for display purposes.
@@ -4966,6 +5705,12 @@ func (o GetDomainsUsersUserRoleArrayOutput) ToGetDomainsUsersUserRoleArrayOutput
 
 func (o GetDomainsUsersUserRoleArrayOutput) ToGetDomainsUsersUserRoleArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserRoleArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserRoleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserRole] {
+	return pulumix.Output[[]GetDomainsUsersUserRole]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserRoleArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserRoleOutput {
@@ -5011,6 +5756,12 @@ func (i GetDomainsUsersUserTagArgs) ToGetDomainsUsersUserTagOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserTagOutput)
 }
 
+func (i GetDomainsUsersUserTagArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserTag] {
+	return pulumix.Output[GetDomainsUsersUserTag]{
+		OutputState: i.ToGetDomainsUsersUserTagOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserTagArrayInput is an input type that accepts GetDomainsUsersUserTagArray and GetDomainsUsersUserTagArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserTagArrayInput` via:
 //
@@ -5036,6 +5787,12 @@ func (i GetDomainsUsersUserTagArray) ToGetDomainsUsersUserTagArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserTagArrayOutput)
 }
 
+func (i GetDomainsUsersUserTagArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserTag] {
+	return pulumix.Output[[]GetDomainsUsersUserTag]{
+		OutputState: i.ToGetDomainsUsersUserTagArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserTagOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserTagOutput) ElementType() reflect.Type {
@@ -5048,6 +5805,12 @@ func (o GetDomainsUsersUserTagOutput) ToGetDomainsUsersUserTagOutput() GetDomain
 
 func (o GetDomainsUsersUserTagOutput) ToGetDomainsUsersUserTagOutputWithContext(ctx context.Context) GetDomainsUsersUserTagOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserTagOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserTag] {
+	return pulumix.Output[GetDomainsUsersUserTag]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The user's API key value.
@@ -5072,6 +5835,12 @@ func (o GetDomainsUsersUserTagArrayOutput) ToGetDomainsUsersUserTagArrayOutput()
 
 func (o GetDomainsUsersUserTagArrayOutput) ToGetDomainsUsersUserTagArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserTagArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserTagArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserTag] {
+	return pulumix.Output[[]GetDomainsUsersUserTag]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserTagArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserTagOutput {
@@ -5133,6 +5902,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArgs
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20user] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20user]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArray and GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArrayInput` via:
 //
@@ -5158,6 +5933,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArra
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20user] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20user]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userOutput) ElementType() reflect.Type {
@@ -5170,6 +5951,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userOutp
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20user] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20user]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Identifies the name of a cost center.
@@ -5226,6 +6013,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArra
 	return o
 }
 
+func (o GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20user] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20user]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20user {
 		return vs[0].([]GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20user)[vs[1].(int)]
@@ -5273,6 +6066,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userMana
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManager] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManager]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArray and GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArrayInput` via:
 //
@@ -5298,6 +6097,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userMana
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManager] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManager]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerOutput) ElementType() reflect.Type {
@@ -5310,6 +6115,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userMana
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManager] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManager]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The displayName of the User's manager. OPTIONAL and READ-ONLY.
@@ -5345,6 +6156,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userMana
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManager] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManager]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManagerOutput {
@@ -5394,6 +6211,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArgs
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTag] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTag]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArrayInput` via:
 //
@@ -5419,6 +6242,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArra
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTag] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTag]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagOutput) ElementType() reflect.Type {
@@ -5431,6 +6260,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagOutp
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTag] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTag]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Oracle Cloud Infrastructure Defined Tags
@@ -5464,6 +6299,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArra
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTag] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTag]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagOutput {
@@ -5513,6 +6354,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefi
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArrayInput` via:
 //
@@ -5538,6 +6385,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefi
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagOutput) ElementType() reflect.Type {
@@ -5550,6 +6403,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefi
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The user's API key value.
@@ -5585,6 +6444,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefi
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagOutput {
@@ -5630,6 +6495,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFree
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArrayInput` via:
 //
@@ -5655,6 +6526,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFree
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagOutput) ElementType() reflect.Type {
@@ -5667,6 +6544,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFree
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The user's API key value.
@@ -5695,6 +6578,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFree
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTagOutput {
@@ -5740,6 +6629,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUs
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArrayInput` via:
 //
@@ -5765,6 +6660,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUs
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserOutput) ElementType() reflect.Type {
@@ -5777,6 +6678,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUs
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Risk Level
@@ -5805,6 +6712,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUs
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserOutput {
@@ -5870,6 +6783,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUs
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArrayInput` via:
 //
@@ -5895,6 +6814,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUs
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreOutput) ElementType() reflect.Type {
@@ -5907,6 +6832,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUs
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Last update timestamp for the risk score
@@ -5970,6 +6901,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUs
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreOutput {
@@ -6039,6 +6976,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabiliti
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArrayInput` via:
 //
@@ -6064,6 +7007,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabiliti
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserOutput) ElementType() reflect.Type {
@@ -6076,6 +7025,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabiliti
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Indicates whether a user can use API keys.
@@ -6148,6 +7103,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabiliti
 	return o
 }
 
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser {
 		return vs[0].([]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser)[vs[1].(int)]
@@ -6191,6 +7152,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredenti
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArrayInput` via:
 //
@@ -6216,6 +7183,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredenti
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserOutput) ElementType() reflect.Type {
@@ -6228,6 +7201,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredenti
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The number of failed login attempts. The value is reset to 0 after a successful login.
@@ -6256,6 +7235,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredenti
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserOutput {
@@ -6313,6 +7298,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArrayInput` via:
 //
@@ -6338,6 +7329,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserOutput) ElementType() reflect.Type {
@@ -6350,6 +7347,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser]{
+		OutputState: o.OutputState,
+	}
 }
 
 // DB global roles to which the user is granted access.
@@ -6401,6 +7404,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser
 	return o
 }
 
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser {
 		return vs[0].([]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser)[vs[1].(int)]
@@ -6444,6 +7453,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifier] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifier]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArrayInput` via:
 //
@@ -6469,6 +7484,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifier] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifier]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierOutput) ElementType() reflect.Type {
@@ -6481,6 +7502,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifier] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifier]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A label indicating the attribute's function.
@@ -6509,6 +7536,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifier] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifier]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierOutput {
@@ -6550,6 +7583,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUs
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArrayInput` via:
 //
@@ -6575,6 +7614,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUs
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserOutput) ElementType() reflect.Type {
@@ -6587,6 +7632,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUs
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A list of kerberos realm users for an Oracle Identity Cloud Service User
@@ -6608,6 +7659,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUs
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserOutput {
@@ -6661,6 +7718,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUs
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArrayInput` via:
 //
@@ -6686,6 +7749,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUs
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserOutput) ElementType() reflect.Type {
@@ -6698,6 +7767,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUs
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Principal Name of the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
@@ -6740,6 +7815,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUs
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserOutput {
@@ -6821,6 +7902,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArg
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUser] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUser]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArrayInput` via:
 //
@@ -6846,6 +7933,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUser] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUser]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserOutput) ElementType() reflect.Type {
@@ -6858,6 +7951,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserOut
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUser] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUser]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A list of bypass codes that belongs to the user.
@@ -6951,6 +8050,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArr
 	return o
 }
 
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUser] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUser]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUser {
 		return vs[0].([]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUser)[vs[1].(int)]
@@ -6994,6 +8099,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserByp
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCode] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCode]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArrayInput` via:
 //
@@ -7019,6 +8130,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserByp
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCode] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCode]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeOutput) ElementType() reflect.Type {
@@ -7031,6 +8148,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserByp
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCode] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCode]{
+		OutputState: o.OutputState,
+	}
 }
 
 // User Token URI
@@ -7059,6 +8182,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserByp
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCode] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCode]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeOutput {
@@ -7132,6 +8261,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDev
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArrayInput` via:
 //
@@ -7157,6 +8292,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDev
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceOutput) ElementType() reflect.Type {
@@ -7169,6 +8310,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDev
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The authentication method.
@@ -7248,6 +8395,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDev
 	return o
 }
 
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice {
 		return vs[0].([]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice)[vs[1].(int)]
@@ -7295,6 +8448,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPre
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevice] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevice]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArrayInput` via:
 //
@@ -7320,6 +8479,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPre
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevice] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevice]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceOutput) ElementType() reflect.Type {
@@ -7332,6 +8497,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPre
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevice] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevice]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A human readable name, primarily used for display purposes.
@@ -7367,6 +8538,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPre
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevice] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevice]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceOutput {
@@ -7416,6 +8593,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTru
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgent] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgent]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArrayInput` via:
 //
@@ -7441,6 +8624,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTru
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgent] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgent]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentOutput) ElementType() reflect.Type {
@@ -7453,6 +8642,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTru
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgent] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgent]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A human readable name, primarily used for display purposes.
@@ -7488,6 +8683,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTru
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgent] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgent]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentOutput {
@@ -7557,6 +8758,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordSt
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArrayInput` via:
 //
@@ -7582,6 +8789,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordSt
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserOutput) ElementType() reflect.Type {
@@ -7594,6 +8807,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordSt
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Applicable Password Policy
@@ -7666,6 +8885,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordSt
 	return o
 }
 
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser {
 		return vs[0].([]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser)[vs[1].(int)]
@@ -7717,6 +8942,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordSt
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicy] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicy]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArrayInput` via:
 //
@@ -7742,6 +8973,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordSt
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicy] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicy]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyOutput) ElementType() reflect.Type {
@@ -7754,6 +8991,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordSt
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicy] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A human readable name, primarily used for display purposes.
@@ -7796,6 +9039,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordSt
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicy] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyOutput {
@@ -7845,6 +9094,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordle
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArrayInput` via:
 //
@@ -7870,6 +9125,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordle
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserOutput) ElementType() reflect.Type {
@@ -7882,6 +9143,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordle
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Factor Identifier ID
@@ -7917,6 +9184,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordle
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserOutput {
@@ -7966,6 +9239,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordle
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifier] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifier]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArrayInput` via:
 //
@@ -7991,6 +9270,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordle
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifier] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifier]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierOutput) ElementType() reflect.Type {
@@ -8003,6 +9288,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordle
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifier] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifier]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A human readable name, primarily used for display purposes.
@@ -8038,6 +9329,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordle
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifier] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifier]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierOutput {
@@ -8095,6 +9392,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserA
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUser] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUser]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserArrayInput` via:
 //
@@ -8120,6 +9423,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserA
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUser] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUser]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserOutput) ElementType() reflect.Type {
@@ -8132,6 +9441,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserO
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUser] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUser]{
+		OutputState: o.OutputState,
+	}
 }
 
 // General information about the POSIX account such as their real name and phone number
@@ -8181,6 +9496,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserA
 	return o
 }
 
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUser] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUser]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUserOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUser {
 		return vs[0].([]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUser)[vs[1].(int)]
@@ -8220,6 +9541,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQu
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArrayInput` via:
 //
@@ -8245,6 +9572,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQu
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserOutput) ElementType() reflect.Type {
@@ -8257,6 +9590,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQu
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The schema used to mnage security question and answers provided by a user for account recovery and/or MFA. While setting up security questions, a user can also provide a hint for the answer.
@@ -8278,6 +9617,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQu
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserOutput {
@@ -8331,6 +9676,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQu
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArrayInput` via:
 //
@@ -8356,6 +9707,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQu
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionOutput) ElementType() reflect.Type {
@@ -8368,6 +9725,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQu
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The answer provided by a user for a security question.
@@ -8412,6 +9775,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQu
 	return o
 }
 
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion {
 		return vs[0].([]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion)[vs[1].(int)]
@@ -8451,6 +9820,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChange
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArrayInput` via:
 //
@@ -8476,6 +9851,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChange
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput) ElementType() reflect.Type {
@@ -8488,6 +9869,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChange
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser]{
+		OutputState: o.OutputState,
+	}
 }
 
 // If true, allows requesting user to update themselves. If false, requesting user can't update themself (default).
@@ -8509,6 +9896,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChange
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput {
@@ -8558,6 +9951,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegist
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArrayInput` via:
 //
@@ -8583,6 +9982,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegist
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserOutput) ElementType() reflect.Type {
@@ -8595,6 +10000,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegist
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A boolean value that indicates whether the consent is granted.
@@ -8630,6 +10041,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegist
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserOutput {
@@ -8679,6 +10096,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegist
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfile] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfile]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArrayInput` via:
 //
@@ -8704,6 +10127,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegist
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfile] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfile]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileOutput) ElementType() reflect.Type {
@@ -8716,6 +10145,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegist
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfile] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfile]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A human readable name, primarily used for display purposes.
@@ -8751,6 +10186,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegist
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfile] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfile]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileOutput {
@@ -8792,6 +10233,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArg
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUser] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUser]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArrayInput` via:
 //
@@ -8817,6 +10264,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUser] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUser]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserOutput) ElementType() reflect.Type {
@@ -8829,6 +10282,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserOut
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUser] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUser]{
+		OutputState: o.OutputState,
+	}
 }
 
 // SFF auth keys clob
@@ -8850,6 +10309,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArr
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUser] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUser]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserOutput {
@@ -8891,6 +10356,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAcco
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArrayInput` via:
 //
@@ -8916,6 +10387,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAcco
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserOutput) ElementType() reflect.Type {
@@ -8928,6 +10405,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAcco
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Description:
@@ -8949,6 +10432,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAcco
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserOutput {
@@ -8998,6 +10487,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAcco
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccount] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccount]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArrayInput` via:
 //
@@ -9023,6 +10518,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAcco
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccount] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccount]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountOutput) ElementType() reflect.Type {
@@ -9035,6 +10536,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAcco
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccount] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccount]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A human readable name, primarily used for display purposes.
@@ -9070,6 +10577,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAcco
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccount] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccount]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountOutput {
@@ -9111,6 +10624,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUse
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArrayInput` via:
 //
@@ -9136,6 +10655,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUse
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserOutput) ElementType() reflect.Type {
@@ -9148,6 +10673,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUse
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Description:
@@ -9169,6 +10700,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUse
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserOutput {
@@ -9214,6 +10751,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUse
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsent] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsent]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArrayInput` via:
 //
@@ -9239,6 +10782,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUse
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsent] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsent]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentOutput) ElementType() reflect.Type {
@@ -9251,6 +10800,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUse
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsent] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsent]{
+		OutputState: o.OutputState,
+	}
 }
 
 // User Token URI
@@ -9279,6 +10834,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUse
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsent] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsent]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentOutput {
@@ -9340,6 +10901,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCreden
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArrayInput` via:
 //
@@ -9365,6 +10932,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCreden
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOutput) ElementType() reflect.Type {
@@ -9377,6 +10950,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCreden
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A list of API keys corresponding to user.
@@ -9435,6 +11014,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCreden
 	return o
 }
 
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser {
 		return vs[0].([]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser)[vs[1].(int)]
@@ -9486,6 +11071,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCreden
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKey] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKey]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArrayInput` via:
 //
@@ -9511,6 +11102,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCreden
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKey] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKey]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyOutput) ElementType() reflect.Type {
@@ -9523,6 +11120,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCreden
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKey] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKey]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The user's API key value.
@@ -9565,6 +11168,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCreden
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKey] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKey]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeyOutput {
@@ -9614,6 +11223,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCreden
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthToken] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthToken]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArrayInput` via:
 //
@@ -9639,6 +11254,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCreden
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthToken] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthToken]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenOutput) ElementType() reflect.Type {
@@ -9651,6 +11272,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCreden
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthToken] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthToken]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the user's support account.
@@ -9686,6 +11313,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCreden
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthToken] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthToken]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenOutput {
@@ -9735,6 +11368,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCreden
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKey] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKey]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyArrayInput` via:
 //
@@ -9760,6 +11399,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCreden
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKey] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKey]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyOutput) ElementType() reflect.Type {
@@ -9772,6 +11417,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCreden
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKey] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKey]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the user's support account.
@@ -9807,6 +11458,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCreden
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKey] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKey]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeyOutput {
@@ -9856,6 +11513,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCreden
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredential] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredential]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialArrayInput` via:
 //
@@ -9881,6 +11544,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCreden
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredential] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredential]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialOutput) ElementType() reflect.Type {
@@ -9893,6 +11562,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCreden
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredential] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the user's support account.
@@ -9928,6 +11603,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCreden
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredential] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialOutput {
@@ -9977,6 +11658,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCreden
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredential] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredential]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialArrayInput` via:
 //
@@ -10002,6 +11689,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCreden
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredential] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredential]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialOutput) ElementType() reflect.Type {
@@ -10014,6 +11707,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCreden
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredential] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the user's support account.
@@ -10049,6 +11748,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCreden
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredential] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialOutput {
@@ -10098,6 +11803,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCreden
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredential] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredential]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialArrayInput` via:
 //
@@ -10123,6 +11834,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCreden
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredential] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredential]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialOutput) ElementType() reflect.Type {
@@ -10135,6 +11852,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCreden
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredential] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the user's support account.
@@ -10170,6 +11893,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCreden
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredential] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialOutput {
@@ -10243,6 +11972,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateU
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArrayInput` via:
 //
@@ -10268,6 +12003,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateU
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserOutput) ElementType() reflect.Type {
@@ -10280,6 +12021,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateU
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The last failed login date.
@@ -10359,6 +12106,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateU
 	return o
 }
 
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser {
 		return vs[0].([]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser)[vs[1].(int)]
@@ -10410,6 +12163,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateU
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedArrayInput` via:
 //
@@ -10435,6 +12194,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateU
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedOutput) ElementType() reflect.Type {
@@ -10447,6 +12212,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateU
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Indicates whether the user password is expired. If this value is false, password expiry is still evaluated during user login.
@@ -10489,6 +12260,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateU
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedOutput {
@@ -10534,6 +12311,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateU
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedArrayInput` via:
 //
@@ -10559,6 +12342,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateU
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedOutput) ElementType() reflect.Type {
@@ -10571,6 +12360,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateU
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The date and time that the current resource was locked.
@@ -10599,6 +12394,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateU
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedOutput {
@@ -10732,6 +12533,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUser] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUser]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserArrayInput` via:
 //
@@ -10757,6 +12564,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUser] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUser]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserOutput) ElementType() reflect.Type {
@@ -10769,6 +12582,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserOu
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUser] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUser]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Boolean value to prompt user to setup account recovery during login.
@@ -10951,6 +12770,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAr
 	return o
 }
 
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUser] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUser]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUser {
 		return vs[0].([]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUser)[vs[1].(int)]
@@ -11006,6 +12831,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAc
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccount] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccount]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountArrayInput` via:
 //
@@ -11031,6 +12862,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAc
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccount] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccount]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountOutput) ElementType() reflect.Type {
@@ -11043,6 +12880,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAc
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccount] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccount]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Status of the account
@@ -11092,6 +12935,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAc
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccount] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccount]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountOutput {
@@ -11161,6 +13010,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAp
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRole] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRole]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleArrayInput` via:
 //
@@ -11186,6 +13041,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAp
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRole] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRole]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleOutput) ElementType() reflect.Type {
@@ -11198,6 +13059,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAp
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRole] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRole]{
+		OutputState: o.OutputState,
+	}
 }
 
 // If true, then the role provides administrative access privileges. READ-ONLY.
@@ -11270,6 +13137,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAp
 	return o
 }
 
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRole] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRole]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRole {
 		return vs[0].([]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRole)[vs[1].(int)]
@@ -11325,6 +13198,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAp
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetApp] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetApp]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppArrayInput` via:
 //
@@ -11350,6 +13229,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAp
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetApp] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetApp]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppOutput) ElementType() reflect.Type {
@@ -11362,6 +13247,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAp
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetApp] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetApp]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A human readable name, primarily used for display purposes.
@@ -11411,6 +13302,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserAp
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetApp] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetApp]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppOutput {
@@ -11464,6 +13361,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserDe
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetApp] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetApp]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppArrayInput` via:
 //
@@ -11489,6 +13392,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserDe
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetApp] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetApp]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppOutput) ElementType() reflect.Type {
@@ -11501,6 +13410,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserDe
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetApp] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetApp]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A human readable name, primarily used for display purposes.
@@ -11543,6 +13458,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserDe
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetApp] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetApp]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppOutput {
@@ -11606,6 +13527,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserGr
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrant] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrant]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantArrayInput` via:
 //
@@ -11631,6 +13558,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserGr
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrant] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrant]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantOutput) ElementType() reflect.Type {
@@ -11643,6 +13576,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserGr
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrant] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrant]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The ID of the App in this Grant.
@@ -11695,6 +13634,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserGr
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrant] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrant]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantOutput {
@@ -11752,6 +13697,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserId
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroup] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroup]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupArrayInput` via:
 //
@@ -11777,6 +13728,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserId
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroup] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroup]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupOutput) ElementType() reflect.Type {
@@ -11789,6 +13746,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserId
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroup] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroup]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A human readable name, primarily used for display purposes.
@@ -11838,6 +13801,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserId
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroup] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroup]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupOutput {
@@ -11895,6 +13864,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSu
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccount] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccount]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountArrayInput` via:
 //
@@ -11920,6 +13895,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSu
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccount] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccount]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountOutput) ElementType() reflect.Type {
@@ -11932,6 +13913,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSu
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccount] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccount]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the user's support account.
@@ -11981,6 +13968,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSu
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccount] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccount]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountOutput {
@@ -12034,6 +14027,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSy
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromApp] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromApp]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppArrayInput` via:
 //
@@ -12059,6 +14058,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSy
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromApp] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromApp]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppOutput) ElementType() reflect.Type {
@@ -12071,6 +14076,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSy
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromApp] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromApp]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A human readable name, primarily used for display purposes.
@@ -12113,6 +14124,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSy
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromApp] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromApp]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppOutput {
@@ -12158,6 +14175,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUs
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserToken] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserToken]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArrayInput is an input type that accepts GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArray and GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArrayInput` via:
 //
@@ -12183,6 +14206,12 @@ func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUs
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArrayOutput)
 }
 
+func (i GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserToken] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserToken]{
+		OutputState: i.ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenOutput) ElementType() reflect.Type {
@@ -12195,6 +14224,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUs
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserToken] {
+	return pulumix.Output[GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserToken]{
+		OutputState: o.OutputState,
+	}
 }
 
 // User Token URI
@@ -12223,6 +14258,12 @@ func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUs
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArrayOutput) ToGetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserToken] {
+	return pulumix.Output[[]GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserToken]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenOutput {
@@ -12276,6 +14317,12 @@ func (i GetDomainsUsersUserX509certificateArgs) ToGetDomainsUsersUserX509certifi
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserX509certificateOutput)
 }
 
+func (i GetDomainsUsersUserX509certificateArgs) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserX509certificate] {
+	return pulumix.Output[GetDomainsUsersUserX509certificate]{
+		OutputState: i.ToGetDomainsUsersUserX509certificateOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDomainsUsersUserX509certificateArrayInput is an input type that accepts GetDomainsUsersUserX509certificateArray and GetDomainsUsersUserX509certificateArrayOutput values.
 // You can construct a concrete instance of `GetDomainsUsersUserX509certificateArrayInput` via:
 //
@@ -12301,6 +14348,12 @@ func (i GetDomainsUsersUserX509certificateArray) ToGetDomainsUsersUserX509certif
 	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsUsersUserX509certificateArrayOutput)
 }
 
+func (i GetDomainsUsersUserX509certificateArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserX509certificate] {
+	return pulumix.Output[[]GetDomainsUsersUserX509certificate]{
+		OutputState: i.ToGetDomainsUsersUserX509certificateArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDomainsUsersUserX509certificateOutput struct{ *pulumi.OutputState }
 
 func (GetDomainsUsersUserX509certificateOutput) ElementType() reflect.Type {
@@ -12313,6 +14366,12 @@ func (o GetDomainsUsersUserX509certificateOutput) ToGetDomainsUsersUserX509certi
 
 func (o GetDomainsUsersUserX509certificateOutput) ToGetDomainsUsersUserX509certificateOutputWithContext(ctx context.Context) GetDomainsUsersUserX509certificateOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserX509certificateOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUsersUserX509certificate] {
+	return pulumix.Output[GetDomainsUsersUserX509certificate]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A human readable name, primarily used for display purposes.
@@ -12347,6 +14406,12 @@ func (o GetDomainsUsersUserX509certificateArrayOutput) ToGetDomainsUsersUserX509
 
 func (o GetDomainsUsersUserX509certificateArrayOutput) ToGetDomainsUsersUserX509certificateArrayOutputWithContext(ctx context.Context) GetDomainsUsersUserX509certificateArrayOutput {
 	return o
+}
+
+func (o GetDomainsUsersUserX509certificateArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDomainsUsersUserX509certificate] {
+	return pulumix.Output[[]GetDomainsUsersUserX509certificate]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUsersUserX509certificateArrayOutput) Index(i pulumi.IntInput) GetDomainsUsersUserX509certificateOutput {
@@ -12424,6 +14489,12 @@ func (i GetDynamicGroupsDynamicGroupArgs) ToGetDynamicGroupsDynamicGroupOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetDynamicGroupsDynamicGroupOutput)
 }
 
+func (i GetDynamicGroupsDynamicGroupArgs) ToOutput(ctx context.Context) pulumix.Output[GetDynamicGroupsDynamicGroup] {
+	return pulumix.Output[GetDynamicGroupsDynamicGroup]{
+		OutputState: i.ToGetDynamicGroupsDynamicGroupOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDynamicGroupsDynamicGroupArrayInput is an input type that accepts GetDynamicGroupsDynamicGroupArray and GetDynamicGroupsDynamicGroupArrayOutput values.
 // You can construct a concrete instance of `GetDynamicGroupsDynamicGroupArrayInput` via:
 //
@@ -12449,6 +14520,12 @@ func (i GetDynamicGroupsDynamicGroupArray) ToGetDynamicGroupsDynamicGroupArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetDynamicGroupsDynamicGroupArrayOutput)
 }
 
+func (i GetDynamicGroupsDynamicGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDynamicGroupsDynamicGroup] {
+	return pulumix.Output[[]GetDynamicGroupsDynamicGroup]{
+		OutputState: i.ToGetDynamicGroupsDynamicGroupArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDynamicGroupsDynamicGroupOutput struct{ *pulumi.OutputState }
 
 func (GetDynamicGroupsDynamicGroupOutput) ElementType() reflect.Type {
@@ -12461,6 +14538,12 @@ func (o GetDynamicGroupsDynamicGroupOutput) ToGetDynamicGroupsDynamicGroupOutput
 
 func (o GetDynamicGroupsDynamicGroupOutput) ToGetDynamicGroupsDynamicGroupOutputWithContext(ctx context.Context) GetDynamicGroupsDynamicGroupOutput {
 	return o
+}
+
+func (o GetDynamicGroupsDynamicGroupOutput) ToOutput(ctx context.Context) pulumix.Output[GetDynamicGroupsDynamicGroup] {
+	return pulumix.Output[GetDynamicGroupsDynamicGroup]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the compartment (remember that the tenancy is simply the root compartment).
@@ -12527,6 +14610,12 @@ func (o GetDynamicGroupsDynamicGroupArrayOutput) ToGetDynamicGroupsDynamicGroupA
 	return o
 }
 
+func (o GetDynamicGroupsDynamicGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDynamicGroupsDynamicGroup] {
+	return pulumix.Output[[]GetDynamicGroupsDynamicGroup]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetDynamicGroupsDynamicGroupArrayOutput) Index(i pulumi.IntInput) GetDynamicGroupsDynamicGroupOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDynamicGroupsDynamicGroup {
 		return vs[0].([]GetDynamicGroupsDynamicGroup)[vs[1].(int)]
@@ -12570,6 +14659,12 @@ func (i GetDynamicGroupsFilterArgs) ToGetDynamicGroupsFilterOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetDynamicGroupsFilterOutput)
 }
 
+func (i GetDynamicGroupsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetDynamicGroupsFilter] {
+	return pulumix.Output[GetDynamicGroupsFilter]{
+		OutputState: i.ToGetDynamicGroupsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDynamicGroupsFilterArrayInput is an input type that accepts GetDynamicGroupsFilterArray and GetDynamicGroupsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDynamicGroupsFilterArrayInput` via:
 //
@@ -12595,6 +14690,12 @@ func (i GetDynamicGroupsFilterArray) ToGetDynamicGroupsFilterArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetDynamicGroupsFilterArrayOutput)
 }
 
+func (i GetDynamicGroupsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDynamicGroupsFilter] {
+	return pulumix.Output[[]GetDynamicGroupsFilter]{
+		OutputState: i.ToGetDynamicGroupsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDynamicGroupsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetDynamicGroupsFilterOutput) ElementType() reflect.Type {
@@ -12607,6 +14708,12 @@ func (o GetDynamicGroupsFilterOutput) ToGetDynamicGroupsFilterOutput() GetDynami
 
 func (o GetDynamicGroupsFilterOutput) ToGetDynamicGroupsFilterOutputWithContext(ctx context.Context) GetDynamicGroupsFilterOutput {
 	return o
+}
+
+func (o GetDynamicGroupsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetDynamicGroupsFilter] {
+	return pulumix.Output[GetDynamicGroupsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A filter to only return resources that match the given name exactly.
@@ -12634,6 +14741,12 @@ func (o GetDynamicGroupsFilterArrayOutput) ToGetDynamicGroupsFilterArrayOutput()
 
 func (o GetDynamicGroupsFilterArrayOutput) ToGetDynamicGroupsFilterArrayOutputWithContext(ctx context.Context) GetDynamicGroupsFilterArrayOutput {
 	return o
+}
+
+func (o GetDynamicGroupsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDynamicGroupsFilter] {
+	return pulumix.Output[[]GetDynamicGroupsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDynamicGroupsFilterArrayOutput) Index(i pulumi.IntInput) GetDynamicGroupsFilterOutput {
@@ -12687,6 +14800,12 @@ func (i GetFaultDomainsFaultDomainArgs) ToGetFaultDomainsFaultDomainOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetFaultDomainsFaultDomainOutput)
 }
 
+func (i GetFaultDomainsFaultDomainArgs) ToOutput(ctx context.Context) pulumix.Output[GetFaultDomainsFaultDomain] {
+	return pulumix.Output[GetFaultDomainsFaultDomain]{
+		OutputState: i.ToGetFaultDomainsFaultDomainOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetFaultDomainsFaultDomainArrayInput is an input type that accepts GetFaultDomainsFaultDomainArray and GetFaultDomainsFaultDomainArrayOutput values.
 // You can construct a concrete instance of `GetFaultDomainsFaultDomainArrayInput` via:
 //
@@ -12712,6 +14831,12 @@ func (i GetFaultDomainsFaultDomainArray) ToGetFaultDomainsFaultDomainArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetFaultDomainsFaultDomainArrayOutput)
 }
 
+func (i GetFaultDomainsFaultDomainArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFaultDomainsFaultDomain] {
+	return pulumix.Output[[]GetFaultDomainsFaultDomain]{
+		OutputState: i.ToGetFaultDomainsFaultDomainArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetFaultDomainsFaultDomainOutput struct{ *pulumi.OutputState }
 
 func (GetFaultDomainsFaultDomainOutput) ElementType() reflect.Type {
@@ -12724,6 +14849,12 @@ func (o GetFaultDomainsFaultDomainOutput) ToGetFaultDomainsFaultDomainOutput() G
 
 func (o GetFaultDomainsFaultDomainOutput) ToGetFaultDomainsFaultDomainOutputWithContext(ctx context.Context) GetFaultDomainsFaultDomainOutput {
 	return o
+}
+
+func (o GetFaultDomainsFaultDomainOutput) ToOutput(ctx context.Context) pulumix.Output[GetFaultDomainsFaultDomain] {
+	return pulumix.Output[GetFaultDomainsFaultDomain]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the availibilityDomain.
@@ -12758,6 +14889,12 @@ func (o GetFaultDomainsFaultDomainArrayOutput) ToGetFaultDomainsFaultDomainArray
 
 func (o GetFaultDomainsFaultDomainArrayOutput) ToGetFaultDomainsFaultDomainArrayOutputWithContext(ctx context.Context) GetFaultDomainsFaultDomainArrayOutput {
 	return o
+}
+
+func (o GetFaultDomainsFaultDomainArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFaultDomainsFaultDomain] {
+	return pulumix.Output[[]GetFaultDomainsFaultDomain]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetFaultDomainsFaultDomainArrayOutput) Index(i pulumi.IntInput) GetFaultDomainsFaultDomainOutput {
@@ -12803,6 +14940,12 @@ func (i GetFaultDomainsFilterArgs) ToGetFaultDomainsFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetFaultDomainsFilterOutput)
 }
 
+func (i GetFaultDomainsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetFaultDomainsFilter] {
+	return pulumix.Output[GetFaultDomainsFilter]{
+		OutputState: i.ToGetFaultDomainsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetFaultDomainsFilterArrayInput is an input type that accepts GetFaultDomainsFilterArray and GetFaultDomainsFilterArrayOutput values.
 // You can construct a concrete instance of `GetFaultDomainsFilterArrayInput` via:
 //
@@ -12828,6 +14971,12 @@ func (i GetFaultDomainsFilterArray) ToGetFaultDomainsFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetFaultDomainsFilterArrayOutput)
 }
 
+func (i GetFaultDomainsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFaultDomainsFilter] {
+	return pulumix.Output[[]GetFaultDomainsFilter]{
+		OutputState: i.ToGetFaultDomainsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetFaultDomainsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetFaultDomainsFilterOutput) ElementType() reflect.Type {
@@ -12840,6 +14989,12 @@ func (o GetFaultDomainsFilterOutput) ToGetFaultDomainsFilterOutput() GetFaultDom
 
 func (o GetFaultDomainsFilterOutput) ToGetFaultDomainsFilterOutputWithContext(ctx context.Context) GetFaultDomainsFilterOutput {
 	return o
+}
+
+func (o GetFaultDomainsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetFaultDomainsFilter] {
+	return pulumix.Output[GetFaultDomainsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the Fault Domain.
@@ -12867,6 +15022,12 @@ func (o GetFaultDomainsFilterArrayOutput) ToGetFaultDomainsFilterArrayOutput() G
 
 func (o GetFaultDomainsFilterArrayOutput) ToGetFaultDomainsFilterArrayOutputWithContext(ctx context.Context) GetFaultDomainsFilterArrayOutput {
 	return o
+}
+
+func (o GetFaultDomainsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFaultDomainsFilter] {
+	return pulumix.Output[[]GetFaultDomainsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetFaultDomainsFilterArrayOutput) Index(i pulumi.IntInput) GetFaultDomainsFilterOutput {
@@ -12912,6 +15073,12 @@ func (i GetGroupsFilterArgs) ToGetGroupsFilterOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetGroupsFilterOutput)
 }
 
+func (i GetGroupsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetGroupsFilter] {
+	return pulumix.Output[GetGroupsFilter]{
+		OutputState: i.ToGetGroupsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetGroupsFilterArrayInput is an input type that accepts GetGroupsFilterArray and GetGroupsFilterArrayOutput values.
 // You can construct a concrete instance of `GetGroupsFilterArrayInput` via:
 //
@@ -12937,6 +15104,12 @@ func (i GetGroupsFilterArray) ToGetGroupsFilterArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetGroupsFilterArrayOutput)
 }
 
+func (i GetGroupsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGroupsFilter] {
+	return pulumix.Output[[]GetGroupsFilter]{
+		OutputState: i.ToGetGroupsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetGroupsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetGroupsFilterOutput) ElementType() reflect.Type {
@@ -12949,6 +15122,12 @@ func (o GetGroupsFilterOutput) ToGetGroupsFilterOutput() GetGroupsFilterOutput {
 
 func (o GetGroupsFilterOutput) ToGetGroupsFilterOutputWithContext(ctx context.Context) GetGroupsFilterOutput {
 	return o
+}
+
+func (o GetGroupsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetGroupsFilter] {
+	return pulumix.Output[GetGroupsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A filter to only return resources that match the given name exactly.
@@ -12976,6 +15155,12 @@ func (o GetGroupsFilterArrayOutput) ToGetGroupsFilterArrayOutput() GetGroupsFilt
 
 func (o GetGroupsFilterArrayOutput) ToGetGroupsFilterArrayOutputWithContext(ctx context.Context) GetGroupsFilterArrayOutput {
 	return o
+}
+
+func (o GetGroupsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGroupsFilter] {
+	return pulumix.Output[[]GetGroupsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetGroupsFilterArrayOutput) Index(i pulumi.IntInput) GetGroupsFilterOutput {
@@ -13049,6 +15234,12 @@ func (i GetGroupsGroupArgs) ToGetGroupsGroupOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetGroupsGroupOutput)
 }
 
+func (i GetGroupsGroupArgs) ToOutput(ctx context.Context) pulumix.Output[GetGroupsGroup] {
+	return pulumix.Output[GetGroupsGroup]{
+		OutputState: i.ToGetGroupsGroupOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetGroupsGroupArrayInput is an input type that accepts GetGroupsGroupArray and GetGroupsGroupArrayOutput values.
 // You can construct a concrete instance of `GetGroupsGroupArrayInput` via:
 //
@@ -13074,6 +15265,12 @@ func (i GetGroupsGroupArray) ToGetGroupsGroupArrayOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetGroupsGroupArrayOutput)
 }
 
+func (i GetGroupsGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGroupsGroup] {
+	return pulumix.Output[[]GetGroupsGroup]{
+		OutputState: i.ToGetGroupsGroupArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetGroupsGroupOutput struct{ *pulumi.OutputState }
 
 func (GetGroupsGroupOutput) ElementType() reflect.Type {
@@ -13086,6 +15283,12 @@ func (o GetGroupsGroupOutput) ToGetGroupsGroupOutput() GetGroupsGroupOutput {
 
 func (o GetGroupsGroupOutput) ToGetGroupsGroupOutputWithContext(ctx context.Context) GetGroupsGroupOutput {
 	return o
+}
+
+func (o GetGroupsGroupOutput) ToOutput(ctx context.Context) pulumix.Output[GetGroupsGroup] {
+	return pulumix.Output[GetGroupsGroup]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the compartment (remember that the tenancy is simply the root compartment).
@@ -13147,6 +15350,12 @@ func (o GetGroupsGroupArrayOutput) ToGetGroupsGroupArrayOutputWithContext(ctx co
 	return o
 }
 
+func (o GetGroupsGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGroupsGroup] {
+	return pulumix.Output[[]GetGroupsGroup]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetGroupsGroupArrayOutput) Index(i pulumi.IntInput) GetGroupsGroupOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGroupsGroup {
 		return vs[0].([]GetGroupsGroup)[vs[1].(int)]
@@ -13188,6 +15397,12 @@ func (i GetIamWorkRequestErrorsFilterArgs) ToGetIamWorkRequestErrorsFilterOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetIamWorkRequestErrorsFilterOutput)
 }
 
+func (i GetIamWorkRequestErrorsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetIamWorkRequestErrorsFilter] {
+	return pulumix.Output[GetIamWorkRequestErrorsFilter]{
+		OutputState: i.ToGetIamWorkRequestErrorsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetIamWorkRequestErrorsFilterArrayInput is an input type that accepts GetIamWorkRequestErrorsFilterArray and GetIamWorkRequestErrorsFilterArrayOutput values.
 // You can construct a concrete instance of `GetIamWorkRequestErrorsFilterArrayInput` via:
 //
@@ -13213,6 +15428,12 @@ func (i GetIamWorkRequestErrorsFilterArray) ToGetIamWorkRequestErrorsFilterArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetIamWorkRequestErrorsFilterArrayOutput)
 }
 
+func (i GetIamWorkRequestErrorsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIamWorkRequestErrorsFilter] {
+	return pulumix.Output[[]GetIamWorkRequestErrorsFilter]{
+		OutputState: i.ToGetIamWorkRequestErrorsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetIamWorkRequestErrorsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetIamWorkRequestErrorsFilterOutput) ElementType() reflect.Type {
@@ -13225,6 +15446,12 @@ func (o GetIamWorkRequestErrorsFilterOutput) ToGetIamWorkRequestErrorsFilterOutp
 
 func (o GetIamWorkRequestErrorsFilterOutput) ToGetIamWorkRequestErrorsFilterOutputWithContext(ctx context.Context) GetIamWorkRequestErrorsFilterOutput {
 	return o
+}
+
+func (o GetIamWorkRequestErrorsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetIamWorkRequestErrorsFilter] {
+	return pulumix.Output[GetIamWorkRequestErrorsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetIamWorkRequestErrorsFilterOutput) Name() pulumi.StringOutput {
@@ -13251,6 +15478,12 @@ func (o GetIamWorkRequestErrorsFilterArrayOutput) ToGetIamWorkRequestErrorsFilte
 
 func (o GetIamWorkRequestErrorsFilterArrayOutput) ToGetIamWorkRequestErrorsFilterArrayOutputWithContext(ctx context.Context) GetIamWorkRequestErrorsFilterArrayOutput {
 	return o
+}
+
+func (o GetIamWorkRequestErrorsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIamWorkRequestErrorsFilter] {
+	return pulumix.Output[[]GetIamWorkRequestErrorsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetIamWorkRequestErrorsFilterArrayOutput) Index(i pulumi.IntInput) GetIamWorkRequestErrorsFilterOutput {
@@ -13300,6 +15533,12 @@ func (i GetIamWorkRequestErrorsIamWorkRequestErrorArgs) ToGetIamWorkRequestError
 	return pulumi.ToOutputWithContext(ctx, i).(GetIamWorkRequestErrorsIamWorkRequestErrorOutput)
 }
 
+func (i GetIamWorkRequestErrorsIamWorkRequestErrorArgs) ToOutput(ctx context.Context) pulumix.Output[GetIamWorkRequestErrorsIamWorkRequestError] {
+	return pulumix.Output[GetIamWorkRequestErrorsIamWorkRequestError]{
+		OutputState: i.ToGetIamWorkRequestErrorsIamWorkRequestErrorOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetIamWorkRequestErrorsIamWorkRequestErrorArrayInput is an input type that accepts GetIamWorkRequestErrorsIamWorkRequestErrorArray and GetIamWorkRequestErrorsIamWorkRequestErrorArrayOutput values.
 // You can construct a concrete instance of `GetIamWorkRequestErrorsIamWorkRequestErrorArrayInput` via:
 //
@@ -13325,6 +15564,12 @@ func (i GetIamWorkRequestErrorsIamWorkRequestErrorArray) ToGetIamWorkRequestErro
 	return pulumi.ToOutputWithContext(ctx, i).(GetIamWorkRequestErrorsIamWorkRequestErrorArrayOutput)
 }
 
+func (i GetIamWorkRequestErrorsIamWorkRequestErrorArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIamWorkRequestErrorsIamWorkRequestError] {
+	return pulumix.Output[[]GetIamWorkRequestErrorsIamWorkRequestError]{
+		OutputState: i.ToGetIamWorkRequestErrorsIamWorkRequestErrorArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetIamWorkRequestErrorsIamWorkRequestErrorOutput struct{ *pulumi.OutputState }
 
 func (GetIamWorkRequestErrorsIamWorkRequestErrorOutput) ElementType() reflect.Type {
@@ -13337,6 +15582,12 @@ func (o GetIamWorkRequestErrorsIamWorkRequestErrorOutput) ToGetIamWorkRequestErr
 
 func (o GetIamWorkRequestErrorsIamWorkRequestErrorOutput) ToGetIamWorkRequestErrorsIamWorkRequestErrorOutputWithContext(ctx context.Context) GetIamWorkRequestErrorsIamWorkRequestErrorOutput {
 	return o
+}
+
+func (o GetIamWorkRequestErrorsIamWorkRequestErrorOutput) ToOutput(ctx context.Context) pulumix.Output[GetIamWorkRequestErrorsIamWorkRequestError] {
+	return pulumix.Output[GetIamWorkRequestErrorsIamWorkRequestError]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A machine-usable code for the error that occured.
@@ -13366,6 +15617,12 @@ func (o GetIamWorkRequestErrorsIamWorkRequestErrorArrayOutput) ToGetIamWorkReque
 
 func (o GetIamWorkRequestErrorsIamWorkRequestErrorArrayOutput) ToGetIamWorkRequestErrorsIamWorkRequestErrorArrayOutputWithContext(ctx context.Context) GetIamWorkRequestErrorsIamWorkRequestErrorArrayOutput {
 	return o
+}
+
+func (o GetIamWorkRequestErrorsIamWorkRequestErrorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIamWorkRequestErrorsIamWorkRequestError] {
+	return pulumix.Output[[]GetIamWorkRequestErrorsIamWorkRequestError]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetIamWorkRequestErrorsIamWorkRequestErrorArrayOutput) Index(i pulumi.IntInput) GetIamWorkRequestErrorsIamWorkRequestErrorOutput {
@@ -13409,6 +15666,12 @@ func (i GetIamWorkRequestLogsFilterArgs) ToGetIamWorkRequestLogsFilterOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetIamWorkRequestLogsFilterOutput)
 }
 
+func (i GetIamWorkRequestLogsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetIamWorkRequestLogsFilter] {
+	return pulumix.Output[GetIamWorkRequestLogsFilter]{
+		OutputState: i.ToGetIamWorkRequestLogsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetIamWorkRequestLogsFilterArrayInput is an input type that accepts GetIamWorkRequestLogsFilterArray and GetIamWorkRequestLogsFilterArrayOutput values.
 // You can construct a concrete instance of `GetIamWorkRequestLogsFilterArrayInput` via:
 //
@@ -13434,6 +15697,12 @@ func (i GetIamWorkRequestLogsFilterArray) ToGetIamWorkRequestLogsFilterArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetIamWorkRequestLogsFilterArrayOutput)
 }
 
+func (i GetIamWorkRequestLogsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIamWorkRequestLogsFilter] {
+	return pulumix.Output[[]GetIamWorkRequestLogsFilter]{
+		OutputState: i.ToGetIamWorkRequestLogsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetIamWorkRequestLogsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetIamWorkRequestLogsFilterOutput) ElementType() reflect.Type {
@@ -13446,6 +15715,12 @@ func (o GetIamWorkRequestLogsFilterOutput) ToGetIamWorkRequestLogsFilterOutput()
 
 func (o GetIamWorkRequestLogsFilterOutput) ToGetIamWorkRequestLogsFilterOutputWithContext(ctx context.Context) GetIamWorkRequestLogsFilterOutput {
 	return o
+}
+
+func (o GetIamWorkRequestLogsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetIamWorkRequestLogsFilter] {
+	return pulumix.Output[GetIamWorkRequestLogsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetIamWorkRequestLogsFilterOutput) Name() pulumi.StringOutput {
@@ -13472,6 +15747,12 @@ func (o GetIamWorkRequestLogsFilterArrayOutput) ToGetIamWorkRequestLogsFilterArr
 
 func (o GetIamWorkRequestLogsFilterArrayOutput) ToGetIamWorkRequestLogsFilterArrayOutputWithContext(ctx context.Context) GetIamWorkRequestLogsFilterArrayOutput {
 	return o
+}
+
+func (o GetIamWorkRequestLogsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIamWorkRequestLogsFilter] {
+	return pulumix.Output[[]GetIamWorkRequestLogsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetIamWorkRequestLogsFilterArrayOutput) Index(i pulumi.IntInput) GetIamWorkRequestLogsFilterOutput {
@@ -13517,6 +15798,12 @@ func (i GetIamWorkRequestLogsIamWorkRequestLogArgs) ToGetIamWorkRequestLogsIamWo
 	return pulumi.ToOutputWithContext(ctx, i).(GetIamWorkRequestLogsIamWorkRequestLogOutput)
 }
 
+func (i GetIamWorkRequestLogsIamWorkRequestLogArgs) ToOutput(ctx context.Context) pulumix.Output[GetIamWorkRequestLogsIamWorkRequestLog] {
+	return pulumix.Output[GetIamWorkRequestLogsIamWorkRequestLog]{
+		OutputState: i.ToGetIamWorkRequestLogsIamWorkRequestLogOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetIamWorkRequestLogsIamWorkRequestLogArrayInput is an input type that accepts GetIamWorkRequestLogsIamWorkRequestLogArray and GetIamWorkRequestLogsIamWorkRequestLogArrayOutput values.
 // You can construct a concrete instance of `GetIamWorkRequestLogsIamWorkRequestLogArrayInput` via:
 //
@@ -13542,6 +15829,12 @@ func (i GetIamWorkRequestLogsIamWorkRequestLogArray) ToGetIamWorkRequestLogsIamW
 	return pulumi.ToOutputWithContext(ctx, i).(GetIamWorkRequestLogsIamWorkRequestLogArrayOutput)
 }
 
+func (i GetIamWorkRequestLogsIamWorkRequestLogArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIamWorkRequestLogsIamWorkRequestLog] {
+	return pulumix.Output[[]GetIamWorkRequestLogsIamWorkRequestLog]{
+		OutputState: i.ToGetIamWorkRequestLogsIamWorkRequestLogArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetIamWorkRequestLogsIamWorkRequestLogOutput struct{ *pulumi.OutputState }
 
 func (GetIamWorkRequestLogsIamWorkRequestLogOutput) ElementType() reflect.Type {
@@ -13554,6 +15847,12 @@ func (o GetIamWorkRequestLogsIamWorkRequestLogOutput) ToGetIamWorkRequestLogsIam
 
 func (o GetIamWorkRequestLogsIamWorkRequestLogOutput) ToGetIamWorkRequestLogsIamWorkRequestLogOutputWithContext(ctx context.Context) GetIamWorkRequestLogsIamWorkRequestLogOutput {
 	return o
+}
+
+func (o GetIamWorkRequestLogsIamWorkRequestLogOutput) ToOutput(ctx context.Context) pulumix.Output[GetIamWorkRequestLogsIamWorkRequestLog] {
+	return pulumix.Output[GetIamWorkRequestLogsIamWorkRequestLog]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A human-readable error string.
@@ -13578,6 +15877,12 @@ func (o GetIamWorkRequestLogsIamWorkRequestLogArrayOutput) ToGetIamWorkRequestLo
 
 func (o GetIamWorkRequestLogsIamWorkRequestLogArrayOutput) ToGetIamWorkRequestLogsIamWorkRequestLogArrayOutputWithContext(ctx context.Context) GetIamWorkRequestLogsIamWorkRequestLogArrayOutput {
 	return o
+}
+
+func (o GetIamWorkRequestLogsIamWorkRequestLogArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIamWorkRequestLogsIamWorkRequestLog] {
+	return pulumix.Output[[]GetIamWorkRequestLogsIamWorkRequestLog]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetIamWorkRequestLogsIamWorkRequestLogArrayOutput) Index(i pulumi.IntInput) GetIamWorkRequestLogsIamWorkRequestLogOutput {
@@ -13631,6 +15936,12 @@ func (i GetIamWorkRequestResourceArgs) ToGetIamWorkRequestResourceOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetIamWorkRequestResourceOutput)
 }
 
+func (i GetIamWorkRequestResourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetIamWorkRequestResource] {
+	return pulumix.Output[GetIamWorkRequestResource]{
+		OutputState: i.ToGetIamWorkRequestResourceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetIamWorkRequestResourceArrayInput is an input type that accepts GetIamWorkRequestResourceArray and GetIamWorkRequestResourceArrayOutput values.
 // You can construct a concrete instance of `GetIamWorkRequestResourceArrayInput` via:
 //
@@ -13656,6 +15967,12 @@ func (i GetIamWorkRequestResourceArray) ToGetIamWorkRequestResourceArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetIamWorkRequestResourceArrayOutput)
 }
 
+func (i GetIamWorkRequestResourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIamWorkRequestResource] {
+	return pulumix.Output[[]GetIamWorkRequestResource]{
+		OutputState: i.ToGetIamWorkRequestResourceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetIamWorkRequestResourceOutput struct{ *pulumi.OutputState }
 
 func (GetIamWorkRequestResourceOutput) ElementType() reflect.Type {
@@ -13668,6 +15985,12 @@ func (o GetIamWorkRequestResourceOutput) ToGetIamWorkRequestResourceOutput() Get
 
 func (o GetIamWorkRequestResourceOutput) ToGetIamWorkRequestResourceOutputWithContext(ctx context.Context) GetIamWorkRequestResourceOutput {
 	return o
+}
+
+func (o GetIamWorkRequestResourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetIamWorkRequestResource] {
+	return pulumix.Output[GetIamWorkRequestResource]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The way in which this resource is affected by the work tracked in the work request. A resource being created, updated, or deleted will remain in the IN_PROGRESS state until work is complete for that resource at which point it will transition to CREATED, UPDATED, or DELETED, respectively.
@@ -13702,6 +16025,12 @@ func (o GetIamWorkRequestResourceArrayOutput) ToGetIamWorkRequestResourceArrayOu
 
 func (o GetIamWorkRequestResourceArrayOutput) ToGetIamWorkRequestResourceArrayOutputWithContext(ctx context.Context) GetIamWorkRequestResourceArrayOutput {
 	return o
+}
+
+func (o GetIamWorkRequestResourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIamWorkRequestResource] {
+	return pulumix.Output[[]GetIamWorkRequestResource]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetIamWorkRequestResourceArrayOutput) Index(i pulumi.IntInput) GetIamWorkRequestResourceOutput {
@@ -13745,6 +16074,12 @@ func (i GetIamWorkRequestsFilterArgs) ToGetIamWorkRequestsFilterOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetIamWorkRequestsFilterOutput)
 }
 
+func (i GetIamWorkRequestsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetIamWorkRequestsFilter] {
+	return pulumix.Output[GetIamWorkRequestsFilter]{
+		OutputState: i.ToGetIamWorkRequestsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetIamWorkRequestsFilterArrayInput is an input type that accepts GetIamWorkRequestsFilterArray and GetIamWorkRequestsFilterArrayOutput values.
 // You can construct a concrete instance of `GetIamWorkRequestsFilterArrayInput` via:
 //
@@ -13770,6 +16105,12 @@ func (i GetIamWorkRequestsFilterArray) ToGetIamWorkRequestsFilterArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetIamWorkRequestsFilterArrayOutput)
 }
 
+func (i GetIamWorkRequestsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIamWorkRequestsFilter] {
+	return pulumix.Output[[]GetIamWorkRequestsFilter]{
+		OutputState: i.ToGetIamWorkRequestsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetIamWorkRequestsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetIamWorkRequestsFilterOutput) ElementType() reflect.Type {
@@ -13782,6 +16123,12 @@ func (o GetIamWorkRequestsFilterOutput) ToGetIamWorkRequestsFilterOutput() GetIa
 
 func (o GetIamWorkRequestsFilterOutput) ToGetIamWorkRequestsFilterOutputWithContext(ctx context.Context) GetIamWorkRequestsFilterOutput {
 	return o
+}
+
+func (o GetIamWorkRequestsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetIamWorkRequestsFilter] {
+	return pulumix.Output[GetIamWorkRequestsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetIamWorkRequestsFilterOutput) Name() pulumi.StringOutput {
@@ -13808,6 +16155,12 @@ func (o GetIamWorkRequestsFilterArrayOutput) ToGetIamWorkRequestsFilterArrayOutp
 
 func (o GetIamWorkRequestsFilterArrayOutput) ToGetIamWorkRequestsFilterArrayOutputWithContext(ctx context.Context) GetIamWorkRequestsFilterArrayOutput {
 	return o
+}
+
+func (o GetIamWorkRequestsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIamWorkRequestsFilter] {
+	return pulumix.Output[[]GetIamWorkRequestsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetIamWorkRequestsFilterArrayOutput) Index(i pulumi.IntInput) GetIamWorkRequestsFilterOutput {
@@ -13881,6 +16234,12 @@ func (i GetIamWorkRequestsIamWorkRequestArgs) ToGetIamWorkRequestsIamWorkRequest
 	return pulumi.ToOutputWithContext(ctx, i).(GetIamWorkRequestsIamWorkRequestOutput)
 }
 
+func (i GetIamWorkRequestsIamWorkRequestArgs) ToOutput(ctx context.Context) pulumix.Output[GetIamWorkRequestsIamWorkRequest] {
+	return pulumix.Output[GetIamWorkRequestsIamWorkRequest]{
+		OutputState: i.ToGetIamWorkRequestsIamWorkRequestOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetIamWorkRequestsIamWorkRequestArrayInput is an input type that accepts GetIamWorkRequestsIamWorkRequestArray and GetIamWorkRequestsIamWorkRequestArrayOutput values.
 // You can construct a concrete instance of `GetIamWorkRequestsIamWorkRequestArrayInput` via:
 //
@@ -13906,6 +16265,12 @@ func (i GetIamWorkRequestsIamWorkRequestArray) ToGetIamWorkRequestsIamWorkReques
 	return pulumi.ToOutputWithContext(ctx, i).(GetIamWorkRequestsIamWorkRequestArrayOutput)
 }
 
+func (i GetIamWorkRequestsIamWorkRequestArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIamWorkRequestsIamWorkRequest] {
+	return pulumix.Output[[]GetIamWorkRequestsIamWorkRequest]{
+		OutputState: i.ToGetIamWorkRequestsIamWorkRequestArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetIamWorkRequestsIamWorkRequestOutput struct{ *pulumi.OutputState }
 
 func (GetIamWorkRequestsIamWorkRequestOutput) ElementType() reflect.Type {
@@ -13918,6 +16283,12 @@ func (o GetIamWorkRequestsIamWorkRequestOutput) ToGetIamWorkRequestsIamWorkReque
 
 func (o GetIamWorkRequestsIamWorkRequestOutput) ToGetIamWorkRequestsIamWorkRequestOutputWithContext(ctx context.Context) GetIamWorkRequestsIamWorkRequestOutput {
 	return o
+}
+
+func (o GetIamWorkRequestsIamWorkRequestOutput) ToOutput(ctx context.Context) pulumix.Output[GetIamWorkRequestsIamWorkRequest] {
+	return pulumix.Output[GetIamWorkRequestsIamWorkRequest]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the compartment (remember that the tenancy is simply the root compartment).
@@ -13981,6 +16352,12 @@ func (o GetIamWorkRequestsIamWorkRequestArrayOutput) ToGetIamWorkRequestsIamWork
 	return o
 }
 
+func (o GetIamWorkRequestsIamWorkRequestArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIamWorkRequestsIamWorkRequest] {
+	return pulumix.Output[[]GetIamWorkRequestsIamWorkRequest]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetIamWorkRequestsIamWorkRequestArrayOutput) Index(i pulumi.IntInput) GetIamWorkRequestsIamWorkRequestOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIamWorkRequestsIamWorkRequest {
 		return vs[0].([]GetIamWorkRequestsIamWorkRequest)[vs[1].(int)]
@@ -14032,6 +16409,12 @@ func (i GetIamWorkRequestsIamWorkRequestResourceArgs) ToGetIamWorkRequestsIamWor
 	return pulumi.ToOutputWithContext(ctx, i).(GetIamWorkRequestsIamWorkRequestResourceOutput)
 }
 
+func (i GetIamWorkRequestsIamWorkRequestResourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetIamWorkRequestsIamWorkRequestResource] {
+	return pulumix.Output[GetIamWorkRequestsIamWorkRequestResource]{
+		OutputState: i.ToGetIamWorkRequestsIamWorkRequestResourceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetIamWorkRequestsIamWorkRequestResourceArrayInput is an input type that accepts GetIamWorkRequestsIamWorkRequestResourceArray and GetIamWorkRequestsIamWorkRequestResourceArrayOutput values.
 // You can construct a concrete instance of `GetIamWorkRequestsIamWorkRequestResourceArrayInput` via:
 //
@@ -14057,6 +16440,12 @@ func (i GetIamWorkRequestsIamWorkRequestResourceArray) ToGetIamWorkRequestsIamWo
 	return pulumi.ToOutputWithContext(ctx, i).(GetIamWorkRequestsIamWorkRequestResourceArrayOutput)
 }
 
+func (i GetIamWorkRequestsIamWorkRequestResourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIamWorkRequestsIamWorkRequestResource] {
+	return pulumix.Output[[]GetIamWorkRequestsIamWorkRequestResource]{
+		OutputState: i.ToGetIamWorkRequestsIamWorkRequestResourceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetIamWorkRequestsIamWorkRequestResourceOutput struct{ *pulumi.OutputState }
 
 func (GetIamWorkRequestsIamWorkRequestResourceOutput) ElementType() reflect.Type {
@@ -14069,6 +16458,12 @@ func (o GetIamWorkRequestsIamWorkRequestResourceOutput) ToGetIamWorkRequestsIamW
 
 func (o GetIamWorkRequestsIamWorkRequestResourceOutput) ToGetIamWorkRequestsIamWorkRequestResourceOutputWithContext(ctx context.Context) GetIamWorkRequestsIamWorkRequestResourceOutput {
 	return o
+}
+
+func (o GetIamWorkRequestsIamWorkRequestResourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetIamWorkRequestsIamWorkRequestResource] {
+	return pulumix.Output[GetIamWorkRequestsIamWorkRequestResource]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The way in which this resource is affected by the work tracked in the work request. A resource being created, updated, or deleted will remain in the IN_PROGRESS state until work is complete for that resource at which point it will transition to CREATED, UPDATED, or DELETED, respectively.
@@ -14103,6 +16498,12 @@ func (o GetIamWorkRequestsIamWorkRequestResourceArrayOutput) ToGetIamWorkRequest
 
 func (o GetIamWorkRequestsIamWorkRequestResourceArrayOutput) ToGetIamWorkRequestsIamWorkRequestResourceArrayOutputWithContext(ctx context.Context) GetIamWorkRequestsIamWorkRequestResourceArrayOutput {
 	return o
+}
+
+func (o GetIamWorkRequestsIamWorkRequestResourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIamWorkRequestsIamWorkRequestResource] {
+	return pulumix.Output[[]GetIamWorkRequestsIamWorkRequestResource]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetIamWorkRequestsIamWorkRequestResourceArrayOutput) Index(i pulumi.IntInput) GetIamWorkRequestsIamWorkRequestResourceOutput {
@@ -14148,6 +16549,12 @@ func (i GetIdentityProviderGroupsFilterArgs) ToGetIdentityProviderGroupsFilterOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetIdentityProviderGroupsFilterOutput)
 }
 
+func (i GetIdentityProviderGroupsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetIdentityProviderGroupsFilter] {
+	return pulumix.Output[GetIdentityProviderGroupsFilter]{
+		OutputState: i.ToGetIdentityProviderGroupsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetIdentityProviderGroupsFilterArrayInput is an input type that accepts GetIdentityProviderGroupsFilterArray and GetIdentityProviderGroupsFilterArrayOutput values.
 // You can construct a concrete instance of `GetIdentityProviderGroupsFilterArrayInput` via:
 //
@@ -14173,6 +16580,12 @@ func (i GetIdentityProviderGroupsFilterArray) ToGetIdentityProviderGroupsFilterA
 	return pulumi.ToOutputWithContext(ctx, i).(GetIdentityProviderGroupsFilterArrayOutput)
 }
 
+func (i GetIdentityProviderGroupsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIdentityProviderGroupsFilter] {
+	return pulumix.Output[[]GetIdentityProviderGroupsFilter]{
+		OutputState: i.ToGetIdentityProviderGroupsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetIdentityProviderGroupsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetIdentityProviderGroupsFilterOutput) ElementType() reflect.Type {
@@ -14185,6 +16598,12 @@ func (o GetIdentityProviderGroupsFilterOutput) ToGetIdentityProviderGroupsFilter
 
 func (o GetIdentityProviderGroupsFilterOutput) ToGetIdentityProviderGroupsFilterOutputWithContext(ctx context.Context) GetIdentityProviderGroupsFilterOutput {
 	return o
+}
+
+func (o GetIdentityProviderGroupsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetIdentityProviderGroupsFilter] {
+	return pulumix.Output[GetIdentityProviderGroupsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A filter to only return resources that match the given name exactly.
@@ -14212,6 +16631,12 @@ func (o GetIdentityProviderGroupsFilterArrayOutput) ToGetIdentityProviderGroupsF
 
 func (o GetIdentityProviderGroupsFilterArrayOutput) ToGetIdentityProviderGroupsFilterArrayOutputWithContext(ctx context.Context) GetIdentityProviderGroupsFilterArrayOutput {
 	return o
+}
+
+func (o GetIdentityProviderGroupsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIdentityProviderGroupsFilter] {
+	return pulumix.Output[[]GetIdentityProviderGroupsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetIdentityProviderGroupsFilterArrayOutput) Index(i pulumi.IntInput) GetIdentityProviderGroupsFilterOutput {
@@ -14277,6 +16702,12 @@ func (i GetIdentityProviderGroupsIdentityProviderGroupArgs) ToGetIdentityProvide
 	return pulumi.ToOutputWithContext(ctx, i).(GetIdentityProviderGroupsIdentityProviderGroupOutput)
 }
 
+func (i GetIdentityProviderGroupsIdentityProviderGroupArgs) ToOutput(ctx context.Context) pulumix.Output[GetIdentityProviderGroupsIdentityProviderGroup] {
+	return pulumix.Output[GetIdentityProviderGroupsIdentityProviderGroup]{
+		OutputState: i.ToGetIdentityProviderGroupsIdentityProviderGroupOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetIdentityProviderGroupsIdentityProviderGroupArrayInput is an input type that accepts GetIdentityProviderGroupsIdentityProviderGroupArray and GetIdentityProviderGroupsIdentityProviderGroupArrayOutput values.
 // You can construct a concrete instance of `GetIdentityProviderGroupsIdentityProviderGroupArrayInput` via:
 //
@@ -14302,6 +16733,12 @@ func (i GetIdentityProviderGroupsIdentityProviderGroupArray) ToGetIdentityProvid
 	return pulumi.ToOutputWithContext(ctx, i).(GetIdentityProviderGroupsIdentityProviderGroupArrayOutput)
 }
 
+func (i GetIdentityProviderGroupsIdentityProviderGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIdentityProviderGroupsIdentityProviderGroup] {
+	return pulumix.Output[[]GetIdentityProviderGroupsIdentityProviderGroup]{
+		OutputState: i.ToGetIdentityProviderGroupsIdentityProviderGroupArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetIdentityProviderGroupsIdentityProviderGroupOutput struct{ *pulumi.OutputState }
 
 func (GetIdentityProviderGroupsIdentityProviderGroupOutput) ElementType() reflect.Type {
@@ -14314,6 +16751,12 @@ func (o GetIdentityProviderGroupsIdentityProviderGroupOutput) ToGetIdentityProvi
 
 func (o GetIdentityProviderGroupsIdentityProviderGroupOutput) ToGetIdentityProviderGroupsIdentityProviderGroupOutputWithContext(ctx context.Context) GetIdentityProviderGroupsIdentityProviderGroupOutput {
 	return o
+}
+
+func (o GetIdentityProviderGroupsIdentityProviderGroupOutput) ToOutput(ctx context.Context) pulumix.Output[GetIdentityProviderGroupsIdentityProviderGroup] {
+	return pulumix.Output[GetIdentityProviderGroupsIdentityProviderGroup]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Display name of the group
@@ -14365,6 +16808,12 @@ func (o GetIdentityProviderGroupsIdentityProviderGroupArrayOutput) ToGetIdentity
 	return o
 }
 
+func (o GetIdentityProviderGroupsIdentityProviderGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIdentityProviderGroupsIdentityProviderGroup] {
+	return pulumix.Output[[]GetIdentityProviderGroupsIdentityProviderGroup]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetIdentityProviderGroupsIdentityProviderGroupArrayOutput) Index(i pulumi.IntInput) GetIdentityProviderGroupsIdentityProviderGroupOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIdentityProviderGroupsIdentityProviderGroup {
 		return vs[0].([]GetIdentityProviderGroupsIdentityProviderGroup)[vs[1].(int)]
@@ -14408,6 +16857,12 @@ func (i GetIdentityProvidersFilterArgs) ToGetIdentityProvidersFilterOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetIdentityProvidersFilterOutput)
 }
 
+func (i GetIdentityProvidersFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetIdentityProvidersFilter] {
+	return pulumix.Output[GetIdentityProvidersFilter]{
+		OutputState: i.ToGetIdentityProvidersFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetIdentityProvidersFilterArrayInput is an input type that accepts GetIdentityProvidersFilterArray and GetIdentityProvidersFilterArrayOutput values.
 // You can construct a concrete instance of `GetIdentityProvidersFilterArrayInput` via:
 //
@@ -14433,6 +16888,12 @@ func (i GetIdentityProvidersFilterArray) ToGetIdentityProvidersFilterArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetIdentityProvidersFilterArrayOutput)
 }
 
+func (i GetIdentityProvidersFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIdentityProvidersFilter] {
+	return pulumix.Output[[]GetIdentityProvidersFilter]{
+		OutputState: i.ToGetIdentityProvidersFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetIdentityProvidersFilterOutput struct{ *pulumi.OutputState }
 
 func (GetIdentityProvidersFilterOutput) ElementType() reflect.Type {
@@ -14445,6 +16906,12 @@ func (o GetIdentityProvidersFilterOutput) ToGetIdentityProvidersFilterOutput() G
 
 func (o GetIdentityProvidersFilterOutput) ToGetIdentityProvidersFilterOutputWithContext(ctx context.Context) GetIdentityProvidersFilterOutput {
 	return o
+}
+
+func (o GetIdentityProvidersFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetIdentityProvidersFilter] {
+	return pulumix.Output[GetIdentityProvidersFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A filter to only return resources that match the given name exactly.
@@ -14472,6 +16939,12 @@ func (o GetIdentityProvidersFilterArrayOutput) ToGetIdentityProvidersFilterArray
 
 func (o GetIdentityProvidersFilterArrayOutput) ToGetIdentityProvidersFilterArrayOutputWithContext(ctx context.Context) GetIdentityProvidersFilterArrayOutput {
 	return o
+}
+
+func (o GetIdentityProvidersFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIdentityProvidersFilter] {
+	return pulumix.Output[[]GetIdentityProvidersFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetIdentityProvidersFilterArrayOutput) Index(i pulumi.IntInput) GetIdentityProvidersFilterOutput {
@@ -14573,6 +17046,12 @@ func (i GetIdentityProvidersIdentityProviderArgs) ToGetIdentityProvidersIdentity
 	return pulumi.ToOutputWithContext(ctx, i).(GetIdentityProvidersIdentityProviderOutput)
 }
 
+func (i GetIdentityProvidersIdentityProviderArgs) ToOutput(ctx context.Context) pulumix.Output[GetIdentityProvidersIdentityProvider] {
+	return pulumix.Output[GetIdentityProvidersIdentityProvider]{
+		OutputState: i.ToGetIdentityProvidersIdentityProviderOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetIdentityProvidersIdentityProviderArrayInput is an input type that accepts GetIdentityProvidersIdentityProviderArray and GetIdentityProvidersIdentityProviderArrayOutput values.
 // You can construct a concrete instance of `GetIdentityProvidersIdentityProviderArrayInput` via:
 //
@@ -14598,6 +17077,12 @@ func (i GetIdentityProvidersIdentityProviderArray) ToGetIdentityProvidersIdentit
 	return pulumi.ToOutputWithContext(ctx, i).(GetIdentityProvidersIdentityProviderArrayOutput)
 }
 
+func (i GetIdentityProvidersIdentityProviderArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIdentityProvidersIdentityProvider] {
+	return pulumix.Output[[]GetIdentityProvidersIdentityProvider]{
+		OutputState: i.ToGetIdentityProvidersIdentityProviderArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetIdentityProvidersIdentityProviderOutput struct{ *pulumi.OutputState }
 
 func (GetIdentityProvidersIdentityProviderOutput) ElementType() reflect.Type {
@@ -14610,6 +17095,12 @@ func (o GetIdentityProvidersIdentityProviderOutput) ToGetIdentityProvidersIdenti
 
 func (o GetIdentityProvidersIdentityProviderOutput) ToGetIdentityProvidersIdentityProviderOutputWithContext(ctx context.Context) GetIdentityProvidersIdentityProviderOutput {
 	return o
+}
+
+func (o GetIdentityProvidersIdentityProviderOutput) ToOutput(ctx context.Context) pulumix.Output[GetIdentityProvidersIdentityProvider] {
+	return pulumix.Output[GetIdentityProvidersIdentityProvider]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the compartment (remember that the tenancy is simply the root compartment).
@@ -14706,6 +17197,12 @@ func (o GetIdentityProvidersIdentityProviderArrayOutput) ToGetIdentityProvidersI
 	return o
 }
 
+func (o GetIdentityProvidersIdentityProviderArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIdentityProvidersIdentityProvider] {
+	return pulumix.Output[[]GetIdentityProvidersIdentityProvider]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetIdentityProvidersIdentityProviderArrayOutput) Index(i pulumi.IntInput) GetIdentityProvidersIdentityProviderOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIdentityProvidersIdentityProvider {
 		return vs[0].([]GetIdentityProvidersIdentityProvider)[vs[1].(int)]
@@ -14747,6 +17244,12 @@ func (i GetIdpGroupMappingsFilterArgs) ToGetIdpGroupMappingsFilterOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetIdpGroupMappingsFilterOutput)
 }
 
+func (i GetIdpGroupMappingsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetIdpGroupMappingsFilter] {
+	return pulumix.Output[GetIdpGroupMappingsFilter]{
+		OutputState: i.ToGetIdpGroupMappingsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetIdpGroupMappingsFilterArrayInput is an input type that accepts GetIdpGroupMappingsFilterArray and GetIdpGroupMappingsFilterArrayOutput values.
 // You can construct a concrete instance of `GetIdpGroupMappingsFilterArrayInput` via:
 //
@@ -14772,6 +17275,12 @@ func (i GetIdpGroupMappingsFilterArray) ToGetIdpGroupMappingsFilterArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetIdpGroupMappingsFilterArrayOutput)
 }
 
+func (i GetIdpGroupMappingsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIdpGroupMappingsFilter] {
+	return pulumix.Output[[]GetIdpGroupMappingsFilter]{
+		OutputState: i.ToGetIdpGroupMappingsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetIdpGroupMappingsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetIdpGroupMappingsFilterOutput) ElementType() reflect.Type {
@@ -14784,6 +17293,12 @@ func (o GetIdpGroupMappingsFilterOutput) ToGetIdpGroupMappingsFilterOutput() Get
 
 func (o GetIdpGroupMappingsFilterOutput) ToGetIdpGroupMappingsFilterOutputWithContext(ctx context.Context) GetIdpGroupMappingsFilterOutput {
 	return o
+}
+
+func (o GetIdpGroupMappingsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetIdpGroupMappingsFilter] {
+	return pulumix.Output[GetIdpGroupMappingsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetIdpGroupMappingsFilterOutput) Name() pulumi.StringOutput {
@@ -14810,6 +17325,12 @@ func (o GetIdpGroupMappingsFilterArrayOutput) ToGetIdpGroupMappingsFilterArrayOu
 
 func (o GetIdpGroupMappingsFilterArrayOutput) ToGetIdpGroupMappingsFilterArrayOutputWithContext(ctx context.Context) GetIdpGroupMappingsFilterArrayOutput {
 	return o
+}
+
+func (o GetIdpGroupMappingsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIdpGroupMappingsFilter] {
+	return pulumix.Output[[]GetIdpGroupMappingsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetIdpGroupMappingsFilterArrayOutput) Index(i pulumi.IntInput) GetIdpGroupMappingsFilterOutput {
@@ -14879,6 +17400,12 @@ func (i GetIdpGroupMappingsIdpGroupMappingArgs) ToGetIdpGroupMappingsIdpGroupMap
 	return pulumi.ToOutputWithContext(ctx, i).(GetIdpGroupMappingsIdpGroupMappingOutput)
 }
 
+func (i GetIdpGroupMappingsIdpGroupMappingArgs) ToOutput(ctx context.Context) pulumix.Output[GetIdpGroupMappingsIdpGroupMapping] {
+	return pulumix.Output[GetIdpGroupMappingsIdpGroupMapping]{
+		OutputState: i.ToGetIdpGroupMappingsIdpGroupMappingOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetIdpGroupMappingsIdpGroupMappingArrayInput is an input type that accepts GetIdpGroupMappingsIdpGroupMappingArray and GetIdpGroupMappingsIdpGroupMappingArrayOutput values.
 // You can construct a concrete instance of `GetIdpGroupMappingsIdpGroupMappingArrayInput` via:
 //
@@ -14904,6 +17431,12 @@ func (i GetIdpGroupMappingsIdpGroupMappingArray) ToGetIdpGroupMappingsIdpGroupMa
 	return pulumi.ToOutputWithContext(ctx, i).(GetIdpGroupMappingsIdpGroupMappingArrayOutput)
 }
 
+func (i GetIdpGroupMappingsIdpGroupMappingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIdpGroupMappingsIdpGroupMapping] {
+	return pulumix.Output[[]GetIdpGroupMappingsIdpGroupMapping]{
+		OutputState: i.ToGetIdpGroupMappingsIdpGroupMappingArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetIdpGroupMappingsIdpGroupMappingOutput struct{ *pulumi.OutputState }
 
 func (GetIdpGroupMappingsIdpGroupMappingOutput) ElementType() reflect.Type {
@@ -14916,6 +17449,12 @@ func (o GetIdpGroupMappingsIdpGroupMappingOutput) ToGetIdpGroupMappingsIdpGroupM
 
 func (o GetIdpGroupMappingsIdpGroupMappingOutput) ToGetIdpGroupMappingsIdpGroupMappingOutputWithContext(ctx context.Context) GetIdpGroupMappingsIdpGroupMappingOutput {
 	return o
+}
+
+func (o GetIdpGroupMappingsIdpGroupMappingOutput) ToOutput(ctx context.Context) pulumix.Output[GetIdpGroupMappingsIdpGroupMapping] {
+	return pulumix.Output[GetIdpGroupMappingsIdpGroupMapping]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the tenancy containing the `IdentityProvider`.
@@ -14972,6 +17511,12 @@ func (o GetIdpGroupMappingsIdpGroupMappingArrayOutput) ToGetIdpGroupMappingsIdpG
 	return o
 }
 
+func (o GetIdpGroupMappingsIdpGroupMappingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIdpGroupMappingsIdpGroupMapping] {
+	return pulumix.Output[[]GetIdpGroupMappingsIdpGroupMapping]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetIdpGroupMappingsIdpGroupMappingArrayOutput) Index(i pulumi.IntInput) GetIdpGroupMappingsIdpGroupMappingOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIdpGroupMappingsIdpGroupMapping {
 		return vs[0].([]GetIdpGroupMappingsIdpGroupMapping)[vs[1].(int)]
@@ -15011,6 +17556,12 @@ func (i GetNetworkSourceVirtualSourceListArgs) ToGetNetworkSourceVirtualSourceLi
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSourceVirtualSourceListOutput)
 }
 
+func (i GetNetworkSourceVirtualSourceListArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkSourceVirtualSourceList] {
+	return pulumix.Output[GetNetworkSourceVirtualSourceList]{
+		OutputState: i.ToGetNetworkSourceVirtualSourceListOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNetworkSourceVirtualSourceListArrayInput is an input type that accepts GetNetworkSourceVirtualSourceListArray and GetNetworkSourceVirtualSourceListArrayOutput values.
 // You can construct a concrete instance of `GetNetworkSourceVirtualSourceListArrayInput` via:
 //
@@ -15036,6 +17587,12 @@ func (i GetNetworkSourceVirtualSourceListArray) ToGetNetworkSourceVirtualSourceL
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSourceVirtualSourceListArrayOutput)
 }
 
+func (i GetNetworkSourceVirtualSourceListArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkSourceVirtualSourceList] {
+	return pulumix.Output[[]GetNetworkSourceVirtualSourceList]{
+		OutputState: i.ToGetNetworkSourceVirtualSourceListArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNetworkSourceVirtualSourceListOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkSourceVirtualSourceListOutput) ElementType() reflect.Type {
@@ -15048,6 +17605,12 @@ func (o GetNetworkSourceVirtualSourceListOutput) ToGetNetworkSourceVirtualSource
 
 func (o GetNetworkSourceVirtualSourceListOutput) ToGetNetworkSourceVirtualSourceListOutputWithContext(ctx context.Context) GetNetworkSourceVirtualSourceListOutput {
 	return o
+}
+
+func (o GetNetworkSourceVirtualSourceListOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkSourceVirtualSourceList] {
+	return pulumix.Output[GetNetworkSourceVirtualSourceList]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkSourceVirtualSourceListOutput) IpRanges() pulumi.StringArrayOutput {
@@ -15070,6 +17633,12 @@ func (o GetNetworkSourceVirtualSourceListArrayOutput) ToGetNetworkSourceVirtualS
 
 func (o GetNetworkSourceVirtualSourceListArrayOutput) ToGetNetworkSourceVirtualSourceListArrayOutputWithContext(ctx context.Context) GetNetworkSourceVirtualSourceListArrayOutput {
 	return o
+}
+
+func (o GetNetworkSourceVirtualSourceListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkSourceVirtualSourceList] {
+	return pulumix.Output[[]GetNetworkSourceVirtualSourceList]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkSourceVirtualSourceListArrayOutput) Index(i pulumi.IntInput) GetNetworkSourceVirtualSourceListOutput {
@@ -15115,6 +17684,12 @@ func (i GetNetworkSourcesFilterArgs) ToGetNetworkSourcesFilterOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSourcesFilterOutput)
 }
 
+func (i GetNetworkSourcesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkSourcesFilter] {
+	return pulumix.Output[GetNetworkSourcesFilter]{
+		OutputState: i.ToGetNetworkSourcesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNetworkSourcesFilterArrayInput is an input type that accepts GetNetworkSourcesFilterArray and GetNetworkSourcesFilterArrayOutput values.
 // You can construct a concrete instance of `GetNetworkSourcesFilterArrayInput` via:
 //
@@ -15140,6 +17715,12 @@ func (i GetNetworkSourcesFilterArray) ToGetNetworkSourcesFilterArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSourcesFilterArrayOutput)
 }
 
+func (i GetNetworkSourcesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkSourcesFilter] {
+	return pulumix.Output[[]GetNetworkSourcesFilter]{
+		OutputState: i.ToGetNetworkSourcesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNetworkSourcesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkSourcesFilterOutput) ElementType() reflect.Type {
@@ -15152,6 +17733,12 @@ func (o GetNetworkSourcesFilterOutput) ToGetNetworkSourcesFilterOutput() GetNetw
 
 func (o GetNetworkSourcesFilterOutput) ToGetNetworkSourcesFilterOutputWithContext(ctx context.Context) GetNetworkSourcesFilterOutput {
 	return o
+}
+
+func (o GetNetworkSourcesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkSourcesFilter] {
+	return pulumix.Output[GetNetworkSourcesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A filter to only return resources that match the given name exactly.
@@ -15179,6 +17766,12 @@ func (o GetNetworkSourcesFilterArrayOutput) ToGetNetworkSourcesFilterArrayOutput
 
 func (o GetNetworkSourcesFilterArrayOutput) ToGetNetworkSourcesFilterArrayOutputWithContext(ctx context.Context) GetNetworkSourcesFilterArrayOutput {
 	return o
+}
+
+func (o GetNetworkSourcesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkSourcesFilter] {
+	return pulumix.Output[[]GetNetworkSourcesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkSourcesFilterArrayOutput) Index(i pulumi.IntInput) GetNetworkSourcesFilterOutput {
@@ -15264,6 +17857,12 @@ func (i GetNetworkSourcesNetworkSourceArgs) ToGetNetworkSourcesNetworkSourceOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSourcesNetworkSourceOutput)
 }
 
+func (i GetNetworkSourcesNetworkSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkSourcesNetworkSource] {
+	return pulumix.Output[GetNetworkSourcesNetworkSource]{
+		OutputState: i.ToGetNetworkSourcesNetworkSourceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNetworkSourcesNetworkSourceArrayInput is an input type that accepts GetNetworkSourcesNetworkSourceArray and GetNetworkSourcesNetworkSourceArrayOutput values.
 // You can construct a concrete instance of `GetNetworkSourcesNetworkSourceArrayInput` via:
 //
@@ -15289,6 +17888,12 @@ func (i GetNetworkSourcesNetworkSourceArray) ToGetNetworkSourcesNetworkSourceArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSourcesNetworkSourceArrayOutput)
 }
 
+func (i GetNetworkSourcesNetworkSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkSourcesNetworkSource] {
+	return pulumix.Output[[]GetNetworkSourcesNetworkSource]{
+		OutputState: i.ToGetNetworkSourcesNetworkSourceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNetworkSourcesNetworkSourceOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkSourcesNetworkSourceOutput) ElementType() reflect.Type {
@@ -15301,6 +17906,12 @@ func (o GetNetworkSourcesNetworkSourceOutput) ToGetNetworkSourcesNetworkSourceOu
 
 func (o GetNetworkSourcesNetworkSourceOutput) ToGetNetworkSourcesNetworkSourceOutputWithContext(ctx context.Context) GetNetworkSourcesNetworkSourceOutput {
 	return o
+}
+
+func (o GetNetworkSourcesNetworkSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkSourcesNetworkSource] {
+	return pulumix.Output[GetNetworkSourcesNetworkSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the compartment (remember that the tenancy is simply the root compartment).
@@ -15379,6 +17990,12 @@ func (o GetNetworkSourcesNetworkSourceArrayOutput) ToGetNetworkSourcesNetworkSou
 	return o
 }
 
+func (o GetNetworkSourcesNetworkSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkSourcesNetworkSource] {
+	return pulumix.Output[[]GetNetworkSourcesNetworkSource]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetNetworkSourcesNetworkSourceArrayOutput) Index(i pulumi.IntInput) GetNetworkSourcesNetworkSourceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkSourcesNetworkSource {
 		return vs[0].([]GetNetworkSourcesNetworkSource)[vs[1].(int)]
@@ -15418,6 +18035,12 @@ func (i GetNetworkSourcesNetworkSourceVirtualSourceListArgs) ToGetNetworkSources
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSourcesNetworkSourceVirtualSourceListOutput)
 }
 
+func (i GetNetworkSourcesNetworkSourceVirtualSourceListArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkSourcesNetworkSourceVirtualSourceList] {
+	return pulumix.Output[GetNetworkSourcesNetworkSourceVirtualSourceList]{
+		OutputState: i.ToGetNetworkSourcesNetworkSourceVirtualSourceListOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNetworkSourcesNetworkSourceVirtualSourceListArrayInput is an input type that accepts GetNetworkSourcesNetworkSourceVirtualSourceListArray and GetNetworkSourcesNetworkSourceVirtualSourceListArrayOutput values.
 // You can construct a concrete instance of `GetNetworkSourcesNetworkSourceVirtualSourceListArrayInput` via:
 //
@@ -15443,6 +18066,12 @@ func (i GetNetworkSourcesNetworkSourceVirtualSourceListArray) ToGetNetworkSource
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSourcesNetworkSourceVirtualSourceListArrayOutput)
 }
 
+func (i GetNetworkSourcesNetworkSourceVirtualSourceListArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkSourcesNetworkSourceVirtualSourceList] {
+	return pulumix.Output[[]GetNetworkSourcesNetworkSourceVirtualSourceList]{
+		OutputState: i.ToGetNetworkSourcesNetworkSourceVirtualSourceListArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNetworkSourcesNetworkSourceVirtualSourceListOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkSourcesNetworkSourceVirtualSourceListOutput) ElementType() reflect.Type {
@@ -15455,6 +18084,12 @@ func (o GetNetworkSourcesNetworkSourceVirtualSourceListOutput) ToGetNetworkSourc
 
 func (o GetNetworkSourcesNetworkSourceVirtualSourceListOutput) ToGetNetworkSourcesNetworkSourceVirtualSourceListOutputWithContext(ctx context.Context) GetNetworkSourcesNetworkSourceVirtualSourceListOutput {
 	return o
+}
+
+func (o GetNetworkSourcesNetworkSourceVirtualSourceListOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkSourcesNetworkSourceVirtualSourceList] {
+	return pulumix.Output[GetNetworkSourcesNetworkSourceVirtualSourceList]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkSourcesNetworkSourceVirtualSourceListOutput) IpRanges() pulumi.StringArrayOutput {
@@ -15477,6 +18112,12 @@ func (o GetNetworkSourcesNetworkSourceVirtualSourceListArrayOutput) ToGetNetwork
 
 func (o GetNetworkSourcesNetworkSourceVirtualSourceListArrayOutput) ToGetNetworkSourcesNetworkSourceVirtualSourceListArrayOutputWithContext(ctx context.Context) GetNetworkSourcesNetworkSourceVirtualSourceListArrayOutput {
 	return o
+}
+
+func (o GetNetworkSourcesNetworkSourceVirtualSourceListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkSourcesNetworkSourceVirtualSourceList] {
+	return pulumix.Output[[]GetNetworkSourcesNetworkSourceVirtualSourceList]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkSourcesNetworkSourceVirtualSourceListArrayOutput) Index(i pulumi.IntInput) GetNetworkSourcesNetworkSourceVirtualSourceListOutput {
@@ -15522,6 +18163,12 @@ func (i GetPoliciesFilterArgs) ToGetPoliciesFilterOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetPoliciesFilterOutput)
 }
 
+func (i GetPoliciesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetPoliciesFilter] {
+	return pulumix.Output[GetPoliciesFilter]{
+		OutputState: i.ToGetPoliciesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPoliciesFilterArrayInput is an input type that accepts GetPoliciesFilterArray and GetPoliciesFilterArrayOutput values.
 // You can construct a concrete instance of `GetPoliciesFilterArrayInput` via:
 //
@@ -15547,6 +18194,12 @@ func (i GetPoliciesFilterArray) ToGetPoliciesFilterArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetPoliciesFilterArrayOutput)
 }
 
+func (i GetPoliciesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPoliciesFilter] {
+	return pulumix.Output[[]GetPoliciesFilter]{
+		OutputState: i.ToGetPoliciesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPoliciesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetPoliciesFilterOutput) ElementType() reflect.Type {
@@ -15559,6 +18212,12 @@ func (o GetPoliciesFilterOutput) ToGetPoliciesFilterOutput() GetPoliciesFilterOu
 
 func (o GetPoliciesFilterOutput) ToGetPoliciesFilterOutputWithContext(ctx context.Context) GetPoliciesFilterOutput {
 	return o
+}
+
+func (o GetPoliciesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetPoliciesFilter] {
+	return pulumix.Output[GetPoliciesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A filter to only return resources that match the given name exactly.
@@ -15586,6 +18245,12 @@ func (o GetPoliciesFilterArrayOutput) ToGetPoliciesFilterArrayOutput() GetPolici
 
 func (o GetPoliciesFilterArrayOutput) ToGetPoliciesFilterArrayOutputWithContext(ctx context.Context) GetPoliciesFilterArrayOutput {
 	return o
+}
+
+func (o GetPoliciesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPoliciesFilter] {
+	return pulumix.Output[[]GetPoliciesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPoliciesFilterArrayOutput) Index(i pulumi.IntInput) GetPoliciesFilterOutput {
@@ -15679,6 +18344,12 @@ func (i GetPoliciesPolicyArgs) ToGetPoliciesPolicyOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetPoliciesPolicyOutput)
 }
 
+func (i GetPoliciesPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetPoliciesPolicy] {
+	return pulumix.Output[GetPoliciesPolicy]{
+		OutputState: i.ToGetPoliciesPolicyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPoliciesPolicyArrayInput is an input type that accepts GetPoliciesPolicyArray and GetPoliciesPolicyArrayOutput values.
 // You can construct a concrete instance of `GetPoliciesPolicyArrayInput` via:
 //
@@ -15704,6 +18375,12 @@ func (i GetPoliciesPolicyArray) ToGetPoliciesPolicyArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetPoliciesPolicyArrayOutput)
 }
 
+func (i GetPoliciesPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPoliciesPolicy] {
+	return pulumix.Output[[]GetPoliciesPolicy]{
+		OutputState: i.ToGetPoliciesPolicyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPoliciesPolicyOutput struct{ *pulumi.OutputState }
 
 func (GetPoliciesPolicyOutput) ElementType() reflect.Type {
@@ -15716,6 +18393,12 @@ func (o GetPoliciesPolicyOutput) ToGetPoliciesPolicyOutput() GetPoliciesPolicyOu
 
 func (o GetPoliciesPolicyOutput) ToGetPoliciesPolicyOutputWithContext(ctx context.Context) GetPoliciesPolicyOutput {
 	return o
+}
+
+func (o GetPoliciesPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetPoliciesPolicy] {
+	return pulumix.Output[GetPoliciesPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Deprecated: The 'ETag' field has been deprecated and may be removed in a future version. Do not use this field.
@@ -15802,6 +18485,12 @@ func (o GetPoliciesPolicyArrayOutput) ToGetPoliciesPolicyArrayOutputWithContext(
 	return o
 }
 
+func (o GetPoliciesPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPoliciesPolicy] {
+	return pulumix.Output[[]GetPoliciesPolicy]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetPoliciesPolicyArrayOutput) Index(i pulumi.IntInput) GetPoliciesPolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPoliciesPolicy {
 		return vs[0].([]GetPoliciesPolicy)[vs[1].(int)]
@@ -15843,6 +18532,12 @@ func (i GetRegionSubscriptionsFilterArgs) ToGetRegionSubscriptionsFilterOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetRegionSubscriptionsFilterOutput)
 }
 
+func (i GetRegionSubscriptionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetRegionSubscriptionsFilter] {
+	return pulumix.Output[GetRegionSubscriptionsFilter]{
+		OutputState: i.ToGetRegionSubscriptionsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetRegionSubscriptionsFilterArrayInput is an input type that accepts GetRegionSubscriptionsFilterArray and GetRegionSubscriptionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetRegionSubscriptionsFilterArrayInput` via:
 //
@@ -15868,6 +18563,12 @@ func (i GetRegionSubscriptionsFilterArray) ToGetRegionSubscriptionsFilterArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetRegionSubscriptionsFilterArrayOutput)
 }
 
+func (i GetRegionSubscriptionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRegionSubscriptionsFilter] {
+	return pulumix.Output[[]GetRegionSubscriptionsFilter]{
+		OutputState: i.ToGetRegionSubscriptionsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetRegionSubscriptionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetRegionSubscriptionsFilterOutput) ElementType() reflect.Type {
@@ -15880,6 +18581,12 @@ func (o GetRegionSubscriptionsFilterOutput) ToGetRegionSubscriptionsFilterOutput
 
 func (o GetRegionSubscriptionsFilterOutput) ToGetRegionSubscriptionsFilterOutputWithContext(ctx context.Context) GetRegionSubscriptionsFilterOutput {
 	return o
+}
+
+func (o GetRegionSubscriptionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetRegionSubscriptionsFilter] {
+	return pulumix.Output[GetRegionSubscriptionsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetRegionSubscriptionsFilterOutput) Name() pulumi.StringOutput {
@@ -15906,6 +18613,12 @@ func (o GetRegionSubscriptionsFilterArrayOutput) ToGetRegionSubscriptionsFilterA
 
 func (o GetRegionSubscriptionsFilterArrayOutput) ToGetRegionSubscriptionsFilterArrayOutputWithContext(ctx context.Context) GetRegionSubscriptionsFilterArrayOutput {
 	return o
+}
+
+func (o GetRegionSubscriptionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRegionSubscriptionsFilter] {
+	return pulumix.Output[[]GetRegionSubscriptionsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetRegionSubscriptionsFilterArrayOutput) Index(i pulumi.IntInput) GetRegionSubscriptionsFilterOutput {
@@ -15961,6 +18674,12 @@ func (i GetRegionSubscriptionsRegionSubscriptionArgs) ToGetRegionSubscriptionsRe
 	return pulumi.ToOutputWithContext(ctx, i).(GetRegionSubscriptionsRegionSubscriptionOutput)
 }
 
+func (i GetRegionSubscriptionsRegionSubscriptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetRegionSubscriptionsRegionSubscription] {
+	return pulumix.Output[GetRegionSubscriptionsRegionSubscription]{
+		OutputState: i.ToGetRegionSubscriptionsRegionSubscriptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetRegionSubscriptionsRegionSubscriptionArrayInput is an input type that accepts GetRegionSubscriptionsRegionSubscriptionArray and GetRegionSubscriptionsRegionSubscriptionArrayOutput values.
 // You can construct a concrete instance of `GetRegionSubscriptionsRegionSubscriptionArrayInput` via:
 //
@@ -15986,6 +18705,12 @@ func (i GetRegionSubscriptionsRegionSubscriptionArray) ToGetRegionSubscriptionsR
 	return pulumi.ToOutputWithContext(ctx, i).(GetRegionSubscriptionsRegionSubscriptionArrayOutput)
 }
 
+func (i GetRegionSubscriptionsRegionSubscriptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRegionSubscriptionsRegionSubscription] {
+	return pulumix.Output[[]GetRegionSubscriptionsRegionSubscription]{
+		OutputState: i.ToGetRegionSubscriptionsRegionSubscriptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetRegionSubscriptionsRegionSubscriptionOutput struct{ *pulumi.OutputState }
 
 func (GetRegionSubscriptionsRegionSubscriptionOutput) ElementType() reflect.Type {
@@ -15998,6 +18723,12 @@ func (o GetRegionSubscriptionsRegionSubscriptionOutput) ToGetRegionSubscriptions
 
 func (o GetRegionSubscriptionsRegionSubscriptionOutput) ToGetRegionSubscriptionsRegionSubscriptionOutputWithContext(ctx context.Context) GetRegionSubscriptionsRegionSubscriptionOutput {
 	return o
+}
+
+func (o GetRegionSubscriptionsRegionSubscriptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetRegionSubscriptionsRegionSubscription] {
+	return pulumix.Output[GetRegionSubscriptionsRegionSubscription]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Indicates if the region is the home region or not.
@@ -16036,6 +18767,12 @@ func (o GetRegionSubscriptionsRegionSubscriptionArrayOutput) ToGetRegionSubscrip
 
 func (o GetRegionSubscriptionsRegionSubscriptionArrayOutput) ToGetRegionSubscriptionsRegionSubscriptionArrayOutputWithContext(ctx context.Context) GetRegionSubscriptionsRegionSubscriptionArrayOutput {
 	return o
+}
+
+func (o GetRegionSubscriptionsRegionSubscriptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRegionSubscriptionsRegionSubscription] {
+	return pulumix.Output[[]GetRegionSubscriptionsRegionSubscription]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetRegionSubscriptionsRegionSubscriptionArrayOutput) Index(i pulumi.IntInput) GetRegionSubscriptionsRegionSubscriptionOutput {
@@ -16081,6 +18818,12 @@ func (i GetRegionsFilterArgs) ToGetRegionsFilterOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetRegionsFilterOutput)
 }
 
+func (i GetRegionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetRegionsFilter] {
+	return pulumix.Output[GetRegionsFilter]{
+		OutputState: i.ToGetRegionsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetRegionsFilterArrayInput is an input type that accepts GetRegionsFilterArray and GetRegionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetRegionsFilterArrayInput` via:
 //
@@ -16106,6 +18849,12 @@ func (i GetRegionsFilterArray) ToGetRegionsFilterArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetRegionsFilterArrayOutput)
 }
 
+func (i GetRegionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRegionsFilter] {
+	return pulumix.Output[[]GetRegionsFilter]{
+		OutputState: i.ToGetRegionsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetRegionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetRegionsFilterOutput) ElementType() reflect.Type {
@@ -16118,6 +18867,12 @@ func (o GetRegionsFilterOutput) ToGetRegionsFilterOutput() GetRegionsFilterOutpu
 
 func (o GetRegionsFilterOutput) ToGetRegionsFilterOutputWithContext(ctx context.Context) GetRegionsFilterOutput {
 	return o
+}
+
+func (o GetRegionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetRegionsFilter] {
+	return pulumix.Output[GetRegionsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the region. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
@@ -16145,6 +18900,12 @@ func (o GetRegionsFilterArrayOutput) ToGetRegionsFilterArrayOutput() GetRegionsF
 
 func (o GetRegionsFilterArrayOutput) ToGetRegionsFilterArrayOutputWithContext(ctx context.Context) GetRegionsFilterArrayOutput {
 	return o
+}
+
+func (o GetRegionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRegionsFilter] {
+	return pulumix.Output[[]GetRegionsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetRegionsFilterArrayOutput) Index(i pulumi.IntInput) GetRegionsFilterOutput {
@@ -16190,6 +18951,12 @@ func (i GetRegionsRegionArgs) ToGetRegionsRegionOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetRegionsRegionOutput)
 }
 
+func (i GetRegionsRegionArgs) ToOutput(ctx context.Context) pulumix.Output[GetRegionsRegion] {
+	return pulumix.Output[GetRegionsRegion]{
+		OutputState: i.ToGetRegionsRegionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetRegionsRegionArrayInput is an input type that accepts GetRegionsRegionArray and GetRegionsRegionArrayOutput values.
 // You can construct a concrete instance of `GetRegionsRegionArrayInput` via:
 //
@@ -16215,6 +18982,12 @@ func (i GetRegionsRegionArray) ToGetRegionsRegionArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetRegionsRegionArrayOutput)
 }
 
+func (i GetRegionsRegionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRegionsRegion] {
+	return pulumix.Output[[]GetRegionsRegion]{
+		OutputState: i.ToGetRegionsRegionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetRegionsRegionOutput struct{ *pulumi.OutputState }
 
 func (GetRegionsRegionOutput) ElementType() reflect.Type {
@@ -16227,6 +19000,12 @@ func (o GetRegionsRegionOutput) ToGetRegionsRegionOutput() GetRegionsRegionOutpu
 
 func (o GetRegionsRegionOutput) ToGetRegionsRegionOutputWithContext(ctx context.Context) GetRegionsRegionOutput {
 	return o
+}
+
+func (o GetRegionsRegionOutput) ToOutput(ctx context.Context) pulumix.Output[GetRegionsRegion] {
+	return pulumix.Output[GetRegionsRegion]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The key of the region. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported 3-letter region codes.  Example: `PHX`
@@ -16251,6 +19030,12 @@ func (o GetRegionsRegionArrayOutput) ToGetRegionsRegionArrayOutput() GetRegionsR
 
 func (o GetRegionsRegionArrayOutput) ToGetRegionsRegionArrayOutputWithContext(ctx context.Context) GetRegionsRegionArrayOutput {
 	return o
+}
+
+func (o GetRegionsRegionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRegionsRegion] {
+	return pulumix.Output[[]GetRegionsRegion]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetRegionsRegionArrayOutput) Index(i pulumi.IntInput) GetRegionsRegionOutput {
@@ -16294,6 +19079,12 @@ func (i GetSmtpCredentialsFilterArgs) ToGetSmtpCredentialsFilterOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetSmtpCredentialsFilterOutput)
 }
 
+func (i GetSmtpCredentialsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSmtpCredentialsFilter] {
+	return pulumix.Output[GetSmtpCredentialsFilter]{
+		OutputState: i.ToGetSmtpCredentialsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSmtpCredentialsFilterArrayInput is an input type that accepts GetSmtpCredentialsFilterArray and GetSmtpCredentialsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSmtpCredentialsFilterArrayInput` via:
 //
@@ -16319,6 +19110,12 @@ func (i GetSmtpCredentialsFilterArray) ToGetSmtpCredentialsFilterArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetSmtpCredentialsFilterArrayOutput)
 }
 
+func (i GetSmtpCredentialsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSmtpCredentialsFilter] {
+	return pulumix.Output[[]GetSmtpCredentialsFilter]{
+		OutputState: i.ToGetSmtpCredentialsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSmtpCredentialsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSmtpCredentialsFilterOutput) ElementType() reflect.Type {
@@ -16331,6 +19128,12 @@ func (o GetSmtpCredentialsFilterOutput) ToGetSmtpCredentialsFilterOutput() GetSm
 
 func (o GetSmtpCredentialsFilterOutput) ToGetSmtpCredentialsFilterOutputWithContext(ctx context.Context) GetSmtpCredentialsFilterOutput {
 	return o
+}
+
+func (o GetSmtpCredentialsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSmtpCredentialsFilter] {
+	return pulumix.Output[GetSmtpCredentialsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSmtpCredentialsFilterOutput) Name() pulumi.StringOutput {
@@ -16357,6 +19160,12 @@ func (o GetSmtpCredentialsFilterArrayOutput) ToGetSmtpCredentialsFilterArrayOutp
 
 func (o GetSmtpCredentialsFilterArrayOutput) ToGetSmtpCredentialsFilterArrayOutputWithContext(ctx context.Context) GetSmtpCredentialsFilterArrayOutput {
 	return o
+}
+
+func (o GetSmtpCredentialsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSmtpCredentialsFilter] {
+	return pulumix.Output[[]GetSmtpCredentialsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSmtpCredentialsFilterArrayOutput) Index(i pulumi.IntInput) GetSmtpCredentialsFilterOutput {
@@ -16428,6 +19237,12 @@ func (i GetSmtpCredentialsSmtpCredentialArgs) ToGetSmtpCredentialsSmtpCredential
 	return pulumi.ToOutputWithContext(ctx, i).(GetSmtpCredentialsSmtpCredentialOutput)
 }
 
+func (i GetSmtpCredentialsSmtpCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetSmtpCredentialsSmtpCredential] {
+	return pulumix.Output[GetSmtpCredentialsSmtpCredential]{
+		OutputState: i.ToGetSmtpCredentialsSmtpCredentialOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSmtpCredentialsSmtpCredentialArrayInput is an input type that accepts GetSmtpCredentialsSmtpCredentialArray and GetSmtpCredentialsSmtpCredentialArrayOutput values.
 // You can construct a concrete instance of `GetSmtpCredentialsSmtpCredentialArrayInput` via:
 //
@@ -16453,6 +19268,12 @@ func (i GetSmtpCredentialsSmtpCredentialArray) ToGetSmtpCredentialsSmtpCredentia
 	return pulumi.ToOutputWithContext(ctx, i).(GetSmtpCredentialsSmtpCredentialArrayOutput)
 }
 
+func (i GetSmtpCredentialsSmtpCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSmtpCredentialsSmtpCredential] {
+	return pulumix.Output[[]GetSmtpCredentialsSmtpCredential]{
+		OutputState: i.ToGetSmtpCredentialsSmtpCredentialArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSmtpCredentialsSmtpCredentialOutput struct{ *pulumi.OutputState }
 
 func (GetSmtpCredentialsSmtpCredentialOutput) ElementType() reflect.Type {
@@ -16465,6 +19286,12 @@ func (o GetSmtpCredentialsSmtpCredentialOutput) ToGetSmtpCredentialsSmtpCredenti
 
 func (o GetSmtpCredentialsSmtpCredentialOutput) ToGetSmtpCredentialsSmtpCredentialOutputWithContext(ctx context.Context) GetSmtpCredentialsSmtpCredentialOutput {
 	return o
+}
+
+func (o GetSmtpCredentialsSmtpCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetSmtpCredentialsSmtpCredential] {
+	return pulumix.Output[GetSmtpCredentialsSmtpCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The description you assign to the SMTP credential. Does not have to be unique, and it's changeable.
@@ -16525,6 +19352,12 @@ func (o GetSmtpCredentialsSmtpCredentialArrayOutput) ToGetSmtpCredentialsSmtpCre
 	return o
 }
 
+func (o GetSmtpCredentialsSmtpCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSmtpCredentialsSmtpCredential] {
+	return pulumix.Output[[]GetSmtpCredentialsSmtpCredential]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetSmtpCredentialsSmtpCredentialArrayOutput) Index(i pulumi.IntInput) GetSmtpCredentialsSmtpCredentialOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSmtpCredentialsSmtpCredential {
 		return vs[0].([]GetSmtpCredentialsSmtpCredential)[vs[1].(int)]
@@ -16566,6 +19399,12 @@ func (i GetTagDefaultsFilterArgs) ToGetTagDefaultsFilterOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetTagDefaultsFilterOutput)
 }
 
+func (i GetTagDefaultsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetTagDefaultsFilter] {
+	return pulumix.Output[GetTagDefaultsFilter]{
+		OutputState: i.ToGetTagDefaultsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTagDefaultsFilterArrayInput is an input type that accepts GetTagDefaultsFilterArray and GetTagDefaultsFilterArrayOutput values.
 // You can construct a concrete instance of `GetTagDefaultsFilterArrayInput` via:
 //
@@ -16591,6 +19430,12 @@ func (i GetTagDefaultsFilterArray) ToGetTagDefaultsFilterArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetTagDefaultsFilterArrayOutput)
 }
 
+func (i GetTagDefaultsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTagDefaultsFilter] {
+	return pulumix.Output[[]GetTagDefaultsFilter]{
+		OutputState: i.ToGetTagDefaultsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTagDefaultsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetTagDefaultsFilterOutput) ElementType() reflect.Type {
@@ -16603,6 +19448,12 @@ func (o GetTagDefaultsFilterOutput) ToGetTagDefaultsFilterOutput() GetTagDefault
 
 func (o GetTagDefaultsFilterOutput) ToGetTagDefaultsFilterOutputWithContext(ctx context.Context) GetTagDefaultsFilterOutput {
 	return o
+}
+
+func (o GetTagDefaultsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetTagDefaultsFilter] {
+	return pulumix.Output[GetTagDefaultsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTagDefaultsFilterOutput) Name() pulumi.StringOutput {
@@ -16629,6 +19480,12 @@ func (o GetTagDefaultsFilterArrayOutput) ToGetTagDefaultsFilterArrayOutput() Get
 
 func (o GetTagDefaultsFilterArrayOutput) ToGetTagDefaultsFilterArrayOutputWithContext(ctx context.Context) GetTagDefaultsFilterArrayOutput {
 	return o
+}
+
+func (o GetTagDefaultsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTagDefaultsFilter] {
+	return pulumix.Output[[]GetTagDefaultsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTagDefaultsFilterArrayOutput) Index(i pulumi.IntInput) GetTagDefaultsFilterOutput {
@@ -16706,6 +19563,12 @@ func (i GetTagDefaultsTagDefaultArgs) ToGetTagDefaultsTagDefaultOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetTagDefaultsTagDefaultOutput)
 }
 
+func (i GetTagDefaultsTagDefaultArgs) ToOutput(ctx context.Context) pulumix.Output[GetTagDefaultsTagDefault] {
+	return pulumix.Output[GetTagDefaultsTagDefault]{
+		OutputState: i.ToGetTagDefaultsTagDefaultOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTagDefaultsTagDefaultArrayInput is an input type that accepts GetTagDefaultsTagDefaultArray and GetTagDefaultsTagDefaultArrayOutput values.
 // You can construct a concrete instance of `GetTagDefaultsTagDefaultArrayInput` via:
 //
@@ -16731,6 +19594,12 @@ func (i GetTagDefaultsTagDefaultArray) ToGetTagDefaultsTagDefaultArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetTagDefaultsTagDefaultArrayOutput)
 }
 
+func (i GetTagDefaultsTagDefaultArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTagDefaultsTagDefault] {
+	return pulumix.Output[[]GetTagDefaultsTagDefault]{
+		OutputState: i.ToGetTagDefaultsTagDefaultArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTagDefaultsTagDefaultOutput struct{ *pulumi.OutputState }
 
 func (GetTagDefaultsTagDefaultOutput) ElementType() reflect.Type {
@@ -16743,6 +19612,12 @@ func (o GetTagDefaultsTagDefaultOutput) ToGetTagDefaultsTagDefaultOutput() GetTa
 
 func (o GetTagDefaultsTagDefaultOutput) ToGetTagDefaultsTagDefaultOutputWithContext(ctx context.Context) GetTagDefaultsTagDefaultOutput {
 	return o
+}
+
+func (o GetTagDefaultsTagDefaultOutput) ToOutput(ctx context.Context) pulumix.Output[GetTagDefaultsTagDefault] {
+	return pulumix.Output[GetTagDefaultsTagDefault]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the compartment (remember that the tenancy is simply the root compartment).
@@ -16806,6 +19681,12 @@ func (o GetTagDefaultsTagDefaultArrayOutput) ToGetTagDefaultsTagDefaultArrayOutp
 	return o
 }
 
+func (o GetTagDefaultsTagDefaultArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTagDefaultsTagDefault] {
+	return pulumix.Output[[]GetTagDefaultsTagDefault]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetTagDefaultsTagDefaultArrayOutput) Index(i pulumi.IntInput) GetTagDefaultsTagDefaultOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTagDefaultsTagDefault {
 		return vs[0].([]GetTagDefaultsTagDefault)[vs[1].(int)]
@@ -16849,6 +19730,12 @@ func (i GetTagNamespacesFilterArgs) ToGetTagNamespacesFilterOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetTagNamespacesFilterOutput)
 }
 
+func (i GetTagNamespacesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetTagNamespacesFilter] {
+	return pulumix.Output[GetTagNamespacesFilter]{
+		OutputState: i.ToGetTagNamespacesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTagNamespacesFilterArrayInput is an input type that accepts GetTagNamespacesFilterArray and GetTagNamespacesFilterArrayOutput values.
 // You can construct a concrete instance of `GetTagNamespacesFilterArrayInput` via:
 //
@@ -16874,6 +19761,12 @@ func (i GetTagNamespacesFilterArray) ToGetTagNamespacesFilterArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetTagNamespacesFilterArrayOutput)
 }
 
+func (i GetTagNamespacesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTagNamespacesFilter] {
+	return pulumix.Output[[]GetTagNamespacesFilter]{
+		OutputState: i.ToGetTagNamespacesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTagNamespacesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetTagNamespacesFilterOutput) ElementType() reflect.Type {
@@ -16886,6 +19779,12 @@ func (o GetTagNamespacesFilterOutput) ToGetTagNamespacesFilterOutput() GetTagNam
 
 func (o GetTagNamespacesFilterOutput) ToGetTagNamespacesFilterOutputWithContext(ctx context.Context) GetTagNamespacesFilterOutput {
 	return o
+}
+
+func (o GetTagNamespacesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetTagNamespacesFilter] {
+	return pulumix.Output[GetTagNamespacesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the tag namespace. It must be unique across all tag namespaces in the tenancy and cannot be changed.
@@ -16913,6 +19812,12 @@ func (o GetTagNamespacesFilterArrayOutput) ToGetTagNamespacesFilterArrayOutput()
 
 func (o GetTagNamespacesFilterArrayOutput) ToGetTagNamespacesFilterArrayOutputWithContext(ctx context.Context) GetTagNamespacesFilterArrayOutput {
 	return o
+}
+
+func (o GetTagNamespacesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTagNamespacesFilter] {
+	return pulumix.Output[[]GetTagNamespacesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTagNamespacesFilterArrayOutput) Index(i pulumi.IntInput) GetTagNamespacesFilterOutput {
@@ -16986,6 +19891,12 @@ func (i GetTagNamespacesTagNamespaceArgs) ToGetTagNamespacesTagNamespaceOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetTagNamespacesTagNamespaceOutput)
 }
 
+func (i GetTagNamespacesTagNamespaceArgs) ToOutput(ctx context.Context) pulumix.Output[GetTagNamespacesTagNamespace] {
+	return pulumix.Output[GetTagNamespacesTagNamespace]{
+		OutputState: i.ToGetTagNamespacesTagNamespaceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTagNamespacesTagNamespaceArrayInput is an input type that accepts GetTagNamespacesTagNamespaceArray and GetTagNamespacesTagNamespaceArrayOutput values.
 // You can construct a concrete instance of `GetTagNamespacesTagNamespaceArrayInput` via:
 //
@@ -17011,6 +19922,12 @@ func (i GetTagNamespacesTagNamespaceArray) ToGetTagNamespacesTagNamespaceArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetTagNamespacesTagNamespaceArrayOutput)
 }
 
+func (i GetTagNamespacesTagNamespaceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTagNamespacesTagNamespace] {
+	return pulumix.Output[[]GetTagNamespacesTagNamespace]{
+		OutputState: i.ToGetTagNamespacesTagNamespaceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTagNamespacesTagNamespaceOutput struct{ *pulumi.OutputState }
 
 func (GetTagNamespacesTagNamespaceOutput) ElementType() reflect.Type {
@@ -17023,6 +19940,12 @@ func (o GetTagNamespacesTagNamespaceOutput) ToGetTagNamespacesTagNamespaceOutput
 
 func (o GetTagNamespacesTagNamespaceOutput) ToGetTagNamespacesTagNamespaceOutputWithContext(ctx context.Context) GetTagNamespacesTagNamespaceOutput {
 	return o
+}
+
+func (o GetTagNamespacesTagNamespaceOutput) ToOutput(ctx context.Context) pulumix.Output[GetTagNamespacesTagNamespace] {
+	return pulumix.Output[GetTagNamespacesTagNamespace]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the compartment (remember that the tenancy is simply the root compartment).
@@ -17084,6 +20007,12 @@ func (o GetTagNamespacesTagNamespaceArrayOutput) ToGetTagNamespacesTagNamespaceA
 	return o
 }
 
+func (o GetTagNamespacesTagNamespaceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTagNamespacesTagNamespace] {
+	return pulumix.Output[[]GetTagNamespacesTagNamespace]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetTagNamespacesTagNamespaceArrayOutput) Index(i pulumi.IntInput) GetTagNamespacesTagNamespaceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTagNamespacesTagNamespace {
 		return vs[0].([]GetTagNamespacesTagNamespace)[vs[1].(int)]
@@ -17143,6 +20072,12 @@ func (i GetTagStandardTagNamespaceTemplateTagDefinitionTemplateArgs) ToGetTagSta
 	return pulumi.ToOutputWithContext(ctx, i).(GetTagStandardTagNamespaceTemplateTagDefinitionTemplateOutput)
 }
 
+func (i GetTagStandardTagNamespaceTemplateTagDefinitionTemplateArgs) ToOutput(ctx context.Context) pulumix.Output[GetTagStandardTagNamespaceTemplateTagDefinitionTemplate] {
+	return pulumix.Output[GetTagStandardTagNamespaceTemplateTagDefinitionTemplate]{
+		OutputState: i.ToGetTagStandardTagNamespaceTemplateTagDefinitionTemplateOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTagStandardTagNamespaceTemplateTagDefinitionTemplateArrayInput is an input type that accepts GetTagStandardTagNamespaceTemplateTagDefinitionTemplateArray and GetTagStandardTagNamespaceTemplateTagDefinitionTemplateArrayOutput values.
 // You can construct a concrete instance of `GetTagStandardTagNamespaceTemplateTagDefinitionTemplateArrayInput` via:
 //
@@ -17168,6 +20103,12 @@ func (i GetTagStandardTagNamespaceTemplateTagDefinitionTemplateArray) ToGetTagSt
 	return pulumi.ToOutputWithContext(ctx, i).(GetTagStandardTagNamespaceTemplateTagDefinitionTemplateArrayOutput)
 }
 
+func (i GetTagStandardTagNamespaceTemplateTagDefinitionTemplateArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTagStandardTagNamespaceTemplateTagDefinitionTemplate] {
+	return pulumix.Output[[]GetTagStandardTagNamespaceTemplateTagDefinitionTemplate]{
+		OutputState: i.ToGetTagStandardTagNamespaceTemplateTagDefinitionTemplateArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTagStandardTagNamespaceTemplateTagDefinitionTemplateOutput struct{ *pulumi.OutputState }
 
 func (GetTagStandardTagNamespaceTemplateTagDefinitionTemplateOutput) ElementType() reflect.Type {
@@ -17180,6 +20121,12 @@ func (o GetTagStandardTagNamespaceTemplateTagDefinitionTemplateOutput) ToGetTagS
 
 func (o GetTagStandardTagNamespaceTemplateTagDefinitionTemplateOutput) ToGetTagStandardTagNamespaceTemplateTagDefinitionTemplateOutputWithContext(ctx context.Context) GetTagStandardTagNamespaceTemplateTagDefinitionTemplateOutput {
 	return o
+}
+
+func (o GetTagStandardTagNamespaceTemplateTagDefinitionTemplateOutput) ToOutput(ctx context.Context) pulumix.Output[GetTagStandardTagNamespaceTemplateTagDefinitionTemplate] {
+	return pulumix.Output[GetTagStandardTagNamespaceTemplateTagDefinitionTemplate]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The default description of the tag namespace that users can use to create the tag definition
@@ -17226,6 +20173,12 @@ func (o GetTagStandardTagNamespaceTemplateTagDefinitionTemplateArrayOutput) ToGe
 	return o
 }
 
+func (o GetTagStandardTagNamespaceTemplateTagDefinitionTemplateArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTagStandardTagNamespaceTemplateTagDefinitionTemplate] {
+	return pulumix.Output[[]GetTagStandardTagNamespaceTemplateTagDefinitionTemplate]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetTagStandardTagNamespaceTemplateTagDefinitionTemplateArrayOutput) Index(i pulumi.IntInput) GetTagStandardTagNamespaceTemplateTagDefinitionTemplateOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTagStandardTagNamespaceTemplateTagDefinitionTemplate {
 		return vs[0].([]GetTagStandardTagNamespaceTemplateTagDefinitionTemplate)[vs[1].(int)]
@@ -17267,6 +20220,12 @@ func (i GetTagStandardTagNamespaceTemplatesFilterArgs) ToGetTagStandardTagNamesp
 	return pulumi.ToOutputWithContext(ctx, i).(GetTagStandardTagNamespaceTemplatesFilterOutput)
 }
 
+func (i GetTagStandardTagNamespaceTemplatesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetTagStandardTagNamespaceTemplatesFilter] {
+	return pulumix.Output[GetTagStandardTagNamespaceTemplatesFilter]{
+		OutputState: i.ToGetTagStandardTagNamespaceTemplatesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTagStandardTagNamespaceTemplatesFilterArrayInput is an input type that accepts GetTagStandardTagNamespaceTemplatesFilterArray and GetTagStandardTagNamespaceTemplatesFilterArrayOutput values.
 // You can construct a concrete instance of `GetTagStandardTagNamespaceTemplatesFilterArrayInput` via:
 //
@@ -17292,6 +20251,12 @@ func (i GetTagStandardTagNamespaceTemplatesFilterArray) ToGetTagStandardTagNames
 	return pulumi.ToOutputWithContext(ctx, i).(GetTagStandardTagNamespaceTemplatesFilterArrayOutput)
 }
 
+func (i GetTagStandardTagNamespaceTemplatesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTagStandardTagNamespaceTemplatesFilter] {
+	return pulumix.Output[[]GetTagStandardTagNamespaceTemplatesFilter]{
+		OutputState: i.ToGetTagStandardTagNamespaceTemplatesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTagStandardTagNamespaceTemplatesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetTagStandardTagNamespaceTemplatesFilterOutput) ElementType() reflect.Type {
@@ -17304,6 +20269,12 @@ func (o GetTagStandardTagNamespaceTemplatesFilterOutput) ToGetTagStandardTagName
 
 func (o GetTagStandardTagNamespaceTemplatesFilterOutput) ToGetTagStandardTagNamespaceTemplatesFilterOutputWithContext(ctx context.Context) GetTagStandardTagNamespaceTemplatesFilterOutput {
 	return o
+}
+
+func (o GetTagStandardTagNamespaceTemplatesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetTagStandardTagNamespaceTemplatesFilter] {
+	return pulumix.Output[GetTagStandardTagNamespaceTemplatesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTagStandardTagNamespaceTemplatesFilterOutput) Name() pulumi.StringOutput {
@@ -17330,6 +20301,12 @@ func (o GetTagStandardTagNamespaceTemplatesFilterArrayOutput) ToGetTagStandardTa
 
 func (o GetTagStandardTagNamespaceTemplatesFilterArrayOutput) ToGetTagStandardTagNamespaceTemplatesFilterArrayOutputWithContext(ctx context.Context) GetTagStandardTagNamespaceTemplatesFilterArrayOutput {
 	return o
+}
+
+func (o GetTagStandardTagNamespaceTemplatesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTagStandardTagNamespaceTemplatesFilter] {
+	return pulumix.Output[[]GetTagStandardTagNamespaceTemplatesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTagStandardTagNamespaceTemplatesFilterArrayOutput) Index(i pulumi.IntInput) GetTagStandardTagNamespaceTemplatesFilterOutput {
@@ -17379,6 +20356,12 @@ func (i GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplateArgs) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplateOutput)
 }
 
+func (i GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplateArgs) ToOutput(ctx context.Context) pulumix.Output[GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplate] {
+	return pulumix.Output[GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplate]{
+		OutputState: i.ToGetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplateOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplateArrayInput is an input type that accepts GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplateArray and GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplateArrayOutput values.
 // You can construct a concrete instance of `GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplateArrayInput` via:
 //
@@ -17404,6 +20387,12 @@ func (i GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplateArray) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplateArrayOutput)
 }
 
+func (i GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplateArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplate] {
+	return pulumix.Output[[]GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplate]{
+		OutputState: i.ToGetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplateArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplateOutput struct{ *pulumi.OutputState }
 
 func (GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplateOutput) ElementType() reflect.Type {
@@ -17416,6 +20405,12 @@ func (o GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplateOutput) T
 
 func (o GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplateOutput) ToGetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplateOutputWithContext(ctx context.Context) GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplateOutput {
 	return o
+}
+
+func (o GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplateOutput) ToOutput(ctx context.Context) pulumix.Output[GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplate] {
+	return pulumix.Output[GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplate]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The default description of the tag namespace that users can use to create the tag namespace
@@ -17447,6 +20442,12 @@ func (o GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplateArrayOutp
 
 func (o GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplateArrayOutput) ToGetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplateArrayOutputWithContext(ctx context.Context) GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplateArrayOutput {
 	return o
+}
+
+func (o GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplateArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplate] {
+	return pulumix.Output[[]GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplate]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplateArrayOutput) Index(i pulumi.IntInput) GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplateOutput {
@@ -17492,6 +20493,12 @@ func (i GetTagValidatorArgs) ToGetTagValidatorOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetTagValidatorOutput)
 }
 
+func (i GetTagValidatorArgs) ToOutput(ctx context.Context) pulumix.Output[GetTagValidator] {
+	return pulumix.Output[GetTagValidator]{
+		OutputState: i.ToGetTagValidatorOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTagValidatorArrayInput is an input type that accepts GetTagValidatorArray and GetTagValidatorArrayOutput values.
 // You can construct a concrete instance of `GetTagValidatorArrayInput` via:
 //
@@ -17517,6 +20524,12 @@ func (i GetTagValidatorArray) ToGetTagValidatorArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetTagValidatorArrayOutput)
 }
 
+func (i GetTagValidatorArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTagValidator] {
+	return pulumix.Output[[]GetTagValidator]{
+		OutputState: i.ToGetTagValidatorArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTagValidatorOutput struct{ *pulumi.OutputState }
 
 func (GetTagValidatorOutput) ElementType() reflect.Type {
@@ -17529,6 +20542,12 @@ func (o GetTagValidatorOutput) ToGetTagValidatorOutput() GetTagValidatorOutput {
 
 func (o GetTagValidatorOutput) ToGetTagValidatorOutputWithContext(ctx context.Context) GetTagValidatorOutput {
 	return o
+}
+
+func (o GetTagValidatorOutput) ToOutput(ctx context.Context) pulumix.Output[GetTagValidator] {
+	return pulumix.Output[GetTagValidator]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Specifies the type of validation: a static value (no validation) or a list.
@@ -17553,6 +20572,12 @@ func (o GetTagValidatorArrayOutput) ToGetTagValidatorArrayOutput() GetTagValidat
 
 func (o GetTagValidatorArrayOutput) ToGetTagValidatorArrayOutputWithContext(ctx context.Context) GetTagValidatorArrayOutput {
 	return o
+}
+
+func (o GetTagValidatorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTagValidator] {
+	return pulumix.Output[[]GetTagValidator]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTagValidatorArrayOutput) Index(i pulumi.IntInput) GetTagValidatorOutput {
@@ -17600,6 +20625,12 @@ func (i GetTagsFilterArgs) ToGetTagsFilterOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(GetTagsFilterOutput)
 }
 
+func (i GetTagsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetTagsFilter] {
+	return pulumix.Output[GetTagsFilter]{
+		OutputState: i.ToGetTagsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTagsFilterArrayInput is an input type that accepts GetTagsFilterArray and GetTagsFilterArrayOutput values.
 // You can construct a concrete instance of `GetTagsFilterArrayInput` via:
 //
@@ -17625,6 +20656,12 @@ func (i GetTagsFilterArray) ToGetTagsFilterArrayOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetTagsFilterArrayOutput)
 }
 
+func (i GetTagsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTagsFilter] {
+	return pulumix.Output[[]GetTagsFilter]{
+		OutputState: i.ToGetTagsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTagsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetTagsFilterOutput) ElementType() reflect.Type {
@@ -17637,6 +20674,12 @@ func (o GetTagsFilterOutput) ToGetTagsFilterOutput() GetTagsFilterOutput {
 
 func (o GetTagsFilterOutput) ToGetTagsFilterOutputWithContext(ctx context.Context) GetTagsFilterOutput {
 	return o
+}
+
+func (o GetTagsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetTagsFilter] {
+	return pulumix.Output[GetTagsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name assigned to the tag during creation. This is the tag key definition. The name must be unique within the tag namespace and cannot be changed.
@@ -17665,6 +20708,12 @@ func (o GetTagsFilterArrayOutput) ToGetTagsFilterArrayOutput() GetTagsFilterArra
 
 func (o GetTagsFilterArrayOutput) ToGetTagsFilterArrayOutputWithContext(ctx context.Context) GetTagsFilterArrayOutput {
 	return o
+}
+
+func (o GetTagsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTagsFilter] {
+	return pulumix.Output[[]GetTagsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTagsFilterArrayOutput) Index(i pulumi.IntInput) GetTagsFilterOutput {
@@ -17746,6 +20795,12 @@ func (i GetTagsTagArgs) ToGetTagsTagOutputWithContext(ctx context.Context) GetTa
 	return pulumi.ToOutputWithContext(ctx, i).(GetTagsTagOutput)
 }
 
+func (i GetTagsTagArgs) ToOutput(ctx context.Context) pulumix.Output[GetTagsTag] {
+	return pulumix.Output[GetTagsTag]{
+		OutputState: i.ToGetTagsTagOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTagsTagArrayInput is an input type that accepts GetTagsTagArray and GetTagsTagArrayOutput values.
 // You can construct a concrete instance of `GetTagsTagArrayInput` via:
 //
@@ -17771,6 +20826,12 @@ func (i GetTagsTagArray) ToGetTagsTagArrayOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(GetTagsTagArrayOutput)
 }
 
+func (i GetTagsTagArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTagsTag] {
+	return pulumix.Output[[]GetTagsTag]{
+		OutputState: i.ToGetTagsTagArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTagsTagOutput struct{ *pulumi.OutputState }
 
 func (GetTagsTagOutput) ElementType() reflect.Type {
@@ -17783,6 +20844,12 @@ func (o GetTagsTagOutput) ToGetTagsTagOutput() GetTagsTagOutput {
 
 func (o GetTagsTagOutput) ToGetTagsTagOutputWithContext(ctx context.Context) GetTagsTagOutput {
 	return o
+}
+
+func (o GetTagsTagOutput) ToOutput(ctx context.Context) pulumix.Output[GetTagsTag] {
+	return pulumix.Output[GetTagsTag]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -17854,6 +20921,12 @@ func (o GetTagsTagArrayOutput) ToGetTagsTagArrayOutputWithContext(ctx context.Co
 	return o
 }
 
+func (o GetTagsTagArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTagsTag] {
+	return pulumix.Output[[]GetTagsTag]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetTagsTagArrayOutput) Index(i pulumi.IntInput) GetTagsTagOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTagsTag {
 		return vs[0].([]GetTagsTag)[vs[1].(int)]
@@ -17897,6 +20970,12 @@ func (i GetTagsTagValidatorArgs) ToGetTagsTagValidatorOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetTagsTagValidatorOutput)
 }
 
+func (i GetTagsTagValidatorArgs) ToOutput(ctx context.Context) pulumix.Output[GetTagsTagValidator] {
+	return pulumix.Output[GetTagsTagValidator]{
+		OutputState: i.ToGetTagsTagValidatorOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTagsTagValidatorArrayInput is an input type that accepts GetTagsTagValidatorArray and GetTagsTagValidatorArrayOutput values.
 // You can construct a concrete instance of `GetTagsTagValidatorArrayInput` via:
 //
@@ -17922,6 +21001,12 @@ func (i GetTagsTagValidatorArray) ToGetTagsTagValidatorArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetTagsTagValidatorArrayOutput)
 }
 
+func (i GetTagsTagValidatorArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTagsTagValidator] {
+	return pulumix.Output[[]GetTagsTagValidator]{
+		OutputState: i.ToGetTagsTagValidatorArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTagsTagValidatorOutput struct{ *pulumi.OutputState }
 
 func (GetTagsTagValidatorOutput) ElementType() reflect.Type {
@@ -17934,6 +21019,12 @@ func (o GetTagsTagValidatorOutput) ToGetTagsTagValidatorOutput() GetTagsTagValid
 
 func (o GetTagsTagValidatorOutput) ToGetTagsTagValidatorOutputWithContext(ctx context.Context) GetTagsTagValidatorOutput {
 	return o
+}
+
+func (o GetTagsTagValidatorOutput) ToOutput(ctx context.Context) pulumix.Output[GetTagsTagValidator] {
+	return pulumix.Output[GetTagsTagValidator]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Specifies the type of validation: a static value (no validation) or a list.
@@ -17958,6 +21049,12 @@ func (o GetTagsTagValidatorArrayOutput) ToGetTagsTagValidatorArrayOutput() GetTa
 
 func (o GetTagsTagValidatorArrayOutput) ToGetTagsTagValidatorArrayOutputWithContext(ctx context.Context) GetTagsTagValidatorArrayOutput {
 	return o
+}
+
+func (o GetTagsTagValidatorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTagsTagValidator] {
+	return pulumix.Output[[]GetTagsTagValidator]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTagsTagValidatorArrayOutput) Index(i pulumi.IntInput) GetTagsTagValidatorOutput {
@@ -18023,6 +21120,12 @@ func (i GetUserCapabilityArgs) ToGetUserCapabilityOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetUserCapabilityOutput)
 }
 
+func (i GetUserCapabilityArgs) ToOutput(ctx context.Context) pulumix.Output[GetUserCapability] {
+	return pulumix.Output[GetUserCapability]{
+		OutputState: i.ToGetUserCapabilityOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetUserCapabilityArrayInput is an input type that accepts GetUserCapabilityArray and GetUserCapabilityArrayOutput values.
 // You can construct a concrete instance of `GetUserCapabilityArrayInput` via:
 //
@@ -18048,6 +21151,12 @@ func (i GetUserCapabilityArray) ToGetUserCapabilityArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetUserCapabilityArrayOutput)
 }
 
+func (i GetUserCapabilityArray) ToOutput(ctx context.Context) pulumix.Output[[]GetUserCapability] {
+	return pulumix.Output[[]GetUserCapability]{
+		OutputState: i.ToGetUserCapabilityArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetUserCapabilityOutput struct{ *pulumi.OutputState }
 
 func (GetUserCapabilityOutput) ElementType() reflect.Type {
@@ -18060,6 +21169,12 @@ func (o GetUserCapabilityOutput) ToGetUserCapabilityOutput() GetUserCapabilityOu
 
 func (o GetUserCapabilityOutput) ToGetUserCapabilityOutputWithContext(ctx context.Context) GetUserCapabilityOutput {
 	return o
+}
+
+func (o GetUserCapabilityOutput) ToOutput(ctx context.Context) pulumix.Output[GetUserCapability] {
+	return pulumix.Output[GetUserCapability]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Indicates if the user can use API keys.
@@ -18111,6 +21226,12 @@ func (o GetUserCapabilityArrayOutput) ToGetUserCapabilityArrayOutputWithContext(
 	return o
 }
 
+func (o GetUserCapabilityArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetUserCapability] {
+	return pulumix.Output[[]GetUserCapability]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetUserCapabilityArrayOutput) Index(i pulumi.IntInput) GetUserCapabilityOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUserCapability {
 		return vs[0].([]GetUserCapability)[vs[1].(int)]
@@ -18152,6 +21273,12 @@ func (i GetUserGroupMembershipsFilterArgs) ToGetUserGroupMembershipsFilterOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetUserGroupMembershipsFilterOutput)
 }
 
+func (i GetUserGroupMembershipsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetUserGroupMembershipsFilter] {
+	return pulumix.Output[GetUserGroupMembershipsFilter]{
+		OutputState: i.ToGetUserGroupMembershipsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetUserGroupMembershipsFilterArrayInput is an input type that accepts GetUserGroupMembershipsFilterArray and GetUserGroupMembershipsFilterArrayOutput values.
 // You can construct a concrete instance of `GetUserGroupMembershipsFilterArrayInput` via:
 //
@@ -18177,6 +21304,12 @@ func (i GetUserGroupMembershipsFilterArray) ToGetUserGroupMembershipsFilterArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetUserGroupMembershipsFilterArrayOutput)
 }
 
+func (i GetUserGroupMembershipsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetUserGroupMembershipsFilter] {
+	return pulumix.Output[[]GetUserGroupMembershipsFilter]{
+		OutputState: i.ToGetUserGroupMembershipsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetUserGroupMembershipsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetUserGroupMembershipsFilterOutput) ElementType() reflect.Type {
@@ -18189,6 +21322,12 @@ func (o GetUserGroupMembershipsFilterOutput) ToGetUserGroupMembershipsFilterOutp
 
 func (o GetUserGroupMembershipsFilterOutput) ToGetUserGroupMembershipsFilterOutputWithContext(ctx context.Context) GetUserGroupMembershipsFilterOutput {
 	return o
+}
+
+func (o GetUserGroupMembershipsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetUserGroupMembershipsFilter] {
+	return pulumix.Output[GetUserGroupMembershipsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetUserGroupMembershipsFilterOutput) Name() pulumi.StringOutput {
@@ -18215,6 +21354,12 @@ func (o GetUserGroupMembershipsFilterArrayOutput) ToGetUserGroupMembershipsFilte
 
 func (o GetUserGroupMembershipsFilterArrayOutput) ToGetUserGroupMembershipsFilterArrayOutputWithContext(ctx context.Context) GetUserGroupMembershipsFilterArrayOutput {
 	return o
+}
+
+func (o GetUserGroupMembershipsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetUserGroupMembershipsFilter] {
+	return pulumix.Output[[]GetUserGroupMembershipsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetUserGroupMembershipsFilterArrayOutput) Index(i pulumi.IntInput) GetUserGroupMembershipsFilterOutput {
@@ -18280,6 +21425,12 @@ func (i GetUserGroupMembershipsMembershipArgs) ToGetUserGroupMembershipsMembersh
 	return pulumi.ToOutputWithContext(ctx, i).(GetUserGroupMembershipsMembershipOutput)
 }
 
+func (i GetUserGroupMembershipsMembershipArgs) ToOutput(ctx context.Context) pulumix.Output[GetUserGroupMembershipsMembership] {
+	return pulumix.Output[GetUserGroupMembershipsMembership]{
+		OutputState: i.ToGetUserGroupMembershipsMembershipOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetUserGroupMembershipsMembershipArrayInput is an input type that accepts GetUserGroupMembershipsMembershipArray and GetUserGroupMembershipsMembershipArrayOutput values.
 // You can construct a concrete instance of `GetUserGroupMembershipsMembershipArrayInput` via:
 //
@@ -18305,6 +21456,12 @@ func (i GetUserGroupMembershipsMembershipArray) ToGetUserGroupMembershipsMembers
 	return pulumi.ToOutputWithContext(ctx, i).(GetUserGroupMembershipsMembershipArrayOutput)
 }
 
+func (i GetUserGroupMembershipsMembershipArray) ToOutput(ctx context.Context) pulumix.Output[[]GetUserGroupMembershipsMembership] {
+	return pulumix.Output[[]GetUserGroupMembershipsMembership]{
+		OutputState: i.ToGetUserGroupMembershipsMembershipArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetUserGroupMembershipsMembershipOutput struct{ *pulumi.OutputState }
 
 func (GetUserGroupMembershipsMembershipOutput) ElementType() reflect.Type {
@@ -18317,6 +21474,12 @@ func (o GetUserGroupMembershipsMembershipOutput) ToGetUserGroupMembershipsMember
 
 func (o GetUserGroupMembershipsMembershipOutput) ToGetUserGroupMembershipsMembershipOutputWithContext(ctx context.Context) GetUserGroupMembershipsMembershipOutput {
 	return o
+}
+
+func (o GetUserGroupMembershipsMembershipOutput) ToOutput(ctx context.Context) pulumix.Output[GetUserGroupMembershipsMembership] {
+	return pulumix.Output[GetUserGroupMembershipsMembership]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the compartment (remember that the tenancy is simply the root compartment).
@@ -18368,6 +21531,12 @@ func (o GetUserGroupMembershipsMembershipArrayOutput) ToGetUserGroupMembershipsM
 	return o
 }
 
+func (o GetUserGroupMembershipsMembershipArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetUserGroupMembershipsMembership] {
+	return pulumix.Output[[]GetUserGroupMembershipsMembership]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetUserGroupMembershipsMembershipArrayOutput) Index(i pulumi.IntInput) GetUserGroupMembershipsMembershipOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUserGroupMembershipsMembership {
 		return vs[0].([]GetUserGroupMembershipsMembership)[vs[1].(int)]
@@ -18411,6 +21580,12 @@ func (i GetUsersFilterArgs) ToGetUsersFilterOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetUsersFilterOutput)
 }
 
+func (i GetUsersFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetUsersFilter] {
+	return pulumix.Output[GetUsersFilter]{
+		OutputState: i.ToGetUsersFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetUsersFilterArrayInput is an input type that accepts GetUsersFilterArray and GetUsersFilterArrayOutput values.
 // You can construct a concrete instance of `GetUsersFilterArrayInput` via:
 //
@@ -18436,6 +21611,12 @@ func (i GetUsersFilterArray) ToGetUsersFilterArrayOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetUsersFilterArrayOutput)
 }
 
+func (i GetUsersFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetUsersFilter] {
+	return pulumix.Output[[]GetUsersFilter]{
+		OutputState: i.ToGetUsersFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetUsersFilterOutput struct{ *pulumi.OutputState }
 
 func (GetUsersFilterOutput) ElementType() reflect.Type {
@@ -18448,6 +21629,12 @@ func (o GetUsersFilterOutput) ToGetUsersFilterOutput() GetUsersFilterOutput {
 
 func (o GetUsersFilterOutput) ToGetUsersFilterOutputWithContext(ctx context.Context) GetUsersFilterOutput {
 	return o
+}
+
+func (o GetUsersFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetUsersFilter] {
+	return pulumix.Output[GetUsersFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A filter to only return resources that match the given name exactly.
@@ -18475,6 +21662,12 @@ func (o GetUsersFilterArrayOutput) ToGetUsersFilterArrayOutput() GetUsersFilterA
 
 func (o GetUsersFilterArrayOutput) ToGetUsersFilterArrayOutputWithContext(ctx context.Context) GetUsersFilterArrayOutput {
 	return o
+}
+
+func (o GetUsersFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetUsersFilter] {
+	return pulumix.Output[[]GetUsersFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetUsersFilterArrayOutput) Index(i pulumi.IntInput) GetUsersFilterOutput {
@@ -18586,6 +21779,12 @@ func (i GetUsersUserArgs) ToGetUsersUserOutputWithContext(ctx context.Context) G
 	return pulumi.ToOutputWithContext(ctx, i).(GetUsersUserOutput)
 }
 
+func (i GetUsersUserArgs) ToOutput(ctx context.Context) pulumix.Output[GetUsersUser] {
+	return pulumix.Output[GetUsersUser]{
+		OutputState: i.ToGetUsersUserOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetUsersUserArrayInput is an input type that accepts GetUsersUserArray and GetUsersUserArrayOutput values.
 // You can construct a concrete instance of `GetUsersUserArrayInput` via:
 //
@@ -18611,6 +21810,12 @@ func (i GetUsersUserArray) ToGetUsersUserArrayOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetUsersUserArrayOutput)
 }
 
+func (i GetUsersUserArray) ToOutput(ctx context.Context) pulumix.Output[[]GetUsersUser] {
+	return pulumix.Output[[]GetUsersUser]{
+		OutputState: i.ToGetUsersUserArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetUsersUserOutput struct{ *pulumi.OutputState }
 
 func (GetUsersUserOutput) ElementType() reflect.Type {
@@ -18623,6 +21828,12 @@ func (o GetUsersUserOutput) ToGetUsersUserOutput() GetUsersUserOutput {
 
 func (o GetUsersUserOutput) ToGetUsersUserOutputWithContext(ctx context.Context) GetUsersUserOutput {
 	return o
+}
+
+func (o GetUsersUserOutput) ToOutput(ctx context.Context) pulumix.Output[GetUsersUser] {
+	return pulumix.Output[GetUsersUser]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Properties indicating how the user is allowed to authenticate.
@@ -18727,6 +21938,12 @@ func (o GetUsersUserArrayOutput) ToGetUsersUserArrayOutputWithContext(ctx contex
 	return o
 }
 
+func (o GetUsersUserArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetUsersUser] {
+	return pulumix.Output[[]GetUsersUser]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetUsersUserArrayOutput) Index(i pulumi.IntInput) GetUsersUserOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUsersUser {
 		return vs[0].([]GetUsersUser)[vs[1].(int)]
@@ -18790,6 +22007,12 @@ func (i GetUsersUserCapabilityArgs) ToGetUsersUserCapabilityOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetUsersUserCapabilityOutput)
 }
 
+func (i GetUsersUserCapabilityArgs) ToOutput(ctx context.Context) pulumix.Output[GetUsersUserCapability] {
+	return pulumix.Output[GetUsersUserCapability]{
+		OutputState: i.ToGetUsersUserCapabilityOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetUsersUserCapabilityArrayInput is an input type that accepts GetUsersUserCapabilityArray and GetUsersUserCapabilityArrayOutput values.
 // You can construct a concrete instance of `GetUsersUserCapabilityArrayInput` via:
 //
@@ -18815,6 +22038,12 @@ func (i GetUsersUserCapabilityArray) ToGetUsersUserCapabilityArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetUsersUserCapabilityArrayOutput)
 }
 
+func (i GetUsersUserCapabilityArray) ToOutput(ctx context.Context) pulumix.Output[[]GetUsersUserCapability] {
+	return pulumix.Output[[]GetUsersUserCapability]{
+		OutputState: i.ToGetUsersUserCapabilityArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetUsersUserCapabilityOutput struct{ *pulumi.OutputState }
 
 func (GetUsersUserCapabilityOutput) ElementType() reflect.Type {
@@ -18827,6 +22056,12 @@ func (o GetUsersUserCapabilityOutput) ToGetUsersUserCapabilityOutput() GetUsersU
 
 func (o GetUsersUserCapabilityOutput) ToGetUsersUserCapabilityOutputWithContext(ctx context.Context) GetUsersUserCapabilityOutput {
 	return o
+}
+
+func (o GetUsersUserCapabilityOutput) ToOutput(ctx context.Context) pulumix.Output[GetUsersUserCapability] {
+	return pulumix.Output[GetUsersUserCapability]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Indicates if the user can use API keys.
@@ -18876,6 +22111,12 @@ func (o GetUsersUserCapabilityArrayOutput) ToGetUsersUserCapabilityArrayOutput()
 
 func (o GetUsersUserCapabilityArrayOutput) ToGetUsersUserCapabilityArrayOutputWithContext(ctx context.Context) GetUsersUserCapabilityArrayOutput {
 	return o
+}
+
+func (o GetUsersUserCapabilityArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetUsersUserCapability] {
+	return pulumix.Output[[]GetUsersUserCapability]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetUsersUserCapabilityArrayOutput) Index(i pulumi.IntInput) GetUsersUserCapabilityOutput {

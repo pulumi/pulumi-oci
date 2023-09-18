@@ -68,7 +68,7 @@ public class Preauthrequest extends com.pulumi.resources.CustomResource {
      * The operation that can be performed on this resource. Allowed Values: `ObjectRead`, `ObjectWrite`, `ObjectReadWrite`, `AnyObjectReadWrite` or `AnyObjectRead`
      * 
      */
-    @Export(name="accessType", type=String.class, parameters={})
+    @Export(name="accessType", refs={String.class}, tree="[0]")
     private Output<String> accessType;
 
     /**
@@ -82,7 +82,7 @@ public class Preauthrequest extends com.pulumi.resources.CustomResource {
      * The URI to embed in the URL `https://objectstorage.${var.region}.oraclecloud.com{var.access_uri}` when using the pre-authenticated request.
      * 
      */
-    @Export(name="accessUri", type=String.class, parameters={})
+    @Export(name="accessUri", refs={String.class}, tree="[0]")
     private Output<String> accessUri;
 
     /**
@@ -96,7 +96,7 @@ public class Preauthrequest extends com.pulumi.resources.CustomResource {
      * The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
      * 
      */
-    @Export(name="bucket", type=String.class, parameters={})
+    @Export(name="bucket", refs={String.class}, tree="[0]")
     private Output<String> bucket;
 
     /**
@@ -110,7 +110,7 @@ public class Preauthrequest extends com.pulumi.resources.CustomResource {
      * Specifies whether a list operation is allowed on a PAR with accessType &#34;AnyObjectRead&#34; or &#34;AnyObjectReadWrite&#34;. Deny: Prevents the user from performing a list operation. ListObjects: Authorizes the user to perform a list operation.
      * 
      */
-    @Export(name="bucketListingAction", type=String.class, parameters={})
+    @Export(name="bucketListingAction", refs={String.class}, tree="[0]")
     private Output<String> bucketListingAction;
 
     /**
@@ -124,7 +124,7 @@ public class Preauthrequest extends com.pulumi.resources.CustomResource {
      * The full Path for the object.
      * 
      */
-    @Export(name="fullPath", type=String.class, parameters={})
+    @Export(name="fullPath", refs={String.class}, tree="[0]")
     private Output<String> fullPath;
 
     /**
@@ -138,7 +138,7 @@ public class Preauthrequest extends com.pulumi.resources.CustomResource {
      * A user-specified name for the pre-authenticated request. Names can be helpful in managing pre-authenticated requests. Avoid entering confidential information.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -152,7 +152,7 @@ public class Preauthrequest extends com.pulumi.resources.CustomResource {
      * The Object Storage namespace used for the request.
      * 
      */
-    @Export(name="namespace", type=String.class, parameters={})
+    @Export(name="namespace", refs={String.class}, tree="[0]")
     private Output<String> namespace;
 
     /**
@@ -170,7 +170,7 @@ public class Preauthrequest extends com.pulumi.resources.CustomResource {
      * 
      */
     @Deprecated /* The 'object' field has been deprecated. Please use 'object_name' instead. */
-    @Export(name="object", type=String.class, parameters={})
+    @Export(name="object", refs={String.class}, tree="[0]")
     private Output<String> object;
 
     /**
@@ -184,7 +184,7 @@ public class Preauthrequest extends com.pulumi.resources.CustomResource {
      * The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
      * 
      */
-    @Export(name="objectName", type=String.class, parameters={})
+    @Export(name="objectName", refs={String.class}, tree="[0]")
     private Output<String> objectName;
 
     /**
@@ -198,7 +198,7 @@ public class Preauthrequest extends com.pulumi.resources.CustomResource {
      * The unique identifier for the pre-authenticated request. This can be used to manage operations against the pre-authenticated request, such as GET or DELETE.
      * 
      */
-    @Export(name="parId", type=String.class, parameters={})
+    @Export(name="parId", refs={String.class}, tree="[0]")
     private Output<String> parId;
 
     /**
@@ -212,7 +212,7 @@ public class Preauthrequest extends com.pulumi.resources.CustomResource {
      * The date when the pre-authenticated request was created as per specification [RFC 3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -229,7 +229,7 @@ public class Preauthrequest extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="timeExpires", type=String.class, parameters={})
+    @Export(name="timeExpires", refs={String.class}, tree="[0]")
     private Output<String> timeExpires;
 
     /**

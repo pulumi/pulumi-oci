@@ -67,7 +67,7 @@ public class LogAnalyticsPreferencesManagement extends com.pulumi.resources.Cust
      * An array of tenant preference details.
      * 
      */
-    @Export(name="items", type=List.class, parameters={LogAnalyticsPreferencesManagementItem.class})
+    @Export(name="items", refs={List.class,LogAnalyticsPreferencesManagementItem.class}, tree="[0,1]")
     private Output</* @Nullable */ List<LogAnalyticsPreferencesManagementItem>> items;
 
     /**
@@ -84,7 +84,7 @@ public class LogAnalyticsPreferencesManagement extends com.pulumi.resources.Cust
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="namespace", type=String.class, parameters={})
+    @Export(name="namespace", refs={String.class}, tree="[0]")
     private Output<String> namespace;
 
     /**

@@ -65,7 +65,7 @@ public class SetUserAssessmentBaseline extends com.pulumi.resources.CustomResour
      * The list of user assessment OCIDs that need to be updated while setting the baseline.
      * 
      */
-    @Export(name="assessmentIds", type=List.class, parameters={String.class})
+    @Export(name="assessmentIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> assessmentIds;
 
     /**
@@ -82,7 +82,7 @@ public class SetUserAssessmentBaseline extends com.pulumi.resources.CustomResour
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="userAssessmentId", type=String.class, parameters={})
+    @Export(name="userAssessmentId", refs={String.class}, tree="[0]")
     private Output<String> userAssessmentId;
 
     /**

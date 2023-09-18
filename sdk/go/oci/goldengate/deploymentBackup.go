@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Deployment Backup resource in Oracle Cloud Infrastructure Golden Gate service.
@@ -315,6 +316,12 @@ func (i *DeploymentBackup) ToDeploymentBackupOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(DeploymentBackupOutput)
 }
 
+func (i *DeploymentBackup) ToOutput(ctx context.Context) pulumix.Output[*DeploymentBackup] {
+	return pulumix.Output[*DeploymentBackup]{
+		OutputState: i.ToDeploymentBackupOutputWithContext(ctx).OutputState,
+	}
+}
+
 // DeploymentBackupArrayInput is an input type that accepts DeploymentBackupArray and DeploymentBackupArrayOutput values.
 // You can construct a concrete instance of `DeploymentBackupArrayInput` via:
 //
@@ -338,6 +345,12 @@ func (i DeploymentBackupArray) ToDeploymentBackupArrayOutput() DeploymentBackupA
 
 func (i DeploymentBackupArray) ToDeploymentBackupArrayOutputWithContext(ctx context.Context) DeploymentBackupArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DeploymentBackupArrayOutput)
+}
+
+func (i DeploymentBackupArray) ToOutput(ctx context.Context) pulumix.Output[[]*DeploymentBackup] {
+	return pulumix.Output[[]*DeploymentBackup]{
+		OutputState: i.ToDeploymentBackupArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // DeploymentBackupMapInput is an input type that accepts DeploymentBackupMap and DeploymentBackupMapOutput values.
@@ -365,6 +378,12 @@ func (i DeploymentBackupMap) ToDeploymentBackupMapOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(DeploymentBackupMapOutput)
 }
 
+func (i DeploymentBackupMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DeploymentBackup] {
+	return pulumix.Output[map[string]*DeploymentBackup]{
+		OutputState: i.ToDeploymentBackupMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type DeploymentBackupOutput struct{ *pulumi.OutputState }
 
 func (DeploymentBackupOutput) ElementType() reflect.Type {
@@ -377,6 +396,12 @@ func (o DeploymentBackupOutput) ToDeploymentBackupOutput() DeploymentBackupOutpu
 
 func (o DeploymentBackupOutput) ToDeploymentBackupOutputWithContext(ctx context.Context) DeploymentBackupOutput {
 	return o
+}
+
+func (o DeploymentBackupOutput) ToOutput(ctx context.Context) pulumix.Output[*DeploymentBackup] {
+	return pulumix.Output[*DeploymentBackup]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Possible Deployment backup types.
@@ -491,6 +516,12 @@ func (o DeploymentBackupArrayOutput) ToDeploymentBackupArrayOutputWithContext(ct
 	return o
 }
 
+func (o DeploymentBackupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DeploymentBackup] {
+	return pulumix.Output[[]*DeploymentBackup]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o DeploymentBackupArrayOutput) Index(i pulumi.IntInput) DeploymentBackupOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DeploymentBackup {
 		return vs[0].([]*DeploymentBackup)[vs[1].(int)]
@@ -509,6 +540,12 @@ func (o DeploymentBackupMapOutput) ToDeploymentBackupMapOutput() DeploymentBacku
 
 func (o DeploymentBackupMapOutput) ToDeploymentBackupMapOutputWithContext(ctx context.Context) DeploymentBackupMapOutput {
 	return o
+}
+
+func (o DeploymentBackupMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DeploymentBackup] {
+	return pulumix.Output[map[string]*DeploymentBackup]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o DeploymentBackupMapOutput) MapIndex(k pulumi.StringInput) DeploymentBackupOutput {

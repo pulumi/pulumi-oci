@@ -61,7 +61,7 @@ public class AutonomousDatabaseWallet extends com.pulumi.resources.CustomResourc
      * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    @Export(name="autonomousDatabaseId", type=String.class, parameters={})
+    @Export(name="autonomousDatabaseId", refs={String.class}, tree="[0]")
     private Output<String> autonomousDatabaseId;
 
     /**
@@ -71,7 +71,7 @@ public class AutonomousDatabaseWallet extends com.pulumi.resources.CustomResourc
     public Output<String> autonomousDatabaseId() {
         return this.autonomousDatabaseId;
     }
-    @Export(name="base64EncodeContent", type=Boolean.class, parameters={})
+    @Export(name="base64EncodeContent", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> base64EncodeContent;
 
     public Output<Optional<Boolean>> base64EncodeContent() {
@@ -81,7 +81,7 @@ public class AutonomousDatabaseWallet extends com.pulumi.resources.CustomResourc
      * content of the downloaded zipped wallet for the Autonomous Database. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
      * 
      */
-    @Export(name="content", type=String.class, parameters={})
+    @Export(name="content", refs={String.class}, tree="[0]")
     private Output<String> content;
 
     /**
@@ -97,7 +97,7 @@ public class AutonomousDatabaseWallet extends com.pulumi.resources.CustomResourc
      * **Shared Exadata infrastructure usage:**
      * 
      */
-    @Export(name="generateType", type=String.class, parameters={})
+    @Export(name="generateType", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> generateType;
 
     /**
@@ -116,7 +116,7 @@ public class AutonomousDatabaseWallet extends com.pulumi.resources.CustomResourc
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="password", type=String.class, parameters={})
+    @Export(name="password", refs={String.class}, tree="[0]")
     private Output<String> password;
 
     /**

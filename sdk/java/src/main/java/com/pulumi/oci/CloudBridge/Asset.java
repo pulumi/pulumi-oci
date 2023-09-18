@@ -173,7 +173,7 @@ public class Asset extends com.pulumi.resources.CustomResource {
      * (Updatable) List of asset source OCID.
      * 
      */
-    @Export(name="assetSourceIds", type=List.class, parameters={String.class})
+    @Export(name="assetSourceIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> assetSourceIds;
 
     /**
@@ -187,7 +187,7 @@ public class Asset extends com.pulumi.resources.CustomResource {
      * (Updatable) The type of asset.
      * 
      */
-    @Export(name="assetType", type=String.class, parameters={})
+    @Export(name="assetType", refs={String.class}, tree="[0]")
     private Output<String> assetType;
 
     /**
@@ -201,7 +201,7 @@ public class Asset extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the compartment that the asset belongs to.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -215,7 +215,7 @@ public class Asset extends com.pulumi.resources.CustomResource {
      * (Updatable) Compute related properties.
      * 
      */
-    @Export(name="compute", type=AssetCompute.class, parameters={})
+    @Export(name="compute", refs={AssetCompute.class}, tree="[0]")
     private Output<AssetCompute> compute;
 
     /**
@@ -229,7 +229,7 @@ public class Asset extends com.pulumi.resources.CustomResource {
      * (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -243,7 +243,7 @@ public class Asset extends com.pulumi.resources.CustomResource {
      * (Updatable) Asset display name.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -257,7 +257,7 @@ public class Asset extends com.pulumi.resources.CustomResource {
      * The key of the asset from the external environment.
      * 
      */
-    @Export(name="externalAssetKey", type=String.class, parameters={})
+    @Export(name="externalAssetKey", refs={String.class}, tree="[0]")
     private Output<String> externalAssetKey;
 
     /**
@@ -271,7 +271,7 @@ public class Asset extends com.pulumi.resources.CustomResource {
      * (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -285,7 +285,7 @@ public class Asset extends com.pulumi.resources.CustomResource {
      * Inventory ID to which an asset belongs.
      * 
      */
-    @Export(name="inventoryId", type=String.class, parameters={})
+    @Export(name="inventoryId", refs={String.class}, tree="[0]")
     private Output<String> inventoryId;
 
     /**
@@ -299,7 +299,7 @@ public class Asset extends com.pulumi.resources.CustomResource {
      * The source key to which the asset belongs.
      * 
      */
-    @Export(name="sourceKey", type=String.class, parameters={})
+    @Export(name="sourceKey", refs={String.class}, tree="[0]")
     private Output<String> sourceKey;
 
     /**
@@ -313,7 +313,7 @@ public class Asset extends com.pulumi.resources.CustomResource {
      * The current state of the asset.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -327,7 +327,7 @@ public class Asset extends com.pulumi.resources.CustomResource {
      * The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -341,7 +341,7 @@ public class Asset extends com.pulumi.resources.CustomResource {
      * The time when the asset was created. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -355,7 +355,7 @@ public class Asset extends com.pulumi.resources.CustomResource {
      * The time when the asset was updated. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -369,7 +369,7 @@ public class Asset extends com.pulumi.resources.CustomResource {
      * (Updatable) Virtual machine related properties.
      * 
      */
-    @Export(name="vm", type=AssetVm.class, parameters={})
+    @Export(name="vm", refs={AssetVm.class}, tree="[0]")
     private Output<AssetVm> vm;
 
     /**
@@ -383,7 +383,7 @@ public class Asset extends com.pulumi.resources.CustomResource {
      * (Updatable) VMware vCenter related properties.
      * 
      */
-    @Export(name="vmwareVcenter", type=AssetVmwareVcenter.class, parameters={})
+    @Export(name="vmwareVcenter", refs={AssetVmwareVcenter.class}, tree="[0]")
     private Output<AssetVmwareVcenter> vmwareVcenter;
 
     /**
@@ -397,7 +397,7 @@ public class Asset extends com.pulumi.resources.CustomResource {
      * (Updatable) VMware virtual machine related properties.
      * 
      */
-    @Export(name="vmwareVm", type=AssetVmwareVm.class, parameters={})
+    @Export(name="vmwareVm", refs={AssetVmwareVm.class}, tree="[0]")
     private Output<AssetVmwareVm> vmwareVm;
 
     /**

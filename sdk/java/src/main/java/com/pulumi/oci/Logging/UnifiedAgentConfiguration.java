@@ -130,7 +130,7 @@ public class UnifiedAgentConfiguration extends com.pulumi.resources.CustomResour
      * (Updatable) The OCID of the compartment that the resource belongs to.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -144,7 +144,7 @@ public class UnifiedAgentConfiguration extends com.pulumi.resources.CustomResour
      * State of unified agent service configuration.
      * 
      */
-    @Export(name="configurationState", type=String.class, parameters={})
+    @Export(name="configurationState", refs={String.class}, tree="[0]")
     private Output<String> configurationState;
 
     /**
@@ -158,7 +158,7 @@ public class UnifiedAgentConfiguration extends com.pulumi.resources.CustomResour
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -172,7 +172,7 @@ public class UnifiedAgentConfiguration extends com.pulumi.resources.CustomResour
      * (Updatable) Description for this resource.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -186,7 +186,7 @@ public class UnifiedAgentConfiguration extends com.pulumi.resources.CustomResour
      * (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -200,7 +200,7 @@ public class UnifiedAgentConfiguration extends com.pulumi.resources.CustomResour
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -214,7 +214,7 @@ public class UnifiedAgentConfiguration extends com.pulumi.resources.CustomResour
      * (Updatable) Groups using the configuration.
      * 
      */
-    @Export(name="groupAssociation", type=UnifiedAgentConfigurationGroupAssociation.class, parameters={})
+    @Export(name="groupAssociation", refs={UnifiedAgentConfigurationGroupAssociation.class}, tree="[0]")
     private Output<UnifiedAgentConfigurationGroupAssociation> groupAssociation;
 
     /**
@@ -228,7 +228,7 @@ public class UnifiedAgentConfiguration extends com.pulumi.resources.CustomResour
      * (Updatable) Whether or not this resource is currently enabled.
      * 
      */
-    @Export(name="isEnabled", type=Boolean.class, parameters={})
+    @Export(name="isEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isEnabled;
 
     /**
@@ -242,7 +242,7 @@ public class UnifiedAgentConfiguration extends com.pulumi.resources.CustomResour
      * (Updatable) Top level Unified Agent service configuration object.
      * 
      */
-    @Export(name="serviceConfiguration", type=UnifiedAgentConfigurationServiceConfiguration.class, parameters={})
+    @Export(name="serviceConfiguration", refs={UnifiedAgentConfigurationServiceConfiguration.class}, tree="[0]")
     private Output<UnifiedAgentConfigurationServiceConfiguration> serviceConfiguration;
 
     /**
@@ -256,7 +256,7 @@ public class UnifiedAgentConfiguration extends com.pulumi.resources.CustomResour
      * The pipeline state.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -270,7 +270,7 @@ public class UnifiedAgentConfiguration extends com.pulumi.resources.CustomResour
      * Time the resource was created.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -284,7 +284,7 @@ public class UnifiedAgentConfiguration extends com.pulumi.resources.CustomResour
      * Time the resource was last modified.
      * 
      */
-    @Export(name="timeLastModified", type=String.class, parameters={})
+    @Export(name="timeLastModified", refs={String.class}, tree="[0]")
     private Output<String> timeLastModified;
 
     /**

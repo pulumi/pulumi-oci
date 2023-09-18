@@ -93,7 +93,7 @@ public class IngressGatewayRouteTable extends com.pulumi.resources.CustomResourc
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -107,7 +107,7 @@ public class IngressGatewayRouteTable extends com.pulumi.resources.CustomResourc
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -121,7 +121,7 @@ public class IngressGatewayRouteTable extends com.pulumi.resources.CustomResourc
      * (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -135,7 +135,7 @@ public class IngressGatewayRouteTable extends com.pulumi.resources.CustomResourc
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -149,7 +149,7 @@ public class IngressGatewayRouteTable extends com.pulumi.resources.CustomResourc
      * The OCID of the service mesh in which this access policy is created.
      * 
      */
-    @Export(name="ingressGatewayId", type=String.class, parameters={})
+    @Export(name="ingressGatewayId", refs={String.class}, tree="[0]")
     private Output<String> ingressGatewayId;
 
     /**
@@ -163,7 +163,7 @@ public class IngressGatewayRouteTable extends com.pulumi.resources.CustomResourc
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -177,7 +177,7 @@ public class IngressGatewayRouteTable extends com.pulumi.resources.CustomResourc
      * (Updatable) Name of the ingress gateway host that this route should apply to.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -191,7 +191,7 @@ public class IngressGatewayRouteTable extends com.pulumi.resources.CustomResourc
      * (Updatable) The priority of the route table. Lower value means higher priority. The routes are declared based on the priority.
      * 
      */
-    @Export(name="priority", type=Integer.class, parameters={})
+    @Export(name="priority", refs={Integer.class}, tree="[0]")
     private Output<Integer> priority;
 
     /**
@@ -205,7 +205,7 @@ public class IngressGatewayRouteTable extends com.pulumi.resources.CustomResourc
      * (Updatable) The route rules for the ingress gateway.
      * 
      */
-    @Export(name="routeRules", type=List.class, parameters={IngressGatewayRouteTableRouteRule.class})
+    @Export(name="routeRules", refs={List.class,IngressGatewayRouteTableRouteRule.class}, tree="[0,1]")
     private Output<List<IngressGatewayRouteTableRouteRule>> routeRules;
 
     /**
@@ -219,7 +219,7 @@ public class IngressGatewayRouteTable extends com.pulumi.resources.CustomResourc
      * The current state of the Resource.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -233,7 +233,7 @@ public class IngressGatewayRouteTable extends com.pulumi.resources.CustomResourc
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -247,7 +247,7 @@ public class IngressGatewayRouteTable extends com.pulumi.resources.CustomResourc
      * The time when this resource was created in an RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -261,7 +261,7 @@ public class IngressGatewayRouteTable extends com.pulumi.resources.CustomResourc
      * The time when this resource was updated in an RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Private Ip resource in Oracle Cloud Infrastructure Core service.
@@ -287,6 +288,12 @@ func (i *PrivateIp) ToPrivateIpOutputWithContext(ctx context.Context) PrivateIpO
 	return pulumi.ToOutputWithContext(ctx, i).(PrivateIpOutput)
 }
 
+func (i *PrivateIp) ToOutput(ctx context.Context) pulumix.Output[*PrivateIp] {
+	return pulumix.Output[*PrivateIp]{
+		OutputState: i.ToPrivateIpOutputWithContext(ctx).OutputState,
+	}
+}
+
 // PrivateIpArrayInput is an input type that accepts PrivateIpArray and PrivateIpArrayOutput values.
 // You can construct a concrete instance of `PrivateIpArrayInput` via:
 //
@@ -310,6 +317,12 @@ func (i PrivateIpArray) ToPrivateIpArrayOutput() PrivateIpArrayOutput {
 
 func (i PrivateIpArray) ToPrivateIpArrayOutputWithContext(ctx context.Context) PrivateIpArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(PrivateIpArrayOutput)
+}
+
+func (i PrivateIpArray) ToOutput(ctx context.Context) pulumix.Output[[]*PrivateIp] {
+	return pulumix.Output[[]*PrivateIp]{
+		OutputState: i.ToPrivateIpArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // PrivateIpMapInput is an input type that accepts PrivateIpMap and PrivateIpMapOutput values.
@@ -337,6 +350,12 @@ func (i PrivateIpMap) ToPrivateIpMapOutputWithContext(ctx context.Context) Priva
 	return pulumi.ToOutputWithContext(ctx, i).(PrivateIpMapOutput)
 }
 
+func (i PrivateIpMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*PrivateIp] {
+	return pulumix.Output[map[string]*PrivateIp]{
+		OutputState: i.ToPrivateIpMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type PrivateIpOutput struct{ *pulumi.OutputState }
 
 func (PrivateIpOutput) ElementType() reflect.Type {
@@ -349,6 +368,12 @@ func (o PrivateIpOutput) ToPrivateIpOutput() PrivateIpOutput {
 
 func (o PrivateIpOutput) ToPrivateIpOutputWithContext(ctx context.Context) PrivateIpOutput {
 	return o
+}
+
+func (o PrivateIpOutput) ToOutput(ctx context.Context) pulumix.Output[*PrivateIp] {
+	return pulumix.Output[*PrivateIp]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The private IP's availability domain. This attribute will be null if this is a *secondary* private IP assigned to a VNIC that is in a *regional* subnet.  Example: `Uocm:PHX-AD-1`
@@ -439,6 +464,12 @@ func (o PrivateIpArrayOutput) ToPrivateIpArrayOutputWithContext(ctx context.Cont
 	return o
 }
 
+func (o PrivateIpArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*PrivateIp] {
+	return pulumix.Output[[]*PrivateIp]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o PrivateIpArrayOutput) Index(i pulumi.IntInput) PrivateIpOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *PrivateIp {
 		return vs[0].([]*PrivateIp)[vs[1].(int)]
@@ -457,6 +488,12 @@ func (o PrivateIpMapOutput) ToPrivateIpMapOutput() PrivateIpMapOutput {
 
 func (o PrivateIpMapOutput) ToPrivateIpMapOutputWithContext(ctx context.Context) PrivateIpMapOutput {
 	return o
+}
+
+func (o PrivateIpMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*PrivateIp] {
+	return pulumix.Output[map[string]*PrivateIp]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o PrivateIpMapOutput) MapIndex(k pulumi.StringInput) PrivateIpOutput {

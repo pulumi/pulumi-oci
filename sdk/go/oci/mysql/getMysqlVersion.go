@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Mysql Versions in Oracle Cloud Infrastructure MySQL Database service.
@@ -106,6 +107,12 @@ func (o GetMysqlVersionResultOutput) ToGetMysqlVersionResultOutput() GetMysqlVer
 
 func (o GetMysqlVersionResultOutput) ToGetMysqlVersionResultOutputWithContext(ctx context.Context) GetMysqlVersionResultOutput {
 	return o
+}
+
+func (o GetMysqlVersionResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlVersionResult] {
+	return pulumix.Output[GetMysqlVersionResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMysqlVersionResultOutput) CompartmentId() pulumi.StringOutput {

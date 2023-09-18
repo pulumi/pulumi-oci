@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the External Non Container Database Management resource in Oracle Cloud Infrastructure Database service.
@@ -154,6 +155,12 @@ func (i *ExternalNonContainerDatabaseManagement) ToExternalNonContainerDatabaseM
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalNonContainerDatabaseManagementOutput)
 }
 
+func (i *ExternalNonContainerDatabaseManagement) ToOutput(ctx context.Context) pulumix.Output[*ExternalNonContainerDatabaseManagement] {
+	return pulumix.Output[*ExternalNonContainerDatabaseManagement]{
+		OutputState: i.ToExternalNonContainerDatabaseManagementOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ExternalNonContainerDatabaseManagementArrayInput is an input type that accepts ExternalNonContainerDatabaseManagementArray and ExternalNonContainerDatabaseManagementArrayOutput values.
 // You can construct a concrete instance of `ExternalNonContainerDatabaseManagementArrayInput` via:
 //
@@ -177,6 +184,12 @@ func (i ExternalNonContainerDatabaseManagementArray) ToExternalNonContainerDatab
 
 func (i ExternalNonContainerDatabaseManagementArray) ToExternalNonContainerDatabaseManagementArrayOutputWithContext(ctx context.Context) ExternalNonContainerDatabaseManagementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalNonContainerDatabaseManagementArrayOutput)
+}
+
+func (i ExternalNonContainerDatabaseManagementArray) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalNonContainerDatabaseManagement] {
+	return pulumix.Output[[]*ExternalNonContainerDatabaseManagement]{
+		OutputState: i.ToExternalNonContainerDatabaseManagementArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // ExternalNonContainerDatabaseManagementMapInput is an input type that accepts ExternalNonContainerDatabaseManagementMap and ExternalNonContainerDatabaseManagementMapOutput values.
@@ -204,6 +217,12 @@ func (i ExternalNonContainerDatabaseManagementMap) ToExternalNonContainerDatabas
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalNonContainerDatabaseManagementMapOutput)
 }
 
+func (i ExternalNonContainerDatabaseManagementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalNonContainerDatabaseManagement] {
+	return pulumix.Output[map[string]*ExternalNonContainerDatabaseManagement]{
+		OutputState: i.ToExternalNonContainerDatabaseManagementMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ExternalNonContainerDatabaseManagementOutput struct{ *pulumi.OutputState }
 
 func (ExternalNonContainerDatabaseManagementOutput) ElementType() reflect.Type {
@@ -216,6 +235,12 @@ func (o ExternalNonContainerDatabaseManagementOutput) ToExternalNonContainerData
 
 func (o ExternalNonContainerDatabaseManagementOutput) ToExternalNonContainerDatabaseManagementOutputWithContext(ctx context.Context) ExternalNonContainerDatabaseManagementOutput {
 	return o
+}
+
+func (o ExternalNonContainerDatabaseManagementOutput) ToOutput(ctx context.Context) pulumix.Output[*ExternalNonContainerDatabaseManagement] {
+	return pulumix.Output[*ExternalNonContainerDatabaseManagement]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ExternalNonContainerDatabaseManagementOutput) EnableManagement() pulumi.BoolOutput {
@@ -258,6 +283,12 @@ func (o ExternalNonContainerDatabaseManagementArrayOutput) ToExternalNonContaine
 	return o
 }
 
+func (o ExternalNonContainerDatabaseManagementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalNonContainerDatabaseManagement] {
+	return pulumix.Output[[]*ExternalNonContainerDatabaseManagement]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o ExternalNonContainerDatabaseManagementArrayOutput) Index(i pulumi.IntInput) ExternalNonContainerDatabaseManagementOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ExternalNonContainerDatabaseManagement {
 		return vs[0].([]*ExternalNonContainerDatabaseManagement)[vs[1].(int)]
@@ -276,6 +307,12 @@ func (o ExternalNonContainerDatabaseManagementMapOutput) ToExternalNonContainerD
 
 func (o ExternalNonContainerDatabaseManagementMapOutput) ToExternalNonContainerDatabaseManagementMapOutputWithContext(ctx context.Context) ExternalNonContainerDatabaseManagementMapOutput {
 	return o
+}
+
+func (o ExternalNonContainerDatabaseManagementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalNonContainerDatabaseManagement] {
+	return pulumix.Output[map[string]*ExternalNonContainerDatabaseManagement]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ExternalNonContainerDatabaseManagementMapOutput) MapIndex(k pulumi.StringInput) ExternalNonContainerDatabaseManagementOutput {

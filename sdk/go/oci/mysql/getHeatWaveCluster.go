@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific HeatWave cluster resource in Oracle Cloud Infrastructure MySQL Database service.
@@ -115,6 +116,12 @@ func (o LookupHeatWaveClusterResultOutput) ToLookupHeatWaveClusterResultOutput()
 
 func (o LookupHeatWaveClusterResultOutput) ToLookupHeatWaveClusterResultOutputWithContext(ctx context.Context) LookupHeatWaveClusterResultOutput {
 	return o
+}
+
+func (o LookupHeatWaveClusterResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupHeatWaveClusterResult] {
+	return pulumix.Output[LookupHeatWaveClusterResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A HeatWave node is a compute host that is part of a HeatWave cluster.

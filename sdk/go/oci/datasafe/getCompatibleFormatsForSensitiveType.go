@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Compatible Formats For Sensitive Type resource in Oracle Cloud Infrastructure Data Safe service.
@@ -116,6 +117,12 @@ func (o GetCompatibleFormatsForSensitiveTypeResultOutput) ToGetCompatibleFormats
 
 func (o GetCompatibleFormatsForSensitiveTypeResultOutput) ToGetCompatibleFormatsForSensitiveTypeResultOutputWithContext(ctx context.Context) GetCompatibleFormatsForSensitiveTypeResultOutput {
 	return o
+}
+
+func (o GetCompatibleFormatsForSensitiveTypeResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCompatibleFormatsForSensitiveTypeResult] {
+	return pulumix.Output[GetCompatibleFormatsForSensitiveTypeResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetCompatibleFormatsForSensitiveTypeResultOutput) AccessLevel() pulumi.StringPtrOutput {

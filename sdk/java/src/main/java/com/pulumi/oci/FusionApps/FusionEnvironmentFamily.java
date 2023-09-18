@@ -79,7 +79,7 @@ public class FusionEnvironmentFamily extends com.pulumi.resources.CustomResource
      * (Updatable) The OCID of the compartment where the environment family is located.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -93,7 +93,7 @@ public class FusionEnvironmentFamily extends com.pulumi.resources.CustomResource
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -107,7 +107,7 @@ public class FusionEnvironmentFamily extends com.pulumi.resources.CustomResource
      * (Updatable) A friendly name for the environment family. The name must contain only letters, numbers, dashes, and underscores. Can be changed later.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -121,7 +121,7 @@ public class FusionEnvironmentFamily extends com.pulumi.resources.CustomResource
      * (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
      * 
      */
-    @Export(name="familyMaintenancePolicy", type=FusionEnvironmentFamilyFamilyMaintenancePolicy.class, parameters={})
+    @Export(name="familyMaintenancePolicy", refs={FusionEnvironmentFamilyFamilyMaintenancePolicy.class}, tree="[0]")
     private Output<FusionEnvironmentFamilyFamilyMaintenancePolicy> familyMaintenancePolicy;
 
     /**
@@ -135,7 +135,7 @@ public class FusionEnvironmentFamily extends com.pulumi.resources.CustomResource
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -149,7 +149,7 @@ public class FusionEnvironmentFamily extends com.pulumi.resources.CustomResource
      * When set to True, a subscription update is required for the environment family.
      * 
      */
-    @Export(name="isSubscriptionUpdateNeeded", type=Boolean.class, parameters={})
+    @Export(name="isSubscriptionUpdateNeeded", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isSubscriptionUpdateNeeded;
 
     /**
@@ -163,7 +163,7 @@ public class FusionEnvironmentFamily extends com.pulumi.resources.CustomResource
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -177,7 +177,7 @@ public class FusionEnvironmentFamily extends com.pulumi.resources.CustomResource
      * The current state of the FusionEnvironmentFamily.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -194,7 +194,7 @@ public class FusionEnvironmentFamily extends com.pulumi.resources.CustomResource
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="subscriptionIds", type=List.class, parameters={String.class})
+    @Export(name="subscriptionIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> subscriptionIds;
 
     /**
@@ -211,7 +211,7 @@ public class FusionEnvironmentFamily extends com.pulumi.resources.CustomResource
      * Environment Specific Guid/ System Name
      * 
      */
-    @Export(name="systemName", type=String.class, parameters={})
+    @Export(name="systemName", refs={String.class}, tree="[0]")
     private Output<String> systemName;
 
     /**
@@ -225,7 +225,7 @@ public class FusionEnvironmentFamily extends com.pulumi.resources.CustomResource
      * The time the the FusionEnvironmentFamily was created. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -235,7 +235,7 @@ public class FusionEnvironmentFamily extends com.pulumi.resources.CustomResource
     public Output<String> timeCreated() {
         return this.timeCreated;
     }
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> timeUpdated;
 
     public Output<Optional<String>> timeUpdated() {

@@ -65,7 +65,7 @@ public class DataSafeConfiguration extends com.pulumi.resources.CustomResource {
      * (Updatable) A filter to return only resources that match the specified compartment OCID.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -79,7 +79,7 @@ public class DataSafeConfiguration extends com.pulumi.resources.CustomResource {
      * The Oracle Data Safe&#39;s NAT Gateway IP Address.
      * 
      */
-    @Export(name="dataSafeNatGatewayIpAddress", type=String.class, parameters={})
+    @Export(name="dataSafeNatGatewayIpAddress", refs={String.class}, tree="[0]")
     private Output<String> dataSafeNatGatewayIpAddress;
 
     /**
@@ -93,7 +93,7 @@ public class DataSafeConfiguration extends com.pulumi.resources.CustomResource {
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -107,7 +107,7 @@ public class DataSafeConfiguration extends com.pulumi.resources.CustomResource {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -121,7 +121,7 @@ public class DataSafeConfiguration extends com.pulumi.resources.CustomResource {
      * Details of the tenancy level global settings in Data Safe.
      * 
      */
-    @Export(name="globalSettings", type=List.class, parameters={DataSafeConfigurationGlobalSetting.class})
+    @Export(name="globalSettings", refs={List.class,DataSafeConfigurationGlobalSetting.class}, tree="[0,1]")
     private Output<List<DataSafeConfigurationGlobalSetting>> globalSettings;
 
     /**
@@ -138,7 +138,7 @@ public class DataSafeConfiguration extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="isEnabled", type=Boolean.class, parameters={})
+    @Export(name="isEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isEnabled;
 
     /**
@@ -155,7 +155,7 @@ public class DataSafeConfiguration extends com.pulumi.resources.CustomResource {
      * The current state of Data Safe.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -169,7 +169,7 @@ public class DataSafeConfiguration extends com.pulumi.resources.CustomResource {
      * The date and time Data Safe was enabled, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    @Export(name="timeEnabled", type=String.class, parameters={})
+    @Export(name="timeEnabled", refs={String.class}, tree="[0]")
     private Output<String> timeEnabled;
 
     /**
@@ -183,7 +183,7 @@ public class DataSafeConfiguration extends com.pulumi.resources.CustomResource {
      * The URL of the Data Safe service.
      * 
      */
-    @Export(name="url", type=String.class, parameters={})
+    @Export(name="url", refs={String.class}, tree="[0]")
     private Output<String> url;
 
     /**

@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Deploy Environment resource in Oracle Cloud Infrastructure Devops service.
@@ -308,6 +309,12 @@ func (i *DeployEnvironment) ToDeployEnvironmentOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(DeployEnvironmentOutput)
 }
 
+func (i *DeployEnvironment) ToOutput(ctx context.Context) pulumix.Output[*DeployEnvironment] {
+	return pulumix.Output[*DeployEnvironment]{
+		OutputState: i.ToDeployEnvironmentOutputWithContext(ctx).OutputState,
+	}
+}
+
 // DeployEnvironmentArrayInput is an input type that accepts DeployEnvironmentArray and DeployEnvironmentArrayOutput values.
 // You can construct a concrete instance of `DeployEnvironmentArrayInput` via:
 //
@@ -331,6 +338,12 @@ func (i DeployEnvironmentArray) ToDeployEnvironmentArrayOutput() DeployEnvironme
 
 func (i DeployEnvironmentArray) ToDeployEnvironmentArrayOutputWithContext(ctx context.Context) DeployEnvironmentArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DeployEnvironmentArrayOutput)
+}
+
+func (i DeployEnvironmentArray) ToOutput(ctx context.Context) pulumix.Output[[]*DeployEnvironment] {
+	return pulumix.Output[[]*DeployEnvironment]{
+		OutputState: i.ToDeployEnvironmentArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // DeployEnvironmentMapInput is an input type that accepts DeployEnvironmentMap and DeployEnvironmentMapOutput values.
@@ -358,6 +371,12 @@ func (i DeployEnvironmentMap) ToDeployEnvironmentMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(DeployEnvironmentMapOutput)
 }
 
+func (i DeployEnvironmentMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DeployEnvironment] {
+	return pulumix.Output[map[string]*DeployEnvironment]{
+		OutputState: i.ToDeployEnvironmentMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type DeployEnvironmentOutput struct{ *pulumi.OutputState }
 
 func (DeployEnvironmentOutput) ElementType() reflect.Type {
@@ -370,6 +389,12 @@ func (o DeployEnvironmentOutput) ToDeployEnvironmentOutput() DeployEnvironmentOu
 
 func (o DeployEnvironmentOutput) ToDeployEnvironmentOutputWithContext(ctx context.Context) DeployEnvironmentOutput {
 	return o
+}
+
+func (o DeployEnvironmentOutput) ToOutput(ctx context.Context) pulumix.Output[*DeployEnvironment] {
+	return pulumix.Output[*DeployEnvironment]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The OCID of the Kubernetes cluster.
@@ -471,6 +496,12 @@ func (o DeployEnvironmentArrayOutput) ToDeployEnvironmentArrayOutputWithContext(
 	return o
 }
 
+func (o DeployEnvironmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DeployEnvironment] {
+	return pulumix.Output[[]*DeployEnvironment]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o DeployEnvironmentArrayOutput) Index(i pulumi.IntInput) DeployEnvironmentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DeployEnvironment {
 		return vs[0].([]*DeployEnvironment)[vs[1].(int)]
@@ -489,6 +520,12 @@ func (o DeployEnvironmentMapOutput) ToDeployEnvironmentMapOutput() DeployEnviron
 
 func (o DeployEnvironmentMapOutput) ToDeployEnvironmentMapOutputWithContext(ctx context.Context) DeployEnvironmentMapOutput {
 	return o
+}
+
+func (o DeployEnvironmentMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DeployEnvironment] {
+	return pulumix.Output[map[string]*DeployEnvironment]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o DeployEnvironmentMapOutput) MapIndex(k pulumi.StringInput) DeployEnvironmentOutput {

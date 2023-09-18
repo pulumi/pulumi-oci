@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Stream Packaging Config resource in Oracle Cloud Infrastructure Media Services service.
@@ -265,6 +266,12 @@ func (i *StreamPackagingConfig) ToStreamPackagingConfigOutputWithContext(ctx con
 	return pulumi.ToOutputWithContext(ctx, i).(StreamPackagingConfigOutput)
 }
 
+func (i *StreamPackagingConfig) ToOutput(ctx context.Context) pulumix.Output[*StreamPackagingConfig] {
+	return pulumix.Output[*StreamPackagingConfig]{
+		OutputState: i.ToStreamPackagingConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // StreamPackagingConfigArrayInput is an input type that accepts StreamPackagingConfigArray and StreamPackagingConfigArrayOutput values.
 // You can construct a concrete instance of `StreamPackagingConfigArrayInput` via:
 //
@@ -288,6 +295,12 @@ func (i StreamPackagingConfigArray) ToStreamPackagingConfigArrayOutput() StreamP
 
 func (i StreamPackagingConfigArray) ToStreamPackagingConfigArrayOutputWithContext(ctx context.Context) StreamPackagingConfigArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(StreamPackagingConfigArrayOutput)
+}
+
+func (i StreamPackagingConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]*StreamPackagingConfig] {
+	return pulumix.Output[[]*StreamPackagingConfig]{
+		OutputState: i.ToStreamPackagingConfigArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // StreamPackagingConfigMapInput is an input type that accepts StreamPackagingConfigMap and StreamPackagingConfigMapOutput values.
@@ -315,6 +328,12 @@ func (i StreamPackagingConfigMap) ToStreamPackagingConfigMapOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(StreamPackagingConfigMapOutput)
 }
 
+func (i StreamPackagingConfigMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*StreamPackagingConfig] {
+	return pulumix.Output[map[string]*StreamPackagingConfig]{
+		OutputState: i.ToStreamPackagingConfigMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type StreamPackagingConfigOutput struct{ *pulumi.OutputState }
 
 func (StreamPackagingConfigOutput) ElementType() reflect.Type {
@@ -327,6 +346,12 @@ func (o StreamPackagingConfigOutput) ToStreamPackagingConfigOutput() StreamPacka
 
 func (o StreamPackagingConfigOutput) ToStreamPackagingConfigOutputWithContext(ctx context.Context) StreamPackagingConfigOutput {
 	return o
+}
+
+func (o StreamPackagingConfigOutput) ToOutput(ctx context.Context) pulumix.Output[*StreamPackagingConfig] {
+	return pulumix.Output[*StreamPackagingConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Compartment Identifier
@@ -406,6 +431,12 @@ func (o StreamPackagingConfigArrayOutput) ToStreamPackagingConfigArrayOutputWith
 	return o
 }
 
+func (o StreamPackagingConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*StreamPackagingConfig] {
+	return pulumix.Output[[]*StreamPackagingConfig]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o StreamPackagingConfigArrayOutput) Index(i pulumi.IntInput) StreamPackagingConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *StreamPackagingConfig {
 		return vs[0].([]*StreamPackagingConfig)[vs[1].(int)]
@@ -424,6 +455,12 @@ func (o StreamPackagingConfigMapOutput) ToStreamPackagingConfigMapOutput() Strea
 
 func (o StreamPackagingConfigMapOutput) ToStreamPackagingConfigMapOutputWithContext(ctx context.Context) StreamPackagingConfigMapOutput {
 	return o
+}
+
+func (o StreamPackagingConfigMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*StreamPackagingConfig] {
+	return pulumix.Output[map[string]*StreamPackagingConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o StreamPackagingConfigMapOutput) MapIndex(k pulumi.StringInput) StreamPackagingConfigOutput {

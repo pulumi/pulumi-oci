@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Oneoff Patch resource in Oracle Cloud Infrastructure Database service.
@@ -282,6 +283,12 @@ func (i *OneoffPatch) ToOneoffPatchOutputWithContext(ctx context.Context) Oneoff
 	return pulumi.ToOutputWithContext(ctx, i).(OneoffPatchOutput)
 }
 
+func (i *OneoffPatch) ToOutput(ctx context.Context) pulumix.Output[*OneoffPatch] {
+	return pulumix.Output[*OneoffPatch]{
+		OutputState: i.ToOneoffPatchOutputWithContext(ctx).OutputState,
+	}
+}
+
 // OneoffPatchArrayInput is an input type that accepts OneoffPatchArray and OneoffPatchArrayOutput values.
 // You can construct a concrete instance of `OneoffPatchArrayInput` via:
 //
@@ -305,6 +312,12 @@ func (i OneoffPatchArray) ToOneoffPatchArrayOutput() OneoffPatchArrayOutput {
 
 func (i OneoffPatchArray) ToOneoffPatchArrayOutputWithContext(ctx context.Context) OneoffPatchArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(OneoffPatchArrayOutput)
+}
+
+func (i OneoffPatchArray) ToOutput(ctx context.Context) pulumix.Output[[]*OneoffPatch] {
+	return pulumix.Output[[]*OneoffPatch]{
+		OutputState: i.ToOneoffPatchArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // OneoffPatchMapInput is an input type that accepts OneoffPatchMap and OneoffPatchMapOutput values.
@@ -332,6 +345,12 @@ func (i OneoffPatchMap) ToOneoffPatchMapOutputWithContext(ctx context.Context) O
 	return pulumi.ToOutputWithContext(ctx, i).(OneoffPatchMapOutput)
 }
 
+func (i OneoffPatchMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*OneoffPatch] {
+	return pulumix.Output[map[string]*OneoffPatch]{
+		OutputState: i.ToOneoffPatchMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type OneoffPatchOutput struct{ *pulumi.OutputState }
 
 func (OneoffPatchOutput) ElementType() reflect.Type {
@@ -344,6 +363,12 @@ func (o OneoffPatchOutput) ToOneoffPatchOutput() OneoffPatchOutput {
 
 func (o OneoffPatchOutput) ToOneoffPatchOutputWithContext(ctx context.Context) OneoffPatchOutput {
 	return o
+}
+
+func (o OneoffPatchOutput) ToOutput(ctx context.Context) pulumix.Output[*OneoffPatch] {
+	return pulumix.Output[*OneoffPatch]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -438,6 +463,12 @@ func (o OneoffPatchArrayOutput) ToOneoffPatchArrayOutputWithContext(ctx context.
 	return o
 }
 
+func (o OneoffPatchArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*OneoffPatch] {
+	return pulumix.Output[[]*OneoffPatch]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o OneoffPatchArrayOutput) Index(i pulumi.IntInput) OneoffPatchOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *OneoffPatch {
 		return vs[0].([]*OneoffPatch)[vs[1].(int)]
@@ -456,6 +487,12 @@ func (o OneoffPatchMapOutput) ToOneoffPatchMapOutput() OneoffPatchMapOutput {
 
 func (o OneoffPatchMapOutput) ToOneoffPatchMapOutputWithContext(ctx context.Context) OneoffPatchMapOutput {
 	return o
+}
+
+func (o OneoffPatchMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*OneoffPatch] {
+	return pulumix.Output[map[string]*OneoffPatch]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o OneoffPatchMapOutput) MapIndex(k pulumi.StringInput) OneoffPatchOutput {

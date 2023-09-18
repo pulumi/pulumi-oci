@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Ingress Gateway resource in Oracle Cloud Infrastructure Service Mesh service.
@@ -311,6 +312,12 @@ func (i *IngressGateway) ToIngressGatewayOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(IngressGatewayOutput)
 }
 
+func (i *IngressGateway) ToOutput(ctx context.Context) pulumix.Output[*IngressGateway] {
+	return pulumix.Output[*IngressGateway]{
+		OutputState: i.ToIngressGatewayOutputWithContext(ctx).OutputState,
+	}
+}
+
 // IngressGatewayArrayInput is an input type that accepts IngressGatewayArray and IngressGatewayArrayOutput values.
 // You can construct a concrete instance of `IngressGatewayArrayInput` via:
 //
@@ -334,6 +341,12 @@ func (i IngressGatewayArray) ToIngressGatewayArrayOutput() IngressGatewayArrayOu
 
 func (i IngressGatewayArray) ToIngressGatewayArrayOutputWithContext(ctx context.Context) IngressGatewayArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(IngressGatewayArrayOutput)
+}
+
+func (i IngressGatewayArray) ToOutput(ctx context.Context) pulumix.Output[[]*IngressGateway] {
+	return pulumix.Output[[]*IngressGateway]{
+		OutputState: i.ToIngressGatewayArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // IngressGatewayMapInput is an input type that accepts IngressGatewayMap and IngressGatewayMapOutput values.
@@ -361,6 +374,12 @@ func (i IngressGatewayMap) ToIngressGatewayMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(IngressGatewayMapOutput)
 }
 
+func (i IngressGatewayMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*IngressGateway] {
+	return pulumix.Output[map[string]*IngressGateway]{
+		OutputState: i.ToIngressGatewayMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type IngressGatewayOutput struct{ *pulumi.OutputState }
 
 func (IngressGatewayOutput) ElementType() reflect.Type {
@@ -373,6 +392,12 @@ func (o IngressGatewayOutput) ToIngressGatewayOutput() IngressGatewayOutput {
 
 func (o IngressGatewayOutput) ToIngressGatewayOutputWithContext(ctx context.Context) IngressGatewayOutput {
 	return o
+}
+
+func (o IngressGatewayOutput) ToOutput(ctx context.Context) pulumix.Output[*IngressGateway] {
+	return pulumix.Output[*IngressGateway]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) This configuration determines if logging is enabled and where the logs will be output.
@@ -462,6 +487,12 @@ func (o IngressGatewayArrayOutput) ToIngressGatewayArrayOutputWithContext(ctx co
 	return o
 }
 
+func (o IngressGatewayArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*IngressGateway] {
+	return pulumix.Output[[]*IngressGateway]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o IngressGatewayArrayOutput) Index(i pulumi.IntInput) IngressGatewayOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IngressGateway {
 		return vs[0].([]*IngressGateway)[vs[1].(int)]
@@ -480,6 +511,12 @@ func (o IngressGatewayMapOutput) ToIngressGatewayMapOutput() IngressGatewayMapOu
 
 func (o IngressGatewayMapOutput) ToIngressGatewayMapOutputWithContext(ctx context.Context) IngressGatewayMapOutput {
 	return o
+}
+
+func (o IngressGatewayMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*IngressGateway] {
+	return pulumix.Output[map[string]*IngressGateway]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o IngressGatewayMapOutput) MapIndex(k pulumi.StringInput) IngressGatewayOutput {

@@ -61,7 +61,7 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:Functions/invokeFunction:InvokeFunction")
 public class InvokeFunction extends com.pulumi.resources.CustomResource {
-    @Export(name="base64EncodeContent", type=Boolean.class, parameters={})
+    @Export(name="base64EncodeContent", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> base64EncodeContent;
 
     public Output<Optional<Boolean>> base64EncodeContent() {
@@ -71,7 +71,7 @@ public class InvokeFunction extends com.pulumi.resources.CustomResource {
      * Content of the response string, if any. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
      * 
      */
-    @Export(name="content", type=String.class, parameters={})
+    @Export(name="content", refs={String.class}, tree="[0]")
     private Output<String> content;
 
     /**
@@ -85,7 +85,7 @@ public class InvokeFunction extends com.pulumi.resources.CustomResource {
      * An optional intent header that indicates to the FDK the way the event should be interpreted. E.g. &#39;httprequest&#39;, &#39;cloudevent&#39;.
      * 
      */
-    @Export(name="fnIntent", type=String.class, parameters={})
+    @Export(name="fnIntent", refs={String.class}, tree="[0]")
     private Output<String> fnIntent;
 
     /**
@@ -99,7 +99,7 @@ public class InvokeFunction extends com.pulumi.resources.CustomResource {
      * Indicates whether Oracle Functions should execute the request and return the result (&#39;sync&#39;) of the execution,  or whether Oracle Functions should return as soon as processing has begun (&#39;detached&#39;) and leave result handling to the function.
      * 
      */
-    @Export(name="fnInvokeType", type=String.class, parameters={})
+    @Export(name="fnInvokeType", refs={String.class}, tree="[0]")
     private Output<String> fnInvokeType;
 
     /**
@@ -113,7 +113,7 @@ public class InvokeFunction extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this function.
      * 
      */
-    @Export(name="functionId", type=String.class, parameters={})
+    @Export(name="functionId", refs={String.class}, tree="[0]")
     private Output<String> functionId;
 
     /**
@@ -130,7 +130,7 @@ public class InvokeFunction extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="inputBodySourcePath", type=String.class, parameters={})
+    @Export(name="inputBodySourcePath", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> inputBodySourcePath;
 
     /**
@@ -143,7 +143,7 @@ public class InvokeFunction extends com.pulumi.resources.CustomResource {
     public Output<Optional<String>> inputBodySourcePath() {
         return Codegen.optional(this.inputBodySourcePath);
     }
-    @Export(name="invokeEndpoint", type=String.class, parameters={})
+    @Export(name="invokeEndpoint", refs={String.class}, tree="[0]")
     private Output<String> invokeEndpoint;
 
     public Output<String> invokeEndpoint() {
@@ -153,7 +153,7 @@ public class InvokeFunction extends com.pulumi.resources.CustomResource {
      * The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `input_body_source_path` or `invoke_function_body_base64_encoded` is defined.
      * 
      */
-    @Export(name="invokeFunctionBody", type=String.class, parameters={})
+    @Export(name="invokeFunctionBody", refs={String.class}, tree="[0]")
     private Output<String> invokeFunctionBody;
 
     /**
@@ -163,7 +163,7 @@ public class InvokeFunction extends com.pulumi.resources.CustomResource {
     public Output<String> invokeFunctionBody() {
         return this.invokeFunctionBody;
     }
-    @Export(name="invokeFunctionBodyBase64Encoded", type=String.class, parameters={})
+    @Export(name="invokeFunctionBodyBase64Encoded", refs={String.class}, tree="[0]")
     private Output<String> invokeFunctionBodyBase64Encoded;
 
     public Output<String> invokeFunctionBodyBase64Encoded() {

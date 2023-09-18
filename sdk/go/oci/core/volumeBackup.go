@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Volume Backup resource in Oracle Cloud Infrastructure Core service.
@@ -296,6 +297,12 @@ func (i *VolumeBackup) ToVolumeBackupOutputWithContext(ctx context.Context) Volu
 	return pulumi.ToOutputWithContext(ctx, i).(VolumeBackupOutput)
 }
 
+func (i *VolumeBackup) ToOutput(ctx context.Context) pulumix.Output[*VolumeBackup] {
+	return pulumix.Output[*VolumeBackup]{
+		OutputState: i.ToVolumeBackupOutputWithContext(ctx).OutputState,
+	}
+}
+
 // VolumeBackupArrayInput is an input type that accepts VolumeBackupArray and VolumeBackupArrayOutput values.
 // You can construct a concrete instance of `VolumeBackupArrayInput` via:
 //
@@ -319,6 +326,12 @@ func (i VolumeBackupArray) ToVolumeBackupArrayOutput() VolumeBackupArrayOutput {
 
 func (i VolumeBackupArray) ToVolumeBackupArrayOutputWithContext(ctx context.Context) VolumeBackupArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(VolumeBackupArrayOutput)
+}
+
+func (i VolumeBackupArray) ToOutput(ctx context.Context) pulumix.Output[[]*VolumeBackup] {
+	return pulumix.Output[[]*VolumeBackup]{
+		OutputState: i.ToVolumeBackupArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // VolumeBackupMapInput is an input type that accepts VolumeBackupMap and VolumeBackupMapOutput values.
@@ -346,6 +359,12 @@ func (i VolumeBackupMap) ToVolumeBackupMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(VolumeBackupMapOutput)
 }
 
+func (i VolumeBackupMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*VolumeBackup] {
+	return pulumix.Output[map[string]*VolumeBackup]{
+		OutputState: i.ToVolumeBackupMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type VolumeBackupOutput struct{ *pulumi.OutputState }
 
 func (VolumeBackupOutput) ElementType() reflect.Type {
@@ -358,6 +377,12 @@ func (o VolumeBackupOutput) ToVolumeBackupOutput() VolumeBackupOutput {
 
 func (o VolumeBackupOutput) ToVolumeBackupOutputWithContext(ctx context.Context) VolumeBackupOutput {
 	return o
+}
+
+func (o VolumeBackupOutput) ToOutput(ctx context.Context) pulumix.Output[*VolumeBackup] {
+	return pulumix.Output[*VolumeBackup]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The OCID of the compartment that contains the volume backup.
@@ -473,6 +498,12 @@ func (o VolumeBackupArrayOutput) ToVolumeBackupArrayOutputWithContext(ctx contex
 	return o
 }
 
+func (o VolumeBackupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*VolumeBackup] {
+	return pulumix.Output[[]*VolumeBackup]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o VolumeBackupArrayOutput) Index(i pulumi.IntInput) VolumeBackupOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *VolumeBackup {
 		return vs[0].([]*VolumeBackup)[vs[1].(int)]
@@ -491,6 +522,12 @@ func (o VolumeBackupMapOutput) ToVolumeBackupMapOutput() VolumeBackupMapOutput {
 
 func (o VolumeBackupMapOutput) ToVolumeBackupMapOutputWithContext(ctx context.Context) VolumeBackupMapOutput {
 	return o
+}
+
+func (o VolumeBackupMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*VolumeBackup] {
+	return pulumix.Output[map[string]*VolumeBackup]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o VolumeBackupMapOutput) MapIndex(k pulumi.StringInput) VolumeBackupOutput {

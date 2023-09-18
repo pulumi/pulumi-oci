@@ -105,7 +105,7 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:Database/vmClusterNetwork:VmClusterNetwork")
 public class VmClusterNetwork extends com.pulumi.resources.CustomResource {
-    @Export(name="action", type=String.class, parameters={})
+    @Export(name="action", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> action;
 
     public Output<Optional<String>> action() {
@@ -115,7 +115,7 @@ public class VmClusterNetwork extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -129,7 +129,7 @@ public class VmClusterNetwork extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -143,7 +143,7 @@ public class VmClusterNetwork extends com.pulumi.resources.CustomResource {
      * The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -157,7 +157,7 @@ public class VmClusterNetwork extends com.pulumi.resources.CustomResource {
      * (Updatable) The list of DNS server IP addresses. Maximum of 3 allowed.
      * 
      */
-    @Export(name="dns", type=List.class, parameters={String.class})
+    @Export(name="dns", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> dns;
 
     /**
@@ -171,7 +171,7 @@ public class VmClusterNetwork extends com.pulumi.resources.CustomResource {
      * (Updatable) The SCAN details for DR network
      * 
      */
-    @Export(name="drScans", type=List.class, parameters={VmClusterNetworkDrScan.class})
+    @Export(name="drScans", refs={List.class,VmClusterNetworkDrScan.class}, tree="[0,1]")
     private Output<List<VmClusterNetworkDrScan>> drScans;
 
     /**
@@ -185,7 +185,7 @@ public class VmClusterNetwork extends com.pulumi.resources.CustomResource {
      * The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    @Export(name="exadataInfrastructureId", type=String.class, parameters={})
+    @Export(name="exadataInfrastructureId", refs={String.class}, tree="[0]")
     private Output<String> exadataInfrastructureId;
 
     /**
@@ -199,7 +199,7 @@ public class VmClusterNetwork extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -213,7 +213,7 @@ public class VmClusterNetwork extends com.pulumi.resources.CustomResource {
      * Additional information about the current lifecycle state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -227,7 +227,7 @@ public class VmClusterNetwork extends com.pulumi.resources.CustomResource {
      * (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
      * 
      */
-    @Export(name="ntps", type=List.class, parameters={String.class})
+    @Export(name="ntps", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> ntps;
 
     /**
@@ -241,7 +241,7 @@ public class VmClusterNetwork extends com.pulumi.resources.CustomResource {
      * (Updatable) The SCAN details.
      * 
      */
-    @Export(name="scans", type=List.class, parameters={VmClusterNetworkScan.class})
+    @Export(name="scans", refs={List.class,VmClusterNetworkScan.class}, tree="[0,1]")
     private Output<List<VmClusterNetworkScan>> scans;
 
     /**
@@ -255,7 +255,7 @@ public class VmClusterNetwork extends com.pulumi.resources.CustomResource {
      * (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -269,7 +269,7 @@ public class VmClusterNetwork extends com.pulumi.resources.CustomResource {
      * The date and time when the VM cluster network was created.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -279,7 +279,7 @@ public class VmClusterNetwork extends com.pulumi.resources.CustomResource {
     public Output<String> timeCreated() {
         return this.timeCreated;
     }
-    @Export(name="validateVmClusterNetwork", type=Boolean.class, parameters={})
+    @Export(name="validateVmClusterNetwork", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> validateVmClusterNetwork;
 
     public Output<Optional<Boolean>> validateVmClusterNetwork() {
@@ -289,7 +289,7 @@ public class VmClusterNetwork extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated VM Cluster.
      * 
      */
-    @Export(name="vmClusterId", type=String.class, parameters={})
+    @Export(name="vmClusterId", refs={String.class}, tree="[0]")
     private Output<String> vmClusterId;
 
     /**
@@ -303,7 +303,7 @@ public class VmClusterNetwork extends com.pulumi.resources.CustomResource {
      * (Updatable) Details of the client and backup networks.
      * 
      */
-    @Export(name="vmNetworks", type=List.class, parameters={VmClusterNetworkVmNetwork.class})
+    @Export(name="vmNetworks", refs={List.class,VmClusterNetworkVmNetwork.class}, tree="[0,1]")
     private Output<List<VmClusterNetworkVmNetwork>> vmNetworks;
 
     /**

@@ -83,7 +83,7 @@ public class MonitoredResourcesSearch extends com.pulumi.resources.CustomResourc
      * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -97,7 +97,7 @@ public class MonitoredResourcesSearch extends com.pulumi.resources.CustomResourc
      * Partial response refers to an optimization technique offered by the RESTful web APIs, to return all the information except the fields requested to be excluded (excludeFields) by the client. In this mechanism, the client sends the exclude field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to exlude and to return and should be a query string parameter called &#34;excludeFields&#34; of an array type, provide the values as enums, and use collectionFormat.
      * 
      */
-    @Export(name="excludeFields", type=List.class, parameters={String.class})
+    @Export(name="excludeFields", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> excludeFields;
 
     /**
@@ -111,7 +111,7 @@ public class MonitoredResourcesSearch extends com.pulumi.resources.CustomResourc
      * External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
      * 
      */
-    @Export(name="externalId", type=String.class, parameters={})
+    @Export(name="externalId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> externalId;
 
     /**
@@ -125,7 +125,7 @@ public class MonitoredResourcesSearch extends com.pulumi.resources.CustomResourc
      * Partial response refers to an optimization technique offered by the RESTful web APIs, to return only the information (fields) required by the client. In this mechanism, the client sends the required field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to return and should be a query string parameter called &#34;fields&#34; of an array type, provide the values as enums, and use collectionFormat.
      * 
      */
-    @Export(name="fields", type=List.class, parameters={String.class})
+    @Export(name="fields", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> fields;
 
     /**
@@ -139,7 +139,7 @@ public class MonitoredResourcesSearch extends com.pulumi.resources.CustomResourc
      * A filter to return resources with host name match.
      * 
      */
-    @Export(name="hostName", type=String.class, parameters={})
+    @Export(name="hostName", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> hostName;
 
     /**
@@ -153,7 +153,7 @@ public class MonitoredResourcesSearch extends com.pulumi.resources.CustomResourc
      * A filter to return resources with host name pattern.
      * 
      */
-    @Export(name="hostNameContains", type=String.class, parameters={})
+    @Export(name="hostNameContains", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> hostNameContains;
 
     /**
@@ -167,7 +167,7 @@ public class MonitoredResourcesSearch extends com.pulumi.resources.CustomResourc
      * List of monitored resources.
      * 
      */
-    @Export(name="items", type=List.class, parameters={MonitoredResourcesSearchItem.class})
+    @Export(name="items", refs={List.class,MonitoredResourcesSearchItem.class}, tree="[0,1]")
     private Output<List<MonitoredResourcesSearchItem>> items;
 
     /**
@@ -181,7 +181,7 @@ public class MonitoredResourcesSearch extends com.pulumi.resources.CustomResourc
      * A filter to return resources with matching management agent id.
      * 
      */
-    @Export(name="managementAgentId", type=String.class, parameters={})
+    @Export(name="managementAgentId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> managementAgentId;
 
     /**
@@ -195,7 +195,7 @@ public class MonitoredResourcesSearch extends com.pulumi.resources.CustomResourc
      * A filter to return resources that match exact resource name.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -209,7 +209,7 @@ public class MonitoredResourcesSearch extends com.pulumi.resources.CustomResourc
      * A filter to return resources that match resource name pattern given. The match is not case sensitive.
      * 
      */
-    @Export(name="nameContains", type=String.class, parameters={})
+    @Export(name="nameContains", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> nameContains;
 
     /**
@@ -223,7 +223,7 @@ public class MonitoredResourcesSearch extends com.pulumi.resources.CustomResourc
      * Criteria based on resource property.
      * 
      */
-    @Export(name="propertyEquals", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="propertyEquals", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output</* @Nullable */ Map<String,Object>> propertyEquals;
 
     /**
@@ -237,7 +237,7 @@ public class MonitoredResourcesSearch extends com.pulumi.resources.CustomResourc
      * Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
      * 
      */
-    @Export(name="resourceTimeZone", type=String.class, parameters={})
+    @Export(name="resourceTimeZone", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> resourceTimeZone;
 
     /**
@@ -251,7 +251,7 @@ public class MonitoredResourcesSearch extends com.pulumi.resources.CustomResourc
      * A filter to return resources with matching lifecycle state.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> state;
 
     /**
@@ -267,7 +267,7 @@ public class MonitoredResourcesSearch extends com.pulumi.resources.CustomResourc
      * **Example:** 2016-12-19T16:39:57.600Z
      * 
      */
-    @Export(name="timeCreatedGreaterThanOrEqualTo", type=String.class, parameters={})
+    @Export(name="timeCreatedGreaterThanOrEqualTo", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> timeCreatedGreaterThanOrEqualTo;
 
     /**
@@ -285,7 +285,7 @@ public class MonitoredResourcesSearch extends com.pulumi.resources.CustomResourc
      * **Example:** 2016-12-19T16:39:57.600Z
      * 
      */
-    @Export(name="timeCreatedLessThan", type=String.class, parameters={})
+    @Export(name="timeCreatedLessThan", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> timeCreatedLessThan;
 
     /**
@@ -303,7 +303,7 @@ public class MonitoredResourcesSearch extends com.pulumi.resources.CustomResourc
      * **Example:** 2016-12-19T16:39:57.600Z
      * 
      */
-    @Export(name="timeUpdatedGreaterThanOrEqualTo", type=String.class, parameters={})
+    @Export(name="timeUpdatedGreaterThanOrEqualTo", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> timeUpdatedGreaterThanOrEqualTo;
 
     /**
@@ -321,7 +321,7 @@ public class MonitoredResourcesSearch extends com.pulumi.resources.CustomResourc
      * **Example:** 2016-12-19T16:39:57.600Z
      * 
      */
-    @Export(name="timeUpdatedLessThan", type=String.class, parameters={})
+    @Export(name="timeUpdatedLessThan", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> timeUpdatedLessThan;
 
     /**
@@ -340,7 +340,7 @@ public class MonitoredResourcesSearch extends com.pulumi.resources.CustomResourc
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="type", type=String.class, parameters={})
+    @Export(name="type", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> type;
 
     /**

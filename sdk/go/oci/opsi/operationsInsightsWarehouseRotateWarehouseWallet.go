@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Operations Insights Warehouse Rotate Warehouse Wallet resource in Oracle Cloud Infrastructure Opsi service.
@@ -153,6 +154,12 @@ func (i *OperationsInsightsWarehouseRotateWarehouseWallet) ToOperationsInsightsW
 	return pulumi.ToOutputWithContext(ctx, i).(OperationsInsightsWarehouseRotateWarehouseWalletOutput)
 }
 
+func (i *OperationsInsightsWarehouseRotateWarehouseWallet) ToOutput(ctx context.Context) pulumix.Output[*OperationsInsightsWarehouseRotateWarehouseWallet] {
+	return pulumix.Output[*OperationsInsightsWarehouseRotateWarehouseWallet]{
+		OutputState: i.ToOperationsInsightsWarehouseRotateWarehouseWalletOutputWithContext(ctx).OutputState,
+	}
+}
+
 // OperationsInsightsWarehouseRotateWarehouseWalletArrayInput is an input type that accepts OperationsInsightsWarehouseRotateWarehouseWalletArray and OperationsInsightsWarehouseRotateWarehouseWalletArrayOutput values.
 // You can construct a concrete instance of `OperationsInsightsWarehouseRotateWarehouseWalletArrayInput` via:
 //
@@ -176,6 +183,12 @@ func (i OperationsInsightsWarehouseRotateWarehouseWalletArray) ToOperationsInsig
 
 func (i OperationsInsightsWarehouseRotateWarehouseWalletArray) ToOperationsInsightsWarehouseRotateWarehouseWalletArrayOutputWithContext(ctx context.Context) OperationsInsightsWarehouseRotateWarehouseWalletArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(OperationsInsightsWarehouseRotateWarehouseWalletArrayOutput)
+}
+
+func (i OperationsInsightsWarehouseRotateWarehouseWalletArray) ToOutput(ctx context.Context) pulumix.Output[[]*OperationsInsightsWarehouseRotateWarehouseWallet] {
+	return pulumix.Output[[]*OperationsInsightsWarehouseRotateWarehouseWallet]{
+		OutputState: i.ToOperationsInsightsWarehouseRotateWarehouseWalletArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // OperationsInsightsWarehouseRotateWarehouseWalletMapInput is an input type that accepts OperationsInsightsWarehouseRotateWarehouseWalletMap and OperationsInsightsWarehouseRotateWarehouseWalletMapOutput values.
@@ -203,6 +216,12 @@ func (i OperationsInsightsWarehouseRotateWarehouseWalletMap) ToOperationsInsight
 	return pulumi.ToOutputWithContext(ctx, i).(OperationsInsightsWarehouseRotateWarehouseWalletMapOutput)
 }
 
+func (i OperationsInsightsWarehouseRotateWarehouseWalletMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*OperationsInsightsWarehouseRotateWarehouseWallet] {
+	return pulumix.Output[map[string]*OperationsInsightsWarehouseRotateWarehouseWallet]{
+		OutputState: i.ToOperationsInsightsWarehouseRotateWarehouseWalletMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type OperationsInsightsWarehouseRotateWarehouseWalletOutput struct{ *pulumi.OutputState }
 
 func (OperationsInsightsWarehouseRotateWarehouseWalletOutput) ElementType() reflect.Type {
@@ -215,6 +234,12 @@ func (o OperationsInsightsWarehouseRotateWarehouseWalletOutput) ToOperationsInsi
 
 func (o OperationsInsightsWarehouseRotateWarehouseWalletOutput) ToOperationsInsightsWarehouseRotateWarehouseWalletOutputWithContext(ctx context.Context) OperationsInsightsWarehouseRotateWarehouseWalletOutput {
 	return o
+}
+
+func (o OperationsInsightsWarehouseRotateWarehouseWalletOutput) ToOutput(ctx context.Context) pulumix.Output[*OperationsInsightsWarehouseRotateWarehouseWallet] {
+	return pulumix.Output[*OperationsInsightsWarehouseRotateWarehouseWallet]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Unique Operations Insights Warehouse identifier
@@ -241,6 +266,12 @@ func (o OperationsInsightsWarehouseRotateWarehouseWalletArrayOutput) ToOperation
 	return o
 }
 
+func (o OperationsInsightsWarehouseRotateWarehouseWalletArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*OperationsInsightsWarehouseRotateWarehouseWallet] {
+	return pulumix.Output[[]*OperationsInsightsWarehouseRotateWarehouseWallet]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o OperationsInsightsWarehouseRotateWarehouseWalletArrayOutput) Index(i pulumi.IntInput) OperationsInsightsWarehouseRotateWarehouseWalletOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *OperationsInsightsWarehouseRotateWarehouseWallet {
 		return vs[0].([]*OperationsInsightsWarehouseRotateWarehouseWallet)[vs[1].(int)]
@@ -259,6 +290,12 @@ func (o OperationsInsightsWarehouseRotateWarehouseWalletMapOutput) ToOperationsI
 
 func (o OperationsInsightsWarehouseRotateWarehouseWalletMapOutput) ToOperationsInsightsWarehouseRotateWarehouseWalletMapOutputWithContext(ctx context.Context) OperationsInsightsWarehouseRotateWarehouseWalletMapOutput {
 	return o
+}
+
+func (o OperationsInsightsWarehouseRotateWarehouseWalletMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*OperationsInsightsWarehouseRotateWarehouseWallet] {
+	return pulumix.Output[map[string]*OperationsInsightsWarehouseRotateWarehouseWallet]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o OperationsInsightsWarehouseRotateWarehouseWalletMapOutput) MapIndex(k pulumi.StringInput) OperationsInsightsWarehouseRotateWarehouseWalletOutput {

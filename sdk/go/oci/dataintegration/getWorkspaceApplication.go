@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Workspace Application resource in Oracle Cloud Infrastructure Data Integration service.
@@ -154,6 +155,12 @@ func (o LookupWorkspaceApplicationResultOutput) ToLookupWorkspaceApplicationResu
 
 func (o LookupWorkspaceApplicationResultOutput) ToLookupWorkspaceApplicationResultOutputWithContext(ctx context.Context) LookupWorkspaceApplicationResultOutput {
 	return o
+}
+
+func (o LookupWorkspaceApplicationResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupWorkspaceApplicationResult] {
+	return pulumix.Output[LookupWorkspaceApplicationResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The source application key to use when creating the application.

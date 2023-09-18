@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetAutoScalingConfigurations(ctx *pulumi.Context, args *GetAutoScalingConfigurationsArgs, opts ...pulumi.InvokeOption) (*GetAutoScalingConfigurationsResult, error) {
@@ -81,6 +82,12 @@ func (o GetAutoScalingConfigurationsResultOutput) ToGetAutoScalingConfigurations
 
 func (o GetAutoScalingConfigurationsResultOutput) ToGetAutoScalingConfigurationsResultOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsResultOutput {
 	return o
+}
+
+func (o GetAutoScalingConfigurationsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationsResult] {
+	return pulumix.Output[GetAutoScalingConfigurationsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAutoScalingConfigurationsResultOutput) AutoScalingConfigurations() GetAutoScalingConfigurationsAutoScalingConfigurationArrayOutput {

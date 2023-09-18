@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Certificate Authority resource in Oracle Cloud Infrastructure Certificates Management service.
@@ -267,6 +268,12 @@ func (i *CertificateAuthority) ToCertificateAuthorityOutputWithContext(ctx conte
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateAuthorityOutput)
 }
 
+func (i *CertificateAuthority) ToOutput(ctx context.Context) pulumix.Output[*CertificateAuthority] {
+	return pulumix.Output[*CertificateAuthority]{
+		OutputState: i.ToCertificateAuthorityOutputWithContext(ctx).OutputState,
+	}
+}
+
 // CertificateAuthorityArrayInput is an input type that accepts CertificateAuthorityArray and CertificateAuthorityArrayOutput values.
 // You can construct a concrete instance of `CertificateAuthorityArrayInput` via:
 //
@@ -290,6 +297,12 @@ func (i CertificateAuthorityArray) ToCertificateAuthorityArrayOutput() Certifica
 
 func (i CertificateAuthorityArray) ToCertificateAuthorityArrayOutputWithContext(ctx context.Context) CertificateAuthorityArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateAuthorityArrayOutput)
+}
+
+func (i CertificateAuthorityArray) ToOutput(ctx context.Context) pulumix.Output[[]*CertificateAuthority] {
+	return pulumix.Output[[]*CertificateAuthority]{
+		OutputState: i.ToCertificateAuthorityArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // CertificateAuthorityMapInput is an input type that accepts CertificateAuthorityMap and CertificateAuthorityMapOutput values.
@@ -317,6 +330,12 @@ func (i CertificateAuthorityMap) ToCertificateAuthorityMapOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateAuthorityMapOutput)
 }
 
+func (i CertificateAuthorityMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*CertificateAuthority] {
+	return pulumix.Output[map[string]*CertificateAuthority]{
+		OutputState: i.ToCertificateAuthorityMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type CertificateAuthorityOutput struct{ *pulumi.OutputState }
 
 func (CertificateAuthorityOutput) ElementType() reflect.Type {
@@ -329,6 +348,12 @@ func (o CertificateAuthorityOutput) ToCertificateAuthorityOutput() CertificateAu
 
 func (o CertificateAuthorityOutput) ToCertificateAuthorityOutputWithContext(ctx context.Context) CertificateAuthorityOutput {
 	return o
+}
+
+func (o CertificateAuthorityOutput) ToOutput(ctx context.Context) pulumix.Output[*CertificateAuthority] {
+	return pulumix.Output[*CertificateAuthority]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The configuration details for creating a certificate authority (CA).
@@ -444,6 +469,12 @@ func (o CertificateAuthorityArrayOutput) ToCertificateAuthorityArrayOutputWithCo
 	return o
 }
 
+func (o CertificateAuthorityArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*CertificateAuthority] {
+	return pulumix.Output[[]*CertificateAuthority]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o CertificateAuthorityArrayOutput) Index(i pulumi.IntInput) CertificateAuthorityOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CertificateAuthority {
 		return vs[0].([]*CertificateAuthority)[vs[1].(int)]
@@ -462,6 +493,12 @@ func (o CertificateAuthorityMapOutput) ToCertificateAuthorityMapOutput() Certifi
 
 func (o CertificateAuthorityMapOutput) ToCertificateAuthorityMapOutputWithContext(ctx context.Context) CertificateAuthorityMapOutput {
 	return o
+}
+
+func (o CertificateAuthorityMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*CertificateAuthority] {
+	return pulumix.Output[map[string]*CertificateAuthority]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o CertificateAuthorityMapOutput) MapIndex(k pulumi.StringInput) CertificateAuthorityOutput {

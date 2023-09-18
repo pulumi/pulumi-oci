@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Instance resource in Oracle Cloud Infrastructure Core service.
@@ -181,6 +182,12 @@ func (o LookupInstanceResultOutput) ToLookupInstanceResultOutput() LookupInstanc
 
 func (o LookupInstanceResultOutput) ToLookupInstanceResultOutputWithContext(ctx context.Context) LookupInstanceResultOutput {
 	return o
+}
+
+func (o LookupInstanceResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupInstanceResult] {
+	return pulumix.Output[LookupInstanceResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Configuration options for the Oracle Cloud Agent software running on the instance.

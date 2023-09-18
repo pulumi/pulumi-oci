@@ -101,7 +101,7 @@ public class DatabaseToolsConnection extends com.pulumi.resources.CustomResource
      * (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
      * 
      */
-    @Export(name="advancedProperties", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="advancedProperties", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> advancedProperties;
 
     /**
@@ -115,7 +115,7 @@ public class DatabaseToolsConnection extends com.pulumi.resources.CustomResource
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -129,7 +129,7 @@ public class DatabaseToolsConnection extends com.pulumi.resources.CustomResource
      * (Updatable) The connect descriptor or Easy Connect Naming method use to connect to the database.
      * 
      */
-    @Export(name="connectionString", type=String.class, parameters={})
+    @Export(name="connectionString", refs={String.class}, tree="[0]")
     private Output<String> connectionString;
 
     /**
@@ -143,7 +143,7 @@ public class DatabaseToolsConnection extends com.pulumi.resources.CustomResource
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -157,7 +157,7 @@ public class DatabaseToolsConnection extends com.pulumi.resources.CustomResource
      * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -171,7 +171,7 @@ public class DatabaseToolsConnection extends com.pulumi.resources.CustomResource
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -185,7 +185,7 @@ public class DatabaseToolsConnection extends com.pulumi.resources.CustomResource
      * (Updatable) Oracle wallet or Java Keystores containing trusted certificates for authenticating the server&#39;s public certificate and the client private key and associated certificates required for client authentication.
      * 
      */
-    @Export(name="keyStores", type=List.class, parameters={DatabaseToolsConnectionKeyStore.class})
+    @Export(name="keyStores", refs={List.class,DatabaseToolsConnectionKeyStore.class}, tree="[0,1]")
     private Output<List<DatabaseToolsConnectionKeyStore>> keyStores;
 
     /**
@@ -199,7 +199,7 @@ public class DatabaseToolsConnection extends com.pulumi.resources.CustomResource
      * A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -213,7 +213,7 @@ public class DatabaseToolsConnection extends com.pulumi.resources.CustomResource
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
      * 
      */
-    @Export(name="privateEndpointId", type=String.class, parameters={})
+    @Export(name="privateEndpointId", refs={String.class}, tree="[0]")
     private Output<String> privateEndpointId;
 
     /**
@@ -227,7 +227,7 @@ public class DatabaseToolsConnection extends com.pulumi.resources.CustomResource
      * (Updatable) The related resource
      * 
      */
-    @Export(name="relatedResource", type=DatabaseToolsConnectionRelatedResource.class, parameters={})
+    @Export(name="relatedResource", refs={DatabaseToolsConnectionRelatedResource.class}, tree="[0]")
     private Output<DatabaseToolsConnectionRelatedResource> relatedResource;
 
     /**
@@ -241,7 +241,7 @@ public class DatabaseToolsConnection extends com.pulumi.resources.CustomResource
      * The current state of the Database Tools connection.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -255,7 +255,7 @@ public class DatabaseToolsConnection extends com.pulumi.resources.CustomResource
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -269,7 +269,7 @@ public class DatabaseToolsConnection extends com.pulumi.resources.CustomResource
      * The time the Database Tools connection was created. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -283,7 +283,7 @@ public class DatabaseToolsConnection extends com.pulumi.resources.CustomResource
      * The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -297,7 +297,7 @@ public class DatabaseToolsConnection extends com.pulumi.resources.CustomResource
      * (Updatable) The DatabaseToolsConnection type.
      * 
      */
-    @Export(name="type", type=String.class, parameters={})
+    @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**
@@ -311,7 +311,7 @@ public class DatabaseToolsConnection extends com.pulumi.resources.CustomResource
      * (Updatable) The database user name.
      * 
      */
-    @Export(name="userName", type=String.class, parameters={})
+    @Export(name="userName", refs={String.class}, tree="[0]")
     private Output<String> userName;
 
     /**
@@ -325,7 +325,7 @@ public class DatabaseToolsConnection extends com.pulumi.resources.CustomResource
      * (Updatable) The user password.
      * 
      */
-    @Export(name="userPassword", type=DatabaseToolsConnectionUserPassword.class, parameters={})
+    @Export(name="userPassword", refs={DatabaseToolsConnectionUserPassword.class}, tree="[0]")
     private Output<DatabaseToolsConnectionUserPassword> userPassword;
 
     /**

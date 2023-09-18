@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Account Recovery Setting resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -920,6 +921,12 @@ func (i *DomainsAccountRecoverySetting) ToDomainsAccountRecoverySettingOutputWit
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsAccountRecoverySettingOutput)
 }
 
+func (i *DomainsAccountRecoverySetting) ToOutput(ctx context.Context) pulumix.Output[*DomainsAccountRecoverySetting] {
+	return pulumix.Output[*DomainsAccountRecoverySetting]{
+		OutputState: i.ToDomainsAccountRecoverySettingOutputWithContext(ctx).OutputState,
+	}
+}
+
 // DomainsAccountRecoverySettingArrayInput is an input type that accepts DomainsAccountRecoverySettingArray and DomainsAccountRecoverySettingArrayOutput values.
 // You can construct a concrete instance of `DomainsAccountRecoverySettingArrayInput` via:
 //
@@ -943,6 +950,12 @@ func (i DomainsAccountRecoverySettingArray) ToDomainsAccountRecoverySettingArray
 
 func (i DomainsAccountRecoverySettingArray) ToDomainsAccountRecoverySettingArrayOutputWithContext(ctx context.Context) DomainsAccountRecoverySettingArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsAccountRecoverySettingArrayOutput)
+}
+
+func (i DomainsAccountRecoverySettingArray) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsAccountRecoverySetting] {
+	return pulumix.Output[[]*DomainsAccountRecoverySetting]{
+		OutputState: i.ToDomainsAccountRecoverySettingArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // DomainsAccountRecoverySettingMapInput is an input type that accepts DomainsAccountRecoverySettingMap and DomainsAccountRecoverySettingMapOutput values.
@@ -970,6 +983,12 @@ func (i DomainsAccountRecoverySettingMap) ToDomainsAccountRecoverySettingMapOutp
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsAccountRecoverySettingMapOutput)
 }
 
+func (i DomainsAccountRecoverySettingMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsAccountRecoverySetting] {
+	return pulumix.Output[map[string]*DomainsAccountRecoverySetting]{
+		OutputState: i.ToDomainsAccountRecoverySettingMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type DomainsAccountRecoverySettingOutput struct{ *pulumi.OutputState }
 
 func (DomainsAccountRecoverySettingOutput) ElementType() reflect.Type {
@@ -982,6 +1001,12 @@ func (o DomainsAccountRecoverySettingOutput) ToDomainsAccountRecoverySettingOutp
 
 func (o DomainsAccountRecoverySettingOutput) ToDomainsAccountRecoverySettingOutputWithContext(ctx context.Context) DomainsAccountRecoverySettingOutput {
 	return o
+}
+
+func (o DomainsAccountRecoverySettingOutput) ToOutput(ctx context.Context) pulumix.Output[*DomainsAccountRecoverySetting] {
+	return pulumix.Output[*DomainsAccountRecoverySetting]{
+		OutputState: o.OutputState,
+	}
 }
 
 // ID of the resource
@@ -1271,6 +1296,12 @@ func (o DomainsAccountRecoverySettingArrayOutput) ToDomainsAccountRecoverySettin
 	return o
 }
 
+func (o DomainsAccountRecoverySettingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsAccountRecoverySetting] {
+	return pulumix.Output[[]*DomainsAccountRecoverySetting]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o DomainsAccountRecoverySettingArrayOutput) Index(i pulumi.IntInput) DomainsAccountRecoverySettingOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DomainsAccountRecoverySetting {
 		return vs[0].([]*DomainsAccountRecoverySetting)[vs[1].(int)]
@@ -1289,6 +1320,12 @@ func (o DomainsAccountRecoverySettingMapOutput) ToDomainsAccountRecoverySettingM
 
 func (o DomainsAccountRecoverySettingMapOutput) ToDomainsAccountRecoverySettingMapOutputWithContext(ctx context.Context) DomainsAccountRecoverySettingMapOutput {
 	return o
+}
+
+func (o DomainsAccountRecoverySettingMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsAccountRecoverySetting] {
+	return pulumix.Output[map[string]*DomainsAccountRecoverySetting]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o DomainsAccountRecoverySettingMapOutput) MapIndex(k pulumi.StringInput) DomainsAccountRecoverySettingOutput {

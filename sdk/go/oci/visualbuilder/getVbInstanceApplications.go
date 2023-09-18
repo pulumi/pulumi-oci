@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of published and staged applications of a Visual Builder Instance in Oracle Cloud Infrastructure Visual Builder service.
@@ -107,6 +108,12 @@ func (o GetVbInstanceApplicationsResultOutput) ToGetVbInstanceApplicationsResult
 
 func (o GetVbInstanceApplicationsResultOutput) ToGetVbInstanceApplicationsResultOutputWithContext(ctx context.Context) GetVbInstanceApplicationsResultOutput {
 	return o
+}
+
+func (o GetVbInstanceApplicationsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVbInstanceApplicationsResult] {
+	return pulumix.Output[GetVbInstanceApplicationsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The list of application_summary_collection.

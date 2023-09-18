@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Connection Assignments in Oracle Cloud Infrastructure Golden Gate service.
@@ -132,6 +133,12 @@ func (o GetConnectionAssignmentsResultOutput) ToGetConnectionAssignmentsResultOu
 
 func (o GetConnectionAssignmentsResultOutput) ToGetConnectionAssignmentsResultOutputWithContext(ctx context.Context) GetConnectionAssignmentsResultOutput {
 	return o
+}
+
+func (o GetConnectionAssignmentsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetConnectionAssignmentsResult] {
+	return pulumix.Output[GetConnectionAssignmentsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.

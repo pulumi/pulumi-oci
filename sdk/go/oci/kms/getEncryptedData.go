@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // The `Kms.EncryptedData` data source provides details about a specific EncryptedData
@@ -121,6 +122,12 @@ func (o LookupEncryptedDataResultOutput) ToLookupEncryptedDataResultOutput() Loo
 
 func (o LookupEncryptedDataResultOutput) ToLookupEncryptedDataResultOutputWithContext(ctx context.Context) LookupEncryptedDataResultOutput {
 	return o
+}
+
+func (o LookupEncryptedDataResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupEncryptedDataResult] {
+	return pulumix.Output[LookupEncryptedDataResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o LookupEncryptedDataResultOutput) AssociatedData() pulumi.MapOutput {

@@ -83,7 +83,7 @@ public class BackupDestination extends com.pulumi.resources.CustomResource {
      * List of databases associated with the backup destination.
      * 
      */
-    @Export(name="associatedDatabases", type=List.class, parameters={BackupDestinationAssociatedDatabase.class})
+    @Export(name="associatedDatabases", refs={List.class,BackupDestinationAssociatedDatabase.class}, tree="[0,1]")
     private Output<List<BackupDestinationAssociatedDatabase>> associatedDatabases;
 
     /**
@@ -97,7 +97,7 @@ public class BackupDestination extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -111,7 +111,7 @@ public class BackupDestination extends com.pulumi.resources.CustomResource {
      * (Updatable) The connection string for connecting to the Recovery Appliance.
      * 
      */
-    @Export(name="connectionString", type=String.class, parameters={})
+    @Export(name="connectionString", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> connectionString;
 
     /**
@@ -125,7 +125,7 @@ public class BackupDestination extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -139,7 +139,7 @@ public class BackupDestination extends com.pulumi.resources.CustomResource {
      * The user-provided name of the backup destination.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -153,7 +153,7 @@ public class BackupDestination extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -167,7 +167,7 @@ public class BackupDestination extends com.pulumi.resources.CustomResource {
      * A descriptive text associated with the lifecycleState. Typically contains additional displayable text
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -185,7 +185,7 @@ public class BackupDestination extends com.pulumi.resources.CustomResource {
      * 
      */
     @Deprecated /* The 'local_mount_point_path' field has been deprecated. Please use 'local_mount_point_path under mount_type_details' instead. */
-    @Export(name="localMountPointPath", type=String.class, parameters={})
+    @Export(name="localMountPointPath", refs={String.class}, tree="[0]")
     private Output<String> localMountPointPath;
 
     /**
@@ -199,7 +199,7 @@ public class BackupDestination extends com.pulumi.resources.CustomResource {
      * Mount type details for backup destination.
      * 
      */
-    @Export(name="mountTypeDetails", type=BackupDestinationMountTypeDetails.class, parameters={})
+    @Export(name="mountTypeDetails", refs={BackupDestinationMountTypeDetails.class}, tree="[0]")
     private Output<BackupDestinationMountTypeDetails> mountTypeDetails;
 
     /**
@@ -213,7 +213,7 @@ public class BackupDestination extends com.pulumi.resources.CustomResource {
      * NFS Mount type for backup destination.
      * 
      */
-    @Export(name="nfsMountType", type=String.class, parameters={})
+    @Export(name="nfsMountType", refs={String.class}, tree="[0]")
     private Output<String> nfsMountType;
 
     /**
@@ -227,7 +227,7 @@ public class BackupDestination extends com.pulumi.resources.CustomResource {
      * Specifies the directory on which to mount the file system
      * 
      */
-    @Export(name="nfsServerExport", type=String.class, parameters={})
+    @Export(name="nfsServerExport", refs={String.class}, tree="[0]")
     private Output<String> nfsServerExport;
 
     /**
@@ -241,7 +241,7 @@ public class BackupDestination extends com.pulumi.resources.CustomResource {
      * IP addresses for NFS Auto mount.
      * 
      */
-    @Export(name="nfsServers", type=List.class, parameters={String.class})
+    @Export(name="nfsServers", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> nfsServers;
 
     /**
@@ -255,7 +255,7 @@ public class BackupDestination extends com.pulumi.resources.CustomResource {
      * The current lifecycle state of the backup destination.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -269,7 +269,7 @@ public class BackupDestination extends com.pulumi.resources.CustomResource {
      * The date and time the backup destination was created.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -283,7 +283,7 @@ public class BackupDestination extends com.pulumi.resources.CustomResource {
      * Type of the backup destination.
      * 
      */
-    @Export(name="type", type=String.class, parameters={})
+    @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**
@@ -300,7 +300,7 @@ public class BackupDestination extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="vpcUsers", type=List.class, parameters={String.class})
+    @Export(name="vpcUsers", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> vpcUsers;
 
     /**

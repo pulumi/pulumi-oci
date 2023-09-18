@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Node Pool resource in Oracle Cloud Infrastructure Container Engine service.
@@ -453,6 +454,12 @@ func (i *NodePool) ToNodePoolOutputWithContext(ctx context.Context) NodePoolOutp
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolOutput)
 }
 
+func (i *NodePool) ToOutput(ctx context.Context) pulumix.Output[*NodePool] {
+	return pulumix.Output[*NodePool]{
+		OutputState: i.ToNodePoolOutputWithContext(ctx).OutputState,
+	}
+}
+
 // NodePoolArrayInput is an input type that accepts NodePoolArray and NodePoolArrayOutput values.
 // You can construct a concrete instance of `NodePoolArrayInput` via:
 //
@@ -476,6 +483,12 @@ func (i NodePoolArray) ToNodePoolArrayOutput() NodePoolArrayOutput {
 
 func (i NodePoolArray) ToNodePoolArrayOutputWithContext(ctx context.Context) NodePoolArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolArrayOutput)
+}
+
+func (i NodePoolArray) ToOutput(ctx context.Context) pulumix.Output[[]*NodePool] {
+	return pulumix.Output[[]*NodePool]{
+		OutputState: i.ToNodePoolArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // NodePoolMapInput is an input type that accepts NodePoolMap and NodePoolMapOutput values.
@@ -503,6 +516,12 @@ func (i NodePoolMap) ToNodePoolMapOutputWithContext(ctx context.Context) NodePoo
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolMapOutput)
 }
 
+func (i NodePoolMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*NodePool] {
+	return pulumix.Output[map[string]*NodePool]{
+		OutputState: i.ToNodePoolMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type NodePoolOutput struct{ *pulumi.OutputState }
 
 func (NodePoolOutput) ElementType() reflect.Type {
@@ -515,6 +534,12 @@ func (o NodePoolOutput) ToNodePoolOutput() NodePoolOutput {
 
 func (o NodePoolOutput) ToNodePoolOutputWithContext(ctx context.Context) NodePoolOutput {
 	return o
+}
+
+func (o NodePoolOutput) ToOutput(ctx context.Context) pulumix.Output[*NodePool] {
+	return pulumix.Output[*NodePool]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the cluster to which this node pool is attached.
@@ -653,6 +678,12 @@ func (o NodePoolArrayOutput) ToNodePoolArrayOutputWithContext(ctx context.Contex
 	return o
 }
 
+func (o NodePoolArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*NodePool] {
+	return pulumix.Output[[]*NodePool]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o NodePoolArrayOutput) Index(i pulumi.IntInput) NodePoolOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *NodePool {
 		return vs[0].([]*NodePool)[vs[1].(int)]
@@ -671,6 +702,12 @@ func (o NodePoolMapOutput) ToNodePoolMapOutput() NodePoolMapOutput {
 
 func (o NodePoolMapOutput) ToNodePoolMapOutputWithContext(ctx context.Context) NodePoolMapOutput {
 	return o
+}
+
+func (o NodePoolMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*NodePool] {
+	return pulumix.Output[map[string]*NodePool]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o NodePoolMapOutput) MapIndex(k pulumi.StringInput) NodePoolOutput {

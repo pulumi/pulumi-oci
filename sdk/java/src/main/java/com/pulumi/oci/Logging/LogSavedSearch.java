@@ -69,7 +69,7 @@ public class LogSavedSearch extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the compartment that the resource belongs to.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -83,7 +83,7 @@ public class LogSavedSearch extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -97,7 +97,7 @@ public class LogSavedSearch extends com.pulumi.resources.CustomResource {
      * (Updatable) Description for this resource.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -111,7 +111,7 @@ public class LogSavedSearch extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -125,7 +125,7 @@ public class LogSavedSearch extends com.pulumi.resources.CustomResource {
      * (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -142,7 +142,7 @@ public class LogSavedSearch extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="query", type=String.class, parameters={})
+    @Export(name="query", refs={String.class}, tree="[0]")
     private Output<String> query;
 
     /**
@@ -159,7 +159,7 @@ public class LogSavedSearch extends com.pulumi.resources.CustomResource {
      * The state of the LogSavedSearch
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -173,7 +173,7 @@ public class LogSavedSearch extends com.pulumi.resources.CustomResource {
      * Time the resource was created.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -187,7 +187,7 @@ public class LogSavedSearch extends com.pulumi.resources.CustomResource {
      * Time the resource was last modified.
      * 
      */
-    @Export(name="timeLastModified", type=String.class, parameters={})
+    @Export(name="timeLastModified", refs={String.class}, tree="[0]")
     private Output<String> timeLastModified;
 
     /**

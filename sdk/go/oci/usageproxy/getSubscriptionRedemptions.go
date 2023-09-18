@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Subscription Redemptions in Oracle Cloud Infrastructure Usage Proxy service.
@@ -122,6 +123,12 @@ func (o GetSubscriptionRedemptionsResultOutput) ToGetSubscriptionRedemptionsResu
 
 func (o GetSubscriptionRedemptionsResultOutput) ToGetSubscriptionRedemptionsResultOutputWithContext(ctx context.Context) GetSubscriptionRedemptionsResultOutput {
 	return o
+}
+
+func (o GetSubscriptionRedemptionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionRedemptionsResult] {
+	return pulumix.Output[GetSubscriptionRedemptionsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSubscriptionRedemptionsResultOutput) Filters() GetSubscriptionRedemptionsFilterArrayOutput {

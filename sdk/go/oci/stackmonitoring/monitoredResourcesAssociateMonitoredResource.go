@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Monitored Resources Associate Monitored Resource resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -236,6 +237,12 @@ func (i *MonitoredResourcesAssociateMonitoredResource) ToMonitoredResourcesAssoc
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcesAssociateMonitoredResourceOutput)
 }
 
+func (i *MonitoredResourcesAssociateMonitoredResource) ToOutput(ctx context.Context) pulumix.Output[*MonitoredResourcesAssociateMonitoredResource] {
+	return pulumix.Output[*MonitoredResourcesAssociateMonitoredResource]{
+		OutputState: i.ToMonitoredResourcesAssociateMonitoredResourceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MonitoredResourcesAssociateMonitoredResourceArrayInput is an input type that accepts MonitoredResourcesAssociateMonitoredResourceArray and MonitoredResourcesAssociateMonitoredResourceArrayOutput values.
 // You can construct a concrete instance of `MonitoredResourcesAssociateMonitoredResourceArrayInput` via:
 //
@@ -259,6 +266,12 @@ func (i MonitoredResourcesAssociateMonitoredResourceArray) ToMonitoredResourcesA
 
 func (i MonitoredResourcesAssociateMonitoredResourceArray) ToMonitoredResourcesAssociateMonitoredResourceArrayOutputWithContext(ctx context.Context) MonitoredResourcesAssociateMonitoredResourceArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcesAssociateMonitoredResourceArrayOutput)
+}
+
+func (i MonitoredResourcesAssociateMonitoredResourceArray) ToOutput(ctx context.Context) pulumix.Output[[]*MonitoredResourcesAssociateMonitoredResource] {
+	return pulumix.Output[[]*MonitoredResourcesAssociateMonitoredResource]{
+		OutputState: i.ToMonitoredResourcesAssociateMonitoredResourceArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // MonitoredResourcesAssociateMonitoredResourceMapInput is an input type that accepts MonitoredResourcesAssociateMonitoredResourceMap and MonitoredResourcesAssociateMonitoredResourceMapOutput values.
@@ -286,6 +299,12 @@ func (i MonitoredResourcesAssociateMonitoredResourceMap) ToMonitoredResourcesAss
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcesAssociateMonitoredResourceMapOutput)
 }
 
+func (i MonitoredResourcesAssociateMonitoredResourceMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*MonitoredResourcesAssociateMonitoredResource] {
+	return pulumix.Output[map[string]*MonitoredResourcesAssociateMonitoredResource]{
+		OutputState: i.ToMonitoredResourcesAssociateMonitoredResourceMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MonitoredResourcesAssociateMonitoredResourceOutput struct{ *pulumi.OutputState }
 
 func (MonitoredResourcesAssociateMonitoredResourceOutput) ElementType() reflect.Type {
@@ -298,6 +317,12 @@ func (o MonitoredResourcesAssociateMonitoredResourceOutput) ToMonitoredResources
 
 func (o MonitoredResourcesAssociateMonitoredResourceOutput) ToMonitoredResourcesAssociateMonitoredResourceOutputWithContext(ctx context.Context) MonitoredResourcesAssociateMonitoredResourceOutput {
 	return o
+}
+
+func (o MonitoredResourcesAssociateMonitoredResourceOutput) ToOutput(ctx context.Context) pulumix.Output[*MonitoredResourcesAssociateMonitoredResource] {
+	return pulumix.Output[*MonitoredResourcesAssociateMonitoredResource]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Association type to be created between source and destination resources.
@@ -371,6 +396,12 @@ func (o MonitoredResourcesAssociateMonitoredResourceArrayOutput) ToMonitoredReso
 	return o
 }
 
+func (o MonitoredResourcesAssociateMonitoredResourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*MonitoredResourcesAssociateMonitoredResource] {
+	return pulumix.Output[[]*MonitoredResourcesAssociateMonitoredResource]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o MonitoredResourcesAssociateMonitoredResourceArrayOutput) Index(i pulumi.IntInput) MonitoredResourcesAssociateMonitoredResourceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *MonitoredResourcesAssociateMonitoredResource {
 		return vs[0].([]*MonitoredResourcesAssociateMonitoredResource)[vs[1].(int)]
@@ -389,6 +420,12 @@ func (o MonitoredResourcesAssociateMonitoredResourceMapOutput) ToMonitoredResour
 
 func (o MonitoredResourcesAssociateMonitoredResourceMapOutput) ToMonitoredResourcesAssociateMonitoredResourceMapOutputWithContext(ctx context.Context) MonitoredResourcesAssociateMonitoredResourceMapOutput {
 	return o
+}
+
+func (o MonitoredResourcesAssociateMonitoredResourceMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*MonitoredResourcesAssociateMonitoredResource] {
+	return pulumix.Output[map[string]*MonitoredResourcesAssociateMonitoredResource]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MonitoredResourcesAssociateMonitoredResourceMapOutput) MapIndex(k pulumi.StringInput) MonitoredResourcesAssociateMonitoredResourceOutput {

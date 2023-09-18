@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Listing resource in Oracle Cloud Infrastructure Marketplace service.
@@ -177,6 +178,12 @@ func (o GetListingResultOutput) ToGetListingResultOutput() GetListingResultOutpu
 
 func (o GetListingResultOutput) ToGetListingResultOutputWithContext(ctx context.Context) GetListingResultOutput {
 	return o
+}
+
+func (o GetListingResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingResult] {
+	return pulumix.Output[GetListingResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The model for upload data for images and icons.

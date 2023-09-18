@@ -72,7 +72,7 @@ public class Repository extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository&#39;s compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -86,7 +86,7 @@ public class Repository extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -100,7 +100,7 @@ public class Repository extends com.pulumi.resources.CustomResource {
      * (Updatable) A short description of the repository. It can be updated later.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -114,7 +114,7 @@ public class Repository extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-friendly display name for the repository. If not present, will be auto-generated. It can be modified later. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -128,7 +128,7 @@ public class Repository extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -142,7 +142,7 @@ public class Repository extends com.pulumi.resources.CustomResource {
      * Whether to make the repository immutable. The artifacts of an immutable repository cannot be overwritten.
      * 
      */
-    @Export(name="isImmutable", type=Boolean.class, parameters={})
+    @Export(name="isImmutable", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isImmutable;
 
     /**
@@ -159,7 +159,7 @@ public class Repository extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="repositoryType", type=String.class, parameters={})
+    @Export(name="repositoryType", refs={String.class}, tree="[0]")
     private Output<String> repositoryType;
 
     /**
@@ -176,7 +176,7 @@ public class Repository extends com.pulumi.resources.CustomResource {
      * The current state of the repository.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -190,7 +190,7 @@ public class Repository extends com.pulumi.resources.CustomResource {
      * An RFC 3339 timestamp indicating when the repository was created.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**

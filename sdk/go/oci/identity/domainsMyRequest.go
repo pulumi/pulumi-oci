@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the My Request resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -883,6 +884,12 @@ func (i *DomainsMyRequest) ToDomainsMyRequestOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsMyRequestOutput)
 }
 
+func (i *DomainsMyRequest) ToOutput(ctx context.Context) pulumix.Output[*DomainsMyRequest] {
+	return pulumix.Output[*DomainsMyRequest]{
+		OutputState: i.ToDomainsMyRequestOutputWithContext(ctx).OutputState,
+	}
+}
+
 // DomainsMyRequestArrayInput is an input type that accepts DomainsMyRequestArray and DomainsMyRequestArrayOutput values.
 // You can construct a concrete instance of `DomainsMyRequestArrayInput` via:
 //
@@ -906,6 +913,12 @@ func (i DomainsMyRequestArray) ToDomainsMyRequestArrayOutput() DomainsMyRequestA
 
 func (i DomainsMyRequestArray) ToDomainsMyRequestArrayOutputWithContext(ctx context.Context) DomainsMyRequestArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsMyRequestArrayOutput)
+}
+
+func (i DomainsMyRequestArray) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsMyRequest] {
+	return pulumix.Output[[]*DomainsMyRequest]{
+		OutputState: i.ToDomainsMyRequestArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // DomainsMyRequestMapInput is an input type that accepts DomainsMyRequestMap and DomainsMyRequestMapOutput values.
@@ -933,6 +946,12 @@ func (i DomainsMyRequestMap) ToDomainsMyRequestMapOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsMyRequestMapOutput)
 }
 
+func (i DomainsMyRequestMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsMyRequest] {
+	return pulumix.Output[map[string]*DomainsMyRequest]{
+		OutputState: i.ToDomainsMyRequestMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type DomainsMyRequestOutput struct{ *pulumi.OutputState }
 
 func (DomainsMyRequestOutput) ElementType() reflect.Type {
@@ -945,6 +964,12 @@ func (o DomainsMyRequestOutput) ToDomainsMyRequestOutput() DomainsMyRequestOutpu
 
 func (o DomainsMyRequestOutput) ToDomainsMyRequestOutputWithContext(ctx context.Context) DomainsMyRequestOutput {
 	return o
+}
+
+func (o DomainsMyRequestOutput) ToOutput(ctx context.Context) pulumix.Output[*DomainsMyRequest] {
+	return pulumix.Output[*DomainsMyRequest]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
@@ -1222,6 +1247,12 @@ func (o DomainsMyRequestArrayOutput) ToDomainsMyRequestArrayOutputWithContext(ct
 	return o
 }
 
+func (o DomainsMyRequestArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsMyRequest] {
+	return pulumix.Output[[]*DomainsMyRequest]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o DomainsMyRequestArrayOutput) Index(i pulumi.IntInput) DomainsMyRequestOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DomainsMyRequest {
 		return vs[0].([]*DomainsMyRequest)[vs[1].(int)]
@@ -1240,6 +1271,12 @@ func (o DomainsMyRequestMapOutput) ToDomainsMyRequestMapOutput() DomainsMyReques
 
 func (o DomainsMyRequestMapOutput) ToDomainsMyRequestMapOutputWithContext(ctx context.Context) DomainsMyRequestMapOutput {
 	return o
+}
+
+func (o DomainsMyRequestMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsMyRequest] {
+	return pulumix.Output[map[string]*DomainsMyRequest]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o DomainsMyRequestMapOutput) MapIndex(k pulumi.StringInput) DomainsMyRequestOutput {

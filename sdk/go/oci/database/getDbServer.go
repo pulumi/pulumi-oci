@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Db Server resource in Oracle Cloud Infrastructure Database service.
@@ -144,6 +145,12 @@ func (o GetDbServerResultOutput) ToGetDbServerResultOutput() GetDbServerResultOu
 
 func (o GetDbServerResultOutput) ToGetDbServerResultOutputWithContext(ctx context.Context) GetDbServerResultOutput {
 	return o
+}
+
+func (o GetDbServerResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDbServerResult] {
+	return pulumix.Output[GetDbServerResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Virtual Machines associated with the Db server.

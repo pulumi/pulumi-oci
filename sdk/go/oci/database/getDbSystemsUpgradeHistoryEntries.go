@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Db Systems Upgrade History Entries in Oracle Cloud Infrastructure Database service.
@@ -117,6 +118,12 @@ func (o GetDbSystemsUpgradeHistoryEntriesResultOutput) ToGetDbSystemsUpgradeHist
 
 func (o GetDbSystemsUpgradeHistoryEntriesResultOutput) ToGetDbSystemsUpgradeHistoryEntriesResultOutputWithContext(ctx context.Context) GetDbSystemsUpgradeHistoryEntriesResultOutput {
 	return o
+}
+
+func (o GetDbSystemsUpgradeHistoryEntriesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDbSystemsUpgradeHistoryEntriesResult] {
+	return pulumix.Output[GetDbSystemsUpgradeHistoryEntriesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDbSystemsUpgradeHistoryEntriesResultOutput) DbSystemId() pulumi.StringOutput {

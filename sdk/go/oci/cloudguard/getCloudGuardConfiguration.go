@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Cloud Guard Configuration resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -104,6 +105,12 @@ func (o LookupCloudGuardConfigurationResultOutput) ToLookupCloudGuardConfigurati
 
 func (o LookupCloudGuardConfigurationResultOutput) ToLookupCloudGuardConfigurationResultOutputWithContext(ctx context.Context) LookupCloudGuardConfigurationResultOutput {
 	return o
+}
+
+func (o LookupCloudGuardConfigurationResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupCloudGuardConfigurationResult] {
+	return pulumix.Output[LookupCloudGuardConfigurationResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o LookupCloudGuardConfigurationResultOutput) CompartmentId() pulumi.StringOutput {

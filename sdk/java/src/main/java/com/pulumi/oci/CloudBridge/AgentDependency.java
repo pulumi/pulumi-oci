@@ -75,7 +75,7 @@ public class AgentDependency extends com.pulumi.resources.CustomResource {
      * (Updatable) Object storage bucket where the dependency is uploaded.
      * 
      */
-    @Export(name="bucket", type=String.class, parameters={})
+    @Export(name="bucket", refs={String.class}, tree="[0]")
     private Output<String> bucket;
 
     /**
@@ -89,7 +89,7 @@ public class AgentDependency extends com.pulumi.resources.CustomResource {
      * The checksum associated with the dependency object returned by Object Storage.
      * 
      */
-    @Export(name="checksum", type=String.class, parameters={})
+    @Export(name="checksum", refs={String.class}, tree="[0]")
     private Output<String> checksum;
 
     /**
@@ -103,7 +103,7 @@ public class AgentDependency extends com.pulumi.resources.CustomResource {
      * (Updatable) Compartment identifier.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -117,7 +117,7 @@ public class AgentDependency extends com.pulumi.resources.CustomResource {
      * (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -131,7 +131,7 @@ public class AgentDependency extends com.pulumi.resources.CustomResource {
      * (Updatable) Name of the dependency type. This should match the whitelisted enum of dependency names.
      * 
      */
-    @Export(name="dependencyName", type=String.class, parameters={})
+    @Export(name="dependencyName", refs={String.class}, tree="[0]")
     private Output<String> dependencyName;
 
     /**
@@ -145,7 +145,7 @@ public class AgentDependency extends com.pulumi.resources.CustomResource {
      * (Updatable) Version of the Agent dependency.
      * 
      */
-    @Export(name="dependencyVersion", type=String.class, parameters={})
+    @Export(name="dependencyVersion", refs={String.class}, tree="[0]")
     private Output<String> dependencyVersion;
 
     /**
@@ -159,7 +159,7 @@ public class AgentDependency extends com.pulumi.resources.CustomResource {
      * (Updatable) Description about the Agent dependency.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -173,7 +173,7 @@ public class AgentDependency extends com.pulumi.resources.CustomResource {
      * (Updatable) Display name of the Agent dependency.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -187,7 +187,7 @@ public class AgentDependency extends com.pulumi.resources.CustomResource {
      * The eTag associated with the dependency object returned by Object Storage.
      * 
      */
-    @Export(name="eTag", type=String.class, parameters={})
+    @Export(name="eTag", refs={String.class}, tree="[0]")
     private Output<String> eTag;
 
     /**
@@ -201,7 +201,7 @@ public class AgentDependency extends com.pulumi.resources.CustomResource {
      * (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -215,7 +215,7 @@ public class AgentDependency extends com.pulumi.resources.CustomResource {
      * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -229,7 +229,7 @@ public class AgentDependency extends com.pulumi.resources.CustomResource {
      * (Updatable) Object storage namespace associated with the customer&#39;s tenancy.
      * 
      */
-    @Export(name="namespace", type=String.class, parameters={})
+    @Export(name="namespace", refs={String.class}, tree="[0]")
     private Output<String> namespace;
 
     /**
@@ -243,7 +243,7 @@ public class AgentDependency extends com.pulumi.resources.CustomResource {
      * (Updatable) Name of the dependency object uploaded by the customer.
      * 
      */
-    @Export(name="object", type=String.class, parameters={})
+    @Export(name="object", refs={String.class}, tree="[0]")
     private Output<String> object;
 
     /**
@@ -257,7 +257,7 @@ public class AgentDependency extends com.pulumi.resources.CustomResource {
      * The current state of AgentDependency.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -274,7 +274,7 @@ public class AgentDependency extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -291,7 +291,7 @@ public class AgentDependency extends com.pulumi.resources.CustomResource {
      * The time when the AgentDependency was created. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**

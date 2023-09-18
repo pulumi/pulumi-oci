@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Log Analytics Entities Summary resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -112,6 +113,12 @@ func (o GetLogAnalyticsEntitiesSummaryResultOutput) ToGetLogAnalyticsEntitiesSum
 
 func (o GetLogAnalyticsEntitiesSummaryResultOutput) ToGetLogAnalyticsEntitiesSummaryResultOutputWithContext(ctx context.Context) GetLogAnalyticsEntitiesSummaryResultOutput {
 	return o
+}
+
+func (o GetLogAnalyticsEntitiesSummaryResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsEntitiesSummaryResult] {
+	return pulumix.Output[GetLogAnalyticsEntitiesSummaryResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Total number of ACTIVE entities

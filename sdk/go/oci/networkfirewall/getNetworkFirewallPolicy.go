@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Network Firewall Policy resource in Oracle Cloud Infrastructure Network Firewall service.
@@ -133,6 +134,12 @@ func (o LookupNetworkFirewallPolicyResultOutput) ToLookupNetworkFirewallPolicyRe
 
 func (o LookupNetworkFirewallPolicyResultOutput) ToLookupNetworkFirewallPolicyResultOutputWithContext(ctx context.Context) LookupNetworkFirewallPolicyResultOutput {
 	return o
+}
+
+func (o LookupNetworkFirewallPolicyResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupNetworkFirewallPolicyResult] {
+	return pulumix.Output[LookupNetworkFirewallPolicyResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Map defining application lists of the policy. The value of an entry is a list of "applications", each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.

@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Bds Instance Patch Action resource in Oracle Cloud Infrastructure Big Data Service service.
@@ -182,6 +183,12 @@ func (i *BdsInstancePatchAction) ToBdsInstancePatchActionOutputWithContext(ctx c
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstancePatchActionOutput)
 }
 
+func (i *BdsInstancePatchAction) ToOutput(ctx context.Context) pulumix.Output[*BdsInstancePatchAction] {
+	return pulumix.Output[*BdsInstancePatchAction]{
+		OutputState: i.ToBdsInstancePatchActionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // BdsInstancePatchActionArrayInput is an input type that accepts BdsInstancePatchActionArray and BdsInstancePatchActionArrayOutput values.
 // You can construct a concrete instance of `BdsInstancePatchActionArrayInput` via:
 //
@@ -205,6 +212,12 @@ func (i BdsInstancePatchActionArray) ToBdsInstancePatchActionArrayOutput() BdsIn
 
 func (i BdsInstancePatchActionArray) ToBdsInstancePatchActionArrayOutputWithContext(ctx context.Context) BdsInstancePatchActionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstancePatchActionArrayOutput)
+}
+
+func (i BdsInstancePatchActionArray) ToOutput(ctx context.Context) pulumix.Output[[]*BdsInstancePatchAction] {
+	return pulumix.Output[[]*BdsInstancePatchAction]{
+		OutputState: i.ToBdsInstancePatchActionArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // BdsInstancePatchActionMapInput is an input type that accepts BdsInstancePatchActionMap and BdsInstancePatchActionMapOutput values.
@@ -232,6 +245,12 @@ func (i BdsInstancePatchActionMap) ToBdsInstancePatchActionMapOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstancePatchActionMapOutput)
 }
 
+func (i BdsInstancePatchActionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*BdsInstancePatchAction] {
+	return pulumix.Output[map[string]*BdsInstancePatchAction]{
+		OutputState: i.ToBdsInstancePatchActionMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type BdsInstancePatchActionOutput struct{ *pulumi.OutputState }
 
 func (BdsInstancePatchActionOutput) ElementType() reflect.Type {
@@ -244,6 +263,12 @@ func (o BdsInstancePatchActionOutput) ToBdsInstancePatchActionOutput() BdsInstan
 
 func (o BdsInstancePatchActionOutput) ToBdsInstancePatchActionOutputWithContext(ctx context.Context) BdsInstancePatchActionOutput {
 	return o
+}
+
+func (o BdsInstancePatchActionOutput) ToOutput(ctx context.Context) pulumix.Output[*BdsInstancePatchAction] {
+	return pulumix.Output[*BdsInstancePatchAction]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the cluster.
@@ -278,6 +303,12 @@ func (o BdsInstancePatchActionArrayOutput) ToBdsInstancePatchActionArrayOutputWi
 	return o
 }
 
+func (o BdsInstancePatchActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*BdsInstancePatchAction] {
+	return pulumix.Output[[]*BdsInstancePatchAction]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o BdsInstancePatchActionArrayOutput) Index(i pulumi.IntInput) BdsInstancePatchActionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *BdsInstancePatchAction {
 		return vs[0].([]*BdsInstancePatchAction)[vs[1].(int)]
@@ -296,6 +327,12 @@ func (o BdsInstancePatchActionMapOutput) ToBdsInstancePatchActionMapOutput() Bds
 
 func (o BdsInstancePatchActionMapOutput) ToBdsInstancePatchActionMapOutputWithContext(ctx context.Context) BdsInstancePatchActionMapOutput {
 	return o
+}
+
+func (o BdsInstancePatchActionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*BdsInstancePatchAction] {
+	return pulumix.Output[map[string]*BdsInstancePatchAction]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o BdsInstancePatchActionMapOutput) MapIndex(k pulumi.StringInput) BdsInstancePatchActionOutput {

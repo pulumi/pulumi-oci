@@ -119,7 +119,7 @@ public class Dataset extends com.pulumi.resources.CustomResource {
      * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="additionalProperties", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="additionalProperties", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> additionalProperties;
 
     /**
@@ -133,7 +133,7 @@ public class Dataset extends com.pulumi.resources.CustomResource {
      * The annotation format name required for labeling records.
      * 
      */
-    @Export(name="annotationFormat", type=String.class, parameters={})
+    @Export(name="annotationFormat", refs={String.class}, tree="[0]")
     private Output<String> annotationFormat;
 
     /**
@@ -147,7 +147,7 @@ public class Dataset extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the compartment of the resource.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -161,7 +161,7 @@ public class Dataset extends com.pulumi.resources.CustomResource {
      * It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
      * 
      */
-    @Export(name="datasetFormatDetails", type=DatasetDatasetFormatDetails.class, parameters={})
+    @Export(name="datasetFormatDetails", refs={DatasetDatasetFormatDetails.class}, tree="[0]")
     private Output<DatasetDatasetFormatDetails> datasetFormatDetails;
 
     /**
@@ -175,7 +175,7 @@ public class Dataset extends com.pulumi.resources.CustomResource {
      * This allows the customer to specify the source of the dataset.
      * 
      */
-    @Export(name="datasetSourceDetails", type=DatasetDatasetSourceDetails.class, parameters={})
+    @Export(name="datasetSourceDetails", refs={DatasetDatasetSourceDetails.class}, tree="[0]")
     private Output<DatasetDatasetSourceDetails> datasetSourceDetails;
 
     /**
@@ -189,7 +189,7 @@ public class Dataset extends com.pulumi.resources.CustomResource {
      * (Updatable) The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -203,7 +203,7 @@ public class Dataset extends com.pulumi.resources.CustomResource {
      * (Updatable) A user provided description of the dataset
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -217,7 +217,7 @@ public class Dataset extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-friendly display name for the resource.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -231,7 +231,7 @@ public class Dataset extends com.pulumi.resources.CustomResource {
      * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -245,7 +245,7 @@ public class Dataset extends com.pulumi.resources.CustomResource {
      * Initial import dataset configuration. Allows user to create dataset from existing dataset files.
      * 
      */
-    @Export(name="initialImportDatasetConfiguration", type=DatasetInitialImportDatasetConfiguration.class, parameters={})
+    @Export(name="initialImportDatasetConfiguration", refs={DatasetInitialImportDatasetConfiguration.class}, tree="[0]")
     private Output<DatasetInitialImportDatasetConfiguration> initialImportDatasetConfiguration;
 
     /**
@@ -259,7 +259,7 @@ public class Dataset extends com.pulumi.resources.CustomResource {
      * The initial generate records configuration. It generates records from the dataset&#39;s source.
      * 
      */
-    @Export(name="initialRecordGenerationConfiguration", type=DatasetInitialRecordGenerationConfiguration.class, parameters={})
+    @Export(name="initialRecordGenerationConfiguration", refs={DatasetInitialRecordGenerationConfiguration.class}, tree="[0]")
     private Output<DatasetInitialRecordGenerationConfiguration> initialRecordGenerationConfiguration;
 
     /**
@@ -273,7 +273,7 @@ public class Dataset extends com.pulumi.resources.CustomResource {
      * An ordered collection of labels that are unique by name.
      * 
      */
-    @Export(name="labelSet", type=DatasetLabelSet.class, parameters={})
+    @Export(name="labelSet", refs={DatasetLabelSet.class}, tree="[0]")
     private Output<DatasetLabelSet> labelSet;
 
     /**
@@ -290,7 +290,7 @@ public class Dataset extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="labelingInstructions", type=String.class, parameters={})
+    @Export(name="labelingInstructions", refs={String.class}, tree="[0]")
     private Output<String> labelingInstructions;
 
     /**
@@ -307,7 +307,7 @@ public class Dataset extends com.pulumi.resources.CustomResource {
      * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -321,7 +321,7 @@ public class Dataset extends com.pulumi.resources.CustomResource {
      * The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
      * 
      */
-    @Export(name="lifecycleSubstate", type=String.class, parameters={})
+    @Export(name="lifecycleSubstate", refs={String.class}, tree="[0]")
     private Output<String> lifecycleSubstate;
 
     /**
@@ -335,7 +335,7 @@ public class Dataset extends com.pulumi.resources.CustomResource {
      * The state of a dataset. CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling. ACTIVE   - The dataset is ready for labeling. UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE. NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention. DELETING - The dataset and its related resources are being deleted. DELETED  - The dataset has been deleted and is no longer available. FAILED   - The dataset has failed due to validation or other errors.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -349,7 +349,7 @@ public class Dataset extends com.pulumi.resources.CustomResource {
      * The date and time the resource was created, in the timestamp format defined by RFC3339.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -363,7 +363,7 @@ public class Dataset extends com.pulumi.resources.CustomResource {
      * The date and time the resource was last updated, in the timestamp format defined by RFC3339.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

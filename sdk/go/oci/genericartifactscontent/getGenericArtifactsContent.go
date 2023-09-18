@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Generic Artifacts Content resource in Oracle Cloud Infrastructure Generic Artifacts Content service.
@@ -99,6 +100,12 @@ func (o GetGenericArtifactsContentResultOutput) ToGetGenericArtifactsContentResu
 
 func (o GetGenericArtifactsContentResultOutput) ToGetGenericArtifactsContentResultOutputWithContext(ctx context.Context) GetGenericArtifactsContentResultOutput {
 	return o
+}
+
+func (o GetGenericArtifactsContentResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetGenericArtifactsContentResult] {
+	return pulumix.Output[GetGenericArtifactsContentResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetGenericArtifactsContentResultOutput) ArtifactId() pulumi.StringOutput {

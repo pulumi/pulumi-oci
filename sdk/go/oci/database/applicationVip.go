@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Application Vip resource in Oracle Cloud Infrastructure Database service.
@@ -239,6 +240,12 @@ func (i *ApplicationVip) ToApplicationVipOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(ApplicationVipOutput)
 }
 
+func (i *ApplicationVip) ToOutput(ctx context.Context) pulumix.Output[*ApplicationVip] {
+	return pulumix.Output[*ApplicationVip]{
+		OutputState: i.ToApplicationVipOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ApplicationVipArrayInput is an input type that accepts ApplicationVipArray and ApplicationVipArrayOutput values.
 // You can construct a concrete instance of `ApplicationVipArrayInput` via:
 //
@@ -262,6 +269,12 @@ func (i ApplicationVipArray) ToApplicationVipArrayOutput() ApplicationVipArrayOu
 
 func (i ApplicationVipArray) ToApplicationVipArrayOutputWithContext(ctx context.Context) ApplicationVipArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ApplicationVipArrayOutput)
+}
+
+func (i ApplicationVipArray) ToOutput(ctx context.Context) pulumix.Output[[]*ApplicationVip] {
+	return pulumix.Output[[]*ApplicationVip]{
+		OutputState: i.ToApplicationVipArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // ApplicationVipMapInput is an input type that accepts ApplicationVipMap and ApplicationVipMapOutput values.
@@ -289,6 +302,12 @@ func (i ApplicationVipMap) ToApplicationVipMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(ApplicationVipMapOutput)
 }
 
+func (i ApplicationVipMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ApplicationVip] {
+	return pulumix.Output[map[string]*ApplicationVip]{
+		OutputState: i.ToApplicationVipMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ApplicationVipOutput struct{ *pulumi.OutputState }
 
 func (ApplicationVipOutput) ElementType() reflect.Type {
@@ -301,6 +320,12 @@ func (o ApplicationVipOutput) ToApplicationVipOutput() ApplicationVipOutput {
 
 func (o ApplicationVipOutput) ToApplicationVipOutputWithContext(ctx context.Context) ApplicationVipOutput {
 	return o
+}
+
+func (o ApplicationVipOutput) ToOutput(ctx context.Context) pulumix.Output[*ApplicationVip] {
+	return pulumix.Output[*ApplicationVip]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud VM cluster associated with the application virtual IP (VIP) address.
@@ -375,6 +400,12 @@ func (o ApplicationVipArrayOutput) ToApplicationVipArrayOutputWithContext(ctx co
 	return o
 }
 
+func (o ApplicationVipArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ApplicationVip] {
+	return pulumix.Output[[]*ApplicationVip]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o ApplicationVipArrayOutput) Index(i pulumi.IntInput) ApplicationVipOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ApplicationVip {
 		return vs[0].([]*ApplicationVip)[vs[1].(int)]
@@ -393,6 +424,12 @@ func (o ApplicationVipMapOutput) ToApplicationVipMapOutput() ApplicationVipMapOu
 
 func (o ApplicationVipMapOutput) ToApplicationVipMapOutputWithContext(ctx context.Context) ApplicationVipMapOutput {
 	return o
+}
+
+func (o ApplicationVipMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ApplicationVip] {
+	return pulumix.Output[map[string]*ApplicationVip]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ApplicationVipMapOutput) MapIndex(k pulumi.StringInput) ApplicationVipOutput {

@@ -33,7 +33,7 @@ public class EnrollmentStatus extends com.pulumi.resources.CustomResource {
      * The OCID of the compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -47,7 +47,7 @@ public class EnrollmentStatus extends com.pulumi.resources.CustomResource {
      * The unique OCID associated with the enrollment status.
      * 
      */
-    @Export(name="enrollmentStatusId", type=String.class, parameters={})
+    @Export(name="enrollmentStatusId", refs={String.class}, tree="[0]")
     private Output<String> enrollmentStatusId;
 
     /**
@@ -61,7 +61,7 @@ public class EnrollmentStatus extends com.pulumi.resources.CustomResource {
      * The enrollment status&#39; current state.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -78,7 +78,7 @@ public class EnrollmentStatus extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="status", type=String.class, parameters={})
+    @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
@@ -95,7 +95,7 @@ public class EnrollmentStatus extends com.pulumi.resources.CustomResource {
      * The reason for the enrollment status of the tenancy.
      * 
      */
-    @Export(name="statusReason", type=String.class, parameters={})
+    @Export(name="statusReason", refs={String.class}, tree="[0]")
     private Output<String> statusReason;
 
     /**
@@ -109,7 +109,7 @@ public class EnrollmentStatus extends com.pulumi.resources.CustomResource {
      * The date and time the enrollment status was created, in the format defined by RFC3339.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -123,7 +123,7 @@ public class EnrollmentStatus extends com.pulumi.resources.CustomResource {
      * The date and time the enrollment status was last updated, in the format defined by RFC3339.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

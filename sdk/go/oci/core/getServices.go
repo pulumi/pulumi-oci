@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Services in Oracle Cloud Infrastructure Core service.
@@ -98,6 +99,12 @@ func (o GetServicesResultOutput) ToGetServicesResultOutput() GetServicesResultOu
 
 func (o GetServicesResultOutput) ToGetServicesResultOutputWithContext(ctx context.Context) GetServicesResultOutput {
 	return o
+}
+
+func (o GetServicesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetServicesResult] {
+	return pulumix.Output[GetServicesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetServicesResultOutput) Filters() GetServicesFilterArrayOutput {

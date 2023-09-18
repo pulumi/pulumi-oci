@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Oda Private Endpoint Attachments in Oracle Cloud Infrastructure Digital Assistant service.
@@ -123,6 +124,12 @@ func (o GetOdaPrivateEndpointAttachmentsResultOutput) ToGetOdaPrivateEndpointAtt
 
 func (o GetOdaPrivateEndpointAttachmentsResultOutput) ToGetOdaPrivateEndpointAttachmentsResultOutputWithContext(ctx context.Context) GetOdaPrivateEndpointAttachmentsResultOutput {
 	return o
+}
+
+func (o GetOdaPrivateEndpointAttachmentsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetOdaPrivateEndpointAttachmentsResult] {
+	return pulumix.Output[GetOdaPrivateEndpointAttachmentsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that the ODA private endpoint attachment belongs to.

@@ -15,37 +15,37 @@ import javax.annotation.Nullable;
 
 @ResourceType(type="oci:DataScience/modelArtifactImport:ModelArtifactImport")
 public class ModelArtifactImport extends com.pulumi.resources.CustomResource {
-    @Export(name="artifactSourceType", type=String.class, parameters={})
+    @Export(name="artifactSourceType", refs={String.class}, tree="[0]")
     private Output<String> artifactSourceType;
 
     public Output<String> artifactSourceType() {
         return this.artifactSourceType;
     }
-    @Export(name="destinationBucket", type=String.class, parameters={})
+    @Export(name="destinationBucket", refs={String.class}, tree="[0]")
     private Output<String> destinationBucket;
 
     public Output<String> destinationBucket() {
         return this.destinationBucket;
     }
-    @Export(name="destinationObjectName", type=String.class, parameters={})
+    @Export(name="destinationObjectName", refs={String.class}, tree="[0]")
     private Output<String> destinationObjectName;
 
     public Output<String> destinationObjectName() {
         return this.destinationObjectName;
     }
-    @Export(name="destinationRegion", type=String.class, parameters={})
+    @Export(name="destinationRegion", refs={String.class}, tree="[0]")
     private Output<String> destinationRegion;
 
     public Output<String> destinationRegion() {
         return this.destinationRegion;
     }
-    @Export(name="modelId", type=String.class, parameters={})
+    @Export(name="modelId", refs={String.class}, tree="[0]")
     private Output<String> modelId;
 
     public Output<String> modelId() {
         return this.modelId;
     }
-    @Export(name="namespace", type=String.class, parameters={})
+    @Export(name="namespace", refs={String.class}, tree="[0]")
     private Output<String> namespace;
 
     public Output<String> namespace() {

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -50,6 +51,12 @@ func (i BlockchainPlatformComponentDetailArgs) ToBlockchainPlatformComponentDeta
 	return pulumi.ToOutputWithContext(ctx, i).(BlockchainPlatformComponentDetailOutput)
 }
 
+func (i BlockchainPlatformComponentDetailArgs) ToOutput(ctx context.Context) pulumix.Output[BlockchainPlatformComponentDetail] {
+	return pulumix.Output[BlockchainPlatformComponentDetail]{
+		OutputState: i.ToBlockchainPlatformComponentDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // BlockchainPlatformComponentDetailArrayInput is an input type that accepts BlockchainPlatformComponentDetailArray and BlockchainPlatformComponentDetailArrayOutput values.
 // You can construct a concrete instance of `BlockchainPlatformComponentDetailArrayInput` via:
 //
@@ -75,6 +82,12 @@ func (i BlockchainPlatformComponentDetailArray) ToBlockchainPlatformComponentDet
 	return pulumi.ToOutputWithContext(ctx, i).(BlockchainPlatformComponentDetailArrayOutput)
 }
 
+func (i BlockchainPlatformComponentDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]BlockchainPlatformComponentDetail] {
+	return pulumix.Output[[]BlockchainPlatformComponentDetail]{
+		OutputState: i.ToBlockchainPlatformComponentDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type BlockchainPlatformComponentDetailOutput struct{ *pulumi.OutputState }
 
 func (BlockchainPlatformComponentDetailOutput) ElementType() reflect.Type {
@@ -87,6 +100,12 @@ func (o BlockchainPlatformComponentDetailOutput) ToBlockchainPlatformComponentDe
 
 func (o BlockchainPlatformComponentDetailOutput) ToBlockchainPlatformComponentDetailOutputWithContext(ctx context.Context) BlockchainPlatformComponentDetailOutput {
 	return o
+}
+
+func (o BlockchainPlatformComponentDetailOutput) ToOutput(ctx context.Context) pulumix.Output[BlockchainPlatformComponentDetail] {
+	return pulumix.Output[BlockchainPlatformComponentDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // List of OSNs
@@ -111,6 +130,12 @@ func (o BlockchainPlatformComponentDetailArrayOutput) ToBlockchainPlatformCompon
 
 func (o BlockchainPlatformComponentDetailArrayOutput) ToBlockchainPlatformComponentDetailArrayOutputWithContext(ctx context.Context) BlockchainPlatformComponentDetailArrayOutput {
 	return o
+}
+
+func (o BlockchainPlatformComponentDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]BlockchainPlatformComponentDetail] {
+	return pulumix.Output[[]BlockchainPlatformComponentDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o BlockchainPlatformComponentDetailArrayOutput) Index(i pulumi.IntInput) BlockchainPlatformComponentDetailOutput {
@@ -164,6 +189,12 @@ func (i BlockchainPlatformComponentDetailOsnArgs) ToBlockchainPlatformComponentD
 	return pulumi.ToOutputWithContext(ctx, i).(BlockchainPlatformComponentDetailOsnOutput)
 }
 
+func (i BlockchainPlatformComponentDetailOsnArgs) ToOutput(ctx context.Context) pulumix.Output[BlockchainPlatformComponentDetailOsn] {
+	return pulumix.Output[BlockchainPlatformComponentDetailOsn]{
+		OutputState: i.ToBlockchainPlatformComponentDetailOsnOutputWithContext(ctx).OutputState,
+	}
+}
+
 // BlockchainPlatformComponentDetailOsnArrayInput is an input type that accepts BlockchainPlatformComponentDetailOsnArray and BlockchainPlatformComponentDetailOsnArrayOutput values.
 // You can construct a concrete instance of `BlockchainPlatformComponentDetailOsnArrayInput` via:
 //
@@ -189,6 +220,12 @@ func (i BlockchainPlatformComponentDetailOsnArray) ToBlockchainPlatformComponent
 	return pulumi.ToOutputWithContext(ctx, i).(BlockchainPlatformComponentDetailOsnArrayOutput)
 }
 
+func (i BlockchainPlatformComponentDetailOsnArray) ToOutput(ctx context.Context) pulumix.Output[[]BlockchainPlatformComponentDetailOsn] {
+	return pulumix.Output[[]BlockchainPlatformComponentDetailOsn]{
+		OutputState: i.ToBlockchainPlatformComponentDetailOsnArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type BlockchainPlatformComponentDetailOsnOutput struct{ *pulumi.OutputState }
 
 func (BlockchainPlatformComponentDetailOsnOutput) ElementType() reflect.Type {
@@ -201,6 +238,12 @@ func (o BlockchainPlatformComponentDetailOsnOutput) ToBlockchainPlatformComponen
 
 func (o BlockchainPlatformComponentDetailOsnOutput) ToBlockchainPlatformComponentDetailOsnOutputWithContext(ctx context.Context) BlockchainPlatformComponentDetailOsnOutput {
 	return o
+}
+
+func (o BlockchainPlatformComponentDetailOsnOutput) ToOutput(ctx context.Context) pulumix.Output[BlockchainPlatformComponentDetailOsn] {
+	return pulumix.Output[BlockchainPlatformComponentDetailOsn]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Availability Domain of peer
@@ -237,6 +280,12 @@ func (o BlockchainPlatformComponentDetailOsnArrayOutput) ToBlockchainPlatformCom
 
 func (o BlockchainPlatformComponentDetailOsnArrayOutput) ToBlockchainPlatformComponentDetailOsnArrayOutputWithContext(ctx context.Context) BlockchainPlatformComponentDetailOsnArrayOutput {
 	return o
+}
+
+func (o BlockchainPlatformComponentDetailOsnArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]BlockchainPlatformComponentDetailOsn] {
+	return pulumix.Output[[]BlockchainPlatformComponentDetailOsn]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o BlockchainPlatformComponentDetailOsnArrayOutput) Index(i pulumi.IntInput) BlockchainPlatformComponentDetailOsnOutput {
@@ -278,6 +327,12 @@ func (i BlockchainPlatformComponentDetailOsnOcpuAllocationParamArgs) ToBlockchai
 	return pulumi.ToOutputWithContext(ctx, i).(BlockchainPlatformComponentDetailOsnOcpuAllocationParamOutput)
 }
 
+func (i BlockchainPlatformComponentDetailOsnOcpuAllocationParamArgs) ToOutput(ctx context.Context) pulumix.Output[BlockchainPlatformComponentDetailOsnOcpuAllocationParam] {
+	return pulumix.Output[BlockchainPlatformComponentDetailOsnOcpuAllocationParam]{
+		OutputState: i.ToBlockchainPlatformComponentDetailOsnOcpuAllocationParamOutputWithContext(ctx).OutputState,
+	}
+}
+
 // BlockchainPlatformComponentDetailOsnOcpuAllocationParamArrayInput is an input type that accepts BlockchainPlatformComponentDetailOsnOcpuAllocationParamArray and BlockchainPlatformComponentDetailOsnOcpuAllocationParamArrayOutput values.
 // You can construct a concrete instance of `BlockchainPlatformComponentDetailOsnOcpuAllocationParamArrayInput` via:
 //
@@ -303,6 +358,12 @@ func (i BlockchainPlatformComponentDetailOsnOcpuAllocationParamArray) ToBlockcha
 	return pulumi.ToOutputWithContext(ctx, i).(BlockchainPlatformComponentDetailOsnOcpuAllocationParamArrayOutput)
 }
 
+func (i BlockchainPlatformComponentDetailOsnOcpuAllocationParamArray) ToOutput(ctx context.Context) pulumix.Output[[]BlockchainPlatformComponentDetailOsnOcpuAllocationParam] {
+	return pulumix.Output[[]BlockchainPlatformComponentDetailOsnOcpuAllocationParam]{
+		OutputState: i.ToBlockchainPlatformComponentDetailOsnOcpuAllocationParamArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type BlockchainPlatformComponentDetailOsnOcpuAllocationParamOutput struct{ *pulumi.OutputState }
 
 func (BlockchainPlatformComponentDetailOsnOcpuAllocationParamOutput) ElementType() reflect.Type {
@@ -315,6 +376,12 @@ func (o BlockchainPlatformComponentDetailOsnOcpuAllocationParamOutput) ToBlockch
 
 func (o BlockchainPlatformComponentDetailOsnOcpuAllocationParamOutput) ToBlockchainPlatformComponentDetailOsnOcpuAllocationParamOutputWithContext(ctx context.Context) BlockchainPlatformComponentDetailOsnOcpuAllocationParamOutput {
 	return o
+}
+
+func (o BlockchainPlatformComponentDetailOsnOcpuAllocationParamOutput) ToOutput(ctx context.Context) pulumix.Output[BlockchainPlatformComponentDetailOsnOcpuAllocationParam] {
+	return pulumix.Output[BlockchainPlatformComponentDetailOsnOcpuAllocationParam]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Number of OCPU allocation
@@ -336,6 +403,12 @@ func (o BlockchainPlatformComponentDetailOsnOcpuAllocationParamArrayOutput) ToBl
 
 func (o BlockchainPlatformComponentDetailOsnOcpuAllocationParamArrayOutput) ToBlockchainPlatformComponentDetailOsnOcpuAllocationParamArrayOutputWithContext(ctx context.Context) BlockchainPlatformComponentDetailOsnOcpuAllocationParamArrayOutput {
 	return o
+}
+
+func (o BlockchainPlatformComponentDetailOsnOcpuAllocationParamArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]BlockchainPlatformComponentDetailOsnOcpuAllocationParam] {
+	return pulumix.Output[[]BlockchainPlatformComponentDetailOsnOcpuAllocationParam]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o BlockchainPlatformComponentDetailOsnOcpuAllocationParamArrayOutput) Index(i pulumi.IntInput) BlockchainPlatformComponentDetailOsnOcpuAllocationParamOutput {
@@ -401,6 +474,12 @@ func (i BlockchainPlatformComponentDetailPeerArgs) ToBlockchainPlatformComponent
 	return pulumi.ToOutputWithContext(ctx, i).(BlockchainPlatformComponentDetailPeerOutput)
 }
 
+func (i BlockchainPlatformComponentDetailPeerArgs) ToOutput(ctx context.Context) pulumix.Output[BlockchainPlatformComponentDetailPeer] {
+	return pulumix.Output[BlockchainPlatformComponentDetailPeer]{
+		OutputState: i.ToBlockchainPlatformComponentDetailPeerOutputWithContext(ctx).OutputState,
+	}
+}
+
 // BlockchainPlatformComponentDetailPeerArrayInput is an input type that accepts BlockchainPlatformComponentDetailPeerArray and BlockchainPlatformComponentDetailPeerArrayOutput values.
 // You can construct a concrete instance of `BlockchainPlatformComponentDetailPeerArrayInput` via:
 //
@@ -426,6 +505,12 @@ func (i BlockchainPlatformComponentDetailPeerArray) ToBlockchainPlatformComponen
 	return pulumi.ToOutputWithContext(ctx, i).(BlockchainPlatformComponentDetailPeerArrayOutput)
 }
 
+func (i BlockchainPlatformComponentDetailPeerArray) ToOutput(ctx context.Context) pulumix.Output[[]BlockchainPlatformComponentDetailPeer] {
+	return pulumix.Output[[]BlockchainPlatformComponentDetailPeer]{
+		OutputState: i.ToBlockchainPlatformComponentDetailPeerArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type BlockchainPlatformComponentDetailPeerOutput struct{ *pulumi.OutputState }
 
 func (BlockchainPlatformComponentDetailPeerOutput) ElementType() reflect.Type {
@@ -438,6 +523,12 @@ func (o BlockchainPlatformComponentDetailPeerOutput) ToBlockchainPlatformCompone
 
 func (o BlockchainPlatformComponentDetailPeerOutput) ToBlockchainPlatformComponentDetailPeerOutputWithContext(ctx context.Context) BlockchainPlatformComponentDetailPeerOutput {
 	return o
+}
+
+func (o BlockchainPlatformComponentDetailPeerOutput) ToOutput(ctx context.Context) pulumix.Output[BlockchainPlatformComponentDetailPeer] {
+	return pulumix.Output[BlockchainPlatformComponentDetailPeer]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Availability Domain of peer
@@ -491,6 +582,12 @@ func (o BlockchainPlatformComponentDetailPeerArrayOutput) ToBlockchainPlatformCo
 	return o
 }
 
+func (o BlockchainPlatformComponentDetailPeerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]BlockchainPlatformComponentDetailPeer] {
+	return pulumix.Output[[]BlockchainPlatformComponentDetailPeer]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o BlockchainPlatformComponentDetailPeerArrayOutput) Index(i pulumi.IntInput) BlockchainPlatformComponentDetailPeerOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) BlockchainPlatformComponentDetailPeer {
 		return vs[0].([]BlockchainPlatformComponentDetailPeer)[vs[1].(int)]
@@ -530,6 +627,12 @@ func (i BlockchainPlatformComponentDetailPeerOcpuAllocationParamArgs) ToBlockcha
 	return pulumi.ToOutputWithContext(ctx, i).(BlockchainPlatformComponentDetailPeerOcpuAllocationParamOutput)
 }
 
+func (i BlockchainPlatformComponentDetailPeerOcpuAllocationParamArgs) ToOutput(ctx context.Context) pulumix.Output[BlockchainPlatformComponentDetailPeerOcpuAllocationParam] {
+	return pulumix.Output[BlockchainPlatformComponentDetailPeerOcpuAllocationParam]{
+		OutputState: i.ToBlockchainPlatformComponentDetailPeerOcpuAllocationParamOutputWithContext(ctx).OutputState,
+	}
+}
+
 // BlockchainPlatformComponentDetailPeerOcpuAllocationParamArrayInput is an input type that accepts BlockchainPlatformComponentDetailPeerOcpuAllocationParamArray and BlockchainPlatformComponentDetailPeerOcpuAllocationParamArrayOutput values.
 // You can construct a concrete instance of `BlockchainPlatformComponentDetailPeerOcpuAllocationParamArrayInput` via:
 //
@@ -555,6 +658,12 @@ func (i BlockchainPlatformComponentDetailPeerOcpuAllocationParamArray) ToBlockch
 	return pulumi.ToOutputWithContext(ctx, i).(BlockchainPlatformComponentDetailPeerOcpuAllocationParamArrayOutput)
 }
 
+func (i BlockchainPlatformComponentDetailPeerOcpuAllocationParamArray) ToOutput(ctx context.Context) pulumix.Output[[]BlockchainPlatformComponentDetailPeerOcpuAllocationParam] {
+	return pulumix.Output[[]BlockchainPlatformComponentDetailPeerOcpuAllocationParam]{
+		OutputState: i.ToBlockchainPlatformComponentDetailPeerOcpuAllocationParamArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type BlockchainPlatformComponentDetailPeerOcpuAllocationParamOutput struct{ *pulumi.OutputState }
 
 func (BlockchainPlatformComponentDetailPeerOcpuAllocationParamOutput) ElementType() reflect.Type {
@@ -567,6 +676,12 @@ func (o BlockchainPlatformComponentDetailPeerOcpuAllocationParamOutput) ToBlockc
 
 func (o BlockchainPlatformComponentDetailPeerOcpuAllocationParamOutput) ToBlockchainPlatformComponentDetailPeerOcpuAllocationParamOutputWithContext(ctx context.Context) BlockchainPlatformComponentDetailPeerOcpuAllocationParamOutput {
 	return o
+}
+
+func (o BlockchainPlatformComponentDetailPeerOcpuAllocationParamOutput) ToOutput(ctx context.Context) pulumix.Output[BlockchainPlatformComponentDetailPeerOcpuAllocationParam] {
+	return pulumix.Output[BlockchainPlatformComponentDetailPeerOcpuAllocationParam]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Number of OCPU allocation
@@ -588,6 +703,12 @@ func (o BlockchainPlatformComponentDetailPeerOcpuAllocationParamArrayOutput) ToB
 
 func (o BlockchainPlatformComponentDetailPeerOcpuAllocationParamArrayOutput) ToBlockchainPlatformComponentDetailPeerOcpuAllocationParamArrayOutputWithContext(ctx context.Context) BlockchainPlatformComponentDetailPeerOcpuAllocationParamArrayOutput {
 	return o
+}
+
+func (o BlockchainPlatformComponentDetailPeerOcpuAllocationParamArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]BlockchainPlatformComponentDetailPeerOcpuAllocationParam] {
+	return pulumix.Output[[]BlockchainPlatformComponentDetailPeerOcpuAllocationParam]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o BlockchainPlatformComponentDetailPeerOcpuAllocationParamArrayOutput) Index(i pulumi.IntInput) BlockchainPlatformComponentDetailPeerOcpuAllocationParamOutput {
@@ -637,6 +758,12 @@ func (i BlockchainPlatformHostOcpuUtilizationInfoArgs) ToBlockchainPlatformHostO
 	return pulumi.ToOutputWithContext(ctx, i).(BlockchainPlatformHostOcpuUtilizationInfoOutput)
 }
 
+func (i BlockchainPlatformHostOcpuUtilizationInfoArgs) ToOutput(ctx context.Context) pulumix.Output[BlockchainPlatformHostOcpuUtilizationInfo] {
+	return pulumix.Output[BlockchainPlatformHostOcpuUtilizationInfo]{
+		OutputState: i.ToBlockchainPlatformHostOcpuUtilizationInfoOutputWithContext(ctx).OutputState,
+	}
+}
+
 // BlockchainPlatformHostOcpuUtilizationInfoArrayInput is an input type that accepts BlockchainPlatformHostOcpuUtilizationInfoArray and BlockchainPlatformHostOcpuUtilizationInfoArrayOutput values.
 // You can construct a concrete instance of `BlockchainPlatformHostOcpuUtilizationInfoArrayInput` via:
 //
@@ -662,6 +789,12 @@ func (i BlockchainPlatformHostOcpuUtilizationInfoArray) ToBlockchainPlatformHost
 	return pulumi.ToOutputWithContext(ctx, i).(BlockchainPlatformHostOcpuUtilizationInfoArrayOutput)
 }
 
+func (i BlockchainPlatformHostOcpuUtilizationInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]BlockchainPlatformHostOcpuUtilizationInfo] {
+	return pulumix.Output[[]BlockchainPlatformHostOcpuUtilizationInfo]{
+		OutputState: i.ToBlockchainPlatformHostOcpuUtilizationInfoArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type BlockchainPlatformHostOcpuUtilizationInfoOutput struct{ *pulumi.OutputState }
 
 func (BlockchainPlatformHostOcpuUtilizationInfoOutput) ElementType() reflect.Type {
@@ -674,6 +807,12 @@ func (o BlockchainPlatformHostOcpuUtilizationInfoOutput) ToBlockchainPlatformHos
 
 func (o BlockchainPlatformHostOcpuUtilizationInfoOutput) ToBlockchainPlatformHostOcpuUtilizationInfoOutputWithContext(ctx context.Context) BlockchainPlatformHostOcpuUtilizationInfoOutput {
 	return o
+}
+
+func (o BlockchainPlatformHostOcpuUtilizationInfoOutput) ToOutput(ctx context.Context) pulumix.Output[BlockchainPlatformHostOcpuUtilizationInfo] {
+	return pulumix.Output[BlockchainPlatformHostOcpuUtilizationInfo]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Host name of VM
@@ -703,6 +842,12 @@ func (o BlockchainPlatformHostOcpuUtilizationInfoArrayOutput) ToBlockchainPlatfo
 
 func (o BlockchainPlatformHostOcpuUtilizationInfoArrayOutput) ToBlockchainPlatformHostOcpuUtilizationInfoArrayOutputWithContext(ctx context.Context) BlockchainPlatformHostOcpuUtilizationInfoArrayOutput {
 	return o
+}
+
+func (o BlockchainPlatformHostOcpuUtilizationInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]BlockchainPlatformHostOcpuUtilizationInfo] {
+	return pulumix.Output[[]BlockchainPlatformHostOcpuUtilizationInfo]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o BlockchainPlatformHostOcpuUtilizationInfoArrayOutput) Index(i pulumi.IntInput) BlockchainPlatformHostOcpuUtilizationInfoOutput {
@@ -752,6 +897,12 @@ func (i BlockchainPlatformReplicasArgs) ToBlockchainPlatformReplicasOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(BlockchainPlatformReplicasOutput)
 }
 
+func (i BlockchainPlatformReplicasArgs) ToOutput(ctx context.Context) pulumix.Output[BlockchainPlatformReplicas] {
+	return pulumix.Output[BlockchainPlatformReplicas]{
+		OutputState: i.ToBlockchainPlatformReplicasOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i BlockchainPlatformReplicasArgs) ToBlockchainPlatformReplicasPtrOutput() BlockchainPlatformReplicasPtrOutput {
 	return i.ToBlockchainPlatformReplicasPtrOutputWithContext(context.Background())
 }
@@ -793,6 +944,12 @@ func (i *blockchainPlatformReplicasPtrType) ToBlockchainPlatformReplicasPtrOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(BlockchainPlatformReplicasPtrOutput)
 }
 
+func (i *blockchainPlatformReplicasPtrType) ToOutput(ctx context.Context) pulumix.Output[*BlockchainPlatformReplicas] {
+	return pulumix.Output[*BlockchainPlatformReplicas]{
+		OutputState: i.ToBlockchainPlatformReplicasPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type BlockchainPlatformReplicasOutput struct{ *pulumi.OutputState }
 
 func (BlockchainPlatformReplicasOutput) ElementType() reflect.Type {
@@ -815,6 +972,12 @@ func (o BlockchainPlatformReplicasOutput) ToBlockchainPlatformReplicasPtrOutputW
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v BlockchainPlatformReplicas) *BlockchainPlatformReplicas {
 		return &v
 	}).(BlockchainPlatformReplicasPtrOutput)
+}
+
+func (o BlockchainPlatformReplicasOutput) ToOutput(ctx context.Context) pulumix.Output[BlockchainPlatformReplicas] {
+	return pulumix.Output[BlockchainPlatformReplicas]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Number of CA replicas
@@ -844,6 +1007,12 @@ func (o BlockchainPlatformReplicasPtrOutput) ToBlockchainPlatformReplicasPtrOutp
 
 func (o BlockchainPlatformReplicasPtrOutput) ToBlockchainPlatformReplicasPtrOutputWithContext(ctx context.Context) BlockchainPlatformReplicasPtrOutput {
 	return o
+}
+
+func (o BlockchainPlatformReplicasPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*BlockchainPlatformReplicas] {
+	return pulumix.Output[*BlockchainPlatformReplicas]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o BlockchainPlatformReplicasPtrOutput) Elem() BlockchainPlatformReplicasOutput {
@@ -925,6 +1094,12 @@ func (i OsnOcpuAllocationParamArgs) ToOsnOcpuAllocationParamOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(OsnOcpuAllocationParamOutput)
 }
 
+func (i OsnOcpuAllocationParamArgs) ToOutput(ctx context.Context) pulumix.Output[OsnOcpuAllocationParam] {
+	return pulumix.Output[OsnOcpuAllocationParam]{
+		OutputState: i.ToOsnOcpuAllocationParamOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i OsnOcpuAllocationParamArgs) ToOsnOcpuAllocationParamPtrOutput() OsnOcpuAllocationParamPtrOutput {
 	return i.ToOsnOcpuAllocationParamPtrOutputWithContext(context.Background())
 }
@@ -966,6 +1141,12 @@ func (i *osnOcpuAllocationParamPtrType) ToOsnOcpuAllocationParamPtrOutputWithCon
 	return pulumi.ToOutputWithContext(ctx, i).(OsnOcpuAllocationParamPtrOutput)
 }
 
+func (i *osnOcpuAllocationParamPtrType) ToOutput(ctx context.Context) pulumix.Output[*OsnOcpuAllocationParam] {
+	return pulumix.Output[*OsnOcpuAllocationParam]{
+		OutputState: i.ToOsnOcpuAllocationParamPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type OsnOcpuAllocationParamOutput struct{ *pulumi.OutputState }
 
 func (OsnOcpuAllocationParamOutput) ElementType() reflect.Type {
@@ -990,6 +1171,12 @@ func (o OsnOcpuAllocationParamOutput) ToOsnOcpuAllocationParamPtrOutputWithConte
 	}).(OsnOcpuAllocationParamPtrOutput)
 }
 
+func (o OsnOcpuAllocationParamOutput) ToOutput(ctx context.Context) pulumix.Output[OsnOcpuAllocationParam] {
+	return pulumix.Output[OsnOcpuAllocationParam]{
+		OutputState: o.OutputState,
+	}
+}
+
 // (Updatable) Number of OCPU allocation
 //
 // ** IMPORTANT **
@@ -1010,6 +1197,12 @@ func (o OsnOcpuAllocationParamPtrOutput) ToOsnOcpuAllocationParamPtrOutput() Osn
 
 func (o OsnOcpuAllocationParamPtrOutput) ToOsnOcpuAllocationParamPtrOutputWithContext(ctx context.Context) OsnOcpuAllocationParamPtrOutput {
 	return o
+}
+
+func (o OsnOcpuAllocationParamPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*OsnOcpuAllocationParam] {
+	return pulumix.Output[*OsnOcpuAllocationParam]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o OsnOcpuAllocationParamPtrOutput) Elem() OsnOcpuAllocationParamOutput {
@@ -1068,6 +1261,12 @@ func (i PeerOcpuAllocationParamArgs) ToPeerOcpuAllocationParamOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(PeerOcpuAllocationParamOutput)
 }
 
+func (i PeerOcpuAllocationParamArgs) ToOutput(ctx context.Context) pulumix.Output[PeerOcpuAllocationParam] {
+	return pulumix.Output[PeerOcpuAllocationParam]{
+		OutputState: i.ToPeerOcpuAllocationParamOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i PeerOcpuAllocationParamArgs) ToPeerOcpuAllocationParamPtrOutput() PeerOcpuAllocationParamPtrOutput {
 	return i.ToPeerOcpuAllocationParamPtrOutputWithContext(context.Background())
 }
@@ -1109,6 +1308,12 @@ func (i *peerOcpuAllocationParamPtrType) ToPeerOcpuAllocationParamPtrOutputWithC
 	return pulumi.ToOutputWithContext(ctx, i).(PeerOcpuAllocationParamPtrOutput)
 }
 
+func (i *peerOcpuAllocationParamPtrType) ToOutput(ctx context.Context) pulumix.Output[*PeerOcpuAllocationParam] {
+	return pulumix.Output[*PeerOcpuAllocationParam]{
+		OutputState: i.ToPeerOcpuAllocationParamPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type PeerOcpuAllocationParamOutput struct{ *pulumi.OutputState }
 
 func (PeerOcpuAllocationParamOutput) ElementType() reflect.Type {
@@ -1133,6 +1338,12 @@ func (o PeerOcpuAllocationParamOutput) ToPeerOcpuAllocationParamPtrOutputWithCon
 	}).(PeerOcpuAllocationParamPtrOutput)
 }
 
+func (o PeerOcpuAllocationParamOutput) ToOutput(ctx context.Context) pulumix.Output[PeerOcpuAllocationParam] {
+	return pulumix.Output[PeerOcpuAllocationParam]{
+		OutputState: o.OutputState,
+	}
+}
+
 // (Updatable) Number of OCPU allocation
 func (o PeerOcpuAllocationParamOutput) OcpuAllocationNumber() pulumi.Float64Output {
 	return o.ApplyT(func(v PeerOcpuAllocationParam) float64 { return v.OcpuAllocationNumber }).(pulumi.Float64Output)
@@ -1150,6 +1361,12 @@ func (o PeerOcpuAllocationParamPtrOutput) ToPeerOcpuAllocationParamPtrOutput() P
 
 func (o PeerOcpuAllocationParamPtrOutput) ToPeerOcpuAllocationParamPtrOutputWithContext(ctx context.Context) PeerOcpuAllocationParamPtrOutput {
 	return o
+}
+
+func (o PeerOcpuAllocationParamPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*PeerOcpuAllocationParam] {
+	return pulumix.Output[*PeerOcpuAllocationParam]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o PeerOcpuAllocationParamPtrOutput) Elem() PeerOcpuAllocationParamOutput {
@@ -1209,6 +1426,12 @@ func (i GetBlockchainPlatformComponentDetailArgs) ToGetBlockchainPlatformCompone
 	return pulumi.ToOutputWithContext(ctx, i).(GetBlockchainPlatformComponentDetailOutput)
 }
 
+func (i GetBlockchainPlatformComponentDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetBlockchainPlatformComponentDetail] {
+	return pulumix.Output[GetBlockchainPlatformComponentDetail]{
+		OutputState: i.ToGetBlockchainPlatformComponentDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetBlockchainPlatformComponentDetailArrayInput is an input type that accepts GetBlockchainPlatformComponentDetailArray and GetBlockchainPlatformComponentDetailArrayOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformComponentDetailArrayInput` via:
 //
@@ -1234,6 +1457,12 @@ func (i GetBlockchainPlatformComponentDetailArray) ToGetBlockchainPlatformCompon
 	return pulumi.ToOutputWithContext(ctx, i).(GetBlockchainPlatformComponentDetailArrayOutput)
 }
 
+func (i GetBlockchainPlatformComponentDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBlockchainPlatformComponentDetail] {
+	return pulumix.Output[[]GetBlockchainPlatformComponentDetail]{
+		OutputState: i.ToGetBlockchainPlatformComponentDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetBlockchainPlatformComponentDetailOutput struct{ *pulumi.OutputState }
 
 func (GetBlockchainPlatformComponentDetailOutput) ElementType() reflect.Type {
@@ -1246,6 +1475,12 @@ func (o GetBlockchainPlatformComponentDetailOutput) ToGetBlockchainPlatformCompo
 
 func (o GetBlockchainPlatformComponentDetailOutput) ToGetBlockchainPlatformComponentDetailOutputWithContext(ctx context.Context) GetBlockchainPlatformComponentDetailOutput {
 	return o
+}
+
+func (o GetBlockchainPlatformComponentDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetBlockchainPlatformComponentDetail] {
+	return pulumix.Output[GetBlockchainPlatformComponentDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // List of OSNs
@@ -1272,6 +1507,12 @@ func (o GetBlockchainPlatformComponentDetailArrayOutput) ToGetBlockchainPlatform
 
 func (o GetBlockchainPlatformComponentDetailArrayOutput) ToGetBlockchainPlatformComponentDetailArrayOutputWithContext(ctx context.Context) GetBlockchainPlatformComponentDetailArrayOutput {
 	return o
+}
+
+func (o GetBlockchainPlatformComponentDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBlockchainPlatformComponentDetail] {
+	return pulumix.Output[[]GetBlockchainPlatformComponentDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetBlockchainPlatformComponentDetailArrayOutput) Index(i pulumi.IntInput) GetBlockchainPlatformComponentDetailOutput {
@@ -1325,6 +1566,12 @@ func (i GetBlockchainPlatformComponentDetailOsnArgs) ToGetBlockchainPlatformComp
 	return pulumi.ToOutputWithContext(ctx, i).(GetBlockchainPlatformComponentDetailOsnOutput)
 }
 
+func (i GetBlockchainPlatformComponentDetailOsnArgs) ToOutput(ctx context.Context) pulumix.Output[GetBlockchainPlatformComponentDetailOsn] {
+	return pulumix.Output[GetBlockchainPlatformComponentDetailOsn]{
+		OutputState: i.ToGetBlockchainPlatformComponentDetailOsnOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetBlockchainPlatformComponentDetailOsnArrayInput is an input type that accepts GetBlockchainPlatformComponentDetailOsnArray and GetBlockchainPlatformComponentDetailOsnArrayOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformComponentDetailOsnArrayInput` via:
 //
@@ -1350,6 +1597,12 @@ func (i GetBlockchainPlatformComponentDetailOsnArray) ToGetBlockchainPlatformCom
 	return pulumi.ToOutputWithContext(ctx, i).(GetBlockchainPlatformComponentDetailOsnArrayOutput)
 }
 
+func (i GetBlockchainPlatformComponentDetailOsnArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBlockchainPlatformComponentDetailOsn] {
+	return pulumix.Output[[]GetBlockchainPlatformComponentDetailOsn]{
+		OutputState: i.ToGetBlockchainPlatformComponentDetailOsnArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetBlockchainPlatformComponentDetailOsnOutput struct{ *pulumi.OutputState }
 
 func (GetBlockchainPlatformComponentDetailOsnOutput) ElementType() reflect.Type {
@@ -1362,6 +1615,12 @@ func (o GetBlockchainPlatformComponentDetailOsnOutput) ToGetBlockchainPlatformCo
 
 func (o GetBlockchainPlatformComponentDetailOsnOutput) ToGetBlockchainPlatformComponentDetailOsnOutputWithContext(ctx context.Context) GetBlockchainPlatformComponentDetailOsnOutput {
 	return o
+}
+
+func (o GetBlockchainPlatformComponentDetailOsnOutput) ToOutput(ctx context.Context) pulumix.Output[GetBlockchainPlatformComponentDetailOsn] {
+	return pulumix.Output[GetBlockchainPlatformComponentDetailOsn]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Availability Domain of peer
@@ -1398,6 +1657,12 @@ func (o GetBlockchainPlatformComponentDetailOsnArrayOutput) ToGetBlockchainPlatf
 
 func (o GetBlockchainPlatformComponentDetailOsnArrayOutput) ToGetBlockchainPlatformComponentDetailOsnArrayOutputWithContext(ctx context.Context) GetBlockchainPlatformComponentDetailOsnArrayOutput {
 	return o
+}
+
+func (o GetBlockchainPlatformComponentDetailOsnArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBlockchainPlatformComponentDetailOsn] {
+	return pulumix.Output[[]GetBlockchainPlatformComponentDetailOsn]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetBlockchainPlatformComponentDetailOsnArrayOutput) Index(i pulumi.IntInput) GetBlockchainPlatformComponentDetailOsnOutput {
@@ -1439,6 +1704,12 @@ func (i GetBlockchainPlatformComponentDetailOsnOcpuAllocationParamArgs) ToGetBlo
 	return pulumi.ToOutputWithContext(ctx, i).(GetBlockchainPlatformComponentDetailOsnOcpuAllocationParamOutput)
 }
 
+func (i GetBlockchainPlatformComponentDetailOsnOcpuAllocationParamArgs) ToOutput(ctx context.Context) pulumix.Output[GetBlockchainPlatformComponentDetailOsnOcpuAllocationParam] {
+	return pulumix.Output[GetBlockchainPlatformComponentDetailOsnOcpuAllocationParam]{
+		OutputState: i.ToGetBlockchainPlatformComponentDetailOsnOcpuAllocationParamOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetBlockchainPlatformComponentDetailOsnOcpuAllocationParamArrayInput is an input type that accepts GetBlockchainPlatformComponentDetailOsnOcpuAllocationParamArray and GetBlockchainPlatformComponentDetailOsnOcpuAllocationParamArrayOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformComponentDetailOsnOcpuAllocationParamArrayInput` via:
 //
@@ -1464,6 +1735,12 @@ func (i GetBlockchainPlatformComponentDetailOsnOcpuAllocationParamArray) ToGetBl
 	return pulumi.ToOutputWithContext(ctx, i).(GetBlockchainPlatformComponentDetailOsnOcpuAllocationParamArrayOutput)
 }
 
+func (i GetBlockchainPlatformComponentDetailOsnOcpuAllocationParamArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBlockchainPlatformComponentDetailOsnOcpuAllocationParam] {
+	return pulumix.Output[[]GetBlockchainPlatformComponentDetailOsnOcpuAllocationParam]{
+		OutputState: i.ToGetBlockchainPlatformComponentDetailOsnOcpuAllocationParamArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetBlockchainPlatformComponentDetailOsnOcpuAllocationParamOutput struct{ *pulumi.OutputState }
 
 func (GetBlockchainPlatformComponentDetailOsnOcpuAllocationParamOutput) ElementType() reflect.Type {
@@ -1476,6 +1753,12 @@ func (o GetBlockchainPlatformComponentDetailOsnOcpuAllocationParamOutput) ToGetB
 
 func (o GetBlockchainPlatformComponentDetailOsnOcpuAllocationParamOutput) ToGetBlockchainPlatformComponentDetailOsnOcpuAllocationParamOutputWithContext(ctx context.Context) GetBlockchainPlatformComponentDetailOsnOcpuAllocationParamOutput {
 	return o
+}
+
+func (o GetBlockchainPlatformComponentDetailOsnOcpuAllocationParamOutput) ToOutput(ctx context.Context) pulumix.Output[GetBlockchainPlatformComponentDetailOsnOcpuAllocationParam] {
+	return pulumix.Output[GetBlockchainPlatformComponentDetailOsnOcpuAllocationParam]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Number of OCPU allocation
@@ -1497,6 +1780,12 @@ func (o GetBlockchainPlatformComponentDetailOsnOcpuAllocationParamArrayOutput) T
 
 func (o GetBlockchainPlatformComponentDetailOsnOcpuAllocationParamArrayOutput) ToGetBlockchainPlatformComponentDetailOsnOcpuAllocationParamArrayOutputWithContext(ctx context.Context) GetBlockchainPlatformComponentDetailOsnOcpuAllocationParamArrayOutput {
 	return o
+}
+
+func (o GetBlockchainPlatformComponentDetailOsnOcpuAllocationParamArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBlockchainPlatformComponentDetailOsnOcpuAllocationParam] {
+	return pulumix.Output[[]GetBlockchainPlatformComponentDetailOsnOcpuAllocationParam]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetBlockchainPlatformComponentDetailOsnOcpuAllocationParamArrayOutput) Index(i pulumi.IntInput) GetBlockchainPlatformComponentDetailOsnOcpuAllocationParamOutput {
@@ -1562,6 +1851,12 @@ func (i GetBlockchainPlatformComponentDetailPeerArgs) ToGetBlockchainPlatformCom
 	return pulumi.ToOutputWithContext(ctx, i).(GetBlockchainPlatformComponentDetailPeerOutput)
 }
 
+func (i GetBlockchainPlatformComponentDetailPeerArgs) ToOutput(ctx context.Context) pulumix.Output[GetBlockchainPlatformComponentDetailPeer] {
+	return pulumix.Output[GetBlockchainPlatformComponentDetailPeer]{
+		OutputState: i.ToGetBlockchainPlatformComponentDetailPeerOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetBlockchainPlatformComponentDetailPeerArrayInput is an input type that accepts GetBlockchainPlatformComponentDetailPeerArray and GetBlockchainPlatformComponentDetailPeerArrayOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformComponentDetailPeerArrayInput` via:
 //
@@ -1587,6 +1882,12 @@ func (i GetBlockchainPlatformComponentDetailPeerArray) ToGetBlockchainPlatformCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetBlockchainPlatformComponentDetailPeerArrayOutput)
 }
 
+func (i GetBlockchainPlatformComponentDetailPeerArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBlockchainPlatformComponentDetailPeer] {
+	return pulumix.Output[[]GetBlockchainPlatformComponentDetailPeer]{
+		OutputState: i.ToGetBlockchainPlatformComponentDetailPeerArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetBlockchainPlatformComponentDetailPeerOutput struct{ *pulumi.OutputState }
 
 func (GetBlockchainPlatformComponentDetailPeerOutput) ElementType() reflect.Type {
@@ -1599,6 +1900,12 @@ func (o GetBlockchainPlatformComponentDetailPeerOutput) ToGetBlockchainPlatformC
 
 func (o GetBlockchainPlatformComponentDetailPeerOutput) ToGetBlockchainPlatformComponentDetailPeerOutputWithContext(ctx context.Context) GetBlockchainPlatformComponentDetailPeerOutput {
 	return o
+}
+
+func (o GetBlockchainPlatformComponentDetailPeerOutput) ToOutput(ctx context.Context) pulumix.Output[GetBlockchainPlatformComponentDetailPeer] {
+	return pulumix.Output[GetBlockchainPlatformComponentDetailPeer]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Availability Domain of peer
@@ -1652,6 +1959,12 @@ func (o GetBlockchainPlatformComponentDetailPeerArrayOutput) ToGetBlockchainPlat
 	return o
 }
 
+func (o GetBlockchainPlatformComponentDetailPeerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBlockchainPlatformComponentDetailPeer] {
+	return pulumix.Output[[]GetBlockchainPlatformComponentDetailPeer]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetBlockchainPlatformComponentDetailPeerArrayOutput) Index(i pulumi.IntInput) GetBlockchainPlatformComponentDetailPeerOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBlockchainPlatformComponentDetailPeer {
 		return vs[0].([]GetBlockchainPlatformComponentDetailPeer)[vs[1].(int)]
@@ -1691,6 +2004,12 @@ func (i GetBlockchainPlatformComponentDetailPeerOcpuAllocationParamArgs) ToGetBl
 	return pulumi.ToOutputWithContext(ctx, i).(GetBlockchainPlatformComponentDetailPeerOcpuAllocationParamOutput)
 }
 
+func (i GetBlockchainPlatformComponentDetailPeerOcpuAllocationParamArgs) ToOutput(ctx context.Context) pulumix.Output[GetBlockchainPlatformComponentDetailPeerOcpuAllocationParam] {
+	return pulumix.Output[GetBlockchainPlatformComponentDetailPeerOcpuAllocationParam]{
+		OutputState: i.ToGetBlockchainPlatformComponentDetailPeerOcpuAllocationParamOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetBlockchainPlatformComponentDetailPeerOcpuAllocationParamArrayInput is an input type that accepts GetBlockchainPlatformComponentDetailPeerOcpuAllocationParamArray and GetBlockchainPlatformComponentDetailPeerOcpuAllocationParamArrayOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformComponentDetailPeerOcpuAllocationParamArrayInput` via:
 //
@@ -1716,6 +2035,12 @@ func (i GetBlockchainPlatformComponentDetailPeerOcpuAllocationParamArray) ToGetB
 	return pulumi.ToOutputWithContext(ctx, i).(GetBlockchainPlatformComponentDetailPeerOcpuAllocationParamArrayOutput)
 }
 
+func (i GetBlockchainPlatformComponentDetailPeerOcpuAllocationParamArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBlockchainPlatformComponentDetailPeerOcpuAllocationParam] {
+	return pulumix.Output[[]GetBlockchainPlatformComponentDetailPeerOcpuAllocationParam]{
+		OutputState: i.ToGetBlockchainPlatformComponentDetailPeerOcpuAllocationParamArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetBlockchainPlatformComponentDetailPeerOcpuAllocationParamOutput struct{ *pulumi.OutputState }
 
 func (GetBlockchainPlatformComponentDetailPeerOcpuAllocationParamOutput) ElementType() reflect.Type {
@@ -1728,6 +2053,12 @@ func (o GetBlockchainPlatformComponentDetailPeerOcpuAllocationParamOutput) ToGet
 
 func (o GetBlockchainPlatformComponentDetailPeerOcpuAllocationParamOutput) ToGetBlockchainPlatformComponentDetailPeerOcpuAllocationParamOutputWithContext(ctx context.Context) GetBlockchainPlatformComponentDetailPeerOcpuAllocationParamOutput {
 	return o
+}
+
+func (o GetBlockchainPlatformComponentDetailPeerOcpuAllocationParamOutput) ToOutput(ctx context.Context) pulumix.Output[GetBlockchainPlatformComponentDetailPeerOcpuAllocationParam] {
+	return pulumix.Output[GetBlockchainPlatformComponentDetailPeerOcpuAllocationParam]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Number of OCPU allocation
@@ -1749,6 +2080,12 @@ func (o GetBlockchainPlatformComponentDetailPeerOcpuAllocationParamArrayOutput) 
 
 func (o GetBlockchainPlatformComponentDetailPeerOcpuAllocationParamArrayOutput) ToGetBlockchainPlatformComponentDetailPeerOcpuAllocationParamArrayOutputWithContext(ctx context.Context) GetBlockchainPlatformComponentDetailPeerOcpuAllocationParamArrayOutput {
 	return o
+}
+
+func (o GetBlockchainPlatformComponentDetailPeerOcpuAllocationParamArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBlockchainPlatformComponentDetailPeerOcpuAllocationParam] {
+	return pulumix.Output[[]GetBlockchainPlatformComponentDetailPeerOcpuAllocationParam]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetBlockchainPlatformComponentDetailPeerOcpuAllocationParamArrayOutput) Index(i pulumi.IntInput) GetBlockchainPlatformComponentDetailPeerOcpuAllocationParamOutput {
@@ -1798,6 +2135,12 @@ func (i GetBlockchainPlatformHostOcpuUtilizationInfoArgs) ToGetBlockchainPlatfor
 	return pulumi.ToOutputWithContext(ctx, i).(GetBlockchainPlatformHostOcpuUtilizationInfoOutput)
 }
 
+func (i GetBlockchainPlatformHostOcpuUtilizationInfoArgs) ToOutput(ctx context.Context) pulumix.Output[GetBlockchainPlatformHostOcpuUtilizationInfo] {
+	return pulumix.Output[GetBlockchainPlatformHostOcpuUtilizationInfo]{
+		OutputState: i.ToGetBlockchainPlatformHostOcpuUtilizationInfoOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetBlockchainPlatformHostOcpuUtilizationInfoArrayInput is an input type that accepts GetBlockchainPlatformHostOcpuUtilizationInfoArray and GetBlockchainPlatformHostOcpuUtilizationInfoArrayOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformHostOcpuUtilizationInfoArrayInput` via:
 //
@@ -1823,6 +2166,12 @@ func (i GetBlockchainPlatformHostOcpuUtilizationInfoArray) ToGetBlockchainPlatfo
 	return pulumi.ToOutputWithContext(ctx, i).(GetBlockchainPlatformHostOcpuUtilizationInfoArrayOutput)
 }
 
+func (i GetBlockchainPlatformHostOcpuUtilizationInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBlockchainPlatformHostOcpuUtilizationInfo] {
+	return pulumix.Output[[]GetBlockchainPlatformHostOcpuUtilizationInfo]{
+		OutputState: i.ToGetBlockchainPlatformHostOcpuUtilizationInfoArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetBlockchainPlatformHostOcpuUtilizationInfoOutput struct{ *pulumi.OutputState }
 
 func (GetBlockchainPlatformHostOcpuUtilizationInfoOutput) ElementType() reflect.Type {
@@ -1835,6 +2184,12 @@ func (o GetBlockchainPlatformHostOcpuUtilizationInfoOutput) ToGetBlockchainPlatf
 
 func (o GetBlockchainPlatformHostOcpuUtilizationInfoOutput) ToGetBlockchainPlatformHostOcpuUtilizationInfoOutputWithContext(ctx context.Context) GetBlockchainPlatformHostOcpuUtilizationInfoOutput {
 	return o
+}
+
+func (o GetBlockchainPlatformHostOcpuUtilizationInfoOutput) ToOutput(ctx context.Context) pulumix.Output[GetBlockchainPlatformHostOcpuUtilizationInfo] {
+	return pulumix.Output[GetBlockchainPlatformHostOcpuUtilizationInfo]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Host name of VM
@@ -1864,6 +2219,12 @@ func (o GetBlockchainPlatformHostOcpuUtilizationInfoArrayOutput) ToGetBlockchain
 
 func (o GetBlockchainPlatformHostOcpuUtilizationInfoArrayOutput) ToGetBlockchainPlatformHostOcpuUtilizationInfoArrayOutputWithContext(ctx context.Context) GetBlockchainPlatformHostOcpuUtilizationInfoArrayOutput {
 	return o
+}
+
+func (o GetBlockchainPlatformHostOcpuUtilizationInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBlockchainPlatformHostOcpuUtilizationInfo] {
+	return pulumix.Output[[]GetBlockchainPlatformHostOcpuUtilizationInfo]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetBlockchainPlatformHostOcpuUtilizationInfoArrayOutput) Index(i pulumi.IntInput) GetBlockchainPlatformHostOcpuUtilizationInfoOutput {
@@ -1905,6 +2266,12 @@ func (i GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionArgs) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionOutput)
 }
 
+func (i GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetBlockchainPlatformPatchesBlockchainPlatformPatchCollection] {
+	return pulumix.Output[GetBlockchainPlatformPatchesBlockchainPlatformPatchCollection]{
+		OutputState: i.ToGetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionArrayInput is an input type that accepts GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionArray and GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionArrayOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionArrayInput` via:
 //
@@ -1930,6 +2297,12 @@ func (i GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionArray) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionArrayOutput)
 }
 
+func (i GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBlockchainPlatformPatchesBlockchainPlatformPatchCollection] {
+	return pulumix.Output[[]GetBlockchainPlatformPatchesBlockchainPlatformPatchCollection]{
+		OutputState: i.ToGetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionOutput) ElementType() reflect.Type {
@@ -1942,6 +2315,12 @@ func (o GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionOutput) ToG
 
 func (o GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionOutput) ToGetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionOutputWithContext(ctx context.Context) GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionOutput {
 	return o
+}
+
+func (o GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetBlockchainPlatformPatchesBlockchainPlatformPatchCollection] {
+	return pulumix.Output[GetBlockchainPlatformPatchesBlockchainPlatformPatchCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Collection of PatchSummary
@@ -1963,6 +2342,12 @@ func (o GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionArrayOutput
 
 func (o GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionArrayOutput) ToGetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionArrayOutputWithContext(ctx context.Context) GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionArrayOutput {
 	return o
+}
+
+func (o GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBlockchainPlatformPatchesBlockchainPlatformPatchCollection] {
+	return pulumix.Output[[]GetBlockchainPlatformPatchesBlockchainPlatformPatchCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionArrayOutput) Index(i pulumi.IntInput) GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionOutput {
@@ -2004,6 +2389,12 @@ func (i GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemArgs) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemOutput)
 }
 
+func (i GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItem] {
+	return pulumix.Output[GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItem]{
+		OutputState: i.ToGetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemArrayInput is an input type that accepts GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemArray and GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemArrayInput` via:
 //
@@ -2029,6 +2420,12 @@ func (i GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemArray) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemArrayOutput)
 }
 
+func (i GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItem] {
+	return pulumix.Output[[]GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItem]{
+		OutputState: i.ToGetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemOutput) ElementType() reflect.Type {
@@ -2041,6 +2438,12 @@ func (o GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemOutput)
 
 func (o GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemOutput) ToGetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemOutputWithContext(ctx context.Context) GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemOutput {
 	return o
+}
+
+func (o GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItem] {
+	return pulumix.Output[GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Collection of PatchSummary
@@ -2062,6 +2465,12 @@ func (o GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemArrayOu
 
 func (o GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemArrayOutput) ToGetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemArrayOutputWithContext(ctx context.Context) GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemArrayOutput {
 	return o
+}
+
+func (o GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItem] {
+	return pulumix.Output[[]GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemArrayOutput) Index(i pulumi.IntInput) GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemOutput {
@@ -2115,6 +2524,12 @@ func (i GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemArg
 	return pulumi.ToOutputWithContext(ctx, i).(GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemOutput)
 }
 
+func (i GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItem] {
+	return pulumix.Output[GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItem]{
+		OutputState: i.ToGetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemArrayInput is an input type that accepts GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemArray and GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemArrayOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemArrayInput` via:
 //
@@ -2140,6 +2555,12 @@ func (i GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemArrayOutput)
 }
 
+func (i GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItem] {
+	return pulumix.Output[[]GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItem]{
+		OutputState: i.ToGetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemOutput struct{ *pulumi.OutputState }
 
 func (GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemOutput) ElementType() reflect.Type {
@@ -2152,6 +2573,12 @@ func (o GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemOut
 
 func (o GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemOutput) ToGetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemOutputWithContext(ctx context.Context) GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemOutput {
 	return o
+}
+
+func (o GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItem] {
+	return pulumix.Output[GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // patch id
@@ -2192,6 +2619,12 @@ func (o GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemArr
 
 func (o GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemArrayOutput) ToGetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemArrayOutputWithContext(ctx context.Context) GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemArrayOutput {
 	return o
+}
+
+func (o GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItem] {
+	return pulumix.Output[[]GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemArrayOutput) Index(i pulumi.IntInput) GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemOutput {
@@ -2235,6 +2668,12 @@ func (i GetBlockchainPlatformPatchesFilterArgs) ToGetBlockchainPlatformPatchesFi
 	return pulumi.ToOutputWithContext(ctx, i).(GetBlockchainPlatformPatchesFilterOutput)
 }
 
+func (i GetBlockchainPlatformPatchesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetBlockchainPlatformPatchesFilter] {
+	return pulumix.Output[GetBlockchainPlatformPatchesFilter]{
+		OutputState: i.ToGetBlockchainPlatformPatchesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetBlockchainPlatformPatchesFilterArrayInput is an input type that accepts GetBlockchainPlatformPatchesFilterArray and GetBlockchainPlatformPatchesFilterArrayOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformPatchesFilterArrayInput` via:
 //
@@ -2260,6 +2699,12 @@ func (i GetBlockchainPlatformPatchesFilterArray) ToGetBlockchainPlatformPatchesF
 	return pulumi.ToOutputWithContext(ctx, i).(GetBlockchainPlatformPatchesFilterArrayOutput)
 }
 
+func (i GetBlockchainPlatformPatchesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBlockchainPlatformPatchesFilter] {
+	return pulumix.Output[[]GetBlockchainPlatformPatchesFilter]{
+		OutputState: i.ToGetBlockchainPlatformPatchesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetBlockchainPlatformPatchesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetBlockchainPlatformPatchesFilterOutput) ElementType() reflect.Type {
@@ -2272,6 +2717,12 @@ func (o GetBlockchainPlatformPatchesFilterOutput) ToGetBlockchainPlatformPatches
 
 func (o GetBlockchainPlatformPatchesFilterOutput) ToGetBlockchainPlatformPatchesFilterOutputWithContext(ctx context.Context) GetBlockchainPlatformPatchesFilterOutput {
 	return o
+}
+
+func (o GetBlockchainPlatformPatchesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetBlockchainPlatformPatchesFilter] {
+	return pulumix.Output[GetBlockchainPlatformPatchesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetBlockchainPlatformPatchesFilterOutput) Name() pulumi.StringOutput {
@@ -2298,6 +2749,12 @@ func (o GetBlockchainPlatformPatchesFilterArrayOutput) ToGetBlockchainPlatformPa
 
 func (o GetBlockchainPlatformPatchesFilterArrayOutput) ToGetBlockchainPlatformPatchesFilterArrayOutputWithContext(ctx context.Context) GetBlockchainPlatformPatchesFilterArrayOutput {
 	return o
+}
+
+func (o GetBlockchainPlatformPatchesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBlockchainPlatformPatchesFilter] {
+	return pulumix.Output[[]GetBlockchainPlatformPatchesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetBlockchainPlatformPatchesFilterArrayOutput) Index(i pulumi.IntInput) GetBlockchainPlatformPatchesFilterOutput {
@@ -2347,6 +2804,12 @@ func (i GetBlockchainPlatformReplicaArgs) ToGetBlockchainPlatformReplicaOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetBlockchainPlatformReplicaOutput)
 }
 
+func (i GetBlockchainPlatformReplicaArgs) ToOutput(ctx context.Context) pulumix.Output[GetBlockchainPlatformReplica] {
+	return pulumix.Output[GetBlockchainPlatformReplica]{
+		OutputState: i.ToGetBlockchainPlatformReplicaOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetBlockchainPlatformReplicaArrayInput is an input type that accepts GetBlockchainPlatformReplicaArray and GetBlockchainPlatformReplicaArrayOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformReplicaArrayInput` via:
 //
@@ -2372,6 +2835,12 @@ func (i GetBlockchainPlatformReplicaArray) ToGetBlockchainPlatformReplicaArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetBlockchainPlatformReplicaArrayOutput)
 }
 
+func (i GetBlockchainPlatformReplicaArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBlockchainPlatformReplica] {
+	return pulumix.Output[[]GetBlockchainPlatformReplica]{
+		OutputState: i.ToGetBlockchainPlatformReplicaArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetBlockchainPlatformReplicaOutput struct{ *pulumi.OutputState }
 
 func (GetBlockchainPlatformReplicaOutput) ElementType() reflect.Type {
@@ -2384,6 +2853,12 @@ func (o GetBlockchainPlatformReplicaOutput) ToGetBlockchainPlatformReplicaOutput
 
 func (o GetBlockchainPlatformReplicaOutput) ToGetBlockchainPlatformReplicaOutputWithContext(ctx context.Context) GetBlockchainPlatformReplicaOutput {
 	return o
+}
+
+func (o GetBlockchainPlatformReplicaOutput) ToOutput(ctx context.Context) pulumix.Output[GetBlockchainPlatformReplica] {
+	return pulumix.Output[GetBlockchainPlatformReplica]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Number of CA replicas
@@ -2413,6 +2888,12 @@ func (o GetBlockchainPlatformReplicaArrayOutput) ToGetBlockchainPlatformReplicaA
 
 func (o GetBlockchainPlatformReplicaArrayOutput) ToGetBlockchainPlatformReplicaArrayOutputWithContext(ctx context.Context) GetBlockchainPlatformReplicaArrayOutput {
 	return o
+}
+
+func (o GetBlockchainPlatformReplicaArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBlockchainPlatformReplica] {
+	return pulumix.Output[[]GetBlockchainPlatformReplica]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetBlockchainPlatformReplicaArrayOutput) Index(i pulumi.IntInput) GetBlockchainPlatformReplicaOutput {
@@ -2452,6 +2933,12 @@ func (i GetBlockchainPlatformsBlockchainPlatformCollectionArgs) ToGetBlockchainP
 	return pulumi.ToOutputWithContext(ctx, i).(GetBlockchainPlatformsBlockchainPlatformCollectionOutput)
 }
 
+func (i GetBlockchainPlatformsBlockchainPlatformCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetBlockchainPlatformsBlockchainPlatformCollection] {
+	return pulumix.Output[GetBlockchainPlatformsBlockchainPlatformCollection]{
+		OutputState: i.ToGetBlockchainPlatformsBlockchainPlatformCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetBlockchainPlatformsBlockchainPlatformCollectionArrayInput is an input type that accepts GetBlockchainPlatformsBlockchainPlatformCollectionArray and GetBlockchainPlatformsBlockchainPlatformCollectionArrayOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformsBlockchainPlatformCollectionArrayInput` via:
 //
@@ -2477,6 +2964,12 @@ func (i GetBlockchainPlatformsBlockchainPlatformCollectionArray) ToGetBlockchain
 	return pulumi.ToOutputWithContext(ctx, i).(GetBlockchainPlatformsBlockchainPlatformCollectionArrayOutput)
 }
 
+func (i GetBlockchainPlatformsBlockchainPlatformCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBlockchainPlatformsBlockchainPlatformCollection] {
+	return pulumix.Output[[]GetBlockchainPlatformsBlockchainPlatformCollection]{
+		OutputState: i.ToGetBlockchainPlatformsBlockchainPlatformCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetBlockchainPlatformsBlockchainPlatformCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetBlockchainPlatformsBlockchainPlatformCollectionOutput) ElementType() reflect.Type {
@@ -2489,6 +2982,12 @@ func (o GetBlockchainPlatformsBlockchainPlatformCollectionOutput) ToGetBlockchai
 
 func (o GetBlockchainPlatformsBlockchainPlatformCollectionOutput) ToGetBlockchainPlatformsBlockchainPlatformCollectionOutputWithContext(ctx context.Context) GetBlockchainPlatformsBlockchainPlatformCollectionOutput {
 	return o
+}
+
+func (o GetBlockchainPlatformsBlockchainPlatformCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetBlockchainPlatformsBlockchainPlatformCollection] {
+	return pulumix.Output[GetBlockchainPlatformsBlockchainPlatformCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetBlockchainPlatformsBlockchainPlatformCollectionOutput) Items() GetBlockchainPlatformsBlockchainPlatformCollectionItemArrayOutput {
@@ -2509,6 +3008,12 @@ func (o GetBlockchainPlatformsBlockchainPlatformCollectionArrayOutput) ToGetBloc
 
 func (o GetBlockchainPlatformsBlockchainPlatformCollectionArrayOutput) ToGetBlockchainPlatformsBlockchainPlatformCollectionArrayOutputWithContext(ctx context.Context) GetBlockchainPlatformsBlockchainPlatformCollectionArrayOutput {
 	return o
+}
+
+func (o GetBlockchainPlatformsBlockchainPlatformCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBlockchainPlatformsBlockchainPlatformCollection] {
+	return pulumix.Output[[]GetBlockchainPlatformsBlockchainPlatformCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetBlockchainPlatformsBlockchainPlatformCollectionArrayOutput) Index(i pulumi.IntInput) GetBlockchainPlatformsBlockchainPlatformCollectionOutput {
@@ -2652,6 +3157,12 @@ func (i GetBlockchainPlatformsBlockchainPlatformCollectionItemArgs) ToGetBlockch
 	return pulumi.ToOutputWithContext(ctx, i).(GetBlockchainPlatformsBlockchainPlatformCollectionItemOutput)
 }
 
+func (i GetBlockchainPlatformsBlockchainPlatformCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetBlockchainPlatformsBlockchainPlatformCollectionItem] {
+	return pulumix.Output[GetBlockchainPlatformsBlockchainPlatformCollectionItem]{
+		OutputState: i.ToGetBlockchainPlatformsBlockchainPlatformCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetBlockchainPlatformsBlockchainPlatformCollectionItemArrayInput is an input type that accepts GetBlockchainPlatformsBlockchainPlatformCollectionItemArray and GetBlockchainPlatformsBlockchainPlatformCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformsBlockchainPlatformCollectionItemArrayInput` via:
 //
@@ -2677,6 +3188,12 @@ func (i GetBlockchainPlatformsBlockchainPlatformCollectionItemArray) ToGetBlockc
 	return pulumi.ToOutputWithContext(ctx, i).(GetBlockchainPlatformsBlockchainPlatformCollectionItemArrayOutput)
 }
 
+func (i GetBlockchainPlatformsBlockchainPlatformCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBlockchainPlatformsBlockchainPlatformCollectionItem] {
+	return pulumix.Output[[]GetBlockchainPlatformsBlockchainPlatformCollectionItem]{
+		OutputState: i.ToGetBlockchainPlatformsBlockchainPlatformCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetBlockchainPlatformsBlockchainPlatformCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetBlockchainPlatformsBlockchainPlatformCollectionItemOutput) ElementType() reflect.Type {
@@ -2689,6 +3206,12 @@ func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemOutput) ToGetBlock
 
 func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemOutput) ToGetBlockchainPlatformsBlockchainPlatformCollectionItemOutputWithContext(ctx context.Context) GetBlockchainPlatformsBlockchainPlatformCollectionItemOutput {
 	return o
+}
+
+func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetBlockchainPlatformsBlockchainPlatformCollectionItem] {
+	return pulumix.Output[GetBlockchainPlatformsBlockchainPlatformCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemOutput) CaCertArchiveText() pulumi.StringOutput {
@@ -2852,6 +3375,12 @@ func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemArrayOutput) ToGet
 	return o
 }
 
+func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBlockchainPlatformsBlockchainPlatformCollectionItem] {
+	return pulumix.Output[[]GetBlockchainPlatformsBlockchainPlatformCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemArrayOutput) Index(i pulumi.IntInput) GetBlockchainPlatformsBlockchainPlatformCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBlockchainPlatformsBlockchainPlatformCollectionItem {
 		return vs[0].([]GetBlockchainPlatformsBlockchainPlatformCollectionItem)[vs[1].(int)]
@@ -2895,6 +3424,12 @@ func (i GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailArg
 	return pulumi.ToOutputWithContext(ctx, i).(GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOutput)
 }
 
+func (i GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetail] {
+	return pulumix.Output[GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetail]{
+		OutputState: i.ToGetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailArrayInput is an input type that accepts GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailArray and GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailArrayOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailArrayInput` via:
 //
@@ -2920,6 +3455,12 @@ func (i GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailArrayOutput)
 }
 
+func (i GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetail] {
+	return pulumix.Output[[]GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetail]{
+		OutputState: i.ToGetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOutput struct{ *pulumi.OutputState }
 
 func (GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOutput) ElementType() reflect.Type {
@@ -2932,6 +3473,12 @@ func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOut
 
 func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOutput) ToGetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOutputWithContext(ctx context.Context) GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOutput {
 	return o
+}
+
+func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetail] {
+	return pulumix.Output[GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // List of OSNs
@@ -2960,6 +3507,12 @@ func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailArr
 
 func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailArrayOutput) ToGetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailArrayOutputWithContext(ctx context.Context) GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailArrayOutput {
 	return o
+}
+
+func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetail] {
+	return pulumix.Output[[]GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailArrayOutput) Index(i pulumi.IntInput) GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOutput {
@@ -3013,6 +3566,12 @@ func (i GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsn
 	return pulumi.ToOutputWithContext(ctx, i).(GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOutput)
 }
 
+func (i GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnArgs) ToOutput(ctx context.Context) pulumix.Output[GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsn] {
+	return pulumix.Output[GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsn]{
+		OutputState: i.ToGetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnArrayInput is an input type that accepts GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnArray and GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnArrayOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnArrayInput` via:
 //
@@ -3038,6 +3597,12 @@ func (i GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsn
 	return pulumi.ToOutputWithContext(ctx, i).(GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnArrayOutput)
 }
 
+func (i GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsn] {
+	return pulumix.Output[[]GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsn]{
+		OutputState: i.ToGetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOutput struct{ *pulumi.OutputState }
 
 func (GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOutput) ElementType() reflect.Type {
@@ -3050,6 +3615,12 @@ func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsn
 
 func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOutput) ToGetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOutputWithContext(ctx context.Context) GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOutput {
 	return o
+}
+
+func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOutput) ToOutput(ctx context.Context) pulumix.Output[GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsn] {
+	return pulumix.Output[GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsn]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Availability Domain of peer
@@ -3092,6 +3663,12 @@ func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsn
 	return o
 }
 
+func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsn] {
+	return pulumix.Output[[]GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsn]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnArrayOutput) Index(i pulumi.IntInput) GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsn {
 		return vs[0].([]GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsn)[vs[1].(int)]
@@ -3131,6 +3708,12 @@ func (i GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsn
 	return pulumi.ToOutputWithContext(ctx, i).(GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParamOutput)
 }
 
+func (i GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParamArgs) ToOutput(ctx context.Context) pulumix.Output[GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParam] {
+	return pulumix.Output[GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParam]{
+		OutputState: i.ToGetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParamOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParamArrayInput is an input type that accepts GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParamArray and GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParamArrayOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParamArrayInput` via:
 //
@@ -3156,6 +3739,12 @@ func (i GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsn
 	return pulumi.ToOutputWithContext(ctx, i).(GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParamArrayOutput)
 }
 
+func (i GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParamArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParam] {
+	return pulumix.Output[[]GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParam]{
+		OutputState: i.ToGetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParamArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParamOutput struct{ *pulumi.OutputState }
 
 func (GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParamOutput) ElementType() reflect.Type {
@@ -3168,6 +3757,12 @@ func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsn
 
 func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParamOutput) ToGetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParamOutputWithContext(ctx context.Context) GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParamOutput {
 	return o
+}
+
+func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParamOutput) ToOutput(ctx context.Context) pulumix.Output[GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParam] {
+	return pulumix.Output[GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParam]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Number of OCPU allocation
@@ -3189,6 +3784,12 @@ func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsn
 
 func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParamArrayOutput) ToGetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParamArrayOutputWithContext(ctx context.Context) GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParamArrayOutput {
 	return o
+}
+
+func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParamArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParam] {
+	return pulumix.Output[[]GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParam]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParamArrayOutput) Index(i pulumi.IntInput) GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParamOutput {
@@ -3254,6 +3855,12 @@ func (i GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPee
 	return pulumi.ToOutputWithContext(ctx, i).(GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOutput)
 }
 
+func (i GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerArgs) ToOutput(ctx context.Context) pulumix.Output[GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeer] {
+	return pulumix.Output[GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeer]{
+		OutputState: i.ToGetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerArrayInput is an input type that accepts GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerArray and GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerArrayOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerArrayInput` via:
 //
@@ -3279,6 +3886,12 @@ func (i GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPee
 	return pulumi.ToOutputWithContext(ctx, i).(GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerArrayOutput)
 }
 
+func (i GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeer] {
+	return pulumix.Output[[]GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeer]{
+		OutputState: i.ToGetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOutput struct{ *pulumi.OutputState }
 
 func (GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOutput) ElementType() reflect.Type {
@@ -3291,6 +3904,12 @@ func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPee
 
 func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOutput) ToGetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOutputWithContext(ctx context.Context) GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOutput {
 	return o
+}
+
+func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOutput) ToOutput(ctx context.Context) pulumix.Output[GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeer] {
+	return pulumix.Output[GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeer]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Availability Domain of peer
@@ -3354,6 +3973,12 @@ func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPee
 	return o
 }
 
+func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeer] {
+	return pulumix.Output[[]GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeer]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerArrayOutput) Index(i pulumi.IntInput) GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeer {
 		return vs[0].([]GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeer)[vs[1].(int)]
@@ -3393,6 +4018,12 @@ func (i GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPee
 	return pulumi.ToOutputWithContext(ctx, i).(GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParamOutput)
 }
 
+func (i GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParamArgs) ToOutput(ctx context.Context) pulumix.Output[GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParam] {
+	return pulumix.Output[GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParam]{
+		OutputState: i.ToGetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParamOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParamArrayInput is an input type that accepts GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParamArray and GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParamArrayOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParamArrayInput` via:
 //
@@ -3418,6 +4049,12 @@ func (i GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPee
 	return pulumi.ToOutputWithContext(ctx, i).(GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParamArrayOutput)
 }
 
+func (i GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParamArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParam] {
+	return pulumix.Output[[]GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParam]{
+		OutputState: i.ToGetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParamArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParamOutput struct{ *pulumi.OutputState }
 
 func (GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParamOutput) ElementType() reflect.Type {
@@ -3430,6 +4067,12 @@ func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPee
 
 func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParamOutput) ToGetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParamOutputWithContext(ctx context.Context) GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParamOutput {
 	return o
+}
+
+func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParamOutput) ToOutput(ctx context.Context) pulumix.Output[GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParam] {
+	return pulumix.Output[GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParam]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Number of OCPU allocation
@@ -3451,6 +4094,12 @@ func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPee
 
 func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParamArrayOutput) ToGetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParamArrayOutputWithContext(ctx context.Context) GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParamArrayOutput {
 	return o
+}
+
+func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParamArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParam] {
+	return pulumix.Output[[]GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParam]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParamArrayOutput) Index(i pulumi.IntInput) GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParamOutput {
@@ -3500,6 +4149,12 @@ func (i GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizatio
 	return pulumi.ToOutputWithContext(ctx, i).(GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfoOutput)
 }
 
+func (i GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfoArgs) ToOutput(ctx context.Context) pulumix.Output[GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfo] {
+	return pulumix.Output[GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfo]{
+		OutputState: i.ToGetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfoOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfoArrayInput is an input type that accepts GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfoArray and GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfoArrayOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfoArrayInput` via:
 //
@@ -3525,6 +4180,12 @@ func (i GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizatio
 	return pulumi.ToOutputWithContext(ctx, i).(GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfoArrayOutput)
 }
 
+func (i GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfo] {
+	return pulumix.Output[[]GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfo]{
+		OutputState: i.ToGetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfoArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfoOutput struct{ *pulumi.OutputState }
 
 func (GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfoOutput) ElementType() reflect.Type {
@@ -3537,6 +4198,12 @@ func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizatio
 
 func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfoOutput) ToGetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfoOutputWithContext(ctx context.Context) GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfoOutput {
 	return o
+}
+
+func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfoOutput) ToOutput(ctx context.Context) pulumix.Output[GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfo] {
+	return pulumix.Output[GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfo]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Host name of VM
@@ -3572,6 +4239,12 @@ func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizatio
 
 func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfoArrayOutput) ToGetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfoArrayOutputWithContext(ctx context.Context) GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfoArrayOutput {
 	return o
+}
+
+func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfo] {
+	return pulumix.Output[[]GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfo]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfoArrayOutput) Index(i pulumi.IntInput) GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfoOutput {
@@ -3621,6 +4294,12 @@ func (i GetBlockchainPlatformsBlockchainPlatformCollectionItemReplicaArgs) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetBlockchainPlatformsBlockchainPlatformCollectionItemReplicaOutput)
 }
 
+func (i GetBlockchainPlatformsBlockchainPlatformCollectionItemReplicaArgs) ToOutput(ctx context.Context) pulumix.Output[GetBlockchainPlatformsBlockchainPlatformCollectionItemReplica] {
+	return pulumix.Output[GetBlockchainPlatformsBlockchainPlatformCollectionItemReplica]{
+		OutputState: i.ToGetBlockchainPlatformsBlockchainPlatformCollectionItemReplicaOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetBlockchainPlatformsBlockchainPlatformCollectionItemReplicaArrayInput is an input type that accepts GetBlockchainPlatformsBlockchainPlatformCollectionItemReplicaArray and GetBlockchainPlatformsBlockchainPlatformCollectionItemReplicaArrayOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformsBlockchainPlatformCollectionItemReplicaArrayInput` via:
 //
@@ -3646,6 +4325,12 @@ func (i GetBlockchainPlatformsBlockchainPlatformCollectionItemReplicaArray) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetBlockchainPlatformsBlockchainPlatformCollectionItemReplicaArrayOutput)
 }
 
+func (i GetBlockchainPlatformsBlockchainPlatformCollectionItemReplicaArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBlockchainPlatformsBlockchainPlatformCollectionItemReplica] {
+	return pulumix.Output[[]GetBlockchainPlatformsBlockchainPlatformCollectionItemReplica]{
+		OutputState: i.ToGetBlockchainPlatformsBlockchainPlatformCollectionItemReplicaArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetBlockchainPlatformsBlockchainPlatformCollectionItemReplicaOutput struct{ *pulumi.OutputState }
 
 func (GetBlockchainPlatformsBlockchainPlatformCollectionItemReplicaOutput) ElementType() reflect.Type {
@@ -3658,6 +4343,12 @@ func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemReplicaOutput) ToG
 
 func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemReplicaOutput) ToGetBlockchainPlatformsBlockchainPlatformCollectionItemReplicaOutputWithContext(ctx context.Context) GetBlockchainPlatformsBlockchainPlatformCollectionItemReplicaOutput {
 	return o
+}
+
+func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemReplicaOutput) ToOutput(ctx context.Context) pulumix.Output[GetBlockchainPlatformsBlockchainPlatformCollectionItemReplica] {
+	return pulumix.Output[GetBlockchainPlatformsBlockchainPlatformCollectionItemReplica]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Number of CA replicas
@@ -3687,6 +4378,12 @@ func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemReplicaArrayOutput
 
 func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemReplicaArrayOutput) ToGetBlockchainPlatformsBlockchainPlatformCollectionItemReplicaArrayOutputWithContext(ctx context.Context) GetBlockchainPlatformsBlockchainPlatformCollectionItemReplicaArrayOutput {
 	return o
+}
+
+func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemReplicaArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBlockchainPlatformsBlockchainPlatformCollectionItemReplica] {
+	return pulumix.Output[[]GetBlockchainPlatformsBlockchainPlatformCollectionItemReplica]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemReplicaArrayOutput) Index(i pulumi.IntInput) GetBlockchainPlatformsBlockchainPlatformCollectionItemReplicaOutput {
@@ -3730,6 +4427,12 @@ func (i GetBlockchainPlatformsFilterArgs) ToGetBlockchainPlatformsFilterOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetBlockchainPlatformsFilterOutput)
 }
 
+func (i GetBlockchainPlatformsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetBlockchainPlatformsFilter] {
+	return pulumix.Output[GetBlockchainPlatformsFilter]{
+		OutputState: i.ToGetBlockchainPlatformsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetBlockchainPlatformsFilterArrayInput is an input type that accepts GetBlockchainPlatformsFilterArray and GetBlockchainPlatformsFilterArrayOutput values.
 // You can construct a concrete instance of `GetBlockchainPlatformsFilterArrayInput` via:
 //
@@ -3755,6 +4458,12 @@ func (i GetBlockchainPlatformsFilterArray) ToGetBlockchainPlatformsFilterArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetBlockchainPlatformsFilterArrayOutput)
 }
 
+func (i GetBlockchainPlatformsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBlockchainPlatformsFilter] {
+	return pulumix.Output[[]GetBlockchainPlatformsFilter]{
+		OutputState: i.ToGetBlockchainPlatformsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetBlockchainPlatformsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetBlockchainPlatformsFilterOutput) ElementType() reflect.Type {
@@ -3767,6 +4476,12 @@ func (o GetBlockchainPlatformsFilterOutput) ToGetBlockchainPlatformsFilterOutput
 
 func (o GetBlockchainPlatformsFilterOutput) ToGetBlockchainPlatformsFilterOutputWithContext(ctx context.Context) GetBlockchainPlatformsFilterOutput {
 	return o
+}
+
+func (o GetBlockchainPlatformsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetBlockchainPlatformsFilter] {
+	return pulumix.Output[GetBlockchainPlatformsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetBlockchainPlatformsFilterOutput) Name() pulumi.StringOutput {
@@ -3793,6 +4508,12 @@ func (o GetBlockchainPlatformsFilterArrayOutput) ToGetBlockchainPlatformsFilterA
 
 func (o GetBlockchainPlatformsFilterArrayOutput) ToGetBlockchainPlatformsFilterArrayOutputWithContext(ctx context.Context) GetBlockchainPlatformsFilterArrayOutput {
 	return o
+}
+
+func (o GetBlockchainPlatformsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBlockchainPlatformsFilter] {
+	return pulumix.Output[[]GetBlockchainPlatformsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetBlockchainPlatformsFilterArrayOutput) Index(i pulumi.IntInput) GetBlockchainPlatformsFilterOutput {
@@ -3834,6 +4555,12 @@ func (i GetOsnOcpuAllocationParamArgs) ToGetOsnOcpuAllocationParamOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetOsnOcpuAllocationParamOutput)
 }
 
+func (i GetOsnOcpuAllocationParamArgs) ToOutput(ctx context.Context) pulumix.Output[GetOsnOcpuAllocationParam] {
+	return pulumix.Output[GetOsnOcpuAllocationParam]{
+		OutputState: i.ToGetOsnOcpuAllocationParamOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetOsnOcpuAllocationParamArrayInput is an input type that accepts GetOsnOcpuAllocationParamArray and GetOsnOcpuAllocationParamArrayOutput values.
 // You can construct a concrete instance of `GetOsnOcpuAllocationParamArrayInput` via:
 //
@@ -3859,6 +4586,12 @@ func (i GetOsnOcpuAllocationParamArray) ToGetOsnOcpuAllocationParamArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetOsnOcpuAllocationParamArrayOutput)
 }
 
+func (i GetOsnOcpuAllocationParamArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOsnOcpuAllocationParam] {
+	return pulumix.Output[[]GetOsnOcpuAllocationParam]{
+		OutputState: i.ToGetOsnOcpuAllocationParamArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetOsnOcpuAllocationParamOutput struct{ *pulumi.OutputState }
 
 func (GetOsnOcpuAllocationParamOutput) ElementType() reflect.Type {
@@ -3871,6 +4604,12 @@ func (o GetOsnOcpuAllocationParamOutput) ToGetOsnOcpuAllocationParamOutput() Get
 
 func (o GetOsnOcpuAllocationParamOutput) ToGetOsnOcpuAllocationParamOutputWithContext(ctx context.Context) GetOsnOcpuAllocationParamOutput {
 	return o
+}
+
+func (o GetOsnOcpuAllocationParamOutput) ToOutput(ctx context.Context) pulumix.Output[GetOsnOcpuAllocationParam] {
+	return pulumix.Output[GetOsnOcpuAllocationParam]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Number of OCPU allocation
@@ -3890,6 +4629,12 @@ func (o GetOsnOcpuAllocationParamArrayOutput) ToGetOsnOcpuAllocationParamArrayOu
 
 func (o GetOsnOcpuAllocationParamArrayOutput) ToGetOsnOcpuAllocationParamArrayOutputWithContext(ctx context.Context) GetOsnOcpuAllocationParamArrayOutput {
 	return o
+}
+
+func (o GetOsnOcpuAllocationParamArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOsnOcpuAllocationParam] {
+	return pulumix.Output[[]GetOsnOcpuAllocationParam]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetOsnOcpuAllocationParamArrayOutput) Index(i pulumi.IntInput) GetOsnOcpuAllocationParamOutput {
@@ -3933,6 +4678,12 @@ func (i GetOsnsFilterArgs) ToGetOsnsFilterOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(GetOsnsFilterOutput)
 }
 
+func (i GetOsnsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetOsnsFilter] {
+	return pulumix.Output[GetOsnsFilter]{
+		OutputState: i.ToGetOsnsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetOsnsFilterArrayInput is an input type that accepts GetOsnsFilterArray and GetOsnsFilterArrayOutput values.
 // You can construct a concrete instance of `GetOsnsFilterArrayInput` via:
 //
@@ -3958,6 +4709,12 @@ func (i GetOsnsFilterArray) ToGetOsnsFilterArrayOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetOsnsFilterArrayOutput)
 }
 
+func (i GetOsnsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOsnsFilter] {
+	return pulumix.Output[[]GetOsnsFilter]{
+		OutputState: i.ToGetOsnsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetOsnsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetOsnsFilterOutput) ElementType() reflect.Type {
@@ -3970,6 +4727,12 @@ func (o GetOsnsFilterOutput) ToGetOsnsFilterOutput() GetOsnsFilterOutput {
 
 func (o GetOsnsFilterOutput) ToGetOsnsFilterOutputWithContext(ctx context.Context) GetOsnsFilterOutput {
 	return o
+}
+
+func (o GetOsnsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetOsnsFilter] {
+	return pulumix.Output[GetOsnsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetOsnsFilterOutput) Name() pulumi.StringOutput {
@@ -3996,6 +4759,12 @@ func (o GetOsnsFilterArrayOutput) ToGetOsnsFilterArrayOutput() GetOsnsFilterArra
 
 func (o GetOsnsFilterArrayOutput) ToGetOsnsFilterArrayOutputWithContext(ctx context.Context) GetOsnsFilterArrayOutput {
 	return o
+}
+
+func (o GetOsnsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOsnsFilter] {
+	return pulumix.Output[[]GetOsnsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetOsnsFilterArrayOutput) Index(i pulumi.IntInput) GetOsnsFilterOutput {
@@ -4035,6 +4804,12 @@ func (i GetOsnsOsnCollectionArgs) ToGetOsnsOsnCollectionOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetOsnsOsnCollectionOutput)
 }
 
+func (i GetOsnsOsnCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetOsnsOsnCollection] {
+	return pulumix.Output[GetOsnsOsnCollection]{
+		OutputState: i.ToGetOsnsOsnCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetOsnsOsnCollectionArrayInput is an input type that accepts GetOsnsOsnCollectionArray and GetOsnsOsnCollectionArrayOutput values.
 // You can construct a concrete instance of `GetOsnsOsnCollectionArrayInput` via:
 //
@@ -4060,6 +4835,12 @@ func (i GetOsnsOsnCollectionArray) ToGetOsnsOsnCollectionArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetOsnsOsnCollectionArrayOutput)
 }
 
+func (i GetOsnsOsnCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOsnsOsnCollection] {
+	return pulumix.Output[[]GetOsnsOsnCollection]{
+		OutputState: i.ToGetOsnsOsnCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetOsnsOsnCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetOsnsOsnCollectionOutput) ElementType() reflect.Type {
@@ -4072,6 +4853,12 @@ func (o GetOsnsOsnCollectionOutput) ToGetOsnsOsnCollectionOutput() GetOsnsOsnCol
 
 func (o GetOsnsOsnCollectionOutput) ToGetOsnsOsnCollectionOutputWithContext(ctx context.Context) GetOsnsOsnCollectionOutput {
 	return o
+}
+
+func (o GetOsnsOsnCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetOsnsOsnCollection] {
+	return pulumix.Output[GetOsnsOsnCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetOsnsOsnCollectionOutput) Items() GetOsnsOsnCollectionItemArrayOutput {
@@ -4090,6 +4877,12 @@ func (o GetOsnsOsnCollectionArrayOutput) ToGetOsnsOsnCollectionArrayOutput() Get
 
 func (o GetOsnsOsnCollectionArrayOutput) ToGetOsnsOsnCollectionArrayOutputWithContext(ctx context.Context) GetOsnsOsnCollectionArrayOutput {
 	return o
+}
+
+func (o GetOsnsOsnCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOsnsOsnCollection] {
+	return pulumix.Output[[]GetOsnsOsnCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetOsnsOsnCollectionArrayOutput) Index(i pulumi.IntInput) GetOsnsOsnCollectionOutput {
@@ -4147,6 +4940,12 @@ func (i GetOsnsOsnCollectionItemArgs) ToGetOsnsOsnCollectionItemOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetOsnsOsnCollectionItemOutput)
 }
 
+func (i GetOsnsOsnCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetOsnsOsnCollectionItem] {
+	return pulumix.Output[GetOsnsOsnCollectionItem]{
+		OutputState: i.ToGetOsnsOsnCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetOsnsOsnCollectionItemArrayInput is an input type that accepts GetOsnsOsnCollectionItemArray and GetOsnsOsnCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetOsnsOsnCollectionItemArrayInput` via:
 //
@@ -4172,6 +4971,12 @@ func (i GetOsnsOsnCollectionItemArray) ToGetOsnsOsnCollectionItemArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetOsnsOsnCollectionItemArrayOutput)
 }
 
+func (i GetOsnsOsnCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOsnsOsnCollectionItem] {
+	return pulumix.Output[[]GetOsnsOsnCollectionItem]{
+		OutputState: i.ToGetOsnsOsnCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetOsnsOsnCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetOsnsOsnCollectionItemOutput) ElementType() reflect.Type {
@@ -4184,6 +4989,12 @@ func (o GetOsnsOsnCollectionItemOutput) ToGetOsnsOsnCollectionItemOutput() GetOs
 
 func (o GetOsnsOsnCollectionItemOutput) ToGetOsnsOsnCollectionItemOutputWithContext(ctx context.Context) GetOsnsOsnCollectionItemOutput {
 	return o
+}
+
+func (o GetOsnsOsnCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetOsnsOsnCollectionItem] {
+	return pulumix.Output[GetOsnsOsnCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Availability Domain of OSN
@@ -4227,6 +5038,12 @@ func (o GetOsnsOsnCollectionItemArrayOutput) ToGetOsnsOsnCollectionItemArrayOutp
 	return o
 }
 
+func (o GetOsnsOsnCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOsnsOsnCollectionItem] {
+	return pulumix.Output[[]GetOsnsOsnCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetOsnsOsnCollectionItemArrayOutput) Index(i pulumi.IntInput) GetOsnsOsnCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOsnsOsnCollectionItem {
 		return vs[0].([]GetOsnsOsnCollectionItem)[vs[1].(int)]
@@ -4266,6 +5083,12 @@ func (i GetOsnsOsnCollectionItemOcpuAllocationParamArgs) ToGetOsnsOsnCollectionI
 	return pulumi.ToOutputWithContext(ctx, i).(GetOsnsOsnCollectionItemOcpuAllocationParamOutput)
 }
 
+func (i GetOsnsOsnCollectionItemOcpuAllocationParamArgs) ToOutput(ctx context.Context) pulumix.Output[GetOsnsOsnCollectionItemOcpuAllocationParam] {
+	return pulumix.Output[GetOsnsOsnCollectionItemOcpuAllocationParam]{
+		OutputState: i.ToGetOsnsOsnCollectionItemOcpuAllocationParamOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetOsnsOsnCollectionItemOcpuAllocationParamOutput struct{ *pulumi.OutputState }
 
 func (GetOsnsOsnCollectionItemOcpuAllocationParamOutput) ElementType() reflect.Type {
@@ -4278,6 +5101,12 @@ func (o GetOsnsOsnCollectionItemOcpuAllocationParamOutput) ToGetOsnsOsnCollectio
 
 func (o GetOsnsOsnCollectionItemOcpuAllocationParamOutput) ToGetOsnsOsnCollectionItemOcpuAllocationParamOutputWithContext(ctx context.Context) GetOsnsOsnCollectionItemOcpuAllocationParamOutput {
 	return o
+}
+
+func (o GetOsnsOsnCollectionItemOcpuAllocationParamOutput) ToOutput(ctx context.Context) pulumix.Output[GetOsnsOsnCollectionItemOcpuAllocationParam] {
+	return pulumix.Output[GetOsnsOsnCollectionItemOcpuAllocationParam]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Number of OCPU allocation
@@ -4318,6 +5147,12 @@ func (i GetPeerOcpuAllocationParamArgs) ToGetPeerOcpuAllocationParamOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetPeerOcpuAllocationParamOutput)
 }
 
+func (i GetPeerOcpuAllocationParamArgs) ToOutput(ctx context.Context) pulumix.Output[GetPeerOcpuAllocationParam] {
+	return pulumix.Output[GetPeerOcpuAllocationParam]{
+		OutputState: i.ToGetPeerOcpuAllocationParamOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPeerOcpuAllocationParamArrayInput is an input type that accepts GetPeerOcpuAllocationParamArray and GetPeerOcpuAllocationParamArrayOutput values.
 // You can construct a concrete instance of `GetPeerOcpuAllocationParamArrayInput` via:
 //
@@ -4343,6 +5178,12 @@ func (i GetPeerOcpuAllocationParamArray) ToGetPeerOcpuAllocationParamArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetPeerOcpuAllocationParamArrayOutput)
 }
 
+func (i GetPeerOcpuAllocationParamArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPeerOcpuAllocationParam] {
+	return pulumix.Output[[]GetPeerOcpuAllocationParam]{
+		OutputState: i.ToGetPeerOcpuAllocationParamArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPeerOcpuAllocationParamOutput struct{ *pulumi.OutputState }
 
 func (GetPeerOcpuAllocationParamOutput) ElementType() reflect.Type {
@@ -4355,6 +5196,12 @@ func (o GetPeerOcpuAllocationParamOutput) ToGetPeerOcpuAllocationParamOutput() G
 
 func (o GetPeerOcpuAllocationParamOutput) ToGetPeerOcpuAllocationParamOutputWithContext(ctx context.Context) GetPeerOcpuAllocationParamOutput {
 	return o
+}
+
+func (o GetPeerOcpuAllocationParamOutput) ToOutput(ctx context.Context) pulumix.Output[GetPeerOcpuAllocationParam] {
+	return pulumix.Output[GetPeerOcpuAllocationParam]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Number of OCPU allocation
@@ -4374,6 +5221,12 @@ func (o GetPeerOcpuAllocationParamArrayOutput) ToGetPeerOcpuAllocationParamArray
 
 func (o GetPeerOcpuAllocationParamArrayOutput) ToGetPeerOcpuAllocationParamArrayOutputWithContext(ctx context.Context) GetPeerOcpuAllocationParamArrayOutput {
 	return o
+}
+
+func (o GetPeerOcpuAllocationParamArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPeerOcpuAllocationParam] {
+	return pulumix.Output[[]GetPeerOcpuAllocationParam]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPeerOcpuAllocationParamArrayOutput) Index(i pulumi.IntInput) GetPeerOcpuAllocationParamOutput {
@@ -4417,6 +5270,12 @@ func (i GetPeersFilterArgs) ToGetPeersFilterOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetPeersFilterOutput)
 }
 
+func (i GetPeersFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetPeersFilter] {
+	return pulumix.Output[GetPeersFilter]{
+		OutputState: i.ToGetPeersFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPeersFilterArrayInput is an input type that accepts GetPeersFilterArray and GetPeersFilterArrayOutput values.
 // You can construct a concrete instance of `GetPeersFilterArrayInput` via:
 //
@@ -4442,6 +5301,12 @@ func (i GetPeersFilterArray) ToGetPeersFilterArrayOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetPeersFilterArrayOutput)
 }
 
+func (i GetPeersFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPeersFilter] {
+	return pulumix.Output[[]GetPeersFilter]{
+		OutputState: i.ToGetPeersFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPeersFilterOutput struct{ *pulumi.OutputState }
 
 func (GetPeersFilterOutput) ElementType() reflect.Type {
@@ -4454,6 +5319,12 @@ func (o GetPeersFilterOutput) ToGetPeersFilterOutput() GetPeersFilterOutput {
 
 func (o GetPeersFilterOutput) ToGetPeersFilterOutputWithContext(ctx context.Context) GetPeersFilterOutput {
 	return o
+}
+
+func (o GetPeersFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetPeersFilter] {
+	return pulumix.Output[GetPeersFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPeersFilterOutput) Name() pulumi.StringOutput {
@@ -4480,6 +5351,12 @@ func (o GetPeersFilterArrayOutput) ToGetPeersFilterArrayOutput() GetPeersFilterA
 
 func (o GetPeersFilterArrayOutput) ToGetPeersFilterArrayOutputWithContext(ctx context.Context) GetPeersFilterArrayOutput {
 	return o
+}
+
+func (o GetPeersFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPeersFilter] {
+	return pulumix.Output[[]GetPeersFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPeersFilterArrayOutput) Index(i pulumi.IntInput) GetPeersFilterOutput {
@@ -4519,6 +5396,12 @@ func (i GetPeersPeerCollectionArgs) ToGetPeersPeerCollectionOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetPeersPeerCollectionOutput)
 }
 
+func (i GetPeersPeerCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetPeersPeerCollection] {
+	return pulumix.Output[GetPeersPeerCollection]{
+		OutputState: i.ToGetPeersPeerCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPeersPeerCollectionArrayInput is an input type that accepts GetPeersPeerCollectionArray and GetPeersPeerCollectionArrayOutput values.
 // You can construct a concrete instance of `GetPeersPeerCollectionArrayInput` via:
 //
@@ -4544,6 +5427,12 @@ func (i GetPeersPeerCollectionArray) ToGetPeersPeerCollectionArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetPeersPeerCollectionArrayOutput)
 }
 
+func (i GetPeersPeerCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPeersPeerCollection] {
+	return pulumix.Output[[]GetPeersPeerCollection]{
+		OutputState: i.ToGetPeersPeerCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPeersPeerCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetPeersPeerCollectionOutput) ElementType() reflect.Type {
@@ -4556,6 +5445,12 @@ func (o GetPeersPeerCollectionOutput) ToGetPeersPeerCollectionOutput() GetPeersP
 
 func (o GetPeersPeerCollectionOutput) ToGetPeersPeerCollectionOutputWithContext(ctx context.Context) GetPeersPeerCollectionOutput {
 	return o
+}
+
+func (o GetPeersPeerCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetPeersPeerCollection] {
+	return pulumix.Output[GetPeersPeerCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPeersPeerCollectionOutput) Items() GetPeersPeerCollectionItemArrayOutput {
@@ -4574,6 +5469,12 @@ func (o GetPeersPeerCollectionArrayOutput) ToGetPeersPeerCollectionArrayOutput()
 
 func (o GetPeersPeerCollectionArrayOutput) ToGetPeersPeerCollectionArrayOutputWithContext(ctx context.Context) GetPeersPeerCollectionArrayOutput {
 	return o
+}
+
+func (o GetPeersPeerCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPeersPeerCollection] {
+	return pulumix.Output[[]GetPeersPeerCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPeersPeerCollectionArrayOutput) Index(i pulumi.IntInput) GetPeersPeerCollectionOutput {
@@ -4643,6 +5544,12 @@ func (i GetPeersPeerCollectionItemArgs) ToGetPeersPeerCollectionItemOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetPeersPeerCollectionItemOutput)
 }
 
+func (i GetPeersPeerCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetPeersPeerCollectionItem] {
+	return pulumix.Output[GetPeersPeerCollectionItem]{
+		OutputState: i.ToGetPeersPeerCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPeersPeerCollectionItemArrayInput is an input type that accepts GetPeersPeerCollectionItemArray and GetPeersPeerCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetPeersPeerCollectionItemArrayInput` via:
 //
@@ -4668,6 +5575,12 @@ func (i GetPeersPeerCollectionItemArray) ToGetPeersPeerCollectionItemArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetPeersPeerCollectionItemArrayOutput)
 }
 
+func (i GetPeersPeerCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPeersPeerCollectionItem] {
+	return pulumix.Output[[]GetPeersPeerCollectionItem]{
+		OutputState: i.ToGetPeersPeerCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPeersPeerCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetPeersPeerCollectionItemOutput) ElementType() reflect.Type {
@@ -4680,6 +5593,12 @@ func (o GetPeersPeerCollectionItemOutput) ToGetPeersPeerCollectionItemOutput() G
 
 func (o GetPeersPeerCollectionItemOutput) ToGetPeersPeerCollectionItemOutputWithContext(ctx context.Context) GetPeersPeerCollectionItemOutput {
 	return o
+}
+
+func (o GetPeersPeerCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetPeersPeerCollectionItem] {
+	return pulumix.Output[GetPeersPeerCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Availability Domain of peer
@@ -4738,6 +5657,12 @@ func (o GetPeersPeerCollectionItemArrayOutput) ToGetPeersPeerCollectionItemArray
 	return o
 }
 
+func (o GetPeersPeerCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPeersPeerCollectionItem] {
+	return pulumix.Output[[]GetPeersPeerCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetPeersPeerCollectionItemArrayOutput) Index(i pulumi.IntInput) GetPeersPeerCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPeersPeerCollectionItem {
 		return vs[0].([]GetPeersPeerCollectionItem)[vs[1].(int)]
@@ -4777,6 +5702,12 @@ func (i GetPeersPeerCollectionItemOcpuAllocationParamArgs) ToGetPeersPeerCollect
 	return pulumi.ToOutputWithContext(ctx, i).(GetPeersPeerCollectionItemOcpuAllocationParamOutput)
 }
 
+func (i GetPeersPeerCollectionItemOcpuAllocationParamArgs) ToOutput(ctx context.Context) pulumix.Output[GetPeersPeerCollectionItemOcpuAllocationParam] {
+	return pulumix.Output[GetPeersPeerCollectionItemOcpuAllocationParam]{
+		OutputState: i.ToGetPeersPeerCollectionItemOcpuAllocationParamOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPeersPeerCollectionItemOcpuAllocationParamOutput struct{ *pulumi.OutputState }
 
 func (GetPeersPeerCollectionItemOcpuAllocationParamOutput) ElementType() reflect.Type {
@@ -4789,6 +5720,12 @@ func (o GetPeersPeerCollectionItemOcpuAllocationParamOutput) ToGetPeersPeerColle
 
 func (o GetPeersPeerCollectionItemOcpuAllocationParamOutput) ToGetPeersPeerCollectionItemOcpuAllocationParamOutputWithContext(ctx context.Context) GetPeersPeerCollectionItemOcpuAllocationParamOutput {
 	return o
+}
+
+func (o GetPeersPeerCollectionItemOcpuAllocationParamOutput) ToOutput(ctx context.Context) pulumix.Output[GetPeersPeerCollectionItemOcpuAllocationParam] {
+	return pulumix.Output[GetPeersPeerCollectionItemOcpuAllocationParam]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Number of OCPU allocation

@@ -125,7 +125,7 @@ public class Certificate extends com.pulumi.resources.CustomResource {
      * (Updatable) The details of the contents of the certificate and certificate metadata.
      * 
      */
-    @Export(name="certificateConfig", type=CertificateCertificateConfig.class, parameters={})
+    @Export(name="certificateConfig", refs={CertificateCertificateConfig.class}, tree="[0]")
     private Output<CertificateCertificateConfig> certificateConfig;
 
     /**
@@ -139,7 +139,7 @@ public class Certificate extends com.pulumi.resources.CustomResource {
      * The name of the profile used to create the certificate, which depends on the type of certificate you need.
      * 
      */
-    @Export(name="certificateProfileType", type=String.class, parameters={})
+    @Export(name="certificateProfileType", refs={String.class}, tree="[0]")
     private Output<String> certificateProfileType;
 
     /**
@@ -153,7 +153,7 @@ public class Certificate extends com.pulumi.resources.CustomResource {
      * The details of the certificate revocation list (CRL).
      * 
      */
-    @Export(name="certificateRevocationListDetails", type=List.class, parameters={CertificateCertificateRevocationListDetail.class})
+    @Export(name="certificateRevocationListDetails", refs={List.class,CertificateCertificateRevocationListDetail.class}, tree="[0,1]")
     private Output<List<CertificateCertificateRevocationListDetail>> certificateRevocationListDetails;
 
     /**
@@ -167,7 +167,7 @@ public class Certificate extends com.pulumi.resources.CustomResource {
      * (Updatable) An optional list of rules that control how the certificate is used and managed.
      * 
      */
-    @Export(name="certificateRules", type=List.class, parameters={CertificateCertificateRule.class})
+    @Export(name="certificateRules", refs={List.class,CertificateCertificateRule.class}, tree="[0,1]")
     private Output</* @Nullable */ List<CertificateCertificateRule>> certificateRules;
 
     /**
@@ -181,7 +181,7 @@ public class Certificate extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the compartment where you want to create the certificate.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -195,7 +195,7 @@ public class Certificate extends com.pulumi.resources.CustomResource {
      * (Updatable) The origin of the certificate.
      * 
      */
-    @Export(name="configType", type=String.class, parameters={})
+    @Export(name="configType", refs={String.class}, tree="[0]")
     private Output<String> configType;
 
     /**
@@ -209,7 +209,7 @@ public class Certificate extends com.pulumi.resources.CustomResource {
      * The details of the certificate version. This object does not contain the certificate contents.
      * 
      */
-    @Export(name="currentVersions", type=List.class, parameters={CertificateCurrentVersion.class})
+    @Export(name="currentVersions", refs={List.class,CertificateCurrentVersion.class}, tree="[0,1]")
     private Output<List<CertificateCurrentVersion>> currentVersions;
 
     /**
@@ -223,7 +223,7 @@ public class Certificate extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -237,7 +237,7 @@ public class Certificate extends com.pulumi.resources.CustomResource {
      * (Updatable) A brief description of the certificate. Avoid entering confidential information.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> description;
 
     /**
@@ -251,7 +251,7 @@ public class Certificate extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -265,7 +265,7 @@ public class Certificate extends com.pulumi.resources.CustomResource {
      * The OCID of the private CA.
      * 
      */
-    @Export(name="issuerCertificateAuthorityId", type=String.class, parameters={})
+    @Export(name="issuerCertificateAuthorityId", refs={String.class}, tree="[0]")
     private Output<String> issuerCertificateAuthorityId;
 
     /**
@@ -279,7 +279,7 @@ public class Certificate extends com.pulumi.resources.CustomResource {
      * The algorithm to use to create key pairs.
      * 
      */
-    @Export(name="keyAlgorithm", type=String.class, parameters={})
+    @Export(name="keyAlgorithm", refs={String.class}, tree="[0]")
     private Output<String> keyAlgorithm;
 
     /**
@@ -293,7 +293,7 @@ public class Certificate extends com.pulumi.resources.CustomResource {
      * Additional information about the current lifecycle state of the certificate.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -310,7 +310,7 @@ public class Certificate extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -327,7 +327,7 @@ public class Certificate extends com.pulumi.resources.CustomResource {
      * The algorithm to use to sign the public key certificate.
      * 
      */
-    @Export(name="signatureAlgorithm", type=String.class, parameters={})
+    @Export(name="signatureAlgorithm", refs={String.class}, tree="[0]")
     private Output<String> signatureAlgorithm;
 
     /**
@@ -341,7 +341,7 @@ public class Certificate extends com.pulumi.resources.CustomResource {
      * The current lifecycle state of the certificate.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -355,7 +355,7 @@ public class Certificate extends com.pulumi.resources.CustomResource {
      * The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
      * 
      */
-    @Export(name="subjects", type=List.class, parameters={CertificateSubject.class})
+    @Export(name="subjects", refs={List.class,CertificateSubject.class}, tree="[0,1]")
     private Output<List<CertificateSubject>> subjects;
 
     /**
@@ -369,7 +369,7 @@ public class Certificate extends com.pulumi.resources.CustomResource {
      * A property indicating when the certificate was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -383,7 +383,7 @@ public class Certificate extends com.pulumi.resources.CustomResource {
      * An optional property indicating when to delete the certificate version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
-    @Export(name="timeOfDeletion", type=String.class, parameters={})
+    @Export(name="timeOfDeletion", refs={String.class}, tree="[0]")
     private Output<String> timeOfDeletion;
 
     /**

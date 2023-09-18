@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Ingress Gateway Route Tables in Oracle Cloud Infrastructure Service Mesh service.
@@ -131,6 +132,12 @@ func (o GetIngressGatewayRouteTablesResultOutput) ToGetIngressGatewayRouteTables
 
 func (o GetIngressGatewayRouteTablesResultOutput) ToGetIngressGatewayRouteTablesResultOutputWithContext(ctx context.Context) GetIngressGatewayRouteTablesResultOutput {
 	return o
+}
+
+func (o GetIngressGatewayRouteTablesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetIngressGatewayRouteTablesResult] {
+	return pulumix.Output[GetIngressGatewayRouteTablesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Oda Private Endpoints in Oracle Cloud Infrastructure Digital Assistant service.
@@ -124,6 +125,12 @@ func (o GetOdaPrivateEndpointsResultOutput) ToGetOdaPrivateEndpointsResultOutput
 
 func (o GetOdaPrivateEndpointsResultOutput) ToGetOdaPrivateEndpointsResultOutputWithContext(ctx context.Context) GetOdaPrivateEndpointsResultOutput {
 	return o
+}
+
+func (o GetOdaPrivateEndpointsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetOdaPrivateEndpointsResult] {
+	return pulumix.Output[GetOdaPrivateEndpointsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that the ODA private endpoint belongs to.

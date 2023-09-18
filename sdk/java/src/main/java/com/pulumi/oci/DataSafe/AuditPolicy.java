@@ -41,7 +41,7 @@ public class AuditPolicy extends com.pulumi.resources.CustomResource {
      * Lists the audit policy provisioning conditions for the target database.
      * 
      */
-    @Export(name="auditConditions", type=List.class, parameters={AuditPolicyAuditCondition.class})
+    @Export(name="auditConditions", refs={List.class,AuditPolicyAuditCondition.class}, tree="[0,1]")
     private Output<List<AuditPolicyAuditCondition>> auditConditions;
 
     /**
@@ -55,7 +55,7 @@ public class AuditPolicy extends com.pulumi.resources.CustomResource {
      * Unique audit policy identifier.
      * 
      */
-    @Export(name="auditPolicyId", type=String.class, parameters={})
+    @Export(name="auditPolicyId", refs={String.class}, tree="[0]")
     private Output<String> auditPolicyId;
 
     /**
@@ -69,7 +69,7 @@ public class AuditPolicy extends com.pulumi.resources.CustomResource {
      * Represents all available audit policy specifications relevant for the target database. For more details on available audit polcies, refer to [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827).
      * 
      */
-    @Export(name="auditSpecifications", type=List.class, parameters={AuditPolicyAuditSpecification.class})
+    @Export(name="auditSpecifications", refs={List.class,AuditPolicyAuditSpecification.class}, tree="[0,1]")
     private Output<List<AuditPolicyAuditSpecification>> auditSpecifications;
 
     /**
@@ -83,7 +83,7 @@ public class AuditPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the compartment containing the audit policy.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -97,7 +97,7 @@ public class AuditPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -111,7 +111,7 @@ public class AuditPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) The description of the audit policy.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -125,7 +125,7 @@ public class AuditPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) The display name of the audit policy. The name does not have to be unique, and it is changeable.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -139,7 +139,7 @@ public class AuditPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -153,7 +153,7 @@ public class AuditPolicy extends com.pulumi.resources.CustomResource {
      * Option provided to users at the target to indicate whether the Data Safe service account has to be excluded while provisioning the audit policies.
      * 
      */
-    @Export(name="isDataSafeServiceAccountExcluded", type=Boolean.class, parameters={})
+    @Export(name="isDataSafeServiceAccountExcluded", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isDataSafeServiceAccountExcluded;
 
     /**
@@ -167,7 +167,7 @@ public class AuditPolicy extends com.pulumi.resources.CustomResource {
      * Details about the current state of the audit policy in Data Safe.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -181,7 +181,7 @@ public class AuditPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) An optional property when incremented triggers Provision. Could be set to any integer value.
      * 
      */
-    @Export(name="provisionTrigger", type=Integer.class, parameters={})
+    @Export(name="provisionTrigger", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> provisionTrigger;
 
     /**
@@ -198,7 +198,7 @@ public class AuditPolicy extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="retrieveFromTargetTrigger", type=Integer.class, parameters={})
+    @Export(name="retrieveFromTargetTrigger", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> retrieveFromTargetTrigger;
 
     /**
@@ -215,7 +215,7 @@ public class AuditPolicy extends com.pulumi.resources.CustomResource {
      * The current state of the audit policy.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -229,7 +229,7 @@ public class AuditPolicy extends com.pulumi.resources.CustomResource {
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -243,7 +243,7 @@ public class AuditPolicy extends com.pulumi.resources.CustomResource {
      * The OCID of the target for which the audit policy is created.
      * 
      */
-    @Export(name="targetId", type=String.class, parameters={})
+    @Export(name="targetId", refs={String.class}, tree="[0]")
     private Output<String> targetId;
 
     /**
@@ -257,7 +257,7 @@ public class AuditPolicy extends com.pulumi.resources.CustomResource {
      * The time the the audit policy was created, in the format defined by RFC3339.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -271,7 +271,7 @@ public class AuditPolicy extends com.pulumi.resources.CustomResource {
      * Indicates the last provisioning time of audit policies on the target, in the format defined by RFC3339.
      * 
      */
-    @Export(name="timeLastProvisioned", type=String.class, parameters={})
+    @Export(name="timeLastProvisioned", refs={String.class}, tree="[0]")
     private Output<String> timeLastProvisioned;
 
     /**
@@ -285,7 +285,7 @@ public class AuditPolicy extends com.pulumi.resources.CustomResource {
      * The time when the audit policies was last retrieved from this target, in the format defined by RFC3339.
      * 
      */
-    @Export(name="timeLastRetrieved", type=String.class, parameters={})
+    @Export(name="timeLastRetrieved", refs={String.class}, tree="[0]")
     private Output<String> timeLastRetrieved;
 
     /**
@@ -299,7 +299,7 @@ public class AuditPolicy extends com.pulumi.resources.CustomResource {
      * The last date and time the audit policy was updated, in the format defined by RFC3339.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

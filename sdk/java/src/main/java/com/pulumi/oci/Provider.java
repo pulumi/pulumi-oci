@@ -28,7 +28,7 @@ public class Provider extends com.pulumi.resources.ProviderResource {
      * &#39;ResourcePrincipal&#39;. By default, &#39;ApiKey&#39; will be used.
      * 
      */
-    @Export(name="auth", type=String.class, parameters={})
+    @Export(name="auth", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> auth;
 
     /**
@@ -43,7 +43,7 @@ public class Provider extends com.pulumi.resources.ProviderResource {
      * (Optional) The profile name to be used from config file, if not set it will be DEFAULT.
      * 
      */
-    @Export(name="configFileProfile", type=String.class, parameters={})
+    @Export(name="configFileProfile", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> configFileProfile;
 
     /**
@@ -58,7 +58,7 @@ public class Provider extends com.pulumi.resources.ProviderResource {
      * console. Required if auth is set to &#39;ApiKey&#39;, ignored otherwise.
      * 
      */
-    @Export(name="fingerprint", type=String.class, parameters={})
+    @Export(name="fingerprint", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> fingerprint;
 
     /**
@@ -74,7 +74,7 @@ public class Provider extends com.pulumi.resources.ProviderResource {
      * set to &#39;ApiKey&#39;, ignored otherwise.
      * 
      */
-    @Export(name="privateKey", type=String.class, parameters={})
+    @Export(name="privateKey", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> privateKey;
 
     /**
@@ -89,7 +89,7 @@ public class Provider extends com.pulumi.resources.ProviderResource {
      * (Optional) The password used to secure the private key.
      * 
      */
-    @Export(name="privateKeyPassword", type=String.class, parameters={})
+    @Export(name="privateKeyPassword", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> privateKeyPassword;
 
     /**
@@ -104,7 +104,7 @@ public class Provider extends com.pulumi.resources.ProviderResource {
      * auth is set to &#39;ApiKey&#39;, ignored otherwise.
      * 
      */
-    @Export(name="privateKeyPath", type=String.class, parameters={})
+    @Export(name="privateKeyPath", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> privateKeyPath;
 
     /**
@@ -119,7 +119,7 @@ public class Provider extends com.pulumi.resources.ProviderResource {
      * (Required) The region for API connections (e.g. us-ashburn-1).
      * 
      */
-    @Export(name="region", type=String.class, parameters={})
+    @Export(name="region", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> region;
 
     /**
@@ -134,7 +134,7 @@ public class Provider extends com.pulumi.resources.ProviderResource {
      * Infrastructure console. Required if auth is set to &#39;ApiKey&#39;, ignored otherwise.
      * 
      */
-    @Export(name="tenancyOcid", type=String.class, parameters={})
+    @Export(name="tenancyOcid", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> tenancyOcid;
 
     /**
@@ -150,7 +150,7 @@ public class Provider extends com.pulumi.resources.ProviderResource {
      * auth is set to &#39;ApiKey&#39;, ignored otherwise.
      * 
      */
-    @Export(name="userOcid", type=String.class, parameters={})
+    @Export(name="userOcid", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> userOcid;
 
     /**

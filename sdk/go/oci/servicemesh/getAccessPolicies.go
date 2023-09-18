@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Access Policies in Oracle Cloud Infrastructure Service Mesh service.
@@ -131,6 +132,12 @@ func (o GetAccessPoliciesResultOutput) ToGetAccessPoliciesResultOutput() GetAcce
 
 func (o GetAccessPoliciesResultOutput) ToGetAccessPoliciesResultOutputWithContext(ctx context.Context) GetAccessPoliciesResultOutput {
 	return o
+}
+
+func (o GetAccessPoliciesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAccessPoliciesResult] {
+	return pulumix.Output[GetAccessPoliciesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The list of access_policy_collection.

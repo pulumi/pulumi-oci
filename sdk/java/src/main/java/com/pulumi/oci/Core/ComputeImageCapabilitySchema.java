@@ -76,7 +76,7 @@ public class ComputeImageCapabilitySchema extends com.pulumi.resources.CustomRes
      * (Updatable) The OCID of the compartment that contains the resource.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -90,7 +90,7 @@ public class ComputeImageCapabilitySchema extends com.pulumi.resources.CustomRes
      * The ocid of the compute global image capability schema
      * 
      */
-    @Export(name="computeGlobalImageCapabilitySchemaId", type=String.class, parameters={})
+    @Export(name="computeGlobalImageCapabilitySchemaId", refs={String.class}, tree="[0]")
     private Output<String> computeGlobalImageCapabilitySchemaId;
 
     /**
@@ -104,7 +104,7 @@ public class ComputeImageCapabilitySchema extends com.pulumi.resources.CustomRes
      * The name of the compute global image capability schema version
      * 
      */
-    @Export(name="computeGlobalImageCapabilitySchemaVersionName", type=String.class, parameters={})
+    @Export(name="computeGlobalImageCapabilitySchemaVersionName", refs={String.class}, tree="[0]")
     private Output<String> computeGlobalImageCapabilitySchemaVersionName;
 
     /**
@@ -118,7 +118,7 @@ public class ComputeImageCapabilitySchema extends com.pulumi.resources.CustomRes
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -132,7 +132,7 @@ public class ComputeImageCapabilitySchema extends com.pulumi.resources.CustomRes
      * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -146,7 +146,7 @@ public class ComputeImageCapabilitySchema extends com.pulumi.resources.CustomRes
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -160,7 +160,7 @@ public class ComputeImageCapabilitySchema extends com.pulumi.resources.CustomRes
      * The ocid of the image
      * 
      */
-    @Export(name="imageId", type=String.class, parameters={})
+    @Export(name="imageId", refs={String.class}, tree="[0]")
     private Output<String> imageId;
 
     /**
@@ -174,7 +174,7 @@ public class ComputeImageCapabilitySchema extends com.pulumi.resources.CustomRes
      * (Updatable) The map of each capability name to its ImageCapabilitySchemaDescriptor.
      * 
      */
-    @Export(name="schemaData", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="schemaData", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> schemaData;
 
     /**
@@ -188,7 +188,7 @@ public class ComputeImageCapabilitySchema extends com.pulumi.resources.CustomRes
      * The date and time the compute image capability schema was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**

@@ -77,7 +77,7 @@ public class ExternalDbSystem extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -91,7 +91,7 @@ public class ExternalDbSystem extends com.pulumi.resources.CustomResource {
      * The details required to enable Database Management for an external DB system.
      * 
      */
-    @Export(name="databaseManagementConfig", type=ExternalDbSystemDatabaseManagementConfig.class, parameters={})
+    @Export(name="databaseManagementConfig", refs={ExternalDbSystemDatabaseManagementConfig.class}, tree="[0]")
     private Output<ExternalDbSystemDatabaseManagementConfig> databaseManagementConfig;
 
     /**
@@ -105,7 +105,7 @@ public class ExternalDbSystem extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system discovery.
      * 
      */
-    @Export(name="dbSystemDiscoveryId", type=String.class, parameters={})
+    @Export(name="dbSystemDiscoveryId", refs={String.class}, tree="[0]")
     private Output<String> dbSystemDiscoveryId;
 
     /**
@@ -119,7 +119,7 @@ public class ExternalDbSystem extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used during the discovery of the DB system.
      * 
      */
-    @Export(name="discoveryAgentId", type=String.class, parameters={})
+    @Export(name="discoveryAgentId", refs={String.class}, tree="[0]")
     private Output<String> discoveryAgentId;
 
     /**
@@ -133,7 +133,7 @@ public class ExternalDbSystem extends com.pulumi.resources.CustomResource {
      * (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -147,7 +147,7 @@ public class ExternalDbSystem extends com.pulumi.resources.CustomResource {
      * The Oracle Grid home directory in case of cluster-based DB system and Oracle home directory in case of single instance-based DB system.
      * 
      */
-    @Export(name="homeDirectory", type=String.class, parameters={})
+    @Export(name="homeDirectory", refs={String.class}, tree="[0]")
     private Output<String> homeDirectory;
 
     /**
@@ -161,7 +161,7 @@ public class ExternalDbSystem extends com.pulumi.resources.CustomResource {
      * Indicates whether the DB system is a cluster DB system or not.
      * 
      */
-    @Export(name="isCluster", type=Boolean.class, parameters={})
+    @Export(name="isCluster", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isCluster;
 
     /**
@@ -175,7 +175,7 @@ public class ExternalDbSystem extends com.pulumi.resources.CustomResource {
      * Additional information about the current lifecycle state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -189,7 +189,7 @@ public class ExternalDbSystem extends com.pulumi.resources.CustomResource {
      * The details of the associated service that will be enabled or disabled for an external DB System.
      * 
      */
-    @Export(name="stackMonitoringConfig", type=ExternalDbSystemStackMonitoringConfig.class, parameters={})
+    @Export(name="stackMonitoringConfig", refs={ExternalDbSystemStackMonitoringConfig.class}, tree="[0]")
     private Output<ExternalDbSystemStackMonitoringConfig> stackMonitoringConfig;
 
     /**
@@ -203,7 +203,7 @@ public class ExternalDbSystem extends com.pulumi.resources.CustomResource {
      * The current lifecycle state of the external DB system resource.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -217,7 +217,7 @@ public class ExternalDbSystem extends com.pulumi.resources.CustomResource {
      * The date and time the external DB system was created.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -231,7 +231,7 @@ public class ExternalDbSystem extends com.pulumi.resources.CustomResource {
      * The date and time the external DB system was last updated.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

@@ -79,7 +79,7 @@ public class NetworkAddressList extends com.pulumi.resources.CustomResource {
      * (Updatable) A private IP address or CIDR IP address range.
      * 
      */
-    @Export(name="addresses", type=List.class, parameters={String.class})
+    @Export(name="addresses", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> addresses;
 
     /**
@@ -93,7 +93,7 @@ public class NetworkAddressList extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -107,7 +107,7 @@ public class NetworkAddressList extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -121,7 +121,7 @@ public class NetworkAddressList extends com.pulumi.resources.CustomResource {
      * (Updatable) NetworkAddressList display name, can be renamed.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -135,7 +135,7 @@ public class NetworkAddressList extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -149,7 +149,7 @@ public class NetworkAddressList extends com.pulumi.resources.CustomResource {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -163,7 +163,7 @@ public class NetworkAddressList extends com.pulumi.resources.CustomResource {
      * The current state of the NetworkAddressList.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -177,7 +177,7 @@ public class NetworkAddressList extends com.pulumi.resources.CustomResource {
      * (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -191,7 +191,7 @@ public class NetworkAddressList extends com.pulumi.resources.CustomResource {
      * The time the NetworkAddressList was created. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -205,7 +205,7 @@ public class NetworkAddressList extends com.pulumi.resources.CustomResource {
      * The time the NetworkAddressList was updated. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -219,7 +219,7 @@ public class NetworkAddressList extends com.pulumi.resources.CustomResource {
      * (Updatable) Type of NetworkAddressList.
      * 
      */
-    @Export(name="type", type=String.class, parameters={})
+    @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**
@@ -233,7 +233,7 @@ public class NetworkAddressList extends com.pulumi.resources.CustomResource {
      * (Updatable) A list of private address prefixes, each associated with a particular VCN. To specify all addresses in a VCN, use &#34;0.0.0.0/0&#34; for IPv4 and &#34;::/0&#34; for IPv6.
      * 
      */
-    @Export(name="vcnAddresses", type=List.class, parameters={NetworkAddressListVcnAddress.class})
+    @Export(name="vcnAddresses", refs={List.class,NetworkAddressListVcnAddress.class}, tree="[0,1]")
     private Output<List<NetworkAddressListVcnAddress>> vcnAddresses;
 
     /**

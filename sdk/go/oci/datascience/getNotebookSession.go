@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Notebook Session resource in Oracle Cloud Infrastructure Data Science service.
@@ -125,6 +126,12 @@ func (o LookupNotebookSessionResultOutput) ToLookupNotebookSessionResultOutput()
 
 func (o LookupNotebookSessionResultOutput) ToLookupNotebookSessionResultOutputWithContext(ctx context.Context) LookupNotebookSessionResultOutput {
 	return o
+}
+
+func (o LookupNotebookSessionResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupNotebookSessionResult] {
+	return pulumix.Output[LookupNotebookSessionResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the notebook session's compartment.

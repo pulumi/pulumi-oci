@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Boot Volume resource in Oracle Cloud Infrastructure Core service.
@@ -141,6 +142,12 @@ func (o LookupBootVolumeResultOutput) ToLookupBootVolumeResultOutput() LookupBoo
 
 func (o LookupBootVolumeResultOutput) ToLookupBootVolumeResultOutputWithContext(ctx context.Context) LookupBootVolumeResultOutput {
 	return o
+}
+
+func (o LookupBootVolumeResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupBootVolumeResult] {
+	return pulumix.Output[LookupBootVolumeResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The number of Volume Performance Units per GB that this boot volume is effectively tuned to.

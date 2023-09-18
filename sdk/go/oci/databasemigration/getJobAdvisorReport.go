@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Job Advisor Report resource in Oracle Cloud Infrastructure Database Migration service.
@@ -111,6 +112,12 @@ func (o GetJobAdvisorReportResultOutput) ToGetJobAdvisorReportResultOutput() Get
 
 func (o GetJobAdvisorReportResultOutput) ToGetJobAdvisorReportResultOutputWithContext(ctx context.Context) GetJobAdvisorReportResultOutput {
 	return o
+}
+
+func (o GetJobAdvisorReportResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetJobAdvisorReportResult] {
+	return pulumix.Output[GetJobAdvisorReportResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The provider-assigned unique ID for this managed resource.

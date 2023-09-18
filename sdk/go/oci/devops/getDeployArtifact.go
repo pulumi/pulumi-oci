@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Deploy Artifact resource in Oracle Cloud Infrastructure Devops service.
@@ -127,6 +128,12 @@ func (o LookupDeployArtifactResultOutput) ToLookupDeployArtifactResultOutput() L
 
 func (o LookupDeployArtifactResultOutput) ToLookupDeployArtifactResultOutputWithContext(ctx context.Context) LookupDeployArtifactResultOutput {
 	return o
+}
+
+func (o LookupDeployArtifactResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDeployArtifactResult] {
+	return pulumix.Output[LookupDeployArtifactResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.

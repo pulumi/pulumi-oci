@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Protected Databases in Oracle Cloud Infrastructure Recovery service.
@@ -138,6 +139,12 @@ func (o GetProtectedDatabasesResultOutput) ToGetProtectedDatabasesResultOutput()
 
 func (o GetProtectedDatabasesResultOutput) ToGetProtectedDatabasesResultOutputWithContext(ctx context.Context) GetProtectedDatabasesResultOutput {
 	return o
+}
+
+func (o GetProtectedDatabasesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetProtectedDatabasesResult] {
+	return pulumix.Output[GetProtectedDatabasesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the compartment that contains the protected database.

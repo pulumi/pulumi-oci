@@ -90,7 +90,7 @@ public class Bucket extends com.pulumi.resources.CustomResource {
      * (Updatable) The type of public access enabled on this bucket. A bucket is set to `NoPublicAccess` by default, which only allows an authenticated caller to access the bucket and its contents. When `ObjectRead` is enabled on the bucket, public access is allowed for the `GetObject`, `HeadObject`, and `ListObjects` operations. When `ObjectReadWithoutList` is enabled on the bucket, public access is allowed for the `GetObject` and `HeadObject` operations.
      * 
      */
-    @Export(name="accessType", type=String.class, parameters={})
+    @Export(name="accessType", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> accessType;
 
     /**
@@ -104,7 +104,7 @@ public class Bucket extends com.pulumi.resources.CustomResource {
      * The approximate number of objects in the bucket. Count statistics are reported periodically. You will see a lag between what is displayed and the actual object count.
      * 
      */
-    @Export(name="approximateCount", type=String.class, parameters={})
+    @Export(name="approximateCount", refs={String.class}, tree="[0]")
     private Output<String> approximateCount;
 
     /**
@@ -118,7 +118,7 @@ public class Bucket extends com.pulumi.resources.CustomResource {
      * The approximate total size in bytes of all objects in the bucket. Size statistics are reported periodically. You will see a lag between what is displayed and the actual size of the bucket.
      * 
      */
-    @Export(name="approximateSize", type=String.class, parameters={})
+    @Export(name="approximateSize", refs={String.class}, tree="[0]")
     private Output<String> approximateSize;
 
     /**
@@ -132,7 +132,7 @@ public class Bucket extends com.pulumi.resources.CustomResource {
      * (Updatable) Set the auto tiering status on the bucket. By default, a bucket is created with auto tiering `Disabled`. Use this option to enable auto tiering during bucket creation. Objects in a bucket with auto tiering set to `InfrequentAccess` are transitioned automatically between the &#39;Standard&#39; and &#39;InfrequentAccess&#39; tiers based on the access pattern of the objects.
      * 
      */
-    @Export(name="autoTiering", type=String.class, parameters={})
+    @Export(name="autoTiering", refs={String.class}, tree="[0]")
     private Output<String> autoTiering;
 
     /**
@@ -146,7 +146,7 @@ public class Bucket extends com.pulumi.resources.CustomResource {
      * The OCID of the bucket which is a Oracle assigned unique identifier for this resource type (bucket). `bucket_id` cannot be used for bucket lookup.
      * 
      */
-    @Export(name="bucketId", type=String.class, parameters={})
+    @Export(name="bucketId", refs={String.class}, tree="[0]")
     private Output<String> bucketId;
 
     /**
@@ -160,7 +160,7 @@ public class Bucket extends com.pulumi.resources.CustomResource {
      * (Updatable) The ID of the compartment in which to create the bucket.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -174,7 +174,7 @@ public class Bucket extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the bucket.
      * 
      */
-    @Export(name="createdBy", type=String.class, parameters={})
+    @Export(name="createdBy", refs={String.class}, tree="[0]")
     private Output<String> createdBy;
 
     /**
@@ -188,7 +188,7 @@ public class Bucket extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -202,7 +202,7 @@ public class Bucket extends com.pulumi.resources.CustomResource {
      * The entity tag (ETag) for the bucket.
      * 
      */
-    @Export(name="etag", type=String.class, parameters={})
+    @Export(name="etag", refs={String.class}, tree="[0]")
     private Output<String> etag;
 
     /**
@@ -216,7 +216,7 @@ public class Bucket extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -230,7 +230,7 @@ public class Bucket extends com.pulumi.resources.CustomResource {
      * Whether or not this bucket is read only. By default, `isReadOnly` is set to `false`. This will be set to &#39;true&#39; when this bucket is configured as a destination in a replication policy.
      * 
      */
-    @Export(name="isReadOnly", type=Boolean.class, parameters={})
+    @Export(name="isReadOnly", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isReadOnly;
 
     /**
@@ -244,7 +244,7 @@ public class Bucket extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
      * 
      */
-    @Export(name="kmsKeyId", type=String.class, parameters={})
+    @Export(name="kmsKeyId", refs={String.class}, tree="[0]")
     private Output<String> kmsKeyId;
 
     /**
@@ -258,7 +258,7 @@ public class Bucket extends com.pulumi.resources.CustomResource {
      * (Updatable) Arbitrary string, up to 4KB, of keys and values for user-defined metadata.
      * 
      */
-    @Export(name="metadata", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="metadata", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output</* @Nullable */ Map<String,Object>> metadata;
 
     /**
@@ -272,7 +272,7 @@ public class Bucket extends com.pulumi.resources.CustomResource {
      * The name of the bucket. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods. Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information. example: Example: my-new-bucket1
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -286,7 +286,7 @@ public class Bucket extends com.pulumi.resources.CustomResource {
      * The Object Storage namespace used for the request.
      * 
      */
-    @Export(name="namespace", type=String.class, parameters={})
+    @Export(name="namespace", refs={String.class}, tree="[0]")
     private Output<String> namespace;
 
     /**
@@ -300,7 +300,7 @@ public class Bucket extends com.pulumi.resources.CustomResource {
      * (Updatable) Whether or not events are emitted for object state changes in this bucket. By default, `objectEventsEnabled` is set to `false`. Set `objectEventsEnabled` to `true` to emit events for object state changes. For more information about events, see [Overview of Events](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/eventsoverview.htm).
      * 
      */
-    @Export(name="objectEventsEnabled", type=Boolean.class, parameters={})
+    @Export(name="objectEventsEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> objectEventsEnabled;
 
     /**
@@ -314,7 +314,7 @@ public class Bucket extends com.pulumi.resources.CustomResource {
      * The entity tag (ETag) for the live object lifecycle policy on the bucket.
      * 
      */
-    @Export(name="objectLifecyclePolicyEtag", type=String.class, parameters={})
+    @Export(name="objectLifecyclePolicyEtag", refs={String.class}, tree="[0]")
     private Output<String> objectLifecyclePolicyEtag;
 
     /**
@@ -328,7 +328,7 @@ public class Bucket extends com.pulumi.resources.CustomResource {
      * Whether or not this bucket is a replication source. By default, `replicationEnabled` is set to `false`. This will be set to &#39;true&#39; when you create a replication policy for the bucket.
      * 
      */
-    @Export(name="replicationEnabled", type=Boolean.class, parameters={})
+    @Export(name="replicationEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> replicationEnabled;
 
     /**
@@ -342,7 +342,7 @@ public class Bucket extends com.pulumi.resources.CustomResource {
      * (Updatable) Creates a new retention rule in the specified bucket. The new rule will take effect typically within 30 seconds. Note that a maximum of 100 rules are supported on a bucket.
      * 
      */
-    @Export(name="retentionRules", type=List.class, parameters={BucketRetentionRule.class})
+    @Export(name="retentionRules", refs={List.class,BucketRetentionRule.class}, tree="[0,1]")
     private Output</* @Nullable */ List<BucketRetentionRule>> retentionRules;
 
     /**
@@ -356,7 +356,7 @@ public class Bucket extends com.pulumi.resources.CustomResource {
      * The type of storage tier of this bucket. A bucket is set to &#39;Standard&#39; tier by default, which means the bucket will be put in the standard storage tier. When &#39;Archive&#39; tier type is set explicitly, the bucket is put in the Archive Storage tier. The &#39;storageTier&#39; property is immutable after bucket is created.
      * 
      */
-    @Export(name="storageTier", type=String.class, parameters={})
+    @Export(name="storageTier", refs={String.class}, tree="[0]")
     private Output<String> storageTier;
 
     /**
@@ -370,7 +370,7 @@ public class Bucket extends com.pulumi.resources.CustomResource {
      * The date and time the bucket was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -387,7 +387,7 @@ public class Bucket extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="versioning", type=String.class, parameters={})
+    @Export(name="versioning", refs={String.class}, tree="[0]")
     private Output<String> versioning;
 
     /**

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Database Registrations in Oracle Cloud Infrastructure Golden Gate service.
@@ -120,6 +121,12 @@ func (o GetDatabaseRegistrationsResultOutput) ToGetDatabaseRegistrationsResultOu
 
 func (o GetDatabaseRegistrationsResultOutput) ToGetDatabaseRegistrationsResultOutputWithContext(ctx context.Context) GetDatabaseRegistrationsResultOutput {
 	return o
+}
+
+func (o GetDatabaseRegistrationsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseRegistrationsResult] {
+	return pulumix.Output[GetDatabaseRegistrationsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.

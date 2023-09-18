@@ -44,7 +44,7 @@ public class Recommendation extends com.pulumi.resources.CustomResource {
      * The unique OCID associated with the category.
      * 
      */
-    @Export(name="categoryId", type=String.class, parameters={})
+    @Export(name="categoryId", refs={String.class}, tree="[0]")
     private Output<String> categoryId;
 
     /**
@@ -58,7 +58,7 @@ public class Recommendation extends com.pulumi.resources.CustomResource {
      * The OCID of the tenancy. The tenancy is the root compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -72,7 +72,7 @@ public class Recommendation extends com.pulumi.resources.CustomResource {
      * Text describing the recommendation.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -86,7 +86,7 @@ public class Recommendation extends com.pulumi.resources.CustomResource {
      * The estimated cost savings, in dollars, for the recommendation.
      * 
      */
-    @Export(name="estimatedCostSaving", type=Double.class, parameters={})
+    @Export(name="estimatedCostSaving", refs={Double.class}, tree="[0]")
     private Output<Double> estimatedCostSaving;
 
     /**
@@ -100,7 +100,7 @@ public class Recommendation extends com.pulumi.resources.CustomResource {
      * Additional metadata key/value pairs for the recommendation.
      * 
      */
-    @Export(name="extendedMetadata", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="extendedMetadata", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> extendedMetadata;
 
     /**
@@ -114,7 +114,7 @@ public class Recommendation extends com.pulumi.resources.CustomResource {
      * The level of importance assigned to the recommendation.
      * 
      */
-    @Export(name="importance", type=String.class, parameters={})
+    @Export(name="importance", refs={String.class}, tree="[0]")
     private Output<String> importance;
 
     /**
@@ -128,7 +128,7 @@ public class Recommendation extends com.pulumi.resources.CustomResource {
      * The name of the profile level.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -142,7 +142,7 @@ public class Recommendation extends com.pulumi.resources.CustomResource {
      * The unique OCID associated with the recommendation.
      * 
      */
-    @Export(name="recommendationId", type=String.class, parameters={})
+    @Export(name="recommendationId", refs={String.class}, tree="[0]")
     private Output<String> recommendationId;
 
     /**
@@ -156,7 +156,7 @@ public class Recommendation extends com.pulumi.resources.CustomResource {
      * An array of `ResourceCount` objects grouped by the status of the resource actions.
      * 
      */
-    @Export(name="resourceCounts", type=List.class, parameters={RecommendationResourceCount.class})
+    @Export(name="resourceCounts", refs={List.class,RecommendationResourceCount.class}, tree="[0,1]")
     private Output<List<RecommendationResourceCount>> resourceCounts;
 
     /**
@@ -170,7 +170,7 @@ public class Recommendation extends com.pulumi.resources.CustomResource {
      * The recommendation&#39;s current state.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -184,7 +184,7 @@ public class Recommendation extends com.pulumi.resources.CustomResource {
      * (Updatable) The status of the recommendation.
      * 
      */
-    @Export(name="status", type=String.class, parameters={})
+    @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
@@ -198,7 +198,7 @@ public class Recommendation extends com.pulumi.resources.CustomResource {
      * Optional. The profile levels supported by a recommendation. For example, profile level values could be `Low`, `Medium`, and `High`. Not all recommendations support this field.
      * 
      */
-    @Export(name="supportedLevels", type=List.class, parameters={RecommendationSupportedLevel.class})
+    @Export(name="supportedLevels", refs={List.class,RecommendationSupportedLevel.class}, tree="[0,1]")
     private Output<List<RecommendationSupportedLevel>> supportedLevels;
 
     /**
@@ -212,7 +212,7 @@ public class Recommendation extends com.pulumi.resources.CustomResource {
      * The date and time the recommendation details were created, in the format defined by RFC3339.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -226,7 +226,7 @@ public class Recommendation extends com.pulumi.resources.CustomResource {
      * The date and time that the recommendation entered its current status. The format is defined by RFC3339.
      * 
      */
-    @Export(name="timeStatusBegin", type=String.class, parameters={})
+    @Export(name="timeStatusBegin", refs={String.class}, tree="[0]")
     private Output<String> timeStatusBegin;
 
     /**
@@ -245,7 +245,7 @@ public class Recommendation extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="timeStatusEnd", type=String.class, parameters={})
+    @Export(name="timeStatusEnd", refs={String.class}, tree="[0]")
     private Output<String> timeStatusEnd;
 
     /**
@@ -264,7 +264,7 @@ public class Recommendation extends com.pulumi.resources.CustomResource {
      * The date and time the recommendation details were last updated, in the format defined by RFC3339.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

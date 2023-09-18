@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Database Pdb Conversion History Entries in Oracle Cloud Infrastructure Database service.
@@ -117,6 +118,12 @@ func (o GetDatabasePdbConversionHistoryEntriesResultOutput) ToGetDatabasePdbConv
 
 func (o GetDatabasePdbConversionHistoryEntriesResultOutput) ToGetDatabasePdbConversionHistoryEntriesResultOutputWithContext(ctx context.Context) GetDatabasePdbConversionHistoryEntriesResultOutput {
 	return o
+}
+
+func (o GetDatabasePdbConversionHistoryEntriesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabasePdbConversionHistoryEntriesResult] {
+	return pulumix.Output[GetDatabasePdbConversionHistoryEntriesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDatabasePdbConversionHistoryEntriesResultOutput) DatabaseId() pulumi.StringOutput {

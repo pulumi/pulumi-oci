@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Invoke Run resource in Oracle Cloud Infrastructure Data Flow service.
@@ -546,6 +547,12 @@ func (i *InvokeRun) ToInvokeRunOutputWithContext(ctx context.Context) InvokeRunO
 	return pulumi.ToOutputWithContext(ctx, i).(InvokeRunOutput)
 }
 
+func (i *InvokeRun) ToOutput(ctx context.Context) pulumix.Output[*InvokeRun] {
+	return pulumix.Output[*InvokeRun]{
+		OutputState: i.ToInvokeRunOutputWithContext(ctx).OutputState,
+	}
+}
+
 // InvokeRunArrayInput is an input type that accepts InvokeRunArray and InvokeRunArrayOutput values.
 // You can construct a concrete instance of `InvokeRunArrayInput` via:
 //
@@ -569,6 +576,12 @@ func (i InvokeRunArray) ToInvokeRunArrayOutput() InvokeRunArrayOutput {
 
 func (i InvokeRunArray) ToInvokeRunArrayOutputWithContext(ctx context.Context) InvokeRunArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(InvokeRunArrayOutput)
+}
+
+func (i InvokeRunArray) ToOutput(ctx context.Context) pulumix.Output[[]*InvokeRun] {
+	return pulumix.Output[[]*InvokeRun]{
+		OutputState: i.ToInvokeRunArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // InvokeRunMapInput is an input type that accepts InvokeRunMap and InvokeRunMapOutput values.
@@ -596,6 +609,12 @@ func (i InvokeRunMap) ToInvokeRunMapOutputWithContext(ctx context.Context) Invok
 	return pulumi.ToOutputWithContext(ctx, i).(InvokeRunMapOutput)
 }
 
+func (i InvokeRunMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*InvokeRun] {
+	return pulumix.Output[map[string]*InvokeRun]{
+		OutputState: i.ToInvokeRunMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type InvokeRunOutput struct{ *pulumi.OutputState }
 
 func (InvokeRunOutput) ElementType() reflect.Type {
@@ -608,6 +627,12 @@ func (o InvokeRunOutput) ToInvokeRunOutput() InvokeRunOutput {
 
 func (o InvokeRunOutput) ToInvokeRunOutputWithContext(ctx context.Context) InvokeRunOutput {
 	return o
+}
+
+func (o InvokeRunOutput) ToOutput(ctx context.Context) pulumix.Output[*InvokeRun] {
+	return pulumix.Output[*InvokeRun]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the associated application. If this value is set, then no value for the execute parameter is required. If this value is not set, then a value for the execute parameter is required, and a new application is created and associated with the new run.
@@ -846,6 +871,12 @@ func (o InvokeRunArrayOutput) ToInvokeRunArrayOutputWithContext(ctx context.Cont
 	return o
 }
 
+func (o InvokeRunArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*InvokeRun] {
+	return pulumix.Output[[]*InvokeRun]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o InvokeRunArrayOutput) Index(i pulumi.IntInput) InvokeRunOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *InvokeRun {
 		return vs[0].([]*InvokeRun)[vs[1].(int)]
@@ -864,6 +895,12 @@ func (o InvokeRunMapOutput) ToInvokeRunMapOutput() InvokeRunMapOutput {
 
 func (o InvokeRunMapOutput) ToInvokeRunMapOutputWithContext(ctx context.Context) InvokeRunMapOutput {
 	return o
+}
+
+func (o InvokeRunMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*InvokeRun] {
+	return pulumix.Output[map[string]*InvokeRun]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o InvokeRunMapOutput) MapIndex(k pulumi.StringInput) InvokeRunOutput {

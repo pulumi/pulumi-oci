@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Exadata Infrastructure Download Config File resource in Oracle Cloud Infrastructure Database service.
@@ -105,6 +106,12 @@ func (o GetExadataInfrastructureDownloadConfigFileResultOutput) ToGetExadataInfr
 
 func (o GetExadataInfrastructureDownloadConfigFileResultOutput) ToGetExadataInfrastructureDownloadConfigFileResultOutputWithContext(ctx context.Context) GetExadataInfrastructureDownloadConfigFileResultOutput {
 	return o
+}
+
+func (o GetExadataInfrastructureDownloadConfigFileResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetExadataInfrastructureDownloadConfigFileResult] {
+	return pulumix.Output[GetExadataInfrastructureDownloadConfigFileResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetExadataInfrastructureDownloadConfigFileResultOutput) Base64EncodeContent() pulumi.BoolPtrOutput {

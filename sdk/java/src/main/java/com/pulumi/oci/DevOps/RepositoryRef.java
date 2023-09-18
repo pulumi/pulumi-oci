@@ -69,7 +69,7 @@ public class RepositoryRef extends com.pulumi.resources.CustomResource {
      * (Updatable) Commit ID pointed to by the new branch.
      * 
      */
-    @Export(name="commitId", type=String.class, parameters={})
+    @Export(name="commitId", refs={String.class}, tree="[0]")
     private Output<String> commitId;
 
     /**
@@ -83,7 +83,7 @@ public class RepositoryRef extends com.pulumi.resources.CustomResource {
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -97,7 +97,7 @@ public class RepositoryRef extends com.pulumi.resources.CustomResource {
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -111,7 +111,7 @@ public class RepositoryRef extends com.pulumi.resources.CustomResource {
      * Unique full reference name inside a repository.
      * 
      */
-    @Export(name="fullRefName", type=String.class, parameters={})
+    @Export(name="fullRefName", refs={String.class}, tree="[0]")
     private Output<String> fullRefName;
 
     /**
@@ -125,7 +125,7 @@ public class RepositoryRef extends com.pulumi.resources.CustomResource {
      * (Updatable) SHA-1 hash value of the object pointed to by the tag.
      * 
      */
-    @Export(name="objectId", type=String.class, parameters={})
+    @Export(name="objectId", refs={String.class}, tree="[0]")
     private Output<String> objectId;
 
     /**
@@ -139,7 +139,7 @@ public class RepositoryRef extends com.pulumi.resources.CustomResource {
      * A filter to return only resources that match the given reference name.
      * 
      */
-    @Export(name="refName", type=String.class, parameters={})
+    @Export(name="refName", refs={String.class}, tree="[0]")
     private Output<String> refName;
 
     /**
@@ -153,7 +153,7 @@ public class RepositoryRef extends com.pulumi.resources.CustomResource {
      * (Updatable) The type of reference (BRANCH or TAG).
      * 
      */
-    @Export(name="refType", type=String.class, parameters={})
+    @Export(name="refType", refs={String.class}, tree="[0]")
     private Output<String> refType;
 
     /**
@@ -170,7 +170,7 @@ public class RepositoryRef extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="repositoryId", type=String.class, parameters={})
+    @Export(name="repositoryId", refs={String.class}, tree="[0]")
     private Output<String> repositoryId;
 
     /**

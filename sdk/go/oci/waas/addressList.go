@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Address List resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
@@ -225,6 +226,12 @@ func (i *AddressList) ToAddressListOutputWithContext(ctx context.Context) Addres
 	return pulumi.ToOutputWithContext(ctx, i).(AddressListOutput)
 }
 
+func (i *AddressList) ToOutput(ctx context.Context) pulumix.Output[*AddressList] {
+	return pulumix.Output[*AddressList]{
+		OutputState: i.ToAddressListOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AddressListArrayInput is an input type that accepts AddressListArray and AddressListArrayOutput values.
 // You can construct a concrete instance of `AddressListArrayInput` via:
 //
@@ -248,6 +255,12 @@ func (i AddressListArray) ToAddressListArrayOutput() AddressListArrayOutput {
 
 func (i AddressListArray) ToAddressListArrayOutputWithContext(ctx context.Context) AddressListArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AddressListArrayOutput)
+}
+
+func (i AddressListArray) ToOutput(ctx context.Context) pulumix.Output[[]*AddressList] {
+	return pulumix.Output[[]*AddressList]{
+		OutputState: i.ToAddressListArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // AddressListMapInput is an input type that accepts AddressListMap and AddressListMapOutput values.
@@ -275,6 +288,12 @@ func (i AddressListMap) ToAddressListMapOutputWithContext(ctx context.Context) A
 	return pulumi.ToOutputWithContext(ctx, i).(AddressListMapOutput)
 }
 
+func (i AddressListMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AddressList] {
+	return pulumix.Output[map[string]*AddressList]{
+		OutputState: i.ToAddressListMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AddressListOutput struct{ *pulumi.OutputState }
 
 func (AddressListOutput) ElementType() reflect.Type {
@@ -287,6 +306,12 @@ func (o AddressListOutput) ToAddressListOutput() AddressListOutput {
 
 func (o AddressListOutput) ToAddressListOutputWithContext(ctx context.Context) AddressListOutput {
 	return o
+}
+
+func (o AddressListOutput) ToOutput(ctx context.Context) pulumix.Output[*AddressList] {
+	return pulumix.Output[*AddressList]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The total number of unique IP addresses in the address list.
@@ -346,6 +371,12 @@ func (o AddressListArrayOutput) ToAddressListArrayOutputWithContext(ctx context.
 	return o
 }
 
+func (o AddressListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AddressList] {
+	return pulumix.Output[[]*AddressList]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AddressListArrayOutput) Index(i pulumi.IntInput) AddressListOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AddressList {
 		return vs[0].([]*AddressList)[vs[1].(int)]
@@ -364,6 +395,12 @@ func (o AddressListMapOutput) ToAddressListMapOutput() AddressListMapOutput {
 
 func (o AddressListMapOutput) ToAddressListMapOutputWithContext(ctx context.Context) AddressListMapOutput {
 	return o
+}
+
+func (o AddressListMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AddressList] {
+	return pulumix.Output[map[string]*AddressList]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AddressListMapOutput) MapIndex(k pulumi.StringInput) AddressListOutput {

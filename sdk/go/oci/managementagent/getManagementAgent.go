@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Management Agent resource in Oracle Cloud Infrastructure Management Agent service.
@@ -149,6 +150,12 @@ func (o LookupManagementAgentResultOutput) ToLookupManagementAgentResultOutput()
 
 func (o LookupManagementAgentResultOutput) ToLookupManagementAgentResultOutputWithContext(ctx context.Context) LookupManagementAgentResultOutput {
 	return o
+}
+
+func (o LookupManagementAgentResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupManagementAgentResult] {
+	return pulumix.Output[LookupManagementAgentResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The current availability status of managementAgent

@@ -61,7 +61,7 @@ public class AutonomousContainerDatabaseDataguardAssociationOperation extends co
      * The Autonomous Container Database Dataguard Association [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This attribute is a forcenew attribute.
      * 
      */
-    @Export(name="autonomousContainerDatabaseDataguardAssociationId", type=String.class, parameters={})
+    @Export(name="autonomousContainerDatabaseDataguardAssociationId", refs={String.class}, tree="[0]")
     private Output<String> autonomousContainerDatabaseDataguardAssociationId;
 
     /**
@@ -75,7 +75,7 @@ public class AutonomousContainerDatabaseDataguardAssociationOperation extends co
      * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This attribute is a forcenew attribute.
      * 
      */
-    @Export(name="autonomousContainerDatabaseId", type=String.class, parameters={})
+    @Export(name="autonomousContainerDatabaseId", refs={String.class}, tree="[0]")
     private Output<String> autonomousContainerDatabaseId;
 
     /**
@@ -89,7 +89,7 @@ public class AutonomousContainerDatabaseDataguardAssociationOperation extends co
      * There are three type of supported operations `switchover`, `failover`, `reinstate`. `switchover` can only be used for primary database while `failover` and `reinstate` can only be used for standby database. This attribute is a forcenew attribute.
      * 
      */
-    @Export(name="operation", type=String.class, parameters={})
+    @Export(name="operation", refs={String.class}, tree="[0]")
     private Output<String> operation;
 
     /**

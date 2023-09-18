@@ -72,7 +72,7 @@ public class AnalyticsInstanceVanityUrl extends com.pulumi.resources.CustomResou
      * The OCID of the AnalyticsInstance.
      * 
      */
-    @Export(name="analyticsInstanceId", type=String.class, parameters={})
+    @Export(name="analyticsInstanceId", refs={String.class}, tree="[0]")
     private Output<String> analyticsInstanceId;
 
     /**
@@ -86,7 +86,7 @@ public class AnalyticsInstanceVanityUrl extends com.pulumi.resources.CustomResou
      * (Updatable) PEM CA certificate(s) for HTTPS connections. This may include multiple PEM certificates.
      * 
      */
-    @Export(name="caCertificate", type=String.class, parameters={})
+    @Export(name="caCertificate", refs={String.class}, tree="[0]")
     private Output<String> caCertificate;
 
     /**
@@ -100,7 +100,7 @@ public class AnalyticsInstanceVanityUrl extends com.pulumi.resources.CustomResou
      * Optional description.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> description;
 
     /**
@@ -114,7 +114,7 @@ public class AnalyticsInstanceVanityUrl extends com.pulumi.resources.CustomResou
      * List of fully qualified hostnames supported by this vanity URL definition (max of 3).
      * 
      */
-    @Export(name="hosts", type=List.class, parameters={String.class})
+    @Export(name="hosts", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> hosts;
 
     /**
@@ -128,7 +128,7 @@ public class AnalyticsInstanceVanityUrl extends com.pulumi.resources.CustomResou
      * (Updatable) Passphrase for the PEM Private key (if any).
      * 
      */
-    @Export(name="passphrase", type=String.class, parameters={})
+    @Export(name="passphrase", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> passphrase;
 
     /**
@@ -142,7 +142,7 @@ public class AnalyticsInstanceVanityUrl extends com.pulumi.resources.CustomResou
      * (Updatable) PEM Private key for HTTPS connections.
      * 
      */
-    @Export(name="privateKey", type=String.class, parameters={})
+    @Export(name="privateKey", refs={String.class}, tree="[0]")
     private Output<String> privateKey;
 
     /**
@@ -159,7 +159,7 @@ public class AnalyticsInstanceVanityUrl extends com.pulumi.resources.CustomResou
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="publicCertificate", type=String.class, parameters={})
+    @Export(name="publicCertificate", refs={String.class}, tree="[0]")
     private Output<String> publicCertificate;
 
     /**

@@ -97,7 +97,7 @@ public class DetectAnomalyJob extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the compartment that starts the job.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -111,7 +111,7 @@ public class DetectAnomalyJob extends com.pulumi.resources.CustomResource {
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -125,7 +125,7 @@ public class DetectAnomalyJob extends com.pulumi.resources.CustomResource {
      * (Updatable) A short description of the detect anomaly job.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -139,7 +139,7 @@ public class DetectAnomalyJob extends com.pulumi.resources.CustomResource {
      * (Updatable) Detect anomaly job display name.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -153,7 +153,7 @@ public class DetectAnomalyJob extends com.pulumi.resources.CustomResource {
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -167,7 +167,7 @@ public class DetectAnomalyJob extends com.pulumi.resources.CustomResource {
      * Detect anomaly asynchronous job details.
      * 
      */
-    @Export(name="inputDetails", type=DetectAnomalyJobInputDetails.class, parameters={})
+    @Export(name="inputDetails", refs={DetectAnomalyJobInputDetails.class}, tree="[0]")
     private Output<DetectAnomalyJobInputDetails> inputDetails;
 
     /**
@@ -181,7 +181,7 @@ public class DetectAnomalyJob extends com.pulumi.resources.CustomResource {
      * The current state details of the batch document job.
      * 
      */
-    @Export(name="lifecycleStateDetails", type=String.class, parameters={})
+    @Export(name="lifecycleStateDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleStateDetails;
 
     /**
@@ -195,7 +195,7 @@ public class DetectAnomalyJob extends com.pulumi.resources.CustomResource {
      * The OCID of the trained model.
      * 
      */
-    @Export(name="modelId", type=String.class, parameters={})
+    @Export(name="modelId", refs={String.class}, tree="[0]")
     private Output<String> modelId;
 
     /**
@@ -209,7 +209,7 @@ public class DetectAnomalyJob extends com.pulumi.resources.CustomResource {
      * Detect anomaly job output details.
      * 
      */
-    @Export(name="outputDetails", type=DetectAnomalyJobOutputDetails.class, parameters={})
+    @Export(name="outputDetails", refs={DetectAnomalyJobOutputDetails.class}, tree="[0]")
     private Output<DetectAnomalyJobOutputDetails> outputDetails;
 
     /**
@@ -223,7 +223,7 @@ public class DetectAnomalyJob extends com.pulumi.resources.CustomResource {
      * The OCID of the project.
      * 
      */
-    @Export(name="projectId", type=String.class, parameters={})
+    @Export(name="projectId", refs={String.class}, tree="[0]")
     private Output<String> projectId;
 
     /**
@@ -240,7 +240,7 @@ public class DetectAnomalyJob extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="sensitivity", type=Double.class, parameters={})
+    @Export(name="sensitivity", refs={Double.class}, tree="[0]")
     private Output<Double> sensitivity;
 
     /**
@@ -257,7 +257,7 @@ public class DetectAnomalyJob extends com.pulumi.resources.CustomResource {
      * The current state of the batch document job.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -271,7 +271,7 @@ public class DetectAnomalyJob extends com.pulumi.resources.CustomResource {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -285,7 +285,7 @@ public class DetectAnomalyJob extends com.pulumi.resources.CustomResource {
      * Job accepted time
      * 
      */
-    @Export(name="timeAccepted", type=String.class, parameters={})
+    @Export(name="timeAccepted", refs={String.class}, tree="[0]")
     private Output<String> timeAccepted;
 
     /**
@@ -299,7 +299,7 @@ public class DetectAnomalyJob extends com.pulumi.resources.CustomResource {
      * Job finished time
      * 
      */
-    @Export(name="timeFinished", type=String.class, parameters={})
+    @Export(name="timeFinished", refs={String.class}, tree="[0]")
     private Output<String> timeFinished;
 
     /**
@@ -313,7 +313,7 @@ public class DetectAnomalyJob extends com.pulumi.resources.CustomResource {
      * Job started time
      * 
      */
-    @Export(name="timeStarted", type=String.class, parameters={})
+    @Export(name="timeStarted", refs={String.class}, tree="[0]")
     private Output<String> timeStarted;
 
     /**

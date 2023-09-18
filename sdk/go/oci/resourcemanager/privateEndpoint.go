@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Private Endpoint resource in Oracle Cloud Infrastructure Resource Manager service.
@@ -283,6 +284,12 @@ func (i *PrivateEndpoint) ToPrivateEndpointOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(PrivateEndpointOutput)
 }
 
+func (i *PrivateEndpoint) ToOutput(ctx context.Context) pulumix.Output[*PrivateEndpoint] {
+	return pulumix.Output[*PrivateEndpoint]{
+		OutputState: i.ToPrivateEndpointOutputWithContext(ctx).OutputState,
+	}
+}
+
 // PrivateEndpointArrayInput is an input type that accepts PrivateEndpointArray and PrivateEndpointArrayOutput values.
 // You can construct a concrete instance of `PrivateEndpointArrayInput` via:
 //
@@ -306,6 +313,12 @@ func (i PrivateEndpointArray) ToPrivateEndpointArrayOutput() PrivateEndpointArra
 
 func (i PrivateEndpointArray) ToPrivateEndpointArrayOutputWithContext(ctx context.Context) PrivateEndpointArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(PrivateEndpointArrayOutput)
+}
+
+func (i PrivateEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]*PrivateEndpoint] {
+	return pulumix.Output[[]*PrivateEndpoint]{
+		OutputState: i.ToPrivateEndpointArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // PrivateEndpointMapInput is an input type that accepts PrivateEndpointMap and PrivateEndpointMapOutput values.
@@ -333,6 +346,12 @@ func (i PrivateEndpointMap) ToPrivateEndpointMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(PrivateEndpointMapOutput)
 }
 
+func (i PrivateEndpointMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*PrivateEndpoint] {
+	return pulumix.Output[map[string]*PrivateEndpoint]{
+		OutputState: i.ToPrivateEndpointMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type PrivateEndpointOutput struct{ *pulumi.OutputState }
 
 func (PrivateEndpointOutput) ElementType() reflect.Type {
@@ -345,6 +364,12 @@ func (o PrivateEndpointOutput) ToPrivateEndpointOutput() PrivateEndpointOutput {
 
 func (o PrivateEndpointOutput) ToPrivateEndpointOutputWithContext(ctx context.Context) PrivateEndpointOutput {
 	return o
+}
+
+func (o PrivateEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[*PrivateEndpoint] {
+	return pulumix.Output[*PrivateEndpoint]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
@@ -429,6 +454,12 @@ func (o PrivateEndpointArrayOutput) ToPrivateEndpointArrayOutputWithContext(ctx 
 	return o
 }
 
+func (o PrivateEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*PrivateEndpoint] {
+	return pulumix.Output[[]*PrivateEndpoint]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o PrivateEndpointArrayOutput) Index(i pulumi.IntInput) PrivateEndpointOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *PrivateEndpoint {
 		return vs[0].([]*PrivateEndpoint)[vs[1].(int)]
@@ -447,6 +478,12 @@ func (o PrivateEndpointMapOutput) ToPrivateEndpointMapOutput() PrivateEndpointMa
 
 func (o PrivateEndpointMapOutput) ToPrivateEndpointMapOutputWithContext(ctx context.Context) PrivateEndpointMapOutput {
 	return o
+}
+
+func (o PrivateEndpointMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*PrivateEndpoint] {
+	return pulumix.Output[map[string]*PrivateEndpoint]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o PrivateEndpointMapOutput) MapIndex(k pulumi.StringInput) PrivateEndpointOutput {

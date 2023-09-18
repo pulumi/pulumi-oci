@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific License Metric resource in Oracle Cloud Infrastructure License Manager service.
@@ -113,6 +114,12 @@ func (o GetLicenseMetricResultOutput) ToGetLicenseMetricResultOutput() GetLicens
 
 func (o GetLicenseMetricResultOutput) ToGetLicenseMetricResultOutputWithContext(ctx context.Context) GetLicenseMetricResultOutput {
 	return o
+}
+
+func (o GetLicenseMetricResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetLicenseMetricResult] {
+	return pulumix.Output[GetLicenseMetricResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetLicenseMetricResultOutput) CompartmentId() pulumi.StringOutput {

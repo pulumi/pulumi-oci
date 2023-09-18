@@ -121,7 +121,7 @@ public class VirtualCircuit extends com.pulumi.resources.CustomResource {
      * (Updatable) The provisioned data rate of the connection. To get a list of the available bandwidth levels (that is, shapes), see [ListFastConnectProviderServiceVirtualCircuitBandwidthShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes).  Example: `10 Gbps`
      * 
      */
-    @Export(name="bandwidthShapeName", type=String.class, parameters={})
+    @Export(name="bandwidthShapeName", refs={String.class}, tree="[0]")
     private Output<String> bandwidthShapeName;
 
     /**
@@ -135,7 +135,7 @@ public class VirtualCircuit extends com.pulumi.resources.CustomResource {
      * (Updatable) Set to `ENABLED` (the default) to activate the BGP session of the virtual circuit, set to `DISABLED` to deactivate the virtual circuit.
      * 
      */
-    @Export(name="bgpAdminState", type=String.class, parameters={})
+    @Export(name="bgpAdminState", refs={String.class}, tree="[0]")
     private Output<String> bgpAdminState;
 
     /**
@@ -149,7 +149,7 @@ public class VirtualCircuit extends com.pulumi.resources.CustomResource {
      * The state of the Ipv6 BGP session associated with the virtual circuit.
      * 
      */
-    @Export(name="bgpIpv6sessionState", type=String.class, parameters={})
+    @Export(name="bgpIpv6sessionState", refs={String.class}, tree="[0]")
     private Output<String> bgpIpv6sessionState;
 
     /**
@@ -167,7 +167,7 @@ public class VirtualCircuit extends com.pulumi.resources.CustomResource {
      * 
      */
     @Deprecated /* The 'bgp_management' field has been deprecated. Please use the 'oci_core_fast_connect_provider_service' data source instead. */
-    @Export(name="bgpManagement", type=String.class, parameters={})
+    @Export(name="bgpManagement", refs={String.class}, tree="[0]")
     private Output<String> bgpManagement;
 
     /**
@@ -181,7 +181,7 @@ public class VirtualCircuit extends com.pulumi.resources.CustomResource {
      * The state of the Ipv4 BGP session associated with the virtual circuit.
      * 
      */
-    @Export(name="bgpSessionState", type=String.class, parameters={})
+    @Export(name="bgpSessionState", refs={String.class}, tree="[0]")
     private Output<String> bgpSessionState;
 
     /**
@@ -195,7 +195,7 @@ public class VirtualCircuit extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the virtual circuit.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -209,7 +209,7 @@ public class VirtualCircuit extends com.pulumi.resources.CustomResource {
      * (Updatable) Create a `CrossConnectMapping` for each cross-connect or cross-connect group this virtual circuit will run on.
      * 
      */
-    @Export(name="crossConnectMappings", type=List.class, parameters={VirtualCircuitCrossConnectMapping.class})
+    @Export(name="crossConnectMappings", refs={List.class,VirtualCircuitCrossConnectMapping.class}, tree="[0,1]")
     private Output<List<VirtualCircuitCrossConnectMapping>> crossConnectMappings;
 
     /**
@@ -223,7 +223,7 @@ public class VirtualCircuit extends com.pulumi.resources.CustomResource {
      * (Updatable) Your BGP ASN (either public or private). Provide this value only if there&#39;s a BGP session that goes from your edge router to Oracle. Otherwise, leave this empty or null. Can be a 2-byte or 4-byte ASN. Uses &#34;asplain&#34; format.  Example: `12345` (2-byte) or `1587232876` (4-byte)
      * 
      */
-    @Export(name="customerAsn", type=String.class, parameters={})
+    @Export(name="customerAsn", refs={String.class}, tree="[0]")
     private Output<String> customerAsn;
 
     /**
@@ -241,7 +241,7 @@ public class VirtualCircuit extends com.pulumi.resources.CustomResource {
      * 
      */
     @Deprecated /* The 'customer_bgp_asn' field has been deprecated. Please use 'customer_asn' instead. */
-    @Export(name="customerBgpAsn", type=Integer.class, parameters={})
+    @Export(name="customerBgpAsn", refs={Integer.class}, tree="[0]")
     private Output<Integer> customerBgpAsn;
 
     /**
@@ -255,7 +255,7 @@ public class VirtualCircuit extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -269,7 +269,7 @@ public class VirtualCircuit extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -283,7 +283,7 @@ public class VirtualCircuit extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -297,7 +297,7 @@ public class VirtualCircuit extends com.pulumi.resources.CustomResource {
      * (Updatable) For private virtual circuits only. The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [dynamic routing gateway (DRG)](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Drg) that this virtual circuit uses.
      * 
      */
-    @Export(name="gatewayId", type=String.class, parameters={})
+    @Export(name="gatewayId", refs={String.class}, tree="[0]")
     private Output<String> gatewayId;
 
     /**
@@ -311,7 +311,7 @@ public class VirtualCircuit extends com.pulumi.resources.CustomResource {
      * (Updatable) The layer 3 IP MTU to use with this virtual circuit.
      * 
      */
-    @Export(name="ipMtu", type=String.class, parameters={})
+    @Export(name="ipMtu", refs={String.class}, tree="[0]")
     private Output<String> ipMtu;
 
     /**
@@ -325,7 +325,7 @@ public class VirtualCircuit extends com.pulumi.resources.CustomResource {
      * (Updatable) Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
      * 
      */
-    @Export(name="isBfdEnabled", type=Boolean.class, parameters={})
+    @Export(name="isBfdEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isBfdEnabled;
 
     /**
@@ -339,7 +339,7 @@ public class VirtualCircuit extends com.pulumi.resources.CustomResource {
      * (Updatable) Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
      * 
      */
-    @Export(name="isTransportMode", type=Boolean.class, parameters={})
+    @Export(name="isTransportMode", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isTransportMode;
 
     /**
@@ -353,7 +353,7 @@ public class VirtualCircuit extends com.pulumi.resources.CustomResource {
      * The Oracle BGP ASN.
      * 
      */
-    @Export(name="oracleBgpAsn", type=Integer.class, parameters={})
+    @Export(name="oracleBgpAsn", refs={Integer.class}, tree="[0]")
     private Output<Integer> oracleBgpAsn;
 
     /**
@@ -367,7 +367,7 @@ public class VirtualCircuit extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you&#39;re connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
      * 
      */
-    @Export(name="providerServiceId", type=String.class, parameters={})
+    @Export(name="providerServiceId", refs={String.class}, tree="[0]")
     private Output<String> providerServiceId;
 
     /**
@@ -381,7 +381,7 @@ public class VirtualCircuit extends com.pulumi.resources.CustomResource {
      * (Updatable) The service key name offered by the provider (if the customer is connecting via a provider).
      * 
      */
-    @Export(name="providerServiceKeyName", type=String.class, parameters={})
+    @Export(name="providerServiceKeyName", refs={String.class}, tree="[0]")
     private Output<String> providerServiceKeyName;
 
     /**
@@ -395,7 +395,7 @@ public class VirtualCircuit extends com.pulumi.resources.CustomResource {
      * The provider&#39;s state in relation to this virtual circuit (if the customer is connecting via a provider). ACTIVE means the provider has provisioned the virtual circuit from their end. INACTIVE means the provider has not yet provisioned the virtual circuit, or has de-provisioned it.
      * 
      */
-    @Export(name="providerState", type=String.class, parameters={})
+    @Export(name="providerState", refs={String.class}, tree="[0]")
     private Output<String> providerState;
 
     /**
@@ -409,7 +409,7 @@ public class VirtualCircuit extends com.pulumi.resources.CustomResource {
      * (Updatable) For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to advertise across the connection.
      * 
      */
-    @Export(name="publicPrefixes", type=List.class, parameters={VirtualCircuitPublicPrefix.class})
+    @Export(name="publicPrefixes", refs={List.class,VirtualCircuitPublicPrefix.class}, tree="[0,1]")
     private Output</* @Nullable */ List<VirtualCircuitPublicPrefix>> publicPrefixes;
 
     /**
@@ -423,7 +423,7 @@ public class VirtualCircuit extends com.pulumi.resources.CustomResource {
      * Provider-supplied reference information about this virtual circuit (if the customer is connecting via a provider).
      * 
      */
-    @Export(name="referenceComment", type=String.class, parameters={})
+    @Export(name="referenceComment", refs={String.class}, tree="[0]")
     private Output<String> referenceComment;
 
     /**
@@ -437,7 +437,7 @@ public class VirtualCircuit extends com.pulumi.resources.CustomResource {
      * The Oracle Cloud Infrastructure region where this virtual circuit is located. Example: `phx`
      * 
      */
-    @Export(name="region", type=String.class, parameters={})
+    @Export(name="region", refs={String.class}, tree="[0]")
     private Output<String> region;
 
     /**
@@ -451,7 +451,7 @@ public class VirtualCircuit extends com.pulumi.resources.CustomResource {
      * (Updatable) The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market.
      * 
      */
-    @Export(name="routingPolicies", type=List.class, parameters={String.class})
+    @Export(name="routingPolicies", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> routingPolicies;
 
     /**
@@ -465,7 +465,7 @@ public class VirtualCircuit extends com.pulumi.resources.CustomResource {
      * Provider service type.
      * 
      */
-    @Export(name="serviceType", type=String.class, parameters={})
+    @Export(name="serviceType", refs={String.class}, tree="[0]")
     private Output<String> serviceType;
 
     /**
@@ -479,7 +479,7 @@ public class VirtualCircuit extends com.pulumi.resources.CustomResource {
      * The virtual circuit&#39;s current state. For information about the different states, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -493,7 +493,7 @@ public class VirtualCircuit extends com.pulumi.resources.CustomResource {
      * The date and time the virtual circuit was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -510,7 +510,7 @@ public class VirtualCircuit extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="type", type=String.class, parameters={})
+    @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**

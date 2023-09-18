@@ -42,7 +42,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -56,7 +56,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
      * 
      */
-    @Export(name="cpuCoreCount", type=Integer.class, parameters={})
+    @Export(name="cpuCoreCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> cpuCoreCount;
 
     /**
@@ -70,7 +70,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -84,7 +84,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
      * 
      */
-    @Export(name="deploymentBackupId", type=String.class, parameters={})
+    @Export(name="deploymentBackupId", refs={String.class}, tree="[0]")
     private Output<String> deploymentBackupId;
 
     /**
@@ -98,7 +98,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * Information regarding the deployment diagnostic collection
      * 
      */
-    @Export(name="deploymentDiagnosticDatas", type=List.class, parameters={DeploymentDeploymentDiagnosticData.class})
+    @Export(name="deploymentDiagnosticDatas", refs={List.class,DeploymentDeploymentDiagnosticData.class}, tree="[0,1]")
     private Output<List<DeploymentDeploymentDiagnosticData>> deploymentDiagnosticDatas;
 
     /**
@@ -112,7 +112,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value &#39;OGG&#39; is maintained for backward compatibility purposes.  Its use is discouraged in favor of &#39;DATABASE_ORACLE&#39;.
      * 
      */
-    @Export(name="deploymentType", type=String.class, parameters={})
+    @Export(name="deploymentType", refs={String.class}, tree="[0]")
     private Output<String> deploymentType;
 
     /**
@@ -126,7 +126,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * The URL of a resource.
      * 
      */
-    @Export(name="deploymentUrl", type=String.class, parameters={})
+    @Export(name="deploymentUrl", refs={String.class}, tree="[0]")
     private Output<String> deploymentUrl;
 
     /**
@@ -140,7 +140,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * (Updatable) Metadata about this specific object.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -154,7 +154,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * (Updatable) An object&#39;s Display Name.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -168,7 +168,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
      * 
      */
-    @Export(name="fqdn", type=String.class, parameters={})
+    @Export(name="fqdn", refs={String.class}, tree="[0]")
     private Output<String> fqdn;
 
     /**
@@ -182,7 +182,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -196,7 +196,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * (Updatable) Indicates if auto scaling is enabled for the Deployment&#39;s CPU core count.
      * 
      */
-    @Export(name="isAutoScalingEnabled", type=Boolean.class, parameters={})
+    @Export(name="isAutoScalingEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isAutoScalingEnabled;
 
     /**
@@ -210,7 +210,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * True if all of the aggregate resources are working correctly.
      * 
      */
-    @Export(name="isHealthy", type=Boolean.class, parameters={})
+    @Export(name="isHealthy", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isHealthy;
 
     /**
@@ -224,7 +224,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * Indicates if the resource is the the latest available version.
      * 
      */
-    @Export(name="isLatestVersion", type=Boolean.class, parameters={})
+    @Export(name="isLatestVersion", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isLatestVersion;
 
     /**
@@ -238,7 +238,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * (Updatable) True if this object is publicly available.
      * 
      */
-    @Export(name="isPublic", type=Boolean.class, parameters={})
+    @Export(name="isPublic", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isPublic;
 
     /**
@@ -252,7 +252,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment&#39;s GoldenGate service.
      * 
      */
-    @Export(name="isStorageUtilizationLimitExceeded", type=Boolean.class, parameters={})
+    @Export(name="isStorageUtilizationLimitExceeded", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isStorageUtilizationLimitExceeded;
 
     /**
@@ -266,7 +266,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * (Updatable) The Oracle license model that applies to a Deployment.
      * 
      */
-    @Export(name="licenseModel", type=String.class, parameters={})
+    @Export(name="licenseModel", refs={String.class}, tree="[0]")
     private Output<String> licenseModel;
 
     /**
@@ -280,7 +280,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * Describes the object&#39;s current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -294,7 +294,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * Possible GGS lifecycle sub-states.
      * 
      */
-    @Export(name="lifecycleSubState", type=String.class, parameters={})
+    @Export(name="lifecycleSubState", refs={String.class}, tree="[0]")
     private Output<String> lifecycleSubState;
 
     /**
@@ -308,7 +308,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * (Updatable) Defines the maintenance configuration for create operation.
      * 
      */
-    @Export(name="maintenanceConfiguration", type=DeploymentMaintenanceConfiguration.class, parameters={})
+    @Export(name="maintenanceConfiguration", refs={DeploymentMaintenanceConfiguration.class}, tree="[0]")
     private Output<DeploymentMaintenanceConfiguration> maintenanceConfiguration;
 
     /**
@@ -322,7 +322,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
      * 
      */
-    @Export(name="maintenanceWindow", type=DeploymentMaintenanceWindow.class, parameters={})
+    @Export(name="maintenanceWindow", refs={DeploymentMaintenanceWindow.class}, tree="[0]")
     private Output<DeploymentMaintenanceWindow> maintenanceWindow;
 
     /**
@@ -336,7 +336,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * Type of the next maintenance.
      * 
      */
-    @Export(name="nextMaintenanceActionType", type=String.class, parameters={})
+    @Export(name="nextMaintenanceActionType", refs={String.class}, tree="[0]")
     private Output<String> nextMaintenanceActionType;
 
     /**
@@ -350,7 +350,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * Description of the next maintenance.
      * 
      */
-    @Export(name="nextMaintenanceDescription", type=String.class, parameters={})
+    @Export(name="nextMaintenanceDescription", refs={String.class}, tree="[0]")
     private Output<String> nextMaintenanceDescription;
 
     /**
@@ -364,7 +364,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
      * 
      */
-    @Export(name="nsgIds", type=List.class, parameters={String.class})
+    @Export(name="nsgIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> nsgIds;
 
     /**
@@ -378,7 +378,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * (Updatable) Deployment Data for creating an OggDeployment
      * 
      */
-    @Export(name="oggData", type=DeploymentOggData.class, parameters={})
+    @Export(name="oggData", refs={DeploymentOggData.class}, tree="[0]")
     private Output<DeploymentOggData> oggData;
 
     /**
@@ -392,7 +392,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * The private IP address in the customer&#39;s VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
      * 
      */
-    @Export(name="privateIpAddress", type=String.class, parameters={})
+    @Export(name="privateIpAddress", refs={String.class}, tree="[0]")
     private Output<String> privateIpAddress;
 
     /**
@@ -406,7 +406,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * The public IP address representing the access point for the Deployment.
      * 
      */
-    @Export(name="publicIpAddress", type=String.class, parameters={})
+    @Export(name="publicIpAddress", refs={String.class}, tree="[0]")
     private Output<String> publicIpAddress;
 
     /**
@@ -420,7 +420,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * Possible lifecycle states.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -434,7 +434,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * The amount of storage being utilized (in bytes)
      * 
      */
-    @Export(name="storageUtilizationInBytes", type=String.class, parameters={})
+    @Export(name="storageUtilizationInBytes", refs={String.class}, tree="[0]")
     private Output<String> storageUtilizationInBytes;
 
     /**
@@ -448,7 +448,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
      * 
      */
-    @Export(name="subnetId", type=String.class, parameters={})
+    @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
@@ -462,7 +462,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -476,7 +476,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -490,7 +490,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    @Export(name="timeOfNextMaintenance", type=String.class, parameters={})
+    @Export(name="timeOfNextMaintenance", refs={String.class}, tree="[0]")
     private Output<String> timeOfNextMaintenance;
 
     /**
@@ -504,7 +504,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    @Export(name="timeOggVersionSupportedUntil", type=String.class, parameters={})
+    @Export(name="timeOggVersionSupportedUntil", refs={String.class}, tree="[0]")
     private Output<String> timeOggVersionSupportedUntil;
 
     /**
@@ -518,7 +518,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -532,7 +532,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    @Export(name="timeUpgradeRequired", type=String.class, parameters={})
+    @Export(name="timeUpgradeRequired", refs={String.class}, tree="[0]")
     private Output<String> timeUpgradeRequired;
 
     /**

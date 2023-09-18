@@ -76,7 +76,7 @@ public class HostInsight extends com.pulumi.resources.CustomResource {
      * (Updatable) Compartment Identifier of host
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -90,7 +90,7 @@ public class HostInsight extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
      * 
      */
-    @Export(name="computeId", type=String.class, parameters={})
+    @Export(name="computeId", refs={String.class}, tree="[0]")
     private Output<String> computeId;
 
     /**
@@ -104,7 +104,7 @@ public class HostInsight extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -118,7 +118,7 @@ public class HostInsight extends com.pulumi.resources.CustomResource {
      * OPSI Enterprise Manager Bridge OCID
      * 
      */
-    @Export(name="enterpriseManagerBridgeId", type=String.class, parameters={})
+    @Export(name="enterpriseManagerBridgeId", refs={String.class}, tree="[0]")
     private Output<String> enterpriseManagerBridgeId;
 
     /**
@@ -132,7 +132,7 @@ public class HostInsight extends com.pulumi.resources.CustomResource {
      * Enterprise Manager Entity Display Name
      * 
      */
-    @Export(name="enterpriseManagerEntityDisplayName", type=String.class, parameters={})
+    @Export(name="enterpriseManagerEntityDisplayName", refs={String.class}, tree="[0]")
     private Output<String> enterpriseManagerEntityDisplayName;
 
     /**
@@ -146,7 +146,7 @@ public class HostInsight extends com.pulumi.resources.CustomResource {
      * Enterprise Manager Entity Unique Identifier
      * 
      */
-    @Export(name="enterpriseManagerEntityIdentifier", type=String.class, parameters={})
+    @Export(name="enterpriseManagerEntityIdentifier", refs={String.class}, tree="[0]")
     private Output<String> enterpriseManagerEntityIdentifier;
 
     /**
@@ -160,7 +160,7 @@ public class HostInsight extends com.pulumi.resources.CustomResource {
      * Enterprise Manager Entity Name
      * 
      */
-    @Export(name="enterpriseManagerEntityName", type=String.class, parameters={})
+    @Export(name="enterpriseManagerEntityName", refs={String.class}, tree="[0]")
     private Output<String> enterpriseManagerEntityName;
 
     /**
@@ -174,7 +174,7 @@ public class HostInsight extends com.pulumi.resources.CustomResource {
      * Enterprise Manager Entity Type
      * 
      */
-    @Export(name="enterpriseManagerEntityType", type=String.class, parameters={})
+    @Export(name="enterpriseManagerEntityType", refs={String.class}, tree="[0]")
     private Output<String> enterpriseManagerEntityType;
 
     /**
@@ -188,7 +188,7 @@ public class HostInsight extends com.pulumi.resources.CustomResource {
      * Enterprise Manager Unique Identifier
      * 
      */
-    @Export(name="enterpriseManagerIdentifier", type=String.class, parameters={})
+    @Export(name="enterpriseManagerIdentifier", refs={String.class}, tree="[0]")
     private Output<String> enterpriseManagerIdentifier;
 
     /**
@@ -202,7 +202,7 @@ public class HostInsight extends com.pulumi.resources.CustomResource {
      * (Updatable) Source of the host entity.
      * 
      */
-    @Export(name="entitySource", type=String.class, parameters={})
+    @Export(name="entitySource", refs={String.class}, tree="[0]")
     private Output<String> entitySource;
 
     /**
@@ -216,7 +216,7 @@ public class HostInsight extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
      * 
      */
-    @Export(name="exadataInsightId", type=String.class, parameters={})
+    @Export(name="exadataInsightId", refs={String.class}, tree="[0]")
     private Output<String> exadataInsightId;
 
     /**
@@ -230,7 +230,7 @@ public class HostInsight extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -244,7 +244,7 @@ public class HostInsight extends com.pulumi.resources.CustomResource {
      * The user-friendly name for the host. The name does not have to be unique.
      * 
      */
-    @Export(name="hostDisplayName", type=String.class, parameters={})
+    @Export(name="hostDisplayName", refs={String.class}, tree="[0]")
     private Output<String> hostDisplayName;
 
     /**
@@ -258,7 +258,7 @@ public class HostInsight extends com.pulumi.resources.CustomResource {
      * The host name. The host name is unique amongst the hosts managed by the same management agent.
      * 
      */
-    @Export(name="hostName", type=String.class, parameters={})
+    @Export(name="hostName", refs={String.class}, tree="[0]")
     private Output<String> hostName;
 
     /**
@@ -272,7 +272,7 @@ public class HostInsight extends com.pulumi.resources.CustomResource {
      * Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
      * 
      */
-    @Export(name="hostType", type=String.class, parameters={})
+    @Export(name="hostType", refs={String.class}, tree="[0]")
     private Output<String> hostType;
 
     /**
@@ -286,7 +286,7 @@ public class HostInsight extends com.pulumi.resources.CustomResource {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -303,7 +303,7 @@ public class HostInsight extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. The resource destruction here is basically a soft delete. User cannot create resource using the same Management agent OCID. If resource is in enabled state during destruction, the resource will be disabled automatically before performing delete operation.
      * 
      */
-    @Export(name="managementAgentId", type=String.class, parameters={})
+    @Export(name="managementAgentId", refs={String.class}, tree="[0]")
     private Output<String> managementAgentId;
 
     /**
@@ -320,7 +320,7 @@ public class HostInsight extends com.pulumi.resources.CustomResource {
      * Platform name.
      * 
      */
-    @Export(name="platformName", type=String.class, parameters={})
+    @Export(name="platformName", refs={String.class}, tree="[0]")
     private Output<String> platformName;
 
     /**
@@ -334,7 +334,7 @@ public class HostInsight extends com.pulumi.resources.CustomResource {
      * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
      * 
      */
-    @Export(name="platformType", type=String.class, parameters={})
+    @Export(name="platformType", refs={String.class}, tree="[0]")
     private Output<String> platformType;
 
     /**
@@ -348,7 +348,7 @@ public class HostInsight extends com.pulumi.resources.CustomResource {
      * Platform version.
      * 
      */
-    @Export(name="platformVersion", type=String.class, parameters={})
+    @Export(name="platformVersion", refs={String.class}, tree="[0]")
     private Output<String> platformVersion;
 
     /**
@@ -362,7 +362,7 @@ public class HostInsight extends com.pulumi.resources.CustomResource {
      * Processor count.
      * 
      */
-    @Export(name="processorCount", type=Integer.class, parameters={})
+    @Export(name="processorCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> processorCount;
 
     /**
@@ -376,7 +376,7 @@ public class HostInsight extends com.pulumi.resources.CustomResource {
      * The current state of the host.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -390,7 +390,7 @@ public class HostInsight extends com.pulumi.resources.CustomResource {
      * (Updatable) Status of the resource. Example: &#34;ENABLED&#34;, &#34;DISABLED&#34;. Resource can be either enabled or disabled by updating the value of status field to either &#34;ENABLED&#34; or &#34;DISABLED&#34;
      * 
      */
-    @Export(name="status", type=String.class, parameters={})
+    @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
@@ -404,7 +404,7 @@ public class HostInsight extends com.pulumi.resources.CustomResource {
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -418,7 +418,7 @@ public class HostInsight extends com.pulumi.resources.CustomResource {
      * The time the the host insight was first enabled. An RFC3339 formatted datetime string
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -432,7 +432,7 @@ public class HostInsight extends com.pulumi.resources.CustomResource {
      * The time the host insight was updated. An RFC3339 formatted datetime string
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

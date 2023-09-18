@@ -35,7 +35,7 @@ public class AutonomousContainerDatabaseDataguardAssociation extends com.pulumi.
      * The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database.  Example: `9 seconds`
      * 
      */
-    @Export(name="applyLag", type=String.class, parameters={})
+    @Export(name="applyLag", refs={String.class}, tree="[0]")
     private Output<String> applyLag;
 
     /**
@@ -49,7 +49,7 @@ public class AutonomousContainerDatabaseDataguardAssociation extends com.pulumi.
      * The rate at which redo logs are synchronized between the associated Autonomous Container Databases.  Example: `180 Mb per second`
      * 
      */
-    @Export(name="applyRate", type=String.class, parameters={})
+    @Export(name="applyRate", refs={String.class}, tree="[0]")
     private Output<String> applyRate;
 
     /**
@@ -63,7 +63,7 @@ public class AutonomousContainerDatabaseDataguardAssociation extends com.pulumi.
      * The Autonomous Container Database-Autonomous Data Guard association [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    @Export(name="autonomousContainerDatabaseDataguardAssociationId", type=String.class, parameters={})
+    @Export(name="autonomousContainerDatabaseDataguardAssociationId", refs={String.class}, tree="[0]")
     private Output<String> autonomousContainerDatabaseDataguardAssociationId;
 
     /**
@@ -77,7 +77,7 @@ public class AutonomousContainerDatabaseDataguardAssociation extends com.pulumi.
      * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    @Export(name="autonomousContainerDatabaseId", type=String.class, parameters={})
+    @Export(name="autonomousContainerDatabaseId", refs={String.class}, tree="[0]")
     private Output<String> autonomousContainerDatabaseId;
 
     /**
@@ -91,7 +91,7 @@ public class AutonomousContainerDatabaseDataguardAssociation extends com.pulumi.
      * (Updatable) The lag time for my preference based on data loss tolerance in seconds.
      * 
      */
-    @Export(name="fastStartFailOverLagLimitInSeconds", type=Integer.class, parameters={})
+    @Export(name="fastStartFailOverLagLimitInSeconds", refs={Integer.class}, tree="[0]")
     private Output<Integer> fastStartFailOverLagLimitInSeconds;
 
     /**
@@ -105,7 +105,7 @@ public class AutonomousContainerDatabaseDataguardAssociation extends com.pulumi.
      * (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `is_automatic_failover_enabled = true`.
      * 
      */
-    @Export(name="isAutomaticFailoverEnabled", type=Boolean.class, parameters={})
+    @Export(name="isAutomaticFailoverEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isAutomaticFailoverEnabled;
 
     /**
@@ -119,7 +119,7 @@ public class AutonomousContainerDatabaseDataguardAssociation extends com.pulumi.
      * Additional information about the current lifecycleState, if available.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -133,7 +133,7 @@ public class AutonomousContainerDatabaseDataguardAssociation extends com.pulumi.
      * The OCID of the peer Autonomous Container Database-Autonomous Data Guard association.
      * 
      */
-    @Export(name="peerAutonomousContainerDatabaseDataguardAssociationId", type=String.class, parameters={})
+    @Export(name="peerAutonomousContainerDatabaseDataguardAssociationId", refs={String.class}, tree="[0]")
     private Output<String> peerAutonomousContainerDatabaseDataguardAssociationId;
 
     /**
@@ -147,7 +147,7 @@ public class AutonomousContainerDatabaseDataguardAssociation extends com.pulumi.
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Container Database.
      * 
      */
-    @Export(name="peerAutonomousContainerDatabaseId", type=String.class, parameters={})
+    @Export(name="peerAutonomousContainerDatabaseId", refs={String.class}, tree="[0]")
     private Output<String> peerAutonomousContainerDatabaseId;
 
     /**
@@ -161,7 +161,7 @@ public class AutonomousContainerDatabaseDataguardAssociation extends com.pulumi.
      * The current state of Autonomous Data Guard.
      * 
      */
-    @Export(name="peerLifecycleState", type=String.class, parameters={})
+    @Export(name="peerLifecycleState", refs={String.class}, tree="[0]")
     private Output<String> peerLifecycleState;
 
     /**
@@ -175,7 +175,7 @@ public class AutonomousContainerDatabaseDataguardAssociation extends com.pulumi.
      * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      * 
      */
-    @Export(name="peerRole", type=String.class, parameters={})
+    @Export(name="peerRole", refs={String.class}, tree="[0]")
     private Output<String> peerRole;
 
     /**
@@ -192,7 +192,7 @@ public class AutonomousContainerDatabaseDataguardAssociation extends com.pulumi.
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="protectionMode", type=String.class, parameters={})
+    @Export(name="protectionMode", refs={String.class}, tree="[0]")
     private Output<String> protectionMode;
 
     /**
@@ -209,7 +209,7 @@ public class AutonomousContainerDatabaseDataguardAssociation extends com.pulumi.
      * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      * 
      */
-    @Export(name="role", type=String.class, parameters={})
+    @Export(name="role", refs={String.class}, tree="[0]")
     private Output<String> role;
 
     /**
@@ -223,7 +223,7 @@ public class AutonomousContainerDatabaseDataguardAssociation extends com.pulumi.
      * The current state of Autonomous Data Guard.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -237,7 +237,7 @@ public class AutonomousContainerDatabaseDataguardAssociation extends com.pulumi.
      * The date and time the Autonomous DataGuard association was created.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -251,7 +251,7 @@ public class AutonomousContainerDatabaseDataguardAssociation extends com.pulumi.
      * The date and time when the last role change action happened.
      * 
      */
-    @Export(name="timeLastRoleChanged", type=String.class, parameters={})
+    @Export(name="timeLastRoleChanged", refs={String.class}, tree="[0]")
     private Output<String> timeLastRoleChanged;
 
     /**
@@ -265,7 +265,7 @@ public class AutonomousContainerDatabaseDataguardAssociation extends com.pulumi.
      * The date and time of the last update to the apply lag, apply rate, and transport lag values.
      * 
      */
-    @Export(name="timeLastSynced", type=String.class, parameters={})
+    @Export(name="timeLastSynced", refs={String.class}, tree="[0]")
     private Output<String> timeLastSynced;
 
     /**
@@ -279,7 +279,7 @@ public class AutonomousContainerDatabaseDataguardAssociation extends com.pulumi.
      * The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database, as computed by the reporting database.  Example: `7 seconds`
      * 
      */
-    @Export(name="transportLag", type=String.class, parameters={})
+    @Export(name="transportLag", refs={String.class}, tree="[0]")
     private Output<String> transportLag;
 
     /**

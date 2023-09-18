@@ -21,55 +21,55 @@ import javax.annotation.Nullable;
 
 @ResourceType(type="oci:Core/defaultSecurityList:DefaultSecurityList")
 public class DefaultSecurityList extends com.pulumi.resources.CustomResource {
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     public Output<String> compartmentId() {
         return this.compartmentId;
     }
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     public Output<Map<String,Object>> definedTags() {
         return this.definedTags;
     }
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     public Output<String> displayName() {
         return this.displayName;
     }
-    @Export(name="egressSecurityRules", type=List.class, parameters={DefaultSecurityListEgressSecurityRule.class})
+    @Export(name="egressSecurityRules", refs={List.class,DefaultSecurityListEgressSecurityRule.class}, tree="[0,1]")
     private Output</* @Nullable */ List<DefaultSecurityListEgressSecurityRule>> egressSecurityRules;
 
     public Output<Optional<List<DefaultSecurityListEgressSecurityRule>>> egressSecurityRules() {
         return Codegen.optional(this.egressSecurityRules);
     }
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     public Output<Map<String,Object>> freeformTags() {
         return this.freeformTags;
     }
-    @Export(name="ingressSecurityRules", type=List.class, parameters={DefaultSecurityListIngressSecurityRule.class})
+    @Export(name="ingressSecurityRules", refs={List.class,DefaultSecurityListIngressSecurityRule.class}, tree="[0,1]")
     private Output</* @Nullable */ List<DefaultSecurityListIngressSecurityRule>> ingressSecurityRules;
 
     public Output<Optional<List<DefaultSecurityListIngressSecurityRule>>> ingressSecurityRules() {
         return Codegen.optional(this.ingressSecurityRules);
     }
-    @Export(name="manageDefaultResourceId", type=String.class, parameters={})
+    @Export(name="manageDefaultResourceId", refs={String.class}, tree="[0]")
     private Output<String> manageDefaultResourceId;
 
     public Output<String> manageDefaultResourceId() {
         return this.manageDefaultResourceId;
     }
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     public Output<String> state() {
         return this.state;
     }
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     public Output<String> timeCreated() {

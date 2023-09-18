@@ -37,7 +37,7 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
      * The OCID of the compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -51,7 +51,7 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
      * (Updatable) The current custom action timeout between the current database servers during waiting state in addition to custom action timeout, from 0 (zero) to 30 minutes.
      * 
      */
-    @Export(name="currentCustomActionTimeoutInMins", type=Integer.class, parameters={})
+    @Export(name="currentCustomActionTimeoutInMins", refs={Integer.class}, tree="[0]")
     private Output<Integer> currentCustomActionTimeoutInMins;
 
     /**
@@ -65,7 +65,7 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
      * The name of the current infrastruture component that is getting patched.
      * 
      */
-    @Export(name="currentPatchingComponent", type=String.class, parameters={})
+    @Export(name="currentPatchingComponent", refs={String.class}, tree="[0]")
     private Output<String> currentPatchingComponent;
 
     /**
@@ -79,7 +79,7 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
      * (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes from 15 to 120.
      * 
      */
-    @Export(name="customActionTimeoutInMins", type=Integer.class, parameters={})
+    @Export(name="customActionTimeoutInMins", refs={Integer.class}, tree="[0]")
     private Output<Integer> customActionTimeoutInMins;
 
     /**
@@ -93,7 +93,7 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
      * Description of the maintenance run.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -107,7 +107,7 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
      * The user-friendly name for the maintenance run.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -121,7 +121,7 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
      * The estimated start time of the next infrastruture component patching operation.
      * 
      */
-    @Export(name="estimatedComponentPatchingStartTime", type=String.class, parameters={})
+    @Export(name="estimatedComponentPatchingStartTime", refs={String.class}, tree="[0]")
     private Output<String> estimatedComponentPatchingStartTime;
 
     /**
@@ -135,7 +135,7 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
      * The estimated total time required in minutes for all patching operations (database server, storage server, and network switch patching).
      * 
      */
-    @Export(name="estimatedPatchingTimes", type=List.class, parameters={MaintenanceRunEstimatedPatchingTime.class})
+    @Export(name="estimatedPatchingTimes", refs={List.class,MaintenanceRunEstimatedPatchingTime.class}, tree="[0,1]")
     private Output<List<MaintenanceRunEstimatedPatchingTime>> estimatedPatchingTimes;
 
     /**
@@ -149,7 +149,7 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
      * (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
      * 
      */
-    @Export(name="isCustomActionTimeoutEnabled", type=Boolean.class, parameters={})
+    @Export(name="isCustomActionTimeoutEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isCustomActionTimeoutEnabled;
 
     /**
@@ -163,7 +163,7 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
      * (Updatable) If `FALSE`, skips the maintenance run.
      * 
      */
-    @Export(name="isEnabled", type=Boolean.class, parameters={})
+    @Export(name="isEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isEnabled;
 
     /**
@@ -177,7 +177,7 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
      * (Updatable) If set to `TRUE`, starts patching immediately.
      * 
      */
-    @Export(name="isPatchNowEnabled", type=Boolean.class, parameters={})
+    @Export(name="isPatchNowEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isPatchNowEnabled;
 
     /**
@@ -191,7 +191,7 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
      * (Updatable) If true, then the patching is resumed and the next component will be patched immediately.
      * 
      */
-    @Export(name="isResumePatching", type=Boolean.class, parameters={})
+    @Export(name="isResumePatching", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isResumePatching;
 
     /**
@@ -205,7 +205,7 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
      * Additional information about the current lifecycle state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -219,7 +219,7 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
      * The maintenance run OCID.
      * 
      */
-    @Export(name="maintenanceRunId", type=String.class, parameters={})
+    @Export(name="maintenanceRunId", refs={String.class}, tree="[0]")
     private Output<String> maintenanceRunId;
 
     /**
@@ -233,7 +233,7 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
      * Maintenance sub-type.
      * 
      */
-    @Export(name="maintenanceSubtype", type=String.class, parameters={})
+    @Export(name="maintenanceSubtype", refs={String.class}, tree="[0]")
     private Output<String> maintenanceSubtype;
 
     /**
@@ -247,7 +247,7 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
      * Maintenance type.
      * 
      */
-    @Export(name="maintenanceType", type=String.class, parameters={})
+    @Export(name="maintenanceType", refs={String.class}, tree="[0]")
     private Output<String> maintenanceType;
 
     /**
@@ -261,7 +261,7 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
      * Contain the patch failure count.
      * 
      */
-    @Export(name="patchFailureCount", type=Integer.class, parameters={})
+    @Export(name="patchFailureCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> patchFailureCount;
 
     /**
@@ -275,7 +275,7 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch to be applied in the maintenance run.
      * 
      */
-    @Export(name="patchId", type=String.class, parameters={})
+    @Export(name="patchId", refs={String.class}, tree="[0]")
     private Output<String> patchId;
 
     /**
@@ -289,7 +289,7 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
      * The time when the patching operation ended.
      * 
      */
-    @Export(name="patchingEndTime", type=String.class, parameters={})
+    @Export(name="patchingEndTime", refs={String.class}, tree="[0]")
     private Output<String> patchingEndTime;
 
     /**
@@ -305,7 +305,7 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
      * *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
      * 
      */
-    @Export(name="patchingMode", type=String.class, parameters={})
+    @Export(name="patchingMode", refs={String.class}, tree="[0]")
     private Output<String> patchingMode;
 
     /**
@@ -321,7 +321,7 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
      * The time when the patching operation started.
      * 
      */
-    @Export(name="patchingStartTime", type=String.class, parameters={})
+    @Export(name="patchingStartTime", refs={String.class}, tree="[0]")
     private Output<String> patchingStartTime;
 
     /**
@@ -335,7 +335,7 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
      * The status of the patching operation.
      * 
      */
-    @Export(name="patchingStatus", type=String.class, parameters={})
+    @Export(name="patchingStatus", refs={String.class}, tree="[0]")
     private Output<String> patchingStatus;
 
     /**
@@ -349,7 +349,7 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association&#39;s peer container database.
      * 
      */
-    @Export(name="peerMaintenanceRunId", type=String.class, parameters={})
+    @Export(name="peerMaintenanceRunId", refs={String.class}, tree="[0]")
     private Output<String> peerMaintenanceRunId;
 
     /**
@@ -363,7 +363,7 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
      * The current state of the maintenance run. For Autonomous Database on shared Exadata infrastructure, valid states are IN_PROGRESS, SUCCEEDED and FAILED.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -377,7 +377,7 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
      * (Updatable) The target database server system software version for the patching operation.
      * 
      */
-    @Export(name="targetDbServerVersion", type=String.class, parameters={})
+    @Export(name="targetDbServerVersion", refs={String.class}, tree="[0]")
     private Output<String> targetDbServerVersion;
 
     /**
@@ -391,7 +391,7 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
      * The ID of the target resource on which the maintenance run occurs.
      * 
      */
-    @Export(name="targetResourceId", type=String.class, parameters={})
+    @Export(name="targetResourceId", refs={String.class}, tree="[0]")
     private Output<String> targetResourceId;
 
     /**
@@ -405,7 +405,7 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
      * The type of the target resource on which the maintenance run occurs.
      * 
      */
-    @Export(name="targetResourceType", type=String.class, parameters={})
+    @Export(name="targetResourceType", refs={String.class}, tree="[0]")
     private Output<String> targetResourceType;
 
     /**
@@ -419,7 +419,7 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
      * (Updatable) The target storage cell system software version for the patching operation.
      * 
      */
-    @Export(name="targetStorageServerVersion", type=String.class, parameters={})
+    @Export(name="targetStorageServerVersion", refs={String.class}, tree="[0]")
     private Output<String> targetStorageServerVersion;
 
     /**
@@ -433,7 +433,7 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
      * The date and time the maintenance run was completed.
      * 
      */
-    @Export(name="timeEnded", type=String.class, parameters={})
+    @Export(name="timeEnded", refs={String.class}, tree="[0]")
     private Output<String> timeEnded;
 
     /**
@@ -450,7 +450,7 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="timeScheduled", type=String.class, parameters={})
+    @Export(name="timeScheduled", refs={String.class}, tree="[0]")
     private Output<String> timeScheduled;
 
     /**
@@ -467,7 +467,7 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
      * The date and time the maintenance run starts.
      * 
      */
-    @Export(name="timeStarted", type=String.class, parameters={})
+    @Export(name="timeStarted", refs={String.class}, tree="[0]")
     private Output<String> timeStarted;
 
     /**

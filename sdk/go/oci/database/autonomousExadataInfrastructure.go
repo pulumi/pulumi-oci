@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Autonomous Exadata Infrastructure resource in Oracle Cloud Infrastructure Database service.
@@ -394,6 +395,12 @@ func (i *AutonomousExadataInfrastructure) ToAutonomousExadataInfrastructureOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(AutonomousExadataInfrastructureOutput)
 }
 
+func (i *AutonomousExadataInfrastructure) ToOutput(ctx context.Context) pulumix.Output[*AutonomousExadataInfrastructure] {
+	return pulumix.Output[*AutonomousExadataInfrastructure]{
+		OutputState: i.ToAutonomousExadataInfrastructureOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AutonomousExadataInfrastructureArrayInput is an input type that accepts AutonomousExadataInfrastructureArray and AutonomousExadataInfrastructureArrayOutput values.
 // You can construct a concrete instance of `AutonomousExadataInfrastructureArrayInput` via:
 //
@@ -417,6 +424,12 @@ func (i AutonomousExadataInfrastructureArray) ToAutonomousExadataInfrastructureA
 
 func (i AutonomousExadataInfrastructureArray) ToAutonomousExadataInfrastructureArrayOutputWithContext(ctx context.Context) AutonomousExadataInfrastructureArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AutonomousExadataInfrastructureArrayOutput)
+}
+
+func (i AutonomousExadataInfrastructureArray) ToOutput(ctx context.Context) pulumix.Output[[]*AutonomousExadataInfrastructure] {
+	return pulumix.Output[[]*AutonomousExadataInfrastructure]{
+		OutputState: i.ToAutonomousExadataInfrastructureArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // AutonomousExadataInfrastructureMapInput is an input type that accepts AutonomousExadataInfrastructureMap and AutonomousExadataInfrastructureMapOutput values.
@@ -444,6 +457,12 @@ func (i AutonomousExadataInfrastructureMap) ToAutonomousExadataInfrastructureMap
 	return pulumi.ToOutputWithContext(ctx, i).(AutonomousExadataInfrastructureMapOutput)
 }
 
+func (i AutonomousExadataInfrastructureMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AutonomousExadataInfrastructure] {
+	return pulumix.Output[map[string]*AutonomousExadataInfrastructure]{
+		OutputState: i.ToAutonomousExadataInfrastructureMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AutonomousExadataInfrastructureOutput struct{ *pulumi.OutputState }
 
 func (AutonomousExadataInfrastructureOutput) ElementType() reflect.Type {
@@ -456,6 +475,12 @@ func (o AutonomousExadataInfrastructureOutput) ToAutonomousExadataInfrastructure
 
 func (o AutonomousExadataInfrastructureOutput) ToAutonomousExadataInfrastructureOutputWithContext(ctx context.Context) AutonomousExadataInfrastructureOutput {
 	return o
+}
+
+func (o AutonomousExadataInfrastructureOutput) ToOutput(ctx context.Context) pulumix.Output[*AutonomousExadataInfrastructure] {
+	return pulumix.Output[*AutonomousExadataInfrastructure]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The availability domain where the Autonomous Exadata Infrastructure is located.
@@ -591,6 +616,12 @@ func (o AutonomousExadataInfrastructureArrayOutput) ToAutonomousExadataInfrastru
 	return o
 }
 
+func (o AutonomousExadataInfrastructureArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AutonomousExadataInfrastructure] {
+	return pulumix.Output[[]*AutonomousExadataInfrastructure]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AutonomousExadataInfrastructureArrayOutput) Index(i pulumi.IntInput) AutonomousExadataInfrastructureOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AutonomousExadataInfrastructure {
 		return vs[0].([]*AutonomousExadataInfrastructure)[vs[1].(int)]
@@ -609,6 +640,12 @@ func (o AutonomousExadataInfrastructureMapOutput) ToAutonomousExadataInfrastruct
 
 func (o AutonomousExadataInfrastructureMapOutput) ToAutonomousExadataInfrastructureMapOutputWithContext(ctx context.Context) AutonomousExadataInfrastructureMapOutput {
 	return o
+}
+
+func (o AutonomousExadataInfrastructureMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AutonomousExadataInfrastructure] {
+	return pulumix.Output[map[string]*AutonomousExadataInfrastructure]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AutonomousExadataInfrastructureMapOutput) MapIndex(k pulumi.StringInput) AutonomousExadataInfrastructureOutput {

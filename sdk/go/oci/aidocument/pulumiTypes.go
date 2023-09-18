@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -46,6 +47,12 @@ func (i ModelComponentModelArgs) ToModelComponentModelOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(ModelComponentModelOutput)
 }
 
+func (i ModelComponentModelArgs) ToOutput(ctx context.Context) pulumix.Output[ModelComponentModel] {
+	return pulumix.Output[ModelComponentModel]{
+		OutputState: i.ToModelComponentModelOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ModelComponentModelArrayInput is an input type that accepts ModelComponentModelArray and ModelComponentModelArrayOutput values.
 // You can construct a concrete instance of `ModelComponentModelArrayInput` via:
 //
@@ -71,6 +78,12 @@ func (i ModelComponentModelArray) ToModelComponentModelArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(ModelComponentModelArrayOutput)
 }
 
+func (i ModelComponentModelArray) ToOutput(ctx context.Context) pulumix.Output[[]ModelComponentModel] {
+	return pulumix.Output[[]ModelComponentModel]{
+		OutputState: i.ToModelComponentModelArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ModelComponentModelOutput struct{ *pulumi.OutputState }
 
 func (ModelComponentModelOutput) ElementType() reflect.Type {
@@ -83,6 +96,12 @@ func (o ModelComponentModelOutput) ToModelComponentModelOutput() ModelComponentM
 
 func (o ModelComponentModelOutput) ToModelComponentModelOutputWithContext(ctx context.Context) ModelComponentModelOutput {
 	return o
+}
+
+func (o ModelComponentModelOutput) ToOutput(ctx context.Context) pulumix.Output[ModelComponentModel] {
+	return pulumix.Output[ModelComponentModel]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
@@ -102,6 +121,12 @@ func (o ModelComponentModelArrayOutput) ToModelComponentModelArrayOutput() Model
 
 func (o ModelComponentModelArrayOutput) ToModelComponentModelArrayOutputWithContext(ctx context.Context) ModelComponentModelArrayOutput {
 	return o
+}
+
+func (o ModelComponentModelArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ModelComponentModel] {
+	return pulumix.Output[[]ModelComponentModel]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ModelComponentModelArrayOutput) Index(i pulumi.IntInput) ModelComponentModelOutput {
@@ -155,6 +180,12 @@ func (i ModelMetricArgs) ToModelMetricOutputWithContext(ctx context.Context) Mod
 	return pulumi.ToOutputWithContext(ctx, i).(ModelMetricOutput)
 }
 
+func (i ModelMetricArgs) ToOutput(ctx context.Context) pulumix.Output[ModelMetric] {
+	return pulumix.Output[ModelMetric]{
+		OutputState: i.ToModelMetricOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ModelMetricArrayInput is an input type that accepts ModelMetricArray and ModelMetricArrayOutput values.
 // You can construct a concrete instance of `ModelMetricArrayInput` via:
 //
@@ -180,6 +211,12 @@ func (i ModelMetricArray) ToModelMetricArrayOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(ModelMetricArrayOutput)
 }
 
+func (i ModelMetricArray) ToOutput(ctx context.Context) pulumix.Output[[]ModelMetric] {
+	return pulumix.Output[[]ModelMetric]{
+		OutputState: i.ToModelMetricArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ModelMetricOutput struct{ *pulumi.OutputState }
 
 func (ModelMetricOutput) ElementType() reflect.Type {
@@ -192,6 +229,12 @@ func (o ModelMetricOutput) ToModelMetricOutput() ModelMetricOutput {
 
 func (o ModelMetricOutput) ToModelMetricOutputWithContext(ctx context.Context) ModelMetricOutput {
 	return o
+}
+
+func (o ModelMetricOutput) ToOutput(ctx context.Context) pulumix.Output[ModelMetric] {
+	return pulumix.Output[ModelMetric]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Summary of count of samples used during model training.
@@ -226,6 +269,12 @@ func (o ModelMetricArrayOutput) ToModelMetricArrayOutput() ModelMetricArrayOutpu
 
 func (o ModelMetricArrayOutput) ToModelMetricArrayOutputWithContext(ctx context.Context) ModelMetricArrayOutput {
 	return o
+}
+
+func (o ModelMetricArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ModelMetric] {
+	return pulumix.Output[[]ModelMetric]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ModelMetricArrayOutput) Index(i pulumi.IntInput) ModelMetricOutput {
@@ -275,6 +324,12 @@ func (i ModelMetricDatasetSummaryArgs) ToModelMetricDatasetSummaryOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(ModelMetricDatasetSummaryOutput)
 }
 
+func (i ModelMetricDatasetSummaryArgs) ToOutput(ctx context.Context) pulumix.Output[ModelMetricDatasetSummary] {
+	return pulumix.Output[ModelMetricDatasetSummary]{
+		OutputState: i.ToModelMetricDatasetSummaryOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ModelMetricDatasetSummaryArrayInput is an input type that accepts ModelMetricDatasetSummaryArray and ModelMetricDatasetSummaryArrayOutput values.
 // You can construct a concrete instance of `ModelMetricDatasetSummaryArrayInput` via:
 //
@@ -300,6 +355,12 @@ func (i ModelMetricDatasetSummaryArray) ToModelMetricDatasetSummaryArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(ModelMetricDatasetSummaryArrayOutput)
 }
 
+func (i ModelMetricDatasetSummaryArray) ToOutput(ctx context.Context) pulumix.Output[[]ModelMetricDatasetSummary] {
+	return pulumix.Output[[]ModelMetricDatasetSummary]{
+		OutputState: i.ToModelMetricDatasetSummaryArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ModelMetricDatasetSummaryOutput struct{ *pulumi.OutputState }
 
 func (ModelMetricDatasetSummaryOutput) ElementType() reflect.Type {
@@ -312,6 +373,12 @@ func (o ModelMetricDatasetSummaryOutput) ToModelMetricDatasetSummaryOutput() Mod
 
 func (o ModelMetricDatasetSummaryOutput) ToModelMetricDatasetSummaryOutputWithContext(ctx context.Context) ModelMetricDatasetSummaryOutput {
 	return o
+}
+
+func (o ModelMetricDatasetSummaryOutput) ToOutput(ctx context.Context) pulumix.Output[ModelMetricDatasetSummary] {
+	return pulumix.Output[ModelMetricDatasetSummary]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Number of samples used for testing the model.
@@ -341,6 +408,12 @@ func (o ModelMetricDatasetSummaryArrayOutput) ToModelMetricDatasetSummaryArrayOu
 
 func (o ModelMetricDatasetSummaryArrayOutput) ToModelMetricDatasetSummaryArrayOutputWithContext(ctx context.Context) ModelMetricDatasetSummaryArrayOutput {
 	return o
+}
+
+func (o ModelMetricDatasetSummaryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ModelMetricDatasetSummary] {
+	return pulumix.Output[[]ModelMetricDatasetSummary]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ModelMetricDatasetSummaryArrayOutput) Index(i pulumi.IntInput) ModelMetricDatasetSummaryOutput {
@@ -394,6 +467,12 @@ func (i ModelMetricLabelMetricsReportArgs) ToModelMetricLabelMetricsReportOutput
 	return pulumi.ToOutputWithContext(ctx, i).(ModelMetricLabelMetricsReportOutput)
 }
 
+func (i ModelMetricLabelMetricsReportArgs) ToOutput(ctx context.Context) pulumix.Output[ModelMetricLabelMetricsReport] {
+	return pulumix.Output[ModelMetricLabelMetricsReport]{
+		OutputState: i.ToModelMetricLabelMetricsReportOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ModelMetricLabelMetricsReportArrayInput is an input type that accepts ModelMetricLabelMetricsReportArray and ModelMetricLabelMetricsReportArrayOutput values.
 // You can construct a concrete instance of `ModelMetricLabelMetricsReportArrayInput` via:
 //
@@ -419,6 +498,12 @@ func (i ModelMetricLabelMetricsReportArray) ToModelMetricLabelMetricsReportArray
 	return pulumi.ToOutputWithContext(ctx, i).(ModelMetricLabelMetricsReportArrayOutput)
 }
 
+func (i ModelMetricLabelMetricsReportArray) ToOutput(ctx context.Context) pulumix.Output[[]ModelMetricLabelMetricsReport] {
+	return pulumix.Output[[]ModelMetricLabelMetricsReport]{
+		OutputState: i.ToModelMetricLabelMetricsReportArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ModelMetricLabelMetricsReportOutput struct{ *pulumi.OutputState }
 
 func (ModelMetricLabelMetricsReportOutput) ElementType() reflect.Type {
@@ -431,6 +516,12 @@ func (o ModelMetricLabelMetricsReportOutput) ToModelMetricLabelMetricsReportOutp
 
 func (o ModelMetricLabelMetricsReportOutput) ToModelMetricLabelMetricsReportOutputWithContext(ctx context.Context) ModelMetricLabelMetricsReportOutput {
 	return o
+}
+
+func (o ModelMetricLabelMetricsReportOutput) ToOutput(ctx context.Context) pulumix.Output[ModelMetricLabelMetricsReport] {
+	return pulumix.Output[ModelMetricLabelMetricsReport]{
+		OutputState: o.OutputState,
+	}
 }
 
 // List of document classification confidence report.
@@ -467,6 +558,12 @@ func (o ModelMetricLabelMetricsReportArrayOutput) ToModelMetricLabelMetricsRepor
 
 func (o ModelMetricLabelMetricsReportArrayOutput) ToModelMetricLabelMetricsReportArrayOutputWithContext(ctx context.Context) ModelMetricLabelMetricsReportArrayOutput {
 	return o
+}
+
+func (o ModelMetricLabelMetricsReportArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ModelMetricLabelMetricsReport] {
+	return pulumix.Output[[]ModelMetricLabelMetricsReport]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ModelMetricLabelMetricsReportArrayOutput) Index(i pulumi.IntInput) ModelMetricLabelMetricsReportOutput {
@@ -524,6 +621,12 @@ func (i ModelMetricLabelMetricsReportConfidenceEntryArgs) ToModelMetricLabelMetr
 	return pulumi.ToOutputWithContext(ctx, i).(ModelMetricLabelMetricsReportConfidenceEntryOutput)
 }
 
+func (i ModelMetricLabelMetricsReportConfidenceEntryArgs) ToOutput(ctx context.Context) pulumix.Output[ModelMetricLabelMetricsReportConfidenceEntry] {
+	return pulumix.Output[ModelMetricLabelMetricsReportConfidenceEntry]{
+		OutputState: i.ToModelMetricLabelMetricsReportConfidenceEntryOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ModelMetricLabelMetricsReportConfidenceEntryArrayInput is an input type that accepts ModelMetricLabelMetricsReportConfidenceEntryArray and ModelMetricLabelMetricsReportConfidenceEntryArrayOutput values.
 // You can construct a concrete instance of `ModelMetricLabelMetricsReportConfidenceEntryArrayInput` via:
 //
@@ -549,6 +652,12 @@ func (i ModelMetricLabelMetricsReportConfidenceEntryArray) ToModelMetricLabelMet
 	return pulumi.ToOutputWithContext(ctx, i).(ModelMetricLabelMetricsReportConfidenceEntryArrayOutput)
 }
 
+func (i ModelMetricLabelMetricsReportConfidenceEntryArray) ToOutput(ctx context.Context) pulumix.Output[[]ModelMetricLabelMetricsReportConfidenceEntry] {
+	return pulumix.Output[[]ModelMetricLabelMetricsReportConfidenceEntry]{
+		OutputState: i.ToModelMetricLabelMetricsReportConfidenceEntryArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ModelMetricLabelMetricsReportConfidenceEntryOutput struct{ *pulumi.OutputState }
 
 func (ModelMetricLabelMetricsReportConfidenceEntryOutput) ElementType() reflect.Type {
@@ -561,6 +670,12 @@ func (o ModelMetricLabelMetricsReportConfidenceEntryOutput) ToModelMetricLabelMe
 
 func (o ModelMetricLabelMetricsReportConfidenceEntryOutput) ToModelMetricLabelMetricsReportConfidenceEntryOutputWithContext(ctx context.Context) ModelMetricLabelMetricsReportConfidenceEntryOutput {
 	return o
+}
+
+func (o ModelMetricLabelMetricsReportConfidenceEntryOutput) ToOutput(ctx context.Context) pulumix.Output[ModelMetricLabelMetricsReportConfidenceEntry] {
+	return pulumix.Output[ModelMetricLabelMetricsReportConfidenceEntry]{
+		OutputState: o.OutputState,
+	}
 }
 
 // accuracy under the threshold
@@ -600,6 +715,12 @@ func (o ModelMetricLabelMetricsReportConfidenceEntryArrayOutput) ToModelMetricLa
 
 func (o ModelMetricLabelMetricsReportConfidenceEntryArrayOutput) ToModelMetricLabelMetricsReportConfidenceEntryArrayOutputWithContext(ctx context.Context) ModelMetricLabelMetricsReportConfidenceEntryArrayOutput {
 	return o
+}
+
+func (o ModelMetricLabelMetricsReportConfidenceEntryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ModelMetricLabelMetricsReportConfidenceEntry] {
+	return pulumix.Output[[]ModelMetricLabelMetricsReportConfidenceEntry]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ModelMetricLabelMetricsReportConfidenceEntryArrayOutput) Index(i pulumi.IntInput) ModelMetricLabelMetricsReportConfidenceEntryOutput {
@@ -649,6 +770,12 @@ func (i ModelMetricOverallMetricsReportArgs) ToModelMetricOverallMetricsReportOu
 	return pulumi.ToOutputWithContext(ctx, i).(ModelMetricOverallMetricsReportOutput)
 }
 
+func (i ModelMetricOverallMetricsReportArgs) ToOutput(ctx context.Context) pulumix.Output[ModelMetricOverallMetricsReport] {
+	return pulumix.Output[ModelMetricOverallMetricsReport]{
+		OutputState: i.ToModelMetricOverallMetricsReportOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ModelMetricOverallMetricsReportArrayInput is an input type that accepts ModelMetricOverallMetricsReportArray and ModelMetricOverallMetricsReportArrayOutput values.
 // You can construct a concrete instance of `ModelMetricOverallMetricsReportArrayInput` via:
 //
@@ -674,6 +801,12 @@ func (i ModelMetricOverallMetricsReportArray) ToModelMetricOverallMetricsReportA
 	return pulumi.ToOutputWithContext(ctx, i).(ModelMetricOverallMetricsReportArrayOutput)
 }
 
+func (i ModelMetricOverallMetricsReportArray) ToOutput(ctx context.Context) pulumix.Output[[]ModelMetricOverallMetricsReport] {
+	return pulumix.Output[[]ModelMetricOverallMetricsReport]{
+		OutputState: i.ToModelMetricOverallMetricsReportArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ModelMetricOverallMetricsReportOutput struct{ *pulumi.OutputState }
 
 func (ModelMetricOverallMetricsReportOutput) ElementType() reflect.Type {
@@ -686,6 +819,12 @@ func (o ModelMetricOverallMetricsReportOutput) ToModelMetricOverallMetricsReport
 
 func (o ModelMetricOverallMetricsReportOutput) ToModelMetricOverallMetricsReportOutputWithContext(ctx context.Context) ModelMetricOverallMetricsReportOutput {
 	return o
+}
+
+func (o ModelMetricOverallMetricsReportOutput) ToOutput(ctx context.Context) pulumix.Output[ModelMetricOverallMetricsReport] {
+	return pulumix.Output[ModelMetricOverallMetricsReport]{
+		OutputState: o.OutputState,
+	}
 }
 
 // List of document classification confidence report.
@@ -717,6 +856,12 @@ func (o ModelMetricOverallMetricsReportArrayOutput) ToModelMetricOverallMetricsR
 
 func (o ModelMetricOverallMetricsReportArrayOutput) ToModelMetricOverallMetricsReportArrayOutputWithContext(ctx context.Context) ModelMetricOverallMetricsReportArrayOutput {
 	return o
+}
+
+func (o ModelMetricOverallMetricsReportArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ModelMetricOverallMetricsReport] {
+	return pulumix.Output[[]ModelMetricOverallMetricsReport]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ModelMetricOverallMetricsReportArrayOutput) Index(i pulumi.IntInput) ModelMetricOverallMetricsReportOutput {
@@ -774,6 +919,12 @@ func (i ModelMetricOverallMetricsReportConfidenceEntryArgs) ToModelMetricOverall
 	return pulumi.ToOutputWithContext(ctx, i).(ModelMetricOverallMetricsReportConfidenceEntryOutput)
 }
 
+func (i ModelMetricOverallMetricsReportConfidenceEntryArgs) ToOutput(ctx context.Context) pulumix.Output[ModelMetricOverallMetricsReportConfidenceEntry] {
+	return pulumix.Output[ModelMetricOverallMetricsReportConfidenceEntry]{
+		OutputState: i.ToModelMetricOverallMetricsReportConfidenceEntryOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ModelMetricOverallMetricsReportConfidenceEntryArrayInput is an input type that accepts ModelMetricOverallMetricsReportConfidenceEntryArray and ModelMetricOverallMetricsReportConfidenceEntryArrayOutput values.
 // You can construct a concrete instance of `ModelMetricOverallMetricsReportConfidenceEntryArrayInput` via:
 //
@@ -799,6 +950,12 @@ func (i ModelMetricOverallMetricsReportConfidenceEntryArray) ToModelMetricOveral
 	return pulumi.ToOutputWithContext(ctx, i).(ModelMetricOverallMetricsReportConfidenceEntryArrayOutput)
 }
 
+func (i ModelMetricOverallMetricsReportConfidenceEntryArray) ToOutput(ctx context.Context) pulumix.Output[[]ModelMetricOverallMetricsReportConfidenceEntry] {
+	return pulumix.Output[[]ModelMetricOverallMetricsReportConfidenceEntry]{
+		OutputState: i.ToModelMetricOverallMetricsReportConfidenceEntryArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ModelMetricOverallMetricsReportConfidenceEntryOutput struct{ *pulumi.OutputState }
 
 func (ModelMetricOverallMetricsReportConfidenceEntryOutput) ElementType() reflect.Type {
@@ -811,6 +968,12 @@ func (o ModelMetricOverallMetricsReportConfidenceEntryOutput) ToModelMetricOvera
 
 func (o ModelMetricOverallMetricsReportConfidenceEntryOutput) ToModelMetricOverallMetricsReportConfidenceEntryOutputWithContext(ctx context.Context) ModelMetricOverallMetricsReportConfidenceEntryOutput {
 	return o
+}
+
+func (o ModelMetricOverallMetricsReportConfidenceEntryOutput) ToOutput(ctx context.Context) pulumix.Output[ModelMetricOverallMetricsReportConfidenceEntry] {
+	return pulumix.Output[ModelMetricOverallMetricsReportConfidenceEntry]{
+		OutputState: o.OutputState,
+	}
 }
 
 // accuracy under the threshold
@@ -850,6 +1013,12 @@ func (o ModelMetricOverallMetricsReportConfidenceEntryArrayOutput) ToModelMetric
 
 func (o ModelMetricOverallMetricsReportConfidenceEntryArrayOutput) ToModelMetricOverallMetricsReportConfidenceEntryArrayOutputWithContext(ctx context.Context) ModelMetricOverallMetricsReportConfidenceEntryArrayOutput {
 	return o
+}
+
+func (o ModelMetricOverallMetricsReportConfidenceEntryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ModelMetricOverallMetricsReportConfidenceEntry] {
+	return pulumix.Output[[]ModelMetricOverallMetricsReportConfidenceEntry]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ModelMetricOverallMetricsReportConfidenceEntryArrayOutput) Index(i pulumi.IntInput) ModelMetricOverallMetricsReportConfidenceEntryOutput {
@@ -913,6 +1082,12 @@ func (i ModelTestingDatasetArgs) ToModelTestingDatasetOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(ModelTestingDatasetOutput)
 }
 
+func (i ModelTestingDatasetArgs) ToOutput(ctx context.Context) pulumix.Output[ModelTestingDataset] {
+	return pulumix.Output[ModelTestingDataset]{
+		OutputState: i.ToModelTestingDatasetOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i ModelTestingDatasetArgs) ToModelTestingDatasetPtrOutput() ModelTestingDatasetPtrOutput {
 	return i.ToModelTestingDatasetPtrOutputWithContext(context.Background())
 }
@@ -954,6 +1129,12 @@ func (i *modelTestingDatasetPtrType) ToModelTestingDatasetPtrOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(ModelTestingDatasetPtrOutput)
 }
 
+func (i *modelTestingDatasetPtrType) ToOutput(ctx context.Context) pulumix.Output[*ModelTestingDataset] {
+	return pulumix.Output[*ModelTestingDataset]{
+		OutputState: i.ToModelTestingDatasetPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ModelTestingDatasetOutput struct{ *pulumi.OutputState }
 
 func (ModelTestingDatasetOutput) ElementType() reflect.Type {
@@ -976,6 +1157,12 @@ func (o ModelTestingDatasetOutput) ToModelTestingDatasetPtrOutputWithContext(ctx
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ModelTestingDataset) *ModelTestingDataset {
 		return &v
 	}).(ModelTestingDatasetPtrOutput)
+}
+
+func (o ModelTestingDatasetOutput) ToOutput(ctx context.Context) pulumix.Output[ModelTestingDataset] {
+	return pulumix.Output[ModelTestingDataset]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the Object Storage bucket that contains the input data file.
@@ -1018,6 +1205,12 @@ func (o ModelTestingDatasetPtrOutput) ToModelTestingDatasetPtrOutput() ModelTest
 
 func (o ModelTestingDatasetPtrOutput) ToModelTestingDatasetPtrOutputWithContext(ctx context.Context) ModelTestingDatasetPtrOutput {
 	return o
+}
+
+func (o ModelTestingDatasetPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ModelTestingDataset] {
+	return pulumix.Output[*ModelTestingDataset]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ModelTestingDatasetPtrOutput) Elem() ModelTestingDatasetOutput {
@@ -1138,6 +1331,12 @@ func (i ModelTrainingDatasetArgs) ToModelTrainingDatasetOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(ModelTrainingDatasetOutput)
 }
 
+func (i ModelTrainingDatasetArgs) ToOutput(ctx context.Context) pulumix.Output[ModelTrainingDataset] {
+	return pulumix.Output[ModelTrainingDataset]{
+		OutputState: i.ToModelTrainingDatasetOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i ModelTrainingDatasetArgs) ToModelTrainingDatasetPtrOutput() ModelTrainingDatasetPtrOutput {
 	return i.ToModelTrainingDatasetPtrOutputWithContext(context.Background())
 }
@@ -1179,6 +1378,12 @@ func (i *modelTrainingDatasetPtrType) ToModelTrainingDatasetPtrOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(ModelTrainingDatasetPtrOutput)
 }
 
+func (i *modelTrainingDatasetPtrType) ToOutput(ctx context.Context) pulumix.Output[*ModelTrainingDataset] {
+	return pulumix.Output[*ModelTrainingDataset]{
+		OutputState: i.ToModelTrainingDatasetPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ModelTrainingDatasetOutput struct{ *pulumi.OutputState }
 
 func (ModelTrainingDatasetOutput) ElementType() reflect.Type {
@@ -1201,6 +1406,12 @@ func (o ModelTrainingDatasetOutput) ToModelTrainingDatasetPtrOutputWithContext(c
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ModelTrainingDataset) *ModelTrainingDataset {
 		return &v
 	}).(ModelTrainingDatasetPtrOutput)
+}
+
+func (o ModelTrainingDatasetOutput) ToOutput(ctx context.Context) pulumix.Output[ModelTrainingDataset] {
+	return pulumix.Output[ModelTrainingDataset]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the Object Storage bucket that contains the input data file.
@@ -1243,6 +1454,12 @@ func (o ModelTrainingDatasetPtrOutput) ToModelTrainingDatasetPtrOutput() ModelTr
 
 func (o ModelTrainingDatasetPtrOutput) ToModelTrainingDatasetPtrOutputWithContext(ctx context.Context) ModelTrainingDatasetPtrOutput {
 	return o
+}
+
+func (o ModelTrainingDatasetPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ModelTrainingDataset] {
+	return pulumix.Output[*ModelTrainingDataset]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ModelTrainingDatasetPtrOutput) Elem() ModelTrainingDatasetOutput {
@@ -1363,6 +1580,12 @@ func (i ModelValidationDatasetArgs) ToModelValidationDatasetOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(ModelValidationDatasetOutput)
 }
 
+func (i ModelValidationDatasetArgs) ToOutput(ctx context.Context) pulumix.Output[ModelValidationDataset] {
+	return pulumix.Output[ModelValidationDataset]{
+		OutputState: i.ToModelValidationDatasetOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i ModelValidationDatasetArgs) ToModelValidationDatasetPtrOutput() ModelValidationDatasetPtrOutput {
 	return i.ToModelValidationDatasetPtrOutputWithContext(context.Background())
 }
@@ -1404,6 +1627,12 @@ func (i *modelValidationDatasetPtrType) ToModelValidationDatasetPtrOutputWithCon
 	return pulumi.ToOutputWithContext(ctx, i).(ModelValidationDatasetPtrOutput)
 }
 
+func (i *modelValidationDatasetPtrType) ToOutput(ctx context.Context) pulumix.Output[*ModelValidationDataset] {
+	return pulumix.Output[*ModelValidationDataset]{
+		OutputState: i.ToModelValidationDatasetPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ModelValidationDatasetOutput struct{ *pulumi.OutputState }
 
 func (ModelValidationDatasetOutput) ElementType() reflect.Type {
@@ -1426,6 +1655,12 @@ func (o ModelValidationDatasetOutput) ToModelValidationDatasetPtrOutputWithConte
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ModelValidationDataset) *ModelValidationDataset {
 		return &v
 	}).(ModelValidationDatasetPtrOutput)
+}
+
+func (o ModelValidationDatasetOutput) ToOutput(ctx context.Context) pulumix.Output[ModelValidationDataset] {
+	return pulumix.Output[ModelValidationDataset]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the Object Storage bucket that contains the input data file.
@@ -1468,6 +1703,12 @@ func (o ModelValidationDatasetPtrOutput) ToModelValidationDatasetPtrOutput() Mod
 
 func (o ModelValidationDatasetPtrOutput) ToModelValidationDatasetPtrOutputWithContext(ctx context.Context) ModelValidationDatasetPtrOutput {
 	return o
+}
+
+func (o ModelValidationDatasetPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ModelValidationDataset] {
+	return pulumix.Output[*ModelValidationDataset]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ModelValidationDatasetPtrOutput) Elem() ModelValidationDatasetOutput {
@@ -1574,6 +1815,12 @@ func (i ProcessorJobInputLocationArgs) ToProcessorJobInputLocationOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(ProcessorJobInputLocationOutput)
 }
 
+func (i ProcessorJobInputLocationArgs) ToOutput(ctx context.Context) pulumix.Output[ProcessorJobInputLocation] {
+	return pulumix.Output[ProcessorJobInputLocation]{
+		OutputState: i.ToProcessorJobInputLocationOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i ProcessorJobInputLocationArgs) ToProcessorJobInputLocationPtrOutput() ProcessorJobInputLocationPtrOutput {
 	return i.ToProcessorJobInputLocationPtrOutputWithContext(context.Background())
 }
@@ -1615,6 +1862,12 @@ func (i *processorJobInputLocationPtrType) ToProcessorJobInputLocationPtrOutputW
 	return pulumi.ToOutputWithContext(ctx, i).(ProcessorJobInputLocationPtrOutput)
 }
 
+func (i *processorJobInputLocationPtrType) ToOutput(ctx context.Context) pulumix.Output[*ProcessorJobInputLocation] {
+	return pulumix.Output[*ProcessorJobInputLocation]{
+		OutputState: i.ToProcessorJobInputLocationPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ProcessorJobInputLocationOutput struct{ *pulumi.OutputState }
 
 func (ProcessorJobInputLocationOutput) ElementType() reflect.Type {
@@ -1637,6 +1890,12 @@ func (o ProcessorJobInputLocationOutput) ToProcessorJobInputLocationPtrOutputWit
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ProcessorJobInputLocation) *ProcessorJobInputLocation {
 		return &v
 	}).(ProcessorJobInputLocationPtrOutput)
+}
+
+func (o ProcessorJobInputLocationOutput) ToOutput(ctx context.Context) pulumix.Output[ProcessorJobInputLocation] {
+	return pulumix.Output[ProcessorJobInputLocation]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Raw document data with Base64 encoding.
@@ -1666,6 +1925,12 @@ func (o ProcessorJobInputLocationPtrOutput) ToProcessorJobInputLocationPtrOutput
 
 func (o ProcessorJobInputLocationPtrOutput) ToProcessorJobInputLocationPtrOutputWithContext(ctx context.Context) ProcessorJobInputLocationPtrOutput {
 	return o
+}
+
+func (o ProcessorJobInputLocationPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ProcessorJobInputLocation] {
+	return pulumix.Output[*ProcessorJobInputLocation]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ProcessorJobInputLocationPtrOutput) Elem() ProcessorJobInputLocationOutput {
@@ -1749,6 +2014,12 @@ func (i ProcessorJobInputLocationObjectLocationArgs) ToProcessorJobInputLocation
 	return pulumi.ToOutputWithContext(ctx, i).(ProcessorJobInputLocationObjectLocationOutput)
 }
 
+func (i ProcessorJobInputLocationObjectLocationArgs) ToOutput(ctx context.Context) pulumix.Output[ProcessorJobInputLocationObjectLocation] {
+	return pulumix.Output[ProcessorJobInputLocationObjectLocation]{
+		OutputState: i.ToProcessorJobInputLocationObjectLocationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ProcessorJobInputLocationObjectLocationArrayInput is an input type that accepts ProcessorJobInputLocationObjectLocationArray and ProcessorJobInputLocationObjectLocationArrayOutput values.
 // You can construct a concrete instance of `ProcessorJobInputLocationObjectLocationArrayInput` via:
 //
@@ -1774,6 +2045,12 @@ func (i ProcessorJobInputLocationObjectLocationArray) ToProcessorJobInputLocatio
 	return pulumi.ToOutputWithContext(ctx, i).(ProcessorJobInputLocationObjectLocationArrayOutput)
 }
 
+func (i ProcessorJobInputLocationObjectLocationArray) ToOutput(ctx context.Context) pulumix.Output[[]ProcessorJobInputLocationObjectLocation] {
+	return pulumix.Output[[]ProcessorJobInputLocationObjectLocation]{
+		OutputState: i.ToProcessorJobInputLocationObjectLocationArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ProcessorJobInputLocationObjectLocationOutput struct{ *pulumi.OutputState }
 
 func (ProcessorJobInputLocationObjectLocationOutput) ElementType() reflect.Type {
@@ -1786,6 +2063,12 @@ func (o ProcessorJobInputLocationObjectLocationOutput) ToProcessorJobInputLocati
 
 func (o ProcessorJobInputLocationObjectLocationOutput) ToProcessorJobInputLocationObjectLocationOutputWithContext(ctx context.Context) ProcessorJobInputLocationObjectLocationOutput {
 	return o
+}
+
+func (o ProcessorJobInputLocationObjectLocationOutput) ToOutput(ctx context.Context) pulumix.Output[ProcessorJobInputLocationObjectLocation] {
+	return pulumix.Output[ProcessorJobInputLocationObjectLocation]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The Object Storage bucket name.
@@ -1815,6 +2098,12 @@ func (o ProcessorJobInputLocationObjectLocationArrayOutput) ToProcessorJobInputL
 
 func (o ProcessorJobInputLocationObjectLocationArrayOutput) ToProcessorJobInputLocationObjectLocationArrayOutputWithContext(ctx context.Context) ProcessorJobInputLocationObjectLocationArrayOutput {
 	return o
+}
+
+func (o ProcessorJobInputLocationObjectLocationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ProcessorJobInputLocationObjectLocation] {
+	return pulumix.Output[[]ProcessorJobInputLocationObjectLocation]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ProcessorJobInputLocationObjectLocationArrayOutput) Index(i pulumi.IntInput) ProcessorJobInputLocationObjectLocationOutput {
@@ -1864,6 +2153,12 @@ func (i ProcessorJobOutputLocationArgs) ToProcessorJobOutputLocationOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(ProcessorJobOutputLocationOutput)
 }
 
+func (i ProcessorJobOutputLocationArgs) ToOutput(ctx context.Context) pulumix.Output[ProcessorJobOutputLocation] {
+	return pulumix.Output[ProcessorJobOutputLocation]{
+		OutputState: i.ToProcessorJobOutputLocationOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i ProcessorJobOutputLocationArgs) ToProcessorJobOutputLocationPtrOutput() ProcessorJobOutputLocationPtrOutput {
 	return i.ToProcessorJobOutputLocationPtrOutputWithContext(context.Background())
 }
@@ -1905,6 +2200,12 @@ func (i *processorJobOutputLocationPtrType) ToProcessorJobOutputLocationPtrOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(ProcessorJobOutputLocationPtrOutput)
 }
 
+func (i *processorJobOutputLocationPtrType) ToOutput(ctx context.Context) pulumix.Output[*ProcessorJobOutputLocation] {
+	return pulumix.Output[*ProcessorJobOutputLocation]{
+		OutputState: i.ToProcessorJobOutputLocationPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ProcessorJobOutputLocationOutput struct{ *pulumi.OutputState }
 
 func (ProcessorJobOutputLocationOutput) ElementType() reflect.Type {
@@ -1927,6 +2228,12 @@ func (o ProcessorJobOutputLocationOutput) ToProcessorJobOutputLocationPtrOutputW
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ProcessorJobOutputLocation) *ProcessorJobOutputLocation {
 		return &v
 	}).(ProcessorJobOutputLocationPtrOutput)
+}
+
+func (o ProcessorJobOutputLocationOutput) ToOutput(ctx context.Context) pulumix.Output[ProcessorJobOutputLocation] {
+	return pulumix.Output[ProcessorJobOutputLocation]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The Object Storage bucket name.
@@ -1956,6 +2263,12 @@ func (o ProcessorJobOutputLocationPtrOutput) ToProcessorJobOutputLocationPtrOutp
 
 func (o ProcessorJobOutputLocationPtrOutput) ToProcessorJobOutputLocationPtrOutputWithContext(ctx context.Context) ProcessorJobOutputLocationPtrOutput {
 	return o
+}
+
+func (o ProcessorJobOutputLocationPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ProcessorJobOutputLocation] {
+	return pulumix.Output[*ProcessorJobOutputLocation]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ProcessorJobOutputLocationPtrOutput) Elem() ProcessorJobOutputLocationOutput {
@@ -2053,6 +2366,12 @@ func (i ProcessorJobProcessorConfigArgs) ToProcessorJobProcessorConfigOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(ProcessorJobProcessorConfigOutput)
 }
 
+func (i ProcessorJobProcessorConfigArgs) ToOutput(ctx context.Context) pulumix.Output[ProcessorJobProcessorConfig] {
+	return pulumix.Output[ProcessorJobProcessorConfig]{
+		OutputState: i.ToProcessorJobProcessorConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i ProcessorJobProcessorConfigArgs) ToProcessorJobProcessorConfigPtrOutput() ProcessorJobProcessorConfigPtrOutput {
 	return i.ToProcessorJobProcessorConfigPtrOutputWithContext(context.Background())
 }
@@ -2094,6 +2413,12 @@ func (i *processorJobProcessorConfigPtrType) ToProcessorJobProcessorConfigPtrOut
 	return pulumi.ToOutputWithContext(ctx, i).(ProcessorJobProcessorConfigPtrOutput)
 }
 
+func (i *processorJobProcessorConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*ProcessorJobProcessorConfig] {
+	return pulumix.Output[*ProcessorJobProcessorConfig]{
+		OutputState: i.ToProcessorJobProcessorConfigPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ProcessorJobProcessorConfigOutput struct{ *pulumi.OutputState }
 
 func (ProcessorJobProcessorConfigOutput) ElementType() reflect.Type {
@@ -2116,6 +2441,12 @@ func (o ProcessorJobProcessorConfigOutput) ToProcessorJobProcessorConfigPtrOutpu
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ProcessorJobProcessorConfig) *ProcessorJobProcessorConfig {
 		return &v
 	}).(ProcessorJobProcessorConfigPtrOutput)
+}
+
+func (o ProcessorJobProcessorConfigOutput) ToOutput(ctx context.Context) pulumix.Output[ProcessorJobProcessorConfig] {
+	return pulumix.Output[ProcessorJobProcessorConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The document type.
@@ -2158,6 +2489,12 @@ func (o ProcessorJobProcessorConfigPtrOutput) ToProcessorJobProcessorConfigPtrOu
 
 func (o ProcessorJobProcessorConfigPtrOutput) ToProcessorJobProcessorConfigPtrOutputWithContext(ctx context.Context) ProcessorJobProcessorConfigPtrOutput {
 	return o
+}
+
+func (o ProcessorJobProcessorConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ProcessorJobProcessorConfig] {
+	return pulumix.Output[*ProcessorJobProcessorConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ProcessorJobProcessorConfigPtrOutput) Elem() ProcessorJobProcessorConfigOutput {
@@ -2272,6 +2609,12 @@ func (i ProcessorJobProcessorConfigFeatureArgs) ToProcessorJobProcessorConfigFea
 	return pulumi.ToOutputWithContext(ctx, i).(ProcessorJobProcessorConfigFeatureOutput)
 }
 
+func (i ProcessorJobProcessorConfigFeatureArgs) ToOutput(ctx context.Context) pulumix.Output[ProcessorJobProcessorConfigFeature] {
+	return pulumix.Output[ProcessorJobProcessorConfigFeature]{
+		OutputState: i.ToProcessorJobProcessorConfigFeatureOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ProcessorJobProcessorConfigFeatureArrayInput is an input type that accepts ProcessorJobProcessorConfigFeatureArray and ProcessorJobProcessorConfigFeatureArrayOutput values.
 // You can construct a concrete instance of `ProcessorJobProcessorConfigFeatureArrayInput` via:
 //
@@ -2297,6 +2640,12 @@ func (i ProcessorJobProcessorConfigFeatureArray) ToProcessorJobProcessorConfigFe
 	return pulumi.ToOutputWithContext(ctx, i).(ProcessorJobProcessorConfigFeatureArrayOutput)
 }
 
+func (i ProcessorJobProcessorConfigFeatureArray) ToOutput(ctx context.Context) pulumix.Output[[]ProcessorJobProcessorConfigFeature] {
+	return pulumix.Output[[]ProcessorJobProcessorConfigFeature]{
+		OutputState: i.ToProcessorJobProcessorConfigFeatureArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ProcessorJobProcessorConfigFeatureOutput struct{ *pulumi.OutputState }
 
 func (ProcessorJobProcessorConfigFeatureOutput) ElementType() reflect.Type {
@@ -2309,6 +2658,12 @@ func (o ProcessorJobProcessorConfigFeatureOutput) ToProcessorJobProcessorConfigF
 
 func (o ProcessorJobProcessorConfigFeatureOutput) ToProcessorJobProcessorConfigFeatureOutputWithContext(ctx context.Context) ProcessorJobProcessorConfigFeatureOutput {
 	return o
+}
+
+func (o ProcessorJobProcessorConfigFeatureOutput) ToOutput(ctx context.Context) pulumix.Output[ProcessorJobProcessorConfigFeature] {
+	return pulumix.Output[ProcessorJobProcessorConfigFeature]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The type of document analysis requested. The allowed values are:
@@ -2350,6 +2705,12 @@ func (o ProcessorJobProcessorConfigFeatureArrayOutput) ToProcessorJobProcessorCo
 	return o
 }
 
+func (o ProcessorJobProcessorConfigFeatureArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ProcessorJobProcessorConfigFeature] {
+	return pulumix.Output[[]ProcessorJobProcessorConfigFeature]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o ProcessorJobProcessorConfigFeatureArrayOutput) Index(i pulumi.IntInput) ProcessorJobProcessorConfigFeatureOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ProcessorJobProcessorConfigFeature {
 		return vs[0].([]ProcessorJobProcessorConfigFeature)[vs[1].(int)]
@@ -2389,6 +2750,12 @@ func (i GetModelComponentModelArgs) ToGetModelComponentModelOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelComponentModelOutput)
 }
 
+func (i GetModelComponentModelArgs) ToOutput(ctx context.Context) pulumix.Output[GetModelComponentModel] {
+	return pulumix.Output[GetModelComponentModel]{
+		OutputState: i.ToGetModelComponentModelOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetModelComponentModelArrayInput is an input type that accepts GetModelComponentModelArray and GetModelComponentModelArrayOutput values.
 // You can construct a concrete instance of `GetModelComponentModelArrayInput` via:
 //
@@ -2414,6 +2781,12 @@ func (i GetModelComponentModelArray) ToGetModelComponentModelArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelComponentModelArrayOutput)
 }
 
+func (i GetModelComponentModelArray) ToOutput(ctx context.Context) pulumix.Output[[]GetModelComponentModel] {
+	return pulumix.Output[[]GetModelComponentModel]{
+		OutputState: i.ToGetModelComponentModelArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetModelComponentModelOutput struct{ *pulumi.OutputState }
 
 func (GetModelComponentModelOutput) ElementType() reflect.Type {
@@ -2426,6 +2799,12 @@ func (o GetModelComponentModelOutput) ToGetModelComponentModelOutput() GetModelC
 
 func (o GetModelComponentModelOutput) ToGetModelComponentModelOutputWithContext(ctx context.Context) GetModelComponentModelOutput {
 	return o
+}
+
+func (o GetModelComponentModelOutput) ToOutput(ctx context.Context) pulumix.Output[GetModelComponentModel] {
+	return pulumix.Output[GetModelComponentModel]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A unique model identifier.
@@ -2445,6 +2824,12 @@ func (o GetModelComponentModelArrayOutput) ToGetModelComponentModelArrayOutput()
 
 func (o GetModelComponentModelArrayOutput) ToGetModelComponentModelArrayOutputWithContext(ctx context.Context) GetModelComponentModelArrayOutput {
 	return o
+}
+
+func (o GetModelComponentModelArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetModelComponentModel] {
+	return pulumix.Output[[]GetModelComponentModel]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetModelComponentModelArrayOutput) Index(i pulumi.IntInput) GetModelComponentModelOutput {
@@ -2498,6 +2883,12 @@ func (i GetModelMetricArgs) ToGetModelMetricOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelMetricOutput)
 }
 
+func (i GetModelMetricArgs) ToOutput(ctx context.Context) pulumix.Output[GetModelMetric] {
+	return pulumix.Output[GetModelMetric]{
+		OutputState: i.ToGetModelMetricOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetModelMetricArrayInput is an input type that accepts GetModelMetricArray and GetModelMetricArrayOutput values.
 // You can construct a concrete instance of `GetModelMetricArrayInput` via:
 //
@@ -2523,6 +2914,12 @@ func (i GetModelMetricArray) ToGetModelMetricArrayOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelMetricArrayOutput)
 }
 
+func (i GetModelMetricArray) ToOutput(ctx context.Context) pulumix.Output[[]GetModelMetric] {
+	return pulumix.Output[[]GetModelMetric]{
+		OutputState: i.ToGetModelMetricArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetModelMetricOutput struct{ *pulumi.OutputState }
 
 func (GetModelMetricOutput) ElementType() reflect.Type {
@@ -2535,6 +2932,12 @@ func (o GetModelMetricOutput) ToGetModelMetricOutput() GetModelMetricOutput {
 
 func (o GetModelMetricOutput) ToGetModelMetricOutputWithContext(ctx context.Context) GetModelMetricOutput {
 	return o
+}
+
+func (o GetModelMetricOutput) ToOutput(ctx context.Context) pulumix.Output[GetModelMetric] {
+	return pulumix.Output[GetModelMetric]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Summary of count of samples used during model training.
@@ -2569,6 +2972,12 @@ func (o GetModelMetricArrayOutput) ToGetModelMetricArrayOutput() GetModelMetricA
 
 func (o GetModelMetricArrayOutput) ToGetModelMetricArrayOutputWithContext(ctx context.Context) GetModelMetricArrayOutput {
 	return o
+}
+
+func (o GetModelMetricArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetModelMetric] {
+	return pulumix.Output[[]GetModelMetric]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetModelMetricArrayOutput) Index(i pulumi.IntInput) GetModelMetricOutput {
@@ -2618,6 +3027,12 @@ func (i GetModelMetricDatasetSummaryArgs) ToGetModelMetricDatasetSummaryOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelMetricDatasetSummaryOutput)
 }
 
+func (i GetModelMetricDatasetSummaryArgs) ToOutput(ctx context.Context) pulumix.Output[GetModelMetricDatasetSummary] {
+	return pulumix.Output[GetModelMetricDatasetSummary]{
+		OutputState: i.ToGetModelMetricDatasetSummaryOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetModelMetricDatasetSummaryArrayInput is an input type that accepts GetModelMetricDatasetSummaryArray and GetModelMetricDatasetSummaryArrayOutput values.
 // You can construct a concrete instance of `GetModelMetricDatasetSummaryArrayInput` via:
 //
@@ -2643,6 +3058,12 @@ func (i GetModelMetricDatasetSummaryArray) ToGetModelMetricDatasetSummaryArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelMetricDatasetSummaryArrayOutput)
 }
 
+func (i GetModelMetricDatasetSummaryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetModelMetricDatasetSummary] {
+	return pulumix.Output[[]GetModelMetricDatasetSummary]{
+		OutputState: i.ToGetModelMetricDatasetSummaryArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetModelMetricDatasetSummaryOutput struct{ *pulumi.OutputState }
 
 func (GetModelMetricDatasetSummaryOutput) ElementType() reflect.Type {
@@ -2655,6 +3076,12 @@ func (o GetModelMetricDatasetSummaryOutput) ToGetModelMetricDatasetSummaryOutput
 
 func (o GetModelMetricDatasetSummaryOutput) ToGetModelMetricDatasetSummaryOutputWithContext(ctx context.Context) GetModelMetricDatasetSummaryOutput {
 	return o
+}
+
+func (o GetModelMetricDatasetSummaryOutput) ToOutput(ctx context.Context) pulumix.Output[GetModelMetricDatasetSummary] {
+	return pulumix.Output[GetModelMetricDatasetSummary]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Number of samples used for testing the model.
@@ -2684,6 +3111,12 @@ func (o GetModelMetricDatasetSummaryArrayOutput) ToGetModelMetricDatasetSummaryA
 
 func (o GetModelMetricDatasetSummaryArrayOutput) ToGetModelMetricDatasetSummaryArrayOutputWithContext(ctx context.Context) GetModelMetricDatasetSummaryArrayOutput {
 	return o
+}
+
+func (o GetModelMetricDatasetSummaryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetModelMetricDatasetSummary] {
+	return pulumix.Output[[]GetModelMetricDatasetSummary]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetModelMetricDatasetSummaryArrayOutput) Index(i pulumi.IntInput) GetModelMetricDatasetSummaryOutput {
@@ -2737,6 +3170,12 @@ func (i GetModelMetricLabelMetricsReportArgs) ToGetModelMetricLabelMetricsReport
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelMetricLabelMetricsReportOutput)
 }
 
+func (i GetModelMetricLabelMetricsReportArgs) ToOutput(ctx context.Context) pulumix.Output[GetModelMetricLabelMetricsReport] {
+	return pulumix.Output[GetModelMetricLabelMetricsReport]{
+		OutputState: i.ToGetModelMetricLabelMetricsReportOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetModelMetricLabelMetricsReportArrayInput is an input type that accepts GetModelMetricLabelMetricsReportArray and GetModelMetricLabelMetricsReportArrayOutput values.
 // You can construct a concrete instance of `GetModelMetricLabelMetricsReportArrayInput` via:
 //
@@ -2762,6 +3201,12 @@ func (i GetModelMetricLabelMetricsReportArray) ToGetModelMetricLabelMetricsRepor
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelMetricLabelMetricsReportArrayOutput)
 }
 
+func (i GetModelMetricLabelMetricsReportArray) ToOutput(ctx context.Context) pulumix.Output[[]GetModelMetricLabelMetricsReport] {
+	return pulumix.Output[[]GetModelMetricLabelMetricsReport]{
+		OutputState: i.ToGetModelMetricLabelMetricsReportArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetModelMetricLabelMetricsReportOutput struct{ *pulumi.OutputState }
 
 func (GetModelMetricLabelMetricsReportOutput) ElementType() reflect.Type {
@@ -2774,6 +3219,12 @@ func (o GetModelMetricLabelMetricsReportOutput) ToGetModelMetricLabelMetricsRepo
 
 func (o GetModelMetricLabelMetricsReportOutput) ToGetModelMetricLabelMetricsReportOutputWithContext(ctx context.Context) GetModelMetricLabelMetricsReportOutput {
 	return o
+}
+
+func (o GetModelMetricLabelMetricsReportOutput) ToOutput(ctx context.Context) pulumix.Output[GetModelMetricLabelMetricsReport] {
+	return pulumix.Output[GetModelMetricLabelMetricsReport]{
+		OutputState: o.OutputState,
+	}
 }
 
 // List of document classification confidence report.
@@ -2810,6 +3261,12 @@ func (o GetModelMetricLabelMetricsReportArrayOutput) ToGetModelMetricLabelMetric
 
 func (o GetModelMetricLabelMetricsReportArrayOutput) ToGetModelMetricLabelMetricsReportArrayOutputWithContext(ctx context.Context) GetModelMetricLabelMetricsReportArrayOutput {
 	return o
+}
+
+func (o GetModelMetricLabelMetricsReportArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetModelMetricLabelMetricsReport] {
+	return pulumix.Output[[]GetModelMetricLabelMetricsReport]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetModelMetricLabelMetricsReportArrayOutput) Index(i pulumi.IntInput) GetModelMetricLabelMetricsReportOutput {
@@ -2867,6 +3324,12 @@ func (i GetModelMetricLabelMetricsReportConfidenceEntryArgs) ToGetModelMetricLab
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelMetricLabelMetricsReportConfidenceEntryOutput)
 }
 
+func (i GetModelMetricLabelMetricsReportConfidenceEntryArgs) ToOutput(ctx context.Context) pulumix.Output[GetModelMetricLabelMetricsReportConfidenceEntry] {
+	return pulumix.Output[GetModelMetricLabelMetricsReportConfidenceEntry]{
+		OutputState: i.ToGetModelMetricLabelMetricsReportConfidenceEntryOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetModelMetricLabelMetricsReportConfidenceEntryArrayInput is an input type that accepts GetModelMetricLabelMetricsReportConfidenceEntryArray and GetModelMetricLabelMetricsReportConfidenceEntryArrayOutput values.
 // You can construct a concrete instance of `GetModelMetricLabelMetricsReportConfidenceEntryArrayInput` via:
 //
@@ -2892,6 +3355,12 @@ func (i GetModelMetricLabelMetricsReportConfidenceEntryArray) ToGetModelMetricLa
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelMetricLabelMetricsReportConfidenceEntryArrayOutput)
 }
 
+func (i GetModelMetricLabelMetricsReportConfidenceEntryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetModelMetricLabelMetricsReportConfidenceEntry] {
+	return pulumix.Output[[]GetModelMetricLabelMetricsReportConfidenceEntry]{
+		OutputState: i.ToGetModelMetricLabelMetricsReportConfidenceEntryArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetModelMetricLabelMetricsReportConfidenceEntryOutput struct{ *pulumi.OutputState }
 
 func (GetModelMetricLabelMetricsReportConfidenceEntryOutput) ElementType() reflect.Type {
@@ -2904,6 +3373,12 @@ func (o GetModelMetricLabelMetricsReportConfidenceEntryOutput) ToGetModelMetricL
 
 func (o GetModelMetricLabelMetricsReportConfidenceEntryOutput) ToGetModelMetricLabelMetricsReportConfidenceEntryOutputWithContext(ctx context.Context) GetModelMetricLabelMetricsReportConfidenceEntryOutput {
 	return o
+}
+
+func (o GetModelMetricLabelMetricsReportConfidenceEntryOutput) ToOutput(ctx context.Context) pulumix.Output[GetModelMetricLabelMetricsReportConfidenceEntry] {
+	return pulumix.Output[GetModelMetricLabelMetricsReportConfidenceEntry]{
+		OutputState: o.OutputState,
+	}
 }
 
 // accuracy under the threshold
@@ -2943,6 +3418,12 @@ func (o GetModelMetricLabelMetricsReportConfidenceEntryArrayOutput) ToGetModelMe
 
 func (o GetModelMetricLabelMetricsReportConfidenceEntryArrayOutput) ToGetModelMetricLabelMetricsReportConfidenceEntryArrayOutputWithContext(ctx context.Context) GetModelMetricLabelMetricsReportConfidenceEntryArrayOutput {
 	return o
+}
+
+func (o GetModelMetricLabelMetricsReportConfidenceEntryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetModelMetricLabelMetricsReportConfidenceEntry] {
+	return pulumix.Output[[]GetModelMetricLabelMetricsReportConfidenceEntry]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetModelMetricLabelMetricsReportConfidenceEntryArrayOutput) Index(i pulumi.IntInput) GetModelMetricLabelMetricsReportConfidenceEntryOutput {
@@ -2992,6 +3473,12 @@ func (i GetModelMetricOverallMetricsReportArgs) ToGetModelMetricOverallMetricsRe
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelMetricOverallMetricsReportOutput)
 }
 
+func (i GetModelMetricOverallMetricsReportArgs) ToOutput(ctx context.Context) pulumix.Output[GetModelMetricOverallMetricsReport] {
+	return pulumix.Output[GetModelMetricOverallMetricsReport]{
+		OutputState: i.ToGetModelMetricOverallMetricsReportOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetModelMetricOverallMetricsReportArrayInput is an input type that accepts GetModelMetricOverallMetricsReportArray and GetModelMetricOverallMetricsReportArrayOutput values.
 // You can construct a concrete instance of `GetModelMetricOverallMetricsReportArrayInput` via:
 //
@@ -3017,6 +3504,12 @@ func (i GetModelMetricOverallMetricsReportArray) ToGetModelMetricOverallMetricsR
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelMetricOverallMetricsReportArrayOutput)
 }
 
+func (i GetModelMetricOverallMetricsReportArray) ToOutput(ctx context.Context) pulumix.Output[[]GetModelMetricOverallMetricsReport] {
+	return pulumix.Output[[]GetModelMetricOverallMetricsReport]{
+		OutputState: i.ToGetModelMetricOverallMetricsReportArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetModelMetricOverallMetricsReportOutput struct{ *pulumi.OutputState }
 
 func (GetModelMetricOverallMetricsReportOutput) ElementType() reflect.Type {
@@ -3029,6 +3522,12 @@ func (o GetModelMetricOverallMetricsReportOutput) ToGetModelMetricOverallMetrics
 
 func (o GetModelMetricOverallMetricsReportOutput) ToGetModelMetricOverallMetricsReportOutputWithContext(ctx context.Context) GetModelMetricOverallMetricsReportOutput {
 	return o
+}
+
+func (o GetModelMetricOverallMetricsReportOutput) ToOutput(ctx context.Context) pulumix.Output[GetModelMetricOverallMetricsReport] {
+	return pulumix.Output[GetModelMetricOverallMetricsReport]{
+		OutputState: o.OutputState,
+	}
 }
 
 // List of document classification confidence report.
@@ -3060,6 +3559,12 @@ func (o GetModelMetricOverallMetricsReportArrayOutput) ToGetModelMetricOverallMe
 
 func (o GetModelMetricOverallMetricsReportArrayOutput) ToGetModelMetricOverallMetricsReportArrayOutputWithContext(ctx context.Context) GetModelMetricOverallMetricsReportArrayOutput {
 	return o
+}
+
+func (o GetModelMetricOverallMetricsReportArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetModelMetricOverallMetricsReport] {
+	return pulumix.Output[[]GetModelMetricOverallMetricsReport]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetModelMetricOverallMetricsReportArrayOutput) Index(i pulumi.IntInput) GetModelMetricOverallMetricsReportOutput {
@@ -3117,6 +3622,12 @@ func (i GetModelMetricOverallMetricsReportConfidenceEntryArgs) ToGetModelMetricO
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelMetricOverallMetricsReportConfidenceEntryOutput)
 }
 
+func (i GetModelMetricOverallMetricsReportConfidenceEntryArgs) ToOutput(ctx context.Context) pulumix.Output[GetModelMetricOverallMetricsReportConfidenceEntry] {
+	return pulumix.Output[GetModelMetricOverallMetricsReportConfidenceEntry]{
+		OutputState: i.ToGetModelMetricOverallMetricsReportConfidenceEntryOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetModelMetricOverallMetricsReportConfidenceEntryArrayInput is an input type that accepts GetModelMetricOverallMetricsReportConfidenceEntryArray and GetModelMetricOverallMetricsReportConfidenceEntryArrayOutput values.
 // You can construct a concrete instance of `GetModelMetricOverallMetricsReportConfidenceEntryArrayInput` via:
 //
@@ -3142,6 +3653,12 @@ func (i GetModelMetricOverallMetricsReportConfidenceEntryArray) ToGetModelMetric
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelMetricOverallMetricsReportConfidenceEntryArrayOutput)
 }
 
+func (i GetModelMetricOverallMetricsReportConfidenceEntryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetModelMetricOverallMetricsReportConfidenceEntry] {
+	return pulumix.Output[[]GetModelMetricOverallMetricsReportConfidenceEntry]{
+		OutputState: i.ToGetModelMetricOverallMetricsReportConfidenceEntryArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetModelMetricOverallMetricsReportConfidenceEntryOutput struct{ *pulumi.OutputState }
 
 func (GetModelMetricOverallMetricsReportConfidenceEntryOutput) ElementType() reflect.Type {
@@ -3154,6 +3671,12 @@ func (o GetModelMetricOverallMetricsReportConfidenceEntryOutput) ToGetModelMetri
 
 func (o GetModelMetricOverallMetricsReportConfidenceEntryOutput) ToGetModelMetricOverallMetricsReportConfidenceEntryOutputWithContext(ctx context.Context) GetModelMetricOverallMetricsReportConfidenceEntryOutput {
 	return o
+}
+
+func (o GetModelMetricOverallMetricsReportConfidenceEntryOutput) ToOutput(ctx context.Context) pulumix.Output[GetModelMetricOverallMetricsReportConfidenceEntry] {
+	return pulumix.Output[GetModelMetricOverallMetricsReportConfidenceEntry]{
+		OutputState: o.OutputState,
+	}
 }
 
 // accuracy under the threshold
@@ -3193,6 +3716,12 @@ func (o GetModelMetricOverallMetricsReportConfidenceEntryArrayOutput) ToGetModel
 
 func (o GetModelMetricOverallMetricsReportConfidenceEntryArrayOutput) ToGetModelMetricOverallMetricsReportConfidenceEntryArrayOutputWithContext(ctx context.Context) GetModelMetricOverallMetricsReportConfidenceEntryArrayOutput {
 	return o
+}
+
+func (o GetModelMetricOverallMetricsReportConfidenceEntryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetModelMetricOverallMetricsReportConfidenceEntry] {
+	return pulumix.Output[[]GetModelMetricOverallMetricsReportConfidenceEntry]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetModelMetricOverallMetricsReportConfidenceEntryArrayOutput) Index(i pulumi.IntInput) GetModelMetricOverallMetricsReportConfidenceEntryOutput {
@@ -3250,6 +3779,12 @@ func (i GetModelTestingDatasetArgs) ToGetModelTestingDatasetOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelTestingDatasetOutput)
 }
 
+func (i GetModelTestingDatasetArgs) ToOutput(ctx context.Context) pulumix.Output[GetModelTestingDataset] {
+	return pulumix.Output[GetModelTestingDataset]{
+		OutputState: i.ToGetModelTestingDatasetOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetModelTestingDatasetArrayInput is an input type that accepts GetModelTestingDatasetArray and GetModelTestingDatasetArrayOutput values.
 // You can construct a concrete instance of `GetModelTestingDatasetArrayInput` via:
 //
@@ -3275,6 +3810,12 @@ func (i GetModelTestingDatasetArray) ToGetModelTestingDatasetArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelTestingDatasetArrayOutput)
 }
 
+func (i GetModelTestingDatasetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetModelTestingDataset] {
+	return pulumix.Output[[]GetModelTestingDataset]{
+		OutputState: i.ToGetModelTestingDatasetArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetModelTestingDatasetOutput struct{ *pulumi.OutputState }
 
 func (GetModelTestingDatasetOutput) ElementType() reflect.Type {
@@ -3287,6 +3828,12 @@ func (o GetModelTestingDatasetOutput) ToGetModelTestingDatasetOutput() GetModelT
 
 func (o GetModelTestingDatasetOutput) ToGetModelTestingDatasetOutputWithContext(ctx context.Context) GetModelTestingDatasetOutput {
 	return o
+}
+
+func (o GetModelTestingDatasetOutput) ToOutput(ctx context.Context) pulumix.Output[GetModelTestingDataset] {
+	return pulumix.Output[GetModelTestingDataset]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the Object Storage bucket that contains the input data file.
@@ -3326,6 +3873,12 @@ func (o GetModelTestingDatasetArrayOutput) ToGetModelTestingDatasetArrayOutput()
 
 func (o GetModelTestingDatasetArrayOutput) ToGetModelTestingDatasetArrayOutputWithContext(ctx context.Context) GetModelTestingDatasetArrayOutput {
 	return o
+}
+
+func (o GetModelTestingDatasetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetModelTestingDataset] {
+	return pulumix.Output[[]GetModelTestingDataset]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetModelTestingDatasetArrayOutput) Index(i pulumi.IntInput) GetModelTestingDatasetOutput {
@@ -3383,6 +3936,12 @@ func (i GetModelTrainingDatasetArgs) ToGetModelTrainingDatasetOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelTrainingDatasetOutput)
 }
 
+func (i GetModelTrainingDatasetArgs) ToOutput(ctx context.Context) pulumix.Output[GetModelTrainingDataset] {
+	return pulumix.Output[GetModelTrainingDataset]{
+		OutputState: i.ToGetModelTrainingDatasetOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetModelTrainingDatasetArrayInput is an input type that accepts GetModelTrainingDatasetArray and GetModelTrainingDatasetArrayOutput values.
 // You can construct a concrete instance of `GetModelTrainingDatasetArrayInput` via:
 //
@@ -3408,6 +3967,12 @@ func (i GetModelTrainingDatasetArray) ToGetModelTrainingDatasetArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelTrainingDatasetArrayOutput)
 }
 
+func (i GetModelTrainingDatasetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetModelTrainingDataset] {
+	return pulumix.Output[[]GetModelTrainingDataset]{
+		OutputState: i.ToGetModelTrainingDatasetArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetModelTrainingDatasetOutput struct{ *pulumi.OutputState }
 
 func (GetModelTrainingDatasetOutput) ElementType() reflect.Type {
@@ -3420,6 +3985,12 @@ func (o GetModelTrainingDatasetOutput) ToGetModelTrainingDatasetOutput() GetMode
 
 func (o GetModelTrainingDatasetOutput) ToGetModelTrainingDatasetOutputWithContext(ctx context.Context) GetModelTrainingDatasetOutput {
 	return o
+}
+
+func (o GetModelTrainingDatasetOutput) ToOutput(ctx context.Context) pulumix.Output[GetModelTrainingDataset] {
+	return pulumix.Output[GetModelTrainingDataset]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the Object Storage bucket that contains the input data file.
@@ -3459,6 +4030,12 @@ func (o GetModelTrainingDatasetArrayOutput) ToGetModelTrainingDatasetArrayOutput
 
 func (o GetModelTrainingDatasetArrayOutput) ToGetModelTrainingDatasetArrayOutputWithContext(ctx context.Context) GetModelTrainingDatasetArrayOutput {
 	return o
+}
+
+func (o GetModelTrainingDatasetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetModelTrainingDataset] {
+	return pulumix.Output[[]GetModelTrainingDataset]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetModelTrainingDatasetArrayOutput) Index(i pulumi.IntInput) GetModelTrainingDatasetOutput {
@@ -3516,6 +4093,12 @@ func (i GetModelValidationDatasetArgs) ToGetModelValidationDatasetOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelValidationDatasetOutput)
 }
 
+func (i GetModelValidationDatasetArgs) ToOutput(ctx context.Context) pulumix.Output[GetModelValidationDataset] {
+	return pulumix.Output[GetModelValidationDataset]{
+		OutputState: i.ToGetModelValidationDatasetOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetModelValidationDatasetArrayInput is an input type that accepts GetModelValidationDatasetArray and GetModelValidationDatasetArrayOutput values.
 // You can construct a concrete instance of `GetModelValidationDatasetArrayInput` via:
 //
@@ -3541,6 +4124,12 @@ func (i GetModelValidationDatasetArray) ToGetModelValidationDatasetArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelValidationDatasetArrayOutput)
 }
 
+func (i GetModelValidationDatasetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetModelValidationDataset] {
+	return pulumix.Output[[]GetModelValidationDataset]{
+		OutputState: i.ToGetModelValidationDatasetArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetModelValidationDatasetOutput struct{ *pulumi.OutputState }
 
 func (GetModelValidationDatasetOutput) ElementType() reflect.Type {
@@ -3553,6 +4142,12 @@ func (o GetModelValidationDatasetOutput) ToGetModelValidationDatasetOutput() Get
 
 func (o GetModelValidationDatasetOutput) ToGetModelValidationDatasetOutputWithContext(ctx context.Context) GetModelValidationDatasetOutput {
 	return o
+}
+
+func (o GetModelValidationDatasetOutput) ToOutput(ctx context.Context) pulumix.Output[GetModelValidationDataset] {
+	return pulumix.Output[GetModelValidationDataset]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the Object Storage bucket that contains the input data file.
@@ -3592,6 +4187,12 @@ func (o GetModelValidationDatasetArrayOutput) ToGetModelValidationDatasetArrayOu
 
 func (o GetModelValidationDatasetArrayOutput) ToGetModelValidationDatasetArrayOutputWithContext(ctx context.Context) GetModelValidationDatasetArrayOutput {
 	return o
+}
+
+func (o GetModelValidationDatasetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetModelValidationDataset] {
+	return pulumix.Output[[]GetModelValidationDataset]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetModelValidationDatasetArrayOutput) Index(i pulumi.IntInput) GetModelValidationDatasetOutput {
@@ -3635,6 +4236,12 @@ func (i GetModelsFilterArgs) ToGetModelsFilterOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelsFilterOutput)
 }
 
+func (i GetModelsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetModelsFilter] {
+	return pulumix.Output[GetModelsFilter]{
+		OutputState: i.ToGetModelsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetModelsFilterArrayInput is an input type that accepts GetModelsFilterArray and GetModelsFilterArrayOutput values.
 // You can construct a concrete instance of `GetModelsFilterArrayInput` via:
 //
@@ -3660,6 +4267,12 @@ func (i GetModelsFilterArray) ToGetModelsFilterArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelsFilterArrayOutput)
 }
 
+func (i GetModelsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetModelsFilter] {
+	return pulumix.Output[[]GetModelsFilter]{
+		OutputState: i.ToGetModelsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetModelsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetModelsFilterOutput) ElementType() reflect.Type {
@@ -3672,6 +4285,12 @@ func (o GetModelsFilterOutput) ToGetModelsFilterOutput() GetModelsFilterOutput {
 
 func (o GetModelsFilterOutput) ToGetModelsFilterOutputWithContext(ctx context.Context) GetModelsFilterOutput {
 	return o
+}
+
+func (o GetModelsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetModelsFilter] {
+	return pulumix.Output[GetModelsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetModelsFilterOutput) Name() pulumi.StringOutput {
@@ -3698,6 +4317,12 @@ func (o GetModelsFilterArrayOutput) ToGetModelsFilterArrayOutput() GetModelsFilt
 
 func (o GetModelsFilterArrayOutput) ToGetModelsFilterArrayOutputWithContext(ctx context.Context) GetModelsFilterArrayOutput {
 	return o
+}
+
+func (o GetModelsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetModelsFilter] {
+	return pulumix.Output[[]GetModelsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetModelsFilterArrayOutput) Index(i pulumi.IntInput) GetModelsFilterOutput {
@@ -3737,6 +4362,12 @@ func (i GetModelsModelCollectionArgs) ToGetModelsModelCollectionOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelsModelCollectionOutput)
 }
 
+func (i GetModelsModelCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetModelsModelCollection] {
+	return pulumix.Output[GetModelsModelCollection]{
+		OutputState: i.ToGetModelsModelCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetModelsModelCollectionArrayInput is an input type that accepts GetModelsModelCollectionArray and GetModelsModelCollectionArrayOutput values.
 // You can construct a concrete instance of `GetModelsModelCollectionArrayInput` via:
 //
@@ -3762,6 +4393,12 @@ func (i GetModelsModelCollectionArray) ToGetModelsModelCollectionArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelsModelCollectionArrayOutput)
 }
 
+func (i GetModelsModelCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetModelsModelCollection] {
+	return pulumix.Output[[]GetModelsModelCollection]{
+		OutputState: i.ToGetModelsModelCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetModelsModelCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetModelsModelCollectionOutput) ElementType() reflect.Type {
@@ -3774,6 +4411,12 @@ func (o GetModelsModelCollectionOutput) ToGetModelsModelCollectionOutput() GetMo
 
 func (o GetModelsModelCollectionOutput) ToGetModelsModelCollectionOutputWithContext(ctx context.Context) GetModelsModelCollectionOutput {
 	return o
+}
+
+func (o GetModelsModelCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetModelsModelCollection] {
+	return pulumix.Output[GetModelsModelCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetModelsModelCollectionOutput) Items() GetModelsModelCollectionItemArrayOutput {
@@ -3792,6 +4435,12 @@ func (o GetModelsModelCollectionArrayOutput) ToGetModelsModelCollectionArrayOutp
 
 func (o GetModelsModelCollectionArrayOutput) ToGetModelsModelCollectionArrayOutputWithContext(ctx context.Context) GetModelsModelCollectionArrayOutput {
 	return o
+}
+
+func (o GetModelsModelCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetModelsModelCollection] {
+	return pulumix.Output[[]GetModelsModelCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetModelsModelCollectionArrayOutput) Index(i pulumi.IntInput) GetModelsModelCollectionOutput {
@@ -3933,6 +4582,12 @@ func (i GetModelsModelCollectionItemArgs) ToGetModelsModelCollectionItemOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelsModelCollectionItemOutput)
 }
 
+func (i GetModelsModelCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetModelsModelCollectionItem] {
+	return pulumix.Output[GetModelsModelCollectionItem]{
+		OutputState: i.ToGetModelsModelCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetModelsModelCollectionItemArrayInput is an input type that accepts GetModelsModelCollectionItemArray and GetModelsModelCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetModelsModelCollectionItemArrayInput` via:
 //
@@ -3958,6 +4613,12 @@ func (i GetModelsModelCollectionItemArray) ToGetModelsModelCollectionItemArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelsModelCollectionItemArrayOutput)
 }
 
+func (i GetModelsModelCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetModelsModelCollectionItem] {
+	return pulumix.Output[[]GetModelsModelCollectionItem]{
+		OutputState: i.ToGetModelsModelCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetModelsModelCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetModelsModelCollectionItemOutput) ElementType() reflect.Type {
@@ -3970,6 +4631,12 @@ func (o GetModelsModelCollectionItemOutput) ToGetModelsModelCollectionItemOutput
 
 func (o GetModelsModelCollectionItemOutput) ToGetModelsModelCollectionItemOutputWithContext(ctx context.Context) GetModelsModelCollectionItemOutput {
 	return o
+}
+
+func (o GetModelsModelCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetModelsModelCollectionItem] {
+	return pulumix.Output[GetModelsModelCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -4124,6 +4791,12 @@ func (o GetModelsModelCollectionItemArrayOutput) ToGetModelsModelCollectionItemA
 	return o
 }
 
+func (o GetModelsModelCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetModelsModelCollectionItem] {
+	return pulumix.Output[[]GetModelsModelCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetModelsModelCollectionItemArrayOutput) Index(i pulumi.IntInput) GetModelsModelCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelsModelCollectionItem {
 		return vs[0].([]GetModelsModelCollectionItem)[vs[1].(int)]
@@ -4163,6 +4836,12 @@ func (i GetModelsModelCollectionItemComponentModelArgs) ToGetModelsModelCollecti
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelsModelCollectionItemComponentModelOutput)
 }
 
+func (i GetModelsModelCollectionItemComponentModelArgs) ToOutput(ctx context.Context) pulumix.Output[GetModelsModelCollectionItemComponentModel] {
+	return pulumix.Output[GetModelsModelCollectionItemComponentModel]{
+		OutputState: i.ToGetModelsModelCollectionItemComponentModelOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetModelsModelCollectionItemComponentModelArrayInput is an input type that accepts GetModelsModelCollectionItemComponentModelArray and GetModelsModelCollectionItemComponentModelArrayOutput values.
 // You can construct a concrete instance of `GetModelsModelCollectionItemComponentModelArrayInput` via:
 //
@@ -4188,6 +4867,12 @@ func (i GetModelsModelCollectionItemComponentModelArray) ToGetModelsModelCollect
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelsModelCollectionItemComponentModelArrayOutput)
 }
 
+func (i GetModelsModelCollectionItemComponentModelArray) ToOutput(ctx context.Context) pulumix.Output[[]GetModelsModelCollectionItemComponentModel] {
+	return pulumix.Output[[]GetModelsModelCollectionItemComponentModel]{
+		OutputState: i.ToGetModelsModelCollectionItemComponentModelArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetModelsModelCollectionItemComponentModelOutput struct{ *pulumi.OutputState }
 
 func (GetModelsModelCollectionItemComponentModelOutput) ElementType() reflect.Type {
@@ -4200,6 +4885,12 @@ func (o GetModelsModelCollectionItemComponentModelOutput) ToGetModelsModelCollec
 
 func (o GetModelsModelCollectionItemComponentModelOutput) ToGetModelsModelCollectionItemComponentModelOutputWithContext(ctx context.Context) GetModelsModelCollectionItemComponentModelOutput {
 	return o
+}
+
+func (o GetModelsModelCollectionItemComponentModelOutput) ToOutput(ctx context.Context) pulumix.Output[GetModelsModelCollectionItemComponentModel] {
+	return pulumix.Output[GetModelsModelCollectionItemComponentModel]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
@@ -4219,6 +4910,12 @@ func (o GetModelsModelCollectionItemComponentModelArrayOutput) ToGetModelsModelC
 
 func (o GetModelsModelCollectionItemComponentModelArrayOutput) ToGetModelsModelCollectionItemComponentModelArrayOutputWithContext(ctx context.Context) GetModelsModelCollectionItemComponentModelArrayOutput {
 	return o
+}
+
+func (o GetModelsModelCollectionItemComponentModelArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetModelsModelCollectionItemComponentModel] {
+	return pulumix.Output[[]GetModelsModelCollectionItemComponentModel]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetModelsModelCollectionItemComponentModelArrayOutput) Index(i pulumi.IntInput) GetModelsModelCollectionItemComponentModelOutput {
@@ -4272,6 +4969,12 @@ func (i GetModelsModelCollectionItemMetricArgs) ToGetModelsModelCollectionItemMe
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelsModelCollectionItemMetricOutput)
 }
 
+func (i GetModelsModelCollectionItemMetricArgs) ToOutput(ctx context.Context) pulumix.Output[GetModelsModelCollectionItemMetric] {
+	return pulumix.Output[GetModelsModelCollectionItemMetric]{
+		OutputState: i.ToGetModelsModelCollectionItemMetricOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetModelsModelCollectionItemMetricArrayInput is an input type that accepts GetModelsModelCollectionItemMetricArray and GetModelsModelCollectionItemMetricArrayOutput values.
 // You can construct a concrete instance of `GetModelsModelCollectionItemMetricArrayInput` via:
 //
@@ -4297,6 +5000,12 @@ func (i GetModelsModelCollectionItemMetricArray) ToGetModelsModelCollectionItemM
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelsModelCollectionItemMetricArrayOutput)
 }
 
+func (i GetModelsModelCollectionItemMetricArray) ToOutput(ctx context.Context) pulumix.Output[[]GetModelsModelCollectionItemMetric] {
+	return pulumix.Output[[]GetModelsModelCollectionItemMetric]{
+		OutputState: i.ToGetModelsModelCollectionItemMetricArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetModelsModelCollectionItemMetricOutput struct{ *pulumi.OutputState }
 
 func (GetModelsModelCollectionItemMetricOutput) ElementType() reflect.Type {
@@ -4309,6 +5018,12 @@ func (o GetModelsModelCollectionItemMetricOutput) ToGetModelsModelCollectionItem
 
 func (o GetModelsModelCollectionItemMetricOutput) ToGetModelsModelCollectionItemMetricOutputWithContext(ctx context.Context) GetModelsModelCollectionItemMetricOutput {
 	return o
+}
+
+func (o GetModelsModelCollectionItemMetricOutput) ToOutput(ctx context.Context) pulumix.Output[GetModelsModelCollectionItemMetric] {
+	return pulumix.Output[GetModelsModelCollectionItemMetric]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Summary of count of samples used during model training.
@@ -4349,6 +5064,12 @@ func (o GetModelsModelCollectionItemMetricArrayOutput) ToGetModelsModelCollectio
 
 func (o GetModelsModelCollectionItemMetricArrayOutput) ToGetModelsModelCollectionItemMetricArrayOutputWithContext(ctx context.Context) GetModelsModelCollectionItemMetricArrayOutput {
 	return o
+}
+
+func (o GetModelsModelCollectionItemMetricArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetModelsModelCollectionItemMetric] {
+	return pulumix.Output[[]GetModelsModelCollectionItemMetric]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetModelsModelCollectionItemMetricArrayOutput) Index(i pulumi.IntInput) GetModelsModelCollectionItemMetricOutput {
@@ -4398,6 +5119,12 @@ func (i GetModelsModelCollectionItemMetricDatasetSummaryArgs) ToGetModelsModelCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelsModelCollectionItemMetricDatasetSummaryOutput)
 }
 
+func (i GetModelsModelCollectionItemMetricDatasetSummaryArgs) ToOutput(ctx context.Context) pulumix.Output[GetModelsModelCollectionItemMetricDatasetSummary] {
+	return pulumix.Output[GetModelsModelCollectionItemMetricDatasetSummary]{
+		OutputState: i.ToGetModelsModelCollectionItemMetricDatasetSummaryOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetModelsModelCollectionItemMetricDatasetSummaryArrayInput is an input type that accepts GetModelsModelCollectionItemMetricDatasetSummaryArray and GetModelsModelCollectionItemMetricDatasetSummaryArrayOutput values.
 // You can construct a concrete instance of `GetModelsModelCollectionItemMetricDatasetSummaryArrayInput` via:
 //
@@ -4423,6 +5150,12 @@ func (i GetModelsModelCollectionItemMetricDatasetSummaryArray) ToGetModelsModelC
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelsModelCollectionItemMetricDatasetSummaryArrayOutput)
 }
 
+func (i GetModelsModelCollectionItemMetricDatasetSummaryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetModelsModelCollectionItemMetricDatasetSummary] {
+	return pulumix.Output[[]GetModelsModelCollectionItemMetricDatasetSummary]{
+		OutputState: i.ToGetModelsModelCollectionItemMetricDatasetSummaryArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetModelsModelCollectionItemMetricDatasetSummaryOutput struct{ *pulumi.OutputState }
 
 func (GetModelsModelCollectionItemMetricDatasetSummaryOutput) ElementType() reflect.Type {
@@ -4435,6 +5168,12 @@ func (o GetModelsModelCollectionItemMetricDatasetSummaryOutput) ToGetModelsModel
 
 func (o GetModelsModelCollectionItemMetricDatasetSummaryOutput) ToGetModelsModelCollectionItemMetricDatasetSummaryOutputWithContext(ctx context.Context) GetModelsModelCollectionItemMetricDatasetSummaryOutput {
 	return o
+}
+
+func (o GetModelsModelCollectionItemMetricDatasetSummaryOutput) ToOutput(ctx context.Context) pulumix.Output[GetModelsModelCollectionItemMetricDatasetSummary] {
+	return pulumix.Output[GetModelsModelCollectionItemMetricDatasetSummary]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Number of samples used for testing the model.
@@ -4464,6 +5203,12 @@ func (o GetModelsModelCollectionItemMetricDatasetSummaryArrayOutput) ToGetModels
 
 func (o GetModelsModelCollectionItemMetricDatasetSummaryArrayOutput) ToGetModelsModelCollectionItemMetricDatasetSummaryArrayOutputWithContext(ctx context.Context) GetModelsModelCollectionItemMetricDatasetSummaryArrayOutput {
 	return o
+}
+
+func (o GetModelsModelCollectionItemMetricDatasetSummaryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetModelsModelCollectionItemMetricDatasetSummary] {
+	return pulumix.Output[[]GetModelsModelCollectionItemMetricDatasetSummary]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetModelsModelCollectionItemMetricDatasetSummaryArrayOutput) Index(i pulumi.IntInput) GetModelsModelCollectionItemMetricDatasetSummaryOutput {
@@ -4517,6 +5262,12 @@ func (i GetModelsModelCollectionItemMetricLabelMetricsReportArgs) ToGetModelsMod
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelsModelCollectionItemMetricLabelMetricsReportOutput)
 }
 
+func (i GetModelsModelCollectionItemMetricLabelMetricsReportArgs) ToOutput(ctx context.Context) pulumix.Output[GetModelsModelCollectionItemMetricLabelMetricsReport] {
+	return pulumix.Output[GetModelsModelCollectionItemMetricLabelMetricsReport]{
+		OutputState: i.ToGetModelsModelCollectionItemMetricLabelMetricsReportOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetModelsModelCollectionItemMetricLabelMetricsReportArrayInput is an input type that accepts GetModelsModelCollectionItemMetricLabelMetricsReportArray and GetModelsModelCollectionItemMetricLabelMetricsReportArrayOutput values.
 // You can construct a concrete instance of `GetModelsModelCollectionItemMetricLabelMetricsReportArrayInput` via:
 //
@@ -4542,6 +5293,12 @@ func (i GetModelsModelCollectionItemMetricLabelMetricsReportArray) ToGetModelsMo
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelsModelCollectionItemMetricLabelMetricsReportArrayOutput)
 }
 
+func (i GetModelsModelCollectionItemMetricLabelMetricsReportArray) ToOutput(ctx context.Context) pulumix.Output[[]GetModelsModelCollectionItemMetricLabelMetricsReport] {
+	return pulumix.Output[[]GetModelsModelCollectionItemMetricLabelMetricsReport]{
+		OutputState: i.ToGetModelsModelCollectionItemMetricLabelMetricsReportArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetModelsModelCollectionItemMetricLabelMetricsReportOutput struct{ *pulumi.OutputState }
 
 func (GetModelsModelCollectionItemMetricLabelMetricsReportOutput) ElementType() reflect.Type {
@@ -4554,6 +5311,12 @@ func (o GetModelsModelCollectionItemMetricLabelMetricsReportOutput) ToGetModelsM
 
 func (o GetModelsModelCollectionItemMetricLabelMetricsReportOutput) ToGetModelsModelCollectionItemMetricLabelMetricsReportOutputWithContext(ctx context.Context) GetModelsModelCollectionItemMetricLabelMetricsReportOutput {
 	return o
+}
+
+func (o GetModelsModelCollectionItemMetricLabelMetricsReportOutput) ToOutput(ctx context.Context) pulumix.Output[GetModelsModelCollectionItemMetricLabelMetricsReport] {
+	return pulumix.Output[GetModelsModelCollectionItemMetricLabelMetricsReport]{
+		OutputState: o.OutputState,
+	}
 }
 
 // List of document classification confidence report.
@@ -4590,6 +5353,12 @@ func (o GetModelsModelCollectionItemMetricLabelMetricsReportArrayOutput) ToGetMo
 
 func (o GetModelsModelCollectionItemMetricLabelMetricsReportArrayOutput) ToGetModelsModelCollectionItemMetricLabelMetricsReportArrayOutputWithContext(ctx context.Context) GetModelsModelCollectionItemMetricLabelMetricsReportArrayOutput {
 	return o
+}
+
+func (o GetModelsModelCollectionItemMetricLabelMetricsReportArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetModelsModelCollectionItemMetricLabelMetricsReport] {
+	return pulumix.Output[[]GetModelsModelCollectionItemMetricLabelMetricsReport]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetModelsModelCollectionItemMetricLabelMetricsReportArrayOutput) Index(i pulumi.IntInput) GetModelsModelCollectionItemMetricLabelMetricsReportOutput {
@@ -4647,6 +5416,12 @@ func (i GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntryArgs)
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntryOutput)
 }
 
+func (i GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntryArgs) ToOutput(ctx context.Context) pulumix.Output[GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntry] {
+	return pulumix.Output[GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntry]{
+		OutputState: i.ToGetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntryOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntryArrayInput is an input type that accepts GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntryArray and GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntryArrayOutput values.
 // You can construct a concrete instance of `GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntryArrayInput` via:
 //
@@ -4672,6 +5447,12 @@ func (i GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntryArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntryArrayOutput)
 }
 
+func (i GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntry] {
+	return pulumix.Output[[]GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntry]{
+		OutputState: i.ToGetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntryArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntryOutput struct{ *pulumi.OutputState }
 
 func (GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntryOutput) ElementType() reflect.Type {
@@ -4684,6 +5465,12 @@ func (o GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntryOutpu
 
 func (o GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntryOutput) ToGetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntryOutputWithContext(ctx context.Context) GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntryOutput {
 	return o
+}
+
+func (o GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntryOutput) ToOutput(ctx context.Context) pulumix.Output[GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntry] {
+	return pulumix.Output[GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntry]{
+		OutputState: o.OutputState,
+	}
 }
 
 // accuracy under the threshold
@@ -4727,6 +5514,12 @@ func (o GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntryArray
 
 func (o GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntryArrayOutput) ToGetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntryArrayOutputWithContext(ctx context.Context) GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntryArrayOutput {
 	return o
+}
+
+func (o GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntry] {
+	return pulumix.Output[[]GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntry]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntryArrayOutput) Index(i pulumi.IntInput) GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntryOutput {
@@ -4776,6 +5569,12 @@ func (i GetModelsModelCollectionItemMetricOverallMetricsReportArgs) ToGetModelsM
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelsModelCollectionItemMetricOverallMetricsReportOutput)
 }
 
+func (i GetModelsModelCollectionItemMetricOverallMetricsReportArgs) ToOutput(ctx context.Context) pulumix.Output[GetModelsModelCollectionItemMetricOverallMetricsReport] {
+	return pulumix.Output[GetModelsModelCollectionItemMetricOverallMetricsReport]{
+		OutputState: i.ToGetModelsModelCollectionItemMetricOverallMetricsReportOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetModelsModelCollectionItemMetricOverallMetricsReportArrayInput is an input type that accepts GetModelsModelCollectionItemMetricOverallMetricsReportArray and GetModelsModelCollectionItemMetricOverallMetricsReportArrayOutput values.
 // You can construct a concrete instance of `GetModelsModelCollectionItemMetricOverallMetricsReportArrayInput` via:
 //
@@ -4801,6 +5600,12 @@ func (i GetModelsModelCollectionItemMetricOverallMetricsReportArray) ToGetModels
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelsModelCollectionItemMetricOverallMetricsReportArrayOutput)
 }
 
+func (i GetModelsModelCollectionItemMetricOverallMetricsReportArray) ToOutput(ctx context.Context) pulumix.Output[[]GetModelsModelCollectionItemMetricOverallMetricsReport] {
+	return pulumix.Output[[]GetModelsModelCollectionItemMetricOverallMetricsReport]{
+		OutputState: i.ToGetModelsModelCollectionItemMetricOverallMetricsReportArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetModelsModelCollectionItemMetricOverallMetricsReportOutput struct{ *pulumi.OutputState }
 
 func (GetModelsModelCollectionItemMetricOverallMetricsReportOutput) ElementType() reflect.Type {
@@ -4813,6 +5618,12 @@ func (o GetModelsModelCollectionItemMetricOverallMetricsReportOutput) ToGetModel
 
 func (o GetModelsModelCollectionItemMetricOverallMetricsReportOutput) ToGetModelsModelCollectionItemMetricOverallMetricsReportOutputWithContext(ctx context.Context) GetModelsModelCollectionItemMetricOverallMetricsReportOutput {
 	return o
+}
+
+func (o GetModelsModelCollectionItemMetricOverallMetricsReportOutput) ToOutput(ctx context.Context) pulumix.Output[GetModelsModelCollectionItemMetricOverallMetricsReport] {
+	return pulumix.Output[GetModelsModelCollectionItemMetricOverallMetricsReport]{
+		OutputState: o.OutputState,
+	}
 }
 
 // List of document classification confidence report.
@@ -4844,6 +5655,12 @@ func (o GetModelsModelCollectionItemMetricOverallMetricsReportArrayOutput) ToGet
 
 func (o GetModelsModelCollectionItemMetricOverallMetricsReportArrayOutput) ToGetModelsModelCollectionItemMetricOverallMetricsReportArrayOutputWithContext(ctx context.Context) GetModelsModelCollectionItemMetricOverallMetricsReportArrayOutput {
 	return o
+}
+
+func (o GetModelsModelCollectionItemMetricOverallMetricsReportArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetModelsModelCollectionItemMetricOverallMetricsReport] {
+	return pulumix.Output[[]GetModelsModelCollectionItemMetricOverallMetricsReport]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetModelsModelCollectionItemMetricOverallMetricsReportArrayOutput) Index(i pulumi.IntInput) GetModelsModelCollectionItemMetricOverallMetricsReportOutput {
@@ -4901,6 +5718,12 @@ func (i GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntryArg
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntryOutput)
 }
 
+func (i GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntryArgs) ToOutput(ctx context.Context) pulumix.Output[GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntry] {
+	return pulumix.Output[GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntry]{
+		OutputState: i.ToGetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntryOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntryArrayInput is an input type that accepts GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntryArray and GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntryArrayOutput values.
 // You can construct a concrete instance of `GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntryArrayInput` via:
 //
@@ -4926,6 +5749,12 @@ func (i GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntryArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntryArrayOutput)
 }
 
+func (i GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntry] {
+	return pulumix.Output[[]GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntry]{
+		OutputState: i.ToGetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntryArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntryOutput struct{ *pulumi.OutputState }
 
 func (GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntryOutput) ElementType() reflect.Type {
@@ -4938,6 +5767,12 @@ func (o GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntryOut
 
 func (o GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntryOutput) ToGetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntryOutputWithContext(ctx context.Context) GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntryOutput {
 	return o
+}
+
+func (o GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntryOutput) ToOutput(ctx context.Context) pulumix.Output[GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntry] {
+	return pulumix.Output[GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntry]{
+		OutputState: o.OutputState,
+	}
 }
 
 // accuracy under the threshold
@@ -4985,6 +5820,12 @@ func (o GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntryArr
 
 func (o GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntryArrayOutput) ToGetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntryArrayOutputWithContext(ctx context.Context) GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntryArrayOutput {
 	return o
+}
+
+func (o GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntry] {
+	return pulumix.Output[[]GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntry]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntryArrayOutput) Index(i pulumi.IntInput) GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntryOutput {
@@ -5042,6 +5883,12 @@ func (i GetModelsModelCollectionItemTestingDatasetArgs) ToGetModelsModelCollecti
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelsModelCollectionItemTestingDatasetOutput)
 }
 
+func (i GetModelsModelCollectionItemTestingDatasetArgs) ToOutput(ctx context.Context) pulumix.Output[GetModelsModelCollectionItemTestingDataset] {
+	return pulumix.Output[GetModelsModelCollectionItemTestingDataset]{
+		OutputState: i.ToGetModelsModelCollectionItemTestingDatasetOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetModelsModelCollectionItemTestingDatasetArrayInput is an input type that accepts GetModelsModelCollectionItemTestingDatasetArray and GetModelsModelCollectionItemTestingDatasetArrayOutput values.
 // You can construct a concrete instance of `GetModelsModelCollectionItemTestingDatasetArrayInput` via:
 //
@@ -5067,6 +5914,12 @@ func (i GetModelsModelCollectionItemTestingDatasetArray) ToGetModelsModelCollect
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelsModelCollectionItemTestingDatasetArrayOutput)
 }
 
+func (i GetModelsModelCollectionItemTestingDatasetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetModelsModelCollectionItemTestingDataset] {
+	return pulumix.Output[[]GetModelsModelCollectionItemTestingDataset]{
+		OutputState: i.ToGetModelsModelCollectionItemTestingDatasetArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetModelsModelCollectionItemTestingDatasetOutput struct{ *pulumi.OutputState }
 
 func (GetModelsModelCollectionItemTestingDatasetOutput) ElementType() reflect.Type {
@@ -5079,6 +5932,12 @@ func (o GetModelsModelCollectionItemTestingDatasetOutput) ToGetModelsModelCollec
 
 func (o GetModelsModelCollectionItemTestingDatasetOutput) ToGetModelsModelCollectionItemTestingDatasetOutputWithContext(ctx context.Context) GetModelsModelCollectionItemTestingDatasetOutput {
 	return o
+}
+
+func (o GetModelsModelCollectionItemTestingDatasetOutput) ToOutput(ctx context.Context) pulumix.Output[GetModelsModelCollectionItemTestingDataset] {
+	return pulumix.Output[GetModelsModelCollectionItemTestingDataset]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the Object Storage bucket that contains the input data file.
@@ -5118,6 +5977,12 @@ func (o GetModelsModelCollectionItemTestingDatasetArrayOutput) ToGetModelsModelC
 
 func (o GetModelsModelCollectionItemTestingDatasetArrayOutput) ToGetModelsModelCollectionItemTestingDatasetArrayOutputWithContext(ctx context.Context) GetModelsModelCollectionItemTestingDatasetArrayOutput {
 	return o
+}
+
+func (o GetModelsModelCollectionItemTestingDatasetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetModelsModelCollectionItemTestingDataset] {
+	return pulumix.Output[[]GetModelsModelCollectionItemTestingDataset]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetModelsModelCollectionItemTestingDatasetArrayOutput) Index(i pulumi.IntInput) GetModelsModelCollectionItemTestingDatasetOutput {
@@ -5175,6 +6040,12 @@ func (i GetModelsModelCollectionItemTrainingDatasetArgs) ToGetModelsModelCollect
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelsModelCollectionItemTrainingDatasetOutput)
 }
 
+func (i GetModelsModelCollectionItemTrainingDatasetArgs) ToOutput(ctx context.Context) pulumix.Output[GetModelsModelCollectionItemTrainingDataset] {
+	return pulumix.Output[GetModelsModelCollectionItemTrainingDataset]{
+		OutputState: i.ToGetModelsModelCollectionItemTrainingDatasetOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetModelsModelCollectionItemTrainingDatasetArrayInput is an input type that accepts GetModelsModelCollectionItemTrainingDatasetArray and GetModelsModelCollectionItemTrainingDatasetArrayOutput values.
 // You can construct a concrete instance of `GetModelsModelCollectionItemTrainingDatasetArrayInput` via:
 //
@@ -5200,6 +6071,12 @@ func (i GetModelsModelCollectionItemTrainingDatasetArray) ToGetModelsModelCollec
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelsModelCollectionItemTrainingDatasetArrayOutput)
 }
 
+func (i GetModelsModelCollectionItemTrainingDatasetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetModelsModelCollectionItemTrainingDataset] {
+	return pulumix.Output[[]GetModelsModelCollectionItemTrainingDataset]{
+		OutputState: i.ToGetModelsModelCollectionItemTrainingDatasetArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetModelsModelCollectionItemTrainingDatasetOutput struct{ *pulumi.OutputState }
 
 func (GetModelsModelCollectionItemTrainingDatasetOutput) ElementType() reflect.Type {
@@ -5212,6 +6089,12 @@ func (o GetModelsModelCollectionItemTrainingDatasetOutput) ToGetModelsModelColle
 
 func (o GetModelsModelCollectionItemTrainingDatasetOutput) ToGetModelsModelCollectionItemTrainingDatasetOutputWithContext(ctx context.Context) GetModelsModelCollectionItemTrainingDatasetOutput {
 	return o
+}
+
+func (o GetModelsModelCollectionItemTrainingDatasetOutput) ToOutput(ctx context.Context) pulumix.Output[GetModelsModelCollectionItemTrainingDataset] {
+	return pulumix.Output[GetModelsModelCollectionItemTrainingDataset]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the Object Storage bucket that contains the input data file.
@@ -5251,6 +6134,12 @@ func (o GetModelsModelCollectionItemTrainingDatasetArrayOutput) ToGetModelsModel
 
 func (o GetModelsModelCollectionItemTrainingDatasetArrayOutput) ToGetModelsModelCollectionItemTrainingDatasetArrayOutputWithContext(ctx context.Context) GetModelsModelCollectionItemTrainingDatasetArrayOutput {
 	return o
+}
+
+func (o GetModelsModelCollectionItemTrainingDatasetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetModelsModelCollectionItemTrainingDataset] {
+	return pulumix.Output[[]GetModelsModelCollectionItemTrainingDataset]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetModelsModelCollectionItemTrainingDatasetArrayOutput) Index(i pulumi.IntInput) GetModelsModelCollectionItemTrainingDatasetOutput {
@@ -5308,6 +6197,12 @@ func (i GetModelsModelCollectionItemValidationDatasetArgs) ToGetModelsModelColle
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelsModelCollectionItemValidationDatasetOutput)
 }
 
+func (i GetModelsModelCollectionItemValidationDatasetArgs) ToOutput(ctx context.Context) pulumix.Output[GetModelsModelCollectionItemValidationDataset] {
+	return pulumix.Output[GetModelsModelCollectionItemValidationDataset]{
+		OutputState: i.ToGetModelsModelCollectionItemValidationDatasetOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetModelsModelCollectionItemValidationDatasetArrayInput is an input type that accepts GetModelsModelCollectionItemValidationDatasetArray and GetModelsModelCollectionItemValidationDatasetArrayOutput values.
 // You can construct a concrete instance of `GetModelsModelCollectionItemValidationDatasetArrayInput` via:
 //
@@ -5333,6 +6228,12 @@ func (i GetModelsModelCollectionItemValidationDatasetArray) ToGetModelsModelColl
 	return pulumi.ToOutputWithContext(ctx, i).(GetModelsModelCollectionItemValidationDatasetArrayOutput)
 }
 
+func (i GetModelsModelCollectionItemValidationDatasetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetModelsModelCollectionItemValidationDataset] {
+	return pulumix.Output[[]GetModelsModelCollectionItemValidationDataset]{
+		OutputState: i.ToGetModelsModelCollectionItemValidationDatasetArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetModelsModelCollectionItemValidationDatasetOutput struct{ *pulumi.OutputState }
 
 func (GetModelsModelCollectionItemValidationDatasetOutput) ElementType() reflect.Type {
@@ -5345,6 +6246,12 @@ func (o GetModelsModelCollectionItemValidationDatasetOutput) ToGetModelsModelCol
 
 func (o GetModelsModelCollectionItemValidationDatasetOutput) ToGetModelsModelCollectionItemValidationDatasetOutputWithContext(ctx context.Context) GetModelsModelCollectionItemValidationDatasetOutput {
 	return o
+}
+
+func (o GetModelsModelCollectionItemValidationDatasetOutput) ToOutput(ctx context.Context) pulumix.Output[GetModelsModelCollectionItemValidationDataset] {
+	return pulumix.Output[GetModelsModelCollectionItemValidationDataset]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the Object Storage bucket that contains the input data file.
@@ -5384,6 +6291,12 @@ func (o GetModelsModelCollectionItemValidationDatasetArrayOutput) ToGetModelsMod
 
 func (o GetModelsModelCollectionItemValidationDatasetArrayOutput) ToGetModelsModelCollectionItemValidationDatasetArrayOutputWithContext(ctx context.Context) GetModelsModelCollectionItemValidationDatasetArrayOutput {
 	return o
+}
+
+func (o GetModelsModelCollectionItemValidationDatasetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetModelsModelCollectionItemValidationDataset] {
+	return pulumix.Output[[]GetModelsModelCollectionItemValidationDataset]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetModelsModelCollectionItemValidationDatasetArrayOutput) Index(i pulumi.IntInput) GetModelsModelCollectionItemValidationDatasetOutput {
@@ -5433,6 +6346,12 @@ func (i GetProcessorJobInputLocationArgs) ToGetProcessorJobInputLocationOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetProcessorJobInputLocationOutput)
 }
 
+func (i GetProcessorJobInputLocationArgs) ToOutput(ctx context.Context) pulumix.Output[GetProcessorJobInputLocation] {
+	return pulumix.Output[GetProcessorJobInputLocation]{
+		OutputState: i.ToGetProcessorJobInputLocationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetProcessorJobInputLocationArrayInput is an input type that accepts GetProcessorJobInputLocationArray and GetProcessorJobInputLocationArrayOutput values.
 // You can construct a concrete instance of `GetProcessorJobInputLocationArrayInput` via:
 //
@@ -5458,6 +6377,12 @@ func (i GetProcessorJobInputLocationArray) ToGetProcessorJobInputLocationArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetProcessorJobInputLocationArrayOutput)
 }
 
+func (i GetProcessorJobInputLocationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProcessorJobInputLocation] {
+	return pulumix.Output[[]GetProcessorJobInputLocation]{
+		OutputState: i.ToGetProcessorJobInputLocationArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetProcessorJobInputLocationOutput struct{ *pulumi.OutputState }
 
 func (GetProcessorJobInputLocationOutput) ElementType() reflect.Type {
@@ -5470,6 +6395,12 @@ func (o GetProcessorJobInputLocationOutput) ToGetProcessorJobInputLocationOutput
 
 func (o GetProcessorJobInputLocationOutput) ToGetProcessorJobInputLocationOutputWithContext(ctx context.Context) GetProcessorJobInputLocationOutput {
 	return o
+}
+
+func (o GetProcessorJobInputLocationOutput) ToOutput(ctx context.Context) pulumix.Output[GetProcessorJobInputLocation] {
+	return pulumix.Output[GetProcessorJobInputLocation]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Raw document data with Base64 encoding.
@@ -5501,6 +6432,12 @@ func (o GetProcessorJobInputLocationArrayOutput) ToGetProcessorJobInputLocationA
 
 func (o GetProcessorJobInputLocationArrayOutput) ToGetProcessorJobInputLocationArrayOutputWithContext(ctx context.Context) GetProcessorJobInputLocationArrayOutput {
 	return o
+}
+
+func (o GetProcessorJobInputLocationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProcessorJobInputLocation] {
+	return pulumix.Output[[]GetProcessorJobInputLocation]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetProcessorJobInputLocationArrayOutput) Index(i pulumi.IntInput) GetProcessorJobInputLocationOutput {
@@ -5550,6 +6487,12 @@ func (i GetProcessorJobInputLocationObjectLocationArgs) ToGetProcessorJobInputLo
 	return pulumi.ToOutputWithContext(ctx, i).(GetProcessorJobInputLocationObjectLocationOutput)
 }
 
+func (i GetProcessorJobInputLocationObjectLocationArgs) ToOutput(ctx context.Context) pulumix.Output[GetProcessorJobInputLocationObjectLocation] {
+	return pulumix.Output[GetProcessorJobInputLocationObjectLocation]{
+		OutputState: i.ToGetProcessorJobInputLocationObjectLocationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetProcessorJobInputLocationObjectLocationArrayInput is an input type that accepts GetProcessorJobInputLocationObjectLocationArray and GetProcessorJobInputLocationObjectLocationArrayOutput values.
 // You can construct a concrete instance of `GetProcessorJobInputLocationObjectLocationArrayInput` via:
 //
@@ -5575,6 +6518,12 @@ func (i GetProcessorJobInputLocationObjectLocationArray) ToGetProcessorJobInputL
 	return pulumi.ToOutputWithContext(ctx, i).(GetProcessorJobInputLocationObjectLocationArrayOutput)
 }
 
+func (i GetProcessorJobInputLocationObjectLocationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProcessorJobInputLocationObjectLocation] {
+	return pulumix.Output[[]GetProcessorJobInputLocationObjectLocation]{
+		OutputState: i.ToGetProcessorJobInputLocationObjectLocationArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetProcessorJobInputLocationObjectLocationOutput struct{ *pulumi.OutputState }
 
 func (GetProcessorJobInputLocationObjectLocationOutput) ElementType() reflect.Type {
@@ -5587,6 +6536,12 @@ func (o GetProcessorJobInputLocationObjectLocationOutput) ToGetProcessorJobInput
 
 func (o GetProcessorJobInputLocationObjectLocationOutput) ToGetProcessorJobInputLocationObjectLocationOutputWithContext(ctx context.Context) GetProcessorJobInputLocationObjectLocationOutput {
 	return o
+}
+
+func (o GetProcessorJobInputLocationObjectLocationOutput) ToOutput(ctx context.Context) pulumix.Output[GetProcessorJobInputLocationObjectLocation] {
+	return pulumix.Output[GetProcessorJobInputLocationObjectLocation]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The Object Storage bucket name.
@@ -5616,6 +6571,12 @@ func (o GetProcessorJobInputLocationObjectLocationArrayOutput) ToGetProcessorJob
 
 func (o GetProcessorJobInputLocationObjectLocationArrayOutput) ToGetProcessorJobInputLocationObjectLocationArrayOutputWithContext(ctx context.Context) GetProcessorJobInputLocationObjectLocationArrayOutput {
 	return o
+}
+
+func (o GetProcessorJobInputLocationObjectLocationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProcessorJobInputLocationObjectLocation] {
+	return pulumix.Output[[]GetProcessorJobInputLocationObjectLocation]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetProcessorJobInputLocationObjectLocationArrayOutput) Index(i pulumi.IntInput) GetProcessorJobInputLocationObjectLocationOutput {
@@ -5665,6 +6626,12 @@ func (i GetProcessorJobOutputLocationArgs) ToGetProcessorJobOutputLocationOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetProcessorJobOutputLocationOutput)
 }
 
+func (i GetProcessorJobOutputLocationArgs) ToOutput(ctx context.Context) pulumix.Output[GetProcessorJobOutputLocation] {
+	return pulumix.Output[GetProcessorJobOutputLocation]{
+		OutputState: i.ToGetProcessorJobOutputLocationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetProcessorJobOutputLocationArrayInput is an input type that accepts GetProcessorJobOutputLocationArray and GetProcessorJobOutputLocationArrayOutput values.
 // You can construct a concrete instance of `GetProcessorJobOutputLocationArrayInput` via:
 //
@@ -5690,6 +6657,12 @@ func (i GetProcessorJobOutputLocationArray) ToGetProcessorJobOutputLocationArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetProcessorJobOutputLocationArrayOutput)
 }
 
+func (i GetProcessorJobOutputLocationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProcessorJobOutputLocation] {
+	return pulumix.Output[[]GetProcessorJobOutputLocation]{
+		OutputState: i.ToGetProcessorJobOutputLocationArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetProcessorJobOutputLocationOutput struct{ *pulumi.OutputState }
 
 func (GetProcessorJobOutputLocationOutput) ElementType() reflect.Type {
@@ -5702,6 +6675,12 @@ func (o GetProcessorJobOutputLocationOutput) ToGetProcessorJobOutputLocationOutp
 
 func (o GetProcessorJobOutputLocationOutput) ToGetProcessorJobOutputLocationOutputWithContext(ctx context.Context) GetProcessorJobOutputLocationOutput {
 	return o
+}
+
+func (o GetProcessorJobOutputLocationOutput) ToOutput(ctx context.Context) pulumix.Output[GetProcessorJobOutputLocation] {
+	return pulumix.Output[GetProcessorJobOutputLocation]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The Object Storage bucket name.
@@ -5731,6 +6710,12 @@ func (o GetProcessorJobOutputLocationArrayOutput) ToGetProcessorJobOutputLocatio
 
 func (o GetProcessorJobOutputLocationArrayOutput) ToGetProcessorJobOutputLocationArrayOutputWithContext(ctx context.Context) GetProcessorJobOutputLocationArrayOutput {
 	return o
+}
+
+func (o GetProcessorJobOutputLocationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProcessorJobOutputLocation] {
+	return pulumix.Output[[]GetProcessorJobOutputLocation]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetProcessorJobOutputLocationArrayOutput) Index(i pulumi.IntInput) GetProcessorJobOutputLocationOutput {
@@ -5788,6 +6773,12 @@ func (i GetProcessorJobProcessorConfigArgs) ToGetProcessorJobProcessorConfigOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetProcessorJobProcessorConfigOutput)
 }
 
+func (i GetProcessorJobProcessorConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetProcessorJobProcessorConfig] {
+	return pulumix.Output[GetProcessorJobProcessorConfig]{
+		OutputState: i.ToGetProcessorJobProcessorConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetProcessorJobProcessorConfigArrayInput is an input type that accepts GetProcessorJobProcessorConfigArray and GetProcessorJobProcessorConfigArrayOutput values.
 // You can construct a concrete instance of `GetProcessorJobProcessorConfigArrayInput` via:
 //
@@ -5813,6 +6804,12 @@ func (i GetProcessorJobProcessorConfigArray) ToGetProcessorJobProcessorConfigArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetProcessorJobProcessorConfigArrayOutput)
 }
 
+func (i GetProcessorJobProcessorConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProcessorJobProcessorConfig] {
+	return pulumix.Output[[]GetProcessorJobProcessorConfig]{
+		OutputState: i.ToGetProcessorJobProcessorConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetProcessorJobProcessorConfigOutput struct{ *pulumi.OutputState }
 
 func (GetProcessorJobProcessorConfigOutput) ElementType() reflect.Type {
@@ -5825,6 +6822,12 @@ func (o GetProcessorJobProcessorConfigOutput) ToGetProcessorJobProcessorConfigOu
 
 func (o GetProcessorJobProcessorConfigOutput) ToGetProcessorJobProcessorConfigOutputWithContext(ctx context.Context) GetProcessorJobProcessorConfigOutput {
 	return o
+}
+
+func (o GetProcessorJobProcessorConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetProcessorJobProcessorConfig] {
+	return pulumix.Output[GetProcessorJobProcessorConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The document type.
@@ -5864,6 +6867,12 @@ func (o GetProcessorJobProcessorConfigArrayOutput) ToGetProcessorJobProcessorCon
 
 func (o GetProcessorJobProcessorConfigArrayOutput) ToGetProcessorJobProcessorConfigArrayOutputWithContext(ctx context.Context) GetProcessorJobProcessorConfigArrayOutput {
 	return o
+}
+
+func (o GetProcessorJobProcessorConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProcessorJobProcessorConfig] {
+	return pulumix.Output[[]GetProcessorJobProcessorConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetProcessorJobProcessorConfigArrayOutput) Index(i pulumi.IntInput) GetProcessorJobProcessorConfigOutput {
@@ -5921,6 +6930,12 @@ func (i GetProcessorJobProcessorConfigFeatureArgs) ToGetProcessorJobProcessorCon
 	return pulumi.ToOutputWithContext(ctx, i).(GetProcessorJobProcessorConfigFeatureOutput)
 }
 
+func (i GetProcessorJobProcessorConfigFeatureArgs) ToOutput(ctx context.Context) pulumix.Output[GetProcessorJobProcessorConfigFeature] {
+	return pulumix.Output[GetProcessorJobProcessorConfigFeature]{
+		OutputState: i.ToGetProcessorJobProcessorConfigFeatureOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetProcessorJobProcessorConfigFeatureArrayInput is an input type that accepts GetProcessorJobProcessorConfigFeatureArray and GetProcessorJobProcessorConfigFeatureArrayOutput values.
 // You can construct a concrete instance of `GetProcessorJobProcessorConfigFeatureArrayInput` via:
 //
@@ -5946,6 +6961,12 @@ func (i GetProcessorJobProcessorConfigFeatureArray) ToGetProcessorJobProcessorCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetProcessorJobProcessorConfigFeatureArrayOutput)
 }
 
+func (i GetProcessorJobProcessorConfigFeatureArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProcessorJobProcessorConfigFeature] {
+	return pulumix.Output[[]GetProcessorJobProcessorConfigFeature]{
+		OutputState: i.ToGetProcessorJobProcessorConfigFeatureArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetProcessorJobProcessorConfigFeatureOutput struct{ *pulumi.OutputState }
 
 func (GetProcessorJobProcessorConfigFeatureOutput) ElementType() reflect.Type {
@@ -5958,6 +6979,12 @@ func (o GetProcessorJobProcessorConfigFeatureOutput) ToGetProcessorJobProcessorC
 
 func (o GetProcessorJobProcessorConfigFeatureOutput) ToGetProcessorJobProcessorConfigFeatureOutputWithContext(ctx context.Context) GetProcessorJobProcessorConfigFeatureOutput {
 	return o
+}
+
+func (o GetProcessorJobProcessorConfigFeatureOutput) ToOutput(ctx context.Context) pulumix.Output[GetProcessorJobProcessorConfigFeature] {
+	return pulumix.Output[GetProcessorJobProcessorConfigFeature]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The type of document analysis requested. The allowed values are:
@@ -5997,6 +7024,12 @@ func (o GetProcessorJobProcessorConfigFeatureArrayOutput) ToGetProcessorJobProce
 
 func (o GetProcessorJobProcessorConfigFeatureArrayOutput) ToGetProcessorJobProcessorConfigFeatureArrayOutputWithContext(ctx context.Context) GetProcessorJobProcessorConfigFeatureArrayOutput {
 	return o
+}
+
+func (o GetProcessorJobProcessorConfigFeatureArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProcessorJobProcessorConfigFeature] {
+	return pulumix.Output[[]GetProcessorJobProcessorConfigFeature]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetProcessorJobProcessorConfigFeatureArrayOutput) Index(i pulumi.IntInput) GetProcessorJobProcessorConfigFeatureOutput {
@@ -6040,6 +7073,12 @@ func (i GetProjectsFilterArgs) ToGetProjectsFilterOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsFilterOutput)
 }
 
+func (i GetProjectsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetProjectsFilter] {
+	return pulumix.Output[GetProjectsFilter]{
+		OutputState: i.ToGetProjectsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetProjectsFilterArrayInput is an input type that accepts GetProjectsFilterArray and GetProjectsFilterArrayOutput values.
 // You can construct a concrete instance of `GetProjectsFilterArrayInput` via:
 //
@@ -6065,6 +7104,12 @@ func (i GetProjectsFilterArray) ToGetProjectsFilterArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsFilterArrayOutput)
 }
 
+func (i GetProjectsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProjectsFilter] {
+	return pulumix.Output[[]GetProjectsFilter]{
+		OutputState: i.ToGetProjectsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetProjectsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetProjectsFilterOutput) ElementType() reflect.Type {
@@ -6077,6 +7122,12 @@ func (o GetProjectsFilterOutput) ToGetProjectsFilterOutput() GetProjectsFilterOu
 
 func (o GetProjectsFilterOutput) ToGetProjectsFilterOutputWithContext(ctx context.Context) GetProjectsFilterOutput {
 	return o
+}
+
+func (o GetProjectsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetProjectsFilter] {
+	return pulumix.Output[GetProjectsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetProjectsFilterOutput) Name() pulumi.StringOutput {
@@ -6103,6 +7154,12 @@ func (o GetProjectsFilterArrayOutput) ToGetProjectsFilterArrayOutput() GetProjec
 
 func (o GetProjectsFilterArrayOutput) ToGetProjectsFilterArrayOutputWithContext(ctx context.Context) GetProjectsFilterArrayOutput {
 	return o
+}
+
+func (o GetProjectsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProjectsFilter] {
+	return pulumix.Output[[]GetProjectsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetProjectsFilterArrayOutput) Index(i pulumi.IntInput) GetProjectsFilterOutput {
@@ -6142,6 +7199,12 @@ func (i GetProjectsProjectCollectionArgs) ToGetProjectsProjectCollectionOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsProjectCollectionOutput)
 }
 
+func (i GetProjectsProjectCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetProjectsProjectCollection] {
+	return pulumix.Output[GetProjectsProjectCollection]{
+		OutputState: i.ToGetProjectsProjectCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetProjectsProjectCollectionArrayInput is an input type that accepts GetProjectsProjectCollectionArray and GetProjectsProjectCollectionArrayOutput values.
 // You can construct a concrete instance of `GetProjectsProjectCollectionArrayInput` via:
 //
@@ -6167,6 +7230,12 @@ func (i GetProjectsProjectCollectionArray) ToGetProjectsProjectCollectionArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsProjectCollectionArrayOutput)
 }
 
+func (i GetProjectsProjectCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProjectsProjectCollection] {
+	return pulumix.Output[[]GetProjectsProjectCollection]{
+		OutputState: i.ToGetProjectsProjectCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetProjectsProjectCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetProjectsProjectCollectionOutput) ElementType() reflect.Type {
@@ -6179,6 +7248,12 @@ func (o GetProjectsProjectCollectionOutput) ToGetProjectsProjectCollectionOutput
 
 func (o GetProjectsProjectCollectionOutput) ToGetProjectsProjectCollectionOutputWithContext(ctx context.Context) GetProjectsProjectCollectionOutput {
 	return o
+}
+
+func (o GetProjectsProjectCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetProjectsProjectCollection] {
+	return pulumix.Output[GetProjectsProjectCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetProjectsProjectCollectionOutput) Items() GetProjectsProjectCollectionItemArrayOutput {
@@ -6197,6 +7272,12 @@ func (o GetProjectsProjectCollectionArrayOutput) ToGetProjectsProjectCollectionA
 
 func (o GetProjectsProjectCollectionArrayOutput) ToGetProjectsProjectCollectionArrayOutputWithContext(ctx context.Context) GetProjectsProjectCollectionArrayOutput {
 	return o
+}
+
+func (o GetProjectsProjectCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProjectsProjectCollection] {
+	return pulumix.Output[[]GetProjectsProjectCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetProjectsProjectCollectionArrayOutput) Index(i pulumi.IntInput) GetProjectsProjectCollectionOutput {
@@ -6278,6 +7359,12 @@ func (i GetProjectsProjectCollectionItemArgs) ToGetProjectsProjectCollectionItem
 	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsProjectCollectionItemOutput)
 }
 
+func (i GetProjectsProjectCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetProjectsProjectCollectionItem] {
+	return pulumix.Output[GetProjectsProjectCollectionItem]{
+		OutputState: i.ToGetProjectsProjectCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetProjectsProjectCollectionItemArrayInput is an input type that accepts GetProjectsProjectCollectionItemArray and GetProjectsProjectCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetProjectsProjectCollectionItemArrayInput` via:
 //
@@ -6303,6 +7390,12 @@ func (i GetProjectsProjectCollectionItemArray) ToGetProjectsProjectCollectionIte
 	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsProjectCollectionItemArrayOutput)
 }
 
+func (i GetProjectsProjectCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProjectsProjectCollectionItem] {
+	return pulumix.Output[[]GetProjectsProjectCollectionItem]{
+		OutputState: i.ToGetProjectsProjectCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetProjectsProjectCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetProjectsProjectCollectionItemOutput) ElementType() reflect.Type {
@@ -6315,6 +7408,12 @@ func (o GetProjectsProjectCollectionItemOutput) ToGetProjectsProjectCollectionIt
 
 func (o GetProjectsProjectCollectionItemOutput) ToGetProjectsProjectCollectionItemOutputWithContext(ctx context.Context) GetProjectsProjectCollectionItemOutput {
 	return o
+}
+
+func (o GetProjectsProjectCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetProjectsProjectCollectionItem] {
+	return pulumix.Output[GetProjectsProjectCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -6384,6 +7483,12 @@ func (o GetProjectsProjectCollectionItemArrayOutput) ToGetProjectsProjectCollect
 
 func (o GetProjectsProjectCollectionItemArrayOutput) ToGetProjectsProjectCollectionItemArrayOutputWithContext(ctx context.Context) GetProjectsProjectCollectionItemArrayOutput {
 	return o
+}
+
+func (o GetProjectsProjectCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProjectsProjectCollectionItem] {
+	return pulumix.Output[[]GetProjectsProjectCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetProjectsProjectCollectionItemArrayOutput) Index(i pulumi.IntInput) GetProjectsProjectCollectionItemOutput {

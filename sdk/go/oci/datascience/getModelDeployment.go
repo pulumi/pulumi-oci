@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Model Deployment resource in Oracle Cloud Infrastructure Datascience service.
@@ -125,6 +126,12 @@ func (o LookupModelDeploymentResultOutput) ToLookupModelDeploymentResultOutput()
 
 func (o LookupModelDeploymentResultOutput) ToLookupModelDeploymentResultOutputWithContext(ctx context.Context) LookupModelDeploymentResultOutput {
 	return o
+}
+
+func (o LookupModelDeploymentResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupModelDeploymentResult] {
+	return pulumix.Output[LookupModelDeploymentResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The log details for each category.

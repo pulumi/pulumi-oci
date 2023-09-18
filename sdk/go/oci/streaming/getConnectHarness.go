@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Connect Harness resource in Oracle Cloud Infrastructure Streaming service.
@@ -113,6 +114,12 @@ func (o LookupConnectHarnessResultOutput) ToLookupConnectHarnessResultOutput() L
 
 func (o LookupConnectHarnessResultOutput) ToLookupConnectHarnessResultOutputWithContext(ctx context.Context) LookupConnectHarnessResultOutput {
 	return o
+}
+
+func (o LookupConnectHarnessResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupConnectHarnessResult] {
+	return pulumix.Output[LookupConnectHarnessResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the compartment that contains the connect harness.

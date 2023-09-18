@@ -98,7 +98,7 @@ public class Publication extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the publication.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -112,7 +112,7 @@ public class Publication extends com.pulumi.resources.CustomResource {
      * (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -126,7 +126,7 @@ public class Publication extends com.pulumi.resources.CustomResource {
      * (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -140,7 +140,7 @@ public class Publication extends com.pulumi.resources.CustomResource {
      * The model for upload data for images and icons.
      * 
      */
-    @Export(name="icons", type=List.class, parameters={PublicationIcon.class})
+    @Export(name="icons", refs={List.class,PublicationIcon.class}, tree="[0,1]")
     private Output<List<PublicationIcon>> icons;
 
     /**
@@ -154,7 +154,7 @@ public class Publication extends com.pulumi.resources.CustomResource {
      * Whether the publisher acknowledged that they have the right and authority to share the contents of the publication and that they accepted the Oracle terms of use agreements required to create a publication.
      * 
      */
-    @Export(name="isAgreementAcknowledged", type=Boolean.class, parameters={})
+    @Export(name="isAgreementAcknowledged", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isAgreementAcknowledged;
 
     /**
@@ -168,7 +168,7 @@ public class Publication extends com.pulumi.resources.CustomResource {
      * The publisher category to which the publication belongs. The publisher category informs where the listing appears for use.
      * 
      */
-    @Export(name="listingType", type=String.class, parameters={})
+    @Export(name="listingType", refs={String.class}, tree="[0]")
     private Output<String> listingType;
 
     /**
@@ -182,7 +182,7 @@ public class Publication extends com.pulumi.resources.CustomResource {
      * (Updatable) A long description of the publication to use in the listing.
      * 
      */
-    @Export(name="longDescription", type=String.class, parameters={})
+    @Export(name="longDescription", refs={String.class}, tree="[0]")
     private Output<String> longDescription;
 
     /**
@@ -196,7 +196,7 @@ public class Publication extends com.pulumi.resources.CustomResource {
      * (Updatable) The name of the contact.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -210,7 +210,7 @@ public class Publication extends com.pulumi.resources.CustomResource {
      * A base object for creating a publication package.
      * 
      */
-    @Export(name="packageDetails", type=PublicationPackageDetails.class, parameters={})
+    @Export(name="packageDetails", refs={PublicationPackageDetails.class}, tree="[0]")
     private Output<PublicationPackageDetails> packageDetails;
 
     /**
@@ -224,7 +224,7 @@ public class Publication extends com.pulumi.resources.CustomResource {
      * The package&#39;s type.
      * 
      */
-    @Export(name="packageType", type=String.class, parameters={})
+    @Export(name="packageType", refs={String.class}, tree="[0]")
     private Output<String> packageType;
 
     /**
@@ -238,7 +238,7 @@ public class Publication extends com.pulumi.resources.CustomResource {
      * (Updatable) A short description of the publication to use in the listing.
      * 
      */
-    @Export(name="shortDescription", type=String.class, parameters={})
+    @Export(name="shortDescription", refs={String.class}, tree="[0]")
     private Output<String> shortDescription;
 
     /**
@@ -252,7 +252,7 @@ public class Publication extends com.pulumi.resources.CustomResource {
      * The lifecycle state of the publication.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -266,7 +266,7 @@ public class Publication extends com.pulumi.resources.CustomResource {
      * (Updatable) Contact information for getting support from the publisher for the listing.
      * 
      */
-    @Export(name="supportContacts", type=List.class, parameters={PublicationSupportContact.class})
+    @Export(name="supportContacts", refs={List.class,PublicationSupportContact.class}, tree="[0,1]")
     private Output<List<PublicationSupportContact>> supportContacts;
 
     /**
@@ -280,7 +280,7 @@ public class Publication extends com.pulumi.resources.CustomResource {
      * The list of operating systems supported by the listing.
      * 
      */
-    @Export(name="supportedOperatingSystems", type=List.class, parameters={PublicationSupportedOperatingSystem.class})
+    @Export(name="supportedOperatingSystems", refs={List.class,PublicationSupportedOperatingSystem.class}, tree="[0,1]")
     private Output<List<PublicationSupportedOperatingSystem>> supportedOperatingSystems;
 
     /**
@@ -294,7 +294,7 @@ public class Publication extends com.pulumi.resources.CustomResource {
      * The date and time the publication was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**

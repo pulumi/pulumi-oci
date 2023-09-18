@@ -65,7 +65,7 @@ public class SslCipherSuite extends com.pulumi.resources.CustomResource {
      * A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
      * 
      */
-    @Export(name="ciphers", type=List.class, parameters={String.class})
+    @Export(name="ciphers", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> ciphers;
 
     /**
@@ -79,7 +79,7 @@ public class SslCipherSuite extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
      * 
      */
-    @Export(name="loadBalancerId", type=String.class, parameters={})
+    @Export(name="loadBalancerId", refs={String.class}, tree="[0]")
     private Output<String> loadBalancerId;
 
     /**
@@ -105,7 +105,7 @@ public class SslCipherSuite extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -127,7 +127,7 @@ public class SslCipherSuite extends com.pulumi.resources.CustomResource {
     public Output<String> name() {
         return this.name;
     }
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     public Output<String> state() {

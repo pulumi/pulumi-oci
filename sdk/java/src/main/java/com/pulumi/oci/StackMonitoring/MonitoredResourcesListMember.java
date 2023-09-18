@@ -69,7 +69,7 @@ public class MonitoredResourcesListMember extends com.pulumi.resources.CustomRes
      * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    @Export(name="destinationResourceId", type=String.class, parameters={})
+    @Export(name="destinationResourceId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> destinationResourceId;
 
     /**
@@ -83,7 +83,7 @@ public class MonitoredResourcesListMember extends com.pulumi.resources.CustomRes
      * List of member resources.
      * 
      */
-    @Export(name="items", type=List.class, parameters={MonitoredResourcesListMemberItem.class})
+    @Export(name="items", refs={List.class,MonitoredResourcesListMemberItem.class}, tree="[0,1]")
     private Output<List<MonitoredResourcesListMemberItem>> items;
 
     /**
@@ -97,7 +97,7 @@ public class MonitoredResourcesListMember extends com.pulumi.resources.CustomRes
      * The field which determines the depth of hierarchy while searching for members.
      * 
      */
-    @Export(name="limitLevel", type=Integer.class, parameters={})
+    @Export(name="limitLevel", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> limitLevel;
 
     /**
@@ -114,7 +114,7 @@ public class MonitoredResourcesListMember extends com.pulumi.resources.CustomRes
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="monitoredResourceId", type=String.class, parameters={})
+    @Export(name="monitoredResourceId", refs={String.class}, tree="[0]")
     private Output<String> monitoredResourceId;
 
     /**

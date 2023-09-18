@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Auto Scaling Configuration resource in Oracle Cloud Infrastructure Auto Scaling service.
@@ -302,6 +303,12 @@ func (i *AutoScalingConfiguration) ToAutoScalingConfigurationOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationOutput)
 }
 
+func (i *AutoScalingConfiguration) ToOutput(ctx context.Context) pulumix.Output[*AutoScalingConfiguration] {
+	return pulumix.Output[*AutoScalingConfiguration]{
+		OutputState: i.ToAutoScalingConfigurationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AutoScalingConfigurationArrayInput is an input type that accepts AutoScalingConfigurationArray and AutoScalingConfigurationArrayOutput values.
 // You can construct a concrete instance of `AutoScalingConfigurationArrayInput` via:
 //
@@ -325,6 +332,12 @@ func (i AutoScalingConfigurationArray) ToAutoScalingConfigurationArrayOutput() A
 
 func (i AutoScalingConfigurationArray) ToAutoScalingConfigurationArrayOutputWithContext(ctx context.Context) AutoScalingConfigurationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationArrayOutput)
+}
+
+func (i AutoScalingConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]*AutoScalingConfiguration] {
+	return pulumix.Output[[]*AutoScalingConfiguration]{
+		OutputState: i.ToAutoScalingConfigurationArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // AutoScalingConfigurationMapInput is an input type that accepts AutoScalingConfigurationMap and AutoScalingConfigurationMapOutput values.
@@ -352,6 +365,12 @@ func (i AutoScalingConfigurationMap) ToAutoScalingConfigurationMapOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationMapOutput)
 }
 
+func (i AutoScalingConfigurationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AutoScalingConfiguration] {
+	return pulumix.Output[map[string]*AutoScalingConfiguration]{
+		OutputState: i.ToAutoScalingConfigurationMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AutoScalingConfigurationOutput struct{ *pulumi.OutputState }
 
 func (AutoScalingConfigurationOutput) ElementType() reflect.Type {
@@ -364,6 +383,12 @@ func (o AutoScalingConfigurationOutput) ToAutoScalingConfigurationOutput() AutoS
 
 func (o AutoScalingConfigurationOutput) ToAutoScalingConfigurationOutputWithContext(ctx context.Context) AutoScalingConfigurationOutput {
 	return o
+}
+
+func (o AutoScalingConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[*AutoScalingConfiguration] {
+	return pulumix.Output[*AutoScalingConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A resource that is managed by an autoscaling configuration. The only supported type is `instancePool`.
@@ -441,6 +466,12 @@ func (o AutoScalingConfigurationArrayOutput) ToAutoScalingConfigurationArrayOutp
 	return o
 }
 
+func (o AutoScalingConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AutoScalingConfiguration] {
+	return pulumix.Output[[]*AutoScalingConfiguration]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AutoScalingConfigurationArrayOutput) Index(i pulumi.IntInput) AutoScalingConfigurationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AutoScalingConfiguration {
 		return vs[0].([]*AutoScalingConfiguration)[vs[1].(int)]
@@ -459,6 +490,12 @@ func (o AutoScalingConfigurationMapOutput) ToAutoScalingConfigurationMapOutput()
 
 func (o AutoScalingConfigurationMapOutput) ToAutoScalingConfigurationMapOutputWithContext(ctx context.Context) AutoScalingConfigurationMapOutput {
 	return o
+}
+
+func (o AutoScalingConfigurationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AutoScalingConfiguration] {
+	return pulumix.Output[map[string]*AutoScalingConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AutoScalingConfigurationMapOutput) MapIndex(k pulumi.StringInput) AutoScalingConfigurationOutput {

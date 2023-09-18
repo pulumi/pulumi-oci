@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Images in Oracle Cloud Infrastructure Core service.
@@ -161,6 +162,12 @@ func (o GetImagesResultOutput) ToGetImagesResultOutput() GetImagesResultOutput {
 
 func (o GetImagesResultOutput) ToGetImagesResultOutputWithContext(ctx context.Context) GetImagesResultOutput {
 	return o
+}
+
+func (o GetImagesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetImagesResult] {
+	return pulumix.Output[GetImagesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the compartment containing the instance you want to use as the basis for the image.

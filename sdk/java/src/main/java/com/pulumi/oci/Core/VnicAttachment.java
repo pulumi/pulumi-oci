@@ -85,7 +85,7 @@ public class VnicAttachment extends com.pulumi.resources.CustomResource {
      * The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    @Export(name="availabilityDomain", type=String.class, parameters={})
+    @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
     private Output<String> availabilityDomain;
 
     /**
@@ -99,7 +99,7 @@ public class VnicAttachment extends com.pulumi.resources.CustomResource {
      * The OCID of the compartment the VNIC attachment is in, which is the same compartment the instance is in.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -113,7 +113,7 @@ public class VnicAttachment extends com.pulumi.resources.CustomResource {
      * (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
      * 
      */
-    @Export(name="createVnicDetails", type=VnicAttachmentCreateVnicDetails.class, parameters={})
+    @Export(name="createVnicDetails", refs={VnicAttachmentCreateVnicDetails.class}, tree="[0]")
     private Output<VnicAttachmentCreateVnicDetails> createVnicDetails;
 
     /**
@@ -127,7 +127,7 @@ public class VnicAttachment extends com.pulumi.resources.CustomResource {
      * A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -141,7 +141,7 @@ public class VnicAttachment extends com.pulumi.resources.CustomResource {
      * The OCID of the instance.
      * 
      */
-    @Export(name="instanceId", type=String.class, parameters={})
+    @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
@@ -158,7 +158,7 @@ public class VnicAttachment extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="nicIndex", type=Integer.class, parameters={})
+    @Export(name="nicIndex", refs={Integer.class}, tree="[0]")
     private Output<Integer> nicIndex;
 
     /**
@@ -175,7 +175,7 @@ public class VnicAttachment extends com.pulumi.resources.CustomResource {
      * The current state of the VNIC attachment.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -191,7 +191,7 @@ public class VnicAttachment extends com.pulumi.resources.CustomResource {
      * If you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN instead of a subnet, provide a `vlanId` instead of a `subnetId`. If you provide both a `vlanId` and `subnetId`, the request fails.
      * 
      */
-    @Export(name="subnetId", type=String.class, parameters={})
+    @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
@@ -207,7 +207,7 @@ public class VnicAttachment extends com.pulumi.resources.CustomResource {
      * The date and time the VNIC attachment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -223,7 +223,7 @@ public class VnicAttachment extends com.pulumi.resources.CustomResource {
      * Provide a `vlanId` instead of a `subnetId`. If you provide both a `vlanId` and `subnetId`, the request fails.
      * 
      */
-    @Export(name="vlanId", type=String.class, parameters={})
+    @Export(name="vlanId", refs={String.class}, tree="[0]")
     private Output<String> vlanId;
 
     /**
@@ -239,7 +239,7 @@ public class VnicAttachment extends com.pulumi.resources.CustomResource {
      * The Oracle-assigned VLAN tag of the attached VNIC. Available after the attachment process is complete.
      * 
      */
-    @Export(name="vlanTag", type=Integer.class, parameters={})
+    @Export(name="vlanTag", refs={Integer.class}, tree="[0]")
     private Output<Integer> vlanTag;
 
     /**
@@ -253,7 +253,7 @@ public class VnicAttachment extends com.pulumi.resources.CustomResource {
      * The OCID of the VNIC. Available after the attachment process is complete.
      * 
      */
-    @Export(name="vnicId", type=String.class, parameters={})
+    @Export(name="vnicId", refs={String.class}, tree="[0]")
     private Output<String> vnicId;
 
     /**

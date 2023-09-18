@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Infrastructure Target Version resource in Oracle Cloud Infrastructure Database service.
@@ -118,6 +119,12 @@ func (o GetInfrastructureTargetVersionResultOutput) ToGetInfrastructureTargetVer
 
 func (o GetInfrastructureTargetVersionResultOutput) ToGetInfrastructureTargetVersionResultOutputWithContext(ctx context.Context) GetInfrastructureTargetVersionResultOutput {
 	return o
+}
+
+func (o GetInfrastructureTargetVersionResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetInfrastructureTargetVersionResult] {
+	return pulumix.Output[GetInfrastructureTargetVersionResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetInfrastructureTargetVersionResultOutput) CompartmentId() pulumi.StringOutput {

@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Managed Databases Change Database Parameter resource in Oracle Cloud Infrastructure Database Management service.
@@ -222,6 +223,12 @@ func (i *ManagedDatabasesChangeDatabaseParameter) ToManagedDatabasesChangeDataba
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedDatabasesChangeDatabaseParameterOutput)
 }
 
+func (i *ManagedDatabasesChangeDatabaseParameter) ToOutput(ctx context.Context) pulumix.Output[*ManagedDatabasesChangeDatabaseParameter] {
+	return pulumix.Output[*ManagedDatabasesChangeDatabaseParameter]{
+		OutputState: i.ToManagedDatabasesChangeDatabaseParameterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ManagedDatabasesChangeDatabaseParameterArrayInput is an input type that accepts ManagedDatabasesChangeDatabaseParameterArray and ManagedDatabasesChangeDatabaseParameterArrayOutput values.
 // You can construct a concrete instance of `ManagedDatabasesChangeDatabaseParameterArrayInput` via:
 //
@@ -245,6 +252,12 @@ func (i ManagedDatabasesChangeDatabaseParameterArray) ToManagedDatabasesChangeDa
 
 func (i ManagedDatabasesChangeDatabaseParameterArray) ToManagedDatabasesChangeDatabaseParameterArrayOutputWithContext(ctx context.Context) ManagedDatabasesChangeDatabaseParameterArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedDatabasesChangeDatabaseParameterArrayOutput)
+}
+
+func (i ManagedDatabasesChangeDatabaseParameterArray) ToOutput(ctx context.Context) pulumix.Output[[]*ManagedDatabasesChangeDatabaseParameter] {
+	return pulumix.Output[[]*ManagedDatabasesChangeDatabaseParameter]{
+		OutputState: i.ToManagedDatabasesChangeDatabaseParameterArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // ManagedDatabasesChangeDatabaseParameterMapInput is an input type that accepts ManagedDatabasesChangeDatabaseParameterMap and ManagedDatabasesChangeDatabaseParameterMapOutput values.
@@ -272,6 +285,12 @@ func (i ManagedDatabasesChangeDatabaseParameterMap) ToManagedDatabasesChangeData
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedDatabasesChangeDatabaseParameterMapOutput)
 }
 
+func (i ManagedDatabasesChangeDatabaseParameterMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ManagedDatabasesChangeDatabaseParameter] {
+	return pulumix.Output[map[string]*ManagedDatabasesChangeDatabaseParameter]{
+		OutputState: i.ToManagedDatabasesChangeDatabaseParameterMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ManagedDatabasesChangeDatabaseParameterOutput struct{ *pulumi.OutputState }
 
 func (ManagedDatabasesChangeDatabaseParameterOutput) ElementType() reflect.Type {
@@ -284,6 +303,12 @@ func (o ManagedDatabasesChangeDatabaseParameterOutput) ToManagedDatabasesChangeD
 
 func (o ManagedDatabasesChangeDatabaseParameterOutput) ToManagedDatabasesChangeDatabaseParameterOutputWithContext(ctx context.Context) ManagedDatabasesChangeDatabaseParameterOutput {
 	return o
+}
+
+func (o ManagedDatabasesChangeDatabaseParameterOutput) ToOutput(ctx context.Context) pulumix.Output[*ManagedDatabasesChangeDatabaseParameter] {
+	return pulumix.Output[*ManagedDatabasesChangeDatabaseParameter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The database credentials used to perform management activity.
@@ -329,6 +354,12 @@ func (o ManagedDatabasesChangeDatabaseParameterArrayOutput) ToManagedDatabasesCh
 	return o
 }
 
+func (o ManagedDatabasesChangeDatabaseParameterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ManagedDatabasesChangeDatabaseParameter] {
+	return pulumix.Output[[]*ManagedDatabasesChangeDatabaseParameter]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o ManagedDatabasesChangeDatabaseParameterArrayOutput) Index(i pulumi.IntInput) ManagedDatabasesChangeDatabaseParameterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ManagedDatabasesChangeDatabaseParameter {
 		return vs[0].([]*ManagedDatabasesChangeDatabaseParameter)[vs[1].(int)]
@@ -347,6 +378,12 @@ func (o ManagedDatabasesChangeDatabaseParameterMapOutput) ToManagedDatabasesChan
 
 func (o ManagedDatabasesChangeDatabaseParameterMapOutput) ToManagedDatabasesChangeDatabaseParameterMapOutputWithContext(ctx context.Context) ManagedDatabasesChangeDatabaseParameterMapOutput {
 	return o
+}
+
+func (o ManagedDatabasesChangeDatabaseParameterMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ManagedDatabasesChangeDatabaseParameter] {
+	return pulumix.Output[map[string]*ManagedDatabasesChangeDatabaseParameter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ManagedDatabasesChangeDatabaseParameterMapOutput) MapIndex(k pulumi.StringInput) ManagedDatabasesChangeDatabaseParameterOutput {

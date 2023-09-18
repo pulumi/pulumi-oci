@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Domains in Oracle Cloud Infrastructure Identity service.
@@ -161,6 +162,12 @@ func (o GetDomainsResultOutput) ToGetDomainsResultOutput() GetDomainsResultOutpu
 
 func (o GetDomainsResultOutput) ToGetDomainsResultOutputWithContext(ctx context.Context) GetDomainsResultOutput {
 	return o
+}
+
+func (o GetDomainsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsResult] {
+	return pulumix.Output[GetDomainsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the compartment containing the domain.

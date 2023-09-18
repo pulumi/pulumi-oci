@@ -63,7 +63,7 @@ public class AutonomousVmClusterSslCertificateManagement extends com.pulumi.reso
      * The autonomous VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    @Export(name="autonomousVmClusterId", type=String.class, parameters={})
+    @Export(name="autonomousVmClusterId", refs={String.class}, tree="[0]")
     private Output<String> autonomousVmClusterId;
 
     /**
@@ -77,7 +77,7 @@ public class AutonomousVmClusterSslCertificateManagement extends com.pulumi.reso
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate bundle.
      * 
      */
-    @Export(name="caBundleId", type=String.class, parameters={})
+    @Export(name="caBundleId", refs={String.class}, tree="[0]")
     private Output<String> caBundleId;
 
     /**
@@ -91,7 +91,7 @@ public class AutonomousVmClusterSslCertificateManagement extends com.pulumi.reso
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate authority.
      * 
      */
-    @Export(name="certificateAuthorityId", type=String.class, parameters={})
+    @Export(name="certificateAuthorityId", refs={String.class}, tree="[0]")
     private Output<String> certificateAuthorityId;
 
     /**
@@ -105,7 +105,7 @@ public class AutonomousVmClusterSslCertificateManagement extends com.pulumi.reso
      * Specify SYSTEM for using Oracle managed certificates. Specify BYOC when you want to bring your own certificate.
      * 
      */
-    @Export(name="certificateGenerationType", type=String.class, parameters={})
+    @Export(name="certificateGenerationType", refs={String.class}, tree="[0]")
     private Output<String> certificateGenerationType;
 
     /**
@@ -122,7 +122,7 @@ public class AutonomousVmClusterSslCertificateManagement extends com.pulumi.reso
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="certificateId", type=String.class, parameters={})
+    @Export(name="certificateId", refs={String.class}, tree="[0]")
     private Output<String> certificateId;
 
     /**

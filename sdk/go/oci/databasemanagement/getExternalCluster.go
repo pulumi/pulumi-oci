@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific External Cluster resource in Oracle Cloud Infrastructure Database Management service.
@@ -133,6 +134,12 @@ func (o LookupExternalClusterResultOutput) ToLookupExternalClusterResultOutput()
 
 func (o LookupExternalClusterResultOutput) ToLookupExternalClusterResultOutputWithContext(ctx context.Context) LookupExternalClusterResultOutput {
 	return o
+}
+
+func (o LookupExternalClusterResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupExternalClusterResult] {
+	return pulumix.Output[LookupExternalClusterResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The additional details of the external cluster defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`

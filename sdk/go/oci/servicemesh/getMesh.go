@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Mesh resource in Oracle Cloud Infrastructure Service Mesh service.
@@ -123,6 +124,12 @@ func (o LookupMeshResultOutput) ToLookupMeshResultOutput() LookupMeshResultOutpu
 
 func (o LookupMeshResultOutput) ToLookupMeshResultOutputWithContext(ctx context.Context) LookupMeshResultOutput {
 	return o
+}
+
+func (o LookupMeshResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupMeshResult] {
+	return pulumix.Output[LookupMeshResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A list of certificate authority resources to use for creating leaf certificates for mTLS authentication. Currently we only support one certificate authority, but this may expand in future releases. Request with more than one certificate authority will be rejected.

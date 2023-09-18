@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Deploy Stage resource in Oracle Cloud Infrastructure Devops service.
@@ -750,6 +751,12 @@ func (i *DeployStage) ToDeployStageOutputWithContext(ctx context.Context) Deploy
 	return pulumi.ToOutputWithContext(ctx, i).(DeployStageOutput)
 }
 
+func (i *DeployStage) ToOutput(ctx context.Context) pulumix.Output[*DeployStage] {
+	return pulumix.Output[*DeployStage]{
+		OutputState: i.ToDeployStageOutputWithContext(ctx).OutputState,
+	}
+}
+
 // DeployStageArrayInput is an input type that accepts DeployStageArray and DeployStageArrayOutput values.
 // You can construct a concrete instance of `DeployStageArrayInput` via:
 //
@@ -773,6 +780,12 @@ func (i DeployStageArray) ToDeployStageArrayOutput() DeployStageArrayOutput {
 
 func (i DeployStageArray) ToDeployStageArrayOutputWithContext(ctx context.Context) DeployStageArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DeployStageArrayOutput)
+}
+
+func (i DeployStageArray) ToOutput(ctx context.Context) pulumix.Output[[]*DeployStage] {
+	return pulumix.Output[[]*DeployStage]{
+		OutputState: i.ToDeployStageArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // DeployStageMapInput is an input type that accepts DeployStageMap and DeployStageMapOutput values.
@@ -800,6 +813,12 @@ func (i DeployStageMap) ToDeployStageMapOutputWithContext(ctx context.Context) D
 	return pulumi.ToOutputWithContext(ctx, i).(DeployStageMapOutput)
 }
 
+func (i DeployStageMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DeployStage] {
+	return pulumix.Output[map[string]*DeployStage]{
+		OutputState: i.ToDeployStageMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type DeployStageOutput struct{ *pulumi.OutputState }
 
 func (DeployStageOutput) ElementType() reflect.Type {
@@ -812,6 +831,12 @@ func (o DeployStageOutput) ToDeployStageOutput() DeployStageOutput {
 
 func (o DeployStageOutput) ToDeployStageOutputWithContext(ctx context.Context) DeployStageOutput {
 	return o
+}
+
+func (o DeployStageOutput) ToOutput(ctx context.Context) pulumix.Output[*DeployStage] {
+	return pulumix.Output[*DeployStage]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Specifies the approval policy.
@@ -1169,6 +1194,12 @@ func (o DeployStageArrayOutput) ToDeployStageArrayOutputWithContext(ctx context.
 	return o
 }
 
+func (o DeployStageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DeployStage] {
+	return pulumix.Output[[]*DeployStage]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o DeployStageArrayOutput) Index(i pulumi.IntInput) DeployStageOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DeployStage {
 		return vs[0].([]*DeployStage)[vs[1].(int)]
@@ -1187,6 +1218,12 @@ func (o DeployStageMapOutput) ToDeployStageMapOutput() DeployStageMapOutput {
 
 func (o DeployStageMapOutput) ToDeployStageMapOutputWithContext(ctx context.Context) DeployStageMapOutput {
 	return o
+}
+
+func (o DeployStageMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DeployStage] {
+	return pulumix.Output[map[string]*DeployStage]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o DeployStageMapOutput) MapIndex(k pulumi.StringInput) DeployStageOutput {

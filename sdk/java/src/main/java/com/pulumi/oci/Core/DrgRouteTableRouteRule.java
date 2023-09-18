@@ -69,7 +69,7 @@ public class DrgRouteTableRouteRule extends com.pulumi.resources.CustomResource 
      * Additional properties for the route, computed by the service.
      * 
      */
-    @Export(name="attributes", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="attributes", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> attributes;
 
     /**
@@ -86,7 +86,7 @@ public class DrgRouteTableRouteRule extends com.pulumi.resources.CustomResource 
      * * IP address range in CIDR notation. This can be an IPv4 or IPv6 CIDR. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
      * 
      */
-    @Export(name="destination", type=String.class, parameters={})
+    @Export(name="destination", refs={String.class}, tree="[0]")
     private Output<String> destination;
 
     /**
@@ -103,7 +103,7 @@ public class DrgRouteTableRouteRule extends com.pulumi.resources.CustomResource 
      * Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
      * 
      */
-    @Export(name="destinationType", type=String.class, parameters={})
+    @Export(name="destinationType", refs={String.class}, tree="[0]")
     private Output<String> destinationType;
 
     /**
@@ -120,7 +120,7 @@ public class DrgRouteTableRouteRule extends com.pulumi.resources.CustomResource 
      * * IP address range in CIDR notation. This can be an IPv4 CIDR block or IPv6 prefix. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
      * 
      */
-    @Export(name="drgRouteTableId", type=String.class, parameters={})
+    @Export(name="drgRouteTableId", refs={String.class}, tree="[0]")
     private Output<String> drgRouteTableId;
 
     /**
@@ -137,7 +137,7 @@ public class DrgRouteTableRouteRule extends com.pulumi.resources.CustomResource 
      * Indicates that if the next hop attachment does not exist, so traffic for this route is discarded without notification.
      * 
      */
-    @Export(name="isBlackhole", type=Boolean.class, parameters={})
+    @Export(name="isBlackhole", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isBlackhole;
 
     /**
@@ -151,7 +151,7 @@ public class DrgRouteTableRouteRule extends com.pulumi.resources.CustomResource 
      * Indicates that the route was not imported due to a conflict between route rules.
      * 
      */
-    @Export(name="isConflict", type=Boolean.class, parameters={})
+    @Export(name="isConflict", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isConflict;
 
     /**
@@ -168,7 +168,7 @@ public class DrgRouteTableRouteRule extends com.pulumi.resources.CustomResource 
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="nextHopDrgAttachmentId", type=String.class, parameters={})
+    @Export(name="nextHopDrgAttachmentId", refs={String.class}, tree="[0]")
     private Output<String> nextHopDrgAttachmentId;
 
     /**
@@ -185,7 +185,7 @@ public class DrgRouteTableRouteRule extends com.pulumi.resources.CustomResource 
      * The earliest origin of a route. If a route is advertised to a DRG through an IPsec tunnel attachment, and is propagated to peered DRGs via RPC attachments, the route&#39;s provenance in the peered DRGs remains `IPSEC_TUNNEL`, because that is the earliest origin.
      * 
      */
-    @Export(name="routeProvenance", type=String.class, parameters={})
+    @Export(name="routeProvenance", refs={String.class}, tree="[0]")
     private Output<String> routeProvenance;
 
     /**
@@ -199,7 +199,7 @@ public class DrgRouteTableRouteRule extends com.pulumi.resources.CustomResource 
      * You can specify static routes for the DRG route table using the API. The DRG learns dynamic routes from the DRG attachments using various routing protocols.
      * 
      */
-    @Export(name="routeType", type=String.class, parameters={})
+    @Export(name="routeType", refs={String.class}, tree="[0]")
     private Output<String> routeType;
 
     /**

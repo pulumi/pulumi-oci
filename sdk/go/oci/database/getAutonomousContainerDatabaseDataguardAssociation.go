@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Autonomous Container Database Dataguard Association resource in Oracle Cloud Infrastructure Database service.
@@ -138,6 +139,12 @@ func (o LookupAutonomousContainerDatabaseDataguardAssociationResultOutput) ToLoo
 
 func (o LookupAutonomousContainerDatabaseDataguardAssociationResultOutput) ToLookupAutonomousContainerDatabaseDataguardAssociationResultOutputWithContext(ctx context.Context) LookupAutonomousContainerDatabaseDataguardAssociationResultOutput {
 	return o
+}
+
+func (o LookupAutonomousContainerDatabaseDataguardAssociationResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAutonomousContainerDatabaseDataguardAssociationResult] {
+	return pulumix.Output[LookupAutonomousContainerDatabaseDataguardAssociationResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database.  Example: `9 seconds`

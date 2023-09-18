@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Cluster Workload Mapping resource in Oracle Cloud Infrastructure Container Engine service.
@@ -120,6 +121,12 @@ func (o LookupClusterWorkloadMappingResultOutput) ToLookupClusterWorkloadMapping
 
 func (o LookupClusterWorkloadMappingResultOutput) ToLookupClusterWorkloadMappingResultOutputWithContext(ctx context.Context) LookupClusterWorkloadMappingResultOutput {
 	return o
+}
+
+func (o LookupClusterWorkloadMappingResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupClusterWorkloadMappingResult] {
+	return pulumix.Output[LookupClusterWorkloadMappingResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the cluster.

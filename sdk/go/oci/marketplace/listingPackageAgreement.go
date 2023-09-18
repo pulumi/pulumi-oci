@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides details about a specific Listing Package Agreement resource in Oracle Cloud Infrastructure Marketplace service.
@@ -196,6 +197,12 @@ func (i *ListingPackageAgreement) ToListingPackageAgreementOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(ListingPackageAgreementOutput)
 }
 
+func (i *ListingPackageAgreement) ToOutput(ctx context.Context) pulumix.Output[*ListingPackageAgreement] {
+	return pulumix.Output[*ListingPackageAgreement]{
+		OutputState: i.ToListingPackageAgreementOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ListingPackageAgreementArrayInput is an input type that accepts ListingPackageAgreementArray and ListingPackageAgreementArrayOutput values.
 // You can construct a concrete instance of `ListingPackageAgreementArrayInput` via:
 //
@@ -219,6 +226,12 @@ func (i ListingPackageAgreementArray) ToListingPackageAgreementArrayOutput() Lis
 
 func (i ListingPackageAgreementArray) ToListingPackageAgreementArrayOutputWithContext(ctx context.Context) ListingPackageAgreementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ListingPackageAgreementArrayOutput)
+}
+
+func (i ListingPackageAgreementArray) ToOutput(ctx context.Context) pulumix.Output[[]*ListingPackageAgreement] {
+	return pulumix.Output[[]*ListingPackageAgreement]{
+		OutputState: i.ToListingPackageAgreementArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // ListingPackageAgreementMapInput is an input type that accepts ListingPackageAgreementMap and ListingPackageAgreementMapOutput values.
@@ -246,6 +259,12 @@ func (i ListingPackageAgreementMap) ToListingPackageAgreementMapOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(ListingPackageAgreementMapOutput)
 }
 
+func (i ListingPackageAgreementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ListingPackageAgreement] {
+	return pulumix.Output[map[string]*ListingPackageAgreement]{
+		OutputState: i.ToListingPackageAgreementMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ListingPackageAgreementOutput struct{ *pulumi.OutputState }
 
 func (ListingPackageAgreementOutput) ElementType() reflect.Type {
@@ -258,6 +277,12 @@ func (o ListingPackageAgreementOutput) ToListingPackageAgreementOutput() Listing
 
 func (o ListingPackageAgreementOutput) ToListingPackageAgreementOutputWithContext(ctx context.Context) ListingPackageAgreementOutput {
 	return o
+}
+
+func (o ListingPackageAgreementOutput) ToOutput(ctx context.Context) pulumix.Output[*ListingPackageAgreement] {
+	return pulumix.Output[*ListingPackageAgreement]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The unique identifier for the agreement.
@@ -314,6 +339,12 @@ func (o ListingPackageAgreementArrayOutput) ToListingPackageAgreementArrayOutput
 	return o
 }
 
+func (o ListingPackageAgreementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ListingPackageAgreement] {
+	return pulumix.Output[[]*ListingPackageAgreement]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o ListingPackageAgreementArrayOutput) Index(i pulumi.IntInput) ListingPackageAgreementOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ListingPackageAgreement {
 		return vs[0].([]*ListingPackageAgreement)[vs[1].(int)]
@@ -332,6 +363,12 @@ func (o ListingPackageAgreementMapOutput) ToListingPackageAgreementMapOutput() L
 
 func (o ListingPackageAgreementMapOutput) ToListingPackageAgreementMapOutputWithContext(ctx context.Context) ListingPackageAgreementMapOutput {
 	return o
+}
+
+func (o ListingPackageAgreementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ListingPackageAgreement] {
+	return pulumix.Output[map[string]*ListingPackageAgreement]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ListingPackageAgreementMapOutput) MapIndex(k pulumi.StringInput) ListingPackageAgreementOutput {

@@ -97,7 +97,7 @@ public class WorkspaceApplication extends com.pulumi.resources.CustomResource {
      * The source application version of the application.
      * 
      */
-    @Export(name="applicationVersion", type=Integer.class, parameters={})
+    @Export(name="applicationVersion", refs={Integer.class}, tree="[0]")
     private Output<Integer> applicationVersion;
 
     /**
@@ -111,7 +111,7 @@ public class WorkspaceApplication extends com.pulumi.resources.CustomResource {
      * OCID of the compartment that this resource belongs to. Defaults to compartment of the Workspace.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -125,7 +125,7 @@ public class WorkspaceApplication extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -139,7 +139,7 @@ public class WorkspaceApplication extends com.pulumi.resources.CustomResource {
      * A list of dependent objects in this patch.
      * 
      */
-    @Export(name="dependentObjectMetadatas", type=List.class, parameters={WorkspaceApplicationDependentObjectMetadata.class})
+    @Export(name="dependentObjectMetadatas", refs={List.class,WorkspaceApplicationDependentObjectMetadata.class}, tree="[0,1]")
     private Output<List<WorkspaceApplicationDependentObjectMetadata>> dependentObjectMetadatas;
 
     /**
@@ -153,7 +153,7 @@ public class WorkspaceApplication extends com.pulumi.resources.CustomResource {
      * (Updatable) Detailed description for the object.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -167,7 +167,7 @@ public class WorkspaceApplication extends com.pulumi.resources.CustomResource {
      * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -181,7 +181,7 @@ public class WorkspaceApplication extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -195,7 +195,7 @@ public class WorkspaceApplication extends com.pulumi.resources.CustomResource {
      * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      * 
      */
-    @Export(name="identifier", type=String.class, parameters={})
+    @Export(name="identifier", refs={String.class}, tree="[0]")
     private Output<String> identifier;
 
     /**
@@ -209,7 +209,7 @@ public class WorkspaceApplication extends com.pulumi.resources.CustomResource {
      * The identifying key for the object.
      * 
      */
-    @Export(name="key", type=String.class, parameters={})
+    @Export(name="key", refs={String.class}, tree="[0]")
     private Output<String> key;
 
     /**
@@ -223,7 +223,7 @@ public class WorkspaceApplication extends com.pulumi.resources.CustomResource {
      * A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      * 
      */
-    @Export(name="keyMap", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="keyMap", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> keyMap;
 
     /**
@@ -237,7 +237,7 @@ public class WorkspaceApplication extends com.pulumi.resources.CustomResource {
      * A summary type containing information about the object including its key, name and when/who created/updated it.
      * 
      */
-    @Export(name="metadatas", type=List.class, parameters={WorkspaceApplicationMetadata.class})
+    @Export(name="metadatas", refs={List.class,WorkspaceApplicationMetadata.class}, tree="[0,1]")
     private Output<List<WorkspaceApplicationMetadata>> metadatas;
 
     /**
@@ -251,7 +251,7 @@ public class WorkspaceApplication extends com.pulumi.resources.CustomResource {
      * (Updatable) The type of the application.
      * 
      */
-    @Export(name="modelType", type=String.class, parameters={})
+    @Export(name="modelType", refs={String.class}, tree="[0]")
     private Output<String> modelType;
 
     /**
@@ -265,7 +265,7 @@ public class WorkspaceApplication extends com.pulumi.resources.CustomResource {
      * (Updatable) The object&#39;s model version.
      * 
      */
-    @Export(name="modelVersion", type=String.class, parameters={})
+    @Export(name="modelVersion", refs={String.class}, tree="[0]")
     private Output<String> modelVersion;
 
     /**
@@ -279,7 +279,7 @@ public class WorkspaceApplication extends com.pulumi.resources.CustomResource {
      * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -293,7 +293,7 @@ public class WorkspaceApplication extends com.pulumi.resources.CustomResource {
      * (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      * 
      */
-    @Export(name="objectStatus", type=Integer.class, parameters={})
+    @Export(name="objectStatus", refs={Integer.class}, tree="[0]")
     private Output<Integer> objectStatus;
 
     /**
@@ -307,7 +307,7 @@ public class WorkspaceApplication extends com.pulumi.resources.CustomResource {
      * The object version.
      * 
      */
-    @Export(name="objectVersion", type=Integer.class, parameters={})
+    @Export(name="objectVersion", refs={Integer.class}, tree="[0]")
     private Output<Integer> objectVersion;
 
     /**
@@ -321,7 +321,7 @@ public class WorkspaceApplication extends com.pulumi.resources.CustomResource {
      * A reference to the object&#39;s parent.
      * 
      */
-    @Export(name="parentReves", type=List.class, parameters={WorkspaceApplicationParentRef.class})
+    @Export(name="parentReves", refs={List.class,WorkspaceApplicationParentRef.class}, tree="[0,1]")
     private Output<List<WorkspaceApplicationParentRef>> parentReves;
 
     /**
@@ -335,7 +335,7 @@ public class WorkspaceApplication extends com.pulumi.resources.CustomResource {
      * A list of objects that are published or unpublished in this patch.
      * 
      */
-    @Export(name="publishedObjectMetadatas", type=List.class, parameters={WorkspaceApplicationPublishedObjectMetadata.class})
+    @Export(name="publishedObjectMetadatas", refs={List.class,WorkspaceApplicationPublishedObjectMetadata.class}, tree="[0,1]")
     private Output<List<WorkspaceApplicationPublishedObjectMetadata>> publishedObjectMetadatas;
 
     /**
@@ -349,7 +349,7 @@ public class WorkspaceApplication extends com.pulumi.resources.CustomResource {
      * Information about the object and its parent.
      * 
      */
-    @Export(name="registryMetadata", type=WorkspaceApplicationRegistryMetadata.class, parameters={})
+    @Export(name="registryMetadata", refs={WorkspaceApplicationRegistryMetadata.class}, tree="[0]")
     private Output<WorkspaceApplicationRegistryMetadata> registryMetadata;
 
     /**
@@ -363,7 +363,7 @@ public class WorkspaceApplication extends com.pulumi.resources.CustomResource {
      * The information about the application.
      * 
      */
-    @Export(name="sourceApplicationInfo", type=WorkspaceApplicationSourceApplicationInfo.class, parameters={})
+    @Export(name="sourceApplicationInfo", refs={WorkspaceApplicationSourceApplicationInfo.class}, tree="[0]")
     private Output<WorkspaceApplicationSourceApplicationInfo> sourceApplicationInfo;
 
     /**
@@ -377,7 +377,7 @@ public class WorkspaceApplication extends com.pulumi.resources.CustomResource {
      * (Updatable) The current state of the workspace.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -391,7 +391,7 @@ public class WorkspaceApplication extends com.pulumi.resources.CustomResource {
      * The date and time the application was created, in the timestamp format defined by RFC3339.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -405,7 +405,7 @@ public class WorkspaceApplication extends com.pulumi.resources.CustomResource {
      * The date and time the application was patched, in the timestamp format defined by RFC3339.
      * 
      */
-    @Export(name="timePatched", type=String.class, parameters={})
+    @Export(name="timePatched", refs={String.class}, tree="[0]")
     private Output<String> timePatched;
 
     /**
@@ -419,7 +419,7 @@ public class WorkspaceApplication extends com.pulumi.resources.CustomResource {
      * The date and time the application was updated, in the timestamp format defined by RFC3339. example: 2019-08-25T21:10:29.41Z
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -436,7 +436,7 @@ public class WorkspaceApplication extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="workspaceId", type=String.class, parameters={})
+    @Export(name="workspaceId", refs={String.class}, tree="[0]")
     private Output<String> workspaceId;
 
     /**

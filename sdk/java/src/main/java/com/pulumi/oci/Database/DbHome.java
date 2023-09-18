@@ -120,7 +120,7 @@ public class DbHome extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -136,7 +136,7 @@ public class DbHome extends com.pulumi.resources.CustomResource {
      * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      * 
      */
-    @Export(name="database", type=DbHomeDatabase.class, parameters={})
+    @Export(name="database", refs={DbHomeDatabase.class}, tree="[0]")
     private Output<DbHomeDatabase> database;
 
     /**
@@ -152,7 +152,7 @@ public class DbHome extends com.pulumi.resources.CustomResource {
      * The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * 
      */
-    @Export(name="databaseSoftwareImageId", type=String.class, parameters={})
+    @Export(name="databaseSoftwareImageId", refs={String.class}, tree="[0]")
     private Output<String> databaseSoftwareImageId;
 
     /**
@@ -166,7 +166,7 @@ public class DbHome extends com.pulumi.resources.CustomResource {
      * The location of the Oracle Database Home.
      * 
      */
-    @Export(name="dbHomeLocation", type=String.class, parameters={})
+    @Export(name="dbHomeLocation", refs={String.class}, tree="[0]")
     private Output<String> dbHomeLocation;
 
     /**
@@ -180,7 +180,7 @@ public class DbHome extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      * 
      */
-    @Export(name="dbSystemId", type=String.class, parameters={})
+    @Export(name="dbSystemId", refs={String.class}, tree="[0]")
     private Output<String> dbSystemId;
 
     /**
@@ -196,7 +196,7 @@ public class DbHome extends com.pulumi.resources.CustomResource {
      * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
      * 
      */
-    @Export(name="dbVersion", type=String.class, parameters={})
+    @Export(name="dbVersion", refs={String.class}, tree="[0]")
     private Output<String> dbVersion;
 
     /**
@@ -212,7 +212,7 @@ public class DbHome extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -226,7 +226,7 @@ public class DbHome extends com.pulumi.resources.CustomResource {
      * The user-provided name of the Database Home.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -240,7 +240,7 @@ public class DbHome extends com.pulumi.resources.CustomResource {
      * Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
      * 
      */
-    @Export(name="enableDatabaseDelete", type=Boolean.class, parameters={})
+    @Export(name="enableDatabaseDelete", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> enableDatabaseDelete;
 
     /**
@@ -254,7 +254,7 @@ public class DbHome extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -268,7 +268,7 @@ public class DbHome extends com.pulumi.resources.CustomResource {
      * If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
      * 
      */
-    @Export(name="isDesupportedVersion", type=Boolean.class, parameters={})
+    @Export(name="isDesupportedVersion", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isDesupportedVersion;
 
     /**
@@ -282,7 +282,7 @@ public class DbHome extends com.pulumi.resources.CustomResource {
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
-    @Export(name="kmsKeyId", type=String.class, parameters={})
+    @Export(name="kmsKeyId", refs={String.class}, tree="[0]")
     private Output<String> kmsKeyId;
 
     /**
@@ -296,7 +296,7 @@ public class DbHome extends com.pulumi.resources.CustomResource {
      * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
      * 
      */
-    @Export(name="kmsKeyVersionId", type=String.class, parameters={})
+    @Export(name="kmsKeyVersionId", refs={String.class}, tree="[0]")
     private Output<String> kmsKeyVersionId;
 
     /**
@@ -310,7 +310,7 @@ public class DbHome extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation is started.
      * 
      */
-    @Export(name="lastPatchHistoryEntryId", type=String.class, parameters={})
+    @Export(name="lastPatchHistoryEntryId", refs={String.class}, tree="[0]")
     private Output<String> lastPatchHistoryEntryId;
 
     /**
@@ -324,7 +324,7 @@ public class DbHome extends com.pulumi.resources.CustomResource {
      * Additional information about the current lifecycle state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -338,7 +338,7 @@ public class DbHome extends com.pulumi.resources.CustomResource {
      * The source of database: NONE for creating a new database. DB_BACKUP for creating a new database by restoring from a database backup. VM_CLUSTER_NEW for creating a database for VM Cluster.
      * 
      */
-    @Export(name="source", type=String.class, parameters={})
+    @Export(name="source", refs={String.class}, tree="[0]")
     private Output<String> source;
 
     /**
@@ -352,7 +352,7 @@ public class DbHome extends com.pulumi.resources.CustomResource {
      * The current state of the Database Home.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -366,7 +366,7 @@ public class DbHome extends com.pulumi.resources.CustomResource {
      * The date and time the Database Home was created.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -383,7 +383,7 @@ public class DbHome extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="vmClusterId", type=String.class, parameters={})
+    @Export(name="vmClusterId", refs={String.class}, tree="[0]")
     private Output<String> vmClusterId;
 
     /**

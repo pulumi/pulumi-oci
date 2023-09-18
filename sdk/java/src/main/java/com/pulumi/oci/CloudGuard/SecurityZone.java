@@ -71,7 +71,7 @@ public class SecurityZone extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the compartment for the security zone
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -85,7 +85,7 @@ public class SecurityZone extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -99,7 +99,7 @@ public class SecurityZone extends com.pulumi.resources.CustomResource {
      * (Updatable) The security zone&#39;s description
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -113,7 +113,7 @@ public class SecurityZone extends com.pulumi.resources.CustomResource {
      * (Updatable) The security zone&#39;s name
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -129,7 +129,7 @@ public class SecurityZone extends com.pulumi.resources.CustomResource {
      * Avoid entering confidential information.
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -145,7 +145,7 @@ public class SecurityZone extends com.pulumi.resources.CustomResource {
      * List of inherited compartments
      * 
      */
-    @Export(name="inheritedByCompartments", type=List.class, parameters={String.class})
+    @Export(name="inheritedByCompartments", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> inheritedByCompartments;
 
     /**
@@ -159,7 +159,7 @@ public class SecurityZone extends com.pulumi.resources.CustomResource {
      * A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -176,7 +176,7 @@ public class SecurityZone extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="securityZoneRecipeId", type=String.class, parameters={})
+    @Export(name="securityZoneRecipeId", refs={String.class}, tree="[0]")
     private Output<String> securityZoneRecipeId;
 
     /**
@@ -193,7 +193,7 @@ public class SecurityZone extends com.pulumi.resources.CustomResource {
      * The OCID of the target associated with the security zone
      * 
      */
-    @Export(name="securityZoneTargetId", type=String.class, parameters={})
+    @Export(name="securityZoneTargetId", refs={String.class}, tree="[0]")
     private Output<String> securityZoneTargetId;
 
     /**
@@ -207,7 +207,7 @@ public class SecurityZone extends com.pulumi.resources.CustomResource {
      * The current state of the security zone
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -221,7 +221,7 @@ public class SecurityZone extends com.pulumi.resources.CustomResource {
      * The time the security zone was created. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -235,7 +235,7 @@ public class SecurityZone extends com.pulumi.resources.CustomResource {
      * The time the security zone was last updated. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

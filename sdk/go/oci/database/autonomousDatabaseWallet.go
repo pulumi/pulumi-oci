@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // ## Example Usage
@@ -197,6 +198,12 @@ func (i *AutonomousDatabaseWallet) ToAutonomousDatabaseWalletOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(AutonomousDatabaseWalletOutput)
 }
 
+func (i *AutonomousDatabaseWallet) ToOutput(ctx context.Context) pulumix.Output[*AutonomousDatabaseWallet] {
+	return pulumix.Output[*AutonomousDatabaseWallet]{
+		OutputState: i.ToAutonomousDatabaseWalletOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AutonomousDatabaseWalletArrayInput is an input type that accepts AutonomousDatabaseWalletArray and AutonomousDatabaseWalletArrayOutput values.
 // You can construct a concrete instance of `AutonomousDatabaseWalletArrayInput` via:
 //
@@ -220,6 +227,12 @@ func (i AutonomousDatabaseWalletArray) ToAutonomousDatabaseWalletArrayOutput() A
 
 func (i AutonomousDatabaseWalletArray) ToAutonomousDatabaseWalletArrayOutputWithContext(ctx context.Context) AutonomousDatabaseWalletArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AutonomousDatabaseWalletArrayOutput)
+}
+
+func (i AutonomousDatabaseWalletArray) ToOutput(ctx context.Context) pulumix.Output[[]*AutonomousDatabaseWallet] {
+	return pulumix.Output[[]*AutonomousDatabaseWallet]{
+		OutputState: i.ToAutonomousDatabaseWalletArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // AutonomousDatabaseWalletMapInput is an input type that accepts AutonomousDatabaseWalletMap and AutonomousDatabaseWalletMapOutput values.
@@ -247,6 +260,12 @@ func (i AutonomousDatabaseWalletMap) ToAutonomousDatabaseWalletMapOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(AutonomousDatabaseWalletMapOutput)
 }
 
+func (i AutonomousDatabaseWalletMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AutonomousDatabaseWallet] {
+	return pulumix.Output[map[string]*AutonomousDatabaseWallet]{
+		OutputState: i.ToAutonomousDatabaseWalletMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AutonomousDatabaseWalletOutput struct{ *pulumi.OutputState }
 
 func (AutonomousDatabaseWalletOutput) ElementType() reflect.Type {
@@ -259,6 +278,12 @@ func (o AutonomousDatabaseWalletOutput) ToAutonomousDatabaseWalletOutput() Auton
 
 func (o AutonomousDatabaseWalletOutput) ToAutonomousDatabaseWalletOutputWithContext(ctx context.Context) AutonomousDatabaseWalletOutput {
 	return o
+}
+
+func (o AutonomousDatabaseWalletOutput) ToOutput(ctx context.Context) pulumix.Output[*AutonomousDatabaseWallet] {
+	return pulumix.Output[*AutonomousDatabaseWallet]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -304,6 +329,12 @@ func (o AutonomousDatabaseWalletArrayOutput) ToAutonomousDatabaseWalletArrayOutp
 	return o
 }
 
+func (o AutonomousDatabaseWalletArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AutonomousDatabaseWallet] {
+	return pulumix.Output[[]*AutonomousDatabaseWallet]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AutonomousDatabaseWalletArrayOutput) Index(i pulumi.IntInput) AutonomousDatabaseWalletOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AutonomousDatabaseWallet {
 		return vs[0].([]*AutonomousDatabaseWallet)[vs[1].(int)]
@@ -322,6 +353,12 @@ func (o AutonomousDatabaseWalletMapOutput) ToAutonomousDatabaseWalletMapOutput()
 
 func (o AutonomousDatabaseWalletMapOutput) ToAutonomousDatabaseWalletMapOutputWithContext(ctx context.Context) AutonomousDatabaseWalletMapOutput {
 	return o
+}
+
+func (o AutonomousDatabaseWalletMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AutonomousDatabaseWallet] {
+	return pulumix.Output[map[string]*AutonomousDatabaseWallet]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AutonomousDatabaseWalletMapOutput) MapIndex(k pulumi.StringInput) AutonomousDatabaseWalletOutput {

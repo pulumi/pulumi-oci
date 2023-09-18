@@ -81,7 +81,7 @@ public class SensitiveDataModel extends com.pulumi.resources.CustomResource {
      * (Updatable) The application suite name identifying a collection of applications. It&#39;s useful only if maintaining a sensitive data model for a suite of applications.
      * 
      */
-    @Export(name="appSuiteName", type=String.class, parameters={})
+    @Export(name="appSuiteName", refs={String.class}, tree="[0]")
     private Output<String> appSuiteName;
 
     /**
@@ -95,7 +95,7 @@ public class SensitiveDataModel extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the compartment where the sensitive data model should be created.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -109,7 +109,7 @@ public class SensitiveDataModel extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -123,7 +123,7 @@ public class SensitiveDataModel extends com.pulumi.resources.CustomResource {
      * (Updatable) The description of the sensitive data model.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -137,7 +137,7 @@ public class SensitiveDataModel extends com.pulumi.resources.CustomResource {
      * (Updatable) The display name of the sensitive data model. The name does not have to be unique, and it&#39;s changeable.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -151,7 +151,7 @@ public class SensitiveDataModel extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -165,7 +165,7 @@ public class SensitiveDataModel extends com.pulumi.resources.CustomResource {
      * (Updatable) Indicates if data discovery jobs should identify potential application-level (non-dictionary) referential relationships between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined) relationships. This option helps identify application-level relationships that are not defined in the database dictionary, which in turn, helps identify additional sensitive columns and preserve referential integrity during data masking. It&#39;s disabled by default and should be used only if there is a need to identify application-level relationships.
      * 
      */
-    @Export(name="isAppDefinedRelationDiscoveryEnabled", type=Boolean.class, parameters={})
+    @Export(name="isAppDefinedRelationDiscoveryEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isAppDefinedRelationDiscoveryEnabled;
 
     /**
@@ -179,7 +179,7 @@ public class SensitiveDataModel extends com.pulumi.resources.CustomResource {
      * Indicates if all the schemas in the associated target database should be scanned by data discovery jobs. If it&#39;s set to true, the schemasForDiscovery attribute is ignored and all schemas are used for data discovery.
      * 
      */
-    @Export(name="isIncludeAllSchemas", type=Boolean.class, parameters={})
+    @Export(name="isIncludeAllSchemas", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isIncludeAllSchemas;
 
     /**
@@ -193,7 +193,7 @@ public class SensitiveDataModel extends com.pulumi.resources.CustomResource {
      * Indicates if all the existing sensitive types should be used by data discovery jobs. If it&#39;s set to true, the sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types are used for data discovery.
      * 
      */
-    @Export(name="isIncludeAllSensitiveTypes", type=Boolean.class, parameters={})
+    @Export(name="isIncludeAllSensitiveTypes", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isIncludeAllSensitiveTypes;
 
     /**
@@ -207,7 +207,7 @@ public class SensitiveDataModel extends com.pulumi.resources.CustomResource {
      * (Updatable) Indicates if data discovery jobs should collect and store sample data values for the discovered columns. Sample data helps review the discovered columns and ensure that they actually contain sensitive data. As it collects original data from the target database, it&#39;s disabled by default and should be used only if it&#39;s acceptable to store sample data in Data Safe&#39;s repository in Oracle Cloud. Note that sample data values are not collected for columns with the following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
      * 
      */
-    @Export(name="isSampleDataCollectionEnabled", type=Boolean.class, parameters={})
+    @Export(name="isSampleDataCollectionEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isSampleDataCollectionEnabled;
 
     /**
@@ -221,7 +221,7 @@ public class SensitiveDataModel extends com.pulumi.resources.CustomResource {
      * (Updatable) The schemas to be scanned by data discovery jobs.
      * 
      */
-    @Export(name="schemasForDiscoveries", type=List.class, parameters={String.class})
+    @Export(name="schemasForDiscoveries", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> schemasForDiscoveries;
 
     /**
@@ -235,7 +235,7 @@ public class SensitiveDataModel extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCIDs of the sensitive types to be used by data discovery jobs. If OCID of a sensitive category is provided, all its child sensitive types are used for data discovery.
      * 
      */
-    @Export(name="sensitiveTypeIdsForDiscoveries", type=List.class, parameters={String.class})
+    @Export(name="sensitiveTypeIdsForDiscoveries", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> sensitiveTypeIdsForDiscoveries;
 
     /**
@@ -249,7 +249,7 @@ public class SensitiveDataModel extends com.pulumi.resources.CustomResource {
      * The current state of the sensitive data model.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -263,7 +263,7 @@ public class SensitiveDataModel extends com.pulumi.resources.CustomResource {
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -280,7 +280,7 @@ public class SensitiveDataModel extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="targetId", type=String.class, parameters={})
+    @Export(name="targetId", refs={String.class}, tree="[0]")
     private Output<String> targetId;
 
     /**
@@ -297,7 +297,7 @@ public class SensitiveDataModel extends com.pulumi.resources.CustomResource {
      * The date and time the sensitive data model was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -311,7 +311,7 @@ public class SensitiveDataModel extends com.pulumi.resources.CustomResource {
      * The date and time the sensitive data model was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

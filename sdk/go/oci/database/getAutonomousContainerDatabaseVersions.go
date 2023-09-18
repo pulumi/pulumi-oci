@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Autonomous Container Database Versions in Oracle Cloud Infrastructure Database service.
@@ -110,6 +111,12 @@ func (o GetAutonomousContainerDatabaseVersionsResultOutput) ToGetAutonomousConta
 
 func (o GetAutonomousContainerDatabaseVersionsResultOutput) ToGetAutonomousContainerDatabaseVersionsResultOutputWithContext(ctx context.Context) GetAutonomousContainerDatabaseVersionsResultOutput {
 	return o
+}
+
+func (o GetAutonomousContainerDatabaseVersionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutonomousContainerDatabaseVersionsResult] {
+	return pulumix.Output[GetAutonomousContainerDatabaseVersionsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The list of autonomous_container_database_versions.

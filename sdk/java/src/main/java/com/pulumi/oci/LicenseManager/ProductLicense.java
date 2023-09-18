@@ -81,7 +81,7 @@ public class ProductLicense extends com.pulumi.resources.CustomResource {
      * The number of active license records associated with the product license.
      * 
      */
-    @Export(name="activeLicenseRecordCount", type=Integer.class, parameters={})
+    @Export(name="activeLicenseRecordCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> activeLicenseRecordCount;
 
     /**
@@ -95,7 +95,7 @@ public class ProductLicense extends com.pulumi.resources.CustomResource {
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where product licenses are created.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -109,7 +109,7 @@ public class ProductLicense extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -123,7 +123,7 @@ public class ProductLicense extends com.pulumi.resources.CustomResource {
      * Name of the product license.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -137,7 +137,7 @@ public class ProductLicense extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -151,7 +151,7 @@ public class ProductLicense extends com.pulumi.resources.CustomResource {
      * (Updatable) The image details associated with the product license.
      * 
      */
-    @Export(name="images", type=List.class, parameters={ProductLicenseImage.class})
+    @Export(name="images", refs={List.class,ProductLicenseImage.class}, tree="[0,1]")
     private Output<List<ProductLicenseImage>> images;
 
     /**
@@ -165,7 +165,7 @@ public class ProductLicense extends com.pulumi.resources.CustomResource {
      * Specifies whether or not the product license is oversubscribed.
      * 
      */
-    @Export(name="isOverSubscribed", type=Boolean.class, parameters={})
+    @Export(name="isOverSubscribed", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isOverSubscribed;
 
     /**
@@ -179,7 +179,7 @@ public class ProductLicense extends com.pulumi.resources.CustomResource {
      * Specifies if the license unit count is unlimited.
      * 
      */
-    @Export(name="isUnlimited", type=Boolean.class, parameters={})
+    @Export(name="isUnlimited", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isUnlimited;
 
     /**
@@ -193,7 +193,7 @@ public class ProductLicense extends com.pulumi.resources.CustomResource {
      * Specifies if the product license vendor is Oracle or a third party.
      * 
      */
-    @Export(name="isVendorOracle", type=Boolean.class, parameters={})
+    @Export(name="isVendorOracle", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isVendorOracle;
 
     /**
@@ -207,7 +207,7 @@ public class ProductLicense extends com.pulumi.resources.CustomResource {
      * The product license unit.
      * 
      */
-    @Export(name="licenseUnit", type=String.class, parameters={})
+    @Export(name="licenseUnit", refs={String.class}, tree="[0]")
     private Output<String> licenseUnit;
 
     /**
@@ -221,7 +221,7 @@ public class ProductLicense extends com.pulumi.resources.CustomResource {
      * The current product license state.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -235,7 +235,7 @@ public class ProductLicense extends com.pulumi.resources.CustomResource {
      * The current product license status.
      * 
      */
-    @Export(name="status", type=String.class, parameters={})
+    @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
@@ -249,7 +249,7 @@ public class ProductLicense extends com.pulumi.resources.CustomResource {
      * Status description for the current product license status.
      * 
      */
-    @Export(name="statusDescription", type=String.class, parameters={})
+    @Export(name="statusDescription", refs={String.class}, tree="[0]")
     private Output<String> statusDescription;
 
     /**
@@ -263,7 +263,7 @@ public class ProductLicense extends com.pulumi.resources.CustomResource {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -277,7 +277,7 @@ public class ProductLicense extends com.pulumi.resources.CustomResource {
      * The time the product license was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -291,7 +291,7 @@ public class ProductLicense extends com.pulumi.resources.CustomResource {
      * The time the product license was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -305,7 +305,7 @@ public class ProductLicense extends com.pulumi.resources.CustomResource {
      * The total number of licenses available for the product license, calculated by adding up all the license counts for active license records associated with the product license.
      * 
      */
-    @Export(name="totalActiveLicenseUnitCount", type=Integer.class, parameters={})
+    @Export(name="totalActiveLicenseUnitCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> totalActiveLicenseUnitCount;
 
     /**
@@ -319,7 +319,7 @@ public class ProductLicense extends com.pulumi.resources.CustomResource {
      * The number of license records associated with the product license.
      * 
      */
-    @Export(name="totalLicenseRecordCount", type=Integer.class, parameters={})
+    @Export(name="totalLicenseRecordCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> totalLicenseRecordCount;
 
     /**
@@ -333,7 +333,7 @@ public class ProductLicense extends com.pulumi.resources.CustomResource {
      * The number of license units consumed. Updated after each allocation run.
      * 
      */
-    @Export(name="totalLicenseUnitsConsumed", type=Double.class, parameters={})
+    @Export(name="totalLicenseUnitsConsumed", refs={Double.class}, tree="[0]")
     private Output<Double> totalLicenseUnitsConsumed;
 
     /**
@@ -350,7 +350,7 @@ public class ProductLicense extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="vendorName", type=String.class, parameters={})
+    @Export(name="vendorName", refs={String.class}, tree="[0]")
     private Output<String> vendorName;
 
     /**

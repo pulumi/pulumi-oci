@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Network Address List resource in Oracle Cloud Infrastructure Waf service.
@@ -123,6 +124,12 @@ func (o LookupNetworkAddressListResultOutput) ToLookupNetworkAddressListResultOu
 
 func (o LookupNetworkAddressListResultOutput) ToLookupNetworkAddressListResultOutputWithContext(ctx context.Context) LookupNetworkAddressListResultOutput {
 	return o
+}
+
+func (o LookupNetworkAddressListResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupNetworkAddressListResult] {
+	return pulumix.Output[LookupNetworkAddressListResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A private IP address or CIDR IP address range.

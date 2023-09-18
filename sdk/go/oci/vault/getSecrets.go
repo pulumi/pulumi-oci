@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Secrets in Oracle Cloud Infrastructure Vault service.
@@ -125,6 +126,12 @@ func (o GetSecretsResultOutput) ToGetSecretsResultOutput() GetSecretsResultOutpu
 
 func (o GetSecretsResultOutput) ToGetSecretsResultOutputWithContext(ctx context.Context) GetSecretsResultOutput {
 	return o
+}
+
+func (o GetSecretsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecretsResult] {
+	return pulumix.Output[GetSecretsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the compartment where you want to create the secret.

@@ -195,7 +195,7 @@ public class AppFirewallPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) Predefined actions for use in multiple different rules. Not all actions are supported in every module. Some actions terminate further execution of modules and rules in a module and some do not. Actions names must be unique within this array.
      * 
      */
-    @Export(name="actions", type=List.class, parameters={AppFirewallPolicyAction.class})
+    @Export(name="actions", refs={List.class,AppFirewallPolicyAction.class}, tree="[0,1]")
     private Output<List<AppFirewallPolicyAction>> actions;
 
     /**
@@ -209,7 +209,7 @@ public class AppFirewallPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -223,7 +223,7 @@ public class AppFirewallPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -237,7 +237,7 @@ public class AppFirewallPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) WebAppFirewallPolicy display name, can be renamed.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -251,7 +251,7 @@ public class AppFirewallPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -265,7 +265,7 @@ public class AppFirewallPolicy extends com.pulumi.resources.CustomResource {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -279,7 +279,7 @@ public class AppFirewallPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) Module that allows inspection of HTTP request properties and to return a defined HTTP response. In this module, rules with the name &#39;Default Action&#39; are not allowed, since this name is reserved for default action logs.
      * 
      */
-    @Export(name="requestAccessControl", type=AppFirewallPolicyRequestAccessControl.class, parameters={})
+    @Export(name="requestAccessControl", refs={AppFirewallPolicyRequestAccessControl.class}, tree="[0]")
     private Output<AppFirewallPolicyRequestAccessControl> requestAccessControl;
 
     /**
@@ -293,7 +293,7 @@ public class AppFirewallPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) Module that allows to enable OCI-managed protection capabilities for incoming HTTP requests.
      * 
      */
-    @Export(name="requestProtection", type=AppFirewallPolicyRequestProtection.class, parameters={})
+    @Export(name="requestProtection", refs={AppFirewallPolicyRequestProtection.class}, tree="[0]")
     private Output<AppFirewallPolicyRequestProtection> requestProtection;
 
     /**
@@ -307,7 +307,7 @@ public class AppFirewallPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) Module that allows inspection of HTTP connection properties and to limit requests frequency for a given key.
      * 
      */
-    @Export(name="requestRateLimiting", type=AppFirewallPolicyRequestRateLimiting.class, parameters={})
+    @Export(name="requestRateLimiting", refs={AppFirewallPolicyRequestRateLimiting.class}, tree="[0]")
     private Output<AppFirewallPolicyRequestRateLimiting> requestRateLimiting;
 
     /**
@@ -321,7 +321,7 @@ public class AppFirewallPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) Module that allows inspection of HTTP response properties and to return a defined HTTP response.
      * 
      */
-    @Export(name="responseAccessControl", type=AppFirewallPolicyResponseAccessControl.class, parameters={})
+    @Export(name="responseAccessControl", refs={AppFirewallPolicyResponseAccessControl.class}, tree="[0]")
     private Output<AppFirewallPolicyResponseAccessControl> responseAccessControl;
 
     /**
@@ -335,7 +335,7 @@ public class AppFirewallPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) Module that allows to enable OCI-managed protection capabilities for HTTP responses.
      * 
      */
-    @Export(name="responseProtection", type=AppFirewallPolicyResponseProtection.class, parameters={})
+    @Export(name="responseProtection", refs={AppFirewallPolicyResponseProtection.class}, tree="[0]")
     private Output<AppFirewallPolicyResponseProtection> responseProtection;
 
     /**
@@ -349,7 +349,7 @@ public class AppFirewallPolicy extends com.pulumi.resources.CustomResource {
      * The current state of the WebAppFirewallPolicy.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -366,7 +366,7 @@ public class AppFirewallPolicy extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -383,7 +383,7 @@ public class AppFirewallPolicy extends com.pulumi.resources.CustomResource {
      * The time the WebAppFirewallPolicy was created. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -397,7 +397,7 @@ public class AppFirewallPolicy extends com.pulumi.resources.CustomResource {
      * The time the WebAppFirewallPolicy was updated. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

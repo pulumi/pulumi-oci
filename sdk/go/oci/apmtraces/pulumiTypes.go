@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -48,6 +49,12 @@ func (i GetQueryQuickPicksFilterArgs) ToGetQueryQuickPicksFilterOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetQueryQuickPicksFilterOutput)
 }
 
+func (i GetQueryQuickPicksFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetQueryQuickPicksFilter] {
+	return pulumix.Output[GetQueryQuickPicksFilter]{
+		OutputState: i.ToGetQueryQuickPicksFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetQueryQuickPicksFilterArrayInput is an input type that accepts GetQueryQuickPicksFilterArray and GetQueryQuickPicksFilterArrayOutput values.
 // You can construct a concrete instance of `GetQueryQuickPicksFilterArrayInput` via:
 //
@@ -73,6 +80,12 @@ func (i GetQueryQuickPicksFilterArray) ToGetQueryQuickPicksFilterArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetQueryQuickPicksFilterArrayOutput)
 }
 
+func (i GetQueryQuickPicksFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetQueryQuickPicksFilter] {
+	return pulumix.Output[[]GetQueryQuickPicksFilter]{
+		OutputState: i.ToGetQueryQuickPicksFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetQueryQuickPicksFilterOutput struct{ *pulumi.OutputState }
 
 func (GetQueryQuickPicksFilterOutput) ElementType() reflect.Type {
@@ -85,6 +98,12 @@ func (o GetQueryQuickPicksFilterOutput) ToGetQueryQuickPicksFilterOutput() GetQu
 
 func (o GetQueryQuickPicksFilterOutput) ToGetQueryQuickPicksFilterOutputWithContext(ctx context.Context) GetQueryQuickPicksFilterOutput {
 	return o
+}
+
+func (o GetQueryQuickPicksFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetQueryQuickPicksFilter] {
+	return pulumix.Output[GetQueryQuickPicksFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetQueryQuickPicksFilterOutput) Name() pulumi.StringOutput {
@@ -111,6 +130,12 @@ func (o GetQueryQuickPicksFilterArrayOutput) ToGetQueryQuickPicksFilterArrayOutp
 
 func (o GetQueryQuickPicksFilterArrayOutput) ToGetQueryQuickPicksFilterArrayOutputWithContext(ctx context.Context) GetQueryQuickPicksFilterArrayOutput {
 	return o
+}
+
+func (o GetQueryQuickPicksFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetQueryQuickPicksFilter] {
+	return pulumix.Output[[]GetQueryQuickPicksFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetQueryQuickPicksFilterArrayOutput) Index(i pulumi.IntInput) GetQueryQuickPicksFilterOutput {
@@ -156,6 +181,12 @@ func (i GetQueryQuickPicksQuickPickArgs) ToGetQueryQuickPicksQuickPickOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetQueryQuickPicksQuickPickOutput)
 }
 
+func (i GetQueryQuickPicksQuickPickArgs) ToOutput(ctx context.Context) pulumix.Output[GetQueryQuickPicksQuickPick] {
+	return pulumix.Output[GetQueryQuickPicksQuickPick]{
+		OutputState: i.ToGetQueryQuickPicksQuickPickOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetQueryQuickPicksQuickPickArrayInput is an input type that accepts GetQueryQuickPicksQuickPickArray and GetQueryQuickPicksQuickPickArrayOutput values.
 // You can construct a concrete instance of `GetQueryQuickPicksQuickPickArrayInput` via:
 //
@@ -181,6 +212,12 @@ func (i GetQueryQuickPicksQuickPickArray) ToGetQueryQuickPicksQuickPickArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetQueryQuickPicksQuickPickArrayOutput)
 }
 
+func (i GetQueryQuickPicksQuickPickArray) ToOutput(ctx context.Context) pulumix.Output[[]GetQueryQuickPicksQuickPick] {
+	return pulumix.Output[[]GetQueryQuickPicksQuickPick]{
+		OutputState: i.ToGetQueryQuickPicksQuickPickArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetQueryQuickPicksQuickPickOutput struct{ *pulumi.OutputState }
 
 func (GetQueryQuickPicksQuickPickOutput) ElementType() reflect.Type {
@@ -193,6 +230,12 @@ func (o GetQueryQuickPicksQuickPickOutput) ToGetQueryQuickPicksQuickPickOutput()
 
 func (o GetQueryQuickPicksQuickPickOutput) ToGetQueryQuickPicksQuickPickOutputWithContext(ctx context.Context) GetQueryQuickPicksQuickPickOutput {
 	return o
+}
+
+func (o GetQueryQuickPicksQuickPickOutput) ToOutput(ctx context.Context) pulumix.Output[GetQueryQuickPicksQuickPick] {
+	return pulumix.Output[GetQueryQuickPicksQuickPick]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Quick Pick name for the query.
@@ -217,6 +260,12 @@ func (o GetQueryQuickPicksQuickPickArrayOutput) ToGetQueryQuickPicksQuickPickArr
 
 func (o GetQueryQuickPicksQuickPickArrayOutput) ToGetQueryQuickPicksQuickPickArrayOutputWithContext(ctx context.Context) GetQueryQuickPicksQuickPickArrayOutput {
 	return o
+}
+
+func (o GetQueryQuickPicksQuickPickArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetQueryQuickPicksQuickPick] {
+	return pulumix.Output[[]GetQueryQuickPicksQuickPick]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetQueryQuickPicksQuickPickArrayOutput) Index(i pulumi.IntInput) GetQueryQuickPicksQuickPickOutput {
@@ -262,6 +311,12 @@ func (i GetTraceAggregatedSnapshotDataDetailArgs) ToGetTraceAggregatedSnapshotDa
 	return pulumi.ToOutputWithContext(ctx, i).(GetTraceAggregatedSnapshotDataDetailOutput)
 }
 
+func (i GetTraceAggregatedSnapshotDataDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetTraceAggregatedSnapshotDataDetail] {
+	return pulumix.Output[GetTraceAggregatedSnapshotDataDetail]{
+		OutputState: i.ToGetTraceAggregatedSnapshotDataDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTraceAggregatedSnapshotDataDetailArrayInput is an input type that accepts GetTraceAggregatedSnapshotDataDetailArray and GetTraceAggregatedSnapshotDataDetailArrayOutput values.
 // You can construct a concrete instance of `GetTraceAggregatedSnapshotDataDetailArrayInput` via:
 //
@@ -287,6 +342,12 @@ func (i GetTraceAggregatedSnapshotDataDetailArray) ToGetTraceAggregatedSnapshotD
 	return pulumi.ToOutputWithContext(ctx, i).(GetTraceAggregatedSnapshotDataDetailArrayOutput)
 }
 
+func (i GetTraceAggregatedSnapshotDataDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTraceAggregatedSnapshotDataDetail] {
+	return pulumix.Output[[]GetTraceAggregatedSnapshotDataDetail]{
+		OutputState: i.ToGetTraceAggregatedSnapshotDataDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTraceAggregatedSnapshotDataDetailOutput struct{ *pulumi.OutputState }
 
 func (GetTraceAggregatedSnapshotDataDetailOutput) ElementType() reflect.Type {
@@ -299,6 +360,12 @@ func (o GetTraceAggregatedSnapshotDataDetailOutput) ToGetTraceAggregatedSnapshot
 
 func (o GetTraceAggregatedSnapshotDataDetailOutput) ToGetTraceAggregatedSnapshotDataDetailOutputWithContext(ctx context.Context) GetTraceAggregatedSnapshotDataDetailOutput {
 	return o
+}
+
+func (o GetTraceAggregatedSnapshotDataDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetTraceAggregatedSnapshotDataDetail] {
+	return pulumix.Output[GetTraceAggregatedSnapshotDataDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Name of the property.
@@ -323,6 +390,12 @@ func (o GetTraceAggregatedSnapshotDataDetailArrayOutput) ToGetTraceAggregatedSna
 
 func (o GetTraceAggregatedSnapshotDataDetailArrayOutput) ToGetTraceAggregatedSnapshotDataDetailArrayOutputWithContext(ctx context.Context) GetTraceAggregatedSnapshotDataDetailArrayOutput {
 	return o
+}
+
+func (o GetTraceAggregatedSnapshotDataDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTraceAggregatedSnapshotDataDetail] {
+	return pulumix.Output[[]GetTraceAggregatedSnapshotDataDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTraceAggregatedSnapshotDataDetailArrayOutput) Index(i pulumi.IntInput) GetTraceAggregatedSnapshotDataDetailOutput {
@@ -372,6 +445,12 @@ func (i GetTraceServiceSummaryArgs) ToGetTraceServiceSummaryOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetTraceServiceSummaryOutput)
 }
 
+func (i GetTraceServiceSummaryArgs) ToOutput(ctx context.Context) pulumix.Output[GetTraceServiceSummary] {
+	return pulumix.Output[GetTraceServiceSummary]{
+		OutputState: i.ToGetTraceServiceSummaryOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTraceServiceSummaryArrayInput is an input type that accepts GetTraceServiceSummaryArray and GetTraceServiceSummaryArrayOutput values.
 // You can construct a concrete instance of `GetTraceServiceSummaryArrayInput` via:
 //
@@ -397,6 +476,12 @@ func (i GetTraceServiceSummaryArray) ToGetTraceServiceSummaryArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetTraceServiceSummaryArrayOutput)
 }
 
+func (i GetTraceServiceSummaryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTraceServiceSummary] {
+	return pulumix.Output[[]GetTraceServiceSummary]{
+		OutputState: i.ToGetTraceServiceSummaryArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTraceServiceSummaryOutput struct{ *pulumi.OutputState }
 
 func (GetTraceServiceSummaryOutput) ElementType() reflect.Type {
@@ -409,6 +494,12 @@ func (o GetTraceServiceSummaryOutput) ToGetTraceServiceSummaryOutput() GetTraceS
 
 func (o GetTraceServiceSummaryOutput) ToGetTraceServiceSummaryOutputWithContext(ctx context.Context) GetTraceServiceSummaryOutput {
 	return o
+}
+
+func (o GetTraceServiceSummaryOutput) ToOutput(ctx context.Context) pulumix.Output[GetTraceServiceSummary] {
+	return pulumix.Output[GetTraceServiceSummary]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Number of spans with errors for serviceName in the trace.
@@ -438,6 +529,12 @@ func (o GetTraceServiceSummaryArrayOutput) ToGetTraceServiceSummaryArrayOutput()
 
 func (o GetTraceServiceSummaryArrayOutput) ToGetTraceServiceSummaryArrayOutputWithContext(ctx context.Context) GetTraceServiceSummaryArrayOutput {
 	return o
+}
+
+func (o GetTraceServiceSummaryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTraceServiceSummary] {
+	return pulumix.Output[[]GetTraceServiceSummary]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTraceServiceSummaryArrayOutput) Index(i pulumi.IntInput) GetTraceServiceSummaryOutput {
@@ -483,6 +580,12 @@ func (i GetTraceSnapshotDataTraceSnapshotDetailArgs) ToGetTraceSnapshotDataTrace
 	return pulumi.ToOutputWithContext(ctx, i).(GetTraceSnapshotDataTraceSnapshotDetailOutput)
 }
 
+func (i GetTraceSnapshotDataTraceSnapshotDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetTraceSnapshotDataTraceSnapshotDetail] {
+	return pulumix.Output[GetTraceSnapshotDataTraceSnapshotDetail]{
+		OutputState: i.ToGetTraceSnapshotDataTraceSnapshotDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTraceSnapshotDataTraceSnapshotDetailArrayInput is an input type that accepts GetTraceSnapshotDataTraceSnapshotDetailArray and GetTraceSnapshotDataTraceSnapshotDetailArrayOutput values.
 // You can construct a concrete instance of `GetTraceSnapshotDataTraceSnapshotDetailArrayInput` via:
 //
@@ -508,6 +611,12 @@ func (i GetTraceSnapshotDataTraceSnapshotDetailArray) ToGetTraceSnapshotDataTrac
 	return pulumi.ToOutputWithContext(ctx, i).(GetTraceSnapshotDataTraceSnapshotDetailArrayOutput)
 }
 
+func (i GetTraceSnapshotDataTraceSnapshotDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTraceSnapshotDataTraceSnapshotDetail] {
+	return pulumix.Output[[]GetTraceSnapshotDataTraceSnapshotDetail]{
+		OutputState: i.ToGetTraceSnapshotDataTraceSnapshotDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTraceSnapshotDataTraceSnapshotDetailOutput struct{ *pulumi.OutputState }
 
 func (GetTraceSnapshotDataTraceSnapshotDetailOutput) ElementType() reflect.Type {
@@ -520,6 +629,12 @@ func (o GetTraceSnapshotDataTraceSnapshotDetailOutput) ToGetTraceSnapshotDataTra
 
 func (o GetTraceSnapshotDataTraceSnapshotDetailOutput) ToGetTraceSnapshotDataTraceSnapshotDetailOutputWithContext(ctx context.Context) GetTraceSnapshotDataTraceSnapshotDetailOutput {
 	return o
+}
+
+func (o GetTraceSnapshotDataTraceSnapshotDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetTraceSnapshotDataTraceSnapshotDetail] {
+	return pulumix.Output[GetTraceSnapshotDataTraceSnapshotDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Name of the property.
@@ -544,6 +659,12 @@ func (o GetTraceSnapshotDataTraceSnapshotDetailArrayOutput) ToGetTraceSnapshotDa
 
 func (o GetTraceSnapshotDataTraceSnapshotDetailArrayOutput) ToGetTraceSnapshotDataTraceSnapshotDetailArrayOutputWithContext(ctx context.Context) GetTraceSnapshotDataTraceSnapshotDetailArrayOutput {
 	return o
+}
+
+func (o GetTraceSnapshotDataTraceSnapshotDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTraceSnapshotDataTraceSnapshotDetail] {
+	return pulumix.Output[[]GetTraceSnapshotDataTraceSnapshotDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTraceSnapshotDataTraceSnapshotDetailArrayOutput) Index(i pulumi.IntInput) GetTraceSnapshotDataTraceSnapshotDetailOutput {
@@ -629,6 +750,12 @@ func (i GetTraceSpanArgs) ToGetTraceSpanOutputWithContext(ctx context.Context) G
 	return pulumi.ToOutputWithContext(ctx, i).(GetTraceSpanOutput)
 }
 
+func (i GetTraceSpanArgs) ToOutput(ctx context.Context) pulumix.Output[GetTraceSpan] {
+	return pulumix.Output[GetTraceSpan]{
+		OutputState: i.ToGetTraceSpanOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTraceSpanArrayInput is an input type that accepts GetTraceSpanArray and GetTraceSpanArrayOutput values.
 // You can construct a concrete instance of `GetTraceSpanArrayInput` via:
 //
@@ -654,6 +781,12 @@ func (i GetTraceSpanArray) ToGetTraceSpanArrayOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetTraceSpanArrayOutput)
 }
 
+func (i GetTraceSpanArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTraceSpan] {
+	return pulumix.Output[[]GetTraceSpan]{
+		OutputState: i.ToGetTraceSpanArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTraceSpanOutput struct{ *pulumi.OutputState }
 
 func (GetTraceSpanOutput) ElementType() reflect.Type {
@@ -666,6 +799,12 @@ func (o GetTraceSpanOutput) ToGetTraceSpanOutput() GetTraceSpanOutput {
 
 func (o GetTraceSpanOutput) ToGetTraceSpanOutputWithContext(ctx context.Context) GetTraceSpanOutput {
 	return o
+}
+
+func (o GetTraceSpanOutput) ToOutput(ctx context.Context) pulumix.Output[GetTraceSpan] {
+	return pulumix.Output[GetTraceSpan]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Total span duration in milliseconds.
@@ -742,6 +881,12 @@ func (o GetTraceSpanArrayOutput) ToGetTraceSpanArrayOutputWithContext(ctx contex
 	return o
 }
 
+func (o GetTraceSpanArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTraceSpan] {
+	return pulumix.Output[[]GetTraceSpan]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetTraceSpanArrayOutput) Index(i pulumi.IntInput) GetTraceSpanOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTraceSpan {
 		return vs[0].([]GetTraceSpan)[vs[1].(int)]
@@ -785,6 +930,12 @@ func (i GetTraceSpanLogArgs) ToGetTraceSpanLogOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetTraceSpanLogOutput)
 }
 
+func (i GetTraceSpanLogArgs) ToOutput(ctx context.Context) pulumix.Output[GetTraceSpanLog] {
+	return pulumix.Output[GetTraceSpanLog]{
+		OutputState: i.ToGetTraceSpanLogOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTraceSpanLogArrayInput is an input type that accepts GetTraceSpanLogArray and GetTraceSpanLogArrayOutput values.
 // You can construct a concrete instance of `GetTraceSpanLogArrayInput` via:
 //
@@ -810,6 +961,12 @@ func (i GetTraceSpanLogArray) ToGetTraceSpanLogArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetTraceSpanLogArrayOutput)
 }
 
+func (i GetTraceSpanLogArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTraceSpanLog] {
+	return pulumix.Output[[]GetTraceSpanLog]{
+		OutputState: i.ToGetTraceSpanLogArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTraceSpanLogOutput struct{ *pulumi.OutputState }
 
 func (GetTraceSpanLogOutput) ElementType() reflect.Type {
@@ -822,6 +979,12 @@ func (o GetTraceSpanLogOutput) ToGetTraceSpanLogOutput() GetTraceSpanLogOutput {
 
 func (o GetTraceSpanLogOutput) ToGetTraceSpanLogOutputWithContext(ctx context.Context) GetTraceSpanLogOutput {
 	return o
+}
+
+func (o GetTraceSpanLogOutput) ToOutput(ctx context.Context) pulumix.Output[GetTraceSpanLog] {
+	return pulumix.Output[GetTraceSpanLog]{
+		OutputState: o.OutputState,
+	}
 }
 
 // List of logs associated with the span at the given timestamp.
@@ -846,6 +1009,12 @@ func (o GetTraceSpanLogArrayOutput) ToGetTraceSpanLogArrayOutput() GetTraceSpanL
 
 func (o GetTraceSpanLogArrayOutput) ToGetTraceSpanLogArrayOutputWithContext(ctx context.Context) GetTraceSpanLogArrayOutput {
 	return o
+}
+
+func (o GetTraceSpanLogArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTraceSpanLog] {
+	return pulumix.Output[[]GetTraceSpanLog]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTraceSpanLogArrayOutput) Index(i pulumi.IntInput) GetTraceSpanLogOutput {
@@ -891,6 +1060,12 @@ func (i GetTraceSpanLogSpanLogArgs) ToGetTraceSpanLogSpanLogOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetTraceSpanLogSpanLogOutput)
 }
 
+func (i GetTraceSpanLogSpanLogArgs) ToOutput(ctx context.Context) pulumix.Output[GetTraceSpanLogSpanLog] {
+	return pulumix.Output[GetTraceSpanLogSpanLog]{
+		OutputState: i.ToGetTraceSpanLogSpanLogOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTraceSpanLogSpanLogArrayInput is an input type that accepts GetTraceSpanLogSpanLogArray and GetTraceSpanLogSpanLogArrayOutput values.
 // You can construct a concrete instance of `GetTraceSpanLogSpanLogArrayInput` via:
 //
@@ -916,6 +1091,12 @@ func (i GetTraceSpanLogSpanLogArray) ToGetTraceSpanLogSpanLogArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetTraceSpanLogSpanLogArrayOutput)
 }
 
+func (i GetTraceSpanLogSpanLogArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTraceSpanLogSpanLog] {
+	return pulumix.Output[[]GetTraceSpanLogSpanLog]{
+		OutputState: i.ToGetTraceSpanLogSpanLogArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTraceSpanLogSpanLogOutput struct{ *pulumi.OutputState }
 
 func (GetTraceSpanLogSpanLogOutput) ElementType() reflect.Type {
@@ -928,6 +1109,12 @@ func (o GetTraceSpanLogSpanLogOutput) ToGetTraceSpanLogSpanLogOutput() GetTraceS
 
 func (o GetTraceSpanLogSpanLogOutput) ToGetTraceSpanLogSpanLogOutputWithContext(ctx context.Context) GetTraceSpanLogSpanLogOutput {
 	return o
+}
+
+func (o GetTraceSpanLogSpanLogOutput) ToOutput(ctx context.Context) pulumix.Output[GetTraceSpanLogSpanLog] {
+	return pulumix.Output[GetTraceSpanLogSpanLog]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Key that specifies the log name.
@@ -952,6 +1139,12 @@ func (o GetTraceSpanLogSpanLogArrayOutput) ToGetTraceSpanLogSpanLogArrayOutput()
 
 func (o GetTraceSpanLogSpanLogArrayOutput) ToGetTraceSpanLogSpanLogArrayOutputWithContext(ctx context.Context) GetTraceSpanLogSpanLogArrayOutput {
 	return o
+}
+
+func (o GetTraceSpanLogSpanLogArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTraceSpanLogSpanLog] {
+	return pulumix.Output[[]GetTraceSpanLogSpanLog]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTraceSpanLogSpanLogArrayOutput) Index(i pulumi.IntInput) GetTraceSpanLogSpanLogOutput {
@@ -1053,6 +1246,12 @@ func (i GetTraceSpanSummaryArgs) ToGetTraceSpanSummaryOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetTraceSpanSummaryOutput)
 }
 
+func (i GetTraceSpanSummaryArgs) ToOutput(ctx context.Context) pulumix.Output[GetTraceSpanSummary] {
+	return pulumix.Output[GetTraceSpanSummary]{
+		OutputState: i.ToGetTraceSpanSummaryOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTraceSpanSummaryArrayInput is an input type that accepts GetTraceSpanSummaryArray and GetTraceSpanSummaryArrayOutput values.
 // You can construct a concrete instance of `GetTraceSpanSummaryArrayInput` via:
 //
@@ -1078,6 +1277,12 @@ func (i GetTraceSpanSummaryArray) ToGetTraceSpanSummaryArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetTraceSpanSummaryArrayOutput)
 }
 
+func (i GetTraceSpanSummaryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTraceSpanSummary] {
+	return pulumix.Output[[]GetTraceSpanSummary]{
+		OutputState: i.ToGetTraceSpanSummaryArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTraceSpanSummaryOutput struct{ *pulumi.OutputState }
 
 func (GetTraceSpanSummaryOutput) ElementType() reflect.Type {
@@ -1090,6 +1295,12 @@ func (o GetTraceSpanSummaryOutput) ToGetTraceSpanSummaryOutput() GetTraceSpanSum
 
 func (o GetTraceSpanSummaryOutput) ToGetTraceSpanSummaryOutputWithContext(ctx context.Context) GetTraceSpanSummaryOutput {
 	return o
+}
+
+func (o GetTraceSpanSummaryOutput) ToOutput(ctx context.Context) pulumix.Output[GetTraceSpanSummary] {
+	return pulumix.Output[GetTraceSpanSummary]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The number of spans with errors that have been processed by the system for the trace. Note that the number of spans with errors will be less than or equal to the total number of spans in the trace.
@@ -1186,6 +1397,12 @@ func (o GetTraceSpanSummaryArrayOutput) ToGetTraceSpanSummaryArrayOutputWithCont
 	return o
 }
 
+func (o GetTraceSpanSummaryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTraceSpanSummary] {
+	return pulumix.Output[[]GetTraceSpanSummary]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetTraceSpanSummaryArrayOutput) Index(i pulumi.IntInput) GetTraceSpanSummaryOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTraceSpanSummary {
 		return vs[0].([]GetTraceSpanSummary)[vs[1].(int)]
@@ -1233,6 +1450,12 @@ func (i GetTraceSpanSummaryServiceSummaryArgs) ToGetTraceSpanSummaryServiceSumma
 	return pulumi.ToOutputWithContext(ctx, i).(GetTraceSpanSummaryServiceSummaryOutput)
 }
 
+func (i GetTraceSpanSummaryServiceSummaryArgs) ToOutput(ctx context.Context) pulumix.Output[GetTraceSpanSummaryServiceSummary] {
+	return pulumix.Output[GetTraceSpanSummaryServiceSummary]{
+		OutputState: i.ToGetTraceSpanSummaryServiceSummaryOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTraceSpanSummaryServiceSummaryArrayInput is an input type that accepts GetTraceSpanSummaryServiceSummaryArray and GetTraceSpanSummaryServiceSummaryArrayOutput values.
 // You can construct a concrete instance of `GetTraceSpanSummaryServiceSummaryArrayInput` via:
 //
@@ -1258,6 +1481,12 @@ func (i GetTraceSpanSummaryServiceSummaryArray) ToGetTraceSpanSummaryServiceSumm
 	return pulumi.ToOutputWithContext(ctx, i).(GetTraceSpanSummaryServiceSummaryArrayOutput)
 }
 
+func (i GetTraceSpanSummaryServiceSummaryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTraceSpanSummaryServiceSummary] {
+	return pulumix.Output[[]GetTraceSpanSummaryServiceSummary]{
+		OutputState: i.ToGetTraceSpanSummaryServiceSummaryArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTraceSpanSummaryServiceSummaryOutput struct{ *pulumi.OutputState }
 
 func (GetTraceSpanSummaryServiceSummaryOutput) ElementType() reflect.Type {
@@ -1270,6 +1499,12 @@ func (o GetTraceSpanSummaryServiceSummaryOutput) ToGetTraceSpanSummaryServiceSum
 
 func (o GetTraceSpanSummaryServiceSummaryOutput) ToGetTraceSpanSummaryServiceSummaryOutputWithContext(ctx context.Context) GetTraceSpanSummaryServiceSummaryOutput {
 	return o
+}
+
+func (o GetTraceSpanSummaryServiceSummaryOutput) ToOutput(ctx context.Context) pulumix.Output[GetTraceSpanSummaryServiceSummary] {
+	return pulumix.Output[GetTraceSpanSummaryServiceSummary]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Number of spans with errors for serviceName in the trace.
@@ -1299,6 +1534,12 @@ func (o GetTraceSpanSummaryServiceSummaryArrayOutput) ToGetTraceSpanSummaryServi
 
 func (o GetTraceSpanSummaryServiceSummaryArrayOutput) ToGetTraceSpanSummaryServiceSummaryArrayOutputWithContext(ctx context.Context) GetTraceSpanSummaryServiceSummaryArrayOutput {
 	return o
+}
+
+func (o GetTraceSpanSummaryServiceSummaryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTraceSpanSummaryServiceSummary] {
+	return pulumix.Output[[]GetTraceSpanSummaryServiceSummary]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTraceSpanSummaryServiceSummaryArrayOutput) Index(i pulumi.IntInput) GetTraceSpanSummaryServiceSummaryOutput {
@@ -1344,6 +1585,12 @@ func (i GetTraceSpanTagArgs) ToGetTraceSpanTagOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetTraceSpanTagOutput)
 }
 
+func (i GetTraceSpanTagArgs) ToOutput(ctx context.Context) pulumix.Output[GetTraceSpanTag] {
+	return pulumix.Output[GetTraceSpanTag]{
+		OutputState: i.ToGetTraceSpanTagOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTraceSpanTagArrayInput is an input type that accepts GetTraceSpanTagArray and GetTraceSpanTagArrayOutput values.
 // You can construct a concrete instance of `GetTraceSpanTagArrayInput` via:
 //
@@ -1369,6 +1616,12 @@ func (i GetTraceSpanTagArray) ToGetTraceSpanTagArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetTraceSpanTagArrayOutput)
 }
 
+func (i GetTraceSpanTagArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTraceSpanTag] {
+	return pulumix.Output[[]GetTraceSpanTag]{
+		OutputState: i.ToGetTraceSpanTagArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTraceSpanTagOutput struct{ *pulumi.OutputState }
 
 func (GetTraceSpanTagOutput) ElementType() reflect.Type {
@@ -1381,6 +1634,12 @@ func (o GetTraceSpanTagOutput) ToGetTraceSpanTagOutput() GetTraceSpanTagOutput {
 
 func (o GetTraceSpanTagOutput) ToGetTraceSpanTagOutputWithContext(ctx context.Context) GetTraceSpanTagOutput {
 	return o
+}
+
+func (o GetTraceSpanTagOutput) ToOutput(ctx context.Context) pulumix.Output[GetTraceSpanTag] {
+	return pulumix.Output[GetTraceSpanTag]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Key that specifies the tag name.
@@ -1405,6 +1664,12 @@ func (o GetTraceSpanTagArrayOutput) ToGetTraceSpanTagArrayOutput() GetTraceSpanT
 
 func (o GetTraceSpanTagArrayOutput) ToGetTraceSpanTagArrayOutputWithContext(ctx context.Context) GetTraceSpanTagArrayOutput {
 	return o
+}
+
+func (o GetTraceSpanTagArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTraceSpanTag] {
+	return pulumix.Output[[]GetTraceSpanTag]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTraceSpanTagArrayOutput) Index(i pulumi.IntInput) GetTraceSpanTagOutput {

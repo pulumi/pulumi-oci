@@ -79,7 +79,7 @@ public class ExternalDbSystemDiscovery extends com.pulumi.resources.CustomResour
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system discovery.
      * 
      */
-    @Export(name="agentId", type=String.class, parameters={})
+    @Export(name="agentId", refs={String.class}, tree="[0]")
     private Output<String> agentId;
 
     /**
@@ -93,7 +93,7 @@ public class ExternalDbSystemDiscovery extends com.pulumi.resources.CustomResour
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -107,7 +107,7 @@ public class ExternalDbSystemDiscovery extends com.pulumi.resources.CustomResour
      * The list of DB system components that were found in the DB system discovery.
      * 
      */
-    @Export(name="discoveredComponents", type=List.class, parameters={ExternalDbSystemDiscoveryDiscoveredComponent.class})
+    @Export(name="discoveredComponents", refs={List.class,ExternalDbSystemDiscoveryDiscoveredComponent.class}, tree="[0,1]")
     private Output<List<ExternalDbSystemDiscoveryDiscoveredComponent>> discoveredComponents;
 
     /**
@@ -121,7 +121,7 @@ public class ExternalDbSystemDiscovery extends com.pulumi.resources.CustomResour
      * (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -131,7 +131,7 @@ public class ExternalDbSystemDiscovery extends com.pulumi.resources.CustomResour
     public Output<String> displayName() {
         return this.displayName;
     }
-    @Export(name="externalDbSystemDiscoveryId", type=String.class, parameters={})
+    @Export(name="externalDbSystemDiscoveryId", refs={String.class}, tree="[0]")
     private Output<String> externalDbSystemDiscoveryId;
 
     public Output<String> externalDbSystemDiscoveryId() {
@@ -141,7 +141,7 @@ public class ExternalDbSystemDiscovery extends com.pulumi.resources.CustomResour
      * The directory in which Oracle Grid Infrastructure is installed.
      * 
      */
-    @Export(name="gridHome", type=String.class, parameters={})
+    @Export(name="gridHome", refs={String.class}, tree="[0]")
     private Output<String> gridHome;
 
     /**
@@ -155,7 +155,7 @@ public class ExternalDbSystemDiscovery extends com.pulumi.resources.CustomResour
      * Additional information about the current lifecycle state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -169,7 +169,7 @@ public class ExternalDbSystemDiscovery extends com.pulumi.resources.CustomResour
      * (Updatable)
      * 
      */
-    @Export(name="patchOperations", type=List.class, parameters={ExternalDbSystemDiscoveryPatchOperation.class})
+    @Export(name="patchOperations", refs={List.class,ExternalDbSystemDiscoveryPatchOperation.class}, tree="[0,1]")
     private Output</* @Nullable */ List<ExternalDbSystemDiscoveryPatchOperation>> patchOperations;
 
     /**
@@ -183,7 +183,7 @@ public class ExternalDbSystemDiscovery extends com.pulumi.resources.CustomResour
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Oracle Cloud Infrastructure resource matching the discovered DB system.
      * 
      */
-    @Export(name="resourceId", type=String.class, parameters={})
+    @Export(name="resourceId", refs={String.class}, tree="[0]")
     private Output<String> resourceId;
 
     /**
@@ -197,7 +197,7 @@ public class ExternalDbSystemDiscovery extends com.pulumi.resources.CustomResour
      * The current lifecycle state of the external DB system discovery resource.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -211,7 +211,7 @@ public class ExternalDbSystemDiscovery extends com.pulumi.resources.CustomResour
      * The date and time the external DB system discovery was created.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -225,7 +225,7 @@ public class ExternalDbSystemDiscovery extends com.pulumi.resources.CustomResour
      * The date and time the external DB system discovery was last updated.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

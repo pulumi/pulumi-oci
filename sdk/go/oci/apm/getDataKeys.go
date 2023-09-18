@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Data Keys in Oracle Cloud Infrastructure Apm service.
@@ -111,6 +112,12 @@ func (o GetDataKeysResultOutput) ToGetDataKeysResultOutput() GetDataKeysResultOu
 
 func (o GetDataKeysResultOutput) ToGetDataKeysResultOutputWithContext(ctx context.Context) GetDataKeysResultOutput {
 	return o
+}
+
+func (o GetDataKeysResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDataKeysResult] {
+	return pulumix.Output[GetDataKeysResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDataKeysResultOutput) ApmDomainId() pulumi.StringOutput {

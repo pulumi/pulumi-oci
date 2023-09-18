@@ -90,7 +90,7 @@ public class DeployArtifact extends com.pulumi.resources.CustomResource {
      * (Updatable) Mode for artifact parameter substitution. Options: `&#34;NONE&#34;, &#34;SUBSTITUTE_PLACEHOLDERS&#34;` For Helm Deployments only &#34;NONE&#34; is supported.
      * 
      */
-    @Export(name="argumentSubstitutionMode", type=String.class, parameters={})
+    @Export(name="argumentSubstitutionMode", refs={String.class}, tree="[0]")
     private Output<String> argumentSubstitutionMode;
 
     /**
@@ -104,7 +104,7 @@ public class DeployArtifact extends com.pulumi.resources.CustomResource {
      * The OCID of a compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -118,7 +118,7 @@ public class DeployArtifact extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -132,7 +132,7 @@ public class DeployArtifact extends com.pulumi.resources.CustomResource {
      * (Updatable) Specifies source of an artifact.
      * 
      */
-    @Export(name="deployArtifactSource", type=DeployArtifactDeployArtifactSource.class, parameters={})
+    @Export(name="deployArtifactSource", refs={DeployArtifactDeployArtifactSource.class}, tree="[0]")
     private Output<DeployArtifactDeployArtifactSource> deployArtifactSource;
 
     /**
@@ -146,7 +146,7 @@ public class DeployArtifact extends com.pulumi.resources.CustomResource {
      * (Updatable) Type of the deployment artifact.
      * 
      */
-    @Export(name="deployArtifactType", type=String.class, parameters={})
+    @Export(name="deployArtifactType", refs={String.class}, tree="[0]")
     private Output<String> deployArtifactType;
 
     /**
@@ -160,7 +160,7 @@ public class DeployArtifact extends com.pulumi.resources.CustomResource {
      * (Updatable) Optional description about the deployment artifact.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -174,7 +174,7 @@ public class DeployArtifact extends com.pulumi.resources.CustomResource {
      * (Updatable) Deployment artifact display name. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -188,7 +188,7 @@ public class DeployArtifact extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -202,7 +202,7 @@ public class DeployArtifact extends com.pulumi.resources.CustomResource {
      * A detailed message describing the current state. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -219,7 +219,7 @@ public class DeployArtifact extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="projectId", type=String.class, parameters={})
+    @Export(name="projectId", refs={String.class}, tree="[0]")
     private Output<String> projectId;
 
     /**
@@ -236,7 +236,7 @@ public class DeployArtifact extends com.pulumi.resources.CustomResource {
      * Current state of the deployment artifact.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -250,7 +250,7 @@ public class DeployArtifact extends com.pulumi.resources.CustomResource {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -264,7 +264,7 @@ public class DeployArtifact extends com.pulumi.resources.CustomResource {
      * Time the deployment artifact was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -278,7 +278,7 @@ public class DeployArtifact extends com.pulumi.resources.CustomResource {
      * Time the deployment artifact was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

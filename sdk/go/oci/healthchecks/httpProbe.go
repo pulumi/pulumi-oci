@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Http Probe resource in Oracle Cloud Infrastructure Health Checks service.
@@ -278,6 +279,12 @@ func (i *HttpProbe) ToHttpProbeOutputWithContext(ctx context.Context) HttpProbeO
 	return pulumi.ToOutputWithContext(ctx, i).(HttpProbeOutput)
 }
 
+func (i *HttpProbe) ToOutput(ctx context.Context) pulumix.Output[*HttpProbe] {
+	return pulumix.Output[*HttpProbe]{
+		OutputState: i.ToHttpProbeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // HttpProbeArrayInput is an input type that accepts HttpProbeArray and HttpProbeArrayOutput values.
 // You can construct a concrete instance of `HttpProbeArrayInput` via:
 //
@@ -301,6 +308,12 @@ func (i HttpProbeArray) ToHttpProbeArrayOutput() HttpProbeArrayOutput {
 
 func (i HttpProbeArray) ToHttpProbeArrayOutputWithContext(ctx context.Context) HttpProbeArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(HttpProbeArrayOutput)
+}
+
+func (i HttpProbeArray) ToOutput(ctx context.Context) pulumix.Output[[]*HttpProbe] {
+	return pulumix.Output[[]*HttpProbe]{
+		OutputState: i.ToHttpProbeArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // HttpProbeMapInput is an input type that accepts HttpProbeMap and HttpProbeMapOutput values.
@@ -328,6 +341,12 @@ func (i HttpProbeMap) ToHttpProbeMapOutputWithContext(ctx context.Context) HttpP
 	return pulumi.ToOutputWithContext(ctx, i).(HttpProbeMapOutput)
 }
 
+func (i HttpProbeMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*HttpProbe] {
+	return pulumix.Output[map[string]*HttpProbe]{
+		OutputState: i.ToHttpProbeMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type HttpProbeOutput struct{ *pulumi.OutputState }
 
 func (HttpProbeOutput) ElementType() reflect.Type {
@@ -340,6 +359,12 @@ func (o HttpProbeOutput) ToHttpProbeOutput() HttpProbeOutput {
 
 func (o HttpProbeOutput) ToHttpProbeOutputWithContext(ctx context.Context) HttpProbeOutput {
 	return o
+}
+
+func (o HttpProbeOutput) ToOutput(ctx context.Context) pulumix.Output[*HttpProbe] {
+	return pulumix.Output[*HttpProbe]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the compartment.
@@ -421,6 +446,12 @@ func (o HttpProbeArrayOutput) ToHttpProbeArrayOutputWithContext(ctx context.Cont
 	return o
 }
 
+func (o HttpProbeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*HttpProbe] {
+	return pulumix.Output[[]*HttpProbe]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o HttpProbeArrayOutput) Index(i pulumi.IntInput) HttpProbeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *HttpProbe {
 		return vs[0].([]*HttpProbe)[vs[1].(int)]
@@ -439,6 +470,12 @@ func (o HttpProbeMapOutput) ToHttpProbeMapOutput() HttpProbeMapOutput {
 
 func (o HttpProbeMapOutput) ToHttpProbeMapOutputWithContext(ctx context.Context) HttpProbeMapOutput {
 	return o
+}
+
+func (o HttpProbeMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*HttpProbe] {
+	return pulumix.Output[map[string]*HttpProbe]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o HttpProbeMapOutput) MapIndex(k pulumi.StringInput) HttpProbeOutput {

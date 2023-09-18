@@ -74,7 +74,7 @@ public class TagDefault extends com.pulumi.resources.CustomResource {
      * The OCID of the compartment. The tag default will be applied to all new resources created in this compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -92,7 +92,7 @@ public class TagDefault extends com.pulumi.resources.CustomResource {
      * Example: `false`
      * 
      */
-    @Export(name="isRequired", type=Boolean.class, parameters={})
+    @Export(name="isRequired", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isRequired;
 
     /**
@@ -110,7 +110,7 @@ public class TagDefault extends com.pulumi.resources.CustomResource {
      * The tag default&#39;s current state. After creating a `TagDefault`, make sure its `lifecycleState` is ACTIVE before using it.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -124,7 +124,7 @@ public class TagDefault extends com.pulumi.resources.CustomResource {
      * The OCID of the tag definition. The tag default will always assign a default value for this tag definition.
      * 
      */
-    @Export(name="tagDefinitionId", type=String.class, parameters={})
+    @Export(name="tagDefinitionId", refs={String.class}, tree="[0]")
     private Output<String> tagDefinitionId;
 
     /**
@@ -138,7 +138,7 @@ public class TagDefault extends com.pulumi.resources.CustomResource {
      * The name used in the tag definition. This field is informational in the context of the tag default.
      * 
      */
-    @Export(name="tagDefinitionName", type=String.class, parameters={})
+    @Export(name="tagDefinitionName", refs={String.class}, tree="[0]")
     private Output<String> tagDefinitionName;
 
     /**
@@ -152,7 +152,7 @@ public class TagDefault extends com.pulumi.resources.CustomResource {
      * The OCID of the tag namespace that contains the tag definition.
      * 
      */
-    @Export(name="tagNamespaceId", type=String.class, parameters={})
+    @Export(name="tagNamespaceId", refs={String.class}, tree="[0]")
     private Output<String> tagNamespaceId;
 
     /**
@@ -166,7 +166,7 @@ public class TagDefault extends com.pulumi.resources.CustomResource {
      * Date and time the `TagDefault` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -183,7 +183,7 @@ public class TagDefault extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="value", type=String.class, parameters={})
+    @Export(name="value", refs={String.class}, tree="[0]")
     private Output<String> value;
 
     /**

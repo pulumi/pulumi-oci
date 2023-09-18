@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Notification Topic resource in Oracle Cloud Infrastructure Notifications service.
@@ -123,6 +124,12 @@ func (o LookupNotificationTopicResultOutput) ToLookupNotificationTopicResultOutp
 
 func (o LookupNotificationTopicResultOutput) ToLookupNotificationTopicResultOutputWithContext(ctx context.Context) LookupNotificationTopicResultOutput {
 	return o
+}
+
+func (o LookupNotificationTopicResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupNotificationTopicResult] {
+	return pulumix.Output[LookupNotificationTopicResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The endpoint for managing subscriptions or publishing messages to the topic.

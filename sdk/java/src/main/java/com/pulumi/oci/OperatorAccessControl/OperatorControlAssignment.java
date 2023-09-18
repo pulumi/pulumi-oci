@@ -83,7 +83,7 @@ public class OperatorControlAssignment extends com.pulumi.resources.CustomResour
      * The OCID of the user who created this operator control assignment.
      * 
      */
-    @Export(name="assignerId", type=String.class, parameters={})
+    @Export(name="assignerId", refs={String.class}, tree="[0]")
     private Output<String> assignerId;
 
     /**
@@ -97,7 +97,7 @@ public class OperatorControlAssignment extends com.pulumi.resources.CustomResour
      * (Updatable) Comment about the assignment of the operator control to this target resource.
      * 
      */
-    @Export(name="comment", type=String.class, parameters={})
+    @Export(name="comment", refs={String.class}, tree="[0]")
     private Output<String> comment;
 
     /**
@@ -111,7 +111,7 @@ public class OperatorControlAssignment extends com.pulumi.resources.CustomResour
      * (Updatable) The OCID of the compartment that contains the operator control assignment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -125,7 +125,7 @@ public class OperatorControlAssignment extends com.pulumi.resources.CustomResour
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -139,7 +139,7 @@ public class OperatorControlAssignment extends com.pulumi.resources.CustomResour
      * description containing reason for releasing of OperatorControl.
      * 
      */
-    @Export(name="detachmentDescription", type=String.class, parameters={})
+    @Export(name="detachmentDescription", refs={String.class}, tree="[0]")
     private Output<String> detachmentDescription;
 
     /**
@@ -153,7 +153,7 @@ public class OperatorControlAssignment extends com.pulumi.resources.CustomResour
      * The code identifying the error occurred during Assignment operation.
      * 
      */
-    @Export(name="errorCode", type=Integer.class, parameters={})
+    @Export(name="errorCode", refs={Integer.class}, tree="[0]")
     private Output<Integer> errorCode;
 
     /**
@@ -167,7 +167,7 @@ public class OperatorControlAssignment extends com.pulumi.resources.CustomResour
      * The message describing the error occurred during Assignment operation.
      * 
      */
-    @Export(name="errorMessage", type=String.class, parameters={})
+    @Export(name="errorMessage", refs={String.class}, tree="[0]")
     private Output<String> errorMessage;
 
     /**
@@ -181,7 +181,7 @@ public class OperatorControlAssignment extends com.pulumi.resources.CustomResour
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -195,7 +195,7 @@ public class OperatorControlAssignment extends com.pulumi.resources.CustomResour
      * (Updatable) The boolean if true would autoApprove during maintenance.
      * 
      */
-    @Export(name="isAutoApproveDuringMaintenance", type=Boolean.class, parameters={})
+    @Export(name="isAutoApproveDuringMaintenance", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isAutoApproveDuringMaintenance;
 
     /**
@@ -209,7 +209,7 @@ public class OperatorControlAssignment extends com.pulumi.resources.CustomResour
      * Whether the assignment is a default assignment.
      * 
      */
-    @Export(name="isDefaultAssignment", type=Boolean.class, parameters={})
+    @Export(name="isDefaultAssignment", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isDefaultAssignment;
 
     /**
@@ -223,7 +223,7 @@ public class OperatorControlAssignment extends com.pulumi.resources.CustomResour
      * (Updatable) If set, then the target resource is always governed by the operator control.
      * 
      */
-    @Export(name="isEnforcedAlways", type=Boolean.class, parameters={})
+    @Export(name="isEnforcedAlways", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isEnforcedAlways;
 
     /**
@@ -237,7 +237,7 @@ public class OperatorControlAssignment extends com.pulumi.resources.CustomResour
      * (Updatable) If set, then the audit logs will be forwarded to the relevant remote logging server
      * 
      */
-    @Export(name="isLogForwarded", type=Boolean.class, parameters={})
+    @Export(name="isLogForwarded", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isLogForwarded;
 
     /**
@@ -251,7 +251,7 @@ public class OperatorControlAssignment extends com.pulumi.resources.CustomResour
      * More in detail about the lifeCycleState.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -265,7 +265,7 @@ public class OperatorControlAssignment extends com.pulumi.resources.CustomResour
      * The OCID of the operator control that is being assigned to a target resource.
      * 
      */
-    @Export(name="operatorControlId", type=String.class, parameters={})
+    @Export(name="operatorControlId", refs={String.class}, tree="[0]")
     private Output<String> operatorControlId;
 
     /**
@@ -279,7 +279,7 @@ public class OperatorControlAssignment extends com.pulumi.resources.CustomResour
      * (Updatable) The address of the remote syslog server where the audit logs will be forwarded to. Address in host or IP format.
      * 
      */
-    @Export(name="remoteSyslogServerAddress", type=String.class, parameters={})
+    @Export(name="remoteSyslogServerAddress", refs={String.class}, tree="[0]")
     private Output<String> remoteSyslogServerAddress;
 
     /**
@@ -293,7 +293,7 @@ public class OperatorControlAssignment extends com.pulumi.resources.CustomResour
      * (Updatable) The CA certificate of the remote syslog server. Identity of the remote syslog server will be asserted based on this certificate.
      * 
      */
-    @Export(name="remoteSyslogServerCaCert", type=String.class, parameters={})
+    @Export(name="remoteSyslogServerCaCert", refs={String.class}, tree="[0]")
     private Output<String> remoteSyslogServerCaCert;
 
     /**
@@ -307,7 +307,7 @@ public class OperatorControlAssignment extends com.pulumi.resources.CustomResour
      * (Updatable) The listening port of the remote syslog server. The port range is 0 - 65535. Only TCP supported.
      * 
      */
-    @Export(name="remoteSyslogServerPort", type=Integer.class, parameters={})
+    @Export(name="remoteSyslogServerPort", refs={Integer.class}, tree="[0]")
     private Output<Integer> remoteSyslogServerPort;
 
     /**
@@ -321,7 +321,7 @@ public class OperatorControlAssignment extends com.pulumi.resources.CustomResour
      * The OCID of the compartment that contains the target resource.
      * 
      */
-    @Export(name="resourceCompartmentId", type=String.class, parameters={})
+    @Export(name="resourceCompartmentId", refs={String.class}, tree="[0]")
     private Output<String> resourceCompartmentId;
 
     /**
@@ -335,7 +335,7 @@ public class OperatorControlAssignment extends com.pulumi.resources.CustomResour
      * The OCID of the target resource being brought under the governance of the operator control.
      * 
      */
-    @Export(name="resourceId", type=String.class, parameters={})
+    @Export(name="resourceId", refs={String.class}, tree="[0]")
     private Output<String> resourceId;
 
     /**
@@ -349,7 +349,7 @@ public class OperatorControlAssignment extends com.pulumi.resources.CustomResour
      * Name of the target resource.
      * 
      */
-    @Export(name="resourceName", type=String.class, parameters={})
+    @Export(name="resourceName", refs={String.class}, tree="[0]")
     private Output<String> resourceName;
 
     /**
@@ -363,7 +363,7 @@ public class OperatorControlAssignment extends com.pulumi.resources.CustomResour
      * Type of the target resource.
      * 
      */
-    @Export(name="resourceType", type=String.class, parameters={})
+    @Export(name="resourceType", refs={String.class}, tree="[0]")
     private Output<String> resourceType;
 
     /**
@@ -377,7 +377,7 @@ public class OperatorControlAssignment extends com.pulumi.resources.CustomResour
      * The current lifcycle state of the OperatorControl.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -391,7 +391,7 @@ public class OperatorControlAssignment extends com.pulumi.resources.CustomResour
      * (Updatable) The time at which the target resource will be brought under the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
-    @Export(name="timeAssignmentFrom", type=String.class, parameters={})
+    @Export(name="timeAssignmentFrom", refs={String.class}, tree="[0]")
     private Output<String> timeAssignmentFrom;
 
     /**
@@ -408,7 +408,7 @@ public class OperatorControlAssignment extends com.pulumi.resources.CustomResour
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="timeAssignmentTo", type=String.class, parameters={})
+    @Export(name="timeAssignmentTo", refs={String.class}, tree="[0]")
     private Output<String> timeAssignmentTo;
 
     /**
@@ -425,7 +425,7 @@ public class OperatorControlAssignment extends com.pulumi.resources.CustomResour
      * Time when the operator control assignment is created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
-    @Export(name="timeOfAssignment", type=String.class, parameters={})
+    @Export(name="timeOfAssignment", refs={String.class}, tree="[0]")
     private Output<String> timeOfAssignment;
 
     /**
@@ -439,7 +439,7 @@ public class OperatorControlAssignment extends com.pulumi.resources.CustomResour
      * Time on which the operator control assignment was deleted in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
-    @Export(name="timeOfDeletion", type=String.class, parameters={})
+    @Export(name="timeOfDeletion", refs={String.class}, tree="[0]")
     private Output<String> timeOfDeletion;
 
     /**
@@ -453,7 +453,7 @@ public class OperatorControlAssignment extends com.pulumi.resources.CustomResour
      * User id who released the operatorControl.
      * 
      */
-    @Export(name="unassignerId", type=String.class, parameters={})
+    @Export(name="unassignerId", refs={String.class}, tree="[0]")
     private Output<String> unassignerId;
 
     /**

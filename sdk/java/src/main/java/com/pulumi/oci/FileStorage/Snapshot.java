@@ -70,7 +70,7 @@ public class Snapshot extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -84,7 +84,7 @@ public class Snapshot extends com.pulumi.resources.CustomResource {
      * (Updatable) The time when this snapshot will be deleted.
      * 
      */
-    @Export(name="expirationTime", type=String.class, parameters={})
+    @Export(name="expirationTime", refs={String.class}, tree="[0]")
     private Output<String> expirationTime;
 
     /**
@@ -98,7 +98,7 @@ public class Snapshot extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system to take a snapshot of.
      * 
      */
-    @Export(name="fileSystemId", type=String.class, parameters={})
+    @Export(name="fileSystemId", refs={String.class}, tree="[0]")
     private Output<String> fileSystemId;
 
     /**
@@ -112,7 +112,7 @@ public class Snapshot extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that created this snapshot.
      * 
      */
-    @Export(name="filesystemSnapshotPolicyId", type=String.class, parameters={})
+    @Export(name="filesystemSnapshotPolicyId", refs={String.class}, tree="[0]")
     private Output<String> filesystemSnapshotPolicyId;
 
     /**
@@ -126,7 +126,7 @@ public class Snapshot extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -140,7 +140,7 @@ public class Snapshot extends com.pulumi.resources.CustomResource {
      * Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      * 
      */
-    @Export(name="isCloneSource", type=Boolean.class, parameters={})
+    @Export(name="isCloneSource", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isCloneSource;
 
     /**
@@ -154,7 +154,7 @@ public class Snapshot extends com.pulumi.resources.CustomResource {
      * Additional information about the current `lifecycleState`.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -175,7 +175,7 @@ public class Snapshot extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -196,7 +196,7 @@ public class Snapshot extends com.pulumi.resources.CustomResource {
      * An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent&#39;s `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      * 
      */
-    @Export(name="provenanceId", type=String.class, parameters={})
+    @Export(name="provenanceId", refs={String.class}, tree="[0]")
     private Output<String> provenanceId;
 
     /**
@@ -213,7 +213,7 @@ public class Snapshot extends com.pulumi.resources.CustomResource {
      * * If the snapshot is replicated from a file system.
      * 
      */
-    @Export(name="snapshotTime", type=String.class, parameters={})
+    @Export(name="snapshotTime", refs={String.class}, tree="[0]")
     private Output<String> snapshotTime;
 
     /**
@@ -230,7 +230,7 @@ public class Snapshot extends com.pulumi.resources.CustomResource {
      * Specifies the generation type of the snapshot.
      * 
      */
-    @Export(name="snapshotType", type=String.class, parameters={})
+    @Export(name="snapshotType", refs={String.class}, tree="[0]")
     private Output<String> snapshotType;
 
     /**
@@ -244,7 +244,7 @@ public class Snapshot extends com.pulumi.resources.CustomResource {
      * The current state of the snapshot.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -258,7 +258,7 @@ public class Snapshot extends com.pulumi.resources.CustomResource {
      * The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**

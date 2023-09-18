@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Software Source resource in Oracle Cloud Infrastructure OS Management service.
@@ -335,6 +336,12 @@ func (i *SoftwareSource) ToSoftwareSourceOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(SoftwareSourceOutput)
 }
 
+func (i *SoftwareSource) ToOutput(ctx context.Context) pulumix.Output[*SoftwareSource] {
+	return pulumix.Output[*SoftwareSource]{
+		OutputState: i.ToSoftwareSourceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // SoftwareSourceArrayInput is an input type that accepts SoftwareSourceArray and SoftwareSourceArrayOutput values.
 // You can construct a concrete instance of `SoftwareSourceArrayInput` via:
 //
@@ -358,6 +365,12 @@ func (i SoftwareSourceArray) ToSoftwareSourceArrayOutput() SoftwareSourceArrayOu
 
 func (i SoftwareSourceArray) ToSoftwareSourceArrayOutputWithContext(ctx context.Context) SoftwareSourceArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SoftwareSourceArrayOutput)
+}
+
+func (i SoftwareSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]*SoftwareSource] {
+	return pulumix.Output[[]*SoftwareSource]{
+		OutputState: i.ToSoftwareSourceArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // SoftwareSourceMapInput is an input type that accepts SoftwareSourceMap and SoftwareSourceMapOutput values.
@@ -385,6 +398,12 @@ func (i SoftwareSourceMap) ToSoftwareSourceMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(SoftwareSourceMapOutput)
 }
 
+func (i SoftwareSourceMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*SoftwareSource] {
+	return pulumix.Output[map[string]*SoftwareSource]{
+		OutputState: i.ToSoftwareSourceMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type SoftwareSourceOutput struct{ *pulumi.OutputState }
 
 func (SoftwareSourceOutput) ElementType() reflect.Type {
@@ -397,6 +416,12 @@ func (o SoftwareSourceOutput) ToSoftwareSourceOutput() SoftwareSourceOutput {
 
 func (o SoftwareSourceOutput) ToSoftwareSourceOutputWithContext(ctx context.Context) SoftwareSourceOutput {
 	return o
+}
+
+func (o SoftwareSourceOutput) ToOutput(ctx context.Context) pulumix.Output[*SoftwareSource] {
+	return pulumix.Output[*SoftwareSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The architecture type supported by the Software Source
@@ -523,6 +548,12 @@ func (o SoftwareSourceArrayOutput) ToSoftwareSourceArrayOutputWithContext(ctx co
 	return o
 }
 
+func (o SoftwareSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*SoftwareSource] {
+	return pulumix.Output[[]*SoftwareSource]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o SoftwareSourceArrayOutput) Index(i pulumi.IntInput) SoftwareSourceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *SoftwareSource {
 		return vs[0].([]*SoftwareSource)[vs[1].(int)]
@@ -541,6 +572,12 @@ func (o SoftwareSourceMapOutput) ToSoftwareSourceMapOutput() SoftwareSourceMapOu
 
 func (o SoftwareSourceMapOutput) ToSoftwareSourceMapOutputWithContext(ctx context.Context) SoftwareSourceMapOutput {
 	return o
+}
+
+func (o SoftwareSourceMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*SoftwareSource] {
+	return pulumix.Output[map[string]*SoftwareSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o SoftwareSourceMapOutput) MapIndex(k pulumi.StringInput) SoftwareSourceOutput {

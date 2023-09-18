@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Access Policy resource in Oracle Cloud Infrastructure Service Mesh service.
@@ -123,6 +124,12 @@ func (o LookupAccessPolicyResultOutput) ToLookupAccessPolicyResultOutput() Looku
 
 func (o LookupAccessPolicyResultOutput) ToLookupAccessPolicyResultOutputWithContext(ctx context.Context) LookupAccessPolicyResultOutput {
 	return o
+}
+
+func (o LookupAccessPolicyResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAccessPolicyResult] {
+	return pulumix.Output[LookupAccessPolicyResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o LookupAccessPolicyResultOutput) AccessPolicyId() pulumi.StringOutput {

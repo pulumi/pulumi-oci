@@ -74,7 +74,7 @@ public class MysqlBackup extends com.pulumi.resources.CustomResource {
      * The size of the backup in base-2 (IEC) gibibytes. (GiB).
      * 
      */
-    @Export(name="backupSizeInGbs", type=Integer.class, parameters={})
+    @Export(name="backupSizeInGbs", refs={Integer.class}, tree="[0]")
     private Output<Integer> backupSizeInGbs;
 
     /**
@@ -88,7 +88,7 @@ public class MysqlBackup extends com.pulumi.resources.CustomResource {
      * The type of backup.
      * 
      */
-    @Export(name="backupType", type=String.class, parameters={})
+    @Export(name="backupType", refs={String.class}, tree="[0]")
     private Output<String> backupType;
 
     /**
@@ -102,7 +102,7 @@ public class MysqlBackup extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the compartment the backup exists in.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -116,7 +116,7 @@ public class MysqlBackup extends com.pulumi.resources.CustomResource {
      * Indicates how the backup was created: manually, automatic, or by an Operator.
      * 
      */
-    @Export(name="creationType", type=String.class, parameters={})
+    @Export(name="creationType", refs={String.class}, tree="[0]")
     private Output<String> creationType;
 
     /**
@@ -130,7 +130,7 @@ public class MysqlBackup extends com.pulumi.resources.CustomResource {
      * Initial size of the data volume in GiBs that will be created and attached.
      * 
      */
-    @Export(name="dataStorageSizeInGb", type=Integer.class, parameters={})
+    @Export(name="dataStorageSizeInGb", refs={Integer.class}, tree="[0]")
     private Output<Integer> dataStorageSizeInGb;
 
     /**
@@ -144,7 +144,7 @@ public class MysqlBackup extends com.pulumi.resources.CustomResource {
      * The OCID of the DB System the Backup is associated with.
      * 
      */
-    @Export(name="dbSystemId", type=String.class, parameters={})
+    @Export(name="dbSystemId", refs={String.class}, tree="[0]")
     private Output<String> dbSystemId;
 
     /**
@@ -158,7 +158,7 @@ public class MysqlBackup extends com.pulumi.resources.CustomResource {
      * Snapshot of the DbSystem details at the time of the backup
      * 
      */
-    @Export(name="dbSystemSnapshots", type=List.class, parameters={MysqlBackupDbSystemSnapshot.class})
+    @Export(name="dbSystemSnapshots", refs={List.class,MysqlBackupDbSystemSnapshot.class}, tree="[0,1]")
     private Output<List<MysqlBackupDbSystemSnapshot>> dbSystemSnapshots;
 
     /**
@@ -172,7 +172,7 @@ public class MysqlBackup extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -186,7 +186,7 @@ public class MysqlBackup extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-supplied description for the backup.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -200,7 +200,7 @@ public class MysqlBackup extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-supplied display name for the backup.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -214,7 +214,7 @@ public class MysqlBackup extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -228,7 +228,7 @@ public class MysqlBackup extends com.pulumi.resources.CustomResource {
      * Additional information about the current lifecycleState.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -242,7 +242,7 @@ public class MysqlBackup extends com.pulumi.resources.CustomResource {
      * The MySQL server version of the DB System used for backup.
      * 
      */
-    @Export(name="mysqlVersion", type=String.class, parameters={})
+    @Export(name="mysqlVersion", refs={String.class}, tree="[0]")
     private Output<String> mysqlVersion;
 
     /**
@@ -259,7 +259,7 @@ public class MysqlBackup extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="retentionInDays", type=Integer.class, parameters={})
+    @Export(name="retentionInDays", refs={Integer.class}, tree="[0]")
     private Output<Integer> retentionInDays;
 
     /**
@@ -276,7 +276,7 @@ public class MysqlBackup extends com.pulumi.resources.CustomResource {
      * The shape of the DB System instance used for backup.
      * 
      */
-    @Export(name="shapeName", type=String.class, parameters={})
+    @Export(name="shapeName", refs={String.class}, tree="[0]")
     private Output<String> shapeName;
 
     /**
@@ -290,7 +290,7 @@ public class MysqlBackup extends com.pulumi.resources.CustomResource {
      * The state of the backup.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -304,7 +304,7 @@ public class MysqlBackup extends com.pulumi.resources.CustomResource {
      * The time the backup record was created.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -318,7 +318,7 @@ public class MysqlBackup extends com.pulumi.resources.CustomResource {
      * The time at which the backup was updated.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

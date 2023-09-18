@@ -102,7 +102,7 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      * The data disk group size to be allocated for Autonomous Databases, in TBs.
      * 
      */
-    @Export(name="autonomousDataStorageSizeInTbs", type=Double.class, parameters={})
+    @Export(name="autonomousDataStorageSizeInTbs", refs={Double.class}, tree="[0]")
     private Output<Double> autonomousDataStorageSizeInTbs;
 
     /**
@@ -116,7 +116,7 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      * The data disk group size available for Autonomous Databases, in TBs.
      * 
      */
-    @Export(name="availableAutonomousDataStorageSizeInTbs", type=Double.class, parameters={})
+    @Export(name="availableAutonomousDataStorageSizeInTbs", refs={Double.class}, tree="[0]")
     private Output<Double> availableAutonomousDataStorageSizeInTbs;
 
     /**
@@ -130,7 +130,7 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      * The number of Autonomous Container Databases that can be created with the currently available local storage.
      * 
      */
-    @Export(name="availableContainerDatabases", type=Integer.class, parameters={})
+    @Export(name="availableContainerDatabases", refs={Integer.class}, tree="[0]")
     private Output<Integer> availableContainerDatabases;
 
     /**
@@ -144,7 +144,7 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      * The numnber of CPU cores available.
      * 
      */
-    @Export(name="availableCpus", type=Integer.class, parameters={})
+    @Export(name="availableCpus", refs={Integer.class}, tree="[0]")
     private Output<Integer> availableCpus;
 
     /**
@@ -158,7 +158,7 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      * **Deprecated.** Use `availableAutonomousDataStorageSizeInTBs` for Autonomous Databases&#39; data storage availability in TBs.
      * 
      */
-    @Export(name="availableDataStorageSizeInTbs", type=Double.class, parameters={})
+    @Export(name="availableDataStorageSizeInTbs", refs={Double.class}, tree="[0]")
     private Output<Double> availableDataStorageSizeInTbs;
 
     /**
@@ -172,7 +172,7 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -186,7 +186,7 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      * The compute model of the Autonomous VM Cluster.
      * 
      */
-    @Export(name="computeModel", type=String.class, parameters={})
+    @Export(name="computeModel", refs={String.class}, tree="[0]")
     private Output<String> computeModel;
 
     /**
@@ -200,7 +200,7 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      * The number of CPU cores to enable per VM cluster node.
      * 
      */
-    @Export(name="cpuCoreCountPerNode", type=Integer.class, parameters={})
+    @Export(name="cpuCoreCountPerNode", refs={Integer.class}, tree="[0]")
     private Output<Integer> cpuCoreCountPerNode;
 
     /**
@@ -214,7 +214,7 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      * The number of enabled CPU cores.
      * 
      */
-    @Export(name="cpusEnabled", type=Integer.class, parameters={})
+    @Export(name="cpusEnabled", refs={Integer.class}, tree="[0]")
     private Output<Integer> cpusEnabled;
 
     /**
@@ -224,7 +224,7 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
     public Output<Integer> cpusEnabled() {
         return this.cpusEnabled;
     }
-    @Export(name="dataStorageSizeInGb", type=Double.class, parameters={})
+    @Export(name="dataStorageSizeInGb", refs={Double.class}, tree="[0]")
     private Output<Double> dataStorageSizeInGb;
 
     public Output<Double> dataStorageSizeInGb() {
@@ -234,7 +234,7 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      * The total data storage allocated in TBs
      * 
      */
-    @Export(name="dataStorageSizeInTbs", type=Double.class, parameters={})
+    @Export(name="dataStorageSizeInTbs", refs={Double.class}, tree="[0]")
     private Output<Double> dataStorageSizeInTbs;
 
     /**
@@ -248,7 +248,7 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      * The local node storage allocated in GBs.
      * 
      */
-    @Export(name="dbNodeStorageSizeInGbs", type=Integer.class, parameters={})
+    @Export(name="dbNodeStorageSizeInGbs", refs={Integer.class}, tree="[0]")
     private Output<Integer> dbNodeStorageSizeInGbs;
 
     /**
@@ -262,7 +262,7 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
      * 
      */
-    @Export(name="dbServers", type=List.class, parameters={String.class})
+    @Export(name="dbServers", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> dbServers;
 
     /**
@@ -276,7 +276,7 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -290,7 +290,7 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      * The user-friendly name for the Autonomous VM cluster. The name does not need to be unique.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -304,7 +304,7 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      * 
      */
-    @Export(name="exadataInfrastructureId", type=String.class, parameters={})
+    @Export(name="exadataInfrastructureId", refs={String.class}, tree="[0]")
     private Output<String> exadataInfrastructureId;
 
     /**
@@ -318,7 +318,7 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -332,7 +332,7 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      * If true, database backup on local Exadata storage is configured for the Autonomous VM cluster. If false, database backup on local Exadata storage is not available in the Autonomous VM cluster.
      * 
      */
-    @Export(name="isLocalBackupEnabled", type=Boolean.class, parameters={})
+    @Export(name="isLocalBackupEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isLocalBackupEnabled;
 
     /**
@@ -346,7 +346,7 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      * Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
      * 
      */
-    @Export(name="isMtlsEnabled", type=Boolean.class, parameters={})
+    @Export(name="isMtlsEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isMtlsEnabled;
 
     /**
@@ -360,7 +360,7 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      * 
      */
-    @Export(name="lastMaintenanceRunId", type=String.class, parameters={})
+    @Export(name="lastMaintenanceRunId", refs={String.class}, tree="[0]")
     private Output<String> lastMaintenanceRunId;
 
     /**
@@ -374,7 +374,7 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      * (Updatable) The Oracle license model that applies to the Autonomous VM cluster. The default is BRING_YOUR_OWN_LICENSE.
      * 
      */
-    @Export(name="licenseModel", type=String.class, parameters={})
+    @Export(name="licenseModel", refs={String.class}, tree="[0]")
     private Output<String> licenseModel;
 
     /**
@@ -388,7 +388,7 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      * Additional information about the current lifecycle state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -402,7 +402,7 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      * (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      * 
      */
-    @Export(name="maintenanceWindowDetails", type=List.class, parameters={AutonomousVmClusterMaintenanceWindowDetail.class})
+    @Export(name="maintenanceWindowDetails", refs={List.class,AutonomousVmClusterMaintenanceWindowDetail.class}, tree="[0,1]")
     private Output<List<AutonomousVmClusterMaintenanceWindowDetail>> maintenanceWindowDetails;
 
     /**
@@ -416,7 +416,7 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      * The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      * 
      */
-    @Export(name="maintenanceWindows", type=List.class, parameters={AutonomousVmClusterMaintenanceWindow.class})
+    @Export(name="maintenanceWindows", refs={List.class,AutonomousVmClusterMaintenanceWindow.class}, tree="[0,1]")
     private Output<List<AutonomousVmClusterMaintenanceWindow>> maintenanceWindows;
 
     /**
@@ -430,7 +430,7 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
      * 
      */
-    @Export(name="memoryPerOracleComputeUnitInGbs", type=Integer.class, parameters={})
+    @Export(name="memoryPerOracleComputeUnitInGbs", refs={Integer.class}, tree="[0]")
     private Output<Integer> memoryPerOracleComputeUnitInGbs;
 
     /**
@@ -444,7 +444,7 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      * The memory allocated in GBs.
      * 
      */
-    @Export(name="memorySizeInGbs", type=Integer.class, parameters={})
+    @Export(name="memorySizeInGbs", refs={Integer.class}, tree="[0]")
     private Output<Integer> memorySizeInGbs;
 
     /**
@@ -458,7 +458,7 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      * 
      */
-    @Export(name="nextMaintenanceRunId", type=String.class, parameters={})
+    @Export(name="nextMaintenanceRunId", refs={String.class}, tree="[0]")
     private Output<String> nextMaintenanceRunId;
 
     /**
@@ -472,7 +472,7 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      * The number of nodes in the Autonomous VM Cluster.
      * 
      */
-    @Export(name="nodeCount", type=Integer.class, parameters={})
+    @Export(name="nodeCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> nodeCount;
 
     /**
@@ -486,7 +486,7 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      * The number of enabled OCPU cores.
      * 
      */
-    @Export(name="ocpusEnabled", type=Double.class, parameters={})
+    @Export(name="ocpusEnabled", refs={Double.class}, tree="[0]")
     private Output<Double> ocpusEnabled;
 
     /**
@@ -502,7 +502,7 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
      * 
      */
-    @Export(name="reclaimableCpus", type=Integer.class, parameters={})
+    @Export(name="reclaimableCpus", refs={Integer.class}, tree="[0]")
     private Output<Integer> reclaimableCpus;
 
     /**
@@ -518,7 +518,7 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      * The SCAN Listener Non TLS port number. Default value is 1521.
      * 
      */
-    @Export(name="scanListenerPortNonTls", type=Integer.class, parameters={})
+    @Export(name="scanListenerPortNonTls", refs={Integer.class}, tree="[0]")
     private Output<Integer> scanListenerPortNonTls;
 
     /**
@@ -532,7 +532,7 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      * The SCAN Listener TLS port number. Default value is 2484.
      * 
      */
-    @Export(name="scanListenerPortTls", type=Integer.class, parameters={})
+    @Export(name="scanListenerPortTls", refs={Integer.class}, tree="[0]")
     private Output<Integer> scanListenerPortTls;
 
     /**
@@ -546,7 +546,7 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      * The current state of the Autonomous VM cluster.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -560,7 +560,7 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      * The date and time that the Autonomous VM cluster was created.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -574,7 +574,7 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      * The date and time of Database SSL certificate expiration.
      * 
      */
-    @Export(name="timeDatabaseSslCertificateExpires", type=String.class, parameters={})
+    @Export(name="timeDatabaseSslCertificateExpires", refs={String.class}, tree="[0]")
     private Output<String> timeDatabaseSslCertificateExpires;
 
     /**
@@ -588,7 +588,7 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      * The date and time of ORDS certificate expiration.
      * 
      */
-    @Export(name="timeOrdsCertificateExpires", type=String.class, parameters={})
+    @Export(name="timeOrdsCertificateExpires", refs={String.class}, tree="[0]")
     private Output<String> timeOrdsCertificateExpires;
 
     /**
@@ -602,7 +602,7 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      * The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      * 
      */
-    @Export(name="timeZone", type=String.class, parameters={})
+    @Export(name="timeZone", refs={String.class}, tree="[0]")
     private Output<String> timeZone;
 
     /**
@@ -616,7 +616,7 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      * The total number of Autonomous Container Databases that can be created.
      * 
      */
-    @Export(name="totalContainerDatabases", type=Integer.class, parameters={})
+    @Export(name="totalContainerDatabases", refs={Integer.class}, tree="[0]")
     private Output<Integer> totalContainerDatabases;
 
     /**
@@ -633,7 +633,7 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="vmClusterNetworkId", type=String.class, parameters={})
+    @Export(name="vmClusterNetworkId", refs={String.class}, tree="[0]")
     private Output<String> vmClusterNetworkId;
 
     /**

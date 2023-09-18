@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Authentication Policy resource in Oracle Cloud Infrastructure Identity service.
@@ -104,6 +105,12 @@ func (o LookupAuthenticationPolicyResultOutput) ToLookupAuthenticationPolicyResu
 
 func (o LookupAuthenticationPolicyResultOutput) ToLookupAuthenticationPolicyResultOutputWithContext(ctx context.Context) LookupAuthenticationPolicyResultOutput {
 	return o
+}
+
+func (o LookupAuthenticationPolicyResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAuthenticationPolicyResult] {
+	return pulumix.Output[LookupAuthenticationPolicyResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Compartment OCID.

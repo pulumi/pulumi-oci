@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Knowledge Base resource in Oracle Cloud Infrastructure Adm service.
@@ -214,6 +215,12 @@ func (i *KnowledgeBase) ToKnowledgeBaseOutputWithContext(ctx context.Context) Kn
 	return pulumi.ToOutputWithContext(ctx, i).(KnowledgeBaseOutput)
 }
 
+func (i *KnowledgeBase) ToOutput(ctx context.Context) pulumix.Output[*KnowledgeBase] {
+	return pulumix.Output[*KnowledgeBase]{
+		OutputState: i.ToKnowledgeBaseOutputWithContext(ctx).OutputState,
+	}
+}
+
 // KnowledgeBaseArrayInput is an input type that accepts KnowledgeBaseArray and KnowledgeBaseArrayOutput values.
 // You can construct a concrete instance of `KnowledgeBaseArrayInput` via:
 //
@@ -237,6 +244,12 @@ func (i KnowledgeBaseArray) ToKnowledgeBaseArrayOutput() KnowledgeBaseArrayOutpu
 
 func (i KnowledgeBaseArray) ToKnowledgeBaseArrayOutputWithContext(ctx context.Context) KnowledgeBaseArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(KnowledgeBaseArrayOutput)
+}
+
+func (i KnowledgeBaseArray) ToOutput(ctx context.Context) pulumix.Output[[]*KnowledgeBase] {
+	return pulumix.Output[[]*KnowledgeBase]{
+		OutputState: i.ToKnowledgeBaseArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // KnowledgeBaseMapInput is an input type that accepts KnowledgeBaseMap and KnowledgeBaseMapOutput values.
@@ -264,6 +277,12 @@ func (i KnowledgeBaseMap) ToKnowledgeBaseMapOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(KnowledgeBaseMapOutput)
 }
 
+func (i KnowledgeBaseMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*KnowledgeBase] {
+	return pulumix.Output[map[string]*KnowledgeBase]{
+		OutputState: i.ToKnowledgeBaseMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type KnowledgeBaseOutput struct{ *pulumi.OutputState }
 
 func (KnowledgeBaseOutput) ElementType() reflect.Type {
@@ -276,6 +295,12 @@ func (o KnowledgeBaseOutput) ToKnowledgeBaseOutput() KnowledgeBaseOutput {
 
 func (o KnowledgeBaseOutput) ToKnowledgeBaseOutputWithContext(ctx context.Context) KnowledgeBaseOutput {
 	return o
+}
+
+func (o KnowledgeBaseOutput) ToOutput(ctx context.Context) pulumix.Output[*KnowledgeBase] {
+	return pulumix.Output[*KnowledgeBase]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Knowledge Base's compartment.
@@ -335,6 +360,12 @@ func (o KnowledgeBaseArrayOutput) ToKnowledgeBaseArrayOutputWithContext(ctx cont
 	return o
 }
 
+func (o KnowledgeBaseArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*KnowledgeBase] {
+	return pulumix.Output[[]*KnowledgeBase]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o KnowledgeBaseArrayOutput) Index(i pulumi.IntInput) KnowledgeBaseOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *KnowledgeBase {
 		return vs[0].([]*KnowledgeBase)[vs[1].(int)]
@@ -353,6 +384,12 @@ func (o KnowledgeBaseMapOutput) ToKnowledgeBaseMapOutput() KnowledgeBaseMapOutpu
 
 func (o KnowledgeBaseMapOutput) ToKnowledgeBaseMapOutputWithContext(ctx context.Context) KnowledgeBaseMapOutput {
 	return o
+}
+
+func (o KnowledgeBaseMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*KnowledgeBase] {
+	return pulumix.Output[map[string]*KnowledgeBase]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o KnowledgeBaseMapOutput) MapIndex(k pulumi.StringInput) KnowledgeBaseOutput {

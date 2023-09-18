@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Sensitive Data Models Sensitive Column resource in Oracle Cloud Infrastructure Data Safe service.
@@ -147,6 +148,12 @@ func (o LookupSensitiveDataModelsSensitiveColumnResultOutput) ToLookupSensitiveD
 
 func (o LookupSensitiveDataModelsSensitiveColumnResultOutput) ToLookupSensitiveDataModelsSensitiveColumnResultOutputWithContext(ctx context.Context) LookupSensitiveDataModelsSensitiveColumnResultOutput {
 	return o
+}
+
+func (o LookupSensitiveDataModelsSensitiveColumnResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupSensitiveDataModelsSensitiveColumnResult] {
+	return pulumix.Output[LookupSensitiveDataModelsSensitiveColumnResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.

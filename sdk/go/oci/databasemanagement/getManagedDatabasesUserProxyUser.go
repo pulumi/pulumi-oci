@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Managed Databases User Proxy User resource in Oracle Cloud Infrastructure Database Management service.
@@ -114,6 +115,12 @@ func (o GetManagedDatabasesUserProxyUserResultOutput) ToGetManagedDatabasesUserP
 
 func (o GetManagedDatabasesUserProxyUserResultOutput) ToGetManagedDatabasesUserProxyUserResultOutputWithContext(ctx context.Context) GetManagedDatabasesUserProxyUserResultOutput {
 	return o
+}
+
+func (o GetManagedDatabasesUserProxyUserResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabasesUserProxyUserResult] {
+	return pulumix.Output[GetManagedDatabasesUserProxyUserResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The provider-assigned unique ID for this managed resource.

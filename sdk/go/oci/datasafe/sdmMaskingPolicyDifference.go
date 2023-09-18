@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Sdm Masking Policy Difference resource in Oracle Cloud Infrastructure Data Safe service.
@@ -249,6 +250,12 @@ func (i *SdmMaskingPolicyDifference) ToSdmMaskingPolicyDifferenceOutputWithConte
 	return pulumi.ToOutputWithContext(ctx, i).(SdmMaskingPolicyDifferenceOutput)
 }
 
+func (i *SdmMaskingPolicyDifference) ToOutput(ctx context.Context) pulumix.Output[*SdmMaskingPolicyDifference] {
+	return pulumix.Output[*SdmMaskingPolicyDifference]{
+		OutputState: i.ToSdmMaskingPolicyDifferenceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // SdmMaskingPolicyDifferenceArrayInput is an input type that accepts SdmMaskingPolicyDifferenceArray and SdmMaskingPolicyDifferenceArrayOutput values.
 // You can construct a concrete instance of `SdmMaskingPolicyDifferenceArrayInput` via:
 //
@@ -272,6 +279,12 @@ func (i SdmMaskingPolicyDifferenceArray) ToSdmMaskingPolicyDifferenceArrayOutput
 
 func (i SdmMaskingPolicyDifferenceArray) ToSdmMaskingPolicyDifferenceArrayOutputWithContext(ctx context.Context) SdmMaskingPolicyDifferenceArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SdmMaskingPolicyDifferenceArrayOutput)
+}
+
+func (i SdmMaskingPolicyDifferenceArray) ToOutput(ctx context.Context) pulumix.Output[[]*SdmMaskingPolicyDifference] {
+	return pulumix.Output[[]*SdmMaskingPolicyDifference]{
+		OutputState: i.ToSdmMaskingPolicyDifferenceArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // SdmMaskingPolicyDifferenceMapInput is an input type that accepts SdmMaskingPolicyDifferenceMap and SdmMaskingPolicyDifferenceMapOutput values.
@@ -299,6 +312,12 @@ func (i SdmMaskingPolicyDifferenceMap) ToSdmMaskingPolicyDifferenceMapOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(SdmMaskingPolicyDifferenceMapOutput)
 }
 
+func (i SdmMaskingPolicyDifferenceMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*SdmMaskingPolicyDifference] {
+	return pulumix.Output[map[string]*SdmMaskingPolicyDifference]{
+		OutputState: i.ToSdmMaskingPolicyDifferenceMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type SdmMaskingPolicyDifferenceOutput struct{ *pulumi.OutputState }
 
 func (SdmMaskingPolicyDifferenceOutput) ElementType() reflect.Type {
@@ -311,6 +330,12 @@ func (o SdmMaskingPolicyDifferenceOutput) ToSdmMaskingPolicyDifferenceOutput() S
 
 func (o SdmMaskingPolicyDifferenceOutput) ToSdmMaskingPolicyDifferenceOutputWithContext(ctx context.Context) SdmMaskingPolicyDifferenceOutput {
 	return o
+}
+
+func (o SdmMaskingPolicyDifferenceOutput) ToOutput(ctx context.Context) pulumix.Output[*SdmMaskingPolicyDifference] {
+	return pulumix.Output[*SdmMaskingPolicyDifference]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The OCID of the compartment where the SDM masking policy difference resource should be created.
@@ -385,6 +410,12 @@ func (o SdmMaskingPolicyDifferenceArrayOutput) ToSdmMaskingPolicyDifferenceArray
 	return o
 }
 
+func (o SdmMaskingPolicyDifferenceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*SdmMaskingPolicyDifference] {
+	return pulumix.Output[[]*SdmMaskingPolicyDifference]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o SdmMaskingPolicyDifferenceArrayOutput) Index(i pulumi.IntInput) SdmMaskingPolicyDifferenceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *SdmMaskingPolicyDifference {
 		return vs[0].([]*SdmMaskingPolicyDifference)[vs[1].(int)]
@@ -403,6 +434,12 @@ func (o SdmMaskingPolicyDifferenceMapOutput) ToSdmMaskingPolicyDifferenceMapOutp
 
 func (o SdmMaskingPolicyDifferenceMapOutput) ToSdmMaskingPolicyDifferenceMapOutputWithContext(ctx context.Context) SdmMaskingPolicyDifferenceMapOutput {
 	return o
+}
+
+func (o SdmMaskingPolicyDifferenceMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*SdmMaskingPolicyDifference] {
+	return pulumix.Output[map[string]*SdmMaskingPolicyDifference]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o SdmMaskingPolicyDifferenceMapOutput) MapIndex(k pulumi.StringInput) SdmMaskingPolicyDifferenceOutput {

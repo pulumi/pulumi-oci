@@ -94,7 +94,7 @@ public class CloudGuardDataSource extends com.pulumi.resources.CustomResource {
      * (Updatable) CompartmentId of Data Source.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -108,7 +108,7 @@ public class CloudGuardDataSource extends com.pulumi.resources.CustomResource {
      * (Updatable) Details specific to the data source type.
      * 
      */
-    @Export(name="dataSourceDetails", type=CloudGuardDataSourceDataSourceDetails.class, parameters={})
+    @Export(name="dataSourceDetails", refs={CloudGuardDataSourceDataSourceDetails.class}, tree="[0]")
     private Output<CloudGuardDataSourceDataSourceDetails> dataSourceDetails;
 
     /**
@@ -122,7 +122,7 @@ public class CloudGuardDataSource extends com.pulumi.resources.CustomResource {
      * Information about the detector recipe and rule attached
      * 
      */
-    @Export(name="dataSourceDetectorMappingInfos", type=List.class, parameters={CloudGuardDataSourceDataSourceDetectorMappingInfo.class})
+    @Export(name="dataSourceDetectorMappingInfos", refs={List.class,CloudGuardDataSourceDataSourceDetectorMappingInfo.class}, tree="[0,1]")
     private Output<List<CloudGuardDataSourceDataSourceDetectorMappingInfo>> dataSourceDetectorMappingInfos;
 
     /**
@@ -136,7 +136,7 @@ public class CloudGuardDataSource extends com.pulumi.resources.CustomResource {
      * Possible type of dataSourceFeed Provider(LoggingQuery)
      * 
      */
-    @Export(name="dataSourceFeedProvider", type=String.class, parameters={})
+    @Export(name="dataSourceFeedProvider", refs={String.class}, tree="[0]")
     private Output<String> dataSourceFeedProvider;
 
     /**
@@ -150,7 +150,7 @@ public class CloudGuardDataSource extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -164,7 +164,7 @@ public class CloudGuardDataSource extends com.pulumi.resources.CustomResource {
      * (Updatable) Data Source display name.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -183,7 +183,7 @@ public class CloudGuardDataSource extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -202,7 +202,7 @@ public class CloudGuardDataSource extends com.pulumi.resources.CustomResource {
      * Information about the region and status of query replication
      * 
      */
-    @Export(name="regionStatusDetails", type=List.class, parameters={CloudGuardDataSourceRegionStatusDetail.class})
+    @Export(name="regionStatusDetails", refs={List.class,CloudGuardDataSourceRegionStatusDetail.class}, tree="[0,1]")
     private Output<List<CloudGuardDataSourceRegionStatusDetail>> regionStatusDetails;
 
     /**
@@ -216,7 +216,7 @@ public class CloudGuardDataSource extends com.pulumi.resources.CustomResource {
      * The current state of the resource.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -230,7 +230,7 @@ public class CloudGuardDataSource extends com.pulumi.resources.CustomResource {
      * Status of data Source
      * 
      */
-    @Export(name="status", type=String.class, parameters={})
+    @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
@@ -244,7 +244,7 @@ public class CloudGuardDataSource extends com.pulumi.resources.CustomResource {
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -258,7 +258,7 @@ public class CloudGuardDataSource extends com.pulumi.resources.CustomResource {
      * The date and time the Data source was created. Format defined by RFC3339.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -272,7 +272,7 @@ public class CloudGuardDataSource extends com.pulumi.resources.CustomResource {
      * The date and time the Data source was updated. Format defined by RFC3339.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

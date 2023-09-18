@@ -77,7 +77,7 @@ public class NewsReport extends com.pulumi.resources.CustomResource {
      * (Updatable) Compartment Identifier where the news report will be created.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -91,7 +91,7 @@ public class NewsReport extends com.pulumi.resources.CustomResource {
      * (Updatable) Content types that the news report can handle.
      * 
      */
-    @Export(name="contentTypes", type=NewsReportContentTypes.class, parameters={})
+    @Export(name="contentTypes", refs={NewsReportContentTypes.class}, tree="[0]")
     private Output<NewsReportContentTypes> contentTypes;
 
     /**
@@ -105,7 +105,7 @@ public class NewsReport extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -119,7 +119,7 @@ public class NewsReport extends com.pulumi.resources.CustomResource {
      * The description of the news report.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -133,7 +133,7 @@ public class NewsReport extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -147,7 +147,7 @@ public class NewsReport extends com.pulumi.resources.CustomResource {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -161,7 +161,7 @@ public class NewsReport extends com.pulumi.resources.CustomResource {
      * (Updatable) Language of the news report.
      * 
      */
-    @Export(name="locale", type=String.class, parameters={})
+    @Export(name="locale", refs={String.class}, tree="[0]")
     private Output<String> locale;
 
     /**
@@ -175,7 +175,7 @@ public class NewsReport extends com.pulumi.resources.CustomResource {
      * The news report name.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -189,7 +189,7 @@ public class NewsReport extends com.pulumi.resources.CustomResource {
      * (Updatable) News report frequency.
      * 
      */
-    @Export(name="newsFrequency", type=String.class, parameters={})
+    @Export(name="newsFrequency", refs={String.class}, tree="[0]")
     private Output<String> newsFrequency;
 
     /**
@@ -203,7 +203,7 @@ public class NewsReport extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS topic.
      * 
      */
-    @Export(name="onsTopicId", type=String.class, parameters={})
+    @Export(name="onsTopicId", refs={String.class}, tree="[0]")
     private Output<String> onsTopicId;
 
     /**
@@ -217,7 +217,7 @@ public class NewsReport extends com.pulumi.resources.CustomResource {
      * The current state of the news report.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -234,7 +234,7 @@ public class NewsReport extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="status", type=String.class, parameters={})
+    @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
@@ -251,7 +251,7 @@ public class NewsReport extends com.pulumi.resources.CustomResource {
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -265,7 +265,7 @@ public class NewsReport extends com.pulumi.resources.CustomResource {
      * The time the the news report was first enabled. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -279,7 +279,7 @@ public class NewsReport extends com.pulumi.resources.CustomResource {
      * The time the news report was updated. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

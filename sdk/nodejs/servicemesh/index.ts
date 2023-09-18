@@ -52,7 +52,8 @@ utilities.lazyLoad(exports, ["getMeshes","getMeshesOutput"], () => require("./ge
 
 export { GetProxyDetailResult } from "./getProxyDetail";
 export const getProxyDetail: typeof import("./getProxyDetail").getProxyDetail = null as any;
-utilities.lazyLoad(exports, ["getProxyDetail"], () => require("./getProxyDetail"));
+export const getProxyDetailOutput: typeof import("./getProxyDetail").getProxyDetailOutput = null as any;
+utilities.lazyLoad(exports, ["getProxyDetail","getProxyDetailOutput"], () => require("./getProxyDetail"));
 
 export { GetVirtualDeploymentArgs, GetVirtualDeploymentResult, GetVirtualDeploymentOutputArgs } from "./getVirtualDeployment";
 export const getVirtualDeployment: typeof import("./getVirtualDeployment").getVirtualDeployment = null as any;

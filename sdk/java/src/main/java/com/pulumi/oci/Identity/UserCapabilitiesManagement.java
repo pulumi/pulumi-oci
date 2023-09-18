@@ -71,7 +71,7 @@ public class UserCapabilitiesManagement extends com.pulumi.resources.CustomResou
      * (Updatable) Indicates if the user can use API keys.
      * 
      */
-    @Export(name="canUseApiKeys", type=Boolean.class, parameters={})
+    @Export(name="canUseApiKeys", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> canUseApiKeys;
 
     /**
@@ -85,7 +85,7 @@ public class UserCapabilitiesManagement extends com.pulumi.resources.CustomResou
      * (Updatable) Indicates if the user can use SWIFT passwords / auth tokens.
      * 
      */
-    @Export(name="canUseAuthTokens", type=Boolean.class, parameters={})
+    @Export(name="canUseAuthTokens", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> canUseAuthTokens;
 
     /**
@@ -99,7 +99,7 @@ public class UserCapabilitiesManagement extends com.pulumi.resources.CustomResou
      * (Updatable) Indicates if the user can log in to the console.
      * 
      */
-    @Export(name="canUseConsolePassword", type=Boolean.class, parameters={})
+    @Export(name="canUseConsolePassword", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> canUseConsolePassword;
 
     /**
@@ -113,7 +113,7 @@ public class UserCapabilitiesManagement extends com.pulumi.resources.CustomResou
      * (Updatable) Indicates if the user can use SigV4 symmetric keys.
      * 
      */
-    @Export(name="canUseCustomerSecretKeys", type=Boolean.class, parameters={})
+    @Export(name="canUseCustomerSecretKeys", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> canUseCustomerSecretKeys;
 
     /**
@@ -130,7 +130,7 @@ public class UserCapabilitiesManagement extends com.pulumi.resources.CustomResou
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="canUseSmtpCredentials", type=Boolean.class, parameters={})
+    @Export(name="canUseSmtpCredentials", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> canUseSmtpCredentials;
 
     /**
@@ -147,7 +147,7 @@ public class UserCapabilitiesManagement extends com.pulumi.resources.CustomResou
      * The OCID of the user.
      * 
      */
-    @Export(name="userId", type=String.class, parameters={})
+    @Export(name="userId", refs={String.class}, tree="[0]")
     private Output<String> userId;
 
     /**

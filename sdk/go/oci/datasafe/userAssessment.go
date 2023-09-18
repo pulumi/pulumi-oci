@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the User Assessment resource in Oracle Cloud Infrastructure Data Safe service.
@@ -334,6 +335,12 @@ func (i *UserAssessment) ToUserAssessmentOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(UserAssessmentOutput)
 }
 
+func (i *UserAssessment) ToOutput(ctx context.Context) pulumix.Output[*UserAssessment] {
+	return pulumix.Output[*UserAssessment]{
+		OutputState: i.ToUserAssessmentOutputWithContext(ctx).OutputState,
+	}
+}
+
 // UserAssessmentArrayInput is an input type that accepts UserAssessmentArray and UserAssessmentArrayOutput values.
 // You can construct a concrete instance of `UserAssessmentArrayInput` via:
 //
@@ -357,6 +364,12 @@ func (i UserAssessmentArray) ToUserAssessmentArrayOutput() UserAssessmentArrayOu
 
 func (i UserAssessmentArray) ToUserAssessmentArrayOutputWithContext(ctx context.Context) UserAssessmentArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(UserAssessmentArrayOutput)
+}
+
+func (i UserAssessmentArray) ToOutput(ctx context.Context) pulumix.Output[[]*UserAssessment] {
+	return pulumix.Output[[]*UserAssessment]{
+		OutputState: i.ToUserAssessmentArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // UserAssessmentMapInput is an input type that accepts UserAssessmentMap and UserAssessmentMapOutput values.
@@ -384,6 +397,12 @@ func (i UserAssessmentMap) ToUserAssessmentMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(UserAssessmentMapOutput)
 }
 
+func (i UserAssessmentMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*UserAssessment] {
+	return pulumix.Output[map[string]*UserAssessment]{
+		OutputState: i.ToUserAssessmentMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type UserAssessmentOutput struct{ *pulumi.OutputState }
 
 func (UserAssessmentOutput) ElementType() reflect.Type {
@@ -396,6 +415,12 @@ func (o UserAssessmentOutput) ToUserAssessmentOutput() UserAssessmentOutput {
 
 func (o UserAssessmentOutput) ToUserAssessmentOutputWithContext(ctx context.Context) UserAssessmentOutput {
 	return o
+}
+
+func (o UserAssessmentOutput) ToOutput(ctx context.Context) pulumix.Output[*UserAssessment] {
+	return pulumix.Output[*UserAssessment]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The OCID of the compartment that contains the user assessment.
@@ -532,6 +557,12 @@ func (o UserAssessmentArrayOutput) ToUserAssessmentArrayOutputWithContext(ctx co
 	return o
 }
 
+func (o UserAssessmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*UserAssessment] {
+	return pulumix.Output[[]*UserAssessment]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o UserAssessmentArrayOutput) Index(i pulumi.IntInput) UserAssessmentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *UserAssessment {
 		return vs[0].([]*UserAssessment)[vs[1].(int)]
@@ -550,6 +581,12 @@ func (o UserAssessmentMapOutput) ToUserAssessmentMapOutput() UserAssessmentMapOu
 
 func (o UserAssessmentMapOutput) ToUserAssessmentMapOutputWithContext(ctx context.Context) UserAssessmentMapOutput {
 	return o
+}
+
+func (o UserAssessmentMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*UserAssessment] {
+	return pulumix.Output[map[string]*UserAssessment]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o UserAssessmentMapOutput) MapIndex(k pulumi.StringInput) UserAssessmentOutput {

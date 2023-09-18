@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the External Exadata Storage Connector resource in Oracle Cloud Infrastructure Database Management service.
@@ -275,6 +276,12 @@ func (i *ExternalExadataStorageConnector) ToExternalExadataStorageConnectorOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalExadataStorageConnectorOutput)
 }
 
+func (i *ExternalExadataStorageConnector) ToOutput(ctx context.Context) pulumix.Output[*ExternalExadataStorageConnector] {
+	return pulumix.Output[*ExternalExadataStorageConnector]{
+		OutputState: i.ToExternalExadataStorageConnectorOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ExternalExadataStorageConnectorArrayInput is an input type that accepts ExternalExadataStorageConnectorArray and ExternalExadataStorageConnectorArrayOutput values.
 // You can construct a concrete instance of `ExternalExadataStorageConnectorArrayInput` via:
 //
@@ -298,6 +305,12 @@ func (i ExternalExadataStorageConnectorArray) ToExternalExadataStorageConnectorA
 
 func (i ExternalExadataStorageConnectorArray) ToExternalExadataStorageConnectorArrayOutputWithContext(ctx context.Context) ExternalExadataStorageConnectorArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalExadataStorageConnectorArrayOutput)
+}
+
+func (i ExternalExadataStorageConnectorArray) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalExadataStorageConnector] {
+	return pulumix.Output[[]*ExternalExadataStorageConnector]{
+		OutputState: i.ToExternalExadataStorageConnectorArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // ExternalExadataStorageConnectorMapInput is an input type that accepts ExternalExadataStorageConnectorMap and ExternalExadataStorageConnectorMapOutput values.
@@ -325,6 +338,12 @@ func (i ExternalExadataStorageConnectorMap) ToExternalExadataStorageConnectorMap
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalExadataStorageConnectorMapOutput)
 }
 
+func (i ExternalExadataStorageConnectorMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalExadataStorageConnector] {
+	return pulumix.Output[map[string]*ExternalExadataStorageConnector]{
+		OutputState: i.ToExternalExadataStorageConnectorMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ExternalExadataStorageConnectorOutput struct{ *pulumi.OutputState }
 
 func (ExternalExadataStorageConnectorOutput) ElementType() reflect.Type {
@@ -337,6 +356,12 @@ func (o ExternalExadataStorageConnectorOutput) ToExternalExadataStorageConnector
 
 func (o ExternalExadataStorageConnectorOutput) ToExternalExadataStorageConnectorOutputWithContext(ctx context.Context) ExternalExadataStorageConnectorOutput {
 	return o
+}
+
+func (o ExternalExadataStorageConnectorOutput) ToOutput(ctx context.Context) pulumix.Output[*ExternalExadataStorageConnector] {
+	return pulumix.Output[*ExternalExadataStorageConnector]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
@@ -433,6 +458,12 @@ func (o ExternalExadataStorageConnectorArrayOutput) ToExternalExadataStorageConn
 	return o
 }
 
+func (o ExternalExadataStorageConnectorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalExadataStorageConnector] {
+	return pulumix.Output[[]*ExternalExadataStorageConnector]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o ExternalExadataStorageConnectorArrayOutput) Index(i pulumi.IntInput) ExternalExadataStorageConnectorOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ExternalExadataStorageConnector {
 		return vs[0].([]*ExternalExadataStorageConnector)[vs[1].(int)]
@@ -451,6 +482,12 @@ func (o ExternalExadataStorageConnectorMapOutput) ToExternalExadataStorageConnec
 
 func (o ExternalExadataStorageConnectorMapOutput) ToExternalExadataStorageConnectorMapOutputWithContext(ctx context.Context) ExternalExadataStorageConnectorMapOutput {
 	return o
+}
+
+func (o ExternalExadataStorageConnectorMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalExadataStorageConnector] {
+	return pulumix.Output[map[string]*ExternalExadataStorageConnector]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ExternalExadataStorageConnectorMapOutput) MapIndex(k pulumi.StringInput) ExternalExadataStorageConnectorOutput {

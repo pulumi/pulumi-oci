@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Autonomous Db Preview Versions in Oracle Cloud Infrastructure Database service.
@@ -105,6 +106,12 @@ func (o GetAutonomousDbPreviewVersionsResultOutput) ToGetAutonomousDbPreviewVers
 
 func (o GetAutonomousDbPreviewVersionsResultOutput) ToGetAutonomousDbPreviewVersionsResultOutputWithContext(ctx context.Context) GetAutonomousDbPreviewVersionsResultOutput {
 	return o
+}
+
+func (o GetAutonomousDbPreviewVersionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutonomousDbPreviewVersionsResult] {
+	return pulumix.Output[GetAutonomousDbPreviewVersionsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The list of autonomous_db_preview_versions.

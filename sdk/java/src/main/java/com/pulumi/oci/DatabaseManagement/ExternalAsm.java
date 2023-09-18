@@ -38,7 +38,7 @@ public class ExternalAsm extends com.pulumi.resources.CustomResource {
      * The additional details of the external ASM defined in `{&#34;key&#34;: &#34;value&#34;}` format. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="additionalDetails", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="additionalDetails", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> additionalDetails;
 
     /**
@@ -52,7 +52,7 @@ public class ExternalAsm extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -66,7 +66,7 @@ public class ExternalAsm extends com.pulumi.resources.CustomResource {
      * The name of the external ASM.
      * 
      */
-    @Export(name="componentName", type=String.class, parameters={})
+    @Export(name="componentName", refs={String.class}, tree="[0]")
     private Output<String> componentName;
 
     /**
@@ -80,7 +80,7 @@ public class ExternalAsm extends com.pulumi.resources.CustomResource {
      * The user-friendly name for the database. The name does not have to be unique.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -94,7 +94,7 @@ public class ExternalAsm extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
      * 
      */
-    @Export(name="externalAsmId", type=String.class, parameters={})
+    @Export(name="externalAsmId", refs={String.class}, tree="[0]")
     private Output<String> externalAsmId;
 
     /**
@@ -111,7 +111,7 @@ public class ExternalAsm extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="externalConnectorId", type=String.class, parameters={})
+    @Export(name="externalConnectorId", refs={String.class}, tree="[0]")
     private Output<String> externalConnectorId;
 
     /**
@@ -128,7 +128,7 @@ public class ExternalAsm extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the ASM is a part of.
      * 
      */
-    @Export(name="externalDbSystemId", type=String.class, parameters={})
+    @Export(name="externalDbSystemId", refs={String.class}, tree="[0]")
     private Output<String> externalDbSystemId;
 
     /**
@@ -142,7 +142,7 @@ public class ExternalAsm extends com.pulumi.resources.CustomResource {
      * The directory in which ASM is installed. This is the same directory in which Oracle Grid Infrastructure is installed.
      * 
      */
-    @Export(name="gridHome", type=String.class, parameters={})
+    @Export(name="gridHome", refs={String.class}, tree="[0]")
     private Output<String> gridHome;
 
     /**
@@ -156,7 +156,7 @@ public class ExternalAsm extends com.pulumi.resources.CustomResource {
      * Indicates whether the ASM is a cluster ASM or not.
      * 
      */
-    @Export(name="isCluster", type=Boolean.class, parameters={})
+    @Export(name="isCluster", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isCluster;
 
     /**
@@ -170,7 +170,7 @@ public class ExternalAsm extends com.pulumi.resources.CustomResource {
      * Indicates whether Oracle Flex ASM is enabled or not.
      * 
      */
-    @Export(name="isFlexEnabled", type=Boolean.class, parameters={})
+    @Export(name="isFlexEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isFlexEnabled;
 
     /**
@@ -184,7 +184,7 @@ public class ExternalAsm extends com.pulumi.resources.CustomResource {
      * Additional information about the current lifecycle state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -198,7 +198,7 @@ public class ExternalAsm extends com.pulumi.resources.CustomResource {
      * The list of databases that are serviced by the ASM.
      * 
      */
-    @Export(name="servicedDatabases", type=List.class, parameters={ExternalAsmServicedDatabase.class})
+    @Export(name="servicedDatabases", refs={List.class,ExternalAsmServicedDatabase.class}, tree="[0,1]")
     private Output<List<ExternalAsmServicedDatabase>> servicedDatabases;
 
     /**
@@ -212,7 +212,7 @@ public class ExternalAsm extends com.pulumi.resources.CustomResource {
      * The current lifecycle state of the external ASM.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -226,7 +226,7 @@ public class ExternalAsm extends com.pulumi.resources.CustomResource {
      * The date and time the external ASM was created.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -240,7 +240,7 @@ public class ExternalAsm extends com.pulumi.resources.CustomResource {
      * The date and time the external ASM was last updated.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -254,7 +254,7 @@ public class ExternalAsm extends com.pulumi.resources.CustomResource {
      * The ASM version.
      * 
      */
-    @Export(name="version", type=String.class, parameters={})
+    @Export(name="version", refs={String.class}, tree="[0]")
     private Output<String> version;
 
     /**

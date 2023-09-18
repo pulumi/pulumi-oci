@@ -86,7 +86,7 @@ public class Usage extends com.pulumi.resources.CustomResource {
      * The compartment depth level.
      * 
      */
-    @Export(name="compartmentDepth", type=Double.class, parameters={})
+    @Export(name="compartmentDepth", refs={Double.class}, tree="[0]")
     private Output<Double> compartmentDepth;
 
     /**
@@ -100,7 +100,7 @@ public class Usage extends com.pulumi.resources.CustomResource {
      * The filter object for query usage.
      * 
      */
-    @Export(name="filter", type=String.class, parameters={})
+    @Export(name="filter", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> filter;
 
     /**
@@ -114,7 +114,7 @@ public class Usage extends com.pulumi.resources.CustomResource {
      * Forecast configuration of usage/cost.
      * 
      */
-    @Export(name="forecast", type=UsageForecast.class, parameters={})
+    @Export(name="forecast", refs={UsageForecast.class}, tree="[0]")
     private Output<UsageForecast> forecast;
 
     /**
@@ -128,7 +128,7 @@ public class Usage extends com.pulumi.resources.CustomResource {
      * The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
      * 
      */
-    @Export(name="granularity", type=String.class, parameters={})
+    @Export(name="granularity", refs={String.class}, tree="[0]")
     private Output<String> granularity;
 
     /**
@@ -142,7 +142,7 @@ public class Usage extends com.pulumi.resources.CustomResource {
      * Aggregate the result by. example: `[&#34;tagNamespace&#34;, &#34;tagKey&#34;, &#34;tagValue&#34;, &#34;service&#34;, &#34;skuName&#34;, &#34;skuPartNumber&#34;, &#34;unit&#34;, &#34;compartmentName&#34;, &#34;compartmentPath&#34;, &#34;compartmentId&#34;, &#34;platform&#34;, &#34;region&#34;, &#34;logicalAd&#34;, &#34;resourceId&#34;, &#34;tenantId&#34;, &#34;tenantName&#34;]`
      * 
      */
-    @Export(name="groupBies", type=List.class, parameters={String.class})
+    @Export(name="groupBies", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> groupBies;
 
     /**
@@ -156,7 +156,7 @@ public class Usage extends com.pulumi.resources.CustomResource {
      * GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{&#34;namespace&#34;:&#34;oracle&#34;, &#34;key&#34;:&#34;createdBy&#34;]`
      * 
      */
-    @Export(name="groupByTags", type=List.class, parameters={UsageGroupByTag.class})
+    @Export(name="groupByTags", refs={List.class,UsageGroupByTag.class}, tree="[0,1]")
     private Output<List<UsageGroupByTag>> groupByTags;
 
     /**
@@ -170,7 +170,7 @@ public class Usage extends com.pulumi.resources.CustomResource {
      * Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
      * 
      */
-    @Export(name="isAggregateByTime", type=Boolean.class, parameters={})
+    @Export(name="isAggregateByTime", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isAggregateByTime;
 
     /**
@@ -184,7 +184,7 @@ public class Usage extends com.pulumi.resources.CustomResource {
      * A list of usage items.
      * 
      */
-    @Export(name="items", type=List.class, parameters={UsageItem.class})
+    @Export(name="items", refs={List.class,UsageItem.class}, tree="[0,1]")
     private Output<List<UsageItem>> items;
 
     /**
@@ -198,7 +198,7 @@ public class Usage extends com.pulumi.resources.CustomResource {
      * The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit.
      * 
      */
-    @Export(name="queryType", type=String.class, parameters={})
+    @Export(name="queryType", refs={String.class}, tree="[0]")
     private Output<String> queryType;
 
     /**
@@ -212,7 +212,7 @@ public class Usage extends com.pulumi.resources.CustomResource {
      * Tenant ID.
      * 
      */
-    @Export(name="tenantId", type=String.class, parameters={})
+    @Export(name="tenantId", refs={String.class}, tree="[0]")
     private Output<String> tenantId;
 
     /**
@@ -226,7 +226,7 @@ public class Usage extends com.pulumi.resources.CustomResource {
      * The usage end time.
      * 
      */
-    @Export(name="timeUsageEnded", type=String.class, parameters={})
+    @Export(name="timeUsageEnded", refs={String.class}, tree="[0]")
     private Output<String> timeUsageEnded;
 
     /**
@@ -243,7 +243,7 @@ public class Usage extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="timeUsageStarted", type=String.class, parameters={})
+    @Export(name="timeUsageStarted", refs={String.class}, tree="[0]")
     private Output<String> timeUsageStarted;
 
     /**

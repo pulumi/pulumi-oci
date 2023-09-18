@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Endpoint resource in Oracle Cloud Infrastructure Ai Language service.
@@ -262,6 +263,12 @@ func (i *Endpoint) ToEndpointOutputWithContext(ctx context.Context) EndpointOutp
 	return pulumi.ToOutputWithContext(ctx, i).(EndpointOutput)
 }
 
+func (i *Endpoint) ToOutput(ctx context.Context) pulumix.Output[*Endpoint] {
+	return pulumix.Output[*Endpoint]{
+		OutputState: i.ToEndpointOutputWithContext(ctx).OutputState,
+	}
+}
+
 // EndpointArrayInput is an input type that accepts EndpointArray and EndpointArrayOutput values.
 // You can construct a concrete instance of `EndpointArrayInput` via:
 //
@@ -285,6 +292,12 @@ func (i EndpointArray) ToEndpointArrayOutput() EndpointArrayOutput {
 
 func (i EndpointArray) ToEndpointArrayOutputWithContext(ctx context.Context) EndpointArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(EndpointArrayOutput)
+}
+
+func (i EndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]*Endpoint] {
+	return pulumix.Output[[]*Endpoint]{
+		OutputState: i.ToEndpointArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // EndpointMapInput is an input type that accepts EndpointMap and EndpointMapOutput values.
@@ -312,6 +325,12 @@ func (i EndpointMap) ToEndpointMapOutputWithContext(ctx context.Context) Endpoin
 	return pulumi.ToOutputWithContext(ctx, i).(EndpointMapOutput)
 }
 
+func (i EndpointMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Endpoint] {
+	return pulumix.Output[map[string]*Endpoint]{
+		OutputState: i.ToEndpointMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type EndpointOutput struct{ *pulumi.OutputState }
 
 func (EndpointOutput) ElementType() reflect.Type {
@@ -324,6 +343,12 @@ func (o EndpointOutput) ToEndpointOutput() EndpointOutput {
 
 func (o EndpointOutput) ToEndpointOutputWithContext(ctx context.Context) EndpointOutput {
 	return o
+}
+
+func (o EndpointOutput) ToOutput(ctx context.Context) pulumix.Output[*Endpoint] {
+	return pulumix.Output[*Endpoint]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) compartment identifier for the endpoint
@@ -408,6 +433,12 @@ func (o EndpointArrayOutput) ToEndpointArrayOutputWithContext(ctx context.Contex
 	return o
 }
 
+func (o EndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Endpoint] {
+	return pulumix.Output[[]*Endpoint]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o EndpointArrayOutput) Index(i pulumi.IntInput) EndpointOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Endpoint {
 		return vs[0].([]*Endpoint)[vs[1].(int)]
@@ -426,6 +457,12 @@ func (o EndpointMapOutput) ToEndpointMapOutput() EndpointMapOutput {
 
 func (o EndpointMapOutput) ToEndpointMapOutputWithContext(ctx context.Context) EndpointMapOutput {
 	return o
+}
+
+func (o EndpointMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Endpoint] {
+	return pulumix.Output[map[string]*Endpoint]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o EndpointMapOutput) MapIndex(k pulumi.StringInput) EndpointOutput {

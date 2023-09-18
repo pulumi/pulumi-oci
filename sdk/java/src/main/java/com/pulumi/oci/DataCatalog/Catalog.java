@@ -74,7 +74,7 @@ public class Catalog extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="attachedCatalogPrivateEndpoints", type=List.class, parameters={String.class})
+    @Export(name="attachedCatalogPrivateEndpoints", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> attachedCatalogPrivateEndpoints;
 
     /**
@@ -91,7 +91,7 @@ public class Catalog extends com.pulumi.resources.CustomResource {
      * (Updatable) Compartment identifier.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -105,7 +105,7 @@ public class Catalog extends com.pulumi.resources.CustomResource {
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -119,7 +119,7 @@ public class Catalog extends com.pulumi.resources.CustomResource {
      * (Updatable) Data catalog identifier.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -133,7 +133,7 @@ public class Catalog extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -147,7 +147,7 @@ public class Catalog extends com.pulumi.resources.CustomResource {
      * An message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in &#39;Failed&#39; state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -161,7 +161,7 @@ public class Catalog extends com.pulumi.resources.CustomResource {
      * The number of data objects added to the data catalog. Please see the data catalog documentation for further information on how this is calculated.
      * 
      */
-    @Export(name="numberOfObjects", type=Integer.class, parameters={})
+    @Export(name="numberOfObjects", refs={Integer.class}, tree="[0]")
     private Output<Integer> numberOfObjects;
 
     /**
@@ -175,7 +175,7 @@ public class Catalog extends com.pulumi.resources.CustomResource {
      * The REST front endpoint URL to the data catalog instance.
      * 
      */
-    @Export(name="serviceApiUrl", type=String.class, parameters={})
+    @Export(name="serviceApiUrl", refs={String.class}, tree="[0]")
     private Output<String> serviceApiUrl;
 
     /**
@@ -189,7 +189,7 @@ public class Catalog extends com.pulumi.resources.CustomResource {
      * The console front endpoint URL to the data catalog instance.
      * 
      */
-    @Export(name="serviceConsoleUrl", type=String.class, parameters={})
+    @Export(name="serviceConsoleUrl", refs={String.class}, tree="[0]")
     private Output<String> serviceConsoleUrl;
 
     /**
@@ -203,7 +203,7 @@ public class Catalog extends com.pulumi.resources.CustomResource {
      * The current state of the data catalog resource.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -217,7 +217,7 @@ public class Catalog extends com.pulumi.resources.CustomResource {
      * The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -231,7 +231,7 @@ public class Catalog extends com.pulumi.resources.CustomResource {
      * The time the data catalog was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

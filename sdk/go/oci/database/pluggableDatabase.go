@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Pluggable Database resource in Oracle Cloud Infrastructure Database service.
@@ -294,6 +295,12 @@ func (i *PluggableDatabase) ToPluggableDatabaseOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(PluggableDatabaseOutput)
 }
 
+func (i *PluggableDatabase) ToOutput(ctx context.Context) pulumix.Output[*PluggableDatabase] {
+	return pulumix.Output[*PluggableDatabase]{
+		OutputState: i.ToPluggableDatabaseOutputWithContext(ctx).OutputState,
+	}
+}
+
 // PluggableDatabaseArrayInput is an input type that accepts PluggableDatabaseArray and PluggableDatabaseArrayOutput values.
 // You can construct a concrete instance of `PluggableDatabaseArrayInput` via:
 //
@@ -317,6 +324,12 @@ func (i PluggableDatabaseArray) ToPluggableDatabaseArrayOutput() PluggableDataba
 
 func (i PluggableDatabaseArray) ToPluggableDatabaseArrayOutputWithContext(ctx context.Context) PluggableDatabaseArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(PluggableDatabaseArrayOutput)
+}
+
+func (i PluggableDatabaseArray) ToOutput(ctx context.Context) pulumix.Output[[]*PluggableDatabase] {
+	return pulumix.Output[[]*PluggableDatabase]{
+		OutputState: i.ToPluggableDatabaseArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // PluggableDatabaseMapInput is an input type that accepts PluggableDatabaseMap and PluggableDatabaseMapOutput values.
@@ -344,6 +357,12 @@ func (i PluggableDatabaseMap) ToPluggableDatabaseMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(PluggableDatabaseMapOutput)
 }
 
+func (i PluggableDatabaseMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*PluggableDatabase] {
+	return pulumix.Output[map[string]*PluggableDatabase]{
+		OutputState: i.ToPluggableDatabaseMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type PluggableDatabaseOutput struct{ *pulumi.OutputState }
 
 func (PluggableDatabaseOutput) ElementType() reflect.Type {
@@ -356,6 +375,12 @@ func (o PluggableDatabaseOutput) ToPluggableDatabaseOutput() PluggableDatabaseOu
 
 func (o PluggableDatabaseOutput) ToPluggableDatabaseOutputWithContext(ctx context.Context) PluggableDatabaseOutput {
 	return o
+}
+
+func (o PluggableDatabaseOutput) ToOutput(ctx context.Context) pulumix.Output[*PluggableDatabase] {
+	return pulumix.Output[*PluggableDatabase]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -457,6 +482,12 @@ func (o PluggableDatabaseArrayOutput) ToPluggableDatabaseArrayOutputWithContext(
 	return o
 }
 
+func (o PluggableDatabaseArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*PluggableDatabase] {
+	return pulumix.Output[[]*PluggableDatabase]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o PluggableDatabaseArrayOutput) Index(i pulumi.IntInput) PluggableDatabaseOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *PluggableDatabase {
 		return vs[0].([]*PluggableDatabase)[vs[1].(int)]
@@ -475,6 +506,12 @@ func (o PluggableDatabaseMapOutput) ToPluggableDatabaseMapOutput() PluggableData
 
 func (o PluggableDatabaseMapOutput) ToPluggableDatabaseMapOutputWithContext(ctx context.Context) PluggableDatabaseMapOutput {
 	return o
+}
+
+func (o PluggableDatabaseMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*PluggableDatabase] {
+	return pulumix.Output[map[string]*PluggableDatabase]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o PluggableDatabaseMapOutput) MapIndex(k pulumi.StringInput) PluggableDatabaseOutput {

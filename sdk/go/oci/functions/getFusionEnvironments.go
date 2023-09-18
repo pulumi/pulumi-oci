@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Fusion Environments in Oracle Cloud Infrastructure Fusion Apps service.
@@ -126,6 +127,12 @@ func (o GetFusionEnvironmentsResultOutput) ToGetFusionEnvironmentsResultOutput()
 
 func (o GetFusionEnvironmentsResultOutput) ToGetFusionEnvironmentsResultOutputWithContext(ctx context.Context) GetFusionEnvironmentsResultOutput {
 	return o
+}
+
+func (o GetFusionEnvironmentsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentsResult] {
+	return pulumix.Output[GetFusionEnvironmentsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Compartment Identifier

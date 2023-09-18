@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Virtual Service Route Tables in Oracle Cloud Infrastructure Service Mesh service.
@@ -131,6 +132,12 @@ func (o GetVirtualServiceRouteTablesResultOutput) ToGetVirtualServiceRouteTables
 
 func (o GetVirtualServiceRouteTablesResultOutput) ToGetVirtualServiceRouteTablesResultOutputWithContext(ctx context.Context) GetVirtualServiceRouteTablesResultOutput {
 	return o
+}
+
+func (o GetVirtualServiceRouteTablesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualServiceRouteTablesResult] {
+	return pulumix.Output[GetVirtualServiceRouteTablesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

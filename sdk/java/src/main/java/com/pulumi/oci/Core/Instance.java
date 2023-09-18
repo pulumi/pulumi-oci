@@ -88,7 +88,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * (Updatable) Configuration options for the Oracle Cloud Agent software running on the instance.
      * 
      */
-    @Export(name="agentConfig", type=InstanceAgentConfig.class, parameters={})
+    @Export(name="agentConfig", refs={InstanceAgentConfig.class}, tree="[0]")
     private Output<InstanceAgentConfig> agentConfig;
 
     /**
@@ -98,7 +98,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
     public Output<InstanceAgentConfig> agentConfig() {
         return this.agentConfig;
     }
-    @Export(name="async", type=Boolean.class, parameters={})
+    @Export(name="async", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> async;
 
     public Output<Optional<Boolean>> async() {
@@ -108,7 +108,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * (Updatable) Options for VM migration during infrastructure maintenance events and for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.
      * 
      */
-    @Export(name="availabilityConfig", type=InstanceAvailabilityConfig.class, parameters={})
+    @Export(name="availabilityConfig", refs={InstanceAvailabilityConfig.class}, tree="[0]")
     private Output<InstanceAvailabilityConfig> availabilityConfig;
 
     /**
@@ -122,7 +122,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    @Export(name="availabilityDomain", type=String.class, parameters={})
+    @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
     private Output<String> availabilityDomain;
 
     /**
@@ -136,7 +136,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * The OCID of the attached boot volume. If the `source_type` is `bootVolume`, this will be the same OCID as the `source_id`.
      * 
      */
-    @Export(name="bootVolumeId", type=String.class, parameters={})
+    @Export(name="bootVolumeId", refs={String.class}, tree="[0]")
     private Output<String> bootVolumeId;
 
     /**
@@ -150,7 +150,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the compute capacity reservation this instance is launched under. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
      * 
      */
-    @Export(name="capacityReservationId", type=String.class, parameters={})
+    @Export(name="capacityReservationId", refs={String.class}, tree="[0]")
     private Output<String> capacityReservationId;
 
     /**
@@ -164,7 +164,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the compartment containing images to search
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -178,7 +178,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
      * 
      */
-    @Export(name="computeClusterId", type=String.class, parameters={})
+    @Export(name="computeClusterId", refs={String.class}, tree="[0]")
     private Output<String> computeClusterId;
 
     /**
@@ -192,7 +192,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
      * 
      */
-    @Export(name="createVnicDetails", type=InstanceCreateVnicDetails.class, parameters={})
+    @Export(name="createVnicDetails", refs={InstanceCreateVnicDetails.class}, tree="[0]")
     private Output<InstanceCreateVnicDetails> createVnicDetails;
 
     /**
@@ -206,7 +206,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * The OCID of the dedicated virtual machine host to place the instance on.
      * 
      */
-    @Export(name="dedicatedVmHostId", type=String.class, parameters={})
+    @Export(name="dedicatedVmHostId", refs={String.class}, tree="[0]")
     private Output<String> dedicatedVmHostId;
 
     /**
@@ -220,7 +220,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -234,7 +234,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -248,7 +248,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
      * 
      */
-    @Export(name="extendedMetadata", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="extendedMetadata", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> extendedMetadata;
 
     /**
@@ -268,7 +268,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * Example: `FAULT-DOMAIN-1`
      * 
      */
-    @Export(name="faultDomain", type=String.class, parameters={})
+    @Export(name="faultDomain", refs={String.class}, tree="[0]")
     private Output<String> faultDomain;
 
     /**
@@ -288,7 +288,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -306,7 +306,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Deprecated /* The 'hostname_label' field has been deprecated. Please use 'hostname_label under create_vnic_details' instead. */
-    @Export(name="hostnameLabel", type=String.class, parameters={})
+    @Export(name="hostnameLabel", refs={String.class}, tree="[0]")
     private Output<String> hostnameLabel;
 
     /**
@@ -324,7 +324,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Deprecated /* The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used. */
-    @Export(name="image", type=String.class, parameters={})
+    @Export(name="image", refs={String.class}, tree="[0]")
     private Output<String> image;
 
     /**
@@ -338,7 +338,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
      * 
      */
-    @Export(name="instanceConfigurationId", type=String.class, parameters={})
+    @Export(name="instanceConfigurationId", refs={String.class}, tree="[0]")
     private Output<String> instanceConfigurationId;
 
     /**
@@ -352,7 +352,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * (Updatable) Optional mutable instance options
      * 
      */
-    @Export(name="instanceOptions", type=InstanceInstanceOptions.class, parameters={})
+    @Export(name="instanceOptions", refs={InstanceInstanceOptions.class}, tree="[0]")
     private Output<InstanceInstanceOptions> instanceOptions;
 
     /**
@@ -378,7 +378,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * For more information about iPXE, see http://ipxe.org.
      * 
      */
-    @Export(name="ipxeScript", type=String.class, parameters={})
+    @Export(name="ipxeScript", refs={String.class}, tree="[0]")
     private Output<String> ipxeScript;
 
     /**
@@ -404,7 +404,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
      * 
      */
-    @Export(name="isCrossNumaNode", type=Boolean.class, parameters={})
+    @Export(name="isCrossNumaNode", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isCrossNumaNode;
 
     /**
@@ -418,7 +418,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * (Updatable) Use this for update operation only. This field is  Deprecated during create. For create use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/datatypes/LaunchInstanceDetails).
      * 
      */
-    @Export(name="isPvEncryptionInTransitEnabled", type=Boolean.class, parameters={})
+    @Export(name="isPvEncryptionInTransitEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isPvEncryptionInTransitEnabled;
 
     /**
@@ -432,7 +432,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
      * 
      */
-    @Export(name="launchMode", type=String.class, parameters={})
+    @Export(name="launchMode", refs={String.class}, tree="[0]")
     private Output<String> launchMode;
 
     /**
@@ -446,7 +446,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * (Updatable) Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
      * 
      */
-    @Export(name="launchOptions", type=InstanceLaunchOptions.class, parameters={})
+    @Export(name="launchOptions", refs={InstanceLaunchOptions.class}, tree="[0]")
     private Output<InstanceLaunchOptions> launchOptions;
 
     /**
@@ -506,7 +506,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * **Note:** Both the &#39;user_data&#39; and &#39;ssh_authorized_keys&#39; fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for &#39;user_data&#39; and &#39;ssh_authorized_keys&#39; that already exist on the instance.
      * 
      */
-    @Export(name="metadata", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="metadata", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> metadata;
 
     /**
@@ -574,7 +574,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * For more information about BIOS settings for bare metal instances, see [BIOS Settings for Bare Metal Instances](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bios-settings.htm).
      * 
      */
-    @Export(name="platformConfig", type=InstancePlatformConfig.class, parameters={})
+    @Export(name="platformConfig", refs={InstancePlatformConfig.class}, tree="[0]")
     private Output<InstancePlatformConfig> platformConfig;
 
     /**
@@ -596,7 +596,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * Configuration options for preemptible instances.
      * 
      */
-    @Export(name="preemptibleInstanceConfig", type=InstancePreemptibleInstanceConfig.class, parameters={})
+    @Export(name="preemptibleInstanceConfig", refs={InstancePreemptibleInstanceConfig.class}, tree="[0]")
     private Output<InstancePreemptibleInstanceConfig> preemptibleInstanceConfig;
 
     /**
@@ -610,7 +610,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
      * 
      */
-    @Export(name="preserveBootVolume", type=Boolean.class, parameters={})
+    @Export(name="preserveBootVolume", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> preserveBootVolume;
 
     /**
@@ -628,7 +628,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * Example: `10.0.3.3`
      * 
      */
-    @Export(name="privateIp", type=String.class, parameters={})
+    @Export(name="privateIp", refs={String.class}, tree="[0]")
     private Output<String> privateIp;
 
     /**
@@ -646,7 +646,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * The public IP address of instance VNIC (if enabled).
      * 
      */
-    @Export(name="publicIp", type=String.class, parameters={})
+    @Export(name="publicIp", refs={String.class}, tree="[0]")
     private Output<String> publicIp;
 
     /**
@@ -660,7 +660,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * The region that contains the availability domain the instance is running in.
      * 
      */
-    @Export(name="region", type=String.class, parameters={})
+    @Export(name="region", refs={String.class}, tree="[0]")
     private Output<String> region;
 
     /**
@@ -676,7 +676,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
      * 
      */
-    @Export(name="shape", type=String.class, parameters={})
+    @Export(name="shape", refs={String.class}, tree="[0]")
     private Output<String> shape;
 
     /**
@@ -696,7 +696,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
      * 
      */
-    @Export(name="shapeConfig", type=InstanceShapeConfig.class, parameters={})
+    @Export(name="shapeConfig", refs={InstanceShapeConfig.class}, tree="[0]")
     private Output<InstanceShapeConfig> shapeConfig;
 
     /**
@@ -714,7 +714,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * (Updatable)
      * 
      */
-    @Export(name="sourceDetails", type=InstanceSourceDetails.class, parameters={})
+    @Export(name="sourceDetails", refs={InstanceSourceDetails.class}, tree="[0]")
     private Output<InstanceSourceDetails> sourceDetails;
 
     /**
@@ -731,7 +731,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -752,7 +752,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Deprecated /* The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead. */
-    @Export(name="subnetId", type=String.class, parameters={})
+    @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
@@ -766,7 +766,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -780,7 +780,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * The date and time the instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -794,7 +794,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * The date and time the instance is expected to be stopped / started,  in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). After that time if instance hasn&#39;t been rebooted, Oracle will reboot the instance within 24 hours of the due time. Regardless of how the instance was stopped, the flag will be reset to empty as soon as instance reaches Stopped state. Example: `2018-05-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeMaintenanceRebootDue", type=String.class, parameters={})
+    @Export(name="timeMaintenanceRebootDue", refs={String.class}, tree="[0]")
     private Output<String> timeMaintenanceRebootDue;
 
     /**
@@ -804,7 +804,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
     public Output<String> timeMaintenanceRebootDue() {
         return this.timeMaintenanceRebootDue;
     }
-    @Export(name="updateOperationConstraint", type=String.class, parameters={})
+    @Export(name="updateOperationConstraint", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> updateOperationConstraint;
 
     public Output<Optional<String>> updateOperationConstraint() {

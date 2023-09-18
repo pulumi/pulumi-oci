@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Sddc resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
@@ -212,6 +213,12 @@ func (o LookupSddcResultOutput) ToLookupSddcResultOutput() LookupSddcResultOutpu
 
 func (o LookupSddcResultOutput) ToLookupSddcResultOutputWithContext(ctx context.Context) LookupSddcResultOutput {
 	return o
+}
+
+func (o LookupSddcResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupSddcResult] {
+	return pulumix.Output[LookupSddcResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.

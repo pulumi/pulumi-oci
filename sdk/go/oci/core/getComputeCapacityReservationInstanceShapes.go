@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Compute Capacity Reservation Instance Shapes in Oracle Cloud Infrastructure Core service.
@@ -117,6 +118,12 @@ func (o GetComputeCapacityReservationInstanceShapesResultOutput) ToGetComputeCap
 
 func (o GetComputeCapacityReservationInstanceShapesResultOutput) ToGetComputeCapacityReservationInstanceShapesResultOutputWithContext(ctx context.Context) GetComputeCapacityReservationInstanceShapesResultOutput {
 	return o
+}
+
+func (o GetComputeCapacityReservationInstanceShapesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetComputeCapacityReservationInstanceShapesResult] {
+	return pulumix.Output[GetComputeCapacityReservationInstanceShapesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The shape's availability domain.

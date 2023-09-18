@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of File Systems in Oracle Cloud Infrastructure File Storage service.
@@ -153,6 +154,12 @@ func (o GetFileSystemsResultOutput) ToGetFileSystemsResultOutput() GetFileSystem
 
 func (o GetFileSystemsResultOutput) ToGetFileSystemsResultOutputWithContext(ctx context.Context) GetFileSystemsResultOutput {
 	return o
+}
+
+func (o GetFileSystemsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFileSystemsResult] {
+	return pulumix.Output[GetFileSystemsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The availability domain the file system is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`

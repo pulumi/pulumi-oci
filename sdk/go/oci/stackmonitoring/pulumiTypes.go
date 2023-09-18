@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -66,6 +67,12 @@ func (i DiscoveryJobDiscoveryDetailsArgs) ToDiscoveryJobDiscoveryDetailsOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(DiscoveryJobDiscoveryDetailsOutput)
 }
 
+func (i DiscoveryJobDiscoveryDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[DiscoveryJobDiscoveryDetails] {
+	return pulumix.Output[DiscoveryJobDiscoveryDetails]{
+		OutputState: i.ToDiscoveryJobDiscoveryDetailsOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i DiscoveryJobDiscoveryDetailsArgs) ToDiscoveryJobDiscoveryDetailsPtrOutput() DiscoveryJobDiscoveryDetailsPtrOutput {
 	return i.ToDiscoveryJobDiscoveryDetailsPtrOutputWithContext(context.Background())
 }
@@ -107,6 +114,12 @@ func (i *discoveryJobDiscoveryDetailsPtrType) ToDiscoveryJobDiscoveryDetailsPtrO
 	return pulumi.ToOutputWithContext(ctx, i).(DiscoveryJobDiscoveryDetailsPtrOutput)
 }
 
+func (i *discoveryJobDiscoveryDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*DiscoveryJobDiscoveryDetails] {
+	return pulumix.Output[*DiscoveryJobDiscoveryDetails]{
+		OutputState: i.ToDiscoveryJobDiscoveryDetailsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type DiscoveryJobDiscoveryDetailsOutput struct{ *pulumi.OutputState }
 
 func (DiscoveryJobDiscoveryDetailsOutput) ElementType() reflect.Type {
@@ -129,6 +142,12 @@ func (o DiscoveryJobDiscoveryDetailsOutput) ToDiscoveryJobDiscoveryDetailsPtrOut
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v DiscoveryJobDiscoveryDetails) *DiscoveryJobDiscoveryDetails {
 		return &v
 	}).(DiscoveryJobDiscoveryDetailsPtrOutput)
+}
+
+func (o DiscoveryJobDiscoveryDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[DiscoveryJobDiscoveryDetails] {
+	return pulumix.Output[DiscoveryJobDiscoveryDetails]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of Management Agent
@@ -173,6 +192,12 @@ func (o DiscoveryJobDiscoveryDetailsPtrOutput) ToDiscoveryJobDiscoveryDetailsPtr
 
 func (o DiscoveryJobDiscoveryDetailsPtrOutput) ToDiscoveryJobDiscoveryDetailsPtrOutputWithContext(ctx context.Context) DiscoveryJobDiscoveryDetailsPtrOutput {
 	return o
+}
+
+func (o DiscoveryJobDiscoveryDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DiscoveryJobDiscoveryDetails] {
+	return pulumix.Output[*DiscoveryJobDiscoveryDetails]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o DiscoveryJobDiscoveryDetailsPtrOutput) Elem() DiscoveryJobDiscoveryDetailsOutput {
@@ -278,6 +303,12 @@ func (i DiscoveryJobDiscoveryDetailsCredentialsArgs) ToDiscoveryJobDiscoveryDeta
 	return pulumi.ToOutputWithContext(ctx, i).(DiscoveryJobDiscoveryDetailsCredentialsOutput)
 }
 
+func (i DiscoveryJobDiscoveryDetailsCredentialsArgs) ToOutput(ctx context.Context) pulumix.Output[DiscoveryJobDiscoveryDetailsCredentials] {
+	return pulumix.Output[DiscoveryJobDiscoveryDetailsCredentials]{
+		OutputState: i.ToDiscoveryJobDiscoveryDetailsCredentialsOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i DiscoveryJobDiscoveryDetailsCredentialsArgs) ToDiscoveryJobDiscoveryDetailsCredentialsPtrOutput() DiscoveryJobDiscoveryDetailsCredentialsPtrOutput {
 	return i.ToDiscoveryJobDiscoveryDetailsCredentialsPtrOutputWithContext(context.Background())
 }
@@ -319,6 +350,12 @@ func (i *discoveryJobDiscoveryDetailsCredentialsPtrType) ToDiscoveryJobDiscovery
 	return pulumi.ToOutputWithContext(ctx, i).(DiscoveryJobDiscoveryDetailsCredentialsPtrOutput)
 }
 
+func (i *discoveryJobDiscoveryDetailsCredentialsPtrType) ToOutput(ctx context.Context) pulumix.Output[*DiscoveryJobDiscoveryDetailsCredentials] {
+	return pulumix.Output[*DiscoveryJobDiscoveryDetailsCredentials]{
+		OutputState: i.ToDiscoveryJobDiscoveryDetailsCredentialsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type DiscoveryJobDiscoveryDetailsCredentialsOutput struct{ *pulumi.OutputState }
 
 func (DiscoveryJobDiscoveryDetailsCredentialsOutput) ElementType() reflect.Type {
@@ -343,6 +380,12 @@ func (o DiscoveryJobDiscoveryDetailsCredentialsOutput) ToDiscoveryJobDiscoveryDe
 	}).(DiscoveryJobDiscoveryDetailsCredentialsPtrOutput)
 }
 
+func (o DiscoveryJobDiscoveryDetailsCredentialsOutput) ToOutput(ctx context.Context) pulumix.Output[DiscoveryJobDiscoveryDetailsCredentials] {
+	return pulumix.Output[DiscoveryJobDiscoveryDetailsCredentials]{
+		OutputState: o.OutputState,
+	}
+}
+
 // List of DiscoveryJob credentials.
 func (o DiscoveryJobDiscoveryDetailsCredentialsOutput) Items() DiscoveryJobDiscoveryDetailsCredentialsItemArrayOutput {
 	return o.ApplyT(func(v DiscoveryJobDiscoveryDetailsCredentials) []DiscoveryJobDiscoveryDetailsCredentialsItem {
@@ -362,6 +405,12 @@ func (o DiscoveryJobDiscoveryDetailsCredentialsPtrOutput) ToDiscoveryJobDiscover
 
 func (o DiscoveryJobDiscoveryDetailsCredentialsPtrOutput) ToDiscoveryJobDiscoveryDetailsCredentialsPtrOutputWithContext(ctx context.Context) DiscoveryJobDiscoveryDetailsCredentialsPtrOutput {
 	return o
+}
+
+func (o DiscoveryJobDiscoveryDetailsCredentialsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DiscoveryJobDiscoveryDetailsCredentials] {
+	return pulumix.Output[*DiscoveryJobDiscoveryDetailsCredentials]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o DiscoveryJobDiscoveryDetailsCredentialsPtrOutput) Elem() DiscoveryJobDiscoveryDetailsCredentialsOutput {
@@ -425,6 +474,12 @@ func (i DiscoveryJobDiscoveryDetailsCredentialsItemArgs) ToDiscoveryJobDiscovery
 	return pulumi.ToOutputWithContext(ctx, i).(DiscoveryJobDiscoveryDetailsCredentialsItemOutput)
 }
 
+func (i DiscoveryJobDiscoveryDetailsCredentialsItemArgs) ToOutput(ctx context.Context) pulumix.Output[DiscoveryJobDiscoveryDetailsCredentialsItem] {
+	return pulumix.Output[DiscoveryJobDiscoveryDetailsCredentialsItem]{
+		OutputState: i.ToDiscoveryJobDiscoveryDetailsCredentialsItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // DiscoveryJobDiscoveryDetailsCredentialsItemArrayInput is an input type that accepts DiscoveryJobDiscoveryDetailsCredentialsItemArray and DiscoveryJobDiscoveryDetailsCredentialsItemArrayOutput values.
 // You can construct a concrete instance of `DiscoveryJobDiscoveryDetailsCredentialsItemArrayInput` via:
 //
@@ -450,6 +505,12 @@ func (i DiscoveryJobDiscoveryDetailsCredentialsItemArray) ToDiscoveryJobDiscover
 	return pulumi.ToOutputWithContext(ctx, i).(DiscoveryJobDiscoveryDetailsCredentialsItemArrayOutput)
 }
 
+func (i DiscoveryJobDiscoveryDetailsCredentialsItemArray) ToOutput(ctx context.Context) pulumix.Output[[]DiscoveryJobDiscoveryDetailsCredentialsItem] {
+	return pulumix.Output[[]DiscoveryJobDiscoveryDetailsCredentialsItem]{
+		OutputState: i.ToDiscoveryJobDiscoveryDetailsCredentialsItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type DiscoveryJobDiscoveryDetailsCredentialsItemOutput struct{ *pulumi.OutputState }
 
 func (DiscoveryJobDiscoveryDetailsCredentialsItemOutput) ElementType() reflect.Type {
@@ -462,6 +523,12 @@ func (o DiscoveryJobDiscoveryDetailsCredentialsItemOutput) ToDiscoveryJobDiscove
 
 func (o DiscoveryJobDiscoveryDetailsCredentialsItemOutput) ToDiscoveryJobDiscoveryDetailsCredentialsItemOutputWithContext(ctx context.Context) DiscoveryJobDiscoveryDetailsCredentialsItemOutput {
 	return o
+}
+
+func (o DiscoveryJobDiscoveryDetailsCredentialsItemOutput) ToOutput(ctx context.Context) pulumix.Output[DiscoveryJobDiscoveryDetailsCredentialsItem] {
+	return pulumix.Output[DiscoveryJobDiscoveryDetailsCredentialsItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Name of Credential
@@ -493,6 +560,12 @@ func (o DiscoveryJobDiscoveryDetailsCredentialsItemArrayOutput) ToDiscoveryJobDi
 
 func (o DiscoveryJobDiscoveryDetailsCredentialsItemArrayOutput) ToDiscoveryJobDiscoveryDetailsCredentialsItemArrayOutputWithContext(ctx context.Context) DiscoveryJobDiscoveryDetailsCredentialsItemArrayOutput {
 	return o
+}
+
+func (o DiscoveryJobDiscoveryDetailsCredentialsItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DiscoveryJobDiscoveryDetailsCredentialsItem] {
+	return pulumix.Output[[]DiscoveryJobDiscoveryDetailsCredentialsItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o DiscoveryJobDiscoveryDetailsCredentialsItemArrayOutput) Index(i pulumi.IntInput) DiscoveryJobDiscoveryDetailsCredentialsItemOutput {
@@ -534,6 +607,12 @@ func (i DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesArgs) ToDiscoveryJo
 	return pulumi.ToOutputWithContext(ctx, i).(DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesOutput)
 }
 
+func (i DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesArgs) ToOutput(ctx context.Context) pulumix.Output[DiscoveryJobDiscoveryDetailsCredentialsItemProperties] {
+	return pulumix.Output[DiscoveryJobDiscoveryDetailsCredentialsItemProperties]{
+		OutputState: i.ToDiscoveryJobDiscoveryDetailsCredentialsItemPropertiesOutputWithContext(ctx).OutputState,
+	}
+}
+
 type DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesOutput struct{ *pulumi.OutputState }
 
 func (DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesOutput) ElementType() reflect.Type {
@@ -546,6 +625,12 @@ func (o DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesOutput) ToDiscovery
 
 func (o DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesOutput) ToDiscoveryJobDiscoveryDetailsCredentialsItemPropertiesOutputWithContext(ctx context.Context) DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesOutput {
 	return o
+}
+
+func (o DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesOutput) ToOutput(ctx context.Context) pulumix.Output[DiscoveryJobDiscoveryDetailsCredentialsItemProperties] {
+	return pulumix.Output[DiscoveryJobDiscoveryDetailsCredentialsItemProperties]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Key/Value pair of Property
@@ -586,6 +671,12 @@ func (i DiscoveryJobDiscoveryDetailsPropertiesArgs) ToDiscoveryJobDiscoveryDetai
 
 func (i DiscoveryJobDiscoveryDetailsPropertiesArgs) ToDiscoveryJobDiscoveryDetailsPropertiesOutputWithContext(ctx context.Context) DiscoveryJobDiscoveryDetailsPropertiesOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DiscoveryJobDiscoveryDetailsPropertiesOutput)
+}
+
+func (i DiscoveryJobDiscoveryDetailsPropertiesArgs) ToOutput(ctx context.Context) pulumix.Output[DiscoveryJobDiscoveryDetailsProperties] {
+	return pulumix.Output[DiscoveryJobDiscoveryDetailsProperties]{
+		OutputState: i.ToDiscoveryJobDiscoveryDetailsPropertiesOutputWithContext(ctx).OutputState,
+	}
 }
 
 func (i DiscoveryJobDiscoveryDetailsPropertiesArgs) ToDiscoveryJobDiscoveryDetailsPropertiesPtrOutput() DiscoveryJobDiscoveryDetailsPropertiesPtrOutput {
@@ -629,6 +720,12 @@ func (i *discoveryJobDiscoveryDetailsPropertiesPtrType) ToDiscoveryJobDiscoveryD
 	return pulumi.ToOutputWithContext(ctx, i).(DiscoveryJobDiscoveryDetailsPropertiesPtrOutput)
 }
 
+func (i *discoveryJobDiscoveryDetailsPropertiesPtrType) ToOutput(ctx context.Context) pulumix.Output[*DiscoveryJobDiscoveryDetailsProperties] {
+	return pulumix.Output[*DiscoveryJobDiscoveryDetailsProperties]{
+		OutputState: i.ToDiscoveryJobDiscoveryDetailsPropertiesPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type DiscoveryJobDiscoveryDetailsPropertiesOutput struct{ *pulumi.OutputState }
 
 func (DiscoveryJobDiscoveryDetailsPropertiesOutput) ElementType() reflect.Type {
@@ -653,6 +750,12 @@ func (o DiscoveryJobDiscoveryDetailsPropertiesOutput) ToDiscoveryJobDiscoveryDet
 	}).(DiscoveryJobDiscoveryDetailsPropertiesPtrOutput)
 }
 
+func (o DiscoveryJobDiscoveryDetailsPropertiesOutput) ToOutput(ctx context.Context) pulumix.Output[DiscoveryJobDiscoveryDetailsProperties] {
+	return pulumix.Output[DiscoveryJobDiscoveryDetailsProperties]{
+		OutputState: o.OutputState,
+	}
+}
+
 // Key/Value pair of Property
 func (o DiscoveryJobDiscoveryDetailsPropertiesOutput) PropertiesMap() pulumi.MapOutput {
 	return o.ApplyT(func(v DiscoveryJobDiscoveryDetailsProperties) map[string]interface{} { return v.PropertiesMap }).(pulumi.MapOutput)
@@ -670,6 +773,12 @@ func (o DiscoveryJobDiscoveryDetailsPropertiesPtrOutput) ToDiscoveryJobDiscovery
 
 func (o DiscoveryJobDiscoveryDetailsPropertiesPtrOutput) ToDiscoveryJobDiscoveryDetailsPropertiesPtrOutputWithContext(ctx context.Context) DiscoveryJobDiscoveryDetailsPropertiesPtrOutput {
 	return o
+}
+
+func (o DiscoveryJobDiscoveryDetailsPropertiesPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DiscoveryJobDiscoveryDetailsProperties] {
+	return pulumix.Output[*DiscoveryJobDiscoveryDetailsProperties]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o DiscoveryJobDiscoveryDetailsPropertiesPtrOutput) Elem() DiscoveryJobDiscoveryDetailsPropertiesOutput {
@@ -725,6 +834,12 @@ func (i DiscoveryJobDiscoveryDetailsTagsArgs) ToDiscoveryJobDiscoveryDetailsTags
 	return pulumi.ToOutputWithContext(ctx, i).(DiscoveryJobDiscoveryDetailsTagsOutput)
 }
 
+func (i DiscoveryJobDiscoveryDetailsTagsArgs) ToOutput(ctx context.Context) pulumix.Output[DiscoveryJobDiscoveryDetailsTags] {
+	return pulumix.Output[DiscoveryJobDiscoveryDetailsTags]{
+		OutputState: i.ToDiscoveryJobDiscoveryDetailsTagsOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i DiscoveryJobDiscoveryDetailsTagsArgs) ToDiscoveryJobDiscoveryDetailsTagsPtrOutput() DiscoveryJobDiscoveryDetailsTagsPtrOutput {
 	return i.ToDiscoveryJobDiscoveryDetailsTagsPtrOutputWithContext(context.Background())
 }
@@ -766,6 +881,12 @@ func (i *discoveryJobDiscoveryDetailsTagsPtrType) ToDiscoveryJobDiscoveryDetails
 	return pulumi.ToOutputWithContext(ctx, i).(DiscoveryJobDiscoveryDetailsTagsPtrOutput)
 }
 
+func (i *discoveryJobDiscoveryDetailsTagsPtrType) ToOutput(ctx context.Context) pulumix.Output[*DiscoveryJobDiscoveryDetailsTags] {
+	return pulumix.Output[*DiscoveryJobDiscoveryDetailsTags]{
+		OutputState: i.ToDiscoveryJobDiscoveryDetailsTagsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type DiscoveryJobDiscoveryDetailsTagsOutput struct{ *pulumi.OutputState }
 
 func (DiscoveryJobDiscoveryDetailsTagsOutput) ElementType() reflect.Type {
@@ -790,6 +911,12 @@ func (o DiscoveryJobDiscoveryDetailsTagsOutput) ToDiscoveryJobDiscoveryDetailsTa
 	}).(DiscoveryJobDiscoveryDetailsTagsPtrOutput)
 }
 
+func (o DiscoveryJobDiscoveryDetailsTagsOutput) ToOutput(ctx context.Context) pulumix.Output[DiscoveryJobDiscoveryDetailsTags] {
+	return pulumix.Output[DiscoveryJobDiscoveryDetailsTags]{
+		OutputState: o.OutputState,
+	}
+}
+
 // Key/Value pair of Property
 func (o DiscoveryJobDiscoveryDetailsTagsOutput) PropertiesMap() pulumi.MapOutput {
 	return o.ApplyT(func(v DiscoveryJobDiscoveryDetailsTags) map[string]interface{} { return v.PropertiesMap }).(pulumi.MapOutput)
@@ -807,6 +934,12 @@ func (o DiscoveryJobDiscoveryDetailsTagsPtrOutput) ToDiscoveryJobDiscoveryDetail
 
 func (o DiscoveryJobDiscoveryDetailsTagsPtrOutput) ToDiscoveryJobDiscoveryDetailsTagsPtrOutputWithContext(ctx context.Context) DiscoveryJobDiscoveryDetailsTagsPtrOutput {
 	return o
+}
+
+func (o DiscoveryJobDiscoveryDetailsTagsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DiscoveryJobDiscoveryDetailsTags] {
+	return pulumix.Output[*DiscoveryJobDiscoveryDetailsTags]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o DiscoveryJobDiscoveryDetailsTagsPtrOutput) Elem() DiscoveryJobDiscoveryDetailsTagsOutput {
@@ -870,6 +1003,12 @@ func (i MonitoredResourceAdditionalAliasArgs) ToMonitoredResourceAdditionalAlias
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceAdditionalAliasOutput)
 }
 
+func (i MonitoredResourceAdditionalAliasArgs) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceAdditionalAlias] {
+	return pulumix.Output[MonitoredResourceAdditionalAlias]{
+		OutputState: i.ToMonitoredResourceAdditionalAliasOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MonitoredResourceAdditionalAliasArrayInput is an input type that accepts MonitoredResourceAdditionalAliasArray and MonitoredResourceAdditionalAliasArrayOutput values.
 // You can construct a concrete instance of `MonitoredResourceAdditionalAliasArrayInput` via:
 //
@@ -895,6 +1034,12 @@ func (i MonitoredResourceAdditionalAliasArray) ToMonitoredResourceAdditionalAlia
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceAdditionalAliasArrayOutput)
 }
 
+func (i MonitoredResourceAdditionalAliasArray) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourceAdditionalAlias] {
+	return pulumix.Output[[]MonitoredResourceAdditionalAlias]{
+		OutputState: i.ToMonitoredResourceAdditionalAliasArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MonitoredResourceAdditionalAliasOutput struct{ *pulumi.OutputState }
 
 func (MonitoredResourceAdditionalAliasOutput) ElementType() reflect.Type {
@@ -907,6 +1052,12 @@ func (o MonitoredResourceAdditionalAliasOutput) ToMonitoredResourceAdditionalAli
 
 func (o MonitoredResourceAdditionalAliasOutput) ToMonitoredResourceAdditionalAliasOutputWithContext(ctx context.Context) MonitoredResourceAdditionalAliasOutput {
 	return o
+}
+
+func (o MonitoredResourceAdditionalAliasOutput) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceAdditionalAlias] {
+	return pulumix.Output[MonitoredResourceAdditionalAlias]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Monitored Resource Alias Reference Source Credential.
@@ -938,6 +1089,12 @@ func (o MonitoredResourceAdditionalAliasArrayOutput) ToMonitoredResourceAddition
 
 func (o MonitoredResourceAdditionalAliasArrayOutput) ToMonitoredResourceAdditionalAliasArrayOutputWithContext(ctx context.Context) MonitoredResourceAdditionalAliasArrayOutput {
 	return o
+}
+
+func (o MonitoredResourceAdditionalAliasArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourceAdditionalAlias] {
+	return pulumix.Output[[]MonitoredResourceAdditionalAlias]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MonitoredResourceAdditionalAliasArrayOutput) Index(i pulumi.IntInput) MonitoredResourceAdditionalAliasOutput {
@@ -987,6 +1144,12 @@ func (i MonitoredResourceAdditionalAliasCredentialArgs) ToMonitoredResourceAddit
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceAdditionalAliasCredentialOutput)
 }
 
+func (i MonitoredResourceAdditionalAliasCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceAdditionalAliasCredential] {
+	return pulumix.Output[MonitoredResourceAdditionalAliasCredential]{
+		OutputState: i.ToMonitoredResourceAdditionalAliasCredentialOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MonitoredResourceAdditionalAliasCredentialOutput struct{ *pulumi.OutputState }
 
 func (MonitoredResourceAdditionalAliasCredentialOutput) ElementType() reflect.Type {
@@ -999,6 +1162,12 @@ func (o MonitoredResourceAdditionalAliasCredentialOutput) ToMonitoredResourceAdd
 
 func (o MonitoredResourceAdditionalAliasCredentialOutput) ToMonitoredResourceAdditionalAliasCredentialOutputWithContext(ctx context.Context) MonitoredResourceAdditionalAliasCredentialOutput {
 	return o
+}
+
+func (o MonitoredResourceAdditionalAliasCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceAdditionalAliasCredential] {
+	return pulumix.Output[MonitoredResourceAdditionalAliasCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Property Name.
@@ -1085,6 +1254,12 @@ func (i MonitoredResourceAdditionalCredentialArgs) ToMonitoredResourceAdditional
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceAdditionalCredentialOutput)
 }
 
+func (i MonitoredResourceAdditionalCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceAdditionalCredential] {
+	return pulumix.Output[MonitoredResourceAdditionalCredential]{
+		OutputState: i.ToMonitoredResourceAdditionalCredentialOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MonitoredResourceAdditionalCredentialArrayInput is an input type that accepts MonitoredResourceAdditionalCredentialArray and MonitoredResourceAdditionalCredentialArrayOutput values.
 // You can construct a concrete instance of `MonitoredResourceAdditionalCredentialArrayInput` via:
 //
@@ -1110,6 +1285,12 @@ func (i MonitoredResourceAdditionalCredentialArray) ToMonitoredResourceAdditiona
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceAdditionalCredentialArrayOutput)
 }
 
+func (i MonitoredResourceAdditionalCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourceAdditionalCredential] {
+	return pulumix.Output[[]MonitoredResourceAdditionalCredential]{
+		OutputState: i.ToMonitoredResourceAdditionalCredentialArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MonitoredResourceAdditionalCredentialOutput struct{ *pulumi.OutputState }
 
 func (MonitoredResourceAdditionalCredentialOutput) ElementType() reflect.Type {
@@ -1122,6 +1303,12 @@ func (o MonitoredResourceAdditionalCredentialOutput) ToMonitoredResourceAddition
 
 func (o MonitoredResourceAdditionalCredentialOutput) ToMonitoredResourceAdditionalCredentialOutputWithContext(ctx context.Context) MonitoredResourceAdditionalCredentialOutput {
 	return o
+}
+
+func (o MonitoredResourceAdditionalCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceAdditionalCredential] {
+	return pulumix.Output[MonitoredResourceAdditionalCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
@@ -1181,6 +1368,12 @@ func (o MonitoredResourceAdditionalCredentialArrayOutput) ToMonitoredResourceAdd
 	return o
 }
 
+func (o MonitoredResourceAdditionalCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourceAdditionalCredential] {
+	return pulumix.Output[[]MonitoredResourceAdditionalCredential]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o MonitoredResourceAdditionalCredentialArrayOutput) Index(i pulumi.IntInput) MonitoredResourceAdditionalCredentialOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MonitoredResourceAdditionalCredential {
 		return vs[0].([]MonitoredResourceAdditionalCredential)[vs[1].(int)]
@@ -1224,6 +1417,12 @@ func (i MonitoredResourceAdditionalCredentialPropertyArgs) ToMonitoredResourceAd
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceAdditionalCredentialPropertyOutput)
 }
 
+func (i MonitoredResourceAdditionalCredentialPropertyArgs) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceAdditionalCredentialProperty] {
+	return pulumix.Output[MonitoredResourceAdditionalCredentialProperty]{
+		OutputState: i.ToMonitoredResourceAdditionalCredentialPropertyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MonitoredResourceAdditionalCredentialPropertyArrayInput is an input type that accepts MonitoredResourceAdditionalCredentialPropertyArray and MonitoredResourceAdditionalCredentialPropertyArrayOutput values.
 // You can construct a concrete instance of `MonitoredResourceAdditionalCredentialPropertyArrayInput` via:
 //
@@ -1249,6 +1448,12 @@ func (i MonitoredResourceAdditionalCredentialPropertyArray) ToMonitoredResourceA
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceAdditionalCredentialPropertyArrayOutput)
 }
 
+func (i MonitoredResourceAdditionalCredentialPropertyArray) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourceAdditionalCredentialProperty] {
+	return pulumix.Output[[]MonitoredResourceAdditionalCredentialProperty]{
+		OutputState: i.ToMonitoredResourceAdditionalCredentialPropertyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MonitoredResourceAdditionalCredentialPropertyOutput struct{ *pulumi.OutputState }
 
 func (MonitoredResourceAdditionalCredentialPropertyOutput) ElementType() reflect.Type {
@@ -1261,6 +1466,12 @@ func (o MonitoredResourceAdditionalCredentialPropertyOutput) ToMonitoredResource
 
 func (o MonitoredResourceAdditionalCredentialPropertyOutput) ToMonitoredResourceAdditionalCredentialPropertyOutputWithContext(ctx context.Context) MonitoredResourceAdditionalCredentialPropertyOutput {
 	return o
+}
+
+func (o MonitoredResourceAdditionalCredentialPropertyOutput) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceAdditionalCredentialProperty] {
+	return pulumix.Output[MonitoredResourceAdditionalCredentialProperty]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Property Name.
@@ -1285,6 +1496,12 @@ func (o MonitoredResourceAdditionalCredentialPropertyArrayOutput) ToMonitoredRes
 
 func (o MonitoredResourceAdditionalCredentialPropertyArrayOutput) ToMonitoredResourceAdditionalCredentialPropertyArrayOutputWithContext(ctx context.Context) MonitoredResourceAdditionalCredentialPropertyArrayOutput {
 	return o
+}
+
+func (o MonitoredResourceAdditionalCredentialPropertyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourceAdditionalCredentialProperty] {
+	return pulumix.Output[[]MonitoredResourceAdditionalCredentialProperty]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MonitoredResourceAdditionalCredentialPropertyArrayOutput) Index(i pulumi.IntInput) MonitoredResourceAdditionalCredentialPropertyOutput {
@@ -1334,6 +1551,12 @@ func (i MonitoredResourceAliasesArgs) ToMonitoredResourceAliasesOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceAliasesOutput)
 }
 
+func (i MonitoredResourceAliasesArgs) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceAliases] {
+	return pulumix.Output[MonitoredResourceAliases]{
+		OutputState: i.ToMonitoredResourceAliasesOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i MonitoredResourceAliasesArgs) ToMonitoredResourceAliasesPtrOutput() MonitoredResourceAliasesPtrOutput {
 	return i.ToMonitoredResourceAliasesPtrOutputWithContext(context.Background())
 }
@@ -1375,6 +1598,12 @@ func (i *monitoredResourceAliasesPtrType) ToMonitoredResourceAliasesPtrOutputWit
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceAliasesPtrOutput)
 }
 
+func (i *monitoredResourceAliasesPtrType) ToOutput(ctx context.Context) pulumix.Output[*MonitoredResourceAliases] {
+	return pulumix.Output[*MonitoredResourceAliases]{
+		OutputState: i.ToMonitoredResourceAliasesPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MonitoredResourceAliasesOutput struct{ *pulumi.OutputState }
 
 func (MonitoredResourceAliasesOutput) ElementType() reflect.Type {
@@ -1397,6 +1626,12 @@ func (o MonitoredResourceAliasesOutput) ToMonitoredResourceAliasesPtrOutputWithC
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v MonitoredResourceAliases) *MonitoredResourceAliases {
 		return &v
 	}).(MonitoredResourceAliasesPtrOutput)
+}
+
+func (o MonitoredResourceAliasesOutput) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceAliases] {
+	return pulumix.Output[MonitoredResourceAliases]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Monitored Resource Alias Reference Source Credential.
@@ -1426,6 +1661,12 @@ func (o MonitoredResourceAliasesPtrOutput) ToMonitoredResourceAliasesPtrOutput()
 
 func (o MonitoredResourceAliasesPtrOutput) ToMonitoredResourceAliasesPtrOutputWithContext(ctx context.Context) MonitoredResourceAliasesPtrOutput {
 	return o
+}
+
+func (o MonitoredResourceAliasesPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MonitoredResourceAliases] {
+	return pulumix.Output[*MonitoredResourceAliases]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MonitoredResourceAliasesPtrOutput) Elem() MonitoredResourceAliasesOutput {
@@ -1509,6 +1750,12 @@ func (i MonitoredResourceAliasesCredentialArgs) ToMonitoredResourceAliasesCreden
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceAliasesCredentialOutput)
 }
 
+func (i MonitoredResourceAliasesCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceAliasesCredential] {
+	return pulumix.Output[MonitoredResourceAliasesCredential]{
+		OutputState: i.ToMonitoredResourceAliasesCredentialOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i MonitoredResourceAliasesCredentialArgs) ToMonitoredResourceAliasesCredentialPtrOutput() MonitoredResourceAliasesCredentialPtrOutput {
 	return i.ToMonitoredResourceAliasesCredentialPtrOutputWithContext(context.Background())
 }
@@ -1550,6 +1797,12 @@ func (i *monitoredResourceAliasesCredentialPtrType) ToMonitoredResourceAliasesCr
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceAliasesCredentialPtrOutput)
 }
 
+func (i *monitoredResourceAliasesCredentialPtrType) ToOutput(ctx context.Context) pulumix.Output[*MonitoredResourceAliasesCredential] {
+	return pulumix.Output[*MonitoredResourceAliasesCredential]{
+		OutputState: i.ToMonitoredResourceAliasesCredentialPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MonitoredResourceAliasesCredentialOutput struct{ *pulumi.OutputState }
 
 func (MonitoredResourceAliasesCredentialOutput) ElementType() reflect.Type {
@@ -1572,6 +1825,12 @@ func (o MonitoredResourceAliasesCredentialOutput) ToMonitoredResourceAliasesCred
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v MonitoredResourceAliasesCredential) *MonitoredResourceAliasesCredential {
 		return &v
 	}).(MonitoredResourceAliasesCredentialPtrOutput)
+}
+
+func (o MonitoredResourceAliasesCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceAliasesCredential] {
+	return pulumix.Output[MonitoredResourceAliasesCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Property Name.
@@ -1601,6 +1860,12 @@ func (o MonitoredResourceAliasesCredentialPtrOutput) ToMonitoredResourceAliasesC
 
 func (o MonitoredResourceAliasesCredentialPtrOutput) ToMonitoredResourceAliasesCredentialPtrOutputWithContext(ctx context.Context) MonitoredResourceAliasesCredentialPtrOutput {
 	return o
+}
+
+func (o MonitoredResourceAliasesCredentialPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MonitoredResourceAliasesCredential] {
+	return pulumix.Output[*MonitoredResourceAliasesCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MonitoredResourceAliasesCredentialPtrOutput) Elem() MonitoredResourceAliasesCredentialOutput {
@@ -1712,6 +1977,12 @@ func (i MonitoredResourceCredentialsArgs) ToMonitoredResourceCredentialsOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceCredentialsOutput)
 }
 
+func (i MonitoredResourceCredentialsArgs) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceCredentials] {
+	return pulumix.Output[MonitoredResourceCredentials]{
+		OutputState: i.ToMonitoredResourceCredentialsOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i MonitoredResourceCredentialsArgs) ToMonitoredResourceCredentialsPtrOutput() MonitoredResourceCredentialsPtrOutput {
 	return i.ToMonitoredResourceCredentialsPtrOutputWithContext(context.Background())
 }
@@ -1753,6 +2024,12 @@ func (i *monitoredResourceCredentialsPtrType) ToMonitoredResourceCredentialsPtrO
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceCredentialsPtrOutput)
 }
 
+func (i *monitoredResourceCredentialsPtrType) ToOutput(ctx context.Context) pulumix.Output[*MonitoredResourceCredentials] {
+	return pulumix.Output[*MonitoredResourceCredentials]{
+		OutputState: i.ToMonitoredResourceCredentialsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MonitoredResourceCredentialsOutput struct{ *pulumi.OutputState }
 
 func (MonitoredResourceCredentialsOutput) ElementType() reflect.Type {
@@ -1775,6 +2052,12 @@ func (o MonitoredResourceCredentialsOutput) ToMonitoredResourceCredentialsPtrOut
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v MonitoredResourceCredentials) *MonitoredResourceCredentials {
 		return &v
 	}).(MonitoredResourceCredentialsPtrOutput)
+}
+
+func (o MonitoredResourceCredentialsOutput) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceCredentials] {
+	return pulumix.Output[MonitoredResourceCredentials]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
@@ -1830,6 +2113,12 @@ func (o MonitoredResourceCredentialsPtrOutput) ToMonitoredResourceCredentialsPtr
 
 func (o MonitoredResourceCredentialsPtrOutput) ToMonitoredResourceCredentialsPtrOutputWithContext(ctx context.Context) MonitoredResourceCredentialsPtrOutput {
 	return o
+}
+
+func (o MonitoredResourceCredentialsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MonitoredResourceCredentials] {
+	return pulumix.Output[*MonitoredResourceCredentials]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MonitoredResourceCredentialsPtrOutput) Elem() MonitoredResourceCredentialsOutput {
@@ -1955,6 +2244,12 @@ func (i MonitoredResourceCredentialsPropertyArgs) ToMonitoredResourceCredentials
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceCredentialsPropertyOutput)
 }
 
+func (i MonitoredResourceCredentialsPropertyArgs) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceCredentialsProperty] {
+	return pulumix.Output[MonitoredResourceCredentialsProperty]{
+		OutputState: i.ToMonitoredResourceCredentialsPropertyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MonitoredResourceCredentialsPropertyArrayInput is an input type that accepts MonitoredResourceCredentialsPropertyArray and MonitoredResourceCredentialsPropertyArrayOutput values.
 // You can construct a concrete instance of `MonitoredResourceCredentialsPropertyArrayInput` via:
 //
@@ -1980,6 +2275,12 @@ func (i MonitoredResourceCredentialsPropertyArray) ToMonitoredResourceCredential
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceCredentialsPropertyArrayOutput)
 }
 
+func (i MonitoredResourceCredentialsPropertyArray) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourceCredentialsProperty] {
+	return pulumix.Output[[]MonitoredResourceCredentialsProperty]{
+		OutputState: i.ToMonitoredResourceCredentialsPropertyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MonitoredResourceCredentialsPropertyOutput struct{ *pulumi.OutputState }
 
 func (MonitoredResourceCredentialsPropertyOutput) ElementType() reflect.Type {
@@ -1992,6 +2293,12 @@ func (o MonitoredResourceCredentialsPropertyOutput) ToMonitoredResourceCredentia
 
 func (o MonitoredResourceCredentialsPropertyOutput) ToMonitoredResourceCredentialsPropertyOutputWithContext(ctx context.Context) MonitoredResourceCredentialsPropertyOutput {
 	return o
+}
+
+func (o MonitoredResourceCredentialsPropertyOutput) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceCredentialsProperty] {
+	return pulumix.Output[MonitoredResourceCredentialsProperty]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Property Name.
@@ -2016,6 +2323,12 @@ func (o MonitoredResourceCredentialsPropertyArrayOutput) ToMonitoredResourceCred
 
 func (o MonitoredResourceCredentialsPropertyArrayOutput) ToMonitoredResourceCredentialsPropertyArrayOutputWithContext(ctx context.Context) MonitoredResourceCredentialsPropertyArrayOutput {
 	return o
+}
+
+func (o MonitoredResourceCredentialsPropertyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourceCredentialsProperty] {
+	return pulumix.Output[[]MonitoredResourceCredentialsProperty]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MonitoredResourceCredentialsPropertyArrayOutput) Index(i pulumi.IntInput) MonitoredResourceCredentialsPropertyOutput {
@@ -2081,6 +2394,12 @@ func (i MonitoredResourceDatabaseConnectionDetailsArgs) ToMonitoredResourceDatab
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceDatabaseConnectionDetailsOutput)
 }
 
+func (i MonitoredResourceDatabaseConnectionDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceDatabaseConnectionDetails] {
+	return pulumix.Output[MonitoredResourceDatabaseConnectionDetails]{
+		OutputState: i.ToMonitoredResourceDatabaseConnectionDetailsOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i MonitoredResourceDatabaseConnectionDetailsArgs) ToMonitoredResourceDatabaseConnectionDetailsPtrOutput() MonitoredResourceDatabaseConnectionDetailsPtrOutput {
 	return i.ToMonitoredResourceDatabaseConnectionDetailsPtrOutputWithContext(context.Background())
 }
@@ -2122,6 +2441,12 @@ func (i *monitoredResourceDatabaseConnectionDetailsPtrType) ToMonitoredResourceD
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceDatabaseConnectionDetailsPtrOutput)
 }
 
+func (i *monitoredResourceDatabaseConnectionDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*MonitoredResourceDatabaseConnectionDetails] {
+	return pulumix.Output[*MonitoredResourceDatabaseConnectionDetails]{
+		OutputState: i.ToMonitoredResourceDatabaseConnectionDetailsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MonitoredResourceDatabaseConnectionDetailsOutput struct{ *pulumi.OutputState }
 
 func (MonitoredResourceDatabaseConnectionDetailsOutput) ElementType() reflect.Type {
@@ -2144,6 +2469,12 @@ func (o MonitoredResourceDatabaseConnectionDetailsOutput) ToMonitoredResourceDat
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v MonitoredResourceDatabaseConnectionDetails) *MonitoredResourceDatabaseConnectionDetails {
 		return &v
 	}).(MonitoredResourceDatabaseConnectionDetailsPtrOutput)
+}
+
+func (o MonitoredResourceDatabaseConnectionDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceDatabaseConnectionDetails] {
+	return pulumix.Output[MonitoredResourceDatabaseConnectionDetails]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Database connector Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -2193,6 +2524,12 @@ func (o MonitoredResourceDatabaseConnectionDetailsPtrOutput) ToMonitoredResource
 
 func (o MonitoredResourceDatabaseConnectionDetailsPtrOutput) ToMonitoredResourceDatabaseConnectionDetailsPtrOutputWithContext(ctx context.Context) MonitoredResourceDatabaseConnectionDetailsPtrOutput {
 	return o
+}
+
+func (o MonitoredResourceDatabaseConnectionDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MonitoredResourceDatabaseConnectionDetails] {
+	return pulumix.Output[*MonitoredResourceDatabaseConnectionDetails]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MonitoredResourceDatabaseConnectionDetailsPtrOutput) Elem() MonitoredResourceDatabaseConnectionDetailsOutput {
@@ -2312,6 +2649,12 @@ func (i MonitoredResourcePropertyArgs) ToMonitoredResourcePropertyOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcePropertyOutput)
 }
 
+func (i MonitoredResourcePropertyArgs) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceProperty] {
+	return pulumix.Output[MonitoredResourceProperty]{
+		OutputState: i.ToMonitoredResourcePropertyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MonitoredResourcePropertyArrayInput is an input type that accepts MonitoredResourcePropertyArray and MonitoredResourcePropertyArrayOutput values.
 // You can construct a concrete instance of `MonitoredResourcePropertyArrayInput` via:
 //
@@ -2337,6 +2680,12 @@ func (i MonitoredResourcePropertyArray) ToMonitoredResourcePropertyArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcePropertyArrayOutput)
 }
 
+func (i MonitoredResourcePropertyArray) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourceProperty] {
+	return pulumix.Output[[]MonitoredResourceProperty]{
+		OutputState: i.ToMonitoredResourcePropertyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MonitoredResourcePropertyOutput struct{ *pulumi.OutputState }
 
 func (MonitoredResourcePropertyOutput) ElementType() reflect.Type {
@@ -2349,6 +2698,12 @@ func (o MonitoredResourcePropertyOutput) ToMonitoredResourcePropertyOutput() Mon
 
 func (o MonitoredResourcePropertyOutput) ToMonitoredResourcePropertyOutputWithContext(ctx context.Context) MonitoredResourcePropertyOutput {
 	return o
+}
+
+func (o MonitoredResourcePropertyOutput) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceProperty] {
+	return pulumix.Output[MonitoredResourceProperty]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Property Name.
@@ -2373,6 +2728,12 @@ func (o MonitoredResourcePropertyArrayOutput) ToMonitoredResourcePropertyArrayOu
 
 func (o MonitoredResourcePropertyArrayOutput) ToMonitoredResourcePropertyArrayOutputWithContext(ctx context.Context) MonitoredResourcePropertyArrayOutput {
 	return o
+}
+
+func (o MonitoredResourcePropertyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourceProperty] {
+	return pulumix.Output[[]MonitoredResourceProperty]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MonitoredResourcePropertyArrayOutput) Index(i pulumi.IntInput) MonitoredResourcePropertyOutput {
@@ -2422,6 +2783,12 @@ func (i MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArg
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailOutput)
 }
 
+func (i MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail] {
+	return pulumix.Output[MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail]{
+		OutputState: i.ToMonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArrayInput is an input type that accepts MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArray and MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArrayOutput values.
 // You can construct a concrete instance of `MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArrayInput` via:
 //
@@ -2447,6 +2814,12 @@ func (i MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArr
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArrayOutput)
 }
 
+func (i MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail] {
+	return pulumix.Output[[]MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail]{
+		OutputState: i.ToMonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailOutput struct{ *pulumi.OutputState }
 
 func (MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailOutput) ElementType() reflect.Type {
@@ -2459,6 +2832,12 @@ func (o MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailOut
 
 func (o MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailOutput) ToMonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailOutputWithContext(ctx context.Context) MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailOutput {
 	return o
+}
+
+func (o MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail] {
+	return pulumix.Output[MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -2490,6 +2869,12 @@ func (o MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArr
 
 func (o MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArrayOutput) ToMonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArrayOutputWithContext(ctx context.Context) MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArrayOutput {
 	return o
+}
+
+func (o MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail] {
+	return pulumix.Output[[]MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArrayOutput) Index(i pulumi.IntInput) MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailOutput {
@@ -2539,6 +2924,12 @@ func (i MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgs) To
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailOutput)
 }
 
+func (i MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail] {
+	return pulumix.Output[MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail]{
+		OutputState: i.ToMonitoredResourcesAssociateMonitoredResourceSourceResourceDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArrayInput is an input type that accepts MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArray and MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArrayOutput values.
 // You can construct a concrete instance of `MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArrayInput` via:
 //
@@ -2564,6 +2955,12 @@ func (i MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArray) T
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArrayOutput)
 }
 
+func (i MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail] {
+	return pulumix.Output[[]MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail]{
+		OutputState: i.ToMonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailOutput struct{ *pulumi.OutputState }
 
 func (MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailOutput) ElementType() reflect.Type {
@@ -2576,6 +2973,12 @@ func (o MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailOutput) 
 
 func (o MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailOutput) ToMonitoredResourcesAssociateMonitoredResourceSourceResourceDetailOutputWithContext(ctx context.Context) MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailOutput {
 	return o
+}
+
+func (o MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail] {
+	return pulumix.Output[MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -2607,6 +3010,12 @@ func (o MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArrayOut
 
 func (o MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArrayOutput) ToMonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArrayOutputWithContext(ctx context.Context) MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArrayOutput {
 	return o
+}
+
+func (o MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail] {
+	return pulumix.Output[[]MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArrayOutput) Index(i pulumi.IntInput) MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailOutput {
@@ -2692,6 +3101,12 @@ func (i MonitoredResourcesListMemberItemArgs) ToMonitoredResourcesListMemberItem
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcesListMemberItemOutput)
 }
 
+func (i MonitoredResourcesListMemberItemArgs) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourcesListMemberItem] {
+	return pulumix.Output[MonitoredResourcesListMemberItem]{
+		OutputState: i.ToMonitoredResourcesListMemberItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MonitoredResourcesListMemberItemArrayInput is an input type that accepts MonitoredResourcesListMemberItemArray and MonitoredResourcesListMemberItemArrayOutput values.
 // You can construct a concrete instance of `MonitoredResourcesListMemberItemArrayInput` via:
 //
@@ -2717,6 +3132,12 @@ func (i MonitoredResourcesListMemberItemArray) ToMonitoredResourcesListMemberIte
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcesListMemberItemArrayOutput)
 }
 
+func (i MonitoredResourcesListMemberItemArray) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourcesListMemberItem] {
+	return pulumix.Output[[]MonitoredResourcesListMemberItem]{
+		OutputState: i.ToMonitoredResourcesListMemberItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MonitoredResourcesListMemberItemOutput struct{ *pulumi.OutputState }
 
 func (MonitoredResourcesListMemberItemOutput) ElementType() reflect.Type {
@@ -2729,6 +3150,12 @@ func (o MonitoredResourcesListMemberItemOutput) ToMonitoredResourcesListMemberIt
 
 func (o MonitoredResourcesListMemberItemOutput) ToMonitoredResourcesListMemberItemOutputWithContext(ctx context.Context) MonitoredResourcesListMemberItemOutput {
 	return o
+}
+
+func (o MonitoredResourcesListMemberItemOutput) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourcesListMemberItem] {
+	return pulumix.Output[MonitoredResourcesListMemberItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -2805,6 +3232,12 @@ func (o MonitoredResourcesListMemberItemArrayOutput) ToMonitoredResourcesListMem
 	return o
 }
 
+func (o MonitoredResourcesListMemberItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourcesListMemberItem] {
+	return pulumix.Output[[]MonitoredResourcesListMemberItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o MonitoredResourcesListMemberItemArrayOutput) Index(i pulumi.IntInput) MonitoredResourcesListMemberItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MonitoredResourcesListMemberItem {
 		return vs[0].([]MonitoredResourcesListMemberItem)[vs[1].(int)]
@@ -2864,6 +3297,12 @@ func (i MonitoredResourcesSearchAssociationItemArgs) ToMonitoredResourcesSearchA
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcesSearchAssociationItemOutput)
 }
 
+func (i MonitoredResourcesSearchAssociationItemArgs) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourcesSearchAssociationItem] {
+	return pulumix.Output[MonitoredResourcesSearchAssociationItem]{
+		OutputState: i.ToMonitoredResourcesSearchAssociationItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MonitoredResourcesSearchAssociationItemArrayInput is an input type that accepts MonitoredResourcesSearchAssociationItemArray and MonitoredResourcesSearchAssociationItemArrayOutput values.
 // You can construct a concrete instance of `MonitoredResourcesSearchAssociationItemArrayInput` via:
 //
@@ -2889,6 +3328,12 @@ func (i MonitoredResourcesSearchAssociationItemArray) ToMonitoredResourcesSearch
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcesSearchAssociationItemArrayOutput)
 }
 
+func (i MonitoredResourcesSearchAssociationItemArray) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourcesSearchAssociationItem] {
+	return pulumix.Output[[]MonitoredResourcesSearchAssociationItem]{
+		OutputState: i.ToMonitoredResourcesSearchAssociationItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MonitoredResourcesSearchAssociationItemOutput struct{ *pulumi.OutputState }
 
 func (MonitoredResourcesSearchAssociationItemOutput) ElementType() reflect.Type {
@@ -2901,6 +3346,12 @@ func (o MonitoredResourcesSearchAssociationItemOutput) ToMonitoredResourcesSearc
 
 func (o MonitoredResourcesSearchAssociationItemOutput) ToMonitoredResourcesSearchAssociationItemOutputWithContext(ctx context.Context) MonitoredResourcesSearchAssociationItemOutput {
 	return o
+}
+
+func (o MonitoredResourcesSearchAssociationItemOutput) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourcesSearchAssociationItem] {
+	return pulumix.Output[MonitoredResourcesSearchAssociationItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Association type filter to search associated resources.
@@ -2951,6 +3402,12 @@ func (o MonitoredResourcesSearchAssociationItemArrayOutput) ToMonitoredResources
 	return o
 }
 
+func (o MonitoredResourcesSearchAssociationItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourcesSearchAssociationItem] {
+	return pulumix.Output[[]MonitoredResourcesSearchAssociationItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o MonitoredResourcesSearchAssociationItemArrayOutput) Index(i pulumi.IntInput) MonitoredResourcesSearchAssociationItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MonitoredResourcesSearchAssociationItem {
 		return vs[0].([]MonitoredResourcesSearchAssociationItem)[vs[1].(int)]
@@ -2998,6 +3455,12 @@ func (i MonitoredResourcesSearchAssociationItemDestinationResourceDetailArgs) To
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcesSearchAssociationItemDestinationResourceDetailOutput)
 }
 
+func (i MonitoredResourcesSearchAssociationItemDestinationResourceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourcesSearchAssociationItemDestinationResourceDetail] {
+	return pulumix.Output[MonitoredResourcesSearchAssociationItemDestinationResourceDetail]{
+		OutputState: i.ToMonitoredResourcesSearchAssociationItemDestinationResourceDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MonitoredResourcesSearchAssociationItemDestinationResourceDetailArrayInput is an input type that accepts MonitoredResourcesSearchAssociationItemDestinationResourceDetailArray and MonitoredResourcesSearchAssociationItemDestinationResourceDetailArrayOutput values.
 // You can construct a concrete instance of `MonitoredResourcesSearchAssociationItemDestinationResourceDetailArrayInput` via:
 //
@@ -3023,6 +3486,12 @@ func (i MonitoredResourcesSearchAssociationItemDestinationResourceDetailArray) T
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcesSearchAssociationItemDestinationResourceDetailArrayOutput)
 }
 
+func (i MonitoredResourcesSearchAssociationItemDestinationResourceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourcesSearchAssociationItemDestinationResourceDetail] {
+	return pulumix.Output[[]MonitoredResourcesSearchAssociationItemDestinationResourceDetail]{
+		OutputState: i.ToMonitoredResourcesSearchAssociationItemDestinationResourceDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MonitoredResourcesSearchAssociationItemDestinationResourceDetailOutput struct{ *pulumi.OutputState }
 
 func (MonitoredResourcesSearchAssociationItemDestinationResourceDetailOutput) ElementType() reflect.Type {
@@ -3035,6 +3504,12 @@ func (o MonitoredResourcesSearchAssociationItemDestinationResourceDetailOutput) 
 
 func (o MonitoredResourcesSearchAssociationItemDestinationResourceDetailOutput) ToMonitoredResourcesSearchAssociationItemDestinationResourceDetailOutputWithContext(ctx context.Context) MonitoredResourcesSearchAssociationItemDestinationResourceDetailOutput {
 	return o
+}
+
+func (o MonitoredResourcesSearchAssociationItemDestinationResourceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourcesSearchAssociationItemDestinationResourceDetail] {
+	return pulumix.Output[MonitoredResourcesSearchAssociationItemDestinationResourceDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -3066,6 +3541,12 @@ func (o MonitoredResourcesSearchAssociationItemDestinationResourceDetailArrayOut
 
 func (o MonitoredResourcesSearchAssociationItemDestinationResourceDetailArrayOutput) ToMonitoredResourcesSearchAssociationItemDestinationResourceDetailArrayOutputWithContext(ctx context.Context) MonitoredResourcesSearchAssociationItemDestinationResourceDetailArrayOutput {
 	return o
+}
+
+func (o MonitoredResourcesSearchAssociationItemDestinationResourceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourcesSearchAssociationItemDestinationResourceDetail] {
+	return pulumix.Output[[]MonitoredResourcesSearchAssociationItemDestinationResourceDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MonitoredResourcesSearchAssociationItemDestinationResourceDetailArrayOutput) Index(i pulumi.IntInput) MonitoredResourcesSearchAssociationItemDestinationResourceDetailOutput {
@@ -3115,6 +3596,12 @@ func (i MonitoredResourcesSearchAssociationItemSourceResourceDetailArgs) ToMonit
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcesSearchAssociationItemSourceResourceDetailOutput)
 }
 
+func (i MonitoredResourcesSearchAssociationItemSourceResourceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourcesSearchAssociationItemSourceResourceDetail] {
+	return pulumix.Output[MonitoredResourcesSearchAssociationItemSourceResourceDetail]{
+		OutputState: i.ToMonitoredResourcesSearchAssociationItemSourceResourceDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MonitoredResourcesSearchAssociationItemSourceResourceDetailArrayInput is an input type that accepts MonitoredResourcesSearchAssociationItemSourceResourceDetailArray and MonitoredResourcesSearchAssociationItemSourceResourceDetailArrayOutput values.
 // You can construct a concrete instance of `MonitoredResourcesSearchAssociationItemSourceResourceDetailArrayInput` via:
 //
@@ -3140,6 +3627,12 @@ func (i MonitoredResourcesSearchAssociationItemSourceResourceDetailArray) ToMoni
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcesSearchAssociationItemSourceResourceDetailArrayOutput)
 }
 
+func (i MonitoredResourcesSearchAssociationItemSourceResourceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourcesSearchAssociationItemSourceResourceDetail] {
+	return pulumix.Output[[]MonitoredResourcesSearchAssociationItemSourceResourceDetail]{
+		OutputState: i.ToMonitoredResourcesSearchAssociationItemSourceResourceDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MonitoredResourcesSearchAssociationItemSourceResourceDetailOutput struct{ *pulumi.OutputState }
 
 func (MonitoredResourcesSearchAssociationItemSourceResourceDetailOutput) ElementType() reflect.Type {
@@ -3152,6 +3645,12 @@ func (o MonitoredResourcesSearchAssociationItemSourceResourceDetailOutput) ToMon
 
 func (o MonitoredResourcesSearchAssociationItemSourceResourceDetailOutput) ToMonitoredResourcesSearchAssociationItemSourceResourceDetailOutputWithContext(ctx context.Context) MonitoredResourcesSearchAssociationItemSourceResourceDetailOutput {
 	return o
+}
+
+func (o MonitoredResourcesSearchAssociationItemSourceResourceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourcesSearchAssociationItemSourceResourceDetail] {
+	return pulumix.Output[MonitoredResourcesSearchAssociationItemSourceResourceDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -3181,6 +3680,12 @@ func (o MonitoredResourcesSearchAssociationItemSourceResourceDetailArrayOutput) 
 
 func (o MonitoredResourcesSearchAssociationItemSourceResourceDetailArrayOutput) ToMonitoredResourcesSearchAssociationItemSourceResourceDetailArrayOutputWithContext(ctx context.Context) MonitoredResourcesSearchAssociationItemSourceResourceDetailArrayOutput {
 	return o
+}
+
+func (o MonitoredResourcesSearchAssociationItemSourceResourceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourcesSearchAssociationItemSourceResourceDetail] {
+	return pulumix.Output[[]MonitoredResourcesSearchAssociationItemSourceResourceDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MonitoredResourcesSearchAssociationItemSourceResourceDetailArrayOutput) Index(i pulumi.IntInput) MonitoredResourcesSearchAssociationItemSourceResourceDetailOutput {
@@ -3280,6 +3785,12 @@ func (i MonitoredResourcesSearchItemArgs) ToMonitoredResourcesSearchItemOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcesSearchItemOutput)
 }
 
+func (i MonitoredResourcesSearchItemArgs) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourcesSearchItem] {
+	return pulumix.Output[MonitoredResourcesSearchItem]{
+		OutputState: i.ToMonitoredResourcesSearchItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MonitoredResourcesSearchItemArrayInput is an input type that accepts MonitoredResourcesSearchItemArray and MonitoredResourcesSearchItemArrayOutput values.
 // You can construct a concrete instance of `MonitoredResourcesSearchItemArrayInput` via:
 //
@@ -3305,6 +3816,12 @@ func (i MonitoredResourcesSearchItemArray) ToMonitoredResourcesSearchItemArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcesSearchItemArrayOutput)
 }
 
+func (i MonitoredResourcesSearchItemArray) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourcesSearchItem] {
+	return pulumix.Output[[]MonitoredResourcesSearchItem]{
+		OutputState: i.ToMonitoredResourcesSearchItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MonitoredResourcesSearchItemOutput struct{ *pulumi.OutputState }
 
 func (MonitoredResourcesSearchItemOutput) ElementType() reflect.Type {
@@ -3317,6 +3834,12 @@ func (o MonitoredResourcesSearchItemOutput) ToMonitoredResourcesSearchItemOutput
 
 func (o MonitoredResourcesSearchItemOutput) ToMonitoredResourcesSearchItemOutputWithContext(ctx context.Context) MonitoredResourcesSearchItemOutput {
 	return o
+}
+
+func (o MonitoredResourcesSearchItemOutput) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourcesSearchItem] {
+	return pulumix.Output[MonitoredResourcesSearchItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -3406,6 +3929,12 @@ func (o MonitoredResourcesSearchItemArrayOutput) ToMonitoredResourcesSearchItemA
 	return o
 }
 
+func (o MonitoredResourcesSearchItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourcesSearchItem] {
+	return pulumix.Output[[]MonitoredResourcesSearchItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o MonitoredResourcesSearchItemArrayOutput) Index(i pulumi.IntInput) MonitoredResourcesSearchItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MonitoredResourcesSearchItem {
 		return vs[0].([]MonitoredResourcesSearchItem)[vs[1].(int)]
@@ -3449,6 +3978,12 @@ func (i MonitoredResourcesSearchItemPropertyArgs) ToMonitoredResourcesSearchItem
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcesSearchItemPropertyOutput)
 }
 
+func (i MonitoredResourcesSearchItemPropertyArgs) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourcesSearchItemProperty] {
+	return pulumix.Output[MonitoredResourcesSearchItemProperty]{
+		OutputState: i.ToMonitoredResourcesSearchItemPropertyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MonitoredResourcesSearchItemPropertyArrayInput is an input type that accepts MonitoredResourcesSearchItemPropertyArray and MonitoredResourcesSearchItemPropertyArrayOutput values.
 // You can construct a concrete instance of `MonitoredResourcesSearchItemPropertyArrayInput` via:
 //
@@ -3474,6 +4009,12 @@ func (i MonitoredResourcesSearchItemPropertyArray) ToMonitoredResourcesSearchIte
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcesSearchItemPropertyArrayOutput)
 }
 
+func (i MonitoredResourcesSearchItemPropertyArray) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourcesSearchItemProperty] {
+	return pulumix.Output[[]MonitoredResourcesSearchItemProperty]{
+		OutputState: i.ToMonitoredResourcesSearchItemPropertyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MonitoredResourcesSearchItemPropertyOutput struct{ *pulumi.OutputState }
 
 func (MonitoredResourcesSearchItemPropertyOutput) ElementType() reflect.Type {
@@ -3486,6 +4027,12 @@ func (o MonitoredResourcesSearchItemPropertyOutput) ToMonitoredResourcesSearchIt
 
 func (o MonitoredResourcesSearchItemPropertyOutput) ToMonitoredResourcesSearchItemPropertyOutputWithContext(ctx context.Context) MonitoredResourcesSearchItemPropertyOutput {
 	return o
+}
+
+func (o MonitoredResourcesSearchItemPropertyOutput) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourcesSearchItemProperty] {
+	return pulumix.Output[MonitoredResourcesSearchItemProperty]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A filter to return resources that match exact resource name.
@@ -3510,6 +4057,12 @@ func (o MonitoredResourcesSearchItemPropertyArrayOutput) ToMonitoredResourcesSea
 
 func (o MonitoredResourcesSearchItemPropertyArrayOutput) ToMonitoredResourcesSearchItemPropertyArrayOutputWithContext(ctx context.Context) MonitoredResourcesSearchItemPropertyArrayOutput {
 	return o
+}
+
+func (o MonitoredResourcesSearchItemPropertyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourcesSearchItemProperty] {
+	return pulumix.Output[[]MonitoredResourcesSearchItemProperty]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MonitoredResourcesSearchItemPropertyArrayOutput) Index(i pulumi.IntInput) MonitoredResourcesSearchItemPropertyOutput {
@@ -3571,6 +4124,12 @@ func (i GetDiscoveryJobDiscoveryDetailArgs) ToGetDiscoveryJobDiscoveryDetailOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobDiscoveryDetailOutput)
 }
 
+func (i GetDiscoveryJobDiscoveryDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobDiscoveryDetail] {
+	return pulumix.Output[GetDiscoveryJobDiscoveryDetail]{
+		OutputState: i.ToGetDiscoveryJobDiscoveryDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDiscoveryJobDiscoveryDetailArrayInput is an input type that accepts GetDiscoveryJobDiscoveryDetailArray and GetDiscoveryJobDiscoveryDetailArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobDiscoveryDetailArrayInput` via:
 //
@@ -3596,6 +4155,12 @@ func (i GetDiscoveryJobDiscoveryDetailArray) ToGetDiscoveryJobDiscoveryDetailArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobDiscoveryDetailArrayOutput)
 }
 
+func (i GetDiscoveryJobDiscoveryDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobDiscoveryDetail] {
+	return pulumix.Output[[]GetDiscoveryJobDiscoveryDetail]{
+		OutputState: i.ToGetDiscoveryJobDiscoveryDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDiscoveryJobDiscoveryDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDiscoveryJobDiscoveryDetailOutput) ElementType() reflect.Type {
@@ -3608,6 +4173,12 @@ func (o GetDiscoveryJobDiscoveryDetailOutput) ToGetDiscoveryJobDiscoveryDetailOu
 
 func (o GetDiscoveryJobDiscoveryDetailOutput) ToGetDiscoveryJobDiscoveryDetailOutputWithContext(ctx context.Context) GetDiscoveryJobDiscoveryDetailOutput {
 	return o
+}
+
+func (o GetDiscoveryJobDiscoveryDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobDiscoveryDetail] {
+	return pulumix.Output[GetDiscoveryJobDiscoveryDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of Management Agent
@@ -3656,6 +4227,12 @@ func (o GetDiscoveryJobDiscoveryDetailArrayOutput) ToGetDiscoveryJobDiscoveryDet
 	return o
 }
 
+func (o GetDiscoveryJobDiscoveryDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobDiscoveryDetail] {
+	return pulumix.Output[[]GetDiscoveryJobDiscoveryDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetDiscoveryJobDiscoveryDetailArrayOutput) Index(i pulumi.IntInput) GetDiscoveryJobDiscoveryDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDiscoveryJobDiscoveryDetail {
 		return vs[0].([]GetDiscoveryJobDiscoveryDetail)[vs[1].(int)]
@@ -3695,6 +4272,12 @@ func (i GetDiscoveryJobDiscoveryDetailCredentialArgs) ToGetDiscoveryJobDiscovery
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobDiscoveryDetailCredentialOutput)
 }
 
+func (i GetDiscoveryJobDiscoveryDetailCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobDiscoveryDetailCredential] {
+	return pulumix.Output[GetDiscoveryJobDiscoveryDetailCredential]{
+		OutputState: i.ToGetDiscoveryJobDiscoveryDetailCredentialOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDiscoveryJobDiscoveryDetailCredentialArrayInput is an input type that accepts GetDiscoveryJobDiscoveryDetailCredentialArray and GetDiscoveryJobDiscoveryDetailCredentialArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobDiscoveryDetailCredentialArrayInput` via:
 //
@@ -3720,6 +4303,12 @@ func (i GetDiscoveryJobDiscoveryDetailCredentialArray) ToGetDiscoveryJobDiscover
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobDiscoveryDetailCredentialArrayOutput)
 }
 
+func (i GetDiscoveryJobDiscoveryDetailCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobDiscoveryDetailCredential] {
+	return pulumix.Output[[]GetDiscoveryJobDiscoveryDetailCredential]{
+		OutputState: i.ToGetDiscoveryJobDiscoveryDetailCredentialArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDiscoveryJobDiscoveryDetailCredentialOutput struct{ *pulumi.OutputState }
 
 func (GetDiscoveryJobDiscoveryDetailCredentialOutput) ElementType() reflect.Type {
@@ -3732,6 +4321,12 @@ func (o GetDiscoveryJobDiscoveryDetailCredentialOutput) ToGetDiscoveryJobDiscove
 
 func (o GetDiscoveryJobDiscoveryDetailCredentialOutput) ToGetDiscoveryJobDiscoveryDetailCredentialOutputWithContext(ctx context.Context) GetDiscoveryJobDiscoveryDetailCredentialOutput {
 	return o
+}
+
+func (o GetDiscoveryJobDiscoveryDetailCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobDiscoveryDetailCredential] {
+	return pulumix.Output[GetDiscoveryJobDiscoveryDetailCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 // List of DiscoveryJob credentials.
@@ -3753,6 +4348,12 @@ func (o GetDiscoveryJobDiscoveryDetailCredentialArrayOutput) ToGetDiscoveryJobDi
 
 func (o GetDiscoveryJobDiscoveryDetailCredentialArrayOutput) ToGetDiscoveryJobDiscoveryDetailCredentialArrayOutputWithContext(ctx context.Context) GetDiscoveryJobDiscoveryDetailCredentialArrayOutput {
 	return o
+}
+
+func (o GetDiscoveryJobDiscoveryDetailCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobDiscoveryDetailCredential] {
+	return pulumix.Output[[]GetDiscoveryJobDiscoveryDetailCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDiscoveryJobDiscoveryDetailCredentialArrayOutput) Index(i pulumi.IntInput) GetDiscoveryJobDiscoveryDetailCredentialOutput {
@@ -3802,6 +4403,12 @@ func (i GetDiscoveryJobDiscoveryDetailCredentialItemArgs) ToGetDiscoveryJobDisco
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobDiscoveryDetailCredentialItemOutput)
 }
 
+func (i GetDiscoveryJobDiscoveryDetailCredentialItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobDiscoveryDetailCredentialItem] {
+	return pulumix.Output[GetDiscoveryJobDiscoveryDetailCredentialItem]{
+		OutputState: i.ToGetDiscoveryJobDiscoveryDetailCredentialItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDiscoveryJobDiscoveryDetailCredentialItemArrayInput is an input type that accepts GetDiscoveryJobDiscoveryDetailCredentialItemArray and GetDiscoveryJobDiscoveryDetailCredentialItemArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobDiscoveryDetailCredentialItemArrayInput` via:
 //
@@ -3827,6 +4434,12 @@ func (i GetDiscoveryJobDiscoveryDetailCredentialItemArray) ToGetDiscoveryJobDisc
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobDiscoveryDetailCredentialItemArrayOutput)
 }
 
+func (i GetDiscoveryJobDiscoveryDetailCredentialItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobDiscoveryDetailCredentialItem] {
+	return pulumix.Output[[]GetDiscoveryJobDiscoveryDetailCredentialItem]{
+		OutputState: i.ToGetDiscoveryJobDiscoveryDetailCredentialItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDiscoveryJobDiscoveryDetailCredentialItemOutput struct{ *pulumi.OutputState }
 
 func (GetDiscoveryJobDiscoveryDetailCredentialItemOutput) ElementType() reflect.Type {
@@ -3839,6 +4452,12 @@ func (o GetDiscoveryJobDiscoveryDetailCredentialItemOutput) ToGetDiscoveryJobDis
 
 func (o GetDiscoveryJobDiscoveryDetailCredentialItemOutput) ToGetDiscoveryJobDiscoveryDetailCredentialItemOutputWithContext(ctx context.Context) GetDiscoveryJobDiscoveryDetailCredentialItemOutput {
 	return o
+}
+
+func (o GetDiscoveryJobDiscoveryDetailCredentialItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobDiscoveryDetailCredentialItem] {
+	return pulumix.Output[GetDiscoveryJobDiscoveryDetailCredentialItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Name of Credential
@@ -3870,6 +4489,12 @@ func (o GetDiscoveryJobDiscoveryDetailCredentialItemArrayOutput) ToGetDiscoveryJ
 
 func (o GetDiscoveryJobDiscoveryDetailCredentialItemArrayOutput) ToGetDiscoveryJobDiscoveryDetailCredentialItemArrayOutputWithContext(ctx context.Context) GetDiscoveryJobDiscoveryDetailCredentialItemArrayOutput {
 	return o
+}
+
+func (o GetDiscoveryJobDiscoveryDetailCredentialItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobDiscoveryDetailCredentialItem] {
+	return pulumix.Output[[]GetDiscoveryJobDiscoveryDetailCredentialItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDiscoveryJobDiscoveryDetailCredentialItemArrayOutput) Index(i pulumi.IntInput) GetDiscoveryJobDiscoveryDetailCredentialItemOutput {
@@ -3911,6 +4536,12 @@ func (i GetDiscoveryJobDiscoveryDetailCredentialItemPropertyArgs) ToGetDiscovery
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobDiscoveryDetailCredentialItemPropertyOutput)
 }
 
+func (i GetDiscoveryJobDiscoveryDetailCredentialItemPropertyArgs) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobDiscoveryDetailCredentialItemProperty] {
+	return pulumix.Output[GetDiscoveryJobDiscoveryDetailCredentialItemProperty]{
+		OutputState: i.ToGetDiscoveryJobDiscoveryDetailCredentialItemPropertyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDiscoveryJobDiscoveryDetailCredentialItemPropertyArrayInput is an input type that accepts GetDiscoveryJobDiscoveryDetailCredentialItemPropertyArray and GetDiscoveryJobDiscoveryDetailCredentialItemPropertyArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobDiscoveryDetailCredentialItemPropertyArrayInput` via:
 //
@@ -3936,6 +4567,12 @@ func (i GetDiscoveryJobDiscoveryDetailCredentialItemPropertyArray) ToGetDiscover
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobDiscoveryDetailCredentialItemPropertyArrayOutput)
 }
 
+func (i GetDiscoveryJobDiscoveryDetailCredentialItemPropertyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobDiscoveryDetailCredentialItemProperty] {
+	return pulumix.Output[[]GetDiscoveryJobDiscoveryDetailCredentialItemProperty]{
+		OutputState: i.ToGetDiscoveryJobDiscoveryDetailCredentialItemPropertyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDiscoveryJobDiscoveryDetailCredentialItemPropertyOutput struct{ *pulumi.OutputState }
 
 func (GetDiscoveryJobDiscoveryDetailCredentialItemPropertyOutput) ElementType() reflect.Type {
@@ -3948,6 +4585,12 @@ func (o GetDiscoveryJobDiscoveryDetailCredentialItemPropertyOutput) ToGetDiscove
 
 func (o GetDiscoveryJobDiscoveryDetailCredentialItemPropertyOutput) ToGetDiscoveryJobDiscoveryDetailCredentialItemPropertyOutputWithContext(ctx context.Context) GetDiscoveryJobDiscoveryDetailCredentialItemPropertyOutput {
 	return o
+}
+
+func (o GetDiscoveryJobDiscoveryDetailCredentialItemPropertyOutput) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobDiscoveryDetailCredentialItemProperty] {
+	return pulumix.Output[GetDiscoveryJobDiscoveryDetailCredentialItemProperty]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Key/Value pair of Property
@@ -3969,6 +4612,12 @@ func (o GetDiscoveryJobDiscoveryDetailCredentialItemPropertyArrayOutput) ToGetDi
 
 func (o GetDiscoveryJobDiscoveryDetailCredentialItemPropertyArrayOutput) ToGetDiscoveryJobDiscoveryDetailCredentialItemPropertyArrayOutputWithContext(ctx context.Context) GetDiscoveryJobDiscoveryDetailCredentialItemPropertyArrayOutput {
 	return o
+}
+
+func (o GetDiscoveryJobDiscoveryDetailCredentialItemPropertyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobDiscoveryDetailCredentialItemProperty] {
+	return pulumix.Output[[]GetDiscoveryJobDiscoveryDetailCredentialItemProperty]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDiscoveryJobDiscoveryDetailCredentialItemPropertyArrayOutput) Index(i pulumi.IntInput) GetDiscoveryJobDiscoveryDetailCredentialItemPropertyOutput {
@@ -4010,6 +4659,12 @@ func (i GetDiscoveryJobDiscoveryDetailPropertyArgs) ToGetDiscoveryJobDiscoveryDe
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobDiscoveryDetailPropertyOutput)
 }
 
+func (i GetDiscoveryJobDiscoveryDetailPropertyArgs) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobDiscoveryDetailProperty] {
+	return pulumix.Output[GetDiscoveryJobDiscoveryDetailProperty]{
+		OutputState: i.ToGetDiscoveryJobDiscoveryDetailPropertyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDiscoveryJobDiscoveryDetailPropertyArrayInput is an input type that accepts GetDiscoveryJobDiscoveryDetailPropertyArray and GetDiscoveryJobDiscoveryDetailPropertyArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobDiscoveryDetailPropertyArrayInput` via:
 //
@@ -4035,6 +4690,12 @@ func (i GetDiscoveryJobDiscoveryDetailPropertyArray) ToGetDiscoveryJobDiscoveryD
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobDiscoveryDetailPropertyArrayOutput)
 }
 
+func (i GetDiscoveryJobDiscoveryDetailPropertyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobDiscoveryDetailProperty] {
+	return pulumix.Output[[]GetDiscoveryJobDiscoveryDetailProperty]{
+		OutputState: i.ToGetDiscoveryJobDiscoveryDetailPropertyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDiscoveryJobDiscoveryDetailPropertyOutput struct{ *pulumi.OutputState }
 
 func (GetDiscoveryJobDiscoveryDetailPropertyOutput) ElementType() reflect.Type {
@@ -4047,6 +4708,12 @@ func (o GetDiscoveryJobDiscoveryDetailPropertyOutput) ToGetDiscoveryJobDiscovery
 
 func (o GetDiscoveryJobDiscoveryDetailPropertyOutput) ToGetDiscoveryJobDiscoveryDetailPropertyOutputWithContext(ctx context.Context) GetDiscoveryJobDiscoveryDetailPropertyOutput {
 	return o
+}
+
+func (o GetDiscoveryJobDiscoveryDetailPropertyOutput) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobDiscoveryDetailProperty] {
+	return pulumix.Output[GetDiscoveryJobDiscoveryDetailProperty]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Key/Value pair of Property
@@ -4066,6 +4733,12 @@ func (o GetDiscoveryJobDiscoveryDetailPropertyArrayOutput) ToGetDiscoveryJobDisc
 
 func (o GetDiscoveryJobDiscoveryDetailPropertyArrayOutput) ToGetDiscoveryJobDiscoveryDetailPropertyArrayOutputWithContext(ctx context.Context) GetDiscoveryJobDiscoveryDetailPropertyArrayOutput {
 	return o
+}
+
+func (o GetDiscoveryJobDiscoveryDetailPropertyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobDiscoveryDetailProperty] {
+	return pulumix.Output[[]GetDiscoveryJobDiscoveryDetailProperty]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDiscoveryJobDiscoveryDetailPropertyArrayOutput) Index(i pulumi.IntInput) GetDiscoveryJobDiscoveryDetailPropertyOutput {
@@ -4107,6 +4780,12 @@ func (i GetDiscoveryJobDiscoveryDetailTagArgs) ToGetDiscoveryJobDiscoveryDetailT
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobDiscoveryDetailTagOutput)
 }
 
+func (i GetDiscoveryJobDiscoveryDetailTagArgs) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobDiscoveryDetailTag] {
+	return pulumix.Output[GetDiscoveryJobDiscoveryDetailTag]{
+		OutputState: i.ToGetDiscoveryJobDiscoveryDetailTagOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDiscoveryJobDiscoveryDetailTagArrayInput is an input type that accepts GetDiscoveryJobDiscoveryDetailTagArray and GetDiscoveryJobDiscoveryDetailTagArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobDiscoveryDetailTagArrayInput` via:
 //
@@ -4132,6 +4811,12 @@ func (i GetDiscoveryJobDiscoveryDetailTagArray) ToGetDiscoveryJobDiscoveryDetail
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobDiscoveryDetailTagArrayOutput)
 }
 
+func (i GetDiscoveryJobDiscoveryDetailTagArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobDiscoveryDetailTag] {
+	return pulumix.Output[[]GetDiscoveryJobDiscoveryDetailTag]{
+		OutputState: i.ToGetDiscoveryJobDiscoveryDetailTagArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDiscoveryJobDiscoveryDetailTagOutput struct{ *pulumi.OutputState }
 
 func (GetDiscoveryJobDiscoveryDetailTagOutput) ElementType() reflect.Type {
@@ -4144,6 +4829,12 @@ func (o GetDiscoveryJobDiscoveryDetailTagOutput) ToGetDiscoveryJobDiscoveryDetai
 
 func (o GetDiscoveryJobDiscoveryDetailTagOutput) ToGetDiscoveryJobDiscoveryDetailTagOutputWithContext(ctx context.Context) GetDiscoveryJobDiscoveryDetailTagOutput {
 	return o
+}
+
+func (o GetDiscoveryJobDiscoveryDetailTagOutput) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobDiscoveryDetailTag] {
+	return pulumix.Output[GetDiscoveryJobDiscoveryDetailTag]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Key/Value pair of Property
@@ -4163,6 +4854,12 @@ func (o GetDiscoveryJobDiscoveryDetailTagArrayOutput) ToGetDiscoveryJobDiscovery
 
 func (o GetDiscoveryJobDiscoveryDetailTagArrayOutput) ToGetDiscoveryJobDiscoveryDetailTagArrayOutputWithContext(ctx context.Context) GetDiscoveryJobDiscoveryDetailTagArrayOutput {
 	return o
+}
+
+func (o GetDiscoveryJobDiscoveryDetailTagArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobDiscoveryDetailTag] {
+	return pulumix.Output[[]GetDiscoveryJobDiscoveryDetailTag]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDiscoveryJobDiscoveryDetailTagArrayOutput) Index(i pulumi.IntInput) GetDiscoveryJobDiscoveryDetailTagOutput {
@@ -4204,6 +4901,12 @@ func (i GetDiscoveryJobLogsDiscoveryJobLogCollectionArgs) ToGetDiscoveryJobLogsD
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobLogsDiscoveryJobLogCollectionOutput)
 }
 
+func (i GetDiscoveryJobLogsDiscoveryJobLogCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobLogsDiscoveryJobLogCollection] {
+	return pulumix.Output[GetDiscoveryJobLogsDiscoveryJobLogCollection]{
+		OutputState: i.ToGetDiscoveryJobLogsDiscoveryJobLogCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDiscoveryJobLogsDiscoveryJobLogCollectionArrayInput is an input type that accepts GetDiscoveryJobLogsDiscoveryJobLogCollectionArray and GetDiscoveryJobLogsDiscoveryJobLogCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobLogsDiscoveryJobLogCollectionArrayInput` via:
 //
@@ -4229,6 +4932,12 @@ func (i GetDiscoveryJobLogsDiscoveryJobLogCollectionArray) ToGetDiscoveryJobLogs
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobLogsDiscoveryJobLogCollectionArrayOutput)
 }
 
+func (i GetDiscoveryJobLogsDiscoveryJobLogCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobLogsDiscoveryJobLogCollection] {
+	return pulumix.Output[[]GetDiscoveryJobLogsDiscoveryJobLogCollection]{
+		OutputState: i.ToGetDiscoveryJobLogsDiscoveryJobLogCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDiscoveryJobLogsDiscoveryJobLogCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetDiscoveryJobLogsDiscoveryJobLogCollectionOutput) ElementType() reflect.Type {
@@ -4241,6 +4950,12 @@ func (o GetDiscoveryJobLogsDiscoveryJobLogCollectionOutput) ToGetDiscoveryJobLog
 
 func (o GetDiscoveryJobLogsDiscoveryJobLogCollectionOutput) ToGetDiscoveryJobLogsDiscoveryJobLogCollectionOutputWithContext(ctx context.Context) GetDiscoveryJobLogsDiscoveryJobLogCollectionOutput {
 	return o
+}
+
+func (o GetDiscoveryJobLogsDiscoveryJobLogCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobLogsDiscoveryJobLogCollection] {
+	return pulumix.Output[GetDiscoveryJobLogsDiscoveryJobLogCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 // List of logs
@@ -4262,6 +4977,12 @@ func (o GetDiscoveryJobLogsDiscoveryJobLogCollectionArrayOutput) ToGetDiscoveryJ
 
 func (o GetDiscoveryJobLogsDiscoveryJobLogCollectionArrayOutput) ToGetDiscoveryJobLogsDiscoveryJobLogCollectionArrayOutputWithContext(ctx context.Context) GetDiscoveryJobLogsDiscoveryJobLogCollectionArrayOutput {
 	return o
+}
+
+func (o GetDiscoveryJobLogsDiscoveryJobLogCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobLogsDiscoveryJobLogCollection] {
+	return pulumix.Output[[]GetDiscoveryJobLogsDiscoveryJobLogCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDiscoveryJobLogsDiscoveryJobLogCollectionArrayOutput) Index(i pulumi.IntInput) GetDiscoveryJobLogsDiscoveryJobLogCollectionOutput {
@@ -4315,6 +5036,12 @@ func (i GetDiscoveryJobLogsDiscoveryJobLogCollectionItemArgs) ToGetDiscoveryJobL
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobLogsDiscoveryJobLogCollectionItemOutput)
 }
 
+func (i GetDiscoveryJobLogsDiscoveryJobLogCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobLogsDiscoveryJobLogCollectionItem] {
+	return pulumix.Output[GetDiscoveryJobLogsDiscoveryJobLogCollectionItem]{
+		OutputState: i.ToGetDiscoveryJobLogsDiscoveryJobLogCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDiscoveryJobLogsDiscoveryJobLogCollectionItemArrayInput is an input type that accepts GetDiscoveryJobLogsDiscoveryJobLogCollectionItemArray and GetDiscoveryJobLogsDiscoveryJobLogCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobLogsDiscoveryJobLogCollectionItemArrayInput` via:
 //
@@ -4340,6 +5067,12 @@ func (i GetDiscoveryJobLogsDiscoveryJobLogCollectionItemArray) ToGetDiscoveryJob
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobLogsDiscoveryJobLogCollectionItemArrayOutput)
 }
 
+func (i GetDiscoveryJobLogsDiscoveryJobLogCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobLogsDiscoveryJobLogCollectionItem] {
+	return pulumix.Output[[]GetDiscoveryJobLogsDiscoveryJobLogCollectionItem]{
+		OutputState: i.ToGetDiscoveryJobLogsDiscoveryJobLogCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDiscoveryJobLogsDiscoveryJobLogCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetDiscoveryJobLogsDiscoveryJobLogCollectionItemOutput) ElementType() reflect.Type {
@@ -4352,6 +5085,12 @@ func (o GetDiscoveryJobLogsDiscoveryJobLogCollectionItemOutput) ToGetDiscoveryJo
 
 func (o GetDiscoveryJobLogsDiscoveryJobLogCollectionItemOutput) ToGetDiscoveryJobLogsDiscoveryJobLogCollectionItemOutputWithContext(ctx context.Context) GetDiscoveryJobLogsDiscoveryJobLogCollectionItemOutput {
 	return o
+}
+
+func (o GetDiscoveryJobLogsDiscoveryJobLogCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobLogsDiscoveryJobLogCollectionItem] {
+	return pulumix.Output[GetDiscoveryJobLogsDiscoveryJobLogCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of Discovery job
@@ -4386,6 +5125,12 @@ func (o GetDiscoveryJobLogsDiscoveryJobLogCollectionItemArrayOutput) ToGetDiscov
 
 func (o GetDiscoveryJobLogsDiscoveryJobLogCollectionItemArrayOutput) ToGetDiscoveryJobLogsDiscoveryJobLogCollectionItemArrayOutputWithContext(ctx context.Context) GetDiscoveryJobLogsDiscoveryJobLogCollectionItemArrayOutput {
 	return o
+}
+
+func (o GetDiscoveryJobLogsDiscoveryJobLogCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobLogsDiscoveryJobLogCollectionItem] {
+	return pulumix.Output[[]GetDiscoveryJobLogsDiscoveryJobLogCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDiscoveryJobLogsDiscoveryJobLogCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDiscoveryJobLogsDiscoveryJobLogCollectionItemOutput {
@@ -4429,6 +5174,12 @@ func (i GetDiscoveryJobLogsFilterArgs) ToGetDiscoveryJobLogsFilterOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobLogsFilterOutput)
 }
 
+func (i GetDiscoveryJobLogsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobLogsFilter] {
+	return pulumix.Output[GetDiscoveryJobLogsFilter]{
+		OutputState: i.ToGetDiscoveryJobLogsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDiscoveryJobLogsFilterArrayInput is an input type that accepts GetDiscoveryJobLogsFilterArray and GetDiscoveryJobLogsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobLogsFilterArrayInput` via:
 //
@@ -4454,6 +5205,12 @@ func (i GetDiscoveryJobLogsFilterArray) ToGetDiscoveryJobLogsFilterArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobLogsFilterArrayOutput)
 }
 
+func (i GetDiscoveryJobLogsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobLogsFilter] {
+	return pulumix.Output[[]GetDiscoveryJobLogsFilter]{
+		OutputState: i.ToGetDiscoveryJobLogsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDiscoveryJobLogsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetDiscoveryJobLogsFilterOutput) ElementType() reflect.Type {
@@ -4466,6 +5223,12 @@ func (o GetDiscoveryJobLogsFilterOutput) ToGetDiscoveryJobLogsFilterOutput() Get
 
 func (o GetDiscoveryJobLogsFilterOutput) ToGetDiscoveryJobLogsFilterOutputWithContext(ctx context.Context) GetDiscoveryJobLogsFilterOutput {
 	return o
+}
+
+func (o GetDiscoveryJobLogsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobLogsFilter] {
+	return pulumix.Output[GetDiscoveryJobLogsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDiscoveryJobLogsFilterOutput) Name() pulumi.StringOutput {
@@ -4492,6 +5255,12 @@ func (o GetDiscoveryJobLogsFilterArrayOutput) ToGetDiscoveryJobLogsFilterArrayOu
 
 func (o GetDiscoveryJobLogsFilterArrayOutput) ToGetDiscoveryJobLogsFilterArrayOutputWithContext(ctx context.Context) GetDiscoveryJobLogsFilterArrayOutput {
 	return o
+}
+
+func (o GetDiscoveryJobLogsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobLogsFilter] {
+	return pulumix.Output[[]GetDiscoveryJobLogsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDiscoveryJobLogsFilterArrayOutput) Index(i pulumi.IntInput) GetDiscoveryJobLogsFilterOutput {
@@ -4533,6 +5302,12 @@ func (i GetDiscoveryJobsDiscoveryJobCollectionArgs) ToGetDiscoveryJobsDiscoveryJ
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobsDiscoveryJobCollectionOutput)
 }
 
+func (i GetDiscoveryJobsDiscoveryJobCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobsDiscoveryJobCollection] {
+	return pulumix.Output[GetDiscoveryJobsDiscoveryJobCollection]{
+		OutputState: i.ToGetDiscoveryJobsDiscoveryJobCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDiscoveryJobsDiscoveryJobCollectionArrayInput is an input type that accepts GetDiscoveryJobsDiscoveryJobCollectionArray and GetDiscoveryJobsDiscoveryJobCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobsDiscoveryJobCollectionArrayInput` via:
 //
@@ -4558,6 +5333,12 @@ func (i GetDiscoveryJobsDiscoveryJobCollectionArray) ToGetDiscoveryJobsDiscovery
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobsDiscoveryJobCollectionArrayOutput)
 }
 
+func (i GetDiscoveryJobsDiscoveryJobCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobsDiscoveryJobCollection] {
+	return pulumix.Output[[]GetDiscoveryJobsDiscoveryJobCollection]{
+		OutputState: i.ToGetDiscoveryJobsDiscoveryJobCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDiscoveryJobsDiscoveryJobCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetDiscoveryJobsDiscoveryJobCollectionOutput) ElementType() reflect.Type {
@@ -4570,6 +5351,12 @@ func (o GetDiscoveryJobsDiscoveryJobCollectionOutput) ToGetDiscoveryJobsDiscover
 
 func (o GetDiscoveryJobsDiscoveryJobCollectionOutput) ToGetDiscoveryJobsDiscoveryJobCollectionOutputWithContext(ctx context.Context) GetDiscoveryJobsDiscoveryJobCollectionOutput {
 	return o
+}
+
+func (o GetDiscoveryJobsDiscoveryJobCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobsDiscoveryJobCollection] {
+	return pulumix.Output[GetDiscoveryJobsDiscoveryJobCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 // List of DiscoveryJob credentials.
@@ -4591,6 +5378,12 @@ func (o GetDiscoveryJobsDiscoveryJobCollectionArrayOutput) ToGetDiscoveryJobsDis
 
 func (o GetDiscoveryJobsDiscoveryJobCollectionArrayOutput) ToGetDiscoveryJobsDiscoveryJobCollectionArrayOutputWithContext(ctx context.Context) GetDiscoveryJobsDiscoveryJobCollectionArrayOutput {
 	return o
+}
+
+func (o GetDiscoveryJobsDiscoveryJobCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobsDiscoveryJobCollection] {
+	return pulumix.Output[[]GetDiscoveryJobsDiscoveryJobCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDiscoveryJobsDiscoveryJobCollectionArrayOutput) Index(i pulumi.IntInput) GetDiscoveryJobsDiscoveryJobCollectionOutput {
@@ -4684,6 +5477,12 @@ func (i GetDiscoveryJobsDiscoveryJobCollectionItemArgs) ToGetDiscoveryJobsDiscov
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobsDiscoveryJobCollectionItemOutput)
 }
 
+func (i GetDiscoveryJobsDiscoveryJobCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobsDiscoveryJobCollectionItem] {
+	return pulumix.Output[GetDiscoveryJobsDiscoveryJobCollectionItem]{
+		OutputState: i.ToGetDiscoveryJobsDiscoveryJobCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDiscoveryJobsDiscoveryJobCollectionItemArrayInput is an input type that accepts GetDiscoveryJobsDiscoveryJobCollectionItemArray and GetDiscoveryJobsDiscoveryJobCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobsDiscoveryJobCollectionItemArrayInput` via:
 //
@@ -4709,6 +5508,12 @@ func (i GetDiscoveryJobsDiscoveryJobCollectionItemArray) ToGetDiscoveryJobsDisco
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobsDiscoveryJobCollectionItemArrayOutput)
 }
 
+func (i GetDiscoveryJobsDiscoveryJobCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobsDiscoveryJobCollectionItem] {
+	return pulumix.Output[[]GetDiscoveryJobsDiscoveryJobCollectionItem]{
+		OutputState: i.ToGetDiscoveryJobsDiscoveryJobCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDiscoveryJobsDiscoveryJobCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetDiscoveryJobsDiscoveryJobCollectionItemOutput) ElementType() reflect.Type {
@@ -4721,6 +5526,12 @@ func (o GetDiscoveryJobsDiscoveryJobCollectionItemOutput) ToGetDiscoveryJobsDisc
 
 func (o GetDiscoveryJobsDiscoveryJobCollectionItemOutput) ToGetDiscoveryJobsDiscoveryJobCollectionItemOutputWithContext(ctx context.Context) GetDiscoveryJobsDiscoveryJobCollectionItemOutput {
 	return o
+}
+
+func (o GetDiscoveryJobsDiscoveryJobCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobsDiscoveryJobCollectionItem] {
+	return pulumix.Output[GetDiscoveryJobsDiscoveryJobCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The ID of the compartment in which data is listed.
@@ -4807,6 +5618,12 @@ func (o GetDiscoveryJobsDiscoveryJobCollectionItemArrayOutput) ToGetDiscoveryJob
 	return o
 }
 
+func (o GetDiscoveryJobsDiscoveryJobCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobsDiscoveryJobCollectionItem] {
+	return pulumix.Output[[]GetDiscoveryJobsDiscoveryJobCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetDiscoveryJobsDiscoveryJobCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDiscoveryJobsDiscoveryJobCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDiscoveryJobsDiscoveryJobCollectionItem {
 		return vs[0].([]GetDiscoveryJobsDiscoveryJobCollectionItem)[vs[1].(int)]
@@ -4850,6 +5667,12 @@ func (i GetDiscoveryJobsFilterArgs) ToGetDiscoveryJobsFilterOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobsFilterOutput)
 }
 
+func (i GetDiscoveryJobsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobsFilter] {
+	return pulumix.Output[GetDiscoveryJobsFilter]{
+		OutputState: i.ToGetDiscoveryJobsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDiscoveryJobsFilterArrayInput is an input type that accepts GetDiscoveryJobsFilterArray and GetDiscoveryJobsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobsFilterArrayInput` via:
 //
@@ -4875,6 +5698,12 @@ func (i GetDiscoveryJobsFilterArray) ToGetDiscoveryJobsFilterArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobsFilterArrayOutput)
 }
 
+func (i GetDiscoveryJobsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobsFilter] {
+	return pulumix.Output[[]GetDiscoveryJobsFilter]{
+		OutputState: i.ToGetDiscoveryJobsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDiscoveryJobsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetDiscoveryJobsFilterOutput) ElementType() reflect.Type {
@@ -4887,6 +5716,12 @@ func (o GetDiscoveryJobsFilterOutput) ToGetDiscoveryJobsFilterOutput() GetDiscov
 
 func (o GetDiscoveryJobsFilterOutput) ToGetDiscoveryJobsFilterOutputWithContext(ctx context.Context) GetDiscoveryJobsFilterOutput {
 	return o
+}
+
+func (o GetDiscoveryJobsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobsFilter] {
+	return pulumix.Output[GetDiscoveryJobsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A filter to return only discovery jobs that match the entire resource name given.
@@ -4914,6 +5749,12 @@ func (o GetDiscoveryJobsFilterArrayOutput) ToGetDiscoveryJobsFilterArrayOutput()
 
 func (o GetDiscoveryJobsFilterArrayOutput) ToGetDiscoveryJobsFilterArrayOutputWithContext(ctx context.Context) GetDiscoveryJobsFilterArrayOutput {
 	return o
+}
+
+func (o GetDiscoveryJobsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobsFilter] {
+	return pulumix.Output[[]GetDiscoveryJobsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDiscoveryJobsFilterArrayOutput) Index(i pulumi.IntInput) GetDiscoveryJobsFilterOutput {
@@ -4963,6 +5804,12 @@ func (i GetMonitoredResourceAdditionalAliasArgs) ToGetMonitoredResourceAdditiona
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceAdditionalAliasOutput)
 }
 
+func (i GetMonitoredResourceAdditionalAliasArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceAdditionalAlias] {
+	return pulumix.Output[GetMonitoredResourceAdditionalAlias]{
+		OutputState: i.ToGetMonitoredResourceAdditionalAliasOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMonitoredResourceAdditionalAliasArrayInput is an input type that accepts GetMonitoredResourceAdditionalAliasArray and GetMonitoredResourceAdditionalAliasArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourceAdditionalAliasArrayInput` via:
 //
@@ -4988,6 +5835,12 @@ func (i GetMonitoredResourceAdditionalAliasArray) ToGetMonitoredResourceAddition
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceAdditionalAliasArrayOutput)
 }
 
+func (i GetMonitoredResourceAdditionalAliasArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceAdditionalAlias] {
+	return pulumix.Output[[]GetMonitoredResourceAdditionalAlias]{
+		OutputState: i.ToGetMonitoredResourceAdditionalAliasArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMonitoredResourceAdditionalAliasOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredResourceAdditionalAliasOutput) ElementType() reflect.Type {
@@ -5000,6 +5853,12 @@ func (o GetMonitoredResourceAdditionalAliasOutput) ToGetMonitoredResourceAdditio
 
 func (o GetMonitoredResourceAdditionalAliasOutput) ToGetMonitoredResourceAdditionalAliasOutputWithContext(ctx context.Context) GetMonitoredResourceAdditionalAliasOutput {
 	return o
+}
+
+func (o GetMonitoredResourceAdditionalAliasOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceAdditionalAlias] {
+	return pulumix.Output[GetMonitoredResourceAdditionalAlias]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Monitored Resource Alias Reference Source Credential.
@@ -5031,6 +5890,12 @@ func (o GetMonitoredResourceAdditionalAliasArrayOutput) ToGetMonitoredResourceAd
 
 func (o GetMonitoredResourceAdditionalAliasArrayOutput) ToGetMonitoredResourceAdditionalAliasArrayOutputWithContext(ctx context.Context) GetMonitoredResourceAdditionalAliasArrayOutput {
 	return o
+}
+
+func (o GetMonitoredResourceAdditionalAliasArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceAdditionalAlias] {
+	return pulumix.Output[[]GetMonitoredResourceAdditionalAlias]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMonitoredResourceAdditionalAliasArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceAdditionalAliasOutput {
@@ -5080,6 +5945,12 @@ func (i GetMonitoredResourceAdditionalAliasCredentialArgs) ToGetMonitoredResourc
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceAdditionalAliasCredentialOutput)
 }
 
+func (i GetMonitoredResourceAdditionalAliasCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceAdditionalAliasCredential] {
+	return pulumix.Output[GetMonitoredResourceAdditionalAliasCredential]{
+		OutputState: i.ToGetMonitoredResourceAdditionalAliasCredentialOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMonitoredResourceAdditionalAliasCredentialArrayInput is an input type that accepts GetMonitoredResourceAdditionalAliasCredentialArray and GetMonitoredResourceAdditionalAliasCredentialArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourceAdditionalAliasCredentialArrayInput` via:
 //
@@ -5105,6 +5976,12 @@ func (i GetMonitoredResourceAdditionalAliasCredentialArray) ToGetMonitoredResour
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceAdditionalAliasCredentialArrayOutput)
 }
 
+func (i GetMonitoredResourceAdditionalAliasCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceAdditionalAliasCredential] {
+	return pulumix.Output[[]GetMonitoredResourceAdditionalAliasCredential]{
+		OutputState: i.ToGetMonitoredResourceAdditionalAliasCredentialArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMonitoredResourceAdditionalAliasCredentialOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredResourceAdditionalAliasCredentialOutput) ElementType() reflect.Type {
@@ -5117,6 +5994,12 @@ func (o GetMonitoredResourceAdditionalAliasCredentialOutput) ToGetMonitoredResou
 
 func (o GetMonitoredResourceAdditionalAliasCredentialOutput) ToGetMonitoredResourceAdditionalAliasCredentialOutputWithContext(ctx context.Context) GetMonitoredResourceAdditionalAliasCredentialOutput {
 	return o
+}
+
+func (o GetMonitoredResourceAdditionalAliasCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceAdditionalAliasCredential] {
+	return pulumix.Output[GetMonitoredResourceAdditionalAliasCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Property Name.
@@ -5146,6 +6029,12 @@ func (o GetMonitoredResourceAdditionalAliasCredentialArrayOutput) ToGetMonitored
 
 func (o GetMonitoredResourceAdditionalAliasCredentialArrayOutput) ToGetMonitoredResourceAdditionalAliasCredentialArrayOutputWithContext(ctx context.Context) GetMonitoredResourceAdditionalAliasCredentialArrayOutput {
 	return o
+}
+
+func (o GetMonitoredResourceAdditionalAliasCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceAdditionalAliasCredential] {
+	return pulumix.Output[[]GetMonitoredResourceAdditionalAliasCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMonitoredResourceAdditionalAliasCredentialArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceAdditionalAliasCredentialOutput {
@@ -5217,6 +6106,12 @@ func (i GetMonitoredResourceAdditionalCredentialArgs) ToGetMonitoredResourceAddi
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceAdditionalCredentialOutput)
 }
 
+func (i GetMonitoredResourceAdditionalCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceAdditionalCredential] {
+	return pulumix.Output[GetMonitoredResourceAdditionalCredential]{
+		OutputState: i.ToGetMonitoredResourceAdditionalCredentialOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMonitoredResourceAdditionalCredentialArrayInput is an input type that accepts GetMonitoredResourceAdditionalCredentialArray and GetMonitoredResourceAdditionalCredentialArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourceAdditionalCredentialArrayInput` via:
 //
@@ -5242,6 +6137,12 @@ func (i GetMonitoredResourceAdditionalCredentialArray) ToGetMonitoredResourceAdd
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceAdditionalCredentialArrayOutput)
 }
 
+func (i GetMonitoredResourceAdditionalCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceAdditionalCredential] {
+	return pulumix.Output[[]GetMonitoredResourceAdditionalCredential]{
+		OutputState: i.ToGetMonitoredResourceAdditionalCredentialArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMonitoredResourceAdditionalCredentialOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredResourceAdditionalCredentialOutput) ElementType() reflect.Type {
@@ -5254,6 +6155,12 @@ func (o GetMonitoredResourceAdditionalCredentialOutput) ToGetMonitoredResourceAd
 
 func (o GetMonitoredResourceAdditionalCredentialOutput) ToGetMonitoredResourceAdditionalCredentialOutputWithContext(ctx context.Context) GetMonitoredResourceAdditionalCredentialOutput {
 	return o
+}
+
+func (o GetMonitoredResourceAdditionalCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceAdditionalCredential] {
+	return pulumix.Output[GetMonitoredResourceAdditionalCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
@@ -5310,6 +6217,12 @@ func (o GetMonitoredResourceAdditionalCredentialArrayOutput) ToGetMonitoredResou
 	return o
 }
 
+func (o GetMonitoredResourceAdditionalCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceAdditionalCredential] {
+	return pulumix.Output[[]GetMonitoredResourceAdditionalCredential]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetMonitoredResourceAdditionalCredentialArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceAdditionalCredentialOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceAdditionalCredential {
 		return vs[0].([]GetMonitoredResourceAdditionalCredential)[vs[1].(int)]
@@ -5353,6 +6266,12 @@ func (i GetMonitoredResourceAdditionalCredentialPropertyArgs) ToGetMonitoredReso
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceAdditionalCredentialPropertyOutput)
 }
 
+func (i GetMonitoredResourceAdditionalCredentialPropertyArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceAdditionalCredentialProperty] {
+	return pulumix.Output[GetMonitoredResourceAdditionalCredentialProperty]{
+		OutputState: i.ToGetMonitoredResourceAdditionalCredentialPropertyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMonitoredResourceAdditionalCredentialPropertyArrayInput is an input type that accepts GetMonitoredResourceAdditionalCredentialPropertyArray and GetMonitoredResourceAdditionalCredentialPropertyArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourceAdditionalCredentialPropertyArrayInput` via:
 //
@@ -5378,6 +6297,12 @@ func (i GetMonitoredResourceAdditionalCredentialPropertyArray) ToGetMonitoredRes
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceAdditionalCredentialPropertyArrayOutput)
 }
 
+func (i GetMonitoredResourceAdditionalCredentialPropertyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceAdditionalCredentialProperty] {
+	return pulumix.Output[[]GetMonitoredResourceAdditionalCredentialProperty]{
+		OutputState: i.ToGetMonitoredResourceAdditionalCredentialPropertyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMonitoredResourceAdditionalCredentialPropertyOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredResourceAdditionalCredentialPropertyOutput) ElementType() reflect.Type {
@@ -5390,6 +6315,12 @@ func (o GetMonitoredResourceAdditionalCredentialPropertyOutput) ToGetMonitoredRe
 
 func (o GetMonitoredResourceAdditionalCredentialPropertyOutput) ToGetMonitoredResourceAdditionalCredentialPropertyOutputWithContext(ctx context.Context) GetMonitoredResourceAdditionalCredentialPropertyOutput {
 	return o
+}
+
+func (o GetMonitoredResourceAdditionalCredentialPropertyOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceAdditionalCredentialProperty] {
+	return pulumix.Output[GetMonitoredResourceAdditionalCredentialProperty]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Property Name.
@@ -5414,6 +6345,12 @@ func (o GetMonitoredResourceAdditionalCredentialPropertyArrayOutput) ToGetMonito
 
 func (o GetMonitoredResourceAdditionalCredentialPropertyArrayOutput) ToGetMonitoredResourceAdditionalCredentialPropertyArrayOutputWithContext(ctx context.Context) GetMonitoredResourceAdditionalCredentialPropertyArrayOutput {
 	return o
+}
+
+func (o GetMonitoredResourceAdditionalCredentialPropertyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceAdditionalCredentialProperty] {
+	return pulumix.Output[[]GetMonitoredResourceAdditionalCredentialProperty]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMonitoredResourceAdditionalCredentialPropertyArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceAdditionalCredentialPropertyOutput {
@@ -5463,6 +6400,12 @@ func (i GetMonitoredResourceAliasArgs) ToGetMonitoredResourceAliasOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceAliasOutput)
 }
 
+func (i GetMonitoredResourceAliasArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceAlias] {
+	return pulumix.Output[GetMonitoredResourceAlias]{
+		OutputState: i.ToGetMonitoredResourceAliasOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMonitoredResourceAliasArrayInput is an input type that accepts GetMonitoredResourceAliasArray and GetMonitoredResourceAliasArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourceAliasArrayInput` via:
 //
@@ -5488,6 +6431,12 @@ func (i GetMonitoredResourceAliasArray) ToGetMonitoredResourceAliasArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceAliasArrayOutput)
 }
 
+func (i GetMonitoredResourceAliasArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceAlias] {
+	return pulumix.Output[[]GetMonitoredResourceAlias]{
+		OutputState: i.ToGetMonitoredResourceAliasArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMonitoredResourceAliasOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredResourceAliasOutput) ElementType() reflect.Type {
@@ -5500,6 +6449,12 @@ func (o GetMonitoredResourceAliasOutput) ToGetMonitoredResourceAliasOutput() Get
 
 func (o GetMonitoredResourceAliasOutput) ToGetMonitoredResourceAliasOutputWithContext(ctx context.Context) GetMonitoredResourceAliasOutput {
 	return o
+}
+
+func (o GetMonitoredResourceAliasOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceAlias] {
+	return pulumix.Output[GetMonitoredResourceAlias]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Monitored Resource Alias Reference Source Credential.
@@ -5529,6 +6484,12 @@ func (o GetMonitoredResourceAliasArrayOutput) ToGetMonitoredResourceAliasArrayOu
 
 func (o GetMonitoredResourceAliasArrayOutput) ToGetMonitoredResourceAliasArrayOutputWithContext(ctx context.Context) GetMonitoredResourceAliasArrayOutput {
 	return o
+}
+
+func (o GetMonitoredResourceAliasArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceAlias] {
+	return pulumix.Output[[]GetMonitoredResourceAlias]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMonitoredResourceAliasArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceAliasOutput {
@@ -5578,6 +6539,12 @@ func (i GetMonitoredResourceAliasCredentialArgs) ToGetMonitoredResourceAliasCred
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceAliasCredentialOutput)
 }
 
+func (i GetMonitoredResourceAliasCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceAliasCredential] {
+	return pulumix.Output[GetMonitoredResourceAliasCredential]{
+		OutputState: i.ToGetMonitoredResourceAliasCredentialOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMonitoredResourceAliasCredentialArrayInput is an input type that accepts GetMonitoredResourceAliasCredentialArray and GetMonitoredResourceAliasCredentialArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourceAliasCredentialArrayInput` via:
 //
@@ -5603,6 +6570,12 @@ func (i GetMonitoredResourceAliasCredentialArray) ToGetMonitoredResourceAliasCre
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceAliasCredentialArrayOutput)
 }
 
+func (i GetMonitoredResourceAliasCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceAliasCredential] {
+	return pulumix.Output[[]GetMonitoredResourceAliasCredential]{
+		OutputState: i.ToGetMonitoredResourceAliasCredentialArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMonitoredResourceAliasCredentialOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredResourceAliasCredentialOutput) ElementType() reflect.Type {
@@ -5615,6 +6588,12 @@ func (o GetMonitoredResourceAliasCredentialOutput) ToGetMonitoredResourceAliasCr
 
 func (o GetMonitoredResourceAliasCredentialOutput) ToGetMonitoredResourceAliasCredentialOutputWithContext(ctx context.Context) GetMonitoredResourceAliasCredentialOutput {
 	return o
+}
+
+func (o GetMonitoredResourceAliasCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceAliasCredential] {
+	return pulumix.Output[GetMonitoredResourceAliasCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Property Name.
@@ -5644,6 +6623,12 @@ func (o GetMonitoredResourceAliasCredentialArrayOutput) ToGetMonitoredResourceAl
 
 func (o GetMonitoredResourceAliasCredentialArrayOutput) ToGetMonitoredResourceAliasCredentialArrayOutputWithContext(ctx context.Context) GetMonitoredResourceAliasCredentialArrayOutput {
 	return o
+}
+
+func (o GetMonitoredResourceAliasCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceAliasCredential] {
+	return pulumix.Output[[]GetMonitoredResourceAliasCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMonitoredResourceAliasCredentialArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceAliasCredentialOutput {
@@ -5715,6 +6700,12 @@ func (i GetMonitoredResourceCredentialArgs) ToGetMonitoredResourceCredentialOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceCredentialOutput)
 }
 
+func (i GetMonitoredResourceCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceCredential] {
+	return pulumix.Output[GetMonitoredResourceCredential]{
+		OutputState: i.ToGetMonitoredResourceCredentialOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMonitoredResourceCredentialArrayInput is an input type that accepts GetMonitoredResourceCredentialArray and GetMonitoredResourceCredentialArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourceCredentialArrayInput` via:
 //
@@ -5740,6 +6731,12 @@ func (i GetMonitoredResourceCredentialArray) ToGetMonitoredResourceCredentialArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceCredentialArrayOutput)
 }
 
+func (i GetMonitoredResourceCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceCredential] {
+	return pulumix.Output[[]GetMonitoredResourceCredential]{
+		OutputState: i.ToGetMonitoredResourceCredentialArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMonitoredResourceCredentialOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredResourceCredentialOutput) ElementType() reflect.Type {
@@ -5752,6 +6749,12 @@ func (o GetMonitoredResourceCredentialOutput) ToGetMonitoredResourceCredentialOu
 
 func (o GetMonitoredResourceCredentialOutput) ToGetMonitoredResourceCredentialOutputWithContext(ctx context.Context) GetMonitoredResourceCredentialOutput {
 	return o
+}
+
+func (o GetMonitoredResourceCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceCredential] {
+	return pulumix.Output[GetMonitoredResourceCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
@@ -5806,6 +6809,12 @@ func (o GetMonitoredResourceCredentialArrayOutput) ToGetMonitoredResourceCredent
 	return o
 }
 
+func (o GetMonitoredResourceCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceCredential] {
+	return pulumix.Output[[]GetMonitoredResourceCredential]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetMonitoredResourceCredentialArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceCredentialOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceCredential {
 		return vs[0].([]GetMonitoredResourceCredential)[vs[1].(int)]
@@ -5849,6 +6858,12 @@ func (i GetMonitoredResourceCredentialPropertyArgs) ToGetMonitoredResourceCreden
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceCredentialPropertyOutput)
 }
 
+func (i GetMonitoredResourceCredentialPropertyArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceCredentialProperty] {
+	return pulumix.Output[GetMonitoredResourceCredentialProperty]{
+		OutputState: i.ToGetMonitoredResourceCredentialPropertyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMonitoredResourceCredentialPropertyArrayInput is an input type that accepts GetMonitoredResourceCredentialPropertyArray and GetMonitoredResourceCredentialPropertyArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourceCredentialPropertyArrayInput` via:
 //
@@ -5874,6 +6889,12 @@ func (i GetMonitoredResourceCredentialPropertyArray) ToGetMonitoredResourceCrede
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceCredentialPropertyArrayOutput)
 }
 
+func (i GetMonitoredResourceCredentialPropertyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceCredentialProperty] {
+	return pulumix.Output[[]GetMonitoredResourceCredentialProperty]{
+		OutputState: i.ToGetMonitoredResourceCredentialPropertyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMonitoredResourceCredentialPropertyOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredResourceCredentialPropertyOutput) ElementType() reflect.Type {
@@ -5886,6 +6907,12 @@ func (o GetMonitoredResourceCredentialPropertyOutput) ToGetMonitoredResourceCred
 
 func (o GetMonitoredResourceCredentialPropertyOutput) ToGetMonitoredResourceCredentialPropertyOutputWithContext(ctx context.Context) GetMonitoredResourceCredentialPropertyOutput {
 	return o
+}
+
+func (o GetMonitoredResourceCredentialPropertyOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceCredentialProperty] {
+	return pulumix.Output[GetMonitoredResourceCredentialProperty]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Property Name.
@@ -5910,6 +6937,12 @@ func (o GetMonitoredResourceCredentialPropertyArrayOutput) ToGetMonitoredResourc
 
 func (o GetMonitoredResourceCredentialPropertyArrayOutput) ToGetMonitoredResourceCredentialPropertyArrayOutputWithContext(ctx context.Context) GetMonitoredResourceCredentialPropertyArrayOutput {
 	return o
+}
+
+func (o GetMonitoredResourceCredentialPropertyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceCredentialProperty] {
+	return pulumix.Output[[]GetMonitoredResourceCredentialProperty]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMonitoredResourceCredentialPropertyArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceCredentialPropertyOutput {
@@ -5975,6 +7008,12 @@ func (i GetMonitoredResourceDatabaseConnectionDetailArgs) ToGetMonitoredResource
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceDatabaseConnectionDetailOutput)
 }
 
+func (i GetMonitoredResourceDatabaseConnectionDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceDatabaseConnectionDetail] {
+	return pulumix.Output[GetMonitoredResourceDatabaseConnectionDetail]{
+		OutputState: i.ToGetMonitoredResourceDatabaseConnectionDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMonitoredResourceDatabaseConnectionDetailArrayInput is an input type that accepts GetMonitoredResourceDatabaseConnectionDetailArray and GetMonitoredResourceDatabaseConnectionDetailArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourceDatabaseConnectionDetailArrayInput` via:
 //
@@ -6000,6 +7039,12 @@ func (i GetMonitoredResourceDatabaseConnectionDetailArray) ToGetMonitoredResourc
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceDatabaseConnectionDetailArrayOutput)
 }
 
+func (i GetMonitoredResourceDatabaseConnectionDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceDatabaseConnectionDetail] {
+	return pulumix.Output[[]GetMonitoredResourceDatabaseConnectionDetail]{
+		OutputState: i.ToGetMonitoredResourceDatabaseConnectionDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMonitoredResourceDatabaseConnectionDetailOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredResourceDatabaseConnectionDetailOutput) ElementType() reflect.Type {
@@ -6012,6 +7057,12 @@ func (o GetMonitoredResourceDatabaseConnectionDetailOutput) ToGetMonitoredResour
 
 func (o GetMonitoredResourceDatabaseConnectionDetailOutput) ToGetMonitoredResourceDatabaseConnectionDetailOutputWithContext(ctx context.Context) GetMonitoredResourceDatabaseConnectionDetailOutput {
 	return o
+}
+
+func (o GetMonitoredResourceDatabaseConnectionDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceDatabaseConnectionDetail] {
+	return pulumix.Output[GetMonitoredResourceDatabaseConnectionDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Database connector Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -6063,6 +7114,12 @@ func (o GetMonitoredResourceDatabaseConnectionDetailArrayOutput) ToGetMonitoredR
 	return o
 }
 
+func (o GetMonitoredResourceDatabaseConnectionDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceDatabaseConnectionDetail] {
+	return pulumix.Output[[]GetMonitoredResourceDatabaseConnectionDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetMonitoredResourceDatabaseConnectionDetailArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceDatabaseConnectionDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceDatabaseConnectionDetail {
 		return vs[0].([]GetMonitoredResourceDatabaseConnectionDetail)[vs[1].(int)]
@@ -6106,6 +7163,12 @@ func (i GetMonitoredResourcePropertyArgs) ToGetMonitoredResourcePropertyOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcePropertyOutput)
 }
 
+func (i GetMonitoredResourcePropertyArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceProperty] {
+	return pulumix.Output[GetMonitoredResourceProperty]{
+		OutputState: i.ToGetMonitoredResourcePropertyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMonitoredResourcePropertyArrayInput is an input type that accepts GetMonitoredResourcePropertyArray and GetMonitoredResourcePropertyArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourcePropertyArrayInput` via:
 //
@@ -6131,6 +7194,12 @@ func (i GetMonitoredResourcePropertyArray) ToGetMonitoredResourcePropertyArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcePropertyArrayOutput)
 }
 
+func (i GetMonitoredResourcePropertyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceProperty] {
+	return pulumix.Output[[]GetMonitoredResourceProperty]{
+		OutputState: i.ToGetMonitoredResourcePropertyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMonitoredResourcePropertyOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredResourcePropertyOutput) ElementType() reflect.Type {
@@ -6143,6 +7212,12 @@ func (o GetMonitoredResourcePropertyOutput) ToGetMonitoredResourcePropertyOutput
 
 func (o GetMonitoredResourcePropertyOutput) ToGetMonitoredResourcePropertyOutputWithContext(ctx context.Context) GetMonitoredResourcePropertyOutput {
 	return o
+}
+
+func (o GetMonitoredResourcePropertyOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceProperty] {
+	return pulumix.Output[GetMonitoredResourceProperty]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Property Name.
@@ -6167,6 +7242,12 @@ func (o GetMonitoredResourcePropertyArrayOutput) ToGetMonitoredResourcePropertyA
 
 func (o GetMonitoredResourcePropertyArrayOutput) ToGetMonitoredResourcePropertyArrayOutputWithContext(ctx context.Context) GetMonitoredResourcePropertyArrayOutput {
 	return o
+}
+
+func (o GetMonitoredResourcePropertyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceProperty] {
+	return pulumix.Output[[]GetMonitoredResourceProperty]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMonitoredResourcePropertyArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourcePropertyOutput {

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Product License resource in Oracle Cloud Infrastructure License Manager service.
@@ -139,6 +140,12 @@ func (o LookupProductLicenseResultOutput) ToLookupProductLicenseResultOutput() L
 
 func (o LookupProductLicenseResultOutput) ToLookupProductLicenseResultOutputWithContext(ctx context.Context) LookupProductLicenseResultOutput {
 	return o
+}
+
+func (o LookupProductLicenseResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupProductLicenseResult] {
+	return pulumix.Output[LookupProductLicenseResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The number of active license records associated with the product license.

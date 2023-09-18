@@ -83,7 +83,7 @@ public class TagNamespace extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the tenancy containing the tag namespace.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -97,7 +97,7 @@ public class TagNamespace extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -111,7 +111,7 @@ public class TagNamespace extends com.pulumi.resources.CustomResource {
      * (Updatable) The description you assign to the tag namespace during creation.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -125,7 +125,7 @@ public class TagNamespace extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -142,7 +142,7 @@ public class TagNamespace extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="isRetired", type=Boolean.class, parameters={})
+    @Export(name="isRetired", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isRetired;
 
     /**
@@ -159,7 +159,7 @@ public class TagNamespace extends com.pulumi.resources.CustomResource {
      * The name you assign to the tag namespace during creation. It must be unique across all tag namespaces in the tenancy and cannot be changed.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -173,7 +173,7 @@ public class TagNamespace extends com.pulumi.resources.CustomResource {
      * The tagnamespace&#39;s current state. After creating a tagnamespace, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tagnamespace, make sure its `lifecycleState` is INACTIVE before using it.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -187,7 +187,7 @@ public class TagNamespace extends com.pulumi.resources.CustomResource {
      * Date and time the tag namespace was created, in the format defined by RFC3339. Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**

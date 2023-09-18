@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type ListingResourceVersionAgreement struct {
@@ -114,6 +115,12 @@ func (i *ListingResourceVersionAgreement) ToListingResourceVersionAgreementOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(ListingResourceVersionAgreementOutput)
 }
 
+func (i *ListingResourceVersionAgreement) ToOutput(ctx context.Context) pulumix.Output[*ListingResourceVersionAgreement] {
+	return pulumix.Output[*ListingResourceVersionAgreement]{
+		OutputState: i.ToListingResourceVersionAgreementOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ListingResourceVersionAgreementArrayInput is an input type that accepts ListingResourceVersionAgreementArray and ListingResourceVersionAgreementArrayOutput values.
 // You can construct a concrete instance of `ListingResourceVersionAgreementArrayInput` via:
 //
@@ -137,6 +144,12 @@ func (i ListingResourceVersionAgreementArray) ToListingResourceVersionAgreementA
 
 func (i ListingResourceVersionAgreementArray) ToListingResourceVersionAgreementArrayOutputWithContext(ctx context.Context) ListingResourceVersionAgreementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ListingResourceVersionAgreementArrayOutput)
+}
+
+func (i ListingResourceVersionAgreementArray) ToOutput(ctx context.Context) pulumix.Output[[]*ListingResourceVersionAgreement] {
+	return pulumix.Output[[]*ListingResourceVersionAgreement]{
+		OutputState: i.ToListingResourceVersionAgreementArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // ListingResourceVersionAgreementMapInput is an input type that accepts ListingResourceVersionAgreementMap and ListingResourceVersionAgreementMapOutput values.
@@ -164,6 +177,12 @@ func (i ListingResourceVersionAgreementMap) ToListingResourceVersionAgreementMap
 	return pulumi.ToOutputWithContext(ctx, i).(ListingResourceVersionAgreementMapOutput)
 }
 
+func (i ListingResourceVersionAgreementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ListingResourceVersionAgreement] {
+	return pulumix.Output[map[string]*ListingResourceVersionAgreement]{
+		OutputState: i.ToListingResourceVersionAgreementMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ListingResourceVersionAgreementOutput struct{ *pulumi.OutputState }
 
 func (ListingResourceVersionAgreementOutput) ElementType() reflect.Type {
@@ -176,6 +195,12 @@ func (o ListingResourceVersionAgreementOutput) ToListingResourceVersionAgreement
 
 func (o ListingResourceVersionAgreementOutput) ToListingResourceVersionAgreementOutputWithContext(ctx context.Context) ListingResourceVersionAgreementOutput {
 	return o
+}
+
+func (o ListingResourceVersionAgreementOutput) ToOutput(ctx context.Context) pulumix.Output[*ListingResourceVersionAgreement] {
+	return pulumix.Output[*ListingResourceVersionAgreement]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ListingResourceVersionAgreementOutput) EulaLink() pulumi.StringOutput {
@@ -216,6 +241,12 @@ func (o ListingResourceVersionAgreementArrayOutput) ToListingResourceVersionAgre
 	return o
 }
 
+func (o ListingResourceVersionAgreementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ListingResourceVersionAgreement] {
+	return pulumix.Output[[]*ListingResourceVersionAgreement]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o ListingResourceVersionAgreementArrayOutput) Index(i pulumi.IntInput) ListingResourceVersionAgreementOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ListingResourceVersionAgreement {
 		return vs[0].([]*ListingResourceVersionAgreement)[vs[1].(int)]
@@ -234,6 +265,12 @@ func (o ListingResourceVersionAgreementMapOutput) ToListingResourceVersionAgreem
 
 func (o ListingResourceVersionAgreementMapOutput) ToListingResourceVersionAgreementMapOutputWithContext(ctx context.Context) ListingResourceVersionAgreementMapOutput {
 	return o
+}
+
+func (o ListingResourceVersionAgreementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ListingResourceVersionAgreement] {
+	return pulumix.Output[map[string]*ListingResourceVersionAgreement]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ListingResourceVersionAgreementMapOutput) MapIndex(k pulumi.StringInput) ListingResourceVersionAgreementOutput {

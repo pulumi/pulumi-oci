@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Job Output resource in Oracle Cloud Infrastructure Database Migration service.
@@ -101,6 +102,12 @@ func (o GetJobOutputResultOutput) ToGetJobOutputResultOutput() GetJobOutputResul
 
 func (o GetJobOutputResultOutput) ToGetJobOutputResultOutputWithContext(ctx context.Context) GetJobOutputResultOutput {
 	return o
+}
+
+func (o GetJobOutputResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetJobOutputResult] {
+	return pulumix.Output[GetJobOutputResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The provider-assigned unique ID for this managed resource.

@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Accepted Agreement resource in Oracle Cloud Infrastructure Marketplace service.
@@ -253,6 +254,12 @@ func (i *AcceptedAgreement) ToAcceptedAgreementOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(AcceptedAgreementOutput)
 }
 
+func (i *AcceptedAgreement) ToOutput(ctx context.Context) pulumix.Output[*AcceptedAgreement] {
+	return pulumix.Output[*AcceptedAgreement]{
+		OutputState: i.ToAcceptedAgreementOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AcceptedAgreementArrayInput is an input type that accepts AcceptedAgreementArray and AcceptedAgreementArrayOutput values.
 // You can construct a concrete instance of `AcceptedAgreementArrayInput` via:
 //
@@ -276,6 +283,12 @@ func (i AcceptedAgreementArray) ToAcceptedAgreementArrayOutput() AcceptedAgreeme
 
 func (i AcceptedAgreementArray) ToAcceptedAgreementArrayOutputWithContext(ctx context.Context) AcceptedAgreementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AcceptedAgreementArrayOutput)
+}
+
+func (i AcceptedAgreementArray) ToOutput(ctx context.Context) pulumix.Output[[]*AcceptedAgreement] {
+	return pulumix.Output[[]*AcceptedAgreement]{
+		OutputState: i.ToAcceptedAgreementArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // AcceptedAgreementMapInput is an input type that accepts AcceptedAgreementMap and AcceptedAgreementMapOutput values.
@@ -303,6 +316,12 @@ func (i AcceptedAgreementMap) ToAcceptedAgreementMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(AcceptedAgreementMapOutput)
 }
 
+func (i AcceptedAgreementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AcceptedAgreement] {
+	return pulumix.Output[map[string]*AcceptedAgreement]{
+		OutputState: i.ToAcceptedAgreementMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AcceptedAgreementOutput struct{ *pulumi.OutputState }
 
 func (AcceptedAgreementOutput) ElementType() reflect.Type {
@@ -315,6 +334,12 @@ func (o AcceptedAgreementOutput) ToAcceptedAgreementOutput() AcceptedAgreementOu
 
 func (o AcceptedAgreementOutput) ToAcceptedAgreementOutputWithContext(ctx context.Context) AcceptedAgreementOutput {
 	return o
+}
+
+func (o AcceptedAgreementOutput) ToOutput(ctx context.Context) pulumix.Output[*AcceptedAgreement] {
+	return pulumix.Output[*AcceptedAgreement]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The agreement to accept.
@@ -379,6 +404,12 @@ func (o AcceptedAgreementArrayOutput) ToAcceptedAgreementArrayOutputWithContext(
 	return o
 }
 
+func (o AcceptedAgreementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AcceptedAgreement] {
+	return pulumix.Output[[]*AcceptedAgreement]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AcceptedAgreementArrayOutput) Index(i pulumi.IntInput) AcceptedAgreementOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AcceptedAgreement {
 		return vs[0].([]*AcceptedAgreement)[vs[1].(int)]
@@ -397,6 +428,12 @@ func (o AcceptedAgreementMapOutput) ToAcceptedAgreementMapOutput() AcceptedAgree
 
 func (o AcceptedAgreementMapOutput) ToAcceptedAgreementMapOutputWithContext(ctx context.Context) AcceptedAgreementMapOutput {
 	return o
+}
+
+func (o AcceptedAgreementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AcceptedAgreement] {
+	return pulumix.Output[map[string]*AcceptedAgreement]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AcceptedAgreementMapOutput) MapIndex(k pulumi.StringInput) AcceptedAgreementOutput {

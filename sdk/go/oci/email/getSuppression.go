@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Suppression resource in Oracle Cloud Infrastructure Email service.
@@ -116,6 +117,12 @@ func (o LookupSuppressionResultOutput) ToLookupSuppressionResultOutput() LookupS
 
 func (o LookupSuppressionResultOutput) ToLookupSuppressionResultOutputWithContext(ctx context.Context) LookupSuppressionResultOutput {
 	return o
+}
+
+func (o LookupSuppressionResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupSuppressionResult] {
+	return pulumix.Output[LookupSuppressionResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the compartment to contain the suppression. Since suppressions are at the customer level, this must be the tenancy OCID.

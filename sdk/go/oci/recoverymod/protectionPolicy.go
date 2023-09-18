@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Protection Policy resource in Oracle Cloud Infrastructure Recovery service.
@@ -261,6 +262,12 @@ func (i *ProtectionPolicy) ToProtectionPolicyOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(ProtectionPolicyOutput)
 }
 
+func (i *ProtectionPolicy) ToOutput(ctx context.Context) pulumix.Output[*ProtectionPolicy] {
+	return pulumix.Output[*ProtectionPolicy]{
+		OutputState: i.ToProtectionPolicyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ProtectionPolicyArrayInput is an input type that accepts ProtectionPolicyArray and ProtectionPolicyArrayOutput values.
 // You can construct a concrete instance of `ProtectionPolicyArrayInput` via:
 //
@@ -284,6 +291,12 @@ func (i ProtectionPolicyArray) ToProtectionPolicyArrayOutput() ProtectionPolicyA
 
 func (i ProtectionPolicyArray) ToProtectionPolicyArrayOutputWithContext(ctx context.Context) ProtectionPolicyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ProtectionPolicyArrayOutput)
+}
+
+func (i ProtectionPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]*ProtectionPolicy] {
+	return pulumix.Output[[]*ProtectionPolicy]{
+		OutputState: i.ToProtectionPolicyArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // ProtectionPolicyMapInput is an input type that accepts ProtectionPolicyMap and ProtectionPolicyMapOutput values.
@@ -311,6 +324,12 @@ func (i ProtectionPolicyMap) ToProtectionPolicyMapOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(ProtectionPolicyMapOutput)
 }
 
+func (i ProtectionPolicyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ProtectionPolicy] {
+	return pulumix.Output[map[string]*ProtectionPolicy]{
+		OutputState: i.ToProtectionPolicyMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ProtectionPolicyOutput struct{ *pulumi.OutputState }
 
 func (ProtectionPolicyOutput) ElementType() reflect.Type {
@@ -323,6 +342,12 @@ func (o ProtectionPolicyOutput) ToProtectionPolicyOutput() ProtectionPolicyOutpu
 
 func (o ProtectionPolicyOutput) ToProtectionPolicyOutputWithContext(ctx context.Context) ProtectionPolicyOutput {
 	return o
+}
+
+func (o ProtectionPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[*ProtectionPolicy] {
+	return pulumix.Output[*ProtectionPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The maximum number of days to retain backups for a protected database.
@@ -403,6 +428,12 @@ func (o ProtectionPolicyArrayOutput) ToProtectionPolicyArrayOutputWithContext(ct
 	return o
 }
 
+func (o ProtectionPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ProtectionPolicy] {
+	return pulumix.Output[[]*ProtectionPolicy]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o ProtectionPolicyArrayOutput) Index(i pulumi.IntInput) ProtectionPolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ProtectionPolicy {
 		return vs[0].([]*ProtectionPolicy)[vs[1].(int)]
@@ -421,6 +452,12 @@ func (o ProtectionPolicyMapOutput) ToProtectionPolicyMapOutput() ProtectionPolic
 
 func (o ProtectionPolicyMapOutput) ToProtectionPolicyMapOutputWithContext(ctx context.Context) ProtectionPolicyMapOutput {
 	return o
+}
+
+func (o ProtectionPolicyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ProtectionPolicy] {
+	return pulumix.Output[map[string]*ProtectionPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ProtectionPolicyMapOutput) MapIndex(k pulumi.StringInput) ProtectionPolicyOutput {

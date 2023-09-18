@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Management Dashboards Import resource in Oracle Cloud Infrastructure Management Dashboard service.
@@ -145,6 +146,12 @@ func (i *ManagementDashboardsImport) ToManagementDashboardsImportOutputWithConte
 	return pulumi.ToOutputWithContext(ctx, i).(ManagementDashboardsImportOutput)
 }
 
+func (i *ManagementDashboardsImport) ToOutput(ctx context.Context) pulumix.Output[*ManagementDashboardsImport] {
+	return pulumix.Output[*ManagementDashboardsImport]{
+		OutputState: i.ToManagementDashboardsImportOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ManagementDashboardsImportArrayInput is an input type that accepts ManagementDashboardsImportArray and ManagementDashboardsImportArrayOutput values.
 // You can construct a concrete instance of `ManagementDashboardsImportArrayInput` via:
 //
@@ -168,6 +175,12 @@ func (i ManagementDashboardsImportArray) ToManagementDashboardsImportArrayOutput
 
 func (i ManagementDashboardsImportArray) ToManagementDashboardsImportArrayOutputWithContext(ctx context.Context) ManagementDashboardsImportArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ManagementDashboardsImportArrayOutput)
+}
+
+func (i ManagementDashboardsImportArray) ToOutput(ctx context.Context) pulumix.Output[[]*ManagementDashboardsImport] {
+	return pulumix.Output[[]*ManagementDashboardsImport]{
+		OutputState: i.ToManagementDashboardsImportArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // ManagementDashboardsImportMapInput is an input type that accepts ManagementDashboardsImportMap and ManagementDashboardsImportMapOutput values.
@@ -195,6 +208,12 @@ func (i ManagementDashboardsImportMap) ToManagementDashboardsImportMapOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(ManagementDashboardsImportMapOutput)
 }
 
+func (i ManagementDashboardsImportMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ManagementDashboardsImport] {
+	return pulumix.Output[map[string]*ManagementDashboardsImport]{
+		OutputState: i.ToManagementDashboardsImportMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ManagementDashboardsImportOutput struct{ *pulumi.OutputState }
 
 func (ManagementDashboardsImportOutput) ElementType() reflect.Type {
@@ -207,6 +226,12 @@ func (o ManagementDashboardsImportOutput) ToManagementDashboardsImportOutput() M
 
 func (o ManagementDashboardsImportOutput) ToManagementDashboardsImportOutputWithContext(ctx context.Context) ManagementDashboardsImportOutput {
 	return o
+}
+
+func (o ManagementDashboardsImportOutput) ToOutput(ctx context.Context) pulumix.Output[*ManagementDashboardsImport] {
+	return pulumix.Output[*ManagementDashboardsImport]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Array of Dashboards to import. The `importDetails` is mandatory if `importDetailsPath` is not passed. Value should be stringified JSON of [ManagementDashboardImportDetails](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/managementdashboard/20200901/ManagementDashboardImportDetails/)
@@ -232,6 +257,12 @@ func (o ManagementDashboardsImportArrayOutput) ToManagementDashboardsImportArray
 	return o
 }
 
+func (o ManagementDashboardsImportArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ManagementDashboardsImport] {
+	return pulumix.Output[[]*ManagementDashboardsImport]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o ManagementDashboardsImportArrayOutput) Index(i pulumi.IntInput) ManagementDashboardsImportOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ManagementDashboardsImport {
 		return vs[0].([]*ManagementDashboardsImport)[vs[1].(int)]
@@ -250,6 +281,12 @@ func (o ManagementDashboardsImportMapOutput) ToManagementDashboardsImportMapOutp
 
 func (o ManagementDashboardsImportMapOutput) ToManagementDashboardsImportMapOutputWithContext(ctx context.Context) ManagementDashboardsImportMapOutput {
 	return o
+}
+
+func (o ManagementDashboardsImportMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ManagementDashboardsImport] {
+	return pulumix.Output[map[string]*ManagementDashboardsImport]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ManagementDashboardsImportMapOutput) MapIndex(k pulumi.StringInput) ManagementDashboardsImportOutput {

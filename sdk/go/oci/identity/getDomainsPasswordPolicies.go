@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Password Policies in Oracle Cloud Infrastructure Identity Domains service.
@@ -156,6 +157,12 @@ func (o GetDomainsPasswordPoliciesResultOutput) ToGetDomainsPasswordPoliciesResu
 
 func (o GetDomainsPasswordPoliciesResultOutput) ToGetDomainsPasswordPoliciesResultOutputWithContext(ctx context.Context) GetDomainsPasswordPoliciesResultOutput {
 	return o
+}
+
+func (o GetDomainsPasswordPoliciesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsPasswordPoliciesResult] {
+	return pulumix.Output[GetDomainsPasswordPoliciesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsPasswordPoliciesResultOutput) AttributeSets() pulumi.StringArrayOutput {

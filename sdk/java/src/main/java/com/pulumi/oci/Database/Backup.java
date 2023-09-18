@@ -65,7 +65,7 @@ public class Backup extends com.pulumi.resources.CustomResource {
      * The name of the availability domain where the database backup is stored.
      * 
      */
-    @Export(name="availabilityDomain", type=String.class, parameters={})
+    @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
     private Output<String> availabilityDomain;
 
     /**
@@ -79,7 +79,7 @@ public class Backup extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -93,7 +93,7 @@ public class Backup extends com.pulumi.resources.CustomResource {
      * The Oracle Database edition of the DB system from which the database backup was taken.
      * 
      */
-    @Export(name="databaseEdition", type=String.class, parameters={})
+    @Export(name="databaseEdition", refs={String.class}, tree="[0]")
     private Output<String> databaseEdition;
 
     /**
@@ -107,7 +107,7 @@ public class Backup extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      * 
      */
-    @Export(name="databaseId", type=String.class, parameters={})
+    @Export(name="databaseId", refs={String.class}, tree="[0]")
     private Output<String> databaseId;
 
     /**
@@ -121,7 +121,7 @@ public class Backup extends com.pulumi.resources.CustomResource {
      * The size of the database in gigabytes at the time the backup was taken.
      * 
      */
-    @Export(name="databaseSizeInGbs", type=Double.class, parameters={})
+    @Export(name="databaseSizeInGbs", refs={Double.class}, tree="[0]")
     private Output<Double> databaseSizeInGbs;
 
     /**
@@ -138,7 +138,7 @@ public class Backup extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -155,7 +155,7 @@ public class Backup extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
      * 
      */
-    @Export(name="keyStoreId", type=String.class, parameters={})
+    @Export(name="keyStoreId", refs={String.class}, tree="[0]")
     private Output<String> keyStoreId;
 
     /**
@@ -169,7 +169,7 @@ public class Backup extends com.pulumi.resources.CustomResource {
      * The wallet name for Oracle Key Vault.
      * 
      */
-    @Export(name="keyStoreWalletName", type=String.class, parameters={})
+    @Export(name="keyStoreWalletName", refs={String.class}, tree="[0]")
     private Output<String> keyStoreWalletName;
 
     /**
@@ -183,7 +183,7 @@ public class Backup extends com.pulumi.resources.CustomResource {
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
-    @Export(name="kmsKeyId", type=String.class, parameters={})
+    @Export(name="kmsKeyId", refs={String.class}, tree="[0]")
     private Output<String> kmsKeyId;
 
     /**
@@ -197,7 +197,7 @@ public class Backup extends com.pulumi.resources.CustomResource {
      * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
      * 
      */
-    @Export(name="kmsKeyVersionId", type=String.class, parameters={})
+    @Export(name="kmsKeyVersionId", refs={String.class}, tree="[0]")
     private Output<String> kmsKeyVersionId;
 
     /**
@@ -211,7 +211,7 @@ public class Backup extends com.pulumi.resources.CustomResource {
      * Additional information about the current lifecycle state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -225,7 +225,7 @@ public class Backup extends com.pulumi.resources.CustomResource {
      * Shape of the backup&#39;s source database.
      * 
      */
-    @Export(name="shape", type=String.class, parameters={})
+    @Export(name="shape", refs={String.class}, tree="[0]")
     private Output<String> shape;
 
     /**
@@ -239,7 +239,7 @@ public class Backup extends com.pulumi.resources.CustomResource {
      * The current state of the backup.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -253,7 +253,7 @@ public class Backup extends com.pulumi.resources.CustomResource {
      * The date and time the backup was completed.
      * 
      */
-    @Export(name="timeEnded", type=String.class, parameters={})
+    @Export(name="timeEnded", refs={String.class}, tree="[0]")
     private Output<String> timeEnded;
 
     /**
@@ -267,7 +267,7 @@ public class Backup extends com.pulumi.resources.CustomResource {
      * The date and time the backup started.
      * 
      */
-    @Export(name="timeStarted", type=String.class, parameters={})
+    @Export(name="timeStarted", refs={String.class}, tree="[0]")
     private Output<String> timeStarted;
 
     /**
@@ -281,7 +281,7 @@ public class Backup extends com.pulumi.resources.CustomResource {
      * The type of backup.
      * 
      */
-    @Export(name="type", type=String.class, parameters={})
+    @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**
@@ -295,7 +295,7 @@ public class Backup extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
-    @Export(name="vaultId", type=String.class, parameters={})
+    @Export(name="vaultId", refs={String.class}, tree="[0]")
     private Output<String> vaultId;
 
     /**
@@ -309,7 +309,7 @@ public class Backup extends com.pulumi.resources.CustomResource {
      * Version of the backup&#39;s source database
      * 
      */
-    @Export(name="version", type=String.class, parameters={})
+    @Export(name="version", refs={String.class}, tree="[0]")
     private Output<String> version;
 
     /**

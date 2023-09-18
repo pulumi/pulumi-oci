@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Replication Targets in Oracle Cloud Infrastructure File Storage service.
@@ -131,6 +132,12 @@ func (o GetReplicationTargetsResultOutput) ToGetReplicationTargetsResultOutput()
 
 func (o GetReplicationTargetsResultOutput) ToGetReplicationTargetsResultOutputWithContext(ctx context.Context) GetReplicationTargetsResultOutput {
 	return o
+}
+
+func (o GetReplicationTargetsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetReplicationTargetsResult] {
+	return pulumix.Output[GetReplicationTargetsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The availability domain the replication target is in. Must be in the same availability domain as the target file system. Example: `Uocm:PHX-AD-1`

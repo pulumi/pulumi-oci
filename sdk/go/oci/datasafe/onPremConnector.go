@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the On Prem Connector resource in Oracle Cloud Infrastructure Data Safe service.
@@ -237,6 +238,12 @@ func (i *OnPremConnector) ToOnPremConnectorOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(OnPremConnectorOutput)
 }
 
+func (i *OnPremConnector) ToOutput(ctx context.Context) pulumix.Output[*OnPremConnector] {
+	return pulumix.Output[*OnPremConnector]{
+		OutputState: i.ToOnPremConnectorOutputWithContext(ctx).OutputState,
+	}
+}
+
 // OnPremConnectorArrayInput is an input type that accepts OnPremConnectorArray and OnPremConnectorArrayOutput values.
 // You can construct a concrete instance of `OnPremConnectorArrayInput` via:
 //
@@ -260,6 +267,12 @@ func (i OnPremConnectorArray) ToOnPremConnectorArrayOutput() OnPremConnectorArra
 
 func (i OnPremConnectorArray) ToOnPremConnectorArrayOutputWithContext(ctx context.Context) OnPremConnectorArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(OnPremConnectorArrayOutput)
+}
+
+func (i OnPremConnectorArray) ToOutput(ctx context.Context) pulumix.Output[[]*OnPremConnector] {
+	return pulumix.Output[[]*OnPremConnector]{
+		OutputState: i.ToOnPremConnectorArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // OnPremConnectorMapInput is an input type that accepts OnPremConnectorMap and OnPremConnectorMapOutput values.
@@ -287,6 +300,12 @@ func (i OnPremConnectorMap) ToOnPremConnectorMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(OnPremConnectorMapOutput)
 }
 
+func (i OnPremConnectorMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*OnPremConnector] {
+	return pulumix.Output[map[string]*OnPremConnector]{
+		OutputState: i.ToOnPremConnectorMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type OnPremConnectorOutput struct{ *pulumi.OutputState }
 
 func (OnPremConnectorOutput) ElementType() reflect.Type {
@@ -299,6 +318,12 @@ func (o OnPremConnectorOutput) ToOnPremConnectorOutput() OnPremConnectorOutput {
 
 func (o OnPremConnectorOutput) ToOnPremConnectorOutputWithContext(ctx context.Context) OnPremConnectorOutput {
 	return o
+}
+
+func (o OnPremConnectorOutput) ToOutput(ctx context.Context) pulumix.Output[*OnPremConnector] {
+	return pulumix.Output[*OnPremConnector]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Latest available version of the on-premises connector.
@@ -373,6 +398,12 @@ func (o OnPremConnectorArrayOutput) ToOnPremConnectorArrayOutputWithContext(ctx 
 	return o
 }
 
+func (o OnPremConnectorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*OnPremConnector] {
+	return pulumix.Output[[]*OnPremConnector]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o OnPremConnectorArrayOutput) Index(i pulumi.IntInput) OnPremConnectorOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *OnPremConnector {
 		return vs[0].([]*OnPremConnector)[vs[1].(int)]
@@ -391,6 +422,12 @@ func (o OnPremConnectorMapOutput) ToOnPremConnectorMapOutput() OnPremConnectorMa
 
 func (o OnPremConnectorMapOutput) ToOnPremConnectorMapOutputWithContext(ctx context.Context) OnPremConnectorMapOutput {
 	return o
+}
+
+func (o OnPremConnectorMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*OnPremConnector] {
+	return pulumix.Output[map[string]*OnPremConnector]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o OnPremConnectorMapOutput) MapIndex(k pulumi.StringInput) OnPremConnectorOutput {

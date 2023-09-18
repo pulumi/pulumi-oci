@@ -73,7 +73,7 @@ public class ContainerImageSignature extends com.pulumi.resources.CustomResource
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the container repository exists.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -87,7 +87,7 @@ public class ContainerImageSignature extends com.pulumi.resources.CustomResource
      * The id of the user or principal that created the resource.
      * 
      */
-    @Export(name="createdBy", type=String.class, parameters={})
+    @Export(name="createdBy", refs={String.class}, tree="[0]")
     private Output<String> createdBy;
 
     /**
@@ -101,7 +101,7 @@ public class ContainerImageSignature extends com.pulumi.resources.CustomResource
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -115,7 +115,7 @@ public class ContainerImageSignature extends com.pulumi.resources.CustomResource
      * The last 10 characters of the kmsKeyId, the last 10 characters of the kmsKeyVersionId, the signingAlgorithm, and the last 10 characters of the signatureId.  Example: `wrmz22sixa::qdwyc2ptun::SHA_256_RSA_PKCS_PSS::2vwmobasva`
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -129,7 +129,7 @@ public class ContainerImageSignature extends com.pulumi.resources.CustomResource
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -143,7 +143,7 @@ public class ContainerImageSignature extends com.pulumi.resources.CustomResource
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image.  Example: `ocid1.containerimage.oc1..exampleuniqueID`
      * 
      */
-    @Export(name="imageId", type=String.class, parameters={})
+    @Export(name="imageId", refs={String.class}, tree="[0]")
     private Output<String> imageId;
 
     /**
@@ -157,7 +157,7 @@ public class ContainerImageSignature extends com.pulumi.resources.CustomResource
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the kmsKeyId used to sign the container image.  Example: `ocid1.key.oc1..exampleuniqueID`
      * 
      */
-    @Export(name="kmsKeyId", type=String.class, parameters={})
+    @Export(name="kmsKeyId", refs={String.class}, tree="[0]")
     private Output<String> kmsKeyId;
 
     /**
@@ -171,7 +171,7 @@ public class ContainerImageSignature extends com.pulumi.resources.CustomResource
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the kmsKeyVersionId used to sign the container image.  Example: `ocid1.keyversion.oc1..exampleuniqueID`
      * 
      */
-    @Export(name="kmsKeyVersionId", type=String.class, parameters={})
+    @Export(name="kmsKeyVersionId", refs={String.class}, tree="[0]")
     private Output<String> kmsKeyVersionId;
 
     /**
@@ -185,7 +185,7 @@ public class ContainerImageSignature extends com.pulumi.resources.CustomResource
      * The base64 encoded signature payload that was signed.
      * 
      */
-    @Export(name="message", type=String.class, parameters={})
+    @Export(name="message", refs={String.class}, tree="[0]")
     private Output<String> message;
 
     /**
@@ -199,7 +199,7 @@ public class ContainerImageSignature extends com.pulumi.resources.CustomResource
      * The signature of the message field using the kmsKeyId, the kmsKeyVersionId, and the signingAlgorithm.
      * 
      */
-    @Export(name="signature", type=String.class, parameters={})
+    @Export(name="signature", refs={String.class}, tree="[0]")
     private Output<String> signature;
 
     /**
@@ -216,7 +216,7 @@ public class ContainerImageSignature extends com.pulumi.resources.CustomResource
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="signingAlgorithm", type=String.class, parameters={})
+    @Export(name="signingAlgorithm", refs={String.class}, tree="[0]")
     private Output<String> signingAlgorithm;
 
     /**
@@ -233,7 +233,7 @@ public class ContainerImageSignature extends com.pulumi.resources.CustomResource
      * The current state of the container image signature.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -247,7 +247,7 @@ public class ContainerImageSignature extends com.pulumi.resources.CustomResource
      * The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -261,7 +261,7 @@ public class ContainerImageSignature extends com.pulumi.resources.CustomResource
      * An RFC 3339 timestamp indicating when the image was created.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**

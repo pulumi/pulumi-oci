@@ -73,7 +73,7 @@ public class DrgRouteTable extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DRG is in. The DRG route table is always in the same compartment as the DRG.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -87,7 +87,7 @@ public class DrgRouteTable extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -101,7 +101,7 @@ public class DrgRouteTable extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -115,7 +115,7 @@ public class DrgRouteTable extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG the DRG route table belongs to.
      * 
      */
-    @Export(name="drgId", type=String.class, parameters={})
+    @Export(name="drgId", refs={String.class}, tree="[0]")
     private Output<String> drgId;
 
     /**
@@ -129,7 +129,7 @@ public class DrgRouteTable extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -143,7 +143,7 @@ public class DrgRouteTable extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the import route distribution used to specify how incoming route advertisements through referenced attachments are inserted into the DRG route table.
      * 
      */
-    @Export(name="importDrgRouteDistributionId", type=String.class, parameters={})
+    @Export(name="importDrgRouteDistributionId", refs={String.class}, tree="[0]")
     private Output<String> importDrgRouteDistributionId;
 
     /**
@@ -157,7 +157,7 @@ public class DrgRouteTable extends com.pulumi.resources.CustomResource {
      * (Updatable) If you want traffic to be routed using ECMP across your virtual circuits or IPSec tunnels to your on-premises networks, enable ECMP on the DRG route table.
      * 
      */
-    @Export(name="isEcmpEnabled", type=Boolean.class, parameters={})
+    @Export(name="isEcmpEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isEcmpEnabled;
 
     /**
@@ -174,7 +174,7 @@ public class DrgRouteTable extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="removeImportTrigger", type=Boolean.class, parameters={})
+    @Export(name="removeImportTrigger", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> removeImportTrigger;
 
     /**
@@ -191,7 +191,7 @@ public class DrgRouteTable extends com.pulumi.resources.CustomResource {
      * The DRG route table&#39;s current state.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -205,7 +205,7 @@ public class DrgRouteTable extends com.pulumi.resources.CustomResource {
      * The date and time the DRG route table was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**

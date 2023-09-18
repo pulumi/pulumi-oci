@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Http Monitor resource in Oracle Cloud Infrastructure Health Checks service.
@@ -133,6 +134,12 @@ func (o LookupHttpMonitorResultOutput) ToLookupHttpMonitorResultOutput() LookupH
 
 func (o LookupHttpMonitorResultOutput) ToLookupHttpMonitorResultOutputWithContext(ctx context.Context) LookupHttpMonitorResultOutput {
 	return o
+}
+
+func (o LookupHttpMonitorResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupHttpMonitorResult] {
+	return pulumix.Output[LookupHttpMonitorResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the compartment.

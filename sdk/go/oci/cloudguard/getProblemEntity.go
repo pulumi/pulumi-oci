@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Problem Entity resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -102,6 +103,12 @@ func (o GetProblemEntityResultOutput) ToGetProblemEntityResultOutput() GetProble
 
 func (o GetProblemEntityResultOutput) ToGetProblemEntityResultOutputWithContext(ctx context.Context) GetProblemEntityResultOutput {
 	return o
+}
+
+func (o GetProblemEntityResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetProblemEntityResult] {
+	return pulumix.Output[GetProblemEntityResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The provider-assigned unique ID for this managed resource.

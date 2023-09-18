@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Instance Pool Load Balancer Attachment resource in Oracle Cloud Infrastructure Core service.
@@ -116,6 +117,12 @@ func (o GetInstancePoolLoadBalancerAttachmentResultOutput) ToGetInstancePoolLoad
 
 func (o GetInstancePoolLoadBalancerAttachmentResultOutput) ToGetInstancePoolLoadBalancerAttachmentResultOutputWithContext(ctx context.Context) GetInstancePoolLoadBalancerAttachmentResultOutput {
 	return o
+}
+
+func (o GetInstancePoolLoadBalancerAttachmentResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstancePoolLoadBalancerAttachmentResult] {
+	return pulumix.Output[GetInstancePoolLoadBalancerAttachmentResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the backend set on the load balancer.

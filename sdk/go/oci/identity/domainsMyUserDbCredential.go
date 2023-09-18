@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the My User Db Credential resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -1084,6 +1085,12 @@ func (i *DomainsMyUserDbCredential) ToDomainsMyUserDbCredentialOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsMyUserDbCredentialOutput)
 }
 
+func (i *DomainsMyUserDbCredential) ToOutput(ctx context.Context) pulumix.Output[*DomainsMyUserDbCredential] {
+	return pulumix.Output[*DomainsMyUserDbCredential]{
+		OutputState: i.ToDomainsMyUserDbCredentialOutputWithContext(ctx).OutputState,
+	}
+}
+
 // DomainsMyUserDbCredentialArrayInput is an input type that accepts DomainsMyUserDbCredentialArray and DomainsMyUserDbCredentialArrayOutput values.
 // You can construct a concrete instance of `DomainsMyUserDbCredentialArrayInput` via:
 //
@@ -1107,6 +1114,12 @@ func (i DomainsMyUserDbCredentialArray) ToDomainsMyUserDbCredentialArrayOutput()
 
 func (i DomainsMyUserDbCredentialArray) ToDomainsMyUserDbCredentialArrayOutputWithContext(ctx context.Context) DomainsMyUserDbCredentialArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsMyUserDbCredentialArrayOutput)
+}
+
+func (i DomainsMyUserDbCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsMyUserDbCredential] {
+	return pulumix.Output[[]*DomainsMyUserDbCredential]{
+		OutputState: i.ToDomainsMyUserDbCredentialArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // DomainsMyUserDbCredentialMapInput is an input type that accepts DomainsMyUserDbCredentialMap and DomainsMyUserDbCredentialMapOutput values.
@@ -1134,6 +1147,12 @@ func (i DomainsMyUserDbCredentialMap) ToDomainsMyUserDbCredentialMapOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsMyUserDbCredentialMapOutput)
 }
 
+func (i DomainsMyUserDbCredentialMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsMyUserDbCredential] {
+	return pulumix.Output[map[string]*DomainsMyUserDbCredential]{
+		OutputState: i.ToDomainsMyUserDbCredentialMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type DomainsMyUserDbCredentialOutput struct{ *pulumi.OutputState }
 
 func (DomainsMyUserDbCredentialOutput) ElementType() reflect.Type {
@@ -1146,6 +1165,12 @@ func (o DomainsMyUserDbCredentialOutput) ToDomainsMyUserDbCredentialOutput() Dom
 
 func (o DomainsMyUserDbCredentialOutput) ToDomainsMyUserDbCredentialOutputWithContext(ctx context.Context) DomainsMyUserDbCredentialOutput {
 	return o
+}
+
+func (o DomainsMyUserDbCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[*DomainsMyUserDbCredential] {
+	return pulumix.Output[*DomainsMyUserDbCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
@@ -1499,6 +1524,12 @@ func (o DomainsMyUserDbCredentialArrayOutput) ToDomainsMyUserDbCredentialArrayOu
 	return o
 }
 
+func (o DomainsMyUserDbCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsMyUserDbCredential] {
+	return pulumix.Output[[]*DomainsMyUserDbCredential]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o DomainsMyUserDbCredentialArrayOutput) Index(i pulumi.IntInput) DomainsMyUserDbCredentialOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DomainsMyUserDbCredential {
 		return vs[0].([]*DomainsMyUserDbCredential)[vs[1].(int)]
@@ -1517,6 +1548,12 @@ func (o DomainsMyUserDbCredentialMapOutput) ToDomainsMyUserDbCredentialMapOutput
 
 func (o DomainsMyUserDbCredentialMapOutput) ToDomainsMyUserDbCredentialMapOutputWithContext(ctx context.Context) DomainsMyUserDbCredentialMapOutput {
 	return o
+}
+
+func (o DomainsMyUserDbCredentialMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsMyUserDbCredential] {
+	return pulumix.Output[map[string]*DomainsMyUserDbCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o DomainsMyUserDbCredentialMapOutput) MapIndex(k pulumi.StringInput) DomainsMyUserDbCredentialOutput {

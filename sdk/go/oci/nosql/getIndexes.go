@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Indexes in Oracle Cloud Infrastructure NoSQL Database service.
@@ -125,6 +126,12 @@ func (o GetIndexesResultOutput) ToGetIndexesResultOutput() GetIndexesResultOutpu
 
 func (o GetIndexesResultOutput) ToGetIndexesResultOutputWithContext(ctx context.Context) GetIndexesResultOutput {
 	return o
+}
+
+func (o GetIndexesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetIndexesResult] {
+	return pulumix.Output[GetIndexesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Compartment Identifier.

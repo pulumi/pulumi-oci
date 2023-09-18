@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure License Manager service.
@@ -105,6 +106,12 @@ func (o LookupConfigurationResultOutput) ToLookupConfigurationResultOutput() Loo
 
 func (o LookupConfigurationResultOutput) ToLookupConfigurationResultOutputWithContext(ctx context.Context) LookupConfigurationResultOutput {
 	return o
+}
+
+func (o LookupConfigurationResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupConfigurationResult] {
+	return pulumix.Output[LookupConfigurationResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to which the configuration is specified.

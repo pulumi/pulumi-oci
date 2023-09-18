@@ -67,7 +67,7 @@ public class OdaPrivateEndpointAttachment extends com.pulumi.resources.CustomRes
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that the ODA private endpoint attachment belongs to.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -81,7 +81,7 @@ public class OdaPrivateEndpointAttachment extends com.pulumi.resources.CustomRes
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached ODA Instance.
      * 
      */
-    @Export(name="odaInstanceId", type=String.class, parameters={})
+    @Export(name="odaInstanceId", refs={String.class}, tree="[0]")
     private Output<String> odaInstanceId;
 
     /**
@@ -98,7 +98,7 @@ public class OdaPrivateEndpointAttachment extends com.pulumi.resources.CustomRes
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="odaPrivateEndpointId", type=String.class, parameters={})
+    @Export(name="odaPrivateEndpointId", refs={String.class}, tree="[0]")
     private Output<String> odaPrivateEndpointId;
 
     /**
@@ -115,7 +115,7 @@ public class OdaPrivateEndpointAttachment extends com.pulumi.resources.CustomRes
      * The current state of the ODA Private Endpoint attachment.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -129,7 +129,7 @@ public class OdaPrivateEndpointAttachment extends com.pulumi.resources.CustomRes
      * When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -143,7 +143,7 @@ public class OdaPrivateEndpointAttachment extends com.pulumi.resources.CustomRes
      * When the resource was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Annotation Format resource in Oracle Cloud Infrastructure Data Labeling Service service.
@@ -101,6 +102,12 @@ func (o GetAnnotationFormatResultOutput) ToGetAnnotationFormatResultOutput() Get
 
 func (o GetAnnotationFormatResultOutput) ToGetAnnotationFormatResultOutputWithContext(ctx context.Context) GetAnnotationFormatResultOutput {
 	return o
+}
+
+func (o GetAnnotationFormatResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAnnotationFormatResult] {
+	return pulumix.Output[GetAnnotationFormatResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAnnotationFormatResultOutput) CompartmentId() pulumi.StringOutput {

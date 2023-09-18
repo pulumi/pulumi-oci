@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Connect Harness resource in Oracle Cloud Infrastructure Streaming service.
@@ -207,6 +208,12 @@ func (i *ConnectHarness) ToConnectHarnessOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectHarnessOutput)
 }
 
+func (i *ConnectHarness) ToOutput(ctx context.Context) pulumix.Output[*ConnectHarness] {
+	return pulumix.Output[*ConnectHarness]{
+		OutputState: i.ToConnectHarnessOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ConnectHarnessArrayInput is an input type that accepts ConnectHarnessArray and ConnectHarnessArrayOutput values.
 // You can construct a concrete instance of `ConnectHarnessArrayInput` via:
 //
@@ -230,6 +237,12 @@ func (i ConnectHarnessArray) ToConnectHarnessArrayOutput() ConnectHarnessArrayOu
 
 func (i ConnectHarnessArray) ToConnectHarnessArrayOutputWithContext(ctx context.Context) ConnectHarnessArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectHarnessArrayOutput)
+}
+
+func (i ConnectHarnessArray) ToOutput(ctx context.Context) pulumix.Output[[]*ConnectHarness] {
+	return pulumix.Output[[]*ConnectHarness]{
+		OutputState: i.ToConnectHarnessArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // ConnectHarnessMapInput is an input type that accepts ConnectHarnessMap and ConnectHarnessMapOutput values.
@@ -257,6 +270,12 @@ func (i ConnectHarnessMap) ToConnectHarnessMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectHarnessMapOutput)
 }
 
+func (i ConnectHarnessMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ConnectHarness] {
+	return pulumix.Output[map[string]*ConnectHarness]{
+		OutputState: i.ToConnectHarnessMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ConnectHarnessOutput struct{ *pulumi.OutputState }
 
 func (ConnectHarnessOutput) ElementType() reflect.Type {
@@ -269,6 +288,12 @@ func (o ConnectHarnessOutput) ToConnectHarnessOutput() ConnectHarnessOutput {
 
 func (o ConnectHarnessOutput) ToConnectHarnessOutputWithContext(ctx context.Context) ConnectHarnessOutput {
 	return o
+}
+
+func (o ConnectHarnessOutput) ToOutput(ctx context.Context) pulumix.Output[*ConnectHarness] {
+	return pulumix.Output[*ConnectHarness]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The OCID of the compartment that contains the connect harness.
@@ -323,6 +348,12 @@ func (o ConnectHarnessArrayOutput) ToConnectHarnessArrayOutputWithContext(ctx co
 	return o
 }
 
+func (o ConnectHarnessArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ConnectHarness] {
+	return pulumix.Output[[]*ConnectHarness]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o ConnectHarnessArrayOutput) Index(i pulumi.IntInput) ConnectHarnessOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ConnectHarness {
 		return vs[0].([]*ConnectHarness)[vs[1].(int)]
@@ -341,6 +372,12 @@ func (o ConnectHarnessMapOutput) ToConnectHarnessMapOutput() ConnectHarnessMapOu
 
 func (o ConnectHarnessMapOutput) ToConnectHarnessMapOutputWithContext(ctx context.Context) ConnectHarnessMapOutput {
 	return o
+}
+
+func (o ConnectHarnessMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ConnectHarness] {
+	return pulumix.Output[map[string]*ConnectHarness]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ConnectHarnessMapOutput) MapIndex(k pulumi.StringInput) ConnectHarnessOutput {

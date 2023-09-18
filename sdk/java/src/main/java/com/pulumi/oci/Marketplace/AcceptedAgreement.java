@@ -73,7 +73,7 @@ public class AcceptedAgreement extends com.pulumi.resources.CustomResource {
      * The agreement to accept.
      * 
      */
-    @Export(name="agreementId", type=String.class, parameters={})
+    @Export(name="agreementId", refs={String.class}, tree="[0]")
     private Output<String> agreementId;
 
     /**
@@ -87,7 +87,7 @@ public class AcceptedAgreement extends com.pulumi.resources.CustomResource {
      * The unique identifier for the compartment where the agreement will be accepted.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -101,7 +101,7 @@ public class AcceptedAgreement extends com.pulumi.resources.CustomResource {
      * (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -115,7 +115,7 @@ public class AcceptedAgreement extends com.pulumi.resources.CustomResource {
      * (Updatable) A display name for the accepted agreement.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -129,7 +129,7 @@ public class AcceptedAgreement extends com.pulumi.resources.CustomResource {
      * (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -143,7 +143,7 @@ public class AcceptedAgreement extends com.pulumi.resources.CustomResource {
      * The unique identifier for the listing associated with the agreement.
      * 
      */
-    @Export(name="listingId", type=String.class, parameters={})
+    @Export(name="listingId", refs={String.class}, tree="[0]")
     private Output<String> listingId;
 
     /**
@@ -157,7 +157,7 @@ public class AcceptedAgreement extends com.pulumi.resources.CustomResource {
      * The package version associated with the agreement.
      * 
      */
-    @Export(name="packageVersion", type=String.class, parameters={})
+    @Export(name="packageVersion", refs={String.class}, tree="[0]")
     private Output<String> packageVersion;
 
     /**
@@ -174,7 +174,7 @@ public class AcceptedAgreement extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="signature", type=String.class, parameters={})
+    @Export(name="signature", refs={String.class}, tree="[0]")
     private Output<String> signature;
 
     /**
@@ -191,7 +191,7 @@ public class AcceptedAgreement extends com.pulumi.resources.CustomResource {
      * The time the agreement was accepted.
      * 
      */
-    @Export(name="timeAccepted", type=String.class, parameters={})
+    @Export(name="timeAccepted", refs={String.class}, tree="[0]")
     private Output<String> timeAccepted;
 
     /**

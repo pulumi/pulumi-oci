@@ -76,7 +76,7 @@ public class LicenseRecord extends com.pulumi.resources.CustomResource {
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the license record is created.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -90,7 +90,7 @@ public class LicenseRecord extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -104,7 +104,7 @@ public class LicenseRecord extends com.pulumi.resources.CustomResource {
      * (Updatable) License record name.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -118,7 +118,7 @@ public class LicenseRecord extends com.pulumi.resources.CustomResource {
      * (Updatable) The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
      * 
      */
-    @Export(name="expirationDate", type=String.class, parameters={})
+    @Export(name="expirationDate", refs={String.class}, tree="[0]")
     private Output<String> expirationDate;
 
     /**
@@ -132,7 +132,7 @@ public class LicenseRecord extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -146,7 +146,7 @@ public class LicenseRecord extends com.pulumi.resources.CustomResource {
      * (Updatable) Specifies if the license record term is perpertual.
      * 
      */
-    @Export(name="isPerpetual", type=Boolean.class, parameters={})
+    @Export(name="isPerpetual", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isPerpetual;
 
     /**
@@ -160,7 +160,7 @@ public class LicenseRecord extends com.pulumi.resources.CustomResource {
      * (Updatable) Specifies if the license count is unlimited.
      * 
      */
-    @Export(name="isUnlimited", type=Boolean.class, parameters={})
+    @Export(name="isUnlimited", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isUnlimited;
 
     /**
@@ -174,7 +174,7 @@ public class LicenseRecord extends com.pulumi.resources.CustomResource {
      * (Updatable) The number of license units added by a user in a license record. Default 1
      * 
      */
-    @Export(name="licenseCount", type=Integer.class, parameters={})
+    @Export(name="licenseCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> licenseCount;
 
     /**
@@ -188,7 +188,7 @@ public class LicenseRecord extends com.pulumi.resources.CustomResource {
      * The product license unit.
      * 
      */
-    @Export(name="licenseUnit", type=String.class, parameters={})
+    @Export(name="licenseUnit", refs={String.class}, tree="[0]")
     private Output<String> licenseUnit;
 
     /**
@@ -202,7 +202,7 @@ public class LicenseRecord extends com.pulumi.resources.CustomResource {
      * (Updatable) The license record product ID.
      * 
      */
-    @Export(name="productId", type=String.class, parameters={})
+    @Export(name="productId", refs={String.class}, tree="[0]")
     private Output<String> productId;
 
     /**
@@ -216,7 +216,7 @@ public class LicenseRecord extends com.pulumi.resources.CustomResource {
      * The product license name with which the license record is associated.
      * 
      */
-    @Export(name="productLicense", type=String.class, parameters={})
+    @Export(name="productLicense", refs={String.class}, tree="[0]")
     private Output<String> productLicense;
 
     /**
@@ -230,7 +230,7 @@ public class LicenseRecord extends com.pulumi.resources.CustomResource {
      * Unique product license identifier.
      * 
      */
-    @Export(name="productLicenseId", type=String.class, parameters={})
+    @Export(name="productLicenseId", refs={String.class}, tree="[0]")
     private Output<String> productLicenseId;
 
     /**
@@ -244,7 +244,7 @@ public class LicenseRecord extends com.pulumi.resources.CustomResource {
      * The current license record state.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -261,7 +261,7 @@ public class LicenseRecord extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="supportEndDate", type=String.class, parameters={})
+    @Export(name="supportEndDate", refs={String.class}, tree="[0]")
     private Output<String> supportEndDate;
 
     /**
@@ -278,7 +278,7 @@ public class LicenseRecord extends com.pulumi.resources.CustomResource {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -292,7 +292,7 @@ public class LicenseRecord extends com.pulumi.resources.CustomResource {
      * The time the license record was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -306,7 +306,7 @@ public class LicenseRecord extends com.pulumi.resources.CustomResource {
      * The time the license record was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

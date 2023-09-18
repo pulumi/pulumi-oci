@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the User Group Membership resource in Oracle Cloud Infrastructure Identity service.
@@ -195,6 +196,12 @@ func (i *UserGroupMembership) ToUserGroupMembershipOutputWithContext(ctx context
 	return pulumi.ToOutputWithContext(ctx, i).(UserGroupMembershipOutput)
 }
 
+func (i *UserGroupMembership) ToOutput(ctx context.Context) pulumix.Output[*UserGroupMembership] {
+	return pulumix.Output[*UserGroupMembership]{
+		OutputState: i.ToUserGroupMembershipOutputWithContext(ctx).OutputState,
+	}
+}
+
 // UserGroupMembershipArrayInput is an input type that accepts UserGroupMembershipArray and UserGroupMembershipArrayOutput values.
 // You can construct a concrete instance of `UserGroupMembershipArrayInput` via:
 //
@@ -218,6 +225,12 @@ func (i UserGroupMembershipArray) ToUserGroupMembershipArrayOutput() UserGroupMe
 
 func (i UserGroupMembershipArray) ToUserGroupMembershipArrayOutputWithContext(ctx context.Context) UserGroupMembershipArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(UserGroupMembershipArrayOutput)
+}
+
+func (i UserGroupMembershipArray) ToOutput(ctx context.Context) pulumix.Output[[]*UserGroupMembership] {
+	return pulumix.Output[[]*UserGroupMembership]{
+		OutputState: i.ToUserGroupMembershipArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // UserGroupMembershipMapInput is an input type that accepts UserGroupMembershipMap and UserGroupMembershipMapOutput values.
@@ -245,6 +258,12 @@ func (i UserGroupMembershipMap) ToUserGroupMembershipMapOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(UserGroupMembershipMapOutput)
 }
 
+func (i UserGroupMembershipMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*UserGroupMembership] {
+	return pulumix.Output[map[string]*UserGroupMembership]{
+		OutputState: i.ToUserGroupMembershipMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type UserGroupMembershipOutput struct{ *pulumi.OutputState }
 
 func (UserGroupMembershipOutput) ElementType() reflect.Type {
@@ -257,6 +276,12 @@ func (o UserGroupMembershipOutput) ToUserGroupMembershipOutput() UserGroupMember
 
 func (o UserGroupMembershipOutput) ToUserGroupMembershipOutputWithContext(ctx context.Context) UserGroupMembershipOutput {
 	return o
+}
+
+func (o UserGroupMembershipOutput) ToOutput(ctx context.Context) pulumix.Output[*UserGroupMembership] {
+	return pulumix.Output[*UserGroupMembership]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the tenancy containing the user, group, and membership object.
@@ -306,6 +331,12 @@ func (o UserGroupMembershipArrayOutput) ToUserGroupMembershipArrayOutputWithCont
 	return o
 }
 
+func (o UserGroupMembershipArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*UserGroupMembership] {
+	return pulumix.Output[[]*UserGroupMembership]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o UserGroupMembershipArrayOutput) Index(i pulumi.IntInput) UserGroupMembershipOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *UserGroupMembership {
 		return vs[0].([]*UserGroupMembership)[vs[1].(int)]
@@ -324,6 +355,12 @@ func (o UserGroupMembershipMapOutput) ToUserGroupMembershipMapOutput() UserGroup
 
 func (o UserGroupMembershipMapOutput) ToUserGroupMembershipMapOutputWithContext(ctx context.Context) UserGroupMembershipMapOutput {
 	return o
+}
+
+func (o UserGroupMembershipMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*UserGroupMembership] {
+	return pulumix.Output[map[string]*UserGroupMembership]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o UserGroupMembershipMapOutput) MapIndex(k pulumi.StringInput) UserGroupMembershipOutput {

@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Cluster Network resource in Oracle Cloud Infrastructure Core service.
@@ -316,6 +317,12 @@ func (i *ClusterNetwork) ToClusterNetworkOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterNetworkOutput)
 }
 
+func (i *ClusterNetwork) ToOutput(ctx context.Context) pulumix.Output[*ClusterNetwork] {
+	return pulumix.Output[*ClusterNetwork]{
+		OutputState: i.ToClusterNetworkOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ClusterNetworkArrayInput is an input type that accepts ClusterNetworkArray and ClusterNetworkArrayOutput values.
 // You can construct a concrete instance of `ClusterNetworkArrayInput` via:
 //
@@ -339,6 +346,12 @@ func (i ClusterNetworkArray) ToClusterNetworkArrayOutput() ClusterNetworkArrayOu
 
 func (i ClusterNetworkArray) ToClusterNetworkArrayOutputWithContext(ctx context.Context) ClusterNetworkArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterNetworkArrayOutput)
+}
+
+func (i ClusterNetworkArray) ToOutput(ctx context.Context) pulumix.Output[[]*ClusterNetwork] {
+	return pulumix.Output[[]*ClusterNetwork]{
+		OutputState: i.ToClusterNetworkArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // ClusterNetworkMapInput is an input type that accepts ClusterNetworkMap and ClusterNetworkMapOutput values.
@@ -366,6 +379,12 @@ func (i ClusterNetworkMap) ToClusterNetworkMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterNetworkMapOutput)
 }
 
+func (i ClusterNetworkMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ClusterNetwork] {
+	return pulumix.Output[map[string]*ClusterNetwork]{
+		OutputState: i.ToClusterNetworkMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ClusterNetworkOutput struct{ *pulumi.OutputState }
 
 func (ClusterNetworkOutput) ElementType() reflect.Type {
@@ -378,6 +397,12 @@ func (o ClusterNetworkOutput) ToClusterNetworkOutput() ClusterNetworkOutput {
 
 func (o ClusterNetworkOutput) ToClusterNetworkOutputWithContext(ctx context.Context) ClusterNetworkOutput {
 	return o
+}
+
+func (o ClusterNetworkOutput) ToOutput(ctx context.Context) pulumix.Output[*ClusterNetwork] {
+	return pulumix.Output[*ClusterNetwork]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The HPC cluster configuration requested when launching instances of a cluster network.
@@ -458,6 +483,12 @@ func (o ClusterNetworkArrayOutput) ToClusterNetworkArrayOutputWithContext(ctx co
 	return o
 }
 
+func (o ClusterNetworkArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ClusterNetwork] {
+	return pulumix.Output[[]*ClusterNetwork]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o ClusterNetworkArrayOutput) Index(i pulumi.IntInput) ClusterNetworkOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ClusterNetwork {
 		return vs[0].([]*ClusterNetwork)[vs[1].(int)]
@@ -476,6 +507,12 @@ func (o ClusterNetworkMapOutput) ToClusterNetworkMapOutput() ClusterNetworkMapOu
 
 func (o ClusterNetworkMapOutput) ToClusterNetworkMapOutputWithContext(ctx context.Context) ClusterNetworkMapOutput {
 	return o
+}
+
+func (o ClusterNetworkMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ClusterNetwork] {
+	return pulumix.Output[map[string]*ClusterNetwork]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ClusterNetworkMapOutput) MapIndex(k pulumi.StringInput) ClusterNetworkOutput {

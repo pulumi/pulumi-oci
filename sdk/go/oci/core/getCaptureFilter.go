@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Capture Filter resource in Oracle Cloud Infrastructure Core service.
@@ -115,6 +116,12 @@ func (o LookupCaptureFilterResultOutput) ToLookupCaptureFilterResultOutput() Loo
 
 func (o LookupCaptureFilterResultOutput) ToLookupCaptureFilterResultOutputWithContext(ctx context.Context) LookupCaptureFilterResultOutput {
 	return o
+}
+
+func (o LookupCaptureFilterResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupCaptureFilterResult] {
+	return pulumix.Output[LookupCaptureFilterResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o LookupCaptureFilterResultOutput) CaptureFilterId() pulumi.StringOutput {

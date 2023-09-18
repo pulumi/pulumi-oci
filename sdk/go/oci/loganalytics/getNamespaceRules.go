@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Namespace Rules in Oracle Cloud Infrastructure Log Analytics service.
@@ -132,6 +133,12 @@ func (o GetNamespaceRulesResultOutput) ToGetNamespaceRulesResultOutput() GetName
 
 func (o GetNamespaceRulesResultOutput) ToGetNamespaceRulesResultOutputWithContext(ctx context.Context) GetNamespaceRulesResultOutput {
 	return o
+}
+
+func (o GetNamespaceRulesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceRulesResult] {
+	return pulumix.Output[GetNamespaceRulesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

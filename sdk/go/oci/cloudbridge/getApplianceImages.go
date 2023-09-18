@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Appliance Images in Oracle Cloud Infrastructure Cloud Bridge service.
@@ -111,6 +112,12 @@ func (o GetApplianceImagesResultOutput) ToGetApplianceImagesResultOutput() GetAp
 
 func (o GetApplianceImagesResultOutput) ToGetApplianceImagesResultOutputWithContext(ctx context.Context) GetApplianceImagesResultOutput {
 	return o
+}
+
+func (o GetApplianceImagesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetApplianceImagesResult] {
+	return pulumix.Output[GetApplianceImagesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The list of appliance_image_collection.

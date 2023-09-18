@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Management Agent Get Auto Upgradable Config resource in Oracle Cloud Infrastructure Management Agent service.
@@ -102,6 +103,12 @@ func (o GetManagementAgentGetAutoUpgradableConfigResultOutput) ToGetManagementAg
 
 func (o GetManagementAgentGetAutoUpgradableConfigResultOutput) ToGetManagementAgentGetAutoUpgradableConfigResultOutputWithContext(ctx context.Context) GetManagementAgentGetAutoUpgradableConfigResultOutput {
 	return o
+}
+
+func (o GetManagementAgentGetAutoUpgradableConfigResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentGetAutoUpgradableConfigResult] {
+	return pulumix.Output[GetManagementAgentGetAutoUpgradableConfigResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetManagementAgentGetAutoUpgradableConfigResultOutput) CompartmentId() pulumi.StringOutput {

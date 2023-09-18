@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Asset Sources in Oracle Cloud Infrastructure Cloud Bridge service.
@@ -125,6 +126,12 @@ func (o GetAssetSourcesResultOutput) ToGetAssetSourcesResultOutput() GetAssetSou
 
 func (o GetAssetSourcesResultOutput) ToGetAssetSourcesResultOutputWithContext(ctx context.Context) GetAssetSourcesResultOutput {
 	return o
+}
+
+func (o GetAssetSourcesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetSourcesResult] {
+	return pulumix.Output[GetAssetSourcesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The list of asset_source_collection.

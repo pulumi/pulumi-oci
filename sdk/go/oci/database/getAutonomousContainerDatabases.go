@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Autonomous Container Databases in Oracle Cloud Infrastructure Database service.
@@ -162,6 +163,12 @@ func (o GetAutonomousContainerDatabasesResultOutput) ToGetAutonomousContainerDat
 
 func (o GetAutonomousContainerDatabasesResultOutput) ToGetAutonomousContainerDatabasesResultOutputWithContext(ctx context.Context) GetAutonomousContainerDatabasesResultOutput {
 	return o
+}
+
+func (o GetAutonomousContainerDatabasesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutonomousContainerDatabasesResult] {
+	return pulumix.Output[GetAutonomousContainerDatabasesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The list of autonomous_container_databases.

@@ -88,7 +88,7 @@ public class DomainsMySupportAccount extends com.pulumi.resources.CustomResource
      * The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      * 
      */
-    @Export(name="authorization", type=String.class, parameters={})
+    @Export(name="authorization", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> authorization;
 
     /**
@@ -112,7 +112,7 @@ public class DomainsMySupportAccount extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="compartmentOcid", type=String.class, parameters={})
+    @Export(name="compartmentOcid", refs={String.class}, tree="[0]")
     private Output<String> compartmentOcid;
 
     /**
@@ -146,7 +146,7 @@ public class DomainsMySupportAccount extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="deleteInProgress", type=Boolean.class, parameters={})
+    @Export(name="deleteInProgress", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> deleteInProgress;
 
     /**
@@ -180,7 +180,7 @@ public class DomainsMySupportAccount extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="domainOcid", type=String.class, parameters={})
+    @Export(name="domainOcid", refs={String.class}, tree="[0]")
     private Output<String> domainOcid;
 
     /**
@@ -212,7 +212,7 @@ public class DomainsMySupportAccount extends com.pulumi.resources.CustomResource
      * * type: complex
      * 
      */
-    @Export(name="idcsCreatedBies", type=List.class, parameters={DomainsMySupportAccountIdcsCreatedBy.class})
+    @Export(name="idcsCreatedBies", refs={List.class,DomainsMySupportAccountIdcsCreatedBy.class}, tree="[0,1]")
     private Output<List<DomainsMySupportAccountIdcsCreatedBy>> idcsCreatedBies;
 
     /**
@@ -234,7 +234,7 @@ public class DomainsMySupportAccount extends com.pulumi.resources.CustomResource
      * The basic endpoint for the identity domain
      * 
      */
-    @Export(name="idcsEndpoint", type=String.class, parameters={})
+    @Export(name="idcsEndpoint", refs={String.class}, tree="[0]")
     private Output<String> idcsEndpoint;
 
     /**
@@ -256,7 +256,7 @@ public class DomainsMySupportAccount extends com.pulumi.resources.CustomResource
      * * type: complex
      * 
      */
-    @Export(name="idcsLastModifiedBies", type=List.class, parameters={DomainsMySupportAccountIdcsLastModifiedBy.class})
+    @Export(name="idcsLastModifiedBies", refs={List.class,DomainsMySupportAccountIdcsLastModifiedBy.class}, tree="[0,1]")
     private Output<List<DomainsMySupportAccountIdcsLastModifiedBy>> idcsLastModifiedBies;
 
     /**
@@ -288,7 +288,7 @@ public class DomainsMySupportAccount extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="idcsLastUpgradedInRelease", type=String.class, parameters={})
+    @Export(name="idcsLastUpgradedInRelease", refs={String.class}, tree="[0]")
     private Output<String> idcsLastUpgradedInRelease;
 
     /**
@@ -321,7 +321,7 @@ public class DomainsMySupportAccount extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="idcsPreventedOperations", type=List.class, parameters={String.class})
+    @Export(name="idcsPreventedOperations", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> idcsPreventedOperations;
 
     /**
@@ -354,7 +354,7 @@ public class DomainsMySupportAccount extends com.pulumi.resources.CustomResource
      * * type: complex
      * 
      */
-    @Export(name="metas", type=List.class, parameters={DomainsMySupportAccountMeta.class})
+    @Export(name="metas", refs={List.class,DomainsMySupportAccountMeta.class}, tree="[0,1]")
     private Output<List<DomainsMySupportAccountMeta>> metas;
 
     /**
@@ -390,7 +390,7 @@ public class DomainsMySupportAccount extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="mySupportAccountProvider", type=String.class, parameters={})
+    @Export(name="mySupportAccountProvider", refs={String.class}, tree="[0]")
     private Output<String> mySupportAccountProvider;
 
     /**
@@ -426,7 +426,7 @@ public class DomainsMySupportAccount extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="ocid", type=String.class, parameters={})
+    @Export(name="ocid", refs={String.class}, tree="[0]")
     private Output<String> ocid;
 
     /**
@@ -450,7 +450,7 @@ public class DomainsMySupportAccount extends com.pulumi.resources.CustomResource
      * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      * 
      */
-    @Export(name="resourceTypeSchemaVersion", type=String.class, parameters={})
+    @Export(name="resourceTypeSchemaVersion", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> resourceTypeSchemaVersion;
 
     /**
@@ -474,7 +474,7 @@ public class DomainsMySupportAccount extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="schemas", type=List.class, parameters={String.class})
+    @Export(name="schemas", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> schemas;
 
     /**
@@ -508,7 +508,7 @@ public class DomainsMySupportAccount extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="tags", type=List.class, parameters={DomainsMySupportAccountTag.class})
+    @Export(name="tags", refs={List.class,DomainsMySupportAccountTag.class}, tree="[0,1]")
     private Output<List<DomainsMySupportAccountTag>> tags;
 
     /**
@@ -542,7 +542,7 @@ public class DomainsMySupportAccount extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="tenancyOcid", type=String.class, parameters={})
+    @Export(name="tenancyOcid", refs={String.class}, tree="[0]")
     private Output<String> tenancyOcid;
 
     /**
@@ -576,7 +576,7 @@ public class DomainsMySupportAccount extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="token", type=String.class, parameters={})
+    @Export(name="token", refs={String.class}, tree="[0]")
     private Output<String> token;
 
     /**
@@ -610,7 +610,7 @@ public class DomainsMySupportAccount extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="user", type=DomainsMySupportAccountUser.class, parameters={})
+    @Export(name="user", refs={DomainsMySupportAccountUser.class}, tree="[0]")
     private Output<DomainsMySupportAccountUser> user;
 
     /**
@@ -649,7 +649,7 @@ public class DomainsMySupportAccount extends com.pulumi.resources.CustomResource
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="userId", type=String.class, parameters={})
+    @Export(name="userId", refs={String.class}, tree="[0]")
     private Output<String> userId;
 
     /**

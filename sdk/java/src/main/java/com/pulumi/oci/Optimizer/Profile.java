@@ -93,7 +93,7 @@ public class Profile extends com.pulumi.resources.CustomResource {
      * (Updatable) The time period over which to collect data for the recommendations, measured in number of days.
      * 
      */
-    @Export(name="aggregationIntervalInDays", type=Integer.class, parameters={})
+    @Export(name="aggregationIntervalInDays", refs={Integer.class}, tree="[0]")
     private Output<Integer> aggregationIntervalInDays;
 
     /**
@@ -107,7 +107,7 @@ public class Profile extends com.pulumi.resources.CustomResource {
      * The OCID of the tenancy. The tenancy is the root compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -121,7 +121,7 @@ public class Profile extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -135,7 +135,7 @@ public class Profile extends com.pulumi.resources.CustomResource {
      * (Updatable) Text describing the profile. Avoid entering confidential information.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -149,7 +149,7 @@ public class Profile extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair applied without any predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Exists for cross-compatibility only.  Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -163,7 +163,7 @@ public class Profile extends com.pulumi.resources.CustomResource {
      * (Updatable) A list of configuration levels for each recommendation.
      * 
      */
-    @Export(name="levelsConfiguration", type=ProfileLevelsConfiguration.class, parameters={})
+    @Export(name="levelsConfiguration", refs={ProfileLevelsConfiguration.class}, tree="[0]")
     private Output<ProfileLevelsConfiguration> levelsConfiguration;
 
     /**
@@ -177,7 +177,7 @@ public class Profile extends com.pulumi.resources.CustomResource {
      * (Updatable) The name assigned to the profile. Avoid entering confidential information.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -191,7 +191,7 @@ public class Profile extends com.pulumi.resources.CustomResource {
      * The profile&#39;s current state.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -205,7 +205,7 @@ public class Profile extends com.pulumi.resources.CustomResource {
      * (Updatable) Optional. The compartments specified in the profile override for a recommendation.
      * 
      */
-    @Export(name="targetCompartments", type=ProfileTargetCompartments.class, parameters={})
+    @Export(name="targetCompartments", refs={ProfileTargetCompartments.class}, tree="[0]")
     private Output<ProfileTargetCompartments> targetCompartments;
 
     /**
@@ -219,7 +219,7 @@ public class Profile extends com.pulumi.resources.CustomResource {
      * (Updatable) Optional. The tags specified in the profile override for a recommendation.
      * 
      */
-    @Export(name="targetTags", type=ProfileTargetTags.class, parameters={})
+    @Export(name="targetTags", refs={ProfileTargetTags.class}, tree="[0]")
     private Output<ProfileTargetTags> targetTags;
 
     /**
@@ -233,7 +233,7 @@ public class Profile extends com.pulumi.resources.CustomResource {
      * The date and time the profile was created, in the format defined by RFC3339.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -247,7 +247,7 @@ public class Profile extends com.pulumi.resources.CustomResource {
      * The date and time the profile was last updated, in the format defined by RFC3339.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

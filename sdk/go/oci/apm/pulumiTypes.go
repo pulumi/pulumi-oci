@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -86,6 +87,12 @@ func (i GetApmDomainsApmDomainArgs) ToGetApmDomainsApmDomainOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetApmDomainsApmDomainOutput)
 }
 
+func (i GetApmDomainsApmDomainArgs) ToOutput(ctx context.Context) pulumix.Output[GetApmDomainsApmDomain] {
+	return pulumix.Output[GetApmDomainsApmDomain]{
+		OutputState: i.ToGetApmDomainsApmDomainOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetApmDomainsApmDomainArrayInput is an input type that accepts GetApmDomainsApmDomainArray and GetApmDomainsApmDomainArrayOutput values.
 // You can construct a concrete instance of `GetApmDomainsApmDomainArrayInput` via:
 //
@@ -111,6 +118,12 @@ func (i GetApmDomainsApmDomainArray) ToGetApmDomainsApmDomainArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetApmDomainsApmDomainArrayOutput)
 }
 
+func (i GetApmDomainsApmDomainArray) ToOutput(ctx context.Context) pulumix.Output[[]GetApmDomainsApmDomain] {
+	return pulumix.Output[[]GetApmDomainsApmDomain]{
+		OutputState: i.ToGetApmDomainsApmDomainArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetApmDomainsApmDomainOutput struct{ *pulumi.OutputState }
 
 func (GetApmDomainsApmDomainOutput) ElementType() reflect.Type {
@@ -123,6 +136,12 @@ func (o GetApmDomainsApmDomainOutput) ToGetApmDomainsApmDomainOutput() GetApmDom
 
 func (o GetApmDomainsApmDomainOutput) ToGetApmDomainsApmDomainOutputWithContext(ctx context.Context) GetApmDomainsApmDomainOutput {
 	return o
+}
+
+func (o GetApmDomainsApmDomainOutput) ToOutput(ctx context.Context) pulumix.Output[GetApmDomainsApmDomain] {
+	return pulumix.Output[GetApmDomainsApmDomain]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -194,6 +213,12 @@ func (o GetApmDomainsApmDomainArrayOutput) ToGetApmDomainsApmDomainArrayOutputWi
 	return o
 }
 
+func (o GetApmDomainsApmDomainArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetApmDomainsApmDomain] {
+	return pulumix.Output[[]GetApmDomainsApmDomain]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetApmDomainsApmDomainArrayOutput) Index(i pulumi.IntInput) GetApmDomainsApmDomainOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApmDomainsApmDomain {
 		return vs[0].([]GetApmDomainsApmDomain)[vs[1].(int)]
@@ -235,6 +260,12 @@ func (i GetApmDomainsFilterArgs) ToGetApmDomainsFilterOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetApmDomainsFilterOutput)
 }
 
+func (i GetApmDomainsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetApmDomainsFilter] {
+	return pulumix.Output[GetApmDomainsFilter]{
+		OutputState: i.ToGetApmDomainsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetApmDomainsFilterArrayInput is an input type that accepts GetApmDomainsFilterArray and GetApmDomainsFilterArrayOutput values.
 // You can construct a concrete instance of `GetApmDomainsFilterArrayInput` via:
 //
@@ -260,6 +291,12 @@ func (i GetApmDomainsFilterArray) ToGetApmDomainsFilterArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetApmDomainsFilterArrayOutput)
 }
 
+func (i GetApmDomainsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetApmDomainsFilter] {
+	return pulumix.Output[[]GetApmDomainsFilter]{
+		OutputState: i.ToGetApmDomainsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetApmDomainsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetApmDomainsFilterOutput) ElementType() reflect.Type {
@@ -272,6 +309,12 @@ func (o GetApmDomainsFilterOutput) ToGetApmDomainsFilterOutput() GetApmDomainsFi
 
 func (o GetApmDomainsFilterOutput) ToGetApmDomainsFilterOutputWithContext(ctx context.Context) GetApmDomainsFilterOutput {
 	return o
+}
+
+func (o GetApmDomainsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetApmDomainsFilter] {
+	return pulumix.Output[GetApmDomainsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetApmDomainsFilterOutput) Name() pulumi.StringOutput {
@@ -298,6 +341,12 @@ func (o GetApmDomainsFilterArrayOutput) ToGetApmDomainsFilterArrayOutput() GetAp
 
 func (o GetApmDomainsFilterArrayOutput) ToGetApmDomainsFilterArrayOutputWithContext(ctx context.Context) GetApmDomainsFilterArrayOutput {
 	return o
+}
+
+func (o GetApmDomainsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetApmDomainsFilter] {
+	return pulumix.Output[[]GetApmDomainsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetApmDomainsFilterArrayOutput) Index(i pulumi.IntInput) GetApmDomainsFilterOutput {
@@ -347,6 +396,12 @@ func (i GetDataKeysDataKeyArgs) ToGetDataKeysDataKeyOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataKeysDataKeyOutput)
 }
 
+func (i GetDataKeysDataKeyArgs) ToOutput(ctx context.Context) pulumix.Output[GetDataKeysDataKey] {
+	return pulumix.Output[GetDataKeysDataKey]{
+		OutputState: i.ToGetDataKeysDataKeyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDataKeysDataKeyArrayInput is an input type that accepts GetDataKeysDataKeyArray and GetDataKeysDataKeyArrayOutput values.
 // You can construct a concrete instance of `GetDataKeysDataKeyArrayInput` via:
 //
@@ -372,6 +427,12 @@ func (i GetDataKeysDataKeyArray) ToGetDataKeysDataKeyArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataKeysDataKeyArrayOutput)
 }
 
+func (i GetDataKeysDataKeyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDataKeysDataKey] {
+	return pulumix.Output[[]GetDataKeysDataKey]{
+		OutputState: i.ToGetDataKeysDataKeyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDataKeysDataKeyOutput struct{ *pulumi.OutputState }
 
 func (GetDataKeysDataKeyOutput) ElementType() reflect.Type {
@@ -384,6 +445,12 @@ func (o GetDataKeysDataKeyOutput) ToGetDataKeysDataKeyOutput() GetDataKeysDataKe
 
 func (o GetDataKeysDataKeyOutput) ToGetDataKeysDataKeyOutputWithContext(ctx context.Context) GetDataKeysDataKeyOutput {
 	return o
+}
+
+func (o GetDataKeysDataKeyOutput) ToOutput(ctx context.Context) pulumix.Output[GetDataKeysDataKey] {
+	return pulumix.Output[GetDataKeysDataKey]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Name of the Data Key. The name uniquely identifies a Data Key within an APM domain.
@@ -413,6 +480,12 @@ func (o GetDataKeysDataKeyArrayOutput) ToGetDataKeysDataKeyArrayOutput() GetData
 
 func (o GetDataKeysDataKeyArrayOutput) ToGetDataKeysDataKeyArrayOutputWithContext(ctx context.Context) GetDataKeysDataKeyArrayOutput {
 	return o
+}
+
+func (o GetDataKeysDataKeyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDataKeysDataKey] {
+	return pulumix.Output[[]GetDataKeysDataKey]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDataKeysDataKeyArrayOutput) Index(i pulumi.IntInput) GetDataKeysDataKeyOutput {
@@ -458,6 +531,12 @@ func (i GetDataKeysFilterArgs) ToGetDataKeysFilterOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataKeysFilterOutput)
 }
 
+func (i GetDataKeysFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetDataKeysFilter] {
+	return pulumix.Output[GetDataKeysFilter]{
+		OutputState: i.ToGetDataKeysFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDataKeysFilterArrayInput is an input type that accepts GetDataKeysFilterArray and GetDataKeysFilterArrayOutput values.
 // You can construct a concrete instance of `GetDataKeysFilterArrayInput` via:
 //
@@ -483,6 +562,12 @@ func (i GetDataKeysFilterArray) ToGetDataKeysFilterArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataKeysFilterArrayOutput)
 }
 
+func (i GetDataKeysFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDataKeysFilter] {
+	return pulumix.Output[[]GetDataKeysFilter]{
+		OutputState: i.ToGetDataKeysFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDataKeysFilterOutput struct{ *pulumi.OutputState }
 
 func (GetDataKeysFilterOutput) ElementType() reflect.Type {
@@ -495,6 +580,12 @@ func (o GetDataKeysFilterOutput) ToGetDataKeysFilterOutput() GetDataKeysFilterOu
 
 func (o GetDataKeysFilterOutput) ToGetDataKeysFilterOutputWithContext(ctx context.Context) GetDataKeysFilterOutput {
 	return o
+}
+
+func (o GetDataKeysFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetDataKeysFilter] {
+	return pulumix.Output[GetDataKeysFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Name of the Data Key. The name uniquely identifies a Data Key within an APM domain.
@@ -522,6 +613,12 @@ func (o GetDataKeysFilterArrayOutput) ToGetDataKeysFilterArrayOutput() GetDataKe
 
 func (o GetDataKeysFilterArrayOutput) ToGetDataKeysFilterArrayOutputWithContext(ctx context.Context) GetDataKeysFilterArrayOutput {
 	return o
+}
+
+func (o GetDataKeysFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDataKeysFilter] {
+	return pulumix.Output[[]GetDataKeysFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDataKeysFilterArrayOutput) Index(i pulumi.IntInput) GetDataKeysFilterOutput {

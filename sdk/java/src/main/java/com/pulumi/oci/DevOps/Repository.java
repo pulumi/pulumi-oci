@@ -83,7 +83,7 @@ public class Repository extends com.pulumi.resources.CustomResource {
      * The count of the branches present in the repository.
      * 
      */
-    @Export(name="branchCount", type=Integer.class, parameters={})
+    @Export(name="branchCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> branchCount;
 
     /**
@@ -97,7 +97,7 @@ public class Repository extends com.pulumi.resources.CustomResource {
      * The count of the commits present in the repository.
      * 
      */
-    @Export(name="commitCount", type=Integer.class, parameters={})
+    @Export(name="commitCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> commitCount;
 
     /**
@@ -111,7 +111,7 @@ public class Repository extends com.pulumi.resources.CustomResource {
      * The OCID of the repository&#39;s compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -125,7 +125,7 @@ public class Repository extends com.pulumi.resources.CustomResource {
      * (Updatable) The default branch of the repository.
      * 
      */
-    @Export(name="defaultBranch", type=String.class, parameters={})
+    @Export(name="defaultBranch", refs={String.class}, tree="[0]")
     private Output<String> defaultBranch;
 
     /**
@@ -139,7 +139,7 @@ public class Repository extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -153,7 +153,7 @@ public class Repository extends com.pulumi.resources.CustomResource {
      * (Updatable) Details of the repository. Avoid entering confidential information.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -167,7 +167,7 @@ public class Repository extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -181,7 +181,7 @@ public class Repository extends com.pulumi.resources.CustomResource {
      * HTTP URL that you use to git clone, pull and push.
      * 
      */
-    @Export(name="httpUrl", type=String.class, parameters={})
+    @Export(name="httpUrl", refs={String.class}, tree="[0]")
     private Output<String> httpUrl;
 
     /**
@@ -195,7 +195,7 @@ public class Repository extends com.pulumi.resources.CustomResource {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    @Export(name="lifecyleDetails", type=String.class, parameters={})
+    @Export(name="lifecyleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecyleDetails;
 
     /**
@@ -209,7 +209,7 @@ public class Repository extends com.pulumi.resources.CustomResource {
      * (Updatable) Configuration information for mirroring the repository.
      * 
      */
-    @Export(name="mirrorRepositoryConfig", type=RepositoryMirrorRepositoryConfig.class, parameters={})
+    @Export(name="mirrorRepositoryConfig", refs={RepositoryMirrorRepositoryConfig.class}, tree="[0]")
     private Output<RepositoryMirrorRepositoryConfig> mirrorRepositoryConfig;
 
     /**
@@ -223,7 +223,7 @@ public class Repository extends com.pulumi.resources.CustomResource {
      * (Updatable) Unique name of a repository.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -237,7 +237,7 @@ public class Repository extends com.pulumi.resources.CustomResource {
      * Tenancy unique namespace.
      * 
      */
-    @Export(name="namespace", type=String.class, parameters={})
+    @Export(name="namespace", refs={String.class}, tree="[0]")
     private Output<String> namespace;
 
     /**
@@ -251,7 +251,7 @@ public class Repository extends com.pulumi.resources.CustomResource {
      * The OCID of the DevOps project containing the repository.
      * 
      */
-    @Export(name="projectId", type=String.class, parameters={})
+    @Export(name="projectId", refs={String.class}, tree="[0]")
     private Output<String> projectId;
 
     /**
@@ -265,7 +265,7 @@ public class Repository extends com.pulumi.resources.CustomResource {
      * Unique project name in a namespace.
      * 
      */
-    @Export(name="projectName", type=String.class, parameters={})
+    @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
@@ -282,7 +282,7 @@ public class Repository extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="repositoryType", type=String.class, parameters={})
+    @Export(name="repositoryType", refs={String.class}, tree="[0]")
     private Output<String> repositoryType;
 
     /**
@@ -299,7 +299,7 @@ public class Repository extends com.pulumi.resources.CustomResource {
      * The size of the repository in bytes.
      * 
      */
-    @Export(name="sizeInBytes", type=String.class, parameters={})
+    @Export(name="sizeInBytes", refs={String.class}, tree="[0]")
     private Output<String> sizeInBytes;
 
     /**
@@ -313,7 +313,7 @@ public class Repository extends com.pulumi.resources.CustomResource {
      * SSH URL that you use to git clone, pull and push.
      * 
      */
-    @Export(name="sshUrl", type=String.class, parameters={})
+    @Export(name="sshUrl", refs={String.class}, tree="[0]")
     private Output<String> sshUrl;
 
     /**
@@ -327,7 +327,7 @@ public class Repository extends com.pulumi.resources.CustomResource {
      * The current state of the repository.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -341,7 +341,7 @@ public class Repository extends com.pulumi.resources.CustomResource {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -355,7 +355,7 @@ public class Repository extends com.pulumi.resources.CustomResource {
      * The time the repository was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -369,7 +369,7 @@ public class Repository extends com.pulumi.resources.CustomResource {
      * The time the repository was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -383,7 +383,7 @@ public class Repository extends com.pulumi.resources.CustomResource {
      * Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
      * 
      */
-    @Export(name="triggerBuildEvents", type=List.class, parameters={String.class})
+    @Export(name="triggerBuildEvents", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> triggerBuildEvents;
 
     /**

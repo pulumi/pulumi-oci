@@ -88,7 +88,7 @@ public class ManagedDatabasesChangeDatabaseParameter extends com.pulumi.resource
      * The database credentials used to perform management activity.
      * 
      */
-    @Export(name="credentials", type=ManagedDatabasesChangeDatabaseParameterCredentials.class, parameters={})
+    @Export(name="credentials", refs={ManagedDatabasesChangeDatabaseParameterCredentials.class}, tree="[0]")
     private Output<ManagedDatabasesChangeDatabaseParameterCredentials> credentials;
 
     /**
@@ -102,7 +102,7 @@ public class ManagedDatabasesChangeDatabaseParameter extends com.pulumi.resource
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      * 
      */
-    @Export(name="managedDatabaseId", type=String.class, parameters={})
+    @Export(name="managedDatabaseId", refs={String.class}, tree="[0]")
     private Output<String> managedDatabaseId;
 
     /**
@@ -116,7 +116,7 @@ public class ManagedDatabasesChangeDatabaseParameter extends com.pulumi.resource
      * A list of database parameters and their values.
      * 
      */
-    @Export(name="parameters", type=List.class, parameters={ManagedDatabasesChangeDatabaseParameterParameter.class})
+    @Export(name="parameters", refs={List.class,ManagedDatabasesChangeDatabaseParameterParameter.class}, tree="[0,1]")
     private Output<List<ManagedDatabasesChangeDatabaseParameterParameter>> parameters;
 
     /**
@@ -135,7 +135,7 @@ public class ManagedDatabasesChangeDatabaseParameter extends com.pulumi.resource
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="scope", type=String.class, parameters={})
+    @Export(name="scope", refs={String.class}, tree="[0]")
     private Output<String> scope;
 
     /**

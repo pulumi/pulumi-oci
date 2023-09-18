@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Session resource in Oracle Cloud Infrastructure Bastion service.
@@ -256,6 +257,12 @@ func (i *Session) ToSessionOutputWithContext(ctx context.Context) SessionOutput 
 	return pulumi.ToOutputWithContext(ctx, i).(SessionOutput)
 }
 
+func (i *Session) ToOutput(ctx context.Context) pulumix.Output[*Session] {
+	return pulumix.Output[*Session]{
+		OutputState: i.ToSessionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // SessionArrayInput is an input type that accepts SessionArray and SessionArrayOutput values.
 // You can construct a concrete instance of `SessionArrayInput` via:
 //
@@ -279,6 +286,12 @@ func (i SessionArray) ToSessionArrayOutput() SessionArrayOutput {
 
 func (i SessionArray) ToSessionArrayOutputWithContext(ctx context.Context) SessionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SessionArrayOutput)
+}
+
+func (i SessionArray) ToOutput(ctx context.Context) pulumix.Output[[]*Session] {
+	return pulumix.Output[[]*Session]{
+		OutputState: i.ToSessionArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // SessionMapInput is an input type that accepts SessionMap and SessionMapOutput values.
@@ -306,6 +319,12 @@ func (i SessionMap) ToSessionMapOutputWithContext(ctx context.Context) SessionMa
 	return pulumi.ToOutputWithContext(ctx, i).(SessionMapOutput)
 }
 
+func (i SessionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Session] {
+	return pulumix.Output[map[string]*Session]{
+		OutputState: i.ToSessionMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type SessionOutput struct{ *pulumi.OutputState }
 
 func (SessionOutput) ElementType() reflect.Type {
@@ -318,6 +337,12 @@ func (o SessionOutput) ToSessionOutput() SessionOutput {
 
 func (o SessionOutput) ToSessionOutputWithContext(ctx context.Context) SessionOutput {
 	return o
+}
+
+func (o SessionOutput) ToOutput(ctx context.Context) pulumix.Output[*Session] {
+	return pulumix.Output[*Session]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The unique identifier (OCID) of the bastion on which to create this session.
@@ -404,6 +429,12 @@ func (o SessionArrayOutput) ToSessionArrayOutputWithContext(ctx context.Context)
 	return o
 }
 
+func (o SessionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Session] {
+	return pulumix.Output[[]*Session]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o SessionArrayOutput) Index(i pulumi.IntInput) SessionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Session {
 		return vs[0].([]*Session)[vs[1].(int)]
@@ -422,6 +453,12 @@ func (o SessionMapOutput) ToSessionMapOutput() SessionMapOutput {
 
 func (o SessionMapOutput) ToSessionMapOutputWithContext(ctx context.Context) SessionMapOutput {
 	return o
+}
+
+func (o SessionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Session] {
+	return pulumix.Output[map[string]*Session]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o SessionMapOutput) MapIndex(k pulumi.StringInput) SessionOutput {

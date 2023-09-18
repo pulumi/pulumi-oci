@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -152,6 +153,12 @@ func (i AddressActionVerificationAddressArgs) ToAddressActionVerificationAddress
 	return pulumi.ToOutputWithContext(ctx, i).(AddressActionVerificationAddressOutput)
 }
 
+func (i AddressActionVerificationAddressArgs) ToOutput(ctx context.Context) pulumix.Output[AddressActionVerificationAddress] {
+	return pulumix.Output[AddressActionVerificationAddress]{
+		OutputState: i.ToAddressActionVerificationAddressOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AddressActionVerificationAddressArrayInput is an input type that accepts AddressActionVerificationAddressArray and AddressActionVerificationAddressArrayOutput values.
 // You can construct a concrete instance of `AddressActionVerificationAddressArrayInput` via:
 //
@@ -177,6 +184,12 @@ func (i AddressActionVerificationAddressArray) ToAddressActionVerificationAddres
 	return pulumi.ToOutputWithContext(ctx, i).(AddressActionVerificationAddressArrayOutput)
 }
 
+func (i AddressActionVerificationAddressArray) ToOutput(ctx context.Context) pulumix.Output[[]AddressActionVerificationAddress] {
+	return pulumix.Output[[]AddressActionVerificationAddress]{
+		OutputState: i.ToAddressActionVerificationAddressArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AddressActionVerificationAddressOutput struct{ *pulumi.OutputState }
 
 func (AddressActionVerificationAddressOutput) ElementType() reflect.Type {
@@ -189,6 +202,12 @@ func (o AddressActionVerificationAddressOutput) ToAddressActionVerificationAddre
 
 func (o AddressActionVerificationAddressOutput) ToAddressActionVerificationAddressOutputWithContext(ctx context.Context) AddressActionVerificationAddressOutput {
 	return o
+}
+
+func (o AddressActionVerificationAddressOutput) ToOutput(ctx context.Context) pulumix.Output[AddressActionVerificationAddress] {
+	return pulumix.Output[AddressActionVerificationAddress]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Address identifier.
@@ -338,6 +357,12 @@ func (o AddressActionVerificationAddressArrayOutput) ToAddressActionVerification
 	return o
 }
 
+func (o AddressActionVerificationAddressArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AddressActionVerificationAddress] {
+	return pulumix.Output[[]AddressActionVerificationAddress]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AddressActionVerificationAddressArrayOutput) Index(i pulumi.IntInput) AddressActionVerificationAddressOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AddressActionVerificationAddress {
 		return vs[0].([]AddressActionVerificationAddress)[vs[1].(int)]
@@ -477,6 +502,12 @@ func (i SubscriptionBillingAddressArgs) ToSubscriptionBillingAddressOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionBillingAddressOutput)
 }
 
+func (i SubscriptionBillingAddressArgs) ToOutput(ctx context.Context) pulumix.Output[SubscriptionBillingAddress] {
+	return pulumix.Output[SubscriptionBillingAddress]{
+		OutputState: i.ToSubscriptionBillingAddressOutputWithContext(ctx).OutputState,
+	}
+}
+
 // SubscriptionBillingAddressArrayInput is an input type that accepts SubscriptionBillingAddressArray and SubscriptionBillingAddressArrayOutput values.
 // You can construct a concrete instance of `SubscriptionBillingAddressArrayInput` via:
 //
@@ -502,6 +533,12 @@ func (i SubscriptionBillingAddressArray) ToSubscriptionBillingAddressArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionBillingAddressArrayOutput)
 }
 
+func (i SubscriptionBillingAddressArray) ToOutput(ctx context.Context) pulumix.Output[[]SubscriptionBillingAddress] {
+	return pulumix.Output[[]SubscriptionBillingAddress]{
+		OutputState: i.ToSubscriptionBillingAddressArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type SubscriptionBillingAddressOutput struct{ *pulumi.OutputState }
 
 func (SubscriptionBillingAddressOutput) ElementType() reflect.Type {
@@ -514,6 +551,12 @@ func (o SubscriptionBillingAddressOutput) ToSubscriptionBillingAddressOutput() S
 
 func (o SubscriptionBillingAddressOutput) ToSubscriptionBillingAddressOutputWithContext(ctx context.Context) SubscriptionBillingAddressOutput {
 	return o
+}
+
+func (o SubscriptionBillingAddressOutput) ToOutput(ctx context.Context) pulumix.Output[SubscriptionBillingAddress] {
+	return pulumix.Output[SubscriptionBillingAddress]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Address identifier.
@@ -660,6 +703,12 @@ func (o SubscriptionBillingAddressArrayOutput) ToSubscriptionBillingAddressArray
 	return o
 }
 
+func (o SubscriptionBillingAddressArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]SubscriptionBillingAddress] {
+	return pulumix.Output[[]SubscriptionBillingAddress]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o SubscriptionBillingAddressArrayOutput) Index(i pulumi.IntInput) SubscriptionBillingAddressOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SubscriptionBillingAddress {
 		return vs[0].([]SubscriptionBillingAddress)[vs[1].(int)]
@@ -699,6 +748,12 @@ func (i SubscriptionPaymentGatewayArgs) ToSubscriptionPaymentGatewayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionPaymentGatewayOutput)
 }
 
+func (i SubscriptionPaymentGatewayArgs) ToOutput(ctx context.Context) pulumix.Output[SubscriptionPaymentGateway] {
+	return pulumix.Output[SubscriptionPaymentGateway]{
+		OutputState: i.ToSubscriptionPaymentGatewayOutputWithContext(ctx).OutputState,
+	}
+}
+
 // SubscriptionPaymentGatewayArrayInput is an input type that accepts SubscriptionPaymentGatewayArray and SubscriptionPaymentGatewayArrayOutput values.
 // You can construct a concrete instance of `SubscriptionPaymentGatewayArrayInput` via:
 //
@@ -724,6 +779,12 @@ func (i SubscriptionPaymentGatewayArray) ToSubscriptionPaymentGatewayArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionPaymentGatewayArrayOutput)
 }
 
+func (i SubscriptionPaymentGatewayArray) ToOutput(ctx context.Context) pulumix.Output[[]SubscriptionPaymentGateway] {
+	return pulumix.Output[[]SubscriptionPaymentGateway]{
+		OutputState: i.ToSubscriptionPaymentGatewayArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type SubscriptionPaymentGatewayOutput struct{ *pulumi.OutputState }
 
 func (SubscriptionPaymentGatewayOutput) ElementType() reflect.Type {
@@ -736,6 +797,12 @@ func (o SubscriptionPaymentGatewayOutput) ToSubscriptionPaymentGatewayOutput() S
 
 func (o SubscriptionPaymentGatewayOutput) ToSubscriptionPaymentGatewayOutputWithContext(ctx context.Context) SubscriptionPaymentGatewayOutput {
 	return o
+}
+
+func (o SubscriptionPaymentGatewayOutput) ToOutput(ctx context.Context) pulumix.Output[SubscriptionPaymentGateway] {
+	return pulumix.Output[SubscriptionPaymentGateway]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Merchant details.
@@ -757,6 +824,12 @@ func (o SubscriptionPaymentGatewayArrayOutput) ToSubscriptionPaymentGatewayArray
 
 func (o SubscriptionPaymentGatewayArrayOutput) ToSubscriptionPaymentGatewayArrayOutputWithContext(ctx context.Context) SubscriptionPaymentGatewayArrayOutput {
 	return o
+}
+
+func (o SubscriptionPaymentGatewayArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]SubscriptionPaymentGateway] {
+	return pulumix.Output[[]SubscriptionPaymentGateway]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o SubscriptionPaymentGatewayArrayOutput) Index(i pulumi.IntInput) SubscriptionPaymentGatewayOutput {
@@ -802,6 +875,12 @@ func (i SubscriptionPaymentGatewayMerchantDefinedDataArgs) ToSubscriptionPayment
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionPaymentGatewayMerchantDefinedDataOutput)
 }
 
+func (i SubscriptionPaymentGatewayMerchantDefinedDataArgs) ToOutput(ctx context.Context) pulumix.Output[SubscriptionPaymentGatewayMerchantDefinedData] {
+	return pulumix.Output[SubscriptionPaymentGatewayMerchantDefinedData]{
+		OutputState: i.ToSubscriptionPaymentGatewayMerchantDefinedDataOutputWithContext(ctx).OutputState,
+	}
+}
+
 // SubscriptionPaymentGatewayMerchantDefinedDataArrayInput is an input type that accepts SubscriptionPaymentGatewayMerchantDefinedDataArray and SubscriptionPaymentGatewayMerchantDefinedDataArrayOutput values.
 // You can construct a concrete instance of `SubscriptionPaymentGatewayMerchantDefinedDataArrayInput` via:
 //
@@ -827,6 +906,12 @@ func (i SubscriptionPaymentGatewayMerchantDefinedDataArray) ToSubscriptionPaymen
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionPaymentGatewayMerchantDefinedDataArrayOutput)
 }
 
+func (i SubscriptionPaymentGatewayMerchantDefinedDataArray) ToOutput(ctx context.Context) pulumix.Output[[]SubscriptionPaymentGatewayMerchantDefinedData] {
+	return pulumix.Output[[]SubscriptionPaymentGatewayMerchantDefinedData]{
+		OutputState: i.ToSubscriptionPaymentGatewayMerchantDefinedDataArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type SubscriptionPaymentGatewayMerchantDefinedDataOutput struct{ *pulumi.OutputState }
 
 func (SubscriptionPaymentGatewayMerchantDefinedDataOutput) ElementType() reflect.Type {
@@ -839,6 +924,12 @@ func (o SubscriptionPaymentGatewayMerchantDefinedDataOutput) ToSubscriptionPayme
 
 func (o SubscriptionPaymentGatewayMerchantDefinedDataOutput) ToSubscriptionPaymentGatewayMerchantDefinedDataOutputWithContext(ctx context.Context) SubscriptionPaymentGatewayMerchantDefinedDataOutput {
 	return o
+}
+
+func (o SubscriptionPaymentGatewayMerchantDefinedDataOutput) ToOutput(ctx context.Context) pulumix.Output[SubscriptionPaymentGatewayMerchantDefinedData] {
+	return pulumix.Output[SubscriptionPaymentGatewayMerchantDefinedData]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Cloud account name.
@@ -863,6 +954,12 @@ func (o SubscriptionPaymentGatewayMerchantDefinedDataArrayOutput) ToSubscription
 
 func (o SubscriptionPaymentGatewayMerchantDefinedDataArrayOutput) ToSubscriptionPaymentGatewayMerchantDefinedDataArrayOutputWithContext(ctx context.Context) SubscriptionPaymentGatewayMerchantDefinedDataArrayOutput {
 	return o
+}
+
+func (o SubscriptionPaymentGatewayMerchantDefinedDataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]SubscriptionPaymentGatewayMerchantDefinedData] {
+	return pulumix.Output[[]SubscriptionPaymentGatewayMerchantDefinedData]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o SubscriptionPaymentGatewayMerchantDefinedDataArrayOutput) Index(i pulumi.IntInput) SubscriptionPaymentGatewayMerchantDefinedDataOutput {
@@ -944,6 +1041,12 @@ func (i SubscriptionPaymentOptionArgs) ToSubscriptionPaymentOptionOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionPaymentOptionOutput)
 }
 
+func (i SubscriptionPaymentOptionArgs) ToOutput(ctx context.Context) pulumix.Output[SubscriptionPaymentOption] {
+	return pulumix.Output[SubscriptionPaymentOption]{
+		OutputState: i.ToSubscriptionPaymentOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // SubscriptionPaymentOptionArrayInput is an input type that accepts SubscriptionPaymentOptionArray and SubscriptionPaymentOptionArrayOutput values.
 // You can construct a concrete instance of `SubscriptionPaymentOptionArrayInput` via:
 //
@@ -969,6 +1072,12 @@ func (i SubscriptionPaymentOptionArray) ToSubscriptionPaymentOptionArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionPaymentOptionArrayOutput)
 }
 
+func (i SubscriptionPaymentOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]SubscriptionPaymentOption] {
+	return pulumix.Output[[]SubscriptionPaymentOption]{
+		OutputState: i.ToSubscriptionPaymentOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type SubscriptionPaymentOptionOutput struct{ *pulumi.OutputState }
 
 func (SubscriptionPaymentOptionOutput) ElementType() reflect.Type {
@@ -981,6 +1090,12 @@ func (o SubscriptionPaymentOptionOutput) ToSubscriptionPaymentOptionOutput() Sub
 
 func (o SubscriptionPaymentOptionOutput) ToSubscriptionPaymentOptionOutputWithContext(ctx context.Context) SubscriptionPaymentOptionOutput {
 	return o
+}
+
+func (o SubscriptionPaymentOptionOutput) ToOutput(ctx context.Context) pulumix.Output[SubscriptionPaymentOption] {
+	return pulumix.Output[SubscriptionPaymentOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Credit card type.
@@ -1050,6 +1165,12 @@ func (o SubscriptionPaymentOptionArrayOutput) ToSubscriptionPaymentOptionArrayOu
 
 func (o SubscriptionPaymentOptionArrayOutput) ToSubscriptionPaymentOptionArrayOutputWithContext(ctx context.Context) SubscriptionPaymentOptionArrayOutput {
 	return o
+}
+
+func (o SubscriptionPaymentOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]SubscriptionPaymentOption] {
+	return pulumix.Output[[]SubscriptionPaymentOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o SubscriptionPaymentOptionArrayOutput) Index(i pulumi.IntInput) SubscriptionPaymentOptionOutput {
@@ -1171,6 +1292,12 @@ func (i SubscriptionSubscriptionArgs) ToSubscriptionSubscriptionOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionSubscriptionOutput)
 }
 
+func (i SubscriptionSubscriptionArgs) ToOutput(ctx context.Context) pulumix.Output[SubscriptionSubscription] {
+	return pulumix.Output[SubscriptionSubscription]{
+		OutputState: i.ToSubscriptionSubscriptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i SubscriptionSubscriptionArgs) ToSubscriptionSubscriptionPtrOutput() SubscriptionSubscriptionPtrOutput {
 	return i.ToSubscriptionSubscriptionPtrOutputWithContext(context.Background())
 }
@@ -1212,6 +1339,12 @@ func (i *subscriptionSubscriptionPtrType) ToSubscriptionSubscriptionPtrOutputWit
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionSubscriptionPtrOutput)
 }
 
+func (i *subscriptionSubscriptionPtrType) ToOutput(ctx context.Context) pulumix.Output[*SubscriptionSubscription] {
+	return pulumix.Output[*SubscriptionSubscription]{
+		OutputState: i.ToSubscriptionSubscriptionPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type SubscriptionSubscriptionOutput struct{ *pulumi.OutputState }
 
 func (SubscriptionSubscriptionOutput) ElementType() reflect.Type {
@@ -1234,6 +1367,12 @@ func (o SubscriptionSubscriptionOutput) ToSubscriptionSubscriptionPtrOutputWithC
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v SubscriptionSubscription) *SubscriptionSubscription {
 		return &v
 	}).(SubscriptionSubscriptionPtrOutput)
+}
+
+func (o SubscriptionSubscriptionOutput) ToOutput(ctx context.Context) pulumix.Output[SubscriptionSubscription] {
+	return pulumix.Output[SubscriptionSubscription]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Account type.
@@ -1353,6 +1492,12 @@ func (o SubscriptionSubscriptionPtrOutput) ToSubscriptionSubscriptionPtrOutput()
 
 func (o SubscriptionSubscriptionPtrOutput) ToSubscriptionSubscriptionPtrOutputWithContext(ctx context.Context) SubscriptionSubscriptionPtrOutput {
 	return o
+}
+
+func (o SubscriptionSubscriptionPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*SubscriptionSubscription] {
+	return pulumix.Output[*SubscriptionSubscription]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o SubscriptionSubscriptionPtrOutput) Elem() SubscriptionSubscriptionOutput {
@@ -1708,6 +1853,12 @@ func (i SubscriptionSubscriptionBillingAddressArgs) ToSubscriptionSubscriptionBi
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionSubscriptionBillingAddressOutput)
 }
 
+func (i SubscriptionSubscriptionBillingAddressArgs) ToOutput(ctx context.Context) pulumix.Output[SubscriptionSubscriptionBillingAddress] {
+	return pulumix.Output[SubscriptionSubscriptionBillingAddress]{
+		OutputState: i.ToSubscriptionSubscriptionBillingAddressOutputWithContext(ctx).OutputState,
+	}
+}
+
 // SubscriptionSubscriptionBillingAddressArrayInput is an input type that accepts SubscriptionSubscriptionBillingAddressArray and SubscriptionSubscriptionBillingAddressArrayOutput values.
 // You can construct a concrete instance of `SubscriptionSubscriptionBillingAddressArrayInput` via:
 //
@@ -1733,6 +1884,12 @@ func (i SubscriptionSubscriptionBillingAddressArray) ToSubscriptionSubscriptionB
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionSubscriptionBillingAddressArrayOutput)
 }
 
+func (i SubscriptionSubscriptionBillingAddressArray) ToOutput(ctx context.Context) pulumix.Output[[]SubscriptionSubscriptionBillingAddress] {
+	return pulumix.Output[[]SubscriptionSubscriptionBillingAddress]{
+		OutputState: i.ToSubscriptionSubscriptionBillingAddressArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type SubscriptionSubscriptionBillingAddressOutput struct{ *pulumi.OutputState }
 
 func (SubscriptionSubscriptionBillingAddressOutput) ElementType() reflect.Type {
@@ -1745,6 +1902,12 @@ func (o SubscriptionSubscriptionBillingAddressOutput) ToSubscriptionSubscription
 
 func (o SubscriptionSubscriptionBillingAddressOutput) ToSubscriptionSubscriptionBillingAddressOutputWithContext(ctx context.Context) SubscriptionSubscriptionBillingAddressOutput {
 	return o
+}
+
+func (o SubscriptionSubscriptionBillingAddressOutput) ToOutput(ctx context.Context) pulumix.Output[SubscriptionSubscriptionBillingAddress] {
+	return pulumix.Output[SubscriptionSubscriptionBillingAddress]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Address identifier.
@@ -1891,6 +2054,12 @@ func (o SubscriptionSubscriptionBillingAddressArrayOutput) ToSubscriptionSubscri
 	return o
 }
 
+func (o SubscriptionSubscriptionBillingAddressArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]SubscriptionSubscriptionBillingAddress] {
+	return pulumix.Output[[]SubscriptionSubscriptionBillingAddress]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o SubscriptionSubscriptionBillingAddressArrayOutput) Index(i pulumi.IntInput) SubscriptionSubscriptionBillingAddressOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SubscriptionSubscriptionBillingAddress {
 		return vs[0].([]SubscriptionSubscriptionBillingAddress)[vs[1].(int)]
@@ -1928,6 +2097,12 @@ func (i SubscriptionSubscriptionPaymentGatewayArgs) ToSubscriptionSubscriptionPa
 
 func (i SubscriptionSubscriptionPaymentGatewayArgs) ToSubscriptionSubscriptionPaymentGatewayOutputWithContext(ctx context.Context) SubscriptionSubscriptionPaymentGatewayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionSubscriptionPaymentGatewayOutput)
+}
+
+func (i SubscriptionSubscriptionPaymentGatewayArgs) ToOutput(ctx context.Context) pulumix.Output[SubscriptionSubscriptionPaymentGateway] {
+	return pulumix.Output[SubscriptionSubscriptionPaymentGateway]{
+		OutputState: i.ToSubscriptionSubscriptionPaymentGatewayOutputWithContext(ctx).OutputState,
+	}
 }
 
 func (i SubscriptionSubscriptionPaymentGatewayArgs) ToSubscriptionSubscriptionPaymentGatewayPtrOutput() SubscriptionSubscriptionPaymentGatewayPtrOutput {
@@ -1971,6 +2146,12 @@ func (i *subscriptionSubscriptionPaymentGatewayPtrType) ToSubscriptionSubscripti
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionSubscriptionPaymentGatewayPtrOutput)
 }
 
+func (i *subscriptionSubscriptionPaymentGatewayPtrType) ToOutput(ctx context.Context) pulumix.Output[*SubscriptionSubscriptionPaymentGateway] {
+	return pulumix.Output[*SubscriptionSubscriptionPaymentGateway]{
+		OutputState: i.ToSubscriptionSubscriptionPaymentGatewayPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type SubscriptionSubscriptionPaymentGatewayOutput struct{ *pulumi.OutputState }
 
 func (SubscriptionSubscriptionPaymentGatewayOutput) ElementType() reflect.Type {
@@ -1995,6 +2176,12 @@ func (o SubscriptionSubscriptionPaymentGatewayOutput) ToSubscriptionSubscription
 	}).(SubscriptionSubscriptionPaymentGatewayPtrOutput)
 }
 
+func (o SubscriptionSubscriptionPaymentGatewayOutput) ToOutput(ctx context.Context) pulumix.Output[SubscriptionSubscriptionPaymentGateway] {
+	return pulumix.Output[SubscriptionSubscriptionPaymentGateway]{
+		OutputState: o.OutputState,
+	}
+}
+
 // (Updatable) Merchant details.
 func (o SubscriptionSubscriptionPaymentGatewayOutput) MerchantDefinedData() SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataPtrOutput {
 	return o.ApplyT(func(v SubscriptionSubscriptionPaymentGateway) *SubscriptionSubscriptionPaymentGatewayMerchantDefinedData {
@@ -2014,6 +2201,12 @@ func (o SubscriptionSubscriptionPaymentGatewayPtrOutput) ToSubscriptionSubscript
 
 func (o SubscriptionSubscriptionPaymentGatewayPtrOutput) ToSubscriptionSubscriptionPaymentGatewayPtrOutputWithContext(ctx context.Context) SubscriptionSubscriptionPaymentGatewayPtrOutput {
 	return o
+}
+
+func (o SubscriptionSubscriptionPaymentGatewayPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*SubscriptionSubscriptionPaymentGateway] {
+	return pulumix.Output[*SubscriptionSubscriptionPaymentGateway]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o SubscriptionSubscriptionPaymentGatewayPtrOutput) Elem() SubscriptionSubscriptionPaymentGatewayOutput {
@@ -2073,6 +2266,12 @@ func (i SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs) ToSubscri
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataOutput)
 }
 
+func (i SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs) ToOutput(ctx context.Context) pulumix.Output[SubscriptionSubscriptionPaymentGatewayMerchantDefinedData] {
+	return pulumix.Output[SubscriptionSubscriptionPaymentGatewayMerchantDefinedData]{
+		OutputState: i.ToSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs) ToSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataPtrOutput() SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataPtrOutput {
 	return i.ToSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataPtrOutputWithContext(context.Background())
 }
@@ -2114,6 +2313,12 @@ func (i *subscriptionSubscriptionPaymentGatewayMerchantDefinedDataPtrType) ToSub
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataPtrOutput)
 }
 
+func (i *subscriptionSubscriptionPaymentGatewayMerchantDefinedDataPtrType) ToOutput(ctx context.Context) pulumix.Output[*SubscriptionSubscriptionPaymentGatewayMerchantDefinedData] {
+	return pulumix.Output[*SubscriptionSubscriptionPaymentGatewayMerchantDefinedData]{
+		OutputState: i.ToSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataOutput struct{ *pulumi.OutputState }
 
 func (SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataOutput) ElementType() reflect.Type {
@@ -2138,6 +2343,12 @@ func (o SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataOutput) ToSubsc
 	}).(SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataPtrOutput)
 }
 
+func (o SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataOutput) ToOutput(ctx context.Context) pulumix.Output[SubscriptionSubscriptionPaymentGatewayMerchantDefinedData] {
+	return pulumix.Output[SubscriptionSubscriptionPaymentGatewayMerchantDefinedData]{
+		OutputState: o.OutputState,
+	}
+}
+
 // (Updatable) Cloud account name.
 func (o SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataOutput) CloudAccountName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionSubscriptionPaymentGatewayMerchantDefinedData) *string { return v.CloudAccountName }).(pulumi.StringPtrOutput)
@@ -2160,6 +2371,12 @@ func (o SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataPtrOutput) ToSu
 
 func (o SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataPtrOutput) ToSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataPtrOutputWithContext(ctx context.Context) SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataPtrOutput {
 	return o
+}
+
+func (o SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*SubscriptionSubscriptionPaymentGatewayMerchantDefinedData] {
+	return pulumix.Output[*SubscriptionSubscriptionPaymentGatewayMerchantDefinedData]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataPtrOutput) Elem() SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataOutput {
@@ -2265,6 +2482,12 @@ func (i SubscriptionSubscriptionPaymentOptionArgs) ToSubscriptionSubscriptionPay
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionSubscriptionPaymentOptionOutput)
 }
 
+func (i SubscriptionSubscriptionPaymentOptionArgs) ToOutput(ctx context.Context) pulumix.Output[SubscriptionSubscriptionPaymentOption] {
+	return pulumix.Output[SubscriptionSubscriptionPaymentOption]{
+		OutputState: i.ToSubscriptionSubscriptionPaymentOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // SubscriptionSubscriptionPaymentOptionArrayInput is an input type that accepts SubscriptionSubscriptionPaymentOptionArray and SubscriptionSubscriptionPaymentOptionArrayOutput values.
 // You can construct a concrete instance of `SubscriptionSubscriptionPaymentOptionArrayInput` via:
 //
@@ -2290,6 +2513,12 @@ func (i SubscriptionSubscriptionPaymentOptionArray) ToSubscriptionSubscriptionPa
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionSubscriptionPaymentOptionArrayOutput)
 }
 
+func (i SubscriptionSubscriptionPaymentOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]SubscriptionSubscriptionPaymentOption] {
+	return pulumix.Output[[]SubscriptionSubscriptionPaymentOption]{
+		OutputState: i.ToSubscriptionSubscriptionPaymentOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type SubscriptionSubscriptionPaymentOptionOutput struct{ *pulumi.OutputState }
 
 func (SubscriptionSubscriptionPaymentOptionOutput) ElementType() reflect.Type {
@@ -2302,6 +2531,12 @@ func (o SubscriptionSubscriptionPaymentOptionOutput) ToSubscriptionSubscriptionP
 
 func (o SubscriptionSubscriptionPaymentOptionOutput) ToSubscriptionSubscriptionPaymentOptionOutputWithContext(ctx context.Context) SubscriptionSubscriptionPaymentOptionOutput {
 	return o
+}
+
+func (o SubscriptionSubscriptionPaymentOptionOutput) ToOutput(ctx context.Context) pulumix.Output[SubscriptionSubscriptionPaymentOption] {
+	return pulumix.Output[SubscriptionSubscriptionPaymentOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Credit card type.
@@ -2373,6 +2608,12 @@ func (o SubscriptionSubscriptionPaymentOptionArrayOutput) ToSubscriptionSubscrip
 	return o
 }
 
+func (o SubscriptionSubscriptionPaymentOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]SubscriptionSubscriptionPaymentOption] {
+	return pulumix.Output[[]SubscriptionSubscriptionPaymentOption]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o SubscriptionSubscriptionPaymentOptionArrayOutput) Index(i pulumi.IntInput) SubscriptionSubscriptionPaymentOptionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SubscriptionSubscriptionPaymentOption {
 		return vs[0].([]SubscriptionSubscriptionPaymentOption)[vs[1].(int)]
@@ -2428,6 +2669,12 @@ func (i SubscriptionSubscriptionTaxInfoArgs) ToSubscriptionSubscriptionTaxInfoOu
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionSubscriptionTaxInfoOutput)
 }
 
+func (i SubscriptionSubscriptionTaxInfoArgs) ToOutput(ctx context.Context) pulumix.Output[SubscriptionSubscriptionTaxInfo] {
+	return pulumix.Output[SubscriptionSubscriptionTaxInfo]{
+		OutputState: i.ToSubscriptionSubscriptionTaxInfoOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i SubscriptionSubscriptionTaxInfoArgs) ToSubscriptionSubscriptionTaxInfoPtrOutput() SubscriptionSubscriptionTaxInfoPtrOutput {
 	return i.ToSubscriptionSubscriptionTaxInfoPtrOutputWithContext(context.Background())
 }
@@ -2469,6 +2716,12 @@ func (i *subscriptionSubscriptionTaxInfoPtrType) ToSubscriptionSubscriptionTaxIn
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionSubscriptionTaxInfoPtrOutput)
 }
 
+func (i *subscriptionSubscriptionTaxInfoPtrType) ToOutput(ctx context.Context) pulumix.Output[*SubscriptionSubscriptionTaxInfo] {
+	return pulumix.Output[*SubscriptionSubscriptionTaxInfo]{
+		OutputState: i.ToSubscriptionSubscriptionTaxInfoPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type SubscriptionSubscriptionTaxInfoOutput struct{ *pulumi.OutputState }
 
 func (SubscriptionSubscriptionTaxInfoOutput) ElementType() reflect.Type {
@@ -2491,6 +2744,12 @@ func (o SubscriptionSubscriptionTaxInfoOutput) ToSubscriptionSubscriptionTaxInfo
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v SubscriptionSubscriptionTaxInfo) *SubscriptionSubscriptionTaxInfo {
 		return &v
 	}).(SubscriptionSubscriptionTaxInfoPtrOutput)
+}
+
+func (o SubscriptionSubscriptionTaxInfoOutput) ToOutput(ctx context.Context) pulumix.Output[SubscriptionSubscriptionTaxInfo] {
+	return pulumix.Output[SubscriptionSubscriptionTaxInfo]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Tax exemption reason code.
@@ -2530,6 +2789,12 @@ func (o SubscriptionSubscriptionTaxInfoPtrOutput) ToSubscriptionSubscriptionTaxI
 
 func (o SubscriptionSubscriptionTaxInfoPtrOutput) ToSubscriptionSubscriptionTaxInfoPtrOutputWithContext(ctx context.Context) SubscriptionSubscriptionTaxInfoPtrOutput {
 	return o
+}
+
+func (o SubscriptionSubscriptionTaxInfoPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*SubscriptionSubscriptionTaxInfo] {
+	return pulumix.Output[*SubscriptionSubscriptionTaxInfo]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o SubscriptionSubscriptionTaxInfoPtrOutput) Elem() SubscriptionSubscriptionTaxInfoOutput {
@@ -2641,6 +2906,12 @@ func (i SubscriptionTaxInfoArgs) ToSubscriptionTaxInfoOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionTaxInfoOutput)
 }
 
+func (i SubscriptionTaxInfoArgs) ToOutput(ctx context.Context) pulumix.Output[SubscriptionTaxInfo] {
+	return pulumix.Output[SubscriptionTaxInfo]{
+		OutputState: i.ToSubscriptionTaxInfoOutputWithContext(ctx).OutputState,
+	}
+}
+
 // SubscriptionTaxInfoArrayInput is an input type that accepts SubscriptionTaxInfoArray and SubscriptionTaxInfoArrayOutput values.
 // You can construct a concrete instance of `SubscriptionTaxInfoArrayInput` via:
 //
@@ -2666,6 +2937,12 @@ func (i SubscriptionTaxInfoArray) ToSubscriptionTaxInfoArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionTaxInfoArrayOutput)
 }
 
+func (i SubscriptionTaxInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]SubscriptionTaxInfo] {
+	return pulumix.Output[[]SubscriptionTaxInfo]{
+		OutputState: i.ToSubscriptionTaxInfoArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type SubscriptionTaxInfoOutput struct{ *pulumi.OutputState }
 
 func (SubscriptionTaxInfoOutput) ElementType() reflect.Type {
@@ -2678,6 +2955,12 @@ func (o SubscriptionTaxInfoOutput) ToSubscriptionTaxInfoOutput() SubscriptionTax
 
 func (o SubscriptionTaxInfoOutput) ToSubscriptionTaxInfoOutputWithContext(ctx context.Context) SubscriptionTaxInfoOutput {
 	return o
+}
+
+func (o SubscriptionTaxInfoOutput) ToOutput(ctx context.Context) pulumix.Output[SubscriptionTaxInfo] {
+	return pulumix.Output[SubscriptionTaxInfo]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Tax exemption reason code.
@@ -2717,6 +3000,12 @@ func (o SubscriptionTaxInfoArrayOutput) ToSubscriptionTaxInfoArrayOutput() Subsc
 
 func (o SubscriptionTaxInfoArrayOutput) ToSubscriptionTaxInfoArrayOutputWithContext(ctx context.Context) SubscriptionTaxInfoArrayOutput {
 	return o
+}
+
+func (o SubscriptionTaxInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]SubscriptionTaxInfo] {
+	return pulumix.Output[[]SubscriptionTaxInfo]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o SubscriptionTaxInfoArrayOutput) Index(i pulumi.IntInput) SubscriptionTaxInfoOutput {
@@ -2762,6 +3051,12 @@ func (i GetAddressRuleAddressArgs) ToGetAddressRuleAddressOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressRuleAddressOutput)
 }
 
+func (i GetAddressRuleAddressArgs) ToOutput(ctx context.Context) pulumix.Output[GetAddressRuleAddress] {
+	return pulumix.Output[GetAddressRuleAddress]{
+		OutputState: i.ToGetAddressRuleAddressOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAddressRuleAddressArrayInput is an input type that accepts GetAddressRuleAddressArray and GetAddressRuleAddressArrayOutput values.
 // You can construct a concrete instance of `GetAddressRuleAddressArrayInput` via:
 //
@@ -2787,6 +3082,12 @@ func (i GetAddressRuleAddressArray) ToGetAddressRuleAddressArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressRuleAddressArrayOutput)
 }
 
+func (i GetAddressRuleAddressArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressRuleAddress] {
+	return pulumix.Output[[]GetAddressRuleAddress]{
+		OutputState: i.ToGetAddressRuleAddressArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAddressRuleAddressOutput struct{ *pulumi.OutputState }
 
 func (GetAddressRuleAddressOutput) ElementType() reflect.Type {
@@ -2799,6 +3100,12 @@ func (o GetAddressRuleAddressOutput) ToGetAddressRuleAddressOutput() GetAddressR
 
 func (o GetAddressRuleAddressOutput) ToGetAddressRuleAddressOutputWithContext(ctx context.Context) GetAddressRuleAddressOutput {
 	return o
+}
+
+func (o GetAddressRuleAddressOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddressRuleAddress] {
+	return pulumix.Output[GetAddressRuleAddress]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Tax type rule fields
@@ -2823,6 +3130,12 @@ func (o GetAddressRuleAddressArrayOutput) ToGetAddressRuleAddressArrayOutput() G
 
 func (o GetAddressRuleAddressArrayOutput) ToGetAddressRuleAddressArrayOutputWithContext(ctx context.Context) GetAddressRuleAddressArrayOutput {
 	return o
+}
+
+func (o GetAddressRuleAddressArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressRuleAddress] {
+	return pulumix.Output[[]GetAddressRuleAddress]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAddressRuleAddressArrayOutput) Index(i pulumi.IntInput) GetAddressRuleAddressOutput {
@@ -2880,6 +3193,12 @@ func (i GetAddressRuleAddressFieldArgs) ToGetAddressRuleAddressFieldOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressRuleAddressFieldOutput)
 }
 
+func (i GetAddressRuleAddressFieldArgs) ToOutput(ctx context.Context) pulumix.Output[GetAddressRuleAddressField] {
+	return pulumix.Output[GetAddressRuleAddressField]{
+		OutputState: i.ToGetAddressRuleAddressFieldOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAddressRuleAddressFieldArrayInput is an input type that accepts GetAddressRuleAddressFieldArray and GetAddressRuleAddressFieldArrayOutput values.
 // You can construct a concrete instance of `GetAddressRuleAddressFieldArrayInput` via:
 //
@@ -2905,6 +3224,12 @@ func (i GetAddressRuleAddressFieldArray) ToGetAddressRuleAddressFieldArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressRuleAddressFieldArrayOutput)
 }
 
+func (i GetAddressRuleAddressFieldArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressRuleAddressField] {
+	return pulumix.Output[[]GetAddressRuleAddressField]{
+		OutputState: i.ToGetAddressRuleAddressFieldArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAddressRuleAddressFieldOutput struct{ *pulumi.OutputState }
 
 func (GetAddressRuleAddressFieldOutput) ElementType() reflect.Type {
@@ -2917,6 +3242,12 @@ func (o GetAddressRuleAddressFieldOutput) ToGetAddressRuleAddressFieldOutput() G
 
 func (o GetAddressRuleAddressFieldOutput) ToGetAddressRuleAddressFieldOutputWithContext(ctx context.Context) GetAddressRuleAddressFieldOutput {
 	return o
+}
+
+func (o GetAddressRuleAddressFieldOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddressRuleAddressField] {
+	return pulumix.Output[GetAddressRuleAddressField]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Format information
@@ -2956,6 +3287,12 @@ func (o GetAddressRuleAddressFieldArrayOutput) ToGetAddressRuleAddressFieldArray
 
 func (o GetAddressRuleAddressFieldArrayOutput) ToGetAddressRuleAddressFieldArrayOutputWithContext(ctx context.Context) GetAddressRuleAddressFieldArrayOutput {
 	return o
+}
+
+func (o GetAddressRuleAddressFieldArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressRuleAddressField] {
+	return pulumix.Output[[]GetAddressRuleAddressField]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAddressRuleAddressFieldArrayOutput) Index(i pulumi.IntInput) GetAddressRuleAddressFieldOutput {
@@ -3001,6 +3338,12 @@ func (i GetAddressRuleAddressFieldFormatArgs) ToGetAddressRuleAddressFieldFormat
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressRuleAddressFieldFormatOutput)
 }
 
+func (i GetAddressRuleAddressFieldFormatArgs) ToOutput(ctx context.Context) pulumix.Output[GetAddressRuleAddressFieldFormat] {
+	return pulumix.Output[GetAddressRuleAddressFieldFormat]{
+		OutputState: i.ToGetAddressRuleAddressFieldFormatOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAddressRuleAddressFieldFormatArrayInput is an input type that accepts GetAddressRuleAddressFieldFormatArray and GetAddressRuleAddressFieldFormatArrayOutput values.
 // You can construct a concrete instance of `GetAddressRuleAddressFieldFormatArrayInput` via:
 //
@@ -3026,6 +3369,12 @@ func (i GetAddressRuleAddressFieldFormatArray) ToGetAddressRuleAddressFieldForma
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressRuleAddressFieldFormatArrayOutput)
 }
 
+func (i GetAddressRuleAddressFieldFormatArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressRuleAddressFieldFormat] {
+	return pulumix.Output[[]GetAddressRuleAddressFieldFormat]{
+		OutputState: i.ToGetAddressRuleAddressFieldFormatArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAddressRuleAddressFieldFormatOutput struct{ *pulumi.OutputState }
 
 func (GetAddressRuleAddressFieldFormatOutput) ElementType() reflect.Type {
@@ -3038,6 +3387,12 @@ func (o GetAddressRuleAddressFieldFormatOutput) ToGetAddressRuleAddressFieldForm
 
 func (o GetAddressRuleAddressFieldFormatOutput) ToGetAddressRuleAddressFieldFormatOutputWithContext(ctx context.Context) GetAddressRuleAddressFieldFormatOutput {
 	return o
+}
+
+func (o GetAddressRuleAddressFieldFormatOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddressRuleAddressFieldFormat] {
+	return pulumix.Output[GetAddressRuleAddressFieldFormat]{
+		OutputState: o.OutputState,
+	}
 }
 
 // English translation of the label (for reference only - translation is not provided)
@@ -3062,6 +3417,12 @@ func (o GetAddressRuleAddressFieldFormatArrayOutput) ToGetAddressRuleAddressFiel
 
 func (o GetAddressRuleAddressFieldFormatArrayOutput) ToGetAddressRuleAddressFieldFormatArrayOutputWithContext(ctx context.Context) GetAddressRuleAddressFieldFormatArrayOutput {
 	return o
+}
+
+func (o GetAddressRuleAddressFieldFormatArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressRuleAddressFieldFormat] {
+	return pulumix.Output[[]GetAddressRuleAddressFieldFormat]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAddressRuleAddressFieldFormatArrayOutput) Index(i pulumi.IntInput) GetAddressRuleAddressFieldFormatOutput {
@@ -3107,6 +3468,12 @@ func (i GetAddressRuleAddressFieldLabelArgs) ToGetAddressRuleAddressFieldLabelOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressRuleAddressFieldLabelOutput)
 }
 
+func (i GetAddressRuleAddressFieldLabelArgs) ToOutput(ctx context.Context) pulumix.Output[GetAddressRuleAddressFieldLabel] {
+	return pulumix.Output[GetAddressRuleAddressFieldLabel]{
+		OutputState: i.ToGetAddressRuleAddressFieldLabelOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAddressRuleAddressFieldLabelArrayInput is an input type that accepts GetAddressRuleAddressFieldLabelArray and GetAddressRuleAddressFieldLabelArrayOutput values.
 // You can construct a concrete instance of `GetAddressRuleAddressFieldLabelArrayInput` via:
 //
@@ -3132,6 +3499,12 @@ func (i GetAddressRuleAddressFieldLabelArray) ToGetAddressRuleAddressFieldLabelA
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressRuleAddressFieldLabelArrayOutput)
 }
 
+func (i GetAddressRuleAddressFieldLabelArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressRuleAddressFieldLabel] {
+	return pulumix.Output[[]GetAddressRuleAddressFieldLabel]{
+		OutputState: i.ToGetAddressRuleAddressFieldLabelArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAddressRuleAddressFieldLabelOutput struct{ *pulumi.OutputState }
 
 func (GetAddressRuleAddressFieldLabelOutput) ElementType() reflect.Type {
@@ -3144,6 +3517,12 @@ func (o GetAddressRuleAddressFieldLabelOutput) ToGetAddressRuleAddressFieldLabel
 
 func (o GetAddressRuleAddressFieldLabelOutput) ToGetAddressRuleAddressFieldLabelOutputWithContext(ctx context.Context) GetAddressRuleAddressFieldLabelOutput {
 	return o
+}
+
+func (o GetAddressRuleAddressFieldLabelOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddressRuleAddressFieldLabel] {
+	return pulumix.Output[GetAddressRuleAddressFieldLabel]{
+		OutputState: o.OutputState,
+	}
 }
 
 // English translation of the label (for reference only - translation is not provided)
@@ -3168,6 +3547,12 @@ func (o GetAddressRuleAddressFieldLabelArrayOutput) ToGetAddressRuleAddressField
 
 func (o GetAddressRuleAddressFieldLabelArrayOutput) ToGetAddressRuleAddressFieldLabelArrayOutputWithContext(ctx context.Context) GetAddressRuleAddressFieldLabelArrayOutput {
 	return o
+}
+
+func (o GetAddressRuleAddressFieldLabelArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressRuleAddressFieldLabel] {
+	return pulumix.Output[[]GetAddressRuleAddressFieldLabel]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAddressRuleAddressFieldLabelArrayOutput) Index(i pulumi.IntInput) GetAddressRuleAddressFieldLabelOutput {
@@ -3209,6 +3594,12 @@ func (i GetAddressRuleContactArgs) ToGetAddressRuleContactOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressRuleContactOutput)
 }
 
+func (i GetAddressRuleContactArgs) ToOutput(ctx context.Context) pulumix.Output[GetAddressRuleContact] {
+	return pulumix.Output[GetAddressRuleContact]{
+		OutputState: i.ToGetAddressRuleContactOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAddressRuleContactArrayInput is an input type that accepts GetAddressRuleContactArray and GetAddressRuleContactArrayOutput values.
 // You can construct a concrete instance of `GetAddressRuleContactArrayInput` via:
 //
@@ -3234,6 +3625,12 @@ func (i GetAddressRuleContactArray) ToGetAddressRuleContactArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressRuleContactArrayOutput)
 }
 
+func (i GetAddressRuleContactArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressRuleContact] {
+	return pulumix.Output[[]GetAddressRuleContact]{
+		OutputState: i.ToGetAddressRuleContactArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAddressRuleContactOutput struct{ *pulumi.OutputState }
 
 func (GetAddressRuleContactOutput) ElementType() reflect.Type {
@@ -3246,6 +3643,12 @@ func (o GetAddressRuleContactOutput) ToGetAddressRuleContactOutput() GetAddressR
 
 func (o GetAddressRuleContactOutput) ToGetAddressRuleContactOutputWithContext(ctx context.Context) GetAddressRuleContactOutput {
 	return o
+}
+
+func (o GetAddressRuleContactOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddressRuleContact] {
+	return pulumix.Output[GetAddressRuleContact]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Tax type rule fields
@@ -3265,6 +3668,12 @@ func (o GetAddressRuleContactArrayOutput) ToGetAddressRuleContactArrayOutput() G
 
 func (o GetAddressRuleContactArrayOutput) ToGetAddressRuleContactArrayOutputWithContext(ctx context.Context) GetAddressRuleContactArrayOutput {
 	return o
+}
+
+func (o GetAddressRuleContactArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressRuleContact] {
+	return pulumix.Output[[]GetAddressRuleContact]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAddressRuleContactArrayOutput) Index(i pulumi.IntInput) GetAddressRuleContactOutput {
@@ -3322,6 +3731,12 @@ func (i GetAddressRuleContactFieldArgs) ToGetAddressRuleContactFieldOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressRuleContactFieldOutput)
 }
 
+func (i GetAddressRuleContactFieldArgs) ToOutput(ctx context.Context) pulumix.Output[GetAddressRuleContactField] {
+	return pulumix.Output[GetAddressRuleContactField]{
+		OutputState: i.ToGetAddressRuleContactFieldOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAddressRuleContactFieldArrayInput is an input type that accepts GetAddressRuleContactFieldArray and GetAddressRuleContactFieldArrayOutput values.
 // You can construct a concrete instance of `GetAddressRuleContactFieldArrayInput` via:
 //
@@ -3347,6 +3762,12 @@ func (i GetAddressRuleContactFieldArray) ToGetAddressRuleContactFieldArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressRuleContactFieldArrayOutput)
 }
 
+func (i GetAddressRuleContactFieldArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressRuleContactField] {
+	return pulumix.Output[[]GetAddressRuleContactField]{
+		OutputState: i.ToGetAddressRuleContactFieldArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAddressRuleContactFieldOutput struct{ *pulumi.OutputState }
 
 func (GetAddressRuleContactFieldOutput) ElementType() reflect.Type {
@@ -3359,6 +3780,12 @@ func (o GetAddressRuleContactFieldOutput) ToGetAddressRuleContactFieldOutput() G
 
 func (o GetAddressRuleContactFieldOutput) ToGetAddressRuleContactFieldOutputWithContext(ctx context.Context) GetAddressRuleContactFieldOutput {
 	return o
+}
+
+func (o GetAddressRuleContactFieldOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddressRuleContactField] {
+	return pulumix.Output[GetAddressRuleContactField]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Format information
@@ -3398,6 +3825,12 @@ func (o GetAddressRuleContactFieldArrayOutput) ToGetAddressRuleContactFieldArray
 
 func (o GetAddressRuleContactFieldArrayOutput) ToGetAddressRuleContactFieldArrayOutputWithContext(ctx context.Context) GetAddressRuleContactFieldArrayOutput {
 	return o
+}
+
+func (o GetAddressRuleContactFieldArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressRuleContactField] {
+	return pulumix.Output[[]GetAddressRuleContactField]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAddressRuleContactFieldArrayOutput) Index(i pulumi.IntInput) GetAddressRuleContactFieldOutput {
@@ -3443,6 +3876,12 @@ func (i GetAddressRuleContactFieldFormatArgs) ToGetAddressRuleContactFieldFormat
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressRuleContactFieldFormatOutput)
 }
 
+func (i GetAddressRuleContactFieldFormatArgs) ToOutput(ctx context.Context) pulumix.Output[GetAddressRuleContactFieldFormat] {
+	return pulumix.Output[GetAddressRuleContactFieldFormat]{
+		OutputState: i.ToGetAddressRuleContactFieldFormatOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAddressRuleContactFieldFormatArrayInput is an input type that accepts GetAddressRuleContactFieldFormatArray and GetAddressRuleContactFieldFormatArrayOutput values.
 // You can construct a concrete instance of `GetAddressRuleContactFieldFormatArrayInput` via:
 //
@@ -3468,6 +3907,12 @@ func (i GetAddressRuleContactFieldFormatArray) ToGetAddressRuleContactFieldForma
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressRuleContactFieldFormatArrayOutput)
 }
 
+func (i GetAddressRuleContactFieldFormatArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressRuleContactFieldFormat] {
+	return pulumix.Output[[]GetAddressRuleContactFieldFormat]{
+		OutputState: i.ToGetAddressRuleContactFieldFormatArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAddressRuleContactFieldFormatOutput struct{ *pulumi.OutputState }
 
 func (GetAddressRuleContactFieldFormatOutput) ElementType() reflect.Type {
@@ -3480,6 +3925,12 @@ func (o GetAddressRuleContactFieldFormatOutput) ToGetAddressRuleContactFieldForm
 
 func (o GetAddressRuleContactFieldFormatOutput) ToGetAddressRuleContactFieldFormatOutputWithContext(ctx context.Context) GetAddressRuleContactFieldFormatOutput {
 	return o
+}
+
+func (o GetAddressRuleContactFieldFormatOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddressRuleContactFieldFormat] {
+	return pulumix.Output[GetAddressRuleContactFieldFormat]{
+		OutputState: o.OutputState,
+	}
 }
 
 // English translation of the label (for reference only - translation is not provided)
@@ -3504,6 +3955,12 @@ func (o GetAddressRuleContactFieldFormatArrayOutput) ToGetAddressRuleContactFiel
 
 func (o GetAddressRuleContactFieldFormatArrayOutput) ToGetAddressRuleContactFieldFormatArrayOutputWithContext(ctx context.Context) GetAddressRuleContactFieldFormatArrayOutput {
 	return o
+}
+
+func (o GetAddressRuleContactFieldFormatArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressRuleContactFieldFormat] {
+	return pulumix.Output[[]GetAddressRuleContactFieldFormat]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAddressRuleContactFieldFormatArrayOutput) Index(i pulumi.IntInput) GetAddressRuleContactFieldFormatOutput {
@@ -3549,6 +4006,12 @@ func (i GetAddressRuleContactFieldLabelArgs) ToGetAddressRuleContactFieldLabelOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressRuleContactFieldLabelOutput)
 }
 
+func (i GetAddressRuleContactFieldLabelArgs) ToOutput(ctx context.Context) pulumix.Output[GetAddressRuleContactFieldLabel] {
+	return pulumix.Output[GetAddressRuleContactFieldLabel]{
+		OutputState: i.ToGetAddressRuleContactFieldLabelOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAddressRuleContactFieldLabelArrayInput is an input type that accepts GetAddressRuleContactFieldLabelArray and GetAddressRuleContactFieldLabelArrayOutput values.
 // You can construct a concrete instance of `GetAddressRuleContactFieldLabelArrayInput` via:
 //
@@ -3574,6 +4037,12 @@ func (i GetAddressRuleContactFieldLabelArray) ToGetAddressRuleContactFieldLabelA
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressRuleContactFieldLabelArrayOutput)
 }
 
+func (i GetAddressRuleContactFieldLabelArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressRuleContactFieldLabel] {
+	return pulumix.Output[[]GetAddressRuleContactFieldLabel]{
+		OutputState: i.ToGetAddressRuleContactFieldLabelArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAddressRuleContactFieldLabelOutput struct{ *pulumi.OutputState }
 
 func (GetAddressRuleContactFieldLabelOutput) ElementType() reflect.Type {
@@ -3586,6 +4055,12 @@ func (o GetAddressRuleContactFieldLabelOutput) ToGetAddressRuleContactFieldLabel
 
 func (o GetAddressRuleContactFieldLabelOutput) ToGetAddressRuleContactFieldLabelOutputWithContext(ctx context.Context) GetAddressRuleContactFieldLabelOutput {
 	return o
+}
+
+func (o GetAddressRuleContactFieldLabelOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddressRuleContactFieldLabel] {
+	return pulumix.Output[GetAddressRuleContactFieldLabel]{
+		OutputState: o.OutputState,
+	}
 }
 
 // English translation of the label (for reference only - translation is not provided)
@@ -3610,6 +4085,12 @@ func (o GetAddressRuleContactFieldLabelArrayOutput) ToGetAddressRuleContactField
 
 func (o GetAddressRuleContactFieldLabelArrayOutput) ToGetAddressRuleContactFieldLabelArrayOutputWithContext(ctx context.Context) GetAddressRuleContactFieldLabelArrayOutput {
 	return o
+}
+
+func (o GetAddressRuleContactFieldLabelArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressRuleContactFieldLabel] {
+	return pulumix.Output[[]GetAddressRuleContactFieldLabel]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAddressRuleContactFieldLabelArrayOutput) Index(i pulumi.IntInput) GetAddressRuleContactFieldLabelOutput {
@@ -3651,6 +4132,12 @@ func (i GetAddressRuleTaxArgs) ToGetAddressRuleTaxOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressRuleTaxOutput)
 }
 
+func (i GetAddressRuleTaxArgs) ToOutput(ctx context.Context) pulumix.Output[GetAddressRuleTax] {
+	return pulumix.Output[GetAddressRuleTax]{
+		OutputState: i.ToGetAddressRuleTaxOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAddressRuleTaxArrayInput is an input type that accepts GetAddressRuleTaxArray and GetAddressRuleTaxArrayOutput values.
 // You can construct a concrete instance of `GetAddressRuleTaxArrayInput` via:
 //
@@ -3676,6 +4163,12 @@ func (i GetAddressRuleTaxArray) ToGetAddressRuleTaxArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressRuleTaxArrayOutput)
 }
 
+func (i GetAddressRuleTaxArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressRuleTax] {
+	return pulumix.Output[[]GetAddressRuleTax]{
+		OutputState: i.ToGetAddressRuleTaxArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAddressRuleTaxOutput struct{ *pulumi.OutputState }
 
 func (GetAddressRuleTaxOutput) ElementType() reflect.Type {
@@ -3688,6 +4181,12 @@ func (o GetAddressRuleTaxOutput) ToGetAddressRuleTaxOutput() GetAddressRuleTaxOu
 
 func (o GetAddressRuleTaxOutput) ToGetAddressRuleTaxOutputWithContext(ctx context.Context) GetAddressRuleTaxOutput {
 	return o
+}
+
+func (o GetAddressRuleTaxOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddressRuleTax] {
+	return pulumix.Output[GetAddressRuleTax]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Tax type rule fields
@@ -3707,6 +4206,12 @@ func (o GetAddressRuleTaxArrayOutput) ToGetAddressRuleTaxArrayOutput() GetAddres
 
 func (o GetAddressRuleTaxArrayOutput) ToGetAddressRuleTaxArrayOutputWithContext(ctx context.Context) GetAddressRuleTaxArrayOutput {
 	return o
+}
+
+func (o GetAddressRuleTaxArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressRuleTax] {
+	return pulumix.Output[[]GetAddressRuleTax]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAddressRuleTaxArrayOutput) Index(i pulumi.IntInput) GetAddressRuleTaxOutput {
@@ -3764,6 +4269,12 @@ func (i GetAddressRuleTaxFieldArgs) ToGetAddressRuleTaxFieldOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressRuleTaxFieldOutput)
 }
 
+func (i GetAddressRuleTaxFieldArgs) ToOutput(ctx context.Context) pulumix.Output[GetAddressRuleTaxField] {
+	return pulumix.Output[GetAddressRuleTaxField]{
+		OutputState: i.ToGetAddressRuleTaxFieldOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAddressRuleTaxFieldArrayInput is an input type that accepts GetAddressRuleTaxFieldArray and GetAddressRuleTaxFieldArrayOutput values.
 // You can construct a concrete instance of `GetAddressRuleTaxFieldArrayInput` via:
 //
@@ -3789,6 +4300,12 @@ func (i GetAddressRuleTaxFieldArray) ToGetAddressRuleTaxFieldArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressRuleTaxFieldArrayOutput)
 }
 
+func (i GetAddressRuleTaxFieldArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressRuleTaxField] {
+	return pulumix.Output[[]GetAddressRuleTaxField]{
+		OutputState: i.ToGetAddressRuleTaxFieldArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAddressRuleTaxFieldOutput struct{ *pulumi.OutputState }
 
 func (GetAddressRuleTaxFieldOutput) ElementType() reflect.Type {
@@ -3801,6 +4318,12 @@ func (o GetAddressRuleTaxFieldOutput) ToGetAddressRuleTaxFieldOutput() GetAddres
 
 func (o GetAddressRuleTaxFieldOutput) ToGetAddressRuleTaxFieldOutputWithContext(ctx context.Context) GetAddressRuleTaxFieldOutput {
 	return o
+}
+
+func (o GetAddressRuleTaxFieldOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddressRuleTaxField] {
+	return pulumix.Output[GetAddressRuleTaxField]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Format information
@@ -3840,6 +4363,12 @@ func (o GetAddressRuleTaxFieldArrayOutput) ToGetAddressRuleTaxFieldArrayOutput()
 
 func (o GetAddressRuleTaxFieldArrayOutput) ToGetAddressRuleTaxFieldArrayOutputWithContext(ctx context.Context) GetAddressRuleTaxFieldArrayOutput {
 	return o
+}
+
+func (o GetAddressRuleTaxFieldArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressRuleTaxField] {
+	return pulumix.Output[[]GetAddressRuleTaxField]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAddressRuleTaxFieldArrayOutput) Index(i pulumi.IntInput) GetAddressRuleTaxFieldOutput {
@@ -3885,6 +4414,12 @@ func (i GetAddressRuleTaxFieldFormatArgs) ToGetAddressRuleTaxFieldFormatOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressRuleTaxFieldFormatOutput)
 }
 
+func (i GetAddressRuleTaxFieldFormatArgs) ToOutput(ctx context.Context) pulumix.Output[GetAddressRuleTaxFieldFormat] {
+	return pulumix.Output[GetAddressRuleTaxFieldFormat]{
+		OutputState: i.ToGetAddressRuleTaxFieldFormatOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAddressRuleTaxFieldFormatArrayInput is an input type that accepts GetAddressRuleTaxFieldFormatArray and GetAddressRuleTaxFieldFormatArrayOutput values.
 // You can construct a concrete instance of `GetAddressRuleTaxFieldFormatArrayInput` via:
 //
@@ -3910,6 +4445,12 @@ func (i GetAddressRuleTaxFieldFormatArray) ToGetAddressRuleTaxFieldFormatArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressRuleTaxFieldFormatArrayOutput)
 }
 
+func (i GetAddressRuleTaxFieldFormatArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressRuleTaxFieldFormat] {
+	return pulumix.Output[[]GetAddressRuleTaxFieldFormat]{
+		OutputState: i.ToGetAddressRuleTaxFieldFormatArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAddressRuleTaxFieldFormatOutput struct{ *pulumi.OutputState }
 
 func (GetAddressRuleTaxFieldFormatOutput) ElementType() reflect.Type {
@@ -3922,6 +4463,12 @@ func (o GetAddressRuleTaxFieldFormatOutput) ToGetAddressRuleTaxFieldFormatOutput
 
 func (o GetAddressRuleTaxFieldFormatOutput) ToGetAddressRuleTaxFieldFormatOutputWithContext(ctx context.Context) GetAddressRuleTaxFieldFormatOutput {
 	return o
+}
+
+func (o GetAddressRuleTaxFieldFormatOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddressRuleTaxFieldFormat] {
+	return pulumix.Output[GetAddressRuleTaxFieldFormat]{
+		OutputState: o.OutputState,
+	}
 }
 
 // English translation of the label (for reference only - translation is not provided)
@@ -3946,6 +4493,12 @@ func (o GetAddressRuleTaxFieldFormatArrayOutput) ToGetAddressRuleTaxFieldFormatA
 
 func (o GetAddressRuleTaxFieldFormatArrayOutput) ToGetAddressRuleTaxFieldFormatArrayOutputWithContext(ctx context.Context) GetAddressRuleTaxFieldFormatArrayOutput {
 	return o
+}
+
+func (o GetAddressRuleTaxFieldFormatArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressRuleTaxFieldFormat] {
+	return pulumix.Output[[]GetAddressRuleTaxFieldFormat]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAddressRuleTaxFieldFormatArrayOutput) Index(i pulumi.IntInput) GetAddressRuleTaxFieldFormatOutput {
@@ -3991,6 +4544,12 @@ func (i GetAddressRuleTaxFieldLabelArgs) ToGetAddressRuleTaxFieldLabelOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressRuleTaxFieldLabelOutput)
 }
 
+func (i GetAddressRuleTaxFieldLabelArgs) ToOutput(ctx context.Context) pulumix.Output[GetAddressRuleTaxFieldLabel] {
+	return pulumix.Output[GetAddressRuleTaxFieldLabel]{
+		OutputState: i.ToGetAddressRuleTaxFieldLabelOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAddressRuleTaxFieldLabelArrayInput is an input type that accepts GetAddressRuleTaxFieldLabelArray and GetAddressRuleTaxFieldLabelArrayOutput values.
 // You can construct a concrete instance of `GetAddressRuleTaxFieldLabelArrayInput` via:
 //
@@ -4016,6 +4575,12 @@ func (i GetAddressRuleTaxFieldLabelArray) ToGetAddressRuleTaxFieldLabelArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressRuleTaxFieldLabelArrayOutput)
 }
 
+func (i GetAddressRuleTaxFieldLabelArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressRuleTaxFieldLabel] {
+	return pulumix.Output[[]GetAddressRuleTaxFieldLabel]{
+		OutputState: i.ToGetAddressRuleTaxFieldLabelArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAddressRuleTaxFieldLabelOutput struct{ *pulumi.OutputState }
 
 func (GetAddressRuleTaxFieldLabelOutput) ElementType() reflect.Type {
@@ -4028,6 +4593,12 @@ func (o GetAddressRuleTaxFieldLabelOutput) ToGetAddressRuleTaxFieldLabelOutput()
 
 func (o GetAddressRuleTaxFieldLabelOutput) ToGetAddressRuleTaxFieldLabelOutputWithContext(ctx context.Context) GetAddressRuleTaxFieldLabelOutput {
 	return o
+}
+
+func (o GetAddressRuleTaxFieldLabelOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddressRuleTaxFieldLabel] {
+	return pulumix.Output[GetAddressRuleTaxFieldLabel]{
+		OutputState: o.OutputState,
+	}
 }
 
 // English translation of the label (for reference only - translation is not provided)
@@ -4052,6 +4623,12 @@ func (o GetAddressRuleTaxFieldLabelArrayOutput) ToGetAddressRuleTaxFieldLabelArr
 
 func (o GetAddressRuleTaxFieldLabelArrayOutput) ToGetAddressRuleTaxFieldLabelArrayOutputWithContext(ctx context.Context) GetAddressRuleTaxFieldLabelArrayOutput {
 	return o
+}
+
+func (o GetAddressRuleTaxFieldLabelArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressRuleTaxFieldLabel] {
+	return pulumix.Output[[]GetAddressRuleTaxFieldLabel]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAddressRuleTaxFieldLabelArrayOutput) Index(i pulumi.IntInput) GetAddressRuleTaxFieldLabelOutput {
@@ -4145,6 +4722,12 @@ func (i GetInvoiceBillToAddressArgs) ToGetInvoiceBillToAddressOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoiceBillToAddressOutput)
 }
 
+func (i GetInvoiceBillToAddressArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvoiceBillToAddress] {
+	return pulumix.Output[GetInvoiceBillToAddress]{
+		OutputState: i.ToGetInvoiceBillToAddressOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetInvoiceBillToAddressArrayInput is an input type that accepts GetInvoiceBillToAddressArray and GetInvoiceBillToAddressArrayOutput values.
 // You can construct a concrete instance of `GetInvoiceBillToAddressArrayInput` via:
 //
@@ -4170,6 +4753,12 @@ func (i GetInvoiceBillToAddressArray) ToGetInvoiceBillToAddressArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoiceBillToAddressArrayOutput)
 }
 
+func (i GetInvoiceBillToAddressArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoiceBillToAddress] {
+	return pulumix.Output[[]GetInvoiceBillToAddress]{
+		OutputState: i.ToGetInvoiceBillToAddressArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetInvoiceBillToAddressOutput struct{ *pulumi.OutputState }
 
 func (GetInvoiceBillToAddressOutput) ElementType() reflect.Type {
@@ -4182,6 +4771,12 @@ func (o GetInvoiceBillToAddressOutput) ToGetInvoiceBillToAddressOutput() GetInvo
 
 func (o GetInvoiceBillToAddressOutput) ToGetInvoiceBillToAddressOutputWithContext(ctx context.Context) GetInvoiceBillToAddressOutput {
 	return o
+}
+
+func (o GetInvoiceBillToAddressOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoiceBillToAddress] {
+	return pulumix.Output[GetInvoiceBillToAddress]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Address line 1
@@ -4268,6 +4863,12 @@ func (o GetInvoiceBillToAddressArrayOutput) ToGetInvoiceBillToAddressArrayOutput
 	return o
 }
 
+func (o GetInvoiceBillToAddressArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoiceBillToAddress] {
+	return pulumix.Output[[]GetInvoiceBillToAddress]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetInvoiceBillToAddressArrayOutput) Index(i pulumi.IntInput) GetInvoiceBillToAddressOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInvoiceBillToAddress {
 		return vs[0].([]GetInvoiceBillToAddress)[vs[1].(int)]
@@ -4323,6 +4924,12 @@ func (i GetInvoiceBillToAddressCountryArgs) ToGetInvoiceBillToAddressCountryOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoiceBillToAddressCountryOutput)
 }
 
+func (i GetInvoiceBillToAddressCountryArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvoiceBillToAddressCountry] {
+	return pulumix.Output[GetInvoiceBillToAddressCountry]{
+		OutputState: i.ToGetInvoiceBillToAddressCountryOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetInvoiceBillToAddressCountryArrayInput is an input type that accepts GetInvoiceBillToAddressCountryArray and GetInvoiceBillToAddressCountryArrayOutput values.
 // You can construct a concrete instance of `GetInvoiceBillToAddressCountryArrayInput` via:
 //
@@ -4348,6 +4955,12 @@ func (i GetInvoiceBillToAddressCountryArray) ToGetInvoiceBillToAddressCountryArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoiceBillToAddressCountryArrayOutput)
 }
 
+func (i GetInvoiceBillToAddressCountryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoiceBillToAddressCountry] {
+	return pulumix.Output[[]GetInvoiceBillToAddressCountry]{
+		OutputState: i.ToGetInvoiceBillToAddressCountryArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetInvoiceBillToAddressCountryOutput struct{ *pulumi.OutputState }
 
 func (GetInvoiceBillToAddressCountryOutput) ElementType() reflect.Type {
@@ -4360,6 +4973,12 @@ func (o GetInvoiceBillToAddressCountryOutput) ToGetInvoiceBillToAddressCountryOu
 
 func (o GetInvoiceBillToAddressCountryOutput) ToGetInvoiceBillToAddressCountryOutputWithContext(ctx context.Context) GetInvoiceBillToAddressCountryOutput {
 	return o
+}
+
+func (o GetInvoiceBillToAddressCountryOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoiceBillToAddressCountry] {
+	return pulumix.Output[GetInvoiceBillToAddressCountry]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Country code in ISO-3166-1 3-letter format
@@ -4399,6 +5018,12 @@ func (o GetInvoiceBillToAddressCountryArrayOutput) ToGetInvoiceBillToAddressCoun
 
 func (o GetInvoiceBillToAddressCountryArrayOutput) ToGetInvoiceBillToAddressCountryArrayOutputWithContext(ctx context.Context) GetInvoiceBillToAddressCountryArrayOutput {
 	return o
+}
+
+func (o GetInvoiceBillToAddressCountryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoiceBillToAddressCountry] {
+	return pulumix.Output[[]GetInvoiceBillToAddressCountry]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetInvoiceBillToAddressCountryArrayOutput) Index(i pulumi.IntInput) GetInvoiceBillToAddressCountryOutput {
@@ -4456,6 +5081,12 @@ func (i GetInvoiceCurrencyArgs) ToGetInvoiceCurrencyOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoiceCurrencyOutput)
 }
 
+func (i GetInvoiceCurrencyArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvoiceCurrency] {
+	return pulumix.Output[GetInvoiceCurrency]{
+		OutputState: i.ToGetInvoiceCurrencyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetInvoiceCurrencyArrayInput is an input type that accepts GetInvoiceCurrencyArray and GetInvoiceCurrencyArrayOutput values.
 // You can construct a concrete instance of `GetInvoiceCurrencyArrayInput` via:
 //
@@ -4481,6 +5112,12 @@ func (i GetInvoiceCurrencyArray) ToGetInvoiceCurrencyArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoiceCurrencyArrayOutput)
 }
 
+func (i GetInvoiceCurrencyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoiceCurrency] {
+	return pulumix.Output[[]GetInvoiceCurrency]{
+		OutputState: i.ToGetInvoiceCurrencyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetInvoiceCurrencyOutput struct{ *pulumi.OutputState }
 
 func (GetInvoiceCurrencyOutput) ElementType() reflect.Type {
@@ -4493,6 +5130,12 @@ func (o GetInvoiceCurrencyOutput) ToGetInvoiceCurrencyOutput() GetInvoiceCurrenc
 
 func (o GetInvoiceCurrencyOutput) ToGetInvoiceCurrencyOutputWithContext(ctx context.Context) GetInvoiceCurrencyOutput {
 	return o
+}
+
+func (o GetInvoiceCurrencyOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoiceCurrency] {
+	return pulumix.Output[GetInvoiceCurrency]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Currency code
@@ -4532,6 +5175,12 @@ func (o GetInvoiceCurrencyArrayOutput) ToGetInvoiceCurrencyArrayOutput() GetInvo
 
 func (o GetInvoiceCurrencyArrayOutput) ToGetInvoiceCurrencyArrayOutputWithContext(ctx context.Context) GetInvoiceCurrencyArrayOutput {
 	return o
+}
+
+func (o GetInvoiceCurrencyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoiceCurrency] {
+	return pulumix.Output[[]GetInvoiceCurrency]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetInvoiceCurrencyArrayOutput) Index(i pulumi.IntInput) GetInvoiceCurrencyOutput {
@@ -4625,6 +5274,12 @@ func (i GetInvoiceLastPaymentDetailArgs) ToGetInvoiceLastPaymentDetailOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoiceLastPaymentDetailOutput)
 }
 
+func (i GetInvoiceLastPaymentDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvoiceLastPaymentDetail] {
+	return pulumix.Output[GetInvoiceLastPaymentDetail]{
+		OutputState: i.ToGetInvoiceLastPaymentDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetInvoiceLastPaymentDetailArrayInput is an input type that accepts GetInvoiceLastPaymentDetailArray and GetInvoiceLastPaymentDetailArrayOutput values.
 // You can construct a concrete instance of `GetInvoiceLastPaymentDetailArrayInput` via:
 //
@@ -4650,6 +5305,12 @@ func (i GetInvoiceLastPaymentDetailArray) ToGetInvoiceLastPaymentDetailArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoiceLastPaymentDetailArrayOutput)
 }
 
+func (i GetInvoiceLastPaymentDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoiceLastPaymentDetail] {
+	return pulumix.Output[[]GetInvoiceLastPaymentDetail]{
+		OutputState: i.ToGetInvoiceLastPaymentDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetInvoiceLastPaymentDetailOutput struct{ *pulumi.OutputState }
 
 func (GetInvoiceLastPaymentDetailOutput) ElementType() reflect.Type {
@@ -4662,6 +5323,12 @@ func (o GetInvoiceLastPaymentDetailOutput) ToGetInvoiceLastPaymentDetailOutput()
 
 func (o GetInvoiceLastPaymentDetailOutput) ToGetInvoiceLastPaymentDetailOutputWithContext(ctx context.Context) GetInvoiceLastPaymentDetailOutput {
 	return o
+}
+
+func (o GetInvoiceLastPaymentDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoiceLastPaymentDetail] {
+	return pulumix.Output[GetInvoiceLastPaymentDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Account number of the card owner
@@ -4748,6 +5415,12 @@ func (o GetInvoiceLastPaymentDetailArrayOutput) ToGetInvoiceLastPaymentDetailArr
 	return o
 }
 
+func (o GetInvoiceLastPaymentDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoiceLastPaymentDetail] {
+	return pulumix.Output[[]GetInvoiceLastPaymentDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetInvoiceLastPaymentDetailArrayOutput) Index(i pulumi.IntInput) GetInvoiceLastPaymentDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInvoiceLastPaymentDetail {
 		return vs[0].([]GetInvoiceLastPaymentDetail)[vs[1].(int)]
@@ -4791,6 +5464,12 @@ func (i GetInvoicesFilterArgs) ToGetInvoicesFilterOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesFilterOutput)
 }
 
+func (i GetInvoicesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesFilter] {
+	return pulumix.Output[GetInvoicesFilter]{
+		OutputState: i.ToGetInvoicesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetInvoicesFilterArrayInput is an input type that accepts GetInvoicesFilterArray and GetInvoicesFilterArrayOutput values.
 // You can construct a concrete instance of `GetInvoicesFilterArrayInput` via:
 //
@@ -4816,6 +5495,12 @@ func (i GetInvoicesFilterArray) ToGetInvoicesFilterArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesFilterArrayOutput)
 }
 
+func (i GetInvoicesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesFilter] {
+	return pulumix.Output[[]GetInvoicesFilter]{
+		OutputState: i.ToGetInvoicesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetInvoicesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetInvoicesFilterOutput) ElementType() reflect.Type {
@@ -4828,6 +5513,12 @@ func (o GetInvoicesFilterOutput) ToGetInvoicesFilterOutput() GetInvoicesFilterOu
 
 func (o GetInvoicesFilterOutput) ToGetInvoicesFilterOutputWithContext(ctx context.Context) GetInvoicesFilterOutput {
 	return o
+}
+
+func (o GetInvoicesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesFilter] {
+	return pulumix.Output[GetInvoicesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Name of the currency
@@ -4855,6 +5546,12 @@ func (o GetInvoicesFilterArrayOutput) ToGetInvoicesFilterArrayOutput() GetInvoic
 
 func (o GetInvoicesFilterArrayOutput) ToGetInvoicesFilterArrayOutputWithContext(ctx context.Context) GetInvoicesFilterArrayOutput {
 	return o
+}
+
+func (o GetInvoicesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesFilter] {
+	return pulumix.Output[[]GetInvoicesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetInvoicesFilterArrayOutput) Index(i pulumi.IntInput) GetInvoicesFilterOutput {
@@ -4894,6 +5591,12 @@ func (i GetInvoicesInvoiceCollectionArgs) ToGetInvoicesInvoiceCollectionOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceCollectionOutput)
 }
 
+func (i GetInvoicesInvoiceCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceCollection] {
+	return pulumix.Output[GetInvoicesInvoiceCollection]{
+		OutputState: i.ToGetInvoicesInvoiceCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetInvoicesInvoiceCollectionArrayInput is an input type that accepts GetInvoicesInvoiceCollectionArray and GetInvoicesInvoiceCollectionArrayOutput values.
 // You can construct a concrete instance of `GetInvoicesInvoiceCollectionArrayInput` via:
 //
@@ -4919,6 +5622,12 @@ func (i GetInvoicesInvoiceCollectionArray) ToGetInvoicesInvoiceCollectionArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceCollectionArrayOutput)
 }
 
+func (i GetInvoicesInvoiceCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceCollection] {
+	return pulumix.Output[[]GetInvoicesInvoiceCollection]{
+		OutputState: i.ToGetInvoicesInvoiceCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetInvoicesInvoiceCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetInvoicesInvoiceCollectionOutput) ElementType() reflect.Type {
@@ -4931,6 +5640,12 @@ func (o GetInvoicesInvoiceCollectionOutput) ToGetInvoicesInvoiceCollectionOutput
 
 func (o GetInvoicesInvoiceCollectionOutput) ToGetInvoicesInvoiceCollectionOutputWithContext(ctx context.Context) GetInvoicesInvoiceCollectionOutput {
 	return o
+}
+
+func (o GetInvoicesInvoiceCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceCollection] {
+	return pulumix.Output[GetInvoicesInvoiceCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetInvoicesInvoiceCollectionOutput) Items() GetInvoicesInvoiceCollectionItemArrayOutput {
@@ -4949,6 +5664,12 @@ func (o GetInvoicesInvoiceCollectionArrayOutput) ToGetInvoicesInvoiceCollectionA
 
 func (o GetInvoicesInvoiceCollectionArrayOutput) ToGetInvoicesInvoiceCollectionArrayOutputWithContext(ctx context.Context) GetInvoicesInvoiceCollectionArrayOutput {
 	return o
+}
+
+func (o GetInvoicesInvoiceCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceCollection] {
+	return pulumix.Output[[]GetInvoicesInvoiceCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetInvoicesInvoiceCollectionArrayOutput) Index(i pulumi.IntInput) GetInvoicesInvoiceCollectionOutput {
@@ -5096,6 +5817,12 @@ func (i GetInvoicesInvoiceCollectionItemArgs) ToGetInvoicesInvoiceCollectionItem
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceCollectionItemOutput)
 }
 
+func (i GetInvoicesInvoiceCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceCollectionItem] {
+	return pulumix.Output[GetInvoicesInvoiceCollectionItem]{
+		OutputState: i.ToGetInvoicesInvoiceCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetInvoicesInvoiceCollectionItemArrayInput is an input type that accepts GetInvoicesInvoiceCollectionItemArray and GetInvoicesInvoiceCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetInvoicesInvoiceCollectionItemArrayInput` via:
 //
@@ -5121,6 +5848,12 @@ func (i GetInvoicesInvoiceCollectionItemArray) ToGetInvoicesInvoiceCollectionIte
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceCollectionItemArrayOutput)
 }
 
+func (i GetInvoicesInvoiceCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceCollectionItem] {
+	return pulumix.Output[[]GetInvoicesInvoiceCollectionItem]{
+		OutputState: i.ToGetInvoicesInvoiceCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetInvoicesInvoiceCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetInvoicesInvoiceCollectionItemOutput) ElementType() reflect.Type {
@@ -5133,6 +5866,12 @@ func (o GetInvoicesInvoiceCollectionItemOutput) ToGetInvoicesInvoiceCollectionIt
 
 func (o GetInvoicesInvoiceCollectionItemOutput) ToGetInvoicesInvoiceCollectionItemOutputWithContext(ctx context.Context) GetInvoicesInvoiceCollectionItemOutput {
 	return o
+}
+
+func (o GetInvoicesInvoiceCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceCollectionItem] {
+	return pulumix.Output[GetInvoicesInvoiceCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Address details model
@@ -5300,6 +6039,12 @@ func (o GetInvoicesInvoiceCollectionItemArrayOutput) ToGetInvoicesInvoiceCollect
 	return o
 }
 
+func (o GetInvoicesInvoiceCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceCollectionItem] {
+	return pulumix.Output[[]GetInvoicesInvoiceCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetInvoicesInvoiceCollectionItemArrayOutput) Index(i pulumi.IntInput) GetInvoicesInvoiceCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInvoicesInvoiceCollectionItem {
 		return vs[0].([]GetInvoicesInvoiceCollectionItem)[vs[1].(int)]
@@ -5391,6 +6136,12 @@ func (i GetInvoicesInvoiceCollectionItemBillToAddressArgs) ToGetInvoicesInvoiceC
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceCollectionItemBillToAddressOutput)
 }
 
+func (i GetInvoicesInvoiceCollectionItemBillToAddressArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceCollectionItemBillToAddress] {
+	return pulumix.Output[GetInvoicesInvoiceCollectionItemBillToAddress]{
+		OutputState: i.ToGetInvoicesInvoiceCollectionItemBillToAddressOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetInvoicesInvoiceCollectionItemBillToAddressArrayInput is an input type that accepts GetInvoicesInvoiceCollectionItemBillToAddressArray and GetInvoicesInvoiceCollectionItemBillToAddressArrayOutput values.
 // You can construct a concrete instance of `GetInvoicesInvoiceCollectionItemBillToAddressArrayInput` via:
 //
@@ -5416,6 +6167,12 @@ func (i GetInvoicesInvoiceCollectionItemBillToAddressArray) ToGetInvoicesInvoice
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceCollectionItemBillToAddressArrayOutput)
 }
 
+func (i GetInvoicesInvoiceCollectionItemBillToAddressArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceCollectionItemBillToAddress] {
+	return pulumix.Output[[]GetInvoicesInvoiceCollectionItemBillToAddress]{
+		OutputState: i.ToGetInvoicesInvoiceCollectionItemBillToAddressArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetInvoicesInvoiceCollectionItemBillToAddressOutput struct{ *pulumi.OutputState }
 
 func (GetInvoicesInvoiceCollectionItemBillToAddressOutput) ElementType() reflect.Type {
@@ -5428,6 +6185,12 @@ func (o GetInvoicesInvoiceCollectionItemBillToAddressOutput) ToGetInvoicesInvoic
 
 func (o GetInvoicesInvoiceCollectionItemBillToAddressOutput) ToGetInvoicesInvoiceCollectionItemBillToAddressOutputWithContext(ctx context.Context) GetInvoicesInvoiceCollectionItemBillToAddressOutput {
 	return o
+}
+
+func (o GetInvoicesInvoiceCollectionItemBillToAddressOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceCollectionItemBillToAddress] {
+	return pulumix.Output[GetInvoicesInvoiceCollectionItemBillToAddress]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Address line 1
@@ -5516,6 +6279,12 @@ func (o GetInvoicesInvoiceCollectionItemBillToAddressArrayOutput) ToGetInvoicesI
 	return o
 }
 
+func (o GetInvoicesInvoiceCollectionItemBillToAddressArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceCollectionItemBillToAddress] {
+	return pulumix.Output[[]GetInvoicesInvoiceCollectionItemBillToAddress]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetInvoicesInvoiceCollectionItemBillToAddressArrayOutput) Index(i pulumi.IntInput) GetInvoicesInvoiceCollectionItemBillToAddressOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInvoicesInvoiceCollectionItemBillToAddress {
 		return vs[0].([]GetInvoicesInvoiceCollectionItemBillToAddress)[vs[1].(int)]
@@ -5571,6 +6340,12 @@ func (i GetInvoicesInvoiceCollectionItemBillToAddressCountryArgs) ToGetInvoicesI
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceCollectionItemBillToAddressCountryOutput)
 }
 
+func (i GetInvoicesInvoiceCollectionItemBillToAddressCountryArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceCollectionItemBillToAddressCountry] {
+	return pulumix.Output[GetInvoicesInvoiceCollectionItemBillToAddressCountry]{
+		OutputState: i.ToGetInvoicesInvoiceCollectionItemBillToAddressCountryOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetInvoicesInvoiceCollectionItemBillToAddressCountryArrayInput is an input type that accepts GetInvoicesInvoiceCollectionItemBillToAddressCountryArray and GetInvoicesInvoiceCollectionItemBillToAddressCountryArrayOutput values.
 // You can construct a concrete instance of `GetInvoicesInvoiceCollectionItemBillToAddressCountryArrayInput` via:
 //
@@ -5596,6 +6371,12 @@ func (i GetInvoicesInvoiceCollectionItemBillToAddressCountryArray) ToGetInvoices
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceCollectionItemBillToAddressCountryArrayOutput)
 }
 
+func (i GetInvoicesInvoiceCollectionItemBillToAddressCountryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceCollectionItemBillToAddressCountry] {
+	return pulumix.Output[[]GetInvoicesInvoiceCollectionItemBillToAddressCountry]{
+		OutputState: i.ToGetInvoicesInvoiceCollectionItemBillToAddressCountryArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetInvoicesInvoiceCollectionItemBillToAddressCountryOutput struct{ *pulumi.OutputState }
 
 func (GetInvoicesInvoiceCollectionItemBillToAddressCountryOutput) ElementType() reflect.Type {
@@ -5608,6 +6389,12 @@ func (o GetInvoicesInvoiceCollectionItemBillToAddressCountryOutput) ToGetInvoice
 
 func (o GetInvoicesInvoiceCollectionItemBillToAddressCountryOutput) ToGetInvoicesInvoiceCollectionItemBillToAddressCountryOutputWithContext(ctx context.Context) GetInvoicesInvoiceCollectionItemBillToAddressCountryOutput {
 	return o
+}
+
+func (o GetInvoicesInvoiceCollectionItemBillToAddressCountryOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceCollectionItemBillToAddressCountry] {
+	return pulumix.Output[GetInvoicesInvoiceCollectionItemBillToAddressCountry]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Country code in ISO-3166-1 3-letter format
@@ -5647,6 +6434,12 @@ func (o GetInvoicesInvoiceCollectionItemBillToAddressCountryArrayOutput) ToGetIn
 
 func (o GetInvoicesInvoiceCollectionItemBillToAddressCountryArrayOutput) ToGetInvoicesInvoiceCollectionItemBillToAddressCountryArrayOutputWithContext(ctx context.Context) GetInvoicesInvoiceCollectionItemBillToAddressCountryArrayOutput {
 	return o
+}
+
+func (o GetInvoicesInvoiceCollectionItemBillToAddressCountryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceCollectionItemBillToAddressCountry] {
+	return pulumix.Output[[]GetInvoicesInvoiceCollectionItemBillToAddressCountry]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetInvoicesInvoiceCollectionItemBillToAddressCountryArrayOutput) Index(i pulumi.IntInput) GetInvoicesInvoiceCollectionItemBillToAddressCountryOutput {
@@ -5704,6 +6497,12 @@ func (i GetInvoicesInvoiceCollectionItemCurrencyArgs) ToGetInvoicesInvoiceCollec
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceCollectionItemCurrencyOutput)
 }
 
+func (i GetInvoicesInvoiceCollectionItemCurrencyArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceCollectionItemCurrency] {
+	return pulumix.Output[GetInvoicesInvoiceCollectionItemCurrency]{
+		OutputState: i.ToGetInvoicesInvoiceCollectionItemCurrencyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetInvoicesInvoiceCollectionItemCurrencyArrayInput is an input type that accepts GetInvoicesInvoiceCollectionItemCurrencyArray and GetInvoicesInvoiceCollectionItemCurrencyArrayOutput values.
 // You can construct a concrete instance of `GetInvoicesInvoiceCollectionItemCurrencyArrayInput` via:
 //
@@ -5729,6 +6528,12 @@ func (i GetInvoicesInvoiceCollectionItemCurrencyArray) ToGetInvoicesInvoiceColle
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceCollectionItemCurrencyArrayOutput)
 }
 
+func (i GetInvoicesInvoiceCollectionItemCurrencyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceCollectionItemCurrency] {
+	return pulumix.Output[[]GetInvoicesInvoiceCollectionItemCurrency]{
+		OutputState: i.ToGetInvoicesInvoiceCollectionItemCurrencyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetInvoicesInvoiceCollectionItemCurrencyOutput struct{ *pulumi.OutputState }
 
 func (GetInvoicesInvoiceCollectionItemCurrencyOutput) ElementType() reflect.Type {
@@ -5741,6 +6546,12 @@ func (o GetInvoicesInvoiceCollectionItemCurrencyOutput) ToGetInvoicesInvoiceColl
 
 func (o GetInvoicesInvoiceCollectionItemCurrencyOutput) ToGetInvoicesInvoiceCollectionItemCurrencyOutputWithContext(ctx context.Context) GetInvoicesInvoiceCollectionItemCurrencyOutput {
 	return o
+}
+
+func (o GetInvoicesInvoiceCollectionItemCurrencyOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceCollectionItemCurrency] {
+	return pulumix.Output[GetInvoicesInvoiceCollectionItemCurrency]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Currency code
@@ -5780,6 +6591,12 @@ func (o GetInvoicesInvoiceCollectionItemCurrencyArrayOutput) ToGetInvoicesInvoic
 
 func (o GetInvoicesInvoiceCollectionItemCurrencyArrayOutput) ToGetInvoicesInvoiceCollectionItemCurrencyArrayOutputWithContext(ctx context.Context) GetInvoicesInvoiceCollectionItemCurrencyArrayOutput {
 	return o
+}
+
+func (o GetInvoicesInvoiceCollectionItemCurrencyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceCollectionItemCurrency] {
+	return pulumix.Output[[]GetInvoicesInvoiceCollectionItemCurrency]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetInvoicesInvoiceCollectionItemCurrencyArrayOutput) Index(i pulumi.IntInput) GetInvoicesInvoiceCollectionItemCurrencyOutput {
@@ -5873,6 +6690,12 @@ func (i GetInvoicesInvoiceCollectionItemLastPaymentDetailArgs) ToGetInvoicesInvo
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceCollectionItemLastPaymentDetailOutput)
 }
 
+func (i GetInvoicesInvoiceCollectionItemLastPaymentDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceCollectionItemLastPaymentDetail] {
+	return pulumix.Output[GetInvoicesInvoiceCollectionItemLastPaymentDetail]{
+		OutputState: i.ToGetInvoicesInvoiceCollectionItemLastPaymentDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetInvoicesInvoiceCollectionItemLastPaymentDetailArrayInput is an input type that accepts GetInvoicesInvoiceCollectionItemLastPaymentDetailArray and GetInvoicesInvoiceCollectionItemLastPaymentDetailArrayOutput values.
 // You can construct a concrete instance of `GetInvoicesInvoiceCollectionItemLastPaymentDetailArrayInput` via:
 //
@@ -5898,6 +6721,12 @@ func (i GetInvoicesInvoiceCollectionItemLastPaymentDetailArray) ToGetInvoicesInv
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceCollectionItemLastPaymentDetailArrayOutput)
 }
 
+func (i GetInvoicesInvoiceCollectionItemLastPaymentDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceCollectionItemLastPaymentDetail] {
+	return pulumix.Output[[]GetInvoicesInvoiceCollectionItemLastPaymentDetail]{
+		OutputState: i.ToGetInvoicesInvoiceCollectionItemLastPaymentDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetInvoicesInvoiceCollectionItemLastPaymentDetailOutput struct{ *pulumi.OutputState }
 
 func (GetInvoicesInvoiceCollectionItemLastPaymentDetailOutput) ElementType() reflect.Type {
@@ -5910,6 +6739,12 @@ func (o GetInvoicesInvoiceCollectionItemLastPaymentDetailOutput) ToGetInvoicesIn
 
 func (o GetInvoicesInvoiceCollectionItemLastPaymentDetailOutput) ToGetInvoicesInvoiceCollectionItemLastPaymentDetailOutputWithContext(ctx context.Context) GetInvoicesInvoiceCollectionItemLastPaymentDetailOutput {
 	return o
+}
+
+func (o GetInvoicesInvoiceCollectionItemLastPaymentDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceCollectionItemLastPaymentDetail] {
+	return pulumix.Output[GetInvoicesInvoiceCollectionItemLastPaymentDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Account number of the card owner
@@ -5996,6 +6831,12 @@ func (o GetInvoicesInvoiceCollectionItemLastPaymentDetailArrayOutput) ToGetInvoi
 	return o
 }
 
+func (o GetInvoicesInvoiceCollectionItemLastPaymentDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceCollectionItemLastPaymentDetail] {
+	return pulumix.Output[[]GetInvoicesInvoiceCollectionItemLastPaymentDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetInvoicesInvoiceCollectionItemLastPaymentDetailArrayOutput) Index(i pulumi.IntInput) GetInvoicesInvoiceCollectionItemLastPaymentDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInvoicesInvoiceCollectionItemLastPaymentDetail {
 		return vs[0].([]GetInvoicesInvoiceCollectionItemLastPaymentDetail)[vs[1].(int)]
@@ -6067,6 +6908,12 @@ func (i GetInvoicesInvoiceLineItemArgs) ToGetInvoicesInvoiceLineItemOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceLineItemOutput)
 }
 
+func (i GetInvoicesInvoiceLineItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceLineItem] {
+	return pulumix.Output[GetInvoicesInvoiceLineItem]{
+		OutputState: i.ToGetInvoicesInvoiceLineItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetInvoicesInvoiceLineItemArrayInput is an input type that accepts GetInvoicesInvoiceLineItemArray and GetInvoicesInvoiceLineItemArrayOutput values.
 // You can construct a concrete instance of `GetInvoicesInvoiceLineItemArrayInput` via:
 //
@@ -6092,6 +6939,12 @@ func (i GetInvoicesInvoiceLineItemArray) ToGetInvoicesInvoiceLineItemArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceLineItemArrayOutput)
 }
 
+func (i GetInvoicesInvoiceLineItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceLineItem] {
+	return pulumix.Output[[]GetInvoicesInvoiceLineItem]{
+		OutputState: i.ToGetInvoicesInvoiceLineItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetInvoicesInvoiceLineItemOutput struct{ *pulumi.OutputState }
 
 func (GetInvoicesInvoiceLineItemOutput) ElementType() reflect.Type {
@@ -6104,6 +6957,12 @@ func (o GetInvoicesInvoiceLineItemOutput) ToGetInvoicesInvoiceLineItemOutput() G
 
 func (o GetInvoicesInvoiceLineItemOutput) ToGetInvoicesInvoiceLineItemOutputWithContext(ctx context.Context) GetInvoicesInvoiceLineItemOutput {
 	return o
+}
+
+func (o GetInvoicesInvoiceLineItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceLineItem] {
+	return pulumix.Output[GetInvoicesInvoiceLineItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Currency details model
@@ -6165,6 +7024,12 @@ func (o GetInvoicesInvoiceLineItemArrayOutput) ToGetInvoicesInvoiceLineItemArray
 	return o
 }
 
+func (o GetInvoicesInvoiceLineItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceLineItem] {
+	return pulumix.Output[[]GetInvoicesInvoiceLineItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetInvoicesInvoiceLineItemArrayOutput) Index(i pulumi.IntInput) GetInvoicesInvoiceLineItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInvoicesInvoiceLineItem {
 		return vs[0].([]GetInvoicesInvoiceLineItem)[vs[1].(int)]
@@ -6220,6 +7085,12 @@ func (i GetInvoicesInvoiceLineItemCurrencyArgs) ToGetInvoicesInvoiceLineItemCurr
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceLineItemCurrencyOutput)
 }
 
+func (i GetInvoicesInvoiceLineItemCurrencyArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceLineItemCurrency] {
+	return pulumix.Output[GetInvoicesInvoiceLineItemCurrency]{
+		OutputState: i.ToGetInvoicesInvoiceLineItemCurrencyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetInvoicesInvoiceLineItemCurrencyArrayInput is an input type that accepts GetInvoicesInvoiceLineItemCurrencyArray and GetInvoicesInvoiceLineItemCurrencyArrayOutput values.
 // You can construct a concrete instance of `GetInvoicesInvoiceLineItemCurrencyArrayInput` via:
 //
@@ -6245,6 +7116,12 @@ func (i GetInvoicesInvoiceLineItemCurrencyArray) ToGetInvoicesInvoiceLineItemCur
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceLineItemCurrencyArrayOutput)
 }
 
+func (i GetInvoicesInvoiceLineItemCurrencyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceLineItemCurrency] {
+	return pulumix.Output[[]GetInvoicesInvoiceLineItemCurrency]{
+		OutputState: i.ToGetInvoicesInvoiceLineItemCurrencyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetInvoicesInvoiceLineItemCurrencyOutput struct{ *pulumi.OutputState }
 
 func (GetInvoicesInvoiceLineItemCurrencyOutput) ElementType() reflect.Type {
@@ -6257,6 +7134,12 @@ func (o GetInvoicesInvoiceLineItemCurrencyOutput) ToGetInvoicesInvoiceLineItemCu
 
 func (o GetInvoicesInvoiceLineItemCurrencyOutput) ToGetInvoicesInvoiceLineItemCurrencyOutputWithContext(ctx context.Context) GetInvoicesInvoiceLineItemCurrencyOutput {
 	return o
+}
+
+func (o GetInvoicesInvoiceLineItemCurrencyOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceLineItemCurrency] {
+	return pulumix.Output[GetInvoicesInvoiceLineItemCurrency]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Currency code
@@ -6296,6 +7179,12 @@ func (o GetInvoicesInvoiceLineItemCurrencyArrayOutput) ToGetInvoicesInvoiceLineI
 
 func (o GetInvoicesInvoiceLineItemCurrencyArrayOutput) ToGetInvoicesInvoiceLineItemCurrencyArrayOutputWithContext(ctx context.Context) GetInvoicesInvoiceLineItemCurrencyArrayOutput {
 	return o
+}
+
+func (o GetInvoicesInvoiceLineItemCurrencyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceLineItemCurrency] {
+	return pulumix.Output[[]GetInvoicesInvoiceLineItemCurrency]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetInvoicesInvoiceLineItemCurrencyArrayOutput) Index(i pulumi.IntInput) GetInvoicesInvoiceLineItemCurrencyOutput {
@@ -6341,6 +7230,12 @@ func (i GetInvoicesInvoiceLinesFilterArgs) ToGetInvoicesInvoiceLinesFilterOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceLinesFilterOutput)
 }
 
+func (i GetInvoicesInvoiceLinesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceLinesFilter] {
+	return pulumix.Output[GetInvoicesInvoiceLinesFilter]{
+		OutputState: i.ToGetInvoicesInvoiceLinesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetInvoicesInvoiceLinesFilterArrayInput is an input type that accepts GetInvoicesInvoiceLinesFilterArray and GetInvoicesInvoiceLinesFilterArrayOutput values.
 // You can construct a concrete instance of `GetInvoicesInvoiceLinesFilterArrayInput` via:
 //
@@ -6366,6 +7261,12 @@ func (i GetInvoicesInvoiceLinesFilterArray) ToGetInvoicesInvoiceLinesFilterArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceLinesFilterArrayOutput)
 }
 
+func (i GetInvoicesInvoiceLinesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceLinesFilter] {
+	return pulumix.Output[[]GetInvoicesInvoiceLinesFilter]{
+		OutputState: i.ToGetInvoicesInvoiceLinesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetInvoicesInvoiceLinesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetInvoicesInvoiceLinesFilterOutput) ElementType() reflect.Type {
@@ -6378,6 +7279,12 @@ func (o GetInvoicesInvoiceLinesFilterOutput) ToGetInvoicesInvoiceLinesFilterOutp
 
 func (o GetInvoicesInvoiceLinesFilterOutput) ToGetInvoicesInvoiceLinesFilterOutputWithContext(ctx context.Context) GetInvoicesInvoiceLinesFilterOutput {
 	return o
+}
+
+func (o GetInvoicesInvoiceLinesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceLinesFilter] {
+	return pulumix.Output[GetInvoicesInvoiceLinesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Name of the currency
@@ -6405,6 +7312,12 @@ func (o GetInvoicesInvoiceLinesFilterArrayOutput) ToGetInvoicesInvoiceLinesFilte
 
 func (o GetInvoicesInvoiceLinesFilterArrayOutput) ToGetInvoicesInvoiceLinesFilterArrayOutputWithContext(ctx context.Context) GetInvoicesInvoiceLinesFilterArrayOutput {
 	return o
+}
+
+func (o GetInvoicesInvoiceLinesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceLinesFilter] {
+	return pulumix.Output[[]GetInvoicesInvoiceLinesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetInvoicesInvoiceLinesFilterArrayOutput) Index(i pulumi.IntInput) GetInvoicesInvoiceLinesFilterOutput {
@@ -6446,6 +7359,12 @@ func (i GetInvoicesInvoiceLinesInvoiceLineCollectionArgs) ToGetInvoicesInvoiceLi
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceLinesInvoiceLineCollectionOutput)
 }
 
+func (i GetInvoicesInvoiceLinesInvoiceLineCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceLinesInvoiceLineCollection] {
+	return pulumix.Output[GetInvoicesInvoiceLinesInvoiceLineCollection]{
+		OutputState: i.ToGetInvoicesInvoiceLinesInvoiceLineCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetInvoicesInvoiceLinesInvoiceLineCollectionArrayInput is an input type that accepts GetInvoicesInvoiceLinesInvoiceLineCollectionArray and GetInvoicesInvoiceLinesInvoiceLineCollectionArrayOutput values.
 // You can construct a concrete instance of `GetInvoicesInvoiceLinesInvoiceLineCollectionArrayInput` via:
 //
@@ -6471,6 +7390,12 @@ func (i GetInvoicesInvoiceLinesInvoiceLineCollectionArray) ToGetInvoicesInvoiceL
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceLinesInvoiceLineCollectionArrayOutput)
 }
 
+func (i GetInvoicesInvoiceLinesInvoiceLineCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceLinesInvoiceLineCollection] {
+	return pulumix.Output[[]GetInvoicesInvoiceLinesInvoiceLineCollection]{
+		OutputState: i.ToGetInvoicesInvoiceLinesInvoiceLineCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetInvoicesInvoiceLinesInvoiceLineCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetInvoicesInvoiceLinesInvoiceLineCollectionOutput) ElementType() reflect.Type {
@@ -6483,6 +7408,12 @@ func (o GetInvoicesInvoiceLinesInvoiceLineCollectionOutput) ToGetInvoicesInvoice
 
 func (o GetInvoicesInvoiceLinesInvoiceLineCollectionOutput) ToGetInvoicesInvoiceLinesInvoiceLineCollectionOutputWithContext(ctx context.Context) GetInvoicesInvoiceLinesInvoiceLineCollectionOutput {
 	return o
+}
+
+func (o GetInvoicesInvoiceLinesInvoiceLineCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceLinesInvoiceLineCollection] {
+	return pulumix.Output[GetInvoicesInvoiceLinesInvoiceLineCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Invoice line list elements
@@ -6504,6 +7435,12 @@ func (o GetInvoicesInvoiceLinesInvoiceLineCollectionArrayOutput) ToGetInvoicesIn
 
 func (o GetInvoicesInvoiceLinesInvoiceLineCollectionArrayOutput) ToGetInvoicesInvoiceLinesInvoiceLineCollectionArrayOutputWithContext(ctx context.Context) GetInvoicesInvoiceLinesInvoiceLineCollectionArrayOutput {
 	return o
+}
+
+func (o GetInvoicesInvoiceLinesInvoiceLineCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceLinesInvoiceLineCollection] {
+	return pulumix.Output[[]GetInvoicesInvoiceLinesInvoiceLineCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetInvoicesInvoiceLinesInvoiceLineCollectionArrayOutput) Index(i pulumi.IntInput) GetInvoicesInvoiceLinesInvoiceLineCollectionOutput {
@@ -6577,6 +7514,12 @@ func (i GetInvoicesInvoiceLinesInvoiceLineCollectionItemArgs) ToGetInvoicesInvoi
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceLinesInvoiceLineCollectionItemOutput)
 }
 
+func (i GetInvoicesInvoiceLinesInvoiceLineCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceLinesInvoiceLineCollectionItem] {
+	return pulumix.Output[GetInvoicesInvoiceLinesInvoiceLineCollectionItem]{
+		OutputState: i.ToGetInvoicesInvoiceLinesInvoiceLineCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetInvoicesInvoiceLinesInvoiceLineCollectionItemArrayInput is an input type that accepts GetInvoicesInvoiceLinesInvoiceLineCollectionItemArray and GetInvoicesInvoiceLinesInvoiceLineCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetInvoicesInvoiceLinesInvoiceLineCollectionItemArrayInput` via:
 //
@@ -6602,6 +7545,12 @@ func (i GetInvoicesInvoiceLinesInvoiceLineCollectionItemArray) ToGetInvoicesInvo
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceLinesInvoiceLineCollectionItemArrayOutput)
 }
 
+func (i GetInvoicesInvoiceLinesInvoiceLineCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceLinesInvoiceLineCollectionItem] {
+	return pulumix.Output[[]GetInvoicesInvoiceLinesInvoiceLineCollectionItem]{
+		OutputState: i.ToGetInvoicesInvoiceLinesInvoiceLineCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetInvoicesInvoiceLinesInvoiceLineCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetInvoicesInvoiceLinesInvoiceLineCollectionItemOutput) ElementType() reflect.Type {
@@ -6614,6 +7563,12 @@ func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemOutput) ToGetInvoicesInv
 
 func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemOutput) ToGetInvoicesInvoiceLinesInvoiceLineCollectionItemOutputWithContext(ctx context.Context) GetInvoicesInvoiceLinesInvoiceLineCollectionItemOutput {
 	return o
+}
+
+func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceLinesInvoiceLineCollectionItem] {
+	return pulumix.Output[GetInvoicesInvoiceLinesInvoiceLineCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Currency details model
@@ -6677,6 +7632,12 @@ func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemArrayOutput) ToGetInvoic
 	return o
 }
 
+func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceLinesInvoiceLineCollectionItem] {
+	return pulumix.Output[[]GetInvoicesInvoiceLinesInvoiceLineCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemArrayOutput) Index(i pulumi.IntInput) GetInvoicesInvoiceLinesInvoiceLineCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInvoicesInvoiceLinesInvoiceLineCollectionItem {
 		return vs[0].([]GetInvoicesInvoiceLinesInvoiceLineCollectionItem)[vs[1].(int)]
@@ -6732,6 +7693,12 @@ func (i GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyArgs) ToGetInvoi
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyOutput)
 }
 
+func (i GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrency] {
+	return pulumix.Output[GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrency]{
+		OutputState: i.ToGetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyArrayInput is an input type that accepts GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyArray and GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyArrayOutput values.
 // You can construct a concrete instance of `GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyArrayInput` via:
 //
@@ -6757,6 +7724,12 @@ func (i GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyArray) ToGetInvo
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyArrayOutput)
 }
 
+func (i GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrency] {
+	return pulumix.Output[[]GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrency]{
+		OutputState: i.ToGetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyOutput struct{ *pulumi.OutputState }
 
 func (GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyOutput) ElementType() reflect.Type {
@@ -6769,6 +7742,12 @@ func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyOutput) ToGetInv
 
 func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyOutput) ToGetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyOutputWithContext(ctx context.Context) GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyOutput {
 	return o
+}
+
+func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrency] {
+	return pulumix.Output[GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrency]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Currency code
@@ -6808,6 +7787,12 @@ func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyArrayOutput) ToG
 
 func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyArrayOutput) ToGetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyArrayOutputWithContext(ctx context.Context) GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyArrayOutput {
 	return o
+}
+
+func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrency] {
+	return pulumix.Output[[]GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrency]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyArrayOutput) Index(i pulumi.IntInput) GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyOutput {
@@ -6949,6 +7934,12 @@ func (i GetSubscriptionBillingAddressArgs) ToGetSubscriptionBillingAddressOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionBillingAddressOutput)
 }
 
+func (i GetSubscriptionBillingAddressArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionBillingAddress] {
+	return pulumix.Output[GetSubscriptionBillingAddress]{
+		OutputState: i.ToGetSubscriptionBillingAddressOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSubscriptionBillingAddressArrayInput is an input type that accepts GetSubscriptionBillingAddressArray and GetSubscriptionBillingAddressArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionBillingAddressArrayInput` via:
 //
@@ -6974,6 +7965,12 @@ func (i GetSubscriptionBillingAddressArray) ToGetSubscriptionBillingAddressArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionBillingAddressArrayOutput)
 }
 
+func (i GetSubscriptionBillingAddressArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionBillingAddress] {
+	return pulumix.Output[[]GetSubscriptionBillingAddress]{
+		OutputState: i.ToGetSubscriptionBillingAddressArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSubscriptionBillingAddressOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionBillingAddressOutput) ElementType() reflect.Type {
@@ -6986,6 +7983,12 @@ func (o GetSubscriptionBillingAddressOutput) ToGetSubscriptionBillingAddressOutp
 
 func (o GetSubscriptionBillingAddressOutput) ToGetSubscriptionBillingAddressOutputWithContext(ctx context.Context) GetSubscriptionBillingAddressOutput {
 	return o
+}
+
+func (o GetSubscriptionBillingAddressOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionBillingAddress] {
+	return pulumix.Output[GetSubscriptionBillingAddress]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Address identifier.
@@ -7132,6 +8135,12 @@ func (o GetSubscriptionBillingAddressArrayOutput) ToGetSubscriptionBillingAddres
 	return o
 }
 
+func (o GetSubscriptionBillingAddressArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionBillingAddress] {
+	return pulumix.Output[[]GetSubscriptionBillingAddress]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetSubscriptionBillingAddressArrayOutput) Index(i pulumi.IntInput) GetSubscriptionBillingAddressOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionBillingAddress {
 		return vs[0].([]GetSubscriptionBillingAddress)[vs[1].(int)]
@@ -7171,6 +8180,12 @@ func (i GetSubscriptionPaymentGatewayArgs) ToGetSubscriptionPaymentGatewayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionPaymentGatewayOutput)
 }
 
+func (i GetSubscriptionPaymentGatewayArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionPaymentGateway] {
+	return pulumix.Output[GetSubscriptionPaymentGateway]{
+		OutputState: i.ToGetSubscriptionPaymentGatewayOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSubscriptionPaymentGatewayArrayInput is an input type that accepts GetSubscriptionPaymentGatewayArray and GetSubscriptionPaymentGatewayArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionPaymentGatewayArrayInput` via:
 //
@@ -7196,6 +8211,12 @@ func (i GetSubscriptionPaymentGatewayArray) ToGetSubscriptionPaymentGatewayArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionPaymentGatewayArrayOutput)
 }
 
+func (i GetSubscriptionPaymentGatewayArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionPaymentGateway] {
+	return pulumix.Output[[]GetSubscriptionPaymentGateway]{
+		OutputState: i.ToGetSubscriptionPaymentGatewayArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSubscriptionPaymentGatewayOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionPaymentGatewayOutput) ElementType() reflect.Type {
@@ -7208,6 +8229,12 @@ func (o GetSubscriptionPaymentGatewayOutput) ToGetSubscriptionPaymentGatewayOutp
 
 func (o GetSubscriptionPaymentGatewayOutput) ToGetSubscriptionPaymentGatewayOutputWithContext(ctx context.Context) GetSubscriptionPaymentGatewayOutput {
 	return o
+}
+
+func (o GetSubscriptionPaymentGatewayOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionPaymentGateway] {
+	return pulumix.Output[GetSubscriptionPaymentGateway]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Merchant details.
@@ -7229,6 +8256,12 @@ func (o GetSubscriptionPaymentGatewayArrayOutput) ToGetSubscriptionPaymentGatewa
 
 func (o GetSubscriptionPaymentGatewayArrayOutput) ToGetSubscriptionPaymentGatewayArrayOutputWithContext(ctx context.Context) GetSubscriptionPaymentGatewayArrayOutput {
 	return o
+}
+
+func (o GetSubscriptionPaymentGatewayArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionPaymentGateway] {
+	return pulumix.Output[[]GetSubscriptionPaymentGateway]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSubscriptionPaymentGatewayArrayOutput) Index(i pulumi.IntInput) GetSubscriptionPaymentGatewayOutput {
@@ -7274,6 +8307,12 @@ func (i GetSubscriptionPaymentGatewayMerchantDefinedDataArgs) ToGetSubscriptionP
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionPaymentGatewayMerchantDefinedDataOutput)
 }
 
+func (i GetSubscriptionPaymentGatewayMerchantDefinedDataArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionPaymentGatewayMerchantDefinedData] {
+	return pulumix.Output[GetSubscriptionPaymentGatewayMerchantDefinedData]{
+		OutputState: i.ToGetSubscriptionPaymentGatewayMerchantDefinedDataOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSubscriptionPaymentGatewayMerchantDefinedDataArrayInput is an input type that accepts GetSubscriptionPaymentGatewayMerchantDefinedDataArray and GetSubscriptionPaymentGatewayMerchantDefinedDataArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionPaymentGatewayMerchantDefinedDataArrayInput` via:
 //
@@ -7299,6 +8338,12 @@ func (i GetSubscriptionPaymentGatewayMerchantDefinedDataArray) ToGetSubscription
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionPaymentGatewayMerchantDefinedDataArrayOutput)
 }
 
+func (i GetSubscriptionPaymentGatewayMerchantDefinedDataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionPaymentGatewayMerchantDefinedData] {
+	return pulumix.Output[[]GetSubscriptionPaymentGatewayMerchantDefinedData]{
+		OutputState: i.ToGetSubscriptionPaymentGatewayMerchantDefinedDataArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSubscriptionPaymentGatewayMerchantDefinedDataOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionPaymentGatewayMerchantDefinedDataOutput) ElementType() reflect.Type {
@@ -7311,6 +8356,12 @@ func (o GetSubscriptionPaymentGatewayMerchantDefinedDataOutput) ToGetSubscriptio
 
 func (o GetSubscriptionPaymentGatewayMerchantDefinedDataOutput) ToGetSubscriptionPaymentGatewayMerchantDefinedDataOutputWithContext(ctx context.Context) GetSubscriptionPaymentGatewayMerchantDefinedDataOutput {
 	return o
+}
+
+func (o GetSubscriptionPaymentGatewayMerchantDefinedDataOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionPaymentGatewayMerchantDefinedData] {
+	return pulumix.Output[GetSubscriptionPaymentGatewayMerchantDefinedData]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Cloud account name.
@@ -7335,6 +8386,12 @@ func (o GetSubscriptionPaymentGatewayMerchantDefinedDataArrayOutput) ToGetSubscr
 
 func (o GetSubscriptionPaymentGatewayMerchantDefinedDataArrayOutput) ToGetSubscriptionPaymentGatewayMerchantDefinedDataArrayOutputWithContext(ctx context.Context) GetSubscriptionPaymentGatewayMerchantDefinedDataArrayOutput {
 	return o
+}
+
+func (o GetSubscriptionPaymentGatewayMerchantDefinedDataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionPaymentGatewayMerchantDefinedData] {
+	return pulumix.Output[[]GetSubscriptionPaymentGatewayMerchantDefinedData]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSubscriptionPaymentGatewayMerchantDefinedDataArrayOutput) Index(i pulumi.IntInput) GetSubscriptionPaymentGatewayMerchantDefinedDataOutput {
@@ -7416,6 +8473,12 @@ func (i GetSubscriptionPaymentOptionArgs) ToGetSubscriptionPaymentOptionOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionPaymentOptionOutput)
 }
 
+func (i GetSubscriptionPaymentOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionPaymentOption] {
+	return pulumix.Output[GetSubscriptionPaymentOption]{
+		OutputState: i.ToGetSubscriptionPaymentOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSubscriptionPaymentOptionArrayInput is an input type that accepts GetSubscriptionPaymentOptionArray and GetSubscriptionPaymentOptionArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionPaymentOptionArrayInput` via:
 //
@@ -7441,6 +8504,12 @@ func (i GetSubscriptionPaymentOptionArray) ToGetSubscriptionPaymentOptionArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionPaymentOptionArrayOutput)
 }
 
+func (i GetSubscriptionPaymentOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionPaymentOption] {
+	return pulumix.Output[[]GetSubscriptionPaymentOption]{
+		OutputState: i.ToGetSubscriptionPaymentOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSubscriptionPaymentOptionOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionPaymentOptionOutput) ElementType() reflect.Type {
@@ -7453,6 +8522,12 @@ func (o GetSubscriptionPaymentOptionOutput) ToGetSubscriptionPaymentOptionOutput
 
 func (o GetSubscriptionPaymentOptionOutput) ToGetSubscriptionPaymentOptionOutputWithContext(ctx context.Context) GetSubscriptionPaymentOptionOutput {
 	return o
+}
+
+func (o GetSubscriptionPaymentOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionPaymentOption] {
+	return pulumix.Output[GetSubscriptionPaymentOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Credit card type.
@@ -7522,6 +8597,12 @@ func (o GetSubscriptionPaymentOptionArrayOutput) ToGetSubscriptionPaymentOptionA
 
 func (o GetSubscriptionPaymentOptionArrayOutput) ToGetSubscriptionPaymentOptionArrayOutputWithContext(ctx context.Context) GetSubscriptionPaymentOptionArrayOutput {
 	return o
+}
+
+func (o GetSubscriptionPaymentOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionPaymentOption] {
+	return pulumix.Output[[]GetSubscriptionPaymentOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSubscriptionPaymentOptionArrayOutput) Index(i pulumi.IntInput) GetSubscriptionPaymentOptionOutput {
@@ -7643,6 +8724,12 @@ func (i GetSubscriptionSubscriptionArgs) ToGetSubscriptionSubscriptionOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionSubscriptionOutput)
 }
 
+func (i GetSubscriptionSubscriptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionSubscription] {
+	return pulumix.Output[GetSubscriptionSubscription]{
+		OutputState: i.ToGetSubscriptionSubscriptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSubscriptionSubscriptionArrayInput is an input type that accepts GetSubscriptionSubscriptionArray and GetSubscriptionSubscriptionArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionSubscriptionArrayInput` via:
 //
@@ -7668,6 +8755,12 @@ func (i GetSubscriptionSubscriptionArray) ToGetSubscriptionSubscriptionArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionSubscriptionArrayOutput)
 }
 
+func (i GetSubscriptionSubscriptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionSubscription] {
+	return pulumix.Output[[]GetSubscriptionSubscription]{
+		OutputState: i.ToGetSubscriptionSubscriptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSubscriptionSubscriptionOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionSubscriptionOutput) ElementType() reflect.Type {
@@ -7680,6 +8773,12 @@ func (o GetSubscriptionSubscriptionOutput) ToGetSubscriptionSubscriptionOutput()
 
 func (o GetSubscriptionSubscriptionOutput) ToGetSubscriptionSubscriptionOutputWithContext(ctx context.Context) GetSubscriptionSubscriptionOutput {
 	return o
+}
+
+func (o GetSubscriptionSubscriptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionSubscription] {
+	return pulumix.Output[GetSubscriptionSubscription]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Account type.
@@ -7805,6 +8904,12 @@ func (o GetSubscriptionSubscriptionArrayOutput) ToGetSubscriptionSubscriptionArr
 
 func (o GetSubscriptionSubscriptionArrayOutput) ToGetSubscriptionSubscriptionArrayOutputWithContext(ctx context.Context) GetSubscriptionSubscriptionArrayOutput {
 	return o
+}
+
+func (o GetSubscriptionSubscriptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionSubscription] {
+	return pulumix.Output[[]GetSubscriptionSubscription]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSubscriptionSubscriptionArrayOutput) Index(i pulumi.IntInput) GetSubscriptionSubscriptionOutput {
@@ -7946,6 +9051,12 @@ func (i GetSubscriptionSubscriptionBillingAddressArgs) ToGetSubscriptionSubscrip
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionSubscriptionBillingAddressOutput)
 }
 
+func (i GetSubscriptionSubscriptionBillingAddressArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionSubscriptionBillingAddress] {
+	return pulumix.Output[GetSubscriptionSubscriptionBillingAddress]{
+		OutputState: i.ToGetSubscriptionSubscriptionBillingAddressOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSubscriptionSubscriptionBillingAddressArrayInput is an input type that accepts GetSubscriptionSubscriptionBillingAddressArray and GetSubscriptionSubscriptionBillingAddressArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionSubscriptionBillingAddressArrayInput` via:
 //
@@ -7971,6 +9082,12 @@ func (i GetSubscriptionSubscriptionBillingAddressArray) ToGetSubscriptionSubscri
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionSubscriptionBillingAddressArrayOutput)
 }
 
+func (i GetSubscriptionSubscriptionBillingAddressArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionSubscriptionBillingAddress] {
+	return pulumix.Output[[]GetSubscriptionSubscriptionBillingAddress]{
+		OutputState: i.ToGetSubscriptionSubscriptionBillingAddressArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSubscriptionSubscriptionBillingAddressOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionSubscriptionBillingAddressOutput) ElementType() reflect.Type {
@@ -7983,6 +9100,12 @@ func (o GetSubscriptionSubscriptionBillingAddressOutput) ToGetSubscriptionSubscr
 
 func (o GetSubscriptionSubscriptionBillingAddressOutput) ToGetSubscriptionSubscriptionBillingAddressOutputWithContext(ctx context.Context) GetSubscriptionSubscriptionBillingAddressOutput {
 	return o
+}
+
+func (o GetSubscriptionSubscriptionBillingAddressOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionSubscriptionBillingAddress] {
+	return pulumix.Output[GetSubscriptionSubscriptionBillingAddress]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Address identifier.
@@ -8129,6 +9252,12 @@ func (o GetSubscriptionSubscriptionBillingAddressArrayOutput) ToGetSubscriptionS
 	return o
 }
 
+func (o GetSubscriptionSubscriptionBillingAddressArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionSubscriptionBillingAddress] {
+	return pulumix.Output[[]GetSubscriptionSubscriptionBillingAddress]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetSubscriptionSubscriptionBillingAddressArrayOutput) Index(i pulumi.IntInput) GetSubscriptionSubscriptionBillingAddressOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionSubscriptionBillingAddress {
 		return vs[0].([]GetSubscriptionSubscriptionBillingAddress)[vs[1].(int)]
@@ -8168,6 +9297,12 @@ func (i GetSubscriptionSubscriptionPaymentGatewayArgs) ToGetSubscriptionSubscrip
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionSubscriptionPaymentGatewayOutput)
 }
 
+func (i GetSubscriptionSubscriptionPaymentGatewayArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionSubscriptionPaymentGateway] {
+	return pulumix.Output[GetSubscriptionSubscriptionPaymentGateway]{
+		OutputState: i.ToGetSubscriptionSubscriptionPaymentGatewayOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSubscriptionSubscriptionPaymentGatewayArrayInput is an input type that accepts GetSubscriptionSubscriptionPaymentGatewayArray and GetSubscriptionSubscriptionPaymentGatewayArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionSubscriptionPaymentGatewayArrayInput` via:
 //
@@ -8193,6 +9328,12 @@ func (i GetSubscriptionSubscriptionPaymentGatewayArray) ToGetSubscriptionSubscri
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionSubscriptionPaymentGatewayArrayOutput)
 }
 
+func (i GetSubscriptionSubscriptionPaymentGatewayArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionSubscriptionPaymentGateway] {
+	return pulumix.Output[[]GetSubscriptionSubscriptionPaymentGateway]{
+		OutputState: i.ToGetSubscriptionSubscriptionPaymentGatewayArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSubscriptionSubscriptionPaymentGatewayOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionSubscriptionPaymentGatewayOutput) ElementType() reflect.Type {
@@ -8205,6 +9346,12 @@ func (o GetSubscriptionSubscriptionPaymentGatewayOutput) ToGetSubscriptionSubscr
 
 func (o GetSubscriptionSubscriptionPaymentGatewayOutput) ToGetSubscriptionSubscriptionPaymentGatewayOutputWithContext(ctx context.Context) GetSubscriptionSubscriptionPaymentGatewayOutput {
 	return o
+}
+
+func (o GetSubscriptionSubscriptionPaymentGatewayOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionSubscriptionPaymentGateway] {
+	return pulumix.Output[GetSubscriptionSubscriptionPaymentGateway]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Merchant details.
@@ -8226,6 +9373,12 @@ func (o GetSubscriptionSubscriptionPaymentGatewayArrayOutput) ToGetSubscriptionS
 
 func (o GetSubscriptionSubscriptionPaymentGatewayArrayOutput) ToGetSubscriptionSubscriptionPaymentGatewayArrayOutputWithContext(ctx context.Context) GetSubscriptionSubscriptionPaymentGatewayArrayOutput {
 	return o
+}
+
+func (o GetSubscriptionSubscriptionPaymentGatewayArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionSubscriptionPaymentGateway] {
+	return pulumix.Output[[]GetSubscriptionSubscriptionPaymentGateway]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSubscriptionSubscriptionPaymentGatewayArrayOutput) Index(i pulumi.IntInput) GetSubscriptionSubscriptionPaymentGatewayOutput {
@@ -8271,6 +9424,12 @@ func (i GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs) ToGetS
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataOutput)
 }
 
+func (i GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedData] {
+	return pulumix.Output[GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedData]{
+		OutputState: i.ToGetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArrayInput is an input type that accepts GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArray and GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArrayInput` via:
 //
@@ -8296,6 +9455,12 @@ func (i GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArrayOutput)
 }
 
+func (i GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedData] {
+	return pulumix.Output[[]GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedData]{
+		OutputState: i.ToGetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataOutput) ElementType() reflect.Type {
@@ -8308,6 +9473,12 @@ func (o GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataOutput) ToGe
 
 func (o GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataOutput) ToGetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataOutputWithContext(ctx context.Context) GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataOutput {
 	return o
+}
+
+func (o GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedData] {
+	return pulumix.Output[GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedData]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Cloud account name.
@@ -8332,6 +9503,12 @@ func (o GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArrayOutput)
 
 func (o GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArrayOutput) ToGetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArrayOutputWithContext(ctx context.Context) GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArrayOutput {
 	return o
+}
+
+func (o GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedData] {
+	return pulumix.Output[[]GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedData]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArrayOutput) Index(i pulumi.IntInput) GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataOutput {
@@ -8413,6 +9590,12 @@ func (i GetSubscriptionSubscriptionPaymentOptionArgs) ToGetSubscriptionSubscript
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionSubscriptionPaymentOptionOutput)
 }
 
+func (i GetSubscriptionSubscriptionPaymentOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionSubscriptionPaymentOption] {
+	return pulumix.Output[GetSubscriptionSubscriptionPaymentOption]{
+		OutputState: i.ToGetSubscriptionSubscriptionPaymentOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSubscriptionSubscriptionPaymentOptionArrayInput is an input type that accepts GetSubscriptionSubscriptionPaymentOptionArray and GetSubscriptionSubscriptionPaymentOptionArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionSubscriptionPaymentOptionArrayInput` via:
 //
@@ -8438,6 +9621,12 @@ func (i GetSubscriptionSubscriptionPaymentOptionArray) ToGetSubscriptionSubscrip
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionSubscriptionPaymentOptionArrayOutput)
 }
 
+func (i GetSubscriptionSubscriptionPaymentOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionSubscriptionPaymentOption] {
+	return pulumix.Output[[]GetSubscriptionSubscriptionPaymentOption]{
+		OutputState: i.ToGetSubscriptionSubscriptionPaymentOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSubscriptionSubscriptionPaymentOptionOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionSubscriptionPaymentOptionOutput) ElementType() reflect.Type {
@@ -8450,6 +9639,12 @@ func (o GetSubscriptionSubscriptionPaymentOptionOutput) ToGetSubscriptionSubscri
 
 func (o GetSubscriptionSubscriptionPaymentOptionOutput) ToGetSubscriptionSubscriptionPaymentOptionOutputWithContext(ctx context.Context) GetSubscriptionSubscriptionPaymentOptionOutput {
 	return o
+}
+
+func (o GetSubscriptionSubscriptionPaymentOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionSubscriptionPaymentOption] {
+	return pulumix.Output[GetSubscriptionSubscriptionPaymentOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Credit card type.
@@ -8521,6 +9716,12 @@ func (o GetSubscriptionSubscriptionPaymentOptionArrayOutput) ToGetSubscriptionSu
 	return o
 }
 
+func (o GetSubscriptionSubscriptionPaymentOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionSubscriptionPaymentOption] {
+	return pulumix.Output[[]GetSubscriptionSubscriptionPaymentOption]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetSubscriptionSubscriptionPaymentOptionArrayOutput) Index(i pulumi.IntInput) GetSubscriptionSubscriptionPaymentOptionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionSubscriptionPaymentOption {
 		return vs[0].([]GetSubscriptionSubscriptionPaymentOption)[vs[1].(int)]
@@ -8576,6 +9777,12 @@ func (i GetSubscriptionSubscriptionTaxInfoArgs) ToGetSubscriptionSubscriptionTax
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionSubscriptionTaxInfoOutput)
 }
 
+func (i GetSubscriptionSubscriptionTaxInfoArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionSubscriptionTaxInfo] {
+	return pulumix.Output[GetSubscriptionSubscriptionTaxInfo]{
+		OutputState: i.ToGetSubscriptionSubscriptionTaxInfoOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSubscriptionSubscriptionTaxInfoArrayInput is an input type that accepts GetSubscriptionSubscriptionTaxInfoArray and GetSubscriptionSubscriptionTaxInfoArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionSubscriptionTaxInfoArrayInput` via:
 //
@@ -8601,6 +9808,12 @@ func (i GetSubscriptionSubscriptionTaxInfoArray) ToGetSubscriptionSubscriptionTa
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionSubscriptionTaxInfoArrayOutput)
 }
 
+func (i GetSubscriptionSubscriptionTaxInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionSubscriptionTaxInfo] {
+	return pulumix.Output[[]GetSubscriptionSubscriptionTaxInfo]{
+		OutputState: i.ToGetSubscriptionSubscriptionTaxInfoArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSubscriptionSubscriptionTaxInfoOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionSubscriptionTaxInfoOutput) ElementType() reflect.Type {
@@ -8613,6 +9826,12 @@ func (o GetSubscriptionSubscriptionTaxInfoOutput) ToGetSubscriptionSubscriptionT
 
 func (o GetSubscriptionSubscriptionTaxInfoOutput) ToGetSubscriptionSubscriptionTaxInfoOutputWithContext(ctx context.Context) GetSubscriptionSubscriptionTaxInfoOutput {
 	return o
+}
+
+func (o GetSubscriptionSubscriptionTaxInfoOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionSubscriptionTaxInfo] {
+	return pulumix.Output[GetSubscriptionSubscriptionTaxInfo]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Tax exemption reason code.
@@ -8652,6 +9871,12 @@ func (o GetSubscriptionSubscriptionTaxInfoArrayOutput) ToGetSubscriptionSubscrip
 
 func (o GetSubscriptionSubscriptionTaxInfoArrayOutput) ToGetSubscriptionSubscriptionTaxInfoArrayOutputWithContext(ctx context.Context) GetSubscriptionSubscriptionTaxInfoArrayOutput {
 	return o
+}
+
+func (o GetSubscriptionSubscriptionTaxInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionSubscriptionTaxInfo] {
+	return pulumix.Output[[]GetSubscriptionSubscriptionTaxInfo]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSubscriptionSubscriptionTaxInfoArrayOutput) Index(i pulumi.IntInput) GetSubscriptionSubscriptionTaxInfoOutput {
@@ -8709,6 +9934,12 @@ func (i GetSubscriptionTaxInfoArgs) ToGetSubscriptionTaxInfoOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionTaxInfoOutput)
 }
 
+func (i GetSubscriptionTaxInfoArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionTaxInfo] {
+	return pulumix.Output[GetSubscriptionTaxInfo]{
+		OutputState: i.ToGetSubscriptionTaxInfoOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSubscriptionTaxInfoArrayInput is an input type that accepts GetSubscriptionTaxInfoArray and GetSubscriptionTaxInfoArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionTaxInfoArrayInput` via:
 //
@@ -8734,6 +9965,12 @@ func (i GetSubscriptionTaxInfoArray) ToGetSubscriptionTaxInfoArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionTaxInfoArrayOutput)
 }
 
+func (i GetSubscriptionTaxInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionTaxInfo] {
+	return pulumix.Output[[]GetSubscriptionTaxInfo]{
+		OutputState: i.ToGetSubscriptionTaxInfoArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSubscriptionTaxInfoOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionTaxInfoOutput) ElementType() reflect.Type {
@@ -8746,6 +9983,12 @@ func (o GetSubscriptionTaxInfoOutput) ToGetSubscriptionTaxInfoOutput() GetSubscr
 
 func (o GetSubscriptionTaxInfoOutput) ToGetSubscriptionTaxInfoOutputWithContext(ctx context.Context) GetSubscriptionTaxInfoOutput {
 	return o
+}
+
+func (o GetSubscriptionTaxInfoOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionTaxInfo] {
+	return pulumix.Output[GetSubscriptionTaxInfo]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Tax exemption reason code.
@@ -8785,6 +10028,12 @@ func (o GetSubscriptionTaxInfoArrayOutput) ToGetSubscriptionTaxInfoArrayOutput()
 
 func (o GetSubscriptionTaxInfoArrayOutput) ToGetSubscriptionTaxInfoArrayOutputWithContext(ctx context.Context) GetSubscriptionTaxInfoArrayOutput {
 	return o
+}
+
+func (o GetSubscriptionTaxInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionTaxInfo] {
+	return pulumix.Output[[]GetSubscriptionTaxInfo]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSubscriptionTaxInfoArrayOutput) Index(i pulumi.IntInput) GetSubscriptionTaxInfoOutput {
@@ -8828,6 +10077,12 @@ func (i GetSubscriptionsFilterArgs) ToGetSubscriptionsFilterOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsFilterOutput)
 }
 
+func (i GetSubscriptionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsFilter] {
+	return pulumix.Output[GetSubscriptionsFilter]{
+		OutputState: i.ToGetSubscriptionsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSubscriptionsFilterArrayInput is an input type that accepts GetSubscriptionsFilterArray and GetSubscriptionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionsFilterArrayInput` via:
 //
@@ -8853,6 +10108,12 @@ func (i GetSubscriptionsFilterArray) ToGetSubscriptionsFilterArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsFilterArrayOutput)
 }
 
+func (i GetSubscriptionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsFilter] {
+	return pulumix.Output[[]GetSubscriptionsFilter]{
+		OutputState: i.ToGetSubscriptionsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSubscriptionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionsFilterOutput) ElementType() reflect.Type {
@@ -8865,6 +10126,12 @@ func (o GetSubscriptionsFilterOutput) ToGetSubscriptionsFilterOutput() GetSubscr
 
 func (o GetSubscriptionsFilterOutput) ToGetSubscriptionsFilterOutputWithContext(ctx context.Context) GetSubscriptionsFilterOutput {
 	return o
+}
+
+func (o GetSubscriptionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsFilter] {
+	return pulumix.Output[GetSubscriptionsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSubscriptionsFilterOutput) Name() pulumi.StringOutput {
@@ -8891,6 +10158,12 @@ func (o GetSubscriptionsFilterArrayOutput) ToGetSubscriptionsFilterArrayOutput()
 
 func (o GetSubscriptionsFilterArrayOutput) ToGetSubscriptionsFilterArrayOutputWithContext(ctx context.Context) GetSubscriptionsFilterArrayOutput {
 	return o
+}
+
+func (o GetSubscriptionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsFilter] {
+	return pulumix.Output[[]GetSubscriptionsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSubscriptionsFilterArrayOutput) Index(i pulumi.IntInput) GetSubscriptionsFilterOutput {
@@ -8930,6 +10203,12 @@ func (i GetSubscriptionsSubscriptionCollectionArgs) ToGetSubscriptionsSubscripti
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionOutput)
 }
 
+func (i GetSubscriptionsSubscriptionCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollection] {
+	return pulumix.Output[GetSubscriptionsSubscriptionCollection]{
+		OutputState: i.ToGetSubscriptionsSubscriptionCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSubscriptionsSubscriptionCollectionArrayInput is an input type that accepts GetSubscriptionsSubscriptionCollectionArray and GetSubscriptionsSubscriptionCollectionArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionCollectionArrayInput` via:
 //
@@ -8955,6 +10234,12 @@ func (i GetSubscriptionsSubscriptionCollectionArray) ToGetSubscriptionsSubscript
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionArrayOutput)
 }
 
+func (i GetSubscriptionsSubscriptionCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollection] {
+	return pulumix.Output[[]GetSubscriptionsSubscriptionCollection]{
+		OutputState: i.ToGetSubscriptionsSubscriptionCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSubscriptionsSubscriptionCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionsSubscriptionCollectionOutput) ElementType() reflect.Type {
@@ -8967,6 +10252,12 @@ func (o GetSubscriptionsSubscriptionCollectionOutput) ToGetSubscriptionsSubscrip
 
 func (o GetSubscriptionsSubscriptionCollectionOutput) ToGetSubscriptionsSubscriptionCollectionOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionCollectionOutput {
 	return o
+}
+
+func (o GetSubscriptionsSubscriptionCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollection] {
+	return pulumix.Output[GetSubscriptionsSubscriptionCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSubscriptionsSubscriptionCollectionOutput) Items() GetSubscriptionsSubscriptionCollectionItemArrayOutput {
@@ -8987,6 +10278,12 @@ func (o GetSubscriptionsSubscriptionCollectionArrayOutput) ToGetSubscriptionsSub
 
 func (o GetSubscriptionsSubscriptionCollectionArrayOutput) ToGetSubscriptionsSubscriptionCollectionArrayOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionCollectionArrayOutput {
 	return o
+}
+
+func (o GetSubscriptionsSubscriptionCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollection] {
+	return pulumix.Output[[]GetSubscriptionsSubscriptionCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSubscriptionsSubscriptionCollectionArrayOutput) Index(i pulumi.IntInput) GetSubscriptionsSubscriptionCollectionOutput {
@@ -9122,6 +10419,12 @@ func (i GetSubscriptionsSubscriptionCollectionItemArgs) ToGetSubscriptionsSubscr
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionItemOutput)
 }
 
+func (i GetSubscriptionsSubscriptionCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollectionItem] {
+	return pulumix.Output[GetSubscriptionsSubscriptionCollectionItem]{
+		OutputState: i.ToGetSubscriptionsSubscriptionCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSubscriptionsSubscriptionCollectionItemArrayInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemArray and GetSubscriptionsSubscriptionCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionCollectionItemArrayInput` via:
 //
@@ -9147,6 +10450,12 @@ func (i GetSubscriptionsSubscriptionCollectionItemArray) ToGetSubscriptionsSubsc
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionItemArrayOutput)
 }
 
+func (i GetSubscriptionsSubscriptionCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItem] {
+	return pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItem]{
+		OutputState: i.ToGetSubscriptionsSubscriptionCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSubscriptionsSubscriptionCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionsSubscriptionCollectionItemOutput) ElementType() reflect.Type {
@@ -9159,6 +10468,12 @@ func (o GetSubscriptionsSubscriptionCollectionItemOutput) ToGetSubscriptionsSubs
 
 func (o GetSubscriptionsSubscriptionCollectionItemOutput) ToGetSubscriptionsSubscriptionCollectionItemOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionCollectionItemOutput {
 	return o
+}
+
+func (o GetSubscriptionsSubscriptionCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollectionItem] {
+	return pulumix.Output[GetSubscriptionsSubscriptionCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Account type.
@@ -9312,6 +10627,12 @@ func (o GetSubscriptionsSubscriptionCollectionItemArrayOutput) ToGetSubscription
 	return o
 }
 
+func (o GetSubscriptionsSubscriptionCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItem] {
+	return pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetSubscriptionsSubscriptionCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSubscriptionsSubscriptionCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionsSubscriptionCollectionItem {
 		return vs[0].([]GetSubscriptionsSubscriptionCollectionItem)[vs[1].(int)]
@@ -9451,6 +10772,12 @@ func (i GetSubscriptionsSubscriptionCollectionItemBillingAddressArgs) ToGetSubsc
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput)
 }
 
+func (i GetSubscriptionsSubscriptionCollectionItemBillingAddressArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollectionItemBillingAddress] {
+	return pulumix.Output[GetSubscriptionsSubscriptionCollectionItemBillingAddress]{
+		OutputState: i.ToGetSubscriptionsSubscriptionCollectionItemBillingAddressOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSubscriptionsSubscriptionCollectionItemBillingAddressArrayInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemBillingAddressArray and GetSubscriptionsSubscriptionCollectionItemBillingAddressArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionCollectionItemBillingAddressArrayInput` via:
 //
@@ -9476,6 +10803,12 @@ func (i GetSubscriptionsSubscriptionCollectionItemBillingAddressArray) ToGetSubs
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionItemBillingAddressArrayOutput)
 }
 
+func (i GetSubscriptionsSubscriptionCollectionItemBillingAddressArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemBillingAddress] {
+	return pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemBillingAddress]{
+		OutputState: i.ToGetSubscriptionsSubscriptionCollectionItemBillingAddressArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) ElementType() reflect.Type {
@@ -9488,6 +10821,12 @@ func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) ToGetSub
 
 func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) ToGetSubscriptionsSubscriptionCollectionItemBillingAddressOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput {
 	return o
+}
+
+func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollectionItemBillingAddress] {
+	return pulumix.Output[GetSubscriptionsSubscriptionCollectionItemBillingAddress]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Address identifier.
@@ -9634,6 +10973,12 @@ func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressArrayOutput) ToG
 	return o
 }
 
+func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemBillingAddress] {
+	return pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemBillingAddress]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressArrayOutput) Index(i pulumi.IntInput) GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionsSubscriptionCollectionItemBillingAddress {
 		return vs[0].([]GetSubscriptionsSubscriptionCollectionItemBillingAddress)[vs[1].(int)]
@@ -9673,6 +11018,12 @@ func (i GetSubscriptionsSubscriptionCollectionItemPaymentGatewayArgs) ToGetSubsc
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionItemPaymentGatewayOutput)
 }
 
+func (i GetSubscriptionsSubscriptionCollectionItemPaymentGatewayArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollectionItemPaymentGateway] {
+	return pulumix.Output[GetSubscriptionsSubscriptionCollectionItemPaymentGateway]{
+		OutputState: i.ToGetSubscriptionsSubscriptionCollectionItemPaymentGatewayOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSubscriptionsSubscriptionCollectionItemPaymentGatewayArrayInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemPaymentGatewayArray and GetSubscriptionsSubscriptionCollectionItemPaymentGatewayArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionCollectionItemPaymentGatewayArrayInput` via:
 //
@@ -9698,6 +11049,12 @@ func (i GetSubscriptionsSubscriptionCollectionItemPaymentGatewayArray) ToGetSubs
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionItemPaymentGatewayArrayOutput)
 }
 
+func (i GetSubscriptionsSubscriptionCollectionItemPaymentGatewayArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemPaymentGateway] {
+	return pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemPaymentGateway]{
+		OutputState: i.ToGetSubscriptionsSubscriptionCollectionItemPaymentGatewayArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSubscriptionsSubscriptionCollectionItemPaymentGatewayOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionsSubscriptionCollectionItemPaymentGatewayOutput) ElementType() reflect.Type {
@@ -9710,6 +11067,12 @@ func (o GetSubscriptionsSubscriptionCollectionItemPaymentGatewayOutput) ToGetSub
 
 func (o GetSubscriptionsSubscriptionCollectionItemPaymentGatewayOutput) ToGetSubscriptionsSubscriptionCollectionItemPaymentGatewayOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionCollectionItemPaymentGatewayOutput {
 	return o
+}
+
+func (o GetSubscriptionsSubscriptionCollectionItemPaymentGatewayOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollectionItemPaymentGateway] {
+	return pulumix.Output[GetSubscriptionsSubscriptionCollectionItemPaymentGateway]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Merchant details.
@@ -9731,6 +11094,12 @@ func (o GetSubscriptionsSubscriptionCollectionItemPaymentGatewayArrayOutput) ToG
 
 func (o GetSubscriptionsSubscriptionCollectionItemPaymentGatewayArrayOutput) ToGetSubscriptionsSubscriptionCollectionItemPaymentGatewayArrayOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionCollectionItemPaymentGatewayArrayOutput {
 	return o
+}
+
+func (o GetSubscriptionsSubscriptionCollectionItemPaymentGatewayArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemPaymentGateway] {
+	return pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemPaymentGateway]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSubscriptionsSubscriptionCollectionItemPaymentGatewayArrayOutput) Index(i pulumi.IntInput) GetSubscriptionsSubscriptionCollectionItemPaymentGatewayOutput {
@@ -9776,6 +11145,12 @@ func (i GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedD
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataOutput)
 }
 
+func (i GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedData] {
+	return pulumix.Output[GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedData]{
+		OutputState: i.ToGetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataArrayInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataArray and GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataArrayInput` via:
 //
@@ -9801,6 +11176,12 @@ func (i GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedD
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataArrayOutput)
 }
 
+func (i GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedData] {
+	return pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedData]{
+		OutputState: i.ToGetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataOutput) ElementType() reflect.Type {
@@ -9813,6 +11194,12 @@ func (o GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedD
 
 func (o GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataOutput) ToGetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataOutput {
 	return o
+}
+
+func (o GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedData] {
+	return pulumix.Output[GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedData]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Cloud account name.
@@ -9841,6 +11228,12 @@ func (o GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedD
 
 func (o GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataArrayOutput) ToGetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataArrayOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataArrayOutput {
 	return o
+}
+
+func (o GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedData] {
+	return pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedData]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataArrayOutput) Index(i pulumi.IntInput) GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataOutput {
@@ -9922,6 +11315,12 @@ func (i GetSubscriptionsSubscriptionCollectionItemPaymentOptionArgs) ToGetSubscr
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionItemPaymentOptionOutput)
 }
 
+func (i GetSubscriptionsSubscriptionCollectionItemPaymentOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollectionItemPaymentOption] {
+	return pulumix.Output[GetSubscriptionsSubscriptionCollectionItemPaymentOption]{
+		OutputState: i.ToGetSubscriptionsSubscriptionCollectionItemPaymentOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSubscriptionsSubscriptionCollectionItemPaymentOptionArrayInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemPaymentOptionArray and GetSubscriptionsSubscriptionCollectionItemPaymentOptionArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionCollectionItemPaymentOptionArrayInput` via:
 //
@@ -9947,6 +11346,12 @@ func (i GetSubscriptionsSubscriptionCollectionItemPaymentOptionArray) ToGetSubsc
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionItemPaymentOptionArrayOutput)
 }
 
+func (i GetSubscriptionsSubscriptionCollectionItemPaymentOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemPaymentOption] {
+	return pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemPaymentOption]{
+		OutputState: i.ToGetSubscriptionsSubscriptionCollectionItemPaymentOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSubscriptionsSubscriptionCollectionItemPaymentOptionOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionsSubscriptionCollectionItemPaymentOptionOutput) ElementType() reflect.Type {
@@ -9959,6 +11364,12 @@ func (o GetSubscriptionsSubscriptionCollectionItemPaymentOptionOutput) ToGetSubs
 
 func (o GetSubscriptionsSubscriptionCollectionItemPaymentOptionOutput) ToGetSubscriptionsSubscriptionCollectionItemPaymentOptionOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionCollectionItemPaymentOptionOutput {
 	return o
+}
+
+func (o GetSubscriptionsSubscriptionCollectionItemPaymentOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollectionItemPaymentOption] {
+	return pulumix.Output[GetSubscriptionsSubscriptionCollectionItemPaymentOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Credit card type.
@@ -10028,6 +11439,12 @@ func (o GetSubscriptionsSubscriptionCollectionItemPaymentOptionArrayOutput) ToGe
 
 func (o GetSubscriptionsSubscriptionCollectionItemPaymentOptionArrayOutput) ToGetSubscriptionsSubscriptionCollectionItemPaymentOptionArrayOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionCollectionItemPaymentOptionArrayOutput {
 	return o
+}
+
+func (o GetSubscriptionsSubscriptionCollectionItemPaymentOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemPaymentOption] {
+	return pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemPaymentOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSubscriptionsSubscriptionCollectionItemPaymentOptionArrayOutput) Index(i pulumi.IntInput) GetSubscriptionsSubscriptionCollectionItemPaymentOptionOutput {
@@ -10149,6 +11566,12 @@ func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionArgs) ToGetSubscri
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput)
 }
 
+func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollectionItemSubscription] {
+	return pulumix.Output[GetSubscriptionsSubscriptionCollectionItemSubscription]{
+		OutputState: i.ToGetSubscriptionsSubscriptionCollectionItemSubscriptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSubscriptionsSubscriptionCollectionItemSubscriptionArrayInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemSubscriptionArray and GetSubscriptionsSubscriptionCollectionItemSubscriptionArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionCollectionItemSubscriptionArrayInput` via:
 //
@@ -10174,6 +11597,12 @@ func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionArray) ToGetSubscr
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionItemSubscriptionArrayOutput)
 }
 
+func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemSubscription] {
+	return pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemSubscription]{
+		OutputState: i.ToGetSubscriptionsSubscriptionCollectionItemSubscriptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput) ElementType() reflect.Type {
@@ -10186,6 +11615,12 @@ func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput) ToGetSubsc
 
 func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput) ToGetSubscriptionsSubscriptionCollectionItemSubscriptionOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput {
 	return o
+}
+
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollectionItemSubscription] {
+	return pulumix.Output[GetSubscriptionsSubscriptionCollectionItemSubscription]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Account type.
@@ -10315,6 +11750,12 @@ func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionArrayOutput) ToGet
 
 func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionArrayOutput) ToGetSubscriptionsSubscriptionCollectionItemSubscriptionArrayOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionCollectionItemSubscriptionArrayOutput {
 	return o
+}
+
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemSubscription] {
+	return pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemSubscription]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionArrayOutput) Index(i pulumi.IntInput) GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput {
@@ -10456,6 +11897,12 @@ func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressArgs
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput)
 }
 
+func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress] {
+	return pulumix.Output[GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress]{
+		OutputState: i.ToGetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressArrayInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressArray and GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressArrayInput` via:
 //
@@ -10481,6 +11928,12 @@ func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressArra
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressArrayOutput)
 }
 
+func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress] {
+	return pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress]{
+		OutputState: i.ToGetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) ElementType() reflect.Type {
@@ -10493,6 +11946,12 @@ func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutp
 
 func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) ToGetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput {
 	return o
+}
+
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress] {
+	return pulumix.Output[GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Address identifier.
@@ -10669,6 +12128,12 @@ func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressArra
 	return o
 }
 
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress] {
+	return pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressArrayOutput) Index(i pulumi.IntInput) GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress {
 		return vs[0].([]GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress)[vs[1].(int)]
@@ -10708,6 +12173,12 @@ func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayArgs
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayOutput)
 }
 
+func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGateway] {
+	return pulumix.Output[GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGateway]{
+		OutputState: i.ToGetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayArrayInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayArray and GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayArrayInput` via:
 //
@@ -10733,6 +12204,12 @@ func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayArra
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayArrayOutput)
 }
 
+func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGateway] {
+	return pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGateway]{
+		OutputState: i.ToGetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayOutput) ElementType() reflect.Type {
@@ -10745,6 +12222,12 @@ func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayOutp
 
 func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayOutput) ToGetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayOutput {
 	return o
+}
+
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGateway] {
+	return pulumix.Output[GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGateway]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Merchant details.
@@ -10766,6 +12249,12 @@ func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayArra
 
 func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayArrayOutput) ToGetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayArrayOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayArrayOutput {
 	return o
+}
+
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGateway] {
+	return pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGateway]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayArrayOutput) Index(i pulumi.IntInput) GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayOutput {
@@ -10811,6 +12300,12 @@ func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerc
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataOutput)
 }
 
+func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedData] {
+	return pulumix.Output[GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedData]{
+		OutputState: i.ToGetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataArrayInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataArray and GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataArrayInput` via:
 //
@@ -10836,6 +12331,12 @@ func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerc
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataArrayOutput)
 }
 
+func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedData] {
+	return pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedData]{
+		OutputState: i.ToGetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataOutput) ElementType() reflect.Type {
@@ -10848,6 +12349,12 @@ func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerc
 
 func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataOutput) ToGetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataOutput {
 	return o
+}
+
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedData] {
+	return pulumix.Output[GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedData]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Cloud account name.
@@ -10876,6 +12383,12 @@ func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerc
 
 func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataArrayOutput) ToGetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataArrayOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataArrayOutput {
 	return o
+}
+
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedData] {
+	return pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedData]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataArrayOutput) Index(i pulumi.IntInput) GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataOutput {
@@ -10957,6 +12470,12 @@ func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionArgs)
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionOutput)
 }
 
+func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOption] {
+	return pulumix.Output[GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOption]{
+		OutputState: i.ToGetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionArrayInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionArray and GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionArrayInput` via:
 //
@@ -10982,6 +12501,12 @@ func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionArrayOutput)
 }
 
+func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOption] {
+	return pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOption]{
+		OutputState: i.ToGetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionOutput) ElementType() reflect.Type {
@@ -10994,6 +12519,12 @@ func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionOutpu
 
 func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionOutput) ToGetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionOutput {
 	return o
+}
+
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOption] {
+	return pulumix.Output[GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Credit card type.
@@ -11083,6 +12614,12 @@ func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionArray
 	return o
 }
 
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOption] {
+	return pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOption]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionArrayOutput) Index(i pulumi.IntInput) GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOption {
 		return vs[0].([]GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOption)[vs[1].(int)]
@@ -11138,6 +12675,12 @@ func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoArgs) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoOutput)
 }
 
+func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfo] {
+	return pulumix.Output[GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfo]{
+		OutputState: i.ToGetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoArrayInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoArray and GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoArrayInput` via:
 //
@@ -11163,6 +12706,12 @@ func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoArray) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoArrayOutput)
 }
 
+func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfo] {
+	return pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfo]{
+		OutputState: i.ToGetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoOutput) ElementType() reflect.Type {
@@ -11175,6 +12724,12 @@ func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoOutput) ToG
 
 func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoOutput) ToGetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoOutput {
 	return o
+}
+
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfo] {
+	return pulumix.Output[GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfo]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Tax exemption reason code.
@@ -11216,6 +12771,12 @@ func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoArrayOutput
 
 func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoArrayOutput) ToGetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoArrayOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoArrayOutput {
 	return o
+}
+
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfo] {
+	return pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfo]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoArrayOutput) Index(i pulumi.IntInput) GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoOutput {
@@ -11273,6 +12834,12 @@ func (i GetSubscriptionsSubscriptionCollectionItemTaxInfoArgs) ToGetSubscription
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionItemTaxInfoOutput)
 }
 
+func (i GetSubscriptionsSubscriptionCollectionItemTaxInfoArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollectionItemTaxInfo] {
+	return pulumix.Output[GetSubscriptionsSubscriptionCollectionItemTaxInfo]{
+		OutputState: i.ToGetSubscriptionsSubscriptionCollectionItemTaxInfoOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSubscriptionsSubscriptionCollectionItemTaxInfoArrayInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemTaxInfoArray and GetSubscriptionsSubscriptionCollectionItemTaxInfoArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionCollectionItemTaxInfoArrayInput` via:
 //
@@ -11298,6 +12865,12 @@ func (i GetSubscriptionsSubscriptionCollectionItemTaxInfoArray) ToGetSubscriptio
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionItemTaxInfoArrayOutput)
 }
 
+func (i GetSubscriptionsSubscriptionCollectionItemTaxInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemTaxInfo] {
+	return pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemTaxInfo]{
+		OutputState: i.ToGetSubscriptionsSubscriptionCollectionItemTaxInfoArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSubscriptionsSubscriptionCollectionItemTaxInfoOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionsSubscriptionCollectionItemTaxInfoOutput) ElementType() reflect.Type {
@@ -11310,6 +12883,12 @@ func (o GetSubscriptionsSubscriptionCollectionItemTaxInfoOutput) ToGetSubscripti
 
 func (o GetSubscriptionsSubscriptionCollectionItemTaxInfoOutput) ToGetSubscriptionsSubscriptionCollectionItemTaxInfoOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionCollectionItemTaxInfoOutput {
 	return o
+}
+
+func (o GetSubscriptionsSubscriptionCollectionItemTaxInfoOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollectionItemTaxInfo] {
+	return pulumix.Output[GetSubscriptionsSubscriptionCollectionItemTaxInfo]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Tax exemption reason code.
@@ -11349,6 +12928,12 @@ func (o GetSubscriptionsSubscriptionCollectionItemTaxInfoArrayOutput) ToGetSubsc
 
 func (o GetSubscriptionsSubscriptionCollectionItemTaxInfoArrayOutput) ToGetSubscriptionsSubscriptionCollectionItemTaxInfoArrayOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionCollectionItemTaxInfoArrayOutput {
 	return o
+}
+
+func (o GetSubscriptionsSubscriptionCollectionItemTaxInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemTaxInfo] {
+	return pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemTaxInfo]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSubscriptionsSubscriptionCollectionItemTaxInfoArrayOutput) Index(i pulumi.IntInput) GetSubscriptionsSubscriptionCollectionItemTaxInfoOutput {

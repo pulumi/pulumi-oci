@@ -80,7 +80,7 @@ public class DataMaskRule extends com.pulumi.resources.CustomResource {
      * (Updatable) Compartment Identifier where the resource is created
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -94,7 +94,7 @@ public class DataMaskRule extends com.pulumi.resources.CustomResource {
      * (Updatable) Data Mask Categories
      * 
      */
-    @Export(name="dataMaskCategories", type=List.class, parameters={String.class})
+    @Export(name="dataMaskCategories", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> dataMaskCategories;
 
     /**
@@ -108,7 +108,7 @@ public class DataMaskRule extends com.pulumi.resources.CustomResource {
      * (Updatable) The status of the dataMaskRule.
      * 
      */
-    @Export(name="dataMaskRuleStatus", type=String.class, parameters={})
+    @Export(name="dataMaskRuleStatus", refs={String.class}, tree="[0]")
     private Output<String> dataMaskRuleStatus;
 
     /**
@@ -122,7 +122,7 @@ public class DataMaskRule extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -136,7 +136,7 @@ public class DataMaskRule extends com.pulumi.resources.CustomResource {
      * The data mask rule description. Avoid entering confidential information.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -152,7 +152,7 @@ public class DataMaskRule extends com.pulumi.resources.CustomResource {
      * Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -170,7 +170,7 @@ public class DataMaskRule extends com.pulumi.resources.CustomResource {
      * Avoid entering confidential information.
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -186,7 +186,7 @@ public class DataMaskRule extends com.pulumi.resources.CustomResource {
      * (Updatable) IAM Group id associated with the data mask rule
      * 
      */
-    @Export(name="iamGroupId", type=String.class, parameters={})
+    @Export(name="iamGroupId", refs={String.class}, tree="[0]")
     private Output<String> iamGroupId;
 
     /**
@@ -200,7 +200,7 @@ public class DataMaskRule extends com.pulumi.resources.CustomResource {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    @Export(name="lifecyleDetails", type=String.class, parameters={})
+    @Export(name="lifecyleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecyleDetails;
 
     /**
@@ -214,7 +214,7 @@ public class DataMaskRule extends com.pulumi.resources.CustomResource {
      * The current state of the DataMaskRule.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -228,7 +228,7 @@ public class DataMaskRule extends com.pulumi.resources.CustomResource {
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -242,7 +242,7 @@ public class DataMaskRule extends com.pulumi.resources.CustomResource {
      * (Updatable) Target Selection eg select ALL or select on basis of TargetResourceTypes or TargetIds.
      * 
      */
-    @Export(name="targetSelected", type=DataMaskRuleTargetSelected.class, parameters={})
+    @Export(name="targetSelected", refs={DataMaskRuleTargetSelected.class}, tree="[0]")
     private Output<DataMaskRuleTargetSelected> targetSelected;
 
     /**
@@ -256,7 +256,7 @@ public class DataMaskRule extends com.pulumi.resources.CustomResource {
      * The date and time the target was created. Format defined by RFC3339.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -270,7 +270,7 @@ public class DataMaskRule extends com.pulumi.resources.CustomResource {
      * The date and time the target was updated. Format defined by RFC3339.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

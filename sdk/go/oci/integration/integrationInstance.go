@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Integration Instance resource in Oracle Cloud Infrastructure Integration service.
@@ -405,6 +406,12 @@ func (i *IntegrationInstance) ToIntegrationInstanceOutputWithContext(ctx context
 	return pulumi.ToOutputWithContext(ctx, i).(IntegrationInstanceOutput)
 }
 
+func (i *IntegrationInstance) ToOutput(ctx context.Context) pulumix.Output[*IntegrationInstance] {
+	return pulumix.Output[*IntegrationInstance]{
+		OutputState: i.ToIntegrationInstanceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // IntegrationInstanceArrayInput is an input type that accepts IntegrationInstanceArray and IntegrationInstanceArrayOutput values.
 // You can construct a concrete instance of `IntegrationInstanceArrayInput` via:
 //
@@ -428,6 +435,12 @@ func (i IntegrationInstanceArray) ToIntegrationInstanceArrayOutput() Integration
 
 func (i IntegrationInstanceArray) ToIntegrationInstanceArrayOutputWithContext(ctx context.Context) IntegrationInstanceArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(IntegrationInstanceArrayOutput)
+}
+
+func (i IntegrationInstanceArray) ToOutput(ctx context.Context) pulumix.Output[[]*IntegrationInstance] {
+	return pulumix.Output[[]*IntegrationInstance]{
+		OutputState: i.ToIntegrationInstanceArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // IntegrationInstanceMapInput is an input type that accepts IntegrationInstanceMap and IntegrationInstanceMapOutput values.
@@ -455,6 +468,12 @@ func (i IntegrationInstanceMap) ToIntegrationInstanceMapOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(IntegrationInstanceMapOutput)
 }
 
+func (i IntegrationInstanceMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*IntegrationInstance] {
+	return pulumix.Output[map[string]*IntegrationInstance]{
+		OutputState: i.ToIntegrationInstanceMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type IntegrationInstanceOutput struct{ *pulumi.OutputState }
 
 func (IntegrationInstanceOutput) ElementType() reflect.Type {
@@ -467,6 +486,12 @@ func (o IntegrationInstanceOutput) ToIntegrationInstanceOutput() IntegrationInst
 
 func (o IntegrationInstanceOutput) ToIntegrationInstanceOutputWithContext(ctx context.Context) IntegrationInstanceOutput {
 	return o
+}
+
+func (o IntegrationInstanceOutput) ToOutput(ctx context.Context) pulumix.Output[*IntegrationInstance] {
+	return pulumix.Output[*IntegrationInstance]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) A list of alternate custom endpoints to be used for the integration instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
@@ -605,6 +630,12 @@ func (o IntegrationInstanceArrayOutput) ToIntegrationInstanceArrayOutputWithCont
 	return o
 }
 
+func (o IntegrationInstanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*IntegrationInstance] {
+	return pulumix.Output[[]*IntegrationInstance]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o IntegrationInstanceArrayOutput) Index(i pulumi.IntInput) IntegrationInstanceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IntegrationInstance {
 		return vs[0].([]*IntegrationInstance)[vs[1].(int)]
@@ -623,6 +654,12 @@ func (o IntegrationInstanceMapOutput) ToIntegrationInstanceMapOutput() Integrati
 
 func (o IntegrationInstanceMapOutput) ToIntegrationInstanceMapOutputWithContext(ctx context.Context) IntegrationInstanceMapOutput {
 	return o
+}
+
+func (o IntegrationInstanceMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*IntegrationInstance] {
+	return pulumix.Output[map[string]*IntegrationInstance]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o IntegrationInstanceMapOutput) MapIndex(k pulumi.StringInput) IntegrationInstanceOutput {

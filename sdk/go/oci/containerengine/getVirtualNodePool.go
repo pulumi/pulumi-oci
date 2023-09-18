@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Virtual Node Pool resource in Oracle Cloud Infrastructure Container Engine service.
@@ -135,6 +136,12 @@ func (o LookupVirtualNodePoolResultOutput) ToLookupVirtualNodePoolResultOutput()
 
 func (o LookupVirtualNodePoolResultOutput) ToLookupVirtualNodePoolResultOutputWithContext(ctx context.Context) LookupVirtualNodePoolResultOutput {
 	return o
+}
+
+func (o LookupVirtualNodePoolResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupVirtualNodePoolResult] {
+	return pulumix.Output[LookupVirtualNodePoolResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The cluster the virtual node pool is associated with. A virtual node pool can only be associated with one cluster.

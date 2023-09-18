@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Database Pdb Conversion History Entry resource in Oracle Cloud Infrastructure Database service.
@@ -130,6 +131,12 @@ func (o GetDatabasePdbConversionHistoryEntryResultOutput) ToGetDatabasePdbConver
 
 func (o GetDatabasePdbConversionHistoryEntryResultOutput) ToGetDatabasePdbConversionHistoryEntryResultOutputWithContext(ctx context.Context) GetDatabasePdbConversionHistoryEntryResultOutput {
 	return o
+}
+
+func (o GetDatabasePdbConversionHistoryEntryResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabasePdbConversionHistoryEntryResult] {
+	return pulumix.Output[GetDatabasePdbConversionHistoryEntryResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The operations used to convert a non-container database to a pluggable database.

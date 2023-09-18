@@ -101,7 +101,7 @@ public class NamespaceScheduledTask extends com.pulumi.resources.CustomResource 
      * Action for scheduled task.
      * 
      */
-    @Export(name="action", type=NamespaceScheduledTaskAction.class, parameters={})
+    @Export(name="action", refs={NamespaceScheduledTaskAction.class}, tree="[0]")
     private Output<NamespaceScheduledTaskAction> action;
 
     /**
@@ -115,7 +115,7 @@ public class NamespaceScheduledTask extends com.pulumi.resources.CustomResource 
      * (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -129,7 +129,7 @@ public class NamespaceScheduledTask extends com.pulumi.resources.CustomResource 
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -143,7 +143,7 @@ public class NamespaceScheduledTask extends com.pulumi.resources.CustomResource 
      * (Updatable) A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -157,7 +157,7 @@ public class NamespaceScheduledTask extends com.pulumi.resources.CustomResource 
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -171,7 +171,7 @@ public class NamespaceScheduledTask extends com.pulumi.resources.CustomResource 
      * (Updatable) Discriminator.
      * 
      */
-    @Export(name="kind", type=String.class, parameters={})
+    @Export(name="kind", refs={String.class}, tree="[0]")
     private Output<String> kind;
 
     /**
@@ -185,7 +185,7 @@ public class NamespaceScheduledTask extends com.pulumi.resources.CustomResource 
      * The Logging Analytics namespace used for the request.
      * 
      */
-    @Export(name="namespace", type=String.class, parameters={})
+    @Export(name="namespace", refs={String.class}, tree="[0]")
     private Output<String> namespace;
 
     /**
@@ -199,7 +199,7 @@ public class NamespaceScheduledTask extends com.pulumi.resources.CustomResource 
      * Number of execution occurrences.
      * 
      */
-    @Export(name="numOccurrences", type=String.class, parameters={})
+    @Export(name="numOccurrences", refs={String.class}, tree="[0]")
     private Output<String> numOccurrences;
 
     /**
@@ -213,7 +213,7 @@ public class NamespaceScheduledTask extends com.pulumi.resources.CustomResource 
      * The ManagementSavedSearch id [OCID] to be accelerated.
      * 
      */
-    @Export(name="savedSearchId", type=String.class, parameters={})
+    @Export(name="savedSearchId", refs={String.class}, tree="[0]")
     private Output<String> savedSearchId;
 
     /**
@@ -223,7 +223,7 @@ public class NamespaceScheduledTask extends com.pulumi.resources.CustomResource 
     public Output<String> savedSearchId() {
         return this.savedSearchId;
     }
-    @Export(name="scheduledTaskId", type=String.class, parameters={})
+    @Export(name="scheduledTaskId", refs={String.class}, tree="[0]")
     private Output<String> scheduledTaskId;
 
     public Output<String> scheduledTaskId() {
@@ -233,7 +233,7 @@ public class NamespaceScheduledTask extends com.pulumi.resources.CustomResource 
      * (Updatable) Schedules, typically a single schedule. Note there may only be a single schedule for SAVED_SEARCH and PURGE scheduled tasks.
      * 
      */
-    @Export(name="schedules", type=NamespaceScheduledTaskSchedules.class, parameters={})
+    @Export(name="schedules", refs={NamespaceScheduledTaskSchedules.class}, tree="[0]")
     private Output<NamespaceScheduledTaskSchedules> schedules;
 
     /**
@@ -247,7 +247,7 @@ public class NamespaceScheduledTask extends com.pulumi.resources.CustomResource 
      * The current state of the scheduled task.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -261,7 +261,7 @@ public class NamespaceScheduledTask extends com.pulumi.resources.CustomResource 
      * Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
      * 
      */
-    @Export(name="taskStatus", type=String.class, parameters={})
+    @Export(name="taskStatus", refs={String.class}, tree="[0]")
     private Output<String> taskStatus;
 
     /**
@@ -278,7 +278,7 @@ public class NamespaceScheduledTask extends com.pulumi.resources.CustomResource 
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="taskType", type=String.class, parameters={})
+    @Export(name="taskType", refs={String.class}, tree="[0]")
     private Output<String> taskType;
 
     /**
@@ -295,7 +295,7 @@ public class NamespaceScheduledTask extends com.pulumi.resources.CustomResource 
      * The date and time the scheduled task was created, in the format defined by RFC3339.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -309,7 +309,7 @@ public class NamespaceScheduledTask extends com.pulumi.resources.CustomResource 
      * The date and time the scheduled task was last updated, in the format defined by RFC3339.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -323,7 +323,7 @@ public class NamespaceScheduledTask extends com.pulumi.resources.CustomResource 
      * most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
      * 
      */
-    @Export(name="workRequestId", type=String.class, parameters={})
+    @Export(name="workRequestId", refs={String.class}, tree="[0]")
     private Output<String> workRequestId;
 
     /**

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetVirtualNetworks(ctx *pulumi.Context, args *GetVirtualNetworksArgs, opts ...pulumi.InvokeOption) (*GetVirtualNetworksResult, error) {
@@ -78,6 +79,12 @@ func (o GetVirtualNetworksResultOutput) ToGetVirtualNetworksResultOutput() GetVi
 
 func (o GetVirtualNetworksResultOutput) ToGetVirtualNetworksResultOutputWithContext(ctx context.Context) GetVirtualNetworksResultOutput {
 	return o
+}
+
+func (o GetVirtualNetworksResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNetworksResult] {
+	return pulumix.Output[GetVirtualNetworksResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVirtualNetworksResultOutput) CompartmentId() pulumi.StringOutput {

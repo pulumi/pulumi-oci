@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Media Asset resource in Oracle Cloud Infrastructure Media Services service.
@@ -324,6 +325,12 @@ func (i *MediaAsset) ToMediaAssetOutputWithContext(ctx context.Context) MediaAss
 	return pulumi.ToOutputWithContext(ctx, i).(MediaAssetOutput)
 }
 
+func (i *MediaAsset) ToOutput(ctx context.Context) pulumix.Output[*MediaAsset] {
+	return pulumix.Output[*MediaAsset]{
+		OutputState: i.ToMediaAssetOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MediaAssetArrayInput is an input type that accepts MediaAssetArray and MediaAssetArrayOutput values.
 // You can construct a concrete instance of `MediaAssetArrayInput` via:
 //
@@ -347,6 +354,12 @@ func (i MediaAssetArray) ToMediaAssetArrayOutput() MediaAssetArrayOutput {
 
 func (i MediaAssetArray) ToMediaAssetArrayOutputWithContext(ctx context.Context) MediaAssetArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(MediaAssetArrayOutput)
+}
+
+func (i MediaAssetArray) ToOutput(ctx context.Context) pulumix.Output[[]*MediaAsset] {
+	return pulumix.Output[[]*MediaAsset]{
+		OutputState: i.ToMediaAssetArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // MediaAssetMapInput is an input type that accepts MediaAssetMap and MediaAssetMapOutput values.
@@ -374,6 +387,12 @@ func (i MediaAssetMap) ToMediaAssetMapOutputWithContext(ctx context.Context) Med
 	return pulumi.ToOutputWithContext(ctx, i).(MediaAssetMapOutput)
 }
 
+func (i MediaAssetMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*MediaAsset] {
+	return pulumix.Output[map[string]*MediaAsset]{
+		OutputState: i.ToMediaAssetMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MediaAssetOutput struct{ *pulumi.OutputState }
 
 func (MediaAssetOutput) ElementType() reflect.Type {
@@ -386,6 +405,12 @@ func (o MediaAssetOutput) ToMediaAssetOutput() MediaAssetOutput {
 
 func (o MediaAssetOutput) ToMediaAssetOutputWithContext(ctx context.Context) MediaAssetOutput {
 	return o
+}
+
+func (o MediaAssetOutput) ToOutput(ctx context.Context) pulumix.Output[*MediaAsset] {
+	return pulumix.Output[*MediaAsset]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the object storage bucket where this asset is located.
@@ -515,6 +540,12 @@ func (o MediaAssetArrayOutput) ToMediaAssetArrayOutputWithContext(ctx context.Co
 	return o
 }
 
+func (o MediaAssetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*MediaAsset] {
+	return pulumix.Output[[]*MediaAsset]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o MediaAssetArrayOutput) Index(i pulumi.IntInput) MediaAssetOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *MediaAsset {
 		return vs[0].([]*MediaAsset)[vs[1].(int)]
@@ -533,6 +564,12 @@ func (o MediaAssetMapOutput) ToMediaAssetMapOutput() MediaAssetMapOutput {
 
 func (o MediaAssetMapOutput) ToMediaAssetMapOutputWithContext(ctx context.Context) MediaAssetMapOutput {
 	return o
+}
+
+func (o MediaAssetMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*MediaAsset] {
+	return pulumix.Output[map[string]*MediaAsset]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MediaAssetMapOutput) MapIndex(k pulumi.StringInput) MediaAssetOutput {

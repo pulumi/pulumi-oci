@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Recommendation resource in Oracle Cloud Infrastructure Optimizer service.
@@ -129,6 +130,12 @@ func (o LookupRecommendationResultOutput) ToLookupRecommendationResultOutput() L
 
 func (o LookupRecommendationResultOutput) ToLookupRecommendationResultOutputWithContext(ctx context.Context) LookupRecommendationResultOutput {
 	return o
+}
+
+func (o LookupRecommendationResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupRecommendationResult] {
+	return pulumix.Output[LookupRecommendationResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The unique OCID associated with the category.

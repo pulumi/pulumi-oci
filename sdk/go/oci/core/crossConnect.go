@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Cross Connect resource in Oracle Cloud Infrastructure Core service.
@@ -339,6 +340,12 @@ func (i *CrossConnect) ToCrossConnectOutputWithContext(ctx context.Context) Cros
 	return pulumi.ToOutputWithContext(ctx, i).(CrossConnectOutput)
 }
 
+func (i *CrossConnect) ToOutput(ctx context.Context) pulumix.Output[*CrossConnect] {
+	return pulumix.Output[*CrossConnect]{
+		OutputState: i.ToCrossConnectOutputWithContext(ctx).OutputState,
+	}
+}
+
 // CrossConnectArrayInput is an input type that accepts CrossConnectArray and CrossConnectArrayOutput values.
 // You can construct a concrete instance of `CrossConnectArrayInput` via:
 //
@@ -362,6 +369,12 @@ func (i CrossConnectArray) ToCrossConnectArrayOutput() CrossConnectArrayOutput {
 
 func (i CrossConnectArray) ToCrossConnectArrayOutputWithContext(ctx context.Context) CrossConnectArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CrossConnectArrayOutput)
+}
+
+func (i CrossConnectArray) ToOutput(ctx context.Context) pulumix.Output[[]*CrossConnect] {
+	return pulumix.Output[[]*CrossConnect]{
+		OutputState: i.ToCrossConnectArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // CrossConnectMapInput is an input type that accepts CrossConnectMap and CrossConnectMapOutput values.
@@ -389,6 +402,12 @@ func (i CrossConnectMap) ToCrossConnectMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(CrossConnectMapOutput)
 }
 
+func (i CrossConnectMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*CrossConnect] {
+	return pulumix.Output[map[string]*CrossConnect]{
+		OutputState: i.ToCrossConnectMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type CrossConnectOutput struct{ *pulumi.OutputState }
 
 func (CrossConnectOutput) ElementType() reflect.Type {
@@ -401,6 +420,12 @@ func (o CrossConnectOutput) ToCrossConnectOutput() CrossConnectOutput {
 
 func (o CrossConnectOutput) ToCrossConnectOutputWithContext(ctx context.Context) CrossConnectOutput {
 	return o
+}
+
+func (o CrossConnectOutput) ToOutput(ctx context.Context) pulumix.Output[*CrossConnect] {
+	return pulumix.Output[*CrossConnect]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The OCID of the compartment to contain the cross-connect.
@@ -505,6 +530,12 @@ func (o CrossConnectArrayOutput) ToCrossConnectArrayOutputWithContext(ctx contex
 	return o
 }
 
+func (o CrossConnectArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*CrossConnect] {
+	return pulumix.Output[[]*CrossConnect]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o CrossConnectArrayOutput) Index(i pulumi.IntInput) CrossConnectOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CrossConnect {
 		return vs[0].([]*CrossConnect)[vs[1].(int)]
@@ -523,6 +554,12 @@ func (o CrossConnectMapOutput) ToCrossConnectMapOutput() CrossConnectMapOutput {
 
 func (o CrossConnectMapOutput) ToCrossConnectMapOutputWithContext(ctx context.Context) CrossConnectMapOutput {
 	return o
+}
+
+func (o CrossConnectMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*CrossConnect] {
+	return pulumix.Output[map[string]*CrossConnect]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o CrossConnectMapOutput) MapIndex(k pulumi.StringInput) CrossConnectOutput {

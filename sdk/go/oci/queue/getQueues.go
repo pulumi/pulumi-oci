@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Queues in Oracle Cloud Infrastructure Queue service.
@@ -124,6 +125,12 @@ func (o GetQueuesResultOutput) ToGetQueuesResultOutput() GetQueuesResultOutput {
 
 func (o GetQueuesResultOutput) ToGetQueuesResultOutputWithContext(ctx context.Context) GetQueuesResultOutput {
 	return o
+}
+
+func (o GetQueuesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetQueuesResult] {
+	return pulumix.Output[GetQueuesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Compartment Identifier

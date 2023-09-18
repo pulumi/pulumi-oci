@@ -76,7 +76,7 @@ public class SecurityAssessment extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the compartment that contains the security assessment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -90,7 +90,7 @@ public class SecurityAssessment extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -104,7 +104,7 @@ public class SecurityAssessment extends com.pulumi.resources.CustomResource {
      * (Updatable) Description of the security assessment.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -118,7 +118,7 @@ public class SecurityAssessment extends com.pulumi.resources.CustomResource {
      * (Updatable) The display name of the security assessment.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -132,7 +132,7 @@ public class SecurityAssessment extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -146,7 +146,7 @@ public class SecurityAssessment extends com.pulumi.resources.CustomResource {
      * List containing maps as values. Example: `{&#34;Operations&#34;: [ {&#34;CostCenter&#34;: &#34;42&#34;} ] }`
      * 
      */
-    @Export(name="ignoredAssessmentIds", type=List.class, parameters={String.class})
+    @Export(name="ignoredAssessmentIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> ignoredAssessmentIds;
 
     /**
@@ -160,7 +160,7 @@ public class SecurityAssessment extends com.pulumi.resources.CustomResource {
      * List containing maps as values. Example: `{&#34;Operations&#34;: [ {&#34;CostCenter&#34;: &#34;42&#34;} ] }`
      * 
      */
-    @Export(name="ignoredTargets", type=List.class, parameters={String.class})
+    @Export(name="ignoredTargets", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> ignoredTargets;
 
     /**
@@ -174,7 +174,7 @@ public class SecurityAssessment extends com.pulumi.resources.CustomResource {
      * Indicates whether or not the security assessment is set as a baseline. This is applicable only for saved security assessments.
      * 
      */
-    @Export(name="isBaseline", type=Boolean.class, parameters={})
+    @Export(name="isBaseline", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isBaseline;
 
     /**
@@ -188,7 +188,7 @@ public class SecurityAssessment extends com.pulumi.resources.CustomResource {
      * Indicates whether or not the security assessment deviates from the baseline.
      * 
      */
-    @Export(name="isDeviatedFromBaseline", type=Boolean.class, parameters={})
+    @Export(name="isDeviatedFromBaseline", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isDeviatedFromBaseline;
 
     /**
@@ -202,7 +202,7 @@ public class SecurityAssessment extends com.pulumi.resources.CustomResource {
      * The OCID of the baseline against which the latest security assessment was compared.
      * 
      */
-    @Export(name="lastComparedBaselineId", type=String.class, parameters={})
+    @Export(name="lastComparedBaselineId", refs={String.class}, tree="[0]")
     private Output<String> lastComparedBaselineId;
 
     /**
@@ -216,7 +216,7 @@ public class SecurityAssessment extends com.pulumi.resources.CustomResource {
      * Details about the current state of the security assessment.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -230,7 +230,7 @@ public class SecurityAssessment extends com.pulumi.resources.CustomResource {
      * The summary of findings for the security assessment.
      * 
      */
-    @Export(name="link", type=String.class, parameters={})
+    @Export(name="link", refs={String.class}, tree="[0]")
     private Output<String> link;
 
     /**
@@ -246,7 +246,7 @@ public class SecurityAssessment extends com.pulumi.resources.CustomResource {
      * Allowed version strings - &#34;v1&#34; v1&#39;s version specific schedule -&lt;ss&gt; &lt;mm&gt; &lt;hh&gt; &lt;day-of-week&gt; &lt;day-of-month&gt; Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = &lt;ss&gt; (So, the allowed range for &lt;ss&gt; is [0, 59]) 2. minutes = &lt;mm&gt; (So, the allowed range for &lt;mm&gt; is [0, 59]) 3. hours = &lt;hh&gt; (So, the allowed range for &lt;hh&gt; is [0, 23]) &lt;day-of-week&gt; can be either &#39;*&#39; (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is &#39;*&#39;. When not, day of week must equal the given value &lt;day-of-month&gt; can be either &#39;*&#39; (without quotes or a number between 1 and 28) 5. No constraint introduced when it is &#39;*&#39;. When not, day of month must equal the given value
      * 
      */
-    @Export(name="schedule", type=String.class, parameters={})
+    @Export(name="schedule", refs={String.class}, tree="[0]")
     private Output<String> schedule;
 
     /**
@@ -262,7 +262,7 @@ public class SecurityAssessment extends com.pulumi.resources.CustomResource {
      * The OCID of the security assessment that is responsible for creating this scheduled save assessment.
      * 
      */
-    @Export(name="scheduleSecurityAssessmentId", type=String.class, parameters={})
+    @Export(name="scheduleSecurityAssessmentId", refs={String.class}, tree="[0]")
     private Output<String> scheduleSecurityAssessmentId;
 
     /**
@@ -276,7 +276,7 @@ public class SecurityAssessment extends com.pulumi.resources.CustomResource {
      * The current state of the security assessment.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -290,7 +290,7 @@ public class SecurityAssessment extends com.pulumi.resources.CustomResource {
      * Statistics showing the number of findings for each category grouped by risk levels for all the targets in the specified security assessment.
      * 
      */
-    @Export(name="statistics", type=List.class, parameters={SecurityAssessmentStatistic.class})
+    @Export(name="statistics", refs={List.class,SecurityAssessmentStatistic.class}, tree="[0,1]")
     private Output<List<SecurityAssessmentStatistic>> statistics;
 
     /**
@@ -304,7 +304,7 @@ public class SecurityAssessment extends com.pulumi.resources.CustomResource {
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -321,7 +321,7 @@ public class SecurityAssessment extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="targetId", type=String.class, parameters={})
+    @Export(name="targetId", refs={String.class}, tree="[0]")
     private Output<String> targetId;
 
     /**
@@ -338,7 +338,7 @@ public class SecurityAssessment extends com.pulumi.resources.CustomResource {
      * Array of database target OCIDs.
      * 
      */
-    @Export(name="targetIds", type=List.class, parameters={String.class})
+    @Export(name="targetIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> targetIds;
 
     /**
@@ -352,7 +352,7 @@ public class SecurityAssessment extends com.pulumi.resources.CustomResource {
      * The version of the target database.
      * 
      */
-    @Export(name="targetVersion", type=String.class, parameters={})
+    @Export(name="targetVersion", refs={String.class}, tree="[0]")
     private Output<String> targetVersion;
 
     /**
@@ -366,7 +366,7 @@ public class SecurityAssessment extends com.pulumi.resources.CustomResource {
      * The date and time when the security assessment was created. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -380,7 +380,7 @@ public class SecurityAssessment extends com.pulumi.resources.CustomResource {
      * The date and time when the security assessment was last run. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    @Export(name="timeLastAssessed", type=String.class, parameters={})
+    @Export(name="timeLastAssessed", refs={String.class}, tree="[0]")
     private Output<String> timeLastAssessed;
 
     /**
@@ -394,7 +394,7 @@ public class SecurityAssessment extends com.pulumi.resources.CustomResource {
      * The date and time when the security assessment was last updated. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -408,7 +408,7 @@ public class SecurityAssessment extends com.pulumi.resources.CustomResource {
      * Indicates whether the security assessment was created by system or by a user.
      * 
      */
-    @Export(name="triggeredBy", type=String.class, parameters={})
+    @Export(name="triggeredBy", refs={String.class}, tree="[0]")
     private Output<String> triggeredBy;
 
     /**
@@ -422,7 +422,7 @@ public class SecurityAssessment extends com.pulumi.resources.CustomResource {
      * The type of this security assessment. The possible types are:
      * 
      */
-    @Export(name="type", type=String.class, parameters={})
+    @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**

@@ -121,7 +121,7 @@ public class ClusterNetwork extends com.pulumi.resources.CustomResource {
      * If the parameter is provided, instances will only be placed within the HPC island and list of network blocks  that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any  HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are  not valid, an error is returned.
      * 
      */
-    @Export(name="clusterConfiguration", type=ClusterNetworkClusterConfiguration.class, parameters={})
+    @Export(name="clusterConfiguration", refs={ClusterNetworkClusterConfiguration.class}, tree="[0]")
     private Output<ClusterNetworkClusterConfiguration> clusterConfiguration;
 
     /**
@@ -137,7 +137,7 @@ public class ClusterNetwork extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -151,7 +151,7 @@ public class ClusterNetwork extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -165,7 +165,7 @@ public class ClusterNetwork extends com.pulumi.resources.CustomResource {
      * The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -179,7 +179,7 @@ public class ClusterNetwork extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -193,7 +193,7 @@ public class ClusterNetwork extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
      * 
      */
-    @Export(name="hpcIslandId", type=String.class, parameters={})
+    @Export(name="hpcIslandId", refs={String.class}, tree="[0]")
     private Output<String> hpcIslandId;
 
     /**
@@ -209,7 +209,7 @@ public class ClusterNetwork extends com.pulumi.resources.CustomResource {
      * Each cluster network can have one instance pool.
      * 
      */
-    @Export(name="instancePools", type=List.class, parameters={ClusterNetworkInstancePool.class})
+    @Export(name="instancePools", refs={List.class,ClusterNetworkInstancePool.class}, tree="[0,1]")
     private Output<List<ClusterNetworkInstancePool>> instancePools;
 
     /**
@@ -225,7 +225,7 @@ public class ClusterNetwork extends com.pulumi.resources.CustomResource {
      * The list of network block OCIDs.
      * 
      */
-    @Export(name="networkBlockIds", type=List.class, parameters={String.class})
+    @Export(name="networkBlockIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> networkBlockIds;
 
     /**
@@ -239,7 +239,7 @@ public class ClusterNetwork extends com.pulumi.resources.CustomResource {
      * The location for where the instance pools in a cluster network will place instances.
      * 
      */
-    @Export(name="placementConfiguration", type=ClusterNetworkPlacementConfiguration.class, parameters={})
+    @Export(name="placementConfiguration", refs={ClusterNetworkPlacementConfiguration.class}, tree="[0]")
     private Output<ClusterNetworkPlacementConfiguration> placementConfiguration;
 
     /**
@@ -253,7 +253,7 @@ public class ClusterNetwork extends com.pulumi.resources.CustomResource {
      * The current state of the cluster network.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -267,7 +267,7 @@ public class ClusterNetwork extends com.pulumi.resources.CustomResource {
      * The date and time the resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -281,7 +281,7 @@ public class ClusterNetwork extends com.pulumi.resources.CustomResource {
      * The date and time the resource was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

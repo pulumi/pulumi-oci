@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -50,6 +51,12 @@ func (i GetInstanceAgentPluginsFilterArgs) ToGetInstanceAgentPluginsFilterOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceAgentPluginsFilterOutput)
 }
 
+func (i GetInstanceAgentPluginsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetInstanceAgentPluginsFilter] {
+	return pulumix.Output[GetInstanceAgentPluginsFilter]{
+		OutputState: i.ToGetInstanceAgentPluginsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetInstanceAgentPluginsFilterArrayInput is an input type that accepts GetInstanceAgentPluginsFilterArray and GetInstanceAgentPluginsFilterArrayOutput values.
 // You can construct a concrete instance of `GetInstanceAgentPluginsFilterArrayInput` via:
 //
@@ -75,6 +82,12 @@ func (i GetInstanceAgentPluginsFilterArray) ToGetInstanceAgentPluginsFilterArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceAgentPluginsFilterArrayOutput)
 }
 
+func (i GetInstanceAgentPluginsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInstanceAgentPluginsFilter] {
+	return pulumix.Output[[]GetInstanceAgentPluginsFilter]{
+		OutputState: i.ToGetInstanceAgentPluginsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetInstanceAgentPluginsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetInstanceAgentPluginsFilterOutput) ElementType() reflect.Type {
@@ -87,6 +100,12 @@ func (o GetInstanceAgentPluginsFilterOutput) ToGetInstanceAgentPluginsFilterOutp
 
 func (o GetInstanceAgentPluginsFilterOutput) ToGetInstanceAgentPluginsFilterOutputWithContext(ctx context.Context) GetInstanceAgentPluginsFilterOutput {
 	return o
+}
+
+func (o GetInstanceAgentPluginsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstanceAgentPluginsFilter] {
+	return pulumix.Output[GetInstanceAgentPluginsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The plugin name
@@ -114,6 +133,12 @@ func (o GetInstanceAgentPluginsFilterArrayOutput) ToGetInstanceAgentPluginsFilte
 
 func (o GetInstanceAgentPluginsFilterArrayOutput) ToGetInstanceAgentPluginsFilterArrayOutputWithContext(ctx context.Context) GetInstanceAgentPluginsFilterArrayOutput {
 	return o
+}
+
+func (o GetInstanceAgentPluginsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInstanceAgentPluginsFilter] {
+	return pulumix.Output[[]GetInstanceAgentPluginsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetInstanceAgentPluginsFilterArrayOutput) Index(i pulumi.IntInput) GetInstanceAgentPluginsFilterOutput {
@@ -167,6 +192,12 @@ func (i GetInstanceAgentPluginsInstanceAgentPluginArgs) ToGetInstanceAgentPlugin
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceAgentPluginsInstanceAgentPluginOutput)
 }
 
+func (i GetInstanceAgentPluginsInstanceAgentPluginArgs) ToOutput(ctx context.Context) pulumix.Output[GetInstanceAgentPluginsInstanceAgentPlugin] {
+	return pulumix.Output[GetInstanceAgentPluginsInstanceAgentPlugin]{
+		OutputState: i.ToGetInstanceAgentPluginsInstanceAgentPluginOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetInstanceAgentPluginsInstanceAgentPluginArrayInput is an input type that accepts GetInstanceAgentPluginsInstanceAgentPluginArray and GetInstanceAgentPluginsInstanceAgentPluginArrayOutput values.
 // You can construct a concrete instance of `GetInstanceAgentPluginsInstanceAgentPluginArrayInput` via:
 //
@@ -192,6 +223,12 @@ func (i GetInstanceAgentPluginsInstanceAgentPluginArray) ToGetInstanceAgentPlugi
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceAgentPluginsInstanceAgentPluginArrayOutput)
 }
 
+func (i GetInstanceAgentPluginsInstanceAgentPluginArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInstanceAgentPluginsInstanceAgentPlugin] {
+	return pulumix.Output[[]GetInstanceAgentPluginsInstanceAgentPlugin]{
+		OutputState: i.ToGetInstanceAgentPluginsInstanceAgentPluginArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetInstanceAgentPluginsInstanceAgentPluginOutput struct{ *pulumi.OutputState }
 
 func (GetInstanceAgentPluginsInstanceAgentPluginOutput) ElementType() reflect.Type {
@@ -204,6 +241,12 @@ func (o GetInstanceAgentPluginsInstanceAgentPluginOutput) ToGetInstanceAgentPlug
 
 func (o GetInstanceAgentPluginsInstanceAgentPluginOutput) ToGetInstanceAgentPluginsInstanceAgentPluginOutputWithContext(ctx context.Context) GetInstanceAgentPluginsInstanceAgentPluginOutput {
 	return o
+}
+
+func (o GetInstanceAgentPluginsInstanceAgentPluginOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstanceAgentPluginsInstanceAgentPlugin] {
+	return pulumix.Output[GetInstanceAgentPluginsInstanceAgentPlugin]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The optional message from the agent plugin
@@ -238,6 +281,12 @@ func (o GetInstanceAgentPluginsInstanceAgentPluginArrayOutput) ToGetInstanceAgen
 
 func (o GetInstanceAgentPluginsInstanceAgentPluginArrayOutput) ToGetInstanceAgentPluginsInstanceAgentPluginArrayOutputWithContext(ctx context.Context) GetInstanceAgentPluginsInstanceAgentPluginArrayOutput {
 	return o
+}
+
+func (o GetInstanceAgentPluginsInstanceAgentPluginArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInstanceAgentPluginsInstanceAgentPlugin] {
+	return pulumix.Output[[]GetInstanceAgentPluginsInstanceAgentPlugin]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetInstanceAgentPluginsInstanceAgentPluginArrayOutput) Index(i pulumi.IntInput) GetInstanceAgentPluginsInstanceAgentPluginOutput {
@@ -291,6 +340,12 @@ func (i GetInstanceAvailablePluginAvailablePluginArgs) ToGetInstanceAvailablePlu
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceAvailablePluginAvailablePluginOutput)
 }
 
+func (i GetInstanceAvailablePluginAvailablePluginArgs) ToOutput(ctx context.Context) pulumix.Output[GetInstanceAvailablePluginAvailablePlugin] {
+	return pulumix.Output[GetInstanceAvailablePluginAvailablePlugin]{
+		OutputState: i.ToGetInstanceAvailablePluginAvailablePluginOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetInstanceAvailablePluginAvailablePluginArrayInput is an input type that accepts GetInstanceAvailablePluginAvailablePluginArray and GetInstanceAvailablePluginAvailablePluginArrayOutput values.
 // You can construct a concrete instance of `GetInstanceAvailablePluginAvailablePluginArrayInput` via:
 //
@@ -316,6 +371,12 @@ func (i GetInstanceAvailablePluginAvailablePluginArray) ToGetInstanceAvailablePl
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceAvailablePluginAvailablePluginArrayOutput)
 }
 
+func (i GetInstanceAvailablePluginAvailablePluginArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInstanceAvailablePluginAvailablePlugin] {
+	return pulumix.Output[[]GetInstanceAvailablePluginAvailablePlugin]{
+		OutputState: i.ToGetInstanceAvailablePluginAvailablePluginArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetInstanceAvailablePluginAvailablePluginOutput struct{ *pulumi.OutputState }
 
 func (GetInstanceAvailablePluginAvailablePluginOutput) ElementType() reflect.Type {
@@ -328,6 +389,12 @@ func (o GetInstanceAvailablePluginAvailablePluginOutput) ToGetInstanceAvailableP
 
 func (o GetInstanceAvailablePluginAvailablePluginOutput) ToGetInstanceAvailablePluginAvailablePluginOutputWithContext(ctx context.Context) GetInstanceAvailablePluginAvailablePluginOutput {
 	return o
+}
+
+func (o GetInstanceAvailablePluginAvailablePluginOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstanceAvailablePluginAvailablePlugin] {
+	return pulumix.Output[GetInstanceAvailablePluginAvailablePlugin]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Is the plugin enabled or disabled by default
@@ -362,6 +429,12 @@ func (o GetInstanceAvailablePluginAvailablePluginArrayOutput) ToGetInstanceAvail
 
 func (o GetInstanceAvailablePluginAvailablePluginArrayOutput) ToGetInstanceAvailablePluginAvailablePluginArrayOutputWithContext(ctx context.Context) GetInstanceAvailablePluginAvailablePluginArrayOutput {
 	return o
+}
+
+func (o GetInstanceAvailablePluginAvailablePluginArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInstanceAvailablePluginAvailablePlugin] {
+	return pulumix.Output[[]GetInstanceAvailablePluginAvailablePlugin]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetInstanceAvailablePluginAvailablePluginArrayOutput) Index(i pulumi.IntInput) GetInstanceAvailablePluginAvailablePluginOutput {
@@ -407,6 +480,12 @@ func (i GetInstanceAvailablePluginFilterArgs) ToGetInstanceAvailablePluginFilter
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceAvailablePluginFilterOutput)
 }
 
+func (i GetInstanceAvailablePluginFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetInstanceAvailablePluginFilter] {
+	return pulumix.Output[GetInstanceAvailablePluginFilter]{
+		OutputState: i.ToGetInstanceAvailablePluginFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetInstanceAvailablePluginFilterArrayInput is an input type that accepts GetInstanceAvailablePluginFilterArray and GetInstanceAvailablePluginFilterArrayOutput values.
 // You can construct a concrete instance of `GetInstanceAvailablePluginFilterArrayInput` via:
 //
@@ -432,6 +511,12 @@ func (i GetInstanceAvailablePluginFilterArray) ToGetInstanceAvailablePluginFilte
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceAvailablePluginFilterArrayOutput)
 }
 
+func (i GetInstanceAvailablePluginFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInstanceAvailablePluginFilter] {
+	return pulumix.Output[[]GetInstanceAvailablePluginFilter]{
+		OutputState: i.ToGetInstanceAvailablePluginFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetInstanceAvailablePluginFilterOutput struct{ *pulumi.OutputState }
 
 func (GetInstanceAvailablePluginFilterOutput) ElementType() reflect.Type {
@@ -444,6 +529,12 @@ func (o GetInstanceAvailablePluginFilterOutput) ToGetInstanceAvailablePluginFilt
 
 func (o GetInstanceAvailablePluginFilterOutput) ToGetInstanceAvailablePluginFilterOutputWithContext(ctx context.Context) GetInstanceAvailablePluginFilterOutput {
 	return o
+}
+
+func (o GetInstanceAvailablePluginFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstanceAvailablePluginFilter] {
+	return pulumix.Output[GetInstanceAvailablePluginFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The plugin name
@@ -471,6 +562,12 @@ func (o GetInstanceAvailablePluginFilterArrayOutput) ToGetInstanceAvailablePlugi
 
 func (o GetInstanceAvailablePluginFilterArrayOutput) ToGetInstanceAvailablePluginFilterArrayOutputWithContext(ctx context.Context) GetInstanceAvailablePluginFilterArrayOutput {
 	return o
+}
+
+func (o GetInstanceAvailablePluginFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInstanceAvailablePluginFilter] {
+	return pulumix.Output[[]GetInstanceAvailablePluginFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetInstanceAvailablePluginFilterArrayOutput) Index(i pulumi.IntInput) GetInstanceAvailablePluginFilterOutput {

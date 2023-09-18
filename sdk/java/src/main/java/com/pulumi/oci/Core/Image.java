@@ -179,7 +179,7 @@ public class Image extends com.pulumi.resources.CustomResource {
      * Oracle Cloud Agent features supported on the image.
      * 
      */
-    @Export(name="agentFeatures", type=List.class, parameters={ImageAgentFeature.class})
+    @Export(name="agentFeatures", refs={List.class,ImageAgentFeature.class}, tree="[0,1]")
     private Output<List<ImageAgentFeature>> agentFeatures;
 
     /**
@@ -193,7 +193,7 @@ public class Image extends com.pulumi.resources.CustomResource {
      * The OCID of the image originally used to launch the instance.
      * 
      */
-    @Export(name="baseImageId", type=String.class, parameters={})
+    @Export(name="baseImageId", refs={String.class}, tree="[0]")
     private Output<String> baseImageId;
 
     /**
@@ -207,7 +207,7 @@ public class Image extends com.pulumi.resources.CustomResource {
      * The size of the internal storage for this image that is subject to billing (1 GB = 1,073,741,824 bytes).  Example: `100`
      * 
      */
-    @Export(name="billableSizeInGbs", type=String.class, parameters={})
+    @Export(name="billableSizeInGbs", refs={String.class}, tree="[0]")
     private Output<String> billableSizeInGbs;
 
     /**
@@ -221,7 +221,7 @@ public class Image extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the compartment you want the image to be created in.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -235,7 +235,7 @@ public class Image extends com.pulumi.resources.CustomResource {
      * Whether instances launched with this image can be used to create new images. For example, you cannot create an image of an Oracle Database instance.  Example: `true`
      * 
      */
-    @Export(name="createImageAllowed", type=Boolean.class, parameters={})
+    @Export(name="createImageAllowed", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> createImageAllowed;
 
     /**
@@ -249,7 +249,7 @@ public class Image extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -267,7 +267,7 @@ public class Image extends com.pulumi.resources.CustomResource {
      * Example: `My Oracle Linux image`
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -285,7 +285,7 @@ public class Image extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -295,7 +295,7 @@ public class Image extends com.pulumi.resources.CustomResource {
     public Output<Map<String,Object>> freeformTags() {
         return this.freeformTags;
     }
-    @Export(name="imageSourceDetails", type=ImageImageSourceDetails.class, parameters={})
+    @Export(name="imageSourceDetails", refs={ImageImageSourceDetails.class}, tree="[0]")
     private Output</* @Nullable */ ImageImageSourceDetails> imageSourceDetails;
 
     public Output<Optional<ImageImageSourceDetails>> imageSourceDetails() {
@@ -305,7 +305,7 @@ public class Image extends com.pulumi.resources.CustomResource {
      * The OCID of the instance you want to use as the basis for the image.
      * 
      */
-    @Export(name="instanceId", type=String.class, parameters={})
+    @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> instanceId;
 
     /**
@@ -319,7 +319,7 @@ public class Image extends com.pulumi.resources.CustomResource {
      * Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
      * 
      */
-    @Export(name="launchMode", type=String.class, parameters={})
+    @Export(name="launchMode", refs={String.class}, tree="[0]")
     private Output<String> launchMode;
 
     /**
@@ -333,7 +333,7 @@ public class Image extends com.pulumi.resources.CustomResource {
      * Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
      * 
      */
-    @Export(name="launchOptions", type=List.class, parameters={ImageLaunchOption.class})
+    @Export(name="launchOptions", refs={List.class,ImageLaunchOption.class}, tree="[0,1]")
     private Output<List<ImageLaunchOption>> launchOptions;
 
     /**
@@ -347,7 +347,7 @@ public class Image extends com.pulumi.resources.CustomResource {
      * The listing type of the image. The default value is &#34;NONE&#34;.
      * 
      */
-    @Export(name="listingType", type=String.class, parameters={})
+    @Export(name="listingType", refs={String.class}, tree="[0]")
     private Output<String> listingType;
 
     /**
@@ -361,7 +361,7 @@ public class Image extends com.pulumi.resources.CustomResource {
      * The image&#39;s operating system.  Example: `Oracle Linux`
      * 
      */
-    @Export(name="operatingSystem", type=String.class, parameters={})
+    @Export(name="operatingSystem", refs={String.class}, tree="[0]")
     private Output<String> operatingSystem;
 
     /**
@@ -375,7 +375,7 @@ public class Image extends com.pulumi.resources.CustomResource {
      * The image&#39;s operating system version.  Example: `7.2`
      * 
      */
-    @Export(name="operatingSystemVersion", type=String.class, parameters={})
+    @Export(name="operatingSystemVersion", refs={String.class}, tree="[0]")
     private Output<String> operatingSystemVersion;
 
     /**
@@ -389,7 +389,7 @@ public class Image extends com.pulumi.resources.CustomResource {
      * The boot volume size for an instance launched from this image (1 MB = 1,048,576 bytes). Note this is not the same as the size of the image when it was exported or the actual size of the image.  Example: `47694`
      * 
      */
-    @Export(name="sizeInMbs", type=String.class, parameters={})
+    @Export(name="sizeInMbs", refs={String.class}, tree="[0]")
     private Output<String> sizeInMbs;
 
     /**
@@ -403,7 +403,7 @@ public class Image extends com.pulumi.resources.CustomResource {
      * The current state of the image.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -417,7 +417,7 @@ public class Image extends com.pulumi.resources.CustomResource {
      * The date and time the image was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**

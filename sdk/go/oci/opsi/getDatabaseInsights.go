@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Database Insights in Oracle Cloud Infrastructure Opsi service.
@@ -172,6 +173,12 @@ func (o GetDatabaseInsightsResultOutput) ToGetDatabaseInsightsResultOutput() Get
 
 func (o GetDatabaseInsightsResultOutput) ToGetDatabaseInsightsResultOutputWithContext(ctx context.Context) GetDatabaseInsightsResultOutput {
 	return o
+}
+
+func (o GetDatabaseInsightsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseInsightsResult] {
+	return pulumix.Output[GetDatabaseInsightsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Compartment identifier of the database

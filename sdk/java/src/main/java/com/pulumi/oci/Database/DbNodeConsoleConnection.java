@@ -70,7 +70,7 @@ public class DbNodeConsoleConnection extends com.pulumi.resources.CustomResource
      * The OCID of the compartment to contain the console connection.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -84,7 +84,7 @@ public class DbNodeConsoleConnection extends com.pulumi.resources.CustomResource
      * The SSH connection string for the console connection.
      * 
      */
-    @Export(name="connectionString", type=String.class, parameters={})
+    @Export(name="connectionString", refs={String.class}, tree="[0]")
     private Output<String> connectionString;
 
     /**
@@ -98,7 +98,7 @@ public class DbNodeConsoleConnection extends com.pulumi.resources.CustomResource
      * The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    @Export(name="dbNodeId", type=String.class, parameters={})
+    @Export(name="dbNodeId", refs={String.class}, tree="[0]")
     private Output<String> dbNodeId;
 
     /**
@@ -112,7 +112,7 @@ public class DbNodeConsoleConnection extends com.pulumi.resources.CustomResource
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -126,7 +126,7 @@ public class DbNodeConsoleConnection extends com.pulumi.resources.CustomResource
      * The SSH public key fingerprint for the console connection.
      * 
      */
-    @Export(name="fingerprint", type=String.class, parameters={})
+    @Export(name="fingerprint", refs={String.class}, tree="[0]")
     private Output<String> fingerprint;
 
     /**
@@ -140,7 +140,7 @@ public class DbNodeConsoleConnection extends com.pulumi.resources.CustomResource
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -154,7 +154,7 @@ public class DbNodeConsoleConnection extends com.pulumi.resources.CustomResource
      * Information about the current lifecycle state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -171,7 +171,7 @@ public class DbNodeConsoleConnection extends com.pulumi.resources.CustomResource
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="publicKey", type=String.class, parameters={})
+    @Export(name="publicKey", refs={String.class}, tree="[0]")
     private Output<String> publicKey;
 
     /**
@@ -188,7 +188,7 @@ public class DbNodeConsoleConnection extends com.pulumi.resources.CustomResource
      * The SSH public key&#39;s fingerprint for the console connection service host.
      * 
      */
-    @Export(name="serviceHostKeyFingerprint", type=String.class, parameters={})
+    @Export(name="serviceHostKeyFingerprint", refs={String.class}, tree="[0]")
     private Output<String> serviceHostKeyFingerprint;
 
     /**
@@ -202,7 +202,7 @@ public class DbNodeConsoleConnection extends com.pulumi.resources.CustomResource
      * The current state of the console connection.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**

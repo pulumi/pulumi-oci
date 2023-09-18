@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 
 @ResourceType(type="oci:DataSafe/addSdmColumns:AddSdmColumns")
 public class AddSdmColumns extends com.pulumi.resources.CustomResource {
-    @Export(name="maskingPolicyId", type=String.class, parameters={})
+    @Export(name="maskingPolicyId", refs={String.class}, tree="[0]")
     private Output<String> maskingPolicyId;
 
     public Output<String> maskingPolicyId() {

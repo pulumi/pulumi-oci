@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Tables in Oracle Cloud Infrastructure NoSQL Database service.
@@ -119,6 +120,12 @@ func (o GetTablesResultOutput) ToGetTablesResultOutput() GetTablesResultOutput {
 
 func (o GetTablesResultOutput) ToGetTablesResultOutputWithContext(ctx context.Context) GetTablesResultOutput {
 	return o
+}
+
+func (o GetTablesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetTablesResult] {
+	return pulumix.Output[GetTablesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Compartment Identifier.

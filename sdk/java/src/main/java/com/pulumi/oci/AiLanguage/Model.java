@@ -126,7 +126,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)  for the models compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -140,7 +140,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -154,7 +154,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * (Updatable) A short description of the a model.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -168,7 +168,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -182,7 +182,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * model training results of different models
      * 
      */
-    @Export(name="evaluationResults", type=List.class, parameters={ModelEvaluationResult.class})
+    @Export(name="evaluationResults", refs={List.class,ModelEvaluationResult.class}, tree="[0,1]")
     private Output<List<ModelEvaluationResult>> evaluationResults;
 
     /**
@@ -196,7 +196,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -210,7 +210,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -224,7 +224,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * Possible model types
      * 
      */
-    @Export(name="modelDetails", type=ModelModelDetails.class, parameters={})
+    @Export(name="modelDetails", refs={ModelModelDetails.class}, tree="[0]")
     private Output<ModelModelDetails> modelDetails;
 
     /**
@@ -238,7 +238,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
      * 
      */
-    @Export(name="projectId", type=String.class, parameters={})
+    @Export(name="projectId", refs={String.class}, tree="[0]")
     private Output<String> projectId;
 
     /**
@@ -252,7 +252,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * The state of the model.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -266,7 +266,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -280,7 +280,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * Possible strategy as testing and validation(optional) dataset.
      * 
      */
-    @Export(name="testStrategy", type=ModelTestStrategy.class, parameters={})
+    @Export(name="testStrategy", refs={ModelTestStrategy.class}, tree="[0]")
     private Output<ModelTestStrategy> testStrategy;
 
     /**
@@ -294,7 +294,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * The time the the model was created. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -308,7 +308,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * The time the model was updated. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -322,7 +322,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * Possible data set type
      * 
      */
-    @Export(name="trainingDataset", type=ModelTrainingDataset.class, parameters={})
+    @Export(name="trainingDataset", refs={ModelTrainingDataset.class}, tree="[0]")
     private Output<ModelTrainingDataset> trainingDataset;
 
     /**
@@ -336,7 +336,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * Optional pre trained model version. if nothing specified latest pre trained model will be used.  Supported versions can be found at /modelTypes/{modelType}
      * 
      */
-    @Export(name="version", type=String.class, parameters={})
+    @Export(name="version", refs={String.class}, tree="[0]")
     private Output<String> version;
 
     /**

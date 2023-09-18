@@ -123,7 +123,7 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      * The password for the administrative user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
      * 
      */
-    @Export(name="adminPassword", type=String.class, parameters={})
+    @Export(name="adminPassword", refs={String.class}, tree="[0]")
     private Output<String> adminPassword;
 
     /**
@@ -137,7 +137,7 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      * The username for the administrative user.
      * 
      */
-    @Export(name="adminUsername", type=String.class, parameters={})
+    @Export(name="adminUsername", refs={String.class}, tree="[0]")
     private Output<String> adminUsername;
 
     /**
@@ -155,7 +155,7 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      * For a standalone DB System, this defines the availability domain in which the DB System is placed.
      * 
      */
-    @Export(name="availabilityDomain", type=String.class, parameters={})
+    @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
     private Output<String> availabilityDomain;
 
     /**
@@ -173,7 +173,7 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      * (Updatable) Backup policy as optionally used for DB System Creation.
      * 
      */
-    @Export(name="backupPolicy", type=MysqlDbSystemBackupPolicy.class, parameters={})
+    @Export(name="backupPolicy", refs={MysqlDbSystemBackupPolicy.class}, tree="[0]")
     private Output<MysqlDbSystemBackupPolicy> backupPolicy;
 
     /**
@@ -187,7 +187,7 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      * A list with a summary of all the Channels attached to the DB System.
      * 
      */
-    @Export(name="channels", type=List.class, parameters={MysqlDbSystemChannel.class})
+    @Export(name="channels", refs={List.class,MysqlDbSystemChannel.class}, tree="[0,1]")
     private Output<List<MysqlDbSystemChannel>> channels;
 
     /**
@@ -201,7 +201,7 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      * The OCID of the compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -215,7 +215,7 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the Configuration to be used for this DB System.
      * 
      */
-    @Export(name="configurationId", type=String.class, parameters={})
+    @Export(name="configurationId", refs={String.class}, tree="[0]")
     private Output<String> configurationId;
 
     /**
@@ -229,7 +229,7 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      * (Updatable) Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
      * 
      */
-    @Export(name="crashRecovery", type=String.class, parameters={})
+    @Export(name="crashRecovery", refs={String.class}, tree="[0]")
     private Output<String> crashRecovery;
 
     /**
@@ -243,7 +243,7 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      * The availability domain and fault domain a DB System is placed in.
      * 
      */
-    @Export(name="currentPlacements", type=List.class, parameters={MysqlDbSystemCurrentPlacement.class})
+    @Export(name="currentPlacements", refs={List.class,MysqlDbSystemCurrentPlacement.class}, tree="[0,1]")
     private Output<List<MysqlDbSystemCurrentPlacement>> currentPlacements;
 
     /**
@@ -257,7 +257,7 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      * (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
      * 
      */
-    @Export(name="dataStorageSizeInGb", type=Integer.class, parameters={})
+    @Export(name="dataStorageSizeInGb", refs={Integer.class}, tree="[0]")
     private Output<Integer> dataStorageSizeInGb;
 
     /**
@@ -271,7 +271,7 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -285,7 +285,7 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      * (Updatable) Policy for how the DB System and related resources should be handled at the time of its deletion.
      * 
      */
-    @Export(name="deletionPolicies", type=List.class, parameters={MysqlDbSystemDeletionPolicy.class})
+    @Export(name="deletionPolicies", refs={List.class,MysqlDbSystemDeletionPolicy.class}, tree="[0,1]")
     private Output<List<MysqlDbSystemDeletionPolicy>> deletionPolicies;
 
     /**
@@ -299,7 +299,7 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      * (Updatable) User-provided data about the DB System.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -313,7 +313,7 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      * (Updatable) The user-friendly name for the DB System. It does not have to be unique.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -327,7 +327,7 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      * The network endpoints available for this DB System.
      * 
      */
-    @Export(name="endpoints", type=List.class, parameters={MysqlDbSystemEndpoint.class})
+    @Export(name="endpoints", refs={List.class,MysqlDbSystemEndpoint.class}, tree="[0,1]")
     private Output<List<MysqlDbSystemEndpoint>> endpoints;
 
     /**
@@ -345,7 +345,7 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      * For a standalone DB System, this defines the fault domain in which the DB System is placed.
      * 
      */
-    @Export(name="faultDomain", type=String.class, parameters={})
+    @Export(name="faultDomain", refs={String.class}, tree="[0]")
     private Output<String> faultDomain;
 
     /**
@@ -363,7 +363,7 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -377,7 +377,7 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      * A summary of a HeatWave cluster.
      * 
      */
-    @Export(name="heatWaveClusters", type=List.class, parameters={MysqlDbSystemHeatWaveCluster.class})
+    @Export(name="heatWaveClusters", refs={List.class,MysqlDbSystemHeatWaveCluster.class}, tree="[0,1]")
     private Output<List<MysqlDbSystemHeatWaveCluster>> heatWaveClusters;
 
     /**
@@ -395,7 +395,7 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      * Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
      * 
      */
-    @Export(name="hostnameLabel", type=String.class, parameters={})
+    @Export(name="hostnameLabel", refs={String.class}, tree="[0]")
     private Output<String> hostnameLabel;
 
     /**
@@ -413,7 +413,7 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      * The IP address the DB System is configured to listen on. A private IP address of your choice to assign to the primary endpoint of the DB System. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a &#34;dotted-quad&#34; style IPv4 address.
      * 
      */
-    @Export(name="ipAddress", type=String.class, parameters={})
+    @Export(name="ipAddress", refs={String.class}, tree="[0]")
     private Output<String> ipAddress;
 
     /**
@@ -427,7 +427,7 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      * If the DB System has a HeatWave Cluster attached.
      * 
      */
-    @Export(name="isHeatWaveClusterAttached", type=Boolean.class, parameters={})
+    @Export(name="isHeatWaveClusterAttached", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isHeatWaveClusterAttached;
 
     /**
@@ -443,7 +443,7 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      * When creating a DB System with High Availability, three instances are created and placed according to your region- and subnet-type. The secondaries are placed automatically in the other two availability or fault domains.  You can choose the preferred location of your primary instance, only.
      * 
      */
-    @Export(name="isHighlyAvailable", type=Boolean.class, parameters={})
+    @Export(name="isHighlyAvailable", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isHighlyAvailable;
 
     /**
@@ -459,7 +459,7 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      * Additional information about the current lifecycleState.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -473,7 +473,7 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      * (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backup_policy` cannot be updated in the same request.
      * 
      */
-    @Export(name="maintenance", type=MysqlDbSystemMaintenance.class, parameters={})
+    @Export(name="maintenance", refs={MysqlDbSystemMaintenance.class}, tree="[0]")
     private Output<MysqlDbSystemMaintenance> maintenance;
 
     /**
@@ -487,7 +487,7 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      * The specific MySQL version identifier.
      * 
      */
-    @Export(name="mysqlVersion", type=String.class, parameters={})
+    @Export(name="mysqlVersion", refs={String.class}, tree="[0]")
     private Output<String> mysqlVersion;
 
     /**
@@ -501,7 +501,7 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      * Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
      * 
      */
-    @Export(name="pointInTimeRecoveryDetails", type=List.class, parameters={MysqlDbSystemPointInTimeRecoveryDetail.class})
+    @Export(name="pointInTimeRecoveryDetails", refs={List.class,MysqlDbSystemPointInTimeRecoveryDetail.class}, tree="[0,1]")
     private Output<List<MysqlDbSystemPointInTimeRecoveryDetail>> pointInTimeRecoveryDetails;
 
     /**
@@ -515,7 +515,7 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      * The port for primary endpoint of the DB System to listen on.
      * 
      */
-    @Export(name="port", type=Integer.class, parameters={})
+    @Export(name="port", refs={Integer.class}, tree="[0]")
     private Output<Integer> port;
 
     /**
@@ -529,7 +529,7 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      * The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
      * 
      */
-    @Export(name="portX", type=Integer.class, parameters={})
+    @Export(name="portX", refs={Integer.class}, tree="[0]")
     private Output<Integer> portX;
 
     /**
@@ -544,7 +544,7 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      * * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
      * 
      */
-    @Export(name="shapeName", type=String.class, parameters={})
+    @Export(name="shapeName", refs={String.class}, tree="[0]")
     private Output<String> shapeName;
 
     /**
@@ -562,7 +562,7 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="shutdownType", type=String.class, parameters={})
+    @Export(name="shutdownType", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> shutdownType;
 
     /**
@@ -579,7 +579,7 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      * Parameters detailing how to provision the initial data of the system.
      * 
      */
-    @Export(name="source", type=MysqlDbSystemSource.class, parameters={})
+    @Export(name="source", refs={MysqlDbSystemSource.class}, tree="[0]")
     private Output<MysqlDbSystemSource> source;
 
     /**
@@ -593,7 +593,7 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      * (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -607,7 +607,7 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      * The OCID of the subnet the DB System is associated with.
      * 
      */
-    @Export(name="subnetId", type=String.class, parameters={})
+    @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
@@ -621,7 +621,7 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      * The date and time the DB System was created.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -635,7 +635,7 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      * The time the DB System was last updated.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

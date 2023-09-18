@@ -20,115 +20,115 @@ import javax.annotation.Nullable;
 
 @ResourceType(type="oci:Core/virtualNetwork:VirtualNetwork")
 public class VirtualNetwork extends com.pulumi.resources.CustomResource {
-    @Export(name="byoipv6cidrBlocks", type=List.class, parameters={String.class})
+    @Export(name="byoipv6cidrBlocks", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> byoipv6cidrBlocks;
 
     public Output<List<String>> byoipv6cidrBlocks() {
         return this.byoipv6cidrBlocks;
     }
-    @Export(name="byoipv6cidrDetails", type=List.class, parameters={VirtualNetworkByoipv6cidrDetail.class})
+    @Export(name="byoipv6cidrDetails", refs={List.class,VirtualNetworkByoipv6cidrDetail.class}, tree="[0,1]")
     private Output<List<VirtualNetworkByoipv6cidrDetail>> byoipv6cidrDetails;
 
     public Output<List<VirtualNetworkByoipv6cidrDetail>> byoipv6cidrDetails() {
         return this.byoipv6cidrDetails;
     }
-    @Export(name="cidrBlock", type=String.class, parameters={})
+    @Export(name="cidrBlock", refs={String.class}, tree="[0]")
     private Output<String> cidrBlock;
 
     public Output<String> cidrBlock() {
         return this.cidrBlock;
     }
-    @Export(name="cidrBlocks", type=List.class, parameters={String.class})
+    @Export(name="cidrBlocks", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> cidrBlocks;
 
     public Output<List<String>> cidrBlocks() {
         return this.cidrBlocks;
     }
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     public Output<String> compartmentId() {
         return this.compartmentId;
     }
-    @Export(name="defaultDhcpOptionsId", type=String.class, parameters={})
+    @Export(name="defaultDhcpOptionsId", refs={String.class}, tree="[0]")
     private Output<String> defaultDhcpOptionsId;
 
     public Output<String> defaultDhcpOptionsId() {
         return this.defaultDhcpOptionsId;
     }
-    @Export(name="defaultRouteTableId", type=String.class, parameters={})
+    @Export(name="defaultRouteTableId", refs={String.class}, tree="[0]")
     private Output<String> defaultRouteTableId;
 
     public Output<String> defaultRouteTableId() {
         return this.defaultRouteTableId;
     }
-    @Export(name="defaultSecurityListId", type=String.class, parameters={})
+    @Export(name="defaultSecurityListId", refs={String.class}, tree="[0]")
     private Output<String> defaultSecurityListId;
 
     public Output<String> defaultSecurityListId() {
         return this.defaultSecurityListId;
     }
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     public Output<Map<String,Object>> definedTags() {
         return this.definedTags;
     }
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     public Output<String> displayName() {
         return this.displayName;
     }
-    @Export(name="dnsLabel", type=String.class, parameters={})
+    @Export(name="dnsLabel", refs={String.class}, tree="[0]")
     private Output<String> dnsLabel;
 
     public Output<String> dnsLabel() {
         return this.dnsLabel;
     }
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     public Output<Map<String,Object>> freeformTags() {
         return this.freeformTags;
     }
-    @Export(name="ipv6cidrBlocks", type=List.class, parameters={String.class})
+    @Export(name="ipv6cidrBlocks", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> ipv6cidrBlocks;
 
     public Output<List<String>> ipv6cidrBlocks() {
         return this.ipv6cidrBlocks;
     }
-    @Export(name="ipv6privateCidrBlocks", type=List.class, parameters={String.class})
+    @Export(name="ipv6privateCidrBlocks", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> ipv6privateCidrBlocks;
 
     public Output<List<String>> ipv6privateCidrBlocks() {
         return this.ipv6privateCidrBlocks;
     }
-    @Export(name="isIpv6enabled", type=Boolean.class, parameters={})
+    @Export(name="isIpv6enabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isIpv6enabled;
 
     public Output<Boolean> isIpv6enabled() {
         return this.isIpv6enabled;
     }
-    @Export(name="isOracleGuaAllocationEnabled", type=Boolean.class, parameters={})
+    @Export(name="isOracleGuaAllocationEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isOracleGuaAllocationEnabled;
 
     public Output<Boolean> isOracleGuaAllocationEnabled() {
         return this.isOracleGuaAllocationEnabled;
     }
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     public Output<String> state() {
         return this.state;
     }
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     public Output<String> timeCreated() {
         return this.timeCreated;
     }
-    @Export(name="vcnDomainName", type=String.class, parameters={})
+    @Export(name="vcnDomainName", refs={String.class}, tree="[0]")
     private Output<String> vcnDomainName;
 
     public Output<String> vcnDomainName() {

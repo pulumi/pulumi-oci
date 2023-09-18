@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Resolver resource in Oracle Cloud Infrastructure DNS service.
@@ -135,6 +136,12 @@ func (o LookupResolverResultOutput) ToLookupResolverResultOutput() LookupResolve
 
 func (o LookupResolverResultOutput) ToLookupResolverResultOutputWithContext(ctx context.Context) LookupResolverResultOutput {
 	return o
+}
+
+func (o LookupResolverResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupResolverResult] {
+	return pulumix.Output[LookupResolverResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the attached VCN.

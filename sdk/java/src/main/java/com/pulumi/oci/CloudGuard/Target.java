@@ -106,7 +106,7 @@ public class Target extends com.pulumi.resources.CustomResource {
      * (Updatable) compartment associated with condition
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -120,7 +120,7 @@ public class Target extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -136,7 +136,7 @@ public class Target extends com.pulumi.resources.CustomResource {
      * Avoid entering confidential information.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -154,7 +154,7 @@ public class Target extends com.pulumi.resources.CustomResource {
      * Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -172,7 +172,7 @@ public class Target extends com.pulumi.resources.CustomResource {
      * Avoid entering confidential information.
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -188,7 +188,7 @@ public class Target extends com.pulumi.resources.CustomResource {
      * List of inherited compartments
      * 
      */
-    @Export(name="inheritedByCompartments", type=List.class, parameters={String.class})
+    @Export(name="inheritedByCompartments", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> inheritedByCompartments;
 
     /**
@@ -202,7 +202,7 @@ public class Target extends com.pulumi.resources.CustomResource {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    @Export(name="lifecyleDetails", type=String.class, parameters={})
+    @Export(name="lifecyleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecyleDetails;
 
     /**
@@ -216,7 +216,7 @@ public class Target extends com.pulumi.resources.CustomResource {
      * Total number of recipes attached to target
      * 
      */
-    @Export(name="recipeCount", type=Integer.class, parameters={})
+    @Export(name="recipeCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> recipeCount;
 
     /**
@@ -230,7 +230,7 @@ public class Target extends com.pulumi.resources.CustomResource {
      * (Updatable) The current state of the DetectorRule.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -244,7 +244,7 @@ public class Target extends com.pulumi.resources.CustomResource {
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -258,7 +258,7 @@ public class Target extends com.pulumi.resources.CustomResource {
      * Details specific to the target type.
      * 
      */
-    @Export(name="targetDetails", type=List.class, parameters={TargetTargetDetail.class})
+    @Export(name="targetDetails", refs={List.class,TargetTargetDetail.class}, tree="[0,1]")
     private Output<List<TargetTargetDetail>> targetDetails;
 
     /**
@@ -272,7 +272,7 @@ public class Target extends com.pulumi.resources.CustomResource {
      * (Updatable) List of detector recipes to associate with target
      * 
      */
-    @Export(name="targetDetectorRecipes", type=List.class, parameters={TargetTargetDetectorRecipe.class})
+    @Export(name="targetDetectorRecipes", refs={List.class,TargetTargetDetectorRecipe.class}, tree="[0,1]")
     private Output<List<TargetTargetDetectorRecipe>> targetDetectorRecipes;
 
     /**
@@ -286,7 +286,7 @@ public class Target extends com.pulumi.resources.CustomResource {
      * Resource ID which the target uses to monitor
      * 
      */
-    @Export(name="targetResourceId", type=String.class, parameters={})
+    @Export(name="targetResourceId", refs={String.class}, tree="[0]")
     private Output<String> targetResourceId;
 
     /**
@@ -300,7 +300,7 @@ public class Target extends com.pulumi.resources.CustomResource {
      * possible type of targets(COMPARTMENT/FACLOUD)
      * 
      */
-    @Export(name="targetResourceType", type=String.class, parameters={})
+    @Export(name="targetResourceType", refs={String.class}, tree="[0]")
     private Output<String> targetResourceType;
 
     /**
@@ -314,7 +314,7 @@ public class Target extends com.pulumi.resources.CustomResource {
      * (Updatable) List of responder recipes to associate with target
      * 
      */
-    @Export(name="targetResponderRecipes", type=List.class, parameters={TargetTargetResponderRecipe.class})
+    @Export(name="targetResponderRecipes", refs={List.class,TargetTargetResponderRecipe.class}, tree="[0,1]")
     private Output<List<TargetTargetResponderRecipe>> targetResponderRecipes;
 
     /**
@@ -328,7 +328,7 @@ public class Target extends com.pulumi.resources.CustomResource {
      * The date and time the target was created. Format defined by RFC3339.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -342,7 +342,7 @@ public class Target extends com.pulumi.resources.CustomResource {
      * The date and time the target was updated. Format defined by RFC3339.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

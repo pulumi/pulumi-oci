@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Subscription Reward resource in Oracle Cloud Infrastructure Usage Proxy service.
@@ -111,6 +112,12 @@ func (o GetSubscriptionRewardResultOutput) ToGetSubscriptionRewardResultOutput()
 
 func (o GetSubscriptionRewardResultOutput) ToGetSubscriptionRewardResultOutputWithContext(ctx context.Context) GetSubscriptionRewardResultOutput {
 	return o
+}
+
+func (o GetSubscriptionRewardResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionRewardResult] {
+	return pulumix.Output[GetSubscriptionRewardResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The provider-assigned unique ID for this managed resource.

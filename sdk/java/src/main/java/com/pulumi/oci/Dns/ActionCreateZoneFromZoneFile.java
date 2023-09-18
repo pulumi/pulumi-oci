@@ -76,7 +76,7 @@ public class ActionCreateZoneFromZoneFile extends com.pulumi.resources.CustomRes
      * The OCID of the compartment the resource belongs to.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -90,7 +90,7 @@ public class ActionCreateZoneFromZoneFile extends com.pulumi.resources.CustomRes
      * The zone file contents.
      * 
      */
-    @Export(name="createZoneFromZoneFileDetails", type=String.class, parameters={})
+    @Export(name="createZoneFromZoneFileDetails", refs={String.class}, tree="[0]")
     private Output<String> createZoneFromZoneFileDetails;
 
     /**
@@ -104,7 +104,7 @@ public class ActionCreateZoneFromZoneFile extends com.pulumi.resources.CustomRes
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -118,7 +118,7 @@ public class ActionCreateZoneFromZoneFile extends com.pulumi.resources.CustomRes
      * External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
      * 
      */
-    @Export(name="externalDownstreams", type=List.class, parameters={ActionCreateZoneFromZoneFileExternalDownstream.class})
+    @Export(name="externalDownstreams", refs={List.class,ActionCreateZoneFromZoneFileExternalDownstream.class}, tree="[0,1]")
     private Output<List<ActionCreateZoneFromZoneFileExternalDownstream>> externalDownstreams;
 
     /**
@@ -132,7 +132,7 @@ public class ActionCreateZoneFromZoneFile extends com.pulumi.resources.CustomRes
      * External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
      * 
      */
-    @Export(name="externalMasters", type=List.class, parameters={ActionCreateZoneFromZoneFileExternalMaster.class})
+    @Export(name="externalMasters", refs={List.class,ActionCreateZoneFromZoneFileExternalMaster.class}, tree="[0,1]")
     private Output<List<ActionCreateZoneFromZoneFileExternalMaster>> externalMasters;
 
     /**
@@ -146,7 +146,7 @@ public class ActionCreateZoneFromZoneFile extends com.pulumi.resources.CustomRes
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -160,7 +160,7 @@ public class ActionCreateZoneFromZoneFile extends com.pulumi.resources.CustomRes
      * A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
      * 
      */
-    @Export(name="isProtected", type=Boolean.class, parameters={})
+    @Export(name="isProtected", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isProtected;
 
     /**
@@ -174,7 +174,7 @@ public class ActionCreateZoneFromZoneFile extends com.pulumi.resources.CustomRes
      * The name of the zone.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -188,7 +188,7 @@ public class ActionCreateZoneFromZoneFile extends com.pulumi.resources.CustomRes
      * The authoritative nameservers for the zone.
      * 
      */
-    @Export(name="nameservers", type=List.class, parameters={ActionCreateZoneFromZoneFileNameserver.class})
+    @Export(name="nameservers", refs={List.class,ActionCreateZoneFromZoneFileNameserver.class}, tree="[0,1]")
     private Output<List<ActionCreateZoneFromZoneFileNameserver>> nameservers;
 
     /**
@@ -202,7 +202,7 @@ public class ActionCreateZoneFromZoneFile extends com.pulumi.resources.CustomRes
      * Specifies to operate only on resources that have a matching DNS scope.
      * 
      */
-    @Export(name="scope", type=String.class, parameters={})
+    @Export(name="scope", refs={String.class}, tree="[0]")
     private Output<String> scope;
 
     /**
@@ -216,7 +216,7 @@ public class ActionCreateZoneFromZoneFile extends com.pulumi.resources.CustomRes
      * The canonical absolute URL of the resource.
      * 
      */
-    @Export(name="self", type=String.class, parameters={})
+    @Export(name="self", refs={String.class}, tree="[0]")
     private Output<String> self;
 
     /**
@@ -230,7 +230,7 @@ public class ActionCreateZoneFromZoneFile extends com.pulumi.resources.CustomRes
      * The current serial of the zone. As seen in the zone&#39;s SOA record.
      * 
      */
-    @Export(name="serial", type=String.class, parameters={})
+    @Export(name="serial", refs={String.class}, tree="[0]")
     private Output<String> serial;
 
     /**
@@ -244,7 +244,7 @@ public class ActionCreateZoneFromZoneFile extends com.pulumi.resources.CustomRes
      * The current state of the zone resource.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -258,7 +258,7 @@ public class ActionCreateZoneFromZoneFile extends com.pulumi.resources.CustomRes
      * The date and time the resource was created in &#34;YYYY-MM-ddThh:mm:ssZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -272,7 +272,7 @@ public class ActionCreateZoneFromZoneFile extends com.pulumi.resources.CustomRes
      * Version is the never-repeating, totally-orderable, version of the zone, from which the serial field of the zone&#39;s SOA record is derived.
      * 
      */
-    @Export(name="version", type=String.class, parameters={})
+    @Export(name="version", refs={String.class}, tree="[0]")
     private Output<String> version;
 
     /**
@@ -289,7 +289,7 @@ public class ActionCreateZoneFromZoneFile extends com.pulumi.resources.CustomRes
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="viewId", type=String.class, parameters={})
+    @Export(name="viewId", refs={String.class}, tree="[0]")
     private Output<String> viewId;
 
     /**
@@ -306,7 +306,7 @@ public class ActionCreateZoneFromZoneFile extends com.pulumi.resources.CustomRes
      * The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
      * 
      */
-    @Export(name="zoneTransferServers", type=List.class, parameters={ActionCreateZoneFromZoneFileZoneTransferServer.class})
+    @Export(name="zoneTransferServers", refs={List.class,ActionCreateZoneFromZoneFileZoneTransferServer.class}, tree="[0,1]")
     private Output<List<ActionCreateZoneFromZoneFileZoneTransferServer>> zoneTransferServers;
 
     /**
@@ -320,7 +320,7 @@ public class ActionCreateZoneFromZoneFile extends com.pulumi.resources.CustomRes
      * The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
      * 
      */
-    @Export(name="zoneType", type=String.class, parameters={})
+    @Export(name="zoneType", refs={String.class}, tree="[0]")
     private Output<String> zoneType;
 
     /**

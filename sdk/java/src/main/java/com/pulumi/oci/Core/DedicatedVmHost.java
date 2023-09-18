@@ -75,7 +75,7 @@ public class DedicatedVmHost extends com.pulumi.resources.CustomResource {
      * The availability domain of the dedicated virtual machine host.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    @Export(name="availabilityDomain", type=String.class, parameters={})
+    @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
     private Output<String> availabilityDomain;
 
     /**
@@ -89,7 +89,7 @@ public class DedicatedVmHost extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -103,7 +103,7 @@ public class DedicatedVmHost extends com.pulumi.resources.CustomResource {
      * The dedicated virtual machine host shape. The shape determines the number of CPUs and other resources available for VM instances launched on the dedicated virtual machine host.
      * 
      */
-    @Export(name="dedicatedVmHostShape", type=String.class, parameters={})
+    @Export(name="dedicatedVmHostShape", refs={String.class}, tree="[0]")
     private Output<String> dedicatedVmHostShape;
 
     /**
@@ -117,7 +117,7 @@ public class DedicatedVmHost extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -131,7 +131,7 @@ public class DedicatedVmHost extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -149,7 +149,7 @@ public class DedicatedVmHost extends com.pulumi.resources.CustomResource {
      * Example: `FAULT-DOMAIN-1`
      * 
      */
-    @Export(name="faultDomain", type=String.class, parameters={})
+    @Export(name="faultDomain", refs={String.class}, tree="[0]")
     private Output<String> faultDomain;
 
     /**
@@ -170,7 +170,7 @@ public class DedicatedVmHost extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -187,7 +187,7 @@ public class DedicatedVmHost extends com.pulumi.resources.CustomResource {
      * The current available memory of the dedicated VM host, in GBs.
      * 
      */
-    @Export(name="remainingMemoryInGbs", type=Double.class, parameters={})
+    @Export(name="remainingMemoryInGbs", refs={Double.class}, tree="[0]")
     private Output<Double> remainingMemoryInGbs;
 
     /**
@@ -201,7 +201,7 @@ public class DedicatedVmHost extends com.pulumi.resources.CustomResource {
      * The current available OCPUs of the dedicated VM host.
      * 
      */
-    @Export(name="remainingOcpus", type=Double.class, parameters={})
+    @Export(name="remainingOcpus", refs={Double.class}, tree="[0]")
     private Output<Double> remainingOcpus;
 
     /**
@@ -215,7 +215,7 @@ public class DedicatedVmHost extends com.pulumi.resources.CustomResource {
      * The current state of the dedicated VM host.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -229,7 +229,7 @@ public class DedicatedVmHost extends com.pulumi.resources.CustomResource {
      * The date and time the dedicated VM host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -243,7 +243,7 @@ public class DedicatedVmHost extends com.pulumi.resources.CustomResource {
      * The current total memory of the dedicated VM host, in GBs.
      * 
      */
-    @Export(name="totalMemoryInGbs", type=Double.class, parameters={})
+    @Export(name="totalMemoryInGbs", refs={Double.class}, tree="[0]")
     private Output<Double> totalMemoryInGbs;
 
     /**
@@ -257,7 +257,7 @@ public class DedicatedVmHost extends com.pulumi.resources.CustomResource {
      * The current total OCPUs of the dedicated VM host.
      * 
      */
-    @Export(name="totalOcpus", type=Double.class, parameters={})
+    @Export(name="totalOcpus", refs={Double.class}, tree="[0]")
     private Output<Double> totalOcpus;
 
     /**

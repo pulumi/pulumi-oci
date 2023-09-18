@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Network Load Balancer resource in Oracle Cloud Infrastructure Network Load Balancer service.
@@ -130,6 +131,12 @@ func (o LookupNetworkLoadBalancerResultOutput) ToLookupNetworkLoadBalancerResult
 
 func (o LookupNetworkLoadBalancerResultOutput) ToLookupNetworkLoadBalancerResultOutputWithContext(ctx context.Context) LookupNetworkLoadBalancerResultOutput {
 	return o
+}
+
+func (o LookupNetworkLoadBalancerResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupNetworkLoadBalancerResult] {
+	return pulumix.Output[LookupNetworkLoadBalancerResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancer.

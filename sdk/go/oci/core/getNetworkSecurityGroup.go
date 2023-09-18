@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Network Security Group resource in Oracle Cloud Infrastructure Core service.
@@ -119,6 +120,12 @@ func (o LookupNetworkSecurityGroupResultOutput) ToLookupNetworkSecurityGroupResu
 
 func (o LookupNetworkSecurityGroupResultOutput) ToLookupNetworkSecurityGroupResultOutputWithContext(ctx context.Context) LookupNetworkSecurityGroupResultOutput {
 	return o
+}
+
+func (o LookupNetworkSecurityGroupResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupNetworkSecurityGroupResult] {
+	return pulumix.Output[LookupNetworkSecurityGroupResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the network security group is in.

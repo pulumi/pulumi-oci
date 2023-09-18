@@ -89,7 +89,7 @@ public class DeployEnvironment extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the Kubernetes cluster.
      * 
      */
-    @Export(name="clusterId", type=String.class, parameters={})
+    @Export(name="clusterId", refs={String.class}, tree="[0]")
     private Output<String> clusterId;
 
     /**
@@ -103,7 +103,7 @@ public class DeployEnvironment extends com.pulumi.resources.CustomResource {
      * The OCID of a compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -117,7 +117,7 @@ public class DeployEnvironment extends com.pulumi.resources.CustomResource {
      * (Updatable) A collection of selectors. The combination of instances matching the selectors are included in the instance group.
      * 
      */
-    @Export(name="computeInstanceGroupSelectors", type=DeployEnvironmentComputeInstanceGroupSelectors.class, parameters={})
+    @Export(name="computeInstanceGroupSelectors", refs={DeployEnvironmentComputeInstanceGroupSelectors.class}, tree="[0]")
     private Output<DeployEnvironmentComputeInstanceGroupSelectors> computeInstanceGroupSelectors;
 
     /**
@@ -131,7 +131,7 @@ public class DeployEnvironment extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -145,7 +145,7 @@ public class DeployEnvironment extends com.pulumi.resources.CustomResource {
      * (Updatable) Deployment environment type.
      * 
      */
-    @Export(name="deployEnvironmentType", type=String.class, parameters={})
+    @Export(name="deployEnvironmentType", refs={String.class}, tree="[0]")
     private Output<String> deployEnvironmentType;
 
     /**
@@ -159,7 +159,7 @@ public class DeployEnvironment extends com.pulumi.resources.CustomResource {
      * (Updatable) Optional description about the deployment environment.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -173,7 +173,7 @@ public class DeployEnvironment extends com.pulumi.resources.CustomResource {
      * (Updatable) Deployment environment display name. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -187,7 +187,7 @@ public class DeployEnvironment extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -201,7 +201,7 @@ public class DeployEnvironment extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the Function.
      * 
      */
-    @Export(name="functionId", type=String.class, parameters={})
+    @Export(name="functionId", refs={String.class}, tree="[0]")
     private Output<String> functionId;
 
     /**
@@ -215,7 +215,7 @@ public class DeployEnvironment extends com.pulumi.resources.CustomResource {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -229,7 +229,7 @@ public class DeployEnvironment extends com.pulumi.resources.CustomResource {
      * (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer&#39;s private network.
      * 
      */
-    @Export(name="networkChannel", type=DeployEnvironmentNetworkChannel.class, parameters={})
+    @Export(name="networkChannel", refs={DeployEnvironmentNetworkChannel.class}, tree="[0]")
     private Output<DeployEnvironmentNetworkChannel> networkChannel;
 
     /**
@@ -246,7 +246,7 @@ public class DeployEnvironment extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="projectId", type=String.class, parameters={})
+    @Export(name="projectId", refs={String.class}, tree="[0]")
     private Output<String> projectId;
 
     /**
@@ -263,7 +263,7 @@ public class DeployEnvironment extends com.pulumi.resources.CustomResource {
      * The current state of the deployment environment.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -277,7 +277,7 @@ public class DeployEnvironment extends com.pulumi.resources.CustomResource {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -291,7 +291,7 @@ public class DeployEnvironment extends com.pulumi.resources.CustomResource {
      * Time the deployment environment was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -305,7 +305,7 @@ public class DeployEnvironment extends com.pulumi.resources.CustomResource {
      * Time the deployment environment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

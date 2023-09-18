@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Autonomous Container Database resource in Oracle Cloud Infrastructure Database service.
@@ -540,6 +541,12 @@ func (i *AutonomousContainerDatabase) ToAutonomousContainerDatabaseOutputWithCon
 	return pulumi.ToOutputWithContext(ctx, i).(AutonomousContainerDatabaseOutput)
 }
 
+func (i *AutonomousContainerDatabase) ToOutput(ctx context.Context) pulumix.Output[*AutonomousContainerDatabase] {
+	return pulumix.Output[*AutonomousContainerDatabase]{
+		OutputState: i.ToAutonomousContainerDatabaseOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AutonomousContainerDatabaseArrayInput is an input type that accepts AutonomousContainerDatabaseArray and AutonomousContainerDatabaseArrayOutput values.
 // You can construct a concrete instance of `AutonomousContainerDatabaseArrayInput` via:
 //
@@ -563,6 +570,12 @@ func (i AutonomousContainerDatabaseArray) ToAutonomousContainerDatabaseArrayOutp
 
 func (i AutonomousContainerDatabaseArray) ToAutonomousContainerDatabaseArrayOutputWithContext(ctx context.Context) AutonomousContainerDatabaseArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AutonomousContainerDatabaseArrayOutput)
+}
+
+func (i AutonomousContainerDatabaseArray) ToOutput(ctx context.Context) pulumix.Output[[]*AutonomousContainerDatabase] {
+	return pulumix.Output[[]*AutonomousContainerDatabase]{
+		OutputState: i.ToAutonomousContainerDatabaseArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // AutonomousContainerDatabaseMapInput is an input type that accepts AutonomousContainerDatabaseMap and AutonomousContainerDatabaseMapOutput values.
@@ -590,6 +603,12 @@ func (i AutonomousContainerDatabaseMap) ToAutonomousContainerDatabaseMapOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(AutonomousContainerDatabaseMapOutput)
 }
 
+func (i AutonomousContainerDatabaseMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AutonomousContainerDatabase] {
+	return pulumix.Output[map[string]*AutonomousContainerDatabase]{
+		OutputState: i.ToAutonomousContainerDatabaseMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AutonomousContainerDatabaseOutput struct{ *pulumi.OutputState }
 
 func (AutonomousContainerDatabaseOutput) ElementType() reflect.Type {
@@ -602,6 +621,12 @@ func (o AutonomousContainerDatabaseOutput) ToAutonomousContainerDatabaseOutput()
 
 func (o AutonomousContainerDatabaseOutput) ToAutonomousContainerDatabaseOutputWithContext(ctx context.Context) AutonomousContainerDatabaseOutput {
 	return o
+}
+
+func (o AutonomousContainerDatabaseOutput) ToOutput(ctx context.Context) pulumix.Output[*AutonomousContainerDatabase] {
+	return pulumix.Output[*AutonomousContainerDatabase]{
+		OutputState: o.OutputState,
+	}
 }
 
 // **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
@@ -897,6 +922,12 @@ func (o AutonomousContainerDatabaseArrayOutput) ToAutonomousContainerDatabaseArr
 	return o
 }
 
+func (o AutonomousContainerDatabaseArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AutonomousContainerDatabase] {
+	return pulumix.Output[[]*AutonomousContainerDatabase]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AutonomousContainerDatabaseArrayOutput) Index(i pulumi.IntInput) AutonomousContainerDatabaseOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AutonomousContainerDatabase {
 		return vs[0].([]*AutonomousContainerDatabase)[vs[1].(int)]
@@ -915,6 +946,12 @@ func (o AutonomousContainerDatabaseMapOutput) ToAutonomousContainerDatabaseMapOu
 
 func (o AutonomousContainerDatabaseMapOutput) ToAutonomousContainerDatabaseMapOutputWithContext(ctx context.Context) AutonomousContainerDatabaseMapOutput {
 	return o
+}
+
+func (o AutonomousContainerDatabaseMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AutonomousContainerDatabase] {
+	return pulumix.Output[map[string]*AutonomousContainerDatabase]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AutonomousContainerDatabaseMapOutput) MapIndex(k pulumi.StringInput) AutonomousContainerDatabaseOutput {

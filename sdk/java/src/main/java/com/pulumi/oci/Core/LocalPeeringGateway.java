@@ -73,7 +73,7 @@ public class LocalPeeringGateway extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the local peering gateway (LPG).
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -87,7 +87,7 @@ public class LocalPeeringGateway extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -101,7 +101,7 @@ public class LocalPeeringGateway extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -115,7 +115,7 @@ public class LocalPeeringGateway extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -129,7 +129,7 @@ public class LocalPeeringGateway extends com.pulumi.resources.CustomResource {
      * Whether the VCN at the other end of the peering is in a different tenancy.  Example: `false`
      * 
      */
-    @Export(name="isCrossTenancyPeering", type=Boolean.class, parameters={})
+    @Export(name="isCrossTenancyPeering", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isCrossTenancyPeering;
 
     /**
@@ -143,7 +143,7 @@ public class LocalPeeringGateway extends com.pulumi.resources.CustomResource {
      * The smallest aggregate CIDR that contains all the CIDR routes advertised by the VCN at the other end of the peering from this LPG. See `peerAdvertisedCidrDetails` for the individual CIDRs. The value is `null` if the LPG is not peered.  Example: `192.168.0.0/16`, or if aggregated with `172.16.0.0/24` then `128.0.0.0/1`
      * 
      */
-    @Export(name="peerAdvertisedCidr", type=String.class, parameters={})
+    @Export(name="peerAdvertisedCidr", refs={String.class}, tree="[0]")
     private Output<String> peerAdvertisedCidr;
 
     /**
@@ -157,7 +157,7 @@ public class LocalPeeringGateway extends com.pulumi.resources.CustomResource {
      * The specific ranges of IP addresses available on or via the VCN at the other end of the peering from this LPG. The value is `null` if the LPG is not peered. You can use these as destination CIDRs for route rules to route a subnet&#39;s traffic to this LPG.  Example: [`192.168.0.0/16`, `172.16.0.0/24`]
      * 
      */
-    @Export(name="peerAdvertisedCidrDetails", type=List.class, parameters={String.class})
+    @Export(name="peerAdvertisedCidrDetails", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> peerAdvertisedCidrDetails;
 
     /**
@@ -171,7 +171,7 @@ public class LocalPeeringGateway extends com.pulumi.resources.CustomResource {
      * The OCID of the LPG you want to peer with. Specifying a peer_id connects this local peering gateway (LPG) to another one in the same region. This operation must be called by the VCN administrator who is designated as the *requestor* in the peering relationship. The *acceptor* must implement an Identity and Access Management (IAM) policy that gives the requestor permission to connect to LPGs in the acceptor&#39;s compartment. Without that permission, this operation will fail. For more information, see [VCN Peering](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm).
      * 
      */
-    @Export(name="peerId", type=String.class, parameters={})
+    @Export(name="peerId", refs={String.class}, tree="[0]")
     private Output<String> peerId;
 
     /**
@@ -185,7 +185,7 @@ public class LocalPeeringGateway extends com.pulumi.resources.CustomResource {
      * Whether the LPG is peered with another LPG. `NEW` means the LPG has not yet been peered. `PENDING` means the peering is being established. `REVOKED` means the LPG at the other end of the peering has been deleted.
      * 
      */
-    @Export(name="peeringStatus", type=String.class, parameters={})
+    @Export(name="peeringStatus", refs={String.class}, tree="[0]")
     private Output<String> peeringStatus;
 
     /**
@@ -199,7 +199,7 @@ public class LocalPeeringGateway extends com.pulumi.resources.CustomResource {
      * Additional information regarding the peering status, if applicable.
      * 
      */
-    @Export(name="peeringStatusDetails", type=String.class, parameters={})
+    @Export(name="peeringStatusDetails", refs={String.class}, tree="[0]")
     private Output<String> peeringStatusDetails;
 
     /**
@@ -217,7 +217,7 @@ public class LocalPeeringGateway extends com.pulumi.resources.CustomResource {
      * For information about why you would associate a route table with an LPG, see [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm).
      * 
      */
-    @Export(name="routeTableId", type=String.class, parameters={})
+    @Export(name="routeTableId", refs={String.class}, tree="[0]")
     private Output<String> routeTableId;
 
     /**
@@ -235,7 +235,7 @@ public class LocalPeeringGateway extends com.pulumi.resources.CustomResource {
      * The LPG&#39;s current lifecycle state.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -249,7 +249,7 @@ public class LocalPeeringGateway extends com.pulumi.resources.CustomResource {
      * The date and time the LPG was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -266,7 +266,7 @@ public class LocalPeeringGateway extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="vcnId", type=String.class, parameters={})
+    @Export(name="vcnId", refs={String.class}, tree="[0]")
     private Output<String> vcnId;
 
     /**

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Listener resource in Oracle Cloud Infrastructure Network Load Balancer service.
@@ -114,6 +115,12 @@ func (o LookupListenerResultOutput) ToLookupListenerResultOutput() LookupListene
 
 func (o LookupListenerResultOutput) ToLookupListenerResultOutputWithContext(ctx context.Context) LookupListenerResultOutput {
 	return o
+}
+
+func (o LookupListenerResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupListenerResult] {
+	return pulumix.Output[LookupListenerResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the associated backend set.  Example: `exampleBackendSet`

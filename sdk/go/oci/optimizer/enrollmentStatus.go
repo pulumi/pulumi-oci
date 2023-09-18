@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Enrollment Status resource in Oracle Cloud Infrastructure Optimizer service.
@@ -170,6 +171,12 @@ func (i *EnrollmentStatus) ToEnrollmentStatusOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(EnrollmentStatusOutput)
 }
 
+func (i *EnrollmentStatus) ToOutput(ctx context.Context) pulumix.Output[*EnrollmentStatus] {
+	return pulumix.Output[*EnrollmentStatus]{
+		OutputState: i.ToEnrollmentStatusOutputWithContext(ctx).OutputState,
+	}
+}
+
 // EnrollmentStatusArrayInput is an input type that accepts EnrollmentStatusArray and EnrollmentStatusArrayOutput values.
 // You can construct a concrete instance of `EnrollmentStatusArrayInput` via:
 //
@@ -193,6 +200,12 @@ func (i EnrollmentStatusArray) ToEnrollmentStatusArrayOutput() EnrollmentStatusA
 
 func (i EnrollmentStatusArray) ToEnrollmentStatusArrayOutputWithContext(ctx context.Context) EnrollmentStatusArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(EnrollmentStatusArrayOutput)
+}
+
+func (i EnrollmentStatusArray) ToOutput(ctx context.Context) pulumix.Output[[]*EnrollmentStatus] {
+	return pulumix.Output[[]*EnrollmentStatus]{
+		OutputState: i.ToEnrollmentStatusArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // EnrollmentStatusMapInput is an input type that accepts EnrollmentStatusMap and EnrollmentStatusMapOutput values.
@@ -220,6 +233,12 @@ func (i EnrollmentStatusMap) ToEnrollmentStatusMapOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(EnrollmentStatusMapOutput)
 }
 
+func (i EnrollmentStatusMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*EnrollmentStatus] {
+	return pulumix.Output[map[string]*EnrollmentStatus]{
+		OutputState: i.ToEnrollmentStatusMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type EnrollmentStatusOutput struct{ *pulumi.OutputState }
 
 func (EnrollmentStatusOutput) ElementType() reflect.Type {
@@ -232,6 +251,12 @@ func (o EnrollmentStatusOutput) ToEnrollmentStatusOutput() EnrollmentStatusOutpu
 
 func (o EnrollmentStatusOutput) ToEnrollmentStatusOutputWithContext(ctx context.Context) EnrollmentStatusOutput {
 	return o
+}
+
+func (o EnrollmentStatusOutput) ToOutput(ctx context.Context) pulumix.Output[*EnrollmentStatus] {
+	return pulumix.Output[*EnrollmentStatus]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the compartment.
@@ -286,6 +311,12 @@ func (o EnrollmentStatusArrayOutput) ToEnrollmentStatusArrayOutputWithContext(ct
 	return o
 }
 
+func (o EnrollmentStatusArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*EnrollmentStatus] {
+	return pulumix.Output[[]*EnrollmentStatus]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o EnrollmentStatusArrayOutput) Index(i pulumi.IntInput) EnrollmentStatusOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *EnrollmentStatus {
 		return vs[0].([]*EnrollmentStatus)[vs[1].(int)]
@@ -304,6 +335,12 @@ func (o EnrollmentStatusMapOutput) ToEnrollmentStatusMapOutput() EnrollmentStatu
 
 func (o EnrollmentStatusMapOutput) ToEnrollmentStatusMapOutputWithContext(ctx context.Context) EnrollmentStatusMapOutput {
 	return o
+}
+
+func (o EnrollmentStatusMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*EnrollmentStatus] {
+	return pulumix.Output[map[string]*EnrollmentStatus]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o EnrollmentStatusMapOutput) MapIndex(k pulumi.StringInput) EnrollmentStatusOutput {

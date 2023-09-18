@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Targets in Oracle Cloud Infrastructure Cloud Guard service.
@@ -150,6 +151,12 @@ func (o GetGuardTargetsResultOutput) ToGetGuardTargetsResultOutput() GetGuardTar
 
 func (o GetGuardTargetsResultOutput) ToGetGuardTargetsResultOutputWithContext(ctx context.Context) GetGuardTargetsResultOutput {
 	return o
+}
+
+func (o GetGuardTargetsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsResult] {
+	return pulumix.Output[GetGuardTargetsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetGuardTargetsResultOutput) AccessLevel() pulumi.StringPtrOutput {

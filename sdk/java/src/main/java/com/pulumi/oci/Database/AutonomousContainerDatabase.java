@@ -141,7 +141,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
      * 
      */
-    @Export(name="autonomousExadataInfrastructureId", type=String.class, parameters={})
+    @Export(name="autonomousExadataInfrastructureId", refs={String.class}, tree="[0]")
     private Output<String> autonomousExadataInfrastructureId;
 
     /**
@@ -155,7 +155,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * The OCID of the Autonomous VM Cluster.
      * 
      */
-    @Export(name="autonomousVmClusterId", type=String.class, parameters={})
+    @Export(name="autonomousVmClusterId", refs={String.class}, tree="[0]")
     private Output<String> autonomousVmClusterId;
 
     /**
@@ -169,7 +169,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * The availability domain of the Autonomous Container Database
      * 
      */
-    @Export(name="availabilityDomain", type=String.class, parameters={})
+    @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
     private Output<String> availabilityDomain;
 
     /**
@@ -183,7 +183,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.&lt;br&gt; For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      * 
      */
-    @Export(name="availableCpus", type=Double.class, parameters={})
+    @Export(name="availableCpus", refs={Double.class}, tree="[0]")
     private Output<Double> availableCpus;
 
     /**
@@ -197,7 +197,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * (Updatable) Backup options for the Autonomous Container Database.
      * 
      */
-    @Export(name="backupConfig", type=AutonomousContainerDatabaseBackupConfig.class, parameters={})
+    @Export(name="backupConfig", refs={AutonomousContainerDatabaseBackupConfig.class}, tree="[0]")
     private Output<AutonomousContainerDatabaseBackupConfig> backupConfig;
 
     /**
@@ -211,7 +211,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * The OCID of the Cloud Autonomous VM Cluster.
      * 
      */
-    @Export(name="cloudAutonomousVmClusterId", type=String.class, parameters={})
+    @Export(name="cloudAutonomousVmClusterId", refs={String.class}, tree="[0]")
     private Output<String> cloudAutonomousVmClusterId;
 
     /**
@@ -225,7 +225,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -239,7 +239,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * The compute model of the Autonomous VM Cluster.
      * 
      */
-    @Export(name="computeModel", type=String.class, parameters={})
+    @Export(name="computeModel", refs={String.class}, tree="[0]")
     private Output<String> computeModel;
 
     /**
@@ -253,7 +253,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
      * 
      */
-    @Export(name="dbName", type=String.class, parameters={})
+    @Export(name="dbName", refs={String.class}, tree="[0]")
     private Output<String> dbName;
 
     /**
@@ -263,7 +263,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
     public Output<String> dbName() {
         return this.dbName;
     }
-    @Export(name="dbUniqueName", type=String.class, parameters={})
+    @Export(name="dbUniqueName", refs={String.class}, tree="[0]")
     private Output<String> dbUniqueName;
 
     public Output<String> dbUniqueName() {
@@ -273,7 +273,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * The base version for the Autonomous Container Database.
      * 
      */
-    @Export(name="dbVersion", type=String.class, parameters={})
+    @Export(name="dbVersion", refs={String.class}, tree="[0]")
     private Output<String> dbVersion;
 
     /**
@@ -287,7 +287,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -301,7 +301,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * (Updatable) The display name for the Autonomous Container Database.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -315,7 +315,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * The lag time for my preference based on data loss tolerance in seconds.
      * 
      */
-    @Export(name="fastStartFailOverLagLimitInSeconds", type=Integer.class, parameters={})
+    @Export(name="fastStartFailOverLagLimitInSeconds", refs={Integer.class}, tree="[0]")
     private Output<Integer> fastStartFailOverLagLimitInSeconds;
 
     /**
@@ -329,7 +329,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -343,7 +343,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * The infrastructure type this resource belongs to.
      * 
      */
-    @Export(name="infrastructureType", type=String.class, parameters={})
+    @Export(name="infrastructureType", refs={String.class}, tree="[0]")
     private Output<String> infrastructureType;
 
     /**
@@ -357,7 +357,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
      * 
      */
-    @Export(name="isAutomaticFailoverEnabled", type=Boolean.class, parameters={})
+    @Export(name="isAutomaticFailoverEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isAutomaticFailoverEnabled;
 
     /**
@@ -371,7 +371,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * Key History Entry.
      * 
      */
-    @Export(name="keyHistoryEntries", type=List.class, parameters={AutonomousContainerDatabaseKeyHistoryEntry.class})
+    @Export(name="keyHistoryEntries", refs={List.class,AutonomousContainerDatabaseKeyHistoryEntry.class}, tree="[0,1]")
     private Output<List<AutonomousContainerDatabaseKeyHistoryEntry>> keyHistoryEntries;
 
     /**
@@ -385,7 +385,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
      * 
      */
-    @Export(name="keyStoreId", type=String.class, parameters={})
+    @Export(name="keyStoreId", refs={String.class}, tree="[0]")
     private Output<String> keyStoreId;
 
     /**
@@ -399,7 +399,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * The wallet name for Oracle Key Vault.
      * 
      */
-    @Export(name="keyStoreWalletName", type=String.class, parameters={})
+    @Export(name="keyStoreWalletName", refs={String.class}, tree="[0]")
     private Output<String> keyStoreWalletName;
 
     /**
@@ -413,7 +413,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
-    @Export(name="kmsKeyId", type=String.class, parameters={})
+    @Export(name="kmsKeyId", refs={String.class}, tree="[0]")
     private Output<String> kmsKeyId;
 
     /**
@@ -427,7 +427,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
      * 
      */
-    @Export(name="largestProvisionableAutonomousDatabaseInCpus", type=Double.class, parameters={})
+    @Export(name="largestProvisionableAutonomousDatabaseInCpus", refs={Double.class}, tree="[0]")
     private Output<Double> largestProvisionableAutonomousDatabaseInCpus;
 
     /**
@@ -441,7 +441,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      * 
      */
-    @Export(name="lastMaintenanceRunId", type=String.class, parameters={})
+    @Export(name="lastMaintenanceRunId", refs={String.class}, tree="[0]")
     private Output<String> lastMaintenanceRunId;
 
     /**
@@ -455,7 +455,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * Additional information about the current lifecycle state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -469,7 +469,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      * 
      */
-    @Export(name="maintenanceWindowDetails", type=AutonomousContainerDatabaseMaintenanceWindowDetails.class, parameters={})
+    @Export(name="maintenanceWindowDetails", refs={AutonomousContainerDatabaseMaintenanceWindowDetails.class}, tree="[0]")
     private Output</* @Nullable */ AutonomousContainerDatabaseMaintenanceWindowDetails> maintenanceWindowDetails;
 
     /**
@@ -483,7 +483,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      * 
      */
-    @Export(name="maintenanceWindows", type=List.class, parameters={AutonomousContainerDatabaseMaintenanceWindow.class})
+    @Export(name="maintenanceWindows", refs={List.class,AutonomousContainerDatabaseMaintenanceWindow.class}, tree="[0,1]")
     private Output<List<AutonomousContainerDatabaseMaintenanceWindow>> maintenanceWindows;
 
     /**
@@ -497,7 +497,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.
      * 
      */
-    @Export(name="memoryPerOracleComputeUnitInGbs", type=Integer.class, parameters={})
+    @Export(name="memoryPerOracleComputeUnitInGbs", refs={Integer.class}, tree="[0]")
     private Output<Integer> memoryPerOracleComputeUnitInGbs;
 
     /**
@@ -511,7 +511,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      * 
      */
-    @Export(name="nextMaintenanceRunId", type=String.class, parameters={})
+    @Export(name="nextMaintenanceRunId", refs={String.class}, tree="[0]")
     private Output<String> nextMaintenanceRunId;
 
     /**
@@ -525,7 +525,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
      * 
      */
-    @Export(name="patchId", type=String.class, parameters={})
+    @Export(name="patchId", refs={String.class}, tree="[0]")
     private Output<String> patchId;
 
     /**
@@ -539,7 +539,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * (Updatable) Database Patch model preference.
      * 
      */
-    @Export(name="patchModel", type=String.class, parameters={})
+    @Export(name="patchModel", refs={String.class}, tree="[0]")
     private Output<String> patchModel;
 
     /**
@@ -549,7 +549,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
     public Output<String> patchModel() {
         return this.patchModel;
     }
-    @Export(name="peerAutonomousContainerDatabaseBackupConfig", type=AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig.class, parameters={})
+    @Export(name="peerAutonomousContainerDatabaseBackupConfig", refs={AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig.class}, tree="[0]")
     private Output<AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig> peerAutonomousContainerDatabaseBackupConfig;
 
     public Output<AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig> peerAutonomousContainerDatabaseBackupConfig() {
@@ -559,7 +559,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database will be created.
      * 
      */
-    @Export(name="peerAutonomousContainerDatabaseCompartmentId", type=String.class, parameters={})
+    @Export(name="peerAutonomousContainerDatabaseCompartmentId", refs={String.class}, tree="[0]")
     private Output<String> peerAutonomousContainerDatabaseCompartmentId;
 
     /**
@@ -573,7 +573,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * The display name for the peer Autonomous Container Database.
      * 
      */
-    @Export(name="peerAutonomousContainerDatabaseDisplayName", type=String.class, parameters={})
+    @Export(name="peerAutonomousContainerDatabaseDisplayName", refs={String.class}, tree="[0]")
     private Output<String> peerAutonomousContainerDatabaseDisplayName;
 
     /**
@@ -587,7 +587,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * *No longer used.* This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
      * 
      */
-    @Export(name="peerAutonomousExadataInfrastructureId", type=String.class, parameters={})
+    @Export(name="peerAutonomousExadataInfrastructureId", refs={String.class}, tree="[0]")
     private Output<String> peerAutonomousExadataInfrastructureId;
 
     /**
@@ -601,7 +601,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous VM cluster for Autonomous Data Guard. Required to enable Data Guard.
      * 
      */
-    @Export(name="peerAutonomousVmClusterId", type=String.class, parameters={})
+    @Export(name="peerAutonomousVmClusterId", refs={String.class}, tree="[0]")
     private Output<String> peerAutonomousVmClusterId;
 
     /**
@@ -615,7 +615,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * The OCID of the peer Autonomous Cloud VM Cluster for autonomous dataguard.
      * 
      */
-    @Export(name="peerCloudAutonomousVmClusterId", type=String.class, parameters={})
+    @Export(name="peerCloudAutonomousVmClusterId", refs={String.class}, tree="[0]")
     private Output<String> peerCloudAutonomousVmClusterId;
 
     /**
@@ -625,7 +625,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
     public Output<String> peerCloudAutonomousVmClusterId() {
         return this.peerCloudAutonomousVmClusterId;
     }
-    @Export(name="peerDbUniqueName", type=String.class, parameters={})
+    @Export(name="peerDbUniqueName", refs={String.class}, tree="[0]")
     private Output<String> peerDbUniqueName;
 
     public Output<String> peerDbUniqueName() {
@@ -635,7 +635,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
      * 
      */
-    @Export(name="protectionMode", type=String.class, parameters={})
+    @Export(name="protectionMode", refs={String.class}, tree="[0]")
     private Output<String> protectionMode;
 
     /**
@@ -649,7 +649,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * An array of CPU values that can be used to successfully provision a single Autonomous Database.\ For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
      * 
      */
-    @Export(name="provisionableCpuses", type=List.class, parameters={Double.class})
+    @Export(name="provisionableCpuses", refs={List.class,Double.class}, tree="[0,1]")
     private Output<List<Double>> provisionableCpuses;
 
     /**
@@ -663,7 +663,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * The number of CPUs provisioned in an Autonomous Container Database.
      * 
      */
-    @Export(name="provisionedCpus", type=Double.class, parameters={})
+    @Export(name="provisionedCpus", refs={Double.class}, tree="[0]")
     private Output<Double> provisionedCpus;
 
     /**
@@ -679,7 +679,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      * 
      */
-    @Export(name="reclaimableCpus", type=Double.class, parameters={})
+    @Export(name="reclaimableCpus", refs={Double.class}, tree="[0]")
     private Output<Double> reclaimableCpus;
 
     /**
@@ -691,7 +691,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
     public Output<Double> reclaimableCpus() {
         return this.reclaimableCpus;
     }
-    @Export(name="reservedCpus", type=Double.class, parameters={})
+    @Export(name="reservedCpus", refs={Double.class}, tree="[0]")
     private Output<Double> reservedCpus;
 
     public Output<Double> reservedCpus() {
@@ -701,7 +701,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      * 
      */
-    @Export(name="role", type=String.class, parameters={})
+    @Export(name="role", refs={String.class}, tree="[0]")
     private Output<String> role;
 
     /**
@@ -715,7 +715,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloud_autonomous_vm_cluster_id` is set.
      * 
      */
-    @Export(name="rotateKeyTrigger", type=Boolean.class, parameters={})
+    @Export(name="rotateKeyTrigger", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> rotateKeyTrigger;
 
     /**
@@ -729,7 +729,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * The service level agreement type of the Autonomous Container Database. The default is STANDARD. For an autonomous dataguard Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
      * 
      */
-    @Export(name="serviceLevelAgreementType", type=String.class, parameters={})
+    @Export(name="serviceLevelAgreementType", refs={String.class}, tree="[0]")
     private Output<String> serviceLevelAgreementType;
 
     /**
@@ -746,7 +746,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="standbyMaintenanceBufferInDays", type=Integer.class, parameters={})
+    @Export(name="standbyMaintenanceBufferInDays", refs={Integer.class}, tree="[0]")
     private Output<Integer> standbyMaintenanceBufferInDays;
 
     /**
@@ -763,7 +763,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * The current state of the Autonomous Container Database.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -777,7 +777,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * The date and time the Autonomous Container Database was created.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -791,7 +791,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
      * 
      */
-    @Export(name="timeSnapshotStandbyRevert", type=String.class, parameters={})
+    @Export(name="timeSnapshotStandbyRevert", refs={String.class}, tree="[0]")
     private Output<String> timeSnapshotStandbyRevert;
 
     /**
@@ -805,7 +805,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * The number of CPUs allocated to the Autonomous VM cluster.&lt;br&gt; For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      * 
      */
-    @Export(name="totalCpus", type=Integer.class, parameters={})
+    @Export(name="totalCpus", refs={Integer.class}, tree="[0]")
     private Output<Integer> totalCpus;
 
     /**
@@ -819,7 +819,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
-    @Export(name="vaultId", type=String.class, parameters={})
+    @Export(name="vaultId", refs={String.class}, tree="[0]")
     private Output<String> vaultId;
 
     /**
@@ -833,7 +833,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * (Updatable) The next maintenance version preference.
      * 
      */
-    @Export(name="versionPreference", type=String.class, parameters={})
+    @Export(name="versionPreference", refs={String.class}, tree="[0]")
     private Output<String> versionPreference;
 
     /**

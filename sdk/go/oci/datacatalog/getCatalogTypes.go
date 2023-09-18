@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Catalog Types in Oracle Cloud Infrastructure Data Catalog service.
@@ -160,6 +161,12 @@ func (o GetCatalogTypesResultOutput) ToGetCatalogTypesResultOutput() GetCatalogT
 
 func (o GetCatalogTypesResultOutput) ToGetCatalogTypesResultOutputWithContext(ctx context.Context) GetCatalogTypesResultOutput {
 	return o
+}
+
+func (o GetCatalogTypesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCatalogTypesResult] {
+	return pulumix.Output[GetCatalogTypesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The data catalog's OCID.

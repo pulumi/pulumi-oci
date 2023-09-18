@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Maintenance Run resource in Oracle Cloud Infrastructure Database service.
@@ -361,6 +362,12 @@ func (i *MaintenanceRun) ToMaintenanceRunOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceRunOutput)
 }
 
+func (i *MaintenanceRun) ToOutput(ctx context.Context) pulumix.Output[*MaintenanceRun] {
+	return pulumix.Output[*MaintenanceRun]{
+		OutputState: i.ToMaintenanceRunOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MaintenanceRunArrayInput is an input type that accepts MaintenanceRunArray and MaintenanceRunArrayOutput values.
 // You can construct a concrete instance of `MaintenanceRunArrayInput` via:
 //
@@ -384,6 +391,12 @@ func (i MaintenanceRunArray) ToMaintenanceRunArrayOutput() MaintenanceRunArrayOu
 
 func (i MaintenanceRunArray) ToMaintenanceRunArrayOutputWithContext(ctx context.Context) MaintenanceRunArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceRunArrayOutput)
+}
+
+func (i MaintenanceRunArray) ToOutput(ctx context.Context) pulumix.Output[[]*MaintenanceRun] {
+	return pulumix.Output[[]*MaintenanceRun]{
+		OutputState: i.ToMaintenanceRunArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // MaintenanceRunMapInput is an input type that accepts MaintenanceRunMap and MaintenanceRunMapOutput values.
@@ -411,6 +424,12 @@ func (i MaintenanceRunMap) ToMaintenanceRunMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceRunMapOutput)
 }
 
+func (i MaintenanceRunMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*MaintenanceRun] {
+	return pulumix.Output[map[string]*MaintenanceRun]{
+		OutputState: i.ToMaintenanceRunMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MaintenanceRunOutput struct{ *pulumi.OutputState }
 
 func (MaintenanceRunOutput) ElementType() reflect.Type {
@@ -423,6 +442,12 @@ func (o MaintenanceRunOutput) ToMaintenanceRunOutput() MaintenanceRunOutput {
 
 func (o MaintenanceRunOutput) ToMaintenanceRunOutputWithContext(ctx context.Context) MaintenanceRunOutput {
 	return o
+}
+
+func (o MaintenanceRunOutput) ToOutput(ctx context.Context) pulumix.Output[*MaintenanceRun] {
+	return pulumix.Output[*MaintenanceRun]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the compartment.
@@ -601,6 +626,12 @@ func (o MaintenanceRunArrayOutput) ToMaintenanceRunArrayOutputWithContext(ctx co
 	return o
 }
 
+func (o MaintenanceRunArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*MaintenanceRun] {
+	return pulumix.Output[[]*MaintenanceRun]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o MaintenanceRunArrayOutput) Index(i pulumi.IntInput) MaintenanceRunOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *MaintenanceRun {
 		return vs[0].([]*MaintenanceRun)[vs[1].(int)]
@@ -619,6 +650,12 @@ func (o MaintenanceRunMapOutput) ToMaintenanceRunMapOutput() MaintenanceRunMapOu
 
 func (o MaintenanceRunMapOutput) ToMaintenanceRunMapOutputWithContext(ctx context.Context) MaintenanceRunMapOutput {
 	return o
+}
+
+func (o MaintenanceRunMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*MaintenanceRun] {
+	return pulumix.Output[map[string]*MaintenanceRun]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MaintenanceRunMapOutput) MapIndex(k pulumi.StringInput) MaintenanceRunOutput {

@@ -70,7 +70,7 @@ public class FusionEnvironmentAdminUser extends com.pulumi.resources.CustomResou
      * The email address for the administrator.
      * 
      */
-    @Export(name="emailAddress", type=String.class, parameters={})
+    @Export(name="emailAddress", refs={String.class}, tree="[0]")
     private Output<String> emailAddress;
 
     /**
@@ -84,7 +84,7 @@ public class FusionEnvironmentAdminUser extends com.pulumi.resources.CustomResou
      * The administrator&#39;s first name.
      * 
      */
-    @Export(name="firstName", type=String.class, parameters={})
+    @Export(name="firstName", refs={String.class}, tree="[0]")
     private Output<String> firstName;
 
     /**
@@ -98,7 +98,7 @@ public class FusionEnvironmentAdminUser extends com.pulumi.resources.CustomResou
      * unique FusionEnvironment identifier
      * 
      */
-    @Export(name="fusionEnvironmentId", type=String.class, parameters={})
+    @Export(name="fusionEnvironmentId", refs={String.class}, tree="[0]")
     private Output<String> fusionEnvironmentId;
 
     /**
@@ -112,7 +112,7 @@ public class FusionEnvironmentAdminUser extends com.pulumi.resources.CustomResou
      * A page of AdminUserSummary objects.
      * 
      */
-    @Export(name="items", type=List.class, parameters={FusionEnvironmentAdminUserItem.class})
+    @Export(name="items", refs={List.class,FusionEnvironmentAdminUserItem.class}, tree="[0,1]")
     private Output<List<FusionEnvironmentAdminUserItem>> items;
 
     /**
@@ -126,7 +126,7 @@ public class FusionEnvironmentAdminUser extends com.pulumi.resources.CustomResou
      * The administrator&#39;s last name.
      * 
      */
-    @Export(name="lastName", type=String.class, parameters={})
+    @Export(name="lastName", refs={String.class}, tree="[0]")
     private Output<String> lastName;
 
     /**
@@ -140,7 +140,7 @@ public class FusionEnvironmentAdminUser extends com.pulumi.resources.CustomResou
      * The password for the administrator.
      * 
      */
-    @Export(name="password", type=String.class, parameters={})
+    @Export(name="password", refs={String.class}, tree="[0]")
     private Output<String> password;
 
     /**
@@ -157,7 +157,7 @@ public class FusionEnvironmentAdminUser extends com.pulumi.resources.CustomResou
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="username", type=String.class, parameters={})
+    @Export(name="username", refs={String.class}, tree="[0]")
     private Output<String> username;
 
     /**

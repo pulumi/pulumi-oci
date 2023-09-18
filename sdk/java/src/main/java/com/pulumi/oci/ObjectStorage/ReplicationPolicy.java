@@ -67,7 +67,7 @@ public class ReplicationPolicy extends com.pulumi.resources.CustomResource {
      * The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
      * 
      */
-    @Export(name="bucket", type=String.class, parameters={})
+    @Export(name="bucket", refs={String.class}, tree="[0]")
     private Output<String> bucket;
 
     /**
@@ -83,7 +83,7 @@ public class ReplicationPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Deprecated /* The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported. */
-    @Export(name="deleteObjectInDestinationBucket", type=String.class, parameters={})
+    @Export(name="deleteObjectInDestinationBucket", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> deleteObjectInDestinationBucket;
 
     public Output<Optional<String>> deleteObjectInDestinationBucket() {
@@ -93,7 +93,7 @@ public class ReplicationPolicy extends com.pulumi.resources.CustomResource {
      * The bucket to replicate to in the destination region. Replication policy creation does not automatically create a destination bucket. Create the destination bucket before creating the policy.
      * 
      */
-    @Export(name="destinationBucketName", type=String.class, parameters={})
+    @Export(name="destinationBucketName", refs={String.class}, tree="[0]")
     private Output<String> destinationBucketName;
 
     /**
@@ -107,7 +107,7 @@ public class ReplicationPolicy extends com.pulumi.resources.CustomResource {
      * The destination region to replicate to, for example &#34;us-ashburn-1&#34;.
      * 
      */
-    @Export(name="destinationRegionName", type=String.class, parameters={})
+    @Export(name="destinationRegionName", refs={String.class}, tree="[0]")
     private Output<String> destinationRegionName;
 
     /**
@@ -121,7 +121,7 @@ public class ReplicationPolicy extends com.pulumi.resources.CustomResource {
      * The name of the policy. Avoid entering confidential information.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -138,7 +138,7 @@ public class ReplicationPolicy extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="namespace", type=String.class, parameters={})
+    @Export(name="namespace", refs={String.class}, tree="[0]")
     private Output<String> namespace;
 
     /**
@@ -155,7 +155,7 @@ public class ReplicationPolicy extends com.pulumi.resources.CustomResource {
      * The replication status of the policy. If the status is CLIENT_ERROR, once the user fixes the issue described in the status message, the status will become ACTIVE.
      * 
      */
-    @Export(name="status", type=String.class, parameters={})
+    @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
@@ -169,7 +169,7 @@ public class ReplicationPolicy extends com.pulumi.resources.CustomResource {
      * A human-readable description of the status.
      * 
      */
-    @Export(name="statusMessage", type=String.class, parameters={})
+    @Export(name="statusMessage", refs={String.class}, tree="[0]")
     private Output<String> statusMessage;
 
     /**
@@ -183,7 +183,7 @@ public class ReplicationPolicy extends com.pulumi.resources.CustomResource {
      * The date when the replication policy was created as per [RFC 3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -197,7 +197,7 @@ public class ReplicationPolicy extends com.pulumi.resources.CustomResource {
      * Changes made to the source bucket before this time has been replicated.
      * 
      */
-    @Export(name="timeLastSync", type=String.class, parameters={})
+    @Export(name="timeLastSync", refs={String.class}, tree="[0]")
     private Output<String> timeLastSync;
 
     /**

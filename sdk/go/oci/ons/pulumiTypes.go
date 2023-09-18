@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -50,6 +51,12 @@ func (i GetNotificationTopicsFilterArgs) ToGetNotificationTopicsFilterOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetNotificationTopicsFilterOutput)
 }
 
+func (i GetNotificationTopicsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetNotificationTopicsFilter] {
+	return pulumix.Output[GetNotificationTopicsFilter]{
+		OutputState: i.ToGetNotificationTopicsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNotificationTopicsFilterArrayInput is an input type that accepts GetNotificationTopicsFilterArray and GetNotificationTopicsFilterArrayOutput values.
 // You can construct a concrete instance of `GetNotificationTopicsFilterArrayInput` via:
 //
@@ -75,6 +82,12 @@ func (i GetNotificationTopicsFilterArray) ToGetNotificationTopicsFilterArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetNotificationTopicsFilterArrayOutput)
 }
 
+func (i GetNotificationTopicsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNotificationTopicsFilter] {
+	return pulumix.Output[[]GetNotificationTopicsFilter]{
+		OutputState: i.ToGetNotificationTopicsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNotificationTopicsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetNotificationTopicsFilterOutput) ElementType() reflect.Type {
@@ -87,6 +100,12 @@ func (o GetNotificationTopicsFilterOutput) ToGetNotificationTopicsFilterOutput()
 
 func (o GetNotificationTopicsFilterOutput) ToGetNotificationTopicsFilterOutputWithContext(ctx context.Context) GetNotificationTopicsFilterOutput {
 	return o
+}
+
+func (o GetNotificationTopicsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetNotificationTopicsFilter] {
+	return pulumix.Output[GetNotificationTopicsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A filter to only return resources that match the given name exactly.
@@ -114,6 +133,12 @@ func (o GetNotificationTopicsFilterArrayOutput) ToGetNotificationTopicsFilterArr
 
 func (o GetNotificationTopicsFilterArrayOutput) ToGetNotificationTopicsFilterArrayOutputWithContext(ctx context.Context) GetNotificationTopicsFilterArrayOutput {
 	return o
+}
+
+func (o GetNotificationTopicsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNotificationTopicsFilter] {
+	return pulumix.Output[[]GetNotificationTopicsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNotificationTopicsFilterArrayOutput) Index(i pulumi.IntInput) GetNotificationTopicsFilterOutput {
@@ -199,6 +224,12 @@ func (i GetNotificationTopicsNotificationTopicArgs) ToGetNotificationTopicsNotif
 	return pulumi.ToOutputWithContext(ctx, i).(GetNotificationTopicsNotificationTopicOutput)
 }
 
+func (i GetNotificationTopicsNotificationTopicArgs) ToOutput(ctx context.Context) pulumix.Output[GetNotificationTopicsNotificationTopic] {
+	return pulumix.Output[GetNotificationTopicsNotificationTopic]{
+		OutputState: i.ToGetNotificationTopicsNotificationTopicOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNotificationTopicsNotificationTopicArrayInput is an input type that accepts GetNotificationTopicsNotificationTopicArray and GetNotificationTopicsNotificationTopicArrayOutput values.
 // You can construct a concrete instance of `GetNotificationTopicsNotificationTopicArrayInput` via:
 //
@@ -224,6 +255,12 @@ func (i GetNotificationTopicsNotificationTopicArray) ToGetNotificationTopicsNoti
 	return pulumi.ToOutputWithContext(ctx, i).(GetNotificationTopicsNotificationTopicArrayOutput)
 }
 
+func (i GetNotificationTopicsNotificationTopicArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNotificationTopicsNotificationTopic] {
+	return pulumix.Output[[]GetNotificationTopicsNotificationTopic]{
+		OutputState: i.ToGetNotificationTopicsNotificationTopicArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNotificationTopicsNotificationTopicOutput struct{ *pulumi.OutputState }
 
 func (GetNotificationTopicsNotificationTopicOutput) ElementType() reflect.Type {
@@ -236,6 +273,12 @@ func (o GetNotificationTopicsNotificationTopicOutput) ToGetNotificationTopicsNot
 
 func (o GetNotificationTopicsNotificationTopicOutput) ToGetNotificationTopicsNotificationTopicOutputWithContext(ctx context.Context) GetNotificationTopicsNotificationTopicOutput {
 	return o
+}
+
+func (o GetNotificationTopicsNotificationTopicOutput) ToOutput(ctx context.Context) pulumix.Output[GetNotificationTopicsNotificationTopic] {
+	return pulumix.Output[GetNotificationTopicsNotificationTopic]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The endpoint for managing subscriptions or publishing messages to the topic.
@@ -312,6 +355,12 @@ func (o GetNotificationTopicsNotificationTopicArrayOutput) ToGetNotificationTopi
 	return o
 }
 
+func (o GetNotificationTopicsNotificationTopicArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNotificationTopicsNotificationTopic] {
+	return pulumix.Output[[]GetNotificationTopicsNotificationTopic]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetNotificationTopicsNotificationTopicArrayOutput) Index(i pulumi.IntInput) GetNotificationTopicsNotificationTopicOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNotificationTopicsNotificationTopic {
 		return vs[0].([]GetNotificationTopicsNotificationTopic)[vs[1].(int)]
@@ -353,6 +402,12 @@ func (i GetSubscriptionsFilterArgs) ToGetSubscriptionsFilterOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsFilterOutput)
 }
 
+func (i GetSubscriptionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsFilter] {
+	return pulumix.Output[GetSubscriptionsFilter]{
+		OutputState: i.ToGetSubscriptionsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSubscriptionsFilterArrayInput is an input type that accepts GetSubscriptionsFilterArray and GetSubscriptionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionsFilterArrayInput` via:
 //
@@ -378,6 +433,12 @@ func (i GetSubscriptionsFilterArray) ToGetSubscriptionsFilterArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsFilterArrayOutput)
 }
 
+func (i GetSubscriptionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsFilter] {
+	return pulumix.Output[[]GetSubscriptionsFilter]{
+		OutputState: i.ToGetSubscriptionsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSubscriptionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionsFilterOutput) ElementType() reflect.Type {
@@ -390,6 +451,12 @@ func (o GetSubscriptionsFilterOutput) ToGetSubscriptionsFilterOutput() GetSubscr
 
 func (o GetSubscriptionsFilterOutput) ToGetSubscriptionsFilterOutputWithContext(ctx context.Context) GetSubscriptionsFilterOutput {
 	return o
+}
+
+func (o GetSubscriptionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsFilter] {
+	return pulumix.Output[GetSubscriptionsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSubscriptionsFilterOutput) Name() pulumi.StringOutput {
@@ -416,6 +483,12 @@ func (o GetSubscriptionsFilterArrayOutput) ToGetSubscriptionsFilterArrayOutput()
 
 func (o GetSubscriptionsFilterArrayOutput) ToGetSubscriptionsFilterArrayOutputWithContext(ctx context.Context) GetSubscriptionsFilterArrayOutput {
 	return o
+}
+
+func (o GetSubscriptionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsFilter] {
+	return pulumix.Output[[]GetSubscriptionsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSubscriptionsFilterArrayOutput) Index(i pulumi.IntInput) GetSubscriptionsFilterOutput {
@@ -495,6 +568,12 @@ func (i GetSubscriptionsSubscriptionArgs) ToGetSubscriptionsSubscriptionOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionOutput)
 }
 
+func (i GetSubscriptionsSubscriptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscription] {
+	return pulumix.Output[GetSubscriptionsSubscription]{
+		OutputState: i.ToGetSubscriptionsSubscriptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSubscriptionsSubscriptionArrayInput is an input type that accepts GetSubscriptionsSubscriptionArray and GetSubscriptionsSubscriptionArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionArrayInput` via:
 //
@@ -520,6 +599,12 @@ func (i GetSubscriptionsSubscriptionArray) ToGetSubscriptionsSubscriptionArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionArrayOutput)
 }
 
+func (i GetSubscriptionsSubscriptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscription] {
+	return pulumix.Output[[]GetSubscriptionsSubscription]{
+		OutputState: i.ToGetSubscriptionsSubscriptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSubscriptionsSubscriptionOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionsSubscriptionOutput) ElementType() reflect.Type {
@@ -532,6 +617,12 @@ func (o GetSubscriptionsSubscriptionOutput) ToGetSubscriptionsSubscriptionOutput
 
 func (o GetSubscriptionsSubscriptionOutput) ToGetSubscriptionsSubscriptionOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionOutput {
 	return o
+}
+
+func (o GetSubscriptionsSubscriptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscription] {
+	return pulumix.Output[GetSubscriptionsSubscription]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -604,6 +695,12 @@ func (o GetSubscriptionsSubscriptionArrayOutput) ToGetSubscriptionsSubscriptionA
 	return o
 }
 
+func (o GetSubscriptionsSubscriptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscription] {
+	return pulumix.Output[[]GetSubscriptionsSubscription]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetSubscriptionsSubscriptionArrayOutput) Index(i pulumi.IntInput) GetSubscriptionsSubscriptionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionsSubscription {
 		return vs[0].([]GetSubscriptionsSubscription)[vs[1].(int)]
@@ -641,6 +738,12 @@ func (i GetSubscriptionsSubscriptionDeliveryPolicyArgs) ToGetSubscriptionsSubscr
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionDeliveryPolicyOutput)
 }
 
+func (i GetSubscriptionsSubscriptionDeliveryPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionDeliveryPolicy] {
+	return pulumix.Output[GetSubscriptionsSubscriptionDeliveryPolicy]{
+		OutputState: i.ToGetSubscriptionsSubscriptionDeliveryPolicyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSubscriptionsSubscriptionDeliveryPolicyArrayInput is an input type that accepts GetSubscriptionsSubscriptionDeliveryPolicyArray and GetSubscriptionsSubscriptionDeliveryPolicyArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionDeliveryPolicyArrayInput` via:
 //
@@ -666,6 +769,12 @@ func (i GetSubscriptionsSubscriptionDeliveryPolicyArray) ToGetSubscriptionsSubsc
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionDeliveryPolicyArrayOutput)
 }
 
+func (i GetSubscriptionsSubscriptionDeliveryPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionDeliveryPolicy] {
+	return pulumix.Output[[]GetSubscriptionsSubscriptionDeliveryPolicy]{
+		OutputState: i.ToGetSubscriptionsSubscriptionDeliveryPolicyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSubscriptionsSubscriptionDeliveryPolicyOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionsSubscriptionDeliveryPolicyOutput) ElementType() reflect.Type {
@@ -678,6 +787,12 @@ func (o GetSubscriptionsSubscriptionDeliveryPolicyOutput) ToGetSubscriptionsSubs
 
 func (o GetSubscriptionsSubscriptionDeliveryPolicyOutput) ToGetSubscriptionsSubscriptionDeliveryPolicyOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionDeliveryPolicyOutput {
 	return o
+}
+
+func (o GetSubscriptionsSubscriptionDeliveryPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionDeliveryPolicy] {
+	return pulumix.Output[GetSubscriptionsSubscriptionDeliveryPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSubscriptionsSubscriptionDeliveryPolicyOutput) BackoffRetryPolicies() GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArrayOutput {
@@ -698,6 +813,12 @@ func (o GetSubscriptionsSubscriptionDeliveryPolicyArrayOutput) ToGetSubscription
 
 func (o GetSubscriptionsSubscriptionDeliveryPolicyArrayOutput) ToGetSubscriptionsSubscriptionDeliveryPolicyArrayOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionDeliveryPolicyArrayOutput {
 	return o
+}
+
+func (o GetSubscriptionsSubscriptionDeliveryPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionDeliveryPolicy] {
+	return pulumix.Output[[]GetSubscriptionsSubscriptionDeliveryPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSubscriptionsSubscriptionDeliveryPolicyArrayOutput) Index(i pulumi.IntInput) GetSubscriptionsSubscriptionDeliveryPolicyOutput {
@@ -743,6 +864,12 @@ func (i GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArgs) ToGetS
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyOutput)
 }
 
+func (i GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy] {
+	return pulumix.Output[GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy]{
+		OutputState: i.ToGetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArrayInput is an input type that accepts GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArray and GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArrayInput` via:
 //
@@ -768,6 +895,12 @@ func (i GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArrayOutput)
 }
 
+func (i GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy] {
+	return pulumix.Output[[]GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy]{
+		OutputState: i.ToGetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyOutput) ElementType() reflect.Type {
@@ -780,6 +913,12 @@ func (o GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyOutput) ToGe
 
 func (o GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyOutput) ToGetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyOutput {
 	return o
+}
+
+func (o GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy] {
+	return pulumix.Output[GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The maximum retry duration in milliseconds.
@@ -804,6 +943,12 @@ func (o GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArrayOutput)
 
 func (o GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArrayOutput) ToGetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArrayOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArrayOutput {
 	return o
+}
+
+func (o GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy] {
+	return pulumix.Output[[]GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArrayOutput) Index(i pulumi.IntInput) GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyOutput {

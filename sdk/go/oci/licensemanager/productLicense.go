@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Product License resource in Oracle Cloud Infrastructure License Manager service.
@@ -320,6 +321,12 @@ func (i *ProductLicense) ToProductLicenseOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(ProductLicenseOutput)
 }
 
+func (i *ProductLicense) ToOutput(ctx context.Context) pulumix.Output[*ProductLicense] {
+	return pulumix.Output[*ProductLicense]{
+		OutputState: i.ToProductLicenseOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ProductLicenseArrayInput is an input type that accepts ProductLicenseArray and ProductLicenseArrayOutput values.
 // You can construct a concrete instance of `ProductLicenseArrayInput` via:
 //
@@ -343,6 +350,12 @@ func (i ProductLicenseArray) ToProductLicenseArrayOutput() ProductLicenseArrayOu
 
 func (i ProductLicenseArray) ToProductLicenseArrayOutputWithContext(ctx context.Context) ProductLicenseArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ProductLicenseArrayOutput)
+}
+
+func (i ProductLicenseArray) ToOutput(ctx context.Context) pulumix.Output[[]*ProductLicense] {
+	return pulumix.Output[[]*ProductLicense]{
+		OutputState: i.ToProductLicenseArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // ProductLicenseMapInput is an input type that accepts ProductLicenseMap and ProductLicenseMapOutput values.
@@ -370,6 +383,12 @@ func (i ProductLicenseMap) ToProductLicenseMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(ProductLicenseMapOutput)
 }
 
+func (i ProductLicenseMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ProductLicense] {
+	return pulumix.Output[map[string]*ProductLicense]{
+		OutputState: i.ToProductLicenseMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ProductLicenseOutput struct{ *pulumi.OutputState }
 
 func (ProductLicenseOutput) ElementType() reflect.Type {
@@ -382,6 +401,12 @@ func (o ProductLicenseOutput) ToProductLicenseOutput() ProductLicenseOutput {
 
 func (o ProductLicenseOutput) ToProductLicenseOutputWithContext(ctx context.Context) ProductLicenseOutput {
 	return o
+}
+
+func (o ProductLicenseOutput) ToOutput(ctx context.Context) pulumix.Output[*ProductLicense] {
+	return pulumix.Output[*ProductLicense]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The number of active license records associated with the product license.
@@ -501,6 +526,12 @@ func (o ProductLicenseArrayOutput) ToProductLicenseArrayOutputWithContext(ctx co
 	return o
 }
 
+func (o ProductLicenseArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ProductLicense] {
+	return pulumix.Output[[]*ProductLicense]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o ProductLicenseArrayOutput) Index(i pulumi.IntInput) ProductLicenseOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ProductLicense {
 		return vs[0].([]*ProductLicense)[vs[1].(int)]
@@ -519,6 +550,12 @@ func (o ProductLicenseMapOutput) ToProductLicenseMapOutput() ProductLicenseMapOu
 
 func (o ProductLicenseMapOutput) ToProductLicenseMapOutputWithContext(ctx context.Context) ProductLicenseMapOutput {
 	return o
+}
+
+func (o ProductLicenseMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ProductLicense] {
+	return pulumix.Output[map[string]*ProductLicense]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ProductLicenseMapOutput) MapIndex(k pulumi.StringInput) ProductLicenseOutput {

@@ -66,7 +66,7 @@ public class OperationsInsightsWarehouseRotateWarehouseWallet extends com.pulumi
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="operationsInsightsWarehouseId", type=String.class, parameters={})
+    @Export(name="operationsInsightsWarehouseId", refs={String.class}, tree="[0]")
     private Output<String> operationsInsightsWarehouseId;
 
     /**

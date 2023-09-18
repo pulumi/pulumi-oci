@@ -105,7 +105,7 @@ public class TargetDatabase extends com.pulumi.resources.CustomResource {
      * The OCIDs of associated resources like database, Data Safe private endpoint etc.
      * 
      */
-    @Export(name="associatedResourceIds", type=List.class, parameters={String.class})
+    @Export(name="associatedResourceIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> associatedResourceIds;
 
     /**
@@ -119,7 +119,7 @@ public class TargetDatabase extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the compartment in which to create the Data Safe target database.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -133,7 +133,7 @@ public class TargetDatabase extends com.pulumi.resources.CustomResource {
      * (Updatable) Types of connection supported by Data Safe.
      * 
      */
-    @Export(name="connectionOption", type=TargetDatabaseConnectionOption.class, parameters={})
+    @Export(name="connectionOption", refs={TargetDatabaseConnectionOption.class}, tree="[0]")
     private Output<TargetDatabaseConnectionOption> connectionOption;
 
     /**
@@ -147,7 +147,7 @@ public class TargetDatabase extends com.pulumi.resources.CustomResource {
      * (Updatable) The database credentials required for Data Safe to connect to the database.
      * 
      */
-    @Export(name="credentials", type=TargetDatabaseCredentials.class, parameters={})
+    @Export(name="credentials", refs={TargetDatabaseCredentials.class}, tree="[0]")
     private Output<TargetDatabaseCredentials> credentials;
 
     /**
@@ -161,7 +161,7 @@ public class TargetDatabase extends com.pulumi.resources.CustomResource {
      * (Updatable) Details of the database for the registration in Data Safe.
      * 
      */
-    @Export(name="databaseDetails", type=TargetDatabaseDatabaseDetails.class, parameters={})
+    @Export(name="databaseDetails", refs={TargetDatabaseDatabaseDetails.class}, tree="[0]")
     private Output<TargetDatabaseDatabaseDetails> databaseDetails;
 
     /**
@@ -175,7 +175,7 @@ public class TargetDatabase extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -189,7 +189,7 @@ public class TargetDatabase extends com.pulumi.resources.CustomResource {
      * (Updatable) The description of the target database in Data Safe.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -203,7 +203,7 @@ public class TargetDatabase extends com.pulumi.resources.CustomResource {
      * (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -217,7 +217,7 @@ public class TargetDatabase extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -231,7 +231,7 @@ public class TargetDatabase extends com.pulumi.resources.CustomResource {
      * Details about the current state of the target database in Data Safe.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -245,7 +245,7 @@ public class TargetDatabase extends com.pulumi.resources.CustomResource {
      * The current state of the target database in Data Safe.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -259,7 +259,7 @@ public class TargetDatabase extends com.pulumi.resources.CustomResource {
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -273,7 +273,7 @@ public class TargetDatabase extends com.pulumi.resources.CustomResource {
      * The date and time the database was registered in Data Safe and created as a target database in Data Safe.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -287,7 +287,7 @@ public class TargetDatabase extends com.pulumi.resources.CustomResource {
      * The date and time of the target database update in Data Safe.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -301,7 +301,7 @@ public class TargetDatabase extends com.pulumi.resources.CustomResource {
      * (Updatable) The details required to establish a TLS enabled connection.
      * 
      */
-    @Export(name="tlsConfig", type=TargetDatabaseTlsConfig.class, parameters={})
+    @Export(name="tlsConfig", refs={TargetDatabaseTlsConfig.class}, tree="[0]")
     private Output<TargetDatabaseTlsConfig> tlsConfig;
 
     /**

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Fusion Environment Admin Users in Oracle Cloud Infrastructure Fusion Apps service.
@@ -104,6 +105,12 @@ func (o GetFusionEnvironmentAdminUsersResultOutput) ToGetFusionEnvironmentAdminU
 
 func (o GetFusionEnvironmentAdminUsersResultOutput) ToGetFusionEnvironmentAdminUsersResultOutputWithContext(ctx context.Context) GetFusionEnvironmentAdminUsersResultOutput {
 	return o
+}
+
+func (o GetFusionEnvironmentAdminUsersResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentAdminUsersResult] {
+	return pulumix.Output[GetFusionEnvironmentAdminUsersResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The list of admin_user_collection.

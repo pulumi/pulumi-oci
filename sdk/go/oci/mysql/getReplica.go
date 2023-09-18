@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Replica resource in Oracle Cloud Infrastructure MySQL Database service.
@@ -133,6 +134,12 @@ func (o LookupReplicaResultOutput) ToLookupReplicaResultOutput() LookupReplicaRe
 
 func (o LookupReplicaResultOutput) ToLookupReplicaResultOutputWithContext(ctx context.Context) LookupReplicaResultOutput {
 	return o
+}
+
+func (o LookupReplicaResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupReplicaResult] {
+	return pulumix.Output[LookupReplicaResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the Availability Domain the read replica is located in.

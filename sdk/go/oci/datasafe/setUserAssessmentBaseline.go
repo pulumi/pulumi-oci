@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Set User Assessment Baseline resource in Oracle Cloud Infrastructure Data Safe service.
@@ -164,6 +165,12 @@ func (i *SetUserAssessmentBaseline) ToSetUserAssessmentBaselineOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(SetUserAssessmentBaselineOutput)
 }
 
+func (i *SetUserAssessmentBaseline) ToOutput(ctx context.Context) pulumix.Output[*SetUserAssessmentBaseline] {
+	return pulumix.Output[*SetUserAssessmentBaseline]{
+		OutputState: i.ToSetUserAssessmentBaselineOutputWithContext(ctx).OutputState,
+	}
+}
+
 // SetUserAssessmentBaselineArrayInput is an input type that accepts SetUserAssessmentBaselineArray and SetUserAssessmentBaselineArrayOutput values.
 // You can construct a concrete instance of `SetUserAssessmentBaselineArrayInput` via:
 //
@@ -187,6 +194,12 @@ func (i SetUserAssessmentBaselineArray) ToSetUserAssessmentBaselineArrayOutput()
 
 func (i SetUserAssessmentBaselineArray) ToSetUserAssessmentBaselineArrayOutputWithContext(ctx context.Context) SetUserAssessmentBaselineArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SetUserAssessmentBaselineArrayOutput)
+}
+
+func (i SetUserAssessmentBaselineArray) ToOutput(ctx context.Context) pulumix.Output[[]*SetUserAssessmentBaseline] {
+	return pulumix.Output[[]*SetUserAssessmentBaseline]{
+		OutputState: i.ToSetUserAssessmentBaselineArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // SetUserAssessmentBaselineMapInput is an input type that accepts SetUserAssessmentBaselineMap and SetUserAssessmentBaselineMapOutput values.
@@ -214,6 +227,12 @@ func (i SetUserAssessmentBaselineMap) ToSetUserAssessmentBaselineMapOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(SetUserAssessmentBaselineMapOutput)
 }
 
+func (i SetUserAssessmentBaselineMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*SetUserAssessmentBaseline] {
+	return pulumix.Output[map[string]*SetUserAssessmentBaseline]{
+		OutputState: i.ToSetUserAssessmentBaselineMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type SetUserAssessmentBaselineOutput struct{ *pulumi.OutputState }
 
 func (SetUserAssessmentBaselineOutput) ElementType() reflect.Type {
@@ -226,6 +245,12 @@ func (o SetUserAssessmentBaselineOutput) ToSetUserAssessmentBaselineOutput() Set
 
 func (o SetUserAssessmentBaselineOutput) ToSetUserAssessmentBaselineOutputWithContext(ctx context.Context) SetUserAssessmentBaselineOutput {
 	return o
+}
+
+func (o SetUserAssessmentBaselineOutput) ToOutput(ctx context.Context) pulumix.Output[*SetUserAssessmentBaseline] {
+	return pulumix.Output[*SetUserAssessmentBaseline]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The list of user assessment OCIDs that need to be updated while setting the baseline.
@@ -255,6 +280,12 @@ func (o SetUserAssessmentBaselineArrayOutput) ToSetUserAssessmentBaselineArrayOu
 	return o
 }
 
+func (o SetUserAssessmentBaselineArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*SetUserAssessmentBaseline] {
+	return pulumix.Output[[]*SetUserAssessmentBaseline]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o SetUserAssessmentBaselineArrayOutput) Index(i pulumi.IntInput) SetUserAssessmentBaselineOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *SetUserAssessmentBaseline {
 		return vs[0].([]*SetUserAssessmentBaseline)[vs[1].(int)]
@@ -273,6 +304,12 @@ func (o SetUserAssessmentBaselineMapOutput) ToSetUserAssessmentBaselineMapOutput
 
 func (o SetUserAssessmentBaselineMapOutput) ToSetUserAssessmentBaselineMapOutputWithContext(ctx context.Context) SetUserAssessmentBaselineMapOutput {
 	return o
+}
+
+func (o SetUserAssessmentBaselineMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*SetUserAssessmentBaseline] {
+	return pulumix.Output[map[string]*SetUserAssessmentBaseline]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o SetUserAssessmentBaselineMapOutput) MapIndex(k pulumi.StringInput) SetUserAssessmentBaselineOutput {

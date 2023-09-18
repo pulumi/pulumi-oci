@@ -38,6 +38,34 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public static Task<GetIpsecAlgorithmResult> InvokeAsync(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetIpsecAlgorithmResult>("oci:Core/getIpsecAlgorithm:getIpsecAlgorithm", InvokeArgs.Empty, options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Ipsec Algorithm resource in Oracle Cloud Infrastructure Core service.
+        /// 
+        /// The parameters allowed for IKE IPSec tunnels.
+        /// 
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testIpsecAlgorithm = Oci.Core.GetIpsecAlgorithm.Invoke();
+        /// 
+        /// });
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// </summary>
+        public static Output<GetIpsecAlgorithmResult> Invoke(InvokeOptions? options = null)
+            => global::Pulumi.Deployment.Instance.Invoke<GetIpsecAlgorithmResult>("oci:Core/getIpsecAlgorithm:getIpsecAlgorithm", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

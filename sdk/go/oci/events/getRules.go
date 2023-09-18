@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Rules in Oracle Cloud Infrastructure Events service.
@@ -119,6 +120,12 @@ func (o GetRulesResultOutput) ToGetRulesResultOutput() GetRulesResultOutput {
 
 func (o GetRulesResultOutput) ToGetRulesResultOutputWithContext(ctx context.Context) GetRulesResultOutput {
 	return o
+}
+
+func (o GetRulesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRulesResult] {
+	return pulumix.Output[GetRulesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.

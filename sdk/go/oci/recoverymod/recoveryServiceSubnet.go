@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Recovery Service Subnet resource in Oracle Cloud Infrastructure Recovery service.
@@ -269,6 +270,12 @@ func (i *RecoveryServiceSubnet) ToRecoveryServiceSubnetOutputWithContext(ctx con
 	return pulumi.ToOutputWithContext(ctx, i).(RecoveryServiceSubnetOutput)
 }
 
+func (i *RecoveryServiceSubnet) ToOutput(ctx context.Context) pulumix.Output[*RecoveryServiceSubnet] {
+	return pulumix.Output[*RecoveryServiceSubnet]{
+		OutputState: i.ToRecoveryServiceSubnetOutputWithContext(ctx).OutputState,
+	}
+}
+
 // RecoveryServiceSubnetArrayInput is an input type that accepts RecoveryServiceSubnetArray and RecoveryServiceSubnetArrayOutput values.
 // You can construct a concrete instance of `RecoveryServiceSubnetArrayInput` via:
 //
@@ -292,6 +299,12 @@ func (i RecoveryServiceSubnetArray) ToRecoveryServiceSubnetArrayOutput() Recover
 
 func (i RecoveryServiceSubnetArray) ToRecoveryServiceSubnetArrayOutputWithContext(ctx context.Context) RecoveryServiceSubnetArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(RecoveryServiceSubnetArrayOutput)
+}
+
+func (i RecoveryServiceSubnetArray) ToOutput(ctx context.Context) pulumix.Output[[]*RecoveryServiceSubnet] {
+	return pulumix.Output[[]*RecoveryServiceSubnet]{
+		OutputState: i.ToRecoveryServiceSubnetArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // RecoveryServiceSubnetMapInput is an input type that accepts RecoveryServiceSubnetMap and RecoveryServiceSubnetMapOutput values.
@@ -319,6 +332,12 @@ func (i RecoveryServiceSubnetMap) ToRecoveryServiceSubnetMapOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(RecoveryServiceSubnetMapOutput)
 }
 
+func (i RecoveryServiceSubnetMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*RecoveryServiceSubnet] {
+	return pulumix.Output[map[string]*RecoveryServiceSubnet]{
+		OutputState: i.ToRecoveryServiceSubnetMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type RecoveryServiceSubnetOutput struct{ *pulumi.OutputState }
 
 func (RecoveryServiceSubnetOutput) ElementType() reflect.Type {
@@ -331,6 +350,12 @@ func (o RecoveryServiceSubnetOutput) ToRecoveryServiceSubnetOutput() RecoverySer
 
 func (o RecoveryServiceSubnetOutput) ToRecoveryServiceSubnetOutputWithContext(ctx context.Context) RecoveryServiceSubnetOutput {
 	return o
+}
+
+func (o RecoveryServiceSubnetOutput) ToOutput(ctx context.Context) pulumix.Output[*RecoveryServiceSubnet] {
+	return pulumix.Output[*RecoveryServiceSubnet]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The compartment OCID.
@@ -411,6 +436,12 @@ func (o RecoveryServiceSubnetArrayOutput) ToRecoveryServiceSubnetArrayOutputWith
 	return o
 }
 
+func (o RecoveryServiceSubnetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*RecoveryServiceSubnet] {
+	return pulumix.Output[[]*RecoveryServiceSubnet]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o RecoveryServiceSubnetArrayOutput) Index(i pulumi.IntInput) RecoveryServiceSubnetOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *RecoveryServiceSubnet {
 		return vs[0].([]*RecoveryServiceSubnet)[vs[1].(int)]
@@ -429,6 +460,12 @@ func (o RecoveryServiceSubnetMapOutput) ToRecoveryServiceSubnetMapOutput() Recov
 
 func (o RecoveryServiceSubnetMapOutput) ToRecoveryServiceSubnetMapOutputWithContext(ctx context.Context) RecoveryServiceSubnetMapOutput {
 	return o
+}
+
+func (o RecoveryServiceSubnetMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*RecoveryServiceSubnet] {
+	return pulumix.Output[map[string]*RecoveryServiceSubnet]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o RecoveryServiceSubnetMapOutput) MapIndex(k pulumi.StringInput) RecoveryServiceSubnetOutput {

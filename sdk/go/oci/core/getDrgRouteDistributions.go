@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Drg Route Distributions in Oracle Cloud Infrastructure Core service.
@@ -122,6 +123,12 @@ func (o GetDrgRouteDistributionsResultOutput) ToGetDrgRouteDistributionsResultOu
 
 func (o GetDrgRouteDistributionsResultOutput) ToGetDrgRouteDistributionsResultOutputWithContext(ctx context.Context) GetDrgRouteDistributionsResultOutput {
 	return o
+}
+
+func (o GetDrgRouteDistributionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrgRouteDistributionsResult] {
+	return pulumix.Output[GetDrgRouteDistributionsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.

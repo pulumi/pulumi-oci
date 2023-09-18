@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Db Home Patches in Oracle Cloud Infrastructure Database service.
@@ -104,6 +105,12 @@ func (o GetDbHomePatchesResultOutput) ToGetDbHomePatchesResultOutput() GetDbHome
 
 func (o GetDbHomePatchesResultOutput) ToGetDbHomePatchesResultOutputWithContext(ctx context.Context) GetDbHomePatchesResultOutput {
 	return o
+}
+
+func (o GetDbHomePatchesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDbHomePatchesResult] {
+	return pulumix.Output[GetDbHomePatchesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDbHomePatchesResultOutput) DbHomeId() pulumi.StringOutput {

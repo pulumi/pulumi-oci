@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Build Run resource in Oracle Cloud Infrastructure Devops service.
@@ -131,6 +132,12 @@ func (o LookupBuildRunResultOutput) ToLookupBuildRunResultOutput() LookupBuildRu
 
 func (o LookupBuildRunResultOutput) ToLookupBuildRunResultOutputWithContext(ctx context.Context) LookupBuildRunResultOutput {
 	return o
+}
+
+func (o LookupBuildRunResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupBuildRunResult] {
+	return pulumix.Output[LookupBuildRunResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Outputs from the build.

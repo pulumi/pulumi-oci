@@ -69,7 +69,7 @@ public class UiPassword extends com.pulumi.resources.CustomResource {
      * The detailed status of INACTIVE lifecycleState.
      * 
      */
-    @Export(name="inactiveStatus", type=String.class, parameters={})
+    @Export(name="inactiveStatus", refs={String.class}, tree="[0]")
     private Output<String> inactiveStatus;
 
     /**
@@ -83,7 +83,7 @@ public class UiPassword extends com.pulumi.resources.CustomResource {
      * The user&#39;s password for the Console.
      * 
      */
-    @Export(name="password", type=String.class, parameters={})
+    @Export(name="password", refs={String.class}, tree="[0]")
     private Output<String> password;
 
     /**
@@ -97,7 +97,7 @@ public class UiPassword extends com.pulumi.resources.CustomResource {
      * The password&#39;s current state.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -111,7 +111,7 @@ public class UiPassword extends com.pulumi.resources.CustomResource {
      * Date and time the password was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -128,7 +128,7 @@ public class UiPassword extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="userId", type=String.class, parameters={})
+    @Export(name="userId", refs={String.class}, tree="[0]")
     private Output<String> userId;
 
     /**

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Report Content resource in Oracle Cloud Infrastructure Data Safe service.
@@ -99,6 +100,12 @@ func (o GetReportContentResultOutput) ToGetReportContentResultOutput() GetReport
 
 func (o GetReportContentResultOutput) ToGetReportContentResultOutputWithContext(ctx context.Context) GetReportContentResultOutput {
 	return o
+}
+
+func (o GetReportContentResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetReportContentResult] {
+	return pulumix.Output[GetReportContentResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The provider-assigned unique ID for this managed resource.

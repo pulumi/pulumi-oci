@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Protected Database resource in Oracle Cloud Infrastructure Recovery service.
@@ -347,6 +348,12 @@ func (i *ProtectedDatabase) ToProtectedDatabaseOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(ProtectedDatabaseOutput)
 }
 
+func (i *ProtectedDatabase) ToOutput(ctx context.Context) pulumix.Output[*ProtectedDatabase] {
+	return pulumix.Output[*ProtectedDatabase]{
+		OutputState: i.ToProtectedDatabaseOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ProtectedDatabaseArrayInput is an input type that accepts ProtectedDatabaseArray and ProtectedDatabaseArrayOutput values.
 // You can construct a concrete instance of `ProtectedDatabaseArrayInput` via:
 //
@@ -370,6 +377,12 @@ func (i ProtectedDatabaseArray) ToProtectedDatabaseArrayOutput() ProtectedDataba
 
 func (i ProtectedDatabaseArray) ToProtectedDatabaseArrayOutputWithContext(ctx context.Context) ProtectedDatabaseArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ProtectedDatabaseArrayOutput)
+}
+
+func (i ProtectedDatabaseArray) ToOutput(ctx context.Context) pulumix.Output[[]*ProtectedDatabase] {
+	return pulumix.Output[[]*ProtectedDatabase]{
+		OutputState: i.ToProtectedDatabaseArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // ProtectedDatabaseMapInput is an input type that accepts ProtectedDatabaseMap and ProtectedDatabaseMapOutput values.
@@ -397,6 +410,12 @@ func (i ProtectedDatabaseMap) ToProtectedDatabaseMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(ProtectedDatabaseMapOutput)
 }
 
+func (i ProtectedDatabaseMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ProtectedDatabase] {
+	return pulumix.Output[map[string]*ProtectedDatabase]{
+		OutputState: i.ToProtectedDatabaseMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ProtectedDatabaseOutput struct{ *pulumi.OutputState }
 
 func (ProtectedDatabaseOutput) ElementType() reflect.Type {
@@ -409,6 +428,12 @@ func (o ProtectedDatabaseOutput) ToProtectedDatabaseOutput() ProtectedDatabaseOu
 
 func (o ProtectedDatabaseOutput) ToProtectedDatabaseOutputWithContext(ctx context.Context) ProtectedDatabaseOutput {
 	return o
+}
+
+func (o ProtectedDatabaseOutput) ToOutput(ctx context.Context) pulumix.Output[*ProtectedDatabase] {
+	return pulumix.Output[*ProtectedDatabase]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The OCID of the compartment that contains the protected database.
@@ -535,6 +560,12 @@ func (o ProtectedDatabaseArrayOutput) ToProtectedDatabaseArrayOutputWithContext(
 	return o
 }
 
+func (o ProtectedDatabaseArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ProtectedDatabase] {
+	return pulumix.Output[[]*ProtectedDatabase]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o ProtectedDatabaseArrayOutput) Index(i pulumi.IntInput) ProtectedDatabaseOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ProtectedDatabase {
 		return vs[0].([]*ProtectedDatabase)[vs[1].(int)]
@@ -553,6 +584,12 @@ func (o ProtectedDatabaseMapOutput) ToProtectedDatabaseMapOutput() ProtectedData
 
 func (o ProtectedDatabaseMapOutput) ToProtectedDatabaseMapOutputWithContext(ctx context.Context) ProtectedDatabaseMapOutput {
 	return o
+}
+
+func (o ProtectedDatabaseMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ProtectedDatabase] {
+	return pulumix.Output[map[string]*ProtectedDatabase]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ProtectedDatabaseMapOutput) MapIndex(k pulumi.StringInput) ProtectedDatabaseOutput {

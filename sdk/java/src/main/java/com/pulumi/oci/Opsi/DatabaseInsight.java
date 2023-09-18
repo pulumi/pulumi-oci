@@ -99,7 +99,7 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
      * (Updatable) Compartment Identifier of database
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -113,7 +113,7 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
      * User credential details to connect to the database. This is supplied via the External Database Service.
      * 
      */
-    @Export(name="connectionCredentialDetails", type=DatabaseInsightConnectionCredentialDetails.class, parameters={})
+    @Export(name="connectionCredentialDetails", refs={DatabaseInsightConnectionCredentialDetails.class}, tree="[0]")
     private Output<DatabaseInsightConnectionCredentialDetails> connectionCredentialDetails;
 
     /**
@@ -127,7 +127,7 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
      * Connection details of the private endpoints.
      * 
      */
-    @Export(name="connectionDetails", type=DatabaseInsightConnectionDetails.class, parameters={})
+    @Export(name="connectionDetails", refs={DatabaseInsightConnectionDetails.class}, tree="[0]")
     private Output<DatabaseInsightConnectionDetails> connectionDetails;
 
     /**
@@ -141,7 +141,7 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
      * User credential details to connect to the database. This is supplied via the External Database Service.
      * 
      */
-    @Export(name="credentialDetails", type=DatabaseInsightCredentialDetails.class, parameters={})
+    @Export(name="credentialDetails", refs={DatabaseInsightCredentialDetails.class}, tree="[0]")
     private Output</* @Nullable */ DatabaseInsightCredentialDetails> credentialDetails;
 
     /**
@@ -155,7 +155,7 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
      * A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
      * 
      */
-    @Export(name="databaseConnectionStatusDetails", type=String.class, parameters={})
+    @Export(name="databaseConnectionStatusDetails", refs={String.class}, tree="[0]")
     private Output<String> databaseConnectionStatusDetails;
 
     /**
@@ -169,7 +169,7 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
      * Display name of database
      * 
      */
-    @Export(name="databaseDisplayName", type=String.class, parameters={})
+    @Export(name="databaseDisplayName", refs={String.class}, tree="[0]")
     private Output<String> databaseDisplayName;
 
     /**
@@ -183,7 +183,7 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      * 
      */
-    @Export(name="databaseId", type=String.class, parameters={})
+    @Export(name="databaseId", refs={String.class}, tree="[0]")
     private Output<String> databaseId;
 
     /**
@@ -197,7 +197,7 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
      * Name of database
      * 
      */
-    @Export(name="databaseName", type=String.class, parameters={})
+    @Export(name="databaseName", refs={String.class}, tree="[0]")
     private Output<String> databaseName;
 
     /**
@@ -211,7 +211,7 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
      * Oracle Cloud Infrastructure database resource type
      * 
      */
-    @Export(name="databaseResourceType", type=String.class, parameters={})
+    @Export(name="databaseResourceType", refs={String.class}, tree="[0]")
     private Output<String> databaseResourceType;
 
     /**
@@ -225,7 +225,7 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
      * Operations Insights internal representation of the database type.
      * 
      */
-    @Export(name="databaseType", type=String.class, parameters={})
+    @Export(name="databaseType", refs={String.class}, tree="[0]")
     private Output<String> databaseType;
 
     /**
@@ -239,7 +239,7 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
      * The version of the database.
      * 
      */
-    @Export(name="databaseVersion", type=String.class, parameters={})
+    @Export(name="databaseVersion", refs={String.class}, tree="[0]")
     private Output<String> databaseVersion;
 
     /**
@@ -253,7 +253,7 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint. This field and opsi_private_endpoint_id are mutually exclusive. If DBM private endpoint ID is provided, a new OPSI private endpoint ID will be created.
      * 
      */
-    @Export(name="dbmPrivateEndpointId", type=String.class, parameters={})
+    @Export(name="dbmPrivateEndpointId", refs={String.class}, tree="[0]")
     private Output<String> dbmPrivateEndpointId;
 
     /**
@@ -267,7 +267,7 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -281,7 +281,7 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
      * Database Deployment Type
      * 
      */
-    @Export(name="deploymentType", type=String.class, parameters={})
+    @Export(name="deploymentType", refs={String.class}, tree="[0]")
     private Output<String> deploymentType;
 
     /**
@@ -295,7 +295,7 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
      * OPSI Enterprise Manager Bridge OCID
      * 
      */
-    @Export(name="enterpriseManagerBridgeId", type=String.class, parameters={})
+    @Export(name="enterpriseManagerBridgeId", refs={String.class}, tree="[0]")
     private Output<String> enterpriseManagerBridgeId;
 
     /**
@@ -309,7 +309,7 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
      * Enterprise Manager Entity Display Name
      * 
      */
-    @Export(name="enterpriseManagerEntityDisplayName", type=String.class, parameters={})
+    @Export(name="enterpriseManagerEntityDisplayName", refs={String.class}, tree="[0]")
     private Output<String> enterpriseManagerEntityDisplayName;
 
     /**
@@ -323,7 +323,7 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
      * Enterprise Manager Entity Unique Identifier
      * 
      */
-    @Export(name="enterpriseManagerEntityIdentifier", type=String.class, parameters={})
+    @Export(name="enterpriseManagerEntityIdentifier", refs={String.class}, tree="[0]")
     private Output<String> enterpriseManagerEntityIdentifier;
 
     /**
@@ -337,7 +337,7 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
      * Enterprise Manager Entity Name
      * 
      */
-    @Export(name="enterpriseManagerEntityName", type=String.class, parameters={})
+    @Export(name="enterpriseManagerEntityName", refs={String.class}, tree="[0]")
     private Output<String> enterpriseManagerEntityName;
 
     /**
@@ -351,7 +351,7 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
      * Enterprise Manager Entity Type
      * 
      */
-    @Export(name="enterpriseManagerEntityType", type=String.class, parameters={})
+    @Export(name="enterpriseManagerEntityType", refs={String.class}, tree="[0]")
     private Output<String> enterpriseManagerEntityType;
 
     /**
@@ -365,7 +365,7 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
      * Enterprise Manager Unique Identifier
      * 
      */
-    @Export(name="enterpriseManagerIdentifier", type=String.class, parameters={})
+    @Export(name="enterpriseManagerIdentifier", refs={String.class}, tree="[0]")
     private Output<String> enterpriseManagerIdentifier;
 
     /**
@@ -379,7 +379,7 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
      * (Updatable) Source of the database entity.
      * 
      */
-    @Export(name="entitySource", type=String.class, parameters={})
+    @Export(name="entitySource", refs={String.class}, tree="[0]")
     private Output<String> entitySource;
 
     /**
@@ -393,7 +393,7 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
      * 
      */
-    @Export(name="exadataInsightId", type=String.class, parameters={})
+    @Export(name="exadataInsightId", refs={String.class}, tree="[0]")
     private Output<String> exadataInsightId;
 
     /**
@@ -407,7 +407,7 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -421,7 +421,7 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -435,7 +435,7 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
      * 
      */
-    @Export(name="opsiPrivateEndpointId", type=String.class, parameters={})
+    @Export(name="opsiPrivateEndpointId", refs={String.class}, tree="[0]")
     private Output<String> opsiPrivateEndpointId;
 
     /**
@@ -449,7 +449,7 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
      * 
      */
-    @Export(name="parentId", type=String.class, parameters={})
+    @Export(name="parentId", refs={String.class}, tree="[0]")
     private Output<String> parentId;
 
     /**
@@ -463,7 +463,7 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
      * Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
      * 
      */
-    @Export(name="processorCount", type=Integer.class, parameters={})
+    @Export(name="processorCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> processorCount;
 
     /**
@@ -477,7 +477,7 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
      * 
      */
-    @Export(name="rootId", type=String.class, parameters={})
+    @Export(name="rootId", refs={String.class}, tree="[0]")
     private Output<String> rootId;
 
     /**
@@ -491,7 +491,7 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
      * Database service name used for connection requests.
      * 
      */
-    @Export(name="serviceName", type=String.class, parameters={})
+    @Export(name="serviceName", refs={String.class}, tree="[0]")
     private Output<String> serviceName;
 
     /**
@@ -505,7 +505,7 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
      * The current state of the database.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -522,7 +522,7 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. The resource destruction here is basically a soft delete. User cannot create resource using the same EM managed bridge OCID. If resource is in enabled state during destruction, the resource will be disabled automatically before performing delete operation.
      * 
      */
-    @Export(name="status", type=String.class, parameters={})
+    @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
@@ -539,7 +539,7 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -553,7 +553,7 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
      * The time the the database insight was first enabled. An RFC3339 formatted datetime string
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -567,7 +567,7 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
      * The time the database insight was updated. An RFC3339 formatted datetime string
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

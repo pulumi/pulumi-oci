@@ -61,7 +61,7 @@ public class NamespaceIngestTimeRulesManagement extends com.pulumi.resources.Cus
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="enableIngestTimeRule", type=Boolean.class, parameters={})
+    @Export(name="enableIngestTimeRule", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableIngestTimeRule;
 
     /**
@@ -78,7 +78,7 @@ public class NamespaceIngestTimeRulesManagement extends com.pulumi.resources.Cus
      * Unique ocid of the ingest time rule.
      * 
      */
-    @Export(name="ingestTimeRuleId", type=String.class, parameters={})
+    @Export(name="ingestTimeRuleId", refs={String.class}, tree="[0]")
     private Output<String> ingestTimeRuleId;
 
     /**
@@ -92,7 +92,7 @@ public class NamespaceIngestTimeRulesManagement extends com.pulumi.resources.Cus
      * The Logging Analytics namespace used for the request.
      * 
      */
-    @Export(name="namespace", type=String.class, parameters={})
+    @Export(name="namespace", refs={String.class}, tree="[0]")
     private Output<String> namespace;
 
     /**

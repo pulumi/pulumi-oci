@@ -69,7 +69,7 @@ public class DataAsset extends com.pulumi.resources.CustomResource {
      * Unique catalog identifier.
      * 
      */
-    @Export(name="catalogId", type=String.class, parameters={})
+    @Export(name="catalogId", refs={String.class}, tree="[0]")
     private Output<String> catalogId;
 
     /**
@@ -83,7 +83,7 @@ public class DataAsset extends com.pulumi.resources.CustomResource {
      * OCID of the user who created the data asset.
      * 
      */
-    @Export(name="createdById", type=String.class, parameters={})
+    @Export(name="createdById", refs={String.class}, tree="[0]")
     private Output<String> createdById;
 
     /**
@@ -97,7 +97,7 @@ public class DataAsset extends com.pulumi.resources.CustomResource {
      * (Updatable) Detailed description of the data asset.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -111,7 +111,7 @@ public class DataAsset extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-friendly display name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -125,7 +125,7 @@ public class DataAsset extends com.pulumi.resources.CustomResource {
      * External URI that can be used to reference the object. Format will differ based on the type of object.
      * 
      */
-    @Export(name="externalKey", type=String.class, parameters={})
+    @Export(name="externalKey", refs={String.class}, tree="[0]")
     private Output<String> externalKey;
 
     /**
@@ -139,7 +139,7 @@ public class DataAsset extends com.pulumi.resources.CustomResource {
      * Unique data asset key that is immutable.
      * 
      */
-    @Export(name="key", type=String.class, parameters={})
+    @Export(name="key", refs={String.class}, tree="[0]")
     private Output<String> key;
 
     /**
@@ -153,7 +153,7 @@ public class DataAsset extends com.pulumi.resources.CustomResource {
      * A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -167,7 +167,7 @@ public class DataAsset extends com.pulumi.resources.CustomResource {
      * A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it&#39;s set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the &#34;default&#34; category. Example: `{&#34;properties&#34;: { &#34;default&#34;: { &#34;host&#34;: &#34;host1&#34;, &#34;port&#34;: &#34;1521&#34;, &#34;database&#34;: &#34;orcl&#34;}}}`
      * 
      */
-    @Export(name="properties", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="properties", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> properties;
 
     /**
@@ -181,7 +181,7 @@ public class DataAsset extends com.pulumi.resources.CustomResource {
      * The current state of the data asset.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -195,7 +195,7 @@ public class DataAsset extends com.pulumi.resources.CustomResource {
      * The date and time the data asset was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2019-03-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -209,7 +209,7 @@ public class DataAsset extends com.pulumi.resources.CustomResource {
      * The last time that a harvest was performed on the data asset. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      * 
      */
-    @Export(name="timeHarvested", type=String.class, parameters={})
+    @Export(name="timeHarvested", refs={String.class}, tree="[0]")
     private Output<String> timeHarvested;
 
     /**
@@ -223,7 +223,7 @@ public class DataAsset extends com.pulumi.resources.CustomResource {
      * The last time that any change was made to the data asset. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -240,7 +240,7 @@ public class DataAsset extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="typeKey", type=String.class, parameters={})
+    @Export(name="typeKey", refs={String.class}, tree="[0]")
     private Output<String> typeKey;
 
     /**
@@ -257,7 +257,7 @@ public class DataAsset extends com.pulumi.resources.CustomResource {
      * OCID of the user who last modified the data asset.
      * 
      */
-    @Export(name="updatedById", type=String.class, parameters={})
+    @Export(name="updatedById", refs={String.class}, tree="[0]")
     private Output<String> updatedById;
 
     /**
@@ -271,7 +271,7 @@ public class DataAsset extends com.pulumi.resources.CustomResource {
      * URI to the data asset instance in the API.
      * 
      */
-    @Export(name="uri", type=String.class, parameters={})
+    @Export(name="uri", refs={String.class}, tree="[0]")
     private Output<String> uri;
 
     /**

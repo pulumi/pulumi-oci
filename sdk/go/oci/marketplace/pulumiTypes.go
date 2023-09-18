@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -58,6 +59,12 @@ func (i PublicationIconArgs) ToPublicationIconOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(PublicationIconOutput)
 }
 
+func (i PublicationIconArgs) ToOutput(ctx context.Context) pulumix.Output[PublicationIcon] {
+	return pulumix.Output[PublicationIcon]{
+		OutputState: i.ToPublicationIconOutputWithContext(ctx).OutputState,
+	}
+}
+
 // PublicationIconArrayInput is an input type that accepts PublicationIconArray and PublicationIconArrayOutput values.
 // You can construct a concrete instance of `PublicationIconArrayInput` via:
 //
@@ -83,6 +90,12 @@ func (i PublicationIconArray) ToPublicationIconArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(PublicationIconArrayOutput)
 }
 
+func (i PublicationIconArray) ToOutput(ctx context.Context) pulumix.Output[[]PublicationIcon] {
+	return pulumix.Output[[]PublicationIcon]{
+		OutputState: i.ToPublicationIconArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type PublicationIconOutput struct{ *pulumi.OutputState }
 
 func (PublicationIconOutput) ElementType() reflect.Type {
@@ -95,6 +108,12 @@ func (o PublicationIconOutput) ToPublicationIconOutput() PublicationIconOutput {
 
 func (o PublicationIconOutput) ToPublicationIconOutputWithContext(ctx context.Context) PublicationIconOutput {
 	return o
+}
+
+func (o PublicationIconOutput) ToOutput(ctx context.Context) pulumix.Output[PublicationIcon] {
+	return pulumix.Output[PublicationIcon]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The content URL of the upload data.
@@ -129,6 +148,12 @@ func (o PublicationIconArrayOutput) ToPublicationIconArrayOutput() PublicationIc
 
 func (o PublicationIconArrayOutput) ToPublicationIconArrayOutputWithContext(ctx context.Context) PublicationIconArrayOutput {
 	return o
+}
+
+func (o PublicationIconArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]PublicationIcon] {
+	return pulumix.Output[[]PublicationIcon]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o PublicationIconArrayOutput) Index(i pulumi.IntInput) PublicationIconOutput {
@@ -186,6 +211,12 @@ func (i PublicationPackageDetailsArgs) ToPublicationPackageDetailsOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(PublicationPackageDetailsOutput)
 }
 
+func (i PublicationPackageDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[PublicationPackageDetails] {
+	return pulumix.Output[PublicationPackageDetails]{
+		OutputState: i.ToPublicationPackageDetailsOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i PublicationPackageDetailsArgs) ToPublicationPackageDetailsPtrOutput() PublicationPackageDetailsPtrOutput {
 	return i.ToPublicationPackageDetailsPtrOutputWithContext(context.Background())
 }
@@ -227,6 +258,12 @@ func (i *publicationPackageDetailsPtrType) ToPublicationPackageDetailsPtrOutputW
 	return pulumi.ToOutputWithContext(ctx, i).(PublicationPackageDetailsPtrOutput)
 }
 
+func (i *publicationPackageDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*PublicationPackageDetails] {
+	return pulumix.Output[*PublicationPackageDetails]{
+		OutputState: i.ToPublicationPackageDetailsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type PublicationPackageDetailsOutput struct{ *pulumi.OutputState }
 
 func (PublicationPackageDetailsOutput) ElementType() reflect.Type {
@@ -249,6 +286,12 @@ func (o PublicationPackageDetailsOutput) ToPublicationPackageDetailsPtrOutputWit
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v PublicationPackageDetails) *PublicationPackageDetails {
 		return &v
 	}).(PublicationPackageDetailsPtrOutput)
+}
+
+func (o PublicationPackageDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[PublicationPackageDetails] {
+	return pulumix.Output[PublicationPackageDetails]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The end user license agreeement (EULA) that consumers of this listing must accept.
@@ -288,6 +331,12 @@ func (o PublicationPackageDetailsPtrOutput) ToPublicationPackageDetailsPtrOutput
 
 func (o PublicationPackageDetailsPtrOutput) ToPublicationPackageDetailsPtrOutputWithContext(ctx context.Context) PublicationPackageDetailsPtrOutput {
 	return o
+}
+
+func (o PublicationPackageDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*PublicationPackageDetails] {
+	return pulumix.Output[*PublicationPackageDetails]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o PublicationPackageDetailsPtrOutput) Elem() PublicationPackageDetailsOutput {
@@ -387,6 +436,12 @@ func (i PublicationPackageDetailsEulaArgs) ToPublicationPackageDetailsEulaOutput
 	return pulumi.ToOutputWithContext(ctx, i).(PublicationPackageDetailsEulaOutput)
 }
 
+func (i PublicationPackageDetailsEulaArgs) ToOutput(ctx context.Context) pulumix.Output[PublicationPackageDetailsEula] {
+	return pulumix.Output[PublicationPackageDetailsEula]{
+		OutputState: i.ToPublicationPackageDetailsEulaOutputWithContext(ctx).OutputState,
+	}
+}
+
 // PublicationPackageDetailsEulaArrayInput is an input type that accepts PublicationPackageDetailsEulaArray and PublicationPackageDetailsEulaArrayOutput values.
 // You can construct a concrete instance of `PublicationPackageDetailsEulaArrayInput` via:
 //
@@ -412,6 +467,12 @@ func (i PublicationPackageDetailsEulaArray) ToPublicationPackageDetailsEulaArray
 	return pulumi.ToOutputWithContext(ctx, i).(PublicationPackageDetailsEulaArrayOutput)
 }
 
+func (i PublicationPackageDetailsEulaArray) ToOutput(ctx context.Context) pulumix.Output[[]PublicationPackageDetailsEula] {
+	return pulumix.Output[[]PublicationPackageDetailsEula]{
+		OutputState: i.ToPublicationPackageDetailsEulaArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type PublicationPackageDetailsEulaOutput struct{ *pulumi.OutputState }
 
 func (PublicationPackageDetailsEulaOutput) ElementType() reflect.Type {
@@ -424,6 +485,12 @@ func (o PublicationPackageDetailsEulaOutput) ToPublicationPackageDetailsEulaOutp
 
 func (o PublicationPackageDetailsEulaOutput) ToPublicationPackageDetailsEulaOutputWithContext(ctx context.Context) PublicationPackageDetailsEulaOutput {
 	return o
+}
+
+func (o PublicationPackageDetailsEulaOutput) ToOutput(ctx context.Context) pulumix.Output[PublicationPackageDetailsEula] {
+	return pulumix.Output[PublicationPackageDetailsEula]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The end user license agreement's type.
@@ -448,6 +515,12 @@ func (o PublicationPackageDetailsEulaArrayOutput) ToPublicationPackageDetailsEul
 
 func (o PublicationPackageDetailsEulaArrayOutput) ToPublicationPackageDetailsEulaArrayOutputWithContext(ctx context.Context) PublicationPackageDetailsEulaArrayOutput {
 	return o
+}
+
+func (o PublicationPackageDetailsEulaArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]PublicationPackageDetailsEula] {
+	return pulumix.Output[[]PublicationPackageDetailsEula]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o PublicationPackageDetailsEulaArrayOutput) Index(i pulumi.IntInput) PublicationPackageDetailsEulaOutput {
@@ -487,6 +560,12 @@ func (i PublicationPackageDetailsOperatingSystemArgs) ToPublicationPackageDetail
 
 func (i PublicationPackageDetailsOperatingSystemArgs) ToPublicationPackageDetailsOperatingSystemOutputWithContext(ctx context.Context) PublicationPackageDetailsOperatingSystemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(PublicationPackageDetailsOperatingSystemOutput)
+}
+
+func (i PublicationPackageDetailsOperatingSystemArgs) ToOutput(ctx context.Context) pulumix.Output[PublicationPackageDetailsOperatingSystem] {
+	return pulumix.Output[PublicationPackageDetailsOperatingSystem]{
+		OutputState: i.ToPublicationPackageDetailsOperatingSystemOutputWithContext(ctx).OutputState,
+	}
 }
 
 func (i PublicationPackageDetailsOperatingSystemArgs) ToPublicationPackageDetailsOperatingSystemPtrOutput() PublicationPackageDetailsOperatingSystemPtrOutput {
@@ -530,6 +609,12 @@ func (i *publicationPackageDetailsOperatingSystemPtrType) ToPublicationPackageDe
 	return pulumi.ToOutputWithContext(ctx, i).(PublicationPackageDetailsOperatingSystemPtrOutput)
 }
 
+func (i *publicationPackageDetailsOperatingSystemPtrType) ToOutput(ctx context.Context) pulumix.Output[*PublicationPackageDetailsOperatingSystem] {
+	return pulumix.Output[*PublicationPackageDetailsOperatingSystem]{
+		OutputState: i.ToPublicationPackageDetailsOperatingSystemPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type PublicationPackageDetailsOperatingSystemOutput struct{ *pulumi.OutputState }
 
 func (PublicationPackageDetailsOperatingSystemOutput) ElementType() reflect.Type {
@@ -554,6 +639,12 @@ func (o PublicationPackageDetailsOperatingSystemOutput) ToPublicationPackageDeta
 	}).(PublicationPackageDetailsOperatingSystemPtrOutput)
 }
 
+func (o PublicationPackageDetailsOperatingSystemOutput) ToOutput(ctx context.Context) pulumix.Output[PublicationPackageDetailsOperatingSystem] {
+	return pulumix.Output[PublicationPackageDetailsOperatingSystem]{
+		OutputState: o.OutputState,
+	}
+}
+
 // (Updatable) The name of the contact.
 func (o PublicationPackageDetailsOperatingSystemOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PublicationPackageDetailsOperatingSystem) *string { return v.Name }).(pulumi.StringPtrOutput)
@@ -571,6 +662,12 @@ func (o PublicationPackageDetailsOperatingSystemPtrOutput) ToPublicationPackageD
 
 func (o PublicationPackageDetailsOperatingSystemPtrOutput) ToPublicationPackageDetailsOperatingSystemPtrOutputWithContext(ctx context.Context) PublicationPackageDetailsOperatingSystemPtrOutput {
 	return o
+}
+
+func (o PublicationPackageDetailsOperatingSystemPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*PublicationPackageDetailsOperatingSystem] {
+	return pulumix.Output[*PublicationPackageDetailsOperatingSystem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o PublicationPackageDetailsOperatingSystemPtrOutput) Elem() PublicationPackageDetailsOperatingSystemOutput {
@@ -644,6 +741,12 @@ func (i PublicationSupportContactArgs) ToPublicationSupportContactOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(PublicationSupportContactOutput)
 }
 
+func (i PublicationSupportContactArgs) ToOutput(ctx context.Context) pulumix.Output[PublicationSupportContact] {
+	return pulumix.Output[PublicationSupportContact]{
+		OutputState: i.ToPublicationSupportContactOutputWithContext(ctx).OutputState,
+	}
+}
+
 // PublicationSupportContactArrayInput is an input type that accepts PublicationSupportContactArray and PublicationSupportContactArrayOutput values.
 // You can construct a concrete instance of `PublicationSupportContactArrayInput` via:
 //
@@ -669,6 +772,12 @@ func (i PublicationSupportContactArray) ToPublicationSupportContactArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(PublicationSupportContactArrayOutput)
 }
 
+func (i PublicationSupportContactArray) ToOutput(ctx context.Context) pulumix.Output[[]PublicationSupportContact] {
+	return pulumix.Output[[]PublicationSupportContact]{
+		OutputState: i.ToPublicationSupportContactArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type PublicationSupportContactOutput struct{ *pulumi.OutputState }
 
 func (PublicationSupportContactOutput) ElementType() reflect.Type {
@@ -681,6 +790,12 @@ func (o PublicationSupportContactOutput) ToPublicationSupportContactOutput() Pub
 
 func (o PublicationSupportContactOutput) ToPublicationSupportContactOutputWithContext(ctx context.Context) PublicationSupportContactOutput {
 	return o
+}
+
+func (o PublicationSupportContactOutput) ToOutput(ctx context.Context) pulumix.Output[PublicationSupportContact] {
+	return pulumix.Output[PublicationSupportContact]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The email of the contact.
@@ -718,6 +833,12 @@ func (o PublicationSupportContactArrayOutput) ToPublicationSupportContactArrayOu
 
 func (o PublicationSupportContactArrayOutput) ToPublicationSupportContactArrayOutputWithContext(ctx context.Context) PublicationSupportContactArrayOutput {
 	return o
+}
+
+func (o PublicationSupportContactArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]PublicationSupportContact] {
+	return pulumix.Output[[]PublicationSupportContact]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o PublicationSupportContactArrayOutput) Index(i pulumi.IntInput) PublicationSupportContactOutput {
@@ -759,6 +880,12 @@ func (i PublicationSupportedOperatingSystemArgs) ToPublicationSupportedOperating
 	return pulumi.ToOutputWithContext(ctx, i).(PublicationSupportedOperatingSystemOutput)
 }
 
+func (i PublicationSupportedOperatingSystemArgs) ToOutput(ctx context.Context) pulumix.Output[PublicationSupportedOperatingSystem] {
+	return pulumix.Output[PublicationSupportedOperatingSystem]{
+		OutputState: i.ToPublicationSupportedOperatingSystemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // PublicationSupportedOperatingSystemArrayInput is an input type that accepts PublicationSupportedOperatingSystemArray and PublicationSupportedOperatingSystemArrayOutput values.
 // You can construct a concrete instance of `PublicationSupportedOperatingSystemArrayInput` via:
 //
@@ -784,6 +911,12 @@ func (i PublicationSupportedOperatingSystemArray) ToPublicationSupportedOperatin
 	return pulumi.ToOutputWithContext(ctx, i).(PublicationSupportedOperatingSystemArrayOutput)
 }
 
+func (i PublicationSupportedOperatingSystemArray) ToOutput(ctx context.Context) pulumix.Output[[]PublicationSupportedOperatingSystem] {
+	return pulumix.Output[[]PublicationSupportedOperatingSystem]{
+		OutputState: i.ToPublicationSupportedOperatingSystemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type PublicationSupportedOperatingSystemOutput struct{ *pulumi.OutputState }
 
 func (PublicationSupportedOperatingSystemOutput) ElementType() reflect.Type {
@@ -796,6 +929,12 @@ func (o PublicationSupportedOperatingSystemOutput) ToPublicationSupportedOperati
 
 func (o PublicationSupportedOperatingSystemOutput) ToPublicationSupportedOperatingSystemOutputWithContext(ctx context.Context) PublicationSupportedOperatingSystemOutput {
 	return o
+}
+
+func (o PublicationSupportedOperatingSystemOutput) ToOutput(ctx context.Context) pulumix.Output[PublicationSupportedOperatingSystem] {
+	return pulumix.Output[PublicationSupportedOperatingSystem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The name of the contact.
@@ -815,6 +954,12 @@ func (o PublicationSupportedOperatingSystemArrayOutput) ToPublicationSupportedOp
 
 func (o PublicationSupportedOperatingSystemArrayOutput) ToPublicationSupportedOperatingSystemArrayOutputWithContext(ctx context.Context) PublicationSupportedOperatingSystemArrayOutput {
 	return o
+}
+
+func (o PublicationSupportedOperatingSystemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]PublicationSupportedOperatingSystem] {
+	return pulumix.Output[[]PublicationSupportedOperatingSystem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o PublicationSupportedOperatingSystemArrayOutput) Index(i pulumi.IntInput) PublicationSupportedOperatingSystemOutput {
@@ -890,6 +1035,12 @@ func (i GetAcceptedAgreementsAcceptedAgreementArgs) ToGetAcceptedAgreementsAccep
 	return pulumi.ToOutputWithContext(ctx, i).(GetAcceptedAgreementsAcceptedAgreementOutput)
 }
 
+func (i GetAcceptedAgreementsAcceptedAgreementArgs) ToOutput(ctx context.Context) pulumix.Output[GetAcceptedAgreementsAcceptedAgreement] {
+	return pulumix.Output[GetAcceptedAgreementsAcceptedAgreement]{
+		OutputState: i.ToGetAcceptedAgreementsAcceptedAgreementOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAcceptedAgreementsAcceptedAgreementArrayInput is an input type that accepts GetAcceptedAgreementsAcceptedAgreementArray and GetAcceptedAgreementsAcceptedAgreementArrayOutput values.
 // You can construct a concrete instance of `GetAcceptedAgreementsAcceptedAgreementArrayInput` via:
 //
@@ -915,6 +1066,12 @@ func (i GetAcceptedAgreementsAcceptedAgreementArray) ToGetAcceptedAgreementsAcce
 	return pulumi.ToOutputWithContext(ctx, i).(GetAcceptedAgreementsAcceptedAgreementArrayOutput)
 }
 
+func (i GetAcceptedAgreementsAcceptedAgreementArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAcceptedAgreementsAcceptedAgreement] {
+	return pulumix.Output[[]GetAcceptedAgreementsAcceptedAgreement]{
+		OutputState: i.ToGetAcceptedAgreementsAcceptedAgreementArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAcceptedAgreementsAcceptedAgreementOutput struct{ *pulumi.OutputState }
 
 func (GetAcceptedAgreementsAcceptedAgreementOutput) ElementType() reflect.Type {
@@ -927,6 +1084,12 @@ func (o GetAcceptedAgreementsAcceptedAgreementOutput) ToGetAcceptedAgreementsAcc
 
 func (o GetAcceptedAgreementsAcceptedAgreementOutput) ToGetAcceptedAgreementsAcceptedAgreementOutputWithContext(ctx context.Context) GetAcceptedAgreementsAcceptedAgreementOutput {
 	return o
+}
+
+func (o GetAcceptedAgreementsAcceptedAgreementOutput) ToOutput(ctx context.Context) pulumix.Output[GetAcceptedAgreementsAcceptedAgreement] {
+	return pulumix.Output[GetAcceptedAgreementsAcceptedAgreement]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The unique identifier for the terms of use agreement itself.
@@ -992,6 +1155,12 @@ func (o GetAcceptedAgreementsAcceptedAgreementArrayOutput) ToGetAcceptedAgreemen
 	return o
 }
 
+func (o GetAcceptedAgreementsAcceptedAgreementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAcceptedAgreementsAcceptedAgreement] {
+	return pulumix.Output[[]GetAcceptedAgreementsAcceptedAgreement]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetAcceptedAgreementsAcceptedAgreementArrayOutput) Index(i pulumi.IntInput) GetAcceptedAgreementsAcceptedAgreementOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAcceptedAgreementsAcceptedAgreement {
 		return vs[0].([]GetAcceptedAgreementsAcceptedAgreement)[vs[1].(int)]
@@ -1033,6 +1202,12 @@ func (i GetAcceptedAgreementsFilterArgs) ToGetAcceptedAgreementsFilterOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetAcceptedAgreementsFilterOutput)
 }
 
+func (i GetAcceptedAgreementsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAcceptedAgreementsFilter] {
+	return pulumix.Output[GetAcceptedAgreementsFilter]{
+		OutputState: i.ToGetAcceptedAgreementsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAcceptedAgreementsFilterArrayInput is an input type that accepts GetAcceptedAgreementsFilterArray and GetAcceptedAgreementsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAcceptedAgreementsFilterArrayInput` via:
 //
@@ -1058,6 +1233,12 @@ func (i GetAcceptedAgreementsFilterArray) ToGetAcceptedAgreementsFilterArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetAcceptedAgreementsFilterArrayOutput)
 }
 
+func (i GetAcceptedAgreementsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAcceptedAgreementsFilter] {
+	return pulumix.Output[[]GetAcceptedAgreementsFilter]{
+		OutputState: i.ToGetAcceptedAgreementsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAcceptedAgreementsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAcceptedAgreementsFilterOutput) ElementType() reflect.Type {
@@ -1070,6 +1251,12 @@ func (o GetAcceptedAgreementsFilterOutput) ToGetAcceptedAgreementsFilterOutput()
 
 func (o GetAcceptedAgreementsFilterOutput) ToGetAcceptedAgreementsFilterOutputWithContext(ctx context.Context) GetAcceptedAgreementsFilterOutput {
 	return o
+}
+
+func (o GetAcceptedAgreementsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAcceptedAgreementsFilter] {
+	return pulumix.Output[GetAcceptedAgreementsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAcceptedAgreementsFilterOutput) Name() pulumi.StringOutput {
@@ -1096,6 +1283,12 @@ func (o GetAcceptedAgreementsFilterArrayOutput) ToGetAcceptedAgreementsFilterArr
 
 func (o GetAcceptedAgreementsFilterArrayOutput) ToGetAcceptedAgreementsFilterArrayOutputWithContext(ctx context.Context) GetAcceptedAgreementsFilterArrayOutput {
 	return o
+}
+
+func (o GetAcceptedAgreementsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAcceptedAgreementsFilter] {
+	return pulumix.Output[[]GetAcceptedAgreementsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAcceptedAgreementsFilterArrayOutput) Index(i pulumi.IntInput) GetAcceptedAgreementsFilterOutput {
@@ -1137,6 +1330,12 @@ func (i GetCategoriesCategoryArgs) ToGetCategoriesCategoryOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetCategoriesCategoryOutput)
 }
 
+func (i GetCategoriesCategoryArgs) ToOutput(ctx context.Context) pulumix.Output[GetCategoriesCategory] {
+	return pulumix.Output[GetCategoriesCategory]{
+		OutputState: i.ToGetCategoriesCategoryOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetCategoriesCategoryArrayInput is an input type that accepts GetCategoriesCategoryArray and GetCategoriesCategoryArrayOutput values.
 // You can construct a concrete instance of `GetCategoriesCategoryArrayInput` via:
 //
@@ -1162,6 +1361,12 @@ func (i GetCategoriesCategoryArray) ToGetCategoriesCategoryArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetCategoriesCategoryArrayOutput)
 }
 
+func (i GetCategoriesCategoryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCategoriesCategory] {
+	return pulumix.Output[[]GetCategoriesCategory]{
+		OutputState: i.ToGetCategoriesCategoryArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetCategoriesCategoryOutput struct{ *pulumi.OutputState }
 
 func (GetCategoriesCategoryOutput) ElementType() reflect.Type {
@@ -1174,6 +1379,12 @@ func (o GetCategoriesCategoryOutput) ToGetCategoriesCategoryOutput() GetCategori
 
 func (o GetCategoriesCategoryOutput) ToGetCategoriesCategoryOutputWithContext(ctx context.Context) GetCategoriesCategoryOutput {
 	return o
+}
+
+func (o GetCategoriesCategoryOutput) ToOutput(ctx context.Context) pulumix.Output[GetCategoriesCategory] {
+	return pulumix.Output[GetCategoriesCategory]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Name of the product category.
@@ -1193,6 +1404,12 @@ func (o GetCategoriesCategoryArrayOutput) ToGetCategoriesCategoryArrayOutput() G
 
 func (o GetCategoriesCategoryArrayOutput) ToGetCategoriesCategoryArrayOutputWithContext(ctx context.Context) GetCategoriesCategoryArrayOutput {
 	return o
+}
+
+func (o GetCategoriesCategoryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCategoriesCategory] {
+	return pulumix.Output[[]GetCategoriesCategory]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetCategoriesCategoryArrayOutput) Index(i pulumi.IntInput) GetCategoriesCategoryOutput {
@@ -1238,6 +1455,12 @@ func (i GetCategoriesFilterArgs) ToGetCategoriesFilterOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetCategoriesFilterOutput)
 }
 
+func (i GetCategoriesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetCategoriesFilter] {
+	return pulumix.Output[GetCategoriesFilter]{
+		OutputState: i.ToGetCategoriesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetCategoriesFilterArrayInput is an input type that accepts GetCategoriesFilterArray and GetCategoriesFilterArrayOutput values.
 // You can construct a concrete instance of `GetCategoriesFilterArrayInput` via:
 //
@@ -1263,6 +1486,12 @@ func (i GetCategoriesFilterArray) ToGetCategoriesFilterArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetCategoriesFilterArrayOutput)
 }
 
+func (i GetCategoriesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCategoriesFilter] {
+	return pulumix.Output[[]GetCategoriesFilter]{
+		OutputState: i.ToGetCategoriesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetCategoriesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetCategoriesFilterOutput) ElementType() reflect.Type {
@@ -1275,6 +1504,12 @@ func (o GetCategoriesFilterOutput) ToGetCategoriesFilterOutput() GetCategoriesFi
 
 func (o GetCategoriesFilterOutput) ToGetCategoriesFilterOutputWithContext(ctx context.Context) GetCategoriesFilterOutput {
 	return o
+}
+
+func (o GetCategoriesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetCategoriesFilter] {
+	return pulumix.Output[GetCategoriesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Name of the product category.
@@ -1302,6 +1537,12 @@ func (o GetCategoriesFilterArrayOutput) ToGetCategoriesFilterArrayOutput() GetCa
 
 func (o GetCategoriesFilterArrayOutput) ToGetCategoriesFilterArrayOutputWithContext(ctx context.Context) GetCategoriesFilterArrayOutput {
 	return o
+}
+
+func (o GetCategoriesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCategoriesFilter] {
+	return pulumix.Output[[]GetCategoriesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetCategoriesFilterArrayOutput) Index(i pulumi.IntInput) GetCategoriesFilterOutput {
@@ -1355,6 +1596,12 @@ func (i GetListingBannerArgs) ToGetListingBannerOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingBannerOutput)
 }
 
+func (i GetListingBannerArgs) ToOutput(ctx context.Context) pulumix.Output[GetListingBanner] {
+	return pulumix.Output[GetListingBanner]{
+		OutputState: i.ToGetListingBannerOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetListingBannerArrayInput is an input type that accepts GetListingBannerArray and GetListingBannerArrayOutput values.
 // You can construct a concrete instance of `GetListingBannerArrayInput` via:
 //
@@ -1380,6 +1627,12 @@ func (i GetListingBannerArray) ToGetListingBannerArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingBannerArrayOutput)
 }
 
+func (i GetListingBannerArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListingBanner] {
+	return pulumix.Output[[]GetListingBanner]{
+		OutputState: i.ToGetListingBannerArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetListingBannerOutput struct{ *pulumi.OutputState }
 
 func (GetListingBannerOutput) ElementType() reflect.Type {
@@ -1392,6 +1645,12 @@ func (o GetListingBannerOutput) ToGetListingBannerOutput() GetListingBannerOutpu
 
 func (o GetListingBannerOutput) ToGetListingBannerOutputWithContext(ctx context.Context) GetListingBannerOutput {
 	return o
+}
+
+func (o GetListingBannerOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingBanner] {
+	return pulumix.Output[GetListingBanner]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The content URL of the screenshot.
@@ -1426,6 +1685,12 @@ func (o GetListingBannerArrayOutput) ToGetListingBannerArrayOutput() GetListingB
 
 func (o GetListingBannerArrayOutput) ToGetListingBannerArrayOutputWithContext(ctx context.Context) GetListingBannerArrayOutput {
 	return o
+}
+
+func (o GetListingBannerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListingBanner] {
+	return pulumix.Output[[]GetListingBanner]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetListingBannerArrayOutput) Index(i pulumi.IntInput) GetListingBannerOutput {
@@ -1475,6 +1740,12 @@ func (i GetListingDocumentationLinkArgs) ToGetListingDocumentationLinkOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingDocumentationLinkOutput)
 }
 
+func (i GetListingDocumentationLinkArgs) ToOutput(ctx context.Context) pulumix.Output[GetListingDocumentationLink] {
+	return pulumix.Output[GetListingDocumentationLink]{
+		OutputState: i.ToGetListingDocumentationLinkOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetListingDocumentationLinkArrayInput is an input type that accepts GetListingDocumentationLinkArray and GetListingDocumentationLinkArrayOutput values.
 // You can construct a concrete instance of `GetListingDocumentationLinkArrayInput` via:
 //
@@ -1500,6 +1771,12 @@ func (i GetListingDocumentationLinkArray) ToGetListingDocumentationLinkArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingDocumentationLinkArrayOutput)
 }
 
+func (i GetListingDocumentationLinkArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListingDocumentationLink] {
+	return pulumix.Output[[]GetListingDocumentationLink]{
+		OutputState: i.ToGetListingDocumentationLinkArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetListingDocumentationLinkOutput struct{ *pulumi.OutputState }
 
 func (GetListingDocumentationLinkOutput) ElementType() reflect.Type {
@@ -1512,6 +1789,12 @@ func (o GetListingDocumentationLinkOutput) ToGetListingDocumentationLinkOutput()
 
 func (o GetListingDocumentationLinkOutput) ToGetListingDocumentationLinkOutputWithContext(ctx context.Context) GetListingDocumentationLinkOutput {
 	return o
+}
+
+func (o GetListingDocumentationLinkOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingDocumentationLink] {
+	return pulumix.Output[GetListingDocumentationLink]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The category that the document belongs to.
@@ -1541,6 +1824,12 @@ func (o GetListingDocumentationLinkArrayOutput) ToGetListingDocumentationLinkArr
 
 func (o GetListingDocumentationLinkArrayOutput) ToGetListingDocumentationLinkArrayOutputWithContext(ctx context.Context) GetListingDocumentationLinkArrayOutput {
 	return o
+}
+
+func (o GetListingDocumentationLinkArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListingDocumentationLink] {
+	return pulumix.Output[[]GetListingDocumentationLink]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetListingDocumentationLinkArrayOutput) Index(i pulumi.IntInput) GetListingDocumentationLinkOutput {
@@ -1594,6 +1883,12 @@ func (i GetListingIconArgs) ToGetListingIconOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingIconOutput)
 }
 
+func (i GetListingIconArgs) ToOutput(ctx context.Context) pulumix.Output[GetListingIcon] {
+	return pulumix.Output[GetListingIcon]{
+		OutputState: i.ToGetListingIconOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetListingIconArrayInput is an input type that accepts GetListingIconArray and GetListingIconArrayOutput values.
 // You can construct a concrete instance of `GetListingIconArrayInput` via:
 //
@@ -1619,6 +1914,12 @@ func (i GetListingIconArray) ToGetListingIconArrayOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingIconArrayOutput)
 }
 
+func (i GetListingIconArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListingIcon] {
+	return pulumix.Output[[]GetListingIcon]{
+		OutputState: i.ToGetListingIconArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetListingIconOutput struct{ *pulumi.OutputState }
 
 func (GetListingIconOutput) ElementType() reflect.Type {
@@ -1631,6 +1932,12 @@ func (o GetListingIconOutput) ToGetListingIconOutput() GetListingIconOutput {
 
 func (o GetListingIconOutput) ToGetListingIconOutputWithContext(ctx context.Context) GetListingIconOutput {
 	return o
+}
+
+func (o GetListingIconOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingIcon] {
+	return pulumix.Output[GetListingIcon]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The content URL of the screenshot.
@@ -1665,6 +1972,12 @@ func (o GetListingIconArrayOutput) ToGetListingIconArrayOutput() GetListingIconA
 
 func (o GetListingIconArrayOutput) ToGetListingIconArrayOutputWithContext(ctx context.Context) GetListingIconArrayOutput {
 	return o
+}
+
+func (o GetListingIconArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListingIcon] {
+	return pulumix.Output[[]GetListingIcon]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetListingIconArrayOutput) Index(i pulumi.IntInput) GetListingIconOutput {
@@ -1710,6 +2023,12 @@ func (i GetListingLanguageArgs) ToGetListingLanguageOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingLanguageOutput)
 }
 
+func (i GetListingLanguageArgs) ToOutput(ctx context.Context) pulumix.Output[GetListingLanguage] {
+	return pulumix.Output[GetListingLanguage]{
+		OutputState: i.ToGetListingLanguageOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetListingLanguageArrayInput is an input type that accepts GetListingLanguageArray and GetListingLanguageArrayOutput values.
 // You can construct a concrete instance of `GetListingLanguageArrayInput` via:
 //
@@ -1735,6 +2054,12 @@ func (i GetListingLanguageArray) ToGetListingLanguageArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingLanguageArrayOutput)
 }
 
+func (i GetListingLanguageArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListingLanguage] {
+	return pulumix.Output[[]GetListingLanguage]{
+		OutputState: i.ToGetListingLanguageArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetListingLanguageOutput struct{ *pulumi.OutputState }
 
 func (GetListingLanguageOutput) ElementType() reflect.Type {
@@ -1747,6 +2072,12 @@ func (o GetListingLanguageOutput) ToGetListingLanguageOutput() GetListingLanguag
 
 func (o GetListingLanguageOutput) ToGetListingLanguageOutputWithContext(ctx context.Context) GetListingLanguageOutput {
 	return o
+}
+
+func (o GetListingLanguageOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingLanguage] {
+	return pulumix.Output[GetListingLanguage]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A code assigned to the item.
@@ -1771,6 +2102,12 @@ func (o GetListingLanguageArrayOutput) ToGetListingLanguageArrayOutput() GetList
 
 func (o GetListingLanguageArrayOutput) ToGetListingLanguageArrayOutputWithContext(ctx context.Context) GetListingLanguageArrayOutput {
 	return o
+}
+
+func (o GetListingLanguageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListingLanguage] {
+	return pulumix.Output[[]GetListingLanguage]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetListingLanguageArrayOutput) Index(i pulumi.IntInput) GetListingLanguageOutput {
@@ -1816,6 +2153,12 @@ func (i GetListingLinkArgs) ToGetListingLinkOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingLinkOutput)
 }
 
+func (i GetListingLinkArgs) ToOutput(ctx context.Context) pulumix.Output[GetListingLink] {
+	return pulumix.Output[GetListingLink]{
+		OutputState: i.ToGetListingLinkOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetListingLinkArrayInput is an input type that accepts GetListingLinkArray and GetListingLinkArrayOutput values.
 // You can construct a concrete instance of `GetListingLinkArrayInput` via:
 //
@@ -1841,6 +2184,12 @@ func (i GetListingLinkArray) ToGetListingLinkArrayOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingLinkArrayOutput)
 }
 
+func (i GetListingLinkArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListingLink] {
+	return pulumix.Output[[]GetListingLink]{
+		OutputState: i.ToGetListingLinkArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetListingLinkOutput struct{ *pulumi.OutputState }
 
 func (GetListingLinkOutput) ElementType() reflect.Type {
@@ -1853,6 +2202,12 @@ func (o GetListingLinkOutput) ToGetListingLinkOutput() GetListingLinkOutput {
 
 func (o GetListingLinkOutput) ToGetListingLinkOutputWithContext(ctx context.Context) GetListingLinkOutput {
 	return o
+}
+
+func (o GetListingLinkOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingLink] {
+	return pulumix.Output[GetListingLink]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The anchor tag.
@@ -1877,6 +2232,12 @@ func (o GetListingLinkArrayOutput) ToGetListingLinkArrayOutput() GetListingLinkA
 
 func (o GetListingLinkArrayOutput) ToGetListingLinkArrayOutputWithContext(ctx context.Context) GetListingLinkArrayOutput {
 	return o
+}
+
+func (o GetListingLinkArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListingLink] {
+	return pulumix.Output[[]GetListingLink]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetListingLinkArrayOutput) Index(i pulumi.IntInput) GetListingLinkOutput {
@@ -1930,6 +2291,12 @@ func (i GetListingPackageAgreementsAgreementArgs) ToGetListingPackageAgreementsA
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingPackageAgreementsAgreementOutput)
 }
 
+func (i GetListingPackageAgreementsAgreementArgs) ToOutput(ctx context.Context) pulumix.Output[GetListingPackageAgreementsAgreement] {
+	return pulumix.Output[GetListingPackageAgreementsAgreement]{
+		OutputState: i.ToGetListingPackageAgreementsAgreementOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetListingPackageAgreementsAgreementArrayInput is an input type that accepts GetListingPackageAgreementsAgreementArray and GetListingPackageAgreementsAgreementArrayOutput values.
 // You can construct a concrete instance of `GetListingPackageAgreementsAgreementArrayInput` via:
 //
@@ -1955,6 +2322,12 @@ func (i GetListingPackageAgreementsAgreementArray) ToGetListingPackageAgreements
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingPackageAgreementsAgreementArrayOutput)
 }
 
+func (i GetListingPackageAgreementsAgreementArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListingPackageAgreementsAgreement] {
+	return pulumix.Output[[]GetListingPackageAgreementsAgreement]{
+		OutputState: i.ToGetListingPackageAgreementsAgreementArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetListingPackageAgreementsAgreementOutput struct{ *pulumi.OutputState }
 
 func (GetListingPackageAgreementsAgreementOutput) ElementType() reflect.Type {
@@ -1967,6 +2340,12 @@ func (o GetListingPackageAgreementsAgreementOutput) ToGetListingPackageAgreement
 
 func (o GetListingPackageAgreementsAgreementOutput) ToGetListingPackageAgreementsAgreementOutputWithContext(ctx context.Context) GetListingPackageAgreementsAgreementOutput {
 	return o
+}
+
+func (o GetListingPackageAgreementsAgreementOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingPackageAgreementsAgreement] {
+	return pulumix.Output[GetListingPackageAgreementsAgreement]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Who authored the agreement.
@@ -2001,6 +2380,12 @@ func (o GetListingPackageAgreementsAgreementArrayOutput) ToGetListingPackageAgre
 
 func (o GetListingPackageAgreementsAgreementArrayOutput) ToGetListingPackageAgreementsAgreementArrayOutputWithContext(ctx context.Context) GetListingPackageAgreementsAgreementArrayOutput {
 	return o
+}
+
+func (o GetListingPackageAgreementsAgreementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListingPackageAgreementsAgreement] {
+	return pulumix.Output[[]GetListingPackageAgreementsAgreement]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetListingPackageAgreementsAgreementArrayOutput) Index(i pulumi.IntInput) GetListingPackageAgreementsAgreementOutput {
@@ -2044,6 +2429,12 @@ func (i GetListingPackageAgreementsFilterArgs) ToGetListingPackageAgreementsFilt
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingPackageAgreementsFilterOutput)
 }
 
+func (i GetListingPackageAgreementsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetListingPackageAgreementsFilter] {
+	return pulumix.Output[GetListingPackageAgreementsFilter]{
+		OutputState: i.ToGetListingPackageAgreementsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetListingPackageAgreementsFilterArrayInput is an input type that accepts GetListingPackageAgreementsFilterArray and GetListingPackageAgreementsFilterArrayOutput values.
 // You can construct a concrete instance of `GetListingPackageAgreementsFilterArrayInput` via:
 //
@@ -2069,6 +2460,12 @@ func (i GetListingPackageAgreementsFilterArray) ToGetListingPackageAgreementsFil
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingPackageAgreementsFilterArrayOutput)
 }
 
+func (i GetListingPackageAgreementsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListingPackageAgreementsFilter] {
+	return pulumix.Output[[]GetListingPackageAgreementsFilter]{
+		OutputState: i.ToGetListingPackageAgreementsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetListingPackageAgreementsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetListingPackageAgreementsFilterOutput) ElementType() reflect.Type {
@@ -2081,6 +2478,12 @@ func (o GetListingPackageAgreementsFilterOutput) ToGetListingPackageAgreementsFi
 
 func (o GetListingPackageAgreementsFilterOutput) ToGetListingPackageAgreementsFilterOutputWithContext(ctx context.Context) GetListingPackageAgreementsFilterOutput {
 	return o
+}
+
+func (o GetListingPackageAgreementsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingPackageAgreementsFilter] {
+	return pulumix.Output[GetListingPackageAgreementsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetListingPackageAgreementsFilterOutput) Name() pulumi.StringOutput {
@@ -2107,6 +2510,12 @@ func (o GetListingPackageAgreementsFilterArrayOutput) ToGetListingPackageAgreeme
 
 func (o GetListingPackageAgreementsFilterArrayOutput) ToGetListingPackageAgreementsFilterArrayOutputWithContext(ctx context.Context) GetListingPackageAgreementsFilterArrayOutput {
 	return o
+}
+
+func (o GetListingPackageAgreementsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListingPackageAgreementsFilter] {
+	return pulumix.Output[[]GetListingPackageAgreementsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetListingPackageAgreementsFilterArrayOutput) Index(i pulumi.IntInput) GetListingPackageAgreementsFilterOutput {
@@ -2148,6 +2557,12 @@ func (i GetListingPackageOperatingSystemArgs) ToGetListingPackageOperatingSystem
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingPackageOperatingSystemOutput)
 }
 
+func (i GetListingPackageOperatingSystemArgs) ToOutput(ctx context.Context) pulumix.Output[GetListingPackageOperatingSystem] {
+	return pulumix.Output[GetListingPackageOperatingSystem]{
+		OutputState: i.ToGetListingPackageOperatingSystemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetListingPackageOperatingSystemArrayInput is an input type that accepts GetListingPackageOperatingSystemArray and GetListingPackageOperatingSystemArrayOutput values.
 // You can construct a concrete instance of `GetListingPackageOperatingSystemArrayInput` via:
 //
@@ -2173,6 +2588,12 @@ func (i GetListingPackageOperatingSystemArray) ToGetListingPackageOperatingSyste
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingPackageOperatingSystemArrayOutput)
 }
 
+func (i GetListingPackageOperatingSystemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListingPackageOperatingSystem] {
+	return pulumix.Output[[]GetListingPackageOperatingSystem]{
+		OutputState: i.ToGetListingPackageOperatingSystemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetListingPackageOperatingSystemOutput struct{ *pulumi.OutputState }
 
 func (GetListingPackageOperatingSystemOutput) ElementType() reflect.Type {
@@ -2185,6 +2606,12 @@ func (o GetListingPackageOperatingSystemOutput) ToGetListingPackageOperatingSyst
 
 func (o GetListingPackageOperatingSystemOutput) ToGetListingPackageOperatingSystemOutputWithContext(ctx context.Context) GetListingPackageOperatingSystemOutput {
 	return o
+}
+
+func (o GetListingPackageOperatingSystemOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingPackageOperatingSystem] {
+	return pulumix.Output[GetListingPackageOperatingSystem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the variable.
@@ -2204,6 +2631,12 @@ func (o GetListingPackageOperatingSystemArrayOutput) ToGetListingPackageOperatin
 
 func (o GetListingPackageOperatingSystemArrayOutput) ToGetListingPackageOperatingSystemArrayOutputWithContext(ctx context.Context) GetListingPackageOperatingSystemArrayOutput {
 	return o
+}
+
+func (o GetListingPackageOperatingSystemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListingPackageOperatingSystem] {
+	return pulumix.Output[[]GetListingPackageOperatingSystem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetListingPackageOperatingSystemArrayOutput) Index(i pulumi.IntInput) GetListingPackageOperatingSystemOutput {
@@ -2261,6 +2694,12 @@ func (i GetListingPackagePricingArgs) ToGetListingPackagePricingOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingPackagePricingOutput)
 }
 
+func (i GetListingPackagePricingArgs) ToOutput(ctx context.Context) pulumix.Output[GetListingPackagePricing] {
+	return pulumix.Output[GetListingPackagePricing]{
+		OutputState: i.ToGetListingPackagePricingOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetListingPackagePricingArrayInput is an input type that accepts GetListingPackagePricingArray and GetListingPackagePricingArrayOutput values.
 // You can construct a concrete instance of `GetListingPackagePricingArrayInput` via:
 //
@@ -2286,6 +2725,12 @@ func (i GetListingPackagePricingArray) ToGetListingPackagePricingArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingPackagePricingArrayOutput)
 }
 
+func (i GetListingPackagePricingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListingPackagePricing] {
+	return pulumix.Output[[]GetListingPackagePricing]{
+		OutputState: i.ToGetListingPackagePricingArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetListingPackagePricingOutput struct{ *pulumi.OutputState }
 
 func (GetListingPackagePricingOutput) ElementType() reflect.Type {
@@ -2298,6 +2743,12 @@ func (o GetListingPackagePricingOutput) ToGetListingPackagePricingOutput() GetLi
 
 func (o GetListingPackagePricingOutput) ToGetListingPackagePricingOutputWithContext(ctx context.Context) GetListingPackagePricingOutput {
 	return o
+}
+
+func (o GetListingPackagePricingOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingPackagePricing] {
+	return pulumix.Output[GetListingPackagePricing]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The currency of the pricing model.
@@ -2339,6 +2790,12 @@ func (o GetListingPackagePricingArrayOutput) ToGetListingPackagePricingArrayOutp
 
 func (o GetListingPackagePricingArrayOutput) ToGetListingPackagePricingArrayOutputWithContext(ctx context.Context) GetListingPackagePricingArrayOutput {
 	return o
+}
+
+func (o GetListingPackagePricingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListingPackagePricing] {
+	return pulumix.Output[[]GetListingPackagePricing]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetListingPackagePricingArrayOutput) Index(i pulumi.IntInput) GetListingPackagePricingOutput {
@@ -2388,6 +2845,12 @@ func (i GetListingPackagePricingInternationalMarketPriceArgs) ToGetListingPackag
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingPackagePricingInternationalMarketPriceOutput)
 }
 
+func (i GetListingPackagePricingInternationalMarketPriceArgs) ToOutput(ctx context.Context) pulumix.Output[GetListingPackagePricingInternationalMarketPrice] {
+	return pulumix.Output[GetListingPackagePricingInternationalMarketPrice]{
+		OutputState: i.ToGetListingPackagePricingInternationalMarketPriceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetListingPackagePricingInternationalMarketPriceArrayInput is an input type that accepts GetListingPackagePricingInternationalMarketPriceArray and GetListingPackagePricingInternationalMarketPriceArrayOutput values.
 // You can construct a concrete instance of `GetListingPackagePricingInternationalMarketPriceArrayInput` via:
 //
@@ -2413,6 +2876,12 @@ func (i GetListingPackagePricingInternationalMarketPriceArray) ToGetListingPacka
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingPackagePricingInternationalMarketPriceArrayOutput)
 }
 
+func (i GetListingPackagePricingInternationalMarketPriceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListingPackagePricingInternationalMarketPrice] {
+	return pulumix.Output[[]GetListingPackagePricingInternationalMarketPrice]{
+		OutputState: i.ToGetListingPackagePricingInternationalMarketPriceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetListingPackagePricingInternationalMarketPriceOutput struct{ *pulumi.OutputState }
 
 func (GetListingPackagePricingInternationalMarketPriceOutput) ElementType() reflect.Type {
@@ -2425,6 +2894,12 @@ func (o GetListingPackagePricingInternationalMarketPriceOutput) ToGetListingPack
 
 func (o GetListingPackagePricingInternationalMarketPriceOutput) ToGetListingPackagePricingInternationalMarketPriceOutputWithContext(ctx context.Context) GetListingPackagePricingInternationalMarketPriceOutput {
 	return o
+}
+
+func (o GetListingPackagePricingInternationalMarketPriceOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingPackagePricingInternationalMarketPrice] {
+	return pulumix.Output[GetListingPackagePricingInternationalMarketPrice]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The currency of the pricing model.
@@ -2454,6 +2929,12 @@ func (o GetListingPackagePricingInternationalMarketPriceArrayOutput) ToGetListin
 
 func (o GetListingPackagePricingInternationalMarketPriceArrayOutput) ToGetListingPackagePricingInternationalMarketPriceArrayOutputWithContext(ctx context.Context) GetListingPackagePricingInternationalMarketPriceArrayOutput {
 	return o
+}
+
+func (o GetListingPackagePricingInternationalMarketPriceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListingPackagePricingInternationalMarketPrice] {
+	return pulumix.Output[[]GetListingPackagePricingInternationalMarketPrice]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetListingPackagePricingInternationalMarketPriceArrayOutput) Index(i pulumi.IntInput) GetListingPackagePricingInternationalMarketPriceOutput {
@@ -2503,6 +2984,12 @@ func (i GetListingPackageRegionArgs) ToGetListingPackageRegionOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingPackageRegionOutput)
 }
 
+func (i GetListingPackageRegionArgs) ToOutput(ctx context.Context) pulumix.Output[GetListingPackageRegion] {
+	return pulumix.Output[GetListingPackageRegion]{
+		OutputState: i.ToGetListingPackageRegionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetListingPackageRegionArrayInput is an input type that accepts GetListingPackageRegionArray and GetListingPackageRegionArrayOutput values.
 // You can construct a concrete instance of `GetListingPackageRegionArrayInput` via:
 //
@@ -2528,6 +3015,12 @@ func (i GetListingPackageRegionArray) ToGetListingPackageRegionArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingPackageRegionArrayOutput)
 }
 
+func (i GetListingPackageRegionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListingPackageRegion] {
+	return pulumix.Output[[]GetListingPackageRegion]{
+		OutputState: i.ToGetListingPackageRegionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetListingPackageRegionOutput struct{ *pulumi.OutputState }
 
 func (GetListingPackageRegionOutput) ElementType() reflect.Type {
@@ -2540,6 +3033,12 @@ func (o GetListingPackageRegionOutput) ToGetListingPackageRegionOutput() GetList
 
 func (o GetListingPackageRegionOutput) ToGetListingPackageRegionOutputWithContext(ctx context.Context) GetListingPackageRegionOutput {
 	return o
+}
+
+func (o GetListingPackageRegionOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingPackageRegion] {
+	return pulumix.Output[GetListingPackageRegion]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A code assigned to the item.
@@ -2569,6 +3068,12 @@ func (o GetListingPackageRegionArrayOutput) ToGetListingPackageRegionArrayOutput
 
 func (o GetListingPackageRegionArrayOutput) ToGetListingPackageRegionArrayOutputWithContext(ctx context.Context) GetListingPackageRegionArrayOutput {
 	return o
+}
+
+func (o GetListingPackageRegionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListingPackageRegion] {
+	return pulumix.Output[[]GetListingPackageRegion]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetListingPackageRegionArrayOutput) Index(i pulumi.IntInput) GetListingPackageRegionOutput {
@@ -2614,6 +3119,12 @@ func (i GetListingPackageRegionCountryArgs) ToGetListingPackageRegionCountryOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingPackageRegionCountryOutput)
 }
 
+func (i GetListingPackageRegionCountryArgs) ToOutput(ctx context.Context) pulumix.Output[GetListingPackageRegionCountry] {
+	return pulumix.Output[GetListingPackageRegionCountry]{
+		OutputState: i.ToGetListingPackageRegionCountryOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetListingPackageRegionCountryArrayInput is an input type that accepts GetListingPackageRegionCountryArray and GetListingPackageRegionCountryArrayOutput values.
 // You can construct a concrete instance of `GetListingPackageRegionCountryArrayInput` via:
 //
@@ -2639,6 +3150,12 @@ func (i GetListingPackageRegionCountryArray) ToGetListingPackageRegionCountryArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingPackageRegionCountryArrayOutput)
 }
 
+func (i GetListingPackageRegionCountryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListingPackageRegionCountry] {
+	return pulumix.Output[[]GetListingPackageRegionCountry]{
+		OutputState: i.ToGetListingPackageRegionCountryArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetListingPackageRegionCountryOutput struct{ *pulumi.OutputState }
 
 func (GetListingPackageRegionCountryOutput) ElementType() reflect.Type {
@@ -2651,6 +3168,12 @@ func (o GetListingPackageRegionCountryOutput) ToGetListingPackageRegionCountryOu
 
 func (o GetListingPackageRegionCountryOutput) ToGetListingPackageRegionCountryOutputWithContext(ctx context.Context) GetListingPackageRegionCountryOutput {
 	return o
+}
+
+func (o GetListingPackageRegionCountryOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingPackageRegionCountry] {
+	return pulumix.Output[GetListingPackageRegionCountry]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A code assigned to the item.
@@ -2675,6 +3198,12 @@ func (o GetListingPackageRegionCountryArrayOutput) ToGetListingPackageRegionCoun
 
 func (o GetListingPackageRegionCountryArrayOutput) ToGetListingPackageRegionCountryArrayOutputWithContext(ctx context.Context) GetListingPackageRegionCountryArrayOutput {
 	return o
+}
+
+func (o GetListingPackageRegionCountryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListingPackageRegionCountry] {
+	return pulumix.Output[[]GetListingPackageRegionCountry]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetListingPackageRegionCountryArrayOutput) Index(i pulumi.IntInput) GetListingPackageRegionCountryOutput {
@@ -2736,6 +3265,12 @@ func (i GetListingPackageVariableArgs) ToGetListingPackageVariableOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingPackageVariableOutput)
 }
 
+func (i GetListingPackageVariableArgs) ToOutput(ctx context.Context) pulumix.Output[GetListingPackageVariable] {
+	return pulumix.Output[GetListingPackageVariable]{
+		OutputState: i.ToGetListingPackageVariableOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetListingPackageVariableArrayInput is an input type that accepts GetListingPackageVariableArray and GetListingPackageVariableArrayOutput values.
 // You can construct a concrete instance of `GetListingPackageVariableArrayInput` via:
 //
@@ -2761,6 +3296,12 @@ func (i GetListingPackageVariableArray) ToGetListingPackageVariableArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingPackageVariableArrayOutput)
 }
 
+func (i GetListingPackageVariableArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListingPackageVariable] {
+	return pulumix.Output[[]GetListingPackageVariable]{
+		OutputState: i.ToGetListingPackageVariableArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetListingPackageVariableOutput struct{ *pulumi.OutputState }
 
 func (GetListingPackageVariableOutput) ElementType() reflect.Type {
@@ -2773,6 +3314,12 @@ func (o GetListingPackageVariableOutput) ToGetListingPackageVariableOutput() Get
 
 func (o GetListingPackageVariableOutput) ToGetListingPackageVariableOutputWithContext(ctx context.Context) GetListingPackageVariableOutput {
 	return o
+}
+
+func (o GetListingPackageVariableOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingPackageVariable] {
+	return pulumix.Output[GetListingPackageVariable]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The data type of the variable.
@@ -2819,6 +3366,12 @@ func (o GetListingPackageVariableArrayOutput) ToGetListingPackageVariableArrayOu
 	return o
 }
 
+func (o GetListingPackageVariableArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListingPackageVariable] {
+	return pulumix.Output[[]GetListingPackageVariable]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetListingPackageVariableArrayOutput) Index(i pulumi.IntInput) GetListingPackageVariableOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetListingPackageVariable {
 		return vs[0].([]GetListingPackageVariable)[vs[1].(int)]
@@ -2862,6 +3415,12 @@ func (i GetListingPackagesFilterArgs) ToGetListingPackagesFilterOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingPackagesFilterOutput)
 }
 
+func (i GetListingPackagesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetListingPackagesFilter] {
+	return pulumix.Output[GetListingPackagesFilter]{
+		OutputState: i.ToGetListingPackagesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetListingPackagesFilterArrayInput is an input type that accepts GetListingPackagesFilterArray and GetListingPackagesFilterArrayOutput values.
 // You can construct a concrete instance of `GetListingPackagesFilterArrayInput` via:
 //
@@ -2887,6 +3446,12 @@ func (i GetListingPackagesFilterArray) ToGetListingPackagesFilterArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingPackagesFilterArrayOutput)
 }
 
+func (i GetListingPackagesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListingPackagesFilter] {
+	return pulumix.Output[[]GetListingPackagesFilter]{
+		OutputState: i.ToGetListingPackagesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetListingPackagesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetListingPackagesFilterOutput) ElementType() reflect.Type {
@@ -2899,6 +3464,12 @@ func (o GetListingPackagesFilterOutput) ToGetListingPackagesFilterOutput() GetLi
 
 func (o GetListingPackagesFilterOutput) ToGetListingPackagesFilterOutputWithContext(ctx context.Context) GetListingPackagesFilterOutput {
 	return o
+}
+
+func (o GetListingPackagesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingPackagesFilter] {
+	return pulumix.Output[GetListingPackagesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the variable.
@@ -2926,6 +3497,12 @@ func (o GetListingPackagesFilterArrayOutput) ToGetListingPackagesFilterArrayOutp
 
 func (o GetListingPackagesFilterArrayOutput) ToGetListingPackagesFilterArrayOutputWithContext(ctx context.Context) GetListingPackagesFilterArrayOutput {
 	return o
+}
+
+func (o GetListingPackagesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListingPackagesFilter] {
+	return pulumix.Output[[]GetListingPackagesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetListingPackagesFilterArrayOutput) Index(i pulumi.IntInput) GetListingPackagesFilterOutput {
@@ -2995,6 +3572,12 @@ func (i GetListingPackagesListingPackageArgs) ToGetListingPackagesListingPackage
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingPackagesListingPackageOutput)
 }
 
+func (i GetListingPackagesListingPackageArgs) ToOutput(ctx context.Context) pulumix.Output[GetListingPackagesListingPackage] {
+	return pulumix.Output[GetListingPackagesListingPackage]{
+		OutputState: i.ToGetListingPackagesListingPackageOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetListingPackagesListingPackageArrayInput is an input type that accepts GetListingPackagesListingPackageArray and GetListingPackagesListingPackageArrayOutput values.
 // You can construct a concrete instance of `GetListingPackagesListingPackageArrayInput` via:
 //
@@ -3020,6 +3603,12 @@ func (i GetListingPackagesListingPackageArray) ToGetListingPackagesListingPackag
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingPackagesListingPackageArrayOutput)
 }
 
+func (i GetListingPackagesListingPackageArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListingPackagesListingPackage] {
+	return pulumix.Output[[]GetListingPackagesListingPackage]{
+		OutputState: i.ToGetListingPackagesListingPackageArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetListingPackagesListingPackageOutput struct{ *pulumi.OutputState }
 
 func (GetListingPackagesListingPackageOutput) ElementType() reflect.Type {
@@ -3032,6 +3621,12 @@ func (o GetListingPackagesListingPackageOutput) ToGetListingPackagesListingPacka
 
 func (o GetListingPackagesListingPackageOutput) ToGetListingPackagesListingPackageOutputWithContext(ctx context.Context) GetListingPackagesListingPackageOutput {
 	return o
+}
+
+func (o GetListingPackagesListingPackageOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingPackagesListingPackage] {
+	return pulumix.Output[GetListingPackagesListingPackage]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The unique identifier for the listing.
@@ -3090,6 +3685,12 @@ func (o GetListingPackagesListingPackageArrayOutput) ToGetListingPackagesListing
 	return o
 }
 
+func (o GetListingPackagesListingPackageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListingPackagesListingPackage] {
+	return pulumix.Output[[]GetListingPackagesListingPackage]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetListingPackagesListingPackageArrayOutput) Index(i pulumi.IntInput) GetListingPackagesListingPackageOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetListingPackagesListingPackage {
 		return vs[0].([]GetListingPackagesListingPackage)[vs[1].(int)]
@@ -3129,6 +3730,12 @@ func (i GetListingPackagesListingPackageOperatingSystemArgs) ToGetListingPackage
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingPackagesListingPackageOperatingSystemOutput)
 }
 
+func (i GetListingPackagesListingPackageOperatingSystemArgs) ToOutput(ctx context.Context) pulumix.Output[GetListingPackagesListingPackageOperatingSystem] {
+	return pulumix.Output[GetListingPackagesListingPackageOperatingSystem]{
+		OutputState: i.ToGetListingPackagesListingPackageOperatingSystemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetListingPackagesListingPackageOperatingSystemArrayInput is an input type that accepts GetListingPackagesListingPackageOperatingSystemArray and GetListingPackagesListingPackageOperatingSystemArrayOutput values.
 // You can construct a concrete instance of `GetListingPackagesListingPackageOperatingSystemArrayInput` via:
 //
@@ -3154,6 +3761,12 @@ func (i GetListingPackagesListingPackageOperatingSystemArray) ToGetListingPackag
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingPackagesListingPackageOperatingSystemArrayOutput)
 }
 
+func (i GetListingPackagesListingPackageOperatingSystemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListingPackagesListingPackageOperatingSystem] {
+	return pulumix.Output[[]GetListingPackagesListingPackageOperatingSystem]{
+		OutputState: i.ToGetListingPackagesListingPackageOperatingSystemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetListingPackagesListingPackageOperatingSystemOutput struct{ *pulumi.OutputState }
 
 func (GetListingPackagesListingPackageOperatingSystemOutput) ElementType() reflect.Type {
@@ -3166,6 +3779,12 @@ func (o GetListingPackagesListingPackageOperatingSystemOutput) ToGetListingPacka
 
 func (o GetListingPackagesListingPackageOperatingSystemOutput) ToGetListingPackagesListingPackageOperatingSystemOutputWithContext(ctx context.Context) GetListingPackagesListingPackageOperatingSystemOutput {
 	return o
+}
+
+func (o GetListingPackagesListingPackageOperatingSystemOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingPackagesListingPackageOperatingSystem] {
+	return pulumix.Output[GetListingPackagesListingPackageOperatingSystem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the variable.
@@ -3185,6 +3804,12 @@ func (o GetListingPackagesListingPackageOperatingSystemArrayOutput) ToGetListing
 
 func (o GetListingPackagesListingPackageOperatingSystemArrayOutput) ToGetListingPackagesListingPackageOperatingSystemArrayOutputWithContext(ctx context.Context) GetListingPackagesListingPackageOperatingSystemArrayOutput {
 	return o
+}
+
+func (o GetListingPackagesListingPackageOperatingSystemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListingPackagesListingPackageOperatingSystem] {
+	return pulumix.Output[[]GetListingPackagesListingPackageOperatingSystem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetListingPackagesListingPackageOperatingSystemArrayOutput) Index(i pulumi.IntInput) GetListingPackagesListingPackageOperatingSystemOutput {
@@ -3242,6 +3867,12 @@ func (i GetListingPackagesListingPackagePricingArgs) ToGetListingPackagesListing
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingPackagesListingPackagePricingOutput)
 }
 
+func (i GetListingPackagesListingPackagePricingArgs) ToOutput(ctx context.Context) pulumix.Output[GetListingPackagesListingPackagePricing] {
+	return pulumix.Output[GetListingPackagesListingPackagePricing]{
+		OutputState: i.ToGetListingPackagesListingPackagePricingOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetListingPackagesListingPackagePricingArrayInput is an input type that accepts GetListingPackagesListingPackagePricingArray and GetListingPackagesListingPackagePricingArrayOutput values.
 // You can construct a concrete instance of `GetListingPackagesListingPackagePricingArrayInput` via:
 //
@@ -3267,6 +3898,12 @@ func (i GetListingPackagesListingPackagePricingArray) ToGetListingPackagesListin
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingPackagesListingPackagePricingArrayOutput)
 }
 
+func (i GetListingPackagesListingPackagePricingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListingPackagesListingPackagePricing] {
+	return pulumix.Output[[]GetListingPackagesListingPackagePricing]{
+		OutputState: i.ToGetListingPackagesListingPackagePricingArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetListingPackagesListingPackagePricingOutput struct{ *pulumi.OutputState }
 
 func (GetListingPackagesListingPackagePricingOutput) ElementType() reflect.Type {
@@ -3279,6 +3916,12 @@ func (o GetListingPackagesListingPackagePricingOutput) ToGetListingPackagesListi
 
 func (o GetListingPackagesListingPackagePricingOutput) ToGetListingPackagesListingPackagePricingOutputWithContext(ctx context.Context) GetListingPackagesListingPackagePricingOutput {
 	return o
+}
+
+func (o GetListingPackagesListingPackagePricingOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingPackagesListingPackagePricing] {
+	return pulumix.Output[GetListingPackagesListingPackagePricing]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The currency of the pricing model.
@@ -3320,6 +3963,12 @@ func (o GetListingPackagesListingPackagePricingArrayOutput) ToGetListingPackages
 
 func (o GetListingPackagesListingPackagePricingArrayOutput) ToGetListingPackagesListingPackagePricingArrayOutputWithContext(ctx context.Context) GetListingPackagesListingPackagePricingArrayOutput {
 	return o
+}
+
+func (o GetListingPackagesListingPackagePricingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListingPackagesListingPackagePricing] {
+	return pulumix.Output[[]GetListingPackagesListingPackagePricing]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetListingPackagesListingPackagePricingArrayOutput) Index(i pulumi.IntInput) GetListingPackagesListingPackagePricingOutput {
@@ -3369,6 +4018,12 @@ func (i GetListingPackagesListingPackagePricingInternationalMarketPriceArgs) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingPackagesListingPackagePricingInternationalMarketPriceOutput)
 }
 
+func (i GetListingPackagesListingPackagePricingInternationalMarketPriceArgs) ToOutput(ctx context.Context) pulumix.Output[GetListingPackagesListingPackagePricingInternationalMarketPrice] {
+	return pulumix.Output[GetListingPackagesListingPackagePricingInternationalMarketPrice]{
+		OutputState: i.ToGetListingPackagesListingPackagePricingInternationalMarketPriceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetListingPackagesListingPackagePricingInternationalMarketPriceArrayInput is an input type that accepts GetListingPackagesListingPackagePricingInternationalMarketPriceArray and GetListingPackagesListingPackagePricingInternationalMarketPriceArrayOutput values.
 // You can construct a concrete instance of `GetListingPackagesListingPackagePricingInternationalMarketPriceArrayInput` via:
 //
@@ -3394,6 +4049,12 @@ func (i GetListingPackagesListingPackagePricingInternationalMarketPriceArray) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingPackagesListingPackagePricingInternationalMarketPriceArrayOutput)
 }
 
+func (i GetListingPackagesListingPackagePricingInternationalMarketPriceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListingPackagesListingPackagePricingInternationalMarketPrice] {
+	return pulumix.Output[[]GetListingPackagesListingPackagePricingInternationalMarketPrice]{
+		OutputState: i.ToGetListingPackagesListingPackagePricingInternationalMarketPriceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetListingPackagesListingPackagePricingInternationalMarketPriceOutput struct{ *pulumi.OutputState }
 
 func (GetListingPackagesListingPackagePricingInternationalMarketPriceOutput) ElementType() reflect.Type {
@@ -3406,6 +4067,12 @@ func (o GetListingPackagesListingPackagePricingInternationalMarketPriceOutput) T
 
 func (o GetListingPackagesListingPackagePricingInternationalMarketPriceOutput) ToGetListingPackagesListingPackagePricingInternationalMarketPriceOutputWithContext(ctx context.Context) GetListingPackagesListingPackagePricingInternationalMarketPriceOutput {
 	return o
+}
+
+func (o GetListingPackagesListingPackagePricingInternationalMarketPriceOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingPackagesListingPackagePricingInternationalMarketPrice] {
+	return pulumix.Output[GetListingPackagesListingPackagePricingInternationalMarketPrice]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The currency of the pricing model.
@@ -3437,6 +4104,12 @@ func (o GetListingPackagesListingPackagePricingInternationalMarketPriceArrayOutp
 
 func (o GetListingPackagesListingPackagePricingInternationalMarketPriceArrayOutput) ToGetListingPackagesListingPackagePricingInternationalMarketPriceArrayOutputWithContext(ctx context.Context) GetListingPackagesListingPackagePricingInternationalMarketPriceArrayOutput {
 	return o
+}
+
+func (o GetListingPackagesListingPackagePricingInternationalMarketPriceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListingPackagesListingPackagePricingInternationalMarketPrice] {
+	return pulumix.Output[[]GetListingPackagesListingPackagePricingInternationalMarketPrice]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetListingPackagesListingPackagePricingInternationalMarketPriceArrayOutput) Index(i pulumi.IntInput) GetListingPackagesListingPackagePricingInternationalMarketPriceOutput {
@@ -3486,6 +4159,12 @@ func (i GetListingPackagesListingPackageRegionArgs) ToGetListingPackagesListingP
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingPackagesListingPackageRegionOutput)
 }
 
+func (i GetListingPackagesListingPackageRegionArgs) ToOutput(ctx context.Context) pulumix.Output[GetListingPackagesListingPackageRegion] {
+	return pulumix.Output[GetListingPackagesListingPackageRegion]{
+		OutputState: i.ToGetListingPackagesListingPackageRegionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetListingPackagesListingPackageRegionArrayInput is an input type that accepts GetListingPackagesListingPackageRegionArray and GetListingPackagesListingPackageRegionArrayOutput values.
 // You can construct a concrete instance of `GetListingPackagesListingPackageRegionArrayInput` via:
 //
@@ -3511,6 +4190,12 @@ func (i GetListingPackagesListingPackageRegionArray) ToGetListingPackagesListing
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingPackagesListingPackageRegionArrayOutput)
 }
 
+func (i GetListingPackagesListingPackageRegionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListingPackagesListingPackageRegion] {
+	return pulumix.Output[[]GetListingPackagesListingPackageRegion]{
+		OutputState: i.ToGetListingPackagesListingPackageRegionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetListingPackagesListingPackageRegionOutput struct{ *pulumi.OutputState }
 
 func (GetListingPackagesListingPackageRegionOutput) ElementType() reflect.Type {
@@ -3523,6 +4208,12 @@ func (o GetListingPackagesListingPackageRegionOutput) ToGetListingPackagesListin
 
 func (o GetListingPackagesListingPackageRegionOutput) ToGetListingPackagesListingPackageRegionOutputWithContext(ctx context.Context) GetListingPackagesListingPackageRegionOutput {
 	return o
+}
+
+func (o GetListingPackagesListingPackageRegionOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingPackagesListingPackageRegion] {
+	return pulumix.Output[GetListingPackagesListingPackageRegion]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A code assigned to the item.
@@ -3554,6 +4245,12 @@ func (o GetListingPackagesListingPackageRegionArrayOutput) ToGetListingPackagesL
 
 func (o GetListingPackagesListingPackageRegionArrayOutput) ToGetListingPackagesListingPackageRegionArrayOutputWithContext(ctx context.Context) GetListingPackagesListingPackageRegionArrayOutput {
 	return o
+}
+
+func (o GetListingPackagesListingPackageRegionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListingPackagesListingPackageRegion] {
+	return pulumix.Output[[]GetListingPackagesListingPackageRegion]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetListingPackagesListingPackageRegionArrayOutput) Index(i pulumi.IntInput) GetListingPackagesListingPackageRegionOutput {
@@ -3599,6 +4296,12 @@ func (i GetListingPackagesListingPackageRegionCountryArgs) ToGetListingPackagesL
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingPackagesListingPackageRegionCountryOutput)
 }
 
+func (i GetListingPackagesListingPackageRegionCountryArgs) ToOutput(ctx context.Context) pulumix.Output[GetListingPackagesListingPackageRegionCountry] {
+	return pulumix.Output[GetListingPackagesListingPackageRegionCountry]{
+		OutputState: i.ToGetListingPackagesListingPackageRegionCountryOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetListingPackagesListingPackageRegionCountryArrayInput is an input type that accepts GetListingPackagesListingPackageRegionCountryArray and GetListingPackagesListingPackageRegionCountryArrayOutput values.
 // You can construct a concrete instance of `GetListingPackagesListingPackageRegionCountryArrayInput` via:
 //
@@ -3624,6 +4327,12 @@ func (i GetListingPackagesListingPackageRegionCountryArray) ToGetListingPackages
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingPackagesListingPackageRegionCountryArrayOutput)
 }
 
+func (i GetListingPackagesListingPackageRegionCountryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListingPackagesListingPackageRegionCountry] {
+	return pulumix.Output[[]GetListingPackagesListingPackageRegionCountry]{
+		OutputState: i.ToGetListingPackagesListingPackageRegionCountryArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetListingPackagesListingPackageRegionCountryOutput struct{ *pulumi.OutputState }
 
 func (GetListingPackagesListingPackageRegionCountryOutput) ElementType() reflect.Type {
@@ -3636,6 +4345,12 @@ func (o GetListingPackagesListingPackageRegionCountryOutput) ToGetListingPackage
 
 func (o GetListingPackagesListingPackageRegionCountryOutput) ToGetListingPackagesListingPackageRegionCountryOutputWithContext(ctx context.Context) GetListingPackagesListingPackageRegionCountryOutput {
 	return o
+}
+
+func (o GetListingPackagesListingPackageRegionCountryOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingPackagesListingPackageRegionCountry] {
+	return pulumix.Output[GetListingPackagesListingPackageRegionCountry]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A code assigned to the item.
@@ -3660,6 +4375,12 @@ func (o GetListingPackagesListingPackageRegionCountryArrayOutput) ToGetListingPa
 
 func (o GetListingPackagesListingPackageRegionCountryArrayOutput) ToGetListingPackagesListingPackageRegionCountryArrayOutputWithContext(ctx context.Context) GetListingPackagesListingPackageRegionCountryArrayOutput {
 	return o
+}
+
+func (o GetListingPackagesListingPackageRegionCountryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListingPackagesListingPackageRegionCountry] {
+	return pulumix.Output[[]GetListingPackagesListingPackageRegionCountry]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetListingPackagesListingPackageRegionCountryArrayOutput) Index(i pulumi.IntInput) GetListingPackagesListingPackageRegionCountryOutput {
@@ -3737,6 +4458,12 @@ func (i GetListingPublisherArgs) ToGetListingPublisherOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingPublisherOutput)
 }
 
+func (i GetListingPublisherArgs) ToOutput(ctx context.Context) pulumix.Output[GetListingPublisher] {
+	return pulumix.Output[GetListingPublisher]{
+		OutputState: i.ToGetListingPublisherOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetListingPublisherArrayInput is an input type that accepts GetListingPublisherArray and GetListingPublisherArrayOutput values.
 // You can construct a concrete instance of `GetListingPublisherArrayInput` via:
 //
@@ -3762,6 +4489,12 @@ func (i GetListingPublisherArray) ToGetListingPublisherArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingPublisherArrayOutput)
 }
 
+func (i GetListingPublisherArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListingPublisher] {
+	return pulumix.Output[[]GetListingPublisher]{
+		OutputState: i.ToGetListingPublisherArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetListingPublisherOutput struct{ *pulumi.OutputState }
 
 func (GetListingPublisherOutput) ElementType() reflect.Type {
@@ -3774,6 +4507,12 @@ func (o GetListingPublisherOutput) ToGetListingPublisherOutput() GetListingPubli
 
 func (o GetListingPublisherOutput) ToGetListingPublisherOutputWithContext(ctx context.Context) GetListingPublisherOutput {
 	return o
+}
+
+func (o GetListingPublisherOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingPublisher] {
+	return pulumix.Output[GetListingPublisher]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The email address of the publisher.
@@ -3840,6 +4579,12 @@ func (o GetListingPublisherArrayOutput) ToGetListingPublisherArrayOutputWithCont
 	return o
 }
 
+func (o GetListingPublisherArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListingPublisher] {
+	return pulumix.Output[[]GetListingPublisher]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetListingPublisherArrayOutput) Index(i pulumi.IntInput) GetListingPublisherOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetListingPublisher {
 		return vs[0].([]GetListingPublisher)[vs[1].(int)]
@@ -3883,6 +4628,12 @@ func (i GetListingPublisherLinkArgs) ToGetListingPublisherLinkOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingPublisherLinkOutput)
 }
 
+func (i GetListingPublisherLinkArgs) ToOutput(ctx context.Context) pulumix.Output[GetListingPublisherLink] {
+	return pulumix.Output[GetListingPublisherLink]{
+		OutputState: i.ToGetListingPublisherLinkOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetListingPublisherLinkArrayInput is an input type that accepts GetListingPublisherLinkArray and GetListingPublisherLinkArrayOutput values.
 // You can construct a concrete instance of `GetListingPublisherLinkArrayInput` via:
 //
@@ -3908,6 +4659,12 @@ func (i GetListingPublisherLinkArray) ToGetListingPublisherLinkArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingPublisherLinkArrayOutput)
 }
 
+func (i GetListingPublisherLinkArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListingPublisherLink] {
+	return pulumix.Output[[]GetListingPublisherLink]{
+		OutputState: i.ToGetListingPublisherLinkArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetListingPublisherLinkOutput struct{ *pulumi.OutputState }
 
 func (GetListingPublisherLinkOutput) ElementType() reflect.Type {
@@ -3920,6 +4677,12 @@ func (o GetListingPublisherLinkOutput) ToGetListingPublisherLinkOutput() GetList
 
 func (o GetListingPublisherLinkOutput) ToGetListingPublisherLinkOutputWithContext(ctx context.Context) GetListingPublisherLinkOutput {
 	return o
+}
+
+func (o GetListingPublisherLinkOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingPublisherLink] {
+	return pulumix.Output[GetListingPublisherLink]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The anchor tag.
@@ -3944,6 +4707,12 @@ func (o GetListingPublisherLinkArrayOutput) ToGetListingPublisherLinkArrayOutput
 
 func (o GetListingPublisherLinkArrayOutput) ToGetListingPublisherLinkArrayOutputWithContext(ctx context.Context) GetListingPublisherLinkArrayOutput {
 	return o
+}
+
+func (o GetListingPublisherLinkArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListingPublisherLink] {
+	return pulumix.Output[[]GetListingPublisherLink]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetListingPublisherLinkArrayOutput) Index(i pulumi.IntInput) GetListingPublisherLinkOutput {
@@ -3997,6 +4766,12 @@ func (i GetListingPublisherLogoArgs) ToGetListingPublisherLogoOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingPublisherLogoOutput)
 }
 
+func (i GetListingPublisherLogoArgs) ToOutput(ctx context.Context) pulumix.Output[GetListingPublisherLogo] {
+	return pulumix.Output[GetListingPublisherLogo]{
+		OutputState: i.ToGetListingPublisherLogoOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetListingPublisherLogoArrayInput is an input type that accepts GetListingPublisherLogoArray and GetListingPublisherLogoArrayOutput values.
 // You can construct a concrete instance of `GetListingPublisherLogoArrayInput` via:
 //
@@ -4022,6 +4797,12 @@ func (i GetListingPublisherLogoArray) ToGetListingPublisherLogoArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingPublisherLogoArrayOutput)
 }
 
+func (i GetListingPublisherLogoArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListingPublisherLogo] {
+	return pulumix.Output[[]GetListingPublisherLogo]{
+		OutputState: i.ToGetListingPublisherLogoArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetListingPublisherLogoOutput struct{ *pulumi.OutputState }
 
 func (GetListingPublisherLogoOutput) ElementType() reflect.Type {
@@ -4034,6 +4815,12 @@ func (o GetListingPublisherLogoOutput) ToGetListingPublisherLogoOutput() GetList
 
 func (o GetListingPublisherLogoOutput) ToGetListingPublisherLogoOutputWithContext(ctx context.Context) GetListingPublisherLogoOutput {
 	return o
+}
+
+func (o GetListingPublisherLogoOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingPublisherLogo] {
+	return pulumix.Output[GetListingPublisherLogo]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The content URL of the screenshot.
@@ -4068,6 +4855,12 @@ func (o GetListingPublisherLogoArrayOutput) ToGetListingPublisherLogoArrayOutput
 
 func (o GetListingPublisherLogoArrayOutput) ToGetListingPublisherLogoArrayOutputWithContext(ctx context.Context) GetListingPublisherLogoArrayOutput {
 	return o
+}
+
+func (o GetListingPublisherLogoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListingPublisherLogo] {
+	return pulumix.Output[[]GetListingPublisherLogo]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetListingPublisherLogoArrayOutput) Index(i pulumi.IntInput) GetListingPublisherLogoOutput {
@@ -4117,6 +4910,12 @@ func (i GetListingRegionArgs) ToGetListingRegionOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingRegionOutput)
 }
 
+func (i GetListingRegionArgs) ToOutput(ctx context.Context) pulumix.Output[GetListingRegion] {
+	return pulumix.Output[GetListingRegion]{
+		OutputState: i.ToGetListingRegionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetListingRegionArrayInput is an input type that accepts GetListingRegionArray and GetListingRegionArrayOutput values.
 // You can construct a concrete instance of `GetListingRegionArrayInput` via:
 //
@@ -4142,6 +4941,12 @@ func (i GetListingRegionArray) ToGetListingRegionArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingRegionArrayOutput)
 }
 
+func (i GetListingRegionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListingRegion] {
+	return pulumix.Output[[]GetListingRegion]{
+		OutputState: i.ToGetListingRegionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetListingRegionOutput struct{ *pulumi.OutputState }
 
 func (GetListingRegionOutput) ElementType() reflect.Type {
@@ -4154,6 +4959,12 @@ func (o GetListingRegionOutput) ToGetListingRegionOutput() GetListingRegionOutpu
 
 func (o GetListingRegionOutput) ToGetListingRegionOutputWithContext(ctx context.Context) GetListingRegionOutput {
 	return o
+}
+
+func (o GetListingRegionOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingRegion] {
+	return pulumix.Output[GetListingRegion]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A code assigned to the item.
@@ -4183,6 +4994,12 @@ func (o GetListingRegionArrayOutput) ToGetListingRegionArrayOutput() GetListingR
 
 func (o GetListingRegionArrayOutput) ToGetListingRegionArrayOutputWithContext(ctx context.Context) GetListingRegionArrayOutput {
 	return o
+}
+
+func (o GetListingRegionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListingRegion] {
+	return pulumix.Output[[]GetListingRegion]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetListingRegionArrayOutput) Index(i pulumi.IntInput) GetListingRegionOutput {
@@ -4228,6 +5045,12 @@ func (i GetListingRegionCountryArgs) ToGetListingRegionCountryOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingRegionCountryOutput)
 }
 
+func (i GetListingRegionCountryArgs) ToOutput(ctx context.Context) pulumix.Output[GetListingRegionCountry] {
+	return pulumix.Output[GetListingRegionCountry]{
+		OutputState: i.ToGetListingRegionCountryOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetListingRegionCountryArrayInput is an input type that accepts GetListingRegionCountryArray and GetListingRegionCountryArrayOutput values.
 // You can construct a concrete instance of `GetListingRegionCountryArrayInput` via:
 //
@@ -4253,6 +5076,12 @@ func (i GetListingRegionCountryArray) ToGetListingRegionCountryArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingRegionCountryArrayOutput)
 }
 
+func (i GetListingRegionCountryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListingRegionCountry] {
+	return pulumix.Output[[]GetListingRegionCountry]{
+		OutputState: i.ToGetListingRegionCountryArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetListingRegionCountryOutput struct{ *pulumi.OutputState }
 
 func (GetListingRegionCountryOutput) ElementType() reflect.Type {
@@ -4265,6 +5094,12 @@ func (o GetListingRegionCountryOutput) ToGetListingRegionCountryOutput() GetList
 
 func (o GetListingRegionCountryOutput) ToGetListingRegionCountryOutputWithContext(ctx context.Context) GetListingRegionCountryOutput {
 	return o
+}
+
+func (o GetListingRegionCountryOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingRegionCountry] {
+	return pulumix.Output[GetListingRegionCountry]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A code assigned to the item.
@@ -4289,6 +5124,12 @@ func (o GetListingRegionCountryArrayOutput) ToGetListingRegionCountryArrayOutput
 
 func (o GetListingRegionCountryArrayOutput) ToGetListingRegionCountryArrayOutputWithContext(ctx context.Context) GetListingRegionCountryArrayOutput {
 	return o
+}
+
+func (o GetListingRegionCountryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListingRegionCountry] {
+	return pulumix.Output[[]GetListingRegionCountry]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetListingRegionCountryArrayOutput) Index(i pulumi.IntInput) GetListingRegionCountryOutput {
@@ -4346,6 +5187,12 @@ func (i GetListingScreenshotArgs) ToGetListingScreenshotOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingScreenshotOutput)
 }
 
+func (i GetListingScreenshotArgs) ToOutput(ctx context.Context) pulumix.Output[GetListingScreenshot] {
+	return pulumix.Output[GetListingScreenshot]{
+		OutputState: i.ToGetListingScreenshotOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetListingScreenshotArrayInput is an input type that accepts GetListingScreenshotArray and GetListingScreenshotArrayOutput values.
 // You can construct a concrete instance of `GetListingScreenshotArrayInput` via:
 //
@@ -4371,6 +5218,12 @@ func (i GetListingScreenshotArray) ToGetListingScreenshotArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingScreenshotArrayOutput)
 }
 
+func (i GetListingScreenshotArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListingScreenshot] {
+	return pulumix.Output[[]GetListingScreenshot]{
+		OutputState: i.ToGetListingScreenshotArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetListingScreenshotOutput struct{ *pulumi.OutputState }
 
 func (GetListingScreenshotOutput) ElementType() reflect.Type {
@@ -4383,6 +5236,12 @@ func (o GetListingScreenshotOutput) ToGetListingScreenshotOutput() GetListingScr
 
 func (o GetListingScreenshotOutput) ToGetListingScreenshotOutputWithContext(ctx context.Context) GetListingScreenshotOutput {
 	return o
+}
+
+func (o GetListingScreenshotOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingScreenshot] {
+	return pulumix.Output[GetListingScreenshot]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The content URL of the screenshot.
@@ -4422,6 +5281,12 @@ func (o GetListingScreenshotArrayOutput) ToGetListingScreenshotArrayOutput() Get
 
 func (o GetListingScreenshotArrayOutput) ToGetListingScreenshotArrayOutputWithContext(ctx context.Context) GetListingScreenshotArrayOutput {
 	return o
+}
+
+func (o GetListingScreenshotArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListingScreenshot] {
+	return pulumix.Output[[]GetListingScreenshot]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetListingScreenshotArrayOutput) Index(i pulumi.IntInput) GetListingScreenshotOutput {
@@ -4475,6 +5340,12 @@ func (i GetListingSupportContactArgs) ToGetListingSupportContactOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingSupportContactOutput)
 }
 
+func (i GetListingSupportContactArgs) ToOutput(ctx context.Context) pulumix.Output[GetListingSupportContact] {
+	return pulumix.Output[GetListingSupportContact]{
+		OutputState: i.ToGetListingSupportContactOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetListingSupportContactArrayInput is an input type that accepts GetListingSupportContactArray and GetListingSupportContactArrayOutput values.
 // You can construct a concrete instance of `GetListingSupportContactArrayInput` via:
 //
@@ -4500,6 +5371,12 @@ func (i GetListingSupportContactArray) ToGetListingSupportContactArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingSupportContactArrayOutput)
 }
 
+func (i GetListingSupportContactArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListingSupportContact] {
+	return pulumix.Output[[]GetListingSupportContact]{
+		OutputState: i.ToGetListingSupportContactArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetListingSupportContactOutput struct{ *pulumi.OutputState }
 
 func (GetListingSupportContactOutput) ElementType() reflect.Type {
@@ -4512,6 +5389,12 @@ func (o GetListingSupportContactOutput) ToGetListingSupportContactOutput() GetLi
 
 func (o GetListingSupportContactOutput) ToGetListingSupportContactOutputWithContext(ctx context.Context) GetListingSupportContactOutput {
 	return o
+}
+
+func (o GetListingSupportContactOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingSupportContact] {
+	return pulumix.Output[GetListingSupportContact]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The email of the contact.
@@ -4546,6 +5429,12 @@ func (o GetListingSupportContactArrayOutput) ToGetListingSupportContactArrayOutp
 
 func (o GetListingSupportContactArrayOutput) ToGetListingSupportContactArrayOutputWithContext(ctx context.Context) GetListingSupportContactArrayOutput {
 	return o
+}
+
+func (o GetListingSupportContactArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListingSupportContact] {
+	return pulumix.Output[[]GetListingSupportContact]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetListingSupportContactArrayOutput) Index(i pulumi.IntInput) GetListingSupportContactOutput {
@@ -4591,6 +5480,12 @@ func (i GetListingSupportLinkArgs) ToGetListingSupportLinkOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingSupportLinkOutput)
 }
 
+func (i GetListingSupportLinkArgs) ToOutput(ctx context.Context) pulumix.Output[GetListingSupportLink] {
+	return pulumix.Output[GetListingSupportLink]{
+		OutputState: i.ToGetListingSupportLinkOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetListingSupportLinkArrayInput is an input type that accepts GetListingSupportLinkArray and GetListingSupportLinkArrayOutput values.
 // You can construct a concrete instance of `GetListingSupportLinkArrayInput` via:
 //
@@ -4616,6 +5511,12 @@ func (i GetListingSupportLinkArray) ToGetListingSupportLinkArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingSupportLinkArrayOutput)
 }
 
+func (i GetListingSupportLinkArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListingSupportLink] {
+	return pulumix.Output[[]GetListingSupportLink]{
+		OutputState: i.ToGetListingSupportLinkArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetListingSupportLinkOutput struct{ *pulumi.OutputState }
 
 func (GetListingSupportLinkOutput) ElementType() reflect.Type {
@@ -4628,6 +5529,12 @@ func (o GetListingSupportLinkOutput) ToGetListingSupportLinkOutput() GetListingS
 
 func (o GetListingSupportLinkOutput) ToGetListingSupportLinkOutputWithContext(ctx context.Context) GetListingSupportLinkOutput {
 	return o
+}
+
+func (o GetListingSupportLinkOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingSupportLink] {
+	return pulumix.Output[GetListingSupportLink]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Text that describes the resource.
@@ -4652,6 +5559,12 @@ func (o GetListingSupportLinkArrayOutput) ToGetListingSupportLinkArrayOutput() G
 
 func (o GetListingSupportLinkArrayOutput) ToGetListingSupportLinkArrayOutputWithContext(ctx context.Context) GetListingSupportLinkArrayOutput {
 	return o
+}
+
+func (o GetListingSupportLinkArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListingSupportLink] {
+	return pulumix.Output[[]GetListingSupportLink]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetListingSupportLinkArrayOutput) Index(i pulumi.IntInput) GetListingSupportLinkOutput {
@@ -4693,6 +5606,12 @@ func (i GetListingSupportedOperatingSystemArgs) ToGetListingSupportedOperatingSy
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingSupportedOperatingSystemOutput)
 }
 
+func (i GetListingSupportedOperatingSystemArgs) ToOutput(ctx context.Context) pulumix.Output[GetListingSupportedOperatingSystem] {
+	return pulumix.Output[GetListingSupportedOperatingSystem]{
+		OutputState: i.ToGetListingSupportedOperatingSystemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetListingSupportedOperatingSystemArrayInput is an input type that accepts GetListingSupportedOperatingSystemArray and GetListingSupportedOperatingSystemArrayOutput values.
 // You can construct a concrete instance of `GetListingSupportedOperatingSystemArrayInput` via:
 //
@@ -4718,6 +5637,12 @@ func (i GetListingSupportedOperatingSystemArray) ToGetListingSupportedOperatingS
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingSupportedOperatingSystemArrayOutput)
 }
 
+func (i GetListingSupportedOperatingSystemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListingSupportedOperatingSystem] {
+	return pulumix.Output[[]GetListingSupportedOperatingSystem]{
+		OutputState: i.ToGetListingSupportedOperatingSystemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetListingSupportedOperatingSystemOutput struct{ *pulumi.OutputState }
 
 func (GetListingSupportedOperatingSystemOutput) ElementType() reflect.Type {
@@ -4730,6 +5655,12 @@ func (o GetListingSupportedOperatingSystemOutput) ToGetListingSupportedOperating
 
 func (o GetListingSupportedOperatingSystemOutput) ToGetListingSupportedOperatingSystemOutputWithContext(ctx context.Context) GetListingSupportedOperatingSystemOutput {
 	return o
+}
+
+func (o GetListingSupportedOperatingSystemOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingSupportedOperatingSystem] {
+	return pulumix.Output[GetListingSupportedOperatingSystem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Text that describes the resource.
@@ -4749,6 +5680,12 @@ func (o GetListingSupportedOperatingSystemArrayOutput) ToGetListingSupportedOper
 
 func (o GetListingSupportedOperatingSystemArrayOutput) ToGetListingSupportedOperatingSystemArrayOutputWithContext(ctx context.Context) GetListingSupportedOperatingSystemArrayOutput {
 	return o
+}
+
+func (o GetListingSupportedOperatingSystemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListingSupportedOperatingSystem] {
+	return pulumix.Output[[]GetListingSupportedOperatingSystem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetListingSupportedOperatingSystemArrayOutput) Index(i pulumi.IntInput) GetListingSupportedOperatingSystemOutput {
@@ -4794,6 +5731,12 @@ func (i GetListingTaxesFilterArgs) ToGetListingTaxesFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingTaxesFilterOutput)
 }
 
+func (i GetListingTaxesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetListingTaxesFilter] {
+	return pulumix.Output[GetListingTaxesFilter]{
+		OutputState: i.ToGetListingTaxesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetListingTaxesFilterArrayInput is an input type that accepts GetListingTaxesFilterArray and GetListingTaxesFilterArrayOutput values.
 // You can construct a concrete instance of `GetListingTaxesFilterArrayInput` via:
 //
@@ -4819,6 +5762,12 @@ func (i GetListingTaxesFilterArray) ToGetListingTaxesFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingTaxesFilterArrayOutput)
 }
 
+func (i GetListingTaxesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListingTaxesFilter] {
+	return pulumix.Output[[]GetListingTaxesFilter]{
+		OutputState: i.ToGetListingTaxesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetListingTaxesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetListingTaxesFilterOutput) ElementType() reflect.Type {
@@ -4831,6 +5780,12 @@ func (o GetListingTaxesFilterOutput) ToGetListingTaxesFilterOutput() GetListingT
 
 func (o GetListingTaxesFilterOutput) ToGetListingTaxesFilterOutputWithContext(ctx context.Context) GetListingTaxesFilterOutput {
 	return o
+}
+
+func (o GetListingTaxesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingTaxesFilter] {
+	return pulumix.Output[GetListingTaxesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Name of the tax code.
@@ -4858,6 +5813,12 @@ func (o GetListingTaxesFilterArrayOutput) ToGetListingTaxesFilterArrayOutput() G
 
 func (o GetListingTaxesFilterArrayOutput) ToGetListingTaxesFilterArrayOutputWithContext(ctx context.Context) GetListingTaxesFilterArrayOutput {
 	return o
+}
+
+func (o GetListingTaxesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListingTaxesFilter] {
+	return pulumix.Output[[]GetListingTaxesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetListingTaxesFilterArrayOutput) Index(i pulumi.IntInput) GetListingTaxesFilterOutput {
@@ -4911,6 +5872,12 @@ func (i GetListingTaxesTaxArgs) ToGetListingTaxesTaxOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingTaxesTaxOutput)
 }
 
+func (i GetListingTaxesTaxArgs) ToOutput(ctx context.Context) pulumix.Output[GetListingTaxesTax] {
+	return pulumix.Output[GetListingTaxesTax]{
+		OutputState: i.ToGetListingTaxesTaxOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetListingTaxesTaxArrayInput is an input type that accepts GetListingTaxesTaxArray and GetListingTaxesTaxArrayOutput values.
 // You can construct a concrete instance of `GetListingTaxesTaxArrayInput` via:
 //
@@ -4936,6 +5903,12 @@ func (i GetListingTaxesTaxArray) ToGetListingTaxesTaxArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingTaxesTaxArrayOutput)
 }
 
+func (i GetListingTaxesTaxArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListingTaxesTax] {
+	return pulumix.Output[[]GetListingTaxesTax]{
+		OutputState: i.ToGetListingTaxesTaxArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetListingTaxesTaxOutput struct{ *pulumi.OutputState }
 
 func (GetListingTaxesTaxOutput) ElementType() reflect.Type {
@@ -4948,6 +5921,12 @@ func (o GetListingTaxesTaxOutput) ToGetListingTaxesTaxOutput() GetListingTaxesTa
 
 func (o GetListingTaxesTaxOutput) ToGetListingTaxesTaxOutputWithContext(ctx context.Context) GetListingTaxesTaxOutput {
 	return o
+}
+
+func (o GetListingTaxesTaxOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingTaxesTax] {
+	return pulumix.Output[GetListingTaxesTax]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Unique code for the tax.
@@ -4982,6 +5961,12 @@ func (o GetListingTaxesTaxArrayOutput) ToGetListingTaxesTaxArrayOutput() GetList
 
 func (o GetListingTaxesTaxArrayOutput) ToGetListingTaxesTaxArrayOutputWithContext(ctx context.Context) GetListingTaxesTaxArrayOutput {
 	return o
+}
+
+func (o GetListingTaxesTaxArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListingTaxesTax] {
+	return pulumix.Output[[]GetListingTaxesTax]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetListingTaxesTaxArrayOutput) Index(i pulumi.IntInput) GetListingTaxesTaxOutput {
@@ -5027,6 +6012,12 @@ func (i GetListingVideoArgs) ToGetListingVideoOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingVideoOutput)
 }
 
+func (i GetListingVideoArgs) ToOutput(ctx context.Context) pulumix.Output[GetListingVideo] {
+	return pulumix.Output[GetListingVideo]{
+		OutputState: i.ToGetListingVideoOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetListingVideoArrayInput is an input type that accepts GetListingVideoArray and GetListingVideoArrayOutput values.
 // You can construct a concrete instance of `GetListingVideoArrayInput` via:
 //
@@ -5052,6 +6043,12 @@ func (i GetListingVideoArray) ToGetListingVideoArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingVideoArrayOutput)
 }
 
+func (i GetListingVideoArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListingVideo] {
+	return pulumix.Output[[]GetListingVideo]{
+		OutputState: i.ToGetListingVideoArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetListingVideoOutput struct{ *pulumi.OutputState }
 
 func (GetListingVideoOutput) ElementType() reflect.Type {
@@ -5064,6 +6061,12 @@ func (o GetListingVideoOutput) ToGetListingVideoOutput() GetListingVideoOutput {
 
 func (o GetListingVideoOutput) ToGetListingVideoOutputWithContext(ctx context.Context) GetListingVideoOutput {
 	return o
+}
+
+func (o GetListingVideoOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingVideo] {
+	return pulumix.Output[GetListingVideo]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Text that describes the resource.
@@ -5088,6 +6091,12 @@ func (o GetListingVideoArrayOutput) ToGetListingVideoArrayOutput() GetListingVid
 
 func (o GetListingVideoArrayOutput) ToGetListingVideoArrayOutputWithContext(ctx context.Context) GetListingVideoArrayOutput {
 	return o
+}
+
+func (o GetListingVideoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListingVideo] {
+	return pulumix.Output[[]GetListingVideo]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetListingVideoArrayOutput) Index(i pulumi.IntInput) GetListingVideoOutput {
@@ -5133,6 +6142,12 @@ func (i GetListingsFilterArgs) ToGetListingsFilterOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingsFilterOutput)
 }
 
+func (i GetListingsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetListingsFilter] {
+	return pulumix.Output[GetListingsFilter]{
+		OutputState: i.ToGetListingsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetListingsFilterArrayInput is an input type that accepts GetListingsFilterArray and GetListingsFilterArrayOutput values.
 // You can construct a concrete instance of `GetListingsFilterArrayInput` via:
 //
@@ -5158,6 +6173,12 @@ func (i GetListingsFilterArray) ToGetListingsFilterArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingsFilterArrayOutput)
 }
 
+func (i GetListingsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListingsFilter] {
+	return pulumix.Output[[]GetListingsFilter]{
+		OutputState: i.ToGetListingsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetListingsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetListingsFilterOutput) ElementType() reflect.Type {
@@ -5170,6 +6191,12 @@ func (o GetListingsFilterOutput) ToGetListingsFilterOutput() GetListingsFilterOu
 
 func (o GetListingsFilterOutput) ToGetListingsFilterOutputWithContext(ctx context.Context) GetListingsFilterOutput {
 	return o
+}
+
+func (o GetListingsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingsFilter] {
+	return pulumix.Output[GetListingsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the listing.
@@ -5197,6 +6224,12 @@ func (o GetListingsFilterArrayOutput) ToGetListingsFilterArrayOutput() GetListin
 
 func (o GetListingsFilterArrayOutput) ToGetListingsFilterArrayOutputWithContext(ctx context.Context) GetListingsFilterArrayOutput {
 	return o
+}
+
+func (o GetListingsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListingsFilter] {
+	return pulumix.Output[[]GetListingsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetListingsFilterArrayOutput) Index(i pulumi.IntInput) GetListingsFilterOutput {
@@ -5296,6 +6329,12 @@ func (i GetListingsListingArgs) ToGetListingsListingOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingsListingOutput)
 }
 
+func (i GetListingsListingArgs) ToOutput(ctx context.Context) pulumix.Output[GetListingsListing] {
+	return pulumix.Output[GetListingsListing]{
+		OutputState: i.ToGetListingsListingOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetListingsListingArrayInput is an input type that accepts GetListingsListingArray and GetListingsListingArrayOutput values.
 // You can construct a concrete instance of `GetListingsListingArrayInput` via:
 //
@@ -5321,6 +6360,12 @@ func (i GetListingsListingArray) ToGetListingsListingArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingsListingArrayOutput)
 }
 
+func (i GetListingsListingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListingsListing] {
+	return pulumix.Output[[]GetListingsListing]{
+		OutputState: i.ToGetListingsListingArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetListingsListingOutput struct{ *pulumi.OutputState }
 
 func (GetListingsListingOutput) ElementType() reflect.Type {
@@ -5333,6 +6378,12 @@ func (o GetListingsListingOutput) ToGetListingsListingOutput() GetListingsListin
 
 func (o GetListingsListingOutput) ToGetListingsListingOutputWithContext(ctx context.Context) GetListingsListingOutput {
 	return o
+}
+
+func (o GetListingsListingOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingsListing] {
+	return pulumix.Output[GetListingsListing]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The model for upload data for images and icons.
@@ -5430,6 +6481,12 @@ func (o GetListingsListingArrayOutput) ToGetListingsListingArrayOutputWithContex
 	return o
 }
 
+func (o GetListingsListingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListingsListing] {
+	return pulumix.Output[[]GetListingsListing]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetListingsListingArrayOutput) Index(i pulumi.IntInput) GetListingsListingOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetListingsListing {
 		return vs[0].([]GetListingsListing)[vs[1].(int)]
@@ -5481,6 +6538,12 @@ func (i GetListingsListingBannerArgs) ToGetListingsListingBannerOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingsListingBannerOutput)
 }
 
+func (i GetListingsListingBannerArgs) ToOutput(ctx context.Context) pulumix.Output[GetListingsListingBanner] {
+	return pulumix.Output[GetListingsListingBanner]{
+		OutputState: i.ToGetListingsListingBannerOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetListingsListingBannerArrayInput is an input type that accepts GetListingsListingBannerArray and GetListingsListingBannerArrayOutput values.
 // You can construct a concrete instance of `GetListingsListingBannerArrayInput` via:
 //
@@ -5506,6 +6569,12 @@ func (i GetListingsListingBannerArray) ToGetListingsListingBannerArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingsListingBannerArrayOutput)
 }
 
+func (i GetListingsListingBannerArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListingsListingBanner] {
+	return pulumix.Output[[]GetListingsListingBanner]{
+		OutputState: i.ToGetListingsListingBannerArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetListingsListingBannerOutput struct{ *pulumi.OutputState }
 
 func (GetListingsListingBannerOutput) ElementType() reflect.Type {
@@ -5518,6 +6587,12 @@ func (o GetListingsListingBannerOutput) ToGetListingsListingBannerOutput() GetLi
 
 func (o GetListingsListingBannerOutput) ToGetListingsListingBannerOutputWithContext(ctx context.Context) GetListingsListingBannerOutput {
 	return o
+}
+
+func (o GetListingsListingBannerOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingsListingBanner] {
+	return pulumix.Output[GetListingsListingBanner]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The content URL of the screenshot.
@@ -5552,6 +6627,12 @@ func (o GetListingsListingBannerArrayOutput) ToGetListingsListingBannerArrayOutp
 
 func (o GetListingsListingBannerArrayOutput) ToGetListingsListingBannerArrayOutputWithContext(ctx context.Context) GetListingsListingBannerArrayOutput {
 	return o
+}
+
+func (o GetListingsListingBannerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListingsListingBanner] {
+	return pulumix.Output[[]GetListingsListingBanner]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetListingsListingBannerArrayOutput) Index(i pulumi.IntInput) GetListingsListingBannerOutput {
@@ -5601,6 +6682,12 @@ func (i GetListingsListingDocumentationLinkArgs) ToGetListingsListingDocumentati
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingsListingDocumentationLinkOutput)
 }
 
+func (i GetListingsListingDocumentationLinkArgs) ToOutput(ctx context.Context) pulumix.Output[GetListingsListingDocumentationLink] {
+	return pulumix.Output[GetListingsListingDocumentationLink]{
+		OutputState: i.ToGetListingsListingDocumentationLinkOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetListingsListingDocumentationLinkArrayInput is an input type that accepts GetListingsListingDocumentationLinkArray and GetListingsListingDocumentationLinkArrayOutput values.
 // You can construct a concrete instance of `GetListingsListingDocumentationLinkArrayInput` via:
 //
@@ -5626,6 +6713,12 @@ func (i GetListingsListingDocumentationLinkArray) ToGetListingsListingDocumentat
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingsListingDocumentationLinkArrayOutput)
 }
 
+func (i GetListingsListingDocumentationLinkArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListingsListingDocumentationLink] {
+	return pulumix.Output[[]GetListingsListingDocumentationLink]{
+		OutputState: i.ToGetListingsListingDocumentationLinkArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetListingsListingDocumentationLinkOutput struct{ *pulumi.OutputState }
 
 func (GetListingsListingDocumentationLinkOutput) ElementType() reflect.Type {
@@ -5638,6 +6731,12 @@ func (o GetListingsListingDocumentationLinkOutput) ToGetListingsListingDocumenta
 
 func (o GetListingsListingDocumentationLinkOutput) ToGetListingsListingDocumentationLinkOutputWithContext(ctx context.Context) GetListingsListingDocumentationLinkOutput {
 	return o
+}
+
+func (o GetListingsListingDocumentationLinkOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingsListingDocumentationLink] {
+	return pulumix.Output[GetListingsListingDocumentationLink]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The category that the document belongs to.
@@ -5667,6 +6766,12 @@ func (o GetListingsListingDocumentationLinkArrayOutput) ToGetListingsListingDocu
 
 func (o GetListingsListingDocumentationLinkArrayOutput) ToGetListingsListingDocumentationLinkArrayOutputWithContext(ctx context.Context) GetListingsListingDocumentationLinkArrayOutput {
 	return o
+}
+
+func (o GetListingsListingDocumentationLinkArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListingsListingDocumentationLink] {
+	return pulumix.Output[[]GetListingsListingDocumentationLink]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetListingsListingDocumentationLinkArrayOutput) Index(i pulumi.IntInput) GetListingsListingDocumentationLinkOutput {
@@ -5720,6 +6825,12 @@ func (i GetListingsListingIconArgs) ToGetListingsListingIconOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingsListingIconOutput)
 }
 
+func (i GetListingsListingIconArgs) ToOutput(ctx context.Context) pulumix.Output[GetListingsListingIcon] {
+	return pulumix.Output[GetListingsListingIcon]{
+		OutputState: i.ToGetListingsListingIconOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetListingsListingIconArrayInput is an input type that accepts GetListingsListingIconArray and GetListingsListingIconArrayOutput values.
 // You can construct a concrete instance of `GetListingsListingIconArrayInput` via:
 //
@@ -5745,6 +6856,12 @@ func (i GetListingsListingIconArray) ToGetListingsListingIconArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingsListingIconArrayOutput)
 }
 
+func (i GetListingsListingIconArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListingsListingIcon] {
+	return pulumix.Output[[]GetListingsListingIcon]{
+		OutputState: i.ToGetListingsListingIconArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetListingsListingIconOutput struct{ *pulumi.OutputState }
 
 func (GetListingsListingIconOutput) ElementType() reflect.Type {
@@ -5757,6 +6874,12 @@ func (o GetListingsListingIconOutput) ToGetListingsListingIconOutput() GetListin
 
 func (o GetListingsListingIconOutput) ToGetListingsListingIconOutputWithContext(ctx context.Context) GetListingsListingIconOutput {
 	return o
+}
+
+func (o GetListingsListingIconOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingsListingIcon] {
+	return pulumix.Output[GetListingsListingIcon]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The content URL of the screenshot.
@@ -5791,6 +6914,12 @@ func (o GetListingsListingIconArrayOutput) ToGetListingsListingIconArrayOutput()
 
 func (o GetListingsListingIconArrayOutput) ToGetListingsListingIconArrayOutputWithContext(ctx context.Context) GetListingsListingIconArrayOutput {
 	return o
+}
+
+func (o GetListingsListingIconArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListingsListingIcon] {
+	return pulumix.Output[[]GetListingsListingIcon]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetListingsListingIconArrayOutput) Index(i pulumi.IntInput) GetListingsListingIconOutput {
@@ -5840,6 +6969,12 @@ func (i GetListingsListingPublisherArgs) ToGetListingsListingPublisherOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingsListingPublisherOutput)
 }
 
+func (i GetListingsListingPublisherArgs) ToOutput(ctx context.Context) pulumix.Output[GetListingsListingPublisher] {
+	return pulumix.Output[GetListingsListingPublisher]{
+		OutputState: i.ToGetListingsListingPublisherOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetListingsListingPublisherArrayInput is an input type that accepts GetListingsListingPublisherArray and GetListingsListingPublisherArrayOutput values.
 // You can construct a concrete instance of `GetListingsListingPublisherArrayInput` via:
 //
@@ -5865,6 +7000,12 @@ func (i GetListingsListingPublisherArray) ToGetListingsListingPublisherArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingsListingPublisherArrayOutput)
 }
 
+func (i GetListingsListingPublisherArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListingsListingPublisher] {
+	return pulumix.Output[[]GetListingsListingPublisher]{
+		OutputState: i.ToGetListingsListingPublisherArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetListingsListingPublisherOutput struct{ *pulumi.OutputState }
 
 func (GetListingsListingPublisherOutput) ElementType() reflect.Type {
@@ -5877,6 +7018,12 @@ func (o GetListingsListingPublisherOutput) ToGetListingsListingPublisherOutput()
 
 func (o GetListingsListingPublisherOutput) ToGetListingsListingPublisherOutputWithContext(ctx context.Context) GetListingsListingPublisherOutput {
 	return o
+}
+
+func (o GetListingsListingPublisherOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingsListingPublisher] {
+	return pulumix.Output[GetListingsListingPublisher]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A description of the screenshot.
@@ -5906,6 +7053,12 @@ func (o GetListingsListingPublisherArrayOutput) ToGetListingsListingPublisherArr
 
 func (o GetListingsListingPublisherArrayOutput) ToGetListingsListingPublisherArrayOutputWithContext(ctx context.Context) GetListingsListingPublisherArrayOutput {
 	return o
+}
+
+func (o GetListingsListingPublisherArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListingsListingPublisher] {
+	return pulumix.Output[[]GetListingsListingPublisher]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetListingsListingPublisherArrayOutput) Index(i pulumi.IntInput) GetListingsListingPublisherOutput {
@@ -5955,6 +7108,12 @@ func (i GetListingsListingRegionArgs) ToGetListingsListingRegionOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingsListingRegionOutput)
 }
 
+func (i GetListingsListingRegionArgs) ToOutput(ctx context.Context) pulumix.Output[GetListingsListingRegion] {
+	return pulumix.Output[GetListingsListingRegion]{
+		OutputState: i.ToGetListingsListingRegionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetListingsListingRegionArrayInput is an input type that accepts GetListingsListingRegionArray and GetListingsListingRegionArrayOutput values.
 // You can construct a concrete instance of `GetListingsListingRegionArrayInput` via:
 //
@@ -5980,6 +7139,12 @@ func (i GetListingsListingRegionArray) ToGetListingsListingRegionArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingsListingRegionArrayOutput)
 }
 
+func (i GetListingsListingRegionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListingsListingRegion] {
+	return pulumix.Output[[]GetListingsListingRegion]{
+		OutputState: i.ToGetListingsListingRegionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetListingsListingRegionOutput struct{ *pulumi.OutputState }
 
 func (GetListingsListingRegionOutput) ElementType() reflect.Type {
@@ -5992,6 +7157,12 @@ func (o GetListingsListingRegionOutput) ToGetListingsListingRegionOutput() GetLi
 
 func (o GetListingsListingRegionOutput) ToGetListingsListingRegionOutputWithContext(ctx context.Context) GetListingsListingRegionOutput {
 	return o
+}
+
+func (o GetListingsListingRegionOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingsListingRegion] {
+	return pulumix.Output[GetListingsListingRegion]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A code assigned to the item.
@@ -6021,6 +7192,12 @@ func (o GetListingsListingRegionArrayOutput) ToGetListingsListingRegionArrayOutp
 
 func (o GetListingsListingRegionArrayOutput) ToGetListingsListingRegionArrayOutputWithContext(ctx context.Context) GetListingsListingRegionArrayOutput {
 	return o
+}
+
+func (o GetListingsListingRegionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListingsListingRegion] {
+	return pulumix.Output[[]GetListingsListingRegion]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetListingsListingRegionArrayOutput) Index(i pulumi.IntInput) GetListingsListingRegionOutput {
@@ -6066,6 +7243,12 @@ func (i GetListingsListingRegionCountryArgs) ToGetListingsListingRegionCountryOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingsListingRegionCountryOutput)
 }
 
+func (i GetListingsListingRegionCountryArgs) ToOutput(ctx context.Context) pulumix.Output[GetListingsListingRegionCountry] {
+	return pulumix.Output[GetListingsListingRegionCountry]{
+		OutputState: i.ToGetListingsListingRegionCountryOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetListingsListingRegionCountryArrayInput is an input type that accepts GetListingsListingRegionCountryArray and GetListingsListingRegionCountryArrayOutput values.
 // You can construct a concrete instance of `GetListingsListingRegionCountryArrayInput` via:
 //
@@ -6091,6 +7274,12 @@ func (i GetListingsListingRegionCountryArray) ToGetListingsListingRegionCountryA
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingsListingRegionCountryArrayOutput)
 }
 
+func (i GetListingsListingRegionCountryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListingsListingRegionCountry] {
+	return pulumix.Output[[]GetListingsListingRegionCountry]{
+		OutputState: i.ToGetListingsListingRegionCountryArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetListingsListingRegionCountryOutput struct{ *pulumi.OutputState }
 
 func (GetListingsListingRegionCountryOutput) ElementType() reflect.Type {
@@ -6103,6 +7292,12 @@ func (o GetListingsListingRegionCountryOutput) ToGetListingsListingRegionCountry
 
 func (o GetListingsListingRegionCountryOutput) ToGetListingsListingRegionCountryOutputWithContext(ctx context.Context) GetListingsListingRegionCountryOutput {
 	return o
+}
+
+func (o GetListingsListingRegionCountryOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingsListingRegionCountry] {
+	return pulumix.Output[GetListingsListingRegionCountry]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A code assigned to the item.
@@ -6127,6 +7322,12 @@ func (o GetListingsListingRegionCountryArrayOutput) ToGetListingsListingRegionCo
 
 func (o GetListingsListingRegionCountryArrayOutput) ToGetListingsListingRegionCountryArrayOutputWithContext(ctx context.Context) GetListingsListingRegionCountryArrayOutput {
 	return o
+}
+
+func (o GetListingsListingRegionCountryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListingsListingRegionCountry] {
+	return pulumix.Output[[]GetListingsListingRegionCountry]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetListingsListingRegionCountryArrayOutput) Index(i pulumi.IntInput) GetListingsListingRegionCountryOutput {
@@ -6168,6 +7369,12 @@ func (i GetListingsListingSupportedOperatingSystemArgs) ToGetListingsListingSupp
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingsListingSupportedOperatingSystemOutput)
 }
 
+func (i GetListingsListingSupportedOperatingSystemArgs) ToOutput(ctx context.Context) pulumix.Output[GetListingsListingSupportedOperatingSystem] {
+	return pulumix.Output[GetListingsListingSupportedOperatingSystem]{
+		OutputState: i.ToGetListingsListingSupportedOperatingSystemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetListingsListingSupportedOperatingSystemArrayInput is an input type that accepts GetListingsListingSupportedOperatingSystemArray and GetListingsListingSupportedOperatingSystemArrayOutput values.
 // You can construct a concrete instance of `GetListingsListingSupportedOperatingSystemArrayInput` via:
 //
@@ -6193,6 +7400,12 @@ func (i GetListingsListingSupportedOperatingSystemArray) ToGetListingsListingSup
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingsListingSupportedOperatingSystemArrayOutput)
 }
 
+func (i GetListingsListingSupportedOperatingSystemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListingsListingSupportedOperatingSystem] {
+	return pulumix.Output[[]GetListingsListingSupportedOperatingSystem]{
+		OutputState: i.ToGetListingsListingSupportedOperatingSystemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetListingsListingSupportedOperatingSystemOutput struct{ *pulumi.OutputState }
 
 func (GetListingsListingSupportedOperatingSystemOutput) ElementType() reflect.Type {
@@ -6205,6 +7418,12 @@ func (o GetListingsListingSupportedOperatingSystemOutput) ToGetListingsListingSu
 
 func (o GetListingsListingSupportedOperatingSystemOutput) ToGetListingsListingSupportedOperatingSystemOutputWithContext(ctx context.Context) GetListingsListingSupportedOperatingSystemOutput {
 	return o
+}
+
+func (o GetListingsListingSupportedOperatingSystemOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingsListingSupportedOperatingSystem] {
+	return pulumix.Output[GetListingsListingSupportedOperatingSystem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the listing.
@@ -6224,6 +7443,12 @@ func (o GetListingsListingSupportedOperatingSystemArrayOutput) ToGetListingsList
 
 func (o GetListingsListingSupportedOperatingSystemArrayOutput) ToGetListingsListingSupportedOperatingSystemArrayOutputWithContext(ctx context.Context) GetListingsListingSupportedOperatingSystemArrayOutput {
 	return o
+}
+
+func (o GetListingsListingSupportedOperatingSystemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListingsListingSupportedOperatingSystem] {
+	return pulumix.Output[[]GetListingsListingSupportedOperatingSystem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetListingsListingSupportedOperatingSystemArrayOutput) Index(i pulumi.IntInput) GetListingsListingSupportedOperatingSystemOutput {
@@ -6277,6 +7502,12 @@ func (i GetPublicationIconArgs) ToGetPublicationIconOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetPublicationIconOutput)
 }
 
+func (i GetPublicationIconArgs) ToOutput(ctx context.Context) pulumix.Output[GetPublicationIcon] {
+	return pulumix.Output[GetPublicationIcon]{
+		OutputState: i.ToGetPublicationIconOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPublicationIconArrayInput is an input type that accepts GetPublicationIconArray and GetPublicationIconArrayOutput values.
 // You can construct a concrete instance of `GetPublicationIconArrayInput` via:
 //
@@ -6302,6 +7533,12 @@ func (i GetPublicationIconArray) ToGetPublicationIconArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetPublicationIconArrayOutput)
 }
 
+func (i GetPublicationIconArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPublicationIcon] {
+	return pulumix.Output[[]GetPublicationIcon]{
+		OutputState: i.ToGetPublicationIconArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPublicationIconOutput struct{ *pulumi.OutputState }
 
 func (GetPublicationIconOutput) ElementType() reflect.Type {
@@ -6314,6 +7551,12 @@ func (o GetPublicationIconOutput) ToGetPublicationIconOutput() GetPublicationIco
 
 func (o GetPublicationIconOutput) ToGetPublicationIconOutputWithContext(ctx context.Context) GetPublicationIconOutput {
 	return o
+}
+
+func (o GetPublicationIconOutput) ToOutput(ctx context.Context) pulumix.Output[GetPublicationIcon] {
+	return pulumix.Output[GetPublicationIcon]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The content URL of the upload data.
@@ -6348,6 +7591,12 @@ func (o GetPublicationIconArrayOutput) ToGetPublicationIconArrayOutput() GetPubl
 
 func (o GetPublicationIconArrayOutput) ToGetPublicationIconArrayOutputWithContext(ctx context.Context) GetPublicationIconArrayOutput {
 	return o
+}
+
+func (o GetPublicationIconArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPublicationIcon] {
+	return pulumix.Output[[]GetPublicationIcon]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPublicationIconArrayOutput) Index(i pulumi.IntInput) GetPublicationIconOutput {
@@ -6397,6 +7646,12 @@ func (i GetPublicationPackageDetailArgs) ToGetPublicationPackageDetailOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetPublicationPackageDetailOutput)
 }
 
+func (i GetPublicationPackageDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetPublicationPackageDetail] {
+	return pulumix.Output[GetPublicationPackageDetail]{
+		OutputState: i.ToGetPublicationPackageDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPublicationPackageDetailArrayInput is an input type that accepts GetPublicationPackageDetailArray and GetPublicationPackageDetailArrayOutput values.
 // You can construct a concrete instance of `GetPublicationPackageDetailArrayInput` via:
 //
@@ -6422,6 +7677,12 @@ func (i GetPublicationPackageDetailArray) ToGetPublicationPackageDetailArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetPublicationPackageDetailArrayOutput)
 }
 
+func (i GetPublicationPackageDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPublicationPackageDetail] {
+	return pulumix.Output[[]GetPublicationPackageDetail]{
+		OutputState: i.ToGetPublicationPackageDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPublicationPackageDetailOutput struct{ *pulumi.OutputState }
 
 func (GetPublicationPackageDetailOutput) ElementType() reflect.Type {
@@ -6434,6 +7695,12 @@ func (o GetPublicationPackageDetailOutput) ToGetPublicationPackageDetailOutput()
 
 func (o GetPublicationPackageDetailOutput) ToGetPublicationPackageDetailOutputWithContext(ctx context.Context) GetPublicationPackageDetailOutput {
 	return o
+}
+
+func (o GetPublicationPackageDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetPublicationPackageDetail] {
+	return pulumix.Output[GetPublicationPackageDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPublicationPackageDetailOutput) Eulas() GetPublicationPackageDetailEulaArrayOutput {
@@ -6471,6 +7738,12 @@ func (o GetPublicationPackageDetailArrayOutput) ToGetPublicationPackageDetailArr
 
 func (o GetPublicationPackageDetailArrayOutput) ToGetPublicationPackageDetailArrayOutputWithContext(ctx context.Context) GetPublicationPackageDetailArrayOutput {
 	return o
+}
+
+func (o GetPublicationPackageDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPublicationPackageDetail] {
+	return pulumix.Output[[]GetPublicationPackageDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPublicationPackageDetailArrayOutput) Index(i pulumi.IntInput) GetPublicationPackageDetailOutput {
@@ -6512,6 +7785,12 @@ func (i GetPublicationPackageDetailEulaArgs) ToGetPublicationPackageDetailEulaOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetPublicationPackageDetailEulaOutput)
 }
 
+func (i GetPublicationPackageDetailEulaArgs) ToOutput(ctx context.Context) pulumix.Output[GetPublicationPackageDetailEula] {
+	return pulumix.Output[GetPublicationPackageDetailEula]{
+		OutputState: i.ToGetPublicationPackageDetailEulaOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPublicationPackageDetailEulaArrayInput is an input type that accepts GetPublicationPackageDetailEulaArray and GetPublicationPackageDetailEulaArrayOutput values.
 // You can construct a concrete instance of `GetPublicationPackageDetailEulaArrayInput` via:
 //
@@ -6537,6 +7816,12 @@ func (i GetPublicationPackageDetailEulaArray) ToGetPublicationPackageDetailEulaA
 	return pulumi.ToOutputWithContext(ctx, i).(GetPublicationPackageDetailEulaArrayOutput)
 }
 
+func (i GetPublicationPackageDetailEulaArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPublicationPackageDetailEula] {
+	return pulumix.Output[[]GetPublicationPackageDetailEula]{
+		OutputState: i.ToGetPublicationPackageDetailEulaArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPublicationPackageDetailEulaOutput struct{ *pulumi.OutputState }
 
 func (GetPublicationPackageDetailEulaOutput) ElementType() reflect.Type {
@@ -6549,6 +7834,12 @@ func (o GetPublicationPackageDetailEulaOutput) ToGetPublicationPackageDetailEula
 
 func (o GetPublicationPackageDetailEulaOutput) ToGetPublicationPackageDetailEulaOutputWithContext(ctx context.Context) GetPublicationPackageDetailEulaOutput {
 	return o
+}
+
+func (o GetPublicationPackageDetailEulaOutput) ToOutput(ctx context.Context) pulumix.Output[GetPublicationPackageDetailEula] {
+	return pulumix.Output[GetPublicationPackageDetailEula]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPublicationPackageDetailEulaOutput) EulaType() pulumi.StringOutput {
@@ -6571,6 +7862,12 @@ func (o GetPublicationPackageDetailEulaArrayOutput) ToGetPublicationPackageDetai
 
 func (o GetPublicationPackageDetailEulaArrayOutput) ToGetPublicationPackageDetailEulaArrayOutputWithContext(ctx context.Context) GetPublicationPackageDetailEulaArrayOutput {
 	return o
+}
+
+func (o GetPublicationPackageDetailEulaArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPublicationPackageDetailEula] {
+	return pulumix.Output[[]GetPublicationPackageDetailEula]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPublicationPackageDetailEulaArrayOutput) Index(i pulumi.IntInput) GetPublicationPackageDetailEulaOutput {
@@ -6612,6 +7909,12 @@ func (i GetPublicationPackageDetailOperatingSystemArgs) ToGetPublicationPackageD
 	return pulumi.ToOutputWithContext(ctx, i).(GetPublicationPackageDetailOperatingSystemOutput)
 }
 
+func (i GetPublicationPackageDetailOperatingSystemArgs) ToOutput(ctx context.Context) pulumix.Output[GetPublicationPackageDetailOperatingSystem] {
+	return pulumix.Output[GetPublicationPackageDetailOperatingSystem]{
+		OutputState: i.ToGetPublicationPackageDetailOperatingSystemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPublicationPackageDetailOperatingSystemArrayInput is an input type that accepts GetPublicationPackageDetailOperatingSystemArray and GetPublicationPackageDetailOperatingSystemArrayOutput values.
 // You can construct a concrete instance of `GetPublicationPackageDetailOperatingSystemArrayInput` via:
 //
@@ -6637,6 +7940,12 @@ func (i GetPublicationPackageDetailOperatingSystemArray) ToGetPublicationPackage
 	return pulumi.ToOutputWithContext(ctx, i).(GetPublicationPackageDetailOperatingSystemArrayOutput)
 }
 
+func (i GetPublicationPackageDetailOperatingSystemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPublicationPackageDetailOperatingSystem] {
+	return pulumix.Output[[]GetPublicationPackageDetailOperatingSystem]{
+		OutputState: i.ToGetPublicationPackageDetailOperatingSystemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPublicationPackageDetailOperatingSystemOutput struct{ *pulumi.OutputState }
 
 func (GetPublicationPackageDetailOperatingSystemOutput) ElementType() reflect.Type {
@@ -6649,6 +7958,12 @@ func (o GetPublicationPackageDetailOperatingSystemOutput) ToGetPublicationPackag
 
 func (o GetPublicationPackageDetailOperatingSystemOutput) ToGetPublicationPackageDetailOperatingSystemOutputWithContext(ctx context.Context) GetPublicationPackageDetailOperatingSystemOutput {
 	return o
+}
+
+func (o GetPublicationPackageDetailOperatingSystemOutput) ToOutput(ctx context.Context) pulumix.Output[GetPublicationPackageDetailOperatingSystem] {
+	return pulumix.Output[GetPublicationPackageDetailOperatingSystem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the operating system.
@@ -6668,6 +7983,12 @@ func (o GetPublicationPackageDetailOperatingSystemArrayOutput) ToGetPublicationP
 
 func (o GetPublicationPackageDetailOperatingSystemArrayOutput) ToGetPublicationPackageDetailOperatingSystemArrayOutputWithContext(ctx context.Context) GetPublicationPackageDetailOperatingSystemArrayOutput {
 	return o
+}
+
+func (o GetPublicationPackageDetailOperatingSystemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPublicationPackageDetailOperatingSystem] {
+	return pulumix.Output[[]GetPublicationPackageDetailOperatingSystem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPublicationPackageDetailOperatingSystemArrayOutput) Index(i pulumi.IntInput) GetPublicationPackageDetailOperatingSystemOutput {
@@ -6709,6 +8030,12 @@ func (i GetPublicationPackageOperatingSystemArgs) ToGetPublicationPackageOperati
 	return pulumi.ToOutputWithContext(ctx, i).(GetPublicationPackageOperatingSystemOutput)
 }
 
+func (i GetPublicationPackageOperatingSystemArgs) ToOutput(ctx context.Context) pulumix.Output[GetPublicationPackageOperatingSystem] {
+	return pulumix.Output[GetPublicationPackageOperatingSystem]{
+		OutputState: i.ToGetPublicationPackageOperatingSystemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPublicationPackageOperatingSystemArrayInput is an input type that accepts GetPublicationPackageOperatingSystemArray and GetPublicationPackageOperatingSystemArrayOutput values.
 // You can construct a concrete instance of `GetPublicationPackageOperatingSystemArrayInput` via:
 //
@@ -6734,6 +8061,12 @@ func (i GetPublicationPackageOperatingSystemArray) ToGetPublicationPackageOperat
 	return pulumi.ToOutputWithContext(ctx, i).(GetPublicationPackageOperatingSystemArrayOutput)
 }
 
+func (i GetPublicationPackageOperatingSystemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPublicationPackageOperatingSystem] {
+	return pulumix.Output[[]GetPublicationPackageOperatingSystem]{
+		OutputState: i.ToGetPublicationPackageOperatingSystemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPublicationPackageOperatingSystemOutput struct{ *pulumi.OutputState }
 
 func (GetPublicationPackageOperatingSystemOutput) ElementType() reflect.Type {
@@ -6746,6 +8079,12 @@ func (o GetPublicationPackageOperatingSystemOutput) ToGetPublicationPackageOpera
 
 func (o GetPublicationPackageOperatingSystemOutput) ToGetPublicationPackageOperatingSystemOutputWithContext(ctx context.Context) GetPublicationPackageOperatingSystemOutput {
 	return o
+}
+
+func (o GetPublicationPackageOperatingSystemOutput) ToOutput(ctx context.Context) pulumix.Output[GetPublicationPackageOperatingSystem] {
+	return pulumix.Output[GetPublicationPackageOperatingSystem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the variable.
@@ -6765,6 +8104,12 @@ func (o GetPublicationPackageOperatingSystemArrayOutput) ToGetPublicationPackage
 
 func (o GetPublicationPackageOperatingSystemArrayOutput) ToGetPublicationPackageOperatingSystemArrayOutputWithContext(ctx context.Context) GetPublicationPackageOperatingSystemArrayOutput {
 	return o
+}
+
+func (o GetPublicationPackageOperatingSystemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPublicationPackageOperatingSystem] {
+	return pulumix.Output[[]GetPublicationPackageOperatingSystem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPublicationPackageOperatingSystemArrayOutput) Index(i pulumi.IntInput) GetPublicationPackageOperatingSystemOutput {
@@ -6826,6 +8171,12 @@ func (i GetPublicationPackageVariableArgs) ToGetPublicationPackageVariableOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetPublicationPackageVariableOutput)
 }
 
+func (i GetPublicationPackageVariableArgs) ToOutput(ctx context.Context) pulumix.Output[GetPublicationPackageVariable] {
+	return pulumix.Output[GetPublicationPackageVariable]{
+		OutputState: i.ToGetPublicationPackageVariableOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPublicationPackageVariableArrayInput is an input type that accepts GetPublicationPackageVariableArray and GetPublicationPackageVariableArrayOutput values.
 // You can construct a concrete instance of `GetPublicationPackageVariableArrayInput` via:
 //
@@ -6851,6 +8202,12 @@ func (i GetPublicationPackageVariableArray) ToGetPublicationPackageVariableArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetPublicationPackageVariableArrayOutput)
 }
 
+func (i GetPublicationPackageVariableArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPublicationPackageVariable] {
+	return pulumix.Output[[]GetPublicationPackageVariable]{
+		OutputState: i.ToGetPublicationPackageVariableArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPublicationPackageVariableOutput struct{ *pulumi.OutputState }
 
 func (GetPublicationPackageVariableOutput) ElementType() reflect.Type {
@@ -6863,6 +8220,12 @@ func (o GetPublicationPackageVariableOutput) ToGetPublicationPackageVariableOutp
 
 func (o GetPublicationPackageVariableOutput) ToGetPublicationPackageVariableOutputWithContext(ctx context.Context) GetPublicationPackageVariableOutput {
 	return o
+}
+
+func (o GetPublicationPackageVariableOutput) ToOutput(ctx context.Context) pulumix.Output[GetPublicationPackageVariable] {
+	return pulumix.Output[GetPublicationPackageVariable]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The data type of the variable.
@@ -6909,6 +8272,12 @@ func (o GetPublicationPackageVariableArrayOutput) ToGetPublicationPackageVariabl
 	return o
 }
 
+func (o GetPublicationPackageVariableArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPublicationPackageVariable] {
+	return pulumix.Output[[]GetPublicationPackageVariable]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetPublicationPackageVariableArrayOutput) Index(i pulumi.IntInput) GetPublicationPackageVariableOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPublicationPackageVariable {
 		return vs[0].([]GetPublicationPackageVariable)[vs[1].(int)]
@@ -6952,6 +8321,12 @@ func (i GetPublicationPackagesFilterArgs) ToGetPublicationPackagesFilterOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetPublicationPackagesFilterOutput)
 }
 
+func (i GetPublicationPackagesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetPublicationPackagesFilter] {
+	return pulumix.Output[GetPublicationPackagesFilter]{
+		OutputState: i.ToGetPublicationPackagesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPublicationPackagesFilterArrayInput is an input type that accepts GetPublicationPackagesFilterArray and GetPublicationPackagesFilterArrayOutput values.
 // You can construct a concrete instance of `GetPublicationPackagesFilterArrayInput` via:
 //
@@ -6977,6 +8352,12 @@ func (i GetPublicationPackagesFilterArray) ToGetPublicationPackagesFilterArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetPublicationPackagesFilterArrayOutput)
 }
 
+func (i GetPublicationPackagesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPublicationPackagesFilter] {
+	return pulumix.Output[[]GetPublicationPackagesFilter]{
+		OutputState: i.ToGetPublicationPackagesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPublicationPackagesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetPublicationPackagesFilterOutput) ElementType() reflect.Type {
@@ -6989,6 +8370,12 @@ func (o GetPublicationPackagesFilterOutput) ToGetPublicationPackagesFilterOutput
 
 func (o GetPublicationPackagesFilterOutput) ToGetPublicationPackagesFilterOutputWithContext(ctx context.Context) GetPublicationPackagesFilterOutput {
 	return o
+}
+
+func (o GetPublicationPackagesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetPublicationPackagesFilter] {
+	return pulumix.Output[GetPublicationPackagesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the variable.
@@ -7016,6 +8403,12 @@ func (o GetPublicationPackagesFilterArrayOutput) ToGetPublicationPackagesFilterA
 
 func (o GetPublicationPackagesFilterArrayOutput) ToGetPublicationPackagesFilterArrayOutputWithContext(ctx context.Context) GetPublicationPackagesFilterArrayOutput {
 	return o
+}
+
+func (o GetPublicationPackagesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPublicationPackagesFilter] {
+	return pulumix.Output[[]GetPublicationPackagesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPublicationPackagesFilterArrayOutput) Index(i pulumi.IntInput) GetPublicationPackagesFilterOutput {
@@ -7073,6 +8466,12 @@ func (i GetPublicationPackagesPublicationPackageArgs) ToGetPublicationPackagesPu
 	return pulumi.ToOutputWithContext(ctx, i).(GetPublicationPackagesPublicationPackageOutput)
 }
 
+func (i GetPublicationPackagesPublicationPackageArgs) ToOutput(ctx context.Context) pulumix.Output[GetPublicationPackagesPublicationPackage] {
+	return pulumix.Output[GetPublicationPackagesPublicationPackage]{
+		OutputState: i.ToGetPublicationPackagesPublicationPackageOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPublicationPackagesPublicationPackageArrayInput is an input type that accepts GetPublicationPackagesPublicationPackageArray and GetPublicationPackagesPublicationPackageArrayOutput values.
 // You can construct a concrete instance of `GetPublicationPackagesPublicationPackageArrayInput` via:
 //
@@ -7098,6 +8497,12 @@ func (i GetPublicationPackagesPublicationPackageArray) ToGetPublicationPackagesP
 	return pulumi.ToOutputWithContext(ctx, i).(GetPublicationPackagesPublicationPackageArrayOutput)
 }
 
+func (i GetPublicationPackagesPublicationPackageArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPublicationPackagesPublicationPackage] {
+	return pulumix.Output[[]GetPublicationPackagesPublicationPackage]{
+		OutputState: i.ToGetPublicationPackagesPublicationPackageArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPublicationPackagesPublicationPackageOutput struct{ *pulumi.OutputState }
 
 func (GetPublicationPackagesPublicationPackageOutput) ElementType() reflect.Type {
@@ -7110,6 +8515,12 @@ func (o GetPublicationPackagesPublicationPackageOutput) ToGetPublicationPackages
 
 func (o GetPublicationPackagesPublicationPackageOutput) ToGetPublicationPackagesPublicationPackageOutputWithContext(ctx context.Context) GetPublicationPackagesPublicationPackageOutput {
 	return o
+}
+
+func (o GetPublicationPackagesPublicationPackageOutput) ToOutput(ctx context.Context) pulumix.Output[GetPublicationPackagesPublicationPackage] {
+	return pulumix.Output[GetPublicationPackagesPublicationPackage]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The ID of the listing that the specified package belongs to.
@@ -7149,6 +8560,12 @@ func (o GetPublicationPackagesPublicationPackageArrayOutput) ToGetPublicationPac
 
 func (o GetPublicationPackagesPublicationPackageArrayOutput) ToGetPublicationPackagesPublicationPackageArrayOutputWithContext(ctx context.Context) GetPublicationPackagesPublicationPackageArrayOutput {
 	return o
+}
+
+func (o GetPublicationPackagesPublicationPackageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPublicationPackagesPublicationPackage] {
+	return pulumix.Output[[]GetPublicationPackagesPublicationPackage]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPublicationPackagesPublicationPackageArrayOutput) Index(i pulumi.IntInput) GetPublicationPackagesPublicationPackageOutput {
@@ -7202,6 +8619,12 @@ func (i GetPublicationSupportContactArgs) ToGetPublicationSupportContactOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetPublicationSupportContactOutput)
 }
 
+func (i GetPublicationSupportContactArgs) ToOutput(ctx context.Context) pulumix.Output[GetPublicationSupportContact] {
+	return pulumix.Output[GetPublicationSupportContact]{
+		OutputState: i.ToGetPublicationSupportContactOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPublicationSupportContactArrayInput is an input type that accepts GetPublicationSupportContactArray and GetPublicationSupportContactArrayOutput values.
 // You can construct a concrete instance of `GetPublicationSupportContactArrayInput` via:
 //
@@ -7227,6 +8650,12 @@ func (i GetPublicationSupportContactArray) ToGetPublicationSupportContactArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetPublicationSupportContactArrayOutput)
 }
 
+func (i GetPublicationSupportContactArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPublicationSupportContact] {
+	return pulumix.Output[[]GetPublicationSupportContact]{
+		OutputState: i.ToGetPublicationSupportContactArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPublicationSupportContactOutput struct{ *pulumi.OutputState }
 
 func (GetPublicationSupportContactOutput) ElementType() reflect.Type {
@@ -7239,6 +8668,12 @@ func (o GetPublicationSupportContactOutput) ToGetPublicationSupportContactOutput
 
 func (o GetPublicationSupportContactOutput) ToGetPublicationSupportContactOutputWithContext(ctx context.Context) GetPublicationSupportContactOutput {
 	return o
+}
+
+func (o GetPublicationSupportContactOutput) ToOutput(ctx context.Context) pulumix.Output[GetPublicationSupportContact] {
+	return pulumix.Output[GetPublicationSupportContact]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The email of the contact.
@@ -7273,6 +8708,12 @@ func (o GetPublicationSupportContactArrayOutput) ToGetPublicationSupportContactA
 
 func (o GetPublicationSupportContactArrayOutput) ToGetPublicationSupportContactArrayOutputWithContext(ctx context.Context) GetPublicationSupportContactArrayOutput {
 	return o
+}
+
+func (o GetPublicationSupportContactArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPublicationSupportContact] {
+	return pulumix.Output[[]GetPublicationSupportContact]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPublicationSupportContactArrayOutput) Index(i pulumi.IntInput) GetPublicationSupportContactOutput {
@@ -7314,6 +8755,12 @@ func (i GetPublicationSupportedOperatingSystemArgs) ToGetPublicationSupportedOpe
 	return pulumi.ToOutputWithContext(ctx, i).(GetPublicationSupportedOperatingSystemOutput)
 }
 
+func (i GetPublicationSupportedOperatingSystemArgs) ToOutput(ctx context.Context) pulumix.Output[GetPublicationSupportedOperatingSystem] {
+	return pulumix.Output[GetPublicationSupportedOperatingSystem]{
+		OutputState: i.ToGetPublicationSupportedOperatingSystemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPublicationSupportedOperatingSystemArrayInput is an input type that accepts GetPublicationSupportedOperatingSystemArray and GetPublicationSupportedOperatingSystemArrayOutput values.
 // You can construct a concrete instance of `GetPublicationSupportedOperatingSystemArrayInput` via:
 //
@@ -7339,6 +8786,12 @@ func (i GetPublicationSupportedOperatingSystemArray) ToGetPublicationSupportedOp
 	return pulumi.ToOutputWithContext(ctx, i).(GetPublicationSupportedOperatingSystemArrayOutput)
 }
 
+func (i GetPublicationSupportedOperatingSystemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPublicationSupportedOperatingSystem] {
+	return pulumix.Output[[]GetPublicationSupportedOperatingSystem]{
+		OutputState: i.ToGetPublicationSupportedOperatingSystemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPublicationSupportedOperatingSystemOutput struct{ *pulumi.OutputState }
 
 func (GetPublicationSupportedOperatingSystemOutput) ElementType() reflect.Type {
@@ -7351,6 +8804,12 @@ func (o GetPublicationSupportedOperatingSystemOutput) ToGetPublicationSupportedO
 
 func (o GetPublicationSupportedOperatingSystemOutput) ToGetPublicationSupportedOperatingSystemOutputWithContext(ctx context.Context) GetPublicationSupportedOperatingSystemOutput {
 	return o
+}
+
+func (o GetPublicationSupportedOperatingSystemOutput) ToOutput(ctx context.Context) pulumix.Output[GetPublicationSupportedOperatingSystem] {
+	return pulumix.Output[GetPublicationSupportedOperatingSystem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the operating system.
@@ -7370,6 +8829,12 @@ func (o GetPublicationSupportedOperatingSystemArrayOutput) ToGetPublicationSuppo
 
 func (o GetPublicationSupportedOperatingSystemArrayOutput) ToGetPublicationSupportedOperatingSystemArrayOutputWithContext(ctx context.Context) GetPublicationSupportedOperatingSystemArrayOutput {
 	return o
+}
+
+func (o GetPublicationSupportedOperatingSystemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPublicationSupportedOperatingSystem] {
+	return pulumix.Output[[]GetPublicationSupportedOperatingSystem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPublicationSupportedOperatingSystemArrayOutput) Index(i pulumi.IntInput) GetPublicationSupportedOperatingSystemOutput {
@@ -7415,6 +8880,12 @@ func (i GetPublicationsFilterArgs) ToGetPublicationsFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetPublicationsFilterOutput)
 }
 
+func (i GetPublicationsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetPublicationsFilter] {
+	return pulumix.Output[GetPublicationsFilter]{
+		OutputState: i.ToGetPublicationsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPublicationsFilterArrayInput is an input type that accepts GetPublicationsFilterArray and GetPublicationsFilterArrayOutput values.
 // You can construct a concrete instance of `GetPublicationsFilterArrayInput` via:
 //
@@ -7440,6 +8911,12 @@ func (i GetPublicationsFilterArray) ToGetPublicationsFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetPublicationsFilterArrayOutput)
 }
 
+func (i GetPublicationsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPublicationsFilter] {
+	return pulumix.Output[[]GetPublicationsFilter]{
+		OutputState: i.ToGetPublicationsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPublicationsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetPublicationsFilterOutput) ElementType() reflect.Type {
@@ -7452,6 +8929,12 @@ func (o GetPublicationsFilterOutput) ToGetPublicationsFilterOutput() GetPublicat
 
 func (o GetPublicationsFilterOutput) ToGetPublicationsFilterOutputWithContext(ctx context.Context) GetPublicationsFilterOutput {
 	return o
+}
+
+func (o GetPublicationsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetPublicationsFilter] {
+	return pulumix.Output[GetPublicationsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the publication.
@@ -7479,6 +8962,12 @@ func (o GetPublicationsFilterArrayOutput) ToGetPublicationsFilterArrayOutput() G
 
 func (o GetPublicationsFilterArrayOutput) ToGetPublicationsFilterArrayOutputWithContext(ctx context.Context) GetPublicationsFilterArrayOutput {
 	return o
+}
+
+func (o GetPublicationsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPublicationsFilter] {
+	return pulumix.Output[[]GetPublicationsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPublicationsFilterArrayOutput) Index(i pulumi.IntInput) GetPublicationsFilterOutput {
@@ -7576,6 +9065,12 @@ func (i GetPublicationsPublicationArgs) ToGetPublicationsPublicationOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetPublicationsPublicationOutput)
 }
 
+func (i GetPublicationsPublicationArgs) ToOutput(ctx context.Context) pulumix.Output[GetPublicationsPublication] {
+	return pulumix.Output[GetPublicationsPublication]{
+		OutputState: i.ToGetPublicationsPublicationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPublicationsPublicationArrayInput is an input type that accepts GetPublicationsPublicationArray and GetPublicationsPublicationArrayOutput values.
 // You can construct a concrete instance of `GetPublicationsPublicationArrayInput` via:
 //
@@ -7601,6 +9096,12 @@ func (i GetPublicationsPublicationArray) ToGetPublicationsPublicationArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetPublicationsPublicationArrayOutput)
 }
 
+func (i GetPublicationsPublicationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPublicationsPublication] {
+	return pulumix.Output[[]GetPublicationsPublication]{
+		OutputState: i.ToGetPublicationsPublicationArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPublicationsPublicationOutput struct{ *pulumi.OutputState }
 
 func (GetPublicationsPublicationOutput) ElementType() reflect.Type {
@@ -7613,6 +9114,12 @@ func (o GetPublicationsPublicationOutput) ToGetPublicationsPublicationOutput() G
 
 func (o GetPublicationsPublicationOutput) ToGetPublicationsPublicationOutputWithContext(ctx context.Context) GetPublicationsPublicationOutput {
 	return o
+}
+
+func (o GetPublicationsPublicationOutput) ToOutput(ctx context.Context) pulumix.Output[GetPublicationsPublication] {
+	return pulumix.Output[GetPublicationsPublication]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The unique identifier for the compartment.
@@ -7711,6 +9218,12 @@ func (o GetPublicationsPublicationArrayOutput) ToGetPublicationsPublicationArray
 	return o
 }
 
+func (o GetPublicationsPublicationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPublicationsPublication] {
+	return pulumix.Output[[]GetPublicationsPublication]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetPublicationsPublicationArrayOutput) Index(i pulumi.IntInput) GetPublicationsPublicationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPublicationsPublication {
 		return vs[0].([]GetPublicationsPublication)[vs[1].(int)]
@@ -7762,6 +9275,12 @@ func (i GetPublicationsPublicationIconArgs) ToGetPublicationsPublicationIconOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetPublicationsPublicationIconOutput)
 }
 
+func (i GetPublicationsPublicationIconArgs) ToOutput(ctx context.Context) pulumix.Output[GetPublicationsPublicationIcon] {
+	return pulumix.Output[GetPublicationsPublicationIcon]{
+		OutputState: i.ToGetPublicationsPublicationIconOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPublicationsPublicationIconArrayInput is an input type that accepts GetPublicationsPublicationIconArray and GetPublicationsPublicationIconArrayOutput values.
 // You can construct a concrete instance of `GetPublicationsPublicationIconArrayInput` via:
 //
@@ -7787,6 +9306,12 @@ func (i GetPublicationsPublicationIconArray) ToGetPublicationsPublicationIconArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetPublicationsPublicationIconArrayOutput)
 }
 
+func (i GetPublicationsPublicationIconArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPublicationsPublicationIcon] {
+	return pulumix.Output[[]GetPublicationsPublicationIcon]{
+		OutputState: i.ToGetPublicationsPublicationIconArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPublicationsPublicationIconOutput struct{ *pulumi.OutputState }
 
 func (GetPublicationsPublicationIconOutput) ElementType() reflect.Type {
@@ -7799,6 +9324,12 @@ func (o GetPublicationsPublicationIconOutput) ToGetPublicationsPublicationIconOu
 
 func (o GetPublicationsPublicationIconOutput) ToGetPublicationsPublicationIconOutputWithContext(ctx context.Context) GetPublicationsPublicationIconOutput {
 	return o
+}
+
+func (o GetPublicationsPublicationIconOutput) ToOutput(ctx context.Context) pulumix.Output[GetPublicationsPublicationIcon] {
+	return pulumix.Output[GetPublicationsPublicationIcon]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The content URL of the upload data.
@@ -7833,6 +9364,12 @@ func (o GetPublicationsPublicationIconArrayOutput) ToGetPublicationsPublicationI
 
 func (o GetPublicationsPublicationIconArrayOutput) ToGetPublicationsPublicationIconArrayOutputWithContext(ctx context.Context) GetPublicationsPublicationIconArrayOutput {
 	return o
+}
+
+func (o GetPublicationsPublicationIconArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPublicationsPublicationIcon] {
+	return pulumix.Output[[]GetPublicationsPublicationIcon]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPublicationsPublicationIconArrayOutput) Index(i pulumi.IntInput) GetPublicationsPublicationIconOutput {
@@ -7882,6 +9419,12 @@ func (i GetPublicationsPublicationPackageDetailArgs) ToGetPublicationsPublicatio
 	return pulumi.ToOutputWithContext(ctx, i).(GetPublicationsPublicationPackageDetailOutput)
 }
 
+func (i GetPublicationsPublicationPackageDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetPublicationsPublicationPackageDetail] {
+	return pulumix.Output[GetPublicationsPublicationPackageDetail]{
+		OutputState: i.ToGetPublicationsPublicationPackageDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPublicationsPublicationPackageDetailArrayInput is an input type that accepts GetPublicationsPublicationPackageDetailArray and GetPublicationsPublicationPackageDetailArrayOutput values.
 // You can construct a concrete instance of `GetPublicationsPublicationPackageDetailArrayInput` via:
 //
@@ -7907,6 +9450,12 @@ func (i GetPublicationsPublicationPackageDetailArray) ToGetPublicationsPublicati
 	return pulumi.ToOutputWithContext(ctx, i).(GetPublicationsPublicationPackageDetailArrayOutput)
 }
 
+func (i GetPublicationsPublicationPackageDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPublicationsPublicationPackageDetail] {
+	return pulumix.Output[[]GetPublicationsPublicationPackageDetail]{
+		OutputState: i.ToGetPublicationsPublicationPackageDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPublicationsPublicationPackageDetailOutput struct{ *pulumi.OutputState }
 
 func (GetPublicationsPublicationPackageDetailOutput) ElementType() reflect.Type {
@@ -7919,6 +9468,12 @@ func (o GetPublicationsPublicationPackageDetailOutput) ToGetPublicationsPublicat
 
 func (o GetPublicationsPublicationPackageDetailOutput) ToGetPublicationsPublicationPackageDetailOutputWithContext(ctx context.Context) GetPublicationsPublicationPackageDetailOutput {
 	return o
+}
+
+func (o GetPublicationsPublicationPackageDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetPublicationsPublicationPackageDetail] {
+	return pulumix.Output[GetPublicationsPublicationPackageDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPublicationsPublicationPackageDetailOutput) Eulas() GetPublicationsPublicationPackageDetailEulaArrayOutput {
@@ -7960,6 +9515,12 @@ func (o GetPublicationsPublicationPackageDetailArrayOutput) ToGetPublicationsPub
 	return o
 }
 
+func (o GetPublicationsPublicationPackageDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPublicationsPublicationPackageDetail] {
+	return pulumix.Output[[]GetPublicationsPublicationPackageDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetPublicationsPublicationPackageDetailArrayOutput) Index(i pulumi.IntInput) GetPublicationsPublicationPackageDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPublicationsPublicationPackageDetail {
 		return vs[0].([]GetPublicationsPublicationPackageDetail)[vs[1].(int)]
@@ -7999,6 +9560,12 @@ func (i GetPublicationsPublicationPackageDetailEulaArgs) ToGetPublicationsPublic
 	return pulumi.ToOutputWithContext(ctx, i).(GetPublicationsPublicationPackageDetailEulaOutput)
 }
 
+func (i GetPublicationsPublicationPackageDetailEulaArgs) ToOutput(ctx context.Context) pulumix.Output[GetPublicationsPublicationPackageDetailEula] {
+	return pulumix.Output[GetPublicationsPublicationPackageDetailEula]{
+		OutputState: i.ToGetPublicationsPublicationPackageDetailEulaOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPublicationsPublicationPackageDetailEulaArrayInput is an input type that accepts GetPublicationsPublicationPackageDetailEulaArray and GetPublicationsPublicationPackageDetailEulaArrayOutput values.
 // You can construct a concrete instance of `GetPublicationsPublicationPackageDetailEulaArrayInput` via:
 //
@@ -8024,6 +9591,12 @@ func (i GetPublicationsPublicationPackageDetailEulaArray) ToGetPublicationsPubli
 	return pulumi.ToOutputWithContext(ctx, i).(GetPublicationsPublicationPackageDetailEulaArrayOutput)
 }
 
+func (i GetPublicationsPublicationPackageDetailEulaArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPublicationsPublicationPackageDetailEula] {
+	return pulumix.Output[[]GetPublicationsPublicationPackageDetailEula]{
+		OutputState: i.ToGetPublicationsPublicationPackageDetailEulaArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPublicationsPublicationPackageDetailEulaOutput struct{ *pulumi.OutputState }
 
 func (GetPublicationsPublicationPackageDetailEulaOutput) ElementType() reflect.Type {
@@ -8036,6 +9609,12 @@ func (o GetPublicationsPublicationPackageDetailEulaOutput) ToGetPublicationsPubl
 
 func (o GetPublicationsPublicationPackageDetailEulaOutput) ToGetPublicationsPublicationPackageDetailEulaOutputWithContext(ctx context.Context) GetPublicationsPublicationPackageDetailEulaOutput {
 	return o
+}
+
+func (o GetPublicationsPublicationPackageDetailEulaOutput) ToOutput(ctx context.Context) pulumix.Output[GetPublicationsPublicationPackageDetailEula] {
+	return pulumix.Output[GetPublicationsPublicationPackageDetailEula]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPublicationsPublicationPackageDetailEulaOutput) EulaType() pulumi.StringOutput {
@@ -8058,6 +9637,12 @@ func (o GetPublicationsPublicationPackageDetailEulaArrayOutput) ToGetPublication
 
 func (o GetPublicationsPublicationPackageDetailEulaArrayOutput) ToGetPublicationsPublicationPackageDetailEulaArrayOutputWithContext(ctx context.Context) GetPublicationsPublicationPackageDetailEulaArrayOutput {
 	return o
+}
+
+func (o GetPublicationsPublicationPackageDetailEulaArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPublicationsPublicationPackageDetailEula] {
+	return pulumix.Output[[]GetPublicationsPublicationPackageDetailEula]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPublicationsPublicationPackageDetailEulaArrayOutput) Index(i pulumi.IntInput) GetPublicationsPublicationPackageDetailEulaOutput {
@@ -8099,6 +9684,12 @@ func (i GetPublicationsPublicationPackageDetailOperatingSystemArgs) ToGetPublica
 	return pulumi.ToOutputWithContext(ctx, i).(GetPublicationsPublicationPackageDetailOperatingSystemOutput)
 }
 
+func (i GetPublicationsPublicationPackageDetailOperatingSystemArgs) ToOutput(ctx context.Context) pulumix.Output[GetPublicationsPublicationPackageDetailOperatingSystem] {
+	return pulumix.Output[GetPublicationsPublicationPackageDetailOperatingSystem]{
+		OutputState: i.ToGetPublicationsPublicationPackageDetailOperatingSystemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPublicationsPublicationPackageDetailOperatingSystemArrayInput is an input type that accepts GetPublicationsPublicationPackageDetailOperatingSystemArray and GetPublicationsPublicationPackageDetailOperatingSystemArrayOutput values.
 // You can construct a concrete instance of `GetPublicationsPublicationPackageDetailOperatingSystemArrayInput` via:
 //
@@ -8124,6 +9715,12 @@ func (i GetPublicationsPublicationPackageDetailOperatingSystemArray) ToGetPublic
 	return pulumi.ToOutputWithContext(ctx, i).(GetPublicationsPublicationPackageDetailOperatingSystemArrayOutput)
 }
 
+func (i GetPublicationsPublicationPackageDetailOperatingSystemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPublicationsPublicationPackageDetailOperatingSystem] {
+	return pulumix.Output[[]GetPublicationsPublicationPackageDetailOperatingSystem]{
+		OutputState: i.ToGetPublicationsPublicationPackageDetailOperatingSystemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPublicationsPublicationPackageDetailOperatingSystemOutput struct{ *pulumi.OutputState }
 
 func (GetPublicationsPublicationPackageDetailOperatingSystemOutput) ElementType() reflect.Type {
@@ -8136,6 +9733,12 @@ func (o GetPublicationsPublicationPackageDetailOperatingSystemOutput) ToGetPubli
 
 func (o GetPublicationsPublicationPackageDetailOperatingSystemOutput) ToGetPublicationsPublicationPackageDetailOperatingSystemOutputWithContext(ctx context.Context) GetPublicationsPublicationPackageDetailOperatingSystemOutput {
 	return o
+}
+
+func (o GetPublicationsPublicationPackageDetailOperatingSystemOutput) ToOutput(ctx context.Context) pulumix.Output[GetPublicationsPublicationPackageDetailOperatingSystem] {
+	return pulumix.Output[GetPublicationsPublicationPackageDetailOperatingSystem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the publication.
@@ -8155,6 +9758,12 @@ func (o GetPublicationsPublicationPackageDetailOperatingSystemArrayOutput) ToGet
 
 func (o GetPublicationsPublicationPackageDetailOperatingSystemArrayOutput) ToGetPublicationsPublicationPackageDetailOperatingSystemArrayOutputWithContext(ctx context.Context) GetPublicationsPublicationPackageDetailOperatingSystemArrayOutput {
 	return o
+}
+
+func (o GetPublicationsPublicationPackageDetailOperatingSystemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPublicationsPublicationPackageDetailOperatingSystem] {
+	return pulumix.Output[[]GetPublicationsPublicationPackageDetailOperatingSystem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPublicationsPublicationPackageDetailOperatingSystemArrayOutput) Index(i pulumi.IntInput) GetPublicationsPublicationPackageDetailOperatingSystemOutput {
@@ -8208,6 +9817,12 @@ func (i GetPublicationsPublicationSupportContactArgs) ToGetPublicationsPublicati
 	return pulumi.ToOutputWithContext(ctx, i).(GetPublicationsPublicationSupportContactOutput)
 }
 
+func (i GetPublicationsPublicationSupportContactArgs) ToOutput(ctx context.Context) pulumix.Output[GetPublicationsPublicationSupportContact] {
+	return pulumix.Output[GetPublicationsPublicationSupportContact]{
+		OutputState: i.ToGetPublicationsPublicationSupportContactOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPublicationsPublicationSupportContactArrayInput is an input type that accepts GetPublicationsPublicationSupportContactArray and GetPublicationsPublicationSupportContactArrayOutput values.
 // You can construct a concrete instance of `GetPublicationsPublicationSupportContactArrayInput` via:
 //
@@ -8233,6 +9848,12 @@ func (i GetPublicationsPublicationSupportContactArray) ToGetPublicationsPublicat
 	return pulumi.ToOutputWithContext(ctx, i).(GetPublicationsPublicationSupportContactArrayOutput)
 }
 
+func (i GetPublicationsPublicationSupportContactArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPublicationsPublicationSupportContact] {
+	return pulumix.Output[[]GetPublicationsPublicationSupportContact]{
+		OutputState: i.ToGetPublicationsPublicationSupportContactArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPublicationsPublicationSupportContactOutput struct{ *pulumi.OutputState }
 
 func (GetPublicationsPublicationSupportContactOutput) ElementType() reflect.Type {
@@ -8245,6 +9866,12 @@ func (o GetPublicationsPublicationSupportContactOutput) ToGetPublicationsPublica
 
 func (o GetPublicationsPublicationSupportContactOutput) ToGetPublicationsPublicationSupportContactOutputWithContext(ctx context.Context) GetPublicationsPublicationSupportContactOutput {
 	return o
+}
+
+func (o GetPublicationsPublicationSupportContactOutput) ToOutput(ctx context.Context) pulumix.Output[GetPublicationsPublicationSupportContact] {
+	return pulumix.Output[GetPublicationsPublicationSupportContact]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The email of the contact.
@@ -8279,6 +9906,12 @@ func (o GetPublicationsPublicationSupportContactArrayOutput) ToGetPublicationsPu
 
 func (o GetPublicationsPublicationSupportContactArrayOutput) ToGetPublicationsPublicationSupportContactArrayOutputWithContext(ctx context.Context) GetPublicationsPublicationSupportContactArrayOutput {
 	return o
+}
+
+func (o GetPublicationsPublicationSupportContactArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPublicationsPublicationSupportContact] {
+	return pulumix.Output[[]GetPublicationsPublicationSupportContact]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPublicationsPublicationSupportContactArrayOutput) Index(i pulumi.IntInput) GetPublicationsPublicationSupportContactOutput {
@@ -8320,6 +9953,12 @@ func (i GetPublicationsPublicationSupportedOperatingSystemArgs) ToGetPublication
 	return pulumi.ToOutputWithContext(ctx, i).(GetPublicationsPublicationSupportedOperatingSystemOutput)
 }
 
+func (i GetPublicationsPublicationSupportedOperatingSystemArgs) ToOutput(ctx context.Context) pulumix.Output[GetPublicationsPublicationSupportedOperatingSystem] {
+	return pulumix.Output[GetPublicationsPublicationSupportedOperatingSystem]{
+		OutputState: i.ToGetPublicationsPublicationSupportedOperatingSystemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPublicationsPublicationSupportedOperatingSystemArrayInput is an input type that accepts GetPublicationsPublicationSupportedOperatingSystemArray and GetPublicationsPublicationSupportedOperatingSystemArrayOutput values.
 // You can construct a concrete instance of `GetPublicationsPublicationSupportedOperatingSystemArrayInput` via:
 //
@@ -8345,6 +9984,12 @@ func (i GetPublicationsPublicationSupportedOperatingSystemArray) ToGetPublicatio
 	return pulumi.ToOutputWithContext(ctx, i).(GetPublicationsPublicationSupportedOperatingSystemArrayOutput)
 }
 
+func (i GetPublicationsPublicationSupportedOperatingSystemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPublicationsPublicationSupportedOperatingSystem] {
+	return pulumix.Output[[]GetPublicationsPublicationSupportedOperatingSystem]{
+		OutputState: i.ToGetPublicationsPublicationSupportedOperatingSystemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPublicationsPublicationSupportedOperatingSystemOutput struct{ *pulumi.OutputState }
 
 func (GetPublicationsPublicationSupportedOperatingSystemOutput) ElementType() reflect.Type {
@@ -8357,6 +10002,12 @@ func (o GetPublicationsPublicationSupportedOperatingSystemOutput) ToGetPublicati
 
 func (o GetPublicationsPublicationSupportedOperatingSystemOutput) ToGetPublicationsPublicationSupportedOperatingSystemOutputWithContext(ctx context.Context) GetPublicationsPublicationSupportedOperatingSystemOutput {
 	return o
+}
+
+func (o GetPublicationsPublicationSupportedOperatingSystemOutput) ToOutput(ctx context.Context) pulumix.Output[GetPublicationsPublicationSupportedOperatingSystem] {
+	return pulumix.Output[GetPublicationsPublicationSupportedOperatingSystem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the publication.
@@ -8376,6 +10027,12 @@ func (o GetPublicationsPublicationSupportedOperatingSystemArrayOutput) ToGetPubl
 
 func (o GetPublicationsPublicationSupportedOperatingSystemArrayOutput) ToGetPublicationsPublicationSupportedOperatingSystemArrayOutputWithContext(ctx context.Context) GetPublicationsPublicationSupportedOperatingSystemArrayOutput {
 	return o
+}
+
+func (o GetPublicationsPublicationSupportedOperatingSystemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPublicationsPublicationSupportedOperatingSystem] {
+	return pulumix.Output[[]GetPublicationsPublicationSupportedOperatingSystem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPublicationsPublicationSupportedOperatingSystemArrayOutput) Index(i pulumi.IntInput) GetPublicationsPublicationSupportedOperatingSystemOutput {
@@ -8421,6 +10078,12 @@ func (i GetPublishersFilterArgs) ToGetPublishersFilterOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetPublishersFilterOutput)
 }
 
+func (i GetPublishersFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetPublishersFilter] {
+	return pulumix.Output[GetPublishersFilter]{
+		OutputState: i.ToGetPublishersFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPublishersFilterArrayInput is an input type that accepts GetPublishersFilterArray and GetPublishersFilterArrayOutput values.
 // You can construct a concrete instance of `GetPublishersFilterArrayInput` via:
 //
@@ -8446,6 +10109,12 @@ func (i GetPublishersFilterArray) ToGetPublishersFilterArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetPublishersFilterArrayOutput)
 }
 
+func (i GetPublishersFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPublishersFilter] {
+	return pulumix.Output[[]GetPublishersFilter]{
+		OutputState: i.ToGetPublishersFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPublishersFilterOutput struct{ *pulumi.OutputState }
 
 func (GetPublishersFilterOutput) ElementType() reflect.Type {
@@ -8458,6 +10127,12 @@ func (o GetPublishersFilterOutput) ToGetPublishersFilterOutput() GetPublishersFi
 
 func (o GetPublishersFilterOutput) ToGetPublishersFilterOutputWithContext(ctx context.Context) GetPublishersFilterOutput {
 	return o
+}
+
+func (o GetPublishersFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetPublishersFilter] {
+	return pulumix.Output[GetPublishersFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the publisher.
@@ -8485,6 +10160,12 @@ func (o GetPublishersFilterArrayOutput) ToGetPublishersFilterArrayOutput() GetPu
 
 func (o GetPublishersFilterArrayOutput) ToGetPublishersFilterArrayOutputWithContext(ctx context.Context) GetPublishersFilterArrayOutput {
 	return o
+}
+
+func (o GetPublishersFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPublishersFilter] {
+	return pulumix.Output[[]GetPublishersFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPublishersFilterArrayOutput) Index(i pulumi.IntInput) GetPublishersFilterOutput {
@@ -8534,6 +10215,12 @@ func (i GetPublishersPublisherArgs) ToGetPublishersPublisherOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetPublishersPublisherOutput)
 }
 
+func (i GetPublishersPublisherArgs) ToOutput(ctx context.Context) pulumix.Output[GetPublishersPublisher] {
+	return pulumix.Output[GetPublishersPublisher]{
+		OutputState: i.ToGetPublishersPublisherOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPublishersPublisherArrayInput is an input type that accepts GetPublishersPublisherArray and GetPublishersPublisherArrayOutput values.
 // You can construct a concrete instance of `GetPublishersPublisherArrayInput` via:
 //
@@ -8559,6 +10246,12 @@ func (i GetPublishersPublisherArray) ToGetPublishersPublisherArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetPublishersPublisherArrayOutput)
 }
 
+func (i GetPublishersPublisherArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPublishersPublisher] {
+	return pulumix.Output[[]GetPublishersPublisher]{
+		OutputState: i.ToGetPublishersPublisherArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPublishersPublisherOutput struct{ *pulumi.OutputState }
 
 func (GetPublishersPublisherOutput) ElementType() reflect.Type {
@@ -8571,6 +10264,12 @@ func (o GetPublishersPublisherOutput) ToGetPublishersPublisherOutput() GetPublis
 
 func (o GetPublishersPublisherOutput) ToGetPublishersPublisherOutputWithContext(ctx context.Context) GetPublishersPublisherOutput {
 	return o
+}
+
+func (o GetPublishersPublisherOutput) ToOutput(ctx context.Context) pulumix.Output[GetPublishersPublisher] {
+	return pulumix.Output[GetPublishersPublisher]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A description of the publisher.
@@ -8600,6 +10299,12 @@ func (o GetPublishersPublisherArrayOutput) ToGetPublishersPublisherArrayOutput()
 
 func (o GetPublishersPublisherArrayOutput) ToGetPublishersPublisherArrayOutputWithContext(ctx context.Context) GetPublishersPublisherArrayOutput {
 	return o
+}
+
+func (o GetPublishersPublisherArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPublishersPublisher] {
+	return pulumix.Output[[]GetPublishersPublisher]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPublishersPublisherArrayOutput) Index(i pulumi.IntInput) GetPublishersPublisherOutput {

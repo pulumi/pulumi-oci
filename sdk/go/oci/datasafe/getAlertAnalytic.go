@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Alert Analytic resource in Oracle Cloud Infrastructure Data Safe service.
@@ -156,6 +157,12 @@ func (o GetAlertAnalyticResultOutput) ToGetAlertAnalyticResultOutput() GetAlertA
 
 func (o GetAlertAnalyticResultOutput) ToGetAlertAnalyticResultOutputWithContext(ctx context.Context) GetAlertAnalyticResultOutput {
 	return o
+}
+
+func (o GetAlertAnalyticResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAlertAnalyticResult] {
+	return pulumix.Output[GetAlertAnalyticResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAlertAnalyticResultOutput) AccessLevel() pulumi.StringPtrOutput {

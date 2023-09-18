@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Host Insight resource in Oracle Cloud Infrastructure Opsi service.
@@ -360,6 +361,12 @@ func (i *HostInsight) ToHostInsightOutputWithContext(ctx context.Context) HostIn
 	return pulumi.ToOutputWithContext(ctx, i).(HostInsightOutput)
 }
 
+func (i *HostInsight) ToOutput(ctx context.Context) pulumix.Output[*HostInsight] {
+	return pulumix.Output[*HostInsight]{
+		OutputState: i.ToHostInsightOutputWithContext(ctx).OutputState,
+	}
+}
+
 // HostInsightArrayInput is an input type that accepts HostInsightArray and HostInsightArrayOutput values.
 // You can construct a concrete instance of `HostInsightArrayInput` via:
 //
@@ -383,6 +390,12 @@ func (i HostInsightArray) ToHostInsightArrayOutput() HostInsightArrayOutput {
 
 func (i HostInsightArray) ToHostInsightArrayOutputWithContext(ctx context.Context) HostInsightArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(HostInsightArrayOutput)
+}
+
+func (i HostInsightArray) ToOutput(ctx context.Context) pulumix.Output[[]*HostInsight] {
+	return pulumix.Output[[]*HostInsight]{
+		OutputState: i.ToHostInsightArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // HostInsightMapInput is an input type that accepts HostInsightMap and HostInsightMapOutput values.
@@ -410,6 +423,12 @@ func (i HostInsightMap) ToHostInsightMapOutputWithContext(ctx context.Context) H
 	return pulumi.ToOutputWithContext(ctx, i).(HostInsightMapOutput)
 }
 
+func (i HostInsightMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*HostInsight] {
+	return pulumix.Output[map[string]*HostInsight]{
+		OutputState: i.ToHostInsightMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type HostInsightOutput struct{ *pulumi.OutputState }
 
 func (HostInsightOutput) ElementType() reflect.Type {
@@ -422,6 +441,12 @@ func (o HostInsightOutput) ToHostInsightOutput() HostInsightOutput {
 
 func (o HostInsightOutput) ToHostInsightOutputWithContext(ctx context.Context) HostInsightOutput {
 	return o
+}
+
+func (o HostInsightOutput) ToOutput(ctx context.Context) pulumix.Output[*HostInsight] {
+	return pulumix.Output[*HostInsight]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Compartment Identifier of host
@@ -571,6 +596,12 @@ func (o HostInsightArrayOutput) ToHostInsightArrayOutputWithContext(ctx context.
 	return o
 }
 
+func (o HostInsightArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*HostInsight] {
+	return pulumix.Output[[]*HostInsight]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o HostInsightArrayOutput) Index(i pulumi.IntInput) HostInsightOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *HostInsight {
 		return vs[0].([]*HostInsight)[vs[1].(int)]
@@ -589,6 +620,12 @@ func (o HostInsightMapOutput) ToHostInsightMapOutput() HostInsightMapOutput {
 
 func (o HostInsightMapOutput) ToHostInsightMapOutputWithContext(ctx context.Context) HostInsightMapOutput {
 	return o
+}
+
+func (o HostInsightMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*HostInsight] {
+	return pulumix.Output[map[string]*HostInsight]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o HostInsightMapOutput) MapIndex(k pulumi.StringInput) HostInsightOutput {

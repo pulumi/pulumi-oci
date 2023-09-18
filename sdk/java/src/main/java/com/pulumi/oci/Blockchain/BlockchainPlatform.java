@@ -83,7 +83,7 @@ public class BlockchainPlatform extends com.pulumi.resources.CustomResource {
      * Base64 encoded text in ASCII character set of a Thirdparty CA Certificates archive file. The Archive file is a zip file containing third part CA Certificates, the ca key and certificate files used when issuing enrollment certificates (ECerts) and transaction certificates (TCerts). The chainfile (if it exists) contains the certificate chain which should be trusted for this CA, where the 1st in the chain is always the root CA certificate. File list in zip file [ca-cert.pem,ca-key.pem,ca-chain.pem(optional)].
      * 
      */
-    @Export(name="caCertArchiveText", type=String.class, parameters={})
+    @Export(name="caCertArchiveText", refs={String.class}, tree="[0]")
     private Output<String> caCertArchiveText;
 
     /**
@@ -97,7 +97,7 @@ public class BlockchainPlatform extends com.pulumi.resources.CustomResource {
      * (Updatable) Compartment Identifier
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -111,7 +111,7 @@ public class BlockchainPlatform extends com.pulumi.resources.CustomResource {
      * Blockchain Platform component details.
      * 
      */
-    @Export(name="componentDetails", type=List.class, parameters={BlockchainPlatformComponentDetail.class})
+    @Export(name="componentDetails", refs={List.class,BlockchainPlatformComponentDetail.class}, tree="[0,1]")
     private Output<List<BlockchainPlatformComponentDetail>> componentDetails;
 
     /**
@@ -125,7 +125,7 @@ public class BlockchainPlatform extends com.pulumi.resources.CustomResource {
      * Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE
      * 
      */
-    @Export(name="computeShape", type=String.class, parameters={})
+    @Export(name="computeShape", refs={String.class}, tree="[0]")
     private Output<String> computeShape;
 
     /**
@@ -139,7 +139,7 @@ public class BlockchainPlatform extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -153,7 +153,7 @@ public class BlockchainPlatform extends com.pulumi.resources.CustomResource {
      * (Updatable) Platform Instance Description
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -167,7 +167,7 @@ public class BlockchainPlatform extends com.pulumi.resources.CustomResource {
      * Platform Instance Display name, can be renamed
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -181,7 +181,7 @@ public class BlockchainPlatform extends com.pulumi.resources.CustomResource {
      * Identifier for a federated user
      * 
      */
-    @Export(name="federatedUserId", type=String.class, parameters={})
+    @Export(name="federatedUserId", refs={String.class}, tree="[0]")
     private Output<String> federatedUserId;
 
     /**
@@ -195,7 +195,7 @@ public class BlockchainPlatform extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -209,7 +209,7 @@ public class BlockchainPlatform extends com.pulumi.resources.CustomResource {
      * List of OcpuUtilization for all hosts
      * 
      */
-    @Export(name="hostOcpuUtilizationInfos", type=List.class, parameters={BlockchainPlatformHostOcpuUtilizationInfo.class})
+    @Export(name="hostOcpuUtilizationInfos", refs={List.class,BlockchainPlatformHostOcpuUtilizationInfo.class}, tree="[0,1]")
     private Output<List<BlockchainPlatformHostOcpuUtilizationInfo>> hostOcpuUtilizationInfos;
 
     /**
@@ -223,7 +223,7 @@ public class BlockchainPlatform extends com.pulumi.resources.CustomResource {
      * IDCS access token with Identity Domain Administrator role
      * 
      */
-    @Export(name="idcsAccessToken", type=String.class, parameters={})
+    @Export(name="idcsAccessToken", refs={String.class}, tree="[0]")
     private Output<String> idcsAccessToken;
 
     /**
@@ -237,7 +237,7 @@ public class BlockchainPlatform extends com.pulumi.resources.CustomResource {
      * Bring your own license
      * 
      */
-    @Export(name="isByol", type=Boolean.class, parameters={})
+    @Export(name="isByol", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isByol;
 
     /**
@@ -251,7 +251,7 @@ public class BlockchainPlatform extends com.pulumi.resources.CustomResource {
      * True for multi-AD blockchain plaforms, false for single-AD
      * 
      */
-    @Export(name="isMultiAd", type=Boolean.class, parameters={})
+    @Export(name="isMultiAd", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isMultiAd;
 
     /**
@@ -265,7 +265,7 @@ public class BlockchainPlatform extends com.pulumi.resources.CustomResource {
      * An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -282,7 +282,7 @@ public class BlockchainPlatform extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="loadBalancerShape", type=String.class, parameters={})
+    @Export(name="loadBalancerShape", refs={String.class}, tree="[0]")
     private Output<String> loadBalancerShape;
 
     /**
@@ -299,7 +299,7 @@ public class BlockchainPlatform extends com.pulumi.resources.CustomResource {
      * Role of platform - founder or participant
      * 
      */
-    @Export(name="platformRole", type=String.class, parameters={})
+    @Export(name="platformRole", refs={String.class}, tree="[0]")
     private Output<String> platformRole;
 
     /**
@@ -313,7 +313,7 @@ public class BlockchainPlatform extends com.pulumi.resources.CustomResource {
      * Type of Platform shape - DEFAULT or CUSTOM
      * 
      */
-    @Export(name="platformShapeType", type=String.class, parameters={})
+    @Export(name="platformShapeType", refs={String.class}, tree="[0]")
     private Output<String> platformShapeType;
 
     /**
@@ -327,7 +327,7 @@ public class BlockchainPlatform extends com.pulumi.resources.CustomResource {
      * Platform version
      * 
      */
-    @Export(name="platformVersion", type=String.class, parameters={})
+    @Export(name="platformVersion", refs={String.class}, tree="[0]")
     private Output<String> platformVersion;
 
     /**
@@ -341,7 +341,7 @@ public class BlockchainPlatform extends com.pulumi.resources.CustomResource {
      * Number of replicas of service components like Rest Proxy, CA and Console
      * 
      */
-    @Export(name="replicas", type=BlockchainPlatformReplicas.class, parameters={})
+    @Export(name="replicas", refs={BlockchainPlatformReplicas.class}, tree="[0]")
     private Output<BlockchainPlatformReplicas> replicas;
 
     /**
@@ -355,7 +355,7 @@ public class BlockchainPlatform extends com.pulumi.resources.CustomResource {
      * Service endpoint URL, valid post-provisioning
      * 
      */
-    @Export(name="serviceEndpoint", type=String.class, parameters={})
+    @Export(name="serviceEndpoint", refs={String.class}, tree="[0]")
     private Output<String> serviceEndpoint;
 
     /**
@@ -369,7 +369,7 @@ public class BlockchainPlatform extends com.pulumi.resources.CustomResource {
      * The version of the Platform Instance.
      * 
      */
-    @Export(name="serviceVersion", type=String.class, parameters={})
+    @Export(name="serviceVersion", refs={String.class}, tree="[0]")
     private Output<String> serviceVersion;
 
     /**
@@ -383,7 +383,7 @@ public class BlockchainPlatform extends com.pulumi.resources.CustomResource {
      * The current state of the Platform Instance.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -397,7 +397,7 @@ public class BlockchainPlatform extends com.pulumi.resources.CustomResource {
      * Storage size in TBs
      * 
      */
-    @Export(name="storageSizeInTbs", type=Double.class, parameters={})
+    @Export(name="storageSizeInTbs", refs={Double.class}, tree="[0]")
     private Output<Double> storageSizeInTbs;
 
     /**
@@ -411,7 +411,7 @@ public class BlockchainPlatform extends com.pulumi.resources.CustomResource {
      * Storage used in TBs
      * 
      */
-    @Export(name="storageUsedInTbs", type=Double.class, parameters={})
+    @Export(name="storageUsedInTbs", refs={Double.class}, tree="[0]")
     private Output<Double> storageUsedInTbs;
 
     /**
@@ -425,7 +425,7 @@ public class BlockchainPlatform extends com.pulumi.resources.CustomResource {
      * The time the the Platform Instance was created. An RFC3339 formatted datetime string
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -439,7 +439,7 @@ public class BlockchainPlatform extends com.pulumi.resources.CustomResource {
      * The time the Platform Instance was updated. An RFC3339 formatted datetime string
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -453,7 +453,7 @@ public class BlockchainPlatform extends com.pulumi.resources.CustomResource {
      * Number of total OCPUs allocated to the platform cluster
      * 
      */
-    @Export(name="totalOcpuCapacity", type=Integer.class, parameters={})
+    @Export(name="totalOcpuCapacity", refs={Integer.class}, tree="[0]")
     private Output<Integer> totalOcpuCapacity;
 
     /**

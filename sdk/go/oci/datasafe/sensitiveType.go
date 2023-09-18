@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Sensitive Type resource in Oracle Cloud Infrastructure Data Safe service.
@@ -324,6 +325,12 @@ func (i *SensitiveType) ToSensitiveTypeOutputWithContext(ctx context.Context) Se
 	return pulumi.ToOutputWithContext(ctx, i).(SensitiveTypeOutput)
 }
 
+func (i *SensitiveType) ToOutput(ctx context.Context) pulumix.Output[*SensitiveType] {
+	return pulumix.Output[*SensitiveType]{
+		OutputState: i.ToSensitiveTypeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // SensitiveTypeArrayInput is an input type that accepts SensitiveTypeArray and SensitiveTypeArrayOutput values.
 // You can construct a concrete instance of `SensitiveTypeArrayInput` via:
 //
@@ -347,6 +354,12 @@ func (i SensitiveTypeArray) ToSensitiveTypeArrayOutput() SensitiveTypeArrayOutpu
 
 func (i SensitiveTypeArray) ToSensitiveTypeArrayOutputWithContext(ctx context.Context) SensitiveTypeArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SensitiveTypeArrayOutput)
+}
+
+func (i SensitiveTypeArray) ToOutput(ctx context.Context) pulumix.Output[[]*SensitiveType] {
+	return pulumix.Output[[]*SensitiveType]{
+		OutputState: i.ToSensitiveTypeArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // SensitiveTypeMapInput is an input type that accepts SensitiveTypeMap and SensitiveTypeMapOutput values.
@@ -374,6 +387,12 @@ func (i SensitiveTypeMap) ToSensitiveTypeMapOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(SensitiveTypeMapOutput)
 }
 
+func (i SensitiveTypeMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*SensitiveType] {
+	return pulumix.Output[map[string]*SensitiveType]{
+		OutputState: i.ToSensitiveTypeMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type SensitiveTypeOutput struct{ *pulumi.OutputState }
 
 func (SensitiveTypeOutput) ElementType() reflect.Type {
@@ -386,6 +405,12 @@ func (o SensitiveTypeOutput) ToSensitiveTypeOutput() SensitiveTypeOutput {
 
 func (o SensitiveTypeOutput) ToSensitiveTypeOutputWithContext(ctx context.Context) SensitiveTypeOutput {
 	return o
+}
+
+func (o SensitiveTypeOutput) ToOutput(ctx context.Context) pulumix.Output[*SensitiveType] {
+	return pulumix.Output[*SensitiveType]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) A regular expression to be used by data discovery for matching column comments.
@@ -495,6 +520,12 @@ func (o SensitiveTypeArrayOutput) ToSensitiveTypeArrayOutputWithContext(ctx cont
 	return o
 }
 
+func (o SensitiveTypeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*SensitiveType] {
+	return pulumix.Output[[]*SensitiveType]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o SensitiveTypeArrayOutput) Index(i pulumi.IntInput) SensitiveTypeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *SensitiveType {
 		return vs[0].([]*SensitiveType)[vs[1].(int)]
@@ -513,6 +544,12 @@ func (o SensitiveTypeMapOutput) ToSensitiveTypeMapOutput() SensitiveTypeMapOutpu
 
 func (o SensitiveTypeMapOutput) ToSensitiveTypeMapOutputWithContext(ctx context.Context) SensitiveTypeMapOutput {
 	return o
+}
+
+func (o SensitiveTypeMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*SensitiveType] {
+	return pulumix.Output[map[string]*SensitiveType]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o SensitiveTypeMapOutput) MapIndex(k pulumi.StringInput) SensitiveTypeOutput {

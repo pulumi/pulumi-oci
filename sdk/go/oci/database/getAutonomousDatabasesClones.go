@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Autonomous Databases Clones in Oracle Cloud Infrastructure Database service.
@@ -131,6 +132,12 @@ func (o GetAutonomousDatabasesClonesResultOutput) ToGetAutonomousDatabasesClones
 
 func (o GetAutonomousDatabasesClonesResultOutput) ToGetAutonomousDatabasesClonesResultOutputWithContext(ctx context.Context) GetAutonomousDatabasesClonesResultOutput {
 	return o
+}
+
+func (o GetAutonomousDatabasesClonesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutonomousDatabasesClonesResult] {
+	return pulumix.Output[GetAutonomousDatabasesClonesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAutonomousDatabasesClonesResultOutput) AutonomousDatabaseId() pulumi.StringOutput {

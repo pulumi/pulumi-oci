@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Db Credential resource in Oracle Cloud Infrastructure Identity service.
@@ -206,6 +207,12 @@ func (i *DbCredential) ToDbCredentialOutputWithContext(ctx context.Context) DbCr
 	return pulumi.ToOutputWithContext(ctx, i).(DbCredentialOutput)
 }
 
+func (i *DbCredential) ToOutput(ctx context.Context) pulumix.Output[*DbCredential] {
+	return pulumix.Output[*DbCredential]{
+		OutputState: i.ToDbCredentialOutputWithContext(ctx).OutputState,
+	}
+}
+
 // DbCredentialArrayInput is an input type that accepts DbCredentialArray and DbCredentialArrayOutput values.
 // You can construct a concrete instance of `DbCredentialArrayInput` via:
 //
@@ -229,6 +236,12 @@ func (i DbCredentialArray) ToDbCredentialArrayOutput() DbCredentialArrayOutput {
 
 func (i DbCredentialArray) ToDbCredentialArrayOutputWithContext(ctx context.Context) DbCredentialArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DbCredentialArrayOutput)
+}
+
+func (i DbCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]*DbCredential] {
+	return pulumix.Output[[]*DbCredential]{
+		OutputState: i.ToDbCredentialArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // DbCredentialMapInput is an input type that accepts DbCredentialMap and DbCredentialMapOutput values.
@@ -256,6 +269,12 @@ func (i DbCredentialMap) ToDbCredentialMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(DbCredentialMapOutput)
 }
 
+func (i DbCredentialMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DbCredential] {
+	return pulumix.Output[map[string]*DbCredential]{
+		OutputState: i.ToDbCredentialMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type DbCredentialOutput struct{ *pulumi.OutputState }
 
 func (DbCredentialOutput) ElementType() reflect.Type {
@@ -268,6 +287,12 @@ func (o DbCredentialOutput) ToDbCredentialOutput() DbCredentialOutput {
 
 func (o DbCredentialOutput) ToDbCredentialOutputWithContext(ctx context.Context) DbCredentialOutput {
 	return o
+}
+
+func (o DbCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[*DbCredential] {
+	return pulumix.Output[*DbCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The description you assign to the DB credentials during creation.
@@ -322,6 +347,12 @@ func (o DbCredentialArrayOutput) ToDbCredentialArrayOutputWithContext(ctx contex
 	return o
 }
 
+func (o DbCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DbCredential] {
+	return pulumix.Output[[]*DbCredential]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o DbCredentialArrayOutput) Index(i pulumi.IntInput) DbCredentialOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DbCredential {
 		return vs[0].([]*DbCredential)[vs[1].(int)]
@@ -340,6 +371,12 @@ func (o DbCredentialMapOutput) ToDbCredentialMapOutput() DbCredentialMapOutput {
 
 func (o DbCredentialMapOutput) ToDbCredentialMapOutputWithContext(ctx context.Context) DbCredentialMapOutput {
 	return o
+}
+
+func (o DbCredentialMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DbCredential] {
+	return pulumix.Output[map[string]*DbCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o DbCredentialMapOutput) MapIndex(k pulumi.StringInput) DbCredentialOutput {

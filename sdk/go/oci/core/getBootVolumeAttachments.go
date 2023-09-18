@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetBootVolumeAttachments(ctx *pulumi.Context, args *GetBootVolumeAttachmentsArgs, opts ...pulumi.InvokeOption) (*GetBootVolumeAttachmentsResult, error) {
@@ -94,6 +95,12 @@ func (o GetBootVolumeAttachmentsResultOutput) ToGetBootVolumeAttachmentsResultOu
 
 func (o GetBootVolumeAttachmentsResultOutput) ToGetBootVolumeAttachmentsResultOutputWithContext(ctx context.Context) GetBootVolumeAttachmentsResultOutput {
 	return o
+}
+
+func (o GetBootVolumeAttachmentsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetBootVolumeAttachmentsResult] {
+	return pulumix.Output[GetBootVolumeAttachmentsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The availability domain of an instance.  Example: `Uocm:PHX-AD-1`

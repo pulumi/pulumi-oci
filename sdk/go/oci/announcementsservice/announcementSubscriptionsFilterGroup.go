@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Announcement Subscriptions Filter Group resource in Oracle Cloud Infrastructure Announcements Service service.
@@ -184,6 +185,12 @@ func (i *AnnouncementSubscriptionsFilterGroup) ToAnnouncementSubscriptionsFilter
 	return pulumi.ToOutputWithContext(ctx, i).(AnnouncementSubscriptionsFilterGroupOutput)
 }
 
+func (i *AnnouncementSubscriptionsFilterGroup) ToOutput(ctx context.Context) pulumix.Output[*AnnouncementSubscriptionsFilterGroup] {
+	return pulumix.Output[*AnnouncementSubscriptionsFilterGroup]{
+		OutputState: i.ToAnnouncementSubscriptionsFilterGroupOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AnnouncementSubscriptionsFilterGroupArrayInput is an input type that accepts AnnouncementSubscriptionsFilterGroupArray and AnnouncementSubscriptionsFilterGroupArrayOutput values.
 // You can construct a concrete instance of `AnnouncementSubscriptionsFilterGroupArrayInput` via:
 //
@@ -207,6 +214,12 @@ func (i AnnouncementSubscriptionsFilterGroupArray) ToAnnouncementSubscriptionsFi
 
 func (i AnnouncementSubscriptionsFilterGroupArray) ToAnnouncementSubscriptionsFilterGroupArrayOutputWithContext(ctx context.Context) AnnouncementSubscriptionsFilterGroupArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AnnouncementSubscriptionsFilterGroupArrayOutput)
+}
+
+func (i AnnouncementSubscriptionsFilterGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]*AnnouncementSubscriptionsFilterGroup] {
+	return pulumix.Output[[]*AnnouncementSubscriptionsFilterGroup]{
+		OutputState: i.ToAnnouncementSubscriptionsFilterGroupArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // AnnouncementSubscriptionsFilterGroupMapInput is an input type that accepts AnnouncementSubscriptionsFilterGroupMap and AnnouncementSubscriptionsFilterGroupMapOutput values.
@@ -234,6 +247,12 @@ func (i AnnouncementSubscriptionsFilterGroupMap) ToAnnouncementSubscriptionsFilt
 	return pulumi.ToOutputWithContext(ctx, i).(AnnouncementSubscriptionsFilterGroupMapOutput)
 }
 
+func (i AnnouncementSubscriptionsFilterGroupMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AnnouncementSubscriptionsFilterGroup] {
+	return pulumix.Output[map[string]*AnnouncementSubscriptionsFilterGroup]{
+		OutputState: i.ToAnnouncementSubscriptionsFilterGroupMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AnnouncementSubscriptionsFilterGroupOutput struct{ *pulumi.OutputState }
 
 func (AnnouncementSubscriptionsFilterGroupOutput) ElementType() reflect.Type {
@@ -246,6 +265,12 @@ func (o AnnouncementSubscriptionsFilterGroupOutput) ToAnnouncementSubscriptionsF
 
 func (o AnnouncementSubscriptionsFilterGroupOutput) ToAnnouncementSubscriptionsFilterGroupOutputWithContext(ctx context.Context) AnnouncementSubscriptionsFilterGroupOutput {
 	return o
+}
+
+func (o AnnouncementSubscriptionsFilterGroupOutput) ToOutput(ctx context.Context) pulumix.Output[*AnnouncementSubscriptionsFilterGroup] {
+	return pulumix.Output[*AnnouncementSubscriptionsFilterGroup]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the announcement subscription.
@@ -282,6 +307,12 @@ func (o AnnouncementSubscriptionsFilterGroupArrayOutput) ToAnnouncementSubscript
 	return o
 }
 
+func (o AnnouncementSubscriptionsFilterGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AnnouncementSubscriptionsFilterGroup] {
+	return pulumix.Output[[]*AnnouncementSubscriptionsFilterGroup]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AnnouncementSubscriptionsFilterGroupArrayOutput) Index(i pulumi.IntInput) AnnouncementSubscriptionsFilterGroupOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AnnouncementSubscriptionsFilterGroup {
 		return vs[0].([]*AnnouncementSubscriptionsFilterGroup)[vs[1].(int)]
@@ -300,6 +331,12 @@ func (o AnnouncementSubscriptionsFilterGroupMapOutput) ToAnnouncementSubscriptio
 
 func (o AnnouncementSubscriptionsFilterGroupMapOutput) ToAnnouncementSubscriptionsFilterGroupMapOutputWithContext(ctx context.Context) AnnouncementSubscriptionsFilterGroupMapOutput {
 	return o
+}
+
+func (o AnnouncementSubscriptionsFilterGroupMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AnnouncementSubscriptionsFilterGroup] {
+	return pulumix.Output[map[string]*AnnouncementSubscriptionsFilterGroup]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AnnouncementSubscriptionsFilterGroupMapOutput) MapIndex(k pulumi.StringInput) AnnouncementSubscriptionsFilterGroupOutput {

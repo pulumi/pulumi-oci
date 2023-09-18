@@ -110,7 +110,7 @@ public class PathAnalyzerTest extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the `PathAnalyzerTest` resource&#39;s compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -124,7 +124,7 @@ public class PathAnalyzerTest extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -138,7 +138,7 @@ public class PathAnalyzerTest extends com.pulumi.resources.CustomResource {
      * (Updatable) Information describing a source or destination in a `PathAnalyzerTest` resource.
      * 
      */
-    @Export(name="destinationEndpoint", type=PathAnalyzerTestDestinationEndpoint.class, parameters={})
+    @Export(name="destinationEndpoint", refs={PathAnalyzerTestDestinationEndpoint.class}, tree="[0]")
     private Output<PathAnalyzerTestDestinationEndpoint> destinationEndpoint;
 
     /**
@@ -152,7 +152,7 @@ public class PathAnalyzerTest extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -166,7 +166,7 @@ public class PathAnalyzerTest extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -180,7 +180,7 @@ public class PathAnalyzerTest extends com.pulumi.resources.CustomResource {
      * (Updatable) The IP protocol to use in the `PathAnalyzerTest` resource.
      * 
      */
-    @Export(name="protocol", type=Integer.class, parameters={})
+    @Export(name="protocol", refs={Integer.class}, tree="[0]")
     private Output<Integer> protocol;
 
     /**
@@ -194,7 +194,7 @@ public class PathAnalyzerTest extends com.pulumi.resources.CustomResource {
      * (Updatable) Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
      * 
      */
-    @Export(name="protocolParameters", type=PathAnalyzerTestProtocolParameters.class, parameters={})
+    @Export(name="protocolParameters", refs={PathAnalyzerTestProtocolParameters.class}, tree="[0]")
     private Output<PathAnalyzerTestProtocolParameters> protocolParameters;
 
     /**
@@ -208,7 +208,7 @@ public class PathAnalyzerTest extends com.pulumi.resources.CustomResource {
      * (Updatable) Defines the query options required for a `PathAnalyzerTest` resource.
      * 
      */
-    @Export(name="queryOptions", type=PathAnalyzerTestQueryOptions.class, parameters={})
+    @Export(name="queryOptions", refs={PathAnalyzerTestQueryOptions.class}, tree="[0]")
     private Output<PathAnalyzerTestQueryOptions> queryOptions;
 
     /**
@@ -222,7 +222,7 @@ public class PathAnalyzerTest extends com.pulumi.resources.CustomResource {
      * (Updatable) Information describing a source or destination in a `PathAnalyzerTest` resource.
      * 
      */
-    @Export(name="sourceEndpoint", type=PathAnalyzerTestSourceEndpoint.class, parameters={})
+    @Export(name="sourceEndpoint", refs={PathAnalyzerTestSourceEndpoint.class}, tree="[0]")
     private Output<PathAnalyzerTestSourceEndpoint> sourceEndpoint;
 
     /**
@@ -236,7 +236,7 @@ public class PathAnalyzerTest extends com.pulumi.resources.CustomResource {
      * The current state of the `PathAnalyzerTest` resource.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -250,7 +250,7 @@ public class PathAnalyzerTest extends com.pulumi.resources.CustomResource {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -264,7 +264,7 @@ public class PathAnalyzerTest extends com.pulumi.resources.CustomResource {
      * The date and time the `PathAnalyzerTest` resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -278,7 +278,7 @@ public class PathAnalyzerTest extends com.pulumi.resources.CustomResource {
      * The date and time the `PathAnalyzerTest` resource was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

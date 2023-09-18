@@ -61,7 +61,7 @@ public class PublicIpPoolCapacity extends com.pulumi.resources.CustomResource {
      * The OCID of the Byoip Range Id object to which the cidr block belongs.
      * 
      */
-    @Export(name="byoipId", type=String.class, parameters={})
+    @Export(name="byoipId", refs={String.class}, tree="[0]")
     private Output<String> byoipId;
 
     /**
@@ -78,7 +78,7 @@ public class PublicIpPoolCapacity extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="cidrBlock", type=String.class, parameters={})
+    @Export(name="cidrBlock", refs={String.class}, tree="[0]")
     private Output<String> cidrBlock;
 
     /**
@@ -95,7 +95,7 @@ public class PublicIpPoolCapacity extends com.pulumi.resources.CustomResource {
      * The OCID of the pool object created by the current tenancy
      * 
      */
-    @Export(name="publicIpPoolId", type=String.class, parameters={})
+    @Export(name="publicIpPoolId", refs={String.class}, tree="[0]")
     private Output<String> publicIpPoolId;
 
     /**

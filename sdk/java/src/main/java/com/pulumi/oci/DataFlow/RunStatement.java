@@ -67,7 +67,7 @@ public class RunStatement extends com.pulumi.resources.CustomResource {
      * The statement code to execute. Example: `println(sc.version)`
      * 
      */
-    @Export(name="code", type=String.class, parameters={})
+    @Export(name="code", refs={String.class}, tree="[0]")
     private Output<String> code;
 
     /**
@@ -81,7 +81,7 @@ public class RunStatement extends com.pulumi.resources.CustomResource {
      * The execution output of a statement.
      * 
      */
-    @Export(name="outputs", type=List.class, parameters={RunStatementOutput.class})
+    @Export(name="outputs", refs={List.class,RunStatementOutput.class}, tree="[0,1]")
     private Output<List<RunStatementOutput>> outputs;
 
     /**
@@ -95,7 +95,7 @@ public class RunStatement extends com.pulumi.resources.CustomResource {
      * The execution progress.
      * 
      */
-    @Export(name="progress", type=Double.class, parameters={})
+    @Export(name="progress", refs={Double.class}, tree="[0]")
     private Output<Double> progress;
 
     /**
@@ -112,7 +112,7 @@ public class RunStatement extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="runId", type=String.class, parameters={})
+    @Export(name="runId", refs={String.class}, tree="[0]")
     private Output<String> runId;
 
     /**
@@ -129,7 +129,7 @@ public class RunStatement extends com.pulumi.resources.CustomResource {
      * The current state of this statement.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -143,7 +143,7 @@ public class RunStatement extends com.pulumi.resources.CustomResource {
      * The date and time a statement execution was completed, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2022-05-31T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCompleted", type=String.class, parameters={})
+    @Export(name="timeCompleted", refs={String.class}, tree="[0]")
     private Output<String> timeCompleted;
 
     /**
@@ -157,7 +157,7 @@ public class RunStatement extends com.pulumi.resources.CustomResource {
      * The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**

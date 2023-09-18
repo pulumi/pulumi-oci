@@ -90,7 +90,7 @@ public class ManagedInstanceManagement extends com.pulumi.resources.CustomResour
      * (Updatable) list of child Software Sources attached to the Managed Instance
      * 
      */
-    @Export(name="childSoftwareSources", type=List.class, parameters={ManagedInstanceManagementChildSoftwareSource.class})
+    @Export(name="childSoftwareSources", refs={List.class,ManagedInstanceManagementChildSoftwareSource.class}, tree="[0,1]")
     private Output<List<ManagedInstanceManagementChildSoftwareSource>> childSoftwareSources;
 
     /**
@@ -104,7 +104,7 @@ public class ManagedInstanceManagement extends com.pulumi.resources.CustomResour
      * OCID for the Compartment
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -118,7 +118,7 @@ public class ManagedInstanceManagement extends com.pulumi.resources.CustomResour
      * Information specified by the user about the managed instance
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -132,7 +132,7 @@ public class ManagedInstanceManagement extends com.pulumi.resources.CustomResour
      * User friendly name
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -146,7 +146,7 @@ public class ManagedInstanceManagement extends com.pulumi.resources.CustomResour
      * Time at which the instance last booted
      * 
      */
-    @Export(name="lastBoot", type=String.class, parameters={})
+    @Export(name="lastBoot", refs={String.class}, tree="[0]")
     private Output<String> lastBoot;
 
     /**
@@ -160,7 +160,7 @@ public class ManagedInstanceManagement extends com.pulumi.resources.CustomResour
      * Time at which the instance last checked in
      * 
      */
-    @Export(name="lastCheckin", type=String.class, parameters={})
+    @Export(name="lastCheckin", refs={String.class}, tree="[0]")
     private Output<String> lastCheckin;
 
     /**
@@ -174,7 +174,7 @@ public class ManagedInstanceManagement extends com.pulumi.resources.CustomResour
      * (Updatable) The ids of the managed instance groups of which this instance is a member.
      * 
      */
-    @Export(name="managedInstanceGroups", type=List.class, parameters={ManagedInstanceManagementManagedInstanceGroup.class})
+    @Export(name="managedInstanceGroups", refs={List.class,ManagedInstanceManagementManagedInstanceGroup.class}, tree="[0,1]")
     private Output<List<ManagedInstanceManagementManagedInstanceGroup>> managedInstanceGroups;
 
     /**
@@ -188,7 +188,7 @@ public class ManagedInstanceManagement extends com.pulumi.resources.CustomResour
      * OCID for the managed instance
      * 
      */
-    @Export(name="managedInstanceId", type=String.class, parameters={})
+    @Export(name="managedInstanceId", refs={String.class}, tree="[0]")
     private Output<String> managedInstanceId;
 
     /**
@@ -202,7 +202,7 @@ public class ManagedInstanceManagement extends com.pulumi.resources.CustomResour
      * Operating System Kernel Version
      * 
      */
-    @Export(name="osKernelVersion", type=String.class, parameters={})
+    @Export(name="osKernelVersion", refs={String.class}, tree="[0]")
     private Output<String> osKernelVersion;
 
     /**
@@ -216,7 +216,7 @@ public class ManagedInstanceManagement extends com.pulumi.resources.CustomResour
      * Operating System Name
      * 
      */
-    @Export(name="osName", type=String.class, parameters={})
+    @Export(name="osName", refs={String.class}, tree="[0]")
     private Output<String> osName;
 
     /**
@@ -230,7 +230,7 @@ public class ManagedInstanceManagement extends com.pulumi.resources.CustomResour
      * Operating System Version
      * 
      */
-    @Export(name="osVersion", type=String.class, parameters={})
+    @Export(name="osVersion", refs={String.class}, tree="[0]")
     private Output<String> osVersion;
 
     /**
@@ -244,7 +244,7 @@ public class ManagedInstanceManagement extends com.pulumi.resources.CustomResour
      * (Updatable) the parent (base) Software Source attached to the Managed Instance
      * 
      */
-    @Export(name="parentSoftwareSource", type=ManagedInstanceManagementParentSoftwareSource.class, parameters={})
+    @Export(name="parentSoftwareSource", refs={ManagedInstanceManagementParentSoftwareSource.class}, tree="[0]")
     private Output<ManagedInstanceManagementParentSoftwareSource> parentSoftwareSource;
 
     /**
@@ -258,7 +258,7 @@ public class ManagedInstanceManagement extends com.pulumi.resources.CustomResour
      * status of the managed instance.
      * 
      */
-    @Export(name="status", type=String.class, parameters={})
+    @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
@@ -272,7 +272,7 @@ public class ManagedInstanceManagement extends com.pulumi.resources.CustomResour
      * Number of updates available to be installed
      * 
      */
-    @Export(name="updatesAvailable", type=Integer.class, parameters={})
+    @Export(name="updatesAvailable", refs={Integer.class}, tree="[0]")
     private Output<Integer> updatesAvailable;
 
     /**

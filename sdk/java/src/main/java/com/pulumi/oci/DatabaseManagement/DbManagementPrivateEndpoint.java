@@ -69,7 +69,7 @@ public class DbManagementPrivateEndpoint extends com.pulumi.resources.CustomReso
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -83,7 +83,7 @@ public class DbManagementPrivateEndpoint extends com.pulumi.resources.CustomReso
      * (Updatable) The description of the private endpoint.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -97,7 +97,7 @@ public class DbManagementPrivateEndpoint extends com.pulumi.resources.CustomReso
      * Specifies whether the Database Management private endpoint will be used for Oracle Databases in a cluster.
      * 
      */
-    @Export(name="isCluster", type=Boolean.class, parameters={})
+    @Export(name="isCluster", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isCluster;
 
     /**
@@ -111,7 +111,7 @@ public class DbManagementPrivateEndpoint extends com.pulumi.resources.CustomReso
      * (Updatable) The display name of the Database Management private endpoint.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -125,7 +125,7 @@ public class DbManagementPrivateEndpoint extends com.pulumi.resources.CustomReso
      * (Updatable) The OCIDs of the Network Security Groups to which the Database Management private endpoint belongs.
      * 
      */
-    @Export(name="nsgIds", type=List.class, parameters={String.class})
+    @Export(name="nsgIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> nsgIds;
 
     /**
@@ -139,7 +139,7 @@ public class DbManagementPrivateEndpoint extends com.pulumi.resources.CustomReso
      * The IP addresses assigned to the Database Management private endpoint.
      * 
      */
-    @Export(name="privateIp", type=String.class, parameters={})
+    @Export(name="privateIp", refs={String.class}, tree="[0]")
     private Output<String> privateIp;
 
     /**
@@ -153,7 +153,7 @@ public class DbManagementPrivateEndpoint extends com.pulumi.resources.CustomReso
      * The current lifecycle state of the Database Management private endpoint.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -170,7 +170,7 @@ public class DbManagementPrivateEndpoint extends com.pulumi.resources.CustomReso
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="subnetId", type=String.class, parameters={})
+    @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
@@ -187,7 +187,7 @@ public class DbManagementPrivateEndpoint extends com.pulumi.resources.CustomReso
      * The date and time the Database Managament private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -201,7 +201,7 @@ public class DbManagementPrivateEndpoint extends com.pulumi.resources.CustomReso
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      * 
      */
-    @Export(name="vcnId", type=String.class, parameters={})
+    @Export(name="vcnId", refs={String.class}, tree="[0]")
     private Output<String> vcnId;
 
     /**

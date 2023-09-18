@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Alarms in Oracle Cloud Infrastructure Monitoring service.
@@ -130,6 +131,12 @@ func (o GetAlarmsResultOutput) ToGetAlarmsResultOutput() GetAlarmsResultOutput {
 
 func (o GetAlarmsResultOutput) ToGetAlarmsResultOutputWithContext(ctx context.Context) GetAlarmsResultOutput {
 	return o
+}
+
+func (o GetAlarmsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAlarmsResult] {
+	return pulumix.Output[GetAlarmsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The list of alarms.

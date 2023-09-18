@@ -55,7 +55,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * (Updatable) Specifies the approval policy.
      * 
      */
-    @Export(name="approvalPolicy", type=DeployStageApprovalPolicy.class, parameters={})
+    @Export(name="approvalPolicy", refs={DeployStageApprovalPolicy.class}, tree="[0]")
     private Output<DeployStageApprovalPolicy> approvalPolicy;
 
     /**
@@ -69,7 +69,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * (Updatable) Disable pre/post upgrade hooks. Set to false by default.
      * 
      */
-    @Export(name="areHooksEnabled", type=Boolean.class, parameters={})
+    @Export(name="areHooksEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> areHooksEnabled;
 
     /**
@@ -83,7 +83,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * (Updatable) Collection of backend environment IP addresses.
      * 
      */
-    @Export(name="blueBackendIps", type=DeployStageBlueBackendIps.class, parameters={})
+    @Export(name="blueBackendIps", refs={DeployStageBlueBackendIps.class}, tree="[0]")
     private Output<DeployStageBlueBackendIps> blueBackendIps;
 
     /**
@@ -97,7 +97,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * Specifies the required blue green release strategy for OKE deployment.
      * 
      */
-    @Export(name="blueGreenStrategy", type=DeployStageBlueGreenStrategy.class, parameters={})
+    @Export(name="blueGreenStrategy", refs={DeployStageBlueGreenStrategy.class}, tree="[0]")
     private Output<DeployStageBlueGreenStrategy> blueGreenStrategy;
 
     /**
@@ -111,7 +111,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * Specifies the required canary release strategy for OKE deployment.
      * 
      */
-    @Export(name="canaryStrategy", type=DeployStageCanaryStrategy.class, parameters={})
+    @Export(name="canaryStrategy", refs={DeployStageCanaryStrategy.class}, tree="[0]")
     private Output<DeployStageCanaryStrategy> canaryStrategy;
 
     /**
@@ -125,7 +125,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the artifact that contains the command specification.
      * 
      */
-    @Export(name="commandSpecDeployArtifactId", type=String.class, parameters={})
+    @Export(name="commandSpecDeployArtifactId", refs={String.class}, tree="[0]")
     private Output<String> commandSpecDeployArtifactId;
 
     /**
@@ -139,7 +139,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the compartment where the ContainerInstance will be created.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -153,7 +153,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * The OCID of the upstream compute instance group blue-green deployment stage in this pipeline.
      * 
      */
-    @Export(name="computeInstanceGroupBlueGreenDeploymentDeployStageId", type=String.class, parameters={})
+    @Export(name="computeInstanceGroupBlueGreenDeploymentDeployStageId", refs={String.class}, tree="[0]")
     private Output<String> computeInstanceGroupBlueGreenDeploymentDeployStageId;
 
     /**
@@ -167,7 +167,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * A compute instance group canary stage OCID for load balancer.
      * 
      */
-    @Export(name="computeInstanceGroupCanaryDeployStageId", type=String.class, parameters={})
+    @Export(name="computeInstanceGroupCanaryDeployStageId", refs={String.class}, tree="[0]")
     private Output<String> computeInstanceGroupCanaryDeployStageId;
 
     /**
@@ -181,7 +181,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * (Updatable) A compute instance group canary traffic shift stage OCID for load balancer.
      * 
      */
-    @Export(name="computeInstanceGroupCanaryTrafficShiftDeployStageId", type=String.class, parameters={})
+    @Export(name="computeInstanceGroupCanaryTrafficShiftDeployStageId", refs={String.class}, tree="[0]")
     private Output<String> computeInstanceGroupCanaryTrafficShiftDeployStageId;
 
     /**
@@ -195,7 +195,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * (Updatable) A compute instance group environment OCID for rolling deployment.
      * 
      */
-    @Export(name="computeInstanceGroupDeployEnvironmentId", type=String.class, parameters={})
+    @Export(name="computeInstanceGroupDeployEnvironmentId", refs={String.class}, tree="[0]")
     private Output<String> computeInstanceGroupDeployEnvironmentId;
 
     /**
@@ -209,7 +209,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
      * 
      */
-    @Export(name="config", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="config", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output</* @Nullable */ Map<String,Object>> config;
 
     /**
@@ -223,7 +223,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * (Updatable) Specifies the container configuration.
      * 
      */
-    @Export(name="containerConfig", type=DeployStageContainerConfig.class, parameters={})
+    @Export(name="containerConfig", refs={DeployStageContainerConfig.class}, tree="[0]")
     private Output<DeployStageContainerConfig> containerConfig;
 
     /**
@@ -237,7 +237,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -251,7 +251,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage&#39;s execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
      * 
      */
-    @Export(name="deployArtifactId", type=String.class, parameters={})
+    @Export(name="deployArtifactId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> deployArtifactId;
 
     /**
@@ -265,7 +265,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * (Updatable) The list of file artifact OCIDs to deploy.
      * 
      */
-    @Export(name="deployArtifactIds", type=List.class, parameters={String.class})
+    @Export(name="deployArtifactIds", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> deployArtifactIds;
 
     /**
@@ -279,7 +279,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * First compute instance group environment OCID for deployment.
      * 
      */
-    @Export(name="deployEnvironmentIdA", type=String.class, parameters={})
+    @Export(name="deployEnvironmentIdA", refs={String.class}, tree="[0]")
     private Output<String> deployEnvironmentIdA;
 
     /**
@@ -293,7 +293,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * Second compute instance group environment OCID for deployment.
      * 
      */
-    @Export(name="deployEnvironmentIdB", type=String.class, parameters={})
+    @Export(name="deployEnvironmentIdB", refs={String.class}, tree="[0]")
     private Output<String> deployEnvironmentIdB;
 
     /**
@@ -307,7 +307,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * The OCID of a pipeline.
      * 
      */
-    @Export(name="deployPipelineId", type=String.class, parameters={})
+    @Export(name="deployPipelineId", refs={String.class}, tree="[0]")
     private Output<String> deployPipelineId;
 
     /**
@@ -321,7 +321,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * (Updatable) Collection containing the predecessors of a stage.
      * 
      */
-    @Export(name="deployStagePredecessorCollection", type=DeployStageDeployStagePredecessorCollection.class, parameters={})
+    @Export(name="deployStagePredecessorCollection", refs={DeployStageDeployStagePredecessorCollection.class}, tree="[0]")
     private Output<DeployStageDeployStagePredecessorCollection> deployStagePredecessorCollection;
 
     /**
@@ -335,7 +335,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * (Updatable) Deployment stage type.
      * 
      */
-    @Export(name="deployStageType", type=String.class, parameters={})
+    @Export(name="deployStageType", refs={String.class}, tree="[0]")
     private Output<String> deployStageType;
 
     /**
@@ -349,7 +349,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the artifact that contains the deployment specification.
      * 
      */
-    @Export(name="deploymentSpecDeployArtifactId", type=String.class, parameters={})
+    @Export(name="deploymentSpecDeployArtifactId", refs={String.class}, tree="[0]")
     private Output<String> deploymentSpecDeployArtifactId;
 
     /**
@@ -363,7 +363,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * (Updatable) Optional description about the deployment stage.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -377,7 +377,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * (Updatable) Deployment stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -391,7 +391,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * (Updatable) A Docker image artifact OCID.
      * 
      */
-    @Export(name="dockerImageDeployArtifactId", type=String.class, parameters={})
+    @Export(name="dockerImageDeployArtifactId", refs={String.class}, tree="[0]")
     private Output<String> dockerImageDeployArtifactId;
 
     /**
@@ -405,7 +405,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * (Updatable) Specifies a failure policy for a compute instance group rolling deployment stage.
      * 
      */
-    @Export(name="failurePolicy", type=DeployStageFailurePolicy.class, parameters={})
+    @Export(name="failurePolicy", refs={DeployStageFailurePolicy.class}, tree="[0]")
     private Output<DeployStageFailurePolicy> failurePolicy;
 
     /**
@@ -419,7 +419,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -433,7 +433,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * (Updatable) Function environment OCID.
      * 
      */
-    @Export(name="functionDeployEnvironmentId", type=String.class, parameters={})
+    @Export(name="functionDeployEnvironmentId", refs={String.class}, tree="[0]")
     private Output<String> functionDeployEnvironmentId;
 
     /**
@@ -447,7 +447,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * (Updatable) Timeout for execution of the Function. Value in seconds.
      * 
      */
-    @Export(name="functionTimeoutInSeconds", type=Integer.class, parameters={})
+    @Export(name="functionTimeoutInSeconds", refs={Integer.class}, tree="[0]")
     private Output<Integer> functionTimeoutInSeconds;
 
     /**
@@ -461,7 +461,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * (Updatable) Collection of backend environment IP addresses.
      * 
      */
-    @Export(name="greenBackendIps", type=DeployStageGreenBackendIps.class, parameters={})
+    @Export(name="greenBackendIps", refs={DeployStageGreenBackendIps.class}, tree="[0]")
     private Output<DeployStageGreenBackendIps> greenBackendIps;
 
     /**
@@ -475,7 +475,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * (Updatable) Helm chart artifact OCID.
      * 
      */
-    @Export(name="helmChartDeployArtifactId", type=String.class, parameters={})
+    @Export(name="helmChartDeployArtifactId", refs={String.class}, tree="[0]")
     private Output<String> helmChartDeployArtifactId;
 
     /**
@@ -489,7 +489,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * (Updatable) A boolean flag specifies whether this stage executes asynchronously.
      * 
      */
-    @Export(name="isAsync", type=Boolean.class, parameters={})
+    @Export(name="isAsync", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isAsync;
 
     /**
@@ -503,7 +503,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * (Updatable) Enables helm --debug option to stream output to tf stdout. Set to false by default.
      * 
      */
-    @Export(name="isDebugEnabled", type=Boolean.class, parameters={})
+    @Export(name="isDebugEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isDebugEnabled;
 
     /**
@@ -517,7 +517,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
      * 
      */
-    @Export(name="isForceEnabled", type=Boolean.class, parameters={})
+    @Export(name="isForceEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isForceEnabled;
 
     /**
@@ -531,7 +531,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * (Updatable) A boolean flag specifies whether the invoked function should be validated.
      * 
      */
-    @Export(name="isValidationEnabled", type=Boolean.class, parameters={})
+    @Export(name="isValidationEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isValidationEnabled;
 
     /**
@@ -545,7 +545,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * (Updatable) List of Kubernetes manifest artifact OCIDs.
      * 
      */
-    @Export(name="kubernetesManifestDeployArtifactIds", type=List.class, parameters={String.class})
+    @Export(name="kubernetesManifestDeployArtifactIds", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> kubernetesManifestDeployArtifactIds;
 
     /**
@@ -559,7 +559,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -573,7 +573,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
      * 
      */
-    @Export(name="loadBalancerConfig", type=DeployStageLoadBalancerConfig.class, parameters={})
+    @Export(name="loadBalancerConfig", refs={DeployStageLoadBalancerConfig.class}, tree="[0]")
     private Output<DeployStageLoadBalancerConfig> loadBalancerConfig;
 
     /**
@@ -587,7 +587,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * (Updatable) Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
      * 
      */
-    @Export(name="maxHistory", type=Integer.class, parameters={})
+    @Export(name="maxHistory", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxHistory;
 
     /**
@@ -601,7 +601,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * (Updatable) Maximum usable memory for the Function (in MB).
      * 
      */
-    @Export(name="maxMemoryInMbs", type=String.class, parameters={})
+    @Export(name="maxMemoryInMbs", refs={String.class}, tree="[0]")
     private Output<String> maxMemoryInMbs;
 
     /**
@@ -615,7 +615,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * (Updatable) Default namespace to be used for Kubernetes deployment when not specified in the manifest.
      * 
      */
-    @Export(name="namespace", type=String.class, parameters={})
+    @Export(name="namespace", refs={String.class}, tree="[0]")
     private Output<String> namespace;
 
     /**
@@ -629,7 +629,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * The OCID of the upstream OKE blue-green deployment stage in this pipeline.
      * 
      */
-    @Export(name="okeBlueGreenDeployStageId", type=String.class, parameters={})
+    @Export(name="okeBlueGreenDeployStageId", refs={String.class}, tree="[0]")
     private Output<String> okeBlueGreenDeployStageId;
 
     /**
@@ -643,7 +643,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * The OCID of an upstream OKE canary deployment stage in this pipeline.
      * 
      */
-    @Export(name="okeCanaryDeployStageId", type=String.class, parameters={})
+    @Export(name="okeCanaryDeployStageId", refs={String.class}, tree="[0]")
     private Output<String> okeCanaryDeployStageId;
 
     /**
@@ -657,7 +657,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * The OCID of an upstream OKE canary deployment traffic shift stage in this pipeline.
      * 
      */
-    @Export(name="okeCanaryTrafficShiftDeployStageId", type=String.class, parameters={})
+    @Export(name="okeCanaryTrafficShiftDeployStageId", refs={String.class}, tree="[0]")
     private Output<String> okeCanaryTrafficShiftDeployStageId;
 
     /**
@@ -671,7 +671,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * (Updatable) Kubernetes cluster environment OCID for deployment.
      * 
      */
-    @Export(name="okeClusterDeployEnvironmentId", type=String.class, parameters={})
+    @Export(name="okeClusterDeployEnvironmentId", refs={String.class}, tree="[0]")
     private Output<String> okeClusterDeployEnvironmentId;
 
     /**
@@ -685,7 +685,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
      * 
      */
-    @Export(name="productionLoadBalancerConfig", type=DeployStageProductionLoadBalancerConfig.class, parameters={})
+    @Export(name="productionLoadBalancerConfig", refs={DeployStageProductionLoadBalancerConfig.class}, tree="[0]")
     private Output<DeployStageProductionLoadBalancerConfig> productionLoadBalancerConfig;
 
     /**
@@ -699,7 +699,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * The OCID of a project.
      * 
      */
-    @Export(name="projectId", type=String.class, parameters={})
+    @Export(name="projectId", refs={String.class}, tree="[0]")
     private Output<String> projectId;
 
     /**
@@ -713,7 +713,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
      * 
      */
-    @Export(name="releaseName", type=String.class, parameters={})
+    @Export(name="releaseName", refs={String.class}, tree="[0]")
     private Output<String> releaseName;
 
     /**
@@ -727,7 +727,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * (Updatable) Specifies the rollback policy. This is initiated on the failure of certain stage types.
      * 
      */
-    @Export(name="rollbackPolicy", type=DeployStageRollbackPolicy.class, parameters={})
+    @Export(name="rollbackPolicy", refs={DeployStageRollbackPolicy.class}, tree="[0]")
     private Output<DeployStageRollbackPolicy> rollbackPolicy;
 
     /**
@@ -741,7 +741,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * (Updatable) Description of rollout policy for load balancer traffic shift stage.
      * 
      */
-    @Export(name="rolloutPolicy", type=DeployStageRolloutPolicy.class, parameters={})
+    @Export(name="rolloutPolicy", refs={DeployStageRolloutPolicy.class}, tree="[0]")
     private Output<DeployStageRolloutPolicy> rolloutPolicy;
 
     /**
@@ -755,7 +755,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * (Updatable) Specifies the name and value pairs to set helm values.
      * 
      */
-    @Export(name="setString", type=DeployStageSetString.class, parameters={})
+    @Export(name="setString", refs={DeployStageSetString.class}, tree="[0]")
     private Output<DeployStageSetString> setString;
 
     /**
@@ -769,7 +769,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * (Updatable) Specifies the name and value pairs to set helm values.
      * 
      */
-    @Export(name="setValues", type=DeployStageSetValues.class, parameters={})
+    @Export(name="setValues", refs={DeployStageSetValues.class}, tree="[0]")
     private Output<DeployStageSetValues> setValues;
 
     /**
@@ -783,7 +783,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * (Updatable) Allow deletion of new resources created during when an upgrade fails. Set to false by default.
      * 
      */
-    @Export(name="shouldCleanupOnFail", type=Boolean.class, parameters={})
+    @Export(name="shouldCleanupOnFail", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> shouldCleanupOnFail;
 
     /**
@@ -797,7 +797,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * (Updatable) Does not wait until all the resources are in a ready state to mark the release as successful if set to true. Set to false by default.
      * 
      */
-    @Export(name="shouldNotWait", type=Boolean.class, parameters={})
+    @Export(name="shouldNotWait", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> shouldNotWait;
 
     /**
@@ -811,7 +811,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * (Updatable) During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
      * 
      */
-    @Export(name="shouldResetValues", type=Boolean.class, parameters={})
+    @Export(name="shouldResetValues", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> shouldResetValues;
 
     /**
@@ -825,7 +825,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * (Updatable) During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
      * 
      */
-    @Export(name="shouldReuseValues", type=Boolean.class, parameters={})
+    @Export(name="shouldReuseValues", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> shouldReuseValues;
 
     /**
@@ -839,7 +839,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * (Updatable) If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
      * 
      */
-    @Export(name="shouldSkipCrds", type=Boolean.class, parameters={})
+    @Export(name="shouldSkipCrds", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> shouldSkipCrds;
 
     /**
@@ -853,7 +853,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * (Updatable) If set, renders subchart notes along with the parent. Set to false by default.
      * 
      */
-    @Export(name="shouldSkipRenderSubchartNotes", type=Boolean.class, parameters={})
+    @Export(name="shouldSkipRenderSubchartNotes", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> shouldSkipRenderSubchartNotes;
 
     /**
@@ -867,7 +867,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * The current state of the deployment stage.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -881,7 +881,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -895,7 +895,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
      * 
      */
-    @Export(name="testLoadBalancerConfig", type=DeployStageTestLoadBalancerConfig.class, parameters={})
+    @Export(name="testLoadBalancerConfig", refs={DeployStageTestLoadBalancerConfig.class}, tree="[0]")
     private Output<DeployStageTestLoadBalancerConfig> testLoadBalancerConfig;
 
     /**
@@ -909,7 +909,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * Time the deployment stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -923,7 +923,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * Time the deployment stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -937,7 +937,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * (Updatable) Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
      * 
      */
-    @Export(name="timeoutInSeconds", type=Integer.class, parameters={})
+    @Export(name="timeoutInSeconds", refs={Integer.class}, tree="[0]")
     private Output<Integer> timeoutInSeconds;
 
     /**
@@ -951,7 +951,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * (Updatable) Specifies the target or destination backend set.
      * 
      */
-    @Export(name="trafficShiftTarget", type=String.class, parameters={})
+    @Export(name="trafficShiftTarget", refs={String.class}, tree="[0]")
     private Output<String> trafficShiftTarget;
 
     /**
@@ -965,7 +965,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * (Updatable) List of values.yaml file artifact OCIDs.
      * 
      */
-    @Export(name="valuesArtifactIds", type=List.class, parameters={String.class})
+    @Export(name="valuesArtifactIds", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> valuesArtifactIds;
 
     /**
@@ -979,7 +979,7 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * (Updatable) Specifies wait criteria for the Wait stage.
      * 
      */
-    @Export(name="waitCriteria", type=DeployStageWaitCriteria.class, parameters={})
+    @Export(name="waitCriteria", refs={DeployStageWaitCriteria.class}, tree="[0]")
     private Output<DeployStageWaitCriteria> waitCriteria;
 
     /**

@@ -64,7 +64,7 @@ public class GeneratedScopedAccessToken extends com.pulumi.resources.CustomResou
      * A temporary public key, owned by the service. The service also owns the corresponding private key. This public key will by put inside the security token by the auth service after successful validation of the certificate.
      * 
      */
-    @Export(name="publicKey", type=String.class, parameters={})
+    @Export(name="publicKey", refs={String.class}, tree="[0]")
     private Output<String> publicKey;
 
     /**
@@ -81,7 +81,7 @@ public class GeneratedScopedAccessToken extends com.pulumi.resources.CustomResou
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="scope", type=String.class, parameters={})
+    @Export(name="scope", refs={String.class}, tree="[0]")
     private Output<String> scope;
 
     /**
@@ -98,7 +98,7 @@ public class GeneratedScopedAccessToken extends com.pulumi.resources.CustomResou
      * The security token, signed by auth service
      * 
      */
-    @Export(name="token", type=String.class, parameters={})
+    @Export(name="token", refs={String.class}, tree="[0]")
     private Output<String> token;
 
     /**

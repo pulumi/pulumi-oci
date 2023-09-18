@@ -15,13 +15,13 @@ import javax.annotation.Nullable;
 
 @ResourceType(type="oci:DataSafe/sensitiveDataModelsApplyDiscoveryJobResults:SensitiveDataModelsApplyDiscoveryJobResults")
 public class SensitiveDataModelsApplyDiscoveryJobResults extends com.pulumi.resources.CustomResource {
-    @Export(name="discoveryJobId", type=String.class, parameters={})
+    @Export(name="discoveryJobId", refs={String.class}, tree="[0]")
     private Output<String> discoveryJobId;
 
     public Output<String> discoveryJobId() {
         return this.discoveryJobId;
     }
-    @Export(name="sensitiveDataModelId", type=String.class, parameters={})
+    @Export(name="sensitiveDataModelId", refs={String.class}, tree="[0]")
     private Output<String> sensitiveDataModelId;
 
     public Output<String> sensitiveDataModelId() {

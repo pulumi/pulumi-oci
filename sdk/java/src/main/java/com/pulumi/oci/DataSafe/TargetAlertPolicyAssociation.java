@@ -73,7 +73,7 @@ public class TargetAlertPolicyAssociation extends com.pulumi.resources.CustomRes
      * (Updatable) The OCID of the compartment where the target-alert policy association is created.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -87,7 +87,7 @@ public class TargetAlertPolicyAssociation extends com.pulumi.resources.CustomRes
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -101,7 +101,7 @@ public class TargetAlertPolicyAssociation extends com.pulumi.resources.CustomRes
      * (Updatable) Describes the target-alert policy association.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -115,7 +115,7 @@ public class TargetAlertPolicyAssociation extends com.pulumi.resources.CustomRes
      * (Updatable) The display name of the target-alert policy association.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -129,7 +129,7 @@ public class TargetAlertPolicyAssociation extends com.pulumi.resources.CustomRes
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -143,7 +143,7 @@ public class TargetAlertPolicyAssociation extends com.pulumi.resources.CustomRes
      * (Updatable) Indicates if the target-alert policy association is enabled or disabled.
      * 
      */
-    @Export(name="isEnabled", type=Boolean.class, parameters={})
+    @Export(name="isEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isEnabled;
 
     /**
@@ -157,7 +157,7 @@ public class TargetAlertPolicyAssociation extends com.pulumi.resources.CustomRes
      * The OCID of the alert policy.
      * 
      */
-    @Export(name="policyId", type=String.class, parameters={})
+    @Export(name="policyId", refs={String.class}, tree="[0]")
     private Output<String> policyId;
 
     /**
@@ -171,7 +171,7 @@ public class TargetAlertPolicyAssociation extends com.pulumi.resources.CustomRes
      * The current state of the target-alert policy association.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -185,7 +185,7 @@ public class TargetAlertPolicyAssociation extends com.pulumi.resources.CustomRes
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -202,7 +202,7 @@ public class TargetAlertPolicyAssociation extends com.pulumi.resources.CustomRes
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="targetId", type=String.class, parameters={})
+    @Export(name="targetId", refs={String.class}, tree="[0]")
     private Output<String> targetId;
 
     /**
@@ -219,7 +219,7 @@ public class TargetAlertPolicyAssociation extends com.pulumi.resources.CustomRes
      * Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -233,7 +233,7 @@ public class TargetAlertPolicyAssociation extends com.pulumi.resources.CustomRes
      * Last date and time the alert policy was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

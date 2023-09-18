@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Build Pipeline Stage resource in Oracle Cloud Infrastructure Devops service.
@@ -412,6 +413,12 @@ func (i *BuildPipelineStage) ToBuildPipelineStageOutputWithContext(ctx context.C
 	return pulumi.ToOutputWithContext(ctx, i).(BuildPipelineStageOutput)
 }
 
+func (i *BuildPipelineStage) ToOutput(ctx context.Context) pulumix.Output[*BuildPipelineStage] {
+	return pulumix.Output[*BuildPipelineStage]{
+		OutputState: i.ToBuildPipelineStageOutputWithContext(ctx).OutputState,
+	}
+}
+
 // BuildPipelineStageArrayInput is an input type that accepts BuildPipelineStageArray and BuildPipelineStageArrayOutput values.
 // You can construct a concrete instance of `BuildPipelineStageArrayInput` via:
 //
@@ -435,6 +442,12 @@ func (i BuildPipelineStageArray) ToBuildPipelineStageArrayOutput() BuildPipeline
 
 func (i BuildPipelineStageArray) ToBuildPipelineStageArrayOutputWithContext(ctx context.Context) BuildPipelineStageArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BuildPipelineStageArrayOutput)
+}
+
+func (i BuildPipelineStageArray) ToOutput(ctx context.Context) pulumix.Output[[]*BuildPipelineStage] {
+	return pulumix.Output[[]*BuildPipelineStage]{
+		OutputState: i.ToBuildPipelineStageArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // BuildPipelineStageMapInput is an input type that accepts BuildPipelineStageMap and BuildPipelineStageMapOutput values.
@@ -462,6 +475,12 @@ func (i BuildPipelineStageMap) ToBuildPipelineStageMapOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(BuildPipelineStageMapOutput)
 }
 
+func (i BuildPipelineStageMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*BuildPipelineStage] {
+	return pulumix.Output[map[string]*BuildPipelineStage]{
+		OutputState: i.ToBuildPipelineStageMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type BuildPipelineStageOutput struct{ *pulumi.OutputState }
 
 func (BuildPipelineStageOutput) ElementType() reflect.Type {
@@ -474,6 +493,12 @@ func (o BuildPipelineStageOutput) ToBuildPipelineStageOutput() BuildPipelineStag
 
 func (o BuildPipelineStageOutput) ToBuildPipelineStageOutputWithContext(ctx context.Context) BuildPipelineStageOutput {
 	return o
+}
+
+func (o BuildPipelineStageOutput) ToOutput(ctx context.Context) pulumix.Output[*BuildPipelineStage] {
+	return pulumix.Output[*BuildPipelineStage]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the build pipeline.
@@ -623,6 +648,12 @@ func (o BuildPipelineStageArrayOutput) ToBuildPipelineStageArrayOutputWithContex
 	return o
 }
 
+func (o BuildPipelineStageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*BuildPipelineStage] {
+	return pulumix.Output[[]*BuildPipelineStage]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o BuildPipelineStageArrayOutput) Index(i pulumi.IntInput) BuildPipelineStageOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *BuildPipelineStage {
 		return vs[0].([]*BuildPipelineStage)[vs[1].(int)]
@@ -641,6 +672,12 @@ func (o BuildPipelineStageMapOutput) ToBuildPipelineStageMapOutput() BuildPipeli
 
 func (o BuildPipelineStageMapOutput) ToBuildPipelineStageMapOutputWithContext(ctx context.Context) BuildPipelineStageMapOutput {
 	return o
+}
+
+func (o BuildPipelineStageMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*BuildPipelineStage] {
+	return pulumix.Output[map[string]*BuildPipelineStage]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o BuildPipelineStageMapOutput) MapIndex(k pulumi.StringInput) BuildPipelineStageOutput {

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of RRsets in Oracle Cloud Infrastructure DNS service.
@@ -139,6 +140,12 @@ func (o GetRrsetsResultOutput) ToGetRrsetsResultOutput() GetRrsetsResultOutput {
 
 func (o GetRrsetsResultOutput) ToGetRrsetsResultOutputWithContext(ctx context.Context) GetRrsetsResultOutput {
 	return o
+}
+
+func (o GetRrsetsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRrsetsResult] {
+	return pulumix.Output[GetRrsetsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The fully qualified domain name where the record can be located.

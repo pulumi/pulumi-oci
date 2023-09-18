@@ -65,7 +65,7 @@ public class LogAnalyticsImportCustomContent extends com.pulumi.resources.Custom
      * LogAnalyticsImportCustomChangeList
      * 
      */
-    @Export(name="changeLists", type=List.class, parameters={LogAnalyticsImportCustomContentChangeList.class})
+    @Export(name="changeLists", refs={List.class,LogAnalyticsImportCustomContentChangeList.class}, tree="[0,1]")
     private Output<List<LogAnalyticsImportCustomContentChangeList>> changeLists;
 
     /**
@@ -79,7 +79,7 @@ public class LogAnalyticsImportCustomContent extends com.pulumi.resources.Custom
      * The content name.
      * 
      */
-    @Export(name="contentName", type=String.class, parameters={})
+    @Export(name="contentName", refs={String.class}, tree="[0]")
     private Output<String> contentName;
 
     /**
@@ -96,7 +96,7 @@ public class LogAnalyticsImportCustomContent extends com.pulumi.resources.Custom
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="expect", type=String.class, parameters={})
+    @Export(name="expect", refs={String.class}, tree="[0]")
     private Output<String> expect;
 
     /**
@@ -113,7 +113,7 @@ public class LogAnalyticsImportCustomContent extends com.pulumi.resources.Custom
      * The field names.
      * 
      */
-    @Export(name="fieldNames", type=List.class, parameters={String.class})
+    @Export(name="fieldNames", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> fieldNames;
 
     /**
@@ -127,7 +127,7 @@ public class LogAnalyticsImportCustomContent extends com.pulumi.resources.Custom
      * Path to the file to upload which contains the custom content.
      * 
      */
-    @Export(name="importCustomContentFile", type=String.class, parameters={})
+    @Export(name="importCustomContentFile", refs={String.class}, tree="[0]")
     private Output<String> importCustomContentFile;
 
     /**
@@ -141,7 +141,7 @@ public class LogAnalyticsImportCustomContent extends com.pulumi.resources.Custom
      * A flag indicating whether or not to overwrite existing content if a conflict is found during import content operation.
      * 
      */
-    @Export(name="isOverwrite", type=Boolean.class, parameters={})
+    @Export(name="isOverwrite", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isOverwrite;
 
     /**
@@ -155,7 +155,7 @@ public class LogAnalyticsImportCustomContent extends com.pulumi.resources.Custom
      * The Logging Analytics namespace used for the request.
      * 
      */
-    @Export(name="namespace", type=String.class, parameters={})
+    @Export(name="namespace", refs={String.class}, tree="[0]")
     private Output<String> namespace;
 
     /**
@@ -169,7 +169,7 @@ public class LogAnalyticsImportCustomContent extends com.pulumi.resources.Custom
      * The parser names.
      * 
      */
-    @Export(name="parserNames", type=List.class, parameters={String.class})
+    @Export(name="parserNames", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> parserNames;
 
     /**
@@ -183,7 +183,7 @@ public class LogAnalyticsImportCustomContent extends com.pulumi.resources.Custom
      * The source names.
      * 
      */
-    @Export(name="sourceNames", type=List.class, parameters={String.class})
+    @Export(name="sourceNames", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> sourceNames;
 
     /**

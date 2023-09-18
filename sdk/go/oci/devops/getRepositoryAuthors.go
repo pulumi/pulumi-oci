@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Repository Authors in Oracle Cloud Infrastructure Devops service.
@@ -110,6 +111,12 @@ func (o GetRepositoryAuthorsResultOutput) ToGetRepositoryAuthorsResultOutput() G
 
 func (o GetRepositoryAuthorsResultOutput) ToGetRepositoryAuthorsResultOutputWithContext(ctx context.Context) GetRepositoryAuthorsResultOutput {
 	return o
+}
+
+func (o GetRepositoryAuthorsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRepositoryAuthorsResult] {
+	return pulumix.Output[GetRepositoryAuthorsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetRepositoryAuthorsResultOutput) Filters() GetRepositoryAuthorsFilterArrayOutput {

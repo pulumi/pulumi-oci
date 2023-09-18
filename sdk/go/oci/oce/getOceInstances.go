@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Oce Instances in Oracle Cloud Infrastructure Content and Experience service.
@@ -125,6 +126,12 @@ func (o GetOceInstancesResultOutput) ToGetOceInstancesResultOutput() GetOceInsta
 
 func (o GetOceInstancesResultOutput) ToGetOceInstancesResultOutputWithContext(ctx context.Context) GetOceInstancesResultOutput {
 	return o
+}
+
+func (o GetOceInstancesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetOceInstancesResult] {
+	return pulumix.Output[GetOceInstancesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Compartment Identifier

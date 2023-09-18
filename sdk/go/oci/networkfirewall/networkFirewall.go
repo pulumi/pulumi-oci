@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Network Firewall resource in Oracle Cloud Infrastructure Network Firewall service.
@@ -292,6 +293,12 @@ func (i *NetworkFirewall) ToNetworkFirewallOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallOutput)
 }
 
+func (i *NetworkFirewall) ToOutput(ctx context.Context) pulumix.Output[*NetworkFirewall] {
+	return pulumix.Output[*NetworkFirewall]{
+		OutputState: i.ToNetworkFirewallOutputWithContext(ctx).OutputState,
+	}
+}
+
 // NetworkFirewallArrayInput is an input type that accepts NetworkFirewallArray and NetworkFirewallArrayOutput values.
 // You can construct a concrete instance of `NetworkFirewallArrayInput` via:
 //
@@ -315,6 +322,12 @@ func (i NetworkFirewallArray) ToNetworkFirewallArrayOutput() NetworkFirewallArra
 
 func (i NetworkFirewallArray) ToNetworkFirewallArrayOutputWithContext(ctx context.Context) NetworkFirewallArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallArrayOutput)
+}
+
+func (i NetworkFirewallArray) ToOutput(ctx context.Context) pulumix.Output[[]*NetworkFirewall] {
+	return pulumix.Output[[]*NetworkFirewall]{
+		OutputState: i.ToNetworkFirewallArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // NetworkFirewallMapInput is an input type that accepts NetworkFirewallMap and NetworkFirewallMapOutput values.
@@ -342,6 +355,12 @@ func (i NetworkFirewallMap) ToNetworkFirewallMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallMapOutput)
 }
 
+func (i NetworkFirewallMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*NetworkFirewall] {
+	return pulumix.Output[map[string]*NetworkFirewall]{
+		OutputState: i.ToNetworkFirewallMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type NetworkFirewallOutput struct{ *pulumi.OutputState }
 
 func (NetworkFirewallOutput) ElementType() reflect.Type {
@@ -354,6 +373,12 @@ func (o NetworkFirewallOutput) ToNetworkFirewallOutput() NetworkFirewallOutput {
 
 func (o NetworkFirewallOutput) ToNetworkFirewallOutputWithContext(ctx context.Context) NetworkFirewallOutput {
 	return o
+}
+
+func (o NetworkFirewallOutput) ToOutput(ctx context.Context) pulumix.Output[*NetworkFirewall] {
+	return pulumix.Output[*NetworkFirewall]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Availability Domain where Network Firewall instance is created. To get a list of availability domains for a tenancy, use [ListAvailabilityDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/AvailabilityDomain/ListAvailabilityDomains) operation. Example: `kIdk:PHX-AD-1`
@@ -448,6 +473,12 @@ func (o NetworkFirewallArrayOutput) ToNetworkFirewallArrayOutputWithContext(ctx 
 	return o
 }
 
+func (o NetworkFirewallArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*NetworkFirewall] {
+	return pulumix.Output[[]*NetworkFirewall]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o NetworkFirewallArrayOutput) Index(i pulumi.IntInput) NetworkFirewallOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *NetworkFirewall {
 		return vs[0].([]*NetworkFirewall)[vs[1].(int)]
@@ -466,6 +497,12 @@ func (o NetworkFirewallMapOutput) ToNetworkFirewallMapOutput() NetworkFirewallMa
 
 func (o NetworkFirewallMapOutput) ToNetworkFirewallMapOutputWithContext(ctx context.Context) NetworkFirewallMapOutput {
 	return o
+}
+
+func (o NetworkFirewallMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*NetworkFirewall] {
+	return pulumix.Output[map[string]*NetworkFirewall]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o NetworkFirewallMapOutput) MapIndex(k pulumi.StringInput) NetworkFirewallOutput {

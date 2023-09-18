@@ -77,7 +77,7 @@ public class DatabaseSoftwareImage extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the database software image  belongs in.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -91,7 +91,7 @@ public class DatabaseSoftwareImage extends com.pulumi.resources.CustomResource {
      * List of one-off patches for Database Homes.
      * 
      */
-    @Export(name="databaseSoftwareImageIncludedPatches", type=List.class, parameters={String.class})
+    @Export(name="databaseSoftwareImageIncludedPatches", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> databaseSoftwareImageIncludedPatches;
 
     /**
@@ -105,7 +105,7 @@ public class DatabaseSoftwareImage extends com.pulumi.resources.CustomResource {
      * List of one-off patches for Database Homes.
      * 
      */
-    @Export(name="databaseSoftwareImageOneOffPatches", type=List.class, parameters={String.class})
+    @Export(name="databaseSoftwareImageOneOffPatches", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> databaseSoftwareImageOneOffPatches;
 
     /**
@@ -119,7 +119,7 @@ public class DatabaseSoftwareImage extends com.pulumi.resources.CustomResource {
      * The database version with which the database software image is to be built.
      * 
      */
-    @Export(name="databaseVersion", type=String.class, parameters={})
+    @Export(name="databaseVersion", refs={String.class}, tree="[0]")
     private Output<String> databaseVersion;
 
     /**
@@ -133,7 +133,7 @@ public class DatabaseSoftwareImage extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -147,7 +147,7 @@ public class DatabaseSoftwareImage extends com.pulumi.resources.CustomResource {
      * (Updatable) The user-friendly name for the database software image. The name does not have to be unique.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -161,7 +161,7 @@ public class DatabaseSoftwareImage extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -175,7 +175,7 @@ public class DatabaseSoftwareImage extends com.pulumi.resources.CustomResource {
      * To what shape the image is meant for.
      * 
      */
-    @Export(name="imageShapeFamily", type=String.class, parameters={})
+    @Export(name="imageShapeFamily", refs={String.class}, tree="[0]")
     private Output<String> imageShapeFamily;
 
     /**
@@ -189,7 +189,7 @@ public class DatabaseSoftwareImage extends com.pulumi.resources.CustomResource {
      * The type of software image. Can be grid or database.
      * 
      */
-    @Export(name="imageType", type=String.class, parameters={})
+    @Export(name="imageType", refs={String.class}, tree="[0]")
     private Output<String> imageType;
 
     /**
@@ -203,7 +203,7 @@ public class DatabaseSoftwareImage extends com.pulumi.resources.CustomResource {
      * The patches included in the image and the version of the image.
      * 
      */
-    @Export(name="includedPatchesSummary", type=String.class, parameters={})
+    @Export(name="includedPatchesSummary", refs={String.class}, tree="[0]")
     private Output<String> includedPatchesSummary;
 
     /**
@@ -217,7 +217,7 @@ public class DatabaseSoftwareImage extends com.pulumi.resources.CustomResource {
      * True if this Database software image is supported for Upgrade.
      * 
      */
-    @Export(name="isUpgradeSupported", type=Boolean.class, parameters={})
+    @Export(name="isUpgradeSupported", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isUpgradeSupported;
 
     /**
@@ -231,7 +231,7 @@ public class DatabaseSoftwareImage extends com.pulumi.resources.CustomResource {
      * Detailed message for the lifecycle state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -245,7 +245,7 @@ public class DatabaseSoftwareImage extends com.pulumi.resources.CustomResource {
      * The output from the OPatch lsInventory command, which is passed as a string.
      * 
      */
-    @Export(name="lsInventory", type=String.class, parameters={})
+    @Export(name="lsInventory", refs={String.class}, tree="[0]")
     private Output<String> lsInventory;
 
     /**
@@ -259,7 +259,7 @@ public class DatabaseSoftwareImage extends com.pulumi.resources.CustomResource {
      * The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
      * 
      */
-    @Export(name="patchSet", type=String.class, parameters={})
+    @Export(name="patchSet", refs={String.class}, tree="[0]")
     private Output<String> patchSet;
 
     /**
@@ -276,7 +276,7 @@ public class DatabaseSoftwareImage extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="sourceDbHomeId", type=String.class, parameters={})
+    @Export(name="sourceDbHomeId", refs={String.class}, tree="[0]")
     private Output<String> sourceDbHomeId;
 
     /**
@@ -293,7 +293,7 @@ public class DatabaseSoftwareImage extends com.pulumi.resources.CustomResource {
      * The current state of the database software image.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -307,7 +307,7 @@ public class DatabaseSoftwareImage extends com.pulumi.resources.CustomResource {
      * The date and time the database software image was created.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**

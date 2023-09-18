@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Cluster Start Credential Rotation Management resource in Oracle Cloud Infrastructure Container Engine service.
@@ -161,6 +162,12 @@ func (i *ClusterStartCredentialRotationManagement) ToClusterStartCredentialRotat
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterStartCredentialRotationManagementOutput)
 }
 
+func (i *ClusterStartCredentialRotationManagement) ToOutput(ctx context.Context) pulumix.Output[*ClusterStartCredentialRotationManagement] {
+	return pulumix.Output[*ClusterStartCredentialRotationManagement]{
+		OutputState: i.ToClusterStartCredentialRotationManagementOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ClusterStartCredentialRotationManagementArrayInput is an input type that accepts ClusterStartCredentialRotationManagementArray and ClusterStartCredentialRotationManagementArrayOutput values.
 // You can construct a concrete instance of `ClusterStartCredentialRotationManagementArrayInput` via:
 //
@@ -184,6 +191,12 @@ func (i ClusterStartCredentialRotationManagementArray) ToClusterStartCredentialR
 
 func (i ClusterStartCredentialRotationManagementArray) ToClusterStartCredentialRotationManagementArrayOutputWithContext(ctx context.Context) ClusterStartCredentialRotationManagementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterStartCredentialRotationManagementArrayOutput)
+}
+
+func (i ClusterStartCredentialRotationManagementArray) ToOutput(ctx context.Context) pulumix.Output[[]*ClusterStartCredentialRotationManagement] {
+	return pulumix.Output[[]*ClusterStartCredentialRotationManagement]{
+		OutputState: i.ToClusterStartCredentialRotationManagementArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // ClusterStartCredentialRotationManagementMapInput is an input type that accepts ClusterStartCredentialRotationManagementMap and ClusterStartCredentialRotationManagementMapOutput values.
@@ -211,6 +224,12 @@ func (i ClusterStartCredentialRotationManagementMap) ToClusterStartCredentialRot
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterStartCredentialRotationManagementMapOutput)
 }
 
+func (i ClusterStartCredentialRotationManagementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ClusterStartCredentialRotationManagement] {
+	return pulumix.Output[map[string]*ClusterStartCredentialRotationManagement]{
+		OutputState: i.ToClusterStartCredentialRotationManagementMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ClusterStartCredentialRotationManagementOutput struct{ *pulumi.OutputState }
 
 func (ClusterStartCredentialRotationManagementOutput) ElementType() reflect.Type {
@@ -223,6 +242,12 @@ func (o ClusterStartCredentialRotationManagementOutput) ToClusterStartCredential
 
 func (o ClusterStartCredentialRotationManagementOutput) ToClusterStartCredentialRotationManagementOutputWithContext(ctx context.Context) ClusterStartCredentialRotationManagementOutput {
 	return o
+}
+
+func (o ClusterStartCredentialRotationManagementOutput) ToOutput(ctx context.Context) pulumix.Output[*ClusterStartCredentialRotationManagement] {
+	return pulumix.Output[*ClusterStartCredentialRotationManagement]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The duration in days(in ISO 8601 notation eg. P5D) after which the old credentials should be retired. Maximum delay duration is 14 days.
@@ -254,6 +279,12 @@ func (o ClusterStartCredentialRotationManagementArrayOutput) ToClusterStartCrede
 	return o
 }
 
+func (o ClusterStartCredentialRotationManagementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ClusterStartCredentialRotationManagement] {
+	return pulumix.Output[[]*ClusterStartCredentialRotationManagement]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o ClusterStartCredentialRotationManagementArrayOutput) Index(i pulumi.IntInput) ClusterStartCredentialRotationManagementOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ClusterStartCredentialRotationManagement {
 		return vs[0].([]*ClusterStartCredentialRotationManagement)[vs[1].(int)]
@@ -272,6 +303,12 @@ func (o ClusterStartCredentialRotationManagementMapOutput) ToClusterStartCredent
 
 func (o ClusterStartCredentialRotationManagementMapOutput) ToClusterStartCredentialRotationManagementMapOutputWithContext(ctx context.Context) ClusterStartCredentialRotationManagementMapOutput {
 	return o
+}
+
+func (o ClusterStartCredentialRotationManagementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ClusterStartCredentialRotationManagement] {
+	return pulumix.Output[map[string]*ClusterStartCredentialRotationManagement]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ClusterStartCredentialRotationManagementMapOutput) MapIndex(k pulumi.StringInput) ClusterStartCredentialRotationManagementOutput {

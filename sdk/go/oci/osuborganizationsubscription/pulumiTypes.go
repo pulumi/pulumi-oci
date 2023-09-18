@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -50,6 +51,12 @@ func (i GetOrganizationSubscriptionsFilterArgs) ToGetOrganizationSubscriptionsFi
 	return pulumi.ToOutputWithContext(ctx, i).(GetOrganizationSubscriptionsFilterOutput)
 }
 
+func (i GetOrganizationSubscriptionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetOrganizationSubscriptionsFilter] {
+	return pulumix.Output[GetOrganizationSubscriptionsFilter]{
+		OutputState: i.ToGetOrganizationSubscriptionsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetOrganizationSubscriptionsFilterArrayInput is an input type that accepts GetOrganizationSubscriptionsFilterArray and GetOrganizationSubscriptionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetOrganizationSubscriptionsFilterArrayInput` via:
 //
@@ -75,6 +82,12 @@ func (i GetOrganizationSubscriptionsFilterArray) ToGetOrganizationSubscriptionsF
 	return pulumi.ToOutputWithContext(ctx, i).(GetOrganizationSubscriptionsFilterArrayOutput)
 }
 
+func (i GetOrganizationSubscriptionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOrganizationSubscriptionsFilter] {
+	return pulumix.Output[[]GetOrganizationSubscriptionsFilter]{
+		OutputState: i.ToGetOrganizationSubscriptionsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetOrganizationSubscriptionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetOrganizationSubscriptionsFilterOutput) ElementType() reflect.Type {
@@ -87,6 +100,12 @@ func (o GetOrganizationSubscriptionsFilterOutput) ToGetOrganizationSubscriptions
 
 func (o GetOrganizationSubscriptionsFilterOutput) ToGetOrganizationSubscriptionsFilterOutputWithContext(ctx context.Context) GetOrganizationSubscriptionsFilterOutput {
 	return o
+}
+
+func (o GetOrganizationSubscriptionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetOrganizationSubscriptionsFilter] {
+	return pulumix.Output[GetOrganizationSubscriptionsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Currency name
@@ -114,6 +133,12 @@ func (o GetOrganizationSubscriptionsFilterArrayOutput) ToGetOrganizationSubscrip
 
 func (o GetOrganizationSubscriptionsFilterArrayOutput) ToGetOrganizationSubscriptionsFilterArrayOutputWithContext(ctx context.Context) GetOrganizationSubscriptionsFilterArrayOutput {
 	return o
+}
+
+func (o GetOrganizationSubscriptionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOrganizationSubscriptionsFilter] {
+	return pulumix.Output[[]GetOrganizationSubscriptionsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetOrganizationSubscriptionsFilterArrayOutput) Index(i pulumi.IntInput) GetOrganizationSubscriptionsFilterOutput {
@@ -183,6 +208,12 @@ func (i GetOrganizationSubscriptionsSubscriptionArgs) ToGetOrganizationSubscript
 	return pulumi.ToOutputWithContext(ctx, i).(GetOrganizationSubscriptionsSubscriptionOutput)
 }
 
+func (i GetOrganizationSubscriptionsSubscriptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetOrganizationSubscriptionsSubscription] {
+	return pulumix.Output[GetOrganizationSubscriptionsSubscription]{
+		OutputState: i.ToGetOrganizationSubscriptionsSubscriptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetOrganizationSubscriptionsSubscriptionArrayInput is an input type that accepts GetOrganizationSubscriptionsSubscriptionArray and GetOrganizationSubscriptionsSubscriptionArrayOutput values.
 // You can construct a concrete instance of `GetOrganizationSubscriptionsSubscriptionArrayInput` via:
 //
@@ -208,6 +239,12 @@ func (i GetOrganizationSubscriptionsSubscriptionArray) ToGetOrganizationSubscrip
 	return pulumi.ToOutputWithContext(ctx, i).(GetOrganizationSubscriptionsSubscriptionArrayOutput)
 }
 
+func (i GetOrganizationSubscriptionsSubscriptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOrganizationSubscriptionsSubscription] {
+	return pulumix.Output[[]GetOrganizationSubscriptionsSubscription]{
+		OutputState: i.ToGetOrganizationSubscriptionsSubscriptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetOrganizationSubscriptionsSubscriptionOutput struct{ *pulumi.OutputState }
 
 func (GetOrganizationSubscriptionsSubscriptionOutput) ElementType() reflect.Type {
@@ -220,6 +257,12 @@ func (o GetOrganizationSubscriptionsSubscriptionOutput) ToGetOrganizationSubscri
 
 func (o GetOrganizationSubscriptionsSubscriptionOutput) ToGetOrganizationSubscriptionsSubscriptionOutputWithContext(ctx context.Context) GetOrganizationSubscriptionsSubscriptionOutput {
 	return o
+}
+
+func (o GetOrganizationSubscriptionsSubscriptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetOrganizationSubscriptionsSubscription] {
+	return pulumix.Output[GetOrganizationSubscriptionsSubscription]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Currency details
@@ -278,6 +321,12 @@ func (o GetOrganizationSubscriptionsSubscriptionArrayOutput) ToGetOrganizationSu
 	return o
 }
 
+func (o GetOrganizationSubscriptionsSubscriptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOrganizationSubscriptionsSubscription] {
+	return pulumix.Output[[]GetOrganizationSubscriptionsSubscription]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetOrganizationSubscriptionsSubscriptionArrayOutput) Index(i pulumi.IntInput) GetOrganizationSubscriptionsSubscriptionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOrganizationSubscriptionsSubscription {
 		return vs[0].([]GetOrganizationSubscriptionsSubscription)[vs[1].(int)]
@@ -325,6 +374,12 @@ func (i GetOrganizationSubscriptionsSubscriptionCurrencyArgs) ToGetOrganizationS
 	return pulumi.ToOutputWithContext(ctx, i).(GetOrganizationSubscriptionsSubscriptionCurrencyOutput)
 }
 
+func (i GetOrganizationSubscriptionsSubscriptionCurrencyArgs) ToOutput(ctx context.Context) pulumix.Output[GetOrganizationSubscriptionsSubscriptionCurrency] {
+	return pulumix.Output[GetOrganizationSubscriptionsSubscriptionCurrency]{
+		OutputState: i.ToGetOrganizationSubscriptionsSubscriptionCurrencyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetOrganizationSubscriptionsSubscriptionCurrencyArrayInput is an input type that accepts GetOrganizationSubscriptionsSubscriptionCurrencyArray and GetOrganizationSubscriptionsSubscriptionCurrencyArrayOutput values.
 // You can construct a concrete instance of `GetOrganizationSubscriptionsSubscriptionCurrencyArrayInput` via:
 //
@@ -350,6 +405,12 @@ func (i GetOrganizationSubscriptionsSubscriptionCurrencyArray) ToGetOrganization
 	return pulumi.ToOutputWithContext(ctx, i).(GetOrganizationSubscriptionsSubscriptionCurrencyArrayOutput)
 }
 
+func (i GetOrganizationSubscriptionsSubscriptionCurrencyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOrganizationSubscriptionsSubscriptionCurrency] {
+	return pulumix.Output[[]GetOrganizationSubscriptionsSubscriptionCurrency]{
+		OutputState: i.ToGetOrganizationSubscriptionsSubscriptionCurrencyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetOrganizationSubscriptionsSubscriptionCurrencyOutput struct{ *pulumi.OutputState }
 
 func (GetOrganizationSubscriptionsSubscriptionCurrencyOutput) ElementType() reflect.Type {
@@ -362,6 +423,12 @@ func (o GetOrganizationSubscriptionsSubscriptionCurrencyOutput) ToGetOrganizatio
 
 func (o GetOrganizationSubscriptionsSubscriptionCurrencyOutput) ToGetOrganizationSubscriptionsSubscriptionCurrencyOutputWithContext(ctx context.Context) GetOrganizationSubscriptionsSubscriptionCurrencyOutput {
 	return o
+}
+
+func (o GetOrganizationSubscriptionsSubscriptionCurrencyOutput) ToOutput(ctx context.Context) pulumix.Output[GetOrganizationSubscriptionsSubscriptionCurrency] {
+	return pulumix.Output[GetOrganizationSubscriptionsSubscriptionCurrency]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Currency Code
@@ -391,6 +458,12 @@ func (o GetOrganizationSubscriptionsSubscriptionCurrencyArrayOutput) ToGetOrgani
 
 func (o GetOrganizationSubscriptionsSubscriptionCurrencyArrayOutput) ToGetOrganizationSubscriptionsSubscriptionCurrencyArrayOutputWithContext(ctx context.Context) GetOrganizationSubscriptionsSubscriptionCurrencyArrayOutput {
 	return o
+}
+
+func (o GetOrganizationSubscriptionsSubscriptionCurrencyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOrganizationSubscriptionsSubscriptionCurrency] {
+	return pulumix.Output[[]GetOrganizationSubscriptionsSubscriptionCurrency]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetOrganizationSubscriptionsSubscriptionCurrencyArrayOutput) Index(i pulumi.IntInput) GetOrganizationSubscriptionsSubscriptionCurrencyOutput {

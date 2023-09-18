@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Compute Capacity Reservations in Oracle Cloud Infrastructure Core service.
@@ -129,6 +130,12 @@ func (o GetComputeCapacityReservationsResultOutput) ToGetComputeCapacityReservat
 
 func (o GetComputeCapacityReservationsResultOutput) ToGetComputeCapacityReservationsResultOutputWithContext(ctx context.Context) GetComputeCapacityReservationsResultOutput {
 	return o
+}
+
+func (o GetComputeCapacityReservationsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetComputeCapacityReservationsResult] {
+	return pulumix.Output[GetComputeCapacityReservationsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The availability domain of the compute capacity reservation.  Example: `Uocm:PHX-AD-1`

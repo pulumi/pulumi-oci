@@ -72,7 +72,7 @@ public class Verify extends com.pulumi.resources.CustomResource {
      * The service endpoint to perform cryptographic operations against. Cryptographic operations include &#39;Encrypt,&#39; &#39;Decrypt,&#39;, &#39;GenerateDataEncryptionKey&#39;, &#39;Sign&#39; and &#39;Verify&#39; operations. see Vault Crypto endpoint.
      * 
      */
-    @Export(name="cryptoEndpoint", type=String.class, parameters={})
+    @Export(name="cryptoEndpoint", refs={String.class}, tree="[0]")
     private Output<String> cryptoEndpoint;
 
     /**
@@ -86,7 +86,7 @@ public class Verify extends com.pulumi.resources.CustomResource {
      * A Boolean value that indicates whether the signature was verified.
      * 
      */
-    @Export(name="isSignatureValid", type=Boolean.class, parameters={})
+    @Export(name="isSignatureValid", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isSignatureValid;
 
     /**
@@ -100,7 +100,7 @@ public class Verify extends com.pulumi.resources.CustomResource {
      * The OCID of the key used to sign the message.
      * 
      */
-    @Export(name="keyId", type=String.class, parameters={})
+    @Export(name="keyId", refs={String.class}, tree="[0]")
     private Output<String> keyId;
 
     /**
@@ -114,7 +114,7 @@ public class Verify extends com.pulumi.resources.CustomResource {
      * The OCID of the key version used to sign the message.
      * 
      */
-    @Export(name="keyVersionId", type=String.class, parameters={})
+    @Export(name="keyVersionId", refs={String.class}, tree="[0]")
     private Output<String> keyVersionId;
 
     /**
@@ -128,7 +128,7 @@ public class Verify extends com.pulumi.resources.CustomResource {
      * The base64-encoded binary data object denoting the message or message digest to sign. You can have a message up to 4096 bytes in size. To sign a larger message, provide the message digest.
      * 
      */
-    @Export(name="message", type=String.class, parameters={})
+    @Export(name="message", refs={String.class}, tree="[0]")
     private Output<String> message;
 
     /**
@@ -142,7 +142,7 @@ public class Verify extends com.pulumi.resources.CustomResource {
      * Denotes whether the value of the message parameter is a raw message or a message digest.  The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
      * 
      */
-    @Export(name="messageType", type=String.class, parameters={})
+    @Export(name="messageType", refs={String.class}, tree="[0]")
     private Output<String> messageType;
 
     /**
@@ -156,7 +156,7 @@ public class Verify extends com.pulumi.resources.CustomResource {
      * The base64-encoded binary data object denoting the cryptographic signature generated for the message.
      * 
      */
-    @Export(name="signature", type=String.class, parameters={})
+    @Export(name="signature", refs={String.class}, tree="[0]")
     private Output<String> signature;
 
     /**
@@ -173,7 +173,7 @@ public class Verify extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="signingAlgorithm", type=String.class, parameters={})
+    @Export(name="signingAlgorithm", refs={String.class}, tree="[0]")
     private Output<String> signingAlgorithm;
 
     /**

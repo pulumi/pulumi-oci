@@ -76,7 +76,7 @@ public class LogAnalyticsEntity extends com.pulumi.resources.CustomResource {
      * The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
      * 
      */
-    @Export(name="areLogsCollected", type=Boolean.class, parameters={})
+    @Export(name="areLogsCollected", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> areLogsCollected;
 
     /**
@@ -90,7 +90,7 @@ public class LogAnalyticsEntity extends com.pulumi.resources.CustomResource {
      * The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
      * 
      */
-    @Export(name="cloudResourceId", type=String.class, parameters={})
+    @Export(name="cloudResourceId", refs={String.class}, tree="[0]")
     private Output<String> cloudResourceId;
 
     /**
@@ -104,7 +104,7 @@ public class LogAnalyticsEntity extends com.pulumi.resources.CustomResource {
      * (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -118,7 +118,7 @@ public class LogAnalyticsEntity extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -132,7 +132,7 @@ public class LogAnalyticsEntity extends com.pulumi.resources.CustomResource {
      * Internal name for the log analytics entity type.
      * 
      */
-    @Export(name="entityTypeInternalName", type=String.class, parameters={})
+    @Export(name="entityTypeInternalName", refs={String.class}, tree="[0]")
     private Output<String> entityTypeInternalName;
 
     /**
@@ -146,7 +146,7 @@ public class LogAnalyticsEntity extends com.pulumi.resources.CustomResource {
      * Log analytics entity type name.
      * 
      */
-    @Export(name="entityTypeName", type=String.class, parameters={})
+    @Export(name="entityTypeName", refs={String.class}, tree="[0]")
     private Output<String> entityTypeName;
 
     /**
@@ -160,7 +160,7 @@ public class LogAnalyticsEntity extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -174,7 +174,7 @@ public class LogAnalyticsEntity extends com.pulumi.resources.CustomResource {
      * (Updatable) The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
      * 
      */
-    @Export(name="hostname", type=String.class, parameters={})
+    @Export(name="hostname", refs={String.class}, tree="[0]")
     private Output<String> hostname;
 
     /**
@@ -188,7 +188,7 @@ public class LogAnalyticsEntity extends com.pulumi.resources.CustomResource {
      * lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -202,7 +202,7 @@ public class LogAnalyticsEntity extends com.pulumi.resources.CustomResource {
      * Management agent (management-agents resource kind) compartment OCID
      * 
      */
-    @Export(name="managementAgentCompartmentId", type=String.class, parameters={})
+    @Export(name="managementAgentCompartmentId", refs={String.class}, tree="[0]")
     private Output<String> managementAgentCompartmentId;
 
     /**
@@ -216,7 +216,7 @@ public class LogAnalyticsEntity extends com.pulumi.resources.CustomResource {
      * Management agent (management-agents resource kind) display name
      * 
      */
-    @Export(name="managementAgentDisplayName", type=String.class, parameters={})
+    @Export(name="managementAgentDisplayName", refs={String.class}, tree="[0]")
     private Output<String> managementAgentDisplayName;
 
     /**
@@ -230,7 +230,7 @@ public class LogAnalyticsEntity extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the Management Agent.
      * 
      */
-    @Export(name="managementAgentId", type=String.class, parameters={})
+    @Export(name="managementAgentId", refs={String.class}, tree="[0]")
     private Output<String> managementAgentId;
 
     /**
@@ -244,7 +244,7 @@ public class LogAnalyticsEntity extends com.pulumi.resources.CustomResource {
      * (Updatable) Log analytics entity name.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -258,7 +258,7 @@ public class LogAnalyticsEntity extends com.pulumi.resources.CustomResource {
      * The Logging Analytics namespace used for the request.
      * 
      */
-    @Export(name="namespace", type=String.class, parameters={})
+    @Export(name="namespace", refs={String.class}, tree="[0]")
     private Output<String> namespace;
 
     /**
@@ -272,7 +272,7 @@ public class LogAnalyticsEntity extends com.pulumi.resources.CustomResource {
      * (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
      * 
      */
-    @Export(name="properties", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="properties", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> properties;
 
     /**
@@ -286,7 +286,7 @@ public class LogAnalyticsEntity extends com.pulumi.resources.CustomResource {
      * This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
      * 
      */
-    @Export(name="sourceId", type=String.class, parameters={})
+    @Export(name="sourceId", refs={String.class}, tree="[0]")
     private Output<String> sourceId;
 
     /**
@@ -300,7 +300,7 @@ public class LogAnalyticsEntity extends com.pulumi.resources.CustomResource {
      * The current state of the log analytics entity.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -314,7 +314,7 @@ public class LogAnalyticsEntity extends com.pulumi.resources.CustomResource {
      * The date and time the resource was created, in the format defined by RFC3339.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -328,7 +328,7 @@ public class LogAnalyticsEntity extends com.pulumi.resources.CustomResource {
      * The date and time the resource was last updated, in the format defined by RFC3339.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -345,7 +345,7 @@ public class LogAnalyticsEntity extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="timezoneRegion", type=String.class, parameters={})
+    @Export(name="timezoneRegion", refs={String.class}, tree="[0]")
     private Output<String> timezoneRegion;
 
     /**

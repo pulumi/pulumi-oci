@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Data Asset resource in Oracle Cloud Infrastructure Data Catalog service.
@@ -139,6 +140,12 @@ func (o LookupDataAssetResultOutput) ToLookupDataAssetResultOutput() LookupDataA
 
 func (o LookupDataAssetResultOutput) ToLookupDataAssetResultOutputWithContext(ctx context.Context) LookupDataAssetResultOutput {
 	return o
+}
+
+func (o LookupDataAssetResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDataAssetResult] {
+	return pulumix.Output[LookupDataAssetResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The data catalog's OCID.

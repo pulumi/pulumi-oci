@@ -88,7 +88,7 @@ public class ExternalDatabaseConnector extends com.pulumi.resources.CustomResour
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -102,7 +102,7 @@ public class ExternalDatabaseConnector extends com.pulumi.resources.CustomResour
      * (Updatable) Credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector crendentials.
      * 
      */
-    @Export(name="connectionCredentials", type=ExternalDatabaseConnectorConnectionCredentials.class, parameters={})
+    @Export(name="connectionCredentials", refs={ExternalDatabaseConnectorConnectionCredentials.class}, tree="[0]")
     private Output<ExternalDatabaseConnectorConnectionCredentials> connectionCredentials;
 
     /**
@@ -116,7 +116,7 @@ public class ExternalDatabaseConnector extends com.pulumi.resources.CustomResour
      * The status of connectivity to the external database.
      * 
      */
-    @Export(name="connectionStatus", type=String.class, parameters={})
+    @Export(name="connectionStatus", refs={String.class}, tree="[0]")
     private Output<String> connectionStatus;
 
     /**
@@ -130,7 +130,7 @@ public class ExternalDatabaseConnector extends com.pulumi.resources.CustomResour
      * (Updatable) The Oracle Database connection string.
      * 
      */
-    @Export(name="connectionString", type=ExternalDatabaseConnectorConnectionString.class, parameters={})
+    @Export(name="connectionString", refs={ExternalDatabaseConnectorConnectionString.class}, tree="[0]")
     private Output<ExternalDatabaseConnectorConnectionString> connectionString;
 
     /**
@@ -144,7 +144,7 @@ public class ExternalDatabaseConnector extends com.pulumi.resources.CustomResour
      * The ID of the agent used for the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
      * 
      */
-    @Export(name="connectorAgentId", type=String.class, parameters={})
+    @Export(name="connectorAgentId", refs={String.class}, tree="[0]")
     private Output<String> connectorAgentId;
 
     /**
@@ -158,7 +158,7 @@ public class ExternalDatabaseConnector extends com.pulumi.resources.CustomResour
      * (Updatable) The type of connector used by the external database resource.
      * 
      */
-    @Export(name="connectorType", type=String.class, parameters={})
+    @Export(name="connectorType", refs={String.class}, tree="[0]")
     private Output<String> connectorType;
 
     /**
@@ -172,7 +172,7 @@ public class ExternalDatabaseConnector extends com.pulumi.resources.CustomResour
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -186,7 +186,7 @@ public class ExternalDatabaseConnector extends com.pulumi.resources.CustomResour
      * (Updatable) The user-friendly name for the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails). The name does not have to be unique.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -200,7 +200,7 @@ public class ExternalDatabaseConnector extends com.pulumi.resources.CustomResour
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database resource.
      * 
      */
-    @Export(name="externalDatabaseId", type=String.class, parameters={})
+    @Export(name="externalDatabaseId", refs={String.class}, tree="[0]")
     private Output<String> externalDatabaseId;
 
     /**
@@ -217,7 +217,7 @@ public class ExternalDatabaseConnector extends com.pulumi.resources.CustomResour
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -234,7 +234,7 @@ public class ExternalDatabaseConnector extends com.pulumi.resources.CustomResour
      * Additional information about the current lifecycle state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -248,7 +248,7 @@ public class ExternalDatabaseConnector extends com.pulumi.resources.CustomResour
      * The current lifecycle state of the external database connector resource.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -262,7 +262,7 @@ public class ExternalDatabaseConnector extends com.pulumi.resources.CustomResour
      * The date and time the `connectionStatus` of this external connector was last updated.
      * 
      */
-    @Export(name="timeConnectionStatusLastUpdated", type=String.class, parameters={})
+    @Export(name="timeConnectionStatusLastUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeConnectionStatusLastUpdated;
 
     /**
@@ -276,7 +276,7 @@ public class ExternalDatabaseConnector extends com.pulumi.resources.CustomResour
      * The date and time the external connector was created.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**

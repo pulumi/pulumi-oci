@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of External Asm Instances in Oracle Cloud Infrastructure Database Management service.
@@ -119,6 +120,12 @@ func (o GetExternalAsmInstancesResultOutput) ToGetExternalAsmInstancesResultOutp
 
 func (o GetExternalAsmInstancesResultOutput) ToGetExternalAsmInstancesResultOutputWithContext(ctx context.Context) GetExternalAsmInstancesResultOutput {
 	return o
+}
+
+func (o GetExternalAsmInstancesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetExternalAsmInstancesResult] {
+	return pulumix.Output[GetExternalAsmInstancesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

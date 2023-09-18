@@ -91,7 +91,7 @@ public class Listener extends com.pulumi.resources.CustomResource {
      * (Updatable) Configuration details for the connection between the client and backend servers.
      * 
      */
-    @Export(name="connectionConfiguration", type=ListenerConnectionConfiguration.class, parameters={})
+    @Export(name="connectionConfiguration", refs={ListenerConnectionConfiguration.class}, tree="[0]")
     private Output<ListenerConnectionConfiguration> connectionConfiguration;
 
     /**
@@ -105,7 +105,7 @@ public class Listener extends com.pulumi.resources.CustomResource {
      * (Updatable) The name of the associated backend set.  Example: `example_backend_set`
      * 
      */
-    @Export(name="defaultBackendSetName", type=String.class, parameters={})
+    @Export(name="defaultBackendSetName", refs={String.class}, tree="[0]")
     private Output<String> defaultBackendSetName;
 
     /**
@@ -119,7 +119,7 @@ public class Listener extends com.pulumi.resources.CustomResource {
      * (Updatable) An array of hostname resource names.
      * 
      */
-    @Export(name="hostnameNames", type=List.class, parameters={String.class})
+    @Export(name="hostnameNames", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> hostnameNames;
 
     /**
@@ -133,7 +133,7 @@ public class Listener extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer on which to add a listener.
      * 
      */
-    @Export(name="loadBalancerId", type=String.class, parameters={})
+    @Export(name="loadBalancerId", refs={String.class}, tree="[0]")
     private Output<String> loadBalancerId;
 
     /**
@@ -147,7 +147,7 @@ public class Listener extends com.pulumi.resources.CustomResource {
      * A friendly name for the listener. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_listener`
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -165,7 +165,7 @@ public class Listener extends com.pulumi.resources.CustomResource {
      * Example: `example_path_route_set`
      * 
      */
-    @Export(name="pathRouteSetName", type=String.class, parameters={})
+    @Export(name="pathRouteSetName", refs={String.class}, tree="[0]")
     private Output<String> pathRouteSetName;
 
     /**
@@ -183,7 +183,7 @@ public class Listener extends com.pulumi.resources.CustomResource {
      * (Updatable) The communication port for the listener.  Example: `80`
      * 
      */
-    @Export(name="port", type=Integer.class, parameters={})
+    @Export(name="port", refs={Integer.class}, tree="[0]")
     private Output<Integer> port;
 
     /**
@@ -197,7 +197,7 @@ public class Listener extends com.pulumi.resources.CustomResource {
      * (Updatable) The protocol on which the listener accepts connection requests. To get a list of valid protocols, use the [ListProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerProtocol/ListProtocols) operation.  Example: `HTTP`
      * 
      */
-    @Export(name="protocol", type=String.class, parameters={})
+    @Export(name="protocol", refs={String.class}, tree="[0]")
     private Output<String> protocol;
 
     /**
@@ -211,7 +211,7 @@ public class Listener extends com.pulumi.resources.CustomResource {
      * (Updatable) The name of the routing policy applied to this listener&#39;s traffic.  Example: `example_routing_policy`
      * 
      */
-    @Export(name="routingPolicyName", type=String.class, parameters={})
+    @Export(name="routingPolicyName", refs={String.class}, tree="[0]")
     private Output<String> routingPolicyName;
 
     /**
@@ -225,7 +225,7 @@ public class Listener extends com.pulumi.resources.CustomResource {
      * (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: [&#34;example_rule_set&#34;]
      * 
      */
-    @Export(name="ruleSetNames", type=List.class, parameters={String.class})
+    @Export(name="ruleSetNames", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> ruleSetNames;
 
     /**
@@ -241,7 +241,7 @@ public class Listener extends com.pulumi.resources.CustomResource {
      * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      * 
      */
-    @Export(name="sslConfiguration", type=ListenerSslConfiguration.class, parameters={})
+    @Export(name="sslConfiguration", refs={ListenerSslConfiguration.class}, tree="[0]")
     private Output</* @Nullable */ ListenerSslConfiguration> sslConfiguration;
 
     /**
@@ -253,7 +253,7 @@ public class Listener extends com.pulumi.resources.CustomResource {
     public Output<Optional<ListenerSslConfiguration>> sslConfiguration() {
         return Codegen.optional(this.sslConfiguration);
     }
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     public Output<String> state() {

@@ -73,7 +73,7 @@ public class OperationsInsightsWarehouse extends com.pulumi.resources.CustomReso
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -87,7 +87,7 @@ public class OperationsInsightsWarehouse extends com.pulumi.resources.CustomReso
      * (Updatable) Number of OCPUs allocated to OPSI Warehouse ADW.
      * 
      */
-    @Export(name="cpuAllocated", type=Double.class, parameters={})
+    @Export(name="cpuAllocated", refs={Double.class}, tree="[0]")
     private Output<Double> cpuAllocated;
 
     /**
@@ -101,7 +101,7 @@ public class OperationsInsightsWarehouse extends com.pulumi.resources.CustomReso
      * Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
      * 
      */
-    @Export(name="cpuUsed", type=Double.class, parameters={})
+    @Export(name="cpuUsed", refs={Double.class}, tree="[0]")
     private Output<Double> cpuUsed;
 
     /**
@@ -115,7 +115,7 @@ public class OperationsInsightsWarehouse extends com.pulumi.resources.CustomReso
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -129,7 +129,7 @@ public class OperationsInsightsWarehouse extends com.pulumi.resources.CustomReso
      * (Updatable) User-friedly name of Operations Insights Warehouse that does not have to be unique.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -143,7 +143,7 @@ public class OperationsInsightsWarehouse extends com.pulumi.resources.CustomReso
      * OCID of the dynamic group created for the warehouse
      * 
      */
-    @Export(name="dynamicGroupId", type=String.class, parameters={})
+    @Export(name="dynamicGroupId", refs={String.class}, tree="[0]")
     private Output<String> dynamicGroupId;
 
     /**
@@ -157,7 +157,7 @@ public class OperationsInsightsWarehouse extends com.pulumi.resources.CustomReso
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -171,7 +171,7 @@ public class OperationsInsightsWarehouse extends com.pulumi.resources.CustomReso
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -185,7 +185,7 @@ public class OperationsInsightsWarehouse extends com.pulumi.resources.CustomReso
      * Tenancy Identifier of Operations Insights service
      * 
      */
-    @Export(name="operationsInsightsTenancyId", type=String.class, parameters={})
+    @Export(name="operationsInsightsTenancyId", refs={String.class}, tree="[0]")
     private Output<String> operationsInsightsTenancyId;
 
     /**
@@ -199,7 +199,7 @@ public class OperationsInsightsWarehouse extends com.pulumi.resources.CustomReso
      * Possible lifecycle states
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -216,7 +216,7 @@ public class OperationsInsightsWarehouse extends com.pulumi.resources.CustomReso
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="storageAllocatedInGbs", type=Double.class, parameters={})
+    @Export(name="storageAllocatedInGbs", refs={Double.class}, tree="[0]")
     private Output<Double> storageAllocatedInGbs;
 
     /**
@@ -233,7 +233,7 @@ public class OperationsInsightsWarehouse extends com.pulumi.resources.CustomReso
      * Storage by OPSI Warehouse ADW in GB.
      * 
      */
-    @Export(name="storageUsedInGbs", type=Double.class, parameters={})
+    @Export(name="storageUsedInGbs", refs={Double.class}, tree="[0]")
     private Output<Double> storageUsedInGbs;
 
     /**
@@ -247,7 +247,7 @@ public class OperationsInsightsWarehouse extends com.pulumi.resources.CustomReso
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -261,7 +261,7 @@ public class OperationsInsightsWarehouse extends com.pulumi.resources.CustomReso
      * The time at which the resource was first created. An RFC3339 formatted datetime string
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -275,7 +275,7 @@ public class OperationsInsightsWarehouse extends com.pulumi.resources.CustomReso
      * The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
      * 
      */
-    @Export(name="timeLastWalletRotated", type=String.class, parameters={})
+    @Export(name="timeLastWalletRotated", refs={String.class}, tree="[0]")
     private Output<String> timeLastWalletRotated;
 
     /**
@@ -289,7 +289,7 @@ public class OperationsInsightsWarehouse extends com.pulumi.resources.CustomReso
      * The time at which the resource was last updated. An RFC3339 formatted datetime string
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

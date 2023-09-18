@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Autonomous Database Regional Wallet Management resource in Oracle Cloud Infrastructure Database service.
@@ -166,6 +167,12 @@ func (i *AutonomousDatabaseRegionalWalletManagement) ToAutonomousDatabaseRegiona
 	return pulumi.ToOutputWithContext(ctx, i).(AutonomousDatabaseRegionalWalletManagementOutput)
 }
 
+func (i *AutonomousDatabaseRegionalWalletManagement) ToOutput(ctx context.Context) pulumix.Output[*AutonomousDatabaseRegionalWalletManagement] {
+	return pulumix.Output[*AutonomousDatabaseRegionalWalletManagement]{
+		OutputState: i.ToAutonomousDatabaseRegionalWalletManagementOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AutonomousDatabaseRegionalWalletManagementArrayInput is an input type that accepts AutonomousDatabaseRegionalWalletManagementArray and AutonomousDatabaseRegionalWalletManagementArrayOutput values.
 // You can construct a concrete instance of `AutonomousDatabaseRegionalWalletManagementArrayInput` via:
 //
@@ -189,6 +196,12 @@ func (i AutonomousDatabaseRegionalWalletManagementArray) ToAutonomousDatabaseReg
 
 func (i AutonomousDatabaseRegionalWalletManagementArray) ToAutonomousDatabaseRegionalWalletManagementArrayOutputWithContext(ctx context.Context) AutonomousDatabaseRegionalWalletManagementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AutonomousDatabaseRegionalWalletManagementArrayOutput)
+}
+
+func (i AutonomousDatabaseRegionalWalletManagementArray) ToOutput(ctx context.Context) pulumix.Output[[]*AutonomousDatabaseRegionalWalletManagement] {
+	return pulumix.Output[[]*AutonomousDatabaseRegionalWalletManagement]{
+		OutputState: i.ToAutonomousDatabaseRegionalWalletManagementArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // AutonomousDatabaseRegionalWalletManagementMapInput is an input type that accepts AutonomousDatabaseRegionalWalletManagementMap and AutonomousDatabaseRegionalWalletManagementMapOutput values.
@@ -216,6 +229,12 @@ func (i AutonomousDatabaseRegionalWalletManagementMap) ToAutonomousDatabaseRegio
 	return pulumi.ToOutputWithContext(ctx, i).(AutonomousDatabaseRegionalWalletManagementMapOutput)
 }
 
+func (i AutonomousDatabaseRegionalWalletManagementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AutonomousDatabaseRegionalWalletManagement] {
+	return pulumix.Output[map[string]*AutonomousDatabaseRegionalWalletManagement]{
+		OutputState: i.ToAutonomousDatabaseRegionalWalletManagementMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AutonomousDatabaseRegionalWalletManagementOutput struct{ *pulumi.OutputState }
 
 func (AutonomousDatabaseRegionalWalletManagementOutput) ElementType() reflect.Type {
@@ -228,6 +247,12 @@ func (o AutonomousDatabaseRegionalWalletManagementOutput) ToAutonomousDatabaseRe
 
 func (o AutonomousDatabaseRegionalWalletManagementOutput) ToAutonomousDatabaseRegionalWalletManagementOutputWithContext(ctx context.Context) AutonomousDatabaseRegionalWalletManagementOutput {
 	return o
+}
+
+func (o AutonomousDatabaseRegionalWalletManagementOutput) ToOutput(ctx context.Context) pulumix.Output[*AutonomousDatabaseRegionalWalletManagement] {
+	return pulumix.Output[*AutonomousDatabaseRegionalWalletManagement]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
@@ -267,6 +292,12 @@ func (o AutonomousDatabaseRegionalWalletManagementArrayOutput) ToAutonomousDatab
 	return o
 }
 
+func (o AutonomousDatabaseRegionalWalletManagementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AutonomousDatabaseRegionalWalletManagement] {
+	return pulumix.Output[[]*AutonomousDatabaseRegionalWalletManagement]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AutonomousDatabaseRegionalWalletManagementArrayOutput) Index(i pulumi.IntInput) AutonomousDatabaseRegionalWalletManagementOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AutonomousDatabaseRegionalWalletManagement {
 		return vs[0].([]*AutonomousDatabaseRegionalWalletManagement)[vs[1].(int)]
@@ -285,6 +316,12 @@ func (o AutonomousDatabaseRegionalWalletManagementMapOutput) ToAutonomousDatabas
 
 func (o AutonomousDatabaseRegionalWalletManagementMapOutput) ToAutonomousDatabaseRegionalWalletManagementMapOutputWithContext(ctx context.Context) AutonomousDatabaseRegionalWalletManagementMapOutput {
 	return o
+}
+
+func (o AutonomousDatabaseRegionalWalletManagementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AutonomousDatabaseRegionalWalletManagement] {
+	return pulumix.Output[map[string]*AutonomousDatabaseRegionalWalletManagement]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AutonomousDatabaseRegionalWalletManagementMapOutput) MapIndex(k pulumi.StringInput) AutonomousDatabaseRegionalWalletManagementOutput {

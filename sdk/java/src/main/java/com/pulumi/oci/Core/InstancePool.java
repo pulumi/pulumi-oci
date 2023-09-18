@@ -109,7 +109,7 @@ public class InstancePool extends com.pulumi.resources.CustomResource {
      * The number of actual instances in the instance pool on the cloud. This attribute will be different when instance pool is used along with autoScaling Configuration.
      * 
      */
-    @Export(name="actualSize", type=Integer.class, parameters={})
+    @Export(name="actualSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> actualSize;
 
     /**
@@ -123,7 +123,7 @@ public class InstancePool extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -137,7 +137,7 @@ public class InstancePool extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -151,7 +151,7 @@ public class InstancePool extends com.pulumi.resources.CustomResource {
      * (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -165,7 +165,7 @@ public class InstancePool extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -179,7 +179,7 @@ public class InstancePool extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
      * 
      */
-    @Export(name="instanceConfigurationId", type=String.class, parameters={})
+    @Export(name="instanceConfigurationId", refs={String.class}, tree="[0]")
     private Output<String> instanceConfigurationId;
 
     /**
@@ -193,7 +193,7 @@ public class InstancePool extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-friendly formatter for the instance pool&#39;s instances. Instance displaynames follow the format. The formatter does not retroactively change instance&#39;s displaynames, only instance displaynames in the future follow the format
      * 
      */
-    @Export(name="instanceDisplayNameFormatter", type=String.class, parameters={})
+    @Export(name="instanceDisplayNameFormatter", refs={String.class}, tree="[0]")
     private Output<String> instanceDisplayNameFormatter;
 
     /**
@@ -207,7 +207,7 @@ public class InstancePool extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-friendly formatter for the instance pool&#39;s instances. Instance hostnames follow the format. The formatter does not retroactively change instance&#39;s hostnames, only instance hostnames in the future follow the format
      * 
      */
-    @Export(name="instanceHostnameFormatter", type=String.class, parameters={})
+    @Export(name="instanceHostnameFormatter", refs={String.class}, tree="[0]")
     private Output<String> instanceHostnameFormatter;
 
     /**
@@ -221,7 +221,7 @@ public class InstancePool extends com.pulumi.resources.CustomResource {
      * The load balancers to attach to the instance pool.
      * 
      */
-    @Export(name="loadBalancers", type=List.class, parameters={InstancePoolLoadBalancer.class})
+    @Export(name="loadBalancers", refs={List.class,InstancePoolLoadBalancer.class}, tree="[0,1]")
     private Output<List<InstancePoolLoadBalancer>> loadBalancers;
 
     /**
@@ -237,7 +237,7 @@ public class InstancePool extends com.pulumi.resources.CustomResource {
      * To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
      * 
      */
-    @Export(name="placementConfigurations", type=List.class, parameters={InstancePoolPlacementConfiguration.class})
+    @Export(name="placementConfigurations", refs={List.class,InstancePoolPlacementConfiguration.class}, tree="[0,1]")
     private Output<List<InstancePoolPlacementConfiguration>> placementConfigurations;
 
     /**
@@ -253,7 +253,7 @@ public class InstancePool extends com.pulumi.resources.CustomResource {
      * (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool&#39;s actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool&#39;s actual size will be reflected in this size attribute.
      * 
      */
-    @Export(name="size", type=Integer.class, parameters={})
+    @Export(name="size", refs={Integer.class}, tree="[0]")
     private Output<Integer> size;
 
     /**
@@ -270,7 +270,7 @@ public class InstancePool extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -287,7 +287,7 @@ public class InstancePool extends com.pulumi.resources.CustomResource {
      * The date and time the instance pool was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**

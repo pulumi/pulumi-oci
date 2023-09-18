@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Blockchain Platform resource in Oracle Cloud Infrastructure Blockchain service.
@@ -403,6 +404,12 @@ func (i *BlockchainPlatform) ToBlockchainPlatformOutputWithContext(ctx context.C
 	return pulumi.ToOutputWithContext(ctx, i).(BlockchainPlatformOutput)
 }
 
+func (i *BlockchainPlatform) ToOutput(ctx context.Context) pulumix.Output[*BlockchainPlatform] {
+	return pulumix.Output[*BlockchainPlatform]{
+		OutputState: i.ToBlockchainPlatformOutputWithContext(ctx).OutputState,
+	}
+}
+
 // BlockchainPlatformArrayInput is an input type that accepts BlockchainPlatformArray and BlockchainPlatformArrayOutput values.
 // You can construct a concrete instance of `BlockchainPlatformArrayInput` via:
 //
@@ -426,6 +433,12 @@ func (i BlockchainPlatformArray) ToBlockchainPlatformArrayOutput() BlockchainPla
 
 func (i BlockchainPlatformArray) ToBlockchainPlatformArrayOutputWithContext(ctx context.Context) BlockchainPlatformArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BlockchainPlatformArrayOutput)
+}
+
+func (i BlockchainPlatformArray) ToOutput(ctx context.Context) pulumix.Output[[]*BlockchainPlatform] {
+	return pulumix.Output[[]*BlockchainPlatform]{
+		OutputState: i.ToBlockchainPlatformArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // BlockchainPlatformMapInput is an input type that accepts BlockchainPlatformMap and BlockchainPlatformMapOutput values.
@@ -453,6 +466,12 @@ func (i BlockchainPlatformMap) ToBlockchainPlatformMapOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(BlockchainPlatformMapOutput)
 }
 
+func (i BlockchainPlatformMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*BlockchainPlatform] {
+	return pulumix.Output[map[string]*BlockchainPlatform]{
+		OutputState: i.ToBlockchainPlatformMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type BlockchainPlatformOutput struct{ *pulumi.OutputState }
 
 func (BlockchainPlatformOutput) ElementType() reflect.Type {
@@ -465,6 +484,12 @@ func (o BlockchainPlatformOutput) ToBlockchainPlatformOutput() BlockchainPlatfor
 
 func (o BlockchainPlatformOutput) ToBlockchainPlatformOutputWithContext(ctx context.Context) BlockchainPlatformOutput {
 	return o
+}
+
+func (o BlockchainPlatformOutput) ToOutput(ctx context.Context) pulumix.Output[*BlockchainPlatform] {
+	return pulumix.Output[*BlockchainPlatform]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Base64 encoded text in ASCII character set of a Thirdparty CA Certificates archive file. The Archive file is a zip file containing third part CA Certificates, the ca key and certificate files used when issuing enrollment certificates (ECerts) and transaction certificates (TCerts). The chainfile (if it exists) contains the certificate chain which should be trusted for this CA, where the 1st in the chain is always the root CA certificate. File list in zip file [ca-cert.pem,ca-key.pem,ca-chain.pem(optional)].
@@ -621,6 +646,12 @@ func (o BlockchainPlatformArrayOutput) ToBlockchainPlatformArrayOutputWithContex
 	return o
 }
 
+func (o BlockchainPlatformArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*BlockchainPlatform] {
+	return pulumix.Output[[]*BlockchainPlatform]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o BlockchainPlatformArrayOutput) Index(i pulumi.IntInput) BlockchainPlatformOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *BlockchainPlatform {
 		return vs[0].([]*BlockchainPlatform)[vs[1].(int)]
@@ -639,6 +670,12 @@ func (o BlockchainPlatformMapOutput) ToBlockchainPlatformMapOutput() BlockchainP
 
 func (o BlockchainPlatformMapOutput) ToBlockchainPlatformMapOutputWithContext(ctx context.Context) BlockchainPlatformMapOutput {
 	return o
+}
+
+func (o BlockchainPlatformMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*BlockchainPlatform] {
+	return pulumix.Output[map[string]*BlockchainPlatform]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o BlockchainPlatformMapOutput) MapIndex(k pulumi.StringInput) BlockchainPlatformOutput {

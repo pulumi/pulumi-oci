@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Repository Refs in Oracle Cloud Infrastructure Devops service.
@@ -126,6 +127,12 @@ func (o GetRepositoryRefsResultOutput) ToGetRepositoryRefsResultOutput() GetRepo
 
 func (o GetRepositoryRefsResultOutput) ToGetRepositoryRefsResultOutputWithContext(ctx context.Context) GetRepositoryRefsResultOutput {
 	return o
+}
+
+func (o GetRepositoryRefsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRepositoryRefsResult] {
+	return pulumix.Output[GetRepositoryRefsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Commit ID pointed to by the new branch.

@@ -109,7 +109,7 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `9 seconds`
      * 
      */
-    @Export(name="applyLag", type=String.class, parameters={})
+    @Export(name="applyLag", refs={String.class}, tree="[0]")
     private Output<String> applyLag;
 
     /**
@@ -123,7 +123,7 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * The rate at which redo logs are synced between the associated databases.  Example: `180 Mb per second`
      * 
      */
-    @Export(name="applyRate", type=String.class, parameters={})
+    @Export(name="applyRate", refs={String.class}, tree="[0]")
     private Output<String> applyRate;
 
     /**
@@ -137,7 +137,7 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * The name of the availability domain that the standby database DB system will be located in. For example- &#34;Uocm:PHX-AD-1&#34;.
      * 
      */
-    @Export(name="availabilityDomain", type=String.class, parameters={})
+    @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
     private Output<String> availabilityDomain;
 
     /**
@@ -151,7 +151,7 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
      * 
      */
-    @Export(name="backupNetworkNsgIds", type=List.class, parameters={String.class})
+    @Export(name="backupNetworkNsgIds", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> backupNetworkNsgIds;
 
     /**
@@ -165,7 +165,7 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * The number of OCPU cores available for AMD-based virtual machine DB systems.
      * 
      */
-    @Export(name="cpuCoreCount", type=Integer.class, parameters={})
+    @Export(name="cpuCoreCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> cpuCoreCount;
 
     /**
@@ -175,7 +175,7 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
     public Output<Integer> cpuCoreCount() {
         return this.cpuCoreCount;
     }
-    @Export(name="createAsync", type=Boolean.class, parameters={})
+    @Export(name="createAsync", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> createAsync;
 
     public Output<Optional<Boolean>> createAsync() {
@@ -185,7 +185,7 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * Specifies whether to create the peer database in an existing DB system or in a new DB system.
      * 
      */
-    @Export(name="creationType", type=String.class, parameters={})
+    @Export(name="creationType", refs={String.class}, tree="[0]")
     private Output<String> creationType;
 
     /**
@@ -199,7 +199,7 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
      * 
      */
-    @Export(name="dataCollectionOptions", type=DataGuardAssociationDataCollectionOptions.class, parameters={})
+    @Export(name="dataCollectionOptions", refs={DataGuardAssociationDataCollectionOptions.class}, tree="[0]")
     private Output<DataGuardAssociationDataCollectionOptions> dataCollectionOptions;
 
     /**
@@ -221,7 +221,7 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * **The password MUST be the same as the primary admin password.**
      * 
      */
-    @Export(name="databaseAdminPassword", type=String.class, parameters={})
+    @Export(name="databaseAdminPassword", refs={String.class}, tree="[0]")
     private Output<String> databaseAdminPassword;
 
     /**
@@ -243,7 +243,7 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    @Export(name="databaseDefinedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="databaseDefinedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output</* @Nullable */ Map<String,Object>> databaseDefinedTags;
 
     /**
@@ -257,7 +257,7 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="databaseFreeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="databaseFreeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output</* @Nullable */ Map<String,Object>> databaseFreeformTags;
 
     /**
@@ -271,7 +271,7 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    @Export(name="databaseId", type=String.class, parameters={})
+    @Export(name="databaseId", refs={String.class}, tree="[0]")
     private Output<String> databaseId;
 
     /**
@@ -285,7 +285,7 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Applicable only when creationType=`ExistingDbSystem` and when the existing database has Exadata shape.
      * 
      */
-    @Export(name="databaseSoftwareImageId", type=String.class, parameters={})
+    @Export(name="databaseSoftwareImageId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> databaseSoftwareImageId;
 
     /**
@@ -299,7 +299,7 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    @Export(name="dbSystemDefinedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="dbSystemDefinedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output</* @Nullable */ Map<String,Object>> dbSystemDefinedTags;
 
     /**
@@ -313,7 +313,7 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="dbSystemFreeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="dbSystemFreeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output</* @Nullable */ Map<String,Object>> dbSystemFreeformTags;
 
     /**
@@ -323,7 +323,7 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
     public Output<Optional<Map<String,Object>>> dbSystemFreeformTags() {
         return Codegen.optional(this.dbSystemFreeformTags);
     }
-    @Export(name="deleteStandbyDbHomeOnDelete", type=String.class, parameters={})
+    @Export(name="deleteStandbyDbHomeOnDelete", refs={String.class}, tree="[0]")
     private Output<String> deleteStandbyDbHomeOnDelete;
 
     public Output<String> deleteStandbyDbHomeOnDelete() {
@@ -333,7 +333,7 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -355,7 +355,7 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * Example: `FAULT-DOMAIN-1`
      * 
      */
-    @Export(name="faultDomains", type=List.class, parameters={String.class})
+    @Export(name="faultDomains", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> faultDomains;
 
     /**
@@ -377,7 +377,7 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * The hostname for the DB node.
      * 
      */
-    @Export(name="hostname", type=String.class, parameters={})
+    @Export(name="hostname", refs={String.class}, tree="[0]")
     private Output<String> hostname;
 
     /**
@@ -391,7 +391,7 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * (Updatable) True if active Data Guard is enabled.
      * 
      */
-    @Export(name="isActiveDataGuardEnabled", type=Boolean.class, parameters={})
+    @Export(name="isActiveDataGuardEnabled", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> isActiveDataGuardEnabled;
 
     /**
@@ -405,7 +405,7 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
      * 
      */
-    @Export(name="licenseModel", type=String.class, parameters={})
+    @Export(name="licenseModel", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> licenseModel;
 
     /**
@@ -419,7 +419,7 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * Additional information about the current lifecycleState, if available.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -433,7 +433,7 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
      * 
      */
-    @Export(name="nodeCount", type=Integer.class, parameters={})
+    @Export(name="nodeCount", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> nodeCount;
 
     /**
@@ -448,7 +448,7 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      * 
      */
-    @Export(name="nsgIds", type=List.class, parameters={String.class})
+    @Export(name="nsgIds", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> nsgIds;
 
     /**
@@ -463,7 +463,7 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer database&#39;s Data Guard association.
      * 
      */
-    @Export(name="peerDataGuardAssociationId", type=String.class, parameters={})
+    @Export(name="peerDataGuardAssociationId", refs={String.class}, tree="[0]")
     private Output<String> peerDataGuardAssociationId;
 
     /**
@@ -477,7 +477,7 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated peer database.
      * 
      */
-    @Export(name="peerDatabaseId", type=String.class, parameters={})
+    @Export(name="peerDatabaseId", refs={String.class}, tree="[0]")
     private Output<String> peerDatabaseId;
 
     /**
@@ -491,7 +491,7 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB home in which to create the standby database. You must supply this value to create standby database with an existing DB home
      * 
      */
-    @Export(name="peerDbHomeId", type=String.class, parameters={})
+    @Export(name="peerDbHomeId", refs={String.class}, tree="[0]")
     private Output<String> peerDbHomeId;
 
     /**
@@ -505,7 +505,7 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system in which to create the standby database. You must supply this value if creationType is `ExistingDbSystem`.
      * 
      */
-    @Export(name="peerDbSystemId", type=String.class, parameters={})
+    @Export(name="peerDbSystemId", refs={String.class}, tree="[0]")
     private Output<String> peerDbSystemId;
 
     /**
@@ -519,7 +519,7 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
      * 
      */
-    @Export(name="peerDbUniqueName", type=String.class, parameters={})
+    @Export(name="peerDbUniqueName", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> peerDbUniqueName;
 
     /**
@@ -533,7 +533,7 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * The role of the peer database in this Data Guard association.
      * 
      */
-    @Export(name="peerRole", type=String.class, parameters={})
+    @Export(name="peerRole", refs={String.class}, tree="[0]")
     private Output<String> peerRole;
 
     /**
@@ -547,7 +547,7 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * Specifies a prefix for the `Oracle SID` of the database to be created.
      * 
      */
-    @Export(name="peerSidPrefix", type=String.class, parameters={})
+    @Export(name="peerSidPrefix", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> peerSidPrefix;
 
     /**
@@ -561,7 +561,7 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster in which to create the standby database. You must supply this value if creationType is `ExistingVmCluster`.
      * 
      */
-    @Export(name="peerVmClusterId", type=String.class, parameters={})
+    @Export(name="peerVmClusterId", refs={String.class}, tree="[0]")
     private Output<String> peerVmClusterId;
 
     /**
@@ -575,7 +575,7 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
      * 
      */
-    @Export(name="privateIp", type=String.class, parameters={})
+    @Export(name="privateIp", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> privateIp;
 
     /**
@@ -591,7 +591,7 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * **IMPORTANT** - The only protection mode currently supported by the Database service is MAXIMUM_PERFORMANCE.
      * 
      */
-    @Export(name="protectionMode", type=String.class, parameters={})
+    @Export(name="protectionMode", refs={String.class}, tree="[0]")
     private Output<String> protectionMode;
 
     /**
@@ -607,7 +607,7 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * The role of the reporting database in this Data Guard association.
      * 
      */
-    @Export(name="role", type=String.class, parameters={})
+    @Export(name="role", refs={String.class}, tree="[0]")
     private Output<String> role;
 
     /**
@@ -623,7 +623,7 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * To get a list of all shapes, use the [ListDbSystemShapes](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbSystemShapeSummary/ListDbSystemShapes) operation.
      * 
      */
-    @Export(name="shape", type=String.class, parameters={})
+    @Export(name="shape", refs={String.class}, tree="[0]")
     private Output<String> shape;
 
     /**
@@ -639,7 +639,7 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * The current state of the Data Guard association.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -653,7 +653,7 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
      * 
      */
-    @Export(name="storageVolumePerformanceMode", type=String.class, parameters={})
+    @Export(name="storageVolumePerformanceMode", refs={String.class}, tree="[0]")
     private Output<String> storageVolumePerformanceMode;
 
     /**
@@ -670,7 +670,7 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and backup subnet.
      * 
      */
-    @Export(name="subnetId", type=String.class, parameters={})
+    @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
@@ -687,7 +687,7 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * The date and time the Data Guard association was created.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -701,7 +701,7 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * The time zone of the dataguard standby DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      * 
      */
-    @Export(name="timeZone", type=String.class, parameters={})
+    @Export(name="timeZone", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> timeZone;
 
     /**
@@ -725,7 +725,7 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="transportType", type=String.class, parameters={})
+    @Export(name="transportType", refs={String.class}, tree="[0]")
     private Output<String> transportType;
 
     /**

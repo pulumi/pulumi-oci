@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Steering Policy Attachment resource in Oracle Cloud Infrastructure DNS service.
@@ -227,6 +228,12 @@ func (i *SteeringPolicyAttachment) ToSteeringPolicyAttachmentOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(SteeringPolicyAttachmentOutput)
 }
 
+func (i *SteeringPolicyAttachment) ToOutput(ctx context.Context) pulumix.Output[*SteeringPolicyAttachment] {
+	return pulumix.Output[*SteeringPolicyAttachment]{
+		OutputState: i.ToSteeringPolicyAttachmentOutputWithContext(ctx).OutputState,
+	}
+}
+
 // SteeringPolicyAttachmentArrayInput is an input type that accepts SteeringPolicyAttachmentArray and SteeringPolicyAttachmentArrayOutput values.
 // You can construct a concrete instance of `SteeringPolicyAttachmentArrayInput` via:
 //
@@ -250,6 +257,12 @@ func (i SteeringPolicyAttachmentArray) ToSteeringPolicyAttachmentArrayOutput() S
 
 func (i SteeringPolicyAttachmentArray) ToSteeringPolicyAttachmentArrayOutputWithContext(ctx context.Context) SteeringPolicyAttachmentArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SteeringPolicyAttachmentArrayOutput)
+}
+
+func (i SteeringPolicyAttachmentArray) ToOutput(ctx context.Context) pulumix.Output[[]*SteeringPolicyAttachment] {
+	return pulumix.Output[[]*SteeringPolicyAttachment]{
+		OutputState: i.ToSteeringPolicyAttachmentArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // SteeringPolicyAttachmentMapInput is an input type that accepts SteeringPolicyAttachmentMap and SteeringPolicyAttachmentMapOutput values.
@@ -277,6 +290,12 @@ func (i SteeringPolicyAttachmentMap) ToSteeringPolicyAttachmentMapOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(SteeringPolicyAttachmentMapOutput)
 }
 
+func (i SteeringPolicyAttachmentMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*SteeringPolicyAttachment] {
+	return pulumix.Output[map[string]*SteeringPolicyAttachment]{
+		OutputState: i.ToSteeringPolicyAttachmentMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type SteeringPolicyAttachmentOutput struct{ *pulumi.OutputState }
 
 func (SteeringPolicyAttachmentOutput) ElementType() reflect.Type {
@@ -289,6 +308,12 @@ func (o SteeringPolicyAttachmentOutput) ToSteeringPolicyAttachmentOutput() Steer
 
 func (o SteeringPolicyAttachmentOutput) ToSteeringPolicyAttachmentOutputWithContext(ctx context.Context) SteeringPolicyAttachmentOutput {
 	return o
+}
+
+func (o SteeringPolicyAttachmentOutput) ToOutput(ctx context.Context) pulumix.Output[*SteeringPolicyAttachment] {
+	return pulumix.Output[*SteeringPolicyAttachment]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the compartment containing the steering policy attachment.
@@ -353,6 +378,12 @@ func (o SteeringPolicyAttachmentArrayOutput) ToSteeringPolicyAttachmentArrayOutp
 	return o
 }
 
+func (o SteeringPolicyAttachmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*SteeringPolicyAttachment] {
+	return pulumix.Output[[]*SteeringPolicyAttachment]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o SteeringPolicyAttachmentArrayOutput) Index(i pulumi.IntInput) SteeringPolicyAttachmentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *SteeringPolicyAttachment {
 		return vs[0].([]*SteeringPolicyAttachment)[vs[1].(int)]
@@ -371,6 +402,12 @@ func (o SteeringPolicyAttachmentMapOutput) ToSteeringPolicyAttachmentMapOutput()
 
 func (o SteeringPolicyAttachmentMapOutput) ToSteeringPolicyAttachmentMapOutputWithContext(ctx context.Context) SteeringPolicyAttachmentMapOutput {
 	return o
+}
+
+func (o SteeringPolicyAttachmentMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*SteeringPolicyAttachment] {
+	return pulumix.Output[map[string]*SteeringPolicyAttachment]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o SteeringPolicyAttachmentMapOutput) MapIndex(k pulumi.StringInput) SteeringPolicyAttachmentOutput {

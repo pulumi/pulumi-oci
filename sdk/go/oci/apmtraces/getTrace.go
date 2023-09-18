@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Trace resource in Oracle Cloud Infrastructure Apm Traces service.
@@ -142,6 +143,12 @@ func (o GetTraceResultOutput) ToGetTraceResultOutput() GetTraceResultOutput {
 
 func (o GetTraceResultOutput) ToGetTraceResultOutputWithContext(ctx context.Context) GetTraceResultOutput {
 	return o
+}
+
+func (o GetTraceResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetTraceResult] {
+	return pulumix.Output[GetTraceResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTraceResultOutput) ApmDomainId() pulumi.StringOutput {

@@ -118,7 +118,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) Database Administrator Credentials details.
      * 
      */
-    @Export(name="adminCredentials", type=ConnectionAdminCredentials.class, parameters={})
+    @Export(name="adminCredentials", refs={ConnectionAdminCredentials.class}, tree="[0]")
     private Output<ConnectionAdminCredentials> adminCredentials;
 
     /**
@@ -132,7 +132,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) This name is the distinguished name used while creating the certificate on target database. Requires a TLS wallet to be specified. Not required for source container database connections.
      * 
      */
-    @Export(name="certificateTdn", type=String.class, parameters={})
+    @Export(name="certificateTdn", refs={String.class}, tree="[0]")
     private Output<String> certificateTdn;
 
     /**
@@ -146,7 +146,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) OCID of the compartment where the secret containing the credentials will be created.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -160,7 +160,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) Connect Descriptor details. Required for Manual and UserManagerOci connection types. If a Private Endpoint was specified for the Connection, the host should contain a valid IP address.
      * 
      */
-    @Export(name="connectDescriptor", type=ConnectionConnectDescriptor.class, parameters={})
+    @Export(name="connectDescriptor", refs={ConnectionConnectDescriptor.class}, tree="[0]")
     private Output<ConnectionConnectDescriptor> connectDescriptor;
 
     /**
@@ -174,7 +174,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Database Connection credentials.
      * 
      */
-    @Export(name="credentialsSecretId", type=String.class, parameters={})
+    @Export(name="credentialsSecretId", refs={String.class}, tree="[0]")
     private Output<String> credentialsSecretId;
 
     /**
@@ -188,7 +188,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the cloud database. Required if the database connection type is Autonomous.
      * 
      */
-    @Export(name="databaseId", type=String.class, parameters={})
+    @Export(name="databaseId", refs={String.class}, tree="[0]")
     private Output<String> databaseId;
 
     /**
@@ -202,7 +202,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * Database connection type.
      * 
      */
-    @Export(name="databaseType", type=String.class, parameters={})
+    @Export(name="databaseType", refs={String.class}, tree="[0]")
     private Output<String> databaseType;
 
     /**
@@ -216,7 +216,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -230,7 +230,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) Database Connection display name identifier.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -244,7 +244,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -258,7 +258,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -272,7 +272,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
      * 
      */
-    @Export(name="nsgIds", type=List.class, parameters={String.class})
+    @Export(name="nsgIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> nsgIds;
 
     /**
@@ -286,7 +286,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) Oracle Cloud Infrastructure Private Endpoint configuration details. Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.
      * 
      */
-    @Export(name="privateEndpoint", type=ConnectionPrivateEndpoint.class, parameters={})
+    @Export(name="privateEndpoint", refs={ConnectionPrivateEndpoint.class}, tree="[0]")
     private Output<ConnectionPrivateEndpoint> privateEndpoint;
 
     /**
@@ -300,7 +300,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) Database Administrator Credentials details.
      * 
      */
-    @Export(name="replicationCredentials", type=ConnectionReplicationCredentials.class, parameters={})
+    @Export(name="replicationCredentials", refs={ConnectionReplicationCredentials.class}, tree="[0]")
     private Output<ConnectionReplicationCredentials> replicationCredentials;
 
     /**
@@ -314,7 +314,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) Details of the SSH key that will be used. Required for source database Manual and UserManagerOci connection types. Not required for source container database connections.
      * 
      */
-    @Export(name="sshDetails", type=ConnectionSshDetails.class, parameters={})
+    @Export(name="sshDetails", refs={ConnectionSshDetails.class}, tree="[0]")
     private Output<ConnectionSshDetails> sshDetails;
 
     /**
@@ -328,7 +328,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * The current state of the Connection resource.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -342,7 +342,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -356,7 +356,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * The time the Connection resource was created. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -370,7 +370,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * The time of the last Connection resource details update. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -384,7 +384,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) keystore.jks file contents; base64 encoded String. Requires a TLS wallet to be specified. Not required for source container database connections.
      * 
      */
-    @Export(name="tlsKeystore", type=String.class, parameters={})
+    @Export(name="tlsKeystore", refs={String.class}, tree="[0]")
     private Output<String> tlsKeystore;
 
     /**
@@ -398,7 +398,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) cwallet.sso containing containing the TCPS/SSL certificate; base64 encoded String. Not required for source container database connections.
      * 
      */
-    @Export(name="tlsWallet", type=String.class, parameters={})
+    @Export(name="tlsWallet", refs={String.class}, tree="[0]")
     private Output<String> tlsWallet;
 
     /**
@@ -412,7 +412,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) Oracle Cloud Infrastructure Vault details to store migration and connection credentials secrets
      * 
      */
-    @Export(name="vaultDetails", type=ConnectionVaultDetails.class, parameters={})
+    @Export(name="vaultDetails", refs={ConnectionVaultDetails.class}, tree="[0]")
     private Output<ConnectionVaultDetails> vaultDetails;
 
     /**

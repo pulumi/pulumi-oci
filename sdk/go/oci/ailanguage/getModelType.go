@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Model Type resource in Oracle Cloud Infrastructure Ai Language service.
@@ -103,6 +104,12 @@ func (o GetModelTypeResultOutput) ToGetModelTypeResultOutput() GetModelTypeResul
 
 func (o GetModelTypeResultOutput) ToGetModelTypeResultOutputWithContext(ctx context.Context) GetModelTypeResultOutput {
 	return o
+}
+
+func (o GetModelTypeResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetModelTypeResult] {
+	return pulumix.Output[GetModelTypeResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Model information capabilities related to version

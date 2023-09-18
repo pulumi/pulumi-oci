@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Container Instance resource in Oracle Cloud Infrastructure Container Instances service.
@@ -475,6 +476,12 @@ func (i *ContainerInstance) ToContainerInstanceOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceOutput)
 }
 
+func (i *ContainerInstance) ToOutput(ctx context.Context) pulumix.Output[*ContainerInstance] {
+	return pulumix.Output[*ContainerInstance]{
+		OutputState: i.ToContainerInstanceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ContainerInstanceArrayInput is an input type that accepts ContainerInstanceArray and ContainerInstanceArrayOutput values.
 // You can construct a concrete instance of `ContainerInstanceArrayInput` via:
 //
@@ -498,6 +505,12 @@ func (i ContainerInstanceArray) ToContainerInstanceArrayOutput() ContainerInstan
 
 func (i ContainerInstanceArray) ToContainerInstanceArrayOutputWithContext(ctx context.Context) ContainerInstanceArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceArrayOutput)
+}
+
+func (i ContainerInstanceArray) ToOutput(ctx context.Context) pulumix.Output[[]*ContainerInstance] {
+	return pulumix.Output[[]*ContainerInstance]{
+		OutputState: i.ToContainerInstanceArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // ContainerInstanceMapInput is an input type that accepts ContainerInstanceMap and ContainerInstanceMapOutput values.
@@ -525,6 +538,12 @@ func (i ContainerInstanceMap) ToContainerInstanceMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceMapOutput)
 }
 
+func (i ContainerInstanceMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ContainerInstance] {
+	return pulumix.Output[map[string]*ContainerInstance]{
+		OutputState: i.ToContainerInstanceMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ContainerInstanceOutput struct{ *pulumi.OutputState }
 
 func (ContainerInstanceOutput) ElementType() reflect.Type {
@@ -537,6 +556,12 @@ func (o ContainerInstanceOutput) ToContainerInstanceOutput() ContainerInstanceOu
 
 func (o ContainerInstanceOutput) ToContainerInstanceOutputWithContext(ctx context.Context) ContainerInstanceOutput {
 	return o
+}
+
+func (o ContainerInstanceOutput) ToOutput(ctx context.Context) pulumix.Output[*ContainerInstance] {
+	return pulumix.Output[*ContainerInstance]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The availability domain where the container instance runs.
@@ -668,6 +693,12 @@ func (o ContainerInstanceArrayOutput) ToContainerInstanceArrayOutputWithContext(
 	return o
 }
 
+func (o ContainerInstanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ContainerInstance] {
+	return pulumix.Output[[]*ContainerInstance]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o ContainerInstanceArrayOutput) Index(i pulumi.IntInput) ContainerInstanceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ContainerInstance {
 		return vs[0].([]*ContainerInstance)[vs[1].(int)]
@@ -686,6 +717,12 @@ func (o ContainerInstanceMapOutput) ToContainerInstanceMapOutput() ContainerInst
 
 func (o ContainerInstanceMapOutput) ToContainerInstanceMapOutputWithContext(ctx context.Context) ContainerInstanceMapOutput {
 	return o
+}
+
+func (o ContainerInstanceMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ContainerInstance] {
+	return pulumix.Output[map[string]*ContainerInstance]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ContainerInstanceMapOutput) MapIndex(k pulumi.StringInput) ContainerInstanceOutput {

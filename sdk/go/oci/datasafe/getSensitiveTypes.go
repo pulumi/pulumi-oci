@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Sensitive Types in Oracle Cloud Infrastructure Data Safe service.
@@ -184,6 +185,12 @@ func (o GetSensitiveTypesResultOutput) ToGetSensitiveTypesResultOutput() GetSens
 
 func (o GetSensitiveTypesResultOutput) ToGetSensitiveTypesResultOutputWithContext(ctx context.Context) GetSensitiveTypesResultOutput {
 	return o
+}
+
+func (o GetSensitiveTypesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSensitiveTypesResult] {
+	return pulumix.Output[GetSensitiveTypesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSensitiveTypesResultOutput) AccessLevel() pulumi.StringPtrOutput {

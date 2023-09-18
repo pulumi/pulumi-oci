@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -48,6 +49,12 @@ func (i LogConfigurationArgs) ToLogConfigurationOutput() LogConfigurationOutput 
 
 func (i LogConfigurationArgs) ToLogConfigurationOutputWithContext(ctx context.Context) LogConfigurationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(LogConfigurationOutput)
+}
+
+func (i LogConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[LogConfiguration] {
+	return pulumix.Output[LogConfiguration]{
+		OutputState: i.ToLogConfigurationOutputWithContext(ctx).OutputState,
+	}
 }
 
 func (i LogConfigurationArgs) ToLogConfigurationPtrOutput() LogConfigurationPtrOutput {
@@ -91,6 +98,12 @@ func (i *logConfigurationPtrType) ToLogConfigurationPtrOutputWithContext(ctx con
 	return pulumi.ToOutputWithContext(ctx, i).(LogConfigurationPtrOutput)
 }
 
+func (i *logConfigurationPtrType) ToOutput(ctx context.Context) pulumix.Output[*LogConfiguration] {
+	return pulumix.Output[*LogConfiguration]{
+		OutputState: i.ToLogConfigurationPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type LogConfigurationOutput struct{ *pulumi.OutputState }
 
 func (LogConfigurationOutput) ElementType() reflect.Type {
@@ -115,6 +128,12 @@ func (o LogConfigurationOutput) ToLogConfigurationPtrOutputWithContext(ctx conte
 	}).(LogConfigurationPtrOutput)
 }
 
+func (o LogConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[LogConfiguration] {
+	return pulumix.Output[LogConfiguration]{
+		OutputState: o.OutputState,
+	}
+}
+
 // The OCID of the compartment that the resource belongs to.
 func (o LogConfigurationOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LogConfiguration) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
@@ -137,6 +156,12 @@ func (o LogConfigurationPtrOutput) ToLogConfigurationPtrOutput() LogConfiguratio
 
 func (o LogConfigurationPtrOutput) ToLogConfigurationPtrOutputWithContext(ctx context.Context) LogConfigurationPtrOutput {
 	return o
+}
+
+func (o LogConfigurationPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*LogConfiguration] {
+	return pulumix.Output[*LogConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o LogConfigurationPtrOutput) Elem() LogConfigurationOutput {
@@ -216,6 +241,12 @@ func (i LogConfigurationSourceArgs) ToLogConfigurationSourceOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(LogConfigurationSourceOutput)
 }
 
+func (i LogConfigurationSourceArgs) ToOutput(ctx context.Context) pulumix.Output[LogConfigurationSource] {
+	return pulumix.Output[LogConfigurationSource]{
+		OutputState: i.ToLogConfigurationSourceOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i LogConfigurationSourceArgs) ToLogConfigurationSourcePtrOutput() LogConfigurationSourcePtrOutput {
 	return i.ToLogConfigurationSourcePtrOutputWithContext(context.Background())
 }
@@ -257,6 +288,12 @@ func (i *logConfigurationSourcePtrType) ToLogConfigurationSourcePtrOutputWithCon
 	return pulumi.ToOutputWithContext(ctx, i).(LogConfigurationSourcePtrOutput)
 }
 
+func (i *logConfigurationSourcePtrType) ToOutput(ctx context.Context) pulumix.Output[*LogConfigurationSource] {
+	return pulumix.Output[*LogConfigurationSource]{
+		OutputState: i.ToLogConfigurationSourcePtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type LogConfigurationSourceOutput struct{ *pulumi.OutputState }
 
 func (LogConfigurationSourceOutput) ElementType() reflect.Type {
@@ -279,6 +316,12 @@ func (o LogConfigurationSourceOutput) ToLogConfigurationSourcePtrOutputWithConte
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v LogConfigurationSource) *LogConfigurationSource {
 		return &v
 	}).(LogConfigurationSourcePtrOutput)
+}
+
+func (o LogConfigurationSourceOutput) ToOutput(ctx context.Context) pulumix.Output[LogConfigurationSource] {
+	return pulumix.Output[LogConfigurationSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Log object category.
@@ -314,6 +357,12 @@ func (o LogConfigurationSourcePtrOutput) ToLogConfigurationSourcePtrOutput() Log
 
 func (o LogConfigurationSourcePtrOutput) ToLogConfigurationSourcePtrOutputWithContext(ctx context.Context) LogConfigurationSourcePtrOutput {
 	return o
+}
+
+func (o LogConfigurationSourcePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*LogConfigurationSource] {
+	return pulumix.Output[*LogConfigurationSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o LogConfigurationSourcePtrOutput) Elem() LogConfigurationSourceOutput {
@@ -400,6 +449,12 @@ func (i UnifiedAgentConfigurationGroupAssociationArgs) ToUnifiedAgentConfigurati
 	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationGroupAssociationOutput)
 }
 
+func (i UnifiedAgentConfigurationGroupAssociationArgs) ToOutput(ctx context.Context) pulumix.Output[UnifiedAgentConfigurationGroupAssociation] {
+	return pulumix.Output[UnifiedAgentConfigurationGroupAssociation]{
+		OutputState: i.ToUnifiedAgentConfigurationGroupAssociationOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i UnifiedAgentConfigurationGroupAssociationArgs) ToUnifiedAgentConfigurationGroupAssociationPtrOutput() UnifiedAgentConfigurationGroupAssociationPtrOutput {
 	return i.ToUnifiedAgentConfigurationGroupAssociationPtrOutputWithContext(context.Background())
 }
@@ -441,6 +496,12 @@ func (i *unifiedAgentConfigurationGroupAssociationPtrType) ToUnifiedAgentConfigu
 	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationGroupAssociationPtrOutput)
 }
 
+func (i *unifiedAgentConfigurationGroupAssociationPtrType) ToOutput(ctx context.Context) pulumix.Output[*UnifiedAgentConfigurationGroupAssociation] {
+	return pulumix.Output[*UnifiedAgentConfigurationGroupAssociation]{
+		OutputState: i.ToUnifiedAgentConfigurationGroupAssociationPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type UnifiedAgentConfigurationGroupAssociationOutput struct{ *pulumi.OutputState }
 
 func (UnifiedAgentConfigurationGroupAssociationOutput) ElementType() reflect.Type {
@@ -465,6 +526,12 @@ func (o UnifiedAgentConfigurationGroupAssociationOutput) ToUnifiedAgentConfigura
 	}).(UnifiedAgentConfigurationGroupAssociationPtrOutput)
 }
 
+func (o UnifiedAgentConfigurationGroupAssociationOutput) ToOutput(ctx context.Context) pulumix.Output[UnifiedAgentConfigurationGroupAssociation] {
+	return pulumix.Output[UnifiedAgentConfigurationGroupAssociation]{
+		OutputState: o.OutputState,
+	}
+}
+
 // (Updatable) list of group/dynamic group ids associated with this configuration.
 func (o UnifiedAgentConfigurationGroupAssociationOutput) GroupLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v UnifiedAgentConfigurationGroupAssociation) []string { return v.GroupLists }).(pulumi.StringArrayOutput)
@@ -482,6 +549,12 @@ func (o UnifiedAgentConfigurationGroupAssociationPtrOutput) ToUnifiedAgentConfig
 
 func (o UnifiedAgentConfigurationGroupAssociationPtrOutput) ToUnifiedAgentConfigurationGroupAssociationPtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationGroupAssociationPtrOutput {
 	return o
+}
+
+func (o UnifiedAgentConfigurationGroupAssociationPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*UnifiedAgentConfigurationGroupAssociation] {
+	return pulumix.Output[*UnifiedAgentConfigurationGroupAssociation]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o UnifiedAgentConfigurationGroupAssociationPtrOutput) Elem() UnifiedAgentConfigurationGroupAssociationOutput {
@@ -545,6 +618,12 @@ func (i UnifiedAgentConfigurationServiceConfigurationArgs) ToUnifiedAgentConfigu
 	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationOutput)
 }
 
+func (i UnifiedAgentConfigurationServiceConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[UnifiedAgentConfigurationServiceConfiguration] {
+	return pulumix.Output[UnifiedAgentConfigurationServiceConfiguration]{
+		OutputState: i.ToUnifiedAgentConfigurationServiceConfigurationOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i UnifiedAgentConfigurationServiceConfigurationArgs) ToUnifiedAgentConfigurationServiceConfigurationPtrOutput() UnifiedAgentConfigurationServiceConfigurationPtrOutput {
 	return i.ToUnifiedAgentConfigurationServiceConfigurationPtrOutputWithContext(context.Background())
 }
@@ -586,6 +665,12 @@ func (i *unifiedAgentConfigurationServiceConfigurationPtrType) ToUnifiedAgentCon
 	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationPtrOutput)
 }
 
+func (i *unifiedAgentConfigurationServiceConfigurationPtrType) ToOutput(ctx context.Context) pulumix.Output[*UnifiedAgentConfigurationServiceConfiguration] {
+	return pulumix.Output[*UnifiedAgentConfigurationServiceConfiguration]{
+		OutputState: i.ToUnifiedAgentConfigurationServiceConfigurationPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type UnifiedAgentConfigurationServiceConfigurationOutput struct{ *pulumi.OutputState }
 
 func (UnifiedAgentConfigurationServiceConfigurationOutput) ElementType() reflect.Type {
@@ -608,6 +693,12 @@ func (o UnifiedAgentConfigurationServiceConfigurationOutput) ToUnifiedAgentConfi
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v UnifiedAgentConfigurationServiceConfiguration) *UnifiedAgentConfigurationServiceConfiguration {
 		return &v
 	}).(UnifiedAgentConfigurationServiceConfigurationPtrOutput)
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[UnifiedAgentConfigurationServiceConfiguration] {
+	return pulumix.Output[UnifiedAgentConfigurationServiceConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Type of Unified Agent service configuration.
@@ -641,6 +732,12 @@ func (o UnifiedAgentConfigurationServiceConfigurationPtrOutput) ToUnifiedAgentCo
 
 func (o UnifiedAgentConfigurationServiceConfigurationPtrOutput) ToUnifiedAgentConfigurationServiceConfigurationPtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationPtrOutput {
 	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*UnifiedAgentConfigurationServiceConfiguration] {
+	return pulumix.Output[*UnifiedAgentConfigurationServiceConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o UnifiedAgentConfigurationServiceConfigurationPtrOutput) Elem() UnifiedAgentConfigurationServiceConfigurationOutput {
@@ -716,6 +813,12 @@ func (i UnifiedAgentConfigurationServiceConfigurationDestinationArgs) ToUnifiedA
 	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationDestinationOutput)
 }
 
+func (i UnifiedAgentConfigurationServiceConfigurationDestinationArgs) ToOutput(ctx context.Context) pulumix.Output[UnifiedAgentConfigurationServiceConfigurationDestination] {
+	return pulumix.Output[UnifiedAgentConfigurationServiceConfigurationDestination]{
+		OutputState: i.ToUnifiedAgentConfigurationServiceConfigurationDestinationOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i UnifiedAgentConfigurationServiceConfigurationDestinationArgs) ToUnifiedAgentConfigurationServiceConfigurationDestinationPtrOutput() UnifiedAgentConfigurationServiceConfigurationDestinationPtrOutput {
 	return i.ToUnifiedAgentConfigurationServiceConfigurationDestinationPtrOutputWithContext(context.Background())
 }
@@ -757,6 +860,12 @@ func (i *unifiedAgentConfigurationServiceConfigurationDestinationPtrType) ToUnif
 	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationDestinationPtrOutput)
 }
 
+func (i *unifiedAgentConfigurationServiceConfigurationDestinationPtrType) ToOutput(ctx context.Context) pulumix.Output[*UnifiedAgentConfigurationServiceConfigurationDestination] {
+	return pulumix.Output[*UnifiedAgentConfigurationServiceConfigurationDestination]{
+		OutputState: i.ToUnifiedAgentConfigurationServiceConfigurationDestinationPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type UnifiedAgentConfigurationServiceConfigurationDestinationOutput struct{ *pulumi.OutputState }
 
 func (UnifiedAgentConfigurationServiceConfigurationDestinationOutput) ElementType() reflect.Type {
@@ -781,6 +890,12 @@ func (o UnifiedAgentConfigurationServiceConfigurationDestinationOutput) ToUnifie
 	}).(UnifiedAgentConfigurationServiceConfigurationDestinationPtrOutput)
 }
 
+func (o UnifiedAgentConfigurationServiceConfigurationDestinationOutput) ToOutput(ctx context.Context) pulumix.Output[UnifiedAgentConfigurationServiceConfigurationDestination] {
+	return pulumix.Output[UnifiedAgentConfigurationServiceConfigurationDestination]{
+		OutputState: o.OutputState,
+	}
+}
+
 // (Updatable) The OCID of the resource.
 func (o UnifiedAgentConfigurationServiceConfigurationDestinationOutput) LogObjectId() pulumi.StringOutput {
 	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationDestination) string { return v.LogObjectId }).(pulumi.StringOutput)
@@ -798,6 +913,12 @@ func (o UnifiedAgentConfigurationServiceConfigurationDestinationPtrOutput) ToUni
 
 func (o UnifiedAgentConfigurationServiceConfigurationDestinationPtrOutput) ToUnifiedAgentConfigurationServiceConfigurationDestinationPtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationDestinationPtrOutput {
 	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationDestinationPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*UnifiedAgentConfigurationServiceConfigurationDestination] {
+	return pulumix.Output[*UnifiedAgentConfigurationServiceConfigurationDestination]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o UnifiedAgentConfigurationServiceConfigurationDestinationPtrOutput) Elem() UnifiedAgentConfigurationServiceConfigurationDestinationOutput {
@@ -875,6 +996,12 @@ func (i UnifiedAgentConfigurationServiceConfigurationSourceArgs) ToUnifiedAgentC
 	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationSourceOutput)
 }
 
+func (i UnifiedAgentConfigurationServiceConfigurationSourceArgs) ToOutput(ctx context.Context) pulumix.Output[UnifiedAgentConfigurationServiceConfigurationSource] {
+	return pulumix.Output[UnifiedAgentConfigurationServiceConfigurationSource]{
+		OutputState: i.ToUnifiedAgentConfigurationServiceConfigurationSourceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // UnifiedAgentConfigurationServiceConfigurationSourceArrayInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationSourceArray and UnifiedAgentConfigurationServiceConfigurationSourceArrayOutput values.
 // You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationSourceArrayInput` via:
 //
@@ -900,6 +1027,12 @@ func (i UnifiedAgentConfigurationServiceConfigurationSourceArray) ToUnifiedAgent
 	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationSourceArrayOutput)
 }
 
+func (i UnifiedAgentConfigurationServiceConfigurationSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]UnifiedAgentConfigurationServiceConfigurationSource] {
+	return pulumix.Output[[]UnifiedAgentConfigurationServiceConfigurationSource]{
+		OutputState: i.ToUnifiedAgentConfigurationServiceConfigurationSourceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type UnifiedAgentConfigurationServiceConfigurationSourceOutput struct{ *pulumi.OutputState }
 
 func (UnifiedAgentConfigurationServiceConfigurationSourceOutput) ElementType() reflect.Type {
@@ -912,6 +1045,12 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceOutput) ToUnifiedAgen
 
 func (o UnifiedAgentConfigurationServiceConfigurationSourceOutput) ToUnifiedAgentConfigurationServiceConfigurationSourceOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationSourceOutput {
 	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationSourceOutput) ToOutput(ctx context.Context) pulumix.Output[UnifiedAgentConfigurationServiceConfigurationSource] {
+	return pulumix.Output[UnifiedAgentConfigurationServiceConfigurationSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Windows event log channels.
@@ -956,6 +1095,12 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceArrayOutput) ToUnifie
 
 func (o UnifiedAgentConfigurationServiceConfigurationSourceArrayOutput) ToUnifiedAgentConfigurationServiceConfigurationSourceArrayOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationSourceArrayOutput {
 	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]UnifiedAgentConfigurationServiceConfigurationSource] {
+	return pulumix.Output[[]UnifiedAgentConfigurationServiceConfigurationSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o UnifiedAgentConfigurationServiceConfigurationSourceArrayOutput) Index(i pulumi.IntInput) UnifiedAgentConfigurationServiceConfigurationSourceOutput {
@@ -1113,6 +1258,12 @@ func (i UnifiedAgentConfigurationServiceConfigurationSourceParserArgs) ToUnified
 	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationSourceParserOutput)
 }
 
+func (i UnifiedAgentConfigurationServiceConfigurationSourceParserArgs) ToOutput(ctx context.Context) pulumix.Output[UnifiedAgentConfigurationServiceConfigurationSourceParser] {
+	return pulumix.Output[UnifiedAgentConfigurationServiceConfigurationSourceParser]{
+		OutputState: i.ToUnifiedAgentConfigurationServiceConfigurationSourceParserOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i UnifiedAgentConfigurationServiceConfigurationSourceParserArgs) ToUnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput() UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput {
 	return i.ToUnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutputWithContext(context.Background())
 }
@@ -1154,6 +1305,12 @@ func (i *unifiedAgentConfigurationServiceConfigurationSourceParserPtrType) ToUni
 	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput)
 }
 
+func (i *unifiedAgentConfigurationServiceConfigurationSourceParserPtrType) ToOutput(ctx context.Context) pulumix.Output[*UnifiedAgentConfigurationServiceConfigurationSourceParser] {
+	return pulumix.Output[*UnifiedAgentConfigurationServiceConfigurationSourceParser]{
+		OutputState: i.ToUnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type UnifiedAgentConfigurationServiceConfigurationSourceParserOutput struct{ *pulumi.OutputState }
 
 func (UnifiedAgentConfigurationServiceConfigurationSourceParserOutput) ElementType() reflect.Type {
@@ -1176,6 +1333,12 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceParserOutput) ToUnifi
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v UnifiedAgentConfigurationServiceConfigurationSourceParser) *UnifiedAgentConfigurationServiceConfigurationSourceParser {
 		return &v
 	}).(UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput)
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserOutput) ToOutput(ctx context.Context) pulumix.Output[UnifiedAgentConfigurationServiceConfigurationSourceParser] {
+	return pulumix.Output[UnifiedAgentConfigurationServiceConfigurationSourceParser]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) csv delimiter.
@@ -1343,6 +1506,12 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) ToUn
 
 func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) ToUnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput {
 	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*UnifiedAgentConfigurationServiceConfigurationSourceParser] {
+	return pulumix.Output[*UnifiedAgentConfigurationServiceConfigurationSourceParser]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) Elem() UnifiedAgentConfigurationServiceConfigurationSourceParserOutput {
@@ -1676,6 +1845,12 @@ func (i UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArg
 	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput)
 }
 
+func (i UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs) ToOutput(ctx context.Context) pulumix.Output[UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser] {
+	return pulumix.Output[UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser]{
+		OutputState: i.ToUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs) ToUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutput() UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutput {
 	return i.ToUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutputWithContext(context.Background())
 }
@@ -1717,6 +1892,12 @@ func (i *unifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPt
 	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutput)
 }
 
+func (i *unifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrType) ToOutput(ctx context.Context) pulumix.Output[*UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser] {
+	return pulumix.Output[*UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser]{
+		OutputState: i.ToUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput struct{ *pulumi.OutputState }
 
 func (UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput) ElementType() reflect.Type {
@@ -1739,6 +1920,12 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOut
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser) *UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser {
 		return &v
 	}).(UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutput)
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput) ToOutput(ctx context.Context) pulumix.Output[UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser] {
+	return pulumix.Output[UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
@@ -1781,6 +1968,12 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtr
 
 func (o UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutput) ToUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutput {
 	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser] {
+	return pulumix.Output[*UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutput) Elem() UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput {
@@ -1882,6 +2075,12 @@ func (i UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs) To
 	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationSourceParserPatternOutput)
 }
 
+func (i UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs) ToOutput(ctx context.Context) pulumix.Output[UnifiedAgentConfigurationServiceConfigurationSourceParserPattern] {
+	return pulumix.Output[UnifiedAgentConfigurationServiceConfigurationSourceParserPattern]{
+		OutputState: i.ToUnifiedAgentConfigurationServiceConfigurationSourceParserPatternOutputWithContext(ctx).OutputState,
+	}
+}
+
 // UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArrayInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArray and UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArrayOutput values.
 // You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArrayInput` via:
 //
@@ -1907,6 +2106,12 @@ func (i UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArray) T
 	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArrayOutput)
 }
 
+func (i UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArray) ToOutput(ctx context.Context) pulumix.Output[[]UnifiedAgentConfigurationServiceConfigurationSourceParserPattern] {
+	return pulumix.Output[[]UnifiedAgentConfigurationServiceConfigurationSourceParserPattern]{
+		OutputState: i.ToUnifiedAgentConfigurationServiceConfigurationSourceParserPatternArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type UnifiedAgentConfigurationServiceConfigurationSourceParserPatternOutput struct{ *pulumi.OutputState }
 
 func (UnifiedAgentConfigurationServiceConfigurationSourceParserPatternOutput) ElementType() reflect.Type {
@@ -1919,6 +2124,12 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPatternOutput) 
 
 func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPatternOutput) ToUnifiedAgentConfigurationServiceConfigurationSourceParserPatternOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationSourceParserPatternOutput {
 	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPatternOutput) ToOutput(ctx context.Context) pulumix.Output[UnifiedAgentConfigurationServiceConfigurationSourceParserPattern] {
+	return pulumix.Output[UnifiedAgentConfigurationServiceConfigurationSourceParserPattern]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Process value using the specified format. This is available only when timeType is a string.
@@ -1966,6 +2177,12 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArrayOut
 	return o
 }
 
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]UnifiedAgentConfigurationServiceConfigurationSourceParserPattern] {
+	return pulumix.Output[[]UnifiedAgentConfigurationServiceConfigurationSourceParserPattern]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArrayOutput) Index(i pulumi.IntInput) UnifiedAgentConfigurationServiceConfigurationSourceParserPatternOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) UnifiedAgentConfigurationServiceConfigurationSourceParserPattern {
 		return vs[0].([]UnifiedAgentConfigurationServiceConfigurationSourceParserPattern)[vs[1].(int)]
@@ -2009,6 +2226,12 @@ func (i GetLogConfigurationArgs) ToGetLogConfigurationOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogConfigurationOutput)
 }
 
+func (i GetLogConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogConfiguration] {
+	return pulumix.Output[GetLogConfiguration]{
+		OutputState: i.ToGetLogConfigurationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetLogConfigurationArrayInput is an input type that accepts GetLogConfigurationArray and GetLogConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetLogConfigurationArrayInput` via:
 //
@@ -2034,6 +2257,12 @@ func (i GetLogConfigurationArray) ToGetLogConfigurationArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogConfigurationArrayOutput)
 }
 
+func (i GetLogConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogConfiguration] {
+	return pulumix.Output[[]GetLogConfiguration]{
+		OutputState: i.ToGetLogConfigurationArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetLogConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetLogConfigurationOutput) ElementType() reflect.Type {
@@ -2046,6 +2275,12 @@ func (o GetLogConfigurationOutput) ToGetLogConfigurationOutput() GetLogConfigura
 
 func (o GetLogConfigurationOutput) ToGetLogConfigurationOutputWithContext(ctx context.Context) GetLogConfigurationOutput {
 	return o
+}
+
+func (o GetLogConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogConfiguration] {
+	return pulumix.Output[GetLogConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the compartment that the resource belongs to.
@@ -2070,6 +2305,12 @@ func (o GetLogConfigurationArrayOutput) ToGetLogConfigurationArrayOutput() GetLo
 
 func (o GetLogConfigurationArrayOutput) ToGetLogConfigurationArrayOutputWithContext(ctx context.Context) GetLogConfigurationArrayOutput {
 	return o
+}
+
+func (o GetLogConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogConfiguration] {
+	return pulumix.Output[[]GetLogConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetLogConfigurationArrayOutput) Index(i pulumi.IntInput) GetLogConfigurationOutput {
@@ -2125,6 +2366,12 @@ func (i GetLogConfigurationSourceArgs) ToGetLogConfigurationSourceOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogConfigurationSourceOutput)
 }
 
+func (i GetLogConfigurationSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogConfigurationSource] {
+	return pulumix.Output[GetLogConfigurationSource]{
+		OutputState: i.ToGetLogConfigurationSourceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetLogConfigurationSourceArrayInput is an input type that accepts GetLogConfigurationSourceArray and GetLogConfigurationSourceArrayOutput values.
 // You can construct a concrete instance of `GetLogConfigurationSourceArrayInput` via:
 //
@@ -2150,6 +2397,12 @@ func (i GetLogConfigurationSourceArray) ToGetLogConfigurationSourceArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogConfigurationSourceArrayOutput)
 }
 
+func (i GetLogConfigurationSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogConfigurationSource] {
+	return pulumix.Output[[]GetLogConfigurationSource]{
+		OutputState: i.ToGetLogConfigurationSourceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetLogConfigurationSourceOutput struct{ *pulumi.OutputState }
 
 func (GetLogConfigurationSourceOutput) ElementType() reflect.Type {
@@ -2162,6 +2415,12 @@ func (o GetLogConfigurationSourceOutput) ToGetLogConfigurationSourceOutput() Get
 
 func (o GetLogConfigurationSourceOutput) ToGetLogConfigurationSourceOutputWithContext(ctx context.Context) GetLogConfigurationSourceOutput {
 	return o
+}
+
+func (o GetLogConfigurationSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogConfigurationSource] {
+	return pulumix.Output[GetLogConfigurationSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Log object category.
@@ -2197,6 +2456,12 @@ func (o GetLogConfigurationSourceArrayOutput) ToGetLogConfigurationSourceArrayOu
 
 func (o GetLogConfigurationSourceArrayOutput) ToGetLogConfigurationSourceArrayOutputWithContext(ctx context.Context) GetLogConfigurationSourceArrayOutput {
 	return o
+}
+
+func (o GetLogConfigurationSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogConfigurationSource] {
+	return pulumix.Output[[]GetLogConfigurationSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetLogConfigurationSourceArrayOutput) Index(i pulumi.IntInput) GetLogConfigurationSourceOutput {
@@ -2240,6 +2505,12 @@ func (i GetLogGroupsFilterArgs) ToGetLogGroupsFilterOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogGroupsFilterOutput)
 }
 
+func (i GetLogGroupsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogGroupsFilter] {
+	return pulumix.Output[GetLogGroupsFilter]{
+		OutputState: i.ToGetLogGroupsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetLogGroupsFilterArrayInput is an input type that accepts GetLogGroupsFilterArray and GetLogGroupsFilterArrayOutput values.
 // You can construct a concrete instance of `GetLogGroupsFilterArrayInput` via:
 //
@@ -2265,6 +2536,12 @@ func (i GetLogGroupsFilterArray) ToGetLogGroupsFilterArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogGroupsFilterArrayOutput)
 }
 
+func (i GetLogGroupsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogGroupsFilter] {
+	return pulumix.Output[[]GetLogGroupsFilter]{
+		OutputState: i.ToGetLogGroupsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetLogGroupsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetLogGroupsFilterOutput) ElementType() reflect.Type {
@@ -2277,6 +2554,12 @@ func (o GetLogGroupsFilterOutput) ToGetLogGroupsFilterOutput() GetLogGroupsFilte
 
 func (o GetLogGroupsFilterOutput) ToGetLogGroupsFilterOutputWithContext(ctx context.Context) GetLogGroupsFilterOutput {
 	return o
+}
+
+func (o GetLogGroupsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogGroupsFilter] {
+	return pulumix.Output[GetLogGroupsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetLogGroupsFilterOutput) Name() pulumi.StringOutput {
@@ -2303,6 +2586,12 @@ func (o GetLogGroupsFilterArrayOutput) ToGetLogGroupsFilterArrayOutput() GetLogG
 
 func (o GetLogGroupsFilterArrayOutput) ToGetLogGroupsFilterArrayOutputWithContext(ctx context.Context) GetLogGroupsFilterArrayOutput {
 	return o
+}
+
+func (o GetLogGroupsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogGroupsFilter] {
+	return pulumix.Output[[]GetLogGroupsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetLogGroupsFilterArrayOutput) Index(i pulumi.IntInput) GetLogGroupsFilterOutput {
@@ -2376,6 +2665,12 @@ func (i GetLogGroupsLogGroupArgs) ToGetLogGroupsLogGroupOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogGroupsLogGroupOutput)
 }
 
+func (i GetLogGroupsLogGroupArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogGroupsLogGroup] {
+	return pulumix.Output[GetLogGroupsLogGroup]{
+		OutputState: i.ToGetLogGroupsLogGroupOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetLogGroupsLogGroupArrayInput is an input type that accepts GetLogGroupsLogGroupArray and GetLogGroupsLogGroupArrayOutput values.
 // You can construct a concrete instance of `GetLogGroupsLogGroupArrayInput` via:
 //
@@ -2401,6 +2696,12 @@ func (i GetLogGroupsLogGroupArray) ToGetLogGroupsLogGroupArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogGroupsLogGroupArrayOutput)
 }
 
+func (i GetLogGroupsLogGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogGroupsLogGroup] {
+	return pulumix.Output[[]GetLogGroupsLogGroup]{
+		OutputState: i.ToGetLogGroupsLogGroupArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetLogGroupsLogGroupOutput struct{ *pulumi.OutputState }
 
 func (GetLogGroupsLogGroupOutput) ElementType() reflect.Type {
@@ -2413,6 +2714,12 @@ func (o GetLogGroupsLogGroupOutput) ToGetLogGroupsLogGroupOutput() GetLogGroupsL
 
 func (o GetLogGroupsLogGroupOutput) ToGetLogGroupsLogGroupOutputWithContext(ctx context.Context) GetLogGroupsLogGroupOutput {
 	return o
+}
+
+func (o GetLogGroupsLogGroupOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogGroupsLogGroup] {
+	return pulumix.Output[GetLogGroupsLogGroup]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Compartment OCID to list resources in. See compartmentIdInSubtree for nested compartments traversal.
@@ -2474,6 +2781,12 @@ func (o GetLogGroupsLogGroupArrayOutput) ToGetLogGroupsLogGroupArrayOutputWithCo
 	return o
 }
 
+func (o GetLogGroupsLogGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogGroupsLogGroup] {
+	return pulumix.Output[[]GetLogGroupsLogGroup]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetLogGroupsLogGroupArrayOutput) Index(i pulumi.IntInput) GetLogGroupsLogGroupOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLogGroupsLogGroup {
 		return vs[0].([]GetLogGroupsLogGroup)[vs[1].(int)]
@@ -2517,6 +2830,12 @@ func (i GetLogSavedSearchesFilterArgs) ToGetLogSavedSearchesFilterOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogSavedSearchesFilterOutput)
 }
 
+func (i GetLogSavedSearchesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogSavedSearchesFilter] {
+	return pulumix.Output[GetLogSavedSearchesFilter]{
+		OutputState: i.ToGetLogSavedSearchesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetLogSavedSearchesFilterArrayInput is an input type that accepts GetLogSavedSearchesFilterArray and GetLogSavedSearchesFilterArrayOutput values.
 // You can construct a concrete instance of `GetLogSavedSearchesFilterArrayInput` via:
 //
@@ -2542,6 +2861,12 @@ func (i GetLogSavedSearchesFilterArray) ToGetLogSavedSearchesFilterArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogSavedSearchesFilterArrayOutput)
 }
 
+func (i GetLogSavedSearchesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogSavedSearchesFilter] {
+	return pulumix.Output[[]GetLogSavedSearchesFilter]{
+		OutputState: i.ToGetLogSavedSearchesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetLogSavedSearchesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetLogSavedSearchesFilterOutput) ElementType() reflect.Type {
@@ -2554,6 +2879,12 @@ func (o GetLogSavedSearchesFilterOutput) ToGetLogSavedSearchesFilterOutput() Get
 
 func (o GetLogSavedSearchesFilterOutput) ToGetLogSavedSearchesFilterOutputWithContext(ctx context.Context) GetLogSavedSearchesFilterOutput {
 	return o
+}
+
+func (o GetLogSavedSearchesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogSavedSearchesFilter] {
+	return pulumix.Output[GetLogSavedSearchesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Resource name.
@@ -2581,6 +2912,12 @@ func (o GetLogSavedSearchesFilterArrayOutput) ToGetLogSavedSearchesFilterArrayOu
 
 func (o GetLogSavedSearchesFilterArrayOutput) ToGetLogSavedSearchesFilterArrayOutputWithContext(ctx context.Context) GetLogSavedSearchesFilterArrayOutput {
 	return o
+}
+
+func (o GetLogSavedSearchesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogSavedSearchesFilter] {
+	return pulumix.Output[[]GetLogSavedSearchesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetLogSavedSearchesFilterArrayOutput) Index(i pulumi.IntInput) GetLogSavedSearchesFilterOutput {
@@ -2620,6 +2957,12 @@ func (i GetLogSavedSearchesLogSavedSearchSummaryCollectionArgs) ToGetLogSavedSea
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogSavedSearchesLogSavedSearchSummaryCollectionOutput)
 }
 
+func (i GetLogSavedSearchesLogSavedSearchSummaryCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogSavedSearchesLogSavedSearchSummaryCollection] {
+	return pulumix.Output[GetLogSavedSearchesLogSavedSearchSummaryCollection]{
+		OutputState: i.ToGetLogSavedSearchesLogSavedSearchSummaryCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetLogSavedSearchesLogSavedSearchSummaryCollectionArrayInput is an input type that accepts GetLogSavedSearchesLogSavedSearchSummaryCollectionArray and GetLogSavedSearchesLogSavedSearchSummaryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetLogSavedSearchesLogSavedSearchSummaryCollectionArrayInput` via:
 //
@@ -2645,6 +2988,12 @@ func (i GetLogSavedSearchesLogSavedSearchSummaryCollectionArray) ToGetLogSavedSe
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogSavedSearchesLogSavedSearchSummaryCollectionArrayOutput)
 }
 
+func (i GetLogSavedSearchesLogSavedSearchSummaryCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogSavedSearchesLogSavedSearchSummaryCollection] {
+	return pulumix.Output[[]GetLogSavedSearchesLogSavedSearchSummaryCollection]{
+		OutputState: i.ToGetLogSavedSearchesLogSavedSearchSummaryCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetLogSavedSearchesLogSavedSearchSummaryCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetLogSavedSearchesLogSavedSearchSummaryCollectionOutput) ElementType() reflect.Type {
@@ -2657,6 +3006,12 @@ func (o GetLogSavedSearchesLogSavedSearchSummaryCollectionOutput) ToGetLogSavedS
 
 func (o GetLogSavedSearchesLogSavedSearchSummaryCollectionOutput) ToGetLogSavedSearchesLogSavedSearchSummaryCollectionOutputWithContext(ctx context.Context) GetLogSavedSearchesLogSavedSearchSummaryCollectionOutput {
 	return o
+}
+
+func (o GetLogSavedSearchesLogSavedSearchSummaryCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogSavedSearchesLogSavedSearchSummaryCollection] {
+	return pulumix.Output[GetLogSavedSearchesLogSavedSearchSummaryCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetLogSavedSearchesLogSavedSearchSummaryCollectionOutput) Items() GetLogSavedSearchesLogSavedSearchSummaryCollectionItemArrayOutput {
@@ -2677,6 +3032,12 @@ func (o GetLogSavedSearchesLogSavedSearchSummaryCollectionArrayOutput) ToGetLogS
 
 func (o GetLogSavedSearchesLogSavedSearchSummaryCollectionArrayOutput) ToGetLogSavedSearchesLogSavedSearchSummaryCollectionArrayOutputWithContext(ctx context.Context) GetLogSavedSearchesLogSavedSearchSummaryCollectionArrayOutput {
 	return o
+}
+
+func (o GetLogSavedSearchesLogSavedSearchSummaryCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogSavedSearchesLogSavedSearchSummaryCollection] {
+	return pulumix.Output[[]GetLogSavedSearchesLogSavedSearchSummaryCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetLogSavedSearchesLogSavedSearchSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetLogSavedSearchesLogSavedSearchSummaryCollectionOutput {
@@ -2754,6 +3115,12 @@ func (i GetLogSavedSearchesLogSavedSearchSummaryCollectionItemArgs) ToGetLogSave
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogSavedSearchesLogSavedSearchSummaryCollectionItemOutput)
 }
 
+func (i GetLogSavedSearchesLogSavedSearchSummaryCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogSavedSearchesLogSavedSearchSummaryCollectionItem] {
+	return pulumix.Output[GetLogSavedSearchesLogSavedSearchSummaryCollectionItem]{
+		OutputState: i.ToGetLogSavedSearchesLogSavedSearchSummaryCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetLogSavedSearchesLogSavedSearchSummaryCollectionItemArrayInput is an input type that accepts GetLogSavedSearchesLogSavedSearchSummaryCollectionItemArray and GetLogSavedSearchesLogSavedSearchSummaryCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetLogSavedSearchesLogSavedSearchSummaryCollectionItemArrayInput` via:
 //
@@ -2779,6 +3146,12 @@ func (i GetLogSavedSearchesLogSavedSearchSummaryCollectionItemArray) ToGetLogSav
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogSavedSearchesLogSavedSearchSummaryCollectionItemArrayOutput)
 }
 
+func (i GetLogSavedSearchesLogSavedSearchSummaryCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogSavedSearchesLogSavedSearchSummaryCollectionItem] {
+	return pulumix.Output[[]GetLogSavedSearchesLogSavedSearchSummaryCollectionItem]{
+		OutputState: i.ToGetLogSavedSearchesLogSavedSearchSummaryCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetLogSavedSearchesLogSavedSearchSummaryCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetLogSavedSearchesLogSavedSearchSummaryCollectionItemOutput) ElementType() reflect.Type {
@@ -2791,6 +3164,12 @@ func (o GetLogSavedSearchesLogSavedSearchSummaryCollectionItemOutput) ToGetLogSa
 
 func (o GetLogSavedSearchesLogSavedSearchSummaryCollectionItemOutput) ToGetLogSavedSearchesLogSavedSearchSummaryCollectionItemOutputWithContext(ctx context.Context) GetLogSavedSearchesLogSavedSearchSummaryCollectionItemOutput {
 	return o
+}
+
+func (o GetLogSavedSearchesLogSavedSearchSummaryCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogSavedSearchesLogSavedSearchSummaryCollectionItem] {
+	return pulumix.Output[GetLogSavedSearchesLogSavedSearchSummaryCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Compartment OCID to list resources in. See compartmentIdInSubtree for nested compartments traversal.
@@ -2861,6 +3240,12 @@ func (o GetLogSavedSearchesLogSavedSearchSummaryCollectionItemArrayOutput) ToGet
 	return o
 }
 
+func (o GetLogSavedSearchesLogSavedSearchSummaryCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogSavedSearchesLogSavedSearchSummaryCollectionItem] {
+	return pulumix.Output[[]GetLogSavedSearchesLogSavedSearchSummaryCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetLogSavedSearchesLogSavedSearchSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetLogSavedSearchesLogSavedSearchSummaryCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLogSavedSearchesLogSavedSearchSummaryCollectionItem {
 		return vs[0].([]GetLogSavedSearchesLogSavedSearchSummaryCollectionItem)[vs[1].(int)]
@@ -2902,6 +3287,12 @@ func (i GetLogsFilterArgs) ToGetLogsFilterOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogsFilterOutput)
 }
 
+func (i GetLogsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogsFilter] {
+	return pulumix.Output[GetLogsFilter]{
+		OutputState: i.ToGetLogsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetLogsFilterArrayInput is an input type that accepts GetLogsFilterArray and GetLogsFilterArrayOutput values.
 // You can construct a concrete instance of `GetLogsFilterArrayInput` via:
 //
@@ -2927,6 +3318,12 @@ func (i GetLogsFilterArray) ToGetLogsFilterArrayOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogsFilterArrayOutput)
 }
 
+func (i GetLogsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogsFilter] {
+	return pulumix.Output[[]GetLogsFilter]{
+		OutputState: i.ToGetLogsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetLogsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetLogsFilterOutput) ElementType() reflect.Type {
@@ -2939,6 +3336,12 @@ func (o GetLogsFilterOutput) ToGetLogsFilterOutput() GetLogsFilterOutput {
 
 func (o GetLogsFilterOutput) ToGetLogsFilterOutputWithContext(ctx context.Context) GetLogsFilterOutput {
 	return o
+}
+
+func (o GetLogsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogsFilter] {
+	return pulumix.Output[GetLogsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetLogsFilterOutput) Name() pulumi.StringOutput {
@@ -2965,6 +3368,12 @@ func (o GetLogsFilterArrayOutput) ToGetLogsFilterArrayOutput() GetLogsFilterArra
 
 func (o GetLogsFilterArrayOutput) ToGetLogsFilterArrayOutputWithContext(ctx context.Context) GetLogsFilterArrayOutput {
 	return o
+}
+
+func (o GetLogsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogsFilter] {
+	return pulumix.Output[[]GetLogsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetLogsFilterArrayOutput) Index(i pulumi.IntInput) GetLogsFilterOutput {
@@ -3058,6 +3467,12 @@ func (i GetLogsLogArgs) ToGetLogsLogOutputWithContext(ctx context.Context) GetLo
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogsLogOutput)
 }
 
+func (i GetLogsLogArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogsLog] {
+	return pulumix.Output[GetLogsLog]{
+		OutputState: i.ToGetLogsLogOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetLogsLogArrayInput is an input type that accepts GetLogsLogArray and GetLogsLogArrayOutput values.
 // You can construct a concrete instance of `GetLogsLogArrayInput` via:
 //
@@ -3083,6 +3498,12 @@ func (i GetLogsLogArray) ToGetLogsLogArrayOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogsLogArrayOutput)
 }
 
+func (i GetLogsLogArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogsLog] {
+	return pulumix.Output[[]GetLogsLog]{
+		OutputState: i.ToGetLogsLogArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetLogsLogOutput struct{ *pulumi.OutputState }
 
 func (GetLogsLogOutput) ElementType() reflect.Type {
@@ -3095,6 +3516,12 @@ func (o GetLogsLogOutput) ToGetLogsLogOutput() GetLogsLogOutput {
 
 func (o GetLogsLogOutput) ToGetLogsLogOutputWithContext(ctx context.Context) GetLogsLogOutput {
 	return o
+}
+
+func (o GetLogsLogOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogsLog] {
+	return pulumix.Output[GetLogsLog]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the compartment that the resource belongs to.
@@ -3181,6 +3608,12 @@ func (o GetLogsLogArrayOutput) ToGetLogsLogArrayOutputWithContext(ctx context.Co
 	return o
 }
 
+func (o GetLogsLogArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogsLog] {
+	return pulumix.Output[[]GetLogsLog]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetLogsLogArrayOutput) Index(i pulumi.IntInput) GetLogsLogOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLogsLog {
 		return vs[0].([]GetLogsLog)[vs[1].(int)]
@@ -3224,6 +3657,12 @@ func (i GetLogsLogConfigurationArgs) ToGetLogsLogConfigurationOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogsLogConfigurationOutput)
 }
 
+func (i GetLogsLogConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogsLogConfiguration] {
+	return pulumix.Output[GetLogsLogConfiguration]{
+		OutputState: i.ToGetLogsLogConfigurationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetLogsLogConfigurationArrayInput is an input type that accepts GetLogsLogConfigurationArray and GetLogsLogConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetLogsLogConfigurationArrayInput` via:
 //
@@ -3249,6 +3688,12 @@ func (i GetLogsLogConfigurationArray) ToGetLogsLogConfigurationArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogsLogConfigurationArrayOutput)
 }
 
+func (i GetLogsLogConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogsLogConfiguration] {
+	return pulumix.Output[[]GetLogsLogConfiguration]{
+		OutputState: i.ToGetLogsLogConfigurationArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetLogsLogConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetLogsLogConfigurationOutput) ElementType() reflect.Type {
@@ -3261,6 +3706,12 @@ func (o GetLogsLogConfigurationOutput) ToGetLogsLogConfigurationOutput() GetLogs
 
 func (o GetLogsLogConfigurationOutput) ToGetLogsLogConfigurationOutputWithContext(ctx context.Context) GetLogsLogConfigurationOutput {
 	return o
+}
+
+func (o GetLogsLogConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogsLogConfiguration] {
+	return pulumix.Output[GetLogsLogConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the compartment that the resource belongs to.
@@ -3285,6 +3736,12 @@ func (o GetLogsLogConfigurationArrayOutput) ToGetLogsLogConfigurationArrayOutput
 
 func (o GetLogsLogConfigurationArrayOutput) ToGetLogsLogConfigurationArrayOutputWithContext(ctx context.Context) GetLogsLogConfigurationArrayOutput {
 	return o
+}
+
+func (o GetLogsLogConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogsLogConfiguration] {
+	return pulumix.Output[[]GetLogsLogConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetLogsLogConfigurationArrayOutput) Index(i pulumi.IntInput) GetLogsLogConfigurationOutput {
@@ -3340,6 +3797,12 @@ func (i GetLogsLogConfigurationSourceArgs) ToGetLogsLogConfigurationSourceOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogsLogConfigurationSourceOutput)
 }
 
+func (i GetLogsLogConfigurationSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogsLogConfigurationSource] {
+	return pulumix.Output[GetLogsLogConfigurationSource]{
+		OutputState: i.ToGetLogsLogConfigurationSourceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetLogsLogConfigurationSourceArrayInput is an input type that accepts GetLogsLogConfigurationSourceArray and GetLogsLogConfigurationSourceArrayOutput values.
 // You can construct a concrete instance of `GetLogsLogConfigurationSourceArrayInput` via:
 //
@@ -3365,6 +3828,12 @@ func (i GetLogsLogConfigurationSourceArray) ToGetLogsLogConfigurationSourceArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogsLogConfigurationSourceArrayOutput)
 }
 
+func (i GetLogsLogConfigurationSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogsLogConfigurationSource] {
+	return pulumix.Output[[]GetLogsLogConfigurationSource]{
+		OutputState: i.ToGetLogsLogConfigurationSourceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetLogsLogConfigurationSourceOutput struct{ *pulumi.OutputState }
 
 func (GetLogsLogConfigurationSourceOutput) ElementType() reflect.Type {
@@ -3377,6 +3846,12 @@ func (o GetLogsLogConfigurationSourceOutput) ToGetLogsLogConfigurationSourceOutp
 
 func (o GetLogsLogConfigurationSourceOutput) ToGetLogsLogConfigurationSourceOutputWithContext(ctx context.Context) GetLogsLogConfigurationSourceOutput {
 	return o
+}
+
+func (o GetLogsLogConfigurationSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogsLogConfigurationSource] {
+	return pulumix.Output[GetLogsLogConfigurationSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Log object category.
@@ -3412,6 +3887,12 @@ func (o GetLogsLogConfigurationSourceArrayOutput) ToGetLogsLogConfigurationSourc
 
 func (o GetLogsLogConfigurationSourceArrayOutput) ToGetLogsLogConfigurationSourceArrayOutputWithContext(ctx context.Context) GetLogsLogConfigurationSourceArrayOutput {
 	return o
+}
+
+func (o GetLogsLogConfigurationSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogsLogConfigurationSource] {
+	return pulumix.Output[[]GetLogsLogConfigurationSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetLogsLogConfigurationSourceArrayOutput) Index(i pulumi.IntInput) GetLogsLogConfigurationSourceOutput {
@@ -3453,6 +3934,12 @@ func (i GetUnifiedAgentConfigurationGroupAssociationArgs) ToGetUnifiedAgentConfi
 	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationGroupAssociationOutput)
 }
 
+func (i GetUnifiedAgentConfigurationGroupAssociationArgs) ToOutput(ctx context.Context) pulumix.Output[GetUnifiedAgentConfigurationGroupAssociation] {
+	return pulumix.Output[GetUnifiedAgentConfigurationGroupAssociation]{
+		OutputState: i.ToGetUnifiedAgentConfigurationGroupAssociationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetUnifiedAgentConfigurationGroupAssociationArrayInput is an input type that accepts GetUnifiedAgentConfigurationGroupAssociationArray and GetUnifiedAgentConfigurationGroupAssociationArrayOutput values.
 // You can construct a concrete instance of `GetUnifiedAgentConfigurationGroupAssociationArrayInput` via:
 //
@@ -3478,6 +3965,12 @@ func (i GetUnifiedAgentConfigurationGroupAssociationArray) ToGetUnifiedAgentConf
 	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationGroupAssociationArrayOutput)
 }
 
+func (i GetUnifiedAgentConfigurationGroupAssociationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetUnifiedAgentConfigurationGroupAssociation] {
+	return pulumix.Output[[]GetUnifiedAgentConfigurationGroupAssociation]{
+		OutputState: i.ToGetUnifiedAgentConfigurationGroupAssociationArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetUnifiedAgentConfigurationGroupAssociationOutput struct{ *pulumi.OutputState }
 
 func (GetUnifiedAgentConfigurationGroupAssociationOutput) ElementType() reflect.Type {
@@ -3490,6 +3983,12 @@ func (o GetUnifiedAgentConfigurationGroupAssociationOutput) ToGetUnifiedAgentCon
 
 func (o GetUnifiedAgentConfigurationGroupAssociationOutput) ToGetUnifiedAgentConfigurationGroupAssociationOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationGroupAssociationOutput {
 	return o
+}
+
+func (o GetUnifiedAgentConfigurationGroupAssociationOutput) ToOutput(ctx context.Context) pulumix.Output[GetUnifiedAgentConfigurationGroupAssociation] {
+	return pulumix.Output[GetUnifiedAgentConfigurationGroupAssociation]{
+		OutputState: o.OutputState,
+	}
 }
 
 // list of group/dynamic group ids associated with this configuration.
@@ -3509,6 +4008,12 @@ func (o GetUnifiedAgentConfigurationGroupAssociationArrayOutput) ToGetUnifiedAge
 
 func (o GetUnifiedAgentConfigurationGroupAssociationArrayOutput) ToGetUnifiedAgentConfigurationGroupAssociationArrayOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationGroupAssociationArrayOutput {
 	return o
+}
+
+func (o GetUnifiedAgentConfigurationGroupAssociationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetUnifiedAgentConfigurationGroupAssociation] {
+	return pulumix.Output[[]GetUnifiedAgentConfigurationGroupAssociation]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetUnifiedAgentConfigurationGroupAssociationArrayOutput) Index(i pulumi.IntInput) GetUnifiedAgentConfigurationGroupAssociationOutput {
@@ -3558,6 +4063,12 @@ func (i GetUnifiedAgentConfigurationServiceConfigurationArgs) ToGetUnifiedAgentC
 	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationOutput)
 }
 
+func (i GetUnifiedAgentConfigurationServiceConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetUnifiedAgentConfigurationServiceConfiguration] {
+	return pulumix.Output[GetUnifiedAgentConfigurationServiceConfiguration]{
+		OutputState: i.ToGetUnifiedAgentConfigurationServiceConfigurationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetUnifiedAgentConfigurationServiceConfigurationArrayInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationArray and GetUnifiedAgentConfigurationServiceConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationArrayInput` via:
 //
@@ -3583,6 +4094,12 @@ func (i GetUnifiedAgentConfigurationServiceConfigurationArray) ToGetUnifiedAgent
 	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationArrayOutput)
 }
 
+func (i GetUnifiedAgentConfigurationServiceConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetUnifiedAgentConfigurationServiceConfiguration] {
+	return pulumix.Output[[]GetUnifiedAgentConfigurationServiceConfiguration]{
+		OutputState: i.ToGetUnifiedAgentConfigurationServiceConfigurationArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetUnifiedAgentConfigurationServiceConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetUnifiedAgentConfigurationServiceConfigurationOutput) ElementType() reflect.Type {
@@ -3595,6 +4112,12 @@ func (o GetUnifiedAgentConfigurationServiceConfigurationOutput) ToGetUnifiedAgen
 
 func (o GetUnifiedAgentConfigurationServiceConfigurationOutput) ToGetUnifiedAgentConfigurationServiceConfigurationOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationOutput {
 	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetUnifiedAgentConfigurationServiceConfiguration] {
+	return pulumix.Output[GetUnifiedAgentConfigurationServiceConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Type of Unified Agent service configuration.
@@ -3628,6 +4151,12 @@ func (o GetUnifiedAgentConfigurationServiceConfigurationArrayOutput) ToGetUnifie
 
 func (o GetUnifiedAgentConfigurationServiceConfigurationArrayOutput) ToGetUnifiedAgentConfigurationServiceConfigurationArrayOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationArrayOutput {
 	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetUnifiedAgentConfigurationServiceConfiguration] {
+	return pulumix.Output[[]GetUnifiedAgentConfigurationServiceConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetUnifiedAgentConfigurationServiceConfigurationArrayOutput) Index(i pulumi.IntInput) GetUnifiedAgentConfigurationServiceConfigurationOutput {
@@ -3669,6 +4198,12 @@ func (i GetUnifiedAgentConfigurationServiceConfigurationDestinationArgs) ToGetUn
 	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationDestinationOutput)
 }
 
+func (i GetUnifiedAgentConfigurationServiceConfigurationDestinationArgs) ToOutput(ctx context.Context) pulumix.Output[GetUnifiedAgentConfigurationServiceConfigurationDestination] {
+	return pulumix.Output[GetUnifiedAgentConfigurationServiceConfigurationDestination]{
+		OutputState: i.ToGetUnifiedAgentConfigurationServiceConfigurationDestinationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetUnifiedAgentConfigurationServiceConfigurationDestinationArrayInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationDestinationArray and GetUnifiedAgentConfigurationServiceConfigurationDestinationArrayOutput values.
 // You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationDestinationArrayInput` via:
 //
@@ -3694,6 +4229,12 @@ func (i GetUnifiedAgentConfigurationServiceConfigurationDestinationArray) ToGetU
 	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationDestinationArrayOutput)
 }
 
+func (i GetUnifiedAgentConfigurationServiceConfigurationDestinationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetUnifiedAgentConfigurationServiceConfigurationDestination] {
+	return pulumix.Output[[]GetUnifiedAgentConfigurationServiceConfigurationDestination]{
+		OutputState: i.ToGetUnifiedAgentConfigurationServiceConfigurationDestinationArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetUnifiedAgentConfigurationServiceConfigurationDestinationOutput struct{ *pulumi.OutputState }
 
 func (GetUnifiedAgentConfigurationServiceConfigurationDestinationOutput) ElementType() reflect.Type {
@@ -3706,6 +4247,12 @@ func (o GetUnifiedAgentConfigurationServiceConfigurationDestinationOutput) ToGet
 
 func (o GetUnifiedAgentConfigurationServiceConfigurationDestinationOutput) ToGetUnifiedAgentConfigurationServiceConfigurationDestinationOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationDestinationOutput {
 	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationDestinationOutput) ToOutput(ctx context.Context) pulumix.Output[GetUnifiedAgentConfigurationServiceConfigurationDestination] {
+	return pulumix.Output[GetUnifiedAgentConfigurationServiceConfigurationDestination]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the resource.
@@ -3725,6 +4272,12 @@ func (o GetUnifiedAgentConfigurationServiceConfigurationDestinationArrayOutput) 
 
 func (o GetUnifiedAgentConfigurationServiceConfigurationDestinationArrayOutput) ToGetUnifiedAgentConfigurationServiceConfigurationDestinationArrayOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationDestinationArrayOutput {
 	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationDestinationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetUnifiedAgentConfigurationServiceConfigurationDestination] {
+	return pulumix.Output[[]GetUnifiedAgentConfigurationServiceConfigurationDestination]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetUnifiedAgentConfigurationServiceConfigurationDestinationArrayOutput) Index(i pulumi.IntInput) GetUnifiedAgentConfigurationServiceConfigurationDestinationOutput {
@@ -3782,6 +4335,12 @@ func (i GetUnifiedAgentConfigurationServiceConfigurationSourceArgs) ToGetUnified
 	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationSourceOutput)
 }
 
+func (i GetUnifiedAgentConfigurationServiceConfigurationSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetUnifiedAgentConfigurationServiceConfigurationSource] {
+	return pulumix.Output[GetUnifiedAgentConfigurationServiceConfigurationSource]{
+		OutputState: i.ToGetUnifiedAgentConfigurationServiceConfigurationSourceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetUnifiedAgentConfigurationServiceConfigurationSourceArrayInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationSourceArray and GetUnifiedAgentConfigurationServiceConfigurationSourceArrayOutput values.
 // You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationSourceArrayInput` via:
 //
@@ -3807,6 +4366,12 @@ func (i GetUnifiedAgentConfigurationServiceConfigurationSourceArray) ToGetUnifie
 	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationSourceArrayOutput)
 }
 
+func (i GetUnifiedAgentConfigurationServiceConfigurationSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetUnifiedAgentConfigurationServiceConfigurationSource] {
+	return pulumix.Output[[]GetUnifiedAgentConfigurationServiceConfigurationSource]{
+		OutputState: i.ToGetUnifiedAgentConfigurationServiceConfigurationSourceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetUnifiedAgentConfigurationServiceConfigurationSourceOutput struct{ *pulumi.OutputState }
 
 func (GetUnifiedAgentConfigurationServiceConfigurationSourceOutput) ElementType() reflect.Type {
@@ -3819,6 +4384,12 @@ func (o GetUnifiedAgentConfigurationServiceConfigurationSourceOutput) ToGetUnifi
 
 func (o GetUnifiedAgentConfigurationServiceConfigurationSourceOutput) ToGetUnifiedAgentConfigurationServiceConfigurationSourceOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationSourceOutput {
 	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetUnifiedAgentConfigurationServiceConfigurationSource] {
+	return pulumix.Output[GetUnifiedAgentConfigurationServiceConfigurationSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Windows event log channels.
@@ -3860,6 +4431,12 @@ func (o GetUnifiedAgentConfigurationServiceConfigurationSourceArrayOutput) ToGet
 
 func (o GetUnifiedAgentConfigurationServiceConfigurationSourceArrayOutput) ToGetUnifiedAgentConfigurationServiceConfigurationSourceArrayOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationSourceArrayOutput {
 	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetUnifiedAgentConfigurationServiceConfigurationSource] {
+	return pulumix.Output[[]GetUnifiedAgentConfigurationServiceConfigurationSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetUnifiedAgentConfigurationServiceConfigurationSourceArrayOutput) Index(i pulumi.IntInput) GetUnifiedAgentConfigurationServiceConfigurationSourceOutput {
@@ -4005,6 +4582,12 @@ func (i GetUnifiedAgentConfigurationServiceConfigurationSourceParserArgs) ToGetU
 	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationSourceParserOutput)
 }
 
+func (i GetUnifiedAgentConfigurationServiceConfigurationSourceParserArgs) ToOutput(ctx context.Context) pulumix.Output[GetUnifiedAgentConfigurationServiceConfigurationSourceParser] {
+	return pulumix.Output[GetUnifiedAgentConfigurationServiceConfigurationSourceParser]{
+		OutputState: i.ToGetUnifiedAgentConfigurationServiceConfigurationSourceParserOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetUnifiedAgentConfigurationServiceConfigurationSourceParserArrayInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationSourceParserArray and GetUnifiedAgentConfigurationServiceConfigurationSourceParserArrayOutput values.
 // You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationSourceParserArrayInput` via:
 //
@@ -4030,6 +4613,12 @@ func (i GetUnifiedAgentConfigurationServiceConfigurationSourceParserArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationSourceParserArrayOutput)
 }
 
+func (i GetUnifiedAgentConfigurationServiceConfigurationSourceParserArray) ToOutput(ctx context.Context) pulumix.Output[[]GetUnifiedAgentConfigurationServiceConfigurationSourceParser] {
+	return pulumix.Output[[]GetUnifiedAgentConfigurationServiceConfigurationSourceParser]{
+		OutputState: i.ToGetUnifiedAgentConfigurationServiceConfigurationSourceParserArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetUnifiedAgentConfigurationServiceConfigurationSourceParserOutput struct{ *pulumi.OutputState }
 
 func (GetUnifiedAgentConfigurationServiceConfigurationSourceParserOutput) ElementType() reflect.Type {
@@ -4042,6 +4631,12 @@ func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserOutput) ToGe
 
 func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserOutput) ToGetUnifiedAgentConfigurationServiceConfigurationSourceParserOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationSourceParserOutput {
 	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserOutput) ToOutput(ctx context.Context) pulumix.Output[GetUnifiedAgentConfigurationServiceConfigurationSourceParser] {
+	return pulumix.Output[GetUnifiedAgentConfigurationServiceConfigurationSourceParser]{
+		OutputState: o.OutputState,
+	}
 }
 
 // csv delimiter.
@@ -4209,6 +4804,12 @@ func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserArrayOutput)
 	return o
 }
 
+func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetUnifiedAgentConfigurationServiceConfigurationSourceParser] {
+	return pulumix.Output[[]GetUnifiedAgentConfigurationServiceConfigurationSourceParser]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserArrayOutput) Index(i pulumi.IntInput) GetUnifiedAgentConfigurationServiceConfigurationSourceParserOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUnifiedAgentConfigurationServiceConfigurationSourceParser {
 		return vs[0].([]GetUnifiedAgentConfigurationServiceConfigurationSourceParser)[vs[1].(int)]
@@ -4260,6 +4861,12 @@ func (i GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser
 	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput)
 }
 
+func (i GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs) ToOutput(ctx context.Context) pulumix.Output[GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser] {
+	return pulumix.Output[GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser]{
+		OutputState: i.ToGetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArrayInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArray and GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArrayOutput values.
 // You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArrayInput` via:
 //
@@ -4285,6 +4892,12 @@ func (i GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser
 	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArrayOutput)
 }
 
+func (i GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArray) ToOutput(ctx context.Context) pulumix.Output[[]GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser] {
+	return pulumix.Output[[]GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser]{
+		OutputState: i.ToGetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput struct{ *pulumi.OutputState }
 
 func (GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput) ElementType() reflect.Type {
@@ -4297,6 +4910,12 @@ func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser
 
 func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput) ToGetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput {
 	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput) ToOutput(ctx context.Context) pulumix.Output[GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser] {
+	return pulumix.Output[GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Specify the time field for the event time. If the event doesn't have this field, the current time is used.
@@ -4339,6 +4958,12 @@ func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser
 
 func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArrayOutput) ToGetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArrayOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArrayOutput {
 	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser] {
+	return pulumix.Output[[]GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArrayOutput) Index(i pulumi.IntInput) GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput {
@@ -4396,6 +5021,12 @@ func (i GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs)
 	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternOutput)
 }
 
+func (i GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs) ToOutput(ctx context.Context) pulumix.Output[GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern] {
+	return pulumix.Output[GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern]{
+		OutputState: i.ToGetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternArrayInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternArray and GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternArrayOutput values.
 // You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternArrayInput` via:
 //
@@ -4421,6 +5052,12 @@ func (i GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternArrayOutput)
 }
 
+func (i GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternArray) ToOutput(ctx context.Context) pulumix.Output[[]GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern] {
+	return pulumix.Output[[]GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern]{
+		OutputState: i.ToGetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternOutput struct{ *pulumi.OutputState }
 
 func (GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternOutput) ElementType() reflect.Type {
@@ -4433,6 +5070,12 @@ func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternOutpu
 
 func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternOutput) ToGetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternOutput {
 	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternOutput) ToOutput(ctx context.Context) pulumix.Output[GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern] {
+	return pulumix.Output[GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Process value using the specified format. This is available only when timeType is a string.
@@ -4480,6 +5123,12 @@ func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternArray
 	return o
 }
 
+func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern] {
+	return pulumix.Output[[]GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternArrayOutput) Index(i pulumi.IntInput) GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern {
 		return vs[0].([]GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern)[vs[1].(int)]
@@ -4523,6 +5172,12 @@ func (i GetUnifiedAgentConfigurationsFilterArgs) ToGetUnifiedAgentConfigurations
 	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationsFilterOutput)
 }
 
+func (i GetUnifiedAgentConfigurationsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetUnifiedAgentConfigurationsFilter] {
+	return pulumix.Output[GetUnifiedAgentConfigurationsFilter]{
+		OutputState: i.ToGetUnifiedAgentConfigurationsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetUnifiedAgentConfigurationsFilterArrayInput is an input type that accepts GetUnifiedAgentConfigurationsFilterArray and GetUnifiedAgentConfigurationsFilterArrayOutput values.
 // You can construct a concrete instance of `GetUnifiedAgentConfigurationsFilterArrayInput` via:
 //
@@ -4548,6 +5203,12 @@ func (i GetUnifiedAgentConfigurationsFilterArray) ToGetUnifiedAgentConfiguration
 	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationsFilterArrayOutput)
 }
 
+func (i GetUnifiedAgentConfigurationsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetUnifiedAgentConfigurationsFilter] {
+	return pulumix.Output[[]GetUnifiedAgentConfigurationsFilter]{
+		OutputState: i.ToGetUnifiedAgentConfigurationsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetUnifiedAgentConfigurationsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetUnifiedAgentConfigurationsFilterOutput) ElementType() reflect.Type {
@@ -4560,6 +5221,12 @@ func (o GetUnifiedAgentConfigurationsFilterOutput) ToGetUnifiedAgentConfiguratio
 
 func (o GetUnifiedAgentConfigurationsFilterOutput) ToGetUnifiedAgentConfigurationsFilterOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationsFilterOutput {
 	return o
+}
+
+func (o GetUnifiedAgentConfigurationsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetUnifiedAgentConfigurationsFilter] {
+	return pulumix.Output[GetUnifiedAgentConfigurationsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name key to tag this grok pattern.
@@ -4587,6 +5254,12 @@ func (o GetUnifiedAgentConfigurationsFilterArrayOutput) ToGetUnifiedAgentConfigu
 
 func (o GetUnifiedAgentConfigurationsFilterArrayOutput) ToGetUnifiedAgentConfigurationsFilterArrayOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationsFilterArrayOutput {
 	return o
+}
+
+func (o GetUnifiedAgentConfigurationsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetUnifiedAgentConfigurationsFilter] {
+	return pulumix.Output[[]GetUnifiedAgentConfigurationsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetUnifiedAgentConfigurationsFilterArrayOutput) Index(i pulumi.IntInput) GetUnifiedAgentConfigurationsFilterOutput {
@@ -4626,6 +5299,12 @@ func (i GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionArgs) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionOutput)
 }
 
+func (i GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollection] {
+	return pulumix.Output[GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollection]{
+		OutputState: i.ToGetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionArrayInput is an input type that accepts GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionArray and GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionArrayOutput values.
 // You can construct a concrete instance of `GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionArrayInput` via:
 //
@@ -4651,6 +5330,12 @@ func (i GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionArray) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionArrayOutput)
 }
 
+func (i GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollection] {
+	return pulumix.Output[[]GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollection]{
+		OutputState: i.ToGetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionOutput) ElementType() reflect.Type {
@@ -4663,6 +5348,12 @@ func (o GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionOutput) 
 
 func (o GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionOutput) ToGetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionOutput {
 	return o
+}
+
+func (o GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollection] {
+	return pulumix.Output[GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionOutput) Items() GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemArrayOutput {
@@ -4683,6 +5374,12 @@ func (o GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionArrayOut
 
 func (o GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionArrayOutput) ToGetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionArrayOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionArrayOutput {
 	return o
+}
+
+func (o GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollection] {
+	return pulumix.Output[[]GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionArrayOutput) Index(i pulumi.IntInput) GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionOutput {
@@ -4768,6 +5465,12 @@ func (i GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemArgs
 	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemOutput)
 }
 
+func (i GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem] {
+	return pulumix.Output[GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem]{
+		OutputState: i.ToGetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemArrayInput is an input type that accepts GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemArray and GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemArrayInput` via:
 //
@@ -4793,6 +5496,12 @@ func (i GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemArra
 	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemArrayOutput)
 }
 
+func (i GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem] {
+	return pulumix.Output[[]GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem]{
+		OutputState: i.ToGetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemOutput) ElementType() reflect.Type {
@@ -4805,6 +5514,12 @@ func (o GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemOutp
 
 func (o GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemOutput) ToGetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemOutput {
 	return o
+}
+
+func (o GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem] {
+	return pulumix.Output[GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Compartment OCID to list resources in. See compartmentIdInSubtree for nested compartments traversal.
@@ -4897,6 +5612,12 @@ func (o GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemArra
 
 func (o GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemArrayOutput) ToGetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemArrayOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemArrayOutput {
 	return o
+}
+
+func (o GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem] {
+	return pulumix.Output[[]GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemArrayOutput) Index(i pulumi.IntInput) GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemOutput {

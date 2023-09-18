@@ -63,7 +63,7 @@ public class ExternalDbSystemStackMonitoringsManagement extends com.pulumi.resou
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="enableStackMonitoring", type=Boolean.class, parameters={})
+    @Export(name="enableStackMonitoring", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableStackMonitoring;
 
     /**
@@ -80,7 +80,7 @@ public class ExternalDbSystemStackMonitoringsManagement extends com.pulumi.resou
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
      * 
      */
-    @Export(name="externalDbSystemId", type=String.class, parameters={})
+    @Export(name="externalDbSystemId", refs={String.class}, tree="[0]")
     private Output<String> externalDbSystemId;
 
     /**
@@ -94,7 +94,7 @@ public class ExternalDbSystemStackMonitoringsManagement extends com.pulumi.resou
      * The status of the associated service.
      * 
      */
-    @Export(name="isEnabled", type=Boolean.class, parameters={})
+    @Export(name="isEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isEnabled;
 
     /**
@@ -108,7 +108,7 @@ public class ExternalDbSystemStackMonitoringsManagement extends com.pulumi.resou
      * The associated service-specific inputs in JSON string format, which Database Management can identify.
      * 
      */
-    @Export(name="metadata", type=String.class, parameters={})
+    @Export(name="metadata", refs={String.class}, tree="[0]")
     private Output<String> metadata;
 
     /**

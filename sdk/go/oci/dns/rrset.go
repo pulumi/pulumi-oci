@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Rrset resource in Oracle Cloud Infrastructure DNS service.
@@ -253,6 +254,12 @@ func (i *Rrset) ToRrsetOutputWithContext(ctx context.Context) RrsetOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(RrsetOutput)
 }
 
+func (i *Rrset) ToOutput(ctx context.Context) pulumix.Output[*Rrset] {
+	return pulumix.Output[*Rrset]{
+		OutputState: i.ToRrsetOutputWithContext(ctx).OutputState,
+	}
+}
+
 // RrsetArrayInput is an input type that accepts RrsetArray and RrsetArrayOutput values.
 // You can construct a concrete instance of `RrsetArrayInput` via:
 //
@@ -276,6 +283,12 @@ func (i RrsetArray) ToRrsetArrayOutput() RrsetArrayOutput {
 
 func (i RrsetArray) ToRrsetArrayOutputWithContext(ctx context.Context) RrsetArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(RrsetArrayOutput)
+}
+
+func (i RrsetArray) ToOutput(ctx context.Context) pulumix.Output[[]*Rrset] {
+	return pulumix.Output[[]*Rrset]{
+		OutputState: i.ToRrsetArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // RrsetMapInput is an input type that accepts RrsetMap and RrsetMapOutput values.
@@ -303,6 +316,12 @@ func (i RrsetMap) ToRrsetMapOutputWithContext(ctx context.Context) RrsetMapOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(RrsetMapOutput)
 }
 
+func (i RrsetMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Rrset] {
+	return pulumix.Output[map[string]*Rrset]{
+		OutputState: i.ToRrsetMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type RrsetOutput struct{ *pulumi.OutputState }
 
 func (RrsetOutput) ElementType() reflect.Type {
@@ -315,6 +334,12 @@ func (o RrsetOutput) ToRrsetOutput() RrsetOutput {
 
 func (o RrsetOutput) ToRrsetOutputWithContext(ctx context.Context) RrsetOutput {
 	return o
+}
+
+func (o RrsetOutput) ToOutput(ctx context.Context) pulumix.Output[*Rrset] {
+	return pulumix.Output[*Rrset]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The OCID of the compartment the resource belongs to.
@@ -371,6 +396,12 @@ func (o RrsetArrayOutput) ToRrsetArrayOutputWithContext(ctx context.Context) Rrs
 	return o
 }
 
+func (o RrsetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Rrset] {
+	return pulumix.Output[[]*Rrset]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o RrsetArrayOutput) Index(i pulumi.IntInput) RrsetOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Rrset {
 		return vs[0].([]*Rrset)[vs[1].(int)]
@@ -389,6 +420,12 @@ func (o RrsetMapOutput) ToRrsetMapOutput() RrsetMapOutput {
 
 func (o RrsetMapOutput) ToRrsetMapOutputWithContext(ctx context.Context) RrsetMapOutput {
 	return o
+}
+
+func (o RrsetMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Rrset] {
+	return pulumix.Output[map[string]*Rrset]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o RrsetMapOutput) MapIndex(k pulumi.StringInput) RrsetOutput {

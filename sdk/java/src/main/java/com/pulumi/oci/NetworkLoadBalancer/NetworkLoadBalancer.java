@@ -82,7 +82,7 @@ public class NetworkLoadBalancer extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancer.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -96,7 +96,7 @@ public class NetworkLoadBalancer extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -110,7 +110,7 @@ public class NetworkLoadBalancer extends com.pulumi.resources.CustomResource {
      * (Updatable) Network load balancer identifier, which can be renamed.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -124,7 +124,7 @@ public class NetworkLoadBalancer extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -138,7 +138,7 @@ public class NetworkLoadBalancer extends com.pulumi.resources.CustomResource {
      * An array of IP addresses.
      * 
      */
-    @Export(name="ipAddresses", type=List.class, parameters={NetworkLoadBalancerIpAddress.class})
+    @Export(name="ipAddresses", refs={List.class,NetworkLoadBalancerIpAddress.class}, tree="[0,1]")
     private Output<List<NetworkLoadBalancerIpAddress>> ipAddresses;
 
     /**
@@ -152,7 +152,7 @@ public class NetworkLoadBalancer extends com.pulumi.resources.CustomResource {
      * (Updatable) This parameter can be enabled only if backends are compute OCIDs. When enabled, the skipSourceDestinationCheck parameter is automatically enabled on the load balancer VNIC, and packets are sent to the backend with the entire IP header intact.
      * 
      */
-    @Export(name="isPreserveSourceDestination", type=Boolean.class, parameters={})
+    @Export(name="isPreserveSourceDestination", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isPreserveSourceDestination;
 
     /**
@@ -174,7 +174,7 @@ public class NetworkLoadBalancer extends com.pulumi.resources.CustomResource {
      * Example: `true`
      * 
      */
-    @Export(name="isPrivate", type=Boolean.class, parameters={})
+    @Export(name="isPrivate", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isPrivate;
 
     /**
@@ -196,7 +196,7 @@ public class NetworkLoadBalancer extends com.pulumi.resources.CustomResource {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -218,7 +218,7 @@ public class NetworkLoadBalancer extends com.pulumi.resources.CustomResource {
      * Example: [&#34;ocid1.nsg.oc1.phx.unique_ID&#34;]
      * 
      */
-    @Export(name="networkSecurityGroupIds", type=List.class, parameters={String.class})
+    @Export(name="networkSecurityGroupIds", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> networkSecurityGroupIds;
 
     /**
@@ -240,7 +240,7 @@ public class NetworkLoadBalancer extends com.pulumi.resources.CustomResource {
      * (Updatable) IP version associated with the NLB.
      * 
      */
-    @Export(name="nlbIpVersion", type=String.class, parameters={})
+    @Export(name="nlbIpVersion", refs={String.class}, tree="[0]")
     private Output<String> nlbIpVersion;
 
     /**
@@ -254,7 +254,7 @@ public class NetworkLoadBalancer extends com.pulumi.resources.CustomResource {
      * An array of reserved Ips.
      * 
      */
-    @Export(name="reservedIps", type=List.class, parameters={NetworkLoadBalancerReservedIp.class})
+    @Export(name="reservedIps", refs={List.class,NetworkLoadBalancerReservedIp.class}, tree="[0,1]")
     private Output<List<NetworkLoadBalancerReservedIp>> reservedIps;
 
     /**
@@ -268,7 +268,7 @@ public class NetworkLoadBalancer extends com.pulumi.resources.CustomResource {
      * The current state of the network load balancer.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -285,7 +285,7 @@ public class NetworkLoadBalancer extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="subnetId", type=String.class, parameters={})
+    @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
@@ -302,7 +302,7 @@ public class NetworkLoadBalancer extends com.pulumi.resources.CustomResource {
      * Key-value pair representing system tags&#39; keys and values scoped to a namespace. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -316,7 +316,7 @@ public class NetworkLoadBalancer extends com.pulumi.resources.CustomResource {
      * The date and time the network load balancer was created, in the format defined by RFC3339.  Example: `2020-05-01T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -330,7 +330,7 @@ public class NetworkLoadBalancer extends com.pulumi.resources.CustomResource {
      * The time the network load balancer was updated. An RFC3339 formatted date-time string.  Example: `2020-05-01T22:10:29.600Z`
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

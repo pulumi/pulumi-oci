@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Job Shapes in Oracle Cloud Infrastructure Data Science service.
@@ -104,6 +105,12 @@ func (o GetJobShapesResultOutput) ToGetJobShapesResultOutput() GetJobShapesResul
 
 func (o GetJobShapesResultOutput) ToGetJobShapesResultOutputWithContext(ctx context.Context) GetJobShapesResultOutput {
 	return o
+}
+
+func (o GetJobShapesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetJobShapesResult] {
+	return pulumix.Output[GetJobShapesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetJobShapesResultOutput) CompartmentId() pulumi.StringOutput {

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Steering Policy Attachment resource in Oracle Cloud Infrastructure DNS service.
@@ -117,6 +118,12 @@ func (o LookupSteeringPolicyAttachmentResultOutput) ToLookupSteeringPolicyAttach
 
 func (o LookupSteeringPolicyAttachmentResultOutput) ToLookupSteeringPolicyAttachmentResultOutputWithContext(ctx context.Context) LookupSteeringPolicyAttachmentResultOutput {
 	return o
+}
+
+func (o LookupSteeringPolicyAttachmentResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupSteeringPolicyAttachmentResult] {
+	return pulumix.Output[LookupSteeringPolicyAttachmentResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the compartment containing the steering policy attachment.

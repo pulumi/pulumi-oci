@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Load Balancer Health resource in Oracle Cloud Infrastructure Load Balancer service.
@@ -117,6 +118,12 @@ func (o GetHealthResultOutput) ToGetHealthResultOutput() GetHealthResultOutput {
 
 func (o GetHealthResultOutput) ToGetHealthResultOutputWithContext(ctx context.Context) GetHealthResultOutput {
 	return o
+}
+
+func (o GetHealthResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetHealthResult] {
+	return pulumix.Output[GetHealthResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A list of backend sets that are currently in the `CRITICAL` health state. The list identifies each backend set by the friendly name you assigned when you created it.  Example: `exampleBackendSet`

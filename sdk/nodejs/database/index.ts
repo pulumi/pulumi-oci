@@ -327,7 +327,8 @@ utilities.lazyLoad(exports, ["getAutonomousDatabaseRefreshableClones","getAutono
 
 export { GetAutonomousDatabaseRegionalWalletManagementResult } from "./getAutonomousDatabaseRegionalWalletManagement";
 export const getAutonomousDatabaseRegionalWalletManagement: typeof import("./getAutonomousDatabaseRegionalWalletManagement").getAutonomousDatabaseRegionalWalletManagement = null as any;
-utilities.lazyLoad(exports, ["getAutonomousDatabaseRegionalWalletManagement"], () => require("./getAutonomousDatabaseRegionalWalletManagement"));
+export const getAutonomousDatabaseRegionalWalletManagementOutput: typeof import("./getAutonomousDatabaseRegionalWalletManagement").getAutonomousDatabaseRegionalWalletManagementOutput = null as any;
+utilities.lazyLoad(exports, ["getAutonomousDatabaseRegionalWalletManagement","getAutonomousDatabaseRegionalWalletManagementOutput"], () => require("./getAutonomousDatabaseRegionalWalletManagement"));
 
 export { GetAutonomousDatabaseWalletArgs, GetAutonomousDatabaseWalletResult, GetAutonomousDatabaseWalletOutputArgs } from "./getAutonomousDatabaseWallet";
 export const getAutonomousDatabaseWallet: typeof import("./getAutonomousDatabaseWallet").getAutonomousDatabaseWallet = null as any;

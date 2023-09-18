@@ -71,7 +71,7 @@ public class Peer extends com.pulumi.resources.CustomResource {
      * Availability Domain to place new peer
      * 
      */
-    @Export(name="ad", type=String.class, parameters={})
+    @Export(name="ad", refs={String.class}, tree="[0]")
     private Output<String> ad;
 
     /**
@@ -85,7 +85,7 @@ public class Peer extends com.pulumi.resources.CustomResource {
      * peer alias
      * 
      */
-    @Export(name="alias", type=String.class, parameters={})
+    @Export(name="alias", refs={String.class}, tree="[0]")
     private Output<String> alias;
 
     /**
@@ -99,7 +99,7 @@ public class Peer extends com.pulumi.resources.CustomResource {
      * Unique service identifier.
      * 
      */
-    @Export(name="blockchainPlatformId", type=String.class, parameters={})
+    @Export(name="blockchainPlatformId", refs={String.class}, tree="[0]")
     private Output<String> blockchainPlatformId;
 
     /**
@@ -113,7 +113,7 @@ public class Peer extends com.pulumi.resources.CustomResource {
      * Host on which the Peer exists
      * 
      */
-    @Export(name="host", type=String.class, parameters={})
+    @Export(name="host", refs={String.class}, tree="[0]")
     private Output<String> host;
 
     /**
@@ -127,7 +127,7 @@ public class Peer extends com.pulumi.resources.CustomResource {
      * (Updatable) OCPU allocation parameter
      * 
      */
-    @Export(name="ocpuAllocationParam", type=PeerOcpuAllocationParam.class, parameters={})
+    @Export(name="ocpuAllocationParam", refs={PeerOcpuAllocationParam.class}, tree="[0]")
     private Output<PeerOcpuAllocationParam> ocpuAllocationParam;
 
     /**
@@ -141,7 +141,7 @@ public class Peer extends com.pulumi.resources.CustomResource {
      * peer identifier
      * 
      */
-    @Export(name="peerKey", type=String.class, parameters={})
+    @Export(name="peerKey", refs={String.class}, tree="[0]")
     private Output<String> peerKey;
 
     /**
@@ -158,7 +158,7 @@ public class Peer extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="role", type=String.class, parameters={})
+    @Export(name="role", refs={String.class}, tree="[0]")
     private Output<String> role;
 
     /**
@@ -175,7 +175,7 @@ public class Peer extends com.pulumi.resources.CustomResource {
      * The current state of the peer.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**

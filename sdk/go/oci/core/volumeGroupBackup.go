@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Volume Group Backup resource in Oracle Cloud Infrastructure Core service.
@@ -285,6 +286,12 @@ func (i *VolumeGroupBackup) ToVolumeGroupBackupOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(VolumeGroupBackupOutput)
 }
 
+func (i *VolumeGroupBackup) ToOutput(ctx context.Context) pulumix.Output[*VolumeGroupBackup] {
+	return pulumix.Output[*VolumeGroupBackup]{
+		OutputState: i.ToVolumeGroupBackupOutputWithContext(ctx).OutputState,
+	}
+}
+
 // VolumeGroupBackupArrayInput is an input type that accepts VolumeGroupBackupArray and VolumeGroupBackupArrayOutput values.
 // You can construct a concrete instance of `VolumeGroupBackupArrayInput` via:
 //
@@ -308,6 +315,12 @@ func (i VolumeGroupBackupArray) ToVolumeGroupBackupArrayOutput() VolumeGroupBack
 
 func (i VolumeGroupBackupArray) ToVolumeGroupBackupArrayOutputWithContext(ctx context.Context) VolumeGroupBackupArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(VolumeGroupBackupArrayOutput)
+}
+
+func (i VolumeGroupBackupArray) ToOutput(ctx context.Context) pulumix.Output[[]*VolumeGroupBackup] {
+	return pulumix.Output[[]*VolumeGroupBackup]{
+		OutputState: i.ToVolumeGroupBackupArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // VolumeGroupBackupMapInput is an input type that accepts VolumeGroupBackupMap and VolumeGroupBackupMapOutput values.
@@ -335,6 +348,12 @@ func (i VolumeGroupBackupMap) ToVolumeGroupBackupMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(VolumeGroupBackupMapOutput)
 }
 
+func (i VolumeGroupBackupMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*VolumeGroupBackup] {
+	return pulumix.Output[map[string]*VolumeGroupBackup]{
+		OutputState: i.ToVolumeGroupBackupMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type VolumeGroupBackupOutput struct{ *pulumi.OutputState }
 
 func (VolumeGroupBackupOutput) ElementType() reflect.Type {
@@ -347,6 +366,12 @@ func (o VolumeGroupBackupOutput) ToVolumeGroupBackupOutput() VolumeGroupBackupOu
 
 func (o VolumeGroupBackupOutput) ToVolumeGroupBackupOutputWithContext(ctx context.Context) VolumeGroupBackupOutput {
 	return o
+}
+
+func (o VolumeGroupBackupOutput) ToOutput(ctx context.Context) pulumix.Output[*VolumeGroupBackup] {
+	return pulumix.Output[*VolumeGroupBackup]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The OCID of the compartment that will contain the volume group backup. This parameter is optional, by default backup will be created in the same compartment and source volume group.
@@ -456,6 +481,12 @@ func (o VolumeGroupBackupArrayOutput) ToVolumeGroupBackupArrayOutputWithContext(
 	return o
 }
 
+func (o VolumeGroupBackupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*VolumeGroupBackup] {
+	return pulumix.Output[[]*VolumeGroupBackup]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o VolumeGroupBackupArrayOutput) Index(i pulumi.IntInput) VolumeGroupBackupOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *VolumeGroupBackup {
 		return vs[0].([]*VolumeGroupBackup)[vs[1].(int)]
@@ -474,6 +505,12 @@ func (o VolumeGroupBackupMapOutput) ToVolumeGroupBackupMapOutput() VolumeGroupBa
 
 func (o VolumeGroupBackupMapOutput) ToVolumeGroupBackupMapOutputWithContext(ctx context.Context) VolumeGroupBackupMapOutput {
 	return o
+}
+
+func (o VolumeGroupBackupMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*VolumeGroupBackup] {
+	return pulumix.Output[map[string]*VolumeGroupBackup]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o VolumeGroupBackupMapOutput) MapIndex(k pulumi.StringInput) VolumeGroupBackupOutput {

@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // ## Import
@@ -396,6 +397,12 @@ func (i *DatabaseInsight) ToDatabaseInsightOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseInsightOutput)
 }
 
+func (i *DatabaseInsight) ToOutput(ctx context.Context) pulumix.Output[*DatabaseInsight] {
+	return pulumix.Output[*DatabaseInsight]{
+		OutputState: i.ToDatabaseInsightOutputWithContext(ctx).OutputState,
+	}
+}
+
 // DatabaseInsightArrayInput is an input type that accepts DatabaseInsightArray and DatabaseInsightArrayOutput values.
 // You can construct a concrete instance of `DatabaseInsightArrayInput` via:
 //
@@ -419,6 +426,12 @@ func (i DatabaseInsightArray) ToDatabaseInsightArrayOutput() DatabaseInsightArra
 
 func (i DatabaseInsightArray) ToDatabaseInsightArrayOutputWithContext(ctx context.Context) DatabaseInsightArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseInsightArrayOutput)
+}
+
+func (i DatabaseInsightArray) ToOutput(ctx context.Context) pulumix.Output[[]*DatabaseInsight] {
+	return pulumix.Output[[]*DatabaseInsight]{
+		OutputState: i.ToDatabaseInsightArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // DatabaseInsightMapInput is an input type that accepts DatabaseInsightMap and DatabaseInsightMapOutput values.
@@ -446,6 +459,12 @@ func (i DatabaseInsightMap) ToDatabaseInsightMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseInsightMapOutput)
 }
 
+func (i DatabaseInsightMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DatabaseInsight] {
+	return pulumix.Output[map[string]*DatabaseInsight]{
+		OutputState: i.ToDatabaseInsightMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type DatabaseInsightOutput struct{ *pulumi.OutputState }
 
 func (DatabaseInsightOutput) ElementType() reflect.Type {
@@ -458,6 +477,12 @@ func (o DatabaseInsightOutput) ToDatabaseInsightOutput() DatabaseInsightOutput {
 
 func (o DatabaseInsightOutput) ToDatabaseInsightOutputWithContext(ctx context.Context) DatabaseInsightOutput {
 	return o
+}
+
+func (o DatabaseInsightOutput) ToOutput(ctx context.Context) pulumix.Output[*DatabaseInsight] {
+	return pulumix.Output[*DatabaseInsight]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Compartment Identifier of database
@@ -649,6 +674,12 @@ func (o DatabaseInsightArrayOutput) ToDatabaseInsightArrayOutputWithContext(ctx 
 	return o
 }
 
+func (o DatabaseInsightArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DatabaseInsight] {
+	return pulumix.Output[[]*DatabaseInsight]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o DatabaseInsightArrayOutput) Index(i pulumi.IntInput) DatabaseInsightOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DatabaseInsight {
 		return vs[0].([]*DatabaseInsight)[vs[1].(int)]
@@ -667,6 +698,12 @@ func (o DatabaseInsightMapOutput) ToDatabaseInsightMapOutput() DatabaseInsightMa
 
 func (o DatabaseInsightMapOutput) ToDatabaseInsightMapOutputWithContext(ctx context.Context) DatabaseInsightMapOutput {
 	return o
+}
+
+func (o DatabaseInsightMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DatabaseInsight] {
+	return pulumix.Output[map[string]*DatabaseInsight]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o DatabaseInsightMapOutput) MapIndex(k pulumi.StringInput) DatabaseInsightOutput {

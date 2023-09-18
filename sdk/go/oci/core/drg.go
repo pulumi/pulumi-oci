@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Drg resource in Oracle Cloud Infrastructure Core service.
@@ -231,6 +232,12 @@ func (i *Drg) ToDrgOutputWithContext(ctx context.Context) DrgOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DrgOutput)
 }
 
+func (i *Drg) ToOutput(ctx context.Context) pulumix.Output[*Drg] {
+	return pulumix.Output[*Drg]{
+		OutputState: i.ToDrgOutputWithContext(ctx).OutputState,
+	}
+}
+
 // DrgArrayInput is an input type that accepts DrgArray and DrgArrayOutput values.
 // You can construct a concrete instance of `DrgArrayInput` via:
 //
@@ -254,6 +261,12 @@ func (i DrgArray) ToDrgArrayOutput() DrgArrayOutput {
 
 func (i DrgArray) ToDrgArrayOutputWithContext(ctx context.Context) DrgArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DrgArrayOutput)
+}
+
+func (i DrgArray) ToOutput(ctx context.Context) pulumix.Output[[]*Drg] {
+	return pulumix.Output[[]*Drg]{
+		OutputState: i.ToDrgArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // DrgMapInput is an input type that accepts DrgMap and DrgMapOutput values.
@@ -281,6 +294,12 @@ func (i DrgMap) ToDrgMapOutputWithContext(ctx context.Context) DrgMapOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DrgMapOutput)
 }
 
+func (i DrgMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Drg] {
+	return pulumix.Output[map[string]*Drg]{
+		OutputState: i.ToDrgMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type DrgOutput struct{ *pulumi.OutputState }
 
 func (DrgOutput) ElementType() reflect.Type {
@@ -293,6 +312,12 @@ func (o DrgOutput) ToDrgOutput() DrgOutput {
 
 func (o DrgOutput) ToDrgOutputWithContext(ctx context.Context) DrgOutput {
 	return o
+}
+
+func (o DrgOutput) ToOutput(ctx context.Context) pulumix.Output[*Drg] {
+	return pulumix.Output[*Drg]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the DRG.
@@ -357,6 +382,12 @@ func (o DrgArrayOutput) ToDrgArrayOutputWithContext(ctx context.Context) DrgArra
 	return o
 }
 
+func (o DrgArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Drg] {
+	return pulumix.Output[[]*Drg]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o DrgArrayOutput) Index(i pulumi.IntInput) DrgOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Drg {
 		return vs[0].([]*Drg)[vs[1].(int)]
@@ -375,6 +406,12 @@ func (o DrgMapOutput) ToDrgMapOutput() DrgMapOutput {
 
 func (o DrgMapOutput) ToDrgMapOutputWithContext(ctx context.Context) DrgMapOutput {
 	return o
+}
+
+func (o DrgMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Drg] {
+	return pulumix.Output[map[string]*Drg]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o DrgMapOutput) MapIndex(k pulumi.StringInput) DrgOutput {

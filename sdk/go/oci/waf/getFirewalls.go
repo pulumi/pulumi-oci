@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Web App Firewalls in Oracle Cloud Infrastructure Waf service.
@@ -131,6 +132,12 @@ func (o GetFirewallsResultOutput) ToGetFirewallsResultOutput() GetFirewallsResul
 
 func (o GetFirewallsResultOutput) ToGetFirewallsResultOutputWithContext(ctx context.Context) GetFirewallsResultOutput {
 	return o
+}
+
+func (o GetFirewallsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFirewallsResult] {
+	return pulumix.Output[GetFirewallsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

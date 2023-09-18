@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Publication Packages in Oracle Cloud Infrastructure Marketplace service.
@@ -117,6 +118,12 @@ func (o GetPublicationPackagesResultOutput) ToGetPublicationPackagesResultOutput
 
 func (o GetPublicationPackagesResultOutput) ToGetPublicationPackagesResultOutputWithContext(ctx context.Context) GetPublicationPackagesResultOutput {
 	return o
+}
+
+func (o GetPublicationPackagesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPublicationPackagesResult] {
+	return pulumix.Output[GetPublicationPackagesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPublicationPackagesResultOutput) Filters() GetPublicationPackagesFilterArrayOutput {

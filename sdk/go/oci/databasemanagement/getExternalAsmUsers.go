@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of External Asm Users in Oracle Cloud Infrastructure Database Management service.
@@ -104,6 +105,12 @@ func (o GetExternalAsmUsersResultOutput) ToGetExternalAsmUsersResultOutput() Get
 
 func (o GetExternalAsmUsersResultOutput) ToGetExternalAsmUsersResultOutputWithContext(ctx context.Context) GetExternalAsmUsersResultOutput {
 	return o
+}
+
+func (o GetExternalAsmUsersResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetExternalAsmUsersResult] {
+	return pulumix.Output[GetExternalAsmUsersResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetExternalAsmUsersResultOutput) ExternalAsmId() pulumi.StringOutput {

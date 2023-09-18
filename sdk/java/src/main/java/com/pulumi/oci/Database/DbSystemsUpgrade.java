@@ -71,7 +71,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * The operating system upgrade action.
      * 
      */
-    @Export(name="action", type=String.class, parameters={})
+    @Export(name="action", refs={String.class}, tree="[0]")
     private Output<String> action;
 
     /**
@@ -85,7 +85,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * The name of the availability domain that the DB system is located in.
      * 
      */
-    @Export(name="availabilityDomain", type=String.class, parameters={})
+    @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
     private Output<String> availabilityDomain;
 
     /**
@@ -99,7 +99,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
      * 
      */
-    @Export(name="backupNetworkNsgIds", type=List.class, parameters={String.class})
+    @Export(name="backupNetworkNsgIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> backupNetworkNsgIds;
 
     /**
@@ -113,7 +113,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet the DB system is associated with. Applicable only to Exadata DB systems.
      * 
      */
-    @Export(name="backupSubnetId", type=String.class, parameters={})
+    @Export(name="backupSubnetId", refs={String.class}, tree="[0]")
     private Output<String> backupSubnetId;
 
     /**
@@ -127,7 +127,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
      * 
      */
-    @Export(name="clusterName", type=String.class, parameters={})
+    @Export(name="clusterName", refs={String.class}, tree="[0]")
     private Output<String> clusterName;
 
     /**
@@ -141,7 +141,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -155,7 +155,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * The number of CPU cores enabled on the DB system.
      * 
      */
-    @Export(name="cpuCoreCount", type=Integer.class, parameters={})
+    @Export(name="cpuCoreCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> cpuCoreCount;
 
     /**
@@ -169,7 +169,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 40 and 80. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems.
      * 
      */
-    @Export(name="dataStoragePercentage", type=Integer.class, parameters={})
+    @Export(name="dataStoragePercentage", refs={Integer.class}, tree="[0]")
     private Output<Integer> dataStoragePercentage;
 
     /**
@@ -183,7 +183,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * The data storage size, in gigabytes, that is currently available to the DB system. Applies only for virtual machine DB systems.
      * 
      */
-    @Export(name="dataStorageSizeInGb", type=Integer.class, parameters={})
+    @Export(name="dataStorageSizeInGb", refs={Integer.class}, tree="[0]")
     private Output<Integer> dataStorageSizeInGb;
 
     /**
@@ -197,7 +197,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * The Oracle Database edition that applies to all the databases on the DB system.
      * 
      */
-    @Export(name="databaseEdition", type=String.class, parameters={})
+    @Export(name="databaseEdition", refs={String.class}, tree="[0]")
     private Output<String> databaseEdition;
 
     /**
@@ -211,7 +211,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    @Export(name="dbSystemId", type=String.class, parameters={})
+    @Export(name="dbSystemId", refs={String.class}, tree="[0]")
     private Output<String> dbSystemId;
 
     /**
@@ -225,7 +225,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * The DB system options.
      * 
      */
-    @Export(name="dbSystemOptions", type=List.class, parameters={DbSystemsUpgradeDbSystemOption.class})
+    @Export(name="dbSystemOptions", refs={List.class,DbSystemsUpgradeDbSystemOption.class}, tree="[0,1]")
     private Output<List<DbSystemsUpgradeDbSystemOption>> dbSystemOptions;
 
     /**
@@ -239,7 +239,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -253,7 +253,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * The type of redundancy configured for the DB system. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
      * 
      */
-    @Export(name="diskRedundancy", type=String.class, parameters={})
+    @Export(name="diskRedundancy", refs={String.class}, tree="[0]")
     private Output<String> diskRedundancy;
 
     /**
@@ -267,7 +267,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * The user-friendly name for the DB system. The name does not have to be unique.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -281,7 +281,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * The domain name for the DB system.
      * 
      */
-    @Export(name="domain", type=String.class, parameters={})
+    @Export(name="domain", refs={String.class}, tree="[0]")
     private Output<String> domain;
 
     /**
@@ -295,7 +295,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * List of the Fault Domains in which this DB system is provisioned.
      * 
      */
-    @Export(name="faultDomains", type=List.class, parameters={String.class})
+    @Export(name="faultDomains", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> faultDomains;
 
     /**
@@ -309,7 +309,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -323,7 +323,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * The hostname for the DB system.
      * 
      */
-    @Export(name="hostname", type=String.class, parameters={})
+    @Export(name="hostname", refs={String.class}, tree="[0]")
     private Output<String> hostname;
 
     /**
@@ -337,7 +337,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * The IORM settings of the Exadata DB system.
      * 
      */
-    @Export(name="iormConfigCaches", type=List.class, parameters={DbSystemsUpgradeIormConfigCach.class})
+    @Export(name="iormConfigCaches", refs={List.class,DbSystemsUpgradeIormConfigCach.class}, tree="[0,1]")
     private Output<List<DbSystemsUpgradeIormConfigCach>> iormConfigCaches;
 
     /**
@@ -351,7 +351,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * If true, rollback time is updated even if operating system upgrade history contains errors.
      * 
      */
-    @Export(name="isSnapshotRetentionDaysForceUpdated", type=Boolean.class, parameters={})
+    @Export(name="isSnapshotRetentionDaysForceUpdated", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isSnapshotRetentionDaysForceUpdated;
 
     /**
@@ -365,7 +365,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
-    @Export(name="kmsKeyId", type=String.class, parameters={})
+    @Export(name="kmsKeyId", refs={String.class}, tree="[0]")
     private Output<String> kmsKeyId;
 
     /**
@@ -379,7 +379,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      * 
      */
-    @Export(name="lastMaintenanceRunId", type=String.class, parameters={})
+    @Export(name="lastMaintenanceRunId", refs={String.class}, tree="[0]")
     private Output<String> lastMaintenanceRunId;
 
     /**
@@ -393,7 +393,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
      * 
      */
-    @Export(name="lastPatchHistoryEntryId", type=String.class, parameters={})
+    @Export(name="lastPatchHistoryEntryId", refs={String.class}, tree="[0]")
     private Output<String> lastPatchHistoryEntryId;
 
     /**
@@ -407,7 +407,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
      * 
      */
-    @Export(name="licenseModel", type=String.class, parameters={})
+    @Export(name="licenseModel", refs={String.class}, tree="[0]")
     private Output<String> licenseModel;
 
     /**
@@ -421,7 +421,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * Additional information about the current lifecycle state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -435,7 +435,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * The port number configured for the listener on the DB system.
      * 
      */
-    @Export(name="listenerPort", type=Integer.class, parameters={})
+    @Export(name="listenerPort", refs={Integer.class}, tree="[0]")
     private Output<Integer> listenerPort;
 
     /**
@@ -449,7 +449,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      * 
      */
-    @Export(name="maintenanceWindows", type=List.class, parameters={DbSystemsUpgradeMaintenanceWindow.class})
+    @Export(name="maintenanceWindows", refs={List.class,DbSystemsUpgradeMaintenanceWindow.class}, tree="[0,1]")
     private Output<List<DbSystemsUpgradeMaintenanceWindow>> maintenanceWindows;
 
     /**
@@ -463,7 +463,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * A valid Oracle Grid Infrastructure (GI) software version.
      * 
      */
-    @Export(name="newGiVersion", type=String.class, parameters={})
+    @Export(name="newGiVersion", refs={String.class}, tree="[0]")
     private Output<String> newGiVersion;
 
     /**
@@ -477,7 +477,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      * 
      */
-    @Export(name="nextMaintenanceRunId", type=String.class, parameters={})
+    @Export(name="nextMaintenanceRunId", refs={String.class}, tree="[0]")
     private Output<String> nextMaintenanceRunId;
 
     /**
@@ -491,7 +491,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * The number of nodes in the DB system. For RAC DB systems, the value is greater than 1.
      * 
      */
-    @Export(name="nodeCount", type=Integer.class, parameters={})
+    @Export(name="nodeCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> nodeCount;
 
     /**
@@ -506,7 +506,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * * Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
      * 
      */
-    @Export(name="nsgIds", type=List.class, parameters={String.class})
+    @Export(name="nsgIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> nsgIds;
 
     /**
@@ -521,7 +521,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    @Export(name="pointInTimeDataDiskCloneTimestamp", type=String.class, parameters={})
+    @Export(name="pointInTimeDataDiskCloneTimestamp", refs={String.class}, tree="[0]")
     private Output<String> pointInTimeDataDiskCloneTimestamp;
 
     /**
@@ -535,7 +535,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
      * 
      */
-    @Export(name="recoStorageSizeInGb", type=Integer.class, parameters={})
+    @Export(name="recoStorageSizeInGb", refs={Integer.class}, tree="[0]")
     private Output<Integer> recoStorageSizeInGb;
 
     /**
@@ -549,7 +549,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * The FQDN of the DNS record for the SCAN IP addresses that are associated with the DB system.
      * 
      */
-    @Export(name="scanDnsName", type=String.class, parameters={})
+    @Export(name="scanDnsName", refs={String.class}, tree="[0]")
     private Output<String> scanDnsName;
 
     /**
@@ -563,7 +563,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the DB system.
      * 
      */
-    @Export(name="scanDnsRecordId", type=String.class, parameters={})
+    @Export(name="scanDnsRecordId", refs={String.class}, tree="[0]")
     private Output<String> scanDnsRecordId;
 
     /**
@@ -577,7 +577,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the DB system. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
      * 
      */
-    @Export(name="scanIpIds", type=List.class, parameters={String.class})
+    @Export(name="scanIpIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> scanIpIds;
 
     /**
@@ -593,7 +593,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * * For bare metal and Exadata shapes, the number of CPU cores, storage, and memory
      * 
      */
-    @Export(name="shape", type=String.class, parameters={})
+    @Export(name="shape", refs={String.class}, tree="[0]")
     private Output<String> shape;
 
     /**
@@ -612,7 +612,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="snapshotRetentionPeriodInDays", type=Integer.class, parameters={})
+    @Export(name="snapshotRetentionPeriodInDays", refs={Integer.class}, tree="[0]")
     private Output<Integer> snapshotRetentionPeriodInDays;
 
     /**
@@ -629,7 +629,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      * 
      */
-    @Export(name="sourceDbSystemId", type=String.class, parameters={})
+    @Export(name="sourceDbSystemId", refs={String.class}, tree="[0]")
     private Output<String> sourceDbSystemId;
 
     /**
@@ -643,7 +643,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * True, if Sparse Diskgroup is configured for Exadata dbsystem, False, if Sparse diskgroup was not configured.
      * 
      */
-    @Export(name="sparseDiskgroup", type=Boolean.class, parameters={})
+    @Export(name="sparseDiskgroup", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> sparseDiskgroup;
 
     /**
@@ -657,7 +657,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * The public key portion of one or more key pairs used for SSH access to the DB system.
      * 
      */
-    @Export(name="sshPublicKeys", type=List.class, parameters={String.class})
+    @Export(name="sshPublicKeys", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> sshPublicKeys;
 
     /**
@@ -671,7 +671,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * The current state of the DB system.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -685,7 +685,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
      * 
      */
-    @Export(name="subnetId", type=String.class, parameters={})
+    @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
@@ -699,7 +699,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * The date and time the DB system was created.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -713,7 +713,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * The time zone of the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      * 
      */
-    @Export(name="timeZone", type=String.class, parameters={})
+    @Export(name="timeZone", refs={String.class}, tree="[0]")
     private Output<String> timeZone;
 
     /**
@@ -727,7 +727,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * The Oracle Database version of the DB system.
      * 
      */
-    @Export(name="version", type=String.class, parameters={})
+    @Export(name="version", refs={String.class}, tree="[0]")
     private Output<String> version;
 
     /**
@@ -741,7 +741,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the DB system to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
      * 
      */
-    @Export(name="vipIds", type=List.class, parameters={String.class})
+    @Export(name="vipIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> vipIds;
 
     /**
@@ -755,7 +755,7 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * The OCID of the zone the DB system is associated with.
      * 
      */
-    @Export(name="zoneId", type=String.class, parameters={})
+    @Export(name="zoneId", refs={String.class}, tree="[0]")
     private Output<String> zoneId;
 
     /**

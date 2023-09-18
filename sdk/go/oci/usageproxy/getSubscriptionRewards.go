@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Subscription Rewards in Oracle Cloud Infrastructure Usage Proxy service.
@@ -112,6 +113,12 @@ func (o GetSubscriptionRewardsResultOutput) ToGetSubscriptionRewardsResultOutput
 
 func (o GetSubscriptionRewardsResultOutput) ToGetSubscriptionRewardsResultOutputWithContext(ctx context.Context) GetSubscriptionRewardsResultOutput {
 	return o
+}
+
+func (o GetSubscriptionRewardsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionRewardsResult] {
+	return pulumix.Output[GetSubscriptionRewardsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSubscriptionRewardsResultOutput) Filters() GetSubscriptionRewardsFilterArrayOutput {

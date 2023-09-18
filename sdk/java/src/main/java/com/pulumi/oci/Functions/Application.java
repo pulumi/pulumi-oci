@@ -84,7 +84,7 @@ public class Application extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the compartment to create the application within.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -100,7 +100,7 @@ public class Application extends com.pulumi.resources.CustomResource {
      * The maximum size for all configuration keys and values is limited to 4KB. This is measured as the sum of octets necessary to represent each key and value in UTF-8.
      * 
      */
-    @Export(name="config", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="config", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> config;
 
     /**
@@ -116,7 +116,7 @@ public class Application extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -130,7 +130,7 @@ public class Application extends com.pulumi.resources.CustomResource {
      * The display name of the application. The display name must be unique within the compartment containing the application. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -144,7 +144,7 @@ public class Application extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -158,7 +158,7 @@ public class Application extends com.pulumi.resources.CustomResource {
      * (Updatable) Define the image signature verification policy for an application.
      * 
      */
-    @Export(name="imagePolicyConfig", type=ApplicationImagePolicyConfig.class, parameters={})
+    @Export(name="imagePolicyConfig", refs={ApplicationImagePolicyConfig.class}, tree="[0]")
     private Output<ApplicationImagePolicyConfig> imagePolicyConfig;
 
     /**
@@ -172,7 +172,7 @@ public class Application extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
      * 
      */
-    @Export(name="networkSecurityGroupIds", type=List.class, parameters={String.class})
+    @Export(name="networkSecurityGroupIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> networkSecurityGroupIds;
 
     /**
@@ -186,7 +186,7 @@ public class Application extends com.pulumi.resources.CustomResource {
      * Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
      * 
      */
-    @Export(name="shape", type=String.class, parameters={})
+    @Export(name="shape", refs={String.class}, tree="[0]")
     private Output<String> shape;
 
     /**
@@ -200,7 +200,7 @@ public class Application extends com.pulumi.resources.CustomResource {
      * The current state of the application.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -214,7 +214,7 @@ public class Application extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the subnets in which to run functions in the application.
      * 
      */
-    @Export(name="subnetIds", type=List.class, parameters={String.class})
+    @Export(name="subnetIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> subnetIds;
 
     /**
@@ -228,7 +228,7 @@ public class Application extends com.pulumi.resources.CustomResource {
      * (Updatable) A syslog URL to which to send all function logs. Supports tcp, udp, and tcp+tls. The syslog URL must be reachable from all of the subnets configured for the application. Note: If you enable the Oracle Cloud Infrastructure Logging service for this application, the syslogUrl value is ignored. Function logs are sent to the Oracle Cloud Infrastructure Logging service, and not to the syslog URL.  Example: `tcp://logserver.myserver:1234`
      * 
      */
-    @Export(name="syslogUrl", type=String.class, parameters={})
+    @Export(name="syslogUrl", refs={String.class}, tree="[0]")
     private Output<String> syslogUrl;
 
     /**
@@ -242,7 +242,7 @@ public class Application extends com.pulumi.resources.CustomResource {
      * The time the application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -256,7 +256,7 @@ public class Application extends com.pulumi.resources.CustomResource {
      * The time the application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-09-12T22:47:12.613Z`
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -270,7 +270,7 @@ public class Application extends com.pulumi.resources.CustomResource {
      * (Updatable) Define the tracing configuration for an application.
      * 
      */
-    @Export(name="traceConfig", type=ApplicationTraceConfig.class, parameters={})
+    @Export(name="traceConfig", refs={ApplicationTraceConfig.class}, tree="[0]")
     private Output<ApplicationTraceConfig> traceConfig;
 
     /**

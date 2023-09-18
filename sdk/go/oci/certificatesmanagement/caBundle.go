@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Ca Bundle resource in Oracle Cloud Infrastructure Certificates Management service.
@@ -232,6 +233,12 @@ func (i *CaBundle) ToCaBundleOutputWithContext(ctx context.Context) CaBundleOutp
 	return pulumi.ToOutputWithContext(ctx, i).(CaBundleOutput)
 }
 
+func (i *CaBundle) ToOutput(ctx context.Context) pulumix.Output[*CaBundle] {
+	return pulumix.Output[*CaBundle]{
+		OutputState: i.ToCaBundleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // CaBundleArrayInput is an input type that accepts CaBundleArray and CaBundleArrayOutput values.
 // You can construct a concrete instance of `CaBundleArrayInput` via:
 //
@@ -255,6 +262,12 @@ func (i CaBundleArray) ToCaBundleArrayOutput() CaBundleArrayOutput {
 
 func (i CaBundleArray) ToCaBundleArrayOutputWithContext(ctx context.Context) CaBundleArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CaBundleArrayOutput)
+}
+
+func (i CaBundleArray) ToOutput(ctx context.Context) pulumix.Output[[]*CaBundle] {
+	return pulumix.Output[[]*CaBundle]{
+		OutputState: i.ToCaBundleArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // CaBundleMapInput is an input type that accepts CaBundleMap and CaBundleMapOutput values.
@@ -282,6 +295,12 @@ func (i CaBundleMap) ToCaBundleMapOutputWithContext(ctx context.Context) CaBundl
 	return pulumi.ToOutputWithContext(ctx, i).(CaBundleMapOutput)
 }
 
+func (i CaBundleMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*CaBundle] {
+	return pulumix.Output[map[string]*CaBundle]{
+		OutputState: i.ToCaBundleMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type CaBundleOutput struct{ *pulumi.OutputState }
 
 func (CaBundleOutput) ElementType() reflect.Type {
@@ -294,6 +313,12 @@ func (o CaBundleOutput) ToCaBundleOutput() CaBundleOutput {
 
 func (o CaBundleOutput) ToCaBundleOutputWithContext(ctx context.Context) CaBundleOutput {
 	return o
+}
+
+func (o CaBundleOutput) ToOutput(ctx context.Context) pulumix.Output[*CaBundle] {
+	return pulumix.Output[*CaBundle]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Certificates (in PEM format) to include in the CA bundle.
@@ -358,6 +383,12 @@ func (o CaBundleArrayOutput) ToCaBundleArrayOutputWithContext(ctx context.Contex
 	return o
 }
 
+func (o CaBundleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*CaBundle] {
+	return pulumix.Output[[]*CaBundle]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o CaBundleArrayOutput) Index(i pulumi.IntInput) CaBundleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CaBundle {
 		return vs[0].([]*CaBundle)[vs[1].(int)]
@@ -376,6 +407,12 @@ func (o CaBundleMapOutput) ToCaBundleMapOutput() CaBundleMapOutput {
 
 func (o CaBundleMapOutput) ToCaBundleMapOutputWithContext(ctx context.Context) CaBundleMapOutput {
 	return o
+}
+
+func (o CaBundleMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*CaBundle] {
+	return pulumix.Output[map[string]*CaBundle]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o CaBundleMapOutput) MapIndex(k pulumi.StringInput) CaBundleOutput {

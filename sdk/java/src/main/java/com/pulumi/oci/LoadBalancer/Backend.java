@@ -73,7 +73,7 @@ public class Backend extends com.pulumi.resources.CustomResource {
      * The name of the backend set to add the backend server to.  Example: `example_backend_set`
      * 
      */
-    @Export(name="backendsetName", type=String.class, parameters={})
+    @Export(name="backendsetName", refs={String.class}, tree="[0]")
     private Output<String> backendsetName;
 
     /**
@@ -91,7 +91,7 @@ public class Backend extends com.pulumi.resources.CustomResource {
      * Example: `false`
      * 
      */
-    @Export(name="backup", type=Boolean.class, parameters={})
+    @Export(name="backup", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> backup;
 
     /**
@@ -109,7 +109,7 @@ public class Backend extends com.pulumi.resources.CustomResource {
      * (Updatable) Whether the load balancer should drain this server. Servers marked &#34;drain&#34; receive no new incoming traffic.  Example: `false`
      * 
      */
-    @Export(name="drain", type=Boolean.class, parameters={})
+    @Export(name="drain", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> drain;
 
     /**
@@ -123,7 +123,7 @@ public class Backend extends com.pulumi.resources.CustomResource {
      * The IP address of the backend server.  Example: `10.0.0.3`
      * 
      */
-    @Export(name="ipAddress", type=String.class, parameters={})
+    @Export(name="ipAddress", refs={String.class}, tree="[0]")
     private Output<String> ipAddress;
 
     /**
@@ -137,7 +137,7 @@ public class Backend extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend set and servers.
      * 
      */
-    @Export(name="loadBalancerId", type=String.class, parameters={})
+    @Export(name="loadBalancerId", refs={String.class}, tree="[0]")
     private Output<String> loadBalancerId;
 
     /**
@@ -151,7 +151,7 @@ public class Backend extends com.pulumi.resources.CustomResource {
      * A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -165,7 +165,7 @@ public class Backend extends com.pulumi.resources.CustomResource {
      * (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
      * 
      */
-    @Export(name="offline", type=Boolean.class, parameters={})
+    @Export(name="offline", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> offline;
 
     /**
@@ -179,7 +179,7 @@ public class Backend extends com.pulumi.resources.CustomResource {
      * The communication port for the backend server.  Example: `8080`
      * 
      */
-    @Export(name="port", type=Integer.class, parameters={})
+    @Export(name="port", refs={Integer.class}, tree="[0]")
     private Output<Integer> port;
 
     /**
@@ -189,7 +189,7 @@ public class Backend extends com.pulumi.resources.CustomResource {
     public Output<Integer> port() {
         return this.port;
     }
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     public Output<String> state() {
@@ -202,7 +202,7 @@ public class Backend extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="weight", type=Integer.class, parameters={})
+    @Export(name="weight", refs={Integer.class}, tree="[0]")
     private Output<Integer> weight;
 
     /**

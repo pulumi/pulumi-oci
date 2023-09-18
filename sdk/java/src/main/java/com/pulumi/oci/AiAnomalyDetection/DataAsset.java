@@ -102,7 +102,7 @@ public class DataAsset extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID for the data asset&#39;s compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -116,7 +116,7 @@ public class DataAsset extends com.pulumi.resources.CustomResource {
      * Possible data sources
      * 
      */
-    @Export(name="dataSourceDetails", type=DataAssetDataSourceDetails.class, parameters={})
+    @Export(name="dataSourceDetails", refs={DataAssetDataSourceDetails.class}, tree="[0]")
     private Output<DataAssetDataSourceDetails> dataSourceDetails;
 
     /**
@@ -130,7 +130,7 @@ public class DataAsset extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -144,7 +144,7 @@ public class DataAsset extends com.pulumi.resources.CustomResource {
      * (Updatable) A short description of the Ai data asset
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -158,7 +158,7 @@ public class DataAsset extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -172,7 +172,7 @@ public class DataAsset extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -186,7 +186,7 @@ public class DataAsset extends com.pulumi.resources.CustomResource {
      * OCID of Private Endpoint.
      * 
      */
-    @Export(name="privateEndpointId", type=String.class, parameters={})
+    @Export(name="privateEndpointId", refs={String.class}, tree="[0]")
     private Output<String> privateEndpointId;
 
     /**
@@ -203,7 +203,7 @@ public class DataAsset extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="projectId", type=String.class, parameters={})
+    @Export(name="projectId", refs={String.class}, tree="[0]")
     private Output<String> projectId;
 
     /**
@@ -220,7 +220,7 @@ public class DataAsset extends com.pulumi.resources.CustomResource {
      * The lifecycle state of the Data Asset.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -234,7 +234,7 @@ public class DataAsset extends com.pulumi.resources.CustomResource {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -248,7 +248,7 @@ public class DataAsset extends com.pulumi.resources.CustomResource {
      * The time the the DataAsset was created. An RFC3339 formatted datetime string
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -262,7 +262,7 @@ public class DataAsset extends com.pulumi.resources.CustomResource {
      * The time the the DataAsset was updated. An RFC3339 formatted datetime string
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

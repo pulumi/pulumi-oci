@@ -63,7 +63,7 @@ public class ListingPackageAgreement extends com.pulumi.resources.CustomResource
      * The unique identifier for the agreement.
      * 
      */
-    @Export(name="agreementId", type=String.class, parameters={})
+    @Export(name="agreementId", refs={String.class}, tree="[0]")
     private Output<String> agreementId;
 
     /**
@@ -77,7 +77,7 @@ public class ListingPackageAgreement extends com.pulumi.resources.CustomResource
      * Who authored the agreement.
      * 
      */
-    @Export(name="author", type=String.class, parameters={})
+    @Export(name="author", refs={String.class}, tree="[0]")
     private Output<String> author;
 
     /**
@@ -91,7 +91,7 @@ public class ListingPackageAgreement extends com.pulumi.resources.CustomResource
      * The unique identifier for the compartment, required in gov regions.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -105,7 +105,7 @@ public class ListingPackageAgreement extends com.pulumi.resources.CustomResource
      * The content URL of the agreement.
      * 
      */
-    @Export(name="contentUrl", type=String.class, parameters={})
+    @Export(name="contentUrl", refs={String.class}, tree="[0]")
     private Output<String> contentUrl;
 
     /**
@@ -119,7 +119,7 @@ public class ListingPackageAgreement extends com.pulumi.resources.CustomResource
      * The unique identifier for the listing.
      * 
      */
-    @Export(name="listingId", type=String.class, parameters={})
+    @Export(name="listingId", refs={String.class}, tree="[0]")
     private Output<String> listingId;
 
     /**
@@ -133,7 +133,7 @@ public class ListingPackageAgreement extends com.pulumi.resources.CustomResource
      * The version of the package. Package versions are unique within a listing.
      * 
      */
-    @Export(name="packageVersion", type=String.class, parameters={})
+    @Export(name="packageVersion", refs={String.class}, tree="[0]")
     private Output<String> packageVersion;
 
     /**
@@ -147,7 +147,7 @@ public class ListingPackageAgreement extends com.pulumi.resources.CustomResource
      * Textual prompt to read and accept the agreement.
      * 
      */
-    @Export(name="prompt", type=String.class, parameters={})
+    @Export(name="prompt", refs={String.class}, tree="[0]")
     private Output<String> prompt;
 
     /**
@@ -161,7 +161,7 @@ public class ListingPackageAgreement extends com.pulumi.resources.CustomResource
      * A time-based signature that can be used to accept an agreement or remove a previously accepted agreement from the list that Marketplace checks before a deployment.
      * 
      */
-    @Export(name="signature", type=String.class, parameters={})
+    @Export(name="signature", refs={String.class}, tree="[0]")
     private Output<String> signature;
 
     /**

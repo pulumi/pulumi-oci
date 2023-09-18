@@ -71,7 +71,7 @@ public class ApmDomain extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the compartment corresponding to the APM domain.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -85,7 +85,7 @@ public class ApmDomain extends com.pulumi.resources.CustomResource {
      * The endpoint where the APM agents upload their observations and metrics.
      * 
      */
-    @Export(name="dataUploadEndpoint", type=String.class, parameters={})
+    @Export(name="dataUploadEndpoint", refs={String.class}, tree="[0]")
     private Output<String> dataUploadEndpoint;
 
     /**
@@ -99,7 +99,7 @@ public class ApmDomain extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -113,7 +113,7 @@ public class ApmDomain extends com.pulumi.resources.CustomResource {
      * (Updatable) Description of the APM domain.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -127,7 +127,7 @@ public class ApmDomain extends com.pulumi.resources.CustomResource {
      * (Updatable) Display name of the APM domain.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -141,7 +141,7 @@ public class ApmDomain extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -158,7 +158,7 @@ public class ApmDomain extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="isFreeTier", type=Boolean.class, parameters={})
+    @Export(name="isFreeTier", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isFreeTier;
 
     /**
@@ -175,7 +175,7 @@ public class ApmDomain extends com.pulumi.resources.CustomResource {
      * The current lifecycle state of the APM domain.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -189,7 +189,7 @@ public class ApmDomain extends com.pulumi.resources.CustomResource {
      * The time the APM domain was created, expressed in RFC 3339 timestamp format.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -203,7 +203,7 @@ public class ApmDomain extends com.pulumi.resources.CustomResource {
      * The time the APM domain was updated, expressed in RFC 3339 timestamp format.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

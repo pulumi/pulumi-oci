@@ -198,7 +198,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * idcsValuePersistedInOtherAttribute: true
      * 
      */
-    @Export(name="assertionAttribute", type=String.class, parameters={})
+    @Export(name="assertionAttribute", refs={String.class}, tree="[0]")
     private Output<String> assertionAttribute;
 
     /**
@@ -225,7 +225,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If &#39;attributes&#39; query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      * 
      */
-    @Export(name="attributeSets", type=List.class, parameters={String.class})
+    @Export(name="attributeSets", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> attributeSets;
 
     /**
@@ -239,7 +239,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      * 
      */
-    @Export(name="attributes", type=String.class, parameters={})
+    @Export(name="attributes", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> attributes;
 
     /**
@@ -263,7 +263,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="authnRequestBinding", type=String.class, parameters={})
+    @Export(name="authnRequestBinding", refs={String.class}, tree="[0]")
     private Output<String> authnRequestBinding;
 
     /**
@@ -287,7 +287,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      * 
      */
-    @Export(name="authorization", type=String.class, parameters={})
+    @Export(name="authorization", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> authorization;
 
     /**
@@ -311,7 +311,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="compartmentOcid", type=String.class, parameters={})
+    @Export(name="compartmentOcid", refs={String.class}, tree="[0]")
     private Output<String> compartmentOcid;
 
     /**
@@ -347,7 +347,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="correlationPolicy", type=DomainsIdentityProviderCorrelationPolicy.class, parameters={})
+    @Export(name="correlationPolicy", refs={DomainsIdentityProviderCorrelationPolicy.class}, tree="[0]")
     private Output<DomainsIdentityProviderCorrelationPolicy> correlationPolicy;
 
     /**
@@ -383,7 +383,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="deleteInProgress", type=Boolean.class, parameters={})
+    @Export(name="deleteInProgress", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> deleteInProgress;
 
     /**
@@ -417,7 +417,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -451,7 +451,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="domainOcid", type=String.class, parameters={})
+    @Export(name="domainOcid", refs={String.class}, tree="[0]")
     private Output<String> domainOcid;
 
     /**
@@ -485,7 +485,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="enabled", type=Boolean.class, parameters={})
+    @Export(name="enabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enabled;
 
     /**
@@ -519,7 +519,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="encryptionCertificate", type=String.class, parameters={})
+    @Export(name="encryptionCertificate", refs={String.class}, tree="[0]")
     private Output<String> encryptionCertificate;
 
     /**
@@ -552,7 +552,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="externalId", type=String.class, parameters={})
+    @Export(name="externalId", refs={String.class}, tree="[0]")
     private Output<String> externalId;
 
     /**
@@ -584,7 +584,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="iconUrl", type=String.class, parameters={})
+    @Export(name="iconUrl", refs={String.class}, tree="[0]")
     private Output<String> iconUrl;
 
     /**
@@ -615,7 +615,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * type: complex
      * 
      */
-    @Export(name="idcsCreatedBies", type=List.class, parameters={DomainsIdentityProviderIdcsCreatedBy.class})
+    @Export(name="idcsCreatedBies", refs={List.class,DomainsIdentityProviderIdcsCreatedBy.class}, tree="[0,1]")
     private Output<List<DomainsIdentityProviderIdcsCreatedBy>> idcsCreatedBies;
 
     /**
@@ -637,7 +637,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * The basic endpoint for the identity domain
      * 
      */
-    @Export(name="idcsEndpoint", type=String.class, parameters={})
+    @Export(name="idcsEndpoint", refs={String.class}, tree="[0]")
     private Output<String> idcsEndpoint;
 
     /**
@@ -659,7 +659,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * type: complex
      * 
      */
-    @Export(name="idcsLastModifiedBies", type=List.class, parameters={DomainsIdentityProviderIdcsLastModifiedBy.class})
+    @Export(name="idcsLastModifiedBies", refs={List.class,DomainsIdentityProviderIdcsLastModifiedBy.class}, tree="[0,1]")
     private Output<List<DomainsIdentityProviderIdcsLastModifiedBy>> idcsLastModifiedBies;
 
     /**
@@ -691,7 +691,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="idcsLastUpgradedInRelease", type=String.class, parameters={})
+    @Export(name="idcsLastUpgradedInRelease", refs={String.class}, tree="[0]")
     private Output<String> idcsLastUpgradedInRelease;
 
     /**
@@ -724,7 +724,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="idcsPreventedOperations", type=List.class, parameters={String.class})
+    @Export(name="idcsPreventedOperations", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> idcsPreventedOperations;
 
     /**
@@ -757,7 +757,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="idpSsoUrl", type=String.class, parameters={})
+    @Export(name="idpSsoUrl", refs={String.class}, tree="[0]")
     private Output<String> idpSsoUrl;
 
     /**
@@ -791,7 +791,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="includeSigningCertInSignature", type=Boolean.class, parameters={})
+    @Export(name="includeSigningCertInSignature", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> includeSigningCertInSignature;
 
     /**
@@ -827,7 +827,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="jitUserProvAssignedGroups", type=List.class, parameters={DomainsIdentityProviderJitUserProvAssignedGroup.class})
+    @Export(name="jitUserProvAssignedGroups", refs={List.class,DomainsIdentityProviderJitUserProvAssignedGroup.class}, tree="[0,1]")
     private Output<List<DomainsIdentityProviderJitUserProvAssignedGroup>> jitUserProvAssignedGroups;
 
     /**
@@ -865,7 +865,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="jitUserProvAttributeUpdateEnabled", type=Boolean.class, parameters={})
+    @Export(name="jitUserProvAttributeUpdateEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> jitUserProvAttributeUpdateEnabled;
 
     /**
@@ -903,7 +903,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="jitUserProvAttributes", type=DomainsIdentityProviderJitUserProvAttributes.class, parameters={})
+    @Export(name="jitUserProvAttributes", refs={DomainsIdentityProviderJitUserProvAttributes.class}, tree="[0]")
     private Output<DomainsIdentityProviderJitUserProvAttributes> jitUserProvAttributes;
 
     /**
@@ -941,7 +941,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="jitUserProvCreateUserEnabled", type=Boolean.class, parameters={})
+    @Export(name="jitUserProvCreateUserEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> jitUserProvCreateUserEnabled;
 
     /**
@@ -979,7 +979,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="jitUserProvEnabled", type=Boolean.class, parameters={})
+    @Export(name="jitUserProvEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> jitUserProvEnabled;
 
     /**
@@ -1017,7 +1017,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="jitUserProvGroupAssertionAttributeEnabled", type=Boolean.class, parameters={})
+    @Export(name="jitUserProvGroupAssertionAttributeEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> jitUserProvGroupAssertionAttributeEnabled;
 
     /**
@@ -1055,7 +1055,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="jitUserProvGroupAssignmentMethod", type=String.class, parameters={})
+    @Export(name="jitUserProvGroupAssignmentMethod", refs={String.class}, tree="[0]")
     private Output<String> jitUserProvGroupAssignmentMethod;
 
     /**
@@ -1093,7 +1093,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="jitUserProvGroupMappingMode", type=String.class, parameters={})
+    @Export(name="jitUserProvGroupMappingMode", refs={String.class}, tree="[0]")
     private Output<String> jitUserProvGroupMappingMode;
 
     /**
@@ -1130,7 +1130,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="jitUserProvGroupMappings", type=List.class, parameters={DomainsIdentityProviderJitUserProvGroupMapping.class})
+    @Export(name="jitUserProvGroupMappings", refs={List.class,DomainsIdentityProviderJitUserProvGroupMapping.class}, tree="[0,1]")
     private Output<List<DomainsIdentityProviderJitUserProvGroupMapping>> jitUserProvGroupMappings;
 
     /**
@@ -1167,7 +1167,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="jitUserProvGroupSamlAttributeName", type=String.class, parameters={})
+    @Export(name="jitUserProvGroupSamlAttributeName", refs={String.class}, tree="[0]")
     private Output<String> jitUserProvGroupSamlAttributeName;
 
     /**
@@ -1205,7 +1205,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="jitUserProvGroupStaticListEnabled", type=Boolean.class, parameters={})
+    @Export(name="jitUserProvGroupStaticListEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> jitUserProvGroupStaticListEnabled;
 
     /**
@@ -1244,7 +1244,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="jitUserProvIgnoreErrorOnAbsentGroups", type=Boolean.class, parameters={})
+    @Export(name="jitUserProvIgnoreErrorOnAbsentGroups", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> jitUserProvIgnoreErrorOnAbsentGroups;
 
     /**
@@ -1283,7 +1283,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="lastNotificationSentTime", type=String.class, parameters={})
+    @Export(name="lastNotificationSentTime", refs={String.class}, tree="[0]")
     private Output<String> lastNotificationSentTime;
 
     /**
@@ -1319,7 +1319,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="logoutBinding", type=String.class, parameters={})
+    @Export(name="logoutBinding", refs={String.class}, tree="[0]")
     private Output<String> logoutBinding;
 
     /**
@@ -1353,7 +1353,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="logoutEnabled", type=Boolean.class, parameters={})
+    @Export(name="logoutEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> logoutEnabled;
 
     /**
@@ -1387,7 +1387,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="logoutRequestUrl", type=String.class, parameters={})
+    @Export(name="logoutRequestUrl", refs={String.class}, tree="[0]")
     private Output<String> logoutRequestUrl;
 
     /**
@@ -1421,7 +1421,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="logoutResponseUrl", type=String.class, parameters={})
+    @Export(name="logoutResponseUrl", refs={String.class}, tree="[0]")
     private Output<String> logoutResponseUrl;
 
     /**
@@ -1455,7 +1455,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="metadata", type=String.class, parameters={})
+    @Export(name="metadata", refs={String.class}, tree="[0]")
     private Output<String> metadata;
 
     /**
@@ -1489,7 +1489,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * type: complex
      * 
      */
-    @Export(name="metas", type=List.class, parameters={DomainsIdentityProviderMeta.class})
+    @Export(name="metas", refs={List.class,DomainsIdentityProviderMeta.class}, tree="[0,1]")
     private Output<List<DomainsIdentityProviderMeta>> metas;
 
     /**
@@ -1523,7 +1523,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="nameIdFormat", type=String.class, parameters={})
+    @Export(name="nameIdFormat", refs={String.class}, tree="[0]")
     private Output<String> nameIdFormat;
 
     /**
@@ -1557,7 +1557,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * uniqueness: global
      * 
      */
-    @Export(name="ocid", type=String.class, parameters={})
+    @Export(name="ocid", refs={String.class}, tree="[0]")
     private Output<String> ocid;
 
     /**
@@ -1591,7 +1591,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * uniqueness: server
      * 
      */
-    @Export(name="partnerName", type=String.class, parameters={})
+    @Export(name="partnerName", refs={String.class}, tree="[0]")
     private Output<String> partnerName;
 
     /**
@@ -1625,7 +1625,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * uniqueness: server
      * 
      */
-    @Export(name="partnerProviderId", type=String.class, parameters={})
+    @Export(name="partnerProviderId", refs={String.class}, tree="[0]")
     private Output<String> partnerProviderId;
 
     /**
@@ -1661,7 +1661,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="requestedAuthenticationContexts", type=List.class, parameters={String.class})
+    @Export(name="requestedAuthenticationContexts", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> requestedAuthenticationContexts;
 
     /**
@@ -1699,7 +1699,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="requireForceAuthn", type=Boolean.class, parameters={})
+    @Export(name="requireForceAuthn", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> requireForceAuthn;
 
     /**
@@ -1737,7 +1737,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="requiresEncryptedAssertion", type=Boolean.class, parameters={})
+    @Export(name="requiresEncryptedAssertion", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> requiresEncryptedAssertion;
 
     /**
@@ -1763,7 +1763,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      * 
      */
-    @Export(name="resourceTypeSchemaVersion", type=String.class, parameters={})
+    @Export(name="resourceTypeSchemaVersion", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> resourceTypeSchemaVersion;
 
     /**
@@ -1789,7 +1789,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="samlHoKrequired", type=Boolean.class, parameters={})
+    @Export(name="samlHoKrequired", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> samlHoKrequired;
 
     /**
@@ -1825,7 +1825,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="schemas", type=List.class, parameters={String.class})
+    @Export(name="schemas", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> schemas;
 
     /**
@@ -1861,7 +1861,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * uniqueness: server
      * 
      */
-    @Export(name="serviceInstanceIdentifier", type=String.class, parameters={})
+    @Export(name="serviceInstanceIdentifier", refs={String.class}, tree="[0]")
     private Output<String> serviceInstanceIdentifier;
 
     /**
@@ -1897,7 +1897,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="shownOnLoginPage", type=Boolean.class, parameters={})
+    @Export(name="shownOnLoginPage", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> shownOnLoginPage;
 
     /**
@@ -1931,7 +1931,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="signatureHashAlgorithm", type=String.class, parameters={})
+    @Export(name="signatureHashAlgorithm", refs={String.class}, tree="[0]")
     private Output<String> signatureHashAlgorithm;
 
     /**
@@ -1965,7 +1965,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="signingCertificate", type=String.class, parameters={})
+    @Export(name="signingCertificate", refs={String.class}, tree="[0]")
     private Output<String> signingCertificate;
 
     /**
@@ -1999,7 +1999,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * uniqueness: server
      * 
      */
-    @Export(name="succinctId", type=String.class, parameters={})
+    @Export(name="succinctId", refs={String.class}, tree="[0]")
     private Output<String> succinctId;
 
     /**
@@ -2033,7 +2033,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="tags", type=List.class, parameters={DomainsIdentityProviderTag.class})
+    @Export(name="tags", refs={List.class,DomainsIdentityProviderTag.class}, tree="[0,1]")
     private Output<List<DomainsIdentityProviderTag>> tags;
 
     /**
@@ -2067,7 +2067,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="tenancyOcid", type=String.class, parameters={})
+    @Export(name="tenancyOcid", refs={String.class}, tree="[0]")
     private Output<String> tenancyOcid;
 
     /**
@@ -2103,7 +2103,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="tenantProviderId", type=String.class, parameters={})
+    @Export(name="tenantProviderId", refs={String.class}, tree="[0]")
     private Output<String> tenantProviderId;
 
     /**
@@ -2141,7 +2141,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="type", type=String.class, parameters={})
+    @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**
@@ -2167,7 +2167,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * (Updatable) Social Identity Provider Extension Schema
      * 
      */
-    @Export(name="urnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider", type=DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider.class, parameters={})
+    @Export(name="urnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider", refs={DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider.class}, tree="[0]")
     private Output<DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider> urnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider;
 
     /**
@@ -2181,7 +2181,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * (Updatable) X509 Identity Provider Extension Schema
      * 
      */
-    @Export(name="urnietfparamsscimschemasoracleidcsextensionx509identityProvider", type=DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider.class, parameters={})
+    @Export(name="urnietfparamsscimschemasoracleidcsextensionx509identityProvider", refs={DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider.class}, tree="[0]")
     private Output<DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider> urnietfparamsscimschemasoracleidcsextensionx509identityProvider;
 
     /**
@@ -2208,7 +2208,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * * idcsValuePersistedInOtherAttribute: true
      * 
      */
-    @Export(name="userMappingMethod", type=String.class, parameters={})
+    @Export(name="userMappingMethod", refs={String.class}, tree="[0]")
     private Output<String> userMappingMethod;
 
     /**
@@ -2251,7 +2251,7 @@ public class DomainsIdentityProvider extends com.pulumi.resources.CustomResource
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="userMappingStoreAttribute", type=String.class, parameters={})
+    @Export(name="userMappingStoreAttribute", refs={String.class}, tree="[0]")
     private Output<String> userMappingStoreAttribute;
 
     /**

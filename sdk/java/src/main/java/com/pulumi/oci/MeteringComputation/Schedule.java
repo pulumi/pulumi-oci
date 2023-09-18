@@ -102,7 +102,7 @@ public class Schedule extends com.pulumi.resources.CustomResource {
      * The customer tenancy.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -116,7 +116,7 @@ public class Schedule extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -130,7 +130,7 @@ public class Schedule extends com.pulumi.resources.CustomResource {
      * (Updatable) The description of the schedule.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -144,7 +144,7 @@ public class Schedule extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -158,7 +158,7 @@ public class Schedule extends com.pulumi.resources.CustomResource {
      * The unique name of the user-created schedule.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -172,7 +172,7 @@ public class Schedule extends com.pulumi.resources.CustomResource {
      * (Updatable) Specifies supported output file format.
      * 
      */
-    @Export(name="outputFileFormat", type=String.class, parameters={})
+    @Export(name="outputFileFormat", refs={String.class}, tree="[0]")
     private Output<String> outputFileFormat;
 
     /**
@@ -186,7 +186,7 @@ public class Schedule extends com.pulumi.resources.CustomResource {
      * The query properties.
      * 
      */
-    @Export(name="queryProperties", type=ScheduleQueryProperties.class, parameters={})
+    @Export(name="queryProperties", refs={ScheduleQueryProperties.class}, tree="[0]")
     private Output<ScheduleQueryProperties> queryProperties;
 
     /**
@@ -200,7 +200,7 @@ public class Schedule extends com.pulumi.resources.CustomResource {
      * (Updatable) The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
      * 
      */
-    @Export(name="resultLocation", type=ScheduleResultLocation.class, parameters={})
+    @Export(name="resultLocation", refs={ScheduleResultLocation.class}, tree="[0]")
     private Output<ScheduleResultLocation> resultLocation;
 
     /**
@@ -214,7 +214,7 @@ public class Schedule extends com.pulumi.resources.CustomResource {
      * The saved report id which can also be used to generate query.
      * 
      */
-    @Export(name="savedReportId", type=String.class, parameters={})
+    @Export(name="savedReportId", refs={String.class}, tree="[0]")
     private Output<String> savedReportId;
 
     /**
@@ -228,7 +228,7 @@ public class Schedule extends com.pulumi.resources.CustomResource {
      * Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
      * 
      */
-    @Export(name="scheduleRecurrences", type=String.class, parameters={})
+    @Export(name="scheduleRecurrences", refs={String.class}, tree="[0]")
     private Output<String> scheduleRecurrences;
 
     /**
@@ -242,7 +242,7 @@ public class Schedule extends com.pulumi.resources.CustomResource {
      * The schedule lifecycle state.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -256,7 +256,7 @@ public class Schedule extends com.pulumi.resources.CustomResource {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -270,7 +270,7 @@ public class Schedule extends com.pulumi.resources.CustomResource {
      * The date and time the schedule was created.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -284,7 +284,7 @@ public class Schedule extends com.pulumi.resources.CustomResource {
      * The date and time of the next job execution.
      * 
      */
-    @Export(name="timeNextRun", type=String.class, parameters={})
+    @Export(name="timeNextRun", refs={String.class}, tree="[0]")
     private Output<String> timeNextRun;
 
     /**
@@ -301,7 +301,7 @@ public class Schedule extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="timeScheduled", type=String.class, parameters={})
+    @Export(name="timeScheduled", refs={String.class}, tree="[0]")
     private Output<String> timeScheduled;
 
     /**

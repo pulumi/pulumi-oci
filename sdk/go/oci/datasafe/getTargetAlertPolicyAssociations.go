@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Target Alert Policy Associations in Oracle Cloud Infrastructure Data Safe service.
@@ -163,6 +164,12 @@ func (o GetTargetAlertPolicyAssociationsResultOutput) ToGetTargetAlertPolicyAsso
 
 func (o GetTargetAlertPolicyAssociationsResultOutput) ToGetTargetAlertPolicyAssociationsResultOutputWithContext(ctx context.Context) GetTargetAlertPolicyAssociationsResultOutput {
 	return o
+}
+
+func (o GetTargetAlertPolicyAssociationsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAlertPolicyAssociationsResult] {
+	return pulumix.Output[GetTargetAlertPolicyAssociationsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAlertPolicyAssociationsResultOutput) AccessLevel() pulumi.StringPtrOutput {

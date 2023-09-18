@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Peers in Oracle Cloud Infrastructure Blockchain service.
@@ -110,6 +111,12 @@ func (o GetPeersResultOutput) ToGetPeersResultOutput() GetPeersResultOutput {
 
 func (o GetPeersResultOutput) ToGetPeersResultOutputWithContext(ctx context.Context) GetPeersResultOutput {
 	return o
+}
+
+func (o GetPeersResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPeersResult] {
+	return pulumix.Output[GetPeersResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPeersResultOutput) BlockchainPlatformId() pulumi.StringOutput {

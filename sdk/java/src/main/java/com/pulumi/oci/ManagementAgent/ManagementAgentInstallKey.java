@@ -69,7 +69,7 @@ public class ManagementAgentInstallKey extends com.pulumi.resources.CustomResour
      * Total number of install for this keys
      * 
      */
-    @Export(name="allowedKeyInstallCount", type=Integer.class, parameters={})
+    @Export(name="allowedKeyInstallCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> allowedKeyInstallCount;
 
     /**
@@ -83,7 +83,7 @@ public class ManagementAgentInstallKey extends com.pulumi.resources.CustomResour
      * Compartment Identifier
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -97,7 +97,7 @@ public class ManagementAgentInstallKey extends com.pulumi.resources.CustomResour
      * Principal id of user who created the Agent Install key
      * 
      */
-    @Export(name="createdByPrincipalId", type=String.class, parameters={})
+    @Export(name="createdByPrincipalId", refs={String.class}, tree="[0]")
     private Output<String> createdByPrincipalId;
 
     /**
@@ -111,7 +111,7 @@ public class ManagementAgentInstallKey extends com.pulumi.resources.CustomResour
      * Total number of install for this keys
      * 
      */
-    @Export(name="currentKeyInstallCount", type=Integer.class, parameters={})
+    @Export(name="currentKeyInstallCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> currentKeyInstallCount;
 
     /**
@@ -125,7 +125,7 @@ public class ManagementAgentInstallKey extends com.pulumi.resources.CustomResour
      * (Updatable) Management Agent install Key Name
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -139,7 +139,7 @@ public class ManagementAgentInstallKey extends com.pulumi.resources.CustomResour
      * If set to true, the install key has no expiration date or usage limit. Defaults to false
      * 
      */
-    @Export(name="isUnlimited", type=Boolean.class, parameters={})
+    @Export(name="isUnlimited", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isUnlimited;
 
     /**
@@ -153,7 +153,7 @@ public class ManagementAgentInstallKey extends com.pulumi.resources.CustomResour
      * Management Agent Install Key
      * 
      */
-    @Export(name="key", type=String.class, parameters={})
+    @Export(name="key", refs={String.class}, tree="[0]")
     private Output<String> key;
 
     /**
@@ -167,7 +167,7 @@ public class ManagementAgentInstallKey extends com.pulumi.resources.CustomResour
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -181,7 +181,7 @@ public class ManagementAgentInstallKey extends com.pulumi.resources.CustomResour
      * Status of Key
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -195,7 +195,7 @@ public class ManagementAgentInstallKey extends com.pulumi.resources.CustomResour
      * The time when Management Agent install Key was created. An RFC3339 formatted date time string
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -212,7 +212,7 @@ public class ManagementAgentInstallKey extends com.pulumi.resources.CustomResour
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="timeExpires", type=String.class, parameters={})
+    @Export(name="timeExpires", refs={String.class}, tree="[0]")
     private Output<String> timeExpires;
 
     /**
@@ -229,7 +229,7 @@ public class ManagementAgentInstallKey extends com.pulumi.resources.CustomResour
      * The time when Management Agent install Key was updated. An RFC3339 formatted date time string
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

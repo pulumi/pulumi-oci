@@ -15,19 +15,19 @@ import javax.annotation.Nullable;
 
 @ResourceType(type="oci:ObjectStorage/namespaceMetadata:NamespaceMetadata")
 public class NamespaceMetadata extends com.pulumi.resources.CustomResource {
-    @Export(name="defaultS3compartmentId", type=String.class, parameters={})
+    @Export(name="defaultS3compartmentId", refs={String.class}, tree="[0]")
     private Output<String> defaultS3compartmentId;
 
     public Output<String> defaultS3compartmentId() {
         return this.defaultS3compartmentId;
     }
-    @Export(name="defaultSwiftCompartmentId", type=String.class, parameters={})
+    @Export(name="defaultSwiftCompartmentId", refs={String.class}, tree="[0]")
     private Output<String> defaultSwiftCompartmentId;
 
     public Output<String> defaultSwiftCompartmentId() {
         return this.defaultSwiftCompartmentId;
     }
-    @Export(name="namespace", type=String.class, parameters={})
+    @Export(name="namespace", refs={String.class}, tree="[0]")
     private Output<String> namespace;
 
     public Output<String> namespace() {

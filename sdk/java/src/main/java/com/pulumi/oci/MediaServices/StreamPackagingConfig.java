@@ -77,7 +77,7 @@ public class StreamPackagingConfig extends com.pulumi.resources.CustomResource {
      * Compartment Identifier
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -91,7 +91,7 @@ public class StreamPackagingConfig extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -105,7 +105,7 @@ public class StreamPackagingConfig extends com.pulumi.resources.CustomResource {
      * (Updatable) The name of the stream Packaging Configuration. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -119,7 +119,7 @@ public class StreamPackagingConfig extends com.pulumi.resources.CustomResource {
      * Unique identifier of the Distribution Channel that this stream packaging configuration belongs to.
      * 
      */
-    @Export(name="distributionChannelId", type=String.class, parameters={})
+    @Export(name="distributionChannelId", refs={String.class}, tree="[0]")
     private Output<String> distributionChannelId;
 
     /**
@@ -133,7 +133,7 @@ public class StreamPackagingConfig extends com.pulumi.resources.CustomResource {
      * The encryption used by the stream packaging configuration.
      * 
      */
-    @Export(name="encryption", type=StreamPackagingConfigEncryption.class, parameters={})
+    @Export(name="encryption", refs={StreamPackagingConfigEncryption.class}, tree="[0]")
     private Output<StreamPackagingConfigEncryption> encryption;
 
     /**
@@ -147,7 +147,7 @@ public class StreamPackagingConfig extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -161,7 +161,7 @@ public class StreamPackagingConfig extends com.pulumi.resources.CustomResource {
      * The duration in seconds for each fragment.
      * 
      */
-    @Export(name="segmentTimeInSeconds", type=Integer.class, parameters={})
+    @Export(name="segmentTimeInSeconds", refs={Integer.class}, tree="[0]")
     private Output<Integer> segmentTimeInSeconds;
 
     /**
@@ -175,7 +175,7 @@ public class StreamPackagingConfig extends com.pulumi.resources.CustomResource {
      * The current state of the Packaging Configuration.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -192,7 +192,7 @@ public class StreamPackagingConfig extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="streamPackagingFormat", type=String.class, parameters={})
+    @Export(name="streamPackagingFormat", refs={String.class}, tree="[0]")
     private Output<String> streamPackagingFormat;
 
     /**
@@ -209,7 +209,7 @@ public class StreamPackagingConfig extends com.pulumi.resources.CustomResource {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -223,7 +223,7 @@ public class StreamPackagingConfig extends com.pulumi.resources.CustomResource {
      * The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -237,7 +237,7 @@ public class StreamPackagingConfig extends com.pulumi.resources.CustomResource {
      * The time when the Packaging Configuration was updated. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

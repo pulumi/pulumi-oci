@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Auth Token resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -909,6 +910,12 @@ func (i *DomainsAuthToken) ToDomainsAuthTokenOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsAuthTokenOutput)
 }
 
+func (i *DomainsAuthToken) ToOutput(ctx context.Context) pulumix.Output[*DomainsAuthToken] {
+	return pulumix.Output[*DomainsAuthToken]{
+		OutputState: i.ToDomainsAuthTokenOutputWithContext(ctx).OutputState,
+	}
+}
+
 // DomainsAuthTokenArrayInput is an input type that accepts DomainsAuthTokenArray and DomainsAuthTokenArrayOutput values.
 // You can construct a concrete instance of `DomainsAuthTokenArrayInput` via:
 //
@@ -932,6 +939,12 @@ func (i DomainsAuthTokenArray) ToDomainsAuthTokenArrayOutput() DomainsAuthTokenA
 
 func (i DomainsAuthTokenArray) ToDomainsAuthTokenArrayOutputWithContext(ctx context.Context) DomainsAuthTokenArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsAuthTokenArrayOutput)
+}
+
+func (i DomainsAuthTokenArray) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsAuthToken] {
+	return pulumix.Output[[]*DomainsAuthToken]{
+		OutputState: i.ToDomainsAuthTokenArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // DomainsAuthTokenMapInput is an input type that accepts DomainsAuthTokenMap and DomainsAuthTokenMapOutput values.
@@ -959,6 +972,12 @@ func (i DomainsAuthTokenMap) ToDomainsAuthTokenMapOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsAuthTokenMapOutput)
 }
 
+func (i DomainsAuthTokenMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsAuthToken] {
+	return pulumix.Output[map[string]*DomainsAuthToken]{
+		OutputState: i.ToDomainsAuthTokenMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type DomainsAuthTokenOutput struct{ *pulumi.OutputState }
 
 func (DomainsAuthTokenOutput) ElementType() reflect.Type {
@@ -971,6 +990,12 @@ func (o DomainsAuthTokenOutput) ToDomainsAuthTokenOutput() DomainsAuthTokenOutpu
 
 func (o DomainsAuthTokenOutput) ToDomainsAuthTokenOutputWithContext(ctx context.Context) DomainsAuthTokenOutput {
 	return o
+}
+
+func (o DomainsAuthTokenOutput) ToOutput(ctx context.Context) pulumix.Output[*DomainsAuthToken] {
+	return pulumix.Output[*DomainsAuthToken]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
@@ -1257,6 +1282,12 @@ func (o DomainsAuthTokenArrayOutput) ToDomainsAuthTokenArrayOutputWithContext(ct
 	return o
 }
 
+func (o DomainsAuthTokenArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsAuthToken] {
+	return pulumix.Output[[]*DomainsAuthToken]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o DomainsAuthTokenArrayOutput) Index(i pulumi.IntInput) DomainsAuthTokenOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DomainsAuthToken {
 		return vs[0].([]*DomainsAuthToken)[vs[1].(int)]
@@ -1275,6 +1306,12 @@ func (o DomainsAuthTokenMapOutput) ToDomainsAuthTokenMapOutput() DomainsAuthToke
 
 func (o DomainsAuthTokenMapOutput) ToDomainsAuthTokenMapOutputWithContext(ctx context.Context) DomainsAuthTokenMapOutput {
 	return o
+}
+
+func (o DomainsAuthTokenMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsAuthToken] {
+	return pulumix.Output[map[string]*DomainsAuthToken]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o DomainsAuthTokenMapOutput) MapIndex(k pulumi.StringInput) DomainsAuthTokenOutput {

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of License Records in Oracle Cloud Infrastructure License Manager service.
@@ -105,6 +106,12 @@ func (o GetLicenseRecordsResultOutput) ToGetLicenseRecordsResultOutput() GetLice
 
 func (o GetLicenseRecordsResultOutput) ToGetLicenseRecordsResultOutputWithContext(ctx context.Context) GetLicenseRecordsResultOutput {
 	return o
+}
+
+func (o GetLicenseRecordsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetLicenseRecordsResult] {
+	return pulumix.Output[GetLicenseRecordsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetLicenseRecordsResultOutput) Filters() GetLicenseRecordsFilterArrayOutput {

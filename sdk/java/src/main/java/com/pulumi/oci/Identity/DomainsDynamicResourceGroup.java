@@ -101,7 +101,7 @@ public class DomainsDynamicResourceGroup extends com.pulumi.resources.CustomReso
      * (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If &#39;attributes&#39; query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      * 
      */
-    @Export(name="attributeSets", type=List.class, parameters={String.class})
+    @Export(name="attributeSets", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> attributeSets;
 
     /**
@@ -115,7 +115,7 @@ public class DomainsDynamicResourceGroup extends com.pulumi.resources.CustomReso
      * (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      * 
      */
-    @Export(name="attributes", type=String.class, parameters={})
+    @Export(name="attributes", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> attributes;
 
     /**
@@ -129,7 +129,7 @@ public class DomainsDynamicResourceGroup extends com.pulumi.resources.CustomReso
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      * 
      */
-    @Export(name="authorization", type=String.class, parameters={})
+    @Export(name="authorization", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> authorization;
 
     /**
@@ -153,7 +153,7 @@ public class DomainsDynamicResourceGroup extends com.pulumi.resources.CustomReso
      * * uniqueness: none
      * 
      */
-    @Export(name="compartmentOcid", type=String.class, parameters={})
+    @Export(name="compartmentOcid", refs={String.class}, tree="[0]")
     private Output<String> compartmentOcid;
 
     /**
@@ -187,7 +187,7 @@ public class DomainsDynamicResourceGroup extends com.pulumi.resources.CustomReso
      * * uniqueness: none
      * 
      */
-    @Export(name="deleteInProgress", type=Boolean.class, parameters={})
+    @Export(name="deleteInProgress", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> deleteInProgress;
 
     /**
@@ -223,7 +223,7 @@ public class DomainsDynamicResourceGroup extends com.pulumi.resources.CustomReso
      * * uniqueness: none
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -260,7 +260,7 @@ public class DomainsDynamicResourceGroup extends com.pulumi.resources.CustomReso
      * * uniqueness: global
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -295,7 +295,7 @@ public class DomainsDynamicResourceGroup extends com.pulumi.resources.CustomReso
      * * uniqueness: none
      * 
      */
-    @Export(name="domainOcid", type=String.class, parameters={})
+    @Export(name="domainOcid", refs={String.class}, tree="[0]")
     private Output<String> domainOcid;
 
     /**
@@ -330,7 +330,7 @@ public class DomainsDynamicResourceGroup extends com.pulumi.resources.CustomReso
      * * uniqueness: none
      * 
      */
-    @Export(name="dynamicGroupAppRoles", type=List.class, parameters={DomainsDynamicResourceGroupDynamicGroupAppRole.class})
+    @Export(name="dynamicGroupAppRoles", refs={List.class,DomainsDynamicResourceGroupDynamicGroupAppRole.class}, tree="[0,1]")
     private Output<List<DomainsDynamicResourceGroupDynamicGroupAppRole>> dynamicGroupAppRoles;
 
     /**
@@ -365,7 +365,7 @@ public class DomainsDynamicResourceGroup extends com.pulumi.resources.CustomReso
      * * uniqueness: none
      * 
      */
-    @Export(name="grants", type=List.class, parameters={DomainsDynamicResourceGroupGrant.class})
+    @Export(name="grants", refs={List.class,DomainsDynamicResourceGroupGrant.class}, tree="[0,1]")
     private Output<List<DomainsDynamicResourceGroupGrant>> grants;
 
     /**
@@ -397,7 +397,7 @@ public class DomainsDynamicResourceGroup extends com.pulumi.resources.CustomReso
      * * type: complex
      * 
      */
-    @Export(name="idcsCreatedBies", type=List.class, parameters={DomainsDynamicResourceGroupIdcsCreatedBy.class})
+    @Export(name="idcsCreatedBies", refs={List.class,DomainsDynamicResourceGroupIdcsCreatedBy.class}, tree="[0,1]")
     private Output<List<DomainsDynamicResourceGroupIdcsCreatedBy>> idcsCreatedBies;
 
     /**
@@ -419,7 +419,7 @@ public class DomainsDynamicResourceGroup extends com.pulumi.resources.CustomReso
      * The basic endpoint for the identity domain
      * 
      */
-    @Export(name="idcsEndpoint", type=String.class, parameters={})
+    @Export(name="idcsEndpoint", refs={String.class}, tree="[0]")
     private Output<String> idcsEndpoint;
 
     /**
@@ -441,7 +441,7 @@ public class DomainsDynamicResourceGroup extends com.pulumi.resources.CustomReso
      * * type: complex
      * 
      */
-    @Export(name="idcsLastModifiedBies", type=List.class, parameters={DomainsDynamicResourceGroupIdcsLastModifiedBy.class})
+    @Export(name="idcsLastModifiedBies", refs={List.class,DomainsDynamicResourceGroupIdcsLastModifiedBy.class}, tree="[0,1]")
     private Output<List<DomainsDynamicResourceGroupIdcsLastModifiedBy>> idcsLastModifiedBies;
 
     /**
@@ -473,7 +473,7 @@ public class DomainsDynamicResourceGroup extends com.pulumi.resources.CustomReso
      * * uniqueness: none
      * 
      */
-    @Export(name="idcsLastUpgradedInRelease", type=String.class, parameters={})
+    @Export(name="idcsLastUpgradedInRelease", refs={String.class}, tree="[0]")
     private Output<String> idcsLastUpgradedInRelease;
 
     /**
@@ -506,7 +506,7 @@ public class DomainsDynamicResourceGroup extends com.pulumi.resources.CustomReso
      * * uniqueness: none
      * 
      */
-    @Export(name="idcsPreventedOperations", type=List.class, parameters={String.class})
+    @Export(name="idcsPreventedOperations", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> idcsPreventedOperations;
 
     /**
@@ -538,7 +538,7 @@ public class DomainsDynamicResourceGroup extends com.pulumi.resources.CustomReso
      * * uniqueness: none
      * 
      */
-    @Export(name="matchingRule", type=String.class, parameters={})
+    @Export(name="matchingRule", refs={String.class}, tree="[0]")
     private Output<String> matchingRule;
 
     /**
@@ -571,7 +571,7 @@ public class DomainsDynamicResourceGroup extends com.pulumi.resources.CustomReso
      * * type: complex
      * 
      */
-    @Export(name="metas", type=List.class, parameters={DomainsDynamicResourceGroupMeta.class})
+    @Export(name="metas", refs={List.class,DomainsDynamicResourceGroupMeta.class}, tree="[0,1]")
     private Output<List<DomainsDynamicResourceGroupMeta>> metas;
 
     /**
@@ -605,7 +605,7 @@ public class DomainsDynamicResourceGroup extends com.pulumi.resources.CustomReso
      * * uniqueness: global
      * 
      */
-    @Export(name="ocid", type=String.class, parameters={})
+    @Export(name="ocid", refs={String.class}, tree="[0]")
     private Output<String> ocid;
 
     /**
@@ -629,7 +629,7 @@ public class DomainsDynamicResourceGroup extends com.pulumi.resources.CustomReso
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      * 
      */
-    @Export(name="resourceTypeSchemaVersion", type=String.class, parameters={})
+    @Export(name="resourceTypeSchemaVersion", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> resourceTypeSchemaVersion;
 
     /**
@@ -653,7 +653,7 @@ public class DomainsDynamicResourceGroup extends com.pulumi.resources.CustomReso
      * * uniqueness: none
      * 
      */
-    @Export(name="schemas", type=List.class, parameters={String.class})
+    @Export(name="schemas", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> schemas;
 
     /**
@@ -687,7 +687,7 @@ public class DomainsDynamicResourceGroup extends com.pulumi.resources.CustomReso
      * * uniqueness: none
      * 
      */
-    @Export(name="tags", type=List.class, parameters={DomainsDynamicResourceGroupTag.class})
+    @Export(name="tags", refs={List.class,DomainsDynamicResourceGroupTag.class}, tree="[0,1]")
     private Output<List<DomainsDynamicResourceGroupTag>> tags;
 
     /**
@@ -721,7 +721,7 @@ public class DomainsDynamicResourceGroup extends com.pulumi.resources.CustomReso
      * * uniqueness: none
      * 
      */
-    @Export(name="tenancyOcid", type=String.class, parameters={})
+    @Export(name="tenancyOcid", refs={String.class}, tree="[0]")
     private Output<String> tenancyOcid;
 
     /**
@@ -745,7 +745,7 @@ public class DomainsDynamicResourceGroup extends com.pulumi.resources.CustomReso
      * (Updatable) Oracle Cloud Infrastructure Tags.
      * 
      */
-    @Export(name="urnietfparamsscimschemasoracleidcsextensionOciTags", type=DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTags.class, parameters={})
+    @Export(name="urnietfparamsscimschemasoracleidcsextensionOciTags", refs={DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTags.class}, tree="[0]")
     private Output<DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTags> urnietfparamsscimschemasoracleidcsextensionOciTags;
 
     /**

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -58,6 +59,12 @@ func (i AuditPolicyAuditConditionArgs) ToAuditPolicyAuditConditionOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(AuditPolicyAuditConditionOutput)
 }
 
+func (i AuditPolicyAuditConditionArgs) ToOutput(ctx context.Context) pulumix.Output[AuditPolicyAuditCondition] {
+	return pulumix.Output[AuditPolicyAuditCondition]{
+		OutputState: i.ToAuditPolicyAuditConditionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AuditPolicyAuditConditionArrayInput is an input type that accepts AuditPolicyAuditConditionArray and AuditPolicyAuditConditionArrayOutput values.
 // You can construct a concrete instance of `AuditPolicyAuditConditionArrayInput` via:
 //
@@ -83,6 +90,12 @@ func (i AuditPolicyAuditConditionArray) ToAuditPolicyAuditConditionArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(AuditPolicyAuditConditionArrayOutput)
 }
 
+func (i AuditPolicyAuditConditionArray) ToOutput(ctx context.Context) pulumix.Output[[]AuditPolicyAuditCondition] {
+	return pulumix.Output[[]AuditPolicyAuditCondition]{
+		OutputState: i.ToAuditPolicyAuditConditionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AuditPolicyAuditConditionOutput struct{ *pulumi.OutputState }
 
 func (AuditPolicyAuditConditionOutput) ElementType() reflect.Type {
@@ -95,6 +108,12 @@ func (o AuditPolicyAuditConditionOutput) ToAuditPolicyAuditConditionOutput() Aud
 
 func (o AuditPolicyAuditConditionOutput) ToAuditPolicyAuditConditionOutputWithContext(ctx context.Context) AuditPolicyAuditConditionOutput {
 	return o
+}
+
+func (o AuditPolicyAuditConditionOutput) ToOutput(ctx context.Context) pulumix.Output[AuditPolicyAuditCondition] {
+	return pulumix.Output[AuditPolicyAuditCondition]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
@@ -131,6 +150,12 @@ func (o AuditPolicyAuditConditionArrayOutput) ToAuditPolicyAuditConditionArrayOu
 
 func (o AuditPolicyAuditConditionArrayOutput) ToAuditPolicyAuditConditionArrayOutputWithContext(ctx context.Context) AuditPolicyAuditConditionArrayOutput {
 	return o
+}
+
+func (o AuditPolicyAuditConditionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AuditPolicyAuditCondition] {
+	return pulumix.Output[[]AuditPolicyAuditCondition]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AuditPolicyAuditConditionArrayOutput) Index(i pulumi.IntInput) AuditPolicyAuditConditionOutput {
@@ -184,6 +209,12 @@ func (i AuditPolicyAuditConditionEnableConditionArgs) ToAuditPolicyAuditConditio
 	return pulumi.ToOutputWithContext(ctx, i).(AuditPolicyAuditConditionEnableConditionOutput)
 }
 
+func (i AuditPolicyAuditConditionEnableConditionArgs) ToOutput(ctx context.Context) pulumix.Output[AuditPolicyAuditConditionEnableCondition] {
+	return pulumix.Output[AuditPolicyAuditConditionEnableCondition]{
+		OutputState: i.ToAuditPolicyAuditConditionEnableConditionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AuditPolicyAuditConditionEnableConditionArrayInput is an input type that accepts AuditPolicyAuditConditionEnableConditionArray and AuditPolicyAuditConditionEnableConditionArrayOutput values.
 // You can construct a concrete instance of `AuditPolicyAuditConditionEnableConditionArrayInput` via:
 //
@@ -209,6 +240,12 @@ func (i AuditPolicyAuditConditionEnableConditionArray) ToAuditPolicyAuditConditi
 	return pulumi.ToOutputWithContext(ctx, i).(AuditPolicyAuditConditionEnableConditionArrayOutput)
 }
 
+func (i AuditPolicyAuditConditionEnableConditionArray) ToOutput(ctx context.Context) pulumix.Output[[]AuditPolicyAuditConditionEnableCondition] {
+	return pulumix.Output[[]AuditPolicyAuditConditionEnableCondition]{
+		OutputState: i.ToAuditPolicyAuditConditionEnableConditionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AuditPolicyAuditConditionEnableConditionOutput struct{ *pulumi.OutputState }
 
 func (AuditPolicyAuditConditionEnableConditionOutput) ElementType() reflect.Type {
@@ -221,6 +258,12 @@ func (o AuditPolicyAuditConditionEnableConditionOutput) ToAuditPolicyAuditCondit
 
 func (o AuditPolicyAuditConditionEnableConditionOutput) ToAuditPolicyAuditConditionEnableConditionOutputWithContext(ctx context.Context) AuditPolicyAuditConditionEnableConditionOutput {
 	return o
+}
+
+func (o AuditPolicyAuditConditionEnableConditionOutput) ToOutput(ctx context.Context) pulumix.Output[AuditPolicyAuditConditionEnableCondition] {
+	return pulumix.Output[AuditPolicyAuditConditionEnableCondition]{
+		OutputState: o.OutputState,
+	}
 }
 
 // List of users or roles that the policy must be enabled for.
@@ -255,6 +298,12 @@ func (o AuditPolicyAuditConditionEnableConditionArrayOutput) ToAuditPolicyAuditC
 
 func (o AuditPolicyAuditConditionEnableConditionArrayOutput) ToAuditPolicyAuditConditionEnableConditionArrayOutputWithContext(ctx context.Context) AuditPolicyAuditConditionEnableConditionArrayOutput {
 	return o
+}
+
+func (o AuditPolicyAuditConditionEnableConditionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AuditPolicyAuditConditionEnableCondition] {
+	return pulumix.Output[[]AuditPolicyAuditConditionEnableCondition]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AuditPolicyAuditConditionEnableConditionArrayOutput) Index(i pulumi.IntInput) AuditPolicyAuditConditionEnableConditionOutput {
@@ -336,6 +385,12 @@ func (i AuditPolicyAuditSpecificationArgs) ToAuditPolicyAuditSpecificationOutput
 	return pulumi.ToOutputWithContext(ctx, i).(AuditPolicyAuditSpecificationOutput)
 }
 
+func (i AuditPolicyAuditSpecificationArgs) ToOutput(ctx context.Context) pulumix.Output[AuditPolicyAuditSpecification] {
+	return pulumix.Output[AuditPolicyAuditSpecification]{
+		OutputState: i.ToAuditPolicyAuditSpecificationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AuditPolicyAuditSpecificationArrayInput is an input type that accepts AuditPolicyAuditSpecificationArray and AuditPolicyAuditSpecificationArrayOutput values.
 // You can construct a concrete instance of `AuditPolicyAuditSpecificationArrayInput` via:
 //
@@ -361,6 +416,12 @@ func (i AuditPolicyAuditSpecificationArray) ToAuditPolicyAuditSpecificationArray
 	return pulumi.ToOutputWithContext(ctx, i).(AuditPolicyAuditSpecificationArrayOutput)
 }
 
+func (i AuditPolicyAuditSpecificationArray) ToOutput(ctx context.Context) pulumix.Output[[]AuditPolicyAuditSpecification] {
+	return pulumix.Output[[]AuditPolicyAuditSpecification]{
+		OutputState: i.ToAuditPolicyAuditSpecificationArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AuditPolicyAuditSpecificationOutput struct{ *pulumi.OutputState }
 
 func (AuditPolicyAuditSpecificationOutput) ElementType() reflect.Type {
@@ -373,6 +434,12 @@ func (o AuditPolicyAuditSpecificationOutput) ToAuditPolicyAuditSpecificationOutp
 
 func (o AuditPolicyAuditSpecificationOutput) ToAuditPolicyAuditSpecificationOutputWithContext(ctx context.Context) AuditPolicyAuditSpecificationOutput {
 	return o
+}
+
+func (o AuditPolicyAuditSpecificationOutput) ToOutput(ctx context.Context) pulumix.Output[AuditPolicyAuditSpecification] {
+	return pulumix.Output[AuditPolicyAuditSpecification]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The category to which the audit policy belongs.
@@ -442,6 +509,12 @@ func (o AuditPolicyAuditSpecificationArrayOutput) ToAuditPolicyAuditSpecificatio
 
 func (o AuditPolicyAuditSpecificationArrayOutput) ToAuditPolicyAuditSpecificationArrayOutputWithContext(ctx context.Context) AuditPolicyAuditSpecificationArrayOutput {
 	return o
+}
+
+func (o AuditPolicyAuditSpecificationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AuditPolicyAuditSpecification] {
+	return pulumix.Output[[]AuditPolicyAuditSpecification]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AuditPolicyAuditSpecificationArrayOutput) Index(i pulumi.IntInput) AuditPolicyAuditSpecificationOutput {
@@ -555,6 +628,12 @@ func (i AuditProfileAuditTrailArgs) ToAuditProfileAuditTrailOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(AuditProfileAuditTrailOutput)
 }
 
+func (i AuditProfileAuditTrailArgs) ToOutput(ctx context.Context) pulumix.Output[AuditProfileAuditTrail] {
+	return pulumix.Output[AuditProfileAuditTrail]{
+		OutputState: i.ToAuditProfileAuditTrailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AuditProfileAuditTrailArrayInput is an input type that accepts AuditProfileAuditTrailArray and AuditProfileAuditTrailArrayOutput values.
 // You can construct a concrete instance of `AuditProfileAuditTrailArrayInput` via:
 //
@@ -580,6 +659,12 @@ func (i AuditProfileAuditTrailArray) ToAuditProfileAuditTrailArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(AuditProfileAuditTrailArrayOutput)
 }
 
+func (i AuditProfileAuditTrailArray) ToOutput(ctx context.Context) pulumix.Output[[]AuditProfileAuditTrail] {
+	return pulumix.Output[[]AuditProfileAuditTrail]{
+		OutputState: i.ToAuditProfileAuditTrailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AuditProfileAuditTrailOutput struct{ *pulumi.OutputState }
 
 func (AuditProfileAuditTrailOutput) ElementType() reflect.Type {
@@ -592,6 +677,12 @@ func (o AuditProfileAuditTrailOutput) ToAuditProfileAuditTrailOutput() AuditProf
 
 func (o AuditProfileAuditTrailOutput) ToAuditProfileAuditTrailOutputWithContext(ctx context.Context) AuditProfileAuditTrailOutput {
 	return o
+}
+
+func (o AuditProfileAuditTrailOutput) ToOutput(ctx context.Context) pulumix.Output[AuditProfileAuditTrail] {
+	return pulumix.Output[AuditProfileAuditTrail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The date from which the audit trail must start collecting data, in the format defined by RFC3339.
@@ -703,6 +794,12 @@ func (o AuditProfileAuditTrailArrayOutput) ToAuditProfileAuditTrailArrayOutputWi
 	return o
 }
 
+func (o AuditProfileAuditTrailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AuditProfileAuditTrail] {
+	return pulumix.Output[[]AuditProfileAuditTrail]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AuditProfileAuditTrailArrayOutput) Index(i pulumi.IntInput) AuditProfileAuditTrailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AuditProfileAuditTrail {
 		return vs[0].([]AuditProfileAuditTrail)[vs[1].(int)]
@@ -750,6 +847,12 @@ func (i DataSafeConfigurationGlobalSettingArgs) ToDataSafeConfigurationGlobalSet
 	return pulumi.ToOutputWithContext(ctx, i).(DataSafeConfigurationGlobalSettingOutput)
 }
 
+func (i DataSafeConfigurationGlobalSettingArgs) ToOutput(ctx context.Context) pulumix.Output[DataSafeConfigurationGlobalSetting] {
+	return pulumix.Output[DataSafeConfigurationGlobalSetting]{
+		OutputState: i.ToDataSafeConfigurationGlobalSettingOutputWithContext(ctx).OutputState,
+	}
+}
+
 // DataSafeConfigurationGlobalSettingArrayInput is an input type that accepts DataSafeConfigurationGlobalSettingArray and DataSafeConfigurationGlobalSettingArrayOutput values.
 // You can construct a concrete instance of `DataSafeConfigurationGlobalSettingArrayInput` via:
 //
@@ -775,6 +878,12 @@ func (i DataSafeConfigurationGlobalSettingArray) ToDataSafeConfigurationGlobalSe
 	return pulumi.ToOutputWithContext(ctx, i).(DataSafeConfigurationGlobalSettingArrayOutput)
 }
 
+func (i DataSafeConfigurationGlobalSettingArray) ToOutput(ctx context.Context) pulumix.Output[[]DataSafeConfigurationGlobalSetting] {
+	return pulumix.Output[[]DataSafeConfigurationGlobalSetting]{
+		OutputState: i.ToDataSafeConfigurationGlobalSettingArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type DataSafeConfigurationGlobalSettingOutput struct{ *pulumi.OutputState }
 
 func (DataSafeConfigurationGlobalSettingOutput) ElementType() reflect.Type {
@@ -787,6 +896,12 @@ func (o DataSafeConfigurationGlobalSettingOutput) ToDataSafeConfigurationGlobalS
 
 func (o DataSafeConfigurationGlobalSettingOutput) ToDataSafeConfigurationGlobalSettingOutputWithContext(ctx context.Context) DataSafeConfigurationGlobalSettingOutput {
 	return o
+}
+
+func (o DataSafeConfigurationGlobalSettingOutput) ToOutput(ctx context.Context) pulumix.Output[DataSafeConfigurationGlobalSetting] {
+	return pulumix.Output[DataSafeConfigurationGlobalSetting]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The paid usage option chosen by the customer admin.
@@ -816,6 +931,12 @@ func (o DataSafeConfigurationGlobalSettingArrayOutput) ToDataSafeConfigurationGl
 
 func (o DataSafeConfigurationGlobalSettingArrayOutput) ToDataSafeConfigurationGlobalSettingArrayOutputWithContext(ctx context.Context) DataSafeConfigurationGlobalSettingArrayOutput {
 	return o
+}
+
+func (o DataSafeConfigurationGlobalSettingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DataSafeConfigurationGlobalSetting] {
+	return pulumix.Output[[]DataSafeConfigurationGlobalSetting]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o DataSafeConfigurationGlobalSettingArrayOutput) Index(i pulumi.IntInput) DataSafeConfigurationGlobalSettingOutput {
@@ -861,6 +982,12 @@ func (i DiscoveryJobsResultModifiedAttributeArgs) ToDiscoveryJobsResultModifiedA
 	return pulumi.ToOutputWithContext(ctx, i).(DiscoveryJobsResultModifiedAttributeOutput)
 }
 
+func (i DiscoveryJobsResultModifiedAttributeArgs) ToOutput(ctx context.Context) pulumix.Output[DiscoveryJobsResultModifiedAttribute] {
+	return pulumix.Output[DiscoveryJobsResultModifiedAttribute]{
+		OutputState: i.ToDiscoveryJobsResultModifiedAttributeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // DiscoveryJobsResultModifiedAttributeArrayInput is an input type that accepts DiscoveryJobsResultModifiedAttributeArray and DiscoveryJobsResultModifiedAttributeArrayOutput values.
 // You can construct a concrete instance of `DiscoveryJobsResultModifiedAttributeArrayInput` via:
 //
@@ -886,6 +1013,12 @@ func (i DiscoveryJobsResultModifiedAttributeArray) ToDiscoveryJobsResultModified
 	return pulumi.ToOutputWithContext(ctx, i).(DiscoveryJobsResultModifiedAttributeArrayOutput)
 }
 
+func (i DiscoveryJobsResultModifiedAttributeArray) ToOutput(ctx context.Context) pulumix.Output[[]DiscoveryJobsResultModifiedAttribute] {
+	return pulumix.Output[[]DiscoveryJobsResultModifiedAttribute]{
+		OutputState: i.ToDiscoveryJobsResultModifiedAttributeArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type DiscoveryJobsResultModifiedAttributeOutput struct{ *pulumi.OutputState }
 
 func (DiscoveryJobsResultModifiedAttributeOutput) ElementType() reflect.Type {
@@ -898,6 +1031,12 @@ func (o DiscoveryJobsResultModifiedAttributeOutput) ToDiscoveryJobsResultModifie
 
 func (o DiscoveryJobsResultModifiedAttributeOutput) ToDiscoveryJobsResultModifiedAttributeOutputWithContext(ctx context.Context) DiscoveryJobsResultModifiedAttributeOutput {
 	return o
+}
+
+func (o DiscoveryJobsResultModifiedAttributeOutput) ToOutput(ctx context.Context) pulumix.Output[DiscoveryJobsResultModifiedAttribute] {
+	return pulumix.Output[DiscoveryJobsResultModifiedAttribute]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
@@ -922,6 +1061,12 @@ func (o DiscoveryJobsResultModifiedAttributeArrayOutput) ToDiscoveryJobsResultMo
 
 func (o DiscoveryJobsResultModifiedAttributeArrayOutput) ToDiscoveryJobsResultModifiedAttributeArrayOutputWithContext(ctx context.Context) DiscoveryJobsResultModifiedAttributeArrayOutput {
 	return o
+}
+
+func (o DiscoveryJobsResultModifiedAttributeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DiscoveryJobsResultModifiedAttribute] {
+	return pulumix.Output[[]DiscoveryJobsResultModifiedAttribute]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o DiscoveryJobsResultModifiedAttributeArrayOutput) Index(i pulumi.IntInput) DiscoveryJobsResultModifiedAttributeOutput {
@@ -1059,6 +1204,12 @@ func (i LibraryMasingFormatFormatEntryArgs) ToLibraryMasingFormatFormatEntryOutp
 	return pulumi.ToOutputWithContext(ctx, i).(LibraryMasingFormatFormatEntryOutput)
 }
 
+func (i LibraryMasingFormatFormatEntryArgs) ToOutput(ctx context.Context) pulumix.Output[LibraryMasingFormatFormatEntry] {
+	return pulumix.Output[LibraryMasingFormatFormatEntry]{
+		OutputState: i.ToLibraryMasingFormatFormatEntryOutputWithContext(ctx).OutputState,
+	}
+}
+
 // LibraryMasingFormatFormatEntryArrayInput is an input type that accepts LibraryMasingFormatFormatEntryArray and LibraryMasingFormatFormatEntryArrayOutput values.
 // You can construct a concrete instance of `LibraryMasingFormatFormatEntryArrayInput` via:
 //
@@ -1084,6 +1235,12 @@ func (i LibraryMasingFormatFormatEntryArray) ToLibraryMasingFormatFormatEntryArr
 	return pulumi.ToOutputWithContext(ctx, i).(LibraryMasingFormatFormatEntryArrayOutput)
 }
 
+func (i LibraryMasingFormatFormatEntryArray) ToOutput(ctx context.Context) pulumix.Output[[]LibraryMasingFormatFormatEntry] {
+	return pulumix.Output[[]LibraryMasingFormatFormatEntry]{
+		OutputState: i.ToLibraryMasingFormatFormatEntryArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type LibraryMasingFormatFormatEntryOutput struct{ *pulumi.OutputState }
 
 func (LibraryMasingFormatFormatEntryOutput) ElementType() reflect.Type {
@@ -1096,6 +1253,12 @@ func (o LibraryMasingFormatFormatEntryOutput) ToLibraryMasingFormatFormatEntryOu
 
 func (o LibraryMasingFormatFormatEntryOutput) ToLibraryMasingFormatFormatEntryOutputWithContext(ctx context.Context) LibraryMasingFormatFormatEntryOutput {
 	return o
+}
+
+func (o LibraryMasingFormatFormatEntryOutput) ToOutput(ctx context.Context) pulumix.Output[LibraryMasingFormatFormatEntry] {
+	return pulumix.Output[LibraryMasingFormatFormatEntry]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The name of the substitution column.
@@ -1231,6 +1394,12 @@ func (o LibraryMasingFormatFormatEntryArrayOutput) ToLibraryMasingFormatFormatEn
 	return o
 }
 
+func (o LibraryMasingFormatFormatEntryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]LibraryMasingFormatFormatEntry] {
+	return pulumix.Output[[]LibraryMasingFormatFormatEntry]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o LibraryMasingFormatFormatEntryArrayOutput) Index(i pulumi.IntInput) LibraryMasingFormatFormatEntryOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) LibraryMasingFormatFormatEntry {
 		return vs[0].([]LibraryMasingFormatFormatEntry)[vs[1].(int)]
@@ -1278,6 +1447,12 @@ func (i MaskingPoliciesMaskingColumnMaskingFormatArgs) ToMaskingPoliciesMaskingC
 	return pulumi.ToOutputWithContext(ctx, i).(MaskingPoliciesMaskingColumnMaskingFormatOutput)
 }
 
+func (i MaskingPoliciesMaskingColumnMaskingFormatArgs) ToOutput(ctx context.Context) pulumix.Output[MaskingPoliciesMaskingColumnMaskingFormat] {
+	return pulumix.Output[MaskingPoliciesMaskingColumnMaskingFormat]{
+		OutputState: i.ToMaskingPoliciesMaskingColumnMaskingFormatOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MaskingPoliciesMaskingColumnMaskingFormatArrayInput is an input type that accepts MaskingPoliciesMaskingColumnMaskingFormatArray and MaskingPoliciesMaskingColumnMaskingFormatArrayOutput values.
 // You can construct a concrete instance of `MaskingPoliciesMaskingColumnMaskingFormatArrayInput` via:
 //
@@ -1303,6 +1478,12 @@ func (i MaskingPoliciesMaskingColumnMaskingFormatArray) ToMaskingPoliciesMasking
 	return pulumi.ToOutputWithContext(ctx, i).(MaskingPoliciesMaskingColumnMaskingFormatArrayOutput)
 }
 
+func (i MaskingPoliciesMaskingColumnMaskingFormatArray) ToOutput(ctx context.Context) pulumix.Output[[]MaskingPoliciesMaskingColumnMaskingFormat] {
+	return pulumix.Output[[]MaskingPoliciesMaskingColumnMaskingFormat]{
+		OutputState: i.ToMaskingPoliciesMaskingColumnMaskingFormatArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MaskingPoliciesMaskingColumnMaskingFormatOutput struct{ *pulumi.OutputState }
 
 func (MaskingPoliciesMaskingColumnMaskingFormatOutput) ElementType() reflect.Type {
@@ -1315,6 +1496,12 @@ func (o MaskingPoliciesMaskingColumnMaskingFormatOutput) ToMaskingPoliciesMaskin
 
 func (o MaskingPoliciesMaskingColumnMaskingFormatOutput) ToMaskingPoliciesMaskingColumnMaskingFormatOutputWithContext(ctx context.Context) MaskingPoliciesMaskingColumnMaskingFormatOutput {
 	return o
+}
+
+func (o MaskingPoliciesMaskingColumnMaskingFormatOutput) ToOutput(ctx context.Context) pulumix.Output[MaskingPoliciesMaskingColumnMaskingFormat] {
+	return pulumix.Output[MaskingPoliciesMaskingColumnMaskingFormat]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) A condition that must be true for applying the masking format. It can be any valid  SQL construct that can be used in a SQL predicate. It enables you to do  <a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional masking</a>  so that you can mask the column data values differently using different masking  formats and the associated conditions.
@@ -1346,6 +1533,12 @@ func (o MaskingPoliciesMaskingColumnMaskingFormatArrayOutput) ToMaskingPoliciesM
 
 func (o MaskingPoliciesMaskingColumnMaskingFormatArrayOutput) ToMaskingPoliciesMaskingColumnMaskingFormatArrayOutputWithContext(ctx context.Context) MaskingPoliciesMaskingColumnMaskingFormatArrayOutput {
 	return o
+}
+
+func (o MaskingPoliciesMaskingColumnMaskingFormatArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MaskingPoliciesMaskingColumnMaskingFormat] {
+	return pulumix.Output[[]MaskingPoliciesMaskingColumnMaskingFormat]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MaskingPoliciesMaskingColumnMaskingFormatArrayOutput) Index(i pulumi.IntInput) MaskingPoliciesMaskingColumnMaskingFormatOutput {
@@ -1483,6 +1676,12 @@ func (i MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs) ToMaskingPolic
 	return pulumi.ToOutputWithContext(ctx, i).(MaskingPoliciesMaskingColumnMaskingFormatFormatEntryOutput)
 }
 
+func (i MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs) ToOutput(ctx context.Context) pulumix.Output[MaskingPoliciesMaskingColumnMaskingFormatFormatEntry] {
+	return pulumix.Output[MaskingPoliciesMaskingColumnMaskingFormatFormatEntry]{
+		OutputState: i.ToMaskingPoliciesMaskingColumnMaskingFormatFormatEntryOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArrayInput is an input type that accepts MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArray and MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArrayOutput values.
 // You can construct a concrete instance of `MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArrayInput` via:
 //
@@ -1508,6 +1707,12 @@ func (i MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArray) ToMaskingPoli
 	return pulumi.ToOutputWithContext(ctx, i).(MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArrayOutput)
 }
 
+func (i MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArray) ToOutput(ctx context.Context) pulumix.Output[[]MaskingPoliciesMaskingColumnMaskingFormatFormatEntry] {
+	return pulumix.Output[[]MaskingPoliciesMaskingColumnMaskingFormatFormatEntry]{
+		OutputState: i.ToMaskingPoliciesMaskingColumnMaskingFormatFormatEntryArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MaskingPoliciesMaskingColumnMaskingFormatFormatEntryOutput struct{ *pulumi.OutputState }
 
 func (MaskingPoliciesMaskingColumnMaskingFormatFormatEntryOutput) ElementType() reflect.Type {
@@ -1520,6 +1725,12 @@ func (o MaskingPoliciesMaskingColumnMaskingFormatFormatEntryOutput) ToMaskingPol
 
 func (o MaskingPoliciesMaskingColumnMaskingFormatFormatEntryOutput) ToMaskingPoliciesMaskingColumnMaskingFormatFormatEntryOutputWithContext(ctx context.Context) MaskingPoliciesMaskingColumnMaskingFormatFormatEntryOutput {
 	return o
+}
+
+func (o MaskingPoliciesMaskingColumnMaskingFormatFormatEntryOutput) ToOutput(ctx context.Context) pulumix.Output[MaskingPoliciesMaskingColumnMaskingFormatFormatEntry] {
+	return pulumix.Output[MaskingPoliciesMaskingColumnMaskingFormatFormatEntry]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The name of the substitution column.
@@ -1655,6 +1866,12 @@ func (o MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArrayOutput) ToMaski
 	return o
 }
 
+func (o MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MaskingPoliciesMaskingColumnMaskingFormatFormatEntry] {
+	return pulumix.Output[[]MaskingPoliciesMaskingColumnMaskingFormatFormatEntry]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArrayOutput) Index(i pulumi.IntInput) MaskingPoliciesMaskingColumnMaskingFormatFormatEntryOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MaskingPoliciesMaskingColumnMaskingFormatFormatEntry {
 		return vs[0].([]MaskingPoliciesMaskingColumnMaskingFormatFormatEntry)[vs[1].(int)]
@@ -1702,6 +1919,12 @@ func (i MaskingPolicyColumnSourceArgs) ToMaskingPolicyColumnSourceOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(MaskingPolicyColumnSourceOutput)
 }
 
+func (i MaskingPolicyColumnSourceArgs) ToOutput(ctx context.Context) pulumix.Output[MaskingPolicyColumnSource] {
+	return pulumix.Output[MaskingPolicyColumnSource]{
+		OutputState: i.ToMaskingPolicyColumnSourceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MaskingPolicyColumnSourceArrayInput is an input type that accepts MaskingPolicyColumnSourceArray and MaskingPolicyColumnSourceArrayOutput values.
 // You can construct a concrete instance of `MaskingPolicyColumnSourceArrayInput` via:
 //
@@ -1727,6 +1950,12 @@ func (i MaskingPolicyColumnSourceArray) ToMaskingPolicyColumnSourceArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(MaskingPolicyColumnSourceArrayOutput)
 }
 
+func (i MaskingPolicyColumnSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]MaskingPolicyColumnSource] {
+	return pulumix.Output[[]MaskingPolicyColumnSource]{
+		OutputState: i.ToMaskingPolicyColumnSourceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MaskingPolicyColumnSourceOutput struct{ *pulumi.OutputState }
 
 func (MaskingPolicyColumnSourceOutput) ElementType() reflect.Type {
@@ -1739,6 +1968,12 @@ func (o MaskingPolicyColumnSourceOutput) ToMaskingPolicyColumnSourceOutput() Mas
 
 func (o MaskingPolicyColumnSourceOutput) ToMaskingPolicyColumnSourceOutputWithContext(ctx context.Context) MaskingPolicyColumnSourceOutput {
 	return o
+}
+
+func (o MaskingPolicyColumnSourceOutput) ToOutput(ctx context.Context) pulumix.Output[MaskingPolicyColumnSource] {
+	return pulumix.Output[MaskingPolicyColumnSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The source of masking columns.
@@ -1768,6 +2003,12 @@ func (o MaskingPolicyColumnSourceArrayOutput) ToMaskingPolicyColumnSourceArrayOu
 
 func (o MaskingPolicyColumnSourceArrayOutput) ToMaskingPolicyColumnSourceArrayOutputWithContext(ctx context.Context) MaskingPolicyColumnSourceArrayOutput {
 	return o
+}
+
+func (o MaskingPolicyColumnSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MaskingPolicyColumnSource] {
+	return pulumix.Output[[]MaskingPolicyColumnSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MaskingPolicyColumnSourceArrayOutput) Index(i pulumi.IntInput) MaskingPolicyColumnSourceOutput {
@@ -1825,6 +2066,12 @@ func (i ReportDefinitionColumnFilterArgs) ToReportDefinitionColumnFilterOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(ReportDefinitionColumnFilterOutput)
 }
 
+func (i ReportDefinitionColumnFilterArgs) ToOutput(ctx context.Context) pulumix.Output[ReportDefinitionColumnFilter] {
+	return pulumix.Output[ReportDefinitionColumnFilter]{
+		OutputState: i.ToReportDefinitionColumnFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ReportDefinitionColumnFilterArrayInput is an input type that accepts ReportDefinitionColumnFilterArray and ReportDefinitionColumnFilterArrayOutput values.
 // You can construct a concrete instance of `ReportDefinitionColumnFilterArrayInput` via:
 //
@@ -1850,6 +2097,12 @@ func (i ReportDefinitionColumnFilterArray) ToReportDefinitionColumnFilterArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(ReportDefinitionColumnFilterArrayOutput)
 }
 
+func (i ReportDefinitionColumnFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]ReportDefinitionColumnFilter] {
+	return pulumix.Output[[]ReportDefinitionColumnFilter]{
+		OutputState: i.ToReportDefinitionColumnFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ReportDefinitionColumnFilterOutput struct{ *pulumi.OutputState }
 
 func (ReportDefinitionColumnFilterOutput) ElementType() reflect.Type {
@@ -1862,6 +2115,12 @@ func (o ReportDefinitionColumnFilterOutput) ToReportDefinitionColumnFilterOutput
 
 func (o ReportDefinitionColumnFilterOutput) ToReportDefinitionColumnFilterOutputWithContext(ctx context.Context) ReportDefinitionColumnFilterOutput {
 	return o
+}
+
+func (o ReportDefinitionColumnFilterOutput) ToOutput(ctx context.Context) pulumix.Output[ReportDefinitionColumnFilter] {
+	return pulumix.Output[ReportDefinitionColumnFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) An array of expressions based on the operator type. A filter may have one or more expressions.
@@ -1901,6 +2160,12 @@ func (o ReportDefinitionColumnFilterArrayOutput) ToReportDefinitionColumnFilterA
 
 func (o ReportDefinitionColumnFilterArrayOutput) ToReportDefinitionColumnFilterArrayOutputWithContext(ctx context.Context) ReportDefinitionColumnFilterArrayOutput {
 	return o
+}
+
+func (o ReportDefinitionColumnFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ReportDefinitionColumnFilter] {
+	return pulumix.Output[[]ReportDefinitionColumnFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ReportDefinitionColumnFilterArrayOutput) Index(i pulumi.IntInput) ReportDefinitionColumnFilterOutput {
@@ -1958,6 +2223,12 @@ func (i ReportDefinitionColumnInfoArgs) ToReportDefinitionColumnInfoOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(ReportDefinitionColumnInfoOutput)
 }
 
+func (i ReportDefinitionColumnInfoArgs) ToOutput(ctx context.Context) pulumix.Output[ReportDefinitionColumnInfo] {
+	return pulumix.Output[ReportDefinitionColumnInfo]{
+		OutputState: i.ToReportDefinitionColumnInfoOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ReportDefinitionColumnInfoArrayInput is an input type that accepts ReportDefinitionColumnInfoArray and ReportDefinitionColumnInfoArrayOutput values.
 // You can construct a concrete instance of `ReportDefinitionColumnInfoArrayInput` via:
 //
@@ -1983,6 +2254,12 @@ func (i ReportDefinitionColumnInfoArray) ToReportDefinitionColumnInfoArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(ReportDefinitionColumnInfoArrayOutput)
 }
 
+func (i ReportDefinitionColumnInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]ReportDefinitionColumnInfo] {
+	return pulumix.Output[[]ReportDefinitionColumnInfo]{
+		OutputState: i.ToReportDefinitionColumnInfoArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ReportDefinitionColumnInfoOutput struct{ *pulumi.OutputState }
 
 func (ReportDefinitionColumnInfoOutput) ElementType() reflect.Type {
@@ -1995,6 +2272,12 @@ func (o ReportDefinitionColumnInfoOutput) ToReportDefinitionColumnInfoOutput() R
 
 func (o ReportDefinitionColumnInfoOutput) ToReportDefinitionColumnInfoOutputWithContext(ctx context.Context) ReportDefinitionColumnInfoOutput {
 	return o
+}
+
+func (o ReportDefinitionColumnInfoOutput) ToOutput(ctx context.Context) pulumix.Output[ReportDefinitionColumnInfo] {
+	return pulumix.Output[ReportDefinitionColumnInfo]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Specifies the data type of the column.
@@ -2034,6 +2317,12 @@ func (o ReportDefinitionColumnInfoArrayOutput) ToReportDefinitionColumnInfoArray
 
 func (o ReportDefinitionColumnInfoArrayOutput) ToReportDefinitionColumnInfoArrayOutputWithContext(ctx context.Context) ReportDefinitionColumnInfoArrayOutput {
 	return o
+}
+
+func (o ReportDefinitionColumnInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ReportDefinitionColumnInfo] {
+	return pulumix.Output[[]ReportDefinitionColumnInfo]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ReportDefinitionColumnInfoArrayOutput) Index(i pulumi.IntInput) ReportDefinitionColumnInfoOutput {
@@ -2083,6 +2372,12 @@ func (i ReportDefinitionColumnSortingArgs) ToReportDefinitionColumnSortingOutput
 	return pulumi.ToOutputWithContext(ctx, i).(ReportDefinitionColumnSortingOutput)
 }
 
+func (i ReportDefinitionColumnSortingArgs) ToOutput(ctx context.Context) pulumix.Output[ReportDefinitionColumnSorting] {
+	return pulumix.Output[ReportDefinitionColumnSorting]{
+		OutputState: i.ToReportDefinitionColumnSortingOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ReportDefinitionColumnSortingArrayInput is an input type that accepts ReportDefinitionColumnSortingArray and ReportDefinitionColumnSortingArrayOutput values.
 // You can construct a concrete instance of `ReportDefinitionColumnSortingArrayInput` via:
 //
@@ -2108,6 +2403,12 @@ func (i ReportDefinitionColumnSortingArray) ToReportDefinitionColumnSortingArray
 	return pulumi.ToOutputWithContext(ctx, i).(ReportDefinitionColumnSortingArrayOutput)
 }
 
+func (i ReportDefinitionColumnSortingArray) ToOutput(ctx context.Context) pulumix.Output[[]ReportDefinitionColumnSorting] {
+	return pulumix.Output[[]ReportDefinitionColumnSorting]{
+		OutputState: i.ToReportDefinitionColumnSortingArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ReportDefinitionColumnSortingOutput struct{ *pulumi.OutputState }
 
 func (ReportDefinitionColumnSortingOutput) ElementType() reflect.Type {
@@ -2120,6 +2421,12 @@ func (o ReportDefinitionColumnSortingOutput) ToReportDefinitionColumnSortingOutp
 
 func (o ReportDefinitionColumnSortingOutput) ToReportDefinitionColumnSortingOutputWithContext(ctx context.Context) ReportDefinitionColumnSortingOutput {
 	return o
+}
+
+func (o ReportDefinitionColumnSortingOutput) ToOutput(ctx context.Context) pulumix.Output[ReportDefinitionColumnSorting] {
+	return pulumix.Output[ReportDefinitionColumnSorting]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Name of the column that must be sorted.
@@ -2149,6 +2456,12 @@ func (o ReportDefinitionColumnSortingArrayOutput) ToReportDefinitionColumnSortin
 
 func (o ReportDefinitionColumnSortingArrayOutput) ToReportDefinitionColumnSortingArrayOutputWithContext(ctx context.Context) ReportDefinitionColumnSortingArrayOutput {
 	return o
+}
+
+func (o ReportDefinitionColumnSortingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ReportDefinitionColumnSorting] {
+	return pulumix.Output[[]ReportDefinitionColumnSorting]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ReportDefinitionColumnSortingArrayOutput) Index(i pulumi.IntInput) ReportDefinitionColumnSortingOutput {
@@ -2216,6 +2529,12 @@ func (i ReportDefinitionSummaryArgs) ToReportDefinitionSummaryOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(ReportDefinitionSummaryOutput)
 }
 
+func (i ReportDefinitionSummaryArgs) ToOutput(ctx context.Context) pulumix.Output[ReportDefinitionSummary] {
+	return pulumix.Output[ReportDefinitionSummary]{
+		OutputState: i.ToReportDefinitionSummaryOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ReportDefinitionSummaryArrayInput is an input type that accepts ReportDefinitionSummaryArray and ReportDefinitionSummaryArrayOutput values.
 // You can construct a concrete instance of `ReportDefinitionSummaryArrayInput` via:
 //
@@ -2241,6 +2560,12 @@ func (i ReportDefinitionSummaryArray) ToReportDefinitionSummaryArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(ReportDefinitionSummaryArrayOutput)
 }
 
+func (i ReportDefinitionSummaryArray) ToOutput(ctx context.Context) pulumix.Output[[]ReportDefinitionSummary] {
+	return pulumix.Output[[]ReportDefinitionSummary]{
+		OutputState: i.ToReportDefinitionSummaryArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ReportDefinitionSummaryOutput struct{ *pulumi.OutputState }
 
 func (ReportDefinitionSummaryOutput) ElementType() reflect.Type {
@@ -2253,6 +2578,12 @@ func (o ReportDefinitionSummaryOutput) ToReportDefinitionSummaryOutput() ReportD
 
 func (o ReportDefinitionSummaryOutput) ToReportDefinitionSummaryOutputWithContext(ctx context.Context) ReportDefinitionSummaryOutput {
 	return o
+}
+
+func (o ReportDefinitionSummaryOutput) ToOutput(ctx context.Context) pulumix.Output[ReportDefinitionSummary] {
+	return pulumix.Output[ReportDefinitionSummary]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Name of the key or count of object.
@@ -2300,6 +2631,12 @@ func (o ReportDefinitionSummaryArrayOutput) ToReportDefinitionSummaryArrayOutput
 
 func (o ReportDefinitionSummaryArrayOutput) ToReportDefinitionSummaryArrayOutputWithContext(ctx context.Context) ReportDefinitionSummaryArrayOutput {
 	return o
+}
+
+func (o ReportDefinitionSummaryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ReportDefinitionSummary] {
+	return pulumix.Output[[]ReportDefinitionSummary]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ReportDefinitionSummaryArrayOutput) Index(i pulumi.IntInput) ReportDefinitionSummaryOutput {
@@ -2365,6 +2702,12 @@ func (i SecurityAssessmentStatisticArgs) ToSecurityAssessmentStatisticOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(SecurityAssessmentStatisticOutput)
 }
 
+func (i SecurityAssessmentStatisticArgs) ToOutput(ctx context.Context) pulumix.Output[SecurityAssessmentStatistic] {
+	return pulumix.Output[SecurityAssessmentStatistic]{
+		OutputState: i.ToSecurityAssessmentStatisticOutputWithContext(ctx).OutputState,
+	}
+}
+
 // SecurityAssessmentStatisticArrayInput is an input type that accepts SecurityAssessmentStatisticArray and SecurityAssessmentStatisticArrayOutput values.
 // You can construct a concrete instance of `SecurityAssessmentStatisticArrayInput` via:
 //
@@ -2390,6 +2733,12 @@ func (i SecurityAssessmentStatisticArray) ToSecurityAssessmentStatisticArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(SecurityAssessmentStatisticArrayOutput)
 }
 
+func (i SecurityAssessmentStatisticArray) ToOutput(ctx context.Context) pulumix.Output[[]SecurityAssessmentStatistic] {
+	return pulumix.Output[[]SecurityAssessmentStatistic]{
+		OutputState: i.ToSecurityAssessmentStatisticArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type SecurityAssessmentStatisticOutput struct{ *pulumi.OutputState }
 
 func (SecurityAssessmentStatisticOutput) ElementType() reflect.Type {
@@ -2402,6 +2751,12 @@ func (o SecurityAssessmentStatisticOutput) ToSecurityAssessmentStatisticOutput()
 
 func (o SecurityAssessmentStatisticOutput) ToSecurityAssessmentStatisticOutputWithContext(ctx context.Context) SecurityAssessmentStatisticOutput {
 	return o
+}
+
+func (o SecurityAssessmentStatisticOutput) ToOutput(ctx context.Context) pulumix.Output[SecurityAssessmentStatistic] {
+	return pulumix.Output[SecurityAssessmentStatistic]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Statistics showing the number of findings with a particular risk level for each category.
@@ -2451,6 +2806,12 @@ func (o SecurityAssessmentStatisticArrayOutput) ToSecurityAssessmentStatisticArr
 
 func (o SecurityAssessmentStatisticArrayOutput) ToSecurityAssessmentStatisticArrayOutputWithContext(ctx context.Context) SecurityAssessmentStatisticArrayOutput {
 	return o
+}
+
+func (o SecurityAssessmentStatisticArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]SecurityAssessmentStatistic] {
+	return pulumix.Output[[]SecurityAssessmentStatistic]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o SecurityAssessmentStatisticArrayOutput) Index(i pulumi.IntInput) SecurityAssessmentStatisticOutput {
@@ -2520,6 +2881,12 @@ func (i SecurityAssessmentStatisticAdvisoryArgs) ToSecurityAssessmentStatisticAd
 	return pulumi.ToOutputWithContext(ctx, i).(SecurityAssessmentStatisticAdvisoryOutput)
 }
 
+func (i SecurityAssessmentStatisticAdvisoryArgs) ToOutput(ctx context.Context) pulumix.Output[SecurityAssessmentStatisticAdvisory] {
+	return pulumix.Output[SecurityAssessmentStatisticAdvisory]{
+		OutputState: i.ToSecurityAssessmentStatisticAdvisoryOutputWithContext(ctx).OutputState,
+	}
+}
+
 // SecurityAssessmentStatisticAdvisoryArrayInput is an input type that accepts SecurityAssessmentStatisticAdvisoryArray and SecurityAssessmentStatisticAdvisoryArrayOutput values.
 // You can construct a concrete instance of `SecurityAssessmentStatisticAdvisoryArrayInput` via:
 //
@@ -2545,6 +2912,12 @@ func (i SecurityAssessmentStatisticAdvisoryArray) ToSecurityAssessmentStatisticA
 	return pulumi.ToOutputWithContext(ctx, i).(SecurityAssessmentStatisticAdvisoryArrayOutput)
 }
 
+func (i SecurityAssessmentStatisticAdvisoryArray) ToOutput(ctx context.Context) pulumix.Output[[]SecurityAssessmentStatisticAdvisory] {
+	return pulumix.Output[[]SecurityAssessmentStatisticAdvisory]{
+		OutputState: i.ToSecurityAssessmentStatisticAdvisoryArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type SecurityAssessmentStatisticAdvisoryOutput struct{ *pulumi.OutputState }
 
 func (SecurityAssessmentStatisticAdvisoryOutput) ElementType() reflect.Type {
@@ -2557,6 +2930,12 @@ func (o SecurityAssessmentStatisticAdvisoryOutput) ToSecurityAssessmentStatistic
 
 func (o SecurityAssessmentStatisticAdvisoryOutput) ToSecurityAssessmentStatisticAdvisoryOutputWithContext(ctx context.Context) SecurityAssessmentStatisticAdvisoryOutput {
 	return o
+}
+
+func (o SecurityAssessmentStatisticAdvisoryOutput) ToOutput(ctx context.Context) pulumix.Output[SecurityAssessmentStatisticAdvisory] {
+	return pulumix.Output[SecurityAssessmentStatisticAdvisory]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The number of findings in the Auditing category.
@@ -2611,6 +2990,12 @@ func (o SecurityAssessmentStatisticAdvisoryArrayOutput) ToSecurityAssessmentStat
 
 func (o SecurityAssessmentStatisticAdvisoryArrayOutput) ToSecurityAssessmentStatisticAdvisoryArrayOutputWithContext(ctx context.Context) SecurityAssessmentStatisticAdvisoryArrayOutput {
 	return o
+}
+
+func (o SecurityAssessmentStatisticAdvisoryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]SecurityAssessmentStatisticAdvisory] {
+	return pulumix.Output[[]SecurityAssessmentStatisticAdvisory]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o SecurityAssessmentStatisticAdvisoryArrayOutput) Index(i pulumi.IntInput) SecurityAssessmentStatisticAdvisoryOutput {
@@ -2680,6 +3065,12 @@ func (i SecurityAssessmentStatisticEvaluateArgs) ToSecurityAssessmentStatisticEv
 	return pulumi.ToOutputWithContext(ctx, i).(SecurityAssessmentStatisticEvaluateOutput)
 }
 
+func (i SecurityAssessmentStatisticEvaluateArgs) ToOutput(ctx context.Context) pulumix.Output[SecurityAssessmentStatisticEvaluate] {
+	return pulumix.Output[SecurityAssessmentStatisticEvaluate]{
+		OutputState: i.ToSecurityAssessmentStatisticEvaluateOutputWithContext(ctx).OutputState,
+	}
+}
+
 // SecurityAssessmentStatisticEvaluateArrayInput is an input type that accepts SecurityAssessmentStatisticEvaluateArray and SecurityAssessmentStatisticEvaluateArrayOutput values.
 // You can construct a concrete instance of `SecurityAssessmentStatisticEvaluateArrayInput` via:
 //
@@ -2705,6 +3096,12 @@ func (i SecurityAssessmentStatisticEvaluateArray) ToSecurityAssessmentStatisticE
 	return pulumi.ToOutputWithContext(ctx, i).(SecurityAssessmentStatisticEvaluateArrayOutput)
 }
 
+func (i SecurityAssessmentStatisticEvaluateArray) ToOutput(ctx context.Context) pulumix.Output[[]SecurityAssessmentStatisticEvaluate] {
+	return pulumix.Output[[]SecurityAssessmentStatisticEvaluate]{
+		OutputState: i.ToSecurityAssessmentStatisticEvaluateArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type SecurityAssessmentStatisticEvaluateOutput struct{ *pulumi.OutputState }
 
 func (SecurityAssessmentStatisticEvaluateOutput) ElementType() reflect.Type {
@@ -2717,6 +3114,12 @@ func (o SecurityAssessmentStatisticEvaluateOutput) ToSecurityAssessmentStatistic
 
 func (o SecurityAssessmentStatisticEvaluateOutput) ToSecurityAssessmentStatisticEvaluateOutputWithContext(ctx context.Context) SecurityAssessmentStatisticEvaluateOutput {
 	return o
+}
+
+func (o SecurityAssessmentStatisticEvaluateOutput) ToOutput(ctx context.Context) pulumix.Output[SecurityAssessmentStatisticEvaluate] {
+	return pulumix.Output[SecurityAssessmentStatisticEvaluate]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The number of findings in the Auditing category.
@@ -2771,6 +3174,12 @@ func (o SecurityAssessmentStatisticEvaluateArrayOutput) ToSecurityAssessmentStat
 
 func (o SecurityAssessmentStatisticEvaluateArrayOutput) ToSecurityAssessmentStatisticEvaluateArrayOutputWithContext(ctx context.Context) SecurityAssessmentStatisticEvaluateArrayOutput {
 	return o
+}
+
+func (o SecurityAssessmentStatisticEvaluateArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]SecurityAssessmentStatisticEvaluate] {
+	return pulumix.Output[[]SecurityAssessmentStatisticEvaluate]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o SecurityAssessmentStatisticEvaluateArrayOutput) Index(i pulumi.IntInput) SecurityAssessmentStatisticEvaluateOutput {
@@ -2840,6 +3249,12 @@ func (i SecurityAssessmentStatisticHighRiskArgs) ToSecurityAssessmentStatisticHi
 	return pulumi.ToOutputWithContext(ctx, i).(SecurityAssessmentStatisticHighRiskOutput)
 }
 
+func (i SecurityAssessmentStatisticHighRiskArgs) ToOutput(ctx context.Context) pulumix.Output[SecurityAssessmentStatisticHighRisk] {
+	return pulumix.Output[SecurityAssessmentStatisticHighRisk]{
+		OutputState: i.ToSecurityAssessmentStatisticHighRiskOutputWithContext(ctx).OutputState,
+	}
+}
+
 // SecurityAssessmentStatisticHighRiskArrayInput is an input type that accepts SecurityAssessmentStatisticHighRiskArray and SecurityAssessmentStatisticHighRiskArrayOutput values.
 // You can construct a concrete instance of `SecurityAssessmentStatisticHighRiskArrayInput` via:
 //
@@ -2865,6 +3280,12 @@ func (i SecurityAssessmentStatisticHighRiskArray) ToSecurityAssessmentStatisticH
 	return pulumi.ToOutputWithContext(ctx, i).(SecurityAssessmentStatisticHighRiskArrayOutput)
 }
 
+func (i SecurityAssessmentStatisticHighRiskArray) ToOutput(ctx context.Context) pulumix.Output[[]SecurityAssessmentStatisticHighRisk] {
+	return pulumix.Output[[]SecurityAssessmentStatisticHighRisk]{
+		OutputState: i.ToSecurityAssessmentStatisticHighRiskArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type SecurityAssessmentStatisticHighRiskOutput struct{ *pulumi.OutputState }
 
 func (SecurityAssessmentStatisticHighRiskOutput) ElementType() reflect.Type {
@@ -2877,6 +3298,12 @@ func (o SecurityAssessmentStatisticHighRiskOutput) ToSecurityAssessmentStatistic
 
 func (o SecurityAssessmentStatisticHighRiskOutput) ToSecurityAssessmentStatisticHighRiskOutputWithContext(ctx context.Context) SecurityAssessmentStatisticHighRiskOutput {
 	return o
+}
+
+func (o SecurityAssessmentStatisticHighRiskOutput) ToOutput(ctx context.Context) pulumix.Output[SecurityAssessmentStatisticHighRisk] {
+	return pulumix.Output[SecurityAssessmentStatisticHighRisk]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The number of findings in the Auditing category.
@@ -2931,6 +3358,12 @@ func (o SecurityAssessmentStatisticHighRiskArrayOutput) ToSecurityAssessmentStat
 
 func (o SecurityAssessmentStatisticHighRiskArrayOutput) ToSecurityAssessmentStatisticHighRiskArrayOutputWithContext(ctx context.Context) SecurityAssessmentStatisticHighRiskArrayOutput {
 	return o
+}
+
+func (o SecurityAssessmentStatisticHighRiskArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]SecurityAssessmentStatisticHighRisk] {
+	return pulumix.Output[[]SecurityAssessmentStatisticHighRisk]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o SecurityAssessmentStatisticHighRiskArrayOutput) Index(i pulumi.IntInput) SecurityAssessmentStatisticHighRiskOutput {
@@ -3000,6 +3433,12 @@ func (i SecurityAssessmentStatisticLowRiskArgs) ToSecurityAssessmentStatisticLow
 	return pulumi.ToOutputWithContext(ctx, i).(SecurityAssessmentStatisticLowRiskOutput)
 }
 
+func (i SecurityAssessmentStatisticLowRiskArgs) ToOutput(ctx context.Context) pulumix.Output[SecurityAssessmentStatisticLowRisk] {
+	return pulumix.Output[SecurityAssessmentStatisticLowRisk]{
+		OutputState: i.ToSecurityAssessmentStatisticLowRiskOutputWithContext(ctx).OutputState,
+	}
+}
+
 // SecurityAssessmentStatisticLowRiskArrayInput is an input type that accepts SecurityAssessmentStatisticLowRiskArray and SecurityAssessmentStatisticLowRiskArrayOutput values.
 // You can construct a concrete instance of `SecurityAssessmentStatisticLowRiskArrayInput` via:
 //
@@ -3025,6 +3464,12 @@ func (i SecurityAssessmentStatisticLowRiskArray) ToSecurityAssessmentStatisticLo
 	return pulumi.ToOutputWithContext(ctx, i).(SecurityAssessmentStatisticLowRiskArrayOutput)
 }
 
+func (i SecurityAssessmentStatisticLowRiskArray) ToOutput(ctx context.Context) pulumix.Output[[]SecurityAssessmentStatisticLowRisk] {
+	return pulumix.Output[[]SecurityAssessmentStatisticLowRisk]{
+		OutputState: i.ToSecurityAssessmentStatisticLowRiskArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type SecurityAssessmentStatisticLowRiskOutput struct{ *pulumi.OutputState }
 
 func (SecurityAssessmentStatisticLowRiskOutput) ElementType() reflect.Type {
@@ -3037,6 +3482,12 @@ func (o SecurityAssessmentStatisticLowRiskOutput) ToSecurityAssessmentStatisticL
 
 func (o SecurityAssessmentStatisticLowRiskOutput) ToSecurityAssessmentStatisticLowRiskOutputWithContext(ctx context.Context) SecurityAssessmentStatisticLowRiskOutput {
 	return o
+}
+
+func (o SecurityAssessmentStatisticLowRiskOutput) ToOutput(ctx context.Context) pulumix.Output[SecurityAssessmentStatisticLowRisk] {
+	return pulumix.Output[SecurityAssessmentStatisticLowRisk]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The number of findings in the Auditing category.
@@ -3091,6 +3542,12 @@ func (o SecurityAssessmentStatisticLowRiskArrayOutput) ToSecurityAssessmentStati
 
 func (o SecurityAssessmentStatisticLowRiskArrayOutput) ToSecurityAssessmentStatisticLowRiskArrayOutputWithContext(ctx context.Context) SecurityAssessmentStatisticLowRiskArrayOutput {
 	return o
+}
+
+func (o SecurityAssessmentStatisticLowRiskArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]SecurityAssessmentStatisticLowRisk] {
+	return pulumix.Output[[]SecurityAssessmentStatisticLowRisk]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o SecurityAssessmentStatisticLowRiskArrayOutput) Index(i pulumi.IntInput) SecurityAssessmentStatisticLowRiskOutput {
@@ -3160,6 +3617,12 @@ func (i SecurityAssessmentStatisticMediumRiskArgs) ToSecurityAssessmentStatistic
 	return pulumi.ToOutputWithContext(ctx, i).(SecurityAssessmentStatisticMediumRiskOutput)
 }
 
+func (i SecurityAssessmentStatisticMediumRiskArgs) ToOutput(ctx context.Context) pulumix.Output[SecurityAssessmentStatisticMediumRisk] {
+	return pulumix.Output[SecurityAssessmentStatisticMediumRisk]{
+		OutputState: i.ToSecurityAssessmentStatisticMediumRiskOutputWithContext(ctx).OutputState,
+	}
+}
+
 // SecurityAssessmentStatisticMediumRiskArrayInput is an input type that accepts SecurityAssessmentStatisticMediumRiskArray and SecurityAssessmentStatisticMediumRiskArrayOutput values.
 // You can construct a concrete instance of `SecurityAssessmentStatisticMediumRiskArrayInput` via:
 //
@@ -3185,6 +3648,12 @@ func (i SecurityAssessmentStatisticMediumRiskArray) ToSecurityAssessmentStatisti
 	return pulumi.ToOutputWithContext(ctx, i).(SecurityAssessmentStatisticMediumRiskArrayOutput)
 }
 
+func (i SecurityAssessmentStatisticMediumRiskArray) ToOutput(ctx context.Context) pulumix.Output[[]SecurityAssessmentStatisticMediumRisk] {
+	return pulumix.Output[[]SecurityAssessmentStatisticMediumRisk]{
+		OutputState: i.ToSecurityAssessmentStatisticMediumRiskArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type SecurityAssessmentStatisticMediumRiskOutput struct{ *pulumi.OutputState }
 
 func (SecurityAssessmentStatisticMediumRiskOutput) ElementType() reflect.Type {
@@ -3197,6 +3666,12 @@ func (o SecurityAssessmentStatisticMediumRiskOutput) ToSecurityAssessmentStatist
 
 func (o SecurityAssessmentStatisticMediumRiskOutput) ToSecurityAssessmentStatisticMediumRiskOutputWithContext(ctx context.Context) SecurityAssessmentStatisticMediumRiskOutput {
 	return o
+}
+
+func (o SecurityAssessmentStatisticMediumRiskOutput) ToOutput(ctx context.Context) pulumix.Output[SecurityAssessmentStatisticMediumRisk] {
+	return pulumix.Output[SecurityAssessmentStatisticMediumRisk]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The number of findings in the Auditing category.
@@ -3251,6 +3726,12 @@ func (o SecurityAssessmentStatisticMediumRiskArrayOutput) ToSecurityAssessmentSt
 
 func (o SecurityAssessmentStatisticMediumRiskArrayOutput) ToSecurityAssessmentStatisticMediumRiskArrayOutputWithContext(ctx context.Context) SecurityAssessmentStatisticMediumRiskArrayOutput {
 	return o
+}
+
+func (o SecurityAssessmentStatisticMediumRiskArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]SecurityAssessmentStatisticMediumRisk] {
+	return pulumix.Output[[]SecurityAssessmentStatisticMediumRisk]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o SecurityAssessmentStatisticMediumRiskArrayOutput) Index(i pulumi.IntInput) SecurityAssessmentStatisticMediumRiskOutput {
@@ -3320,6 +3801,12 @@ func (i SecurityAssessmentStatisticPassArgs) ToSecurityAssessmentStatisticPassOu
 	return pulumi.ToOutputWithContext(ctx, i).(SecurityAssessmentStatisticPassOutput)
 }
 
+func (i SecurityAssessmentStatisticPassArgs) ToOutput(ctx context.Context) pulumix.Output[SecurityAssessmentStatisticPass] {
+	return pulumix.Output[SecurityAssessmentStatisticPass]{
+		OutputState: i.ToSecurityAssessmentStatisticPassOutputWithContext(ctx).OutputState,
+	}
+}
+
 // SecurityAssessmentStatisticPassArrayInput is an input type that accepts SecurityAssessmentStatisticPassArray and SecurityAssessmentStatisticPassArrayOutput values.
 // You can construct a concrete instance of `SecurityAssessmentStatisticPassArrayInput` via:
 //
@@ -3345,6 +3832,12 @@ func (i SecurityAssessmentStatisticPassArray) ToSecurityAssessmentStatisticPassA
 	return pulumi.ToOutputWithContext(ctx, i).(SecurityAssessmentStatisticPassArrayOutput)
 }
 
+func (i SecurityAssessmentStatisticPassArray) ToOutput(ctx context.Context) pulumix.Output[[]SecurityAssessmentStatisticPass] {
+	return pulumix.Output[[]SecurityAssessmentStatisticPass]{
+		OutputState: i.ToSecurityAssessmentStatisticPassArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type SecurityAssessmentStatisticPassOutput struct{ *pulumi.OutputState }
 
 func (SecurityAssessmentStatisticPassOutput) ElementType() reflect.Type {
@@ -3357,6 +3850,12 @@ func (o SecurityAssessmentStatisticPassOutput) ToSecurityAssessmentStatisticPass
 
 func (o SecurityAssessmentStatisticPassOutput) ToSecurityAssessmentStatisticPassOutputWithContext(ctx context.Context) SecurityAssessmentStatisticPassOutput {
 	return o
+}
+
+func (o SecurityAssessmentStatisticPassOutput) ToOutput(ctx context.Context) pulumix.Output[SecurityAssessmentStatisticPass] {
+	return pulumix.Output[SecurityAssessmentStatisticPass]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The number of findings in the Auditing category.
@@ -3413,6 +3912,12 @@ func (o SecurityAssessmentStatisticPassArrayOutput) ToSecurityAssessmentStatisti
 	return o
 }
 
+func (o SecurityAssessmentStatisticPassArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]SecurityAssessmentStatisticPass] {
+	return pulumix.Output[[]SecurityAssessmentStatisticPass]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o SecurityAssessmentStatisticPassArrayOutput) Index(i pulumi.IntInput) SecurityAssessmentStatisticPassOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SecurityAssessmentStatisticPass {
 		return vs[0].([]SecurityAssessmentStatisticPass)[vs[1].(int)]
@@ -3464,6 +3969,12 @@ func (i TargetDatabaseConnectionOptionArgs) ToTargetDatabaseConnectionOptionOutp
 	return pulumi.ToOutputWithContext(ctx, i).(TargetDatabaseConnectionOptionOutput)
 }
 
+func (i TargetDatabaseConnectionOptionArgs) ToOutput(ctx context.Context) pulumix.Output[TargetDatabaseConnectionOption] {
+	return pulumix.Output[TargetDatabaseConnectionOption]{
+		OutputState: i.ToTargetDatabaseConnectionOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i TargetDatabaseConnectionOptionArgs) ToTargetDatabaseConnectionOptionPtrOutput() TargetDatabaseConnectionOptionPtrOutput {
 	return i.ToTargetDatabaseConnectionOptionPtrOutputWithContext(context.Background())
 }
@@ -3505,6 +4016,12 @@ func (i *targetDatabaseConnectionOptionPtrType) ToTargetDatabaseConnectionOption
 	return pulumi.ToOutputWithContext(ctx, i).(TargetDatabaseConnectionOptionPtrOutput)
 }
 
+func (i *targetDatabaseConnectionOptionPtrType) ToOutput(ctx context.Context) pulumix.Output[*TargetDatabaseConnectionOption] {
+	return pulumix.Output[*TargetDatabaseConnectionOption]{
+		OutputState: i.ToTargetDatabaseConnectionOptionPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type TargetDatabaseConnectionOptionOutput struct{ *pulumi.OutputState }
 
 func (TargetDatabaseConnectionOptionOutput) ElementType() reflect.Type {
@@ -3527,6 +4044,12 @@ func (o TargetDatabaseConnectionOptionOutput) ToTargetDatabaseConnectionOptionPt
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v TargetDatabaseConnectionOption) *TargetDatabaseConnectionOption {
 		return &v
 	}).(TargetDatabaseConnectionOptionPtrOutput)
+}
+
+func (o TargetDatabaseConnectionOptionOutput) ToOutput(ctx context.Context) pulumix.Output[TargetDatabaseConnectionOption] {
+	return pulumix.Output[TargetDatabaseConnectionOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The connection type used to connect to the database. Allowed values:
@@ -3558,6 +4081,12 @@ func (o TargetDatabaseConnectionOptionPtrOutput) ToTargetDatabaseConnectionOptio
 
 func (o TargetDatabaseConnectionOptionPtrOutput) ToTargetDatabaseConnectionOptionPtrOutputWithContext(ctx context.Context) TargetDatabaseConnectionOptionPtrOutput {
 	return o
+}
+
+func (o TargetDatabaseConnectionOptionPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*TargetDatabaseConnectionOption] {
+	return pulumix.Output[*TargetDatabaseConnectionOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o TargetDatabaseConnectionOptionPtrOutput) Elem() TargetDatabaseConnectionOptionOutput {
@@ -3639,6 +4168,12 @@ func (i TargetDatabaseCredentialsArgs) ToTargetDatabaseCredentialsOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(TargetDatabaseCredentialsOutput)
 }
 
+func (i TargetDatabaseCredentialsArgs) ToOutput(ctx context.Context) pulumix.Output[TargetDatabaseCredentials] {
+	return pulumix.Output[TargetDatabaseCredentials]{
+		OutputState: i.ToTargetDatabaseCredentialsOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i TargetDatabaseCredentialsArgs) ToTargetDatabaseCredentialsPtrOutput() TargetDatabaseCredentialsPtrOutput {
 	return i.ToTargetDatabaseCredentialsPtrOutputWithContext(context.Background())
 }
@@ -3680,6 +4215,12 @@ func (i *targetDatabaseCredentialsPtrType) ToTargetDatabaseCredentialsPtrOutputW
 	return pulumi.ToOutputWithContext(ctx, i).(TargetDatabaseCredentialsPtrOutput)
 }
 
+func (i *targetDatabaseCredentialsPtrType) ToOutput(ctx context.Context) pulumix.Output[*TargetDatabaseCredentials] {
+	return pulumix.Output[*TargetDatabaseCredentials]{
+		OutputState: i.ToTargetDatabaseCredentialsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type TargetDatabaseCredentialsOutput struct{ *pulumi.OutputState }
 
 func (TargetDatabaseCredentialsOutput) ElementType() reflect.Type {
@@ -3704,6 +4245,12 @@ func (o TargetDatabaseCredentialsOutput) ToTargetDatabaseCredentialsPtrOutputWit
 	}).(TargetDatabaseCredentialsPtrOutput)
 }
 
+func (o TargetDatabaseCredentialsOutput) ToOutput(ctx context.Context) pulumix.Output[TargetDatabaseCredentials] {
+	return pulumix.Output[TargetDatabaseCredentials]{
+		OutputState: o.OutputState,
+	}
+}
+
 // (Updatable) The password of the database user.
 func (o TargetDatabaseCredentialsOutput) Password() pulumi.StringOutput {
 	return o.ApplyT(func(v TargetDatabaseCredentials) string { return v.Password }).(pulumi.StringOutput)
@@ -3726,6 +4273,12 @@ func (o TargetDatabaseCredentialsPtrOutput) ToTargetDatabaseCredentialsPtrOutput
 
 func (o TargetDatabaseCredentialsPtrOutput) ToTargetDatabaseCredentialsPtrOutputWithContext(ctx context.Context) TargetDatabaseCredentialsPtrOutput {
 	return o
+}
+
+func (o TargetDatabaseCredentialsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*TargetDatabaseCredentials] {
+	return pulumix.Output[*TargetDatabaseCredentials]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o TargetDatabaseCredentialsPtrOutput) Elem() TargetDatabaseCredentialsOutput {
@@ -3823,6 +4376,12 @@ func (i TargetDatabaseDatabaseDetailsArgs) ToTargetDatabaseDatabaseDetailsOutput
 	return pulumi.ToOutputWithContext(ctx, i).(TargetDatabaseDatabaseDetailsOutput)
 }
 
+func (i TargetDatabaseDatabaseDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[TargetDatabaseDatabaseDetails] {
+	return pulumix.Output[TargetDatabaseDatabaseDetails]{
+		OutputState: i.ToTargetDatabaseDatabaseDetailsOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i TargetDatabaseDatabaseDetailsArgs) ToTargetDatabaseDatabaseDetailsPtrOutput() TargetDatabaseDatabaseDetailsPtrOutput {
 	return i.ToTargetDatabaseDatabaseDetailsPtrOutputWithContext(context.Background())
 }
@@ -3864,6 +4423,12 @@ func (i *targetDatabaseDatabaseDetailsPtrType) ToTargetDatabaseDatabaseDetailsPt
 	return pulumi.ToOutputWithContext(ctx, i).(TargetDatabaseDatabaseDetailsPtrOutput)
 }
 
+func (i *targetDatabaseDatabaseDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*TargetDatabaseDatabaseDetails] {
+	return pulumix.Output[*TargetDatabaseDatabaseDetails]{
+		OutputState: i.ToTargetDatabaseDatabaseDetailsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type TargetDatabaseDatabaseDetailsOutput struct{ *pulumi.OutputState }
 
 func (TargetDatabaseDatabaseDetailsOutput) ElementType() reflect.Type {
@@ -3886,6 +4451,12 @@ func (o TargetDatabaseDatabaseDetailsOutput) ToTargetDatabaseDatabaseDetailsPtrO
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v TargetDatabaseDatabaseDetails) *TargetDatabaseDatabaseDetails {
 		return &v
 	}).(TargetDatabaseDatabaseDetailsPtrOutput)
+}
+
+func (o TargetDatabaseDatabaseDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[TargetDatabaseDatabaseDetails] {
+	return pulumix.Output[TargetDatabaseDatabaseDetails]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
@@ -3945,6 +4516,12 @@ func (o TargetDatabaseDatabaseDetailsPtrOutput) ToTargetDatabaseDatabaseDetailsP
 
 func (o TargetDatabaseDatabaseDetailsPtrOutput) ToTargetDatabaseDatabaseDetailsPtrOutputWithContext(ctx context.Context) TargetDatabaseDatabaseDetailsPtrOutput {
 	return o
+}
+
+func (o TargetDatabaseDatabaseDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*TargetDatabaseDatabaseDetails] {
+	return pulumix.Output[*TargetDatabaseDatabaseDetails]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o TargetDatabaseDatabaseDetailsPtrOutput) Elem() TargetDatabaseDatabaseDetailsOutput {
@@ -4102,6 +4679,12 @@ func (i TargetDatabaseTlsConfigArgs) ToTargetDatabaseTlsConfigOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(TargetDatabaseTlsConfigOutput)
 }
 
+func (i TargetDatabaseTlsConfigArgs) ToOutput(ctx context.Context) pulumix.Output[TargetDatabaseTlsConfig] {
+	return pulumix.Output[TargetDatabaseTlsConfig]{
+		OutputState: i.ToTargetDatabaseTlsConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i TargetDatabaseTlsConfigArgs) ToTargetDatabaseTlsConfigPtrOutput() TargetDatabaseTlsConfigPtrOutput {
 	return i.ToTargetDatabaseTlsConfigPtrOutputWithContext(context.Background())
 }
@@ -4143,6 +4726,12 @@ func (i *targetDatabaseTlsConfigPtrType) ToTargetDatabaseTlsConfigPtrOutputWithC
 	return pulumi.ToOutputWithContext(ctx, i).(TargetDatabaseTlsConfigPtrOutput)
 }
 
+func (i *targetDatabaseTlsConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*TargetDatabaseTlsConfig] {
+	return pulumix.Output[*TargetDatabaseTlsConfig]{
+		OutputState: i.ToTargetDatabaseTlsConfigPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type TargetDatabaseTlsConfigOutput struct{ *pulumi.OutputState }
 
 func (TargetDatabaseTlsConfigOutput) ElementType() reflect.Type {
@@ -4165,6 +4754,12 @@ func (o TargetDatabaseTlsConfigOutput) ToTargetDatabaseTlsConfigPtrOutputWithCon
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v TargetDatabaseTlsConfig) *TargetDatabaseTlsConfig {
 		return &v
 	}).(TargetDatabaseTlsConfigPtrOutput)
+}
+
+func (o TargetDatabaseTlsConfigOutput) ToOutput(ctx context.Context) pulumix.Output[TargetDatabaseTlsConfig] {
+	return pulumix.Output[TargetDatabaseTlsConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The format of the certificate store.
@@ -4207,6 +4802,12 @@ func (o TargetDatabaseTlsConfigPtrOutput) ToTargetDatabaseTlsConfigPtrOutput() T
 
 func (o TargetDatabaseTlsConfigPtrOutput) ToTargetDatabaseTlsConfigPtrOutputWithContext(ctx context.Context) TargetDatabaseTlsConfigPtrOutput {
 	return o
+}
+
+func (o TargetDatabaseTlsConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*TargetDatabaseTlsConfig] {
+	return pulumix.Output[*TargetDatabaseTlsConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o TargetDatabaseTlsConfigPtrOutput) Elem() TargetDatabaseTlsConfigOutput {
@@ -4315,6 +4916,12 @@ func (i UserAssessmentIgnoredTargetArgs) ToUserAssessmentIgnoredTargetOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(UserAssessmentIgnoredTargetOutput)
 }
 
+func (i UserAssessmentIgnoredTargetArgs) ToOutput(ctx context.Context) pulumix.Output[UserAssessmentIgnoredTarget] {
+	return pulumix.Output[UserAssessmentIgnoredTarget]{
+		OutputState: i.ToUserAssessmentIgnoredTargetOutputWithContext(ctx).OutputState,
+	}
+}
+
 // UserAssessmentIgnoredTargetArrayInput is an input type that accepts UserAssessmentIgnoredTargetArray and UserAssessmentIgnoredTargetArrayOutput values.
 // You can construct a concrete instance of `UserAssessmentIgnoredTargetArrayInput` via:
 //
@@ -4340,6 +4947,12 @@ func (i UserAssessmentIgnoredTargetArray) ToUserAssessmentIgnoredTargetArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(UserAssessmentIgnoredTargetArrayOutput)
 }
 
+func (i UserAssessmentIgnoredTargetArray) ToOutput(ctx context.Context) pulumix.Output[[]UserAssessmentIgnoredTarget] {
+	return pulumix.Output[[]UserAssessmentIgnoredTarget]{
+		OutputState: i.ToUserAssessmentIgnoredTargetArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type UserAssessmentIgnoredTargetOutput struct{ *pulumi.OutputState }
 
 func (UserAssessmentIgnoredTargetOutput) ElementType() reflect.Type {
@@ -4352,6 +4965,12 @@ func (o UserAssessmentIgnoredTargetOutput) ToUserAssessmentIgnoredTargetOutput()
 
 func (o UserAssessmentIgnoredTargetOutput) ToUserAssessmentIgnoredTargetOutputWithContext(ctx context.Context) UserAssessmentIgnoredTargetOutput {
 	return o
+}
+
+func (o UserAssessmentIgnoredTargetOutput) ToOutput(ctx context.Context) pulumix.Output[UserAssessmentIgnoredTarget] {
+	return pulumix.Output[UserAssessmentIgnoredTarget]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o UserAssessmentIgnoredTargetOutput) LifecycleState() pulumi.StringPtrOutput {
@@ -4382,6 +5001,12 @@ func (o UserAssessmentIgnoredTargetArrayOutput) ToUserAssessmentIgnoredTargetArr
 
 func (o UserAssessmentIgnoredTargetArrayOutput) ToUserAssessmentIgnoredTargetArrayOutputWithContext(ctx context.Context) UserAssessmentIgnoredTargetArrayOutput {
 	return o
+}
+
+func (o UserAssessmentIgnoredTargetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]UserAssessmentIgnoredTarget] {
+	return pulumix.Output[[]UserAssessmentIgnoredTarget]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o UserAssessmentIgnoredTargetArrayOutput) Index(i pulumi.IntInput) UserAssessmentIgnoredTargetOutput {
@@ -4439,6 +5064,12 @@ func (i GetAlertAnalyticItemArgs) ToGetAlertAnalyticItemOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlertAnalyticItemOutput)
 }
 
+func (i GetAlertAnalyticItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAlertAnalyticItem] {
+	return pulumix.Output[GetAlertAnalyticItem]{
+		OutputState: i.ToGetAlertAnalyticItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAlertAnalyticItemArrayInput is an input type that accepts GetAlertAnalyticItemArray and GetAlertAnalyticItemArrayOutput values.
 // You can construct a concrete instance of `GetAlertAnalyticItemArrayInput` via:
 //
@@ -4464,6 +5095,12 @@ func (i GetAlertAnalyticItemArray) ToGetAlertAnalyticItemArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlertAnalyticItemArrayOutput)
 }
 
+func (i GetAlertAnalyticItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAlertAnalyticItem] {
+	return pulumix.Output[[]GetAlertAnalyticItem]{
+		OutputState: i.ToGetAlertAnalyticItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAlertAnalyticItemOutput struct{ *pulumi.OutputState }
 
 func (GetAlertAnalyticItemOutput) ElementType() reflect.Type {
@@ -4476,6 +5113,12 @@ func (o GetAlertAnalyticItemOutput) ToGetAlertAnalyticItemOutput() GetAlertAnaly
 
 func (o GetAlertAnalyticItemOutput) ToGetAlertAnalyticItemOutputWithContext(ctx context.Context) GetAlertAnalyticItemOutput {
 	return o
+}
+
+func (o GetAlertAnalyticItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAlertAnalyticItem] {
+	return pulumix.Output[GetAlertAnalyticItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Total count of aggregated values.
@@ -4517,6 +5160,12 @@ func (o GetAlertAnalyticItemArrayOutput) ToGetAlertAnalyticItemArrayOutputWithCo
 	return o
 }
 
+func (o GetAlertAnalyticItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAlertAnalyticItem] {
+	return pulumix.Output[[]GetAlertAnalyticItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetAlertAnalyticItemArrayOutput) Index(i pulumi.IntInput) GetAlertAnalyticItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlertAnalyticItem {
 		return vs[0].([]GetAlertAnalyticItem)[vs[1].(int)]
@@ -4556,6 +5205,12 @@ func (i GetAlertAnalyticItemDimensionArgs) ToGetAlertAnalyticItemDimensionOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlertAnalyticItemDimensionOutput)
 }
 
+func (i GetAlertAnalyticItemDimensionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAlertAnalyticItemDimension] {
+	return pulumix.Output[GetAlertAnalyticItemDimension]{
+		OutputState: i.ToGetAlertAnalyticItemDimensionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAlertAnalyticItemDimensionArrayInput is an input type that accepts GetAlertAnalyticItemDimensionArray and GetAlertAnalyticItemDimensionArrayOutput values.
 // You can construct a concrete instance of `GetAlertAnalyticItemDimensionArrayInput` via:
 //
@@ -4581,6 +5236,12 @@ func (i GetAlertAnalyticItemDimensionArray) ToGetAlertAnalyticItemDimensionArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlertAnalyticItemDimensionArrayOutput)
 }
 
+func (i GetAlertAnalyticItemDimensionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAlertAnalyticItemDimension] {
+	return pulumix.Output[[]GetAlertAnalyticItemDimension]{
+		OutputState: i.ToGetAlertAnalyticItemDimensionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAlertAnalyticItemDimensionOutput struct{ *pulumi.OutputState }
 
 func (GetAlertAnalyticItemDimensionOutput) ElementType() reflect.Type {
@@ -4593,6 +5254,12 @@ func (o GetAlertAnalyticItemDimensionOutput) ToGetAlertAnalyticItemDimensionOutp
 
 func (o GetAlertAnalyticItemDimensionOutput) ToGetAlertAnalyticItemDimensionOutputWithContext(ctx context.Context) GetAlertAnalyticItemDimensionOutput {
 	return o
+}
+
+func (o GetAlertAnalyticItemDimensionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAlertAnalyticItemDimension] {
+	return pulumix.Output[GetAlertAnalyticItemDimension]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A groupBy can only be used in combination with summaryField parameter. A groupBy value has to be a subset of the values mentioned in summaryField parameter.
@@ -4612,6 +5279,12 @@ func (o GetAlertAnalyticItemDimensionArrayOutput) ToGetAlertAnalyticItemDimensio
 
 func (o GetAlertAnalyticItemDimensionArrayOutput) ToGetAlertAnalyticItemDimensionArrayOutputWithContext(ctx context.Context) GetAlertAnalyticItemDimensionArrayOutput {
 	return o
+}
+
+func (o GetAlertAnalyticItemDimensionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAlertAnalyticItemDimension] {
+	return pulumix.Output[[]GetAlertAnalyticItemDimension]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAlertAnalyticItemDimensionArrayOutput) Index(i pulumi.IntInput) GetAlertAnalyticItemDimensionOutput {
@@ -4651,6 +5324,12 @@ func (i GetAlertPoliciesAlertPolicyCollectionArgs) ToGetAlertPoliciesAlertPolicy
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlertPoliciesAlertPolicyCollectionOutput)
 }
 
+func (i GetAlertPoliciesAlertPolicyCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAlertPoliciesAlertPolicyCollection] {
+	return pulumix.Output[GetAlertPoliciesAlertPolicyCollection]{
+		OutputState: i.ToGetAlertPoliciesAlertPolicyCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAlertPoliciesAlertPolicyCollectionArrayInput is an input type that accepts GetAlertPoliciesAlertPolicyCollectionArray and GetAlertPoliciesAlertPolicyCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAlertPoliciesAlertPolicyCollectionArrayInput` via:
 //
@@ -4676,6 +5355,12 @@ func (i GetAlertPoliciesAlertPolicyCollectionArray) ToGetAlertPoliciesAlertPolic
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlertPoliciesAlertPolicyCollectionArrayOutput)
 }
 
+func (i GetAlertPoliciesAlertPolicyCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAlertPoliciesAlertPolicyCollection] {
+	return pulumix.Output[[]GetAlertPoliciesAlertPolicyCollection]{
+		OutputState: i.ToGetAlertPoliciesAlertPolicyCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAlertPoliciesAlertPolicyCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetAlertPoliciesAlertPolicyCollectionOutput) ElementType() reflect.Type {
@@ -4688,6 +5373,12 @@ func (o GetAlertPoliciesAlertPolicyCollectionOutput) ToGetAlertPoliciesAlertPoli
 
 func (o GetAlertPoliciesAlertPolicyCollectionOutput) ToGetAlertPoliciesAlertPolicyCollectionOutputWithContext(ctx context.Context) GetAlertPoliciesAlertPolicyCollectionOutput {
 	return o
+}
+
+func (o GetAlertPoliciesAlertPolicyCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAlertPoliciesAlertPolicyCollection] {
+	return pulumix.Output[GetAlertPoliciesAlertPolicyCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAlertPoliciesAlertPolicyCollectionOutput) Items() GetAlertPoliciesAlertPolicyCollectionItemArrayOutput {
@@ -4708,6 +5399,12 @@ func (o GetAlertPoliciesAlertPolicyCollectionArrayOutput) ToGetAlertPoliciesAler
 
 func (o GetAlertPoliciesAlertPolicyCollectionArrayOutput) ToGetAlertPoliciesAlertPolicyCollectionArrayOutputWithContext(ctx context.Context) GetAlertPoliciesAlertPolicyCollectionArrayOutput {
 	return o
+}
+
+func (o GetAlertPoliciesAlertPolicyCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAlertPoliciesAlertPolicyCollection] {
+	return pulumix.Output[[]GetAlertPoliciesAlertPolicyCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAlertPoliciesAlertPolicyCollectionArrayOutput) Index(i pulumi.IntInput) GetAlertPoliciesAlertPolicyCollectionOutput {
@@ -4797,6 +5494,12 @@ func (i GetAlertPoliciesAlertPolicyCollectionItemArgs) ToGetAlertPoliciesAlertPo
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlertPoliciesAlertPolicyCollectionItemOutput)
 }
 
+func (i GetAlertPoliciesAlertPolicyCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAlertPoliciesAlertPolicyCollectionItem] {
+	return pulumix.Output[GetAlertPoliciesAlertPolicyCollectionItem]{
+		OutputState: i.ToGetAlertPoliciesAlertPolicyCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAlertPoliciesAlertPolicyCollectionItemArrayInput is an input type that accepts GetAlertPoliciesAlertPolicyCollectionItemArray and GetAlertPoliciesAlertPolicyCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetAlertPoliciesAlertPolicyCollectionItemArrayInput` via:
 //
@@ -4822,6 +5525,12 @@ func (i GetAlertPoliciesAlertPolicyCollectionItemArray) ToGetAlertPoliciesAlertP
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlertPoliciesAlertPolicyCollectionItemArrayOutput)
 }
 
+func (i GetAlertPoliciesAlertPolicyCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAlertPoliciesAlertPolicyCollectionItem] {
+	return pulumix.Output[[]GetAlertPoliciesAlertPolicyCollectionItem]{
+		OutputState: i.ToGetAlertPoliciesAlertPolicyCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAlertPoliciesAlertPolicyCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetAlertPoliciesAlertPolicyCollectionItemOutput) ElementType() reflect.Type {
@@ -4834,6 +5543,12 @@ func (o GetAlertPoliciesAlertPolicyCollectionItemOutput) ToGetAlertPoliciesAlert
 
 func (o GetAlertPoliciesAlertPolicyCollectionItemOutput) ToGetAlertPoliciesAlertPolicyCollectionItemOutputWithContext(ctx context.Context) GetAlertPoliciesAlertPolicyCollectionItemOutput {
 	return o
+}
+
+func (o GetAlertPoliciesAlertPolicyCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAlertPoliciesAlertPolicyCollectionItem] {
+	return pulumix.Output[GetAlertPoliciesAlertPolicyCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Indicates the Data Safe feature to which the alert policy belongs.
@@ -4915,6 +5630,12 @@ func (o GetAlertPoliciesAlertPolicyCollectionItemArrayOutput) ToGetAlertPolicies
 	return o
 }
 
+func (o GetAlertPoliciesAlertPolicyCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAlertPoliciesAlertPolicyCollectionItem] {
+	return pulumix.Output[[]GetAlertPoliciesAlertPolicyCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetAlertPoliciesAlertPolicyCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAlertPoliciesAlertPolicyCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlertPoliciesAlertPolicyCollectionItem {
 		return vs[0].([]GetAlertPoliciesAlertPolicyCollectionItem)[vs[1].(int)]
@@ -4956,6 +5677,12 @@ func (i GetAlertPoliciesFilterArgs) ToGetAlertPoliciesFilterOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlertPoliciesFilterOutput)
 }
 
+func (i GetAlertPoliciesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAlertPoliciesFilter] {
+	return pulumix.Output[GetAlertPoliciesFilter]{
+		OutputState: i.ToGetAlertPoliciesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAlertPoliciesFilterArrayInput is an input type that accepts GetAlertPoliciesFilterArray and GetAlertPoliciesFilterArrayOutput values.
 // You can construct a concrete instance of `GetAlertPoliciesFilterArrayInput` via:
 //
@@ -4981,6 +5708,12 @@ func (i GetAlertPoliciesFilterArray) ToGetAlertPoliciesFilterArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlertPoliciesFilterArrayOutput)
 }
 
+func (i GetAlertPoliciesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAlertPoliciesFilter] {
+	return pulumix.Output[[]GetAlertPoliciesFilter]{
+		OutputState: i.ToGetAlertPoliciesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAlertPoliciesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAlertPoliciesFilterOutput) ElementType() reflect.Type {
@@ -4993,6 +5726,12 @@ func (o GetAlertPoliciesFilterOutput) ToGetAlertPoliciesFilterOutput() GetAlertP
 
 func (o GetAlertPoliciesFilterOutput) ToGetAlertPoliciesFilterOutputWithContext(ctx context.Context) GetAlertPoliciesFilterOutput {
 	return o
+}
+
+func (o GetAlertPoliciesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAlertPoliciesFilter] {
+	return pulumix.Output[GetAlertPoliciesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAlertPoliciesFilterOutput) Name() pulumi.StringOutput {
@@ -5019,6 +5758,12 @@ func (o GetAlertPoliciesFilterArrayOutput) ToGetAlertPoliciesFilterArrayOutput()
 
 func (o GetAlertPoliciesFilterArrayOutput) ToGetAlertPoliciesFilterArrayOutputWithContext(ctx context.Context) GetAlertPoliciesFilterArrayOutput {
 	return o
+}
+
+func (o GetAlertPoliciesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAlertPoliciesFilter] {
+	return pulumix.Output[[]GetAlertPoliciesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAlertPoliciesFilterArrayOutput) Index(i pulumi.IntInput) GetAlertPoliciesFilterOutput {
@@ -5068,6 +5813,12 @@ func (i GetAlertPolicyRuleItemArgs) ToGetAlertPolicyRuleItemOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlertPolicyRuleItemOutput)
 }
 
+func (i GetAlertPolicyRuleItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAlertPolicyRuleItem] {
+	return pulumix.Output[GetAlertPolicyRuleItem]{
+		OutputState: i.ToGetAlertPolicyRuleItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAlertPolicyRuleItemArrayInput is an input type that accepts GetAlertPolicyRuleItemArray and GetAlertPolicyRuleItemArrayOutput values.
 // You can construct a concrete instance of `GetAlertPolicyRuleItemArrayInput` via:
 //
@@ -5093,6 +5844,12 @@ func (i GetAlertPolicyRuleItemArray) ToGetAlertPolicyRuleItemArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlertPolicyRuleItemArrayOutput)
 }
 
+func (i GetAlertPolicyRuleItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAlertPolicyRuleItem] {
+	return pulumix.Output[[]GetAlertPolicyRuleItem]{
+		OutputState: i.ToGetAlertPolicyRuleItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAlertPolicyRuleItemOutput struct{ *pulumi.OutputState }
 
 func (GetAlertPolicyRuleItemOutput) ElementType() reflect.Type {
@@ -5105,6 +5862,12 @@ func (o GetAlertPolicyRuleItemOutput) ToGetAlertPolicyRuleItemOutput() GetAlertP
 
 func (o GetAlertPolicyRuleItemOutput) ToGetAlertPolicyRuleItemOutputWithContext(ctx context.Context) GetAlertPolicyRuleItemOutput {
 	return o
+}
+
+func (o GetAlertPolicyRuleItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAlertPolicyRuleItem] {
+	return pulumix.Output[GetAlertPolicyRuleItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Describes the alert policy rule.
@@ -5134,6 +5897,12 @@ func (o GetAlertPolicyRuleItemArrayOutput) ToGetAlertPolicyRuleItemArrayOutput()
 
 func (o GetAlertPolicyRuleItemArrayOutput) ToGetAlertPolicyRuleItemArrayOutputWithContext(ctx context.Context) GetAlertPolicyRuleItemArrayOutput {
 	return o
+}
+
+func (o GetAlertPolicyRuleItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAlertPolicyRuleItem] {
+	return pulumix.Output[[]GetAlertPolicyRuleItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAlertPolicyRuleItemArrayOutput) Index(i pulumi.IntInput) GetAlertPolicyRuleItemOutput {
@@ -5175,6 +5944,12 @@ func (i GetAlertPolicyRulesAlertPolicyRuleCollectionArgs) ToGetAlertPolicyRulesA
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlertPolicyRulesAlertPolicyRuleCollectionOutput)
 }
 
+func (i GetAlertPolicyRulesAlertPolicyRuleCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAlertPolicyRulesAlertPolicyRuleCollection] {
+	return pulumix.Output[GetAlertPolicyRulesAlertPolicyRuleCollection]{
+		OutputState: i.ToGetAlertPolicyRulesAlertPolicyRuleCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAlertPolicyRulesAlertPolicyRuleCollectionArrayInput is an input type that accepts GetAlertPolicyRulesAlertPolicyRuleCollectionArray and GetAlertPolicyRulesAlertPolicyRuleCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAlertPolicyRulesAlertPolicyRuleCollectionArrayInput` via:
 //
@@ -5200,6 +5975,12 @@ func (i GetAlertPolicyRulesAlertPolicyRuleCollectionArray) ToGetAlertPolicyRules
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlertPolicyRulesAlertPolicyRuleCollectionArrayOutput)
 }
 
+func (i GetAlertPolicyRulesAlertPolicyRuleCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAlertPolicyRulesAlertPolicyRuleCollection] {
+	return pulumix.Output[[]GetAlertPolicyRulesAlertPolicyRuleCollection]{
+		OutputState: i.ToGetAlertPolicyRulesAlertPolicyRuleCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAlertPolicyRulesAlertPolicyRuleCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetAlertPolicyRulesAlertPolicyRuleCollectionOutput) ElementType() reflect.Type {
@@ -5212,6 +5993,12 @@ func (o GetAlertPolicyRulesAlertPolicyRuleCollectionOutput) ToGetAlertPolicyRule
 
 func (o GetAlertPolicyRulesAlertPolicyRuleCollectionOutput) ToGetAlertPolicyRulesAlertPolicyRuleCollectionOutputWithContext(ctx context.Context) GetAlertPolicyRulesAlertPolicyRuleCollectionOutput {
 	return o
+}
+
+func (o GetAlertPolicyRulesAlertPolicyRuleCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAlertPolicyRulesAlertPolicyRuleCollection] {
+	return pulumix.Output[GetAlertPolicyRulesAlertPolicyRuleCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Array of alert policy rules summary
@@ -5233,6 +6020,12 @@ func (o GetAlertPolicyRulesAlertPolicyRuleCollectionArrayOutput) ToGetAlertPolic
 
 func (o GetAlertPolicyRulesAlertPolicyRuleCollectionArrayOutput) ToGetAlertPolicyRulesAlertPolicyRuleCollectionArrayOutputWithContext(ctx context.Context) GetAlertPolicyRulesAlertPolicyRuleCollectionArrayOutput {
 	return o
+}
+
+func (o GetAlertPolicyRulesAlertPolicyRuleCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAlertPolicyRulesAlertPolicyRuleCollection] {
+	return pulumix.Output[[]GetAlertPolicyRulesAlertPolicyRuleCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAlertPolicyRulesAlertPolicyRuleCollectionArrayOutput) Index(i pulumi.IntInput) GetAlertPolicyRulesAlertPolicyRuleCollectionOutput {
@@ -5282,6 +6075,12 @@ func (i GetAlertPolicyRulesAlertPolicyRuleCollectionItemArgs) ToGetAlertPolicyRu
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlertPolicyRulesAlertPolicyRuleCollectionItemOutput)
 }
 
+func (i GetAlertPolicyRulesAlertPolicyRuleCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAlertPolicyRulesAlertPolicyRuleCollectionItem] {
+	return pulumix.Output[GetAlertPolicyRulesAlertPolicyRuleCollectionItem]{
+		OutputState: i.ToGetAlertPolicyRulesAlertPolicyRuleCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAlertPolicyRulesAlertPolicyRuleCollectionItemArrayInput is an input type that accepts GetAlertPolicyRulesAlertPolicyRuleCollectionItemArray and GetAlertPolicyRulesAlertPolicyRuleCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetAlertPolicyRulesAlertPolicyRuleCollectionItemArrayInput` via:
 //
@@ -5307,6 +6106,12 @@ func (i GetAlertPolicyRulesAlertPolicyRuleCollectionItemArray) ToGetAlertPolicyR
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlertPolicyRulesAlertPolicyRuleCollectionItemArrayOutput)
 }
 
+func (i GetAlertPolicyRulesAlertPolicyRuleCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAlertPolicyRulesAlertPolicyRuleCollectionItem] {
+	return pulumix.Output[[]GetAlertPolicyRulesAlertPolicyRuleCollectionItem]{
+		OutputState: i.ToGetAlertPolicyRulesAlertPolicyRuleCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAlertPolicyRulesAlertPolicyRuleCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetAlertPolicyRulesAlertPolicyRuleCollectionItemOutput) ElementType() reflect.Type {
@@ -5319,6 +6124,12 @@ func (o GetAlertPolicyRulesAlertPolicyRuleCollectionItemOutput) ToGetAlertPolicy
 
 func (o GetAlertPolicyRulesAlertPolicyRuleCollectionItemOutput) ToGetAlertPolicyRulesAlertPolicyRuleCollectionItemOutputWithContext(ctx context.Context) GetAlertPolicyRulesAlertPolicyRuleCollectionItemOutput {
 	return o
+}
+
+func (o GetAlertPolicyRulesAlertPolicyRuleCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAlertPolicyRulesAlertPolicyRuleCollectionItem] {
+	return pulumix.Output[GetAlertPolicyRulesAlertPolicyRuleCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Describes the alert policy rule.
@@ -5348,6 +6159,12 @@ func (o GetAlertPolicyRulesAlertPolicyRuleCollectionItemArrayOutput) ToGetAlertP
 
 func (o GetAlertPolicyRulesAlertPolicyRuleCollectionItemArrayOutput) ToGetAlertPolicyRulesAlertPolicyRuleCollectionItemArrayOutputWithContext(ctx context.Context) GetAlertPolicyRulesAlertPolicyRuleCollectionItemArrayOutput {
 	return o
+}
+
+func (o GetAlertPolicyRulesAlertPolicyRuleCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAlertPolicyRulesAlertPolicyRuleCollectionItem] {
+	return pulumix.Output[[]GetAlertPolicyRulesAlertPolicyRuleCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAlertPolicyRulesAlertPolicyRuleCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAlertPolicyRulesAlertPolicyRuleCollectionItemOutput {
@@ -5391,6 +6208,12 @@ func (i GetAlertPolicyRulesFilterArgs) ToGetAlertPolicyRulesFilterOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlertPolicyRulesFilterOutput)
 }
 
+func (i GetAlertPolicyRulesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAlertPolicyRulesFilter] {
+	return pulumix.Output[GetAlertPolicyRulesFilter]{
+		OutputState: i.ToGetAlertPolicyRulesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAlertPolicyRulesFilterArrayInput is an input type that accepts GetAlertPolicyRulesFilterArray and GetAlertPolicyRulesFilterArrayOutput values.
 // You can construct a concrete instance of `GetAlertPolicyRulesFilterArrayInput` via:
 //
@@ -5416,6 +6239,12 @@ func (i GetAlertPolicyRulesFilterArray) ToGetAlertPolicyRulesFilterArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlertPolicyRulesFilterArrayOutput)
 }
 
+func (i GetAlertPolicyRulesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAlertPolicyRulesFilter] {
+	return pulumix.Output[[]GetAlertPolicyRulesFilter]{
+		OutputState: i.ToGetAlertPolicyRulesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAlertPolicyRulesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAlertPolicyRulesFilterOutput) ElementType() reflect.Type {
@@ -5428,6 +6257,12 @@ func (o GetAlertPolicyRulesFilterOutput) ToGetAlertPolicyRulesFilterOutput() Get
 
 func (o GetAlertPolicyRulesFilterOutput) ToGetAlertPolicyRulesFilterOutputWithContext(ctx context.Context) GetAlertPolicyRulesFilterOutput {
 	return o
+}
+
+func (o GetAlertPolicyRulesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAlertPolicyRulesFilter] {
+	return pulumix.Output[GetAlertPolicyRulesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAlertPolicyRulesFilterOutput) Name() pulumi.StringOutput {
@@ -5454,6 +6289,12 @@ func (o GetAlertPolicyRulesFilterArrayOutput) ToGetAlertPolicyRulesFilterArrayOu
 
 func (o GetAlertPolicyRulesFilterArrayOutput) ToGetAlertPolicyRulesFilterArrayOutputWithContext(ctx context.Context) GetAlertPolicyRulesFilterArrayOutput {
 	return o
+}
+
+func (o GetAlertPolicyRulesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAlertPolicyRulesFilter] {
+	return pulumix.Output[[]GetAlertPolicyRulesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAlertPolicyRulesFilterArrayOutput) Index(i pulumi.IntInput) GetAlertPolicyRulesFilterOutput {
@@ -5493,6 +6334,12 @@ func (i GetAlertsAlertCollectionArgs) ToGetAlertsAlertCollectionOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlertsAlertCollectionOutput)
 }
 
+func (i GetAlertsAlertCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAlertsAlertCollection] {
+	return pulumix.Output[GetAlertsAlertCollection]{
+		OutputState: i.ToGetAlertsAlertCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAlertsAlertCollectionArrayInput is an input type that accepts GetAlertsAlertCollectionArray and GetAlertsAlertCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAlertsAlertCollectionArrayInput` via:
 //
@@ -5518,6 +6365,12 @@ func (i GetAlertsAlertCollectionArray) ToGetAlertsAlertCollectionArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlertsAlertCollectionArrayOutput)
 }
 
+func (i GetAlertsAlertCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAlertsAlertCollection] {
+	return pulumix.Output[[]GetAlertsAlertCollection]{
+		OutputState: i.ToGetAlertsAlertCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAlertsAlertCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetAlertsAlertCollectionOutput) ElementType() reflect.Type {
@@ -5530,6 +6383,12 @@ func (o GetAlertsAlertCollectionOutput) ToGetAlertsAlertCollectionOutput() GetAl
 
 func (o GetAlertsAlertCollectionOutput) ToGetAlertsAlertCollectionOutputWithContext(ctx context.Context) GetAlertsAlertCollectionOutput {
 	return o
+}
+
+func (o GetAlertsAlertCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAlertsAlertCollection] {
+	return pulumix.Output[GetAlertsAlertCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAlertsAlertCollectionOutput) Items() GetAlertsAlertCollectionItemArrayOutput {
@@ -5548,6 +6407,12 @@ func (o GetAlertsAlertCollectionArrayOutput) ToGetAlertsAlertCollectionArrayOutp
 
 func (o GetAlertsAlertCollectionArrayOutput) ToGetAlertsAlertCollectionArrayOutputWithContext(ctx context.Context) GetAlertsAlertCollectionArrayOutput {
 	return o
+}
+
+func (o GetAlertsAlertCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAlertsAlertCollection] {
+	return pulumix.Output[[]GetAlertsAlertCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAlertsAlertCollectionArrayOutput) Index(i pulumi.IntInput) GetAlertsAlertCollectionOutput {
@@ -5675,6 +6540,12 @@ func (i GetAlertsAlertCollectionItemArgs) ToGetAlertsAlertCollectionItemOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlertsAlertCollectionItemOutput)
 }
 
+func (i GetAlertsAlertCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAlertsAlertCollectionItem] {
+	return pulumix.Output[GetAlertsAlertCollectionItem]{
+		OutputState: i.ToGetAlertsAlertCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAlertsAlertCollectionItemArrayInput is an input type that accepts GetAlertsAlertCollectionItemArray and GetAlertsAlertCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetAlertsAlertCollectionItemArrayInput` via:
 //
@@ -5700,6 +6571,12 @@ func (i GetAlertsAlertCollectionItemArray) ToGetAlertsAlertCollectionItemArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlertsAlertCollectionItemArrayOutput)
 }
 
+func (i GetAlertsAlertCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAlertsAlertCollectionItem] {
+	return pulumix.Output[[]GetAlertsAlertCollectionItem]{
+		OutputState: i.ToGetAlertsAlertCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAlertsAlertCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetAlertsAlertCollectionItemOutput) ElementType() reflect.Type {
@@ -5712,6 +6589,12 @@ func (o GetAlertsAlertCollectionItemOutput) ToGetAlertsAlertCollectionItemOutput
 
 func (o GetAlertsAlertCollectionItemOutput) ToGetAlertsAlertCollectionItemOutputWithContext(ctx context.Context) GetAlertsAlertCollectionItemOutput {
 	return o
+}
+
+func (o GetAlertsAlertCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAlertsAlertCollectionItem] {
+	return pulumix.Output[GetAlertsAlertCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAlertsAlertCollectionItemOutput) AlertId() pulumi.StringOutput {
@@ -5842,6 +6725,12 @@ func (o GetAlertsAlertCollectionItemArrayOutput) ToGetAlertsAlertCollectionItemA
 	return o
 }
 
+func (o GetAlertsAlertCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAlertsAlertCollectionItem] {
+	return pulumix.Output[[]GetAlertsAlertCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetAlertsAlertCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAlertsAlertCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlertsAlertCollectionItem {
 		return vs[0].([]GetAlertsAlertCollectionItem)[vs[1].(int)]
@@ -5883,6 +6772,12 @@ func (i GetAlertsFilterArgs) ToGetAlertsFilterOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlertsFilterOutput)
 }
 
+func (i GetAlertsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAlertsFilter] {
+	return pulumix.Output[GetAlertsFilter]{
+		OutputState: i.ToGetAlertsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAlertsFilterArrayInput is an input type that accepts GetAlertsFilterArray and GetAlertsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAlertsFilterArrayInput` via:
 //
@@ -5908,6 +6803,12 @@ func (i GetAlertsFilterArray) ToGetAlertsFilterArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlertsFilterArrayOutput)
 }
 
+func (i GetAlertsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAlertsFilter] {
+	return pulumix.Output[[]GetAlertsFilter]{
+		OutputState: i.ToGetAlertsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAlertsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAlertsFilterOutput) ElementType() reflect.Type {
@@ -5920,6 +6821,12 @@ func (o GetAlertsFilterOutput) ToGetAlertsFilterOutput() GetAlertsFilterOutput {
 
 func (o GetAlertsFilterOutput) ToGetAlertsFilterOutputWithContext(ctx context.Context) GetAlertsFilterOutput {
 	return o
+}
+
+func (o GetAlertsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAlertsFilter] {
+	return pulumix.Output[GetAlertsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAlertsFilterOutput) Name() pulumi.StringOutput {
@@ -5946,6 +6853,12 @@ func (o GetAlertsFilterArrayOutput) ToGetAlertsFilterArrayOutput() GetAlertsFilt
 
 func (o GetAlertsFilterArrayOutput) ToGetAlertsFilterArrayOutputWithContext(ctx context.Context) GetAlertsFilterArrayOutput {
 	return o
+}
+
+func (o GetAlertsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAlertsFilter] {
+	return pulumix.Output[[]GetAlertsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAlertsFilterArrayOutput) Index(i pulumi.IntInput) GetAlertsFilterOutput {
@@ -5985,6 +6898,12 @@ func (i GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionArgs) ToGetAudit
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionOutput)
 }
 
+func (i GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAuditArchiveRetrievalsAuditArchiveRetrievalCollection] {
+	return pulumix.Output[GetAuditArchiveRetrievalsAuditArchiveRetrievalCollection]{
+		OutputState: i.ToGetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionArrayInput is an input type that accepts GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionArray and GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionArrayInput` via:
 //
@@ -6010,6 +6929,12 @@ func (i GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionArray) ToGetAudi
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionArrayOutput)
 }
 
+func (i GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditArchiveRetrievalsAuditArchiveRetrievalCollection] {
+	return pulumix.Output[[]GetAuditArchiveRetrievalsAuditArchiveRetrievalCollection]{
+		OutputState: i.ToGetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionOutput) ElementType() reflect.Type {
@@ -6022,6 +6947,12 @@ func (o GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionOutput) ToGetAud
 
 func (o GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionOutput) ToGetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionOutputWithContext(ctx context.Context) GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionOutput {
 	return o
+}
+
+func (o GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditArchiveRetrievalsAuditArchiveRetrievalCollection] {
+	return pulumix.Output[GetAuditArchiveRetrievalsAuditArchiveRetrievalCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionOutput) Items() GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemArrayOutput {
@@ -6042,6 +6973,12 @@ func (o GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionArrayOutput) ToG
 
 func (o GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionArrayOutput) ToGetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionArrayOutputWithContext(ctx context.Context) GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionArrayOutput {
 	return o
+}
+
+func (o GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditArchiveRetrievalsAuditArchiveRetrievalCollection] {
+	return pulumix.Output[[]GetAuditArchiveRetrievalsAuditArchiveRetrievalCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionArrayOutput) Index(i pulumi.IntInput) GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionOutput {
@@ -6147,6 +7084,12 @@ func (i GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemArgs) ToGetA
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemOutput)
 }
 
+func (i GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItem] {
+	return pulumix.Output[GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItem]{
+		OutputState: i.ToGetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemArrayInput is an input type that accepts GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemArray and GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemArrayInput` via:
 //
@@ -6172,6 +7115,12 @@ func (i GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemArrayOutput)
 }
 
+func (i GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItem] {
+	return pulumix.Output[[]GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItem]{
+		OutputState: i.ToGetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemOutput) ElementType() reflect.Type {
@@ -6184,6 +7133,12 @@ func (o GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemOutput) ToGe
 
 func (o GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemOutput) ToGetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemOutputWithContext(ctx context.Context) GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemOutput {
 	return o
+}
+
+func (o GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItem] {
+	return pulumix.Output[GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Total count of audit events to be retrieved from the archive for the specified date range.
@@ -6291,6 +7246,12 @@ func (o GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemArrayOutput)
 	return o
 }
 
+func (o GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItem] {
+	return pulumix.Output[[]GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItem {
 		return vs[0].([]GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItem)[vs[1].(int)]
@@ -6332,6 +7293,12 @@ func (i GetAuditArchiveRetrievalsFilterArgs) ToGetAuditArchiveRetrievalsFilterOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditArchiveRetrievalsFilterOutput)
 }
 
+func (i GetAuditArchiveRetrievalsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAuditArchiveRetrievalsFilter] {
+	return pulumix.Output[GetAuditArchiveRetrievalsFilter]{
+		OutputState: i.ToGetAuditArchiveRetrievalsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAuditArchiveRetrievalsFilterArrayInput is an input type that accepts GetAuditArchiveRetrievalsFilterArray and GetAuditArchiveRetrievalsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAuditArchiveRetrievalsFilterArrayInput` via:
 //
@@ -6357,6 +7324,12 @@ func (i GetAuditArchiveRetrievalsFilterArray) ToGetAuditArchiveRetrievalsFilterA
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditArchiveRetrievalsFilterArrayOutput)
 }
 
+func (i GetAuditArchiveRetrievalsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditArchiveRetrievalsFilter] {
+	return pulumix.Output[[]GetAuditArchiveRetrievalsFilter]{
+		OutputState: i.ToGetAuditArchiveRetrievalsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAuditArchiveRetrievalsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAuditArchiveRetrievalsFilterOutput) ElementType() reflect.Type {
@@ -6369,6 +7342,12 @@ func (o GetAuditArchiveRetrievalsFilterOutput) ToGetAuditArchiveRetrievalsFilter
 
 func (o GetAuditArchiveRetrievalsFilterOutput) ToGetAuditArchiveRetrievalsFilterOutputWithContext(ctx context.Context) GetAuditArchiveRetrievalsFilterOutput {
 	return o
+}
+
+func (o GetAuditArchiveRetrievalsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditArchiveRetrievalsFilter] {
+	return pulumix.Output[GetAuditArchiveRetrievalsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAuditArchiveRetrievalsFilterOutput) Name() pulumi.StringOutput {
@@ -6395,6 +7374,12 @@ func (o GetAuditArchiveRetrievalsFilterArrayOutput) ToGetAuditArchiveRetrievalsF
 
 func (o GetAuditArchiveRetrievalsFilterArrayOutput) ToGetAuditArchiveRetrievalsFilterArrayOutputWithContext(ctx context.Context) GetAuditArchiveRetrievalsFilterArrayOutput {
 	return o
+}
+
+func (o GetAuditArchiveRetrievalsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditArchiveRetrievalsFilter] {
+	return pulumix.Output[[]GetAuditArchiveRetrievalsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAuditArchiveRetrievalsFilterArrayOutput) Index(i pulumi.IntInput) GetAuditArchiveRetrievalsFilterOutput {
@@ -6456,6 +7441,12 @@ func (i GetAuditEventAnalyticItemArgs) ToGetAuditEventAnalyticItemOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditEventAnalyticItemOutput)
 }
 
+func (i GetAuditEventAnalyticItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAuditEventAnalyticItem] {
+	return pulumix.Output[GetAuditEventAnalyticItem]{
+		OutputState: i.ToGetAuditEventAnalyticItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAuditEventAnalyticItemArrayInput is an input type that accepts GetAuditEventAnalyticItemArray and GetAuditEventAnalyticItemArrayOutput values.
 // You can construct a concrete instance of `GetAuditEventAnalyticItemArrayInput` via:
 //
@@ -6481,6 +7472,12 @@ func (i GetAuditEventAnalyticItemArray) ToGetAuditEventAnalyticItemArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditEventAnalyticItemArrayOutput)
 }
 
+func (i GetAuditEventAnalyticItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditEventAnalyticItem] {
+	return pulumix.Output[[]GetAuditEventAnalyticItem]{
+		OutputState: i.ToGetAuditEventAnalyticItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAuditEventAnalyticItemOutput struct{ *pulumi.OutputState }
 
 func (GetAuditEventAnalyticItemOutput) ElementType() reflect.Type {
@@ -6493,6 +7490,12 @@ func (o GetAuditEventAnalyticItemOutput) ToGetAuditEventAnalyticItemOutput() Get
 
 func (o GetAuditEventAnalyticItemOutput) ToGetAuditEventAnalyticItemOutputWithContext(ctx context.Context) GetAuditEventAnalyticItemOutput {
 	return o
+}
+
+func (o GetAuditEventAnalyticItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditEventAnalyticItem] {
+	return pulumix.Output[GetAuditEventAnalyticItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Total count of aggregated value.
@@ -6537,6 +7540,12 @@ func (o GetAuditEventAnalyticItemArrayOutput) ToGetAuditEventAnalyticItemArrayOu
 
 func (o GetAuditEventAnalyticItemArrayOutput) ToGetAuditEventAnalyticItemArrayOutputWithContext(ctx context.Context) GetAuditEventAnalyticItemArrayOutput {
 	return o
+}
+
+func (o GetAuditEventAnalyticItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditEventAnalyticItem] {
+	return pulumix.Output[[]GetAuditEventAnalyticItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAuditEventAnalyticItemArrayOutput) Index(i pulumi.IntInput) GetAuditEventAnalyticItemOutput {
@@ -6618,6 +7627,12 @@ func (i GetAuditEventAnalyticItemDimensionArgs) ToGetAuditEventAnalyticItemDimen
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditEventAnalyticItemDimensionOutput)
 }
 
+func (i GetAuditEventAnalyticItemDimensionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAuditEventAnalyticItemDimension] {
+	return pulumix.Output[GetAuditEventAnalyticItemDimension]{
+		OutputState: i.ToGetAuditEventAnalyticItemDimensionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAuditEventAnalyticItemDimensionArrayInput is an input type that accepts GetAuditEventAnalyticItemDimensionArray and GetAuditEventAnalyticItemDimensionArrayOutput values.
 // You can construct a concrete instance of `GetAuditEventAnalyticItemDimensionArrayInput` via:
 //
@@ -6643,6 +7658,12 @@ func (i GetAuditEventAnalyticItemDimensionArray) ToGetAuditEventAnalyticItemDime
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditEventAnalyticItemDimensionArrayOutput)
 }
 
+func (i GetAuditEventAnalyticItemDimensionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditEventAnalyticItemDimension] {
+	return pulumix.Output[[]GetAuditEventAnalyticItemDimension]{
+		OutputState: i.ToGetAuditEventAnalyticItemDimensionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAuditEventAnalyticItemDimensionOutput struct{ *pulumi.OutputState }
 
 func (GetAuditEventAnalyticItemDimensionOutput) ElementType() reflect.Type {
@@ -6655,6 +7676,12 @@ func (o GetAuditEventAnalyticItemDimensionOutput) ToGetAuditEventAnalyticItemDim
 
 func (o GetAuditEventAnalyticItemDimensionOutput) ToGetAuditEventAnalyticItemDimensionOutputWithContext(ctx context.Context) GetAuditEventAnalyticItemDimensionOutput {
 	return o
+}
+
+func (o GetAuditEventAnalyticItemDimensionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditEventAnalyticItemDimension] {
+	return pulumix.Output[GetAuditEventAnalyticItemDimension]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Time of audit event occurrence in the target database.
@@ -6724,6 +7751,12 @@ func (o GetAuditEventAnalyticItemDimensionArrayOutput) ToGetAuditEventAnalyticIt
 
 func (o GetAuditEventAnalyticItemDimensionArrayOutput) ToGetAuditEventAnalyticItemDimensionArrayOutputWithContext(ctx context.Context) GetAuditEventAnalyticItemDimensionArrayOutput {
 	return o
+}
+
+func (o GetAuditEventAnalyticItemDimensionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditEventAnalyticItemDimension] {
+	return pulumix.Output[[]GetAuditEventAnalyticItemDimension]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAuditEventAnalyticItemDimensionArrayOutput) Index(i pulumi.IntInput) GetAuditEventAnalyticItemDimensionOutput {
@@ -6903,6 +7936,12 @@ func (i GetAuditEventItemArgs) ToGetAuditEventItemOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditEventItemOutput)
 }
 
+func (i GetAuditEventItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAuditEventItem] {
+	return pulumix.Output[GetAuditEventItem]{
+		OutputState: i.ToGetAuditEventItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAuditEventItemArrayInput is an input type that accepts GetAuditEventItemArray and GetAuditEventItemArrayOutput values.
 // You can construct a concrete instance of `GetAuditEventItemArrayInput` via:
 //
@@ -6928,6 +7967,12 @@ func (i GetAuditEventItemArray) ToGetAuditEventItemArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditEventItemArrayOutput)
 }
 
+func (i GetAuditEventItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditEventItem] {
+	return pulumix.Output[[]GetAuditEventItem]{
+		OutputState: i.ToGetAuditEventItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAuditEventItemOutput struct{ *pulumi.OutputState }
 
 func (GetAuditEventItemOutput) ElementType() reflect.Type {
@@ -6940,6 +7985,12 @@ func (o GetAuditEventItemOutput) ToGetAuditEventItemOutput() GetAuditEventItemOu
 
 func (o GetAuditEventItemOutput) ToGetAuditEventItemOutputWithContext(ctx context.Context) GetAuditEventItemOutput {
 	return o
+}
+
+func (o GetAuditEventItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditEventItem] {
+	return pulumix.Output[GetAuditEventItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The action taken for this audit event.
@@ -7129,6 +8180,12 @@ func (o GetAuditEventItemArrayOutput) ToGetAuditEventItemArrayOutputWithContext(
 	return o
 }
 
+func (o GetAuditEventItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditEventItem] {
+	return pulumix.Output[[]GetAuditEventItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetAuditEventItemArrayOutput) Index(i pulumi.IntInput) GetAuditEventItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAuditEventItem {
 		return vs[0].([]GetAuditEventItem)[vs[1].(int)]
@@ -7168,6 +8225,12 @@ func (i GetAuditEventsAuditEventCollectionArgs) ToGetAuditEventsAuditEventCollec
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditEventsAuditEventCollectionOutput)
 }
 
+func (i GetAuditEventsAuditEventCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAuditEventsAuditEventCollection] {
+	return pulumix.Output[GetAuditEventsAuditEventCollection]{
+		OutputState: i.ToGetAuditEventsAuditEventCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAuditEventsAuditEventCollectionArrayInput is an input type that accepts GetAuditEventsAuditEventCollectionArray and GetAuditEventsAuditEventCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAuditEventsAuditEventCollectionArrayInput` via:
 //
@@ -7193,6 +8256,12 @@ func (i GetAuditEventsAuditEventCollectionArray) ToGetAuditEventsAuditEventColle
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditEventsAuditEventCollectionArrayOutput)
 }
 
+func (i GetAuditEventsAuditEventCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditEventsAuditEventCollection] {
+	return pulumix.Output[[]GetAuditEventsAuditEventCollection]{
+		OutputState: i.ToGetAuditEventsAuditEventCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAuditEventsAuditEventCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetAuditEventsAuditEventCollectionOutput) ElementType() reflect.Type {
@@ -7205,6 +8274,12 @@ func (o GetAuditEventsAuditEventCollectionOutput) ToGetAuditEventsAuditEventColl
 
 func (o GetAuditEventsAuditEventCollectionOutput) ToGetAuditEventsAuditEventCollectionOutputWithContext(ctx context.Context) GetAuditEventsAuditEventCollectionOutput {
 	return o
+}
+
+func (o GetAuditEventsAuditEventCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditEventsAuditEventCollection] {
+	return pulumix.Output[GetAuditEventsAuditEventCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Array of audit event summary.
@@ -7224,6 +8299,12 @@ func (o GetAuditEventsAuditEventCollectionArrayOutput) ToGetAuditEventsAuditEven
 
 func (o GetAuditEventsAuditEventCollectionArrayOutput) ToGetAuditEventsAuditEventCollectionArrayOutputWithContext(ctx context.Context) GetAuditEventsAuditEventCollectionArrayOutput {
 	return o
+}
+
+func (o GetAuditEventsAuditEventCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditEventsAuditEventCollection] {
+	return pulumix.Output[[]GetAuditEventsAuditEventCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAuditEventsAuditEventCollectionArrayOutput) Index(i pulumi.IntInput) GetAuditEventsAuditEventCollectionOutput {
@@ -7403,6 +8484,12 @@ func (i GetAuditEventsAuditEventCollectionItemArgs) ToGetAuditEventsAuditEventCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditEventsAuditEventCollectionItemOutput)
 }
 
+func (i GetAuditEventsAuditEventCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAuditEventsAuditEventCollectionItem] {
+	return pulumix.Output[GetAuditEventsAuditEventCollectionItem]{
+		OutputState: i.ToGetAuditEventsAuditEventCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAuditEventsAuditEventCollectionItemArrayInput is an input type that accepts GetAuditEventsAuditEventCollectionItemArray and GetAuditEventsAuditEventCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetAuditEventsAuditEventCollectionItemArrayInput` via:
 //
@@ -7428,6 +8515,12 @@ func (i GetAuditEventsAuditEventCollectionItemArray) ToGetAuditEventsAuditEventC
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditEventsAuditEventCollectionItemArrayOutput)
 }
 
+func (i GetAuditEventsAuditEventCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditEventsAuditEventCollectionItem] {
+	return pulumix.Output[[]GetAuditEventsAuditEventCollectionItem]{
+		OutputState: i.ToGetAuditEventsAuditEventCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAuditEventsAuditEventCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetAuditEventsAuditEventCollectionItemOutput) ElementType() reflect.Type {
@@ -7440,6 +8533,12 @@ func (o GetAuditEventsAuditEventCollectionItemOutput) ToGetAuditEventsAuditEvent
 
 func (o GetAuditEventsAuditEventCollectionItemOutput) ToGetAuditEventsAuditEventCollectionItemOutputWithContext(ctx context.Context) GetAuditEventsAuditEventCollectionItemOutput {
 	return o
+}
+
+func (o GetAuditEventsAuditEventCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditEventsAuditEventCollectionItem] {
+	return pulumix.Output[GetAuditEventsAuditEventCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The action taken for this audit event.
@@ -7629,6 +8728,12 @@ func (o GetAuditEventsAuditEventCollectionItemArrayOutput) ToGetAuditEventsAudit
 	return o
 }
 
+func (o GetAuditEventsAuditEventCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditEventsAuditEventCollectionItem] {
+	return pulumix.Output[[]GetAuditEventsAuditEventCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetAuditEventsAuditEventCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAuditEventsAuditEventCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAuditEventsAuditEventCollectionItem {
 		return vs[0].([]GetAuditEventsAuditEventCollectionItem)[vs[1].(int)]
@@ -7670,6 +8775,12 @@ func (i GetAuditEventsFilterArgs) ToGetAuditEventsFilterOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditEventsFilterOutput)
 }
 
+func (i GetAuditEventsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAuditEventsFilter] {
+	return pulumix.Output[GetAuditEventsFilter]{
+		OutputState: i.ToGetAuditEventsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAuditEventsFilterArrayInput is an input type that accepts GetAuditEventsFilterArray and GetAuditEventsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAuditEventsFilterArrayInput` via:
 //
@@ -7695,6 +8806,12 @@ func (i GetAuditEventsFilterArray) ToGetAuditEventsFilterArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditEventsFilterArrayOutput)
 }
 
+func (i GetAuditEventsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditEventsFilter] {
+	return pulumix.Output[[]GetAuditEventsFilter]{
+		OutputState: i.ToGetAuditEventsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAuditEventsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAuditEventsFilterOutput) ElementType() reflect.Type {
@@ -7707,6 +8824,12 @@ func (o GetAuditEventsFilterOutput) ToGetAuditEventsFilterOutput() GetAuditEvent
 
 func (o GetAuditEventsFilterOutput) ToGetAuditEventsFilterOutputWithContext(ctx context.Context) GetAuditEventsFilterOutput {
 	return o
+}
+
+func (o GetAuditEventsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditEventsFilter] {
+	return pulumix.Output[GetAuditEventsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAuditEventsFilterOutput) Name() pulumi.StringOutput {
@@ -7733,6 +8856,12 @@ func (o GetAuditEventsFilterArrayOutput) ToGetAuditEventsFilterArrayOutput() Get
 
 func (o GetAuditEventsFilterArrayOutput) ToGetAuditEventsFilterArrayOutputWithContext(ctx context.Context) GetAuditEventsFilterArrayOutput {
 	return o
+}
+
+func (o GetAuditEventsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditEventsFilter] {
+	return pulumix.Output[[]GetAuditEventsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAuditEventsFilterArrayOutput) Index(i pulumi.IntInput) GetAuditEventsFilterOutput {
@@ -7772,6 +8901,12 @@ func (i GetAuditPoliciesAuditPolicyCollectionArgs) ToGetAuditPoliciesAuditPolicy
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditPoliciesAuditPolicyCollectionOutput)
 }
 
+func (i GetAuditPoliciesAuditPolicyCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAuditPoliciesAuditPolicyCollection] {
+	return pulumix.Output[GetAuditPoliciesAuditPolicyCollection]{
+		OutputState: i.ToGetAuditPoliciesAuditPolicyCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAuditPoliciesAuditPolicyCollectionArrayInput is an input type that accepts GetAuditPoliciesAuditPolicyCollectionArray and GetAuditPoliciesAuditPolicyCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAuditPoliciesAuditPolicyCollectionArrayInput` via:
 //
@@ -7797,6 +8932,12 @@ func (i GetAuditPoliciesAuditPolicyCollectionArray) ToGetAuditPoliciesAuditPolic
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditPoliciesAuditPolicyCollectionArrayOutput)
 }
 
+func (i GetAuditPoliciesAuditPolicyCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditPoliciesAuditPolicyCollection] {
+	return pulumix.Output[[]GetAuditPoliciesAuditPolicyCollection]{
+		OutputState: i.ToGetAuditPoliciesAuditPolicyCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAuditPoliciesAuditPolicyCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetAuditPoliciesAuditPolicyCollectionOutput) ElementType() reflect.Type {
@@ -7809,6 +8950,12 @@ func (o GetAuditPoliciesAuditPolicyCollectionOutput) ToGetAuditPoliciesAuditPoli
 
 func (o GetAuditPoliciesAuditPolicyCollectionOutput) ToGetAuditPoliciesAuditPolicyCollectionOutputWithContext(ctx context.Context) GetAuditPoliciesAuditPolicyCollectionOutput {
 	return o
+}
+
+func (o GetAuditPoliciesAuditPolicyCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditPoliciesAuditPolicyCollection] {
+	return pulumix.Output[GetAuditPoliciesAuditPolicyCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAuditPoliciesAuditPolicyCollectionOutput) Items() GetAuditPoliciesAuditPolicyCollectionItemArrayOutput {
@@ -7829,6 +8976,12 @@ func (o GetAuditPoliciesAuditPolicyCollectionArrayOutput) ToGetAuditPoliciesAudi
 
 func (o GetAuditPoliciesAuditPolicyCollectionArrayOutput) ToGetAuditPoliciesAuditPolicyCollectionArrayOutputWithContext(ctx context.Context) GetAuditPoliciesAuditPolicyCollectionArrayOutput {
 	return o
+}
+
+func (o GetAuditPoliciesAuditPolicyCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditPoliciesAuditPolicyCollection] {
+	return pulumix.Output[[]GetAuditPoliciesAuditPolicyCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAuditPoliciesAuditPolicyCollectionArrayOutput) Index(i pulumi.IntInput) GetAuditPoliciesAuditPolicyCollectionOutput {
@@ -7942,6 +9095,12 @@ func (i GetAuditPoliciesAuditPolicyCollectionItemArgs) ToGetAuditPoliciesAuditPo
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditPoliciesAuditPolicyCollectionItemOutput)
 }
 
+func (i GetAuditPoliciesAuditPolicyCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAuditPoliciesAuditPolicyCollectionItem] {
+	return pulumix.Output[GetAuditPoliciesAuditPolicyCollectionItem]{
+		OutputState: i.ToGetAuditPoliciesAuditPolicyCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAuditPoliciesAuditPolicyCollectionItemArrayInput is an input type that accepts GetAuditPoliciesAuditPolicyCollectionItemArray and GetAuditPoliciesAuditPolicyCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetAuditPoliciesAuditPolicyCollectionItemArrayInput` via:
 //
@@ -7967,6 +9126,12 @@ func (i GetAuditPoliciesAuditPolicyCollectionItemArray) ToGetAuditPoliciesAuditP
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditPoliciesAuditPolicyCollectionItemArrayOutput)
 }
 
+func (i GetAuditPoliciesAuditPolicyCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditPoliciesAuditPolicyCollectionItem] {
+	return pulumix.Output[[]GetAuditPoliciesAuditPolicyCollectionItem]{
+		OutputState: i.ToGetAuditPoliciesAuditPolicyCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAuditPoliciesAuditPolicyCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetAuditPoliciesAuditPolicyCollectionItemOutput) ElementType() reflect.Type {
@@ -7979,6 +9144,12 @@ func (o GetAuditPoliciesAuditPolicyCollectionItemOutput) ToGetAuditPoliciesAudit
 
 func (o GetAuditPoliciesAuditPolicyCollectionItemOutput) ToGetAuditPoliciesAuditPolicyCollectionItemOutputWithContext(ctx context.Context) GetAuditPoliciesAuditPolicyCollectionItemOutput {
 	return o
+}
+
+func (o GetAuditPoliciesAuditPolicyCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditPoliciesAuditPolicyCollectionItem] {
+	return pulumix.Output[GetAuditPoliciesAuditPolicyCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Lists the audit policy provisioning conditions for the target database.
@@ -8097,6 +9268,12 @@ func (o GetAuditPoliciesAuditPolicyCollectionItemArrayOutput) ToGetAuditPolicies
 	return o
 }
 
+func (o GetAuditPoliciesAuditPolicyCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditPoliciesAuditPolicyCollectionItem] {
+	return pulumix.Output[[]GetAuditPoliciesAuditPolicyCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetAuditPoliciesAuditPolicyCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAuditPoliciesAuditPolicyCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAuditPoliciesAuditPolicyCollectionItem {
 		return vs[0].([]GetAuditPoliciesAuditPolicyCollectionItem)[vs[1].(int)]
@@ -8148,6 +9325,12 @@ func (i GetAuditPoliciesAuditPolicyCollectionItemAuditConditionArgs) ToGetAuditP
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditPoliciesAuditPolicyCollectionItemAuditConditionOutput)
 }
 
+func (i GetAuditPoliciesAuditPolicyCollectionItemAuditConditionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAuditPoliciesAuditPolicyCollectionItemAuditCondition] {
+	return pulumix.Output[GetAuditPoliciesAuditPolicyCollectionItemAuditCondition]{
+		OutputState: i.ToGetAuditPoliciesAuditPolicyCollectionItemAuditConditionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAuditPoliciesAuditPolicyCollectionItemAuditConditionArrayInput is an input type that accepts GetAuditPoliciesAuditPolicyCollectionItemAuditConditionArray and GetAuditPoliciesAuditPolicyCollectionItemAuditConditionArrayOutput values.
 // You can construct a concrete instance of `GetAuditPoliciesAuditPolicyCollectionItemAuditConditionArrayInput` via:
 //
@@ -8173,6 +9356,12 @@ func (i GetAuditPoliciesAuditPolicyCollectionItemAuditConditionArray) ToGetAudit
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditPoliciesAuditPolicyCollectionItemAuditConditionArrayOutput)
 }
 
+func (i GetAuditPoliciesAuditPolicyCollectionItemAuditConditionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditPoliciesAuditPolicyCollectionItemAuditCondition] {
+	return pulumix.Output[[]GetAuditPoliciesAuditPolicyCollectionItemAuditCondition]{
+		OutputState: i.ToGetAuditPoliciesAuditPolicyCollectionItemAuditConditionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAuditPoliciesAuditPolicyCollectionItemAuditConditionOutput struct{ *pulumi.OutputState }
 
 func (GetAuditPoliciesAuditPolicyCollectionItemAuditConditionOutput) ElementType() reflect.Type {
@@ -8185,6 +9374,12 @@ func (o GetAuditPoliciesAuditPolicyCollectionItemAuditConditionOutput) ToGetAudi
 
 func (o GetAuditPoliciesAuditPolicyCollectionItemAuditConditionOutput) ToGetAuditPoliciesAuditPolicyCollectionItemAuditConditionOutputWithContext(ctx context.Context) GetAuditPoliciesAuditPolicyCollectionItemAuditConditionOutput {
 	return o
+}
+
+func (o GetAuditPoliciesAuditPolicyCollectionItemAuditConditionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditPoliciesAuditPolicyCollectionItemAuditCondition] {
+	return pulumix.Output[GetAuditPoliciesAuditPolicyCollectionItemAuditCondition]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
@@ -8225,6 +9420,12 @@ func (o GetAuditPoliciesAuditPolicyCollectionItemAuditConditionArrayOutput) ToGe
 
 func (o GetAuditPoliciesAuditPolicyCollectionItemAuditConditionArrayOutput) ToGetAuditPoliciesAuditPolicyCollectionItemAuditConditionArrayOutputWithContext(ctx context.Context) GetAuditPoliciesAuditPolicyCollectionItemAuditConditionArrayOutput {
 	return o
+}
+
+func (o GetAuditPoliciesAuditPolicyCollectionItemAuditConditionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditPoliciesAuditPolicyCollectionItemAuditCondition] {
+	return pulumix.Output[[]GetAuditPoliciesAuditPolicyCollectionItemAuditCondition]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAuditPoliciesAuditPolicyCollectionItemAuditConditionArrayOutput) Index(i pulumi.IntInput) GetAuditPoliciesAuditPolicyCollectionItemAuditConditionOutput {
@@ -8278,6 +9479,12 @@ func (i GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionOutput)
 }
 
+func (i GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableCondition] {
+	return pulumix.Output[GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableCondition]{
+		OutputState: i.ToGetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionArrayInput is an input type that accepts GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionArray and GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionArrayOutput values.
 // You can construct a concrete instance of `GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionArrayInput` via:
 //
@@ -8303,6 +9510,12 @@ func (i GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionArrayOutput)
 }
 
+func (i GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableCondition] {
+	return pulumix.Output[[]GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableCondition]{
+		OutputState: i.ToGetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionOutput struct{ *pulumi.OutputState }
 
 func (GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionOutput) ElementType() reflect.Type {
@@ -8315,6 +9528,12 @@ func (o GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionOu
 
 func (o GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionOutput) ToGetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionOutputWithContext(ctx context.Context) GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionOutput {
 	return o
+}
+
+func (o GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableCondition] {
+	return pulumix.Output[GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableCondition]{
+		OutputState: o.OutputState,
+	}
 }
 
 // List of users or roles that the policy must be enabled for.
@@ -8357,6 +9576,12 @@ func (o GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionAr
 
 func (o GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionArrayOutput) ToGetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionArrayOutputWithContext(ctx context.Context) GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionArrayOutput {
 	return o
+}
+
+func (o GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableCondition] {
+	return pulumix.Output[[]GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableCondition]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionArrayOutput) Index(i pulumi.IntInput) GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionOutput {
@@ -8438,6 +9663,12 @@ func (i GetAuditPoliciesAuditPolicyCollectionItemAuditSpecificationArgs) ToGetAu
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditPoliciesAuditPolicyCollectionItemAuditSpecificationOutput)
 }
 
+func (i GetAuditPoliciesAuditPolicyCollectionItemAuditSpecificationArgs) ToOutput(ctx context.Context) pulumix.Output[GetAuditPoliciesAuditPolicyCollectionItemAuditSpecification] {
+	return pulumix.Output[GetAuditPoliciesAuditPolicyCollectionItemAuditSpecification]{
+		OutputState: i.ToGetAuditPoliciesAuditPolicyCollectionItemAuditSpecificationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAuditPoliciesAuditPolicyCollectionItemAuditSpecificationArrayInput is an input type that accepts GetAuditPoliciesAuditPolicyCollectionItemAuditSpecificationArray and GetAuditPoliciesAuditPolicyCollectionItemAuditSpecificationArrayOutput values.
 // You can construct a concrete instance of `GetAuditPoliciesAuditPolicyCollectionItemAuditSpecificationArrayInput` via:
 //
@@ -8463,6 +9694,12 @@ func (i GetAuditPoliciesAuditPolicyCollectionItemAuditSpecificationArray) ToGetA
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditPoliciesAuditPolicyCollectionItemAuditSpecificationArrayOutput)
 }
 
+func (i GetAuditPoliciesAuditPolicyCollectionItemAuditSpecificationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditPoliciesAuditPolicyCollectionItemAuditSpecification] {
+	return pulumix.Output[[]GetAuditPoliciesAuditPolicyCollectionItemAuditSpecification]{
+		OutputState: i.ToGetAuditPoliciesAuditPolicyCollectionItemAuditSpecificationArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAuditPoliciesAuditPolicyCollectionItemAuditSpecificationOutput struct{ *pulumi.OutputState }
 
 func (GetAuditPoliciesAuditPolicyCollectionItemAuditSpecificationOutput) ElementType() reflect.Type {
@@ -8475,6 +9712,12 @@ func (o GetAuditPoliciesAuditPolicyCollectionItemAuditSpecificationOutput) ToGet
 
 func (o GetAuditPoliciesAuditPolicyCollectionItemAuditSpecificationOutput) ToGetAuditPoliciesAuditPolicyCollectionItemAuditSpecificationOutputWithContext(ctx context.Context) GetAuditPoliciesAuditPolicyCollectionItemAuditSpecificationOutput {
 	return o
+}
+
+func (o GetAuditPoliciesAuditPolicyCollectionItemAuditSpecificationOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditPoliciesAuditPolicyCollectionItemAuditSpecification] {
+	return pulumix.Output[GetAuditPoliciesAuditPolicyCollectionItemAuditSpecification]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The category to which the audit policy belongs.
@@ -8554,6 +9797,12 @@ func (o GetAuditPoliciesAuditPolicyCollectionItemAuditSpecificationArrayOutput) 
 	return o
 }
 
+func (o GetAuditPoliciesAuditPolicyCollectionItemAuditSpecificationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditPoliciesAuditPolicyCollectionItemAuditSpecification] {
+	return pulumix.Output[[]GetAuditPoliciesAuditPolicyCollectionItemAuditSpecification]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetAuditPoliciesAuditPolicyCollectionItemAuditSpecificationArrayOutput) Index(i pulumi.IntInput) GetAuditPoliciesAuditPolicyCollectionItemAuditSpecificationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAuditPoliciesAuditPolicyCollectionItemAuditSpecification {
 		return vs[0].([]GetAuditPoliciesAuditPolicyCollectionItemAuditSpecification)[vs[1].(int)]
@@ -8595,6 +9844,12 @@ func (i GetAuditPoliciesFilterArgs) ToGetAuditPoliciesFilterOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditPoliciesFilterOutput)
 }
 
+func (i GetAuditPoliciesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAuditPoliciesFilter] {
+	return pulumix.Output[GetAuditPoliciesFilter]{
+		OutputState: i.ToGetAuditPoliciesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAuditPoliciesFilterArrayInput is an input type that accepts GetAuditPoliciesFilterArray and GetAuditPoliciesFilterArrayOutput values.
 // You can construct a concrete instance of `GetAuditPoliciesFilterArrayInput` via:
 //
@@ -8620,6 +9875,12 @@ func (i GetAuditPoliciesFilterArray) ToGetAuditPoliciesFilterArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditPoliciesFilterArrayOutput)
 }
 
+func (i GetAuditPoliciesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditPoliciesFilter] {
+	return pulumix.Output[[]GetAuditPoliciesFilter]{
+		OutputState: i.ToGetAuditPoliciesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAuditPoliciesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAuditPoliciesFilterOutput) ElementType() reflect.Type {
@@ -8632,6 +9893,12 @@ func (o GetAuditPoliciesFilterOutput) ToGetAuditPoliciesFilterOutput() GetAuditP
 
 func (o GetAuditPoliciesFilterOutput) ToGetAuditPoliciesFilterOutputWithContext(ctx context.Context) GetAuditPoliciesFilterOutput {
 	return o
+}
+
+func (o GetAuditPoliciesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditPoliciesFilter] {
+	return pulumix.Output[GetAuditPoliciesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAuditPoliciesFilterOutput) Name() pulumi.StringOutput {
@@ -8658,6 +9925,12 @@ func (o GetAuditPoliciesFilterArrayOutput) ToGetAuditPoliciesFilterArrayOutput()
 
 func (o GetAuditPoliciesFilterArrayOutput) ToGetAuditPoliciesFilterArrayOutputWithContext(ctx context.Context) GetAuditPoliciesFilterArrayOutput {
 	return o
+}
+
+func (o GetAuditPoliciesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditPoliciesFilter] {
+	return pulumix.Output[[]GetAuditPoliciesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAuditPoliciesFilterArrayOutput) Index(i pulumi.IntInput) GetAuditPoliciesFilterOutput {
@@ -8711,6 +9984,12 @@ func (i GetAuditPolicyAuditConditionArgs) ToGetAuditPolicyAuditConditionOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditPolicyAuditConditionOutput)
 }
 
+func (i GetAuditPolicyAuditConditionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAuditPolicyAuditCondition] {
+	return pulumix.Output[GetAuditPolicyAuditCondition]{
+		OutputState: i.ToGetAuditPolicyAuditConditionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAuditPolicyAuditConditionArrayInput is an input type that accepts GetAuditPolicyAuditConditionArray and GetAuditPolicyAuditConditionArrayOutput values.
 // You can construct a concrete instance of `GetAuditPolicyAuditConditionArrayInput` via:
 //
@@ -8736,6 +10015,12 @@ func (i GetAuditPolicyAuditConditionArray) ToGetAuditPolicyAuditConditionArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditPolicyAuditConditionArrayOutput)
 }
 
+func (i GetAuditPolicyAuditConditionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditPolicyAuditCondition] {
+	return pulumix.Output[[]GetAuditPolicyAuditCondition]{
+		OutputState: i.ToGetAuditPolicyAuditConditionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAuditPolicyAuditConditionOutput struct{ *pulumi.OutputState }
 
 func (GetAuditPolicyAuditConditionOutput) ElementType() reflect.Type {
@@ -8748,6 +10033,12 @@ func (o GetAuditPolicyAuditConditionOutput) ToGetAuditPolicyAuditConditionOutput
 
 func (o GetAuditPolicyAuditConditionOutput) ToGetAuditPolicyAuditConditionOutputWithContext(ctx context.Context) GetAuditPolicyAuditConditionOutput {
 	return o
+}
+
+func (o GetAuditPolicyAuditConditionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditPolicyAuditCondition] {
+	return pulumix.Output[GetAuditPolicyAuditCondition]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
@@ -8784,6 +10075,12 @@ func (o GetAuditPolicyAuditConditionArrayOutput) ToGetAuditPolicyAuditConditionA
 
 func (o GetAuditPolicyAuditConditionArrayOutput) ToGetAuditPolicyAuditConditionArrayOutputWithContext(ctx context.Context) GetAuditPolicyAuditConditionArrayOutput {
 	return o
+}
+
+func (o GetAuditPolicyAuditConditionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditPolicyAuditCondition] {
+	return pulumix.Output[[]GetAuditPolicyAuditCondition]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAuditPolicyAuditConditionArrayOutput) Index(i pulumi.IntInput) GetAuditPolicyAuditConditionOutput {
@@ -8837,6 +10134,12 @@ func (i GetAuditPolicyAuditConditionEnableConditionArgs) ToGetAuditPolicyAuditCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditPolicyAuditConditionEnableConditionOutput)
 }
 
+func (i GetAuditPolicyAuditConditionEnableConditionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAuditPolicyAuditConditionEnableCondition] {
+	return pulumix.Output[GetAuditPolicyAuditConditionEnableCondition]{
+		OutputState: i.ToGetAuditPolicyAuditConditionEnableConditionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAuditPolicyAuditConditionEnableConditionArrayInput is an input type that accepts GetAuditPolicyAuditConditionEnableConditionArray and GetAuditPolicyAuditConditionEnableConditionArrayOutput values.
 // You can construct a concrete instance of `GetAuditPolicyAuditConditionEnableConditionArrayInput` via:
 //
@@ -8862,6 +10165,12 @@ func (i GetAuditPolicyAuditConditionEnableConditionArray) ToGetAuditPolicyAuditC
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditPolicyAuditConditionEnableConditionArrayOutput)
 }
 
+func (i GetAuditPolicyAuditConditionEnableConditionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditPolicyAuditConditionEnableCondition] {
+	return pulumix.Output[[]GetAuditPolicyAuditConditionEnableCondition]{
+		OutputState: i.ToGetAuditPolicyAuditConditionEnableConditionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAuditPolicyAuditConditionEnableConditionOutput struct{ *pulumi.OutputState }
 
 func (GetAuditPolicyAuditConditionEnableConditionOutput) ElementType() reflect.Type {
@@ -8874,6 +10183,12 @@ func (o GetAuditPolicyAuditConditionEnableConditionOutput) ToGetAuditPolicyAudit
 
 func (o GetAuditPolicyAuditConditionEnableConditionOutput) ToGetAuditPolicyAuditConditionEnableConditionOutputWithContext(ctx context.Context) GetAuditPolicyAuditConditionEnableConditionOutput {
 	return o
+}
+
+func (o GetAuditPolicyAuditConditionEnableConditionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditPolicyAuditConditionEnableCondition] {
+	return pulumix.Output[GetAuditPolicyAuditConditionEnableCondition]{
+		OutputState: o.OutputState,
+	}
 }
 
 // List of users or roles that the policy must be enabled for.
@@ -8908,6 +10223,12 @@ func (o GetAuditPolicyAuditConditionEnableConditionArrayOutput) ToGetAuditPolicy
 
 func (o GetAuditPolicyAuditConditionEnableConditionArrayOutput) ToGetAuditPolicyAuditConditionEnableConditionArrayOutputWithContext(ctx context.Context) GetAuditPolicyAuditConditionEnableConditionArrayOutput {
 	return o
+}
+
+func (o GetAuditPolicyAuditConditionEnableConditionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditPolicyAuditConditionEnableCondition] {
+	return pulumix.Output[[]GetAuditPolicyAuditConditionEnableCondition]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAuditPolicyAuditConditionEnableConditionArrayOutput) Index(i pulumi.IntInput) GetAuditPolicyAuditConditionEnableConditionOutput {
@@ -8989,6 +10310,12 @@ func (i GetAuditPolicyAuditSpecificationArgs) ToGetAuditPolicyAuditSpecification
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditPolicyAuditSpecificationOutput)
 }
 
+func (i GetAuditPolicyAuditSpecificationArgs) ToOutput(ctx context.Context) pulumix.Output[GetAuditPolicyAuditSpecification] {
+	return pulumix.Output[GetAuditPolicyAuditSpecification]{
+		OutputState: i.ToGetAuditPolicyAuditSpecificationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAuditPolicyAuditSpecificationArrayInput is an input type that accepts GetAuditPolicyAuditSpecificationArray and GetAuditPolicyAuditSpecificationArrayOutput values.
 // You can construct a concrete instance of `GetAuditPolicyAuditSpecificationArrayInput` via:
 //
@@ -9014,6 +10341,12 @@ func (i GetAuditPolicyAuditSpecificationArray) ToGetAuditPolicyAuditSpecificatio
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditPolicyAuditSpecificationArrayOutput)
 }
 
+func (i GetAuditPolicyAuditSpecificationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditPolicyAuditSpecification] {
+	return pulumix.Output[[]GetAuditPolicyAuditSpecification]{
+		OutputState: i.ToGetAuditPolicyAuditSpecificationArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAuditPolicyAuditSpecificationOutput struct{ *pulumi.OutputState }
 
 func (GetAuditPolicyAuditSpecificationOutput) ElementType() reflect.Type {
@@ -9026,6 +10359,12 @@ func (o GetAuditPolicyAuditSpecificationOutput) ToGetAuditPolicyAuditSpecificati
 
 func (o GetAuditPolicyAuditSpecificationOutput) ToGetAuditPolicyAuditSpecificationOutputWithContext(ctx context.Context) GetAuditPolicyAuditSpecificationOutput {
 	return o
+}
+
+func (o GetAuditPolicyAuditSpecificationOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditPolicyAuditSpecification] {
+	return pulumix.Output[GetAuditPolicyAuditSpecification]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The category to which the audit policy belongs.
@@ -9097,6 +10436,12 @@ func (o GetAuditPolicyAuditSpecificationArrayOutput) ToGetAuditPolicyAuditSpecif
 	return o
 }
 
+func (o GetAuditPolicyAuditSpecificationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditPolicyAuditSpecification] {
+	return pulumix.Output[[]GetAuditPolicyAuditSpecification]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetAuditPolicyAuditSpecificationArrayOutput) Index(i pulumi.IntInput) GetAuditPolicyAuditSpecificationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAuditPolicyAuditSpecification {
 		return vs[0].([]GetAuditPolicyAuditSpecification)[vs[1].(int)]
@@ -9140,6 +10485,12 @@ func (i GetAuditProfileAnalyticItemArgs) ToGetAuditProfileAnalyticItemOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditProfileAnalyticItemOutput)
 }
 
+func (i GetAuditProfileAnalyticItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAuditProfileAnalyticItem] {
+	return pulumix.Output[GetAuditProfileAnalyticItem]{
+		OutputState: i.ToGetAuditProfileAnalyticItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAuditProfileAnalyticItemArrayInput is an input type that accepts GetAuditProfileAnalyticItemArray and GetAuditProfileAnalyticItemArrayOutput values.
 // You can construct a concrete instance of `GetAuditProfileAnalyticItemArrayInput` via:
 //
@@ -9165,6 +10516,12 @@ func (i GetAuditProfileAnalyticItemArray) ToGetAuditProfileAnalyticItemArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditProfileAnalyticItemArrayOutput)
 }
 
+func (i GetAuditProfileAnalyticItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditProfileAnalyticItem] {
+	return pulumix.Output[[]GetAuditProfileAnalyticItem]{
+		OutputState: i.ToGetAuditProfileAnalyticItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAuditProfileAnalyticItemOutput struct{ *pulumi.OutputState }
 
 func (GetAuditProfileAnalyticItemOutput) ElementType() reflect.Type {
@@ -9177,6 +10534,12 @@ func (o GetAuditProfileAnalyticItemOutput) ToGetAuditProfileAnalyticItemOutput()
 
 func (o GetAuditProfileAnalyticItemOutput) ToGetAuditProfileAnalyticItemOutputWithContext(ctx context.Context) GetAuditProfileAnalyticItemOutput {
 	return o
+}
+
+func (o GetAuditProfileAnalyticItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditProfileAnalyticItem] {
+	return pulumix.Output[GetAuditProfileAnalyticItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Total count of aggregated metric.
@@ -9201,6 +10564,12 @@ func (o GetAuditProfileAnalyticItemArrayOutput) ToGetAuditProfileAnalyticItemArr
 
 func (o GetAuditProfileAnalyticItemArrayOutput) ToGetAuditProfileAnalyticItemArrayOutputWithContext(ctx context.Context) GetAuditProfileAnalyticItemArrayOutput {
 	return o
+}
+
+func (o GetAuditProfileAnalyticItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditProfileAnalyticItem] {
+	return pulumix.Output[[]GetAuditProfileAnalyticItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAuditProfileAnalyticItemArrayOutput) Index(i pulumi.IntInput) GetAuditProfileAnalyticItemOutput {
@@ -9242,6 +10611,12 @@ func (i GetAuditProfileAnalyticItemDimensionArgs) ToGetAuditProfileAnalyticItemD
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditProfileAnalyticItemDimensionOutput)
 }
 
+func (i GetAuditProfileAnalyticItemDimensionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAuditProfileAnalyticItemDimension] {
+	return pulumix.Output[GetAuditProfileAnalyticItemDimension]{
+		OutputState: i.ToGetAuditProfileAnalyticItemDimensionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAuditProfileAnalyticItemDimensionArrayInput is an input type that accepts GetAuditProfileAnalyticItemDimensionArray and GetAuditProfileAnalyticItemDimensionArrayOutput values.
 // You can construct a concrete instance of `GetAuditProfileAnalyticItemDimensionArrayInput` via:
 //
@@ -9267,6 +10642,12 @@ func (i GetAuditProfileAnalyticItemDimensionArray) ToGetAuditProfileAnalyticItem
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditProfileAnalyticItemDimensionArrayOutput)
 }
 
+func (i GetAuditProfileAnalyticItemDimensionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditProfileAnalyticItemDimension] {
+	return pulumix.Output[[]GetAuditProfileAnalyticItemDimension]{
+		OutputState: i.ToGetAuditProfileAnalyticItemDimensionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAuditProfileAnalyticItemDimensionOutput struct{ *pulumi.OutputState }
 
 func (GetAuditProfileAnalyticItemDimensionOutput) ElementType() reflect.Type {
@@ -9279,6 +10660,12 @@ func (o GetAuditProfileAnalyticItemDimensionOutput) ToGetAuditProfileAnalyticIte
 
 func (o GetAuditProfileAnalyticItemDimensionOutput) ToGetAuditProfileAnalyticItemDimensionOutputWithContext(ctx context.Context) GetAuditProfileAnalyticItemDimensionOutput {
 	return o
+}
+
+func (o GetAuditProfileAnalyticItemDimensionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditProfileAnalyticItemDimension] {
+	return pulumix.Output[GetAuditProfileAnalyticItemDimension]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Indicates if you want to continue collecting audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. The default value is inherited from the global settings.  You can change at the global level or at the target level.
@@ -9298,6 +10685,12 @@ func (o GetAuditProfileAnalyticItemDimensionArrayOutput) ToGetAuditProfileAnalyt
 
 func (o GetAuditProfileAnalyticItemDimensionArrayOutput) ToGetAuditProfileAnalyticItemDimensionArrayOutputWithContext(ctx context.Context) GetAuditProfileAnalyticItemDimensionArrayOutput {
 	return o
+}
+
+func (o GetAuditProfileAnalyticItemDimensionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditProfileAnalyticItemDimension] {
+	return pulumix.Output[[]GetAuditProfileAnalyticItemDimension]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAuditProfileAnalyticItemDimensionArrayOutput) Index(i pulumi.IntInput) GetAuditProfileAnalyticItemDimensionOutput {
@@ -9411,6 +10804,12 @@ func (i GetAuditProfileAuditTrailArgs) ToGetAuditProfileAuditTrailOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditProfileAuditTrailOutput)
 }
 
+func (i GetAuditProfileAuditTrailArgs) ToOutput(ctx context.Context) pulumix.Output[GetAuditProfileAuditTrail] {
+	return pulumix.Output[GetAuditProfileAuditTrail]{
+		OutputState: i.ToGetAuditProfileAuditTrailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAuditProfileAuditTrailArrayInput is an input type that accepts GetAuditProfileAuditTrailArray and GetAuditProfileAuditTrailArrayOutput values.
 // You can construct a concrete instance of `GetAuditProfileAuditTrailArrayInput` via:
 //
@@ -9436,6 +10835,12 @@ func (i GetAuditProfileAuditTrailArray) ToGetAuditProfileAuditTrailArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditProfileAuditTrailArrayOutput)
 }
 
+func (i GetAuditProfileAuditTrailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditProfileAuditTrail] {
+	return pulumix.Output[[]GetAuditProfileAuditTrail]{
+		OutputState: i.ToGetAuditProfileAuditTrailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAuditProfileAuditTrailOutput struct{ *pulumi.OutputState }
 
 func (GetAuditProfileAuditTrailOutput) ElementType() reflect.Type {
@@ -9448,6 +10853,12 @@ func (o GetAuditProfileAuditTrailOutput) ToGetAuditProfileAuditTrailOutput() Get
 
 func (o GetAuditProfileAuditTrailOutput) ToGetAuditProfileAuditTrailOutputWithContext(ctx context.Context) GetAuditProfileAuditTrailOutput {
 	return o
+}
+
+func (o GetAuditProfileAuditTrailOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditProfileAuditTrail] {
+	return pulumix.Output[GetAuditProfileAuditTrail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The date from which the audit trail must start collecting data, in the format defined by RFC3339.
@@ -9559,6 +10970,12 @@ func (o GetAuditProfileAuditTrailArrayOutput) ToGetAuditProfileAuditTrailArrayOu
 	return o
 }
 
+func (o GetAuditProfileAuditTrailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditProfileAuditTrail] {
+	return pulumix.Output[[]GetAuditProfileAuditTrail]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetAuditProfileAuditTrailArrayOutput) Index(i pulumi.IntInput) GetAuditProfileAuditTrailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAuditProfileAuditTrail {
 		return vs[0].([]GetAuditProfileAuditTrail)[vs[1].(int)]
@@ -9610,6 +11027,12 @@ func (i GetAuditProfileAvailableAuditVolumeItemArgs) ToGetAuditProfileAvailableA
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditProfileAvailableAuditVolumeItemOutput)
 }
 
+func (i GetAuditProfileAvailableAuditVolumeItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAuditProfileAvailableAuditVolumeItem] {
+	return pulumix.Output[GetAuditProfileAvailableAuditVolumeItem]{
+		OutputState: i.ToGetAuditProfileAvailableAuditVolumeItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAuditProfileAvailableAuditVolumeItemArrayInput is an input type that accepts GetAuditProfileAvailableAuditVolumeItemArray and GetAuditProfileAvailableAuditVolumeItemArrayOutput values.
 // You can construct a concrete instance of `GetAuditProfileAvailableAuditVolumeItemArrayInput` via:
 //
@@ -9635,6 +11058,12 @@ func (i GetAuditProfileAvailableAuditVolumeItemArray) ToGetAuditProfileAvailable
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditProfileAvailableAuditVolumeItemArrayOutput)
 }
 
+func (i GetAuditProfileAvailableAuditVolumeItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditProfileAvailableAuditVolumeItem] {
+	return pulumix.Output[[]GetAuditProfileAvailableAuditVolumeItem]{
+		OutputState: i.ToGetAuditProfileAvailableAuditVolumeItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAuditProfileAvailableAuditVolumeItemOutput struct{ *pulumi.OutputState }
 
 func (GetAuditProfileAvailableAuditVolumeItemOutput) ElementType() reflect.Type {
@@ -9647,6 +11076,12 @@ func (o GetAuditProfileAvailableAuditVolumeItemOutput) ToGetAuditProfileAvailabl
 
 func (o GetAuditProfileAvailableAuditVolumeItemOutput) ToGetAuditProfileAvailableAuditVolumeItemOutputWithContext(ctx context.Context) GetAuditProfileAvailableAuditVolumeItemOutput {
 	return o
+}
+
+func (o GetAuditProfileAvailableAuditVolumeItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditProfileAvailableAuditVolumeItem] {
+	return pulumix.Output[GetAuditProfileAvailableAuditVolumeItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the audit.
@@ -9681,6 +11116,12 @@ func (o GetAuditProfileAvailableAuditVolumeItemArrayOutput) ToGetAuditProfileAva
 
 func (o GetAuditProfileAvailableAuditVolumeItemArrayOutput) ToGetAuditProfileAvailableAuditVolumeItemArrayOutputWithContext(ctx context.Context) GetAuditProfileAvailableAuditVolumeItemArrayOutput {
 	return o
+}
+
+func (o GetAuditProfileAvailableAuditVolumeItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditProfileAvailableAuditVolumeItem] {
+	return pulumix.Output[[]GetAuditProfileAvailableAuditVolumeItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAuditProfileAvailableAuditVolumeItemArrayOutput) Index(i pulumi.IntInput) GetAuditProfileAvailableAuditVolumeItemOutput {
@@ -9722,6 +11163,12 @@ func (i GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionArgs) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionOutput)
 }
 
+func (i GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollection] {
+	return pulumix.Output[GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollection]{
+		OutputState: i.ToGetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionArrayInput is an input type that accepts GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionArray and GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionArrayInput` via:
 //
@@ -9747,6 +11194,12 @@ func (i GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionArray)
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionArrayOutput)
 }
 
+func (i GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollection] {
+	return pulumix.Output[[]GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollection]{
+		OutputState: i.ToGetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionOutput) ElementType() reflect.Type {
@@ -9759,6 +11212,12 @@ func (o GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionOutput
 
 func (o GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionOutput) ToGetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionOutputWithContext(ctx context.Context) GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionOutput {
 	return o
+}
+
+func (o GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollection] {
+	return pulumix.Output[GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Array of available audit volume summary.
@@ -9780,6 +11239,12 @@ func (o GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionArrayO
 
 func (o GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionArrayOutput) ToGetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionArrayOutputWithContext(ctx context.Context) GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionArrayOutput {
 	return o
+}
+
+func (o GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollection] {
+	return pulumix.Output[[]GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionArrayOutput) Index(i pulumi.IntInput) GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionOutput {
@@ -9821,6 +11286,12 @@ func (i GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemOutput)
 }
 
+func (i GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItem] {
+	return pulumix.Output[GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItem]{
+		OutputState: i.ToGetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemArrayInput is an input type that accepts GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemArray and GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemArrayInput` via:
 //
@@ -9846,6 +11317,12 @@ func (i GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemArrayOutput)
 }
 
+func (i GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItem] {
+	return pulumix.Output[[]GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItem]{
+		OutputState: i.ToGetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemOutput) ElementType() reflect.Type {
@@ -9858,6 +11335,12 @@ func (o GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemOu
 
 func (o GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemOutput) ToGetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemOutputWithContext(ctx context.Context) GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemOutput {
 	return o
+}
+
+func (o GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItem] {
+	return pulumix.Output[GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Array of available audit volume summary.
@@ -9879,6 +11362,12 @@ func (o GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemAr
 
 func (o GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemArrayOutput) ToGetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemArrayOutputWithContext(ctx context.Context) GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemArrayOutput {
 	return o
+}
+
+func (o GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItem] {
+	return pulumix.Output[[]GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemOutput {
@@ -9932,6 +11421,12 @@ func (i GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemIt
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemOutput)
 }
 
+func (i GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItem] {
+	return pulumix.Output[GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItem]{
+		OutputState: i.ToGetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemArrayInput is an input type that accepts GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemArray and GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemArrayOutput values.
 // You can construct a concrete instance of `GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemArrayInput` via:
 //
@@ -9957,6 +11452,12 @@ func (i GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemIt
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemArrayOutput)
 }
 
+func (i GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItem] {
+	return pulumix.Output[[]GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItem]{
+		OutputState: i.ToGetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemOutput struct{ *pulumi.OutputState }
 
 func (GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemOutput) ElementType() reflect.Type {
@@ -9969,6 +11470,12 @@ func (o GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemIt
 
 func (o GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemOutput) ToGetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemOutputWithContext(ctx context.Context) GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemOutput {
 	return o
+}
+
+func (o GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItem] {
+	return pulumix.Output[GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the audit.
@@ -10013,6 +11520,12 @@ func (o GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemIt
 	return o
 }
 
+func (o GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItem] {
+	return pulumix.Output[[]GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemArrayOutput) Index(i pulumi.IntInput) GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItem {
 		return vs[0].([]GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItem)[vs[1].(int)]
@@ -10054,6 +11567,12 @@ func (i GetAuditProfileAvailableAuditVolumesFilterArgs) ToGetAuditProfileAvailab
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditProfileAvailableAuditVolumesFilterOutput)
 }
 
+func (i GetAuditProfileAvailableAuditVolumesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAuditProfileAvailableAuditVolumesFilter] {
+	return pulumix.Output[GetAuditProfileAvailableAuditVolumesFilter]{
+		OutputState: i.ToGetAuditProfileAvailableAuditVolumesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAuditProfileAvailableAuditVolumesFilterArrayInput is an input type that accepts GetAuditProfileAvailableAuditVolumesFilterArray and GetAuditProfileAvailableAuditVolumesFilterArrayOutput values.
 // You can construct a concrete instance of `GetAuditProfileAvailableAuditVolumesFilterArrayInput` via:
 //
@@ -10079,6 +11598,12 @@ func (i GetAuditProfileAvailableAuditVolumesFilterArray) ToGetAuditProfileAvaila
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditProfileAvailableAuditVolumesFilterArrayOutput)
 }
 
+func (i GetAuditProfileAvailableAuditVolumesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditProfileAvailableAuditVolumesFilter] {
+	return pulumix.Output[[]GetAuditProfileAvailableAuditVolumesFilter]{
+		OutputState: i.ToGetAuditProfileAvailableAuditVolumesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAuditProfileAvailableAuditVolumesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAuditProfileAvailableAuditVolumesFilterOutput) ElementType() reflect.Type {
@@ -10091,6 +11616,12 @@ func (o GetAuditProfileAvailableAuditVolumesFilterOutput) ToGetAuditProfileAvail
 
 func (o GetAuditProfileAvailableAuditVolumesFilterOutput) ToGetAuditProfileAvailableAuditVolumesFilterOutputWithContext(ctx context.Context) GetAuditProfileAvailableAuditVolumesFilterOutput {
 	return o
+}
+
+func (o GetAuditProfileAvailableAuditVolumesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditProfileAvailableAuditVolumesFilter] {
+	return pulumix.Output[GetAuditProfileAvailableAuditVolumesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAuditProfileAvailableAuditVolumesFilterOutput) Name() pulumi.StringOutput {
@@ -10117,6 +11648,12 @@ func (o GetAuditProfileAvailableAuditVolumesFilterArrayOutput) ToGetAuditProfile
 
 func (o GetAuditProfileAvailableAuditVolumesFilterArrayOutput) ToGetAuditProfileAvailableAuditVolumesFilterArrayOutputWithContext(ctx context.Context) GetAuditProfileAvailableAuditVolumesFilterArrayOutput {
 	return o
+}
+
+func (o GetAuditProfileAvailableAuditVolumesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditProfileAvailableAuditVolumesFilter] {
+	return pulumix.Output[[]GetAuditProfileAvailableAuditVolumesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAuditProfileAvailableAuditVolumesFilterArrayOutput) Index(i pulumi.IntInput) GetAuditProfileAvailableAuditVolumesFilterOutput {
@@ -10170,6 +11707,12 @@ func (i GetAuditProfileCollectedAuditVolumeItemArgs) ToGetAuditProfileCollectedA
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditProfileCollectedAuditVolumeItemOutput)
 }
 
+func (i GetAuditProfileCollectedAuditVolumeItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAuditProfileCollectedAuditVolumeItem] {
+	return pulumix.Output[GetAuditProfileCollectedAuditVolumeItem]{
+		OutputState: i.ToGetAuditProfileCollectedAuditVolumeItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAuditProfileCollectedAuditVolumeItemArrayInput is an input type that accepts GetAuditProfileCollectedAuditVolumeItemArray and GetAuditProfileCollectedAuditVolumeItemArrayOutput values.
 // You can construct a concrete instance of `GetAuditProfileCollectedAuditVolumeItemArrayInput` via:
 //
@@ -10195,6 +11738,12 @@ func (i GetAuditProfileCollectedAuditVolumeItemArray) ToGetAuditProfileCollected
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditProfileCollectedAuditVolumeItemArrayOutput)
 }
 
+func (i GetAuditProfileCollectedAuditVolumeItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditProfileCollectedAuditVolumeItem] {
+	return pulumix.Output[[]GetAuditProfileCollectedAuditVolumeItem]{
+		OutputState: i.ToGetAuditProfileCollectedAuditVolumeItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAuditProfileCollectedAuditVolumeItemOutput struct{ *pulumi.OutputState }
 
 func (GetAuditProfileCollectedAuditVolumeItemOutput) ElementType() reflect.Type {
@@ -10207,6 +11756,12 @@ func (o GetAuditProfileCollectedAuditVolumeItemOutput) ToGetAuditProfileCollecte
 
 func (o GetAuditProfileCollectedAuditVolumeItemOutput) ToGetAuditProfileCollectedAuditVolumeItemOutputWithContext(ctx context.Context) GetAuditProfileCollectedAuditVolumeItemOutput {
 	return o
+}
+
+func (o GetAuditProfileCollectedAuditVolumeItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditProfileCollectedAuditVolumeItem] {
+	return pulumix.Output[GetAuditProfileCollectedAuditVolumeItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The audit data volume collected by Data Safe and is available in archive storage.
@@ -10241,6 +11796,12 @@ func (o GetAuditProfileCollectedAuditVolumeItemArrayOutput) ToGetAuditProfileCol
 
 func (o GetAuditProfileCollectedAuditVolumeItemArrayOutput) ToGetAuditProfileCollectedAuditVolumeItemArrayOutputWithContext(ctx context.Context) GetAuditProfileCollectedAuditVolumeItemArrayOutput {
 	return o
+}
+
+func (o GetAuditProfileCollectedAuditVolumeItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditProfileCollectedAuditVolumeItem] {
+	return pulumix.Output[[]GetAuditProfileCollectedAuditVolumeItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAuditProfileCollectedAuditVolumeItemArrayOutput) Index(i pulumi.IntInput) GetAuditProfileCollectedAuditVolumeItemOutput {
@@ -10282,6 +11843,12 @@ func (i GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionArgs) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionOutput)
 }
 
+func (i GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollection] {
+	return pulumix.Output[GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollection]{
+		OutputState: i.ToGetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionArrayInput is an input type that accepts GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionArray and GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionArrayInput` via:
 //
@@ -10307,6 +11874,12 @@ func (i GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionArray)
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionArrayOutput)
 }
 
+func (i GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollection] {
+	return pulumix.Output[[]GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollection]{
+		OutputState: i.ToGetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionOutput) ElementType() reflect.Type {
@@ -10319,6 +11892,12 @@ func (o GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionOutput
 
 func (o GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionOutput) ToGetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionOutputWithContext(ctx context.Context) GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionOutput {
 	return o
+}
+
+func (o GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollection] {
+	return pulumix.Output[GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Array of collected audit volume summary.
@@ -10340,6 +11919,12 @@ func (o GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionArrayO
 
 func (o GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionArrayOutput) ToGetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionArrayOutputWithContext(ctx context.Context) GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionArrayOutput {
 	return o
+}
+
+func (o GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollection] {
+	return pulumix.Output[[]GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionArrayOutput) Index(i pulumi.IntInput) GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionOutput {
@@ -10381,6 +11966,12 @@ func (i GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemOutput)
 }
 
+func (i GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItem] {
+	return pulumix.Output[GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItem]{
+		OutputState: i.ToGetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemArrayInput is an input type that accepts GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemArray and GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemArrayInput` via:
 //
@@ -10406,6 +11997,12 @@ func (i GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemArrayOutput)
 }
 
+func (i GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItem] {
+	return pulumix.Output[[]GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItem]{
+		OutputState: i.ToGetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemOutput) ElementType() reflect.Type {
@@ -10418,6 +12015,12 @@ func (o GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemOu
 
 func (o GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemOutput) ToGetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemOutputWithContext(ctx context.Context) GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemOutput {
 	return o
+}
+
+func (o GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItem] {
+	return pulumix.Output[GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Array of collected audit volume summary.
@@ -10439,6 +12042,12 @@ func (o GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemAr
 
 func (o GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemArrayOutput) ToGetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemArrayOutputWithContext(ctx context.Context) GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemArrayOutput {
 	return o
+}
+
+func (o GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItem] {
+	return pulumix.Output[[]GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemOutput {
@@ -10492,6 +12101,12 @@ func (i GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemIt
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItemOutput)
 }
 
+func (i GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem] {
+	return pulumix.Output[GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem]{
+		OutputState: i.ToGetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItemArrayInput is an input type that accepts GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItemArray and GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItemArrayOutput values.
 // You can construct a concrete instance of `GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItemArrayInput` via:
 //
@@ -10517,6 +12132,12 @@ func (i GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemIt
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItemArrayOutput)
 }
 
+func (i GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem] {
+	return pulumix.Output[[]GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem]{
+		OutputState: i.ToGetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItemOutput struct{ *pulumi.OutputState }
 
 func (GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItemOutput) ElementType() reflect.Type {
@@ -10529,6 +12150,12 @@ func (o GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemIt
 
 func (o GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItemOutput) ToGetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItemOutputWithContext(ctx context.Context) GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItemOutput {
 	return o
+}
+
+func (o GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem] {
+	return pulumix.Output[GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The audit data volume collected by Data Safe and is available in archive storage.
@@ -10573,6 +12200,12 @@ func (o GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemIt
 	return o
 }
 
+func (o GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem] {
+	return pulumix.Output[[]GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItemArrayOutput) Index(i pulumi.IntInput) GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem {
 		return vs[0].([]GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem)[vs[1].(int)]
@@ -10614,6 +12247,12 @@ func (i GetAuditProfileCollectedAuditVolumesFilterArgs) ToGetAuditProfileCollect
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditProfileCollectedAuditVolumesFilterOutput)
 }
 
+func (i GetAuditProfileCollectedAuditVolumesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAuditProfileCollectedAuditVolumesFilter] {
+	return pulumix.Output[GetAuditProfileCollectedAuditVolumesFilter]{
+		OutputState: i.ToGetAuditProfileCollectedAuditVolumesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAuditProfileCollectedAuditVolumesFilterArrayInput is an input type that accepts GetAuditProfileCollectedAuditVolumesFilterArray and GetAuditProfileCollectedAuditVolumesFilterArrayOutput values.
 // You can construct a concrete instance of `GetAuditProfileCollectedAuditVolumesFilterArrayInput` via:
 //
@@ -10639,6 +12278,12 @@ func (i GetAuditProfileCollectedAuditVolumesFilterArray) ToGetAuditProfileCollec
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditProfileCollectedAuditVolumesFilterArrayOutput)
 }
 
+func (i GetAuditProfileCollectedAuditVolumesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditProfileCollectedAuditVolumesFilter] {
+	return pulumix.Output[[]GetAuditProfileCollectedAuditVolumesFilter]{
+		OutputState: i.ToGetAuditProfileCollectedAuditVolumesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAuditProfileCollectedAuditVolumesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAuditProfileCollectedAuditVolumesFilterOutput) ElementType() reflect.Type {
@@ -10651,6 +12296,12 @@ func (o GetAuditProfileCollectedAuditVolumesFilterOutput) ToGetAuditProfileColle
 
 func (o GetAuditProfileCollectedAuditVolumesFilterOutput) ToGetAuditProfileCollectedAuditVolumesFilterOutputWithContext(ctx context.Context) GetAuditProfileCollectedAuditVolumesFilterOutput {
 	return o
+}
+
+func (o GetAuditProfileCollectedAuditVolumesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditProfileCollectedAuditVolumesFilter] {
+	return pulumix.Output[GetAuditProfileCollectedAuditVolumesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAuditProfileCollectedAuditVolumesFilterOutput) Name() pulumi.StringOutput {
@@ -10677,6 +12328,12 @@ func (o GetAuditProfileCollectedAuditVolumesFilterArrayOutput) ToGetAuditProfile
 
 func (o GetAuditProfileCollectedAuditVolumesFilterArrayOutput) ToGetAuditProfileCollectedAuditVolumesFilterArrayOutputWithContext(ctx context.Context) GetAuditProfileCollectedAuditVolumesFilterArrayOutput {
 	return o
+}
+
+func (o GetAuditProfileCollectedAuditVolumesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditProfileCollectedAuditVolumesFilter] {
+	return pulumix.Output[[]GetAuditProfileCollectedAuditVolumesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAuditProfileCollectedAuditVolumesFilterArrayOutput) Index(i pulumi.IntInput) GetAuditProfileCollectedAuditVolumesFilterOutput {
@@ -10716,6 +12373,12 @@ func (i GetAuditProfilesAuditProfileCollectionArgs) ToGetAuditProfilesAuditProfi
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditProfilesAuditProfileCollectionOutput)
 }
 
+func (i GetAuditProfilesAuditProfileCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAuditProfilesAuditProfileCollection] {
+	return pulumix.Output[GetAuditProfilesAuditProfileCollection]{
+		OutputState: i.ToGetAuditProfilesAuditProfileCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAuditProfilesAuditProfileCollectionArrayInput is an input type that accepts GetAuditProfilesAuditProfileCollectionArray and GetAuditProfilesAuditProfileCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAuditProfilesAuditProfileCollectionArrayInput` via:
 //
@@ -10741,6 +12404,12 @@ func (i GetAuditProfilesAuditProfileCollectionArray) ToGetAuditProfilesAuditProf
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditProfilesAuditProfileCollectionArrayOutput)
 }
 
+func (i GetAuditProfilesAuditProfileCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditProfilesAuditProfileCollection] {
+	return pulumix.Output[[]GetAuditProfilesAuditProfileCollection]{
+		OutputState: i.ToGetAuditProfilesAuditProfileCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAuditProfilesAuditProfileCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetAuditProfilesAuditProfileCollectionOutput) ElementType() reflect.Type {
@@ -10753,6 +12422,12 @@ func (o GetAuditProfilesAuditProfileCollectionOutput) ToGetAuditProfilesAuditPro
 
 func (o GetAuditProfilesAuditProfileCollectionOutput) ToGetAuditProfilesAuditProfileCollectionOutputWithContext(ctx context.Context) GetAuditProfilesAuditProfileCollectionOutput {
 	return o
+}
+
+func (o GetAuditProfilesAuditProfileCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditProfilesAuditProfileCollection] {
+	return pulumix.Output[GetAuditProfilesAuditProfileCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAuditProfilesAuditProfileCollectionOutput) Items() GetAuditProfilesAuditProfileCollectionItemArrayOutput {
@@ -10773,6 +12448,12 @@ func (o GetAuditProfilesAuditProfileCollectionArrayOutput) ToGetAuditProfilesAud
 
 func (o GetAuditProfilesAuditProfileCollectionArrayOutput) ToGetAuditProfilesAuditProfileCollectionArrayOutputWithContext(ctx context.Context) GetAuditProfilesAuditProfileCollectionArrayOutput {
 	return o
+}
+
+func (o GetAuditProfilesAuditProfileCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditProfilesAuditProfileCollection] {
+	return pulumix.Output[[]GetAuditProfilesAuditProfileCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAuditProfilesAuditProfileCollectionArrayOutput) Index(i pulumi.IntInput) GetAuditProfilesAuditProfileCollectionOutput {
@@ -10888,6 +12569,12 @@ func (i GetAuditProfilesAuditProfileCollectionItemArgs) ToGetAuditProfilesAuditP
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditProfilesAuditProfileCollectionItemOutput)
 }
 
+func (i GetAuditProfilesAuditProfileCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAuditProfilesAuditProfileCollectionItem] {
+	return pulumix.Output[GetAuditProfilesAuditProfileCollectionItem]{
+		OutputState: i.ToGetAuditProfilesAuditProfileCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAuditProfilesAuditProfileCollectionItemArrayInput is an input type that accepts GetAuditProfilesAuditProfileCollectionItemArray and GetAuditProfilesAuditProfileCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetAuditProfilesAuditProfileCollectionItemArrayInput` via:
 //
@@ -10913,6 +12600,12 @@ func (i GetAuditProfilesAuditProfileCollectionItemArray) ToGetAuditProfilesAudit
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditProfilesAuditProfileCollectionItemArrayOutput)
 }
 
+func (i GetAuditProfilesAuditProfileCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditProfilesAuditProfileCollectionItem] {
+	return pulumix.Output[[]GetAuditProfilesAuditProfileCollectionItem]{
+		OutputState: i.ToGetAuditProfilesAuditProfileCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAuditProfilesAuditProfileCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetAuditProfilesAuditProfileCollectionItemOutput) ElementType() reflect.Type {
@@ -10925,6 +12618,12 @@ func (o GetAuditProfilesAuditProfileCollectionItemOutput) ToGetAuditProfilesAudi
 
 func (o GetAuditProfilesAuditProfileCollectionItemOutput) ToGetAuditProfilesAuditProfileCollectionItemOutputWithContext(ctx context.Context) GetAuditProfilesAuditProfileCollectionItemOutput {
 	return o
+}
+
+func (o GetAuditProfilesAuditProfileCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditProfilesAuditProfileCollectionItem] {
+	return pulumix.Output[GetAuditProfilesAuditProfileCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Indicates number of audit records collected by Data Safe in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
@@ -11042,6 +12741,12 @@ func (o GetAuditProfilesAuditProfileCollectionItemArrayOutput) ToGetAuditProfile
 	return o
 }
 
+func (o GetAuditProfilesAuditProfileCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditProfilesAuditProfileCollectionItem] {
+	return pulumix.Output[[]GetAuditProfilesAuditProfileCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetAuditProfilesAuditProfileCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAuditProfilesAuditProfileCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAuditProfilesAuditProfileCollectionItem {
 		return vs[0].([]GetAuditProfilesAuditProfileCollectionItem)[vs[1].(int)]
@@ -11153,6 +12858,12 @@ func (i GetAuditProfilesAuditProfileCollectionItemAuditTrailArgs) ToGetAuditProf
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditProfilesAuditProfileCollectionItemAuditTrailOutput)
 }
 
+func (i GetAuditProfilesAuditProfileCollectionItemAuditTrailArgs) ToOutput(ctx context.Context) pulumix.Output[GetAuditProfilesAuditProfileCollectionItemAuditTrail] {
+	return pulumix.Output[GetAuditProfilesAuditProfileCollectionItemAuditTrail]{
+		OutputState: i.ToGetAuditProfilesAuditProfileCollectionItemAuditTrailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAuditProfilesAuditProfileCollectionItemAuditTrailArrayInput is an input type that accepts GetAuditProfilesAuditProfileCollectionItemAuditTrailArray and GetAuditProfilesAuditProfileCollectionItemAuditTrailArrayOutput values.
 // You can construct a concrete instance of `GetAuditProfilesAuditProfileCollectionItemAuditTrailArrayInput` via:
 //
@@ -11178,6 +12889,12 @@ func (i GetAuditProfilesAuditProfileCollectionItemAuditTrailArray) ToGetAuditPro
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditProfilesAuditProfileCollectionItemAuditTrailArrayOutput)
 }
 
+func (i GetAuditProfilesAuditProfileCollectionItemAuditTrailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditProfilesAuditProfileCollectionItemAuditTrail] {
+	return pulumix.Output[[]GetAuditProfilesAuditProfileCollectionItemAuditTrail]{
+		OutputState: i.ToGetAuditProfilesAuditProfileCollectionItemAuditTrailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAuditProfilesAuditProfileCollectionItemAuditTrailOutput struct{ *pulumi.OutputState }
 
 func (GetAuditProfilesAuditProfileCollectionItemAuditTrailOutput) ElementType() reflect.Type {
@@ -11190,6 +12907,12 @@ func (o GetAuditProfilesAuditProfileCollectionItemAuditTrailOutput) ToGetAuditPr
 
 func (o GetAuditProfilesAuditProfileCollectionItemAuditTrailOutput) ToGetAuditProfilesAuditProfileCollectionItemAuditTrailOutputWithContext(ctx context.Context) GetAuditProfilesAuditProfileCollectionItemAuditTrailOutput {
 	return o
+}
+
+func (o GetAuditProfilesAuditProfileCollectionItemAuditTrailOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditProfilesAuditProfileCollectionItemAuditTrail] {
+	return pulumix.Output[GetAuditProfilesAuditProfileCollectionItemAuditTrail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The date from which the audit trail must start collecting data, in the format defined by RFC3339.
@@ -11307,6 +13030,12 @@ func (o GetAuditProfilesAuditProfileCollectionItemAuditTrailArrayOutput) ToGetAu
 	return o
 }
 
+func (o GetAuditProfilesAuditProfileCollectionItemAuditTrailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditProfilesAuditProfileCollectionItemAuditTrail] {
+	return pulumix.Output[[]GetAuditProfilesAuditProfileCollectionItemAuditTrail]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetAuditProfilesAuditProfileCollectionItemAuditTrailArrayOutput) Index(i pulumi.IntInput) GetAuditProfilesAuditProfileCollectionItemAuditTrailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAuditProfilesAuditProfileCollectionItemAuditTrail {
 		return vs[0].([]GetAuditProfilesAuditProfileCollectionItemAuditTrail)[vs[1].(int)]
@@ -11348,6 +13077,12 @@ func (i GetAuditProfilesFilterArgs) ToGetAuditProfilesFilterOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditProfilesFilterOutput)
 }
 
+func (i GetAuditProfilesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAuditProfilesFilter] {
+	return pulumix.Output[GetAuditProfilesFilter]{
+		OutputState: i.ToGetAuditProfilesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAuditProfilesFilterArrayInput is an input type that accepts GetAuditProfilesFilterArray and GetAuditProfilesFilterArrayOutput values.
 // You can construct a concrete instance of `GetAuditProfilesFilterArrayInput` via:
 //
@@ -11373,6 +13108,12 @@ func (i GetAuditProfilesFilterArray) ToGetAuditProfilesFilterArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditProfilesFilterArrayOutput)
 }
 
+func (i GetAuditProfilesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditProfilesFilter] {
+	return pulumix.Output[[]GetAuditProfilesFilter]{
+		OutputState: i.ToGetAuditProfilesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAuditProfilesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAuditProfilesFilterOutput) ElementType() reflect.Type {
@@ -11385,6 +13126,12 @@ func (o GetAuditProfilesFilterOutput) ToGetAuditProfilesFilterOutput() GetAuditP
 
 func (o GetAuditProfilesFilterOutput) ToGetAuditProfilesFilterOutputWithContext(ctx context.Context) GetAuditProfilesFilterOutput {
 	return o
+}
+
+func (o GetAuditProfilesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditProfilesFilter] {
+	return pulumix.Output[GetAuditProfilesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAuditProfilesFilterOutput) Name() pulumi.StringOutput {
@@ -11411,6 +13158,12 @@ func (o GetAuditProfilesFilterArrayOutput) ToGetAuditProfilesFilterArrayOutput()
 
 func (o GetAuditProfilesFilterArrayOutput) ToGetAuditProfilesFilterArrayOutputWithContext(ctx context.Context) GetAuditProfilesFilterArrayOutput {
 	return o
+}
+
+func (o GetAuditProfilesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditProfilesFilter] {
+	return pulumix.Output[[]GetAuditProfilesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAuditProfilesFilterArrayOutput) Index(i pulumi.IntInput) GetAuditProfilesFilterOutput {
@@ -11456,6 +13209,12 @@ func (i GetAuditTrailAnalyticItemArgs) ToGetAuditTrailAnalyticItemOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditTrailAnalyticItemOutput)
 }
 
+func (i GetAuditTrailAnalyticItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAuditTrailAnalyticItem] {
+	return pulumix.Output[GetAuditTrailAnalyticItem]{
+		OutputState: i.ToGetAuditTrailAnalyticItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAuditTrailAnalyticItemArrayInput is an input type that accepts GetAuditTrailAnalyticItemArray and GetAuditTrailAnalyticItemArrayOutput values.
 // You can construct a concrete instance of `GetAuditTrailAnalyticItemArrayInput` via:
 //
@@ -11481,6 +13240,12 @@ func (i GetAuditTrailAnalyticItemArray) ToGetAuditTrailAnalyticItemArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditTrailAnalyticItemArrayOutput)
 }
 
+func (i GetAuditTrailAnalyticItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditTrailAnalyticItem] {
+	return pulumix.Output[[]GetAuditTrailAnalyticItem]{
+		OutputState: i.ToGetAuditTrailAnalyticItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAuditTrailAnalyticItemOutput struct{ *pulumi.OutputState }
 
 func (GetAuditTrailAnalyticItemOutput) ElementType() reflect.Type {
@@ -11493,6 +13258,12 @@ func (o GetAuditTrailAnalyticItemOutput) ToGetAuditTrailAnalyticItemOutput() Get
 
 func (o GetAuditTrailAnalyticItemOutput) ToGetAuditTrailAnalyticItemOutputWithContext(ctx context.Context) GetAuditTrailAnalyticItemOutput {
 	return o
+}
+
+func (o GetAuditTrailAnalyticItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditTrailAnalyticItem] {
+	return pulumix.Output[GetAuditTrailAnalyticItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Total count of aggregated metric.
@@ -11517,6 +13288,12 @@ func (o GetAuditTrailAnalyticItemArrayOutput) ToGetAuditTrailAnalyticItemArrayOu
 
 func (o GetAuditTrailAnalyticItemArrayOutput) ToGetAuditTrailAnalyticItemArrayOutputWithContext(ctx context.Context) GetAuditTrailAnalyticItemArrayOutput {
 	return o
+}
+
+func (o GetAuditTrailAnalyticItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditTrailAnalyticItem] {
+	return pulumix.Output[[]GetAuditTrailAnalyticItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAuditTrailAnalyticItemArrayOutput) Index(i pulumi.IntInput) GetAuditTrailAnalyticItemOutput {
@@ -11570,6 +13347,12 @@ func (i GetAuditTrailAnalyticItemDimensionArgs) ToGetAuditTrailAnalyticItemDimen
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditTrailAnalyticItemDimensionOutput)
 }
 
+func (i GetAuditTrailAnalyticItemDimensionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAuditTrailAnalyticItemDimension] {
+	return pulumix.Output[GetAuditTrailAnalyticItemDimension]{
+		OutputState: i.ToGetAuditTrailAnalyticItemDimensionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAuditTrailAnalyticItemDimensionArrayInput is an input type that accepts GetAuditTrailAnalyticItemDimensionArray and GetAuditTrailAnalyticItemDimensionArrayOutput values.
 // You can construct a concrete instance of `GetAuditTrailAnalyticItemDimensionArrayInput` via:
 //
@@ -11595,6 +13378,12 @@ func (i GetAuditTrailAnalyticItemDimensionArray) ToGetAuditTrailAnalyticItemDime
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditTrailAnalyticItemDimensionArrayOutput)
 }
 
+func (i GetAuditTrailAnalyticItemDimensionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditTrailAnalyticItemDimension] {
+	return pulumix.Output[[]GetAuditTrailAnalyticItemDimension]{
+		OutputState: i.ToGetAuditTrailAnalyticItemDimensionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAuditTrailAnalyticItemDimensionOutput struct{ *pulumi.OutputState }
 
 func (GetAuditTrailAnalyticItemDimensionOutput) ElementType() reflect.Type {
@@ -11607,6 +13396,12 @@ func (o GetAuditTrailAnalyticItemDimensionOutput) ToGetAuditTrailAnalyticItemDim
 
 func (o GetAuditTrailAnalyticItemDimensionOutput) ToGetAuditTrailAnalyticItemDimensionOutputWithContext(ctx context.Context) GetAuditTrailAnalyticItemDimensionOutput {
 	return o
+}
+
+func (o GetAuditTrailAnalyticItemDimensionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditTrailAnalyticItemDimension] {
+	return pulumix.Output[GetAuditTrailAnalyticItemDimension]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
@@ -11641,6 +13436,12 @@ func (o GetAuditTrailAnalyticItemDimensionArrayOutput) ToGetAuditTrailAnalyticIt
 
 func (o GetAuditTrailAnalyticItemDimensionArrayOutput) ToGetAuditTrailAnalyticItemDimensionArrayOutputWithContext(ctx context.Context) GetAuditTrailAnalyticItemDimensionArrayOutput {
 	return o
+}
+
+func (o GetAuditTrailAnalyticItemDimensionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditTrailAnalyticItemDimension] {
+	return pulumix.Output[[]GetAuditTrailAnalyticItemDimension]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAuditTrailAnalyticItemDimensionArrayOutput) Index(i pulumi.IntInput) GetAuditTrailAnalyticItemDimensionOutput {
@@ -11680,6 +13481,12 @@ func (i GetAuditTrailsAuditTrailCollectionArgs) ToGetAuditTrailsAuditTrailCollec
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditTrailsAuditTrailCollectionOutput)
 }
 
+func (i GetAuditTrailsAuditTrailCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAuditTrailsAuditTrailCollection] {
+	return pulumix.Output[GetAuditTrailsAuditTrailCollection]{
+		OutputState: i.ToGetAuditTrailsAuditTrailCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAuditTrailsAuditTrailCollectionArrayInput is an input type that accepts GetAuditTrailsAuditTrailCollectionArray and GetAuditTrailsAuditTrailCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAuditTrailsAuditTrailCollectionArrayInput` via:
 //
@@ -11705,6 +13512,12 @@ func (i GetAuditTrailsAuditTrailCollectionArray) ToGetAuditTrailsAuditTrailColle
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditTrailsAuditTrailCollectionArrayOutput)
 }
 
+func (i GetAuditTrailsAuditTrailCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditTrailsAuditTrailCollection] {
+	return pulumix.Output[[]GetAuditTrailsAuditTrailCollection]{
+		OutputState: i.ToGetAuditTrailsAuditTrailCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAuditTrailsAuditTrailCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetAuditTrailsAuditTrailCollectionOutput) ElementType() reflect.Type {
@@ -11717,6 +13530,12 @@ func (o GetAuditTrailsAuditTrailCollectionOutput) ToGetAuditTrailsAuditTrailColl
 
 func (o GetAuditTrailsAuditTrailCollectionOutput) ToGetAuditTrailsAuditTrailCollectionOutputWithContext(ctx context.Context) GetAuditTrailsAuditTrailCollectionOutput {
 	return o
+}
+
+func (o GetAuditTrailsAuditTrailCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditTrailsAuditTrailCollection] {
+	return pulumix.Output[GetAuditTrailsAuditTrailCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAuditTrailsAuditTrailCollectionOutput) Items() GetAuditTrailsAuditTrailCollectionItemArrayOutput {
@@ -11735,6 +13554,12 @@ func (o GetAuditTrailsAuditTrailCollectionArrayOutput) ToGetAuditTrailsAuditTrai
 
 func (o GetAuditTrailsAuditTrailCollectionArrayOutput) ToGetAuditTrailsAuditTrailCollectionArrayOutputWithContext(ctx context.Context) GetAuditTrailsAuditTrailCollectionArrayOutput {
 	return o
+}
+
+func (o GetAuditTrailsAuditTrailCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditTrailsAuditTrailCollection] {
+	return pulumix.Output[[]GetAuditTrailsAuditTrailCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAuditTrailsAuditTrailCollectionArrayOutput) Index(i pulumi.IntInput) GetAuditTrailsAuditTrailCollectionOutput {
@@ -11854,6 +13679,12 @@ func (i GetAuditTrailsAuditTrailCollectionItemArgs) ToGetAuditTrailsAuditTrailCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditTrailsAuditTrailCollectionItemOutput)
 }
 
+func (i GetAuditTrailsAuditTrailCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAuditTrailsAuditTrailCollectionItem] {
+	return pulumix.Output[GetAuditTrailsAuditTrailCollectionItem]{
+		OutputState: i.ToGetAuditTrailsAuditTrailCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAuditTrailsAuditTrailCollectionItemArrayInput is an input type that accepts GetAuditTrailsAuditTrailCollectionItemArray and GetAuditTrailsAuditTrailCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetAuditTrailsAuditTrailCollectionItemArrayInput` via:
 //
@@ -11879,6 +13710,12 @@ func (i GetAuditTrailsAuditTrailCollectionItemArray) ToGetAuditTrailsAuditTrailC
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditTrailsAuditTrailCollectionItemArrayOutput)
 }
 
+func (i GetAuditTrailsAuditTrailCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditTrailsAuditTrailCollectionItem] {
+	return pulumix.Output[[]GetAuditTrailsAuditTrailCollectionItem]{
+		OutputState: i.ToGetAuditTrailsAuditTrailCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAuditTrailsAuditTrailCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetAuditTrailsAuditTrailCollectionItemOutput) ElementType() reflect.Type {
@@ -11891,6 +13728,12 @@ func (o GetAuditTrailsAuditTrailCollectionItemOutput) ToGetAuditTrailsAuditTrail
 
 func (o GetAuditTrailsAuditTrailCollectionItemOutput) ToGetAuditTrailsAuditTrailCollectionItemOutputWithContext(ctx context.Context) GetAuditTrailsAuditTrailCollectionItemOutput {
 	return o
+}
+
+func (o GetAuditTrailsAuditTrailCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditTrailsAuditTrailCollectionItem] {
+	return pulumix.Output[GetAuditTrailsAuditTrailCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The date from which the audit trail must start collecting data, in the format defined by RFC3339.
@@ -12011,6 +13854,12 @@ func (o GetAuditTrailsAuditTrailCollectionItemArrayOutput) ToGetAuditTrailsAudit
 	return o
 }
 
+func (o GetAuditTrailsAuditTrailCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditTrailsAuditTrailCollectionItem] {
+	return pulumix.Output[[]GetAuditTrailsAuditTrailCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetAuditTrailsAuditTrailCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAuditTrailsAuditTrailCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAuditTrailsAuditTrailCollectionItem {
 		return vs[0].([]GetAuditTrailsAuditTrailCollectionItem)[vs[1].(int)]
@@ -12052,6 +13901,12 @@ func (i GetAuditTrailsFilterArgs) ToGetAuditTrailsFilterOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditTrailsFilterOutput)
 }
 
+func (i GetAuditTrailsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAuditTrailsFilter] {
+	return pulumix.Output[GetAuditTrailsFilter]{
+		OutputState: i.ToGetAuditTrailsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAuditTrailsFilterArrayInput is an input type that accepts GetAuditTrailsFilterArray and GetAuditTrailsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAuditTrailsFilterArrayInput` via:
 //
@@ -12077,6 +13932,12 @@ func (i GetAuditTrailsFilterArray) ToGetAuditTrailsFilterArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetAuditTrailsFilterArrayOutput)
 }
 
+func (i GetAuditTrailsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditTrailsFilter] {
+	return pulumix.Output[[]GetAuditTrailsFilter]{
+		OutputState: i.ToGetAuditTrailsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAuditTrailsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAuditTrailsFilterOutput) ElementType() reflect.Type {
@@ -12089,6 +13950,12 @@ func (o GetAuditTrailsFilterOutput) ToGetAuditTrailsFilterOutput() GetAuditTrail
 
 func (o GetAuditTrailsFilterOutput) ToGetAuditTrailsFilterOutputWithContext(ctx context.Context) GetAuditTrailsFilterOutput {
 	return o
+}
+
+func (o GetAuditTrailsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditTrailsFilter] {
+	return pulumix.Output[GetAuditTrailsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAuditTrailsFilterOutput) Name() pulumi.StringOutput {
@@ -12115,6 +13982,12 @@ func (o GetAuditTrailsFilterArrayOutput) ToGetAuditTrailsFilterArrayOutput() Get
 
 func (o GetAuditTrailsFilterArrayOutput) ToGetAuditTrailsFilterArrayOutputWithContext(ctx context.Context) GetAuditTrailsFilterArrayOutput {
 	return o
+}
+
+func (o GetAuditTrailsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAuditTrailsFilter] {
+	return pulumix.Output[[]GetAuditTrailsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAuditTrailsFilterArrayOutput) Index(i pulumi.IntInput) GetAuditTrailsFilterOutput {
@@ -12160,6 +14033,12 @@ func (i GetCompatibleFormatsForDataTypeFormatsForDataTypeArgs) ToGetCompatibleFo
 	return pulumi.ToOutputWithContext(ctx, i).(GetCompatibleFormatsForDataTypeFormatsForDataTypeOutput)
 }
 
+func (i GetCompatibleFormatsForDataTypeFormatsForDataTypeArgs) ToOutput(ctx context.Context) pulumix.Output[GetCompatibleFormatsForDataTypeFormatsForDataType] {
+	return pulumix.Output[GetCompatibleFormatsForDataTypeFormatsForDataType]{
+		OutputState: i.ToGetCompatibleFormatsForDataTypeFormatsForDataTypeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetCompatibleFormatsForDataTypeFormatsForDataTypeArrayInput is an input type that accepts GetCompatibleFormatsForDataTypeFormatsForDataTypeArray and GetCompatibleFormatsForDataTypeFormatsForDataTypeArrayOutput values.
 // You can construct a concrete instance of `GetCompatibleFormatsForDataTypeFormatsForDataTypeArrayInput` via:
 //
@@ -12185,6 +14064,12 @@ func (i GetCompatibleFormatsForDataTypeFormatsForDataTypeArray) ToGetCompatibleF
 	return pulumi.ToOutputWithContext(ctx, i).(GetCompatibleFormatsForDataTypeFormatsForDataTypeArrayOutput)
 }
 
+func (i GetCompatibleFormatsForDataTypeFormatsForDataTypeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCompatibleFormatsForDataTypeFormatsForDataType] {
+	return pulumix.Output[[]GetCompatibleFormatsForDataTypeFormatsForDataType]{
+		OutputState: i.ToGetCompatibleFormatsForDataTypeFormatsForDataTypeArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetCompatibleFormatsForDataTypeFormatsForDataTypeOutput struct{ *pulumi.OutputState }
 
 func (GetCompatibleFormatsForDataTypeFormatsForDataTypeOutput) ElementType() reflect.Type {
@@ -12197,6 +14082,12 @@ func (o GetCompatibleFormatsForDataTypeFormatsForDataTypeOutput) ToGetCompatible
 
 func (o GetCompatibleFormatsForDataTypeFormatsForDataTypeOutput) ToGetCompatibleFormatsForDataTypeFormatsForDataTypeOutputWithContext(ctx context.Context) GetCompatibleFormatsForDataTypeFormatsForDataTypeOutput {
 	return o
+}
+
+func (o GetCompatibleFormatsForDataTypeFormatsForDataTypeOutput) ToOutput(ctx context.Context) pulumix.Output[GetCompatibleFormatsForDataTypeFormatsForDataType] {
+	return pulumix.Output[GetCompatibleFormatsForDataTypeFormatsForDataType]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The data type category, which can be one of the following - Character - Includes CHAR, NCHAR, VARCHAR2, and NVARCHAR2 Numeric - Includes NUMBER, FLOAT, RAW, BINARY_FLOAT, and BINARY_DOUBLE Date - Includes DATE and TIMESTAMP LOB - Includes BLOB, CLOB, and NCLOB All - Includes all the supported data types
@@ -12223,6 +14114,12 @@ func (o GetCompatibleFormatsForDataTypeFormatsForDataTypeArrayOutput) ToGetCompa
 
 func (o GetCompatibleFormatsForDataTypeFormatsForDataTypeArrayOutput) ToGetCompatibleFormatsForDataTypeFormatsForDataTypeArrayOutputWithContext(ctx context.Context) GetCompatibleFormatsForDataTypeFormatsForDataTypeArrayOutput {
 	return o
+}
+
+func (o GetCompatibleFormatsForDataTypeFormatsForDataTypeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCompatibleFormatsForDataTypeFormatsForDataType] {
+	return pulumix.Output[[]GetCompatibleFormatsForDataTypeFormatsForDataType]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetCompatibleFormatsForDataTypeFormatsForDataTypeArrayOutput) Index(i pulumi.IntInput) GetCompatibleFormatsForDataTypeFormatsForDataTypeOutput {
@@ -12272,6 +14169,12 @@ func (i GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatArgs) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatOutput)
 }
 
+func (i GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatArgs) ToOutput(ctx context.Context) pulumix.Output[GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormat] {
+	return pulumix.Output[GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormat]{
+		OutputState: i.ToGetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatArrayInput is an input type that accepts GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatArray and GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatArrayOutput values.
 // You can construct a concrete instance of `GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatArrayInput` via:
 //
@@ -12297,6 +14200,12 @@ func (i GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatArray) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatArrayOutput)
 }
 
+func (i GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormat] {
+	return pulumix.Output[[]GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormat]{
+		OutputState: i.ToGetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatOutput struct{ *pulumi.OutputState }
 
 func (GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatOutput) ElementType() reflect.Type {
@@ -12309,6 +14218,12 @@ func (o GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatOutput) To
 
 func (o GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatOutput) ToGetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatOutputWithContext(ctx context.Context) GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatOutput {
 	return o
+}
+
+func (o GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatOutput) ToOutput(ctx context.Context) pulumix.Output[GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormat] {
+	return pulumix.Output[GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormat]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The description of the masking format.
@@ -12338,6 +14253,12 @@ func (o GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatArrayOutpu
 
 func (o GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatArrayOutput) ToGetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatArrayOutputWithContext(ctx context.Context) GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatArrayOutput {
 	return o
+}
+
+func (o GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormat] {
+	return pulumix.Output[[]GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormat]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatArrayOutput) Index(i pulumi.IntInput) GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatOutput {
@@ -12383,6 +14304,12 @@ func (i GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeArgs) ToGetCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeOutput)
 }
 
+func (i GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeArgs) ToOutput(ctx context.Context) pulumix.Output[GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType] {
+	return pulumix.Output[GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType]{
+		OutputState: i.ToGetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeArrayInput is an input type that accepts GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeArray and GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeArrayOutput values.
 // You can construct a concrete instance of `GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeArrayInput` via:
 //
@@ -12408,6 +14335,12 @@ func (i GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeArray) ToGetC
 	return pulumi.ToOutputWithContext(ctx, i).(GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeArrayOutput)
 }
 
+func (i GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType] {
+	return pulumix.Output[[]GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType]{
+		OutputState: i.ToGetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeOutput struct{ *pulumi.OutputState }
 
 func (GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeOutput) ElementType() reflect.Type {
@@ -12420,6 +14353,12 @@ func (o GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeOutput) ToGet
 
 func (o GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeOutput) ToGetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeOutputWithContext(ctx context.Context) GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeOutput {
 	return o
+}
+
+func (o GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeOutput) ToOutput(ctx context.Context) pulumix.Output[GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType] {
+	return pulumix.Output[GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType]{
+		OutputState: o.OutputState,
+	}
 }
 
 // An array of the library masking formats compatible with the sensitive type.
@@ -12446,6 +14385,12 @@ func (o GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeArrayOutput) 
 
 func (o GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeArrayOutput) ToGetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeArrayOutputWithContext(ctx context.Context) GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeArrayOutput {
 	return o
+}
+
+func (o GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType] {
+	return pulumix.Output[[]GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeArrayOutput) Index(i pulumi.IntInput) GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeOutput {
@@ -12495,6 +14440,12 @@ func (i GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormat
 	return pulumi.ToOutputWithContext(ctx, i).(GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatOutput)
 }
 
+func (i GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatArgs) ToOutput(ctx context.Context) pulumix.Output[GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormat] {
+	return pulumix.Output[GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormat]{
+		OutputState: i.ToGetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatArrayInput is an input type that accepts GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatArray and GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatArrayOutput values.
 // You can construct a concrete instance of `GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatArrayInput` via:
 //
@@ -12520,6 +14471,12 @@ func (i GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormat
 	return pulumi.ToOutputWithContext(ctx, i).(GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatArrayOutput)
 }
 
+func (i GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormat] {
+	return pulumix.Output[[]GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormat]{
+		OutputState: i.ToGetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatOutput struct{ *pulumi.OutputState }
 
 func (GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatOutput) ElementType() reflect.Type {
@@ -12532,6 +14489,12 @@ func (o GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormat
 
 func (o GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatOutput) ToGetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatOutputWithContext(ctx context.Context) GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatOutput {
 	return o
+}
+
+func (o GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatOutput) ToOutput(ctx context.Context) pulumix.Output[GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormat] {
+	return pulumix.Output[GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormat]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The description of the masking format.
@@ -12563,6 +14526,12 @@ func (o GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormat
 
 func (o GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatArrayOutput) ToGetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatArrayOutputWithContext(ctx context.Context) GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatArrayOutput {
 	return o
+}
+
+func (o GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormat] {
+	return pulumix.Output[[]GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormat]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatArrayOutput) Index(i pulumi.IntInput) GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatOutput {
@@ -12612,6 +14581,12 @@ func (i GetDataSafeConfigurationGlobalSettingArgs) ToGetDataSafeConfigurationGlo
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataSafeConfigurationGlobalSettingOutput)
 }
 
+func (i GetDataSafeConfigurationGlobalSettingArgs) ToOutput(ctx context.Context) pulumix.Output[GetDataSafeConfigurationGlobalSetting] {
+	return pulumix.Output[GetDataSafeConfigurationGlobalSetting]{
+		OutputState: i.ToGetDataSafeConfigurationGlobalSettingOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDataSafeConfigurationGlobalSettingArrayInput is an input type that accepts GetDataSafeConfigurationGlobalSettingArray and GetDataSafeConfigurationGlobalSettingArrayOutput values.
 // You can construct a concrete instance of `GetDataSafeConfigurationGlobalSettingArrayInput` via:
 //
@@ -12637,6 +14612,12 @@ func (i GetDataSafeConfigurationGlobalSettingArray) ToGetDataSafeConfigurationGl
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataSafeConfigurationGlobalSettingArrayOutput)
 }
 
+func (i GetDataSafeConfigurationGlobalSettingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDataSafeConfigurationGlobalSetting] {
+	return pulumix.Output[[]GetDataSafeConfigurationGlobalSetting]{
+		OutputState: i.ToGetDataSafeConfigurationGlobalSettingArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDataSafeConfigurationGlobalSettingOutput struct{ *pulumi.OutputState }
 
 func (GetDataSafeConfigurationGlobalSettingOutput) ElementType() reflect.Type {
@@ -12649,6 +14630,12 @@ func (o GetDataSafeConfigurationGlobalSettingOutput) ToGetDataSafeConfigurationG
 
 func (o GetDataSafeConfigurationGlobalSettingOutput) ToGetDataSafeConfigurationGlobalSettingOutputWithContext(ctx context.Context) GetDataSafeConfigurationGlobalSettingOutput {
 	return o
+}
+
+func (o GetDataSafeConfigurationGlobalSettingOutput) ToOutput(ctx context.Context) pulumix.Output[GetDataSafeConfigurationGlobalSetting] {
+	return pulumix.Output[GetDataSafeConfigurationGlobalSetting]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The paid usage option chosen by the customer admin.
@@ -12678,6 +14665,12 @@ func (o GetDataSafeConfigurationGlobalSettingArrayOutput) ToGetDataSafeConfigura
 
 func (o GetDataSafeConfigurationGlobalSettingArrayOutput) ToGetDataSafeConfigurationGlobalSettingArrayOutputWithContext(ctx context.Context) GetDataSafeConfigurationGlobalSettingArrayOutput {
 	return o
+}
+
+func (o GetDataSafeConfigurationGlobalSettingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDataSafeConfigurationGlobalSetting] {
+	return pulumix.Output[[]GetDataSafeConfigurationGlobalSetting]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDataSafeConfigurationGlobalSettingArrayOutput) Index(i pulumi.IntInput) GetDataSafeConfigurationGlobalSettingOutput {
@@ -12775,6 +14768,12 @@ func (i GetDataSafePrivateEndpointsDataSafePrivateEndpointArgs) ToGetDataSafePri
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataSafePrivateEndpointsDataSafePrivateEndpointOutput)
 }
 
+func (i GetDataSafePrivateEndpointsDataSafePrivateEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[GetDataSafePrivateEndpointsDataSafePrivateEndpoint] {
+	return pulumix.Output[GetDataSafePrivateEndpointsDataSafePrivateEndpoint]{
+		OutputState: i.ToGetDataSafePrivateEndpointsDataSafePrivateEndpointOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDataSafePrivateEndpointsDataSafePrivateEndpointArrayInput is an input type that accepts GetDataSafePrivateEndpointsDataSafePrivateEndpointArray and GetDataSafePrivateEndpointsDataSafePrivateEndpointArrayOutput values.
 // You can construct a concrete instance of `GetDataSafePrivateEndpointsDataSafePrivateEndpointArrayInput` via:
 //
@@ -12800,6 +14799,12 @@ func (i GetDataSafePrivateEndpointsDataSafePrivateEndpointArray) ToGetDataSafePr
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataSafePrivateEndpointsDataSafePrivateEndpointArrayOutput)
 }
 
+func (i GetDataSafePrivateEndpointsDataSafePrivateEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDataSafePrivateEndpointsDataSafePrivateEndpoint] {
+	return pulumix.Output[[]GetDataSafePrivateEndpointsDataSafePrivateEndpoint]{
+		OutputState: i.ToGetDataSafePrivateEndpointsDataSafePrivateEndpointArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDataSafePrivateEndpointsDataSafePrivateEndpointOutput struct{ *pulumi.OutputState }
 
 func (GetDataSafePrivateEndpointsDataSafePrivateEndpointOutput) ElementType() reflect.Type {
@@ -12812,6 +14817,12 @@ func (o GetDataSafePrivateEndpointsDataSafePrivateEndpointOutput) ToGetDataSafeP
 
 func (o GetDataSafePrivateEndpointsDataSafePrivateEndpointOutput) ToGetDataSafePrivateEndpointsDataSafePrivateEndpointOutputWithContext(ctx context.Context) GetDataSafePrivateEndpointsDataSafePrivateEndpointOutput {
 	return o
+}
+
+func (o GetDataSafePrivateEndpointsDataSafePrivateEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[GetDataSafePrivateEndpointsDataSafePrivateEndpoint] {
+	return pulumix.Output[GetDataSafePrivateEndpointsDataSafePrivateEndpoint]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A filter to return only resources that match the specified compartment OCID.
@@ -12907,6 +14918,12 @@ func (o GetDataSafePrivateEndpointsDataSafePrivateEndpointArrayOutput) ToGetData
 	return o
 }
 
+func (o GetDataSafePrivateEndpointsDataSafePrivateEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDataSafePrivateEndpointsDataSafePrivateEndpoint] {
+	return pulumix.Output[[]GetDataSafePrivateEndpointsDataSafePrivateEndpoint]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetDataSafePrivateEndpointsDataSafePrivateEndpointArrayOutput) Index(i pulumi.IntInput) GetDataSafePrivateEndpointsDataSafePrivateEndpointOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDataSafePrivateEndpointsDataSafePrivateEndpoint {
 		return vs[0].([]GetDataSafePrivateEndpointsDataSafePrivateEndpoint)[vs[1].(int)]
@@ -12948,6 +14965,12 @@ func (i GetDataSafePrivateEndpointsFilterArgs) ToGetDataSafePrivateEndpointsFilt
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataSafePrivateEndpointsFilterOutput)
 }
 
+func (i GetDataSafePrivateEndpointsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetDataSafePrivateEndpointsFilter] {
+	return pulumix.Output[GetDataSafePrivateEndpointsFilter]{
+		OutputState: i.ToGetDataSafePrivateEndpointsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDataSafePrivateEndpointsFilterArrayInput is an input type that accepts GetDataSafePrivateEndpointsFilterArray and GetDataSafePrivateEndpointsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDataSafePrivateEndpointsFilterArrayInput` via:
 //
@@ -12973,6 +14996,12 @@ func (i GetDataSafePrivateEndpointsFilterArray) ToGetDataSafePrivateEndpointsFil
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataSafePrivateEndpointsFilterArrayOutput)
 }
 
+func (i GetDataSafePrivateEndpointsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDataSafePrivateEndpointsFilter] {
+	return pulumix.Output[[]GetDataSafePrivateEndpointsFilter]{
+		OutputState: i.ToGetDataSafePrivateEndpointsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDataSafePrivateEndpointsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetDataSafePrivateEndpointsFilterOutput) ElementType() reflect.Type {
@@ -12985,6 +15014,12 @@ func (o GetDataSafePrivateEndpointsFilterOutput) ToGetDataSafePrivateEndpointsFi
 
 func (o GetDataSafePrivateEndpointsFilterOutput) ToGetDataSafePrivateEndpointsFilterOutputWithContext(ctx context.Context) GetDataSafePrivateEndpointsFilterOutput {
 	return o
+}
+
+func (o GetDataSafePrivateEndpointsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetDataSafePrivateEndpointsFilter] {
+	return pulumix.Output[GetDataSafePrivateEndpointsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDataSafePrivateEndpointsFilterOutput) Name() pulumi.StringOutput {
@@ -13011,6 +15046,12 @@ func (o GetDataSafePrivateEndpointsFilterArrayOutput) ToGetDataSafePrivateEndpoi
 
 func (o GetDataSafePrivateEndpointsFilterArrayOutput) ToGetDataSafePrivateEndpointsFilterArrayOutputWithContext(ctx context.Context) GetDataSafePrivateEndpointsFilterArrayOutput {
 	return o
+}
+
+func (o GetDataSafePrivateEndpointsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDataSafePrivateEndpointsFilter] {
+	return pulumix.Output[[]GetDataSafePrivateEndpointsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDataSafePrivateEndpointsFilterArrayOutput) Index(i pulumi.IntInput) GetDataSafePrivateEndpointsFilterOutput {
@@ -13060,6 +15101,12 @@ func (i GetDiscoveryAnalyticItemArgs) ToGetDiscoveryAnalyticItemOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryAnalyticItemOutput)
 }
 
+func (i GetDiscoveryAnalyticItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryAnalyticItem] {
+	return pulumix.Output[GetDiscoveryAnalyticItem]{
+		OutputState: i.ToGetDiscoveryAnalyticItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDiscoveryAnalyticItemArrayInput is an input type that accepts GetDiscoveryAnalyticItemArray and GetDiscoveryAnalyticItemArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryAnalyticItemArrayInput` via:
 //
@@ -13085,6 +15132,12 @@ func (i GetDiscoveryAnalyticItemArray) ToGetDiscoveryAnalyticItemArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryAnalyticItemArrayOutput)
 }
 
+func (i GetDiscoveryAnalyticItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryAnalyticItem] {
+	return pulumix.Output[[]GetDiscoveryAnalyticItem]{
+		OutputState: i.ToGetDiscoveryAnalyticItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDiscoveryAnalyticItemOutput struct{ *pulumi.OutputState }
 
 func (GetDiscoveryAnalyticItemOutput) ElementType() reflect.Type {
@@ -13097,6 +15150,12 @@ func (o GetDiscoveryAnalyticItemOutput) ToGetDiscoveryAnalyticItemOutput() GetDi
 
 func (o GetDiscoveryAnalyticItemOutput) ToGetDiscoveryAnalyticItemOutputWithContext(ctx context.Context) GetDiscoveryAnalyticItemOutput {
 	return o
+}
+
+func (o GetDiscoveryAnalyticItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryAnalyticItem] {
+	return pulumix.Output[GetDiscoveryAnalyticItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The total count for the aggregation metric.
@@ -13126,6 +15185,12 @@ func (o GetDiscoveryAnalyticItemArrayOutput) ToGetDiscoveryAnalyticItemArrayOutp
 
 func (o GetDiscoveryAnalyticItemArrayOutput) ToGetDiscoveryAnalyticItemArrayOutputWithContext(ctx context.Context) GetDiscoveryAnalyticItemArrayOutput {
 	return o
+}
+
+func (o GetDiscoveryAnalyticItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryAnalyticItem] {
+	return pulumix.Output[[]GetDiscoveryAnalyticItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDiscoveryAnalyticItemArrayOutput) Index(i pulumi.IntInput) GetDiscoveryAnalyticItemOutput {
@@ -13171,6 +15236,12 @@ func (i GetDiscoveryAnalyticItemDimensionArgs) ToGetDiscoveryAnalyticItemDimensi
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryAnalyticItemDimensionOutput)
 }
 
+func (i GetDiscoveryAnalyticItemDimensionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryAnalyticItemDimension] {
+	return pulumix.Output[GetDiscoveryAnalyticItemDimension]{
+		OutputState: i.ToGetDiscoveryAnalyticItemDimensionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDiscoveryAnalyticItemDimensionArrayInput is an input type that accepts GetDiscoveryAnalyticItemDimensionArray and GetDiscoveryAnalyticItemDimensionArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryAnalyticItemDimensionArrayInput` via:
 //
@@ -13196,6 +15267,12 @@ func (i GetDiscoveryAnalyticItemDimensionArray) ToGetDiscoveryAnalyticItemDimens
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryAnalyticItemDimensionArrayOutput)
 }
 
+func (i GetDiscoveryAnalyticItemDimensionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryAnalyticItemDimension] {
+	return pulumix.Output[[]GetDiscoveryAnalyticItemDimension]{
+		OutputState: i.ToGetDiscoveryAnalyticItemDimensionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDiscoveryAnalyticItemDimensionOutput struct{ *pulumi.OutputState }
 
 func (GetDiscoveryAnalyticItemDimensionOutput) ElementType() reflect.Type {
@@ -13208,6 +15285,12 @@ func (o GetDiscoveryAnalyticItemDimensionOutput) ToGetDiscoveryAnalyticItemDimen
 
 func (o GetDiscoveryAnalyticItemDimensionOutput) ToGetDiscoveryAnalyticItemDimensionOutputWithContext(ctx context.Context) GetDiscoveryAnalyticItemDimensionOutput {
 	return o
+}
+
+func (o GetDiscoveryAnalyticItemDimensionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryAnalyticItemDimension] {
+	return pulumix.Output[GetDiscoveryAnalyticItemDimension]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A filter to return only the resources that match the specified sensitive data model OCID.
@@ -13232,6 +15315,12 @@ func (o GetDiscoveryAnalyticItemDimensionArrayOutput) ToGetDiscoveryAnalyticItem
 
 func (o GetDiscoveryAnalyticItemDimensionArrayOutput) ToGetDiscoveryAnalyticItemDimensionArrayOutputWithContext(ctx context.Context) GetDiscoveryAnalyticItemDimensionArrayOutput {
 	return o
+}
+
+func (o GetDiscoveryAnalyticItemDimensionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryAnalyticItemDimension] {
+	return pulumix.Output[[]GetDiscoveryAnalyticItemDimension]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDiscoveryAnalyticItemDimensionArrayOutput) Index(i pulumi.IntInput) GetDiscoveryAnalyticItemDimensionOutput {
@@ -13273,6 +15362,12 @@ func (i GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionArgs) ToGetDiscoveryAna
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionOutput)
 }
 
+func (i GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryAnalyticsDiscoveryAnalyticsCollection] {
+	return pulumix.Output[GetDiscoveryAnalyticsDiscoveryAnalyticsCollection]{
+		OutputState: i.ToGetDiscoveryAnalyticsDiscoveryAnalyticsCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionArrayInput is an input type that accepts GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionArray and GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionArrayInput` via:
 //
@@ -13298,6 +15393,12 @@ func (i GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionArray) ToGetDiscoveryAn
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionArrayOutput)
 }
 
+func (i GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryAnalyticsDiscoveryAnalyticsCollection] {
+	return pulumix.Output[[]GetDiscoveryAnalyticsDiscoveryAnalyticsCollection]{
+		OutputState: i.ToGetDiscoveryAnalyticsDiscoveryAnalyticsCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionOutput) ElementType() reflect.Type {
@@ -13310,6 +15411,12 @@ func (o GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionOutput) ToGetDiscoveryA
 
 func (o GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionOutput) ToGetDiscoveryAnalyticsDiscoveryAnalyticsCollectionOutputWithContext(ctx context.Context) GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionOutput {
 	return o
+}
+
+func (o GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryAnalyticsDiscoveryAnalyticsCollection] {
+	return pulumix.Output[GetDiscoveryAnalyticsDiscoveryAnalyticsCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 // An array of discovery analytics summary objects.
@@ -13331,6 +15438,12 @@ func (o GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionArrayOutput) ToGetDisco
 
 func (o GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionArrayOutput) ToGetDiscoveryAnalyticsDiscoveryAnalyticsCollectionArrayOutputWithContext(ctx context.Context) GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionArrayOutput {
 	return o
+}
+
+func (o GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryAnalyticsDiscoveryAnalyticsCollection] {
+	return pulumix.Output[[]GetDiscoveryAnalyticsDiscoveryAnalyticsCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionArrayOutput) Index(i pulumi.IntInput) GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionOutput {
@@ -13380,6 +15493,12 @@ func (i GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemArgs) ToGetDiscover
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemOutput)
 }
 
+func (i GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItem] {
+	return pulumix.Output[GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItem]{
+		OutputState: i.ToGetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemArrayInput is an input type that accepts GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemArray and GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemArrayInput` via:
 //
@@ -13405,6 +15524,12 @@ func (i GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemArray) ToGetDiscove
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemArrayOutput)
 }
 
+func (i GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItem] {
+	return pulumix.Output[[]GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItem]{
+		OutputState: i.ToGetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemOutput) ElementType() reflect.Type {
@@ -13417,6 +15542,12 @@ func (o GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemOutput) ToGetDiscov
 
 func (o GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemOutput) ToGetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemOutputWithContext(ctx context.Context) GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemOutput {
 	return o
+}
+
+func (o GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItem] {
+	return pulumix.Output[GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The total count for the aggregation metric.
@@ -13448,6 +15579,12 @@ func (o GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemArrayOutput) ToGetD
 
 func (o GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemArrayOutput) ToGetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemArrayOutputWithContext(ctx context.Context) GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemArrayOutput {
 	return o
+}
+
+func (o GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItem] {
+	return pulumix.Output[[]GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemOutput {
@@ -13493,6 +15630,12 @@ func (i GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionArgs) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionOutput)
 }
 
+func (i GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimension] {
+	return pulumix.Output[GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimension]{
+		OutputState: i.ToGetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionArrayInput is an input type that accepts GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionArray and GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionArrayInput` via:
 //
@@ -13518,6 +15661,12 @@ func (i GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionArray) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionArrayOutput)
 }
 
+func (i GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimension] {
+	return pulumix.Output[[]GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimension]{
+		OutputState: i.ToGetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionOutput struct{ *pulumi.OutputState }
 
 func (GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionOutput) ElementType() reflect.Type {
@@ -13530,6 +15679,12 @@ func (o GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionOutput) To
 
 func (o GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionOutput) ToGetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionOutputWithContext(ctx context.Context) GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionOutput {
 	return o
+}
+
+func (o GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimension] {
+	return pulumix.Output[GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimension]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A filter to return only the resources that match the specified sensitive data model OCID.
@@ -13556,6 +15711,12 @@ func (o GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionArrayOutpu
 
 func (o GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionArrayOutput) ToGetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionArrayOutputWithContext(ctx context.Context) GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionArrayOutput {
 	return o
+}
+
+func (o GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimension] {
+	return pulumix.Output[[]GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimension]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionArrayOutput) Index(i pulumi.IntInput) GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionOutput {
@@ -13599,6 +15760,12 @@ func (i GetDiscoveryAnalyticsFilterArgs) ToGetDiscoveryAnalyticsFilterOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryAnalyticsFilterOutput)
 }
 
+func (i GetDiscoveryAnalyticsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryAnalyticsFilter] {
+	return pulumix.Output[GetDiscoveryAnalyticsFilter]{
+		OutputState: i.ToGetDiscoveryAnalyticsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDiscoveryAnalyticsFilterArrayInput is an input type that accepts GetDiscoveryAnalyticsFilterArray and GetDiscoveryAnalyticsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryAnalyticsFilterArrayInput` via:
 //
@@ -13624,6 +15791,12 @@ func (i GetDiscoveryAnalyticsFilterArray) ToGetDiscoveryAnalyticsFilterArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryAnalyticsFilterArrayOutput)
 }
 
+func (i GetDiscoveryAnalyticsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryAnalyticsFilter] {
+	return pulumix.Output[[]GetDiscoveryAnalyticsFilter]{
+		OutputState: i.ToGetDiscoveryAnalyticsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDiscoveryAnalyticsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetDiscoveryAnalyticsFilterOutput) ElementType() reflect.Type {
@@ -13636,6 +15809,12 @@ func (o GetDiscoveryAnalyticsFilterOutput) ToGetDiscoveryAnalyticsFilterOutput()
 
 func (o GetDiscoveryAnalyticsFilterOutput) ToGetDiscoveryAnalyticsFilterOutputWithContext(ctx context.Context) GetDiscoveryAnalyticsFilterOutput {
 	return o
+}
+
+func (o GetDiscoveryAnalyticsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryAnalyticsFilter] {
+	return pulumix.Output[GetDiscoveryAnalyticsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDiscoveryAnalyticsFilterOutput) Name() pulumi.StringOutput {
@@ -13662,6 +15841,12 @@ func (o GetDiscoveryAnalyticsFilterArrayOutput) ToGetDiscoveryAnalyticsFilterArr
 
 func (o GetDiscoveryAnalyticsFilterArrayOutput) ToGetDiscoveryAnalyticsFilterArrayOutputWithContext(ctx context.Context) GetDiscoveryAnalyticsFilterArrayOutput {
 	return o
+}
+
+func (o GetDiscoveryAnalyticsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryAnalyticsFilter] {
+	return pulumix.Output[[]GetDiscoveryAnalyticsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDiscoveryAnalyticsFilterArrayOutput) Index(i pulumi.IntInput) GetDiscoveryAnalyticsFilterOutput {
@@ -13707,6 +15892,12 @@ func (i GetDiscoveryJobsResultModifiedAttributeArgs) ToGetDiscoveryJobsResultMod
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobsResultModifiedAttributeOutput)
 }
 
+func (i GetDiscoveryJobsResultModifiedAttributeArgs) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobsResultModifiedAttribute] {
+	return pulumix.Output[GetDiscoveryJobsResultModifiedAttribute]{
+		OutputState: i.ToGetDiscoveryJobsResultModifiedAttributeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDiscoveryJobsResultModifiedAttributeArrayInput is an input type that accepts GetDiscoveryJobsResultModifiedAttributeArray and GetDiscoveryJobsResultModifiedAttributeArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobsResultModifiedAttributeArrayInput` via:
 //
@@ -13732,6 +15923,12 @@ func (i GetDiscoveryJobsResultModifiedAttributeArray) ToGetDiscoveryJobsResultMo
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobsResultModifiedAttributeArrayOutput)
 }
 
+func (i GetDiscoveryJobsResultModifiedAttributeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobsResultModifiedAttribute] {
+	return pulumix.Output[[]GetDiscoveryJobsResultModifiedAttribute]{
+		OutputState: i.ToGetDiscoveryJobsResultModifiedAttributeArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDiscoveryJobsResultModifiedAttributeOutput struct{ *pulumi.OutputState }
 
 func (GetDiscoveryJobsResultModifiedAttributeOutput) ElementType() reflect.Type {
@@ -13744,6 +15941,12 @@ func (o GetDiscoveryJobsResultModifiedAttributeOutput) ToGetDiscoveryJobsResultM
 
 func (o GetDiscoveryJobsResultModifiedAttributeOutput) ToGetDiscoveryJobsResultModifiedAttributeOutputWithContext(ctx context.Context) GetDiscoveryJobsResultModifiedAttributeOutput {
 	return o
+}
+
+func (o GetDiscoveryJobsResultModifiedAttributeOutput) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobsResultModifiedAttribute] {
+	return pulumix.Output[GetDiscoveryJobsResultModifiedAttribute]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
@@ -13768,6 +15971,12 @@ func (o GetDiscoveryJobsResultModifiedAttributeArrayOutput) ToGetDiscoveryJobsRe
 
 func (o GetDiscoveryJobsResultModifiedAttributeArrayOutput) ToGetDiscoveryJobsResultModifiedAttributeArrayOutputWithContext(ctx context.Context) GetDiscoveryJobsResultModifiedAttributeArrayOutput {
 	return o
+}
+
+func (o GetDiscoveryJobsResultModifiedAttributeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobsResultModifiedAttribute] {
+	return pulumix.Output[[]GetDiscoveryJobsResultModifiedAttribute]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDiscoveryJobsResultModifiedAttributeArrayOutput) Index(i pulumi.IntInput) GetDiscoveryJobsResultModifiedAttributeOutput {
@@ -13807,6 +16016,12 @@ func (i GetDiscoveryJobsResultsDiscoveryJobResultCollectionArgs) ToGetDiscoveryJ
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobsResultsDiscoveryJobResultCollectionOutput)
 }
 
+func (i GetDiscoveryJobsResultsDiscoveryJobResultCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobsResultsDiscoveryJobResultCollection] {
+	return pulumix.Output[GetDiscoveryJobsResultsDiscoveryJobResultCollection]{
+		OutputState: i.ToGetDiscoveryJobsResultsDiscoveryJobResultCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDiscoveryJobsResultsDiscoveryJobResultCollectionArrayInput is an input type that accepts GetDiscoveryJobsResultsDiscoveryJobResultCollectionArray and GetDiscoveryJobsResultsDiscoveryJobResultCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobsResultsDiscoveryJobResultCollectionArrayInput` via:
 //
@@ -13832,6 +16047,12 @@ func (i GetDiscoveryJobsResultsDiscoveryJobResultCollectionArray) ToGetDiscovery
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobsResultsDiscoveryJobResultCollectionArrayOutput)
 }
 
+func (i GetDiscoveryJobsResultsDiscoveryJobResultCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobsResultsDiscoveryJobResultCollection] {
+	return pulumix.Output[[]GetDiscoveryJobsResultsDiscoveryJobResultCollection]{
+		OutputState: i.ToGetDiscoveryJobsResultsDiscoveryJobResultCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDiscoveryJobsResultsDiscoveryJobResultCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetDiscoveryJobsResultsDiscoveryJobResultCollectionOutput) ElementType() reflect.Type {
@@ -13844,6 +16065,12 @@ func (o GetDiscoveryJobsResultsDiscoveryJobResultCollectionOutput) ToGetDiscover
 
 func (o GetDiscoveryJobsResultsDiscoveryJobResultCollectionOutput) ToGetDiscoveryJobsResultsDiscoveryJobResultCollectionOutputWithContext(ctx context.Context) GetDiscoveryJobsResultsDiscoveryJobResultCollectionOutput {
 	return o
+}
+
+func (o GetDiscoveryJobsResultsDiscoveryJobResultCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobsResultsDiscoveryJobResultCollection] {
+	return pulumix.Output[GetDiscoveryJobsResultsDiscoveryJobResultCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDiscoveryJobsResultsDiscoveryJobResultCollectionOutput) Items() GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemArrayOutput {
@@ -13864,6 +16091,12 @@ func (o GetDiscoveryJobsResultsDiscoveryJobResultCollectionArrayOutput) ToGetDis
 
 func (o GetDiscoveryJobsResultsDiscoveryJobResultCollectionArrayOutput) ToGetDiscoveryJobsResultsDiscoveryJobResultCollectionArrayOutputWithContext(ctx context.Context) GetDiscoveryJobsResultsDiscoveryJobResultCollectionArrayOutput {
 	return o
+}
+
+func (o GetDiscoveryJobsResultsDiscoveryJobResultCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobsResultsDiscoveryJobResultCollection] {
+	return pulumix.Output[[]GetDiscoveryJobsResultsDiscoveryJobResultCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDiscoveryJobsResultsDiscoveryJobResultCollectionArrayOutput) Index(i pulumi.IntInput) GetDiscoveryJobsResultsDiscoveryJobResultCollectionOutput {
@@ -13993,6 +16226,12 @@ func (i GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemArgs) ToGetDiscov
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemOutput)
 }
 
+func (i GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem] {
+	return pulumix.Output[GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem]{
+		OutputState: i.ToGetDiscoveryJobsResultsDiscoveryJobResultCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemArrayInput is an input type that accepts GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemArray and GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemArrayInput` via:
 //
@@ -14018,6 +16257,12 @@ func (i GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemArray) ToGetDisco
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemArrayOutput)
 }
 
+func (i GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem] {
+	return pulumix.Output[[]GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem]{
+		OutputState: i.ToGetDiscoveryJobsResultsDiscoveryJobResultCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemOutput) ElementType() reflect.Type {
@@ -14030,6 +16275,12 @@ func (o GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemOutput) ToGetDisc
 
 func (o GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemOutput) ToGetDiscoveryJobsResultsDiscoveryJobResultCollectionItemOutputWithContext(ctx context.Context) GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemOutput {
 	return o
+}
+
+func (o GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem] {
+	return pulumix.Output[GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
@@ -14160,6 +16411,12 @@ func (o GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemArrayOutput) ToGe
 	return o
 }
 
+func (o GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem] {
+	return pulumix.Output[[]GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem {
 		return vs[0].([]GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem)[vs[1].(int)]
@@ -14203,6 +16460,12 @@ func (i GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttribute
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttributeOutput)
 }
 
+func (i GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttributeArgs) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttribute] {
+	return pulumix.Output[GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttribute]{
+		OutputState: i.ToGetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttributeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttributeArrayInput is an input type that accepts GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttributeArray and GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttributeArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttributeArrayInput` via:
 //
@@ -14228,6 +16491,12 @@ func (i GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttribute
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttributeArrayOutput)
 }
 
+func (i GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttributeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttribute] {
+	return pulumix.Output[[]GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttribute]{
+		OutputState: i.ToGetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttributeArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttributeOutput struct{ *pulumi.OutputState }
 
 func (GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttributeOutput) ElementType() reflect.Type {
@@ -14240,6 +16509,12 @@ func (o GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttribute
 
 func (o GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttributeOutput) ToGetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttributeOutputWithContext(ctx context.Context) GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttributeOutput {
 	return o
+}
+
+func (o GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttributeOutput) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttribute] {
+	return pulumix.Output[GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttribute]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
@@ -14268,6 +16543,12 @@ func (o GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttribute
 
 func (o GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttributeArrayOutput) ToGetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttributeArrayOutputWithContext(ctx context.Context) GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttributeArrayOutput {
 	return o
+}
+
+func (o GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttributeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttribute] {
+	return pulumix.Output[[]GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttribute]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttributeArrayOutput) Index(i pulumi.IntInput) GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttributeOutput {
@@ -14311,6 +16592,12 @@ func (i GetDiscoveryJobsResultsFilterArgs) ToGetDiscoveryJobsResultsFilterOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobsResultsFilterOutput)
 }
 
+func (i GetDiscoveryJobsResultsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobsResultsFilter] {
+	return pulumix.Output[GetDiscoveryJobsResultsFilter]{
+		OutputState: i.ToGetDiscoveryJobsResultsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDiscoveryJobsResultsFilterArrayInput is an input type that accepts GetDiscoveryJobsResultsFilterArray and GetDiscoveryJobsResultsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobsResultsFilterArrayInput` via:
 //
@@ -14336,6 +16623,12 @@ func (i GetDiscoveryJobsResultsFilterArray) ToGetDiscoveryJobsResultsFilterArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobsResultsFilterArrayOutput)
 }
 
+func (i GetDiscoveryJobsResultsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobsResultsFilter] {
+	return pulumix.Output[[]GetDiscoveryJobsResultsFilter]{
+		OutputState: i.ToGetDiscoveryJobsResultsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDiscoveryJobsResultsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetDiscoveryJobsResultsFilterOutput) ElementType() reflect.Type {
@@ -14348,6 +16641,12 @@ func (o GetDiscoveryJobsResultsFilterOutput) ToGetDiscoveryJobsResultsFilterOutp
 
 func (o GetDiscoveryJobsResultsFilterOutput) ToGetDiscoveryJobsResultsFilterOutputWithContext(ctx context.Context) GetDiscoveryJobsResultsFilterOutput {
 	return o
+}
+
+func (o GetDiscoveryJobsResultsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobsResultsFilter] {
+	return pulumix.Output[GetDiscoveryJobsResultsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDiscoveryJobsResultsFilterOutput) Name() pulumi.StringOutput {
@@ -14374,6 +16673,12 @@ func (o GetDiscoveryJobsResultsFilterArrayOutput) ToGetDiscoveryJobsResultsFilte
 
 func (o GetDiscoveryJobsResultsFilterArrayOutput) ToGetDiscoveryJobsResultsFilterArrayOutputWithContext(ctx context.Context) GetDiscoveryJobsResultsFilterArrayOutput {
 	return o
+}
+
+func (o GetDiscoveryJobsResultsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobsResultsFilter] {
+	return pulumix.Output[[]GetDiscoveryJobsResultsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDiscoveryJobsResultsFilterArrayOutput) Index(i pulumi.IntInput) GetDiscoveryJobsResultsFilterOutput {
@@ -14503,6 +16808,12 @@ func (i GetLibraryMaskingFormatFormatEntryArgs) ToGetLibraryMaskingFormatFormatE
 	return pulumi.ToOutputWithContext(ctx, i).(GetLibraryMaskingFormatFormatEntryOutput)
 }
 
+func (i GetLibraryMaskingFormatFormatEntryArgs) ToOutput(ctx context.Context) pulumix.Output[GetLibraryMaskingFormatFormatEntry] {
+	return pulumix.Output[GetLibraryMaskingFormatFormatEntry]{
+		OutputState: i.ToGetLibraryMaskingFormatFormatEntryOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetLibraryMaskingFormatFormatEntryArrayInput is an input type that accepts GetLibraryMaskingFormatFormatEntryArray and GetLibraryMaskingFormatFormatEntryArrayOutput values.
 // You can construct a concrete instance of `GetLibraryMaskingFormatFormatEntryArrayInput` via:
 //
@@ -14528,6 +16839,12 @@ func (i GetLibraryMaskingFormatFormatEntryArray) ToGetLibraryMaskingFormatFormat
 	return pulumi.ToOutputWithContext(ctx, i).(GetLibraryMaskingFormatFormatEntryArrayOutput)
 }
 
+func (i GetLibraryMaskingFormatFormatEntryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLibraryMaskingFormatFormatEntry] {
+	return pulumix.Output[[]GetLibraryMaskingFormatFormatEntry]{
+		OutputState: i.ToGetLibraryMaskingFormatFormatEntryArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetLibraryMaskingFormatFormatEntryOutput struct{ *pulumi.OutputState }
 
 func (GetLibraryMaskingFormatFormatEntryOutput) ElementType() reflect.Type {
@@ -14540,6 +16857,12 @@ func (o GetLibraryMaskingFormatFormatEntryOutput) ToGetLibraryMaskingFormatForma
 
 func (o GetLibraryMaskingFormatFormatEntryOutput) ToGetLibraryMaskingFormatFormatEntryOutputWithContext(ctx context.Context) GetLibraryMaskingFormatFormatEntryOutput {
 	return o
+}
+
+func (o GetLibraryMaskingFormatFormatEntryOutput) ToOutput(ctx context.Context) pulumix.Output[GetLibraryMaskingFormatFormatEntry] {
+	return pulumix.Output[GetLibraryMaskingFormatFormatEntry]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the substitution column.
@@ -14671,6 +16994,12 @@ func (o GetLibraryMaskingFormatFormatEntryArrayOutput) ToGetLibraryMaskingFormat
 	return o
 }
 
+func (o GetLibraryMaskingFormatFormatEntryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLibraryMaskingFormatFormatEntry] {
+	return pulumix.Output[[]GetLibraryMaskingFormatFormatEntry]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetLibraryMaskingFormatFormatEntryArrayOutput) Index(i pulumi.IntInput) GetLibraryMaskingFormatFormatEntryOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLibraryMaskingFormatFormatEntry {
 		return vs[0].([]GetLibraryMaskingFormatFormatEntry)[vs[1].(int)]
@@ -14712,6 +17041,12 @@ func (i GetLibraryMaskingFormatsFilterArgs) ToGetLibraryMaskingFormatsFilterOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetLibraryMaskingFormatsFilterOutput)
 }
 
+func (i GetLibraryMaskingFormatsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetLibraryMaskingFormatsFilter] {
+	return pulumix.Output[GetLibraryMaskingFormatsFilter]{
+		OutputState: i.ToGetLibraryMaskingFormatsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetLibraryMaskingFormatsFilterArrayInput is an input type that accepts GetLibraryMaskingFormatsFilterArray and GetLibraryMaskingFormatsFilterArrayOutput values.
 // You can construct a concrete instance of `GetLibraryMaskingFormatsFilterArrayInput` via:
 //
@@ -14737,6 +17072,12 @@ func (i GetLibraryMaskingFormatsFilterArray) ToGetLibraryMaskingFormatsFilterArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetLibraryMaskingFormatsFilterArrayOutput)
 }
 
+func (i GetLibraryMaskingFormatsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLibraryMaskingFormatsFilter] {
+	return pulumix.Output[[]GetLibraryMaskingFormatsFilter]{
+		OutputState: i.ToGetLibraryMaskingFormatsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetLibraryMaskingFormatsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetLibraryMaskingFormatsFilterOutput) ElementType() reflect.Type {
@@ -14749,6 +17090,12 @@ func (o GetLibraryMaskingFormatsFilterOutput) ToGetLibraryMaskingFormatsFilterOu
 
 func (o GetLibraryMaskingFormatsFilterOutput) ToGetLibraryMaskingFormatsFilterOutputWithContext(ctx context.Context) GetLibraryMaskingFormatsFilterOutput {
 	return o
+}
+
+func (o GetLibraryMaskingFormatsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetLibraryMaskingFormatsFilter] {
+	return pulumix.Output[GetLibraryMaskingFormatsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetLibraryMaskingFormatsFilterOutput) Name() pulumi.StringOutput {
@@ -14775,6 +17122,12 @@ func (o GetLibraryMaskingFormatsFilterArrayOutput) ToGetLibraryMaskingFormatsFil
 
 func (o GetLibraryMaskingFormatsFilterArrayOutput) ToGetLibraryMaskingFormatsFilterArrayOutputWithContext(ctx context.Context) GetLibraryMaskingFormatsFilterArrayOutput {
 	return o
+}
+
+func (o GetLibraryMaskingFormatsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLibraryMaskingFormatsFilter] {
+	return pulumix.Output[[]GetLibraryMaskingFormatsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetLibraryMaskingFormatsFilterArrayOutput) Index(i pulumi.IntInput) GetLibraryMaskingFormatsFilterOutput {
@@ -14814,6 +17167,12 @@ func (i GetLibraryMaskingFormatsLibraryMaskingFormatCollectionArgs) ToGetLibrary
 	return pulumi.ToOutputWithContext(ctx, i).(GetLibraryMaskingFormatsLibraryMaskingFormatCollectionOutput)
 }
 
+func (i GetLibraryMaskingFormatsLibraryMaskingFormatCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetLibraryMaskingFormatsLibraryMaskingFormatCollection] {
+	return pulumix.Output[GetLibraryMaskingFormatsLibraryMaskingFormatCollection]{
+		OutputState: i.ToGetLibraryMaskingFormatsLibraryMaskingFormatCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetLibraryMaskingFormatsLibraryMaskingFormatCollectionArrayInput is an input type that accepts GetLibraryMaskingFormatsLibraryMaskingFormatCollectionArray and GetLibraryMaskingFormatsLibraryMaskingFormatCollectionArrayOutput values.
 // You can construct a concrete instance of `GetLibraryMaskingFormatsLibraryMaskingFormatCollectionArrayInput` via:
 //
@@ -14839,6 +17198,12 @@ func (i GetLibraryMaskingFormatsLibraryMaskingFormatCollectionArray) ToGetLibrar
 	return pulumi.ToOutputWithContext(ctx, i).(GetLibraryMaskingFormatsLibraryMaskingFormatCollectionArrayOutput)
 }
 
+func (i GetLibraryMaskingFormatsLibraryMaskingFormatCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLibraryMaskingFormatsLibraryMaskingFormatCollection] {
+	return pulumix.Output[[]GetLibraryMaskingFormatsLibraryMaskingFormatCollection]{
+		OutputState: i.ToGetLibraryMaskingFormatsLibraryMaskingFormatCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetLibraryMaskingFormatsLibraryMaskingFormatCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetLibraryMaskingFormatsLibraryMaskingFormatCollectionOutput) ElementType() reflect.Type {
@@ -14851,6 +17216,12 @@ func (o GetLibraryMaskingFormatsLibraryMaskingFormatCollectionOutput) ToGetLibra
 
 func (o GetLibraryMaskingFormatsLibraryMaskingFormatCollectionOutput) ToGetLibraryMaskingFormatsLibraryMaskingFormatCollectionOutputWithContext(ctx context.Context) GetLibraryMaskingFormatsLibraryMaskingFormatCollectionOutput {
 	return o
+}
+
+func (o GetLibraryMaskingFormatsLibraryMaskingFormatCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetLibraryMaskingFormatsLibraryMaskingFormatCollection] {
+	return pulumix.Output[GetLibraryMaskingFormatsLibraryMaskingFormatCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetLibraryMaskingFormatsLibraryMaskingFormatCollectionOutput) Items() GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemArrayOutput {
@@ -14871,6 +17242,12 @@ func (o GetLibraryMaskingFormatsLibraryMaskingFormatCollectionArrayOutput) ToGet
 
 func (o GetLibraryMaskingFormatsLibraryMaskingFormatCollectionArrayOutput) ToGetLibraryMaskingFormatsLibraryMaskingFormatCollectionArrayOutputWithContext(ctx context.Context) GetLibraryMaskingFormatsLibraryMaskingFormatCollectionArrayOutput {
 	return o
+}
+
+func (o GetLibraryMaskingFormatsLibraryMaskingFormatCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLibraryMaskingFormatsLibraryMaskingFormatCollection] {
+	return pulumix.Output[[]GetLibraryMaskingFormatsLibraryMaskingFormatCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetLibraryMaskingFormatsLibraryMaskingFormatCollectionArrayOutput) Index(i pulumi.IntInput) GetLibraryMaskingFormatsLibraryMaskingFormatCollectionOutput {
@@ -14956,6 +17333,12 @@ func (i GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemArgs) ToGetLib
 	return pulumi.ToOutputWithContext(ctx, i).(GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemOutput)
 }
 
+func (i GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItem] {
+	return pulumix.Output[GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItem]{
+		OutputState: i.ToGetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemArrayInput is an input type that accepts GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemArray and GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemArrayInput` via:
 //
@@ -14981,6 +17364,12 @@ func (i GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemArray) ToGetLi
 	return pulumi.ToOutputWithContext(ctx, i).(GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemArrayOutput)
 }
 
+func (i GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItem] {
+	return pulumix.Output[[]GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItem]{
+		OutputState: i.ToGetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemOutput) ElementType() reflect.Type {
@@ -14993,6 +17382,12 @@ func (o GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemOutput) ToGetL
 
 func (o GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemOutput) ToGetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemOutputWithContext(ctx context.Context) GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemOutput {
 	return o
+}
+
+func (o GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItem] {
+	return pulumix.Output[GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A filter to return only resources that match the specified compartment OCID.
@@ -15073,6 +17468,12 @@ func (o GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemArrayOutput) T
 
 func (o GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemArrayOutput) ToGetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemArrayOutputWithContext(ctx context.Context) GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemArrayOutput {
 	return o
+}
+
+func (o GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItem] {
+	return pulumix.Output[[]GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemArrayOutput) Index(i pulumi.IntInput) GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemOutput {
@@ -15202,6 +17603,12 @@ func (i GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryArg
 	return pulumi.ToOutputWithContext(ctx, i).(GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryOutput)
 }
 
+func (i GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryArgs) ToOutput(ctx context.Context) pulumix.Output[GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntry] {
+	return pulumix.Output[GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntry]{
+		OutputState: i.ToGetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryArrayInput is an input type that accepts GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryArray and GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryArrayOutput values.
 // You can construct a concrete instance of `GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryArrayInput` via:
 //
@@ -15227,6 +17634,12 @@ func (i GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryArrayOutput)
 }
 
+func (i GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntry] {
+	return pulumix.Output[[]GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntry]{
+		OutputState: i.ToGetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryOutput struct{ *pulumi.OutputState }
 
 func (GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryOutput) ElementType() reflect.Type {
@@ -15239,6 +17652,12 @@ func (o GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryOut
 
 func (o GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryOutput) ToGetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryOutputWithContext(ctx context.Context) GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryOutput {
 	return o
+}
+
+func (o GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryOutput) ToOutput(ctx context.Context) pulumix.Output[GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntry] {
+	return pulumix.Output[GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntry]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the substitution column.
@@ -15408,6 +17827,12 @@ func (o GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryArr
 	return o
 }
 
+func (o GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntry] {
+	return pulumix.Output[[]GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntry]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryArrayOutput) Index(i pulumi.IntInput) GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntry {
 		return vs[0].([]GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntry)[vs[1].(int)]
@@ -15449,6 +17874,12 @@ func (i GetListUserGrantsFilterArgs) ToGetListUserGrantsFilterOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetListUserGrantsFilterOutput)
 }
 
+func (i GetListUserGrantsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetListUserGrantsFilter] {
+	return pulumix.Output[GetListUserGrantsFilter]{
+		OutputState: i.ToGetListUserGrantsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetListUserGrantsFilterArrayInput is an input type that accepts GetListUserGrantsFilterArray and GetListUserGrantsFilterArrayOutput values.
 // You can construct a concrete instance of `GetListUserGrantsFilterArrayInput` via:
 //
@@ -15474,6 +17905,12 @@ func (i GetListUserGrantsFilterArray) ToGetListUserGrantsFilterArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetListUserGrantsFilterArrayOutput)
 }
 
+func (i GetListUserGrantsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListUserGrantsFilter] {
+	return pulumix.Output[[]GetListUserGrantsFilter]{
+		OutputState: i.ToGetListUserGrantsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetListUserGrantsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetListUserGrantsFilterOutput) ElementType() reflect.Type {
@@ -15486,6 +17923,12 @@ func (o GetListUserGrantsFilterOutput) ToGetListUserGrantsFilterOutput() GetList
 
 func (o GetListUserGrantsFilterOutput) ToGetListUserGrantsFilterOutputWithContext(ctx context.Context) GetListUserGrantsFilterOutput {
 	return o
+}
+
+func (o GetListUserGrantsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetListUserGrantsFilter] {
+	return pulumix.Output[GetListUserGrantsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetListUserGrantsFilterOutput) Name() pulumi.StringOutput {
@@ -15512,6 +17955,12 @@ func (o GetListUserGrantsFilterArrayOutput) ToGetListUserGrantsFilterArrayOutput
 
 func (o GetListUserGrantsFilterArrayOutput) ToGetListUserGrantsFilterArrayOutputWithContext(ctx context.Context) GetListUserGrantsFilterArrayOutput {
 	return o
+}
+
+func (o GetListUserGrantsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListUserGrantsFilter] {
+	return pulumix.Output[[]GetListUserGrantsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetListUserGrantsFilterArrayOutput) Index(i pulumi.IntInput) GetListUserGrantsFilterOutput {
@@ -15569,6 +18018,12 @@ func (i GetListUserGrantsGrantArgs) ToGetListUserGrantsGrantOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetListUserGrantsGrantOutput)
 }
 
+func (i GetListUserGrantsGrantArgs) ToOutput(ctx context.Context) pulumix.Output[GetListUserGrantsGrant] {
+	return pulumix.Output[GetListUserGrantsGrant]{
+		OutputState: i.ToGetListUserGrantsGrantOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetListUserGrantsGrantArrayInput is an input type that accepts GetListUserGrantsGrantArray and GetListUserGrantsGrantArrayOutput values.
 // You can construct a concrete instance of `GetListUserGrantsGrantArrayInput` via:
 //
@@ -15594,6 +18049,12 @@ func (i GetListUserGrantsGrantArray) ToGetListUserGrantsGrantArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetListUserGrantsGrantArrayOutput)
 }
 
+func (i GetListUserGrantsGrantArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListUserGrantsGrant] {
+	return pulumix.Output[[]GetListUserGrantsGrant]{
+		OutputState: i.ToGetListUserGrantsGrantArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetListUserGrantsGrantOutput struct{ *pulumi.OutputState }
 
 func (GetListUserGrantsGrantOutput) ElementType() reflect.Type {
@@ -15606,6 +18067,12 @@ func (o GetListUserGrantsGrantOutput) ToGetListUserGrantsGrantOutput() GetListUs
 
 func (o GetListUserGrantsGrantOutput) ToGetListUserGrantsGrantOutputWithContext(ctx context.Context) GetListUserGrantsGrantOutput {
 	return o
+}
+
+func (o GetListUserGrantsGrantOutput) ToOutput(ctx context.Context) pulumix.Output[GetListUserGrantsGrant] {
+	return pulumix.Output[GetListUserGrantsGrant]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A filter to return only items that match the specified user grant depth level.
@@ -15645,6 +18112,12 @@ func (o GetListUserGrantsGrantArrayOutput) ToGetListUserGrantsGrantArrayOutput()
 
 func (o GetListUserGrantsGrantArrayOutput) ToGetListUserGrantsGrantArrayOutputWithContext(ctx context.Context) GetListUserGrantsGrantArrayOutput {
 	return o
+}
+
+func (o GetListUserGrantsGrantArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListUserGrantsGrant] {
+	return pulumix.Output[[]GetListUserGrantsGrant]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetListUserGrantsGrantArrayOutput) Index(i pulumi.IntInput) GetListUserGrantsGrantOutput {
@@ -15694,6 +18167,12 @@ func (i GetMaskingAnalyticItemArgs) ToGetMaskingAnalyticItemOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingAnalyticItemOutput)
 }
 
+func (i GetMaskingAnalyticItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetMaskingAnalyticItem] {
+	return pulumix.Output[GetMaskingAnalyticItem]{
+		OutputState: i.ToGetMaskingAnalyticItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMaskingAnalyticItemArrayInput is an input type that accepts GetMaskingAnalyticItemArray and GetMaskingAnalyticItemArrayOutput values.
 // You can construct a concrete instance of `GetMaskingAnalyticItemArrayInput` via:
 //
@@ -15719,6 +18198,12 @@ func (i GetMaskingAnalyticItemArray) ToGetMaskingAnalyticItemArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingAnalyticItemArrayOutput)
 }
 
+func (i GetMaskingAnalyticItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingAnalyticItem] {
+	return pulumix.Output[[]GetMaskingAnalyticItem]{
+		OutputState: i.ToGetMaskingAnalyticItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMaskingAnalyticItemOutput struct{ *pulumi.OutputState }
 
 func (GetMaskingAnalyticItemOutput) ElementType() reflect.Type {
@@ -15731,6 +18216,12 @@ func (o GetMaskingAnalyticItemOutput) ToGetMaskingAnalyticItemOutput() GetMaskin
 
 func (o GetMaskingAnalyticItemOutput) ToGetMaskingAnalyticItemOutputWithContext(ctx context.Context) GetMaskingAnalyticItemOutput {
 	return o
+}
+
+func (o GetMaskingAnalyticItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetMaskingAnalyticItem] {
+	return pulumix.Output[GetMaskingAnalyticItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The total count for the aggregation metric.
@@ -15760,6 +18251,12 @@ func (o GetMaskingAnalyticItemArrayOutput) ToGetMaskingAnalyticItemArrayOutput()
 
 func (o GetMaskingAnalyticItemArrayOutput) ToGetMaskingAnalyticItemArrayOutputWithContext(ctx context.Context) GetMaskingAnalyticItemArrayOutput {
 	return o
+}
+
+func (o GetMaskingAnalyticItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingAnalyticItem] {
+	return pulumix.Output[[]GetMaskingAnalyticItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMaskingAnalyticItemArrayOutput) Index(i pulumi.IntInput) GetMaskingAnalyticItemOutput {
@@ -15805,6 +18302,12 @@ func (i GetMaskingAnalyticItemDimensionArgs) ToGetMaskingAnalyticItemDimensionOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingAnalyticItemDimensionOutput)
 }
 
+func (i GetMaskingAnalyticItemDimensionArgs) ToOutput(ctx context.Context) pulumix.Output[GetMaskingAnalyticItemDimension] {
+	return pulumix.Output[GetMaskingAnalyticItemDimension]{
+		OutputState: i.ToGetMaskingAnalyticItemDimensionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMaskingAnalyticItemDimensionArrayInput is an input type that accepts GetMaskingAnalyticItemDimensionArray and GetMaskingAnalyticItemDimensionArrayOutput values.
 // You can construct a concrete instance of `GetMaskingAnalyticItemDimensionArrayInput` via:
 //
@@ -15830,6 +18333,12 @@ func (i GetMaskingAnalyticItemDimensionArray) ToGetMaskingAnalyticItemDimensionA
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingAnalyticItemDimensionArrayOutput)
 }
 
+func (i GetMaskingAnalyticItemDimensionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingAnalyticItemDimension] {
+	return pulumix.Output[[]GetMaskingAnalyticItemDimension]{
+		OutputState: i.ToGetMaskingAnalyticItemDimensionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMaskingAnalyticItemDimensionOutput struct{ *pulumi.OutputState }
 
 func (GetMaskingAnalyticItemDimensionOutput) ElementType() reflect.Type {
@@ -15842,6 +18351,12 @@ func (o GetMaskingAnalyticItemDimensionOutput) ToGetMaskingAnalyticItemDimension
 
 func (o GetMaskingAnalyticItemDimensionOutput) ToGetMaskingAnalyticItemDimensionOutputWithContext(ctx context.Context) GetMaskingAnalyticItemDimensionOutput {
 	return o
+}
+
+func (o GetMaskingAnalyticItemDimensionOutput) ToOutput(ctx context.Context) pulumix.Output[GetMaskingAnalyticItemDimension] {
+	return pulumix.Output[GetMaskingAnalyticItemDimension]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the masking policy..
@@ -15866,6 +18381,12 @@ func (o GetMaskingAnalyticItemDimensionArrayOutput) ToGetMaskingAnalyticItemDime
 
 func (o GetMaskingAnalyticItemDimensionArrayOutput) ToGetMaskingAnalyticItemDimensionArrayOutputWithContext(ctx context.Context) GetMaskingAnalyticItemDimensionArrayOutput {
 	return o
+}
+
+func (o GetMaskingAnalyticItemDimensionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingAnalyticItemDimension] {
+	return pulumix.Output[[]GetMaskingAnalyticItemDimension]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMaskingAnalyticItemDimensionArrayOutput) Index(i pulumi.IntInput) GetMaskingAnalyticItemDimensionOutput {
@@ -15909,6 +18430,12 @@ func (i GetMaskingAnalyticsFilterArgs) ToGetMaskingAnalyticsFilterOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingAnalyticsFilterOutput)
 }
 
+func (i GetMaskingAnalyticsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMaskingAnalyticsFilter] {
+	return pulumix.Output[GetMaskingAnalyticsFilter]{
+		OutputState: i.ToGetMaskingAnalyticsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMaskingAnalyticsFilterArrayInput is an input type that accepts GetMaskingAnalyticsFilterArray and GetMaskingAnalyticsFilterArrayOutput values.
 // You can construct a concrete instance of `GetMaskingAnalyticsFilterArrayInput` via:
 //
@@ -15934,6 +18461,12 @@ func (i GetMaskingAnalyticsFilterArray) ToGetMaskingAnalyticsFilterArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingAnalyticsFilterArrayOutput)
 }
 
+func (i GetMaskingAnalyticsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingAnalyticsFilter] {
+	return pulumix.Output[[]GetMaskingAnalyticsFilter]{
+		OutputState: i.ToGetMaskingAnalyticsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMaskingAnalyticsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetMaskingAnalyticsFilterOutput) ElementType() reflect.Type {
@@ -15946,6 +18479,12 @@ func (o GetMaskingAnalyticsFilterOutput) ToGetMaskingAnalyticsFilterOutput() Get
 
 func (o GetMaskingAnalyticsFilterOutput) ToGetMaskingAnalyticsFilterOutputWithContext(ctx context.Context) GetMaskingAnalyticsFilterOutput {
 	return o
+}
+
+func (o GetMaskingAnalyticsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMaskingAnalyticsFilter] {
+	return pulumix.Output[GetMaskingAnalyticsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMaskingAnalyticsFilterOutput) Name() pulumi.StringOutput {
@@ -15972,6 +18511,12 @@ func (o GetMaskingAnalyticsFilterArrayOutput) ToGetMaskingAnalyticsFilterArrayOu
 
 func (o GetMaskingAnalyticsFilterArrayOutput) ToGetMaskingAnalyticsFilterArrayOutputWithContext(ctx context.Context) GetMaskingAnalyticsFilterArrayOutput {
 	return o
+}
+
+func (o GetMaskingAnalyticsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingAnalyticsFilter] {
+	return pulumix.Output[[]GetMaskingAnalyticsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMaskingAnalyticsFilterArrayOutput) Index(i pulumi.IntInput) GetMaskingAnalyticsFilterOutput {
@@ -16013,6 +18558,12 @@ func (i GetMaskingAnalyticsMaskingAnalyticsCollectionArgs) ToGetMaskingAnalytics
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingAnalyticsMaskingAnalyticsCollectionOutput)
 }
 
+func (i GetMaskingAnalyticsMaskingAnalyticsCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetMaskingAnalyticsMaskingAnalyticsCollection] {
+	return pulumix.Output[GetMaskingAnalyticsMaskingAnalyticsCollection]{
+		OutputState: i.ToGetMaskingAnalyticsMaskingAnalyticsCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMaskingAnalyticsMaskingAnalyticsCollectionArrayInput is an input type that accepts GetMaskingAnalyticsMaskingAnalyticsCollectionArray and GetMaskingAnalyticsMaskingAnalyticsCollectionArrayOutput values.
 // You can construct a concrete instance of `GetMaskingAnalyticsMaskingAnalyticsCollectionArrayInput` via:
 //
@@ -16038,6 +18589,12 @@ func (i GetMaskingAnalyticsMaskingAnalyticsCollectionArray) ToGetMaskingAnalytic
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingAnalyticsMaskingAnalyticsCollectionArrayOutput)
 }
 
+func (i GetMaskingAnalyticsMaskingAnalyticsCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingAnalyticsMaskingAnalyticsCollection] {
+	return pulumix.Output[[]GetMaskingAnalyticsMaskingAnalyticsCollection]{
+		OutputState: i.ToGetMaskingAnalyticsMaskingAnalyticsCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMaskingAnalyticsMaskingAnalyticsCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetMaskingAnalyticsMaskingAnalyticsCollectionOutput) ElementType() reflect.Type {
@@ -16050,6 +18607,12 @@ func (o GetMaskingAnalyticsMaskingAnalyticsCollectionOutput) ToGetMaskingAnalyti
 
 func (o GetMaskingAnalyticsMaskingAnalyticsCollectionOutput) ToGetMaskingAnalyticsMaskingAnalyticsCollectionOutputWithContext(ctx context.Context) GetMaskingAnalyticsMaskingAnalyticsCollectionOutput {
 	return o
+}
+
+func (o GetMaskingAnalyticsMaskingAnalyticsCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetMaskingAnalyticsMaskingAnalyticsCollection] {
+	return pulumix.Output[GetMaskingAnalyticsMaskingAnalyticsCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 // An array of masking analytics summary objects.
@@ -16071,6 +18634,12 @@ func (o GetMaskingAnalyticsMaskingAnalyticsCollectionArrayOutput) ToGetMaskingAn
 
 func (o GetMaskingAnalyticsMaskingAnalyticsCollectionArrayOutput) ToGetMaskingAnalyticsMaskingAnalyticsCollectionArrayOutputWithContext(ctx context.Context) GetMaskingAnalyticsMaskingAnalyticsCollectionArrayOutput {
 	return o
+}
+
+func (o GetMaskingAnalyticsMaskingAnalyticsCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingAnalyticsMaskingAnalyticsCollection] {
+	return pulumix.Output[[]GetMaskingAnalyticsMaskingAnalyticsCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMaskingAnalyticsMaskingAnalyticsCollectionArrayOutput) Index(i pulumi.IntInput) GetMaskingAnalyticsMaskingAnalyticsCollectionOutput {
@@ -16120,6 +18689,12 @@ func (i GetMaskingAnalyticsMaskingAnalyticsCollectionItemArgs) ToGetMaskingAnaly
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingAnalyticsMaskingAnalyticsCollectionItemOutput)
 }
 
+func (i GetMaskingAnalyticsMaskingAnalyticsCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetMaskingAnalyticsMaskingAnalyticsCollectionItem] {
+	return pulumix.Output[GetMaskingAnalyticsMaskingAnalyticsCollectionItem]{
+		OutputState: i.ToGetMaskingAnalyticsMaskingAnalyticsCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMaskingAnalyticsMaskingAnalyticsCollectionItemArrayInput is an input type that accepts GetMaskingAnalyticsMaskingAnalyticsCollectionItemArray and GetMaskingAnalyticsMaskingAnalyticsCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetMaskingAnalyticsMaskingAnalyticsCollectionItemArrayInput` via:
 //
@@ -16145,6 +18720,12 @@ func (i GetMaskingAnalyticsMaskingAnalyticsCollectionItemArray) ToGetMaskingAnal
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingAnalyticsMaskingAnalyticsCollectionItemArrayOutput)
 }
 
+func (i GetMaskingAnalyticsMaskingAnalyticsCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingAnalyticsMaskingAnalyticsCollectionItem] {
+	return pulumix.Output[[]GetMaskingAnalyticsMaskingAnalyticsCollectionItem]{
+		OutputState: i.ToGetMaskingAnalyticsMaskingAnalyticsCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMaskingAnalyticsMaskingAnalyticsCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetMaskingAnalyticsMaskingAnalyticsCollectionItemOutput) ElementType() reflect.Type {
@@ -16157,6 +18738,12 @@ func (o GetMaskingAnalyticsMaskingAnalyticsCollectionItemOutput) ToGetMaskingAna
 
 func (o GetMaskingAnalyticsMaskingAnalyticsCollectionItemOutput) ToGetMaskingAnalyticsMaskingAnalyticsCollectionItemOutputWithContext(ctx context.Context) GetMaskingAnalyticsMaskingAnalyticsCollectionItemOutput {
 	return o
+}
+
+func (o GetMaskingAnalyticsMaskingAnalyticsCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetMaskingAnalyticsMaskingAnalyticsCollectionItem] {
+	return pulumix.Output[GetMaskingAnalyticsMaskingAnalyticsCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The total count for the aggregation metric.
@@ -16188,6 +18775,12 @@ func (o GetMaskingAnalyticsMaskingAnalyticsCollectionItemArrayOutput) ToGetMaski
 
 func (o GetMaskingAnalyticsMaskingAnalyticsCollectionItemArrayOutput) ToGetMaskingAnalyticsMaskingAnalyticsCollectionItemArrayOutputWithContext(ctx context.Context) GetMaskingAnalyticsMaskingAnalyticsCollectionItemArrayOutput {
 	return o
+}
+
+func (o GetMaskingAnalyticsMaskingAnalyticsCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingAnalyticsMaskingAnalyticsCollectionItem] {
+	return pulumix.Output[[]GetMaskingAnalyticsMaskingAnalyticsCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMaskingAnalyticsMaskingAnalyticsCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMaskingAnalyticsMaskingAnalyticsCollectionItemOutput {
@@ -16233,6 +18826,12 @@ func (i GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionArgs) ToGetMas
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionOutput)
 }
 
+func (i GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionArgs) ToOutput(ctx context.Context) pulumix.Output[GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension] {
+	return pulumix.Output[GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension]{
+		OutputState: i.ToGetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionArrayInput is an input type that accepts GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionArray and GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionArrayOutput values.
 // You can construct a concrete instance of `GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionArrayInput` via:
 //
@@ -16258,6 +18857,12 @@ func (i GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionArray) ToGetMa
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionArrayOutput)
 }
 
+func (i GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension] {
+	return pulumix.Output[[]GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension]{
+		OutputState: i.ToGetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionOutput struct{ *pulumi.OutputState }
 
 func (GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionOutput) ElementType() reflect.Type {
@@ -16270,6 +18875,12 @@ func (o GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionOutput) ToGetM
 
 func (o GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionOutput) ToGetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionOutputWithContext(ctx context.Context) GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionOutput {
 	return o
+}
+
+func (o GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionOutput) ToOutput(ctx context.Context) pulumix.Output[GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension] {
+	return pulumix.Output[GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the masking policy..
@@ -16294,6 +18905,12 @@ func (o GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionArrayOutput) T
 
 func (o GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionArrayOutput) ToGetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionArrayOutputWithContext(ctx context.Context) GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionArrayOutput {
 	return o
+}
+
+func (o GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension] {
+	return pulumix.Output[[]GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionArrayOutput) Index(i pulumi.IntInput) GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionOutput {
@@ -16337,6 +18954,12 @@ func (i GetMaskingPoliciesFilterArgs) ToGetMaskingPoliciesFilterOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPoliciesFilterOutput)
 }
 
+func (i GetMaskingPoliciesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMaskingPoliciesFilter] {
+	return pulumix.Output[GetMaskingPoliciesFilter]{
+		OutputState: i.ToGetMaskingPoliciesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMaskingPoliciesFilterArrayInput is an input type that accepts GetMaskingPoliciesFilterArray and GetMaskingPoliciesFilterArrayOutput values.
 // You can construct a concrete instance of `GetMaskingPoliciesFilterArrayInput` via:
 //
@@ -16362,6 +18985,12 @@ func (i GetMaskingPoliciesFilterArray) ToGetMaskingPoliciesFilterArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPoliciesFilterArrayOutput)
 }
 
+func (i GetMaskingPoliciesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingPoliciesFilter] {
+	return pulumix.Output[[]GetMaskingPoliciesFilter]{
+		OutputState: i.ToGetMaskingPoliciesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMaskingPoliciesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetMaskingPoliciesFilterOutput) ElementType() reflect.Type {
@@ -16374,6 +19003,12 @@ func (o GetMaskingPoliciesFilterOutput) ToGetMaskingPoliciesFilterOutput() GetMa
 
 func (o GetMaskingPoliciesFilterOutput) ToGetMaskingPoliciesFilterOutputWithContext(ctx context.Context) GetMaskingPoliciesFilterOutput {
 	return o
+}
+
+func (o GetMaskingPoliciesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMaskingPoliciesFilter] {
+	return pulumix.Output[GetMaskingPoliciesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMaskingPoliciesFilterOutput) Name() pulumi.StringOutput {
@@ -16400,6 +19035,12 @@ func (o GetMaskingPoliciesFilterArrayOutput) ToGetMaskingPoliciesFilterArrayOutp
 
 func (o GetMaskingPoliciesFilterArrayOutput) ToGetMaskingPoliciesFilterArrayOutputWithContext(ctx context.Context) GetMaskingPoliciesFilterArrayOutput {
 	return o
+}
+
+func (o GetMaskingPoliciesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingPoliciesFilter] {
+	return pulumix.Output[[]GetMaskingPoliciesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMaskingPoliciesFilterArrayOutput) Index(i pulumi.IntInput) GetMaskingPoliciesFilterOutput {
@@ -16449,6 +19090,12 @@ func (i GetMaskingPoliciesMaskingColumnMaskingFormatArgs) ToGetMaskingPoliciesMa
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPoliciesMaskingColumnMaskingFormatOutput)
 }
 
+func (i GetMaskingPoliciesMaskingColumnMaskingFormatArgs) ToOutput(ctx context.Context) pulumix.Output[GetMaskingPoliciesMaskingColumnMaskingFormat] {
+	return pulumix.Output[GetMaskingPoliciesMaskingColumnMaskingFormat]{
+		OutputState: i.ToGetMaskingPoliciesMaskingColumnMaskingFormatOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMaskingPoliciesMaskingColumnMaskingFormatArrayInput is an input type that accepts GetMaskingPoliciesMaskingColumnMaskingFormatArray and GetMaskingPoliciesMaskingColumnMaskingFormatArrayOutput values.
 // You can construct a concrete instance of `GetMaskingPoliciesMaskingColumnMaskingFormatArrayInput` via:
 //
@@ -16474,6 +19121,12 @@ func (i GetMaskingPoliciesMaskingColumnMaskingFormatArray) ToGetMaskingPoliciesM
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPoliciesMaskingColumnMaskingFormatArrayOutput)
 }
 
+func (i GetMaskingPoliciesMaskingColumnMaskingFormatArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingPoliciesMaskingColumnMaskingFormat] {
+	return pulumix.Output[[]GetMaskingPoliciesMaskingColumnMaskingFormat]{
+		OutputState: i.ToGetMaskingPoliciesMaskingColumnMaskingFormatArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMaskingPoliciesMaskingColumnMaskingFormatOutput struct{ *pulumi.OutputState }
 
 func (GetMaskingPoliciesMaskingColumnMaskingFormatOutput) ElementType() reflect.Type {
@@ -16486,6 +19139,12 @@ func (o GetMaskingPoliciesMaskingColumnMaskingFormatOutput) ToGetMaskingPolicies
 
 func (o GetMaskingPoliciesMaskingColumnMaskingFormatOutput) ToGetMaskingPoliciesMaskingColumnMaskingFormatOutputWithContext(ctx context.Context) GetMaskingPoliciesMaskingColumnMaskingFormatOutput {
 	return o
+}
+
+func (o GetMaskingPoliciesMaskingColumnMaskingFormatOutput) ToOutput(ctx context.Context) pulumix.Output[GetMaskingPoliciesMaskingColumnMaskingFormat] {
+	return pulumix.Output[GetMaskingPoliciesMaskingColumnMaskingFormat]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A condition that must be true for applying the masking format. It can be any valid  SQL construct that can be used in a SQL predicate. It enables you to do  <a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional masking</a>  so that you can mask the column data values differently using different masking  formats and the associated conditions.
@@ -16517,6 +19176,12 @@ func (o GetMaskingPoliciesMaskingColumnMaskingFormatArrayOutput) ToGetMaskingPol
 
 func (o GetMaskingPoliciesMaskingColumnMaskingFormatArrayOutput) ToGetMaskingPoliciesMaskingColumnMaskingFormatArrayOutputWithContext(ctx context.Context) GetMaskingPoliciesMaskingColumnMaskingFormatArrayOutput {
 	return o
+}
+
+func (o GetMaskingPoliciesMaskingColumnMaskingFormatArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingPoliciesMaskingColumnMaskingFormat] {
+	return pulumix.Output[[]GetMaskingPoliciesMaskingColumnMaskingFormat]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMaskingPoliciesMaskingColumnMaskingFormatArrayOutput) Index(i pulumi.IntInput) GetMaskingPoliciesMaskingColumnMaskingFormatOutput {
@@ -16646,6 +19311,12 @@ func (i GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs) ToGetMaskin
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryOutput)
 }
 
+func (i GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs) ToOutput(ctx context.Context) pulumix.Output[GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntry] {
+	return pulumix.Output[GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntry]{
+		OutputState: i.ToGetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryArrayInput is an input type that accepts GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryArray and GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryArrayOutput values.
 // You can construct a concrete instance of `GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryArrayInput` via:
 //
@@ -16671,6 +19342,12 @@ func (i GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryArray) ToGetMaski
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryArrayOutput)
 }
 
+func (i GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntry] {
+	return pulumix.Output[[]GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntry]{
+		OutputState: i.ToGetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryOutput struct{ *pulumi.OutputState }
 
 func (GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryOutput) ElementType() reflect.Type {
@@ -16683,6 +19360,12 @@ func (o GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryOutput) ToGetMask
 
 func (o GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryOutput) ToGetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryOutputWithContext(ctx context.Context) GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryOutput {
 	return o
+}
+
+func (o GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryOutput) ToOutput(ctx context.Context) pulumix.Output[GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntry] {
+	return pulumix.Output[GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntry]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the substitution column.
@@ -16818,6 +19501,12 @@ func (o GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryArrayOutput) ToGe
 	return o
 }
 
+func (o GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntry] {
+	return pulumix.Output[[]GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntry]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryArrayOutput) Index(i pulumi.IntInput) GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntry {
 		return vs[0].([]GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntry)[vs[1].(int)]
@@ -16859,6 +19548,12 @@ func (i GetMaskingPoliciesMaskingColumnsFilterArgs) ToGetMaskingPoliciesMaskingC
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPoliciesMaskingColumnsFilterOutput)
 }
 
+func (i GetMaskingPoliciesMaskingColumnsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMaskingPoliciesMaskingColumnsFilter] {
+	return pulumix.Output[GetMaskingPoliciesMaskingColumnsFilter]{
+		OutputState: i.ToGetMaskingPoliciesMaskingColumnsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMaskingPoliciesMaskingColumnsFilterArrayInput is an input type that accepts GetMaskingPoliciesMaskingColumnsFilterArray and GetMaskingPoliciesMaskingColumnsFilterArrayOutput values.
 // You can construct a concrete instance of `GetMaskingPoliciesMaskingColumnsFilterArrayInput` via:
 //
@@ -16884,6 +19579,12 @@ func (i GetMaskingPoliciesMaskingColumnsFilterArray) ToGetMaskingPoliciesMasking
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPoliciesMaskingColumnsFilterArrayOutput)
 }
 
+func (i GetMaskingPoliciesMaskingColumnsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingPoliciesMaskingColumnsFilter] {
+	return pulumix.Output[[]GetMaskingPoliciesMaskingColumnsFilter]{
+		OutputState: i.ToGetMaskingPoliciesMaskingColumnsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMaskingPoliciesMaskingColumnsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetMaskingPoliciesMaskingColumnsFilterOutput) ElementType() reflect.Type {
@@ -16896,6 +19597,12 @@ func (o GetMaskingPoliciesMaskingColumnsFilterOutput) ToGetMaskingPoliciesMaskin
 
 func (o GetMaskingPoliciesMaskingColumnsFilterOutput) ToGetMaskingPoliciesMaskingColumnsFilterOutputWithContext(ctx context.Context) GetMaskingPoliciesMaskingColumnsFilterOutput {
 	return o
+}
+
+func (o GetMaskingPoliciesMaskingColumnsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMaskingPoliciesMaskingColumnsFilter] {
+	return pulumix.Output[GetMaskingPoliciesMaskingColumnsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMaskingPoliciesMaskingColumnsFilterOutput) Name() pulumi.StringOutput {
@@ -16922,6 +19629,12 @@ func (o GetMaskingPoliciesMaskingColumnsFilterArrayOutput) ToGetMaskingPoliciesM
 
 func (o GetMaskingPoliciesMaskingColumnsFilterArrayOutput) ToGetMaskingPoliciesMaskingColumnsFilterArrayOutputWithContext(ctx context.Context) GetMaskingPoliciesMaskingColumnsFilterArrayOutput {
 	return o
+}
+
+func (o GetMaskingPoliciesMaskingColumnsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingPoliciesMaskingColumnsFilter] {
+	return pulumix.Output[[]GetMaskingPoliciesMaskingColumnsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMaskingPoliciesMaskingColumnsFilterArrayOutput) Index(i pulumi.IntInput) GetMaskingPoliciesMaskingColumnsFilterOutput {
@@ -16961,6 +19674,12 @@ func (i GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionArgs) ToGetMaskin
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionOutput)
 }
 
+func (i GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetMaskingPoliciesMaskingColumnsMaskingColumnCollection] {
+	return pulumix.Output[GetMaskingPoliciesMaskingColumnsMaskingColumnCollection]{
+		OutputState: i.ToGetMaskingPoliciesMaskingColumnsMaskingColumnCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionArrayInput is an input type that accepts GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionArray and GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionArrayOutput values.
 // You can construct a concrete instance of `GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionArrayInput` via:
 //
@@ -16986,6 +19705,12 @@ func (i GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionArray) ToGetMaski
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionArrayOutput)
 }
 
+func (i GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingPoliciesMaskingColumnsMaskingColumnCollection] {
+	return pulumix.Output[[]GetMaskingPoliciesMaskingColumnsMaskingColumnCollection]{
+		OutputState: i.ToGetMaskingPoliciesMaskingColumnsMaskingColumnCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionOutput) ElementType() reflect.Type {
@@ -16998,6 +19723,12 @@ func (o GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionOutput) ToGetMask
 
 func (o GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionOutput) ToGetMaskingPoliciesMaskingColumnsMaskingColumnCollectionOutputWithContext(ctx context.Context) GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionOutput {
 	return o
+}
+
+func (o GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetMaskingPoliciesMaskingColumnsMaskingColumnCollection] {
+	return pulumix.Output[GetMaskingPoliciesMaskingColumnsMaskingColumnCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionOutput) Items() GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemArrayOutput {
@@ -17018,6 +19749,12 @@ func (o GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionArrayOutput) ToGe
 
 func (o GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionArrayOutput) ToGetMaskingPoliciesMaskingColumnsMaskingColumnCollectionArrayOutputWithContext(ctx context.Context) GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionArrayOutput {
 	return o
+}
+
+func (o GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingPoliciesMaskingColumnsMaskingColumnCollection] {
+	return pulumix.Output[[]GetMaskingPoliciesMaskingColumnsMaskingColumnCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionArrayOutput) Index(i pulumi.IntInput) GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionOutput {
@@ -17119,6 +19856,12 @@ func (i GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemArgs) ToGetMa
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemOutput)
 }
 
+func (i GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItem] {
+	return pulumix.Output[GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItem]{
+		OutputState: i.ToGetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemArrayInput is an input type that accepts GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemArray and GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemArrayInput` via:
 //
@@ -17144,6 +19887,12 @@ func (i GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemArray) ToGetM
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemArrayOutput)
 }
 
+func (i GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItem] {
+	return pulumix.Output[[]GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItem]{
+		OutputState: i.ToGetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemOutput) ElementType() reflect.Type {
@@ -17156,6 +19905,12 @@ func (o GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemOutput) ToGet
 
 func (o GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemOutput) ToGetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemOutputWithContext(ctx context.Context) GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemOutput {
 	return o
+}
+
+func (o GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItem] {
+	return pulumix.Output[GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // An array of child columns that are in referential relationship with the masking column.
@@ -17256,6 +20011,12 @@ func (o GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemArrayOutput) 
 	return o
 }
 
+func (o GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItem] {
+	return pulumix.Output[[]GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItem {
 		return vs[0].([]GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItem)[vs[1].(int)]
@@ -17303,6 +20064,12 @@ func (i GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormat
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatOutput)
 }
 
+func (i GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatArgs) ToOutput(ctx context.Context) pulumix.Output[GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormat] {
+	return pulumix.Output[GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormat]{
+		OutputState: i.ToGetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatArrayInput is an input type that accepts GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatArray and GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatArrayOutput values.
 // You can construct a concrete instance of `GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatArrayInput` via:
 //
@@ -17328,6 +20095,12 @@ func (i GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormat
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatArrayOutput)
 }
 
+func (i GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormat] {
+	return pulumix.Output[[]GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormat]{
+		OutputState: i.ToGetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatOutput struct{ *pulumi.OutputState }
 
 func (GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatOutput) ElementType() reflect.Type {
@@ -17340,6 +20113,12 @@ func (o GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormat
 
 func (o GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatOutput) ToGetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatOutputWithContext(ctx context.Context) GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatOutput {
 	return o
+}
+
+func (o GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatOutput) ToOutput(ctx context.Context) pulumix.Output[GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormat] {
+	return pulumix.Output[GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormat]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A condition that must be true for applying the masking format. It can be any valid  SQL construct that can be used in a SQL predicate. It enables you to do  <a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional masking</a>  so that you can mask the column data values differently using different masking  formats and the associated conditions.
@@ -17375,6 +20154,12 @@ func (o GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormat
 
 func (o GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatArrayOutput) ToGetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatArrayOutputWithContext(ctx context.Context) GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatArrayOutput {
 	return o
+}
+
+func (o GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormat] {
+	return pulumix.Output[[]GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormat]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatArrayOutput) Index(i pulumi.IntInput) GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatOutput {
@@ -17504,6 +20289,12 @@ func (i GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormat
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntryOutput)
 }
 
+func (i GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntryArgs) ToOutput(ctx context.Context) pulumix.Output[GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntry] {
+	return pulumix.Output[GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntry]{
+		OutputState: i.ToGetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntryOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntryArrayInput is an input type that accepts GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntryArray and GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntryArrayOutput values.
 // You can construct a concrete instance of `GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntryArrayInput` via:
 //
@@ -17529,6 +20320,12 @@ func (i GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormat
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntryArrayOutput)
 }
 
+func (i GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntry] {
+	return pulumix.Output[[]GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntry]{
+		OutputState: i.ToGetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntryArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntryOutput struct{ *pulumi.OutputState }
 
 func (GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntryOutput) ElementType() reflect.Type {
@@ -17541,6 +20338,12 @@ func (o GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormat
 
 func (o GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntryOutput) ToGetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntryOutputWithContext(ctx context.Context) GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntryOutput {
 	return o
+}
+
+func (o GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntryOutput) ToOutput(ctx context.Context) pulumix.Output[GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntry] {
+	return pulumix.Output[GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntry]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A filter to return only a specific column based on column name.
@@ -17718,6 +20521,12 @@ func (o GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormat
 	return o
 }
 
+func (o GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntry] {
+	return pulumix.Output[[]GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntry]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntryArrayOutput) Index(i pulumi.IntInput) GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntryOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntry {
 		return vs[0].([]GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntry)[vs[1].(int)]
@@ -17755,6 +20564,12 @@ func (i GetMaskingPoliciesMaskingPolicyCollectionArgs) ToGetMaskingPoliciesMaski
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPoliciesMaskingPolicyCollectionOutput)
 }
 
+func (i GetMaskingPoliciesMaskingPolicyCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetMaskingPoliciesMaskingPolicyCollection] {
+	return pulumix.Output[GetMaskingPoliciesMaskingPolicyCollection]{
+		OutputState: i.ToGetMaskingPoliciesMaskingPolicyCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMaskingPoliciesMaskingPolicyCollectionArrayInput is an input type that accepts GetMaskingPoliciesMaskingPolicyCollectionArray and GetMaskingPoliciesMaskingPolicyCollectionArrayOutput values.
 // You can construct a concrete instance of `GetMaskingPoliciesMaskingPolicyCollectionArrayInput` via:
 //
@@ -17780,6 +20595,12 @@ func (i GetMaskingPoliciesMaskingPolicyCollectionArray) ToGetMaskingPoliciesMask
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPoliciesMaskingPolicyCollectionArrayOutput)
 }
 
+func (i GetMaskingPoliciesMaskingPolicyCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingPoliciesMaskingPolicyCollection] {
+	return pulumix.Output[[]GetMaskingPoliciesMaskingPolicyCollection]{
+		OutputState: i.ToGetMaskingPoliciesMaskingPolicyCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMaskingPoliciesMaskingPolicyCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetMaskingPoliciesMaskingPolicyCollectionOutput) ElementType() reflect.Type {
@@ -17792,6 +20613,12 @@ func (o GetMaskingPoliciesMaskingPolicyCollectionOutput) ToGetMaskingPoliciesMas
 
 func (o GetMaskingPoliciesMaskingPolicyCollectionOutput) ToGetMaskingPoliciesMaskingPolicyCollectionOutputWithContext(ctx context.Context) GetMaskingPoliciesMaskingPolicyCollectionOutput {
 	return o
+}
+
+func (o GetMaskingPoliciesMaskingPolicyCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetMaskingPoliciesMaskingPolicyCollection] {
+	return pulumix.Output[GetMaskingPoliciesMaskingPolicyCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMaskingPoliciesMaskingPolicyCollectionOutput) Items() GetMaskingPoliciesMaskingPolicyCollectionItemArrayOutput {
@@ -17812,6 +20639,12 @@ func (o GetMaskingPoliciesMaskingPolicyCollectionArrayOutput) ToGetMaskingPolici
 
 func (o GetMaskingPoliciesMaskingPolicyCollectionArrayOutput) ToGetMaskingPoliciesMaskingPolicyCollectionArrayOutputWithContext(ctx context.Context) GetMaskingPoliciesMaskingPolicyCollectionArrayOutput {
 	return o
+}
+
+func (o GetMaskingPoliciesMaskingPolicyCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingPoliciesMaskingPolicyCollection] {
+	return pulumix.Output[[]GetMaskingPoliciesMaskingPolicyCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMaskingPoliciesMaskingPolicyCollectionArrayOutput) Index(i pulumi.IntInput) GetMaskingPoliciesMaskingPolicyCollectionOutput {
@@ -17919,6 +20752,12 @@ func (i GetMaskingPoliciesMaskingPolicyCollectionItemArgs) ToGetMaskingPoliciesM
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPoliciesMaskingPolicyCollectionItemOutput)
 }
 
+func (i GetMaskingPoliciesMaskingPolicyCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetMaskingPoliciesMaskingPolicyCollectionItem] {
+	return pulumix.Output[GetMaskingPoliciesMaskingPolicyCollectionItem]{
+		OutputState: i.ToGetMaskingPoliciesMaskingPolicyCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMaskingPoliciesMaskingPolicyCollectionItemArrayInput is an input type that accepts GetMaskingPoliciesMaskingPolicyCollectionItemArray and GetMaskingPoliciesMaskingPolicyCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetMaskingPoliciesMaskingPolicyCollectionItemArrayInput` via:
 //
@@ -17944,6 +20783,12 @@ func (i GetMaskingPoliciesMaskingPolicyCollectionItemArray) ToGetMaskingPolicies
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPoliciesMaskingPolicyCollectionItemArrayOutput)
 }
 
+func (i GetMaskingPoliciesMaskingPolicyCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingPoliciesMaskingPolicyCollectionItem] {
+	return pulumix.Output[[]GetMaskingPoliciesMaskingPolicyCollectionItem]{
+		OutputState: i.ToGetMaskingPoliciesMaskingPolicyCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMaskingPoliciesMaskingPolicyCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetMaskingPoliciesMaskingPolicyCollectionItemOutput) ElementType() reflect.Type {
@@ -17956,6 +20801,12 @@ func (o GetMaskingPoliciesMaskingPolicyCollectionItemOutput) ToGetMaskingPolicie
 
 func (o GetMaskingPoliciesMaskingPolicyCollectionItemOutput) ToGetMaskingPoliciesMaskingPolicyCollectionItemOutputWithContext(ctx context.Context) GetMaskingPoliciesMaskingPolicyCollectionItemOutput {
 	return o
+}
+
+func (o GetMaskingPoliciesMaskingPolicyCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetMaskingPoliciesMaskingPolicyCollectionItem] {
+	return pulumix.Output[GetMaskingPoliciesMaskingPolicyCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMaskingPoliciesMaskingPolicyCollectionItemOutput) AddMaskingColumnsFromSdmTrigger() pulumi.IntOutput {
@@ -18063,6 +20914,12 @@ func (o GetMaskingPoliciesMaskingPolicyCollectionItemArrayOutput) ToGetMaskingPo
 	return o
 }
 
+func (o GetMaskingPoliciesMaskingPolicyCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingPoliciesMaskingPolicyCollectionItem] {
+	return pulumix.Output[[]GetMaskingPoliciesMaskingPolicyCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetMaskingPoliciesMaskingPolicyCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMaskingPoliciesMaskingPolicyCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMaskingPoliciesMaskingPolicyCollectionItem {
 		return vs[0].([]GetMaskingPoliciesMaskingPolicyCollectionItem)[vs[1].(int)]
@@ -18110,6 +20967,12 @@ func (i GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceArgs) ToGetMask
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceOutput)
 }
 
+func (i GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetMaskingPoliciesMaskingPolicyCollectionItemColumnSource] {
+	return pulumix.Output[GetMaskingPoliciesMaskingPolicyCollectionItemColumnSource]{
+		OutputState: i.ToGetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceArrayInput is an input type that accepts GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceArray and GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceArrayOutput values.
 // You can construct a concrete instance of `GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceArrayInput` via:
 //
@@ -18135,6 +20998,12 @@ func (i GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceArray) ToGetMas
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceArrayOutput)
 }
 
+func (i GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingPoliciesMaskingPolicyCollectionItemColumnSource] {
+	return pulumix.Output[[]GetMaskingPoliciesMaskingPolicyCollectionItemColumnSource]{
+		OutputState: i.ToGetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceOutput struct{ *pulumi.OutputState }
 
 func (GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceOutput) ElementType() reflect.Type {
@@ -18147,6 +21016,12 @@ func (o GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceOutput) ToGetMa
 
 func (o GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceOutput) ToGetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceOutputWithContext(ctx context.Context) GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceOutput {
 	return o
+}
+
+func (o GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetMaskingPoliciesMaskingPolicyCollectionItemColumnSource] {
+	return pulumix.Output[GetMaskingPoliciesMaskingPolicyCollectionItemColumnSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The source of masking columns.
@@ -18178,6 +21053,12 @@ func (o GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceArrayOutput) To
 
 func (o GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceArrayOutput) ToGetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceArrayOutputWithContext(ctx context.Context) GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceArrayOutput {
 	return o
+}
+
+func (o GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingPoliciesMaskingPolicyCollectionItemColumnSource] {
+	return pulumix.Output[[]GetMaskingPoliciesMaskingPolicyCollectionItemColumnSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceArrayOutput) Index(i pulumi.IntInput) GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceOutput {
@@ -18227,6 +21108,12 @@ func (i GetMaskingPolicyColumnSourceArgs) ToGetMaskingPolicyColumnSourceOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPolicyColumnSourceOutput)
 }
 
+func (i GetMaskingPolicyColumnSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetMaskingPolicyColumnSource] {
+	return pulumix.Output[GetMaskingPolicyColumnSource]{
+		OutputState: i.ToGetMaskingPolicyColumnSourceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMaskingPolicyColumnSourceArrayInput is an input type that accepts GetMaskingPolicyColumnSourceArray and GetMaskingPolicyColumnSourceArrayOutput values.
 // You can construct a concrete instance of `GetMaskingPolicyColumnSourceArrayInput` via:
 //
@@ -18252,6 +21139,12 @@ func (i GetMaskingPolicyColumnSourceArray) ToGetMaskingPolicyColumnSourceArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPolicyColumnSourceArrayOutput)
 }
 
+func (i GetMaskingPolicyColumnSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingPolicyColumnSource] {
+	return pulumix.Output[[]GetMaskingPolicyColumnSource]{
+		OutputState: i.ToGetMaskingPolicyColumnSourceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMaskingPolicyColumnSourceOutput struct{ *pulumi.OutputState }
 
 func (GetMaskingPolicyColumnSourceOutput) ElementType() reflect.Type {
@@ -18264,6 +21157,12 @@ func (o GetMaskingPolicyColumnSourceOutput) ToGetMaskingPolicyColumnSourceOutput
 
 func (o GetMaskingPolicyColumnSourceOutput) ToGetMaskingPolicyColumnSourceOutputWithContext(ctx context.Context) GetMaskingPolicyColumnSourceOutput {
 	return o
+}
+
+func (o GetMaskingPolicyColumnSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetMaskingPolicyColumnSource] {
+	return pulumix.Output[GetMaskingPolicyColumnSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The source of masking columns.
@@ -18293,6 +21192,12 @@ func (o GetMaskingPolicyColumnSourceArrayOutput) ToGetMaskingPolicyColumnSourceA
 
 func (o GetMaskingPolicyColumnSourceArrayOutput) ToGetMaskingPolicyColumnSourceArrayOutputWithContext(ctx context.Context) GetMaskingPolicyColumnSourceArrayOutput {
 	return o
+}
+
+func (o GetMaskingPolicyColumnSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingPolicyColumnSource] {
+	return pulumix.Output[[]GetMaskingPolicyColumnSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMaskingPolicyColumnSourceArrayOutput) Index(i pulumi.IntInput) GetMaskingPolicyColumnSourceOutput {
@@ -18336,6 +21241,12 @@ func (i GetMaskingPolicyMaskingObjectsFilterArgs) ToGetMaskingPolicyMaskingObjec
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPolicyMaskingObjectsFilterOutput)
 }
 
+func (i GetMaskingPolicyMaskingObjectsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMaskingPolicyMaskingObjectsFilter] {
+	return pulumix.Output[GetMaskingPolicyMaskingObjectsFilter]{
+		OutputState: i.ToGetMaskingPolicyMaskingObjectsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMaskingPolicyMaskingObjectsFilterArrayInput is an input type that accepts GetMaskingPolicyMaskingObjectsFilterArray and GetMaskingPolicyMaskingObjectsFilterArrayOutput values.
 // You can construct a concrete instance of `GetMaskingPolicyMaskingObjectsFilterArrayInput` via:
 //
@@ -18361,6 +21272,12 @@ func (i GetMaskingPolicyMaskingObjectsFilterArray) ToGetMaskingPolicyMaskingObje
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPolicyMaskingObjectsFilterArrayOutput)
 }
 
+func (i GetMaskingPolicyMaskingObjectsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingPolicyMaskingObjectsFilter] {
+	return pulumix.Output[[]GetMaskingPolicyMaskingObjectsFilter]{
+		OutputState: i.ToGetMaskingPolicyMaskingObjectsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMaskingPolicyMaskingObjectsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetMaskingPolicyMaskingObjectsFilterOutput) ElementType() reflect.Type {
@@ -18373,6 +21290,12 @@ func (o GetMaskingPolicyMaskingObjectsFilterOutput) ToGetMaskingPolicyMaskingObj
 
 func (o GetMaskingPolicyMaskingObjectsFilterOutput) ToGetMaskingPolicyMaskingObjectsFilterOutputWithContext(ctx context.Context) GetMaskingPolicyMaskingObjectsFilterOutput {
 	return o
+}
+
+func (o GetMaskingPolicyMaskingObjectsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMaskingPolicyMaskingObjectsFilter] {
+	return pulumix.Output[GetMaskingPolicyMaskingObjectsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMaskingPolicyMaskingObjectsFilterOutput) Name() pulumi.StringOutput {
@@ -18399,6 +21322,12 @@ func (o GetMaskingPolicyMaskingObjectsFilterArrayOutput) ToGetMaskingPolicyMaski
 
 func (o GetMaskingPolicyMaskingObjectsFilterArrayOutput) ToGetMaskingPolicyMaskingObjectsFilterArrayOutputWithContext(ctx context.Context) GetMaskingPolicyMaskingObjectsFilterArrayOutput {
 	return o
+}
+
+func (o GetMaskingPolicyMaskingObjectsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingPolicyMaskingObjectsFilter] {
+	return pulumix.Output[[]GetMaskingPolicyMaskingObjectsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMaskingPolicyMaskingObjectsFilterArrayOutput) Index(i pulumi.IntInput) GetMaskingPolicyMaskingObjectsFilterOutput {
@@ -18440,6 +21369,12 @@ func (i GetMaskingPolicyMaskingObjectsMaskingObjectCollectionArgs) ToGetMaskingP
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPolicyMaskingObjectsMaskingObjectCollectionOutput)
 }
 
+func (i GetMaskingPolicyMaskingObjectsMaskingObjectCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetMaskingPolicyMaskingObjectsMaskingObjectCollection] {
+	return pulumix.Output[GetMaskingPolicyMaskingObjectsMaskingObjectCollection]{
+		OutputState: i.ToGetMaskingPolicyMaskingObjectsMaskingObjectCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMaskingPolicyMaskingObjectsMaskingObjectCollectionArrayInput is an input type that accepts GetMaskingPolicyMaskingObjectsMaskingObjectCollectionArray and GetMaskingPolicyMaskingObjectsMaskingObjectCollectionArrayOutput values.
 // You can construct a concrete instance of `GetMaskingPolicyMaskingObjectsMaskingObjectCollectionArrayInput` via:
 //
@@ -18465,6 +21400,12 @@ func (i GetMaskingPolicyMaskingObjectsMaskingObjectCollectionArray) ToGetMasking
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPolicyMaskingObjectsMaskingObjectCollectionArrayOutput)
 }
 
+func (i GetMaskingPolicyMaskingObjectsMaskingObjectCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingPolicyMaskingObjectsMaskingObjectCollection] {
+	return pulumix.Output[[]GetMaskingPolicyMaskingObjectsMaskingObjectCollection]{
+		OutputState: i.ToGetMaskingPolicyMaskingObjectsMaskingObjectCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMaskingPolicyMaskingObjectsMaskingObjectCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetMaskingPolicyMaskingObjectsMaskingObjectCollectionOutput) ElementType() reflect.Type {
@@ -18477,6 +21418,12 @@ func (o GetMaskingPolicyMaskingObjectsMaskingObjectCollectionOutput) ToGetMaskin
 
 func (o GetMaskingPolicyMaskingObjectsMaskingObjectCollectionOutput) ToGetMaskingPolicyMaskingObjectsMaskingObjectCollectionOutputWithContext(ctx context.Context) GetMaskingPolicyMaskingObjectsMaskingObjectCollectionOutput {
 	return o
+}
+
+func (o GetMaskingPolicyMaskingObjectsMaskingObjectCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetMaskingPolicyMaskingObjectsMaskingObjectCollection] {
+	return pulumix.Output[GetMaskingPolicyMaskingObjectsMaskingObjectCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 // An array of masking object summary objects.
@@ -18498,6 +21445,12 @@ func (o GetMaskingPolicyMaskingObjectsMaskingObjectCollectionArrayOutput) ToGetM
 
 func (o GetMaskingPolicyMaskingObjectsMaskingObjectCollectionArrayOutput) ToGetMaskingPolicyMaskingObjectsMaskingObjectCollectionArrayOutputWithContext(ctx context.Context) GetMaskingPolicyMaskingObjectsMaskingObjectCollectionArrayOutput {
 	return o
+}
+
+func (o GetMaskingPolicyMaskingObjectsMaskingObjectCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingPolicyMaskingObjectsMaskingObjectCollection] {
+	return pulumix.Output[[]GetMaskingPolicyMaskingObjectsMaskingObjectCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMaskingPolicyMaskingObjectsMaskingObjectCollectionArrayOutput) Index(i pulumi.IntInput) GetMaskingPolicyMaskingObjectsMaskingObjectCollectionOutput {
@@ -18547,6 +21500,12 @@ func (i GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArgs) ToGetMask
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemOutput)
 }
 
+func (i GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItem] {
+	return pulumix.Output[GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItem]{
+		OutputState: i.ToGetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArrayInput is an input type that accepts GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArray and GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArrayInput` via:
 //
@@ -18572,6 +21531,12 @@ func (i GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArray) ToGetMas
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArrayOutput)
 }
 
+func (i GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItem] {
+	return pulumix.Output[[]GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItem]{
+		OutputState: i.ToGetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemOutput) ElementType() reflect.Type {
@@ -18584,6 +21549,12 @@ func (o GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemOutput) ToGetMa
 
 func (o GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemOutput) ToGetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemOutputWithContext(ctx context.Context) GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemOutput {
 	return o
+}
+
+func (o GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItem] {
+	return pulumix.Output[GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A filter to return only items related to a specific object name.
@@ -18613,6 +21584,12 @@ func (o GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArrayOutput) To
 
 func (o GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArrayOutput) ToGetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArrayOutputWithContext(ctx context.Context) GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArrayOutput {
 	return o
+}
+
+func (o GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItem] {
+	return pulumix.Output[[]GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemOutput {
@@ -18656,6 +21633,12 @@ func (i GetMaskingPolicyMaskingSchemasFilterArgs) ToGetMaskingPolicyMaskingSchem
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPolicyMaskingSchemasFilterOutput)
 }
 
+func (i GetMaskingPolicyMaskingSchemasFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMaskingPolicyMaskingSchemasFilter] {
+	return pulumix.Output[GetMaskingPolicyMaskingSchemasFilter]{
+		OutputState: i.ToGetMaskingPolicyMaskingSchemasFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMaskingPolicyMaskingSchemasFilterArrayInput is an input type that accepts GetMaskingPolicyMaskingSchemasFilterArray and GetMaskingPolicyMaskingSchemasFilterArrayOutput values.
 // You can construct a concrete instance of `GetMaskingPolicyMaskingSchemasFilterArrayInput` via:
 //
@@ -18681,6 +21664,12 @@ func (i GetMaskingPolicyMaskingSchemasFilterArray) ToGetMaskingPolicyMaskingSche
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPolicyMaskingSchemasFilterArrayOutput)
 }
 
+func (i GetMaskingPolicyMaskingSchemasFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingPolicyMaskingSchemasFilter] {
+	return pulumix.Output[[]GetMaskingPolicyMaskingSchemasFilter]{
+		OutputState: i.ToGetMaskingPolicyMaskingSchemasFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMaskingPolicyMaskingSchemasFilterOutput struct{ *pulumi.OutputState }
 
 func (GetMaskingPolicyMaskingSchemasFilterOutput) ElementType() reflect.Type {
@@ -18693,6 +21682,12 @@ func (o GetMaskingPolicyMaskingSchemasFilterOutput) ToGetMaskingPolicyMaskingSch
 
 func (o GetMaskingPolicyMaskingSchemasFilterOutput) ToGetMaskingPolicyMaskingSchemasFilterOutputWithContext(ctx context.Context) GetMaskingPolicyMaskingSchemasFilterOutput {
 	return o
+}
+
+func (o GetMaskingPolicyMaskingSchemasFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMaskingPolicyMaskingSchemasFilter] {
+	return pulumix.Output[GetMaskingPolicyMaskingSchemasFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMaskingPolicyMaskingSchemasFilterOutput) Name() pulumi.StringOutput {
@@ -18719,6 +21714,12 @@ func (o GetMaskingPolicyMaskingSchemasFilterArrayOutput) ToGetMaskingPolicyMaski
 
 func (o GetMaskingPolicyMaskingSchemasFilterArrayOutput) ToGetMaskingPolicyMaskingSchemasFilterArrayOutputWithContext(ctx context.Context) GetMaskingPolicyMaskingSchemasFilterArrayOutput {
 	return o
+}
+
+func (o GetMaskingPolicyMaskingSchemasFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingPolicyMaskingSchemasFilter] {
+	return pulumix.Output[[]GetMaskingPolicyMaskingSchemasFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMaskingPolicyMaskingSchemasFilterArrayOutput) Index(i pulumi.IntInput) GetMaskingPolicyMaskingSchemasFilterOutput {
@@ -18760,6 +21761,12 @@ func (i GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArgs) ToGetMaskingP
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionOutput)
 }
 
+func (i GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetMaskingPolicyMaskingSchemasMaskingSchemaCollection] {
+	return pulumix.Output[GetMaskingPolicyMaskingSchemasMaskingSchemaCollection]{
+		OutputState: i.ToGetMaskingPolicyMaskingSchemasMaskingSchemaCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArrayInput is an input type that accepts GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArray and GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArrayOutput values.
 // You can construct a concrete instance of `GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArrayInput` via:
 //
@@ -18785,6 +21792,12 @@ func (i GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArray) ToGetMasking
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArrayOutput)
 }
 
+func (i GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingPolicyMaskingSchemasMaskingSchemaCollection] {
+	return pulumix.Output[[]GetMaskingPolicyMaskingSchemasMaskingSchemaCollection]{
+		OutputState: i.ToGetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionOutput) ElementType() reflect.Type {
@@ -18797,6 +21810,12 @@ func (o GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionOutput) ToGetMaskin
 
 func (o GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionOutput) ToGetMaskingPolicyMaskingSchemasMaskingSchemaCollectionOutputWithContext(ctx context.Context) GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionOutput {
 	return o
+}
+
+func (o GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetMaskingPolicyMaskingSchemasMaskingSchemaCollection] {
+	return pulumix.Output[GetMaskingPolicyMaskingSchemasMaskingSchemaCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 // An array of masking schema summary objects.
@@ -18818,6 +21837,12 @@ func (o GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArrayOutput) ToGetM
 
 func (o GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArrayOutput) ToGetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArrayOutputWithContext(ctx context.Context) GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArrayOutput {
 	return o
+}
+
+func (o GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingPolicyMaskingSchemasMaskingSchemaCollection] {
+	return pulumix.Output[[]GetMaskingPolicyMaskingSchemasMaskingSchemaCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionArrayOutput) Index(i pulumi.IntInput) GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionOutput {
@@ -18859,6 +21884,12 @@ func (i GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArgs) ToGetMask
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemOutput)
 }
 
+func (i GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItem] {
+	return pulumix.Output[GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItem]{
+		OutputState: i.ToGetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArrayInput is an input type that accepts GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArray and GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArrayInput` via:
 //
@@ -18884,6 +21915,12 @@ func (i GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArray) ToGetMas
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArrayOutput)
 }
 
+func (i GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItem] {
+	return pulumix.Output[[]GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItem]{
+		OutputState: i.ToGetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemOutput) ElementType() reflect.Type {
@@ -18896,6 +21933,12 @@ func (o GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemOutput) ToGetMa
 
 func (o GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemOutput) ToGetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemOutputWithContext(ctx context.Context) GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemOutput {
 	return o
+}
+
+func (o GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItem] {
+	return pulumix.Output[GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A filter to return only items related to specific schema name.
@@ -18915,6 +21958,12 @@ func (o GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArrayOutput) To
 
 func (o GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArrayOutput) ToGetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArrayOutputWithContext(ctx context.Context) GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArrayOutput {
 	return o
+}
+
+func (o GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItem] {
+	return pulumix.Output[[]GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemOutput {
@@ -18958,6 +22007,12 @@ func (i GetMaskingReportMaskedColumnsFilterArgs) ToGetMaskingReportMaskedColumns
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingReportMaskedColumnsFilterOutput)
 }
 
+func (i GetMaskingReportMaskedColumnsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMaskingReportMaskedColumnsFilter] {
+	return pulumix.Output[GetMaskingReportMaskedColumnsFilter]{
+		OutputState: i.ToGetMaskingReportMaskedColumnsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMaskingReportMaskedColumnsFilterArrayInput is an input type that accepts GetMaskingReportMaskedColumnsFilterArray and GetMaskingReportMaskedColumnsFilterArrayOutput values.
 // You can construct a concrete instance of `GetMaskingReportMaskedColumnsFilterArrayInput` via:
 //
@@ -18983,6 +22038,12 @@ func (i GetMaskingReportMaskedColumnsFilterArray) ToGetMaskingReportMaskedColumn
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingReportMaskedColumnsFilterArrayOutput)
 }
 
+func (i GetMaskingReportMaskedColumnsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingReportMaskedColumnsFilter] {
+	return pulumix.Output[[]GetMaskingReportMaskedColumnsFilter]{
+		OutputState: i.ToGetMaskingReportMaskedColumnsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMaskingReportMaskedColumnsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetMaskingReportMaskedColumnsFilterOutput) ElementType() reflect.Type {
@@ -18995,6 +22056,12 @@ func (o GetMaskingReportMaskedColumnsFilterOutput) ToGetMaskingReportMaskedColum
 
 func (o GetMaskingReportMaskedColumnsFilterOutput) ToGetMaskingReportMaskedColumnsFilterOutputWithContext(ctx context.Context) GetMaskingReportMaskedColumnsFilterOutput {
 	return o
+}
+
+func (o GetMaskingReportMaskedColumnsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMaskingReportMaskedColumnsFilter] {
+	return pulumix.Output[GetMaskingReportMaskedColumnsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMaskingReportMaskedColumnsFilterOutput) Name() pulumi.StringOutput {
@@ -19021,6 +22088,12 @@ func (o GetMaskingReportMaskedColumnsFilterArrayOutput) ToGetMaskingReportMasked
 
 func (o GetMaskingReportMaskedColumnsFilterArrayOutput) ToGetMaskingReportMaskedColumnsFilterArrayOutputWithContext(ctx context.Context) GetMaskingReportMaskedColumnsFilterArrayOutput {
 	return o
+}
+
+func (o GetMaskingReportMaskedColumnsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingReportMaskedColumnsFilter] {
+	return pulumix.Output[[]GetMaskingReportMaskedColumnsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMaskingReportMaskedColumnsFilterArrayOutput) Index(i pulumi.IntInput) GetMaskingReportMaskedColumnsFilterOutput {
@@ -19062,6 +22135,12 @@ func (i GetMaskingReportMaskedColumnsMaskedColumnCollectionArgs) ToGetMaskingRep
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingReportMaskedColumnsMaskedColumnCollectionOutput)
 }
 
+func (i GetMaskingReportMaskedColumnsMaskedColumnCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetMaskingReportMaskedColumnsMaskedColumnCollection] {
+	return pulumix.Output[GetMaskingReportMaskedColumnsMaskedColumnCollection]{
+		OutputState: i.ToGetMaskingReportMaskedColumnsMaskedColumnCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMaskingReportMaskedColumnsMaskedColumnCollectionArrayInput is an input type that accepts GetMaskingReportMaskedColumnsMaskedColumnCollectionArray and GetMaskingReportMaskedColumnsMaskedColumnCollectionArrayOutput values.
 // You can construct a concrete instance of `GetMaskingReportMaskedColumnsMaskedColumnCollectionArrayInput` via:
 //
@@ -19087,6 +22166,12 @@ func (i GetMaskingReportMaskedColumnsMaskedColumnCollectionArray) ToGetMaskingRe
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingReportMaskedColumnsMaskedColumnCollectionArrayOutput)
 }
 
+func (i GetMaskingReportMaskedColumnsMaskedColumnCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingReportMaskedColumnsMaskedColumnCollection] {
+	return pulumix.Output[[]GetMaskingReportMaskedColumnsMaskedColumnCollection]{
+		OutputState: i.ToGetMaskingReportMaskedColumnsMaskedColumnCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMaskingReportMaskedColumnsMaskedColumnCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetMaskingReportMaskedColumnsMaskedColumnCollectionOutput) ElementType() reflect.Type {
@@ -19099,6 +22184,12 @@ func (o GetMaskingReportMaskedColumnsMaskedColumnCollectionOutput) ToGetMaskingR
 
 func (o GetMaskingReportMaskedColumnsMaskedColumnCollectionOutput) ToGetMaskingReportMaskedColumnsMaskedColumnCollectionOutputWithContext(ctx context.Context) GetMaskingReportMaskedColumnsMaskedColumnCollectionOutput {
 	return o
+}
+
+func (o GetMaskingReportMaskedColumnsMaskedColumnCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetMaskingReportMaskedColumnsMaskedColumnCollection] {
+	return pulumix.Output[GetMaskingReportMaskedColumnsMaskedColumnCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 // An array of masking column summary objects.
@@ -19120,6 +22211,12 @@ func (o GetMaskingReportMaskedColumnsMaskedColumnCollectionArrayOutput) ToGetMas
 
 func (o GetMaskingReportMaskedColumnsMaskedColumnCollectionArrayOutput) ToGetMaskingReportMaskedColumnsMaskedColumnCollectionArrayOutputWithContext(ctx context.Context) GetMaskingReportMaskedColumnsMaskedColumnCollectionArrayOutput {
 	return o
+}
+
+func (o GetMaskingReportMaskedColumnsMaskedColumnCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingReportMaskedColumnsMaskedColumnCollection] {
+	return pulumix.Output[[]GetMaskingReportMaskedColumnsMaskedColumnCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMaskingReportMaskedColumnsMaskedColumnCollectionArrayOutput) Index(i pulumi.IntInput) GetMaskingReportMaskedColumnsMaskedColumnCollectionOutput {
@@ -19197,6 +22294,12 @@ func (i GetMaskingReportMaskedColumnsMaskedColumnCollectionItemArgs) ToGetMaskin
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingReportMaskedColumnsMaskedColumnCollectionItemOutput)
 }
 
+func (i GetMaskingReportMaskedColumnsMaskedColumnCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetMaskingReportMaskedColumnsMaskedColumnCollectionItem] {
+	return pulumix.Output[GetMaskingReportMaskedColumnsMaskedColumnCollectionItem]{
+		OutputState: i.ToGetMaskingReportMaskedColumnsMaskedColumnCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMaskingReportMaskedColumnsMaskedColumnCollectionItemArrayInput is an input type that accepts GetMaskingReportMaskedColumnsMaskedColumnCollectionItemArray and GetMaskingReportMaskedColumnsMaskedColumnCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetMaskingReportMaskedColumnsMaskedColumnCollectionItemArrayInput` via:
 //
@@ -19222,6 +22325,12 @@ func (i GetMaskingReportMaskedColumnsMaskedColumnCollectionItemArray) ToGetMaski
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingReportMaskedColumnsMaskedColumnCollectionItemArrayOutput)
 }
 
+func (i GetMaskingReportMaskedColumnsMaskedColumnCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingReportMaskedColumnsMaskedColumnCollectionItem] {
+	return pulumix.Output[[]GetMaskingReportMaskedColumnsMaskedColumnCollectionItem]{
+		OutputState: i.ToGetMaskingReportMaskedColumnsMaskedColumnCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMaskingReportMaskedColumnsMaskedColumnCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetMaskingReportMaskedColumnsMaskedColumnCollectionItemOutput) ElementType() reflect.Type {
@@ -19234,6 +22343,12 @@ func (o GetMaskingReportMaskedColumnsMaskedColumnCollectionItemOutput) ToGetMask
 
 func (o GetMaskingReportMaskedColumnsMaskedColumnCollectionItemOutput) ToGetMaskingReportMaskedColumnsMaskedColumnCollectionItemOutputWithContext(ctx context.Context) GetMaskingReportMaskedColumnsMaskedColumnCollectionItemOutput {
 	return o
+}
+
+func (o GetMaskingReportMaskedColumnsMaskedColumnCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetMaskingReportMaskedColumnsMaskedColumnCollectionItem] {
+	return pulumix.Output[GetMaskingReportMaskedColumnsMaskedColumnCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A filter to return only a specific column based on column name.
@@ -19300,6 +22415,12 @@ func (o GetMaskingReportMaskedColumnsMaskedColumnCollectionItemArrayOutput) ToGe
 	return o
 }
 
+func (o GetMaskingReportMaskedColumnsMaskedColumnCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingReportMaskedColumnsMaskedColumnCollectionItem] {
+	return pulumix.Output[[]GetMaskingReportMaskedColumnsMaskedColumnCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetMaskingReportMaskedColumnsMaskedColumnCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMaskingReportMaskedColumnsMaskedColumnCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMaskingReportMaskedColumnsMaskedColumnCollectionItem {
 		return vs[0].([]GetMaskingReportMaskedColumnsMaskedColumnCollectionItem)[vs[1].(int)]
@@ -19341,6 +22462,12 @@ func (i GetMaskingReportsFilterArgs) ToGetMaskingReportsFilterOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingReportsFilterOutput)
 }
 
+func (i GetMaskingReportsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMaskingReportsFilter] {
+	return pulumix.Output[GetMaskingReportsFilter]{
+		OutputState: i.ToGetMaskingReportsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMaskingReportsFilterArrayInput is an input type that accepts GetMaskingReportsFilterArray and GetMaskingReportsFilterArrayOutput values.
 // You can construct a concrete instance of `GetMaskingReportsFilterArrayInput` via:
 //
@@ -19366,6 +22493,12 @@ func (i GetMaskingReportsFilterArray) ToGetMaskingReportsFilterArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingReportsFilterArrayOutput)
 }
 
+func (i GetMaskingReportsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingReportsFilter] {
+	return pulumix.Output[[]GetMaskingReportsFilter]{
+		OutputState: i.ToGetMaskingReportsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMaskingReportsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetMaskingReportsFilterOutput) ElementType() reflect.Type {
@@ -19378,6 +22511,12 @@ func (o GetMaskingReportsFilterOutput) ToGetMaskingReportsFilterOutput() GetMask
 
 func (o GetMaskingReportsFilterOutput) ToGetMaskingReportsFilterOutputWithContext(ctx context.Context) GetMaskingReportsFilterOutput {
 	return o
+}
+
+func (o GetMaskingReportsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMaskingReportsFilter] {
+	return pulumix.Output[GetMaskingReportsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMaskingReportsFilterOutput) Name() pulumi.StringOutput {
@@ -19404,6 +22543,12 @@ func (o GetMaskingReportsFilterArrayOutput) ToGetMaskingReportsFilterArrayOutput
 
 func (o GetMaskingReportsFilterArrayOutput) ToGetMaskingReportsFilterArrayOutputWithContext(ctx context.Context) GetMaskingReportsFilterArrayOutput {
 	return o
+}
+
+func (o GetMaskingReportsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingReportsFilter] {
+	return pulumix.Output[[]GetMaskingReportsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMaskingReportsFilterArrayOutput) Index(i pulumi.IntInput) GetMaskingReportsFilterOutput {
@@ -19481,6 +22626,12 @@ func (i GetMaskingReportsMaskedColumnItemArgs) ToGetMaskingReportsMaskedColumnIt
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingReportsMaskedColumnItemOutput)
 }
 
+func (i GetMaskingReportsMaskedColumnItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetMaskingReportsMaskedColumnItem] {
+	return pulumix.Output[GetMaskingReportsMaskedColumnItem]{
+		OutputState: i.ToGetMaskingReportsMaskedColumnItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMaskingReportsMaskedColumnItemArrayInput is an input type that accepts GetMaskingReportsMaskedColumnItemArray and GetMaskingReportsMaskedColumnItemArrayOutput values.
 // You can construct a concrete instance of `GetMaskingReportsMaskedColumnItemArrayInput` via:
 //
@@ -19506,6 +22657,12 @@ func (i GetMaskingReportsMaskedColumnItemArray) ToGetMaskingReportsMaskedColumnI
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingReportsMaskedColumnItemArrayOutput)
 }
 
+func (i GetMaskingReportsMaskedColumnItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingReportsMaskedColumnItem] {
+	return pulumix.Output[[]GetMaskingReportsMaskedColumnItem]{
+		OutputState: i.ToGetMaskingReportsMaskedColumnItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMaskingReportsMaskedColumnItemOutput struct{ *pulumi.OutputState }
 
 func (GetMaskingReportsMaskedColumnItemOutput) ElementType() reflect.Type {
@@ -19518,6 +22675,12 @@ func (o GetMaskingReportsMaskedColumnItemOutput) ToGetMaskingReportsMaskedColumn
 
 func (o GetMaskingReportsMaskedColumnItemOutput) ToGetMaskingReportsMaskedColumnItemOutputWithContext(ctx context.Context) GetMaskingReportsMaskedColumnItemOutput {
 	return o
+}
+
+func (o GetMaskingReportsMaskedColumnItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetMaskingReportsMaskedColumnItem] {
+	return pulumix.Output[GetMaskingReportsMaskedColumnItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A filter to return only a specific column based on column name.
@@ -19584,6 +22747,12 @@ func (o GetMaskingReportsMaskedColumnItemArrayOutput) ToGetMaskingReportsMaskedC
 	return o
 }
 
+func (o GetMaskingReportsMaskedColumnItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingReportsMaskedColumnItem] {
+	return pulumix.Output[[]GetMaskingReportsMaskedColumnItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetMaskingReportsMaskedColumnItemArrayOutput) Index(i pulumi.IntInput) GetMaskingReportsMaskedColumnItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMaskingReportsMaskedColumnItem {
 		return vs[0].([]GetMaskingReportsMaskedColumnItem)[vs[1].(int)]
@@ -19621,6 +22790,12 @@ func (i GetMaskingReportsMaskingReportCollectionArgs) ToGetMaskingReportsMasking
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingReportsMaskingReportCollectionOutput)
 }
 
+func (i GetMaskingReportsMaskingReportCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetMaskingReportsMaskingReportCollection] {
+	return pulumix.Output[GetMaskingReportsMaskingReportCollection]{
+		OutputState: i.ToGetMaskingReportsMaskingReportCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMaskingReportsMaskingReportCollectionArrayInput is an input type that accepts GetMaskingReportsMaskingReportCollectionArray and GetMaskingReportsMaskingReportCollectionArrayOutput values.
 // You can construct a concrete instance of `GetMaskingReportsMaskingReportCollectionArrayInput` via:
 //
@@ -19646,6 +22821,12 @@ func (i GetMaskingReportsMaskingReportCollectionArray) ToGetMaskingReportsMaskin
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingReportsMaskingReportCollectionArrayOutput)
 }
 
+func (i GetMaskingReportsMaskingReportCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingReportsMaskingReportCollection] {
+	return pulumix.Output[[]GetMaskingReportsMaskingReportCollection]{
+		OutputState: i.ToGetMaskingReportsMaskingReportCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMaskingReportsMaskingReportCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetMaskingReportsMaskingReportCollectionOutput) ElementType() reflect.Type {
@@ -19658,6 +22839,12 @@ func (o GetMaskingReportsMaskingReportCollectionOutput) ToGetMaskingReportsMaski
 
 func (o GetMaskingReportsMaskingReportCollectionOutput) ToGetMaskingReportsMaskingReportCollectionOutputWithContext(ctx context.Context) GetMaskingReportsMaskingReportCollectionOutput {
 	return o
+}
+
+func (o GetMaskingReportsMaskingReportCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetMaskingReportsMaskingReportCollection] {
+	return pulumix.Output[GetMaskingReportsMaskingReportCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMaskingReportsMaskingReportCollectionOutput) Items() GetMaskingReportsMaskingReportCollectionItemArrayOutput {
@@ -19678,6 +22865,12 @@ func (o GetMaskingReportsMaskingReportCollectionArrayOutput) ToGetMaskingReports
 
 func (o GetMaskingReportsMaskingReportCollectionArrayOutput) ToGetMaskingReportsMaskingReportCollectionArrayOutputWithContext(ctx context.Context) GetMaskingReportsMaskingReportCollectionArrayOutput {
 	return o
+}
+
+func (o GetMaskingReportsMaskingReportCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingReportsMaskingReportCollection] {
+	return pulumix.Output[[]GetMaskingReportsMaskingReportCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMaskingReportsMaskingReportCollectionArrayOutput) Index(i pulumi.IntInput) GetMaskingReportsMaskingReportCollectionOutput {
@@ -19791,6 +22984,12 @@ func (i GetMaskingReportsMaskingReportCollectionItemArgs) ToGetMaskingReportsMas
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingReportsMaskingReportCollectionItemOutput)
 }
 
+func (i GetMaskingReportsMaskingReportCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetMaskingReportsMaskingReportCollectionItem] {
+	return pulumix.Output[GetMaskingReportsMaskingReportCollectionItem]{
+		OutputState: i.ToGetMaskingReportsMaskingReportCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMaskingReportsMaskingReportCollectionItemArrayInput is an input type that accepts GetMaskingReportsMaskingReportCollectionItemArray and GetMaskingReportsMaskingReportCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetMaskingReportsMaskingReportCollectionItemArrayInput` via:
 //
@@ -19816,6 +23015,12 @@ func (i GetMaskingReportsMaskingReportCollectionItemArray) ToGetMaskingReportsMa
 	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingReportsMaskingReportCollectionItemArrayOutput)
 }
 
+func (i GetMaskingReportsMaskingReportCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingReportsMaskingReportCollectionItem] {
+	return pulumix.Output[[]GetMaskingReportsMaskingReportCollectionItem]{
+		OutputState: i.ToGetMaskingReportsMaskingReportCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMaskingReportsMaskingReportCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetMaskingReportsMaskingReportCollectionItemOutput) ElementType() reflect.Type {
@@ -19828,6 +23033,12 @@ func (o GetMaskingReportsMaskingReportCollectionItemOutput) ToGetMaskingReportsM
 
 func (o GetMaskingReportsMaskingReportCollectionItemOutput) ToGetMaskingReportsMaskingReportCollectionItemOutputWithContext(ctx context.Context) GetMaskingReportsMaskingReportCollectionItemOutput {
 	return o
+}
+
+func (o GetMaskingReportsMaskingReportCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetMaskingReportsMaskingReportCollectionItem] {
+	return pulumix.Output[GetMaskingReportsMaskingReportCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A filter to return only resources that match the specified compartment OCID.
@@ -19939,6 +23150,12 @@ func (o GetMaskingReportsMaskingReportCollectionItemArrayOutput) ToGetMaskingRep
 	return o
 }
 
+func (o GetMaskingReportsMaskingReportCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMaskingReportsMaskingReportCollectionItem] {
+	return pulumix.Output[[]GetMaskingReportsMaskingReportCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetMaskingReportsMaskingReportCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMaskingReportsMaskingReportCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMaskingReportsMaskingReportCollectionItem {
 		return vs[0].([]GetMaskingReportsMaskingReportCollectionItem)[vs[1].(int)]
@@ -19980,6 +23197,12 @@ func (i GetOnpremConnectorsFilterArgs) ToGetOnpremConnectorsFilterOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetOnpremConnectorsFilterOutput)
 }
 
+func (i GetOnpremConnectorsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetOnpremConnectorsFilter] {
+	return pulumix.Output[GetOnpremConnectorsFilter]{
+		OutputState: i.ToGetOnpremConnectorsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetOnpremConnectorsFilterArrayInput is an input type that accepts GetOnpremConnectorsFilterArray and GetOnpremConnectorsFilterArrayOutput values.
 // You can construct a concrete instance of `GetOnpremConnectorsFilterArrayInput` via:
 //
@@ -20005,6 +23228,12 @@ func (i GetOnpremConnectorsFilterArray) ToGetOnpremConnectorsFilterArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetOnpremConnectorsFilterArrayOutput)
 }
 
+func (i GetOnpremConnectorsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOnpremConnectorsFilter] {
+	return pulumix.Output[[]GetOnpremConnectorsFilter]{
+		OutputState: i.ToGetOnpremConnectorsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetOnpremConnectorsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetOnpremConnectorsFilterOutput) ElementType() reflect.Type {
@@ -20017,6 +23246,12 @@ func (o GetOnpremConnectorsFilterOutput) ToGetOnpremConnectorsFilterOutput() Get
 
 func (o GetOnpremConnectorsFilterOutput) ToGetOnpremConnectorsFilterOutputWithContext(ctx context.Context) GetOnpremConnectorsFilterOutput {
 	return o
+}
+
+func (o GetOnpremConnectorsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetOnpremConnectorsFilter] {
+	return pulumix.Output[GetOnpremConnectorsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetOnpremConnectorsFilterOutput) Name() pulumi.StringOutput {
@@ -20043,6 +23278,12 @@ func (o GetOnpremConnectorsFilterArrayOutput) ToGetOnpremConnectorsFilterArrayOu
 
 func (o GetOnpremConnectorsFilterArrayOutput) ToGetOnpremConnectorsFilterArrayOutputWithContext(ctx context.Context) GetOnpremConnectorsFilterArrayOutput {
 	return o
+}
+
+func (o GetOnpremConnectorsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOnpremConnectorsFilter] {
+	return pulumix.Output[[]GetOnpremConnectorsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetOnpremConnectorsFilterArrayOutput) Index(i pulumi.IntInput) GetOnpremConnectorsFilterOutput {
@@ -20128,6 +23369,12 @@ func (i GetOnpremConnectorsOnPremConnectorArgs) ToGetOnpremConnectorsOnPremConne
 	return pulumi.ToOutputWithContext(ctx, i).(GetOnpremConnectorsOnPremConnectorOutput)
 }
 
+func (i GetOnpremConnectorsOnPremConnectorArgs) ToOutput(ctx context.Context) pulumix.Output[GetOnpremConnectorsOnPremConnector] {
+	return pulumix.Output[GetOnpremConnectorsOnPremConnector]{
+		OutputState: i.ToGetOnpremConnectorsOnPremConnectorOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetOnpremConnectorsOnPremConnectorArrayInput is an input type that accepts GetOnpremConnectorsOnPremConnectorArray and GetOnpremConnectorsOnPremConnectorArrayOutput values.
 // You can construct a concrete instance of `GetOnpremConnectorsOnPremConnectorArrayInput` via:
 //
@@ -20153,6 +23400,12 @@ func (i GetOnpremConnectorsOnPremConnectorArray) ToGetOnpremConnectorsOnPremConn
 	return pulumi.ToOutputWithContext(ctx, i).(GetOnpremConnectorsOnPremConnectorArrayOutput)
 }
 
+func (i GetOnpremConnectorsOnPremConnectorArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOnpremConnectorsOnPremConnector] {
+	return pulumix.Output[[]GetOnpremConnectorsOnPremConnector]{
+		OutputState: i.ToGetOnpremConnectorsOnPremConnectorArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetOnpremConnectorsOnPremConnectorOutput struct{ *pulumi.OutputState }
 
 func (GetOnpremConnectorsOnPremConnectorOutput) ElementType() reflect.Type {
@@ -20165,6 +23418,12 @@ func (o GetOnpremConnectorsOnPremConnectorOutput) ToGetOnpremConnectorsOnPremCon
 
 func (o GetOnpremConnectorsOnPremConnectorOutput) ToGetOnpremConnectorsOnPremConnectorOutputWithContext(ctx context.Context) GetOnpremConnectorsOnPremConnectorOutput {
 	return o
+}
+
+func (o GetOnpremConnectorsOnPremConnectorOutput) ToOutput(ctx context.Context) pulumix.Output[GetOnpremConnectorsOnPremConnector] {
+	return pulumix.Output[GetOnpremConnectorsOnPremConnector]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Latest available version of the on-premises connector.
@@ -20241,6 +23500,12 @@ func (o GetOnpremConnectorsOnPremConnectorArrayOutput) ToGetOnpremConnectorsOnPr
 	return o
 }
 
+func (o GetOnpremConnectorsOnPremConnectorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOnpremConnectorsOnPremConnector] {
+	return pulumix.Output[[]GetOnpremConnectorsOnPremConnector]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetOnpremConnectorsOnPremConnectorArrayOutput) Index(i pulumi.IntInput) GetOnpremConnectorsOnPremConnectorOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOnpremConnectorsOnPremConnector {
 		return vs[0].([]GetOnpremConnectorsOnPremConnector)[vs[1].(int)]
@@ -20296,6 +23561,12 @@ func (i GetReportDefinitionColumnFilterArgs) ToGetReportDefinitionColumnFilterOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetReportDefinitionColumnFilterOutput)
 }
 
+func (i GetReportDefinitionColumnFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetReportDefinitionColumnFilter] {
+	return pulumix.Output[GetReportDefinitionColumnFilter]{
+		OutputState: i.ToGetReportDefinitionColumnFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetReportDefinitionColumnFilterArrayInput is an input type that accepts GetReportDefinitionColumnFilterArray and GetReportDefinitionColumnFilterArrayOutput values.
 // You can construct a concrete instance of `GetReportDefinitionColumnFilterArrayInput` via:
 //
@@ -20321,6 +23592,12 @@ func (i GetReportDefinitionColumnFilterArray) ToGetReportDefinitionColumnFilterA
 	return pulumi.ToOutputWithContext(ctx, i).(GetReportDefinitionColumnFilterArrayOutput)
 }
 
+func (i GetReportDefinitionColumnFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetReportDefinitionColumnFilter] {
+	return pulumix.Output[[]GetReportDefinitionColumnFilter]{
+		OutputState: i.ToGetReportDefinitionColumnFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetReportDefinitionColumnFilterOutput struct{ *pulumi.OutputState }
 
 func (GetReportDefinitionColumnFilterOutput) ElementType() reflect.Type {
@@ -20333,6 +23610,12 @@ func (o GetReportDefinitionColumnFilterOutput) ToGetReportDefinitionColumnFilter
 
 func (o GetReportDefinitionColumnFilterOutput) ToGetReportDefinitionColumnFilterOutputWithContext(ctx context.Context) GetReportDefinitionColumnFilterOutput {
 	return o
+}
+
+func (o GetReportDefinitionColumnFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetReportDefinitionColumnFilter] {
+	return pulumix.Output[GetReportDefinitionColumnFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // An array of expressions based on the operator type. A filter may have one or more expressions.
@@ -20372,6 +23655,12 @@ func (o GetReportDefinitionColumnFilterArrayOutput) ToGetReportDefinitionColumnF
 
 func (o GetReportDefinitionColumnFilterArrayOutput) ToGetReportDefinitionColumnFilterArrayOutputWithContext(ctx context.Context) GetReportDefinitionColumnFilterArrayOutput {
 	return o
+}
+
+func (o GetReportDefinitionColumnFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetReportDefinitionColumnFilter] {
+	return pulumix.Output[[]GetReportDefinitionColumnFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetReportDefinitionColumnFilterArrayOutput) Index(i pulumi.IntInput) GetReportDefinitionColumnFilterOutput {
@@ -20429,6 +23718,12 @@ func (i GetReportDefinitionColumnInfoArgs) ToGetReportDefinitionColumnInfoOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetReportDefinitionColumnInfoOutput)
 }
 
+func (i GetReportDefinitionColumnInfoArgs) ToOutput(ctx context.Context) pulumix.Output[GetReportDefinitionColumnInfo] {
+	return pulumix.Output[GetReportDefinitionColumnInfo]{
+		OutputState: i.ToGetReportDefinitionColumnInfoOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetReportDefinitionColumnInfoArrayInput is an input type that accepts GetReportDefinitionColumnInfoArray and GetReportDefinitionColumnInfoArrayOutput values.
 // You can construct a concrete instance of `GetReportDefinitionColumnInfoArrayInput` via:
 //
@@ -20454,6 +23749,12 @@ func (i GetReportDefinitionColumnInfoArray) ToGetReportDefinitionColumnInfoArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetReportDefinitionColumnInfoArrayOutput)
 }
 
+func (i GetReportDefinitionColumnInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]GetReportDefinitionColumnInfo] {
+	return pulumix.Output[[]GetReportDefinitionColumnInfo]{
+		OutputState: i.ToGetReportDefinitionColumnInfoArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetReportDefinitionColumnInfoOutput struct{ *pulumi.OutputState }
 
 func (GetReportDefinitionColumnInfoOutput) ElementType() reflect.Type {
@@ -20466,6 +23767,12 @@ func (o GetReportDefinitionColumnInfoOutput) ToGetReportDefinitionColumnInfoOutp
 
 func (o GetReportDefinitionColumnInfoOutput) ToGetReportDefinitionColumnInfoOutputWithContext(ctx context.Context) GetReportDefinitionColumnInfoOutput {
 	return o
+}
+
+func (o GetReportDefinitionColumnInfoOutput) ToOutput(ctx context.Context) pulumix.Output[GetReportDefinitionColumnInfo] {
+	return pulumix.Output[GetReportDefinitionColumnInfo]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Specifies the data type of the column.
@@ -20505,6 +23812,12 @@ func (o GetReportDefinitionColumnInfoArrayOutput) ToGetReportDefinitionColumnInf
 
 func (o GetReportDefinitionColumnInfoArrayOutput) ToGetReportDefinitionColumnInfoArrayOutputWithContext(ctx context.Context) GetReportDefinitionColumnInfoArrayOutput {
 	return o
+}
+
+func (o GetReportDefinitionColumnInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetReportDefinitionColumnInfo] {
+	return pulumix.Output[[]GetReportDefinitionColumnInfo]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetReportDefinitionColumnInfoArrayOutput) Index(i pulumi.IntInput) GetReportDefinitionColumnInfoOutput {
@@ -20554,6 +23867,12 @@ func (i GetReportDefinitionColumnSortingArgs) ToGetReportDefinitionColumnSorting
 	return pulumi.ToOutputWithContext(ctx, i).(GetReportDefinitionColumnSortingOutput)
 }
 
+func (i GetReportDefinitionColumnSortingArgs) ToOutput(ctx context.Context) pulumix.Output[GetReportDefinitionColumnSorting] {
+	return pulumix.Output[GetReportDefinitionColumnSorting]{
+		OutputState: i.ToGetReportDefinitionColumnSortingOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetReportDefinitionColumnSortingArrayInput is an input type that accepts GetReportDefinitionColumnSortingArray and GetReportDefinitionColumnSortingArrayOutput values.
 // You can construct a concrete instance of `GetReportDefinitionColumnSortingArrayInput` via:
 //
@@ -20579,6 +23898,12 @@ func (i GetReportDefinitionColumnSortingArray) ToGetReportDefinitionColumnSortin
 	return pulumi.ToOutputWithContext(ctx, i).(GetReportDefinitionColumnSortingArrayOutput)
 }
 
+func (i GetReportDefinitionColumnSortingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetReportDefinitionColumnSorting] {
+	return pulumix.Output[[]GetReportDefinitionColumnSorting]{
+		OutputState: i.ToGetReportDefinitionColumnSortingArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetReportDefinitionColumnSortingOutput struct{ *pulumi.OutputState }
 
 func (GetReportDefinitionColumnSortingOutput) ElementType() reflect.Type {
@@ -20591,6 +23916,12 @@ func (o GetReportDefinitionColumnSortingOutput) ToGetReportDefinitionColumnSorti
 
 func (o GetReportDefinitionColumnSortingOutput) ToGetReportDefinitionColumnSortingOutputWithContext(ctx context.Context) GetReportDefinitionColumnSortingOutput {
 	return o
+}
+
+func (o GetReportDefinitionColumnSortingOutput) ToOutput(ctx context.Context) pulumix.Output[GetReportDefinitionColumnSorting] {
+	return pulumix.Output[GetReportDefinitionColumnSorting]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Name of the column that must be sorted.
@@ -20620,6 +23951,12 @@ func (o GetReportDefinitionColumnSortingArrayOutput) ToGetReportDefinitionColumn
 
 func (o GetReportDefinitionColumnSortingArrayOutput) ToGetReportDefinitionColumnSortingArrayOutputWithContext(ctx context.Context) GetReportDefinitionColumnSortingArrayOutput {
 	return o
+}
+
+func (o GetReportDefinitionColumnSortingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetReportDefinitionColumnSorting] {
+	return pulumix.Output[[]GetReportDefinitionColumnSorting]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetReportDefinitionColumnSortingArrayOutput) Index(i pulumi.IntInput) GetReportDefinitionColumnSortingOutput {
@@ -20681,6 +24018,12 @@ func (i GetReportDefinitionSummaryArgs) ToGetReportDefinitionSummaryOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetReportDefinitionSummaryOutput)
 }
 
+func (i GetReportDefinitionSummaryArgs) ToOutput(ctx context.Context) pulumix.Output[GetReportDefinitionSummary] {
+	return pulumix.Output[GetReportDefinitionSummary]{
+		OutputState: i.ToGetReportDefinitionSummaryOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetReportDefinitionSummaryArrayInput is an input type that accepts GetReportDefinitionSummaryArray and GetReportDefinitionSummaryArrayOutput values.
 // You can construct a concrete instance of `GetReportDefinitionSummaryArrayInput` via:
 //
@@ -20706,6 +24049,12 @@ func (i GetReportDefinitionSummaryArray) ToGetReportDefinitionSummaryArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetReportDefinitionSummaryArrayOutput)
 }
 
+func (i GetReportDefinitionSummaryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetReportDefinitionSummary] {
+	return pulumix.Output[[]GetReportDefinitionSummary]{
+		OutputState: i.ToGetReportDefinitionSummaryArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetReportDefinitionSummaryOutput struct{ *pulumi.OutputState }
 
 func (GetReportDefinitionSummaryOutput) ElementType() reflect.Type {
@@ -20718,6 +24067,12 @@ func (o GetReportDefinitionSummaryOutput) ToGetReportDefinitionSummaryOutput() G
 
 func (o GetReportDefinitionSummaryOutput) ToGetReportDefinitionSummaryOutputWithContext(ctx context.Context) GetReportDefinitionSummaryOutput {
 	return o
+}
+
+func (o GetReportDefinitionSummaryOutput) ToOutput(ctx context.Context) pulumix.Output[GetReportDefinitionSummary] {
+	return pulumix.Output[GetReportDefinitionSummary]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Name of the key or count of object.
@@ -20764,6 +24119,12 @@ func (o GetReportDefinitionSummaryArrayOutput) ToGetReportDefinitionSummaryArray
 	return o
 }
 
+func (o GetReportDefinitionSummaryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetReportDefinitionSummary] {
+	return pulumix.Output[[]GetReportDefinitionSummary]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetReportDefinitionSummaryArrayOutput) Index(i pulumi.IntInput) GetReportDefinitionSummaryOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReportDefinitionSummary {
 		return vs[0].([]GetReportDefinitionSummary)[vs[1].(int)]
@@ -20807,6 +24168,12 @@ func (i GetReportDefinitionsFilterArgs) ToGetReportDefinitionsFilterOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetReportDefinitionsFilterOutput)
 }
 
+func (i GetReportDefinitionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetReportDefinitionsFilter] {
+	return pulumix.Output[GetReportDefinitionsFilter]{
+		OutputState: i.ToGetReportDefinitionsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetReportDefinitionsFilterArrayInput is an input type that accepts GetReportDefinitionsFilterArray and GetReportDefinitionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetReportDefinitionsFilterArrayInput` via:
 //
@@ -20832,6 +24199,12 @@ func (i GetReportDefinitionsFilterArray) ToGetReportDefinitionsFilterArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetReportDefinitionsFilterArrayOutput)
 }
 
+func (i GetReportDefinitionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetReportDefinitionsFilter] {
+	return pulumix.Output[[]GetReportDefinitionsFilter]{
+		OutputState: i.ToGetReportDefinitionsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetReportDefinitionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetReportDefinitionsFilterOutput) ElementType() reflect.Type {
@@ -20844,6 +24217,12 @@ func (o GetReportDefinitionsFilterOutput) ToGetReportDefinitionsFilterOutput() G
 
 func (o GetReportDefinitionsFilterOutput) ToGetReportDefinitionsFilterOutputWithContext(ctx context.Context) GetReportDefinitionsFilterOutput {
 	return o
+}
+
+func (o GetReportDefinitionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetReportDefinitionsFilter] {
+	return pulumix.Output[GetReportDefinitionsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Name of the report summary.
@@ -20871,6 +24250,12 @@ func (o GetReportDefinitionsFilterArrayOutput) ToGetReportDefinitionsFilterArray
 
 func (o GetReportDefinitionsFilterArrayOutput) ToGetReportDefinitionsFilterArrayOutputWithContext(ctx context.Context) GetReportDefinitionsFilterArrayOutput {
 	return o
+}
+
+func (o GetReportDefinitionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetReportDefinitionsFilter] {
+	return pulumix.Output[[]GetReportDefinitionsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetReportDefinitionsFilterArrayOutput) Index(i pulumi.IntInput) GetReportDefinitionsFilterOutput {
@@ -20910,6 +24295,12 @@ func (i GetReportDefinitionsReportDefinitionCollectionArgs) ToGetReportDefinitio
 	return pulumi.ToOutputWithContext(ctx, i).(GetReportDefinitionsReportDefinitionCollectionOutput)
 }
 
+func (i GetReportDefinitionsReportDefinitionCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetReportDefinitionsReportDefinitionCollection] {
+	return pulumix.Output[GetReportDefinitionsReportDefinitionCollection]{
+		OutputState: i.ToGetReportDefinitionsReportDefinitionCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetReportDefinitionsReportDefinitionCollectionArrayInput is an input type that accepts GetReportDefinitionsReportDefinitionCollectionArray and GetReportDefinitionsReportDefinitionCollectionArrayOutput values.
 // You can construct a concrete instance of `GetReportDefinitionsReportDefinitionCollectionArrayInput` via:
 //
@@ -20935,6 +24326,12 @@ func (i GetReportDefinitionsReportDefinitionCollectionArray) ToGetReportDefiniti
 	return pulumi.ToOutputWithContext(ctx, i).(GetReportDefinitionsReportDefinitionCollectionArrayOutput)
 }
 
+func (i GetReportDefinitionsReportDefinitionCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetReportDefinitionsReportDefinitionCollection] {
+	return pulumix.Output[[]GetReportDefinitionsReportDefinitionCollection]{
+		OutputState: i.ToGetReportDefinitionsReportDefinitionCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetReportDefinitionsReportDefinitionCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetReportDefinitionsReportDefinitionCollectionOutput) ElementType() reflect.Type {
@@ -20947,6 +24344,12 @@ func (o GetReportDefinitionsReportDefinitionCollectionOutput) ToGetReportDefinit
 
 func (o GetReportDefinitionsReportDefinitionCollectionOutput) ToGetReportDefinitionsReportDefinitionCollectionOutputWithContext(ctx context.Context) GetReportDefinitionsReportDefinitionCollectionOutput {
 	return o
+}
+
+func (o GetReportDefinitionsReportDefinitionCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetReportDefinitionsReportDefinitionCollection] {
+	return pulumix.Output[GetReportDefinitionsReportDefinitionCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetReportDefinitionsReportDefinitionCollectionOutput) Items() GetReportDefinitionsReportDefinitionCollectionItemArrayOutput {
@@ -20967,6 +24370,12 @@ func (o GetReportDefinitionsReportDefinitionCollectionArrayOutput) ToGetReportDe
 
 func (o GetReportDefinitionsReportDefinitionCollectionArrayOutput) ToGetReportDefinitionsReportDefinitionCollectionArrayOutputWithContext(ctx context.Context) GetReportDefinitionsReportDefinitionCollectionArrayOutput {
 	return o
+}
+
+func (o GetReportDefinitionsReportDefinitionCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetReportDefinitionsReportDefinitionCollection] {
+	return pulumix.Output[[]GetReportDefinitionsReportDefinitionCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetReportDefinitionsReportDefinitionCollectionArrayOutput) Index(i pulumi.IntInput) GetReportDefinitionsReportDefinitionCollectionOutput {
@@ -21112,6 +24521,12 @@ func (i GetReportDefinitionsReportDefinitionCollectionItemArgs) ToGetReportDefin
 	return pulumi.ToOutputWithContext(ctx, i).(GetReportDefinitionsReportDefinitionCollectionItemOutput)
 }
 
+func (i GetReportDefinitionsReportDefinitionCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetReportDefinitionsReportDefinitionCollectionItem] {
+	return pulumix.Output[GetReportDefinitionsReportDefinitionCollectionItem]{
+		OutputState: i.ToGetReportDefinitionsReportDefinitionCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetReportDefinitionsReportDefinitionCollectionItemArrayInput is an input type that accepts GetReportDefinitionsReportDefinitionCollectionItemArray and GetReportDefinitionsReportDefinitionCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetReportDefinitionsReportDefinitionCollectionItemArrayInput` via:
 //
@@ -21137,6 +24552,12 @@ func (i GetReportDefinitionsReportDefinitionCollectionItemArray) ToGetReportDefi
 	return pulumi.ToOutputWithContext(ctx, i).(GetReportDefinitionsReportDefinitionCollectionItemArrayOutput)
 }
 
+func (i GetReportDefinitionsReportDefinitionCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetReportDefinitionsReportDefinitionCollectionItem] {
+	return pulumix.Output[[]GetReportDefinitionsReportDefinitionCollectionItem]{
+		OutputState: i.ToGetReportDefinitionsReportDefinitionCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetReportDefinitionsReportDefinitionCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetReportDefinitionsReportDefinitionCollectionItemOutput) ElementType() reflect.Type {
@@ -21149,6 +24570,12 @@ func (o GetReportDefinitionsReportDefinitionCollectionItemOutput) ToGetReportDef
 
 func (o GetReportDefinitionsReportDefinitionCollectionItemOutput) ToGetReportDefinitionsReportDefinitionCollectionItemOutputWithContext(ctx context.Context) GetReportDefinitionsReportDefinitionCollectionItemOutput {
 	return o
+}
+
+func (o GetReportDefinitionsReportDefinitionCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetReportDefinitionsReportDefinitionCollectionItem] {
+	return pulumix.Output[GetReportDefinitionsReportDefinitionCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // An optional filter to return only resources that match the specified category.
@@ -21314,6 +24741,12 @@ func (o GetReportDefinitionsReportDefinitionCollectionItemArrayOutput) ToGetRepo
 	return o
 }
 
+func (o GetReportDefinitionsReportDefinitionCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetReportDefinitionsReportDefinitionCollectionItem] {
+	return pulumix.Output[[]GetReportDefinitionsReportDefinitionCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetReportDefinitionsReportDefinitionCollectionItemArrayOutput) Index(i pulumi.IntInput) GetReportDefinitionsReportDefinitionCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReportDefinitionsReportDefinitionCollectionItem {
 		return vs[0].([]GetReportDefinitionsReportDefinitionCollectionItem)[vs[1].(int)]
@@ -21369,6 +24802,12 @@ func (i GetReportDefinitionsReportDefinitionCollectionItemColumnFilterArgs) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetReportDefinitionsReportDefinitionCollectionItemColumnFilterOutput)
 }
 
+func (i GetReportDefinitionsReportDefinitionCollectionItemColumnFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetReportDefinitionsReportDefinitionCollectionItemColumnFilter] {
+	return pulumix.Output[GetReportDefinitionsReportDefinitionCollectionItemColumnFilter]{
+		OutputState: i.ToGetReportDefinitionsReportDefinitionCollectionItemColumnFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetReportDefinitionsReportDefinitionCollectionItemColumnFilterArrayInput is an input type that accepts GetReportDefinitionsReportDefinitionCollectionItemColumnFilterArray and GetReportDefinitionsReportDefinitionCollectionItemColumnFilterArrayOutput values.
 // You can construct a concrete instance of `GetReportDefinitionsReportDefinitionCollectionItemColumnFilterArrayInput` via:
 //
@@ -21394,6 +24833,12 @@ func (i GetReportDefinitionsReportDefinitionCollectionItemColumnFilterArray) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetReportDefinitionsReportDefinitionCollectionItemColumnFilterArrayOutput)
 }
 
+func (i GetReportDefinitionsReportDefinitionCollectionItemColumnFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetReportDefinitionsReportDefinitionCollectionItemColumnFilter] {
+	return pulumix.Output[[]GetReportDefinitionsReportDefinitionCollectionItemColumnFilter]{
+		OutputState: i.ToGetReportDefinitionsReportDefinitionCollectionItemColumnFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetReportDefinitionsReportDefinitionCollectionItemColumnFilterOutput struct{ *pulumi.OutputState }
 
 func (GetReportDefinitionsReportDefinitionCollectionItemColumnFilterOutput) ElementType() reflect.Type {
@@ -21406,6 +24851,12 @@ func (o GetReportDefinitionsReportDefinitionCollectionItemColumnFilterOutput) To
 
 func (o GetReportDefinitionsReportDefinitionCollectionItemColumnFilterOutput) ToGetReportDefinitionsReportDefinitionCollectionItemColumnFilterOutputWithContext(ctx context.Context) GetReportDefinitionsReportDefinitionCollectionItemColumnFilterOutput {
 	return o
+}
+
+func (o GetReportDefinitionsReportDefinitionCollectionItemColumnFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetReportDefinitionsReportDefinitionCollectionItemColumnFilter] {
+	return pulumix.Output[GetReportDefinitionsReportDefinitionCollectionItemColumnFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // An array of expressions based on the operator type. A filter may have one or more expressions.
@@ -21445,6 +24896,12 @@ func (o GetReportDefinitionsReportDefinitionCollectionItemColumnFilterArrayOutpu
 
 func (o GetReportDefinitionsReportDefinitionCollectionItemColumnFilterArrayOutput) ToGetReportDefinitionsReportDefinitionCollectionItemColumnFilterArrayOutputWithContext(ctx context.Context) GetReportDefinitionsReportDefinitionCollectionItemColumnFilterArrayOutput {
 	return o
+}
+
+func (o GetReportDefinitionsReportDefinitionCollectionItemColumnFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetReportDefinitionsReportDefinitionCollectionItemColumnFilter] {
+	return pulumix.Output[[]GetReportDefinitionsReportDefinitionCollectionItemColumnFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetReportDefinitionsReportDefinitionCollectionItemColumnFilterArrayOutput) Index(i pulumi.IntInput) GetReportDefinitionsReportDefinitionCollectionItemColumnFilterOutput {
@@ -21502,6 +24959,12 @@ func (i GetReportDefinitionsReportDefinitionCollectionItemColumnInfoArgs) ToGetR
 	return pulumi.ToOutputWithContext(ctx, i).(GetReportDefinitionsReportDefinitionCollectionItemColumnInfoOutput)
 }
 
+func (i GetReportDefinitionsReportDefinitionCollectionItemColumnInfoArgs) ToOutput(ctx context.Context) pulumix.Output[GetReportDefinitionsReportDefinitionCollectionItemColumnInfo] {
+	return pulumix.Output[GetReportDefinitionsReportDefinitionCollectionItemColumnInfo]{
+		OutputState: i.ToGetReportDefinitionsReportDefinitionCollectionItemColumnInfoOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetReportDefinitionsReportDefinitionCollectionItemColumnInfoArrayInput is an input type that accepts GetReportDefinitionsReportDefinitionCollectionItemColumnInfoArray and GetReportDefinitionsReportDefinitionCollectionItemColumnInfoArrayOutput values.
 // You can construct a concrete instance of `GetReportDefinitionsReportDefinitionCollectionItemColumnInfoArrayInput` via:
 //
@@ -21527,6 +24990,12 @@ func (i GetReportDefinitionsReportDefinitionCollectionItemColumnInfoArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetReportDefinitionsReportDefinitionCollectionItemColumnInfoArrayOutput)
 }
 
+func (i GetReportDefinitionsReportDefinitionCollectionItemColumnInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]GetReportDefinitionsReportDefinitionCollectionItemColumnInfo] {
+	return pulumix.Output[[]GetReportDefinitionsReportDefinitionCollectionItemColumnInfo]{
+		OutputState: i.ToGetReportDefinitionsReportDefinitionCollectionItemColumnInfoArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetReportDefinitionsReportDefinitionCollectionItemColumnInfoOutput struct{ *pulumi.OutputState }
 
 func (GetReportDefinitionsReportDefinitionCollectionItemColumnInfoOutput) ElementType() reflect.Type {
@@ -21539,6 +25008,12 @@ func (o GetReportDefinitionsReportDefinitionCollectionItemColumnInfoOutput) ToGe
 
 func (o GetReportDefinitionsReportDefinitionCollectionItemColumnInfoOutput) ToGetReportDefinitionsReportDefinitionCollectionItemColumnInfoOutputWithContext(ctx context.Context) GetReportDefinitionsReportDefinitionCollectionItemColumnInfoOutput {
 	return o
+}
+
+func (o GetReportDefinitionsReportDefinitionCollectionItemColumnInfoOutput) ToOutput(ctx context.Context) pulumix.Output[GetReportDefinitionsReportDefinitionCollectionItemColumnInfo] {
+	return pulumix.Output[GetReportDefinitionsReportDefinitionCollectionItemColumnInfo]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Specifies the data type of the column.
@@ -21578,6 +25053,12 @@ func (o GetReportDefinitionsReportDefinitionCollectionItemColumnInfoArrayOutput)
 
 func (o GetReportDefinitionsReportDefinitionCollectionItemColumnInfoArrayOutput) ToGetReportDefinitionsReportDefinitionCollectionItemColumnInfoArrayOutputWithContext(ctx context.Context) GetReportDefinitionsReportDefinitionCollectionItemColumnInfoArrayOutput {
 	return o
+}
+
+func (o GetReportDefinitionsReportDefinitionCollectionItemColumnInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetReportDefinitionsReportDefinitionCollectionItemColumnInfo] {
+	return pulumix.Output[[]GetReportDefinitionsReportDefinitionCollectionItemColumnInfo]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetReportDefinitionsReportDefinitionCollectionItemColumnInfoArrayOutput) Index(i pulumi.IntInput) GetReportDefinitionsReportDefinitionCollectionItemColumnInfoOutput {
@@ -21627,6 +25108,12 @@ func (i GetReportDefinitionsReportDefinitionCollectionItemColumnSortingArgs) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetReportDefinitionsReportDefinitionCollectionItemColumnSortingOutput)
 }
 
+func (i GetReportDefinitionsReportDefinitionCollectionItemColumnSortingArgs) ToOutput(ctx context.Context) pulumix.Output[GetReportDefinitionsReportDefinitionCollectionItemColumnSorting] {
+	return pulumix.Output[GetReportDefinitionsReportDefinitionCollectionItemColumnSorting]{
+		OutputState: i.ToGetReportDefinitionsReportDefinitionCollectionItemColumnSortingOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetReportDefinitionsReportDefinitionCollectionItemColumnSortingArrayInput is an input type that accepts GetReportDefinitionsReportDefinitionCollectionItemColumnSortingArray and GetReportDefinitionsReportDefinitionCollectionItemColumnSortingArrayOutput values.
 // You can construct a concrete instance of `GetReportDefinitionsReportDefinitionCollectionItemColumnSortingArrayInput` via:
 //
@@ -21652,6 +25139,12 @@ func (i GetReportDefinitionsReportDefinitionCollectionItemColumnSortingArray) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetReportDefinitionsReportDefinitionCollectionItemColumnSortingArrayOutput)
 }
 
+func (i GetReportDefinitionsReportDefinitionCollectionItemColumnSortingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetReportDefinitionsReportDefinitionCollectionItemColumnSorting] {
+	return pulumix.Output[[]GetReportDefinitionsReportDefinitionCollectionItemColumnSorting]{
+		OutputState: i.ToGetReportDefinitionsReportDefinitionCollectionItemColumnSortingArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetReportDefinitionsReportDefinitionCollectionItemColumnSortingOutput struct{ *pulumi.OutputState }
 
 func (GetReportDefinitionsReportDefinitionCollectionItemColumnSortingOutput) ElementType() reflect.Type {
@@ -21664,6 +25157,12 @@ func (o GetReportDefinitionsReportDefinitionCollectionItemColumnSortingOutput) T
 
 func (o GetReportDefinitionsReportDefinitionCollectionItemColumnSortingOutput) ToGetReportDefinitionsReportDefinitionCollectionItemColumnSortingOutputWithContext(ctx context.Context) GetReportDefinitionsReportDefinitionCollectionItemColumnSortingOutput {
 	return o
+}
+
+func (o GetReportDefinitionsReportDefinitionCollectionItemColumnSortingOutput) ToOutput(ctx context.Context) pulumix.Output[GetReportDefinitionsReportDefinitionCollectionItemColumnSorting] {
+	return pulumix.Output[GetReportDefinitionsReportDefinitionCollectionItemColumnSorting]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Name of the column that must be sorted.
@@ -21693,6 +25192,12 @@ func (o GetReportDefinitionsReportDefinitionCollectionItemColumnSortingArrayOutp
 
 func (o GetReportDefinitionsReportDefinitionCollectionItemColumnSortingArrayOutput) ToGetReportDefinitionsReportDefinitionCollectionItemColumnSortingArrayOutputWithContext(ctx context.Context) GetReportDefinitionsReportDefinitionCollectionItemColumnSortingArrayOutput {
 	return o
+}
+
+func (o GetReportDefinitionsReportDefinitionCollectionItemColumnSortingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetReportDefinitionsReportDefinitionCollectionItemColumnSorting] {
+	return pulumix.Output[[]GetReportDefinitionsReportDefinitionCollectionItemColumnSorting]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetReportDefinitionsReportDefinitionCollectionItemColumnSortingArrayOutput) Index(i pulumi.IntInput) GetReportDefinitionsReportDefinitionCollectionItemColumnSortingOutput {
@@ -21754,6 +25259,12 @@ func (i GetReportDefinitionsReportDefinitionCollectionItemSummaryArgs) ToGetRepo
 	return pulumi.ToOutputWithContext(ctx, i).(GetReportDefinitionsReportDefinitionCollectionItemSummaryOutput)
 }
 
+func (i GetReportDefinitionsReportDefinitionCollectionItemSummaryArgs) ToOutput(ctx context.Context) pulumix.Output[GetReportDefinitionsReportDefinitionCollectionItemSummary] {
+	return pulumix.Output[GetReportDefinitionsReportDefinitionCollectionItemSummary]{
+		OutputState: i.ToGetReportDefinitionsReportDefinitionCollectionItemSummaryOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetReportDefinitionsReportDefinitionCollectionItemSummaryArrayInput is an input type that accepts GetReportDefinitionsReportDefinitionCollectionItemSummaryArray and GetReportDefinitionsReportDefinitionCollectionItemSummaryArrayOutput values.
 // You can construct a concrete instance of `GetReportDefinitionsReportDefinitionCollectionItemSummaryArrayInput` via:
 //
@@ -21779,6 +25290,12 @@ func (i GetReportDefinitionsReportDefinitionCollectionItemSummaryArray) ToGetRep
 	return pulumi.ToOutputWithContext(ctx, i).(GetReportDefinitionsReportDefinitionCollectionItemSummaryArrayOutput)
 }
 
+func (i GetReportDefinitionsReportDefinitionCollectionItemSummaryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetReportDefinitionsReportDefinitionCollectionItemSummary] {
+	return pulumix.Output[[]GetReportDefinitionsReportDefinitionCollectionItemSummary]{
+		OutputState: i.ToGetReportDefinitionsReportDefinitionCollectionItemSummaryArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetReportDefinitionsReportDefinitionCollectionItemSummaryOutput struct{ *pulumi.OutputState }
 
 func (GetReportDefinitionsReportDefinitionCollectionItemSummaryOutput) ElementType() reflect.Type {
@@ -21791,6 +25308,12 @@ func (o GetReportDefinitionsReportDefinitionCollectionItemSummaryOutput) ToGetRe
 
 func (o GetReportDefinitionsReportDefinitionCollectionItemSummaryOutput) ToGetReportDefinitionsReportDefinitionCollectionItemSummaryOutputWithContext(ctx context.Context) GetReportDefinitionsReportDefinitionCollectionItemSummaryOutput {
 	return o
+}
+
+func (o GetReportDefinitionsReportDefinitionCollectionItemSummaryOutput) ToOutput(ctx context.Context) pulumix.Output[GetReportDefinitionsReportDefinitionCollectionItemSummary] {
+	return pulumix.Output[GetReportDefinitionsReportDefinitionCollectionItemSummary]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Name of the key or count of object.
@@ -21837,6 +25360,12 @@ func (o GetReportDefinitionsReportDefinitionCollectionItemSummaryArrayOutput) To
 	return o
 }
 
+func (o GetReportDefinitionsReportDefinitionCollectionItemSummaryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetReportDefinitionsReportDefinitionCollectionItemSummary] {
+	return pulumix.Output[[]GetReportDefinitionsReportDefinitionCollectionItemSummary]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetReportDefinitionsReportDefinitionCollectionItemSummaryArrayOutput) Index(i pulumi.IntInput) GetReportDefinitionsReportDefinitionCollectionItemSummaryOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReportDefinitionsReportDefinitionCollectionItemSummary {
 		return vs[0].([]GetReportDefinitionsReportDefinitionCollectionItemSummary)[vs[1].(int)]
@@ -21878,6 +25407,12 @@ func (i GetReportsFilterArgs) ToGetReportsFilterOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetReportsFilterOutput)
 }
 
+func (i GetReportsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetReportsFilter] {
+	return pulumix.Output[GetReportsFilter]{
+		OutputState: i.ToGetReportsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetReportsFilterArrayInput is an input type that accepts GetReportsFilterArray and GetReportsFilterArrayOutput values.
 // You can construct a concrete instance of `GetReportsFilterArrayInput` via:
 //
@@ -21903,6 +25438,12 @@ func (i GetReportsFilterArray) ToGetReportsFilterArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetReportsFilterArrayOutput)
 }
 
+func (i GetReportsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetReportsFilter] {
+	return pulumix.Output[[]GetReportsFilter]{
+		OutputState: i.ToGetReportsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetReportsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetReportsFilterOutput) ElementType() reflect.Type {
@@ -21915,6 +25456,12 @@ func (o GetReportsFilterOutput) ToGetReportsFilterOutput() GetReportsFilterOutpu
 
 func (o GetReportsFilterOutput) ToGetReportsFilterOutputWithContext(ctx context.Context) GetReportsFilterOutput {
 	return o
+}
+
+func (o GetReportsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetReportsFilter] {
+	return pulumix.Output[GetReportsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetReportsFilterOutput) Name() pulumi.StringOutput {
@@ -21941,6 +25488,12 @@ func (o GetReportsFilterArrayOutput) ToGetReportsFilterArrayOutput() GetReportsF
 
 func (o GetReportsFilterArrayOutput) ToGetReportsFilterArrayOutputWithContext(ctx context.Context) GetReportsFilterArrayOutput {
 	return o
+}
+
+func (o GetReportsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetReportsFilter] {
+	return pulumix.Output[[]GetReportsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetReportsFilterArrayOutput) Index(i pulumi.IntInput) GetReportsFilterOutput {
@@ -21980,6 +25533,12 @@ func (i GetReportsReportCollectionArgs) ToGetReportsReportCollectionOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetReportsReportCollectionOutput)
 }
 
+func (i GetReportsReportCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetReportsReportCollection] {
+	return pulumix.Output[GetReportsReportCollection]{
+		OutputState: i.ToGetReportsReportCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetReportsReportCollectionArrayInput is an input type that accepts GetReportsReportCollectionArray and GetReportsReportCollectionArrayOutput values.
 // You can construct a concrete instance of `GetReportsReportCollectionArrayInput` via:
 //
@@ -22005,6 +25564,12 @@ func (i GetReportsReportCollectionArray) ToGetReportsReportCollectionArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetReportsReportCollectionArrayOutput)
 }
 
+func (i GetReportsReportCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetReportsReportCollection] {
+	return pulumix.Output[[]GetReportsReportCollection]{
+		OutputState: i.ToGetReportsReportCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetReportsReportCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetReportsReportCollectionOutput) ElementType() reflect.Type {
@@ -22017,6 +25582,12 @@ func (o GetReportsReportCollectionOutput) ToGetReportsReportCollectionOutput() G
 
 func (o GetReportsReportCollectionOutput) ToGetReportsReportCollectionOutputWithContext(ctx context.Context) GetReportsReportCollectionOutput {
 	return o
+}
+
+func (o GetReportsReportCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetReportsReportCollection] {
+	return pulumix.Output[GetReportsReportCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetReportsReportCollectionOutput) Items() GetReportsReportCollectionItemArrayOutput {
@@ -22035,6 +25606,12 @@ func (o GetReportsReportCollectionArrayOutput) ToGetReportsReportCollectionArray
 
 func (o GetReportsReportCollectionArrayOutput) ToGetReportsReportCollectionArrayOutputWithContext(ctx context.Context) GetReportsReportCollectionArrayOutput {
 	return o
+}
+
+func (o GetReportsReportCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetReportsReportCollection] {
+	return pulumix.Output[[]GetReportsReportCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetReportsReportCollectionArrayOutput) Index(i pulumi.IntInput) GetReportsReportCollectionOutput {
@@ -22120,6 +25697,12 @@ func (i GetReportsReportCollectionItemArgs) ToGetReportsReportCollectionItemOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetReportsReportCollectionItemOutput)
 }
 
+func (i GetReportsReportCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetReportsReportCollectionItem] {
+	return pulumix.Output[GetReportsReportCollectionItem]{
+		OutputState: i.ToGetReportsReportCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetReportsReportCollectionItemArrayInput is an input type that accepts GetReportsReportCollectionItemArray and GetReportsReportCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetReportsReportCollectionItemArrayInput` via:
 //
@@ -22145,6 +25728,12 @@ func (i GetReportsReportCollectionItemArray) ToGetReportsReportCollectionItemArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetReportsReportCollectionItemArrayOutput)
 }
 
+func (i GetReportsReportCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetReportsReportCollectionItem] {
+	return pulumix.Output[[]GetReportsReportCollectionItem]{
+		OutputState: i.ToGetReportsReportCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetReportsReportCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetReportsReportCollectionItemOutput) ElementType() reflect.Type {
@@ -22157,6 +25746,12 @@ func (o GetReportsReportCollectionItemOutput) ToGetReportsReportCollectionItemOu
 
 func (o GetReportsReportCollectionItemOutput) ToGetReportsReportCollectionItemOutputWithContext(ctx context.Context) GetReportsReportCollectionItemOutput {
 	return o
+}
+
+func (o GetReportsReportCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetReportsReportCollectionItem] {
+	return pulumix.Output[GetReportsReportCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A filter to return only resources that match the specified compartment OCID.
@@ -22233,6 +25828,12 @@ func (o GetReportsReportCollectionItemArrayOutput) ToGetReportsReportCollectionI
 	return o
 }
 
+func (o GetReportsReportCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetReportsReportCollectionItem] {
+	return pulumix.Output[[]GetReportsReportCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetReportsReportCollectionItemArrayOutput) Index(i pulumi.IntInput) GetReportsReportCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReportsReportCollectionItem {
 		return vs[0].([]GetReportsReportCollectionItem)[vs[1].(int)]
@@ -22274,6 +25875,12 @@ func (i GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArgs) ToGetSdmMaskin
 	return pulumi.ToOutputWithContext(ctx, i).(GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterOutput)
 }
 
+func (i GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSdmMaskingPolicyDifferenceDifferenceColumnsFilter] {
+	return pulumix.Output[GetSdmMaskingPolicyDifferenceDifferenceColumnsFilter]{
+		OutputState: i.ToGetSdmMaskingPolicyDifferenceDifferenceColumnsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArrayInput is an input type that accepts GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArray and GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArrayInput` via:
 //
@@ -22299,6 +25906,12 @@ func (i GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArray) ToGetSdmMaski
 	return pulumi.ToOutputWithContext(ctx, i).(GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArrayOutput)
 }
 
+func (i GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSdmMaskingPolicyDifferenceDifferenceColumnsFilter] {
+	return pulumix.Output[[]GetSdmMaskingPolicyDifferenceDifferenceColumnsFilter]{
+		OutputState: i.ToGetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterOutput) ElementType() reflect.Type {
@@ -22311,6 +25924,12 @@ func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterOutput) ToGetSdmMask
 
 func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterOutput) ToGetSdmMaskingPolicyDifferenceDifferenceColumnsFilterOutputWithContext(ctx context.Context) GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterOutput {
 	return o
+}
+
+func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSdmMaskingPolicyDifferenceDifferenceColumnsFilter] {
+	return pulumix.Output[GetSdmMaskingPolicyDifferenceDifferenceColumnsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterOutput) Name() pulumi.StringOutput {
@@ -22337,6 +25956,12 @@ func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArrayOutput) ToGetSd
 
 func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArrayOutput) ToGetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArrayOutputWithContext(ctx context.Context) GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArrayOutput {
 	return o
+}
+
+func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSdmMaskingPolicyDifferenceDifferenceColumnsFilter] {
+	return pulumix.Output[[]GetSdmMaskingPolicyDifferenceDifferenceColumnsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArrayOutput) Index(i pulumi.IntInput) GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterOutput {
@@ -22376,6 +26001,12 @@ func (i GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifference
 	return pulumi.ToOutputWithContext(ctx, i).(GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionOutput)
 }
 
+func (i GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollection] {
+	return pulumix.Output[GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollection]{
+		OutputState: i.ToGetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArrayInput is an input type that accepts GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArray and GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArrayOutput values.
 // You can construct a concrete instance of `GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArrayInput` via:
 //
@@ -22401,6 +26032,12 @@ func (i GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifference
 	return pulumi.ToOutputWithContext(ctx, i).(GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArrayOutput)
 }
 
+func (i GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollection] {
+	return pulumix.Output[[]GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollection]{
+		OutputState: i.ToGetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionOutput) ElementType() reflect.Type {
@@ -22413,6 +26050,12 @@ func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifference
 
 func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionOutput) ToGetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionOutputWithContext(ctx context.Context) GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionOutput {
 	return o
+}
+
+func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollection] {
+	return pulumix.Output[GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionOutput) Items() GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArrayOutput {
@@ -22433,6 +26076,12 @@ func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifference
 
 func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArrayOutput) ToGetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArrayOutputWithContext(ctx context.Context) GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArrayOutput {
 	return o
+}
+
+func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollection] {
+	return pulumix.Output[[]GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionArrayOutput) Index(i pulumi.IntInput) GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionOutput {
@@ -22514,6 +26163,12 @@ func (i GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifference
 	return pulumi.ToOutputWithContext(ctx, i).(GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemOutput)
 }
 
+func (i GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItem] {
+	return pulumix.Output[GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItem]{
+		OutputState: i.ToGetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArrayInput is an input type that accepts GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArray and GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArrayInput` via:
 //
@@ -22539,6 +26194,12 @@ func (i GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifference
 	return pulumi.ToOutputWithContext(ctx, i).(GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArrayOutput)
 }
 
+func (i GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItem] {
+	return pulumix.Output[[]GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItem]{
+		OutputState: i.ToGetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemOutput) ElementType() reflect.Type {
@@ -22551,6 +26212,12 @@ func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifference
 
 func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemOutput) ToGetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemOutputWithContext(ctx context.Context) GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemOutput {
 	return o
+}
+
+func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItem] {
+	return pulumix.Output[GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A filter to return only a specific column based on column name.
@@ -22644,6 +26311,12 @@ func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifference
 	return o
 }
 
+func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItem] {
+	return pulumix.Output[[]GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItem {
 		return vs[0].([]GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItem)[vs[1].(int)]
@@ -22685,6 +26358,12 @@ func (i GetSdmMaskingPolicyDifferencesFilterArgs) ToGetSdmMaskingPolicyDifferenc
 	return pulumi.ToOutputWithContext(ctx, i).(GetSdmMaskingPolicyDifferencesFilterOutput)
 }
 
+func (i GetSdmMaskingPolicyDifferencesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSdmMaskingPolicyDifferencesFilter] {
+	return pulumix.Output[GetSdmMaskingPolicyDifferencesFilter]{
+		OutputState: i.ToGetSdmMaskingPolicyDifferencesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSdmMaskingPolicyDifferencesFilterArrayInput is an input type that accepts GetSdmMaskingPolicyDifferencesFilterArray and GetSdmMaskingPolicyDifferencesFilterArrayOutput values.
 // You can construct a concrete instance of `GetSdmMaskingPolicyDifferencesFilterArrayInput` via:
 //
@@ -22710,6 +26389,12 @@ func (i GetSdmMaskingPolicyDifferencesFilterArray) ToGetSdmMaskingPolicyDifferen
 	return pulumi.ToOutputWithContext(ctx, i).(GetSdmMaskingPolicyDifferencesFilterArrayOutput)
 }
 
+func (i GetSdmMaskingPolicyDifferencesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSdmMaskingPolicyDifferencesFilter] {
+	return pulumix.Output[[]GetSdmMaskingPolicyDifferencesFilter]{
+		OutputState: i.ToGetSdmMaskingPolicyDifferencesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSdmMaskingPolicyDifferencesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSdmMaskingPolicyDifferencesFilterOutput) ElementType() reflect.Type {
@@ -22722,6 +26407,12 @@ func (o GetSdmMaskingPolicyDifferencesFilterOutput) ToGetSdmMaskingPolicyDiffere
 
 func (o GetSdmMaskingPolicyDifferencesFilterOutput) ToGetSdmMaskingPolicyDifferencesFilterOutputWithContext(ctx context.Context) GetSdmMaskingPolicyDifferencesFilterOutput {
 	return o
+}
+
+func (o GetSdmMaskingPolicyDifferencesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSdmMaskingPolicyDifferencesFilter] {
+	return pulumix.Output[GetSdmMaskingPolicyDifferencesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSdmMaskingPolicyDifferencesFilterOutput) Name() pulumi.StringOutput {
@@ -22748,6 +26439,12 @@ func (o GetSdmMaskingPolicyDifferencesFilterArrayOutput) ToGetSdmMaskingPolicyDi
 
 func (o GetSdmMaskingPolicyDifferencesFilterArrayOutput) ToGetSdmMaskingPolicyDifferencesFilterArrayOutputWithContext(ctx context.Context) GetSdmMaskingPolicyDifferencesFilterArrayOutput {
 	return o
+}
+
+func (o GetSdmMaskingPolicyDifferencesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSdmMaskingPolicyDifferencesFilter] {
+	return pulumix.Output[[]GetSdmMaskingPolicyDifferencesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSdmMaskingPolicyDifferencesFilterArrayOutput) Index(i pulumi.IntInput) GetSdmMaskingPolicyDifferencesFilterOutput {
@@ -22787,6 +26484,12 @@ func (i GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArgs) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionOutput)
 }
 
+func (i GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollection] {
+	return pulumix.Output[GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollection]{
+		OutputState: i.ToGetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArrayInput is an input type that accepts GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArray and GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArrayOutput values.
 // You can construct a concrete instance of `GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArrayInput` via:
 //
@@ -22812,6 +26515,12 @@ func (i GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArray)
 	return pulumi.ToOutputWithContext(ctx, i).(GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArrayOutput)
 }
 
+func (i GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollection] {
+	return pulumix.Output[[]GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollection]{
+		OutputState: i.ToGetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionOutput) ElementType() reflect.Type {
@@ -22824,6 +26533,12 @@ func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionOutput
 
 func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionOutput) ToGetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionOutputWithContext(ctx context.Context) GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionOutput {
 	return o
+}
+
+func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollection] {
+	return pulumix.Output[GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionOutput) Items() GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArrayOutput {
@@ -22844,6 +26559,12 @@ func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArrayO
 
 func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArrayOutput) ToGetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArrayOutputWithContext(ctx context.Context) GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArrayOutput {
 	return o
+}
+
+func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollection] {
+	return pulumix.Output[[]GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionArrayOutput) Index(i pulumi.IntInput) GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionOutput {
@@ -22929,6 +26650,12 @@ func (i GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutput)
 }
 
+func (i GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem] {
+	return pulumix.Output[GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem]{
+		OutputState: i.ToGetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArrayInput is an input type that accepts GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArray and GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArrayInput` via:
 //
@@ -22954,6 +26681,12 @@ func (i GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArrayOutput)
 }
 
+func (i GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem] {
+	return pulumix.Output[[]GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem]{
+		OutputState: i.ToGetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutput) ElementType() reflect.Type {
@@ -22966,6 +26699,12 @@ func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOu
 
 func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutput) ToGetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutputWithContext(ctx context.Context) GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutput {
 	return o
+}
+
+func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem] {
+	return pulumix.Output[GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A filter to return only resources that match the specified compartment OCID.
@@ -23062,6 +26801,12 @@ func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemAr
 	return o
 }
 
+func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem] {
+	return pulumix.Output[[]GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem {
 		return vs[0].([]GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem)[vs[1].(int)]
@@ -23133,6 +26878,12 @@ func (i GetSecurityAssessmentComparisonTargetArgs) ToGetSecurityAssessmentCompar
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTarget] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTarget]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentComparisonTargetArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetArray and GetSecurityAssessmentComparisonTargetArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetArrayInput` via:
 //
@@ -23158,6 +26909,12 @@ func (i GetSecurityAssessmentComparisonTargetArray) ToGetSecurityAssessmentCompa
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetArrayOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTarget] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTarget]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentComparisonTargetOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentComparisonTargetOutput) ElementType() reflect.Type {
@@ -23170,6 +26927,12 @@ func (o GetSecurityAssessmentComparisonTargetOutput) ToGetSecurityAssessmentComp
 
 func (o GetSecurityAssessmentComparisonTargetOutput) ToGetSecurityAssessmentComparisonTargetOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTarget] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTarget]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A comparison between findings belonging to Auditing category.
@@ -23245,6 +27008,12 @@ func (o GetSecurityAssessmentComparisonTargetArrayOutput) ToGetSecurityAssessmen
 	return o
 }
 
+func (o GetSecurityAssessmentComparisonTargetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTarget] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTarget]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetSecurityAssessmentComparisonTargetArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentComparisonTargetOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityAssessmentComparisonTarget {
 		return vs[0].([]GetSecurityAssessmentComparisonTarget)[vs[1].(int)]
@@ -23304,6 +27073,12 @@ func (i GetSecurityAssessmentComparisonTargetAuditingArgs) ToGetSecurityAssessme
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetAuditingOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetAuditingArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetAuditing] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetAuditing]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetAuditingOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentComparisonTargetAuditingArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetAuditingArray and GetSecurityAssessmentComparisonTargetAuditingArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetAuditingArrayInput` via:
 //
@@ -23329,6 +27104,12 @@ func (i GetSecurityAssessmentComparisonTargetAuditingArray) ToGetSecurityAssessm
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetAuditingArrayOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetAuditingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetAuditing] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetAuditing]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetAuditingArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentComparisonTargetAuditingOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentComparisonTargetAuditingOutput) ElementType() reflect.Type {
@@ -23341,6 +27122,12 @@ func (o GetSecurityAssessmentComparisonTargetAuditingOutput) ToGetSecurityAssess
 
 func (o GetSecurityAssessmentComparisonTargetAuditingOutput) ToGetSecurityAssessmentComparisonTargetAuditingOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetAuditingOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetAuditingOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetAuditing] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetAuditing]{
+		OutputState: o.OutputState,
+	}
 }
 
 // This array identifies the items that are present in the current assessment, but are missing from the baseline.
@@ -23389,6 +27176,12 @@ func (o GetSecurityAssessmentComparisonTargetAuditingArrayOutput) ToGetSecurityA
 
 func (o GetSecurityAssessmentComparisonTargetAuditingArrayOutput) ToGetSecurityAssessmentComparisonTargetAuditingArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetAuditingArrayOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetAuditingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetAuditing] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetAuditing]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityAssessmentComparisonTargetAuditingArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentComparisonTargetAuditingOutput {
@@ -23454,6 +27247,12 @@ func (i GetSecurityAssessmentComparisonTargetAuditingBaselineArgs) ToGetSecurity
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetAuditingBaselineOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetAuditingBaselineArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetAuditingBaseline] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetAuditingBaseline]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetAuditingBaselineOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentComparisonTargetAuditingBaselineArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetAuditingBaselineArray and GetSecurityAssessmentComparisonTargetAuditingBaselineArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetAuditingBaselineArrayInput` via:
 //
@@ -23479,6 +27278,12 @@ func (i GetSecurityAssessmentComparisonTargetAuditingBaselineArray) ToGetSecurit
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetAuditingBaselineArrayOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetAuditingBaselineArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetAuditingBaseline] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetAuditingBaseline]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetAuditingBaselineArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentComparisonTargetAuditingBaselineOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentComparisonTargetAuditingBaselineOutput) ElementType() reflect.Type {
@@ -23491,6 +27296,12 @@ func (o GetSecurityAssessmentComparisonTargetAuditingBaselineOutput) ToGetSecuri
 
 func (o GetSecurityAssessmentComparisonTargetAuditingBaselineOutput) ToGetSecurityAssessmentComparisonTargetAuditingBaselineOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetAuditingBaselineOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetAuditingBaselineOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetAuditingBaseline] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetAuditingBaseline]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
@@ -23544,6 +27355,12 @@ func (o GetSecurityAssessmentComparisonTargetAuditingBaselineArrayOutput) ToGetS
 	return o
 }
 
+func (o GetSecurityAssessmentComparisonTargetAuditingBaselineArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetAuditingBaseline] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetAuditingBaseline]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetSecurityAssessmentComparisonTargetAuditingBaselineArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentComparisonTargetAuditingBaselineOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityAssessmentComparisonTargetAuditingBaseline {
 		return vs[0].([]GetSecurityAssessmentComparisonTargetAuditingBaseline)[vs[1].(int)]
@@ -23591,6 +27408,12 @@ func (i GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceArgs) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetAuditingBaselineReference] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetAuditingBaselineReference]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetAuditingBaselineReferenceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceArray and GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceArrayInput` via:
 //
@@ -23616,6 +27439,12 @@ func (i GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceArray) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceArrayOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetAuditingBaselineReference] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetAuditingBaselineReference]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetAuditingBaselineReferenceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceOutput) ElementType() reflect.Type {
@@ -23628,6 +27457,12 @@ func (o GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceOutput) To
 
 func (o GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceOutput) ToGetSecurityAssessmentComparisonTargetAuditingBaselineReferenceOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetAuditingBaselineReference] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetAuditingBaselineReference]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Relevant section from CIS.
@@ -23657,6 +27492,12 @@ func (o GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceArrayOutpu
 
 func (o GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceArrayOutput) ToGetSecurityAssessmentComparisonTargetAuditingBaselineReferenceArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceArrayOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetAuditingBaselineReference] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetAuditingBaselineReference]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceOutput {
@@ -23722,6 +27563,12 @@ func (i GetSecurityAssessmentComparisonTargetAuditingCurrentArgs) ToGetSecurityA
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetAuditingCurrentOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetAuditingCurrentArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetAuditingCurrent] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetAuditingCurrent]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetAuditingCurrentOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentComparisonTargetAuditingCurrentArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetAuditingCurrentArray and GetSecurityAssessmentComparisonTargetAuditingCurrentArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetAuditingCurrentArrayInput` via:
 //
@@ -23747,6 +27594,12 @@ func (i GetSecurityAssessmentComparisonTargetAuditingCurrentArray) ToGetSecurity
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetAuditingCurrentArrayOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetAuditingCurrentArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetAuditingCurrent] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetAuditingCurrent]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetAuditingCurrentArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentComparisonTargetAuditingCurrentOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentComparisonTargetAuditingCurrentOutput) ElementType() reflect.Type {
@@ -23759,6 +27612,12 @@ func (o GetSecurityAssessmentComparisonTargetAuditingCurrentOutput) ToGetSecurit
 
 func (o GetSecurityAssessmentComparisonTargetAuditingCurrentOutput) ToGetSecurityAssessmentComparisonTargetAuditingCurrentOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetAuditingCurrentOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetAuditingCurrentOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetAuditingCurrent] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetAuditingCurrent]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
@@ -23812,6 +27671,12 @@ func (o GetSecurityAssessmentComparisonTargetAuditingCurrentArrayOutput) ToGetSe
 	return o
 }
 
+func (o GetSecurityAssessmentComparisonTargetAuditingCurrentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetAuditingCurrent] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetAuditingCurrent]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetSecurityAssessmentComparisonTargetAuditingCurrentArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentComparisonTargetAuditingCurrentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityAssessmentComparisonTargetAuditingCurrent {
 		return vs[0].([]GetSecurityAssessmentComparisonTargetAuditingCurrent)[vs[1].(int)]
@@ -23859,6 +27724,12 @@ func (i GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceArgs) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetAuditingCurrentReference] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetAuditingCurrentReference]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetAuditingCurrentReferenceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceArray and GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceArrayInput` via:
 //
@@ -23884,6 +27755,12 @@ func (i GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceArray) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceArrayOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetAuditingCurrentReference] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetAuditingCurrentReference]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetAuditingCurrentReferenceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceOutput) ElementType() reflect.Type {
@@ -23896,6 +27773,12 @@ func (o GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceOutput) ToG
 
 func (o GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceOutput) ToGetSecurityAssessmentComparisonTargetAuditingCurrentReferenceOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetAuditingCurrentReference] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetAuditingCurrentReference]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Relevant section from CIS.
@@ -23925,6 +27808,12 @@ func (o GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceArrayOutput
 
 func (o GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceArrayOutput) ToGetSecurityAssessmentComparisonTargetAuditingCurrentReferenceArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceArrayOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetAuditingCurrentReference] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetAuditingCurrentReference]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceOutput {
@@ -23986,6 +27875,12 @@ func (i GetSecurityAssessmentComparisonTargetAuthorizationControlArgs) ToGetSecu
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetAuthorizationControlOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetAuthorizationControlArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetAuthorizationControl] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetAuthorizationControl]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetAuthorizationControlOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentComparisonTargetAuthorizationControlArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetAuthorizationControlArray and GetSecurityAssessmentComparisonTargetAuthorizationControlArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetAuthorizationControlArrayInput` via:
 //
@@ -24011,6 +27906,12 @@ func (i GetSecurityAssessmentComparisonTargetAuthorizationControlArray) ToGetSec
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetAuthorizationControlArrayOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetAuthorizationControlArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetAuthorizationControl] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetAuthorizationControl]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetAuthorizationControlArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentComparisonTargetAuthorizationControlOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentComparisonTargetAuthorizationControlOutput) ElementType() reflect.Type {
@@ -24023,6 +27924,12 @@ func (o GetSecurityAssessmentComparisonTargetAuthorizationControlOutput) ToGetSe
 
 func (o GetSecurityAssessmentComparisonTargetAuthorizationControlOutput) ToGetSecurityAssessmentComparisonTargetAuthorizationControlOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetAuthorizationControlOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetAuthorizationControlOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetAuthorizationControl] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetAuthorizationControl]{
+		OutputState: o.OutputState,
+	}
 }
 
 // This array identifies the items that are present in the current assessment, but are missing from the baseline.
@@ -24071,6 +27978,12 @@ func (o GetSecurityAssessmentComparisonTargetAuthorizationControlArrayOutput) To
 
 func (o GetSecurityAssessmentComparisonTargetAuthorizationControlArrayOutput) ToGetSecurityAssessmentComparisonTargetAuthorizationControlArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetAuthorizationControlArrayOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetAuthorizationControlArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetAuthorizationControl] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetAuthorizationControl]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityAssessmentComparisonTargetAuthorizationControlArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentComparisonTargetAuthorizationControlOutput {
@@ -24136,6 +28049,12 @@ func (i GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineArgs) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetAuthorizationControlBaseline] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetAuthorizationControlBaseline]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetAuthorizationControlBaselineOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineArray and GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineArrayInput` via:
 //
@@ -24161,6 +28080,12 @@ func (i GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineArray) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineArrayOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetAuthorizationControlBaseline] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetAuthorizationControlBaseline]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetAuthorizationControlBaselineArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineOutput) ElementType() reflect.Type {
@@ -24173,6 +28098,12 @@ func (o GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineOutput)
 
 func (o GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineOutput) ToGetSecurityAssessmentComparisonTargetAuthorizationControlBaselineOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetAuthorizationControlBaseline] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetAuthorizationControlBaseline]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
@@ -24226,6 +28157,12 @@ func (o GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineArrayOu
 	return o
 }
 
+func (o GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetAuthorizationControlBaseline] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetAuthorizationControlBaseline]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityAssessmentComparisonTargetAuthorizationControlBaseline {
 		return vs[0].([]GetSecurityAssessmentComparisonTargetAuthorizationControlBaseline)[vs[1].(int)]
@@ -24273,6 +28210,12 @@ func (i GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferen
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferenceOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferenceArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReference] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReference]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferenceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferenceArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferenceArray and GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferenceArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferenceArrayInput` via:
 //
@@ -24298,6 +28241,12 @@ func (i GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferen
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferenceArrayOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferenceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReference] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReference]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferenceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferenceOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferenceOutput) ElementType() reflect.Type {
@@ -24310,6 +28259,12 @@ func (o GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferen
 
 func (o GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferenceOutput) ToGetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferenceOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferenceOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferenceOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReference] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReference]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Relevant section from CIS.
@@ -24345,6 +28300,12 @@ func (o GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferen
 
 func (o GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferenceArrayOutput) ToGetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferenceArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferenceArrayOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferenceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReference] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReference]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferenceArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferenceOutput {
@@ -24410,6 +28371,12 @@ func (i GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentArgs) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetAuthorizationControlCurrent] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetAuthorizationControlCurrent]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetAuthorizationControlCurrentOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentArray and GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentArrayInput` via:
 //
@@ -24435,6 +28402,12 @@ func (i GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentArray) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentArrayOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetAuthorizationControlCurrent] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetAuthorizationControlCurrent]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetAuthorizationControlCurrentArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentOutput) ElementType() reflect.Type {
@@ -24447,6 +28420,12 @@ func (o GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentOutput) 
 
 func (o GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentOutput) ToGetSecurityAssessmentComparisonTargetAuthorizationControlCurrentOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetAuthorizationControlCurrent] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetAuthorizationControlCurrent]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
@@ -24500,6 +28479,12 @@ func (o GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentArrayOut
 	return o
 }
 
+func (o GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetAuthorizationControlCurrent] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetAuthorizationControlCurrent]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityAssessmentComparisonTargetAuthorizationControlCurrent {
 		return vs[0].([]GetSecurityAssessmentComparisonTargetAuthorizationControlCurrent)[vs[1].(int)]
@@ -24547,6 +28532,12 @@ func (i GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenc
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReference] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReference]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceArray and GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceArrayInput` via:
 //
@@ -24572,6 +28563,12 @@ func (i GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenc
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceArrayOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReference] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReference]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceOutput) ElementType() reflect.Type {
@@ -24584,6 +28581,12 @@ func (o GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenc
 
 func (o GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceOutput) ToGetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReference] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReference]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Relevant section from CIS.
@@ -24617,6 +28620,12 @@ func (o GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenc
 
 func (o GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceArrayOutput) ToGetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceArrayOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReference] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReference]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceOutput {
@@ -24678,6 +28687,12 @@ func (i GetSecurityAssessmentComparisonTargetDataEncryptionArgs) ToGetSecurityAs
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetDataEncryptionOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetDataEncryptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetDataEncryption] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetDataEncryption]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetDataEncryptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentComparisonTargetDataEncryptionArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetDataEncryptionArray and GetSecurityAssessmentComparisonTargetDataEncryptionArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetDataEncryptionArrayInput` via:
 //
@@ -24703,6 +28718,12 @@ func (i GetSecurityAssessmentComparisonTargetDataEncryptionArray) ToGetSecurityA
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetDataEncryptionArrayOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetDataEncryptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetDataEncryption] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetDataEncryption]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetDataEncryptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentComparisonTargetDataEncryptionOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentComparisonTargetDataEncryptionOutput) ElementType() reflect.Type {
@@ -24715,6 +28736,12 @@ func (o GetSecurityAssessmentComparisonTargetDataEncryptionOutput) ToGetSecurity
 
 func (o GetSecurityAssessmentComparisonTargetDataEncryptionOutput) ToGetSecurityAssessmentComparisonTargetDataEncryptionOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetDataEncryptionOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetDataEncryptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetDataEncryption] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetDataEncryption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // This array identifies the items that are present in the current assessment, but are missing from the baseline.
@@ -24763,6 +28790,12 @@ func (o GetSecurityAssessmentComparisonTargetDataEncryptionArrayOutput) ToGetSec
 
 func (o GetSecurityAssessmentComparisonTargetDataEncryptionArrayOutput) ToGetSecurityAssessmentComparisonTargetDataEncryptionArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetDataEncryptionArrayOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetDataEncryptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetDataEncryption] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetDataEncryption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityAssessmentComparisonTargetDataEncryptionArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentComparisonTargetDataEncryptionOutput {
@@ -24828,6 +28861,12 @@ func (i GetSecurityAssessmentComparisonTargetDataEncryptionBaselineArgs) ToGetSe
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetDataEncryptionBaselineOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetDataEncryptionBaselineArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetDataEncryptionBaseline] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetDataEncryptionBaseline]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetDataEncryptionBaselineOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentComparisonTargetDataEncryptionBaselineArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetDataEncryptionBaselineArray and GetSecurityAssessmentComparisonTargetDataEncryptionBaselineArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetDataEncryptionBaselineArrayInput` via:
 //
@@ -24853,6 +28892,12 @@ func (i GetSecurityAssessmentComparisonTargetDataEncryptionBaselineArray) ToGetS
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetDataEncryptionBaselineArrayOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetDataEncryptionBaselineArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetDataEncryptionBaseline] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetDataEncryptionBaseline]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetDataEncryptionBaselineArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentComparisonTargetDataEncryptionBaselineOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentComparisonTargetDataEncryptionBaselineOutput) ElementType() reflect.Type {
@@ -24865,6 +28910,12 @@ func (o GetSecurityAssessmentComparisonTargetDataEncryptionBaselineOutput) ToGet
 
 func (o GetSecurityAssessmentComparisonTargetDataEncryptionBaselineOutput) ToGetSecurityAssessmentComparisonTargetDataEncryptionBaselineOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetDataEncryptionBaselineOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetDataEncryptionBaselineOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetDataEncryptionBaseline] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetDataEncryptionBaseline]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
@@ -24918,6 +28969,12 @@ func (o GetSecurityAssessmentComparisonTargetDataEncryptionBaselineArrayOutput) 
 	return o
 }
 
+func (o GetSecurityAssessmentComparisonTargetDataEncryptionBaselineArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetDataEncryptionBaseline] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetDataEncryptionBaseline]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetSecurityAssessmentComparisonTargetDataEncryptionBaselineArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentComparisonTargetDataEncryptionBaselineOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityAssessmentComparisonTargetDataEncryptionBaseline {
 		return vs[0].([]GetSecurityAssessmentComparisonTargetDataEncryptionBaseline)[vs[1].(int)]
@@ -24965,6 +29022,12 @@ func (i GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceArgs
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReference] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReference]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceArray and GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceArrayInput` via:
 //
@@ -24990,6 +29053,12 @@ func (i GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceArra
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceArrayOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReference] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReference]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceOutput) ElementType() reflect.Type {
@@ -25002,6 +29071,12 @@ func (o GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceOutp
 
 func (o GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceOutput) ToGetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReference] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReference]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Relevant section from CIS.
@@ -25031,6 +29106,12 @@ func (o GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceArra
 
 func (o GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceArrayOutput) ToGetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceArrayOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReference] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReference]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceOutput {
@@ -25096,6 +29177,12 @@ func (i GetSecurityAssessmentComparisonTargetDataEncryptionCurrentArgs) ToGetSec
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetDataEncryptionCurrentOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetDataEncryptionCurrentArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetDataEncryptionCurrent] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetDataEncryptionCurrent]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetDataEncryptionCurrentOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentComparisonTargetDataEncryptionCurrentArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetDataEncryptionCurrentArray and GetSecurityAssessmentComparisonTargetDataEncryptionCurrentArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetDataEncryptionCurrentArrayInput` via:
 //
@@ -25121,6 +29208,12 @@ func (i GetSecurityAssessmentComparisonTargetDataEncryptionCurrentArray) ToGetSe
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetDataEncryptionCurrentArrayOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetDataEncryptionCurrentArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetDataEncryptionCurrent] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetDataEncryptionCurrent]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetDataEncryptionCurrentArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentComparisonTargetDataEncryptionCurrentOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentComparisonTargetDataEncryptionCurrentOutput) ElementType() reflect.Type {
@@ -25133,6 +29226,12 @@ func (o GetSecurityAssessmentComparisonTargetDataEncryptionCurrentOutput) ToGetS
 
 func (o GetSecurityAssessmentComparisonTargetDataEncryptionCurrentOutput) ToGetSecurityAssessmentComparisonTargetDataEncryptionCurrentOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetDataEncryptionCurrentOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetDataEncryptionCurrentOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetDataEncryptionCurrent] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetDataEncryptionCurrent]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
@@ -25186,6 +29285,12 @@ func (o GetSecurityAssessmentComparisonTargetDataEncryptionCurrentArrayOutput) T
 	return o
 }
 
+func (o GetSecurityAssessmentComparisonTargetDataEncryptionCurrentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetDataEncryptionCurrent] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetDataEncryptionCurrent]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetSecurityAssessmentComparisonTargetDataEncryptionCurrentArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentComparisonTargetDataEncryptionCurrentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityAssessmentComparisonTargetDataEncryptionCurrent {
 		return vs[0].([]GetSecurityAssessmentComparisonTargetDataEncryptionCurrent)[vs[1].(int)]
@@ -25233,6 +29338,12 @@ func (i GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceArgs)
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReference] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReference]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceArray and GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceArrayInput` via:
 //
@@ -25258,6 +29369,12 @@ func (i GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceArrayOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReference] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReference]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceOutput) ElementType() reflect.Type {
@@ -25270,6 +29387,12 @@ func (o GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceOutpu
 
 func (o GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceOutput) ToGetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReference] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReference]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Relevant section from CIS.
@@ -25299,6 +29422,12 @@ func (o GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceArray
 
 func (o GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceArrayOutput) ToGetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceArrayOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReference] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReference]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceOutput {
@@ -25360,6 +29489,12 @@ func (i GetSecurityAssessmentComparisonTargetDbConfigurationArgs) ToGetSecurityA
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetDbConfigurationOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetDbConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetDbConfiguration] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetDbConfiguration]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetDbConfigurationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentComparisonTargetDbConfigurationArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetDbConfigurationArray and GetSecurityAssessmentComparisonTargetDbConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetDbConfigurationArrayInput` via:
 //
@@ -25385,6 +29520,12 @@ func (i GetSecurityAssessmentComparisonTargetDbConfigurationArray) ToGetSecurity
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetDbConfigurationArrayOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetDbConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetDbConfiguration] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetDbConfiguration]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetDbConfigurationArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentComparisonTargetDbConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentComparisonTargetDbConfigurationOutput) ElementType() reflect.Type {
@@ -25397,6 +29538,12 @@ func (o GetSecurityAssessmentComparisonTargetDbConfigurationOutput) ToGetSecurit
 
 func (o GetSecurityAssessmentComparisonTargetDbConfigurationOutput) ToGetSecurityAssessmentComparisonTargetDbConfigurationOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetDbConfigurationOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetDbConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetDbConfiguration] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetDbConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 // This array identifies the items that are present in the current assessment, but are missing from the baseline.
@@ -25445,6 +29592,12 @@ func (o GetSecurityAssessmentComparisonTargetDbConfigurationArrayOutput) ToGetSe
 
 func (o GetSecurityAssessmentComparisonTargetDbConfigurationArrayOutput) ToGetSecurityAssessmentComparisonTargetDbConfigurationArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetDbConfigurationArrayOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetDbConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetDbConfiguration] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetDbConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityAssessmentComparisonTargetDbConfigurationArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentComparisonTargetDbConfigurationOutput {
@@ -25510,6 +29663,12 @@ func (i GetSecurityAssessmentComparisonTargetDbConfigurationBaselineArgs) ToGetS
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetDbConfigurationBaselineOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetDbConfigurationBaselineArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetDbConfigurationBaseline] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetDbConfigurationBaseline]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetDbConfigurationBaselineOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentComparisonTargetDbConfigurationBaselineArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetDbConfigurationBaselineArray and GetSecurityAssessmentComparisonTargetDbConfigurationBaselineArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetDbConfigurationBaselineArrayInput` via:
 //
@@ -25535,6 +29694,12 @@ func (i GetSecurityAssessmentComparisonTargetDbConfigurationBaselineArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetDbConfigurationBaselineArrayOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetDbConfigurationBaselineArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetDbConfigurationBaseline] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetDbConfigurationBaseline]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetDbConfigurationBaselineArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentComparisonTargetDbConfigurationBaselineOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentComparisonTargetDbConfigurationBaselineOutput) ElementType() reflect.Type {
@@ -25547,6 +29712,12 @@ func (o GetSecurityAssessmentComparisonTargetDbConfigurationBaselineOutput) ToGe
 
 func (o GetSecurityAssessmentComparisonTargetDbConfigurationBaselineOutput) ToGetSecurityAssessmentComparisonTargetDbConfigurationBaselineOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetDbConfigurationBaselineOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetDbConfigurationBaselineOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetDbConfigurationBaseline] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetDbConfigurationBaseline]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
@@ -25600,6 +29771,12 @@ func (o GetSecurityAssessmentComparisonTargetDbConfigurationBaselineArrayOutput)
 	return o
 }
 
+func (o GetSecurityAssessmentComparisonTargetDbConfigurationBaselineArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetDbConfigurationBaseline] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetDbConfigurationBaseline]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetSecurityAssessmentComparisonTargetDbConfigurationBaselineArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentComparisonTargetDbConfigurationBaselineOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityAssessmentComparisonTargetDbConfigurationBaseline {
 		return vs[0].([]GetSecurityAssessmentComparisonTargetDbConfigurationBaseline)[vs[1].(int)]
@@ -25647,6 +29824,12 @@ func (i GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceArg
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReference] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReference]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceArray and GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceArrayInput` via:
 //
@@ -25672,6 +29855,12 @@ func (i GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceArrayOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReference] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReference]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceOutput) ElementType() reflect.Type {
@@ -25684,6 +29873,12 @@ func (o GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceOut
 
 func (o GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceOutput) ToGetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReference] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReference]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Relevant section from CIS.
@@ -25713,6 +29908,12 @@ func (o GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceArr
 
 func (o GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceArrayOutput) ToGetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceArrayOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReference] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReference]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceOutput {
@@ -25778,6 +29979,12 @@ func (i GetSecurityAssessmentComparisonTargetDbConfigurationCurrentArgs) ToGetSe
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetDbConfigurationCurrentOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetDbConfigurationCurrentArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetDbConfigurationCurrent] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetDbConfigurationCurrent]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetDbConfigurationCurrentOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentComparisonTargetDbConfigurationCurrentArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetDbConfigurationCurrentArray and GetSecurityAssessmentComparisonTargetDbConfigurationCurrentArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetDbConfigurationCurrentArrayInput` via:
 //
@@ -25803,6 +30010,12 @@ func (i GetSecurityAssessmentComparisonTargetDbConfigurationCurrentArray) ToGetS
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetDbConfigurationCurrentArrayOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetDbConfigurationCurrentArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetDbConfigurationCurrent] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetDbConfigurationCurrent]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetDbConfigurationCurrentArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentComparisonTargetDbConfigurationCurrentOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentComparisonTargetDbConfigurationCurrentOutput) ElementType() reflect.Type {
@@ -25815,6 +30028,12 @@ func (o GetSecurityAssessmentComparisonTargetDbConfigurationCurrentOutput) ToGet
 
 func (o GetSecurityAssessmentComparisonTargetDbConfigurationCurrentOutput) ToGetSecurityAssessmentComparisonTargetDbConfigurationCurrentOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetDbConfigurationCurrentOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetDbConfigurationCurrentOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetDbConfigurationCurrent] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetDbConfigurationCurrent]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
@@ -25868,6 +30087,12 @@ func (o GetSecurityAssessmentComparisonTargetDbConfigurationCurrentArrayOutput) 
 	return o
 }
 
+func (o GetSecurityAssessmentComparisonTargetDbConfigurationCurrentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetDbConfigurationCurrent] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetDbConfigurationCurrent]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetSecurityAssessmentComparisonTargetDbConfigurationCurrentArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentComparisonTargetDbConfigurationCurrentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityAssessmentComparisonTargetDbConfigurationCurrent {
 		return vs[0].([]GetSecurityAssessmentComparisonTargetDbConfigurationCurrent)[vs[1].(int)]
@@ -25915,6 +30140,12 @@ func (i GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceArgs
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReference] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReference]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceArray and GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceArrayInput` via:
 //
@@ -25940,6 +30171,12 @@ func (i GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceArra
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceArrayOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReference] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReference]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceOutput) ElementType() reflect.Type {
@@ -25952,6 +30189,12 @@ func (o GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceOutp
 
 func (o GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceOutput) ToGetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReference] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReference]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Relevant section from CIS.
@@ -25981,6 +30224,12 @@ func (o GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceArra
 
 func (o GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceArrayOutput) ToGetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceArrayOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReference] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReference]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceOutput {
@@ -26042,6 +30291,12 @@ func (i GetSecurityAssessmentComparisonTargetFineGrainedAccessControlArgs) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetFineGrainedAccessControlOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetFineGrainedAccessControlArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetFineGrainedAccessControl] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetFineGrainedAccessControl]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetFineGrainedAccessControlOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentComparisonTargetFineGrainedAccessControlArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetFineGrainedAccessControlArray and GetSecurityAssessmentComparisonTargetFineGrainedAccessControlArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetFineGrainedAccessControlArrayInput` via:
 //
@@ -26067,6 +30322,12 @@ func (i GetSecurityAssessmentComparisonTargetFineGrainedAccessControlArray) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetFineGrainedAccessControlArrayOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetFineGrainedAccessControlArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetFineGrainedAccessControl] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetFineGrainedAccessControl]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetFineGrainedAccessControlArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentComparisonTargetFineGrainedAccessControlOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentComparisonTargetFineGrainedAccessControlOutput) ElementType() reflect.Type {
@@ -26079,6 +30340,12 @@ func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlOutput) ToG
 
 func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlOutput) ToGetSecurityAssessmentComparisonTargetFineGrainedAccessControlOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetFineGrainedAccessControlOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetFineGrainedAccessControl] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetFineGrainedAccessControl]{
+		OutputState: o.OutputState,
+	}
 }
 
 // This array identifies the items that are present in the current assessment, but are missing from the baseline.
@@ -26127,6 +30394,12 @@ func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlArrayOutput
 
 func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlArrayOutput) ToGetSecurityAssessmentComparisonTargetFineGrainedAccessControlArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetFineGrainedAccessControlArrayOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetFineGrainedAccessControl] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetFineGrainedAccessControl]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentComparisonTargetFineGrainedAccessControlOutput {
@@ -26192,6 +30465,12 @@ func (i GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineArg
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaseline] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaseline]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineArray and GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineArrayInput` via:
 //
@@ -26217,6 +30496,12 @@ func (i GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineArrayOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaseline] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaseline]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineOutput) ElementType() reflect.Type {
@@ -26229,6 +30514,12 @@ func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineOut
 
 func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineOutput) ToGetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaseline] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaseline]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
@@ -26286,6 +30577,12 @@ func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineArr
 	return o
 }
 
+func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaseline] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaseline]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaseline {
 		return vs[0].([]GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaseline)[vs[1].(int)]
@@ -26333,6 +30630,12 @@ func (i GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineRef
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReferenceOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReferenceArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReference] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReference]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReferenceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReferenceArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReferenceArray and GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReferenceArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReferenceArrayInput` via:
 //
@@ -26358,6 +30661,12 @@ func (i GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineRef
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReferenceArrayOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReferenceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReference] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReference]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReferenceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReferenceOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReferenceOutput) ElementType() reflect.Type {
@@ -26370,6 +30679,12 @@ func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineRef
 
 func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReferenceOutput) ToGetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReferenceOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReferenceOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReferenceOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReference] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReference]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Relevant section from CIS.
@@ -26405,6 +30720,12 @@ func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineRef
 
 func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReferenceArrayOutput) ToGetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReferenceArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReferenceArrayOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReferenceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReference] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReference]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReferenceArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReferenceOutput {
@@ -26470,6 +30791,12 @@ func (i GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentArgs
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrent] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrent]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentArray and GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentArrayInput` via:
 //
@@ -26495,6 +30822,12 @@ func (i GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentArra
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentArrayOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrent] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrent]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentOutput) ElementType() reflect.Type {
@@ -26507,6 +30840,12 @@ func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentOutp
 
 func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentOutput) ToGetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrent] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrent]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
@@ -26562,6 +30901,12 @@ func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentArra
 	return o
 }
 
+func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrent] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrent]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrent {
 		return vs[0].([]GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrent)[vs[1].(int)]
@@ -26609,6 +30954,12 @@ func (i GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentRefe
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReferenceOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReferenceArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReference] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReference]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReferenceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReferenceArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReferenceArray and GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReferenceArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReferenceArrayInput` via:
 //
@@ -26634,6 +30985,12 @@ func (i GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentRefe
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReferenceArrayOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReferenceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReference] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReference]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReferenceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReferenceOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReferenceOutput) ElementType() reflect.Type {
@@ -26646,6 +31003,12 @@ func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentRefe
 
 func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReferenceOutput) ToGetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReferenceOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReferenceOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReferenceOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReference] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReference]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Relevant section from CIS.
@@ -26681,6 +31044,12 @@ func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentRefe
 
 func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReferenceArrayOutput) ToGetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReferenceArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReferenceArrayOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReferenceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReference] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReference]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReferenceArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReferenceOutput {
@@ -26742,6 +31111,12 @@ func (i GetSecurityAssessmentComparisonTargetPrivilegesAndRoleArgs) ToGetSecurit
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetPrivilegesAndRoleOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetPrivilegesAndRoleArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetPrivilegesAndRole] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetPrivilegesAndRole]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetPrivilegesAndRoleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentComparisonTargetPrivilegesAndRoleArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetPrivilegesAndRoleArray and GetSecurityAssessmentComparisonTargetPrivilegesAndRoleArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetPrivilegesAndRoleArrayInput` via:
 //
@@ -26767,6 +31142,12 @@ func (i GetSecurityAssessmentComparisonTargetPrivilegesAndRoleArray) ToGetSecuri
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetPrivilegesAndRoleArrayOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetPrivilegesAndRoleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetPrivilegesAndRole] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetPrivilegesAndRole]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetPrivilegesAndRoleArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentComparisonTargetPrivilegesAndRoleOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentComparisonTargetPrivilegesAndRoleOutput) ElementType() reflect.Type {
@@ -26779,6 +31160,12 @@ func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleOutput) ToGetSecur
 
 func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleOutput) ToGetSecurityAssessmentComparisonTargetPrivilegesAndRoleOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetPrivilegesAndRoleOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetPrivilegesAndRole] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetPrivilegesAndRole]{
+		OutputState: o.OutputState,
+	}
 }
 
 // This array identifies the items that are present in the current assessment, but are missing from the baseline.
@@ -26827,6 +31214,12 @@ func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleArrayOutput) ToGet
 
 func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleArrayOutput) ToGetSecurityAssessmentComparisonTargetPrivilegesAndRoleArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetPrivilegesAndRoleArrayOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetPrivilegesAndRole] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetPrivilegesAndRole]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentComparisonTargetPrivilegesAndRoleOutput {
@@ -26892,6 +31285,12 @@ func (i GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineArgs) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaseline] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaseline]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineArray and GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineArrayInput` via:
 //
@@ -26917,6 +31316,12 @@ func (i GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineArray) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineArrayOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaseline] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaseline]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineOutput) ElementType() reflect.Type {
@@ -26929,6 +31334,12 @@ func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineOutput) To
 
 func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineOutput) ToGetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaseline] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaseline]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
@@ -26982,6 +31393,12 @@ func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineArrayOutpu
 	return o
 }
 
+func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaseline] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaseline]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaseline {
 		return vs[0].([]GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaseline)[vs[1].(int)]
@@ -27029,6 +31446,12 @@ func (i GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceA
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReference] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReference]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceArray and GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceArrayInput` via:
 //
@@ -27054,6 +31477,12 @@ func (i GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceA
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceArrayOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReference] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReference]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceOutput) ElementType() reflect.Type {
@@ -27066,6 +31495,12 @@ func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceO
 
 func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceOutput) ToGetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReference] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReference]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Relevant section from CIS.
@@ -27095,6 +31530,12 @@ func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceA
 
 func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceArrayOutput) ToGetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceArrayOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReference] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReference]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceOutput {
@@ -27160,6 +31601,12 @@ func (i GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentArgs) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrent] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrent]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentArray and GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentArrayInput` via:
 //
@@ -27185,6 +31632,12 @@ func (i GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentArray) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentArrayOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrent] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrent]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentOutput) ElementType() reflect.Type {
@@ -27197,6 +31650,12 @@ func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentOutput) ToG
 
 func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentOutput) ToGetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrent] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrent]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
@@ -27250,6 +31709,12 @@ func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentArrayOutput
 	return o
 }
 
+func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrent] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrent]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrent {
 		return vs[0].([]GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrent)[vs[1].(int)]
@@ -27297,6 +31762,12 @@ func (i GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReference] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReference]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceArray and GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceArrayInput` via:
 //
@@ -27322,6 +31793,12 @@ func (i GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceArrayOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReference] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReference]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceOutput) ElementType() reflect.Type {
@@ -27334,6 +31811,12 @@ func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceOu
 
 func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceOutput) ToGetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReference] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReference]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Relevant section from CIS.
@@ -27363,6 +31846,12 @@ func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceAr
 
 func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceArrayOutput) ToGetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceArrayOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReference] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReference]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceOutput {
@@ -27424,6 +31913,12 @@ func (i GetSecurityAssessmentComparisonTargetUserAccountArgs) ToGetSecurityAsses
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetUserAccountOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetUserAccountArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetUserAccount] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetUserAccount]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetUserAccountOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentComparisonTargetUserAccountArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetUserAccountArray and GetSecurityAssessmentComparisonTargetUserAccountArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetUserAccountArrayInput` via:
 //
@@ -27449,6 +31944,12 @@ func (i GetSecurityAssessmentComparisonTargetUserAccountArray) ToGetSecurityAsse
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetUserAccountArrayOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetUserAccountArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetUserAccount] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetUserAccount]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetUserAccountArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentComparisonTargetUserAccountOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentComparisonTargetUserAccountOutput) ElementType() reflect.Type {
@@ -27461,6 +31962,12 @@ func (o GetSecurityAssessmentComparisonTargetUserAccountOutput) ToGetSecurityAss
 
 func (o GetSecurityAssessmentComparisonTargetUserAccountOutput) ToGetSecurityAssessmentComparisonTargetUserAccountOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetUserAccountOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetUserAccountOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetUserAccount] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetUserAccount]{
+		OutputState: o.OutputState,
+	}
 }
 
 // This array identifies the items that are present in the current assessment, but are missing from the baseline.
@@ -27509,6 +32016,12 @@ func (o GetSecurityAssessmentComparisonTargetUserAccountArrayOutput) ToGetSecuri
 
 func (o GetSecurityAssessmentComparisonTargetUserAccountArrayOutput) ToGetSecurityAssessmentComparisonTargetUserAccountArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetUserAccountArrayOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetUserAccountArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetUserAccount] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetUserAccount]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityAssessmentComparisonTargetUserAccountArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentComparisonTargetUserAccountOutput {
@@ -27574,6 +32087,12 @@ func (i GetSecurityAssessmentComparisonTargetUserAccountBaselineArgs) ToGetSecur
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetUserAccountBaselineOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetUserAccountBaselineArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetUserAccountBaseline] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetUserAccountBaseline]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetUserAccountBaselineOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentComparisonTargetUserAccountBaselineArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetUserAccountBaselineArray and GetSecurityAssessmentComparisonTargetUserAccountBaselineArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetUserAccountBaselineArrayInput` via:
 //
@@ -27599,6 +32118,12 @@ func (i GetSecurityAssessmentComparisonTargetUserAccountBaselineArray) ToGetSecu
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetUserAccountBaselineArrayOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetUserAccountBaselineArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetUserAccountBaseline] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetUserAccountBaseline]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetUserAccountBaselineArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentComparisonTargetUserAccountBaselineOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentComparisonTargetUserAccountBaselineOutput) ElementType() reflect.Type {
@@ -27611,6 +32136,12 @@ func (o GetSecurityAssessmentComparisonTargetUserAccountBaselineOutput) ToGetSec
 
 func (o GetSecurityAssessmentComparisonTargetUserAccountBaselineOutput) ToGetSecurityAssessmentComparisonTargetUserAccountBaselineOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetUserAccountBaselineOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetUserAccountBaselineOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetUserAccountBaseline] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetUserAccountBaseline]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
@@ -27664,6 +32195,12 @@ func (o GetSecurityAssessmentComparisonTargetUserAccountBaselineArrayOutput) ToG
 	return o
 }
 
+func (o GetSecurityAssessmentComparisonTargetUserAccountBaselineArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetUserAccountBaseline] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetUserAccountBaseline]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetSecurityAssessmentComparisonTargetUserAccountBaselineArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentComparisonTargetUserAccountBaselineOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityAssessmentComparisonTargetUserAccountBaseline {
 		return vs[0].([]GetSecurityAssessmentComparisonTargetUserAccountBaseline)[vs[1].(int)]
@@ -27711,6 +32248,12 @@ func (i GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceArgs) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetUserAccountBaselineReference] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetUserAccountBaselineReference]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceArray and GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceArrayInput` via:
 //
@@ -27736,6 +32279,12 @@ func (i GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceArray) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceArrayOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetUserAccountBaselineReference] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetUserAccountBaselineReference]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceOutput) ElementType() reflect.Type {
@@ -27748,6 +32297,12 @@ func (o GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceOutput)
 
 func (o GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceOutput) ToGetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetUserAccountBaselineReference] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetUserAccountBaselineReference]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Relevant section from CIS.
@@ -27777,6 +32332,12 @@ func (o GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceArrayOu
 
 func (o GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceArrayOutput) ToGetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceArrayOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetUserAccountBaselineReference] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetUserAccountBaselineReference]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceOutput {
@@ -27842,6 +32403,12 @@ func (i GetSecurityAssessmentComparisonTargetUserAccountCurrentArgs) ToGetSecuri
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetUserAccountCurrentOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetUserAccountCurrentArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetUserAccountCurrent] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetUserAccountCurrent]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetUserAccountCurrentOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentComparisonTargetUserAccountCurrentArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetUserAccountCurrentArray and GetSecurityAssessmentComparisonTargetUserAccountCurrentArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetUserAccountCurrentArrayInput` via:
 //
@@ -27867,6 +32434,12 @@ func (i GetSecurityAssessmentComparisonTargetUserAccountCurrentArray) ToGetSecur
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetUserAccountCurrentArrayOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetUserAccountCurrentArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetUserAccountCurrent] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetUserAccountCurrent]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetUserAccountCurrentArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentComparisonTargetUserAccountCurrentOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentComparisonTargetUserAccountCurrentOutput) ElementType() reflect.Type {
@@ -27879,6 +32452,12 @@ func (o GetSecurityAssessmentComparisonTargetUserAccountCurrentOutput) ToGetSecu
 
 func (o GetSecurityAssessmentComparisonTargetUserAccountCurrentOutput) ToGetSecurityAssessmentComparisonTargetUserAccountCurrentOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetUserAccountCurrentOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetUserAccountCurrentOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetUserAccountCurrent] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetUserAccountCurrent]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
@@ -27932,6 +32511,12 @@ func (o GetSecurityAssessmentComparisonTargetUserAccountCurrentArrayOutput) ToGe
 	return o
 }
 
+func (o GetSecurityAssessmentComparisonTargetUserAccountCurrentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetUserAccountCurrent] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetUserAccountCurrent]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetSecurityAssessmentComparisonTargetUserAccountCurrentArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentComparisonTargetUserAccountCurrentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityAssessmentComparisonTargetUserAccountCurrent {
 		return vs[0].([]GetSecurityAssessmentComparisonTargetUserAccountCurrent)[vs[1].(int)]
@@ -27979,6 +32564,12 @@ func (i GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceArgs) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetUserAccountCurrentReference] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetUserAccountCurrentReference]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceArrayInput is an input type that accepts GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceArray and GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceArrayInput` via:
 //
@@ -28004,6 +32595,12 @@ func (i GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceArray) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceArrayOutput)
 }
 
+func (i GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetUserAccountCurrentReference] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetUserAccountCurrentReference]{
+		OutputState: i.ToGetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceOutput) ElementType() reflect.Type {
@@ -28016,6 +32613,12 @@ func (o GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceOutput) 
 
 func (o GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceOutput) ToGetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonTargetUserAccountCurrentReference] {
+	return pulumix.Output[GetSecurityAssessmentComparisonTargetUserAccountCurrentReference]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Relevant section from CIS.
@@ -28045,6 +32648,12 @@ func (o GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceArrayOut
 
 func (o GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceArrayOutput) ToGetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceArrayOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentComparisonTargetUserAccountCurrentReference] {
+	return pulumix.Output[[]GetSecurityAssessmentComparisonTargetUserAccountCurrentReference]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceOutput {
@@ -28088,6 +32697,12 @@ func (i GetSecurityAssessmentFindingFilterArgs) ToGetSecurityAssessmentFindingFi
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentFindingFilterOutput)
 }
 
+func (i GetSecurityAssessmentFindingFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentFindingFilter] {
+	return pulumix.Output[GetSecurityAssessmentFindingFilter]{
+		OutputState: i.ToGetSecurityAssessmentFindingFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentFindingFilterArrayInput is an input type that accepts GetSecurityAssessmentFindingFilterArray and GetSecurityAssessmentFindingFilterArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentFindingFilterArrayInput` via:
 //
@@ -28113,6 +32728,12 @@ func (i GetSecurityAssessmentFindingFilterArray) ToGetSecurityAssessmentFindingF
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentFindingFilterArrayOutput)
 }
 
+func (i GetSecurityAssessmentFindingFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentFindingFilter] {
+	return pulumix.Output[[]GetSecurityAssessmentFindingFilter]{
+		OutputState: i.ToGetSecurityAssessmentFindingFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentFindingFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentFindingFilterOutput) ElementType() reflect.Type {
@@ -28125,6 +32746,12 @@ func (o GetSecurityAssessmentFindingFilterOutput) ToGetSecurityAssessmentFinding
 
 func (o GetSecurityAssessmentFindingFilterOutput) ToGetSecurityAssessmentFindingFilterOutputWithContext(ctx context.Context) GetSecurityAssessmentFindingFilterOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentFindingFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentFindingFilter] {
+	return pulumix.Output[GetSecurityAssessmentFindingFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityAssessmentFindingFilterOutput) Name() pulumi.StringOutput {
@@ -28151,6 +32778,12 @@ func (o GetSecurityAssessmentFindingFilterArrayOutput) ToGetSecurityAssessmentFi
 
 func (o GetSecurityAssessmentFindingFilterArrayOutput) ToGetSecurityAssessmentFindingFilterArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentFindingFilterArrayOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentFindingFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentFindingFilter] {
+	return pulumix.Output[[]GetSecurityAssessmentFindingFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityAssessmentFindingFilterArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentFindingFilterOutput {
@@ -28206,6 +32839,12 @@ func (i GetSecurityAssessmentFindingFindingArgs) ToGetSecurityAssessmentFindingF
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentFindingFindingOutput)
 }
 
+func (i GetSecurityAssessmentFindingFindingArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentFindingFinding] {
+	return pulumix.Output[GetSecurityAssessmentFindingFinding]{
+		OutputState: i.ToGetSecurityAssessmentFindingFindingOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentFindingFindingArrayInput is an input type that accepts GetSecurityAssessmentFindingFindingArray and GetSecurityAssessmentFindingFindingArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentFindingFindingArrayInput` via:
 //
@@ -28231,6 +32870,12 @@ func (i GetSecurityAssessmentFindingFindingArray) ToGetSecurityAssessmentFinding
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentFindingFindingArrayOutput)
 }
 
+func (i GetSecurityAssessmentFindingFindingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentFindingFinding] {
+	return pulumix.Output[[]GetSecurityAssessmentFindingFinding]{
+		OutputState: i.ToGetSecurityAssessmentFindingFindingArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentFindingFindingOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentFindingFindingOutput) ElementType() reflect.Type {
@@ -28243,6 +32888,12 @@ func (o GetSecurityAssessmentFindingFindingOutput) ToGetSecurityAssessmentFindin
 
 func (o GetSecurityAssessmentFindingFindingOutput) ToGetSecurityAssessmentFindingFindingOutputWithContext(ctx context.Context) GetSecurityAssessmentFindingFindingOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentFindingFindingOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentFindingFinding] {
+	return pulumix.Output[GetSecurityAssessmentFindingFinding]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityAssessmentFindingFindingOutput) AssessmentId() pulumi.StringOutput {
@@ -28297,6 +32948,12 @@ func (o GetSecurityAssessmentFindingFindingArrayOutput) ToGetSecurityAssessmentF
 	return o
 }
 
+func (o GetSecurityAssessmentFindingFindingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentFindingFinding] {
+	return pulumix.Output[[]GetSecurityAssessmentFindingFinding]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetSecurityAssessmentFindingFindingArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentFindingFindingOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityAssessmentFindingFinding {
 		return vs[0].([]GetSecurityAssessmentFindingFinding)[vs[1].(int)]
@@ -28338,6 +32995,12 @@ func (i GetSecurityAssessmentFindingFindingReferenceArgs) ToGetSecurityAssessmen
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentFindingFindingReferenceOutput)
 }
 
+func (i GetSecurityAssessmentFindingFindingReferenceArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentFindingFindingReference] {
+	return pulumix.Output[GetSecurityAssessmentFindingFindingReference]{
+		OutputState: i.ToGetSecurityAssessmentFindingFindingReferenceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentFindingFindingReferenceArrayInput is an input type that accepts GetSecurityAssessmentFindingFindingReferenceArray and GetSecurityAssessmentFindingFindingReferenceArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentFindingFindingReferenceArrayInput` via:
 //
@@ -28363,6 +33026,12 @@ func (i GetSecurityAssessmentFindingFindingReferenceArray) ToGetSecurityAssessme
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentFindingFindingReferenceArrayOutput)
 }
 
+func (i GetSecurityAssessmentFindingFindingReferenceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentFindingFindingReference] {
+	return pulumix.Output[[]GetSecurityAssessmentFindingFindingReference]{
+		OutputState: i.ToGetSecurityAssessmentFindingFindingReferenceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentFindingFindingReferenceOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentFindingFindingReferenceOutput) ElementType() reflect.Type {
@@ -28375,6 +33044,12 @@ func (o GetSecurityAssessmentFindingFindingReferenceOutput) ToGetSecurityAssessm
 
 func (o GetSecurityAssessmentFindingFindingReferenceOutput) ToGetSecurityAssessmentFindingFindingReferenceOutputWithContext(ctx context.Context) GetSecurityAssessmentFindingFindingReferenceOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentFindingFindingReferenceOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentFindingFindingReference] {
+	return pulumix.Output[GetSecurityAssessmentFindingFindingReference]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityAssessmentFindingFindingReferenceOutput) Cis() pulumi.StringOutput {
@@ -28401,6 +33076,12 @@ func (o GetSecurityAssessmentFindingFindingReferenceArrayOutput) ToGetSecurityAs
 
 func (o GetSecurityAssessmentFindingFindingReferenceArrayOutput) ToGetSecurityAssessmentFindingFindingReferenceArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentFindingFindingReferenceArrayOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentFindingFindingReferenceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentFindingFindingReference] {
+	return pulumix.Output[[]GetSecurityAssessmentFindingFindingReference]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityAssessmentFindingFindingReferenceArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentFindingFindingReferenceOutput {
@@ -28444,6 +33125,12 @@ func (i GetSecurityAssessmentFindingsFilterArgs) ToGetSecurityAssessmentFindings
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentFindingsFilterOutput)
 }
 
+func (i GetSecurityAssessmentFindingsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentFindingsFilter] {
+	return pulumix.Output[GetSecurityAssessmentFindingsFilter]{
+		OutputState: i.ToGetSecurityAssessmentFindingsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentFindingsFilterArrayInput is an input type that accepts GetSecurityAssessmentFindingsFilterArray and GetSecurityAssessmentFindingsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentFindingsFilterArrayInput` via:
 //
@@ -28469,6 +33156,12 @@ func (i GetSecurityAssessmentFindingsFilterArray) ToGetSecurityAssessmentFinding
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentFindingsFilterArrayOutput)
 }
 
+func (i GetSecurityAssessmentFindingsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentFindingsFilter] {
+	return pulumix.Output[[]GetSecurityAssessmentFindingsFilter]{
+		OutputState: i.ToGetSecurityAssessmentFindingsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentFindingsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentFindingsFilterOutput) ElementType() reflect.Type {
@@ -28481,6 +33174,12 @@ func (o GetSecurityAssessmentFindingsFilterOutput) ToGetSecurityAssessmentFindin
 
 func (o GetSecurityAssessmentFindingsFilterOutput) ToGetSecurityAssessmentFindingsFilterOutputWithContext(ctx context.Context) GetSecurityAssessmentFindingsFilterOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentFindingsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentFindingsFilter] {
+	return pulumix.Output[GetSecurityAssessmentFindingsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityAssessmentFindingsFilterOutput) Name() pulumi.StringOutput {
@@ -28507,6 +33206,12 @@ func (o GetSecurityAssessmentFindingsFilterArrayOutput) ToGetSecurityAssessmentF
 
 func (o GetSecurityAssessmentFindingsFilterArrayOutput) ToGetSecurityAssessmentFindingsFilterArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentFindingsFilterArrayOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentFindingsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentFindingsFilter] {
+	return pulumix.Output[[]GetSecurityAssessmentFindingsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityAssessmentFindingsFilterArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentFindingsFilterOutput {
@@ -28580,6 +33285,12 @@ func (i GetSecurityAssessmentFindingsFindingArgs) ToGetSecurityAssessmentFinding
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentFindingsFindingOutput)
 }
 
+func (i GetSecurityAssessmentFindingsFindingArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentFindingsFinding] {
+	return pulumix.Output[GetSecurityAssessmentFindingsFinding]{
+		OutputState: i.ToGetSecurityAssessmentFindingsFindingOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentFindingsFindingArrayInput is an input type that accepts GetSecurityAssessmentFindingsFindingArray and GetSecurityAssessmentFindingsFindingArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentFindingsFindingArrayInput` via:
 //
@@ -28605,6 +33316,12 @@ func (i GetSecurityAssessmentFindingsFindingArray) ToGetSecurityAssessmentFindin
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentFindingsFindingArrayOutput)
 }
 
+func (i GetSecurityAssessmentFindingsFindingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentFindingsFinding] {
+	return pulumix.Output[[]GetSecurityAssessmentFindingsFinding]{
+		OutputState: i.ToGetSecurityAssessmentFindingsFindingArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentFindingsFindingOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentFindingsFindingOutput) ElementType() reflect.Type {
@@ -28617,6 +33334,12 @@ func (o GetSecurityAssessmentFindingsFindingOutput) ToGetSecurityAssessmentFindi
 
 func (o GetSecurityAssessmentFindingsFindingOutput) ToGetSecurityAssessmentFindingsFindingOutputWithContext(ctx context.Context) GetSecurityAssessmentFindingsFindingOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentFindingsFindingOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentFindingsFinding] {
+	return pulumix.Output[GetSecurityAssessmentFindingsFinding]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the assessment that generated this finding.
@@ -28680,6 +33403,12 @@ func (o GetSecurityAssessmentFindingsFindingArrayOutput) ToGetSecurityAssessment
 	return o
 }
 
+func (o GetSecurityAssessmentFindingsFindingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentFindingsFinding] {
+	return pulumix.Output[[]GetSecurityAssessmentFindingsFinding]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetSecurityAssessmentFindingsFindingArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentFindingsFindingOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityAssessmentFindingsFinding {
 		return vs[0].([]GetSecurityAssessmentFindingsFinding)[vs[1].(int)]
@@ -28727,6 +33456,12 @@ func (i GetSecurityAssessmentFindingsFindingReferenceArgs) ToGetSecurityAssessme
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentFindingsFindingReferenceOutput)
 }
 
+func (i GetSecurityAssessmentFindingsFindingReferenceArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentFindingsFindingReference] {
+	return pulumix.Output[GetSecurityAssessmentFindingsFindingReference]{
+		OutputState: i.ToGetSecurityAssessmentFindingsFindingReferenceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentFindingsFindingReferenceArrayInput is an input type that accepts GetSecurityAssessmentFindingsFindingReferenceArray and GetSecurityAssessmentFindingsFindingReferenceArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentFindingsFindingReferenceArrayInput` via:
 //
@@ -28752,6 +33487,12 @@ func (i GetSecurityAssessmentFindingsFindingReferenceArray) ToGetSecurityAssessm
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentFindingsFindingReferenceArrayOutput)
 }
 
+func (i GetSecurityAssessmentFindingsFindingReferenceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentFindingsFindingReference] {
+	return pulumix.Output[[]GetSecurityAssessmentFindingsFindingReference]{
+		OutputState: i.ToGetSecurityAssessmentFindingsFindingReferenceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentFindingsFindingReferenceOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentFindingsFindingReferenceOutput) ElementType() reflect.Type {
@@ -28764,6 +33505,12 @@ func (o GetSecurityAssessmentFindingsFindingReferenceOutput) ToGetSecurityAssess
 
 func (o GetSecurityAssessmentFindingsFindingReferenceOutput) ToGetSecurityAssessmentFindingsFindingReferenceOutputWithContext(ctx context.Context) GetSecurityAssessmentFindingsFindingReferenceOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentFindingsFindingReferenceOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentFindingsFindingReference] {
+	return pulumix.Output[GetSecurityAssessmentFindingsFindingReference]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Relevant section from CIS.
@@ -28793,6 +33540,12 @@ func (o GetSecurityAssessmentFindingsFindingReferenceArrayOutput) ToGetSecurityA
 
 func (o GetSecurityAssessmentFindingsFindingReferenceArrayOutput) ToGetSecurityAssessmentFindingsFindingReferenceArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentFindingsFindingReferenceArrayOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentFindingsFindingReferenceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentFindingsFindingReference] {
+	return pulumix.Output[[]GetSecurityAssessmentFindingsFindingReference]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityAssessmentFindingsFindingReferenceArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentFindingsFindingReferenceOutput {
@@ -28858,6 +33611,12 @@ func (i GetSecurityAssessmentStatisticArgs) ToGetSecurityAssessmentStatisticOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentStatisticOutput)
 }
 
+func (i GetSecurityAssessmentStatisticArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentStatistic] {
+	return pulumix.Output[GetSecurityAssessmentStatistic]{
+		OutputState: i.ToGetSecurityAssessmentStatisticOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentStatisticArrayInput is an input type that accepts GetSecurityAssessmentStatisticArray and GetSecurityAssessmentStatisticArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentStatisticArrayInput` via:
 //
@@ -28883,6 +33642,12 @@ func (i GetSecurityAssessmentStatisticArray) ToGetSecurityAssessmentStatisticArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentStatisticArrayOutput)
 }
 
+func (i GetSecurityAssessmentStatisticArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentStatistic] {
+	return pulumix.Output[[]GetSecurityAssessmentStatistic]{
+		OutputState: i.ToGetSecurityAssessmentStatisticArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentStatisticOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentStatisticOutput) ElementType() reflect.Type {
@@ -28895,6 +33660,12 @@ func (o GetSecurityAssessmentStatisticOutput) ToGetSecurityAssessmentStatisticOu
 
 func (o GetSecurityAssessmentStatisticOutput) ToGetSecurityAssessmentStatisticOutputWithContext(ctx context.Context) GetSecurityAssessmentStatisticOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentStatisticOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentStatistic] {
+	return pulumix.Output[GetSecurityAssessmentStatistic]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Statistics showing the number of findings with a particular risk level for each category.
@@ -28946,6 +33717,12 @@ func (o GetSecurityAssessmentStatisticArrayOutput) ToGetSecurityAssessmentStatis
 
 func (o GetSecurityAssessmentStatisticArrayOutput) ToGetSecurityAssessmentStatisticArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentStatisticArrayOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentStatisticArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentStatistic] {
+	return pulumix.Output[[]GetSecurityAssessmentStatistic]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityAssessmentStatisticArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentStatisticOutput {
@@ -29015,6 +33792,12 @@ func (i GetSecurityAssessmentStatisticAdvisoryArgs) ToGetSecurityAssessmentStati
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentStatisticAdvisoryOutput)
 }
 
+func (i GetSecurityAssessmentStatisticAdvisoryArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentStatisticAdvisory] {
+	return pulumix.Output[GetSecurityAssessmentStatisticAdvisory]{
+		OutputState: i.ToGetSecurityAssessmentStatisticAdvisoryOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentStatisticAdvisoryArrayInput is an input type that accepts GetSecurityAssessmentStatisticAdvisoryArray and GetSecurityAssessmentStatisticAdvisoryArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentStatisticAdvisoryArrayInput` via:
 //
@@ -29040,6 +33823,12 @@ func (i GetSecurityAssessmentStatisticAdvisoryArray) ToGetSecurityAssessmentStat
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentStatisticAdvisoryArrayOutput)
 }
 
+func (i GetSecurityAssessmentStatisticAdvisoryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentStatisticAdvisory] {
+	return pulumix.Output[[]GetSecurityAssessmentStatisticAdvisory]{
+		OutputState: i.ToGetSecurityAssessmentStatisticAdvisoryArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentStatisticAdvisoryOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentStatisticAdvisoryOutput) ElementType() reflect.Type {
@@ -29052,6 +33841,12 @@ func (o GetSecurityAssessmentStatisticAdvisoryOutput) ToGetSecurityAssessmentSta
 
 func (o GetSecurityAssessmentStatisticAdvisoryOutput) ToGetSecurityAssessmentStatisticAdvisoryOutputWithContext(ctx context.Context) GetSecurityAssessmentStatisticAdvisoryOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentStatisticAdvisoryOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentStatisticAdvisory] {
+	return pulumix.Output[GetSecurityAssessmentStatisticAdvisory]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The number of findings in the Auditing category.
@@ -29106,6 +33901,12 @@ func (o GetSecurityAssessmentStatisticAdvisoryArrayOutput) ToGetSecurityAssessme
 
 func (o GetSecurityAssessmentStatisticAdvisoryArrayOutput) ToGetSecurityAssessmentStatisticAdvisoryArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentStatisticAdvisoryArrayOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentStatisticAdvisoryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentStatisticAdvisory] {
+	return pulumix.Output[[]GetSecurityAssessmentStatisticAdvisory]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityAssessmentStatisticAdvisoryArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentStatisticAdvisoryOutput {
@@ -29175,6 +33976,12 @@ func (i GetSecurityAssessmentStatisticEvaluateArgs) ToGetSecurityAssessmentStati
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentStatisticEvaluateOutput)
 }
 
+func (i GetSecurityAssessmentStatisticEvaluateArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentStatisticEvaluate] {
+	return pulumix.Output[GetSecurityAssessmentStatisticEvaluate]{
+		OutputState: i.ToGetSecurityAssessmentStatisticEvaluateOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentStatisticEvaluateArrayInput is an input type that accepts GetSecurityAssessmentStatisticEvaluateArray and GetSecurityAssessmentStatisticEvaluateArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentStatisticEvaluateArrayInput` via:
 //
@@ -29200,6 +34007,12 @@ func (i GetSecurityAssessmentStatisticEvaluateArray) ToGetSecurityAssessmentStat
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentStatisticEvaluateArrayOutput)
 }
 
+func (i GetSecurityAssessmentStatisticEvaluateArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentStatisticEvaluate] {
+	return pulumix.Output[[]GetSecurityAssessmentStatisticEvaluate]{
+		OutputState: i.ToGetSecurityAssessmentStatisticEvaluateArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentStatisticEvaluateOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentStatisticEvaluateOutput) ElementType() reflect.Type {
@@ -29212,6 +34025,12 @@ func (o GetSecurityAssessmentStatisticEvaluateOutput) ToGetSecurityAssessmentSta
 
 func (o GetSecurityAssessmentStatisticEvaluateOutput) ToGetSecurityAssessmentStatisticEvaluateOutputWithContext(ctx context.Context) GetSecurityAssessmentStatisticEvaluateOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentStatisticEvaluateOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentStatisticEvaluate] {
+	return pulumix.Output[GetSecurityAssessmentStatisticEvaluate]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The number of findings in the Auditing category.
@@ -29266,6 +34085,12 @@ func (o GetSecurityAssessmentStatisticEvaluateArrayOutput) ToGetSecurityAssessme
 
 func (o GetSecurityAssessmentStatisticEvaluateArrayOutput) ToGetSecurityAssessmentStatisticEvaluateArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentStatisticEvaluateArrayOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentStatisticEvaluateArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentStatisticEvaluate] {
+	return pulumix.Output[[]GetSecurityAssessmentStatisticEvaluate]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityAssessmentStatisticEvaluateArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentStatisticEvaluateOutput {
@@ -29335,6 +34160,12 @@ func (i GetSecurityAssessmentStatisticHighRiskArgs) ToGetSecurityAssessmentStati
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentStatisticHighRiskOutput)
 }
 
+func (i GetSecurityAssessmentStatisticHighRiskArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentStatisticHighRisk] {
+	return pulumix.Output[GetSecurityAssessmentStatisticHighRisk]{
+		OutputState: i.ToGetSecurityAssessmentStatisticHighRiskOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentStatisticHighRiskArrayInput is an input type that accepts GetSecurityAssessmentStatisticHighRiskArray and GetSecurityAssessmentStatisticHighRiskArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentStatisticHighRiskArrayInput` via:
 //
@@ -29360,6 +34191,12 @@ func (i GetSecurityAssessmentStatisticHighRiskArray) ToGetSecurityAssessmentStat
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentStatisticHighRiskArrayOutput)
 }
 
+func (i GetSecurityAssessmentStatisticHighRiskArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentStatisticHighRisk] {
+	return pulumix.Output[[]GetSecurityAssessmentStatisticHighRisk]{
+		OutputState: i.ToGetSecurityAssessmentStatisticHighRiskArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentStatisticHighRiskOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentStatisticHighRiskOutput) ElementType() reflect.Type {
@@ -29372,6 +34209,12 @@ func (o GetSecurityAssessmentStatisticHighRiskOutput) ToGetSecurityAssessmentSta
 
 func (o GetSecurityAssessmentStatisticHighRiskOutput) ToGetSecurityAssessmentStatisticHighRiskOutputWithContext(ctx context.Context) GetSecurityAssessmentStatisticHighRiskOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentStatisticHighRiskOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentStatisticHighRisk] {
+	return pulumix.Output[GetSecurityAssessmentStatisticHighRisk]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The number of findings in the Auditing category.
@@ -29426,6 +34269,12 @@ func (o GetSecurityAssessmentStatisticHighRiskArrayOutput) ToGetSecurityAssessme
 
 func (o GetSecurityAssessmentStatisticHighRiskArrayOutput) ToGetSecurityAssessmentStatisticHighRiskArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentStatisticHighRiskArrayOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentStatisticHighRiskArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentStatisticHighRisk] {
+	return pulumix.Output[[]GetSecurityAssessmentStatisticHighRisk]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityAssessmentStatisticHighRiskArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentStatisticHighRiskOutput {
@@ -29495,6 +34344,12 @@ func (i GetSecurityAssessmentStatisticLowRiskArgs) ToGetSecurityAssessmentStatis
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentStatisticLowRiskOutput)
 }
 
+func (i GetSecurityAssessmentStatisticLowRiskArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentStatisticLowRisk] {
+	return pulumix.Output[GetSecurityAssessmentStatisticLowRisk]{
+		OutputState: i.ToGetSecurityAssessmentStatisticLowRiskOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentStatisticLowRiskArrayInput is an input type that accepts GetSecurityAssessmentStatisticLowRiskArray and GetSecurityAssessmentStatisticLowRiskArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentStatisticLowRiskArrayInput` via:
 //
@@ -29520,6 +34375,12 @@ func (i GetSecurityAssessmentStatisticLowRiskArray) ToGetSecurityAssessmentStati
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentStatisticLowRiskArrayOutput)
 }
 
+func (i GetSecurityAssessmentStatisticLowRiskArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentStatisticLowRisk] {
+	return pulumix.Output[[]GetSecurityAssessmentStatisticLowRisk]{
+		OutputState: i.ToGetSecurityAssessmentStatisticLowRiskArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentStatisticLowRiskOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentStatisticLowRiskOutput) ElementType() reflect.Type {
@@ -29532,6 +34393,12 @@ func (o GetSecurityAssessmentStatisticLowRiskOutput) ToGetSecurityAssessmentStat
 
 func (o GetSecurityAssessmentStatisticLowRiskOutput) ToGetSecurityAssessmentStatisticLowRiskOutputWithContext(ctx context.Context) GetSecurityAssessmentStatisticLowRiskOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentStatisticLowRiskOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentStatisticLowRisk] {
+	return pulumix.Output[GetSecurityAssessmentStatisticLowRisk]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The number of findings in the Auditing category.
@@ -29586,6 +34453,12 @@ func (o GetSecurityAssessmentStatisticLowRiskArrayOutput) ToGetSecurityAssessmen
 
 func (o GetSecurityAssessmentStatisticLowRiskArrayOutput) ToGetSecurityAssessmentStatisticLowRiskArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentStatisticLowRiskArrayOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentStatisticLowRiskArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentStatisticLowRisk] {
+	return pulumix.Output[[]GetSecurityAssessmentStatisticLowRisk]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityAssessmentStatisticLowRiskArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentStatisticLowRiskOutput {
@@ -29655,6 +34528,12 @@ func (i GetSecurityAssessmentStatisticMediumRiskArgs) ToGetSecurityAssessmentSta
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentStatisticMediumRiskOutput)
 }
 
+func (i GetSecurityAssessmentStatisticMediumRiskArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentStatisticMediumRisk] {
+	return pulumix.Output[GetSecurityAssessmentStatisticMediumRisk]{
+		OutputState: i.ToGetSecurityAssessmentStatisticMediumRiskOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentStatisticMediumRiskArrayInput is an input type that accepts GetSecurityAssessmentStatisticMediumRiskArray and GetSecurityAssessmentStatisticMediumRiskArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentStatisticMediumRiskArrayInput` via:
 //
@@ -29680,6 +34559,12 @@ func (i GetSecurityAssessmentStatisticMediumRiskArray) ToGetSecurityAssessmentSt
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentStatisticMediumRiskArrayOutput)
 }
 
+func (i GetSecurityAssessmentStatisticMediumRiskArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentStatisticMediumRisk] {
+	return pulumix.Output[[]GetSecurityAssessmentStatisticMediumRisk]{
+		OutputState: i.ToGetSecurityAssessmentStatisticMediumRiskArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentStatisticMediumRiskOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentStatisticMediumRiskOutput) ElementType() reflect.Type {
@@ -29692,6 +34577,12 @@ func (o GetSecurityAssessmentStatisticMediumRiskOutput) ToGetSecurityAssessmentS
 
 func (o GetSecurityAssessmentStatisticMediumRiskOutput) ToGetSecurityAssessmentStatisticMediumRiskOutputWithContext(ctx context.Context) GetSecurityAssessmentStatisticMediumRiskOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentStatisticMediumRiskOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentStatisticMediumRisk] {
+	return pulumix.Output[GetSecurityAssessmentStatisticMediumRisk]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The number of findings in the Auditing category.
@@ -29746,6 +34637,12 @@ func (o GetSecurityAssessmentStatisticMediumRiskArrayOutput) ToGetSecurityAssess
 
 func (o GetSecurityAssessmentStatisticMediumRiskArrayOutput) ToGetSecurityAssessmentStatisticMediumRiskArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentStatisticMediumRiskArrayOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentStatisticMediumRiskArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentStatisticMediumRisk] {
+	return pulumix.Output[[]GetSecurityAssessmentStatisticMediumRisk]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityAssessmentStatisticMediumRiskArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentStatisticMediumRiskOutput {
@@ -29815,6 +34712,12 @@ func (i GetSecurityAssessmentStatisticPassArgs) ToGetSecurityAssessmentStatistic
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentStatisticPassOutput)
 }
 
+func (i GetSecurityAssessmentStatisticPassArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentStatisticPass] {
+	return pulumix.Output[GetSecurityAssessmentStatisticPass]{
+		OutputState: i.ToGetSecurityAssessmentStatisticPassOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentStatisticPassArrayInput is an input type that accepts GetSecurityAssessmentStatisticPassArray and GetSecurityAssessmentStatisticPassArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentStatisticPassArrayInput` via:
 //
@@ -29840,6 +34743,12 @@ func (i GetSecurityAssessmentStatisticPassArray) ToGetSecurityAssessmentStatisti
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentStatisticPassArrayOutput)
 }
 
+func (i GetSecurityAssessmentStatisticPassArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentStatisticPass] {
+	return pulumix.Output[[]GetSecurityAssessmentStatisticPass]{
+		OutputState: i.ToGetSecurityAssessmentStatisticPassArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentStatisticPassOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentStatisticPassOutput) ElementType() reflect.Type {
@@ -29852,6 +34761,12 @@ func (o GetSecurityAssessmentStatisticPassOutput) ToGetSecurityAssessmentStatist
 
 func (o GetSecurityAssessmentStatisticPassOutput) ToGetSecurityAssessmentStatisticPassOutputWithContext(ctx context.Context) GetSecurityAssessmentStatisticPassOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentStatisticPassOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentStatisticPass] {
+	return pulumix.Output[GetSecurityAssessmentStatisticPass]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The number of findings in the Auditing category.
@@ -29908,6 +34823,12 @@ func (o GetSecurityAssessmentStatisticPassArrayOutput) ToGetSecurityAssessmentSt
 	return o
 }
 
+func (o GetSecurityAssessmentStatisticPassArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentStatisticPass] {
+	return pulumix.Output[[]GetSecurityAssessmentStatisticPass]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetSecurityAssessmentStatisticPassArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentStatisticPassOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityAssessmentStatisticPass {
 		return vs[0].([]GetSecurityAssessmentStatisticPass)[vs[1].(int)]
@@ -29949,6 +34870,12 @@ func (i GetSecurityAssessmentsFilterArgs) ToGetSecurityAssessmentsFilterOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentsFilterOutput)
 }
 
+func (i GetSecurityAssessmentsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentsFilter] {
+	return pulumix.Output[GetSecurityAssessmentsFilter]{
+		OutputState: i.ToGetSecurityAssessmentsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentsFilterArrayInput is an input type that accepts GetSecurityAssessmentsFilterArray and GetSecurityAssessmentsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentsFilterArrayInput` via:
 //
@@ -29974,6 +34901,12 @@ func (i GetSecurityAssessmentsFilterArray) ToGetSecurityAssessmentsFilterArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentsFilterArrayOutput)
 }
 
+func (i GetSecurityAssessmentsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentsFilter] {
+	return pulumix.Output[[]GetSecurityAssessmentsFilter]{
+		OutputState: i.ToGetSecurityAssessmentsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentsFilterOutput) ElementType() reflect.Type {
@@ -29986,6 +34919,12 @@ func (o GetSecurityAssessmentsFilterOutput) ToGetSecurityAssessmentsFilterOutput
 
 func (o GetSecurityAssessmentsFilterOutput) ToGetSecurityAssessmentsFilterOutputWithContext(ctx context.Context) GetSecurityAssessmentsFilterOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentsFilter] {
+	return pulumix.Output[GetSecurityAssessmentsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityAssessmentsFilterOutput) Name() pulumi.StringOutput {
@@ -30012,6 +34951,12 @@ func (o GetSecurityAssessmentsFilterArrayOutput) ToGetSecurityAssessmentsFilterA
 
 func (o GetSecurityAssessmentsFilterArrayOutput) ToGetSecurityAssessmentsFilterArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentsFilterArrayOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentsFilter] {
+	return pulumix.Output[[]GetSecurityAssessmentsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityAssessmentsFilterArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentsFilterOutput {
@@ -30153,6 +35098,12 @@ func (i GetSecurityAssessmentsSecurityAssessmentArgs) ToGetSecurityAssessmentsSe
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentsSecurityAssessmentOutput)
 }
 
+func (i GetSecurityAssessmentsSecurityAssessmentArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentsSecurityAssessment] {
+	return pulumix.Output[GetSecurityAssessmentsSecurityAssessment]{
+		OutputState: i.ToGetSecurityAssessmentsSecurityAssessmentOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentsSecurityAssessmentArrayInput is an input type that accepts GetSecurityAssessmentsSecurityAssessmentArray and GetSecurityAssessmentsSecurityAssessmentArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentsSecurityAssessmentArrayInput` via:
 //
@@ -30178,6 +35129,12 @@ func (i GetSecurityAssessmentsSecurityAssessmentArray) ToGetSecurityAssessmentsS
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentsSecurityAssessmentArrayOutput)
 }
 
+func (i GetSecurityAssessmentsSecurityAssessmentArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentsSecurityAssessment] {
+	return pulumix.Output[[]GetSecurityAssessmentsSecurityAssessment]{
+		OutputState: i.ToGetSecurityAssessmentsSecurityAssessmentArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentsSecurityAssessmentOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentsSecurityAssessmentOutput) ElementType() reflect.Type {
@@ -30190,6 +35147,12 @@ func (o GetSecurityAssessmentsSecurityAssessmentOutput) ToGetSecurityAssessments
 
 func (o GetSecurityAssessmentsSecurityAssessmentOutput) ToGetSecurityAssessmentsSecurityAssessmentOutputWithContext(ctx context.Context) GetSecurityAssessmentsSecurityAssessmentOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentsSecurityAssessmentOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentsSecurityAssessment] {
+	return pulumix.Output[GetSecurityAssessmentsSecurityAssessment]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A filter to return only resources that match the specified compartment OCID.
@@ -30338,6 +35301,12 @@ func (o GetSecurityAssessmentsSecurityAssessmentArrayOutput) ToGetSecurityAssess
 	return o
 }
 
+func (o GetSecurityAssessmentsSecurityAssessmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentsSecurityAssessment] {
+	return pulumix.Output[[]GetSecurityAssessmentsSecurityAssessment]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetSecurityAssessmentsSecurityAssessmentArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentsSecurityAssessmentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityAssessmentsSecurityAssessment {
 		return vs[0].([]GetSecurityAssessmentsSecurityAssessment)[vs[1].(int)]
@@ -30401,6 +35370,12 @@ func (i GetSecurityAssessmentsSecurityAssessmentStatisticArgs) ToGetSecurityAsse
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentsSecurityAssessmentStatisticOutput)
 }
 
+func (i GetSecurityAssessmentsSecurityAssessmentStatisticArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentsSecurityAssessmentStatistic] {
+	return pulumix.Output[GetSecurityAssessmentsSecurityAssessmentStatistic]{
+		OutputState: i.ToGetSecurityAssessmentsSecurityAssessmentStatisticOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentsSecurityAssessmentStatisticArrayInput is an input type that accepts GetSecurityAssessmentsSecurityAssessmentStatisticArray and GetSecurityAssessmentsSecurityAssessmentStatisticArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentsSecurityAssessmentStatisticArrayInput` via:
 //
@@ -30426,6 +35401,12 @@ func (i GetSecurityAssessmentsSecurityAssessmentStatisticArray) ToGetSecurityAss
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentsSecurityAssessmentStatisticArrayOutput)
 }
 
+func (i GetSecurityAssessmentsSecurityAssessmentStatisticArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentsSecurityAssessmentStatistic] {
+	return pulumix.Output[[]GetSecurityAssessmentsSecurityAssessmentStatistic]{
+		OutputState: i.ToGetSecurityAssessmentsSecurityAssessmentStatisticArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentsSecurityAssessmentStatisticOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentsSecurityAssessmentStatisticOutput) ElementType() reflect.Type {
@@ -30438,6 +35419,12 @@ func (o GetSecurityAssessmentsSecurityAssessmentStatisticOutput) ToGetSecurityAs
 
 func (o GetSecurityAssessmentsSecurityAssessmentStatisticOutput) ToGetSecurityAssessmentsSecurityAssessmentStatisticOutputWithContext(ctx context.Context) GetSecurityAssessmentsSecurityAssessmentStatisticOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentsSecurityAssessmentStatisticOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentsSecurityAssessmentStatistic] {
+	return pulumix.Output[GetSecurityAssessmentsSecurityAssessmentStatistic]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Statistics showing the number of findings with a particular risk level for each category.
@@ -30499,6 +35486,12 @@ func (o GetSecurityAssessmentsSecurityAssessmentStatisticArrayOutput) ToGetSecur
 
 func (o GetSecurityAssessmentsSecurityAssessmentStatisticArrayOutput) ToGetSecurityAssessmentsSecurityAssessmentStatisticArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentsSecurityAssessmentStatisticArrayOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentsSecurityAssessmentStatisticArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentsSecurityAssessmentStatistic] {
+	return pulumix.Output[[]GetSecurityAssessmentsSecurityAssessmentStatistic]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityAssessmentsSecurityAssessmentStatisticArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentsSecurityAssessmentStatisticOutput {
@@ -30568,6 +35561,12 @@ func (i GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryArgs) ToGetSecu
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryOutput)
 }
 
+func (i GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentsSecurityAssessmentStatisticAdvisory] {
+	return pulumix.Output[GetSecurityAssessmentsSecurityAssessmentStatisticAdvisory]{
+		OutputState: i.ToGetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryArrayInput is an input type that accepts GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryArray and GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryArrayInput` via:
 //
@@ -30593,6 +35592,12 @@ func (i GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryArray) ToGetSec
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryArrayOutput)
 }
 
+func (i GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentsSecurityAssessmentStatisticAdvisory] {
+	return pulumix.Output[[]GetSecurityAssessmentsSecurityAssessmentStatisticAdvisory]{
+		OutputState: i.ToGetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryOutput) ElementType() reflect.Type {
@@ -30605,6 +35610,12 @@ func (o GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryOutput) ToGetSe
 
 func (o GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryOutput) ToGetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryOutputWithContext(ctx context.Context) GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentsSecurityAssessmentStatisticAdvisory] {
+	return pulumix.Output[GetSecurityAssessmentsSecurityAssessmentStatisticAdvisory]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The number of findings in the Auditing category.
@@ -30671,6 +35682,12 @@ func (o GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryArrayOutput) To
 
 func (o GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryArrayOutput) ToGetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryArrayOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentsSecurityAssessmentStatisticAdvisory] {
+	return pulumix.Output[[]GetSecurityAssessmentsSecurityAssessmentStatisticAdvisory]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryOutput {
@@ -30740,6 +35757,12 @@ func (i GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateArgs) ToGetSecu
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateOutput)
 }
 
+func (i GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentsSecurityAssessmentStatisticEvaluate] {
+	return pulumix.Output[GetSecurityAssessmentsSecurityAssessmentStatisticEvaluate]{
+		OutputState: i.ToGetSecurityAssessmentsSecurityAssessmentStatisticEvaluateOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateArrayInput is an input type that accepts GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateArray and GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateArrayInput` via:
 //
@@ -30765,6 +35788,12 @@ func (i GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateArray) ToGetSec
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateArrayOutput)
 }
 
+func (i GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentsSecurityAssessmentStatisticEvaluate] {
+	return pulumix.Output[[]GetSecurityAssessmentsSecurityAssessmentStatisticEvaluate]{
+		OutputState: i.ToGetSecurityAssessmentsSecurityAssessmentStatisticEvaluateArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateOutput) ElementType() reflect.Type {
@@ -30777,6 +35806,12 @@ func (o GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateOutput) ToGetSe
 
 func (o GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateOutput) ToGetSecurityAssessmentsSecurityAssessmentStatisticEvaluateOutputWithContext(ctx context.Context) GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentsSecurityAssessmentStatisticEvaluate] {
+	return pulumix.Output[GetSecurityAssessmentsSecurityAssessmentStatisticEvaluate]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The number of findings in the Auditing category.
@@ -30843,6 +35878,12 @@ func (o GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateArrayOutput) To
 
 func (o GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateArrayOutput) ToGetSecurityAssessmentsSecurityAssessmentStatisticEvaluateArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateArrayOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentsSecurityAssessmentStatisticEvaluate] {
+	return pulumix.Output[[]GetSecurityAssessmentsSecurityAssessmentStatisticEvaluate]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateOutput {
@@ -30912,6 +35953,12 @@ func (i GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskArgs) ToGetSecu
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskOutput)
 }
 
+func (i GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentsSecurityAssessmentStatisticHighRisk] {
+	return pulumix.Output[GetSecurityAssessmentsSecurityAssessmentStatisticHighRisk]{
+		OutputState: i.ToGetSecurityAssessmentsSecurityAssessmentStatisticHighRiskOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskArrayInput is an input type that accepts GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskArray and GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskArrayInput` via:
 //
@@ -30937,6 +35984,12 @@ func (i GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskArray) ToGetSec
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskArrayOutput)
 }
 
+func (i GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentsSecurityAssessmentStatisticHighRisk] {
+	return pulumix.Output[[]GetSecurityAssessmentsSecurityAssessmentStatisticHighRisk]{
+		OutputState: i.ToGetSecurityAssessmentsSecurityAssessmentStatisticHighRiskArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskOutput) ElementType() reflect.Type {
@@ -30949,6 +36002,12 @@ func (o GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskOutput) ToGetSe
 
 func (o GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskOutput) ToGetSecurityAssessmentsSecurityAssessmentStatisticHighRiskOutputWithContext(ctx context.Context) GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentsSecurityAssessmentStatisticHighRisk] {
+	return pulumix.Output[GetSecurityAssessmentsSecurityAssessmentStatisticHighRisk]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The number of findings in the Auditing category.
@@ -31015,6 +36074,12 @@ func (o GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskArrayOutput) To
 
 func (o GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskArrayOutput) ToGetSecurityAssessmentsSecurityAssessmentStatisticHighRiskArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskArrayOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentsSecurityAssessmentStatisticHighRisk] {
+	return pulumix.Output[[]GetSecurityAssessmentsSecurityAssessmentStatisticHighRisk]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskOutput {
@@ -31084,6 +36149,12 @@ func (i GetSecurityAssessmentsSecurityAssessmentStatisticLowRiskArgs) ToGetSecur
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentsSecurityAssessmentStatisticLowRiskOutput)
 }
 
+func (i GetSecurityAssessmentsSecurityAssessmentStatisticLowRiskArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentsSecurityAssessmentStatisticLowRisk] {
+	return pulumix.Output[GetSecurityAssessmentsSecurityAssessmentStatisticLowRisk]{
+		OutputState: i.ToGetSecurityAssessmentsSecurityAssessmentStatisticLowRiskOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentsSecurityAssessmentStatisticLowRiskArrayInput is an input type that accepts GetSecurityAssessmentsSecurityAssessmentStatisticLowRiskArray and GetSecurityAssessmentsSecurityAssessmentStatisticLowRiskArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentsSecurityAssessmentStatisticLowRiskArrayInput` via:
 //
@@ -31109,6 +36180,12 @@ func (i GetSecurityAssessmentsSecurityAssessmentStatisticLowRiskArray) ToGetSecu
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentsSecurityAssessmentStatisticLowRiskArrayOutput)
 }
 
+func (i GetSecurityAssessmentsSecurityAssessmentStatisticLowRiskArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentsSecurityAssessmentStatisticLowRisk] {
+	return pulumix.Output[[]GetSecurityAssessmentsSecurityAssessmentStatisticLowRisk]{
+		OutputState: i.ToGetSecurityAssessmentsSecurityAssessmentStatisticLowRiskArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentsSecurityAssessmentStatisticLowRiskOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentsSecurityAssessmentStatisticLowRiskOutput) ElementType() reflect.Type {
@@ -31121,6 +36198,12 @@ func (o GetSecurityAssessmentsSecurityAssessmentStatisticLowRiskOutput) ToGetSec
 
 func (o GetSecurityAssessmentsSecurityAssessmentStatisticLowRiskOutput) ToGetSecurityAssessmentsSecurityAssessmentStatisticLowRiskOutputWithContext(ctx context.Context) GetSecurityAssessmentsSecurityAssessmentStatisticLowRiskOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentsSecurityAssessmentStatisticLowRiskOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentsSecurityAssessmentStatisticLowRisk] {
+	return pulumix.Output[GetSecurityAssessmentsSecurityAssessmentStatisticLowRisk]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The number of findings in the Auditing category.
@@ -31187,6 +36270,12 @@ func (o GetSecurityAssessmentsSecurityAssessmentStatisticLowRiskArrayOutput) ToG
 
 func (o GetSecurityAssessmentsSecurityAssessmentStatisticLowRiskArrayOutput) ToGetSecurityAssessmentsSecurityAssessmentStatisticLowRiskArrayOutputWithContext(ctx context.Context) GetSecurityAssessmentsSecurityAssessmentStatisticLowRiskArrayOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentsSecurityAssessmentStatisticLowRiskArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentsSecurityAssessmentStatisticLowRisk] {
+	return pulumix.Output[[]GetSecurityAssessmentsSecurityAssessmentStatisticLowRisk]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityAssessmentsSecurityAssessmentStatisticLowRiskArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentsSecurityAssessmentStatisticLowRiskOutput {
@@ -31256,6 +36345,12 @@ func (i GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskArgs) ToGetSe
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskOutput)
 }
 
+func (i GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentsSecurityAssessmentStatisticMediumRisk] {
+	return pulumix.Output[GetSecurityAssessmentsSecurityAssessmentStatisticMediumRisk]{
+		OutputState: i.ToGetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskArrayInput is an input type that accepts GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskArray and GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskArrayInput` via:
 //
@@ -31281,6 +36376,12 @@ func (i GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskArray) ToGetS
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskArrayOutput)
 }
 
+func (i GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentsSecurityAssessmentStatisticMediumRisk] {
+	return pulumix.Output[[]GetSecurityAssessmentsSecurityAssessmentStatisticMediumRisk]{
+		OutputState: i.ToGetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskOutput) ElementType() reflect.Type {
@@ -31293,6 +36394,12 @@ func (o GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskOutput) ToGet
 
 func (o GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskOutput) ToGetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskOutputWithContext(ctx context.Context) GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentsSecurityAssessmentStatisticMediumRisk] {
+	return pulumix.Output[GetSecurityAssessmentsSecurityAssessmentStatisticMediumRisk]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The number of findings in the Auditing category.
@@ -31363,6 +36470,12 @@ func (o GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskArrayOutput) 
 	return o
 }
 
+func (o GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentsSecurityAssessmentStatisticMediumRisk] {
+	return pulumix.Output[[]GetSecurityAssessmentsSecurityAssessmentStatisticMediumRisk]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityAssessmentsSecurityAssessmentStatisticMediumRisk {
 		return vs[0].([]GetSecurityAssessmentsSecurityAssessmentStatisticMediumRisk)[vs[1].(int)]
@@ -31430,6 +36543,12 @@ func (i GetSecurityAssessmentsSecurityAssessmentStatisticPassArgs) ToGetSecurity
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentsSecurityAssessmentStatisticPassOutput)
 }
 
+func (i GetSecurityAssessmentsSecurityAssessmentStatisticPassArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentsSecurityAssessmentStatisticPass] {
+	return pulumix.Output[GetSecurityAssessmentsSecurityAssessmentStatisticPass]{
+		OutputState: i.ToGetSecurityAssessmentsSecurityAssessmentStatisticPassOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityAssessmentsSecurityAssessmentStatisticPassArrayInput is an input type that accepts GetSecurityAssessmentsSecurityAssessmentStatisticPassArray and GetSecurityAssessmentsSecurityAssessmentStatisticPassArrayOutput values.
 // You can construct a concrete instance of `GetSecurityAssessmentsSecurityAssessmentStatisticPassArrayInput` via:
 //
@@ -31455,6 +36574,12 @@ func (i GetSecurityAssessmentsSecurityAssessmentStatisticPassArray) ToGetSecurit
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityAssessmentsSecurityAssessmentStatisticPassArrayOutput)
 }
 
+func (i GetSecurityAssessmentsSecurityAssessmentStatisticPassArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentsSecurityAssessmentStatisticPass] {
+	return pulumix.Output[[]GetSecurityAssessmentsSecurityAssessmentStatisticPass]{
+		OutputState: i.ToGetSecurityAssessmentsSecurityAssessmentStatisticPassArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityAssessmentsSecurityAssessmentStatisticPassOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityAssessmentsSecurityAssessmentStatisticPassOutput) ElementType() reflect.Type {
@@ -31467,6 +36592,12 @@ func (o GetSecurityAssessmentsSecurityAssessmentStatisticPassOutput) ToGetSecuri
 
 func (o GetSecurityAssessmentsSecurityAssessmentStatisticPassOutput) ToGetSecurityAssessmentsSecurityAssessmentStatisticPassOutputWithContext(ctx context.Context) GetSecurityAssessmentsSecurityAssessmentStatisticPassOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentsSecurityAssessmentStatisticPassOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentsSecurityAssessmentStatisticPass] {
+	return pulumix.Output[GetSecurityAssessmentsSecurityAssessmentStatisticPass]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The number of findings in the Auditing category.
@@ -31533,6 +36664,12 @@ func (o GetSecurityAssessmentsSecurityAssessmentStatisticPassArrayOutput) ToGetS
 	return o
 }
 
+func (o GetSecurityAssessmentsSecurityAssessmentStatisticPassArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityAssessmentsSecurityAssessmentStatisticPass] {
+	return pulumix.Output[[]GetSecurityAssessmentsSecurityAssessmentStatisticPass]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetSecurityAssessmentsSecurityAssessmentStatisticPassArrayOutput) Index(i pulumi.IntInput) GetSecurityAssessmentsSecurityAssessmentStatisticPassOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityAssessmentsSecurityAssessmentStatisticPass {
 		return vs[0].([]GetSecurityAssessmentsSecurityAssessmentStatisticPass)[vs[1].(int)]
@@ -31574,6 +36711,12 @@ func (i GetSensitiveDataModelSensitiveObjectsFilterArgs) ToGetSensitiveDataModel
 	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveDataModelSensitiveObjectsFilterOutput)
 }
 
+func (i GetSensitiveDataModelSensitiveObjectsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSensitiveDataModelSensitiveObjectsFilter] {
+	return pulumix.Output[GetSensitiveDataModelSensitiveObjectsFilter]{
+		OutputState: i.ToGetSensitiveDataModelSensitiveObjectsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSensitiveDataModelSensitiveObjectsFilterArrayInput is an input type that accepts GetSensitiveDataModelSensitiveObjectsFilterArray and GetSensitiveDataModelSensitiveObjectsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSensitiveDataModelSensitiveObjectsFilterArrayInput` via:
 //
@@ -31599,6 +36742,12 @@ func (i GetSensitiveDataModelSensitiveObjectsFilterArray) ToGetSensitiveDataMode
 	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveDataModelSensitiveObjectsFilterArrayOutput)
 }
 
+func (i GetSensitiveDataModelSensitiveObjectsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSensitiveDataModelSensitiveObjectsFilter] {
+	return pulumix.Output[[]GetSensitiveDataModelSensitiveObjectsFilter]{
+		OutputState: i.ToGetSensitiveDataModelSensitiveObjectsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSensitiveDataModelSensitiveObjectsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSensitiveDataModelSensitiveObjectsFilterOutput) ElementType() reflect.Type {
@@ -31611,6 +36760,12 @@ func (o GetSensitiveDataModelSensitiveObjectsFilterOutput) ToGetSensitiveDataMod
 
 func (o GetSensitiveDataModelSensitiveObjectsFilterOutput) ToGetSensitiveDataModelSensitiveObjectsFilterOutputWithContext(ctx context.Context) GetSensitiveDataModelSensitiveObjectsFilterOutput {
 	return o
+}
+
+func (o GetSensitiveDataModelSensitiveObjectsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSensitiveDataModelSensitiveObjectsFilter] {
+	return pulumix.Output[GetSensitiveDataModelSensitiveObjectsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSensitiveDataModelSensitiveObjectsFilterOutput) Name() pulumi.StringOutput {
@@ -31637,6 +36792,12 @@ func (o GetSensitiveDataModelSensitiveObjectsFilterArrayOutput) ToGetSensitiveDa
 
 func (o GetSensitiveDataModelSensitiveObjectsFilterArrayOutput) ToGetSensitiveDataModelSensitiveObjectsFilterArrayOutputWithContext(ctx context.Context) GetSensitiveDataModelSensitiveObjectsFilterArrayOutput {
 	return o
+}
+
+func (o GetSensitiveDataModelSensitiveObjectsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSensitiveDataModelSensitiveObjectsFilter] {
+	return pulumix.Output[[]GetSensitiveDataModelSensitiveObjectsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSensitiveDataModelSensitiveObjectsFilterArrayOutput) Index(i pulumi.IntInput) GetSensitiveDataModelSensitiveObjectsFilterOutput {
@@ -31678,6 +36839,12 @@ func (i GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArgs) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionOutput)
 }
 
+func (i GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollection] {
+	return pulumix.Output[GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollection]{
+		OutputState: i.ToGetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArrayInput is an input type that accepts GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArray and GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArrayOutput values.
 // You can construct a concrete instance of `GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArrayInput` via:
 //
@@ -31703,6 +36870,12 @@ func (i GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArray) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArrayOutput)
 }
 
+func (i GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollection] {
+	return pulumix.Output[[]GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollection]{
+		OutputState: i.ToGetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionOutput) ElementType() reflect.Type {
@@ -31715,6 +36888,12 @@ func (o GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionOutput) To
 
 func (o GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionOutput) ToGetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionOutputWithContext(ctx context.Context) GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionOutput {
 	return o
+}
+
+func (o GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollection] {
+	return pulumix.Output[GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 // An array of sensitive object summary objects.
@@ -31736,6 +36915,12 @@ func (o GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArrayOutpu
 
 func (o GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArrayOutput) ToGetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArrayOutputWithContext(ctx context.Context) GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArrayOutput {
 	return o
+}
+
+func (o GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollection] {
+	return pulumix.Output[[]GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionArrayOutput) Index(i pulumi.IntInput) GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionOutput {
@@ -31785,6 +36970,12 @@ func (i GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArgs) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemOutput)
 }
 
+func (i GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItem] {
+	return pulumix.Output[GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItem]{
+		OutputState: i.ToGetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArrayInput is an input type that accepts GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArray and GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArrayInput` via:
 //
@@ -31810,6 +37001,12 @@ func (i GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArray)
 	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArrayOutput)
 }
 
+func (i GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItem] {
+	return pulumix.Output[[]GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItem]{
+		OutputState: i.ToGetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemOutput) ElementType() reflect.Type {
@@ -31822,6 +37019,12 @@ func (o GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemOutput
 
 func (o GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemOutput) ToGetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemOutputWithContext(ctx context.Context) GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemOutput {
 	return o
+}
+
+func (o GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItem] {
+	return pulumix.Output[GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A filter to return only items related to a specific object name.
@@ -31851,6 +37054,12 @@ func (o GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArrayO
 
 func (o GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArrayOutput) ToGetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArrayOutputWithContext(ctx context.Context) GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArrayOutput {
 	return o
+}
+
+func (o GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItem] {
+	return pulumix.Output[[]GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemOutput {
@@ -31894,6 +37103,12 @@ func (i GetSensitiveDataModelSensitiveSchemasFilterArgs) ToGetSensitiveDataModel
 	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveDataModelSensitiveSchemasFilterOutput)
 }
 
+func (i GetSensitiveDataModelSensitiveSchemasFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSensitiveDataModelSensitiveSchemasFilter] {
+	return pulumix.Output[GetSensitiveDataModelSensitiveSchemasFilter]{
+		OutputState: i.ToGetSensitiveDataModelSensitiveSchemasFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSensitiveDataModelSensitiveSchemasFilterArrayInput is an input type that accepts GetSensitiveDataModelSensitiveSchemasFilterArray and GetSensitiveDataModelSensitiveSchemasFilterArrayOutput values.
 // You can construct a concrete instance of `GetSensitiveDataModelSensitiveSchemasFilterArrayInput` via:
 //
@@ -31919,6 +37134,12 @@ func (i GetSensitiveDataModelSensitiveSchemasFilterArray) ToGetSensitiveDataMode
 	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveDataModelSensitiveSchemasFilterArrayOutput)
 }
 
+func (i GetSensitiveDataModelSensitiveSchemasFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSensitiveDataModelSensitiveSchemasFilter] {
+	return pulumix.Output[[]GetSensitiveDataModelSensitiveSchemasFilter]{
+		OutputState: i.ToGetSensitiveDataModelSensitiveSchemasFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSensitiveDataModelSensitiveSchemasFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSensitiveDataModelSensitiveSchemasFilterOutput) ElementType() reflect.Type {
@@ -31931,6 +37152,12 @@ func (o GetSensitiveDataModelSensitiveSchemasFilterOutput) ToGetSensitiveDataMod
 
 func (o GetSensitiveDataModelSensitiveSchemasFilterOutput) ToGetSensitiveDataModelSensitiveSchemasFilterOutputWithContext(ctx context.Context) GetSensitiveDataModelSensitiveSchemasFilterOutput {
 	return o
+}
+
+func (o GetSensitiveDataModelSensitiveSchemasFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSensitiveDataModelSensitiveSchemasFilter] {
+	return pulumix.Output[GetSensitiveDataModelSensitiveSchemasFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSensitiveDataModelSensitiveSchemasFilterOutput) Name() pulumi.StringOutput {
@@ -31957,6 +37184,12 @@ func (o GetSensitiveDataModelSensitiveSchemasFilterArrayOutput) ToGetSensitiveDa
 
 func (o GetSensitiveDataModelSensitiveSchemasFilterArrayOutput) ToGetSensitiveDataModelSensitiveSchemasFilterArrayOutputWithContext(ctx context.Context) GetSensitiveDataModelSensitiveSchemasFilterArrayOutput {
 	return o
+}
+
+func (o GetSensitiveDataModelSensitiveSchemasFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSensitiveDataModelSensitiveSchemasFilter] {
+	return pulumix.Output[[]GetSensitiveDataModelSensitiveSchemasFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSensitiveDataModelSensitiveSchemasFilterArrayOutput) Index(i pulumi.IntInput) GetSensitiveDataModelSensitiveSchemasFilterOutput {
@@ -31998,6 +37231,12 @@ func (i GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArgs) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionOutput)
 }
 
+func (i GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollection] {
+	return pulumix.Output[GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollection]{
+		OutputState: i.ToGetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArrayInput is an input type that accepts GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArray and GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArrayOutput values.
 // You can construct a concrete instance of `GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArrayInput` via:
 //
@@ -32023,6 +37262,12 @@ func (i GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArray) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArrayOutput)
 }
 
+func (i GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollection] {
+	return pulumix.Output[[]GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollection]{
+		OutputState: i.ToGetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionOutput) ElementType() reflect.Type {
@@ -32035,6 +37280,12 @@ func (o GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionOutput) To
 
 func (o GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionOutput) ToGetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionOutputWithContext(ctx context.Context) GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionOutput {
 	return o
+}
+
+func (o GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollection] {
+	return pulumix.Output[GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 // An array of sensitive schema summary objects.
@@ -32056,6 +37307,12 @@ func (o GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArrayOutpu
 
 func (o GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArrayOutput) ToGetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArrayOutputWithContext(ctx context.Context) GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArrayOutput {
 	return o
+}
+
+func (o GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollection] {
+	return pulumix.Output[[]GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionArrayOutput) Index(i pulumi.IntInput) GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionOutput {
@@ -32097,6 +37354,12 @@ func (i GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArgs) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemOutput)
 }
 
+func (i GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItem] {
+	return pulumix.Output[GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItem]{
+		OutputState: i.ToGetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArrayInput is an input type that accepts GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArray and GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArrayInput` via:
 //
@@ -32122,6 +37385,12 @@ func (i GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArray)
 	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArrayOutput)
 }
 
+func (i GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItem] {
+	return pulumix.Output[[]GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItem]{
+		OutputState: i.ToGetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemOutput) ElementType() reflect.Type {
@@ -32134,6 +37403,12 @@ func (o GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemOutput
 
 func (o GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemOutput) ToGetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemOutputWithContext(ctx context.Context) GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemOutput {
 	return o
+}
+
+func (o GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItem] {
+	return pulumix.Output[GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A filter to return only items related to specific schema name.
@@ -32153,6 +37428,12 @@ func (o GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArrayO
 
 func (o GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArrayOutput) ToGetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArrayOutputWithContext(ctx context.Context) GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArrayOutput {
 	return o
+}
+
+func (o GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItem] {
+	return pulumix.Output[[]GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemOutput {
@@ -32196,6 +37477,12 @@ func (i GetSensitiveDataModelsFilterArgs) ToGetSensitiveDataModelsFilterOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveDataModelsFilterOutput)
 }
 
+func (i GetSensitiveDataModelsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSensitiveDataModelsFilter] {
+	return pulumix.Output[GetSensitiveDataModelsFilter]{
+		OutputState: i.ToGetSensitiveDataModelsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSensitiveDataModelsFilterArrayInput is an input type that accepts GetSensitiveDataModelsFilterArray and GetSensitiveDataModelsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSensitiveDataModelsFilterArrayInput` via:
 //
@@ -32221,6 +37508,12 @@ func (i GetSensitiveDataModelsFilterArray) ToGetSensitiveDataModelsFilterArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveDataModelsFilterArrayOutput)
 }
 
+func (i GetSensitiveDataModelsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSensitiveDataModelsFilter] {
+	return pulumix.Output[[]GetSensitiveDataModelsFilter]{
+		OutputState: i.ToGetSensitiveDataModelsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSensitiveDataModelsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSensitiveDataModelsFilterOutput) ElementType() reflect.Type {
@@ -32233,6 +37526,12 @@ func (o GetSensitiveDataModelsFilterOutput) ToGetSensitiveDataModelsFilterOutput
 
 func (o GetSensitiveDataModelsFilterOutput) ToGetSensitiveDataModelsFilterOutputWithContext(ctx context.Context) GetSensitiveDataModelsFilterOutput {
 	return o
+}
+
+func (o GetSensitiveDataModelsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSensitiveDataModelsFilter] {
+	return pulumix.Output[GetSensitiveDataModelsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSensitiveDataModelsFilterOutput) Name() pulumi.StringOutput {
@@ -32259,6 +37558,12 @@ func (o GetSensitiveDataModelsFilterArrayOutput) ToGetSensitiveDataModelsFilterA
 
 func (o GetSensitiveDataModelsFilterArrayOutput) ToGetSensitiveDataModelsFilterArrayOutputWithContext(ctx context.Context) GetSensitiveDataModelsFilterArrayOutput {
 	return o
+}
+
+func (o GetSensitiveDataModelsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSensitiveDataModelsFilter] {
+	return pulumix.Output[[]GetSensitiveDataModelsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSensitiveDataModelsFilterArrayOutput) Index(i pulumi.IntInput) GetSensitiveDataModelsFilterOutput {
@@ -32302,6 +37607,12 @@ func (i GetSensitiveDataModelsSensitiveColumnsFilterArgs) ToGetSensitiveDataMode
 	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveDataModelsSensitiveColumnsFilterOutput)
 }
 
+func (i GetSensitiveDataModelsSensitiveColumnsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSensitiveDataModelsSensitiveColumnsFilter] {
+	return pulumix.Output[GetSensitiveDataModelsSensitiveColumnsFilter]{
+		OutputState: i.ToGetSensitiveDataModelsSensitiveColumnsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSensitiveDataModelsSensitiveColumnsFilterArrayInput is an input type that accepts GetSensitiveDataModelsSensitiveColumnsFilterArray and GetSensitiveDataModelsSensitiveColumnsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSensitiveDataModelsSensitiveColumnsFilterArrayInput` via:
 //
@@ -32327,6 +37638,12 @@ func (i GetSensitiveDataModelsSensitiveColumnsFilterArray) ToGetSensitiveDataMod
 	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveDataModelsSensitiveColumnsFilterArrayOutput)
 }
 
+func (i GetSensitiveDataModelsSensitiveColumnsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSensitiveDataModelsSensitiveColumnsFilter] {
+	return pulumix.Output[[]GetSensitiveDataModelsSensitiveColumnsFilter]{
+		OutputState: i.ToGetSensitiveDataModelsSensitiveColumnsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSensitiveDataModelsSensitiveColumnsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSensitiveDataModelsSensitiveColumnsFilterOutput) ElementType() reflect.Type {
@@ -32339,6 +37656,12 @@ func (o GetSensitiveDataModelsSensitiveColumnsFilterOutput) ToGetSensitiveDataMo
 
 func (o GetSensitiveDataModelsSensitiveColumnsFilterOutput) ToGetSensitiveDataModelsSensitiveColumnsFilterOutputWithContext(ctx context.Context) GetSensitiveDataModelsSensitiveColumnsFilterOutput {
 	return o
+}
+
+func (o GetSensitiveDataModelsSensitiveColumnsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSensitiveDataModelsSensitiveColumnsFilter] {
+	return pulumix.Output[GetSensitiveDataModelsSensitiveColumnsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSensitiveDataModelsSensitiveColumnsFilterOutput) Name() pulumi.StringOutput {
@@ -32365,6 +37688,12 @@ func (o GetSensitiveDataModelsSensitiveColumnsFilterArrayOutput) ToGetSensitiveD
 
 func (o GetSensitiveDataModelsSensitiveColumnsFilterArrayOutput) ToGetSensitiveDataModelsSensitiveColumnsFilterArrayOutputWithContext(ctx context.Context) GetSensitiveDataModelsSensitiveColumnsFilterArrayOutput {
 	return o
+}
+
+func (o GetSensitiveDataModelsSensitiveColumnsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSensitiveDataModelsSensitiveColumnsFilter] {
+	return pulumix.Output[[]GetSensitiveDataModelsSensitiveColumnsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSensitiveDataModelsSensitiveColumnsFilterArrayOutput) Index(i pulumi.IntInput) GetSensitiveDataModelsSensitiveColumnsFilterOutput {
@@ -32404,6 +37733,12 @@ func (i GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionArgs) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionOutput)
 }
 
+func (i GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollection] {
+	return pulumix.Output[GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollection]{
+		OutputState: i.ToGetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionArrayInput is an input type that accepts GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionArray and GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionArrayOutput values.
 // You can construct a concrete instance of `GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionArrayInput` via:
 //
@@ -32429,6 +37764,12 @@ func (i GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionArray) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionArrayOutput)
 }
 
+func (i GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollection] {
+	return pulumix.Output[[]GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollection]{
+		OutputState: i.ToGetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionOutput) ElementType() reflect.Type {
@@ -32441,6 +37782,12 @@ func (o GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionOutput) T
 
 func (o GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionOutput) ToGetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionOutputWithContext(ctx context.Context) GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionOutput {
 	return o
+}
+
+func (o GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollection] {
+	return pulumix.Output[GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionOutput) Items() GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemArrayOutput {
@@ -32461,6 +37808,12 @@ func (o GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionArrayOutp
 
 func (o GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionArrayOutput) ToGetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionArrayOutputWithContext(ctx context.Context) GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionArrayOutput {
 	return o
+}
+
+func (o GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollection] {
+	return pulumix.Output[[]GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionArrayOutput) Index(i pulumi.IntInput) GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionOutput {
@@ -32586,6 +37939,12 @@ func (i GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemArgs)
 	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemOutput)
 }
 
+func (i GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem] {
+	return pulumix.Output[GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem]{
+		OutputState: i.ToGetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemArrayInput is an input type that accepts GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemArray and GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemArrayInput` via:
 //
@@ -32611,6 +37970,12 @@ func (i GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemArrayOutput)
 }
 
+func (i GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem] {
+	return pulumix.Output[[]GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem]{
+		OutputState: i.ToGetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemOutput) ElementType() reflect.Type {
@@ -32623,6 +37988,12 @@ func (o GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemOutpu
 
 func (o GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemOutput) ToGetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemOutputWithContext(ctx context.Context) GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemOutput {
 	return o
+}
+
+func (o GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem] {
+	return pulumix.Output[GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
@@ -32779,6 +38150,12 @@ func (o GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemArray
 	return o
 }
 
+func (o GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem] {
+	return pulumix.Output[[]GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem {
 		return vs[0].([]GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem)[vs[1].(int)]
@@ -32816,6 +38193,12 @@ func (i GetSensitiveDataModelsSensitiveDataModelCollectionArgs) ToGetSensitiveDa
 	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveDataModelsSensitiveDataModelCollectionOutput)
 }
 
+func (i GetSensitiveDataModelsSensitiveDataModelCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSensitiveDataModelsSensitiveDataModelCollection] {
+	return pulumix.Output[GetSensitiveDataModelsSensitiveDataModelCollection]{
+		OutputState: i.ToGetSensitiveDataModelsSensitiveDataModelCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSensitiveDataModelsSensitiveDataModelCollectionArrayInput is an input type that accepts GetSensitiveDataModelsSensitiveDataModelCollectionArray and GetSensitiveDataModelsSensitiveDataModelCollectionArrayOutput values.
 // You can construct a concrete instance of `GetSensitiveDataModelsSensitiveDataModelCollectionArrayInput` via:
 //
@@ -32841,6 +38224,12 @@ func (i GetSensitiveDataModelsSensitiveDataModelCollectionArray) ToGetSensitiveD
 	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveDataModelsSensitiveDataModelCollectionArrayOutput)
 }
 
+func (i GetSensitiveDataModelsSensitiveDataModelCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSensitiveDataModelsSensitiveDataModelCollection] {
+	return pulumix.Output[[]GetSensitiveDataModelsSensitiveDataModelCollection]{
+		OutputState: i.ToGetSensitiveDataModelsSensitiveDataModelCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSensitiveDataModelsSensitiveDataModelCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetSensitiveDataModelsSensitiveDataModelCollectionOutput) ElementType() reflect.Type {
@@ -32853,6 +38242,12 @@ func (o GetSensitiveDataModelsSensitiveDataModelCollectionOutput) ToGetSensitive
 
 func (o GetSensitiveDataModelsSensitiveDataModelCollectionOutput) ToGetSensitiveDataModelsSensitiveDataModelCollectionOutputWithContext(ctx context.Context) GetSensitiveDataModelsSensitiveDataModelCollectionOutput {
 	return o
+}
+
+func (o GetSensitiveDataModelsSensitiveDataModelCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSensitiveDataModelsSensitiveDataModelCollection] {
+	return pulumix.Output[GetSensitiveDataModelsSensitiveDataModelCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSensitiveDataModelsSensitiveDataModelCollectionOutput) Items() GetSensitiveDataModelsSensitiveDataModelCollectionItemArrayOutput {
@@ -32873,6 +38268,12 @@ func (o GetSensitiveDataModelsSensitiveDataModelCollectionArrayOutput) ToGetSens
 
 func (o GetSensitiveDataModelsSensitiveDataModelCollectionArrayOutput) ToGetSensitiveDataModelsSensitiveDataModelCollectionArrayOutputWithContext(ctx context.Context) GetSensitiveDataModelsSensitiveDataModelCollectionArrayOutput {
 	return o
+}
+
+func (o GetSensitiveDataModelsSensitiveDataModelCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSensitiveDataModelsSensitiveDataModelCollection] {
+	return pulumix.Output[[]GetSensitiveDataModelsSensitiveDataModelCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSensitiveDataModelsSensitiveDataModelCollectionArrayOutput) Index(i pulumi.IntInput) GetSensitiveDataModelsSensitiveDataModelCollectionOutput {
@@ -32982,6 +38383,12 @@ func (i GetSensitiveDataModelsSensitiveDataModelCollectionItemArgs) ToGetSensiti
 	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveDataModelsSensitiveDataModelCollectionItemOutput)
 }
 
+func (i GetSensitiveDataModelsSensitiveDataModelCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSensitiveDataModelsSensitiveDataModelCollectionItem] {
+	return pulumix.Output[GetSensitiveDataModelsSensitiveDataModelCollectionItem]{
+		OutputState: i.ToGetSensitiveDataModelsSensitiveDataModelCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSensitiveDataModelsSensitiveDataModelCollectionItemArrayInput is an input type that accepts GetSensitiveDataModelsSensitiveDataModelCollectionItemArray and GetSensitiveDataModelsSensitiveDataModelCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetSensitiveDataModelsSensitiveDataModelCollectionItemArrayInput` via:
 //
@@ -33007,6 +38414,12 @@ func (i GetSensitiveDataModelsSensitiveDataModelCollectionItemArray) ToGetSensit
 	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveDataModelsSensitiveDataModelCollectionItemArrayOutput)
 }
 
+func (i GetSensitiveDataModelsSensitiveDataModelCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSensitiveDataModelsSensitiveDataModelCollectionItem] {
+	return pulumix.Output[[]GetSensitiveDataModelsSensitiveDataModelCollectionItem]{
+		OutputState: i.ToGetSensitiveDataModelsSensitiveDataModelCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSensitiveDataModelsSensitiveDataModelCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetSensitiveDataModelsSensitiveDataModelCollectionItemOutput) ElementType() reflect.Type {
@@ -33019,6 +38432,12 @@ func (o GetSensitiveDataModelsSensitiveDataModelCollectionItemOutput) ToGetSensi
 
 func (o GetSensitiveDataModelsSensitiveDataModelCollectionItemOutput) ToGetSensitiveDataModelsSensitiveDataModelCollectionItemOutputWithContext(ctx context.Context) GetSensitiveDataModelsSensitiveDataModelCollectionItemOutput {
 	return o
+}
+
+func (o GetSensitiveDataModelsSensitiveDataModelCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSensitiveDataModelsSensitiveDataModelCollectionItem] {
+	return pulumix.Output[GetSensitiveDataModelsSensitiveDataModelCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The application suite name identifying a collection of applications. The default value is GENERIC. It's useful only if maintaining a sensitive data model for a suite of applications.
@@ -33141,6 +38560,12 @@ func (o GetSensitiveDataModelsSensitiveDataModelCollectionItemArrayOutput) ToGet
 	return o
 }
 
+func (o GetSensitiveDataModelsSensitiveDataModelCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSensitiveDataModelsSensitiveDataModelCollectionItem] {
+	return pulumix.Output[[]GetSensitiveDataModelsSensitiveDataModelCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetSensitiveDataModelsSensitiveDataModelCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSensitiveDataModelsSensitiveDataModelCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSensitiveDataModelsSensitiveDataModelCollectionItem {
 		return vs[0].([]GetSensitiveDataModelsSensitiveDataModelCollectionItem)[vs[1].(int)]
@@ -33182,6 +38607,12 @@ func (i GetSensitiveTypesFilterArgs) ToGetSensitiveTypesFilterOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveTypesFilterOutput)
 }
 
+func (i GetSensitiveTypesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSensitiveTypesFilter] {
+	return pulumix.Output[GetSensitiveTypesFilter]{
+		OutputState: i.ToGetSensitiveTypesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSensitiveTypesFilterArrayInput is an input type that accepts GetSensitiveTypesFilterArray and GetSensitiveTypesFilterArrayOutput values.
 // You can construct a concrete instance of `GetSensitiveTypesFilterArrayInput` via:
 //
@@ -33207,6 +38638,12 @@ func (i GetSensitiveTypesFilterArray) ToGetSensitiveTypesFilterArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveTypesFilterArrayOutput)
 }
 
+func (i GetSensitiveTypesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSensitiveTypesFilter] {
+	return pulumix.Output[[]GetSensitiveTypesFilter]{
+		OutputState: i.ToGetSensitiveTypesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSensitiveTypesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSensitiveTypesFilterOutput) ElementType() reflect.Type {
@@ -33219,6 +38656,12 @@ func (o GetSensitiveTypesFilterOutput) ToGetSensitiveTypesFilterOutput() GetSens
 
 func (o GetSensitiveTypesFilterOutput) ToGetSensitiveTypesFilterOutputWithContext(ctx context.Context) GetSensitiveTypesFilterOutput {
 	return o
+}
+
+func (o GetSensitiveTypesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSensitiveTypesFilter] {
+	return pulumix.Output[GetSensitiveTypesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSensitiveTypesFilterOutput) Name() pulumi.StringOutput {
@@ -33245,6 +38688,12 @@ func (o GetSensitiveTypesFilterArrayOutput) ToGetSensitiveTypesFilterArrayOutput
 
 func (o GetSensitiveTypesFilterArrayOutput) ToGetSensitiveTypesFilterArrayOutputWithContext(ctx context.Context) GetSensitiveTypesFilterArrayOutput {
 	return o
+}
+
+func (o GetSensitiveTypesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSensitiveTypesFilter] {
+	return pulumix.Output[[]GetSensitiveTypesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSensitiveTypesFilterArrayOutput) Index(i pulumi.IntInput) GetSensitiveTypesFilterOutput {
@@ -33284,6 +38733,12 @@ func (i GetSensitiveTypesSensitiveTypeCollectionArgs) ToGetSensitiveTypesSensiti
 	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveTypesSensitiveTypeCollectionOutput)
 }
 
+func (i GetSensitiveTypesSensitiveTypeCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSensitiveTypesSensitiveTypeCollection] {
+	return pulumix.Output[GetSensitiveTypesSensitiveTypeCollection]{
+		OutputState: i.ToGetSensitiveTypesSensitiveTypeCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSensitiveTypesSensitiveTypeCollectionArrayInput is an input type that accepts GetSensitiveTypesSensitiveTypeCollectionArray and GetSensitiveTypesSensitiveTypeCollectionArrayOutput values.
 // You can construct a concrete instance of `GetSensitiveTypesSensitiveTypeCollectionArrayInput` via:
 //
@@ -33309,6 +38764,12 @@ func (i GetSensitiveTypesSensitiveTypeCollectionArray) ToGetSensitiveTypesSensit
 	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveTypesSensitiveTypeCollectionArrayOutput)
 }
 
+func (i GetSensitiveTypesSensitiveTypeCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSensitiveTypesSensitiveTypeCollection] {
+	return pulumix.Output[[]GetSensitiveTypesSensitiveTypeCollection]{
+		OutputState: i.ToGetSensitiveTypesSensitiveTypeCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSensitiveTypesSensitiveTypeCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetSensitiveTypesSensitiveTypeCollectionOutput) ElementType() reflect.Type {
@@ -33321,6 +38782,12 @@ func (o GetSensitiveTypesSensitiveTypeCollectionOutput) ToGetSensitiveTypesSensi
 
 func (o GetSensitiveTypesSensitiveTypeCollectionOutput) ToGetSensitiveTypesSensitiveTypeCollectionOutputWithContext(ctx context.Context) GetSensitiveTypesSensitiveTypeCollectionOutput {
 	return o
+}
+
+func (o GetSensitiveTypesSensitiveTypeCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSensitiveTypesSensitiveTypeCollection] {
+	return pulumix.Output[GetSensitiveTypesSensitiveTypeCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSensitiveTypesSensitiveTypeCollectionOutput) Items() GetSensitiveTypesSensitiveTypeCollectionItemArrayOutput {
@@ -33341,6 +38808,12 @@ func (o GetSensitiveTypesSensitiveTypeCollectionArrayOutput) ToGetSensitiveTypes
 
 func (o GetSensitiveTypesSensitiveTypeCollectionArrayOutput) ToGetSensitiveTypesSensitiveTypeCollectionArrayOutputWithContext(ctx context.Context) GetSensitiveTypesSensitiveTypeCollectionArrayOutput {
 	return o
+}
+
+func (o GetSensitiveTypesSensitiveTypeCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSensitiveTypesSensitiveTypeCollection] {
+	return pulumix.Output[[]GetSensitiveTypesSensitiveTypeCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSensitiveTypesSensitiveTypeCollectionArrayOutput) Index(i pulumi.IntInput) GetSensitiveTypesSensitiveTypeCollectionOutput {
@@ -33454,6 +38927,12 @@ func (i GetSensitiveTypesSensitiveTypeCollectionItemArgs) ToGetSensitiveTypesSen
 	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveTypesSensitiveTypeCollectionItemOutput)
 }
 
+func (i GetSensitiveTypesSensitiveTypeCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSensitiveTypesSensitiveTypeCollectionItem] {
+	return pulumix.Output[GetSensitiveTypesSensitiveTypeCollectionItem]{
+		OutputState: i.ToGetSensitiveTypesSensitiveTypeCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSensitiveTypesSensitiveTypeCollectionItemArrayInput is an input type that accepts GetSensitiveTypesSensitiveTypeCollectionItemArray and GetSensitiveTypesSensitiveTypeCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetSensitiveTypesSensitiveTypeCollectionItemArrayInput` via:
 //
@@ -33479,6 +38958,12 @@ func (i GetSensitiveTypesSensitiveTypeCollectionItemArray) ToGetSensitiveTypesSe
 	return pulumi.ToOutputWithContext(ctx, i).(GetSensitiveTypesSensitiveTypeCollectionItemArrayOutput)
 }
 
+func (i GetSensitiveTypesSensitiveTypeCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSensitiveTypesSensitiveTypeCollectionItem] {
+	return pulumix.Output[[]GetSensitiveTypesSensitiveTypeCollectionItem]{
+		OutputState: i.ToGetSensitiveTypesSensitiveTypeCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSensitiveTypesSensitiveTypeCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetSensitiveTypesSensitiveTypeCollectionItemOutput) ElementType() reflect.Type {
@@ -33491,6 +38976,12 @@ func (o GetSensitiveTypesSensitiveTypeCollectionItemOutput) ToGetSensitiveTypesS
 
 func (o GetSensitiveTypesSensitiveTypeCollectionItemOutput) ToGetSensitiveTypesSensitiveTypeCollectionItemOutputWithContext(ctx context.Context) GetSensitiveTypesSensitiveTypeCollectionItemOutput {
 	return o
+}
+
+func (o GetSensitiveTypesSensitiveTypeCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSensitiveTypesSensitiveTypeCollectionItem] {
+	return pulumix.Output[GetSensitiveTypesSensitiveTypeCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A regular expression to be used by data discovery for matching column comments.
@@ -33602,6 +39093,12 @@ func (o GetSensitiveTypesSensitiveTypeCollectionItemArrayOutput) ToGetSensitiveT
 	return o
 }
 
+func (o GetSensitiveTypesSensitiveTypeCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSensitiveTypesSensitiveTypeCollectionItem] {
+	return pulumix.Output[[]GetSensitiveTypesSensitiveTypeCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetSensitiveTypesSensitiveTypeCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSensitiveTypesSensitiveTypeCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSensitiveTypesSensitiveTypeCollectionItem {
 		return vs[0].([]GetSensitiveTypesSensitiveTypeCollectionItem)[vs[1].(int)]
@@ -33643,6 +39140,12 @@ func (i GetTargetAlertPolicyAssociationsFilterArgs) ToGetTargetAlertPolicyAssoci
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAlertPolicyAssociationsFilterOutput)
 }
 
+func (i GetTargetAlertPolicyAssociationsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAlertPolicyAssociationsFilter] {
+	return pulumix.Output[GetTargetAlertPolicyAssociationsFilter]{
+		OutputState: i.ToGetTargetAlertPolicyAssociationsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAlertPolicyAssociationsFilterArrayInput is an input type that accepts GetTargetAlertPolicyAssociationsFilterArray and GetTargetAlertPolicyAssociationsFilterArrayOutput values.
 // You can construct a concrete instance of `GetTargetAlertPolicyAssociationsFilterArrayInput` via:
 //
@@ -33668,6 +39171,12 @@ func (i GetTargetAlertPolicyAssociationsFilterArray) ToGetTargetAlertPolicyAssoc
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAlertPolicyAssociationsFilterArrayOutput)
 }
 
+func (i GetTargetAlertPolicyAssociationsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAlertPolicyAssociationsFilter] {
+	return pulumix.Output[[]GetTargetAlertPolicyAssociationsFilter]{
+		OutputState: i.ToGetTargetAlertPolicyAssociationsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAlertPolicyAssociationsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAlertPolicyAssociationsFilterOutput) ElementType() reflect.Type {
@@ -33680,6 +39189,12 @@ func (o GetTargetAlertPolicyAssociationsFilterOutput) ToGetTargetAlertPolicyAsso
 
 func (o GetTargetAlertPolicyAssociationsFilterOutput) ToGetTargetAlertPolicyAssociationsFilterOutputWithContext(ctx context.Context) GetTargetAlertPolicyAssociationsFilterOutput {
 	return o
+}
+
+func (o GetTargetAlertPolicyAssociationsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAlertPolicyAssociationsFilter] {
+	return pulumix.Output[GetTargetAlertPolicyAssociationsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAlertPolicyAssociationsFilterOutput) Name() pulumi.StringOutput {
@@ -33706,6 +39221,12 @@ func (o GetTargetAlertPolicyAssociationsFilterArrayOutput) ToGetTargetAlertPolic
 
 func (o GetTargetAlertPolicyAssociationsFilterArrayOutput) ToGetTargetAlertPolicyAssociationsFilterArrayOutputWithContext(ctx context.Context) GetTargetAlertPolicyAssociationsFilterArrayOutput {
 	return o
+}
+
+func (o GetTargetAlertPolicyAssociationsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAlertPolicyAssociationsFilter] {
+	return pulumix.Output[[]GetTargetAlertPolicyAssociationsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAlertPolicyAssociationsFilterArrayOutput) Index(i pulumi.IntInput) GetTargetAlertPolicyAssociationsFilterOutput {
@@ -33745,6 +39266,12 @@ func (i GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionOutput)
 }
 
+func (i GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection] {
+	return pulumix.Output[GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection]{
+		OutputState: i.ToGetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArrayInput is an input type that accepts GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArray and GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArrayOutput values.
 // You can construct a concrete instance of `GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArrayInput` via:
 //
@@ -33770,6 +39297,12 @@ func (i GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArrayOutput)
 }
 
+func (i GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection] {
+	return pulumix.Output[[]GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection]{
+		OutputState: i.ToGetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionOutput) ElementType() reflect.Type {
@@ -33782,6 +39315,12 @@ func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionOu
 
 func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionOutput) ToGetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionOutputWithContext(ctx context.Context) GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionOutput {
 	return o
+}
+
+func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection] {
+	return pulumix.Output[GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionOutput) Items() GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArrayOutput {
@@ -33802,6 +39341,12 @@ func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionAr
 
 func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArrayOutput) ToGetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArrayOutputWithContext(ctx context.Context) GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArrayOutput {
 	return o
+}
+
+func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection] {
+	return pulumix.Output[[]GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionArrayOutput) Index(i pulumi.IntInput) GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionOutput {
@@ -33891,6 +39436,12 @@ func (i GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionIt
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput)
 }
 
+func (i GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem] {
+	return pulumix.Output[GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem]{
+		OutputState: i.ToGetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArrayInput is an input type that accepts GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArray and GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArrayInput` via:
 //
@@ -33916,6 +39467,12 @@ func (i GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionIt
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArrayOutput)
 }
 
+func (i GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem] {
+	return pulumix.Output[[]GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem]{
+		OutputState: i.ToGetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput) ElementType() reflect.Type {
@@ -33928,6 +39485,12 @@ func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionIt
 
 func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput) ToGetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutputWithContext(ctx context.Context) GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput {
 	return o
+}
+
+func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem] {
+	return pulumix.Output[GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A filter to return only resources that match the specified compartment OCID.
@@ -34033,6 +39596,12 @@ func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionIt
 	return o
 }
 
+func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem] {
+	return pulumix.Output[[]GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemArrayOutput) Index(i pulumi.IntInput) GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem {
 		return vs[0].([]GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem)[vs[1].(int)]
@@ -34084,6 +39653,12 @@ func (i GetTargetDatabaseConnectionOptionArgs) ToGetTargetDatabaseConnectionOpti
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseConnectionOptionOutput)
 }
 
+func (i GetTargetDatabaseConnectionOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetDatabaseConnectionOption] {
+	return pulumix.Output[GetTargetDatabaseConnectionOption]{
+		OutputState: i.ToGetTargetDatabaseConnectionOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetDatabaseConnectionOptionArrayInput is an input type that accepts GetTargetDatabaseConnectionOptionArray and GetTargetDatabaseConnectionOptionArrayOutput values.
 // You can construct a concrete instance of `GetTargetDatabaseConnectionOptionArrayInput` via:
 //
@@ -34109,6 +39684,12 @@ func (i GetTargetDatabaseConnectionOptionArray) ToGetTargetDatabaseConnectionOpt
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseConnectionOptionArrayOutput)
 }
 
+func (i GetTargetDatabaseConnectionOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetDatabaseConnectionOption] {
+	return pulumix.Output[[]GetTargetDatabaseConnectionOption]{
+		OutputState: i.ToGetTargetDatabaseConnectionOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetDatabaseConnectionOptionOutput struct{ *pulumi.OutputState }
 
 func (GetTargetDatabaseConnectionOptionOutput) ElementType() reflect.Type {
@@ -34121,6 +39702,12 @@ func (o GetTargetDatabaseConnectionOptionOutput) ToGetTargetDatabaseConnectionOp
 
 func (o GetTargetDatabaseConnectionOptionOutput) ToGetTargetDatabaseConnectionOptionOutputWithContext(ctx context.Context) GetTargetDatabaseConnectionOptionOutput {
 	return o
+}
+
+func (o GetTargetDatabaseConnectionOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetDatabaseConnectionOption] {
+	return pulumix.Output[GetTargetDatabaseConnectionOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The connection type used to connect to the database. Allowed values:
@@ -34152,6 +39739,12 @@ func (o GetTargetDatabaseConnectionOptionArrayOutput) ToGetTargetDatabaseConnect
 
 func (o GetTargetDatabaseConnectionOptionArrayOutput) ToGetTargetDatabaseConnectionOptionArrayOutputWithContext(ctx context.Context) GetTargetDatabaseConnectionOptionArrayOutput {
 	return o
+}
+
+func (o GetTargetDatabaseConnectionOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetDatabaseConnectionOption] {
+	return pulumix.Output[[]GetTargetDatabaseConnectionOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetDatabaseConnectionOptionArrayOutput) Index(i pulumi.IntInput) GetTargetDatabaseConnectionOptionOutput {
@@ -34197,6 +39790,12 @@ func (i GetTargetDatabaseCredentialArgs) ToGetTargetDatabaseCredentialOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseCredentialOutput)
 }
 
+func (i GetTargetDatabaseCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetDatabaseCredential] {
+	return pulumix.Output[GetTargetDatabaseCredential]{
+		OutputState: i.ToGetTargetDatabaseCredentialOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetDatabaseCredentialArrayInput is an input type that accepts GetTargetDatabaseCredentialArray and GetTargetDatabaseCredentialArrayOutput values.
 // You can construct a concrete instance of `GetTargetDatabaseCredentialArrayInput` via:
 //
@@ -34222,6 +39821,12 @@ func (i GetTargetDatabaseCredentialArray) ToGetTargetDatabaseCredentialArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseCredentialArrayOutput)
 }
 
+func (i GetTargetDatabaseCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetDatabaseCredential] {
+	return pulumix.Output[[]GetTargetDatabaseCredential]{
+		OutputState: i.ToGetTargetDatabaseCredentialArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetDatabaseCredentialOutput struct{ *pulumi.OutputState }
 
 func (GetTargetDatabaseCredentialOutput) ElementType() reflect.Type {
@@ -34234,6 +39839,12 @@ func (o GetTargetDatabaseCredentialOutput) ToGetTargetDatabaseCredentialOutput()
 
 func (o GetTargetDatabaseCredentialOutput) ToGetTargetDatabaseCredentialOutputWithContext(ctx context.Context) GetTargetDatabaseCredentialOutput {
 	return o
+}
+
+func (o GetTargetDatabaseCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetDatabaseCredential] {
+	return pulumix.Output[GetTargetDatabaseCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The password of the database user.
@@ -34258,6 +39869,12 @@ func (o GetTargetDatabaseCredentialArrayOutput) ToGetTargetDatabaseCredentialArr
 
 func (o GetTargetDatabaseCredentialArrayOutput) ToGetTargetDatabaseCredentialArrayOutputWithContext(ctx context.Context) GetTargetDatabaseCredentialArrayOutput {
 	return o
+}
+
+func (o GetTargetDatabaseCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetDatabaseCredential] {
+	return pulumix.Output[[]GetTargetDatabaseCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetDatabaseCredentialArrayOutput) Index(i pulumi.IntInput) GetTargetDatabaseCredentialOutput {
@@ -34331,6 +39948,12 @@ func (i GetTargetDatabaseDatabaseDetailArgs) ToGetTargetDatabaseDatabaseDetailOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseDatabaseDetailOutput)
 }
 
+func (i GetTargetDatabaseDatabaseDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetDatabaseDatabaseDetail] {
+	return pulumix.Output[GetTargetDatabaseDatabaseDetail]{
+		OutputState: i.ToGetTargetDatabaseDatabaseDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetDatabaseDatabaseDetailArrayInput is an input type that accepts GetTargetDatabaseDatabaseDetailArray and GetTargetDatabaseDatabaseDetailArrayOutput values.
 // You can construct a concrete instance of `GetTargetDatabaseDatabaseDetailArrayInput` via:
 //
@@ -34356,6 +39979,12 @@ func (i GetTargetDatabaseDatabaseDetailArray) ToGetTargetDatabaseDatabaseDetailA
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseDatabaseDetailArrayOutput)
 }
 
+func (i GetTargetDatabaseDatabaseDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetDatabaseDatabaseDetail] {
+	return pulumix.Output[[]GetTargetDatabaseDatabaseDetail]{
+		OutputState: i.ToGetTargetDatabaseDatabaseDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetDatabaseDatabaseDetailOutput struct{ *pulumi.OutputState }
 
 func (GetTargetDatabaseDatabaseDetailOutput) ElementType() reflect.Type {
@@ -34368,6 +39997,12 @@ func (o GetTargetDatabaseDatabaseDetailOutput) ToGetTargetDatabaseDatabaseDetail
 
 func (o GetTargetDatabaseDatabaseDetailOutput) ToGetTargetDatabaseDatabaseDetailOutputWithContext(ctx context.Context) GetTargetDatabaseDatabaseDetailOutput {
 	return o
+}
+
+func (o GetTargetDatabaseDatabaseDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetDatabaseDatabaseDetail] {
+	return pulumix.Output[GetTargetDatabaseDatabaseDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the Autonomous Database registered as a target database in Data Safe.
@@ -34429,6 +40064,12 @@ func (o GetTargetDatabaseDatabaseDetailArrayOutput) ToGetTargetDatabaseDatabaseD
 	return o
 }
 
+func (o GetTargetDatabaseDatabaseDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetDatabaseDatabaseDetail] {
+	return pulumix.Output[[]GetTargetDatabaseDatabaseDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetTargetDatabaseDatabaseDetailArrayOutput) Index(i pulumi.IntInput) GetTargetDatabaseDatabaseDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabaseDatabaseDetail {
 		return vs[0].([]GetTargetDatabaseDatabaseDetail)[vs[1].(int)]
@@ -34470,6 +40111,12 @@ func (i GetTargetDatabaseRoleFilterArgs) ToGetTargetDatabaseRoleFilterOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseRoleFilterOutput)
 }
 
+func (i GetTargetDatabaseRoleFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetDatabaseRoleFilter] {
+	return pulumix.Output[GetTargetDatabaseRoleFilter]{
+		OutputState: i.ToGetTargetDatabaseRoleFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetDatabaseRoleFilterArrayInput is an input type that accepts GetTargetDatabaseRoleFilterArray and GetTargetDatabaseRoleFilterArrayOutput values.
 // You can construct a concrete instance of `GetTargetDatabaseRoleFilterArrayInput` via:
 //
@@ -34495,6 +40142,12 @@ func (i GetTargetDatabaseRoleFilterArray) ToGetTargetDatabaseRoleFilterArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseRoleFilterArrayOutput)
 }
 
+func (i GetTargetDatabaseRoleFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetDatabaseRoleFilter] {
+	return pulumix.Output[[]GetTargetDatabaseRoleFilter]{
+		OutputState: i.ToGetTargetDatabaseRoleFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetDatabaseRoleFilterOutput struct{ *pulumi.OutputState }
 
 func (GetTargetDatabaseRoleFilterOutput) ElementType() reflect.Type {
@@ -34507,6 +40160,12 @@ func (o GetTargetDatabaseRoleFilterOutput) ToGetTargetDatabaseRoleFilterOutput()
 
 func (o GetTargetDatabaseRoleFilterOutput) ToGetTargetDatabaseRoleFilterOutputWithContext(ctx context.Context) GetTargetDatabaseRoleFilterOutput {
 	return o
+}
+
+func (o GetTargetDatabaseRoleFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetDatabaseRoleFilter] {
+	return pulumix.Output[GetTargetDatabaseRoleFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetDatabaseRoleFilterOutput) Name() pulumi.StringOutput {
@@ -34533,6 +40192,12 @@ func (o GetTargetDatabaseRoleFilterArrayOutput) ToGetTargetDatabaseRoleFilterArr
 
 func (o GetTargetDatabaseRoleFilterArrayOutput) ToGetTargetDatabaseRoleFilterArrayOutputWithContext(ctx context.Context) GetTargetDatabaseRoleFilterArrayOutput {
 	return o
+}
+
+func (o GetTargetDatabaseRoleFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetDatabaseRoleFilter] {
+	return pulumix.Output[[]GetTargetDatabaseRoleFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetDatabaseRoleFilterArrayOutput) Index(i pulumi.IntInput) GetTargetDatabaseRoleFilterOutput {
@@ -34584,6 +40249,12 @@ func (i GetTargetDatabaseRoleRoleArgs) ToGetTargetDatabaseRoleRoleOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseRoleRoleOutput)
 }
 
+func (i GetTargetDatabaseRoleRoleArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetDatabaseRoleRole] {
+	return pulumix.Output[GetTargetDatabaseRoleRole]{
+		OutputState: i.ToGetTargetDatabaseRoleRoleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetDatabaseRoleRoleArrayInput is an input type that accepts GetTargetDatabaseRoleRoleArray and GetTargetDatabaseRoleRoleArrayOutput values.
 // You can construct a concrete instance of `GetTargetDatabaseRoleRoleArrayInput` via:
 //
@@ -34609,6 +40280,12 @@ func (i GetTargetDatabaseRoleRoleArray) ToGetTargetDatabaseRoleRoleArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseRoleRoleArrayOutput)
 }
 
+func (i GetTargetDatabaseRoleRoleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetDatabaseRoleRole] {
+	return pulumix.Output[[]GetTargetDatabaseRoleRole]{
+		OutputState: i.ToGetTargetDatabaseRoleRoleArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetDatabaseRoleRoleOutput struct{ *pulumi.OutputState }
 
 func (GetTargetDatabaseRoleRoleOutput) ElementType() reflect.Type {
@@ -34621,6 +40298,12 @@ func (o GetTargetDatabaseRoleRoleOutput) ToGetTargetDatabaseRoleRoleOutput() Get
 
 func (o GetTargetDatabaseRoleRoleOutput) ToGetTargetDatabaseRoleRoleOutputWithContext(ctx context.Context) GetTargetDatabaseRoleRoleOutput {
 	return o
+}
+
+func (o GetTargetDatabaseRoleRoleOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetDatabaseRoleRole] {
+	return pulumix.Output[GetTargetDatabaseRoleRole]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetDatabaseRoleRoleOutput) AuthenticationType() pulumi.StringOutput {
@@ -34665,6 +40348,12 @@ func (o GetTargetDatabaseRoleRoleArrayOutput) ToGetTargetDatabaseRoleRoleArrayOu
 	return o
 }
 
+func (o GetTargetDatabaseRoleRoleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetDatabaseRoleRole] {
+	return pulumix.Output[[]GetTargetDatabaseRoleRole]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetTargetDatabaseRoleRoleArrayOutput) Index(i pulumi.IntInput) GetTargetDatabaseRoleRoleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabaseRoleRole {
 		return vs[0].([]GetTargetDatabaseRoleRole)[vs[1].(int)]
@@ -34706,6 +40395,12 @@ func (i GetTargetDatabaseRolesFilterArgs) ToGetTargetDatabaseRolesFilterOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseRolesFilterOutput)
 }
 
+func (i GetTargetDatabaseRolesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetDatabaseRolesFilter] {
+	return pulumix.Output[GetTargetDatabaseRolesFilter]{
+		OutputState: i.ToGetTargetDatabaseRolesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetDatabaseRolesFilterArrayInput is an input type that accepts GetTargetDatabaseRolesFilterArray and GetTargetDatabaseRolesFilterArrayOutput values.
 // You can construct a concrete instance of `GetTargetDatabaseRolesFilterArrayInput` via:
 //
@@ -34731,6 +40426,12 @@ func (i GetTargetDatabaseRolesFilterArray) ToGetTargetDatabaseRolesFilterArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseRolesFilterArrayOutput)
 }
 
+func (i GetTargetDatabaseRolesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetDatabaseRolesFilter] {
+	return pulumix.Output[[]GetTargetDatabaseRolesFilter]{
+		OutputState: i.ToGetTargetDatabaseRolesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetDatabaseRolesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetTargetDatabaseRolesFilterOutput) ElementType() reflect.Type {
@@ -34743,6 +40444,12 @@ func (o GetTargetDatabaseRolesFilterOutput) ToGetTargetDatabaseRolesFilterOutput
 
 func (o GetTargetDatabaseRolesFilterOutput) ToGetTargetDatabaseRolesFilterOutputWithContext(ctx context.Context) GetTargetDatabaseRolesFilterOutput {
 	return o
+}
+
+func (o GetTargetDatabaseRolesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetDatabaseRolesFilter] {
+	return pulumix.Output[GetTargetDatabaseRolesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetDatabaseRolesFilterOutput) Name() pulumi.StringOutput {
@@ -34769,6 +40476,12 @@ func (o GetTargetDatabaseRolesFilterArrayOutput) ToGetTargetDatabaseRolesFilterA
 
 func (o GetTargetDatabaseRolesFilterArrayOutput) ToGetTargetDatabaseRolesFilterArrayOutputWithContext(ctx context.Context) GetTargetDatabaseRolesFilterArrayOutput {
 	return o
+}
+
+func (o GetTargetDatabaseRolesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetDatabaseRolesFilter] {
+	return pulumix.Output[[]GetTargetDatabaseRolesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetDatabaseRolesFilterArrayOutput) Index(i pulumi.IntInput) GetTargetDatabaseRolesFilterOutput {
@@ -34834,6 +40547,12 @@ func (i GetTargetDatabaseRolesRoleArgs) ToGetTargetDatabaseRolesRoleOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseRolesRoleOutput)
 }
 
+func (i GetTargetDatabaseRolesRoleArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetDatabaseRolesRole] {
+	return pulumix.Output[GetTargetDatabaseRolesRole]{
+		OutputState: i.ToGetTargetDatabaseRolesRoleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetDatabaseRolesRoleArrayInput is an input type that accepts GetTargetDatabaseRolesRoleArray and GetTargetDatabaseRolesRoleArrayOutput values.
 // You can construct a concrete instance of `GetTargetDatabaseRolesRoleArrayInput` via:
 //
@@ -34859,6 +40578,12 @@ func (i GetTargetDatabaseRolesRoleArray) ToGetTargetDatabaseRolesRoleArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseRolesRoleArrayOutput)
 }
 
+func (i GetTargetDatabaseRolesRoleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetDatabaseRolesRole] {
+	return pulumix.Output[[]GetTargetDatabaseRolesRole]{
+		OutputState: i.ToGetTargetDatabaseRolesRoleArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetDatabaseRolesRoleOutput struct{ *pulumi.OutputState }
 
 func (GetTargetDatabaseRolesRoleOutput) ElementType() reflect.Type {
@@ -34871,6 +40596,12 @@ func (o GetTargetDatabaseRolesRoleOutput) ToGetTargetDatabaseRolesRoleOutput() G
 
 func (o GetTargetDatabaseRolesRoleOutput) ToGetTargetDatabaseRolesRoleOutputWithContext(ctx context.Context) GetTargetDatabaseRolesRoleOutput {
 	return o
+}
+
+func (o GetTargetDatabaseRolesRoleOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetDatabaseRolesRole] {
+	return pulumix.Output[GetTargetDatabaseRolesRole]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A filter to return roles based on authentication type.
@@ -34920,6 +40651,12 @@ func (o GetTargetDatabaseRolesRoleArrayOutput) ToGetTargetDatabaseRolesRoleArray
 
 func (o GetTargetDatabaseRolesRoleArrayOutput) ToGetTargetDatabaseRolesRoleArrayOutputWithContext(ctx context.Context) GetTargetDatabaseRolesRoleArrayOutput {
 	return o
+}
+
+func (o GetTargetDatabaseRolesRoleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetDatabaseRolesRole] {
+	return pulumix.Output[[]GetTargetDatabaseRolesRole]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetDatabaseRolesRoleArrayOutput) Index(i pulumi.IntInput) GetTargetDatabaseRolesRoleOutput {
@@ -34977,6 +40714,12 @@ func (i GetTargetDatabaseTlsConfigArgs) ToGetTargetDatabaseTlsConfigOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseTlsConfigOutput)
 }
 
+func (i GetTargetDatabaseTlsConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetDatabaseTlsConfig] {
+	return pulumix.Output[GetTargetDatabaseTlsConfig]{
+		OutputState: i.ToGetTargetDatabaseTlsConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetDatabaseTlsConfigArrayInput is an input type that accepts GetTargetDatabaseTlsConfigArray and GetTargetDatabaseTlsConfigArrayOutput values.
 // You can construct a concrete instance of `GetTargetDatabaseTlsConfigArrayInput` via:
 //
@@ -35002,6 +40745,12 @@ func (i GetTargetDatabaseTlsConfigArray) ToGetTargetDatabaseTlsConfigArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabaseTlsConfigArrayOutput)
 }
 
+func (i GetTargetDatabaseTlsConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetDatabaseTlsConfig] {
+	return pulumix.Output[[]GetTargetDatabaseTlsConfig]{
+		OutputState: i.ToGetTargetDatabaseTlsConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetDatabaseTlsConfigOutput struct{ *pulumi.OutputState }
 
 func (GetTargetDatabaseTlsConfigOutput) ElementType() reflect.Type {
@@ -35014,6 +40763,12 @@ func (o GetTargetDatabaseTlsConfigOutput) ToGetTargetDatabaseTlsConfigOutput() G
 
 func (o GetTargetDatabaseTlsConfigOutput) ToGetTargetDatabaseTlsConfigOutputWithContext(ctx context.Context) GetTargetDatabaseTlsConfigOutput {
 	return o
+}
+
+func (o GetTargetDatabaseTlsConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetDatabaseTlsConfig] {
+	return pulumix.Output[GetTargetDatabaseTlsConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The format of the certificate store.
@@ -35053,6 +40808,12 @@ func (o GetTargetDatabaseTlsConfigArrayOutput) ToGetTargetDatabaseTlsConfigArray
 
 func (o GetTargetDatabaseTlsConfigArrayOutput) ToGetTargetDatabaseTlsConfigArrayOutputWithContext(ctx context.Context) GetTargetDatabaseTlsConfigArrayOutput {
 	return o
+}
+
+func (o GetTargetDatabaseTlsConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetDatabaseTlsConfig] {
+	return pulumix.Output[[]GetTargetDatabaseTlsConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetDatabaseTlsConfigArrayOutput) Index(i pulumi.IntInput) GetTargetDatabaseTlsConfigOutput {
@@ -35122,6 +40883,12 @@ func (i GetTargetDatabasesColumnsColumnArgs) ToGetTargetDatabasesColumnsColumnOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesColumnsColumnOutput)
 }
 
+func (i GetTargetDatabasesColumnsColumnArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetDatabasesColumnsColumn] {
+	return pulumix.Output[GetTargetDatabasesColumnsColumn]{
+		OutputState: i.ToGetTargetDatabasesColumnsColumnOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetDatabasesColumnsColumnArrayInput is an input type that accepts GetTargetDatabasesColumnsColumnArray and GetTargetDatabasesColumnsColumnArrayOutput values.
 // You can construct a concrete instance of `GetTargetDatabasesColumnsColumnArrayInput` via:
 //
@@ -35147,6 +40914,12 @@ func (i GetTargetDatabasesColumnsColumnArray) ToGetTargetDatabasesColumnsColumnA
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesColumnsColumnArrayOutput)
 }
 
+func (i GetTargetDatabasesColumnsColumnArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetDatabasesColumnsColumn] {
+	return pulumix.Output[[]GetTargetDatabasesColumnsColumn]{
+		OutputState: i.ToGetTargetDatabasesColumnsColumnArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetDatabasesColumnsColumnOutput struct{ *pulumi.OutputState }
 
 func (GetTargetDatabasesColumnsColumnOutput) ElementType() reflect.Type {
@@ -35159,6 +40932,12 @@ func (o GetTargetDatabasesColumnsColumnOutput) ToGetTargetDatabasesColumnsColumn
 
 func (o GetTargetDatabasesColumnsColumnOutput) ToGetTargetDatabasesColumnsColumnOutputWithContext(ctx context.Context) GetTargetDatabasesColumnsColumnOutput {
 	return o
+}
+
+func (o GetTargetDatabasesColumnsColumnOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetDatabasesColumnsColumn] {
+	return pulumix.Output[GetTargetDatabasesColumnsColumn]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Character length.
@@ -35215,6 +40994,12 @@ func (o GetTargetDatabasesColumnsColumnArrayOutput) ToGetTargetDatabasesColumnsC
 	return o
 }
 
+func (o GetTargetDatabasesColumnsColumnArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetDatabasesColumnsColumn] {
+	return pulumix.Output[[]GetTargetDatabasesColumnsColumn]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetTargetDatabasesColumnsColumnArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasesColumnsColumnOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabasesColumnsColumn {
 		return vs[0].([]GetTargetDatabasesColumnsColumn)[vs[1].(int)]
@@ -35256,6 +41041,12 @@ func (i GetTargetDatabasesColumnsFilterArgs) ToGetTargetDatabasesColumnsFilterOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesColumnsFilterOutput)
 }
 
+func (i GetTargetDatabasesColumnsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetDatabasesColumnsFilter] {
+	return pulumix.Output[GetTargetDatabasesColumnsFilter]{
+		OutputState: i.ToGetTargetDatabasesColumnsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetDatabasesColumnsFilterArrayInput is an input type that accepts GetTargetDatabasesColumnsFilterArray and GetTargetDatabasesColumnsFilterArrayOutput values.
 // You can construct a concrete instance of `GetTargetDatabasesColumnsFilterArrayInput` via:
 //
@@ -35281,6 +41072,12 @@ func (i GetTargetDatabasesColumnsFilterArray) ToGetTargetDatabasesColumnsFilterA
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesColumnsFilterArrayOutput)
 }
 
+func (i GetTargetDatabasesColumnsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetDatabasesColumnsFilter] {
+	return pulumix.Output[[]GetTargetDatabasesColumnsFilter]{
+		OutputState: i.ToGetTargetDatabasesColumnsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetDatabasesColumnsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetTargetDatabasesColumnsFilterOutput) ElementType() reflect.Type {
@@ -35293,6 +41090,12 @@ func (o GetTargetDatabasesColumnsFilterOutput) ToGetTargetDatabasesColumnsFilter
 
 func (o GetTargetDatabasesColumnsFilterOutput) ToGetTargetDatabasesColumnsFilterOutputWithContext(ctx context.Context) GetTargetDatabasesColumnsFilterOutput {
 	return o
+}
+
+func (o GetTargetDatabasesColumnsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetDatabasesColumnsFilter] {
+	return pulumix.Output[GetTargetDatabasesColumnsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetDatabasesColumnsFilterOutput) Name() pulumi.StringOutput {
@@ -35319,6 +41122,12 @@ func (o GetTargetDatabasesColumnsFilterArrayOutput) ToGetTargetDatabasesColumnsF
 
 func (o GetTargetDatabasesColumnsFilterArrayOutput) ToGetTargetDatabasesColumnsFilterArrayOutputWithContext(ctx context.Context) GetTargetDatabasesColumnsFilterArrayOutput {
 	return o
+}
+
+func (o GetTargetDatabasesColumnsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetDatabasesColumnsFilter] {
+	return pulumix.Output[[]GetTargetDatabasesColumnsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetDatabasesColumnsFilterArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasesColumnsFilterOutput {
@@ -35362,6 +41171,12 @@ func (i GetTargetDatabasesFilterArgs) ToGetTargetDatabasesFilterOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesFilterOutput)
 }
 
+func (i GetTargetDatabasesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetDatabasesFilter] {
+	return pulumix.Output[GetTargetDatabasesFilter]{
+		OutputState: i.ToGetTargetDatabasesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetDatabasesFilterArrayInput is an input type that accepts GetTargetDatabasesFilterArray and GetTargetDatabasesFilterArrayOutput values.
 // You can construct a concrete instance of `GetTargetDatabasesFilterArrayInput` via:
 //
@@ -35387,6 +41202,12 @@ func (i GetTargetDatabasesFilterArray) ToGetTargetDatabasesFilterArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesFilterArrayOutput)
 }
 
+func (i GetTargetDatabasesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetDatabasesFilter] {
+	return pulumix.Output[[]GetTargetDatabasesFilter]{
+		OutputState: i.ToGetTargetDatabasesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetDatabasesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetTargetDatabasesFilterOutput) ElementType() reflect.Type {
@@ -35399,6 +41220,12 @@ func (o GetTargetDatabasesFilterOutput) ToGetTargetDatabasesFilterOutput() GetTa
 
 func (o GetTargetDatabasesFilterOutput) ToGetTargetDatabasesFilterOutputWithContext(ctx context.Context) GetTargetDatabasesFilterOutput {
 	return o
+}
+
+func (o GetTargetDatabasesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetDatabasesFilter] {
+	return pulumix.Output[GetTargetDatabasesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetDatabasesFilterOutput) Name() pulumi.StringOutput {
@@ -35425,6 +41252,12 @@ func (o GetTargetDatabasesFilterArrayOutput) ToGetTargetDatabasesFilterArrayOutp
 
 func (o GetTargetDatabasesFilterArrayOutput) ToGetTargetDatabasesFilterArrayOutputWithContext(ctx context.Context) GetTargetDatabasesFilterArrayOutput {
 	return o
+}
+
+func (o GetTargetDatabasesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetDatabasesFilter] {
+	return pulumix.Output[[]GetTargetDatabasesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetDatabasesFilterArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasesFilterOutput {
@@ -35468,6 +41301,12 @@ func (i GetTargetDatabasesSchemasFilterArgs) ToGetTargetDatabasesSchemasFilterOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesSchemasFilterOutput)
 }
 
+func (i GetTargetDatabasesSchemasFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetDatabasesSchemasFilter] {
+	return pulumix.Output[GetTargetDatabasesSchemasFilter]{
+		OutputState: i.ToGetTargetDatabasesSchemasFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetDatabasesSchemasFilterArrayInput is an input type that accepts GetTargetDatabasesSchemasFilterArray and GetTargetDatabasesSchemasFilterArrayOutput values.
 // You can construct a concrete instance of `GetTargetDatabasesSchemasFilterArrayInput` via:
 //
@@ -35493,6 +41332,12 @@ func (i GetTargetDatabasesSchemasFilterArray) ToGetTargetDatabasesSchemasFilterA
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesSchemasFilterArrayOutput)
 }
 
+func (i GetTargetDatabasesSchemasFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetDatabasesSchemasFilter] {
+	return pulumix.Output[[]GetTargetDatabasesSchemasFilter]{
+		OutputState: i.ToGetTargetDatabasesSchemasFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetDatabasesSchemasFilterOutput struct{ *pulumi.OutputState }
 
 func (GetTargetDatabasesSchemasFilterOutput) ElementType() reflect.Type {
@@ -35505,6 +41350,12 @@ func (o GetTargetDatabasesSchemasFilterOutput) ToGetTargetDatabasesSchemasFilter
 
 func (o GetTargetDatabasesSchemasFilterOutput) ToGetTargetDatabasesSchemasFilterOutputWithContext(ctx context.Context) GetTargetDatabasesSchemasFilterOutput {
 	return o
+}
+
+func (o GetTargetDatabasesSchemasFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetDatabasesSchemasFilter] {
+	return pulumix.Output[GetTargetDatabasesSchemasFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetDatabasesSchemasFilterOutput) Name() pulumi.StringOutput {
@@ -35531,6 +41382,12 @@ func (o GetTargetDatabasesSchemasFilterArrayOutput) ToGetTargetDatabasesSchemasF
 
 func (o GetTargetDatabasesSchemasFilterArrayOutput) ToGetTargetDatabasesSchemasFilterArrayOutputWithContext(ctx context.Context) GetTargetDatabasesSchemasFilterArrayOutput {
 	return o
+}
+
+func (o GetTargetDatabasesSchemasFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetDatabasesSchemasFilter] {
+	return pulumix.Output[[]GetTargetDatabasesSchemasFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetDatabasesSchemasFilterArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasesSchemasFilterOutput {
@@ -35576,6 +41433,12 @@ func (i GetTargetDatabasesSchemasSchemaArgs) ToGetTargetDatabasesSchemasSchemaOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesSchemasSchemaOutput)
 }
 
+func (i GetTargetDatabasesSchemasSchemaArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetDatabasesSchemasSchema] {
+	return pulumix.Output[GetTargetDatabasesSchemasSchema]{
+		OutputState: i.ToGetTargetDatabasesSchemasSchemaOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetDatabasesSchemasSchemaArrayInput is an input type that accepts GetTargetDatabasesSchemasSchemaArray and GetTargetDatabasesSchemasSchemaArrayOutput values.
 // You can construct a concrete instance of `GetTargetDatabasesSchemasSchemaArrayInput` via:
 //
@@ -35601,6 +41464,12 @@ func (i GetTargetDatabasesSchemasSchemaArray) ToGetTargetDatabasesSchemasSchemaA
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesSchemasSchemaArrayOutput)
 }
 
+func (i GetTargetDatabasesSchemasSchemaArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetDatabasesSchemasSchema] {
+	return pulumix.Output[[]GetTargetDatabasesSchemasSchema]{
+		OutputState: i.ToGetTargetDatabasesSchemasSchemaArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetDatabasesSchemasSchemaOutput struct{ *pulumi.OutputState }
 
 func (GetTargetDatabasesSchemasSchemaOutput) ElementType() reflect.Type {
@@ -35613,6 +41482,12 @@ func (o GetTargetDatabasesSchemasSchemaOutput) ToGetTargetDatabasesSchemasSchema
 
 func (o GetTargetDatabasesSchemasSchemaOutput) ToGetTargetDatabasesSchemasSchemaOutputWithContext(ctx context.Context) GetTargetDatabasesSchemasSchemaOutput {
 	return o
+}
+
+func (o GetTargetDatabasesSchemasSchemaOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetDatabasesSchemasSchema] {
+	return pulumix.Output[GetTargetDatabasesSchemasSchema]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A filter to return only items related to specific type of schema.
@@ -35637,6 +41512,12 @@ func (o GetTargetDatabasesSchemasSchemaArrayOutput) ToGetTargetDatabasesSchemasS
 
 func (o GetTargetDatabasesSchemasSchemaArrayOutput) ToGetTargetDatabasesSchemasSchemaArrayOutputWithContext(ctx context.Context) GetTargetDatabasesSchemasSchemaArrayOutput {
 	return o
+}
+
+func (o GetTargetDatabasesSchemasSchemaArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetDatabasesSchemasSchema] {
+	return pulumix.Output[[]GetTargetDatabasesSchemasSchema]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetDatabasesSchemasSchemaArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasesSchemasSchemaOutput {
@@ -35680,6 +41561,12 @@ func (i GetTargetDatabasesTablesFilterArgs) ToGetTargetDatabasesTablesFilterOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTablesFilterOutput)
 }
 
+func (i GetTargetDatabasesTablesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetDatabasesTablesFilter] {
+	return pulumix.Output[GetTargetDatabasesTablesFilter]{
+		OutputState: i.ToGetTargetDatabasesTablesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetDatabasesTablesFilterArrayInput is an input type that accepts GetTargetDatabasesTablesFilterArray and GetTargetDatabasesTablesFilterArrayOutput values.
 // You can construct a concrete instance of `GetTargetDatabasesTablesFilterArrayInput` via:
 //
@@ -35705,6 +41592,12 @@ func (i GetTargetDatabasesTablesFilterArray) ToGetTargetDatabasesTablesFilterArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTablesFilterArrayOutput)
 }
 
+func (i GetTargetDatabasesTablesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetDatabasesTablesFilter] {
+	return pulumix.Output[[]GetTargetDatabasesTablesFilter]{
+		OutputState: i.ToGetTargetDatabasesTablesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetDatabasesTablesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetTargetDatabasesTablesFilterOutput) ElementType() reflect.Type {
@@ -35717,6 +41610,12 @@ func (o GetTargetDatabasesTablesFilterOutput) ToGetTargetDatabasesTablesFilterOu
 
 func (o GetTargetDatabasesTablesFilterOutput) ToGetTargetDatabasesTablesFilterOutputWithContext(ctx context.Context) GetTargetDatabasesTablesFilterOutput {
 	return o
+}
+
+func (o GetTargetDatabasesTablesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetDatabasesTablesFilter] {
+	return pulumix.Output[GetTargetDatabasesTablesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetDatabasesTablesFilterOutput) Name() pulumi.StringOutput {
@@ -35743,6 +41642,12 @@ func (o GetTargetDatabasesTablesFilterArrayOutput) ToGetTargetDatabasesTablesFil
 
 func (o GetTargetDatabasesTablesFilterArrayOutput) ToGetTargetDatabasesTablesFilterArrayOutputWithContext(ctx context.Context) GetTargetDatabasesTablesFilterArrayOutput {
 	return o
+}
+
+func (o GetTargetDatabasesTablesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetDatabasesTablesFilter] {
+	return pulumix.Output[[]GetTargetDatabasesTablesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetDatabasesTablesFilterArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasesTablesFilterOutput {
@@ -35788,6 +41693,12 @@ func (i GetTargetDatabasesTablesTableArgs) ToGetTargetDatabasesTablesTableOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTablesTableOutput)
 }
 
+func (i GetTargetDatabasesTablesTableArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetDatabasesTablesTable] {
+	return pulumix.Output[GetTargetDatabasesTablesTable]{
+		OutputState: i.ToGetTargetDatabasesTablesTableOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetDatabasesTablesTableArrayInput is an input type that accepts GetTargetDatabasesTablesTableArray and GetTargetDatabasesTablesTableArrayOutput values.
 // You can construct a concrete instance of `GetTargetDatabasesTablesTableArrayInput` via:
 //
@@ -35813,6 +41724,12 @@ func (i GetTargetDatabasesTablesTableArray) ToGetTargetDatabasesTablesTableArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTablesTableArrayOutput)
 }
 
+func (i GetTargetDatabasesTablesTableArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetDatabasesTablesTable] {
+	return pulumix.Output[[]GetTargetDatabasesTablesTable]{
+		OutputState: i.ToGetTargetDatabasesTablesTableArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetDatabasesTablesTableOutput struct{ *pulumi.OutputState }
 
 func (GetTargetDatabasesTablesTableOutput) ElementType() reflect.Type {
@@ -35825,6 +41742,12 @@ func (o GetTargetDatabasesTablesTableOutput) ToGetTargetDatabasesTablesTableOutp
 
 func (o GetTargetDatabasesTablesTableOutput) ToGetTargetDatabasesTablesTableOutputWithContext(ctx context.Context) GetTargetDatabasesTablesTableOutput {
 	return o
+}
+
+func (o GetTargetDatabasesTablesTableOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetDatabasesTablesTable] {
+	return pulumix.Output[GetTargetDatabasesTablesTable]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A filter to return only items related to specific schema name.
@@ -35849,6 +41772,12 @@ func (o GetTargetDatabasesTablesTableArrayOutput) ToGetTargetDatabasesTablesTabl
 
 func (o GetTargetDatabasesTablesTableArrayOutput) ToGetTargetDatabasesTablesTableArrayOutputWithContext(ctx context.Context) GetTargetDatabasesTablesTableArrayOutput {
 	return o
+}
+
+func (o GetTargetDatabasesTablesTableArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetDatabasesTablesTable] {
+	return pulumix.Output[[]GetTargetDatabasesTablesTable]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetDatabasesTablesTableArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasesTablesTableOutput {
@@ -35950,6 +41879,12 @@ func (i GetTargetDatabasesTargetDatabaseArgs) ToGetTargetDatabasesTargetDatabase
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTargetDatabaseOutput)
 }
 
+func (i GetTargetDatabasesTargetDatabaseArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetDatabasesTargetDatabase] {
+	return pulumix.Output[GetTargetDatabasesTargetDatabase]{
+		OutputState: i.ToGetTargetDatabasesTargetDatabaseOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetDatabasesTargetDatabaseArrayInput is an input type that accepts GetTargetDatabasesTargetDatabaseArray and GetTargetDatabasesTargetDatabaseArrayOutput values.
 // You can construct a concrete instance of `GetTargetDatabasesTargetDatabaseArrayInput` via:
 //
@@ -35975,6 +41910,12 @@ func (i GetTargetDatabasesTargetDatabaseArray) ToGetTargetDatabasesTargetDatabas
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTargetDatabaseArrayOutput)
 }
 
+func (i GetTargetDatabasesTargetDatabaseArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetDatabasesTargetDatabase] {
+	return pulumix.Output[[]GetTargetDatabasesTargetDatabase]{
+		OutputState: i.ToGetTargetDatabasesTargetDatabaseArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetDatabasesTargetDatabaseOutput struct{ *pulumi.OutputState }
 
 func (GetTargetDatabasesTargetDatabaseOutput) ElementType() reflect.Type {
@@ -35987,6 +41928,12 @@ func (o GetTargetDatabasesTargetDatabaseOutput) ToGetTargetDatabasesTargetDataba
 
 func (o GetTargetDatabasesTargetDatabaseOutput) ToGetTargetDatabasesTargetDatabaseOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabaseOutput {
 	return o
+}
+
+func (o GetTargetDatabasesTargetDatabaseOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetDatabasesTargetDatabase] {
+	return pulumix.Output[GetTargetDatabasesTargetDatabase]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCIDs of associated resources like database, Data Safe private endpoint etc.
@@ -36091,6 +42038,12 @@ func (o GetTargetDatabasesTargetDatabaseArrayOutput) ToGetTargetDatabasesTargetD
 	return o
 }
 
+func (o GetTargetDatabasesTargetDatabaseArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetDatabasesTargetDatabase] {
+	return pulumix.Output[[]GetTargetDatabasesTargetDatabase]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetTargetDatabasesTargetDatabaseArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasesTargetDatabaseOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabasesTargetDatabase {
 		return vs[0].([]GetTargetDatabasesTargetDatabase)[vs[1].(int)]
@@ -36142,6 +42095,12 @@ func (i GetTargetDatabasesTargetDatabaseConnectionOptionArgs) ToGetTargetDatabas
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTargetDatabaseConnectionOptionOutput)
 }
 
+func (i GetTargetDatabasesTargetDatabaseConnectionOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetDatabasesTargetDatabaseConnectionOption] {
+	return pulumix.Output[GetTargetDatabasesTargetDatabaseConnectionOption]{
+		OutputState: i.ToGetTargetDatabasesTargetDatabaseConnectionOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetDatabasesTargetDatabaseConnectionOptionArrayInput is an input type that accepts GetTargetDatabasesTargetDatabaseConnectionOptionArray and GetTargetDatabasesTargetDatabaseConnectionOptionArrayOutput values.
 // You can construct a concrete instance of `GetTargetDatabasesTargetDatabaseConnectionOptionArrayInput` via:
 //
@@ -36167,6 +42126,12 @@ func (i GetTargetDatabasesTargetDatabaseConnectionOptionArray) ToGetTargetDataba
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTargetDatabaseConnectionOptionArrayOutput)
 }
 
+func (i GetTargetDatabasesTargetDatabaseConnectionOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetDatabasesTargetDatabaseConnectionOption] {
+	return pulumix.Output[[]GetTargetDatabasesTargetDatabaseConnectionOption]{
+		OutputState: i.ToGetTargetDatabasesTargetDatabaseConnectionOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetDatabasesTargetDatabaseConnectionOptionOutput struct{ *pulumi.OutputState }
 
 func (GetTargetDatabasesTargetDatabaseConnectionOptionOutput) ElementType() reflect.Type {
@@ -36179,6 +42144,12 @@ func (o GetTargetDatabasesTargetDatabaseConnectionOptionOutput) ToGetTargetDatab
 
 func (o GetTargetDatabasesTargetDatabaseConnectionOptionOutput) ToGetTargetDatabasesTargetDatabaseConnectionOptionOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabaseConnectionOptionOutput {
 	return o
+}
+
+func (o GetTargetDatabasesTargetDatabaseConnectionOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetDatabasesTargetDatabaseConnectionOption] {
+	return pulumix.Output[GetTargetDatabasesTargetDatabaseConnectionOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The connection type used to connect to the database. Allowed values:
@@ -36210,6 +42181,12 @@ func (o GetTargetDatabasesTargetDatabaseConnectionOptionArrayOutput) ToGetTarget
 
 func (o GetTargetDatabasesTargetDatabaseConnectionOptionArrayOutput) ToGetTargetDatabasesTargetDatabaseConnectionOptionArrayOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabaseConnectionOptionArrayOutput {
 	return o
+}
+
+func (o GetTargetDatabasesTargetDatabaseConnectionOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetDatabasesTargetDatabaseConnectionOption] {
+	return pulumix.Output[[]GetTargetDatabasesTargetDatabaseConnectionOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetDatabasesTargetDatabaseConnectionOptionArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasesTargetDatabaseConnectionOptionOutput {
@@ -36255,6 +42232,12 @@ func (i GetTargetDatabasesTargetDatabaseCredentialArgs) ToGetTargetDatabasesTarg
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTargetDatabaseCredentialOutput)
 }
 
+func (i GetTargetDatabasesTargetDatabaseCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetDatabasesTargetDatabaseCredential] {
+	return pulumix.Output[GetTargetDatabasesTargetDatabaseCredential]{
+		OutputState: i.ToGetTargetDatabasesTargetDatabaseCredentialOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetDatabasesTargetDatabaseCredentialArrayInput is an input type that accepts GetTargetDatabasesTargetDatabaseCredentialArray and GetTargetDatabasesTargetDatabaseCredentialArrayOutput values.
 // You can construct a concrete instance of `GetTargetDatabasesTargetDatabaseCredentialArrayInput` via:
 //
@@ -36280,6 +42263,12 @@ func (i GetTargetDatabasesTargetDatabaseCredentialArray) ToGetTargetDatabasesTar
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTargetDatabaseCredentialArrayOutput)
 }
 
+func (i GetTargetDatabasesTargetDatabaseCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetDatabasesTargetDatabaseCredential] {
+	return pulumix.Output[[]GetTargetDatabasesTargetDatabaseCredential]{
+		OutputState: i.ToGetTargetDatabasesTargetDatabaseCredentialArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetDatabasesTargetDatabaseCredentialOutput struct{ *pulumi.OutputState }
 
 func (GetTargetDatabasesTargetDatabaseCredentialOutput) ElementType() reflect.Type {
@@ -36292,6 +42281,12 @@ func (o GetTargetDatabasesTargetDatabaseCredentialOutput) ToGetTargetDatabasesTa
 
 func (o GetTargetDatabasesTargetDatabaseCredentialOutput) ToGetTargetDatabasesTargetDatabaseCredentialOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabaseCredentialOutput {
 	return o
+}
+
+func (o GetTargetDatabasesTargetDatabaseCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetDatabasesTargetDatabaseCredential] {
+	return pulumix.Output[GetTargetDatabasesTargetDatabaseCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The password of the database user.
@@ -36316,6 +42311,12 @@ func (o GetTargetDatabasesTargetDatabaseCredentialArrayOutput) ToGetTargetDataba
 
 func (o GetTargetDatabasesTargetDatabaseCredentialArrayOutput) ToGetTargetDatabasesTargetDatabaseCredentialArrayOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabaseCredentialArrayOutput {
 	return o
+}
+
+func (o GetTargetDatabasesTargetDatabaseCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetDatabasesTargetDatabaseCredential] {
+	return pulumix.Output[[]GetTargetDatabasesTargetDatabaseCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetDatabasesTargetDatabaseCredentialArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasesTargetDatabaseCredentialOutput {
@@ -36389,6 +42390,12 @@ func (i GetTargetDatabasesTargetDatabaseDatabaseDetailArgs) ToGetTargetDatabases
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTargetDatabaseDatabaseDetailOutput)
 }
 
+func (i GetTargetDatabasesTargetDatabaseDatabaseDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetDatabasesTargetDatabaseDatabaseDetail] {
+	return pulumix.Output[GetTargetDatabasesTargetDatabaseDatabaseDetail]{
+		OutputState: i.ToGetTargetDatabasesTargetDatabaseDatabaseDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetDatabasesTargetDatabaseDatabaseDetailArrayInput is an input type that accepts GetTargetDatabasesTargetDatabaseDatabaseDetailArray and GetTargetDatabasesTargetDatabaseDatabaseDetailArrayOutput values.
 // You can construct a concrete instance of `GetTargetDatabasesTargetDatabaseDatabaseDetailArrayInput` via:
 //
@@ -36414,6 +42421,12 @@ func (i GetTargetDatabasesTargetDatabaseDatabaseDetailArray) ToGetTargetDatabase
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTargetDatabaseDatabaseDetailArrayOutput)
 }
 
+func (i GetTargetDatabasesTargetDatabaseDatabaseDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetDatabasesTargetDatabaseDatabaseDetail] {
+	return pulumix.Output[[]GetTargetDatabasesTargetDatabaseDatabaseDetail]{
+		OutputState: i.ToGetTargetDatabasesTargetDatabaseDatabaseDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetDatabasesTargetDatabaseDatabaseDetailOutput struct{ *pulumi.OutputState }
 
 func (GetTargetDatabasesTargetDatabaseDatabaseDetailOutput) ElementType() reflect.Type {
@@ -36426,6 +42439,12 @@ func (o GetTargetDatabasesTargetDatabaseDatabaseDetailOutput) ToGetTargetDatabas
 
 func (o GetTargetDatabasesTargetDatabaseDatabaseDetailOutput) ToGetTargetDatabasesTargetDatabaseDatabaseDetailOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabaseDatabaseDetailOutput {
 	return o
+}
+
+func (o GetTargetDatabasesTargetDatabaseDatabaseDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetDatabasesTargetDatabaseDatabaseDetail] {
+	return pulumix.Output[GetTargetDatabasesTargetDatabaseDatabaseDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the Autonomous Database registered as a target database in Data Safe.
@@ -36487,6 +42506,12 @@ func (o GetTargetDatabasesTargetDatabaseDatabaseDetailArrayOutput) ToGetTargetDa
 	return o
 }
 
+func (o GetTargetDatabasesTargetDatabaseDatabaseDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetDatabasesTargetDatabaseDatabaseDetail] {
+	return pulumix.Output[[]GetTargetDatabasesTargetDatabaseDatabaseDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetTargetDatabasesTargetDatabaseDatabaseDetailArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasesTargetDatabaseDatabaseDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabasesTargetDatabaseDatabaseDetail {
 		return vs[0].([]GetTargetDatabasesTargetDatabaseDatabaseDetail)[vs[1].(int)]
@@ -36542,6 +42567,12 @@ func (i GetTargetDatabasesTargetDatabaseTlsConfigArgs) ToGetTargetDatabasesTarge
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTargetDatabaseTlsConfigOutput)
 }
 
+func (i GetTargetDatabasesTargetDatabaseTlsConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetTargetDatabasesTargetDatabaseTlsConfig] {
+	return pulumix.Output[GetTargetDatabasesTargetDatabaseTlsConfig]{
+		OutputState: i.ToGetTargetDatabasesTargetDatabaseTlsConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTargetDatabasesTargetDatabaseTlsConfigArrayInput is an input type that accepts GetTargetDatabasesTargetDatabaseTlsConfigArray and GetTargetDatabasesTargetDatabaseTlsConfigArrayOutput values.
 // You can construct a concrete instance of `GetTargetDatabasesTargetDatabaseTlsConfigArrayInput` via:
 //
@@ -36567,6 +42598,12 @@ func (i GetTargetDatabasesTargetDatabaseTlsConfigArray) ToGetTargetDatabasesTarg
 	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTargetDatabaseTlsConfigArrayOutput)
 }
 
+func (i GetTargetDatabasesTargetDatabaseTlsConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetDatabasesTargetDatabaseTlsConfig] {
+	return pulumix.Output[[]GetTargetDatabasesTargetDatabaseTlsConfig]{
+		OutputState: i.ToGetTargetDatabasesTargetDatabaseTlsConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTargetDatabasesTargetDatabaseTlsConfigOutput struct{ *pulumi.OutputState }
 
 func (GetTargetDatabasesTargetDatabaseTlsConfigOutput) ElementType() reflect.Type {
@@ -36579,6 +42616,12 @@ func (o GetTargetDatabasesTargetDatabaseTlsConfigOutput) ToGetTargetDatabasesTar
 
 func (o GetTargetDatabasesTargetDatabaseTlsConfigOutput) ToGetTargetDatabasesTargetDatabaseTlsConfigOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabaseTlsConfigOutput {
 	return o
+}
+
+func (o GetTargetDatabasesTargetDatabaseTlsConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetDatabasesTargetDatabaseTlsConfig] {
+	return pulumix.Output[GetTargetDatabasesTargetDatabaseTlsConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The format of the certificate store.
@@ -36618,6 +42661,12 @@ func (o GetTargetDatabasesTargetDatabaseTlsConfigArrayOutput) ToGetTargetDatabas
 
 func (o GetTargetDatabasesTargetDatabaseTlsConfigArrayOutput) ToGetTargetDatabasesTargetDatabaseTlsConfigArrayOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabaseTlsConfigArrayOutput {
 	return o
+}
+
+func (o GetTargetDatabasesTargetDatabaseTlsConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTargetDatabasesTargetDatabaseTlsConfig] {
+	return pulumix.Output[[]GetTargetDatabasesTargetDatabaseTlsConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetDatabasesTargetDatabaseTlsConfigArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasesTargetDatabaseTlsConfigOutput {
@@ -36661,6 +42710,12 @@ func (i GetUserAssessmentComparisonSummaryArgs) ToGetUserAssessmentComparisonSum
 	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentComparisonSummaryOutput)
 }
 
+func (i GetUserAssessmentComparisonSummaryArgs) ToOutput(ctx context.Context) pulumix.Output[GetUserAssessmentComparisonSummary] {
+	return pulumix.Output[GetUserAssessmentComparisonSummary]{
+		OutputState: i.ToGetUserAssessmentComparisonSummaryOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetUserAssessmentComparisonSummaryArrayInput is an input type that accepts GetUserAssessmentComparisonSummaryArray and GetUserAssessmentComparisonSummaryArrayOutput values.
 // You can construct a concrete instance of `GetUserAssessmentComparisonSummaryArrayInput` via:
 //
@@ -36686,6 +42741,12 @@ func (i GetUserAssessmentComparisonSummaryArray) ToGetUserAssessmentComparisonSu
 	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentComparisonSummaryArrayOutput)
 }
 
+func (i GetUserAssessmentComparisonSummaryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetUserAssessmentComparisonSummary] {
+	return pulumix.Output[[]GetUserAssessmentComparisonSummary]{
+		OutputState: i.ToGetUserAssessmentComparisonSummaryArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetUserAssessmentComparisonSummaryOutput struct{ *pulumi.OutputState }
 
 func (GetUserAssessmentComparisonSummaryOutput) ElementType() reflect.Type {
@@ -36698,6 +42759,12 @@ func (o GetUserAssessmentComparisonSummaryOutput) ToGetUserAssessmentComparisonS
 
 func (o GetUserAssessmentComparisonSummaryOutput) ToGetUserAssessmentComparisonSummaryOutputWithContext(ctx context.Context) GetUserAssessmentComparisonSummaryOutput {
 	return o
+}
+
+func (o GetUserAssessmentComparisonSummaryOutput) ToOutput(ctx context.Context) pulumix.Output[GetUserAssessmentComparisonSummary] {
+	return pulumix.Output[GetUserAssessmentComparisonSummary]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetUserAssessmentComparisonSummaryOutput) Baselines() GetUserAssessmentComparisonSummaryBaselineArrayOutput {
@@ -36728,6 +42795,12 @@ func (o GetUserAssessmentComparisonSummaryArrayOutput) ToGetUserAssessmentCompar
 
 func (o GetUserAssessmentComparisonSummaryArrayOutput) ToGetUserAssessmentComparisonSummaryArrayOutputWithContext(ctx context.Context) GetUserAssessmentComparisonSummaryArrayOutput {
 	return o
+}
+
+func (o GetUserAssessmentComparisonSummaryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetUserAssessmentComparisonSummary] {
+	return pulumix.Output[[]GetUserAssessmentComparisonSummary]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetUserAssessmentComparisonSummaryArrayOutput) Index(i pulumi.IntInput) GetUserAssessmentComparisonSummaryOutput {
@@ -36771,6 +42844,12 @@ func (i GetUserAssessmentComparisonSummaryBaselineArgs) ToGetUserAssessmentCompa
 	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentComparisonSummaryBaselineOutput)
 }
 
+func (i GetUserAssessmentComparisonSummaryBaselineArgs) ToOutput(ctx context.Context) pulumix.Output[GetUserAssessmentComparisonSummaryBaseline] {
+	return pulumix.Output[GetUserAssessmentComparisonSummaryBaseline]{
+		OutputState: i.ToGetUserAssessmentComparisonSummaryBaselineOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetUserAssessmentComparisonSummaryBaselineArrayInput is an input type that accepts GetUserAssessmentComparisonSummaryBaselineArray and GetUserAssessmentComparisonSummaryBaselineArrayOutput values.
 // You can construct a concrete instance of `GetUserAssessmentComparisonSummaryBaselineArrayInput` via:
 //
@@ -36796,6 +42875,12 @@ func (i GetUserAssessmentComparisonSummaryBaselineArray) ToGetUserAssessmentComp
 	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentComparisonSummaryBaselineArrayOutput)
 }
 
+func (i GetUserAssessmentComparisonSummaryBaselineArray) ToOutput(ctx context.Context) pulumix.Output[[]GetUserAssessmentComparisonSummaryBaseline] {
+	return pulumix.Output[[]GetUserAssessmentComparisonSummaryBaseline]{
+		OutputState: i.ToGetUserAssessmentComparisonSummaryBaselineArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetUserAssessmentComparisonSummaryBaselineOutput struct{ *pulumi.OutputState }
 
 func (GetUserAssessmentComparisonSummaryBaselineOutput) ElementType() reflect.Type {
@@ -36808,6 +42893,12 @@ func (o GetUserAssessmentComparisonSummaryBaselineOutput) ToGetUserAssessmentCom
 
 func (o GetUserAssessmentComparisonSummaryBaselineOutput) ToGetUserAssessmentComparisonSummaryBaselineOutputWithContext(ctx context.Context) GetUserAssessmentComparisonSummaryBaselineOutput {
 	return o
+}
+
+func (o GetUserAssessmentComparisonSummaryBaselineOutput) ToOutput(ctx context.Context) pulumix.Output[GetUserAssessmentComparisonSummaryBaseline] {
+	return pulumix.Output[GetUserAssessmentComparisonSummaryBaseline]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetUserAssessmentComparisonSummaryBaselineOutput) TargetId() pulumi.StringOutput {
@@ -36831,6 +42922,12 @@ func (o GetUserAssessmentComparisonSummaryBaselineArrayOutput) ToGetUserAssessme
 
 func (o GetUserAssessmentComparisonSummaryBaselineArrayOutput) ToGetUserAssessmentComparisonSummaryBaselineArrayOutputWithContext(ctx context.Context) GetUserAssessmentComparisonSummaryBaselineArrayOutput {
 	return o
+}
+
+func (o GetUserAssessmentComparisonSummaryBaselineArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetUserAssessmentComparisonSummaryBaseline] {
+	return pulumix.Output[[]GetUserAssessmentComparisonSummaryBaseline]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetUserAssessmentComparisonSummaryBaselineArrayOutput) Index(i pulumi.IntInput) GetUserAssessmentComparisonSummaryBaselineOutput {
@@ -36874,6 +42971,12 @@ func (i GetUserAssessmentComparisonSummaryCurrentArgs) ToGetUserAssessmentCompar
 	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentComparisonSummaryCurrentOutput)
 }
 
+func (i GetUserAssessmentComparisonSummaryCurrentArgs) ToOutput(ctx context.Context) pulumix.Output[GetUserAssessmentComparisonSummaryCurrent] {
+	return pulumix.Output[GetUserAssessmentComparisonSummaryCurrent]{
+		OutputState: i.ToGetUserAssessmentComparisonSummaryCurrentOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetUserAssessmentComparisonSummaryCurrentArrayInput is an input type that accepts GetUserAssessmentComparisonSummaryCurrentArray and GetUserAssessmentComparisonSummaryCurrentArrayOutput values.
 // You can construct a concrete instance of `GetUserAssessmentComparisonSummaryCurrentArrayInput` via:
 //
@@ -36899,6 +43002,12 @@ func (i GetUserAssessmentComparisonSummaryCurrentArray) ToGetUserAssessmentCompa
 	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentComparisonSummaryCurrentArrayOutput)
 }
 
+func (i GetUserAssessmentComparisonSummaryCurrentArray) ToOutput(ctx context.Context) pulumix.Output[[]GetUserAssessmentComparisonSummaryCurrent] {
+	return pulumix.Output[[]GetUserAssessmentComparisonSummaryCurrent]{
+		OutputState: i.ToGetUserAssessmentComparisonSummaryCurrentArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetUserAssessmentComparisonSummaryCurrentOutput struct{ *pulumi.OutputState }
 
 func (GetUserAssessmentComparisonSummaryCurrentOutput) ElementType() reflect.Type {
@@ -36911,6 +43020,12 @@ func (o GetUserAssessmentComparisonSummaryCurrentOutput) ToGetUserAssessmentComp
 
 func (o GetUserAssessmentComparisonSummaryCurrentOutput) ToGetUserAssessmentComparisonSummaryCurrentOutputWithContext(ctx context.Context) GetUserAssessmentComparisonSummaryCurrentOutput {
 	return o
+}
+
+func (o GetUserAssessmentComparisonSummaryCurrentOutput) ToOutput(ctx context.Context) pulumix.Output[GetUserAssessmentComparisonSummaryCurrent] {
+	return pulumix.Output[GetUserAssessmentComparisonSummaryCurrent]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetUserAssessmentComparisonSummaryCurrentOutput) TargetId() pulumi.StringOutput {
@@ -36934,6 +43049,12 @@ func (o GetUserAssessmentComparisonSummaryCurrentArrayOutput) ToGetUserAssessmen
 
 func (o GetUserAssessmentComparisonSummaryCurrentArrayOutput) ToGetUserAssessmentComparisonSummaryCurrentArrayOutputWithContext(ctx context.Context) GetUserAssessmentComparisonSummaryCurrentArrayOutput {
 	return o
+}
+
+func (o GetUserAssessmentComparisonSummaryCurrentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetUserAssessmentComparisonSummaryCurrent] {
+	return pulumix.Output[[]GetUserAssessmentComparisonSummaryCurrent]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetUserAssessmentComparisonSummaryCurrentArrayOutput) Index(i pulumi.IntInput) GetUserAssessmentComparisonSummaryCurrentOutput {
@@ -36979,6 +43100,12 @@ func (i GetUserAssessmentIgnoredTargetArgs) ToGetUserAssessmentIgnoredTargetOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentIgnoredTargetOutput)
 }
 
+func (i GetUserAssessmentIgnoredTargetArgs) ToOutput(ctx context.Context) pulumix.Output[GetUserAssessmentIgnoredTarget] {
+	return pulumix.Output[GetUserAssessmentIgnoredTarget]{
+		OutputState: i.ToGetUserAssessmentIgnoredTargetOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetUserAssessmentIgnoredTargetArrayInput is an input type that accepts GetUserAssessmentIgnoredTargetArray and GetUserAssessmentIgnoredTargetArrayOutput values.
 // You can construct a concrete instance of `GetUserAssessmentIgnoredTargetArrayInput` via:
 //
@@ -37004,6 +43131,12 @@ func (i GetUserAssessmentIgnoredTargetArray) ToGetUserAssessmentIgnoredTargetArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentIgnoredTargetArrayOutput)
 }
 
+func (i GetUserAssessmentIgnoredTargetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetUserAssessmentIgnoredTarget] {
+	return pulumix.Output[[]GetUserAssessmentIgnoredTarget]{
+		OutputState: i.ToGetUserAssessmentIgnoredTargetArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetUserAssessmentIgnoredTargetOutput struct{ *pulumi.OutputState }
 
 func (GetUserAssessmentIgnoredTargetOutput) ElementType() reflect.Type {
@@ -37016,6 +43149,12 @@ func (o GetUserAssessmentIgnoredTargetOutput) ToGetUserAssessmentIgnoredTargetOu
 
 func (o GetUserAssessmentIgnoredTargetOutput) ToGetUserAssessmentIgnoredTargetOutputWithContext(ctx context.Context) GetUserAssessmentIgnoredTargetOutput {
 	return o
+}
+
+func (o GetUserAssessmentIgnoredTargetOutput) ToOutput(ctx context.Context) pulumix.Output[GetUserAssessmentIgnoredTarget] {
+	return pulumix.Output[GetUserAssessmentIgnoredTarget]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetUserAssessmentIgnoredTargetOutput) LifecycleState() pulumi.StringOutput {
@@ -37043,6 +43182,12 @@ func (o GetUserAssessmentIgnoredTargetArrayOutput) ToGetUserAssessmentIgnoredTar
 
 func (o GetUserAssessmentIgnoredTargetArrayOutput) ToGetUserAssessmentIgnoredTargetArrayOutputWithContext(ctx context.Context) GetUserAssessmentIgnoredTargetArrayOutput {
 	return o
+}
+
+func (o GetUserAssessmentIgnoredTargetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetUserAssessmentIgnoredTarget] {
+	return pulumix.Output[[]GetUserAssessmentIgnoredTarget]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetUserAssessmentIgnoredTargetArrayOutput) Index(i pulumi.IntInput) GetUserAssessmentIgnoredTargetOutput {
@@ -37086,6 +43231,12 @@ func (i GetUserAssessmentProfileAnalyticsFilterArgs) ToGetUserAssessmentProfileA
 	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentProfileAnalyticsFilterOutput)
 }
 
+func (i GetUserAssessmentProfileAnalyticsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetUserAssessmentProfileAnalyticsFilter] {
+	return pulumix.Output[GetUserAssessmentProfileAnalyticsFilter]{
+		OutputState: i.ToGetUserAssessmentProfileAnalyticsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetUserAssessmentProfileAnalyticsFilterArrayInput is an input type that accepts GetUserAssessmentProfileAnalyticsFilterArray and GetUserAssessmentProfileAnalyticsFilterArrayOutput values.
 // You can construct a concrete instance of `GetUserAssessmentProfileAnalyticsFilterArrayInput` via:
 //
@@ -37111,6 +43262,12 @@ func (i GetUserAssessmentProfileAnalyticsFilterArray) ToGetUserAssessmentProfile
 	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentProfileAnalyticsFilterArrayOutput)
 }
 
+func (i GetUserAssessmentProfileAnalyticsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetUserAssessmentProfileAnalyticsFilter] {
+	return pulumix.Output[[]GetUserAssessmentProfileAnalyticsFilter]{
+		OutputState: i.ToGetUserAssessmentProfileAnalyticsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetUserAssessmentProfileAnalyticsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetUserAssessmentProfileAnalyticsFilterOutput) ElementType() reflect.Type {
@@ -37123,6 +43280,12 @@ func (o GetUserAssessmentProfileAnalyticsFilterOutput) ToGetUserAssessmentProfil
 
 func (o GetUserAssessmentProfileAnalyticsFilterOutput) ToGetUserAssessmentProfileAnalyticsFilterOutputWithContext(ctx context.Context) GetUserAssessmentProfileAnalyticsFilterOutput {
 	return o
+}
+
+func (o GetUserAssessmentProfileAnalyticsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetUserAssessmentProfileAnalyticsFilter] {
+	return pulumix.Output[GetUserAssessmentProfileAnalyticsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetUserAssessmentProfileAnalyticsFilterOutput) Name() pulumi.StringOutput {
@@ -37149,6 +43312,12 @@ func (o GetUserAssessmentProfileAnalyticsFilterArrayOutput) ToGetUserAssessmentP
 
 func (o GetUserAssessmentProfileAnalyticsFilterArrayOutput) ToGetUserAssessmentProfileAnalyticsFilterArrayOutputWithContext(ctx context.Context) GetUserAssessmentProfileAnalyticsFilterArrayOutput {
 	return o
+}
+
+func (o GetUserAssessmentProfileAnalyticsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetUserAssessmentProfileAnalyticsFilter] {
+	return pulumix.Output[[]GetUserAssessmentProfileAnalyticsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetUserAssessmentProfileAnalyticsFilterArrayOutput) Index(i pulumi.IntInput) GetUserAssessmentProfileAnalyticsFilterOutput {
@@ -37198,6 +43367,12 @@ func (i GetUserAssessmentProfileAnalyticsProfileAggregationArgs) ToGetUserAssess
 	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentProfileAnalyticsProfileAggregationOutput)
 }
 
+func (i GetUserAssessmentProfileAnalyticsProfileAggregationArgs) ToOutput(ctx context.Context) pulumix.Output[GetUserAssessmentProfileAnalyticsProfileAggregation] {
+	return pulumix.Output[GetUserAssessmentProfileAnalyticsProfileAggregation]{
+		OutputState: i.ToGetUserAssessmentProfileAnalyticsProfileAggregationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetUserAssessmentProfileAnalyticsProfileAggregationArrayInput is an input type that accepts GetUserAssessmentProfileAnalyticsProfileAggregationArray and GetUserAssessmentProfileAnalyticsProfileAggregationArrayOutput values.
 // You can construct a concrete instance of `GetUserAssessmentProfileAnalyticsProfileAggregationArrayInput` via:
 //
@@ -37223,6 +43398,12 @@ func (i GetUserAssessmentProfileAnalyticsProfileAggregationArray) ToGetUserAsses
 	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentProfileAnalyticsProfileAggregationArrayOutput)
 }
 
+func (i GetUserAssessmentProfileAnalyticsProfileAggregationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetUserAssessmentProfileAnalyticsProfileAggregation] {
+	return pulumix.Output[[]GetUserAssessmentProfileAnalyticsProfileAggregation]{
+		OutputState: i.ToGetUserAssessmentProfileAnalyticsProfileAggregationArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetUserAssessmentProfileAnalyticsProfileAggregationOutput struct{ *pulumi.OutputState }
 
 func (GetUserAssessmentProfileAnalyticsProfileAggregationOutput) ElementType() reflect.Type {
@@ -37235,6 +43416,12 @@ func (o GetUserAssessmentProfileAnalyticsProfileAggregationOutput) ToGetUserAsse
 
 func (o GetUserAssessmentProfileAnalyticsProfileAggregationOutput) ToGetUserAssessmentProfileAnalyticsProfileAggregationOutputWithContext(ctx context.Context) GetUserAssessmentProfileAnalyticsProfileAggregationOutput {
 	return o
+}
+
+func (o GetUserAssessmentProfileAnalyticsProfileAggregationOutput) ToOutput(ctx context.Context) pulumix.Output[GetUserAssessmentProfileAnalyticsProfileAggregation] {
+	return pulumix.Output[GetUserAssessmentProfileAnalyticsProfileAggregation]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
@@ -37268,6 +43455,12 @@ func (o GetUserAssessmentProfileAnalyticsProfileAggregationArrayOutput) ToGetUse
 
 func (o GetUserAssessmentProfileAnalyticsProfileAggregationArrayOutput) ToGetUserAssessmentProfileAnalyticsProfileAggregationArrayOutputWithContext(ctx context.Context) GetUserAssessmentProfileAnalyticsProfileAggregationArrayOutput {
 	return o
+}
+
+func (o GetUserAssessmentProfileAnalyticsProfileAggregationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetUserAssessmentProfileAnalyticsProfileAggregation] {
+	return pulumix.Output[[]GetUserAssessmentProfileAnalyticsProfileAggregation]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetUserAssessmentProfileAnalyticsProfileAggregationArrayOutput) Index(i pulumi.IntInput) GetUserAssessmentProfileAnalyticsProfileAggregationOutput {
@@ -37311,6 +43504,12 @@ func (i GetUserAssessmentProfilesFilterArgs) ToGetUserAssessmentProfilesFilterOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentProfilesFilterOutput)
 }
 
+func (i GetUserAssessmentProfilesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetUserAssessmentProfilesFilter] {
+	return pulumix.Output[GetUserAssessmentProfilesFilter]{
+		OutputState: i.ToGetUserAssessmentProfilesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetUserAssessmentProfilesFilterArrayInput is an input type that accepts GetUserAssessmentProfilesFilterArray and GetUserAssessmentProfilesFilterArrayOutput values.
 // You can construct a concrete instance of `GetUserAssessmentProfilesFilterArrayInput` via:
 //
@@ -37336,6 +43535,12 @@ func (i GetUserAssessmentProfilesFilterArray) ToGetUserAssessmentProfilesFilterA
 	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentProfilesFilterArrayOutput)
 }
 
+func (i GetUserAssessmentProfilesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetUserAssessmentProfilesFilter] {
+	return pulumix.Output[[]GetUserAssessmentProfilesFilter]{
+		OutputState: i.ToGetUserAssessmentProfilesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetUserAssessmentProfilesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetUserAssessmentProfilesFilterOutput) ElementType() reflect.Type {
@@ -37348,6 +43553,12 @@ func (o GetUserAssessmentProfilesFilterOutput) ToGetUserAssessmentProfilesFilter
 
 func (o GetUserAssessmentProfilesFilterOutput) ToGetUserAssessmentProfilesFilterOutputWithContext(ctx context.Context) GetUserAssessmentProfilesFilterOutput {
 	return o
+}
+
+func (o GetUserAssessmentProfilesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetUserAssessmentProfilesFilter] {
+	return pulumix.Output[GetUserAssessmentProfilesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetUserAssessmentProfilesFilterOutput) Name() pulumi.StringOutput {
@@ -37374,6 +43585,12 @@ func (o GetUserAssessmentProfilesFilterArrayOutput) ToGetUserAssessmentProfilesF
 
 func (o GetUserAssessmentProfilesFilterArrayOutput) ToGetUserAssessmentProfilesFilterArrayOutputWithContext(ctx context.Context) GetUserAssessmentProfilesFilterArrayOutput {
 	return o
+}
+
+func (o GetUserAssessmentProfilesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetUserAssessmentProfilesFilter] {
+	return pulumix.Output[[]GetUserAssessmentProfilesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetUserAssessmentProfilesFilterArrayOutput) Index(i pulumi.IntInput) GetUserAssessmentProfilesFilterOutput {
@@ -37519,6 +43736,12 @@ func (i GetUserAssessmentProfilesProfileArgs) ToGetUserAssessmentProfilesProfile
 	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentProfilesProfileOutput)
 }
 
+func (i GetUserAssessmentProfilesProfileArgs) ToOutput(ctx context.Context) pulumix.Output[GetUserAssessmentProfilesProfile] {
+	return pulumix.Output[GetUserAssessmentProfilesProfile]{
+		OutputState: i.ToGetUserAssessmentProfilesProfileOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetUserAssessmentProfilesProfileArrayInput is an input type that accepts GetUserAssessmentProfilesProfileArray and GetUserAssessmentProfilesProfileArrayOutput values.
 // You can construct a concrete instance of `GetUserAssessmentProfilesProfileArrayInput` via:
 //
@@ -37544,6 +43767,12 @@ func (i GetUserAssessmentProfilesProfileArray) ToGetUserAssessmentProfilesProfil
 	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentProfilesProfileArrayOutput)
 }
 
+func (i GetUserAssessmentProfilesProfileArray) ToOutput(ctx context.Context) pulumix.Output[[]GetUserAssessmentProfilesProfile] {
+	return pulumix.Output[[]GetUserAssessmentProfilesProfile]{
+		OutputState: i.ToGetUserAssessmentProfilesProfileArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetUserAssessmentProfilesProfileOutput struct{ *pulumi.OutputState }
 
 func (GetUserAssessmentProfilesProfileOutput) ElementType() reflect.Type {
@@ -37556,6 +43785,12 @@ func (o GetUserAssessmentProfilesProfileOutput) ToGetUserAssessmentProfilesProfi
 
 func (o GetUserAssessmentProfilesProfileOutput) ToGetUserAssessmentProfilesProfileOutputWithContext(ctx context.Context) GetUserAssessmentProfilesProfileOutput {
 	return o
+}
+
+func (o GetUserAssessmentProfilesProfileOutput) ToOutput(ctx context.Context) pulumix.Output[GetUserAssessmentProfilesProfile] {
+	return pulumix.Output[GetUserAssessmentProfilesProfile]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A filter to return only resources that match the specified compartment OCID.
@@ -37707,6 +43942,12 @@ func (o GetUserAssessmentProfilesProfileArrayOutput) ToGetUserAssessmentProfiles
 	return o
 }
 
+func (o GetUserAssessmentProfilesProfileArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetUserAssessmentProfilesProfile] {
+	return pulumix.Output[[]GetUserAssessmentProfilesProfile]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetUserAssessmentProfilesProfileArrayOutput) Index(i pulumi.IntInput) GetUserAssessmentProfilesProfileOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUserAssessmentProfilesProfile {
 		return vs[0].([]GetUserAssessmentProfilesProfile)[vs[1].(int)]
@@ -37748,6 +43989,12 @@ func (i GetUserAssessmentUserAnalyticsFilterArgs) ToGetUserAssessmentUserAnalyti
 	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentUserAnalyticsFilterOutput)
 }
 
+func (i GetUserAssessmentUserAnalyticsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetUserAssessmentUserAnalyticsFilter] {
+	return pulumix.Output[GetUserAssessmentUserAnalyticsFilter]{
+		OutputState: i.ToGetUserAssessmentUserAnalyticsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetUserAssessmentUserAnalyticsFilterArrayInput is an input type that accepts GetUserAssessmentUserAnalyticsFilterArray and GetUserAssessmentUserAnalyticsFilterArrayOutput values.
 // You can construct a concrete instance of `GetUserAssessmentUserAnalyticsFilterArrayInput` via:
 //
@@ -37773,6 +44020,12 @@ func (i GetUserAssessmentUserAnalyticsFilterArray) ToGetUserAssessmentUserAnalyt
 	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentUserAnalyticsFilterArrayOutput)
 }
 
+func (i GetUserAssessmentUserAnalyticsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetUserAssessmentUserAnalyticsFilter] {
+	return pulumix.Output[[]GetUserAssessmentUserAnalyticsFilter]{
+		OutputState: i.ToGetUserAssessmentUserAnalyticsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetUserAssessmentUserAnalyticsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetUserAssessmentUserAnalyticsFilterOutput) ElementType() reflect.Type {
@@ -37785,6 +44038,12 @@ func (o GetUserAssessmentUserAnalyticsFilterOutput) ToGetUserAssessmentUserAnaly
 
 func (o GetUserAssessmentUserAnalyticsFilterOutput) ToGetUserAssessmentUserAnalyticsFilterOutputWithContext(ctx context.Context) GetUserAssessmentUserAnalyticsFilterOutput {
 	return o
+}
+
+func (o GetUserAssessmentUserAnalyticsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetUserAssessmentUserAnalyticsFilter] {
+	return pulumix.Output[GetUserAssessmentUserAnalyticsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetUserAssessmentUserAnalyticsFilterOutput) Name() pulumi.StringOutput {
@@ -37811,6 +44070,12 @@ func (o GetUserAssessmentUserAnalyticsFilterArrayOutput) ToGetUserAssessmentUser
 
 func (o GetUserAssessmentUserAnalyticsFilterArrayOutput) ToGetUserAssessmentUserAnalyticsFilterArrayOutputWithContext(ctx context.Context) GetUserAssessmentUserAnalyticsFilterArrayOutput {
 	return o
+}
+
+func (o GetUserAssessmentUserAnalyticsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetUserAssessmentUserAnalyticsFilter] {
+	return pulumix.Output[[]GetUserAssessmentUserAnalyticsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetUserAssessmentUserAnalyticsFilterArrayOutput) Index(i pulumi.IntInput) GetUserAssessmentUserAnalyticsFilterOutput {
@@ -37852,6 +44117,12 @@ func (i GetUserAssessmentUserAnalyticsUserAggregationArgs) ToGetUserAssessmentUs
 	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentUserAnalyticsUserAggregationOutput)
 }
 
+func (i GetUserAssessmentUserAnalyticsUserAggregationArgs) ToOutput(ctx context.Context) pulumix.Output[GetUserAssessmentUserAnalyticsUserAggregation] {
+	return pulumix.Output[GetUserAssessmentUserAnalyticsUserAggregation]{
+		OutputState: i.ToGetUserAssessmentUserAnalyticsUserAggregationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetUserAssessmentUserAnalyticsUserAggregationArrayInput is an input type that accepts GetUserAssessmentUserAnalyticsUserAggregationArray and GetUserAssessmentUserAnalyticsUserAggregationArrayOutput values.
 // You can construct a concrete instance of `GetUserAssessmentUserAnalyticsUserAggregationArrayInput` via:
 //
@@ -37877,6 +44148,12 @@ func (i GetUserAssessmentUserAnalyticsUserAggregationArray) ToGetUserAssessmentU
 	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentUserAnalyticsUserAggregationArrayOutput)
 }
 
+func (i GetUserAssessmentUserAnalyticsUserAggregationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetUserAssessmentUserAnalyticsUserAggregation] {
+	return pulumix.Output[[]GetUserAssessmentUserAnalyticsUserAggregation]{
+		OutputState: i.ToGetUserAssessmentUserAnalyticsUserAggregationArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetUserAssessmentUserAnalyticsUserAggregationOutput struct{ *pulumi.OutputState }
 
 func (GetUserAssessmentUserAnalyticsUserAggregationOutput) ElementType() reflect.Type {
@@ -37889,6 +44166,12 @@ func (o GetUserAssessmentUserAnalyticsUserAggregationOutput) ToGetUserAssessment
 
 func (o GetUserAssessmentUserAnalyticsUserAggregationOutput) ToGetUserAssessmentUserAnalyticsUserAggregationOutputWithContext(ctx context.Context) GetUserAssessmentUserAnalyticsUserAggregationOutput {
 	return o
+}
+
+func (o GetUserAssessmentUserAnalyticsUserAggregationOutput) ToOutput(ctx context.Context) pulumix.Output[GetUserAssessmentUserAnalyticsUserAggregation] {
+	return pulumix.Output[GetUserAssessmentUserAnalyticsUserAggregation]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The array of user aggregation data.
@@ -37910,6 +44193,12 @@ func (o GetUserAssessmentUserAnalyticsUserAggregationArrayOutput) ToGetUserAsses
 
 func (o GetUserAssessmentUserAnalyticsUserAggregationArrayOutput) ToGetUserAssessmentUserAnalyticsUserAggregationArrayOutputWithContext(ctx context.Context) GetUserAssessmentUserAnalyticsUserAggregationArrayOutput {
 	return o
+}
+
+func (o GetUserAssessmentUserAnalyticsUserAggregationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetUserAssessmentUserAnalyticsUserAggregation] {
+	return pulumix.Output[[]GetUserAssessmentUserAnalyticsUserAggregation]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetUserAssessmentUserAnalyticsUserAggregationArrayOutput) Index(i pulumi.IntInput) GetUserAssessmentUserAnalyticsUserAggregationOutput {
@@ -37947,6 +44236,12 @@ func (i GetUserAssessmentUserAnalyticsUserAggregationItemArgs) ToGetUserAssessme
 	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentUserAnalyticsUserAggregationItemOutput)
 }
 
+func (i GetUserAssessmentUserAnalyticsUserAggregationItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetUserAssessmentUserAnalyticsUserAggregationItem] {
+	return pulumix.Output[GetUserAssessmentUserAnalyticsUserAggregationItem]{
+		OutputState: i.ToGetUserAssessmentUserAnalyticsUserAggregationItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetUserAssessmentUserAnalyticsUserAggregationItemArrayInput is an input type that accepts GetUserAssessmentUserAnalyticsUserAggregationItemArray and GetUserAssessmentUserAnalyticsUserAggregationItemArrayOutput values.
 // You can construct a concrete instance of `GetUserAssessmentUserAnalyticsUserAggregationItemArrayInput` via:
 //
@@ -37972,6 +44267,12 @@ func (i GetUserAssessmentUserAnalyticsUserAggregationItemArray) ToGetUserAssessm
 	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentUserAnalyticsUserAggregationItemArrayOutput)
 }
 
+func (i GetUserAssessmentUserAnalyticsUserAggregationItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetUserAssessmentUserAnalyticsUserAggregationItem] {
+	return pulumix.Output[[]GetUserAssessmentUserAnalyticsUserAggregationItem]{
+		OutputState: i.ToGetUserAssessmentUserAnalyticsUserAggregationItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetUserAssessmentUserAnalyticsUserAggregationItemOutput struct{ *pulumi.OutputState }
 
 func (GetUserAssessmentUserAnalyticsUserAggregationItemOutput) ElementType() reflect.Type {
@@ -37986,6 +44287,12 @@ func (o GetUserAssessmentUserAnalyticsUserAggregationItemOutput) ToGetUserAssess
 	return o
 }
 
+func (o GetUserAssessmentUserAnalyticsUserAggregationItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetUserAssessmentUserAnalyticsUserAggregationItem] {
+	return pulumix.Output[GetUserAssessmentUserAnalyticsUserAggregationItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 type GetUserAssessmentUserAnalyticsUserAggregationItemArrayOutput struct{ *pulumi.OutputState }
 
 func (GetUserAssessmentUserAnalyticsUserAggregationItemArrayOutput) ElementType() reflect.Type {
@@ -37998,6 +44305,12 @@ func (o GetUserAssessmentUserAnalyticsUserAggregationItemArrayOutput) ToGetUserA
 
 func (o GetUserAssessmentUserAnalyticsUserAggregationItemArrayOutput) ToGetUserAssessmentUserAnalyticsUserAggregationItemArrayOutputWithContext(ctx context.Context) GetUserAssessmentUserAnalyticsUserAggregationItemArrayOutput {
 	return o
+}
+
+func (o GetUserAssessmentUserAnalyticsUserAggregationItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetUserAssessmentUserAnalyticsUserAggregationItem] {
+	return pulumix.Output[[]GetUserAssessmentUserAnalyticsUserAggregationItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetUserAssessmentUserAnalyticsUserAggregationItemArrayOutput) Index(i pulumi.IntInput) GetUserAssessmentUserAnalyticsUserAggregationItemOutput {
@@ -38041,6 +44354,12 @@ func (i GetUserAssessmentUsersFilterArgs) ToGetUserAssessmentUsersFilterOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentUsersFilterOutput)
 }
 
+func (i GetUserAssessmentUsersFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetUserAssessmentUsersFilter] {
+	return pulumix.Output[GetUserAssessmentUsersFilter]{
+		OutputState: i.ToGetUserAssessmentUsersFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetUserAssessmentUsersFilterArrayInput is an input type that accepts GetUserAssessmentUsersFilterArray and GetUserAssessmentUsersFilterArrayOutput values.
 // You can construct a concrete instance of `GetUserAssessmentUsersFilterArrayInput` via:
 //
@@ -38066,6 +44385,12 @@ func (i GetUserAssessmentUsersFilterArray) ToGetUserAssessmentUsersFilterArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentUsersFilterArrayOutput)
 }
 
+func (i GetUserAssessmentUsersFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetUserAssessmentUsersFilter] {
+	return pulumix.Output[[]GetUserAssessmentUsersFilter]{
+		OutputState: i.ToGetUserAssessmentUsersFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetUserAssessmentUsersFilterOutput struct{ *pulumi.OutputState }
 
 func (GetUserAssessmentUsersFilterOutput) ElementType() reflect.Type {
@@ -38078,6 +44403,12 @@ func (o GetUserAssessmentUsersFilterOutput) ToGetUserAssessmentUsersFilterOutput
 
 func (o GetUserAssessmentUsersFilterOutput) ToGetUserAssessmentUsersFilterOutputWithContext(ctx context.Context) GetUserAssessmentUsersFilterOutput {
 	return o
+}
+
+func (o GetUserAssessmentUsersFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetUserAssessmentUsersFilter] {
+	return pulumix.Output[GetUserAssessmentUsersFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetUserAssessmentUsersFilterOutput) Name() pulumi.StringOutput {
@@ -38104,6 +44435,12 @@ func (o GetUserAssessmentUsersFilterArrayOutput) ToGetUserAssessmentUsersFilterA
 
 func (o GetUserAssessmentUsersFilterArrayOutput) ToGetUserAssessmentUsersFilterArrayOutputWithContext(ctx context.Context) GetUserAssessmentUsersFilterArrayOutput {
 	return o
+}
+
+func (o GetUserAssessmentUsersFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetUserAssessmentUsersFilter] {
+	return pulumix.Output[[]GetUserAssessmentUsersFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetUserAssessmentUsersFilterArrayOutput) Index(i pulumi.IntInput) GetUserAssessmentUsersFilterOutput {
@@ -38189,6 +44526,12 @@ func (i GetUserAssessmentUsersUserArgs) ToGetUserAssessmentUsersUserOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentUsersUserOutput)
 }
 
+func (i GetUserAssessmentUsersUserArgs) ToOutput(ctx context.Context) pulumix.Output[GetUserAssessmentUsersUser] {
+	return pulumix.Output[GetUserAssessmentUsersUser]{
+		OutputState: i.ToGetUserAssessmentUsersUserOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetUserAssessmentUsersUserArrayInput is an input type that accepts GetUserAssessmentUsersUserArray and GetUserAssessmentUsersUserArrayOutput values.
 // You can construct a concrete instance of `GetUserAssessmentUsersUserArrayInput` via:
 //
@@ -38214,6 +44557,12 @@ func (i GetUserAssessmentUsersUserArray) ToGetUserAssessmentUsersUserArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentUsersUserArrayOutput)
 }
 
+func (i GetUserAssessmentUsersUserArray) ToOutput(ctx context.Context) pulumix.Output[[]GetUserAssessmentUsersUser] {
+	return pulumix.Output[[]GetUserAssessmentUsersUser]{
+		OutputState: i.ToGetUserAssessmentUsersUserArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetUserAssessmentUsersUserOutput struct{ *pulumi.OutputState }
 
 func (GetUserAssessmentUsersUserOutput) ElementType() reflect.Type {
@@ -38226,6 +44575,12 @@ func (o GetUserAssessmentUsersUserOutput) ToGetUserAssessmentUsersUserOutput() G
 
 func (o GetUserAssessmentUsersUserOutput) ToGetUserAssessmentUsersUserOutputWithContext(ctx context.Context) GetUserAssessmentUsersUserOutput {
 	return o
+}
+
+func (o GetUserAssessmentUsersUserOutput) ToOutput(ctx context.Context) pulumix.Output[GetUserAssessmentUsersUser] {
+	return pulumix.Output[GetUserAssessmentUsersUser]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A filter to return only items that match the specified account status.
@@ -38302,6 +44657,12 @@ func (o GetUserAssessmentUsersUserArrayOutput) ToGetUserAssessmentUsersUserArray
 	return o
 }
 
+func (o GetUserAssessmentUsersUserArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetUserAssessmentUsersUser] {
+	return pulumix.Output[[]GetUserAssessmentUsersUser]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetUserAssessmentUsersUserArrayOutput) Index(i pulumi.IntInput) GetUserAssessmentUsersUserOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUserAssessmentUsersUser {
 		return vs[0].([]GetUserAssessmentUsersUser)[vs[1].(int)]
@@ -38343,6 +44704,12 @@ func (i GetUserAssessmentsFilterArgs) ToGetUserAssessmentsFilterOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentsFilterOutput)
 }
 
+func (i GetUserAssessmentsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetUserAssessmentsFilter] {
+	return pulumix.Output[GetUserAssessmentsFilter]{
+		OutputState: i.ToGetUserAssessmentsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetUserAssessmentsFilterArrayInput is an input type that accepts GetUserAssessmentsFilterArray and GetUserAssessmentsFilterArrayOutput values.
 // You can construct a concrete instance of `GetUserAssessmentsFilterArrayInput` via:
 //
@@ -38368,6 +44735,12 @@ func (i GetUserAssessmentsFilterArray) ToGetUserAssessmentsFilterArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentsFilterArrayOutput)
 }
 
+func (i GetUserAssessmentsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetUserAssessmentsFilter] {
+	return pulumix.Output[[]GetUserAssessmentsFilter]{
+		OutputState: i.ToGetUserAssessmentsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetUserAssessmentsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetUserAssessmentsFilterOutput) ElementType() reflect.Type {
@@ -38380,6 +44753,12 @@ func (o GetUserAssessmentsFilterOutput) ToGetUserAssessmentsFilterOutput() GetUs
 
 func (o GetUserAssessmentsFilterOutput) ToGetUserAssessmentsFilterOutputWithContext(ctx context.Context) GetUserAssessmentsFilterOutput {
 	return o
+}
+
+func (o GetUserAssessmentsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetUserAssessmentsFilter] {
+	return pulumix.Output[GetUserAssessmentsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetUserAssessmentsFilterOutput) Name() pulumi.StringOutput {
@@ -38406,6 +44785,12 @@ func (o GetUserAssessmentsFilterArrayOutput) ToGetUserAssessmentsFilterArrayOutp
 
 func (o GetUserAssessmentsFilterArrayOutput) ToGetUserAssessmentsFilterArrayOutputWithContext(ctx context.Context) GetUserAssessmentsFilterArrayOutput {
 	return o
+}
+
+func (o GetUserAssessmentsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetUserAssessmentsFilter] {
+	return pulumix.Output[[]GetUserAssessmentsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetUserAssessmentsFilterArrayOutput) Index(i pulumi.IntInput) GetUserAssessmentsFilterOutput {
@@ -38451,6 +44836,12 @@ func (i GetUserAssessmentsIgnoredTargetArgs) ToGetUserAssessmentsIgnoredTargetOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentsIgnoredTargetOutput)
 }
 
+func (i GetUserAssessmentsIgnoredTargetArgs) ToOutput(ctx context.Context) pulumix.Output[GetUserAssessmentsIgnoredTarget] {
+	return pulumix.Output[GetUserAssessmentsIgnoredTarget]{
+		OutputState: i.ToGetUserAssessmentsIgnoredTargetOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetUserAssessmentsIgnoredTargetArrayInput is an input type that accepts GetUserAssessmentsIgnoredTargetArray and GetUserAssessmentsIgnoredTargetArrayOutput values.
 // You can construct a concrete instance of `GetUserAssessmentsIgnoredTargetArrayInput` via:
 //
@@ -38476,6 +44867,12 @@ func (i GetUserAssessmentsIgnoredTargetArray) ToGetUserAssessmentsIgnoredTargetA
 	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentsIgnoredTargetArrayOutput)
 }
 
+func (i GetUserAssessmentsIgnoredTargetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetUserAssessmentsIgnoredTarget] {
+	return pulumix.Output[[]GetUserAssessmentsIgnoredTarget]{
+		OutputState: i.ToGetUserAssessmentsIgnoredTargetArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetUserAssessmentsIgnoredTargetOutput struct{ *pulumi.OutputState }
 
 func (GetUserAssessmentsIgnoredTargetOutput) ElementType() reflect.Type {
@@ -38488,6 +44885,12 @@ func (o GetUserAssessmentsIgnoredTargetOutput) ToGetUserAssessmentsIgnoredTarget
 
 func (o GetUserAssessmentsIgnoredTargetOutput) ToGetUserAssessmentsIgnoredTargetOutputWithContext(ctx context.Context) GetUserAssessmentsIgnoredTargetOutput {
 	return o
+}
+
+func (o GetUserAssessmentsIgnoredTargetOutput) ToOutput(ctx context.Context) pulumix.Output[GetUserAssessmentsIgnoredTarget] {
+	return pulumix.Output[GetUserAssessmentsIgnoredTarget]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetUserAssessmentsIgnoredTargetOutput) LifecycleState() pulumi.StringOutput {
@@ -38515,6 +44918,12 @@ func (o GetUserAssessmentsIgnoredTargetArrayOutput) ToGetUserAssessmentsIgnoredT
 
 func (o GetUserAssessmentsIgnoredTargetArrayOutput) ToGetUserAssessmentsIgnoredTargetArrayOutputWithContext(ctx context.Context) GetUserAssessmentsIgnoredTargetArrayOutput {
 	return o
+}
+
+func (o GetUserAssessmentsIgnoredTargetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetUserAssessmentsIgnoredTarget] {
+	return pulumix.Output[[]GetUserAssessmentsIgnoredTarget]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetUserAssessmentsIgnoredTargetArrayOutput) Index(i pulumi.IntInput) GetUserAssessmentsIgnoredTargetOutput {
@@ -38648,6 +45057,12 @@ func (i GetUserAssessmentsUserAssessmentArgs) ToGetUserAssessmentsUserAssessment
 	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentsUserAssessmentOutput)
 }
 
+func (i GetUserAssessmentsUserAssessmentArgs) ToOutput(ctx context.Context) pulumix.Output[GetUserAssessmentsUserAssessment] {
+	return pulumix.Output[GetUserAssessmentsUserAssessment]{
+		OutputState: i.ToGetUserAssessmentsUserAssessmentOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetUserAssessmentsUserAssessmentArrayInput is an input type that accepts GetUserAssessmentsUserAssessmentArray and GetUserAssessmentsUserAssessmentArrayOutput values.
 // You can construct a concrete instance of `GetUserAssessmentsUserAssessmentArrayInput` via:
 //
@@ -38673,6 +45088,12 @@ func (i GetUserAssessmentsUserAssessmentArray) ToGetUserAssessmentsUserAssessmen
 	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentsUserAssessmentArrayOutput)
 }
 
+func (i GetUserAssessmentsUserAssessmentArray) ToOutput(ctx context.Context) pulumix.Output[[]GetUserAssessmentsUserAssessment] {
+	return pulumix.Output[[]GetUserAssessmentsUserAssessment]{
+		OutputState: i.ToGetUserAssessmentsUserAssessmentArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetUserAssessmentsUserAssessmentOutput struct{ *pulumi.OutputState }
 
 func (GetUserAssessmentsUserAssessmentOutput) ElementType() reflect.Type {
@@ -38685,6 +45106,12 @@ func (o GetUserAssessmentsUserAssessmentOutput) ToGetUserAssessmentsUserAssessme
 
 func (o GetUserAssessmentsUserAssessmentOutput) ToGetUserAssessmentsUserAssessmentOutputWithContext(ctx context.Context) GetUserAssessmentsUserAssessmentOutput {
 	return o
+}
+
+func (o GetUserAssessmentsUserAssessmentOutput) ToOutput(ctx context.Context) pulumix.Output[GetUserAssessmentsUserAssessment] {
+	return pulumix.Output[GetUserAssessmentsUserAssessment]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A filter to return only resources that match the specified compartment OCID.
@@ -38823,6 +45250,12 @@ func (o GetUserAssessmentsUserAssessmentArrayOutput) ToGetUserAssessmentsUserAss
 	return o
 }
 
+func (o GetUserAssessmentsUserAssessmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetUserAssessmentsUserAssessment] {
+	return pulumix.Output[[]GetUserAssessmentsUserAssessment]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetUserAssessmentsUserAssessmentArrayOutput) Index(i pulumi.IntInput) GetUserAssessmentsUserAssessmentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUserAssessmentsUserAssessment {
 		return vs[0].([]GetUserAssessmentsUserAssessment)[vs[1].(int)]
@@ -38866,6 +45299,12 @@ func (i GetUserAssessmentsUserAssessmentIgnoredTargetArgs) ToGetUserAssessmentsU
 	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentsUserAssessmentIgnoredTargetOutput)
 }
 
+func (i GetUserAssessmentsUserAssessmentIgnoredTargetArgs) ToOutput(ctx context.Context) pulumix.Output[GetUserAssessmentsUserAssessmentIgnoredTarget] {
+	return pulumix.Output[GetUserAssessmentsUserAssessmentIgnoredTarget]{
+		OutputState: i.ToGetUserAssessmentsUserAssessmentIgnoredTargetOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetUserAssessmentsUserAssessmentIgnoredTargetArrayInput is an input type that accepts GetUserAssessmentsUserAssessmentIgnoredTargetArray and GetUserAssessmentsUserAssessmentIgnoredTargetArrayOutput values.
 // You can construct a concrete instance of `GetUserAssessmentsUserAssessmentIgnoredTargetArrayInput` via:
 //
@@ -38891,6 +45330,12 @@ func (i GetUserAssessmentsUserAssessmentIgnoredTargetArray) ToGetUserAssessments
 	return pulumi.ToOutputWithContext(ctx, i).(GetUserAssessmentsUserAssessmentIgnoredTargetArrayOutput)
 }
 
+func (i GetUserAssessmentsUserAssessmentIgnoredTargetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetUserAssessmentsUserAssessmentIgnoredTarget] {
+	return pulumix.Output[[]GetUserAssessmentsUserAssessmentIgnoredTarget]{
+		OutputState: i.ToGetUserAssessmentsUserAssessmentIgnoredTargetArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetUserAssessmentsUserAssessmentIgnoredTargetOutput struct{ *pulumi.OutputState }
 
 func (GetUserAssessmentsUserAssessmentIgnoredTargetOutput) ElementType() reflect.Type {
@@ -38903,6 +45348,12 @@ func (o GetUserAssessmentsUserAssessmentIgnoredTargetOutput) ToGetUserAssessment
 
 func (o GetUserAssessmentsUserAssessmentIgnoredTargetOutput) ToGetUserAssessmentsUserAssessmentIgnoredTargetOutputWithContext(ctx context.Context) GetUserAssessmentsUserAssessmentIgnoredTargetOutput {
 	return o
+}
+
+func (o GetUserAssessmentsUserAssessmentIgnoredTargetOutput) ToOutput(ctx context.Context) pulumix.Output[GetUserAssessmentsUserAssessmentIgnoredTarget] {
+	return pulumix.Output[GetUserAssessmentsUserAssessmentIgnoredTarget]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetUserAssessmentsUserAssessmentIgnoredTargetOutput) LifecycleState() pulumi.StringOutput {
@@ -38930,6 +45381,12 @@ func (o GetUserAssessmentsUserAssessmentIgnoredTargetArrayOutput) ToGetUserAsses
 
 func (o GetUserAssessmentsUserAssessmentIgnoredTargetArrayOutput) ToGetUserAssessmentsUserAssessmentIgnoredTargetArrayOutputWithContext(ctx context.Context) GetUserAssessmentsUserAssessmentIgnoredTargetArrayOutput {
 	return o
+}
+
+func (o GetUserAssessmentsUserAssessmentIgnoredTargetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetUserAssessmentsUserAssessmentIgnoredTarget] {
+	return pulumix.Output[[]GetUserAssessmentsUserAssessmentIgnoredTarget]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetUserAssessmentsUserAssessmentIgnoredTargetArrayOutput) Index(i pulumi.IntInput) GetUserAssessmentsUserAssessmentIgnoredTargetOutput {

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Billing Schedules in Oracle Cloud Infrastructure Onesubscription service.
@@ -118,6 +119,12 @@ func (o GetBillingSchedulesResultOutput) ToGetBillingSchedulesResultOutput() Get
 
 func (o GetBillingSchedulesResultOutput) ToGetBillingSchedulesResultOutputWithContext(ctx context.Context) GetBillingSchedulesResultOutput {
 	return o
+}
+
+func (o GetBillingSchedulesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetBillingSchedulesResult] {
+	return pulumix.Output[GetBillingSchedulesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The list of billing_schedules.

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Ip Sec Connection Device Config resource in Oracle Cloud Infrastructure Core service.
@@ -111,6 +112,12 @@ func (o GetIpsecConfigResultOutput) ToGetIpsecConfigResultOutput() GetIpsecConfi
 
 func (o GetIpsecConfigResultOutput) ToGetIpsecConfigResultOutputWithContext(ctx context.Context) GetIpsecConfigResultOutput {
 	return o
+}
+
+func (o GetIpsecConfigResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetIpsecConfigResult] {
+	return pulumix.Output[GetIpsecConfigResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPSec connection.

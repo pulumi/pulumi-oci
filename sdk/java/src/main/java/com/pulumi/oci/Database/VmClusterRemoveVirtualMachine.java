@@ -75,7 +75,7 @@ public class VmClusterRemoveVirtualMachine extends com.pulumi.resources.CustomRe
      * The name of the availability domain that the VM cluster is located in.
      * 
      */
-    @Export(name="availabilityDomain", type=String.class, parameters={})
+    @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
     private Output<String> availabilityDomain;
 
     /**
@@ -89,7 +89,7 @@ public class VmClusterRemoveVirtualMachine extends com.pulumi.resources.CustomRe
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -103,7 +103,7 @@ public class VmClusterRemoveVirtualMachine extends com.pulumi.resources.CustomRe
      * The number of enabled CPU cores.
      * 
      */
-    @Export(name="cpusEnabled", type=Integer.class, parameters={})
+    @Export(name="cpusEnabled", refs={Integer.class}, tree="[0]")
     private Output<Integer> cpusEnabled;
 
     /**
@@ -117,7 +117,7 @@ public class VmClusterRemoveVirtualMachine extends com.pulumi.resources.CustomRe
      * Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
      * 
      */
-    @Export(name="dataCollectionOptions", type=List.class, parameters={VmClusterRemoveVirtualMachineDataCollectionOption.class})
+    @Export(name="dataCollectionOptions", refs={List.class,VmClusterRemoveVirtualMachineDataCollectionOption.class}, tree="[0,1]")
     private Output<List<VmClusterRemoveVirtualMachineDataCollectionOption>> dataCollectionOptions;
 
     /**
@@ -131,7 +131,7 @@ public class VmClusterRemoveVirtualMachine extends com.pulumi.resources.CustomRe
      * Size, in terabytes, of the DATA disk group.
      * 
      */
-    @Export(name="dataStorageSizeInTbs", type=Double.class, parameters={})
+    @Export(name="dataStorageSizeInTbs", refs={Double.class}, tree="[0]")
     private Output<Double> dataStorageSizeInTbs;
 
     /**
@@ -145,7 +145,7 @@ public class VmClusterRemoveVirtualMachine extends com.pulumi.resources.CustomRe
      * The local node storage allocated in GBs.
      * 
      */
-    @Export(name="dbNodeStorageSizeInGbs", type=Integer.class, parameters={})
+    @Export(name="dbNodeStorageSizeInGbs", refs={Integer.class}, tree="[0]")
     private Output<Integer> dbNodeStorageSizeInGbs;
 
     /**
@@ -159,7 +159,7 @@ public class VmClusterRemoveVirtualMachine extends com.pulumi.resources.CustomRe
      * The list of Exacc DB servers for the cluster to be removed.
      * 
      */
-    @Export(name="dbServers", type=List.class, parameters={VmClusterRemoveVirtualMachineDbServer.class})
+    @Export(name="dbServers", refs={List.class,VmClusterRemoveVirtualMachineDbServer.class}, tree="[0,1]")
     private Output<List<VmClusterRemoveVirtualMachineDbServer>> dbServers;
 
     /**
@@ -173,7 +173,7 @@ public class VmClusterRemoveVirtualMachine extends com.pulumi.resources.CustomRe
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -187,7 +187,7 @@ public class VmClusterRemoveVirtualMachine extends com.pulumi.resources.CustomRe
      * The user-friendly name for the Exadata Cloud@Customer VM cluster. The name does not need to be unique.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -201,7 +201,7 @@ public class VmClusterRemoveVirtualMachine extends com.pulumi.resources.CustomRe
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      * 
      */
-    @Export(name="exadataInfrastructureId", type=String.class, parameters={})
+    @Export(name="exadataInfrastructureId", refs={String.class}, tree="[0]")
     private Output<String> exadataInfrastructureId;
 
     /**
@@ -215,7 +215,7 @@ public class VmClusterRemoveVirtualMachine extends com.pulumi.resources.CustomRe
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -229,7 +229,7 @@ public class VmClusterRemoveVirtualMachine extends com.pulumi.resources.CustomRe
      * The Oracle Grid Infrastructure software version for the VM cluster.
      * 
      */
-    @Export(name="giVersion", type=String.class, parameters={})
+    @Export(name="giVersion", refs={String.class}, tree="[0]")
     private Output<String> giVersion;
 
     /**
@@ -243,7 +243,7 @@ public class VmClusterRemoveVirtualMachine extends com.pulumi.resources.CustomRe
      * If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
      * 
      */
-    @Export(name="isLocalBackupEnabled", type=Boolean.class, parameters={})
+    @Export(name="isLocalBackupEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isLocalBackupEnabled;
 
     /**
@@ -257,7 +257,7 @@ public class VmClusterRemoveVirtualMachine extends com.pulumi.resources.CustomRe
      * If true, sparse disk group is configured for the VM cluster. If false, sparse disk group is not created.
      * 
      */
-    @Export(name="isSparseDiskgroupEnabled", type=Boolean.class, parameters={})
+    @Export(name="isSparseDiskgroupEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isSparseDiskgroupEnabled;
 
     /**
@@ -271,7 +271,7 @@ public class VmClusterRemoveVirtualMachine extends com.pulumi.resources.CustomRe
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
      * 
      */
-    @Export(name="lastPatchHistoryEntryId", type=String.class, parameters={})
+    @Export(name="lastPatchHistoryEntryId", refs={String.class}, tree="[0]")
     private Output<String> lastPatchHistoryEntryId;
 
     /**
@@ -285,7 +285,7 @@ public class VmClusterRemoveVirtualMachine extends com.pulumi.resources.CustomRe
      * The Oracle license model that applies to the VM cluster. The default is LICENSE_INCLUDED.
      * 
      */
-    @Export(name="licenseModel", type=String.class, parameters={})
+    @Export(name="licenseModel", refs={String.class}, tree="[0]")
     private Output<String> licenseModel;
 
     /**
@@ -299,7 +299,7 @@ public class VmClusterRemoveVirtualMachine extends com.pulumi.resources.CustomRe
      * Additional information about the current lifecycle state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -313,7 +313,7 @@ public class VmClusterRemoveVirtualMachine extends com.pulumi.resources.CustomRe
      * The memory allocated in GBs.
      * 
      */
-    @Export(name="memorySizeInGbs", type=Integer.class, parameters={})
+    @Export(name="memorySizeInGbs", refs={Integer.class}, tree="[0]")
     private Output<Integer> memorySizeInGbs;
 
     /**
@@ -327,7 +327,7 @@ public class VmClusterRemoveVirtualMachine extends com.pulumi.resources.CustomRe
      * The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
      * 
      */
-    @Export(name="shape", type=String.class, parameters={})
+    @Export(name="shape", refs={String.class}, tree="[0]")
     private Output<String> shape;
 
     /**
@@ -341,7 +341,7 @@ public class VmClusterRemoveVirtualMachine extends com.pulumi.resources.CustomRe
      * The public key portion of one or more key pairs used for SSH access to the VM cluster.
      * 
      */
-    @Export(name="sshPublicKeys", type=List.class, parameters={String.class})
+    @Export(name="sshPublicKeys", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> sshPublicKeys;
 
     /**
@@ -355,7 +355,7 @@ public class VmClusterRemoveVirtualMachine extends com.pulumi.resources.CustomRe
      * The current state of the VM cluster.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -369,7 +369,7 @@ public class VmClusterRemoveVirtualMachine extends com.pulumi.resources.CustomRe
      * Operating system version of the image.
      * 
      */
-    @Export(name="systemVersion", type=String.class, parameters={})
+    @Export(name="systemVersion", refs={String.class}, tree="[0]")
     private Output<String> systemVersion;
 
     /**
@@ -383,7 +383,7 @@ public class VmClusterRemoveVirtualMachine extends com.pulumi.resources.CustomRe
      * The date and time that the VM cluster was created.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -397,7 +397,7 @@ public class VmClusterRemoveVirtualMachine extends com.pulumi.resources.CustomRe
      * The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      * 
      */
-    @Export(name="timeZone", type=String.class, parameters={})
+    @Export(name="timeZone", refs={String.class}, tree="[0]")
     private Output<String> timeZone;
 
     /**
@@ -414,7 +414,7 @@ public class VmClusterRemoveVirtualMachine extends com.pulumi.resources.CustomRe
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="vmClusterId", type=String.class, parameters={})
+    @Export(name="vmClusterId", refs={String.class}, tree="[0]")
     private Output<String> vmClusterId;
 
     /**
@@ -431,7 +431,7 @@ public class VmClusterRemoveVirtualMachine extends com.pulumi.resources.CustomRe
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
      * 
      */
-    @Export(name="vmClusterNetworkId", type=String.class, parameters={})
+    @Export(name="vmClusterNetworkId", refs={String.class}, tree="[0]")
     private Output<String> vmClusterNetworkId;
 
     /**

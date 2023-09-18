@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Instance Pool resource in Oracle Cloud Infrastructure Core service.
@@ -125,6 +126,12 @@ func (o LookupInstancePoolResultOutput) ToLookupInstancePoolResultOutput() Looku
 
 func (o LookupInstancePoolResultOutput) ToLookupInstancePoolResultOutputWithContext(ctx context.Context) LookupInstancePoolResultOutput {
 	return o
+}
+
+func (o LookupInstancePoolResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupInstancePoolResult] {
+	return pulumix.Output[LookupInstancePoolResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o LookupInstancePoolResultOutput) ActualSize() pulumi.IntOutput {

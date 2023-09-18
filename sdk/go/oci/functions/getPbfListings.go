@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Pbf Listings in Oracle Cloud Infrastructure Functions service.
@@ -137,6 +138,12 @@ func (o GetPbfListingsResultOutput) ToGetPbfListingsResultOutput() GetPbfListing
 
 func (o GetPbfListingsResultOutput) ToGetPbfListingsResultOutputWithContext(ctx context.Context) GetPbfListingsResultOutput {
 	return o
+}
+
+func (o GetPbfListingsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPbfListingsResult] {
+	return pulumix.Output[GetPbfListingsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPbfListingsResultOutput) Filters() GetPbfListingsFilterArrayOutput {

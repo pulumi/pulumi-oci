@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Dr Plan resource in Oracle Cloud Infrastructure Disaster Recovery service.
@@ -261,6 +262,12 @@ func (i *DrPlan) ToDrPlanOutputWithContext(ctx context.Context) DrPlanOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DrPlanOutput)
 }
 
+func (i *DrPlan) ToOutput(ctx context.Context) pulumix.Output[*DrPlan] {
+	return pulumix.Output[*DrPlan]{
+		OutputState: i.ToDrPlanOutputWithContext(ctx).OutputState,
+	}
+}
+
 // DrPlanArrayInput is an input type that accepts DrPlanArray and DrPlanArrayOutput values.
 // You can construct a concrete instance of `DrPlanArrayInput` via:
 //
@@ -284,6 +291,12 @@ func (i DrPlanArray) ToDrPlanArrayOutput() DrPlanArrayOutput {
 
 func (i DrPlanArray) ToDrPlanArrayOutputWithContext(ctx context.Context) DrPlanArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DrPlanArrayOutput)
+}
+
+func (i DrPlanArray) ToOutput(ctx context.Context) pulumix.Output[[]*DrPlan] {
+	return pulumix.Output[[]*DrPlan]{
+		OutputState: i.ToDrPlanArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // DrPlanMapInput is an input type that accepts DrPlanMap and DrPlanMapOutput values.
@@ -311,6 +324,12 @@ func (i DrPlanMap) ToDrPlanMapOutputWithContext(ctx context.Context) DrPlanMapOu
 	return pulumi.ToOutputWithContext(ctx, i).(DrPlanMapOutput)
 }
 
+func (i DrPlanMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DrPlan] {
+	return pulumix.Output[map[string]*DrPlan]{
+		OutputState: i.ToDrPlanMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type DrPlanOutput struct{ *pulumi.OutputState }
 
 func (DrPlanOutput) ElementType() reflect.Type {
@@ -323,6 +342,12 @@ func (o DrPlanOutput) ToDrPlanOutput() DrPlanOutput {
 
 func (o DrPlanOutput) ToDrPlanOutputWithContext(ctx context.Context) DrPlanOutput {
 	return o
+}
+
+func (o DrPlanOutput) ToOutput(ctx context.Context) pulumix.Output[*DrPlan] {
+	return pulumix.Output[*DrPlan]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
@@ -412,6 +437,12 @@ func (o DrPlanArrayOutput) ToDrPlanArrayOutputWithContext(ctx context.Context) D
 	return o
 }
 
+func (o DrPlanArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DrPlan] {
+	return pulumix.Output[[]*DrPlan]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o DrPlanArrayOutput) Index(i pulumi.IntInput) DrPlanOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DrPlan {
 		return vs[0].([]*DrPlan)[vs[1].(int)]
@@ -430,6 +461,12 @@ func (o DrPlanMapOutput) ToDrPlanMapOutput() DrPlanMapOutput {
 
 func (o DrPlanMapOutput) ToDrPlanMapOutputWithContext(ctx context.Context) DrPlanMapOutput {
 	return o
+}
+
+func (o DrPlanMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DrPlan] {
+	return pulumix.Output[map[string]*DrPlan]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o DrPlanMapOutput) MapIndex(k pulumi.StringInput) DrPlanOutput {

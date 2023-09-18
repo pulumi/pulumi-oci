@@ -62,7 +62,7 @@ public class ExternalDbSystemDatabaseManagementsManagement extends com.pulumi.re
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="enableDatabaseManagement", type=Boolean.class, parameters={})
+    @Export(name="enableDatabaseManagement", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableDatabaseManagement;
 
     /**
@@ -79,7 +79,7 @@ public class ExternalDbSystemDatabaseManagementsManagement extends com.pulumi.re
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
      * 
      */
-    @Export(name="externalDbSystemId", type=String.class, parameters={})
+    @Export(name="externalDbSystemId", refs={String.class}, tree="[0]")
     private Output<String> externalDbSystemId;
 
     /**
@@ -93,7 +93,7 @@ public class ExternalDbSystemDatabaseManagementsManagement extends com.pulumi.re
      * The Oracle license model that applies to the external database.
      * 
      */
-    @Export(name="licenseModel", type=String.class, parameters={})
+    @Export(name="licenseModel", refs={String.class}, tree="[0]")
     private Output<String> licenseModel;
 
     /**

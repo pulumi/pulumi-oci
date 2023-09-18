@@ -66,7 +66,7 @@ public class RepositoryMirror extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="repositoryId", type=String.class, parameters={})
+    @Export(name="repositoryId", refs={String.class}, tree="[0]")
     private Output<String> repositoryId;
 
     /**

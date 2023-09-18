@@ -71,7 +71,7 @@ public class ManagedDatabaseGroup extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -85,7 +85,7 @@ public class ManagedDatabaseGroup extends com.pulumi.resources.CustomResource {
      * (Updatable) The information specified by the user about the Managed Database Group.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -99,7 +99,7 @@ public class ManagedDatabaseGroup extends com.pulumi.resources.CustomResource {
      * (Updatable) Set of Managed Databases that the user wants to add to the Managed Database Group. Specifying a block will add the Managed Database to Managed Database Group and removing the block will remove Managed Database from the Managed Database Group.
      * 
      */
-    @Export(name="managedDatabases", type=List.class, parameters={ManagedDatabaseGroupManagedDatabase.class})
+    @Export(name="managedDatabases", refs={List.class,ManagedDatabaseGroupManagedDatabase.class}, tree="[0,1]")
     private Output<List<ManagedDatabaseGroupManagedDatabase>> managedDatabases;
 
     /**
@@ -113,7 +113,7 @@ public class ManagedDatabaseGroup extends com.pulumi.resources.CustomResource {
      * The name of the Managed Database Group. Valid characters are uppercase or lowercase letters, numbers, and &#34;_&#34;. The name of the Managed Database Group cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -127,7 +127,7 @@ public class ManagedDatabaseGroup extends com.pulumi.resources.CustomResource {
      * The current lifecycle state of the Managed Database Group.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -141,7 +141,7 @@ public class ManagedDatabaseGroup extends com.pulumi.resources.CustomResource {
      * The date and time the Managed Database Group was created.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -155,7 +155,7 @@ public class ManagedDatabaseGroup extends com.pulumi.resources.CustomResource {
      * The date and time the Managed Database Group was last updated.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

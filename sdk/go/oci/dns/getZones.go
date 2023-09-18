@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Zones in Oracle Cloud Infrastructure DNS service.
@@ -180,6 +181,12 @@ func (o GetZonesResultOutput) ToGetZonesResultOutput() GetZonesResultOutput {
 
 func (o GetZonesResultOutput) ToGetZonesResultOutputWithContext(ctx context.Context) GetZonesResultOutput {
 	return o
+}
+
+func (o GetZonesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetZonesResult] {
+	return pulumix.Output[GetZonesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the compartment containing the zone.

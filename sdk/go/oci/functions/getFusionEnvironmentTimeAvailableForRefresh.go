@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Fusion Environment Time Available For Refresh resource in Oracle Cloud Infrastructure Fusion Apps service.
@@ -101,6 +102,12 @@ func (o GetFusionEnvironmentTimeAvailableForRefreshResultOutput) ToGetFusionEnvi
 
 func (o GetFusionEnvironmentTimeAvailableForRefreshResultOutput) ToGetFusionEnvironmentTimeAvailableForRefreshResultOutputWithContext(ctx context.Context) GetFusionEnvironmentTimeAvailableForRefreshResultOutput {
 	return o
+}
+
+func (o GetFusionEnvironmentTimeAvailableForRefreshResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentTimeAvailableForRefreshResult] {
+	return pulumix.Output[GetFusionEnvironmentTimeAvailableForRefreshResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetFusionEnvironmentTimeAvailableForRefreshResultOutput) FusionEnvironmentId() pulumi.StringOutput {

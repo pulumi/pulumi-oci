@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Mysql Db Systems in Oracle Cloud Infrastructure MySQL Database service.
@@ -147,6 +148,12 @@ func (o GetMysqlDbSystemsResultOutput) ToGetMysqlDbSystemsResultOutput() GetMysq
 
 func (o GetMysqlDbSystemsResultOutput) ToGetMysqlDbSystemsResultOutputWithContext(ctx context.Context) GetMysqlDbSystemsResultOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsResult] {
+	return pulumix.Output[GetMysqlDbSystemsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the compartment the DB System belongs in.

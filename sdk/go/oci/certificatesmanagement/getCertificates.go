@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Certificates in Oracle Cloud Infrastructure Certificates Management service.
@@ -134,6 +135,12 @@ func (o GetCertificatesResultOutput) ToGetCertificatesResultOutput() GetCertific
 
 func (o GetCertificatesResultOutput) ToGetCertificatesResultOutputWithContext(ctx context.Context) GetCertificatesResultOutput {
 	return o
+}
+
+func (o GetCertificatesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesResult] {
+	return pulumix.Output[GetCertificatesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The list of certificate_collection.

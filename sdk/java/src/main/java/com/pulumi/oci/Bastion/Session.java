@@ -84,7 +84,7 @@ public class Session extends com.pulumi.resources.CustomResource {
      * The unique identifier (OCID) of the bastion on which to create this session.
      * 
      */
-    @Export(name="bastionId", type=String.class, parameters={})
+    @Export(name="bastionId", refs={String.class}, tree="[0]")
     private Output<String> bastionId;
 
     /**
@@ -98,7 +98,7 @@ public class Session extends com.pulumi.resources.CustomResource {
      * The name of the bastion that is hosting this session.
      * 
      */
-    @Export(name="bastionName", type=String.class, parameters={})
+    @Export(name="bastionName", refs={String.class}, tree="[0]")
     private Output<String> bastionName;
 
     /**
@@ -112,7 +112,7 @@ public class Session extends com.pulumi.resources.CustomResource {
      * The public key of the bastion host. You can use this to verify that you&#39;re connecting to the correct bastion.
      * 
      */
-    @Export(name="bastionPublicHostKeyInfo", type=String.class, parameters={})
+    @Export(name="bastionPublicHostKeyInfo", refs={String.class}, tree="[0]")
     private Output<String> bastionPublicHostKeyInfo;
 
     /**
@@ -126,7 +126,7 @@ public class Session extends com.pulumi.resources.CustomResource {
      * The username that the session uses to connect to the target resource.
      * 
      */
-    @Export(name="bastionUserName", type=String.class, parameters={})
+    @Export(name="bastionUserName", refs={String.class}, tree="[0]")
     private Output<String> bastionUserName;
 
     /**
@@ -140,7 +140,7 @@ public class Session extends com.pulumi.resources.CustomResource {
      * (Updatable) The name of the session.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -154,7 +154,7 @@ public class Session extends com.pulumi.resources.CustomResource {
      * Public key details for a bastion session.
      * 
      */
-    @Export(name="keyDetails", type=SessionKeyDetails.class, parameters={})
+    @Export(name="keyDetails", refs={SessionKeyDetails.class}, tree="[0]")
     private Output<SessionKeyDetails> keyDetails;
 
     /**
@@ -168,7 +168,7 @@ public class Session extends com.pulumi.resources.CustomResource {
      * The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
      * 
      */
-    @Export(name="keyType", type=String.class, parameters={})
+    @Export(name="keyType", refs={String.class}, tree="[0]")
     private Output<String> keyType;
 
     /**
@@ -182,7 +182,7 @@ public class Session extends com.pulumi.resources.CustomResource {
      * A message describing the current session state in more detail.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -196,7 +196,7 @@ public class Session extends com.pulumi.resources.CustomResource {
      * The amount of time the session can remain active.
      * 
      */
-    @Export(name="sessionTtlInSeconds", type=Integer.class, parameters={})
+    @Export(name="sessionTtlInSeconds", refs={Integer.class}, tree="[0]")
     private Output<Integer> sessionTtlInSeconds;
 
     /**
@@ -210,7 +210,7 @@ public class Session extends com.pulumi.resources.CustomResource {
      * The connection message for the session.
      * 
      */
-    @Export(name="sshMetadata", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="sshMetadata", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> sshMetadata;
 
     /**
@@ -224,7 +224,7 @@ public class Session extends com.pulumi.resources.CustomResource {
      * The current state of the session.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -238,7 +238,7 @@ public class Session extends com.pulumi.resources.CustomResource {
      * Details about a bastion session&#39;s target resource.
      * 
      */
-    @Export(name="targetResourceDetails", type=SessionTargetResourceDetails.class, parameters={})
+    @Export(name="targetResourceDetails", refs={SessionTargetResourceDetails.class}, tree="[0]")
     private Output<SessionTargetResourceDetails> targetResourceDetails;
 
     /**
@@ -252,7 +252,7 @@ public class Session extends com.pulumi.resources.CustomResource {
      * The time the session was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -266,7 +266,7 @@ public class Session extends com.pulumi.resources.CustomResource {
      * The time the session was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

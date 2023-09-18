@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Sender resource in Oracle Cloud Infrastructure Email service.
@@ -115,6 +116,12 @@ func (o LookupSenderResultOutput) ToLookupSenderResultOutput() LookupSenderResul
 
 func (o LookupSenderResultOutput) ToLookupSenderResultOutputWithContext(ctx context.Context) LookupSenderResultOutput {
 	return o
+}
+
+func (o LookupSenderResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupSenderResult] {
+	return pulumix.Output[LookupSenderResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID for the compartment.

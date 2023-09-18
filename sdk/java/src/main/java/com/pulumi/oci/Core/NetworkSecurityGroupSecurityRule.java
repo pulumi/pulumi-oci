@@ -107,7 +107,7 @@ public class NetworkSecurityGroupSecurityRule extends com.pulumi.resources.Custo
      * An optional description of your choice for the rule. Avoid entering confidential information.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -126,7 +126,7 @@ public class NetworkSecurityGroupSecurityRule extends com.pulumi.resources.Custo
      * * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) in the same VCN. The value can be the NSG that the rule belongs to if the rule&#39;s intent is to control traffic between VNICs in the same NSG.
      * 
      */
-    @Export(name="destination", type=String.class, parameters={})
+    @Export(name="destination", refs={String.class}, tree="[0]")
     private Output<String> destination;
 
     /**
@@ -147,7 +147,7 @@ public class NetworkSecurityGroupSecurityRule extends com.pulumi.resources.Custo
      * Allowed values:
      * 
      */
-    @Export(name="destinationType", type=String.class, parameters={})
+    @Export(name="destinationType", refs={String.class}, tree="[0]")
     private Output<String> destinationType;
 
     /**
@@ -163,7 +163,7 @@ public class NetworkSecurityGroupSecurityRule extends com.pulumi.resources.Custo
      * Direction of the security rule. Set to `EGRESS` for rules to allow outbound IP packets, or `INGRESS` for rules to allow inbound IP packets.
      * 
      */
-    @Export(name="direction", type=String.class, parameters={})
+    @Export(name="direction", refs={String.class}, tree="[0]")
     private Output<String> direction;
 
     /**
@@ -181,7 +181,7 @@ public class NetworkSecurityGroupSecurityRule extends com.pulumi.resources.Custo
      * If you specify ICMP or ICMPv6 as the protocol but omit this object, then all ICMP types and codes are allowed. If you do provide this object, the type is required and the code is optional. To enable MTU negotiation for ingress internet traffic via IPv4, make sure to allow type 3 (&#34;Destination Unreachable&#34;) code 4 (&#34;Fragmentation Needed and Don&#39;t Fragment was Set&#34;). If you need to specify multiple codes for a single type, create a separate security list rule for each.
      * 
      */
-    @Export(name="icmpOptions", type=NetworkSecurityGroupSecurityRuleIcmpOptions.class, parameters={})
+    @Export(name="icmpOptions", refs={NetworkSecurityGroupSecurityRuleIcmpOptions.class}, tree="[0]")
     private Output</* @Nullable */ NetworkSecurityGroupSecurityRuleIcmpOptions> icmpOptions;
 
     /**
@@ -199,7 +199,7 @@ public class NetworkSecurityGroupSecurityRule extends com.pulumi.resources.Custo
      * Whether the rule is valid. The value is `True` when the rule is first created. If the rule&#39;s `source` or `destination` is a network security group, the value changes to `False` if that network security group is deleted.
      * 
      */
-    @Export(name="isValid", type=Boolean.class, parameters={})
+    @Export(name="isValid", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isValid;
 
     /**
@@ -213,7 +213,7 @@ public class NetworkSecurityGroupSecurityRule extends com.pulumi.resources.Custo
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group.
      * 
      */
-    @Export(name="networkSecurityGroupId", type=String.class, parameters={})
+    @Export(name="networkSecurityGroupId", refs={String.class}, tree="[0]")
     private Output<String> networkSecurityGroupId;
 
     /**
@@ -227,7 +227,7 @@ public class NetworkSecurityGroupSecurityRule extends com.pulumi.resources.Custo
      * The transport protocol. Specify either `all` or an IPv4 protocol number as defined in [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml). Options are supported only for ICMP (&#34;1&#34;), TCP (&#34;6&#34;), UDP (&#34;17&#34;), and ICMPv6 (&#34;58&#34;).
      * 
      */
-    @Export(name="protocol", type=String.class, parameters={})
+    @Export(name="protocol", refs={String.class}, tree="[0]")
     private Output<String> protocol;
 
     /**
@@ -246,7 +246,7 @@ public class NetworkSecurityGroupSecurityRule extends com.pulumi.resources.Custo
      * * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) in the same VCN. The value can be the NSG that the rule belongs to if the rule&#39;s intent is to control traffic between VNICs in the same NSG.
      * 
      */
-    @Export(name="source", type=String.class, parameters={})
+    @Export(name="source", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> source;
 
     /**
@@ -265,7 +265,7 @@ public class NetworkSecurityGroupSecurityRule extends com.pulumi.resources.Custo
      * Type of source for the rule. Required if `direction` = `INGRESS`.
      * 
      */
-    @Export(name="sourceType", type=String.class, parameters={})
+    @Export(name="sourceType", refs={String.class}, tree="[0]")
     private Output<String> sourceType;
 
     /**
@@ -279,7 +279,7 @@ public class NetworkSecurityGroupSecurityRule extends com.pulumi.resources.Custo
      * A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if egress traffic allows TCP destination port 80, there should be an ingress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
      * 
      */
-    @Export(name="stateless", type=Boolean.class, parameters={})
+    @Export(name="stateless", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> stateless;
 
     /**
@@ -293,7 +293,7 @@ public class NetworkSecurityGroupSecurityRule extends com.pulumi.resources.Custo
      * Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
      * 
      */
-    @Export(name="tcpOptions", type=NetworkSecurityGroupSecurityRuleTcpOptions.class, parameters={})
+    @Export(name="tcpOptions", refs={NetworkSecurityGroupSecurityRuleTcpOptions.class}, tree="[0]")
     private Output</* @Nullable */ NetworkSecurityGroupSecurityRuleTcpOptions> tcpOptions;
 
     /**
@@ -307,7 +307,7 @@ public class NetworkSecurityGroupSecurityRule extends com.pulumi.resources.Custo
      * The date and time the security rule was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -321,7 +321,7 @@ public class NetworkSecurityGroupSecurityRule extends com.pulumi.resources.Custo
      * Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
      * 
      */
-    @Export(name="udpOptions", type=NetworkSecurityGroupSecurityRuleUdpOptions.class, parameters={})
+    @Export(name="udpOptions", refs={NetworkSecurityGroupSecurityRuleUdpOptions.class}, tree="[0]")
     private Output</* @Nullable */ NetworkSecurityGroupSecurityRuleUdpOptions> udpOptions;
 
     /**

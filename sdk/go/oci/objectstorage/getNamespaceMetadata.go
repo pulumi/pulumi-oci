@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func LookupNamespaceMetadata(ctx *pulumi.Context, args *LookupNamespaceMetadataArgs, opts ...pulumi.InvokeOption) (*LookupNamespaceMetadataResult, error) {
@@ -70,6 +71,12 @@ func (o LookupNamespaceMetadataResultOutput) ToLookupNamespaceMetadataResultOutp
 
 func (o LookupNamespaceMetadataResultOutput) ToLookupNamespaceMetadataResultOutputWithContext(ctx context.Context) LookupNamespaceMetadataResultOutput {
 	return o
+}
+
+func (o LookupNamespaceMetadataResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupNamespaceMetadataResult] {
+	return pulumix.Output[LookupNamespaceMetadataResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o LookupNamespaceMetadataResultOutput) DefaultS3compartmentId() pulumi.StringOutput {

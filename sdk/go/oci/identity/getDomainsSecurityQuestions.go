@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Security Questions in Oracle Cloud Infrastructure Identity Domains service.
@@ -160,6 +161,12 @@ func (o GetDomainsSecurityQuestionsResultOutput) ToGetDomainsSecurityQuestionsRe
 
 func (o GetDomainsSecurityQuestionsResultOutput) ToGetDomainsSecurityQuestionsResultOutputWithContext(ctx context.Context) GetDomainsSecurityQuestionsResultOutput {
 	return o
+}
+
+func (o GetDomainsSecurityQuestionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsSecurityQuestionsResult] {
+	return pulumix.Output[GetDomainsSecurityQuestionsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsSecurityQuestionsResultOutput) AttributeSets() pulumi.StringArrayOutput {

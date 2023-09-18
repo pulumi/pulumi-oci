@@ -72,7 +72,7 @@ public class DomainReplicationToRegion extends com.pulumi.resources.CustomResour
      * The OCID of the domain
      * 
      */
-    @Export(name="domainId", type=String.class, parameters={})
+    @Export(name="domainId", refs={String.class}, tree="[0]")
     private Output<String> domainId;
 
     /**
@@ -89,7 +89,7 @@ public class DomainReplicationToRegion extends com.pulumi.resources.CustomResour
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="replicaRegion", type=String.class, parameters={})
+    @Export(name="replicaRegion", refs={String.class}, tree="[0]")
     private Output<String> replicaRegion;
 
     /**

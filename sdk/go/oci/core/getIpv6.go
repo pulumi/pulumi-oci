@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Ipv6 resource in Oracle Cloud Infrastructure Core service.
@@ -121,6 +122,12 @@ func (o LookupIpv6ResultOutput) ToLookupIpv6ResultOutput() LookupIpv6ResultOutpu
 
 func (o LookupIpv6ResultOutput) ToLookupIpv6ResultOutputWithContext(ctx context.Context) LookupIpv6ResultOutput {
 	return o
+}
+
+func (o LookupIpv6ResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupIpv6Result] {
+	return pulumix.Output[LookupIpv6Result]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPv6. This is the same as the VNIC's compartment.

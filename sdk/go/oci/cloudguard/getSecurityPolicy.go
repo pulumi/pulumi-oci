@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Security Policy resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -125,6 +126,12 @@ func (o GetSecurityPolicyResultOutput) ToGetSecurityPolicyResultOutput() GetSecu
 
 func (o GetSecurityPolicyResultOutput) ToGetSecurityPolicyResultOutputWithContext(ctx context.Context) GetSecurityPolicyResultOutput {
 	return o
+}
+
+func (o GetSecurityPolicyResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityPolicyResult] {
+	return pulumix.Output[GetSecurityPolicyResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The category of security policy

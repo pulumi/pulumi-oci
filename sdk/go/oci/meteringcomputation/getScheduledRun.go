@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Scheduled Run resource in Oracle Cloud Infrastructure Metering Computation service.
@@ -109,6 +110,12 @@ func (o GetScheduledRunResultOutput) ToGetScheduledRunResultOutput() GetSchedule
 
 func (o GetScheduledRunResultOutput) ToGetScheduledRunResultOutputWithContext(ctx context.Context) GetScheduledRunResultOutput {
 	return o
+}
+
+func (o GetScheduledRunResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetScheduledRunResult] {
+	return pulumix.Output[GetScheduledRunResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The provider-assigned unique ID for this managed resource.

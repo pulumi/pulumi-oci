@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Oda Instance resource in Oracle Cloud Infrastructure Digital Assistant service.
@@ -328,6 +329,12 @@ func (i *OdaInstance) ToOdaInstanceOutputWithContext(ctx context.Context) OdaIns
 	return pulumi.ToOutputWithContext(ctx, i).(OdaInstanceOutput)
 }
 
+func (i *OdaInstance) ToOutput(ctx context.Context) pulumix.Output[*OdaInstance] {
+	return pulumix.Output[*OdaInstance]{
+		OutputState: i.ToOdaInstanceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // OdaInstanceArrayInput is an input type that accepts OdaInstanceArray and OdaInstanceArrayOutput values.
 // You can construct a concrete instance of `OdaInstanceArrayInput` via:
 //
@@ -351,6 +358,12 @@ func (i OdaInstanceArray) ToOdaInstanceArrayOutput() OdaInstanceArrayOutput {
 
 func (i OdaInstanceArray) ToOdaInstanceArrayOutputWithContext(ctx context.Context) OdaInstanceArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(OdaInstanceArrayOutput)
+}
+
+func (i OdaInstanceArray) ToOutput(ctx context.Context) pulumix.Output[[]*OdaInstance] {
+	return pulumix.Output[[]*OdaInstance]{
+		OutputState: i.ToOdaInstanceArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // OdaInstanceMapInput is an input type that accepts OdaInstanceMap and OdaInstanceMapOutput values.
@@ -378,6 +391,12 @@ func (i OdaInstanceMap) ToOdaInstanceMapOutputWithContext(ctx context.Context) O
 	return pulumi.ToOutputWithContext(ctx, i).(OdaInstanceMapOutput)
 }
 
+func (i OdaInstanceMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*OdaInstance] {
+	return pulumix.Output[map[string]*OdaInstance]{
+		OutputState: i.ToOdaInstanceMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type OdaInstanceOutput struct{ *pulumi.OutputState }
 
 func (OdaInstanceOutput) ElementType() reflect.Type {
@@ -390,6 +409,12 @@ func (o OdaInstanceOutput) ToOdaInstanceOutput() OdaInstanceOutput {
 
 func (o OdaInstanceOutput) ToOdaInstanceOutputWithContext(ctx context.Context) OdaInstanceOutput {
 	return o
+}
+
+func (o OdaInstanceOutput) ToOutput(ctx context.Context) pulumix.Output[*OdaInstance] {
+	return pulumix.Output[*OdaInstance]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A list of attachment identifiers for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
@@ -519,6 +544,12 @@ func (o OdaInstanceArrayOutput) ToOdaInstanceArrayOutputWithContext(ctx context.
 	return o
 }
 
+func (o OdaInstanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*OdaInstance] {
+	return pulumix.Output[[]*OdaInstance]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o OdaInstanceArrayOutput) Index(i pulumi.IntInput) OdaInstanceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *OdaInstance {
 		return vs[0].([]*OdaInstance)[vs[1].(int)]
@@ -537,6 +568,12 @@ func (o OdaInstanceMapOutput) ToOdaInstanceMapOutput() OdaInstanceMapOutput {
 
 func (o OdaInstanceMapOutput) ToOdaInstanceMapOutputWithContext(ctx context.Context) OdaInstanceMapOutput {
 	return o
+}
+
+func (o OdaInstanceMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*OdaInstance] {
+	return pulumix.Output[map[string]*OdaInstance]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o OdaInstanceMapOutput) MapIndex(k pulumi.StringInput) OdaInstanceOutput {

@@ -63,7 +63,7 @@ public class DiscoveryJobsResult extends com.pulumi.resources.CustomResource {
      * Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
      * 
      */
-    @Export(name="appDefinedChildColumnKeys", type=List.class, parameters={String.class})
+    @Export(name="appDefinedChildColumnKeys", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> appDefinedChildColumnKeys;
 
     /**
@@ -77,7 +77,7 @@ public class DiscoveryJobsResult extends com.pulumi.resources.CustomResource {
      * The name of the application. An application is an entity that is identified by a schema and stores sensitive information for that schema. Its value will be same as schemaName, if no value is passed.
      * 
      */
-    @Export(name="appName", type=String.class, parameters={})
+    @Export(name="appName", refs={String.class}, tree="[0]")
     private Output<String> appName;
 
     /**
@@ -91,7 +91,7 @@ public class DiscoveryJobsResult extends com.pulumi.resources.CustomResource {
      * The name of the sensitive column.
      * 
      */
-    @Export(name="columnName", type=String.class, parameters={})
+    @Export(name="columnName", refs={String.class}, tree="[0]")
     private Output<String> columnName;
 
     /**
@@ -105,7 +105,7 @@ public class DiscoveryJobsResult extends com.pulumi.resources.CustomResource {
      * The data type of the sensitive column.
      * 
      */
-    @Export(name="dataType", type=String.class, parameters={})
+    @Export(name="dataType", refs={String.class}, tree="[0]")
     private Output<String> dataType;
 
     /**
@@ -119,7 +119,7 @@ public class DiscoveryJobsResult extends com.pulumi.resources.CustomResource {
      * Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
      * 
      */
-    @Export(name="dbDefinedChildColumnKeys", type=List.class, parameters={String.class})
+    @Export(name="dbDefinedChildColumnKeys", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> dbDefinedChildColumnKeys;
 
     /**
@@ -137,7 +137,7 @@ public class DiscoveryJobsResult extends com.pulumi.resources.CustomResource {
      * 
      */
     @Deprecated /* The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported. */
-    @Export(name="discoveryJobId", type=String.class, parameters={})
+    @Export(name="discoveryJobId", refs={String.class}, tree="[0]")
     private Output<String> discoveryJobId;
 
     /**
@@ -155,7 +155,7 @@ public class DiscoveryJobsResult extends com.pulumi.resources.CustomResource {
      * 
      */
     @Deprecated /* The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported. */
-    @Export(name="discoveryType", type=String.class, parameters={})
+    @Export(name="discoveryType", refs={String.class}, tree="[0]")
     private Output<String> discoveryType;
 
     /**
@@ -169,7 +169,7 @@ public class DiscoveryJobsResult extends com.pulumi.resources.CustomResource {
      * The estimated number of data values the column has in the associated database.
      * 
      */
-    @Export(name="estimatedDataValueCount", type=String.class, parameters={})
+    @Export(name="estimatedDataValueCount", refs={String.class}, tree="[0]")
     private Output<String> estimatedDataValueCount;
 
     /**
@@ -183,7 +183,7 @@ public class DiscoveryJobsResult extends com.pulumi.resources.CustomResource {
      * Indicates if the discovery result has been processed. You can update this attribute using the PatchDiscoveryJobResults operation to track whether the discovery result has already been processed and applied to the sensitive data model.
      * 
      */
-    @Export(name="isResultApplied", type=Boolean.class, parameters={})
+    @Export(name="isResultApplied", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isResultApplied;
 
     /**
@@ -201,7 +201,7 @@ public class DiscoveryJobsResult extends com.pulumi.resources.CustomResource {
      * 
      */
     @Deprecated /* The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported. */
-    @Export(name="key", type=String.class, parameters={})
+    @Export(name="key", refs={String.class}, tree="[0]")
     private Output<String> key;
 
     /**
@@ -215,7 +215,7 @@ public class DiscoveryJobsResult extends com.pulumi.resources.CustomResource {
      * The attributes of a sensitive column that have been modified in the target database. It&#39;s populated only in the case of MODIFIED discovery results and shows the new values of the modified attributes.
      * 
      */
-    @Export(name="modifiedAttributes", type=List.class, parameters={DiscoveryJobsResultModifiedAttribute.class})
+    @Export(name="modifiedAttributes", refs={List.class,DiscoveryJobsResultModifiedAttribute.class}, tree="[0,1]")
     private Output<List<DiscoveryJobsResultModifiedAttribute>> modifiedAttributes;
 
     /**
@@ -229,7 +229,7 @@ public class DiscoveryJobsResult extends com.pulumi.resources.CustomResource {
      * The database object that contains the sensitive column.
      * 
      */
-    @Export(name="object", type=String.class, parameters={})
+    @Export(name="object", refs={String.class}, tree="[0]")
     private Output<String> object;
 
     /**
@@ -243,7 +243,7 @@ public class DiscoveryJobsResult extends com.pulumi.resources.CustomResource {
      * The type of the database object that contains the sensitive column.
      * 
      */
-    @Export(name="objectType", type=String.class, parameters={})
+    @Export(name="objectType", refs={String.class}, tree="[0]")
     private Output<String> objectType;
 
     /**
@@ -257,7 +257,7 @@ public class DiscoveryJobsResult extends com.pulumi.resources.CustomResource {
      * Unique keys identifying the columns that are parents of the sensitive column. At present, it tracks a single parent only.
      * 
      */
-    @Export(name="parentColumnKeys", type=List.class, parameters={String.class})
+    @Export(name="parentColumnKeys", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> parentColumnKeys;
 
     /**
@@ -271,7 +271,7 @@ public class DiscoveryJobsResult extends com.pulumi.resources.CustomResource {
      * Specifies how to process the discovery result. It&#39;s set to NONE by default. Use the PatchDiscoveryJobResults operation to update this attribute. You can choose one of the following options: ACCEPT: To accept the discovery result and update the sensitive data model to reflect the changes. REJECT: To reject the discovery result so that it doesn&#39;t change the sensitive data model. INVALIDATE: To invalidate a newly discovered column. It adds the column to the sensitive data model but marks it as invalid. It helps track false positives and ensure that they aren&#39;t reported by future discovery jobs. After specifying the planned action, you can use the ApplyDiscoveryJobResults operation to automatically process the discovery results.
      * 
      */
-    @Export(name="plannedAction", type=String.class, parameters={})
+    @Export(name="plannedAction", refs={String.class}, tree="[0]")
     private Output<String> plannedAction;
 
     /**
@@ -285,7 +285,7 @@ public class DiscoveryJobsResult extends com.pulumi.resources.CustomResource {
      * The type of referential relationship the sensitive column has with its parent. NONE indicates that the sensitive column does not have a parent. DB_DEFINED indicates that the relationship is defined in the database dictionary. APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
      * 
      */
-    @Export(name="relationType", type=String.class, parameters={})
+    @Export(name="relationType", refs={String.class}, tree="[0]")
     private Output<String> relationType;
 
     /**
@@ -299,7 +299,7 @@ public class DiscoveryJobsResult extends com.pulumi.resources.CustomResource {
      * Original data values collected for the sensitive column from the associated database. Sample data helps review the column and ensure that it actually contains sensitive data. Note that sample data is retrieved by a data discovery job only if the isSampleDataCollectionEnabled attribute is set to true. At present, only one data value is collected per sensitive column.
      * 
      */
-    @Export(name="sampleDataValues", type=List.class, parameters={String.class})
+    @Export(name="sampleDataValues", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> sampleDataValues;
 
     /**
@@ -313,7 +313,7 @@ public class DiscoveryJobsResult extends com.pulumi.resources.CustomResource {
      * The database schema that contains the sensitive column.
      * 
      */
-    @Export(name="schemaName", type=String.class, parameters={})
+    @Export(name="schemaName", refs={String.class}, tree="[0]")
     private Output<String> schemaName;
 
     /**
@@ -327,7 +327,7 @@ public class DiscoveryJobsResult extends com.pulumi.resources.CustomResource {
      * The unique key that identifies the sensitive column represented by the discovery result.
      * 
      */
-    @Export(name="sensitiveColumnkey", type=String.class, parameters={})
+    @Export(name="sensitiveColumnkey", refs={String.class}, tree="[0]")
     private Output<String> sensitiveColumnkey;
 
     /**
@@ -341,7 +341,7 @@ public class DiscoveryJobsResult extends com.pulumi.resources.CustomResource {
      * The OCID of the sensitive type associated with the sensitive column.
      * 
      */
-    @Export(name="sensitiveTypeId", type=String.class, parameters={})
+    @Export(name="sensitiveTypeId", refs={String.class}, tree="[0]")
     private Output<String> sensitiveTypeId;
 
     /**

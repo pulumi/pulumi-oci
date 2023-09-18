@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Vantage Points in Oracle Cloud Infrastructure Health Checks service.
@@ -112,6 +113,12 @@ func (o GetVantagePointsResultOutput) ToGetVantagePointsResultOutput() GetVantag
 
 func (o GetVantagePointsResultOutput) ToGetVantagePointsResultOutputWithContext(ctx context.Context) GetVantagePointsResultOutput {
 	return o
+}
+
+func (o GetVantagePointsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVantagePointsResult] {
+	return pulumix.Output[GetVantagePointsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The display name for the vantage point. Display names are determined by the best information available and may change over time.

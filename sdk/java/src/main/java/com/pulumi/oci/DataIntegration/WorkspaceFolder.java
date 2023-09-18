@@ -85,7 +85,7 @@ public class WorkspaceFolder extends com.pulumi.resources.CustomResource {
      * (Updatable) The category name.
      * 
      */
-    @Export(name="categoryName", type=String.class, parameters={})
+    @Export(name="categoryName", refs={String.class}, tree="[0]")
     private Output<String> categoryName;
 
     /**
@@ -99,7 +99,7 @@ public class WorkspaceFolder extends com.pulumi.resources.CustomResource {
      * (Updatable) A user defined description for the folder.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -109,7 +109,7 @@ public class WorkspaceFolder extends com.pulumi.resources.CustomResource {
     public Output<String> description() {
         return this.description;
     }
-    @Export(name="folderKey", type=String.class, parameters={})
+    @Export(name="folderKey", refs={String.class}, tree="[0]")
     private Output<String> folderKey;
 
     public Output<String> folderKey() {
@@ -119,7 +119,7 @@ public class WorkspaceFolder extends com.pulumi.resources.CustomResource {
      * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      * 
      */
-    @Export(name="identifier", type=String.class, parameters={})
+    @Export(name="identifier", refs={String.class}, tree="[0]")
     private Output<String> identifier;
 
     /**
@@ -133,7 +133,7 @@ public class WorkspaceFolder extends com.pulumi.resources.CustomResource {
      * (Updatable) The identifying key for the object.
      * 
      */
-    @Export(name="key", type=String.class, parameters={})
+    @Export(name="key", refs={String.class}, tree="[0]")
     private Output<String> key;
 
     /**
@@ -147,7 +147,7 @@ public class WorkspaceFolder extends com.pulumi.resources.CustomResource {
      * A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      * 
      */
-    @Export(name="keyMap", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="keyMap", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> keyMap;
 
     /**
@@ -161,7 +161,7 @@ public class WorkspaceFolder extends com.pulumi.resources.CustomResource {
      * A summary type containing information about the object including its key, name and when/who created/updated it.
      * 
      */
-    @Export(name="metadatas", type=List.class, parameters={WorkspaceFolderMetadata.class})
+    @Export(name="metadatas", refs={List.class,WorkspaceFolderMetadata.class}, tree="[0,1]")
     private Output<List<WorkspaceFolderMetadata>> metadatas;
 
     /**
@@ -175,7 +175,7 @@ public class WorkspaceFolder extends com.pulumi.resources.CustomResource {
      * The type of the object.
      * 
      */
-    @Export(name="modelType", type=String.class, parameters={})
+    @Export(name="modelType", refs={String.class}, tree="[0]")
     private Output<String> modelType;
 
     /**
@@ -189,7 +189,7 @@ public class WorkspaceFolder extends com.pulumi.resources.CustomResource {
      * (Updatable) The model version of an object.
      * 
      */
-    @Export(name="modelVersion", type=String.class, parameters={})
+    @Export(name="modelVersion", refs={String.class}, tree="[0]")
     private Output<String> modelVersion;
 
     /**
@@ -203,7 +203,7 @@ public class WorkspaceFolder extends com.pulumi.resources.CustomResource {
      * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -217,7 +217,7 @@ public class WorkspaceFolder extends com.pulumi.resources.CustomResource {
      * (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      * 
      */
-    @Export(name="objectStatus", type=Integer.class, parameters={})
+    @Export(name="objectStatus", refs={Integer.class}, tree="[0]")
     private Output<Integer> objectStatus;
 
     /**
@@ -231,7 +231,7 @@ public class WorkspaceFolder extends com.pulumi.resources.CustomResource {
      * The version of the object that is used to track changes in the object instance.
      * 
      */
-    @Export(name="objectVersion", type=Integer.class, parameters={})
+    @Export(name="objectVersion", refs={Integer.class}, tree="[0]")
     private Output<Integer> objectVersion;
 
     /**
@@ -245,7 +245,7 @@ public class WorkspaceFolder extends com.pulumi.resources.CustomResource {
      * A reference to the object&#39;s parent.
      * 
      */
-    @Export(name="parentReves", type=List.class, parameters={WorkspaceFolderParentRef.class})
+    @Export(name="parentReves", refs={List.class,WorkspaceFolderParentRef.class}, tree="[0,1]")
     private Output<List<WorkspaceFolderParentRef>> parentReves;
 
     /**
@@ -259,7 +259,7 @@ public class WorkspaceFolder extends com.pulumi.resources.CustomResource {
      * (Updatable) Information about the object and its parent.
      * 
      */
-    @Export(name="registryMetadata", type=WorkspaceFolderRegistryMetadata.class, parameters={})
+    @Export(name="registryMetadata", refs={WorkspaceFolderRegistryMetadata.class}, tree="[0]")
     private Output<WorkspaceFolderRegistryMetadata> registryMetadata;
 
     /**
@@ -276,7 +276,7 @@ public class WorkspaceFolder extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="workspaceId", type=String.class, parameters={})
+    @Export(name="workspaceId", refs={String.class}, tree="[0]")
     private Output<String> workspaceId;
 
     /**

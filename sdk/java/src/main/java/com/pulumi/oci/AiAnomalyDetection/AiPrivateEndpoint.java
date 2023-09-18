@@ -71,7 +71,7 @@ public class AiPrivateEndpoint extends com.pulumi.resources.CustomResource {
      * The list of dataAssets using the private reverse connection endpoint.
      * 
      */
-    @Export(name="attachedDataAssets", type=List.class, parameters={String.class})
+    @Export(name="attachedDataAssets", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> attachedDataAssets;
 
     /**
@@ -85,7 +85,7 @@ public class AiPrivateEndpoint extends com.pulumi.resources.CustomResource {
      * (Updatable) Compartment identifier.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -99,7 +99,7 @@ public class AiPrivateEndpoint extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -113,7 +113,7 @@ public class AiPrivateEndpoint extends com.pulumi.resources.CustomResource {
      * (Updatable) Display name of the private endpoint resource being created.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -127,7 +127,7 @@ public class AiPrivateEndpoint extends com.pulumi.resources.CustomResource {
      * (Updatable) List of DNS zones to be used by the data assets. Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
      * 
      */
-    @Export(name="dnsZones", type=List.class, parameters={String.class})
+    @Export(name="dnsZones", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> dnsZones;
 
     /**
@@ -141,7 +141,7 @@ public class AiPrivateEndpoint extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -155,7 +155,7 @@ public class AiPrivateEndpoint extends com.pulumi.resources.CustomResource {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in &#39;Failed&#39; state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -169,7 +169,7 @@ public class AiPrivateEndpoint extends com.pulumi.resources.CustomResource {
      * The current state of the private endpoint resource.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -186,7 +186,7 @@ public class AiPrivateEndpoint extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="subnetId", type=String.class, parameters={})
+    @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
@@ -203,7 +203,7 @@ public class AiPrivateEndpoint extends com.pulumi.resources.CustomResource {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -217,7 +217,7 @@ public class AiPrivateEndpoint extends com.pulumi.resources.CustomResource {
      * The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -231,7 +231,7 @@ public class AiPrivateEndpoint extends com.pulumi.resources.CustomResource {
      * The time the private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

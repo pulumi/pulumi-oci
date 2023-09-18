@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Vb Instance resource in Oracle Cloud Infrastructure Visual Builder service.
@@ -142,6 +143,12 @@ func (o LookupVbInstanceResultOutput) ToLookupVbInstanceResultOutput() LookupVbI
 
 func (o LookupVbInstanceResultOutput) ToLookupVbInstanceResultOutputWithContext(ctx context.Context) LookupVbInstanceResultOutput {
 	return o
+}
+
+func (o LookupVbInstanceResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupVbInstanceResult] {
+	return pulumix.Output[LookupVbInstanceResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A list of alternate custom endpoints used for the vb instance URL.

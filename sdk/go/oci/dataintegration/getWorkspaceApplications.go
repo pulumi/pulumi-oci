@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Workspace Applications in Oracle Cloud Infrastructure Data Integration service.
@@ -131,6 +132,12 @@ func (o GetWorkspaceApplicationsResultOutput) ToGetWorkspaceApplicationsResultOu
 
 func (o GetWorkspaceApplicationsResultOutput) ToGetWorkspaceApplicationsResultOutputWithContext(ctx context.Context) GetWorkspaceApplicationsResultOutput {
 	return o
+}
+
+func (o GetWorkspaceApplicationsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceApplicationsResult] {
+	return pulumix.Output[GetWorkspaceApplicationsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The list of application_summary_collection.

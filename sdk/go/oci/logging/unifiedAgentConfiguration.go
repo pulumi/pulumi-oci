@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Unified Agent Configuration resource in Oracle Cloud Infrastructure Logging service.
@@ -305,6 +306,12 @@ func (i *UnifiedAgentConfiguration) ToUnifiedAgentConfigurationOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationOutput)
 }
 
+func (i *UnifiedAgentConfiguration) ToOutput(ctx context.Context) pulumix.Output[*UnifiedAgentConfiguration] {
+	return pulumix.Output[*UnifiedAgentConfiguration]{
+		OutputState: i.ToUnifiedAgentConfigurationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // UnifiedAgentConfigurationArrayInput is an input type that accepts UnifiedAgentConfigurationArray and UnifiedAgentConfigurationArrayOutput values.
 // You can construct a concrete instance of `UnifiedAgentConfigurationArrayInput` via:
 //
@@ -328,6 +335,12 @@ func (i UnifiedAgentConfigurationArray) ToUnifiedAgentConfigurationArrayOutput()
 
 func (i UnifiedAgentConfigurationArray) ToUnifiedAgentConfigurationArrayOutputWithContext(ctx context.Context) UnifiedAgentConfigurationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationArrayOutput)
+}
+
+func (i UnifiedAgentConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]*UnifiedAgentConfiguration] {
+	return pulumix.Output[[]*UnifiedAgentConfiguration]{
+		OutputState: i.ToUnifiedAgentConfigurationArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // UnifiedAgentConfigurationMapInput is an input type that accepts UnifiedAgentConfigurationMap and UnifiedAgentConfigurationMapOutput values.
@@ -355,6 +368,12 @@ func (i UnifiedAgentConfigurationMap) ToUnifiedAgentConfigurationMapOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationMapOutput)
 }
 
+func (i UnifiedAgentConfigurationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*UnifiedAgentConfiguration] {
+	return pulumix.Output[map[string]*UnifiedAgentConfiguration]{
+		OutputState: i.ToUnifiedAgentConfigurationMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type UnifiedAgentConfigurationOutput struct{ *pulumi.OutputState }
 
 func (UnifiedAgentConfigurationOutput) ElementType() reflect.Type {
@@ -367,6 +386,12 @@ func (o UnifiedAgentConfigurationOutput) ToUnifiedAgentConfigurationOutput() Uni
 
 func (o UnifiedAgentConfigurationOutput) ToUnifiedAgentConfigurationOutputWithContext(ctx context.Context) UnifiedAgentConfigurationOutput {
 	return o
+}
+
+func (o UnifiedAgentConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[*UnifiedAgentConfiguration] {
+	return pulumix.Output[*UnifiedAgentConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The OCID of the compartment that the resource belongs to.
@@ -447,6 +472,12 @@ func (o UnifiedAgentConfigurationArrayOutput) ToUnifiedAgentConfigurationArrayOu
 	return o
 }
 
+func (o UnifiedAgentConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*UnifiedAgentConfiguration] {
+	return pulumix.Output[[]*UnifiedAgentConfiguration]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o UnifiedAgentConfigurationArrayOutput) Index(i pulumi.IntInput) UnifiedAgentConfigurationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *UnifiedAgentConfiguration {
 		return vs[0].([]*UnifiedAgentConfiguration)[vs[1].(int)]
@@ -465,6 +496,12 @@ func (o UnifiedAgentConfigurationMapOutput) ToUnifiedAgentConfigurationMapOutput
 
 func (o UnifiedAgentConfigurationMapOutput) ToUnifiedAgentConfigurationMapOutputWithContext(ctx context.Context) UnifiedAgentConfigurationMapOutput {
 	return o
+}
+
+func (o UnifiedAgentConfigurationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*UnifiedAgentConfiguration] {
+	return pulumix.Output[map[string]*UnifiedAgentConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o UnifiedAgentConfigurationMapOutput) MapIndex(k pulumi.StringInput) UnifiedAgentConfigurationOutput {

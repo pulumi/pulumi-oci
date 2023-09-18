@@ -106,7 +106,7 @@ public class VirtualNodePool extends com.pulumi.resources.CustomResource {
      * The cluster the virtual node pool is associated with. A virtual node pool can only be associated with one cluster.
      * 
      */
-    @Export(name="clusterId", type=String.class, parameters={})
+    @Export(name="clusterId", refs={String.class}, tree="[0]")
     private Output<String> clusterId;
 
     /**
@@ -120,7 +120,7 @@ public class VirtualNodePool extends com.pulumi.resources.CustomResource {
      * Compartment of the virtual node pool.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -134,7 +134,7 @@ public class VirtualNodePool extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -148,7 +148,7 @@ public class VirtualNodePool extends com.pulumi.resources.CustomResource {
      * (Updatable) Display name of the virtual node pool. This is a non-unique value.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -165,7 +165,7 @@ public class VirtualNodePool extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -182,7 +182,7 @@ public class VirtualNodePool extends com.pulumi.resources.CustomResource {
      * (Updatable) Initial labels that will be added to the Kubernetes Virtual Node object when it registers.
      * 
      */
-    @Export(name="initialVirtualNodeLabels", type=List.class, parameters={VirtualNodePoolInitialVirtualNodeLabel.class})
+    @Export(name="initialVirtualNodeLabels", refs={List.class,VirtualNodePoolInitialVirtualNodeLabel.class}, tree="[0,1]")
     private Output<List<VirtualNodePoolInitialVirtualNodeLabel>> initialVirtualNodeLabels;
 
     /**
@@ -196,7 +196,7 @@ public class VirtualNodePool extends com.pulumi.resources.CustomResource {
      * The version of Kubernetes running on the nodes in the node pool.
      * 
      */
-    @Export(name="kubernetesVersion", type=String.class, parameters={})
+    @Export(name="kubernetesVersion", refs={String.class}, tree="[0]")
     private Output<String> kubernetesVersion;
 
     /**
@@ -210,7 +210,7 @@ public class VirtualNodePool extends com.pulumi.resources.CustomResource {
      * Details about the state of the Virtual Node Pool.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -224,7 +224,7 @@ public class VirtualNodePool extends com.pulumi.resources.CustomResource {
      * (Updatable) List of network security group IDs applied to the Pod VNIC.
      * 
      */
-    @Export(name="nsgIds", type=List.class, parameters={String.class})
+    @Export(name="nsgIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> nsgIds;
 
     /**
@@ -238,7 +238,7 @@ public class VirtualNodePool extends com.pulumi.resources.CustomResource {
      * (Updatable) The list of placement configurations which determines where Virtual Nodes will be provisioned across as it relates to the subnet and availability domains. The size attribute determines how many we evenly spread across these placement configurations
      * 
      */
-    @Export(name="placementConfigurations", type=List.class, parameters={VirtualNodePoolPlacementConfiguration.class})
+    @Export(name="placementConfigurations", refs={List.class,VirtualNodePoolPlacementConfiguration.class}, tree="[0,1]")
     private Output<List<VirtualNodePoolPlacementConfiguration>> placementConfigurations;
 
     /**
@@ -252,7 +252,7 @@ public class VirtualNodePool extends com.pulumi.resources.CustomResource {
      * (Updatable) The pod configuration for pods run on virtual nodes of this virtual node pool.
      * 
      */
-    @Export(name="podConfiguration", type=VirtualNodePoolPodConfiguration.class, parameters={})
+    @Export(name="podConfiguration", refs={VirtualNodePoolPodConfiguration.class}, tree="[0]")
     private Output<VirtualNodePoolPodConfiguration> podConfiguration;
 
     /**
@@ -266,7 +266,7 @@ public class VirtualNodePool extends com.pulumi.resources.CustomResource {
      * (Updatable) The number of Virtual Nodes that should be in the Virtual Node Pool. The placement configurations determine where these virtual nodes are placed.
      * 
      */
-    @Export(name="size", type=Integer.class, parameters={})
+    @Export(name="size", refs={Integer.class}, tree="[0]")
     private Output<Integer> size;
 
     /**
@@ -280,7 +280,7 @@ public class VirtualNodePool extends com.pulumi.resources.CustomResource {
      * The state of the Virtual Node Pool.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -294,7 +294,7 @@ public class VirtualNodePool extends com.pulumi.resources.CustomResource {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -308,7 +308,7 @@ public class VirtualNodePool extends com.pulumi.resources.CustomResource {
      * (Updatable) A taint is a collection of &lt;key, value, effect&gt;. These taints will be applied to the Virtual Nodes of this Virtual Node Pool for Kubernetes scheduling.
      * 
      */
-    @Export(name="taints", type=List.class, parameters={VirtualNodePoolTaint.class})
+    @Export(name="taints", refs={List.class,VirtualNodePoolTaint.class}, tree="[0,1]")
     private Output<List<VirtualNodePoolTaint>> taints;
 
     /**
@@ -322,7 +322,7 @@ public class VirtualNodePool extends com.pulumi.resources.CustomResource {
      * The time the virtual node pool was created.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -336,7 +336,7 @@ public class VirtualNodePool extends com.pulumi.resources.CustomResource {
      * The time the virtual node pool was updated.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -350,7 +350,7 @@ public class VirtualNodePool extends com.pulumi.resources.CustomResource {
      * (Updatable) The tags associated to the virtual nodes in this virtual node pool.
      * 
      */
-    @Export(name="virtualNodeTags", type=VirtualNodePoolVirtualNodeTags.class, parameters={})
+    @Export(name="virtualNodeTags", refs={VirtualNodePoolVirtualNodeTags.class}, tree="[0]")
     private Output<VirtualNodePoolVirtualNodeTags> virtualNodeTags;
 
     /**

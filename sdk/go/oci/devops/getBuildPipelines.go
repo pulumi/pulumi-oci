@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Build Pipelines in Oracle Cloud Infrastructure Devops service.
@@ -131,6 +132,12 @@ func (o GetBuildPipelinesResultOutput) ToGetBuildPipelinesResultOutput() GetBuil
 
 func (o GetBuildPipelinesResultOutput) ToGetBuildPipelinesResultOutputWithContext(ctx context.Context) GetBuildPipelinesResultOutput {
 	return o
+}
+
+func (o GetBuildPipelinesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetBuildPipelinesResult] {
+	return pulumix.Output[GetBuildPipelinesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The list of build_pipeline_collection.

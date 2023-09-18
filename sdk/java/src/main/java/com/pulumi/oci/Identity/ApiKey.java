@@ -75,7 +75,7 @@ public class ApiKey extends com.pulumi.resources.CustomResource {
      * The key&#39;s fingerprint (e.g., 12:34:56:78:90:ab:cd:ef:12:34:56:78:90:ab:cd:ef).
      * 
      */
-    @Export(name="fingerprint", type=String.class, parameters={})
+    @Export(name="fingerprint", refs={String.class}, tree="[0]")
     private Output<String> fingerprint;
 
     /**
@@ -89,7 +89,7 @@ public class ApiKey extends com.pulumi.resources.CustomResource {
      * The detailed status of INACTIVE lifecycleState.
      * 
      */
-    @Export(name="inactiveStatus", type=String.class, parameters={})
+    @Export(name="inactiveStatus", refs={String.class}, tree="[0]")
     private Output<String> inactiveStatus;
 
     /**
@@ -103,7 +103,7 @@ public class ApiKey extends com.pulumi.resources.CustomResource {
      * The public key.  Must be an RSA key in PEM format.
      * 
      */
-    @Export(name="keyValue", type=String.class, parameters={})
+    @Export(name="keyValue", refs={String.class}, tree="[0]")
     private Output<String> keyValue;
 
     /**
@@ -117,7 +117,7 @@ public class ApiKey extends com.pulumi.resources.CustomResource {
      * The API key&#39;s current state.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -131,7 +131,7 @@ public class ApiKey extends com.pulumi.resources.CustomResource {
      * Date and time the `ApiKey` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -148,7 +148,7 @@ public class ApiKey extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="userId", type=String.class, parameters={})
+    @Export(name="userId", refs={String.class}, tree="[0]")
     private Output<String> userId;
 
     /**

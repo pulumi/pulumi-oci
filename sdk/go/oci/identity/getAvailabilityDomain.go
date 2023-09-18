@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the details of a single Availability Domain in Oracle Cloud Infrastructure Identity service.
@@ -112,6 +113,12 @@ func (o GetAvailabilityDomainResultOutput) ToGetAvailabilityDomainResultOutput()
 
 func (o GetAvailabilityDomainResultOutput) ToGetAvailabilityDomainResultOutputWithContext(ctx context.Context) GetAvailabilityDomainResultOutput {
 	return o
+}
+
+func (o GetAvailabilityDomainResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAvailabilityDomainResult] {
+	return pulumix.Output[GetAvailabilityDomainResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The number of the Availability Domain. For example, the `adNumber` for YXol:US-ASHBURN-AD-1 would be "1"

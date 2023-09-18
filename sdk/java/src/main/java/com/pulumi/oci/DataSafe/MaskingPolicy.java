@@ -106,7 +106,7 @@ public class MaskingPolicy extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="addMaskingColumnsFromSdmTrigger", type=Integer.class, parameters={})
+    @Export(name="addMaskingColumnsFromSdmTrigger", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> addMaskingColumnsFromSdmTrigger;
 
     /**
@@ -123,7 +123,7 @@ public class MaskingPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) The source of masking columns.
      * 
      */
-    @Export(name="columnSources", type=List.class, parameters={MaskingPolicyColumnSource.class})
+    @Export(name="columnSources", refs={List.class,MaskingPolicyColumnSource.class}, tree="[0,1]")
     private Output<List<MaskingPolicyColumnSource>> columnSources;
 
     /**
@@ -137,7 +137,7 @@ public class MaskingPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the compartment where the masking policy should be created.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -151,7 +151,7 @@ public class MaskingPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -165,7 +165,7 @@ public class MaskingPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) The description of the masking policy.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -179,7 +179,7 @@ public class MaskingPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) The display name of the masking policy. The name does not have to be unique, and it&#39;s changeable.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -193,7 +193,7 @@ public class MaskingPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -207,7 +207,7 @@ public class MaskingPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) Indicates if the temporary tables created during a masking operation should be dropped after masking. It&#39;s enabled by default. Set this attribute to false to preserve the temporary tables. Masking creates temporary tables that map the original sensitive  data values to mask values. By default, these temporary tables are dropped after masking. But, in some cases, you may want  to preserve this information to track how masking changed your data. Note that doing so compromises security. These tables  must be dropped before the database is available for unprivileged users.
      * 
      */
-    @Export(name="isDropTempTablesEnabled", type=Boolean.class, parameters={})
+    @Export(name="isDropTempTablesEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isDropTempTablesEnabled;
 
     /**
@@ -221,7 +221,7 @@ public class MaskingPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) Indicates if redo logging is enabled during a masking operation. It&#39;s disabled by default. Set this attribute to true to enable redo logging. By default, masking disables redo logging and flashback logging to purge any original unmasked  data from logs. However, in certain circumstances when you only want to test masking, rollback changes, and retry masking, you could enable logging and use a flashback database to retrieve the original unmasked data after it has been masked.
      * 
      */
-    @Export(name="isRedoLoggingEnabled", type=Boolean.class, parameters={})
+    @Export(name="isRedoLoggingEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isRedoLoggingEnabled;
 
     /**
@@ -235,7 +235,7 @@ public class MaskingPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) Indicates if statistics gathering is enabled. It&#39;s enabled by default. Set this attribute to false to disable statistics gathering. The masking process gathers statistics on masked database tables after masking completes.
      * 
      */
-    @Export(name="isRefreshStatsEnabled", type=Boolean.class, parameters={})
+    @Export(name="isRefreshStatsEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isRefreshStatsEnabled;
 
     /**
@@ -249,7 +249,7 @@ public class MaskingPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) Specifies options to enable parallel execution when running data masking. Allowed values are &#39;NONE&#39; (no parallelism), &#39;DEFAULT&#39; (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree of parallelism. Parallel execution helps effectively use multiple CPUs and improve masking performance. Refer to the Oracle Database parallel execution framework when choosing an explicit degree of parallelism.
      * 
      */
-    @Export(name="parallelDegree", type=String.class, parameters={})
+    @Export(name="parallelDegree", refs={String.class}, tree="[0]")
     private Output<String> parallelDegree;
 
     /**
@@ -263,7 +263,7 @@ public class MaskingPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) A post-masking script, which can contain SQL and PL/SQL statements. It&#39;s executed after the core masking script generated using the masking policy. It&#39;s usually used to perform additional transformation or cleanup work after masking.
      * 
      */
-    @Export(name="postMaskingScript", type=String.class, parameters={})
+    @Export(name="postMaskingScript", refs={String.class}, tree="[0]")
     private Output<String> postMaskingScript;
 
     /**
@@ -277,7 +277,7 @@ public class MaskingPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) A pre-masking script, which can contain SQL and PL/SQL statements. It&#39;s executed before  the core masking script generated using the masking policy. It&#39;s usually used to perform any preparation or prerequisite work before masking data.
      * 
      */
-    @Export(name="preMaskingScript", type=String.class, parameters={})
+    @Export(name="preMaskingScript", refs={String.class}, tree="[0]")
     private Output<String> preMaskingScript;
 
     /**
@@ -291,7 +291,7 @@ public class MaskingPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) Specifies how to recompile invalid objects post data masking. Allowed values are &#39;SERIAL&#39; (recompile in serial),  &#39;PARALLEL&#39; (recompile in parallel), &#39;NONE&#39; (do not recompile). If it&#39;s set to PARALLEL, the value of parallelDegree attribute is used. Note that few objects may remain invalid even after recompiling once and you may have to further recompile manually using UTL_RECOMP package.
      * 
      */
-    @Export(name="recompile", type=String.class, parameters={})
+    @Export(name="recompile", refs={String.class}, tree="[0]")
     private Output<String> recompile;
 
     /**
@@ -305,7 +305,7 @@ public class MaskingPolicy extends com.pulumi.resources.CustomResource {
      * The current state of the masking policy.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -319,7 +319,7 @@ public class MaskingPolicy extends com.pulumi.resources.CustomResource {
      * The date and time the masking policy was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -333,7 +333,7 @@ public class MaskingPolicy extends com.pulumi.resources.CustomResource {
      * The date and time the masking policy was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

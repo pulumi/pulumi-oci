@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Autonomous Vm Cluster resource in Oracle Cloud Infrastructure Database service.
@@ -503,6 +504,12 @@ func (i *AutonomousVmCluster) ToAutonomousVmClusterOutputWithContext(ctx context
 	return pulumi.ToOutputWithContext(ctx, i).(AutonomousVmClusterOutput)
 }
 
+func (i *AutonomousVmCluster) ToOutput(ctx context.Context) pulumix.Output[*AutonomousVmCluster] {
+	return pulumix.Output[*AutonomousVmCluster]{
+		OutputState: i.ToAutonomousVmClusterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AutonomousVmClusterArrayInput is an input type that accepts AutonomousVmClusterArray and AutonomousVmClusterArrayOutput values.
 // You can construct a concrete instance of `AutonomousVmClusterArrayInput` via:
 //
@@ -526,6 +533,12 @@ func (i AutonomousVmClusterArray) ToAutonomousVmClusterArrayOutput() AutonomousV
 
 func (i AutonomousVmClusterArray) ToAutonomousVmClusterArrayOutputWithContext(ctx context.Context) AutonomousVmClusterArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AutonomousVmClusterArrayOutput)
+}
+
+func (i AutonomousVmClusterArray) ToOutput(ctx context.Context) pulumix.Output[[]*AutonomousVmCluster] {
+	return pulumix.Output[[]*AutonomousVmCluster]{
+		OutputState: i.ToAutonomousVmClusterArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // AutonomousVmClusterMapInput is an input type that accepts AutonomousVmClusterMap and AutonomousVmClusterMapOutput values.
@@ -553,6 +566,12 @@ func (i AutonomousVmClusterMap) ToAutonomousVmClusterMapOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(AutonomousVmClusterMapOutput)
 }
 
+func (i AutonomousVmClusterMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AutonomousVmCluster] {
+	return pulumix.Output[map[string]*AutonomousVmCluster]{
+		OutputState: i.ToAutonomousVmClusterMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AutonomousVmClusterOutput struct{ *pulumi.OutputState }
 
 func (AutonomousVmClusterOutput) ElementType() reflect.Type {
@@ -565,6 +584,12 @@ func (o AutonomousVmClusterOutput) ToAutonomousVmClusterOutput() AutonomousVmClu
 
 func (o AutonomousVmClusterOutput) ToAutonomousVmClusterOutputWithContext(ctx context.Context) AutonomousVmClusterOutput {
 	return o
+}
+
+func (o AutonomousVmClusterOutput) ToOutput(ctx context.Context) pulumix.Output[*AutonomousVmCluster] {
+	return pulumix.Output[*AutonomousVmCluster]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The data disk group size to be allocated for Autonomous Databases, in TBs.
@@ -784,6 +809,12 @@ func (o AutonomousVmClusterArrayOutput) ToAutonomousVmClusterArrayOutputWithCont
 	return o
 }
 
+func (o AutonomousVmClusterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AutonomousVmCluster] {
+	return pulumix.Output[[]*AutonomousVmCluster]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AutonomousVmClusterArrayOutput) Index(i pulumi.IntInput) AutonomousVmClusterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AutonomousVmCluster {
 		return vs[0].([]*AutonomousVmCluster)[vs[1].(int)]
@@ -802,6 +833,12 @@ func (o AutonomousVmClusterMapOutput) ToAutonomousVmClusterMapOutput() Autonomou
 
 func (o AutonomousVmClusterMapOutput) ToAutonomousVmClusterMapOutputWithContext(ctx context.Context) AutonomousVmClusterMapOutput {
 	return o
+}
+
+func (o AutonomousVmClusterMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AutonomousVmCluster] {
+	return pulumix.Output[map[string]*AutonomousVmCluster]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AutonomousVmClusterMapOutput) MapIndex(k pulumi.StringInput) AutonomousVmClusterOutput {

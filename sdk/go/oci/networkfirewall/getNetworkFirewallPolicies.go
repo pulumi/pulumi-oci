@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Network Firewall Policies in Oracle Cloud Infrastructure Network Firewall service.
@@ -124,6 +125,12 @@ func (o GetNetworkFirewallPoliciesResultOutput) ToGetNetworkFirewallPoliciesResu
 
 func (o GetNetworkFirewallPoliciesResultOutput) ToGetNetworkFirewallPoliciesResultOutputWithContext(ctx context.Context) GetNetworkFirewallPoliciesResultOutput {
 	return o
+}
+
+func (o GetNetworkFirewallPoliciesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPoliciesResult] {
+	return pulumix.Output[GetNetworkFirewallPoliciesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the NetworkFirewall Policy.

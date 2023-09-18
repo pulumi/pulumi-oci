@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific External Asm resource in Oracle Cloud Infrastructure Database Management service.
@@ -129,6 +130,12 @@ func (o LookupExternalAsmResultOutput) ToLookupExternalAsmResultOutput() LookupE
 
 func (o LookupExternalAsmResultOutput) ToLookupExternalAsmResultOutputWithContext(ctx context.Context) LookupExternalAsmResultOutput {
 	return o
+}
+
+func (o LookupExternalAsmResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupExternalAsmResult] {
+	return pulumix.Output[LookupExternalAsmResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The additional details of the external ASM defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`

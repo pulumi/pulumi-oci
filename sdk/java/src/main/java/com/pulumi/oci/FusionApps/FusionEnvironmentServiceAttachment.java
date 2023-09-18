@@ -68,7 +68,7 @@ public class FusionEnvironmentServiceAttachment extends com.pulumi.resources.Cus
      * Compartment Identifier
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -82,7 +82,7 @@ public class FusionEnvironmentServiceAttachment extends com.pulumi.resources.Cus
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -96,7 +96,7 @@ public class FusionEnvironmentServiceAttachment extends com.pulumi.resources.Cus
      * Service Attachment Display name, can be renamed
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -110,7 +110,7 @@ public class FusionEnvironmentServiceAttachment extends com.pulumi.resources.Cus
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -124,7 +124,7 @@ public class FusionEnvironmentServiceAttachment extends com.pulumi.resources.Cus
      * unique FusionEnvironment identifier
      * 
      */
-    @Export(name="fusionEnvironmentId", type=String.class, parameters={})
+    @Export(name="fusionEnvironmentId", refs={String.class}, tree="[0]")
     private Output<String> fusionEnvironmentId;
 
     /**
@@ -138,7 +138,7 @@ public class FusionEnvironmentServiceAttachment extends com.pulumi.resources.Cus
      * Whether this service is provisioned due to the customer being subscribed to a specific SKU
      * 
      */
-    @Export(name="isSkuBased", type=Boolean.class, parameters={})
+    @Export(name="isSkuBased", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isSkuBased;
 
     /**
@@ -152,7 +152,7 @@ public class FusionEnvironmentServiceAttachment extends com.pulumi.resources.Cus
      * The service instance OCID of the instance being attached
      * 
      */
-    @Export(name="serviceInstanceId", type=String.class, parameters={})
+    @Export(name="serviceInstanceId", refs={String.class}, tree="[0]")
     private Output<String> serviceInstanceId;
 
     /**
@@ -169,7 +169,7 @@ public class FusionEnvironmentServiceAttachment extends com.pulumi.resources.Cus
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="serviceInstanceType", type=String.class, parameters={})
+    @Export(name="serviceInstanceType", refs={String.class}, tree="[0]")
     private Output<String> serviceInstanceType;
 
     /**
@@ -186,7 +186,7 @@ public class FusionEnvironmentServiceAttachment extends com.pulumi.resources.Cus
      * Public URL
      * 
      */
-    @Export(name="serviceUrl", type=String.class, parameters={})
+    @Export(name="serviceUrl", refs={String.class}, tree="[0]")
     private Output<String> serviceUrl;
 
     /**
@@ -200,7 +200,7 @@ public class FusionEnvironmentServiceAttachment extends com.pulumi.resources.Cus
      * The current state of the ServiceInstance.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -214,7 +214,7 @@ public class FusionEnvironmentServiceAttachment extends com.pulumi.resources.Cus
      * The time the the ServiceInstance was created. An RFC3339 formatted datetime string
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -228,7 +228,7 @@ public class FusionEnvironmentServiceAttachment extends com.pulumi.resources.Cus
      * The time the ServiceInstance was updated. An RFC3339 formatted datetime string
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

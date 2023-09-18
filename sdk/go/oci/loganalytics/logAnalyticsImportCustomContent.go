@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Log Analytics Import Custom Content resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -213,6 +214,12 @@ func (i *LogAnalyticsImportCustomContent) ToLogAnalyticsImportCustomContentOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(LogAnalyticsImportCustomContentOutput)
 }
 
+func (i *LogAnalyticsImportCustomContent) ToOutput(ctx context.Context) pulumix.Output[*LogAnalyticsImportCustomContent] {
+	return pulumix.Output[*LogAnalyticsImportCustomContent]{
+		OutputState: i.ToLogAnalyticsImportCustomContentOutputWithContext(ctx).OutputState,
+	}
+}
+
 // LogAnalyticsImportCustomContentArrayInput is an input type that accepts LogAnalyticsImportCustomContentArray and LogAnalyticsImportCustomContentArrayOutput values.
 // You can construct a concrete instance of `LogAnalyticsImportCustomContentArrayInput` via:
 //
@@ -236,6 +243,12 @@ func (i LogAnalyticsImportCustomContentArray) ToLogAnalyticsImportCustomContentA
 
 func (i LogAnalyticsImportCustomContentArray) ToLogAnalyticsImportCustomContentArrayOutputWithContext(ctx context.Context) LogAnalyticsImportCustomContentArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(LogAnalyticsImportCustomContentArrayOutput)
+}
+
+func (i LogAnalyticsImportCustomContentArray) ToOutput(ctx context.Context) pulumix.Output[[]*LogAnalyticsImportCustomContent] {
+	return pulumix.Output[[]*LogAnalyticsImportCustomContent]{
+		OutputState: i.ToLogAnalyticsImportCustomContentArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // LogAnalyticsImportCustomContentMapInput is an input type that accepts LogAnalyticsImportCustomContentMap and LogAnalyticsImportCustomContentMapOutput values.
@@ -263,6 +276,12 @@ func (i LogAnalyticsImportCustomContentMap) ToLogAnalyticsImportCustomContentMap
 	return pulumi.ToOutputWithContext(ctx, i).(LogAnalyticsImportCustomContentMapOutput)
 }
 
+func (i LogAnalyticsImportCustomContentMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*LogAnalyticsImportCustomContent] {
+	return pulumix.Output[map[string]*LogAnalyticsImportCustomContent]{
+		OutputState: i.ToLogAnalyticsImportCustomContentMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type LogAnalyticsImportCustomContentOutput struct{ *pulumi.OutputState }
 
 func (LogAnalyticsImportCustomContentOutput) ElementType() reflect.Type {
@@ -275,6 +294,12 @@ func (o LogAnalyticsImportCustomContentOutput) ToLogAnalyticsImportCustomContent
 
 func (o LogAnalyticsImportCustomContentOutput) ToLogAnalyticsImportCustomContentOutputWithContext(ctx context.Context) LogAnalyticsImportCustomContentOutput {
 	return o
+}
+
+func (o LogAnalyticsImportCustomContentOutput) ToOutput(ctx context.Context) pulumix.Output[*LogAnalyticsImportCustomContent] {
+	return pulumix.Output[*LogAnalyticsImportCustomContent]{
+		OutputState: o.OutputState,
+	}
 }
 
 // LogAnalyticsImportCustomChangeList
@@ -341,6 +366,12 @@ func (o LogAnalyticsImportCustomContentArrayOutput) ToLogAnalyticsImportCustomCo
 	return o
 }
 
+func (o LogAnalyticsImportCustomContentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*LogAnalyticsImportCustomContent] {
+	return pulumix.Output[[]*LogAnalyticsImportCustomContent]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o LogAnalyticsImportCustomContentArrayOutput) Index(i pulumi.IntInput) LogAnalyticsImportCustomContentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *LogAnalyticsImportCustomContent {
 		return vs[0].([]*LogAnalyticsImportCustomContent)[vs[1].(int)]
@@ -359,6 +390,12 @@ func (o LogAnalyticsImportCustomContentMapOutput) ToLogAnalyticsImportCustomCont
 
 func (o LogAnalyticsImportCustomContentMapOutput) ToLogAnalyticsImportCustomContentMapOutputWithContext(ctx context.Context) LogAnalyticsImportCustomContentMapOutput {
 	return o
+}
+
+func (o LogAnalyticsImportCustomContentMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*LogAnalyticsImportCustomContent] {
+	return pulumix.Output[map[string]*LogAnalyticsImportCustomContent]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o LogAnalyticsImportCustomContentMapOutput) MapIndex(k pulumi.StringInput) LogAnalyticsImportCustomContentOutput {

@@ -80,7 +80,7 @@ public class Table extends com.pulumi.resources.CustomResource {
      * (Updatable) Compartment Identifier.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -94,7 +94,7 @@ public class Table extends com.pulumi.resources.CustomResource {
      * (Updatable) Complete CREATE TABLE DDL statement. When update ddl_statement, it should be ALTER TABLE DDL statement.
      * 
      */
-    @Export(name="ddlStatement", type=String.class, parameters={})
+    @Export(name="ddlStatement", refs={String.class}, tree="[0]")
     private Output<String> ddlStatement;
 
     /**
@@ -108,7 +108,7 @@ public class Table extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -122,7 +122,7 @@ public class Table extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -136,7 +136,7 @@ public class Table extends com.pulumi.resources.CustomResource {
      * True if table can be reclaimed after an idle period.
      * 
      */
-    @Export(name="isAutoReclaimable", type=Boolean.class, parameters={})
+    @Export(name="isAutoReclaimable", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isAutoReclaimable;
 
     /**
@@ -150,7 +150,7 @@ public class Table extends com.pulumi.resources.CustomResource {
      * A message describing the current state in more detail.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -164,7 +164,7 @@ public class Table extends com.pulumi.resources.CustomResource {
      * Table name.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -178,7 +178,7 @@ public class Table extends com.pulumi.resources.CustomResource {
      * The table schema information as a JSON object.
      * 
      */
-    @Export(name="schemas", type=List.class, parameters={TableSchema.class})
+    @Export(name="schemas", refs={List.class,TableSchema.class}, tree="[0,1]")
     private Output<List<TableSchema>> schemas;
 
     /**
@@ -192,7 +192,7 @@ public class Table extends com.pulumi.resources.CustomResource {
      * The state of a table.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -206,7 +206,7 @@ public class Table extends com.pulumi.resources.CustomResource {
      * Read-only system tag. These predefined keys are scoped to namespaces.  At present the only supported namespace is `&#34;orcl-cloud&#34;`; and the only key in that namespace is `&#34;free-tier-retained&#34;`. Example: `{&#34;orcl-cloud&#34;&#34;: {&#34;free-tier-retained&#34;: &#34;true&#34;}}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -220,7 +220,7 @@ public class Table extends com.pulumi.resources.CustomResource {
      * (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table&#39;s limits.
      * 
      */
-    @Export(name="tableLimits", type=TableTableLimits.class, parameters={})
+    @Export(name="tableLimits", refs={TableTableLimits.class}, tree="[0]")
     private Output<TableTableLimits> tableLimits;
 
     /**
@@ -234,7 +234,7 @@ public class Table extends com.pulumi.resources.CustomResource {
      * The time the the table was created. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -248,7 +248,7 @@ public class Table extends com.pulumi.resources.CustomResource {
      * If lifecycleState is INACTIVE, indicates when this table will be automatically removed. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeOfExpiration", type=String.class, parameters={})
+    @Export(name="timeOfExpiration", refs={String.class}, tree="[0]")
     private Output<String> timeOfExpiration;
 
     /**
@@ -262,7 +262,7 @@ public class Table extends com.pulumi.resources.CustomResource {
      * The time the the table&#39;s metadata was last updated. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

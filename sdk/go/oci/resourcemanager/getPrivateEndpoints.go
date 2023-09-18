@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Resource Manager service.
@@ -127,6 +128,12 @@ func (o GetPrivateEndpointsResultOutput) ToGetPrivateEndpointsResultOutput() Get
 
 func (o GetPrivateEndpointsResultOutput) ToGetPrivateEndpointsResultOutputWithContext(ctx context.Context) GetPrivateEndpointsResultOutput {
 	return o
+}
+
+func (o GetPrivateEndpointsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPrivateEndpointsResult] {
+	return pulumix.Output[GetPrivateEndpointsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.

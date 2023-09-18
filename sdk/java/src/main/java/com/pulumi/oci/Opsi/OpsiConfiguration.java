@@ -84,7 +84,7 @@ public class OpsiConfiguration extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -98,7 +98,7 @@ public class OpsiConfiguration extends com.pulumi.resources.CustomResource {
      * Specifies whether only customized configuration items or only non-customized configuration items or both have to be returned. By default only customized configuration items are returned.
      * 
      */
-    @Export(name="configItemCustomStatuses", type=List.class, parameters={String.class})
+    @Export(name="configItemCustomStatuses", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> configItemCustomStatuses;
 
     /**
@@ -112,7 +112,7 @@ public class OpsiConfiguration extends com.pulumi.resources.CustomResource {
      * Specifies the fields to return in a config item summary.
      * 
      */
-    @Export(name="configItemFields", type=List.class, parameters={String.class})
+    @Export(name="configItemFields", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> configItemFields;
 
     /**
@@ -126,7 +126,7 @@ public class OpsiConfiguration extends com.pulumi.resources.CustomResource {
      * (Updatable) Array of configuration items with custom values. All and only configuration items requiring custom values should be part of this array.
      * 
      */
-    @Export(name="configItems", type=List.class, parameters={OpsiConfigurationConfigItem.class})
+    @Export(name="configItems", refs={List.class,OpsiConfigurationConfigItem.class}, tree="[0,1]")
     private Output<List<OpsiConfigurationConfigItem>> configItems;
 
     /**
@@ -140,7 +140,7 @@ public class OpsiConfiguration extends com.pulumi.resources.CustomResource {
      * Returns the configuration items filtered by applicable contexts sent in this param. By default configuration items of all applicable contexts are returned.
      * 
      */
-    @Export(name="configItemsApplicableContexts", type=List.class, parameters={String.class})
+    @Export(name="configItemsApplicableContexts", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> configItemsApplicableContexts;
 
     /**
@@ -154,7 +154,7 @@ public class OpsiConfiguration extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -168,7 +168,7 @@ public class OpsiConfiguration extends com.pulumi.resources.CustomResource {
      * (Updatable) Description of OPSI configuration.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -182,7 +182,7 @@ public class OpsiConfiguration extends com.pulumi.resources.CustomResource {
      * (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -196,7 +196,7 @@ public class OpsiConfiguration extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -210,7 +210,7 @@ public class OpsiConfiguration extends com.pulumi.resources.CustomResource {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -224,7 +224,7 @@ public class OpsiConfiguration extends com.pulumi.resources.CustomResource {
      * Optional fields to return as part of OpsiConfiguration object. Unless requested, these fields will not be returned by default.
      * 
      */
-    @Export(name="opsiConfigFields", type=List.class, parameters={String.class})
+    @Export(name="opsiConfigFields", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> opsiConfigFields;
 
     /**
@@ -238,7 +238,7 @@ public class OpsiConfiguration extends com.pulumi.resources.CustomResource {
      * (Updatable) OPSI configuration type.
      * 
      */
-    @Export(name="opsiConfigType", type=String.class, parameters={})
+    @Export(name="opsiConfigType", refs={String.class}, tree="[0]")
     private Output<String> opsiConfigType;
 
     /**
@@ -252,7 +252,7 @@ public class OpsiConfiguration extends com.pulumi.resources.CustomResource {
      * OPSI configuration resource lifecycle state.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -269,7 +269,7 @@ public class OpsiConfiguration extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -286,7 +286,7 @@ public class OpsiConfiguration extends com.pulumi.resources.CustomResource {
      * The time at which the resource was first created. An RFC3339 formatted datetime string
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -300,7 +300,7 @@ public class OpsiConfiguration extends com.pulumi.resources.CustomResource {
      * The time at which the resource was last updated. An RFC3339 formatted datetime string
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

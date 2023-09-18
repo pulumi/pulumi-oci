@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Tunnel Security Associations in Oracle Cloud Infrastructure Core service.
@@ -110,6 +111,12 @@ func (o GetTunnelSecurityAssociationsResultOutput) ToGetTunnelSecurityAssociatio
 
 func (o GetTunnelSecurityAssociationsResultOutput) ToGetTunnelSecurityAssociationsResultOutputWithContext(ctx context.Context) GetTunnelSecurityAssociationsResultOutput {
 	return o
+}
+
+func (o GetTunnelSecurityAssociationsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetTunnelSecurityAssociationsResult] {
+	return pulumix.Output[GetTunnelSecurityAssociationsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTunnelSecurityAssociationsResultOutput) Filters() GetTunnelSecurityAssociationsFilterArrayOutput {

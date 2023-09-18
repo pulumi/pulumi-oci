@@ -70,7 +70,7 @@ public class AppCatalogSubscription extends com.pulumi.resources.CustomResource 
      * The compartmentID for the subscription.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -84,7 +84,7 @@ public class AppCatalogSubscription extends com.pulumi.resources.CustomResource 
      * A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -98,7 +98,7 @@ public class AppCatalogSubscription extends com.pulumi.resources.CustomResource 
      * EULA link
      * 
      */
-    @Export(name="eulaLink", type=String.class, parameters={})
+    @Export(name="eulaLink", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> eulaLink;
 
     /**
@@ -112,7 +112,7 @@ public class AppCatalogSubscription extends com.pulumi.resources.CustomResource 
      * The OCID of the listing.
      * 
      */
-    @Export(name="listingId", type=String.class, parameters={})
+    @Export(name="listingId", refs={String.class}, tree="[0]")
     private Output<String> listingId;
 
     /**
@@ -126,7 +126,7 @@ public class AppCatalogSubscription extends com.pulumi.resources.CustomResource 
      * Listing resource id.
      * 
      */
-    @Export(name="listingResourceId", type=String.class, parameters={})
+    @Export(name="listingResourceId", refs={String.class}, tree="[0]")
     private Output<String> listingResourceId;
 
     /**
@@ -140,7 +140,7 @@ public class AppCatalogSubscription extends com.pulumi.resources.CustomResource 
      * Listing resource version.
      * 
      */
-    @Export(name="listingResourceVersion", type=String.class, parameters={})
+    @Export(name="listingResourceVersion", refs={String.class}, tree="[0]")
     private Output<String> listingResourceVersion;
 
     /**
@@ -154,7 +154,7 @@ public class AppCatalogSubscription extends com.pulumi.resources.CustomResource 
      * Oracle TOU link
      * 
      */
-    @Export(name="oracleTermsOfUseLink", type=String.class, parameters={})
+    @Export(name="oracleTermsOfUseLink", refs={String.class}, tree="[0]")
     private Output<String> oracleTermsOfUseLink;
 
     /**
@@ -168,7 +168,7 @@ public class AppCatalogSubscription extends com.pulumi.resources.CustomResource 
      * Name of the publisher who published this listing.
      * 
      */
-    @Export(name="publisherName", type=String.class, parameters={})
+    @Export(name="publisherName", refs={String.class}, tree="[0]")
     private Output<String> publisherName;
 
     /**
@@ -182,7 +182,7 @@ public class AppCatalogSubscription extends com.pulumi.resources.CustomResource 
      * A generated signature for this listing resource version retrieved the agreements API.
      * 
      */
-    @Export(name="signature", type=String.class, parameters={})
+    @Export(name="signature", refs={String.class}, tree="[0]")
     private Output<String> signature;
 
     /**
@@ -196,7 +196,7 @@ public class AppCatalogSubscription extends com.pulumi.resources.CustomResource 
      * The short summary to the listing.
      * 
      */
-    @Export(name="summary", type=String.class, parameters={})
+    @Export(name="summary", refs={String.class}, tree="[0]")
     private Output<String> summary;
 
     /**
@@ -210,7 +210,7 @@ public class AppCatalogSubscription extends com.pulumi.resources.CustomResource 
      * Date and time at which the subscription was created, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -227,7 +227,7 @@ public class AppCatalogSubscription extends com.pulumi.resources.CustomResource 
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="timeRetrieved", type=String.class, parameters={})
+    @Export(name="timeRetrieved", refs={String.class}, tree="[0]")
     private Output<String> timeRetrieved;
 
     /**

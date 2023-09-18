@@ -64,7 +64,7 @@ public class ConnectionAssignment extends com.pulumi.resources.CustomResource {
      * Credential store alias.
      * 
      */
-    @Export(name="aliasName", type=String.class, parameters={})
+    @Export(name="aliasName", refs={String.class}, tree="[0]")
     private Output<String> aliasName;
 
     /**
@@ -78,7 +78,7 @@ public class ConnectionAssignment extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -92,7 +92,7 @@ public class ConnectionAssignment extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
      * 
      */
-    @Export(name="connectionId", type=String.class, parameters={})
+    @Export(name="connectionId", refs={String.class}, tree="[0]")
     private Output<String> connectionId;
 
     /**
@@ -109,7 +109,7 @@ public class ConnectionAssignment extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="deploymentId", type=String.class, parameters={})
+    @Export(name="deploymentId", refs={String.class}, tree="[0]")
     private Output<String> deploymentId;
 
     /**
@@ -126,7 +126,7 @@ public class ConnectionAssignment extends com.pulumi.resources.CustomResource {
      * Possible lifecycle states for connection assignments.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -140,7 +140,7 @@ public class ConnectionAssignment extends com.pulumi.resources.CustomResource {
      * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -154,7 +154,7 @@ public class ConnectionAssignment extends com.pulumi.resources.CustomResource {
      * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

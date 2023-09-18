@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Security Zone resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -264,6 +265,12 @@ func (i *SecurityZone) ToSecurityZoneOutputWithContext(ctx context.Context) Secu
 	return pulumi.ToOutputWithContext(ctx, i).(SecurityZoneOutput)
 }
 
+func (i *SecurityZone) ToOutput(ctx context.Context) pulumix.Output[*SecurityZone] {
+	return pulumix.Output[*SecurityZone]{
+		OutputState: i.ToSecurityZoneOutputWithContext(ctx).OutputState,
+	}
+}
+
 // SecurityZoneArrayInput is an input type that accepts SecurityZoneArray and SecurityZoneArrayOutput values.
 // You can construct a concrete instance of `SecurityZoneArrayInput` via:
 //
@@ -287,6 +294,12 @@ func (i SecurityZoneArray) ToSecurityZoneArrayOutput() SecurityZoneArrayOutput {
 
 func (i SecurityZoneArray) ToSecurityZoneArrayOutputWithContext(ctx context.Context) SecurityZoneArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SecurityZoneArrayOutput)
+}
+
+func (i SecurityZoneArray) ToOutput(ctx context.Context) pulumix.Output[[]*SecurityZone] {
+	return pulumix.Output[[]*SecurityZone]{
+		OutputState: i.ToSecurityZoneArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // SecurityZoneMapInput is an input type that accepts SecurityZoneMap and SecurityZoneMapOutput values.
@@ -314,6 +327,12 @@ func (i SecurityZoneMap) ToSecurityZoneMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(SecurityZoneMapOutput)
 }
 
+func (i SecurityZoneMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*SecurityZone] {
+	return pulumix.Output[map[string]*SecurityZone]{
+		OutputState: i.ToSecurityZoneMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type SecurityZoneOutput struct{ *pulumi.OutputState }
 
 func (SecurityZoneOutput) ElementType() reflect.Type {
@@ -326,6 +345,12 @@ func (o SecurityZoneOutput) ToSecurityZoneOutput() SecurityZoneOutput {
 
 func (o SecurityZoneOutput) ToSecurityZoneOutputWithContext(ctx context.Context) SecurityZoneOutput {
 	return o
+}
+
+func (o SecurityZoneOutput) ToOutput(ctx context.Context) pulumix.Output[*SecurityZone] {
+	return pulumix.Output[*SecurityZone]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The OCID of the compartment for the security zone
@@ -407,6 +432,12 @@ func (o SecurityZoneArrayOutput) ToSecurityZoneArrayOutputWithContext(ctx contex
 	return o
 }
 
+func (o SecurityZoneArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*SecurityZone] {
+	return pulumix.Output[[]*SecurityZone]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o SecurityZoneArrayOutput) Index(i pulumi.IntInput) SecurityZoneOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *SecurityZone {
 		return vs[0].([]*SecurityZone)[vs[1].(int)]
@@ -425,6 +456,12 @@ func (o SecurityZoneMapOutput) ToSecurityZoneMapOutput() SecurityZoneMapOutput {
 
 func (o SecurityZoneMapOutput) ToSecurityZoneMapOutputWithContext(ctx context.Context) SecurityZoneMapOutput {
 	return o
+}
+
+func (o SecurityZoneMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*SecurityZone] {
+	return pulumix.Output[map[string]*SecurityZone]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o SecurityZoneMapOutput) MapIndex(k pulumi.StringInput) SecurityZoneOutput {

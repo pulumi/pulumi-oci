@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -50,6 +51,12 @@ func (i GetSecretbundleSecretBundleContentArgs) ToGetSecretbundleSecretBundleCon
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecretbundleSecretBundleContentOutput)
 }
 
+func (i GetSecretbundleSecretBundleContentArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecretbundleSecretBundleContent] {
+	return pulumix.Output[GetSecretbundleSecretBundleContent]{
+		OutputState: i.ToGetSecretbundleSecretBundleContentOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecretbundleSecretBundleContentArrayInput is an input type that accepts GetSecretbundleSecretBundleContentArray and GetSecretbundleSecretBundleContentArrayOutput values.
 // You can construct a concrete instance of `GetSecretbundleSecretBundleContentArrayInput` via:
 //
@@ -75,6 +82,12 @@ func (i GetSecretbundleSecretBundleContentArray) ToGetSecretbundleSecretBundleCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecretbundleSecretBundleContentArrayOutput)
 }
 
+func (i GetSecretbundleSecretBundleContentArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecretbundleSecretBundleContent] {
+	return pulumix.Output[[]GetSecretbundleSecretBundleContent]{
+		OutputState: i.ToGetSecretbundleSecretBundleContentArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecretbundleSecretBundleContentOutput struct{ *pulumi.OutputState }
 
 func (GetSecretbundleSecretBundleContentOutput) ElementType() reflect.Type {
@@ -87,6 +100,12 @@ func (o GetSecretbundleSecretBundleContentOutput) ToGetSecretbundleSecretBundleC
 
 func (o GetSecretbundleSecretBundleContentOutput) ToGetSecretbundleSecretBundleContentOutputWithContext(ctx context.Context) GetSecretbundleSecretBundleContentOutput {
 	return o
+}
+
+func (o GetSecretbundleSecretBundleContentOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecretbundleSecretBundleContent] {
+	return pulumix.Output[GetSecretbundleSecretBundleContent]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The base64-encoded content of the secret.
@@ -111,6 +130,12 @@ func (o GetSecretbundleSecretBundleContentArrayOutput) ToGetSecretbundleSecretBu
 
 func (o GetSecretbundleSecretBundleContentArrayOutput) ToGetSecretbundleSecretBundleContentArrayOutputWithContext(ctx context.Context) GetSecretbundleSecretBundleContentArrayOutput {
 	return o
+}
+
+func (o GetSecretbundleSecretBundleContentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecretbundleSecretBundleContent] {
+	return pulumix.Output[[]GetSecretbundleSecretBundleContent]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecretbundleSecretBundleContentArrayOutput) Index(i pulumi.IntInput) GetSecretbundleSecretBundleContentOutput {
@@ -154,6 +179,12 @@ func (i GetSecretbundleVersionsFilterArgs) ToGetSecretbundleVersionsFilterOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecretbundleVersionsFilterOutput)
 }
 
+func (i GetSecretbundleVersionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecretbundleVersionsFilter] {
+	return pulumix.Output[GetSecretbundleVersionsFilter]{
+		OutputState: i.ToGetSecretbundleVersionsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecretbundleVersionsFilterArrayInput is an input type that accepts GetSecretbundleVersionsFilterArray and GetSecretbundleVersionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSecretbundleVersionsFilterArrayInput` via:
 //
@@ -179,6 +210,12 @@ func (i GetSecretbundleVersionsFilterArray) ToGetSecretbundleVersionsFilterArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecretbundleVersionsFilterArrayOutput)
 }
 
+func (i GetSecretbundleVersionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecretbundleVersionsFilter] {
+	return pulumix.Output[[]GetSecretbundleVersionsFilter]{
+		OutputState: i.ToGetSecretbundleVersionsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecretbundleVersionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSecretbundleVersionsFilterOutput) ElementType() reflect.Type {
@@ -191,6 +228,12 @@ func (o GetSecretbundleVersionsFilterOutput) ToGetSecretbundleVersionsFilterOutp
 
 func (o GetSecretbundleVersionsFilterOutput) ToGetSecretbundleVersionsFilterOutputWithContext(ctx context.Context) GetSecretbundleVersionsFilterOutput {
 	return o
+}
+
+func (o GetSecretbundleVersionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecretbundleVersionsFilter] {
+	return pulumix.Output[GetSecretbundleVersionsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecretbundleVersionsFilterOutput) Name() pulumi.StringOutput {
@@ -217,6 +260,12 @@ func (o GetSecretbundleVersionsFilterArrayOutput) ToGetSecretbundleVersionsFilte
 
 func (o GetSecretbundleVersionsFilterArrayOutput) ToGetSecretbundleVersionsFilterArrayOutputWithContext(ctx context.Context) GetSecretbundleVersionsFilterArrayOutput {
 	return o
+}
+
+func (o GetSecretbundleVersionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecretbundleVersionsFilter] {
+	return pulumix.Output[[]GetSecretbundleVersionsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecretbundleVersionsFilterArrayOutput) Index(i pulumi.IntInput) GetSecretbundleVersionsFilterOutput {
@@ -282,6 +331,12 @@ func (i GetSecretbundleVersionsSecretBundleVersionArgs) ToGetSecretbundleVersion
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecretbundleVersionsSecretBundleVersionOutput)
 }
 
+func (i GetSecretbundleVersionsSecretBundleVersionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecretbundleVersionsSecretBundleVersion] {
+	return pulumix.Output[GetSecretbundleVersionsSecretBundleVersion]{
+		OutputState: i.ToGetSecretbundleVersionsSecretBundleVersionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecretbundleVersionsSecretBundleVersionArrayInput is an input type that accepts GetSecretbundleVersionsSecretBundleVersionArray and GetSecretbundleVersionsSecretBundleVersionArrayOutput values.
 // You can construct a concrete instance of `GetSecretbundleVersionsSecretBundleVersionArrayInput` via:
 //
@@ -307,6 +362,12 @@ func (i GetSecretbundleVersionsSecretBundleVersionArray) ToGetSecretbundleVersio
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecretbundleVersionsSecretBundleVersionArrayOutput)
 }
 
+func (i GetSecretbundleVersionsSecretBundleVersionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecretbundleVersionsSecretBundleVersion] {
+	return pulumix.Output[[]GetSecretbundleVersionsSecretBundleVersion]{
+		OutputState: i.ToGetSecretbundleVersionsSecretBundleVersionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecretbundleVersionsSecretBundleVersionOutput struct{ *pulumi.OutputState }
 
 func (GetSecretbundleVersionsSecretBundleVersionOutput) ElementType() reflect.Type {
@@ -319,6 +380,12 @@ func (o GetSecretbundleVersionsSecretBundleVersionOutput) ToGetSecretbundleVersi
 
 func (o GetSecretbundleVersionsSecretBundleVersionOutput) ToGetSecretbundleVersionsSecretBundleVersionOutputWithContext(ctx context.Context) GetSecretbundleVersionsSecretBundleVersionOutput {
 	return o
+}
+
+func (o GetSecretbundleVersionsSecretBundleVersionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecretbundleVersionsSecretBundleVersion] {
+	return pulumix.Output[GetSecretbundleVersionsSecretBundleVersion]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the secret.
@@ -368,6 +435,12 @@ func (o GetSecretbundleVersionsSecretBundleVersionArrayOutput) ToGetSecretbundle
 
 func (o GetSecretbundleVersionsSecretBundleVersionArrayOutput) ToGetSecretbundleVersionsSecretBundleVersionArrayOutputWithContext(ctx context.Context) GetSecretbundleVersionsSecretBundleVersionArrayOutput {
 	return o
+}
+
+func (o GetSecretbundleVersionsSecretBundleVersionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecretbundleVersionsSecretBundleVersion] {
+	return pulumix.Output[[]GetSecretbundleVersionsSecretBundleVersion]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecretbundleVersionsSecretBundleVersionArrayOutput) Index(i pulumi.IntInput) GetSecretbundleVersionsSecretBundleVersionOutput {

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Ca Bundles in Oracle Cloud Infrastructure Certificates Management service.
@@ -126,6 +127,12 @@ func (o GetCaBundlesResultOutput) ToGetCaBundlesResultOutput() GetCaBundlesResul
 
 func (o GetCaBundlesResultOutput) ToGetCaBundlesResultOutputWithContext(ctx context.Context) GetCaBundlesResultOutput {
 	return o
+}
+
+func (o GetCaBundlesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCaBundlesResult] {
+	return pulumix.Output[GetCaBundlesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The list of ca_bundle_collection.

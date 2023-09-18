@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Target Databases in Oracle Cloud Infrastructure Data Safe service.
@@ -157,6 +158,12 @@ func (o GetTargetDatabasesResultOutput) ToGetTargetDatabasesResultOutput() GetTa
 
 func (o GetTargetDatabasesResultOutput) ToGetTargetDatabasesResultOutputWithContext(ctx context.Context) GetTargetDatabasesResultOutput {
 	return o
+}
+
+func (o GetTargetDatabasesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetDatabasesResult] {
+	return pulumix.Output[GetTargetDatabasesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetDatabasesResultOutput) AccessLevel() pulumi.StringPtrOutput {

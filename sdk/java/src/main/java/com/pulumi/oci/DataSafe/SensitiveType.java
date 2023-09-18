@@ -79,7 +79,7 @@ public class SensitiveType extends com.pulumi.resources.CustomResource {
      * (Updatable) A regular expression to be used by data discovery for matching column comments.
      * 
      */
-    @Export(name="commentPattern", type=String.class, parameters={})
+    @Export(name="commentPattern", refs={String.class}, tree="[0]")
     private Output<String> commentPattern;
 
     /**
@@ -93,7 +93,7 @@ public class SensitiveType extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the compartment where the sensitive type should be created.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -107,7 +107,7 @@ public class SensitiveType extends com.pulumi.resources.CustomResource {
      * (Updatable) A regular expression to be used by data discovery for matching column data values.
      * 
      */
-    @Export(name="dataPattern", type=String.class, parameters={})
+    @Export(name="dataPattern", refs={String.class}, tree="[0]")
     private Output<String> dataPattern;
 
     /**
@@ -121,7 +121,7 @@ public class SensitiveType extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the library masking format that should be used to mask the sensitive columns associated with the sensitive type.
      * 
      */
-    @Export(name="defaultMaskingFormatId", type=String.class, parameters={})
+    @Export(name="defaultMaskingFormatId", refs={String.class}, tree="[0]")
     private Output<String> defaultMaskingFormatId;
 
     /**
@@ -135,7 +135,7 @@ public class SensitiveType extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -149,7 +149,7 @@ public class SensitiveType extends com.pulumi.resources.CustomResource {
      * (Updatable) The description of the sensitive type.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -163,7 +163,7 @@ public class SensitiveType extends com.pulumi.resources.CustomResource {
      * (Updatable) The display name of the sensitive type. The name does not have to be unique, and it&#39;s changeable.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -177,7 +177,7 @@ public class SensitiveType extends com.pulumi.resources.CustomResource {
      * (Updatable) The entity type. It can be either a sensitive type with regular expressions or a sensitive category used for grouping similar sensitive types.
      * 
      */
-    @Export(name="entityType", type=String.class, parameters={})
+    @Export(name="entityType", refs={String.class}, tree="[0]")
     private Output<String> entityType;
 
     /**
@@ -191,7 +191,7 @@ public class SensitiveType extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -205,7 +205,7 @@ public class SensitiveType extends com.pulumi.resources.CustomResource {
      * (Updatable) A regular expression to be used by data discovery for matching column names.
      * 
      */
-    @Export(name="namePattern", type=String.class, parameters={})
+    @Export(name="namePattern", refs={String.class}, tree="[0]")
     private Output<String> namePattern;
 
     /**
@@ -219,7 +219,7 @@ public class SensitiveType extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the parent sensitive category.
      * 
      */
-    @Export(name="parentCategoryId", type=String.class, parameters={})
+    @Export(name="parentCategoryId", refs={String.class}, tree="[0]")
     private Output<String> parentCategoryId;
 
     /**
@@ -233,7 +233,7 @@ public class SensitiveType extends com.pulumi.resources.CustomResource {
      * (Updatable) The search type indicating how the column name, comment and data patterns should be used by data discovery. [Learn more](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/sensitive-types.html#GUID-1D1AD98E-B93F-4FF2-80AE-CB7D8A14F6CC).
      * 
      */
-    @Export(name="searchType", type=String.class, parameters={})
+    @Export(name="searchType", refs={String.class}, tree="[0]")
     private Output<String> searchType;
 
     /**
@@ -250,7 +250,7 @@ public class SensitiveType extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="shortName", type=String.class, parameters={})
+    @Export(name="shortName", refs={String.class}, tree="[0]")
     private Output<String> shortName;
 
     /**
@@ -267,7 +267,7 @@ public class SensitiveType extends com.pulumi.resources.CustomResource {
      * Specifies whether the sensitive type is user-defined or predefined.
      * 
      */
-    @Export(name="source", type=String.class, parameters={})
+    @Export(name="source", refs={String.class}, tree="[0]")
     private Output<String> source;
 
     /**
@@ -281,7 +281,7 @@ public class SensitiveType extends com.pulumi.resources.CustomResource {
      * The current state of the sensitive type.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -295,7 +295,7 @@ public class SensitiveType extends com.pulumi.resources.CustomResource {
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -309,7 +309,7 @@ public class SensitiveType extends com.pulumi.resources.CustomResource {
      * The date and time the sensitive type was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -323,7 +323,7 @@ public class SensitiveType extends com.pulumi.resources.CustomResource {
      * The date and time the sensitive type was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

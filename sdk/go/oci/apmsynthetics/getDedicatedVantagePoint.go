@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Dedicated Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
@@ -125,6 +126,12 @@ func (o LookupDedicatedVantagePointResultOutput) ToLookupDedicatedVantagePointRe
 
 func (o LookupDedicatedVantagePointResultOutput) ToLookupDedicatedVantagePointResultOutputWithContext(ctx context.Context) LookupDedicatedVantagePointResultOutput {
 	return o
+}
+
+func (o LookupDedicatedVantagePointResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDedicatedVantagePointResult] {
+	return pulumix.Output[LookupDedicatedVantagePointResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o LookupDedicatedVantagePointResultOutput) ApmDomainId() pulumi.StringOutput {

@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Usage resource in Oracle Cloud Infrastructure Metering Computation service.
@@ -282,6 +283,12 @@ func (i *Usage) ToUsageOutputWithContext(ctx context.Context) UsageOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(UsageOutput)
 }
 
+func (i *Usage) ToOutput(ctx context.Context) pulumix.Output[*Usage] {
+	return pulumix.Output[*Usage]{
+		OutputState: i.ToUsageOutputWithContext(ctx).OutputState,
+	}
+}
+
 // UsageArrayInput is an input type that accepts UsageArray and UsageArrayOutput values.
 // You can construct a concrete instance of `UsageArrayInput` via:
 //
@@ -305,6 +312,12 @@ func (i UsageArray) ToUsageArrayOutput() UsageArrayOutput {
 
 func (i UsageArray) ToUsageArrayOutputWithContext(ctx context.Context) UsageArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(UsageArrayOutput)
+}
+
+func (i UsageArray) ToOutput(ctx context.Context) pulumix.Output[[]*Usage] {
+	return pulumix.Output[[]*Usage]{
+		OutputState: i.ToUsageArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // UsageMapInput is an input type that accepts UsageMap and UsageMapOutput values.
@@ -332,6 +345,12 @@ func (i UsageMap) ToUsageMapOutputWithContext(ctx context.Context) UsageMapOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(UsageMapOutput)
 }
 
+func (i UsageMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Usage] {
+	return pulumix.Output[map[string]*Usage]{
+		OutputState: i.ToUsageMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type UsageOutput struct{ *pulumi.OutputState }
 
 func (UsageOutput) ElementType() reflect.Type {
@@ -344,6 +363,12 @@ func (o UsageOutput) ToUsageOutput() UsageOutput {
 
 func (o UsageOutput) ToUsageOutputWithContext(ctx context.Context) UsageOutput {
 	return o
+}
+
+func (o UsageOutput) ToOutput(ctx context.Context) pulumix.Output[*Usage] {
+	return pulumix.Output[*Usage]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The compartment depth level.
@@ -423,6 +448,12 @@ func (o UsageArrayOutput) ToUsageArrayOutputWithContext(ctx context.Context) Usa
 	return o
 }
 
+func (o UsageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Usage] {
+	return pulumix.Output[[]*Usage]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o UsageArrayOutput) Index(i pulumi.IntInput) UsageOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Usage {
 		return vs[0].([]*Usage)[vs[1].(int)]
@@ -441,6 +472,12 @@ func (o UsageMapOutput) ToUsageMapOutput() UsageMapOutput {
 
 func (o UsageMapOutput) ToUsageMapOutputWithContext(ctx context.Context) UsageMapOutput {
 	return o
+}
+
+func (o UsageMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Usage] {
+	return pulumix.Output[map[string]*Usage]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o UsageMapOutput) MapIndex(k pulumi.StringInput) UsageOutput {

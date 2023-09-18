@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -82,6 +83,12 @@ func (i GetCommitmentAggregatedsComputedUsageAggregatedArgs) ToGetCommitmentAggr
 	return pulumi.ToOutputWithContext(ctx, i).(GetCommitmentAggregatedsComputedUsageAggregatedOutput)
 }
 
+func (i GetCommitmentAggregatedsComputedUsageAggregatedArgs) ToOutput(ctx context.Context) pulumix.Output[GetCommitmentAggregatedsComputedUsageAggregated] {
+	return pulumix.Output[GetCommitmentAggregatedsComputedUsageAggregated]{
+		OutputState: i.ToGetCommitmentAggregatedsComputedUsageAggregatedOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetCommitmentAggregatedsComputedUsageAggregatedArrayInput is an input type that accepts GetCommitmentAggregatedsComputedUsageAggregatedArray and GetCommitmentAggregatedsComputedUsageAggregatedArrayOutput values.
 // You can construct a concrete instance of `GetCommitmentAggregatedsComputedUsageAggregatedArrayInput` via:
 //
@@ -107,6 +114,12 @@ func (i GetCommitmentAggregatedsComputedUsageAggregatedArray) ToGetCommitmentAgg
 	return pulumi.ToOutputWithContext(ctx, i).(GetCommitmentAggregatedsComputedUsageAggregatedArrayOutput)
 }
 
+func (i GetCommitmentAggregatedsComputedUsageAggregatedArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCommitmentAggregatedsComputedUsageAggregated] {
+	return pulumix.Output[[]GetCommitmentAggregatedsComputedUsageAggregated]{
+		OutputState: i.ToGetCommitmentAggregatedsComputedUsageAggregatedArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetCommitmentAggregatedsComputedUsageAggregatedOutput struct{ *pulumi.OutputState }
 
 func (GetCommitmentAggregatedsComputedUsageAggregatedOutput) ElementType() reflect.Type {
@@ -119,6 +132,12 @@ func (o GetCommitmentAggregatedsComputedUsageAggregatedOutput) ToGetCommitmentAg
 
 func (o GetCommitmentAggregatedsComputedUsageAggregatedOutput) ToGetCommitmentAggregatedsComputedUsageAggregatedOutputWithContext(ctx context.Context) GetCommitmentAggregatedsComputedUsageAggregatedOutput {
 	return o
+}
+
+func (o GetCommitmentAggregatedsComputedUsageAggregatedOutput) ToOutput(ctx context.Context) pulumix.Output[GetCommitmentAggregatedsComputedUsageAggregated] {
+	return pulumix.Output[GetCommitmentAggregatedsComputedUsageAggregated]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Aggregation of computed usages for the subscribed service.
@@ -189,6 +208,12 @@ func (o GetCommitmentAggregatedsComputedUsageAggregatedArrayOutput) ToGetCommitm
 	return o
 }
 
+func (o GetCommitmentAggregatedsComputedUsageAggregatedArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCommitmentAggregatedsComputedUsageAggregated] {
+	return pulumix.Output[[]GetCommitmentAggregatedsComputedUsageAggregated]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetCommitmentAggregatedsComputedUsageAggregatedArrayOutput) Index(i pulumi.IntInput) GetCommitmentAggregatedsComputedUsageAggregatedOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCommitmentAggregatedsComputedUsageAggregated {
 		return vs[0].([]GetCommitmentAggregatedsComputedUsageAggregated)[vs[1].(int)]
@@ -256,6 +281,12 @@ func (i GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageOutput)
 }
 
+func (i GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageArgs) ToOutput(ctx context.Context) pulumix.Output[GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage] {
+	return pulumix.Output[GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage]{
+		OutputState: i.ToGetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageArrayInput is an input type that accepts GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageArray and GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageArrayOutput values.
 // You can construct a concrete instance of `GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageArrayInput` via:
 //
@@ -281,6 +312,12 @@ func (i GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageArrayOutput)
 }
 
+func (i GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage] {
+	return pulumix.Output[[]GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage]{
+		OutputState: i.ToGetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageOutput struct{ *pulumi.OutputState }
 
 func (GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageOutput) ElementType() reflect.Type {
@@ -293,6 +330,12 @@ func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageOu
 
 func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageOutput) ToGetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageOutputWithContext(ctx context.Context) GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageOutput {
 	return o
+}
+
+func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageOutput) ToOutput(ctx context.Context) pulumix.Output[GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage] {
+	return pulumix.Output[GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Sum of Computed Line Amount rounded
@@ -361,6 +404,12 @@ func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageAr
 	return o
 }
 
+func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage] {
+	return pulumix.Output[[]GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageArrayOutput) Index(i pulumi.IntInput) GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage {
 		return vs[0].([]GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage)[vs[1].(int)]
@@ -424,6 +473,12 @@ func (i GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsagePr
 	return pulumi.ToOutputWithContext(ctx, i).(GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductOutput)
 }
 
+func (i GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductArgs) ToOutput(ctx context.Context) pulumix.Output[GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProduct] {
+	return pulumix.Output[GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProduct]{
+		OutputState: i.ToGetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductArrayInput is an input type that accepts GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductArray and GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductArrayOutput values.
 // You can construct a concrete instance of `GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductArrayInput` via:
 //
@@ -449,6 +504,12 @@ func (i GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsagePr
 	return pulumi.ToOutputWithContext(ctx, i).(GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductArrayOutput)
 }
 
+func (i GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProduct] {
+	return pulumix.Output[[]GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProduct]{
+		OutputState: i.ToGetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductOutput struct{ *pulumi.OutputState }
 
 func (GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductOutput) ElementType() reflect.Type {
@@ -461,6 +522,12 @@ func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsagePr
 
 func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductOutput) ToGetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductOutputWithContext(ctx context.Context) GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductOutput {
 	return o
+}
+
+func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductOutput) ToOutput(ctx context.Context) pulumix.Output[GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProduct] {
+	return pulumix.Output[GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProduct]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Metered service billing category
@@ -526,6 +593,12 @@ func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsagePr
 	return o
 }
 
+func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProduct] {
+	return pulumix.Output[[]GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProduct]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductArrayOutput) Index(i pulumi.IntInput) GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProduct {
 		return vs[0].([]GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProduct)[vs[1].(int)]
@@ -589,6 +662,12 @@ func (i GetCommitmentAggregatedsComputedUsageAggregatedParentProductArgs) ToGetC
 	return pulumi.ToOutputWithContext(ctx, i).(GetCommitmentAggregatedsComputedUsageAggregatedParentProductOutput)
 }
 
+func (i GetCommitmentAggregatedsComputedUsageAggregatedParentProductArgs) ToOutput(ctx context.Context) pulumix.Output[GetCommitmentAggregatedsComputedUsageAggregatedParentProduct] {
+	return pulumix.Output[GetCommitmentAggregatedsComputedUsageAggregatedParentProduct]{
+		OutputState: i.ToGetCommitmentAggregatedsComputedUsageAggregatedParentProductOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetCommitmentAggregatedsComputedUsageAggregatedParentProductArrayInput is an input type that accepts GetCommitmentAggregatedsComputedUsageAggregatedParentProductArray and GetCommitmentAggregatedsComputedUsageAggregatedParentProductArrayOutput values.
 // You can construct a concrete instance of `GetCommitmentAggregatedsComputedUsageAggregatedParentProductArrayInput` via:
 //
@@ -614,6 +693,12 @@ func (i GetCommitmentAggregatedsComputedUsageAggregatedParentProductArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetCommitmentAggregatedsComputedUsageAggregatedParentProductArrayOutput)
 }
 
+func (i GetCommitmentAggregatedsComputedUsageAggregatedParentProductArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCommitmentAggregatedsComputedUsageAggregatedParentProduct] {
+	return pulumix.Output[[]GetCommitmentAggregatedsComputedUsageAggregatedParentProduct]{
+		OutputState: i.ToGetCommitmentAggregatedsComputedUsageAggregatedParentProductArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetCommitmentAggregatedsComputedUsageAggregatedParentProductOutput struct{ *pulumi.OutputState }
 
 func (GetCommitmentAggregatedsComputedUsageAggregatedParentProductOutput) ElementType() reflect.Type {
@@ -626,6 +711,12 @@ func (o GetCommitmentAggregatedsComputedUsageAggregatedParentProductOutput) ToGe
 
 func (o GetCommitmentAggregatedsComputedUsageAggregatedParentProductOutput) ToGetCommitmentAggregatedsComputedUsageAggregatedParentProductOutputWithContext(ctx context.Context) GetCommitmentAggregatedsComputedUsageAggregatedParentProductOutput {
 	return o
+}
+
+func (o GetCommitmentAggregatedsComputedUsageAggregatedParentProductOutput) ToOutput(ctx context.Context) pulumix.Output[GetCommitmentAggregatedsComputedUsageAggregatedParentProduct] {
+	return pulumix.Output[GetCommitmentAggregatedsComputedUsageAggregatedParentProduct]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Metered service billing category
@@ -681,6 +772,12 @@ func (o GetCommitmentAggregatedsComputedUsageAggregatedParentProductArrayOutput)
 	return o
 }
 
+func (o GetCommitmentAggregatedsComputedUsageAggregatedParentProductArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCommitmentAggregatedsComputedUsageAggregatedParentProduct] {
+	return pulumix.Output[[]GetCommitmentAggregatedsComputedUsageAggregatedParentProduct]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetCommitmentAggregatedsComputedUsageAggregatedParentProductArrayOutput) Index(i pulumi.IntInput) GetCommitmentAggregatedsComputedUsageAggregatedParentProductOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCommitmentAggregatedsComputedUsageAggregatedParentProduct {
 		return vs[0].([]GetCommitmentAggregatedsComputedUsageAggregatedParentProduct)[vs[1].(int)]
@@ -724,6 +821,12 @@ func (i GetCommitmentAggregatedsFilterArgs) ToGetCommitmentAggregatedsFilterOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetCommitmentAggregatedsFilterOutput)
 }
 
+func (i GetCommitmentAggregatedsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetCommitmentAggregatedsFilter] {
+	return pulumix.Output[GetCommitmentAggregatedsFilter]{
+		OutputState: i.ToGetCommitmentAggregatedsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetCommitmentAggregatedsFilterArrayInput is an input type that accepts GetCommitmentAggregatedsFilterArray and GetCommitmentAggregatedsFilterArrayOutput values.
 // You can construct a concrete instance of `GetCommitmentAggregatedsFilterArrayInput` via:
 //
@@ -749,6 +852,12 @@ func (i GetCommitmentAggregatedsFilterArray) ToGetCommitmentAggregatedsFilterArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetCommitmentAggregatedsFilterArrayOutput)
 }
 
+func (i GetCommitmentAggregatedsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCommitmentAggregatedsFilter] {
+	return pulumix.Output[[]GetCommitmentAggregatedsFilter]{
+		OutputState: i.ToGetCommitmentAggregatedsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetCommitmentAggregatedsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetCommitmentAggregatedsFilterOutput) ElementType() reflect.Type {
@@ -761,6 +870,12 @@ func (o GetCommitmentAggregatedsFilterOutput) ToGetCommitmentAggregatedsFilterOu
 
 func (o GetCommitmentAggregatedsFilterOutput) ToGetCommitmentAggregatedsFilterOutputWithContext(ctx context.Context) GetCommitmentAggregatedsFilterOutput {
 	return o
+}
+
+func (o GetCommitmentAggregatedsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetCommitmentAggregatedsFilter] {
+	return pulumix.Output[GetCommitmentAggregatedsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Product name
@@ -788,6 +903,12 @@ func (o GetCommitmentAggregatedsFilterArrayOutput) ToGetCommitmentAggregatedsFil
 
 func (o GetCommitmentAggregatedsFilterArrayOutput) ToGetCommitmentAggregatedsFilterArrayOutputWithContext(ctx context.Context) GetCommitmentAggregatedsFilterArrayOutput {
 	return o
+}
+
+func (o GetCommitmentAggregatedsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCommitmentAggregatedsFilter] {
+	return pulumix.Output[[]GetCommitmentAggregatedsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetCommitmentAggregatedsFilterArrayOutput) Index(i pulumi.IntInput) GetCommitmentAggregatedsFilterOutput {
@@ -853,6 +974,12 @@ func (i GetComputedUsageParentProductArgs) ToGetComputedUsageParentProductOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetComputedUsageParentProductOutput)
 }
 
+func (i GetComputedUsageParentProductArgs) ToOutput(ctx context.Context) pulumix.Output[GetComputedUsageParentProduct] {
+	return pulumix.Output[GetComputedUsageParentProduct]{
+		OutputState: i.ToGetComputedUsageParentProductOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetComputedUsageParentProductArrayInput is an input type that accepts GetComputedUsageParentProductArray and GetComputedUsageParentProductArrayOutput values.
 // You can construct a concrete instance of `GetComputedUsageParentProductArrayInput` via:
 //
@@ -878,6 +1005,12 @@ func (i GetComputedUsageParentProductArray) ToGetComputedUsageParentProductArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetComputedUsageParentProductArrayOutput)
 }
 
+func (i GetComputedUsageParentProductArray) ToOutput(ctx context.Context) pulumix.Output[[]GetComputedUsageParentProduct] {
+	return pulumix.Output[[]GetComputedUsageParentProduct]{
+		OutputState: i.ToGetComputedUsageParentProductArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetComputedUsageParentProductOutput struct{ *pulumi.OutputState }
 
 func (GetComputedUsageParentProductOutput) ElementType() reflect.Type {
@@ -890,6 +1023,12 @@ func (o GetComputedUsageParentProductOutput) ToGetComputedUsageParentProductOutp
 
 func (o GetComputedUsageParentProductOutput) ToGetComputedUsageParentProductOutputWithContext(ctx context.Context) GetComputedUsageParentProductOutput {
 	return o
+}
+
+func (o GetComputedUsageParentProductOutput) ToOutput(ctx context.Context) pulumix.Output[GetComputedUsageParentProduct] {
+	return pulumix.Output[GetComputedUsageParentProduct]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Metered service billing category
@@ -939,6 +1078,12 @@ func (o GetComputedUsageParentProductArrayOutput) ToGetComputedUsageParentProduc
 
 func (o GetComputedUsageParentProductArrayOutput) ToGetComputedUsageParentProductArrayOutputWithContext(ctx context.Context) GetComputedUsageParentProductArrayOutput {
 	return o
+}
+
+func (o GetComputedUsageParentProductArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetComputedUsageParentProduct] {
+	return pulumix.Output[[]GetComputedUsageParentProduct]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetComputedUsageParentProductArrayOutput) Index(i pulumi.IntInput) GetComputedUsageParentProductOutput {
@@ -1004,6 +1149,12 @@ func (i GetComputedUsageProductArgs) ToGetComputedUsageProductOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetComputedUsageProductOutput)
 }
 
+func (i GetComputedUsageProductArgs) ToOutput(ctx context.Context) pulumix.Output[GetComputedUsageProduct] {
+	return pulumix.Output[GetComputedUsageProduct]{
+		OutputState: i.ToGetComputedUsageProductOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetComputedUsageProductArrayInput is an input type that accepts GetComputedUsageProductArray and GetComputedUsageProductArrayOutput values.
 // You can construct a concrete instance of `GetComputedUsageProductArrayInput` via:
 //
@@ -1029,6 +1180,12 @@ func (i GetComputedUsageProductArray) ToGetComputedUsageProductArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetComputedUsageProductArrayOutput)
 }
 
+func (i GetComputedUsageProductArray) ToOutput(ctx context.Context) pulumix.Output[[]GetComputedUsageProduct] {
+	return pulumix.Output[[]GetComputedUsageProduct]{
+		OutputState: i.ToGetComputedUsageProductArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetComputedUsageProductOutput struct{ *pulumi.OutputState }
 
 func (GetComputedUsageProductOutput) ElementType() reflect.Type {
@@ -1041,6 +1198,12 @@ func (o GetComputedUsageProductOutput) ToGetComputedUsageProductOutput() GetComp
 
 func (o GetComputedUsageProductOutput) ToGetComputedUsageProductOutputWithContext(ctx context.Context) GetComputedUsageProductOutput {
 	return o
+}
+
+func (o GetComputedUsageProductOutput) ToOutput(ctx context.Context) pulumix.Output[GetComputedUsageProduct] {
+	return pulumix.Output[GetComputedUsageProduct]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Metered service billing category
@@ -1090,6 +1253,12 @@ func (o GetComputedUsageProductArrayOutput) ToGetComputedUsageProductArrayOutput
 
 func (o GetComputedUsageProductArrayOutput) ToGetComputedUsageProductArrayOutputWithContext(ctx context.Context) GetComputedUsageProductArrayOutput {
 	return o
+}
+
+func (o GetComputedUsageProductArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetComputedUsageProduct] {
+	return pulumix.Output[[]GetComputedUsageProduct]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetComputedUsageProductArrayOutput) Index(i pulumi.IntInput) GetComputedUsageProductOutput {
@@ -1229,6 +1398,12 @@ func (i GetComputedUsagesComputedUsageArgs) ToGetComputedUsagesComputedUsageOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetComputedUsagesComputedUsageOutput)
 }
 
+func (i GetComputedUsagesComputedUsageArgs) ToOutput(ctx context.Context) pulumix.Output[GetComputedUsagesComputedUsage] {
+	return pulumix.Output[GetComputedUsagesComputedUsage]{
+		OutputState: i.ToGetComputedUsagesComputedUsageOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetComputedUsagesComputedUsageArrayInput is an input type that accepts GetComputedUsagesComputedUsageArray and GetComputedUsagesComputedUsageArrayOutput values.
 // You can construct a concrete instance of `GetComputedUsagesComputedUsageArrayInput` via:
 //
@@ -1254,6 +1429,12 @@ func (i GetComputedUsagesComputedUsageArray) ToGetComputedUsagesComputedUsageArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetComputedUsagesComputedUsageArrayOutput)
 }
 
+func (i GetComputedUsagesComputedUsageArray) ToOutput(ctx context.Context) pulumix.Output[[]GetComputedUsagesComputedUsage] {
+	return pulumix.Output[[]GetComputedUsagesComputedUsage]{
+		OutputState: i.ToGetComputedUsagesComputedUsageArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetComputedUsagesComputedUsageOutput struct{ *pulumi.OutputState }
 
 func (GetComputedUsagesComputedUsageOutput) ElementType() reflect.Type {
@@ -1266,6 +1447,12 @@ func (o GetComputedUsagesComputedUsageOutput) ToGetComputedUsagesComputedUsageOu
 
 func (o GetComputedUsagesComputedUsageOutput) ToGetComputedUsagesComputedUsageOutputWithContext(ctx context.Context) GetComputedUsagesComputedUsageOutput {
 	return o
+}
+
+func (o GetComputedUsagesComputedUsageOutput) ToOutput(ctx context.Context) pulumix.Output[GetComputedUsagesComputedUsage] {
+	return pulumix.Output[GetComputedUsagesComputedUsage]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Subscribed service commitmentId.
@@ -1413,6 +1600,12 @@ func (o GetComputedUsagesComputedUsageArrayOutput) ToGetComputedUsagesComputedUs
 	return o
 }
 
+func (o GetComputedUsagesComputedUsageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetComputedUsagesComputedUsage] {
+	return pulumix.Output[[]GetComputedUsagesComputedUsage]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetComputedUsagesComputedUsageArrayOutput) Index(i pulumi.IntInput) GetComputedUsagesComputedUsageOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetComputedUsagesComputedUsage {
 		return vs[0].([]GetComputedUsagesComputedUsage)[vs[1].(int)]
@@ -1476,6 +1669,12 @@ func (i GetComputedUsagesComputedUsageParentProductArgs) ToGetComputedUsagesComp
 	return pulumi.ToOutputWithContext(ctx, i).(GetComputedUsagesComputedUsageParentProductOutput)
 }
 
+func (i GetComputedUsagesComputedUsageParentProductArgs) ToOutput(ctx context.Context) pulumix.Output[GetComputedUsagesComputedUsageParentProduct] {
+	return pulumix.Output[GetComputedUsagesComputedUsageParentProduct]{
+		OutputState: i.ToGetComputedUsagesComputedUsageParentProductOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetComputedUsagesComputedUsageParentProductArrayInput is an input type that accepts GetComputedUsagesComputedUsageParentProductArray and GetComputedUsagesComputedUsageParentProductArrayOutput values.
 // You can construct a concrete instance of `GetComputedUsagesComputedUsageParentProductArrayInput` via:
 //
@@ -1501,6 +1700,12 @@ func (i GetComputedUsagesComputedUsageParentProductArray) ToGetComputedUsagesCom
 	return pulumi.ToOutputWithContext(ctx, i).(GetComputedUsagesComputedUsageParentProductArrayOutput)
 }
 
+func (i GetComputedUsagesComputedUsageParentProductArray) ToOutput(ctx context.Context) pulumix.Output[[]GetComputedUsagesComputedUsageParentProduct] {
+	return pulumix.Output[[]GetComputedUsagesComputedUsageParentProduct]{
+		OutputState: i.ToGetComputedUsagesComputedUsageParentProductArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetComputedUsagesComputedUsageParentProductOutput struct{ *pulumi.OutputState }
 
 func (GetComputedUsagesComputedUsageParentProductOutput) ElementType() reflect.Type {
@@ -1513,6 +1718,12 @@ func (o GetComputedUsagesComputedUsageParentProductOutput) ToGetComputedUsagesCo
 
 func (o GetComputedUsagesComputedUsageParentProductOutput) ToGetComputedUsagesComputedUsageParentProductOutputWithContext(ctx context.Context) GetComputedUsagesComputedUsageParentProductOutput {
 	return o
+}
+
+func (o GetComputedUsagesComputedUsageParentProductOutput) ToOutput(ctx context.Context) pulumix.Output[GetComputedUsagesComputedUsageParentProduct] {
+	return pulumix.Output[GetComputedUsagesComputedUsageParentProduct]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Metered service billing category
@@ -1562,6 +1773,12 @@ func (o GetComputedUsagesComputedUsageParentProductArrayOutput) ToGetComputedUsa
 
 func (o GetComputedUsagesComputedUsageParentProductArrayOutput) ToGetComputedUsagesComputedUsageParentProductArrayOutputWithContext(ctx context.Context) GetComputedUsagesComputedUsageParentProductArrayOutput {
 	return o
+}
+
+func (o GetComputedUsagesComputedUsageParentProductArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetComputedUsagesComputedUsageParentProduct] {
+	return pulumix.Output[[]GetComputedUsagesComputedUsageParentProduct]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetComputedUsagesComputedUsageParentProductArrayOutput) Index(i pulumi.IntInput) GetComputedUsagesComputedUsageParentProductOutput {
@@ -1627,6 +1844,12 @@ func (i GetComputedUsagesComputedUsageProductArgs) ToGetComputedUsagesComputedUs
 	return pulumi.ToOutputWithContext(ctx, i).(GetComputedUsagesComputedUsageProductOutput)
 }
 
+func (i GetComputedUsagesComputedUsageProductArgs) ToOutput(ctx context.Context) pulumix.Output[GetComputedUsagesComputedUsageProduct] {
+	return pulumix.Output[GetComputedUsagesComputedUsageProduct]{
+		OutputState: i.ToGetComputedUsagesComputedUsageProductOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetComputedUsagesComputedUsageProductArrayInput is an input type that accepts GetComputedUsagesComputedUsageProductArray and GetComputedUsagesComputedUsageProductArrayOutput values.
 // You can construct a concrete instance of `GetComputedUsagesComputedUsageProductArrayInput` via:
 //
@@ -1652,6 +1875,12 @@ func (i GetComputedUsagesComputedUsageProductArray) ToGetComputedUsagesComputedU
 	return pulumi.ToOutputWithContext(ctx, i).(GetComputedUsagesComputedUsageProductArrayOutput)
 }
 
+func (i GetComputedUsagesComputedUsageProductArray) ToOutput(ctx context.Context) pulumix.Output[[]GetComputedUsagesComputedUsageProduct] {
+	return pulumix.Output[[]GetComputedUsagesComputedUsageProduct]{
+		OutputState: i.ToGetComputedUsagesComputedUsageProductArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetComputedUsagesComputedUsageProductOutput struct{ *pulumi.OutputState }
 
 func (GetComputedUsagesComputedUsageProductOutput) ElementType() reflect.Type {
@@ -1664,6 +1893,12 @@ func (o GetComputedUsagesComputedUsageProductOutput) ToGetComputedUsagesComputed
 
 func (o GetComputedUsagesComputedUsageProductOutput) ToGetComputedUsagesComputedUsageProductOutputWithContext(ctx context.Context) GetComputedUsagesComputedUsageProductOutput {
 	return o
+}
+
+func (o GetComputedUsagesComputedUsageProductOutput) ToOutput(ctx context.Context) pulumix.Output[GetComputedUsagesComputedUsageProduct] {
+	return pulumix.Output[GetComputedUsagesComputedUsageProduct]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Metered service billing category
@@ -1715,6 +1950,12 @@ func (o GetComputedUsagesComputedUsageProductArrayOutput) ToGetComputedUsagesCom
 	return o
 }
 
+func (o GetComputedUsagesComputedUsageProductArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetComputedUsagesComputedUsageProduct] {
+	return pulumix.Output[[]GetComputedUsagesComputedUsageProduct]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetComputedUsagesComputedUsageProductArrayOutput) Index(i pulumi.IntInput) GetComputedUsagesComputedUsageProductOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetComputedUsagesComputedUsageProduct {
 		return vs[0].([]GetComputedUsagesComputedUsageProduct)[vs[1].(int)]
@@ -1758,6 +1999,12 @@ func (i GetComputedUsagesFilterArgs) ToGetComputedUsagesFilterOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetComputedUsagesFilterOutput)
 }
 
+func (i GetComputedUsagesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetComputedUsagesFilter] {
+	return pulumix.Output[GetComputedUsagesFilter]{
+		OutputState: i.ToGetComputedUsagesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetComputedUsagesFilterArrayInput is an input type that accepts GetComputedUsagesFilterArray and GetComputedUsagesFilterArrayOutput values.
 // You can construct a concrete instance of `GetComputedUsagesFilterArrayInput` via:
 //
@@ -1783,6 +2030,12 @@ func (i GetComputedUsagesFilterArray) ToGetComputedUsagesFilterArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetComputedUsagesFilterArrayOutput)
 }
 
+func (i GetComputedUsagesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetComputedUsagesFilter] {
+	return pulumix.Output[[]GetComputedUsagesFilter]{
+		OutputState: i.ToGetComputedUsagesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetComputedUsagesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetComputedUsagesFilterOutput) ElementType() reflect.Type {
@@ -1795,6 +2048,12 @@ func (o GetComputedUsagesFilterOutput) ToGetComputedUsagesFilterOutput() GetComp
 
 func (o GetComputedUsagesFilterOutput) ToGetComputedUsagesFilterOutputWithContext(ctx context.Context) GetComputedUsagesFilterOutput {
 	return o
+}
+
+func (o GetComputedUsagesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetComputedUsagesFilter] {
+	return pulumix.Output[GetComputedUsagesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Product name
@@ -1822,6 +2081,12 @@ func (o GetComputedUsagesFilterArrayOutput) ToGetComputedUsagesFilterArrayOutput
 
 func (o GetComputedUsagesFilterArrayOutput) ToGetComputedUsagesFilterArrayOutputWithContext(ctx context.Context) GetComputedUsagesFilterArrayOutput {
 	return o
+}
+
+func (o GetComputedUsagesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetComputedUsagesFilter] {
+	return pulumix.Output[[]GetComputedUsagesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetComputedUsagesFilterArrayOutput) Index(i pulumi.IntInput) GetComputedUsagesFilterOutput {

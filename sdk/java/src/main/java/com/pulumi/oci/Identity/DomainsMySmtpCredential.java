@@ -90,7 +90,7 @@ public class DomainsMySmtpCredential extends com.pulumi.resources.CustomResource
      * The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      * 
      */
-    @Export(name="authorization", type=String.class, parameters={})
+    @Export(name="authorization", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> authorization;
 
     /**
@@ -114,7 +114,7 @@ public class DomainsMySmtpCredential extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="compartmentOcid", type=String.class, parameters={})
+    @Export(name="compartmentOcid", refs={String.class}, tree="[0]")
     private Output<String> compartmentOcid;
 
     /**
@@ -148,7 +148,7 @@ public class DomainsMySmtpCredential extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="deleteInProgress", type=Boolean.class, parameters={})
+    @Export(name="deleteInProgress", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> deleteInProgress;
 
     /**
@@ -179,7 +179,7 @@ public class DomainsMySmtpCredential extends com.pulumi.resources.CustomResource
      * * returned: default
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -210,7 +210,7 @@ public class DomainsMySmtpCredential extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="domainOcid", type=String.class, parameters={})
+    @Export(name="domainOcid", refs={String.class}, tree="[0]")
     private Output<String> domainOcid;
 
     /**
@@ -246,7 +246,7 @@ public class DomainsMySmtpCredential extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="expiresOn", type=String.class, parameters={})
+    @Export(name="expiresOn", refs={String.class}, tree="[0]")
     private Output<String> expiresOn;
 
     /**
@@ -280,7 +280,7 @@ public class DomainsMySmtpCredential extends com.pulumi.resources.CustomResource
      * * type: complex
      * 
      */
-    @Export(name="idcsCreatedBies", type=List.class, parameters={DomainsMySmtpCredentialIdcsCreatedBy.class})
+    @Export(name="idcsCreatedBies", refs={List.class,DomainsMySmtpCredentialIdcsCreatedBy.class}, tree="[0,1]")
     private Output<List<DomainsMySmtpCredentialIdcsCreatedBy>> idcsCreatedBies;
 
     /**
@@ -302,7 +302,7 @@ public class DomainsMySmtpCredential extends com.pulumi.resources.CustomResource
      * The basic endpoint for the identity domain
      * 
      */
-    @Export(name="idcsEndpoint", type=String.class, parameters={})
+    @Export(name="idcsEndpoint", refs={String.class}, tree="[0]")
     private Output<String> idcsEndpoint;
 
     /**
@@ -324,7 +324,7 @@ public class DomainsMySmtpCredential extends com.pulumi.resources.CustomResource
      * * type: complex
      * 
      */
-    @Export(name="idcsLastModifiedBies", type=List.class, parameters={DomainsMySmtpCredentialIdcsLastModifiedBy.class})
+    @Export(name="idcsLastModifiedBies", refs={List.class,DomainsMySmtpCredentialIdcsLastModifiedBy.class}, tree="[0,1]")
     private Output<List<DomainsMySmtpCredentialIdcsLastModifiedBy>> idcsLastModifiedBies;
 
     /**
@@ -356,7 +356,7 @@ public class DomainsMySmtpCredential extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="idcsLastUpgradedInRelease", type=String.class, parameters={})
+    @Export(name="idcsLastUpgradedInRelease", refs={String.class}, tree="[0]")
     private Output<String> idcsLastUpgradedInRelease;
 
     /**
@@ -389,7 +389,7 @@ public class DomainsMySmtpCredential extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="idcsPreventedOperations", type=List.class, parameters={String.class})
+    @Export(name="idcsPreventedOperations", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> idcsPreventedOperations;
 
     /**
@@ -422,7 +422,7 @@ public class DomainsMySmtpCredential extends com.pulumi.resources.CustomResource
      * * type: complex
      * 
      */
-    @Export(name="metas", type=List.class, parameters={DomainsMySmtpCredentialMeta.class})
+    @Export(name="metas", refs={List.class,DomainsMySmtpCredentialMeta.class}, tree="[0,1]")
     private Output<List<DomainsMySmtpCredentialMeta>> metas;
 
     /**
@@ -456,7 +456,7 @@ public class DomainsMySmtpCredential extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="ocid", type=String.class, parameters={})
+    @Export(name="ocid", refs={String.class}, tree="[0]")
     private Output<String> ocid;
 
     /**
@@ -480,7 +480,7 @@ public class DomainsMySmtpCredential extends com.pulumi.resources.CustomResource
      * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      * 
      */
-    @Export(name="resourceTypeSchemaVersion", type=String.class, parameters={})
+    @Export(name="resourceTypeSchemaVersion", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> resourceTypeSchemaVersion;
 
     /**
@@ -504,7 +504,7 @@ public class DomainsMySmtpCredential extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="schemas", type=List.class, parameters={String.class})
+    @Export(name="schemas", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> schemas;
 
     /**
@@ -540,7 +540,7 @@ public class DomainsMySmtpCredential extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="status", type=String.class, parameters={})
+    @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
@@ -576,7 +576,7 @@ public class DomainsMySmtpCredential extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="tags", type=List.class, parameters={DomainsMySmtpCredentialTag.class})
+    @Export(name="tags", refs={List.class,DomainsMySmtpCredentialTag.class}, tree="[0,1]")
     private Output<List<DomainsMySmtpCredentialTag>> tags;
 
     /**
@@ -610,7 +610,7 @@ public class DomainsMySmtpCredential extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="tenancyOcid", type=String.class, parameters={})
+    @Export(name="tenancyOcid", refs={String.class}, tree="[0]")
     private Output<String> tenancyOcid;
 
     /**
@@ -644,7 +644,7 @@ public class DomainsMySmtpCredential extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    @Export(name="user", type=DomainsMySmtpCredentialUser.class, parameters={})
+    @Export(name="user", refs={DomainsMySmtpCredentialUser.class}, tree="[0]")
     private Output<DomainsMySmtpCredentialUser> user;
 
     /**
@@ -678,7 +678,7 @@ public class DomainsMySmtpCredential extends com.pulumi.resources.CustomResource
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="userName", type=String.class, parameters={})
+    @Export(name="userName", refs={String.class}, tree="[0]")
     private Output<String> userName;
 
     /**

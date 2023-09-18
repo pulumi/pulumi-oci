@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Namespace Effective Properties in Oracle Cloud Infrastructure Log Analytics service.
@@ -141,6 +142,12 @@ func (o GetNamespaceEffectivePropertiesResultOutput) ToGetNamespaceEffectiveProp
 
 func (o GetNamespaceEffectivePropertiesResultOutput) ToGetNamespaceEffectivePropertiesResultOutputWithContext(ctx context.Context) GetNamespaceEffectivePropertiesResultOutput {
 	return o
+}
+
+func (o GetNamespaceEffectivePropertiesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceEffectivePropertiesResult] {
+	return pulumix.Output[GetNamespaceEffectivePropertiesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNamespaceEffectivePropertiesResultOutput) AgentId() pulumi.StringPtrOutput {

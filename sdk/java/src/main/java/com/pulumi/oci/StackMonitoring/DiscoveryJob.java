@@ -97,7 +97,7 @@ public class DiscoveryJob extends com.pulumi.resources.CustomResource {
      * The OCID of Compartment
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -111,7 +111,7 @@ public class DiscoveryJob extends com.pulumi.resources.CustomResource {
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -125,7 +125,7 @@ public class DiscoveryJob extends com.pulumi.resources.CustomResource {
      * Client who submits discovery job.
      * 
      */
-    @Export(name="discoveryClient", type=String.class, parameters={})
+    @Export(name="discoveryClient", refs={String.class}, tree="[0]")
     private Output<String> discoveryClient;
 
     /**
@@ -139,7 +139,7 @@ public class DiscoveryJob extends com.pulumi.resources.CustomResource {
      * The request of DiscoveryJob Resource details.
      * 
      */
-    @Export(name="discoveryDetails", type=DiscoveryJobDiscoveryDetails.class, parameters={})
+    @Export(name="discoveryDetails", refs={DiscoveryJobDiscoveryDetails.class}, tree="[0]")
     private Output<DiscoveryJobDiscoveryDetails> discoveryDetails;
 
     /**
@@ -153,7 +153,7 @@ public class DiscoveryJob extends com.pulumi.resources.CustomResource {
      * Add option submits new discovery Job. Add with retry option to re-submit failed discovery job. Refresh option refreshes the existing discovered resources.
      * 
      */
-    @Export(name="discoveryType", type=String.class, parameters={})
+    @Export(name="discoveryType", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> discoveryType;
 
     /**
@@ -167,7 +167,7 @@ public class DiscoveryJob extends com.pulumi.resources.CustomResource {
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -184,7 +184,7 @@ public class DiscoveryJob extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="shouldPropagateTagsToDiscoveredResources", type=Boolean.class, parameters={})
+    @Export(name="shouldPropagateTagsToDiscoveredResources", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> shouldPropagateTagsToDiscoveredResources;
 
     /**
@@ -201,7 +201,7 @@ public class DiscoveryJob extends com.pulumi.resources.CustomResource {
      * The current state of the DiscoveryJob Resource.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -215,7 +215,7 @@ public class DiscoveryJob extends com.pulumi.resources.CustomResource {
      * Specifies the status of the discovery job
      * 
      */
-    @Export(name="status", type=String.class, parameters={})
+    @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
@@ -229,7 +229,7 @@ public class DiscoveryJob extends com.pulumi.resources.CustomResource {
      * The short summary of the status of the discovery job
      * 
      */
-    @Export(name="statusMessage", type=String.class, parameters={})
+    @Export(name="statusMessage", refs={String.class}, tree="[0]")
     private Output<String> statusMessage;
 
     /**
@@ -243,7 +243,7 @@ public class DiscoveryJob extends com.pulumi.resources.CustomResource {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -257,7 +257,7 @@ public class DiscoveryJob extends com.pulumi.resources.CustomResource {
      * The OCID of Tenant
      * 
      */
-    @Export(name="tenantId", type=String.class, parameters={})
+    @Export(name="tenantId", refs={String.class}, tree="[0]")
     private Output<String> tenantId;
 
     /**
@@ -271,7 +271,7 @@ public class DiscoveryJob extends com.pulumi.resources.CustomResource {
      * The time the discovery Job was updated.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -285,7 +285,7 @@ public class DiscoveryJob extends com.pulumi.resources.CustomResource {
      * The OCID of user in which the job is submitted
      * 
      */
-    @Export(name="userId", type=String.class, parameters={})
+    @Export(name="userId", refs={String.class}, tree="[0]")
     private Output<String> userId;
 
     /**

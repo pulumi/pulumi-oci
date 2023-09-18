@@ -74,7 +74,7 @@ public class AuditArchiveRetrieval extends com.pulumi.resources.CustomResource {
      * Total count of audit events to be retrieved from the archive for the specified date range.
      * 
      */
-    @Export(name="auditEventCount", type=String.class, parameters={})
+    @Export(name="auditEventCount", refs={String.class}, tree="[0]")
     private Output<String> auditEventCount;
 
     /**
@@ -88,7 +88,7 @@ public class AuditArchiveRetrieval extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the compartment that contains the archival retrieval.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -102,7 +102,7 @@ public class AuditArchiveRetrieval extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -116,7 +116,7 @@ public class AuditArchiveRetrieval extends com.pulumi.resources.CustomResource {
      * (Updatable) Description of the archive retrieval.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -130,7 +130,7 @@ public class AuditArchiveRetrieval extends com.pulumi.resources.CustomResource {
      * (Updatable) The display name of the archive retrieval. The name does not have to be unique, and is changeable.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -144,7 +144,7 @@ public class AuditArchiveRetrieval extends com.pulumi.resources.CustomResource {
      * End month of the archive retrieval, in the format defined by RFC3339.
      * 
      */
-    @Export(name="endDate", type=String.class, parameters={})
+    @Export(name="endDate", refs={String.class}, tree="[0]")
     private Output<String> endDate;
 
     /**
@@ -158,7 +158,7 @@ public class AuditArchiveRetrieval extends com.pulumi.resources.CustomResource {
      * The Error details of a failed archive retrieval.
      * 
      */
-    @Export(name="errorInfo", type=String.class, parameters={})
+    @Export(name="errorInfo", refs={String.class}, tree="[0]")
     private Output<String> errorInfo;
 
     /**
@@ -172,7 +172,7 @@ public class AuditArchiveRetrieval extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -186,7 +186,7 @@ public class AuditArchiveRetrieval extends com.pulumi.resources.CustomResource {
      * Details about the current state of the archive retrieval.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -200,7 +200,7 @@ public class AuditArchiveRetrieval extends com.pulumi.resources.CustomResource {
      * Start month of the archive retrieval, in the format defined by RFC3339.
      * 
      */
-    @Export(name="startDate", type=String.class, parameters={})
+    @Export(name="startDate", refs={String.class}, tree="[0]")
     private Output<String> startDate;
 
     /**
@@ -214,7 +214,7 @@ public class AuditArchiveRetrieval extends com.pulumi.resources.CustomResource {
      * The current state of the archive retrieval.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -228,7 +228,7 @@ public class AuditArchiveRetrieval extends com.pulumi.resources.CustomResource {
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -245,7 +245,7 @@ public class AuditArchiveRetrieval extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="targetId", type=String.class, parameters={})
+    @Export(name="targetId", refs={String.class}, tree="[0]")
     private Output<String> targetId;
 
     /**
@@ -262,7 +262,7 @@ public class AuditArchiveRetrieval extends com.pulumi.resources.CustomResource {
      * The date time when archive retrieval request was fulfilled, in the format defined by RFC3339.
      * 
      */
-    @Export(name="timeCompleted", type=String.class, parameters={})
+    @Export(name="timeCompleted", refs={String.class}, tree="[0]")
     private Output<String> timeCompleted;
 
     /**
@@ -276,7 +276,7 @@ public class AuditArchiveRetrieval extends com.pulumi.resources.CustomResource {
      * The date time when retrieved archive data will be deleted from Data Safe and unloaded back into archival.
      * 
      */
-    @Export(name="timeOfExpiry", type=String.class, parameters={})
+    @Export(name="timeOfExpiry", refs={String.class}, tree="[0]")
     private Output<String> timeOfExpiry;
 
     /**
@@ -290,7 +290,7 @@ public class AuditArchiveRetrieval extends com.pulumi.resources.CustomResource {
      * The date time when archive retrieval was requested, in the format defined by RFC3339.
      * 
      */
-    @Export(name="timeRequested", type=String.class, parameters={})
+    @Export(name="timeRequested", refs={String.class}, tree="[0]")
     private Output<String> timeRequested;
 
     /**

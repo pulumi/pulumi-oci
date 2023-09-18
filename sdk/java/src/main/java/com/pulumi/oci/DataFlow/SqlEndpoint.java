@@ -111,7 +111,7 @@ public class SqlEndpoint extends com.pulumi.resources.CustomResource {
      * (Updatable) The identifier of the compartment used with the SQL Endpoint.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -125,7 +125,7 @@ public class SqlEndpoint extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -139,7 +139,7 @@ public class SqlEndpoint extends com.pulumi.resources.CustomResource {
      * The description of CreateSQLEndpointDetails.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -153,7 +153,7 @@ public class SqlEndpoint extends com.pulumi.resources.CustomResource {
      * The SQL Endpoint name, which can be changed.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -167,7 +167,7 @@ public class SqlEndpoint extends com.pulumi.resources.CustomResource {
      * The shape of the SQL Endpoint driver instance.
      * 
      */
-    @Export(name="driverShape", type=String.class, parameters={})
+    @Export(name="driverShape", refs={String.class}, tree="[0]")
     private Output<String> driverShape;
 
     /**
@@ -181,7 +181,7 @@ public class SqlEndpoint extends com.pulumi.resources.CustomResource {
      * This is used to configure the shape of the driver or executor if a flexible shape is used.
      * 
      */
-    @Export(name="driverShapeConfig", type=SqlEndpointDriverShapeConfig.class, parameters={})
+    @Export(name="driverShapeConfig", refs={SqlEndpointDriverShapeConfig.class}, tree="[0]")
     private Output<SqlEndpointDriverShapeConfig> driverShapeConfig;
 
     /**
@@ -195,7 +195,7 @@ public class SqlEndpoint extends com.pulumi.resources.CustomResource {
      * The shape of the SQL Endpoint worker instance.
      * 
      */
-    @Export(name="executorShape", type=String.class, parameters={})
+    @Export(name="executorShape", refs={String.class}, tree="[0]")
     private Output<String> executorShape;
 
     /**
@@ -209,7 +209,7 @@ public class SqlEndpoint extends com.pulumi.resources.CustomResource {
      * This is used to configure the shape of the driver or executor if a flexible shape is used.
      * 
      */
-    @Export(name="executorShapeConfig", type=SqlEndpointExecutorShapeConfig.class, parameters={})
+    @Export(name="executorShapeConfig", refs={SqlEndpointExecutorShapeConfig.class}, tree="[0]")
     private Output<SqlEndpointExecutorShapeConfig> executorShapeConfig;
 
     /**
@@ -223,7 +223,7 @@ public class SqlEndpoint extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -237,7 +237,7 @@ public class SqlEndpoint extends com.pulumi.resources.CustomResource {
      * The JDBC URL field. For example, jdbc:spark://{serviceFQDN}:443/default;SparkServerType=DFI
      * 
      */
-    @Export(name="jdbcEndpointUrl", type=String.class, parameters={})
+    @Export(name="jdbcEndpointUrl", refs={String.class}, tree="[0]")
     private Output<String> jdbcEndpointUrl;
 
     /**
@@ -251,7 +251,7 @@ public class SqlEndpoint extends com.pulumi.resources.CustomResource {
      * Oracle Cloud Infrastructure lake OCID
      * 
      */
-    @Export(name="lakeId", type=String.class, parameters={})
+    @Export(name="lakeId", refs={String.class}, tree="[0]")
     private Output<String> lakeId;
 
     /**
@@ -265,7 +265,7 @@ public class SqlEndpoint extends com.pulumi.resources.CustomResource {
      * This token is used by Splat, and indicates that the service accepts the request, and that the request is currently being processed.
      * 
      */
-    @Export(name="lastAcceptedRequestToken", type=String.class, parameters={})
+    @Export(name="lastAcceptedRequestToken", refs={String.class}, tree="[0]")
     private Output<String> lastAcceptedRequestToken;
 
     /**
@@ -279,7 +279,7 @@ public class SqlEndpoint extends com.pulumi.resources.CustomResource {
      * The maximum number of executors.
      * 
      */
-    @Export(name="maxExecutorCount", type=Integer.class, parameters={})
+    @Export(name="maxExecutorCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxExecutorCount;
 
     /**
@@ -293,7 +293,7 @@ public class SqlEndpoint extends com.pulumi.resources.CustomResource {
      * Metastore OCID
      * 
      */
-    @Export(name="metastoreId", type=String.class, parameters={})
+    @Export(name="metastoreId", refs={String.class}, tree="[0]")
     private Output<String> metastoreId;
 
     /**
@@ -307,7 +307,7 @@ public class SqlEndpoint extends com.pulumi.resources.CustomResource {
      * The minimum number of executors.
      * 
      */
-    @Export(name="minExecutorCount", type=Integer.class, parameters={})
+    @Export(name="minExecutorCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> minExecutorCount;
 
     /**
@@ -321,7 +321,7 @@ public class SqlEndpoint extends com.pulumi.resources.CustomResource {
      * The network configuration of a SQL Endpoint.
      * 
      */
-    @Export(name="networkConfiguration", type=SqlEndpointNetworkConfiguration.class, parameters={})
+    @Export(name="networkConfiguration", refs={SqlEndpointNetworkConfiguration.class}, tree="[0]")
     private Output<SqlEndpointNetworkConfiguration> networkConfiguration;
 
     /**
@@ -335,7 +335,7 @@ public class SqlEndpoint extends com.pulumi.resources.CustomResource {
      * The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { &#34;spark.app.name&#34; : &#34;My App Name&#34;, &#34;spark.shuffle.io.maxRetries&#34; : &#34;4&#34; } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
      * 
      */
-    @Export(name="sparkAdvancedConfigurations", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="sparkAdvancedConfigurations", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> sparkAdvancedConfigurations;
 
     /**
@@ -349,7 +349,7 @@ public class SqlEndpoint extends com.pulumi.resources.CustomResource {
      * The version of the SQL Endpoint.
      * 
      */
-    @Export(name="sqlEndpointVersion", type=String.class, parameters={})
+    @Export(name="sqlEndpointVersion", refs={String.class}, tree="[0]")
     private Output<String> sqlEndpointVersion;
 
     /**
@@ -363,7 +363,7 @@ public class SqlEndpoint extends com.pulumi.resources.CustomResource {
      * The current state of the Sql Endpoint.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -377,7 +377,7 @@ public class SqlEndpoint extends com.pulumi.resources.CustomResource {
      * A message describing the reason why the resource is in it&#39;s current state. Helps bubble up errors in state changes. For example, it can be used to provide actionable information for a resource in the Failed state.
      * 
      */
-    @Export(name="stateMessage", type=String.class, parameters={})
+    @Export(name="stateMessage", refs={String.class}, tree="[0]")
     private Output<String> stateMessage;
 
     /**
@@ -391,7 +391,7 @@ public class SqlEndpoint extends com.pulumi.resources.CustomResource {
      * The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -405,7 +405,7 @@ public class SqlEndpoint extends com.pulumi.resources.CustomResource {
      * The time the Sql Endpoint was created. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -419,7 +419,7 @@ public class SqlEndpoint extends com.pulumi.resources.CustomResource {
      * The time the Sql Endpoint was updated. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -436,7 +436,7 @@ public class SqlEndpoint extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="warehouseBucketUri", type=String.class, parameters={})
+    @Export(name="warehouseBucketUri", refs={String.class}, tree="[0]")
     private Output<String> warehouseBucketUri;
 
     /**

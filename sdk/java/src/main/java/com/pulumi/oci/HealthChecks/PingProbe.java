@@ -73,7 +73,7 @@ public class PingProbe extends com.pulumi.resources.CustomResource {
      * The OCID of the compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -87,7 +87,7 @@ public class PingProbe extends com.pulumi.resources.CustomResource {
      * The region where updates must be made and where results must be fetched from.
      * 
      */
-    @Export(name="homeRegion", type=String.class, parameters={})
+    @Export(name="homeRegion", refs={String.class}, tree="[0]")
     private Output<String> homeRegion;
 
     /**
@@ -101,7 +101,7 @@ public class PingProbe extends com.pulumi.resources.CustomResource {
      * The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
      * 
      */
-    @Export(name="port", type=Integer.class, parameters={})
+    @Export(name="port", refs={Integer.class}, tree="[0]")
     private Output<Integer> port;
 
     /**
@@ -115,7 +115,7 @@ public class PingProbe extends com.pulumi.resources.CustomResource {
      * The protocols for ping probes.
      * 
      */
-    @Export(name="protocol", type=String.class, parameters={})
+    @Export(name="protocol", refs={String.class}, tree="[0]")
     private Output<String> protocol;
 
     /**
@@ -129,7 +129,7 @@ public class PingProbe extends com.pulumi.resources.CustomResource {
      * A URL for fetching the probe results.
      * 
      */
-    @Export(name="resultsUrl", type=String.class, parameters={})
+    @Export(name="resultsUrl", refs={String.class}, tree="[0]")
     private Output<String> resultsUrl;
 
     /**
@@ -143,7 +143,7 @@ public class PingProbe extends com.pulumi.resources.CustomResource {
      * A list of targets (hostnames or IP addresses) of the probe.
      * 
      */
-    @Export(name="targets", type=List.class, parameters={String.class})
+    @Export(name="targets", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> targets;
 
     /**
@@ -157,7 +157,7 @@ public class PingProbe extends com.pulumi.resources.CustomResource {
      * The RFC 3339-formatted creation date and time of the probe.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -171,7 +171,7 @@ public class PingProbe extends com.pulumi.resources.CustomResource {
      * The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
      * 
      */
-    @Export(name="timeoutInSeconds", type=Integer.class, parameters={})
+    @Export(name="timeoutInSeconds", refs={Integer.class}, tree="[0]")
     private Output<Integer> timeoutInSeconds;
 
     /**
@@ -188,7 +188,7 @@ public class PingProbe extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="vantagePointNames", type=List.class, parameters={String.class})
+    @Export(name="vantagePointNames", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> vantagePointNames;
 
     /**

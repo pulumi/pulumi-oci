@@ -79,7 +79,7 @@ public class OdaInstance extends com.pulumi.resources.CustomResource {
      * A list of attachment identifiers for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
      * 
      */
-    @Export(name="attachmentIds", type=List.class, parameters={String.class})
+    @Export(name="attachmentIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> attachmentIds;
 
     /**
@@ -93,7 +93,7 @@ public class OdaInstance extends com.pulumi.resources.CustomResource {
      * A list of attachment types for this instance (if any). Use attachmentIds to get the details of the attachments.
      * 
      */
-    @Export(name="attachmentTypes", type=List.class, parameters={String.class})
+    @Export(name="attachmentTypes", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> attachmentTypes;
 
     /**
@@ -107,7 +107,7 @@ public class OdaInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) Identifier of the compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -121,7 +121,7 @@ public class OdaInstance extends com.pulumi.resources.CustomResource {
      * URL for the connector&#39;s endpoint.
      * 
      */
-    @Export(name="connectorUrl", type=String.class, parameters={})
+    @Export(name="connectorUrl", refs={String.class}, tree="[0]")
     private Output<String> connectorUrl;
 
     /**
@@ -135,7 +135,7 @@ public class OdaInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -149,7 +149,7 @@ public class OdaInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) Description of the Digital Assistant instance.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> description;
 
     /**
@@ -163,7 +163,7 @@ public class OdaInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) User-friendly name for the instance. Avoid entering confidential information. You can change this value anytime.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -177,7 +177,7 @@ public class OdaInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -191,7 +191,7 @@ public class OdaInstance extends com.pulumi.resources.CustomResource {
      * If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
      * 
      */
-    @Export(name="identityAppConsoleUrl", type=String.class, parameters={})
+    @Export(name="identityAppConsoleUrl", refs={String.class}, tree="[0]")
     private Output<String> identityAppConsoleUrl;
 
     /**
@@ -205,7 +205,7 @@ public class OdaInstance extends com.pulumi.resources.CustomResource {
      * If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
      * 
      */
-    @Export(name="identityAppGuid", type=String.class, parameters={})
+    @Export(name="identityAppGuid", refs={String.class}, tree="[0]")
     private Output<String> identityAppGuid;
 
     /**
@@ -219,7 +219,7 @@ public class OdaInstance extends com.pulumi.resources.CustomResource {
      * If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
      * 
      */
-    @Export(name="identityDomain", type=String.class, parameters={})
+    @Export(name="identityDomain", refs={String.class}, tree="[0]")
     private Output<String> identityDomain;
 
     /**
@@ -233,7 +233,7 @@ public class OdaInstance extends com.pulumi.resources.CustomResource {
      * A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
      * 
      */
-    @Export(name="importedPackageIds", type=List.class, parameters={String.class})
+    @Export(name="importedPackageIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> importedPackageIds;
 
     /**
@@ -247,7 +247,7 @@ public class OdaInstance extends com.pulumi.resources.CustomResource {
      * A list of package names imported into this instance (if any). Use importedPackageIds field to get the details of the imported packages.
      * 
      */
-    @Export(name="importedPackageNames", type=List.class, parameters={String.class})
+    @Export(name="importedPackageNames", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> importedPackageNames;
 
     /**
@@ -261,7 +261,7 @@ public class OdaInstance extends com.pulumi.resources.CustomResource {
      * Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
      * 
      */
-    @Export(name="isRoleBasedAccess", type=Boolean.class, parameters={})
+    @Export(name="isRoleBasedAccess", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isRoleBasedAccess;
 
     /**
@@ -275,7 +275,7 @@ public class OdaInstance extends com.pulumi.resources.CustomResource {
      * The current sub-state of the Digital Assistant instance.
      * 
      */
-    @Export(name="lifecycleSubState", type=String.class, parameters={})
+    @Export(name="lifecycleSubState", refs={String.class}, tree="[0]")
     private Output<String> lifecycleSubState;
 
     /**
@@ -289,7 +289,7 @@ public class OdaInstance extends com.pulumi.resources.CustomResource {
      * A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
      * 
      */
-    @Export(name="restrictedOperations", type=List.class, parameters={OdaInstanceRestrictedOperation.class})
+    @Export(name="restrictedOperations", refs={List.class,OdaInstanceRestrictedOperation.class}, tree="[0,1]")
     private Output<List<OdaInstanceRestrictedOperation>> restrictedOperations;
 
     /**
@@ -306,7 +306,7 @@ public class OdaInstance extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="shapeName", type=String.class, parameters={})
+    @Export(name="shapeName", refs={String.class}, tree="[0]")
     private Output<String> shapeName;
 
     /**
@@ -323,7 +323,7 @@ public class OdaInstance extends com.pulumi.resources.CustomResource {
      * The current state of the Digital Assistant instance.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -337,7 +337,7 @@ public class OdaInstance extends com.pulumi.resources.CustomResource {
      * A message that describes the current state in more detail. For example, actionable information about an instance that&#39;s in the `FAILED` state.
      * 
      */
-    @Export(name="stateMessage", type=String.class, parameters={})
+    @Export(name="stateMessage", refs={String.class}, tree="[0]")
     private Output<String> stateMessage;
 
     /**
@@ -351,7 +351,7 @@ public class OdaInstance extends com.pulumi.resources.CustomResource {
      * When the Digital Assistant instance was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -365,7 +365,7 @@ public class OdaInstance extends com.pulumi.resources.CustomResource {
      * When the Digital Assistance instance was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -379,7 +379,7 @@ public class OdaInstance extends com.pulumi.resources.CustomResource {
      * URL for the Digital Assistant web application that&#39;s associated with the instance.
      * 
      */
-    @Export(name="webAppUrl", type=String.class, parameters={})
+    @Export(name="webAppUrl", refs={String.class}, tree="[0]")
     private Output<String> webAppUrl;
 
     /**

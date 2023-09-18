@@ -77,7 +77,7 @@ public class OpaInstance extends com.pulumi.resources.CustomResource {
      * A list of associated attachments to other services
      * 
      */
-    @Export(name="attachments", type=List.class, parameters={OpaInstanceAttachment.class})
+    @Export(name="attachments", refs={List.class,OpaInstanceAttachment.class}, tree="[0,1]")
     private Output<List<OpaInstanceAttachment>> attachments;
 
     /**
@@ -91,7 +91,7 @@ public class OpaInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) Compartment Identifier
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -105,7 +105,7 @@ public class OpaInstance extends com.pulumi.resources.CustomResource {
      * Parameter specifying which entitlement to use for billing purposes
      * 
      */
-    @Export(name="consumptionModel", type=String.class, parameters={})
+    @Export(name="consumptionModel", refs={String.class}, tree="[0]")
     private Output<String> consumptionModel;
 
     /**
@@ -119,7 +119,7 @@ public class OpaInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -133,7 +133,7 @@ public class OpaInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) Description of the Oracle Process Automation instance.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -147,7 +147,7 @@ public class OpaInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) OpaInstance Identifier. User-friendly name for the instance. Avoid entering confidential information. You can change this value anytime.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -161,7 +161,7 @@ public class OpaInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -175,7 +175,7 @@ public class OpaInstance extends com.pulumi.resources.CustomResource {
      * IDCS Authentication token. This is required for all realms with IDCS. This property is optional, as it is not required for non-IDCS realms.
      * 
      */
-    @Export(name="idcsAt", type=String.class, parameters={})
+    @Export(name="idcsAt", refs={String.class}, tree="[0]")
     private Output<String> idcsAt;
 
     /**
@@ -189,7 +189,7 @@ public class OpaInstance extends com.pulumi.resources.CustomResource {
      * This property specifies the name of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
      * 
      */
-    @Export(name="identityAppDisplayName", type=String.class, parameters={})
+    @Export(name="identityAppDisplayName", refs={String.class}, tree="[0]")
     private Output<String> identityAppDisplayName;
 
     /**
@@ -203,7 +203,7 @@ public class OpaInstance extends com.pulumi.resources.CustomResource {
      * This property specifies the GUID of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user role mappings to grant access to this OPA instance for users within the identity domain.
      * 
      */
-    @Export(name="identityAppGuid", type=String.class, parameters={})
+    @Export(name="identityAppGuid", refs={String.class}, tree="[0]")
     private Output<String> identityAppGuid;
 
     /**
@@ -217,7 +217,7 @@ public class OpaInstance extends com.pulumi.resources.CustomResource {
      * This property specifies the OPC Service Instance GUID of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
      * 
      */
-    @Export(name="identityAppOpcServiceInstanceGuid", type=String.class, parameters={})
+    @Export(name="identityAppOpcServiceInstanceGuid", refs={String.class}, tree="[0]")
     private Output<String> identityAppOpcServiceInstanceGuid;
 
     /**
@@ -231,7 +231,7 @@ public class OpaInstance extends com.pulumi.resources.CustomResource {
      * This property specifies the domain url of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
      * 
      */
-    @Export(name="identityDomainUrl", type=String.class, parameters={})
+    @Export(name="identityDomainUrl", refs={String.class}, tree="[0]")
     private Output<String> identityDomainUrl;
 
     /**
@@ -245,7 +245,7 @@ public class OpaInstance extends com.pulumi.resources.CustomResource {
      * OPA Instance URL
      * 
      */
-    @Export(name="instanceUrl", type=String.class, parameters={})
+    @Export(name="instanceUrl", refs={String.class}, tree="[0]")
     private Output<String> instanceUrl;
 
     /**
@@ -259,7 +259,7 @@ public class OpaInstance extends com.pulumi.resources.CustomResource {
      * indicates if breakGlass is enabled for the opa instance.
      * 
      */
-    @Export(name="isBreakglassEnabled", type=Boolean.class, parameters={})
+    @Export(name="isBreakglassEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isBreakglassEnabled;
 
     /**
@@ -273,7 +273,7 @@ public class OpaInstance extends com.pulumi.resources.CustomResource {
      * MeteringType Identifier
      * 
      */
-    @Export(name="meteringType", type=String.class, parameters={})
+    @Export(name="meteringType", refs={String.class}, tree="[0]")
     private Output<String> meteringType;
 
     /**
@@ -290,7 +290,7 @@ public class OpaInstance extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="shapeName", type=String.class, parameters={})
+    @Export(name="shapeName", refs={String.class}, tree="[0]")
     private Output<String> shapeName;
 
     /**
@@ -307,7 +307,7 @@ public class OpaInstance extends com.pulumi.resources.CustomResource {
      * The current state of the OpaInstance.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -321,7 +321,7 @@ public class OpaInstance extends com.pulumi.resources.CustomResource {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -335,7 +335,7 @@ public class OpaInstance extends com.pulumi.resources.CustomResource {
      * The time when OpaInstance was created. An RFC3339 formatted datetime string
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -349,7 +349,7 @@ public class OpaInstance extends com.pulumi.resources.CustomResource {
      * The time the OpaInstance was updated. An RFC3339 formatted datetime string
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Operator Control Assignment resource in Oracle Cloud Infrastructure Operator Access Control service.
@@ -407,6 +408,12 @@ func (i *OperatorControlAssignment) ToOperatorControlAssignmentOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(OperatorControlAssignmentOutput)
 }
 
+func (i *OperatorControlAssignment) ToOutput(ctx context.Context) pulumix.Output[*OperatorControlAssignment] {
+	return pulumix.Output[*OperatorControlAssignment]{
+		OutputState: i.ToOperatorControlAssignmentOutputWithContext(ctx).OutputState,
+	}
+}
+
 // OperatorControlAssignmentArrayInput is an input type that accepts OperatorControlAssignmentArray and OperatorControlAssignmentArrayOutput values.
 // You can construct a concrete instance of `OperatorControlAssignmentArrayInput` via:
 //
@@ -430,6 +437,12 @@ func (i OperatorControlAssignmentArray) ToOperatorControlAssignmentArrayOutput()
 
 func (i OperatorControlAssignmentArray) ToOperatorControlAssignmentArrayOutputWithContext(ctx context.Context) OperatorControlAssignmentArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(OperatorControlAssignmentArrayOutput)
+}
+
+func (i OperatorControlAssignmentArray) ToOutput(ctx context.Context) pulumix.Output[[]*OperatorControlAssignment] {
+	return pulumix.Output[[]*OperatorControlAssignment]{
+		OutputState: i.ToOperatorControlAssignmentArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // OperatorControlAssignmentMapInput is an input type that accepts OperatorControlAssignmentMap and OperatorControlAssignmentMapOutput values.
@@ -457,6 +470,12 @@ func (i OperatorControlAssignmentMap) ToOperatorControlAssignmentMapOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(OperatorControlAssignmentMapOutput)
 }
 
+func (i OperatorControlAssignmentMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*OperatorControlAssignment] {
+	return pulumix.Output[map[string]*OperatorControlAssignment]{
+		OutputState: i.ToOperatorControlAssignmentMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type OperatorControlAssignmentOutput struct{ *pulumi.OutputState }
 
 func (OperatorControlAssignmentOutput) ElementType() reflect.Type {
@@ -469,6 +488,12 @@ func (o OperatorControlAssignmentOutput) ToOperatorControlAssignmentOutput() Ope
 
 func (o OperatorControlAssignmentOutput) ToOperatorControlAssignmentOutputWithContext(ctx context.Context) OperatorControlAssignmentOutput {
 	return o
+}
+
+func (o OperatorControlAssignmentOutput) ToOutput(ctx context.Context) pulumix.Output[*OperatorControlAssignment] {
+	return pulumix.Output[*OperatorControlAssignment]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the user who created this operator control assignment.
@@ -623,6 +648,12 @@ func (o OperatorControlAssignmentArrayOutput) ToOperatorControlAssignmentArrayOu
 	return o
 }
 
+func (o OperatorControlAssignmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*OperatorControlAssignment] {
+	return pulumix.Output[[]*OperatorControlAssignment]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o OperatorControlAssignmentArrayOutput) Index(i pulumi.IntInput) OperatorControlAssignmentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *OperatorControlAssignment {
 		return vs[0].([]*OperatorControlAssignment)[vs[1].(int)]
@@ -641,6 +672,12 @@ func (o OperatorControlAssignmentMapOutput) ToOperatorControlAssignmentMapOutput
 
 func (o OperatorControlAssignmentMapOutput) ToOperatorControlAssignmentMapOutputWithContext(ctx context.Context) OperatorControlAssignmentMapOutput {
 	return o
+}
+
+func (o OperatorControlAssignmentMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*OperatorControlAssignment] {
+	return pulumix.Output[map[string]*OperatorControlAssignment]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o OperatorControlAssignmentMapOutput) MapIndex(k pulumi.StringInput) OperatorControlAssignmentOutput {

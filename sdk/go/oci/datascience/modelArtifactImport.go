@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type ModelArtifactImport struct {
@@ -134,6 +135,12 @@ func (i *ModelArtifactImport) ToModelArtifactImportOutputWithContext(ctx context
 	return pulumi.ToOutputWithContext(ctx, i).(ModelArtifactImportOutput)
 }
 
+func (i *ModelArtifactImport) ToOutput(ctx context.Context) pulumix.Output[*ModelArtifactImport] {
+	return pulumix.Output[*ModelArtifactImport]{
+		OutputState: i.ToModelArtifactImportOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ModelArtifactImportArrayInput is an input type that accepts ModelArtifactImportArray and ModelArtifactImportArrayOutput values.
 // You can construct a concrete instance of `ModelArtifactImportArrayInput` via:
 //
@@ -157,6 +164,12 @@ func (i ModelArtifactImportArray) ToModelArtifactImportArrayOutput() ModelArtifa
 
 func (i ModelArtifactImportArray) ToModelArtifactImportArrayOutputWithContext(ctx context.Context) ModelArtifactImportArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ModelArtifactImportArrayOutput)
+}
+
+func (i ModelArtifactImportArray) ToOutput(ctx context.Context) pulumix.Output[[]*ModelArtifactImport] {
+	return pulumix.Output[[]*ModelArtifactImport]{
+		OutputState: i.ToModelArtifactImportArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // ModelArtifactImportMapInput is an input type that accepts ModelArtifactImportMap and ModelArtifactImportMapOutput values.
@@ -184,6 +197,12 @@ func (i ModelArtifactImportMap) ToModelArtifactImportMapOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(ModelArtifactImportMapOutput)
 }
 
+func (i ModelArtifactImportMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ModelArtifactImport] {
+	return pulumix.Output[map[string]*ModelArtifactImport]{
+		OutputState: i.ToModelArtifactImportMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ModelArtifactImportOutput struct{ *pulumi.OutputState }
 
 func (ModelArtifactImportOutput) ElementType() reflect.Type {
@@ -196,6 +215,12 @@ func (o ModelArtifactImportOutput) ToModelArtifactImportOutput() ModelArtifactIm
 
 func (o ModelArtifactImportOutput) ToModelArtifactImportOutputWithContext(ctx context.Context) ModelArtifactImportOutput {
 	return o
+}
+
+func (o ModelArtifactImportOutput) ToOutput(ctx context.Context) pulumix.Output[*ModelArtifactImport] {
+	return pulumix.Output[*ModelArtifactImport]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ModelArtifactImportOutput) ArtifactSourceType() pulumi.StringOutput {
@@ -236,6 +261,12 @@ func (o ModelArtifactImportArrayOutput) ToModelArtifactImportArrayOutputWithCont
 	return o
 }
 
+func (o ModelArtifactImportArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ModelArtifactImport] {
+	return pulumix.Output[[]*ModelArtifactImport]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o ModelArtifactImportArrayOutput) Index(i pulumi.IntInput) ModelArtifactImportOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ModelArtifactImport {
 		return vs[0].([]*ModelArtifactImport)[vs[1].(int)]
@@ -254,6 +285,12 @@ func (o ModelArtifactImportMapOutput) ToModelArtifactImportMapOutput() ModelArti
 
 func (o ModelArtifactImportMapOutput) ToModelArtifactImportMapOutputWithContext(ctx context.Context) ModelArtifactImportMapOutput {
 	return o
+}
+
+func (o ModelArtifactImportMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ModelArtifactImport] {
+	return pulumix.Output[map[string]*ModelArtifactImport]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ModelArtifactImportMapOutput) MapIndex(k pulumi.StringInput) ModelArtifactImportOutput {

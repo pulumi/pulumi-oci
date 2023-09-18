@@ -37,7 +37,7 @@ public class Addon extends com.pulumi.resources.CustomResource {
      * The error info of the addon.
      * 
      */
-    @Export(name="addonErrors", type=List.class, parameters={AddonAddonError.class})
+    @Export(name="addonErrors", refs={List.class,AddonAddonError.class}, tree="[0,1]")
     private Output<List<AddonAddonError>> addonErrors;
 
     /**
@@ -51,7 +51,7 @@ public class Addon extends com.pulumi.resources.CustomResource {
      * The name of the addon.
      * 
      */
-    @Export(name="addonName", type=String.class, parameters={})
+    @Export(name="addonName", refs={String.class}, tree="[0]")
     private Output<String> addonName;
 
     /**
@@ -65,7 +65,7 @@ public class Addon extends com.pulumi.resources.CustomResource {
      * The OCID of the cluster.
      * 
      */
-    @Export(name="clusterId", type=String.class, parameters={})
+    @Export(name="clusterId", refs={String.class}, tree="[0]")
     private Output<String> clusterId;
 
     /**
@@ -79,7 +79,7 @@ public class Addon extends com.pulumi.resources.CustomResource {
      * (Updatable) Addon configuration details.
      * 
      */
-    @Export(name="configurations", type=List.class, parameters={AddonConfiguration.class})
+    @Export(name="configurations", refs={List.class,AddonConfiguration.class}, tree="[0,1]")
     private Output<List<AddonConfiguration>> configurations;
 
     /**
@@ -93,7 +93,7 @@ public class Addon extends com.pulumi.resources.CustomResource {
      * current installed version of the addon
      * 
      */
-    @Export(name="currentInstalledVersion", type=String.class, parameters={})
+    @Export(name="currentInstalledVersion", refs={String.class}, tree="[0]")
     private Output<String> currentInstalledVersion;
 
     /**
@@ -107,7 +107,7 @@ public class Addon extends com.pulumi.resources.CustomResource {
      * Whether to remove addon resource in deletion.
      * 
      */
-    @Export(name="removeAddonResourcesOnDelete", type=Boolean.class, parameters={})
+    @Export(name="removeAddonResourcesOnDelete", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> removeAddonResourcesOnDelete;
 
     /**
@@ -121,7 +121,7 @@ public class Addon extends com.pulumi.resources.CustomResource {
      * The state of the addon.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -135,7 +135,7 @@ public class Addon extends com.pulumi.resources.CustomResource {
      * The time the cluster was created.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -152,7 +152,7 @@ public class Addon extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="version", type=String.class, parameters={})
+    @Export(name="version", refs={String.class}, tree="[0]")
     private Output<String> version;
 
     /**

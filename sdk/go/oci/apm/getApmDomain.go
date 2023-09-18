@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Apm Domain resource in Oracle Cloud Infrastructure Apm service.
@@ -119,6 +120,12 @@ func (o LookupApmDomainResultOutput) ToLookupApmDomainResultOutput() LookupApmDo
 
 func (o LookupApmDomainResultOutput) ToLookupApmDomainResultOutputWithContext(ctx context.Context) LookupApmDomainResultOutput {
 	return o
+}
+
+func (o LookupApmDomainResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupApmDomainResult] {
+	return pulumix.Output[LookupApmDomainResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o LookupApmDomainResultOutput) ApmDomainId() pulumi.StringOutput {

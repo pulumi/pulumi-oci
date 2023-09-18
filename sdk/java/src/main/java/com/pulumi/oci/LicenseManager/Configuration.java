@@ -65,7 +65,7 @@ public class Configuration extends com.pulumi.resources.CustomResource {
      * (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -82,7 +82,7 @@ public class Configuration extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="emailIds", type=List.class, parameters={String.class})
+    @Export(name="emailIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> emailIds;
 
     /**
@@ -99,7 +99,7 @@ public class Configuration extends com.pulumi.resources.CustomResource {
      * The time the configuration was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -113,7 +113,7 @@ public class Configuration extends com.pulumi.resources.CustomResource {
      * The time the configuration was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

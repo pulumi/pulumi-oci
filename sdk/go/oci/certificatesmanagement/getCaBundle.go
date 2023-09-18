@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Ca Bundle resource in Oracle Cloud Infrastructure Certificates Management service.
@@ -116,6 +117,12 @@ func (o LookupCaBundleResultOutput) ToLookupCaBundleResultOutput() LookupCaBundl
 
 func (o LookupCaBundleResultOutput) ToLookupCaBundleResultOutputWithContext(ctx context.Context) LookupCaBundleResultOutput {
 	return o
+}
+
+func (o LookupCaBundleResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupCaBundleResult] {
+	return pulumix.Output[LookupCaBundleResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o LookupCaBundleResultOutput) CaBundleId() pulumi.StringOutput {

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Stream Cdn Configs in Oracle Cloud Infrastructure Media Services service.
@@ -124,6 +125,12 @@ func (o GetStreamCdnConfigsResultOutput) ToGetStreamCdnConfigsResultOutput() Get
 
 func (o GetStreamCdnConfigsResultOutput) ToGetStreamCdnConfigsResultOutputWithContext(ctx context.Context) GetStreamCdnConfigsResultOutput {
 	return o
+}
+
+func (o GetStreamCdnConfigsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetStreamCdnConfigsResult] {
+	return pulumix.Output[GetStreamCdnConfigsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The CDN Configuration identifier or display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.

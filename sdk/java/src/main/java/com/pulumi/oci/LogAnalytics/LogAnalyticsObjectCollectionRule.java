@@ -89,7 +89,7 @@ public class LogAnalyticsObjectCollectionRule extends com.pulumi.resources.Custo
      * (Updatable) An optional character encoding to aid in detecting the character encoding of the contents of the objects while processing. It is recommended to set this value as ISO_8589_1 when configuring content of the objects having more numeric characters, and very few alphabets. For e.g. this applies when configuring VCN Flow Logs.
      * 
      */
-    @Export(name="charEncoding", type=String.class, parameters={})
+    @Export(name="charEncoding", refs={String.class}, tree="[0]")
     private Output<String> charEncoding;
 
     /**
@@ -103,7 +103,7 @@ public class LogAnalyticsObjectCollectionRule extends com.pulumi.resources.Custo
      * The type of collection. Supported collection types: LIVE, HISTORIC, HISTORIC_LIVE
      * 
      */
-    @Export(name="collectionType", type=String.class, parameters={})
+    @Export(name="collectionType", refs={String.class}, tree="[0]")
     private Output<String> collectionType;
 
     /**
@@ -117,7 +117,7 @@ public class LogAnalyticsObjectCollectionRule extends com.pulumi.resources.Custo
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -131,7 +131,7 @@ public class LogAnalyticsObjectCollectionRule extends com.pulumi.resources.Custo
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -145,7 +145,7 @@ public class LogAnalyticsObjectCollectionRule extends com.pulumi.resources.Custo
      * (Updatable) A string that describes the details of the rule. It does not have to be unique, and can be changed. Avoid entering confidential information.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -159,7 +159,7 @@ public class LogAnalyticsObjectCollectionRule extends com.pulumi.resources.Custo
      * (Updatable) Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
      * 
      */
-    @Export(name="entityId", type=String.class, parameters={})
+    @Export(name="entityId", refs={String.class}, tree="[0]")
     private Output<String> entityId;
 
     /**
@@ -173,7 +173,7 @@ public class LogAnalyticsObjectCollectionRule extends com.pulumi.resources.Custo
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -187,7 +187,7 @@ public class LogAnalyticsObjectCollectionRule extends com.pulumi.resources.Custo
      * (Updatable) Whether or not this rule is currently enabled.
      * 
      */
-    @Export(name="isEnabled", type=Boolean.class, parameters={})
+    @Export(name="isEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isEnabled;
 
     /**
@@ -201,7 +201,7 @@ public class LogAnalyticsObjectCollectionRule extends com.pulumi.resources.Custo
      * A detailed status of the life cycle state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -215,7 +215,7 @@ public class LogAnalyticsObjectCollectionRule extends com.pulumi.resources.Custo
      * (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
      * 
      */
-    @Export(name="logGroupId", type=String.class, parameters={})
+    @Export(name="logGroupId", refs={String.class}, tree="[0]")
     private Output<String> logGroupId;
 
     /**
@@ -229,7 +229,7 @@ public class LogAnalyticsObjectCollectionRule extends com.pulumi.resources.Custo
      * (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
      * 
      */
-    @Export(name="logSet", type=String.class, parameters={})
+    @Export(name="logSet", refs={String.class}, tree="[0]")
     private Output<String> logSet;
 
     /**
@@ -243,7 +243,7 @@ public class LogAnalyticsObjectCollectionRule extends com.pulumi.resources.Custo
      * (Updatable) The regex to be applied against given logSetKey. Regex has to be in string escaped format.
      * 
      */
-    @Export(name="logSetExtRegex", type=String.class, parameters={})
+    @Export(name="logSetExtRegex", refs={String.class}, tree="[0]")
     private Output<String> logSetExtRegex;
 
     /**
@@ -257,7 +257,7 @@ public class LogAnalyticsObjectCollectionRule extends com.pulumi.resources.Custo
      * (Updatable) An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/&lt;namespace&gt;/b/&lt;bucketname&gt;/o/&lt;objectname&gt;).
      * 
      */
-    @Export(name="logSetKey", type=String.class, parameters={})
+    @Export(name="logSetKey", refs={String.class}, tree="[0]")
     private Output<String> logSetKey;
 
     /**
@@ -271,7 +271,7 @@ public class LogAnalyticsObjectCollectionRule extends com.pulumi.resources.Custo
      * (Updatable) Name of the Logging Analytics Source to use for the processing.
      * 
      */
-    @Export(name="logSourceName", type=String.class, parameters={})
+    @Export(name="logSourceName", refs={String.class}, tree="[0]")
     private Output<String> logSourceName;
 
     /**
@@ -285,7 +285,7 @@ public class LogAnalyticsObjectCollectionRule extends com.pulumi.resources.Custo
      * A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -299,7 +299,7 @@ public class LogAnalyticsObjectCollectionRule extends com.pulumi.resources.Custo
      * The Logging Analytics namespace used for the request.
      * 
      */
-    @Export(name="namespace", type=String.class, parameters={})
+    @Export(name="namespace", refs={String.class}, tree="[0]")
     private Output<String> namespace;
 
     /**
@@ -313,7 +313,7 @@ public class LogAnalyticsObjectCollectionRule extends com.pulumi.resources.Custo
      * (Updatable) When the filters are provided, only the objects matching the filters are picked up for processing. The matchType supported is exact match and accommodates wildcard &#34;*&#34;. For more information on filters, see [Event Filters](https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm).
      * 
      */
-    @Export(name="objectNameFilters", type=List.class, parameters={String.class})
+    @Export(name="objectNameFilters", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> objectNameFilters;
 
     /**
@@ -327,7 +327,7 @@ public class LogAnalyticsObjectCollectionRule extends com.pulumi.resources.Custo
      * Name of the Object Storage bucket.
      * 
      */
-    @Export(name="osBucketName", type=String.class, parameters={})
+    @Export(name="osBucketName", refs={String.class}, tree="[0]")
     private Output<String> osBucketName;
 
     /**
@@ -341,7 +341,7 @@ public class LogAnalyticsObjectCollectionRule extends com.pulumi.resources.Custo
      * Object Storage namespace.
      * 
      */
-    @Export(name="osNamespace", type=String.class, parameters={})
+    @Export(name="osNamespace", refs={String.class}, tree="[0]")
     private Output<String> osNamespace;
 
     /**
@@ -355,7 +355,7 @@ public class LogAnalyticsObjectCollectionRule extends com.pulumi.resources.Custo
      * (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are: logSourceName, charEncoding, entityId. Supported matchType for override are &#34;contains&#34;.
      * 
      */
-    @Export(name="overrides", type=List.class, parameters={LogAnalyticsObjectCollectionRuleOverride.class})
+    @Export(name="overrides", refs={List.class,LogAnalyticsObjectCollectionRuleOverride.class}, tree="[0,1]")
     private Output<List<LogAnalyticsObjectCollectionRuleOverride>> overrides;
 
     /**
@@ -369,7 +369,7 @@ public class LogAnalyticsObjectCollectionRule extends com.pulumi.resources.Custo
      * The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC or HISTORIC_LIVE collection types. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
      * 
      */
-    @Export(name="pollSince", type=String.class, parameters={})
+    @Export(name="pollSince", refs={String.class}, tree="[0]")
     private Output<String> pollSince;
 
     /**
@@ -383,7 +383,7 @@ public class LogAnalyticsObjectCollectionRule extends com.pulumi.resources.Custo
      * The newest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC collection type. When collectionType is LIVE or HISTORIC_LIVE, specifying pollTill will result in error.
      * 
      */
-    @Export(name="pollTill", type=String.class, parameters={})
+    @Export(name="pollTill", refs={String.class}, tree="[0]")
     private Output<String> pollTill;
 
     /**
@@ -397,7 +397,7 @@ public class LogAnalyticsObjectCollectionRule extends com.pulumi.resources.Custo
      * The current state of the rule.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -411,7 +411,7 @@ public class LogAnalyticsObjectCollectionRule extends com.pulumi.resources.Custo
      * The time when this rule was created. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -425,7 +425,7 @@ public class LogAnalyticsObjectCollectionRule extends com.pulumi.resources.Custo
      * The time when this rule was last updated. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -442,7 +442,7 @@ public class LogAnalyticsObjectCollectionRule extends com.pulumi.resources.Custo
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="timezone", type=String.class, parameters={})
+    @Export(name="timezone", refs={String.class}, tree="[0]")
     private Output<String> timezone;
 
     /**

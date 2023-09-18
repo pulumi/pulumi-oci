@@ -106,7 +106,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="adminRole", type=Boolean.class, parameters={})
+    @Export(name="adminRole", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> adminRole;
 
     /**
@@ -139,7 +139,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="app", type=DomainsAppRoleApp.class, parameters={})
+    @Export(name="app", refs={DomainsAppRoleApp.class}, tree="[0]")
     private Output<DomainsAppRoleApp> app;
 
     /**
@@ -163,7 +163,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If &#39;attributes&#39; query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      * 
      */
-    @Export(name="attributeSets", type=List.class, parameters={String.class})
+    @Export(name="attributeSets", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> attributeSets;
 
     /**
@@ -177,7 +177,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      * 
      */
-    @Export(name="attributes", type=String.class, parameters={})
+    @Export(name="attributes", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> attributes;
 
     /**
@@ -191,7 +191,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      * 
      */
-    @Export(name="authorization", type=String.class, parameters={})
+    @Export(name="authorization", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> authorization;
 
     /**
@@ -214,7 +214,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="availableToClients", type=Boolean.class, parameters={})
+    @Export(name="availableToClients", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> availableToClients;
 
     /**
@@ -246,7 +246,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="availableToGroups", type=Boolean.class, parameters={})
+    @Export(name="availableToGroups", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> availableToGroups;
 
     /**
@@ -278,7 +278,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="availableToUsers", type=Boolean.class, parameters={})
+    @Export(name="availableToUsers", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> availableToUsers;
 
     /**
@@ -311,7 +311,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="compartmentOcid", type=String.class, parameters={})
+    @Export(name="compartmentOcid", refs={String.class}, tree="[0]")
     private Output<String> compartmentOcid;
 
     /**
@@ -345,7 +345,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="deleteInProgress", type=Boolean.class, parameters={})
+    @Export(name="deleteInProgress", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> deleteInProgress;
 
     /**
@@ -379,7 +379,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -415,7 +415,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -451,7 +451,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="domainOcid", type=String.class, parameters={})
+    @Export(name="domainOcid", refs={String.class}, tree="[0]")
     private Output<String> domainOcid;
 
     /**
@@ -483,7 +483,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    @Export(name="idcsCreatedBies", type=List.class, parameters={DomainsAppRoleIdcsCreatedBy.class})
+    @Export(name="idcsCreatedBies", refs={List.class,DomainsAppRoleIdcsCreatedBy.class}, tree="[0,1]")
     private Output<List<DomainsAppRoleIdcsCreatedBy>> idcsCreatedBies;
 
     /**
@@ -505,7 +505,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * The basic endpoint for the identity domain
      * 
      */
-    @Export(name="idcsEndpoint", type=String.class, parameters={})
+    @Export(name="idcsEndpoint", refs={String.class}, tree="[0]")
     private Output<String> idcsEndpoint;
 
     /**
@@ -527,7 +527,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    @Export(name="idcsLastModifiedBies", type=List.class, parameters={DomainsAppRoleIdcsLastModifiedBy.class})
+    @Export(name="idcsLastModifiedBies", refs={List.class,DomainsAppRoleIdcsLastModifiedBy.class}, tree="[0,1]")
     private Output<List<DomainsAppRoleIdcsLastModifiedBy>> idcsLastModifiedBies;
 
     /**
@@ -559,7 +559,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="idcsLastUpgradedInRelease", type=String.class, parameters={})
+    @Export(name="idcsLastUpgradedInRelease", refs={String.class}, tree="[0]")
     private Output<String> idcsLastUpgradedInRelease;
 
     /**
@@ -592,7 +592,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="idcsPreventedOperations", type=List.class, parameters={String.class})
+    @Export(name="idcsPreventedOperations", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> idcsPreventedOperations;
 
     /**
@@ -625,7 +625,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * * uniqueness: server
      * 
      */
-    @Export(name="legacyGroupName", type=String.class, parameters={})
+    @Export(name="legacyGroupName", refs={String.class}, tree="[0]")
     private Output<String> legacyGroupName;
 
     /**
@@ -660,7 +660,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="limitedToOneOrMoreGroups", type=Boolean.class, parameters={})
+    @Export(name="limitedToOneOrMoreGroups", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> limitedToOneOrMoreGroups;
 
     /**
@@ -697,7 +697,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="localizedDisplayName", type=String.class, parameters={})
+    @Export(name="localizedDisplayName", refs={String.class}, tree="[0]")
     private Output<String> localizedDisplayName;
 
     /**
@@ -735,7 +735,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="members", type=List.class, parameters={DomainsAppRoleMember.class})
+    @Export(name="members", refs={List.class,DomainsAppRoleMember.class}, tree="[0,1]")
     private Output<List<DomainsAppRoleMember>> members;
 
     /**
@@ -771,7 +771,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    @Export(name="metas", type=List.class, parameters={DomainsAppRoleMeta.class})
+    @Export(name="metas", refs={List.class,DomainsAppRoleMeta.class}, tree="[0,1]")
     private Output<List<DomainsAppRoleMeta>> metas;
 
     /**
@@ -805,7 +805,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * * uniqueness: global
      * 
      */
-    @Export(name="ocid", type=String.class, parameters={})
+    @Export(name="ocid", refs={String.class}, tree="[0]")
     private Output<String> ocid;
 
     /**
@@ -838,7 +838,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="public", type=Boolean.class, parameters={})
+    @Export(name="public", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> public_;
 
     /**
@@ -861,7 +861,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      * 
      */
-    @Export(name="resourceTypeSchemaVersion", type=String.class, parameters={})
+    @Export(name="resourceTypeSchemaVersion", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> resourceTypeSchemaVersion;
 
     /**
@@ -885,7 +885,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="schemas", type=List.class, parameters={String.class})
+    @Export(name="schemas", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> schemas;
 
     /**
@@ -919,7 +919,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="tags", type=List.class, parameters={DomainsAppRoleTag.class})
+    @Export(name="tags", refs={List.class,DomainsAppRoleTag.class}, tree="[0,1]")
     private Output<List<DomainsAppRoleTag>> tags;
 
     /**
@@ -953,7 +953,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="tenancyOcid", type=String.class, parameters={})
+    @Export(name="tenancyOcid", refs={String.class}, tree="[0]")
     private Output<String> tenancyOcid;
 
     /**
@@ -989,7 +989,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="uniqueName", type=String.class, parameters={})
+    @Export(name="uniqueName", refs={String.class}, tree="[0]")
     private Output<String> uniqueName;
 
     /**

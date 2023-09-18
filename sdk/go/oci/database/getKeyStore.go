@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Key Store resource in Oracle Cloud Infrastructure Database service.
@@ -117,6 +118,12 @@ func (o LookupKeyStoreResultOutput) ToLookupKeyStoreResultOutput() LookupKeyStor
 
 func (o LookupKeyStoreResultOutput) ToLookupKeyStoreResultOutputWithContext(ctx context.Context) LookupKeyStoreResultOutput {
 	return o
+}
+
+func (o LookupKeyStoreResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupKeyStoreResult] {
+	return pulumix.Output[LookupKeyStoreResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // List of databases associated with the key store.

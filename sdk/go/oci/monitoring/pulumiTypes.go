@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -68,6 +69,12 @@ func (i AlarmSuppressionArgs) ToAlarmSuppressionOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(AlarmSuppressionOutput)
 }
 
+func (i AlarmSuppressionArgs) ToOutput(ctx context.Context) pulumix.Output[AlarmSuppression] {
+	return pulumix.Output[AlarmSuppression]{
+		OutputState: i.ToAlarmSuppressionOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i AlarmSuppressionArgs) ToAlarmSuppressionPtrOutput() AlarmSuppressionPtrOutput {
 	return i.ToAlarmSuppressionPtrOutputWithContext(context.Background())
 }
@@ -109,6 +116,12 @@ func (i *alarmSuppressionPtrType) ToAlarmSuppressionPtrOutputWithContext(ctx con
 	return pulumi.ToOutputWithContext(ctx, i).(AlarmSuppressionPtrOutput)
 }
 
+func (i *alarmSuppressionPtrType) ToOutput(ctx context.Context) pulumix.Output[*AlarmSuppression] {
+	return pulumix.Output[*AlarmSuppression]{
+		OutputState: i.ToAlarmSuppressionPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AlarmSuppressionOutput struct{ *pulumi.OutputState }
 
 func (AlarmSuppressionOutput) ElementType() reflect.Type {
@@ -131,6 +144,12 @@ func (o AlarmSuppressionOutput) ToAlarmSuppressionPtrOutputWithContext(ctx conte
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v AlarmSuppression) *AlarmSuppression {
 		return &v
 	}).(AlarmSuppressionPtrOutput)
+}
+
+func (o AlarmSuppressionOutput) ToOutput(ctx context.Context) pulumix.Output[AlarmSuppression] {
+	return pulumix.Output[AlarmSuppression]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Human-readable reason for suppressing alarm notifications. It does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -167,6 +186,12 @@ func (o AlarmSuppressionPtrOutput) ToAlarmSuppressionPtrOutput() AlarmSuppressio
 
 func (o AlarmSuppressionPtrOutput) ToAlarmSuppressionPtrOutputWithContext(ctx context.Context) AlarmSuppressionPtrOutput {
 	return o
+}
+
+func (o AlarmSuppressionPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*AlarmSuppression] {
+	return pulumix.Output[*AlarmSuppression]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AlarmSuppressionPtrOutput) Elem() AlarmSuppressionOutput {
@@ -257,6 +282,12 @@ func (i GetAlarmHistoryCollectionEntryArgs) ToGetAlarmHistoryCollectionEntryOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmHistoryCollectionEntryOutput)
 }
 
+func (i GetAlarmHistoryCollectionEntryArgs) ToOutput(ctx context.Context) pulumix.Output[GetAlarmHistoryCollectionEntry] {
+	return pulumix.Output[GetAlarmHistoryCollectionEntry]{
+		OutputState: i.ToGetAlarmHistoryCollectionEntryOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAlarmHistoryCollectionEntryArrayInput is an input type that accepts GetAlarmHistoryCollectionEntryArray and GetAlarmHistoryCollectionEntryArrayOutput values.
 // You can construct a concrete instance of `GetAlarmHistoryCollectionEntryArrayInput` via:
 //
@@ -282,6 +313,12 @@ func (i GetAlarmHistoryCollectionEntryArray) ToGetAlarmHistoryCollectionEntryArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmHistoryCollectionEntryArrayOutput)
 }
 
+func (i GetAlarmHistoryCollectionEntryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAlarmHistoryCollectionEntry] {
+	return pulumix.Output[[]GetAlarmHistoryCollectionEntry]{
+		OutputState: i.ToGetAlarmHistoryCollectionEntryArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAlarmHistoryCollectionEntryOutput struct{ *pulumi.OutputState }
 
 func (GetAlarmHistoryCollectionEntryOutput) ElementType() reflect.Type {
@@ -294,6 +331,12 @@ func (o GetAlarmHistoryCollectionEntryOutput) ToGetAlarmHistoryCollectionEntryOu
 
 func (o GetAlarmHistoryCollectionEntryOutput) ToGetAlarmHistoryCollectionEntryOutputWithContext(ctx context.Context) GetAlarmHistoryCollectionEntryOutput {
 	return o
+}
+
+func (o GetAlarmHistoryCollectionEntryOutput) ToOutput(ctx context.Context) pulumix.Output[GetAlarmHistoryCollectionEntry] {
+	return pulumix.Output[GetAlarmHistoryCollectionEntry]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Description for this alarm history entry.
@@ -323,6 +366,12 @@ func (o GetAlarmHistoryCollectionEntryArrayOutput) ToGetAlarmHistoryCollectionEn
 
 func (o GetAlarmHistoryCollectionEntryArrayOutput) ToGetAlarmHistoryCollectionEntryArrayOutputWithContext(ctx context.Context) GetAlarmHistoryCollectionEntryArrayOutput {
 	return o
+}
+
+func (o GetAlarmHistoryCollectionEntryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAlarmHistoryCollectionEntry] {
+	return pulumix.Output[[]GetAlarmHistoryCollectionEntry]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAlarmHistoryCollectionEntryArrayOutput) Index(i pulumi.IntInput) GetAlarmHistoryCollectionEntryOutput {
@@ -384,6 +433,12 @@ func (i GetAlarmStatusesAlarmStatusArgs) ToGetAlarmStatusesAlarmStatusOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmStatusesAlarmStatusOutput)
 }
 
+func (i GetAlarmStatusesAlarmStatusArgs) ToOutput(ctx context.Context) pulumix.Output[GetAlarmStatusesAlarmStatus] {
+	return pulumix.Output[GetAlarmStatusesAlarmStatus]{
+		OutputState: i.ToGetAlarmStatusesAlarmStatusOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAlarmStatusesAlarmStatusArrayInput is an input type that accepts GetAlarmStatusesAlarmStatusArray and GetAlarmStatusesAlarmStatusArrayOutput values.
 // You can construct a concrete instance of `GetAlarmStatusesAlarmStatusArrayInput` via:
 //
@@ -409,6 +464,12 @@ func (i GetAlarmStatusesAlarmStatusArray) ToGetAlarmStatusesAlarmStatusArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmStatusesAlarmStatusArrayOutput)
 }
 
+func (i GetAlarmStatusesAlarmStatusArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAlarmStatusesAlarmStatus] {
+	return pulumix.Output[[]GetAlarmStatusesAlarmStatus]{
+		OutputState: i.ToGetAlarmStatusesAlarmStatusArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAlarmStatusesAlarmStatusOutput struct{ *pulumi.OutputState }
 
 func (GetAlarmStatusesAlarmStatusOutput) ElementType() reflect.Type {
@@ -421,6 +482,12 @@ func (o GetAlarmStatusesAlarmStatusOutput) ToGetAlarmStatusesAlarmStatusOutput()
 
 func (o GetAlarmStatusesAlarmStatusOutput) ToGetAlarmStatusesAlarmStatusOutputWithContext(ctx context.Context) GetAlarmStatusesAlarmStatusOutput {
 	return o
+}
+
+func (o GetAlarmStatusesAlarmStatusOutput) ToOutput(ctx context.Context) pulumix.Output[GetAlarmStatusesAlarmStatus] {
+	return pulumix.Output[GetAlarmStatusesAlarmStatus]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A filter to return only resources that match the given display name exactly. Use this filter to list an alarm by name. Alternatively, when you know the alarm OCID, use the GetAlarm operation.
@@ -465,6 +532,12 @@ func (o GetAlarmStatusesAlarmStatusArrayOutput) ToGetAlarmStatusesAlarmStatusArr
 
 func (o GetAlarmStatusesAlarmStatusArrayOutput) ToGetAlarmStatusesAlarmStatusArrayOutputWithContext(ctx context.Context) GetAlarmStatusesAlarmStatusArrayOutput {
 	return o
+}
+
+func (o GetAlarmStatusesAlarmStatusArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAlarmStatusesAlarmStatus] {
+	return pulumix.Output[[]GetAlarmStatusesAlarmStatus]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAlarmStatusesAlarmStatusArrayOutput) Index(i pulumi.IntInput) GetAlarmStatusesAlarmStatusOutput {
@@ -514,6 +587,12 @@ func (i GetAlarmStatusesAlarmStatusSuppressionArgs) ToGetAlarmStatusesAlarmStatu
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmStatusesAlarmStatusSuppressionOutput)
 }
 
+func (i GetAlarmStatusesAlarmStatusSuppressionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAlarmStatusesAlarmStatusSuppression] {
+	return pulumix.Output[GetAlarmStatusesAlarmStatusSuppression]{
+		OutputState: i.ToGetAlarmStatusesAlarmStatusSuppressionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAlarmStatusesAlarmStatusSuppressionArrayInput is an input type that accepts GetAlarmStatusesAlarmStatusSuppressionArray and GetAlarmStatusesAlarmStatusSuppressionArrayOutput values.
 // You can construct a concrete instance of `GetAlarmStatusesAlarmStatusSuppressionArrayInput` via:
 //
@@ -539,6 +618,12 @@ func (i GetAlarmStatusesAlarmStatusSuppressionArray) ToGetAlarmStatusesAlarmStat
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmStatusesAlarmStatusSuppressionArrayOutput)
 }
 
+func (i GetAlarmStatusesAlarmStatusSuppressionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAlarmStatusesAlarmStatusSuppression] {
+	return pulumix.Output[[]GetAlarmStatusesAlarmStatusSuppression]{
+		OutputState: i.ToGetAlarmStatusesAlarmStatusSuppressionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAlarmStatusesAlarmStatusSuppressionOutput struct{ *pulumi.OutputState }
 
 func (GetAlarmStatusesAlarmStatusSuppressionOutput) ElementType() reflect.Type {
@@ -551,6 +636,12 @@ func (o GetAlarmStatusesAlarmStatusSuppressionOutput) ToGetAlarmStatusesAlarmSta
 
 func (o GetAlarmStatusesAlarmStatusSuppressionOutput) ToGetAlarmStatusesAlarmStatusSuppressionOutputWithContext(ctx context.Context) GetAlarmStatusesAlarmStatusSuppressionOutput {
 	return o
+}
+
+func (o GetAlarmStatusesAlarmStatusSuppressionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAlarmStatusesAlarmStatusSuppression] {
+	return pulumix.Output[GetAlarmStatusesAlarmStatusSuppression]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Human-readable reason for suppressing alarm notifications. It does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -580,6 +671,12 @@ func (o GetAlarmStatusesAlarmStatusSuppressionArrayOutput) ToGetAlarmStatusesAla
 
 func (o GetAlarmStatusesAlarmStatusSuppressionArrayOutput) ToGetAlarmStatusesAlarmStatusSuppressionArrayOutputWithContext(ctx context.Context) GetAlarmStatusesAlarmStatusSuppressionArrayOutput {
 	return o
+}
+
+func (o GetAlarmStatusesAlarmStatusSuppressionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAlarmStatusesAlarmStatusSuppression] {
+	return pulumix.Output[[]GetAlarmStatusesAlarmStatusSuppression]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAlarmStatusesAlarmStatusSuppressionArrayOutput) Index(i pulumi.IntInput) GetAlarmStatusesAlarmStatusSuppressionOutput {
@@ -623,6 +720,12 @@ func (i GetAlarmStatusesFilterArgs) ToGetAlarmStatusesFilterOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmStatusesFilterOutput)
 }
 
+func (i GetAlarmStatusesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAlarmStatusesFilter] {
+	return pulumix.Output[GetAlarmStatusesFilter]{
+		OutputState: i.ToGetAlarmStatusesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAlarmStatusesFilterArrayInput is an input type that accepts GetAlarmStatusesFilterArray and GetAlarmStatusesFilterArrayOutput values.
 // You can construct a concrete instance of `GetAlarmStatusesFilterArrayInput` via:
 //
@@ -648,6 +751,12 @@ func (i GetAlarmStatusesFilterArray) ToGetAlarmStatusesFilterArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmStatusesFilterArrayOutput)
 }
 
+func (i GetAlarmStatusesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAlarmStatusesFilter] {
+	return pulumix.Output[[]GetAlarmStatusesFilter]{
+		OutputState: i.ToGetAlarmStatusesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAlarmStatusesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAlarmStatusesFilterOutput) ElementType() reflect.Type {
@@ -660,6 +769,12 @@ func (o GetAlarmStatusesFilterOutput) ToGetAlarmStatusesFilterOutput() GetAlarmS
 
 func (o GetAlarmStatusesFilterOutput) ToGetAlarmStatusesFilterOutputWithContext(ctx context.Context) GetAlarmStatusesFilterOutput {
 	return o
+}
+
+func (o GetAlarmStatusesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAlarmStatusesFilter] {
+	return pulumix.Output[GetAlarmStatusesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAlarmStatusesFilterOutput) Name() pulumi.StringOutput {
@@ -686,6 +801,12 @@ func (o GetAlarmStatusesFilterArrayOutput) ToGetAlarmStatusesFilterArrayOutput()
 
 func (o GetAlarmStatusesFilterArrayOutput) ToGetAlarmStatusesFilterArrayOutputWithContext(ctx context.Context) GetAlarmStatusesFilterArrayOutput {
 	return o
+}
+
+func (o GetAlarmStatusesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAlarmStatusesFilter] {
+	return pulumix.Output[[]GetAlarmStatusesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAlarmStatusesFilterArrayOutput) Index(i pulumi.IntInput) GetAlarmStatusesFilterOutput {
@@ -735,6 +856,12 @@ func (i GetAlarmSuppressionArgs) ToGetAlarmSuppressionOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmSuppressionOutput)
 }
 
+func (i GetAlarmSuppressionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAlarmSuppression] {
+	return pulumix.Output[GetAlarmSuppression]{
+		OutputState: i.ToGetAlarmSuppressionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAlarmSuppressionArrayInput is an input type that accepts GetAlarmSuppressionArray and GetAlarmSuppressionArrayOutput values.
 // You can construct a concrete instance of `GetAlarmSuppressionArrayInput` via:
 //
@@ -760,6 +887,12 @@ func (i GetAlarmSuppressionArray) ToGetAlarmSuppressionArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmSuppressionArrayOutput)
 }
 
+func (i GetAlarmSuppressionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAlarmSuppression] {
+	return pulumix.Output[[]GetAlarmSuppression]{
+		OutputState: i.ToGetAlarmSuppressionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAlarmSuppressionOutput struct{ *pulumi.OutputState }
 
 func (GetAlarmSuppressionOutput) ElementType() reflect.Type {
@@ -772,6 +905,12 @@ func (o GetAlarmSuppressionOutput) ToGetAlarmSuppressionOutput() GetAlarmSuppres
 
 func (o GetAlarmSuppressionOutput) ToGetAlarmSuppressionOutputWithContext(ctx context.Context) GetAlarmSuppressionOutput {
 	return o
+}
+
+func (o GetAlarmSuppressionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAlarmSuppression] {
+	return pulumix.Output[GetAlarmSuppression]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Human-readable reason for suppressing alarm notifications. It does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -801,6 +940,12 @@ func (o GetAlarmSuppressionArrayOutput) ToGetAlarmSuppressionArrayOutput() GetAl
 
 func (o GetAlarmSuppressionArrayOutput) ToGetAlarmSuppressionArrayOutputWithContext(ctx context.Context) GetAlarmSuppressionArrayOutput {
 	return o
+}
+
+func (o GetAlarmSuppressionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAlarmSuppression] {
+	return pulumix.Output[[]GetAlarmSuppression]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAlarmSuppressionArrayOutput) Index(i pulumi.IntInput) GetAlarmSuppressionOutput {
@@ -930,6 +1075,12 @@ func (i GetAlarmsAlarmArgs) ToGetAlarmsAlarmOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmsAlarmOutput)
 }
 
+func (i GetAlarmsAlarmArgs) ToOutput(ctx context.Context) pulumix.Output[GetAlarmsAlarm] {
+	return pulumix.Output[GetAlarmsAlarm]{
+		OutputState: i.ToGetAlarmsAlarmOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAlarmsAlarmArrayInput is an input type that accepts GetAlarmsAlarmArray and GetAlarmsAlarmArrayOutput values.
 // You can construct a concrete instance of `GetAlarmsAlarmArrayInput` via:
 //
@@ -955,6 +1106,12 @@ func (i GetAlarmsAlarmArray) ToGetAlarmsAlarmArrayOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmsAlarmArrayOutput)
 }
 
+func (i GetAlarmsAlarmArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAlarmsAlarm] {
+	return pulumix.Output[[]GetAlarmsAlarm]{
+		OutputState: i.ToGetAlarmsAlarmArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAlarmsAlarmOutput struct{ *pulumi.OutputState }
 
 func (GetAlarmsAlarmOutput) ElementType() reflect.Type {
@@ -967,6 +1124,12 @@ func (o GetAlarmsAlarmOutput) ToGetAlarmsAlarmOutput() GetAlarmsAlarmOutput {
 
 func (o GetAlarmsAlarmOutput) ToGetAlarmsAlarmOutputWithContext(ctx context.Context) GetAlarmsAlarmOutput {
 	return o
+}
+
+func (o GetAlarmsAlarmOutput) ToOutput(ctx context.Context) pulumix.Output[GetAlarmsAlarm] {
+	return pulumix.Output[GetAlarmsAlarm]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The human-readable content of the notification delivered. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
@@ -1098,6 +1261,12 @@ func (o GetAlarmsAlarmArrayOutput) ToGetAlarmsAlarmArrayOutputWithContext(ctx co
 	return o
 }
 
+func (o GetAlarmsAlarmArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAlarmsAlarm] {
+	return pulumix.Output[[]GetAlarmsAlarm]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetAlarmsAlarmArrayOutput) Index(i pulumi.IntInput) GetAlarmsAlarmOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlarmsAlarm {
 		return vs[0].([]GetAlarmsAlarm)[vs[1].(int)]
@@ -1145,6 +1314,12 @@ func (i GetAlarmsAlarmSuppressionArgs) ToGetAlarmsAlarmSuppressionOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmsAlarmSuppressionOutput)
 }
 
+func (i GetAlarmsAlarmSuppressionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAlarmsAlarmSuppression] {
+	return pulumix.Output[GetAlarmsAlarmSuppression]{
+		OutputState: i.ToGetAlarmsAlarmSuppressionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAlarmsAlarmSuppressionArrayInput is an input type that accepts GetAlarmsAlarmSuppressionArray and GetAlarmsAlarmSuppressionArrayOutput values.
 // You can construct a concrete instance of `GetAlarmsAlarmSuppressionArrayInput` via:
 //
@@ -1170,6 +1345,12 @@ func (i GetAlarmsAlarmSuppressionArray) ToGetAlarmsAlarmSuppressionArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmsAlarmSuppressionArrayOutput)
 }
 
+func (i GetAlarmsAlarmSuppressionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAlarmsAlarmSuppression] {
+	return pulumix.Output[[]GetAlarmsAlarmSuppression]{
+		OutputState: i.ToGetAlarmsAlarmSuppressionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAlarmsAlarmSuppressionOutput struct{ *pulumi.OutputState }
 
 func (GetAlarmsAlarmSuppressionOutput) ElementType() reflect.Type {
@@ -1182,6 +1363,12 @@ func (o GetAlarmsAlarmSuppressionOutput) ToGetAlarmsAlarmSuppressionOutput() Get
 
 func (o GetAlarmsAlarmSuppressionOutput) ToGetAlarmsAlarmSuppressionOutputWithContext(ctx context.Context) GetAlarmsAlarmSuppressionOutput {
 	return o
+}
+
+func (o GetAlarmsAlarmSuppressionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAlarmsAlarmSuppression] {
+	return pulumix.Output[GetAlarmsAlarmSuppression]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Human-readable reason for suppressing alarm notifications. It does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -1211,6 +1398,12 @@ func (o GetAlarmsAlarmSuppressionArrayOutput) ToGetAlarmsAlarmSuppressionArrayOu
 
 func (o GetAlarmsAlarmSuppressionArrayOutput) ToGetAlarmsAlarmSuppressionArrayOutputWithContext(ctx context.Context) GetAlarmsAlarmSuppressionArrayOutput {
 	return o
+}
+
+func (o GetAlarmsAlarmSuppressionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAlarmsAlarmSuppression] {
+	return pulumix.Output[[]GetAlarmsAlarmSuppression]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAlarmsAlarmSuppressionArrayOutput) Index(i pulumi.IntInput) GetAlarmsAlarmSuppressionOutput {
@@ -1254,6 +1447,12 @@ func (i GetAlarmsFilterArgs) ToGetAlarmsFilterOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmsFilterOutput)
 }
 
+func (i GetAlarmsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAlarmsFilter] {
+	return pulumix.Output[GetAlarmsFilter]{
+		OutputState: i.ToGetAlarmsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAlarmsFilterArrayInput is an input type that accepts GetAlarmsFilterArray and GetAlarmsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAlarmsFilterArrayInput` via:
 //
@@ -1279,6 +1478,12 @@ func (i GetAlarmsFilterArray) ToGetAlarmsFilterArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmsFilterArrayOutput)
 }
 
+func (i GetAlarmsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAlarmsFilter] {
+	return pulumix.Output[[]GetAlarmsFilter]{
+		OutputState: i.ToGetAlarmsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAlarmsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAlarmsFilterOutput) ElementType() reflect.Type {
@@ -1291,6 +1496,12 @@ func (o GetAlarmsFilterOutput) ToGetAlarmsFilterOutput() GetAlarmsFilterOutput {
 
 func (o GetAlarmsFilterOutput) ToGetAlarmsFilterOutputWithContext(ctx context.Context) GetAlarmsFilterOutput {
 	return o
+}
+
+func (o GetAlarmsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAlarmsFilter] {
+	return pulumix.Output[GetAlarmsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAlarmsFilterOutput) Name() pulumi.StringOutput {
@@ -1317,6 +1528,12 @@ func (o GetAlarmsFilterArrayOutput) ToGetAlarmsFilterArrayOutput() GetAlarmsFilt
 
 func (o GetAlarmsFilterArrayOutput) ToGetAlarmsFilterArrayOutputWithContext(ctx context.Context) GetAlarmsFilterArrayOutput {
 	return o
+}
+
+func (o GetAlarmsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAlarmsFilter] {
+	return pulumix.Output[[]GetAlarmsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAlarmsFilterArrayOutput) Index(i pulumi.IntInput) GetAlarmsFilterOutput {
@@ -1362,6 +1579,12 @@ func (i GetMetricDataFilterArgs) ToGetMetricDataFilterOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricDataFilterOutput)
 }
 
+func (i GetMetricDataFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMetricDataFilter] {
+	return pulumix.Output[GetMetricDataFilter]{
+		OutputState: i.ToGetMetricDataFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMetricDataFilterArrayInput is an input type that accepts GetMetricDataFilterArray and GetMetricDataFilterArrayOutput values.
 // You can construct a concrete instance of `GetMetricDataFilterArrayInput` via:
 //
@@ -1387,6 +1610,12 @@ func (i GetMetricDataFilterArray) ToGetMetricDataFilterArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricDataFilterArrayOutput)
 }
 
+func (i GetMetricDataFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricDataFilter] {
+	return pulumix.Output[[]GetMetricDataFilter]{
+		OutputState: i.ToGetMetricDataFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMetricDataFilterOutput struct{ *pulumi.OutputState }
 
 func (GetMetricDataFilterOutput) ElementType() reflect.Type {
@@ -1399,6 +1628,12 @@ func (o GetMetricDataFilterOutput) ToGetMetricDataFilterOutput() GetMetricDataFi
 
 func (o GetMetricDataFilterOutput) ToGetMetricDataFilterOutputWithContext(ctx context.Context) GetMetricDataFilterOutput {
 	return o
+}
+
+func (o GetMetricDataFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetricDataFilter] {
+	return pulumix.Output[GetMetricDataFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the metric.  Example: `CpuUtilization`
@@ -1426,6 +1661,12 @@ func (o GetMetricDataFilterArrayOutput) ToGetMetricDataFilterArrayOutput() GetMe
 
 func (o GetMetricDataFilterArrayOutput) ToGetMetricDataFilterArrayOutputWithContext(ctx context.Context) GetMetricDataFilterArrayOutput {
 	return o
+}
+
+func (o GetMetricDataFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricDataFilter] {
+	return pulumix.Output[[]GetMetricDataFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMetricDataFilterArrayOutput) Index(i pulumi.IntInput) GetMetricDataFilterOutput {
@@ -1523,6 +1764,12 @@ func (i GetMetricDataMetricDataArgs) ToGetMetricDataMetricDataOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricDataMetricDataOutput)
 }
 
+func (i GetMetricDataMetricDataArgs) ToOutput(ctx context.Context) pulumix.Output[GetMetricDataMetricData] {
+	return pulumix.Output[GetMetricDataMetricData]{
+		OutputState: i.ToGetMetricDataMetricDataOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMetricDataMetricDataArrayInput is an input type that accepts GetMetricDataMetricDataArray and GetMetricDataMetricDataArrayOutput values.
 // You can construct a concrete instance of `GetMetricDataMetricDataArrayInput` via:
 //
@@ -1548,6 +1795,12 @@ func (i GetMetricDataMetricDataArray) ToGetMetricDataMetricDataArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricDataMetricDataArrayOutput)
 }
 
+func (i GetMetricDataMetricDataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricDataMetricData] {
+	return pulumix.Output[[]GetMetricDataMetricData]{
+		OutputState: i.ToGetMetricDataMetricDataArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMetricDataMetricDataOutput struct{ *pulumi.OutputState }
 
 func (GetMetricDataMetricDataOutput) ElementType() reflect.Type {
@@ -1560,6 +1813,12 @@ func (o GetMetricDataMetricDataOutput) ToGetMetricDataMetricDataOutput() GetMetr
 
 func (o GetMetricDataMetricDataOutput) ToGetMetricDataMetricDataOutputWithContext(ctx context.Context) GetMetricDataMetricDataOutput {
 	return o
+}
+
+func (o GetMetricDataMetricDataOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetricDataMetricData] {
+	return pulumix.Output[GetMetricDataMetricData]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The list of timestamp-value pairs returned for the specified request. Metric values are rolled up to the start time specified in the request. For important limits information related to data points, see MetricData Reference at the top of this page.
@@ -1644,6 +1903,12 @@ func (o GetMetricDataMetricDataArrayOutput) ToGetMetricDataMetricDataArrayOutput
 	return o
 }
 
+func (o GetMetricDataMetricDataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricDataMetricData] {
+	return pulumix.Output[[]GetMetricDataMetricData]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetMetricDataMetricDataArrayOutput) Index(i pulumi.IntInput) GetMetricDataMetricDataOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMetricDataMetricData {
 		return vs[0].([]GetMetricDataMetricData)[vs[1].(int)]
@@ -1687,6 +1952,12 @@ func (i GetMetricDataMetricDataAggregatedDatapointArgs) ToGetMetricDataMetricDat
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricDataMetricDataAggregatedDatapointOutput)
 }
 
+func (i GetMetricDataMetricDataAggregatedDatapointArgs) ToOutput(ctx context.Context) pulumix.Output[GetMetricDataMetricDataAggregatedDatapoint] {
+	return pulumix.Output[GetMetricDataMetricDataAggregatedDatapoint]{
+		OutputState: i.ToGetMetricDataMetricDataAggregatedDatapointOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMetricDataMetricDataAggregatedDatapointArrayInput is an input type that accepts GetMetricDataMetricDataAggregatedDatapointArray and GetMetricDataMetricDataAggregatedDatapointArrayOutput values.
 // You can construct a concrete instance of `GetMetricDataMetricDataAggregatedDatapointArrayInput` via:
 //
@@ -1712,6 +1983,12 @@ func (i GetMetricDataMetricDataAggregatedDatapointArray) ToGetMetricDataMetricDa
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricDataMetricDataAggregatedDatapointArrayOutput)
 }
 
+func (i GetMetricDataMetricDataAggregatedDatapointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricDataMetricDataAggregatedDatapoint] {
+	return pulumix.Output[[]GetMetricDataMetricDataAggregatedDatapoint]{
+		OutputState: i.ToGetMetricDataMetricDataAggregatedDatapointArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMetricDataMetricDataAggregatedDatapointOutput struct{ *pulumi.OutputState }
 
 func (GetMetricDataMetricDataAggregatedDatapointOutput) ElementType() reflect.Type {
@@ -1724,6 +2001,12 @@ func (o GetMetricDataMetricDataAggregatedDatapointOutput) ToGetMetricDataMetricD
 
 func (o GetMetricDataMetricDataAggregatedDatapointOutput) ToGetMetricDataMetricDataAggregatedDatapointOutputWithContext(ctx context.Context) GetMetricDataMetricDataAggregatedDatapointOutput {
 	return o
+}
+
+func (o GetMetricDataMetricDataAggregatedDatapointOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetricDataMetricDataAggregatedDatapoint] {
+	return pulumix.Output[GetMetricDataMetricDataAggregatedDatapoint]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The date and time associated with the value of this data point. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
@@ -1748,6 +2031,12 @@ func (o GetMetricDataMetricDataAggregatedDatapointArrayOutput) ToGetMetricDataMe
 
 func (o GetMetricDataMetricDataAggregatedDatapointArrayOutput) ToGetMetricDataMetricDataAggregatedDatapointArrayOutputWithContext(ctx context.Context) GetMetricDataMetricDataAggregatedDatapointArrayOutput {
 	return o
+}
+
+func (o GetMetricDataMetricDataAggregatedDatapointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricDataMetricDataAggregatedDatapoint] {
+	return pulumix.Output[[]GetMetricDataMetricDataAggregatedDatapoint]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMetricDataMetricDataAggregatedDatapointArrayOutput) Index(i pulumi.IntInput) GetMetricDataMetricDataAggregatedDatapointOutput {
@@ -1793,6 +2082,12 @@ func (i GetMetricsFilterArgs) ToGetMetricsFilterOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricsFilterOutput)
 }
 
+func (i GetMetricsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMetricsFilter] {
+	return pulumix.Output[GetMetricsFilter]{
+		OutputState: i.ToGetMetricsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMetricsFilterArrayInput is an input type that accepts GetMetricsFilterArray and GetMetricsFilterArrayOutput values.
 // You can construct a concrete instance of `GetMetricsFilterArrayInput` via:
 //
@@ -1818,6 +2113,12 @@ func (i GetMetricsFilterArray) ToGetMetricsFilterArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricsFilterArrayOutput)
 }
 
+func (i GetMetricsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricsFilter] {
+	return pulumix.Output[[]GetMetricsFilter]{
+		OutputState: i.ToGetMetricsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMetricsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetMetricsFilterOutput) ElementType() reflect.Type {
@@ -1830,6 +2131,12 @@ func (o GetMetricsFilterOutput) ToGetMetricsFilterOutput() GetMetricsFilterOutpu
 
 func (o GetMetricsFilterOutput) ToGetMetricsFilterOutputWithContext(ctx context.Context) GetMetricsFilterOutput {
 	return o
+}
+
+func (o GetMetricsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetricsFilter] {
+	return pulumix.Output[GetMetricsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The metric name to use when searching for metric definitions.  Example: `CpuUtilization`
@@ -1857,6 +2164,12 @@ func (o GetMetricsFilterArrayOutput) ToGetMetricsFilterArrayOutput() GetMetricsF
 
 func (o GetMetricsFilterArrayOutput) ToGetMetricsFilterArrayOutputWithContext(ctx context.Context) GetMetricsFilterArrayOutput {
 	return o
+}
+
+func (o GetMetricsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricsFilter] {
+	return pulumix.Output[[]GetMetricsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMetricsFilterArrayOutput) Index(i pulumi.IntInput) GetMetricsFilterOutput {
@@ -1930,6 +2243,12 @@ func (i GetMetricsMetricArgs) ToGetMetricsMetricOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricsMetricOutput)
 }
 
+func (i GetMetricsMetricArgs) ToOutput(ctx context.Context) pulumix.Output[GetMetricsMetric] {
+	return pulumix.Output[GetMetricsMetric]{
+		OutputState: i.ToGetMetricsMetricOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMetricsMetricArrayInput is an input type that accepts GetMetricsMetricArray and GetMetricsMetricArrayOutput values.
 // You can construct a concrete instance of `GetMetricsMetricArrayInput` via:
 //
@@ -1955,6 +2274,12 @@ func (i GetMetricsMetricArray) ToGetMetricsMetricArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricsMetricArrayOutput)
 }
 
+func (i GetMetricsMetricArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricsMetric] {
+	return pulumix.Output[[]GetMetricsMetric]{
+		OutputState: i.ToGetMetricsMetricArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMetricsMetricOutput struct{ *pulumi.OutputState }
 
 func (GetMetricsMetricOutput) ElementType() reflect.Type {
@@ -1967,6 +2292,12 @@ func (o GetMetricsMetricOutput) ToGetMetricsMetricOutput() GetMetricsMetricOutpu
 
 func (o GetMetricsMetricOutput) ToGetMetricsMetricOutputWithContext(ctx context.Context) GetMetricsMetricOutput {
 	return o
+}
+
+func (o GetMetricsMetricOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetricsMetric] {
+	return pulumix.Output[GetMetricsMetric]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.  Example: `ocid1.compartment.oc1..exampleuniqueID`
@@ -2023,6 +2354,12 @@ func (o GetMetricsMetricArrayOutput) ToGetMetricsMetricArrayOutput() GetMetricsM
 
 func (o GetMetricsMetricArrayOutput) ToGetMetricsMetricArrayOutputWithContext(ctx context.Context) GetMetricsMetricArrayOutput {
 	return o
+}
+
+func (o GetMetricsMetricArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricsMetric] {
+	return pulumix.Output[[]GetMetricsMetric]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMetricsMetricArrayOutput) Index(i pulumi.IntInput) GetMetricsMetricOutput {

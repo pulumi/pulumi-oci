@@ -44,7 +44,7 @@ public class Resolver extends com.pulumi.resources.CustomResource {
      * The OCID of the attached VCN.
      * 
      */
-    @Export(name="attachedVcnId", type=String.class, parameters={})
+    @Export(name="attachedVcnId", refs={String.class}, tree="[0]")
     private Output<String> attachedVcnId;
 
     /**
@@ -58,7 +58,7 @@ public class Resolver extends com.pulumi.resources.CustomResource {
      * (Updatable) The attached views. Views are evaluated in order.
      * 
      */
-    @Export(name="attachedViews", type=List.class, parameters={ResolverAttachedView.class})
+    @Export(name="attachedViews", refs={List.class,ResolverAttachedView.class}, tree="[0,1]")
     private Output</* @Nullable */ List<ResolverAttachedView>> attachedViews;
 
     /**
@@ -72,7 +72,7 @@ public class Resolver extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the owning compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -86,7 +86,7 @@ public class Resolver extends com.pulumi.resources.CustomResource {
      * The OCID of the default view.
      * 
      */
-    @Export(name="defaultViewId", type=String.class, parameters={})
+    @Export(name="defaultViewId", refs={String.class}, tree="[0]")
     private Output<String> defaultViewId;
 
     /**
@@ -102,7 +102,7 @@ public class Resolver extends com.pulumi.resources.CustomResource {
      * **Example:** `{&#34;Operations&#34;: {&#34;CostCenter&#34;: &#34;42&#34;}}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -118,7 +118,7 @@ public class Resolver extends com.pulumi.resources.CustomResource {
      * (Updatable) The display name of the resolver.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -132,7 +132,7 @@ public class Resolver extends com.pulumi.resources.CustomResource {
      * Read-only array of endpoints for the resolver.
      * 
      */
-    @Export(name="endpoints", type=List.class, parameters={ResolverEndpoint.class})
+    @Export(name="endpoints", refs={List.class,ResolverEndpoint.class}, tree="[0,1]")
     private Output<List<ResolverEndpoint>> endpoints;
 
     /**
@@ -148,7 +148,7 @@ public class Resolver extends com.pulumi.resources.CustomResource {
      * **Example:** `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -164,7 +164,7 @@ public class Resolver extends com.pulumi.resources.CustomResource {
      * A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
      * 
      */
-    @Export(name="isProtected", type=Boolean.class, parameters={})
+    @Export(name="isProtected", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isProtected;
 
     /**
@@ -178,7 +178,7 @@ public class Resolver extends com.pulumi.resources.CustomResource {
      * The OCID of the target resolver.
      * 
      */
-    @Export(name="resolverId", type=String.class, parameters={})
+    @Export(name="resolverId", refs={String.class}, tree="[0]")
     private Output<String> resolverId;
 
     /**
@@ -192,7 +192,7 @@ public class Resolver extends com.pulumi.resources.CustomResource {
      * (Updatable) Rules for the resolver. Rules are evaluated in order.
      * 
      */
-    @Export(name="rules", type=List.class, parameters={ResolverRule.class})
+    @Export(name="rules", refs={List.class,ResolverRule.class}, tree="[0,1]")
     private Output</* @Nullable */ List<ResolverRule>> rules;
 
     /**
@@ -209,7 +209,7 @@ public class Resolver extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="scope", type=String.class, parameters={})
+    @Export(name="scope", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> scope;
 
     /**
@@ -226,7 +226,7 @@ public class Resolver extends com.pulumi.resources.CustomResource {
      * The canonical absolute URL of the resource.
      * 
      */
-    @Export(name="self", type=String.class, parameters={})
+    @Export(name="self", refs={String.class}, tree="[0]")
     private Output<String> self;
 
     /**
@@ -240,7 +240,7 @@ public class Resolver extends com.pulumi.resources.CustomResource {
      * The current state of the resource.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -254,7 +254,7 @@ public class Resolver extends com.pulumi.resources.CustomResource {
      * The date and time the resource was created in &#34;YYYY-MM-ddThh:mm:ssZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -268,7 +268,7 @@ public class Resolver extends com.pulumi.resources.CustomResource {
      * The date and time the resource was last updated in &#34;YYYY-MM-ddThh:mm:ssZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

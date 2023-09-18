@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Schedules in Oracle Cloud Infrastructure Metering Computation service.
@@ -115,6 +116,12 @@ func (o GetSchedulesResultOutput) ToGetSchedulesResultOutput() GetSchedulesResul
 
 func (o GetSchedulesResultOutput) ToGetSchedulesResultOutputWithContext(ctx context.Context) GetSchedulesResultOutput {
 	return o
+}
+
+func (o GetSchedulesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSchedulesResult] {
+	return pulumix.Output[GetSchedulesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The customer tenancy.

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Work Requests in Oracle Cloud Infrastructure Container Engine service.
@@ -130,6 +131,12 @@ func (o GetWorkRequestsResultOutput) ToGetWorkRequestsResultOutput() GetWorkRequ
 
 func (o GetWorkRequestsResultOutput) ToGetWorkRequestsResultOutputWithContext(ctx context.Context) GetWorkRequestsResultOutput {
 	return o
+}
+
+func (o GetWorkRequestsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkRequestsResult] {
+	return pulumix.Output[GetWorkRequestsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetWorkRequestsResultOutput) ClusterId() pulumi.StringPtrOutput {

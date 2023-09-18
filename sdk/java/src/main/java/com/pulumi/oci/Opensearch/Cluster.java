@@ -124,7 +124,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * The availability domains to distribute the cluser nodes across.
      * 
      */
-    @Export(name="availabilityDomains", type=List.class, parameters={String.class})
+    @Export(name="availabilityDomains", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> availabilityDomains;
 
     /**
@@ -138,7 +138,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * The OCID of the compartment to create the cluster in.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -152,7 +152,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * (Updatable) The number of data nodes to configure for the cluster.
      * 
      */
-    @Export(name="dataNodeCount", type=Integer.class, parameters={})
+    @Export(name="dataNodeCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> dataNodeCount;
 
     /**
@@ -166,7 +166,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * The bare metal shape for the cluster&#39;s data nodes.
      * 
      */
-    @Export(name="dataNodeHostBareMetalShape", type=String.class, parameters={})
+    @Export(name="dataNodeHostBareMetalShape", refs={String.class}, tree="[0]")
     private Output<String> dataNodeHostBareMetalShape;
 
     /**
@@ -180,7 +180,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * (Updatable) The amount of memory in GB, to configure per node for the cluster&#39;s data nodes.
      * 
      */
-    @Export(name="dataNodeHostMemoryGb", type=Integer.class, parameters={})
+    @Export(name="dataNodeHostMemoryGb", refs={Integer.class}, tree="[0]")
     private Output<Integer> dataNodeHostMemoryGb;
 
     /**
@@ -194,7 +194,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * (Updatable) The number of OCPUs to configure for the cluster&#39;s data nodes.
      * 
      */
-    @Export(name="dataNodeHostOcpuCount", type=Integer.class, parameters={})
+    @Export(name="dataNodeHostOcpuCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> dataNodeHostOcpuCount;
 
     /**
@@ -208,7 +208,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * TThe instance type for the cluster&#39;s data nodes.
      * 
      */
-    @Export(name="dataNodeHostType", type=String.class, parameters={})
+    @Export(name="dataNodeHostType", refs={String.class}, tree="[0]")
     private Output<String> dataNodeHostType;
 
     /**
@@ -222,7 +222,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * (Updatable) The amount of storage in GB, to configure per node for the cluster&#39;s data nodes.
      * 
      */
-    @Export(name="dataNodeStorageGb", type=Integer.class, parameters={})
+    @Export(name="dataNodeStorageGb", refs={Integer.class}, tree="[0]")
     private Output<Integer> dataNodeStorageGb;
 
     /**
@@ -236,7 +236,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -250,7 +250,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * (Updatable) The name of the cluster. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -264,7 +264,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * The fully qualified domain name (FQDN) for the cluster&#39;s API endpoint.
      * 
      */
-    @Export(name="fqdn", type=String.class, parameters={})
+    @Export(name="fqdn", refs={String.class}, tree="[0]")
     private Output<String> fqdn;
 
     /**
@@ -278,7 +278,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -292,7 +292,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * Additional information about the current lifecycle state of the cluster.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -306,7 +306,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * (Updatable) The number of master nodes to configure for the cluster.
      * 
      */
-    @Export(name="masterNodeCount", type=Integer.class, parameters={})
+    @Export(name="masterNodeCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> masterNodeCount;
 
     /**
@@ -320,7 +320,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * The bare metal shape for the cluster&#39;s master nodes.
      * 
      */
-    @Export(name="masterNodeHostBareMetalShape", type=String.class, parameters={})
+    @Export(name="masterNodeHostBareMetalShape", refs={String.class}, tree="[0]")
     private Output<String> masterNodeHostBareMetalShape;
 
     /**
@@ -334,7 +334,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * (Updatable) The amount of memory in GB, to configure per node for the cluster&#39;s master nodes.
      * 
      */
-    @Export(name="masterNodeHostMemoryGb", type=Integer.class, parameters={})
+    @Export(name="masterNodeHostMemoryGb", refs={Integer.class}, tree="[0]")
     private Output<Integer> masterNodeHostMemoryGb;
 
     /**
@@ -348,7 +348,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * (Updatable) The number of OCPUs to configure for the cluser&#39;s master nodes.
      * 
      */
-    @Export(name="masterNodeHostOcpuCount", type=Integer.class, parameters={})
+    @Export(name="masterNodeHostOcpuCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> masterNodeHostOcpuCount;
 
     /**
@@ -362,7 +362,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * The instance type for the cluster&#39;s master nodes.
      * 
      */
-    @Export(name="masterNodeHostType", type=String.class, parameters={})
+    @Export(name="masterNodeHostType", refs={String.class}, tree="[0]")
     private Output<String> masterNodeHostType;
 
     /**
@@ -376,7 +376,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * The fully qualified domain name (FQDN) for the cluster&#39;s OpenSearch Dashboard API endpoint.
      * 
      */
-    @Export(name="opendashboardFqdn", type=String.class, parameters={})
+    @Export(name="opendashboardFqdn", refs={String.class}, tree="[0]")
     private Output<String> opendashboardFqdn;
 
     /**
@@ -390,7 +390,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
      * 
      */
-    @Export(name="opendashboardNodeCount", type=Integer.class, parameters={})
+    @Export(name="opendashboardNodeCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> opendashboardNodeCount;
 
     /**
@@ -404,7 +404,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * (Updatable) The amount of memory in GB, to configure for the cluster&#39;s OpenSearch Dashboard nodes.
      * 
      */
-    @Export(name="opendashboardNodeHostMemoryGb", type=Integer.class, parameters={})
+    @Export(name="opendashboardNodeHostMemoryGb", refs={Integer.class}, tree="[0]")
     private Output<Integer> opendashboardNodeHostMemoryGb;
 
     /**
@@ -418,7 +418,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * (Updatable) The number of OCPUs to configure for the cluster&#39;s OpenSearch Dashboard nodes.
      * 
      */
-    @Export(name="opendashboardNodeHostOcpuCount", type=Integer.class, parameters={})
+    @Export(name="opendashboardNodeHostOcpuCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> opendashboardNodeHostOcpuCount;
 
     /**
@@ -432,7 +432,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * The private IP address for the cluster&#39;s OpenSearch Dashboard.
      * 
      */
-    @Export(name="opendashboardPrivateIp", type=String.class, parameters={})
+    @Export(name="opendashboardPrivateIp", refs={String.class}, tree="[0]")
     private Output<String> opendashboardPrivateIp;
 
     /**
@@ -446,7 +446,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * The fully qualified domain name (FQDN) for the cluster&#39;s API endpoint.
      * 
      */
-    @Export(name="opensearchFqdn", type=String.class, parameters={})
+    @Export(name="opensearchFqdn", refs={String.class}, tree="[0]")
     private Output<String> opensearchFqdn;
 
     /**
@@ -460,7 +460,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * The cluster&#39;s private IP address.
      * 
      */
-    @Export(name="opensearchPrivateIp", type=String.class, parameters={})
+    @Export(name="opensearchPrivateIp", refs={String.class}, tree="[0]")
     private Output<String> opensearchPrivateIp;
 
     /**
@@ -474,7 +474,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * (Updatable) The name of the master user that are used to manage security config
      * 
      */
-    @Export(name="securityMasterUserName", type=String.class, parameters={})
+    @Export(name="securityMasterUserName", refs={String.class}, tree="[0]")
     private Output<String> securityMasterUserName;
 
     /**
@@ -488,7 +488,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * (Updatable) The password hash of the master user that are used to manage security config
      * 
      */
-    @Export(name="securityMasterUserPasswordHash", type=String.class, parameters={})
+    @Export(name="securityMasterUserPasswordHash", refs={String.class}, tree="[0]")
     private Output<String> securityMasterUserPasswordHash;
 
     /**
@@ -502,7 +502,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * (Updatable) The security mode of the cluster.
      * 
      */
-    @Export(name="securityMode", type=String.class, parameters={})
+    @Export(name="securityMode", refs={String.class}, tree="[0]")
     private Output<String> securityMode;
 
     /**
@@ -516,7 +516,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * (Updatable) The version of the software the cluster is running.
      * 
      */
-    @Export(name="softwareVersion", type=String.class, parameters={})
+    @Export(name="softwareVersion", refs={String.class}, tree="[0]")
     private Output<String> softwareVersion;
 
     /**
@@ -530,7 +530,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * The current state of the cluster.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -544,7 +544,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * The OCID for the compartment where the cluster&#39;s subnet is located.
      * 
      */
-    @Export(name="subnetCompartmentId", type=String.class, parameters={})
+    @Export(name="subnetCompartmentId", refs={String.class}, tree="[0]")
     private Output<String> subnetCompartmentId;
 
     /**
@@ -558,7 +558,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * The OCID of the cluster&#39;s subnet.
      * 
      */
-    @Export(name="subnetId", type=String.class, parameters={})
+    @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
@@ -572,7 +572,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -586,7 +586,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * The amount of time in milliseconds since the cluster was created.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -600,7 +600,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * The amount of time in milliseconds since the cluster was updated.
      * 
      */
-    @Export(name="timeDeleted", type=String.class, parameters={})
+    @Export(name="timeDeleted", refs={String.class}, tree="[0]")
     private Output<String> timeDeleted;
 
     /**
@@ -614,7 +614,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * The amount of time in milliseconds since the cluster was updated.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -628,7 +628,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * The size in GB of the cluster&#39;s total storage.
      * 
      */
-    @Export(name="totalStorageGb", type=Integer.class, parameters={})
+    @Export(name="totalStorageGb", refs={Integer.class}, tree="[0]")
     private Output<Integer> totalStorageGb;
 
     /**
@@ -642,7 +642,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * The OCID for the compartment where the cluster&#39;s VCN is located.
      * 
      */
-    @Export(name="vcnCompartmentId", type=String.class, parameters={})
+    @Export(name="vcnCompartmentId", refs={String.class}, tree="[0]")
     private Output<String> vcnCompartmentId;
 
     /**
@@ -659,7 +659,7 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="vcnId", type=String.class, parameters={})
+    @Export(name="vcnId", refs={String.class}, tree="[0]")
     private Output<String> vcnId;
 
     /**

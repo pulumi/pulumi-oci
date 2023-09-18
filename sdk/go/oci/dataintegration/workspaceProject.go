@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Workspace Project resource in Oracle Cloud Infrastructure Data Integration service.
@@ -273,6 +274,12 @@ func (i *WorkspaceProject) ToWorkspaceProjectOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceProjectOutput)
 }
 
+func (i *WorkspaceProject) ToOutput(ctx context.Context) pulumix.Output[*WorkspaceProject] {
+	return pulumix.Output[*WorkspaceProject]{
+		OutputState: i.ToWorkspaceProjectOutputWithContext(ctx).OutputState,
+	}
+}
+
 // WorkspaceProjectArrayInput is an input type that accepts WorkspaceProjectArray and WorkspaceProjectArrayOutput values.
 // You can construct a concrete instance of `WorkspaceProjectArrayInput` via:
 //
@@ -296,6 +303,12 @@ func (i WorkspaceProjectArray) ToWorkspaceProjectArrayOutput() WorkspaceProjectA
 
 func (i WorkspaceProjectArray) ToWorkspaceProjectArrayOutputWithContext(ctx context.Context) WorkspaceProjectArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceProjectArrayOutput)
+}
+
+func (i WorkspaceProjectArray) ToOutput(ctx context.Context) pulumix.Output[[]*WorkspaceProject] {
+	return pulumix.Output[[]*WorkspaceProject]{
+		OutputState: i.ToWorkspaceProjectArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // WorkspaceProjectMapInput is an input type that accepts WorkspaceProjectMap and WorkspaceProjectMapOutput values.
@@ -323,6 +336,12 @@ func (i WorkspaceProjectMap) ToWorkspaceProjectMapOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceProjectMapOutput)
 }
 
+func (i WorkspaceProjectMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*WorkspaceProject] {
+	return pulumix.Output[map[string]*WorkspaceProject]{
+		OutputState: i.ToWorkspaceProjectMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type WorkspaceProjectOutput struct{ *pulumi.OutputState }
 
 func (WorkspaceProjectOutput) ElementType() reflect.Type {
@@ -335,6 +354,12 @@ func (o WorkspaceProjectOutput) ToWorkspaceProjectOutput() WorkspaceProjectOutpu
 
 func (o WorkspaceProjectOutput) ToWorkspaceProjectOutputWithContext(ctx context.Context) WorkspaceProjectOutput {
 	return o
+}
+
+func (o WorkspaceProjectOutput) ToOutput(ctx context.Context) pulumix.Output[*WorkspaceProject] {
+	return pulumix.Output[*WorkspaceProject]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) A user defined description for the project.
@@ -423,6 +448,12 @@ func (o WorkspaceProjectArrayOutput) ToWorkspaceProjectArrayOutputWithContext(ct
 	return o
 }
 
+func (o WorkspaceProjectArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*WorkspaceProject] {
+	return pulumix.Output[[]*WorkspaceProject]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o WorkspaceProjectArrayOutput) Index(i pulumi.IntInput) WorkspaceProjectOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *WorkspaceProject {
 		return vs[0].([]*WorkspaceProject)[vs[1].(int)]
@@ -441,6 +472,12 @@ func (o WorkspaceProjectMapOutput) ToWorkspaceProjectMapOutput() WorkspaceProjec
 
 func (o WorkspaceProjectMapOutput) ToWorkspaceProjectMapOutputWithContext(ctx context.Context) WorkspaceProjectMapOutput {
 	return o
+}
+
+func (o WorkspaceProjectMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*WorkspaceProject] {
+	return pulumix.Output[map[string]*WorkspaceProject]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o WorkspaceProjectMapOutput) MapIndex(k pulumi.StringInput) WorkspaceProjectOutput {

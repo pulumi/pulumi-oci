@@ -71,7 +71,7 @@ public class ExternalContainerDatabase extends com.pulumi.resources.CustomResour
      * The character set of the external database.
      * 
      */
-    @Export(name="characterSet", type=String.class, parameters={})
+    @Export(name="characterSet", refs={String.class}, tree="[0]")
     private Output<String> characterSet;
 
     /**
@@ -85,7 +85,7 @@ public class ExternalContainerDatabase extends com.pulumi.resources.CustomResour
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -99,7 +99,7 @@ public class ExternalContainerDatabase extends com.pulumi.resources.CustomResour
      * The Oracle Database configuration
      * 
      */
-    @Export(name="databaseConfiguration", type=String.class, parameters={})
+    @Export(name="databaseConfiguration", refs={String.class}, tree="[0]")
     private Output<String> databaseConfiguration;
 
     /**
@@ -113,7 +113,7 @@ public class ExternalContainerDatabase extends com.pulumi.resources.CustomResour
      * The Oracle Database edition.
      * 
      */
-    @Export(name="databaseEdition", type=String.class, parameters={})
+    @Export(name="databaseEdition", refs={String.class}, tree="[0]")
     private Output<String> databaseEdition;
 
     /**
@@ -127,7 +127,7 @@ public class ExternalContainerDatabase extends com.pulumi.resources.CustomResour
      * The configuration of the Database Management service.
      * 
      */
-    @Export(name="databaseManagementConfigs", type=List.class, parameters={ExternalContainerDatabaseDatabaseManagementConfig.class})
+    @Export(name="databaseManagementConfigs", refs={List.class,ExternalContainerDatabaseDatabaseManagementConfig.class}, tree="[0,1]")
     private Output<List<ExternalContainerDatabaseDatabaseManagementConfig>> databaseManagementConfigs;
 
     /**
@@ -141,7 +141,7 @@ public class ExternalContainerDatabase extends com.pulumi.resources.CustomResour
      * The Oracle Database version.
      * 
      */
-    @Export(name="databaseVersion", type=String.class, parameters={})
+    @Export(name="databaseVersion", refs={String.class}, tree="[0]")
     private Output<String> databaseVersion;
 
     /**
@@ -155,7 +155,7 @@ public class ExternalContainerDatabase extends com.pulumi.resources.CustomResour
      * The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
      * 
      */
-    @Export(name="dbId", type=String.class, parameters={})
+    @Export(name="dbId", refs={String.class}, tree="[0]")
     private Output<String> dbId;
 
     /**
@@ -169,7 +169,7 @@ public class ExternalContainerDatabase extends com.pulumi.resources.CustomResour
      * The database packs licensed for the external Oracle Database.
      * 
      */
-    @Export(name="dbPacks", type=String.class, parameters={})
+    @Export(name="dbPacks", refs={String.class}, tree="[0]")
     private Output<String> dbPacks;
 
     /**
@@ -183,7 +183,7 @@ public class ExternalContainerDatabase extends com.pulumi.resources.CustomResour
      * The `DB_UNIQUE_NAME` of the external database.
      * 
      */
-    @Export(name="dbUniqueName", type=String.class, parameters={})
+    @Export(name="dbUniqueName", refs={String.class}, tree="[0]")
     private Output<String> dbUniqueName;
 
     /**
@@ -197,7 +197,7 @@ public class ExternalContainerDatabase extends com.pulumi.resources.CustomResour
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -211,7 +211,7 @@ public class ExternalContainerDatabase extends com.pulumi.resources.CustomResour
      * (Updatable) The user-friendly name for the external database. The name does not have to be unique.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -228,7 +228,7 @@ public class ExternalContainerDatabase extends com.pulumi.resources.CustomResour
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -245,7 +245,7 @@ public class ExternalContainerDatabase extends com.pulumi.resources.CustomResour
      * Additional information about the current lifecycle state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -259,7 +259,7 @@ public class ExternalContainerDatabase extends com.pulumi.resources.CustomResour
      * The national character of the external database.
      * 
      */
-    @Export(name="ncharacterSet", type=String.class, parameters={})
+    @Export(name="ncharacterSet", refs={String.class}, tree="[0]")
     private Output<String> ncharacterSet;
 
     /**
@@ -273,7 +273,7 @@ public class ExternalContainerDatabase extends com.pulumi.resources.CustomResour
      * The configuration of Stack Monitoring for the external database.
      * 
      */
-    @Export(name="stackMonitoringConfigs", type=List.class, parameters={ExternalContainerDatabaseStackMonitoringConfig.class})
+    @Export(name="stackMonitoringConfigs", refs={List.class,ExternalContainerDatabaseStackMonitoringConfig.class}, tree="[0,1]")
     private Output<List<ExternalContainerDatabaseStackMonitoringConfig>> stackMonitoringConfigs;
 
     /**
@@ -287,7 +287,7 @@ public class ExternalContainerDatabase extends com.pulumi.resources.CustomResour
      * The current state of the Oracle Cloud Infrastructure external database resource.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -301,7 +301,7 @@ public class ExternalContainerDatabase extends com.pulumi.resources.CustomResour
      * The date and time the database was created.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -315,7 +315,7 @@ public class ExternalContainerDatabase extends com.pulumi.resources.CustomResour
      * The time zone of the external database. It is a time zone offset (a character type in the format &#39;[+|-]TZH:TZM&#39;) or a time zone region name, depending on how the time zone value was specified when the database was created / last altered.
      * 
      */
-    @Export(name="timeZone", type=String.class, parameters={})
+    @Export(name="timeZone", refs={String.class}, tree="[0]")
     private Output<String> timeZone;
 
     /**

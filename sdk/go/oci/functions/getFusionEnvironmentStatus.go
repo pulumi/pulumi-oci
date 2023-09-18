@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Fusion Environment Status resource in Oracle Cloud Infrastructure Fusion Apps service.
@@ -101,6 +102,12 @@ func (o GetFusionEnvironmentStatusResultOutput) ToGetFusionEnvironmentStatusResu
 
 func (o GetFusionEnvironmentStatusResultOutput) ToGetFusionEnvironmentStatusResultOutputWithContext(ctx context.Context) GetFusionEnvironmentStatusResultOutput {
 	return o
+}
+
+func (o GetFusionEnvironmentStatusResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentStatusResult] {
+	return pulumix.Output[GetFusionEnvironmentStatusResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetFusionEnvironmentStatusResultOutput) FusionEnvironmentId() pulumi.StringOutput {

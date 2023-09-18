@@ -74,7 +74,7 @@ public class Subscription extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the subscription.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -88,7 +88,7 @@ public class Subscription extends com.pulumi.resources.CustomResource {
      * The time when this suscription was created.
      * 
      */
-    @Export(name="createdTime", type=String.class, parameters={})
+    @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
@@ -102,7 +102,7 @@ public class Subscription extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -116,7 +116,7 @@ public class Subscription extends com.pulumi.resources.CustomResource {
      * The delivery policy of the subscription. Stored as a JSON string.
      * 
      */
-    @Export(name="deliveryPolicy", type=String.class, parameters={})
+    @Export(name="deliveryPolicy", refs={String.class}, tree="[0]")
     private Output<String> deliveryPolicy;
 
     /**
@@ -132,7 +132,7 @@ public class Subscription extends com.pulumi.resources.CustomResource {
      * For protocol-specific endpoint formats and steps to get or create endpoints, see [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
      * 
      */
-    @Export(name="endpoint", type=String.class, parameters={})
+    @Export(name="endpoint", refs={String.class}, tree="[0]")
     private Output<String> endpoint;
 
     /**
@@ -148,7 +148,7 @@ public class Subscription extends com.pulumi.resources.CustomResource {
      * For optimistic concurrency control. See `if-match`.
      * 
      */
-    @Export(name="etag", type=String.class, parameters={})
+    @Export(name="etag", refs={String.class}, tree="[0]")
     private Output<String> etag;
 
     /**
@@ -162,7 +162,7 @@ public class Subscription extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -178,7 +178,7 @@ public class Subscription extends com.pulumi.resources.CustomResource {
      * Allowed values:
      * 
      */
-    @Export(name="protocol", type=String.class, parameters={})
+    @Export(name="protocol", refs={String.class}, tree="[0]")
     private Output<String> protocol;
 
     /**
@@ -194,7 +194,7 @@ public class Subscription extends com.pulumi.resources.CustomResource {
      * The lifecycle state of the subscription. The status of a new subscription is PENDING; when confirmed, the subscription status changes to ACTIVE.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -211,7 +211,7 @@ public class Subscription extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="topicId", type=String.class, parameters={})
+    @Export(name="topicId", refs={String.class}, tree="[0]")
     private Output<String> topicId;
 
     /**

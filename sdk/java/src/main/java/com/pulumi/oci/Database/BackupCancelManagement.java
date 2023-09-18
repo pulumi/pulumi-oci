@@ -62,7 +62,7 @@ public class BackupCancelManagement extends com.pulumi.resources.CustomResource 
      * The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    @Export(name="backupId", type=String.class, parameters={})
+    @Export(name="backupId", refs={String.class}, tree="[0]")
     private Output<String> backupId;
 
     /**
@@ -79,7 +79,7 @@ public class BackupCancelManagement extends com.pulumi.resources.CustomResource 
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="cancelBackupTrigger", type=Integer.class, parameters={})
+    @Export(name="cancelBackupTrigger", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> cancelBackupTrigger;
 
     /**

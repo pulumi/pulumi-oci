@@ -85,7 +85,7 @@ public class Rrset extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the compartment the resource belongs to.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -99,7 +99,7 @@ public class Rrset extends com.pulumi.resources.CustomResource {
      * The fully qualified domain name where the record can be located.
      * 
      */
-    @Export(name="domain", type=String.class, parameters={})
+    @Export(name="domain", refs={String.class}, tree="[0]")
     private Output<String> domain;
 
     /**
@@ -114,7 +114,7 @@ public class Rrset extends com.pulumi.resources.CustomResource {
      * **NOTE** Omitting `items` at time of create, will delete any existing records in the RRSet
      * 
      */
-    @Export(name="items", type=List.class, parameters={RrsetItem.class})
+    @Export(name="items", refs={List.class,RrsetItem.class}, tree="[0,1]")
     private Output<List<RrsetItem>> items;
 
     /**
@@ -129,7 +129,7 @@ public class Rrset extends com.pulumi.resources.CustomResource {
      * The type of the target RRSet within the target zone.
      * 
      */
-    @Export(name="rtype", type=String.class, parameters={})
+    @Export(name="rtype", refs={String.class}, tree="[0]")
     private Output<String> rtype;
 
     /**
@@ -144,7 +144,7 @@ public class Rrset extends com.pulumi.resources.CustomResource {
      * This value will be null for zones in the global DNS and `PRIVATE` when creating private Rrsets.
      * 
      */
-    @Export(name="scope", type=String.class, parameters={})
+    @Export(name="scope", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> scope;
 
     /**
@@ -159,7 +159,7 @@ public class Rrset extends com.pulumi.resources.CustomResource {
      * The OCID of the view the resource is associated with.
      * 
      */
-    @Export(name="viewId", type=String.class, parameters={})
+    @Export(name="viewId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> viewId;
 
     /**
@@ -176,7 +176,7 @@ public class Rrset extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="zoneNameOrId", type=String.class, parameters={})
+    @Export(name="zoneNameOrId", refs={String.class}, tree="[0]")
     private Output<String> zoneNameOrId;
 
     /**

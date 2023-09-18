@@ -38,7 +38,7 @@ public class MediaAsset extends com.pulumi.resources.CustomResource {
      * The name of the object storage bucket where this asset is located.
      * 
      */
-    @Export(name="bucket", type=String.class, parameters={})
+    @Export(name="bucket", refs={String.class}, tree="[0]")
     private Output<String> bucket;
 
     /**
@@ -52,7 +52,7 @@ public class MediaAsset extends com.pulumi.resources.CustomResource {
      * (Updatable) Compartment Identifier.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -66,7 +66,7 @@ public class MediaAsset extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -80,7 +80,7 @@ public class MediaAsset extends com.pulumi.resources.CustomResource {
      * (Updatable) Display name for the Media Asset. Does not have to be unique. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -94,7 +94,7 @@ public class MediaAsset extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -108,7 +108,7 @@ public class MediaAsset extends com.pulumi.resources.CustomResource {
      * (Updatable) The ID of the senior most asset from which this asset is derived.
      * 
      */
-    @Export(name="masterMediaAssetId", type=String.class, parameters={})
+    @Export(name="masterMediaAssetId", refs={String.class}, tree="[0]")
     private Output<String> masterMediaAssetId;
 
     /**
@@ -122,7 +122,7 @@ public class MediaAsset extends com.pulumi.resources.CustomResource {
      * (Updatable) list of tags for the MediaAsset.
      * 
      */
-    @Export(name="mediaAssetTags", type=List.class, parameters={MediaAssetMediaAssetTag.class})
+    @Export(name="mediaAssetTags", refs={List.class,MediaAssetMediaAssetTag.class}, tree="[0,1]")
     private Output<List<MediaAssetMediaAssetTag>> mediaAssetTags;
 
     /**
@@ -136,7 +136,7 @@ public class MediaAsset extends com.pulumi.resources.CustomResource {
      * The ID of the MediaWorkflowJob used to produce this asset.
      * 
      */
-    @Export(name="mediaWorkflowJobId", type=String.class, parameters={})
+    @Export(name="mediaWorkflowJobId", refs={String.class}, tree="[0]")
     private Output<String> mediaWorkflowJobId;
 
     /**
@@ -150,7 +150,7 @@ public class MediaAsset extends com.pulumi.resources.CustomResource {
      * (Updatable) JSON string containing the technial metadata for the media asset.
      * 
      */
-    @Export(name="metadatas", type=List.class, parameters={MediaAssetMetadata.class})
+    @Export(name="metadatas", refs={List.class,MediaAssetMetadata.class}, tree="[0,1]")
     private Output<List<MediaAssetMetadata>> metadatas;
 
     /**
@@ -164,7 +164,7 @@ public class MediaAsset extends com.pulumi.resources.CustomResource {
      * The object storage namespace where this asset is located.
      * 
      */
-    @Export(name="namespace", type=String.class, parameters={})
+    @Export(name="namespace", refs={String.class}, tree="[0]")
     private Output<String> namespace;
 
     /**
@@ -178,7 +178,7 @@ public class MediaAsset extends com.pulumi.resources.CustomResource {
      * The object storage object name that identifies this asset.
      * 
      */
-    @Export(name="object", type=String.class, parameters={})
+    @Export(name="object", refs={String.class}, tree="[0]")
     private Output<String> object;
 
     /**
@@ -192,7 +192,7 @@ public class MediaAsset extends com.pulumi.resources.CustomResource {
      * eTag of the underlying object storage object.
      * 
      */
-    @Export(name="objectEtag", type=String.class, parameters={})
+    @Export(name="objectEtag", refs={String.class}, tree="[0]")
     private Output<String> objectEtag;
 
     /**
@@ -206,7 +206,7 @@ public class MediaAsset extends com.pulumi.resources.CustomResource {
      * (Updatable) The ID of the parent asset from which this asset is derived.
      * 
      */
-    @Export(name="parentMediaAssetId", type=String.class, parameters={})
+    @Export(name="parentMediaAssetId", refs={String.class}, tree="[0]")
     private Output<String> parentMediaAssetId;
 
     /**
@@ -220,7 +220,7 @@ public class MediaAsset extends com.pulumi.resources.CustomResource {
      * The end index for video segment files.
      * 
      */
-    @Export(name="segmentRangeEndIndex", type=String.class, parameters={})
+    @Export(name="segmentRangeEndIndex", refs={String.class}, tree="[0]")
     private Output<String> segmentRangeEndIndex;
 
     /**
@@ -234,7 +234,7 @@ public class MediaAsset extends com.pulumi.resources.CustomResource {
      * The start index for video segment files.
      * 
      */
-    @Export(name="segmentRangeStartIndex", type=String.class, parameters={})
+    @Export(name="segmentRangeStartIndex", refs={String.class}, tree="[0]")
     private Output<String> segmentRangeStartIndex;
 
     /**
@@ -248,7 +248,7 @@ public class MediaAsset extends com.pulumi.resources.CustomResource {
      * The ID of the MediaWorkflow used to produce this asset.
      * 
      */
-    @Export(name="sourceMediaWorkflowId", type=String.class, parameters={})
+    @Export(name="sourceMediaWorkflowId", refs={String.class}, tree="[0]")
     private Output<String> sourceMediaWorkflowId;
 
     /**
@@ -262,7 +262,7 @@ public class MediaAsset extends com.pulumi.resources.CustomResource {
      * The version of the MediaWorkflow used to produce this asset.
      * 
      */
-    @Export(name="sourceMediaWorkflowVersion", type=String.class, parameters={})
+    @Export(name="sourceMediaWorkflowVersion", refs={String.class}, tree="[0]")
     private Output<String> sourceMediaWorkflowVersion;
 
     /**
@@ -276,7 +276,7 @@ public class MediaAsset extends com.pulumi.resources.CustomResource {
      * The current state of the MediaAsset.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -290,7 +290,7 @@ public class MediaAsset extends com.pulumi.resources.CustomResource {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -304,7 +304,7 @@ public class MediaAsset extends com.pulumi.resources.CustomResource {
      * The time when the MediaAsset was created. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -318,7 +318,7 @@ public class MediaAsset extends com.pulumi.resources.CustomResource {
      * The time when the MediaAsset was updated. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -335,7 +335,7 @@ public class MediaAsset extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="type", type=String.class, parameters={})
+    @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**

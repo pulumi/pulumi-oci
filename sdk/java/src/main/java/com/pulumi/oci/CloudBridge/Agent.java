@@ -74,7 +74,7 @@ public class Agent extends com.pulumi.resources.CustomResource {
      * Resource principal public key.
      * 
      */
-    @Export(name="agentPubKey", type=String.class, parameters={})
+    @Export(name="agentPubKey", refs={String.class}, tree="[0]")
     private Output<String> agentPubKey;
 
     /**
@@ -88,7 +88,7 @@ public class Agent extends com.pulumi.resources.CustomResource {
      * Agent identifier.
      * 
      */
-    @Export(name="agentType", type=String.class, parameters={})
+    @Export(name="agentType", refs={String.class}, tree="[0]")
     private Output<String> agentType;
 
     /**
@@ -102,7 +102,7 @@ public class Agent extends com.pulumi.resources.CustomResource {
      * Agent identifier.
      * 
      */
-    @Export(name="agentVersion", type=String.class, parameters={})
+    @Export(name="agentVersion", refs={String.class}, tree="[0]")
     private Output<String> agentVersion;
 
     /**
@@ -116,7 +116,7 @@ public class Agent extends com.pulumi.resources.CustomResource {
      * (Updatable) Compartment identifier.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -130,7 +130,7 @@ public class Agent extends com.pulumi.resources.CustomResource {
      * (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -144,7 +144,7 @@ public class Agent extends com.pulumi.resources.CustomResource {
      * (Updatable) Agent identifier.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -158,7 +158,7 @@ public class Agent extends com.pulumi.resources.CustomResource {
      * Environment identifier.
      * 
      */
-    @Export(name="environmentId", type=String.class, parameters={})
+    @Export(name="environmentId", refs={String.class}, tree="[0]")
     private Output<String> environmentId;
 
     /**
@@ -172,7 +172,7 @@ public class Agent extends com.pulumi.resources.CustomResource {
      * (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -186,7 +186,7 @@ public class Agent extends com.pulumi.resources.CustomResource {
      * The current heartbeat status of the Agent based on its timeLastSyncReceived value.
      * 
      */
-    @Export(name="heartBeatStatus", type=String.class, parameters={})
+    @Export(name="heartBeatStatus", refs={String.class}, tree="[0]")
     private Output<String> heartBeatStatus;
 
     /**
@@ -200,7 +200,7 @@ public class Agent extends com.pulumi.resources.CustomResource {
      * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -217,7 +217,7 @@ public class Agent extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="osVersion", type=String.class, parameters={})
+    @Export(name="osVersion", refs={String.class}, tree="[0]")
     private Output<String> osVersion;
 
     /**
@@ -234,7 +234,7 @@ public class Agent extends com.pulumi.resources.CustomResource {
      * List of plugins associated with the agent.
      * 
      */
-    @Export(name="pluginLists", type=List.class, parameters={AgentPluginList.class})
+    @Export(name="pluginLists", refs={List.class,AgentPluginList.class}, tree="[0,1]")
     private Output<List<AgentPluginList>> pluginLists;
 
     /**
@@ -248,7 +248,7 @@ public class Agent extends com.pulumi.resources.CustomResource {
      * The current state of the Agent.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -262,7 +262,7 @@ public class Agent extends com.pulumi.resources.CustomResource {
      * The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -276,7 +276,7 @@ public class Agent extends com.pulumi.resources.CustomResource {
      * The time when the Agent was created. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -290,7 +290,7 @@ public class Agent extends com.pulumi.resources.CustomResource {
      * The time since epoch for when the public key will expire. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeExpireAgentKeyInMs", type=String.class, parameters={})
+    @Export(name="timeExpireAgentKeyInMs", refs={String.class}, tree="[0]")
     private Output<String> timeExpireAgentKeyInMs;
 
     /**
@@ -304,7 +304,7 @@ public class Agent extends com.pulumi.resources.CustomResource {
      * The time when the last heartbeat of the Agent was noted. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeLastSyncReceived", type=String.class, parameters={})
+    @Export(name="timeLastSyncReceived", refs={String.class}, tree="[0]")
     private Output<String> timeLastSyncReceived;
 
     /**
@@ -318,7 +318,7 @@ public class Agent extends com.pulumi.resources.CustomResource {
      * The time when the Agent was updated. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

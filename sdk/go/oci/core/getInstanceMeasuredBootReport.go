@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Instance Measured Boot Report resource in Oracle Cloud Infrastructure Core service.
@@ -103,6 +104,12 @@ func (o GetInstanceMeasuredBootReportResultOutput) ToGetInstanceMeasuredBootRepo
 
 func (o GetInstanceMeasuredBootReportResultOutput) ToGetInstanceMeasuredBootReportResultOutputWithContext(ctx context.Context) GetInstanceMeasuredBootReportResultOutput {
 	return o
+}
+
+func (o GetInstanceMeasuredBootReportResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstanceMeasuredBootReportResult] {
+	return pulumix.Output[GetInstanceMeasuredBootReportResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The provider-assigned unique ID for this managed resource.

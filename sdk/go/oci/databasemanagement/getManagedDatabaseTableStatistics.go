@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Managed Database Table Statistics in Oracle Cloud Infrastructure Database Management service.
@@ -105,6 +106,12 @@ func (o GetManagedDatabaseTableStatisticsResultOutput) ToGetManagedDatabaseTable
 
 func (o GetManagedDatabaseTableStatisticsResultOutput) ToGetManagedDatabaseTableStatisticsResultOutputWithContext(ctx context.Context) GetManagedDatabaseTableStatisticsResultOutput {
 	return o
+}
+
+func (o GetManagedDatabaseTableStatisticsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseTableStatisticsResult] {
+	return pulumix.Output[GetManagedDatabaseTableStatisticsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetManagedDatabaseTableStatisticsResultOutput) Filters() GetManagedDatabaseTableStatisticsFilterArrayOutput {

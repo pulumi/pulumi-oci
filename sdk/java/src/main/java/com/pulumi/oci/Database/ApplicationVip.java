@@ -69,7 +69,7 @@ public class ApplicationVip extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud VM cluster associated with the application virtual IP (VIP) address.
      * 
      */
-    @Export(name="cloudVmClusterId", type=String.class, parameters={})
+    @Export(name="cloudVmClusterId", refs={String.class}, tree="[0]")
     private Output<String> cloudVmClusterId;
 
     /**
@@ -83,7 +83,7 @@ public class ApplicationVip extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -97,7 +97,7 @@ public class ApplicationVip extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB node associated with the application virtual IP (VIP) address.
      * 
      */
-    @Export(name="dbNodeId", type=String.class, parameters={})
+    @Export(name="dbNodeId", refs={String.class}, tree="[0]")
     private Output<String> dbNodeId;
 
     /**
@@ -111,7 +111,7 @@ public class ApplicationVip extends com.pulumi.resources.CustomResource {
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -125,7 +125,7 @@ public class ApplicationVip extends com.pulumi.resources.CustomResource {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -139,7 +139,7 @@ public class ApplicationVip extends com.pulumi.resources.CustomResource {
      * The hostname of the application virtual IP (VIP) address.
      * 
      */
-    @Export(name="hostnameLabel", type=String.class, parameters={})
+    @Export(name="hostnameLabel", refs={String.class}, tree="[0]")
     private Output<String> hostnameLabel;
 
     /**
@@ -153,7 +153,7 @@ public class ApplicationVip extends com.pulumi.resources.CustomResource {
      * The application virtual IP (VIP) address.
      * 
      */
-    @Export(name="ipAddress", type=String.class, parameters={})
+    @Export(name="ipAddress", refs={String.class}, tree="[0]")
     private Output<String> ipAddress;
 
     /**
@@ -167,7 +167,7 @@ public class ApplicationVip extends com.pulumi.resources.CustomResource {
      * Additional information about the current lifecycle state of the application virtual IP (VIP) address.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -181,7 +181,7 @@ public class ApplicationVip extends com.pulumi.resources.CustomResource {
      * The current lifecycle state of the application virtual IP (VIP) address.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -198,7 +198,7 @@ public class ApplicationVip extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="subnetId", type=String.class, parameters={})
+    @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
@@ -215,7 +215,7 @@ public class ApplicationVip extends com.pulumi.resources.CustomResource {
      * The date and time when the create operation for the application virtual IP (VIP) address completed.
      * 
      */
-    @Export(name="timeAssigned", type=String.class, parameters={})
+    @Export(name="timeAssigned", refs={String.class}, tree="[0]")
     private Output<String> timeAssigned;
 
     /**

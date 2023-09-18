@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of User Db Credentials in Oracle Cloud Infrastructure Identity Domains service.
@@ -156,6 +157,12 @@ func (o GetDomainsUserDbCredentialsResultOutput) ToGetDomainsUserDbCredentialsRe
 
 func (o GetDomainsUserDbCredentialsResultOutput) ToGetDomainsUserDbCredentialsResultOutputWithContext(ctx context.Context) GetDomainsUserDbCredentialsResultOutput {
 	return o
+}
+
+func (o GetDomainsUserDbCredentialsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUserDbCredentialsResult] {
+	return pulumix.Output[GetDomainsUserDbCredentialsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUserDbCredentialsResultOutput) AttributeSets() pulumi.StringArrayOutput {

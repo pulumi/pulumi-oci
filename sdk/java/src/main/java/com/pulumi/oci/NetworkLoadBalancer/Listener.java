@@ -68,7 +68,7 @@ public class Listener extends com.pulumi.resources.CustomResource {
      * (Updatable) The name of the associated backend set.  Example: `example_backend_set`
      * 
      */
-    @Export(name="defaultBackendSetName", type=String.class, parameters={})
+    @Export(name="defaultBackendSetName", refs={String.class}, tree="[0]")
     private Output<String> defaultBackendSetName;
 
     /**
@@ -82,7 +82,7 @@ public class Listener extends com.pulumi.resources.CustomResource {
      * (Updatable) IP version associated with the listener.
      * 
      */
-    @Export(name="ipVersion", type=String.class, parameters={})
+    @Export(name="ipVersion", refs={String.class}, tree="[0]")
     private Output<String> ipVersion;
 
     /**
@@ -96,7 +96,7 @@ public class Listener extends com.pulumi.resources.CustomResource {
      * A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -110,7 +110,7 @@ public class Listener extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
      * 
      */
-    @Export(name="networkLoadBalancerId", type=String.class, parameters={})
+    @Export(name="networkLoadBalancerId", refs={String.class}, tree="[0]")
     private Output<String> networkLoadBalancerId;
 
     /**
@@ -124,7 +124,7 @@ public class Listener extends com.pulumi.resources.CustomResource {
      * (Updatable) The communication port for the listener.  Example: `80`
      * 
      */
-    @Export(name="port", type=Integer.class, parameters={})
+    @Export(name="port", refs={Integer.class}, tree="[0]")
     private Output<Integer> port;
 
     /**
@@ -141,7 +141,7 @@ public class Listener extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="protocol", type=String.class, parameters={})
+    @Export(name="protocol", refs={String.class}, tree="[0]")
     private Output<String> protocol;
 
     /**

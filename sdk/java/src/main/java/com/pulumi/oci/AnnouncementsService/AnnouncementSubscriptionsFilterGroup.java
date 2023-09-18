@@ -72,7 +72,7 @@ public class AnnouncementSubscriptionsFilterGroup extends com.pulumi.resources.C
      * The OCID of the announcement subscription.
      * 
      */
-    @Export(name="announcementSubscriptionId", type=String.class, parameters={})
+    @Export(name="announcementSubscriptionId", refs={String.class}, tree="[0]")
     private Output<String> announcementSubscriptionId;
 
     /**
@@ -86,7 +86,7 @@ public class AnnouncementSubscriptionsFilterGroup extends com.pulumi.resources.C
      * (Updatable) A list of filters against which the Announcements service will match announcements. You cannot have more than one of any given filter type within a filter group.
      * 
      */
-    @Export(name="filters", type=List.class, parameters={AnnouncementSubscriptionsFilterGroupFilter.class})
+    @Export(name="filters", refs={List.class,AnnouncementSubscriptionsFilterGroupFilter.class}, tree="[0,1]")
     private Output<List<AnnouncementSubscriptionsFilterGroupFilter>> filters;
 
     /**
@@ -103,7 +103,7 @@ public class AnnouncementSubscriptionsFilterGroup extends com.pulumi.resources.C
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**

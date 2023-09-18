@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Pipeline Run resource in Oracle Cloud Infrastructure Data Science service.
@@ -346,6 +347,12 @@ func (i *PipelineRun) ToPipelineRunOutputWithContext(ctx context.Context) Pipeli
 	return pulumi.ToOutputWithContext(ctx, i).(PipelineRunOutput)
 }
 
+func (i *PipelineRun) ToOutput(ctx context.Context) pulumix.Output[*PipelineRun] {
+	return pulumix.Output[*PipelineRun]{
+		OutputState: i.ToPipelineRunOutputWithContext(ctx).OutputState,
+	}
+}
+
 // PipelineRunArrayInput is an input type that accepts PipelineRunArray and PipelineRunArrayOutput values.
 // You can construct a concrete instance of `PipelineRunArrayInput` via:
 //
@@ -369,6 +376,12 @@ func (i PipelineRunArray) ToPipelineRunArrayOutput() PipelineRunArrayOutput {
 
 func (i PipelineRunArray) ToPipelineRunArrayOutputWithContext(ctx context.Context) PipelineRunArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(PipelineRunArrayOutput)
+}
+
+func (i PipelineRunArray) ToOutput(ctx context.Context) pulumix.Output[[]*PipelineRun] {
+	return pulumix.Output[[]*PipelineRun]{
+		OutputState: i.ToPipelineRunArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // PipelineRunMapInput is an input type that accepts PipelineRunMap and PipelineRunMapOutput values.
@@ -396,6 +409,12 @@ func (i PipelineRunMap) ToPipelineRunMapOutputWithContext(ctx context.Context) P
 	return pulumi.ToOutputWithContext(ctx, i).(PipelineRunMapOutput)
 }
 
+func (i PipelineRunMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*PipelineRun] {
+	return pulumix.Output[map[string]*PipelineRun]{
+		OutputState: i.ToPipelineRunMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type PipelineRunOutput struct{ *pulumi.OutputState }
 
 func (PipelineRunOutput) ElementType() reflect.Type {
@@ -408,6 +427,12 @@ func (o PipelineRunOutput) ToPipelineRunOutput() PipelineRunOutput {
 
 func (o PipelineRunOutput) ToPipelineRunOutputWithContext(ctx context.Context) PipelineRunOutput {
 	return o
+}
+
+func (o PipelineRunOutput) ToOutput(ctx context.Context) pulumix.Output[*PipelineRun] {
+	return pulumix.Output[*PipelineRun]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline run.
@@ -535,6 +560,12 @@ func (o PipelineRunArrayOutput) ToPipelineRunArrayOutputWithContext(ctx context.
 	return o
 }
 
+func (o PipelineRunArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*PipelineRun] {
+	return pulumix.Output[[]*PipelineRun]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o PipelineRunArrayOutput) Index(i pulumi.IntInput) PipelineRunOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *PipelineRun {
 		return vs[0].([]*PipelineRun)[vs[1].(int)]
@@ -553,6 +584,12 @@ func (o PipelineRunMapOutput) ToPipelineRunMapOutput() PipelineRunMapOutput {
 
 func (o PipelineRunMapOutput) ToPipelineRunMapOutputWithContext(ctx context.Context) PipelineRunMapOutput {
 	return o
+}
+
+func (o PipelineRunMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*PipelineRun] {
+	return pulumix.Output[map[string]*PipelineRun]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o PipelineRunMapOutput) MapIndex(k pulumi.StringInput) PipelineRunOutput {

@@ -65,7 +65,7 @@ public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomRes
      * The requested number of additional storage servers activated for the Exadata infrastructure.
      * 
      */
-    @Export(name="activatedStorageCount", type=Integer.class, parameters={})
+    @Export(name="activatedStorageCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> activatedStorageCount;
 
     /**
@@ -75,7 +75,7 @@ public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomRes
     public Output<Integer> activatedStorageCount() {
         return this.activatedStorageCount;
     }
-    @Export(name="activationFile", type=String.class, parameters={})
+    @Export(name="activationFile", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> activationFile;
 
     public Output<Optional<String>> activationFile() {
@@ -85,7 +85,7 @@ public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomRes
      * The number of additional compute servers for the Exadata infrastructure.
      * 
      */
-    @Export(name="additionalComputeCount", type=Integer.class, parameters={})
+    @Export(name="additionalComputeCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> additionalComputeCount;
 
     /**
@@ -95,7 +95,7 @@ public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomRes
     public Output<Integer> additionalComputeCount() {
         return this.additionalComputeCount;
     }
-    @Export(name="additionalComputeCountComputeManagedResource", type=Integer.class, parameters={})
+    @Export(name="additionalComputeCountComputeManagedResource", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> additionalComputeCountComputeManagedResource;
 
     public Output<Optional<Integer>> additionalComputeCountComputeManagedResource() {
@@ -105,7 +105,7 @@ public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomRes
      * Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
      * 
      */
-    @Export(name="additionalComputeSystemModel", type=String.class, parameters={})
+    @Export(name="additionalComputeSystemModel", refs={String.class}, tree="[0]")
     private Output<String> additionalComputeSystemModel;
 
     /**
@@ -115,7 +115,7 @@ public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomRes
     public Output<String> additionalComputeSystemModel() {
         return this.additionalComputeSystemModel;
     }
-    @Export(name="additionalComputeSystemModelComputeManagedResource", type=String.class, parameters={})
+    @Export(name="additionalComputeSystemModelComputeManagedResource", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> additionalComputeSystemModelComputeManagedResource;
 
     public Output<Optional<String>> additionalComputeSystemModelComputeManagedResource() {
@@ -125,7 +125,7 @@ public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomRes
      * The requested number of additional storage servers for the Exadata infrastructure.
      * 
      */
-    @Export(name="additionalStorageCount", type=Integer.class, parameters={})
+    @Export(name="additionalStorageCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> additionalStorageCount;
 
     /**
@@ -139,7 +139,7 @@ public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomRes
      * The CIDR block for the Exadata administration network.
      * 
      */
-    @Export(name="adminNetworkCidr", type=String.class, parameters={})
+    @Export(name="adminNetworkCidr", refs={String.class}, tree="[0]")
     private Output<String> adminNetworkCidr;
 
     /**
@@ -153,7 +153,7 @@ public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomRes
      * The IP address for the first control plane server.
      * 
      */
-    @Export(name="cloudControlPlaneServer1", type=String.class, parameters={})
+    @Export(name="cloudControlPlaneServer1", refs={String.class}, tree="[0]")
     private Output<String> cloudControlPlaneServer1;
 
     /**
@@ -167,7 +167,7 @@ public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomRes
      * The IP address for the second control plane server.
      * 
      */
-    @Export(name="cloudControlPlaneServer2", type=String.class, parameters={})
+    @Export(name="cloudControlPlaneServer2", refs={String.class}, tree="[0]")
     private Output<String> cloudControlPlaneServer2;
 
     /**
@@ -181,7 +181,7 @@ public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomRes
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -195,7 +195,7 @@ public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomRes
      * The number of compute servers for the Exadata infrastructure.
      * 
      */
-    @Export(name="computeCount", type=Integer.class, parameters={})
+    @Export(name="computeCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> computeCount;
 
     /**
@@ -209,7 +209,7 @@ public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomRes
      * The list of contacts for the Exadata infrastructure.
      * 
      */
-    @Export(name="contacts", type=List.class, parameters={ExadataInfrastructureComputeContact.class})
+    @Export(name="contacts", refs={List.class,ExadataInfrastructureComputeContact.class}, tree="[0,1]")
     private Output<List<ExadataInfrastructureComputeContact>> contacts;
 
     /**
@@ -223,7 +223,7 @@ public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomRes
      * The corporate network proxy for access to the control plane network.
      * 
      */
-    @Export(name="corporateProxy", type=String.class, parameters={})
+    @Export(name="corporateProxy", refs={String.class}, tree="[0]")
     private Output<String> corporateProxy;
 
     /**
@@ -237,7 +237,7 @@ public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomRes
      * The number of enabled CPU cores.
      * 
      */
-    @Export(name="cpusEnabled", type=Integer.class, parameters={})
+    @Export(name="cpusEnabled", refs={Integer.class}, tree="[0]")
     private Output<Integer> cpusEnabled;
 
     /**
@@ -247,7 +247,7 @@ public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomRes
     public Output<Integer> cpusEnabled() {
         return this.cpusEnabled;
     }
-    @Export(name="createAsync", type=Boolean.class, parameters={})
+    @Export(name="createAsync", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> createAsync;
 
     public Output<Boolean> createAsync() {
@@ -257,7 +257,7 @@ public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomRes
      * The CSI Number of the Exadata infrastructure.
      * 
      */
-    @Export(name="csiNumber", type=String.class, parameters={})
+    @Export(name="csiNumber", refs={String.class}, tree="[0]")
     private Output<String> csiNumber;
 
     /**
@@ -271,7 +271,7 @@ public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomRes
      * Size, in terabytes, of the DATA disk group.
      * 
      */
-    @Export(name="dataStorageSizeInTbs", type=Double.class, parameters={})
+    @Export(name="dataStorageSizeInTbs", refs={Double.class}, tree="[0]")
     private Output<Double> dataStorageSizeInTbs;
 
     /**
@@ -285,7 +285,7 @@ public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomRes
      * The local node storage allocated in GBs.
      * 
      */
-    @Export(name="dbNodeStorageSizeInGbs", type=Integer.class, parameters={})
+    @Export(name="dbNodeStorageSizeInGbs", refs={Integer.class}, tree="[0]")
     private Output<Integer> dbNodeStorageSizeInGbs;
 
     /**
@@ -299,7 +299,7 @@ public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomRes
      * The software version of the database servers (dom0) in the Exadata infrastructure.
      * 
      */
-    @Export(name="dbServerVersion", type=String.class, parameters={})
+    @Export(name="dbServerVersion", refs={String.class}, tree="[0]")
     private Output<String> dbServerVersion;
 
     /**
@@ -313,7 +313,7 @@ public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomRes
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -327,7 +327,7 @@ public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomRes
      * The user-friendly name for the Exadata Cloud@Customer infrastructure. The name does not need to be unique.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -341,7 +341,7 @@ public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomRes
      * The list of DNS server IP addresses. Maximum of 3 allowed.
      * 
      */
-    @Export(name="dnsServers", type=List.class, parameters={String.class})
+    @Export(name="dnsServers", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> dnsServers;
 
     /**
@@ -355,7 +355,7 @@ public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomRes
      * The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    @Export(name="exadataInfrastructureId", type=String.class, parameters={})
+    @Export(name="exadataInfrastructureId", refs={String.class}, tree="[0]")
     private Output<String> exadataInfrastructureId;
 
     /**
@@ -369,7 +369,7 @@ public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomRes
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -383,7 +383,7 @@ public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomRes
      * The gateway for the control plane network.
      * 
      */
-    @Export(name="gateway", type=String.class, parameters={})
+    @Export(name="gateway", refs={String.class}, tree="[0]")
     private Output<String> gateway;
 
     /**
@@ -397,7 +397,7 @@ public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomRes
      * The CIDR block for the Exadata InfiniBand interconnect.
      * 
      */
-    @Export(name="infiniBandNetworkCidr", type=String.class, parameters={})
+    @Export(name="infiniBandNetworkCidr", refs={String.class}, tree="[0]")
     private Output<String> infiniBandNetworkCidr;
 
     /**
@@ -411,7 +411,7 @@ public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomRes
      * Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
      * 
      */
-    @Export(name="isCpsOfflineReportEnabled", type=Boolean.class, parameters={})
+    @Export(name="isCpsOfflineReportEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isCpsOfflineReportEnabled;
 
     /**
@@ -425,7 +425,7 @@ public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomRes
      * Additional information about the current lifecycle state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -439,7 +439,7 @@ public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomRes
      * A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
      * 
      */
-    @Export(name="maintenanceSloStatus", type=String.class, parameters={})
+    @Export(name="maintenanceSloStatus", refs={String.class}, tree="[0]")
     private Output<String> maintenanceSloStatus;
 
     /**
@@ -453,7 +453,7 @@ public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomRes
      * The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      * 
      */
-    @Export(name="maintenanceWindows", type=List.class, parameters={ExadataInfrastructureComputeMaintenanceWindow.class})
+    @Export(name="maintenanceWindows", refs={List.class,ExadataInfrastructureComputeMaintenanceWindow.class}, tree="[0,1]")
     private Output<List<ExadataInfrastructureComputeMaintenanceWindow>> maintenanceWindows;
 
     /**
@@ -467,7 +467,7 @@ public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomRes
      * The total number of CPU cores available.
      * 
      */
-    @Export(name="maxCpuCount", type=Integer.class, parameters={})
+    @Export(name="maxCpuCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxCpuCount;
 
     /**
@@ -481,7 +481,7 @@ public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomRes
      * The total available DATA disk group size.
      * 
      */
-    @Export(name="maxDataStorageInTbs", type=Double.class, parameters={})
+    @Export(name="maxDataStorageInTbs", refs={Double.class}, tree="[0]")
     private Output<Double> maxDataStorageInTbs;
 
     /**
@@ -495,7 +495,7 @@ public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomRes
      * The total local node storage available in GBs.
      * 
      */
-    @Export(name="maxDbNodeStorageInGbs", type=Integer.class, parameters={})
+    @Export(name="maxDbNodeStorageInGbs", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxDbNodeStorageInGbs;
 
     /**
@@ -509,7 +509,7 @@ public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomRes
      * The total memory available in GBs.
      * 
      */
-    @Export(name="maxMemoryInGbs", type=Integer.class, parameters={})
+    @Export(name="maxMemoryInGbs", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxMemoryInGbs;
 
     /**
@@ -523,7 +523,7 @@ public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomRes
      * The memory allocated in GBs.
      * 
      */
-    @Export(name="memorySizeInGbs", type=Integer.class, parameters={})
+    @Export(name="memorySizeInGbs", refs={Integer.class}, tree="[0]")
     private Output<Integer> memorySizeInGbs;
 
     /**
@@ -537,7 +537,7 @@ public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomRes
      * The monthly software version of the database servers (dom0) in the Exadata infrastructure.
      * 
      */
-    @Export(name="monthlyDbServerVersion", type=String.class, parameters={})
+    @Export(name="monthlyDbServerVersion", refs={String.class}, tree="[0]")
     private Output<String> monthlyDbServerVersion;
 
     /**
@@ -551,7 +551,7 @@ public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomRes
      * The netmask for the control plane network.
      * 
      */
-    @Export(name="netmask", type=String.class, parameters={})
+    @Export(name="netmask", refs={String.class}, tree="[0]")
     private Output<String> netmask;
 
     /**
@@ -565,7 +565,7 @@ public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomRes
      * The list of NTP server IP addresses. Maximum of 3 allowed.
      * 
      */
-    @Export(name="ntpServers", type=List.class, parameters={String.class})
+    @Export(name="ntpServers", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> ntpServers;
 
     /**
@@ -579,7 +579,7 @@ public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomRes
      * The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
      * 
      */
-    @Export(name="shape", type=String.class, parameters={})
+    @Export(name="shape", refs={String.class}, tree="[0]")
     private Output<String> shape;
 
     /**
@@ -593,7 +593,7 @@ public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomRes
      * The current lifecycle state of the Exadata infrastructure.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -607,7 +607,7 @@ public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomRes
      * The number of Exadata storage servers for the Exadata infrastructure.
      * 
      */
-    @Export(name="storageCount", type=Integer.class, parameters={})
+    @Export(name="storageCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> storageCount;
 
     /**
@@ -621,7 +621,7 @@ public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomRes
      * The software version of the storage servers (cells) in the Exadata infrastructure.
      * 
      */
-    @Export(name="storageServerVersion", type=String.class, parameters={})
+    @Export(name="storageServerVersion", refs={String.class}, tree="[0]")
     private Output<String> storageServerVersion;
 
     /**
@@ -635,7 +635,7 @@ public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomRes
      * The date and time the Exadata infrastructure was created.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -649,7 +649,7 @@ public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomRes
      * The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      * 
      */
-    @Export(name="timeZone", type=String.class, parameters={})
+    @Export(name="timeZone", refs={String.class}, tree="[0]")
     private Output<String> timeZone;
 
     /**

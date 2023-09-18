@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Publishers in Oracle Cloud Infrastructure Marketplace service.
@@ -110,6 +111,12 @@ func (o GetPublishersResultOutput) ToGetPublishersResultOutput() GetPublishersRe
 
 func (o GetPublishersResultOutput) ToGetPublishersResultOutputWithContext(ctx context.Context) GetPublishersResultOutput {
 	return o
+}
+
+func (o GetPublishersResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPublishersResult] {
+	return pulumix.Output[GetPublishersResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPublishersResultOutput) CompartmentId() pulumi.StringPtrOutput {

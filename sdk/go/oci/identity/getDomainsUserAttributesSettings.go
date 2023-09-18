@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of User Attributes Settings in Oracle Cloud Infrastructure Identity Domains service.
@@ -103,6 +104,12 @@ func (o GetDomainsUserAttributesSettingsResultOutput) ToGetDomainsUserAttributes
 
 func (o GetDomainsUserAttributesSettingsResultOutput) ToGetDomainsUserAttributesSettingsResultOutputWithContext(ctx context.Context) GetDomainsUserAttributesSettingsResultOutput {
 	return o
+}
+
+func (o GetDomainsUserAttributesSettingsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUserAttributesSettingsResult] {
+	return pulumix.Output[GetDomainsUserAttributesSettingsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsUserAttributesSettingsResultOutput) AttributeSets() pulumi.StringArrayOutput {

@@ -187,7 +187,8 @@ utilities.lazyLoad(exports, ["getAuditTrails","getAuditTrailsOutput"], () => req
 
 export { GetCompatibleFormatsForDataTypeResult } from "./getCompatibleFormatsForDataType";
 export const getCompatibleFormatsForDataType: typeof import("./getCompatibleFormatsForDataType").getCompatibleFormatsForDataType = null as any;
-utilities.lazyLoad(exports, ["getCompatibleFormatsForDataType"], () => require("./getCompatibleFormatsForDataType"));
+export const getCompatibleFormatsForDataTypeOutput: typeof import("./getCompatibleFormatsForDataType").getCompatibleFormatsForDataTypeOutput = null as any;
+utilities.lazyLoad(exports, ["getCompatibleFormatsForDataType","getCompatibleFormatsForDataTypeOutput"], () => require("./getCompatibleFormatsForDataType"));
 
 export { GetCompatibleFormatsForSensitiveTypeArgs, GetCompatibleFormatsForSensitiveTypeResult, GetCompatibleFormatsForSensitiveTypeOutputArgs } from "./getCompatibleFormatsForSensitiveType";
 export const getCompatibleFormatsForSensitiveType: typeof import("./getCompatibleFormatsForSensitiveType").getCompatibleFormatsForSensitiveType = null as any;

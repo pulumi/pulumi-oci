@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Ip Sec Connection Tunnel resource in Oracle Cloud Infrastructure Core service.
@@ -129,6 +130,12 @@ func (o GetIpsecConnectionTunnelResultOutput) ToGetIpsecConnectionTunnelResultOu
 
 func (o GetIpsecConnectionTunnelResultOutput) ToGetIpsecConnectionTunnelResultOutputWithContext(ctx context.Context) GetIpsecConnectionTunnelResultOutput {
 	return o
+}
+
+func (o GetIpsecConnectionTunnelResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetIpsecConnectionTunnelResult] {
+	return pulumix.Output[GetIpsecConnectionTunnelResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Information needed to establish a BGP Session on an interface.

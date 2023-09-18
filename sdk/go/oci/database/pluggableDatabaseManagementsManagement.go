@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Pluggable Database Pluggabledatabasemanagements Management resource in Oracle Cloud Infrastructure Database service.
@@ -318,6 +319,12 @@ func (i *PluggableDatabaseManagementsManagement) ToPluggableDatabaseManagementsM
 	return pulumi.ToOutputWithContext(ctx, i).(PluggableDatabaseManagementsManagementOutput)
 }
 
+func (i *PluggableDatabaseManagementsManagement) ToOutput(ctx context.Context) pulumix.Output[*PluggableDatabaseManagementsManagement] {
+	return pulumix.Output[*PluggableDatabaseManagementsManagement]{
+		OutputState: i.ToPluggableDatabaseManagementsManagementOutputWithContext(ctx).OutputState,
+	}
+}
+
 // PluggableDatabaseManagementsManagementArrayInput is an input type that accepts PluggableDatabaseManagementsManagementArray and PluggableDatabaseManagementsManagementArrayOutput values.
 // You can construct a concrete instance of `PluggableDatabaseManagementsManagementArrayInput` via:
 //
@@ -341,6 +348,12 @@ func (i PluggableDatabaseManagementsManagementArray) ToPluggableDatabaseManageme
 
 func (i PluggableDatabaseManagementsManagementArray) ToPluggableDatabaseManagementsManagementArrayOutputWithContext(ctx context.Context) PluggableDatabaseManagementsManagementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(PluggableDatabaseManagementsManagementArrayOutput)
+}
+
+func (i PluggableDatabaseManagementsManagementArray) ToOutput(ctx context.Context) pulumix.Output[[]*PluggableDatabaseManagementsManagement] {
+	return pulumix.Output[[]*PluggableDatabaseManagementsManagement]{
+		OutputState: i.ToPluggableDatabaseManagementsManagementArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // PluggableDatabaseManagementsManagementMapInput is an input type that accepts PluggableDatabaseManagementsManagementMap and PluggableDatabaseManagementsManagementMapOutput values.
@@ -368,6 +381,12 @@ func (i PluggableDatabaseManagementsManagementMap) ToPluggableDatabaseManagement
 	return pulumi.ToOutputWithContext(ctx, i).(PluggableDatabaseManagementsManagementMapOutput)
 }
 
+func (i PluggableDatabaseManagementsManagementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*PluggableDatabaseManagementsManagement] {
+	return pulumix.Output[map[string]*PluggableDatabaseManagementsManagement]{
+		OutputState: i.ToPluggableDatabaseManagementsManagementMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type PluggableDatabaseManagementsManagementOutput struct{ *pulumi.OutputState }
 
 func (PluggableDatabaseManagementsManagementOutput) ElementType() reflect.Type {
@@ -380,6 +399,12 @@ func (o PluggableDatabaseManagementsManagementOutput) ToPluggableDatabaseManagem
 
 func (o PluggableDatabaseManagementsManagementOutput) ToPluggableDatabaseManagementsManagementOutputWithContext(ctx context.Context) PluggableDatabaseManagementsManagementOutput {
 	return o
+}
+
+func (o PluggableDatabaseManagementsManagementOutput) ToOutput(ctx context.Context) pulumix.Output[*PluggableDatabaseManagementsManagement] {
+	return pulumix.Output[*PluggableDatabaseManagementsManagement]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -512,6 +537,12 @@ func (o PluggableDatabaseManagementsManagementArrayOutput) ToPluggableDatabaseMa
 	return o
 }
 
+func (o PluggableDatabaseManagementsManagementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*PluggableDatabaseManagementsManagement] {
+	return pulumix.Output[[]*PluggableDatabaseManagementsManagement]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o PluggableDatabaseManagementsManagementArrayOutput) Index(i pulumi.IntInput) PluggableDatabaseManagementsManagementOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *PluggableDatabaseManagementsManagement {
 		return vs[0].([]*PluggableDatabaseManagementsManagement)[vs[1].(int)]
@@ -530,6 +561,12 @@ func (o PluggableDatabaseManagementsManagementMapOutput) ToPluggableDatabaseMana
 
 func (o PluggableDatabaseManagementsManagementMapOutput) ToPluggableDatabaseManagementsManagementMapOutputWithContext(ctx context.Context) PluggableDatabaseManagementsManagementMapOutput {
 	return o
+}
+
+func (o PluggableDatabaseManagementsManagementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*PluggableDatabaseManagementsManagement] {
+	return pulumix.Output[map[string]*PluggableDatabaseManagementsManagement]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o PluggableDatabaseManagementsManagementMapOutput) MapIndex(k pulumi.StringInput) PluggableDatabaseManagementsManagementOutput {

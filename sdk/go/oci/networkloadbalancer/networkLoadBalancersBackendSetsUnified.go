@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Network Load Balancers Backend Sets Unified resource in Oracle Cloud Infrastructure Network Load Balancer service.
@@ -266,6 +267,12 @@ func (i *NetworkLoadBalancersBackendSetsUnified) ToNetworkLoadBalancersBackendSe
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkLoadBalancersBackendSetsUnifiedOutput)
 }
 
+func (i *NetworkLoadBalancersBackendSetsUnified) ToOutput(ctx context.Context) pulumix.Output[*NetworkLoadBalancersBackendSetsUnified] {
+	return pulumix.Output[*NetworkLoadBalancersBackendSetsUnified]{
+		OutputState: i.ToNetworkLoadBalancersBackendSetsUnifiedOutputWithContext(ctx).OutputState,
+	}
+}
+
 // NetworkLoadBalancersBackendSetsUnifiedArrayInput is an input type that accepts NetworkLoadBalancersBackendSetsUnifiedArray and NetworkLoadBalancersBackendSetsUnifiedArrayOutput values.
 // You can construct a concrete instance of `NetworkLoadBalancersBackendSetsUnifiedArrayInput` via:
 //
@@ -289,6 +296,12 @@ func (i NetworkLoadBalancersBackendSetsUnifiedArray) ToNetworkLoadBalancersBacke
 
 func (i NetworkLoadBalancersBackendSetsUnifiedArray) ToNetworkLoadBalancersBackendSetsUnifiedArrayOutputWithContext(ctx context.Context) NetworkLoadBalancersBackendSetsUnifiedArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkLoadBalancersBackendSetsUnifiedArrayOutput)
+}
+
+func (i NetworkLoadBalancersBackendSetsUnifiedArray) ToOutput(ctx context.Context) pulumix.Output[[]*NetworkLoadBalancersBackendSetsUnified] {
+	return pulumix.Output[[]*NetworkLoadBalancersBackendSetsUnified]{
+		OutputState: i.ToNetworkLoadBalancersBackendSetsUnifiedArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // NetworkLoadBalancersBackendSetsUnifiedMapInput is an input type that accepts NetworkLoadBalancersBackendSetsUnifiedMap and NetworkLoadBalancersBackendSetsUnifiedMapOutput values.
@@ -316,6 +329,12 @@ func (i NetworkLoadBalancersBackendSetsUnifiedMap) ToNetworkLoadBalancersBackend
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkLoadBalancersBackendSetsUnifiedMapOutput)
 }
 
+func (i NetworkLoadBalancersBackendSetsUnifiedMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*NetworkLoadBalancersBackendSetsUnified] {
+	return pulumix.Output[map[string]*NetworkLoadBalancersBackendSetsUnified]{
+		OutputState: i.ToNetworkLoadBalancersBackendSetsUnifiedMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type NetworkLoadBalancersBackendSetsUnifiedOutput struct{ *pulumi.OutputState }
 
 func (NetworkLoadBalancersBackendSetsUnifiedOutput) ElementType() reflect.Type {
@@ -328,6 +347,12 @@ func (o NetworkLoadBalancersBackendSetsUnifiedOutput) ToNetworkLoadBalancersBack
 
 func (o NetworkLoadBalancersBackendSetsUnifiedOutput) ToNetworkLoadBalancersBackendSetsUnifiedOutputWithContext(ctx context.Context) NetworkLoadBalancersBackendSetsUnifiedOutput {
 	return o
+}
+
+func (o NetworkLoadBalancersBackendSetsUnifiedOutput) ToOutput(ctx context.Context) pulumix.Output[*NetworkLoadBalancersBackendSetsUnified] {
+	return pulumix.Output[*NetworkLoadBalancersBackendSetsUnified]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) An array of backends to be associated with the backend set.
@@ -390,6 +415,12 @@ func (o NetworkLoadBalancersBackendSetsUnifiedArrayOutput) ToNetworkLoadBalancer
 	return o
 }
 
+func (o NetworkLoadBalancersBackendSetsUnifiedArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*NetworkLoadBalancersBackendSetsUnified] {
+	return pulumix.Output[[]*NetworkLoadBalancersBackendSetsUnified]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o NetworkLoadBalancersBackendSetsUnifiedArrayOutput) Index(i pulumi.IntInput) NetworkLoadBalancersBackendSetsUnifiedOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *NetworkLoadBalancersBackendSetsUnified {
 		return vs[0].([]*NetworkLoadBalancersBackendSetsUnified)[vs[1].(int)]
@@ -408,6 +439,12 @@ func (o NetworkLoadBalancersBackendSetsUnifiedMapOutput) ToNetworkLoadBalancersB
 
 func (o NetworkLoadBalancersBackendSetsUnifiedMapOutput) ToNetworkLoadBalancersBackendSetsUnifiedMapOutputWithContext(ctx context.Context) NetworkLoadBalancersBackendSetsUnifiedMapOutput {
 	return o
+}
+
+func (o NetworkLoadBalancersBackendSetsUnifiedMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*NetworkLoadBalancersBackendSetsUnified] {
+	return pulumix.Output[map[string]*NetworkLoadBalancersBackendSetsUnified]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o NetworkLoadBalancersBackendSetsUnifiedMapOutput) MapIndex(k pulumi.StringInput) NetworkLoadBalancersBackendSetsUnifiedOutput {

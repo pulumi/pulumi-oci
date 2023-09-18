@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Esxi Host resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
@@ -354,6 +355,12 @@ func (i *EsxiHost) ToEsxiHostOutputWithContext(ctx context.Context) EsxiHostOutp
 	return pulumi.ToOutputWithContext(ctx, i).(EsxiHostOutput)
 }
 
+func (i *EsxiHost) ToOutput(ctx context.Context) pulumix.Output[*EsxiHost] {
+	return pulumix.Output[*EsxiHost]{
+		OutputState: i.ToEsxiHostOutputWithContext(ctx).OutputState,
+	}
+}
+
 // EsxiHostArrayInput is an input type that accepts EsxiHostArray and EsxiHostArrayOutput values.
 // You can construct a concrete instance of `EsxiHostArrayInput` via:
 //
@@ -377,6 +384,12 @@ func (i EsxiHostArray) ToEsxiHostArrayOutput() EsxiHostArrayOutput {
 
 func (i EsxiHostArray) ToEsxiHostArrayOutputWithContext(ctx context.Context) EsxiHostArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(EsxiHostArrayOutput)
+}
+
+func (i EsxiHostArray) ToOutput(ctx context.Context) pulumix.Output[[]*EsxiHost] {
+	return pulumix.Output[[]*EsxiHost]{
+		OutputState: i.ToEsxiHostArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // EsxiHostMapInput is an input type that accepts EsxiHostMap and EsxiHostMapOutput values.
@@ -404,6 +417,12 @@ func (i EsxiHostMap) ToEsxiHostMapOutputWithContext(ctx context.Context) EsxiHos
 	return pulumi.ToOutputWithContext(ctx, i).(EsxiHostMapOutput)
 }
 
+func (i EsxiHostMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*EsxiHost] {
+	return pulumix.Output[map[string]*EsxiHost]{
+		OutputState: i.ToEsxiHostMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type EsxiHostOutput struct{ *pulumi.OutputState }
 
 func (EsxiHostOutput) ElementType() reflect.Type {
@@ -416,6 +435,12 @@ func (o EsxiHostOutput) ToEsxiHostOutput() EsxiHostOutput {
 
 func (o EsxiHostOutput) ToEsxiHostOutputWithContext(ctx context.Context) EsxiHostOutput {
 	return o
+}
+
+func (o EsxiHostOutput) ToOutput(ctx context.Context) pulumix.Output[*EsxiHost] {
+	return pulumix.Output[*EsxiHost]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku` becomes the new `currentSKU` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
@@ -569,6 +594,12 @@ func (o EsxiHostArrayOutput) ToEsxiHostArrayOutputWithContext(ctx context.Contex
 	return o
 }
 
+func (o EsxiHostArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*EsxiHost] {
+	return pulumix.Output[[]*EsxiHost]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o EsxiHostArrayOutput) Index(i pulumi.IntInput) EsxiHostOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *EsxiHost {
 		return vs[0].([]*EsxiHost)[vs[1].(int)]
@@ -587,6 +618,12 @@ func (o EsxiHostMapOutput) ToEsxiHostMapOutput() EsxiHostMapOutput {
 
 func (o EsxiHostMapOutput) ToEsxiHostMapOutputWithContext(ctx context.Context) EsxiHostMapOutput {
 	return o
+}
+
+func (o EsxiHostMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*EsxiHost] {
+	return pulumix.Output[map[string]*EsxiHost]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o EsxiHostMapOutput) MapIndex(k pulumi.StringInput) EsxiHostOutput {

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Announcement Subscriptions in Oracle Cloud Infrastructure Announcements Service service.
@@ -126,6 +127,12 @@ func (o GetAnnouncementSubscriptionsResultOutput) ToGetAnnouncementSubscriptions
 
 func (o GetAnnouncementSubscriptionsResultOutput) ToGetAnnouncementSubscriptionsResultOutputWithContext(ctx context.Context) GetAnnouncementSubscriptionsResultOutput {
 	return o
+}
+
+func (o GetAnnouncementSubscriptionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAnnouncementSubscriptionsResult] {
+	return pulumix.Output[GetAnnouncementSubscriptionsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The list of announcement_subscription_collection.

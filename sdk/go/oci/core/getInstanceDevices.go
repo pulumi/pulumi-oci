@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Instance Devices in Oracle Cloud Infrastructure Core service.
@@ -118,6 +119,12 @@ func (o GetInstanceDevicesResultOutput) ToGetInstanceDevicesResultOutput() GetIn
 
 func (o GetInstanceDevicesResultOutput) ToGetInstanceDevicesResultOutputWithContext(ctx context.Context) GetInstanceDevicesResultOutput {
 	return o
+}
+
+func (o GetInstanceDevicesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstanceDevicesResult] {
+	return pulumix.Output[GetInstanceDevicesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The list of devices.

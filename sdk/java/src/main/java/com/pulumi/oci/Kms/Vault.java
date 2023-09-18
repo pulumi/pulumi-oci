@@ -83,7 +83,7 @@ public class Vault extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the compartment where you want to create this vault.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -97,7 +97,7 @@ public class Vault extends com.pulumi.resources.CustomResource {
      * The service endpoint to perform cryptographic operations against. Cryptographic operations include [Encrypt](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/EncryptedData/Encrypt), [Decrypt](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/DecryptedData/Decrypt), and [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) operations.
      * 
      */
-    @Export(name="cryptoEndpoint", type=String.class, parameters={})
+    @Export(name="cryptoEndpoint", refs={String.class}, tree="[0]")
     private Output<String> cryptoEndpoint;
 
     /**
@@ -111,7 +111,7 @@ public class Vault extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -125,7 +125,7 @@ public class Vault extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-friendly name for the vault. It does not have to be unique, and it is changeable. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -139,7 +139,7 @@ public class Vault extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -153,7 +153,7 @@ public class Vault extends com.pulumi.resources.CustomResource {
      * A boolean that will be true when vault is primary, and will be false when vault is a replica from a primary vault.
      * 
      */
-    @Export(name="isPrimary", type=Boolean.class, parameters={})
+    @Export(name="isPrimary", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isPrimary;
 
     /**
@@ -167,7 +167,7 @@ public class Vault extends com.pulumi.resources.CustomResource {
      * The service endpoint to perform management operations against. Management operations include &#34;Create,&#34; &#34;Update,&#34; &#34;List,&#34; &#34;Get,&#34; and &#34;Delete&#34; operations.
      * 
      */
-    @Export(name="managementEndpoint", type=String.class, parameters={})
+    @Export(name="managementEndpoint", refs={String.class}, tree="[0]")
     private Output<String> managementEndpoint;
 
     /**
@@ -181,7 +181,7 @@ public class Vault extends com.pulumi.resources.CustomResource {
      * Vault replica details
      * 
      */
-    @Export(name="replicaDetails", type=List.class, parameters={VaultReplicaDetail.class})
+    @Export(name="replicaDetails", refs={List.class,VaultReplicaDetail.class}, tree="[0,1]")
     private Output<List<VaultReplicaDetail>> replicaDetails;
 
     /**
@@ -195,7 +195,7 @@ public class Vault extends com.pulumi.resources.CustomResource {
      * (Updatable) Details where vault was backed up.
      * 
      */
-    @Export(name="restoreFromFile", type=VaultRestoreFromFile.class, parameters={})
+    @Export(name="restoreFromFile", refs={VaultRestoreFromFile.class}, tree="[0]")
     private Output</* @Nullable */ VaultRestoreFromFile> restoreFromFile;
 
     /**
@@ -209,7 +209,7 @@ public class Vault extends com.pulumi.resources.CustomResource {
      * (Updatable) Details where vault was backed up
      * 
      */
-    @Export(name="restoreFromObjectStore", type=VaultRestoreFromObjectStore.class, parameters={})
+    @Export(name="restoreFromObjectStore", refs={VaultRestoreFromObjectStore.class}, tree="[0]")
     private Output</* @Nullable */ VaultRestoreFromObjectStore> restoreFromObjectStore;
 
     /**
@@ -219,7 +219,7 @@ public class Vault extends com.pulumi.resources.CustomResource {
     public Output<Optional<VaultRestoreFromObjectStore>> restoreFromObjectStore() {
         return Codegen.optional(this.restoreFromObjectStore);
     }
-    @Export(name="restoreTrigger", type=Boolean.class, parameters={})
+    @Export(name="restoreTrigger", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> restoreTrigger;
 
     public Output<Optional<Boolean>> restoreTrigger() {
@@ -229,7 +229,7 @@ public class Vault extends com.pulumi.resources.CustomResource {
      * The OCID of the vault from which this vault was restored, if it was restored from a backup file.  If you restore a vault to the same region, the vault retains the same OCID that it had when you  backed up the vault.
      * 
      */
-    @Export(name="restoredFromVaultId", type=String.class, parameters={})
+    @Export(name="restoredFromVaultId", refs={String.class}, tree="[0]")
     private Output<String> restoredFromVaultId;
 
     /**
@@ -243,7 +243,7 @@ public class Vault extends com.pulumi.resources.CustomResource {
      * The vault&#39;s current lifecycle state.  Example: `DELETED`
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -257,7 +257,7 @@ public class Vault extends com.pulumi.resources.CustomResource {
      * The date and time this vault was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-04-03T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -274,7 +274,7 @@ public class Vault extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="timeOfDeletion", type=String.class, parameters={})
+    @Export(name="timeOfDeletion", refs={String.class}, tree="[0]")
     private Output<String> timeOfDeletion;
 
     /**
@@ -291,7 +291,7 @@ public class Vault extends com.pulumi.resources.CustomResource {
      * The type of vault to create. Each type of vault stores the key with different degrees of isolation and has different options and pricing.
      * 
      */
-    @Export(name="vaultType", type=String.class, parameters={})
+    @Export(name="vaultType", refs={String.class}, tree="[0]")
     private Output<String> vaultType;
 
     /**

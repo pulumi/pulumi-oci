@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Ipv6 resource in Oracle Cloud Infrastructure Core service.
@@ -236,6 +237,12 @@ func (i *Ipv6) ToIpv6OutputWithContext(ctx context.Context) Ipv6Output {
 	return pulumi.ToOutputWithContext(ctx, i).(Ipv6Output)
 }
 
+func (i *Ipv6) ToOutput(ctx context.Context) pulumix.Output[*Ipv6] {
+	return pulumix.Output[*Ipv6]{
+		OutputState: i.ToIpv6OutputWithContext(ctx).OutputState,
+	}
+}
+
 // Ipv6ArrayInput is an input type that accepts Ipv6Array and Ipv6ArrayOutput values.
 // You can construct a concrete instance of `Ipv6ArrayInput` via:
 //
@@ -259,6 +266,12 @@ func (i Ipv6Array) ToIpv6ArrayOutput() Ipv6ArrayOutput {
 
 func (i Ipv6Array) ToIpv6ArrayOutputWithContext(ctx context.Context) Ipv6ArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(Ipv6ArrayOutput)
+}
+
+func (i Ipv6Array) ToOutput(ctx context.Context) pulumix.Output[[]*Ipv6] {
+	return pulumix.Output[[]*Ipv6]{
+		OutputState: i.ToIpv6ArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // Ipv6MapInput is an input type that accepts Ipv6Map and Ipv6MapOutput values.
@@ -286,6 +299,12 @@ func (i Ipv6Map) ToIpv6MapOutputWithContext(ctx context.Context) Ipv6MapOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(Ipv6MapOutput)
 }
 
+func (i Ipv6Map) ToOutput(ctx context.Context) pulumix.Output[map[string]*Ipv6] {
+	return pulumix.Output[map[string]*Ipv6]{
+		OutputState: i.ToIpv6MapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type Ipv6Output struct{ *pulumi.OutputState }
 
 func (Ipv6Output) ElementType() reflect.Type {
@@ -298,6 +317,12 @@ func (o Ipv6Output) ToIpv6Output() Ipv6Output {
 
 func (o Ipv6Output) ToIpv6OutputWithContext(ctx context.Context) Ipv6Output {
 	return o
+}
+
+func (o Ipv6Output) ToOutput(ctx context.Context) pulumix.Output[*Ipv6] {
+	return pulumix.Output[*Ipv6]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPv6. This is the same as the VNIC's compartment.
@@ -367,6 +392,12 @@ func (o Ipv6ArrayOutput) ToIpv6ArrayOutputWithContext(ctx context.Context) Ipv6A
 	return o
 }
 
+func (o Ipv6ArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Ipv6] {
+	return pulumix.Output[[]*Ipv6]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o Ipv6ArrayOutput) Index(i pulumi.IntInput) Ipv6Output {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Ipv6 {
 		return vs[0].([]*Ipv6)[vs[1].(int)]
@@ -385,6 +416,12 @@ func (o Ipv6MapOutput) ToIpv6MapOutput() Ipv6MapOutput {
 
 func (o Ipv6MapOutput) ToIpv6MapOutputWithContext(ctx context.Context) Ipv6MapOutput {
 	return o
+}
+
+func (o Ipv6MapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Ipv6] {
+	return pulumix.Output[map[string]*Ipv6]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o Ipv6MapOutput) MapIndex(k pulumi.StringInput) Ipv6Output {

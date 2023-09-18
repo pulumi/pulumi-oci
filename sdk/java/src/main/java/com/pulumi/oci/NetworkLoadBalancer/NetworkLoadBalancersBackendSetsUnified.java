@@ -94,7 +94,7 @@ public class NetworkLoadBalancersBackendSetsUnified extends com.pulumi.resources
      * (Updatable) An array of backends to be associated with the backend set.
      * 
      */
-    @Export(name="backends", type=List.class, parameters={NetworkLoadBalancersBackendSetsUnifiedBackend.class})
+    @Export(name="backends", refs={List.class,NetworkLoadBalancersBackendSetsUnifiedBackend.class}, tree="[0,1]")
     private Output<List<NetworkLoadBalancersBackendSetsUnifiedBackend>> backends;
 
     /**
@@ -108,7 +108,7 @@ public class NetworkLoadBalancersBackendSetsUnified extends com.pulumi.resources
      * (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
      * 
      */
-    @Export(name="healthChecker", type=NetworkLoadBalancersBackendSetsUnifiedHealthChecker.class, parameters={})
+    @Export(name="healthChecker", refs={NetworkLoadBalancersBackendSetsUnifiedHealthChecker.class}, tree="[0]")
     private Output<NetworkLoadBalancersBackendSetsUnifiedHealthChecker> healthChecker;
 
     /**
@@ -122,7 +122,7 @@ public class NetworkLoadBalancersBackendSetsUnified extends com.pulumi.resources
      * (Updatable) IP version associated with the backend set.
      * 
      */
-    @Export(name="ipVersion", type=String.class, parameters={})
+    @Export(name="ipVersion", refs={String.class}, tree="[0]")
     private Output<String> ipVersion;
 
     /**
@@ -136,7 +136,7 @@ public class NetworkLoadBalancersBackendSetsUnified extends com.pulumi.resources
      * (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
      * 
      */
-    @Export(name="isPreserveSource", type=Boolean.class, parameters={})
+    @Export(name="isPreserveSource", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isPreserveSource;
 
     /**
@@ -154,7 +154,7 @@ public class NetworkLoadBalancersBackendSetsUnified extends com.pulumi.resources
      * Example: `example_backend_set`
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -172,7 +172,7 @@ public class NetworkLoadBalancersBackendSetsUnified extends com.pulumi.resources
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
      * 
      */
-    @Export(name="networkLoadBalancerId", type=String.class, parameters={})
+    @Export(name="networkLoadBalancerId", refs={String.class}, tree="[0]")
     private Output<String> networkLoadBalancerId;
 
     /**
@@ -189,7 +189,7 @@ public class NetworkLoadBalancersBackendSetsUnified extends com.pulumi.resources
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="policy", type=String.class, parameters={})
+    @Export(name="policy", refs={String.class}, tree="[0]")
     private Output<String> policy;
 
     /**

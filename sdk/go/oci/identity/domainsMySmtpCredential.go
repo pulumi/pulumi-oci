@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the My Smtp Credential resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -905,6 +906,12 @@ func (i *DomainsMySmtpCredential) ToDomainsMySmtpCredentialOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsMySmtpCredentialOutput)
 }
 
+func (i *DomainsMySmtpCredential) ToOutput(ctx context.Context) pulumix.Output[*DomainsMySmtpCredential] {
+	return pulumix.Output[*DomainsMySmtpCredential]{
+		OutputState: i.ToDomainsMySmtpCredentialOutputWithContext(ctx).OutputState,
+	}
+}
+
 // DomainsMySmtpCredentialArrayInput is an input type that accepts DomainsMySmtpCredentialArray and DomainsMySmtpCredentialArrayOutput values.
 // You can construct a concrete instance of `DomainsMySmtpCredentialArrayInput` via:
 //
@@ -928,6 +935,12 @@ func (i DomainsMySmtpCredentialArray) ToDomainsMySmtpCredentialArrayOutput() Dom
 
 func (i DomainsMySmtpCredentialArray) ToDomainsMySmtpCredentialArrayOutputWithContext(ctx context.Context) DomainsMySmtpCredentialArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsMySmtpCredentialArrayOutput)
+}
+
+func (i DomainsMySmtpCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsMySmtpCredential] {
+	return pulumix.Output[[]*DomainsMySmtpCredential]{
+		OutputState: i.ToDomainsMySmtpCredentialArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // DomainsMySmtpCredentialMapInput is an input type that accepts DomainsMySmtpCredentialMap and DomainsMySmtpCredentialMapOutput values.
@@ -955,6 +968,12 @@ func (i DomainsMySmtpCredentialMap) ToDomainsMySmtpCredentialMapOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsMySmtpCredentialMapOutput)
 }
 
+func (i DomainsMySmtpCredentialMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsMySmtpCredential] {
+	return pulumix.Output[map[string]*DomainsMySmtpCredential]{
+		OutputState: i.ToDomainsMySmtpCredentialMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type DomainsMySmtpCredentialOutput struct{ *pulumi.OutputState }
 
 func (DomainsMySmtpCredentialOutput) ElementType() reflect.Type {
@@ -967,6 +986,12 @@ func (o DomainsMySmtpCredentialOutput) ToDomainsMySmtpCredentialOutput() Domains
 
 func (o DomainsMySmtpCredentialOutput) ToDomainsMySmtpCredentialOutputWithContext(ctx context.Context) DomainsMySmtpCredentialOutput {
 	return o
+}
+
+func (o DomainsMySmtpCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[*DomainsMySmtpCredential] {
+	return pulumix.Output[*DomainsMySmtpCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
@@ -1253,6 +1278,12 @@ func (o DomainsMySmtpCredentialArrayOutput) ToDomainsMySmtpCredentialArrayOutput
 	return o
 }
 
+func (o DomainsMySmtpCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsMySmtpCredential] {
+	return pulumix.Output[[]*DomainsMySmtpCredential]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o DomainsMySmtpCredentialArrayOutput) Index(i pulumi.IntInput) DomainsMySmtpCredentialOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DomainsMySmtpCredential {
 		return vs[0].([]*DomainsMySmtpCredential)[vs[1].(int)]
@@ -1271,6 +1302,12 @@ func (o DomainsMySmtpCredentialMapOutput) ToDomainsMySmtpCredentialMapOutput() D
 
 func (o DomainsMySmtpCredentialMapOutput) ToDomainsMySmtpCredentialMapOutputWithContext(ctx context.Context) DomainsMySmtpCredentialMapOutput {
 	return o
+}
+
+func (o DomainsMySmtpCredentialMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsMySmtpCredential] {
+	return pulumix.Output[map[string]*DomainsMySmtpCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o DomainsMySmtpCredentialMapOutput) MapIndex(k pulumi.StringInput) DomainsMySmtpCredentialOutput {

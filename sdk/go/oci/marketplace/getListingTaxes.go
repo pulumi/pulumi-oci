@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Listing Taxes in Oracle Cloud Infrastructure Marketplace service.
@@ -110,6 +111,12 @@ func (o GetListingTaxesResultOutput) ToGetListingTaxesResultOutput() GetListingT
 
 func (o GetListingTaxesResultOutput) ToGetListingTaxesResultOutputWithContext(ctx context.Context) GetListingTaxesResultOutput {
 	return o
+}
+
+func (o GetListingTaxesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingTaxesResult] {
+	return pulumix.Output[GetListingTaxesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetListingTaxesResultOutput) CompartmentId() pulumi.StringPtrOutput {

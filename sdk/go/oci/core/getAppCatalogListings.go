@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of App Catalog Listings in Oracle Cloud Infrastructure Core service.
@@ -118,6 +119,12 @@ func (o GetAppCatalogListingsResultOutput) ToGetAppCatalogListingsResultOutput()
 
 func (o GetAppCatalogListingsResultOutput) ToGetAppCatalogListingsResultOutputWithContext(ctx context.Context) GetAppCatalogListingsResultOutput {
 	return o
+}
+
+func (o GetAppCatalogListingsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAppCatalogListingsResult] {
+	return pulumix.Output[GetAppCatalogListingsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The list of app_catalog_listings.

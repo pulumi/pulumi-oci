@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Resources in Oracle Cloud Infrastructure Usage Proxy service.
@@ -117,6 +118,12 @@ func (o GetResourcesResultOutput) ToGetResourcesResultOutput() GetResourcesResul
 
 func (o GetResourcesResultOutput) ToGetResourcesResultOutputWithContext(ctx context.Context) GetResourcesResultOutput {
 	return o
+}
+
+func (o GetResourcesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetResourcesResult] {
+	return pulumix.Output[GetResourcesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetResourcesResultOutput) CompartmentId() pulumi.StringOutput {

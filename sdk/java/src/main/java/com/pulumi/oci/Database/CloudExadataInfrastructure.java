@@ -98,7 +98,7 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
      * The requested number of additional storage servers activated for the Exadata infrastructure.
      * 
      */
-    @Export(name="activatedStorageCount", type=Integer.class, parameters={})
+    @Export(name="activatedStorageCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> activatedStorageCount;
 
     /**
@@ -112,7 +112,7 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
      * The requested number of additional storage servers for the Exadata infrastructure.
      * 
      */
-    @Export(name="additionalStorageCount", type=Integer.class, parameters={})
+    @Export(name="additionalStorageCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> additionalStorageCount;
 
     /**
@@ -126,7 +126,7 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
      * The availability domain where the cloud Exadata infrastructure is located.
      * 
      */
-    @Export(name="availabilityDomain", type=String.class, parameters={})
+    @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
     private Output<String> availabilityDomain;
 
     /**
@@ -140,7 +140,7 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
      * The available storage can be allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
      * 
      */
-    @Export(name="availableStorageSizeInGbs", type=Integer.class, parameters={})
+    @Export(name="availableStorageSizeInGbs", refs={Integer.class}, tree="[0]")
     private Output<Integer> availableStorageSizeInGbs;
 
     /**
@@ -154,7 +154,7 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -168,7 +168,7 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
      * (Updatable) The number of compute servers for the cloud Exadata infrastructure.
      * 
      */
-    @Export(name="computeCount", type=Integer.class, parameters={})
+    @Export(name="computeCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> computeCount;
 
     /**
@@ -182,7 +182,7 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
      * The total number of CPU cores allocated.
      * 
      */
-    @Export(name="cpuCount", type=Integer.class, parameters={})
+    @Export(name="cpuCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> cpuCount;
 
     /**
@@ -196,7 +196,7 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
      * (Updatable) Customer contacts.
      * 
      */
-    @Export(name="customerContacts", type=List.class, parameters={CloudExadataInfrastructureCustomerContact.class})
+    @Export(name="customerContacts", refs={List.class,CloudExadataInfrastructureCustomerContact.class}, tree="[0,1]")
     private Output<List<CloudExadataInfrastructureCustomerContact>> customerContacts;
 
     /**
@@ -210,7 +210,7 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
      * Size, in terabytes, of the DATA disk group.
      * 
      */
-    @Export(name="dataStorageSizeInTbs", type=Double.class, parameters={})
+    @Export(name="dataStorageSizeInTbs", refs={Double.class}, tree="[0]")
     private Output<Double> dataStorageSizeInTbs;
 
     /**
@@ -224,7 +224,7 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
      * The local node storage allocated in GBs.
      * 
      */
-    @Export(name="dbNodeStorageSizeInGbs", type=Integer.class, parameters={})
+    @Export(name="dbNodeStorageSizeInGbs", refs={Integer.class}, tree="[0]")
     private Output<Integer> dbNodeStorageSizeInGbs;
 
     /**
@@ -238,7 +238,7 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
      * The software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
      * 
      */
-    @Export(name="dbServerVersion", type=String.class, parameters={})
+    @Export(name="dbServerVersion", refs={String.class}, tree="[0]")
     private Output<String> dbServerVersion;
 
     /**
@@ -252,7 +252,7 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -266,7 +266,7 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
      * (Updatable) The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -280,7 +280,7 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -294,7 +294,7 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      * 
      */
-    @Export(name="lastMaintenanceRunId", type=String.class, parameters={})
+    @Export(name="lastMaintenanceRunId", refs={String.class}, tree="[0]")
     private Output<String> lastMaintenanceRunId;
 
     /**
@@ -308,7 +308,7 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
      * Additional information about the current lifecycle state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -322,7 +322,7 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
      * (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      * 
      */
-    @Export(name="maintenanceWindow", type=CloudExadataInfrastructureMaintenanceWindow.class, parameters={})
+    @Export(name="maintenanceWindow", refs={CloudExadataInfrastructureMaintenanceWindow.class}, tree="[0]")
     private Output<CloudExadataInfrastructureMaintenanceWindow> maintenanceWindow;
 
     /**
@@ -336,7 +336,7 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
      * The total number of CPU cores available.
      * 
      */
-    @Export(name="maxCpuCount", type=Integer.class, parameters={})
+    @Export(name="maxCpuCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxCpuCount;
 
     /**
@@ -350,7 +350,7 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
      * The total available DATA disk group size.
      * 
      */
-    @Export(name="maxDataStorageInTbs", type=Double.class, parameters={})
+    @Export(name="maxDataStorageInTbs", refs={Double.class}, tree="[0]")
     private Output<Double> maxDataStorageInTbs;
 
     /**
@@ -364,7 +364,7 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
      * The total local node storage available in GBs.
      * 
      */
-    @Export(name="maxDbNodeStorageInGbs", type=Integer.class, parameters={})
+    @Export(name="maxDbNodeStorageInGbs", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxDbNodeStorageInGbs;
 
     /**
@@ -378,7 +378,7 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
      * The total memory available in GBs.
      * 
      */
-    @Export(name="maxMemoryInGbs", type=Integer.class, parameters={})
+    @Export(name="maxMemoryInGbs", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxMemoryInGbs;
 
     /**
@@ -392,7 +392,7 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
      * The memory allocated in GBs.
      * 
      */
-    @Export(name="memorySizeInGbs", type=Integer.class, parameters={})
+    @Export(name="memorySizeInGbs", refs={Integer.class}, tree="[0]")
     private Output<Integer> memorySizeInGbs;
 
     /**
@@ -406,7 +406,7 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
      * The monthly software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
      * 
      */
-    @Export(name="monthlyDbServerVersion", type=String.class, parameters={})
+    @Export(name="monthlyDbServerVersion", refs={String.class}, tree="[0]")
     private Output<String> monthlyDbServerVersion;
 
     /**
@@ -420,7 +420,7 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
      * The monthly software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
      * 
      */
-    @Export(name="monthlyStorageServerVersion", type=String.class, parameters={})
+    @Export(name="monthlyStorageServerVersion", refs={String.class}, tree="[0]")
     private Output<String> monthlyStorageServerVersion;
 
     /**
@@ -434,7 +434,7 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      * 
      */
-    @Export(name="nextMaintenanceRunId", type=String.class, parameters={})
+    @Export(name="nextMaintenanceRunId", refs={String.class}, tree="[0]")
     private Output<String> nextMaintenanceRunId;
 
     /**
@@ -448,7 +448,7 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
      * The shape of the cloud Exadata infrastructure resource.
      * 
      */
-    @Export(name="shape", type=String.class, parameters={})
+    @Export(name="shape", refs={String.class}, tree="[0]")
     private Output<String> shape;
 
     /**
@@ -462,7 +462,7 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
      * The current lifecycle state of the cloud Exadata infrastructure resource.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -479,7 +479,7 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="storageCount", type=Integer.class, parameters={})
+    @Export(name="storageCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> storageCount;
 
     /**
@@ -496,7 +496,7 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
      * The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
      * 
      */
-    @Export(name="storageServerVersion", type=String.class, parameters={})
+    @Export(name="storageServerVersion", refs={String.class}, tree="[0]")
     private Output<String> storageServerVersion;
 
     /**
@@ -510,7 +510,7 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
      * The date and time the cloud Exadata infrastructure resource was created.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -524,7 +524,7 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
      * The total storage allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
      * 
      */
-    @Export(name="totalStorageSizeInGbs", type=Integer.class, parameters={})
+    @Export(name="totalStorageSizeInGbs", refs={Integer.class}, tree="[0]")
     private Output<Integer> totalStorageSizeInGbs;
 
     /**

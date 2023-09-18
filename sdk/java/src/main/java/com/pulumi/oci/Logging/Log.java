@@ -86,7 +86,7 @@ public class Log extends com.pulumi.resources.CustomResource {
      * The OCID of the compartment that the resource belongs to.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -100,7 +100,7 @@ public class Log extends com.pulumi.resources.CustomResource {
      * Log object configuration.
      * 
      */
-    @Export(name="configuration", type=LogConfiguration.class, parameters={})
+    @Export(name="configuration", refs={LogConfiguration.class}, tree="[0]")
     private Output<LogConfiguration> configuration;
 
     /**
@@ -114,7 +114,7 @@ public class Log extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -128,7 +128,7 @@ public class Log extends com.pulumi.resources.CustomResource {
      * (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -142,7 +142,7 @@ public class Log extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -156,7 +156,7 @@ public class Log extends com.pulumi.resources.CustomResource {
      * (Updatable) Whether or not this resource is currently enabled.
      * 
      */
-    @Export(name="isEnabled", type=Boolean.class, parameters={})
+    @Export(name="isEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isEnabled;
 
     /**
@@ -170,7 +170,7 @@ public class Log extends com.pulumi.resources.CustomResource {
      * (Updatable) OCID of a log group to work with.
      * 
      */
-    @Export(name="logGroupId", type=String.class, parameters={})
+    @Export(name="logGroupId", refs={String.class}, tree="[0]")
     private Output<String> logGroupId;
 
     /**
@@ -184,7 +184,7 @@ public class Log extends com.pulumi.resources.CustomResource {
      * The logType that the log object is for, whether custom or service.
      * 
      */
-    @Export(name="logType", type=String.class, parameters={})
+    @Export(name="logType", refs={String.class}, tree="[0]")
     private Output<String> logType;
 
     /**
@@ -201,7 +201,7 @@ public class Log extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="retentionDuration", type=Integer.class, parameters={})
+    @Export(name="retentionDuration", refs={Integer.class}, tree="[0]")
     private Output<Integer> retentionDuration;
 
     /**
@@ -218,7 +218,7 @@ public class Log extends com.pulumi.resources.CustomResource {
      * The pipeline state.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -232,7 +232,7 @@ public class Log extends com.pulumi.resources.CustomResource {
      * The OCID of the tenancy.
      * 
      */
-    @Export(name="tenancyId", type=String.class, parameters={})
+    @Export(name="tenancyId", refs={String.class}, tree="[0]")
     private Output<String> tenancyId;
 
     /**
@@ -246,7 +246,7 @@ public class Log extends com.pulumi.resources.CustomResource {
      * Time the resource was created.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -260,7 +260,7 @@ public class Log extends com.pulumi.resources.CustomResource {
      * Time the resource was last modified.
      * 
      */
-    @Export(name="timeLastModified", type=String.class, parameters={})
+    @Export(name="timeLastModified", refs={String.class}, tree="[0]")
     private Output<String> timeLastModified;
 
     /**

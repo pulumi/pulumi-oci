@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Views in Oracle Cloud Infrastructure DNS service.
@@ -135,6 +136,12 @@ func (o GetViewsResultOutput) ToGetViewsResultOutput() GetViewsResultOutput {
 
 func (o GetViewsResultOutput) ToGetViewsResultOutputWithContext(ctx context.Context) GetViewsResultOutput {
 	return o
+}
+
+func (o GetViewsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetViewsResult] {
+	return pulumix.Output[GetViewsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the owning compartment.

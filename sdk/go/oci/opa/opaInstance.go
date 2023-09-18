@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Opa Instance resource in Oracle Cloud Infrastructure Opa service.
@@ -322,6 +323,12 @@ func (i *OpaInstance) ToOpaInstanceOutputWithContext(ctx context.Context) OpaIns
 	return pulumi.ToOutputWithContext(ctx, i).(OpaInstanceOutput)
 }
 
+func (i *OpaInstance) ToOutput(ctx context.Context) pulumix.Output[*OpaInstance] {
+	return pulumix.Output[*OpaInstance]{
+		OutputState: i.ToOpaInstanceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // OpaInstanceArrayInput is an input type that accepts OpaInstanceArray and OpaInstanceArrayOutput values.
 // You can construct a concrete instance of `OpaInstanceArrayInput` via:
 //
@@ -345,6 +352,12 @@ func (i OpaInstanceArray) ToOpaInstanceArrayOutput() OpaInstanceArrayOutput {
 
 func (i OpaInstanceArray) ToOpaInstanceArrayOutputWithContext(ctx context.Context) OpaInstanceArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(OpaInstanceArrayOutput)
+}
+
+func (i OpaInstanceArray) ToOutput(ctx context.Context) pulumix.Output[[]*OpaInstance] {
+	return pulumix.Output[[]*OpaInstance]{
+		OutputState: i.ToOpaInstanceArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // OpaInstanceMapInput is an input type that accepts OpaInstanceMap and OpaInstanceMapOutput values.
@@ -372,6 +385,12 @@ func (i OpaInstanceMap) ToOpaInstanceMapOutputWithContext(ctx context.Context) O
 	return pulumi.ToOutputWithContext(ctx, i).(OpaInstanceMapOutput)
 }
 
+func (i OpaInstanceMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*OpaInstance] {
+	return pulumix.Output[map[string]*OpaInstance]{
+		OutputState: i.ToOpaInstanceMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type OpaInstanceOutput struct{ *pulumi.OutputState }
 
 func (OpaInstanceOutput) ElementType() reflect.Type {
@@ -384,6 +403,12 @@ func (o OpaInstanceOutput) ToOpaInstanceOutput() OpaInstanceOutput {
 
 func (o OpaInstanceOutput) ToOpaInstanceOutputWithContext(ctx context.Context) OpaInstanceOutput {
 	return o
+}
+
+func (o OpaInstanceOutput) ToOutput(ctx context.Context) pulumix.Output[*OpaInstance] {
+	return pulumix.Output[*OpaInstance]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A list of associated attachments to other services
@@ -503,6 +528,12 @@ func (o OpaInstanceArrayOutput) ToOpaInstanceArrayOutputWithContext(ctx context.
 	return o
 }
 
+func (o OpaInstanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*OpaInstance] {
+	return pulumix.Output[[]*OpaInstance]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o OpaInstanceArrayOutput) Index(i pulumi.IntInput) OpaInstanceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *OpaInstance {
 		return vs[0].([]*OpaInstance)[vs[1].(int)]
@@ -521,6 +552,12 @@ func (o OpaInstanceMapOutput) ToOpaInstanceMapOutput() OpaInstanceMapOutput {
 
 func (o OpaInstanceMapOutput) ToOpaInstanceMapOutputWithContext(ctx context.Context) OpaInstanceMapOutput {
 	return o
+}
+
+func (o OpaInstanceMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*OpaInstance] {
+	return pulumix.Output[map[string]*OpaInstance]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o OpaInstanceMapOutput) MapIndex(k pulumi.StringInput) OpaInstanceOutput {

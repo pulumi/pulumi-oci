@@ -87,7 +87,7 @@ public class DatabaseUpgrade extends com.pulumi.resources.CustomResource {
      * The database upgrade action.
      * 
      */
-    @Export(name="action", type=String.class, parameters={})
+    @Export(name="action", refs={String.class}, tree="[0]")
     private Output<String> action;
 
     /**
@@ -101,7 +101,7 @@ public class DatabaseUpgrade extends com.pulumi.resources.CustomResource {
      * The character set for the database.
      * 
      */
-    @Export(name="characterSet", type=String.class, parameters={})
+    @Export(name="characterSet", refs={String.class}, tree="[0]")
     private Output<String> characterSet;
 
     /**
@@ -115,7 +115,7 @@ public class DatabaseUpgrade extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -129,7 +129,7 @@ public class DatabaseUpgrade extends com.pulumi.resources.CustomResource {
      * The Connection strings used to connect to the Oracle Database.
      * 
      */
-    @Export(name="connectionStrings", type=List.class, parameters={DatabaseUpgradeConnectionString.class})
+    @Export(name="connectionStrings", refs={List.class,DatabaseUpgradeConnectionString.class}, tree="[0,1]")
     private Output<List<DatabaseUpgradeConnectionString>> connectionStrings;
 
     /**
@@ -143,7 +143,7 @@ public class DatabaseUpgrade extends com.pulumi.resources.CustomResource {
      * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    @Export(name="databaseId", type=String.class, parameters={})
+    @Export(name="databaseId", refs={String.class}, tree="[0]")
     private Output<String> databaseId;
 
     /**
@@ -157,7 +157,7 @@ public class DatabaseUpgrade extends com.pulumi.resources.CustomResource {
      * The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to be used to upgrade a database.
      * 
      */
-    @Export(name="databaseSoftwareImageId", type=String.class, parameters={})
+    @Export(name="databaseSoftwareImageId", refs={String.class}, tree="[0]")
     private Output<String> databaseSoftwareImageId;
 
     /**
@@ -171,7 +171,7 @@ public class DatabaseUpgrade extends com.pulumi.resources.CustomResource {
      * Details for the database upgrade source.
      * 
      */
-    @Export(name="databaseUpgradeSourceDetails", type=DatabaseUpgradeDatabaseUpgradeSourceDetails.class, parameters={})
+    @Export(name="databaseUpgradeSourceDetails", refs={DatabaseUpgradeDatabaseUpgradeSourceDetails.class}, tree="[0]")
     private Output<DatabaseUpgradeDatabaseUpgradeSourceDetails> databaseUpgradeSourceDetails;
 
     /**
@@ -185,7 +185,7 @@ public class DatabaseUpgrade extends com.pulumi.resources.CustomResource {
      * Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you&#39;re not authorized, talk to an administrator. If you&#39;re an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
      * 
      */
-    @Export(name="dbBackupConfigs", type=List.class, parameters={DatabaseUpgradeDbBackupConfig.class})
+    @Export(name="dbBackupConfigs", refs={List.class,DatabaseUpgradeDbBackupConfig.class}, tree="[0,1]")
     private Output<List<DatabaseUpgradeDbBackupConfig>> dbBackupConfigs;
 
     /**
@@ -199,7 +199,7 @@ public class DatabaseUpgrade extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
      * 
      */
-    @Export(name="dbHomeId", type=String.class, parameters={})
+    @Export(name="dbHomeId", refs={String.class}, tree="[0]")
     private Output<String> dbHomeId;
 
     /**
@@ -213,7 +213,7 @@ public class DatabaseUpgrade extends com.pulumi.resources.CustomResource {
      * The database name.
      * 
      */
-    @Export(name="dbName", type=String.class, parameters={})
+    @Export(name="dbName", refs={String.class}, tree="[0]")
     private Output<String> dbName;
 
     /**
@@ -227,7 +227,7 @@ public class DatabaseUpgrade extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      * 
      */
-    @Export(name="dbSystemId", type=String.class, parameters={})
+    @Export(name="dbSystemId", refs={String.class}, tree="[0]")
     private Output<String> dbSystemId;
 
     /**
@@ -241,7 +241,7 @@ public class DatabaseUpgrade extends com.pulumi.resources.CustomResource {
      * A system-generated name for the database to ensure uniqueness within an Oracle Data Guard group (a primary database and its standby databases). The unique name cannot be changed.
      * 
      */
-    @Export(name="dbUniqueName", type=String.class, parameters={})
+    @Export(name="dbUniqueName", refs={String.class}, tree="[0]")
     private Output<String> dbUniqueName;
 
     /**
@@ -255,7 +255,7 @@ public class DatabaseUpgrade extends com.pulumi.resources.CustomResource {
      * **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
      * 
      */
-    @Export(name="dbWorkload", type=String.class, parameters={})
+    @Export(name="dbWorkload", refs={String.class}, tree="[0]")
     private Output<String> dbWorkload;
 
     /**
@@ -269,7 +269,7 @@ public class DatabaseUpgrade extends com.pulumi.resources.CustomResource {
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -283,7 +283,7 @@ public class DatabaseUpgrade extends com.pulumi.resources.CustomResource {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -297,7 +297,7 @@ public class DatabaseUpgrade extends com.pulumi.resources.CustomResource {
      * True if the database is a container database.
      * 
      */
-    @Export(name="isCdb", type=Boolean.class, parameters={})
+    @Export(name="isCdb", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isCdb;
 
     /**
@@ -311,7 +311,7 @@ public class DatabaseUpgrade extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
      * 
      */
-    @Export(name="keyStoreId", type=String.class, parameters={})
+    @Export(name="keyStoreId", refs={String.class}, tree="[0]")
     private Output<String> keyStoreId;
 
     /**
@@ -325,7 +325,7 @@ public class DatabaseUpgrade extends com.pulumi.resources.CustomResource {
      * The wallet name for Oracle Key Vault.
      * 
      */
-    @Export(name="keyStoreWalletName", type=String.class, parameters={})
+    @Export(name="keyStoreWalletName", refs={String.class}, tree="[0]")
     private Output<String> keyStoreWalletName;
 
     /**
@@ -339,7 +339,7 @@ public class DatabaseUpgrade extends com.pulumi.resources.CustomResource {
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
-    @Export(name="kmsKeyId", type=String.class, parameters={})
+    @Export(name="kmsKeyId", refs={String.class}, tree="[0]")
     private Output<String> kmsKeyId;
 
     /**
@@ -353,7 +353,7 @@ public class DatabaseUpgrade extends com.pulumi.resources.CustomResource {
      * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
      * 
      */
-    @Export(name="kmsKeyVersionId", type=String.class, parameters={})
+    @Export(name="kmsKeyVersionId", refs={String.class}, tree="[0]")
     private Output<String> kmsKeyVersionId;
 
     /**
@@ -367,7 +367,7 @@ public class DatabaseUpgrade extends com.pulumi.resources.CustomResource {
      * The duration when the latest database backup created.
      * 
      */
-    @Export(name="lastBackupDurationInSeconds", type=Integer.class, parameters={})
+    @Export(name="lastBackupDurationInSeconds", refs={Integer.class}, tree="[0]")
     private Output<Integer> lastBackupDurationInSeconds;
 
     /**
@@ -381,7 +381,7 @@ public class DatabaseUpgrade extends com.pulumi.resources.CustomResource {
      * The date and time when the latest database backup was created.
      * 
      */
-    @Export(name="lastBackupTimestamp", type=String.class, parameters={})
+    @Export(name="lastBackupTimestamp", refs={String.class}, tree="[0]")
     private Output<String> lastBackupTimestamp;
 
     /**
@@ -395,7 +395,7 @@ public class DatabaseUpgrade extends com.pulumi.resources.CustomResource {
      * The date and time when the latest database backup failed.
      * 
      */
-    @Export(name="lastFailedBackupTimestamp", type=String.class, parameters={})
+    @Export(name="lastFailedBackupTimestamp", refs={String.class}, tree="[0]")
     private Output<String> lastFailedBackupTimestamp;
 
     /**
@@ -409,7 +409,7 @@ public class DatabaseUpgrade extends com.pulumi.resources.CustomResource {
      * Additional information about the current lifecycle state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -423,7 +423,7 @@ public class DatabaseUpgrade extends com.pulumi.resources.CustomResource {
      * The national character set for the database.
      * 
      */
-    @Export(name="ncharacterSet", type=String.class, parameters={})
+    @Export(name="ncharacterSet", refs={String.class}, tree="[0]")
     private Output<String> ncharacterSet;
 
     /**
@@ -437,7 +437,7 @@ public class DatabaseUpgrade extends com.pulumi.resources.CustomResource {
      * The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
      * 
      */
-    @Export(name="pdbName", type=String.class, parameters={})
+    @Export(name="pdbName", refs={String.class}, tree="[0]")
     private Output<String> pdbName;
 
     /**
@@ -451,7 +451,7 @@ public class DatabaseUpgrade extends com.pulumi.resources.CustomResource {
      * Specifies a prefix for the `Oracle SID` of the database to be created.
      * 
      */
-    @Export(name="sidPrefix", type=String.class, parameters={})
+    @Export(name="sidPrefix", refs={String.class}, tree="[0]")
     private Output<String> sidPrefix;
 
     /**
@@ -465,7 +465,7 @@ public class DatabaseUpgrade extends com.pulumi.resources.CustomResource {
      * Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
      * 
      */
-    @Export(name="sourceDatabasePointInTimeRecoveryTimestamp", type=String.class, parameters={})
+    @Export(name="sourceDatabasePointInTimeRecoveryTimestamp", refs={String.class}, tree="[0]")
     private Output<String> sourceDatabasePointInTimeRecoveryTimestamp;
 
     /**
@@ -479,7 +479,7 @@ public class DatabaseUpgrade extends com.pulumi.resources.CustomResource {
      * The current state of the database.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -493,7 +493,7 @@ public class DatabaseUpgrade extends com.pulumi.resources.CustomResource {
      * The date and time the database was created.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -507,7 +507,7 @@ public class DatabaseUpgrade extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
-    @Export(name="vaultId", type=String.class, parameters={})
+    @Export(name="vaultId", refs={String.class}, tree="[0]")
     private Output<String> vaultId;
 
     /**
@@ -521,7 +521,7 @@ public class DatabaseUpgrade extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
      * 
      */
-    @Export(name="vmClusterId", type=String.class, parameters={})
+    @Export(name="vmClusterId", refs={String.class}, tree="[0]")
     private Output<String> vmClusterId;
 
     /**

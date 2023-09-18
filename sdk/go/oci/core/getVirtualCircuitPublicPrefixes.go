@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Virtual Circuit Public Prefixes in Oracle Cloud Infrastructure Core service.
@@ -116,6 +117,12 @@ func (o GetVirtualCircuitPublicPrefixesResultOutput) ToGetVirtualCircuitPublicPr
 
 func (o GetVirtualCircuitPublicPrefixesResultOutput) ToGetVirtualCircuitPublicPrefixesResultOutputWithContext(ctx context.Context) GetVirtualCircuitPublicPrefixesResultOutput {
 	return o
+}
+
+func (o GetVirtualCircuitPublicPrefixesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualCircuitPublicPrefixesResult] {
+	return pulumix.Output[GetVirtualCircuitPublicPrefixesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVirtualCircuitPublicPrefixesResultOutput) Filters() GetVirtualCircuitPublicPrefixesFilterArrayOutput {

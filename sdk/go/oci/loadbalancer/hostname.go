@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // ## Example Usage
@@ -176,6 +177,12 @@ func (i *Hostname) ToHostnameOutputWithContext(ctx context.Context) HostnameOutp
 	return pulumi.ToOutputWithContext(ctx, i).(HostnameOutput)
 }
 
+func (i *Hostname) ToOutput(ctx context.Context) pulumix.Output[*Hostname] {
+	return pulumix.Output[*Hostname]{
+		OutputState: i.ToHostnameOutputWithContext(ctx).OutputState,
+	}
+}
+
 // HostnameArrayInput is an input type that accepts HostnameArray and HostnameArrayOutput values.
 // You can construct a concrete instance of `HostnameArrayInput` via:
 //
@@ -199,6 +206,12 @@ func (i HostnameArray) ToHostnameArrayOutput() HostnameArrayOutput {
 
 func (i HostnameArray) ToHostnameArrayOutputWithContext(ctx context.Context) HostnameArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(HostnameArrayOutput)
+}
+
+func (i HostnameArray) ToOutput(ctx context.Context) pulumix.Output[[]*Hostname] {
+	return pulumix.Output[[]*Hostname]{
+		OutputState: i.ToHostnameArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // HostnameMapInput is an input type that accepts HostnameMap and HostnameMapOutput values.
@@ -226,6 +239,12 @@ func (i HostnameMap) ToHostnameMapOutputWithContext(ctx context.Context) Hostnam
 	return pulumi.ToOutputWithContext(ctx, i).(HostnameMapOutput)
 }
 
+func (i HostnameMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Hostname] {
+	return pulumix.Output[map[string]*Hostname]{
+		OutputState: i.ToHostnameMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type HostnameOutput struct{ *pulumi.OutputState }
 
 func (HostnameOutput) ElementType() reflect.Type {
@@ -238,6 +257,12 @@ func (o HostnameOutput) ToHostnameOutput() HostnameOutput {
 
 func (o HostnameOutput) ToHostnameOutputWithContext(ctx context.Context) HostnameOutput {
 	return o
+}
+
+func (o HostnameOutput) ToOutput(ctx context.Context) pulumix.Output[*Hostname] {
+	return pulumix.Output[*Hostname]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) A virtual hostname. For more information about virtual hostname string construction, see [Managing Request Routing](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm#routing).  Example: `app.example.com`
@@ -276,6 +301,12 @@ func (o HostnameArrayOutput) ToHostnameArrayOutputWithContext(ctx context.Contex
 	return o
 }
 
+func (o HostnameArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Hostname] {
+	return pulumix.Output[[]*Hostname]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o HostnameArrayOutput) Index(i pulumi.IntInput) HostnameOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Hostname {
 		return vs[0].([]*Hostname)[vs[1].(int)]
@@ -294,6 +325,12 @@ func (o HostnameMapOutput) ToHostnameMapOutput() HostnameMapOutput {
 
 func (o HostnameMapOutput) ToHostnameMapOutputWithContext(ctx context.Context) HostnameMapOutput {
 	return o
+}
+
+func (o HostnameMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Hostname] {
+	return pulumix.Output[map[string]*Hostname]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o HostnameMapOutput) MapIndex(k pulumi.StringInput) HostnameOutput {

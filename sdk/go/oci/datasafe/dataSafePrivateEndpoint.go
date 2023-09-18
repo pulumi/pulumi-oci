@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Data Safe Private Endpoint resource in Oracle Cloud Infrastructure Data Safe service.
@@ -284,6 +285,12 @@ func (i *DataSafePrivateEndpoint) ToDataSafePrivateEndpointOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(DataSafePrivateEndpointOutput)
 }
 
+func (i *DataSafePrivateEndpoint) ToOutput(ctx context.Context) pulumix.Output[*DataSafePrivateEndpoint] {
+	return pulumix.Output[*DataSafePrivateEndpoint]{
+		OutputState: i.ToDataSafePrivateEndpointOutputWithContext(ctx).OutputState,
+	}
+}
+
 // DataSafePrivateEndpointArrayInput is an input type that accepts DataSafePrivateEndpointArray and DataSafePrivateEndpointArrayOutput values.
 // You can construct a concrete instance of `DataSafePrivateEndpointArrayInput` via:
 //
@@ -307,6 +314,12 @@ func (i DataSafePrivateEndpointArray) ToDataSafePrivateEndpointArrayOutput() Dat
 
 func (i DataSafePrivateEndpointArray) ToDataSafePrivateEndpointArrayOutputWithContext(ctx context.Context) DataSafePrivateEndpointArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DataSafePrivateEndpointArrayOutput)
+}
+
+func (i DataSafePrivateEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]*DataSafePrivateEndpoint] {
+	return pulumix.Output[[]*DataSafePrivateEndpoint]{
+		OutputState: i.ToDataSafePrivateEndpointArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // DataSafePrivateEndpointMapInput is an input type that accepts DataSafePrivateEndpointMap and DataSafePrivateEndpointMapOutput values.
@@ -334,6 +347,12 @@ func (i DataSafePrivateEndpointMap) ToDataSafePrivateEndpointMapOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(DataSafePrivateEndpointMapOutput)
 }
 
+func (i DataSafePrivateEndpointMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DataSafePrivateEndpoint] {
+	return pulumix.Output[map[string]*DataSafePrivateEndpoint]{
+		OutputState: i.ToDataSafePrivateEndpointMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type DataSafePrivateEndpointOutput struct{ *pulumi.OutputState }
 
 func (DataSafePrivateEndpointOutput) ElementType() reflect.Type {
@@ -346,6 +365,12 @@ func (o DataSafePrivateEndpointOutput) ToDataSafePrivateEndpointOutput() DataSaf
 
 func (o DataSafePrivateEndpointOutput) ToDataSafePrivateEndpointOutputWithContext(ctx context.Context) DataSafePrivateEndpointOutput {
 	return o
+}
+
+func (o DataSafePrivateEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[*DataSafePrivateEndpoint] {
+	return pulumix.Output[*DataSafePrivateEndpoint]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The OCID of the compartment.
@@ -435,6 +460,12 @@ func (o DataSafePrivateEndpointArrayOutput) ToDataSafePrivateEndpointArrayOutput
 	return o
 }
 
+func (o DataSafePrivateEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DataSafePrivateEndpoint] {
+	return pulumix.Output[[]*DataSafePrivateEndpoint]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o DataSafePrivateEndpointArrayOutput) Index(i pulumi.IntInput) DataSafePrivateEndpointOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DataSafePrivateEndpoint {
 		return vs[0].([]*DataSafePrivateEndpoint)[vs[1].(int)]
@@ -453,6 +484,12 @@ func (o DataSafePrivateEndpointMapOutput) ToDataSafePrivateEndpointMapOutput() D
 
 func (o DataSafePrivateEndpointMapOutput) ToDataSafePrivateEndpointMapOutputWithContext(ctx context.Context) DataSafePrivateEndpointMapOutput {
 	return o
+}
+
+func (o DataSafePrivateEndpointMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DataSafePrivateEndpoint] {
+	return pulumix.Output[map[string]*DataSafePrivateEndpoint]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o DataSafePrivateEndpointMapOutput) MapIndex(k pulumi.StringInput) DataSafePrivateEndpointOutput {

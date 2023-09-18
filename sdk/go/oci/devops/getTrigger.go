@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Trigger resource in Oracle Cloud Infrastructure Devops service.
@@ -130,6 +131,12 @@ func (o LookupTriggerResultOutput) ToLookupTriggerResultOutput() LookupTriggerRe
 
 func (o LookupTriggerResultOutput) ToLookupTriggerResultOutputWithContext(ctx context.Context) LookupTriggerResultOutput {
 	return o
+}
+
+func (o LookupTriggerResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupTriggerResult] {
+	return pulumix.Output[LookupTriggerResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The list of actions that are to be performed for this trigger.

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Subscribers in Oracle Cloud Infrastructure API Gateway service.
@@ -119,6 +120,12 @@ func (o GetSubscribersResultOutput) ToGetSubscribersResultOutput() GetSubscriber
 
 func (o GetSubscribersResultOutput) ToGetSubscribersResultOutputWithContext(ctx context.Context) GetSubscribersResultOutput {
 	return o
+}
+
+func (o GetSubscribersResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribersResult] {
+	return pulumix.Output[GetSubscribersResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.

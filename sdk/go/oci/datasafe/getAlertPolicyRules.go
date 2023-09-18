@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Alert Policy Rules in Oracle Cloud Infrastructure Data Safe service.
@@ -105,6 +106,12 @@ func (o GetAlertPolicyRulesResultOutput) ToGetAlertPolicyRulesResultOutput() Get
 
 func (o GetAlertPolicyRulesResultOutput) ToGetAlertPolicyRulesResultOutputWithContext(ctx context.Context) GetAlertPolicyRulesResultOutput {
 	return o
+}
+
+func (o GetAlertPolicyRulesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAlertPolicyRulesResult] {
+	return pulumix.Output[GetAlertPolicyRulesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAlertPolicyRulesResultOutput) AlertPolicyId() pulumi.StringOutput {

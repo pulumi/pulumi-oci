@@ -59,7 +59,7 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:Database/externalPluggableDatabaseManagement:ExternalPluggableDatabaseManagement")
 public class ExternalPluggableDatabaseManagement extends com.pulumi.resources.CustomResource {
-    @Export(name="enableManagement", type=Boolean.class, parameters={})
+    @Export(name="enableManagement", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableManagement;
 
     public Output<Boolean> enableManagement() {
@@ -69,7 +69,7 @@ public class ExternalPluggableDatabaseManagement extends com.pulumi.resources.Cu
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
      * 
      */
-    @Export(name="externalDatabaseConnectorId", type=String.class, parameters={})
+    @Export(name="externalDatabaseConnectorId", refs={String.class}, tree="[0]")
     private Output<String> externalDatabaseConnectorId;
 
     /**
@@ -86,7 +86,7 @@ public class ExternalPluggableDatabaseManagement extends com.pulumi.resources.Cu
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="externalPluggableDatabaseId", type=String.class, parameters={})
+    @Export(name="externalPluggableDatabaseId", refs={String.class}, tree="[0]")
     private Output<String> externalPluggableDatabaseId;
 
     /**

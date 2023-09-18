@@ -83,7 +83,7 @@ public class Workspace extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the compartment containing the workspace.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -97,7 +97,7 @@ public class Workspace extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -111,7 +111,7 @@ public class Workspace extends com.pulumi.resources.CustomResource {
      * (Updatable) A user defined description for the workspace.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -125,7 +125,7 @@ public class Workspace extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-friendly display name for the workspace. Does not have to be unique, and can be modified. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -139,7 +139,7 @@ public class Workspace extends com.pulumi.resources.CustomResource {
      * The IP of the custom DNS.
      * 
      */
-    @Export(name="dnsServerIp", type=String.class, parameters={})
+    @Export(name="dnsServerIp", refs={String.class}, tree="[0]")
     private Output<String> dnsServerIp;
 
     /**
@@ -153,7 +153,7 @@ public class Workspace extends com.pulumi.resources.CustomResource {
      * The DNS zone of the custom DNS to use to resolve names.
      * 
      */
-    @Export(name="dnsServerZone", type=String.class, parameters={})
+    @Export(name="dnsServerZone", refs={String.class}, tree="[0]")
     private Output<String> dnsServerZone;
 
     /**
@@ -167,7 +167,7 @@ public class Workspace extends com.pulumi.resources.CustomResource {
      * DCMS PRivate Endpoint Compartment Identifier
      * 
      */
-    @Export(name="endpointCompartmentId", type=String.class, parameters={})
+    @Export(name="endpointCompartmentId", refs={String.class}, tree="[0]")
     private Output<String> endpointCompartmentId;
 
     /**
@@ -181,7 +181,7 @@ public class Workspace extends com.pulumi.resources.CustomResource {
      * DCMS Private Endpoint ID associated with workspace if the pvt networking is enabled
      * 
      */
-    @Export(name="endpointId", type=String.class, parameters={})
+    @Export(name="endpointId", refs={String.class}, tree="[0]")
     private Output<String> endpointId;
 
     /**
@@ -195,7 +195,7 @@ public class Workspace extends com.pulumi.resources.CustomResource {
      * DCMS Private Endpoint Name
      * 
      */
-    @Export(name="endpointName", type=String.class, parameters={})
+    @Export(name="endpointName", refs={String.class}, tree="[0]")
     private Output<String> endpointName;
 
     /**
@@ -209,7 +209,7 @@ public class Workspace extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -219,7 +219,7 @@ public class Workspace extends com.pulumi.resources.CustomResource {
     public Output<Map<String,Object>> freeformTags() {
         return this.freeformTags;
     }
-    @Export(name="isForceOperation", type=Boolean.class, parameters={})
+    @Export(name="isForceOperation", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> isForceOperation;
 
     public Output<Optional<Boolean>> isForceOperation() {
@@ -229,7 +229,7 @@ public class Workspace extends com.pulumi.resources.CustomResource {
      * Specifies whether the private network connection is enabled or disabled.
      * 
      */
-    @Export(name="isPrivateNetworkEnabled", type=Boolean.class, parameters={})
+    @Export(name="isPrivateNetworkEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isPrivateNetworkEnabled;
 
     /**
@@ -239,7 +239,7 @@ public class Workspace extends com.pulumi.resources.CustomResource {
     public Output<Boolean> isPrivateNetworkEnabled() {
         return this.isPrivateNetworkEnabled;
     }
-    @Export(name="quiesceTimeout", type=Integer.class, parameters={})
+    @Export(name="quiesceTimeout", refs={Integer.class}, tree="[0]")
     private Output<Integer> quiesceTimeout;
 
     public Output<Integer> quiesceTimeout() {
@@ -249,7 +249,7 @@ public class Workspace extends com.pulumi.resources.CustomResource {
      * DCMS Data Asset Registry Compartment Identifier
      * 
      */
-    @Export(name="registryCompartmentId", type=String.class, parameters={})
+    @Export(name="registryCompartmentId", refs={String.class}, tree="[0]")
     private Output<String> registryCompartmentId;
 
     /**
@@ -263,7 +263,7 @@ public class Workspace extends com.pulumi.resources.CustomResource {
      * DCMS Data Asset Registry ID to which the workspace is associated
      * 
      */
-    @Export(name="registryId", type=String.class, parameters={})
+    @Export(name="registryId", refs={String.class}, tree="[0]")
     private Output<String> registryId;
 
     /**
@@ -277,7 +277,7 @@ public class Workspace extends com.pulumi.resources.CustomResource {
      * DCMS Data Asset Registry display name
      * 
      */
-    @Export(name="registryName", type=String.class, parameters={})
+    @Export(name="registryName", refs={String.class}, tree="[0]")
     private Output<String> registryName;
 
     /**
@@ -291,7 +291,7 @@ public class Workspace extends com.pulumi.resources.CustomResource {
      * Lifecycle states for workspaces in Data Integration Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn&#39;t available FAILED   - The resource is in a failed state due to validation or other errors STARTING - The resource is being started and may not be usable until becomes ACTIVE again STOPPING - The resource is in the process of Stopping and may not be usable until it Stops or fails STOPPED  - The resource is in Stopped state due to stop operation.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -305,7 +305,7 @@ public class Workspace extends com.pulumi.resources.CustomResource {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
      * 
      */
-    @Export(name="stateMessage", type=String.class, parameters={})
+    @Export(name="stateMessage", refs={String.class}, tree="[0]")
     private Output<String> stateMessage;
 
     /**
@@ -319,7 +319,7 @@ public class Workspace extends com.pulumi.resources.CustomResource {
      * The OCID of the subnet for customer connected databases.
      * 
      */
-    @Export(name="subnetId", type=String.class, parameters={})
+    @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
@@ -333,7 +333,7 @@ public class Workspace extends com.pulumi.resources.CustomResource {
      * The date and time the workspace was created, in the timestamp format defined by RFC3339.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -347,7 +347,7 @@ public class Workspace extends com.pulumi.resources.CustomResource {
      * The date and time the workspace was updated, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -364,7 +364,7 @@ public class Workspace extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="vcnId", type=String.class, parameters={})
+    @Export(name="vcnId", refs={String.class}, tree="[0]")
     private Output<String> vcnId;
 
     /**

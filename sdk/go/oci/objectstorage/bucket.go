@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Bucket resource in Oracle Cloud Infrastructure Object Storage service.
@@ -355,6 +356,12 @@ func (i *Bucket) ToBucketOutputWithContext(ctx context.Context) BucketOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BucketOutput)
 }
 
+func (i *Bucket) ToOutput(ctx context.Context) pulumix.Output[*Bucket] {
+	return pulumix.Output[*Bucket]{
+		OutputState: i.ToBucketOutputWithContext(ctx).OutputState,
+	}
+}
+
 // BucketArrayInput is an input type that accepts BucketArray and BucketArrayOutput values.
 // You can construct a concrete instance of `BucketArrayInput` via:
 //
@@ -378,6 +385,12 @@ func (i BucketArray) ToBucketArrayOutput() BucketArrayOutput {
 
 func (i BucketArray) ToBucketArrayOutputWithContext(ctx context.Context) BucketArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BucketArrayOutput)
+}
+
+func (i BucketArray) ToOutput(ctx context.Context) pulumix.Output[[]*Bucket] {
+	return pulumix.Output[[]*Bucket]{
+		OutputState: i.ToBucketArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // BucketMapInput is an input type that accepts BucketMap and BucketMapOutput values.
@@ -405,6 +418,12 @@ func (i BucketMap) ToBucketMapOutputWithContext(ctx context.Context) BucketMapOu
 	return pulumi.ToOutputWithContext(ctx, i).(BucketMapOutput)
 }
 
+func (i BucketMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Bucket] {
+	return pulumix.Output[map[string]*Bucket]{
+		OutputState: i.ToBucketMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type BucketOutput struct{ *pulumi.OutputState }
 
 func (BucketOutput) ElementType() reflect.Type {
@@ -417,6 +436,12 @@ func (o BucketOutput) ToBucketOutput() BucketOutput {
 
 func (o BucketOutput) ToBucketOutputWithContext(ctx context.Context) BucketOutput {
 	return o
+}
+
+func (o BucketOutput) ToOutput(ctx context.Context) pulumix.Output[*Bucket] {
+	return pulumix.Output[*Bucket]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The type of public access enabled on this bucket. A bucket is set to `NoPublicAccess` by default, which only allows an authenticated caller to access the bucket and its contents. When `ObjectRead` is enabled on the bucket, public access is allowed for the `GetObject`, `HeadObject`, and `ListObjects` operations. When `ObjectReadWithoutList` is enabled on the bucket, public access is allowed for the `GetObject` and `HeadObject` operations.
@@ -546,6 +571,12 @@ func (o BucketArrayOutput) ToBucketArrayOutputWithContext(ctx context.Context) B
 	return o
 }
 
+func (o BucketArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Bucket] {
+	return pulumix.Output[[]*Bucket]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o BucketArrayOutput) Index(i pulumi.IntInput) BucketOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Bucket {
 		return vs[0].([]*Bucket)[vs[1].(int)]
@@ -564,6 +595,12 @@ func (o BucketMapOutput) ToBucketMapOutput() BucketMapOutput {
 
 func (o BucketMapOutput) ToBucketMapOutputWithContext(ctx context.Context) BucketMapOutput {
 	return o
+}
+
+func (o BucketMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Bucket] {
+	return pulumix.Output[map[string]*Bucket]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o BucketMapOutput) MapIndex(k pulumi.StringInput) BucketOutput {

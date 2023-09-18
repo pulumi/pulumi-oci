@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Workspace Folder resource in Oracle Cloud Infrastructure Data Integration service.
@@ -288,6 +289,12 @@ func (i *WorkspaceFolder) ToWorkspaceFolderOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceFolderOutput)
 }
 
+func (i *WorkspaceFolder) ToOutput(ctx context.Context) pulumix.Output[*WorkspaceFolder] {
+	return pulumix.Output[*WorkspaceFolder]{
+		OutputState: i.ToWorkspaceFolderOutputWithContext(ctx).OutputState,
+	}
+}
+
 // WorkspaceFolderArrayInput is an input type that accepts WorkspaceFolderArray and WorkspaceFolderArrayOutput values.
 // You can construct a concrete instance of `WorkspaceFolderArrayInput` via:
 //
@@ -311,6 +318,12 @@ func (i WorkspaceFolderArray) ToWorkspaceFolderArrayOutput() WorkspaceFolderArra
 
 func (i WorkspaceFolderArray) ToWorkspaceFolderArrayOutputWithContext(ctx context.Context) WorkspaceFolderArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceFolderArrayOutput)
+}
+
+func (i WorkspaceFolderArray) ToOutput(ctx context.Context) pulumix.Output[[]*WorkspaceFolder] {
+	return pulumix.Output[[]*WorkspaceFolder]{
+		OutputState: i.ToWorkspaceFolderArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // WorkspaceFolderMapInput is an input type that accepts WorkspaceFolderMap and WorkspaceFolderMapOutput values.
@@ -338,6 +351,12 @@ func (i WorkspaceFolderMap) ToWorkspaceFolderMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceFolderMapOutput)
 }
 
+func (i WorkspaceFolderMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*WorkspaceFolder] {
+	return pulumix.Output[map[string]*WorkspaceFolder]{
+		OutputState: i.ToWorkspaceFolderMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type WorkspaceFolderOutput struct{ *pulumi.OutputState }
 
 func (WorkspaceFolderOutput) ElementType() reflect.Type {
@@ -350,6 +369,12 @@ func (o WorkspaceFolderOutput) ToWorkspaceFolderOutput() WorkspaceFolderOutput {
 
 func (o WorkspaceFolderOutput) ToWorkspaceFolderOutputWithContext(ctx context.Context) WorkspaceFolderOutput {
 	return o
+}
+
+func (o WorkspaceFolderOutput) ToOutput(ctx context.Context) pulumix.Output[*WorkspaceFolder] {
+	return pulumix.Output[*WorkspaceFolder]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The category name.
@@ -443,6 +468,12 @@ func (o WorkspaceFolderArrayOutput) ToWorkspaceFolderArrayOutputWithContext(ctx 
 	return o
 }
 
+func (o WorkspaceFolderArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*WorkspaceFolder] {
+	return pulumix.Output[[]*WorkspaceFolder]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o WorkspaceFolderArrayOutput) Index(i pulumi.IntInput) WorkspaceFolderOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *WorkspaceFolder {
 		return vs[0].([]*WorkspaceFolder)[vs[1].(int)]
@@ -461,6 +492,12 @@ func (o WorkspaceFolderMapOutput) ToWorkspaceFolderMapOutput() WorkspaceFolderMa
 
 func (o WorkspaceFolderMapOutput) ToWorkspaceFolderMapOutputWithContext(ctx context.Context) WorkspaceFolderMapOutput {
 	return o
+}
+
+func (o WorkspaceFolderMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*WorkspaceFolder] {
+	return pulumix.Output[map[string]*WorkspaceFolder]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o WorkspaceFolderMapOutput) MapIndex(k pulumi.StringInput) WorkspaceFolderOutput {

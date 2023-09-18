@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Object Lifecycle Policy resource in Oracle Cloud Infrastructure Object Storage service.
@@ -108,6 +109,12 @@ func (o LookupObjectLifecyclePolicyResultOutput) ToLookupObjectLifecyclePolicyRe
 
 func (o LookupObjectLifecyclePolicyResultOutput) ToLookupObjectLifecyclePolicyResultOutputWithContext(ctx context.Context) LookupObjectLifecyclePolicyResultOutput {
 	return o
+}
+
+func (o LookupObjectLifecyclePolicyResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupObjectLifecyclePolicyResult] {
+	return pulumix.Output[LookupObjectLifecyclePolicyResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o LookupObjectLifecyclePolicyResultOutput) Bucket() pulumi.StringOutput {

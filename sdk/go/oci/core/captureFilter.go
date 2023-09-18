@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Capture Filter resource in Oracle Cloud Infrastructure Core service.
@@ -252,6 +253,12 @@ func (i *CaptureFilter) ToCaptureFilterOutputWithContext(ctx context.Context) Ca
 	return pulumi.ToOutputWithContext(ctx, i).(CaptureFilterOutput)
 }
 
+func (i *CaptureFilter) ToOutput(ctx context.Context) pulumix.Output[*CaptureFilter] {
+	return pulumix.Output[*CaptureFilter]{
+		OutputState: i.ToCaptureFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // CaptureFilterArrayInput is an input type that accepts CaptureFilterArray and CaptureFilterArrayOutput values.
 // You can construct a concrete instance of `CaptureFilterArrayInput` via:
 //
@@ -275,6 +282,12 @@ func (i CaptureFilterArray) ToCaptureFilterArrayOutput() CaptureFilterArrayOutpu
 
 func (i CaptureFilterArray) ToCaptureFilterArrayOutputWithContext(ctx context.Context) CaptureFilterArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CaptureFilterArrayOutput)
+}
+
+func (i CaptureFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]*CaptureFilter] {
+	return pulumix.Output[[]*CaptureFilter]{
+		OutputState: i.ToCaptureFilterArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // CaptureFilterMapInput is an input type that accepts CaptureFilterMap and CaptureFilterMapOutput values.
@@ -302,6 +315,12 @@ func (i CaptureFilterMap) ToCaptureFilterMapOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(CaptureFilterMapOutput)
 }
 
+func (i CaptureFilterMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*CaptureFilter] {
+	return pulumix.Output[map[string]*CaptureFilter]{
+		OutputState: i.ToCaptureFilterMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type CaptureFilterOutput struct{ *pulumi.OutputState }
 
 func (CaptureFilterOutput) ElementType() reflect.Type {
@@ -314,6 +333,12 @@ func (o CaptureFilterOutput) ToCaptureFilterOutput() CaptureFilterOutput {
 
 func (o CaptureFilterOutput) ToCaptureFilterOutputWithContext(ctx context.Context) CaptureFilterOutput {
 	return o
+}
+
+func (o CaptureFilterOutput) ToOutput(ctx context.Context) pulumix.Output[*CaptureFilter] {
+	return pulumix.Output[*CaptureFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the capture filter.
@@ -370,6 +395,12 @@ func (o CaptureFilterArrayOutput) ToCaptureFilterArrayOutputWithContext(ctx cont
 	return o
 }
 
+func (o CaptureFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*CaptureFilter] {
+	return pulumix.Output[[]*CaptureFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o CaptureFilterArrayOutput) Index(i pulumi.IntInput) CaptureFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CaptureFilter {
 		return vs[0].([]*CaptureFilter)[vs[1].(int)]
@@ -388,6 +419,12 @@ func (o CaptureFilterMapOutput) ToCaptureFilterMapOutput() CaptureFilterMapOutpu
 
 func (o CaptureFilterMapOutput) ToCaptureFilterMapOutputWithContext(ctx context.Context) CaptureFilterMapOutput {
 	return o
+}
+
+func (o CaptureFilterMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*CaptureFilter] {
+	return pulumix.Output[map[string]*CaptureFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o CaptureFilterMapOutput) MapIndex(k pulumi.StringInput) CaptureFilterOutput {

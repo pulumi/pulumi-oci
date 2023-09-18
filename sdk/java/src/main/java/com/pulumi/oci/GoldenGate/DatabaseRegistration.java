@@ -84,7 +84,7 @@ public class DatabaseRegistration extends com.pulumi.resources.CustomResource {
      * (Updatable) Credential store alias.
      * 
      */
-    @Export(name="aliasName", type=String.class, parameters={})
+    @Export(name="aliasName", refs={String.class}, tree="[0]")
     private Output<String> aliasName;
 
     /**
@@ -98,7 +98,7 @@ public class DatabaseRegistration extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -112,7 +112,7 @@ public class DatabaseRegistration extends com.pulumi.resources.CustomResource {
      * (Updatable) Connect descriptor or Easy Connect Naming method used to connect to a database.
      * 
      */
-    @Export(name="connectionString", type=String.class, parameters={})
+    @Export(name="connectionString", refs={String.class}, tree="[0]")
     private Output<String> connectionString;
 
     /**
@@ -126,7 +126,7 @@ public class DatabaseRegistration extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
      * 
      */
-    @Export(name="databaseId", type=String.class, parameters={})
+    @Export(name="databaseId", refs={String.class}, tree="[0]")
     private Output<String> databaseId;
 
     /**
@@ -140,7 +140,7 @@ public class DatabaseRegistration extends com.pulumi.resources.CustomResource {
      * (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -154,7 +154,7 @@ public class DatabaseRegistration extends com.pulumi.resources.CustomResource {
      * (Updatable) Metadata about this specific object.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -168,7 +168,7 @@ public class DatabaseRegistration extends com.pulumi.resources.CustomResource {
      * (Updatable) An object&#39;s Display Name.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -182,7 +182,7 @@ public class DatabaseRegistration extends com.pulumi.resources.CustomResource {
      * (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
      * 
      */
-    @Export(name="fqdn", type=String.class, parameters={})
+    @Export(name="fqdn", refs={String.class}, tree="[0]")
     private Output<String> fqdn;
 
     /**
@@ -196,7 +196,7 @@ public class DatabaseRegistration extends com.pulumi.resources.CustomResource {
      * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -210,7 +210,7 @@ public class DatabaseRegistration extends com.pulumi.resources.CustomResource {
      * The private IP address in the customer&#39;s VCN of the customer&#39;s endpoint, typically a database.
      * 
      */
-    @Export(name="ipAddress", type=String.class, parameters={})
+    @Export(name="ipAddress", refs={String.class}, tree="[0]")
     private Output<String> ipAddress;
 
     /**
@@ -224,7 +224,7 @@ public class DatabaseRegistration extends com.pulumi.resources.CustomResource {
      * Refers to the customer&#39;s master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
      * 
      */
-    @Export(name="keyId", type=String.class, parameters={})
+    @Export(name="keyId", refs={String.class}, tree="[0]")
     private Output<String> keyId;
 
     /**
@@ -238,7 +238,7 @@ public class DatabaseRegistration extends com.pulumi.resources.CustomResource {
      * Describes the object&#39;s current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -252,7 +252,7 @@ public class DatabaseRegistration extends com.pulumi.resources.CustomResource {
      * (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
      * 
      */
-    @Export(name="password", type=String.class, parameters={})
+    @Export(name="password", refs={String.class}, tree="[0]")
     private Output<String> password;
 
     /**
@@ -266,7 +266,7 @@ public class DatabaseRegistration extends com.pulumi.resources.CustomResource {
      * A Private Endpoint IP address created in the customer&#39;s subnet.  A customer database can expect network traffic initiated by GoldenGate Service from this IP address.  It can also send network traffic to this IP address, typically in response to requests from GoldenGate Service.  The customer may use this IP address in Security Lists or Network Security Groups (NSG) as needed.
      * 
      */
-    @Export(name="rcePrivateIp", type=String.class, parameters={})
+    @Export(name="rcePrivateIp", refs={String.class}, tree="[0]")
     private Output<String> rcePrivateIp;
 
     /**
@@ -280,7 +280,7 @@ public class DatabaseRegistration extends com.pulumi.resources.CustomResource {
      * The OCID of the compartment where the GoldenGate Secret will be created.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
      * 
      */
-    @Export(name="secretCompartmentId", type=String.class, parameters={})
+    @Export(name="secretCompartmentId", refs={String.class}, tree="[0]")
     private Output<String> secretCompartmentId;
 
     /**
@@ -294,7 +294,7 @@ public class DatabaseRegistration extends com.pulumi.resources.CustomResource {
      * The OCID of the customer&#39;s GoldenGate Service Secret.  If provided, it references a key that customers will be required to ensure the policies are established  to permit GoldenGate to use this Secret.
      * 
      */
-    @Export(name="secretId", type=String.class, parameters={})
+    @Export(name="secretId", refs={String.class}, tree="[0]")
     private Output<String> secretId;
 
     /**
@@ -308,7 +308,7 @@ public class DatabaseRegistration extends com.pulumi.resources.CustomResource {
      * (Updatable) The mode of the database connection session to be established by the data client. &#39;REDIRECT&#39; - for a RAC database, &#39;DIRECT&#39; - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
      * 
      */
-    @Export(name="sessionMode", type=String.class, parameters={})
+    @Export(name="sessionMode", refs={String.class}, tree="[0]")
     private Output<String> sessionMode;
 
     /**
@@ -322,7 +322,7 @@ public class DatabaseRegistration extends com.pulumi.resources.CustomResource {
      * Possible lifecycle states.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -336,7 +336,7 @@ public class DatabaseRegistration extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
      * 
      */
-    @Export(name="subnetId", type=String.class, parameters={})
+    @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
@@ -350,7 +350,7 @@ public class DatabaseRegistration extends com.pulumi.resources.CustomResource {
      * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -364,7 +364,7 @@ public class DatabaseRegistration extends com.pulumi.resources.CustomResource {
      * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -378,7 +378,7 @@ public class DatabaseRegistration extends com.pulumi.resources.CustomResource {
      * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -392,7 +392,7 @@ public class DatabaseRegistration extends com.pulumi.resources.CustomResource {
      * (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
      * 
      */
-    @Export(name="username", type=String.class, parameters={})
+    @Export(name="username", refs={String.class}, tree="[0]")
     private Output<String> username;
 
     /**
@@ -406,7 +406,7 @@ public class DatabaseRegistration extends com.pulumi.resources.CustomResource {
      * Refers to the customer&#39;s vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
      * 
      */
-    @Export(name="vaultId", type=String.class, parameters={})
+    @Export(name="vaultId", refs={String.class}, tree="[0]")
     private Output<String> vaultId;
 
     /**
@@ -423,7 +423,7 @@ public class DatabaseRegistration extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="wallet", type=String.class, parameters={})
+    @Export(name="wallet", refs={String.class}, tree="[0]")
     private Output<String> wallet;
 
     /**

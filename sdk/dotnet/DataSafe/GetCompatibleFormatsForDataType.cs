@@ -44,6 +44,40 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public static Task<GetCompatibleFormatsForDataTypeResult> InvokeAsync(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetCompatibleFormatsForDataTypeResult>("oci:DataSafe/getCompatibleFormatsForDataType:getCompatibleFormatsForDataType", InvokeArgs.Empty, options.WithDefaults());
+
+        /// <summary>
+        /// This data source provides details about a specific Compatible Formats For Data Type resource in Oracle Cloud Infrastructure Data Safe service.
+        /// 
+        /// Gets a list of basic masking formats compatible with the supported data types.
+        /// The data types are grouped into the following categories -
+        /// Character - Includes CHAR, NCHAR, VARCHAR2, and NVARCHAR2
+        /// Numeric - Includes NUMBER, FLOAT, RAW, BINARY_FLOAT, and BINARY_DOUBLE
+        /// Date - Includes DATE and TIMESTAMP
+        /// LOB - Includes BLOB, CLOB, and NCLOB
+        /// All - Includes all the supported data types 
+        /// 
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCompatibleFormatsForDataType = Oci.DataSafe.GetCompatibleFormatsForDataType.Invoke();
+        /// 
+        /// });
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// </summary>
+        public static Output<GetCompatibleFormatsForDataTypeResult> Invoke(InvokeOptions? options = null)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCompatibleFormatsForDataTypeResult>("oci:DataSafe/getCompatibleFormatsForDataType:getCompatibleFormatsForDataType", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

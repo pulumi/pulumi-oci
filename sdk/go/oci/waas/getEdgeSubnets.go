@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Edge Subnets in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
@@ -97,6 +98,12 @@ func (o GetEdgeSubnetsResultOutput) ToGetEdgeSubnetsResultOutput() GetEdgeSubnet
 
 func (o GetEdgeSubnetsResultOutput) ToGetEdgeSubnetsResultOutputWithContext(ctx context.Context) GetEdgeSubnetsResultOutput {
 	return o
+}
+
+func (o GetEdgeSubnetsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetEdgeSubnetsResult] {
+	return pulumix.Output[GetEdgeSubnetsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The list of edge_subnets.

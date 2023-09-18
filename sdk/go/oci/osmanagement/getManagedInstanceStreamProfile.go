@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Managed Instance Stream Profiles in Oracle Cloud Infrastructure OS Management service.
@@ -168,6 +169,12 @@ func (o GetManagedInstanceStreamProfileResultOutput) ToGetManagedInstanceStreamP
 
 func (o GetManagedInstanceStreamProfileResultOutput) ToGetManagedInstanceStreamProfileResultOutputWithContext(ctx context.Context) GetManagedInstanceStreamProfileResultOutput {
 	return o
+}
+
+func (o GetManagedInstanceStreamProfileResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceStreamProfileResult] {
+	return pulumix.Output[GetManagedInstanceStreamProfileResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetManagedInstanceStreamProfileResultOutput) CompartmentId() pulumi.StringPtrOutput {

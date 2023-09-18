@@ -40,7 +40,7 @@ public class ManagedInstance extends com.pulumi.resources.CustomResource {
      * if present, indicates the Managed Instance is an autonomous instance. Holds all the Autonomous specific information
      * 
      */
-    @Export(name="autonomouses", type=List.class, parameters={ManagedInstanceAutonomouse.class})
+    @Export(name="autonomouses", refs={List.class,ManagedInstanceAutonomouse.class}, tree="[0,1]")
     private Output<List<ManagedInstanceAutonomouse>> autonomouses;
 
     /**
@@ -54,7 +54,7 @@ public class ManagedInstance extends com.pulumi.resources.CustomResource {
      * Number of bug fix type updates available to be installed
      * 
      */
-    @Export(name="bugUpdatesAvailable", type=Integer.class, parameters={})
+    @Export(name="bugUpdatesAvailable", refs={Integer.class}, tree="[0]")
     private Output<Integer> bugUpdatesAvailable;
 
     /**
@@ -68,7 +68,7 @@ public class ManagedInstance extends com.pulumi.resources.CustomResource {
      * list of child Software Sources attached to the Managed Instance
      * 
      */
-    @Export(name="childSoftwareSources", type=List.class, parameters={ManagedInstanceChildSoftwareSource.class})
+    @Export(name="childSoftwareSources", refs={List.class,ManagedInstanceChildSoftwareSource.class}, tree="[0,1]")
     private Output<List<ManagedInstanceChildSoftwareSource>> childSoftwareSources;
 
     /**
@@ -82,7 +82,7 @@ public class ManagedInstance extends com.pulumi.resources.CustomResource {
      * OCID for the Compartment
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -96,7 +96,7 @@ public class ManagedInstance extends com.pulumi.resources.CustomResource {
      * Information specified by the user about the managed instance
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -110,7 +110,7 @@ public class ManagedInstance extends com.pulumi.resources.CustomResource {
      * User friendly name
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -124,7 +124,7 @@ public class ManagedInstance extends com.pulumi.resources.CustomResource {
      * Number of enhancement type updates available to be installed
      * 
      */
-    @Export(name="enhancementUpdatesAvailable", type=Integer.class, parameters={})
+    @Export(name="enhancementUpdatesAvailable", refs={Integer.class}, tree="[0]")
     private Output<Integer> enhancementUpdatesAvailable;
 
     /**
@@ -138,7 +138,7 @@ public class ManagedInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) True if user allow data collection for this instance
      * 
      */
-    @Export(name="isDataCollectionAuthorized", type=Boolean.class, parameters={})
+    @Export(name="isDataCollectionAuthorized", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isDataCollectionAuthorized;
 
     /**
@@ -152,7 +152,7 @@ public class ManagedInstance extends com.pulumi.resources.CustomResource {
      * Indicates whether a reboot is required to complete installation of updates.
      * 
      */
-    @Export(name="isRebootRequired", type=Boolean.class, parameters={})
+    @Export(name="isRebootRequired", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isRebootRequired;
 
     /**
@@ -166,7 +166,7 @@ public class ManagedInstance extends com.pulumi.resources.CustomResource {
      * The ksplice effective kernel version
      * 
      */
-    @Export(name="kspliceEffectiveKernelVersion", type=String.class, parameters={})
+    @Export(name="kspliceEffectiveKernelVersion", refs={String.class}, tree="[0]")
     private Output<String> kspliceEffectiveKernelVersion;
 
     /**
@@ -180,7 +180,7 @@ public class ManagedInstance extends com.pulumi.resources.CustomResource {
      * Time at which the instance last booted
      * 
      */
-    @Export(name="lastBoot", type=String.class, parameters={})
+    @Export(name="lastBoot", refs={String.class}, tree="[0]")
     private Output<String> lastBoot;
 
     /**
@@ -194,7 +194,7 @@ public class ManagedInstance extends com.pulumi.resources.CustomResource {
      * Time at which the instance last checked in
      * 
      */
-    @Export(name="lastCheckin", type=String.class, parameters={})
+    @Export(name="lastCheckin", refs={String.class}, tree="[0]")
     private Output<String> lastCheckin;
 
     /**
@@ -208,7 +208,7 @@ public class ManagedInstance extends com.pulumi.resources.CustomResource {
      * The ids of the managed instance groups of which this instance is a member.
      * 
      */
-    @Export(name="managedInstanceGroups", type=List.class, parameters={ManagedInstanceManagedInstanceGroup.class})
+    @Export(name="managedInstanceGroups", refs={List.class,ManagedInstanceManagedInstanceGroup.class}, tree="[0,1]")
     private Output<List<ManagedInstanceManagedInstanceGroup>> managedInstanceGroups;
 
     /**
@@ -222,7 +222,7 @@ public class ManagedInstance extends com.pulumi.resources.CustomResource {
      * OCID for the managed instance
      * 
      */
-    @Export(name="managedInstanceId", type=String.class, parameters={})
+    @Export(name="managedInstanceId", refs={String.class}, tree="[0]")
     private Output<String> managedInstanceId;
 
     /**
@@ -239,7 +239,7 @@ public class ManagedInstance extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="notificationTopicId", type=String.class, parameters={})
+    @Export(name="notificationTopicId", refs={String.class}, tree="[0]")
     private Output<String> notificationTopicId;
 
     /**
@@ -256,7 +256,7 @@ public class ManagedInstance extends com.pulumi.resources.CustomResource {
      * The Operating System type of the managed instance.
      * 
      */
-    @Export(name="osFamily", type=String.class, parameters={})
+    @Export(name="osFamily", refs={String.class}, tree="[0]")
     private Output<String> osFamily;
 
     /**
@@ -270,7 +270,7 @@ public class ManagedInstance extends com.pulumi.resources.CustomResource {
      * Operating System Kernel Version
      * 
      */
-    @Export(name="osKernelVersion", type=String.class, parameters={})
+    @Export(name="osKernelVersion", refs={String.class}, tree="[0]")
     private Output<String> osKernelVersion;
 
     /**
@@ -284,7 +284,7 @@ public class ManagedInstance extends com.pulumi.resources.CustomResource {
      * Operating System Name
      * 
      */
-    @Export(name="osName", type=String.class, parameters={})
+    @Export(name="osName", refs={String.class}, tree="[0]")
     private Output<String> osName;
 
     /**
@@ -298,7 +298,7 @@ public class ManagedInstance extends com.pulumi.resources.CustomResource {
      * Operating System Version
      * 
      */
-    @Export(name="osVersion", type=String.class, parameters={})
+    @Export(name="osVersion", refs={String.class}, tree="[0]")
     private Output<String> osVersion;
 
     /**
@@ -312,7 +312,7 @@ public class ManagedInstance extends com.pulumi.resources.CustomResource {
      * Number of non-classified updates available to be installed
      * 
      */
-    @Export(name="otherUpdatesAvailable", type=Integer.class, parameters={})
+    @Export(name="otherUpdatesAvailable", refs={Integer.class}, tree="[0]")
     private Output<Integer> otherUpdatesAvailable;
 
     /**
@@ -326,7 +326,7 @@ public class ManagedInstance extends com.pulumi.resources.CustomResource {
      * the parent (base) Software Source attached to the Managed Instance
      * 
      */
-    @Export(name="parentSoftwareSources", type=List.class, parameters={ManagedInstanceParentSoftwareSource.class})
+    @Export(name="parentSoftwareSources", refs={List.class,ManagedInstanceParentSoftwareSource.class}, tree="[0,1]")
     private Output<List<ManagedInstanceParentSoftwareSource>> parentSoftwareSources;
 
     /**
@@ -340,7 +340,7 @@ public class ManagedInstance extends com.pulumi.resources.CustomResource {
      * Number of scheduled jobs associated with this instance
      * 
      */
-    @Export(name="scheduledJobCount", type=Integer.class, parameters={})
+    @Export(name="scheduledJobCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> scheduledJobCount;
 
     /**
@@ -354,7 +354,7 @@ public class ManagedInstance extends com.pulumi.resources.CustomResource {
      * Number of security type updates available to be installed
      * 
      */
-    @Export(name="securityUpdatesAvailable", type=Integer.class, parameters={})
+    @Export(name="securityUpdatesAvailable", refs={Integer.class}, tree="[0]")
     private Output<Integer> securityUpdatesAvailable;
 
     /**
@@ -368,7 +368,7 @@ public class ManagedInstance extends com.pulumi.resources.CustomResource {
      * status of the managed instance.
      * 
      */
-    @Export(name="status", type=String.class, parameters={})
+    @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
@@ -382,7 +382,7 @@ public class ManagedInstance extends com.pulumi.resources.CustomResource {
      * Number of updates available to be installed
      * 
      */
-    @Export(name="updatesAvailable", type=Integer.class, parameters={})
+    @Export(name="updatesAvailable", refs={Integer.class}, tree="[0]")
     private Output<Integer> updatesAvailable;
 
     /**
@@ -396,7 +396,7 @@ public class ManagedInstance extends com.pulumi.resources.CustomResource {
      * Number of work requests associated with this instance
      * 
      */
-    @Export(name="workRequestCount", type=Integer.class, parameters={})
+    @Export(name="workRequestCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> workRequestCount;
 
     /**

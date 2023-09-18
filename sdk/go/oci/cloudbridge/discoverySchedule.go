@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Discovery Schedule resource in Oracle Cloud Infrastructure Cloud Bridge service.
@@ -234,6 +235,12 @@ func (i *DiscoverySchedule) ToDiscoveryScheduleOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(DiscoveryScheduleOutput)
 }
 
+func (i *DiscoverySchedule) ToOutput(ctx context.Context) pulumix.Output[*DiscoverySchedule] {
+	return pulumix.Output[*DiscoverySchedule]{
+		OutputState: i.ToDiscoveryScheduleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // DiscoveryScheduleArrayInput is an input type that accepts DiscoveryScheduleArray and DiscoveryScheduleArrayOutput values.
 // You can construct a concrete instance of `DiscoveryScheduleArrayInput` via:
 //
@@ -257,6 +264,12 @@ func (i DiscoveryScheduleArray) ToDiscoveryScheduleArrayOutput() DiscoverySchedu
 
 func (i DiscoveryScheduleArray) ToDiscoveryScheduleArrayOutputWithContext(ctx context.Context) DiscoveryScheduleArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DiscoveryScheduleArrayOutput)
+}
+
+func (i DiscoveryScheduleArray) ToOutput(ctx context.Context) pulumix.Output[[]*DiscoverySchedule] {
+	return pulumix.Output[[]*DiscoverySchedule]{
+		OutputState: i.ToDiscoveryScheduleArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // DiscoveryScheduleMapInput is an input type that accepts DiscoveryScheduleMap and DiscoveryScheduleMapOutput values.
@@ -284,6 +297,12 @@ func (i DiscoveryScheduleMap) ToDiscoveryScheduleMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(DiscoveryScheduleMapOutput)
 }
 
+func (i DiscoveryScheduleMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DiscoverySchedule] {
+	return pulumix.Output[map[string]*DiscoverySchedule]{
+		OutputState: i.ToDiscoveryScheduleMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type DiscoveryScheduleOutput struct{ *pulumi.OutputState }
 
 func (DiscoveryScheduleOutput) ElementType() reflect.Type {
@@ -296,6 +315,12 @@ func (o DiscoveryScheduleOutput) ToDiscoveryScheduleOutput() DiscoveryScheduleOu
 
 func (o DiscoveryScheduleOutput) ToDiscoveryScheduleOutputWithContext(ctx context.Context) DiscoveryScheduleOutput {
 	return o
+}
+
+func (o DiscoveryScheduleOutput) ToOutput(ctx context.Context) pulumix.Output[*DiscoverySchedule] {
+	return pulumix.Output[*DiscoverySchedule]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the discovery schedule is created.
@@ -365,6 +390,12 @@ func (o DiscoveryScheduleArrayOutput) ToDiscoveryScheduleArrayOutputWithContext(
 	return o
 }
 
+func (o DiscoveryScheduleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DiscoverySchedule] {
+	return pulumix.Output[[]*DiscoverySchedule]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o DiscoveryScheduleArrayOutput) Index(i pulumi.IntInput) DiscoveryScheduleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DiscoverySchedule {
 		return vs[0].([]*DiscoverySchedule)[vs[1].(int)]
@@ -383,6 +414,12 @@ func (o DiscoveryScheduleMapOutput) ToDiscoveryScheduleMapOutput() DiscoverySche
 
 func (o DiscoveryScheduleMapOutput) ToDiscoveryScheduleMapOutputWithContext(ctx context.Context) DiscoveryScheduleMapOutput {
 	return o
+}
+
+func (o DiscoveryScheduleMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DiscoverySchedule] {
+	return pulumix.Output[map[string]*DiscoverySchedule]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o DiscoveryScheduleMapOutput) MapIndex(k pulumi.StringInput) DiscoveryScheduleOutput {

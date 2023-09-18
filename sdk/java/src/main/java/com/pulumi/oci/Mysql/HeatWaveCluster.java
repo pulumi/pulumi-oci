@@ -70,7 +70,7 @@ public class HeatWaveCluster extends com.pulumi.resources.CustomResource {
      * A HeatWave node is a compute host that is part of a HeatWave cluster.
      * 
      */
-    @Export(name="clusterNodes", type=List.class, parameters={HeatWaveClusterClusterNode.class})
+    @Export(name="clusterNodes", refs={List.class,HeatWaveClusterClusterNode.class}, tree="[0,1]")
     private Output<List<HeatWaveClusterClusterNode>> clusterNodes;
 
     /**
@@ -84,7 +84,7 @@ public class HeatWaveCluster extends com.pulumi.resources.CustomResource {
      * (Updatable) A change to the number of nodes in the HeatWave cluster will result in the entire cluster being torn down and re-created with the new cluster of nodes. This may result in a significant downtime for the analytics capability while the HeatWave cluster is re-provisioned.
      * 
      */
-    @Export(name="clusterSize", type=Integer.class, parameters={})
+    @Export(name="clusterSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> clusterSize;
 
     /**
@@ -98,7 +98,7 @@ public class HeatWaveCluster extends com.pulumi.resources.CustomResource {
      * The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    @Export(name="dbSystemId", type=String.class, parameters={})
+    @Export(name="dbSystemId", refs={String.class}, tree="[0]")
     private Output<String> dbSystemId;
 
     /**
@@ -112,7 +112,7 @@ public class HeatWaveCluster extends com.pulumi.resources.CustomResource {
      * (Updatable) Enable/disable Lakehouse for the HeatWave cluster.
      * 
      */
-    @Export(name="isLakehouseEnabled", type=Boolean.class, parameters={})
+    @Export(name="isLakehouseEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isLakehouseEnabled;
 
     /**
@@ -126,7 +126,7 @@ public class HeatWaveCluster extends com.pulumi.resources.CustomResource {
      * Additional information about the current lifecycleState.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -140,7 +140,7 @@ public class HeatWaveCluster extends com.pulumi.resources.CustomResource {
      * (Updatable) A change to the shape of the nodes in the HeatWave cluster will result in the entire cluster being torn down and re-created with Compute instances of the new Shape. This may result in significant downtime for the analytics capability while the HeatWave cluster is re-provisioned.
      * 
      */
-    @Export(name="shapeName", type=String.class, parameters={})
+    @Export(name="shapeName", refs={String.class}, tree="[0]")
     private Output<String> shapeName;
 
     /**
@@ -157,7 +157,7 @@ public class HeatWaveCluster extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -174,7 +174,7 @@ public class HeatWaveCluster extends com.pulumi.resources.CustomResource {
      * The date and time the HeatWave cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -188,7 +188,7 @@ public class HeatWaveCluster extends com.pulumi.resources.CustomResource {
      * The time the HeatWave cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

@@ -73,7 +73,7 @@ public class AuthToken extends com.pulumi.resources.CustomResource {
      * (Updatable) The description you assign to the auth token during creation. Does not have to be unique, and it&#39;s changeable.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -87,7 +87,7 @@ public class AuthToken extends com.pulumi.resources.CustomResource {
      * The detailed status of INACTIVE lifecycleState.
      * 
      */
-    @Export(name="inactiveState", type=String.class, parameters={})
+    @Export(name="inactiveState", refs={String.class}, tree="[0]")
     private Output<String> inactiveState;
 
     /**
@@ -101,7 +101,7 @@ public class AuthToken extends com.pulumi.resources.CustomResource {
      * The token&#39;s current state.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -115,7 +115,7 @@ public class AuthToken extends com.pulumi.resources.CustomResource {
      * Date and time the `AuthToken` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -129,7 +129,7 @@ public class AuthToken extends com.pulumi.resources.CustomResource {
      * Date and time when this auth token will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeExpires", type=String.class, parameters={})
+    @Export(name="timeExpires", refs={String.class}, tree="[0]")
     private Output<String> timeExpires;
 
     /**
@@ -143,7 +143,7 @@ public class AuthToken extends com.pulumi.resources.CustomResource {
      * The auth token. The value is available only in the response for `CreateAuthToken`, and not for `ListAuthTokens` or `UpdateAuthToken`.
      * 
      */
-    @Export(name="token", type=String.class, parameters={})
+    @Export(name="token", refs={String.class}, tree="[0]")
     private Output<String> token;
 
     /**
@@ -160,7 +160,7 @@ public class AuthToken extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="userId", type=String.class, parameters={})
+    @Export(name="userId", refs={String.class}, tree="[0]")
     private Output<String> userId;
 
     /**

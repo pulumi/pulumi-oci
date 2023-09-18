@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Discovery Jobs Result resource in Oracle Cloud Infrastructure Data Safe service.
@@ -147,6 +148,12 @@ func (o LookupDiscoveryJobsResultResultOutput) ToLookupDiscoveryJobsResultResult
 
 func (o LookupDiscoveryJobsResultResultOutput) ToLookupDiscoveryJobsResultResultOutputWithContext(ctx context.Context) LookupDiscoveryJobsResultResultOutput {
 	return o
+}
+
+func (o LookupDiscoveryJobsResultResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDiscoveryJobsResultResult] {
+	return pulumix.Output[LookupDiscoveryJobsResultResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.

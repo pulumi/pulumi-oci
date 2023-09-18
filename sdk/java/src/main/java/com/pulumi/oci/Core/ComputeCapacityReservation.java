@@ -93,7 +93,7 @@ public class ComputeCapacityReservation extends com.pulumi.resources.CustomResou
      * The availability domain of this compute capacity reservation.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    @Export(name="availabilityDomain", type=String.class, parameters={})
+    @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
     private Output<String> availabilityDomain;
 
     /**
@@ -107,7 +107,7 @@ public class ComputeCapacityReservation extends com.pulumi.resources.CustomResou
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the capacity reservation.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -121,7 +121,7 @@ public class ComputeCapacityReservation extends com.pulumi.resources.CustomResou
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -135,7 +135,7 @@ public class ComputeCapacityReservation extends com.pulumi.resources.CustomResou
      * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -149,7 +149,7 @@ public class ComputeCapacityReservation extends com.pulumi.resources.CustomResou
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -165,7 +165,7 @@ public class ComputeCapacityReservation extends com.pulumi.resources.CustomResou
      * To use the reservation for the desired shape, specify the shape, count, and optionally the fault domain where you want this configuration.
      * 
      */
-    @Export(name="instanceReservationConfigs", type=List.class, parameters={ComputeCapacityReservationInstanceReservationConfig.class})
+    @Export(name="instanceReservationConfigs", refs={List.class,ComputeCapacityReservationInstanceReservationConfig.class}, tree="[0,1]")
     private Output<List<ComputeCapacityReservationInstanceReservationConfig>> instanceReservationConfigs;
 
     /**
@@ -184,7 +184,7 @@ public class ComputeCapacityReservation extends com.pulumi.resources.CustomResou
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="isDefaultReservation", type=Boolean.class, parameters={})
+    @Export(name="isDefaultReservation", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isDefaultReservation;
 
     /**
@@ -201,7 +201,7 @@ public class ComputeCapacityReservation extends com.pulumi.resources.CustomResou
      * The number of instances for which capacity will be held with this compute capacity reservation. This number is the sum of the values of the `reservedCount` fields for all of the instance capacity configurations under this reservation. The purpose of this field is to calculate the percentage usage of the reservation.
      * 
      */
-    @Export(name="reservedInstanceCount", type=String.class, parameters={})
+    @Export(name="reservedInstanceCount", refs={String.class}, tree="[0]")
     private Output<String> reservedInstanceCount;
 
     /**
@@ -215,7 +215,7 @@ public class ComputeCapacityReservation extends com.pulumi.resources.CustomResou
      * The current state of the compute capacity reservation.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -229,7 +229,7 @@ public class ComputeCapacityReservation extends com.pulumi.resources.CustomResou
      * The date and time the compute capacity reservation was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -243,7 +243,7 @@ public class ComputeCapacityReservation extends com.pulumi.resources.CustomResou
      * The date and time the compute capacity reservation was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -257,7 +257,7 @@ public class ComputeCapacityReservation extends com.pulumi.resources.CustomResou
      * The total number of instances currently consuming space in this compute capacity reservation. This number is the sum of the values of the `usedCount` fields for all of the instance capacity configurations under this reservation. The purpose of this field is to calculate the percentage usage of the reservation.
      * 
      */
-    @Export(name="usedInstanceCount", type=String.class, parameters={})
+    @Export(name="usedInstanceCount", refs={String.class}, tree="[0]")
     private Output<String> usedInstanceCount;
 
     /**

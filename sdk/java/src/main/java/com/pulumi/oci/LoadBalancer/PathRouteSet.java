@@ -75,7 +75,7 @@ public class PathRouteSet extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the path route set to.
      * 
      */
-    @Export(name="loadBalancerId", type=String.class, parameters={})
+    @Export(name="loadBalancerId", refs={String.class}, tree="[0]")
     private Output<String> loadBalancerId;
 
     /**
@@ -89,7 +89,7 @@ public class PathRouteSet extends com.pulumi.resources.CustomResource {
      * The name for this set of path route rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_path_route_set`
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -103,7 +103,7 @@ public class PathRouteSet extends com.pulumi.resources.CustomResource {
      * (Updatable) The set of path route rules.
      * 
      */
-    @Export(name="pathRoutes", type=List.class, parameters={PathRouteSetPathRoute.class})
+    @Export(name="pathRoutes", refs={List.class,PathRouteSetPathRoute.class}, tree="[0,1]")
     private Output<List<PathRouteSetPathRoute>> pathRoutes;
 
     /**
@@ -113,7 +113,7 @@ public class PathRouteSet extends com.pulumi.resources.CustomResource {
     public Output<List<PathRouteSetPathRoute>> pathRoutes() {
         return this.pathRoutes;
     }
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     public Output<String> state() {

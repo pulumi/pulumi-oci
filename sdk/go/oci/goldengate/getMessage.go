@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Message resource in Oracle Cloud Infrastructure Golden Gate service.
@@ -101,6 +102,12 @@ func (o GetMessageResultOutput) ToGetMessageResultOutput() GetMessageResultOutpu
 
 func (o GetMessageResultOutput) ToGetMessageResultOutputWithContext(ctx context.Context) GetMessageResultOutput {
 	return o
+}
+
+func (o GetMessageResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMessageResult] {
+	return pulumix.Output[GetMessageResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMessageResultOutput) DeploymentId() pulumi.StringOutput {

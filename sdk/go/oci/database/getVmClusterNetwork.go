@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Vm Cluster Network resource in Oracle Cloud Infrastructure Database service.
@@ -135,6 +136,12 @@ func (o LookupVmClusterNetworkResultOutput) ToLookupVmClusterNetworkResultOutput
 
 func (o LookupVmClusterNetworkResultOutput) ToLookupVmClusterNetworkResultOutputWithContext(ctx context.Context) LookupVmClusterNetworkResultOutput {
 	return o
+}
+
+func (o LookupVmClusterNetworkResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupVmClusterNetworkResult] {
+	return pulumix.Output[LookupVmClusterNetworkResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o LookupVmClusterNetworkResultOutput) Action() pulumi.StringOutput {

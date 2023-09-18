@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Deployment Backups in Oracle Cloud Infrastructure Golden Gate service.
@@ -126,6 +127,12 @@ func (o GetDeploymentBackupsResultOutput) ToGetDeploymentBackupsResultOutput() G
 
 func (o GetDeploymentBackupsResultOutput) ToGetDeploymentBackupsResultOutputWithContext(ctx context.Context) GetDeploymentBackupsResultOutput {
 	return o
+}
+
+func (o GetDeploymentBackupsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDeploymentBackupsResult] {
+	return pulumix.Output[GetDeploymentBackupsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.

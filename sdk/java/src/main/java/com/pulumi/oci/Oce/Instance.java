@@ -81,7 +81,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * (Updatable) a list of add-on features for the ocm instance
      * 
      */
-    @Export(name="addOnFeatures", type=List.class, parameters={String.class})
+    @Export(name="addOnFeatures", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> addOnFeatures;
 
     /**
@@ -95,7 +95,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * Admin Email for Notification
      * 
      */
-    @Export(name="adminEmail", type=String.class, parameters={})
+    @Export(name="adminEmail", refs={String.class}, tree="[0]")
     private Output<String> adminEmail;
 
     /**
@@ -109,7 +109,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * (Updatable) Compartment Identifier
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -123,7 +123,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -137,7 +137,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * (Updatable) OceInstance description
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -151,7 +151,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * (Updatable) disaster recovery paired ragion name
      * 
      */
-    @Export(name="drRegion", type=String.class, parameters={})
+    @Export(name="drRegion", refs={String.class}, tree="[0]")
     private Output<String> drRegion;
 
     /**
@@ -165,7 +165,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -179,7 +179,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * Unique GUID identifier that is immutable on creation
      * 
      */
-    @Export(name="guid", type=String.class, parameters={})
+    @Export(name="guid", refs={String.class}, tree="[0]")
     private Output<String> guid;
 
     /**
@@ -193,7 +193,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * Identity Cloud Service access token identifying a stripe and service administrator user
      * 
      */
-    @Export(name="idcsAccessToken", type=String.class, parameters={})
+    @Export(name="idcsAccessToken", refs={String.class}, tree="[0]")
     private Output<String> idcsAccessToken;
 
     /**
@@ -207,7 +207,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * IDCS Tenancy Identifier
      * 
      */
-    @Export(name="idcsTenancy", type=String.class, parameters={})
+    @Export(name="idcsTenancy", refs={String.class}, tree="[0]")
     private Output<String> idcsTenancy;
 
     /**
@@ -221,7 +221,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * Flag indicating whether the instance access is private or public
      * 
      */
-    @Export(name="instanceAccessType", type=String.class, parameters={})
+    @Export(name="instanceAccessType", refs={String.class}, tree="[0]")
     private Output<String> instanceAccessType;
 
     /**
@@ -235,7 +235,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * (Updatable) Flag indicating whether the instance license is new cloud or bring your own license
      * 
      */
-    @Export(name="instanceLicenseType", type=String.class, parameters={})
+    @Export(name="instanceLicenseType", refs={String.class}, tree="[0]")
     private Output<String> instanceLicenseType;
 
     /**
@@ -249,7 +249,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * (Updatable) Instance type based on its usage
      * 
      */
-    @Export(name="instanceUsageType", type=String.class, parameters={})
+    @Export(name="instanceUsageType", refs={String.class}, tree="[0]")
     private Output<String> instanceUsageType;
 
     /**
@@ -263,7 +263,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * Details of the current state of the instance lifecycle
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -277,7 +277,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * OceInstance Name
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -291,7 +291,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * Object Storage Namespace of Tenancy
      * 
      */
-    @Export(name="objectStorageNamespace", type=String.class, parameters={})
+    @Export(name="objectStorageNamespace", refs={String.class}, tree="[0]")
     private Output<String> objectStorageNamespace;
 
     /**
@@ -305,7 +305,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * SERVICE data. Example: `{&#34;service&#34;: {&#34;IDCS&#34;: &#34;value&#34;}}`
      * 
      */
-    @Export(name="service", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="service", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> service;
 
     /**
@@ -319,7 +319,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * The current state of the instance lifecycle.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -333,7 +333,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    @Export(name="stateMessage", type=String.class, parameters={})
+    @Export(name="stateMessage", refs={String.class}, tree="[0]")
     private Output<String> stateMessage;
 
     /**
@@ -347,7 +347,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -361,7 +361,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * Tenancy Identifier
      * 
      */
-    @Export(name="tenancyId", type=String.class, parameters={})
+    @Export(name="tenancyId", refs={String.class}, tree="[0]")
     private Output<String> tenancyId;
 
     /**
@@ -375,7 +375,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * Tenancy Name
      * 
      */
-    @Export(name="tenancyName", type=String.class, parameters={})
+    @Export(name="tenancyName", refs={String.class}, tree="[0]")
     private Output<String> tenancyName;
 
     /**
@@ -389,7 +389,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * The time the the OceInstance was created. An RFC3339 formatted datetime string
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -403,7 +403,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * The time the OceInstance was updated. An RFC3339 formatted datetime string
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -417,7 +417,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * Upgrade schedule type representing service to be upgraded immediately whenever latest version is released or delay upgrade of the service to previous released version
      * 
      */
-    @Export(name="upgradeSchedule", type=String.class, parameters={})
+    @Export(name="upgradeSchedule", refs={String.class}, tree="[0]")
     private Output<String> upgradeSchedule;
 
     /**
@@ -434,7 +434,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="wafPrimaryDomain", type=String.class, parameters={})
+    @Export(name="wafPrimaryDomain", refs={String.class}, tree="[0]")
     private Output<String> wafPrimaryDomain;
 
     /**

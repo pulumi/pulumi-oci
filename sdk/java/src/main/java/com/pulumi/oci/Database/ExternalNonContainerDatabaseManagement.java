@@ -61,7 +61,7 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:Database/externalNonContainerDatabaseManagement:ExternalNonContainerDatabaseManagement")
 public class ExternalNonContainerDatabaseManagement extends com.pulumi.resources.CustomResource {
-    @Export(name="enableManagement", type=Boolean.class, parameters={})
+    @Export(name="enableManagement", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableManagement;
 
     public Output<Boolean> enableManagement() {
@@ -71,7 +71,7 @@ public class ExternalNonContainerDatabaseManagement extends com.pulumi.resources
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
      * 
      */
-    @Export(name="externalDatabaseConnectorId", type=String.class, parameters={})
+    @Export(name="externalDatabaseConnectorId", refs={String.class}, tree="[0]")
     private Output<String> externalDatabaseConnectorId;
 
     /**
@@ -85,7 +85,7 @@ public class ExternalNonContainerDatabaseManagement extends com.pulumi.resources
      * The external non-container database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    @Export(name="externalNonContainerDatabaseId", type=String.class, parameters={})
+    @Export(name="externalNonContainerDatabaseId", refs={String.class}, tree="[0]")
     private Output<String> externalNonContainerDatabaseId;
 
     /**
@@ -102,7 +102,7 @@ public class ExternalNonContainerDatabaseManagement extends com.pulumi.resources
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="licenseModel", type=String.class, parameters={})
+    @Export(name="licenseModel", refs={String.class}, tree="[0]")
     private Output<String> licenseModel;
 
     /**

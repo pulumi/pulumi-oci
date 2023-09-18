@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific System Media Workflow resource in Oracle Cloud Infrastructure Media Services service.
@@ -108,6 +109,12 @@ func (o GetSystemMediaWorkflowResultOutput) ToGetSystemMediaWorkflowResultOutput
 
 func (o GetSystemMediaWorkflowResultOutput) ToGetSystemMediaWorkflowResultOutputWithContext(ctx context.Context) GetSystemMediaWorkflowResultOutput {
 	return o
+}
+
+func (o GetSystemMediaWorkflowResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSystemMediaWorkflowResult] {
+	return pulumix.Output[GetSystemMediaWorkflowResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSystemMediaWorkflowResultOutput) CompartmentId() pulumi.StringPtrOutput {

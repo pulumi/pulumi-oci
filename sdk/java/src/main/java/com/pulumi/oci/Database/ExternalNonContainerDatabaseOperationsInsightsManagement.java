@@ -66,7 +66,7 @@ public class ExternalNonContainerDatabaseOperationsInsightsManagement extends co
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="enableOperationsInsights", type=Boolean.class, parameters={})
+    @Export(name="enableOperationsInsights", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableOperationsInsights;
 
     /**
@@ -83,7 +83,7 @@ public class ExternalNonContainerDatabaseOperationsInsightsManagement extends co
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
      * 
      */
-    @Export(name="externalDatabaseConnectorId", type=String.class, parameters={})
+    @Export(name="externalDatabaseConnectorId", refs={String.class}, tree="[0]")
     private Output<String> externalDatabaseConnectorId;
 
     /**
@@ -97,7 +97,7 @@ public class ExternalNonContainerDatabaseOperationsInsightsManagement extends co
      * The external non-container database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    @Export(name="externalNonContainerDatabaseId", type=String.class, parameters={})
+    @Export(name="externalNonContainerDatabaseId", refs={String.class}, tree="[0]")
     private Output<String> externalNonContainerDatabaseId;
 
     /**

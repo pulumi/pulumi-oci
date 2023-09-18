@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Autonomous Container Database Dataguard Associations in Oracle Cloud Infrastructure Database service.
@@ -105,6 +106,12 @@ func (o GetAutonomousContainerDatabaseDataguardAssociationsResultOutput) ToGetAu
 
 func (o GetAutonomousContainerDatabaseDataguardAssociationsResultOutput) ToGetAutonomousContainerDatabaseDataguardAssociationsResultOutputWithContext(ctx context.Context) GetAutonomousContainerDatabaseDataguardAssociationsResultOutput {
 	return o
+}
+
+func (o GetAutonomousContainerDatabaseDataguardAssociationsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutonomousContainerDatabaseDataguardAssociationsResult] {
+	return pulumix.Output[GetAutonomousContainerDatabaseDataguardAssociationsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The list of autonomous_container_database_dataguard_associations.

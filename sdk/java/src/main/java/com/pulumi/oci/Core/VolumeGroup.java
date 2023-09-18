@@ -81,7 +81,7 @@ public class VolumeGroup extends com.pulumi.resources.CustomResource {
      * (Updatable) The availability domain of the volume group replica.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    @Export(name="availabilityDomain", type=String.class, parameters={})
+    @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
     private Output<String> availabilityDomain;
 
     /**
@@ -95,7 +95,7 @@ public class VolumeGroup extends com.pulumi.resources.CustomResource {
      * If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned.
      * 
      */
-    @Export(name="backupPolicyId", type=String.class, parameters={})
+    @Export(name="backupPolicyId", refs={String.class}, tree="[0]")
     private Output<String> backupPolicyId;
 
     /**
@@ -109,7 +109,7 @@ public class VolumeGroup extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the compartment that contains the volume group.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -123,7 +123,7 @@ public class VolumeGroup extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -140,7 +140,7 @@ public class VolumeGroup extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -157,7 +157,7 @@ public class VolumeGroup extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -171,7 +171,7 @@ public class VolumeGroup extends com.pulumi.resources.CustomResource {
      * Specifies whether the newly created cloned volume group&#39;s data has finished copying from the source volume group or backup.
      * 
      */
-    @Export(name="isHydrated", type=Boolean.class, parameters={})
+    @Export(name="isHydrated", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isHydrated;
 
     /**
@@ -181,7 +181,7 @@ public class VolumeGroup extends com.pulumi.resources.CustomResource {
     public Output<Boolean> isHydrated() {
         return this.isHydrated;
     }
-    @Export(name="preserveVolumeReplica", type=Boolean.class, parameters={})
+    @Export(name="preserveVolumeReplica", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> preserveVolumeReplica;
 
     public Output<Optional<Boolean>> preserveVolumeReplica() {
@@ -191,7 +191,7 @@ public class VolumeGroup extends com.pulumi.resources.CustomResource {
      * The aggregate size of the volume group in GBs.
      * 
      */
-    @Export(name="sizeInGbs", type=String.class, parameters={})
+    @Export(name="sizeInGbs", refs={String.class}, tree="[0]")
     private Output<String> sizeInGbs;
 
     /**
@@ -205,7 +205,7 @@ public class VolumeGroup extends com.pulumi.resources.CustomResource {
      * The aggregate size of the volume group in MBs.
      * 
      */
-    @Export(name="sizeInMbs", type=String.class, parameters={})
+    @Export(name="sizeInMbs", refs={String.class}, tree="[0]")
     private Output<String> sizeInMbs;
 
     /**
@@ -219,7 +219,7 @@ public class VolumeGroup extends com.pulumi.resources.CustomResource {
      * Specifies the source for a volume group.
      * 
      */
-    @Export(name="sourceDetails", type=VolumeGroupSourceDetails.class, parameters={})
+    @Export(name="sourceDetails", refs={VolumeGroupSourceDetails.class}, tree="[0]")
     private Output<VolumeGroupSourceDetails> sourceDetails;
 
     /**
@@ -233,7 +233,7 @@ public class VolumeGroup extends com.pulumi.resources.CustomResource {
      * The current state of a volume group.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -247,7 +247,7 @@ public class VolumeGroup extends com.pulumi.resources.CustomResource {
      * The date and time the volume group was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -261,7 +261,7 @@ public class VolumeGroup extends com.pulumi.resources.CustomResource {
      * (Updatable) The list of volume group replicas that this volume group will be enabled to have in the specified destination availability domains.
      * 
      */
-    @Export(name="volumeGroupReplicas", type=List.class, parameters={VolumeGroupVolumeGroupReplica.class})
+    @Export(name="volumeGroupReplicas", refs={List.class,VolumeGroupVolumeGroupReplica.class}, tree="[0,1]")
     private Output<List<VolumeGroupVolumeGroupReplica>> volumeGroupReplicas;
 
     /**
@@ -271,7 +271,7 @@ public class VolumeGroup extends com.pulumi.resources.CustomResource {
     public Output<List<VolumeGroupVolumeGroupReplica>> volumeGroupReplicas() {
         return this.volumeGroupReplicas;
     }
-    @Export(name="volumeGroupReplicasDeletion", type=Boolean.class, parameters={})
+    @Export(name="volumeGroupReplicasDeletion", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> volumeGroupReplicasDeletion;
 
     public Output<Optional<Boolean>> volumeGroupReplicasDeletion() {
@@ -281,7 +281,7 @@ public class VolumeGroup extends com.pulumi.resources.CustomResource {
      * OCIDs for the volumes in this volume group.
      * 
      */
-    @Export(name="volumeIds", type=List.class, parameters={String.class})
+    @Export(name="volumeIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> volumeIds;
 
     /**

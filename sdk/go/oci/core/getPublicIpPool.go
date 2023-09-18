@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Public Ip Pool resource in Oracle Cloud Infrastructure Core service.
@@ -113,6 +114,12 @@ func (o LookupPublicIpPoolResultOutput) ToLookupPublicIpPoolResultOutput() Looku
 
 func (o LookupPublicIpPoolResultOutput) ToLookupPublicIpPoolResultOutputWithContext(ctx context.Context) LookupPublicIpPoolResultOutput {
 	return o
+}
+
+func (o LookupPublicIpPoolResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupPublicIpPoolResult] {
+	return pulumix.Output[LookupPublicIpPoolResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The CIDR blocks added to this pool. This could be all or a portion of a BYOIP CIDR block.

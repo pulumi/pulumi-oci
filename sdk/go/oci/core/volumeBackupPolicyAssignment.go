@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Volume Backup Policy Assignment resource in Oracle Cloud Infrastructure Core service.
@@ -175,6 +176,12 @@ func (i *VolumeBackupPolicyAssignment) ToVolumeBackupPolicyAssignmentOutputWithC
 	return pulumi.ToOutputWithContext(ctx, i).(VolumeBackupPolicyAssignmentOutput)
 }
 
+func (i *VolumeBackupPolicyAssignment) ToOutput(ctx context.Context) pulumix.Output[*VolumeBackupPolicyAssignment] {
+	return pulumix.Output[*VolumeBackupPolicyAssignment]{
+		OutputState: i.ToVolumeBackupPolicyAssignmentOutputWithContext(ctx).OutputState,
+	}
+}
+
 // VolumeBackupPolicyAssignmentArrayInput is an input type that accepts VolumeBackupPolicyAssignmentArray and VolumeBackupPolicyAssignmentArrayOutput values.
 // You can construct a concrete instance of `VolumeBackupPolicyAssignmentArrayInput` via:
 //
@@ -198,6 +205,12 @@ func (i VolumeBackupPolicyAssignmentArray) ToVolumeBackupPolicyAssignmentArrayOu
 
 func (i VolumeBackupPolicyAssignmentArray) ToVolumeBackupPolicyAssignmentArrayOutputWithContext(ctx context.Context) VolumeBackupPolicyAssignmentArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(VolumeBackupPolicyAssignmentArrayOutput)
+}
+
+func (i VolumeBackupPolicyAssignmentArray) ToOutput(ctx context.Context) pulumix.Output[[]*VolumeBackupPolicyAssignment] {
+	return pulumix.Output[[]*VolumeBackupPolicyAssignment]{
+		OutputState: i.ToVolumeBackupPolicyAssignmentArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // VolumeBackupPolicyAssignmentMapInput is an input type that accepts VolumeBackupPolicyAssignmentMap and VolumeBackupPolicyAssignmentMapOutput values.
@@ -225,6 +238,12 @@ func (i VolumeBackupPolicyAssignmentMap) ToVolumeBackupPolicyAssignmentMapOutput
 	return pulumi.ToOutputWithContext(ctx, i).(VolumeBackupPolicyAssignmentMapOutput)
 }
 
+func (i VolumeBackupPolicyAssignmentMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*VolumeBackupPolicyAssignment] {
+	return pulumix.Output[map[string]*VolumeBackupPolicyAssignment]{
+		OutputState: i.ToVolumeBackupPolicyAssignmentMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type VolumeBackupPolicyAssignmentOutput struct{ *pulumi.OutputState }
 
 func (VolumeBackupPolicyAssignmentOutput) ElementType() reflect.Type {
@@ -237,6 +256,12 @@ func (o VolumeBackupPolicyAssignmentOutput) ToVolumeBackupPolicyAssignmentOutput
 
 func (o VolumeBackupPolicyAssignmentOutput) ToVolumeBackupPolicyAssignmentOutputWithContext(ctx context.Context) VolumeBackupPolicyAssignmentOutput {
 	return o
+}
+
+func (o VolumeBackupPolicyAssignmentOutput) ToOutput(ctx context.Context) pulumix.Output[*VolumeBackupPolicyAssignment] {
+	return pulumix.Output[*VolumeBackupPolicyAssignment]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the volume to assign the policy to.
@@ -271,6 +296,12 @@ func (o VolumeBackupPolicyAssignmentArrayOutput) ToVolumeBackupPolicyAssignmentA
 	return o
 }
 
+func (o VolumeBackupPolicyAssignmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*VolumeBackupPolicyAssignment] {
+	return pulumix.Output[[]*VolumeBackupPolicyAssignment]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o VolumeBackupPolicyAssignmentArrayOutput) Index(i pulumi.IntInput) VolumeBackupPolicyAssignmentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *VolumeBackupPolicyAssignment {
 		return vs[0].([]*VolumeBackupPolicyAssignment)[vs[1].(int)]
@@ -289,6 +320,12 @@ func (o VolumeBackupPolicyAssignmentMapOutput) ToVolumeBackupPolicyAssignmentMap
 
 func (o VolumeBackupPolicyAssignmentMapOutput) ToVolumeBackupPolicyAssignmentMapOutputWithContext(ctx context.Context) VolumeBackupPolicyAssignmentMapOutput {
 	return o
+}
+
+func (o VolumeBackupPolicyAssignmentMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*VolumeBackupPolicyAssignment] {
+	return pulumix.Output[map[string]*VolumeBackupPolicyAssignment]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o VolumeBackupPolicyAssignmentMapOutput) MapIndex(k pulumi.StringInput) VolumeBackupPolicyAssignmentOutput {

@@ -92,7 +92,7 @@ public class AddressActionVerification extends com.pulumi.resources.CustomResour
      * Address identifier.
      * 
      */
-    @Export(name="addressKey", type=String.class, parameters={})
+    @Export(name="addressKey", refs={String.class}, tree="[0]")
     private Output<String> addressKey;
 
     /**
@@ -106,7 +106,7 @@ public class AddressActionVerification extends com.pulumi.resources.CustomResour
      * Address details model.
      * 
      */
-    @Export(name="addresses", type=List.class, parameters={AddressActionVerificationAddress.class})
+    @Export(name="addresses", refs={List.class,AddressActionVerificationAddress.class}, tree="[0,1]")
     private Output<List<AddressActionVerificationAddress>> addresses;
 
     /**
@@ -120,7 +120,7 @@ public class AddressActionVerification extends com.pulumi.resources.CustomResour
      * Name of the city.
      * 
      */
-    @Export(name="city", type=String.class, parameters={})
+    @Export(name="city", refs={String.class}, tree="[0]")
     private Output<String> city;
 
     /**
@@ -134,7 +134,7 @@ public class AddressActionVerification extends com.pulumi.resources.CustomResour
      * Name of the customer company.
      * 
      */
-    @Export(name="companyName", type=String.class, parameters={})
+    @Export(name="companyName", refs={String.class}, tree="[0]")
     private Output<String> companyName;
 
     /**
@@ -148,7 +148,7 @@ public class AddressActionVerification extends com.pulumi.resources.CustomResour
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -162,7 +162,7 @@ public class AddressActionVerification extends com.pulumi.resources.CustomResour
      * Contributor class of the customer company.
      * 
      */
-    @Export(name="contributorClass", type=String.class, parameters={})
+    @Export(name="contributorClass", refs={String.class}, tree="[0]")
     private Output<String> contributorClass;
 
     /**
@@ -176,7 +176,7 @@ public class AddressActionVerification extends com.pulumi.resources.CustomResour
      * Country of the address.
      * 
      */
-    @Export(name="country", type=String.class, parameters={})
+    @Export(name="country", refs={String.class}, tree="[0]")
     private Output<String> country;
 
     /**
@@ -190,7 +190,7 @@ public class AddressActionVerification extends com.pulumi.resources.CustomResour
      * County of the address.
      * 
      */
-    @Export(name="county", type=String.class, parameters={})
+    @Export(name="county", refs={String.class}, tree="[0]")
     private Output<String> county;
 
     /**
@@ -204,7 +204,7 @@ public class AddressActionVerification extends com.pulumi.resources.CustomResour
      * Department name of the customer company.
      * 
      */
-    @Export(name="departmentName", type=String.class, parameters={})
+    @Export(name="departmentName", refs={String.class}, tree="[0]")
     private Output<String> departmentName;
 
     /**
@@ -218,7 +218,7 @@ public class AddressActionVerification extends com.pulumi.resources.CustomResour
      * Contact person email address.
      * 
      */
-    @Export(name="emailAddress", type=String.class, parameters={})
+    @Export(name="emailAddress", refs={String.class}, tree="[0]")
     private Output<String> emailAddress;
 
     /**
@@ -232,7 +232,7 @@ public class AddressActionVerification extends com.pulumi.resources.CustomResour
      * First name of the contact person.
      * 
      */
-    @Export(name="firstName", type=String.class, parameters={})
+    @Export(name="firstName", refs={String.class}, tree="[0]")
     private Output<String> firstName;
 
     /**
@@ -246,7 +246,7 @@ public class AddressActionVerification extends com.pulumi.resources.CustomResour
      * Internal number of the customer company.
      * 
      */
-    @Export(name="internalNumber", type=String.class, parameters={})
+    @Export(name="internalNumber", refs={String.class}, tree="[0]")
     private Output<String> internalNumber;
 
     /**
@@ -260,7 +260,7 @@ public class AddressActionVerification extends com.pulumi.resources.CustomResour
      * Job title of the contact person.
      * 
      */
-    @Export(name="jobTitle", type=String.class, parameters={})
+    @Export(name="jobTitle", refs={String.class}, tree="[0]")
     private Output<String> jobTitle;
 
     /**
@@ -274,7 +274,7 @@ public class AddressActionVerification extends com.pulumi.resources.CustomResour
      * Last name of the contact person.
      * 
      */
-    @Export(name="lastName", type=String.class, parameters={})
+    @Export(name="lastName", refs={String.class}, tree="[0]")
     private Output<String> lastName;
 
     /**
@@ -288,7 +288,7 @@ public class AddressActionVerification extends com.pulumi.resources.CustomResour
      * Address line 1.
      * 
      */
-    @Export(name="line1", type=String.class, parameters={})
+    @Export(name="line1", refs={String.class}, tree="[0]")
     private Output<String> line1;
 
     /**
@@ -302,7 +302,7 @@ public class AddressActionVerification extends com.pulumi.resources.CustomResour
      * Address line 2.
      * 
      */
-    @Export(name="line2", type=String.class, parameters={})
+    @Export(name="line2", refs={String.class}, tree="[0]")
     private Output<String> line2;
 
     /**
@@ -316,7 +316,7 @@ public class AddressActionVerification extends com.pulumi.resources.CustomResour
      * Address line 3.
      * 
      */
-    @Export(name="line3", type=String.class, parameters={})
+    @Export(name="line3", refs={String.class}, tree="[0]")
     private Output<String> line3;
 
     /**
@@ -330,7 +330,7 @@ public class AddressActionVerification extends com.pulumi.resources.CustomResour
      * Address line 4.
      * 
      */
-    @Export(name="line4", type=String.class, parameters={})
+    @Export(name="line4", refs={String.class}, tree="[0]")
     private Output<String> line4;
 
     /**
@@ -344,7 +344,7 @@ public class AddressActionVerification extends com.pulumi.resources.CustomResour
      * Middle name of the contact person.
      * 
      */
-    @Export(name="middleName", type=String.class, parameters={})
+    @Export(name="middleName", refs={String.class}, tree="[0]")
     private Output<String> middleName;
 
     /**
@@ -358,7 +358,7 @@ public class AddressActionVerification extends com.pulumi.resources.CustomResour
      * Municipal Inscription.
      * 
      */
-    @Export(name="municipalInscription", type=String.class, parameters={})
+    @Export(name="municipalInscription", refs={String.class}, tree="[0]")
     private Output<String> municipalInscription;
 
     /**
@@ -372,7 +372,7 @@ public class AddressActionVerification extends com.pulumi.resources.CustomResour
      * The home region&#39;s public name of the logged in user.
      * 
      */
-    @Export(name="ospHomeRegion", type=String.class, parameters={})
+    @Export(name="ospHomeRegion", refs={String.class}, tree="[0]")
     private Output<String> ospHomeRegion;
 
     /**
@@ -386,7 +386,7 @@ public class AddressActionVerification extends com.pulumi.resources.CustomResour
      * Phone country code of the contact person.
      * 
      */
-    @Export(name="phoneCountryCode", type=String.class, parameters={})
+    @Export(name="phoneCountryCode", refs={String.class}, tree="[0]")
     private Output<String> phoneCountryCode;
 
     /**
@@ -400,7 +400,7 @@ public class AddressActionVerification extends com.pulumi.resources.CustomResour
      * Phone number of the contact person.
      * 
      */
-    @Export(name="phoneNumber", type=String.class, parameters={})
+    @Export(name="phoneNumber", refs={String.class}, tree="[0]")
     private Output<String> phoneNumber;
 
     /**
@@ -414,7 +414,7 @@ public class AddressActionVerification extends com.pulumi.resources.CustomResour
      * Post code of the address.
      * 
      */
-    @Export(name="postalCode", type=String.class, parameters={})
+    @Export(name="postalCode", refs={String.class}, tree="[0]")
     private Output<String> postalCode;
 
     /**
@@ -428,7 +428,7 @@ public class AddressActionVerification extends com.pulumi.resources.CustomResour
      * Province of the address.
      * 
      */
-    @Export(name="province", type=String.class, parameters={})
+    @Export(name="province", refs={String.class}, tree="[0]")
     private Output<String> province;
 
     /**
@@ -442,7 +442,7 @@ public class AddressActionVerification extends com.pulumi.resources.CustomResour
      * Address quality type.
      * 
      */
-    @Export(name="quality", type=String.class, parameters={})
+    @Export(name="quality", refs={String.class}, tree="[0]")
     private Output<String> quality;
 
     /**
@@ -456,7 +456,7 @@ public class AddressActionVerification extends com.pulumi.resources.CustomResour
      * State of the address.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -470,7 +470,7 @@ public class AddressActionVerification extends com.pulumi.resources.CustomResour
      * State Inscription.
      * 
      */
-    @Export(name="stateInscription", type=String.class, parameters={})
+    @Export(name="stateInscription", refs={String.class}, tree="[0]")
     private Output<String> stateInscription;
 
     /**
@@ -484,7 +484,7 @@ public class AddressActionVerification extends com.pulumi.resources.CustomResour
      * Street name of the address.
      * 
      */
-    @Export(name="streetName", type=String.class, parameters={})
+    @Export(name="streetName", refs={String.class}, tree="[0]")
     private Output<String> streetName;
 
     /**
@@ -501,7 +501,7 @@ public class AddressActionVerification extends com.pulumi.resources.CustomResour
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="streetNumber", type=String.class, parameters={})
+    @Export(name="streetNumber", refs={String.class}, tree="[0]")
     private Output<String> streetNumber;
 
     /**
@@ -518,7 +518,7 @@ public class AddressActionVerification extends com.pulumi.resources.CustomResour
      * Address verification code.
      * 
      */
-    @Export(name="verificationCode", type=String.class, parameters={})
+    @Export(name="verificationCode", refs={String.class}, tree="[0]")
     private Output<String> verificationCode;
 
     /**

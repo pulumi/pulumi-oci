@@ -62,7 +62,7 @@ public class ExportSet extends com.pulumi.resources.CustomResource {
      * The availability domain the export set is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    @Export(name="availabilityDomain", type=String.class, parameters={})
+    @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
     private Output<String> availabilityDomain;
 
     /**
@@ -76,7 +76,7 @@ public class ExportSet extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the export set.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -90,7 +90,7 @@ public class ExportSet extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My export set`
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -104,7 +104,7 @@ public class ExportSet extends com.pulumi.resources.CustomResource {
      * (Updatable) Controls the maximum `tbytes`, `fbytes`, and `abytes`, values reported by `NFS FSSTAT` calls through any associated mount targets. This is an advanced feature. For most applications, use the default value. The `tbytes` value reported by `FSSTAT` will be `maxFsStatBytes`. The value of `fbytes` and `abytes` will be `maxFsStatBytes` minus the metered size of the file system. If the metered size is larger than `maxFsStatBytes`, then `fbytes` and `abytes` will both be &#39;0&#39;.
      * 
      */
-    @Export(name="maxFsStatBytes", type=String.class, parameters={})
+    @Export(name="maxFsStatBytes", refs={String.class}, tree="[0]")
     private Output<String> maxFsStatBytes;
 
     /**
@@ -121,7 +121,7 @@ public class ExportSet extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="maxFsStatFiles", type=String.class, parameters={})
+    @Export(name="maxFsStatFiles", refs={String.class}, tree="[0]")
     private Output<String> maxFsStatFiles;
 
     /**
@@ -138,7 +138,7 @@ public class ExportSet extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the mount target that the export set is associated with
      * 
      */
-    @Export(name="mountTargetId", type=String.class, parameters={})
+    @Export(name="mountTargetId", refs={String.class}, tree="[0]")
     private Output<String> mountTargetId;
 
     /**
@@ -152,7 +152,7 @@ public class ExportSet extends com.pulumi.resources.CustomResource {
      * The current state of the export set.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -166,7 +166,7 @@ public class ExportSet extends com.pulumi.resources.CustomResource {
      * The date and time the export set was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -180,7 +180,7 @@ public class ExportSet extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual cloud network (VCN) the export set is in.
      * 
      */
-    @Export(name="vcnId", type=String.class, parameters={})
+    @Export(name="vcnId", refs={String.class}, tree="[0]")
     private Output<String> vcnId;
 
     /**

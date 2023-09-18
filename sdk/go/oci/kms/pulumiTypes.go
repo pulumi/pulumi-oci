@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -60,6 +61,12 @@ func (i GeneratedKeyKeyShapeArgs) ToGeneratedKeyKeyShapeOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GeneratedKeyKeyShapeOutput)
 }
 
+func (i GeneratedKeyKeyShapeArgs) ToOutput(ctx context.Context) pulumix.Output[GeneratedKeyKeyShape] {
+	return pulumix.Output[GeneratedKeyKeyShape]{
+		OutputState: i.ToGeneratedKeyKeyShapeOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i GeneratedKeyKeyShapeArgs) ToGeneratedKeyKeyShapePtrOutput() GeneratedKeyKeyShapePtrOutput {
 	return i.ToGeneratedKeyKeyShapePtrOutputWithContext(context.Background())
 }
@@ -101,6 +108,12 @@ func (i *generatedKeyKeyShapePtrType) ToGeneratedKeyKeyShapePtrOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(GeneratedKeyKeyShapePtrOutput)
 }
 
+func (i *generatedKeyKeyShapePtrType) ToOutput(ctx context.Context) pulumix.Output[*GeneratedKeyKeyShape] {
+	return pulumix.Output[*GeneratedKeyKeyShape]{
+		OutputState: i.ToGeneratedKeyKeyShapePtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GeneratedKeyKeyShapeOutput struct{ *pulumi.OutputState }
 
 func (GeneratedKeyKeyShapeOutput) ElementType() reflect.Type {
@@ -123,6 +136,12 @@ func (o GeneratedKeyKeyShapeOutput) ToGeneratedKeyKeyShapePtrOutputWithContext(c
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v GeneratedKeyKeyShape) *GeneratedKeyKeyShape {
 		return &v
 	}).(GeneratedKeyKeyShapePtrOutput)
+}
+
+func (o GeneratedKeyKeyShapeOutput) ToOutput(ctx context.Context) pulumix.Output[GeneratedKeyKeyShape] {
+	return pulumix.Output[GeneratedKeyKeyShape]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The algorithm used by a key's key versions to encrypt or decrypt.
@@ -155,6 +174,12 @@ func (o GeneratedKeyKeyShapePtrOutput) ToGeneratedKeyKeyShapePtrOutput() Generat
 
 func (o GeneratedKeyKeyShapePtrOutput) ToGeneratedKeyKeyShapePtrOutputWithContext(ctx context.Context) GeneratedKeyKeyShapePtrOutput {
 	return o
+}
+
+func (o GeneratedKeyKeyShapePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*GeneratedKeyKeyShape] {
+	return pulumix.Output[*GeneratedKeyKeyShape]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GeneratedKeyKeyShapePtrOutput) Elem() GeneratedKeyKeyShapeOutput {
@@ -247,6 +272,12 @@ func (i KeyKeyShapeArgs) ToKeyKeyShapeOutputWithContext(ctx context.Context) Key
 	return pulumi.ToOutputWithContext(ctx, i).(KeyKeyShapeOutput)
 }
 
+func (i KeyKeyShapeArgs) ToOutput(ctx context.Context) pulumix.Output[KeyKeyShape] {
+	return pulumix.Output[KeyKeyShape]{
+		OutputState: i.ToKeyKeyShapeOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i KeyKeyShapeArgs) ToKeyKeyShapePtrOutput() KeyKeyShapePtrOutput {
 	return i.ToKeyKeyShapePtrOutputWithContext(context.Background())
 }
@@ -288,6 +319,12 @@ func (i *keyKeyShapePtrType) ToKeyKeyShapePtrOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(KeyKeyShapePtrOutput)
 }
 
+func (i *keyKeyShapePtrType) ToOutput(ctx context.Context) pulumix.Output[*KeyKeyShape] {
+	return pulumix.Output[*KeyKeyShape]{
+		OutputState: i.ToKeyKeyShapePtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type KeyKeyShapeOutput struct{ *pulumi.OutputState }
 
 func (KeyKeyShapeOutput) ElementType() reflect.Type {
@@ -310,6 +347,12 @@ func (o KeyKeyShapeOutput) ToKeyKeyShapePtrOutputWithContext(ctx context.Context
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v KeyKeyShape) *KeyKeyShape {
 		return &v
 	}).(KeyKeyShapePtrOutput)
+}
+
+func (o KeyKeyShapeOutput) ToOutput(ctx context.Context) pulumix.Output[KeyKeyShape] {
+	return pulumix.Output[KeyKeyShape]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The algorithm used by a key's key versions to encrypt or decrypt.
@@ -342,6 +385,12 @@ func (o KeyKeyShapePtrOutput) ToKeyKeyShapePtrOutput() KeyKeyShapePtrOutput {
 
 func (o KeyKeyShapePtrOutput) ToKeyKeyShapePtrOutputWithContext(ctx context.Context) KeyKeyShapePtrOutput {
 	return o
+}
+
+func (o KeyKeyShapePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*KeyKeyShape] {
+	return pulumix.Output[*KeyKeyShape]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o KeyKeyShapePtrOutput) Elem() KeyKeyShapeOutput {
@@ -420,6 +469,12 @@ func (i KeyReplicaDetailArgs) ToKeyReplicaDetailOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(KeyReplicaDetailOutput)
 }
 
+func (i KeyReplicaDetailArgs) ToOutput(ctx context.Context) pulumix.Output[KeyReplicaDetail] {
+	return pulumix.Output[KeyReplicaDetail]{
+		OutputState: i.ToKeyReplicaDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // KeyReplicaDetailArrayInput is an input type that accepts KeyReplicaDetailArray and KeyReplicaDetailArrayOutput values.
 // You can construct a concrete instance of `KeyReplicaDetailArrayInput` via:
 //
@@ -445,6 +500,12 @@ func (i KeyReplicaDetailArray) ToKeyReplicaDetailArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(KeyReplicaDetailArrayOutput)
 }
 
+func (i KeyReplicaDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]KeyReplicaDetail] {
+	return pulumix.Output[[]KeyReplicaDetail]{
+		OutputState: i.ToKeyReplicaDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type KeyReplicaDetailOutput struct{ *pulumi.OutputState }
 
 func (KeyReplicaDetailOutput) ElementType() reflect.Type {
@@ -457,6 +518,12 @@ func (o KeyReplicaDetailOutput) ToKeyReplicaDetailOutput() KeyReplicaDetailOutpu
 
 func (o KeyReplicaDetailOutput) ToKeyReplicaDetailOutputWithContext(ctx context.Context) KeyReplicaDetailOutput {
 	return o
+}
+
+func (o KeyReplicaDetailOutput) ToOutput(ctx context.Context) pulumix.Output[KeyReplicaDetail] {
+	return pulumix.Output[KeyReplicaDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // ReplicationId associated with a key operation
@@ -476,6 +543,12 @@ func (o KeyReplicaDetailArrayOutput) ToKeyReplicaDetailArrayOutput() KeyReplicaD
 
 func (o KeyReplicaDetailArrayOutput) ToKeyReplicaDetailArrayOutputWithContext(ctx context.Context) KeyReplicaDetailArrayOutput {
 	return o
+}
+
+func (o KeyReplicaDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]KeyReplicaDetail] {
+	return pulumix.Output[[]KeyReplicaDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o KeyReplicaDetailArrayOutput) Index(i pulumi.IntInput) KeyReplicaDetailOutput {
@@ -525,6 +598,12 @@ func (i KeyRestoreFromFileArgs) ToKeyRestoreFromFileOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(KeyRestoreFromFileOutput)
 }
 
+func (i KeyRestoreFromFileArgs) ToOutput(ctx context.Context) pulumix.Output[KeyRestoreFromFile] {
+	return pulumix.Output[KeyRestoreFromFile]{
+		OutputState: i.ToKeyRestoreFromFileOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i KeyRestoreFromFileArgs) ToKeyRestoreFromFilePtrOutput() KeyRestoreFromFilePtrOutput {
 	return i.ToKeyRestoreFromFilePtrOutputWithContext(context.Background())
 }
@@ -566,6 +645,12 @@ func (i *keyRestoreFromFilePtrType) ToKeyRestoreFromFilePtrOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(KeyRestoreFromFilePtrOutput)
 }
 
+func (i *keyRestoreFromFilePtrType) ToOutput(ctx context.Context) pulumix.Output[*KeyRestoreFromFile] {
+	return pulumix.Output[*KeyRestoreFromFile]{
+		OutputState: i.ToKeyRestoreFromFilePtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type KeyRestoreFromFileOutput struct{ *pulumi.OutputState }
 
 func (KeyRestoreFromFileOutput) ElementType() reflect.Type {
@@ -588,6 +673,12 @@ func (o KeyRestoreFromFileOutput) ToKeyRestoreFromFilePtrOutputWithContext(ctx c
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v KeyRestoreFromFile) *KeyRestoreFromFile {
 		return &v
 	}).(KeyRestoreFromFilePtrOutput)
+}
+
+func (o KeyRestoreFromFileOutput) ToOutput(ctx context.Context) pulumix.Output[KeyRestoreFromFile] {
+	return pulumix.Output[KeyRestoreFromFile]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) content length of key's backup binary file
@@ -617,6 +708,12 @@ func (o KeyRestoreFromFilePtrOutput) ToKeyRestoreFromFilePtrOutput() KeyRestoreF
 
 func (o KeyRestoreFromFilePtrOutput) ToKeyRestoreFromFilePtrOutputWithContext(ctx context.Context) KeyRestoreFromFilePtrOutput {
 	return o
+}
+
+func (o KeyRestoreFromFilePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*KeyRestoreFromFile] {
+	return pulumix.Output[*KeyRestoreFromFile]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o KeyRestoreFromFilePtrOutput) Elem() KeyRestoreFromFileOutput {
@@ -708,6 +805,12 @@ func (i KeyRestoreFromObjectStoreArgs) ToKeyRestoreFromObjectStoreOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(KeyRestoreFromObjectStoreOutput)
 }
 
+func (i KeyRestoreFromObjectStoreArgs) ToOutput(ctx context.Context) pulumix.Output[KeyRestoreFromObjectStore] {
+	return pulumix.Output[KeyRestoreFromObjectStore]{
+		OutputState: i.ToKeyRestoreFromObjectStoreOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i KeyRestoreFromObjectStoreArgs) ToKeyRestoreFromObjectStorePtrOutput() KeyRestoreFromObjectStorePtrOutput {
 	return i.ToKeyRestoreFromObjectStorePtrOutputWithContext(context.Background())
 }
@@ -749,6 +852,12 @@ func (i *keyRestoreFromObjectStorePtrType) ToKeyRestoreFromObjectStorePtrOutputW
 	return pulumi.ToOutputWithContext(ctx, i).(KeyRestoreFromObjectStorePtrOutput)
 }
 
+func (i *keyRestoreFromObjectStorePtrType) ToOutput(ctx context.Context) pulumix.Output[*KeyRestoreFromObjectStore] {
+	return pulumix.Output[*KeyRestoreFromObjectStore]{
+		OutputState: i.ToKeyRestoreFromObjectStorePtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type KeyRestoreFromObjectStoreOutput struct{ *pulumi.OutputState }
 
 func (KeyRestoreFromObjectStoreOutput) ElementType() reflect.Type {
@@ -771,6 +880,12 @@ func (o KeyRestoreFromObjectStoreOutput) ToKeyRestoreFromObjectStorePtrOutputWit
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v KeyRestoreFromObjectStore) *KeyRestoreFromObjectStore {
 		return &v
 	}).(KeyRestoreFromObjectStorePtrOutput)
+}
+
+func (o KeyRestoreFromObjectStoreOutput) ToOutput(ctx context.Context) pulumix.Output[KeyRestoreFromObjectStore] {
+	return pulumix.Output[KeyRestoreFromObjectStore]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Name of the bucket where key was backed up
@@ -810,6 +925,12 @@ func (o KeyRestoreFromObjectStorePtrOutput) ToKeyRestoreFromObjectStorePtrOutput
 
 func (o KeyRestoreFromObjectStorePtrOutput) ToKeyRestoreFromObjectStorePtrOutputWithContext(ctx context.Context) KeyRestoreFromObjectStorePtrOutput {
 	return o
+}
+
+func (o KeyRestoreFromObjectStorePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*KeyRestoreFromObjectStore] {
+	return pulumix.Output[*KeyRestoreFromObjectStore]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o KeyRestoreFromObjectStorePtrOutput) Elem() KeyRestoreFromObjectStoreOutput {
@@ -905,6 +1026,12 @@ func (i KeyVersionReplicaDetailArgs) ToKeyVersionReplicaDetailOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(KeyVersionReplicaDetailOutput)
 }
 
+func (i KeyVersionReplicaDetailArgs) ToOutput(ctx context.Context) pulumix.Output[KeyVersionReplicaDetail] {
+	return pulumix.Output[KeyVersionReplicaDetail]{
+		OutputState: i.ToKeyVersionReplicaDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // KeyVersionReplicaDetailArrayInput is an input type that accepts KeyVersionReplicaDetailArray and KeyVersionReplicaDetailArrayOutput values.
 // You can construct a concrete instance of `KeyVersionReplicaDetailArrayInput` via:
 //
@@ -930,6 +1057,12 @@ func (i KeyVersionReplicaDetailArray) ToKeyVersionReplicaDetailArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(KeyVersionReplicaDetailArrayOutput)
 }
 
+func (i KeyVersionReplicaDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]KeyVersionReplicaDetail] {
+	return pulumix.Output[[]KeyVersionReplicaDetail]{
+		OutputState: i.ToKeyVersionReplicaDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type KeyVersionReplicaDetailOutput struct{ *pulumi.OutputState }
 
 func (KeyVersionReplicaDetailOutput) ElementType() reflect.Type {
@@ -942,6 +1075,12 @@ func (o KeyVersionReplicaDetailOutput) ToKeyVersionReplicaDetailOutput() KeyVers
 
 func (o KeyVersionReplicaDetailOutput) ToKeyVersionReplicaDetailOutputWithContext(ctx context.Context) KeyVersionReplicaDetailOutput {
 	return o
+}
+
+func (o KeyVersionReplicaDetailOutput) ToOutput(ctx context.Context) pulumix.Output[KeyVersionReplicaDetail] {
+	return pulumix.Output[KeyVersionReplicaDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // ReplicationId associated with a key version operation
@@ -961,6 +1100,12 @@ func (o KeyVersionReplicaDetailArrayOutput) ToKeyVersionReplicaDetailArrayOutput
 
 func (o KeyVersionReplicaDetailArrayOutput) ToKeyVersionReplicaDetailArrayOutputWithContext(ctx context.Context) KeyVersionReplicaDetailArrayOutput {
 	return o
+}
+
+func (o KeyVersionReplicaDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]KeyVersionReplicaDetail] {
+	return pulumix.Output[[]KeyVersionReplicaDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o KeyVersionReplicaDetailArrayOutput) Index(i pulumi.IntInput) KeyVersionReplicaDetailOutput {
@@ -1002,6 +1147,12 @@ func (i VaultReplicaDetailArgs) ToVaultReplicaDetailOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(VaultReplicaDetailOutput)
 }
 
+func (i VaultReplicaDetailArgs) ToOutput(ctx context.Context) pulumix.Output[VaultReplicaDetail] {
+	return pulumix.Output[VaultReplicaDetail]{
+		OutputState: i.ToVaultReplicaDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // VaultReplicaDetailArrayInput is an input type that accepts VaultReplicaDetailArray and VaultReplicaDetailArrayOutput values.
 // You can construct a concrete instance of `VaultReplicaDetailArrayInput` via:
 //
@@ -1027,6 +1178,12 @@ func (i VaultReplicaDetailArray) ToVaultReplicaDetailArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(VaultReplicaDetailArrayOutput)
 }
 
+func (i VaultReplicaDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]VaultReplicaDetail] {
+	return pulumix.Output[[]VaultReplicaDetail]{
+		OutputState: i.ToVaultReplicaDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type VaultReplicaDetailOutput struct{ *pulumi.OutputState }
 
 func (VaultReplicaDetailOutput) ElementType() reflect.Type {
@@ -1039,6 +1196,12 @@ func (o VaultReplicaDetailOutput) ToVaultReplicaDetailOutput() VaultReplicaDetai
 
 func (o VaultReplicaDetailOutput) ToVaultReplicaDetailOutputWithContext(ctx context.Context) VaultReplicaDetailOutput {
 	return o
+}
+
+func (o VaultReplicaDetailOutput) ToOutput(ctx context.Context) pulumix.Output[VaultReplicaDetail] {
+	return pulumix.Output[VaultReplicaDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // ReplicationId associated with a vault operation
@@ -1058,6 +1221,12 @@ func (o VaultReplicaDetailArrayOutput) ToVaultReplicaDetailArrayOutput() VaultRe
 
 func (o VaultReplicaDetailArrayOutput) ToVaultReplicaDetailArrayOutputWithContext(ctx context.Context) VaultReplicaDetailArrayOutput {
 	return o
+}
+
+func (o VaultReplicaDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]VaultReplicaDetail] {
+	return pulumix.Output[[]VaultReplicaDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o VaultReplicaDetailArrayOutput) Index(i pulumi.IntInput) VaultReplicaDetailOutput {
@@ -1107,6 +1276,12 @@ func (i VaultRestoreFromFileArgs) ToVaultRestoreFromFileOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(VaultRestoreFromFileOutput)
 }
 
+func (i VaultRestoreFromFileArgs) ToOutput(ctx context.Context) pulumix.Output[VaultRestoreFromFile] {
+	return pulumix.Output[VaultRestoreFromFile]{
+		OutputState: i.ToVaultRestoreFromFileOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i VaultRestoreFromFileArgs) ToVaultRestoreFromFilePtrOutput() VaultRestoreFromFilePtrOutput {
 	return i.ToVaultRestoreFromFilePtrOutputWithContext(context.Background())
 }
@@ -1148,6 +1323,12 @@ func (i *vaultRestoreFromFilePtrType) ToVaultRestoreFromFilePtrOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(VaultRestoreFromFilePtrOutput)
 }
 
+func (i *vaultRestoreFromFilePtrType) ToOutput(ctx context.Context) pulumix.Output[*VaultRestoreFromFile] {
+	return pulumix.Output[*VaultRestoreFromFile]{
+		OutputState: i.ToVaultRestoreFromFilePtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type VaultRestoreFromFileOutput struct{ *pulumi.OutputState }
 
 func (VaultRestoreFromFileOutput) ElementType() reflect.Type {
@@ -1170,6 +1351,12 @@ func (o VaultRestoreFromFileOutput) ToVaultRestoreFromFilePtrOutputWithContext(c
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v VaultRestoreFromFile) *VaultRestoreFromFile {
 		return &v
 	}).(VaultRestoreFromFilePtrOutput)
+}
+
+func (o VaultRestoreFromFileOutput) ToOutput(ctx context.Context) pulumix.Output[VaultRestoreFromFile] {
+	return pulumix.Output[VaultRestoreFromFile]{
+		OutputState: o.OutputState,
+	}
 }
 
 // content length of vault's backup binary file
@@ -1199,6 +1386,12 @@ func (o VaultRestoreFromFilePtrOutput) ToVaultRestoreFromFilePtrOutput() VaultRe
 
 func (o VaultRestoreFromFilePtrOutput) ToVaultRestoreFromFilePtrOutputWithContext(ctx context.Context) VaultRestoreFromFilePtrOutput {
 	return o
+}
+
+func (o VaultRestoreFromFilePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*VaultRestoreFromFile] {
+	return pulumix.Output[*VaultRestoreFromFile]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o VaultRestoreFromFilePtrOutput) Elem() VaultRestoreFromFileOutput {
@@ -1290,6 +1483,12 @@ func (i VaultRestoreFromObjectStoreArgs) ToVaultRestoreFromObjectStoreOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(VaultRestoreFromObjectStoreOutput)
 }
 
+func (i VaultRestoreFromObjectStoreArgs) ToOutput(ctx context.Context) pulumix.Output[VaultRestoreFromObjectStore] {
+	return pulumix.Output[VaultRestoreFromObjectStore]{
+		OutputState: i.ToVaultRestoreFromObjectStoreOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i VaultRestoreFromObjectStoreArgs) ToVaultRestoreFromObjectStorePtrOutput() VaultRestoreFromObjectStorePtrOutput {
 	return i.ToVaultRestoreFromObjectStorePtrOutputWithContext(context.Background())
 }
@@ -1331,6 +1530,12 @@ func (i *vaultRestoreFromObjectStorePtrType) ToVaultRestoreFromObjectStorePtrOut
 	return pulumi.ToOutputWithContext(ctx, i).(VaultRestoreFromObjectStorePtrOutput)
 }
 
+func (i *vaultRestoreFromObjectStorePtrType) ToOutput(ctx context.Context) pulumix.Output[*VaultRestoreFromObjectStore] {
+	return pulumix.Output[*VaultRestoreFromObjectStore]{
+		OutputState: i.ToVaultRestoreFromObjectStorePtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type VaultRestoreFromObjectStoreOutput struct{ *pulumi.OutputState }
 
 func (VaultRestoreFromObjectStoreOutput) ElementType() reflect.Type {
@@ -1353,6 +1558,12 @@ func (o VaultRestoreFromObjectStoreOutput) ToVaultRestoreFromObjectStorePtrOutpu
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v VaultRestoreFromObjectStore) *VaultRestoreFromObjectStore {
 		return &v
 	}).(VaultRestoreFromObjectStorePtrOutput)
+}
+
+func (o VaultRestoreFromObjectStoreOutput) ToOutput(ctx context.Context) pulumix.Output[VaultRestoreFromObjectStore] {
+	return pulumix.Output[VaultRestoreFromObjectStore]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Name of the bucket where vault was backed up
@@ -1392,6 +1603,12 @@ func (o VaultRestoreFromObjectStorePtrOutput) ToVaultRestoreFromObjectStorePtrOu
 
 func (o VaultRestoreFromObjectStorePtrOutput) ToVaultRestoreFromObjectStorePtrOutputWithContext(ctx context.Context) VaultRestoreFromObjectStorePtrOutput {
 	return o
+}
+
+func (o VaultRestoreFromObjectStorePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*VaultRestoreFromObjectStore] {
+	return pulumix.Output[*VaultRestoreFromObjectStore]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o VaultRestoreFromObjectStorePtrOutput) Elem() VaultRestoreFromObjectStoreOutput {
@@ -1501,6 +1718,12 @@ func (i GetKeyKeyShapeArgs) ToGetKeyKeyShapeOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeyKeyShapeOutput)
 }
 
+func (i GetKeyKeyShapeArgs) ToOutput(ctx context.Context) pulumix.Output[GetKeyKeyShape] {
+	return pulumix.Output[GetKeyKeyShape]{
+		OutputState: i.ToGetKeyKeyShapeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetKeyKeyShapeArrayInput is an input type that accepts GetKeyKeyShapeArray and GetKeyKeyShapeArrayOutput values.
 // You can construct a concrete instance of `GetKeyKeyShapeArrayInput` via:
 //
@@ -1526,6 +1749,12 @@ func (i GetKeyKeyShapeArray) ToGetKeyKeyShapeArrayOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeyKeyShapeArrayOutput)
 }
 
+func (i GetKeyKeyShapeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetKeyKeyShape] {
+	return pulumix.Output[[]GetKeyKeyShape]{
+		OutputState: i.ToGetKeyKeyShapeArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetKeyKeyShapeOutput struct{ *pulumi.OutputState }
 
 func (GetKeyKeyShapeOutput) ElementType() reflect.Type {
@@ -1538,6 +1767,12 @@ func (o GetKeyKeyShapeOutput) ToGetKeyKeyShapeOutput() GetKeyKeyShapeOutput {
 
 func (o GetKeyKeyShapeOutput) ToGetKeyKeyShapeOutputWithContext(ctx context.Context) GetKeyKeyShapeOutput {
 	return o
+}
+
+func (o GetKeyKeyShapeOutput) ToOutput(ctx context.Context) pulumix.Output[GetKeyKeyShape] {
+	return pulumix.Output[GetKeyKeyShape]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The algorithm used by a key's key versions to encrypt or decrypt.
@@ -1570,6 +1805,12 @@ func (o GetKeyKeyShapeArrayOutput) ToGetKeyKeyShapeArrayOutput() GetKeyKeyShapeA
 
 func (o GetKeyKeyShapeArrayOutput) ToGetKeyKeyShapeArrayOutputWithContext(ctx context.Context) GetKeyKeyShapeArrayOutput {
 	return o
+}
+
+func (o GetKeyKeyShapeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetKeyKeyShape] {
+	return pulumix.Output[[]GetKeyKeyShape]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetKeyKeyShapeArrayOutput) Index(i pulumi.IntInput) GetKeyKeyShapeOutput {
@@ -1611,6 +1852,12 @@ func (i GetKeyReplicaDetailArgs) ToGetKeyReplicaDetailOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeyReplicaDetailOutput)
 }
 
+func (i GetKeyReplicaDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetKeyReplicaDetail] {
+	return pulumix.Output[GetKeyReplicaDetail]{
+		OutputState: i.ToGetKeyReplicaDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetKeyReplicaDetailArrayInput is an input type that accepts GetKeyReplicaDetailArray and GetKeyReplicaDetailArrayOutput values.
 // You can construct a concrete instance of `GetKeyReplicaDetailArrayInput` via:
 //
@@ -1636,6 +1883,12 @@ func (i GetKeyReplicaDetailArray) ToGetKeyReplicaDetailArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeyReplicaDetailArrayOutput)
 }
 
+func (i GetKeyReplicaDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetKeyReplicaDetail] {
+	return pulumix.Output[[]GetKeyReplicaDetail]{
+		OutputState: i.ToGetKeyReplicaDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetKeyReplicaDetailOutput struct{ *pulumi.OutputState }
 
 func (GetKeyReplicaDetailOutput) ElementType() reflect.Type {
@@ -1648,6 +1901,12 @@ func (o GetKeyReplicaDetailOutput) ToGetKeyReplicaDetailOutput() GetKeyReplicaDe
 
 func (o GetKeyReplicaDetailOutput) ToGetKeyReplicaDetailOutputWithContext(ctx context.Context) GetKeyReplicaDetailOutput {
 	return o
+}
+
+func (o GetKeyReplicaDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetKeyReplicaDetail] {
+	return pulumix.Output[GetKeyReplicaDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // ReplicationId associated with a key operation
@@ -1667,6 +1926,12 @@ func (o GetKeyReplicaDetailArrayOutput) ToGetKeyReplicaDetailArrayOutput() GetKe
 
 func (o GetKeyReplicaDetailArrayOutput) ToGetKeyReplicaDetailArrayOutputWithContext(ctx context.Context) GetKeyReplicaDetailArrayOutput {
 	return o
+}
+
+func (o GetKeyReplicaDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetKeyReplicaDetail] {
+	return pulumix.Output[[]GetKeyReplicaDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetKeyReplicaDetailArrayOutput) Index(i pulumi.IntInput) GetKeyReplicaDetailOutput {
@@ -1716,6 +1981,12 @@ func (i GetKeyRestoreFromFileArgs) ToGetKeyRestoreFromFileOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeyRestoreFromFileOutput)
 }
 
+func (i GetKeyRestoreFromFileArgs) ToOutput(ctx context.Context) pulumix.Output[GetKeyRestoreFromFile] {
+	return pulumix.Output[GetKeyRestoreFromFile]{
+		OutputState: i.ToGetKeyRestoreFromFileOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetKeyRestoreFromFileArrayInput is an input type that accepts GetKeyRestoreFromFileArray and GetKeyRestoreFromFileArrayOutput values.
 // You can construct a concrete instance of `GetKeyRestoreFromFileArrayInput` via:
 //
@@ -1741,6 +2012,12 @@ func (i GetKeyRestoreFromFileArray) ToGetKeyRestoreFromFileArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeyRestoreFromFileArrayOutput)
 }
 
+func (i GetKeyRestoreFromFileArray) ToOutput(ctx context.Context) pulumix.Output[[]GetKeyRestoreFromFile] {
+	return pulumix.Output[[]GetKeyRestoreFromFile]{
+		OutputState: i.ToGetKeyRestoreFromFileArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetKeyRestoreFromFileOutput struct{ *pulumi.OutputState }
 
 func (GetKeyRestoreFromFileOutput) ElementType() reflect.Type {
@@ -1753,6 +2030,12 @@ func (o GetKeyRestoreFromFileOutput) ToGetKeyRestoreFromFileOutput() GetKeyResto
 
 func (o GetKeyRestoreFromFileOutput) ToGetKeyRestoreFromFileOutputWithContext(ctx context.Context) GetKeyRestoreFromFileOutput {
 	return o
+}
+
+func (o GetKeyRestoreFromFileOutput) ToOutput(ctx context.Context) pulumix.Output[GetKeyRestoreFromFile] {
+	return pulumix.Output[GetKeyRestoreFromFile]{
+		OutputState: o.OutputState,
+	}
 }
 
 // content length of key's backup binary file
@@ -1782,6 +2065,12 @@ func (o GetKeyRestoreFromFileArrayOutput) ToGetKeyRestoreFromFileArrayOutput() G
 
 func (o GetKeyRestoreFromFileArrayOutput) ToGetKeyRestoreFromFileArrayOutputWithContext(ctx context.Context) GetKeyRestoreFromFileArrayOutput {
 	return o
+}
+
+func (o GetKeyRestoreFromFileArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetKeyRestoreFromFile] {
+	return pulumix.Output[[]GetKeyRestoreFromFile]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetKeyRestoreFromFileArrayOutput) Index(i pulumi.IntInput) GetKeyRestoreFromFileOutput {
@@ -1839,6 +2128,12 @@ func (i GetKeyRestoreFromObjectStoreArgs) ToGetKeyRestoreFromObjectStoreOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeyRestoreFromObjectStoreOutput)
 }
 
+func (i GetKeyRestoreFromObjectStoreArgs) ToOutput(ctx context.Context) pulumix.Output[GetKeyRestoreFromObjectStore] {
+	return pulumix.Output[GetKeyRestoreFromObjectStore]{
+		OutputState: i.ToGetKeyRestoreFromObjectStoreOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetKeyRestoreFromObjectStoreArrayInput is an input type that accepts GetKeyRestoreFromObjectStoreArray and GetKeyRestoreFromObjectStoreArrayOutput values.
 // You can construct a concrete instance of `GetKeyRestoreFromObjectStoreArrayInput` via:
 //
@@ -1864,6 +2159,12 @@ func (i GetKeyRestoreFromObjectStoreArray) ToGetKeyRestoreFromObjectStoreArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeyRestoreFromObjectStoreArrayOutput)
 }
 
+func (i GetKeyRestoreFromObjectStoreArray) ToOutput(ctx context.Context) pulumix.Output[[]GetKeyRestoreFromObjectStore] {
+	return pulumix.Output[[]GetKeyRestoreFromObjectStore]{
+		OutputState: i.ToGetKeyRestoreFromObjectStoreArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetKeyRestoreFromObjectStoreOutput struct{ *pulumi.OutputState }
 
 func (GetKeyRestoreFromObjectStoreOutput) ElementType() reflect.Type {
@@ -1876,6 +2177,12 @@ func (o GetKeyRestoreFromObjectStoreOutput) ToGetKeyRestoreFromObjectStoreOutput
 
 func (o GetKeyRestoreFromObjectStoreOutput) ToGetKeyRestoreFromObjectStoreOutputWithContext(ctx context.Context) GetKeyRestoreFromObjectStoreOutput {
 	return o
+}
+
+func (o GetKeyRestoreFromObjectStoreOutput) ToOutput(ctx context.Context) pulumix.Output[GetKeyRestoreFromObjectStore] {
+	return pulumix.Output[GetKeyRestoreFromObjectStore]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Name of the bucket where key was backed up
@@ -1917,6 +2224,12 @@ func (o GetKeyRestoreFromObjectStoreArrayOutput) ToGetKeyRestoreFromObjectStoreA
 	return o
 }
 
+func (o GetKeyRestoreFromObjectStoreArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetKeyRestoreFromObjectStore] {
+	return pulumix.Output[[]GetKeyRestoreFromObjectStore]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetKeyRestoreFromObjectStoreArrayOutput) Index(i pulumi.IntInput) GetKeyRestoreFromObjectStoreOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetKeyRestoreFromObjectStore {
 		return vs[0].([]GetKeyRestoreFromObjectStore)[vs[1].(int)]
@@ -1956,6 +2269,12 @@ func (i GetKeyVersionReplicaDetailArgs) ToGetKeyVersionReplicaDetailOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeyVersionReplicaDetailOutput)
 }
 
+func (i GetKeyVersionReplicaDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetKeyVersionReplicaDetail] {
+	return pulumix.Output[GetKeyVersionReplicaDetail]{
+		OutputState: i.ToGetKeyVersionReplicaDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetKeyVersionReplicaDetailArrayInput is an input type that accepts GetKeyVersionReplicaDetailArray and GetKeyVersionReplicaDetailArrayOutput values.
 // You can construct a concrete instance of `GetKeyVersionReplicaDetailArrayInput` via:
 //
@@ -1981,6 +2300,12 @@ func (i GetKeyVersionReplicaDetailArray) ToGetKeyVersionReplicaDetailArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeyVersionReplicaDetailArrayOutput)
 }
 
+func (i GetKeyVersionReplicaDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetKeyVersionReplicaDetail] {
+	return pulumix.Output[[]GetKeyVersionReplicaDetail]{
+		OutputState: i.ToGetKeyVersionReplicaDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetKeyVersionReplicaDetailOutput struct{ *pulumi.OutputState }
 
 func (GetKeyVersionReplicaDetailOutput) ElementType() reflect.Type {
@@ -1993,6 +2318,12 @@ func (o GetKeyVersionReplicaDetailOutput) ToGetKeyVersionReplicaDetailOutput() G
 
 func (o GetKeyVersionReplicaDetailOutput) ToGetKeyVersionReplicaDetailOutputWithContext(ctx context.Context) GetKeyVersionReplicaDetailOutput {
 	return o
+}
+
+func (o GetKeyVersionReplicaDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetKeyVersionReplicaDetail] {
+	return pulumix.Output[GetKeyVersionReplicaDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // ReplicationId associated with a key version operation
@@ -2012,6 +2343,12 @@ func (o GetKeyVersionReplicaDetailArrayOutput) ToGetKeyVersionReplicaDetailArray
 
 func (o GetKeyVersionReplicaDetailArrayOutput) ToGetKeyVersionReplicaDetailArrayOutputWithContext(ctx context.Context) GetKeyVersionReplicaDetailArrayOutput {
 	return o
+}
+
+func (o GetKeyVersionReplicaDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetKeyVersionReplicaDetail] {
+	return pulumix.Output[[]GetKeyVersionReplicaDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetKeyVersionReplicaDetailArrayOutput) Index(i pulumi.IntInput) GetKeyVersionReplicaDetailOutput {
@@ -2055,6 +2392,12 @@ func (i GetKeyVersionsFilterArgs) ToGetKeyVersionsFilterOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeyVersionsFilterOutput)
 }
 
+func (i GetKeyVersionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetKeyVersionsFilter] {
+	return pulumix.Output[GetKeyVersionsFilter]{
+		OutputState: i.ToGetKeyVersionsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetKeyVersionsFilterArrayInput is an input type that accepts GetKeyVersionsFilterArray and GetKeyVersionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetKeyVersionsFilterArrayInput` via:
 //
@@ -2080,6 +2423,12 @@ func (i GetKeyVersionsFilterArray) ToGetKeyVersionsFilterArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeyVersionsFilterArrayOutput)
 }
 
+func (i GetKeyVersionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetKeyVersionsFilter] {
+	return pulumix.Output[[]GetKeyVersionsFilter]{
+		OutputState: i.ToGetKeyVersionsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetKeyVersionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetKeyVersionsFilterOutput) ElementType() reflect.Type {
@@ -2092,6 +2441,12 @@ func (o GetKeyVersionsFilterOutput) ToGetKeyVersionsFilterOutput() GetKeyVersion
 
 func (o GetKeyVersionsFilterOutput) ToGetKeyVersionsFilterOutputWithContext(ctx context.Context) GetKeyVersionsFilterOutput {
 	return o
+}
+
+func (o GetKeyVersionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetKeyVersionsFilter] {
+	return pulumix.Output[GetKeyVersionsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetKeyVersionsFilterOutput) Name() pulumi.StringOutput {
@@ -2118,6 +2473,12 @@ func (o GetKeyVersionsFilterArrayOutput) ToGetKeyVersionsFilterArrayOutput() Get
 
 func (o GetKeyVersionsFilterArrayOutput) ToGetKeyVersionsFilterArrayOutputWithContext(ctx context.Context) GetKeyVersionsFilterArrayOutput {
 	return o
+}
+
+func (o GetKeyVersionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetKeyVersionsFilter] {
+	return pulumix.Output[[]GetKeyVersionsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetKeyVersionsFilterArrayOutput) Index(i pulumi.IntInput) GetKeyVersionsFilterOutput {
@@ -2209,6 +2570,12 @@ func (i GetKeyVersionsKeyVersionArgs) ToGetKeyVersionsKeyVersionOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeyVersionsKeyVersionOutput)
 }
 
+func (i GetKeyVersionsKeyVersionArgs) ToOutput(ctx context.Context) pulumix.Output[GetKeyVersionsKeyVersion] {
+	return pulumix.Output[GetKeyVersionsKeyVersion]{
+		OutputState: i.ToGetKeyVersionsKeyVersionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetKeyVersionsKeyVersionArrayInput is an input type that accepts GetKeyVersionsKeyVersionArray and GetKeyVersionsKeyVersionArrayOutput values.
 // You can construct a concrete instance of `GetKeyVersionsKeyVersionArrayInput` via:
 //
@@ -2234,6 +2601,12 @@ func (i GetKeyVersionsKeyVersionArray) ToGetKeyVersionsKeyVersionArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeyVersionsKeyVersionArrayOutput)
 }
 
+func (i GetKeyVersionsKeyVersionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetKeyVersionsKeyVersion] {
+	return pulumix.Output[[]GetKeyVersionsKeyVersion]{
+		OutputState: i.ToGetKeyVersionsKeyVersionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetKeyVersionsKeyVersionOutput struct{ *pulumi.OutputState }
 
 func (GetKeyVersionsKeyVersionOutput) ElementType() reflect.Type {
@@ -2246,6 +2619,12 @@ func (o GetKeyVersionsKeyVersionOutput) ToGetKeyVersionsKeyVersionOutput() GetKe
 
 func (o GetKeyVersionsKeyVersionOutput) ToGetKeyVersionsKeyVersionOutputWithContext(ctx context.Context) GetKeyVersionsKeyVersionOutput {
 	return o
+}
+
+func (o GetKeyVersionsKeyVersionOutput) ToOutput(ctx context.Context) pulumix.Output[GetKeyVersionsKeyVersion] {
+	return pulumix.Output[GetKeyVersionsKeyVersion]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the compartment that contains this key version.
@@ -2331,6 +2710,12 @@ func (o GetKeyVersionsKeyVersionArrayOutput) ToGetKeyVersionsKeyVersionArrayOutp
 	return o
 }
 
+func (o GetKeyVersionsKeyVersionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetKeyVersionsKeyVersion] {
+	return pulumix.Output[[]GetKeyVersionsKeyVersion]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetKeyVersionsKeyVersionArrayOutput) Index(i pulumi.IntInput) GetKeyVersionsKeyVersionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetKeyVersionsKeyVersion {
 		return vs[0].([]GetKeyVersionsKeyVersion)[vs[1].(int)]
@@ -2370,6 +2755,12 @@ func (i GetKeyVersionsKeyVersionReplicaDetailArgs) ToGetKeyVersionsKeyVersionRep
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeyVersionsKeyVersionReplicaDetailOutput)
 }
 
+func (i GetKeyVersionsKeyVersionReplicaDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetKeyVersionsKeyVersionReplicaDetail] {
+	return pulumix.Output[GetKeyVersionsKeyVersionReplicaDetail]{
+		OutputState: i.ToGetKeyVersionsKeyVersionReplicaDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetKeyVersionsKeyVersionReplicaDetailArrayInput is an input type that accepts GetKeyVersionsKeyVersionReplicaDetailArray and GetKeyVersionsKeyVersionReplicaDetailArrayOutput values.
 // You can construct a concrete instance of `GetKeyVersionsKeyVersionReplicaDetailArrayInput` via:
 //
@@ -2395,6 +2786,12 @@ func (i GetKeyVersionsKeyVersionReplicaDetailArray) ToGetKeyVersionsKeyVersionRe
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeyVersionsKeyVersionReplicaDetailArrayOutput)
 }
 
+func (i GetKeyVersionsKeyVersionReplicaDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetKeyVersionsKeyVersionReplicaDetail] {
+	return pulumix.Output[[]GetKeyVersionsKeyVersionReplicaDetail]{
+		OutputState: i.ToGetKeyVersionsKeyVersionReplicaDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetKeyVersionsKeyVersionReplicaDetailOutput struct{ *pulumi.OutputState }
 
 func (GetKeyVersionsKeyVersionReplicaDetailOutput) ElementType() reflect.Type {
@@ -2407,6 +2804,12 @@ func (o GetKeyVersionsKeyVersionReplicaDetailOutput) ToGetKeyVersionsKeyVersionR
 
 func (o GetKeyVersionsKeyVersionReplicaDetailOutput) ToGetKeyVersionsKeyVersionReplicaDetailOutputWithContext(ctx context.Context) GetKeyVersionsKeyVersionReplicaDetailOutput {
 	return o
+}
+
+func (o GetKeyVersionsKeyVersionReplicaDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetKeyVersionsKeyVersionReplicaDetail] {
+	return pulumix.Output[GetKeyVersionsKeyVersionReplicaDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // ReplicationId associated with a key version operation
@@ -2426,6 +2829,12 @@ func (o GetKeyVersionsKeyVersionReplicaDetailArrayOutput) ToGetKeyVersionsKeyVer
 
 func (o GetKeyVersionsKeyVersionReplicaDetailArrayOutput) ToGetKeyVersionsKeyVersionReplicaDetailArrayOutputWithContext(ctx context.Context) GetKeyVersionsKeyVersionReplicaDetailArrayOutput {
 	return o
+}
+
+func (o GetKeyVersionsKeyVersionReplicaDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetKeyVersionsKeyVersionReplicaDetail] {
+	return pulumix.Output[[]GetKeyVersionsKeyVersionReplicaDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetKeyVersionsKeyVersionReplicaDetailArrayOutput) Index(i pulumi.IntInput) GetKeyVersionsKeyVersionReplicaDetailOutput {
@@ -2469,6 +2878,12 @@ func (i GetKeysFilterArgs) ToGetKeysFilterOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeysFilterOutput)
 }
 
+func (i GetKeysFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetKeysFilter] {
+	return pulumix.Output[GetKeysFilter]{
+		OutputState: i.ToGetKeysFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetKeysFilterArrayInput is an input type that accepts GetKeysFilterArray and GetKeysFilterArrayOutput values.
 // You can construct a concrete instance of `GetKeysFilterArrayInput` via:
 //
@@ -2494,6 +2909,12 @@ func (i GetKeysFilterArray) ToGetKeysFilterArrayOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeysFilterArrayOutput)
 }
 
+func (i GetKeysFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetKeysFilter] {
+	return pulumix.Output[[]GetKeysFilter]{
+		OutputState: i.ToGetKeysFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetKeysFilterOutput struct{ *pulumi.OutputState }
 
 func (GetKeysFilterOutput) ElementType() reflect.Type {
@@ -2506,6 +2927,12 @@ func (o GetKeysFilterOutput) ToGetKeysFilterOutput() GetKeysFilterOutput {
 
 func (o GetKeysFilterOutput) ToGetKeysFilterOutputWithContext(ctx context.Context) GetKeysFilterOutput {
 	return o
+}
+
+func (o GetKeysFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetKeysFilter] {
+	return pulumix.Output[GetKeysFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetKeysFilterOutput) Name() pulumi.StringOutput {
@@ -2532,6 +2959,12 @@ func (o GetKeysFilterArrayOutput) ToGetKeysFilterArrayOutput() GetKeysFilterArra
 
 func (o GetKeysFilterArrayOutput) ToGetKeysFilterArrayOutputWithContext(ctx context.Context) GetKeysFilterArrayOutput {
 	return o
+}
+
+func (o GetKeysFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetKeysFilter] {
+	return pulumix.Output[[]GetKeysFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetKeysFilterArrayOutput) Index(i pulumi.IntInput) GetKeysFilterOutput {
@@ -2639,6 +3072,12 @@ func (i GetKeysKeyArgs) ToGetKeysKeyOutputWithContext(ctx context.Context) GetKe
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeysKeyOutput)
 }
 
+func (i GetKeysKeyArgs) ToOutput(ctx context.Context) pulumix.Output[GetKeysKey] {
+	return pulumix.Output[GetKeysKey]{
+		OutputState: i.ToGetKeysKeyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetKeysKeyArrayInput is an input type that accepts GetKeysKeyArray and GetKeysKeyArrayOutput values.
 // You can construct a concrete instance of `GetKeysKeyArrayInput` via:
 //
@@ -2664,6 +3103,12 @@ func (i GetKeysKeyArray) ToGetKeysKeyArrayOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeysKeyArrayOutput)
 }
 
+func (i GetKeysKeyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetKeysKey] {
+	return pulumix.Output[[]GetKeysKey]{
+		OutputState: i.ToGetKeysKeyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetKeysKeyOutput struct{ *pulumi.OutputState }
 
 func (GetKeysKeyOutput) ElementType() reflect.Type {
@@ -2676,6 +3121,12 @@ func (o GetKeysKeyOutput) ToGetKeysKeyOutput() GetKeysKeyOutput {
 
 func (o GetKeysKeyOutput) ToGetKeysKeyOutputWithContext(ctx context.Context) GetKeysKeyOutput {
 	return o
+}
+
+func (o GetKeysKeyOutput) ToOutput(ctx context.Context) pulumix.Output[GetKeysKey] {
+	return pulumix.Output[GetKeysKey]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the compartment.
@@ -2787,6 +3238,12 @@ func (o GetKeysKeyArrayOutput) ToGetKeysKeyArrayOutputWithContext(ctx context.Co
 	return o
 }
 
+func (o GetKeysKeyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetKeysKey] {
+	return pulumix.Output[[]GetKeysKey]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetKeysKeyArrayOutput) Index(i pulumi.IntInput) GetKeysKeyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetKeysKey {
 		return vs[0].([]GetKeysKey)[vs[1].(int)]
@@ -2834,6 +3291,12 @@ func (i GetKeysKeyKeyShapeArgs) ToGetKeysKeyKeyShapeOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeysKeyKeyShapeOutput)
 }
 
+func (i GetKeysKeyKeyShapeArgs) ToOutput(ctx context.Context) pulumix.Output[GetKeysKeyKeyShape] {
+	return pulumix.Output[GetKeysKeyKeyShape]{
+		OutputState: i.ToGetKeysKeyKeyShapeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetKeysKeyKeyShapeArrayInput is an input type that accepts GetKeysKeyKeyShapeArray and GetKeysKeyKeyShapeArrayOutput values.
 // You can construct a concrete instance of `GetKeysKeyKeyShapeArrayInput` via:
 //
@@ -2859,6 +3322,12 @@ func (i GetKeysKeyKeyShapeArray) ToGetKeysKeyKeyShapeArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeysKeyKeyShapeArrayOutput)
 }
 
+func (i GetKeysKeyKeyShapeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetKeysKeyKeyShape] {
+	return pulumix.Output[[]GetKeysKeyKeyShape]{
+		OutputState: i.ToGetKeysKeyKeyShapeArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetKeysKeyKeyShapeOutput struct{ *pulumi.OutputState }
 
 func (GetKeysKeyKeyShapeOutput) ElementType() reflect.Type {
@@ -2871,6 +3340,12 @@ func (o GetKeysKeyKeyShapeOutput) ToGetKeysKeyKeyShapeOutput() GetKeysKeyKeyShap
 
 func (o GetKeysKeyKeyShapeOutput) ToGetKeysKeyKeyShapeOutputWithContext(ctx context.Context) GetKeysKeyKeyShapeOutput {
 	return o
+}
+
+func (o GetKeysKeyKeyShapeOutput) ToOutput(ctx context.Context) pulumix.Output[GetKeysKeyKeyShape] {
+	return pulumix.Output[GetKeysKeyKeyShape]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The algorithm used by a key's key versions to encrypt or decrypt data. Currently, support includes AES, RSA, and ECDSA algorithms.
@@ -2900,6 +3375,12 @@ func (o GetKeysKeyKeyShapeArrayOutput) ToGetKeysKeyKeyShapeArrayOutput() GetKeys
 
 func (o GetKeysKeyKeyShapeArrayOutput) ToGetKeysKeyKeyShapeArrayOutputWithContext(ctx context.Context) GetKeysKeyKeyShapeArrayOutput {
 	return o
+}
+
+func (o GetKeysKeyKeyShapeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetKeysKeyKeyShape] {
+	return pulumix.Output[[]GetKeysKeyKeyShape]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetKeysKeyKeyShapeArrayOutput) Index(i pulumi.IntInput) GetKeysKeyKeyShapeOutput {
@@ -2941,6 +3422,12 @@ func (i GetKeysKeyReplicaDetailArgs) ToGetKeysKeyReplicaDetailOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeysKeyReplicaDetailOutput)
 }
 
+func (i GetKeysKeyReplicaDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetKeysKeyReplicaDetail] {
+	return pulumix.Output[GetKeysKeyReplicaDetail]{
+		OutputState: i.ToGetKeysKeyReplicaDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetKeysKeyReplicaDetailArrayInput is an input type that accepts GetKeysKeyReplicaDetailArray and GetKeysKeyReplicaDetailArrayOutput values.
 // You can construct a concrete instance of `GetKeysKeyReplicaDetailArrayInput` via:
 //
@@ -2966,6 +3453,12 @@ func (i GetKeysKeyReplicaDetailArray) ToGetKeysKeyReplicaDetailArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeysKeyReplicaDetailArrayOutput)
 }
 
+func (i GetKeysKeyReplicaDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetKeysKeyReplicaDetail] {
+	return pulumix.Output[[]GetKeysKeyReplicaDetail]{
+		OutputState: i.ToGetKeysKeyReplicaDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetKeysKeyReplicaDetailOutput struct{ *pulumi.OutputState }
 
 func (GetKeysKeyReplicaDetailOutput) ElementType() reflect.Type {
@@ -2978,6 +3471,12 @@ func (o GetKeysKeyReplicaDetailOutput) ToGetKeysKeyReplicaDetailOutput() GetKeys
 
 func (o GetKeysKeyReplicaDetailOutput) ToGetKeysKeyReplicaDetailOutputWithContext(ctx context.Context) GetKeysKeyReplicaDetailOutput {
 	return o
+}
+
+func (o GetKeysKeyReplicaDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetKeysKeyReplicaDetail] {
+	return pulumix.Output[GetKeysKeyReplicaDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // ReplicationId associated with a key operation
@@ -2997,6 +3496,12 @@ func (o GetKeysKeyReplicaDetailArrayOutput) ToGetKeysKeyReplicaDetailArrayOutput
 
 func (o GetKeysKeyReplicaDetailArrayOutput) ToGetKeysKeyReplicaDetailArrayOutputWithContext(ctx context.Context) GetKeysKeyReplicaDetailArrayOutput {
 	return o
+}
+
+func (o GetKeysKeyReplicaDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetKeysKeyReplicaDetail] {
+	return pulumix.Output[[]GetKeysKeyReplicaDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetKeysKeyReplicaDetailArrayOutput) Index(i pulumi.IntInput) GetKeysKeyReplicaDetailOutput {
@@ -3040,6 +3545,12 @@ func (i GetKeysKeyRestoreFromFileArgs) ToGetKeysKeyRestoreFromFileOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeysKeyRestoreFromFileOutput)
 }
 
+func (i GetKeysKeyRestoreFromFileArgs) ToOutput(ctx context.Context) pulumix.Output[GetKeysKeyRestoreFromFile] {
+	return pulumix.Output[GetKeysKeyRestoreFromFile]{
+		OutputState: i.ToGetKeysKeyRestoreFromFileOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetKeysKeyRestoreFromFileArrayInput is an input type that accepts GetKeysKeyRestoreFromFileArray and GetKeysKeyRestoreFromFileArrayOutput values.
 // You can construct a concrete instance of `GetKeysKeyRestoreFromFileArrayInput` via:
 //
@@ -3065,6 +3576,12 @@ func (i GetKeysKeyRestoreFromFileArray) ToGetKeysKeyRestoreFromFileArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeysKeyRestoreFromFileArrayOutput)
 }
 
+func (i GetKeysKeyRestoreFromFileArray) ToOutput(ctx context.Context) pulumix.Output[[]GetKeysKeyRestoreFromFile] {
+	return pulumix.Output[[]GetKeysKeyRestoreFromFile]{
+		OutputState: i.ToGetKeysKeyRestoreFromFileArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetKeysKeyRestoreFromFileOutput struct{ *pulumi.OutputState }
 
 func (GetKeysKeyRestoreFromFileOutput) ElementType() reflect.Type {
@@ -3077,6 +3594,12 @@ func (o GetKeysKeyRestoreFromFileOutput) ToGetKeysKeyRestoreFromFileOutput() Get
 
 func (o GetKeysKeyRestoreFromFileOutput) ToGetKeysKeyRestoreFromFileOutputWithContext(ctx context.Context) GetKeysKeyRestoreFromFileOutput {
 	return o
+}
+
+func (o GetKeysKeyRestoreFromFileOutput) ToOutput(ctx context.Context) pulumix.Output[GetKeysKeyRestoreFromFile] {
+	return pulumix.Output[GetKeysKeyRestoreFromFile]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetKeysKeyRestoreFromFileOutput) ContentLength() pulumi.StringOutput {
@@ -3103,6 +3626,12 @@ func (o GetKeysKeyRestoreFromFileArrayOutput) ToGetKeysKeyRestoreFromFileArrayOu
 
 func (o GetKeysKeyRestoreFromFileArrayOutput) ToGetKeysKeyRestoreFromFileArrayOutputWithContext(ctx context.Context) GetKeysKeyRestoreFromFileArrayOutput {
 	return o
+}
+
+func (o GetKeysKeyRestoreFromFileArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetKeysKeyRestoreFromFile] {
+	return pulumix.Output[[]GetKeysKeyRestoreFromFile]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetKeysKeyRestoreFromFileArrayOutput) Index(i pulumi.IntInput) GetKeysKeyRestoreFromFileOutput {
@@ -3150,6 +3679,12 @@ func (i GetKeysKeyRestoreFromObjectStoreArgs) ToGetKeysKeyRestoreFromObjectStore
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeysKeyRestoreFromObjectStoreOutput)
 }
 
+func (i GetKeysKeyRestoreFromObjectStoreArgs) ToOutput(ctx context.Context) pulumix.Output[GetKeysKeyRestoreFromObjectStore] {
+	return pulumix.Output[GetKeysKeyRestoreFromObjectStore]{
+		OutputState: i.ToGetKeysKeyRestoreFromObjectStoreOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetKeysKeyRestoreFromObjectStoreArrayInput is an input type that accepts GetKeysKeyRestoreFromObjectStoreArray and GetKeysKeyRestoreFromObjectStoreArrayOutput values.
 // You can construct a concrete instance of `GetKeysKeyRestoreFromObjectStoreArrayInput` via:
 //
@@ -3175,6 +3710,12 @@ func (i GetKeysKeyRestoreFromObjectStoreArray) ToGetKeysKeyRestoreFromObjectStor
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeysKeyRestoreFromObjectStoreArrayOutput)
 }
 
+func (i GetKeysKeyRestoreFromObjectStoreArray) ToOutput(ctx context.Context) pulumix.Output[[]GetKeysKeyRestoreFromObjectStore] {
+	return pulumix.Output[[]GetKeysKeyRestoreFromObjectStore]{
+		OutputState: i.ToGetKeysKeyRestoreFromObjectStoreArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetKeysKeyRestoreFromObjectStoreOutput struct{ *pulumi.OutputState }
 
 func (GetKeysKeyRestoreFromObjectStoreOutput) ElementType() reflect.Type {
@@ -3187,6 +3728,12 @@ func (o GetKeysKeyRestoreFromObjectStoreOutput) ToGetKeysKeyRestoreFromObjectSto
 
 func (o GetKeysKeyRestoreFromObjectStoreOutput) ToGetKeysKeyRestoreFromObjectStoreOutputWithContext(ctx context.Context) GetKeysKeyRestoreFromObjectStoreOutput {
 	return o
+}
+
+func (o GetKeysKeyRestoreFromObjectStoreOutput) ToOutput(ctx context.Context) pulumix.Output[GetKeysKeyRestoreFromObjectStore] {
+	return pulumix.Output[GetKeysKeyRestoreFromObjectStore]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetKeysKeyRestoreFromObjectStoreOutput) Bucket() pulumi.StringOutput {
@@ -3221,6 +3768,12 @@ func (o GetKeysKeyRestoreFromObjectStoreArrayOutput) ToGetKeysKeyRestoreFromObje
 
 func (o GetKeysKeyRestoreFromObjectStoreArrayOutput) ToGetKeysKeyRestoreFromObjectStoreArrayOutputWithContext(ctx context.Context) GetKeysKeyRestoreFromObjectStoreArrayOutput {
 	return o
+}
+
+func (o GetKeysKeyRestoreFromObjectStoreArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetKeysKeyRestoreFromObjectStore] {
+	return pulumix.Output[[]GetKeysKeyRestoreFromObjectStore]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetKeysKeyRestoreFromObjectStoreArrayOutput) Index(i pulumi.IntInput) GetKeysKeyRestoreFromObjectStoreOutput {
@@ -3266,6 +3819,12 @@ func (i GetReplicationStatusReplicaDetailArgs) ToGetReplicationStatusReplicaDeta
 	return pulumi.ToOutputWithContext(ctx, i).(GetReplicationStatusReplicaDetailOutput)
 }
 
+func (i GetReplicationStatusReplicaDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetReplicationStatusReplicaDetail] {
+	return pulumix.Output[GetReplicationStatusReplicaDetail]{
+		OutputState: i.ToGetReplicationStatusReplicaDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetReplicationStatusReplicaDetailArrayInput is an input type that accepts GetReplicationStatusReplicaDetailArray and GetReplicationStatusReplicaDetailArrayOutput values.
 // You can construct a concrete instance of `GetReplicationStatusReplicaDetailArrayInput` via:
 //
@@ -3291,6 +3850,12 @@ func (i GetReplicationStatusReplicaDetailArray) ToGetReplicationStatusReplicaDet
 	return pulumi.ToOutputWithContext(ctx, i).(GetReplicationStatusReplicaDetailArrayOutput)
 }
 
+func (i GetReplicationStatusReplicaDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetReplicationStatusReplicaDetail] {
+	return pulumix.Output[[]GetReplicationStatusReplicaDetail]{
+		OutputState: i.ToGetReplicationStatusReplicaDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetReplicationStatusReplicaDetailOutput struct{ *pulumi.OutputState }
 
 func (GetReplicationStatusReplicaDetailOutput) ElementType() reflect.Type {
@@ -3303,6 +3868,12 @@ func (o GetReplicationStatusReplicaDetailOutput) ToGetReplicationStatusReplicaDe
 
 func (o GetReplicationStatusReplicaDetailOutput) ToGetReplicationStatusReplicaDetailOutputWithContext(ctx context.Context) GetReplicationStatusReplicaDetailOutput {
 	return o
+}
+
+func (o GetReplicationStatusReplicaDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetReplicationStatusReplicaDetail] {
+	return pulumix.Output[GetReplicationStatusReplicaDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The replica region
@@ -3327,6 +3898,12 @@ func (o GetReplicationStatusReplicaDetailArrayOutput) ToGetReplicationStatusRepl
 
 func (o GetReplicationStatusReplicaDetailArrayOutput) ToGetReplicationStatusReplicaDetailArrayOutputWithContext(ctx context.Context) GetReplicationStatusReplicaDetailArrayOutput {
 	return o
+}
+
+func (o GetReplicationStatusReplicaDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetReplicationStatusReplicaDetail] {
+	return pulumix.Output[[]GetReplicationStatusReplicaDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetReplicationStatusReplicaDetailArrayOutput) Index(i pulumi.IntInput) GetReplicationStatusReplicaDetailOutput {
@@ -3368,6 +3945,12 @@ func (i GetVaultReplicaDetailArgs) ToGetVaultReplicaDetailOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultReplicaDetailOutput)
 }
 
+func (i GetVaultReplicaDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetVaultReplicaDetail] {
+	return pulumix.Output[GetVaultReplicaDetail]{
+		OutputState: i.ToGetVaultReplicaDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVaultReplicaDetailArrayInput is an input type that accepts GetVaultReplicaDetailArray and GetVaultReplicaDetailArrayOutput values.
 // You can construct a concrete instance of `GetVaultReplicaDetailArrayInput` via:
 //
@@ -3393,6 +3976,12 @@ func (i GetVaultReplicaDetailArray) ToGetVaultReplicaDetailArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultReplicaDetailArrayOutput)
 }
 
+func (i GetVaultReplicaDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultReplicaDetail] {
+	return pulumix.Output[[]GetVaultReplicaDetail]{
+		OutputState: i.ToGetVaultReplicaDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVaultReplicaDetailOutput struct{ *pulumi.OutputState }
 
 func (GetVaultReplicaDetailOutput) ElementType() reflect.Type {
@@ -3405,6 +3994,12 @@ func (o GetVaultReplicaDetailOutput) ToGetVaultReplicaDetailOutput() GetVaultRep
 
 func (o GetVaultReplicaDetailOutput) ToGetVaultReplicaDetailOutputWithContext(ctx context.Context) GetVaultReplicaDetailOutput {
 	return o
+}
+
+func (o GetVaultReplicaDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetVaultReplicaDetail] {
+	return pulumix.Output[GetVaultReplicaDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // ReplicationId associated with a vault operation
@@ -3424,6 +4019,12 @@ func (o GetVaultReplicaDetailArrayOutput) ToGetVaultReplicaDetailArrayOutput() G
 
 func (o GetVaultReplicaDetailArrayOutput) ToGetVaultReplicaDetailArrayOutputWithContext(ctx context.Context) GetVaultReplicaDetailArrayOutput {
 	return o
+}
+
+func (o GetVaultReplicaDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultReplicaDetail] {
+	return pulumix.Output[[]GetVaultReplicaDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVaultReplicaDetailArrayOutput) Index(i pulumi.IntInput) GetVaultReplicaDetailOutput {
@@ -3467,6 +4068,12 @@ func (i GetVaultReplicasFilterArgs) ToGetVaultReplicasFilterOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultReplicasFilterOutput)
 }
 
+func (i GetVaultReplicasFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVaultReplicasFilter] {
+	return pulumix.Output[GetVaultReplicasFilter]{
+		OutputState: i.ToGetVaultReplicasFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVaultReplicasFilterArrayInput is an input type that accepts GetVaultReplicasFilterArray and GetVaultReplicasFilterArrayOutput values.
 // You can construct a concrete instance of `GetVaultReplicasFilterArrayInput` via:
 //
@@ -3492,6 +4099,12 @@ func (i GetVaultReplicasFilterArray) ToGetVaultReplicasFilterArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultReplicasFilterArrayOutput)
 }
 
+func (i GetVaultReplicasFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultReplicasFilter] {
+	return pulumix.Output[[]GetVaultReplicasFilter]{
+		OutputState: i.ToGetVaultReplicasFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVaultReplicasFilterOutput struct{ *pulumi.OutputState }
 
 func (GetVaultReplicasFilterOutput) ElementType() reflect.Type {
@@ -3504,6 +4117,12 @@ func (o GetVaultReplicasFilterOutput) ToGetVaultReplicasFilterOutput() GetVaultR
 
 func (o GetVaultReplicasFilterOutput) ToGetVaultReplicasFilterOutputWithContext(ctx context.Context) GetVaultReplicasFilterOutput {
 	return o
+}
+
+func (o GetVaultReplicasFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVaultReplicasFilter] {
+	return pulumix.Output[GetVaultReplicasFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVaultReplicasFilterOutput) Name() pulumi.StringOutput {
@@ -3530,6 +4149,12 @@ func (o GetVaultReplicasFilterArrayOutput) ToGetVaultReplicasFilterArrayOutput()
 
 func (o GetVaultReplicasFilterArrayOutput) ToGetVaultReplicasFilterArrayOutputWithContext(ctx context.Context) GetVaultReplicasFilterArrayOutput {
 	return o
+}
+
+func (o GetVaultReplicasFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultReplicasFilter] {
+	return pulumix.Output[[]GetVaultReplicasFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVaultReplicasFilterArrayOutput) Index(i pulumi.IntInput) GetVaultReplicasFilterOutput {
@@ -3583,6 +4208,12 @@ func (i GetVaultReplicasVaultReplicaArgs) ToGetVaultReplicasVaultReplicaOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultReplicasVaultReplicaOutput)
 }
 
+func (i GetVaultReplicasVaultReplicaArgs) ToOutput(ctx context.Context) pulumix.Output[GetVaultReplicasVaultReplica] {
+	return pulumix.Output[GetVaultReplicasVaultReplica]{
+		OutputState: i.ToGetVaultReplicasVaultReplicaOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVaultReplicasVaultReplicaArrayInput is an input type that accepts GetVaultReplicasVaultReplicaArray and GetVaultReplicasVaultReplicaArrayOutput values.
 // You can construct a concrete instance of `GetVaultReplicasVaultReplicaArrayInput` via:
 //
@@ -3608,6 +4239,12 @@ func (i GetVaultReplicasVaultReplicaArray) ToGetVaultReplicasVaultReplicaArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultReplicasVaultReplicaArrayOutput)
 }
 
+func (i GetVaultReplicasVaultReplicaArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultReplicasVaultReplica] {
+	return pulumix.Output[[]GetVaultReplicasVaultReplica]{
+		OutputState: i.ToGetVaultReplicasVaultReplicaArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVaultReplicasVaultReplicaOutput struct{ *pulumi.OutputState }
 
 func (GetVaultReplicasVaultReplicaOutput) ElementType() reflect.Type {
@@ -3620,6 +4257,12 @@ func (o GetVaultReplicasVaultReplicaOutput) ToGetVaultReplicasVaultReplicaOutput
 
 func (o GetVaultReplicasVaultReplicaOutput) ToGetVaultReplicasVaultReplicaOutputWithContext(ctx context.Context) GetVaultReplicasVaultReplicaOutput {
 	return o
+}
+
+func (o GetVaultReplicasVaultReplicaOutput) ToOutput(ctx context.Context) pulumix.Output[GetVaultReplicasVaultReplica] {
+	return pulumix.Output[GetVaultReplicasVaultReplica]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The vault replica's crypto endpoint
@@ -3654,6 +4297,12 @@ func (o GetVaultReplicasVaultReplicaArrayOutput) ToGetVaultReplicasVaultReplicaA
 
 func (o GetVaultReplicasVaultReplicaArrayOutput) ToGetVaultReplicasVaultReplicaArrayOutputWithContext(ctx context.Context) GetVaultReplicasVaultReplicaArrayOutput {
 	return o
+}
+
+func (o GetVaultReplicasVaultReplicaArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultReplicasVaultReplica] {
+	return pulumix.Output[[]GetVaultReplicasVaultReplica]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVaultReplicasVaultReplicaArrayOutput) Index(i pulumi.IntInput) GetVaultReplicasVaultReplicaOutput {
@@ -3703,6 +4352,12 @@ func (i GetVaultRestoreFromFileArgs) ToGetVaultRestoreFromFileOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultRestoreFromFileOutput)
 }
 
+func (i GetVaultRestoreFromFileArgs) ToOutput(ctx context.Context) pulumix.Output[GetVaultRestoreFromFile] {
+	return pulumix.Output[GetVaultRestoreFromFile]{
+		OutputState: i.ToGetVaultRestoreFromFileOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVaultRestoreFromFileArrayInput is an input type that accepts GetVaultRestoreFromFileArray and GetVaultRestoreFromFileArrayOutput values.
 // You can construct a concrete instance of `GetVaultRestoreFromFileArrayInput` via:
 //
@@ -3728,6 +4383,12 @@ func (i GetVaultRestoreFromFileArray) ToGetVaultRestoreFromFileArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultRestoreFromFileArrayOutput)
 }
 
+func (i GetVaultRestoreFromFileArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultRestoreFromFile] {
+	return pulumix.Output[[]GetVaultRestoreFromFile]{
+		OutputState: i.ToGetVaultRestoreFromFileArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVaultRestoreFromFileOutput struct{ *pulumi.OutputState }
 
 func (GetVaultRestoreFromFileOutput) ElementType() reflect.Type {
@@ -3740,6 +4401,12 @@ func (o GetVaultRestoreFromFileOutput) ToGetVaultRestoreFromFileOutput() GetVaul
 
 func (o GetVaultRestoreFromFileOutput) ToGetVaultRestoreFromFileOutputWithContext(ctx context.Context) GetVaultRestoreFromFileOutput {
 	return o
+}
+
+func (o GetVaultRestoreFromFileOutput) ToOutput(ctx context.Context) pulumix.Output[GetVaultRestoreFromFile] {
+	return pulumix.Output[GetVaultRestoreFromFile]{
+		OutputState: o.OutputState,
+	}
 }
 
 // content length of vault's backup binary file
@@ -3769,6 +4436,12 @@ func (o GetVaultRestoreFromFileArrayOutput) ToGetVaultRestoreFromFileArrayOutput
 
 func (o GetVaultRestoreFromFileArrayOutput) ToGetVaultRestoreFromFileArrayOutputWithContext(ctx context.Context) GetVaultRestoreFromFileArrayOutput {
 	return o
+}
+
+func (o GetVaultRestoreFromFileArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultRestoreFromFile] {
+	return pulumix.Output[[]GetVaultRestoreFromFile]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVaultRestoreFromFileArrayOutput) Index(i pulumi.IntInput) GetVaultRestoreFromFileOutput {
@@ -3826,6 +4499,12 @@ func (i GetVaultRestoreFromObjectStoreArgs) ToGetVaultRestoreFromObjectStoreOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultRestoreFromObjectStoreOutput)
 }
 
+func (i GetVaultRestoreFromObjectStoreArgs) ToOutput(ctx context.Context) pulumix.Output[GetVaultRestoreFromObjectStore] {
+	return pulumix.Output[GetVaultRestoreFromObjectStore]{
+		OutputState: i.ToGetVaultRestoreFromObjectStoreOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVaultRestoreFromObjectStoreArrayInput is an input type that accepts GetVaultRestoreFromObjectStoreArray and GetVaultRestoreFromObjectStoreArrayOutput values.
 // You can construct a concrete instance of `GetVaultRestoreFromObjectStoreArrayInput` via:
 //
@@ -3851,6 +4530,12 @@ func (i GetVaultRestoreFromObjectStoreArray) ToGetVaultRestoreFromObjectStoreArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultRestoreFromObjectStoreArrayOutput)
 }
 
+func (i GetVaultRestoreFromObjectStoreArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultRestoreFromObjectStore] {
+	return pulumix.Output[[]GetVaultRestoreFromObjectStore]{
+		OutputState: i.ToGetVaultRestoreFromObjectStoreArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVaultRestoreFromObjectStoreOutput struct{ *pulumi.OutputState }
 
 func (GetVaultRestoreFromObjectStoreOutput) ElementType() reflect.Type {
@@ -3863,6 +4548,12 @@ func (o GetVaultRestoreFromObjectStoreOutput) ToGetVaultRestoreFromObjectStoreOu
 
 func (o GetVaultRestoreFromObjectStoreOutput) ToGetVaultRestoreFromObjectStoreOutputWithContext(ctx context.Context) GetVaultRestoreFromObjectStoreOutput {
 	return o
+}
+
+func (o GetVaultRestoreFromObjectStoreOutput) ToOutput(ctx context.Context) pulumix.Output[GetVaultRestoreFromObjectStore] {
+	return pulumix.Output[GetVaultRestoreFromObjectStore]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Name of the bucket where vault was backed up
@@ -3902,6 +4593,12 @@ func (o GetVaultRestoreFromObjectStoreArrayOutput) ToGetVaultRestoreFromObjectSt
 
 func (o GetVaultRestoreFromObjectStoreArrayOutput) ToGetVaultRestoreFromObjectStoreArrayOutputWithContext(ctx context.Context) GetVaultRestoreFromObjectStoreArrayOutput {
 	return o
+}
+
+func (o GetVaultRestoreFromObjectStoreArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultRestoreFromObjectStore] {
+	return pulumix.Output[[]GetVaultRestoreFromObjectStore]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVaultRestoreFromObjectStoreArrayOutput) Index(i pulumi.IntInput) GetVaultRestoreFromObjectStoreOutput {
@@ -3945,6 +4642,12 @@ func (i GetVaultsFilterArgs) ToGetVaultsFilterOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultsFilterOutput)
 }
 
+func (i GetVaultsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVaultsFilter] {
+	return pulumix.Output[GetVaultsFilter]{
+		OutputState: i.ToGetVaultsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVaultsFilterArrayInput is an input type that accepts GetVaultsFilterArray and GetVaultsFilterArrayOutput values.
 // You can construct a concrete instance of `GetVaultsFilterArrayInput` via:
 //
@@ -3970,6 +4673,12 @@ func (i GetVaultsFilterArray) ToGetVaultsFilterArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultsFilterArrayOutput)
 }
 
+func (i GetVaultsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultsFilter] {
+	return pulumix.Output[[]GetVaultsFilter]{
+		OutputState: i.ToGetVaultsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVaultsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetVaultsFilterOutput) ElementType() reflect.Type {
@@ -3982,6 +4691,12 @@ func (o GetVaultsFilterOutput) ToGetVaultsFilterOutput() GetVaultsFilterOutput {
 
 func (o GetVaultsFilterOutput) ToGetVaultsFilterOutputWithContext(ctx context.Context) GetVaultsFilterOutput {
 	return o
+}
+
+func (o GetVaultsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVaultsFilter] {
+	return pulumix.Output[GetVaultsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVaultsFilterOutput) Name() pulumi.StringOutput {
@@ -4008,6 +4723,12 @@ func (o GetVaultsFilterArrayOutput) ToGetVaultsFilterArrayOutput() GetVaultsFilt
 
 func (o GetVaultsFilterArrayOutput) ToGetVaultsFilterArrayOutputWithContext(ctx context.Context) GetVaultsFilterArrayOutput {
 	return o
+}
+
+func (o GetVaultsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultsFilter] {
+	return pulumix.Output[[]GetVaultsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVaultsFilterArrayOutput) Index(i pulumi.IntInput) GetVaultsFilterOutput {
@@ -4107,6 +4828,12 @@ func (i GetVaultsVaultArgs) ToGetVaultsVaultOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultsVaultOutput)
 }
 
+func (i GetVaultsVaultArgs) ToOutput(ctx context.Context) pulumix.Output[GetVaultsVault] {
+	return pulumix.Output[GetVaultsVault]{
+		OutputState: i.ToGetVaultsVaultOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVaultsVaultArrayInput is an input type that accepts GetVaultsVaultArray and GetVaultsVaultArrayOutput values.
 // You can construct a concrete instance of `GetVaultsVaultArrayInput` via:
 //
@@ -4132,6 +4859,12 @@ func (i GetVaultsVaultArray) ToGetVaultsVaultArrayOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultsVaultArrayOutput)
 }
 
+func (i GetVaultsVaultArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultsVault] {
+	return pulumix.Output[[]GetVaultsVault]{
+		OutputState: i.ToGetVaultsVaultArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVaultsVaultOutput struct{ *pulumi.OutputState }
 
 func (GetVaultsVaultOutput) ElementType() reflect.Type {
@@ -4144,6 +4877,12 @@ func (o GetVaultsVaultOutput) ToGetVaultsVaultOutput() GetVaultsVaultOutput {
 
 func (o GetVaultsVaultOutput) ToGetVaultsVaultOutputWithContext(ctx context.Context) GetVaultsVaultOutput {
 	return o
+}
+
+func (o GetVaultsVaultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVaultsVault] {
+	return pulumix.Output[GetVaultsVault]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the compartment.
@@ -4242,6 +4981,12 @@ func (o GetVaultsVaultArrayOutput) ToGetVaultsVaultArrayOutputWithContext(ctx co
 	return o
 }
 
+func (o GetVaultsVaultArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultsVault] {
+	return pulumix.Output[[]GetVaultsVault]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetVaultsVaultArrayOutput) Index(i pulumi.IntInput) GetVaultsVaultOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVaultsVault {
 		return vs[0].([]GetVaultsVault)[vs[1].(int)]
@@ -4281,6 +5026,12 @@ func (i GetVaultsVaultReplicaDetailArgs) ToGetVaultsVaultReplicaDetailOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultsVaultReplicaDetailOutput)
 }
 
+func (i GetVaultsVaultReplicaDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetVaultsVaultReplicaDetail] {
+	return pulumix.Output[GetVaultsVaultReplicaDetail]{
+		OutputState: i.ToGetVaultsVaultReplicaDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVaultsVaultReplicaDetailArrayInput is an input type that accepts GetVaultsVaultReplicaDetailArray and GetVaultsVaultReplicaDetailArrayOutput values.
 // You can construct a concrete instance of `GetVaultsVaultReplicaDetailArrayInput` via:
 //
@@ -4306,6 +5057,12 @@ func (i GetVaultsVaultReplicaDetailArray) ToGetVaultsVaultReplicaDetailArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultsVaultReplicaDetailArrayOutput)
 }
 
+func (i GetVaultsVaultReplicaDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultsVaultReplicaDetail] {
+	return pulumix.Output[[]GetVaultsVaultReplicaDetail]{
+		OutputState: i.ToGetVaultsVaultReplicaDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVaultsVaultReplicaDetailOutput struct{ *pulumi.OutputState }
 
 func (GetVaultsVaultReplicaDetailOutput) ElementType() reflect.Type {
@@ -4318,6 +5075,12 @@ func (o GetVaultsVaultReplicaDetailOutput) ToGetVaultsVaultReplicaDetailOutput()
 
 func (o GetVaultsVaultReplicaDetailOutput) ToGetVaultsVaultReplicaDetailOutputWithContext(ctx context.Context) GetVaultsVaultReplicaDetailOutput {
 	return o
+}
+
+func (o GetVaultsVaultReplicaDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetVaultsVaultReplicaDetail] {
+	return pulumix.Output[GetVaultsVaultReplicaDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // ReplicationId associated with a vault operation
@@ -4337,6 +5100,12 @@ func (o GetVaultsVaultReplicaDetailArrayOutput) ToGetVaultsVaultReplicaDetailArr
 
 func (o GetVaultsVaultReplicaDetailArrayOutput) ToGetVaultsVaultReplicaDetailArrayOutputWithContext(ctx context.Context) GetVaultsVaultReplicaDetailArrayOutput {
 	return o
+}
+
+func (o GetVaultsVaultReplicaDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultsVaultReplicaDetail] {
+	return pulumix.Output[[]GetVaultsVaultReplicaDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVaultsVaultReplicaDetailArrayOutput) Index(i pulumi.IntInput) GetVaultsVaultReplicaDetailOutput {
@@ -4380,6 +5149,12 @@ func (i GetVaultsVaultRestoreFromFileArgs) ToGetVaultsVaultRestoreFromFileOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultsVaultRestoreFromFileOutput)
 }
 
+func (i GetVaultsVaultRestoreFromFileArgs) ToOutput(ctx context.Context) pulumix.Output[GetVaultsVaultRestoreFromFile] {
+	return pulumix.Output[GetVaultsVaultRestoreFromFile]{
+		OutputState: i.ToGetVaultsVaultRestoreFromFileOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVaultsVaultRestoreFromFileArrayInput is an input type that accepts GetVaultsVaultRestoreFromFileArray and GetVaultsVaultRestoreFromFileArrayOutput values.
 // You can construct a concrete instance of `GetVaultsVaultRestoreFromFileArrayInput` via:
 //
@@ -4405,6 +5180,12 @@ func (i GetVaultsVaultRestoreFromFileArray) ToGetVaultsVaultRestoreFromFileArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultsVaultRestoreFromFileArrayOutput)
 }
 
+func (i GetVaultsVaultRestoreFromFileArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultsVaultRestoreFromFile] {
+	return pulumix.Output[[]GetVaultsVaultRestoreFromFile]{
+		OutputState: i.ToGetVaultsVaultRestoreFromFileArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVaultsVaultRestoreFromFileOutput struct{ *pulumi.OutputState }
 
 func (GetVaultsVaultRestoreFromFileOutput) ElementType() reflect.Type {
@@ -4417,6 +5198,12 @@ func (o GetVaultsVaultRestoreFromFileOutput) ToGetVaultsVaultRestoreFromFileOutp
 
 func (o GetVaultsVaultRestoreFromFileOutput) ToGetVaultsVaultRestoreFromFileOutputWithContext(ctx context.Context) GetVaultsVaultRestoreFromFileOutput {
 	return o
+}
+
+func (o GetVaultsVaultRestoreFromFileOutput) ToOutput(ctx context.Context) pulumix.Output[GetVaultsVaultRestoreFromFile] {
+	return pulumix.Output[GetVaultsVaultRestoreFromFile]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVaultsVaultRestoreFromFileOutput) ContentLength() pulumi.StringOutput {
@@ -4443,6 +5230,12 @@ func (o GetVaultsVaultRestoreFromFileArrayOutput) ToGetVaultsVaultRestoreFromFil
 
 func (o GetVaultsVaultRestoreFromFileArrayOutput) ToGetVaultsVaultRestoreFromFileArrayOutputWithContext(ctx context.Context) GetVaultsVaultRestoreFromFileArrayOutput {
 	return o
+}
+
+func (o GetVaultsVaultRestoreFromFileArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultsVaultRestoreFromFile] {
+	return pulumix.Output[[]GetVaultsVaultRestoreFromFile]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVaultsVaultRestoreFromFileArrayOutput) Index(i pulumi.IntInput) GetVaultsVaultRestoreFromFileOutput {
@@ -4490,6 +5283,12 @@ func (i GetVaultsVaultRestoreFromObjectStoreArgs) ToGetVaultsVaultRestoreFromObj
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultsVaultRestoreFromObjectStoreOutput)
 }
 
+func (i GetVaultsVaultRestoreFromObjectStoreArgs) ToOutput(ctx context.Context) pulumix.Output[GetVaultsVaultRestoreFromObjectStore] {
+	return pulumix.Output[GetVaultsVaultRestoreFromObjectStore]{
+		OutputState: i.ToGetVaultsVaultRestoreFromObjectStoreOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVaultsVaultRestoreFromObjectStoreArrayInput is an input type that accepts GetVaultsVaultRestoreFromObjectStoreArray and GetVaultsVaultRestoreFromObjectStoreArrayOutput values.
 // You can construct a concrete instance of `GetVaultsVaultRestoreFromObjectStoreArrayInput` via:
 //
@@ -4515,6 +5314,12 @@ func (i GetVaultsVaultRestoreFromObjectStoreArray) ToGetVaultsVaultRestoreFromOb
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultsVaultRestoreFromObjectStoreArrayOutput)
 }
 
+func (i GetVaultsVaultRestoreFromObjectStoreArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultsVaultRestoreFromObjectStore] {
+	return pulumix.Output[[]GetVaultsVaultRestoreFromObjectStore]{
+		OutputState: i.ToGetVaultsVaultRestoreFromObjectStoreArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVaultsVaultRestoreFromObjectStoreOutput struct{ *pulumi.OutputState }
 
 func (GetVaultsVaultRestoreFromObjectStoreOutput) ElementType() reflect.Type {
@@ -4527,6 +5332,12 @@ func (o GetVaultsVaultRestoreFromObjectStoreOutput) ToGetVaultsVaultRestoreFromO
 
 func (o GetVaultsVaultRestoreFromObjectStoreOutput) ToGetVaultsVaultRestoreFromObjectStoreOutputWithContext(ctx context.Context) GetVaultsVaultRestoreFromObjectStoreOutput {
 	return o
+}
+
+func (o GetVaultsVaultRestoreFromObjectStoreOutput) ToOutput(ctx context.Context) pulumix.Output[GetVaultsVaultRestoreFromObjectStore] {
+	return pulumix.Output[GetVaultsVaultRestoreFromObjectStore]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVaultsVaultRestoreFromObjectStoreOutput) Bucket() pulumi.StringOutput {
@@ -4561,6 +5372,12 @@ func (o GetVaultsVaultRestoreFromObjectStoreArrayOutput) ToGetVaultsVaultRestore
 
 func (o GetVaultsVaultRestoreFromObjectStoreArrayOutput) ToGetVaultsVaultRestoreFromObjectStoreArrayOutputWithContext(ctx context.Context) GetVaultsVaultRestoreFromObjectStoreArrayOutput {
 	return o
+}
+
+func (o GetVaultsVaultRestoreFromObjectStoreArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultsVaultRestoreFromObjectStore] {
+	return pulumix.Output[[]GetVaultsVaultRestoreFromObjectStore]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVaultsVaultRestoreFromObjectStoreArrayOutput) Index(i pulumi.IntInput) GetVaultsVaultRestoreFromObjectStoreOutput {

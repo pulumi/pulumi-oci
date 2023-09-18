@@ -74,7 +74,7 @@ public class GeneratedKey extends com.pulumi.resources.CustomResource {
      * Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
      * 
      */
-    @Export(name="associatedData", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="associatedData", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output</* @Nullable */ Map<String,Object>> associatedData;
 
     /**
@@ -88,7 +88,7 @@ public class GeneratedKey extends com.pulumi.resources.CustomResource {
      * The encrypted data encryption key generated from a master encryption key.
      * 
      */
-    @Export(name="ciphertext", type=String.class, parameters={})
+    @Export(name="ciphertext", refs={String.class}, tree="[0]")
     private Output<String> ciphertext;
 
     /**
@@ -102,7 +102,7 @@ public class GeneratedKey extends com.pulumi.resources.CustomResource {
      * The service endpoint to perform cryptographic operations against. Cryptographic operations include &#39;Encrypt,&#39; &#39;Decrypt,&#39; and &#39;GenerateDataEncryptionKey&#39; operations. see Vault Crypto endpoint.
      * 
      */
-    @Export(name="cryptoEndpoint", type=String.class, parameters={})
+    @Export(name="cryptoEndpoint", refs={String.class}, tree="[0]")
     private Output<String> cryptoEndpoint;
 
     /**
@@ -116,7 +116,7 @@ public class GeneratedKey extends com.pulumi.resources.CustomResource {
      * If true, the generated key is also returned unencrypted.
      * 
      */
-    @Export(name="includePlaintextKey", type=Boolean.class, parameters={})
+    @Export(name="includePlaintextKey", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> includePlaintextKey;
 
     /**
@@ -130,7 +130,7 @@ public class GeneratedKey extends com.pulumi.resources.CustomResource {
      * The OCID of the master encryption key to encrypt the generated data encryption key with.
      * 
      */
-    @Export(name="keyId", type=String.class, parameters={})
+    @Export(name="keyId", refs={String.class}, tree="[0]")
     private Output<String> keyId;
 
     /**
@@ -144,7 +144,7 @@ public class GeneratedKey extends com.pulumi.resources.CustomResource {
      * The cryptographic properties of a key.
      * 
      */
-    @Export(name="keyShape", type=GeneratedKeyKeyShape.class, parameters={})
+    @Export(name="keyShape", refs={GeneratedKeyKeyShape.class}, tree="[0]")
     private Output<GeneratedKeyKeyShape> keyShape;
 
     /**
@@ -161,7 +161,7 @@ public class GeneratedKey extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="loggingContext", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="loggingContext", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output</* @Nullable */ Map<String,Object>> loggingContext;
 
     /**
@@ -178,7 +178,7 @@ public class GeneratedKey extends com.pulumi.resources.CustomResource {
      * The plaintext data encryption key, a base64-encoded sequence of random bytes, which is included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) request includes the `includePlaintextKey` parameter and sets its value to &#34;true&#34;.
      * 
      */
-    @Export(name="plaintext", type=String.class, parameters={})
+    @Export(name="plaintext", refs={String.class}, tree="[0]")
     private Output<String> plaintext;
 
     /**
@@ -192,7 +192,7 @@ public class GeneratedKey extends com.pulumi.resources.CustomResource {
      * The checksum of the plaintext data encryption key, which is included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) request includes the `includePlaintextKey` parameter and sets its value to &#34;true&#34;.
      * 
      */
-    @Export(name="plaintextChecksum", type=String.class, parameters={})
+    @Export(name="plaintextChecksum", refs={String.class}, tree="[0]")
     private Output<String> plaintextChecksum;
 
     /**

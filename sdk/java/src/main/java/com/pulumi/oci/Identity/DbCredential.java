@@ -62,7 +62,7 @@ public class DbCredential extends com.pulumi.resources.CustomResource {
      * The description you assign to the DB credentials during creation.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -76,7 +76,7 @@ public class DbCredential extends com.pulumi.resources.CustomResource {
      * The detailed status of INACTIVE lifecycleState.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -90,7 +90,7 @@ public class DbCredential extends com.pulumi.resources.CustomResource {
      * The password for the DB credentials during creation.
      * 
      */
-    @Export(name="password", type=String.class, parameters={})
+    @Export(name="password", refs={String.class}, tree="[0]")
     private Output<String> password;
 
     /**
@@ -104,7 +104,7 @@ public class DbCredential extends com.pulumi.resources.CustomResource {
      * The credential&#39;s current state. After creating a DB credential, make sure its `lifecycleState` changes from CREATING to ACTIVE before using it.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -118,7 +118,7 @@ public class DbCredential extends com.pulumi.resources.CustomResource {
      * Date and time the `DbCredential` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -132,7 +132,7 @@ public class DbCredential extends com.pulumi.resources.CustomResource {
      * Date and time when this credential will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeExpires", type=String.class, parameters={})
+    @Export(name="timeExpires", refs={String.class}, tree="[0]")
     private Output<String> timeExpires;
 
     /**
@@ -149,7 +149,7 @@ public class DbCredential extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="userId", type=String.class, parameters={})
+    @Export(name="userId", refs={String.class}, tree="[0]")
     private Output<String> userId;
 
     /**

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Fusion Environment Service Attachment resource in Oracle Cloud Infrastructure Fusion Apps service.
@@ -127,6 +128,12 @@ func (o GetFusionEnvironmentServiceAttachmentResultOutput) ToGetFusionEnvironmen
 
 func (o GetFusionEnvironmentServiceAttachmentResultOutput) ToGetFusionEnvironmentServiceAttachmentResultOutputWithContext(ctx context.Context) GetFusionEnvironmentServiceAttachmentResultOutput {
 	return o
+}
+
+func (o GetFusionEnvironmentServiceAttachmentResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentServiceAttachmentResult] {
+	return pulumix.Output[GetFusionEnvironmentServiceAttachmentResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Compartment Identifier

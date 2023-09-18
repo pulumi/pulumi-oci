@@ -43,7 +43,7 @@ public class ResourceAction extends com.pulumi.resources.CustomResource {
      * Details about the recommended action.
      * 
      */
-    @Export(name="actions", type=List.class, parameters={ResourceActionAction.class})
+    @Export(name="actions", refs={List.class,ResourceActionAction.class}, tree="[0,1]")
     private Output<List<ResourceActionAction>> actions;
 
     /**
@@ -57,7 +57,7 @@ public class ResourceAction extends com.pulumi.resources.CustomResource {
      * The unique OCID associated with the category.
      * 
      */
-    @Export(name="categoryId", type=String.class, parameters={})
+    @Export(name="categoryId", refs={String.class}, tree="[0]")
     private Output<String> categoryId;
 
     /**
@@ -71,7 +71,7 @@ public class ResourceAction extends com.pulumi.resources.CustomResource {
      * The OCID of the compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -85,7 +85,7 @@ public class ResourceAction extends com.pulumi.resources.CustomResource {
      * The name associated with the compartment.
      * 
      */
-    @Export(name="compartmentName", type=String.class, parameters={})
+    @Export(name="compartmentName", refs={String.class}, tree="[0]")
     private Output<String> compartmentName;
 
     /**
@@ -99,7 +99,7 @@ public class ResourceAction extends com.pulumi.resources.CustomResource {
      * The estimated cost savings, in dollars, for the resource action.
      * 
      */
-    @Export(name="estimatedCostSaving", type=Double.class, parameters={})
+    @Export(name="estimatedCostSaving", refs={Double.class}, tree="[0]")
     private Output<Double> estimatedCostSaving;
 
     /**
@@ -113,7 +113,7 @@ public class ResourceAction extends com.pulumi.resources.CustomResource {
      * Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
      * 
      */
-    @Export(name="extendedMetadata", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="extendedMetadata", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> extendedMetadata;
 
     /**
@@ -127,7 +127,7 @@ public class ResourceAction extends com.pulumi.resources.CustomResource {
      * Custom metadata key/value pairs for the resource action.
      * 
      */
-    @Export(name="metadata", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="metadata", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> metadata;
 
     /**
@@ -141,7 +141,7 @@ public class ResourceAction extends com.pulumi.resources.CustomResource {
      * The name assigned to the resource.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -155,7 +155,7 @@ public class ResourceAction extends com.pulumi.resources.CustomResource {
      * The unique OCID associated with the recommendation.
      * 
      */
-    @Export(name="recommendationId", type=String.class, parameters={})
+    @Export(name="recommendationId", refs={String.class}, tree="[0]")
     private Output<String> recommendationId;
 
     /**
@@ -169,7 +169,7 @@ public class ResourceAction extends com.pulumi.resources.CustomResource {
      * The unique OCID associated with the resource action.
      * 
      */
-    @Export(name="resourceActionId", type=String.class, parameters={})
+    @Export(name="resourceActionId", refs={String.class}, tree="[0]")
     private Output<String> resourceActionId;
 
     /**
@@ -183,7 +183,7 @@ public class ResourceAction extends com.pulumi.resources.CustomResource {
      * The unique OCID associated with the resource.
      * 
      */
-    @Export(name="resourceId", type=String.class, parameters={})
+    @Export(name="resourceId", refs={String.class}, tree="[0]")
     private Output<String> resourceId;
 
     /**
@@ -197,7 +197,7 @@ public class ResourceAction extends com.pulumi.resources.CustomResource {
      * The kind of resource.
      * 
      */
-    @Export(name="resourceType", type=String.class, parameters={})
+    @Export(name="resourceType", refs={String.class}, tree="[0]")
     private Output<String> resourceType;
 
     /**
@@ -211,7 +211,7 @@ public class ResourceAction extends com.pulumi.resources.CustomResource {
      * The resource action&#39;s current state.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -225,7 +225,7 @@ public class ResourceAction extends com.pulumi.resources.CustomResource {
      * (Updatable) The status of the resource action.
      * 
      */
-    @Export(name="status", type=String.class, parameters={})
+    @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
@@ -239,7 +239,7 @@ public class ResourceAction extends com.pulumi.resources.CustomResource {
      * The date and time the resource action details were created, in the format defined by RFC3339.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -253,7 +253,7 @@ public class ResourceAction extends com.pulumi.resources.CustomResource {
      * The date and time that the resource action entered its current status. The format is defined by RFC3339.
      * 
      */
-    @Export(name="timeStatusBegin", type=String.class, parameters={})
+    @Export(name="timeStatusBegin", refs={String.class}, tree="[0]")
     private Output<String> timeStatusBegin;
 
     /**
@@ -272,7 +272,7 @@ public class ResourceAction extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="timeStatusEnd", type=String.class, parameters={})
+    @Export(name="timeStatusEnd", refs={String.class}, tree="[0]")
     private Output<String> timeStatusEnd;
 
     /**
@@ -291,7 +291,7 @@ public class ResourceAction extends com.pulumi.resources.CustomResource {
      * The date and time the resource action details were last updated, in the format defined by RFC3339.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

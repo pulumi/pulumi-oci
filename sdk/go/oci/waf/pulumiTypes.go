@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -114,6 +115,12 @@ func (i AppFirewallPolicyActionArgs) ToAppFirewallPolicyActionOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallPolicyActionOutput)
 }
 
+func (i AppFirewallPolicyActionArgs) ToOutput(ctx context.Context) pulumix.Output[AppFirewallPolicyAction] {
+	return pulumix.Output[AppFirewallPolicyAction]{
+		OutputState: i.ToAppFirewallPolicyActionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AppFirewallPolicyActionArrayInput is an input type that accepts AppFirewallPolicyActionArray and AppFirewallPolicyActionArrayOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyActionArrayInput` via:
 //
@@ -139,6 +146,12 @@ func (i AppFirewallPolicyActionArray) ToAppFirewallPolicyActionArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallPolicyActionArrayOutput)
 }
 
+func (i AppFirewallPolicyActionArray) ToOutput(ctx context.Context) pulumix.Output[[]AppFirewallPolicyAction] {
+	return pulumix.Output[[]AppFirewallPolicyAction]{
+		OutputState: i.ToAppFirewallPolicyActionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AppFirewallPolicyActionOutput struct{ *pulumi.OutputState }
 
 func (AppFirewallPolicyActionOutput) ElementType() reflect.Type {
@@ -151,6 +164,12 @@ func (o AppFirewallPolicyActionOutput) ToAppFirewallPolicyActionOutput() AppFire
 
 func (o AppFirewallPolicyActionOutput) ToAppFirewallPolicyActionOutputWithContext(ctx context.Context) AppFirewallPolicyActionOutput {
 	return o
+}
+
+func (o AppFirewallPolicyActionOutput) ToOutput(ctx context.Context) pulumix.Output[AppFirewallPolicyAction] {
+	return pulumix.Output[AppFirewallPolicyAction]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Type of returned HTTP response body.
@@ -218,6 +237,12 @@ func (o AppFirewallPolicyActionArrayOutput) ToAppFirewallPolicyActionArrayOutput
 	return o
 }
 
+func (o AppFirewallPolicyActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AppFirewallPolicyAction] {
+	return pulumix.Output[[]AppFirewallPolicyAction]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AppFirewallPolicyActionArrayOutput) Index(i pulumi.IntInput) AppFirewallPolicyActionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AppFirewallPolicyAction {
 		return vs[0].([]AppFirewallPolicyAction)[vs[1].(int)]
@@ -261,6 +286,12 @@ func (i AppFirewallPolicyActionBodyArgs) ToAppFirewallPolicyActionBodyOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallPolicyActionBodyOutput)
 }
 
+func (i AppFirewallPolicyActionBodyArgs) ToOutput(ctx context.Context) pulumix.Output[AppFirewallPolicyActionBody] {
+	return pulumix.Output[AppFirewallPolicyActionBody]{
+		OutputState: i.ToAppFirewallPolicyActionBodyOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i AppFirewallPolicyActionBodyArgs) ToAppFirewallPolicyActionBodyPtrOutput() AppFirewallPolicyActionBodyPtrOutput {
 	return i.ToAppFirewallPolicyActionBodyPtrOutputWithContext(context.Background())
 }
@@ -302,6 +333,12 @@ func (i *appFirewallPolicyActionBodyPtrType) ToAppFirewallPolicyActionBodyPtrOut
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallPolicyActionBodyPtrOutput)
 }
 
+func (i *appFirewallPolicyActionBodyPtrType) ToOutput(ctx context.Context) pulumix.Output[*AppFirewallPolicyActionBody] {
+	return pulumix.Output[*AppFirewallPolicyActionBody]{
+		OutputState: i.ToAppFirewallPolicyActionBodyPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AppFirewallPolicyActionBodyOutput struct{ *pulumi.OutputState }
 
 func (AppFirewallPolicyActionBodyOutput) ElementType() reflect.Type {
@@ -326,6 +363,12 @@ func (o AppFirewallPolicyActionBodyOutput) ToAppFirewallPolicyActionBodyPtrOutpu
 	}).(AppFirewallPolicyActionBodyPtrOutput)
 }
 
+func (o AppFirewallPolicyActionBodyOutput) ToOutput(ctx context.Context) pulumix.Output[AppFirewallPolicyActionBody] {
+	return pulumix.Output[AppFirewallPolicyActionBody]{
+		OutputState: o.OutputState,
+	}
+}
+
 // (Updatable) Static response body text.
 func (o AppFirewallPolicyActionBodyOutput) Text() pulumi.StringOutput {
 	return o.ApplyT(func(v AppFirewallPolicyActionBody) string { return v.Text }).(pulumi.StringOutput)
@@ -348,6 +391,12 @@ func (o AppFirewallPolicyActionBodyPtrOutput) ToAppFirewallPolicyActionBodyPtrOu
 
 func (o AppFirewallPolicyActionBodyPtrOutput) ToAppFirewallPolicyActionBodyPtrOutputWithContext(ctx context.Context) AppFirewallPolicyActionBodyPtrOutput {
 	return o
+}
+
+func (o AppFirewallPolicyActionBodyPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*AppFirewallPolicyActionBody] {
+	return pulumix.Output[*AppFirewallPolicyActionBody]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AppFirewallPolicyActionBodyPtrOutput) Elem() AppFirewallPolicyActionBodyOutput {
@@ -417,6 +466,12 @@ func (i AppFirewallPolicyActionHeaderArgs) ToAppFirewallPolicyActionHeaderOutput
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallPolicyActionHeaderOutput)
 }
 
+func (i AppFirewallPolicyActionHeaderArgs) ToOutput(ctx context.Context) pulumix.Output[AppFirewallPolicyActionHeader] {
+	return pulumix.Output[AppFirewallPolicyActionHeader]{
+		OutputState: i.ToAppFirewallPolicyActionHeaderOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AppFirewallPolicyActionHeaderArrayInput is an input type that accepts AppFirewallPolicyActionHeaderArray and AppFirewallPolicyActionHeaderArrayOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyActionHeaderArrayInput` via:
 //
@@ -442,6 +497,12 @@ func (i AppFirewallPolicyActionHeaderArray) ToAppFirewallPolicyActionHeaderArray
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallPolicyActionHeaderArrayOutput)
 }
 
+func (i AppFirewallPolicyActionHeaderArray) ToOutput(ctx context.Context) pulumix.Output[[]AppFirewallPolicyActionHeader] {
+	return pulumix.Output[[]AppFirewallPolicyActionHeader]{
+		OutputState: i.ToAppFirewallPolicyActionHeaderArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AppFirewallPolicyActionHeaderOutput struct{ *pulumi.OutputState }
 
 func (AppFirewallPolicyActionHeaderOutput) ElementType() reflect.Type {
@@ -454,6 +515,12 @@ func (o AppFirewallPolicyActionHeaderOutput) ToAppFirewallPolicyActionHeaderOutp
 
 func (o AppFirewallPolicyActionHeaderOutput) ToAppFirewallPolicyActionHeaderOutputWithContext(ctx context.Context) AppFirewallPolicyActionHeaderOutput {
 	return o
+}
+
+func (o AppFirewallPolicyActionHeaderOutput) ToOutput(ctx context.Context) pulumix.Output[AppFirewallPolicyActionHeader] {
+	return pulumix.Output[AppFirewallPolicyActionHeader]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Rule name. Must be unique within the module.
@@ -478,6 +545,12 @@ func (o AppFirewallPolicyActionHeaderArrayOutput) ToAppFirewallPolicyActionHeade
 
 func (o AppFirewallPolicyActionHeaderArrayOutput) ToAppFirewallPolicyActionHeaderArrayOutputWithContext(ctx context.Context) AppFirewallPolicyActionHeaderArrayOutput {
 	return o
+}
+
+func (o AppFirewallPolicyActionHeaderArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AppFirewallPolicyActionHeader] {
+	return pulumix.Output[[]AppFirewallPolicyActionHeader]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AppFirewallPolicyActionHeaderArrayOutput) Index(i pulumi.IntInput) AppFirewallPolicyActionHeaderOutput {
@@ -527,6 +600,12 @@ func (i AppFirewallPolicyRequestAccessControlArgs) ToAppFirewallPolicyRequestAcc
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallPolicyRequestAccessControlOutput)
 }
 
+func (i AppFirewallPolicyRequestAccessControlArgs) ToOutput(ctx context.Context) pulumix.Output[AppFirewallPolicyRequestAccessControl] {
+	return pulumix.Output[AppFirewallPolicyRequestAccessControl]{
+		OutputState: i.ToAppFirewallPolicyRequestAccessControlOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i AppFirewallPolicyRequestAccessControlArgs) ToAppFirewallPolicyRequestAccessControlPtrOutput() AppFirewallPolicyRequestAccessControlPtrOutput {
 	return i.ToAppFirewallPolicyRequestAccessControlPtrOutputWithContext(context.Background())
 }
@@ -568,6 +647,12 @@ func (i *appFirewallPolicyRequestAccessControlPtrType) ToAppFirewallPolicyReques
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallPolicyRequestAccessControlPtrOutput)
 }
 
+func (i *appFirewallPolicyRequestAccessControlPtrType) ToOutput(ctx context.Context) pulumix.Output[*AppFirewallPolicyRequestAccessControl] {
+	return pulumix.Output[*AppFirewallPolicyRequestAccessControl]{
+		OutputState: i.ToAppFirewallPolicyRequestAccessControlPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AppFirewallPolicyRequestAccessControlOutput struct{ *pulumi.OutputState }
 
 func (AppFirewallPolicyRequestAccessControlOutput) ElementType() reflect.Type {
@@ -590,6 +675,12 @@ func (o AppFirewallPolicyRequestAccessControlOutput) ToAppFirewallPolicyRequestA
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppFirewallPolicyRequestAccessControl) *AppFirewallPolicyRequestAccessControl {
 		return &v
 	}).(AppFirewallPolicyRequestAccessControlPtrOutput)
+}
+
+func (o AppFirewallPolicyRequestAccessControlOutput) ToOutput(ctx context.Context) pulumix.Output[AppFirewallPolicyRequestAccessControl] {
+	return pulumix.Output[AppFirewallPolicyRequestAccessControl]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) References an default Action to take if no AccessControlRule was matched. Allowed action types:
@@ -618,6 +709,12 @@ func (o AppFirewallPolicyRequestAccessControlPtrOutput) ToAppFirewallPolicyReque
 
 func (o AppFirewallPolicyRequestAccessControlPtrOutput) ToAppFirewallPolicyRequestAccessControlPtrOutputWithContext(ctx context.Context) AppFirewallPolicyRequestAccessControlPtrOutput {
 	return o
+}
+
+func (o AppFirewallPolicyRequestAccessControlPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*AppFirewallPolicyRequestAccessControl] {
+	return pulumix.Output[*AppFirewallPolicyRequestAccessControl]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AppFirewallPolicyRequestAccessControlPtrOutput) Elem() AppFirewallPolicyRequestAccessControlOutput {
@@ -703,6 +800,12 @@ func (i AppFirewallPolicyRequestAccessControlRuleArgs) ToAppFirewallPolicyReques
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallPolicyRequestAccessControlRuleOutput)
 }
 
+func (i AppFirewallPolicyRequestAccessControlRuleArgs) ToOutput(ctx context.Context) pulumix.Output[AppFirewallPolicyRequestAccessControlRule] {
+	return pulumix.Output[AppFirewallPolicyRequestAccessControlRule]{
+		OutputState: i.ToAppFirewallPolicyRequestAccessControlRuleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AppFirewallPolicyRequestAccessControlRuleArrayInput is an input type that accepts AppFirewallPolicyRequestAccessControlRuleArray and AppFirewallPolicyRequestAccessControlRuleArrayOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyRequestAccessControlRuleArrayInput` via:
 //
@@ -728,6 +831,12 @@ func (i AppFirewallPolicyRequestAccessControlRuleArray) ToAppFirewallPolicyReque
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallPolicyRequestAccessControlRuleArrayOutput)
 }
 
+func (i AppFirewallPolicyRequestAccessControlRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]AppFirewallPolicyRequestAccessControlRule] {
+	return pulumix.Output[[]AppFirewallPolicyRequestAccessControlRule]{
+		OutputState: i.ToAppFirewallPolicyRequestAccessControlRuleArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AppFirewallPolicyRequestAccessControlRuleOutput struct{ *pulumi.OutputState }
 
 func (AppFirewallPolicyRequestAccessControlRuleOutput) ElementType() reflect.Type {
@@ -740,6 +849,12 @@ func (o AppFirewallPolicyRequestAccessControlRuleOutput) ToAppFirewallPolicyRequ
 
 func (o AppFirewallPolicyRequestAccessControlRuleOutput) ToAppFirewallPolicyRequestAccessControlRuleOutputWithContext(ctx context.Context) AppFirewallPolicyRequestAccessControlRuleOutput {
 	return o
+}
+
+func (o AppFirewallPolicyRequestAccessControlRuleOutput) ToOutput(ctx context.Context) pulumix.Output[AppFirewallPolicyRequestAccessControlRule] {
+	return pulumix.Output[AppFirewallPolicyRequestAccessControlRule]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
@@ -780,6 +895,12 @@ func (o AppFirewallPolicyRequestAccessControlRuleArrayOutput) ToAppFirewallPolic
 
 func (o AppFirewallPolicyRequestAccessControlRuleArrayOutput) ToAppFirewallPolicyRequestAccessControlRuleArrayOutputWithContext(ctx context.Context) AppFirewallPolicyRequestAccessControlRuleArrayOutput {
 	return o
+}
+
+func (o AppFirewallPolicyRequestAccessControlRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AppFirewallPolicyRequestAccessControlRule] {
+	return pulumix.Output[[]AppFirewallPolicyRequestAccessControlRule]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AppFirewallPolicyRequestAccessControlRuleArrayOutput) Index(i pulumi.IntInput) AppFirewallPolicyRequestAccessControlRuleOutput {
@@ -847,6 +968,12 @@ func (i AppFirewallPolicyRequestProtectionArgs) ToAppFirewallPolicyRequestProtec
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallPolicyRequestProtectionOutput)
 }
 
+func (i AppFirewallPolicyRequestProtectionArgs) ToOutput(ctx context.Context) pulumix.Output[AppFirewallPolicyRequestProtection] {
+	return pulumix.Output[AppFirewallPolicyRequestProtection]{
+		OutputState: i.ToAppFirewallPolicyRequestProtectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i AppFirewallPolicyRequestProtectionArgs) ToAppFirewallPolicyRequestProtectionPtrOutput() AppFirewallPolicyRequestProtectionPtrOutput {
 	return i.ToAppFirewallPolicyRequestProtectionPtrOutputWithContext(context.Background())
 }
@@ -888,6 +1015,12 @@ func (i *appFirewallPolicyRequestProtectionPtrType) ToAppFirewallPolicyRequestPr
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallPolicyRequestProtectionPtrOutput)
 }
 
+func (i *appFirewallPolicyRequestProtectionPtrType) ToOutput(ctx context.Context) pulumix.Output[*AppFirewallPolicyRequestProtection] {
+	return pulumix.Output[*AppFirewallPolicyRequestProtection]{
+		OutputState: i.ToAppFirewallPolicyRequestProtectionPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AppFirewallPolicyRequestProtectionOutput struct{ *pulumi.OutputState }
 
 func (AppFirewallPolicyRequestProtectionOutput) ElementType() reflect.Type {
@@ -910,6 +1043,12 @@ func (o AppFirewallPolicyRequestProtectionOutput) ToAppFirewallPolicyRequestProt
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppFirewallPolicyRequestProtection) *AppFirewallPolicyRequestProtection {
 		return &v
 	}).(AppFirewallPolicyRequestProtectionPtrOutput)
+}
+
+func (o AppFirewallPolicyRequestProtectionOutput) ToOutput(ctx context.Context) pulumix.Output[AppFirewallPolicyRequestProtection] {
+	return pulumix.Output[AppFirewallPolicyRequestProtection]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message body size exceeds limit set in field `bodyInspectionSizeLimitInBytes`.
@@ -948,6 +1087,12 @@ func (o AppFirewallPolicyRequestProtectionPtrOutput) ToAppFirewallPolicyRequestP
 
 func (o AppFirewallPolicyRequestProtectionPtrOutput) ToAppFirewallPolicyRequestProtectionPtrOutputWithContext(ctx context.Context) AppFirewallPolicyRequestProtectionPtrOutput {
 	return o
+}
+
+func (o AppFirewallPolicyRequestProtectionPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*AppFirewallPolicyRequestProtection] {
+	return pulumix.Output[*AppFirewallPolicyRequestProtection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AppFirewallPolicyRequestProtectionPtrOutput) Elem() AppFirewallPolicyRequestProtectionOutput {
@@ -1062,6 +1207,12 @@ func (i AppFirewallPolicyRequestProtectionRuleArgs) ToAppFirewallPolicyRequestPr
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallPolicyRequestProtectionRuleOutput)
 }
 
+func (i AppFirewallPolicyRequestProtectionRuleArgs) ToOutput(ctx context.Context) pulumix.Output[AppFirewallPolicyRequestProtectionRule] {
+	return pulumix.Output[AppFirewallPolicyRequestProtectionRule]{
+		OutputState: i.ToAppFirewallPolicyRequestProtectionRuleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AppFirewallPolicyRequestProtectionRuleArrayInput is an input type that accepts AppFirewallPolicyRequestProtectionRuleArray and AppFirewallPolicyRequestProtectionRuleArrayOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyRequestProtectionRuleArrayInput` via:
 //
@@ -1087,6 +1238,12 @@ func (i AppFirewallPolicyRequestProtectionRuleArray) ToAppFirewallPolicyRequestP
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallPolicyRequestProtectionRuleArrayOutput)
 }
 
+func (i AppFirewallPolicyRequestProtectionRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]AppFirewallPolicyRequestProtectionRule] {
+	return pulumix.Output[[]AppFirewallPolicyRequestProtectionRule]{
+		OutputState: i.ToAppFirewallPolicyRequestProtectionRuleArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AppFirewallPolicyRequestProtectionRuleOutput struct{ *pulumi.OutputState }
 
 func (AppFirewallPolicyRequestProtectionRuleOutput) ElementType() reflect.Type {
@@ -1099,6 +1256,12 @@ func (o AppFirewallPolicyRequestProtectionRuleOutput) ToAppFirewallPolicyRequest
 
 func (o AppFirewallPolicyRequestProtectionRuleOutput) ToAppFirewallPolicyRequestProtectionRuleOutputWithContext(ctx context.Context) AppFirewallPolicyRequestProtectionRuleOutput {
 	return o
+}
+
+func (o AppFirewallPolicyRequestProtectionRuleOutput) ToOutput(ctx context.Context) pulumix.Output[AppFirewallPolicyRequestProtectionRule] {
+	return pulumix.Output[AppFirewallPolicyRequestProtectionRule]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
@@ -1160,6 +1323,12 @@ func (o AppFirewallPolicyRequestProtectionRuleArrayOutput) ToAppFirewallPolicyRe
 	return o
 }
 
+func (o AppFirewallPolicyRequestProtectionRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AppFirewallPolicyRequestProtectionRule] {
+	return pulumix.Output[[]AppFirewallPolicyRequestProtectionRule]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AppFirewallPolicyRequestProtectionRuleArrayOutput) Index(i pulumi.IntInput) AppFirewallPolicyRequestProtectionRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AppFirewallPolicyRequestProtectionRule {
 		return vs[0].([]AppFirewallPolicyRequestProtectionRule)[vs[1].(int)]
@@ -1219,6 +1388,12 @@ func (i AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArgs) ToAppFir
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallPolicyRequestProtectionRuleProtectionCapabilityOutput)
 }
 
+func (i AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArgs) ToOutput(ctx context.Context) pulumix.Output[AppFirewallPolicyRequestProtectionRuleProtectionCapability] {
+	return pulumix.Output[AppFirewallPolicyRequestProtectionRuleProtectionCapability]{
+		OutputState: i.ToAppFirewallPolicyRequestProtectionRuleProtectionCapabilityOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArrayInput is an input type that accepts AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArray and AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArrayOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArrayInput` via:
 //
@@ -1244,6 +1419,12 @@ func (i AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArray) ToAppFi
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArrayOutput)
 }
 
+func (i AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArray) ToOutput(ctx context.Context) pulumix.Output[[]AppFirewallPolicyRequestProtectionRuleProtectionCapability] {
+	return pulumix.Output[[]AppFirewallPolicyRequestProtectionRuleProtectionCapability]{
+		OutputState: i.ToAppFirewallPolicyRequestProtectionRuleProtectionCapabilityArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AppFirewallPolicyRequestProtectionRuleProtectionCapabilityOutput struct{ *pulumi.OutputState }
 
 func (AppFirewallPolicyRequestProtectionRuleProtectionCapabilityOutput) ElementType() reflect.Type {
@@ -1256,6 +1437,12 @@ func (o AppFirewallPolicyRequestProtectionRuleProtectionCapabilityOutput) ToAppF
 
 func (o AppFirewallPolicyRequestProtectionRuleProtectionCapabilityOutput) ToAppFirewallPolicyRequestProtectionRuleProtectionCapabilityOutputWithContext(ctx context.Context) AppFirewallPolicyRequestProtectionRuleProtectionCapabilityOutput {
 	return o
+}
+
+func (o AppFirewallPolicyRequestProtectionRuleProtectionCapabilityOutput) ToOutput(ctx context.Context) pulumix.Output[AppFirewallPolicyRequestProtectionRuleProtectionCapability] {
+	return pulumix.Output[AppFirewallPolicyRequestProtectionRuleProtectionCapability]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
@@ -1308,6 +1495,12 @@ func (o AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArrayOutput) T
 	return o
 }
 
+func (o AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AppFirewallPolicyRequestProtectionRuleProtectionCapability] {
+	return pulumix.Output[[]AppFirewallPolicyRequestProtectionRuleProtectionCapability]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArrayOutput) Index(i pulumi.IntInput) AppFirewallPolicyRequestProtectionRuleProtectionCapabilityOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AppFirewallPolicyRequestProtectionRuleProtectionCapability {
 		return vs[0].([]AppFirewallPolicyRequestProtectionRuleProtectionCapability)[vs[1].(int)]
@@ -1351,6 +1544,12 @@ func (i AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeW
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightOutput)
 }
 
+func (i AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgs) ToOutput(ctx context.Context) pulumix.Output[AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeight] {
+	return pulumix.Output[AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeight]{
+		OutputState: i.ToAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArrayInput is an input type that accepts AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArray and AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArrayInput` via:
 //
@@ -1376,6 +1575,12 @@ func (i AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeW
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutput)
 }
 
+func (i AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArray) ToOutput(ctx context.Context) pulumix.Output[[]AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeight] {
+	return pulumix.Output[[]AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeight]{
+		OutputState: i.ToAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightOutput struct{ *pulumi.OutputState }
 
 func (AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightOutput) ElementType() reflect.Type {
@@ -1388,6 +1593,12 @@ func (o AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeW
 
 func (o AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightOutput) ToAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightOutputWithContext(ctx context.Context) AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightOutput {
 	return o
+}
+
+func (o AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightOutput) ToOutput(ctx context.Context) pulumix.Output[AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeight] {
+	return pulumix.Output[AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeight]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Unique key of referenced protection capability.
@@ -1416,6 +1627,12 @@ func (o AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeW
 
 func (o AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutput) ToAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutputWithContext(ctx context.Context) AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutput {
 	return o
+}
+
+func (o AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeight] {
+	return pulumix.Output[[]AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeight]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutput) Index(i pulumi.IntInput) AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightOutput {
@@ -1461,6 +1678,12 @@ func (i AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsArgs
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsOutput)
 }
 
+func (i AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsArgs) ToOutput(ctx context.Context) pulumix.Output[AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusions] {
+	return pulumix.Output[AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusions]{
+		OutputState: i.ToAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsArgs) ToAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsPtrOutput() AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsPtrOutput {
 	return i.ToAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsPtrOutputWithContext(context.Background())
 }
@@ -1502,6 +1725,12 @@ func (i *appFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsPtr
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsPtrOutput)
 }
 
+func (i *appFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsPtrType) ToOutput(ctx context.Context) pulumix.Output[*AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusions] {
+	return pulumix.Output[*AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusions]{
+		OutputState: i.ToAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsOutput struct{ *pulumi.OutputState }
 
 func (AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsOutput) ElementType() reflect.Type {
@@ -1524,6 +1753,12 @@ func (o AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsOutp
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusions) *AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusions {
 		return &v
 	}).(AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsPtrOutput)
+}
+
+func (o AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsOutput) ToOutput(ctx context.Context) pulumix.Output[AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusions] {
+	return pulumix.Output[AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusions]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) List of URL query parameter values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from inspecting. Example: If we have query parameter 'argumentName=argumentValue' and args=['argumentName'], both 'argumentName' and 'argumentValue' will not be inspected.
@@ -1550,6 +1785,12 @@ func (o AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsPtrO
 
 func (o AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsPtrOutput) ToAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsPtrOutputWithContext(ctx context.Context) AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsPtrOutput {
 	return o
+}
+
+func (o AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusions] {
+	return pulumix.Output[*AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusions]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsPtrOutput) Elem() AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsOutput {
@@ -1635,6 +1876,12 @@ func (i AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsArgs) 
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsOutput)
 }
 
+func (i AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsArgs) ToOutput(ctx context.Context) pulumix.Output[AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettings] {
+	return pulumix.Output[AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettings]{
+		OutputState: i.ToAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsArgs) ToAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsPtrOutput() AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsPtrOutput {
 	return i.ToAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsPtrOutputWithContext(context.Background())
 }
@@ -1676,6 +1923,12 @@ func (i *appFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsPtrTy
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsPtrOutput)
 }
 
+func (i *appFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsPtrType) ToOutput(ctx context.Context) pulumix.Output[*AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettings] {
+	return pulumix.Output[*AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettings]{
+		OutputState: i.ToAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsOutput struct{ *pulumi.OutputState }
 
 func (AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsOutput) ElementType() reflect.Type {
@@ -1698,6 +1951,12 @@ func (o AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsOutput
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettings) *AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettings {
 		return &v
 	}).(AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsPtrOutput)
+}
+
+func (o AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsOutput) ToOutput(ctx context.Context) pulumix.Output[AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettings] {
+	return pulumix.Output[AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettings]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) List of allowed HTTP methods. Each value as a RFC7230 formated token string. Used in protection capability 911100: Restrict HTTP Request Methods.
@@ -1754,6 +2013,12 @@ func (o AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsPtrOut
 
 func (o AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsPtrOutput) ToAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsPtrOutputWithContext(ctx context.Context) AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsPtrOutput {
 	return o
+}
+
+func (o AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettings] {
+	return pulumix.Output[*AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettings]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsPtrOutput) Elem() AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsOutput {
@@ -1859,6 +2124,12 @@ func (i AppFirewallPolicyRequestRateLimitingArgs) ToAppFirewallPolicyRequestRate
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallPolicyRequestRateLimitingOutput)
 }
 
+func (i AppFirewallPolicyRequestRateLimitingArgs) ToOutput(ctx context.Context) pulumix.Output[AppFirewallPolicyRequestRateLimiting] {
+	return pulumix.Output[AppFirewallPolicyRequestRateLimiting]{
+		OutputState: i.ToAppFirewallPolicyRequestRateLimitingOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i AppFirewallPolicyRequestRateLimitingArgs) ToAppFirewallPolicyRequestRateLimitingPtrOutput() AppFirewallPolicyRequestRateLimitingPtrOutput {
 	return i.ToAppFirewallPolicyRequestRateLimitingPtrOutputWithContext(context.Background())
 }
@@ -1900,6 +2171,12 @@ func (i *appFirewallPolicyRequestRateLimitingPtrType) ToAppFirewallPolicyRequest
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallPolicyRequestRateLimitingPtrOutput)
 }
 
+func (i *appFirewallPolicyRequestRateLimitingPtrType) ToOutput(ctx context.Context) pulumix.Output[*AppFirewallPolicyRequestRateLimiting] {
+	return pulumix.Output[*AppFirewallPolicyRequestRateLimiting]{
+		OutputState: i.ToAppFirewallPolicyRequestRateLimitingPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AppFirewallPolicyRequestRateLimitingOutput struct{ *pulumi.OutputState }
 
 func (AppFirewallPolicyRequestRateLimitingOutput) ElementType() reflect.Type {
@@ -1924,6 +2201,12 @@ func (o AppFirewallPolicyRequestRateLimitingOutput) ToAppFirewallPolicyRequestRa
 	}).(AppFirewallPolicyRequestRateLimitingPtrOutput)
 }
 
+func (o AppFirewallPolicyRequestRateLimitingOutput) ToOutput(ctx context.Context) pulumix.Output[AppFirewallPolicyRequestRateLimiting] {
+	return pulumix.Output[AppFirewallPolicyRequestRateLimiting]{
+		OutputState: o.OutputState,
+	}
+}
+
 // (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
 func (o AppFirewallPolicyRequestRateLimitingOutput) Rules() AppFirewallPolicyRequestRateLimitingRuleArrayOutput {
 	return o.ApplyT(func(v AppFirewallPolicyRequestRateLimiting) []AppFirewallPolicyRequestRateLimitingRule {
@@ -1943,6 +2226,12 @@ func (o AppFirewallPolicyRequestRateLimitingPtrOutput) ToAppFirewallPolicyReques
 
 func (o AppFirewallPolicyRequestRateLimitingPtrOutput) ToAppFirewallPolicyRequestRateLimitingPtrOutputWithContext(ctx context.Context) AppFirewallPolicyRequestRateLimitingPtrOutput {
 	return o
+}
+
+func (o AppFirewallPolicyRequestRateLimitingPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*AppFirewallPolicyRequestRateLimiting] {
+	return pulumix.Output[*AppFirewallPolicyRequestRateLimiting]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AppFirewallPolicyRequestRateLimitingPtrOutput) Elem() AppFirewallPolicyRequestRateLimitingOutput {
@@ -2020,6 +2309,12 @@ func (i AppFirewallPolicyRequestRateLimitingRuleArgs) ToAppFirewallPolicyRequest
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallPolicyRequestRateLimitingRuleOutput)
 }
 
+func (i AppFirewallPolicyRequestRateLimitingRuleArgs) ToOutput(ctx context.Context) pulumix.Output[AppFirewallPolicyRequestRateLimitingRule] {
+	return pulumix.Output[AppFirewallPolicyRequestRateLimitingRule]{
+		OutputState: i.ToAppFirewallPolicyRequestRateLimitingRuleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AppFirewallPolicyRequestRateLimitingRuleArrayInput is an input type that accepts AppFirewallPolicyRequestRateLimitingRuleArray and AppFirewallPolicyRequestRateLimitingRuleArrayOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyRequestRateLimitingRuleArrayInput` via:
 //
@@ -2045,6 +2340,12 @@ func (i AppFirewallPolicyRequestRateLimitingRuleArray) ToAppFirewallPolicyReques
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallPolicyRequestRateLimitingRuleArrayOutput)
 }
 
+func (i AppFirewallPolicyRequestRateLimitingRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]AppFirewallPolicyRequestRateLimitingRule] {
+	return pulumix.Output[[]AppFirewallPolicyRequestRateLimitingRule]{
+		OutputState: i.ToAppFirewallPolicyRequestRateLimitingRuleArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AppFirewallPolicyRequestRateLimitingRuleOutput struct{ *pulumi.OutputState }
 
 func (AppFirewallPolicyRequestRateLimitingRuleOutput) ElementType() reflect.Type {
@@ -2057,6 +2358,12 @@ func (o AppFirewallPolicyRequestRateLimitingRuleOutput) ToAppFirewallPolicyReque
 
 func (o AppFirewallPolicyRequestRateLimitingRuleOutput) ToAppFirewallPolicyRequestRateLimitingRuleOutputWithContext(ctx context.Context) AppFirewallPolicyRequestRateLimitingRuleOutput {
 	return o
+}
+
+func (o AppFirewallPolicyRequestRateLimitingRuleOutput) ToOutput(ctx context.Context) pulumix.Output[AppFirewallPolicyRequestRateLimitingRule] {
+	return pulumix.Output[AppFirewallPolicyRequestRateLimitingRule]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
@@ -2106,6 +2413,12 @@ func (o AppFirewallPolicyRequestRateLimitingRuleArrayOutput) ToAppFirewallPolicy
 	return o
 }
 
+func (o AppFirewallPolicyRequestRateLimitingRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AppFirewallPolicyRequestRateLimitingRule] {
+	return pulumix.Output[[]AppFirewallPolicyRequestRateLimitingRule]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AppFirewallPolicyRequestRateLimitingRuleArrayOutput) Index(i pulumi.IntInput) AppFirewallPolicyRequestRateLimitingRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AppFirewallPolicyRequestRateLimitingRule {
 		return vs[0].([]AppFirewallPolicyRequestRateLimitingRule)[vs[1].(int)]
@@ -2153,6 +2466,12 @@ func (i AppFirewallPolicyRequestRateLimitingRuleConfigurationArgs) ToAppFirewall
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallPolicyRequestRateLimitingRuleConfigurationOutput)
 }
 
+func (i AppFirewallPolicyRequestRateLimitingRuleConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[AppFirewallPolicyRequestRateLimitingRuleConfiguration] {
+	return pulumix.Output[AppFirewallPolicyRequestRateLimitingRuleConfiguration]{
+		OutputState: i.ToAppFirewallPolicyRequestRateLimitingRuleConfigurationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AppFirewallPolicyRequestRateLimitingRuleConfigurationArrayInput is an input type that accepts AppFirewallPolicyRequestRateLimitingRuleConfigurationArray and AppFirewallPolicyRequestRateLimitingRuleConfigurationArrayOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyRequestRateLimitingRuleConfigurationArrayInput` via:
 //
@@ -2178,6 +2497,12 @@ func (i AppFirewallPolicyRequestRateLimitingRuleConfigurationArray) ToAppFirewal
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallPolicyRequestRateLimitingRuleConfigurationArrayOutput)
 }
 
+func (i AppFirewallPolicyRequestRateLimitingRuleConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]AppFirewallPolicyRequestRateLimitingRuleConfiguration] {
+	return pulumix.Output[[]AppFirewallPolicyRequestRateLimitingRuleConfiguration]{
+		OutputState: i.ToAppFirewallPolicyRequestRateLimitingRuleConfigurationArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AppFirewallPolicyRequestRateLimitingRuleConfigurationOutput struct{ *pulumi.OutputState }
 
 func (AppFirewallPolicyRequestRateLimitingRuleConfigurationOutput) ElementType() reflect.Type {
@@ -2190,6 +2515,12 @@ func (o AppFirewallPolicyRequestRateLimitingRuleConfigurationOutput) ToAppFirewa
 
 func (o AppFirewallPolicyRequestRateLimitingRuleConfigurationOutput) ToAppFirewallPolicyRequestRateLimitingRuleConfigurationOutputWithContext(ctx context.Context) AppFirewallPolicyRequestRateLimitingRuleConfigurationOutput {
 	return o
+}
+
+func (o AppFirewallPolicyRequestRateLimitingRuleConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[AppFirewallPolicyRequestRateLimitingRuleConfiguration] {
+	return pulumix.Output[AppFirewallPolicyRequestRateLimitingRuleConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Duration of block action application in seconds when `requestsLimit` is reached. Optional and can be 0 (no block duration).
@@ -2219,6 +2550,12 @@ func (o AppFirewallPolicyRequestRateLimitingRuleConfigurationArrayOutput) ToAppF
 
 func (o AppFirewallPolicyRequestRateLimitingRuleConfigurationArrayOutput) ToAppFirewallPolicyRequestRateLimitingRuleConfigurationArrayOutputWithContext(ctx context.Context) AppFirewallPolicyRequestRateLimitingRuleConfigurationArrayOutput {
 	return o
+}
+
+func (o AppFirewallPolicyRequestRateLimitingRuleConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AppFirewallPolicyRequestRateLimitingRuleConfiguration] {
+	return pulumix.Output[[]AppFirewallPolicyRequestRateLimitingRuleConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AppFirewallPolicyRequestRateLimitingRuleConfigurationArrayOutput) Index(i pulumi.IntInput) AppFirewallPolicyRequestRateLimitingRuleConfigurationOutput {
@@ -2258,6 +2595,12 @@ func (i AppFirewallPolicyResponseAccessControlArgs) ToAppFirewallPolicyResponseA
 
 func (i AppFirewallPolicyResponseAccessControlArgs) ToAppFirewallPolicyResponseAccessControlOutputWithContext(ctx context.Context) AppFirewallPolicyResponseAccessControlOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallPolicyResponseAccessControlOutput)
+}
+
+func (i AppFirewallPolicyResponseAccessControlArgs) ToOutput(ctx context.Context) pulumix.Output[AppFirewallPolicyResponseAccessControl] {
+	return pulumix.Output[AppFirewallPolicyResponseAccessControl]{
+		OutputState: i.ToAppFirewallPolicyResponseAccessControlOutputWithContext(ctx).OutputState,
+	}
 }
 
 func (i AppFirewallPolicyResponseAccessControlArgs) ToAppFirewallPolicyResponseAccessControlPtrOutput() AppFirewallPolicyResponseAccessControlPtrOutput {
@@ -2301,6 +2644,12 @@ func (i *appFirewallPolicyResponseAccessControlPtrType) ToAppFirewallPolicyRespo
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallPolicyResponseAccessControlPtrOutput)
 }
 
+func (i *appFirewallPolicyResponseAccessControlPtrType) ToOutput(ctx context.Context) pulumix.Output[*AppFirewallPolicyResponseAccessControl] {
+	return pulumix.Output[*AppFirewallPolicyResponseAccessControl]{
+		OutputState: i.ToAppFirewallPolicyResponseAccessControlPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AppFirewallPolicyResponseAccessControlOutput struct{ *pulumi.OutputState }
 
 func (AppFirewallPolicyResponseAccessControlOutput) ElementType() reflect.Type {
@@ -2325,6 +2674,12 @@ func (o AppFirewallPolicyResponseAccessControlOutput) ToAppFirewallPolicyRespons
 	}).(AppFirewallPolicyResponseAccessControlPtrOutput)
 }
 
+func (o AppFirewallPolicyResponseAccessControlOutput) ToOutput(ctx context.Context) pulumix.Output[AppFirewallPolicyResponseAccessControl] {
+	return pulumix.Output[AppFirewallPolicyResponseAccessControl]{
+		OutputState: o.OutputState,
+	}
+}
+
 // (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
 func (o AppFirewallPolicyResponseAccessControlOutput) Rules() AppFirewallPolicyResponseAccessControlRuleArrayOutput {
 	return o.ApplyT(func(v AppFirewallPolicyResponseAccessControl) []AppFirewallPolicyResponseAccessControlRule {
@@ -2344,6 +2699,12 @@ func (o AppFirewallPolicyResponseAccessControlPtrOutput) ToAppFirewallPolicyResp
 
 func (o AppFirewallPolicyResponseAccessControlPtrOutput) ToAppFirewallPolicyResponseAccessControlPtrOutputWithContext(ctx context.Context) AppFirewallPolicyResponseAccessControlPtrOutput {
 	return o
+}
+
+func (o AppFirewallPolicyResponseAccessControlPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*AppFirewallPolicyResponseAccessControl] {
+	return pulumix.Output[*AppFirewallPolicyResponseAccessControl]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AppFirewallPolicyResponseAccessControlPtrOutput) Elem() AppFirewallPolicyResponseAccessControlOutput {
@@ -2417,6 +2778,12 @@ func (i AppFirewallPolicyResponseAccessControlRuleArgs) ToAppFirewallPolicyRespo
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallPolicyResponseAccessControlRuleOutput)
 }
 
+func (i AppFirewallPolicyResponseAccessControlRuleArgs) ToOutput(ctx context.Context) pulumix.Output[AppFirewallPolicyResponseAccessControlRule] {
+	return pulumix.Output[AppFirewallPolicyResponseAccessControlRule]{
+		OutputState: i.ToAppFirewallPolicyResponseAccessControlRuleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AppFirewallPolicyResponseAccessControlRuleArrayInput is an input type that accepts AppFirewallPolicyResponseAccessControlRuleArray and AppFirewallPolicyResponseAccessControlRuleArrayOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyResponseAccessControlRuleArrayInput` via:
 //
@@ -2442,6 +2809,12 @@ func (i AppFirewallPolicyResponseAccessControlRuleArray) ToAppFirewallPolicyResp
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallPolicyResponseAccessControlRuleArrayOutput)
 }
 
+func (i AppFirewallPolicyResponseAccessControlRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]AppFirewallPolicyResponseAccessControlRule] {
+	return pulumix.Output[[]AppFirewallPolicyResponseAccessControlRule]{
+		OutputState: i.ToAppFirewallPolicyResponseAccessControlRuleArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AppFirewallPolicyResponseAccessControlRuleOutput struct{ *pulumi.OutputState }
 
 func (AppFirewallPolicyResponseAccessControlRuleOutput) ElementType() reflect.Type {
@@ -2454,6 +2827,12 @@ func (o AppFirewallPolicyResponseAccessControlRuleOutput) ToAppFirewallPolicyRes
 
 func (o AppFirewallPolicyResponseAccessControlRuleOutput) ToAppFirewallPolicyResponseAccessControlRuleOutputWithContext(ctx context.Context) AppFirewallPolicyResponseAccessControlRuleOutput {
 	return o
+}
+
+func (o AppFirewallPolicyResponseAccessControlRuleOutput) ToOutput(ctx context.Context) pulumix.Output[AppFirewallPolicyResponseAccessControlRule] {
+	return pulumix.Output[AppFirewallPolicyResponseAccessControlRule]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
@@ -2496,6 +2875,12 @@ func (o AppFirewallPolicyResponseAccessControlRuleArrayOutput) ToAppFirewallPoli
 	return o
 }
 
+func (o AppFirewallPolicyResponseAccessControlRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AppFirewallPolicyResponseAccessControlRule] {
+	return pulumix.Output[[]AppFirewallPolicyResponseAccessControlRule]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AppFirewallPolicyResponseAccessControlRuleArrayOutput) Index(i pulumi.IntInput) AppFirewallPolicyResponseAccessControlRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AppFirewallPolicyResponseAccessControlRule {
 		return vs[0].([]AppFirewallPolicyResponseAccessControlRule)[vs[1].(int)]
@@ -2533,6 +2918,12 @@ func (i AppFirewallPolicyResponseProtectionArgs) ToAppFirewallPolicyResponseProt
 
 func (i AppFirewallPolicyResponseProtectionArgs) ToAppFirewallPolicyResponseProtectionOutputWithContext(ctx context.Context) AppFirewallPolicyResponseProtectionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallPolicyResponseProtectionOutput)
+}
+
+func (i AppFirewallPolicyResponseProtectionArgs) ToOutput(ctx context.Context) pulumix.Output[AppFirewallPolicyResponseProtection] {
+	return pulumix.Output[AppFirewallPolicyResponseProtection]{
+		OutputState: i.ToAppFirewallPolicyResponseProtectionOutputWithContext(ctx).OutputState,
+	}
 }
 
 func (i AppFirewallPolicyResponseProtectionArgs) ToAppFirewallPolicyResponseProtectionPtrOutput() AppFirewallPolicyResponseProtectionPtrOutput {
@@ -2576,6 +2967,12 @@ func (i *appFirewallPolicyResponseProtectionPtrType) ToAppFirewallPolicyResponse
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallPolicyResponseProtectionPtrOutput)
 }
 
+func (i *appFirewallPolicyResponseProtectionPtrType) ToOutput(ctx context.Context) pulumix.Output[*AppFirewallPolicyResponseProtection] {
+	return pulumix.Output[*AppFirewallPolicyResponseProtection]{
+		OutputState: i.ToAppFirewallPolicyResponseProtectionPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AppFirewallPolicyResponseProtectionOutput struct{ *pulumi.OutputState }
 
 func (AppFirewallPolicyResponseProtectionOutput) ElementType() reflect.Type {
@@ -2600,6 +2997,12 @@ func (o AppFirewallPolicyResponseProtectionOutput) ToAppFirewallPolicyResponsePr
 	}).(AppFirewallPolicyResponseProtectionPtrOutput)
 }
 
+func (o AppFirewallPolicyResponseProtectionOutput) ToOutput(ctx context.Context) pulumix.Output[AppFirewallPolicyResponseProtection] {
+	return pulumix.Output[AppFirewallPolicyResponseProtection]{
+		OutputState: o.OutputState,
+	}
+}
+
 // (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
 func (o AppFirewallPolicyResponseProtectionOutput) Rules() AppFirewallPolicyResponseProtectionRuleArrayOutput {
 	return o.ApplyT(func(v AppFirewallPolicyResponseProtection) []AppFirewallPolicyResponseProtectionRule { return v.Rules }).(AppFirewallPolicyResponseProtectionRuleArrayOutput)
@@ -2617,6 +3020,12 @@ func (o AppFirewallPolicyResponseProtectionPtrOutput) ToAppFirewallPolicyRespons
 
 func (o AppFirewallPolicyResponseProtectionPtrOutput) ToAppFirewallPolicyResponseProtectionPtrOutputWithContext(ctx context.Context) AppFirewallPolicyResponseProtectionPtrOutput {
 	return o
+}
+
+func (o AppFirewallPolicyResponseProtectionPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*AppFirewallPolicyResponseProtection] {
+	return pulumix.Output[*AppFirewallPolicyResponseProtection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AppFirewallPolicyResponseProtectionPtrOutput) Elem() AppFirewallPolicyResponseProtectionOutput {
@@ -2702,6 +3111,12 @@ func (i AppFirewallPolicyResponseProtectionRuleArgs) ToAppFirewallPolicyResponse
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallPolicyResponseProtectionRuleOutput)
 }
 
+func (i AppFirewallPolicyResponseProtectionRuleArgs) ToOutput(ctx context.Context) pulumix.Output[AppFirewallPolicyResponseProtectionRule] {
+	return pulumix.Output[AppFirewallPolicyResponseProtectionRule]{
+		OutputState: i.ToAppFirewallPolicyResponseProtectionRuleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AppFirewallPolicyResponseProtectionRuleArrayInput is an input type that accepts AppFirewallPolicyResponseProtectionRuleArray and AppFirewallPolicyResponseProtectionRuleArrayOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyResponseProtectionRuleArrayInput` via:
 //
@@ -2727,6 +3142,12 @@ func (i AppFirewallPolicyResponseProtectionRuleArray) ToAppFirewallPolicyRespons
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallPolicyResponseProtectionRuleArrayOutput)
 }
 
+func (i AppFirewallPolicyResponseProtectionRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]AppFirewallPolicyResponseProtectionRule] {
+	return pulumix.Output[[]AppFirewallPolicyResponseProtectionRule]{
+		OutputState: i.ToAppFirewallPolicyResponseProtectionRuleArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AppFirewallPolicyResponseProtectionRuleOutput struct{ *pulumi.OutputState }
 
 func (AppFirewallPolicyResponseProtectionRuleOutput) ElementType() reflect.Type {
@@ -2739,6 +3160,12 @@ func (o AppFirewallPolicyResponseProtectionRuleOutput) ToAppFirewallPolicyRespon
 
 func (o AppFirewallPolicyResponseProtectionRuleOutput) ToAppFirewallPolicyResponseProtectionRuleOutputWithContext(ctx context.Context) AppFirewallPolicyResponseProtectionRuleOutput {
 	return o
+}
+
+func (o AppFirewallPolicyResponseProtectionRuleOutput) ToOutput(ctx context.Context) pulumix.Output[AppFirewallPolicyResponseProtectionRule] {
+	return pulumix.Output[AppFirewallPolicyResponseProtectionRule]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
@@ -2800,6 +3227,12 @@ func (o AppFirewallPolicyResponseProtectionRuleArrayOutput) ToAppFirewallPolicyR
 	return o
 }
 
+func (o AppFirewallPolicyResponseProtectionRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AppFirewallPolicyResponseProtectionRule] {
+	return pulumix.Output[[]AppFirewallPolicyResponseProtectionRule]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AppFirewallPolicyResponseProtectionRuleArrayOutput) Index(i pulumi.IntInput) AppFirewallPolicyResponseProtectionRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AppFirewallPolicyResponseProtectionRule {
 		return vs[0].([]AppFirewallPolicyResponseProtectionRule)[vs[1].(int)]
@@ -2859,6 +3292,12 @@ func (i AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgs) ToAppFi
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallPolicyResponseProtectionRuleProtectionCapabilityOutput)
 }
 
+func (i AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgs) ToOutput(ctx context.Context) pulumix.Output[AppFirewallPolicyResponseProtectionRuleProtectionCapability] {
+	return pulumix.Output[AppFirewallPolicyResponseProtectionRuleProtectionCapability]{
+		OutputState: i.ToAppFirewallPolicyResponseProtectionRuleProtectionCapabilityOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArrayInput is an input type that accepts AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArray and AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArrayOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArrayInput` via:
 //
@@ -2884,6 +3323,12 @@ func (i AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArray) ToAppF
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArrayOutput)
 }
 
+func (i AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArray) ToOutput(ctx context.Context) pulumix.Output[[]AppFirewallPolicyResponseProtectionRuleProtectionCapability] {
+	return pulumix.Output[[]AppFirewallPolicyResponseProtectionRuleProtectionCapability]{
+		OutputState: i.ToAppFirewallPolicyResponseProtectionRuleProtectionCapabilityArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AppFirewallPolicyResponseProtectionRuleProtectionCapabilityOutput struct{ *pulumi.OutputState }
 
 func (AppFirewallPolicyResponseProtectionRuleProtectionCapabilityOutput) ElementType() reflect.Type {
@@ -2896,6 +3341,12 @@ func (o AppFirewallPolicyResponseProtectionRuleProtectionCapabilityOutput) ToApp
 
 func (o AppFirewallPolicyResponseProtectionRuleProtectionCapabilityOutput) ToAppFirewallPolicyResponseProtectionRuleProtectionCapabilityOutputWithContext(ctx context.Context) AppFirewallPolicyResponseProtectionRuleProtectionCapabilityOutput {
 	return o
+}
+
+func (o AppFirewallPolicyResponseProtectionRuleProtectionCapabilityOutput) ToOutput(ctx context.Context) pulumix.Output[AppFirewallPolicyResponseProtectionRuleProtectionCapability] {
+	return pulumix.Output[AppFirewallPolicyResponseProtectionRuleProtectionCapability]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
@@ -2948,6 +3399,12 @@ func (o AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArrayOutput) 
 	return o
 }
 
+func (o AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AppFirewallPolicyResponseProtectionRuleProtectionCapability] {
+	return pulumix.Output[[]AppFirewallPolicyResponseProtectionRuleProtectionCapability]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArrayOutput) Index(i pulumi.IntInput) AppFirewallPolicyResponseProtectionRuleProtectionCapabilityOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AppFirewallPolicyResponseProtectionRuleProtectionCapability {
 		return vs[0].([]AppFirewallPolicyResponseProtectionRuleProtectionCapability)[vs[1].(int)]
@@ -2991,6 +3448,12 @@ func (i AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborative
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightOutput)
 }
 
+func (i AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgs) ToOutput(ctx context.Context) pulumix.Output[AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeight] {
+	return pulumix.Output[AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeight]{
+		OutputState: i.ToAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArrayInput is an input type that accepts AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArray and AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArrayInput` via:
 //
@@ -3016,6 +3479,12 @@ func (i AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborative
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutput)
 }
 
+func (i AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArray) ToOutput(ctx context.Context) pulumix.Output[[]AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeight] {
+	return pulumix.Output[[]AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeight]{
+		OutputState: i.ToAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightOutput struct{ *pulumi.OutputState }
 
 func (AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightOutput) ElementType() reflect.Type {
@@ -3028,6 +3497,12 @@ func (o AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborative
 
 func (o AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightOutput) ToAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightOutputWithContext(ctx context.Context) AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightOutput {
 	return o
+}
+
+func (o AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightOutput) ToOutput(ctx context.Context) pulumix.Output[AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeight] {
+	return pulumix.Output[AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeight]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Unique key of referenced protection capability.
@@ -3056,6 +3531,12 @@ func (o AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborative
 
 func (o AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutput) ToAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutputWithContext(ctx context.Context) AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutput {
 	return o
+}
+
+func (o AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeight] {
+	return pulumix.Output[[]AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeight]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutput) Index(i pulumi.IntInput) AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightOutput {
@@ -3101,6 +3582,12 @@ func (i AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsArg
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsOutput)
 }
 
+func (i AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsArgs) ToOutput(ctx context.Context) pulumix.Output[AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusions] {
+	return pulumix.Output[AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusions]{
+		OutputState: i.ToAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsArgs) ToAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsPtrOutput() AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsPtrOutput {
 	return i.ToAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsPtrOutputWithContext(context.Background())
 }
@@ -3142,6 +3629,12 @@ func (i *appFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsPt
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsPtrOutput)
 }
 
+func (i *appFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsPtrType) ToOutput(ctx context.Context) pulumix.Output[*AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusions] {
+	return pulumix.Output[*AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusions]{
+		OutputState: i.ToAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsOutput struct{ *pulumi.OutputState }
 
 func (AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsOutput) ElementType() reflect.Type {
@@ -3164,6 +3657,12 @@ func (o AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsOut
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusions) *AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusions {
 		return &v
 	}).(AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsPtrOutput)
+}
+
+func (o AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsOutput) ToOutput(ctx context.Context) pulumix.Output[AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusions] {
+	return pulumix.Output[AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusions]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) List of URL query parameter values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from inspecting. Example: If we have query parameter 'argumentName=argumentValue' and args=['argumentName'], both 'argumentName' and 'argumentValue' will not be inspected.
@@ -3190,6 +3689,12 @@ func (o AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsPtr
 
 func (o AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsPtrOutput) ToAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsPtrOutputWithContext(ctx context.Context) AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsPtrOutput {
 	return o
+}
+
+func (o AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusions] {
+	return pulumix.Output[*AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusions]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsPtrOutput) Elem() AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsOutput {
@@ -3275,6 +3780,12 @@ func (i AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsArgs)
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsOutput)
 }
 
+func (i AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsArgs) ToOutput(ctx context.Context) pulumix.Output[AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettings] {
+	return pulumix.Output[AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettings]{
+		OutputState: i.ToAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsArgs) ToAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsPtrOutput() AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsPtrOutput {
 	return i.ToAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsPtrOutputWithContext(context.Background())
 }
@@ -3316,6 +3827,12 @@ func (i *appFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsPtrT
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsPtrOutput)
 }
 
+func (i *appFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsPtrType) ToOutput(ctx context.Context) pulumix.Output[*AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettings] {
+	return pulumix.Output[*AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettings]{
+		OutputState: i.ToAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsOutput struct{ *pulumi.OutputState }
 
 func (AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsOutput) ElementType() reflect.Type {
@@ -3338,6 +3855,12 @@ func (o AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsOutpu
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettings) *AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettings {
 		return &v
 	}).(AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsPtrOutput)
+}
+
+func (o AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsOutput) ToOutput(ctx context.Context) pulumix.Output[AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettings] {
+	return pulumix.Output[AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettings]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) List of allowed HTTP methods. Each value as a RFC7230 formated token string. Used in protection capability 911100: Restrict HTTP Request Methods.
@@ -3394,6 +3917,12 @@ func (o AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsPtrOu
 
 func (o AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsPtrOutput) ToAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsPtrOutputWithContext(ctx context.Context) AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsPtrOutput {
 	return o
+}
+
+func (o AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettings] {
+	return pulumix.Output[*AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettings]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsPtrOutput) Elem() AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsOutput {
@@ -3509,6 +4038,12 @@ func (i NetworkAddressListVcnAddressArgs) ToNetworkAddressListVcnAddressOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkAddressListVcnAddressOutput)
 }
 
+func (i NetworkAddressListVcnAddressArgs) ToOutput(ctx context.Context) pulumix.Output[NetworkAddressListVcnAddress] {
+	return pulumix.Output[NetworkAddressListVcnAddress]{
+		OutputState: i.ToNetworkAddressListVcnAddressOutputWithContext(ctx).OutputState,
+	}
+}
+
 // NetworkAddressListVcnAddressArrayInput is an input type that accepts NetworkAddressListVcnAddressArray and NetworkAddressListVcnAddressArrayOutput values.
 // You can construct a concrete instance of `NetworkAddressListVcnAddressArrayInput` via:
 //
@@ -3534,6 +4069,12 @@ func (i NetworkAddressListVcnAddressArray) ToNetworkAddressListVcnAddressArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkAddressListVcnAddressArrayOutput)
 }
 
+func (i NetworkAddressListVcnAddressArray) ToOutput(ctx context.Context) pulumix.Output[[]NetworkAddressListVcnAddress] {
+	return pulumix.Output[[]NetworkAddressListVcnAddress]{
+		OutputState: i.ToNetworkAddressListVcnAddressArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type NetworkAddressListVcnAddressOutput struct{ *pulumi.OutputState }
 
 func (NetworkAddressListVcnAddressOutput) ElementType() reflect.Type {
@@ -3546,6 +4087,12 @@ func (o NetworkAddressListVcnAddressOutput) ToNetworkAddressListVcnAddressOutput
 
 func (o NetworkAddressListVcnAddressOutput) ToNetworkAddressListVcnAddressOutputWithContext(ctx context.Context) NetworkAddressListVcnAddressOutput {
 	return o
+}
+
+func (o NetworkAddressListVcnAddressOutput) ToOutput(ctx context.Context) pulumix.Output[NetworkAddressListVcnAddress] {
+	return pulumix.Output[NetworkAddressListVcnAddress]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) A private IP address or CIDR IP address range.
@@ -3573,6 +4120,12 @@ func (o NetworkAddressListVcnAddressArrayOutput) ToNetworkAddressListVcnAddressA
 
 func (o NetworkAddressListVcnAddressArrayOutput) ToNetworkAddressListVcnAddressArrayOutputWithContext(ctx context.Context) NetworkAddressListVcnAddressArrayOutput {
 	return o
+}
+
+func (o NetworkAddressListVcnAddressArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]NetworkAddressListVcnAddress] {
+	return pulumix.Output[[]NetworkAddressListVcnAddress]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o NetworkAddressListVcnAddressArrayOutput) Index(i pulumi.IntInput) NetworkAddressListVcnAddressOutput {
@@ -3616,6 +4169,12 @@ func (i GetFirewallsFilterArgs) ToGetFirewallsFilterOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetFirewallsFilterOutput)
 }
 
+func (i GetFirewallsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetFirewallsFilter] {
+	return pulumix.Output[GetFirewallsFilter]{
+		OutputState: i.ToGetFirewallsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetFirewallsFilterArrayInput is an input type that accepts GetFirewallsFilterArray and GetFirewallsFilterArrayOutput values.
 // You can construct a concrete instance of `GetFirewallsFilterArrayInput` via:
 //
@@ -3641,6 +4200,12 @@ func (i GetFirewallsFilterArray) ToGetFirewallsFilterArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetFirewallsFilterArrayOutput)
 }
 
+func (i GetFirewallsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFirewallsFilter] {
+	return pulumix.Output[[]GetFirewallsFilter]{
+		OutputState: i.ToGetFirewallsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetFirewallsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetFirewallsFilterOutput) ElementType() reflect.Type {
@@ -3653,6 +4218,12 @@ func (o GetFirewallsFilterOutput) ToGetFirewallsFilterOutput() GetFirewallsFilte
 
 func (o GetFirewallsFilterOutput) ToGetFirewallsFilterOutputWithContext(ctx context.Context) GetFirewallsFilterOutput {
 	return o
+}
+
+func (o GetFirewallsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetFirewallsFilter] {
+	return pulumix.Output[GetFirewallsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetFirewallsFilterOutput) Name() pulumi.StringOutput {
@@ -3679,6 +4250,12 @@ func (o GetFirewallsFilterArrayOutput) ToGetFirewallsFilterArrayOutput() GetFire
 
 func (o GetFirewallsFilterArrayOutput) ToGetFirewallsFilterArrayOutputWithContext(ctx context.Context) GetFirewallsFilterArrayOutput {
 	return o
+}
+
+func (o GetFirewallsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFirewallsFilter] {
+	return pulumix.Output[[]GetFirewallsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetFirewallsFilterArrayOutput) Index(i pulumi.IntInput) GetFirewallsFilterOutput {
@@ -3718,6 +4295,12 @@ func (i GetFirewallsWebAppFirewallCollectionArgs) ToGetFirewallsWebAppFirewallCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetFirewallsWebAppFirewallCollectionOutput)
 }
 
+func (i GetFirewallsWebAppFirewallCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetFirewallsWebAppFirewallCollection] {
+	return pulumix.Output[GetFirewallsWebAppFirewallCollection]{
+		OutputState: i.ToGetFirewallsWebAppFirewallCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetFirewallsWebAppFirewallCollectionArrayInput is an input type that accepts GetFirewallsWebAppFirewallCollectionArray and GetFirewallsWebAppFirewallCollectionArrayOutput values.
 // You can construct a concrete instance of `GetFirewallsWebAppFirewallCollectionArrayInput` via:
 //
@@ -3743,6 +4326,12 @@ func (i GetFirewallsWebAppFirewallCollectionArray) ToGetFirewallsWebAppFirewallC
 	return pulumi.ToOutputWithContext(ctx, i).(GetFirewallsWebAppFirewallCollectionArrayOutput)
 }
 
+func (i GetFirewallsWebAppFirewallCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFirewallsWebAppFirewallCollection] {
+	return pulumix.Output[[]GetFirewallsWebAppFirewallCollection]{
+		OutputState: i.ToGetFirewallsWebAppFirewallCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetFirewallsWebAppFirewallCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetFirewallsWebAppFirewallCollectionOutput) ElementType() reflect.Type {
@@ -3755,6 +4344,12 @@ func (o GetFirewallsWebAppFirewallCollectionOutput) ToGetFirewallsWebAppFirewall
 
 func (o GetFirewallsWebAppFirewallCollectionOutput) ToGetFirewallsWebAppFirewallCollectionOutputWithContext(ctx context.Context) GetFirewallsWebAppFirewallCollectionOutput {
 	return o
+}
+
+func (o GetFirewallsWebAppFirewallCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetFirewallsWebAppFirewallCollection] {
+	return pulumix.Output[GetFirewallsWebAppFirewallCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetFirewallsWebAppFirewallCollectionOutput) Items() GetFirewallsWebAppFirewallCollectionItemArrayOutput {
@@ -3775,6 +4370,12 @@ func (o GetFirewallsWebAppFirewallCollectionArrayOutput) ToGetFirewallsWebAppFir
 
 func (o GetFirewallsWebAppFirewallCollectionArrayOutput) ToGetFirewallsWebAppFirewallCollectionArrayOutputWithContext(ctx context.Context) GetFirewallsWebAppFirewallCollectionArrayOutput {
 	return o
+}
+
+func (o GetFirewallsWebAppFirewallCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFirewallsWebAppFirewallCollection] {
+	return pulumix.Output[[]GetFirewallsWebAppFirewallCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetFirewallsWebAppFirewallCollectionArrayOutput) Index(i pulumi.IntInput) GetFirewallsWebAppFirewallCollectionOutput {
@@ -3864,6 +4465,12 @@ func (i GetFirewallsWebAppFirewallCollectionItemArgs) ToGetFirewallsWebAppFirewa
 	return pulumi.ToOutputWithContext(ctx, i).(GetFirewallsWebAppFirewallCollectionItemOutput)
 }
 
+func (i GetFirewallsWebAppFirewallCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetFirewallsWebAppFirewallCollectionItem] {
+	return pulumix.Output[GetFirewallsWebAppFirewallCollectionItem]{
+		OutputState: i.ToGetFirewallsWebAppFirewallCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetFirewallsWebAppFirewallCollectionItemArrayInput is an input type that accepts GetFirewallsWebAppFirewallCollectionItemArray and GetFirewallsWebAppFirewallCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetFirewallsWebAppFirewallCollectionItemArrayInput` via:
 //
@@ -3889,6 +4496,12 @@ func (i GetFirewallsWebAppFirewallCollectionItemArray) ToGetFirewallsWebAppFirew
 	return pulumi.ToOutputWithContext(ctx, i).(GetFirewallsWebAppFirewallCollectionItemArrayOutput)
 }
 
+func (i GetFirewallsWebAppFirewallCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFirewallsWebAppFirewallCollectionItem] {
+	return pulumix.Output[[]GetFirewallsWebAppFirewallCollectionItem]{
+		OutputState: i.ToGetFirewallsWebAppFirewallCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetFirewallsWebAppFirewallCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetFirewallsWebAppFirewallCollectionItemOutput) ElementType() reflect.Type {
@@ -3901,6 +4514,12 @@ func (o GetFirewallsWebAppFirewallCollectionItemOutput) ToGetFirewallsWebAppFire
 
 func (o GetFirewallsWebAppFirewallCollectionItemOutput) ToGetFirewallsWebAppFirewallCollectionItemOutputWithContext(ctx context.Context) GetFirewallsWebAppFirewallCollectionItemOutput {
 	return o
+}
+
+func (o GetFirewallsWebAppFirewallCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetFirewallsWebAppFirewallCollectionItem] {
+	return pulumix.Output[GetFirewallsWebAppFirewallCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Type of the WebAppFirewall, as example LOAD_BALANCER.
@@ -3982,6 +4601,12 @@ func (o GetFirewallsWebAppFirewallCollectionItemArrayOutput) ToGetFirewallsWebAp
 	return o
 }
 
+func (o GetFirewallsWebAppFirewallCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFirewallsWebAppFirewallCollectionItem] {
+	return pulumix.Output[[]GetFirewallsWebAppFirewallCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetFirewallsWebAppFirewallCollectionItemArrayOutput) Index(i pulumi.IntInput) GetFirewallsWebAppFirewallCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFirewallsWebAppFirewallCollectionItem {
 		return vs[0].([]GetFirewallsWebAppFirewallCollectionItem)[vs[1].(int)]
@@ -4025,6 +4650,12 @@ func (i GetNetworkAddressListVcnAddressArgs) ToGetNetworkAddressListVcnAddressOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkAddressListVcnAddressOutput)
 }
 
+func (i GetNetworkAddressListVcnAddressArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkAddressListVcnAddress] {
+	return pulumix.Output[GetNetworkAddressListVcnAddress]{
+		OutputState: i.ToGetNetworkAddressListVcnAddressOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNetworkAddressListVcnAddressArrayInput is an input type that accepts GetNetworkAddressListVcnAddressArray and GetNetworkAddressListVcnAddressArrayOutput values.
 // You can construct a concrete instance of `GetNetworkAddressListVcnAddressArrayInput` via:
 //
@@ -4050,6 +4681,12 @@ func (i GetNetworkAddressListVcnAddressArray) ToGetNetworkAddressListVcnAddressA
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkAddressListVcnAddressArrayOutput)
 }
 
+func (i GetNetworkAddressListVcnAddressArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkAddressListVcnAddress] {
+	return pulumix.Output[[]GetNetworkAddressListVcnAddress]{
+		OutputState: i.ToGetNetworkAddressListVcnAddressArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNetworkAddressListVcnAddressOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkAddressListVcnAddressOutput) ElementType() reflect.Type {
@@ -4062,6 +4699,12 @@ func (o GetNetworkAddressListVcnAddressOutput) ToGetNetworkAddressListVcnAddress
 
 func (o GetNetworkAddressListVcnAddressOutput) ToGetNetworkAddressListVcnAddressOutputWithContext(ctx context.Context) GetNetworkAddressListVcnAddressOutput {
 	return o
+}
+
+func (o GetNetworkAddressListVcnAddressOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkAddressListVcnAddress] {
+	return pulumix.Output[GetNetworkAddressListVcnAddress]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A private IP address or CIDR IP address range.
@@ -4086,6 +4729,12 @@ func (o GetNetworkAddressListVcnAddressArrayOutput) ToGetNetworkAddressListVcnAd
 
 func (o GetNetworkAddressListVcnAddressArrayOutput) ToGetNetworkAddressListVcnAddressArrayOutputWithContext(ctx context.Context) GetNetworkAddressListVcnAddressArrayOutput {
 	return o
+}
+
+func (o GetNetworkAddressListVcnAddressArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkAddressListVcnAddress] {
+	return pulumix.Output[[]GetNetworkAddressListVcnAddress]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkAddressListVcnAddressArrayOutput) Index(i pulumi.IntInput) GetNetworkAddressListVcnAddressOutput {
@@ -4129,6 +4778,12 @@ func (i GetNetworkAddressListsFilterArgs) ToGetNetworkAddressListsFilterOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkAddressListsFilterOutput)
 }
 
+func (i GetNetworkAddressListsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkAddressListsFilter] {
+	return pulumix.Output[GetNetworkAddressListsFilter]{
+		OutputState: i.ToGetNetworkAddressListsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNetworkAddressListsFilterArrayInput is an input type that accepts GetNetworkAddressListsFilterArray and GetNetworkAddressListsFilterArrayOutput values.
 // You can construct a concrete instance of `GetNetworkAddressListsFilterArrayInput` via:
 //
@@ -4154,6 +4809,12 @@ func (i GetNetworkAddressListsFilterArray) ToGetNetworkAddressListsFilterArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkAddressListsFilterArrayOutput)
 }
 
+func (i GetNetworkAddressListsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkAddressListsFilter] {
+	return pulumix.Output[[]GetNetworkAddressListsFilter]{
+		OutputState: i.ToGetNetworkAddressListsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNetworkAddressListsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkAddressListsFilterOutput) ElementType() reflect.Type {
@@ -4166,6 +4827,12 @@ func (o GetNetworkAddressListsFilterOutput) ToGetNetworkAddressListsFilterOutput
 
 func (o GetNetworkAddressListsFilterOutput) ToGetNetworkAddressListsFilterOutputWithContext(ctx context.Context) GetNetworkAddressListsFilterOutput {
 	return o
+}
+
+func (o GetNetworkAddressListsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkAddressListsFilter] {
+	return pulumix.Output[GetNetworkAddressListsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkAddressListsFilterOutput) Name() pulumi.StringOutput {
@@ -4192,6 +4859,12 @@ func (o GetNetworkAddressListsFilterArrayOutput) ToGetNetworkAddressListsFilterA
 
 func (o GetNetworkAddressListsFilterArrayOutput) ToGetNetworkAddressListsFilterArrayOutputWithContext(ctx context.Context) GetNetworkAddressListsFilterArrayOutput {
 	return o
+}
+
+func (o GetNetworkAddressListsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkAddressListsFilter] {
+	return pulumix.Output[[]GetNetworkAddressListsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkAddressListsFilterArrayOutput) Index(i pulumi.IntInput) GetNetworkAddressListsFilterOutput {
@@ -4231,6 +4904,12 @@ func (i GetNetworkAddressListsNetworkAddressListCollectionArgs) ToGetNetworkAddr
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkAddressListsNetworkAddressListCollectionOutput)
 }
 
+func (i GetNetworkAddressListsNetworkAddressListCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkAddressListsNetworkAddressListCollection] {
+	return pulumix.Output[GetNetworkAddressListsNetworkAddressListCollection]{
+		OutputState: i.ToGetNetworkAddressListsNetworkAddressListCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNetworkAddressListsNetworkAddressListCollectionArrayInput is an input type that accepts GetNetworkAddressListsNetworkAddressListCollectionArray and GetNetworkAddressListsNetworkAddressListCollectionArrayOutput values.
 // You can construct a concrete instance of `GetNetworkAddressListsNetworkAddressListCollectionArrayInput` via:
 //
@@ -4256,6 +4935,12 @@ func (i GetNetworkAddressListsNetworkAddressListCollectionArray) ToGetNetworkAdd
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkAddressListsNetworkAddressListCollectionArrayOutput)
 }
 
+func (i GetNetworkAddressListsNetworkAddressListCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkAddressListsNetworkAddressListCollection] {
+	return pulumix.Output[[]GetNetworkAddressListsNetworkAddressListCollection]{
+		OutputState: i.ToGetNetworkAddressListsNetworkAddressListCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNetworkAddressListsNetworkAddressListCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkAddressListsNetworkAddressListCollectionOutput) ElementType() reflect.Type {
@@ -4268,6 +4953,12 @@ func (o GetNetworkAddressListsNetworkAddressListCollectionOutput) ToGetNetworkAd
 
 func (o GetNetworkAddressListsNetworkAddressListCollectionOutput) ToGetNetworkAddressListsNetworkAddressListCollectionOutputWithContext(ctx context.Context) GetNetworkAddressListsNetworkAddressListCollectionOutput {
 	return o
+}
+
+func (o GetNetworkAddressListsNetworkAddressListCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkAddressListsNetworkAddressListCollection] {
+	return pulumix.Output[GetNetworkAddressListsNetworkAddressListCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkAddressListsNetworkAddressListCollectionOutput) Items() GetNetworkAddressListsNetworkAddressListCollectionItemArrayOutput {
@@ -4288,6 +4979,12 @@ func (o GetNetworkAddressListsNetworkAddressListCollectionArrayOutput) ToGetNetw
 
 func (o GetNetworkAddressListsNetworkAddressListCollectionArrayOutput) ToGetNetworkAddressListsNetworkAddressListCollectionArrayOutputWithContext(ctx context.Context) GetNetworkAddressListsNetworkAddressListCollectionArrayOutput {
 	return o
+}
+
+func (o GetNetworkAddressListsNetworkAddressListCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkAddressListsNetworkAddressListCollection] {
+	return pulumix.Output[[]GetNetworkAddressListsNetworkAddressListCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkAddressListsNetworkAddressListCollectionArrayOutput) Index(i pulumi.IntInput) GetNetworkAddressListsNetworkAddressListCollectionOutput {
@@ -4377,6 +5074,12 @@ func (i GetNetworkAddressListsNetworkAddressListCollectionItemArgs) ToGetNetwork
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkAddressListsNetworkAddressListCollectionItemOutput)
 }
 
+func (i GetNetworkAddressListsNetworkAddressListCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkAddressListsNetworkAddressListCollectionItem] {
+	return pulumix.Output[GetNetworkAddressListsNetworkAddressListCollectionItem]{
+		OutputState: i.ToGetNetworkAddressListsNetworkAddressListCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNetworkAddressListsNetworkAddressListCollectionItemArrayInput is an input type that accepts GetNetworkAddressListsNetworkAddressListCollectionItemArray and GetNetworkAddressListsNetworkAddressListCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetNetworkAddressListsNetworkAddressListCollectionItemArrayInput` via:
 //
@@ -4402,6 +5105,12 @@ func (i GetNetworkAddressListsNetworkAddressListCollectionItemArray) ToGetNetwor
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkAddressListsNetworkAddressListCollectionItemArrayOutput)
 }
 
+func (i GetNetworkAddressListsNetworkAddressListCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkAddressListsNetworkAddressListCollectionItem] {
+	return pulumix.Output[[]GetNetworkAddressListsNetworkAddressListCollectionItem]{
+		OutputState: i.ToGetNetworkAddressListsNetworkAddressListCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNetworkAddressListsNetworkAddressListCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkAddressListsNetworkAddressListCollectionItemOutput) ElementType() reflect.Type {
@@ -4414,6 +5123,12 @@ func (o GetNetworkAddressListsNetworkAddressListCollectionItemOutput) ToGetNetwo
 
 func (o GetNetworkAddressListsNetworkAddressListCollectionItemOutput) ToGetNetworkAddressListsNetworkAddressListCollectionItemOutputWithContext(ctx context.Context) GetNetworkAddressListsNetworkAddressListCollectionItemOutput {
 	return o
+}
+
+func (o GetNetworkAddressListsNetworkAddressListCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkAddressListsNetworkAddressListCollectionItem] {
+	return pulumix.Output[GetNetworkAddressListsNetworkAddressListCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A private IP address or CIDR IP address range.
@@ -4503,6 +5218,12 @@ func (o GetNetworkAddressListsNetworkAddressListCollectionItemArrayOutput) ToGet
 	return o
 }
 
+func (o GetNetworkAddressListsNetworkAddressListCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkAddressListsNetworkAddressListCollectionItem] {
+	return pulumix.Output[[]GetNetworkAddressListsNetworkAddressListCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetNetworkAddressListsNetworkAddressListCollectionItemArrayOutput) Index(i pulumi.IntInput) GetNetworkAddressListsNetworkAddressListCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkAddressListsNetworkAddressListCollectionItem {
 		return vs[0].([]GetNetworkAddressListsNetworkAddressListCollectionItem)[vs[1].(int)]
@@ -4546,6 +5267,12 @@ func (i GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressArgs) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressOutput)
 }
 
+func (i GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddress] {
+	return pulumix.Output[GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddress]{
+		OutputState: i.ToGetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressArrayInput is an input type that accepts GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressArray and GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressArrayOutput values.
 // You can construct a concrete instance of `GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressArrayInput` via:
 //
@@ -4571,6 +5298,12 @@ func (i GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressArray) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressArrayOutput)
 }
 
+func (i GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddress] {
+	return pulumix.Output[[]GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddress]{
+		OutputState: i.ToGetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressOutput) ElementType() reflect.Type {
@@ -4583,6 +5316,12 @@ func (o GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressOutput) 
 
 func (o GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressOutput) ToGetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressOutputWithContext(ctx context.Context) GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressOutput {
 	return o
+}
+
+func (o GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddress] {
+	return pulumix.Output[GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddress]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A private IP address or CIDR IP address range.
@@ -4607,6 +5346,12 @@ func (o GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressArrayOut
 
 func (o GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressArrayOutput) ToGetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressArrayOutputWithContext(ctx context.Context) GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressArrayOutput {
 	return o
+}
+
+func (o GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddress] {
+	return pulumix.Output[[]GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddress]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressArrayOutput) Index(i pulumi.IntInput) GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressOutput {
@@ -4650,6 +5395,12 @@ func (i GetProtectionCapabilitiesFilterArgs) ToGetProtectionCapabilitiesFilterOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectionCapabilitiesFilterOutput)
 }
 
+func (i GetProtectionCapabilitiesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetProtectionCapabilitiesFilter] {
+	return pulumix.Output[GetProtectionCapabilitiesFilter]{
+		OutputState: i.ToGetProtectionCapabilitiesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetProtectionCapabilitiesFilterArrayInput is an input type that accepts GetProtectionCapabilitiesFilterArray and GetProtectionCapabilitiesFilterArrayOutput values.
 // You can construct a concrete instance of `GetProtectionCapabilitiesFilterArrayInput` via:
 //
@@ -4675,6 +5426,12 @@ func (i GetProtectionCapabilitiesFilterArray) ToGetProtectionCapabilitiesFilterA
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectionCapabilitiesFilterArrayOutput)
 }
 
+func (i GetProtectionCapabilitiesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectionCapabilitiesFilter] {
+	return pulumix.Output[[]GetProtectionCapabilitiesFilter]{
+		OutputState: i.ToGetProtectionCapabilitiesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetProtectionCapabilitiesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetProtectionCapabilitiesFilterOutput) ElementType() reflect.Type {
@@ -4687,6 +5444,12 @@ func (o GetProtectionCapabilitiesFilterOutput) ToGetProtectionCapabilitiesFilter
 
 func (o GetProtectionCapabilitiesFilterOutput) ToGetProtectionCapabilitiesFilterOutputWithContext(ctx context.Context) GetProtectionCapabilitiesFilterOutput {
 	return o
+}
+
+func (o GetProtectionCapabilitiesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetProtectionCapabilitiesFilter] {
+	return pulumix.Output[GetProtectionCapabilitiesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetProtectionCapabilitiesFilterOutput) Name() pulumi.StringOutput {
@@ -4713,6 +5476,12 @@ func (o GetProtectionCapabilitiesFilterArrayOutput) ToGetProtectionCapabilitiesF
 
 func (o GetProtectionCapabilitiesFilterArrayOutput) ToGetProtectionCapabilitiesFilterArrayOutputWithContext(ctx context.Context) GetProtectionCapabilitiesFilterArrayOutput {
 	return o
+}
+
+func (o GetProtectionCapabilitiesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectionCapabilitiesFilter] {
+	return pulumix.Output[[]GetProtectionCapabilitiesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetProtectionCapabilitiesFilterArrayOutput) Index(i pulumi.IntInput) GetProtectionCapabilitiesFilterOutput {
@@ -4754,6 +5523,12 @@ func (i GetProtectionCapabilitiesProtectionCapabilityCollectionArgs) ToGetProtec
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectionCapabilitiesProtectionCapabilityCollectionOutput)
 }
 
+func (i GetProtectionCapabilitiesProtectionCapabilityCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetProtectionCapabilitiesProtectionCapabilityCollection] {
+	return pulumix.Output[GetProtectionCapabilitiesProtectionCapabilityCollection]{
+		OutputState: i.ToGetProtectionCapabilitiesProtectionCapabilityCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetProtectionCapabilitiesProtectionCapabilityCollectionArrayInput is an input type that accepts GetProtectionCapabilitiesProtectionCapabilityCollectionArray and GetProtectionCapabilitiesProtectionCapabilityCollectionArrayOutput values.
 // You can construct a concrete instance of `GetProtectionCapabilitiesProtectionCapabilityCollectionArrayInput` via:
 //
@@ -4779,6 +5554,12 @@ func (i GetProtectionCapabilitiesProtectionCapabilityCollectionArray) ToGetProte
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectionCapabilitiesProtectionCapabilityCollectionArrayOutput)
 }
 
+func (i GetProtectionCapabilitiesProtectionCapabilityCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectionCapabilitiesProtectionCapabilityCollection] {
+	return pulumix.Output[[]GetProtectionCapabilitiesProtectionCapabilityCollection]{
+		OutputState: i.ToGetProtectionCapabilitiesProtectionCapabilityCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetProtectionCapabilitiesProtectionCapabilityCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetProtectionCapabilitiesProtectionCapabilityCollectionOutput) ElementType() reflect.Type {
@@ -4791,6 +5572,12 @@ func (o GetProtectionCapabilitiesProtectionCapabilityCollectionOutput) ToGetProt
 
 func (o GetProtectionCapabilitiesProtectionCapabilityCollectionOutput) ToGetProtectionCapabilitiesProtectionCapabilityCollectionOutputWithContext(ctx context.Context) GetProtectionCapabilitiesProtectionCapabilityCollectionOutput {
 	return o
+}
+
+func (o GetProtectionCapabilitiesProtectionCapabilityCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetProtectionCapabilitiesProtectionCapabilityCollection] {
+	return pulumix.Output[GetProtectionCapabilitiesProtectionCapabilityCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 // List of protection capabilities.
@@ -4812,6 +5599,12 @@ func (o GetProtectionCapabilitiesProtectionCapabilityCollectionArrayOutput) ToGe
 
 func (o GetProtectionCapabilitiesProtectionCapabilityCollectionArrayOutput) ToGetProtectionCapabilitiesProtectionCapabilityCollectionArrayOutputWithContext(ctx context.Context) GetProtectionCapabilitiesProtectionCapabilityCollectionArrayOutput {
 	return o
+}
+
+func (o GetProtectionCapabilitiesProtectionCapabilityCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectionCapabilitiesProtectionCapabilityCollection] {
+	return pulumix.Output[[]GetProtectionCapabilitiesProtectionCapabilityCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetProtectionCapabilitiesProtectionCapabilityCollectionArrayOutput) Index(i pulumi.IntInput) GetProtectionCapabilitiesProtectionCapabilityCollectionOutput {
@@ -4885,6 +5678,12 @@ func (i GetProtectionCapabilitiesProtectionCapabilityCollectionItemArgs) ToGetPr
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectionCapabilitiesProtectionCapabilityCollectionItemOutput)
 }
 
+func (i GetProtectionCapabilitiesProtectionCapabilityCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetProtectionCapabilitiesProtectionCapabilityCollectionItem] {
+	return pulumix.Output[GetProtectionCapabilitiesProtectionCapabilityCollectionItem]{
+		OutputState: i.ToGetProtectionCapabilitiesProtectionCapabilityCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetProtectionCapabilitiesProtectionCapabilityCollectionItemArrayInput is an input type that accepts GetProtectionCapabilitiesProtectionCapabilityCollectionItemArray and GetProtectionCapabilitiesProtectionCapabilityCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetProtectionCapabilitiesProtectionCapabilityCollectionItemArrayInput` via:
 //
@@ -4910,6 +5709,12 @@ func (i GetProtectionCapabilitiesProtectionCapabilityCollectionItemArray) ToGetP
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectionCapabilitiesProtectionCapabilityCollectionItemArrayOutput)
 }
 
+func (i GetProtectionCapabilitiesProtectionCapabilityCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectionCapabilitiesProtectionCapabilityCollectionItem] {
+	return pulumix.Output[[]GetProtectionCapabilitiesProtectionCapabilityCollectionItem]{
+		OutputState: i.ToGetProtectionCapabilitiesProtectionCapabilityCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetProtectionCapabilitiesProtectionCapabilityCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetProtectionCapabilitiesProtectionCapabilityCollectionItemOutput) ElementType() reflect.Type {
@@ -4922,6 +5727,12 @@ func (o GetProtectionCapabilitiesProtectionCapabilityCollectionItemOutput) ToGet
 
 func (o GetProtectionCapabilitiesProtectionCapabilityCollectionItemOutput) ToGetProtectionCapabilitiesProtectionCapabilityCollectionItemOutputWithContext(ctx context.Context) GetProtectionCapabilitiesProtectionCapabilityCollectionItemOutput {
 	return o
+}
+
+func (o GetProtectionCapabilitiesProtectionCapabilityCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetProtectionCapabilitiesProtectionCapabilityCollectionItem] {
+	return pulumix.Output[GetProtectionCapabilitiesProtectionCapabilityCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The default collaborative action threshold for OCI-managed collaborative protection capability. Collaborative protection capabilities are made of several simple, non-collaborative protection capabilities (referred to as `contributing capabilities` later on) which have weights assigned to them. These weights can be found in the `collaborativeWeights` array. For incoming/outgoing HTTP messages, all contributing capabilities are executed and the sum of all triggered contributing capabilities weights is calculated. Only if this sum is greater than or equal to `collaborativeActionThreshold` is the incoming/outgoing HTTP message marked as malicious.
@@ -4987,6 +5798,12 @@ func (o GetProtectionCapabilitiesProtectionCapabilityCollectionItemArrayOutput) 
 	return o
 }
 
+func (o GetProtectionCapabilitiesProtectionCapabilityCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectionCapabilitiesProtectionCapabilityCollectionItem] {
+	return pulumix.Output[[]GetProtectionCapabilitiesProtectionCapabilityCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetProtectionCapabilitiesProtectionCapabilityCollectionItemArrayOutput) Index(i pulumi.IntInput) GetProtectionCapabilitiesProtectionCapabilityCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProtectionCapabilitiesProtectionCapabilityCollectionItem {
 		return vs[0].([]GetProtectionCapabilitiesProtectionCapabilityCollectionItem)[vs[1].(int)]
@@ -5034,6 +5851,12 @@ func (i GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborative
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeightOutput)
 }
 
+func (i GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeightArgs) ToOutput(ctx context.Context) pulumix.Output[GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeight] {
+	return pulumix.Output[GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeight]{
+		OutputState: i.ToGetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeightOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeightArrayInput is an input type that accepts GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeightArray and GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeightArrayOutput values.
 // You can construct a concrete instance of `GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeightArrayInput` via:
 //
@@ -5059,6 +5882,12 @@ func (i GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborative
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeightArrayOutput)
 }
 
+func (i GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeightArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeight] {
+	return pulumix.Output[[]GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeight]{
+		OutputState: i.ToGetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeightArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeightOutput struct{ *pulumi.OutputState }
 
 func (GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeightOutput) ElementType() reflect.Type {
@@ -5071,6 +5900,12 @@ func (o GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborative
 
 func (o GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeightOutput) ToGetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeightOutputWithContext(ctx context.Context) GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeightOutput {
 	return o
+}
+
+func (o GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeightOutput) ToOutput(ctx context.Context) pulumix.Output[GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeight] {
+	return pulumix.Output[GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeight]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A filter to return only resources that match the entire display name given.
@@ -5106,6 +5941,12 @@ func (o GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborative
 
 func (o GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeightArrayOutput) ToGetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeightArrayOutputWithContext(ctx context.Context) GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeightArrayOutput {
 	return o
+}
+
+func (o GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeightArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeight] {
+	return pulumix.Output[[]GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeight]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeightArrayOutput) Index(i pulumi.IntInput) GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeightOutput {
@@ -5151,6 +5992,12 @@ func (i GetProtectionCapabilityGroupTagsFilterArgs) ToGetProtectionCapabilityGro
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectionCapabilityGroupTagsFilterOutput)
 }
 
+func (i GetProtectionCapabilityGroupTagsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetProtectionCapabilityGroupTagsFilter] {
+	return pulumix.Output[GetProtectionCapabilityGroupTagsFilter]{
+		OutputState: i.ToGetProtectionCapabilityGroupTagsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetProtectionCapabilityGroupTagsFilterArrayInput is an input type that accepts GetProtectionCapabilityGroupTagsFilterArray and GetProtectionCapabilityGroupTagsFilterArrayOutput values.
 // You can construct a concrete instance of `GetProtectionCapabilityGroupTagsFilterArrayInput` via:
 //
@@ -5176,6 +6023,12 @@ func (i GetProtectionCapabilityGroupTagsFilterArray) ToGetProtectionCapabilityGr
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectionCapabilityGroupTagsFilterArrayOutput)
 }
 
+func (i GetProtectionCapabilityGroupTagsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectionCapabilityGroupTagsFilter] {
+	return pulumix.Output[[]GetProtectionCapabilityGroupTagsFilter]{
+		OutputState: i.ToGetProtectionCapabilityGroupTagsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetProtectionCapabilityGroupTagsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetProtectionCapabilityGroupTagsFilterOutput) ElementType() reflect.Type {
@@ -5188,6 +6041,12 @@ func (o GetProtectionCapabilityGroupTagsFilterOutput) ToGetProtectionCapabilityG
 
 func (o GetProtectionCapabilityGroupTagsFilterOutput) ToGetProtectionCapabilityGroupTagsFilterOutputWithContext(ctx context.Context) GetProtectionCapabilityGroupTagsFilterOutput {
 	return o
+}
+
+func (o GetProtectionCapabilityGroupTagsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetProtectionCapabilityGroupTagsFilter] {
+	return pulumix.Output[GetProtectionCapabilityGroupTagsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A filter to return only resources that match the entire name given.
@@ -5215,6 +6074,12 @@ func (o GetProtectionCapabilityGroupTagsFilterArrayOutput) ToGetProtectionCapabi
 
 func (o GetProtectionCapabilityGroupTagsFilterArrayOutput) ToGetProtectionCapabilityGroupTagsFilterArrayOutputWithContext(ctx context.Context) GetProtectionCapabilityGroupTagsFilterArrayOutput {
 	return o
+}
+
+func (o GetProtectionCapabilityGroupTagsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectionCapabilityGroupTagsFilter] {
+	return pulumix.Output[[]GetProtectionCapabilityGroupTagsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetProtectionCapabilityGroupTagsFilterArrayOutput) Index(i pulumi.IntInput) GetProtectionCapabilityGroupTagsFilterOutput {
@@ -5256,6 +6121,12 @@ func (i GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionOutput)
 }
 
+func (i GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollection] {
+	return pulumix.Output[GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollection]{
+		OutputState: i.ToGetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionArrayInput is an input type that accepts GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionArray and GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionArrayOutput values.
 // You can construct a concrete instance of `GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionArrayInput` via:
 //
@@ -5281,6 +6152,12 @@ func (i GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionArrayOutput)
 }
 
+func (i GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollection] {
+	return pulumix.Output[[]GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollection]{
+		OutputState: i.ToGetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionOutput) ElementType() reflect.Type {
@@ -5293,6 +6170,12 @@ func (o GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionOu
 
 func (o GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionOutput) ToGetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionOutputWithContext(ctx context.Context) GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionOutput {
 	return o
+}
+
+func (o GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollection] {
+	return pulumix.Output[GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 // List of protection capabilities group tags.
@@ -5314,6 +6197,12 @@ func (o GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionAr
 
 func (o GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionArrayOutput) ToGetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionArrayOutputWithContext(ctx context.Context) GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionArrayOutput {
 	return o
+}
+
+func (o GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollection] {
+	return pulumix.Output[[]GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionArrayOutput) Index(i pulumi.IntInput) GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionOutput {
@@ -5355,6 +6244,12 @@ func (i GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionIt
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItemOutput)
 }
 
+func (i GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItem] {
+	return pulumix.Output[GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItem]{
+		OutputState: i.ToGetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItemArrayInput is an input type that accepts GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItemArray and GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItemArrayInput` via:
 //
@@ -5380,6 +6275,12 @@ func (i GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionIt
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItemArrayOutput)
 }
 
+func (i GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItem] {
+	return pulumix.Output[[]GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItem]{
+		OutputState: i.ToGetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItemOutput) ElementType() reflect.Type {
@@ -5392,6 +6293,12 @@ func (o GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionIt
 
 func (o GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItemOutput) ToGetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItemOutputWithContext(ctx context.Context) GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItemOutput {
 	return o
+}
+
+func (o GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItem] {
+	return pulumix.Output[GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A filter to return only resources that match the entire name given.
@@ -5413,6 +6320,12 @@ func (o GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionIt
 
 func (o GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItemArrayOutput) ToGetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItemArrayOutputWithContext(ctx context.Context) GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItemArrayOutput {
 	return o
+}
+
+func (o GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItem] {
+	return pulumix.Output[[]GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItemArrayOutput) Index(i pulumi.IntInput) GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItemOutput {
@@ -5458,6 +6371,12 @@ func (i GetWebAppFirewallPoliciesFilterArgs) ToGetWebAppFirewallPoliciesFilterOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPoliciesFilterOutput)
 }
 
+func (i GetWebAppFirewallPoliciesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPoliciesFilter] {
+	return pulumix.Output[GetWebAppFirewallPoliciesFilter]{
+		OutputState: i.ToGetWebAppFirewallPoliciesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWebAppFirewallPoliciesFilterArrayInput is an input type that accepts GetWebAppFirewallPoliciesFilterArray and GetWebAppFirewallPoliciesFilterArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesFilterArrayInput` via:
 //
@@ -5483,6 +6402,12 @@ func (i GetWebAppFirewallPoliciesFilterArray) ToGetWebAppFirewallPoliciesFilterA
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPoliciesFilterArrayOutput)
 }
 
+func (i GetWebAppFirewallPoliciesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPoliciesFilter] {
+	return pulumix.Output[[]GetWebAppFirewallPoliciesFilter]{
+		OutputState: i.ToGetWebAppFirewallPoliciesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWebAppFirewallPoliciesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetWebAppFirewallPoliciesFilterOutput) ElementType() reflect.Type {
@@ -5495,6 +6420,12 @@ func (o GetWebAppFirewallPoliciesFilterOutput) ToGetWebAppFirewallPoliciesFilter
 
 func (o GetWebAppFirewallPoliciesFilterOutput) ToGetWebAppFirewallPoliciesFilterOutputWithContext(ctx context.Context) GetWebAppFirewallPoliciesFilterOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPoliciesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPoliciesFilter] {
+	return pulumix.Output[GetWebAppFirewallPoliciesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Rule name. Must be unique within the module.
@@ -5522,6 +6453,12 @@ func (o GetWebAppFirewallPoliciesFilterArrayOutput) ToGetWebAppFirewallPoliciesF
 
 func (o GetWebAppFirewallPoliciesFilterArrayOutput) ToGetWebAppFirewallPoliciesFilterArrayOutputWithContext(ctx context.Context) GetWebAppFirewallPoliciesFilterArrayOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPoliciesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPoliciesFilter] {
+	return pulumix.Output[[]GetWebAppFirewallPoliciesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetWebAppFirewallPoliciesFilterArrayOutput) Index(i pulumi.IntInput) GetWebAppFirewallPoliciesFilterOutput {
@@ -5561,6 +6498,12 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionArgs) ToGetWebApp
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionOutput)
 }
 
+func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollection] {
+	return pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollection]{
+		OutputState: i.ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionArrayInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionArray and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionArrayInput` via:
 //
@@ -5586,6 +6529,12 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionArray) ToGetWebAp
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionArrayOutput)
 }
 
+func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollection] {
+	return pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollection]{
+		OutputState: i.ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionOutput) ElementType() reflect.Type {
@@ -5598,6 +6547,12 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionOutput) ToGetWebA
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionOutput) ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionOutputWithContext(ctx context.Context) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollection] {
+	return pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionOutput) Items() GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemArrayOutput {
@@ -5618,6 +6573,12 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionArrayOutput) ToGe
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionArrayOutput) ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionArrayOutputWithContext(ctx context.Context) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionArrayOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollection] {
+	return pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionArrayOutput) Index(i pulumi.IntInput) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionOutput {
@@ -5719,6 +6680,12 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemArgs) ToGetWe
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemOutput)
 }
 
+func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItem] {
+	return pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItem]{
+		OutputState: i.ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemArrayInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemArray and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemArrayInput` via:
 //
@@ -5744,6 +6711,12 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemArray) ToGetW
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemArrayOutput)
 }
 
+func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItem] {
+	return pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItem]{
+		OutputState: i.ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemOutput) ElementType() reflect.Type {
@@ -5756,6 +6729,12 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemOutput) ToGet
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemOutput) ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemOutputWithContext(ctx context.Context) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItem] {
+	return pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Predefined actions for use in multiple different rules. Not all actions are supported in every module. Some actions terminate further execution of modules and rules in a module and some do not. Actions names must be unique within this array.
@@ -5870,6 +6849,12 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemArrayOutput) 
 	return o
 }
 
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItem] {
+	return pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemArrayOutput) Index(i pulumi.IntInput) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItem {
 		return vs[0].([]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItem)[vs[1].(int)]
@@ -5925,6 +6910,12 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionArgs) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionOutput)
 }
 
+func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionArgs) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAction] {
+	return pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAction]{
+		OutputState: i.ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionArrayInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionArray and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionArrayInput` via:
 //
@@ -5950,6 +6941,12 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionArray) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionArrayOutput)
 }
 
+func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAction] {
+	return pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAction]{
+		OutputState: i.ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionOutput struct{ *pulumi.OutputState }
 
 func (GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionOutput) ElementType() reflect.Type {
@@ -5962,6 +6959,12 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionOutput)
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionOutput) ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionOutputWithContext(ctx context.Context) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionOutput) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAction] {
+	return pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAction]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Type of returned HTTP response body.
@@ -6007,6 +7010,12 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionArrayOu
 	return o
 }
 
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAction] {
+	return pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAction]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionArrayOutput) Index(i pulumi.IntInput) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAction {
 		return vs[0].([]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAction)[vs[1].(int)]
@@ -6050,6 +7059,12 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyArg
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyOutput)
 }
 
+func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyArgs) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBody] {
+	return pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBody]{
+		OutputState: i.ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyArrayInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyArray and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyArrayInput` via:
 //
@@ -6075,6 +7090,12 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyArrayOutput)
 }
 
+func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBody] {
+	return pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBody]{
+		OutputState: i.ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyOutput struct{ *pulumi.OutputState }
 
 func (GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyOutput) ElementType() reflect.Type {
@@ -6087,6 +7108,12 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyOut
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyOutput) ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyOutputWithContext(ctx context.Context) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyOutput) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBody] {
+	return pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBody]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Static response body text.
@@ -6111,6 +7138,12 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyArr
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyArrayOutput) ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyArrayOutputWithContext(ctx context.Context) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyArrayOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBody] {
+	return pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBody]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyArrayOutput) Index(i pulumi.IntInput) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyOutput {
@@ -6156,6 +7189,12 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderA
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderOutput)
 }
 
+func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderArgs) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeader] {
+	return pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeader]{
+		OutputState: i.ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderArrayInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderArray and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderArrayInput` via:
 //
@@ -6181,6 +7220,12 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderA
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderArrayOutput)
 }
 
+func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeader] {
+	return pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeader]{
+		OutputState: i.ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderOutput struct{ *pulumi.OutputState }
 
 func (GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderOutput) ElementType() reflect.Type {
@@ -6193,6 +7238,12 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderO
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderOutput) ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderOutputWithContext(ctx context.Context) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderOutput) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeader] {
+	return pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeader]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Rule name. Must be unique within the module.
@@ -6217,6 +7268,12 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderA
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderArrayOutput) ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderArrayOutputWithContext(ctx context.Context) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderArrayOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeader] {
+	return pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeader]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderArrayOutput) Index(i pulumi.IntInput) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderOutput {
@@ -6266,6 +7323,12 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccess
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlOutput)
 }
 
+func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlArgs) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControl] {
+	return pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControl]{
+		OutputState: i.ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlArrayInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlArray and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlArrayInput` via:
 //
@@ -6291,6 +7354,12 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccess
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlArrayOutput)
 }
 
+func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControl] {
+	return pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControl]{
+		OutputState: i.ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlOutput struct{ *pulumi.OutputState }
 
 func (GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlOutput) ElementType() reflect.Type {
@@ -6303,6 +7372,12 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccess
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlOutput) ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlOutputWithContext(ctx context.Context) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlOutput) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControl] {
+	return pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControl]{
+		OutputState: o.OutputState,
+	}
 }
 
 // References an default Action to take if no AccessControlRule was matched. Allowed action types:
@@ -6333,6 +7408,12 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccess
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlArrayOutput) ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlArrayOutputWithContext(ctx context.Context) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlArrayOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControl] {
+	return pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControl]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlArrayOutput) Index(i pulumi.IntInput) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlOutput {
@@ -6392,6 +7473,12 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccess
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRuleOutput)
 }
 
+func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRule] {
+	return pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRule]{
+		OutputState: i.ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRuleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRuleArrayInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRuleArray and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRuleArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRuleArrayInput` via:
 //
@@ -6417,6 +7504,12 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccess
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRuleArrayOutput)
 }
 
+func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRule] {
+	return pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRule]{
+		OutputState: i.ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRuleArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRuleOutput struct{ *pulumi.OutputState }
 
 func (GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRuleOutput) ElementType() reflect.Type {
@@ -6429,6 +7522,12 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccess
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRuleOutput) ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRuleOutputWithContext(ctx context.Context) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRuleOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRule] {
+	return pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRule]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
@@ -6481,6 +7580,12 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccess
 	return o
 }
 
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRule] {
+	return pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRule]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRuleArrayOutput) Index(i pulumi.IntInput) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRule {
 		return vs[0].([]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRule)[vs[1].(int)]
@@ -6528,6 +7633,12 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtec
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionOutput)
 }
 
+func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtection] {
+	return pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtection]{
+		OutputState: i.ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionArrayInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionArray and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionArrayInput` via:
 //
@@ -6553,6 +7664,12 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtec
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionArrayOutput)
 }
 
+func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtection] {
+	return pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtection]{
+		OutputState: i.ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionOutput struct{ *pulumi.OutputState }
 
 func (GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionOutput) ElementType() reflect.Type {
@@ -6565,6 +7682,12 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtec
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionOutput) ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionOutputWithContext(ctx context.Context) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtection] {
+	return pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtection]{
+		OutputState: o.OutputState,
+	}
 }
 
 // References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message body size exceeds limit set in field `bodyInspectionSizeLimitInBytes`.
@@ -6600,6 +7723,12 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtec
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionArrayOutput) ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionArrayOutputWithContext(ctx context.Context) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionArrayOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtection] {
+	return pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionArrayOutput) Index(i pulumi.IntInput) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionOutput {
@@ -6671,6 +7800,12 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtec
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleOutput)
 }
 
+func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRule] {
+	return pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRule]{
+		OutputState: i.ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleArrayInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleArray and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleArrayInput` via:
 //
@@ -6696,6 +7831,12 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtec
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleArrayOutput)
 }
 
+func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRule] {
+	return pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRule]{
+		OutputState: i.ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleOutput struct{ *pulumi.OutputState }
 
 func (GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleOutput) ElementType() reflect.Type {
@@ -6708,6 +7849,12 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtec
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleOutput) ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleOutputWithContext(ctx context.Context) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRule] {
+	return pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRule]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
@@ -6781,6 +7928,12 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtec
 	return o
 }
 
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRule] {
+	return pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRule]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleArrayOutput) Index(i pulumi.IntInput) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRule {
 		return vs[0].([]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRule)[vs[1].(int)]
@@ -6840,6 +7993,12 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtec
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityOutput)
 }
 
+func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityArgs) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapability] {
+	return pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapability]{
+		OutputState: i.ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityArrayInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityArray and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityArrayInput` via:
 //
@@ -6865,6 +8024,12 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtec
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityArrayOutput)
 }
 
+func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapability] {
+	return pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapability]{
+		OutputState: i.ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityOutput struct{ *pulumi.OutputState }
 
 func (GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityOutput) ElementType() reflect.Type {
@@ -6877,6 +8042,12 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtec
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityOutput) ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityOutputWithContext(ctx context.Context) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityOutput) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapability] {
+	return pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapability]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
@@ -6935,6 +8106,12 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtec
 	return o
 }
 
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapability] {
+	return pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapability]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityArrayOutput) Index(i pulumi.IntInput) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapability {
 		return vs[0].([]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapability)[vs[1].(int)]
@@ -6978,6 +8155,12 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtec
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeightOutput)
 }
 
+func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgs) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeight] {
+	return pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeight]{
+		OutputState: i.ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeightOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeightArrayInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeightArray and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeightArrayInput` via:
 //
@@ -7003,6 +8186,12 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtec
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutput)
 }
 
+func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeightArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeight] {
+	return pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeight]{
+		OutputState: i.ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeightOutput struct{ *pulumi.OutputState }
 
 func (GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeightOutput) ElementType() reflect.Type {
@@ -7015,6 +8204,12 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtec
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeightOutput) ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeightOutputWithContext(ctx context.Context) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeightOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeightOutput) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeight] {
+	return pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeight]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Unique key of referenced protection capability.
@@ -7043,6 +8238,12 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtec
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutput) ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutputWithContext(ctx context.Context) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeight] {
+	return pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeight]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutput) Index(i pulumi.IntInput) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeightOutput {
@@ -7088,6 +8289,12 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtec
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusionOutput)
 }
 
+func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusionArgs) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusion] {
+	return pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusion]{
+		OutputState: i.ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusionArrayInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusionArray and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusionArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusionArrayInput` via:
 //
@@ -7113,6 +8320,12 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtec
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusionArrayOutput)
 }
 
+func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusion] {
+	return pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusion]{
+		OutputState: i.ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusionOutput struct{ *pulumi.OutputState }
 
 func (GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusionOutput) ElementType() reflect.Type {
@@ -7125,6 +8338,12 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtec
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusionOutput) ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusionOutputWithContext(ctx context.Context) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusionOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusionOutput) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusion] {
+	return pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusion]{
+		OutputState: o.OutputState,
+	}
 }
 
 // List of URL query parameter values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from inspecting. Example: If we have query parameter 'argumentName=argumentValue' and args=['argumentName'], both 'argumentName' and 'argumentValue' will not be inspected.
@@ -7153,6 +8372,12 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtec
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusionArrayOutput) ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusionArrayOutputWithContext(ctx context.Context) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusionArrayOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusion] {
+	return pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusion]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusionArrayOutput) Index(i pulumi.IntInput) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusionOutput {
@@ -7214,6 +8439,12 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtec
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySettingOutput)
 }
 
+func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySettingArgs) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySetting] {
+	return pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySetting]{
+		OutputState: i.ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySettingOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySettingArrayInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySettingArray and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySettingArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySettingArrayInput` via:
 //
@@ -7239,6 +8470,12 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtec
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySettingArrayOutput)
 }
 
+func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySettingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySetting] {
+	return pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySetting]{
+		OutputState: i.ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySettingArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySettingOutput struct{ *pulumi.OutputState }
 
 func (GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySettingOutput) ElementType() reflect.Type {
@@ -7251,6 +8488,12 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtec
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySettingOutput) ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySettingOutputWithContext(ctx context.Context) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySettingOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySettingOutput) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySetting] {
+	return pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySetting]{
+		OutputState: o.OutputState,
+	}
 }
 
 // List of allowed HTTP methods. Each value as a RFC7230 formated token string. Used in protection capability 911100: Restrict HTTP Request Methods.
@@ -7309,6 +8552,12 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtec
 	return o
 }
 
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySettingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySetting] {
+	return pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySetting]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySettingArrayOutput) Index(i pulumi.IntInput) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySettingOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySetting {
 		return vs[0].([]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySetting)[vs[1].(int)]
@@ -7348,6 +8597,12 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLi
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingOutput)
 }
 
+func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingArgs) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimiting] {
+	return pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimiting]{
+		OutputState: i.ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingArrayInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingArray and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingArrayInput` via:
 //
@@ -7373,6 +8628,12 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLi
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingArrayOutput)
 }
 
+func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimiting] {
+	return pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimiting]{
+		OutputState: i.ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingOutput struct{ *pulumi.OutputState }
 
 func (GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingOutput) ElementType() reflect.Type {
@@ -7385,6 +8646,12 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLi
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingOutput) ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingOutputWithContext(ctx context.Context) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingOutput) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimiting] {
+	return pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimiting]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
@@ -7406,6 +8673,12 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLi
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingArrayOutput) ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingArrayOutputWithContext(ctx context.Context) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingArrayOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimiting] {
+	return pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimiting]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingArrayOutput) Index(i pulumi.IntInput) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingOutput {
@@ -7469,6 +8742,12 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLi
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleOutput)
 }
 
+func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRule] {
+	return pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRule]{
+		OutputState: i.ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleArrayInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleArray and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleArrayInput` via:
 //
@@ -7494,6 +8773,12 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLi
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleArrayOutput)
 }
 
+func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRule] {
+	return pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRule]{
+		OutputState: i.ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleOutput struct{ *pulumi.OutputState }
 
 func (GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleOutput) ElementType() reflect.Type {
@@ -7506,6 +8791,12 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLi
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleOutput) ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleOutputWithContext(ctx context.Context) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRule] {
+	return pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRule]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
@@ -7565,6 +8856,12 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLi
 	return o
 }
 
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRule] {
+	return pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRule]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleArrayOutput) Index(i pulumi.IntInput) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRule {
 		return vs[0].([]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRule)[vs[1].(int)]
@@ -7612,6 +8909,12 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLi
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfigurationOutput)
 }
 
+func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfiguration] {
+	return pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfiguration]{
+		OutputState: i.ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfigurationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfigurationArrayInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfigurationArray and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfigurationArrayInput` via:
 //
@@ -7637,6 +8940,12 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLi
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfigurationArrayOutput)
 }
 
+func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfiguration] {
+	return pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfiguration]{
+		OutputState: i.ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfigurationArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfigurationOutput) ElementType() reflect.Type {
@@ -7649,6 +8958,12 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLi
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfigurationOutput) ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfigurationOutputWithContext(ctx context.Context) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfigurationOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfiguration] {
+	return pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Duration of block action application in seconds when `requestsLimit` is reached. Optional and can be 0 (no block duration).
@@ -7684,6 +8999,12 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLi
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfigurationArrayOutput) ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfigurationArrayOutputWithContext(ctx context.Context) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfigurationArrayOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfiguration] {
+	return pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfigurationArrayOutput) Index(i pulumi.IntInput) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfigurationOutput {
@@ -7725,6 +9046,12 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAcces
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlOutput)
 }
 
+func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlArgs) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControl] {
+	return pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControl]{
+		OutputState: i.ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlArrayInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlArray and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlArrayInput` via:
 //
@@ -7750,6 +9077,12 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAcces
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlArrayOutput)
 }
 
+func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControl] {
+	return pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControl]{
+		OutputState: i.ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlOutput struct{ *pulumi.OutputState }
 
 func (GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlOutput) ElementType() reflect.Type {
@@ -7762,6 +9095,12 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAcces
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlOutput) ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlOutputWithContext(ctx context.Context) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlOutput) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControl] {
+	return pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControl]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
@@ -7783,6 +9122,12 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAcces
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlArrayOutput) ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlArrayOutputWithContext(ctx context.Context) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlArrayOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControl] {
+	return pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControl]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlArrayOutput) Index(i pulumi.IntInput) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlOutput {
@@ -7842,6 +9187,12 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAcces
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRuleOutput)
 }
 
+func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRule] {
+	return pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRule]{
+		OutputState: i.ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRuleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRuleArrayInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRuleArray and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRuleArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRuleArrayInput` via:
 //
@@ -7867,6 +9218,12 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAcces
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRuleArrayOutput)
 }
 
+func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRule] {
+	return pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRule]{
+		OutputState: i.ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRuleArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRuleOutput struct{ *pulumi.OutputState }
 
 func (GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRuleOutput) ElementType() reflect.Type {
@@ -7879,6 +9236,12 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAcces
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRuleOutput) ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRuleOutputWithContext(ctx context.Context) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRuleOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRule] {
+	return pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRule]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
@@ -7931,6 +9294,12 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAcces
 	return o
 }
 
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRule] {
+	return pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRule]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRuleArrayOutput) Index(i pulumi.IntInput) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRule {
 		return vs[0].([]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRule)[vs[1].(int)]
@@ -7970,6 +9339,12 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProte
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionOutput)
 }
 
+func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtection] {
+	return pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtection]{
+		OutputState: i.ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionArrayInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionArray and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionArrayInput` via:
 //
@@ -7995,6 +9370,12 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProte
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionArrayOutput)
 }
 
+func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtection] {
+	return pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtection]{
+		OutputState: i.ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionOutput struct{ *pulumi.OutputState }
 
 func (GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionOutput) ElementType() reflect.Type {
@@ -8007,6 +9388,12 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProte
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionOutput) ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionOutputWithContext(ctx context.Context) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtection] {
+	return pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtection]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
@@ -8028,6 +9415,12 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProte
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionArrayOutput) ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionArrayOutputWithContext(ctx context.Context) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionArrayOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtection] {
+	return pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionArrayOutput) Index(i pulumi.IntInput) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionOutput {
@@ -8099,6 +9492,12 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProte
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleOutput)
 }
 
+func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRule] {
+	return pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRule]{
+		OutputState: i.ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleArrayInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleArray and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleArrayInput` via:
 //
@@ -8124,6 +9523,12 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProte
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleArrayOutput)
 }
 
+func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRule] {
+	return pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRule]{
+		OutputState: i.ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleOutput struct{ *pulumi.OutputState }
 
 func (GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleOutput) ElementType() reflect.Type {
@@ -8136,6 +9541,12 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProte
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleOutput) ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleOutputWithContext(ctx context.Context) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRule] {
+	return pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRule]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
@@ -8209,6 +9620,12 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProte
 	return o
 }
 
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRule] {
+	return pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRule]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleArrayOutput) Index(i pulumi.IntInput) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRule {
 		return vs[0].([]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRule)[vs[1].(int)]
@@ -8268,6 +9685,12 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProte
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityOutput)
 }
 
+func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityArgs) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapability] {
+	return pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapability]{
+		OutputState: i.ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityArrayInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityArray and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityArrayInput` via:
 //
@@ -8293,6 +9716,12 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProte
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityArrayOutput)
 }
 
+func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapability] {
+	return pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapability]{
+		OutputState: i.ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityOutput struct{ *pulumi.OutputState }
 
 func (GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityOutput) ElementType() reflect.Type {
@@ -8305,6 +9734,12 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProte
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityOutput) ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityOutputWithContext(ctx context.Context) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityOutput) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapability] {
+	return pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapability]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
@@ -8363,6 +9798,12 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProte
 	return o
 }
 
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapability] {
+	return pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapability]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityArrayOutput) Index(i pulumi.IntInput) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapability {
 		return vs[0].([]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapability)[vs[1].(int)]
@@ -8406,6 +9847,12 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProte
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeightOutput)
 }
 
+func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgs) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeight] {
+	return pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeight]{
+		OutputState: i.ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeightOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeightArrayInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeightArray and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeightArrayInput` via:
 //
@@ -8431,6 +9878,12 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProte
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutput)
 }
 
+func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeightArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeight] {
+	return pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeight]{
+		OutputState: i.ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeightOutput struct{ *pulumi.OutputState }
 
 func (GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeightOutput) ElementType() reflect.Type {
@@ -8443,6 +9896,12 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProte
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeightOutput) ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeightOutputWithContext(ctx context.Context) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeightOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeightOutput) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeight] {
+	return pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeight]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Unique key of referenced protection capability.
@@ -8471,6 +9930,12 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProte
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutput) ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutputWithContext(ctx context.Context) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeight] {
+	return pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeight]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutput) Index(i pulumi.IntInput) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeightOutput {
@@ -8516,6 +9981,12 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProte
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusionOutput)
 }
 
+func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusionArgs) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusion] {
+	return pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusion]{
+		OutputState: i.ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusionArrayInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusionArray and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusionArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusionArrayInput` via:
 //
@@ -8541,6 +10012,12 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProte
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusionArrayOutput)
 }
 
+func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusion] {
+	return pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusion]{
+		OutputState: i.ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusionOutput struct{ *pulumi.OutputState }
 
 func (GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusionOutput) ElementType() reflect.Type {
@@ -8553,6 +10030,12 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProte
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusionOutput) ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusionOutputWithContext(ctx context.Context) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusionOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusionOutput) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusion] {
+	return pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusion]{
+		OutputState: o.OutputState,
+	}
 }
 
 // List of URL query parameter values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from inspecting. Example: If we have query parameter 'argumentName=argumentValue' and args=['argumentName'], both 'argumentName' and 'argumentValue' will not be inspected.
@@ -8581,6 +10064,12 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProte
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusionArrayOutput) ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusionArrayOutputWithContext(ctx context.Context) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusionArrayOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusion] {
+	return pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusion]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusionArrayOutput) Index(i pulumi.IntInput) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusionOutput {
@@ -8642,6 +10131,12 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProte
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySettingOutput)
 }
 
+func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySettingArgs) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySetting] {
+	return pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySetting]{
+		OutputState: i.ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySettingOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySettingArrayInput is an input type that accepts GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySettingArray and GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySettingArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySettingArrayInput` via:
 //
@@ -8667,6 +10162,12 @@ func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProte
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySettingArrayOutput)
 }
 
+func (i GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySettingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySetting] {
+	return pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySetting]{
+		OutputState: i.ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySettingArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySettingOutput struct{ *pulumi.OutputState }
 
 func (GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySettingOutput) ElementType() reflect.Type {
@@ -8679,6 +10180,12 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProte
 
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySettingOutput) ToGetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySettingOutputWithContext(ctx context.Context) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySettingOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySettingOutput) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySetting] {
+	return pulumix.Output[GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySetting]{
+		OutputState: o.OutputState,
+	}
 }
 
 // List of allowed HTTP methods. Each value as a RFC7230 formated token string. Used in protection capability 911100: Restrict HTTP Request Methods.
@@ -8737,6 +10244,12 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProte
 	return o
 }
 
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySettingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySetting] {
+	return pulumix.Output[[]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySetting]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySettingArrayOutput) Index(i pulumi.IntInput) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySettingOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySetting {
 		return vs[0].([]GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySetting)[vs[1].(int)]
@@ -8792,6 +10305,12 @@ func (i GetWebAppFirewallPolicyActionArgs) ToGetWebAppFirewallPolicyActionOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPolicyActionOutput)
 }
 
+func (i GetWebAppFirewallPolicyActionArgs) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPolicyAction] {
+	return pulumix.Output[GetWebAppFirewallPolicyAction]{
+		OutputState: i.ToGetWebAppFirewallPolicyActionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWebAppFirewallPolicyActionArrayInput is an input type that accepts GetWebAppFirewallPolicyActionArray and GetWebAppFirewallPolicyActionArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyActionArrayInput` via:
 //
@@ -8817,6 +10336,12 @@ func (i GetWebAppFirewallPolicyActionArray) ToGetWebAppFirewallPolicyActionArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPolicyActionArrayOutput)
 }
 
+func (i GetWebAppFirewallPolicyActionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPolicyAction] {
+	return pulumix.Output[[]GetWebAppFirewallPolicyAction]{
+		OutputState: i.ToGetWebAppFirewallPolicyActionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWebAppFirewallPolicyActionOutput struct{ *pulumi.OutputState }
 
 func (GetWebAppFirewallPolicyActionOutput) ElementType() reflect.Type {
@@ -8829,6 +10354,12 @@ func (o GetWebAppFirewallPolicyActionOutput) ToGetWebAppFirewallPolicyActionOutp
 
 func (o GetWebAppFirewallPolicyActionOutput) ToGetWebAppFirewallPolicyActionOutputWithContext(ctx context.Context) GetWebAppFirewallPolicyActionOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPolicyActionOutput) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPolicyAction] {
+	return pulumix.Output[GetWebAppFirewallPolicyAction]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Type of returned HTTP response body.
@@ -8868,6 +10399,12 @@ func (o GetWebAppFirewallPolicyActionArrayOutput) ToGetWebAppFirewallPolicyActio
 
 func (o GetWebAppFirewallPolicyActionArrayOutput) ToGetWebAppFirewallPolicyActionArrayOutputWithContext(ctx context.Context) GetWebAppFirewallPolicyActionArrayOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPolicyActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPolicyAction] {
+	return pulumix.Output[[]GetWebAppFirewallPolicyAction]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetWebAppFirewallPolicyActionArrayOutput) Index(i pulumi.IntInput) GetWebAppFirewallPolicyActionOutput {
@@ -8913,6 +10450,12 @@ func (i GetWebAppFirewallPolicyActionBodyArgs) ToGetWebAppFirewallPolicyActionBo
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPolicyActionBodyOutput)
 }
 
+func (i GetWebAppFirewallPolicyActionBodyArgs) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPolicyActionBody] {
+	return pulumix.Output[GetWebAppFirewallPolicyActionBody]{
+		OutputState: i.ToGetWebAppFirewallPolicyActionBodyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWebAppFirewallPolicyActionBodyArrayInput is an input type that accepts GetWebAppFirewallPolicyActionBodyArray and GetWebAppFirewallPolicyActionBodyArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyActionBodyArrayInput` via:
 //
@@ -8938,6 +10481,12 @@ func (i GetWebAppFirewallPolicyActionBodyArray) ToGetWebAppFirewallPolicyActionB
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPolicyActionBodyArrayOutput)
 }
 
+func (i GetWebAppFirewallPolicyActionBodyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPolicyActionBody] {
+	return pulumix.Output[[]GetWebAppFirewallPolicyActionBody]{
+		OutputState: i.ToGetWebAppFirewallPolicyActionBodyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWebAppFirewallPolicyActionBodyOutput struct{ *pulumi.OutputState }
 
 func (GetWebAppFirewallPolicyActionBodyOutput) ElementType() reflect.Type {
@@ -8950,6 +10499,12 @@ func (o GetWebAppFirewallPolicyActionBodyOutput) ToGetWebAppFirewallPolicyAction
 
 func (o GetWebAppFirewallPolicyActionBodyOutput) ToGetWebAppFirewallPolicyActionBodyOutputWithContext(ctx context.Context) GetWebAppFirewallPolicyActionBodyOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPolicyActionBodyOutput) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPolicyActionBody] {
+	return pulumix.Output[GetWebAppFirewallPolicyActionBody]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Static response body text.
@@ -8974,6 +10529,12 @@ func (o GetWebAppFirewallPolicyActionBodyArrayOutput) ToGetWebAppFirewallPolicyA
 
 func (o GetWebAppFirewallPolicyActionBodyArrayOutput) ToGetWebAppFirewallPolicyActionBodyArrayOutputWithContext(ctx context.Context) GetWebAppFirewallPolicyActionBodyArrayOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPolicyActionBodyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPolicyActionBody] {
+	return pulumix.Output[[]GetWebAppFirewallPolicyActionBody]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetWebAppFirewallPolicyActionBodyArrayOutput) Index(i pulumi.IntInput) GetWebAppFirewallPolicyActionBodyOutput {
@@ -9019,6 +10580,12 @@ func (i GetWebAppFirewallPolicyActionHeaderArgs) ToGetWebAppFirewallPolicyAction
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPolicyActionHeaderOutput)
 }
 
+func (i GetWebAppFirewallPolicyActionHeaderArgs) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPolicyActionHeader] {
+	return pulumix.Output[GetWebAppFirewallPolicyActionHeader]{
+		OutputState: i.ToGetWebAppFirewallPolicyActionHeaderOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWebAppFirewallPolicyActionHeaderArrayInput is an input type that accepts GetWebAppFirewallPolicyActionHeaderArray and GetWebAppFirewallPolicyActionHeaderArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyActionHeaderArrayInput` via:
 //
@@ -9044,6 +10611,12 @@ func (i GetWebAppFirewallPolicyActionHeaderArray) ToGetWebAppFirewallPolicyActio
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPolicyActionHeaderArrayOutput)
 }
 
+func (i GetWebAppFirewallPolicyActionHeaderArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPolicyActionHeader] {
+	return pulumix.Output[[]GetWebAppFirewallPolicyActionHeader]{
+		OutputState: i.ToGetWebAppFirewallPolicyActionHeaderArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWebAppFirewallPolicyActionHeaderOutput struct{ *pulumi.OutputState }
 
 func (GetWebAppFirewallPolicyActionHeaderOutput) ElementType() reflect.Type {
@@ -9056,6 +10629,12 @@ func (o GetWebAppFirewallPolicyActionHeaderOutput) ToGetWebAppFirewallPolicyActi
 
 func (o GetWebAppFirewallPolicyActionHeaderOutput) ToGetWebAppFirewallPolicyActionHeaderOutputWithContext(ctx context.Context) GetWebAppFirewallPolicyActionHeaderOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPolicyActionHeaderOutput) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPolicyActionHeader] {
+	return pulumix.Output[GetWebAppFirewallPolicyActionHeader]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Rule name. Must be unique within the module.
@@ -9080,6 +10659,12 @@ func (o GetWebAppFirewallPolicyActionHeaderArrayOutput) ToGetWebAppFirewallPolic
 
 func (o GetWebAppFirewallPolicyActionHeaderArrayOutput) ToGetWebAppFirewallPolicyActionHeaderArrayOutputWithContext(ctx context.Context) GetWebAppFirewallPolicyActionHeaderArrayOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPolicyActionHeaderArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPolicyActionHeader] {
+	return pulumix.Output[[]GetWebAppFirewallPolicyActionHeader]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetWebAppFirewallPolicyActionHeaderArrayOutput) Index(i pulumi.IntInput) GetWebAppFirewallPolicyActionHeaderOutput {
@@ -9129,6 +10714,12 @@ func (i GetWebAppFirewallPolicyRequestAccessControlArgs) ToGetWebAppFirewallPoli
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPolicyRequestAccessControlOutput)
 }
 
+func (i GetWebAppFirewallPolicyRequestAccessControlArgs) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPolicyRequestAccessControl] {
+	return pulumix.Output[GetWebAppFirewallPolicyRequestAccessControl]{
+		OutputState: i.ToGetWebAppFirewallPolicyRequestAccessControlOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWebAppFirewallPolicyRequestAccessControlArrayInput is an input type that accepts GetWebAppFirewallPolicyRequestAccessControlArray and GetWebAppFirewallPolicyRequestAccessControlArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyRequestAccessControlArrayInput` via:
 //
@@ -9154,6 +10745,12 @@ func (i GetWebAppFirewallPolicyRequestAccessControlArray) ToGetWebAppFirewallPol
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPolicyRequestAccessControlArrayOutput)
 }
 
+func (i GetWebAppFirewallPolicyRequestAccessControlArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPolicyRequestAccessControl] {
+	return pulumix.Output[[]GetWebAppFirewallPolicyRequestAccessControl]{
+		OutputState: i.ToGetWebAppFirewallPolicyRequestAccessControlArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWebAppFirewallPolicyRequestAccessControlOutput struct{ *pulumi.OutputState }
 
 func (GetWebAppFirewallPolicyRequestAccessControlOutput) ElementType() reflect.Type {
@@ -9166,6 +10763,12 @@ func (o GetWebAppFirewallPolicyRequestAccessControlOutput) ToGetWebAppFirewallPo
 
 func (o GetWebAppFirewallPolicyRequestAccessControlOutput) ToGetWebAppFirewallPolicyRequestAccessControlOutputWithContext(ctx context.Context) GetWebAppFirewallPolicyRequestAccessControlOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPolicyRequestAccessControlOutput) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPolicyRequestAccessControl] {
+	return pulumix.Output[GetWebAppFirewallPolicyRequestAccessControl]{
+		OutputState: o.OutputState,
+	}
 }
 
 // References an default Action to take if no AccessControlRule was matched. Allowed action types:
@@ -9194,6 +10797,12 @@ func (o GetWebAppFirewallPolicyRequestAccessControlArrayOutput) ToGetWebAppFirew
 
 func (o GetWebAppFirewallPolicyRequestAccessControlArrayOutput) ToGetWebAppFirewallPolicyRequestAccessControlArrayOutputWithContext(ctx context.Context) GetWebAppFirewallPolicyRequestAccessControlArrayOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPolicyRequestAccessControlArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPolicyRequestAccessControl] {
+	return pulumix.Output[[]GetWebAppFirewallPolicyRequestAccessControl]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetWebAppFirewallPolicyRequestAccessControlArrayOutput) Index(i pulumi.IntInput) GetWebAppFirewallPolicyRequestAccessControlOutput {
@@ -9253,6 +10862,12 @@ func (i GetWebAppFirewallPolicyRequestAccessControlRuleArgs) ToGetWebAppFirewall
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPolicyRequestAccessControlRuleOutput)
 }
 
+func (i GetWebAppFirewallPolicyRequestAccessControlRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPolicyRequestAccessControlRule] {
+	return pulumix.Output[GetWebAppFirewallPolicyRequestAccessControlRule]{
+		OutputState: i.ToGetWebAppFirewallPolicyRequestAccessControlRuleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWebAppFirewallPolicyRequestAccessControlRuleArrayInput is an input type that accepts GetWebAppFirewallPolicyRequestAccessControlRuleArray and GetWebAppFirewallPolicyRequestAccessControlRuleArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyRequestAccessControlRuleArrayInput` via:
 //
@@ -9278,6 +10893,12 @@ func (i GetWebAppFirewallPolicyRequestAccessControlRuleArray) ToGetWebAppFirewal
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPolicyRequestAccessControlRuleArrayOutput)
 }
 
+func (i GetWebAppFirewallPolicyRequestAccessControlRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPolicyRequestAccessControlRule] {
+	return pulumix.Output[[]GetWebAppFirewallPolicyRequestAccessControlRule]{
+		OutputState: i.ToGetWebAppFirewallPolicyRequestAccessControlRuleArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWebAppFirewallPolicyRequestAccessControlRuleOutput struct{ *pulumi.OutputState }
 
 func (GetWebAppFirewallPolicyRequestAccessControlRuleOutput) ElementType() reflect.Type {
@@ -9290,6 +10911,12 @@ func (o GetWebAppFirewallPolicyRequestAccessControlRuleOutput) ToGetWebAppFirewa
 
 func (o GetWebAppFirewallPolicyRequestAccessControlRuleOutput) ToGetWebAppFirewallPolicyRequestAccessControlRuleOutputWithContext(ctx context.Context) GetWebAppFirewallPolicyRequestAccessControlRuleOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPolicyRequestAccessControlRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPolicyRequestAccessControlRule] {
+	return pulumix.Output[GetWebAppFirewallPolicyRequestAccessControlRule]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
@@ -9330,6 +10957,12 @@ func (o GetWebAppFirewallPolicyRequestAccessControlRuleArrayOutput) ToGetWebAppF
 
 func (o GetWebAppFirewallPolicyRequestAccessControlRuleArrayOutput) ToGetWebAppFirewallPolicyRequestAccessControlRuleArrayOutputWithContext(ctx context.Context) GetWebAppFirewallPolicyRequestAccessControlRuleArrayOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPolicyRequestAccessControlRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPolicyRequestAccessControlRule] {
+	return pulumix.Output[[]GetWebAppFirewallPolicyRequestAccessControlRule]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetWebAppFirewallPolicyRequestAccessControlRuleArrayOutput) Index(i pulumi.IntInput) GetWebAppFirewallPolicyRequestAccessControlRuleOutput {
@@ -9379,6 +11012,12 @@ func (i GetWebAppFirewallPolicyRequestProtectionArgs) ToGetWebAppFirewallPolicyR
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPolicyRequestProtectionOutput)
 }
 
+func (i GetWebAppFirewallPolicyRequestProtectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPolicyRequestProtection] {
+	return pulumix.Output[GetWebAppFirewallPolicyRequestProtection]{
+		OutputState: i.ToGetWebAppFirewallPolicyRequestProtectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWebAppFirewallPolicyRequestProtectionArrayInput is an input type that accepts GetWebAppFirewallPolicyRequestProtectionArray and GetWebAppFirewallPolicyRequestProtectionArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyRequestProtectionArrayInput` via:
 //
@@ -9404,6 +11043,12 @@ func (i GetWebAppFirewallPolicyRequestProtectionArray) ToGetWebAppFirewallPolicy
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPolicyRequestProtectionArrayOutput)
 }
 
+func (i GetWebAppFirewallPolicyRequestProtectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPolicyRequestProtection] {
+	return pulumix.Output[[]GetWebAppFirewallPolicyRequestProtection]{
+		OutputState: i.ToGetWebAppFirewallPolicyRequestProtectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWebAppFirewallPolicyRequestProtectionOutput struct{ *pulumi.OutputState }
 
 func (GetWebAppFirewallPolicyRequestProtectionOutput) ElementType() reflect.Type {
@@ -9416,6 +11061,12 @@ func (o GetWebAppFirewallPolicyRequestProtectionOutput) ToGetWebAppFirewallPolic
 
 func (o GetWebAppFirewallPolicyRequestProtectionOutput) ToGetWebAppFirewallPolicyRequestProtectionOutputWithContext(ctx context.Context) GetWebAppFirewallPolicyRequestProtectionOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPolicyRequestProtectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPolicyRequestProtection] {
+	return pulumix.Output[GetWebAppFirewallPolicyRequestProtection]{
+		OutputState: o.OutputState,
+	}
 }
 
 // References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message body size exceeds limit set in field `bodyInspectionSizeLimitInBytes`.
@@ -9449,6 +11100,12 @@ func (o GetWebAppFirewallPolicyRequestProtectionArrayOutput) ToGetWebAppFirewall
 
 func (o GetWebAppFirewallPolicyRequestProtectionArrayOutput) ToGetWebAppFirewallPolicyRequestProtectionArrayOutputWithContext(ctx context.Context) GetWebAppFirewallPolicyRequestProtectionArrayOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPolicyRequestProtectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPolicyRequestProtection] {
+	return pulumix.Output[[]GetWebAppFirewallPolicyRequestProtection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetWebAppFirewallPolicyRequestProtectionArrayOutput) Index(i pulumi.IntInput) GetWebAppFirewallPolicyRequestProtectionOutput {
@@ -9520,6 +11177,12 @@ func (i GetWebAppFirewallPolicyRequestProtectionRuleArgs) ToGetWebAppFirewallPol
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPolicyRequestProtectionRuleOutput)
 }
 
+func (i GetWebAppFirewallPolicyRequestProtectionRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPolicyRequestProtectionRule] {
+	return pulumix.Output[GetWebAppFirewallPolicyRequestProtectionRule]{
+		OutputState: i.ToGetWebAppFirewallPolicyRequestProtectionRuleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWebAppFirewallPolicyRequestProtectionRuleArrayInput is an input type that accepts GetWebAppFirewallPolicyRequestProtectionRuleArray and GetWebAppFirewallPolicyRequestProtectionRuleArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyRequestProtectionRuleArrayInput` via:
 //
@@ -9545,6 +11208,12 @@ func (i GetWebAppFirewallPolicyRequestProtectionRuleArray) ToGetWebAppFirewallPo
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPolicyRequestProtectionRuleArrayOutput)
 }
 
+func (i GetWebAppFirewallPolicyRequestProtectionRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPolicyRequestProtectionRule] {
+	return pulumix.Output[[]GetWebAppFirewallPolicyRequestProtectionRule]{
+		OutputState: i.ToGetWebAppFirewallPolicyRequestProtectionRuleArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWebAppFirewallPolicyRequestProtectionRuleOutput struct{ *pulumi.OutputState }
 
 func (GetWebAppFirewallPolicyRequestProtectionRuleOutput) ElementType() reflect.Type {
@@ -9557,6 +11226,12 @@ func (o GetWebAppFirewallPolicyRequestProtectionRuleOutput) ToGetWebAppFirewallP
 
 func (o GetWebAppFirewallPolicyRequestProtectionRuleOutput) ToGetWebAppFirewallPolicyRequestProtectionRuleOutputWithContext(ctx context.Context) GetWebAppFirewallPolicyRequestProtectionRuleOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPolicyRequestProtectionRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPolicyRequestProtectionRule] {
+	return pulumix.Output[GetWebAppFirewallPolicyRequestProtectionRule]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
@@ -9618,6 +11293,12 @@ func (o GetWebAppFirewallPolicyRequestProtectionRuleArrayOutput) ToGetWebAppFire
 	return o
 }
 
+func (o GetWebAppFirewallPolicyRequestProtectionRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPolicyRequestProtectionRule] {
+	return pulumix.Output[[]GetWebAppFirewallPolicyRequestProtectionRule]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetWebAppFirewallPolicyRequestProtectionRuleArrayOutput) Index(i pulumi.IntInput) GetWebAppFirewallPolicyRequestProtectionRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWebAppFirewallPolicyRequestProtectionRule {
 		return vs[0].([]GetWebAppFirewallPolicyRequestProtectionRule)[vs[1].(int)]
@@ -9677,6 +11358,12 @@ func (i GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityArgs) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityOutput)
 }
 
+func (i GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityArgs) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapability] {
+	return pulumix.Output[GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapability]{
+		OutputState: i.ToGetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityArrayInput is an input type that accepts GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityArray and GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityArrayInput` via:
 //
@@ -9702,6 +11389,12 @@ func (i GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityArray) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityArrayOutput)
 }
 
+func (i GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapability] {
+	return pulumix.Output[[]GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapability]{
+		OutputState: i.ToGetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityOutput struct{ *pulumi.OutputState }
 
 func (GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityOutput) ElementType() reflect.Type {
@@ -9714,6 +11407,12 @@ func (o GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityOutput) 
 
 func (o GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityOutput) ToGetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityOutputWithContext(ctx context.Context) GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityOutput) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapability] {
+	return pulumix.Output[GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapability]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
@@ -9766,6 +11465,12 @@ func (o GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityArrayOut
 	return o
 }
 
+func (o GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapability] {
+	return pulumix.Output[[]GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapability]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityArrayOutput) Index(i pulumi.IntInput) GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapability {
 		return vs[0].([]GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapability)[vs[1].(int)]
@@ -9809,6 +11514,12 @@ func (i GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollabor
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightOutput)
 }
 
+func (i GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgs) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeight] {
+	return pulumix.Output[GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeight]{
+		OutputState: i.ToGetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArrayInput is an input type that accepts GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArray and GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArrayInput` via:
 //
@@ -9834,6 +11545,12 @@ func (i GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollabor
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutput)
 }
 
+func (i GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeight] {
+	return pulumix.Output[[]GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeight]{
+		OutputState: i.ToGetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightOutput struct{ *pulumi.OutputState }
 
 func (GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightOutput) ElementType() reflect.Type {
@@ -9846,6 +11563,12 @@ func (o GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollabor
 
 func (o GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightOutput) ToGetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightOutputWithContext(ctx context.Context) GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightOutput) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeight] {
+	return pulumix.Output[GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeight]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Unique key of referenced protection capability.
@@ -9874,6 +11597,12 @@ func (o GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollabor
 
 func (o GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutput) ToGetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutputWithContext(ctx context.Context) GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeight] {
+	return pulumix.Output[[]GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeight]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutput) Index(i pulumi.IntInput) GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightOutput {
@@ -9919,6 +11648,12 @@ func (i GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusio
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionOutput)
 }
 
+func (i GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionArgs) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusion] {
+	return pulumix.Output[GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusion]{
+		OutputState: i.ToGetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionArrayInput is an input type that accepts GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionArray and GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionArrayInput` via:
 //
@@ -9944,6 +11679,12 @@ func (i GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusio
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionArrayOutput)
 }
 
+func (i GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusion] {
+	return pulumix.Output[[]GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusion]{
+		OutputState: i.ToGetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionOutput struct{ *pulumi.OutputState }
 
 func (GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionOutput) ElementType() reflect.Type {
@@ -9956,6 +11697,12 @@ func (o GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusio
 
 func (o GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionOutput) ToGetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionOutputWithContext(ctx context.Context) GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionOutput) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusion] {
+	return pulumix.Output[GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusion]{
+		OutputState: o.OutputState,
+	}
 }
 
 // List of URL query parameter values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from inspecting. Example: If we have query parameter 'argumentName=argumentValue' and args=['argumentName'], both 'argumentName' and 'argumentValue' will not be inspected.
@@ -9984,6 +11731,12 @@ func (o GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusio
 
 func (o GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionArrayOutput) ToGetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionArrayOutputWithContext(ctx context.Context) GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionArrayOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusion] {
+	return pulumix.Output[[]GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusion]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionArrayOutput) Index(i pulumi.IntInput) GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionOutput {
@@ -10045,6 +11798,12 @@ func (i GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingA
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingOutput)
 }
 
+func (i GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingArgs) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySetting] {
+	return pulumix.Output[GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySetting]{
+		OutputState: i.ToGetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingArrayInput is an input type that accepts GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingArray and GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingArrayInput` via:
 //
@@ -10070,6 +11829,12 @@ func (i GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingA
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingArrayOutput)
 }
 
+func (i GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySetting] {
+	return pulumix.Output[[]GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySetting]{
+		OutputState: i.ToGetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingOutput struct{ *pulumi.OutputState }
 
 func (GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingOutput) ElementType() reflect.Type {
@@ -10082,6 +11847,12 @@ func (o GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingO
 
 func (o GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingOutput) ToGetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingOutputWithContext(ctx context.Context) GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingOutput) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySetting] {
+	return pulumix.Output[GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySetting]{
+		OutputState: o.OutputState,
+	}
 }
 
 // List of allowed HTTP methods. Each value as a RFC7230 formated token string. Used in protection capability 911100: Restrict HTTP Request Methods.
@@ -10140,6 +11911,12 @@ func (o GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingA
 	return o
 }
 
+func (o GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySetting] {
+	return pulumix.Output[[]GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySetting]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingArrayOutput) Index(i pulumi.IntInput) GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySetting {
 		return vs[0].([]GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySetting)[vs[1].(int)]
@@ -10179,6 +11956,12 @@ func (i GetWebAppFirewallPolicyRequestRateLimitingArgs) ToGetWebAppFirewallPolic
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPolicyRequestRateLimitingOutput)
 }
 
+func (i GetWebAppFirewallPolicyRequestRateLimitingArgs) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPolicyRequestRateLimiting] {
+	return pulumix.Output[GetWebAppFirewallPolicyRequestRateLimiting]{
+		OutputState: i.ToGetWebAppFirewallPolicyRequestRateLimitingOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWebAppFirewallPolicyRequestRateLimitingArrayInput is an input type that accepts GetWebAppFirewallPolicyRequestRateLimitingArray and GetWebAppFirewallPolicyRequestRateLimitingArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyRequestRateLimitingArrayInput` via:
 //
@@ -10204,6 +11987,12 @@ func (i GetWebAppFirewallPolicyRequestRateLimitingArray) ToGetWebAppFirewallPoli
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPolicyRequestRateLimitingArrayOutput)
 }
 
+func (i GetWebAppFirewallPolicyRequestRateLimitingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPolicyRequestRateLimiting] {
+	return pulumix.Output[[]GetWebAppFirewallPolicyRequestRateLimiting]{
+		OutputState: i.ToGetWebAppFirewallPolicyRequestRateLimitingArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWebAppFirewallPolicyRequestRateLimitingOutput struct{ *pulumi.OutputState }
 
 func (GetWebAppFirewallPolicyRequestRateLimitingOutput) ElementType() reflect.Type {
@@ -10216,6 +12005,12 @@ func (o GetWebAppFirewallPolicyRequestRateLimitingOutput) ToGetWebAppFirewallPol
 
 func (o GetWebAppFirewallPolicyRequestRateLimitingOutput) ToGetWebAppFirewallPolicyRequestRateLimitingOutputWithContext(ctx context.Context) GetWebAppFirewallPolicyRequestRateLimitingOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPolicyRequestRateLimitingOutput) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPolicyRequestRateLimiting] {
+	return pulumix.Output[GetWebAppFirewallPolicyRequestRateLimiting]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
@@ -10237,6 +12032,12 @@ func (o GetWebAppFirewallPolicyRequestRateLimitingArrayOutput) ToGetWebAppFirewa
 
 func (o GetWebAppFirewallPolicyRequestRateLimitingArrayOutput) ToGetWebAppFirewallPolicyRequestRateLimitingArrayOutputWithContext(ctx context.Context) GetWebAppFirewallPolicyRequestRateLimitingArrayOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPolicyRequestRateLimitingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPolicyRequestRateLimiting] {
+	return pulumix.Output[[]GetWebAppFirewallPolicyRequestRateLimiting]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetWebAppFirewallPolicyRequestRateLimitingArrayOutput) Index(i pulumi.IntInput) GetWebAppFirewallPolicyRequestRateLimitingOutput {
@@ -10300,6 +12101,12 @@ func (i GetWebAppFirewallPolicyRequestRateLimitingRuleArgs) ToGetWebAppFirewallP
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPolicyRequestRateLimitingRuleOutput)
 }
 
+func (i GetWebAppFirewallPolicyRequestRateLimitingRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPolicyRequestRateLimitingRule] {
+	return pulumix.Output[GetWebAppFirewallPolicyRequestRateLimitingRule]{
+		OutputState: i.ToGetWebAppFirewallPolicyRequestRateLimitingRuleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWebAppFirewallPolicyRequestRateLimitingRuleArrayInput is an input type that accepts GetWebAppFirewallPolicyRequestRateLimitingRuleArray and GetWebAppFirewallPolicyRequestRateLimitingRuleArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyRequestRateLimitingRuleArrayInput` via:
 //
@@ -10325,6 +12132,12 @@ func (i GetWebAppFirewallPolicyRequestRateLimitingRuleArray) ToGetWebAppFirewall
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPolicyRequestRateLimitingRuleArrayOutput)
 }
 
+func (i GetWebAppFirewallPolicyRequestRateLimitingRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPolicyRequestRateLimitingRule] {
+	return pulumix.Output[[]GetWebAppFirewallPolicyRequestRateLimitingRule]{
+		OutputState: i.ToGetWebAppFirewallPolicyRequestRateLimitingRuleArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWebAppFirewallPolicyRequestRateLimitingRuleOutput struct{ *pulumi.OutputState }
 
 func (GetWebAppFirewallPolicyRequestRateLimitingRuleOutput) ElementType() reflect.Type {
@@ -10337,6 +12150,12 @@ func (o GetWebAppFirewallPolicyRequestRateLimitingRuleOutput) ToGetWebAppFirewal
 
 func (o GetWebAppFirewallPolicyRequestRateLimitingRuleOutput) ToGetWebAppFirewallPolicyRequestRateLimitingRuleOutputWithContext(ctx context.Context) GetWebAppFirewallPolicyRequestRateLimitingRuleOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPolicyRequestRateLimitingRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPolicyRequestRateLimitingRule] {
+	return pulumix.Output[GetWebAppFirewallPolicyRequestRateLimitingRule]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
@@ -10386,6 +12205,12 @@ func (o GetWebAppFirewallPolicyRequestRateLimitingRuleArrayOutput) ToGetWebAppFi
 	return o
 }
 
+func (o GetWebAppFirewallPolicyRequestRateLimitingRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPolicyRequestRateLimitingRule] {
+	return pulumix.Output[[]GetWebAppFirewallPolicyRequestRateLimitingRule]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetWebAppFirewallPolicyRequestRateLimitingRuleArrayOutput) Index(i pulumi.IntInput) GetWebAppFirewallPolicyRequestRateLimitingRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWebAppFirewallPolicyRequestRateLimitingRule {
 		return vs[0].([]GetWebAppFirewallPolicyRequestRateLimitingRule)[vs[1].(int)]
@@ -10433,6 +12258,12 @@ func (i GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationArgs) ToGetWe
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationOutput)
 }
 
+func (i GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPolicyRequestRateLimitingRuleConfiguration] {
+	return pulumix.Output[GetWebAppFirewallPolicyRequestRateLimitingRuleConfiguration]{
+		OutputState: i.ToGetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationArrayInput is an input type that accepts GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationArray and GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationArrayInput` via:
 //
@@ -10458,6 +12289,12 @@ func (i GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationArray) ToGetW
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationArrayOutput)
 }
 
+func (i GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPolicyRequestRateLimitingRuleConfiguration] {
+	return pulumix.Output[[]GetWebAppFirewallPolicyRequestRateLimitingRuleConfiguration]{
+		OutputState: i.ToGetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationOutput) ElementType() reflect.Type {
@@ -10470,6 +12307,12 @@ func (o GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationOutput) ToGet
 
 func (o GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationOutput) ToGetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationOutputWithContext(ctx context.Context) GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPolicyRequestRateLimitingRuleConfiguration] {
+	return pulumix.Output[GetWebAppFirewallPolicyRequestRateLimitingRuleConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Duration of block action application in seconds when `requestsLimit` is reached. Optional and can be 0 (no block duration).
@@ -10501,6 +12344,12 @@ func (o GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationArrayOutput) 
 
 func (o GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationArrayOutput) ToGetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationArrayOutputWithContext(ctx context.Context) GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationArrayOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPolicyRequestRateLimitingRuleConfiguration] {
+	return pulumix.Output[[]GetWebAppFirewallPolicyRequestRateLimitingRuleConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationArrayOutput) Index(i pulumi.IntInput) GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationOutput {
@@ -10542,6 +12391,12 @@ func (i GetWebAppFirewallPolicyResponseAccessControlArgs) ToGetWebAppFirewallPol
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPolicyResponseAccessControlOutput)
 }
 
+func (i GetWebAppFirewallPolicyResponseAccessControlArgs) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPolicyResponseAccessControl] {
+	return pulumix.Output[GetWebAppFirewallPolicyResponseAccessControl]{
+		OutputState: i.ToGetWebAppFirewallPolicyResponseAccessControlOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWebAppFirewallPolicyResponseAccessControlArrayInput is an input type that accepts GetWebAppFirewallPolicyResponseAccessControlArray and GetWebAppFirewallPolicyResponseAccessControlArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyResponseAccessControlArrayInput` via:
 //
@@ -10567,6 +12422,12 @@ func (i GetWebAppFirewallPolicyResponseAccessControlArray) ToGetWebAppFirewallPo
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPolicyResponseAccessControlArrayOutput)
 }
 
+func (i GetWebAppFirewallPolicyResponseAccessControlArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPolicyResponseAccessControl] {
+	return pulumix.Output[[]GetWebAppFirewallPolicyResponseAccessControl]{
+		OutputState: i.ToGetWebAppFirewallPolicyResponseAccessControlArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWebAppFirewallPolicyResponseAccessControlOutput struct{ *pulumi.OutputState }
 
 func (GetWebAppFirewallPolicyResponseAccessControlOutput) ElementType() reflect.Type {
@@ -10579,6 +12440,12 @@ func (o GetWebAppFirewallPolicyResponseAccessControlOutput) ToGetWebAppFirewallP
 
 func (o GetWebAppFirewallPolicyResponseAccessControlOutput) ToGetWebAppFirewallPolicyResponseAccessControlOutputWithContext(ctx context.Context) GetWebAppFirewallPolicyResponseAccessControlOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPolicyResponseAccessControlOutput) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPolicyResponseAccessControl] {
+	return pulumix.Output[GetWebAppFirewallPolicyResponseAccessControl]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
@@ -10600,6 +12467,12 @@ func (o GetWebAppFirewallPolicyResponseAccessControlArrayOutput) ToGetWebAppFire
 
 func (o GetWebAppFirewallPolicyResponseAccessControlArrayOutput) ToGetWebAppFirewallPolicyResponseAccessControlArrayOutputWithContext(ctx context.Context) GetWebAppFirewallPolicyResponseAccessControlArrayOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPolicyResponseAccessControlArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPolicyResponseAccessControl] {
+	return pulumix.Output[[]GetWebAppFirewallPolicyResponseAccessControl]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetWebAppFirewallPolicyResponseAccessControlArrayOutput) Index(i pulumi.IntInput) GetWebAppFirewallPolicyResponseAccessControlOutput {
@@ -10659,6 +12532,12 @@ func (i GetWebAppFirewallPolicyResponseAccessControlRuleArgs) ToGetWebAppFirewal
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPolicyResponseAccessControlRuleOutput)
 }
 
+func (i GetWebAppFirewallPolicyResponseAccessControlRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPolicyResponseAccessControlRule] {
+	return pulumix.Output[GetWebAppFirewallPolicyResponseAccessControlRule]{
+		OutputState: i.ToGetWebAppFirewallPolicyResponseAccessControlRuleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWebAppFirewallPolicyResponseAccessControlRuleArrayInput is an input type that accepts GetWebAppFirewallPolicyResponseAccessControlRuleArray and GetWebAppFirewallPolicyResponseAccessControlRuleArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyResponseAccessControlRuleArrayInput` via:
 //
@@ -10684,6 +12563,12 @@ func (i GetWebAppFirewallPolicyResponseAccessControlRuleArray) ToGetWebAppFirewa
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPolicyResponseAccessControlRuleArrayOutput)
 }
 
+func (i GetWebAppFirewallPolicyResponseAccessControlRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPolicyResponseAccessControlRule] {
+	return pulumix.Output[[]GetWebAppFirewallPolicyResponseAccessControlRule]{
+		OutputState: i.ToGetWebAppFirewallPolicyResponseAccessControlRuleArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWebAppFirewallPolicyResponseAccessControlRuleOutput struct{ *pulumi.OutputState }
 
 func (GetWebAppFirewallPolicyResponseAccessControlRuleOutput) ElementType() reflect.Type {
@@ -10696,6 +12581,12 @@ func (o GetWebAppFirewallPolicyResponseAccessControlRuleOutput) ToGetWebAppFirew
 
 func (o GetWebAppFirewallPolicyResponseAccessControlRuleOutput) ToGetWebAppFirewallPolicyResponseAccessControlRuleOutputWithContext(ctx context.Context) GetWebAppFirewallPolicyResponseAccessControlRuleOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPolicyResponseAccessControlRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPolicyResponseAccessControlRule] {
+	return pulumix.Output[GetWebAppFirewallPolicyResponseAccessControlRule]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
@@ -10738,6 +12629,12 @@ func (o GetWebAppFirewallPolicyResponseAccessControlRuleArrayOutput) ToGetWebApp
 	return o
 }
 
+func (o GetWebAppFirewallPolicyResponseAccessControlRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPolicyResponseAccessControlRule] {
+	return pulumix.Output[[]GetWebAppFirewallPolicyResponseAccessControlRule]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetWebAppFirewallPolicyResponseAccessControlRuleArrayOutput) Index(i pulumi.IntInput) GetWebAppFirewallPolicyResponseAccessControlRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWebAppFirewallPolicyResponseAccessControlRule {
 		return vs[0].([]GetWebAppFirewallPolicyResponseAccessControlRule)[vs[1].(int)]
@@ -10777,6 +12674,12 @@ func (i GetWebAppFirewallPolicyResponseProtectionArgs) ToGetWebAppFirewallPolicy
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPolicyResponseProtectionOutput)
 }
 
+func (i GetWebAppFirewallPolicyResponseProtectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPolicyResponseProtection] {
+	return pulumix.Output[GetWebAppFirewallPolicyResponseProtection]{
+		OutputState: i.ToGetWebAppFirewallPolicyResponseProtectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWebAppFirewallPolicyResponseProtectionArrayInput is an input type that accepts GetWebAppFirewallPolicyResponseProtectionArray and GetWebAppFirewallPolicyResponseProtectionArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyResponseProtectionArrayInput` via:
 //
@@ -10802,6 +12705,12 @@ func (i GetWebAppFirewallPolicyResponseProtectionArray) ToGetWebAppFirewallPolic
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPolicyResponseProtectionArrayOutput)
 }
 
+func (i GetWebAppFirewallPolicyResponseProtectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPolicyResponseProtection] {
+	return pulumix.Output[[]GetWebAppFirewallPolicyResponseProtection]{
+		OutputState: i.ToGetWebAppFirewallPolicyResponseProtectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWebAppFirewallPolicyResponseProtectionOutput struct{ *pulumi.OutputState }
 
 func (GetWebAppFirewallPolicyResponseProtectionOutput) ElementType() reflect.Type {
@@ -10814,6 +12723,12 @@ func (o GetWebAppFirewallPolicyResponseProtectionOutput) ToGetWebAppFirewallPoli
 
 func (o GetWebAppFirewallPolicyResponseProtectionOutput) ToGetWebAppFirewallPolicyResponseProtectionOutputWithContext(ctx context.Context) GetWebAppFirewallPolicyResponseProtectionOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPolicyResponseProtectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPolicyResponseProtection] {
+	return pulumix.Output[GetWebAppFirewallPolicyResponseProtection]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
@@ -10835,6 +12750,12 @@ func (o GetWebAppFirewallPolicyResponseProtectionArrayOutput) ToGetWebAppFirewal
 
 func (o GetWebAppFirewallPolicyResponseProtectionArrayOutput) ToGetWebAppFirewallPolicyResponseProtectionArrayOutputWithContext(ctx context.Context) GetWebAppFirewallPolicyResponseProtectionArrayOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPolicyResponseProtectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPolicyResponseProtection] {
+	return pulumix.Output[[]GetWebAppFirewallPolicyResponseProtection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetWebAppFirewallPolicyResponseProtectionArrayOutput) Index(i pulumi.IntInput) GetWebAppFirewallPolicyResponseProtectionOutput {
@@ -10906,6 +12827,12 @@ func (i GetWebAppFirewallPolicyResponseProtectionRuleArgs) ToGetWebAppFirewallPo
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPolicyResponseProtectionRuleOutput)
 }
 
+func (i GetWebAppFirewallPolicyResponseProtectionRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPolicyResponseProtectionRule] {
+	return pulumix.Output[GetWebAppFirewallPolicyResponseProtectionRule]{
+		OutputState: i.ToGetWebAppFirewallPolicyResponseProtectionRuleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWebAppFirewallPolicyResponseProtectionRuleArrayInput is an input type that accepts GetWebAppFirewallPolicyResponseProtectionRuleArray and GetWebAppFirewallPolicyResponseProtectionRuleArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyResponseProtectionRuleArrayInput` via:
 //
@@ -10931,6 +12858,12 @@ func (i GetWebAppFirewallPolicyResponseProtectionRuleArray) ToGetWebAppFirewallP
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPolicyResponseProtectionRuleArrayOutput)
 }
 
+func (i GetWebAppFirewallPolicyResponseProtectionRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPolicyResponseProtectionRule] {
+	return pulumix.Output[[]GetWebAppFirewallPolicyResponseProtectionRule]{
+		OutputState: i.ToGetWebAppFirewallPolicyResponseProtectionRuleArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWebAppFirewallPolicyResponseProtectionRuleOutput struct{ *pulumi.OutputState }
 
 func (GetWebAppFirewallPolicyResponseProtectionRuleOutput) ElementType() reflect.Type {
@@ -10943,6 +12876,12 @@ func (o GetWebAppFirewallPolicyResponseProtectionRuleOutput) ToGetWebAppFirewall
 
 func (o GetWebAppFirewallPolicyResponseProtectionRuleOutput) ToGetWebAppFirewallPolicyResponseProtectionRuleOutputWithContext(ctx context.Context) GetWebAppFirewallPolicyResponseProtectionRuleOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPolicyResponseProtectionRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPolicyResponseProtectionRule] {
+	return pulumix.Output[GetWebAppFirewallPolicyResponseProtectionRule]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
@@ -11004,6 +12943,12 @@ func (o GetWebAppFirewallPolicyResponseProtectionRuleArrayOutput) ToGetWebAppFir
 	return o
 }
 
+func (o GetWebAppFirewallPolicyResponseProtectionRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPolicyResponseProtectionRule] {
+	return pulumix.Output[[]GetWebAppFirewallPolicyResponseProtectionRule]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetWebAppFirewallPolicyResponseProtectionRuleArrayOutput) Index(i pulumi.IntInput) GetWebAppFirewallPolicyResponseProtectionRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWebAppFirewallPolicyResponseProtectionRule {
 		return vs[0].([]GetWebAppFirewallPolicyResponseProtectionRule)[vs[1].(int)]
@@ -11063,6 +13008,12 @@ func (i GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgs) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityOutput)
 }
 
+func (i GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgs) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapability] {
+	return pulumix.Output[GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapability]{
+		OutputState: i.ToGetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityArrayInput is an input type that accepts GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityArray and GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityArrayInput` via:
 //
@@ -11088,6 +13039,12 @@ func (i GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityArray) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityArrayOutput)
 }
 
+func (i GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapability] {
+	return pulumix.Output[[]GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapability]{
+		OutputState: i.ToGetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityOutput struct{ *pulumi.OutputState }
 
 func (GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityOutput) ElementType() reflect.Type {
@@ -11100,6 +13057,12 @@ func (o GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityOutput)
 
 func (o GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityOutput) ToGetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityOutputWithContext(ctx context.Context) GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityOutput) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapability] {
+	return pulumix.Output[GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapability]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
@@ -11152,6 +13115,12 @@ func (o GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityArrayOu
 	return o
 }
 
+func (o GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapability] {
+	return pulumix.Output[[]GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapability]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityArrayOutput) Index(i pulumi.IntInput) GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapability {
 		return vs[0].([]GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapability)[vs[1].(int)]
@@ -11195,6 +13164,12 @@ func (i GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollabo
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightOutput)
 }
 
+func (i GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgs) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeight] {
+	return pulumix.Output[GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeight]{
+		OutputState: i.ToGetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArrayInput is an input type that accepts GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArray and GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArrayInput` via:
 //
@@ -11220,6 +13195,12 @@ func (i GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollabo
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutput)
 }
 
+func (i GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeight] {
+	return pulumix.Output[[]GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeight]{
+		OutputState: i.ToGetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightOutput struct{ *pulumi.OutputState }
 
 func (GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightOutput) ElementType() reflect.Type {
@@ -11232,6 +13213,12 @@ func (o GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollabo
 
 func (o GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightOutput) ToGetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightOutputWithContext(ctx context.Context) GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightOutput) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeight] {
+	return pulumix.Output[GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeight]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Unique key of referenced protection capability.
@@ -11260,6 +13247,12 @@ func (o GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollabo
 
 func (o GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutput) ToGetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutputWithContext(ctx context.Context) GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeight] {
+	return pulumix.Output[[]GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeight]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArrayOutput) Index(i pulumi.IntInput) GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightOutput {
@@ -11305,6 +13298,12 @@ func (i GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusi
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionOutput)
 }
 
+func (i GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionArgs) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusion] {
+	return pulumix.Output[GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusion]{
+		OutputState: i.ToGetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionArrayInput is an input type that accepts GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionArray and GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionArrayInput` via:
 //
@@ -11330,6 +13329,12 @@ func (i GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusi
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionArrayOutput)
 }
 
+func (i GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusion] {
+	return pulumix.Output[[]GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusion]{
+		OutputState: i.ToGetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionOutput struct{ *pulumi.OutputState }
 
 func (GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionOutput) ElementType() reflect.Type {
@@ -11342,6 +13347,12 @@ func (o GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusi
 
 func (o GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionOutput) ToGetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionOutputWithContext(ctx context.Context) GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionOutput) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusion] {
+	return pulumix.Output[GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusion]{
+		OutputState: o.OutputState,
+	}
 }
 
 // List of URL query parameter values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from inspecting. Example: If we have query parameter 'argumentName=argumentValue' and args=['argumentName'], both 'argumentName' and 'argumentValue' will not be inspected.
@@ -11370,6 +13381,12 @@ func (o GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusi
 
 func (o GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionArrayOutput) ToGetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionArrayOutputWithContext(ctx context.Context) GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionArrayOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusion] {
+	return pulumix.Output[[]GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusion]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionArrayOutput) Index(i pulumi.IntInput) GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionOutput {
@@ -11431,6 +13448,12 @@ func (i GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySetting
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingOutput)
 }
 
+func (i GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingArgs) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySetting] {
+	return pulumix.Output[GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySetting]{
+		OutputState: i.ToGetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingArrayInput is an input type that accepts GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingArray and GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingArrayOutput values.
 // You can construct a concrete instance of `GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingArrayInput` via:
 //
@@ -11456,6 +13479,12 @@ func (i GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySetting
 	return pulumi.ToOutputWithContext(ctx, i).(GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingArrayOutput)
 }
 
+func (i GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySetting] {
+	return pulumix.Output[[]GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySetting]{
+		OutputState: i.ToGetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingOutput struct{ *pulumi.OutputState }
 
 func (GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingOutput) ElementType() reflect.Type {
@@ -11468,6 +13497,12 @@ func (o GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySetting
 
 func (o GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingOutput) ToGetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingOutputWithContext(ctx context.Context) GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingOutput) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySetting] {
+	return pulumix.Output[GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySetting]{
+		OutputState: o.OutputState,
+	}
 }
 
 // List of allowed HTTP methods. Each value as a RFC7230 formated token string. Used in protection capability 911100: Restrict HTTP Request Methods.
@@ -11524,6 +13559,12 @@ func (o GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySetting
 
 func (o GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingArrayOutput) ToGetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingArrayOutputWithContext(ctx context.Context) GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingArrayOutput {
 	return o
+}
+
+func (o GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySetting] {
+	return pulumix.Output[[]GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySetting]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingArrayOutput) Index(i pulumi.IntInput) GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingOutput {

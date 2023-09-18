@@ -82,7 +82,7 @@ public class AnalyticsInstancePrivateAccessChannel extends com.pulumi.resources.
      * The OCID of the AnalyticsInstance.
      * 
      */
-    @Export(name="analyticsInstanceId", type=String.class, parameters={})
+    @Export(name="analyticsInstanceId", refs={String.class}, tree="[0]")
     private Output<String> analyticsInstanceId;
 
     /**
@@ -96,7 +96,7 @@ public class AnalyticsInstancePrivateAccessChannel extends com.pulumi.resources.
      * (Updatable) Display Name of the Private Access Channel.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -110,7 +110,7 @@ public class AnalyticsInstancePrivateAccessChannel extends com.pulumi.resources.
      * The list of IP addresses from the customer subnet connected to private access channel, used as a source Ip by Private Access Channel for network traffic from the AnalyticsInstance to Private Sources.
      * 
      */
-    @Export(name="egressSourceIpAddresses", type=List.class, parameters={String.class})
+    @Export(name="egressSourceIpAddresses", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> egressSourceIpAddresses;
 
     /**
@@ -124,7 +124,7 @@ public class AnalyticsInstancePrivateAccessChannel extends com.pulumi.resources.
      * IP Address of the Private Access channel.
      * 
      */
-    @Export(name="ipAddress", type=String.class, parameters={})
+    @Export(name="ipAddress", refs={String.class}, tree="[0]")
     private Output<String> ipAddress;
 
     /**
@@ -138,7 +138,7 @@ public class AnalyticsInstancePrivateAccessChannel extends com.pulumi.resources.
      * Private Access Channel unique identifier key.
      * 
      */
-    @Export(name="key", type=String.class, parameters={})
+    @Export(name="key", refs={String.class}, tree="[0]")
     private Output<String> key;
 
     /**
@@ -152,7 +152,7 @@ public class AnalyticsInstancePrivateAccessChannel extends com.pulumi.resources.
      * (Updatable) Network Security Group OCIDs for an Analytics instance.
      * 
      */
-    @Export(name="networkSecurityGroupIds", type=List.class, parameters={String.class})
+    @Export(name="networkSecurityGroupIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> networkSecurityGroupIds;
 
     /**
@@ -166,7 +166,7 @@ public class AnalyticsInstancePrivateAccessChannel extends com.pulumi.resources.
      * (Updatable) List of Private Source DNS zones registered with Private Access Channel, where datasource hostnames from these dns zones / domains will be resolved in the peered VCN for access from Analytics Instance. Min of 1 is required and Max of 30 Private Source DNS zones can be registered.
      * 
      */
-    @Export(name="privateSourceDnsZones", type=List.class, parameters={AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone.class})
+    @Export(name="privateSourceDnsZones", refs={List.class,AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone.class}, tree="[0,1]")
     private Output<List<AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone>> privateSourceDnsZones;
 
     /**
@@ -180,7 +180,7 @@ public class AnalyticsInstancePrivateAccessChannel extends com.pulumi.resources.
      * (Updatable) List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
      * 
      */
-    @Export(name="privateSourceScanHosts", type=List.class, parameters={AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost.class})
+    @Export(name="privateSourceScanHosts", refs={List.class,AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost.class}, tree="[0,1]")
     private Output<List<AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost>> privateSourceScanHosts;
 
     /**
@@ -194,7 +194,7 @@ public class AnalyticsInstancePrivateAccessChannel extends com.pulumi.resources.
      * (Updatable) OCID of the customer subnet connected to private access channel.
      * 
      */
-    @Export(name="subnetId", type=String.class, parameters={})
+    @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
@@ -211,7 +211,7 @@ public class AnalyticsInstancePrivateAccessChannel extends com.pulumi.resources.
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="vcnId", type=String.class, parameters={})
+    @Export(name="vcnId", refs={String.class}, tree="[0]")
     private Output<String> vcnId;
 
     /**

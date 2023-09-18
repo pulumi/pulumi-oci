@@ -44,7 +44,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * The OCID of a compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -58,7 +58,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -72,7 +72,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * Specifies the list of artifact override arguments at the time of deployment.
      * 
      */
-    @Export(name="deployArtifactOverrideArguments", type=DeploymentDeployArtifactOverrideArguments.class, parameters={})
+    @Export(name="deployArtifactOverrideArguments", refs={DeploymentDeployArtifactOverrideArguments.class}, tree="[0]")
     private Output<DeploymentDeployArtifactOverrideArguments> deployArtifactOverrideArguments;
 
     /**
@@ -86,7 +86,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * List of all artifacts used in the pipeline.
      * 
      */
-    @Export(name="deployPipelineArtifacts", type=List.class, parameters={DeploymentDeployPipelineArtifact.class})
+    @Export(name="deployPipelineArtifacts", refs={List.class,DeploymentDeployPipelineArtifact.class}, tree="[0,1]")
     private Output<List<DeploymentDeployPipelineArtifact>> deployPipelineArtifacts;
 
     /**
@@ -100,7 +100,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * List of all environments used in the pipeline.
      * 
      */
-    @Export(name="deployPipelineEnvironments", type=List.class, parameters={DeploymentDeployPipelineEnvironment.class})
+    @Export(name="deployPipelineEnvironments", refs={List.class,DeploymentDeployPipelineEnvironment.class}, tree="[0,1]")
     private Output<List<DeploymentDeployPipelineEnvironment>> deployPipelineEnvironments;
 
     /**
@@ -114,7 +114,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * The OCID of a pipeline.
      * 
      */
-    @Export(name="deployPipelineId", type=String.class, parameters={})
+    @Export(name="deployPipelineId", refs={String.class}, tree="[0]")
     private Output<String> deployPipelineId;
 
     /**
@@ -128,7 +128,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * The OCID of the stage.
      * 
      */
-    @Export(name="deployStageId", type=String.class, parameters={})
+    @Export(name="deployStageId", refs={String.class}, tree="[0]")
     private Output<String> deployStageId;
 
     /**
@@ -142,7 +142,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * Specifies the list of arguments to be overriden per Stage at the time of deployment.
      * 
      */
-    @Export(name="deployStageOverrideArguments", type=DeploymentDeployStageOverrideArguments.class, parameters={})
+    @Export(name="deployStageOverrideArguments", refs={DeploymentDeployStageOverrideArguments.class}, tree="[0]")
     private Output<DeploymentDeployStageOverrideArguments> deployStageOverrideArguments;
 
     /**
@@ -156,7 +156,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * Specifies list of arguments passed along with the deployment.
      * 
      */
-    @Export(name="deploymentArguments", type=DeploymentDeploymentArguments.class, parameters={})
+    @Export(name="deploymentArguments", refs={DeploymentDeploymentArguments.class}, tree="[0]")
     private Output<DeploymentDeploymentArguments> deploymentArguments;
 
     /**
@@ -170,7 +170,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * The execution progress details of a deployment.
      * 
      */
-    @Export(name="deploymentExecutionProgresses", type=List.class, parameters={DeploymentDeploymentExecutionProgress.class})
+    @Export(name="deploymentExecutionProgresses", refs={List.class,DeploymentDeploymentExecutionProgress.class}, tree="[0,1]")
     private Output<List<DeploymentDeploymentExecutionProgress>> deploymentExecutionProgresses;
 
     /**
@@ -184,7 +184,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * (Updatable) Specifies type for this deployment.
      * 
      */
-    @Export(name="deploymentType", type=String.class, parameters={})
+    @Export(name="deploymentType", refs={String.class}, tree="[0]")
     private Output<String> deploymentType;
 
     /**
@@ -198,7 +198,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * (Updatable) Deployment display name. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -212,7 +212,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -226,7 +226,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -240,7 +240,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * Specifies the OCID of the previous deployment to be redeployed.
      * 
      */
-    @Export(name="previousDeploymentId", type=String.class, parameters={})
+    @Export(name="previousDeploymentId", refs={String.class}, tree="[0]")
     private Output<String> previousDeploymentId;
 
     /**
@@ -254,7 +254,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * The OCID of a project.
      * 
      */
-    @Export(name="projectId", type=String.class, parameters={})
+    @Export(name="projectId", refs={String.class}, tree="[0]")
     private Output<String> projectId;
 
     /**
@@ -268,7 +268,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * The current state of the deployment.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -282,7 +282,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -296,7 +296,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * Time the deployment was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -310,7 +310,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * Time the deployment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -328,7 +328,7 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      * is set true each apply will force the destruction and recreation of the resource with the new property values.
      * 
      */
-    @Export(name="triggerNewDevopsDeployment", type=Boolean.class, parameters={})
+    @Export(name="triggerNewDevopsDeployment", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> triggerNewDevopsDeployment;
 
     /**

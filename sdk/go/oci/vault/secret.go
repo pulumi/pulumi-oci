@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Secret resource in Oracle Cloud Infrastructure Vault service.
@@ -265,6 +266,12 @@ func (i *Secret) ToSecretOutputWithContext(ctx context.Context) SecretOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SecretOutput)
 }
 
+func (i *Secret) ToOutput(ctx context.Context) pulumix.Output[*Secret] {
+	return pulumix.Output[*Secret]{
+		OutputState: i.ToSecretOutputWithContext(ctx).OutputState,
+	}
+}
+
 // SecretArrayInput is an input type that accepts SecretArray and SecretArrayOutput values.
 // You can construct a concrete instance of `SecretArrayInput` via:
 //
@@ -288,6 +295,12 @@ func (i SecretArray) ToSecretArrayOutput() SecretArrayOutput {
 
 func (i SecretArray) ToSecretArrayOutputWithContext(ctx context.Context) SecretArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SecretArrayOutput)
+}
+
+func (i SecretArray) ToOutput(ctx context.Context) pulumix.Output[[]*Secret] {
+	return pulumix.Output[[]*Secret]{
+		OutputState: i.ToSecretArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // SecretMapInput is an input type that accepts SecretMap and SecretMapOutput values.
@@ -315,6 +328,12 @@ func (i SecretMap) ToSecretMapOutputWithContext(ctx context.Context) SecretMapOu
 	return pulumi.ToOutputWithContext(ctx, i).(SecretMapOutput)
 }
 
+func (i SecretMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Secret] {
+	return pulumix.Output[map[string]*Secret]{
+		OutputState: i.ToSecretMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type SecretOutput struct{ *pulumi.OutputState }
 
 func (SecretOutput) ElementType() reflect.Type {
@@ -327,6 +346,12 @@ func (o SecretOutput) ToSecretOutput() SecretOutput {
 
 func (o SecretOutput) ToSecretOutputWithContext(ctx context.Context) SecretOutput {
 	return o
+}
+
+func (o SecretOutput) ToOutput(ctx context.Context) pulumix.Output[*Secret] {
+	return pulumix.Output[*Secret]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The OCID of the compartment where you want to create the secret.
@@ -426,6 +451,12 @@ func (o SecretArrayOutput) ToSecretArrayOutputWithContext(ctx context.Context) S
 	return o
 }
 
+func (o SecretArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Secret] {
+	return pulumix.Output[[]*Secret]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o SecretArrayOutput) Index(i pulumi.IntInput) SecretOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Secret {
 		return vs[0].([]*Secret)[vs[1].(int)]
@@ -444,6 +475,12 @@ func (o SecretMapOutput) ToSecretMapOutput() SecretMapOutput {
 
 func (o SecretMapOutput) ToSecretMapOutputWithContext(ctx context.Context) SecretMapOutput {
 	return o
+}
+
+func (o SecretMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Secret] {
+	return pulumix.Output[map[string]*Secret]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o SecretMapOutput) MapIndex(k pulumi.StringInput) SecretOutput {

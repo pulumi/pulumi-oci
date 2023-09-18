@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Protected Database Fetch Configuration resource in Oracle Cloud Infrastructure Recovery service.
@@ -111,6 +112,12 @@ func (o GetProtectedDatabaseFetchConfigurationResultOutput) ToGetProtectedDataba
 
 func (o GetProtectedDatabaseFetchConfigurationResultOutput) ToGetProtectedDatabaseFetchConfigurationResultOutputWithContext(ctx context.Context) GetProtectedDatabaseFetchConfigurationResultOutput {
 	return o
+}
+
+func (o GetProtectedDatabaseFetchConfigurationResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetProtectedDatabaseFetchConfigurationResult] {
+	return pulumix.Output[GetProtectedDatabaseFetchConfigurationResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetProtectedDatabaseFetchConfigurationResultOutput) Base64EncodeContent() pulumi.BoolPtrOutput {

@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the External Db System Database Managements Management resource in Oracle Cloud Infrastructure Database Management service.
@@ -169,6 +170,12 @@ func (i *ExternalDbSystemDatabaseManagementsManagement) ToExternalDbSystemDataba
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalDbSystemDatabaseManagementsManagementOutput)
 }
 
+func (i *ExternalDbSystemDatabaseManagementsManagement) ToOutput(ctx context.Context) pulumix.Output[*ExternalDbSystemDatabaseManagementsManagement] {
+	return pulumix.Output[*ExternalDbSystemDatabaseManagementsManagement]{
+		OutputState: i.ToExternalDbSystemDatabaseManagementsManagementOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ExternalDbSystemDatabaseManagementsManagementArrayInput is an input type that accepts ExternalDbSystemDatabaseManagementsManagementArray and ExternalDbSystemDatabaseManagementsManagementArrayOutput values.
 // You can construct a concrete instance of `ExternalDbSystemDatabaseManagementsManagementArrayInput` via:
 //
@@ -192,6 +199,12 @@ func (i ExternalDbSystemDatabaseManagementsManagementArray) ToExternalDbSystemDa
 
 func (i ExternalDbSystemDatabaseManagementsManagementArray) ToExternalDbSystemDatabaseManagementsManagementArrayOutputWithContext(ctx context.Context) ExternalDbSystemDatabaseManagementsManagementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalDbSystemDatabaseManagementsManagementArrayOutput)
+}
+
+func (i ExternalDbSystemDatabaseManagementsManagementArray) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalDbSystemDatabaseManagementsManagement] {
+	return pulumix.Output[[]*ExternalDbSystemDatabaseManagementsManagement]{
+		OutputState: i.ToExternalDbSystemDatabaseManagementsManagementArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // ExternalDbSystemDatabaseManagementsManagementMapInput is an input type that accepts ExternalDbSystemDatabaseManagementsManagementMap and ExternalDbSystemDatabaseManagementsManagementMapOutput values.
@@ -219,6 +232,12 @@ func (i ExternalDbSystemDatabaseManagementsManagementMap) ToExternalDbSystemData
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalDbSystemDatabaseManagementsManagementMapOutput)
 }
 
+func (i ExternalDbSystemDatabaseManagementsManagementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalDbSystemDatabaseManagementsManagement] {
+	return pulumix.Output[map[string]*ExternalDbSystemDatabaseManagementsManagement]{
+		OutputState: i.ToExternalDbSystemDatabaseManagementsManagementMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ExternalDbSystemDatabaseManagementsManagementOutput struct{ *pulumi.OutputState }
 
 func (ExternalDbSystemDatabaseManagementsManagementOutput) ElementType() reflect.Type {
@@ -231,6 +250,12 @@ func (o ExternalDbSystemDatabaseManagementsManagementOutput) ToExternalDbSystemD
 
 func (o ExternalDbSystemDatabaseManagementsManagementOutput) ToExternalDbSystemDatabaseManagementsManagementOutputWithContext(ctx context.Context) ExternalDbSystemDatabaseManagementsManagementOutput {
 	return o
+}
+
+func (o ExternalDbSystemDatabaseManagementsManagementOutput) ToOutput(ctx context.Context) pulumix.Output[*ExternalDbSystemDatabaseManagementsManagement] {
+	return pulumix.Output[*ExternalDbSystemDatabaseManagementsManagement]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
@@ -269,6 +294,12 @@ func (o ExternalDbSystemDatabaseManagementsManagementArrayOutput) ToExternalDbSy
 	return o
 }
 
+func (o ExternalDbSystemDatabaseManagementsManagementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalDbSystemDatabaseManagementsManagement] {
+	return pulumix.Output[[]*ExternalDbSystemDatabaseManagementsManagement]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o ExternalDbSystemDatabaseManagementsManagementArrayOutput) Index(i pulumi.IntInput) ExternalDbSystemDatabaseManagementsManagementOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ExternalDbSystemDatabaseManagementsManagement {
 		return vs[0].([]*ExternalDbSystemDatabaseManagementsManagement)[vs[1].(int)]
@@ -287,6 +318,12 @@ func (o ExternalDbSystemDatabaseManagementsManagementMapOutput) ToExternalDbSyst
 
 func (o ExternalDbSystemDatabaseManagementsManagementMapOutput) ToExternalDbSystemDatabaseManagementsManagementMapOutputWithContext(ctx context.Context) ExternalDbSystemDatabaseManagementsManagementMapOutput {
 	return o
+}
+
+func (o ExternalDbSystemDatabaseManagementsManagementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalDbSystemDatabaseManagementsManagement] {
+	return pulumix.Output[map[string]*ExternalDbSystemDatabaseManagementsManagement]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ExternalDbSystemDatabaseManagementsManagementMapOutput) MapIndex(k pulumi.StringInput) ExternalDbSystemDatabaseManagementsManagementOutput {

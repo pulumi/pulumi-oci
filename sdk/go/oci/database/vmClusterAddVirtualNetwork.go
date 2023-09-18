@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Vm Cluster Add Virtual Machine resource in Oracle Cloud Infrastructure Database service.
@@ -326,6 +327,12 @@ func (i *VmClusterAddVirtualNetwork) ToVmClusterAddVirtualNetworkOutputWithConte
 	return pulumi.ToOutputWithContext(ctx, i).(VmClusterAddVirtualNetworkOutput)
 }
 
+func (i *VmClusterAddVirtualNetwork) ToOutput(ctx context.Context) pulumix.Output[*VmClusterAddVirtualNetwork] {
+	return pulumix.Output[*VmClusterAddVirtualNetwork]{
+		OutputState: i.ToVmClusterAddVirtualNetworkOutputWithContext(ctx).OutputState,
+	}
+}
+
 // VmClusterAddVirtualNetworkArrayInput is an input type that accepts VmClusterAddVirtualNetworkArray and VmClusterAddVirtualNetworkArrayOutput values.
 // You can construct a concrete instance of `VmClusterAddVirtualNetworkArrayInput` via:
 //
@@ -349,6 +356,12 @@ func (i VmClusterAddVirtualNetworkArray) ToVmClusterAddVirtualNetworkArrayOutput
 
 func (i VmClusterAddVirtualNetworkArray) ToVmClusterAddVirtualNetworkArrayOutputWithContext(ctx context.Context) VmClusterAddVirtualNetworkArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(VmClusterAddVirtualNetworkArrayOutput)
+}
+
+func (i VmClusterAddVirtualNetworkArray) ToOutput(ctx context.Context) pulumix.Output[[]*VmClusterAddVirtualNetwork] {
+	return pulumix.Output[[]*VmClusterAddVirtualNetwork]{
+		OutputState: i.ToVmClusterAddVirtualNetworkArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // VmClusterAddVirtualNetworkMapInput is an input type that accepts VmClusterAddVirtualNetworkMap and VmClusterAddVirtualNetworkMapOutput values.
@@ -376,6 +389,12 @@ func (i VmClusterAddVirtualNetworkMap) ToVmClusterAddVirtualNetworkMapOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(VmClusterAddVirtualNetworkMapOutput)
 }
 
+func (i VmClusterAddVirtualNetworkMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*VmClusterAddVirtualNetwork] {
+	return pulumix.Output[map[string]*VmClusterAddVirtualNetwork]{
+		OutputState: i.ToVmClusterAddVirtualNetworkMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type VmClusterAddVirtualNetworkOutput struct{ *pulumi.OutputState }
 
 func (VmClusterAddVirtualNetworkOutput) ElementType() reflect.Type {
@@ -388,6 +407,12 @@ func (o VmClusterAddVirtualNetworkOutput) ToVmClusterAddVirtualNetworkOutput() V
 
 func (o VmClusterAddVirtualNetworkOutput) ToVmClusterAddVirtualNetworkOutputWithContext(ctx context.Context) VmClusterAddVirtualNetworkOutput {
 	return o
+}
+
+func (o VmClusterAddVirtualNetworkOutput) ToOutput(ctx context.Context) pulumix.Output[*VmClusterAddVirtualNetwork] {
+	return pulumix.Output[*VmClusterAddVirtualNetwork]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the availability domain that the VM cluster is located in.
@@ -548,6 +573,12 @@ func (o VmClusterAddVirtualNetworkArrayOutput) ToVmClusterAddVirtualNetworkArray
 	return o
 }
 
+func (o VmClusterAddVirtualNetworkArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*VmClusterAddVirtualNetwork] {
+	return pulumix.Output[[]*VmClusterAddVirtualNetwork]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o VmClusterAddVirtualNetworkArrayOutput) Index(i pulumi.IntInput) VmClusterAddVirtualNetworkOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *VmClusterAddVirtualNetwork {
 		return vs[0].([]*VmClusterAddVirtualNetwork)[vs[1].(int)]
@@ -566,6 +597,12 @@ func (o VmClusterAddVirtualNetworkMapOutput) ToVmClusterAddVirtualNetworkMapOutp
 
 func (o VmClusterAddVirtualNetworkMapOutput) ToVmClusterAddVirtualNetworkMapOutputWithContext(ctx context.Context) VmClusterAddVirtualNetworkMapOutput {
 	return o
+}
+
+func (o VmClusterAddVirtualNetworkMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*VmClusterAddVirtualNetwork] {
+	return pulumix.Output[map[string]*VmClusterAddVirtualNetwork]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o VmClusterAddVirtualNetworkMapOutput) MapIndex(k pulumi.StringInput) VmClusterAddVirtualNetworkOutput {

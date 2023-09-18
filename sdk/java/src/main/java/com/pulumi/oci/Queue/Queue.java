@@ -76,7 +76,7 @@ public class Queue extends com.pulumi.resources.CustomResource {
      * (Updatable) Compartment Identifier
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -90,7 +90,7 @@ public class Queue extends com.pulumi.resources.CustomResource {
      * (Updatable) Id of the custom master encryption key which will be used to encrypt messages content
      * 
      */
-    @Export(name="customEncryptionKeyId", type=String.class, parameters={})
+    @Export(name="customEncryptionKeyId", refs={String.class}, tree="[0]")
     private Output<String> customEncryptionKeyId;
 
     /**
@@ -104,7 +104,7 @@ public class Queue extends com.pulumi.resources.CustomResource {
      * (Updatable) The number of times a message can be delivered to a consumer before being moved to the dead letter queue. A value of 0 indicates that the DLQ is not used.
      * 
      */
-    @Export(name="deadLetterQueueDeliveryCount", type=Integer.class, parameters={})
+    @Export(name="deadLetterQueueDeliveryCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> deadLetterQueueDeliveryCount;
 
     /**
@@ -118,7 +118,7 @@ public class Queue extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -132,7 +132,7 @@ public class Queue extends com.pulumi.resources.CustomResource {
      * (Updatable) Queue Identifier
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -146,7 +146,7 @@ public class Queue extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -160,7 +160,7 @@ public class Queue extends com.pulumi.resources.CustomResource {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -174,7 +174,7 @@ public class Queue extends com.pulumi.resources.CustomResource {
      * The endpoint to use to consume or publish messages in the queue.
      * 
      */
-    @Export(name="messagesEndpoint", type=String.class, parameters={})
+    @Export(name="messagesEndpoint", refs={String.class}, tree="[0]")
     private Output<String> messagesEndpoint;
 
     /**
@@ -184,13 +184,13 @@ public class Queue extends com.pulumi.resources.CustomResource {
     public Output<String> messagesEndpoint() {
         return this.messagesEndpoint;
     }
-    @Export(name="purgeQueue", type=Boolean.class, parameters={})
+    @Export(name="purgeQueue", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> purgeQueue;
 
     public Output<Optional<Boolean>> purgeQueue() {
         return Codegen.optional(this.purgeQueue);
     }
-    @Export(name="purgeType", type=String.class, parameters={})
+    @Export(name="purgeType", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> purgeType;
 
     public Output<Optional<String>> purgeType() {
@@ -200,7 +200,7 @@ public class Queue extends com.pulumi.resources.CustomResource {
      * The retention period of the messages in the queue, in seconds.
      * 
      */
-    @Export(name="retentionInSeconds", type=Integer.class, parameters={})
+    @Export(name="retentionInSeconds", refs={Integer.class}, tree="[0]")
     private Output<Integer> retentionInSeconds;
 
     /**
@@ -214,7 +214,7 @@ public class Queue extends com.pulumi.resources.CustomResource {
      * The current state of the Queue.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -228,7 +228,7 @@ public class Queue extends com.pulumi.resources.CustomResource {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -242,7 +242,7 @@ public class Queue extends com.pulumi.resources.CustomResource {
      * The time the the Queue was created. An RFC3339 formatted datetime string
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -256,7 +256,7 @@ public class Queue extends com.pulumi.resources.CustomResource {
      * The time the Queue was updated. An RFC3339 formatted datetime string
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -270,7 +270,7 @@ public class Queue extends com.pulumi.resources.CustomResource {
      * (Updatable) The default polling timeout of the messages in the queue, in seconds.
      * 
      */
-    @Export(name="timeoutInSeconds", type=Integer.class, parameters={})
+    @Export(name="timeoutInSeconds", refs={Integer.class}, tree="[0]")
     private Output<Integer> timeoutInSeconds;
 
     /**
@@ -284,7 +284,7 @@ public class Queue extends com.pulumi.resources.CustomResource {
      * (Updatable) The default visibility of the messages consumed from the queue.
      * 
      */
-    @Export(name="visibilityInSeconds", type=Integer.class, parameters={})
+    @Export(name="visibilityInSeconds", refs={Integer.class}, tree="[0]")
     private Output<Integer> visibilityInSeconds;
 
     /**

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetMigrateToNativeVcnStatus(ctx *pulumi.Context, args *GetMigrateToNativeVcnStatusArgs, opts ...pulumi.InvokeOption) (*GetMigrateToNativeVcnStatusResult, error) {
@@ -70,6 +71,12 @@ func (o GetMigrateToNativeVcnStatusResultOutput) ToGetMigrateToNativeVcnStatusRe
 
 func (o GetMigrateToNativeVcnStatusResultOutput) ToGetMigrateToNativeVcnStatusResultOutputWithContext(ctx context.Context) GetMigrateToNativeVcnStatusResultOutput {
 	return o
+}
+
+func (o GetMigrateToNativeVcnStatusResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrateToNativeVcnStatusResult] {
+	return pulumix.Output[GetMigrateToNativeVcnStatusResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrateToNativeVcnStatusResultOutput) ClusterId() pulumi.StringOutput {

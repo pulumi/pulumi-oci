@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Workspace Folder resource in Oracle Cloud Infrastructure Data Integration service.
@@ -129,6 +130,12 @@ func (o LookupWorkspaceFolderResultOutput) ToLookupWorkspaceFolderResultOutput()
 
 func (o LookupWorkspaceFolderResultOutput) ToLookupWorkspaceFolderResultOutputWithContext(ctx context.Context) LookupWorkspaceFolderResultOutput {
 	return o
+}
+
+func (o LookupWorkspaceFolderResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupWorkspaceFolderResult] {
+	return pulumix.Output[LookupWorkspaceFolderResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The category name.

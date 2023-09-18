@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Announcement Subscription resource in Oracle Cloud Infrastructure Announcements Service service.
@@ -290,6 +291,12 @@ func (i *AnnouncementSubscription) ToAnnouncementSubscriptionOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(AnnouncementSubscriptionOutput)
 }
 
+func (i *AnnouncementSubscription) ToOutput(ctx context.Context) pulumix.Output[*AnnouncementSubscription] {
+	return pulumix.Output[*AnnouncementSubscription]{
+		OutputState: i.ToAnnouncementSubscriptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AnnouncementSubscriptionArrayInput is an input type that accepts AnnouncementSubscriptionArray and AnnouncementSubscriptionArrayOutput values.
 // You can construct a concrete instance of `AnnouncementSubscriptionArrayInput` via:
 //
@@ -313,6 +320,12 @@ func (i AnnouncementSubscriptionArray) ToAnnouncementSubscriptionArrayOutput() A
 
 func (i AnnouncementSubscriptionArray) ToAnnouncementSubscriptionArrayOutputWithContext(ctx context.Context) AnnouncementSubscriptionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AnnouncementSubscriptionArrayOutput)
+}
+
+func (i AnnouncementSubscriptionArray) ToOutput(ctx context.Context) pulumix.Output[[]*AnnouncementSubscription] {
+	return pulumix.Output[[]*AnnouncementSubscription]{
+		OutputState: i.ToAnnouncementSubscriptionArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // AnnouncementSubscriptionMapInput is an input type that accepts AnnouncementSubscriptionMap and AnnouncementSubscriptionMapOutput values.
@@ -340,6 +353,12 @@ func (i AnnouncementSubscriptionMap) ToAnnouncementSubscriptionMapOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(AnnouncementSubscriptionMapOutput)
 }
 
+func (i AnnouncementSubscriptionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AnnouncementSubscription] {
+	return pulumix.Output[map[string]*AnnouncementSubscription]{
+		OutputState: i.ToAnnouncementSubscriptionMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AnnouncementSubscriptionOutput struct{ *pulumi.OutputState }
 
 func (AnnouncementSubscriptionOutput) ElementType() reflect.Type {
@@ -352,6 +371,12 @@ func (o AnnouncementSubscriptionOutput) ToAnnouncementSubscriptionOutput() Annou
 
 func (o AnnouncementSubscriptionOutput) ToAnnouncementSubscriptionOutputWithContext(ctx context.Context) AnnouncementSubscriptionOutput {
 	return o
+}
+
+func (o AnnouncementSubscriptionOutput) ToOutput(ctx context.Context) pulumix.Output[*AnnouncementSubscription] {
+	return pulumix.Output[*AnnouncementSubscription]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the announcement subscription.
@@ -441,6 +466,12 @@ func (o AnnouncementSubscriptionArrayOutput) ToAnnouncementSubscriptionArrayOutp
 	return o
 }
 
+func (o AnnouncementSubscriptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AnnouncementSubscription] {
+	return pulumix.Output[[]*AnnouncementSubscription]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AnnouncementSubscriptionArrayOutput) Index(i pulumi.IntInput) AnnouncementSubscriptionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AnnouncementSubscription {
 		return vs[0].([]*AnnouncementSubscription)[vs[1].(int)]
@@ -459,6 +490,12 @@ func (o AnnouncementSubscriptionMapOutput) ToAnnouncementSubscriptionMapOutput()
 
 func (o AnnouncementSubscriptionMapOutput) ToAnnouncementSubscriptionMapOutputWithContext(ctx context.Context) AnnouncementSubscriptionMapOutput {
 	return o
+}
+
+func (o AnnouncementSubscriptionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AnnouncementSubscription] {
+	return pulumix.Output[map[string]*AnnouncementSubscription]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AnnouncementSubscriptionMapOutput) MapIndex(k pulumi.StringInput) AnnouncementSubscriptionOutput {

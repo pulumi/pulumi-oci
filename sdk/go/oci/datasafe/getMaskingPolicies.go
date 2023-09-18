@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Masking Policies in Oracle Cloud Infrastructure Data Safe service.
@@ -171,6 +172,12 @@ func (o GetMaskingPoliciesResultOutput) ToGetMaskingPoliciesResultOutput() GetMa
 
 func (o GetMaskingPoliciesResultOutput) ToGetMaskingPoliciesResultOutputWithContext(ctx context.Context) GetMaskingPoliciesResultOutput {
 	return o
+}
+
+func (o GetMaskingPoliciesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMaskingPoliciesResult] {
+	return pulumix.Output[GetMaskingPoliciesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMaskingPoliciesResultOutput) AccessLevel() pulumi.StringPtrOutput {

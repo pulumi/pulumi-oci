@@ -39,7 +39,7 @@ public class ExternalListener extends com.pulumi.resources.CustomResource {
      * The additional details of the external listener defined in `{&#34;key&#34;: &#34;value&#34;}` format. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="additionalDetails", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="additionalDetails", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> additionalDetails;
 
     /**
@@ -53,7 +53,7 @@ public class ExternalListener extends com.pulumi.resources.CustomResource {
      * The directory that stores tracing and logging incidents when Automatic Diagnostic Repository (ADR) is enabled.
      * 
      */
-    @Export(name="adrHomeDirectory", type=String.class, parameters={})
+    @Export(name="adrHomeDirectory", refs={String.class}, tree="[0]")
     private Output<String> adrHomeDirectory;
 
     /**
@@ -67,7 +67,7 @@ public class ExternalListener extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -81,7 +81,7 @@ public class ExternalListener extends com.pulumi.resources.CustomResource {
      * The name of the external listener.
      * 
      */
-    @Export(name="componentName", type=String.class, parameters={})
+    @Export(name="componentName", refs={String.class}, tree="[0]")
     private Output<String> componentName;
 
     /**
@@ -95,7 +95,7 @@ public class ExternalListener extends com.pulumi.resources.CustomResource {
      * The user-friendly name for the database. The name does not have to be unique.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -109,7 +109,7 @@ public class ExternalListener extends com.pulumi.resources.CustomResource {
      * The list of protocol addresses the listener is configured to listen on.
      * 
      */
-    @Export(name="endpoints", type=List.class, parameters={ExternalListenerEndpoint.class})
+    @Export(name="endpoints", refs={List.class,ExternalListenerEndpoint.class}, tree="[0,1]")
     private Output<List<ExternalListenerEndpoint>> endpoints;
 
     /**
@@ -123,7 +123,7 @@ public class ExternalListener extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
      * 
      */
-    @Export(name="externalConnectorId", type=String.class, parameters={})
+    @Export(name="externalConnectorId", refs={String.class}, tree="[0]")
     private Output<String> externalConnectorId;
 
     /**
@@ -137,7 +137,7 @@ public class ExternalListener extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB home.
      * 
      */
-    @Export(name="externalDbHomeId", type=String.class, parameters={})
+    @Export(name="externalDbHomeId", refs={String.class}, tree="[0]")
     private Output<String> externalDbHomeId;
 
     /**
@@ -151,7 +151,7 @@ public class ExternalListener extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node.
      * 
      */
-    @Export(name="externalDbNodeId", type=String.class, parameters={})
+    @Export(name="externalDbNodeId", refs={String.class}, tree="[0]")
     private Output<String> externalDbNodeId;
 
     /**
@@ -165,7 +165,7 @@ public class ExternalListener extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the listener is a part of.
      * 
      */
-    @Export(name="externalDbSystemId", type=String.class, parameters={})
+    @Export(name="externalDbSystemId", refs={String.class}, tree="[0]")
     private Output<String> externalDbSystemId;
 
     /**
@@ -182,7 +182,7 @@ public class ExternalListener extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="externalListenerId", type=String.class, parameters={})
+    @Export(name="externalListenerId", refs={String.class}, tree="[0]")
     private Output<String> externalListenerId;
 
     /**
@@ -199,7 +199,7 @@ public class ExternalListener extends com.pulumi.resources.CustomResource {
      * The name of the host on which the external listener is running.
      * 
      */
-    @Export(name="hostName", type=String.class, parameters={})
+    @Export(name="hostName", refs={String.class}, tree="[0]")
     private Output<String> hostName;
 
     /**
@@ -213,7 +213,7 @@ public class ExternalListener extends com.pulumi.resources.CustomResource {
      * Additional information about the current lifecycle state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -227,7 +227,7 @@ public class ExternalListener extends com.pulumi.resources.CustomResource {
      * The listener alias.
      * 
      */
-    @Export(name="listenerAlias", type=String.class, parameters={})
+    @Export(name="listenerAlias", refs={String.class}, tree="[0]")
     private Output<String> listenerAlias;
 
     /**
@@ -241,7 +241,7 @@ public class ExternalListener extends com.pulumi.resources.CustomResource {
      * The location of the listener configuration file listener.ora.
      * 
      */
-    @Export(name="listenerOraLocation", type=String.class, parameters={})
+    @Export(name="listenerOraLocation", refs={String.class}, tree="[0]")
     private Output<String> listenerOraLocation;
 
     /**
@@ -255,7 +255,7 @@ public class ExternalListener extends com.pulumi.resources.CustomResource {
      * The type of listener.
      * 
      */
-    @Export(name="listenerType", type=String.class, parameters={})
+    @Export(name="listenerType", refs={String.class}, tree="[0]")
     private Output<String> listenerType;
 
     /**
@@ -269,7 +269,7 @@ public class ExternalListener extends com.pulumi.resources.CustomResource {
      * The destination directory of the listener log file.
      * 
      */
-    @Export(name="logDirectory", type=String.class, parameters={})
+    @Export(name="logDirectory", refs={String.class}, tree="[0]")
     private Output<String> logDirectory;
 
     /**
@@ -283,7 +283,7 @@ public class ExternalListener extends com.pulumi.resources.CustomResource {
      * The Oracle home location of the listener.
      * 
      */
-    @Export(name="oracleHome", type=String.class, parameters={})
+    @Export(name="oracleHome", refs={String.class}, tree="[0]")
     private Output<String> oracleHome;
 
     /**
@@ -297,7 +297,7 @@ public class ExternalListener extends com.pulumi.resources.CustomResource {
      * The list of ASMs that are serviced by the listener.
      * 
      */
-    @Export(name="servicedAsms", type=List.class, parameters={ExternalListenerServicedAsm.class})
+    @Export(name="servicedAsms", refs={List.class,ExternalListenerServicedAsm.class}, tree="[0,1]")
     private Output<List<ExternalListenerServicedAsm>> servicedAsms;
 
     /**
@@ -311,7 +311,7 @@ public class ExternalListener extends com.pulumi.resources.CustomResource {
      * The list of databases that are serviced by the listener.
      * 
      */
-    @Export(name="servicedDatabases", type=List.class, parameters={ExternalListenerServicedDatabase.class})
+    @Export(name="servicedDatabases", refs={List.class,ExternalListenerServicedDatabase.class}, tree="[0,1]")
     private Output<List<ExternalListenerServicedDatabase>> servicedDatabases;
 
     /**
@@ -325,7 +325,7 @@ public class ExternalListener extends com.pulumi.resources.CustomResource {
      * The current lifecycle state of the external listener.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -339,7 +339,7 @@ public class ExternalListener extends com.pulumi.resources.CustomResource {
      * The date and time the external listener was created.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -353,7 +353,7 @@ public class ExternalListener extends com.pulumi.resources.CustomResource {
      * The date and time the external listener was last updated.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -367,7 +367,7 @@ public class ExternalListener extends com.pulumi.resources.CustomResource {
      * The destination directory of the listener trace file.
      * 
      */
-    @Export(name="traceDirectory", type=String.class, parameters={})
+    @Export(name="traceDirectory", refs={String.class}, tree="[0]")
     private Output<String> traceDirectory;
 
     /**
@@ -381,7 +381,7 @@ public class ExternalListener extends com.pulumi.resources.CustomResource {
      * The listener version.
      * 
      */
-    @Export(name="version", type=String.class, parameters={})
+    @Export(name="version", refs={String.class}, tree="[0]")
     private Output<String> version;
 
     /**

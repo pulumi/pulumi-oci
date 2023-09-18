@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Host Insights in Oracle Cloud Infrastructure Opsi service.
@@ -152,6 +153,12 @@ func (o GetHostInsightsResultOutput) ToGetHostInsightsResultOutput() GetHostInsi
 
 func (o GetHostInsightsResultOutput) ToGetHostInsightsResultOutputWithContext(ctx context.Context) GetHostInsightsResultOutput {
 	return o
+}
+
+func (o GetHostInsightsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetHostInsightsResult] {
+	return pulumix.Output[GetHostInsightsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

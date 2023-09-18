@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Autonomous Exadata Infrastructure Shapes in Oracle Cloud Infrastructure Database service.
@@ -110,6 +111,12 @@ func (o GetAutonomousExadataInfrastructureShapesResultOutput) ToGetAutonomousExa
 
 func (o GetAutonomousExadataInfrastructureShapesResultOutput) ToGetAutonomousExadataInfrastructureShapesResultOutputWithContext(ctx context.Context) GetAutonomousExadataInfrastructureShapesResultOutput {
 	return o
+}
+
+func (o GetAutonomousExadataInfrastructureShapesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutonomousExadataInfrastructureShapesResult] {
+	return pulumix.Output[GetAutonomousExadataInfrastructureShapesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The list of autonomous_exadata_infrastructure_shapes.

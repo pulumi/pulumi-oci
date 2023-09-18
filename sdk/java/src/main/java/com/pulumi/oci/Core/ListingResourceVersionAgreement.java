@@ -15,37 +15,37 @@ import javax.annotation.Nullable;
 
 @ResourceType(type="oci:Core/listingResourceVersionAgreement:ListingResourceVersionAgreement")
 public class ListingResourceVersionAgreement extends com.pulumi.resources.CustomResource {
-    @Export(name="eulaLink", type=String.class, parameters={})
+    @Export(name="eulaLink", refs={String.class}, tree="[0]")
     private Output<String> eulaLink;
 
     public Output<String> eulaLink() {
         return this.eulaLink;
     }
-    @Export(name="listingId", type=String.class, parameters={})
+    @Export(name="listingId", refs={String.class}, tree="[0]")
     private Output<String> listingId;
 
     public Output<String> listingId() {
         return this.listingId;
     }
-    @Export(name="listingResourceVersion", type=String.class, parameters={})
+    @Export(name="listingResourceVersion", refs={String.class}, tree="[0]")
     private Output<String> listingResourceVersion;
 
     public Output<String> listingResourceVersion() {
         return this.listingResourceVersion;
     }
-    @Export(name="oracleTermsOfUseLink", type=String.class, parameters={})
+    @Export(name="oracleTermsOfUseLink", refs={String.class}, tree="[0]")
     private Output<String> oracleTermsOfUseLink;
 
     public Output<String> oracleTermsOfUseLink() {
         return this.oracleTermsOfUseLink;
     }
-    @Export(name="signature", type=String.class, parameters={})
+    @Export(name="signature", refs={String.class}, tree="[0]")
     private Output<String> signature;
 
     public Output<String> signature() {
         return this.signature;
     }
-    @Export(name="timeRetrieved", type=String.class, parameters={})
+    @Export(name="timeRetrieved", refs={String.class}, tree="[0]")
     private Output<String> timeRetrieved;
 
     public Output<String> timeRetrieved() {

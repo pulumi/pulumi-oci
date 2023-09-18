@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Replication Schedule resource in Oracle Cloud Infrastructure Cloud Migrations service.
@@ -237,6 +238,12 @@ func (i *ReplicationSchedule) ToReplicationScheduleOutputWithContext(ctx context
 	return pulumi.ToOutputWithContext(ctx, i).(ReplicationScheduleOutput)
 }
 
+func (i *ReplicationSchedule) ToOutput(ctx context.Context) pulumix.Output[*ReplicationSchedule] {
+	return pulumix.Output[*ReplicationSchedule]{
+		OutputState: i.ToReplicationScheduleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ReplicationScheduleArrayInput is an input type that accepts ReplicationScheduleArray and ReplicationScheduleArrayOutput values.
 // You can construct a concrete instance of `ReplicationScheduleArrayInput` via:
 //
@@ -260,6 +267,12 @@ func (i ReplicationScheduleArray) ToReplicationScheduleArrayOutput() Replication
 
 func (i ReplicationScheduleArray) ToReplicationScheduleArrayOutputWithContext(ctx context.Context) ReplicationScheduleArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ReplicationScheduleArrayOutput)
+}
+
+func (i ReplicationScheduleArray) ToOutput(ctx context.Context) pulumix.Output[[]*ReplicationSchedule] {
+	return pulumix.Output[[]*ReplicationSchedule]{
+		OutputState: i.ToReplicationScheduleArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // ReplicationScheduleMapInput is an input type that accepts ReplicationScheduleMap and ReplicationScheduleMapOutput values.
@@ -287,6 +300,12 @@ func (i ReplicationScheduleMap) ToReplicationScheduleMapOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(ReplicationScheduleMapOutput)
 }
 
+func (i ReplicationScheduleMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ReplicationSchedule] {
+	return pulumix.Output[map[string]*ReplicationSchedule]{
+		OutputState: i.ToReplicationScheduleMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ReplicationScheduleOutput struct{ *pulumi.OutputState }
 
 func (ReplicationScheduleOutput) ElementType() reflect.Type {
@@ -299,6 +318,12 @@ func (o ReplicationScheduleOutput) ToReplicationScheduleOutput() ReplicationSche
 
 func (o ReplicationScheduleOutput) ToReplicationScheduleOutputWithContext(ctx context.Context) ReplicationScheduleOutput {
 	return o
+}
+
+func (o ReplicationScheduleOutput) ToOutput(ctx context.Context) pulumix.Output[*ReplicationSchedule] {
+	return pulumix.Output[*ReplicationSchedule]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the replication schedule should be created.
@@ -368,6 +393,12 @@ func (o ReplicationScheduleArrayOutput) ToReplicationScheduleArrayOutputWithCont
 	return o
 }
 
+func (o ReplicationScheduleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ReplicationSchedule] {
+	return pulumix.Output[[]*ReplicationSchedule]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o ReplicationScheduleArrayOutput) Index(i pulumi.IntInput) ReplicationScheduleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ReplicationSchedule {
 		return vs[0].([]*ReplicationSchedule)[vs[1].(int)]
@@ -386,6 +417,12 @@ func (o ReplicationScheduleMapOutput) ToReplicationScheduleMapOutput() Replicati
 
 func (o ReplicationScheduleMapOutput) ToReplicationScheduleMapOutputWithContext(ctx context.Context) ReplicationScheduleMapOutput {
 	return o
+}
+
+func (o ReplicationScheduleMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ReplicationSchedule] {
+	return pulumix.Output[map[string]*ReplicationSchedule]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ReplicationScheduleMapOutput) MapIndex(k pulumi.StringInput) ReplicationScheduleOutput {

@@ -80,7 +80,7 @@ public class HttpRedirect extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HTTP Redirects compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -94,7 +94,7 @@ public class HttpRedirect extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -108,7 +108,7 @@ public class HttpRedirect extends com.pulumi.resources.CustomResource {
      * (Updatable) The user-friendly name of the HTTP Redirect. The name can be changed and does not need to be unique.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -122,7 +122,7 @@ public class HttpRedirect extends com.pulumi.resources.CustomResource {
      * The domain from which traffic will be redirected.
      * 
      */
-    @Export(name="domain", type=String.class, parameters={})
+    @Export(name="domain", refs={String.class}, tree="[0]")
     private Output<String> domain;
 
     /**
@@ -136,7 +136,7 @@ public class HttpRedirect extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -150,7 +150,7 @@ public class HttpRedirect extends com.pulumi.resources.CustomResource {
      * (Updatable) The response code returned for the redirect to the client. For more information, see [RFC 7231](https://tools.ietf.org/html/rfc7231#section-6.4).
      * 
      */
-    @Export(name="responseCode", type=Integer.class, parameters={})
+    @Export(name="responseCode", refs={Integer.class}, tree="[0]")
     private Output<Integer> responseCode;
 
     /**
@@ -164,7 +164,7 @@ public class HttpRedirect extends com.pulumi.resources.CustomResource {
      * The current lifecycle state of the HTTP Redirect.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -178,7 +178,7 @@ public class HttpRedirect extends com.pulumi.resources.CustomResource {
      * (Updatable) The redirect target object including all the redirect data.
      * 
      */
-    @Export(name="target", type=HttpRedirectTarget.class, parameters={})
+    @Export(name="target", refs={HttpRedirectTarget.class}, tree="[0]")
     private Output<HttpRedirectTarget> target;
 
     /**
@@ -192,7 +192,7 @@ public class HttpRedirect extends com.pulumi.resources.CustomResource {
      * The date and time the policy was created, expressed in RFC 3339 timestamp format.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**

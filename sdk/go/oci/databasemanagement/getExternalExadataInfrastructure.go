@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific External Exadata Infrastructure resource in Oracle Cloud Infrastructure Database Management service.
@@ -133,6 +134,12 @@ func (o LookupExternalExadataInfrastructureResultOutput) ToLookupExternalExadata
 
 func (o LookupExternalExadataInfrastructureResultOutput) ToLookupExternalExadataInfrastructureResultOutputWithContext(ctx context.Context) LookupExternalExadataInfrastructureResultOutput {
 	return o
+}
+
+func (o LookupExternalExadataInfrastructureResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupExternalExadataInfrastructureResult] {
+	return pulumix.Output[LookupExternalExadataInfrastructureResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`

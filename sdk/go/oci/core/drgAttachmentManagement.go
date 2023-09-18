@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Drg Attachment Management resource in Oracle Cloud Infrastructure Core service.
@@ -307,6 +308,12 @@ func (i *DrgAttachmentManagement) ToDrgAttachmentManagementOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(DrgAttachmentManagementOutput)
 }
 
+func (i *DrgAttachmentManagement) ToOutput(ctx context.Context) pulumix.Output[*DrgAttachmentManagement] {
+	return pulumix.Output[*DrgAttachmentManagement]{
+		OutputState: i.ToDrgAttachmentManagementOutputWithContext(ctx).OutputState,
+	}
+}
+
 // DrgAttachmentManagementArrayInput is an input type that accepts DrgAttachmentManagementArray and DrgAttachmentManagementArrayOutput values.
 // You can construct a concrete instance of `DrgAttachmentManagementArrayInput` via:
 //
@@ -330,6 +337,12 @@ func (i DrgAttachmentManagementArray) ToDrgAttachmentManagementArrayOutput() Drg
 
 func (i DrgAttachmentManagementArray) ToDrgAttachmentManagementArrayOutputWithContext(ctx context.Context) DrgAttachmentManagementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DrgAttachmentManagementArrayOutput)
+}
+
+func (i DrgAttachmentManagementArray) ToOutput(ctx context.Context) pulumix.Output[[]*DrgAttachmentManagement] {
+	return pulumix.Output[[]*DrgAttachmentManagement]{
+		OutputState: i.ToDrgAttachmentManagementArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // DrgAttachmentManagementMapInput is an input type that accepts DrgAttachmentManagementMap and DrgAttachmentManagementMapOutput values.
@@ -357,6 +370,12 @@ func (i DrgAttachmentManagementMap) ToDrgAttachmentManagementMapOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(DrgAttachmentManagementMapOutput)
 }
 
+func (i DrgAttachmentManagementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DrgAttachmentManagement] {
+	return pulumix.Output[map[string]*DrgAttachmentManagement]{
+		OutputState: i.ToDrgAttachmentManagementMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type DrgAttachmentManagementOutput struct{ *pulumi.OutputState }
 
 func (DrgAttachmentManagementOutput) ElementType() reflect.Type {
@@ -369,6 +388,12 @@ func (o DrgAttachmentManagementOutput) ToDrgAttachmentManagementOutput() DrgAtta
 
 func (o DrgAttachmentManagementOutput) ToDrgAttachmentManagementOutputWithContext(ctx context.Context) DrgAttachmentManagementOutput {
 	return o
+}
+
+func (o DrgAttachmentManagementOutput) ToOutput(ctx context.Context) pulumix.Output[*DrgAttachmentManagement] {
+	return pulumix.Output[*DrgAttachmentManagement]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The type for the network resource attached to the DRG.
@@ -471,6 +496,12 @@ func (o DrgAttachmentManagementArrayOutput) ToDrgAttachmentManagementArrayOutput
 	return o
 }
 
+func (o DrgAttachmentManagementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DrgAttachmentManagement] {
+	return pulumix.Output[[]*DrgAttachmentManagement]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o DrgAttachmentManagementArrayOutput) Index(i pulumi.IntInput) DrgAttachmentManagementOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DrgAttachmentManagement {
 		return vs[0].([]*DrgAttachmentManagement)[vs[1].(int)]
@@ -489,6 +520,12 @@ func (o DrgAttachmentManagementMapOutput) ToDrgAttachmentManagementMapOutput() D
 
 func (o DrgAttachmentManagementMapOutput) ToDrgAttachmentManagementMapOutputWithContext(ctx context.Context) DrgAttachmentManagementMapOutput {
 	return o
+}
+
+func (o DrgAttachmentManagementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DrgAttachmentManagement] {
+	return pulumix.Output[map[string]*DrgAttachmentManagement]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o DrgAttachmentManagementMapOutput) MapIndex(k pulumi.StringInput) DrgAttachmentManagementOutput {

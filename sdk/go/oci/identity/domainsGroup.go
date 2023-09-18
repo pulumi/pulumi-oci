@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Group resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -978,6 +979,12 @@ func (i *DomainsGroup) ToDomainsGroupOutputWithContext(ctx context.Context) Doma
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsGroupOutput)
 }
 
+func (i *DomainsGroup) ToOutput(ctx context.Context) pulumix.Output[*DomainsGroup] {
+	return pulumix.Output[*DomainsGroup]{
+		OutputState: i.ToDomainsGroupOutputWithContext(ctx).OutputState,
+	}
+}
+
 // DomainsGroupArrayInput is an input type that accepts DomainsGroupArray and DomainsGroupArrayOutput values.
 // You can construct a concrete instance of `DomainsGroupArrayInput` via:
 //
@@ -1001,6 +1008,12 @@ func (i DomainsGroupArray) ToDomainsGroupArrayOutput() DomainsGroupArrayOutput {
 
 func (i DomainsGroupArray) ToDomainsGroupArrayOutputWithContext(ctx context.Context) DomainsGroupArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsGroupArrayOutput)
+}
+
+func (i DomainsGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsGroup] {
+	return pulumix.Output[[]*DomainsGroup]{
+		OutputState: i.ToDomainsGroupArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // DomainsGroupMapInput is an input type that accepts DomainsGroupMap and DomainsGroupMapOutput values.
@@ -1028,6 +1041,12 @@ func (i DomainsGroupMap) ToDomainsGroupMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsGroupMapOutput)
 }
 
+func (i DomainsGroupMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsGroup] {
+	return pulumix.Output[map[string]*DomainsGroup]{
+		OutputState: i.ToDomainsGroupMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type DomainsGroupOutput struct{ *pulumi.OutputState }
 
 func (DomainsGroupOutput) ElementType() reflect.Type {
@@ -1040,6 +1059,12 @@ func (o DomainsGroupOutput) ToDomainsGroupOutput() DomainsGroupOutput {
 
 func (o DomainsGroupOutput) ToDomainsGroupOutputWithContext(ctx context.Context) DomainsGroupOutput {
 	return o
+}
+
+func (o DomainsGroupOutput) ToOutput(ctx context.Context) pulumix.Output[*DomainsGroup] {
+	return pulumix.Output[*DomainsGroup]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
@@ -1365,6 +1390,12 @@ func (o DomainsGroupArrayOutput) ToDomainsGroupArrayOutputWithContext(ctx contex
 	return o
 }
 
+func (o DomainsGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsGroup] {
+	return pulumix.Output[[]*DomainsGroup]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o DomainsGroupArrayOutput) Index(i pulumi.IntInput) DomainsGroupOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DomainsGroup {
 		return vs[0].([]*DomainsGroup)[vs[1].(int)]
@@ -1383,6 +1414,12 @@ func (o DomainsGroupMapOutput) ToDomainsGroupMapOutput() DomainsGroupMapOutput {
 
 func (o DomainsGroupMapOutput) ToDomainsGroupMapOutputWithContext(ctx context.Context) DomainsGroupMapOutput {
 	return o
+}
+
+func (o DomainsGroupMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsGroup] {
+	return pulumix.Output[map[string]*DomainsGroup]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o DomainsGroupMapOutput) MapIndex(k pulumi.StringInput) DomainsGroupOutput {

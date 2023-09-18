@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Dr Protection Group resource in Oracle Cloud Infrastructure Disaster Recovery service.
@@ -323,6 +324,12 @@ func (i *DrProtectionGroup) ToDrProtectionGroupOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupOutput)
 }
 
+func (i *DrProtectionGroup) ToOutput(ctx context.Context) pulumix.Output[*DrProtectionGroup] {
+	return pulumix.Output[*DrProtectionGroup]{
+		OutputState: i.ToDrProtectionGroupOutputWithContext(ctx).OutputState,
+	}
+}
+
 // DrProtectionGroupArrayInput is an input type that accepts DrProtectionGroupArray and DrProtectionGroupArrayOutput values.
 // You can construct a concrete instance of `DrProtectionGroupArrayInput` via:
 //
@@ -346,6 +353,12 @@ func (i DrProtectionGroupArray) ToDrProtectionGroupArrayOutput() DrProtectionGro
 
 func (i DrProtectionGroupArray) ToDrProtectionGroupArrayOutputWithContext(ctx context.Context) DrProtectionGroupArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupArrayOutput)
+}
+
+func (i DrProtectionGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]*DrProtectionGroup] {
+	return pulumix.Output[[]*DrProtectionGroup]{
+		OutputState: i.ToDrProtectionGroupArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // DrProtectionGroupMapInput is an input type that accepts DrProtectionGroupMap and DrProtectionGroupMapOutput values.
@@ -373,6 +386,12 @@ func (i DrProtectionGroupMap) ToDrProtectionGroupMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMapOutput)
 }
 
+func (i DrProtectionGroupMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DrProtectionGroup] {
+	return pulumix.Output[map[string]*DrProtectionGroup]{
+		OutputState: i.ToDrProtectionGroupMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type DrProtectionGroupOutput struct{ *pulumi.OutputState }
 
 func (DrProtectionGroupOutput) ElementType() reflect.Type {
@@ -385,6 +404,12 @@ func (o DrProtectionGroupOutput) ToDrProtectionGroupOutput() DrProtectionGroupOu
 
 func (o DrProtectionGroupOutput) ToDrProtectionGroupOutputWithContext(ctx context.Context) DrProtectionGroupOutput {
 	return o
+}
+
+func (o DrProtectionGroupOutput) ToOutput(ctx context.Context) pulumix.Output[*DrProtectionGroup] {
+	return pulumix.Output[*DrProtectionGroup]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The details for associating this DR Protection Group with a peer (remote) DR Protection Group.
@@ -484,6 +509,12 @@ func (o DrProtectionGroupArrayOutput) ToDrProtectionGroupArrayOutputWithContext(
 	return o
 }
 
+func (o DrProtectionGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DrProtectionGroup] {
+	return pulumix.Output[[]*DrProtectionGroup]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o DrProtectionGroupArrayOutput) Index(i pulumi.IntInput) DrProtectionGroupOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DrProtectionGroup {
 		return vs[0].([]*DrProtectionGroup)[vs[1].(int)]
@@ -502,6 +533,12 @@ func (o DrProtectionGroupMapOutput) ToDrProtectionGroupMapOutput() DrProtectionG
 
 func (o DrProtectionGroupMapOutput) ToDrProtectionGroupMapOutputWithContext(ctx context.Context) DrProtectionGroupMapOutput {
 	return o
+}
+
+func (o DrProtectionGroupMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DrProtectionGroup] {
+	return pulumix.Output[map[string]*DrProtectionGroup]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o DrProtectionGroupMapOutput) MapIndex(k pulumi.StringInput) DrProtectionGroupOutput {

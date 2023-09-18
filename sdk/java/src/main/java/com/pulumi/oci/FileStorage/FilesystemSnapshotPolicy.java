@@ -88,7 +88,7 @@ public class FilesystemSnapshotPolicy extends com.pulumi.resources.CustomResourc
      * The availability domain that the file system snapshot policy is in.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    @Export(name="availabilityDomain", type=String.class, parameters={})
+    @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
     private Output<String> availabilityDomain;
 
     /**
@@ -102,7 +102,7 @@ public class FilesystemSnapshotPolicy extends com.pulumi.resources.CustomResourc
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the file system snapshot policy.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -116,7 +116,7 @@ public class FilesystemSnapshotPolicy extends com.pulumi.resources.CustomResourc
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -130,7 +130,7 @@ public class FilesystemSnapshotPolicy extends com.pulumi.resources.CustomResourc
      * (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `policy1`
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -144,7 +144,7 @@ public class FilesystemSnapshotPolicy extends com.pulumi.resources.CustomResourc
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -158,7 +158,7 @@ public class FilesystemSnapshotPolicy extends com.pulumi.resources.CustomResourc
      * (Updatable) The prefix to apply to all snapshots created by this policy.  Example: `acme`
      * 
      */
-    @Export(name="policyPrefix", type=String.class, parameters={})
+    @Export(name="policyPrefix", refs={String.class}, tree="[0]")
     private Output<String> policyPrefix;
 
     /**
@@ -174,7 +174,7 @@ public class FilesystemSnapshotPolicy extends com.pulumi.resources.CustomResourc
      * If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. ```--schedules &#39;[{&#34;timeZone&#34;:&#34;UTC&#34;,&#34;period&#34;:&#34;DAILY&#34;,&#34;hourOfDay&#34;:18},{&#34;timeZone&#34;:&#34;UTC&#34;,&#34;period&#34;:&#34;HOURLY&#34;}]&#39;```
      * 
      */
-    @Export(name="schedules", type=List.class, parameters={FilesystemSnapshotPolicySchedule.class})
+    @Export(name="schedules", refs={List.class,FilesystemSnapshotPolicySchedule.class}, tree="[0,1]")
     private Output<List<FilesystemSnapshotPolicySchedule>> schedules;
 
     /**
@@ -193,7 +193,7 @@ public class FilesystemSnapshotPolicy extends com.pulumi.resources.CustomResourc
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -210,7 +210,7 @@ public class FilesystemSnapshotPolicy extends com.pulumi.resources.CustomResourc
      * The date and time the file system snapshot policy was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**

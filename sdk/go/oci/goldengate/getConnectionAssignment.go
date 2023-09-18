@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Connection Assignment resource in Oracle Cloud Infrastructure Golden Gate service.
@@ -113,6 +114,12 @@ func (o LookupConnectionAssignmentResultOutput) ToLookupConnectionAssignmentResu
 
 func (o LookupConnectionAssignmentResultOutput) ToLookupConnectionAssignmentResultOutputWithContext(ctx context.Context) LookupConnectionAssignmentResultOutput {
 	return o
+}
+
+func (o LookupConnectionAssignmentResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupConnectionAssignmentResult] {
+	return pulumix.Output[LookupConnectionAssignmentResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Credential store alias.

@@ -147,7 +147,7 @@ public class MonitoredResource extends com.pulumi.resources.CustomResource {
      * (Updatable) List of MonitoredResourceAliasCredentials. This property complements the existing  &#34;aliases&#34; property by allowing user to specify more than one credential alias.  If both &#34;aliases&#34; and &#34;additionalAliases&#34; are specified, union of the  values is used as list of aliases applicable for this resource. If any duplicate found in the combined list of &#34;alias&#34; and &#34;additionalAliases&#34;,  an error will be thrown.
      * 
      */
-    @Export(name="additionalAliases", type=List.class, parameters={MonitoredResourceAdditionalAlias.class})
+    @Export(name="additionalAliases", refs={List.class,MonitoredResourceAdditionalAlias.class}, tree="[0,1]")
     private Output</* @Nullable */ List<MonitoredResourceAdditionalAlias>> additionalAliases;
 
     /**
@@ -161,7 +161,7 @@ public class MonitoredResource extends com.pulumi.resources.CustomResource {
      * (Updatable) List of MonitoredResourceCredentials. This property complements the existing  &#34;credentials&#34; property by allowing user to specify more than one credential.  If both &#34;credential&#34; and &#34;additionalCredentials&#34; are specified, union of the  values is used as list of credentials applicable for this resource. If any duplicate found in the combined list of &#34;credentials&#34; and &#34;additionalCredentials&#34;,  an error will be thrown.
      * 
      */
-    @Export(name="additionalCredentials", type=List.class, parameters={MonitoredResourceAdditionalCredential.class})
+    @Export(name="additionalCredentials", refs={List.class,MonitoredResourceAdditionalCredential.class}, tree="[0,1]")
     private Output</* @Nullable */ List<MonitoredResourceAdditionalCredential>> additionalCredentials;
 
     /**
@@ -175,7 +175,7 @@ public class MonitoredResource extends com.pulumi.resources.CustomResource {
      * (Updatable) Monitored Resource Alias Credential Details
      * 
      */
-    @Export(name="aliases", type=MonitoredResourceAliases.class, parameters={})
+    @Export(name="aliases", refs={MonitoredResourceAliases.class}, tree="[0]")
     private Output</* @Nullable */ MonitoredResourceAliases> aliases;
 
     /**
@@ -189,7 +189,7 @@ public class MonitoredResource extends com.pulumi.resources.CustomResource {
      * (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -203,7 +203,7 @@ public class MonitoredResource extends com.pulumi.resources.CustomResource {
      * (Updatable) Monitored Resource Credential Details.
      * 
      */
-    @Export(name="credentials", type=MonitoredResourceCredentials.class, parameters={})
+    @Export(name="credentials", refs={MonitoredResourceCredentials.class}, tree="[0]")
     private Output</* @Nullable */ MonitoredResourceCredentials> credentials;
 
     /**
@@ -217,7 +217,7 @@ public class MonitoredResource extends com.pulumi.resources.CustomResource {
      * (Updatable) Connection details for the database.
      * 
      */
-    @Export(name="databaseConnectionDetails", type=MonitoredResourceDatabaseConnectionDetails.class, parameters={})
+    @Export(name="databaseConnectionDetails", refs={MonitoredResourceDatabaseConnectionDetails.class}, tree="[0]")
     private Output</* @Nullable */ MonitoredResourceDatabaseConnectionDetails> databaseConnectionDetails;
 
     /**
@@ -231,7 +231,7 @@ public class MonitoredResource extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -245,7 +245,7 @@ public class MonitoredResource extends com.pulumi.resources.CustomResource {
      * (Updatable) Monitored resource display name.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> displayName;
 
     /**
@@ -259,7 +259,7 @@ public class MonitoredResource extends com.pulumi.resources.CustomResource {
      * External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only Oracle Cloud Infrastructure compute instance.
      * 
      */
-    @Export(name="externalId", type=String.class, parameters={})
+    @Export(name="externalId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> externalId;
 
     /**
@@ -273,7 +273,7 @@ public class MonitoredResource extends com.pulumi.resources.CustomResource {
      * Generally used by DBaaS to send the Database OCID stored on the DBaaS. The same will be passed to resource service to enable Stack Monitoring Service on DBM. This will be stored in Stack Monitoring Resource Service data store as identifier for monitored resource. If this header is not set as part of the request, then an id will be generated and stored for the resource.
      * 
      */
-    @Export(name="externalResourceId", type=String.class, parameters={})
+    @Export(name="externalResourceId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> externalResourceId;
 
     /**
@@ -287,7 +287,7 @@ public class MonitoredResource extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -301,7 +301,7 @@ public class MonitoredResource extends com.pulumi.resources.CustomResource {
      * (Updatable) Host name of the monitored resource.
      * 
      */
-    @Export(name="hostName", type=String.class, parameters={})
+    @Export(name="hostName", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> hostName;
 
     /**
@@ -315,7 +315,7 @@ public class MonitoredResource extends com.pulumi.resources.CustomResource {
      * Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    @Export(name="managementAgentId", type=String.class, parameters={})
+    @Export(name="managementAgentId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> managementAgentId;
 
     /**
@@ -329,7 +329,7 @@ public class MonitoredResource extends com.pulumi.resources.CustomResource {
      * (Updatable) Property Name.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -343,7 +343,7 @@ public class MonitoredResource extends com.pulumi.resources.CustomResource {
      * (Updatable) List of monitored resource properties.
      * 
      */
-    @Export(name="properties", type=List.class, parameters={MonitoredResourceProperty.class})
+    @Export(name="properties", refs={List.class,MonitoredResourceProperty.class}, tree="[0,1]")
     private Output</* @Nullable */ List<MonitoredResourceProperty>> properties;
 
     /**
@@ -357,7 +357,7 @@ public class MonitoredResource extends com.pulumi.resources.CustomResource {
      * (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
      * 
      */
-    @Export(name="resourceTimeZone", type=String.class, parameters={})
+    @Export(name="resourceTimeZone", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> resourceTimeZone;
 
     /**
@@ -371,7 +371,7 @@ public class MonitoredResource extends com.pulumi.resources.CustomResource {
      * Lifecycle state of the monitored resource.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -385,7 +385,7 @@ public class MonitoredResource extends com.pulumi.resources.CustomResource {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -399,7 +399,7 @@ public class MonitoredResource extends com.pulumi.resources.CustomResource {
      * Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    @Export(name="tenantId", type=String.class, parameters={})
+    @Export(name="tenantId", refs={String.class}, tree="[0]")
     private Output<String> tenantId;
 
     /**
@@ -413,7 +413,7 @@ public class MonitoredResource extends com.pulumi.resources.CustomResource {
      * The date and time when the monitored resource was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -427,7 +427,7 @@ public class MonitoredResource extends com.pulumi.resources.CustomResource {
      * The date and time when the monitored resource was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -444,7 +444,7 @@ public class MonitoredResource extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="type", type=String.class, parameters={})
+    @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**

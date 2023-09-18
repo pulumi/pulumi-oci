@@ -90,7 +90,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * This allows to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=model-artifact.zip`
      * 
      */
-    @Export(name="artifactContentDisposition", type=String.class, parameters={})
+    @Export(name="artifactContentDisposition", refs={String.class}, tree="[0]")
     private Output<String> artifactContentDisposition;
 
     /**
@@ -107,7 +107,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="artifactContentLength", type=String.class, parameters={})
+    @Export(name="artifactContentLength", refs={String.class}, tree="[0]")
     private Output<String> artifactContentLength;
 
     /**
@@ -120,13 +120,13 @@ public class Model extends com.pulumi.resources.CustomResource {
     public Output<String> artifactContentLength() {
         return this.artifactContentLength;
     }
-    @Export(name="artifactContentMd5", type=String.class, parameters={})
+    @Export(name="artifactContentMd5", refs={String.class}, tree="[0]")
     private Output<String> artifactContentMd5;
 
     public Output<String> artifactContentMd5() {
         return this.artifactContentMd5;
     }
-    @Export(name="artifactLastModified", type=String.class, parameters={})
+    @Export(name="artifactLastModified", refs={String.class}, tree="[0]")
     private Output<String> artifactLastModified;
 
     public Output<String> artifactLastModified() {
@@ -136,7 +136,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -150,7 +150,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model.
      * 
      */
-    @Export(name="createdBy", type=String.class, parameters={})
+    @Export(name="createdBy", refs={String.class}, tree="[0]")
     private Output<String> createdBy;
 
     /**
@@ -164,7 +164,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * (Updatable) An array of custom metadata details for the model.
      * 
      */
-    @Export(name="customMetadataLists", type=List.class, parameters={ModelCustomMetadataList.class})
+    @Export(name="customMetadataLists", refs={List.class,ModelCustomMetadataList.class}, tree="[0,1]")
     private Output<List<ModelCustomMetadataList>> customMetadataLists;
 
     /**
@@ -178,7 +178,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * (Updatable) An array of defined metadata details for the model.
      * 
      */
-    @Export(name="definedMetadataLists", type=List.class, parameters={ModelDefinedMetadataList.class})
+    @Export(name="definedMetadataLists", refs={List.class,ModelDefinedMetadataList.class}, tree="[0,1]")
     private Output<List<ModelDefinedMetadataList>> definedMetadataLists;
 
     /**
@@ -192,7 +192,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -206,7 +206,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * (Updatable) A short description of the model.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -220,7 +220,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My Model`
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -230,7 +230,7 @@ public class Model extends com.pulumi.resources.CustomResource {
     public Output<String> displayName() {
         return this.displayName;
     }
-    @Export(name="emptyModel", type=Boolean.class, parameters={})
+    @Export(name="emptyModel", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> emptyModel;
 
     public Output<Boolean> emptyModel() {
@@ -240,7 +240,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -254,7 +254,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * Input schema file content in String format
      * 
      */
-    @Export(name="inputSchema", type=String.class, parameters={})
+    @Export(name="inputSchema", refs={String.class}, tree="[0]")
     private Output<String> inputSchema;
 
     /**
@@ -268,7 +268,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in &#34;Creating&#34; state until its artifact is uploaded.
      * 
      */
-    @Export(name="modelArtifact", type=String.class, parameters={})
+    @Export(name="modelArtifact", refs={String.class}, tree="[0]")
     private Output<String> modelArtifact;
 
     /**
@@ -282,7 +282,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * Output schema file content in String format
      * 
      */
-    @Export(name="outputSchema", type=String.class, parameters={})
+    @Export(name="outputSchema", refs={String.class}, tree="[0]")
     private Output<String> outputSchema;
 
     /**
@@ -296,7 +296,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
      * 
      */
-    @Export(name="projectId", type=String.class, parameters={})
+    @Export(name="projectId", refs={String.class}, tree="[0]")
     private Output<String> projectId;
 
     /**
@@ -310,7 +310,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * The state of the model.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -324,7 +324,7 @@ public class Model extends com.pulumi.resources.CustomResource {
      * The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -54,6 +55,12 @@ func (i AddonAddonErrorArgs) ToAddonAddonErrorOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(AddonAddonErrorOutput)
 }
 
+func (i AddonAddonErrorArgs) ToOutput(ctx context.Context) pulumix.Output[AddonAddonError] {
+	return pulumix.Output[AddonAddonError]{
+		OutputState: i.ToAddonAddonErrorOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AddonAddonErrorArrayInput is an input type that accepts AddonAddonErrorArray and AddonAddonErrorArrayOutput values.
 // You can construct a concrete instance of `AddonAddonErrorArrayInput` via:
 //
@@ -79,6 +86,12 @@ func (i AddonAddonErrorArray) ToAddonAddonErrorArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(AddonAddonErrorArrayOutput)
 }
 
+func (i AddonAddonErrorArray) ToOutput(ctx context.Context) pulumix.Output[[]AddonAddonError] {
+	return pulumix.Output[[]AddonAddonError]{
+		OutputState: i.ToAddonAddonErrorArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AddonAddonErrorOutput struct{ *pulumi.OutputState }
 
 func (AddonAddonErrorOutput) ElementType() reflect.Type {
@@ -91,6 +104,12 @@ func (o AddonAddonErrorOutput) ToAddonAddonErrorOutput() AddonAddonErrorOutput {
 
 func (o AddonAddonErrorOutput) ToAddonAddonErrorOutputWithContext(ctx context.Context) AddonAddonErrorOutput {
 	return o
+}
+
+func (o AddonAddonErrorOutput) ToOutput(ctx context.Context) pulumix.Output[AddonAddonError] {
+	return pulumix.Output[AddonAddonError]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
@@ -120,6 +139,12 @@ func (o AddonAddonErrorArrayOutput) ToAddonAddonErrorArrayOutput() AddonAddonErr
 
 func (o AddonAddonErrorArrayOutput) ToAddonAddonErrorArrayOutputWithContext(ctx context.Context) AddonAddonErrorArrayOutput {
 	return o
+}
+
+func (o AddonAddonErrorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AddonAddonError] {
+	return pulumix.Output[[]AddonAddonError]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AddonAddonErrorArrayOutput) Index(i pulumi.IntInput) AddonAddonErrorOutput {
@@ -165,6 +190,12 @@ func (i AddonConfigurationArgs) ToAddonConfigurationOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(AddonConfigurationOutput)
 }
 
+func (i AddonConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[AddonConfiguration] {
+	return pulumix.Output[AddonConfiguration]{
+		OutputState: i.ToAddonConfigurationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AddonConfigurationArrayInput is an input type that accepts AddonConfigurationArray and AddonConfigurationArrayOutput values.
 // You can construct a concrete instance of `AddonConfigurationArrayInput` via:
 //
@@ -190,6 +221,12 @@ func (i AddonConfigurationArray) ToAddonConfigurationArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(AddonConfigurationArrayOutput)
 }
 
+func (i AddonConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]AddonConfiguration] {
+	return pulumix.Output[[]AddonConfiguration]{
+		OutputState: i.ToAddonConfigurationArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AddonConfigurationOutput struct{ *pulumi.OutputState }
 
 func (AddonConfigurationOutput) ElementType() reflect.Type {
@@ -202,6 +239,12 @@ func (o AddonConfigurationOutput) ToAddonConfigurationOutput() AddonConfiguratio
 
 func (o AddonConfigurationOutput) ToAddonConfigurationOutputWithContext(ctx context.Context) AddonConfigurationOutput {
 	return o
+}
+
+func (o AddonConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[AddonConfiguration] {
+	return pulumix.Output[AddonConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) configuration key name
@@ -226,6 +269,12 @@ func (o AddonConfigurationArrayOutput) ToAddonConfigurationArrayOutput() AddonCo
 
 func (o AddonConfigurationArrayOutput) ToAddonConfigurationArrayOutputWithContext(ctx context.Context) AddonConfigurationArrayOutput {
 	return o
+}
+
+func (o AddonConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AddonConfiguration] {
+	return pulumix.Output[[]AddonConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AddonConfigurationArrayOutput) Index(i pulumi.IntInput) AddonConfigurationOutput {
@@ -267,6 +316,12 @@ func (i ClusterClusterPodNetworkOptionArgs) ToClusterClusterPodNetworkOptionOutp
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterClusterPodNetworkOptionOutput)
 }
 
+func (i ClusterClusterPodNetworkOptionArgs) ToOutput(ctx context.Context) pulumix.Output[ClusterClusterPodNetworkOption] {
+	return pulumix.Output[ClusterClusterPodNetworkOption]{
+		OutputState: i.ToClusterClusterPodNetworkOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ClusterClusterPodNetworkOptionArrayInput is an input type that accepts ClusterClusterPodNetworkOptionArray and ClusterClusterPodNetworkOptionArrayOutput values.
 // You can construct a concrete instance of `ClusterClusterPodNetworkOptionArrayInput` via:
 //
@@ -292,6 +347,12 @@ func (i ClusterClusterPodNetworkOptionArray) ToClusterClusterPodNetworkOptionArr
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterClusterPodNetworkOptionArrayOutput)
 }
 
+func (i ClusterClusterPodNetworkOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]ClusterClusterPodNetworkOption] {
+	return pulumix.Output[[]ClusterClusterPodNetworkOption]{
+		OutputState: i.ToClusterClusterPodNetworkOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ClusterClusterPodNetworkOptionOutput struct{ *pulumi.OutputState }
 
 func (ClusterClusterPodNetworkOptionOutput) ElementType() reflect.Type {
@@ -304,6 +365,12 @@ func (o ClusterClusterPodNetworkOptionOutput) ToClusterClusterPodNetworkOptionOu
 
 func (o ClusterClusterPodNetworkOptionOutput) ToClusterClusterPodNetworkOptionOutputWithContext(ctx context.Context) ClusterClusterPodNetworkOptionOutput {
 	return o
+}
+
+func (o ClusterClusterPodNetworkOptionOutput) ToOutput(ctx context.Context) pulumix.Output[ClusterClusterPodNetworkOption] {
+	return pulumix.Output[ClusterClusterPodNetworkOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The CNI used by the node pools of this cluster
@@ -323,6 +390,12 @@ func (o ClusterClusterPodNetworkOptionArrayOutput) ToClusterClusterPodNetworkOpt
 
 func (o ClusterClusterPodNetworkOptionArrayOutput) ToClusterClusterPodNetworkOptionArrayOutputWithContext(ctx context.Context) ClusterClusterPodNetworkOptionArrayOutput {
 	return o
+}
+
+func (o ClusterClusterPodNetworkOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ClusterClusterPodNetworkOption] {
+	return pulumix.Output[[]ClusterClusterPodNetworkOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ClusterClusterPodNetworkOptionArrayOutput) Index(i pulumi.IntInput) ClusterClusterPodNetworkOptionOutput {
@@ -376,6 +449,12 @@ func (i ClusterEndpointArgs) ToClusterEndpointOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterEndpointOutput)
 }
 
+func (i ClusterEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[ClusterEndpoint] {
+	return pulumix.Output[ClusterEndpoint]{
+		OutputState: i.ToClusterEndpointOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ClusterEndpointArrayInput is an input type that accepts ClusterEndpointArray and ClusterEndpointArrayOutput values.
 // You can construct a concrete instance of `ClusterEndpointArrayInput` via:
 //
@@ -401,6 +480,12 @@ func (i ClusterEndpointArray) ToClusterEndpointArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterEndpointArrayOutput)
 }
 
+func (i ClusterEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]ClusterEndpoint] {
+	return pulumix.Output[[]ClusterEndpoint]{
+		OutputState: i.ToClusterEndpointArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ClusterEndpointOutput struct{ *pulumi.OutputState }
 
 func (ClusterEndpointOutput) ElementType() reflect.Type {
@@ -413,6 +498,12 @@ func (o ClusterEndpointOutput) ToClusterEndpointOutput() ClusterEndpointOutput {
 
 func (o ClusterEndpointOutput) ToClusterEndpointOutputWithContext(ctx context.Context) ClusterEndpointOutput {
 	return o
+}
+
+func (o ClusterEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[ClusterEndpoint] {
+	return pulumix.Output[ClusterEndpoint]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The non-native networking Kubernetes API server endpoint.
@@ -447,6 +538,12 @@ func (o ClusterEndpointArrayOutput) ToClusterEndpointArrayOutput() ClusterEndpoi
 
 func (o ClusterEndpointArrayOutput) ToClusterEndpointArrayOutputWithContext(ctx context.Context) ClusterEndpointArrayOutput {
 	return o
+}
+
+func (o ClusterEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ClusterEndpoint] {
+	return pulumix.Output[[]ClusterEndpoint]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ClusterEndpointArrayOutput) Index(i pulumi.IntInput) ClusterEndpointOutput {
@@ -496,6 +593,12 @@ func (i ClusterEndpointConfigArgs) ToClusterEndpointConfigOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterEndpointConfigOutput)
 }
 
+func (i ClusterEndpointConfigArgs) ToOutput(ctx context.Context) pulumix.Output[ClusterEndpointConfig] {
+	return pulumix.Output[ClusterEndpointConfig]{
+		OutputState: i.ToClusterEndpointConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i ClusterEndpointConfigArgs) ToClusterEndpointConfigPtrOutput() ClusterEndpointConfigPtrOutput {
 	return i.ToClusterEndpointConfigPtrOutputWithContext(context.Background())
 }
@@ -537,6 +640,12 @@ func (i *clusterEndpointConfigPtrType) ToClusterEndpointConfigPtrOutputWithConte
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterEndpointConfigPtrOutput)
 }
 
+func (i *clusterEndpointConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*ClusterEndpointConfig] {
+	return pulumix.Output[*ClusterEndpointConfig]{
+		OutputState: i.ToClusterEndpointConfigPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ClusterEndpointConfigOutput struct{ *pulumi.OutputState }
 
 func (ClusterEndpointConfigOutput) ElementType() reflect.Type {
@@ -559,6 +668,12 @@ func (o ClusterEndpointConfigOutput) ToClusterEndpointConfigPtrOutputWithContext
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ClusterEndpointConfig) *ClusterEndpointConfig {
 		return &v
 	}).(ClusterEndpointConfigPtrOutput)
+}
+
+func (o ClusterEndpointConfigOutput) ToOutput(ctx context.Context) pulumix.Output[ClusterEndpointConfig] {
+	return pulumix.Output[ClusterEndpointConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether the cluster should be assigned a public IP address. Defaults to false. If set to true on a private subnet, the cluster provisioning will fail.
@@ -588,6 +703,12 @@ func (o ClusterEndpointConfigPtrOutput) ToClusterEndpointConfigPtrOutput() Clust
 
 func (o ClusterEndpointConfigPtrOutput) ToClusterEndpointConfigPtrOutputWithContext(ctx context.Context) ClusterEndpointConfigPtrOutput {
 	return o
+}
+
+func (o ClusterEndpointConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ClusterEndpointConfig] {
+	return pulumix.Output[*ClusterEndpointConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ClusterEndpointConfigPtrOutput) Elem() ClusterEndpointConfigOutput {
@@ -667,6 +788,12 @@ func (i ClusterImagePolicyConfigArgs) ToClusterImagePolicyConfigOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterImagePolicyConfigOutput)
 }
 
+func (i ClusterImagePolicyConfigArgs) ToOutput(ctx context.Context) pulumix.Output[ClusterImagePolicyConfig] {
+	return pulumix.Output[ClusterImagePolicyConfig]{
+		OutputState: i.ToClusterImagePolicyConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i ClusterImagePolicyConfigArgs) ToClusterImagePolicyConfigPtrOutput() ClusterImagePolicyConfigPtrOutput {
 	return i.ToClusterImagePolicyConfigPtrOutputWithContext(context.Background())
 }
@@ -708,6 +835,12 @@ func (i *clusterImagePolicyConfigPtrType) ToClusterImagePolicyConfigPtrOutputWit
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterImagePolicyConfigPtrOutput)
 }
 
+func (i *clusterImagePolicyConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*ClusterImagePolicyConfig] {
+	return pulumix.Output[*ClusterImagePolicyConfig]{
+		OutputState: i.ToClusterImagePolicyConfigPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ClusterImagePolicyConfigOutput struct{ *pulumi.OutputState }
 
 func (ClusterImagePolicyConfigOutput) ElementType() reflect.Type {
@@ -732,6 +865,12 @@ func (o ClusterImagePolicyConfigOutput) ToClusterImagePolicyConfigPtrOutputWithC
 	}).(ClusterImagePolicyConfigPtrOutput)
 }
 
+func (o ClusterImagePolicyConfigOutput) ToOutput(ctx context.Context) pulumix.Output[ClusterImagePolicyConfig] {
+	return pulumix.Output[ClusterImagePolicyConfig]{
+		OutputState: o.OutputState,
+	}
+}
+
 // (Updatable) Whether the image verification policy is enabled. Defaults to false. If set to true, the images will be verified against the policy at runtime.
 func (o ClusterImagePolicyConfigOutput) IsPolicyEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ClusterImagePolicyConfig) *bool { return v.IsPolicyEnabled }).(pulumi.BoolPtrOutput)
@@ -754,6 +893,12 @@ func (o ClusterImagePolicyConfigPtrOutput) ToClusterImagePolicyConfigPtrOutput()
 
 func (o ClusterImagePolicyConfigPtrOutput) ToClusterImagePolicyConfigPtrOutputWithContext(ctx context.Context) ClusterImagePolicyConfigPtrOutput {
 	return o
+}
+
+func (o ClusterImagePolicyConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ClusterImagePolicyConfig] {
+	return pulumix.Output[*ClusterImagePolicyConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ClusterImagePolicyConfigPtrOutput) Elem() ClusterImagePolicyConfigOutput {
@@ -819,6 +964,12 @@ func (i ClusterImagePolicyConfigKeyDetailArgs) ToClusterImagePolicyConfigKeyDeta
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterImagePolicyConfigKeyDetailOutput)
 }
 
+func (i ClusterImagePolicyConfigKeyDetailArgs) ToOutput(ctx context.Context) pulumix.Output[ClusterImagePolicyConfigKeyDetail] {
+	return pulumix.Output[ClusterImagePolicyConfigKeyDetail]{
+		OutputState: i.ToClusterImagePolicyConfigKeyDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ClusterImagePolicyConfigKeyDetailArrayInput is an input type that accepts ClusterImagePolicyConfigKeyDetailArray and ClusterImagePolicyConfigKeyDetailArrayOutput values.
 // You can construct a concrete instance of `ClusterImagePolicyConfigKeyDetailArrayInput` via:
 //
@@ -844,6 +995,12 @@ func (i ClusterImagePolicyConfigKeyDetailArray) ToClusterImagePolicyConfigKeyDet
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterImagePolicyConfigKeyDetailArrayOutput)
 }
 
+func (i ClusterImagePolicyConfigKeyDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]ClusterImagePolicyConfigKeyDetail] {
+	return pulumix.Output[[]ClusterImagePolicyConfigKeyDetail]{
+		OutputState: i.ToClusterImagePolicyConfigKeyDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ClusterImagePolicyConfigKeyDetailOutput struct{ *pulumi.OutputState }
 
 func (ClusterImagePolicyConfigKeyDetailOutput) ElementType() reflect.Type {
@@ -856,6 +1013,12 @@ func (o ClusterImagePolicyConfigKeyDetailOutput) ToClusterImagePolicyConfigKeyDe
 
 func (o ClusterImagePolicyConfigKeyDetailOutput) ToClusterImagePolicyConfigKeyDetailOutputWithContext(ctx context.Context) ClusterImagePolicyConfigKeyDetailOutput {
 	return o
+}
+
+func (o ClusterImagePolicyConfigKeyDetailOutput) ToOutput(ctx context.Context) pulumix.Output[ClusterImagePolicyConfigKeyDetail] {
+	return pulumix.Output[ClusterImagePolicyConfigKeyDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption. When used, `kubernetesVersion` must be at least `v1.13.0`.
@@ -875,6 +1038,12 @@ func (o ClusterImagePolicyConfigKeyDetailArrayOutput) ToClusterImagePolicyConfig
 
 func (o ClusterImagePolicyConfigKeyDetailArrayOutput) ToClusterImagePolicyConfigKeyDetailArrayOutputWithContext(ctx context.Context) ClusterImagePolicyConfigKeyDetailArrayOutput {
 	return o
+}
+
+func (o ClusterImagePolicyConfigKeyDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ClusterImagePolicyConfigKeyDetail] {
+	return pulumix.Output[[]ClusterImagePolicyConfigKeyDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ClusterImagePolicyConfigKeyDetailArrayOutput) Index(i pulumi.IntInput) ClusterImagePolicyConfigKeyDetailOutput {
@@ -952,6 +1121,12 @@ func (i ClusterMetadataArgs) ToClusterMetadataOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterMetadataOutput)
 }
 
+func (i ClusterMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[ClusterMetadata] {
+	return pulumix.Output[ClusterMetadata]{
+		OutputState: i.ToClusterMetadataOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ClusterMetadataArrayInput is an input type that accepts ClusterMetadataArray and ClusterMetadataArrayOutput values.
 // You can construct a concrete instance of `ClusterMetadataArrayInput` via:
 //
@@ -977,6 +1152,12 @@ func (i ClusterMetadataArray) ToClusterMetadataArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterMetadataArrayOutput)
 }
 
+func (i ClusterMetadataArray) ToOutput(ctx context.Context) pulumix.Output[[]ClusterMetadata] {
+	return pulumix.Output[[]ClusterMetadata]{
+		OutputState: i.ToClusterMetadataArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ClusterMetadataOutput struct{ *pulumi.OutputState }
 
 func (ClusterMetadataOutput) ElementType() reflect.Type {
@@ -989,6 +1170,12 @@ func (o ClusterMetadataOutput) ToClusterMetadataOutput() ClusterMetadataOutput {
 
 func (o ClusterMetadataOutput) ToClusterMetadataOutputWithContext(ctx context.Context) ClusterMetadataOutput {
 	return o
+}
+
+func (o ClusterMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[ClusterMetadata] {
+	return pulumix.Output[ClusterMetadata]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The user who created the cluster.
@@ -1055,6 +1242,12 @@ func (o ClusterMetadataArrayOutput) ToClusterMetadataArrayOutputWithContext(ctx 
 	return o
 }
 
+func (o ClusterMetadataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ClusterMetadata] {
+	return pulumix.Output[[]ClusterMetadata]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o ClusterMetadataArrayOutput) Index(i pulumi.IntInput) ClusterMetadataOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ClusterMetadata {
 		return vs[0].([]ClusterMetadata)[vs[1].(int)]
@@ -1114,6 +1307,12 @@ func (i ClusterOptionsArgs) ToClusterOptionsOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterOptionsOutput)
 }
 
+func (i ClusterOptionsArgs) ToOutput(ctx context.Context) pulumix.Output[ClusterOptions] {
+	return pulumix.Output[ClusterOptions]{
+		OutputState: i.ToClusterOptionsOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i ClusterOptionsArgs) ToClusterOptionsPtrOutput() ClusterOptionsPtrOutput {
 	return i.ToClusterOptionsPtrOutputWithContext(context.Background())
 }
@@ -1155,6 +1354,12 @@ func (i *clusterOptionsPtrType) ToClusterOptionsPtrOutputWithContext(ctx context
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterOptionsPtrOutput)
 }
 
+func (i *clusterOptionsPtrType) ToOutput(ctx context.Context) pulumix.Output[*ClusterOptions] {
+	return pulumix.Output[*ClusterOptions]{
+		OutputState: i.ToClusterOptionsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ClusterOptionsOutput struct{ *pulumi.OutputState }
 
 func (ClusterOptionsOutput) ElementType() reflect.Type {
@@ -1177,6 +1382,12 @@ func (o ClusterOptionsOutput) ToClusterOptionsPtrOutputWithContext(ctx context.C
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ClusterOptions) *ClusterOptions {
 		return &v
 	}).(ClusterOptionsPtrOutput)
+}
+
+func (o ClusterOptionsOutput) ToOutput(ctx context.Context) pulumix.Output[ClusterOptions] {
+	return pulumix.Output[ClusterOptions]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Configurable cluster add-ons
@@ -1221,6 +1432,12 @@ func (o ClusterOptionsPtrOutput) ToClusterOptionsPtrOutput() ClusterOptionsPtrOu
 
 func (o ClusterOptionsPtrOutput) ToClusterOptionsPtrOutputWithContext(ctx context.Context) ClusterOptionsPtrOutput {
 	return o
+}
+
+func (o ClusterOptionsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ClusterOptions] {
+	return pulumix.Output[*ClusterOptions]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ClusterOptionsPtrOutput) Elem() ClusterOptionsOutput {
@@ -1330,6 +1547,12 @@ func (i ClusterOptionsAddOnsArgs) ToClusterOptionsAddOnsOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterOptionsAddOnsOutput)
 }
 
+func (i ClusterOptionsAddOnsArgs) ToOutput(ctx context.Context) pulumix.Output[ClusterOptionsAddOns] {
+	return pulumix.Output[ClusterOptionsAddOns]{
+		OutputState: i.ToClusterOptionsAddOnsOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i ClusterOptionsAddOnsArgs) ToClusterOptionsAddOnsPtrOutput() ClusterOptionsAddOnsPtrOutput {
 	return i.ToClusterOptionsAddOnsPtrOutputWithContext(context.Background())
 }
@@ -1371,6 +1594,12 @@ func (i *clusterOptionsAddOnsPtrType) ToClusterOptionsAddOnsPtrOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterOptionsAddOnsPtrOutput)
 }
 
+func (i *clusterOptionsAddOnsPtrType) ToOutput(ctx context.Context) pulumix.Output[*ClusterOptionsAddOns] {
+	return pulumix.Output[*ClusterOptionsAddOns]{
+		OutputState: i.ToClusterOptionsAddOnsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ClusterOptionsAddOnsOutput struct{ *pulumi.OutputState }
 
 func (ClusterOptionsAddOnsOutput) ElementType() reflect.Type {
@@ -1395,6 +1624,12 @@ func (o ClusterOptionsAddOnsOutput) ToClusterOptionsAddOnsPtrOutputWithContext(c
 	}).(ClusterOptionsAddOnsPtrOutput)
 }
 
+func (o ClusterOptionsAddOnsOutput) ToOutput(ctx context.Context) pulumix.Output[ClusterOptionsAddOns] {
+	return pulumix.Output[ClusterOptionsAddOns]{
+		OutputState: o.OutputState,
+	}
+}
+
 // Whether or not to enable the Kubernetes Dashboard add-on.
 func (o ClusterOptionsAddOnsOutput) IsKubernetesDashboardEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ClusterOptionsAddOns) *bool { return v.IsKubernetesDashboardEnabled }).(pulumi.BoolPtrOutput)
@@ -1417,6 +1652,12 @@ func (o ClusterOptionsAddOnsPtrOutput) ToClusterOptionsAddOnsPtrOutput() Cluster
 
 func (o ClusterOptionsAddOnsPtrOutput) ToClusterOptionsAddOnsPtrOutputWithContext(ctx context.Context) ClusterOptionsAddOnsPtrOutput {
 	return o
+}
+
+func (o ClusterOptionsAddOnsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ClusterOptionsAddOns] {
+	return pulumix.Output[*ClusterOptionsAddOns]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ClusterOptionsAddOnsPtrOutput) Elem() ClusterOptionsAddOnsOutput {
@@ -1482,6 +1723,12 @@ func (i ClusterOptionsAdmissionControllerOptionsArgs) ToClusterOptionsAdmissionC
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterOptionsAdmissionControllerOptionsOutput)
 }
 
+func (i ClusterOptionsAdmissionControllerOptionsArgs) ToOutput(ctx context.Context) pulumix.Output[ClusterOptionsAdmissionControllerOptions] {
+	return pulumix.Output[ClusterOptionsAdmissionControllerOptions]{
+		OutputState: i.ToClusterOptionsAdmissionControllerOptionsOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i ClusterOptionsAdmissionControllerOptionsArgs) ToClusterOptionsAdmissionControllerOptionsPtrOutput() ClusterOptionsAdmissionControllerOptionsPtrOutput {
 	return i.ToClusterOptionsAdmissionControllerOptionsPtrOutputWithContext(context.Background())
 }
@@ -1523,6 +1770,12 @@ func (i *clusterOptionsAdmissionControllerOptionsPtrType) ToClusterOptionsAdmiss
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterOptionsAdmissionControllerOptionsPtrOutput)
 }
 
+func (i *clusterOptionsAdmissionControllerOptionsPtrType) ToOutput(ctx context.Context) pulumix.Output[*ClusterOptionsAdmissionControllerOptions] {
+	return pulumix.Output[*ClusterOptionsAdmissionControllerOptions]{
+		OutputState: i.ToClusterOptionsAdmissionControllerOptionsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ClusterOptionsAdmissionControllerOptionsOutput struct{ *pulumi.OutputState }
 
 func (ClusterOptionsAdmissionControllerOptionsOutput) ElementType() reflect.Type {
@@ -1547,6 +1800,12 @@ func (o ClusterOptionsAdmissionControllerOptionsOutput) ToClusterOptionsAdmissio
 	}).(ClusterOptionsAdmissionControllerOptionsPtrOutput)
 }
 
+func (o ClusterOptionsAdmissionControllerOptionsOutput) ToOutput(ctx context.Context) pulumix.Output[ClusterOptionsAdmissionControllerOptions] {
+	return pulumix.Output[ClusterOptionsAdmissionControllerOptions]{
+		OutputState: o.OutputState,
+	}
+}
+
 // (Updatable) Whether or not to enable the Pod Security Policy admission controller.
 func (o ClusterOptionsAdmissionControllerOptionsOutput) IsPodSecurityPolicyEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ClusterOptionsAdmissionControllerOptions) *bool { return v.IsPodSecurityPolicyEnabled }).(pulumi.BoolPtrOutput)
@@ -1564,6 +1823,12 @@ func (o ClusterOptionsAdmissionControllerOptionsPtrOutput) ToClusterOptionsAdmis
 
 func (o ClusterOptionsAdmissionControllerOptionsPtrOutput) ToClusterOptionsAdmissionControllerOptionsPtrOutputWithContext(ctx context.Context) ClusterOptionsAdmissionControllerOptionsPtrOutput {
 	return o
+}
+
+func (o ClusterOptionsAdmissionControllerOptionsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ClusterOptionsAdmissionControllerOptions] {
+	return pulumix.Output[*ClusterOptionsAdmissionControllerOptions]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ClusterOptionsAdmissionControllerOptionsPtrOutput) Elem() ClusterOptionsAdmissionControllerOptionsOutput {
@@ -1623,6 +1888,12 @@ func (i ClusterOptionsKubernetesNetworkConfigArgs) ToClusterOptionsKubernetesNet
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterOptionsKubernetesNetworkConfigOutput)
 }
 
+func (i ClusterOptionsKubernetesNetworkConfigArgs) ToOutput(ctx context.Context) pulumix.Output[ClusterOptionsKubernetesNetworkConfig] {
+	return pulumix.Output[ClusterOptionsKubernetesNetworkConfig]{
+		OutputState: i.ToClusterOptionsKubernetesNetworkConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i ClusterOptionsKubernetesNetworkConfigArgs) ToClusterOptionsKubernetesNetworkConfigPtrOutput() ClusterOptionsKubernetesNetworkConfigPtrOutput {
 	return i.ToClusterOptionsKubernetesNetworkConfigPtrOutputWithContext(context.Background())
 }
@@ -1664,6 +1935,12 @@ func (i *clusterOptionsKubernetesNetworkConfigPtrType) ToClusterOptionsKubernete
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterOptionsKubernetesNetworkConfigPtrOutput)
 }
 
+func (i *clusterOptionsKubernetesNetworkConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*ClusterOptionsKubernetesNetworkConfig] {
+	return pulumix.Output[*ClusterOptionsKubernetesNetworkConfig]{
+		OutputState: i.ToClusterOptionsKubernetesNetworkConfigPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ClusterOptionsKubernetesNetworkConfigOutput struct{ *pulumi.OutputState }
 
 func (ClusterOptionsKubernetesNetworkConfigOutput) ElementType() reflect.Type {
@@ -1688,6 +1965,12 @@ func (o ClusterOptionsKubernetesNetworkConfigOutput) ToClusterOptionsKubernetesN
 	}).(ClusterOptionsKubernetesNetworkConfigPtrOutput)
 }
 
+func (o ClusterOptionsKubernetesNetworkConfigOutput) ToOutput(ctx context.Context) pulumix.Output[ClusterOptionsKubernetesNetworkConfig] {
+	return pulumix.Output[ClusterOptionsKubernetesNetworkConfig]{
+		OutputState: o.OutputState,
+	}
+}
+
 // The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
 func (o ClusterOptionsKubernetesNetworkConfigOutput) PodsCidr() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterOptionsKubernetesNetworkConfig) *string { return v.PodsCidr }).(pulumi.StringPtrOutput)
@@ -1710,6 +1993,12 @@ func (o ClusterOptionsKubernetesNetworkConfigPtrOutput) ToClusterOptionsKubernet
 
 func (o ClusterOptionsKubernetesNetworkConfigPtrOutput) ToClusterOptionsKubernetesNetworkConfigPtrOutputWithContext(ctx context.Context) ClusterOptionsKubernetesNetworkConfigPtrOutput {
 	return o
+}
+
+func (o ClusterOptionsKubernetesNetworkConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ClusterOptionsKubernetesNetworkConfig] {
+	return pulumix.Output[*ClusterOptionsKubernetesNetworkConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ClusterOptionsKubernetesNetworkConfigPtrOutput) Elem() ClusterOptionsKubernetesNetworkConfigOutput {
@@ -1779,6 +2068,12 @@ func (i ClusterOptionsPersistentVolumeConfigArgs) ToClusterOptionsPersistentVolu
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterOptionsPersistentVolumeConfigOutput)
 }
 
+func (i ClusterOptionsPersistentVolumeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[ClusterOptionsPersistentVolumeConfig] {
+	return pulumix.Output[ClusterOptionsPersistentVolumeConfig]{
+		OutputState: i.ToClusterOptionsPersistentVolumeConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i ClusterOptionsPersistentVolumeConfigArgs) ToClusterOptionsPersistentVolumeConfigPtrOutput() ClusterOptionsPersistentVolumeConfigPtrOutput {
 	return i.ToClusterOptionsPersistentVolumeConfigPtrOutputWithContext(context.Background())
 }
@@ -1820,6 +2115,12 @@ func (i *clusterOptionsPersistentVolumeConfigPtrType) ToClusterOptionsPersistent
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterOptionsPersistentVolumeConfigPtrOutput)
 }
 
+func (i *clusterOptionsPersistentVolumeConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*ClusterOptionsPersistentVolumeConfig] {
+	return pulumix.Output[*ClusterOptionsPersistentVolumeConfig]{
+		OutputState: i.ToClusterOptionsPersistentVolumeConfigPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ClusterOptionsPersistentVolumeConfigOutput struct{ *pulumi.OutputState }
 
 func (ClusterOptionsPersistentVolumeConfigOutput) ElementType() reflect.Type {
@@ -1844,6 +2145,12 @@ func (o ClusterOptionsPersistentVolumeConfigOutput) ToClusterOptionsPersistentVo
 	}).(ClusterOptionsPersistentVolumeConfigPtrOutput)
 }
 
+func (o ClusterOptionsPersistentVolumeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[ClusterOptionsPersistentVolumeConfig] {
+	return pulumix.Output[ClusterOptionsPersistentVolumeConfig]{
+		OutputState: o.OutputState,
+	}
+}
+
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 func (o ClusterOptionsPersistentVolumeConfigOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v ClusterOptionsPersistentVolumeConfig) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
@@ -1866,6 +2173,12 @@ func (o ClusterOptionsPersistentVolumeConfigPtrOutput) ToClusterOptionsPersisten
 
 func (o ClusterOptionsPersistentVolumeConfigPtrOutput) ToClusterOptionsPersistentVolumeConfigPtrOutputWithContext(ctx context.Context) ClusterOptionsPersistentVolumeConfigPtrOutput {
 	return o
+}
+
+func (o ClusterOptionsPersistentVolumeConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ClusterOptionsPersistentVolumeConfig] {
+	return pulumix.Output[*ClusterOptionsPersistentVolumeConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ClusterOptionsPersistentVolumeConfigPtrOutput) Elem() ClusterOptionsPersistentVolumeConfigOutput {
@@ -1935,6 +2248,12 @@ func (i ClusterOptionsServiceLbConfigArgs) ToClusterOptionsServiceLbConfigOutput
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterOptionsServiceLbConfigOutput)
 }
 
+func (i ClusterOptionsServiceLbConfigArgs) ToOutput(ctx context.Context) pulumix.Output[ClusterOptionsServiceLbConfig] {
+	return pulumix.Output[ClusterOptionsServiceLbConfig]{
+		OutputState: i.ToClusterOptionsServiceLbConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i ClusterOptionsServiceLbConfigArgs) ToClusterOptionsServiceLbConfigPtrOutput() ClusterOptionsServiceLbConfigPtrOutput {
 	return i.ToClusterOptionsServiceLbConfigPtrOutputWithContext(context.Background())
 }
@@ -1976,6 +2295,12 @@ func (i *clusterOptionsServiceLbConfigPtrType) ToClusterOptionsServiceLbConfigPt
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterOptionsServiceLbConfigPtrOutput)
 }
 
+func (i *clusterOptionsServiceLbConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*ClusterOptionsServiceLbConfig] {
+	return pulumix.Output[*ClusterOptionsServiceLbConfig]{
+		OutputState: i.ToClusterOptionsServiceLbConfigPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ClusterOptionsServiceLbConfigOutput struct{ *pulumi.OutputState }
 
 func (ClusterOptionsServiceLbConfigOutput) ElementType() reflect.Type {
@@ -2000,6 +2325,12 @@ func (o ClusterOptionsServiceLbConfigOutput) ToClusterOptionsServiceLbConfigPtrO
 	}).(ClusterOptionsServiceLbConfigPtrOutput)
 }
 
+func (o ClusterOptionsServiceLbConfigOutput) ToOutput(ctx context.Context) pulumix.Output[ClusterOptionsServiceLbConfig] {
+	return pulumix.Output[ClusterOptionsServiceLbConfig]{
+		OutputState: o.OutputState,
+	}
+}
+
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 func (o ClusterOptionsServiceLbConfigOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v ClusterOptionsServiceLbConfig) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
@@ -2022,6 +2353,12 @@ func (o ClusterOptionsServiceLbConfigPtrOutput) ToClusterOptionsServiceLbConfigP
 
 func (o ClusterOptionsServiceLbConfigPtrOutput) ToClusterOptionsServiceLbConfigPtrOutputWithContext(ctx context.Context) ClusterOptionsServiceLbConfigPtrOutput {
 	return o
+}
+
+func (o ClusterOptionsServiceLbConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ClusterOptionsServiceLbConfig] {
+	return pulumix.Output[*ClusterOptionsServiceLbConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ClusterOptionsServiceLbConfigPtrOutput) Elem() ClusterOptionsServiceLbConfigOutput {
@@ -2207,6 +2544,12 @@ func (i ContainerInstanceContainerArgs) ToContainerInstanceContainerOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceContainerOutput)
 }
 
+func (i ContainerInstanceContainerArgs) ToOutput(ctx context.Context) pulumix.Output[ContainerInstanceContainer] {
+	return pulumix.Output[ContainerInstanceContainer]{
+		OutputState: i.ToContainerInstanceContainerOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ContainerInstanceContainerArrayInput is an input type that accepts ContainerInstanceContainerArray and ContainerInstanceContainerArrayOutput values.
 // You can construct a concrete instance of `ContainerInstanceContainerArrayInput` via:
 //
@@ -2232,6 +2575,12 @@ func (i ContainerInstanceContainerArray) ToContainerInstanceContainerArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceContainerArrayOutput)
 }
 
+func (i ContainerInstanceContainerArray) ToOutput(ctx context.Context) pulumix.Output[[]ContainerInstanceContainer] {
+	return pulumix.Output[[]ContainerInstanceContainer]{
+		OutputState: i.ToContainerInstanceContainerArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ContainerInstanceContainerOutput struct{ *pulumi.OutputState }
 
 func (ContainerInstanceContainerOutput) ElementType() reflect.Type {
@@ -2244,6 +2593,12 @@ func (o ContainerInstanceContainerOutput) ToContainerInstanceContainerOutput() C
 
 func (o ContainerInstanceContainerOutput) ToContainerInstanceContainerOutputWithContext(ctx context.Context) ContainerInstanceContainerOutput {
 	return o
+}
+
+func (o ContainerInstanceContainerOutput) ToOutput(ctx context.Context) pulumix.Output[ContainerInstanceContainer] {
+	return pulumix.Output[ContainerInstanceContainer]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A list of string arguments for a container's ENTRYPOINT process.
@@ -2399,6 +2754,12 @@ func (o ContainerInstanceContainerArrayOutput) ToContainerInstanceContainerArray
 	return o
 }
 
+func (o ContainerInstanceContainerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ContainerInstanceContainer] {
+	return pulumix.Output[[]ContainerInstanceContainer]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o ContainerInstanceContainerArrayOutput) Index(i pulumi.IntInput) ContainerInstanceContainerOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ContainerInstanceContainer {
 		return vs[0].([]ContainerInstanceContainer)[vs[1].(int)]
@@ -2486,6 +2847,12 @@ func (i ContainerInstanceContainerHealthCheckArgs) ToContainerInstanceContainerH
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceContainerHealthCheckOutput)
 }
 
+func (i ContainerInstanceContainerHealthCheckArgs) ToOutput(ctx context.Context) pulumix.Output[ContainerInstanceContainerHealthCheck] {
+	return pulumix.Output[ContainerInstanceContainerHealthCheck]{
+		OutputState: i.ToContainerInstanceContainerHealthCheckOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ContainerInstanceContainerHealthCheckArrayInput is an input type that accepts ContainerInstanceContainerHealthCheckArray and ContainerInstanceContainerHealthCheckArrayOutput values.
 // You can construct a concrete instance of `ContainerInstanceContainerHealthCheckArrayInput` via:
 //
@@ -2511,6 +2878,12 @@ func (i ContainerInstanceContainerHealthCheckArray) ToContainerInstanceContainer
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceContainerHealthCheckArrayOutput)
 }
 
+func (i ContainerInstanceContainerHealthCheckArray) ToOutput(ctx context.Context) pulumix.Output[[]ContainerInstanceContainerHealthCheck] {
+	return pulumix.Output[[]ContainerInstanceContainerHealthCheck]{
+		OutputState: i.ToContainerInstanceContainerHealthCheckArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ContainerInstanceContainerHealthCheckOutput struct{ *pulumi.OutputState }
 
 func (ContainerInstanceContainerHealthCheckOutput) ElementType() reflect.Type {
@@ -2523,6 +2896,12 @@ func (o ContainerInstanceContainerHealthCheckOutput) ToContainerInstanceContaine
 
 func (o ContainerInstanceContainerHealthCheckOutput) ToContainerInstanceContainerHealthCheckOutputWithContext(ctx context.Context) ContainerInstanceContainerHealthCheckOutput {
 	return o
+}
+
+func (o ContainerInstanceContainerHealthCheckOutput) ToOutput(ctx context.Context) pulumix.Output[ContainerInstanceContainerHealthCheck] {
+	return pulumix.Output[ContainerInstanceContainerHealthCheck]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The list of strings that will be simplified to a single command for checking the status of the container.
@@ -2609,6 +2988,12 @@ func (o ContainerInstanceContainerHealthCheckArrayOutput) ToContainerInstanceCon
 	return o
 }
 
+func (o ContainerInstanceContainerHealthCheckArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ContainerInstanceContainerHealthCheck] {
+	return pulumix.Output[[]ContainerInstanceContainerHealthCheck]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o ContainerInstanceContainerHealthCheckArrayOutput) Index(i pulumi.IntInput) ContainerInstanceContainerHealthCheckOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ContainerInstanceContainerHealthCheck {
 		return vs[0].([]ContainerInstanceContainerHealthCheck)[vs[1].(int)]
@@ -2652,6 +3037,12 @@ func (i ContainerInstanceContainerHealthCheckHeaderArgs) ToContainerInstanceCont
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceContainerHealthCheckHeaderOutput)
 }
 
+func (i ContainerInstanceContainerHealthCheckHeaderArgs) ToOutput(ctx context.Context) pulumix.Output[ContainerInstanceContainerHealthCheckHeader] {
+	return pulumix.Output[ContainerInstanceContainerHealthCheckHeader]{
+		OutputState: i.ToContainerInstanceContainerHealthCheckHeaderOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ContainerInstanceContainerHealthCheckHeaderArrayInput is an input type that accepts ContainerInstanceContainerHealthCheckHeaderArray and ContainerInstanceContainerHealthCheckHeaderArrayOutput values.
 // You can construct a concrete instance of `ContainerInstanceContainerHealthCheckHeaderArrayInput` via:
 //
@@ -2677,6 +3068,12 @@ func (i ContainerInstanceContainerHealthCheckHeaderArray) ToContainerInstanceCon
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceContainerHealthCheckHeaderArrayOutput)
 }
 
+func (i ContainerInstanceContainerHealthCheckHeaderArray) ToOutput(ctx context.Context) pulumix.Output[[]ContainerInstanceContainerHealthCheckHeader] {
+	return pulumix.Output[[]ContainerInstanceContainerHealthCheckHeader]{
+		OutputState: i.ToContainerInstanceContainerHealthCheckHeaderArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ContainerInstanceContainerHealthCheckHeaderOutput struct{ *pulumi.OutputState }
 
 func (ContainerInstanceContainerHealthCheckHeaderOutput) ElementType() reflect.Type {
@@ -2689,6 +3086,12 @@ func (o ContainerInstanceContainerHealthCheckHeaderOutput) ToContainerInstanceCo
 
 func (o ContainerInstanceContainerHealthCheckHeaderOutput) ToContainerInstanceContainerHealthCheckHeaderOutputWithContext(ctx context.Context) ContainerInstanceContainerHealthCheckHeaderOutput {
 	return o
+}
+
+func (o ContainerInstanceContainerHealthCheckHeaderOutput) ToOutput(ctx context.Context) pulumix.Output[ContainerInstanceContainerHealthCheckHeader] {
+	return pulumix.Output[ContainerInstanceContainerHealthCheckHeader]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the volume. This must be unique within a single container instance.
@@ -2713,6 +3116,12 @@ func (o ContainerInstanceContainerHealthCheckHeaderArrayOutput) ToContainerInsta
 
 func (o ContainerInstanceContainerHealthCheckHeaderArrayOutput) ToContainerInstanceContainerHealthCheckHeaderArrayOutputWithContext(ctx context.Context) ContainerInstanceContainerHealthCheckHeaderArrayOutput {
 	return o
+}
+
+func (o ContainerInstanceContainerHealthCheckHeaderArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ContainerInstanceContainerHealthCheckHeader] {
+	return pulumix.Output[[]ContainerInstanceContainerHealthCheckHeader]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ContainerInstanceContainerHealthCheckHeaderArrayOutput) Index(i pulumi.IntInput) ContainerInstanceContainerHealthCheckHeaderOutput {
@@ -2774,6 +3183,12 @@ func (i ContainerInstanceContainerResourceConfigArgs) ToContainerInstanceContain
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceContainerResourceConfigOutput)
 }
 
+func (i ContainerInstanceContainerResourceConfigArgs) ToOutput(ctx context.Context) pulumix.Output[ContainerInstanceContainerResourceConfig] {
+	return pulumix.Output[ContainerInstanceContainerResourceConfig]{
+		OutputState: i.ToContainerInstanceContainerResourceConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i ContainerInstanceContainerResourceConfigArgs) ToContainerInstanceContainerResourceConfigPtrOutput() ContainerInstanceContainerResourceConfigPtrOutput {
 	return i.ToContainerInstanceContainerResourceConfigPtrOutputWithContext(context.Background())
 }
@@ -2815,6 +3230,12 @@ func (i *containerInstanceContainerResourceConfigPtrType) ToContainerInstanceCon
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceContainerResourceConfigPtrOutput)
 }
 
+func (i *containerInstanceContainerResourceConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*ContainerInstanceContainerResourceConfig] {
+	return pulumix.Output[*ContainerInstanceContainerResourceConfig]{
+		OutputState: i.ToContainerInstanceContainerResourceConfigPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ContainerInstanceContainerResourceConfigOutput struct{ *pulumi.OutputState }
 
 func (ContainerInstanceContainerResourceConfigOutput) ElementType() reflect.Type {
@@ -2837,6 +3258,12 @@ func (o ContainerInstanceContainerResourceConfigOutput) ToContainerInstanceConta
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ContainerInstanceContainerResourceConfig) *ContainerInstanceContainerResourceConfig {
 		return &v
 	}).(ContainerInstanceContainerResourceConfigPtrOutput)
+}
+
+func (o ContainerInstanceContainerResourceConfigOutput) ToOutput(ctx context.Context) pulumix.Output[ContainerInstanceContainerResourceConfig] {
+	return pulumix.Output[ContainerInstanceContainerResourceConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The maximum amount of memory that can be consumed by the container's process.
@@ -2869,6 +3296,12 @@ func (o ContainerInstanceContainerResourceConfigPtrOutput) ToContainerInstanceCo
 
 func (o ContainerInstanceContainerResourceConfigPtrOutput) ToContainerInstanceContainerResourceConfigPtrOutputWithContext(ctx context.Context) ContainerInstanceContainerResourceConfigPtrOutput {
 	return o
+}
+
+func (o ContainerInstanceContainerResourceConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ContainerInstanceContainerResourceConfig] {
+	return pulumix.Output[*ContainerInstanceContainerResourceConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ContainerInstanceContainerResourceConfigPtrOutput) Elem() ContainerInstanceContainerResourceConfigOutput {
@@ -2958,6 +3391,12 @@ func (i ContainerInstanceContainerSecurityContextArgs) ToContainerInstanceContai
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceContainerSecurityContextOutput)
 }
 
+func (i ContainerInstanceContainerSecurityContextArgs) ToOutput(ctx context.Context) pulumix.Output[ContainerInstanceContainerSecurityContext] {
+	return pulumix.Output[ContainerInstanceContainerSecurityContext]{
+		OutputState: i.ToContainerInstanceContainerSecurityContextOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i ContainerInstanceContainerSecurityContextArgs) ToContainerInstanceContainerSecurityContextPtrOutput() ContainerInstanceContainerSecurityContextPtrOutput {
 	return i.ToContainerInstanceContainerSecurityContextPtrOutputWithContext(context.Background())
 }
@@ -2999,6 +3438,12 @@ func (i *containerInstanceContainerSecurityContextPtrType) ToContainerInstanceCo
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceContainerSecurityContextPtrOutput)
 }
 
+func (i *containerInstanceContainerSecurityContextPtrType) ToOutput(ctx context.Context) pulumix.Output[*ContainerInstanceContainerSecurityContext] {
+	return pulumix.Output[*ContainerInstanceContainerSecurityContext]{
+		OutputState: i.ToContainerInstanceContainerSecurityContextPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ContainerInstanceContainerSecurityContextOutput struct{ *pulumi.OutputState }
 
 func (ContainerInstanceContainerSecurityContextOutput) ElementType() reflect.Type {
@@ -3021,6 +3466,12 @@ func (o ContainerInstanceContainerSecurityContextOutput) ToContainerInstanceCont
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ContainerInstanceContainerSecurityContext) *ContainerInstanceContainerSecurityContext {
 		return &v
 	}).(ContainerInstanceContainerSecurityContextPtrOutput)
+}
+
+func (o ContainerInstanceContainerSecurityContextOutput) ToOutput(ctx context.Context) pulumix.Output[ContainerInstanceContainerSecurityContext] {
+	return pulumix.Output[ContainerInstanceContainerSecurityContext]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Indicates if the container must run as a non-root user. If true, the service validates the container image at runtime to ensure that it is not going to run with UID 0 (root) and fails the container instance creation if the validation fails.
@@ -3060,6 +3511,12 @@ func (o ContainerInstanceContainerSecurityContextPtrOutput) ToContainerInstanceC
 
 func (o ContainerInstanceContainerSecurityContextPtrOutput) ToContainerInstanceContainerSecurityContextPtrOutputWithContext(ctx context.Context) ContainerInstanceContainerSecurityContextPtrOutput {
 	return o
+}
+
+func (o ContainerInstanceContainerSecurityContextPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ContainerInstanceContainerSecurityContext] {
+	return pulumix.Output[*ContainerInstanceContainerSecurityContext]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ContainerInstanceContainerSecurityContextPtrOutput) Elem() ContainerInstanceContainerSecurityContextOutput {
@@ -3171,6 +3628,12 @@ func (i ContainerInstanceContainerVolumeMountArgs) ToContainerInstanceContainerV
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceContainerVolumeMountOutput)
 }
 
+func (i ContainerInstanceContainerVolumeMountArgs) ToOutput(ctx context.Context) pulumix.Output[ContainerInstanceContainerVolumeMount] {
+	return pulumix.Output[ContainerInstanceContainerVolumeMount]{
+		OutputState: i.ToContainerInstanceContainerVolumeMountOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ContainerInstanceContainerVolumeMountArrayInput is an input type that accepts ContainerInstanceContainerVolumeMountArray and ContainerInstanceContainerVolumeMountArrayOutput values.
 // You can construct a concrete instance of `ContainerInstanceContainerVolumeMountArrayInput` via:
 //
@@ -3196,6 +3659,12 @@ func (i ContainerInstanceContainerVolumeMountArray) ToContainerInstanceContainer
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceContainerVolumeMountArrayOutput)
 }
 
+func (i ContainerInstanceContainerVolumeMountArray) ToOutput(ctx context.Context) pulumix.Output[[]ContainerInstanceContainerVolumeMount] {
+	return pulumix.Output[[]ContainerInstanceContainerVolumeMount]{
+		OutputState: i.ToContainerInstanceContainerVolumeMountArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ContainerInstanceContainerVolumeMountOutput struct{ *pulumi.OutputState }
 
 func (ContainerInstanceContainerVolumeMountOutput) ElementType() reflect.Type {
@@ -3208,6 +3677,12 @@ func (o ContainerInstanceContainerVolumeMountOutput) ToContainerInstanceContaine
 
 func (o ContainerInstanceContainerVolumeMountOutput) ToContainerInstanceContainerVolumeMountOutputWithContext(ctx context.Context) ContainerInstanceContainerVolumeMountOutput {
 	return o
+}
+
+func (o ContainerInstanceContainerVolumeMountOutput) ToOutput(ctx context.Context) pulumix.Output[ContainerInstanceContainerVolumeMount] {
+	return pulumix.Output[ContainerInstanceContainerVolumeMount]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether the volume was mounted in read-only mode. By default, the volume is not read-only.
@@ -3247,6 +3722,12 @@ func (o ContainerInstanceContainerVolumeMountArrayOutput) ToContainerInstanceCon
 
 func (o ContainerInstanceContainerVolumeMountArrayOutput) ToContainerInstanceContainerVolumeMountArrayOutputWithContext(ctx context.Context) ContainerInstanceContainerVolumeMountArrayOutput {
 	return o
+}
+
+func (o ContainerInstanceContainerVolumeMountArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ContainerInstanceContainerVolumeMount] {
+	return pulumix.Output[[]ContainerInstanceContainerVolumeMount]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ContainerInstanceContainerVolumeMountArrayOutput) Index(i pulumi.IntInput) ContainerInstanceContainerVolumeMountOutput {
@@ -3296,6 +3777,12 @@ func (i ContainerInstanceDnsConfigArgs) ToContainerInstanceDnsConfigOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceDnsConfigOutput)
 }
 
+func (i ContainerInstanceDnsConfigArgs) ToOutput(ctx context.Context) pulumix.Output[ContainerInstanceDnsConfig] {
+	return pulumix.Output[ContainerInstanceDnsConfig]{
+		OutputState: i.ToContainerInstanceDnsConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i ContainerInstanceDnsConfigArgs) ToContainerInstanceDnsConfigPtrOutput() ContainerInstanceDnsConfigPtrOutput {
 	return i.ToContainerInstanceDnsConfigPtrOutputWithContext(context.Background())
 }
@@ -3337,6 +3824,12 @@ func (i *containerInstanceDnsConfigPtrType) ToContainerInstanceDnsConfigPtrOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceDnsConfigPtrOutput)
 }
 
+func (i *containerInstanceDnsConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*ContainerInstanceDnsConfig] {
+	return pulumix.Output[*ContainerInstanceDnsConfig]{
+		OutputState: i.ToContainerInstanceDnsConfigPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ContainerInstanceDnsConfigOutput struct{ *pulumi.OutputState }
 
 func (ContainerInstanceDnsConfigOutput) ElementType() reflect.Type {
@@ -3359,6 +3852,12 @@ func (o ContainerInstanceDnsConfigOutput) ToContainerInstanceDnsConfigPtrOutputW
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ContainerInstanceDnsConfig) *ContainerInstanceDnsConfig {
 		return &v
 	}).(ContainerInstanceDnsConfigPtrOutput)
+}
+
+func (o ContainerInstanceDnsConfigOutput) ToOutput(ctx context.Context) pulumix.Output[ContainerInstanceDnsConfig] {
+	return pulumix.Output[ContainerInstanceDnsConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // IP address of a name server that the resolver should query, either an IPv4 address (in dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, uses nameservers from subnet dhcpDnsOptions.
@@ -3388,6 +3887,12 @@ func (o ContainerInstanceDnsConfigPtrOutput) ToContainerInstanceDnsConfigPtrOutp
 
 func (o ContainerInstanceDnsConfigPtrOutput) ToContainerInstanceDnsConfigPtrOutputWithContext(ctx context.Context) ContainerInstanceDnsConfigPtrOutput {
 	return o
+}
+
+func (o ContainerInstanceDnsConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ContainerInstanceDnsConfig] {
+	return pulumix.Output[*ContainerInstanceDnsConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ContainerInstanceDnsConfigPtrOutput) Elem() ContainerInstanceDnsConfigOutput {
@@ -3479,6 +3984,12 @@ func (i ContainerInstanceImagePullSecretArgs) ToContainerInstanceImagePullSecret
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceImagePullSecretOutput)
 }
 
+func (i ContainerInstanceImagePullSecretArgs) ToOutput(ctx context.Context) pulumix.Output[ContainerInstanceImagePullSecret] {
+	return pulumix.Output[ContainerInstanceImagePullSecret]{
+		OutputState: i.ToContainerInstanceImagePullSecretOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ContainerInstanceImagePullSecretArrayInput is an input type that accepts ContainerInstanceImagePullSecretArray and ContainerInstanceImagePullSecretArrayOutput values.
 // You can construct a concrete instance of `ContainerInstanceImagePullSecretArrayInput` via:
 //
@@ -3504,6 +4015,12 @@ func (i ContainerInstanceImagePullSecretArray) ToContainerInstanceImagePullSecre
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceImagePullSecretArrayOutput)
 }
 
+func (i ContainerInstanceImagePullSecretArray) ToOutput(ctx context.Context) pulumix.Output[[]ContainerInstanceImagePullSecret] {
+	return pulumix.Output[[]ContainerInstanceImagePullSecret]{
+		OutputState: i.ToContainerInstanceImagePullSecretArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ContainerInstanceImagePullSecretOutput struct{ *pulumi.OutputState }
 
 func (ContainerInstanceImagePullSecretOutput) ElementType() reflect.Type {
@@ -3516,6 +4033,12 @@ func (o ContainerInstanceImagePullSecretOutput) ToContainerInstanceImagePullSecr
 
 func (o ContainerInstanceImagePullSecretOutput) ToContainerInstanceImagePullSecretOutputWithContext(ctx context.Context) ContainerInstanceImagePullSecretOutput {
 	return o
+}
+
+func (o ContainerInstanceImagePullSecretOutput) ToOutput(ctx context.Context) pulumix.Output[ContainerInstanceImagePullSecret] {
+	return pulumix.Output[ContainerInstanceImagePullSecret]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The password which should be used with the registry for authentication. The value is expected in base64 format.
@@ -3555,6 +4078,12 @@ func (o ContainerInstanceImagePullSecretArrayOutput) ToContainerInstanceImagePul
 
 func (o ContainerInstanceImagePullSecretArrayOutput) ToContainerInstanceImagePullSecretArrayOutputWithContext(ctx context.Context) ContainerInstanceImagePullSecretArrayOutput {
 	return o
+}
+
+func (o ContainerInstanceImagePullSecretArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ContainerInstanceImagePullSecret] {
+	return pulumix.Output[[]ContainerInstanceImagePullSecret]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ContainerInstanceImagePullSecretArrayOutput) Index(i pulumi.IntInput) ContainerInstanceImagePullSecretOutput {
@@ -3608,6 +4137,12 @@ func (i ContainerInstanceShapeConfigArgs) ToContainerInstanceShapeConfigOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceShapeConfigOutput)
 }
 
+func (i ContainerInstanceShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[ContainerInstanceShapeConfig] {
+	return pulumix.Output[ContainerInstanceShapeConfig]{
+		OutputState: i.ToContainerInstanceShapeConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i ContainerInstanceShapeConfigArgs) ToContainerInstanceShapeConfigPtrOutput() ContainerInstanceShapeConfigPtrOutput {
 	return i.ToContainerInstanceShapeConfigPtrOutputWithContext(context.Background())
 }
@@ -3649,6 +4184,12 @@ func (i *containerInstanceShapeConfigPtrType) ToContainerInstanceShapeConfigPtrO
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceShapeConfigPtrOutput)
 }
 
+func (i *containerInstanceShapeConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*ContainerInstanceShapeConfig] {
+	return pulumix.Output[*ContainerInstanceShapeConfig]{
+		OutputState: i.ToContainerInstanceShapeConfigPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ContainerInstanceShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (ContainerInstanceShapeConfigOutput) ElementType() reflect.Type {
@@ -3671,6 +4212,12 @@ func (o ContainerInstanceShapeConfigOutput) ToContainerInstanceShapeConfigPtrOut
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ContainerInstanceShapeConfig) *ContainerInstanceShapeConfig {
 		return &v
 	}).(ContainerInstanceShapeConfigPtrOutput)
+}
+
+func (o ContainerInstanceShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[ContainerInstanceShapeConfig] {
+	return pulumix.Output[ContainerInstanceShapeConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The total amount of memory available to the container instance (GB).
@@ -3705,6 +4252,12 @@ func (o ContainerInstanceShapeConfigPtrOutput) ToContainerInstanceShapeConfigPtr
 
 func (o ContainerInstanceShapeConfigPtrOutput) ToContainerInstanceShapeConfigPtrOutputWithContext(ctx context.Context) ContainerInstanceShapeConfigPtrOutput {
 	return o
+}
+
+func (o ContainerInstanceShapeConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ContainerInstanceShapeConfig] {
+	return pulumix.Output[*ContainerInstanceShapeConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ContainerInstanceShapeConfigPtrOutput) Elem() ContainerInstanceShapeConfigOutput {
@@ -3826,6 +4379,12 @@ func (i ContainerInstanceVnicArgs) ToContainerInstanceVnicOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceVnicOutput)
 }
 
+func (i ContainerInstanceVnicArgs) ToOutput(ctx context.Context) pulumix.Output[ContainerInstanceVnic] {
+	return pulumix.Output[ContainerInstanceVnic]{
+		OutputState: i.ToContainerInstanceVnicOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ContainerInstanceVnicArrayInput is an input type that accepts ContainerInstanceVnicArray and ContainerInstanceVnicArrayOutput values.
 // You can construct a concrete instance of `ContainerInstanceVnicArrayInput` via:
 //
@@ -3851,6 +4410,12 @@ func (i ContainerInstanceVnicArray) ToContainerInstanceVnicArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceVnicArrayOutput)
 }
 
+func (i ContainerInstanceVnicArray) ToOutput(ctx context.Context) pulumix.Output[[]ContainerInstanceVnic] {
+	return pulumix.Output[[]ContainerInstanceVnic]{
+		OutputState: i.ToContainerInstanceVnicArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ContainerInstanceVnicOutput struct{ *pulumi.OutputState }
 
 func (ContainerInstanceVnicOutput) ElementType() reflect.Type {
@@ -3863,6 +4428,12 @@ func (o ContainerInstanceVnicOutput) ToContainerInstanceVnicOutput() ContainerIn
 
 func (o ContainerInstanceVnicOutput) ToContainerInstanceVnicOutputWithContext(ctx context.Context) ContainerInstanceVnicOutput {
 	return o
+}
+
+func (o ContainerInstanceVnicOutput) ToOutput(ctx context.Context) pulumix.Output[ContainerInstanceVnic] {
+	return pulumix.Output[ContainerInstanceVnic]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
@@ -3929,6 +4500,12 @@ func (o ContainerInstanceVnicArrayOutput) ToContainerInstanceVnicArrayOutputWith
 	return o
 }
 
+func (o ContainerInstanceVnicArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ContainerInstanceVnic] {
+	return pulumix.Output[[]ContainerInstanceVnic]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o ContainerInstanceVnicArrayOutput) Index(i pulumi.IntInput) ContainerInstanceVnicOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ContainerInstanceVnic {
 		return vs[0].([]ContainerInstanceVnic)[vs[1].(int)]
@@ -3980,6 +4557,12 @@ func (i ContainerInstanceVolumeArgs) ToContainerInstanceVolumeOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceVolumeOutput)
 }
 
+func (i ContainerInstanceVolumeArgs) ToOutput(ctx context.Context) pulumix.Output[ContainerInstanceVolume] {
+	return pulumix.Output[ContainerInstanceVolume]{
+		OutputState: i.ToContainerInstanceVolumeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ContainerInstanceVolumeArrayInput is an input type that accepts ContainerInstanceVolumeArray and ContainerInstanceVolumeArrayOutput values.
 // You can construct a concrete instance of `ContainerInstanceVolumeArrayInput` via:
 //
@@ -4005,6 +4588,12 @@ func (i ContainerInstanceVolumeArray) ToContainerInstanceVolumeArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceVolumeArrayOutput)
 }
 
+func (i ContainerInstanceVolumeArray) ToOutput(ctx context.Context) pulumix.Output[[]ContainerInstanceVolume] {
+	return pulumix.Output[[]ContainerInstanceVolume]{
+		OutputState: i.ToContainerInstanceVolumeArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ContainerInstanceVolumeOutput struct{ *pulumi.OutputState }
 
 func (ContainerInstanceVolumeOutput) ElementType() reflect.Type {
@@ -4017,6 +4606,12 @@ func (o ContainerInstanceVolumeOutput) ToContainerInstanceVolumeOutput() Contain
 
 func (o ContainerInstanceVolumeOutput) ToContainerInstanceVolumeOutputWithContext(ctx context.Context) ContainerInstanceVolumeOutput {
 	return o
+}
+
+func (o ContainerInstanceVolumeOutput) ToOutput(ctx context.Context) pulumix.Output[ContainerInstanceVolume] {
+	return pulumix.Output[ContainerInstanceVolume]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The volume type of the empty directory, can be either File Storage or Memory.
@@ -4051,6 +4646,12 @@ func (o ContainerInstanceVolumeArrayOutput) ToContainerInstanceVolumeArrayOutput
 
 func (o ContainerInstanceVolumeArrayOutput) ToContainerInstanceVolumeArrayOutputWithContext(ctx context.Context) ContainerInstanceVolumeArrayOutput {
 	return o
+}
+
+func (o ContainerInstanceVolumeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ContainerInstanceVolume] {
+	return pulumix.Output[[]ContainerInstanceVolume]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ContainerInstanceVolumeArrayOutput) Index(i pulumi.IntInput) ContainerInstanceVolumeOutput {
@@ -4100,6 +4701,12 @@ func (i ContainerInstanceVolumeConfigArgs) ToContainerInstanceVolumeConfigOutput
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceVolumeConfigOutput)
 }
 
+func (i ContainerInstanceVolumeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[ContainerInstanceVolumeConfig] {
+	return pulumix.Output[ContainerInstanceVolumeConfig]{
+		OutputState: i.ToContainerInstanceVolumeConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ContainerInstanceVolumeConfigArrayInput is an input type that accepts ContainerInstanceVolumeConfigArray and ContainerInstanceVolumeConfigArrayOutput values.
 // You can construct a concrete instance of `ContainerInstanceVolumeConfigArrayInput` via:
 //
@@ -4125,6 +4732,12 @@ func (i ContainerInstanceVolumeConfigArray) ToContainerInstanceVolumeConfigArray
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceVolumeConfigArrayOutput)
 }
 
+func (i ContainerInstanceVolumeConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]ContainerInstanceVolumeConfig] {
+	return pulumix.Output[[]ContainerInstanceVolumeConfig]{
+		OutputState: i.ToContainerInstanceVolumeConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ContainerInstanceVolumeConfigOutput struct{ *pulumi.OutputState }
 
 func (ContainerInstanceVolumeConfigOutput) ElementType() reflect.Type {
@@ -4137,6 +4750,12 @@ func (o ContainerInstanceVolumeConfigOutput) ToContainerInstanceVolumeConfigOutp
 
 func (o ContainerInstanceVolumeConfigOutput) ToContainerInstanceVolumeConfigOutputWithContext(ctx context.Context) ContainerInstanceVolumeConfigOutput {
 	return o
+}
+
+func (o ContainerInstanceVolumeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[ContainerInstanceVolumeConfig] {
+	return pulumix.Output[ContainerInstanceVolumeConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The base64 encoded contents of the file. The contents are decoded to plain text before mounted as a file to a container inside container instance.
@@ -4166,6 +4785,12 @@ func (o ContainerInstanceVolumeConfigArrayOutput) ToContainerInstanceVolumeConfi
 
 func (o ContainerInstanceVolumeConfigArrayOutput) ToContainerInstanceVolumeConfigArrayOutputWithContext(ctx context.Context) ContainerInstanceVolumeConfigArrayOutput {
 	return o
+}
+
+func (o ContainerInstanceVolumeConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ContainerInstanceVolumeConfig] {
+	return pulumix.Output[[]ContainerInstanceVolumeConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ContainerInstanceVolumeConfigArrayOutput) Index(i pulumi.IntInput) ContainerInstanceVolumeConfigOutput {
@@ -4211,6 +4836,12 @@ func (i NodePoolInitialNodeLabelArgs) ToNodePoolInitialNodeLabelOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolInitialNodeLabelOutput)
 }
 
+func (i NodePoolInitialNodeLabelArgs) ToOutput(ctx context.Context) pulumix.Output[NodePoolInitialNodeLabel] {
+	return pulumix.Output[NodePoolInitialNodeLabel]{
+		OutputState: i.ToNodePoolInitialNodeLabelOutputWithContext(ctx).OutputState,
+	}
+}
+
 // NodePoolInitialNodeLabelArrayInput is an input type that accepts NodePoolInitialNodeLabelArray and NodePoolInitialNodeLabelArrayOutput values.
 // You can construct a concrete instance of `NodePoolInitialNodeLabelArrayInput` via:
 //
@@ -4236,6 +4867,12 @@ func (i NodePoolInitialNodeLabelArray) ToNodePoolInitialNodeLabelArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolInitialNodeLabelArrayOutput)
 }
 
+func (i NodePoolInitialNodeLabelArray) ToOutput(ctx context.Context) pulumix.Output[[]NodePoolInitialNodeLabel] {
+	return pulumix.Output[[]NodePoolInitialNodeLabel]{
+		OutputState: i.ToNodePoolInitialNodeLabelArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type NodePoolInitialNodeLabelOutput struct{ *pulumi.OutputState }
 
 func (NodePoolInitialNodeLabelOutput) ElementType() reflect.Type {
@@ -4248,6 +4885,12 @@ func (o NodePoolInitialNodeLabelOutput) ToNodePoolInitialNodeLabelOutput() NodeP
 
 func (o NodePoolInitialNodeLabelOutput) ToNodePoolInitialNodeLabelOutputWithContext(ctx context.Context) NodePoolInitialNodeLabelOutput {
 	return o
+}
+
+func (o NodePoolInitialNodeLabelOutput) ToOutput(ctx context.Context) pulumix.Output[NodePoolInitialNodeLabel] {
+	return pulumix.Output[NodePoolInitialNodeLabel]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The key of the pair.
@@ -4272,6 +4915,12 @@ func (o NodePoolInitialNodeLabelArrayOutput) ToNodePoolInitialNodeLabelArrayOutp
 
 func (o NodePoolInitialNodeLabelArrayOutput) ToNodePoolInitialNodeLabelArrayOutputWithContext(ctx context.Context) NodePoolInitialNodeLabelArrayOutput {
 	return o
+}
+
+func (o NodePoolInitialNodeLabelArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]NodePoolInitialNodeLabel] {
+	return pulumix.Output[[]NodePoolInitialNodeLabel]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o NodePoolInitialNodeLabelArrayOutput) Index(i pulumi.IntInput) NodePoolInitialNodeLabelOutput {
@@ -4365,6 +5014,12 @@ func (i NodePoolNodeArgs) ToNodePoolNodeOutputWithContext(ctx context.Context) N
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeOutput)
 }
 
+func (i NodePoolNodeArgs) ToOutput(ctx context.Context) pulumix.Output[NodePoolNode] {
+	return pulumix.Output[NodePoolNode]{
+		OutputState: i.ToNodePoolNodeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // NodePoolNodeArrayInput is an input type that accepts NodePoolNodeArray and NodePoolNodeArrayOutput values.
 // You can construct a concrete instance of `NodePoolNodeArrayInput` via:
 //
@@ -4390,6 +5045,12 @@ func (i NodePoolNodeArray) ToNodePoolNodeArrayOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeArrayOutput)
 }
 
+func (i NodePoolNodeArray) ToOutput(ctx context.Context) pulumix.Output[[]NodePoolNode] {
+	return pulumix.Output[[]NodePoolNode]{
+		OutputState: i.ToNodePoolNodeArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type NodePoolNodeOutput struct{ *pulumi.OutputState }
 
 func (NodePoolNodeOutput) ElementType() reflect.Type {
@@ -4402,6 +5063,12 @@ func (o NodePoolNodeOutput) ToNodePoolNodeOutput() NodePoolNodeOutput {
 
 func (o NodePoolNodeOutput) ToNodePoolNodeOutputWithContext(ctx context.Context) NodePoolNodeOutput {
 	return o
+}
+
+func (o NodePoolNodeOutput) ToOutput(ctx context.Context) pulumix.Output[NodePoolNode] {
+	return pulumix.Output[NodePoolNode]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
@@ -4488,6 +5155,12 @@ func (o NodePoolNodeArrayOutput) ToNodePoolNodeArrayOutputWithContext(ctx contex
 	return o
 }
 
+func (o NodePoolNodeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]NodePoolNode] {
+	return pulumix.Output[[]NodePoolNode]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o NodePoolNodeArrayOutput) Index(i pulumi.IntInput) NodePoolNodeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NodePoolNode {
 		return vs[0].([]NodePoolNode)[vs[1].(int)]
@@ -4559,6 +5232,12 @@ func (i NodePoolNodeConfigDetailsArgs) ToNodePoolNodeConfigDetailsOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeConfigDetailsOutput)
 }
 
+func (i NodePoolNodeConfigDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[NodePoolNodeConfigDetails] {
+	return pulumix.Output[NodePoolNodeConfigDetails]{
+		OutputState: i.ToNodePoolNodeConfigDetailsOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i NodePoolNodeConfigDetailsArgs) ToNodePoolNodeConfigDetailsPtrOutput() NodePoolNodeConfigDetailsPtrOutput {
 	return i.ToNodePoolNodeConfigDetailsPtrOutputWithContext(context.Background())
 }
@@ -4600,6 +5279,12 @@ func (i *nodePoolNodeConfigDetailsPtrType) ToNodePoolNodeConfigDetailsPtrOutputW
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeConfigDetailsPtrOutput)
 }
 
+func (i *nodePoolNodeConfigDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*NodePoolNodeConfigDetails] {
+	return pulumix.Output[*NodePoolNodeConfigDetails]{
+		OutputState: i.ToNodePoolNodeConfigDetailsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type NodePoolNodeConfigDetailsOutput struct{ *pulumi.OutputState }
 
 func (NodePoolNodeConfigDetailsOutput) ElementType() reflect.Type {
@@ -4622,6 +5307,12 @@ func (o NodePoolNodeConfigDetailsOutput) ToNodePoolNodeConfigDetailsPtrOutputWit
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v NodePoolNodeConfigDetails) *NodePoolNodeConfigDetails {
 		return &v
 	}).(NodePoolNodeConfigDetailsPtrOutput)
+}
+
+func (o NodePoolNodeConfigDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[NodePoolNodeConfigDetails] {
+	return pulumix.Output[NodePoolNodeConfigDetails]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -4682,6 +5373,12 @@ func (o NodePoolNodeConfigDetailsPtrOutput) ToNodePoolNodeConfigDetailsPtrOutput
 
 func (o NodePoolNodeConfigDetailsPtrOutput) ToNodePoolNodeConfigDetailsPtrOutputWithContext(ctx context.Context) NodePoolNodeConfigDetailsPtrOutput {
 	return o
+}
+
+func (o NodePoolNodeConfigDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*NodePoolNodeConfigDetails] {
+	return pulumix.Output[*NodePoolNodeConfigDetails]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o NodePoolNodeConfigDetailsPtrOutput) Elem() NodePoolNodeConfigDetailsOutput {
@@ -4821,6 +5518,12 @@ func (i NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs) ToNodePool
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsOutput)
 }
 
+func (i NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails] {
+	return pulumix.Output[NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails]{
+		OutputState: i.ToNodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs) ToNodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput() NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput {
 	return i.ToNodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutputWithContext(context.Background())
 }
@@ -4862,6 +5565,12 @@ func (i *nodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrType) ToNode
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput)
 }
 
+func (i *nodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails] {
+	return pulumix.Output[*NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails]{
+		OutputState: i.ToNodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsOutput struct{ *pulumi.OutputState }
 
 func (NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsOutput) ElementType() reflect.Type {
@@ -4884,6 +5593,12 @@ func (o NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsOutput) ToNodePo
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails) *NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails {
 		return &v
 	}).(NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput)
+}
+
+func (o NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails] {
+	return pulumix.Output[NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The CNI plugin used by this node pool
@@ -4918,6 +5633,12 @@ func (o NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput) ToNod
 
 func (o NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput) ToNodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutputWithContext(ctx context.Context) NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput {
 	return o
+}
+
+func (o NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails] {
+	return pulumix.Output[*NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput) Elem() NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsOutput {
@@ -5019,6 +5740,12 @@ func (i NodePoolNodeConfigDetailsPlacementConfigArgs) ToNodePoolNodeConfigDetail
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeConfigDetailsPlacementConfigOutput)
 }
 
+func (i NodePoolNodeConfigDetailsPlacementConfigArgs) ToOutput(ctx context.Context) pulumix.Output[NodePoolNodeConfigDetailsPlacementConfig] {
+	return pulumix.Output[NodePoolNodeConfigDetailsPlacementConfig]{
+		OutputState: i.ToNodePoolNodeConfigDetailsPlacementConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // NodePoolNodeConfigDetailsPlacementConfigArrayInput is an input type that accepts NodePoolNodeConfigDetailsPlacementConfigArray and NodePoolNodeConfigDetailsPlacementConfigArrayOutput values.
 // You can construct a concrete instance of `NodePoolNodeConfigDetailsPlacementConfigArrayInput` via:
 //
@@ -5044,6 +5771,12 @@ func (i NodePoolNodeConfigDetailsPlacementConfigArray) ToNodePoolNodeConfigDetai
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeConfigDetailsPlacementConfigArrayOutput)
 }
 
+func (i NodePoolNodeConfigDetailsPlacementConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]NodePoolNodeConfigDetailsPlacementConfig] {
+	return pulumix.Output[[]NodePoolNodeConfigDetailsPlacementConfig]{
+		OutputState: i.ToNodePoolNodeConfigDetailsPlacementConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type NodePoolNodeConfigDetailsPlacementConfigOutput struct{ *pulumi.OutputState }
 
 func (NodePoolNodeConfigDetailsPlacementConfigOutput) ElementType() reflect.Type {
@@ -5056,6 +5789,12 @@ func (o NodePoolNodeConfigDetailsPlacementConfigOutput) ToNodePoolNodeConfigDeta
 
 func (o NodePoolNodeConfigDetailsPlacementConfigOutput) ToNodePoolNodeConfigDetailsPlacementConfigOutputWithContext(ctx context.Context) NodePoolNodeConfigDetailsPlacementConfigOutput {
 	return o
+}
+
+func (o NodePoolNodeConfigDetailsPlacementConfigOutput) ToOutput(ctx context.Context) pulumix.Output[NodePoolNodeConfigDetailsPlacementConfig] {
+	return pulumix.Output[NodePoolNodeConfigDetailsPlacementConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
@@ -5099,6 +5838,12 @@ func (o NodePoolNodeConfigDetailsPlacementConfigArrayOutput) ToNodePoolNodeConfi
 	return o
 }
 
+func (o NodePoolNodeConfigDetailsPlacementConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]NodePoolNodeConfigDetailsPlacementConfig] {
+	return pulumix.Output[[]NodePoolNodeConfigDetailsPlacementConfig]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o NodePoolNodeConfigDetailsPlacementConfigArrayOutput) Index(i pulumi.IntInput) NodePoolNodeConfigDetailsPlacementConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NodePoolNodeConfigDetailsPlacementConfig {
 		return vs[0].([]NodePoolNodeConfigDetailsPlacementConfig)[vs[1].(int)]
@@ -5136,6 +5881,12 @@ func (i NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs) ToNod
 
 func (i NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs) ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigOutputWithContext(ctx context.Context) NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigOutput)
+}
+
+func (i NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig] {
+	return pulumix.Output[NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig]{
+		OutputState: i.ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigOutputWithContext(ctx).OutputState,
+	}
 }
 
 func (i NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs) ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutput() NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutput {
@@ -5179,6 +5930,12 @@ func (i *nodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrType) T
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutput)
 }
 
+func (i *nodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig] {
+	return pulumix.Output[*NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig]{
+		OutputState: i.ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigOutput struct{ *pulumi.OutputState }
 
 func (NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigOutput) ElementType() reflect.Type {
@@ -5203,6 +5960,12 @@ func (o NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigOutput) ToN
 	}).(NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutput)
 }
 
+func (o NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig] {
+	return pulumix.Output[NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig]{
+		OutputState: o.OutputState,
+	}
+}
+
 // (Updatable) The action to run when the preemptible node is interrupted for eviction.
 func (o NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigOutput) PreemptionAction() NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig) NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction {
@@ -5222,6 +5985,12 @@ func (o NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutput) 
 
 func (o NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutput) ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutputWithContext(ctx context.Context) NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutput {
 	return o
+}
+
+func (o NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig] {
+	return pulumix.Output[*NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutput) Elem() NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigOutput {
@@ -5281,6 +6050,12 @@ func (i NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionA
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionOutput)
 }
 
+func (i NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgs) ToOutput(ctx context.Context) pulumix.Output[NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction] {
+	return pulumix.Output[NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction]{
+		OutputState: i.ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgs) ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutput() NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutput {
 	return i.ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutputWithContext(context.Background())
 }
@@ -5322,6 +6097,12 @@ func (i *nodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemption
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutput)
 }
 
+func (i *nodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrType) ToOutput(ctx context.Context) pulumix.Output[*NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction] {
+	return pulumix.Output[*NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction]{
+		OutputState: i.ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionOutput struct{ *pulumi.OutputState }
 
 func (NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionOutput) ElementType() reflect.Type {
@@ -5344,6 +6125,12 @@ func (o NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionA
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction) *NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction {
 		return &v
 	}).(NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutput)
+}
+
+func (o NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionOutput) ToOutput(ctx context.Context) pulumix.Output[NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction] {
+	return pulumix.Output[NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
@@ -5372,6 +6159,12 @@ func (o NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionA
 
 func (o NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutput) ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutputWithContext(ctx context.Context) NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutput {
 	return o
+}
+
+func (o NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction] {
+	return pulumix.Output[*NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutput) Elem() NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionOutput {
@@ -5445,6 +6238,12 @@ func (i NodePoolNodeErrorArgs) ToNodePoolNodeErrorOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeErrorOutput)
 }
 
+func (i NodePoolNodeErrorArgs) ToOutput(ctx context.Context) pulumix.Output[NodePoolNodeError] {
+	return pulumix.Output[NodePoolNodeError]{
+		OutputState: i.ToNodePoolNodeErrorOutputWithContext(ctx).OutputState,
+	}
+}
+
 // NodePoolNodeErrorArrayInput is an input type that accepts NodePoolNodeErrorArray and NodePoolNodeErrorArrayOutput values.
 // You can construct a concrete instance of `NodePoolNodeErrorArrayInput` via:
 //
@@ -5470,6 +6269,12 @@ func (i NodePoolNodeErrorArray) ToNodePoolNodeErrorArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeErrorArrayOutput)
 }
 
+func (i NodePoolNodeErrorArray) ToOutput(ctx context.Context) pulumix.Output[[]NodePoolNodeError] {
+	return pulumix.Output[[]NodePoolNodeError]{
+		OutputState: i.ToNodePoolNodeErrorArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type NodePoolNodeErrorOutput struct{ *pulumi.OutputState }
 
 func (NodePoolNodeErrorOutput) ElementType() reflect.Type {
@@ -5482,6 +6287,12 @@ func (o NodePoolNodeErrorOutput) ToNodePoolNodeErrorOutput() NodePoolNodeErrorOu
 
 func (o NodePoolNodeErrorOutput) ToNodePoolNodeErrorOutputWithContext(ctx context.Context) NodePoolNodeErrorOutput {
 	return o
+}
+
+func (o NodePoolNodeErrorOutput) ToOutput(ctx context.Context) pulumix.Output[NodePoolNodeError] {
+	return pulumix.Output[NodePoolNodeError]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
@@ -5511,6 +6322,12 @@ func (o NodePoolNodeErrorArrayOutput) ToNodePoolNodeErrorArrayOutput() NodePoolN
 
 func (o NodePoolNodeErrorArrayOutput) ToNodePoolNodeErrorArrayOutputWithContext(ctx context.Context) NodePoolNodeErrorArrayOutput {
 	return o
+}
+
+func (o NodePoolNodeErrorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]NodePoolNodeError] {
+	return pulumix.Output[[]NodePoolNodeError]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o NodePoolNodeErrorArrayOutput) Index(i pulumi.IntInput) NodePoolNodeErrorOutput {
@@ -5556,6 +6373,12 @@ func (i NodePoolNodeEvictionNodePoolSettingsArgs) ToNodePoolNodeEvictionNodePool
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeEvictionNodePoolSettingsOutput)
 }
 
+func (i NodePoolNodeEvictionNodePoolSettingsArgs) ToOutput(ctx context.Context) pulumix.Output[NodePoolNodeEvictionNodePoolSettings] {
+	return pulumix.Output[NodePoolNodeEvictionNodePoolSettings]{
+		OutputState: i.ToNodePoolNodeEvictionNodePoolSettingsOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i NodePoolNodeEvictionNodePoolSettingsArgs) ToNodePoolNodeEvictionNodePoolSettingsPtrOutput() NodePoolNodeEvictionNodePoolSettingsPtrOutput {
 	return i.ToNodePoolNodeEvictionNodePoolSettingsPtrOutputWithContext(context.Background())
 }
@@ -5597,6 +6420,12 @@ func (i *nodePoolNodeEvictionNodePoolSettingsPtrType) ToNodePoolNodeEvictionNode
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeEvictionNodePoolSettingsPtrOutput)
 }
 
+func (i *nodePoolNodeEvictionNodePoolSettingsPtrType) ToOutput(ctx context.Context) pulumix.Output[*NodePoolNodeEvictionNodePoolSettings] {
+	return pulumix.Output[*NodePoolNodeEvictionNodePoolSettings]{
+		OutputState: i.ToNodePoolNodeEvictionNodePoolSettingsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type NodePoolNodeEvictionNodePoolSettingsOutput struct{ *pulumi.OutputState }
 
 func (NodePoolNodeEvictionNodePoolSettingsOutput) ElementType() reflect.Type {
@@ -5621,6 +6450,12 @@ func (o NodePoolNodeEvictionNodePoolSettingsOutput) ToNodePoolNodeEvictionNodePo
 	}).(NodePoolNodeEvictionNodePoolSettingsPtrOutput)
 }
 
+func (o NodePoolNodeEvictionNodePoolSettingsOutput) ToOutput(ctx context.Context) pulumix.Output[NodePoolNodeEvictionNodePoolSettings] {
+	return pulumix.Output[NodePoolNodeEvictionNodePoolSettings]{
+		OutputState: o.OutputState,
+	}
+}
+
 // (Updatable) Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
 func (o NodePoolNodeEvictionNodePoolSettingsOutput) EvictionGraceDuration() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeEvictionNodePoolSettings) *string { return v.EvictionGraceDuration }).(pulumi.StringPtrOutput)
@@ -5643,6 +6478,12 @@ func (o NodePoolNodeEvictionNodePoolSettingsPtrOutput) ToNodePoolNodeEvictionNod
 
 func (o NodePoolNodeEvictionNodePoolSettingsPtrOutput) ToNodePoolNodeEvictionNodePoolSettingsPtrOutputWithContext(ctx context.Context) NodePoolNodeEvictionNodePoolSettingsPtrOutput {
 	return o
+}
+
+func (o NodePoolNodeEvictionNodePoolSettingsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*NodePoolNodeEvictionNodePoolSettings] {
+	return pulumix.Output[*NodePoolNodeEvictionNodePoolSettings]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o NodePoolNodeEvictionNodePoolSettingsPtrOutput) Elem() NodePoolNodeEvictionNodePoolSettingsOutput {
@@ -5716,6 +6557,12 @@ func (i NodePoolNodePoolCyclingDetailsArgs) ToNodePoolNodePoolCyclingDetailsOutp
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodePoolCyclingDetailsOutput)
 }
 
+func (i NodePoolNodePoolCyclingDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[NodePoolNodePoolCyclingDetails] {
+	return pulumix.Output[NodePoolNodePoolCyclingDetails]{
+		OutputState: i.ToNodePoolNodePoolCyclingDetailsOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i NodePoolNodePoolCyclingDetailsArgs) ToNodePoolNodePoolCyclingDetailsPtrOutput() NodePoolNodePoolCyclingDetailsPtrOutput {
 	return i.ToNodePoolNodePoolCyclingDetailsPtrOutputWithContext(context.Background())
 }
@@ -5757,6 +6604,12 @@ func (i *nodePoolNodePoolCyclingDetailsPtrType) ToNodePoolNodePoolCyclingDetails
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodePoolCyclingDetailsPtrOutput)
 }
 
+func (i *nodePoolNodePoolCyclingDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*NodePoolNodePoolCyclingDetails] {
+	return pulumix.Output[*NodePoolNodePoolCyclingDetails]{
+		OutputState: i.ToNodePoolNodePoolCyclingDetailsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type NodePoolNodePoolCyclingDetailsOutput struct{ *pulumi.OutputState }
 
 func (NodePoolNodePoolCyclingDetailsOutput) ElementType() reflect.Type {
@@ -5779,6 +6632,12 @@ func (o NodePoolNodePoolCyclingDetailsOutput) ToNodePoolNodePoolCyclingDetailsPt
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v NodePoolNodePoolCyclingDetails) *NodePoolNodePoolCyclingDetails {
 		return &v
 	}).(NodePoolNodePoolCyclingDetailsPtrOutput)
+}
+
+func (o NodePoolNodePoolCyclingDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[NodePoolNodePoolCyclingDetails] {
+	return pulumix.Output[NodePoolNodePoolCyclingDetails]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) If nodes in the nodepool will be cycled to have new changes.
@@ -5808,6 +6667,12 @@ func (o NodePoolNodePoolCyclingDetailsPtrOutput) ToNodePoolNodePoolCyclingDetail
 
 func (o NodePoolNodePoolCyclingDetailsPtrOutput) ToNodePoolNodePoolCyclingDetailsPtrOutputWithContext(ctx context.Context) NodePoolNodePoolCyclingDetailsPtrOutput {
 	return o
+}
+
+func (o NodePoolNodePoolCyclingDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*NodePoolNodePoolCyclingDetails] {
+	return pulumix.Output[*NodePoolNodePoolCyclingDetails]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o NodePoolNodePoolCyclingDetailsPtrOutput) Elem() NodePoolNodePoolCyclingDetailsOutput {
@@ -5887,6 +6752,12 @@ func (i NodePoolNodeShapeConfigArgs) ToNodePoolNodeShapeConfigOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeShapeConfigOutput)
 }
 
+func (i NodePoolNodeShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[NodePoolNodeShapeConfig] {
+	return pulumix.Output[NodePoolNodeShapeConfig]{
+		OutputState: i.ToNodePoolNodeShapeConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i NodePoolNodeShapeConfigArgs) ToNodePoolNodeShapeConfigPtrOutput() NodePoolNodeShapeConfigPtrOutput {
 	return i.ToNodePoolNodeShapeConfigPtrOutputWithContext(context.Background())
 }
@@ -5928,6 +6799,12 @@ func (i *nodePoolNodeShapeConfigPtrType) ToNodePoolNodeShapeConfigPtrOutputWithC
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeShapeConfigPtrOutput)
 }
 
+func (i *nodePoolNodeShapeConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*NodePoolNodeShapeConfig] {
+	return pulumix.Output[*NodePoolNodeShapeConfig]{
+		OutputState: i.ToNodePoolNodeShapeConfigPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type NodePoolNodeShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (NodePoolNodeShapeConfigOutput) ElementType() reflect.Type {
@@ -5952,6 +6829,12 @@ func (o NodePoolNodeShapeConfigOutput) ToNodePoolNodeShapeConfigPtrOutputWithCon
 	}).(NodePoolNodeShapeConfigPtrOutput)
 }
 
+func (o NodePoolNodeShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[NodePoolNodeShapeConfig] {
+	return pulumix.Output[NodePoolNodeShapeConfig]{
+		OutputState: o.OutputState,
+	}
+}
+
 // (Updatable) The total amount of memory available to each node, in gigabytes.
 func (o NodePoolNodeShapeConfigOutput) MemoryInGbs() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v NodePoolNodeShapeConfig) *float64 { return v.MemoryInGbs }).(pulumi.Float64PtrOutput)
@@ -5974,6 +6857,12 @@ func (o NodePoolNodeShapeConfigPtrOutput) ToNodePoolNodeShapeConfigPtrOutput() N
 
 func (o NodePoolNodeShapeConfigPtrOutput) ToNodePoolNodeShapeConfigPtrOutputWithContext(ctx context.Context) NodePoolNodeShapeConfigPtrOutput {
 	return o
+}
+
+func (o NodePoolNodeShapeConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*NodePoolNodeShapeConfig] {
+	return pulumix.Output[*NodePoolNodeShapeConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o NodePoolNodeShapeConfigPtrOutput) Elem() NodePoolNodeShapeConfigOutput {
@@ -6047,6 +6936,12 @@ func (i NodePoolNodeSourceArgs) ToNodePoolNodeSourceOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeSourceOutput)
 }
 
+func (i NodePoolNodeSourceArgs) ToOutput(ctx context.Context) pulumix.Output[NodePoolNodeSource] {
+	return pulumix.Output[NodePoolNodeSource]{
+		OutputState: i.ToNodePoolNodeSourceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // NodePoolNodeSourceArrayInput is an input type that accepts NodePoolNodeSourceArray and NodePoolNodeSourceArrayOutput values.
 // You can construct a concrete instance of `NodePoolNodeSourceArrayInput` via:
 //
@@ -6072,6 +6967,12 @@ func (i NodePoolNodeSourceArray) ToNodePoolNodeSourceArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeSourceArrayOutput)
 }
 
+func (i NodePoolNodeSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]NodePoolNodeSource] {
+	return pulumix.Output[[]NodePoolNodeSource]{
+		OutputState: i.ToNodePoolNodeSourceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type NodePoolNodeSourceOutput struct{ *pulumi.OutputState }
 
 func (NodePoolNodeSourceOutput) ElementType() reflect.Type {
@@ -6084,6 +6985,12 @@ func (o NodePoolNodeSourceOutput) ToNodePoolNodeSourceOutput() NodePoolNodeSourc
 
 func (o NodePoolNodeSourceOutput) ToNodePoolNodeSourceOutputWithContext(ctx context.Context) NodePoolNodeSourceOutput {
 	return o
+}
+
+func (o NodePoolNodeSourceOutput) ToOutput(ctx context.Context) pulumix.Output[NodePoolNodeSource] {
+	return pulumix.Output[NodePoolNodeSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The OCID of the image used to boot the node.
@@ -6113,6 +7020,12 @@ func (o NodePoolNodeSourceArrayOutput) ToNodePoolNodeSourceArrayOutput() NodePoo
 
 func (o NodePoolNodeSourceArrayOutput) ToNodePoolNodeSourceArrayOutputWithContext(ctx context.Context) NodePoolNodeSourceArrayOutput {
 	return o
+}
+
+func (o NodePoolNodeSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]NodePoolNodeSource] {
+	return pulumix.Output[[]NodePoolNodeSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o NodePoolNodeSourceArrayOutput) Index(i pulumi.IntInput) NodePoolNodeSourceOutput {
@@ -6162,6 +7075,12 @@ func (i NodePoolNodeSourceDetailsArgs) ToNodePoolNodeSourceDetailsOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeSourceDetailsOutput)
 }
 
+func (i NodePoolNodeSourceDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[NodePoolNodeSourceDetails] {
+	return pulumix.Output[NodePoolNodeSourceDetails]{
+		OutputState: i.ToNodePoolNodeSourceDetailsOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i NodePoolNodeSourceDetailsArgs) ToNodePoolNodeSourceDetailsPtrOutput() NodePoolNodeSourceDetailsPtrOutput {
 	return i.ToNodePoolNodeSourceDetailsPtrOutputWithContext(context.Background())
 }
@@ -6203,6 +7122,12 @@ func (i *nodePoolNodeSourceDetailsPtrType) ToNodePoolNodeSourceDetailsPtrOutputW
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeSourceDetailsPtrOutput)
 }
 
+func (i *nodePoolNodeSourceDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*NodePoolNodeSourceDetails] {
+	return pulumix.Output[*NodePoolNodeSourceDetails]{
+		OutputState: i.ToNodePoolNodeSourceDetailsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type NodePoolNodeSourceDetailsOutput struct{ *pulumi.OutputState }
 
 func (NodePoolNodeSourceDetailsOutput) ElementType() reflect.Type {
@@ -6225,6 +7150,12 @@ func (o NodePoolNodeSourceDetailsOutput) ToNodePoolNodeSourceDetailsPtrOutputWit
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v NodePoolNodeSourceDetails) *NodePoolNodeSourceDetails {
 		return &v
 	}).(NodePoolNodeSourceDetailsPtrOutput)
+}
+
+func (o NodePoolNodeSourceDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[NodePoolNodeSourceDetails] {
+	return pulumix.Output[NodePoolNodeSourceDetails]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The size of the boot volume in GBs. Minimum value is 50 GB. See [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Block/Concepts/bootvolumes.htm) for max custom boot volume sizing and OS-specific requirements.
@@ -6254,6 +7185,12 @@ func (o NodePoolNodeSourceDetailsPtrOutput) ToNodePoolNodeSourceDetailsPtrOutput
 
 func (o NodePoolNodeSourceDetailsPtrOutput) ToNodePoolNodeSourceDetailsPtrOutputWithContext(ctx context.Context) NodePoolNodeSourceDetailsPtrOutput {
 	return o
+}
+
+func (o NodePoolNodeSourceDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*NodePoolNodeSourceDetails] {
+	return pulumix.Output[*NodePoolNodeSourceDetails]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o NodePoolNodeSourceDetailsPtrOutput) Elem() NodePoolNodeSourceDetailsOutput {
@@ -6333,6 +7270,12 @@ func (i VirtualNodePoolInitialVirtualNodeLabelArgs) ToVirtualNodePoolInitialVirt
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualNodePoolInitialVirtualNodeLabelOutput)
 }
 
+func (i VirtualNodePoolInitialVirtualNodeLabelArgs) ToOutput(ctx context.Context) pulumix.Output[VirtualNodePoolInitialVirtualNodeLabel] {
+	return pulumix.Output[VirtualNodePoolInitialVirtualNodeLabel]{
+		OutputState: i.ToVirtualNodePoolInitialVirtualNodeLabelOutputWithContext(ctx).OutputState,
+	}
+}
+
 // VirtualNodePoolInitialVirtualNodeLabelArrayInput is an input type that accepts VirtualNodePoolInitialVirtualNodeLabelArray and VirtualNodePoolInitialVirtualNodeLabelArrayOutput values.
 // You can construct a concrete instance of `VirtualNodePoolInitialVirtualNodeLabelArrayInput` via:
 //
@@ -6358,6 +7301,12 @@ func (i VirtualNodePoolInitialVirtualNodeLabelArray) ToVirtualNodePoolInitialVir
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualNodePoolInitialVirtualNodeLabelArrayOutput)
 }
 
+func (i VirtualNodePoolInitialVirtualNodeLabelArray) ToOutput(ctx context.Context) pulumix.Output[[]VirtualNodePoolInitialVirtualNodeLabel] {
+	return pulumix.Output[[]VirtualNodePoolInitialVirtualNodeLabel]{
+		OutputState: i.ToVirtualNodePoolInitialVirtualNodeLabelArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type VirtualNodePoolInitialVirtualNodeLabelOutput struct{ *pulumi.OutputState }
 
 func (VirtualNodePoolInitialVirtualNodeLabelOutput) ElementType() reflect.Type {
@@ -6370,6 +7319,12 @@ func (o VirtualNodePoolInitialVirtualNodeLabelOutput) ToVirtualNodePoolInitialVi
 
 func (o VirtualNodePoolInitialVirtualNodeLabelOutput) ToVirtualNodePoolInitialVirtualNodeLabelOutputWithContext(ctx context.Context) VirtualNodePoolInitialVirtualNodeLabelOutput {
 	return o
+}
+
+func (o VirtualNodePoolInitialVirtualNodeLabelOutput) ToOutput(ctx context.Context) pulumix.Output[VirtualNodePoolInitialVirtualNodeLabel] {
+	return pulumix.Output[VirtualNodePoolInitialVirtualNodeLabel]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The key of the pair.
@@ -6394,6 +7349,12 @@ func (o VirtualNodePoolInitialVirtualNodeLabelArrayOutput) ToVirtualNodePoolInit
 
 func (o VirtualNodePoolInitialVirtualNodeLabelArrayOutput) ToVirtualNodePoolInitialVirtualNodeLabelArrayOutputWithContext(ctx context.Context) VirtualNodePoolInitialVirtualNodeLabelArrayOutput {
 	return o
+}
+
+func (o VirtualNodePoolInitialVirtualNodeLabelArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]VirtualNodePoolInitialVirtualNodeLabel] {
+	return pulumix.Output[[]VirtualNodePoolInitialVirtualNodeLabel]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o VirtualNodePoolInitialVirtualNodeLabelArrayOutput) Index(i pulumi.IntInput) VirtualNodePoolInitialVirtualNodeLabelOutput {
@@ -6443,6 +7404,12 @@ func (i VirtualNodePoolPlacementConfigurationArgs) ToVirtualNodePoolPlacementCon
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualNodePoolPlacementConfigurationOutput)
 }
 
+func (i VirtualNodePoolPlacementConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[VirtualNodePoolPlacementConfiguration] {
+	return pulumix.Output[VirtualNodePoolPlacementConfiguration]{
+		OutputState: i.ToVirtualNodePoolPlacementConfigurationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // VirtualNodePoolPlacementConfigurationArrayInput is an input type that accepts VirtualNodePoolPlacementConfigurationArray and VirtualNodePoolPlacementConfigurationArrayOutput values.
 // You can construct a concrete instance of `VirtualNodePoolPlacementConfigurationArrayInput` via:
 //
@@ -6468,6 +7435,12 @@ func (i VirtualNodePoolPlacementConfigurationArray) ToVirtualNodePoolPlacementCo
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualNodePoolPlacementConfigurationArrayOutput)
 }
 
+func (i VirtualNodePoolPlacementConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]VirtualNodePoolPlacementConfiguration] {
+	return pulumix.Output[[]VirtualNodePoolPlacementConfiguration]{
+		OutputState: i.ToVirtualNodePoolPlacementConfigurationArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type VirtualNodePoolPlacementConfigurationOutput struct{ *pulumi.OutputState }
 
 func (VirtualNodePoolPlacementConfigurationOutput) ElementType() reflect.Type {
@@ -6480,6 +7453,12 @@ func (o VirtualNodePoolPlacementConfigurationOutput) ToVirtualNodePoolPlacementC
 
 func (o VirtualNodePoolPlacementConfigurationOutput) ToVirtualNodePoolPlacementConfigurationOutputWithContext(ctx context.Context) VirtualNodePoolPlacementConfigurationOutput {
 	return o
+}
+
+func (o VirtualNodePoolPlacementConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[VirtualNodePoolPlacementConfiguration] {
+	return pulumix.Output[VirtualNodePoolPlacementConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The availability domain in which to place virtual nodes. Example: `Uocm:PHX-AD-1`
@@ -6509,6 +7488,12 @@ func (o VirtualNodePoolPlacementConfigurationArrayOutput) ToVirtualNodePoolPlace
 
 func (o VirtualNodePoolPlacementConfigurationArrayOutput) ToVirtualNodePoolPlacementConfigurationArrayOutputWithContext(ctx context.Context) VirtualNodePoolPlacementConfigurationArrayOutput {
 	return o
+}
+
+func (o VirtualNodePoolPlacementConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]VirtualNodePoolPlacementConfiguration] {
+	return pulumix.Output[[]VirtualNodePoolPlacementConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o VirtualNodePoolPlacementConfigurationArrayOutput) Index(i pulumi.IntInput) VirtualNodePoolPlacementConfigurationOutput {
@@ -6558,6 +7543,12 @@ func (i VirtualNodePoolPodConfigurationArgs) ToVirtualNodePoolPodConfigurationOu
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualNodePoolPodConfigurationOutput)
 }
 
+func (i VirtualNodePoolPodConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[VirtualNodePoolPodConfiguration] {
+	return pulumix.Output[VirtualNodePoolPodConfiguration]{
+		OutputState: i.ToVirtualNodePoolPodConfigurationOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i VirtualNodePoolPodConfigurationArgs) ToVirtualNodePoolPodConfigurationPtrOutput() VirtualNodePoolPodConfigurationPtrOutput {
 	return i.ToVirtualNodePoolPodConfigurationPtrOutputWithContext(context.Background())
 }
@@ -6599,6 +7590,12 @@ func (i *virtualNodePoolPodConfigurationPtrType) ToVirtualNodePoolPodConfigurati
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualNodePoolPodConfigurationPtrOutput)
 }
 
+func (i *virtualNodePoolPodConfigurationPtrType) ToOutput(ctx context.Context) pulumix.Output[*VirtualNodePoolPodConfiguration] {
+	return pulumix.Output[*VirtualNodePoolPodConfiguration]{
+		OutputState: i.ToVirtualNodePoolPodConfigurationPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type VirtualNodePoolPodConfigurationOutput struct{ *pulumi.OutputState }
 
 func (VirtualNodePoolPodConfigurationOutput) ElementType() reflect.Type {
@@ -6621,6 +7618,12 @@ func (o VirtualNodePoolPodConfigurationOutput) ToVirtualNodePoolPodConfiguration
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v VirtualNodePoolPodConfiguration) *VirtualNodePoolPodConfiguration {
 		return &v
 	}).(VirtualNodePoolPodConfigurationPtrOutput)
+}
+
+func (o VirtualNodePoolPodConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[VirtualNodePoolPodConfiguration] {
+	return pulumix.Output[VirtualNodePoolPodConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) List of network security group IDs applied to the Pod VNIC.
@@ -6650,6 +7653,12 @@ func (o VirtualNodePoolPodConfigurationPtrOutput) ToVirtualNodePoolPodConfigurat
 
 func (o VirtualNodePoolPodConfigurationPtrOutput) ToVirtualNodePoolPodConfigurationPtrOutputWithContext(ctx context.Context) VirtualNodePoolPodConfigurationPtrOutput {
 	return o
+}
+
+func (o VirtualNodePoolPodConfigurationPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*VirtualNodePoolPodConfiguration] {
+	return pulumix.Output[*VirtualNodePoolPodConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o VirtualNodePoolPodConfigurationPtrOutput) Elem() VirtualNodePoolPodConfigurationOutput {
@@ -6733,6 +7742,12 @@ func (i VirtualNodePoolTaintArgs) ToVirtualNodePoolTaintOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualNodePoolTaintOutput)
 }
 
+func (i VirtualNodePoolTaintArgs) ToOutput(ctx context.Context) pulumix.Output[VirtualNodePoolTaint] {
+	return pulumix.Output[VirtualNodePoolTaint]{
+		OutputState: i.ToVirtualNodePoolTaintOutputWithContext(ctx).OutputState,
+	}
+}
+
 // VirtualNodePoolTaintArrayInput is an input type that accepts VirtualNodePoolTaintArray and VirtualNodePoolTaintArrayOutput values.
 // You can construct a concrete instance of `VirtualNodePoolTaintArrayInput` via:
 //
@@ -6758,6 +7773,12 @@ func (i VirtualNodePoolTaintArray) ToVirtualNodePoolTaintArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualNodePoolTaintArrayOutput)
 }
 
+func (i VirtualNodePoolTaintArray) ToOutput(ctx context.Context) pulumix.Output[[]VirtualNodePoolTaint] {
+	return pulumix.Output[[]VirtualNodePoolTaint]{
+		OutputState: i.ToVirtualNodePoolTaintArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type VirtualNodePoolTaintOutput struct{ *pulumi.OutputState }
 
 func (VirtualNodePoolTaintOutput) ElementType() reflect.Type {
@@ -6770,6 +7791,12 @@ func (o VirtualNodePoolTaintOutput) ToVirtualNodePoolTaintOutput() VirtualNodePo
 
 func (o VirtualNodePoolTaintOutput) ToVirtualNodePoolTaintOutputWithContext(ctx context.Context) VirtualNodePoolTaintOutput {
 	return o
+}
+
+func (o VirtualNodePoolTaintOutput) ToOutput(ctx context.Context) pulumix.Output[VirtualNodePoolTaint] {
+	return pulumix.Output[VirtualNodePoolTaint]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The effect of the pair.
@@ -6799,6 +7826,12 @@ func (o VirtualNodePoolTaintArrayOutput) ToVirtualNodePoolTaintArrayOutput() Vir
 
 func (o VirtualNodePoolTaintArrayOutput) ToVirtualNodePoolTaintArrayOutputWithContext(ctx context.Context) VirtualNodePoolTaintArrayOutput {
 	return o
+}
+
+func (o VirtualNodePoolTaintArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]VirtualNodePoolTaint] {
+	return pulumix.Output[[]VirtualNodePoolTaint]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o VirtualNodePoolTaintArrayOutput) Index(i pulumi.IntInput) VirtualNodePoolTaintOutput {
@@ -6850,6 +7883,12 @@ func (i VirtualNodePoolVirtualNodeTagsArgs) ToVirtualNodePoolVirtualNodeTagsOutp
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualNodePoolVirtualNodeTagsOutput)
 }
 
+func (i VirtualNodePoolVirtualNodeTagsArgs) ToOutput(ctx context.Context) pulumix.Output[VirtualNodePoolVirtualNodeTags] {
+	return pulumix.Output[VirtualNodePoolVirtualNodeTags]{
+		OutputState: i.ToVirtualNodePoolVirtualNodeTagsOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i VirtualNodePoolVirtualNodeTagsArgs) ToVirtualNodePoolVirtualNodeTagsPtrOutput() VirtualNodePoolVirtualNodeTagsPtrOutput {
 	return i.ToVirtualNodePoolVirtualNodeTagsPtrOutputWithContext(context.Background())
 }
@@ -6891,6 +7930,12 @@ func (i *virtualNodePoolVirtualNodeTagsPtrType) ToVirtualNodePoolVirtualNodeTags
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualNodePoolVirtualNodeTagsPtrOutput)
 }
 
+func (i *virtualNodePoolVirtualNodeTagsPtrType) ToOutput(ctx context.Context) pulumix.Output[*VirtualNodePoolVirtualNodeTags] {
+	return pulumix.Output[*VirtualNodePoolVirtualNodeTags]{
+		OutputState: i.ToVirtualNodePoolVirtualNodeTagsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type VirtualNodePoolVirtualNodeTagsOutput struct{ *pulumi.OutputState }
 
 func (VirtualNodePoolVirtualNodeTagsOutput) ElementType() reflect.Type {
@@ -6913,6 +7958,12 @@ func (o VirtualNodePoolVirtualNodeTagsOutput) ToVirtualNodePoolVirtualNodeTagsPt
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v VirtualNodePoolVirtualNodeTags) *VirtualNodePoolVirtualNodeTags {
 		return &v
 	}).(VirtualNodePoolVirtualNodeTagsPtrOutput)
+}
+
+func (o VirtualNodePoolVirtualNodeTagsOutput) ToOutput(ctx context.Context) pulumix.Output[VirtualNodePoolVirtualNodeTags] {
+	return pulumix.Output[VirtualNodePoolVirtualNodeTags]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -6940,6 +7991,12 @@ func (o VirtualNodePoolVirtualNodeTagsPtrOutput) ToVirtualNodePoolVirtualNodeTag
 
 func (o VirtualNodePoolVirtualNodeTagsPtrOutput) ToVirtualNodePoolVirtualNodeTagsPtrOutputWithContext(ctx context.Context) VirtualNodePoolVirtualNodeTagsPtrOutput {
 	return o
+}
+
+func (o VirtualNodePoolVirtualNodeTagsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*VirtualNodePoolVirtualNodeTags] {
+	return pulumix.Output[*VirtualNodePoolVirtualNodeTags]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o VirtualNodePoolVirtualNodeTagsPtrOutput) Elem() VirtualNodePoolVirtualNodeTagsOutput {
@@ -7016,6 +8073,12 @@ func (i GetAddonAddonErrorArgs) ToGetAddonAddonErrorOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddonAddonErrorOutput)
 }
 
+func (i GetAddonAddonErrorArgs) ToOutput(ctx context.Context) pulumix.Output[GetAddonAddonError] {
+	return pulumix.Output[GetAddonAddonError]{
+		OutputState: i.ToGetAddonAddonErrorOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAddonAddonErrorArrayInput is an input type that accepts GetAddonAddonErrorArray and GetAddonAddonErrorArrayOutput values.
 // You can construct a concrete instance of `GetAddonAddonErrorArrayInput` via:
 //
@@ -7041,6 +8104,12 @@ func (i GetAddonAddonErrorArray) ToGetAddonAddonErrorArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddonAddonErrorArrayOutput)
 }
 
+func (i GetAddonAddonErrorArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAddonAddonError] {
+	return pulumix.Output[[]GetAddonAddonError]{
+		OutputState: i.ToGetAddonAddonErrorArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAddonAddonErrorOutput struct{ *pulumi.OutputState }
 
 func (GetAddonAddonErrorOutput) ElementType() reflect.Type {
@@ -7053,6 +8122,12 @@ func (o GetAddonAddonErrorOutput) ToGetAddonAddonErrorOutput() GetAddonAddonErro
 
 func (o GetAddonAddonErrorOutput) ToGetAddonAddonErrorOutputWithContext(ctx context.Context) GetAddonAddonErrorOutput {
 	return o
+}
+
+func (o GetAddonAddonErrorOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddonAddonError] {
+	return pulumix.Output[GetAddonAddonError]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
@@ -7082,6 +8157,12 @@ func (o GetAddonAddonErrorArrayOutput) ToGetAddonAddonErrorArrayOutput() GetAddo
 
 func (o GetAddonAddonErrorArrayOutput) ToGetAddonAddonErrorArrayOutputWithContext(ctx context.Context) GetAddonAddonErrorArrayOutput {
 	return o
+}
+
+func (o GetAddonAddonErrorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAddonAddonError] {
+	return pulumix.Output[[]GetAddonAddonError]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAddonAddonErrorArrayOutput) Index(i pulumi.IntInput) GetAddonAddonErrorOutput {
@@ -7127,6 +8208,12 @@ func (i GetAddonConfigurationArgs) ToGetAddonConfigurationOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddonConfigurationOutput)
 }
 
+func (i GetAddonConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetAddonConfiguration] {
+	return pulumix.Output[GetAddonConfiguration]{
+		OutputState: i.ToGetAddonConfigurationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAddonConfigurationArrayInput is an input type that accepts GetAddonConfigurationArray and GetAddonConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetAddonConfigurationArrayInput` via:
 //
@@ -7152,6 +8239,12 @@ func (i GetAddonConfigurationArray) ToGetAddonConfigurationArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddonConfigurationArrayOutput)
 }
 
+func (i GetAddonConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAddonConfiguration] {
+	return pulumix.Output[[]GetAddonConfiguration]{
+		OutputState: i.ToGetAddonConfigurationArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAddonConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetAddonConfigurationOutput) ElementType() reflect.Type {
@@ -7164,6 +8257,12 @@ func (o GetAddonConfigurationOutput) ToGetAddonConfigurationOutput() GetAddonCon
 
 func (o GetAddonConfigurationOutput) ToGetAddonConfigurationOutputWithContext(ctx context.Context) GetAddonConfigurationOutput {
 	return o
+}
+
+func (o GetAddonConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddonConfiguration] {
+	return pulumix.Output[GetAddonConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 // configuration key name
@@ -7188,6 +8287,12 @@ func (o GetAddonConfigurationArrayOutput) ToGetAddonConfigurationArrayOutput() G
 
 func (o GetAddonConfigurationArrayOutput) ToGetAddonConfigurationArrayOutputWithContext(ctx context.Context) GetAddonConfigurationArrayOutput {
 	return o
+}
+
+func (o GetAddonConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAddonConfiguration] {
+	return pulumix.Output[[]GetAddonConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAddonConfigurationArrayOutput) Index(i pulumi.IntInput) GetAddonConfigurationOutput {
@@ -7269,6 +8374,12 @@ func (i GetAddonOptionsAddonOptionArgs) ToGetAddonOptionsAddonOptionOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddonOptionsAddonOptionOutput)
 }
 
+func (i GetAddonOptionsAddonOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAddonOptionsAddonOption] {
+	return pulumix.Output[GetAddonOptionsAddonOption]{
+		OutputState: i.ToGetAddonOptionsAddonOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAddonOptionsAddonOptionArrayInput is an input type that accepts GetAddonOptionsAddonOptionArray and GetAddonOptionsAddonOptionArrayOutput values.
 // You can construct a concrete instance of `GetAddonOptionsAddonOptionArrayInput` via:
 //
@@ -7294,6 +8405,12 @@ func (i GetAddonOptionsAddonOptionArray) ToGetAddonOptionsAddonOptionArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddonOptionsAddonOptionArrayOutput)
 }
 
+func (i GetAddonOptionsAddonOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAddonOptionsAddonOption] {
+	return pulumix.Output[[]GetAddonOptionsAddonOption]{
+		OutputState: i.ToGetAddonOptionsAddonOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAddonOptionsAddonOptionOutput struct{ *pulumi.OutputState }
 
 func (GetAddonOptionsAddonOptionOutput) ElementType() reflect.Type {
@@ -7306,6 +8423,12 @@ func (o GetAddonOptionsAddonOptionOutput) ToGetAddonOptionsAddonOptionOutput() G
 
 func (o GetAddonOptionsAddonOptionOutput) ToGetAddonOptionsAddonOptionOutputWithContext(ctx context.Context) GetAddonOptionsAddonOptionOutput {
 	return o
+}
+
+func (o GetAddonOptionsAddonOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddonOptionsAddonOption] {
+	return pulumix.Output[GetAddonOptionsAddonOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Addon group info, a namespace concept that groups addons with similar functionalities.
@@ -7377,6 +8500,12 @@ func (o GetAddonOptionsAddonOptionArrayOutput) ToGetAddonOptionsAddonOptionArray
 	return o
 }
 
+func (o GetAddonOptionsAddonOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAddonOptionsAddonOption] {
+	return pulumix.Output[[]GetAddonOptionsAddonOption]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetAddonOptionsAddonOptionArrayOutput) Index(i pulumi.IntInput) GetAddonOptionsAddonOptionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAddonOptionsAddonOption {
 		return vs[0].([]GetAddonOptionsAddonOption)[vs[1].(int)]
@@ -7432,6 +8561,12 @@ func (i GetAddonOptionsAddonOptionVersionArgs) ToGetAddonOptionsAddonOptionVersi
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddonOptionsAddonOptionVersionOutput)
 }
 
+func (i GetAddonOptionsAddonOptionVersionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAddonOptionsAddonOptionVersion] {
+	return pulumix.Output[GetAddonOptionsAddonOptionVersion]{
+		OutputState: i.ToGetAddonOptionsAddonOptionVersionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAddonOptionsAddonOptionVersionArrayInput is an input type that accepts GetAddonOptionsAddonOptionVersionArray and GetAddonOptionsAddonOptionVersionArrayOutput values.
 // You can construct a concrete instance of `GetAddonOptionsAddonOptionVersionArrayInput` via:
 //
@@ -7457,6 +8592,12 @@ func (i GetAddonOptionsAddonOptionVersionArray) ToGetAddonOptionsAddonOptionVers
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddonOptionsAddonOptionVersionArrayOutput)
 }
 
+func (i GetAddonOptionsAddonOptionVersionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAddonOptionsAddonOptionVersion] {
+	return pulumix.Output[[]GetAddonOptionsAddonOptionVersion]{
+		OutputState: i.ToGetAddonOptionsAddonOptionVersionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAddonOptionsAddonOptionVersionOutput struct{ *pulumi.OutputState }
 
 func (GetAddonOptionsAddonOptionVersionOutput) ElementType() reflect.Type {
@@ -7469,6 +8610,12 @@ func (o GetAddonOptionsAddonOptionVersionOutput) ToGetAddonOptionsAddonOptionVer
 
 func (o GetAddonOptionsAddonOptionVersionOutput) ToGetAddonOptionsAddonOptionVersionOutputWithContext(ctx context.Context) GetAddonOptionsAddonOptionVersionOutput {
 	return o
+}
+
+func (o GetAddonOptionsAddonOptionVersionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddonOptionsAddonOptionVersion] {
+	return pulumix.Output[GetAddonOptionsAddonOptionVersion]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Addon version configuration details.
@@ -7512,6 +8659,12 @@ func (o GetAddonOptionsAddonOptionVersionArrayOutput) ToGetAddonOptionsAddonOpti
 
 func (o GetAddonOptionsAddonOptionVersionArrayOutput) ToGetAddonOptionsAddonOptionVersionArrayOutputWithContext(ctx context.Context) GetAddonOptionsAddonOptionVersionArrayOutput {
 	return o
+}
+
+func (o GetAddonOptionsAddonOptionVersionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAddonOptionsAddonOptionVersion] {
+	return pulumix.Output[[]GetAddonOptionsAddonOptionVersion]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAddonOptionsAddonOptionVersionArrayOutput) Index(i pulumi.IntInput) GetAddonOptionsAddonOptionVersionOutput {
@@ -7569,6 +8722,12 @@ func (i GetAddonOptionsAddonOptionVersionConfigurationArgs) ToGetAddonOptionsAdd
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddonOptionsAddonOptionVersionConfigurationOutput)
 }
 
+func (i GetAddonOptionsAddonOptionVersionConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetAddonOptionsAddonOptionVersionConfiguration] {
+	return pulumix.Output[GetAddonOptionsAddonOptionVersionConfiguration]{
+		OutputState: i.ToGetAddonOptionsAddonOptionVersionConfigurationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAddonOptionsAddonOptionVersionConfigurationArrayInput is an input type that accepts GetAddonOptionsAddonOptionVersionConfigurationArray and GetAddonOptionsAddonOptionVersionConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetAddonOptionsAddonOptionVersionConfigurationArrayInput` via:
 //
@@ -7594,6 +8753,12 @@ func (i GetAddonOptionsAddonOptionVersionConfigurationArray) ToGetAddonOptionsAd
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddonOptionsAddonOptionVersionConfigurationArrayOutput)
 }
 
+func (i GetAddonOptionsAddonOptionVersionConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAddonOptionsAddonOptionVersionConfiguration] {
+	return pulumix.Output[[]GetAddonOptionsAddonOptionVersionConfiguration]{
+		OutputState: i.ToGetAddonOptionsAddonOptionVersionConfigurationArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAddonOptionsAddonOptionVersionConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetAddonOptionsAddonOptionVersionConfigurationOutput) ElementType() reflect.Type {
@@ -7606,6 +8771,12 @@ func (o GetAddonOptionsAddonOptionVersionConfigurationOutput) ToGetAddonOptionsA
 
 func (o GetAddonOptionsAddonOptionVersionConfigurationOutput) ToGetAddonOptionsAddonOptionVersionConfigurationOutputWithContext(ctx context.Context) GetAddonOptionsAddonOptionVersionConfigurationOutput {
 	return o
+}
+
+func (o GetAddonOptionsAddonOptionVersionConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddonOptionsAddonOptionVersionConfiguration] {
+	return pulumix.Output[GetAddonOptionsAddonOptionVersionConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Information about the addon version.
@@ -7645,6 +8816,12 @@ func (o GetAddonOptionsAddonOptionVersionConfigurationArrayOutput) ToGetAddonOpt
 
 func (o GetAddonOptionsAddonOptionVersionConfigurationArrayOutput) ToGetAddonOptionsAddonOptionVersionConfigurationArrayOutputWithContext(ctx context.Context) GetAddonOptionsAddonOptionVersionConfigurationArrayOutput {
 	return o
+}
+
+func (o GetAddonOptionsAddonOptionVersionConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAddonOptionsAddonOptionVersionConfiguration] {
+	return pulumix.Output[[]GetAddonOptionsAddonOptionVersionConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAddonOptionsAddonOptionVersionConfigurationArrayOutput) Index(i pulumi.IntInput) GetAddonOptionsAddonOptionVersionConfigurationOutput {
@@ -7694,6 +8871,12 @@ func (i GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArgs) ToGetAddon
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutput)
 }
 
+func (i GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAddonOptionsAddonOptionVersionKubernetesVersionFilter] {
+	return pulumix.Output[GetAddonOptionsAddonOptionVersionKubernetesVersionFilter]{
+		OutputState: i.ToGetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayInput is an input type that accepts GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArray and GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayOutput values.
 // You can construct a concrete instance of `GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayInput` via:
 //
@@ -7719,6 +8902,12 @@ func (i GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArray) ToGetAddo
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayOutput)
 }
 
+func (i GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAddonOptionsAddonOptionVersionKubernetesVersionFilter] {
+	return pulumix.Output[[]GetAddonOptionsAddonOptionVersionKubernetesVersionFilter]{
+		OutputState: i.ToGetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutput) ElementType() reflect.Type {
@@ -7731,6 +8920,12 @@ func (o GetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutput) ToGetAdd
 
 func (o GetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutput) ToGetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutputWithContext(ctx context.Context) GetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutput {
 	return o
+}
+
+func (o GetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddonOptionsAddonOptionVersionKubernetesVersionFilter] {
+	return pulumix.Output[GetAddonOptionsAddonOptionVersionKubernetesVersionFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The exact version of kubernetes that are compatible.
@@ -7762,6 +8957,12 @@ func (o GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayOutput) ToG
 
 func (o GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayOutput) ToGetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayOutputWithContext(ctx context.Context) GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayOutput {
 	return o
+}
+
+func (o GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAddonOptionsAddonOptionVersionKubernetesVersionFilter] {
+	return pulumix.Output[[]GetAddonOptionsAddonOptionVersionKubernetesVersionFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayOutput) Index(i pulumi.IntInput) GetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutput {
@@ -7807,6 +9008,12 @@ func (i GetAddonOptionsFilterArgs) ToGetAddonOptionsFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddonOptionsFilterOutput)
 }
 
+func (i GetAddonOptionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAddonOptionsFilter] {
+	return pulumix.Output[GetAddonOptionsFilter]{
+		OutputState: i.ToGetAddonOptionsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAddonOptionsFilterArrayInput is an input type that accepts GetAddonOptionsFilterArray and GetAddonOptionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAddonOptionsFilterArrayInput` via:
 //
@@ -7832,6 +9039,12 @@ func (i GetAddonOptionsFilterArray) ToGetAddonOptionsFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddonOptionsFilterArrayOutput)
 }
 
+func (i GetAddonOptionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAddonOptionsFilter] {
+	return pulumix.Output[[]GetAddonOptionsFilter]{
+		OutputState: i.ToGetAddonOptionsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAddonOptionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAddonOptionsFilterOutput) ElementType() reflect.Type {
@@ -7844,6 +9057,12 @@ func (o GetAddonOptionsFilterOutput) ToGetAddonOptionsFilterOutput() GetAddonOpt
 
 func (o GetAddonOptionsFilterOutput) ToGetAddonOptionsFilterOutputWithContext(ctx context.Context) GetAddonOptionsFilterOutput {
 	return o
+}
+
+func (o GetAddonOptionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddonOptionsFilter] {
+	return pulumix.Output[GetAddonOptionsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Name of the addon and it would be unique.
@@ -7871,6 +9090,12 @@ func (o GetAddonOptionsFilterArrayOutput) ToGetAddonOptionsFilterArrayOutput() G
 
 func (o GetAddonOptionsFilterArrayOutput) ToGetAddonOptionsFilterArrayOutputWithContext(ctx context.Context) GetAddonOptionsFilterArrayOutput {
 	return o
+}
+
+func (o GetAddonOptionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAddonOptionsFilter] {
+	return pulumix.Output[[]GetAddonOptionsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAddonOptionsFilterArrayOutput) Index(i pulumi.IntInput) GetAddonOptionsFilterOutput {
@@ -7942,6 +9167,12 @@ func (i GetAddonsAddonArgs) ToGetAddonsAddonOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddonsAddonOutput)
 }
 
+func (i GetAddonsAddonArgs) ToOutput(ctx context.Context) pulumix.Output[GetAddonsAddon] {
+	return pulumix.Output[GetAddonsAddon]{
+		OutputState: i.ToGetAddonsAddonOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAddonsAddonArrayInput is an input type that accepts GetAddonsAddonArray and GetAddonsAddonArrayOutput values.
 // You can construct a concrete instance of `GetAddonsAddonArrayInput` via:
 //
@@ -7967,6 +9198,12 @@ func (i GetAddonsAddonArray) ToGetAddonsAddonArrayOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddonsAddonArrayOutput)
 }
 
+func (i GetAddonsAddonArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAddonsAddon] {
+	return pulumix.Output[[]GetAddonsAddon]{
+		OutputState: i.ToGetAddonsAddonArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAddonsAddonOutput struct{ *pulumi.OutputState }
 
 func (GetAddonsAddonOutput) ElementType() reflect.Type {
@@ -7979,6 +9216,12 @@ func (o GetAddonsAddonOutput) ToGetAddonsAddonOutput() GetAddonsAddonOutput {
 
 func (o GetAddonsAddonOutput) ToGetAddonsAddonOutputWithContext(ctx context.Context) GetAddonsAddonOutput {
 	return o
+}
+
+func (o GetAddonsAddonOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddonsAddon] {
+	return pulumix.Output[GetAddonsAddon]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The error info of the addon.
@@ -8039,6 +9282,12 @@ func (o GetAddonsAddonArrayOutput) ToGetAddonsAddonArrayOutputWithContext(ctx co
 	return o
 }
 
+func (o GetAddonsAddonArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAddonsAddon] {
+	return pulumix.Output[[]GetAddonsAddon]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetAddonsAddonArrayOutput) Index(i pulumi.IntInput) GetAddonsAddonOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAddonsAddon {
 		return vs[0].([]GetAddonsAddon)[vs[1].(int)]
@@ -8086,6 +9335,12 @@ func (i GetAddonsAddonAddonErrorArgs) ToGetAddonsAddonAddonErrorOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddonsAddonAddonErrorOutput)
 }
 
+func (i GetAddonsAddonAddonErrorArgs) ToOutput(ctx context.Context) pulumix.Output[GetAddonsAddonAddonError] {
+	return pulumix.Output[GetAddonsAddonAddonError]{
+		OutputState: i.ToGetAddonsAddonAddonErrorOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAddonsAddonAddonErrorArrayInput is an input type that accepts GetAddonsAddonAddonErrorArray and GetAddonsAddonAddonErrorArrayOutput values.
 // You can construct a concrete instance of `GetAddonsAddonAddonErrorArrayInput` via:
 //
@@ -8111,6 +9366,12 @@ func (i GetAddonsAddonAddonErrorArray) ToGetAddonsAddonAddonErrorArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddonsAddonAddonErrorArrayOutput)
 }
 
+func (i GetAddonsAddonAddonErrorArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAddonsAddonAddonError] {
+	return pulumix.Output[[]GetAddonsAddonAddonError]{
+		OutputState: i.ToGetAddonsAddonAddonErrorArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAddonsAddonAddonErrorOutput struct{ *pulumi.OutputState }
 
 func (GetAddonsAddonAddonErrorOutput) ElementType() reflect.Type {
@@ -8123,6 +9384,12 @@ func (o GetAddonsAddonAddonErrorOutput) ToGetAddonsAddonAddonErrorOutput() GetAd
 
 func (o GetAddonsAddonAddonErrorOutput) ToGetAddonsAddonAddonErrorOutputWithContext(ctx context.Context) GetAddonsAddonAddonErrorOutput {
 	return o
+}
+
+func (o GetAddonsAddonAddonErrorOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddonsAddonAddonError] {
+	return pulumix.Output[GetAddonsAddonAddonError]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
@@ -8152,6 +9419,12 @@ func (o GetAddonsAddonAddonErrorArrayOutput) ToGetAddonsAddonAddonErrorArrayOutp
 
 func (o GetAddonsAddonAddonErrorArrayOutput) ToGetAddonsAddonAddonErrorArrayOutputWithContext(ctx context.Context) GetAddonsAddonAddonErrorArrayOutput {
 	return o
+}
+
+func (o GetAddonsAddonAddonErrorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAddonsAddonAddonError] {
+	return pulumix.Output[[]GetAddonsAddonAddonError]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAddonsAddonAddonErrorArrayOutput) Index(i pulumi.IntInput) GetAddonsAddonAddonErrorOutput {
@@ -8197,6 +9470,12 @@ func (i GetAddonsAddonConfigurationArgs) ToGetAddonsAddonConfigurationOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddonsAddonConfigurationOutput)
 }
 
+func (i GetAddonsAddonConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetAddonsAddonConfiguration] {
+	return pulumix.Output[GetAddonsAddonConfiguration]{
+		OutputState: i.ToGetAddonsAddonConfigurationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAddonsAddonConfigurationArrayInput is an input type that accepts GetAddonsAddonConfigurationArray and GetAddonsAddonConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetAddonsAddonConfigurationArrayInput` via:
 //
@@ -8222,6 +9501,12 @@ func (i GetAddonsAddonConfigurationArray) ToGetAddonsAddonConfigurationArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddonsAddonConfigurationArrayOutput)
 }
 
+func (i GetAddonsAddonConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAddonsAddonConfiguration] {
+	return pulumix.Output[[]GetAddonsAddonConfiguration]{
+		OutputState: i.ToGetAddonsAddonConfigurationArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAddonsAddonConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetAddonsAddonConfigurationOutput) ElementType() reflect.Type {
@@ -8234,6 +9519,12 @@ func (o GetAddonsAddonConfigurationOutput) ToGetAddonsAddonConfigurationOutput()
 
 func (o GetAddonsAddonConfigurationOutput) ToGetAddonsAddonConfigurationOutputWithContext(ctx context.Context) GetAddonsAddonConfigurationOutput {
 	return o
+}
+
+func (o GetAddonsAddonConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddonsAddonConfiguration] {
+	return pulumix.Output[GetAddonsAddonConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 // configuration key name
@@ -8258,6 +9549,12 @@ func (o GetAddonsAddonConfigurationArrayOutput) ToGetAddonsAddonConfigurationArr
 
 func (o GetAddonsAddonConfigurationArrayOutput) ToGetAddonsAddonConfigurationArrayOutputWithContext(ctx context.Context) GetAddonsAddonConfigurationArrayOutput {
 	return o
+}
+
+func (o GetAddonsAddonConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAddonsAddonConfiguration] {
+	return pulumix.Output[[]GetAddonsAddonConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAddonsAddonConfigurationArrayOutput) Index(i pulumi.IntInput) GetAddonsAddonConfigurationOutput {
@@ -8301,6 +9598,12 @@ func (i GetAddonsFilterArgs) ToGetAddonsFilterOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddonsFilterOutput)
 }
 
+func (i GetAddonsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAddonsFilter] {
+	return pulumix.Output[GetAddonsFilter]{
+		OutputState: i.ToGetAddonsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAddonsFilterArrayInput is an input type that accepts GetAddonsFilterArray and GetAddonsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAddonsFilterArrayInput` via:
 //
@@ -8326,6 +9629,12 @@ func (i GetAddonsFilterArray) ToGetAddonsFilterArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddonsFilterArrayOutput)
 }
 
+func (i GetAddonsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAddonsFilter] {
+	return pulumix.Output[[]GetAddonsFilter]{
+		OutputState: i.ToGetAddonsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAddonsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAddonsFilterOutput) ElementType() reflect.Type {
@@ -8338,6 +9647,12 @@ func (o GetAddonsFilterOutput) ToGetAddonsFilterOutput() GetAddonsFilterOutput {
 
 func (o GetAddonsFilterOutput) ToGetAddonsFilterOutputWithContext(ctx context.Context) GetAddonsFilterOutput {
 	return o
+}
+
+func (o GetAddonsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddonsFilter] {
+	return pulumix.Output[GetAddonsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAddonsFilterOutput) Name() pulumi.StringOutput {
@@ -8364,6 +9679,12 @@ func (o GetAddonsFilterArrayOutput) ToGetAddonsFilterArrayOutput() GetAddonsFilt
 
 func (o GetAddonsFilterArrayOutput) ToGetAddonsFilterArrayOutputWithContext(ctx context.Context) GetAddonsFilterArrayOutput {
 	return o
+}
+
+func (o GetAddonsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAddonsFilter] {
+	return pulumix.Output[[]GetAddonsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAddonsFilterArrayOutput) Index(i pulumi.IntInput) GetAddonsFilterOutput {
@@ -8405,6 +9726,12 @@ func (i GetClusterOptionClusterPodNetworkOptionArgs) ToGetClusterOptionClusterPo
 	return pulumi.ToOutputWithContext(ctx, i).(GetClusterOptionClusterPodNetworkOptionOutput)
 }
 
+func (i GetClusterOptionClusterPodNetworkOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetClusterOptionClusterPodNetworkOption] {
+	return pulumix.Output[GetClusterOptionClusterPodNetworkOption]{
+		OutputState: i.ToGetClusterOptionClusterPodNetworkOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetClusterOptionClusterPodNetworkOptionArrayInput is an input type that accepts GetClusterOptionClusterPodNetworkOptionArray and GetClusterOptionClusterPodNetworkOptionArrayOutput values.
 // You can construct a concrete instance of `GetClusterOptionClusterPodNetworkOptionArrayInput` via:
 //
@@ -8430,6 +9757,12 @@ func (i GetClusterOptionClusterPodNetworkOptionArray) ToGetClusterOptionClusterP
 	return pulumi.ToOutputWithContext(ctx, i).(GetClusterOptionClusterPodNetworkOptionArrayOutput)
 }
 
+func (i GetClusterOptionClusterPodNetworkOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetClusterOptionClusterPodNetworkOption] {
+	return pulumix.Output[[]GetClusterOptionClusterPodNetworkOption]{
+		OutputState: i.ToGetClusterOptionClusterPodNetworkOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetClusterOptionClusterPodNetworkOptionOutput struct{ *pulumi.OutputState }
 
 func (GetClusterOptionClusterPodNetworkOptionOutput) ElementType() reflect.Type {
@@ -8442,6 +9775,12 @@ func (o GetClusterOptionClusterPodNetworkOptionOutput) ToGetClusterOptionCluster
 
 func (o GetClusterOptionClusterPodNetworkOptionOutput) ToGetClusterOptionClusterPodNetworkOptionOutputWithContext(ctx context.Context) GetClusterOptionClusterPodNetworkOptionOutput {
 	return o
+}
+
+func (o GetClusterOptionClusterPodNetworkOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetClusterOptionClusterPodNetworkOption] {
+	return pulumix.Output[GetClusterOptionClusterPodNetworkOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The CNI used by the node pools of this cluster
@@ -8461,6 +9800,12 @@ func (o GetClusterOptionClusterPodNetworkOptionArrayOutput) ToGetClusterOptionCl
 
 func (o GetClusterOptionClusterPodNetworkOptionArrayOutput) ToGetClusterOptionClusterPodNetworkOptionArrayOutputWithContext(ctx context.Context) GetClusterOptionClusterPodNetworkOptionArrayOutput {
 	return o
+}
+
+func (o GetClusterOptionClusterPodNetworkOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetClusterOptionClusterPodNetworkOption] {
+	return pulumix.Output[[]GetClusterOptionClusterPodNetworkOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetClusterOptionClusterPodNetworkOptionArrayOutput) Index(i pulumi.IntInput) GetClusterOptionClusterPodNetworkOptionOutput {
@@ -8504,6 +9849,12 @@ func (i GetClusterWorkloadMappingsFilterArgs) ToGetClusterWorkloadMappingsFilter
 	return pulumi.ToOutputWithContext(ctx, i).(GetClusterWorkloadMappingsFilterOutput)
 }
 
+func (i GetClusterWorkloadMappingsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetClusterWorkloadMappingsFilter] {
+	return pulumix.Output[GetClusterWorkloadMappingsFilter]{
+		OutputState: i.ToGetClusterWorkloadMappingsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetClusterWorkloadMappingsFilterArrayInput is an input type that accepts GetClusterWorkloadMappingsFilterArray and GetClusterWorkloadMappingsFilterArrayOutput values.
 // You can construct a concrete instance of `GetClusterWorkloadMappingsFilterArrayInput` via:
 //
@@ -8529,6 +9880,12 @@ func (i GetClusterWorkloadMappingsFilterArray) ToGetClusterWorkloadMappingsFilte
 	return pulumi.ToOutputWithContext(ctx, i).(GetClusterWorkloadMappingsFilterArrayOutput)
 }
 
+func (i GetClusterWorkloadMappingsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetClusterWorkloadMappingsFilter] {
+	return pulumix.Output[[]GetClusterWorkloadMappingsFilter]{
+		OutputState: i.ToGetClusterWorkloadMappingsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetClusterWorkloadMappingsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetClusterWorkloadMappingsFilterOutput) ElementType() reflect.Type {
@@ -8541,6 +9898,12 @@ func (o GetClusterWorkloadMappingsFilterOutput) ToGetClusterWorkloadMappingsFilt
 
 func (o GetClusterWorkloadMappingsFilterOutput) ToGetClusterWorkloadMappingsFilterOutputWithContext(ctx context.Context) GetClusterWorkloadMappingsFilterOutput {
 	return o
+}
+
+func (o GetClusterWorkloadMappingsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetClusterWorkloadMappingsFilter] {
+	return pulumix.Output[GetClusterWorkloadMappingsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetClusterWorkloadMappingsFilterOutput) Name() pulumi.StringOutput {
@@ -8567,6 +9930,12 @@ func (o GetClusterWorkloadMappingsFilterArrayOutput) ToGetClusterWorkloadMapping
 
 func (o GetClusterWorkloadMappingsFilterArrayOutput) ToGetClusterWorkloadMappingsFilterArrayOutputWithContext(ctx context.Context) GetClusterWorkloadMappingsFilterArrayOutput {
 	return o
+}
+
+func (o GetClusterWorkloadMappingsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetClusterWorkloadMappingsFilter] {
+	return pulumix.Output[[]GetClusterWorkloadMappingsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetClusterWorkloadMappingsFilterArrayOutput) Index(i pulumi.IntInput) GetClusterWorkloadMappingsFilterOutput {
@@ -8640,6 +10009,12 @@ func (i GetClusterWorkloadMappingsWorkloadMappingArgs) ToGetClusterWorkloadMappi
 	return pulumi.ToOutputWithContext(ctx, i).(GetClusterWorkloadMappingsWorkloadMappingOutput)
 }
 
+func (i GetClusterWorkloadMappingsWorkloadMappingArgs) ToOutput(ctx context.Context) pulumix.Output[GetClusterWorkloadMappingsWorkloadMapping] {
+	return pulumix.Output[GetClusterWorkloadMappingsWorkloadMapping]{
+		OutputState: i.ToGetClusterWorkloadMappingsWorkloadMappingOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetClusterWorkloadMappingsWorkloadMappingArrayInput is an input type that accepts GetClusterWorkloadMappingsWorkloadMappingArray and GetClusterWorkloadMappingsWorkloadMappingArrayOutput values.
 // You can construct a concrete instance of `GetClusterWorkloadMappingsWorkloadMappingArrayInput` via:
 //
@@ -8665,6 +10040,12 @@ func (i GetClusterWorkloadMappingsWorkloadMappingArray) ToGetClusterWorkloadMapp
 	return pulumi.ToOutputWithContext(ctx, i).(GetClusterWorkloadMappingsWorkloadMappingArrayOutput)
 }
 
+func (i GetClusterWorkloadMappingsWorkloadMappingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetClusterWorkloadMappingsWorkloadMapping] {
+	return pulumix.Output[[]GetClusterWorkloadMappingsWorkloadMapping]{
+		OutputState: i.ToGetClusterWorkloadMappingsWorkloadMappingArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetClusterWorkloadMappingsWorkloadMappingOutput struct{ *pulumi.OutputState }
 
 func (GetClusterWorkloadMappingsWorkloadMappingOutput) ElementType() reflect.Type {
@@ -8677,6 +10058,12 @@ func (o GetClusterWorkloadMappingsWorkloadMappingOutput) ToGetClusterWorkloadMap
 
 func (o GetClusterWorkloadMappingsWorkloadMappingOutput) ToGetClusterWorkloadMappingsWorkloadMappingOutputWithContext(ctx context.Context) GetClusterWorkloadMappingsWorkloadMappingOutput {
 	return o
+}
+
+func (o GetClusterWorkloadMappingsWorkloadMappingOutput) ToOutput(ctx context.Context) pulumix.Output[GetClusterWorkloadMappingsWorkloadMapping] {
+	return pulumix.Output[GetClusterWorkloadMappingsWorkloadMapping]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the cluster.
@@ -8736,6 +10123,12 @@ func (o GetClusterWorkloadMappingsWorkloadMappingArrayOutput) ToGetClusterWorklo
 
 func (o GetClusterWorkloadMappingsWorkloadMappingArrayOutput) ToGetClusterWorkloadMappingsWorkloadMappingArrayOutputWithContext(ctx context.Context) GetClusterWorkloadMappingsWorkloadMappingArrayOutput {
 	return o
+}
+
+func (o GetClusterWorkloadMappingsWorkloadMappingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetClusterWorkloadMappingsWorkloadMapping] {
+	return pulumix.Output[[]GetClusterWorkloadMappingsWorkloadMapping]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetClusterWorkloadMappingsWorkloadMappingArrayOutput) Index(i pulumi.IntInput) GetClusterWorkloadMappingsWorkloadMappingOutput {
@@ -8845,6 +10238,12 @@ func (i GetClustersClusterArgs) ToGetClustersClusterOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterOutput)
 }
 
+func (i GetClustersClusterArgs) ToOutput(ctx context.Context) pulumix.Output[GetClustersCluster] {
+	return pulumix.Output[GetClustersCluster]{
+		OutputState: i.ToGetClustersClusterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetClustersClusterArrayInput is an input type that accepts GetClustersClusterArray and GetClustersClusterArrayOutput values.
 // You can construct a concrete instance of `GetClustersClusterArrayInput` via:
 //
@@ -8870,6 +10269,12 @@ func (i GetClustersClusterArray) ToGetClustersClusterArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterArrayOutput)
 }
 
+func (i GetClustersClusterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersCluster] {
+	return pulumix.Output[[]GetClustersCluster]{
+		OutputState: i.ToGetClustersClusterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetClustersClusterOutput struct{ *pulumi.OutputState }
 
 func (GetClustersClusterOutput) ElementType() reflect.Type {
@@ -8882,6 +10287,12 @@ func (o GetClustersClusterOutput) ToGetClustersClusterOutput() GetClustersCluste
 
 func (o GetClustersClusterOutput) ToGetClustersClusterOutputWithContext(ctx context.Context) GetClustersClusterOutput {
 	return o
+}
+
+func (o GetClustersClusterOutput) ToOutput(ctx context.Context) pulumix.Output[GetClustersCluster] {
+	return pulumix.Output[GetClustersCluster]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Available Kubernetes versions to which the clusters masters may be upgraded.
@@ -8990,6 +10401,12 @@ func (o GetClustersClusterArrayOutput) ToGetClustersClusterArrayOutputWithContex
 	return o
 }
 
+func (o GetClustersClusterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersCluster] {
+	return pulumix.Output[[]GetClustersCluster]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetClustersClusterArrayOutput) Index(i pulumi.IntInput) GetClustersClusterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersCluster {
 		return vs[0].([]GetClustersCluster)[vs[1].(int)]
@@ -9029,6 +10446,12 @@ func (i GetClustersClusterClusterPodNetworkOptionArgs) ToGetClustersClusterClust
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterClusterPodNetworkOptionOutput)
 }
 
+func (i GetClustersClusterClusterPodNetworkOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetClustersClusterClusterPodNetworkOption] {
+	return pulumix.Output[GetClustersClusterClusterPodNetworkOption]{
+		OutputState: i.ToGetClustersClusterClusterPodNetworkOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetClustersClusterClusterPodNetworkOptionArrayInput is an input type that accepts GetClustersClusterClusterPodNetworkOptionArray and GetClustersClusterClusterPodNetworkOptionArrayOutput values.
 // You can construct a concrete instance of `GetClustersClusterClusterPodNetworkOptionArrayInput` via:
 //
@@ -9054,6 +10477,12 @@ func (i GetClustersClusterClusterPodNetworkOptionArray) ToGetClustersClusterClus
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterClusterPodNetworkOptionArrayOutput)
 }
 
+func (i GetClustersClusterClusterPodNetworkOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersClusterClusterPodNetworkOption] {
+	return pulumix.Output[[]GetClustersClusterClusterPodNetworkOption]{
+		OutputState: i.ToGetClustersClusterClusterPodNetworkOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetClustersClusterClusterPodNetworkOptionOutput struct{ *pulumi.OutputState }
 
 func (GetClustersClusterClusterPodNetworkOptionOutput) ElementType() reflect.Type {
@@ -9066,6 +10495,12 @@ func (o GetClustersClusterClusterPodNetworkOptionOutput) ToGetClustersClusterClu
 
 func (o GetClustersClusterClusterPodNetworkOptionOutput) ToGetClustersClusterClusterPodNetworkOptionOutputWithContext(ctx context.Context) GetClustersClusterClusterPodNetworkOptionOutput {
 	return o
+}
+
+func (o GetClustersClusterClusterPodNetworkOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetClustersClusterClusterPodNetworkOption] {
+	return pulumix.Output[GetClustersClusterClusterPodNetworkOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The CNI used by the node pools of this cluster
@@ -9085,6 +10520,12 @@ func (o GetClustersClusterClusterPodNetworkOptionArrayOutput) ToGetClustersClust
 
 func (o GetClustersClusterClusterPodNetworkOptionArrayOutput) ToGetClustersClusterClusterPodNetworkOptionArrayOutputWithContext(ctx context.Context) GetClustersClusterClusterPodNetworkOptionArrayOutput {
 	return o
+}
+
+func (o GetClustersClusterClusterPodNetworkOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersClusterClusterPodNetworkOption] {
+	return pulumix.Output[[]GetClustersClusterClusterPodNetworkOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetClustersClusterClusterPodNetworkOptionArrayOutput) Index(i pulumi.IntInput) GetClustersClusterClusterPodNetworkOptionOutput {
@@ -9138,6 +10579,12 @@ func (i GetClustersClusterEndpointArgs) ToGetClustersClusterEndpointOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterEndpointOutput)
 }
 
+func (i GetClustersClusterEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[GetClustersClusterEndpoint] {
+	return pulumix.Output[GetClustersClusterEndpoint]{
+		OutputState: i.ToGetClustersClusterEndpointOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetClustersClusterEndpointArrayInput is an input type that accepts GetClustersClusterEndpointArray and GetClustersClusterEndpointArrayOutput values.
 // You can construct a concrete instance of `GetClustersClusterEndpointArrayInput` via:
 //
@@ -9163,6 +10610,12 @@ func (i GetClustersClusterEndpointArray) ToGetClustersClusterEndpointArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterEndpointArrayOutput)
 }
 
+func (i GetClustersClusterEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersClusterEndpoint] {
+	return pulumix.Output[[]GetClustersClusterEndpoint]{
+		OutputState: i.ToGetClustersClusterEndpointArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetClustersClusterEndpointOutput struct{ *pulumi.OutputState }
 
 func (GetClustersClusterEndpointOutput) ElementType() reflect.Type {
@@ -9175,6 +10628,12 @@ func (o GetClustersClusterEndpointOutput) ToGetClustersClusterEndpointOutput() G
 
 func (o GetClustersClusterEndpointOutput) ToGetClustersClusterEndpointOutputWithContext(ctx context.Context) GetClustersClusterEndpointOutput {
 	return o
+}
+
+func (o GetClustersClusterEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[GetClustersClusterEndpoint] {
+	return pulumix.Output[GetClustersClusterEndpoint]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The non-native networking Kubernetes API server endpoint.
@@ -9209,6 +10668,12 @@ func (o GetClustersClusterEndpointArrayOutput) ToGetClustersClusterEndpointArray
 
 func (o GetClustersClusterEndpointArrayOutput) ToGetClustersClusterEndpointArrayOutputWithContext(ctx context.Context) GetClustersClusterEndpointArrayOutput {
 	return o
+}
+
+func (o GetClustersClusterEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersClusterEndpoint] {
+	return pulumix.Output[[]GetClustersClusterEndpoint]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetClustersClusterEndpointArrayOutput) Index(i pulumi.IntInput) GetClustersClusterEndpointOutput {
@@ -9258,6 +10723,12 @@ func (i GetClustersClusterEndpointConfigArgs) ToGetClustersClusterEndpointConfig
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterEndpointConfigOutput)
 }
 
+func (i GetClustersClusterEndpointConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetClustersClusterEndpointConfig] {
+	return pulumix.Output[GetClustersClusterEndpointConfig]{
+		OutputState: i.ToGetClustersClusterEndpointConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetClustersClusterEndpointConfigArrayInput is an input type that accepts GetClustersClusterEndpointConfigArray and GetClustersClusterEndpointConfigArrayOutput values.
 // You can construct a concrete instance of `GetClustersClusterEndpointConfigArrayInput` via:
 //
@@ -9283,6 +10754,12 @@ func (i GetClustersClusterEndpointConfigArray) ToGetClustersClusterEndpointConfi
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterEndpointConfigArrayOutput)
 }
 
+func (i GetClustersClusterEndpointConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersClusterEndpointConfig] {
+	return pulumix.Output[[]GetClustersClusterEndpointConfig]{
+		OutputState: i.ToGetClustersClusterEndpointConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetClustersClusterEndpointConfigOutput struct{ *pulumi.OutputState }
 
 func (GetClustersClusterEndpointConfigOutput) ElementType() reflect.Type {
@@ -9295,6 +10772,12 @@ func (o GetClustersClusterEndpointConfigOutput) ToGetClustersClusterEndpointConf
 
 func (o GetClustersClusterEndpointConfigOutput) ToGetClustersClusterEndpointConfigOutputWithContext(ctx context.Context) GetClustersClusterEndpointConfigOutput {
 	return o
+}
+
+func (o GetClustersClusterEndpointConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetClustersClusterEndpointConfig] {
+	return pulumix.Output[GetClustersClusterEndpointConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether the cluster should be assigned a public IP address. Defaults to false. If set to true on a private subnet, the cluster provisioning will fail.
@@ -9324,6 +10807,12 @@ func (o GetClustersClusterEndpointConfigArrayOutput) ToGetClustersClusterEndpoin
 
 func (o GetClustersClusterEndpointConfigArrayOutput) ToGetClustersClusterEndpointConfigArrayOutputWithContext(ctx context.Context) GetClustersClusterEndpointConfigArrayOutput {
 	return o
+}
+
+func (o GetClustersClusterEndpointConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersClusterEndpointConfig] {
+	return pulumix.Output[[]GetClustersClusterEndpointConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetClustersClusterEndpointConfigArrayOutput) Index(i pulumi.IntInput) GetClustersClusterEndpointConfigOutput {
@@ -9369,6 +10858,12 @@ func (i GetClustersClusterImagePolicyConfigArgs) ToGetClustersClusterImagePolicy
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterImagePolicyConfigOutput)
 }
 
+func (i GetClustersClusterImagePolicyConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetClustersClusterImagePolicyConfig] {
+	return pulumix.Output[GetClustersClusterImagePolicyConfig]{
+		OutputState: i.ToGetClustersClusterImagePolicyConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetClustersClusterImagePolicyConfigArrayInput is an input type that accepts GetClustersClusterImagePolicyConfigArray and GetClustersClusterImagePolicyConfigArrayOutput values.
 // You can construct a concrete instance of `GetClustersClusterImagePolicyConfigArrayInput` via:
 //
@@ -9394,6 +10889,12 @@ func (i GetClustersClusterImagePolicyConfigArray) ToGetClustersClusterImagePolic
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterImagePolicyConfigArrayOutput)
 }
 
+func (i GetClustersClusterImagePolicyConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersClusterImagePolicyConfig] {
+	return pulumix.Output[[]GetClustersClusterImagePolicyConfig]{
+		OutputState: i.ToGetClustersClusterImagePolicyConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetClustersClusterImagePolicyConfigOutput struct{ *pulumi.OutputState }
 
 func (GetClustersClusterImagePolicyConfigOutput) ElementType() reflect.Type {
@@ -9406,6 +10907,12 @@ func (o GetClustersClusterImagePolicyConfigOutput) ToGetClustersClusterImagePoli
 
 func (o GetClustersClusterImagePolicyConfigOutput) ToGetClustersClusterImagePolicyConfigOutputWithContext(ctx context.Context) GetClustersClusterImagePolicyConfigOutput {
 	return o
+}
+
+func (o GetClustersClusterImagePolicyConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetClustersClusterImagePolicyConfig] {
+	return pulumix.Output[GetClustersClusterImagePolicyConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether the image verification policy is enabled. Defaults to false. If set to true, the images will be verified against the policy at runtime.
@@ -9432,6 +10939,12 @@ func (o GetClustersClusterImagePolicyConfigArrayOutput) ToGetClustersClusterImag
 
 func (o GetClustersClusterImagePolicyConfigArrayOutput) ToGetClustersClusterImagePolicyConfigArrayOutputWithContext(ctx context.Context) GetClustersClusterImagePolicyConfigArrayOutput {
 	return o
+}
+
+func (o GetClustersClusterImagePolicyConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersClusterImagePolicyConfig] {
+	return pulumix.Output[[]GetClustersClusterImagePolicyConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetClustersClusterImagePolicyConfigArrayOutput) Index(i pulumi.IntInput) GetClustersClusterImagePolicyConfigOutput {
@@ -9473,6 +10986,12 @@ func (i GetClustersClusterImagePolicyConfigKeyDetailArgs) ToGetClustersClusterIm
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterImagePolicyConfigKeyDetailOutput)
 }
 
+func (i GetClustersClusterImagePolicyConfigKeyDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetClustersClusterImagePolicyConfigKeyDetail] {
+	return pulumix.Output[GetClustersClusterImagePolicyConfigKeyDetail]{
+		OutputState: i.ToGetClustersClusterImagePolicyConfigKeyDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetClustersClusterImagePolicyConfigKeyDetailArrayInput is an input type that accepts GetClustersClusterImagePolicyConfigKeyDetailArray and GetClustersClusterImagePolicyConfigKeyDetailArrayOutput values.
 // You can construct a concrete instance of `GetClustersClusterImagePolicyConfigKeyDetailArrayInput` via:
 //
@@ -9498,6 +11017,12 @@ func (i GetClustersClusterImagePolicyConfigKeyDetailArray) ToGetClustersClusterI
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterImagePolicyConfigKeyDetailArrayOutput)
 }
 
+func (i GetClustersClusterImagePolicyConfigKeyDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersClusterImagePolicyConfigKeyDetail] {
+	return pulumix.Output[[]GetClustersClusterImagePolicyConfigKeyDetail]{
+		OutputState: i.ToGetClustersClusterImagePolicyConfigKeyDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetClustersClusterImagePolicyConfigKeyDetailOutput struct{ *pulumi.OutputState }
 
 func (GetClustersClusterImagePolicyConfigKeyDetailOutput) ElementType() reflect.Type {
@@ -9510,6 +11035,12 @@ func (o GetClustersClusterImagePolicyConfigKeyDetailOutput) ToGetClustersCluster
 
 func (o GetClustersClusterImagePolicyConfigKeyDetailOutput) ToGetClustersClusterImagePolicyConfigKeyDetailOutputWithContext(ctx context.Context) GetClustersClusterImagePolicyConfigKeyDetailOutput {
 	return o
+}
+
+func (o GetClustersClusterImagePolicyConfigKeyDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetClustersClusterImagePolicyConfigKeyDetail] {
+	return pulumix.Output[GetClustersClusterImagePolicyConfigKeyDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption.
@@ -9529,6 +11060,12 @@ func (o GetClustersClusterImagePolicyConfigKeyDetailArrayOutput) ToGetClustersCl
 
 func (o GetClustersClusterImagePolicyConfigKeyDetailArrayOutput) ToGetClustersClusterImagePolicyConfigKeyDetailArrayOutputWithContext(ctx context.Context) GetClustersClusterImagePolicyConfigKeyDetailArrayOutput {
 	return o
+}
+
+func (o GetClustersClusterImagePolicyConfigKeyDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersClusterImagePolicyConfigKeyDetail] {
+	return pulumix.Output[[]GetClustersClusterImagePolicyConfigKeyDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetClustersClusterImagePolicyConfigKeyDetailArrayOutput) Index(i pulumi.IntInput) GetClustersClusterImagePolicyConfigKeyDetailOutput {
@@ -9606,6 +11143,12 @@ func (i GetClustersClusterMetadataArgs) ToGetClustersClusterMetadataOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterMetadataOutput)
 }
 
+func (i GetClustersClusterMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[GetClustersClusterMetadata] {
+	return pulumix.Output[GetClustersClusterMetadata]{
+		OutputState: i.ToGetClustersClusterMetadataOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetClustersClusterMetadataArrayInput is an input type that accepts GetClustersClusterMetadataArray and GetClustersClusterMetadataArrayOutput values.
 // You can construct a concrete instance of `GetClustersClusterMetadataArrayInput` via:
 //
@@ -9631,6 +11174,12 @@ func (i GetClustersClusterMetadataArray) ToGetClustersClusterMetadataArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterMetadataArrayOutput)
 }
 
+func (i GetClustersClusterMetadataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersClusterMetadata] {
+	return pulumix.Output[[]GetClustersClusterMetadata]{
+		OutputState: i.ToGetClustersClusterMetadataArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetClustersClusterMetadataOutput struct{ *pulumi.OutputState }
 
 func (GetClustersClusterMetadataOutput) ElementType() reflect.Type {
@@ -9643,6 +11192,12 @@ func (o GetClustersClusterMetadataOutput) ToGetClustersClusterMetadataOutput() G
 
 func (o GetClustersClusterMetadataOutput) ToGetClustersClusterMetadataOutputWithContext(ctx context.Context) GetClustersClusterMetadataOutput {
 	return o
+}
+
+func (o GetClustersClusterMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[GetClustersClusterMetadata] {
+	return pulumix.Output[GetClustersClusterMetadata]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The user who created the cluster.
@@ -9709,6 +11264,12 @@ func (o GetClustersClusterMetadataArrayOutput) ToGetClustersClusterMetadataArray
 	return o
 }
 
+func (o GetClustersClusterMetadataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersClusterMetadata] {
+	return pulumix.Output[[]GetClustersClusterMetadata]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetClustersClusterMetadataArrayOutput) Index(i pulumi.IntInput) GetClustersClusterMetadataOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersClusterMetadata {
 		return vs[0].([]GetClustersClusterMetadata)[vs[1].(int)]
@@ -9768,6 +11329,12 @@ func (i GetClustersClusterOptionArgs) ToGetClustersClusterOptionOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterOptionOutput)
 }
 
+func (i GetClustersClusterOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetClustersClusterOption] {
+	return pulumix.Output[GetClustersClusterOption]{
+		OutputState: i.ToGetClustersClusterOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetClustersClusterOptionArrayInput is an input type that accepts GetClustersClusterOptionArray and GetClustersClusterOptionArrayOutput values.
 // You can construct a concrete instance of `GetClustersClusterOptionArrayInput` via:
 //
@@ -9793,6 +11360,12 @@ func (i GetClustersClusterOptionArray) ToGetClustersClusterOptionArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterOptionArrayOutput)
 }
 
+func (i GetClustersClusterOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersClusterOption] {
+	return pulumix.Output[[]GetClustersClusterOption]{
+		OutputState: i.ToGetClustersClusterOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetClustersClusterOptionOutput struct{ *pulumi.OutputState }
 
 func (GetClustersClusterOptionOutput) ElementType() reflect.Type {
@@ -9805,6 +11378,12 @@ func (o GetClustersClusterOptionOutput) ToGetClustersClusterOptionOutput() GetCl
 
 func (o GetClustersClusterOptionOutput) ToGetClustersClusterOptionOutputWithContext(ctx context.Context) GetClustersClusterOptionOutput {
 	return o
+}
+
+func (o GetClustersClusterOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetClustersClusterOption] {
+	return pulumix.Output[GetClustersClusterOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Configurable cluster add-ons
@@ -9857,6 +11436,12 @@ func (o GetClustersClusterOptionArrayOutput) ToGetClustersClusterOptionArrayOutp
 	return o
 }
 
+func (o GetClustersClusterOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersClusterOption] {
+	return pulumix.Output[[]GetClustersClusterOption]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetClustersClusterOptionArrayOutput) Index(i pulumi.IntInput) GetClustersClusterOptionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersClusterOption {
 		return vs[0].([]GetClustersClusterOption)[vs[1].(int)]
@@ -9900,6 +11485,12 @@ func (i GetClustersClusterOptionAddOnArgs) ToGetClustersClusterOptionAddOnOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterOptionAddOnOutput)
 }
 
+func (i GetClustersClusterOptionAddOnArgs) ToOutput(ctx context.Context) pulumix.Output[GetClustersClusterOptionAddOn] {
+	return pulumix.Output[GetClustersClusterOptionAddOn]{
+		OutputState: i.ToGetClustersClusterOptionAddOnOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetClustersClusterOptionAddOnArrayInput is an input type that accepts GetClustersClusterOptionAddOnArray and GetClustersClusterOptionAddOnArrayOutput values.
 // You can construct a concrete instance of `GetClustersClusterOptionAddOnArrayInput` via:
 //
@@ -9925,6 +11516,12 @@ func (i GetClustersClusterOptionAddOnArray) ToGetClustersClusterOptionAddOnArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterOptionAddOnArrayOutput)
 }
 
+func (i GetClustersClusterOptionAddOnArray) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersClusterOptionAddOn] {
+	return pulumix.Output[[]GetClustersClusterOptionAddOn]{
+		OutputState: i.ToGetClustersClusterOptionAddOnArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetClustersClusterOptionAddOnOutput struct{ *pulumi.OutputState }
 
 func (GetClustersClusterOptionAddOnOutput) ElementType() reflect.Type {
@@ -9937,6 +11534,12 @@ func (o GetClustersClusterOptionAddOnOutput) ToGetClustersClusterOptionAddOnOutp
 
 func (o GetClustersClusterOptionAddOnOutput) ToGetClustersClusterOptionAddOnOutputWithContext(ctx context.Context) GetClustersClusterOptionAddOnOutput {
 	return o
+}
+
+func (o GetClustersClusterOptionAddOnOutput) ToOutput(ctx context.Context) pulumix.Output[GetClustersClusterOptionAddOn] {
+	return pulumix.Output[GetClustersClusterOptionAddOn]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether or not to enable the Kubernetes Dashboard add-on.
@@ -9961,6 +11564,12 @@ func (o GetClustersClusterOptionAddOnArrayOutput) ToGetClustersClusterOptionAddO
 
 func (o GetClustersClusterOptionAddOnArrayOutput) ToGetClustersClusterOptionAddOnArrayOutputWithContext(ctx context.Context) GetClustersClusterOptionAddOnArrayOutput {
 	return o
+}
+
+func (o GetClustersClusterOptionAddOnArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersClusterOptionAddOn] {
+	return pulumix.Output[[]GetClustersClusterOptionAddOn]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetClustersClusterOptionAddOnArrayOutput) Index(i pulumi.IntInput) GetClustersClusterOptionAddOnOutput {
@@ -10002,6 +11611,12 @@ func (i GetClustersClusterOptionAdmissionControllerOptionArgs) ToGetClustersClus
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterOptionAdmissionControllerOptionOutput)
 }
 
+func (i GetClustersClusterOptionAdmissionControllerOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetClustersClusterOptionAdmissionControllerOption] {
+	return pulumix.Output[GetClustersClusterOptionAdmissionControllerOption]{
+		OutputState: i.ToGetClustersClusterOptionAdmissionControllerOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetClustersClusterOptionAdmissionControllerOptionArrayInput is an input type that accepts GetClustersClusterOptionAdmissionControllerOptionArray and GetClustersClusterOptionAdmissionControllerOptionArrayOutput values.
 // You can construct a concrete instance of `GetClustersClusterOptionAdmissionControllerOptionArrayInput` via:
 //
@@ -10027,6 +11642,12 @@ func (i GetClustersClusterOptionAdmissionControllerOptionArray) ToGetClustersClu
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterOptionAdmissionControllerOptionArrayOutput)
 }
 
+func (i GetClustersClusterOptionAdmissionControllerOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersClusterOptionAdmissionControllerOption] {
+	return pulumix.Output[[]GetClustersClusterOptionAdmissionControllerOption]{
+		OutputState: i.ToGetClustersClusterOptionAdmissionControllerOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetClustersClusterOptionAdmissionControllerOptionOutput struct{ *pulumi.OutputState }
 
 func (GetClustersClusterOptionAdmissionControllerOptionOutput) ElementType() reflect.Type {
@@ -10039,6 +11660,12 @@ func (o GetClustersClusterOptionAdmissionControllerOptionOutput) ToGetClustersCl
 
 func (o GetClustersClusterOptionAdmissionControllerOptionOutput) ToGetClustersClusterOptionAdmissionControllerOptionOutputWithContext(ctx context.Context) GetClustersClusterOptionAdmissionControllerOptionOutput {
 	return o
+}
+
+func (o GetClustersClusterOptionAdmissionControllerOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetClustersClusterOptionAdmissionControllerOption] {
+	return pulumix.Output[GetClustersClusterOptionAdmissionControllerOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether or not to enable the Pod Security Policy admission controller.
@@ -10058,6 +11685,12 @@ func (o GetClustersClusterOptionAdmissionControllerOptionArrayOutput) ToGetClust
 
 func (o GetClustersClusterOptionAdmissionControllerOptionArrayOutput) ToGetClustersClusterOptionAdmissionControllerOptionArrayOutputWithContext(ctx context.Context) GetClustersClusterOptionAdmissionControllerOptionArrayOutput {
 	return o
+}
+
+func (o GetClustersClusterOptionAdmissionControllerOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersClusterOptionAdmissionControllerOption] {
+	return pulumix.Output[[]GetClustersClusterOptionAdmissionControllerOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetClustersClusterOptionAdmissionControllerOptionArrayOutput) Index(i pulumi.IntInput) GetClustersClusterOptionAdmissionControllerOptionOutput {
@@ -10103,6 +11736,12 @@ func (i GetClustersClusterOptionKubernetesNetworkConfigArgs) ToGetClustersCluste
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterOptionKubernetesNetworkConfigOutput)
 }
 
+func (i GetClustersClusterOptionKubernetesNetworkConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetClustersClusterOptionKubernetesNetworkConfig] {
+	return pulumix.Output[GetClustersClusterOptionKubernetesNetworkConfig]{
+		OutputState: i.ToGetClustersClusterOptionKubernetesNetworkConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetClustersClusterOptionKubernetesNetworkConfigArrayInput is an input type that accepts GetClustersClusterOptionKubernetesNetworkConfigArray and GetClustersClusterOptionKubernetesNetworkConfigArrayOutput values.
 // You can construct a concrete instance of `GetClustersClusterOptionKubernetesNetworkConfigArrayInput` via:
 //
@@ -10128,6 +11767,12 @@ func (i GetClustersClusterOptionKubernetesNetworkConfigArray) ToGetClustersClust
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterOptionKubernetesNetworkConfigArrayOutput)
 }
 
+func (i GetClustersClusterOptionKubernetesNetworkConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersClusterOptionKubernetesNetworkConfig] {
+	return pulumix.Output[[]GetClustersClusterOptionKubernetesNetworkConfig]{
+		OutputState: i.ToGetClustersClusterOptionKubernetesNetworkConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetClustersClusterOptionKubernetesNetworkConfigOutput struct{ *pulumi.OutputState }
 
 func (GetClustersClusterOptionKubernetesNetworkConfigOutput) ElementType() reflect.Type {
@@ -10140,6 +11785,12 @@ func (o GetClustersClusterOptionKubernetesNetworkConfigOutput) ToGetClustersClus
 
 func (o GetClustersClusterOptionKubernetesNetworkConfigOutput) ToGetClustersClusterOptionKubernetesNetworkConfigOutputWithContext(ctx context.Context) GetClustersClusterOptionKubernetesNetworkConfigOutput {
 	return o
+}
+
+func (o GetClustersClusterOptionKubernetesNetworkConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetClustersClusterOptionKubernetesNetworkConfig] {
+	return pulumix.Output[GetClustersClusterOptionKubernetesNetworkConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
@@ -10164,6 +11815,12 @@ func (o GetClustersClusterOptionKubernetesNetworkConfigArrayOutput) ToGetCluster
 
 func (o GetClustersClusterOptionKubernetesNetworkConfigArrayOutput) ToGetClustersClusterOptionKubernetesNetworkConfigArrayOutputWithContext(ctx context.Context) GetClustersClusterOptionKubernetesNetworkConfigArrayOutput {
 	return o
+}
+
+func (o GetClustersClusterOptionKubernetesNetworkConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersClusterOptionKubernetesNetworkConfig] {
+	return pulumix.Output[[]GetClustersClusterOptionKubernetesNetworkConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetClustersClusterOptionKubernetesNetworkConfigArrayOutput) Index(i pulumi.IntInput) GetClustersClusterOptionKubernetesNetworkConfigOutput {
@@ -10209,6 +11866,12 @@ func (i GetClustersClusterOptionPersistentVolumeConfigArgs) ToGetClustersCluster
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterOptionPersistentVolumeConfigOutput)
 }
 
+func (i GetClustersClusterOptionPersistentVolumeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetClustersClusterOptionPersistentVolumeConfig] {
+	return pulumix.Output[GetClustersClusterOptionPersistentVolumeConfig]{
+		OutputState: i.ToGetClustersClusterOptionPersistentVolumeConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetClustersClusterOptionPersistentVolumeConfigArrayInput is an input type that accepts GetClustersClusterOptionPersistentVolumeConfigArray and GetClustersClusterOptionPersistentVolumeConfigArrayOutput values.
 // You can construct a concrete instance of `GetClustersClusterOptionPersistentVolumeConfigArrayInput` via:
 //
@@ -10234,6 +11897,12 @@ func (i GetClustersClusterOptionPersistentVolumeConfigArray) ToGetClustersCluste
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterOptionPersistentVolumeConfigArrayOutput)
 }
 
+func (i GetClustersClusterOptionPersistentVolumeConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersClusterOptionPersistentVolumeConfig] {
+	return pulumix.Output[[]GetClustersClusterOptionPersistentVolumeConfig]{
+		OutputState: i.ToGetClustersClusterOptionPersistentVolumeConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetClustersClusterOptionPersistentVolumeConfigOutput struct{ *pulumi.OutputState }
 
 func (GetClustersClusterOptionPersistentVolumeConfigOutput) ElementType() reflect.Type {
@@ -10246,6 +11915,12 @@ func (o GetClustersClusterOptionPersistentVolumeConfigOutput) ToGetClustersClust
 
 func (o GetClustersClusterOptionPersistentVolumeConfigOutput) ToGetClustersClusterOptionPersistentVolumeConfigOutputWithContext(ctx context.Context) GetClustersClusterOptionPersistentVolumeConfigOutput {
 	return o
+}
+
+func (o GetClustersClusterOptionPersistentVolumeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetClustersClusterOptionPersistentVolumeConfig] {
+	return pulumix.Output[GetClustersClusterOptionPersistentVolumeConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -10270,6 +11945,12 @@ func (o GetClustersClusterOptionPersistentVolumeConfigArrayOutput) ToGetClusters
 
 func (o GetClustersClusterOptionPersistentVolumeConfigArrayOutput) ToGetClustersClusterOptionPersistentVolumeConfigArrayOutputWithContext(ctx context.Context) GetClustersClusterOptionPersistentVolumeConfigArrayOutput {
 	return o
+}
+
+func (o GetClustersClusterOptionPersistentVolumeConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersClusterOptionPersistentVolumeConfig] {
+	return pulumix.Output[[]GetClustersClusterOptionPersistentVolumeConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetClustersClusterOptionPersistentVolumeConfigArrayOutput) Index(i pulumi.IntInput) GetClustersClusterOptionPersistentVolumeConfigOutput {
@@ -10315,6 +11996,12 @@ func (i GetClustersClusterOptionServiceLbConfigArgs) ToGetClustersClusterOptionS
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterOptionServiceLbConfigOutput)
 }
 
+func (i GetClustersClusterOptionServiceLbConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetClustersClusterOptionServiceLbConfig] {
+	return pulumix.Output[GetClustersClusterOptionServiceLbConfig]{
+		OutputState: i.ToGetClustersClusterOptionServiceLbConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetClustersClusterOptionServiceLbConfigArrayInput is an input type that accepts GetClustersClusterOptionServiceLbConfigArray and GetClustersClusterOptionServiceLbConfigArrayOutput values.
 // You can construct a concrete instance of `GetClustersClusterOptionServiceLbConfigArrayInput` via:
 //
@@ -10340,6 +12027,12 @@ func (i GetClustersClusterOptionServiceLbConfigArray) ToGetClustersClusterOption
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterOptionServiceLbConfigArrayOutput)
 }
 
+func (i GetClustersClusterOptionServiceLbConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersClusterOptionServiceLbConfig] {
+	return pulumix.Output[[]GetClustersClusterOptionServiceLbConfig]{
+		OutputState: i.ToGetClustersClusterOptionServiceLbConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetClustersClusterOptionServiceLbConfigOutput struct{ *pulumi.OutputState }
 
 func (GetClustersClusterOptionServiceLbConfigOutput) ElementType() reflect.Type {
@@ -10352,6 +12045,12 @@ func (o GetClustersClusterOptionServiceLbConfigOutput) ToGetClustersClusterOptio
 
 func (o GetClustersClusterOptionServiceLbConfigOutput) ToGetClustersClusterOptionServiceLbConfigOutputWithContext(ctx context.Context) GetClustersClusterOptionServiceLbConfigOutput {
 	return o
+}
+
+func (o GetClustersClusterOptionServiceLbConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetClustersClusterOptionServiceLbConfig] {
+	return pulumix.Output[GetClustersClusterOptionServiceLbConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -10376,6 +12075,12 @@ func (o GetClustersClusterOptionServiceLbConfigArrayOutput) ToGetClustersCluster
 
 func (o GetClustersClusterOptionServiceLbConfigArrayOutput) ToGetClustersClusterOptionServiceLbConfigArrayOutputWithContext(ctx context.Context) GetClustersClusterOptionServiceLbConfigArrayOutput {
 	return o
+}
+
+func (o GetClustersClusterOptionServiceLbConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersClusterOptionServiceLbConfig] {
+	return pulumix.Output[[]GetClustersClusterOptionServiceLbConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetClustersClusterOptionServiceLbConfigArrayOutput) Index(i pulumi.IntInput) GetClustersClusterOptionServiceLbConfigOutput {
@@ -10421,6 +12126,12 @@ func (i GetClustersFilterArgs) ToGetClustersFilterOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersFilterOutput)
 }
 
+func (i GetClustersFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetClustersFilter] {
+	return pulumix.Output[GetClustersFilter]{
+		OutputState: i.ToGetClustersFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetClustersFilterArrayInput is an input type that accepts GetClustersFilterArray and GetClustersFilterArrayOutput values.
 // You can construct a concrete instance of `GetClustersFilterArrayInput` via:
 //
@@ -10446,6 +12157,12 @@ func (i GetClustersFilterArray) ToGetClustersFilterArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersFilterArrayOutput)
 }
 
+func (i GetClustersFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersFilter] {
+	return pulumix.Output[[]GetClustersFilter]{
+		OutputState: i.ToGetClustersFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetClustersFilterOutput struct{ *pulumi.OutputState }
 
 func (GetClustersFilterOutput) ElementType() reflect.Type {
@@ -10458,6 +12175,12 @@ func (o GetClustersFilterOutput) ToGetClustersFilterOutput() GetClustersFilterOu
 
 func (o GetClustersFilterOutput) ToGetClustersFilterOutputWithContext(ctx context.Context) GetClustersFilterOutput {
 	return o
+}
+
+func (o GetClustersFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetClustersFilter] {
+	return pulumix.Output[GetClustersFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name to filter on.
@@ -10485,6 +12208,12 @@ func (o GetClustersFilterArrayOutput) ToGetClustersFilterArrayOutput() GetCluste
 
 func (o GetClustersFilterArrayOutput) ToGetClustersFilterArrayOutputWithContext(ctx context.Context) GetClustersFilterArrayOutput {
 	return o
+}
+
+func (o GetClustersFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersFilter] {
+	return pulumix.Output[[]GetClustersFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetClustersFilterArrayOutput) Index(i pulumi.IntInput) GetClustersFilterOutput {
@@ -10530,6 +12259,12 @@ func (i GetNodePoolInitialNodeLabelArgs) ToGetNodePoolInitialNodeLabelOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolInitialNodeLabelOutput)
 }
 
+func (i GetNodePoolInitialNodeLabelArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolInitialNodeLabel] {
+	return pulumix.Output[GetNodePoolInitialNodeLabel]{
+		OutputState: i.ToGetNodePoolInitialNodeLabelOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNodePoolInitialNodeLabelArrayInput is an input type that accepts GetNodePoolInitialNodeLabelArray and GetNodePoolInitialNodeLabelArrayOutput values.
 // You can construct a concrete instance of `GetNodePoolInitialNodeLabelArrayInput` via:
 //
@@ -10555,6 +12290,12 @@ func (i GetNodePoolInitialNodeLabelArray) ToGetNodePoolInitialNodeLabelArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolInitialNodeLabelArrayOutput)
 }
 
+func (i GetNodePoolInitialNodeLabelArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolInitialNodeLabel] {
+	return pulumix.Output[[]GetNodePoolInitialNodeLabel]{
+		OutputState: i.ToGetNodePoolInitialNodeLabelArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNodePoolInitialNodeLabelOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolInitialNodeLabelOutput) ElementType() reflect.Type {
@@ -10567,6 +12308,12 @@ func (o GetNodePoolInitialNodeLabelOutput) ToGetNodePoolInitialNodeLabelOutput()
 
 func (o GetNodePoolInitialNodeLabelOutput) ToGetNodePoolInitialNodeLabelOutputWithContext(ctx context.Context) GetNodePoolInitialNodeLabelOutput {
 	return o
+}
+
+func (o GetNodePoolInitialNodeLabelOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolInitialNodeLabel] {
+	return pulumix.Output[GetNodePoolInitialNodeLabel]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The key of the pair.
@@ -10591,6 +12338,12 @@ func (o GetNodePoolInitialNodeLabelArrayOutput) ToGetNodePoolInitialNodeLabelArr
 
 func (o GetNodePoolInitialNodeLabelArrayOutput) ToGetNodePoolInitialNodeLabelArrayOutputWithContext(ctx context.Context) GetNodePoolInitialNodeLabelArrayOutput {
 	return o
+}
+
+func (o GetNodePoolInitialNodeLabelArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolInitialNodeLabel] {
+	return pulumix.Output[[]GetNodePoolInitialNodeLabel]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNodePoolInitialNodeLabelArrayOutput) Index(i pulumi.IntInput) GetNodePoolInitialNodeLabelOutput {
@@ -10684,6 +12437,12 @@ func (i GetNodePoolNodeArgs) ToGetNodePoolNodeOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeOutput)
 }
 
+func (i GetNodePoolNodeArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolNode] {
+	return pulumix.Output[GetNodePoolNode]{
+		OutputState: i.ToGetNodePoolNodeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNodePoolNodeArrayInput is an input type that accepts GetNodePoolNodeArray and GetNodePoolNodeArrayOutput values.
 // You can construct a concrete instance of `GetNodePoolNodeArrayInput` via:
 //
@@ -10709,6 +12468,12 @@ func (i GetNodePoolNodeArray) ToGetNodePoolNodeArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeArrayOutput)
 }
 
+func (i GetNodePoolNodeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolNode] {
+	return pulumix.Output[[]GetNodePoolNode]{
+		OutputState: i.ToGetNodePoolNodeArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNodePoolNodeOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolNodeOutput) ElementType() reflect.Type {
@@ -10721,6 +12486,12 @@ func (o GetNodePoolNodeOutput) ToGetNodePoolNodeOutput() GetNodePoolNodeOutput {
 
 func (o GetNodePoolNodeOutput) ToGetNodePoolNodeOutputWithContext(ctx context.Context) GetNodePoolNodeOutput {
 	return o
+}
+
+func (o GetNodePoolNodeOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolNode] {
+	return pulumix.Output[GetNodePoolNode]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the availability domain in which this node is placed.
@@ -10807,6 +12578,12 @@ func (o GetNodePoolNodeArrayOutput) ToGetNodePoolNodeArrayOutputWithContext(ctx 
 	return o
 }
 
+func (o GetNodePoolNodeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolNode] {
+	return pulumix.Output[[]GetNodePoolNode]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetNodePoolNodeArrayOutput) Index(i pulumi.IntInput) GetNodePoolNodeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolNode {
 		return vs[0].([]GetNodePoolNode)[vs[1].(int)]
@@ -10874,6 +12651,12 @@ func (i GetNodePoolNodeConfigDetailArgs) ToGetNodePoolNodeConfigDetailOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeConfigDetailOutput)
 }
 
+func (i GetNodePoolNodeConfigDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolNodeConfigDetail] {
+	return pulumix.Output[GetNodePoolNodeConfigDetail]{
+		OutputState: i.ToGetNodePoolNodeConfigDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNodePoolNodeConfigDetailArrayInput is an input type that accepts GetNodePoolNodeConfigDetailArray and GetNodePoolNodeConfigDetailArrayOutput values.
 // You can construct a concrete instance of `GetNodePoolNodeConfigDetailArrayInput` via:
 //
@@ -10899,6 +12682,12 @@ func (i GetNodePoolNodeConfigDetailArray) ToGetNodePoolNodeConfigDetailArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeConfigDetailArrayOutput)
 }
 
+func (i GetNodePoolNodeConfigDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolNodeConfigDetail] {
+	return pulumix.Output[[]GetNodePoolNodeConfigDetail]{
+		OutputState: i.ToGetNodePoolNodeConfigDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNodePoolNodeConfigDetailOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolNodeConfigDetailOutput) ElementType() reflect.Type {
@@ -10911,6 +12700,12 @@ func (o GetNodePoolNodeConfigDetailOutput) ToGetNodePoolNodeConfigDetailOutput()
 
 func (o GetNodePoolNodeConfigDetailOutput) ToGetNodePoolNodeConfigDetailOutputWithContext(ctx context.Context) GetNodePoolNodeConfigDetailOutput {
 	return o
+}
+
+func (o GetNodePoolNodeConfigDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolNodeConfigDetail] {
+	return pulumix.Output[GetNodePoolNodeConfigDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -10971,6 +12766,12 @@ func (o GetNodePoolNodeConfigDetailArrayOutput) ToGetNodePoolNodeConfigDetailArr
 	return o
 }
 
+func (o GetNodePoolNodeConfigDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolNodeConfigDetail] {
+	return pulumix.Output[[]GetNodePoolNodeConfigDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetNodePoolNodeConfigDetailArrayOutput) Index(i pulumi.IntInput) GetNodePoolNodeConfigDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolNodeConfigDetail {
 		return vs[0].([]GetNodePoolNodeConfigDetail)[vs[1].(int)]
@@ -11022,6 +12823,12 @@ func (i GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArgs) ToGetNode
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput)
 }
 
+func (i GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail] {
+	return pulumix.Output[GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail]{
+		OutputState: i.ToGetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayInput is an input type that accepts GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArray and GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput values.
 // You can construct a concrete instance of `GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayInput` via:
 //
@@ -11047,6 +12854,12 @@ func (i GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArray) ToGetNod
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput)
 }
 
+func (i GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail] {
+	return pulumix.Output[[]GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail]{
+		OutputState: i.ToGetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput) ElementType() reflect.Type {
@@ -11059,6 +12872,12 @@ func (o GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput) ToGetNo
 
 func (o GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput) ToGetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutputWithContext(ctx context.Context) GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput {
 	return o
+}
+
+func (o GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail] {
+	return pulumix.Output[GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The CNI plugin used by this node pool
@@ -11093,6 +12912,12 @@ func (o GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput) To
 
 func (o GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput) ToGetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutputWithContext(ctx context.Context) GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput {
 	return o
+}
+
+func (o GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail] {
+	return pulumix.Output[[]GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput) Index(i pulumi.IntInput) GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput {
@@ -11150,6 +12975,12 @@ func (i GetNodePoolNodeConfigDetailPlacementConfigArgs) ToGetNodePoolNodeConfigD
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeConfigDetailPlacementConfigOutput)
 }
 
+func (i GetNodePoolNodeConfigDetailPlacementConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolNodeConfigDetailPlacementConfig] {
+	return pulumix.Output[GetNodePoolNodeConfigDetailPlacementConfig]{
+		OutputState: i.ToGetNodePoolNodeConfigDetailPlacementConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNodePoolNodeConfigDetailPlacementConfigArrayInput is an input type that accepts GetNodePoolNodeConfigDetailPlacementConfigArray and GetNodePoolNodeConfigDetailPlacementConfigArrayOutput values.
 // You can construct a concrete instance of `GetNodePoolNodeConfigDetailPlacementConfigArrayInput` via:
 //
@@ -11175,6 +13006,12 @@ func (i GetNodePoolNodeConfigDetailPlacementConfigArray) ToGetNodePoolNodeConfig
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeConfigDetailPlacementConfigArrayOutput)
 }
 
+func (i GetNodePoolNodeConfigDetailPlacementConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolNodeConfigDetailPlacementConfig] {
+	return pulumix.Output[[]GetNodePoolNodeConfigDetailPlacementConfig]{
+		OutputState: i.ToGetNodePoolNodeConfigDetailPlacementConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNodePoolNodeConfigDetailPlacementConfigOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolNodeConfigDetailPlacementConfigOutput) ElementType() reflect.Type {
@@ -11187,6 +13024,12 @@ func (o GetNodePoolNodeConfigDetailPlacementConfigOutput) ToGetNodePoolNodeConfi
 
 func (o GetNodePoolNodeConfigDetailPlacementConfigOutput) ToGetNodePoolNodeConfigDetailPlacementConfigOutputWithContext(ctx context.Context) GetNodePoolNodeConfigDetailPlacementConfigOutput {
 	return o
+}
+
+func (o GetNodePoolNodeConfigDetailPlacementConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolNodeConfigDetailPlacementConfig] {
+	return pulumix.Output[GetNodePoolNodeConfigDetailPlacementConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the availability domain in which this node is placed.
@@ -11230,6 +13073,12 @@ func (o GetNodePoolNodeConfigDetailPlacementConfigArrayOutput) ToGetNodePoolNode
 	return o
 }
 
+func (o GetNodePoolNodeConfigDetailPlacementConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolNodeConfigDetailPlacementConfig] {
+	return pulumix.Output[[]GetNodePoolNodeConfigDetailPlacementConfig]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetNodePoolNodeConfigDetailPlacementConfigArrayOutput) Index(i pulumi.IntInput) GetNodePoolNodeConfigDetailPlacementConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolNodeConfigDetailPlacementConfig {
 		return vs[0].([]GetNodePoolNodeConfigDetailPlacementConfig)[vs[1].(int)]
@@ -11269,6 +13118,12 @@ func (i GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArgs) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput)
 }
 
+func (i GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig] {
+	return pulumix.Output[GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig]{
+		OutputState: i.ToGetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayInput is an input type that accepts GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArray and GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput values.
 // You can construct a concrete instance of `GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayInput` via:
 //
@@ -11294,6 +13149,12 @@ func (i GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArray) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput)
 }
 
+func (i GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig] {
+	return pulumix.Output[[]GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig]{
+		OutputState: i.ToGetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput) ElementType() reflect.Type {
@@ -11306,6 +13167,12 @@ func (o GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput) T
 
 func (o GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput) ToGetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutputWithContext(ctx context.Context) GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput {
 	return o
+}
+
+func (o GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig] {
+	return pulumix.Output[GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The action to run when the preemptible node is interrupted for eviction.
@@ -11327,6 +13194,12 @@ func (o GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutp
 
 func (o GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput) ToGetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutputWithContext(ctx context.Context) GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput {
 	return o
+}
+
+func (o GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig] {
+	return pulumix.Output[[]GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput) Index(i pulumi.IntInput) GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput {
@@ -11372,6 +13245,12 @@ func (i GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptio
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput)
 }
 
+func (i GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction] {
+	return pulumix.Output[GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction]{
+		OutputState: i.ToGetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayInput is an input type that accepts GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArray and GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput values.
 // You can construct a concrete instance of `GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayInput` via:
 //
@@ -11397,6 +13276,12 @@ func (i GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptio
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput)
 }
 
+func (i GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction] {
+	return pulumix.Output[[]GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction]{
+		OutputState: i.ToGetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput) ElementType() reflect.Type {
@@ -11409,6 +13294,12 @@ func (o GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptio
 
 func (o GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput) ToGetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutputWithContext(ctx context.Context) GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput {
 	return o
+}
+
+func (o GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction] {
+	return pulumix.Output[GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
@@ -11437,6 +13328,12 @@ func (o GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptio
 
 func (o GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput) ToGetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutputWithContext(ctx context.Context) GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput {
 	return o
+}
+
+func (o GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction] {
+	return pulumix.Output[[]GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput) Index(i pulumi.IntInput) GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput {
@@ -11486,6 +13383,12 @@ func (i GetNodePoolNodeErrorArgs) ToGetNodePoolNodeErrorOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeErrorOutput)
 }
 
+func (i GetNodePoolNodeErrorArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolNodeError] {
+	return pulumix.Output[GetNodePoolNodeError]{
+		OutputState: i.ToGetNodePoolNodeErrorOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNodePoolNodeErrorArrayInput is an input type that accepts GetNodePoolNodeErrorArray and GetNodePoolNodeErrorArrayOutput values.
 // You can construct a concrete instance of `GetNodePoolNodeErrorArrayInput` via:
 //
@@ -11511,6 +13414,12 @@ func (i GetNodePoolNodeErrorArray) ToGetNodePoolNodeErrorArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeErrorArrayOutput)
 }
 
+func (i GetNodePoolNodeErrorArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolNodeError] {
+	return pulumix.Output[[]GetNodePoolNodeError]{
+		OutputState: i.ToGetNodePoolNodeErrorArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNodePoolNodeErrorOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolNodeErrorOutput) ElementType() reflect.Type {
@@ -11523,6 +13432,12 @@ func (o GetNodePoolNodeErrorOutput) ToGetNodePoolNodeErrorOutput() GetNodePoolNo
 
 func (o GetNodePoolNodeErrorOutput) ToGetNodePoolNodeErrorOutputWithContext(ctx context.Context) GetNodePoolNodeErrorOutput {
 	return o
+}
+
+func (o GetNodePoolNodeErrorOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolNodeError] {
+	return pulumix.Output[GetNodePoolNodeError]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
@@ -11552,6 +13467,12 @@ func (o GetNodePoolNodeErrorArrayOutput) ToGetNodePoolNodeErrorArrayOutput() Get
 
 func (o GetNodePoolNodeErrorArrayOutput) ToGetNodePoolNodeErrorArrayOutputWithContext(ctx context.Context) GetNodePoolNodeErrorArrayOutput {
 	return o
+}
+
+func (o GetNodePoolNodeErrorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolNodeError] {
+	return pulumix.Output[[]GetNodePoolNodeError]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNodePoolNodeErrorArrayOutput) Index(i pulumi.IntInput) GetNodePoolNodeErrorOutput {
@@ -11597,6 +13518,12 @@ func (i GetNodePoolNodeEvictionNodePoolSettingArgs) ToGetNodePoolNodeEvictionNod
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeEvictionNodePoolSettingOutput)
 }
 
+func (i GetNodePoolNodeEvictionNodePoolSettingArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolNodeEvictionNodePoolSetting] {
+	return pulumix.Output[GetNodePoolNodeEvictionNodePoolSetting]{
+		OutputState: i.ToGetNodePoolNodeEvictionNodePoolSettingOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNodePoolNodeEvictionNodePoolSettingArrayInput is an input type that accepts GetNodePoolNodeEvictionNodePoolSettingArray and GetNodePoolNodeEvictionNodePoolSettingArrayOutput values.
 // You can construct a concrete instance of `GetNodePoolNodeEvictionNodePoolSettingArrayInput` via:
 //
@@ -11622,6 +13549,12 @@ func (i GetNodePoolNodeEvictionNodePoolSettingArray) ToGetNodePoolNodeEvictionNo
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeEvictionNodePoolSettingArrayOutput)
 }
 
+func (i GetNodePoolNodeEvictionNodePoolSettingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolNodeEvictionNodePoolSetting] {
+	return pulumix.Output[[]GetNodePoolNodeEvictionNodePoolSetting]{
+		OutputState: i.ToGetNodePoolNodeEvictionNodePoolSettingArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNodePoolNodeEvictionNodePoolSettingOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolNodeEvictionNodePoolSettingOutput) ElementType() reflect.Type {
@@ -11634,6 +13567,12 @@ func (o GetNodePoolNodeEvictionNodePoolSettingOutput) ToGetNodePoolNodeEvictionN
 
 func (o GetNodePoolNodeEvictionNodePoolSettingOutput) ToGetNodePoolNodeEvictionNodePoolSettingOutputWithContext(ctx context.Context) GetNodePoolNodeEvictionNodePoolSettingOutput {
 	return o
+}
+
+func (o GetNodePoolNodeEvictionNodePoolSettingOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolNodeEvictionNodePoolSetting] {
+	return pulumix.Output[GetNodePoolNodeEvictionNodePoolSetting]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
@@ -11658,6 +13597,12 @@ func (o GetNodePoolNodeEvictionNodePoolSettingArrayOutput) ToGetNodePoolNodeEvic
 
 func (o GetNodePoolNodeEvictionNodePoolSettingArrayOutput) ToGetNodePoolNodeEvictionNodePoolSettingArrayOutputWithContext(ctx context.Context) GetNodePoolNodeEvictionNodePoolSettingArrayOutput {
 	return o
+}
+
+func (o GetNodePoolNodeEvictionNodePoolSettingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolNodeEvictionNodePoolSetting] {
+	return pulumix.Output[[]GetNodePoolNodeEvictionNodePoolSetting]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNodePoolNodeEvictionNodePoolSettingArrayOutput) Index(i pulumi.IntInput) GetNodePoolNodeEvictionNodePoolSettingOutput {
@@ -11707,6 +13652,12 @@ func (i GetNodePoolNodePoolCyclingDetailArgs) ToGetNodePoolNodePoolCyclingDetail
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodePoolCyclingDetailOutput)
 }
 
+func (i GetNodePoolNodePoolCyclingDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolNodePoolCyclingDetail] {
+	return pulumix.Output[GetNodePoolNodePoolCyclingDetail]{
+		OutputState: i.ToGetNodePoolNodePoolCyclingDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNodePoolNodePoolCyclingDetailArrayInput is an input type that accepts GetNodePoolNodePoolCyclingDetailArray and GetNodePoolNodePoolCyclingDetailArrayOutput values.
 // You can construct a concrete instance of `GetNodePoolNodePoolCyclingDetailArrayInput` via:
 //
@@ -11732,6 +13683,12 @@ func (i GetNodePoolNodePoolCyclingDetailArray) ToGetNodePoolNodePoolCyclingDetai
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodePoolCyclingDetailArrayOutput)
 }
 
+func (i GetNodePoolNodePoolCyclingDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolNodePoolCyclingDetail] {
+	return pulumix.Output[[]GetNodePoolNodePoolCyclingDetail]{
+		OutputState: i.ToGetNodePoolNodePoolCyclingDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNodePoolNodePoolCyclingDetailOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolNodePoolCyclingDetailOutput) ElementType() reflect.Type {
@@ -11744,6 +13701,12 @@ func (o GetNodePoolNodePoolCyclingDetailOutput) ToGetNodePoolNodePoolCyclingDeta
 
 func (o GetNodePoolNodePoolCyclingDetailOutput) ToGetNodePoolNodePoolCyclingDetailOutputWithContext(ctx context.Context) GetNodePoolNodePoolCyclingDetailOutput {
 	return o
+}
+
+func (o GetNodePoolNodePoolCyclingDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolNodePoolCyclingDetail] {
+	return pulumix.Output[GetNodePoolNodePoolCyclingDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // If nodes in the nodepool will be cycled to have new changes.
@@ -11773,6 +13736,12 @@ func (o GetNodePoolNodePoolCyclingDetailArrayOutput) ToGetNodePoolNodePoolCyclin
 
 func (o GetNodePoolNodePoolCyclingDetailArrayOutput) ToGetNodePoolNodePoolCyclingDetailArrayOutputWithContext(ctx context.Context) GetNodePoolNodePoolCyclingDetailArrayOutput {
 	return o
+}
+
+func (o GetNodePoolNodePoolCyclingDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolNodePoolCyclingDetail] {
+	return pulumix.Output[[]GetNodePoolNodePoolCyclingDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNodePoolNodePoolCyclingDetailArrayOutput) Index(i pulumi.IntInput) GetNodePoolNodePoolCyclingDetailOutput {
@@ -11818,6 +13787,12 @@ func (i GetNodePoolNodeShapeConfigArgs) ToGetNodePoolNodeShapeConfigOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeShapeConfigOutput)
 }
 
+func (i GetNodePoolNodeShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolNodeShapeConfig] {
+	return pulumix.Output[GetNodePoolNodeShapeConfig]{
+		OutputState: i.ToGetNodePoolNodeShapeConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNodePoolNodeShapeConfigArrayInput is an input type that accepts GetNodePoolNodeShapeConfigArray and GetNodePoolNodeShapeConfigArrayOutput values.
 // You can construct a concrete instance of `GetNodePoolNodeShapeConfigArrayInput` via:
 //
@@ -11843,6 +13818,12 @@ func (i GetNodePoolNodeShapeConfigArray) ToGetNodePoolNodeShapeConfigArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeShapeConfigArrayOutput)
 }
 
+func (i GetNodePoolNodeShapeConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolNodeShapeConfig] {
+	return pulumix.Output[[]GetNodePoolNodeShapeConfig]{
+		OutputState: i.ToGetNodePoolNodeShapeConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNodePoolNodeShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolNodeShapeConfigOutput) ElementType() reflect.Type {
@@ -11855,6 +13836,12 @@ func (o GetNodePoolNodeShapeConfigOutput) ToGetNodePoolNodeShapeConfigOutput() G
 
 func (o GetNodePoolNodeShapeConfigOutput) ToGetNodePoolNodeShapeConfigOutputWithContext(ctx context.Context) GetNodePoolNodeShapeConfigOutput {
 	return o
+}
+
+func (o GetNodePoolNodeShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolNodeShapeConfig] {
+	return pulumix.Output[GetNodePoolNodeShapeConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The total amount of memory available to each node, in gigabytes.
@@ -11879,6 +13866,12 @@ func (o GetNodePoolNodeShapeConfigArrayOutput) ToGetNodePoolNodeShapeConfigArray
 
 func (o GetNodePoolNodeShapeConfigArrayOutput) ToGetNodePoolNodeShapeConfigArrayOutputWithContext(ctx context.Context) GetNodePoolNodeShapeConfigArrayOutput {
 	return o
+}
+
+func (o GetNodePoolNodeShapeConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolNodeShapeConfig] {
+	return pulumix.Output[[]GetNodePoolNodeShapeConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNodePoolNodeShapeConfigArrayOutput) Index(i pulumi.IntInput) GetNodePoolNodeShapeConfigOutput {
@@ -11928,6 +13921,12 @@ func (i GetNodePoolNodeSourceArgs) ToGetNodePoolNodeSourceOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeSourceOutput)
 }
 
+func (i GetNodePoolNodeSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolNodeSource] {
+	return pulumix.Output[GetNodePoolNodeSource]{
+		OutputState: i.ToGetNodePoolNodeSourceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNodePoolNodeSourceArrayInput is an input type that accepts GetNodePoolNodeSourceArray and GetNodePoolNodeSourceArrayOutput values.
 // You can construct a concrete instance of `GetNodePoolNodeSourceArrayInput` via:
 //
@@ -11953,6 +13952,12 @@ func (i GetNodePoolNodeSourceArray) ToGetNodePoolNodeSourceArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeSourceArrayOutput)
 }
 
+func (i GetNodePoolNodeSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolNodeSource] {
+	return pulumix.Output[[]GetNodePoolNodeSource]{
+		OutputState: i.ToGetNodePoolNodeSourceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNodePoolNodeSourceOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolNodeSourceOutput) ElementType() reflect.Type {
@@ -11965,6 +13970,12 @@ func (o GetNodePoolNodeSourceOutput) ToGetNodePoolNodeSourceOutput() GetNodePool
 
 func (o GetNodePoolNodeSourceOutput) ToGetNodePoolNodeSourceOutputWithContext(ctx context.Context) GetNodePoolNodeSourceOutput {
 	return o
+}
+
+func (o GetNodePoolNodeSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolNodeSource] {
+	return pulumix.Output[GetNodePoolNodeSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the image used to boot the node.
@@ -11994,6 +14005,12 @@ func (o GetNodePoolNodeSourceArrayOutput) ToGetNodePoolNodeSourceArrayOutput() G
 
 func (o GetNodePoolNodeSourceArrayOutput) ToGetNodePoolNodeSourceArrayOutputWithContext(ctx context.Context) GetNodePoolNodeSourceArrayOutput {
 	return o
+}
+
+func (o GetNodePoolNodeSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolNodeSource] {
+	return pulumix.Output[[]GetNodePoolNodeSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNodePoolNodeSourceArrayOutput) Index(i pulumi.IntInput) GetNodePoolNodeSourceOutput {
@@ -12043,6 +14060,12 @@ func (i GetNodePoolNodeSourceDetailArgs) ToGetNodePoolNodeSourceDetailOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeSourceDetailOutput)
 }
 
+func (i GetNodePoolNodeSourceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolNodeSourceDetail] {
+	return pulumix.Output[GetNodePoolNodeSourceDetail]{
+		OutputState: i.ToGetNodePoolNodeSourceDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNodePoolNodeSourceDetailArrayInput is an input type that accepts GetNodePoolNodeSourceDetailArray and GetNodePoolNodeSourceDetailArrayOutput values.
 // You can construct a concrete instance of `GetNodePoolNodeSourceDetailArrayInput` via:
 //
@@ -12068,6 +14091,12 @@ func (i GetNodePoolNodeSourceDetailArray) ToGetNodePoolNodeSourceDetailArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeSourceDetailArrayOutput)
 }
 
+func (i GetNodePoolNodeSourceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolNodeSourceDetail] {
+	return pulumix.Output[[]GetNodePoolNodeSourceDetail]{
+		OutputState: i.ToGetNodePoolNodeSourceDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNodePoolNodeSourceDetailOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolNodeSourceDetailOutput) ElementType() reflect.Type {
@@ -12080,6 +14109,12 @@ func (o GetNodePoolNodeSourceDetailOutput) ToGetNodePoolNodeSourceDetailOutput()
 
 func (o GetNodePoolNodeSourceDetailOutput) ToGetNodePoolNodeSourceDetailOutputWithContext(ctx context.Context) GetNodePoolNodeSourceDetailOutput {
 	return o
+}
+
+func (o GetNodePoolNodeSourceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolNodeSourceDetail] {
+	return pulumix.Output[GetNodePoolNodeSourceDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The size of the boot volume in GBs. Minimum value is 50 GB. See [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Block/Concepts/bootvolumes.htm) for max custom boot volume sizing and OS-specific requirements.
@@ -12109,6 +14144,12 @@ func (o GetNodePoolNodeSourceDetailArrayOutput) ToGetNodePoolNodeSourceDetailArr
 
 func (o GetNodePoolNodeSourceDetailArrayOutput) ToGetNodePoolNodeSourceDetailArrayOutputWithContext(ctx context.Context) GetNodePoolNodeSourceDetailArrayOutput {
 	return o
+}
+
+func (o GetNodePoolNodeSourceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolNodeSourceDetail] {
+	return pulumix.Output[[]GetNodePoolNodeSourceDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNodePoolNodeSourceDetailArrayOutput) Index(i pulumi.IntInput) GetNodePoolNodeSourceDetailOutput {
@@ -12158,6 +14199,12 @@ func (i GetNodePoolOptionSourceArgs) ToGetNodePoolOptionSourceOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolOptionSourceOutput)
 }
 
+func (i GetNodePoolOptionSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolOptionSource] {
+	return pulumix.Output[GetNodePoolOptionSource]{
+		OutputState: i.ToGetNodePoolOptionSourceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNodePoolOptionSourceArrayInput is an input type that accepts GetNodePoolOptionSourceArray and GetNodePoolOptionSourceArrayOutput values.
 // You can construct a concrete instance of `GetNodePoolOptionSourceArrayInput` via:
 //
@@ -12183,6 +14230,12 @@ func (i GetNodePoolOptionSourceArray) ToGetNodePoolOptionSourceArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolOptionSourceArrayOutput)
 }
 
+func (i GetNodePoolOptionSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolOptionSource] {
+	return pulumix.Output[[]GetNodePoolOptionSource]{
+		OutputState: i.ToGetNodePoolOptionSourceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNodePoolOptionSourceOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolOptionSourceOutput) ElementType() reflect.Type {
@@ -12195,6 +14248,12 @@ func (o GetNodePoolOptionSourceOutput) ToGetNodePoolOptionSourceOutput() GetNode
 
 func (o GetNodePoolOptionSourceOutput) ToGetNodePoolOptionSourceOutputWithContext(ctx context.Context) GetNodePoolOptionSourceOutput {
 	return o
+}
+
+func (o GetNodePoolOptionSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolOptionSource] {
+	return pulumix.Output[GetNodePoolOptionSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the image.
@@ -12224,6 +14283,12 @@ func (o GetNodePoolOptionSourceArrayOutput) ToGetNodePoolOptionSourceArrayOutput
 
 func (o GetNodePoolOptionSourceArrayOutput) ToGetNodePoolOptionSourceArrayOutputWithContext(ctx context.Context) GetNodePoolOptionSourceArrayOutput {
 	return o
+}
+
+func (o GetNodePoolOptionSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolOptionSource] {
+	return pulumix.Output[[]GetNodePoolOptionSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNodePoolOptionSourceArrayOutput) Index(i pulumi.IntInput) GetNodePoolOptionSourceOutput {
@@ -12269,6 +14334,12 @@ func (i GetNodePoolsFilterArgs) ToGetNodePoolsFilterOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsFilterOutput)
 }
 
+func (i GetNodePoolsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsFilter] {
+	return pulumix.Output[GetNodePoolsFilter]{
+		OutputState: i.ToGetNodePoolsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNodePoolsFilterArrayInput is an input type that accepts GetNodePoolsFilterArray and GetNodePoolsFilterArrayOutput values.
 // You can construct a concrete instance of `GetNodePoolsFilterArrayInput` via:
 //
@@ -12294,6 +14365,12 @@ func (i GetNodePoolsFilterArray) ToGetNodePoolsFilterArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsFilterArrayOutput)
 }
 
+func (i GetNodePoolsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsFilter] {
+	return pulumix.Output[[]GetNodePoolsFilter]{
+		OutputState: i.ToGetNodePoolsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNodePoolsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolsFilterOutput) ElementType() reflect.Type {
@@ -12306,6 +14383,12 @@ func (o GetNodePoolsFilterOutput) ToGetNodePoolsFilterOutput() GetNodePoolsFilte
 
 func (o GetNodePoolsFilterOutput) ToGetNodePoolsFilterOutputWithContext(ctx context.Context) GetNodePoolsFilterOutput {
 	return o
+}
+
+func (o GetNodePoolsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsFilter] {
+	return pulumix.Output[GetNodePoolsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name to filter on.
@@ -12333,6 +14416,12 @@ func (o GetNodePoolsFilterArrayOutput) ToGetNodePoolsFilterArrayOutput() GetNode
 
 func (o GetNodePoolsFilterArrayOutput) ToGetNodePoolsFilterArrayOutputWithContext(ctx context.Context) GetNodePoolsFilterArrayOutput {
 	return o
+}
+
+func (o GetNodePoolsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsFilter] {
+	return pulumix.Output[[]GetNodePoolsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNodePoolsFilterArrayOutput) Index(i pulumi.IntInput) GetNodePoolsFilterOutput {
@@ -12474,6 +14563,12 @@ func (i GetNodePoolsNodePoolArgs) ToGetNodePoolsNodePoolOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolOutput)
 }
 
+func (i GetNodePoolsNodePoolArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePool] {
+	return pulumix.Output[GetNodePoolsNodePool]{
+		OutputState: i.ToGetNodePoolsNodePoolOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNodePoolsNodePoolArrayInput is an input type that accepts GetNodePoolsNodePoolArray and GetNodePoolsNodePoolArrayOutput values.
 // You can construct a concrete instance of `GetNodePoolsNodePoolArrayInput` via:
 //
@@ -12499,6 +14594,12 @@ func (i GetNodePoolsNodePoolArray) ToGetNodePoolsNodePoolArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolArrayOutput)
 }
 
+func (i GetNodePoolsNodePoolArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePool] {
+	return pulumix.Output[[]GetNodePoolsNodePool]{
+		OutputState: i.ToGetNodePoolsNodePoolArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNodePoolsNodePoolOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolsNodePoolOutput) ElementType() reflect.Type {
@@ -12511,6 +14612,12 @@ func (o GetNodePoolsNodePoolOutput) ToGetNodePoolsNodePoolOutput() GetNodePoolsN
 
 func (o GetNodePoolsNodePoolOutput) ToGetNodePoolsNodePoolOutputWithContext(ctx context.Context) GetNodePoolsNodePoolOutput {
 	return o
+}
+
+func (o GetNodePoolsNodePoolOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePool] {
+	return pulumix.Output[GetNodePoolsNodePool]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the cluster.
@@ -12658,6 +14765,12 @@ func (o GetNodePoolsNodePoolArrayOutput) ToGetNodePoolsNodePoolArrayOutputWithCo
 	return o
 }
 
+func (o GetNodePoolsNodePoolArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePool] {
+	return pulumix.Output[[]GetNodePoolsNodePool]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetNodePoolsNodePoolArrayOutput) Index(i pulumi.IntInput) GetNodePoolsNodePoolOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolsNodePool {
 		return vs[0].([]GetNodePoolsNodePool)[vs[1].(int)]
@@ -12701,6 +14814,12 @@ func (i GetNodePoolsNodePoolInitialNodeLabelArgs) ToGetNodePoolsNodePoolInitialN
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolInitialNodeLabelOutput)
 }
 
+func (i GetNodePoolsNodePoolInitialNodeLabelArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolInitialNodeLabel] {
+	return pulumix.Output[GetNodePoolsNodePoolInitialNodeLabel]{
+		OutputState: i.ToGetNodePoolsNodePoolInitialNodeLabelOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNodePoolsNodePoolInitialNodeLabelArrayInput is an input type that accepts GetNodePoolsNodePoolInitialNodeLabelArray and GetNodePoolsNodePoolInitialNodeLabelArrayOutput values.
 // You can construct a concrete instance of `GetNodePoolsNodePoolInitialNodeLabelArrayInput` via:
 //
@@ -12726,6 +14845,12 @@ func (i GetNodePoolsNodePoolInitialNodeLabelArray) ToGetNodePoolsNodePoolInitial
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolInitialNodeLabelArrayOutput)
 }
 
+func (i GetNodePoolsNodePoolInitialNodeLabelArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolInitialNodeLabel] {
+	return pulumix.Output[[]GetNodePoolsNodePoolInitialNodeLabel]{
+		OutputState: i.ToGetNodePoolsNodePoolInitialNodeLabelArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNodePoolsNodePoolInitialNodeLabelOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolsNodePoolInitialNodeLabelOutput) ElementType() reflect.Type {
@@ -12738,6 +14863,12 @@ func (o GetNodePoolsNodePoolInitialNodeLabelOutput) ToGetNodePoolsNodePoolInitia
 
 func (o GetNodePoolsNodePoolInitialNodeLabelOutput) ToGetNodePoolsNodePoolInitialNodeLabelOutputWithContext(ctx context.Context) GetNodePoolsNodePoolInitialNodeLabelOutput {
 	return o
+}
+
+func (o GetNodePoolsNodePoolInitialNodeLabelOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolInitialNodeLabel] {
+	return pulumix.Output[GetNodePoolsNodePoolInitialNodeLabel]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The key of the pair.
@@ -12762,6 +14893,12 @@ func (o GetNodePoolsNodePoolInitialNodeLabelArrayOutput) ToGetNodePoolsNodePoolI
 
 func (o GetNodePoolsNodePoolInitialNodeLabelArrayOutput) ToGetNodePoolsNodePoolInitialNodeLabelArrayOutputWithContext(ctx context.Context) GetNodePoolsNodePoolInitialNodeLabelArrayOutput {
 	return o
+}
+
+func (o GetNodePoolsNodePoolInitialNodeLabelArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolInitialNodeLabel] {
+	return pulumix.Output[[]GetNodePoolsNodePoolInitialNodeLabel]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNodePoolsNodePoolInitialNodeLabelArrayOutput) Index(i pulumi.IntInput) GetNodePoolsNodePoolInitialNodeLabelOutput {
@@ -12845,6 +14982,12 @@ func (i GetNodePoolsNodePoolNodeArgs) ToGetNodePoolsNodePoolNodeOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeOutput)
 }
 
+func (i GetNodePoolsNodePoolNodeArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolNode] {
+	return pulumix.Output[GetNodePoolsNodePoolNode]{
+		OutputState: i.ToGetNodePoolsNodePoolNodeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNodePoolsNodePoolNodeArrayInput is an input type that accepts GetNodePoolsNodePoolNodeArray and GetNodePoolsNodePoolNodeArrayOutput values.
 // You can construct a concrete instance of `GetNodePoolsNodePoolNodeArrayInput` via:
 //
@@ -12870,6 +15013,12 @@ func (i GetNodePoolsNodePoolNodeArray) ToGetNodePoolsNodePoolNodeArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeArrayOutput)
 }
 
+func (i GetNodePoolsNodePoolNodeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolNode] {
+	return pulumix.Output[[]GetNodePoolsNodePoolNode]{
+		OutputState: i.ToGetNodePoolsNodePoolNodeArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNodePoolsNodePoolNodeOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolsNodePoolNodeOutput) ElementType() reflect.Type {
@@ -12882,6 +15031,12 @@ func (o GetNodePoolsNodePoolNodeOutput) ToGetNodePoolsNodePoolNodeOutput() GetNo
 
 func (o GetNodePoolsNodePoolNodeOutput) ToGetNodePoolsNodePoolNodeOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodeOutput {
 	return o
+}
+
+func (o GetNodePoolsNodePoolNodeOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolNode] {
+	return pulumix.Output[GetNodePoolsNodePoolNode]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
@@ -12963,6 +15118,12 @@ func (o GetNodePoolsNodePoolNodeArrayOutput) ToGetNodePoolsNodePoolNodeArrayOutp
 	return o
 }
 
+func (o GetNodePoolsNodePoolNodeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolNode] {
+	return pulumix.Output[[]GetNodePoolsNodePoolNode]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetNodePoolsNodePoolNodeArrayOutput) Index(i pulumi.IntInput) GetNodePoolsNodePoolNodeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolsNodePoolNode {
 		return vs[0].([]GetNodePoolsNodePoolNode)[vs[1].(int)]
@@ -13030,6 +15191,12 @@ func (i GetNodePoolsNodePoolNodeConfigDetailArgs) ToGetNodePoolsNodePoolNodeConf
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeConfigDetailOutput)
 }
 
+func (i GetNodePoolsNodePoolNodeConfigDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolNodeConfigDetail] {
+	return pulumix.Output[GetNodePoolsNodePoolNodeConfigDetail]{
+		OutputState: i.ToGetNodePoolsNodePoolNodeConfigDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNodePoolsNodePoolNodeConfigDetailArrayInput is an input type that accepts GetNodePoolsNodePoolNodeConfigDetailArray and GetNodePoolsNodePoolNodeConfigDetailArrayOutput values.
 // You can construct a concrete instance of `GetNodePoolsNodePoolNodeConfigDetailArrayInput` via:
 //
@@ -13055,6 +15222,12 @@ func (i GetNodePoolsNodePoolNodeConfigDetailArray) ToGetNodePoolsNodePoolNodeCon
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeConfigDetailArrayOutput)
 }
 
+func (i GetNodePoolsNodePoolNodeConfigDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolNodeConfigDetail] {
+	return pulumix.Output[[]GetNodePoolsNodePoolNodeConfigDetail]{
+		OutputState: i.ToGetNodePoolsNodePoolNodeConfigDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNodePoolsNodePoolNodeConfigDetailOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolsNodePoolNodeConfigDetailOutput) ElementType() reflect.Type {
@@ -13067,6 +15240,12 @@ func (o GetNodePoolsNodePoolNodeConfigDetailOutput) ToGetNodePoolsNodePoolNodeCo
 
 func (o GetNodePoolsNodePoolNodeConfigDetailOutput) ToGetNodePoolsNodePoolNodeConfigDetailOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodeConfigDetailOutput {
 	return o
+}
+
+func (o GetNodePoolsNodePoolNodeConfigDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolNodeConfigDetail] {
+	return pulumix.Output[GetNodePoolsNodePoolNodeConfigDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -13127,6 +15306,12 @@ func (o GetNodePoolsNodePoolNodeConfigDetailArrayOutput) ToGetNodePoolsNodePoolN
 	return o
 }
 
+func (o GetNodePoolsNodePoolNodeConfigDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolNodeConfigDetail] {
+	return pulumix.Output[[]GetNodePoolsNodePoolNodeConfigDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetNodePoolsNodePoolNodeConfigDetailArrayOutput) Index(i pulumi.IntInput) GetNodePoolsNodePoolNodeConfigDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolsNodePoolNodeConfigDetail {
 		return vs[0].([]GetNodePoolsNodePoolNodeConfigDetail)[vs[1].(int)]
@@ -13178,6 +15363,12 @@ func (i GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArgs) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput)
 }
 
+func (i GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail] {
+	return pulumix.Output[GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail]{
+		OutputState: i.ToGetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayInput is an input type that accepts GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArray and GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput values.
 // You can construct a concrete instance of `GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayInput` via:
 //
@@ -13203,6 +15394,12 @@ func (i GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArray)
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput)
 }
 
+func (i GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail] {
+	return pulumix.Output[[]GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail]{
+		OutputState: i.ToGetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput) ElementType() reflect.Type {
@@ -13215,6 +15412,12 @@ func (o GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput
 
 func (o GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput) ToGetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput {
 	return o
+}
+
+func (o GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail] {
+	return pulumix.Output[GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The CNI plugin used by this node pool
@@ -13255,6 +15458,12 @@ func (o GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayO
 
 func (o GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput) ToGetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput {
 	return o
+}
+
+func (o GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail] {
+	return pulumix.Output[[]GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput) Index(i pulumi.IntInput) GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput {
@@ -13312,6 +15521,12 @@ func (i GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArgs) ToGetNodePoolsN
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeConfigDetailPlacementConfigOutput)
 }
 
+func (i GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolNodeConfigDetailPlacementConfig] {
+	return pulumix.Output[GetNodePoolsNodePoolNodeConfigDetailPlacementConfig]{
+		OutputState: i.ToGetNodePoolsNodePoolNodeConfigDetailPlacementConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArrayInput is an input type that accepts GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArray and GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArrayOutput values.
 // You can construct a concrete instance of `GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArrayInput` via:
 //
@@ -13337,6 +15552,12 @@ func (i GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArray) ToGetNodePools
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArrayOutput)
 }
 
+func (i GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolNodeConfigDetailPlacementConfig] {
+	return pulumix.Output[[]GetNodePoolsNodePoolNodeConfigDetailPlacementConfig]{
+		OutputState: i.ToGetNodePoolsNodePoolNodeConfigDetailPlacementConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNodePoolsNodePoolNodeConfigDetailPlacementConfigOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolsNodePoolNodeConfigDetailPlacementConfigOutput) ElementType() reflect.Type {
@@ -13349,6 +15570,12 @@ func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigOutput) ToGetNodePool
 
 func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigOutput) ToGetNodePoolsNodePoolNodeConfigDetailPlacementConfigOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodeConfigDetailPlacementConfigOutput {
 	return o
+}
+
+func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolNodeConfigDetailPlacementConfig] {
+	return pulumix.Output[GetNodePoolsNodePoolNodeConfigDetailPlacementConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
@@ -13392,6 +15619,12 @@ func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArrayOutput) ToGetNod
 	return o
 }
 
+func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolNodeConfigDetailPlacementConfig] {
+	return pulumix.Output[[]GetNodePoolsNodePoolNodeConfigDetailPlacementConfig]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArrayOutput) Index(i pulumi.IntInput) GetNodePoolsNodePoolNodeConfigDetailPlacementConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolsNodePoolNodeConfigDetailPlacementConfig {
 		return vs[0].([]GetNodePoolsNodePoolNodeConfigDetailPlacementConfig)[vs[1].(int)]
@@ -13431,6 +15664,12 @@ func (i GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput)
 }
 
+func (i GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig] {
+	return pulumix.Output[GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig]{
+		OutputState: i.ToGetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayInput is an input type that accepts GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArray and GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput values.
 // You can construct a concrete instance of `GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayInput` via:
 //
@@ -13456,6 +15695,12 @@ func (i GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput)
 }
 
+func (i GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig] {
+	return pulumix.Output[[]GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig]{
+		OutputState: i.ToGetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput) ElementType() reflect.Type {
@@ -13468,6 +15713,12 @@ func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig
 
 func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput) ToGetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput {
 	return o
+}
+
+func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig] {
+	return pulumix.Output[GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The action to run when the preemptible node is interrupted for eviction.
@@ -13489,6 +15740,12 @@ func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig
 
 func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput) ToGetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput {
 	return o
+}
+
+func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig] {
+	return pulumix.Output[[]GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput) Index(i pulumi.IntInput) GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput {
@@ -13534,6 +15791,12 @@ func (i GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput)
 }
 
+func (i GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction] {
+	return pulumix.Output[GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction]{
+		OutputState: i.ToGetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayInput is an input type that accepts GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArray and GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput values.
 // You can construct a concrete instance of `GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayInput` via:
 //
@@ -13559,6 +15822,12 @@ func (i GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput)
 }
 
+func (i GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction] {
+	return pulumix.Output[[]GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction]{
+		OutputState: i.ToGetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput) ElementType() reflect.Type {
@@ -13571,6 +15840,12 @@ func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig
 
 func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput) ToGetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput {
 	return o
+}
+
+func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction] {
+	return pulumix.Output[GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
@@ -13599,6 +15874,12 @@ func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig
 
 func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput) ToGetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput {
 	return o
+}
+
+func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction] {
+	return pulumix.Output[[]GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput) Index(i pulumi.IntInput) GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput {
@@ -13642,6 +15923,12 @@ func (i GetNodePoolsNodePoolNodeErrorArgs) ToGetNodePoolsNodePoolNodeErrorOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeErrorOutput)
 }
 
+func (i GetNodePoolsNodePoolNodeErrorArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolNodeError] {
+	return pulumix.Output[GetNodePoolsNodePoolNodeError]{
+		OutputState: i.ToGetNodePoolsNodePoolNodeErrorOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNodePoolsNodePoolNodeErrorArrayInput is an input type that accepts GetNodePoolsNodePoolNodeErrorArray and GetNodePoolsNodePoolNodeErrorArrayOutput values.
 // You can construct a concrete instance of `GetNodePoolsNodePoolNodeErrorArrayInput` via:
 //
@@ -13667,6 +15954,12 @@ func (i GetNodePoolsNodePoolNodeErrorArray) ToGetNodePoolsNodePoolNodeErrorArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeErrorArrayOutput)
 }
 
+func (i GetNodePoolsNodePoolNodeErrorArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolNodeError] {
+	return pulumix.Output[[]GetNodePoolsNodePoolNodeError]{
+		OutputState: i.ToGetNodePoolsNodePoolNodeErrorArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNodePoolsNodePoolNodeErrorOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolsNodePoolNodeErrorOutput) ElementType() reflect.Type {
@@ -13679,6 +15972,12 @@ func (o GetNodePoolsNodePoolNodeErrorOutput) ToGetNodePoolsNodePoolNodeErrorOutp
 
 func (o GetNodePoolsNodePoolNodeErrorOutput) ToGetNodePoolsNodePoolNodeErrorOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodeErrorOutput {
 	return o
+}
+
+func (o GetNodePoolsNodePoolNodeErrorOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolNodeError] {
+	return pulumix.Output[GetNodePoolsNodePoolNodeError]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNodePoolsNodePoolNodeErrorOutput) Code() pulumi.StringOutput {
@@ -13705,6 +16004,12 @@ func (o GetNodePoolsNodePoolNodeErrorArrayOutput) ToGetNodePoolsNodePoolNodeErro
 
 func (o GetNodePoolsNodePoolNodeErrorArrayOutput) ToGetNodePoolsNodePoolNodeErrorArrayOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodeErrorArrayOutput {
 	return o
+}
+
+func (o GetNodePoolsNodePoolNodeErrorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolNodeError] {
+	return pulumix.Output[[]GetNodePoolsNodePoolNodeError]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNodePoolsNodePoolNodeErrorArrayOutput) Index(i pulumi.IntInput) GetNodePoolsNodePoolNodeErrorOutput {
@@ -13750,6 +16055,12 @@ func (i GetNodePoolsNodePoolNodeEvictionNodePoolSettingArgs) ToGetNodePoolsNodeP
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeEvictionNodePoolSettingOutput)
 }
 
+func (i GetNodePoolsNodePoolNodeEvictionNodePoolSettingArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolNodeEvictionNodePoolSetting] {
+	return pulumix.Output[GetNodePoolsNodePoolNodeEvictionNodePoolSetting]{
+		OutputState: i.ToGetNodePoolsNodePoolNodeEvictionNodePoolSettingOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayInput is an input type that accepts GetNodePoolsNodePoolNodeEvictionNodePoolSettingArray and GetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayOutput values.
 // You can construct a concrete instance of `GetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayInput` via:
 //
@@ -13775,6 +16086,12 @@ func (i GetNodePoolsNodePoolNodeEvictionNodePoolSettingArray) ToGetNodePoolsNode
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayOutput)
 }
 
+func (i GetNodePoolsNodePoolNodeEvictionNodePoolSettingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolNodeEvictionNodePoolSetting] {
+	return pulumix.Output[[]GetNodePoolsNodePoolNodeEvictionNodePoolSetting]{
+		OutputState: i.ToGetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNodePoolsNodePoolNodeEvictionNodePoolSettingOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolsNodePoolNodeEvictionNodePoolSettingOutput) ElementType() reflect.Type {
@@ -13787,6 +16104,12 @@ func (o GetNodePoolsNodePoolNodeEvictionNodePoolSettingOutput) ToGetNodePoolsNod
 
 func (o GetNodePoolsNodePoolNodeEvictionNodePoolSettingOutput) ToGetNodePoolsNodePoolNodeEvictionNodePoolSettingOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodeEvictionNodePoolSettingOutput {
 	return o
+}
+
+func (o GetNodePoolsNodePoolNodeEvictionNodePoolSettingOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolNodeEvictionNodePoolSetting] {
+	return pulumix.Output[GetNodePoolsNodePoolNodeEvictionNodePoolSetting]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
@@ -13811,6 +16134,12 @@ func (o GetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayOutput) ToGetNodePoo
 
 func (o GetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayOutput) ToGetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayOutput {
 	return o
+}
+
+func (o GetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolNodeEvictionNodePoolSetting] {
+	return pulumix.Output[[]GetNodePoolsNodePoolNodeEvictionNodePoolSetting]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayOutput) Index(i pulumi.IntInput) GetNodePoolsNodePoolNodeEvictionNodePoolSettingOutput {
@@ -13860,6 +16189,12 @@ func (i GetNodePoolsNodePoolNodePoolCyclingDetailArgs) ToGetNodePoolsNodePoolNod
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodePoolCyclingDetailOutput)
 }
 
+func (i GetNodePoolsNodePoolNodePoolCyclingDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolNodePoolCyclingDetail] {
+	return pulumix.Output[GetNodePoolsNodePoolNodePoolCyclingDetail]{
+		OutputState: i.ToGetNodePoolsNodePoolNodePoolCyclingDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNodePoolsNodePoolNodePoolCyclingDetailArrayInput is an input type that accepts GetNodePoolsNodePoolNodePoolCyclingDetailArray and GetNodePoolsNodePoolNodePoolCyclingDetailArrayOutput values.
 // You can construct a concrete instance of `GetNodePoolsNodePoolNodePoolCyclingDetailArrayInput` via:
 //
@@ -13885,6 +16220,12 @@ func (i GetNodePoolsNodePoolNodePoolCyclingDetailArray) ToGetNodePoolsNodePoolNo
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodePoolCyclingDetailArrayOutput)
 }
 
+func (i GetNodePoolsNodePoolNodePoolCyclingDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolNodePoolCyclingDetail] {
+	return pulumix.Output[[]GetNodePoolsNodePoolNodePoolCyclingDetail]{
+		OutputState: i.ToGetNodePoolsNodePoolNodePoolCyclingDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNodePoolsNodePoolNodePoolCyclingDetailOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolsNodePoolNodePoolCyclingDetailOutput) ElementType() reflect.Type {
@@ -13897,6 +16238,12 @@ func (o GetNodePoolsNodePoolNodePoolCyclingDetailOutput) ToGetNodePoolsNodePoolN
 
 func (o GetNodePoolsNodePoolNodePoolCyclingDetailOutput) ToGetNodePoolsNodePoolNodePoolCyclingDetailOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodePoolCyclingDetailOutput {
 	return o
+}
+
+func (o GetNodePoolsNodePoolNodePoolCyclingDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolNodePoolCyclingDetail] {
+	return pulumix.Output[GetNodePoolsNodePoolNodePoolCyclingDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // If nodes in the nodepool will be cycled to have new changes.
@@ -13926,6 +16273,12 @@ func (o GetNodePoolsNodePoolNodePoolCyclingDetailArrayOutput) ToGetNodePoolsNode
 
 func (o GetNodePoolsNodePoolNodePoolCyclingDetailArrayOutput) ToGetNodePoolsNodePoolNodePoolCyclingDetailArrayOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodePoolCyclingDetailArrayOutput {
 	return o
+}
+
+func (o GetNodePoolsNodePoolNodePoolCyclingDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolNodePoolCyclingDetail] {
+	return pulumix.Output[[]GetNodePoolsNodePoolNodePoolCyclingDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNodePoolsNodePoolNodePoolCyclingDetailArrayOutput) Index(i pulumi.IntInput) GetNodePoolsNodePoolNodePoolCyclingDetailOutput {
@@ -13971,6 +16324,12 @@ func (i GetNodePoolsNodePoolNodeShapeConfigArgs) ToGetNodePoolsNodePoolNodeShape
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeShapeConfigOutput)
 }
 
+func (i GetNodePoolsNodePoolNodeShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolNodeShapeConfig] {
+	return pulumix.Output[GetNodePoolsNodePoolNodeShapeConfig]{
+		OutputState: i.ToGetNodePoolsNodePoolNodeShapeConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNodePoolsNodePoolNodeShapeConfigArrayInput is an input type that accepts GetNodePoolsNodePoolNodeShapeConfigArray and GetNodePoolsNodePoolNodeShapeConfigArrayOutput values.
 // You can construct a concrete instance of `GetNodePoolsNodePoolNodeShapeConfigArrayInput` via:
 //
@@ -13996,6 +16355,12 @@ func (i GetNodePoolsNodePoolNodeShapeConfigArray) ToGetNodePoolsNodePoolNodeShap
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeShapeConfigArrayOutput)
 }
 
+func (i GetNodePoolsNodePoolNodeShapeConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolNodeShapeConfig] {
+	return pulumix.Output[[]GetNodePoolsNodePoolNodeShapeConfig]{
+		OutputState: i.ToGetNodePoolsNodePoolNodeShapeConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNodePoolsNodePoolNodeShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolsNodePoolNodeShapeConfigOutput) ElementType() reflect.Type {
@@ -14008,6 +16373,12 @@ func (o GetNodePoolsNodePoolNodeShapeConfigOutput) ToGetNodePoolsNodePoolNodeSha
 
 func (o GetNodePoolsNodePoolNodeShapeConfigOutput) ToGetNodePoolsNodePoolNodeShapeConfigOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodeShapeConfigOutput {
 	return o
+}
+
+func (o GetNodePoolsNodePoolNodeShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolNodeShapeConfig] {
+	return pulumix.Output[GetNodePoolsNodePoolNodeShapeConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The total amount of memory available to each node, in gigabytes.
@@ -14032,6 +16403,12 @@ func (o GetNodePoolsNodePoolNodeShapeConfigArrayOutput) ToGetNodePoolsNodePoolNo
 
 func (o GetNodePoolsNodePoolNodeShapeConfigArrayOutput) ToGetNodePoolsNodePoolNodeShapeConfigArrayOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodeShapeConfigArrayOutput {
 	return o
+}
+
+func (o GetNodePoolsNodePoolNodeShapeConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolNodeShapeConfig] {
+	return pulumix.Output[[]GetNodePoolsNodePoolNodeShapeConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNodePoolsNodePoolNodeShapeConfigArrayOutput) Index(i pulumi.IntInput) GetNodePoolsNodePoolNodeShapeConfigOutput {
@@ -14081,6 +16458,12 @@ func (i GetNodePoolsNodePoolNodeSourceArgs) ToGetNodePoolsNodePoolNodeSourceOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeSourceOutput)
 }
 
+func (i GetNodePoolsNodePoolNodeSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolNodeSource] {
+	return pulumix.Output[GetNodePoolsNodePoolNodeSource]{
+		OutputState: i.ToGetNodePoolsNodePoolNodeSourceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNodePoolsNodePoolNodeSourceArrayInput is an input type that accepts GetNodePoolsNodePoolNodeSourceArray and GetNodePoolsNodePoolNodeSourceArrayOutput values.
 // You can construct a concrete instance of `GetNodePoolsNodePoolNodeSourceArrayInput` via:
 //
@@ -14106,6 +16489,12 @@ func (i GetNodePoolsNodePoolNodeSourceArray) ToGetNodePoolsNodePoolNodeSourceArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeSourceArrayOutput)
 }
 
+func (i GetNodePoolsNodePoolNodeSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolNodeSource] {
+	return pulumix.Output[[]GetNodePoolsNodePoolNodeSource]{
+		OutputState: i.ToGetNodePoolsNodePoolNodeSourceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNodePoolsNodePoolNodeSourceOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolsNodePoolNodeSourceOutput) ElementType() reflect.Type {
@@ -14118,6 +16507,12 @@ func (o GetNodePoolsNodePoolNodeSourceOutput) ToGetNodePoolsNodePoolNodeSourceOu
 
 func (o GetNodePoolsNodePoolNodeSourceOutput) ToGetNodePoolsNodePoolNodeSourceOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodeSourceOutput {
 	return o
+}
+
+func (o GetNodePoolsNodePoolNodeSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolNodeSource] {
+	return pulumix.Output[GetNodePoolsNodePoolNodeSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the image used to boot the node.
@@ -14147,6 +16542,12 @@ func (o GetNodePoolsNodePoolNodeSourceArrayOutput) ToGetNodePoolsNodePoolNodeSou
 
 func (o GetNodePoolsNodePoolNodeSourceArrayOutput) ToGetNodePoolsNodePoolNodeSourceArrayOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodeSourceArrayOutput {
 	return o
+}
+
+func (o GetNodePoolsNodePoolNodeSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolNodeSource] {
+	return pulumix.Output[[]GetNodePoolsNodePoolNodeSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNodePoolsNodePoolNodeSourceArrayOutput) Index(i pulumi.IntInput) GetNodePoolsNodePoolNodeSourceOutput {
@@ -14196,6 +16597,12 @@ func (i GetNodePoolsNodePoolNodeSourceDetailArgs) ToGetNodePoolsNodePoolNodeSour
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeSourceDetailOutput)
 }
 
+func (i GetNodePoolsNodePoolNodeSourceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolNodeSourceDetail] {
+	return pulumix.Output[GetNodePoolsNodePoolNodeSourceDetail]{
+		OutputState: i.ToGetNodePoolsNodePoolNodeSourceDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNodePoolsNodePoolNodeSourceDetailArrayInput is an input type that accepts GetNodePoolsNodePoolNodeSourceDetailArray and GetNodePoolsNodePoolNodeSourceDetailArrayOutput values.
 // You can construct a concrete instance of `GetNodePoolsNodePoolNodeSourceDetailArrayInput` via:
 //
@@ -14221,6 +16628,12 @@ func (i GetNodePoolsNodePoolNodeSourceDetailArray) ToGetNodePoolsNodePoolNodeSou
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeSourceDetailArrayOutput)
 }
 
+func (i GetNodePoolsNodePoolNodeSourceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolNodeSourceDetail] {
+	return pulumix.Output[[]GetNodePoolsNodePoolNodeSourceDetail]{
+		OutputState: i.ToGetNodePoolsNodePoolNodeSourceDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNodePoolsNodePoolNodeSourceDetailOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolsNodePoolNodeSourceDetailOutput) ElementType() reflect.Type {
@@ -14233,6 +16646,12 @@ func (o GetNodePoolsNodePoolNodeSourceDetailOutput) ToGetNodePoolsNodePoolNodeSo
 
 func (o GetNodePoolsNodePoolNodeSourceDetailOutput) ToGetNodePoolsNodePoolNodeSourceDetailOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodeSourceDetailOutput {
 	return o
+}
+
+func (o GetNodePoolsNodePoolNodeSourceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolNodeSourceDetail] {
+	return pulumix.Output[GetNodePoolsNodePoolNodeSourceDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The size of the boot volume in GBs. Minimum value is 50 GB. See [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Block/Concepts/bootvolumes.htm) for max custom boot volume sizing and OS-specific requirements.
@@ -14262,6 +16681,12 @@ func (o GetNodePoolsNodePoolNodeSourceDetailArrayOutput) ToGetNodePoolsNodePoolN
 
 func (o GetNodePoolsNodePoolNodeSourceDetailArrayOutput) ToGetNodePoolsNodePoolNodeSourceDetailArrayOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodeSourceDetailArrayOutput {
 	return o
+}
+
+func (o GetNodePoolsNodePoolNodeSourceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolNodeSourceDetail] {
+	return pulumix.Output[[]GetNodePoolsNodePoolNodeSourceDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNodePoolsNodePoolNodeSourceDetailArrayOutput) Index(i pulumi.IntInput) GetNodePoolsNodePoolNodeSourceDetailOutput {
@@ -14307,6 +16732,12 @@ func (i GetPodShapesFilterArgs) ToGetPodShapesFilterOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetPodShapesFilterOutput)
 }
 
+func (i GetPodShapesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetPodShapesFilter] {
+	return pulumix.Output[GetPodShapesFilter]{
+		OutputState: i.ToGetPodShapesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPodShapesFilterArrayInput is an input type that accepts GetPodShapesFilterArray and GetPodShapesFilterArrayOutput values.
 // You can construct a concrete instance of `GetPodShapesFilterArrayInput` via:
 //
@@ -14332,6 +16763,12 @@ func (i GetPodShapesFilterArray) ToGetPodShapesFilterArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetPodShapesFilterArrayOutput)
 }
 
+func (i GetPodShapesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPodShapesFilter] {
+	return pulumix.Output[[]GetPodShapesFilter]{
+		OutputState: i.ToGetPodShapesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPodShapesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetPodShapesFilterOutput) ElementType() reflect.Type {
@@ -14344,6 +16781,12 @@ func (o GetPodShapesFilterOutput) ToGetPodShapesFilterOutput() GetPodShapesFilte
 
 func (o GetPodShapesFilterOutput) ToGetPodShapesFilterOutputWithContext(ctx context.Context) GetPodShapesFilterOutput {
 	return o
+}
+
+func (o GetPodShapesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetPodShapesFilter] {
+	return pulumix.Output[GetPodShapesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name to filter on.
@@ -14371,6 +16814,12 @@ func (o GetPodShapesFilterArrayOutput) ToGetPodShapesFilterArrayOutput() GetPodS
 
 func (o GetPodShapesFilterArrayOutput) ToGetPodShapesFilterArrayOutputWithContext(ctx context.Context) GetPodShapesFilterArrayOutput {
 	return o
+}
+
+func (o GetPodShapesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPodShapesFilter] {
+	return pulumix.Output[[]GetPodShapesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPodShapesFilterArrayOutput) Index(i pulumi.IntInput) GetPodShapesFilterOutput {
@@ -14428,6 +16877,12 @@ func (i GetPodShapesPodShapeArgs) ToGetPodShapesPodShapeOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetPodShapesPodShapeOutput)
 }
 
+func (i GetPodShapesPodShapeArgs) ToOutput(ctx context.Context) pulumix.Output[GetPodShapesPodShape] {
+	return pulumix.Output[GetPodShapesPodShape]{
+		OutputState: i.ToGetPodShapesPodShapeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPodShapesPodShapeArrayInput is an input type that accepts GetPodShapesPodShapeArray and GetPodShapesPodShapeArrayOutput values.
 // You can construct a concrete instance of `GetPodShapesPodShapeArrayInput` via:
 //
@@ -14453,6 +16908,12 @@ func (i GetPodShapesPodShapeArray) ToGetPodShapesPodShapeArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetPodShapesPodShapeArrayOutput)
 }
 
+func (i GetPodShapesPodShapeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPodShapesPodShape] {
+	return pulumix.Output[[]GetPodShapesPodShape]{
+		OutputState: i.ToGetPodShapesPodShapeArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPodShapesPodShapeOutput struct{ *pulumi.OutputState }
 
 func (GetPodShapesPodShapeOutput) ElementType() reflect.Type {
@@ -14465,6 +16926,12 @@ func (o GetPodShapesPodShapeOutput) ToGetPodShapesPodShapeOutput() GetPodShapesP
 
 func (o GetPodShapesPodShapeOutput) ToGetPodShapesPodShapeOutputWithContext(ctx context.Context) GetPodShapesPodShapeOutput {
 	return o
+}
+
+func (o GetPodShapesPodShapeOutput) ToOutput(ctx context.Context) pulumix.Output[GetPodShapesPodShape] {
+	return pulumix.Output[GetPodShapesPodShape]{
+		OutputState: o.OutputState,
+	}
 }
 
 // ShapeMemoryOptions.
@@ -14506,6 +16973,12 @@ func (o GetPodShapesPodShapeArrayOutput) ToGetPodShapesPodShapeArrayOutput() Get
 
 func (o GetPodShapesPodShapeArrayOutput) ToGetPodShapesPodShapeArrayOutputWithContext(ctx context.Context) GetPodShapesPodShapeArrayOutput {
 	return o
+}
+
+func (o GetPodShapesPodShapeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPodShapesPodShape] {
+	return pulumix.Output[[]GetPodShapesPodShape]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPodShapesPodShapeArrayOutput) Index(i pulumi.IntInput) GetPodShapesPodShapeOutput {
@@ -14563,6 +17036,12 @@ func (i GetPodShapesPodShapeMemoryOptionArgs) ToGetPodShapesPodShapeMemoryOption
 	return pulumi.ToOutputWithContext(ctx, i).(GetPodShapesPodShapeMemoryOptionOutput)
 }
 
+func (i GetPodShapesPodShapeMemoryOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetPodShapesPodShapeMemoryOption] {
+	return pulumix.Output[GetPodShapesPodShapeMemoryOption]{
+		OutputState: i.ToGetPodShapesPodShapeMemoryOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPodShapesPodShapeMemoryOptionArrayInput is an input type that accepts GetPodShapesPodShapeMemoryOptionArray and GetPodShapesPodShapeMemoryOptionArrayOutput values.
 // You can construct a concrete instance of `GetPodShapesPodShapeMemoryOptionArrayInput` via:
 //
@@ -14588,6 +17067,12 @@ func (i GetPodShapesPodShapeMemoryOptionArray) ToGetPodShapesPodShapeMemoryOptio
 	return pulumi.ToOutputWithContext(ctx, i).(GetPodShapesPodShapeMemoryOptionArrayOutput)
 }
 
+func (i GetPodShapesPodShapeMemoryOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPodShapesPodShapeMemoryOption] {
+	return pulumix.Output[[]GetPodShapesPodShapeMemoryOption]{
+		OutputState: i.ToGetPodShapesPodShapeMemoryOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPodShapesPodShapeMemoryOptionOutput struct{ *pulumi.OutputState }
 
 func (GetPodShapesPodShapeMemoryOptionOutput) ElementType() reflect.Type {
@@ -14600,6 +17085,12 @@ func (o GetPodShapesPodShapeMemoryOptionOutput) ToGetPodShapesPodShapeMemoryOpti
 
 func (o GetPodShapesPodShapeMemoryOptionOutput) ToGetPodShapesPodShapeMemoryOptionOutputWithContext(ctx context.Context) GetPodShapesPodShapeMemoryOptionOutput {
 	return o
+}
+
+func (o GetPodShapesPodShapeMemoryOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetPodShapesPodShapeMemoryOption] {
+	return pulumix.Output[GetPodShapesPodShapeMemoryOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The default amount of memory per OCPU available for this shape, in gigabytes.
@@ -14639,6 +17130,12 @@ func (o GetPodShapesPodShapeMemoryOptionArrayOutput) ToGetPodShapesPodShapeMemor
 
 func (o GetPodShapesPodShapeMemoryOptionArrayOutput) ToGetPodShapesPodShapeMemoryOptionArrayOutputWithContext(ctx context.Context) GetPodShapesPodShapeMemoryOptionArrayOutput {
 	return o
+}
+
+func (o GetPodShapesPodShapeMemoryOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPodShapesPodShapeMemoryOption] {
+	return pulumix.Output[[]GetPodShapesPodShapeMemoryOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPodShapesPodShapeMemoryOptionArrayOutput) Index(i pulumi.IntInput) GetPodShapesPodShapeMemoryOptionOutput {
@@ -14688,6 +17185,12 @@ func (i GetPodShapesPodShapeNetworkBandwidthOptionArgs) ToGetPodShapesPodShapeNe
 	return pulumi.ToOutputWithContext(ctx, i).(GetPodShapesPodShapeNetworkBandwidthOptionOutput)
 }
 
+func (i GetPodShapesPodShapeNetworkBandwidthOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetPodShapesPodShapeNetworkBandwidthOption] {
+	return pulumix.Output[GetPodShapesPodShapeNetworkBandwidthOption]{
+		OutputState: i.ToGetPodShapesPodShapeNetworkBandwidthOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPodShapesPodShapeNetworkBandwidthOptionArrayInput is an input type that accepts GetPodShapesPodShapeNetworkBandwidthOptionArray and GetPodShapesPodShapeNetworkBandwidthOptionArrayOutput values.
 // You can construct a concrete instance of `GetPodShapesPodShapeNetworkBandwidthOptionArrayInput` via:
 //
@@ -14713,6 +17216,12 @@ func (i GetPodShapesPodShapeNetworkBandwidthOptionArray) ToGetPodShapesPodShapeN
 	return pulumi.ToOutputWithContext(ctx, i).(GetPodShapesPodShapeNetworkBandwidthOptionArrayOutput)
 }
 
+func (i GetPodShapesPodShapeNetworkBandwidthOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPodShapesPodShapeNetworkBandwidthOption] {
+	return pulumix.Output[[]GetPodShapesPodShapeNetworkBandwidthOption]{
+		OutputState: i.ToGetPodShapesPodShapeNetworkBandwidthOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPodShapesPodShapeNetworkBandwidthOptionOutput struct{ *pulumi.OutputState }
 
 func (GetPodShapesPodShapeNetworkBandwidthOptionOutput) ElementType() reflect.Type {
@@ -14725,6 +17234,12 @@ func (o GetPodShapesPodShapeNetworkBandwidthOptionOutput) ToGetPodShapesPodShape
 
 func (o GetPodShapesPodShapeNetworkBandwidthOptionOutput) ToGetPodShapesPodShapeNetworkBandwidthOptionOutputWithContext(ctx context.Context) GetPodShapesPodShapeNetworkBandwidthOptionOutput {
 	return o
+}
+
+func (o GetPodShapesPodShapeNetworkBandwidthOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetPodShapesPodShapeNetworkBandwidthOption] {
+	return pulumix.Output[GetPodShapesPodShapeNetworkBandwidthOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The default amount of networking bandwidth per OCPU, in gigabits per second.
@@ -14754,6 +17269,12 @@ func (o GetPodShapesPodShapeNetworkBandwidthOptionArrayOutput) ToGetPodShapesPod
 
 func (o GetPodShapesPodShapeNetworkBandwidthOptionArrayOutput) ToGetPodShapesPodShapeNetworkBandwidthOptionArrayOutputWithContext(ctx context.Context) GetPodShapesPodShapeNetworkBandwidthOptionArrayOutput {
 	return o
+}
+
+func (o GetPodShapesPodShapeNetworkBandwidthOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPodShapesPodShapeNetworkBandwidthOption] {
+	return pulumix.Output[[]GetPodShapesPodShapeNetworkBandwidthOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPodShapesPodShapeNetworkBandwidthOptionArrayOutput) Index(i pulumi.IntInput) GetPodShapesPodShapeNetworkBandwidthOptionOutput {
@@ -14799,6 +17320,12 @@ func (i GetPodShapesPodShapeOcpuOptionArgs) ToGetPodShapesPodShapeOcpuOptionOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetPodShapesPodShapeOcpuOptionOutput)
 }
 
+func (i GetPodShapesPodShapeOcpuOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetPodShapesPodShapeOcpuOption] {
+	return pulumix.Output[GetPodShapesPodShapeOcpuOption]{
+		OutputState: i.ToGetPodShapesPodShapeOcpuOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPodShapesPodShapeOcpuOptionArrayInput is an input type that accepts GetPodShapesPodShapeOcpuOptionArray and GetPodShapesPodShapeOcpuOptionArrayOutput values.
 // You can construct a concrete instance of `GetPodShapesPodShapeOcpuOptionArrayInput` via:
 //
@@ -14824,6 +17351,12 @@ func (i GetPodShapesPodShapeOcpuOptionArray) ToGetPodShapesPodShapeOcpuOptionArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetPodShapesPodShapeOcpuOptionArrayOutput)
 }
 
+func (i GetPodShapesPodShapeOcpuOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPodShapesPodShapeOcpuOption] {
+	return pulumix.Output[[]GetPodShapesPodShapeOcpuOption]{
+		OutputState: i.ToGetPodShapesPodShapeOcpuOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPodShapesPodShapeOcpuOptionOutput struct{ *pulumi.OutputState }
 
 func (GetPodShapesPodShapeOcpuOptionOutput) ElementType() reflect.Type {
@@ -14836,6 +17369,12 @@ func (o GetPodShapesPodShapeOcpuOptionOutput) ToGetPodShapesPodShapeOcpuOptionOu
 
 func (o GetPodShapesPodShapeOcpuOptionOutput) ToGetPodShapesPodShapeOcpuOptionOutputWithContext(ctx context.Context) GetPodShapesPodShapeOcpuOptionOutput {
 	return o
+}
+
+func (o GetPodShapesPodShapeOcpuOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetPodShapesPodShapeOcpuOption] {
+	return pulumix.Output[GetPodShapesPodShapeOcpuOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The maximum number of OCPUs.
@@ -14860,6 +17399,12 @@ func (o GetPodShapesPodShapeOcpuOptionArrayOutput) ToGetPodShapesPodShapeOcpuOpt
 
 func (o GetPodShapesPodShapeOcpuOptionArrayOutput) ToGetPodShapesPodShapeOcpuOptionArrayOutputWithContext(ctx context.Context) GetPodShapesPodShapeOcpuOptionArrayOutput {
 	return o
+}
+
+func (o GetPodShapesPodShapeOcpuOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPodShapesPodShapeOcpuOption] {
+	return pulumix.Output[[]GetPodShapesPodShapeOcpuOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPodShapesPodShapeOcpuOptionArrayOutput) Index(i pulumi.IntInput) GetPodShapesPodShapeOcpuOptionOutput {
@@ -14905,6 +17450,12 @@ func (i GetVirtualNodePoolInitialVirtualNodeLabelArgs) ToGetVirtualNodePoolIniti
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolInitialVirtualNodeLabelOutput)
 }
 
+func (i GetVirtualNodePoolInitialVirtualNodeLabelArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNodePoolInitialVirtualNodeLabel] {
+	return pulumix.Output[GetVirtualNodePoolInitialVirtualNodeLabel]{
+		OutputState: i.ToGetVirtualNodePoolInitialVirtualNodeLabelOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVirtualNodePoolInitialVirtualNodeLabelArrayInput is an input type that accepts GetVirtualNodePoolInitialVirtualNodeLabelArray and GetVirtualNodePoolInitialVirtualNodeLabelArrayOutput values.
 // You can construct a concrete instance of `GetVirtualNodePoolInitialVirtualNodeLabelArrayInput` via:
 //
@@ -14930,6 +17481,12 @@ func (i GetVirtualNodePoolInitialVirtualNodeLabelArray) ToGetVirtualNodePoolInit
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolInitialVirtualNodeLabelArrayOutput)
 }
 
+func (i GetVirtualNodePoolInitialVirtualNodeLabelArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNodePoolInitialVirtualNodeLabel] {
+	return pulumix.Output[[]GetVirtualNodePoolInitialVirtualNodeLabel]{
+		OutputState: i.ToGetVirtualNodePoolInitialVirtualNodeLabelArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVirtualNodePoolInitialVirtualNodeLabelOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualNodePoolInitialVirtualNodeLabelOutput) ElementType() reflect.Type {
@@ -14942,6 +17499,12 @@ func (o GetVirtualNodePoolInitialVirtualNodeLabelOutput) ToGetVirtualNodePoolIni
 
 func (o GetVirtualNodePoolInitialVirtualNodeLabelOutput) ToGetVirtualNodePoolInitialVirtualNodeLabelOutputWithContext(ctx context.Context) GetVirtualNodePoolInitialVirtualNodeLabelOutput {
 	return o
+}
+
+func (o GetVirtualNodePoolInitialVirtualNodeLabelOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNodePoolInitialVirtualNodeLabel] {
+	return pulumix.Output[GetVirtualNodePoolInitialVirtualNodeLabel]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The key of the pair.
@@ -14966,6 +17529,12 @@ func (o GetVirtualNodePoolInitialVirtualNodeLabelArrayOutput) ToGetVirtualNodePo
 
 func (o GetVirtualNodePoolInitialVirtualNodeLabelArrayOutput) ToGetVirtualNodePoolInitialVirtualNodeLabelArrayOutputWithContext(ctx context.Context) GetVirtualNodePoolInitialVirtualNodeLabelArrayOutput {
 	return o
+}
+
+func (o GetVirtualNodePoolInitialVirtualNodeLabelArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNodePoolInitialVirtualNodeLabel] {
+	return pulumix.Output[[]GetVirtualNodePoolInitialVirtualNodeLabel]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVirtualNodePoolInitialVirtualNodeLabelArrayOutput) Index(i pulumi.IntInput) GetVirtualNodePoolInitialVirtualNodeLabelOutput {
@@ -15015,6 +17584,12 @@ func (i GetVirtualNodePoolPlacementConfigurationArgs) ToGetVirtualNodePoolPlacem
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolPlacementConfigurationOutput)
 }
 
+func (i GetVirtualNodePoolPlacementConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNodePoolPlacementConfiguration] {
+	return pulumix.Output[GetVirtualNodePoolPlacementConfiguration]{
+		OutputState: i.ToGetVirtualNodePoolPlacementConfigurationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVirtualNodePoolPlacementConfigurationArrayInput is an input type that accepts GetVirtualNodePoolPlacementConfigurationArray and GetVirtualNodePoolPlacementConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetVirtualNodePoolPlacementConfigurationArrayInput` via:
 //
@@ -15040,6 +17615,12 @@ func (i GetVirtualNodePoolPlacementConfigurationArray) ToGetVirtualNodePoolPlace
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolPlacementConfigurationArrayOutput)
 }
 
+func (i GetVirtualNodePoolPlacementConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNodePoolPlacementConfiguration] {
+	return pulumix.Output[[]GetVirtualNodePoolPlacementConfiguration]{
+		OutputState: i.ToGetVirtualNodePoolPlacementConfigurationArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVirtualNodePoolPlacementConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualNodePoolPlacementConfigurationOutput) ElementType() reflect.Type {
@@ -15052,6 +17633,12 @@ func (o GetVirtualNodePoolPlacementConfigurationOutput) ToGetVirtualNodePoolPlac
 
 func (o GetVirtualNodePoolPlacementConfigurationOutput) ToGetVirtualNodePoolPlacementConfigurationOutputWithContext(ctx context.Context) GetVirtualNodePoolPlacementConfigurationOutput {
 	return o
+}
+
+func (o GetVirtualNodePoolPlacementConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNodePoolPlacementConfiguration] {
+	return pulumix.Output[GetVirtualNodePoolPlacementConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The availability domain in which to place virtual nodes. Example: `Uocm:PHX-AD-1`
@@ -15081,6 +17668,12 @@ func (o GetVirtualNodePoolPlacementConfigurationArrayOutput) ToGetVirtualNodePoo
 
 func (o GetVirtualNodePoolPlacementConfigurationArrayOutput) ToGetVirtualNodePoolPlacementConfigurationArrayOutputWithContext(ctx context.Context) GetVirtualNodePoolPlacementConfigurationArrayOutput {
 	return o
+}
+
+func (o GetVirtualNodePoolPlacementConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNodePoolPlacementConfiguration] {
+	return pulumix.Output[[]GetVirtualNodePoolPlacementConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVirtualNodePoolPlacementConfigurationArrayOutput) Index(i pulumi.IntInput) GetVirtualNodePoolPlacementConfigurationOutput {
@@ -15130,6 +17723,12 @@ func (i GetVirtualNodePoolPodConfigurationArgs) ToGetVirtualNodePoolPodConfigura
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolPodConfigurationOutput)
 }
 
+func (i GetVirtualNodePoolPodConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNodePoolPodConfiguration] {
+	return pulumix.Output[GetVirtualNodePoolPodConfiguration]{
+		OutputState: i.ToGetVirtualNodePoolPodConfigurationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVirtualNodePoolPodConfigurationArrayInput is an input type that accepts GetVirtualNodePoolPodConfigurationArray and GetVirtualNodePoolPodConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetVirtualNodePoolPodConfigurationArrayInput` via:
 //
@@ -15155,6 +17754,12 @@ func (i GetVirtualNodePoolPodConfigurationArray) ToGetVirtualNodePoolPodConfigur
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolPodConfigurationArrayOutput)
 }
 
+func (i GetVirtualNodePoolPodConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNodePoolPodConfiguration] {
+	return pulumix.Output[[]GetVirtualNodePoolPodConfiguration]{
+		OutputState: i.ToGetVirtualNodePoolPodConfigurationArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVirtualNodePoolPodConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualNodePoolPodConfigurationOutput) ElementType() reflect.Type {
@@ -15167,6 +17772,12 @@ func (o GetVirtualNodePoolPodConfigurationOutput) ToGetVirtualNodePoolPodConfigu
 
 func (o GetVirtualNodePoolPodConfigurationOutput) ToGetVirtualNodePoolPodConfigurationOutputWithContext(ctx context.Context) GetVirtualNodePoolPodConfigurationOutput {
 	return o
+}
+
+func (o GetVirtualNodePoolPodConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNodePoolPodConfiguration] {
+	return pulumix.Output[GetVirtualNodePoolPodConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 // List of network security group IDs applied to the Pod VNIC.
@@ -15196,6 +17807,12 @@ func (o GetVirtualNodePoolPodConfigurationArrayOutput) ToGetVirtualNodePoolPodCo
 
 func (o GetVirtualNodePoolPodConfigurationArrayOutput) ToGetVirtualNodePoolPodConfigurationArrayOutputWithContext(ctx context.Context) GetVirtualNodePoolPodConfigurationArrayOutput {
 	return o
+}
+
+func (o GetVirtualNodePoolPodConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNodePoolPodConfiguration] {
+	return pulumix.Output[[]GetVirtualNodePoolPodConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVirtualNodePoolPodConfigurationArrayOutput) Index(i pulumi.IntInput) GetVirtualNodePoolPodConfigurationOutput {
@@ -15245,6 +17862,12 @@ func (i GetVirtualNodePoolTaintArgs) ToGetVirtualNodePoolTaintOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolTaintOutput)
 }
 
+func (i GetVirtualNodePoolTaintArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNodePoolTaint] {
+	return pulumix.Output[GetVirtualNodePoolTaint]{
+		OutputState: i.ToGetVirtualNodePoolTaintOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVirtualNodePoolTaintArrayInput is an input type that accepts GetVirtualNodePoolTaintArray and GetVirtualNodePoolTaintArrayOutput values.
 // You can construct a concrete instance of `GetVirtualNodePoolTaintArrayInput` via:
 //
@@ -15270,6 +17893,12 @@ func (i GetVirtualNodePoolTaintArray) ToGetVirtualNodePoolTaintArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolTaintArrayOutput)
 }
 
+func (i GetVirtualNodePoolTaintArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNodePoolTaint] {
+	return pulumix.Output[[]GetVirtualNodePoolTaint]{
+		OutputState: i.ToGetVirtualNodePoolTaintArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVirtualNodePoolTaintOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualNodePoolTaintOutput) ElementType() reflect.Type {
@@ -15282,6 +17911,12 @@ func (o GetVirtualNodePoolTaintOutput) ToGetVirtualNodePoolTaintOutput() GetVirt
 
 func (o GetVirtualNodePoolTaintOutput) ToGetVirtualNodePoolTaintOutputWithContext(ctx context.Context) GetVirtualNodePoolTaintOutput {
 	return o
+}
+
+func (o GetVirtualNodePoolTaintOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNodePoolTaint] {
+	return pulumix.Output[GetVirtualNodePoolTaint]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The effect of the pair.
@@ -15311,6 +17946,12 @@ func (o GetVirtualNodePoolTaintArrayOutput) ToGetVirtualNodePoolTaintArrayOutput
 
 func (o GetVirtualNodePoolTaintArrayOutput) ToGetVirtualNodePoolTaintArrayOutputWithContext(ctx context.Context) GetVirtualNodePoolTaintArrayOutput {
 	return o
+}
+
+func (o GetVirtualNodePoolTaintArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNodePoolTaint] {
+	return pulumix.Output[[]GetVirtualNodePoolTaint]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVirtualNodePoolTaintArrayOutput) Index(i pulumi.IntInput) GetVirtualNodePoolTaintOutput {
@@ -15356,6 +17997,12 @@ func (i GetVirtualNodePoolVirtualNodeTagArgs) ToGetVirtualNodePoolVirtualNodeTag
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolVirtualNodeTagOutput)
 }
 
+func (i GetVirtualNodePoolVirtualNodeTagArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNodePoolVirtualNodeTag] {
+	return pulumix.Output[GetVirtualNodePoolVirtualNodeTag]{
+		OutputState: i.ToGetVirtualNodePoolVirtualNodeTagOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVirtualNodePoolVirtualNodeTagArrayInput is an input type that accepts GetVirtualNodePoolVirtualNodeTagArray and GetVirtualNodePoolVirtualNodeTagArrayOutput values.
 // You can construct a concrete instance of `GetVirtualNodePoolVirtualNodeTagArrayInput` via:
 //
@@ -15381,6 +18028,12 @@ func (i GetVirtualNodePoolVirtualNodeTagArray) ToGetVirtualNodePoolVirtualNodeTa
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolVirtualNodeTagArrayOutput)
 }
 
+func (i GetVirtualNodePoolVirtualNodeTagArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNodePoolVirtualNodeTag] {
+	return pulumix.Output[[]GetVirtualNodePoolVirtualNodeTag]{
+		OutputState: i.ToGetVirtualNodePoolVirtualNodeTagArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVirtualNodePoolVirtualNodeTagOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualNodePoolVirtualNodeTagOutput) ElementType() reflect.Type {
@@ -15393,6 +18046,12 @@ func (o GetVirtualNodePoolVirtualNodeTagOutput) ToGetVirtualNodePoolVirtualNodeT
 
 func (o GetVirtualNodePoolVirtualNodeTagOutput) ToGetVirtualNodePoolVirtualNodeTagOutputWithContext(ctx context.Context) GetVirtualNodePoolVirtualNodeTagOutput {
 	return o
+}
+
+func (o GetVirtualNodePoolVirtualNodeTagOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNodePoolVirtualNodeTag] {
+	return pulumix.Output[GetVirtualNodePoolVirtualNodeTag]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -15417,6 +18076,12 @@ func (o GetVirtualNodePoolVirtualNodeTagArrayOutput) ToGetVirtualNodePoolVirtual
 
 func (o GetVirtualNodePoolVirtualNodeTagArrayOutput) ToGetVirtualNodePoolVirtualNodeTagArrayOutputWithContext(ctx context.Context) GetVirtualNodePoolVirtualNodeTagArrayOutput {
 	return o
+}
+
+func (o GetVirtualNodePoolVirtualNodeTagArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNodePoolVirtualNodeTag] {
+	return pulumix.Output[[]GetVirtualNodePoolVirtualNodeTag]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVirtualNodePoolVirtualNodeTagArrayOutput) Index(i pulumi.IntInput) GetVirtualNodePoolVirtualNodeTagOutput {
@@ -15462,6 +18127,12 @@ func (i GetVirtualNodePoolsFilterArgs) ToGetVirtualNodePoolsFilterOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolsFilterOutput)
 }
 
+func (i GetVirtualNodePoolsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNodePoolsFilter] {
+	return pulumix.Output[GetVirtualNodePoolsFilter]{
+		OutputState: i.ToGetVirtualNodePoolsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVirtualNodePoolsFilterArrayInput is an input type that accepts GetVirtualNodePoolsFilterArray and GetVirtualNodePoolsFilterArrayOutput values.
 // You can construct a concrete instance of `GetVirtualNodePoolsFilterArrayInput` via:
 //
@@ -15487,6 +18158,12 @@ func (i GetVirtualNodePoolsFilterArray) ToGetVirtualNodePoolsFilterArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolsFilterArrayOutput)
 }
 
+func (i GetVirtualNodePoolsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNodePoolsFilter] {
+	return pulumix.Output[[]GetVirtualNodePoolsFilter]{
+		OutputState: i.ToGetVirtualNodePoolsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVirtualNodePoolsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualNodePoolsFilterOutput) ElementType() reflect.Type {
@@ -15499,6 +18176,12 @@ func (o GetVirtualNodePoolsFilterOutput) ToGetVirtualNodePoolsFilterOutput() Get
 
 func (o GetVirtualNodePoolsFilterOutput) ToGetVirtualNodePoolsFilterOutputWithContext(ctx context.Context) GetVirtualNodePoolsFilterOutput {
 	return o
+}
+
+func (o GetVirtualNodePoolsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNodePoolsFilter] {
+	return pulumix.Output[GetVirtualNodePoolsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name to filter on.
@@ -15526,6 +18209,12 @@ func (o GetVirtualNodePoolsFilterArrayOutput) ToGetVirtualNodePoolsFilterArrayOu
 
 func (o GetVirtualNodePoolsFilterArrayOutput) ToGetVirtualNodePoolsFilterArrayOutputWithContext(ctx context.Context) GetVirtualNodePoolsFilterArrayOutput {
 	return o
+}
+
+func (o GetVirtualNodePoolsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNodePoolsFilter] {
+	return pulumix.Output[[]GetVirtualNodePoolsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVirtualNodePoolsFilterArrayOutput) Index(i pulumi.IntInput) GetVirtualNodePoolsFilterOutput {
@@ -15641,6 +18330,12 @@ func (i GetVirtualNodePoolsVirtualNodePoolArgs) ToGetVirtualNodePoolsVirtualNode
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolsVirtualNodePoolOutput)
 }
 
+func (i GetVirtualNodePoolsVirtualNodePoolArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNodePoolsVirtualNodePool] {
+	return pulumix.Output[GetVirtualNodePoolsVirtualNodePool]{
+		OutputState: i.ToGetVirtualNodePoolsVirtualNodePoolOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVirtualNodePoolsVirtualNodePoolArrayInput is an input type that accepts GetVirtualNodePoolsVirtualNodePoolArray and GetVirtualNodePoolsVirtualNodePoolArrayOutput values.
 // You can construct a concrete instance of `GetVirtualNodePoolsVirtualNodePoolArrayInput` via:
 //
@@ -15666,6 +18361,12 @@ func (i GetVirtualNodePoolsVirtualNodePoolArray) ToGetVirtualNodePoolsVirtualNod
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolsVirtualNodePoolArrayOutput)
 }
 
+func (i GetVirtualNodePoolsVirtualNodePoolArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNodePoolsVirtualNodePool] {
+	return pulumix.Output[[]GetVirtualNodePoolsVirtualNodePool]{
+		OutputState: i.ToGetVirtualNodePoolsVirtualNodePoolArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVirtualNodePoolsVirtualNodePoolOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualNodePoolsVirtualNodePoolOutput) ElementType() reflect.Type {
@@ -15678,6 +18379,12 @@ func (o GetVirtualNodePoolsVirtualNodePoolOutput) ToGetVirtualNodePoolsVirtualNo
 
 func (o GetVirtualNodePoolsVirtualNodePoolOutput) ToGetVirtualNodePoolsVirtualNodePoolOutputWithContext(ctx context.Context) GetVirtualNodePoolsVirtualNodePoolOutput {
 	return o
+}
+
+func (o GetVirtualNodePoolsVirtualNodePoolOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNodePoolsVirtualNodePool] {
+	return pulumix.Output[GetVirtualNodePoolsVirtualNodePool]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the cluster.
@@ -15801,6 +18508,12 @@ func (o GetVirtualNodePoolsVirtualNodePoolArrayOutput) ToGetVirtualNodePoolsVirt
 	return o
 }
 
+func (o GetVirtualNodePoolsVirtualNodePoolArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNodePoolsVirtualNodePool] {
+	return pulumix.Output[[]GetVirtualNodePoolsVirtualNodePool]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetVirtualNodePoolsVirtualNodePoolArrayOutput) Index(i pulumi.IntInput) GetVirtualNodePoolsVirtualNodePoolOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualNodePoolsVirtualNodePool {
 		return vs[0].([]GetVirtualNodePoolsVirtualNodePool)[vs[1].(int)]
@@ -15844,6 +18557,12 @@ func (i GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArgs) ToGetVirt
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelOutput)
 }
 
+func (i GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel] {
+	return pulumix.Output[GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel]{
+		OutputState: i.ToGetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArrayInput is an input type that accepts GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArray and GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArrayOutput values.
 // You can construct a concrete instance of `GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArrayInput` via:
 //
@@ -15869,6 +18588,12 @@ func (i GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArray) ToGetVir
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArrayOutput)
 }
 
+func (i GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel] {
+	return pulumix.Output[[]GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel]{
+		OutputState: i.ToGetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelOutput) ElementType() reflect.Type {
@@ -15881,6 +18606,12 @@ func (o GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelOutput) ToGetVi
 
 func (o GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelOutput) ToGetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelOutputWithContext(ctx context.Context) GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelOutput {
 	return o
+}
+
+func (o GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel] {
+	return pulumix.Output[GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The key of the pair.
@@ -15905,6 +18636,12 @@ func (o GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArrayOutput) To
 
 func (o GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArrayOutput) ToGetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArrayOutputWithContext(ctx context.Context) GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArrayOutput {
 	return o
+}
+
+func (o GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel] {
+	return pulumix.Output[[]GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArrayOutput) Index(i pulumi.IntInput) GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelOutput {
@@ -15954,6 +18691,12 @@ func (i GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArgs) ToGetVirtu
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutput)
 }
 
+func (i GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration] {
+	return pulumix.Output[GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration]{
+		OutputState: i.ToGetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArrayInput is an input type that accepts GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArray and GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArrayInput` via:
 //
@@ -15979,6 +18722,12 @@ func (i GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArray) ToGetVirt
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArrayOutput)
 }
 
+func (i GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration] {
+	return pulumix.Output[[]GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration]{
+		OutputState: i.ToGetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutput) ElementType() reflect.Type {
@@ -15991,6 +18740,12 @@ func (o GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutput) ToGetVir
 
 func (o GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutput) ToGetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutputWithContext(ctx context.Context) GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutput {
 	return o
+}
+
+func (o GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration] {
+	return pulumix.Output[GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The availability domain in which to place virtual nodes. Example: `Uocm:PHX-AD-1`
@@ -16020,6 +18775,12 @@ func (o GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArrayOutput) ToG
 
 func (o GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArrayOutput) ToGetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArrayOutputWithContext(ctx context.Context) GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArrayOutput {
 	return o
+}
+
+func (o GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration] {
+	return pulumix.Output[[]GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArrayOutput) Index(i pulumi.IntInput) GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutput {
@@ -16069,6 +18830,12 @@ func (i GetVirtualNodePoolsVirtualNodePoolPodConfigurationArgs) ToGetVirtualNode
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolsVirtualNodePoolPodConfigurationOutput)
 }
 
+func (i GetVirtualNodePoolsVirtualNodePoolPodConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNodePoolsVirtualNodePoolPodConfiguration] {
+	return pulumix.Output[GetVirtualNodePoolsVirtualNodePoolPodConfiguration]{
+		OutputState: i.ToGetVirtualNodePoolsVirtualNodePoolPodConfigurationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayInput is an input type that accepts GetVirtualNodePoolsVirtualNodePoolPodConfigurationArray and GetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayInput` via:
 //
@@ -16094,6 +18861,12 @@ func (i GetVirtualNodePoolsVirtualNodePoolPodConfigurationArray) ToGetVirtualNod
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayOutput)
 }
 
+func (i GetVirtualNodePoolsVirtualNodePoolPodConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNodePoolsVirtualNodePoolPodConfiguration] {
+	return pulumix.Output[[]GetVirtualNodePoolsVirtualNodePoolPodConfiguration]{
+		OutputState: i.ToGetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVirtualNodePoolsVirtualNodePoolPodConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualNodePoolsVirtualNodePoolPodConfigurationOutput) ElementType() reflect.Type {
@@ -16106,6 +18879,12 @@ func (o GetVirtualNodePoolsVirtualNodePoolPodConfigurationOutput) ToGetVirtualNo
 
 func (o GetVirtualNodePoolsVirtualNodePoolPodConfigurationOutput) ToGetVirtualNodePoolsVirtualNodePoolPodConfigurationOutputWithContext(ctx context.Context) GetVirtualNodePoolsVirtualNodePoolPodConfigurationOutput {
 	return o
+}
+
+func (o GetVirtualNodePoolsVirtualNodePoolPodConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNodePoolsVirtualNodePoolPodConfiguration] {
+	return pulumix.Output[GetVirtualNodePoolsVirtualNodePoolPodConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 // List of network security group IDs applied to the Pod VNIC.
@@ -16135,6 +18914,12 @@ func (o GetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayOutput) ToGetVirt
 
 func (o GetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayOutput) ToGetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayOutputWithContext(ctx context.Context) GetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayOutput {
 	return o
+}
+
+func (o GetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNodePoolsVirtualNodePoolPodConfiguration] {
+	return pulumix.Output[[]GetVirtualNodePoolsVirtualNodePoolPodConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayOutput) Index(i pulumi.IntInput) GetVirtualNodePoolsVirtualNodePoolPodConfigurationOutput {
@@ -16184,6 +18969,12 @@ func (i GetVirtualNodePoolsVirtualNodePoolTaintArgs) ToGetVirtualNodePoolsVirtua
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolsVirtualNodePoolTaintOutput)
 }
 
+func (i GetVirtualNodePoolsVirtualNodePoolTaintArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNodePoolsVirtualNodePoolTaint] {
+	return pulumix.Output[GetVirtualNodePoolsVirtualNodePoolTaint]{
+		OutputState: i.ToGetVirtualNodePoolsVirtualNodePoolTaintOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVirtualNodePoolsVirtualNodePoolTaintArrayInput is an input type that accepts GetVirtualNodePoolsVirtualNodePoolTaintArray and GetVirtualNodePoolsVirtualNodePoolTaintArrayOutput values.
 // You can construct a concrete instance of `GetVirtualNodePoolsVirtualNodePoolTaintArrayInput` via:
 //
@@ -16209,6 +19000,12 @@ func (i GetVirtualNodePoolsVirtualNodePoolTaintArray) ToGetVirtualNodePoolsVirtu
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolsVirtualNodePoolTaintArrayOutput)
 }
 
+func (i GetVirtualNodePoolsVirtualNodePoolTaintArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNodePoolsVirtualNodePoolTaint] {
+	return pulumix.Output[[]GetVirtualNodePoolsVirtualNodePoolTaint]{
+		OutputState: i.ToGetVirtualNodePoolsVirtualNodePoolTaintArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVirtualNodePoolsVirtualNodePoolTaintOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualNodePoolsVirtualNodePoolTaintOutput) ElementType() reflect.Type {
@@ -16221,6 +19018,12 @@ func (o GetVirtualNodePoolsVirtualNodePoolTaintOutput) ToGetVirtualNodePoolsVirt
 
 func (o GetVirtualNodePoolsVirtualNodePoolTaintOutput) ToGetVirtualNodePoolsVirtualNodePoolTaintOutputWithContext(ctx context.Context) GetVirtualNodePoolsVirtualNodePoolTaintOutput {
 	return o
+}
+
+func (o GetVirtualNodePoolsVirtualNodePoolTaintOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNodePoolsVirtualNodePoolTaint] {
+	return pulumix.Output[GetVirtualNodePoolsVirtualNodePoolTaint]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The effect of the pair.
@@ -16250,6 +19053,12 @@ func (o GetVirtualNodePoolsVirtualNodePoolTaintArrayOutput) ToGetVirtualNodePool
 
 func (o GetVirtualNodePoolsVirtualNodePoolTaintArrayOutput) ToGetVirtualNodePoolsVirtualNodePoolTaintArrayOutputWithContext(ctx context.Context) GetVirtualNodePoolsVirtualNodePoolTaintArrayOutput {
 	return o
+}
+
+func (o GetVirtualNodePoolsVirtualNodePoolTaintArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNodePoolsVirtualNodePoolTaint] {
+	return pulumix.Output[[]GetVirtualNodePoolsVirtualNodePoolTaint]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVirtualNodePoolsVirtualNodePoolTaintArrayOutput) Index(i pulumi.IntInput) GetVirtualNodePoolsVirtualNodePoolTaintOutput {
@@ -16295,6 +19104,12 @@ func (i GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArgs) ToGetVirtualNodePo
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutput)
 }
 
+func (i GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag] {
+	return pulumix.Output[GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag]{
+		OutputState: i.ToGetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayInput is an input type that accepts GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArray and GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayOutput values.
 // You can construct a concrete instance of `GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayInput` via:
 //
@@ -16320,6 +19135,12 @@ func (i GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArray) ToGetVirtualNodeP
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayOutput)
 }
 
+func (i GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag] {
+	return pulumix.Output[[]GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag]{
+		OutputState: i.ToGetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutput) ElementType() reflect.Type {
@@ -16332,6 +19153,12 @@ func (o GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutput) ToGetVirtualNode
 
 func (o GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutput) ToGetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutputWithContext(ctx context.Context) GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutput {
 	return o
+}
+
+func (o GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag] {
+	return pulumix.Output[GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -16356,6 +19183,12 @@ func (o GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayOutput) ToGetVirtua
 
 func (o GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayOutput) ToGetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayOutputWithContext(ctx context.Context) GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayOutput {
 	return o
+}
+
+func (o GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag] {
+	return pulumix.Output[[]GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayOutput) Index(i pulumi.IntInput) GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutput {
@@ -16399,6 +19232,12 @@ func (i GetWorkRequestErrorsFilterArgs) ToGetWorkRequestErrorsFilterOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkRequestErrorsFilterOutput)
 }
 
+func (i GetWorkRequestErrorsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkRequestErrorsFilter] {
+	return pulumix.Output[GetWorkRequestErrorsFilter]{
+		OutputState: i.ToGetWorkRequestErrorsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWorkRequestErrorsFilterArrayInput is an input type that accepts GetWorkRequestErrorsFilterArray and GetWorkRequestErrorsFilterArrayOutput values.
 // You can construct a concrete instance of `GetWorkRequestErrorsFilterArrayInput` via:
 //
@@ -16424,6 +19263,12 @@ func (i GetWorkRequestErrorsFilterArray) ToGetWorkRequestErrorsFilterArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkRequestErrorsFilterArrayOutput)
 }
 
+func (i GetWorkRequestErrorsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkRequestErrorsFilter] {
+	return pulumix.Output[[]GetWorkRequestErrorsFilter]{
+		OutputState: i.ToGetWorkRequestErrorsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWorkRequestErrorsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetWorkRequestErrorsFilterOutput) ElementType() reflect.Type {
@@ -16436,6 +19281,12 @@ func (o GetWorkRequestErrorsFilterOutput) ToGetWorkRequestErrorsFilterOutput() G
 
 func (o GetWorkRequestErrorsFilterOutput) ToGetWorkRequestErrorsFilterOutputWithContext(ctx context.Context) GetWorkRequestErrorsFilterOutput {
 	return o
+}
+
+func (o GetWorkRequestErrorsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkRequestErrorsFilter] {
+	return pulumix.Output[GetWorkRequestErrorsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetWorkRequestErrorsFilterOutput) Name() pulumi.StringOutput {
@@ -16462,6 +19313,12 @@ func (o GetWorkRequestErrorsFilterArrayOutput) ToGetWorkRequestErrorsFilterArray
 
 func (o GetWorkRequestErrorsFilterArrayOutput) ToGetWorkRequestErrorsFilterArrayOutputWithContext(ctx context.Context) GetWorkRequestErrorsFilterArrayOutput {
 	return o
+}
+
+func (o GetWorkRequestErrorsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkRequestErrorsFilter] {
+	return pulumix.Output[[]GetWorkRequestErrorsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetWorkRequestErrorsFilterArrayOutput) Index(i pulumi.IntInput) GetWorkRequestErrorsFilterOutput {
@@ -16511,6 +19368,12 @@ func (i GetWorkRequestErrorsWorkRequestErrorArgs) ToGetWorkRequestErrorsWorkRequ
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkRequestErrorsWorkRequestErrorOutput)
 }
 
+func (i GetWorkRequestErrorsWorkRequestErrorArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkRequestErrorsWorkRequestError] {
+	return pulumix.Output[GetWorkRequestErrorsWorkRequestError]{
+		OutputState: i.ToGetWorkRequestErrorsWorkRequestErrorOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWorkRequestErrorsWorkRequestErrorArrayInput is an input type that accepts GetWorkRequestErrorsWorkRequestErrorArray and GetWorkRequestErrorsWorkRequestErrorArrayOutput values.
 // You can construct a concrete instance of `GetWorkRequestErrorsWorkRequestErrorArrayInput` via:
 //
@@ -16536,6 +19399,12 @@ func (i GetWorkRequestErrorsWorkRequestErrorArray) ToGetWorkRequestErrorsWorkReq
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkRequestErrorsWorkRequestErrorArrayOutput)
 }
 
+func (i GetWorkRequestErrorsWorkRequestErrorArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkRequestErrorsWorkRequestError] {
+	return pulumix.Output[[]GetWorkRequestErrorsWorkRequestError]{
+		OutputState: i.ToGetWorkRequestErrorsWorkRequestErrorArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWorkRequestErrorsWorkRequestErrorOutput struct{ *pulumi.OutputState }
 
 func (GetWorkRequestErrorsWorkRequestErrorOutput) ElementType() reflect.Type {
@@ -16548,6 +19417,12 @@ func (o GetWorkRequestErrorsWorkRequestErrorOutput) ToGetWorkRequestErrorsWorkRe
 
 func (o GetWorkRequestErrorsWorkRequestErrorOutput) ToGetWorkRequestErrorsWorkRequestErrorOutputWithContext(ctx context.Context) GetWorkRequestErrorsWorkRequestErrorOutput {
 	return o
+}
+
+func (o GetWorkRequestErrorsWorkRequestErrorOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkRequestErrorsWorkRequestError] {
+	return pulumix.Output[GetWorkRequestErrorsWorkRequestError]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A short error code that defines the error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
@@ -16577,6 +19452,12 @@ func (o GetWorkRequestErrorsWorkRequestErrorArrayOutput) ToGetWorkRequestErrorsW
 
 func (o GetWorkRequestErrorsWorkRequestErrorArrayOutput) ToGetWorkRequestErrorsWorkRequestErrorArrayOutputWithContext(ctx context.Context) GetWorkRequestErrorsWorkRequestErrorArrayOutput {
 	return o
+}
+
+func (o GetWorkRequestErrorsWorkRequestErrorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkRequestErrorsWorkRequestError] {
+	return pulumix.Output[[]GetWorkRequestErrorsWorkRequestError]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetWorkRequestErrorsWorkRequestErrorArrayOutput) Index(i pulumi.IntInput) GetWorkRequestErrorsWorkRequestErrorOutput {
@@ -16620,6 +19501,12 @@ func (i GetWorkRequestLogEntriesFilterArgs) ToGetWorkRequestLogEntriesFilterOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkRequestLogEntriesFilterOutput)
 }
 
+func (i GetWorkRequestLogEntriesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkRequestLogEntriesFilter] {
+	return pulumix.Output[GetWorkRequestLogEntriesFilter]{
+		OutputState: i.ToGetWorkRequestLogEntriesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWorkRequestLogEntriesFilterArrayInput is an input type that accepts GetWorkRequestLogEntriesFilterArray and GetWorkRequestLogEntriesFilterArrayOutput values.
 // You can construct a concrete instance of `GetWorkRequestLogEntriesFilterArrayInput` via:
 //
@@ -16645,6 +19532,12 @@ func (i GetWorkRequestLogEntriesFilterArray) ToGetWorkRequestLogEntriesFilterArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkRequestLogEntriesFilterArrayOutput)
 }
 
+func (i GetWorkRequestLogEntriesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkRequestLogEntriesFilter] {
+	return pulumix.Output[[]GetWorkRequestLogEntriesFilter]{
+		OutputState: i.ToGetWorkRequestLogEntriesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWorkRequestLogEntriesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetWorkRequestLogEntriesFilterOutput) ElementType() reflect.Type {
@@ -16657,6 +19550,12 @@ func (o GetWorkRequestLogEntriesFilterOutput) ToGetWorkRequestLogEntriesFilterOu
 
 func (o GetWorkRequestLogEntriesFilterOutput) ToGetWorkRequestLogEntriesFilterOutputWithContext(ctx context.Context) GetWorkRequestLogEntriesFilterOutput {
 	return o
+}
+
+func (o GetWorkRequestLogEntriesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkRequestLogEntriesFilter] {
+	return pulumix.Output[GetWorkRequestLogEntriesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetWorkRequestLogEntriesFilterOutput) Name() pulumi.StringOutput {
@@ -16683,6 +19582,12 @@ func (o GetWorkRequestLogEntriesFilterArrayOutput) ToGetWorkRequestLogEntriesFil
 
 func (o GetWorkRequestLogEntriesFilterArrayOutput) ToGetWorkRequestLogEntriesFilterArrayOutputWithContext(ctx context.Context) GetWorkRequestLogEntriesFilterArrayOutput {
 	return o
+}
+
+func (o GetWorkRequestLogEntriesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkRequestLogEntriesFilter] {
+	return pulumix.Output[[]GetWorkRequestLogEntriesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetWorkRequestLogEntriesFilterArrayOutput) Index(i pulumi.IntInput) GetWorkRequestLogEntriesFilterOutput {
@@ -16728,6 +19633,12 @@ func (i GetWorkRequestLogEntriesWorkRequestLogEntryArgs) ToGetWorkRequestLogEntr
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkRequestLogEntriesWorkRequestLogEntryOutput)
 }
 
+func (i GetWorkRequestLogEntriesWorkRequestLogEntryArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkRequestLogEntriesWorkRequestLogEntry] {
+	return pulumix.Output[GetWorkRequestLogEntriesWorkRequestLogEntry]{
+		OutputState: i.ToGetWorkRequestLogEntriesWorkRequestLogEntryOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWorkRequestLogEntriesWorkRequestLogEntryArrayInput is an input type that accepts GetWorkRequestLogEntriesWorkRequestLogEntryArray and GetWorkRequestLogEntriesWorkRequestLogEntryArrayOutput values.
 // You can construct a concrete instance of `GetWorkRequestLogEntriesWorkRequestLogEntryArrayInput` via:
 //
@@ -16753,6 +19664,12 @@ func (i GetWorkRequestLogEntriesWorkRequestLogEntryArray) ToGetWorkRequestLogEnt
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkRequestLogEntriesWorkRequestLogEntryArrayOutput)
 }
 
+func (i GetWorkRequestLogEntriesWorkRequestLogEntryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkRequestLogEntriesWorkRequestLogEntry] {
+	return pulumix.Output[[]GetWorkRequestLogEntriesWorkRequestLogEntry]{
+		OutputState: i.ToGetWorkRequestLogEntriesWorkRequestLogEntryArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWorkRequestLogEntriesWorkRequestLogEntryOutput struct{ *pulumi.OutputState }
 
 func (GetWorkRequestLogEntriesWorkRequestLogEntryOutput) ElementType() reflect.Type {
@@ -16765,6 +19682,12 @@ func (o GetWorkRequestLogEntriesWorkRequestLogEntryOutput) ToGetWorkRequestLogEn
 
 func (o GetWorkRequestLogEntriesWorkRequestLogEntryOutput) ToGetWorkRequestLogEntriesWorkRequestLogEntryOutputWithContext(ctx context.Context) GetWorkRequestLogEntriesWorkRequestLogEntryOutput {
 	return o
+}
+
+func (o GetWorkRequestLogEntriesWorkRequestLogEntryOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkRequestLogEntriesWorkRequestLogEntry] {
+	return pulumix.Output[GetWorkRequestLogEntriesWorkRequestLogEntry]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The description of an action that occurred.
@@ -16789,6 +19712,12 @@ func (o GetWorkRequestLogEntriesWorkRequestLogEntryArrayOutput) ToGetWorkRequest
 
 func (o GetWorkRequestLogEntriesWorkRequestLogEntryArrayOutput) ToGetWorkRequestLogEntriesWorkRequestLogEntryArrayOutputWithContext(ctx context.Context) GetWorkRequestLogEntriesWorkRequestLogEntryArrayOutput {
 	return o
+}
+
+func (o GetWorkRequestLogEntriesWorkRequestLogEntryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkRequestLogEntriesWorkRequestLogEntry] {
+	return pulumix.Output[[]GetWorkRequestLogEntriesWorkRequestLogEntry]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetWorkRequestLogEntriesWorkRequestLogEntryArrayOutput) Index(i pulumi.IntInput) GetWorkRequestLogEntriesWorkRequestLogEntryOutput {
@@ -16832,6 +19761,12 @@ func (i GetWorkRequestsFilterArgs) ToGetWorkRequestsFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkRequestsFilterOutput)
 }
 
+func (i GetWorkRequestsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkRequestsFilter] {
+	return pulumix.Output[GetWorkRequestsFilter]{
+		OutputState: i.ToGetWorkRequestsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWorkRequestsFilterArrayInput is an input type that accepts GetWorkRequestsFilterArray and GetWorkRequestsFilterArrayOutput values.
 // You can construct a concrete instance of `GetWorkRequestsFilterArrayInput` via:
 //
@@ -16857,6 +19792,12 @@ func (i GetWorkRequestsFilterArray) ToGetWorkRequestsFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkRequestsFilterArrayOutput)
 }
 
+func (i GetWorkRequestsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkRequestsFilter] {
+	return pulumix.Output[[]GetWorkRequestsFilter]{
+		OutputState: i.ToGetWorkRequestsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWorkRequestsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetWorkRequestsFilterOutput) ElementType() reflect.Type {
@@ -16869,6 +19810,12 @@ func (o GetWorkRequestsFilterOutput) ToGetWorkRequestsFilterOutput() GetWorkRequ
 
 func (o GetWorkRequestsFilterOutput) ToGetWorkRequestsFilterOutputWithContext(ctx context.Context) GetWorkRequestsFilterOutput {
 	return o
+}
+
+func (o GetWorkRequestsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkRequestsFilter] {
+	return pulumix.Output[GetWorkRequestsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetWorkRequestsFilterOutput) Name() pulumi.StringOutput {
@@ -16895,6 +19842,12 @@ func (o GetWorkRequestsFilterArrayOutput) ToGetWorkRequestsFilterArrayOutput() G
 
 func (o GetWorkRequestsFilterArrayOutput) ToGetWorkRequestsFilterArrayOutputWithContext(ctx context.Context) GetWorkRequestsFilterArrayOutput {
 	return o
+}
+
+func (o GetWorkRequestsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkRequestsFilter] {
+	return pulumix.Output[[]GetWorkRequestsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetWorkRequestsFilterArrayOutput) Index(i pulumi.IntInput) GetWorkRequestsFilterOutput {
@@ -16964,6 +19917,12 @@ func (i GetWorkRequestsWorkRequestArgs) ToGetWorkRequestsWorkRequestOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkRequestsWorkRequestOutput)
 }
 
+func (i GetWorkRequestsWorkRequestArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkRequestsWorkRequest] {
+	return pulumix.Output[GetWorkRequestsWorkRequest]{
+		OutputState: i.ToGetWorkRequestsWorkRequestOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWorkRequestsWorkRequestArrayInput is an input type that accepts GetWorkRequestsWorkRequestArray and GetWorkRequestsWorkRequestArrayOutput values.
 // You can construct a concrete instance of `GetWorkRequestsWorkRequestArrayInput` via:
 //
@@ -16989,6 +19948,12 @@ func (i GetWorkRequestsWorkRequestArray) ToGetWorkRequestsWorkRequestArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkRequestsWorkRequestArrayOutput)
 }
 
+func (i GetWorkRequestsWorkRequestArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkRequestsWorkRequest] {
+	return pulumix.Output[[]GetWorkRequestsWorkRequest]{
+		OutputState: i.ToGetWorkRequestsWorkRequestArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWorkRequestsWorkRequestOutput struct{ *pulumi.OutputState }
 
 func (GetWorkRequestsWorkRequestOutput) ElementType() reflect.Type {
@@ -17001,6 +19966,12 @@ func (o GetWorkRequestsWorkRequestOutput) ToGetWorkRequestsWorkRequestOutput() G
 
 func (o GetWorkRequestsWorkRequestOutput) ToGetWorkRequestsWorkRequestOutputWithContext(ctx context.Context) GetWorkRequestsWorkRequestOutput {
 	return o
+}
+
+func (o GetWorkRequestsWorkRequestOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkRequestsWorkRequest] {
+	return pulumix.Output[GetWorkRequestsWorkRequest]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the compartment.
@@ -17057,6 +20028,12 @@ func (o GetWorkRequestsWorkRequestArrayOutput) ToGetWorkRequestsWorkRequestArray
 	return o
 }
 
+func (o GetWorkRequestsWorkRequestArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkRequestsWorkRequest] {
+	return pulumix.Output[[]GetWorkRequestsWorkRequest]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetWorkRequestsWorkRequestArrayOutput) Index(i pulumi.IntInput) GetWorkRequestsWorkRequestOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkRequestsWorkRequest {
 		return vs[0].([]GetWorkRequestsWorkRequest)[vs[1].(int)]
@@ -17108,6 +20085,12 @@ func (i GetWorkRequestsWorkRequestResourceArgs) ToGetWorkRequestsWorkRequestReso
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkRequestsWorkRequestResourceOutput)
 }
 
+func (i GetWorkRequestsWorkRequestResourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkRequestsWorkRequestResource] {
+	return pulumix.Output[GetWorkRequestsWorkRequestResource]{
+		OutputState: i.ToGetWorkRequestsWorkRequestResourceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetWorkRequestsWorkRequestResourceArrayInput is an input type that accepts GetWorkRequestsWorkRequestResourceArray and GetWorkRequestsWorkRequestResourceArrayOutput values.
 // You can construct a concrete instance of `GetWorkRequestsWorkRequestResourceArrayInput` via:
 //
@@ -17133,6 +20116,12 @@ func (i GetWorkRequestsWorkRequestResourceArray) ToGetWorkRequestsWorkRequestRes
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkRequestsWorkRequestResourceArrayOutput)
 }
 
+func (i GetWorkRequestsWorkRequestResourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkRequestsWorkRequestResource] {
+	return pulumix.Output[[]GetWorkRequestsWorkRequestResource]{
+		OutputState: i.ToGetWorkRequestsWorkRequestResourceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetWorkRequestsWorkRequestResourceOutput struct{ *pulumi.OutputState }
 
 func (GetWorkRequestsWorkRequestResourceOutput) ElementType() reflect.Type {
@@ -17145,6 +20134,12 @@ func (o GetWorkRequestsWorkRequestResourceOutput) ToGetWorkRequestsWorkRequestRe
 
 func (o GetWorkRequestsWorkRequestResourceOutput) ToGetWorkRequestsWorkRequestResourceOutputWithContext(ctx context.Context) GetWorkRequestsWorkRequestResourceOutput {
 	return o
+}
+
+func (o GetWorkRequestsWorkRequestResourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkRequestsWorkRequestResource] {
+	return pulumix.Output[GetWorkRequestsWorkRequestResource]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The way in which this resource was affected by the work tracked by the work request.
@@ -17179,6 +20174,12 @@ func (o GetWorkRequestsWorkRequestResourceArrayOutput) ToGetWorkRequestsWorkRequ
 
 func (o GetWorkRequestsWorkRequestResourceArrayOutput) ToGetWorkRequestsWorkRequestResourceArrayOutputWithContext(ctx context.Context) GetWorkRequestsWorkRequestResourceArrayOutput {
 	return o
+}
+
+func (o GetWorkRequestsWorkRequestResourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkRequestsWorkRequestResource] {
+	return pulumix.Output[[]GetWorkRequestsWorkRequestResource]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetWorkRequestsWorkRequestResourceArrayOutput) Index(i pulumi.IntInput) GetWorkRequestsWorkRequestResourceOutput {

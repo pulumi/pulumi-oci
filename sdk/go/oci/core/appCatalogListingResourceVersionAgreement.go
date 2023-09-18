@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // The `Core.AppCatalogListingResourceVersionAgreement` resource creates AppCatalogListingResourceVersionAgreement for a particular resource version of a listing.
@@ -164,6 +165,12 @@ func (i *AppCatalogListingResourceVersionAgreement) ToAppCatalogListingResourceV
 	return pulumi.ToOutputWithContext(ctx, i).(AppCatalogListingResourceVersionAgreementOutput)
 }
 
+func (i *AppCatalogListingResourceVersionAgreement) ToOutput(ctx context.Context) pulumix.Output[*AppCatalogListingResourceVersionAgreement] {
+	return pulumix.Output[*AppCatalogListingResourceVersionAgreement]{
+		OutputState: i.ToAppCatalogListingResourceVersionAgreementOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AppCatalogListingResourceVersionAgreementArrayInput is an input type that accepts AppCatalogListingResourceVersionAgreementArray and AppCatalogListingResourceVersionAgreementArrayOutput values.
 // You can construct a concrete instance of `AppCatalogListingResourceVersionAgreementArrayInput` via:
 //
@@ -187,6 +194,12 @@ func (i AppCatalogListingResourceVersionAgreementArray) ToAppCatalogListingResou
 
 func (i AppCatalogListingResourceVersionAgreementArray) ToAppCatalogListingResourceVersionAgreementArrayOutputWithContext(ctx context.Context) AppCatalogListingResourceVersionAgreementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppCatalogListingResourceVersionAgreementArrayOutput)
+}
+
+func (i AppCatalogListingResourceVersionAgreementArray) ToOutput(ctx context.Context) pulumix.Output[[]*AppCatalogListingResourceVersionAgreement] {
+	return pulumix.Output[[]*AppCatalogListingResourceVersionAgreement]{
+		OutputState: i.ToAppCatalogListingResourceVersionAgreementArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // AppCatalogListingResourceVersionAgreementMapInput is an input type that accepts AppCatalogListingResourceVersionAgreementMap and AppCatalogListingResourceVersionAgreementMapOutput values.
@@ -214,6 +227,12 @@ func (i AppCatalogListingResourceVersionAgreementMap) ToAppCatalogListingResourc
 	return pulumi.ToOutputWithContext(ctx, i).(AppCatalogListingResourceVersionAgreementMapOutput)
 }
 
+func (i AppCatalogListingResourceVersionAgreementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppCatalogListingResourceVersionAgreement] {
+	return pulumix.Output[map[string]*AppCatalogListingResourceVersionAgreement]{
+		OutputState: i.ToAppCatalogListingResourceVersionAgreementMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AppCatalogListingResourceVersionAgreementOutput struct{ *pulumi.OutputState }
 
 func (AppCatalogListingResourceVersionAgreementOutput) ElementType() reflect.Type {
@@ -226,6 +245,12 @@ func (o AppCatalogListingResourceVersionAgreementOutput) ToAppCatalogListingReso
 
 func (o AppCatalogListingResourceVersionAgreementOutput) ToAppCatalogListingResourceVersionAgreementOutputWithContext(ctx context.Context) AppCatalogListingResourceVersionAgreementOutput {
 	return o
+}
+
+func (o AppCatalogListingResourceVersionAgreementOutput) ToOutput(ctx context.Context) pulumix.Output[*AppCatalogListingResourceVersionAgreement] {
+	return pulumix.Output[*AppCatalogListingResourceVersionAgreement]{
+		OutputState: o.OutputState,
+	}
 }
 
 // EULA link
@@ -274,6 +299,12 @@ func (o AppCatalogListingResourceVersionAgreementArrayOutput) ToAppCatalogListin
 	return o
 }
 
+func (o AppCatalogListingResourceVersionAgreementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AppCatalogListingResourceVersionAgreement] {
+	return pulumix.Output[[]*AppCatalogListingResourceVersionAgreement]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AppCatalogListingResourceVersionAgreementArrayOutput) Index(i pulumi.IntInput) AppCatalogListingResourceVersionAgreementOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppCatalogListingResourceVersionAgreement {
 		return vs[0].([]*AppCatalogListingResourceVersionAgreement)[vs[1].(int)]
@@ -292,6 +323,12 @@ func (o AppCatalogListingResourceVersionAgreementMapOutput) ToAppCatalogListingR
 
 func (o AppCatalogListingResourceVersionAgreementMapOutput) ToAppCatalogListingResourceVersionAgreementMapOutputWithContext(ctx context.Context) AppCatalogListingResourceVersionAgreementMapOutput {
 	return o
+}
+
+func (o AppCatalogListingResourceVersionAgreementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppCatalogListingResourceVersionAgreement] {
+	return pulumix.Output[map[string]*AppCatalogListingResourceVersionAgreement]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AppCatalogListingResourceVersionAgreementMapOutput) MapIndex(k pulumi.StringInput) AppCatalogListingResourceVersionAgreementOutput {

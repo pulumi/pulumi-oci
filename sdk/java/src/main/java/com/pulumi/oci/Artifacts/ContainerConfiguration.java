@@ -55,7 +55,7 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:Artifacts/containerConfiguration:ContainerConfiguration")
 public class ContainerConfiguration extends com.pulumi.resources.CustomResource {
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     public Output<String> compartmentId() {
@@ -65,7 +65,7 @@ public class ContainerConfiguration extends com.pulumi.resources.CustomResource 
      * Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
      * 
      */
-    @Export(name="isRepositoryCreatedOnFirstPush", type=Boolean.class, parameters={})
+    @Export(name="isRepositoryCreatedOnFirstPush", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isRepositoryCreatedOnFirstPush;
 
     /**
@@ -79,7 +79,7 @@ public class ContainerConfiguration extends com.pulumi.resources.CustomResource 
      * The tenancy namespace used in the container repository path.
      * 
      */
-    @Export(name="namespace", type=String.class, parameters={})
+    @Export(name="namespace", refs={String.class}, tree="[0]")
     private Output<String> namespace;
 
     /**

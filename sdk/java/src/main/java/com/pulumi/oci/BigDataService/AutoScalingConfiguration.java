@@ -109,7 +109,7 @@ public class AutoScalingConfiguration extends com.pulumi.resources.CustomResourc
      * The OCID of the cluster.
      * 
      */
-    @Export(name="bdsInstanceId", type=String.class, parameters={})
+    @Export(name="bdsInstanceId", refs={String.class}, tree="[0]")
     private Output<String> bdsInstanceId;
 
     /**
@@ -123,7 +123,7 @@ public class AutoScalingConfiguration extends com.pulumi.resources.CustomResourc
      * (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
      * 
      */
-    @Export(name="clusterAdminPassword", type=String.class, parameters={})
+    @Export(name="clusterAdminPassword", refs={String.class}, tree="[0]")
     private Output<String> clusterAdminPassword;
 
     /**
@@ -137,7 +137,7 @@ public class AutoScalingConfiguration extends com.pulumi.resources.CustomResourc
      * (Updatable) A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -151,7 +151,7 @@ public class AutoScalingConfiguration extends com.pulumi.resources.CustomResourc
      * (Updatable) Whether the autoscale configuration is enabled.
      * 
      */
-    @Export(name="isEnabled", type=Boolean.class, parameters={})
+    @Export(name="isEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isEnabled;
 
     /**
@@ -165,7 +165,7 @@ public class AutoScalingConfiguration extends com.pulumi.resources.CustomResourc
      * A node type that is managed by an autoscale configuration. The only supported types are WORKER, COMPUTE_ONLY_WORKER and KAFKA_BROKER.
      * 
      */
-    @Export(name="nodeType", type=String.class, parameters={})
+    @Export(name="nodeType", refs={String.class}, tree="[0]")
     private Output<String> nodeType;
 
     /**
@@ -179,7 +179,7 @@ public class AutoScalingConfiguration extends com.pulumi.resources.CustomResourc
      * (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
      * 
      */
-    @Export(name="policy", type=AutoScalingConfigurationPolicy.class, parameters={})
+    @Export(name="policy", refs={AutoScalingConfigurationPolicy.class}, tree="[0]")
     private Output<AutoScalingConfigurationPolicy> policy;
 
     /**
@@ -203,7 +203,7 @@ public class AutoScalingConfiguration extends com.pulumi.resources.CustomResourc
      * An autoscaling configuration can have one of above supported policies.
      * 
      */
-    @Export(name="policyDetails", type=AutoScalingConfigurationPolicyDetails.class, parameters={})
+    @Export(name="policyDetails", refs={AutoScalingConfigurationPolicyDetails.class}, tree="[0]")
     private Output<AutoScalingConfigurationPolicyDetails> policyDetails;
 
     /**
@@ -227,7 +227,7 @@ public class AutoScalingConfiguration extends com.pulumi.resources.CustomResourc
      * The state of the autoscale configuration.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -241,7 +241,7 @@ public class AutoScalingConfiguration extends com.pulumi.resources.CustomResourc
      * The time the cluster was created, shown as an RFC 3339 formatted datetime string.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -255,7 +255,7 @@ public class AutoScalingConfiguration extends com.pulumi.resources.CustomResourc
      * The time the autoscale configuration was updated, shown as an RFC 3339 formatted datetime string.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

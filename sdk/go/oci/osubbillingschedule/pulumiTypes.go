@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -90,6 +91,12 @@ func (i GetBillingScheduleBillingScheduleArgs) ToGetBillingScheduleBillingSchedu
 	return pulumi.ToOutputWithContext(ctx, i).(GetBillingScheduleBillingScheduleOutput)
 }
 
+func (i GetBillingScheduleBillingScheduleArgs) ToOutput(ctx context.Context) pulumix.Output[GetBillingScheduleBillingSchedule] {
+	return pulumix.Output[GetBillingScheduleBillingSchedule]{
+		OutputState: i.ToGetBillingScheduleBillingScheduleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetBillingScheduleBillingScheduleArrayInput is an input type that accepts GetBillingScheduleBillingScheduleArray and GetBillingScheduleBillingScheduleArrayOutput values.
 // You can construct a concrete instance of `GetBillingScheduleBillingScheduleArrayInput` via:
 //
@@ -115,6 +122,12 @@ func (i GetBillingScheduleBillingScheduleArray) ToGetBillingScheduleBillingSched
 	return pulumi.ToOutputWithContext(ctx, i).(GetBillingScheduleBillingScheduleArrayOutput)
 }
 
+func (i GetBillingScheduleBillingScheduleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBillingScheduleBillingSchedule] {
+	return pulumix.Output[[]GetBillingScheduleBillingSchedule]{
+		OutputState: i.ToGetBillingScheduleBillingScheduleArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetBillingScheduleBillingScheduleOutput struct{ *pulumi.OutputState }
 
 func (GetBillingScheduleBillingScheduleOutput) ElementType() reflect.Type {
@@ -127,6 +140,12 @@ func (o GetBillingScheduleBillingScheduleOutput) ToGetBillingScheduleBillingSche
 
 func (o GetBillingScheduleBillingScheduleOutput) ToGetBillingScheduleBillingScheduleOutputWithContext(ctx context.Context) GetBillingScheduleBillingScheduleOutput {
 	return o
+}
+
+func (o GetBillingScheduleBillingScheduleOutput) ToOutput(ctx context.Context) pulumix.Output[GetBillingScheduleBillingSchedule] {
+	return pulumix.Output[GetBillingScheduleBillingSchedule]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Billing schedule line net amount
@@ -205,6 +224,12 @@ func (o GetBillingScheduleBillingScheduleArrayOutput) ToGetBillingScheduleBillin
 	return o
 }
 
+func (o GetBillingScheduleBillingScheduleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBillingScheduleBillingSchedule] {
+	return pulumix.Output[[]GetBillingScheduleBillingSchedule]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetBillingScheduleBillingScheduleArrayOutput) Index(i pulumi.IntInput) GetBillingScheduleBillingScheduleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBillingScheduleBillingSchedule {
 		return vs[0].([]GetBillingScheduleBillingSchedule)[vs[1].(int)]
@@ -248,6 +273,12 @@ func (i GetBillingScheduleBillingScheduleProductArgs) ToGetBillingScheduleBillin
 	return pulumi.ToOutputWithContext(ctx, i).(GetBillingScheduleBillingScheduleProductOutput)
 }
 
+func (i GetBillingScheduleBillingScheduleProductArgs) ToOutput(ctx context.Context) pulumix.Output[GetBillingScheduleBillingScheduleProduct] {
+	return pulumix.Output[GetBillingScheduleBillingScheduleProduct]{
+		OutputState: i.ToGetBillingScheduleBillingScheduleProductOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetBillingScheduleBillingScheduleProductArrayInput is an input type that accepts GetBillingScheduleBillingScheduleProductArray and GetBillingScheduleBillingScheduleProductArrayOutput values.
 // You can construct a concrete instance of `GetBillingScheduleBillingScheduleProductArrayInput` via:
 //
@@ -273,6 +304,12 @@ func (i GetBillingScheduleBillingScheduleProductArray) ToGetBillingScheduleBilli
 	return pulumi.ToOutputWithContext(ctx, i).(GetBillingScheduleBillingScheduleProductArrayOutput)
 }
 
+func (i GetBillingScheduleBillingScheduleProductArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBillingScheduleBillingScheduleProduct] {
+	return pulumix.Output[[]GetBillingScheduleBillingScheduleProduct]{
+		OutputState: i.ToGetBillingScheduleBillingScheduleProductArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetBillingScheduleBillingScheduleProductOutput struct{ *pulumi.OutputState }
 
 func (GetBillingScheduleBillingScheduleProductOutput) ElementType() reflect.Type {
@@ -285,6 +322,12 @@ func (o GetBillingScheduleBillingScheduleProductOutput) ToGetBillingScheduleBill
 
 func (o GetBillingScheduleBillingScheduleProductOutput) ToGetBillingScheduleBillingScheduleProductOutputWithContext(ctx context.Context) GetBillingScheduleBillingScheduleProductOutput {
 	return o
+}
+
+func (o GetBillingScheduleBillingScheduleProductOutput) ToOutput(ctx context.Context) pulumix.Output[GetBillingScheduleBillingScheduleProduct] {
+	return pulumix.Output[GetBillingScheduleBillingScheduleProduct]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Product name
@@ -309,6 +352,12 @@ func (o GetBillingScheduleBillingScheduleProductArrayOutput) ToGetBillingSchedul
 
 func (o GetBillingScheduleBillingScheduleProductArrayOutput) ToGetBillingScheduleBillingScheduleProductArrayOutputWithContext(ctx context.Context) GetBillingScheduleBillingScheduleProductArrayOutput {
 	return o
+}
+
+func (o GetBillingScheduleBillingScheduleProductArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBillingScheduleBillingScheduleProduct] {
+	return pulumix.Output[[]GetBillingScheduleBillingScheduleProduct]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetBillingScheduleBillingScheduleProductArrayOutput) Index(i pulumi.IntInput) GetBillingScheduleBillingScheduleProductOutput {
@@ -354,6 +403,12 @@ func (i GetBillingScheduleFilterArgs) ToGetBillingScheduleFilterOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetBillingScheduleFilterOutput)
 }
 
+func (i GetBillingScheduleFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetBillingScheduleFilter] {
+	return pulumix.Output[GetBillingScheduleFilter]{
+		OutputState: i.ToGetBillingScheduleFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetBillingScheduleFilterArrayInput is an input type that accepts GetBillingScheduleFilterArray and GetBillingScheduleFilterArrayOutput values.
 // You can construct a concrete instance of `GetBillingScheduleFilterArrayInput` via:
 //
@@ -379,6 +434,12 @@ func (i GetBillingScheduleFilterArray) ToGetBillingScheduleFilterArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetBillingScheduleFilterArrayOutput)
 }
 
+func (i GetBillingScheduleFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBillingScheduleFilter] {
+	return pulumix.Output[[]GetBillingScheduleFilter]{
+		OutputState: i.ToGetBillingScheduleFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetBillingScheduleFilterOutput struct{ *pulumi.OutputState }
 
 func (GetBillingScheduleFilterOutput) ElementType() reflect.Type {
@@ -391,6 +452,12 @@ func (o GetBillingScheduleFilterOutput) ToGetBillingScheduleFilterOutput() GetBi
 
 func (o GetBillingScheduleFilterOutput) ToGetBillingScheduleFilterOutputWithContext(ctx context.Context) GetBillingScheduleFilterOutput {
 	return o
+}
+
+func (o GetBillingScheduleFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetBillingScheduleFilter] {
+	return pulumix.Output[GetBillingScheduleFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Product name
@@ -418,6 +485,12 @@ func (o GetBillingScheduleFilterArrayOutput) ToGetBillingScheduleFilterArrayOutp
 
 func (o GetBillingScheduleFilterArrayOutput) ToGetBillingScheduleFilterArrayOutputWithContext(ctx context.Context) GetBillingScheduleFilterArrayOutput {
 	return o
+}
+
+func (o GetBillingScheduleFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBillingScheduleFilter] {
+	return pulumix.Output[[]GetBillingScheduleFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetBillingScheduleFilterArrayOutput) Index(i pulumi.IntInput) GetBillingScheduleFilterOutput {

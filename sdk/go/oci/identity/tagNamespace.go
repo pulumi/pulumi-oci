@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Tag Namespace resource in Oracle Cloud Infrastructure Identity service.
@@ -239,6 +240,12 @@ func (i *TagNamespace) ToTagNamespaceOutputWithContext(ctx context.Context) TagN
 	return pulumi.ToOutputWithContext(ctx, i).(TagNamespaceOutput)
 }
 
+func (i *TagNamespace) ToOutput(ctx context.Context) pulumix.Output[*TagNamespace] {
+	return pulumix.Output[*TagNamespace]{
+		OutputState: i.ToTagNamespaceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // TagNamespaceArrayInput is an input type that accepts TagNamespaceArray and TagNamespaceArrayOutput values.
 // You can construct a concrete instance of `TagNamespaceArrayInput` via:
 //
@@ -262,6 +269,12 @@ func (i TagNamespaceArray) ToTagNamespaceArrayOutput() TagNamespaceArrayOutput {
 
 func (i TagNamespaceArray) ToTagNamespaceArrayOutputWithContext(ctx context.Context) TagNamespaceArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(TagNamespaceArrayOutput)
+}
+
+func (i TagNamespaceArray) ToOutput(ctx context.Context) pulumix.Output[[]*TagNamespace] {
+	return pulumix.Output[[]*TagNamespace]{
+		OutputState: i.ToTagNamespaceArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // TagNamespaceMapInput is an input type that accepts TagNamespaceMap and TagNamespaceMapOutput values.
@@ -289,6 +302,12 @@ func (i TagNamespaceMap) ToTagNamespaceMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(TagNamespaceMapOutput)
 }
 
+func (i TagNamespaceMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*TagNamespace] {
+	return pulumix.Output[map[string]*TagNamespace]{
+		OutputState: i.ToTagNamespaceMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type TagNamespaceOutput struct{ *pulumi.OutputState }
 
 func (TagNamespaceOutput) ElementType() reflect.Type {
@@ -301,6 +320,12 @@ func (o TagNamespaceOutput) ToTagNamespaceOutput() TagNamespaceOutput {
 
 func (o TagNamespaceOutput) ToTagNamespaceOutputWithContext(ctx context.Context) TagNamespaceOutput {
 	return o
+}
+
+func (o TagNamespaceOutput) ToOutput(ctx context.Context) pulumix.Output[*TagNamespace] {
+	return pulumix.Output[*TagNamespace]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The OCID of the tenancy containing the tag namespace.
@@ -360,6 +385,12 @@ func (o TagNamespaceArrayOutput) ToTagNamespaceArrayOutputWithContext(ctx contex
 	return o
 }
 
+func (o TagNamespaceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*TagNamespace] {
+	return pulumix.Output[[]*TagNamespace]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o TagNamespaceArrayOutput) Index(i pulumi.IntInput) TagNamespaceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *TagNamespace {
 		return vs[0].([]*TagNamespace)[vs[1].(int)]
@@ -378,6 +409,12 @@ func (o TagNamespaceMapOutput) ToTagNamespaceMapOutput() TagNamespaceMapOutput {
 
 func (o TagNamespaceMapOutput) ToTagNamespaceMapOutputWithContext(ctx context.Context) TagNamespaceMapOutput {
 	return o
+}
+
+func (o TagNamespaceMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*TagNamespace] {
+	return pulumix.Output[map[string]*TagNamespace]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o TagNamespaceMapOutput) MapIndex(k pulumi.StringInput) TagNamespaceOutput {

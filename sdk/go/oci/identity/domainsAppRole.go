@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the App Role resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -1340,6 +1341,12 @@ func (i *DomainsAppRole) ToDomainsAppRoleOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsAppRoleOutput)
 }
 
+func (i *DomainsAppRole) ToOutput(ctx context.Context) pulumix.Output[*DomainsAppRole] {
+	return pulumix.Output[*DomainsAppRole]{
+		OutputState: i.ToDomainsAppRoleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // DomainsAppRoleArrayInput is an input type that accepts DomainsAppRoleArray and DomainsAppRoleArrayOutput values.
 // You can construct a concrete instance of `DomainsAppRoleArrayInput` via:
 //
@@ -1363,6 +1370,12 @@ func (i DomainsAppRoleArray) ToDomainsAppRoleArrayOutput() DomainsAppRoleArrayOu
 
 func (i DomainsAppRoleArray) ToDomainsAppRoleArrayOutputWithContext(ctx context.Context) DomainsAppRoleArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsAppRoleArrayOutput)
+}
+
+func (i DomainsAppRoleArray) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsAppRole] {
+	return pulumix.Output[[]*DomainsAppRole]{
+		OutputState: i.ToDomainsAppRoleArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // DomainsAppRoleMapInput is an input type that accepts DomainsAppRoleMap and DomainsAppRoleMapOutput values.
@@ -1390,6 +1403,12 @@ func (i DomainsAppRoleMap) ToDomainsAppRoleMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsAppRoleMapOutput)
 }
 
+func (i DomainsAppRoleMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsAppRole] {
+	return pulumix.Output[map[string]*DomainsAppRole]{
+		OutputState: i.ToDomainsAppRoleMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type DomainsAppRoleOutput struct{ *pulumi.OutputState }
 
 func (DomainsAppRoleOutput) ElementType() reflect.Type {
@@ -1402,6 +1421,12 @@ func (o DomainsAppRoleOutput) ToDomainsAppRoleOutput() DomainsAppRoleOutput {
 
 func (o DomainsAppRoleOutput) ToDomainsAppRoleOutputWithContext(ctx context.Context) DomainsAppRoleOutput {
 	return o
+}
+
+func (o DomainsAppRoleOutput) ToOutput(ctx context.Context) pulumix.Output[*DomainsAppRole] {
+	return pulumix.Output[*DomainsAppRole]{
+		OutputState: o.OutputState,
+	}
 }
 
 // If true, the role provides administrative access privileges.
@@ -1817,6 +1842,12 @@ func (o DomainsAppRoleArrayOutput) ToDomainsAppRoleArrayOutputWithContext(ctx co
 	return o
 }
 
+func (o DomainsAppRoleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsAppRole] {
+	return pulumix.Output[[]*DomainsAppRole]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o DomainsAppRoleArrayOutput) Index(i pulumi.IntInput) DomainsAppRoleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DomainsAppRole {
 		return vs[0].([]*DomainsAppRole)[vs[1].(int)]
@@ -1835,6 +1866,12 @@ func (o DomainsAppRoleMapOutput) ToDomainsAppRoleMapOutput() DomainsAppRoleMapOu
 
 func (o DomainsAppRoleMapOutput) ToDomainsAppRoleMapOutputWithContext(ctx context.Context) DomainsAppRoleMapOutput {
 	return o
+}
+
+func (o DomainsAppRoleMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsAppRole] {
+	return pulumix.Output[map[string]*DomainsAppRole]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o DomainsAppRoleMapOutput) MapIndex(k pulumi.StringInput) DomainsAppRoleOutput {

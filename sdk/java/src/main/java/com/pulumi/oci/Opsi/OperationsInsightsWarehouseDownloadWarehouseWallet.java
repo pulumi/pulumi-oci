@@ -65,7 +65,7 @@ public class OperationsInsightsWarehouseDownloadWarehouseWallet extends com.pulu
      * Unique Operations Insights Warehouse identifier
      * 
      */
-    @Export(name="operationsInsightsWarehouseId", type=String.class, parameters={})
+    @Export(name="operationsInsightsWarehouseId", refs={String.class}, tree="[0]")
     private Output<String> operationsInsightsWarehouseId;
 
     /**
@@ -82,7 +82,7 @@ public class OperationsInsightsWarehouseDownloadWarehouseWallet extends com.pulu
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="operationsInsightsWarehouseWalletPassword", type=String.class, parameters={})
+    @Export(name="operationsInsightsWarehouseWalletPassword", refs={String.class}, tree="[0]")
     private Output<String> operationsInsightsWarehouseWalletPassword;
 
     /**

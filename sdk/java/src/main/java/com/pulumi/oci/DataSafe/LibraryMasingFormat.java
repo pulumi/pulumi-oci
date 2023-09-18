@@ -41,7 +41,7 @@ public class LibraryMasingFormat extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the compartment where the library masking format should be created.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -55,7 +55,7 @@ public class LibraryMasingFormat extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -69,7 +69,7 @@ public class LibraryMasingFormat extends com.pulumi.resources.CustomResource {
      * (Updatable) The description of the format entry.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -83,7 +83,7 @@ public class LibraryMasingFormat extends com.pulumi.resources.CustomResource {
      * (Updatable) The display name of the library masking format. The name does not have to be unique, and it&#39;s changeable.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -97,7 +97,7 @@ public class LibraryMasingFormat extends com.pulumi.resources.CustomResource {
      * (Updatable) An array of format entries. The combined output of all the format entries is used for masking.
      * 
      */
-    @Export(name="formatEntries", type=List.class, parameters={LibraryMasingFormatFormatEntry.class})
+    @Export(name="formatEntries", refs={List.class,LibraryMasingFormatFormatEntry.class}, tree="[0,1]")
     private Output<List<LibraryMasingFormatFormatEntry>> formatEntries;
 
     /**
@@ -111,7 +111,7 @@ public class LibraryMasingFormat extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -128,7 +128,7 @@ public class LibraryMasingFormat extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="sensitiveTypeIds", type=List.class, parameters={String.class})
+    @Export(name="sensitiveTypeIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> sensitiveTypeIds;
 
     /**
@@ -145,7 +145,7 @@ public class LibraryMasingFormat extends com.pulumi.resources.CustomResource {
      * Specifies whether the library masking format is user-defined or predefined.
      * 
      */
-    @Export(name="source", type=String.class, parameters={})
+    @Export(name="source", refs={String.class}, tree="[0]")
     private Output<String> source;
 
     /**
@@ -159,7 +159,7 @@ public class LibraryMasingFormat extends com.pulumi.resources.CustomResource {
      * The current state of the library masking format.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -173,7 +173,7 @@ public class LibraryMasingFormat extends com.pulumi.resources.CustomResource {
      * The date and time the library masking format was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -187,7 +187,7 @@ public class LibraryMasingFormat extends com.pulumi.resources.CustomResource {
      * The date and time the library masking format was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

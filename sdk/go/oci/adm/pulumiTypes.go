@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -54,6 +55,12 @@ func (i VulnerabilityAuditApplicationDependencyArgs) ToVulnerabilityAuditApplica
 	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityAuditApplicationDependencyOutput)
 }
 
+func (i VulnerabilityAuditApplicationDependencyArgs) ToOutput(ctx context.Context) pulumix.Output[VulnerabilityAuditApplicationDependency] {
+	return pulumix.Output[VulnerabilityAuditApplicationDependency]{
+		OutputState: i.ToVulnerabilityAuditApplicationDependencyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // VulnerabilityAuditApplicationDependencyArrayInput is an input type that accepts VulnerabilityAuditApplicationDependencyArray and VulnerabilityAuditApplicationDependencyArrayOutput values.
 // You can construct a concrete instance of `VulnerabilityAuditApplicationDependencyArrayInput` via:
 //
@@ -79,6 +86,12 @@ func (i VulnerabilityAuditApplicationDependencyArray) ToVulnerabilityAuditApplic
 	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityAuditApplicationDependencyArrayOutput)
 }
 
+func (i VulnerabilityAuditApplicationDependencyArray) ToOutput(ctx context.Context) pulumix.Output[[]VulnerabilityAuditApplicationDependency] {
+	return pulumix.Output[[]VulnerabilityAuditApplicationDependency]{
+		OutputState: i.ToVulnerabilityAuditApplicationDependencyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type VulnerabilityAuditApplicationDependencyOutput struct{ *pulumi.OutputState }
 
 func (VulnerabilityAuditApplicationDependencyOutput) ElementType() reflect.Type {
@@ -91,6 +104,12 @@ func (o VulnerabilityAuditApplicationDependencyOutput) ToVulnerabilityAuditAppli
 
 func (o VulnerabilityAuditApplicationDependencyOutput) ToVulnerabilityAuditApplicationDependencyOutputWithContext(ctx context.Context) VulnerabilityAuditApplicationDependencyOutput {
 	return o
+}
+
+func (o VulnerabilityAuditApplicationDependencyOutput) ToOutput(ctx context.Context) pulumix.Output[VulnerabilityAuditApplicationDependency] {
+	return pulumix.Output[VulnerabilityAuditApplicationDependency]{
+		OutputState: o.OutputState,
+	}
 }
 
 // List of Application Dependencies on which this Application Dependency depends, each identified by its nodeId.
@@ -120,6 +139,12 @@ func (o VulnerabilityAuditApplicationDependencyArrayOutput) ToVulnerabilityAudit
 
 func (o VulnerabilityAuditApplicationDependencyArrayOutput) ToVulnerabilityAuditApplicationDependencyArrayOutputWithContext(ctx context.Context) VulnerabilityAuditApplicationDependencyArrayOutput {
 	return o
+}
+
+func (o VulnerabilityAuditApplicationDependencyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]VulnerabilityAuditApplicationDependency] {
+	return pulumix.Output[[]VulnerabilityAuditApplicationDependency]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o VulnerabilityAuditApplicationDependencyArrayOutput) Index(i pulumi.IntInput) VulnerabilityAuditApplicationDependencyOutput {
@@ -169,6 +194,12 @@ func (i VulnerabilityAuditConfigurationArgs) ToVulnerabilityAuditConfigurationOu
 	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityAuditConfigurationOutput)
 }
 
+func (i VulnerabilityAuditConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[VulnerabilityAuditConfiguration] {
+	return pulumix.Output[VulnerabilityAuditConfiguration]{
+		OutputState: i.ToVulnerabilityAuditConfigurationOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i VulnerabilityAuditConfigurationArgs) ToVulnerabilityAuditConfigurationPtrOutput() VulnerabilityAuditConfigurationPtrOutput {
 	return i.ToVulnerabilityAuditConfigurationPtrOutputWithContext(context.Background())
 }
@@ -210,6 +241,12 @@ func (i *vulnerabilityAuditConfigurationPtrType) ToVulnerabilityAuditConfigurati
 	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityAuditConfigurationPtrOutput)
 }
 
+func (i *vulnerabilityAuditConfigurationPtrType) ToOutput(ctx context.Context) pulumix.Output[*VulnerabilityAuditConfiguration] {
+	return pulumix.Output[*VulnerabilityAuditConfiguration]{
+		OutputState: i.ToVulnerabilityAuditConfigurationPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type VulnerabilityAuditConfigurationOutput struct{ *pulumi.OutputState }
 
 func (VulnerabilityAuditConfigurationOutput) ElementType() reflect.Type {
@@ -232,6 +269,12 @@ func (o VulnerabilityAuditConfigurationOutput) ToVulnerabilityAuditConfiguration
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v VulnerabilityAuditConfiguration) *VulnerabilityAuditConfiguration {
 		return &v
 	}).(VulnerabilityAuditConfigurationPtrOutput)
+}
+
+func (o VulnerabilityAuditConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[VulnerabilityAuditConfiguration] {
+	return pulumix.Output[VulnerabilityAuditConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A vulnerable Application Dependency is ignored if its name matches any of the items in `exclusions`.
@@ -261,6 +304,12 @@ func (o VulnerabilityAuditConfigurationPtrOutput) ToVulnerabilityAuditConfigurat
 
 func (o VulnerabilityAuditConfigurationPtrOutput) ToVulnerabilityAuditConfigurationPtrOutputWithContext(ctx context.Context) VulnerabilityAuditConfigurationPtrOutput {
 	return o
+}
+
+func (o VulnerabilityAuditConfigurationPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*VulnerabilityAuditConfiguration] {
+	return pulumix.Output[*VulnerabilityAuditConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o VulnerabilityAuditConfigurationPtrOutput) Elem() VulnerabilityAuditConfigurationOutput {
@@ -350,6 +399,12 @@ func (i VulnerabilityAuditSourceArgs) ToVulnerabilityAuditSourceOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityAuditSourceOutput)
 }
 
+func (i VulnerabilityAuditSourceArgs) ToOutput(ctx context.Context) pulumix.Output[VulnerabilityAuditSource] {
+	return pulumix.Output[VulnerabilityAuditSource]{
+		OutputState: i.ToVulnerabilityAuditSourceOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i VulnerabilityAuditSourceArgs) ToVulnerabilityAuditSourcePtrOutput() VulnerabilityAuditSourcePtrOutput {
 	return i.ToVulnerabilityAuditSourcePtrOutputWithContext(context.Background())
 }
@@ -391,6 +446,12 @@ func (i *vulnerabilityAuditSourcePtrType) ToVulnerabilityAuditSourcePtrOutputWit
 	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityAuditSourcePtrOutput)
 }
 
+func (i *vulnerabilityAuditSourcePtrType) ToOutput(ctx context.Context) pulumix.Output[*VulnerabilityAuditSource] {
+	return pulumix.Output[*VulnerabilityAuditSource]{
+		OutputState: i.ToVulnerabilityAuditSourcePtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type VulnerabilityAuditSourceOutput struct{ *pulumi.OutputState }
 
 func (VulnerabilityAuditSourceOutput) ElementType() reflect.Type {
@@ -413,6 +474,12 @@ func (o VulnerabilityAuditSourceOutput) ToVulnerabilityAuditSourcePtrOutputWithC
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v VulnerabilityAuditSource) *VulnerabilityAuditSource {
 		return &v
 	}).(VulnerabilityAuditSourcePtrOutput)
+}
+
+func (o VulnerabilityAuditSourceOutput) ToOutput(ctx context.Context) pulumix.Output[VulnerabilityAuditSource] {
+	return pulumix.Output[VulnerabilityAuditSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Description of the external resource source.
@@ -445,6 +512,12 @@ func (o VulnerabilityAuditSourcePtrOutput) ToVulnerabilityAuditSourcePtrOutput()
 
 func (o VulnerabilityAuditSourcePtrOutput) ToVulnerabilityAuditSourcePtrOutputWithContext(ctx context.Context) VulnerabilityAuditSourcePtrOutput {
 	return o
+}
+
+func (o VulnerabilityAuditSourcePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*VulnerabilityAuditSource] {
+	return pulumix.Output[*VulnerabilityAuditSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o VulnerabilityAuditSourcePtrOutput) Elem() VulnerabilityAuditSourceOutput {
@@ -535,6 +608,12 @@ func (i VulnerabilityAuditVulnerabilityArgs) ToVulnerabilityAuditVulnerabilityOu
 	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityAuditVulnerabilityOutput)
 }
 
+func (i VulnerabilityAuditVulnerabilityArgs) ToOutput(ctx context.Context) pulumix.Output[VulnerabilityAuditVulnerability] {
+	return pulumix.Output[VulnerabilityAuditVulnerability]{
+		OutputState: i.ToVulnerabilityAuditVulnerabilityOutputWithContext(ctx).OutputState,
+	}
+}
+
 // VulnerabilityAuditVulnerabilityArrayInput is an input type that accepts VulnerabilityAuditVulnerabilityArray and VulnerabilityAuditVulnerabilityArrayOutput values.
 // You can construct a concrete instance of `VulnerabilityAuditVulnerabilityArrayInput` via:
 //
@@ -560,6 +639,12 @@ func (i VulnerabilityAuditVulnerabilityArray) ToVulnerabilityAuditVulnerabilityA
 	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityAuditVulnerabilityArrayOutput)
 }
 
+func (i VulnerabilityAuditVulnerabilityArray) ToOutput(ctx context.Context) pulumix.Output[[]VulnerabilityAuditVulnerability] {
+	return pulumix.Output[[]VulnerabilityAuditVulnerability]{
+		OutputState: i.ToVulnerabilityAuditVulnerabilityArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type VulnerabilityAuditVulnerabilityOutput struct{ *pulumi.OutputState }
 
 func (VulnerabilityAuditVulnerabilityOutput) ElementType() reflect.Type {
@@ -572,6 +657,12 @@ func (o VulnerabilityAuditVulnerabilityOutput) ToVulnerabilityAuditVulnerability
 
 func (o VulnerabilityAuditVulnerabilityOutput) ToVulnerabilityAuditVulnerabilityOutputWithContext(ctx context.Context) VulnerabilityAuditVulnerabilityOutput {
 	return o
+}
+
+func (o VulnerabilityAuditVulnerabilityOutput) ToOutput(ctx context.Context) pulumix.Output[VulnerabilityAuditVulnerability] {
+	return pulumix.Output[VulnerabilityAuditVulnerability]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Common Vulnerability Scoring System (CVSS) Version 2.
@@ -606,6 +697,12 @@ func (o VulnerabilityAuditVulnerabilityArrayOutput) ToVulnerabilityAuditVulnerab
 
 func (o VulnerabilityAuditVulnerabilityArrayOutput) ToVulnerabilityAuditVulnerabilityArrayOutputWithContext(ctx context.Context) VulnerabilityAuditVulnerabilityArrayOutput {
 	return o
+}
+
+func (o VulnerabilityAuditVulnerabilityArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]VulnerabilityAuditVulnerability] {
+	return pulumix.Output[[]VulnerabilityAuditVulnerability]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o VulnerabilityAuditVulnerabilityArrayOutput) Index(i pulumi.IntInput) VulnerabilityAuditVulnerabilityOutput {
@@ -649,6 +746,12 @@ func (i GetKnowledgebasesFilterArgs) ToGetKnowledgebasesFilterOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetKnowledgebasesFilterOutput)
 }
 
+func (i GetKnowledgebasesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetKnowledgebasesFilter] {
+	return pulumix.Output[GetKnowledgebasesFilter]{
+		OutputState: i.ToGetKnowledgebasesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetKnowledgebasesFilterArrayInput is an input type that accepts GetKnowledgebasesFilterArray and GetKnowledgebasesFilterArrayOutput values.
 // You can construct a concrete instance of `GetKnowledgebasesFilterArrayInput` via:
 //
@@ -674,6 +777,12 @@ func (i GetKnowledgebasesFilterArray) ToGetKnowledgebasesFilterArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetKnowledgebasesFilterArrayOutput)
 }
 
+func (i GetKnowledgebasesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetKnowledgebasesFilter] {
+	return pulumix.Output[[]GetKnowledgebasesFilter]{
+		OutputState: i.ToGetKnowledgebasesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetKnowledgebasesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetKnowledgebasesFilterOutput) ElementType() reflect.Type {
@@ -686,6 +795,12 @@ func (o GetKnowledgebasesFilterOutput) ToGetKnowledgebasesFilterOutput() GetKnow
 
 func (o GetKnowledgebasesFilterOutput) ToGetKnowledgebasesFilterOutputWithContext(ctx context.Context) GetKnowledgebasesFilterOutput {
 	return o
+}
+
+func (o GetKnowledgebasesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetKnowledgebasesFilter] {
+	return pulumix.Output[GetKnowledgebasesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetKnowledgebasesFilterOutput) Name() pulumi.StringOutput {
@@ -712,6 +827,12 @@ func (o GetKnowledgebasesFilterArrayOutput) ToGetKnowledgebasesFilterArrayOutput
 
 func (o GetKnowledgebasesFilterArrayOutput) ToGetKnowledgebasesFilterArrayOutputWithContext(ctx context.Context) GetKnowledgebasesFilterArrayOutput {
 	return o
+}
+
+func (o GetKnowledgebasesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetKnowledgebasesFilter] {
+	return pulumix.Output[[]GetKnowledgebasesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetKnowledgebasesFilterArrayOutput) Index(i pulumi.IntInput) GetKnowledgebasesFilterOutput {
@@ -751,6 +872,12 @@ func (i GetKnowledgebasesKnowledgeBaseCollectionArgs) ToGetKnowledgebasesKnowled
 	return pulumi.ToOutputWithContext(ctx, i).(GetKnowledgebasesKnowledgeBaseCollectionOutput)
 }
 
+func (i GetKnowledgebasesKnowledgeBaseCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetKnowledgebasesKnowledgeBaseCollection] {
+	return pulumix.Output[GetKnowledgebasesKnowledgeBaseCollection]{
+		OutputState: i.ToGetKnowledgebasesKnowledgeBaseCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetKnowledgebasesKnowledgeBaseCollectionArrayInput is an input type that accepts GetKnowledgebasesKnowledgeBaseCollectionArray and GetKnowledgebasesKnowledgeBaseCollectionArrayOutput values.
 // You can construct a concrete instance of `GetKnowledgebasesKnowledgeBaseCollectionArrayInput` via:
 //
@@ -776,6 +903,12 @@ func (i GetKnowledgebasesKnowledgeBaseCollectionArray) ToGetKnowledgebasesKnowle
 	return pulumi.ToOutputWithContext(ctx, i).(GetKnowledgebasesKnowledgeBaseCollectionArrayOutput)
 }
 
+func (i GetKnowledgebasesKnowledgeBaseCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetKnowledgebasesKnowledgeBaseCollection] {
+	return pulumix.Output[[]GetKnowledgebasesKnowledgeBaseCollection]{
+		OutputState: i.ToGetKnowledgebasesKnowledgeBaseCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetKnowledgebasesKnowledgeBaseCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetKnowledgebasesKnowledgeBaseCollectionOutput) ElementType() reflect.Type {
@@ -788,6 +921,12 @@ func (o GetKnowledgebasesKnowledgeBaseCollectionOutput) ToGetKnowledgebasesKnowl
 
 func (o GetKnowledgebasesKnowledgeBaseCollectionOutput) ToGetKnowledgebasesKnowledgeBaseCollectionOutputWithContext(ctx context.Context) GetKnowledgebasesKnowledgeBaseCollectionOutput {
 	return o
+}
+
+func (o GetKnowledgebasesKnowledgeBaseCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetKnowledgebasesKnowledgeBaseCollection] {
+	return pulumix.Output[GetKnowledgebasesKnowledgeBaseCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetKnowledgebasesKnowledgeBaseCollectionOutput) Items() GetKnowledgebasesKnowledgeBaseCollectionItemArrayOutput {
@@ -808,6 +947,12 @@ func (o GetKnowledgebasesKnowledgeBaseCollectionArrayOutput) ToGetKnowledgebases
 
 func (o GetKnowledgebasesKnowledgeBaseCollectionArrayOutput) ToGetKnowledgebasesKnowledgeBaseCollectionArrayOutputWithContext(ctx context.Context) GetKnowledgebasesKnowledgeBaseCollectionArrayOutput {
 	return o
+}
+
+func (o GetKnowledgebasesKnowledgeBaseCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetKnowledgebasesKnowledgeBaseCollection] {
+	return pulumix.Output[[]GetKnowledgebasesKnowledgeBaseCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetKnowledgebasesKnowledgeBaseCollectionArrayOutput) Index(i pulumi.IntInput) GetKnowledgebasesKnowledgeBaseCollectionOutput {
@@ -881,6 +1026,12 @@ func (i GetKnowledgebasesKnowledgeBaseCollectionItemArgs) ToGetKnowledgebasesKno
 	return pulumi.ToOutputWithContext(ctx, i).(GetKnowledgebasesKnowledgeBaseCollectionItemOutput)
 }
 
+func (i GetKnowledgebasesKnowledgeBaseCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetKnowledgebasesKnowledgeBaseCollectionItem] {
+	return pulumix.Output[GetKnowledgebasesKnowledgeBaseCollectionItem]{
+		OutputState: i.ToGetKnowledgebasesKnowledgeBaseCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetKnowledgebasesKnowledgeBaseCollectionItemArrayInput is an input type that accepts GetKnowledgebasesKnowledgeBaseCollectionItemArray and GetKnowledgebasesKnowledgeBaseCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetKnowledgebasesKnowledgeBaseCollectionItemArrayInput` via:
 //
@@ -906,6 +1057,12 @@ func (i GetKnowledgebasesKnowledgeBaseCollectionItemArray) ToGetKnowledgebasesKn
 	return pulumi.ToOutputWithContext(ctx, i).(GetKnowledgebasesKnowledgeBaseCollectionItemArrayOutput)
 }
 
+func (i GetKnowledgebasesKnowledgeBaseCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetKnowledgebasesKnowledgeBaseCollectionItem] {
+	return pulumix.Output[[]GetKnowledgebasesKnowledgeBaseCollectionItem]{
+		OutputState: i.ToGetKnowledgebasesKnowledgeBaseCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetKnowledgebasesKnowledgeBaseCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetKnowledgebasesKnowledgeBaseCollectionItemOutput) ElementType() reflect.Type {
@@ -918,6 +1075,12 @@ func (o GetKnowledgebasesKnowledgeBaseCollectionItemOutput) ToGetKnowledgebasesK
 
 func (o GetKnowledgebasesKnowledgeBaseCollectionItemOutput) ToGetKnowledgebasesKnowledgeBaseCollectionItemOutputWithContext(ctx context.Context) GetKnowledgebasesKnowledgeBaseCollectionItemOutput {
 	return o
+}
+
+func (o GetKnowledgebasesKnowledgeBaseCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetKnowledgebasesKnowledgeBaseCollectionItem] {
+	return pulumix.Output[GetKnowledgebasesKnowledgeBaseCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A filter to return only resources that belong to the specified compartment identifier.
@@ -979,6 +1142,12 @@ func (o GetKnowledgebasesKnowledgeBaseCollectionItemArrayOutput) ToGetKnowledgeb
 	return o
 }
 
+func (o GetKnowledgebasesKnowledgeBaseCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetKnowledgebasesKnowledgeBaseCollectionItem] {
+	return pulumix.Output[[]GetKnowledgebasesKnowledgeBaseCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetKnowledgebasesKnowledgeBaseCollectionItemArrayOutput) Index(i pulumi.IntInput) GetKnowledgebasesKnowledgeBaseCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetKnowledgebasesKnowledgeBaseCollectionItem {
 		return vs[0].([]GetKnowledgebasesKnowledgeBaseCollectionItem)[vs[1].(int)]
@@ -1020,6 +1189,12 @@ func (i GetVulnerabilityAuditApplicationDependencyArgs) ToGetVulnerabilityAuditA
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditApplicationDependencyOutput)
 }
 
+func (i GetVulnerabilityAuditApplicationDependencyArgs) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditApplicationDependency] {
+	return pulumix.Output[GetVulnerabilityAuditApplicationDependency]{
+		OutputState: i.ToGetVulnerabilityAuditApplicationDependencyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVulnerabilityAuditApplicationDependencyArrayInput is an input type that accepts GetVulnerabilityAuditApplicationDependencyArray and GetVulnerabilityAuditApplicationDependencyArrayOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditApplicationDependencyArrayInput` via:
 //
@@ -1045,6 +1220,12 @@ func (i GetVulnerabilityAuditApplicationDependencyArray) ToGetVulnerabilityAudit
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditApplicationDependencyArrayOutput)
 }
 
+func (i GetVulnerabilityAuditApplicationDependencyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditApplicationDependency] {
+	return pulumix.Output[[]GetVulnerabilityAuditApplicationDependency]{
+		OutputState: i.ToGetVulnerabilityAuditApplicationDependencyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVulnerabilityAuditApplicationDependencyOutput struct{ *pulumi.OutputState }
 
 func (GetVulnerabilityAuditApplicationDependencyOutput) ElementType() reflect.Type {
@@ -1057,6 +1238,12 @@ func (o GetVulnerabilityAuditApplicationDependencyOutput) ToGetVulnerabilityAudi
 
 func (o GetVulnerabilityAuditApplicationDependencyOutput) ToGetVulnerabilityAuditApplicationDependencyOutputWithContext(ctx context.Context) GetVulnerabilityAuditApplicationDependencyOutput {
 	return o
+}
+
+func (o GetVulnerabilityAuditApplicationDependencyOutput) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditApplicationDependency] {
+	return pulumix.Output[GetVulnerabilityAuditApplicationDependency]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVulnerabilityAuditApplicationDependencyOutput) ApplicationDependencyNodeIds() pulumi.StringArrayOutput {
@@ -1083,6 +1270,12 @@ func (o GetVulnerabilityAuditApplicationDependencyArrayOutput) ToGetVulnerabilit
 
 func (o GetVulnerabilityAuditApplicationDependencyArrayOutput) ToGetVulnerabilityAuditApplicationDependencyArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditApplicationDependencyArrayOutput {
 	return o
+}
+
+func (o GetVulnerabilityAuditApplicationDependencyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditApplicationDependency] {
+	return pulumix.Output[[]GetVulnerabilityAuditApplicationDependency]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVulnerabilityAuditApplicationDependencyArrayOutput) Index(i pulumi.IntInput) GetVulnerabilityAuditApplicationDependencyOutput {
@@ -1124,6 +1317,12 @@ func (i GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepe
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionOutput)
 }
 
+func (i GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollection] {
+	return pulumix.Output[GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollection]{
+		OutputState: i.ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionArrayInput is an input type that accepts GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionArray and GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionArrayOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionArrayInput` via:
 //
@@ -1149,6 +1348,12 @@ func (i GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepe
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionArrayOutput)
 }
 
+func (i GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollection] {
+	return pulumix.Output[[]GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollection]{
+		OutputState: i.ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionOutput) ElementType() reflect.Type {
@@ -1161,6 +1366,12 @@ func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepe
 
 func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionOutput) ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionOutputWithContext(ctx context.Context) GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionOutput {
 	return o
+}
+
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollection] {
+	return pulumix.Output[GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 // List of Vulnerability Audit summaries.
@@ -1182,6 +1393,12 @@ func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepe
 
 func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionArrayOutput) ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionArrayOutput {
 	return o
+}
+
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollection] {
+	return pulumix.Output[[]GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionArrayOutput) Index(i pulumi.IntInput) GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionOutput {
@@ -1239,6 +1456,12 @@ func (i GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepe
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemOutput)
 }
 
+func (i GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItem] {
+	return pulumix.Output[GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItem]{
+		OutputState: i.ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemArrayInput is an input type that accepts GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemArray and GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemArrayInput` via:
 //
@@ -1264,6 +1487,12 @@ func (i GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepe
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemArrayOutput)
 }
 
+func (i GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItem] {
+	return pulumix.Output[[]GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItem]{
+		OutputState: i.ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemOutput) ElementType() reflect.Type {
@@ -1276,6 +1505,12 @@ func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepe
 
 func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemOutput) ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemOutputWithContext(ctx context.Context) GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemOutput {
 	return o
+}
+
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItem] {
+	return pulumix.Output[GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // List of Application Dependencies on which this Application Dependency depends, each identified by its nodeId.
@@ -1325,6 +1560,12 @@ func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepe
 
 func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemArrayOutput) ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemArrayOutput {
 	return o
+}
+
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItem] {
+	return pulumix.Output[[]GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemArrayOutput) Index(i pulumi.IntInput) GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemOutput {
@@ -1378,6 +1619,12 @@ func (i GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepe
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityOutput)
 }
 
+func (i GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityArgs) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerability] {
+	return pulumix.Output[GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerability]{
+		OutputState: i.ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityArrayInput is an input type that accepts GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityArray and GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityArrayOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityArrayInput` via:
 //
@@ -1403,6 +1650,12 @@ func (i GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepe
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityArrayOutput)
 }
 
+func (i GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerability] {
+	return pulumix.Output[[]GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerability]{
+		OutputState: i.ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityOutput struct{ *pulumi.OutputState }
 
 func (GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityOutput) ElementType() reflect.Type {
@@ -1415,6 +1668,12 @@ func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepe
 
 func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityOutput) ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityOutputWithContext(ctx context.Context) GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityOutput {
 	return o
+}
+
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityOutput) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerability] {
+	return pulumix.Output[GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerability]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Common Vulnerability Scoring System (CVSS) Version 2.
@@ -1459,6 +1718,12 @@ func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepe
 	return o
 }
 
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerability] {
+	return pulumix.Output[[]GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerability]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityArrayOutput) Index(i pulumi.IntInput) GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerability {
 		return vs[0].([]GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerability)[vs[1].(int)]
@@ -1500,6 +1765,12 @@ func (i GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArgs) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterOutput)
 }
 
+func (i GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilter] {
+	return pulumix.Output[GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilter]{
+		OutputState: i.ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArrayInput is an input type that accepts GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArray and GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArrayOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArrayInput` via:
 //
@@ -1525,6 +1796,12 @@ func (i GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArray) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArrayOutput)
 }
 
+func (i GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilter] {
+	return pulumix.Output[[]GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilter]{
+		OutputState: i.ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterOutput) ElementType() reflect.Type {
@@ -1537,6 +1814,12 @@ func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterOutput) T
 
 func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterOutput) ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterOutputWithContext(ctx context.Context) GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterOutput {
 	return o
+}
+
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilter] {
+	return pulumix.Output[GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterOutput) Name() pulumi.StringOutput {
@@ -1563,6 +1846,12 @@ func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArrayOutp
 
 func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArrayOutput) ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArrayOutput {
 	return o
+}
+
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilter] {
+	return pulumix.Output[[]GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArrayOutput) Index(i pulumi.IntInput) GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterOutput {
@@ -1620,6 +1909,12 @@ func (i GetVulnerabilityAuditApplicationDependencyVulnerabilityItemArgs) ToGetVu
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditApplicationDependencyVulnerabilityItemOutput)
 }
 
+func (i GetVulnerabilityAuditApplicationDependencyVulnerabilityItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditApplicationDependencyVulnerabilityItem] {
+	return pulumix.Output[GetVulnerabilityAuditApplicationDependencyVulnerabilityItem]{
+		OutputState: i.ToGetVulnerabilityAuditApplicationDependencyVulnerabilityItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVulnerabilityAuditApplicationDependencyVulnerabilityItemArrayInput is an input type that accepts GetVulnerabilityAuditApplicationDependencyVulnerabilityItemArray and GetVulnerabilityAuditApplicationDependencyVulnerabilityItemArrayOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditApplicationDependencyVulnerabilityItemArrayInput` via:
 //
@@ -1645,6 +1940,12 @@ func (i GetVulnerabilityAuditApplicationDependencyVulnerabilityItemArray) ToGetV
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditApplicationDependencyVulnerabilityItemArrayOutput)
 }
 
+func (i GetVulnerabilityAuditApplicationDependencyVulnerabilityItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditApplicationDependencyVulnerabilityItem] {
+	return pulumix.Output[[]GetVulnerabilityAuditApplicationDependencyVulnerabilityItem]{
+		OutputState: i.ToGetVulnerabilityAuditApplicationDependencyVulnerabilityItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVulnerabilityAuditApplicationDependencyVulnerabilityItemOutput struct{ *pulumi.OutputState }
 
 func (GetVulnerabilityAuditApplicationDependencyVulnerabilityItemOutput) ElementType() reflect.Type {
@@ -1657,6 +1958,12 @@ func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemOutput) ToGet
 
 func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemOutput) ToGetVulnerabilityAuditApplicationDependencyVulnerabilityItemOutputWithContext(ctx context.Context) GetVulnerabilityAuditApplicationDependencyVulnerabilityItemOutput {
 	return o
+}
+
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditApplicationDependencyVulnerabilityItem] {
+	return pulumix.Output[GetVulnerabilityAuditApplicationDependencyVulnerabilityItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // List of Application Dependencies on which this Application Dependency depends, each identified by its nodeId.
@@ -1702,6 +2009,12 @@ func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemArrayOutput) 
 
 func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemArrayOutput) ToGetVulnerabilityAuditApplicationDependencyVulnerabilityItemArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditApplicationDependencyVulnerabilityItemArrayOutput {
 	return o
+}
+
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditApplicationDependencyVulnerabilityItem] {
+	return pulumix.Output[[]GetVulnerabilityAuditApplicationDependencyVulnerabilityItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemArrayOutput) Index(i pulumi.IntInput) GetVulnerabilityAuditApplicationDependencyVulnerabilityItemOutput {
@@ -1755,6 +2068,12 @@ func (i GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerability
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityOutput)
 }
 
+func (i GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityArgs) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerability] {
+	return pulumix.Output[GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerability]{
+		OutputState: i.ToGetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityArrayInput is an input type that accepts GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityArray and GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityArrayOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityArrayInput` via:
 //
@@ -1780,6 +2099,12 @@ func (i GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerability
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityArrayOutput)
 }
 
+func (i GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerability] {
+	return pulumix.Output[[]GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerability]{
+		OutputState: i.ToGetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityOutput struct{ *pulumi.OutputState }
 
 func (GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityOutput) ElementType() reflect.Type {
@@ -1792,6 +2117,12 @@ func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerability
 
 func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityOutput) ToGetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityOutputWithContext(ctx context.Context) GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityOutput {
 	return o
+}
+
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityOutput) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerability] {
+	return pulumix.Output[GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerability]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Common Vulnerability Scoring System (CVSS) Version 2.
@@ -1832,6 +2163,12 @@ func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerability
 
 func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityArrayOutput) ToGetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityArrayOutput {
 	return o
+}
+
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerability] {
+	return pulumix.Output[[]GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerability]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityArrayOutput) Index(i pulumi.IntInput) GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityOutput {
@@ -1881,6 +2218,12 @@ func (i GetVulnerabilityAuditConfigurationArgs) ToGetVulnerabilityAuditConfigura
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditConfigurationOutput)
 }
 
+func (i GetVulnerabilityAuditConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditConfiguration] {
+	return pulumix.Output[GetVulnerabilityAuditConfiguration]{
+		OutputState: i.ToGetVulnerabilityAuditConfigurationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVulnerabilityAuditConfigurationArrayInput is an input type that accepts GetVulnerabilityAuditConfigurationArray and GetVulnerabilityAuditConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditConfigurationArrayInput` via:
 //
@@ -1906,6 +2249,12 @@ func (i GetVulnerabilityAuditConfigurationArray) ToGetVulnerabilityAuditConfigur
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditConfigurationArrayOutput)
 }
 
+func (i GetVulnerabilityAuditConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditConfiguration] {
+	return pulumix.Output[[]GetVulnerabilityAuditConfiguration]{
+		OutputState: i.ToGetVulnerabilityAuditConfigurationArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVulnerabilityAuditConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetVulnerabilityAuditConfigurationOutput) ElementType() reflect.Type {
@@ -1918,6 +2267,12 @@ func (o GetVulnerabilityAuditConfigurationOutput) ToGetVulnerabilityAuditConfigu
 
 func (o GetVulnerabilityAuditConfigurationOutput) ToGetVulnerabilityAuditConfigurationOutputWithContext(ctx context.Context) GetVulnerabilityAuditConfigurationOutput {
 	return o
+}
+
+func (o GetVulnerabilityAuditConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditConfiguration] {
+	return pulumix.Output[GetVulnerabilityAuditConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A vulnerable Application Dependency is ignored if its name matches any of the items in `exclusions`.
@@ -1947,6 +2302,12 @@ func (o GetVulnerabilityAuditConfigurationArrayOutput) ToGetVulnerabilityAuditCo
 
 func (o GetVulnerabilityAuditConfigurationArrayOutput) ToGetVulnerabilityAuditConfigurationArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditConfigurationArrayOutput {
 	return o
+}
+
+func (o GetVulnerabilityAuditConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditConfiguration] {
+	return pulumix.Output[[]GetVulnerabilityAuditConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVulnerabilityAuditConfigurationArrayOutput) Index(i pulumi.IntInput) GetVulnerabilityAuditConfigurationOutput {
@@ -1996,6 +2357,12 @@ func (i GetVulnerabilityAuditSourceArgs) ToGetVulnerabilityAuditSourceOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditSourceOutput)
 }
 
+func (i GetVulnerabilityAuditSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditSource] {
+	return pulumix.Output[GetVulnerabilityAuditSource]{
+		OutputState: i.ToGetVulnerabilityAuditSourceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVulnerabilityAuditSourceArrayInput is an input type that accepts GetVulnerabilityAuditSourceArray and GetVulnerabilityAuditSourceArrayOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditSourceArrayInput` via:
 //
@@ -2021,6 +2388,12 @@ func (i GetVulnerabilityAuditSourceArray) ToGetVulnerabilityAuditSourceArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditSourceArrayOutput)
 }
 
+func (i GetVulnerabilityAuditSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditSource] {
+	return pulumix.Output[[]GetVulnerabilityAuditSource]{
+		OutputState: i.ToGetVulnerabilityAuditSourceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVulnerabilityAuditSourceOutput struct{ *pulumi.OutputState }
 
 func (GetVulnerabilityAuditSourceOutput) ElementType() reflect.Type {
@@ -2033,6 +2406,12 @@ func (o GetVulnerabilityAuditSourceOutput) ToGetVulnerabilityAuditSourceOutput()
 
 func (o GetVulnerabilityAuditSourceOutput) ToGetVulnerabilityAuditSourceOutputWithContext(ctx context.Context) GetVulnerabilityAuditSourceOutput {
 	return o
+}
+
+func (o GetVulnerabilityAuditSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditSource] {
+	return pulumix.Output[GetVulnerabilityAuditSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Description of the external resource source.
@@ -2062,6 +2441,12 @@ func (o GetVulnerabilityAuditSourceArrayOutput) ToGetVulnerabilityAuditSourceArr
 
 func (o GetVulnerabilityAuditSourceArrayOutput) ToGetVulnerabilityAuditSourceArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditSourceArrayOutput {
 	return o
+}
+
+func (o GetVulnerabilityAuditSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditSource] {
+	return pulumix.Output[[]GetVulnerabilityAuditSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVulnerabilityAuditSourceArrayOutput) Index(i pulumi.IntInput) GetVulnerabilityAuditSourceOutput {
@@ -2115,6 +2500,12 @@ func (i GetVulnerabilityAuditVulnerabilityArgs) ToGetVulnerabilityAuditVulnerabi
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditVulnerabilityOutput)
 }
 
+func (i GetVulnerabilityAuditVulnerabilityArgs) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditVulnerability] {
+	return pulumix.Output[GetVulnerabilityAuditVulnerability]{
+		OutputState: i.ToGetVulnerabilityAuditVulnerabilityOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVulnerabilityAuditVulnerabilityArrayInput is an input type that accepts GetVulnerabilityAuditVulnerabilityArray and GetVulnerabilityAuditVulnerabilityArrayOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditVulnerabilityArrayInput` via:
 //
@@ -2140,6 +2531,12 @@ func (i GetVulnerabilityAuditVulnerabilityArray) ToGetVulnerabilityAuditVulnerab
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditVulnerabilityArrayOutput)
 }
 
+func (i GetVulnerabilityAuditVulnerabilityArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditVulnerability] {
+	return pulumix.Output[[]GetVulnerabilityAuditVulnerability]{
+		OutputState: i.ToGetVulnerabilityAuditVulnerabilityArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVulnerabilityAuditVulnerabilityOutput struct{ *pulumi.OutputState }
 
 func (GetVulnerabilityAuditVulnerabilityOutput) ElementType() reflect.Type {
@@ -2152,6 +2549,12 @@ func (o GetVulnerabilityAuditVulnerabilityOutput) ToGetVulnerabilityAuditVulnera
 
 func (o GetVulnerabilityAuditVulnerabilityOutput) ToGetVulnerabilityAuditVulnerabilityOutputWithContext(ctx context.Context) GetVulnerabilityAuditVulnerabilityOutput {
 	return o
+}
+
+func (o GetVulnerabilityAuditVulnerabilityOutput) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditVulnerability] {
+	return pulumix.Output[GetVulnerabilityAuditVulnerability]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Common Vulnerability Scoring System (CVSS) Version 2.
@@ -2186,6 +2589,12 @@ func (o GetVulnerabilityAuditVulnerabilityArrayOutput) ToGetVulnerabilityAuditVu
 
 func (o GetVulnerabilityAuditVulnerabilityArrayOutput) ToGetVulnerabilityAuditVulnerabilityArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditVulnerabilityArrayOutput {
 	return o
+}
+
+func (o GetVulnerabilityAuditVulnerabilityArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditVulnerability] {
+	return pulumix.Output[[]GetVulnerabilityAuditVulnerability]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVulnerabilityAuditVulnerabilityArrayOutput) Index(i pulumi.IntInput) GetVulnerabilityAuditVulnerabilityOutput {
@@ -2229,6 +2638,12 @@ func (i GetVulnerabilityAuditsFilterArgs) ToGetVulnerabilityAuditsFilterOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditsFilterOutput)
 }
 
+func (i GetVulnerabilityAuditsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditsFilter] {
+	return pulumix.Output[GetVulnerabilityAuditsFilter]{
+		OutputState: i.ToGetVulnerabilityAuditsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVulnerabilityAuditsFilterArrayInput is an input type that accepts GetVulnerabilityAuditsFilterArray and GetVulnerabilityAuditsFilterArrayOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditsFilterArrayInput` via:
 //
@@ -2254,6 +2669,12 @@ func (i GetVulnerabilityAuditsFilterArray) ToGetVulnerabilityAuditsFilterArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditsFilterArrayOutput)
 }
 
+func (i GetVulnerabilityAuditsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditsFilter] {
+	return pulumix.Output[[]GetVulnerabilityAuditsFilter]{
+		OutputState: i.ToGetVulnerabilityAuditsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVulnerabilityAuditsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetVulnerabilityAuditsFilterOutput) ElementType() reflect.Type {
@@ -2266,6 +2687,12 @@ func (o GetVulnerabilityAuditsFilterOutput) ToGetVulnerabilityAuditsFilterOutput
 
 func (o GetVulnerabilityAuditsFilterOutput) ToGetVulnerabilityAuditsFilterOutputWithContext(ctx context.Context) GetVulnerabilityAuditsFilterOutput {
 	return o
+}
+
+func (o GetVulnerabilityAuditsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditsFilter] {
+	return pulumix.Output[GetVulnerabilityAuditsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVulnerabilityAuditsFilterOutput) Name() pulumi.StringOutput {
@@ -2292,6 +2719,12 @@ func (o GetVulnerabilityAuditsFilterArrayOutput) ToGetVulnerabilityAuditsFilterA
 
 func (o GetVulnerabilityAuditsFilterArrayOutput) ToGetVulnerabilityAuditsFilterArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditsFilterArrayOutput {
 	return o
+}
+
+func (o GetVulnerabilityAuditsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditsFilter] {
+	return pulumix.Output[[]GetVulnerabilityAuditsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVulnerabilityAuditsFilterArrayOutput) Index(i pulumi.IntInput) GetVulnerabilityAuditsFilterOutput {
@@ -2331,6 +2764,12 @@ func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionArgs) ToGetVulnerabili
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditsVulnerabilityAuditCollectionOutput)
 }
 
+func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditsVulnerabilityAuditCollection] {
+	return pulumix.Output[GetVulnerabilityAuditsVulnerabilityAuditCollection]{
+		OutputState: i.ToGetVulnerabilityAuditsVulnerabilityAuditCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVulnerabilityAuditsVulnerabilityAuditCollectionArrayInput is an input type that accepts GetVulnerabilityAuditsVulnerabilityAuditCollectionArray and GetVulnerabilityAuditsVulnerabilityAuditCollectionArrayOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditsVulnerabilityAuditCollectionArrayInput` via:
 //
@@ -2356,6 +2795,12 @@ func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionArray) ToGetVulnerabil
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditsVulnerabilityAuditCollectionArrayOutput)
 }
 
+func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditsVulnerabilityAuditCollection] {
+	return pulumix.Output[[]GetVulnerabilityAuditsVulnerabilityAuditCollection]{
+		OutputState: i.ToGetVulnerabilityAuditsVulnerabilityAuditCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVulnerabilityAuditsVulnerabilityAuditCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetVulnerabilityAuditsVulnerabilityAuditCollectionOutput) ElementType() reflect.Type {
@@ -2368,6 +2813,12 @@ func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionOutput) ToGetVulnerabi
 
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionOutput) ToGetVulnerabilityAuditsVulnerabilityAuditCollectionOutputWithContext(ctx context.Context) GetVulnerabilityAuditsVulnerabilityAuditCollectionOutput {
 	return o
+}
+
+func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditsVulnerabilityAuditCollection] {
+	return pulumix.Output[GetVulnerabilityAuditsVulnerabilityAuditCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionOutput) Items() GetVulnerabilityAuditsVulnerabilityAuditCollectionItemArrayOutput {
@@ -2388,6 +2839,12 @@ func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionArrayOutput) ToGetVuln
 
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionArrayOutput) ToGetVulnerabilityAuditsVulnerabilityAuditCollectionArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditsVulnerabilityAuditCollectionArrayOutput {
 	return o
+}
+
+func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditsVulnerabilityAuditCollection] {
+	return pulumix.Output[[]GetVulnerabilityAuditsVulnerabilityAuditCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionArrayOutput) Index(i pulumi.IntInput) GetVulnerabilityAuditsVulnerabilityAuditCollectionOutput {
@@ -2511,6 +2968,12 @@ func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemArgs) ToGetVulnera
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput)
 }
 
+func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditsVulnerabilityAuditCollectionItem] {
+	return pulumix.Output[GetVulnerabilityAuditsVulnerabilityAuditCollectionItem]{
+		OutputState: i.ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVulnerabilityAuditsVulnerabilityAuditCollectionItemArrayInput is an input type that accepts GetVulnerabilityAuditsVulnerabilityAuditCollectionItemArray and GetVulnerabilityAuditsVulnerabilityAuditCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditsVulnerabilityAuditCollectionItemArrayInput` via:
 //
@@ -2536,6 +2999,12 @@ func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemArray) ToGetVulner
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditsVulnerabilityAuditCollectionItemArrayOutput)
 }
 
+func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditsVulnerabilityAuditCollectionItem] {
+	return pulumix.Output[[]GetVulnerabilityAuditsVulnerabilityAuditCollectionItem]{
+		OutputState: i.ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput) ElementType() reflect.Type {
@@ -2548,6 +3017,12 @@ func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput) ToGetVulne
 
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput) ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutputWithContext(ctx context.Context) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput {
 	return o
+}
+
+func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditsVulnerabilityAuditCollectionItem] {
+	return pulumix.Output[GetVulnerabilityAuditsVulnerabilityAuditCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput) ApplicationDependencies() GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyArrayOutput {
@@ -2697,6 +3172,12 @@ func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemArrayOutput) ToGet
 	return o
 }
 
+func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditsVulnerabilityAuditCollectionItem] {
+	return pulumix.Output[[]GetVulnerabilityAuditsVulnerabilityAuditCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemArrayOutput) Index(i pulumi.IntInput) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVulnerabilityAuditsVulnerabilityAuditCollectionItem {
 		return vs[0].([]GetVulnerabilityAuditsVulnerabilityAuditCollectionItem)[vs[1].(int)]
@@ -2738,6 +3219,12 @@ func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDepende
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyOutput)
 }
 
+func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyArgs) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependency] {
+	return pulumix.Output[GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependency]{
+		OutputState: i.ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyArrayInput is an input type that accepts GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyArray and GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyArrayOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyArrayInput` via:
 //
@@ -2763,6 +3250,12 @@ func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDepende
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyArrayOutput)
 }
 
+func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependency] {
+	return pulumix.Output[[]GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependency]{
+		OutputState: i.ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyOutput struct{ *pulumi.OutputState }
 
 func (GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyOutput) ElementType() reflect.Type {
@@ -2775,6 +3268,12 @@ func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDepende
 
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyOutput) ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyOutputWithContext(ctx context.Context) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyOutput {
 	return o
+}
+
+func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyOutput) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependency] {
+	return pulumix.Output[GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependency]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyOutput) ApplicationDependencyNodeIds() pulumi.StringArrayOutput {
@@ -2807,6 +3306,12 @@ func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDepende
 
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyArrayOutput) ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyArrayOutput {
 	return o
+}
+
+func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependency] {
+	return pulumix.Output[[]GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependency]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyArrayOutput) Index(i pulumi.IntInput) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyOutput {
@@ -2856,6 +3361,12 @@ func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArgs)
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationOutput)
 }
 
+func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfiguration] {
+	return pulumix.Output[GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfiguration]{
+		OutputState: i.ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArrayInput is an input type that accepts GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArray and GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArrayInput` via:
 //
@@ -2881,6 +3392,12 @@ func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArrayOutput)
 }
 
+func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfiguration] {
+	return pulumix.Output[[]GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfiguration]{
+		OutputState: i.ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationOutput) ElementType() reflect.Type {
@@ -2893,6 +3410,12 @@ func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationOutpu
 
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationOutput) ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationOutputWithContext(ctx context.Context) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationOutput {
 	return o
+}
+
+func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfiguration] {
+	return pulumix.Output[GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A vulnerable Application Dependency is ignored if its name matches any of the items in `exclusions`.
@@ -2928,6 +3451,12 @@ func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArray
 
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArrayOutput) ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArrayOutput {
 	return o
+}
+
+func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfiguration] {
+	return pulumix.Output[[]GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArrayOutput) Index(i pulumi.IntInput) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationOutput {
@@ -2977,6 +3506,12 @@ func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceArgs) ToGetV
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceOutput)
 }
 
+func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSource] {
+	return pulumix.Output[GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSource]{
+		OutputState: i.ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceArrayInput is an input type that accepts GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceArray and GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceArrayOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceArrayInput` via:
 //
@@ -3002,6 +3537,12 @@ func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceArrayOutput)
 }
 
+func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSource] {
+	return pulumix.Output[[]GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSource]{
+		OutputState: i.ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceOutput struct{ *pulumi.OutputState }
 
 func (GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceOutput) ElementType() reflect.Type {
@@ -3014,6 +3555,12 @@ func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceOutput) ToGe
 
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceOutput) ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceOutputWithContext(ctx context.Context) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceOutput {
 	return o
+}
+
+func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSource] {
+	return pulumix.Output[GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Description of the external resource source.
@@ -3043,6 +3590,12 @@ func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceArrayOutput)
 
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceArrayOutput) ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceArrayOutput {
 	return o
+}
+
+func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSource] {
+	return pulumix.Output[[]GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceArrayOutput) Index(i pulumi.IntInput) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceOutput {
@@ -3096,6 +3649,12 @@ func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArgs)
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityOutput)
 }
 
+func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArgs) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerability] {
+	return pulumix.Output[GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerability]{
+		OutputState: i.ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArrayInput is an input type that accepts GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArray and GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArrayOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArrayInput` via:
 //
@@ -3121,6 +3680,12 @@ func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArrayOutput)
 }
 
+func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerability] {
+	return pulumix.Output[[]GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerability]{
+		OutputState: i.ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityOutput struct{ *pulumi.OutputState }
 
 func (GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityOutput) ElementType() reflect.Type {
@@ -3133,6 +3698,12 @@ func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityOutpu
 
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityOutput) ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityOutputWithContext(ctx context.Context) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityOutput {
 	return o
+}
+
+func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityOutput) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerability] {
+	return pulumix.Output[GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerability]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Common Vulnerability Scoring System (CVSS) Version 2.
@@ -3171,6 +3742,12 @@ func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArray
 
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArrayOutput) ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArrayOutput {
 	return o
+}
+
+func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerability] {
+	return pulumix.Output[[]GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerability]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArrayOutput) Index(i pulumi.IntInput) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityOutput {

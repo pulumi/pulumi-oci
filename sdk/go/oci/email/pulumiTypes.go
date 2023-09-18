@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -44,6 +45,12 @@ func (i GetDkimsDkimCollectionArgs) ToGetDkimsDkimCollectionOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetDkimsDkimCollectionOutput)
 }
 
+func (i GetDkimsDkimCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDkimsDkimCollection] {
+	return pulumix.Output[GetDkimsDkimCollection]{
+		OutputState: i.ToGetDkimsDkimCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDkimsDkimCollectionArrayInput is an input type that accepts GetDkimsDkimCollectionArray and GetDkimsDkimCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDkimsDkimCollectionArrayInput` via:
 //
@@ -69,6 +76,12 @@ func (i GetDkimsDkimCollectionArray) ToGetDkimsDkimCollectionArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetDkimsDkimCollectionArrayOutput)
 }
 
+func (i GetDkimsDkimCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDkimsDkimCollection] {
+	return pulumix.Output[[]GetDkimsDkimCollection]{
+		OutputState: i.ToGetDkimsDkimCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDkimsDkimCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetDkimsDkimCollectionOutput) ElementType() reflect.Type {
@@ -81,6 +94,12 @@ func (o GetDkimsDkimCollectionOutput) ToGetDkimsDkimCollectionOutput() GetDkimsD
 
 func (o GetDkimsDkimCollectionOutput) ToGetDkimsDkimCollectionOutputWithContext(ctx context.Context) GetDkimsDkimCollectionOutput {
 	return o
+}
+
+func (o GetDkimsDkimCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDkimsDkimCollection] {
+	return pulumix.Output[GetDkimsDkimCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDkimsDkimCollectionOutput) Items() GetDkimsDkimCollectionItemArrayOutput {
@@ -99,6 +118,12 @@ func (o GetDkimsDkimCollectionArrayOutput) ToGetDkimsDkimCollectionArrayOutput()
 
 func (o GetDkimsDkimCollectionArrayOutput) ToGetDkimsDkimCollectionArrayOutputWithContext(ctx context.Context) GetDkimsDkimCollectionArrayOutput {
 	return o
+}
+
+func (o GetDkimsDkimCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDkimsDkimCollection] {
+	return pulumix.Output[[]GetDkimsDkimCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDkimsDkimCollectionArrayOutput) Index(i pulumi.IntInput) GetDkimsDkimCollectionOutput {
@@ -196,6 +221,12 @@ func (i GetDkimsDkimCollectionItemArgs) ToGetDkimsDkimCollectionItemOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetDkimsDkimCollectionItemOutput)
 }
 
+func (i GetDkimsDkimCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetDkimsDkimCollectionItem] {
+	return pulumix.Output[GetDkimsDkimCollectionItem]{
+		OutputState: i.ToGetDkimsDkimCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDkimsDkimCollectionItemArrayInput is an input type that accepts GetDkimsDkimCollectionItemArray and GetDkimsDkimCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDkimsDkimCollectionItemArrayInput` via:
 //
@@ -221,6 +252,12 @@ func (i GetDkimsDkimCollectionItemArray) ToGetDkimsDkimCollectionItemArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetDkimsDkimCollectionItemArrayOutput)
 }
 
+func (i GetDkimsDkimCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDkimsDkimCollectionItem] {
+	return pulumix.Output[[]GetDkimsDkimCollectionItem]{
+		OutputState: i.ToGetDkimsDkimCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDkimsDkimCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetDkimsDkimCollectionItemOutput) ElementType() reflect.Type {
@@ -233,6 +270,12 @@ func (o GetDkimsDkimCollectionItemOutput) ToGetDkimsDkimCollectionItemOutput() G
 
 func (o GetDkimsDkimCollectionItemOutput) ToGetDkimsDkimCollectionItemOutputWithContext(ctx context.Context) GetDkimsDkimCollectionItemOutput {
 	return o
+}
+
+func (o GetDkimsDkimCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetDkimsDkimCollectionItem] {
+	return pulumix.Output[GetDkimsDkimCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The DNS CNAME record value to provision to the DKIM DNS subdomain, when using the CNAME method for DKIM setup (preferred).
@@ -324,6 +367,12 @@ func (o GetDkimsDkimCollectionItemArrayOutput) ToGetDkimsDkimCollectionItemArray
 	return o
 }
 
+func (o GetDkimsDkimCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDkimsDkimCollectionItem] {
+	return pulumix.Output[[]GetDkimsDkimCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetDkimsDkimCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDkimsDkimCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDkimsDkimCollectionItem {
 		return vs[0].([]GetDkimsDkimCollectionItem)[vs[1].(int)]
@@ -367,6 +416,12 @@ func (i GetDkimsFilterArgs) ToGetDkimsFilterOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetDkimsFilterOutput)
 }
 
+func (i GetDkimsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetDkimsFilter] {
+	return pulumix.Output[GetDkimsFilter]{
+		OutputState: i.ToGetDkimsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetDkimsFilterArrayInput is an input type that accepts GetDkimsFilterArray and GetDkimsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDkimsFilterArrayInput` via:
 //
@@ -392,6 +447,12 @@ func (i GetDkimsFilterArray) ToGetDkimsFilterArrayOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetDkimsFilterArrayOutput)
 }
 
+func (i GetDkimsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDkimsFilter] {
+	return pulumix.Output[[]GetDkimsFilter]{
+		OutputState: i.ToGetDkimsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetDkimsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetDkimsFilterOutput) ElementType() reflect.Type {
@@ -404,6 +465,12 @@ func (o GetDkimsFilterOutput) ToGetDkimsFilterOutput() GetDkimsFilterOutput {
 
 func (o GetDkimsFilterOutput) ToGetDkimsFilterOutputWithContext(ctx context.Context) GetDkimsFilterOutput {
 	return o
+}
+
+func (o GetDkimsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetDkimsFilter] {
+	return pulumix.Output[GetDkimsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A filter to only return resources that match the given name exactly.
@@ -431,6 +498,12 @@ func (o GetDkimsFilterArrayOutput) ToGetDkimsFilterArrayOutput() GetDkimsFilterA
 
 func (o GetDkimsFilterArrayOutput) ToGetDkimsFilterArrayOutputWithContext(ctx context.Context) GetDkimsFilterArrayOutput {
 	return o
+}
+
+func (o GetDkimsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDkimsFilter] {
+	return pulumix.Output[[]GetDkimsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDkimsFilterArrayOutput) Index(i pulumi.IntInput) GetDkimsFilterOutput {
@@ -470,6 +543,12 @@ func (i GetEmailDomainsEmailDomainCollectionArgs) ToGetEmailDomainsEmailDomainCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetEmailDomainsEmailDomainCollectionOutput)
 }
 
+func (i GetEmailDomainsEmailDomainCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetEmailDomainsEmailDomainCollection] {
+	return pulumix.Output[GetEmailDomainsEmailDomainCollection]{
+		OutputState: i.ToGetEmailDomainsEmailDomainCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetEmailDomainsEmailDomainCollectionArrayInput is an input type that accepts GetEmailDomainsEmailDomainCollectionArray and GetEmailDomainsEmailDomainCollectionArrayOutput values.
 // You can construct a concrete instance of `GetEmailDomainsEmailDomainCollectionArrayInput` via:
 //
@@ -495,6 +574,12 @@ func (i GetEmailDomainsEmailDomainCollectionArray) ToGetEmailDomainsEmailDomainC
 	return pulumi.ToOutputWithContext(ctx, i).(GetEmailDomainsEmailDomainCollectionArrayOutput)
 }
 
+func (i GetEmailDomainsEmailDomainCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEmailDomainsEmailDomainCollection] {
+	return pulumix.Output[[]GetEmailDomainsEmailDomainCollection]{
+		OutputState: i.ToGetEmailDomainsEmailDomainCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetEmailDomainsEmailDomainCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetEmailDomainsEmailDomainCollectionOutput) ElementType() reflect.Type {
@@ -507,6 +592,12 @@ func (o GetEmailDomainsEmailDomainCollectionOutput) ToGetEmailDomainsEmailDomain
 
 func (o GetEmailDomainsEmailDomainCollectionOutput) ToGetEmailDomainsEmailDomainCollectionOutputWithContext(ctx context.Context) GetEmailDomainsEmailDomainCollectionOutput {
 	return o
+}
+
+func (o GetEmailDomainsEmailDomainCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetEmailDomainsEmailDomainCollection] {
+	return pulumix.Output[GetEmailDomainsEmailDomainCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetEmailDomainsEmailDomainCollectionOutput) Items() GetEmailDomainsEmailDomainCollectionItemArrayOutput {
@@ -527,6 +618,12 @@ func (o GetEmailDomainsEmailDomainCollectionArrayOutput) ToGetEmailDomainsEmailD
 
 func (o GetEmailDomainsEmailDomainCollectionArrayOutput) ToGetEmailDomainsEmailDomainCollectionArrayOutputWithContext(ctx context.Context) GetEmailDomainsEmailDomainCollectionArrayOutput {
 	return o
+}
+
+func (o GetEmailDomainsEmailDomainCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEmailDomainsEmailDomainCollection] {
+	return pulumix.Output[[]GetEmailDomainsEmailDomainCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetEmailDomainsEmailDomainCollectionArrayOutput) Index(i pulumi.IntInput) GetEmailDomainsEmailDomainCollectionOutput {
@@ -608,6 +705,12 @@ func (i GetEmailDomainsEmailDomainCollectionItemArgs) ToGetEmailDomainsEmailDoma
 	return pulumi.ToOutputWithContext(ctx, i).(GetEmailDomainsEmailDomainCollectionItemOutput)
 }
 
+func (i GetEmailDomainsEmailDomainCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetEmailDomainsEmailDomainCollectionItem] {
+	return pulumix.Output[GetEmailDomainsEmailDomainCollectionItem]{
+		OutputState: i.ToGetEmailDomainsEmailDomainCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetEmailDomainsEmailDomainCollectionItemArrayInput is an input type that accepts GetEmailDomainsEmailDomainCollectionItemArray and GetEmailDomainsEmailDomainCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetEmailDomainsEmailDomainCollectionItemArrayInput` via:
 //
@@ -633,6 +736,12 @@ func (i GetEmailDomainsEmailDomainCollectionItemArray) ToGetEmailDomainsEmailDom
 	return pulumi.ToOutputWithContext(ctx, i).(GetEmailDomainsEmailDomainCollectionItemArrayOutput)
 }
 
+func (i GetEmailDomainsEmailDomainCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEmailDomainsEmailDomainCollectionItem] {
+	return pulumix.Output[[]GetEmailDomainsEmailDomainCollectionItem]{
+		OutputState: i.ToGetEmailDomainsEmailDomainCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetEmailDomainsEmailDomainCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetEmailDomainsEmailDomainCollectionItemOutput) ElementType() reflect.Type {
@@ -645,6 +754,12 @@ func (o GetEmailDomainsEmailDomainCollectionItemOutput) ToGetEmailDomainsEmailDo
 
 func (o GetEmailDomainsEmailDomainCollectionItemOutput) ToGetEmailDomainsEmailDomainCollectionItemOutputWithContext(ctx context.Context) GetEmailDomainsEmailDomainCollectionItemOutput {
 	return o
+}
+
+func (o GetEmailDomainsEmailDomainCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetEmailDomainsEmailDomainCollectionItem] {
+	return pulumix.Output[GetEmailDomainsEmailDomainCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DKIM key that will be used to sign mail sent from this email domain.
@@ -716,6 +831,12 @@ func (o GetEmailDomainsEmailDomainCollectionItemArrayOutput) ToGetEmailDomainsEm
 	return o
 }
 
+func (o GetEmailDomainsEmailDomainCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEmailDomainsEmailDomainCollectionItem] {
+	return pulumix.Output[[]GetEmailDomainsEmailDomainCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetEmailDomainsEmailDomainCollectionItemArrayOutput) Index(i pulumi.IntInput) GetEmailDomainsEmailDomainCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEmailDomainsEmailDomainCollectionItem {
 		return vs[0].([]GetEmailDomainsEmailDomainCollectionItem)[vs[1].(int)]
@@ -759,6 +880,12 @@ func (i GetEmailDomainsFilterArgs) ToGetEmailDomainsFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetEmailDomainsFilterOutput)
 }
 
+func (i GetEmailDomainsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetEmailDomainsFilter] {
+	return pulumix.Output[GetEmailDomainsFilter]{
+		OutputState: i.ToGetEmailDomainsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetEmailDomainsFilterArrayInput is an input type that accepts GetEmailDomainsFilterArray and GetEmailDomainsFilterArrayOutput values.
 // You can construct a concrete instance of `GetEmailDomainsFilterArrayInput` via:
 //
@@ -784,6 +911,12 @@ func (i GetEmailDomainsFilterArray) ToGetEmailDomainsFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetEmailDomainsFilterArrayOutput)
 }
 
+func (i GetEmailDomainsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEmailDomainsFilter] {
+	return pulumix.Output[[]GetEmailDomainsFilter]{
+		OutputState: i.ToGetEmailDomainsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetEmailDomainsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetEmailDomainsFilterOutput) ElementType() reflect.Type {
@@ -796,6 +929,12 @@ func (o GetEmailDomainsFilterOutput) ToGetEmailDomainsFilterOutput() GetEmailDom
 
 func (o GetEmailDomainsFilterOutput) ToGetEmailDomainsFilterOutputWithContext(ctx context.Context) GetEmailDomainsFilterOutput {
 	return o
+}
+
+func (o GetEmailDomainsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetEmailDomainsFilter] {
+	return pulumix.Output[GetEmailDomainsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A filter to only return resources that match the given name exactly.
@@ -823,6 +962,12 @@ func (o GetEmailDomainsFilterArrayOutput) ToGetEmailDomainsFilterArrayOutput() G
 
 func (o GetEmailDomainsFilterArrayOutput) ToGetEmailDomainsFilterArrayOutputWithContext(ctx context.Context) GetEmailDomainsFilterArrayOutput {
 	return o
+}
+
+func (o GetEmailDomainsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEmailDomainsFilter] {
+	return pulumix.Output[[]GetEmailDomainsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetEmailDomainsFilterArrayOutput) Index(i pulumi.IntInput) GetEmailDomainsFilterOutput {
@@ -866,6 +1011,12 @@ func (i GetSendersFilterArgs) ToGetSendersFilterOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetSendersFilterOutput)
 }
 
+func (i GetSendersFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSendersFilter] {
+	return pulumix.Output[GetSendersFilter]{
+		OutputState: i.ToGetSendersFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSendersFilterArrayInput is an input type that accepts GetSendersFilterArray and GetSendersFilterArrayOutput values.
 // You can construct a concrete instance of `GetSendersFilterArrayInput` via:
 //
@@ -891,6 +1042,12 @@ func (i GetSendersFilterArray) ToGetSendersFilterArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetSendersFilterArrayOutput)
 }
 
+func (i GetSendersFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSendersFilter] {
+	return pulumix.Output[[]GetSendersFilter]{
+		OutputState: i.ToGetSendersFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSendersFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSendersFilterOutput) ElementType() reflect.Type {
@@ -903,6 +1060,12 @@ func (o GetSendersFilterOutput) ToGetSendersFilterOutput() GetSendersFilterOutpu
 
 func (o GetSendersFilterOutput) ToGetSendersFilterOutputWithContext(ctx context.Context) GetSendersFilterOutput {
 	return o
+}
+
+func (o GetSendersFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSendersFilter] {
+	return pulumix.Output[GetSendersFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSendersFilterOutput) Name() pulumi.StringOutput {
@@ -929,6 +1092,12 @@ func (o GetSendersFilterArrayOutput) ToGetSendersFilterArrayOutput() GetSendersF
 
 func (o GetSendersFilterArrayOutput) ToGetSendersFilterArrayOutputWithContext(ctx context.Context) GetSendersFilterArrayOutput {
 	return o
+}
+
+func (o GetSendersFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSendersFilter] {
+	return pulumix.Output[[]GetSendersFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSendersFilterArrayOutput) Index(i pulumi.IntInput) GetSendersFilterOutput {
@@ -1002,6 +1171,12 @@ func (i GetSendersSenderArgs) ToGetSendersSenderOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetSendersSenderOutput)
 }
 
+func (i GetSendersSenderArgs) ToOutput(ctx context.Context) pulumix.Output[GetSendersSender] {
+	return pulumix.Output[GetSendersSender]{
+		OutputState: i.ToGetSendersSenderOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSendersSenderArrayInput is an input type that accepts GetSendersSenderArray and GetSendersSenderArrayOutput values.
 // You can construct a concrete instance of `GetSendersSenderArrayInput` via:
 //
@@ -1027,6 +1202,12 @@ func (i GetSendersSenderArray) ToGetSendersSenderArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetSendersSenderArrayOutput)
 }
 
+func (i GetSendersSenderArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSendersSender] {
+	return pulumix.Output[[]GetSendersSender]{
+		OutputState: i.ToGetSendersSenderArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSendersSenderOutput struct{ *pulumi.OutputState }
 
 func (GetSendersSenderOutput) ElementType() reflect.Type {
@@ -1039,6 +1220,12 @@ func (o GetSendersSenderOutput) ToGetSendersSenderOutput() GetSendersSenderOutpu
 
 func (o GetSendersSenderOutput) ToGetSendersSenderOutputWithContext(ctx context.Context) GetSendersSenderOutput {
 	return o
+}
+
+func (o GetSendersSenderOutput) ToOutput(ctx context.Context) pulumix.Output[GetSendersSender] {
+	return pulumix.Output[GetSendersSender]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID for the compartment.
@@ -1100,6 +1287,12 @@ func (o GetSendersSenderArrayOutput) ToGetSendersSenderArrayOutputWithContext(ct
 	return o
 }
 
+func (o GetSendersSenderArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSendersSender] {
+	return pulumix.Output[[]GetSendersSender]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetSendersSenderArrayOutput) Index(i pulumi.IntInput) GetSendersSenderOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSendersSender {
 		return vs[0].([]GetSendersSender)[vs[1].(int)]
@@ -1141,6 +1334,12 @@ func (i GetSuppressionsFilterArgs) ToGetSuppressionsFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetSuppressionsFilterOutput)
 }
 
+func (i GetSuppressionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSuppressionsFilter] {
+	return pulumix.Output[GetSuppressionsFilter]{
+		OutputState: i.ToGetSuppressionsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSuppressionsFilterArrayInput is an input type that accepts GetSuppressionsFilterArray and GetSuppressionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSuppressionsFilterArrayInput` via:
 //
@@ -1166,6 +1365,12 @@ func (i GetSuppressionsFilterArray) ToGetSuppressionsFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetSuppressionsFilterArrayOutput)
 }
 
+func (i GetSuppressionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSuppressionsFilter] {
+	return pulumix.Output[[]GetSuppressionsFilter]{
+		OutputState: i.ToGetSuppressionsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSuppressionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSuppressionsFilterOutput) ElementType() reflect.Type {
@@ -1178,6 +1383,12 @@ func (o GetSuppressionsFilterOutput) ToGetSuppressionsFilterOutput() GetSuppress
 
 func (o GetSuppressionsFilterOutput) ToGetSuppressionsFilterOutputWithContext(ctx context.Context) GetSuppressionsFilterOutput {
 	return o
+}
+
+func (o GetSuppressionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSuppressionsFilter] {
+	return pulumix.Output[GetSuppressionsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSuppressionsFilterOutput) Name() pulumi.StringOutput {
@@ -1204,6 +1415,12 @@ func (o GetSuppressionsFilterArrayOutput) ToGetSuppressionsFilterArrayOutput() G
 
 func (o GetSuppressionsFilterArrayOutput) ToGetSuppressionsFilterArrayOutputWithContext(ctx context.Context) GetSuppressionsFilterArrayOutput {
 	return o
+}
+
+func (o GetSuppressionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSuppressionsFilter] {
+	return pulumix.Output[[]GetSuppressionsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSuppressionsFilterArrayOutput) Index(i pulumi.IntInput) GetSuppressionsFilterOutput {
@@ -1277,6 +1494,12 @@ func (i GetSuppressionsSuppressionArgs) ToGetSuppressionsSuppressionOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetSuppressionsSuppressionOutput)
 }
 
+func (i GetSuppressionsSuppressionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSuppressionsSuppression] {
+	return pulumix.Output[GetSuppressionsSuppression]{
+		OutputState: i.ToGetSuppressionsSuppressionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSuppressionsSuppressionArrayInput is an input type that accepts GetSuppressionsSuppressionArray and GetSuppressionsSuppressionArrayOutput values.
 // You can construct a concrete instance of `GetSuppressionsSuppressionArrayInput` via:
 //
@@ -1302,6 +1525,12 @@ func (i GetSuppressionsSuppressionArray) ToGetSuppressionsSuppressionArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetSuppressionsSuppressionArrayOutput)
 }
 
+func (i GetSuppressionsSuppressionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSuppressionsSuppression] {
+	return pulumix.Output[[]GetSuppressionsSuppression]{
+		OutputState: i.ToGetSuppressionsSuppressionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSuppressionsSuppressionOutput struct{ *pulumi.OutputState }
 
 func (GetSuppressionsSuppressionOutput) ElementType() reflect.Type {
@@ -1314,6 +1543,12 @@ func (o GetSuppressionsSuppressionOutput) ToGetSuppressionsSuppressionOutput() G
 
 func (o GetSuppressionsSuppressionOutput) ToGetSuppressionsSuppressionOutputWithContext(ctx context.Context) GetSuppressionsSuppressionOutput {
 	return o
+}
+
+func (o GetSuppressionsSuppressionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSuppressionsSuppression] {
+	return pulumix.Output[GetSuppressionsSuppression]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID for the compartment.
@@ -1373,6 +1608,12 @@ func (o GetSuppressionsSuppressionArrayOutput) ToGetSuppressionsSuppressionArray
 
 func (o GetSuppressionsSuppressionArrayOutput) ToGetSuppressionsSuppressionArrayOutputWithContext(ctx context.Context) GetSuppressionsSuppressionArrayOutput {
 	return o
+}
+
+func (o GetSuppressionsSuppressionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSuppressionsSuppression] {
+	return pulumix.Output[[]GetSuppressionsSuppression]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSuppressionsSuppressionArrayOutput) Index(i pulumi.IntInput) GetSuppressionsSuppressionOutput {

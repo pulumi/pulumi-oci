@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Compare User Assessment resource in Oracle Cloud Infrastructure Data Safe service.
@@ -168,6 +169,12 @@ func (i *CompareUserAssessment) ToCompareUserAssessmentOutputWithContext(ctx con
 	return pulumi.ToOutputWithContext(ctx, i).(CompareUserAssessmentOutput)
 }
 
+func (i *CompareUserAssessment) ToOutput(ctx context.Context) pulumix.Output[*CompareUserAssessment] {
+	return pulumix.Output[*CompareUserAssessment]{
+		OutputState: i.ToCompareUserAssessmentOutputWithContext(ctx).OutputState,
+	}
+}
+
 // CompareUserAssessmentArrayInput is an input type that accepts CompareUserAssessmentArray and CompareUserAssessmentArrayOutput values.
 // You can construct a concrete instance of `CompareUserAssessmentArrayInput` via:
 //
@@ -191,6 +198,12 @@ func (i CompareUserAssessmentArray) ToCompareUserAssessmentArrayOutput() Compare
 
 func (i CompareUserAssessmentArray) ToCompareUserAssessmentArrayOutputWithContext(ctx context.Context) CompareUserAssessmentArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CompareUserAssessmentArrayOutput)
+}
+
+func (i CompareUserAssessmentArray) ToOutput(ctx context.Context) pulumix.Output[[]*CompareUserAssessment] {
+	return pulumix.Output[[]*CompareUserAssessment]{
+		OutputState: i.ToCompareUserAssessmentArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // CompareUserAssessmentMapInput is an input type that accepts CompareUserAssessmentMap and CompareUserAssessmentMapOutput values.
@@ -218,6 +231,12 @@ func (i CompareUserAssessmentMap) ToCompareUserAssessmentMapOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(CompareUserAssessmentMapOutput)
 }
 
+func (i CompareUserAssessmentMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*CompareUserAssessment] {
+	return pulumix.Output[map[string]*CompareUserAssessment]{
+		OutputState: i.ToCompareUserAssessmentMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type CompareUserAssessmentOutput struct{ *pulumi.OutputState }
 
 func (CompareUserAssessmentOutput) ElementType() reflect.Type {
@@ -230,6 +249,12 @@ func (o CompareUserAssessmentOutput) ToCompareUserAssessmentOutput() CompareUser
 
 func (o CompareUserAssessmentOutput) ToCompareUserAssessmentOutputWithContext(ctx context.Context) CompareUserAssessmentOutput {
 	return o
+}
+
+func (o CompareUserAssessmentOutput) ToOutput(ctx context.Context) pulumix.Output[*CompareUserAssessment] {
+	return pulumix.Output[*CompareUserAssessment]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the user assessment to be compared. You can compare with another user assessment, a latest assessment, or a baseline.
@@ -259,6 +284,12 @@ func (o CompareUserAssessmentArrayOutput) ToCompareUserAssessmentArrayOutputWith
 	return o
 }
 
+func (o CompareUserAssessmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*CompareUserAssessment] {
+	return pulumix.Output[[]*CompareUserAssessment]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o CompareUserAssessmentArrayOutput) Index(i pulumi.IntInput) CompareUserAssessmentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CompareUserAssessment {
 		return vs[0].([]*CompareUserAssessment)[vs[1].(int)]
@@ -277,6 +308,12 @@ func (o CompareUserAssessmentMapOutput) ToCompareUserAssessmentMapOutput() Compa
 
 func (o CompareUserAssessmentMapOutput) ToCompareUserAssessmentMapOutputWithContext(ctx context.Context) CompareUserAssessmentMapOutput {
 	return o
+}
+
+func (o CompareUserAssessmentMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*CompareUserAssessment] {
+	return pulumix.Output[map[string]*CompareUserAssessment]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o CompareUserAssessmentMapOutput) MapIndex(k pulumi.StringInput) CompareUserAssessmentOutput {

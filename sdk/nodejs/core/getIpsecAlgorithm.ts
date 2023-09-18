@@ -52,3 +52,20 @@ export interface GetIpsecAlgorithmResult {
      */
     readonly id: string;
 }
+/**
+ * This data source provides details about a specific Ipsec Algorithm resource in Oracle Cloud Infrastructure Core service.
+ *
+ * The parameters allowed for IKE IPSec tunnels.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testIpsecAlgorithm = oci.Core.getIpsecAlgorithm({});
+ * ```
+ */
+export function getIpsecAlgorithmOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetIpsecAlgorithmResult> {
+    return pulumi.output(getIpsecAlgorithm(opts))
+}

@@ -69,7 +69,7 @@ public class ClusterWorkloadMapping extends com.pulumi.resources.CustomResource 
      * The OCID of the cluster.
      * 
      */
-    @Export(name="clusterId", type=String.class, parameters={})
+    @Export(name="clusterId", refs={String.class}, tree="[0]")
     private Output<String> clusterId;
 
     /**
@@ -83,7 +83,7 @@ public class ClusterWorkloadMapping extends com.pulumi.resources.CustomResource 
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -97,7 +97,7 @@ public class ClusterWorkloadMapping extends com.pulumi.resources.CustomResource 
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -111,7 +111,7 @@ public class ClusterWorkloadMapping extends com.pulumi.resources.CustomResource 
      * (Updatable) The OCID of the mapped customer compartment.
      * 
      */
-    @Export(name="mappedCompartmentId", type=String.class, parameters={})
+    @Export(name="mappedCompartmentId", refs={String.class}, tree="[0]")
     private Output<String> mappedCompartmentId;
 
     /**
@@ -125,7 +125,7 @@ public class ClusterWorkloadMapping extends com.pulumi.resources.CustomResource 
      * The OCID of the mapped customer tenancy.
      * 
      */
-    @Export(name="mappedTenancyId", type=String.class, parameters={})
+    @Export(name="mappedTenancyId", refs={String.class}, tree="[0]")
     private Output<String> mappedTenancyId;
 
     /**
@@ -142,7 +142,7 @@ public class ClusterWorkloadMapping extends com.pulumi.resources.CustomResource 
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="namespace", type=String.class, parameters={})
+    @Export(name="namespace", refs={String.class}, tree="[0]")
     private Output<String> namespace;
 
     /**
@@ -159,7 +159,7 @@ public class ClusterWorkloadMapping extends com.pulumi.resources.CustomResource 
      * The state of the workloadMapping.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -173,7 +173,7 @@ public class ClusterWorkloadMapping extends com.pulumi.resources.CustomResource 
      * The time the cluster was created.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**

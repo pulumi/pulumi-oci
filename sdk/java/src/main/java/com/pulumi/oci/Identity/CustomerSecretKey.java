@@ -74,7 +74,7 @@ public class CustomerSecretKey extends com.pulumi.resources.CustomResource {
      * (Updatable) The name you assign to the secret key during creation. Does not have to be unique, and it&#39;s changeable.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -88,7 +88,7 @@ public class CustomerSecretKey extends com.pulumi.resources.CustomResource {
      * The detailed status of INACTIVE lifecycleState.
      * 
      */
-    @Export(name="inactiveState", type=String.class, parameters={})
+    @Export(name="inactiveState", refs={String.class}, tree="[0]")
     private Output<String> inactiveState;
 
     /**
@@ -102,7 +102,7 @@ public class CustomerSecretKey extends com.pulumi.resources.CustomResource {
      * The secret key.
      * 
      */
-    @Export(name="key", type=String.class, parameters={})
+    @Export(name="key", refs={String.class}, tree="[0]")
     private Output<String> key;
 
     /**
@@ -116,7 +116,7 @@ public class CustomerSecretKey extends com.pulumi.resources.CustomResource {
      * The secret key&#39;s current state.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -130,7 +130,7 @@ public class CustomerSecretKey extends com.pulumi.resources.CustomResource {
      * Date and time the `CustomerSecretKey` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -144,7 +144,7 @@ public class CustomerSecretKey extends com.pulumi.resources.CustomResource {
      * Date and time when this password will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeExpires", type=String.class, parameters={})
+    @Export(name="timeExpires", refs={String.class}, tree="[0]")
     private Output<String> timeExpires;
 
     /**
@@ -161,7 +161,7 @@ public class CustomerSecretKey extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="userId", type=String.class, parameters={})
+    @Export(name="userId", refs={String.class}, tree="[0]")
     private Output<String> userId;
 
     /**

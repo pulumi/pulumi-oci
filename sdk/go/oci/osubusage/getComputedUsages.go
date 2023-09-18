@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Computed Usages in Oracle Cloud Infrastructure Osub Usage service.
@@ -109,6 +110,12 @@ func (o GetComputedUsagesResultOutput) ToGetComputedUsagesResultOutput() GetComp
 
 func (o GetComputedUsagesResultOutput) ToGetComputedUsagesResultOutputWithContext(ctx context.Context) GetComputedUsagesResultOutput {
 	return o
+}
+
+func (o GetComputedUsagesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetComputedUsagesResult] {
+	return pulumix.Output[GetComputedUsagesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetComputedUsagesResultOutput) CompartmentId() pulumi.StringOutput {

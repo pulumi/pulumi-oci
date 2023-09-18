@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Reports in Oracle Cloud Infrastructure Data Safe service.
@@ -145,6 +146,12 @@ func (o GetReportsResultOutput) ToGetReportsResultOutput() GetReportsResultOutpu
 
 func (o GetReportsResultOutput) ToGetReportsResultOutputWithContext(ctx context.Context) GetReportsResultOutput {
 	return o
+}
+
+func (o GetReportsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetReportsResult] {
+	return pulumix.Output[GetReportsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetReportsResultOutput) AccessLevel() pulumi.StringPtrOutput {

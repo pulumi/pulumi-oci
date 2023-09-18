@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Cross Connect Port Speed Shapes in Oracle Cloud Infrastructure Core service.
@@ -106,6 +107,12 @@ func (o GetCrossConnectPortSpeedShapeResultOutput) ToGetCrossConnectPortSpeedSha
 
 func (o GetCrossConnectPortSpeedShapeResultOutput) ToGetCrossConnectPortSpeedShapeResultOutputWithContext(ctx context.Context) GetCrossConnectPortSpeedShapeResultOutput {
 	return o
+}
+
+func (o GetCrossConnectPortSpeedShapeResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCrossConnectPortSpeedShapeResult] {
+	return pulumix.Output[GetCrossConnectPortSpeedShapeResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetCrossConnectPortSpeedShapeResultOutput) CompartmentId() pulumi.StringOutput {

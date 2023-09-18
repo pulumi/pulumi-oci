@@ -87,7 +87,7 @@ public class BuildRun extends com.pulumi.resources.CustomResource {
      * Outputs from the build.
      * 
      */
-    @Export(name="buildOutputs", type=List.class, parameters={BuildRunBuildOutput.class})
+    @Export(name="buildOutputs", refs={List.class,BuildRunBuildOutput.class}, tree="[0,1]")
     private Output<List<BuildRunBuildOutput>> buildOutputs;
 
     /**
@@ -101,7 +101,7 @@ public class BuildRun extends com.pulumi.resources.CustomResource {
      * The OCID of the build pipeline.
      * 
      */
-    @Export(name="buildPipelineId", type=String.class, parameters={})
+    @Export(name="buildPipelineId", refs={String.class}, tree="[0]")
     private Output<String> buildPipelineId;
 
     /**
@@ -115,7 +115,7 @@ public class BuildRun extends com.pulumi.resources.CustomResource {
      * Specifies list of arguments passed along with the build run.
      * 
      */
-    @Export(name="buildRunArguments", type=BuildRunBuildRunArguments.class, parameters={})
+    @Export(name="buildRunArguments", refs={BuildRunBuildRunArguments.class}, tree="[0]")
     private Output<BuildRunBuildRunArguments> buildRunArguments;
 
     /**
@@ -129,7 +129,7 @@ public class BuildRun extends com.pulumi.resources.CustomResource {
      * The run progress details of a build run.
      * 
      */
-    @Export(name="buildRunProgresses", type=List.class, parameters={BuildRunBuildRunProgress.class})
+    @Export(name="buildRunProgresses", refs={List.class,BuildRunBuildRunProgress.class}, tree="[0,1]")
     private Output<List<BuildRunBuildRunProgress>> buildRunProgresses;
 
     /**
@@ -143,7 +143,7 @@ public class BuildRun extends com.pulumi.resources.CustomResource {
      * The source from which the build run is triggered.
      * 
      */
-    @Export(name="buildRunSources", type=List.class, parameters={BuildRunBuildRunSource.class})
+    @Export(name="buildRunSources", refs={List.class,BuildRunBuildRunSource.class}, tree="[0,1]")
     private Output<List<BuildRunBuildRunSource>> buildRunSources;
 
     /**
@@ -157,7 +157,7 @@ public class BuildRun extends com.pulumi.resources.CustomResource {
      * Commit details that need to be used for the build run.
      * 
      */
-    @Export(name="commitInfo", type=BuildRunCommitInfo.class, parameters={})
+    @Export(name="commitInfo", refs={BuildRunCommitInfo.class}, tree="[0]")
     private Output<BuildRunCommitInfo> commitInfo;
 
     /**
@@ -171,7 +171,7 @@ public class BuildRun extends com.pulumi.resources.CustomResource {
      * The OCID of the compartment where the build is running.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -185,7 +185,7 @@ public class BuildRun extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -199,7 +199,7 @@ public class BuildRun extends com.pulumi.resources.CustomResource {
      * (Updatable) Build run display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -216,7 +216,7 @@ public class BuildRun extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -233,7 +233,7 @@ public class BuildRun extends com.pulumi.resources.CustomResource {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -247,7 +247,7 @@ public class BuildRun extends com.pulumi.resources.CustomResource {
      * The OCID of the DevOps project.
      * 
      */
-    @Export(name="projectId", type=String.class, parameters={})
+    @Export(name="projectId", refs={String.class}, tree="[0]")
     private Output<String> projectId;
 
     /**
@@ -261,7 +261,7 @@ public class BuildRun extends com.pulumi.resources.CustomResource {
      * The current state of the build run.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -275,7 +275,7 @@ public class BuildRun extends com.pulumi.resources.CustomResource {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -289,7 +289,7 @@ public class BuildRun extends com.pulumi.resources.CustomResource {
      * The time the build run was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -303,7 +303,7 @@ public class BuildRun extends com.pulumi.resources.CustomResource {
      * The time the build run was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

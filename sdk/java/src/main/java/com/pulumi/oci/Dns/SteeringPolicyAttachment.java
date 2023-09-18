@@ -72,7 +72,7 @@ public class SteeringPolicyAttachment extends com.pulumi.resources.CustomResourc
      * The OCID of the compartment containing the steering policy attachment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -86,7 +86,7 @@ public class SteeringPolicyAttachment extends com.pulumi.resources.CustomResourc
      * (Updatable) A user-friendly name for the steering policy attachment. Does not have to be unique and can be changed. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -100,7 +100,7 @@ public class SteeringPolicyAttachment extends com.pulumi.resources.CustomResourc
      * The attached domain within the attached zone. `domain_name` is case insensitive.
      * 
      */
-    @Export(name="domainName", type=String.class, parameters={})
+    @Export(name="domainName", refs={String.class}, tree="[0]")
     private Output<String> domainName;
 
     /**
@@ -114,7 +114,7 @@ public class SteeringPolicyAttachment extends com.pulumi.resources.CustomResourc
      * The record types covered by the attachment at the domain. The set of record types is determined by aggregating the record types from the answers defined in the steering policy.
      * 
      */
-    @Export(name="rtypes", type=List.class, parameters={String.class})
+    @Export(name="rtypes", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> rtypes;
 
     /**
@@ -128,7 +128,7 @@ public class SteeringPolicyAttachment extends com.pulumi.resources.CustomResourc
      * The canonical absolute URL of the resource.
      * 
      */
-    @Export(name="self", type=String.class, parameters={})
+    @Export(name="self", refs={String.class}, tree="[0]")
     private Output<String> self;
 
     /**
@@ -142,7 +142,7 @@ public class SteeringPolicyAttachment extends com.pulumi.resources.CustomResourc
      * The current state of the resource.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -156,7 +156,7 @@ public class SteeringPolicyAttachment extends com.pulumi.resources.CustomResourc
      * The OCID of the attached steering policy.
      * 
      */
-    @Export(name="steeringPolicyId", type=String.class, parameters={})
+    @Export(name="steeringPolicyId", refs={String.class}, tree="[0]")
     private Output<String> steeringPolicyId;
 
     /**
@@ -170,7 +170,7 @@ public class SteeringPolicyAttachment extends com.pulumi.resources.CustomResourc
      * The date and time the resource was created, expressed in RFC 3339 timestamp format.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -187,7 +187,7 @@ public class SteeringPolicyAttachment extends com.pulumi.resources.CustomResourc
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="zoneId", type=String.class, parameters={})
+    @Export(name="zoneId", refs={String.class}, tree="[0]")
     private Output<String> zoneId;
 
     /**

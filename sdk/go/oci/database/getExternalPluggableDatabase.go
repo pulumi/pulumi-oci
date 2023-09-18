@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific External Pluggable Database resource in Oracle Cloud Infrastructure Database service.
@@ -142,6 +143,12 @@ func (o LookupExternalPluggableDatabaseResultOutput) ToLookupExternalPluggableDa
 
 func (o LookupExternalPluggableDatabaseResultOutput) ToLookupExternalPluggableDatabaseResultOutputWithContext(ctx context.Context) LookupExternalPluggableDatabaseResultOutput {
 	return o
+}
+
+func (o LookupExternalPluggableDatabaseResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupExternalPluggableDatabaseResult] {
+	return pulumix.Output[LookupExternalPluggableDatabaseResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The character set of the external database.

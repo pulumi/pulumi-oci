@@ -71,7 +71,7 @@ public class AddressList extends com.pulumi.resources.CustomResource {
      * The total number of unique IP addresses in the address list.
      * 
      */
-    @Export(name="addressCount", type=Double.class, parameters={})
+    @Export(name="addressCount", refs={Double.class}, tree="[0]")
     private Output<Double> addressCount;
 
     /**
@@ -85,7 +85,7 @@ public class AddressList extends com.pulumi.resources.CustomResource {
      * (Updatable) A list of IP addresses or CIDR notations.
      * 
      */
-    @Export(name="addresses", type=List.class, parameters={String.class})
+    @Export(name="addresses", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> addresses;
 
     /**
@@ -99,7 +99,7 @@ public class AddressList extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the address list.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -113,7 +113,7 @@ public class AddressList extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -127,7 +127,7 @@ public class AddressList extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-friendly name for the address list.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -144,7 +144,7 @@ public class AddressList extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -161,7 +161,7 @@ public class AddressList extends com.pulumi.resources.CustomResource {
      * The current lifecycle state of the address list.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -175,7 +175,7 @@ public class AddressList extends com.pulumi.resources.CustomResource {
      * The date and time the address list was created, expressed in RFC 3339 timestamp format.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**

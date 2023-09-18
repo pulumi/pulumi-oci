@@ -82,7 +82,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of personal access token saved in secret store.
      * 
      */
-    @Export(name="accessToken", type=String.class, parameters={})
+    @Export(name="accessToken", refs={String.class}, tree="[0]")
     private Output<String> accessToken;
 
     /**
@@ -96,7 +96,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) OCID of personal Bitbucket Cloud AppPassword saved in secret store
      * 
      */
-    @Export(name="appPassword", type=String.class, parameters={})
+    @Export(name="appPassword", refs={String.class}, tree="[0]")
     private Output<String> appPassword;
 
     /**
@@ -110,7 +110,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) The Base URL of the hosted BitbucketServer.
      * 
      */
-    @Export(name="baseUrl", type=String.class, parameters={})
+    @Export(name="baseUrl", refs={String.class}, tree="[0]")
     private Output<String> baseUrl;
 
     /**
@@ -124,7 +124,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * The OCID of the compartment containing the connection.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -138,7 +138,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) The type of connection.
      * 
      */
-    @Export(name="connectionType", type=String.class, parameters={})
+    @Export(name="connectionType", refs={String.class}, tree="[0]")
     private Output<String> connectionType;
 
     /**
@@ -152,7 +152,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -166,7 +166,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) Optional description about the connection.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -180,7 +180,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) Optional connection display name. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -194,7 +194,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -208,7 +208,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * The result of validating the credentials of a connection.
      * 
      */
-    @Export(name="lastConnectionValidationResults", type=List.class, parameters={ConnectionLastConnectionValidationResult.class})
+    @Export(name="lastConnectionValidationResults", refs={List.class,ConnectionLastConnectionValidationResult.class}, tree="[0,1]")
     private Output<List<ConnectionLastConnectionValidationResult>> lastConnectionValidationResults;
 
     /**
@@ -222,7 +222,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * The OCID of the DevOps project.
      * 
      */
-    @Export(name="projectId", type=String.class, parameters={})
+    @Export(name="projectId", refs={String.class}, tree="[0]")
     private Output<String> projectId;
 
     /**
@@ -236,7 +236,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * The current state of the connection.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -250,7 +250,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -264,7 +264,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * The time the connection was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -278,7 +278,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * The time the connection was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -292,7 +292,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) TLS configuration used by build service to verify TLS connection.
      * 
      */
-    @Export(name="tlsVerifyConfig", type=ConnectionTlsVerifyConfig.class, parameters={})
+    @Export(name="tlsVerifyConfig", refs={ConnectionTlsVerifyConfig.class}, tree="[0]")
     private Output<ConnectionTlsVerifyConfig> tlsVerifyConfig;
 
     /**
@@ -309,7 +309,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="username", type=String.class, parameters={})
+    @Export(name="username", refs={String.class}, tree="[0]")
     private Output<String> username;
 
     /**

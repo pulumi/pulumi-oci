@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Data Guard Association resource in Oracle Cloud Infrastructure Database service.
@@ -161,6 +162,12 @@ func (o LookupDataGuardAssociationResultOutput) ToLookupDataGuardAssociationResu
 
 func (o LookupDataGuardAssociationResultOutput) ToLookupDataGuardAssociationResultOutputWithContext(ctx context.Context) LookupDataGuardAssociationResultOutput {
 	return o
+}
+
+func (o LookupDataGuardAssociationResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDataGuardAssociationResult] {
+	return pulumix.Output[LookupDataGuardAssociationResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `9 seconds`

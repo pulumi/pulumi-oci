@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Data Assets in Oracle Cloud Infrastructure Ai Anomaly Detection service.
@@ -126,6 +127,12 @@ func (o GetDetectionDataAssetsResultOutput) ToGetDetectionDataAssetsResultOutput
 
 func (o GetDetectionDataAssetsResultOutput) ToGetDetectionDataAssetsResultOutputWithContext(ctx context.Context) GetDetectionDataAssetsResultOutput {
 	return o
+}
+
+func (o GetDetectionDataAssetsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectionDataAssetsResult] {
+	return pulumix.Output[GetDetectionDataAssetsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the compartment containing the DataAsset.

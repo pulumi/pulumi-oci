@@ -128,7 +128,7 @@ public class MountTarget extends com.pulumi.resources.CustomResource {
      * The availability domain in which to create the mount target.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    @Export(name="availabilityDomain", type=String.class, parameters={})
+    @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
     private Output<String> availabilityDomain;
 
     /**
@@ -142,7 +142,7 @@ public class MountTarget extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the mount target.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -156,7 +156,7 @@ public class MountTarget extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -170,7 +170,7 @@ public class MountTarget extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My mount target`
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -184,7 +184,7 @@ public class MountTarget extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated export set. Controls what file systems will be exported through Network File System (NFS) protocol on this mount target.
      * 
      */
-    @Export(name="exportSetId", type=String.class, parameters={})
+    @Export(name="exportSetId", refs={String.class}, tree="[0]")
     private Output<String> exportSetId;
 
     /**
@@ -198,7 +198,7 @@ public class MountTarget extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -218,7 +218,7 @@ public class MountTarget extends com.pulumi.resources.CustomResource {
      * Example: `files-1`
      * 
      */
-    @Export(name="hostnameLabel", type=String.class, parameters={})
+    @Export(name="hostnameLabel", refs={String.class}, tree="[0]")
     private Output<String> hostnameLabel;
 
     /**
@@ -238,7 +238,7 @@ public class MountTarget extends com.pulumi.resources.CustomResource {
      * (Updatable) The method used to map a Unix UID to secondary groups, if any.
      * 
      */
-    @Export(name="idmapType", type=String.class, parameters={})
+    @Export(name="idmapType", refs={String.class}, tree="[0]")
     private Output<String> idmapType;
 
     /**
@@ -256,7 +256,7 @@ public class MountTarget extends com.pulumi.resources.CustomResource {
      * Example: `10.0.3.3`
      * 
      */
-    @Export(name="ipAddress", type=String.class, parameters={})
+    @Export(name="ipAddress", refs={String.class}, tree="[0]")
     private Output<String> ipAddress;
 
     /**
@@ -274,7 +274,7 @@ public class MountTarget extends com.pulumi.resources.CustomResource {
      * (Updatable) Kerberos details needed to create configuration.
      * 
      */
-    @Export(name="kerberos", type=MountTargetKerberos.class, parameters={})
+    @Export(name="kerberos", refs={MountTargetKerberos.class}, tree="[0]")
     private Output</* @Nullable */ MountTargetKerberos> kerberos;
 
     /**
@@ -288,7 +288,7 @@ public class MountTarget extends com.pulumi.resources.CustomResource {
      * (Updatable) Mount target details about the LDAP ID mapping configuration.
      * 
      */
-    @Export(name="ldapIdmap", type=MountTargetLdapIdmap.class, parameters={})
+    @Export(name="ldapIdmap", refs={MountTargetLdapIdmap.class}, tree="[0]")
     private Output</* @Nullable */ MountTargetLdapIdmap> ldapIdmap;
 
     /**
@@ -302,7 +302,7 @@ public class MountTarget extends com.pulumi.resources.CustomResource {
      * Additional information about the current &#39;lifecycleState&#39;.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -316,7 +316,7 @@ public class MountTarget extends com.pulumi.resources.CustomResource {
      * (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      * 
      */
-    @Export(name="nsgIds", type=List.class, parameters={String.class})
+    @Export(name="nsgIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> nsgIds;
 
     /**
@@ -330,7 +330,7 @@ public class MountTarget extends com.pulumi.resources.CustomResource {
      * The OCIDs of the private IP addresses associated with this mount target.
      * 
      */
-    @Export(name="privateIpIds", type=List.class, parameters={String.class})
+    @Export(name="privateIpIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> privateIpIds;
 
     /**
@@ -344,7 +344,7 @@ public class MountTarget extends com.pulumi.resources.CustomResource {
      * The current state of the mount target.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -361,7 +361,7 @@ public class MountTarget extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="subnetId", type=String.class, parameters={})
+    @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
@@ -378,7 +378,7 @@ public class MountTarget extends com.pulumi.resources.CustomResource {
      * The date and time the mount target was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**

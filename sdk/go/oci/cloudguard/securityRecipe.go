@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Security Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -258,6 +259,12 @@ func (i *SecurityRecipe) ToSecurityRecipeOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(SecurityRecipeOutput)
 }
 
+func (i *SecurityRecipe) ToOutput(ctx context.Context) pulumix.Output[*SecurityRecipe] {
+	return pulumix.Output[*SecurityRecipe]{
+		OutputState: i.ToSecurityRecipeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // SecurityRecipeArrayInput is an input type that accepts SecurityRecipeArray and SecurityRecipeArrayOutput values.
 // You can construct a concrete instance of `SecurityRecipeArrayInput` via:
 //
@@ -281,6 +288,12 @@ func (i SecurityRecipeArray) ToSecurityRecipeArrayOutput() SecurityRecipeArrayOu
 
 func (i SecurityRecipeArray) ToSecurityRecipeArrayOutputWithContext(ctx context.Context) SecurityRecipeArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SecurityRecipeArrayOutput)
+}
+
+func (i SecurityRecipeArray) ToOutput(ctx context.Context) pulumix.Output[[]*SecurityRecipe] {
+	return pulumix.Output[[]*SecurityRecipe]{
+		OutputState: i.ToSecurityRecipeArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // SecurityRecipeMapInput is an input type that accepts SecurityRecipeMap and SecurityRecipeMapOutput values.
@@ -308,6 +321,12 @@ func (i SecurityRecipeMap) ToSecurityRecipeMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(SecurityRecipeMapOutput)
 }
 
+func (i SecurityRecipeMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*SecurityRecipe] {
+	return pulumix.Output[map[string]*SecurityRecipe]{
+		OutputState: i.ToSecurityRecipeMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type SecurityRecipeOutput struct{ *pulumi.OutputState }
 
 func (SecurityRecipeOutput) ElementType() reflect.Type {
@@ -320,6 +339,12 @@ func (o SecurityRecipeOutput) ToSecurityRecipeOutput() SecurityRecipeOutput {
 
 func (o SecurityRecipeOutput) ToSecurityRecipeOutputWithContext(ctx context.Context) SecurityRecipeOutput {
 	return o
+}
+
+func (o SecurityRecipeOutput) ToOutput(ctx context.Context) pulumix.Output[*SecurityRecipe] {
+	return pulumix.Output[*SecurityRecipe]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The compartment in which to create the recipe
@@ -396,6 +421,12 @@ func (o SecurityRecipeArrayOutput) ToSecurityRecipeArrayOutputWithContext(ctx co
 	return o
 }
 
+func (o SecurityRecipeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*SecurityRecipe] {
+	return pulumix.Output[[]*SecurityRecipe]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o SecurityRecipeArrayOutput) Index(i pulumi.IntInput) SecurityRecipeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *SecurityRecipe {
 		return vs[0].([]*SecurityRecipe)[vs[1].(int)]
@@ -414,6 +445,12 @@ func (o SecurityRecipeMapOutput) ToSecurityRecipeMapOutput() SecurityRecipeMapOu
 
 func (o SecurityRecipeMapOutput) ToSecurityRecipeMapOutputWithContext(ctx context.Context) SecurityRecipeMapOutput {
 	return o
+}
+
+func (o SecurityRecipeMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*SecurityRecipe] {
+	return pulumix.Output[map[string]*SecurityRecipe]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o SecurityRecipeMapOutput) MapIndex(k pulumi.StringInput) SecurityRecipeOutput {

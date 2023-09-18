@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Subscription Product resource in Oracle Cloud Infrastructure Usage Proxy service.
@@ -119,6 +120,12 @@ func (o GetSubscriptionProductResultOutput) ToGetSubscriptionProductResultOutput
 
 func (o GetSubscriptionProductResultOutput) ToGetSubscriptionProductResultOutputWithContext(ctx context.Context) GetSubscriptionProductResultOutput {
 	return o
+}
+
+func (o GetSubscriptionProductResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionProductResult] {
+	return pulumix.Output[GetSubscriptionProductResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The provider-assigned unique ID for this managed resource.

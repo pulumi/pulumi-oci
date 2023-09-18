@@ -76,7 +76,7 @@ public class Certificate extends com.pulumi.resources.CustomResource {
      * -----END CERTIFICATE-----
      * 
      */
-    @Export(name="caCertificate", type=String.class, parameters={})
+    @Export(name="caCertificate", refs={String.class}, tree="[0]")
     private Output<String> caCertificate;
 
     /**
@@ -100,7 +100,7 @@ public class Certificate extends com.pulumi.resources.CustomResource {
      * A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `example_certificate_bundle`
      * 
      */
-    @Export(name="certificateName", type=String.class, parameters={})
+    @Export(name="certificateName", refs={String.class}, tree="[0]")
     private Output<String> certificateName;
 
     /**
@@ -114,7 +114,7 @@ public class Certificate extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer on which to add the certificate bundle.
      * 
      */
-    @Export(name="loadBalancerId", type=String.class, parameters={})
+    @Export(name="loadBalancerId", refs={String.class}, tree="[0]")
     private Output<String> loadBalancerId;
 
     /**
@@ -128,7 +128,7 @@ public class Certificate extends com.pulumi.resources.CustomResource {
      * A passphrase for encrypted private keys. This is needed only if you created your certificate with a passphrase.
      * 
      */
-    @Export(name="passphrase", type=String.class, parameters={})
+    @Export(name="passphrase", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> passphrase;
 
     /**
@@ -152,7 +152,7 @@ public class Certificate extends com.pulumi.resources.CustomResource {
      * -----END RSA PRIVATE KEY-----
      * 
      */
-    @Export(name="privateKey", type=String.class, parameters={})
+    @Export(name="privateKey", refs={String.class}, tree="[0]")
     private Output<String> privateKey;
 
     /**
@@ -189,7 +189,7 @@ public class Certificate extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="publicCertificate", type=String.class, parameters={})
+    @Export(name="publicCertificate", refs={String.class}, tree="[0]")
     private Output<String> publicCertificate;
 
     /**
@@ -212,7 +212,7 @@ public class Certificate extends com.pulumi.resources.CustomResource {
     public Output<String> publicCertificate() {
         return this.publicCertificate;
     }
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     public Output<String> state() {

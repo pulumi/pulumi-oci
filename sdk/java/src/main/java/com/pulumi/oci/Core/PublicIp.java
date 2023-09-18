@@ -92,7 +92,7 @@ public class PublicIp extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity the public IP is assigned to, or in the process of being assigned to.
      * 
      */
-    @Export(name="assignedEntityId", type=String.class, parameters={})
+    @Export(name="assignedEntityId", refs={String.class}, tree="[0]")
     private Output<String> assignedEntityId;
 
     /**
@@ -106,7 +106,7 @@ public class PublicIp extends com.pulumi.resources.CustomResource {
      * The type of entity the public IP is assigned to, or in the process of being assigned to.
      * 
      */
-    @Export(name="assignedEntityType", type=String.class, parameters={})
+    @Export(name="assignedEntityType", refs={String.class}, tree="[0]")
     private Output<String> assignedEntityType;
 
     /**
@@ -120,7 +120,7 @@ public class PublicIp extends com.pulumi.resources.CustomResource {
      * The public IP&#39;s availability domain. This property is set only for ephemeral public IPs that are assigned to a private IP (that is, when the `scope` of the public IP is set to AVAILABILITY_DOMAIN). The value is the availability domain of the assigned private IP.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    @Export(name="availabilityDomain", type=String.class, parameters={})
+    @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
     private Output<String> availabilityDomain;
 
     /**
@@ -134,7 +134,7 @@ public class PublicIp extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the public IP. For ephemeral public IPs, you must set this to the private IP&#39;s compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -148,7 +148,7 @@ public class PublicIp extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -162,7 +162,7 @@ public class PublicIp extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -176,7 +176,7 @@ public class PublicIp extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -190,7 +190,7 @@ public class PublicIp extends com.pulumi.resources.CustomResource {
      * The public IP address of the `publicIp` object.  Example: `203.0.113.2`
      * 
      */
-    @Export(name="ipAddress", type=String.class, parameters={})
+    @Export(name="ipAddress", refs={String.class}, tree="[0]")
     private Output<String> ipAddress;
 
     /**
@@ -204,7 +204,7 @@ public class PublicIp extends com.pulumi.resources.CustomResource {
      * Defines when the public IP is deleted and released back to the Oracle Cloud Infrastructure public IP pool. For more information, see [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
      * 
      */
-    @Export(name="lifetime", type=String.class, parameters={})
+    @Export(name="lifetime", refs={String.class}, tree="[0]")
     private Output<String> lifetime;
 
     /**
@@ -222,7 +222,7 @@ public class PublicIp extends com.pulumi.resources.CustomResource {
      * Optional for a reserved public IP. If you don&#39;t provide it, the public IP is created but not assigned to a private IP. You can later assign the public IP with [UpdatePublicIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/UpdatePublicIp).
      * 
      */
-    @Export(name="privateIpId", type=String.class, parameters={})
+    @Export(name="privateIpId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> privateIpId;
 
     /**
@@ -243,7 +243,7 @@ public class PublicIp extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="publicIpPoolId", type=String.class, parameters={})
+    @Export(name="publicIpPoolId", refs={String.class}, tree="[0]")
     private Output<String> publicIpPoolId;
 
     /**
@@ -260,7 +260,7 @@ public class PublicIp extends com.pulumi.resources.CustomResource {
      * Whether the public IP is regional or specific to a particular availability domain.
      * 
      */
-    @Export(name="scope", type=String.class, parameters={})
+    @Export(name="scope", refs={String.class}, tree="[0]")
     private Output<String> scope;
 
     /**
@@ -274,7 +274,7 @@ public class PublicIp extends com.pulumi.resources.CustomResource {
      * The public IP&#39;s current state.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -288,7 +288,7 @@ public class PublicIp extends com.pulumi.resources.CustomResource {
      * The date and time the public IP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**

@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Catalog Private Endpoint resource in Oracle Cloud Infrastructure Data Catalog service.
@@ -248,6 +249,12 @@ func (i *CatalogPrivateEndpoint) ToCatalogPrivateEndpointOutputWithContext(ctx c
 	return pulumi.ToOutputWithContext(ctx, i).(CatalogPrivateEndpointOutput)
 }
 
+func (i *CatalogPrivateEndpoint) ToOutput(ctx context.Context) pulumix.Output[*CatalogPrivateEndpoint] {
+	return pulumix.Output[*CatalogPrivateEndpoint]{
+		OutputState: i.ToCatalogPrivateEndpointOutputWithContext(ctx).OutputState,
+	}
+}
+
 // CatalogPrivateEndpointArrayInput is an input type that accepts CatalogPrivateEndpointArray and CatalogPrivateEndpointArrayOutput values.
 // You can construct a concrete instance of `CatalogPrivateEndpointArrayInput` via:
 //
@@ -271,6 +278,12 @@ func (i CatalogPrivateEndpointArray) ToCatalogPrivateEndpointArrayOutput() Catal
 
 func (i CatalogPrivateEndpointArray) ToCatalogPrivateEndpointArrayOutputWithContext(ctx context.Context) CatalogPrivateEndpointArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CatalogPrivateEndpointArrayOutput)
+}
+
+func (i CatalogPrivateEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]*CatalogPrivateEndpoint] {
+	return pulumix.Output[[]*CatalogPrivateEndpoint]{
+		OutputState: i.ToCatalogPrivateEndpointArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // CatalogPrivateEndpointMapInput is an input type that accepts CatalogPrivateEndpointMap and CatalogPrivateEndpointMapOutput values.
@@ -298,6 +311,12 @@ func (i CatalogPrivateEndpointMap) ToCatalogPrivateEndpointMapOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(CatalogPrivateEndpointMapOutput)
 }
 
+func (i CatalogPrivateEndpointMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*CatalogPrivateEndpoint] {
+	return pulumix.Output[map[string]*CatalogPrivateEndpoint]{
+		OutputState: i.ToCatalogPrivateEndpointMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type CatalogPrivateEndpointOutput struct{ *pulumi.OutputState }
 
 func (CatalogPrivateEndpointOutput) ElementType() reflect.Type {
@@ -310,6 +329,12 @@ func (o CatalogPrivateEndpointOutput) ToCatalogPrivateEndpointOutput() CatalogPr
 
 func (o CatalogPrivateEndpointOutput) ToCatalogPrivateEndpointOutputWithContext(ctx context.Context) CatalogPrivateEndpointOutput {
 	return o
+}
+
+func (o CatalogPrivateEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[*CatalogPrivateEndpoint] {
+	return pulumix.Output[*CatalogPrivateEndpoint]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The list of catalogs using the private reverse connection endpoint
@@ -384,6 +409,12 @@ func (o CatalogPrivateEndpointArrayOutput) ToCatalogPrivateEndpointArrayOutputWi
 	return o
 }
 
+func (o CatalogPrivateEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*CatalogPrivateEndpoint] {
+	return pulumix.Output[[]*CatalogPrivateEndpoint]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o CatalogPrivateEndpointArrayOutput) Index(i pulumi.IntInput) CatalogPrivateEndpointOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CatalogPrivateEndpoint {
 		return vs[0].([]*CatalogPrivateEndpoint)[vs[1].(int)]
@@ -402,6 +433,12 @@ func (o CatalogPrivateEndpointMapOutput) ToCatalogPrivateEndpointMapOutput() Cat
 
 func (o CatalogPrivateEndpointMapOutput) ToCatalogPrivateEndpointMapOutputWithContext(ctx context.Context) CatalogPrivateEndpointMapOutput {
 	return o
+}
+
+func (o CatalogPrivateEndpointMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*CatalogPrivateEndpoint] {
+	return pulumix.Output[map[string]*CatalogPrivateEndpoint]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o CatalogPrivateEndpointMapOutput) MapIndex(k pulumi.StringInput) CatalogPrivateEndpointOutput {

@@ -68,7 +68,7 @@ public class ManagementAgent extends com.pulumi.resources.CustomResource {
      * The current availability status of managementAgent
      * 
      */
-    @Export(name="availabilityStatus", type=String.class, parameters={})
+    @Export(name="availabilityStatus", refs={String.class}, tree="[0]")
     private Output<String> availabilityStatus;
 
     /**
@@ -82,7 +82,7 @@ public class ManagementAgent extends com.pulumi.resources.CustomResource {
      * Compartment Identifier
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -96,7 +96,7 @@ public class ManagementAgent extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -113,7 +113,7 @@ public class ManagementAgent extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="deployPluginsIds", type=List.class, parameters={String.class})
+    @Export(name="deployPluginsIds", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> deployPluginsIds;
 
     /**
@@ -130,7 +130,7 @@ public class ManagementAgent extends com.pulumi.resources.CustomResource {
      * (Updatable) New displayName of Agent.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -144,7 +144,7 @@ public class ManagementAgent extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -158,7 +158,7 @@ public class ManagementAgent extends com.pulumi.resources.CustomResource {
      * Management Agent host machine name
      * 
      */
-    @Export(name="host", type=String.class, parameters={})
+    @Export(name="host", refs={String.class}, tree="[0]")
     private Output<String> host;
 
     /**
@@ -172,7 +172,7 @@ public class ManagementAgent extends com.pulumi.resources.CustomResource {
      * Host resource ocid
      * 
      */
-    @Export(name="hostId", type=String.class, parameters={})
+    @Export(name="hostId", refs={String.class}, tree="[0]")
     private Output<String> hostId;
 
     /**
@@ -186,7 +186,7 @@ public class ManagementAgent extends com.pulumi.resources.CustomResource {
      * agent install key identifier
      * 
      */
-    @Export(name="installKeyId", type=String.class, parameters={})
+    @Export(name="installKeyId", refs={String.class}, tree="[0]")
     private Output<String> installKeyId;
 
     /**
@@ -200,7 +200,7 @@ public class ManagementAgent extends com.pulumi.resources.CustomResource {
      * Path where Management Agent is installed
      * 
      */
-    @Export(name="installPath", type=String.class, parameters={})
+    @Export(name="installPath", refs={String.class}, tree="[0]")
     private Output<String> installPath;
 
     /**
@@ -214,7 +214,7 @@ public class ManagementAgent extends com.pulumi.resources.CustomResource {
      * The install type, either AGENT or GATEWAY
      * 
      */
-    @Export(name="installType", type=String.class, parameters={})
+    @Export(name="installType", refs={String.class}, tree="[0]")
     private Output<String> installType;
 
     /**
@@ -228,7 +228,7 @@ public class ManagementAgent extends com.pulumi.resources.CustomResource {
      * true if the agent can be upgraded automatically; false if it must be upgraded manually. This flag is derived from the tenancy level auto upgrade preference.
      * 
      */
-    @Export(name="isAgentAutoUpgradable", type=Boolean.class, parameters={})
+    @Export(name="isAgentAutoUpgradable", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isAgentAutoUpgradable;
 
     /**
@@ -242,7 +242,7 @@ public class ManagementAgent extends com.pulumi.resources.CustomResource {
      * true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
      * 
      */
-    @Export(name="isCustomerDeployed", type=Boolean.class, parameters={})
+    @Export(name="isCustomerDeployed", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isCustomerDeployed;
 
     /**
@@ -256,7 +256,7 @@ public class ManagementAgent extends com.pulumi.resources.CustomResource {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -270,7 +270,7 @@ public class ManagementAgent extends com.pulumi.resources.CustomResource {
      * Unique Management Agent identifier
      * 
      */
-    @Export(name="managedAgentId", type=String.class, parameters={})
+    @Export(name="managedAgentId", refs={String.class}, tree="[0]")
     private Output<String> managedAgentId;
 
     /**
@@ -284,7 +284,7 @@ public class ManagementAgent extends com.pulumi.resources.CustomResource {
      * Additional properties for this Management Agent
      * 
      */
-    @Export(name="managementAgentProperties", type=List.class, parameters={ManagementAgentManagementAgentProperty.class})
+    @Export(name="managementAgentProperties", refs={List.class,ManagementAgentManagementAgentProperty.class}, tree="[0,1]")
     private Output<List<ManagementAgentManagementAgentProperty>> managementAgentProperties;
 
     /**
@@ -298,7 +298,7 @@ public class ManagementAgent extends com.pulumi.resources.CustomResource {
      * Platform Name
      * 
      */
-    @Export(name="platformName", type=String.class, parameters={})
+    @Export(name="platformName", refs={String.class}, tree="[0]")
     private Output<String> platformName;
 
     /**
@@ -312,7 +312,7 @@ public class ManagementAgent extends com.pulumi.resources.CustomResource {
      * Platform Type
      * 
      */
-    @Export(name="platformType", type=String.class, parameters={})
+    @Export(name="platformType", refs={String.class}, tree="[0]")
     private Output<String> platformType;
 
     /**
@@ -326,7 +326,7 @@ public class ManagementAgent extends com.pulumi.resources.CustomResource {
      * Platform Version
      * 
      */
-    @Export(name="platformVersion", type=String.class, parameters={})
+    @Export(name="platformVersion", refs={String.class}, tree="[0]")
     private Output<String> platformVersion;
 
     /**
@@ -340,7 +340,7 @@ public class ManagementAgent extends com.pulumi.resources.CustomResource {
      * list of managementAgentPlugins associated with the agent
      * 
      */
-    @Export(name="pluginLists", type=List.class, parameters={ManagementAgentPluginList.class})
+    @Export(name="pluginLists", refs={List.class,ManagementAgentPluginList.class}, tree="[0,1]")
     private Output<List<ManagementAgentPluginList>> pluginLists;
 
     /**
@@ -354,7 +354,7 @@ public class ManagementAgent extends com.pulumi.resources.CustomResource {
      * Version of the deployment artifact instantiated by this Management Agent. The format for Standalone resourceMode is YYMMDD.HHMM, and the format for other modes (whose artifacts are based upon Standalone but can advance independently) is YYMMDD.HHMM.VVVVVVVVVVVV. VVVVVVVVVVVV is always a numeric value between 000000000000 and 999999999999
      * 
      */
-    @Export(name="resourceArtifactVersion", type=String.class, parameters={})
+    @Export(name="resourceArtifactVersion", refs={String.class}, tree="[0]")
     private Output<String> resourceArtifactVersion;
 
     /**
@@ -368,7 +368,7 @@ public class ManagementAgent extends com.pulumi.resources.CustomResource {
      * The current state of managementAgent
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -382,7 +382,7 @@ public class ManagementAgent extends com.pulumi.resources.CustomResource {
      * The time the Management Agent was created. An RFC3339 formatted datetime string
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -396,7 +396,7 @@ public class ManagementAgent extends com.pulumi.resources.CustomResource {
      * The time the Management Agent has last recorded its health status in telemetry. This value will be null if the agent has not recorded its health status in last 7 days. An RFC3339 formatted datetime string
      * 
      */
-    @Export(name="timeLastHeartbeat", type=String.class, parameters={})
+    @Export(name="timeLastHeartbeat", refs={String.class}, tree="[0]")
     private Output<String> timeLastHeartbeat;
 
     /**
@@ -410,7 +410,7 @@ public class ManagementAgent extends com.pulumi.resources.CustomResource {
      * The time the Management Agent was last updated. An RFC3339 formatted datetime string
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -424,7 +424,7 @@ public class ManagementAgent extends com.pulumi.resources.CustomResource {
      * Management Agent Version
      * 
      */
-    @Export(name="version", type=String.class, parameters={})
+    @Export(name="version", refs={String.class}, tree="[0]")
     private Output<String> version;
 
     /**

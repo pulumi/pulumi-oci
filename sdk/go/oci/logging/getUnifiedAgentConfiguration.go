@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Unified Agent Configuration resource in Oracle Cloud Infrastructure Logging service.
@@ -123,6 +124,12 @@ func (o LookupUnifiedAgentConfigurationResultOutput) ToLookupUnifiedAgentConfigu
 
 func (o LookupUnifiedAgentConfigurationResultOutput) ToLookupUnifiedAgentConfigurationResultOutputWithContext(ctx context.Context) LookupUnifiedAgentConfigurationResultOutput {
 	return o
+}
+
+func (o LookupUnifiedAgentConfigurationResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupUnifiedAgentConfigurationResult] {
+	return pulumix.Output[LookupUnifiedAgentConfigurationResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the compartment that the resource belongs to.

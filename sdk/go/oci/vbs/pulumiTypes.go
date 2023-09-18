@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -50,6 +51,12 @@ func (i GetInstVbsInstancesFilterArgs) ToGetInstVbsInstancesFilterOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstVbsInstancesFilterOutput)
 }
 
+func (i GetInstVbsInstancesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetInstVbsInstancesFilter] {
+	return pulumix.Output[GetInstVbsInstancesFilter]{
+		OutputState: i.ToGetInstVbsInstancesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetInstVbsInstancesFilterArrayInput is an input type that accepts GetInstVbsInstancesFilterArray and GetInstVbsInstancesFilterArrayOutput values.
 // You can construct a concrete instance of `GetInstVbsInstancesFilterArrayInput` via:
 //
@@ -75,6 +82,12 @@ func (i GetInstVbsInstancesFilterArray) ToGetInstVbsInstancesFilterArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstVbsInstancesFilterArrayOutput)
 }
 
+func (i GetInstVbsInstancesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInstVbsInstancesFilter] {
+	return pulumix.Output[[]GetInstVbsInstancesFilter]{
+		OutputState: i.ToGetInstVbsInstancesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetInstVbsInstancesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetInstVbsInstancesFilterOutput) ElementType() reflect.Type {
@@ -87,6 +100,12 @@ func (o GetInstVbsInstancesFilterOutput) ToGetInstVbsInstancesFilterOutput() Get
 
 func (o GetInstVbsInstancesFilterOutput) ToGetInstVbsInstancesFilterOutputWithContext(ctx context.Context) GetInstVbsInstancesFilterOutput {
 	return o
+}
+
+func (o GetInstVbsInstancesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstVbsInstancesFilter] {
+	return pulumix.Output[GetInstVbsInstancesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A filter to return only resources that match the entire name given.
@@ -114,6 +133,12 @@ func (o GetInstVbsInstancesFilterArrayOutput) ToGetInstVbsInstancesFilterArrayOu
 
 func (o GetInstVbsInstancesFilterArrayOutput) ToGetInstVbsInstancesFilterArrayOutputWithContext(ctx context.Context) GetInstVbsInstancesFilterArrayOutput {
 	return o
+}
+
+func (o GetInstVbsInstancesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInstVbsInstancesFilter] {
+	return pulumix.Output[[]GetInstVbsInstancesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetInstVbsInstancesFilterArrayOutput) Index(i pulumi.IntInput) GetInstVbsInstancesFilterOutput {
@@ -153,6 +178,12 @@ func (i GetInstVbsInstancesVbsInstanceSummaryCollectionArgs) ToGetInstVbsInstanc
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstVbsInstancesVbsInstanceSummaryCollectionOutput)
 }
 
+func (i GetInstVbsInstancesVbsInstanceSummaryCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetInstVbsInstancesVbsInstanceSummaryCollection] {
+	return pulumix.Output[GetInstVbsInstancesVbsInstanceSummaryCollection]{
+		OutputState: i.ToGetInstVbsInstancesVbsInstanceSummaryCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetInstVbsInstancesVbsInstanceSummaryCollectionArrayInput is an input type that accepts GetInstVbsInstancesVbsInstanceSummaryCollectionArray and GetInstVbsInstancesVbsInstanceSummaryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetInstVbsInstancesVbsInstanceSummaryCollectionArrayInput` via:
 //
@@ -178,6 +209,12 @@ func (i GetInstVbsInstancesVbsInstanceSummaryCollectionArray) ToGetInstVbsInstan
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstVbsInstancesVbsInstanceSummaryCollectionArrayOutput)
 }
 
+func (i GetInstVbsInstancesVbsInstanceSummaryCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInstVbsInstancesVbsInstanceSummaryCollection] {
+	return pulumix.Output[[]GetInstVbsInstancesVbsInstanceSummaryCollection]{
+		OutputState: i.ToGetInstVbsInstancesVbsInstanceSummaryCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetInstVbsInstancesVbsInstanceSummaryCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetInstVbsInstancesVbsInstanceSummaryCollectionOutput) ElementType() reflect.Type {
@@ -190,6 +227,12 @@ func (o GetInstVbsInstancesVbsInstanceSummaryCollectionOutput) ToGetInstVbsInsta
 
 func (o GetInstVbsInstancesVbsInstanceSummaryCollectionOutput) ToGetInstVbsInstancesVbsInstanceSummaryCollectionOutputWithContext(ctx context.Context) GetInstVbsInstancesVbsInstanceSummaryCollectionOutput {
 	return o
+}
+
+func (o GetInstVbsInstancesVbsInstanceSummaryCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstVbsInstancesVbsInstanceSummaryCollection] {
+	return pulumix.Output[GetInstVbsInstancesVbsInstanceSummaryCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetInstVbsInstancesVbsInstanceSummaryCollectionOutput) Items() GetInstVbsInstancesVbsInstanceSummaryCollectionItemArrayOutput {
@@ -210,6 +253,12 @@ func (o GetInstVbsInstancesVbsInstanceSummaryCollectionArrayOutput) ToGetInstVbs
 
 func (o GetInstVbsInstancesVbsInstanceSummaryCollectionArrayOutput) ToGetInstVbsInstancesVbsInstanceSummaryCollectionArrayOutputWithContext(ctx context.Context) GetInstVbsInstancesVbsInstanceSummaryCollectionArrayOutput {
 	return o
+}
+
+func (o GetInstVbsInstancesVbsInstanceSummaryCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInstVbsInstancesVbsInstanceSummaryCollection] {
+	return pulumix.Output[[]GetInstVbsInstancesVbsInstanceSummaryCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetInstVbsInstancesVbsInstanceSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetInstVbsInstancesVbsInstanceSummaryCollectionOutput {
@@ -305,6 +354,12 @@ func (i GetInstVbsInstancesVbsInstanceSummaryCollectionItemArgs) ToGetInstVbsIns
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput)
 }
 
+func (i GetInstVbsInstancesVbsInstanceSummaryCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetInstVbsInstancesVbsInstanceSummaryCollectionItem] {
+	return pulumix.Output[GetInstVbsInstancesVbsInstanceSummaryCollectionItem]{
+		OutputState: i.ToGetInstVbsInstancesVbsInstanceSummaryCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetInstVbsInstancesVbsInstanceSummaryCollectionItemArrayInput is an input type that accepts GetInstVbsInstancesVbsInstanceSummaryCollectionItemArray and GetInstVbsInstancesVbsInstanceSummaryCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetInstVbsInstancesVbsInstanceSummaryCollectionItemArrayInput` via:
 //
@@ -330,6 +385,12 @@ func (i GetInstVbsInstancesVbsInstanceSummaryCollectionItemArray) ToGetInstVbsIn
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstVbsInstancesVbsInstanceSummaryCollectionItemArrayOutput)
 }
 
+func (i GetInstVbsInstancesVbsInstanceSummaryCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInstVbsInstancesVbsInstanceSummaryCollectionItem] {
+	return pulumix.Output[[]GetInstVbsInstancesVbsInstanceSummaryCollectionItem]{
+		OutputState: i.ToGetInstVbsInstancesVbsInstanceSummaryCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput) ElementType() reflect.Type {
@@ -342,6 +403,12 @@ func (o GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput) ToGetInstVbsI
 
 func (o GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput) ToGetInstVbsInstancesVbsInstanceSummaryCollectionItemOutputWithContext(ctx context.Context) GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput {
 	return o
+}
+
+func (o GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstVbsInstancesVbsInstanceSummaryCollectionItem] {
+	return pulumix.Output[GetInstVbsInstancesVbsInstanceSummaryCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -438,6 +505,12 @@ func (o GetInstVbsInstancesVbsInstanceSummaryCollectionItemArrayOutput) ToGetIns
 
 func (o GetInstVbsInstancesVbsInstanceSummaryCollectionItemArrayOutput) ToGetInstVbsInstancesVbsInstanceSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetInstVbsInstancesVbsInstanceSummaryCollectionItemArrayOutput {
 	return o
+}
+
+func (o GetInstVbsInstancesVbsInstanceSummaryCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInstVbsInstancesVbsInstanceSummaryCollectionItem] {
+	return pulumix.Output[[]GetInstVbsInstancesVbsInstanceSummaryCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetInstVbsInstancesVbsInstanceSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput {

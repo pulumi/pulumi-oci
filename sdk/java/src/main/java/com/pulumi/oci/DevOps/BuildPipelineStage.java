@@ -125,7 +125,7 @@ public class BuildPipelineStage extends com.pulumi.resources.CustomResource {
      * The OCID of the build pipeline.
      * 
      */
-    @Export(name="buildPipelineId", type=String.class, parameters={})
+    @Export(name="buildPipelineId", refs={String.class}, tree="[0]")
     private Output<String> buildPipelineId;
 
     /**
@@ -139,7 +139,7 @@ public class BuildPipelineStage extends com.pulumi.resources.CustomResource {
      * (Updatable) The collection containing the predecessors of a stage.
      * 
      */
-    @Export(name="buildPipelineStagePredecessorCollection", type=BuildPipelineStageBuildPipelineStagePredecessorCollection.class, parameters={})
+    @Export(name="buildPipelineStagePredecessorCollection", refs={BuildPipelineStageBuildPipelineStagePredecessorCollection.class}, tree="[0]")
     private Output<BuildPipelineStageBuildPipelineStagePredecessorCollection> buildPipelineStagePredecessorCollection;
 
     /**
@@ -153,7 +153,7 @@ public class BuildPipelineStage extends com.pulumi.resources.CustomResource {
      * (Updatable) Defines the stage type, which is one of the following: BUILD, DELIVER_ARTIFACT, WAIT, and TRIGGER_DEPLOYMENT_PIPELINE.
      * 
      */
-    @Export(name="buildPipelineStageType", type=String.class, parameters={})
+    @Export(name="buildPipelineStageType", refs={String.class}, tree="[0]")
     private Output<String> buildPipelineStageType;
 
     /**
@@ -167,7 +167,7 @@ public class BuildPipelineStage extends com.pulumi.resources.CustomResource {
      * (Updatable) The information about build runner.
      * 
      */
-    @Export(name="buildRunnerShapeConfig", type=BuildPipelineStageBuildRunnerShapeConfig.class, parameters={})
+    @Export(name="buildRunnerShapeConfig", refs={BuildPipelineStageBuildRunnerShapeConfig.class}, tree="[0]")
     private Output<BuildPipelineStageBuildRunnerShapeConfig> buildRunnerShapeConfig;
 
     /**
@@ -181,7 +181,7 @@ public class BuildPipelineStage extends com.pulumi.resources.CustomResource {
      * (Updatable) Collection of build sources.
      * 
      */
-    @Export(name="buildSourceCollection", type=BuildPipelineStageBuildSourceCollection.class, parameters={})
+    @Export(name="buildSourceCollection", refs={BuildPipelineStageBuildSourceCollection.class}, tree="[0]")
     private Output<BuildPipelineStageBuildSourceCollection> buildSourceCollection;
 
     /**
@@ -195,7 +195,7 @@ public class BuildPipelineStage extends com.pulumi.resources.CustomResource {
      * (Updatable) The path to the build specification file for this environment. The default location of the file if not specified is build_spec.yaml.
      * 
      */
-    @Export(name="buildSpecFile", type=String.class, parameters={})
+    @Export(name="buildSpecFile", refs={String.class}, tree="[0]")
     private Output<String> buildSpecFile;
 
     /**
@@ -209,7 +209,7 @@ public class BuildPipelineStage extends com.pulumi.resources.CustomResource {
      * The OCID of the compartment where the pipeline is created.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -223,7 +223,7 @@ public class BuildPipelineStage extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -237,7 +237,7 @@ public class BuildPipelineStage extends com.pulumi.resources.CustomResource {
      * (Updatable) Specifies an array of artifacts that need to be pushed to the artifactory stores.
      * 
      */
-    @Export(name="deliverArtifactCollection", type=BuildPipelineStageDeliverArtifactCollection.class, parameters={})
+    @Export(name="deliverArtifactCollection", refs={BuildPipelineStageDeliverArtifactCollection.class}, tree="[0]")
     private Output<BuildPipelineStageDeliverArtifactCollection> deliverArtifactCollection;
 
     /**
@@ -251,7 +251,7 @@ public class BuildPipelineStage extends com.pulumi.resources.CustomResource {
      * (Updatable) A target deployment pipeline OCID that will run in this stage.
      * 
      */
-    @Export(name="deployPipelineId", type=String.class, parameters={})
+    @Export(name="deployPipelineId", refs={String.class}, tree="[0]")
     private Output<String> deployPipelineId;
 
     /**
@@ -265,7 +265,7 @@ public class BuildPipelineStage extends com.pulumi.resources.CustomResource {
      * (Updatable) Optional description about the stage.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -279,7 +279,7 @@ public class BuildPipelineStage extends com.pulumi.resources.CustomResource {
      * (Updatable) Stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -293,7 +293,7 @@ public class BuildPipelineStage extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -307,7 +307,7 @@ public class BuildPipelineStage extends com.pulumi.resources.CustomResource {
      * (Updatable) Image name for the build environment
      * 
      */
-    @Export(name="image", type=String.class, parameters={})
+    @Export(name="image", refs={String.class}, tree="[0]")
     private Output<String> image;
 
     /**
@@ -321,7 +321,7 @@ public class BuildPipelineStage extends com.pulumi.resources.CustomResource {
      * (Updatable) A boolean flag that specifies whether all the parameters must be passed when the deployment is triggered.
      * 
      */
-    @Export(name="isPassAllParametersEnabled", type=Boolean.class, parameters={})
+    @Export(name="isPassAllParametersEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isPassAllParametersEnabled;
 
     /**
@@ -335,7 +335,7 @@ public class BuildPipelineStage extends com.pulumi.resources.CustomResource {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -349,7 +349,7 @@ public class BuildPipelineStage extends com.pulumi.resources.CustomResource {
      * (Updatable) Name of the build source where the build_spec.yml file is located. If not specified, the first entry in the build source collection is chosen as primary build source.
      * 
      */
-    @Export(name="primaryBuildSource", type=String.class, parameters={})
+    @Export(name="primaryBuildSource", refs={String.class}, tree="[0]")
     private Output<String> primaryBuildSource;
 
     /**
@@ -363,7 +363,7 @@ public class BuildPipelineStage extends com.pulumi.resources.CustomResource {
      * (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer&#39;s private network.
      * 
      */
-    @Export(name="privateAccessConfig", type=BuildPipelineStagePrivateAccessConfig.class, parameters={})
+    @Export(name="privateAccessConfig", refs={BuildPipelineStagePrivateAccessConfig.class}, tree="[0]")
     private Output<BuildPipelineStagePrivateAccessConfig> privateAccessConfig;
 
     /**
@@ -377,7 +377,7 @@ public class BuildPipelineStage extends com.pulumi.resources.CustomResource {
      * The OCID of the DevOps project.
      * 
      */
-    @Export(name="projectId", type=String.class, parameters={})
+    @Export(name="projectId", refs={String.class}, tree="[0]")
     private Output<String> projectId;
 
     /**
@@ -391,7 +391,7 @@ public class BuildPipelineStage extends com.pulumi.resources.CustomResource {
      * (Updatable) Timeout for the build stage execution. Specify value in seconds.
      * 
      */
-    @Export(name="stageExecutionTimeoutInSeconds", type=Integer.class, parameters={})
+    @Export(name="stageExecutionTimeoutInSeconds", refs={Integer.class}, tree="[0]")
     private Output<Integer> stageExecutionTimeoutInSeconds;
 
     /**
@@ -405,7 +405,7 @@ public class BuildPipelineStage extends com.pulumi.resources.CustomResource {
      * The current state of the stage.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -419,7 +419,7 @@ public class BuildPipelineStage extends com.pulumi.resources.CustomResource {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -433,7 +433,7 @@ public class BuildPipelineStage extends com.pulumi.resources.CustomResource {
      * The time the stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -447,7 +447,7 @@ public class BuildPipelineStage extends com.pulumi.resources.CustomResource {
      * The time the stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -461,7 +461,7 @@ public class BuildPipelineStage extends com.pulumi.resources.CustomResource {
      * (Updatable) Specifies wait criteria for the Wait stage.
      * 
      */
-    @Export(name="waitCriteria", type=BuildPipelineStageWaitCriteria.class, parameters={})
+    @Export(name="waitCriteria", refs={BuildPipelineStageWaitCriteria.class}, tree="[0]")
     private Output<BuildPipelineStageWaitCriteria> waitCriteria;
 
     /**

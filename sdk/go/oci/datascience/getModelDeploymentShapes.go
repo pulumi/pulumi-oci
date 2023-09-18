@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Model Deployment Shapes in Oracle Cloud Infrastructure Datascience service.
@@ -104,6 +105,12 @@ func (o GetModelDeploymentShapesResultOutput) ToGetModelDeploymentShapesResultOu
 
 func (o GetModelDeploymentShapesResultOutput) ToGetModelDeploymentShapesResultOutputWithContext(ctx context.Context) GetModelDeploymentShapesResultOutput {
 	return o
+}
+
+func (o GetModelDeploymentShapesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetModelDeploymentShapesResult] {
+	return pulumix.Output[GetModelDeploymentShapesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetModelDeploymentShapesResultOutput) CompartmentId() pulumi.StringOutput {

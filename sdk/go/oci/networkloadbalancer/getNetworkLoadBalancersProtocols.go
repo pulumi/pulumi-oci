@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Network Load Balancers Protocols in Oracle Cloud Infrastructure Network Load Balancer service.
@@ -98,6 +99,12 @@ func (o GetNetworkLoadBalancersProtocolsResultOutput) ToGetNetworkLoadBalancersP
 
 func (o GetNetworkLoadBalancersProtocolsResultOutput) ToGetNetworkLoadBalancersProtocolsResultOutputWithContext(ctx context.Context) GetNetworkLoadBalancersProtocolsResultOutput {
 	return o
+}
+
+func (o GetNetworkLoadBalancersProtocolsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkLoadBalancersProtocolsResult] {
+	return pulumix.Output[GetNetworkLoadBalancersProtocolsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkLoadBalancersProtocolsResultOutput) Filters() GetNetworkLoadBalancersProtocolsFilterArrayOutput {

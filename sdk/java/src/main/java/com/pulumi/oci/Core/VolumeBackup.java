@@ -77,7 +77,7 @@ public class VolumeBackup extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the compartment that contains the volume backup.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -91,7 +91,7 @@ public class VolumeBackup extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -105,7 +105,7 @@ public class VolumeBackup extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -119,7 +119,7 @@ public class VolumeBackup extends com.pulumi.resources.CustomResource {
      * The date and time the volume backup will expire and be automatically deleted. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for backups that were created automatically by a scheduled-backup policy. For manually created backups, it will be absent, signifying that there is no expiration time and the backup will last forever until manually deleted.
      * 
      */
-    @Export(name="expirationTime", type=String.class, parameters={})
+    @Export(name="expirationTime", refs={String.class}, tree="[0]")
     private Output<String> expirationTime;
 
     /**
@@ -133,7 +133,7 @@ public class VolumeBackup extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -147,7 +147,7 @@ public class VolumeBackup extends com.pulumi.resources.CustomResource {
      * The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
      * 
      */
-    @Export(name="kmsKeyId", type=String.class, parameters={})
+    @Export(name="kmsKeyId", refs={String.class}, tree="[0]")
     private Output<String> kmsKeyId;
 
     /**
@@ -161,7 +161,7 @@ public class VolumeBackup extends com.pulumi.resources.CustomResource {
      * The size of the volume, in GBs.
      * 
      */
-    @Export(name="sizeInGbs", type=String.class, parameters={})
+    @Export(name="sizeInGbs", refs={String.class}, tree="[0]")
     private Output<String> sizeInGbs;
 
     /**
@@ -179,7 +179,7 @@ public class VolumeBackup extends com.pulumi.resources.CustomResource {
      * 
      */
     @Deprecated /* The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead. */
-    @Export(name="sizeInMbs", type=String.class, parameters={})
+    @Export(name="sizeInMbs", refs={String.class}, tree="[0]")
     private Output<String> sizeInMbs;
 
     /**
@@ -193,7 +193,7 @@ public class VolumeBackup extends com.pulumi.resources.CustomResource {
      * Details of the volume backup source in the cloud.
      * 
      */
-    @Export(name="sourceDetails", type=VolumeBackupSourceDetails.class, parameters={})
+    @Export(name="sourceDetails", refs={VolumeBackupSourceDetails.class}, tree="[0]")
     private Output</* @Nullable */ VolumeBackupSourceDetails> sourceDetails;
 
     /**
@@ -207,7 +207,7 @@ public class VolumeBackup extends com.pulumi.resources.CustomResource {
      * Specifies whether the backup was created manually, or via scheduled backup policy.
      * 
      */
-    @Export(name="sourceType", type=String.class, parameters={})
+    @Export(name="sourceType", refs={String.class}, tree="[0]")
     private Output<String> sourceType;
 
     /**
@@ -221,7 +221,7 @@ public class VolumeBackup extends com.pulumi.resources.CustomResource {
      * The OCID of the source volume backup.
      * 
      */
-    @Export(name="sourceVolumeBackupId", type=String.class, parameters={})
+    @Export(name="sourceVolumeBackupId", refs={String.class}, tree="[0]")
     private Output<String> sourceVolumeBackupId;
 
     /**
@@ -235,7 +235,7 @@ public class VolumeBackup extends com.pulumi.resources.CustomResource {
      * The current state of a volume backup.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -249,7 +249,7 @@ public class VolumeBackup extends com.pulumi.resources.CustomResource {
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -263,7 +263,7 @@ public class VolumeBackup extends com.pulumi.resources.CustomResource {
      * The date and time the volume backup was created. This is the time the actual point-in-time image of the volume data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -277,7 +277,7 @@ public class VolumeBackup extends com.pulumi.resources.CustomResource {
      * The date and time the request to create the volume backup was received. Format defined by [RFC3339]https://tools.ietf.org/html/rfc3339.
      * 
      */
-    @Export(name="timeRequestReceived", type=String.class, parameters={})
+    @Export(name="timeRequestReceived", refs={String.class}, tree="[0]")
     private Output<String> timeRequestReceived;
 
     /**
@@ -291,7 +291,7 @@ public class VolumeBackup extends com.pulumi.resources.CustomResource {
      * The type of backup to create. If omitted, defaults to INCREMENTAL. Supported values are &#39;FULL&#39; or &#39;INCREMENTAL&#39;.
      * 
      */
-    @Export(name="type", type=String.class, parameters={})
+    @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**
@@ -305,7 +305,7 @@ public class VolumeBackup extends com.pulumi.resources.CustomResource {
      * The size used by the backup, in GBs. It is typically smaller than sizeInGBs, depending on the space consumed on the volume and whether the backup is full or incremental.
      * 
      */
-    @Export(name="uniqueSizeInGbs", type=String.class, parameters={})
+    @Export(name="uniqueSizeInGbs", refs={String.class}, tree="[0]")
     private Output<String> uniqueSizeInGbs;
 
     /**
@@ -323,7 +323,7 @@ public class VolumeBackup extends com.pulumi.resources.CustomResource {
      * 
      */
     @Deprecated /* The 'unique_size_in_mbs' field has been deprecated. Please use 'unique_size_in_gbs' instead. */
-    @Export(name="uniqueSizeInMbs", type=String.class, parameters={})
+    @Export(name="uniqueSizeInMbs", refs={String.class}, tree="[0]")
     private Output<String> uniqueSizeInMbs;
 
     /**
@@ -337,7 +337,7 @@ public class VolumeBackup extends com.pulumi.resources.CustomResource {
      * The OCID of the volume that needs to be backed up.**Note: To create the resource either `volume_id` or `source_details` is required to be set.
      * 
      */
-    @Export(name="volumeId", type=String.class, parameters={})
+    @Export(name="volumeId", refs={String.class}, tree="[0]")
     private Output<String> volumeId;
 
     /**

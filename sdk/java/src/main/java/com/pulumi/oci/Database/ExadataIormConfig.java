@@ -74,7 +74,7 @@ public class ExadataIormConfig extends com.pulumi.resources.CustomResource {
      * (Updatable) Array of IORM Setting for all the database in this Exadata DB System
      * 
      */
-    @Export(name="dbPlans", type=List.class, parameters={ExadataIormConfigDbPlan.class})
+    @Export(name="dbPlans", refs={List.class,ExadataIormConfigDbPlan.class}, tree="[0,1]")
     private Output<List<ExadataIormConfigDbPlan>> dbPlans;
 
     /**
@@ -88,7 +88,7 @@ public class ExadataIormConfig extends com.pulumi.resources.CustomResource {
      * (Updatable) The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    @Export(name="dbSystemId", type=String.class, parameters={})
+    @Export(name="dbSystemId", refs={String.class}, tree="[0]")
     private Output<String> dbSystemId;
 
     /**
@@ -102,7 +102,7 @@ public class ExadataIormConfig extends com.pulumi.resources.CustomResource {
      * Additional information about the current `lifecycleState`.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -119,7 +119,7 @@ public class ExadataIormConfig extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="objective", type=String.class, parameters={})
+    @Export(name="objective", refs={String.class}, tree="[0]")
     private Output<String> objective;
 
     /**
@@ -136,7 +136,7 @@ public class ExadataIormConfig extends com.pulumi.resources.CustomResource {
      * The current state of IORM configuration for the Exadata DB system.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Identity Provider Groups in Oracle Cloud Infrastructure Identity service.
@@ -120,6 +121,12 @@ func (o GetIdentityProviderGroupsResultOutput) ToGetIdentityProviderGroupsResult
 
 func (o GetIdentityProviderGroupsResultOutput) ToGetIdentityProviderGroupsResultOutputWithContext(ctx context.Context) GetIdentityProviderGroupsResultOutput {
 	return o
+}
+
+func (o GetIdentityProviderGroupsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetIdentityProviderGroupsResult] {
+	return pulumix.Output[GetIdentityProviderGroupsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetIdentityProviderGroupsResultOutput) Filters() GetIdentityProviderGroupsFilterArrayOutput {

@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Compare Security Assessment resource in Oracle Cloud Infrastructure Data Safe service.
@@ -168,6 +169,12 @@ func (i *CompareSecurityAssessment) ToCompareSecurityAssessmentOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(CompareSecurityAssessmentOutput)
 }
 
+func (i *CompareSecurityAssessment) ToOutput(ctx context.Context) pulumix.Output[*CompareSecurityAssessment] {
+	return pulumix.Output[*CompareSecurityAssessment]{
+		OutputState: i.ToCompareSecurityAssessmentOutputWithContext(ctx).OutputState,
+	}
+}
+
 // CompareSecurityAssessmentArrayInput is an input type that accepts CompareSecurityAssessmentArray and CompareSecurityAssessmentArrayOutput values.
 // You can construct a concrete instance of `CompareSecurityAssessmentArrayInput` via:
 //
@@ -191,6 +198,12 @@ func (i CompareSecurityAssessmentArray) ToCompareSecurityAssessmentArrayOutput()
 
 func (i CompareSecurityAssessmentArray) ToCompareSecurityAssessmentArrayOutputWithContext(ctx context.Context) CompareSecurityAssessmentArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CompareSecurityAssessmentArrayOutput)
+}
+
+func (i CompareSecurityAssessmentArray) ToOutput(ctx context.Context) pulumix.Output[[]*CompareSecurityAssessment] {
+	return pulumix.Output[[]*CompareSecurityAssessment]{
+		OutputState: i.ToCompareSecurityAssessmentArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // CompareSecurityAssessmentMapInput is an input type that accepts CompareSecurityAssessmentMap and CompareSecurityAssessmentMapOutput values.
@@ -218,6 +231,12 @@ func (i CompareSecurityAssessmentMap) ToCompareSecurityAssessmentMapOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(CompareSecurityAssessmentMapOutput)
 }
 
+func (i CompareSecurityAssessmentMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*CompareSecurityAssessment] {
+	return pulumix.Output[map[string]*CompareSecurityAssessment]{
+		OutputState: i.ToCompareSecurityAssessmentMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type CompareSecurityAssessmentOutput struct{ *pulumi.OutputState }
 
 func (CompareSecurityAssessmentOutput) ElementType() reflect.Type {
@@ -230,6 +249,12 @@ func (o CompareSecurityAssessmentOutput) ToCompareSecurityAssessmentOutput() Com
 
 func (o CompareSecurityAssessmentOutput) ToCompareSecurityAssessmentOutputWithContext(ctx context.Context) CompareSecurityAssessmentOutput {
 	return o
+}
+
+func (o CompareSecurityAssessmentOutput) ToOutput(ctx context.Context) pulumix.Output[*CompareSecurityAssessment] {
+	return pulumix.Output[*CompareSecurityAssessment]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the security assessment. In this case a security assessment can be another security assessment, a latest assessment or a baseline.
@@ -259,6 +284,12 @@ func (o CompareSecurityAssessmentArrayOutput) ToCompareSecurityAssessmentArrayOu
 	return o
 }
 
+func (o CompareSecurityAssessmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*CompareSecurityAssessment] {
+	return pulumix.Output[[]*CompareSecurityAssessment]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o CompareSecurityAssessmentArrayOutput) Index(i pulumi.IntInput) CompareSecurityAssessmentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CompareSecurityAssessment {
 		return vs[0].([]*CompareSecurityAssessment)[vs[1].(int)]
@@ -277,6 +308,12 @@ func (o CompareSecurityAssessmentMapOutput) ToCompareSecurityAssessmentMapOutput
 
 func (o CompareSecurityAssessmentMapOutput) ToCompareSecurityAssessmentMapOutputWithContext(ctx context.Context) CompareSecurityAssessmentMapOutput {
 	return o
+}
+
+func (o CompareSecurityAssessmentMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*CompareSecurityAssessment] {
+	return pulumix.Output[map[string]*CompareSecurityAssessment]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o CompareSecurityAssessmentMapOutput) MapIndex(k pulumi.StringInput) CompareSecurityAssessmentOutput {

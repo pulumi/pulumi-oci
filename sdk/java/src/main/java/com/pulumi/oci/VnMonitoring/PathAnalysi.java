@@ -115,7 +115,7 @@ public class PathAnalysi extends com.pulumi.resources.CustomResource {
      * The Cache-Control HTTP header holds directives (instructions) for caching in both requests and responses.
      * 
      */
-    @Export(name="cacheControl", type=String.class, parameters={})
+    @Export(name="cacheControl", refs={String.class}, tree="[0]")
     private Output<String> cacheControl;
 
     /**
@@ -129,7 +129,7 @@ public class PathAnalysi extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -143,7 +143,7 @@ public class PathAnalysi extends com.pulumi.resources.CustomResource {
      * Information describing a source or destination in a `PathAnalyzerTest` resource.
      * 
      */
-    @Export(name="destinationEndpoint", type=PathAnalysiDestinationEndpoint.class, parameters={})
+    @Export(name="destinationEndpoint", refs={PathAnalysiDestinationEndpoint.class}, tree="[0]")
     private Output<PathAnalysiDestinationEndpoint> destinationEndpoint;
 
     /**
@@ -157,7 +157,7 @@ public class PathAnalysi extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PathAnalyzerTest` resource.
      * 
      */
-    @Export(name="pathAnalyzerTestId", type=String.class, parameters={})
+    @Export(name="pathAnalyzerTestId", refs={String.class}, tree="[0]")
     private Output<String> pathAnalyzerTestId;
 
     /**
@@ -171,7 +171,7 @@ public class PathAnalysi extends com.pulumi.resources.CustomResource {
      * The IP protocol to used for the path analysis.
      * 
      */
-    @Export(name="protocol", type=Integer.class, parameters={})
+    @Export(name="protocol", refs={Integer.class}, tree="[0]")
     private Output<Integer> protocol;
 
     /**
@@ -185,7 +185,7 @@ public class PathAnalysi extends com.pulumi.resources.CustomResource {
      * Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
      * 
      */
-    @Export(name="protocolParameters", type=PathAnalysiProtocolParameters.class, parameters={})
+    @Export(name="protocolParameters", refs={PathAnalysiProtocolParameters.class}, tree="[0]")
     private Output<PathAnalysiProtocolParameters> protocolParameters;
 
     /**
@@ -199,7 +199,7 @@ public class PathAnalysi extends com.pulumi.resources.CustomResource {
      * Defines the query options required for a `PathAnalyzerTest` resource.
      * 
      */
-    @Export(name="queryOptions", type=PathAnalysiQueryOptions.class, parameters={})
+    @Export(name="queryOptions", refs={PathAnalysiQueryOptions.class}, tree="[0]")
     private Output<PathAnalysiQueryOptions> queryOptions;
 
     /**
@@ -213,7 +213,7 @@ public class PathAnalysi extends com.pulumi.resources.CustomResource {
      * Information describing a source or destination in a `PathAnalyzerTest` resource.
      * 
      */
-    @Export(name="sourceEndpoint", type=PathAnalysiSourceEndpoint.class, parameters={})
+    @Export(name="sourceEndpoint", refs={PathAnalysiSourceEndpoint.class}, tree="[0]")
     private Output<PathAnalysiSourceEndpoint> sourceEndpoint;
 
     /**
@@ -230,7 +230,7 @@ public class PathAnalysi extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="type", type=String.class, parameters={})
+    @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**

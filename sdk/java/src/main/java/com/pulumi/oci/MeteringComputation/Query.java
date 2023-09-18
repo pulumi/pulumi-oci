@@ -98,7 +98,7 @@ public class Query extends com.pulumi.resources.CustomResource {
      * The compartment OCID.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -112,7 +112,7 @@ public class Query extends com.pulumi.resources.CustomResource {
      * (Updatable) The common fields for queries.
      * 
      */
-    @Export(name="queryDefinition", type=QueryQueryDefinition.class, parameters={})
+    @Export(name="queryDefinition", refs={QueryQueryDefinition.class}, tree="[0]")
     private Output<QueryQueryDefinition> queryDefinition;
 
     /**

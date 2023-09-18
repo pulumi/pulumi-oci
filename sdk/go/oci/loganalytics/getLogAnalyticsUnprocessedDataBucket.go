@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Log Analytics Unprocessed Data Bucket resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -108,6 +109,12 @@ func (o GetLogAnalyticsUnprocessedDataBucketResultOutput) ToGetLogAnalyticsUnpro
 
 func (o GetLogAnalyticsUnprocessedDataBucketResultOutput) ToGetLogAnalyticsUnprocessedDataBucketResultOutputWithContext(ctx context.Context) GetLogAnalyticsUnprocessedDataBucketResultOutput {
 	return o
+}
+
+func (o GetLogAnalyticsUnprocessedDataBucketResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsUnprocessedDataBucketResult] {
+	return pulumix.Output[GetLogAnalyticsUnprocessedDataBucketResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Name of the Object Storage bucket.

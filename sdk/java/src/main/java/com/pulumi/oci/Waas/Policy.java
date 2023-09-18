@@ -307,7 +307,7 @@ public class Policy extends com.pulumi.resources.CustomResource {
      * (Updatable) An array of additional domains for the specified web application.
      * 
      */
-    @Export(name="additionalDomains", type=List.class, parameters={String.class})
+    @Export(name="additionalDomains", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> additionalDomains;
 
     /**
@@ -321,7 +321,7 @@ public class Policy extends com.pulumi.resources.CustomResource {
      * The CNAME record to add to your DNS configuration to route traffic for the domain, and all additional domains, through the WAF.
      * 
      */
-    @Export(name="cname", type=String.class, parameters={})
+    @Export(name="cname", refs={String.class}, tree="[0]")
     private Output<String> cname;
 
     /**
@@ -335,7 +335,7 @@ public class Policy extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the WAAS policy.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -349,7 +349,7 @@ public class Policy extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -363,7 +363,7 @@ public class Policy extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-friendly name for the WAAS policy. The name can be changed and does not need to be unique.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -377,7 +377,7 @@ public class Policy extends com.pulumi.resources.CustomResource {
      * (Updatable) The domain for which the cookie is set, defaults to WAAS policy domain.
      * 
      */
-    @Export(name="domain", type=String.class, parameters={})
+    @Export(name="domain", refs={String.class}, tree="[0]")
     private Output<String> domain;
 
     /**
@@ -391,7 +391,7 @@ public class Policy extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -405,7 +405,7 @@ public class Policy extends com.pulumi.resources.CustomResource {
      * (Updatable) The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
      * 
      */
-    @Export(name="originGroups", type=List.class, parameters={PolicyOriginGroup.class})
+    @Export(name="originGroups", refs={List.class,PolicyOriginGroup.class}, tree="[0,1]")
     private Output<List<PolicyOriginGroup>> originGroups;
 
     /**
@@ -419,7 +419,7 @@ public class Policy extends com.pulumi.resources.CustomResource {
      * (Updatable) A map of host to origin for the web application. The key should be a customer friendly name for the host, ex. primary, secondary, etc.
      * 
      */
-    @Export(name="origins", type=List.class, parameters={PolicyOrigin.class})
+    @Export(name="origins", refs={List.class,PolicyOrigin.class}, tree="[0,1]")
     private Output<List<PolicyOrigin>> origins;
 
     /**
@@ -433,7 +433,7 @@ public class Policy extends com.pulumi.resources.CustomResource {
      * (Updatable) The configuration details for the WAAS policy.
      * 
      */
-    @Export(name="policyConfig", type=PolicyPolicyConfig.class, parameters={})
+    @Export(name="policyConfig", refs={PolicyPolicyConfig.class}, tree="[0]")
     private Output<PolicyPolicyConfig> policyConfig;
 
     /**
@@ -447,7 +447,7 @@ public class Policy extends com.pulumi.resources.CustomResource {
      * The current lifecycle state of the WAAS policy.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -461,7 +461,7 @@ public class Policy extends com.pulumi.resources.CustomResource {
      * The date and time the policy was created, expressed in RFC 3339 timestamp format.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -475,7 +475,7 @@ public class Policy extends com.pulumi.resources.CustomResource {
      * (Updatable) The Web Application Firewall configuration for the WAAS policy creation.
      * 
      */
-    @Export(name="wafConfig", type=PolicyWafConfig.class, parameters={})
+    @Export(name="wafConfig", refs={PolicyWafConfig.class}, tree="[0]")
     private Output<PolicyWafConfig> wafConfig;
 
     /**

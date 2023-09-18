@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Database Tools Connections in Oracle Cloud Infrastructure Database Tools service.
@@ -126,6 +127,12 @@ func (o GetDatabaseToolsConnectionsResultOutput) ToGetDatabaseToolsConnectionsRe
 
 func (o GetDatabaseToolsConnectionsResultOutput) ToGetDatabaseToolsConnectionsResultOutputWithContext(ctx context.Context) GetDatabaseToolsConnectionsResultOutput {
 	return o
+}
+
+func (o GetDatabaseToolsConnectionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsConnectionsResult] {
+	return pulumix.Output[GetDatabaseToolsConnectionsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.

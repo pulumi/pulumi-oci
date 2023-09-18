@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Gi Versions in Oracle Cloud Infrastructure Database service.
@@ -110,6 +111,12 @@ func (o GetGiVersionsResultOutput) ToGetGiVersionsResultOutput() GetGiVersionsRe
 
 func (o GetGiVersionsResultOutput) ToGetGiVersionsResultOutputWithContext(ctx context.Context) GetGiVersionsResultOutput {
 	return o
+}
+
+func (o GetGiVersionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetGiVersionsResult] {
+	return pulumix.Output[GetGiVersionsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetGiVersionsResultOutput) CompartmentId() pulumi.StringOutput {

@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Vm Cluster Network resource in Oracle Cloud Infrastructure Database service.
@@ -319,6 +320,12 @@ func (i *VmClusterNetwork) ToVmClusterNetworkOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(VmClusterNetworkOutput)
 }
 
+func (i *VmClusterNetwork) ToOutput(ctx context.Context) pulumix.Output[*VmClusterNetwork] {
+	return pulumix.Output[*VmClusterNetwork]{
+		OutputState: i.ToVmClusterNetworkOutputWithContext(ctx).OutputState,
+	}
+}
+
 // VmClusterNetworkArrayInput is an input type that accepts VmClusterNetworkArray and VmClusterNetworkArrayOutput values.
 // You can construct a concrete instance of `VmClusterNetworkArrayInput` via:
 //
@@ -342,6 +349,12 @@ func (i VmClusterNetworkArray) ToVmClusterNetworkArrayOutput() VmClusterNetworkA
 
 func (i VmClusterNetworkArray) ToVmClusterNetworkArrayOutputWithContext(ctx context.Context) VmClusterNetworkArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(VmClusterNetworkArrayOutput)
+}
+
+func (i VmClusterNetworkArray) ToOutput(ctx context.Context) pulumix.Output[[]*VmClusterNetwork] {
+	return pulumix.Output[[]*VmClusterNetwork]{
+		OutputState: i.ToVmClusterNetworkArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // VmClusterNetworkMapInput is an input type that accepts VmClusterNetworkMap and VmClusterNetworkMapOutput values.
@@ -369,6 +382,12 @@ func (i VmClusterNetworkMap) ToVmClusterNetworkMapOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(VmClusterNetworkMapOutput)
 }
 
+func (i VmClusterNetworkMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*VmClusterNetwork] {
+	return pulumix.Output[map[string]*VmClusterNetwork]{
+		OutputState: i.ToVmClusterNetworkMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type VmClusterNetworkOutput struct{ *pulumi.OutputState }
 
 func (VmClusterNetworkOutput) ElementType() reflect.Type {
@@ -381,6 +400,12 @@ func (o VmClusterNetworkOutput) ToVmClusterNetworkOutput() VmClusterNetworkOutpu
 
 func (o VmClusterNetworkOutput) ToVmClusterNetworkOutputWithContext(ctx context.Context) VmClusterNetworkOutput {
 	return o
+}
+
+func (o VmClusterNetworkOutput) ToOutput(ctx context.Context) pulumix.Output[*VmClusterNetwork] {
+	return pulumix.Output[*VmClusterNetwork]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o VmClusterNetworkOutput) Action() pulumi.StringPtrOutput {
@@ -475,6 +500,12 @@ func (o VmClusterNetworkArrayOutput) ToVmClusterNetworkArrayOutputWithContext(ct
 	return o
 }
 
+func (o VmClusterNetworkArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*VmClusterNetwork] {
+	return pulumix.Output[[]*VmClusterNetwork]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o VmClusterNetworkArrayOutput) Index(i pulumi.IntInput) VmClusterNetworkOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *VmClusterNetwork {
 		return vs[0].([]*VmClusterNetwork)[vs[1].(int)]
@@ -493,6 +524,12 @@ func (o VmClusterNetworkMapOutput) ToVmClusterNetworkMapOutput() VmClusterNetwor
 
 func (o VmClusterNetworkMapOutput) ToVmClusterNetworkMapOutputWithContext(ctx context.Context) VmClusterNetworkMapOutput {
 	return o
+}
+
+func (o VmClusterNetworkMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*VmClusterNetwork] {
+	return pulumix.Output[map[string]*VmClusterNetwork]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o VmClusterNetworkMapOutput) MapIndex(k pulumi.StringInput) VmClusterNetworkOutput {

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Db Home resource in Oracle Cloud Infrastructure Database service.
@@ -132,6 +133,12 @@ func (o LookupDbHomeResultOutput) ToLookupDbHomeResultOutput() LookupDbHomeResul
 
 func (o LookupDbHomeResultOutput) ToLookupDbHomeResultOutputWithContext(ctx context.Context) LookupDbHomeResultOutput {
 	return o
+}
+
+func (o LookupDbHomeResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDbHomeResult] {
+	return pulumix.Output[LookupDbHomeResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Stream Packaging Configs in Oracle Cloud Infrastructure Media Services service.
@@ -125,6 +126,12 @@ func (o GetStreamPackagingConfigsResultOutput) ToGetStreamPackagingConfigsResult
 
 func (o GetStreamPackagingConfigsResultOutput) ToGetStreamPackagingConfigsResultOutputWithContext(ctx context.Context) GetStreamPackagingConfigsResultOutput {
 	return o
+}
+
+func (o GetStreamPackagingConfigsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetStreamPackagingConfigsResult] {
+	return pulumix.Output[GetStreamPackagingConfigsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the stream packaging configuration. Avoid entering confidential information.

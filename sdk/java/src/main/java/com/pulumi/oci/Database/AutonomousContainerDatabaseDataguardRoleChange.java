@@ -16,25 +16,25 @@ import javax.annotation.Nullable;
 
 @ResourceType(type="oci:Database/autonomousContainerDatabaseDataguardRoleChange:AutonomousContainerDatabaseDataguardRoleChange")
 public class AutonomousContainerDatabaseDataguardRoleChange extends com.pulumi.resources.CustomResource {
-    @Export(name="autonomousContainerDatabaseDataguardAssociationId", type=String.class, parameters={})
+    @Export(name="autonomousContainerDatabaseDataguardAssociationId", refs={String.class}, tree="[0]")
     private Output<String> autonomousContainerDatabaseDataguardAssociationId;
 
     public Output<String> autonomousContainerDatabaseDataguardAssociationId() {
         return this.autonomousContainerDatabaseDataguardAssociationId;
     }
-    @Export(name="autonomousContainerDatabaseId", type=String.class, parameters={})
+    @Export(name="autonomousContainerDatabaseId", refs={String.class}, tree="[0]")
     private Output<String> autonomousContainerDatabaseId;
 
     public Output<String> autonomousContainerDatabaseId() {
         return this.autonomousContainerDatabaseId;
     }
-    @Export(name="connectionStringsType", type=String.class, parameters={})
+    @Export(name="connectionStringsType", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> connectionStringsType;
 
     public Output<Optional<String>> connectionStringsType() {
         return Codegen.optional(this.connectionStringsType);
     }
-    @Export(name="role", type=String.class, parameters={})
+    @Export(name="role", refs={String.class}, tree="[0]")
     private Output<String> role;
 
     public Output<String> role() {

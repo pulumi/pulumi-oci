@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Path Route Sets in Oracle Cloud Infrastructure Load Balancer service.
@@ -104,6 +105,12 @@ func (o GetPathRouteSetsResultOutput) ToGetPathRouteSetsResultOutput() GetPathRo
 
 func (o GetPathRouteSetsResultOutput) ToGetPathRouteSetsResultOutputWithContext(ctx context.Context) GetPathRouteSetsResultOutput {
 	return o
+}
+
+func (o GetPathRouteSetsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPathRouteSetsResult] {
+	return pulumix.Output[GetPathRouteSetsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPathRouteSetsResultOutput) Filters() GetPathRouteSetsFilterArrayOutput {

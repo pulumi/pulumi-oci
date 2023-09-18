@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Web App Accelerations in Oracle Cloud Infrastructure Waa service.
@@ -131,6 +132,12 @@ func (o GetAppAccelerationsResultOutput) ToGetAppAccelerationsResultOutput() Get
 
 func (o GetAppAccelerationsResultOutput) ToGetAppAccelerationsResultOutputWithContext(ctx context.Context) GetAppAccelerationsResultOutput {
 	return o
+}
+
+func (o GetAppAccelerationsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAppAccelerationsResult] {
+	return pulumix.Output[GetAppAccelerationsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

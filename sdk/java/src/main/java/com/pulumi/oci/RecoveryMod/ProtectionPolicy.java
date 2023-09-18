@@ -71,7 +71,7 @@ public class ProtectionPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) The maximum number of days to retain backups for a protected database.
      * 
      */
-    @Export(name="backupRetentionPeriodInDays", type=Integer.class, parameters={})
+    @Export(name="backupRetentionPeriodInDays", refs={Integer.class}, tree="[0]")
     private Output<Integer> backupRetentionPeriodInDays;
 
     /**
@@ -85,7 +85,7 @@ public class ProtectionPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) Compartment Identifier
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -99,7 +99,7 @@ public class ProtectionPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -113,7 +113,7 @@ public class ProtectionPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) A user provided name for the protection policy. The &#39;displayName&#39; does not have to be unique, and it can be modified. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -130,7 +130,7 @@ public class ProtectionPolicy extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -147,7 +147,7 @@ public class ProtectionPolicy extends com.pulumi.resources.CustomResource {
      * Set to TRUE if the policy is Oracle-defined, and FALSE for a user-defined custom policy. You can modify only the custom policies.
      * 
      */
-    @Export(name="isPredefinedPolicy", type=Boolean.class, parameters={})
+    @Export(name="isPredefinedPolicy", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isPredefinedPolicy;
 
     /**
@@ -161,7 +161,7 @@ public class ProtectionPolicy extends com.pulumi.resources.CustomResource {
      * Detailed description about the current lifecycle state of the protection policy. For example, it can be used to provide actionable information for a resource in a Failed state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -181,7 +181,7 @@ public class ProtectionPolicy extends com.pulumi.resources.CustomResource {
      * * FAILED
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -201,7 +201,7 @@ public class ProtectionPolicy extends com.pulumi.resources.CustomResource {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -215,7 +215,7 @@ public class ProtectionPolicy extends com.pulumi.resources.CustomResource {
      * An RFC3339 formatted datetime string that indicates the created time for the protection policy. For example: &#39;2020-05-22T21:10:29.600Z&#39;.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -229,7 +229,7 @@ public class ProtectionPolicy extends com.pulumi.resources.CustomResource {
      * An RFC3339 formatted datetime string that indicates the updated time for the protection policy. For example: &#39;2020-05-22T21:10:29.600Z&#39;.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

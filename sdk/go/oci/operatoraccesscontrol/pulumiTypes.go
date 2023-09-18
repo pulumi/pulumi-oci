@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -70,6 +71,12 @@ func (i GetAccessRequestHistoryItemArgs) ToGetAccessRequestHistoryItemOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetAccessRequestHistoryItemOutput)
 }
 
+func (i GetAccessRequestHistoryItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAccessRequestHistoryItem] {
+	return pulumix.Output[GetAccessRequestHistoryItem]{
+		OutputState: i.ToGetAccessRequestHistoryItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAccessRequestHistoryItemArrayInput is an input type that accepts GetAccessRequestHistoryItemArray and GetAccessRequestHistoryItemArrayOutput values.
 // You can construct a concrete instance of `GetAccessRequestHistoryItemArrayInput` via:
 //
@@ -95,6 +102,12 @@ func (i GetAccessRequestHistoryItemArray) ToGetAccessRequestHistoryItemArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetAccessRequestHistoryItemArrayOutput)
 }
 
+func (i GetAccessRequestHistoryItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAccessRequestHistoryItem] {
+	return pulumix.Output[[]GetAccessRequestHistoryItem]{
+		OutputState: i.ToGetAccessRequestHistoryItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAccessRequestHistoryItemOutput struct{ *pulumi.OutputState }
 
 func (GetAccessRequestHistoryItemOutput) ElementType() reflect.Type {
@@ -107,6 +120,12 @@ func (o GetAccessRequestHistoryItemOutput) ToGetAccessRequestHistoryItemOutput()
 
 func (o GetAccessRequestHistoryItemOutput) ToGetAccessRequestHistoryItemOutputWithContext(ctx context.Context) GetAccessRequestHistoryItemOutput {
 	return o
+}
+
+func (o GetAccessRequestHistoryItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAccessRequestHistoryItem] {
+	return pulumix.Output[GetAccessRequestHistoryItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // List of operator actions for which approvals were requested by the operator.
@@ -158,6 +177,12 @@ func (o GetAccessRequestHistoryItemArrayOutput) ToGetAccessRequestHistoryItemArr
 	return o
 }
 
+func (o GetAccessRequestHistoryItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAccessRequestHistoryItem] {
+	return pulumix.Output[[]GetAccessRequestHistoryItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetAccessRequestHistoryItemArrayOutput) Index(i pulumi.IntInput) GetAccessRequestHistoryItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAccessRequestHistoryItem {
 		return vs[0].([]GetAccessRequestHistoryItem)[vs[1].(int)]
@@ -195,6 +220,12 @@ func (i GetAccessRequestsAccessRequestCollectionArgs) ToGetAccessRequestsAccessR
 	return pulumi.ToOutputWithContext(ctx, i).(GetAccessRequestsAccessRequestCollectionOutput)
 }
 
+func (i GetAccessRequestsAccessRequestCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAccessRequestsAccessRequestCollection] {
+	return pulumix.Output[GetAccessRequestsAccessRequestCollection]{
+		OutputState: i.ToGetAccessRequestsAccessRequestCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAccessRequestsAccessRequestCollectionArrayInput is an input type that accepts GetAccessRequestsAccessRequestCollectionArray and GetAccessRequestsAccessRequestCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAccessRequestsAccessRequestCollectionArrayInput` via:
 //
@@ -220,6 +251,12 @@ func (i GetAccessRequestsAccessRequestCollectionArray) ToGetAccessRequestsAccess
 	return pulumi.ToOutputWithContext(ctx, i).(GetAccessRequestsAccessRequestCollectionArrayOutput)
 }
 
+func (i GetAccessRequestsAccessRequestCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAccessRequestsAccessRequestCollection] {
+	return pulumix.Output[[]GetAccessRequestsAccessRequestCollection]{
+		OutputState: i.ToGetAccessRequestsAccessRequestCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAccessRequestsAccessRequestCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetAccessRequestsAccessRequestCollectionOutput) ElementType() reflect.Type {
@@ -232,6 +269,12 @@ func (o GetAccessRequestsAccessRequestCollectionOutput) ToGetAccessRequestsAcces
 
 func (o GetAccessRequestsAccessRequestCollectionOutput) ToGetAccessRequestsAccessRequestCollectionOutputWithContext(ctx context.Context) GetAccessRequestsAccessRequestCollectionOutput {
 	return o
+}
+
+func (o GetAccessRequestsAccessRequestCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAccessRequestsAccessRequestCollection] {
+	return pulumix.Output[GetAccessRequestsAccessRequestCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAccessRequestsAccessRequestCollectionOutput) Items() GetAccessRequestsAccessRequestCollectionItemArrayOutput {
@@ -252,6 +295,12 @@ func (o GetAccessRequestsAccessRequestCollectionArrayOutput) ToGetAccessRequests
 
 func (o GetAccessRequestsAccessRequestCollectionArrayOutput) ToGetAccessRequestsAccessRequestCollectionArrayOutputWithContext(ctx context.Context) GetAccessRequestsAccessRequestCollectionArrayOutput {
 	return o
+}
+
+func (o GetAccessRequestsAccessRequestCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAccessRequestsAccessRequestCollection] {
+	return pulumix.Output[[]GetAccessRequestsAccessRequestCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAccessRequestsAccessRequestCollectionArrayOutput) Index(i pulumi.IntInput) GetAccessRequestsAccessRequestCollectionOutput {
@@ -413,6 +462,12 @@ func (i GetAccessRequestsAccessRequestCollectionItemArgs) ToGetAccessRequestsAcc
 	return pulumi.ToOutputWithContext(ctx, i).(GetAccessRequestsAccessRequestCollectionItemOutput)
 }
 
+func (i GetAccessRequestsAccessRequestCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAccessRequestsAccessRequestCollectionItem] {
+	return pulumix.Output[GetAccessRequestsAccessRequestCollectionItem]{
+		OutputState: i.ToGetAccessRequestsAccessRequestCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAccessRequestsAccessRequestCollectionItemArrayInput is an input type that accepts GetAccessRequestsAccessRequestCollectionItemArray and GetAccessRequestsAccessRequestCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetAccessRequestsAccessRequestCollectionItemArrayInput` via:
 //
@@ -438,6 +493,12 @@ func (i GetAccessRequestsAccessRequestCollectionItemArray) ToGetAccessRequestsAc
 	return pulumi.ToOutputWithContext(ctx, i).(GetAccessRequestsAccessRequestCollectionItemArrayOutput)
 }
 
+func (i GetAccessRequestsAccessRequestCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAccessRequestsAccessRequestCollectionItem] {
+	return pulumix.Output[[]GetAccessRequestsAccessRequestCollectionItem]{
+		OutputState: i.ToGetAccessRequestsAccessRequestCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAccessRequestsAccessRequestCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetAccessRequestsAccessRequestCollectionItemOutput) ElementType() reflect.Type {
@@ -450,6 +511,12 @@ func (o GetAccessRequestsAccessRequestCollectionItemOutput) ToGetAccessRequestsA
 
 func (o GetAccessRequestsAccessRequestCollectionItemOutput) ToGetAccessRequestsAccessRequestCollectionItemOutputWithContext(ctx context.Context) GetAccessRequestsAccessRequestCollectionItemOutput {
 	return o
+}
+
+func (o GetAccessRequestsAccessRequestCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAccessRequestsAccessRequestCollectionItem] {
+	return pulumix.Output[GetAccessRequestsAccessRequestCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Summary comment by the operator creating the access request.
@@ -621,6 +688,12 @@ func (o GetAccessRequestsAccessRequestCollectionItemArrayOutput) ToGetAccessRequ
 	return o
 }
 
+func (o GetAccessRequestsAccessRequestCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAccessRequestsAccessRequestCollectionItem] {
+	return pulumix.Output[[]GetAccessRequestsAccessRequestCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetAccessRequestsAccessRequestCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAccessRequestsAccessRequestCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAccessRequestsAccessRequestCollectionItem {
 		return vs[0].([]GetAccessRequestsAccessRequestCollectionItem)[vs[1].(int)]
@@ -662,6 +735,12 @@ func (i GetAccessRequestsFilterArgs) ToGetAccessRequestsFilterOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetAccessRequestsFilterOutput)
 }
 
+func (i GetAccessRequestsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAccessRequestsFilter] {
+	return pulumix.Output[GetAccessRequestsFilter]{
+		OutputState: i.ToGetAccessRequestsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAccessRequestsFilterArrayInput is an input type that accepts GetAccessRequestsFilterArray and GetAccessRequestsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAccessRequestsFilterArrayInput` via:
 //
@@ -687,6 +766,12 @@ func (i GetAccessRequestsFilterArray) ToGetAccessRequestsFilterArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetAccessRequestsFilterArrayOutput)
 }
 
+func (i GetAccessRequestsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAccessRequestsFilter] {
+	return pulumix.Output[[]GetAccessRequestsFilter]{
+		OutputState: i.ToGetAccessRequestsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAccessRequestsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAccessRequestsFilterOutput) ElementType() reflect.Type {
@@ -699,6 +784,12 @@ func (o GetAccessRequestsFilterOutput) ToGetAccessRequestsFilterOutput() GetAcce
 
 func (o GetAccessRequestsFilterOutput) ToGetAccessRequestsFilterOutputWithContext(ctx context.Context) GetAccessRequestsFilterOutput {
 	return o
+}
+
+func (o GetAccessRequestsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAccessRequestsFilter] {
+	return pulumix.Output[GetAccessRequestsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAccessRequestsFilterOutput) Name() pulumi.StringOutput {
@@ -725,6 +816,12 @@ func (o GetAccessRequestsFilterArrayOutput) ToGetAccessRequestsFilterArrayOutput
 
 func (o GetAccessRequestsFilterArrayOutput) ToGetAccessRequestsFilterArrayOutputWithContext(ctx context.Context) GetAccessRequestsFilterArrayOutput {
 	return o
+}
+
+func (o GetAccessRequestsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAccessRequestsFilter] {
+	return pulumix.Output[[]GetAccessRequestsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAccessRequestsFilterArrayOutput) Index(i pulumi.IntInput) GetAccessRequestsFilterOutput {
@@ -770,6 +867,12 @@ func (i GetActionPropertyArgs) ToGetActionPropertyOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetActionPropertyOutput)
 }
 
+func (i GetActionPropertyArgs) ToOutput(ctx context.Context) pulumix.Output[GetActionProperty] {
+	return pulumix.Output[GetActionProperty]{
+		OutputState: i.ToGetActionPropertyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetActionPropertyArrayInput is an input type that accepts GetActionPropertyArray and GetActionPropertyArrayOutput values.
 // You can construct a concrete instance of `GetActionPropertyArrayInput` via:
 //
@@ -795,6 +898,12 @@ func (i GetActionPropertyArray) ToGetActionPropertyArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetActionPropertyArrayOutput)
 }
 
+func (i GetActionPropertyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetActionProperty] {
+	return pulumix.Output[[]GetActionProperty]{
+		OutputState: i.ToGetActionPropertyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetActionPropertyOutput struct{ *pulumi.OutputState }
 
 func (GetActionPropertyOutput) ElementType() reflect.Type {
@@ -807,6 +916,12 @@ func (o GetActionPropertyOutput) ToGetActionPropertyOutput() GetActionPropertyOu
 
 func (o GetActionPropertyOutput) ToGetActionPropertyOutputWithContext(ctx context.Context) GetActionPropertyOutput {
 	return o
+}
+
+func (o GetActionPropertyOutput) ToOutput(ctx context.Context) pulumix.Output[GetActionProperty] {
+	return pulumix.Output[GetActionProperty]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Name of the property
@@ -831,6 +946,12 @@ func (o GetActionPropertyArrayOutput) ToGetActionPropertyArrayOutput() GetAction
 
 func (o GetActionPropertyArrayOutput) ToGetActionPropertyArrayOutputWithContext(ctx context.Context) GetActionPropertyArrayOutput {
 	return o
+}
+
+func (o GetActionPropertyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetActionProperty] {
+	return pulumix.Output[[]GetActionProperty]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetActionPropertyArrayOutput) Index(i pulumi.IntInput) GetActionPropertyOutput {
@@ -876,6 +997,12 @@ func (i GetActionsFilterArgs) ToGetActionsFilterOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetActionsFilterOutput)
 }
 
+func (i GetActionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetActionsFilter] {
+	return pulumix.Output[GetActionsFilter]{
+		OutputState: i.ToGetActionsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetActionsFilterArrayInput is an input type that accepts GetActionsFilterArray and GetActionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetActionsFilterArrayInput` via:
 //
@@ -901,6 +1028,12 @@ func (i GetActionsFilterArray) ToGetActionsFilterArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetActionsFilterArrayOutput)
 }
 
+func (i GetActionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetActionsFilter] {
+	return pulumix.Output[[]GetActionsFilter]{
+		OutputState: i.ToGetActionsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetActionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetActionsFilterOutput) ElementType() reflect.Type {
@@ -913,6 +1046,12 @@ func (o GetActionsFilterOutput) ToGetActionsFilterOutput() GetActionsFilterOutpu
 
 func (o GetActionsFilterOutput) ToGetActionsFilterOutputWithContext(ctx context.Context) GetActionsFilterOutput {
 	return o
+}
+
+func (o GetActionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetActionsFilter] {
+	return pulumix.Output[GetActionsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A filter to return only resources that match the entire display name given.
@@ -940,6 +1079,12 @@ func (o GetActionsFilterArrayOutput) ToGetActionsFilterArrayOutput() GetActionsF
 
 func (o GetActionsFilterArrayOutput) ToGetActionsFilterArrayOutputWithContext(ctx context.Context) GetActionsFilterArrayOutput {
 	return o
+}
+
+func (o GetActionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetActionsFilter] {
+	return pulumix.Output[[]GetActionsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetActionsFilterArrayOutput) Index(i pulumi.IntInput) GetActionsFilterOutput {
@@ -979,6 +1124,12 @@ func (i GetActionsOperatorActionCollectionArgs) ToGetActionsOperatorActionCollec
 	return pulumi.ToOutputWithContext(ctx, i).(GetActionsOperatorActionCollectionOutput)
 }
 
+func (i GetActionsOperatorActionCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetActionsOperatorActionCollection] {
+	return pulumix.Output[GetActionsOperatorActionCollection]{
+		OutputState: i.ToGetActionsOperatorActionCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetActionsOperatorActionCollectionArrayInput is an input type that accepts GetActionsOperatorActionCollectionArray and GetActionsOperatorActionCollectionArrayOutput values.
 // You can construct a concrete instance of `GetActionsOperatorActionCollectionArrayInput` via:
 //
@@ -1004,6 +1155,12 @@ func (i GetActionsOperatorActionCollectionArray) ToGetActionsOperatorActionColle
 	return pulumi.ToOutputWithContext(ctx, i).(GetActionsOperatorActionCollectionArrayOutput)
 }
 
+func (i GetActionsOperatorActionCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetActionsOperatorActionCollection] {
+	return pulumix.Output[[]GetActionsOperatorActionCollection]{
+		OutputState: i.ToGetActionsOperatorActionCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetActionsOperatorActionCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetActionsOperatorActionCollectionOutput) ElementType() reflect.Type {
@@ -1016,6 +1173,12 @@ func (o GetActionsOperatorActionCollectionOutput) ToGetActionsOperatorActionColl
 
 func (o GetActionsOperatorActionCollectionOutput) ToGetActionsOperatorActionCollectionOutputWithContext(ctx context.Context) GetActionsOperatorActionCollectionOutput {
 	return o
+}
+
+func (o GetActionsOperatorActionCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetActionsOperatorActionCollection] {
+	return pulumix.Output[GetActionsOperatorActionCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetActionsOperatorActionCollectionOutput) Items() GetActionsOperatorActionCollectionItemArrayOutput {
@@ -1034,6 +1197,12 @@ func (o GetActionsOperatorActionCollectionArrayOutput) ToGetActionsOperatorActio
 
 func (o GetActionsOperatorActionCollectionArrayOutput) ToGetActionsOperatorActionCollectionArrayOutputWithContext(ctx context.Context) GetActionsOperatorActionCollectionArrayOutput {
 	return o
+}
+
+func (o GetActionsOperatorActionCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetActionsOperatorActionCollection] {
+	return pulumix.Output[[]GetActionsOperatorActionCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetActionsOperatorActionCollectionArrayOutput) Index(i pulumi.IntInput) GetActionsOperatorActionCollectionOutput {
@@ -1107,6 +1276,12 @@ func (i GetActionsOperatorActionCollectionItemArgs) ToGetActionsOperatorActionCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetActionsOperatorActionCollectionItemOutput)
 }
 
+func (i GetActionsOperatorActionCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetActionsOperatorActionCollectionItem] {
+	return pulumix.Output[GetActionsOperatorActionCollectionItem]{
+		OutputState: i.ToGetActionsOperatorActionCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetActionsOperatorActionCollectionItemArrayInput is an input type that accepts GetActionsOperatorActionCollectionItemArray and GetActionsOperatorActionCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetActionsOperatorActionCollectionItemArrayInput` via:
 //
@@ -1132,6 +1307,12 @@ func (i GetActionsOperatorActionCollectionItemArray) ToGetActionsOperatorActionC
 	return pulumi.ToOutputWithContext(ctx, i).(GetActionsOperatorActionCollectionItemArrayOutput)
 }
 
+func (i GetActionsOperatorActionCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetActionsOperatorActionCollectionItem] {
+	return pulumix.Output[[]GetActionsOperatorActionCollectionItem]{
+		OutputState: i.ToGetActionsOperatorActionCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetActionsOperatorActionCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetActionsOperatorActionCollectionItemOutput) ElementType() reflect.Type {
@@ -1144,6 +1325,12 @@ func (o GetActionsOperatorActionCollectionItemOutput) ToGetActionsOperatorAction
 
 func (o GetActionsOperatorActionCollectionItemOutput) ToGetActionsOperatorActionCollectionItemOutputWithContext(ctx context.Context) GetActionsOperatorActionCollectionItemOutput {
 	return o
+}
+
+func (o GetActionsOperatorActionCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetActionsOperatorActionCollectionItem] {
+	return pulumix.Output[GetActionsOperatorActionCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -1207,6 +1394,12 @@ func (o GetActionsOperatorActionCollectionItemArrayOutput) ToGetActionsOperatorA
 	return o
 }
 
+func (o GetActionsOperatorActionCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetActionsOperatorActionCollectionItem] {
+	return pulumix.Output[[]GetActionsOperatorActionCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetActionsOperatorActionCollectionItemArrayOutput) Index(i pulumi.IntInput) GetActionsOperatorActionCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetActionsOperatorActionCollectionItem {
 		return vs[0].([]GetActionsOperatorActionCollectionItem)[vs[1].(int)]
@@ -1250,6 +1443,12 @@ func (i GetActionsOperatorActionCollectionItemPropertyArgs) ToGetActionsOperator
 	return pulumi.ToOutputWithContext(ctx, i).(GetActionsOperatorActionCollectionItemPropertyOutput)
 }
 
+func (i GetActionsOperatorActionCollectionItemPropertyArgs) ToOutput(ctx context.Context) pulumix.Output[GetActionsOperatorActionCollectionItemProperty] {
+	return pulumix.Output[GetActionsOperatorActionCollectionItemProperty]{
+		OutputState: i.ToGetActionsOperatorActionCollectionItemPropertyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetActionsOperatorActionCollectionItemPropertyArrayInput is an input type that accepts GetActionsOperatorActionCollectionItemPropertyArray and GetActionsOperatorActionCollectionItemPropertyArrayOutput values.
 // You can construct a concrete instance of `GetActionsOperatorActionCollectionItemPropertyArrayInput` via:
 //
@@ -1275,6 +1474,12 @@ func (i GetActionsOperatorActionCollectionItemPropertyArray) ToGetActionsOperato
 	return pulumi.ToOutputWithContext(ctx, i).(GetActionsOperatorActionCollectionItemPropertyArrayOutput)
 }
 
+func (i GetActionsOperatorActionCollectionItemPropertyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetActionsOperatorActionCollectionItemProperty] {
+	return pulumix.Output[[]GetActionsOperatorActionCollectionItemProperty]{
+		OutputState: i.ToGetActionsOperatorActionCollectionItemPropertyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetActionsOperatorActionCollectionItemPropertyOutput struct{ *pulumi.OutputState }
 
 func (GetActionsOperatorActionCollectionItemPropertyOutput) ElementType() reflect.Type {
@@ -1287,6 +1492,12 @@ func (o GetActionsOperatorActionCollectionItemPropertyOutput) ToGetActionsOperat
 
 func (o GetActionsOperatorActionCollectionItemPropertyOutput) ToGetActionsOperatorActionCollectionItemPropertyOutputWithContext(ctx context.Context) GetActionsOperatorActionCollectionItemPropertyOutput {
 	return o
+}
+
+func (o GetActionsOperatorActionCollectionItemPropertyOutput) ToOutput(ctx context.Context) pulumix.Output[GetActionsOperatorActionCollectionItemProperty] {
+	return pulumix.Output[GetActionsOperatorActionCollectionItemProperty]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A filter to return only resources that match the entire display name given.
@@ -1311,6 +1522,12 @@ func (o GetActionsOperatorActionCollectionItemPropertyArrayOutput) ToGetActionsO
 
 func (o GetActionsOperatorActionCollectionItemPropertyArrayOutput) ToGetActionsOperatorActionCollectionItemPropertyArrayOutputWithContext(ctx context.Context) GetActionsOperatorActionCollectionItemPropertyArrayOutput {
 	return o
+}
+
+func (o GetActionsOperatorActionCollectionItemPropertyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetActionsOperatorActionCollectionItemProperty] {
+	return pulumix.Output[[]GetActionsOperatorActionCollectionItemProperty]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetActionsOperatorActionCollectionItemPropertyArrayOutput) Index(i pulumi.IntInput) GetActionsOperatorActionCollectionItemPropertyOutput {
@@ -1354,6 +1571,12 @@ func (i GetControlAssignmentsFilterArgs) ToGetControlAssignmentsFilterOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetControlAssignmentsFilterOutput)
 }
 
+func (i GetControlAssignmentsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetControlAssignmentsFilter] {
+	return pulumix.Output[GetControlAssignmentsFilter]{
+		OutputState: i.ToGetControlAssignmentsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetControlAssignmentsFilterArrayInput is an input type that accepts GetControlAssignmentsFilterArray and GetControlAssignmentsFilterArrayOutput values.
 // You can construct a concrete instance of `GetControlAssignmentsFilterArrayInput` via:
 //
@@ -1379,6 +1602,12 @@ func (i GetControlAssignmentsFilterArray) ToGetControlAssignmentsFilterArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetControlAssignmentsFilterArrayOutput)
 }
 
+func (i GetControlAssignmentsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetControlAssignmentsFilter] {
+	return pulumix.Output[[]GetControlAssignmentsFilter]{
+		OutputState: i.ToGetControlAssignmentsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetControlAssignmentsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetControlAssignmentsFilterOutput) ElementType() reflect.Type {
@@ -1391,6 +1620,12 @@ func (o GetControlAssignmentsFilterOutput) ToGetControlAssignmentsFilterOutput()
 
 func (o GetControlAssignmentsFilterOutput) ToGetControlAssignmentsFilterOutputWithContext(ctx context.Context) GetControlAssignmentsFilterOutput {
 	return o
+}
+
+func (o GetControlAssignmentsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetControlAssignmentsFilter] {
+	return pulumix.Output[GetControlAssignmentsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetControlAssignmentsFilterOutput) Name() pulumi.StringOutput {
@@ -1417,6 +1652,12 @@ func (o GetControlAssignmentsFilterArrayOutput) ToGetControlAssignmentsFilterArr
 
 func (o GetControlAssignmentsFilterArrayOutput) ToGetControlAssignmentsFilterArrayOutputWithContext(ctx context.Context) GetControlAssignmentsFilterArrayOutput {
 	return o
+}
+
+func (o GetControlAssignmentsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetControlAssignmentsFilter] {
+	return pulumix.Output[[]GetControlAssignmentsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetControlAssignmentsFilterArrayOutput) Index(i pulumi.IntInput) GetControlAssignmentsFilterOutput {
@@ -1456,6 +1697,12 @@ func (i GetControlAssignmentsOperatorControlAssignmentCollectionArgs) ToGetContr
 	return pulumi.ToOutputWithContext(ctx, i).(GetControlAssignmentsOperatorControlAssignmentCollectionOutput)
 }
 
+func (i GetControlAssignmentsOperatorControlAssignmentCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetControlAssignmentsOperatorControlAssignmentCollection] {
+	return pulumix.Output[GetControlAssignmentsOperatorControlAssignmentCollection]{
+		OutputState: i.ToGetControlAssignmentsOperatorControlAssignmentCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetControlAssignmentsOperatorControlAssignmentCollectionArrayInput is an input type that accepts GetControlAssignmentsOperatorControlAssignmentCollectionArray and GetControlAssignmentsOperatorControlAssignmentCollectionArrayOutput values.
 // You can construct a concrete instance of `GetControlAssignmentsOperatorControlAssignmentCollectionArrayInput` via:
 //
@@ -1481,6 +1728,12 @@ func (i GetControlAssignmentsOperatorControlAssignmentCollectionArray) ToGetCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetControlAssignmentsOperatorControlAssignmentCollectionArrayOutput)
 }
 
+func (i GetControlAssignmentsOperatorControlAssignmentCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetControlAssignmentsOperatorControlAssignmentCollection] {
+	return pulumix.Output[[]GetControlAssignmentsOperatorControlAssignmentCollection]{
+		OutputState: i.ToGetControlAssignmentsOperatorControlAssignmentCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetControlAssignmentsOperatorControlAssignmentCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetControlAssignmentsOperatorControlAssignmentCollectionOutput) ElementType() reflect.Type {
@@ -1493,6 +1746,12 @@ func (o GetControlAssignmentsOperatorControlAssignmentCollectionOutput) ToGetCon
 
 func (o GetControlAssignmentsOperatorControlAssignmentCollectionOutput) ToGetControlAssignmentsOperatorControlAssignmentCollectionOutputWithContext(ctx context.Context) GetControlAssignmentsOperatorControlAssignmentCollectionOutput {
 	return o
+}
+
+func (o GetControlAssignmentsOperatorControlAssignmentCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetControlAssignmentsOperatorControlAssignmentCollection] {
+	return pulumix.Output[GetControlAssignmentsOperatorControlAssignmentCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetControlAssignmentsOperatorControlAssignmentCollectionOutput) Items() GetControlAssignmentsOperatorControlAssignmentCollectionItemArrayOutput {
@@ -1513,6 +1772,12 @@ func (o GetControlAssignmentsOperatorControlAssignmentCollectionArrayOutput) ToG
 
 func (o GetControlAssignmentsOperatorControlAssignmentCollectionArrayOutput) ToGetControlAssignmentsOperatorControlAssignmentCollectionArrayOutputWithContext(ctx context.Context) GetControlAssignmentsOperatorControlAssignmentCollectionArrayOutput {
 	return o
+}
+
+func (o GetControlAssignmentsOperatorControlAssignmentCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetControlAssignmentsOperatorControlAssignmentCollection] {
+	return pulumix.Output[[]GetControlAssignmentsOperatorControlAssignmentCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetControlAssignmentsOperatorControlAssignmentCollectionArrayOutput) Index(i pulumi.IntInput) GetControlAssignmentsOperatorControlAssignmentCollectionOutput {
@@ -1662,6 +1927,12 @@ func (i GetControlAssignmentsOperatorControlAssignmentCollectionItemArgs) ToGetC
 	return pulumi.ToOutputWithContext(ctx, i).(GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput)
 }
 
+func (i GetControlAssignmentsOperatorControlAssignmentCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetControlAssignmentsOperatorControlAssignmentCollectionItem] {
+	return pulumix.Output[GetControlAssignmentsOperatorControlAssignmentCollectionItem]{
+		OutputState: i.ToGetControlAssignmentsOperatorControlAssignmentCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetControlAssignmentsOperatorControlAssignmentCollectionItemArrayInput is an input type that accepts GetControlAssignmentsOperatorControlAssignmentCollectionItemArray and GetControlAssignmentsOperatorControlAssignmentCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetControlAssignmentsOperatorControlAssignmentCollectionItemArrayInput` via:
 //
@@ -1687,6 +1958,12 @@ func (i GetControlAssignmentsOperatorControlAssignmentCollectionItemArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetControlAssignmentsOperatorControlAssignmentCollectionItemArrayOutput)
 }
 
+func (i GetControlAssignmentsOperatorControlAssignmentCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetControlAssignmentsOperatorControlAssignmentCollectionItem] {
+	return pulumix.Output[[]GetControlAssignmentsOperatorControlAssignmentCollectionItem]{
+		OutputState: i.ToGetControlAssignmentsOperatorControlAssignmentCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) ElementType() reflect.Type {
@@ -1699,6 +1976,12 @@ func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) ToGe
 
 func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) ToGetControlAssignmentsOperatorControlAssignmentCollectionItemOutputWithContext(ctx context.Context) GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput {
 	return o
+}
+
+func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetControlAssignmentsOperatorControlAssignmentCollectionItem] {
+	return pulumix.Output[GetControlAssignmentsOperatorControlAssignmentCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the user who created this operator control assignment.
@@ -1877,6 +2160,12 @@ func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemArrayOutput)
 	return o
 }
 
+func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetControlAssignmentsOperatorControlAssignmentCollectionItem] {
+	return pulumix.Output[[]GetControlAssignmentsOperatorControlAssignmentCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemArrayOutput) Index(i pulumi.IntInput) GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetControlAssignmentsOperatorControlAssignmentCollectionItem {
 		return vs[0].([]GetControlAssignmentsOperatorControlAssignmentCollectionItem)[vs[1].(int)]
@@ -1918,6 +2207,12 @@ func (i GetControlsFilterArgs) ToGetControlsFilterOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetControlsFilterOutput)
 }
 
+func (i GetControlsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetControlsFilter] {
+	return pulumix.Output[GetControlsFilter]{
+		OutputState: i.ToGetControlsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetControlsFilterArrayInput is an input type that accepts GetControlsFilterArray and GetControlsFilterArrayOutput values.
 // You can construct a concrete instance of `GetControlsFilterArrayInput` via:
 //
@@ -1943,6 +2238,12 @@ func (i GetControlsFilterArray) ToGetControlsFilterArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetControlsFilterArrayOutput)
 }
 
+func (i GetControlsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetControlsFilter] {
+	return pulumix.Output[[]GetControlsFilter]{
+		OutputState: i.ToGetControlsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetControlsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetControlsFilterOutput) ElementType() reflect.Type {
@@ -1955,6 +2256,12 @@ func (o GetControlsFilterOutput) ToGetControlsFilterOutput() GetControlsFilterOu
 
 func (o GetControlsFilterOutput) ToGetControlsFilterOutputWithContext(ctx context.Context) GetControlsFilterOutput {
 	return o
+}
+
+func (o GetControlsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetControlsFilter] {
+	return pulumix.Output[GetControlsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetControlsFilterOutput) Name() pulumi.StringOutput {
@@ -1981,6 +2288,12 @@ func (o GetControlsFilterArrayOutput) ToGetControlsFilterArrayOutput() GetContro
 
 func (o GetControlsFilterArrayOutput) ToGetControlsFilterArrayOutputWithContext(ctx context.Context) GetControlsFilterArrayOutput {
 	return o
+}
+
+func (o GetControlsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetControlsFilter] {
+	return pulumix.Output[[]GetControlsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetControlsFilterArrayOutput) Index(i pulumi.IntInput) GetControlsFilterOutput {
@@ -2020,6 +2333,12 @@ func (i GetControlsOperatorControlCollectionArgs) ToGetControlsOperatorControlCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetControlsOperatorControlCollectionOutput)
 }
 
+func (i GetControlsOperatorControlCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetControlsOperatorControlCollection] {
+	return pulumix.Output[GetControlsOperatorControlCollection]{
+		OutputState: i.ToGetControlsOperatorControlCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetControlsOperatorControlCollectionArrayInput is an input type that accepts GetControlsOperatorControlCollectionArray and GetControlsOperatorControlCollectionArrayOutput values.
 // You can construct a concrete instance of `GetControlsOperatorControlCollectionArrayInput` via:
 //
@@ -2045,6 +2364,12 @@ func (i GetControlsOperatorControlCollectionArray) ToGetControlsOperatorControlC
 	return pulumi.ToOutputWithContext(ctx, i).(GetControlsOperatorControlCollectionArrayOutput)
 }
 
+func (i GetControlsOperatorControlCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetControlsOperatorControlCollection] {
+	return pulumix.Output[[]GetControlsOperatorControlCollection]{
+		OutputState: i.ToGetControlsOperatorControlCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetControlsOperatorControlCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetControlsOperatorControlCollectionOutput) ElementType() reflect.Type {
@@ -2057,6 +2382,12 @@ func (o GetControlsOperatorControlCollectionOutput) ToGetControlsOperatorControl
 
 func (o GetControlsOperatorControlCollectionOutput) ToGetControlsOperatorControlCollectionOutputWithContext(ctx context.Context) GetControlsOperatorControlCollectionOutput {
 	return o
+}
+
+func (o GetControlsOperatorControlCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetControlsOperatorControlCollection] {
+	return pulumix.Output[GetControlsOperatorControlCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetControlsOperatorControlCollectionOutput) Items() GetControlsOperatorControlCollectionItemArrayOutput {
@@ -2077,6 +2408,12 @@ func (o GetControlsOperatorControlCollectionArrayOutput) ToGetControlsOperatorCo
 
 func (o GetControlsOperatorControlCollectionArrayOutput) ToGetControlsOperatorControlCollectionArrayOutputWithContext(ctx context.Context) GetControlsOperatorControlCollectionArrayOutput {
 	return o
+}
+
+func (o GetControlsOperatorControlCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetControlsOperatorControlCollection] {
+	return pulumix.Output[[]GetControlsOperatorControlCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetControlsOperatorControlCollectionArrayOutput) Index(i pulumi.IntInput) GetControlsOperatorControlCollectionOutput {
@@ -2194,6 +2531,12 @@ func (i GetControlsOperatorControlCollectionItemArgs) ToGetControlsOperatorContr
 	return pulumi.ToOutputWithContext(ctx, i).(GetControlsOperatorControlCollectionItemOutput)
 }
 
+func (i GetControlsOperatorControlCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetControlsOperatorControlCollectionItem] {
+	return pulumix.Output[GetControlsOperatorControlCollectionItem]{
+		OutputState: i.ToGetControlsOperatorControlCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetControlsOperatorControlCollectionItemArrayInput is an input type that accepts GetControlsOperatorControlCollectionItemArray and GetControlsOperatorControlCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetControlsOperatorControlCollectionItemArrayInput` via:
 //
@@ -2219,6 +2562,12 @@ func (i GetControlsOperatorControlCollectionItemArray) ToGetControlsOperatorCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetControlsOperatorControlCollectionItemArrayOutput)
 }
 
+func (i GetControlsOperatorControlCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetControlsOperatorControlCollectionItem] {
+	return pulumix.Output[[]GetControlsOperatorControlCollectionItem]{
+		OutputState: i.ToGetControlsOperatorControlCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetControlsOperatorControlCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetControlsOperatorControlCollectionItemOutput) ElementType() reflect.Type {
@@ -2231,6 +2580,12 @@ func (o GetControlsOperatorControlCollectionItemOutput) ToGetControlsOperatorCon
 
 func (o GetControlsOperatorControlCollectionItemOutput) ToGetControlsOperatorControlCollectionItemOutputWithContext(ctx context.Context) GetControlsOperatorControlCollectionItemOutput {
 	return o
+}
+
+func (o GetControlsOperatorControlCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetControlsOperatorControlCollectionItem] {
+	return pulumix.Output[GetControlsOperatorControlCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // List of operator actions that need explicit approval. Any operator action not in the pre-approved list will require explicit approval. Access requests associated with a resource governed by this operator control will be require explicit approval if the access request contains any operator action in this list.
@@ -2345,6 +2700,12 @@ func (o GetControlsOperatorControlCollectionItemArrayOutput) ToGetControlsOperat
 
 func (o GetControlsOperatorControlCollectionItemArrayOutput) ToGetControlsOperatorControlCollectionItemArrayOutputWithContext(ctx context.Context) GetControlsOperatorControlCollectionItemArrayOutput {
 	return o
+}
+
+func (o GetControlsOperatorControlCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetControlsOperatorControlCollectionItem] {
+	return pulumix.Output[[]GetControlsOperatorControlCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetControlsOperatorControlCollectionItemArrayOutput) Index(i pulumi.IntInput) GetControlsOperatorControlCollectionItemOutput {

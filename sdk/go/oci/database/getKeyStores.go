@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Key Stores in Oracle Cloud Infrastructure Database service.
@@ -105,6 +106,12 @@ func (o GetKeyStoresResultOutput) ToGetKeyStoresResultOutput() GetKeyStoresResul
 
 func (o GetKeyStoresResultOutput) ToGetKeyStoresResultOutputWithContext(ctx context.Context) GetKeyStoresResultOutput {
 	return o
+}
+
+func (o GetKeyStoresResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetKeyStoresResult] {
+	return pulumix.Output[GetKeyStoresResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

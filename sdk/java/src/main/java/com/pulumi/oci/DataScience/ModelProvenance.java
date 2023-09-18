@@ -69,7 +69,7 @@ public class ModelProvenance extends com.pulumi.resources.CustomResource {
      * (Updatable) For model reproducibility purposes. Branch of the git repository associated with model training.
      * 
      */
-    @Export(name="gitBranch", type=String.class, parameters={})
+    @Export(name="gitBranch", refs={String.class}, tree="[0]")
     private Output<String> gitBranch;
 
     /**
@@ -83,7 +83,7 @@ public class ModelProvenance extends com.pulumi.resources.CustomResource {
      * (Updatable) For model reproducibility purposes. Commit ID of the git repository associated with model training.
      * 
      */
-    @Export(name="gitCommit", type=String.class, parameters={})
+    @Export(name="gitCommit", refs={String.class}, tree="[0]")
     private Output<String> gitCommit;
 
     /**
@@ -97,7 +97,7 @@ public class ModelProvenance extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
      * 
      */
-    @Export(name="modelId", type=String.class, parameters={})
+    @Export(name="modelId", refs={String.class}, tree="[0]")
     private Output<String> modelId;
 
     /**
@@ -111,7 +111,7 @@ public class ModelProvenance extends com.pulumi.resources.CustomResource {
      * (Updatable) For model reproducibility purposes. URL of the git repository associated with model training.
      * 
      */
-    @Export(name="repositoryUrl", type=String.class, parameters={})
+    @Export(name="repositoryUrl", refs={String.class}, tree="[0]")
     private Output<String> repositoryUrl;
 
     /**
@@ -125,7 +125,7 @@ public class ModelProvenance extends com.pulumi.resources.CustomResource {
      * (Updatable) For model reproducibility purposes. Path to model artifacts.
      * 
      */
-    @Export(name="scriptDir", type=String.class, parameters={})
+    @Export(name="scriptDir", refs={String.class}, tree="[0]")
     private Output<String> scriptDir;
 
     /**
@@ -139,7 +139,7 @@ public class ModelProvenance extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a training session(Job or NotebookSession) in which the model was trained. It is used for model reproducibility purposes.
      * 
      */
-    @Export(name="trainingId", type=String.class, parameters={})
+    @Export(name="trainingId", refs={String.class}, tree="[0]")
     private Output<String> trainingId;
 
     /**
@@ -156,7 +156,7 @@ public class ModelProvenance extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="trainingScript", type=String.class, parameters={})
+    @Export(name="trainingScript", refs={String.class}, tree="[0]")
     private Output<String> trainingScript;
 
     /**

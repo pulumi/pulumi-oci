@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -46,6 +47,12 @@ func (i ManagedInstanceAutonomouseArgs) ToManagedInstanceAutonomouseOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceAutonomouseOutput)
 }
 
+func (i ManagedInstanceAutonomouseArgs) ToOutput(ctx context.Context) pulumix.Output[ManagedInstanceAutonomouse] {
+	return pulumix.Output[ManagedInstanceAutonomouse]{
+		OutputState: i.ToManagedInstanceAutonomouseOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ManagedInstanceAutonomouseArrayInput is an input type that accepts ManagedInstanceAutonomouseArray and ManagedInstanceAutonomouseArrayOutput values.
 // You can construct a concrete instance of `ManagedInstanceAutonomouseArrayInput` via:
 //
@@ -71,6 +78,12 @@ func (i ManagedInstanceAutonomouseArray) ToManagedInstanceAutonomouseArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceAutonomouseArrayOutput)
 }
 
+func (i ManagedInstanceAutonomouseArray) ToOutput(ctx context.Context) pulumix.Output[[]ManagedInstanceAutonomouse] {
+	return pulumix.Output[[]ManagedInstanceAutonomouse]{
+		OutputState: i.ToManagedInstanceAutonomouseArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ManagedInstanceAutonomouseOutput struct{ *pulumi.OutputState }
 
 func (ManagedInstanceAutonomouseOutput) ElementType() reflect.Type {
@@ -83,6 +96,12 @@ func (o ManagedInstanceAutonomouseOutput) ToManagedInstanceAutonomouseOutput() M
 
 func (o ManagedInstanceAutonomouseOutput) ToManagedInstanceAutonomouseOutputWithContext(ctx context.Context) ManagedInstanceAutonomouseOutput {
 	return o
+}
+
+func (o ManagedInstanceAutonomouseOutput) ToOutput(ctx context.Context) pulumix.Output[ManagedInstanceAutonomouse] {
+	return pulumix.Output[ManagedInstanceAutonomouse]{
+		OutputState: o.OutputState,
+	}
 }
 
 // True if daily updates are enabled
@@ -102,6 +121,12 @@ func (o ManagedInstanceAutonomouseArrayOutput) ToManagedInstanceAutonomouseArray
 
 func (o ManagedInstanceAutonomouseArrayOutput) ToManagedInstanceAutonomouseArrayOutputWithContext(ctx context.Context) ManagedInstanceAutonomouseArrayOutput {
 	return o
+}
+
+func (o ManagedInstanceAutonomouseArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ManagedInstanceAutonomouse] {
+	return pulumix.Output[[]ManagedInstanceAutonomouse]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ManagedInstanceAutonomouseArrayOutput) Index(i pulumi.IntInput) ManagedInstanceAutonomouseOutput {
@@ -147,6 +172,12 @@ func (i ManagedInstanceChildSoftwareSourceArgs) ToManagedInstanceChildSoftwareSo
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceChildSoftwareSourceOutput)
 }
 
+func (i ManagedInstanceChildSoftwareSourceArgs) ToOutput(ctx context.Context) pulumix.Output[ManagedInstanceChildSoftwareSource] {
+	return pulumix.Output[ManagedInstanceChildSoftwareSource]{
+		OutputState: i.ToManagedInstanceChildSoftwareSourceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ManagedInstanceChildSoftwareSourceArrayInput is an input type that accepts ManagedInstanceChildSoftwareSourceArray and ManagedInstanceChildSoftwareSourceArrayOutput values.
 // You can construct a concrete instance of `ManagedInstanceChildSoftwareSourceArrayInput` via:
 //
@@ -172,6 +203,12 @@ func (i ManagedInstanceChildSoftwareSourceArray) ToManagedInstanceChildSoftwareS
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceChildSoftwareSourceArrayOutput)
 }
 
+func (i ManagedInstanceChildSoftwareSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]ManagedInstanceChildSoftwareSource] {
+	return pulumix.Output[[]ManagedInstanceChildSoftwareSource]{
+		OutputState: i.ToManagedInstanceChildSoftwareSourceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ManagedInstanceChildSoftwareSourceOutput struct{ *pulumi.OutputState }
 
 func (ManagedInstanceChildSoftwareSourceOutput) ElementType() reflect.Type {
@@ -184,6 +221,12 @@ func (o ManagedInstanceChildSoftwareSourceOutput) ToManagedInstanceChildSoftware
 
 func (o ManagedInstanceChildSoftwareSourceOutput) ToManagedInstanceChildSoftwareSourceOutputWithContext(ctx context.Context) ManagedInstanceChildSoftwareSourceOutput {
 	return o
+}
+
+func (o ManagedInstanceChildSoftwareSourceOutput) ToOutput(ctx context.Context) pulumix.Output[ManagedInstanceChildSoftwareSource] {
+	return pulumix.Output[ManagedInstanceChildSoftwareSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 // software source identifier
@@ -208,6 +251,12 @@ func (o ManagedInstanceChildSoftwareSourceArrayOutput) ToManagedInstanceChildSof
 
 func (o ManagedInstanceChildSoftwareSourceArrayOutput) ToManagedInstanceChildSoftwareSourceArrayOutputWithContext(ctx context.Context) ManagedInstanceChildSoftwareSourceArrayOutput {
 	return o
+}
+
+func (o ManagedInstanceChildSoftwareSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ManagedInstanceChildSoftwareSource] {
+	return pulumix.Output[[]ManagedInstanceChildSoftwareSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ManagedInstanceChildSoftwareSourceArrayOutput) Index(i pulumi.IntInput) ManagedInstanceChildSoftwareSourceOutput {
@@ -253,6 +302,12 @@ func (i ManagedInstanceGroupManagedInstanceArgs) ToManagedInstanceGroupManagedIn
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceGroupManagedInstanceOutput)
 }
 
+func (i ManagedInstanceGroupManagedInstanceArgs) ToOutput(ctx context.Context) pulumix.Output[ManagedInstanceGroupManagedInstance] {
+	return pulumix.Output[ManagedInstanceGroupManagedInstance]{
+		OutputState: i.ToManagedInstanceGroupManagedInstanceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ManagedInstanceGroupManagedInstanceArrayInput is an input type that accepts ManagedInstanceGroupManagedInstanceArray and ManagedInstanceGroupManagedInstanceArrayOutput values.
 // You can construct a concrete instance of `ManagedInstanceGroupManagedInstanceArrayInput` via:
 //
@@ -278,6 +333,12 @@ func (i ManagedInstanceGroupManagedInstanceArray) ToManagedInstanceGroupManagedI
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceGroupManagedInstanceArrayOutput)
 }
 
+func (i ManagedInstanceGroupManagedInstanceArray) ToOutput(ctx context.Context) pulumix.Output[[]ManagedInstanceGroupManagedInstance] {
+	return pulumix.Output[[]ManagedInstanceGroupManagedInstance]{
+		OutputState: i.ToManagedInstanceGroupManagedInstanceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ManagedInstanceGroupManagedInstanceOutput struct{ *pulumi.OutputState }
 
 func (ManagedInstanceGroupManagedInstanceOutput) ElementType() reflect.Type {
@@ -290,6 +351,12 @@ func (o ManagedInstanceGroupManagedInstanceOutput) ToManagedInstanceGroupManaged
 
 func (o ManagedInstanceGroupManagedInstanceOutput) ToManagedInstanceGroupManagedInstanceOutputWithContext(ctx context.Context) ManagedInstanceGroupManagedInstanceOutput {
 	return o
+}
+
+func (o ManagedInstanceGroupManagedInstanceOutput) ToOutput(ctx context.Context) pulumix.Output[ManagedInstanceGroupManagedInstance] {
+	return pulumix.Output[ManagedInstanceGroupManagedInstance]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Managed Instance Group identifier
@@ -314,6 +381,12 @@ func (o ManagedInstanceGroupManagedInstanceArrayOutput) ToManagedInstanceGroupMa
 
 func (o ManagedInstanceGroupManagedInstanceArrayOutput) ToManagedInstanceGroupManagedInstanceArrayOutputWithContext(ctx context.Context) ManagedInstanceGroupManagedInstanceArrayOutput {
 	return o
+}
+
+func (o ManagedInstanceGroupManagedInstanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ManagedInstanceGroupManagedInstance] {
+	return pulumix.Output[[]ManagedInstanceGroupManagedInstance]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ManagedInstanceGroupManagedInstanceArrayOutput) Index(i pulumi.IntInput) ManagedInstanceGroupManagedInstanceOutput {
@@ -359,6 +432,12 @@ func (i ManagedInstanceManagedInstanceGroupArgs) ToManagedInstanceManagedInstanc
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceManagedInstanceGroupOutput)
 }
 
+func (i ManagedInstanceManagedInstanceGroupArgs) ToOutput(ctx context.Context) pulumix.Output[ManagedInstanceManagedInstanceGroup] {
+	return pulumix.Output[ManagedInstanceManagedInstanceGroup]{
+		OutputState: i.ToManagedInstanceManagedInstanceGroupOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ManagedInstanceManagedInstanceGroupArrayInput is an input type that accepts ManagedInstanceManagedInstanceGroupArray and ManagedInstanceManagedInstanceGroupArrayOutput values.
 // You can construct a concrete instance of `ManagedInstanceManagedInstanceGroupArrayInput` via:
 //
@@ -384,6 +463,12 @@ func (i ManagedInstanceManagedInstanceGroupArray) ToManagedInstanceManagedInstan
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceManagedInstanceGroupArrayOutput)
 }
 
+func (i ManagedInstanceManagedInstanceGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]ManagedInstanceManagedInstanceGroup] {
+	return pulumix.Output[[]ManagedInstanceManagedInstanceGroup]{
+		OutputState: i.ToManagedInstanceManagedInstanceGroupArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ManagedInstanceManagedInstanceGroupOutput struct{ *pulumi.OutputState }
 
 func (ManagedInstanceManagedInstanceGroupOutput) ElementType() reflect.Type {
@@ -396,6 +481,12 @@ func (o ManagedInstanceManagedInstanceGroupOutput) ToManagedInstanceManagedInsta
 
 func (o ManagedInstanceManagedInstanceGroupOutput) ToManagedInstanceManagedInstanceGroupOutputWithContext(ctx context.Context) ManagedInstanceManagedInstanceGroupOutput {
 	return o
+}
+
+func (o ManagedInstanceManagedInstanceGroupOutput) ToOutput(ctx context.Context) pulumix.Output[ManagedInstanceManagedInstanceGroup] {
+	return pulumix.Output[ManagedInstanceManagedInstanceGroup]{
+		OutputState: o.OutputState,
+	}
 }
 
 // User friendly name
@@ -420,6 +511,12 @@ func (o ManagedInstanceManagedInstanceGroupArrayOutput) ToManagedInstanceManaged
 
 func (o ManagedInstanceManagedInstanceGroupArrayOutput) ToManagedInstanceManagedInstanceGroupArrayOutputWithContext(ctx context.Context) ManagedInstanceManagedInstanceGroupArrayOutput {
 	return o
+}
+
+func (o ManagedInstanceManagedInstanceGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ManagedInstanceManagedInstanceGroup] {
+	return pulumix.Output[[]ManagedInstanceManagedInstanceGroup]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ManagedInstanceManagedInstanceGroupArrayOutput) Index(i pulumi.IntInput) ManagedInstanceManagedInstanceGroupOutput {
@@ -471,6 +568,12 @@ func (i ManagedInstanceManagementChildSoftwareSourceArgs) ToManagedInstanceManag
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceManagementChildSoftwareSourceOutput)
 }
 
+func (i ManagedInstanceManagementChildSoftwareSourceArgs) ToOutput(ctx context.Context) pulumix.Output[ManagedInstanceManagementChildSoftwareSource] {
+	return pulumix.Output[ManagedInstanceManagementChildSoftwareSource]{
+		OutputState: i.ToManagedInstanceManagementChildSoftwareSourceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ManagedInstanceManagementChildSoftwareSourceArrayInput is an input type that accepts ManagedInstanceManagementChildSoftwareSourceArray and ManagedInstanceManagementChildSoftwareSourceArrayOutput values.
 // You can construct a concrete instance of `ManagedInstanceManagementChildSoftwareSourceArrayInput` via:
 //
@@ -496,6 +599,12 @@ func (i ManagedInstanceManagementChildSoftwareSourceArray) ToManagedInstanceMana
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceManagementChildSoftwareSourceArrayOutput)
 }
 
+func (i ManagedInstanceManagementChildSoftwareSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]ManagedInstanceManagementChildSoftwareSource] {
+	return pulumix.Output[[]ManagedInstanceManagementChildSoftwareSource]{
+		OutputState: i.ToManagedInstanceManagementChildSoftwareSourceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ManagedInstanceManagementChildSoftwareSourceOutput struct{ *pulumi.OutputState }
 
 func (ManagedInstanceManagementChildSoftwareSourceOutput) ElementType() reflect.Type {
@@ -508,6 +617,12 @@ func (o ManagedInstanceManagementChildSoftwareSourceOutput) ToManagedInstanceMan
 
 func (o ManagedInstanceManagementChildSoftwareSourceOutput) ToManagedInstanceManagementChildSoftwareSourceOutputWithContext(ctx context.Context) ManagedInstanceManagementChildSoftwareSourceOutput {
 	return o
+}
+
+func (o ManagedInstanceManagementChildSoftwareSourceOutput) ToOutput(ctx context.Context) pulumix.Output[ManagedInstanceManagementChildSoftwareSource] {
+	return pulumix.Output[ManagedInstanceManagementChildSoftwareSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 // software source identifier
@@ -535,6 +650,12 @@ func (o ManagedInstanceManagementChildSoftwareSourceArrayOutput) ToManagedInstan
 
 func (o ManagedInstanceManagementChildSoftwareSourceArrayOutput) ToManagedInstanceManagementChildSoftwareSourceArrayOutputWithContext(ctx context.Context) ManagedInstanceManagementChildSoftwareSourceArrayOutput {
 	return o
+}
+
+func (o ManagedInstanceManagementChildSoftwareSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ManagedInstanceManagementChildSoftwareSource] {
+	return pulumix.Output[[]ManagedInstanceManagementChildSoftwareSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ManagedInstanceManagementChildSoftwareSourceArrayOutput) Index(i pulumi.IntInput) ManagedInstanceManagementChildSoftwareSourceOutput {
@@ -580,6 +701,12 @@ func (i ManagedInstanceManagementManagedInstanceGroupArgs) ToManagedInstanceMana
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceManagementManagedInstanceGroupOutput)
 }
 
+func (i ManagedInstanceManagementManagedInstanceGroupArgs) ToOutput(ctx context.Context) pulumix.Output[ManagedInstanceManagementManagedInstanceGroup] {
+	return pulumix.Output[ManagedInstanceManagementManagedInstanceGroup]{
+		OutputState: i.ToManagedInstanceManagementManagedInstanceGroupOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ManagedInstanceManagementManagedInstanceGroupArrayInput is an input type that accepts ManagedInstanceManagementManagedInstanceGroupArray and ManagedInstanceManagementManagedInstanceGroupArrayOutput values.
 // You can construct a concrete instance of `ManagedInstanceManagementManagedInstanceGroupArrayInput` via:
 //
@@ -605,6 +732,12 @@ func (i ManagedInstanceManagementManagedInstanceGroupArray) ToManagedInstanceMan
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceManagementManagedInstanceGroupArrayOutput)
 }
 
+func (i ManagedInstanceManagementManagedInstanceGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]ManagedInstanceManagementManagedInstanceGroup] {
+	return pulumix.Output[[]ManagedInstanceManagementManagedInstanceGroup]{
+		OutputState: i.ToManagedInstanceManagementManagedInstanceGroupArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ManagedInstanceManagementManagedInstanceGroupOutput struct{ *pulumi.OutputState }
 
 func (ManagedInstanceManagementManagedInstanceGroupOutput) ElementType() reflect.Type {
@@ -617,6 +750,12 @@ func (o ManagedInstanceManagementManagedInstanceGroupOutput) ToManagedInstanceMa
 
 func (o ManagedInstanceManagementManagedInstanceGroupOutput) ToManagedInstanceManagementManagedInstanceGroupOutputWithContext(ctx context.Context) ManagedInstanceManagementManagedInstanceGroupOutput {
 	return o
+}
+
+func (o ManagedInstanceManagementManagedInstanceGroupOutput) ToOutput(ctx context.Context) pulumix.Output[ManagedInstanceManagementManagedInstanceGroup] {
+	return pulumix.Output[ManagedInstanceManagementManagedInstanceGroup]{
+		OutputState: o.OutputState,
+	}
 }
 
 // User friendly name
@@ -641,6 +780,12 @@ func (o ManagedInstanceManagementManagedInstanceGroupArrayOutput) ToManagedInsta
 
 func (o ManagedInstanceManagementManagedInstanceGroupArrayOutput) ToManagedInstanceManagementManagedInstanceGroupArrayOutputWithContext(ctx context.Context) ManagedInstanceManagementManagedInstanceGroupArrayOutput {
 	return o
+}
+
+func (o ManagedInstanceManagementManagedInstanceGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ManagedInstanceManagementManagedInstanceGroup] {
+	return pulumix.Output[[]ManagedInstanceManagementManagedInstanceGroup]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ManagedInstanceManagementManagedInstanceGroupArrayOutput) Index(i pulumi.IntInput) ManagedInstanceManagementManagedInstanceGroupOutput {
@@ -692,6 +837,12 @@ func (i ManagedInstanceManagementParentSoftwareSourceArgs) ToManagedInstanceMana
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceManagementParentSoftwareSourceOutput)
 }
 
+func (i ManagedInstanceManagementParentSoftwareSourceArgs) ToOutput(ctx context.Context) pulumix.Output[ManagedInstanceManagementParentSoftwareSource] {
+	return pulumix.Output[ManagedInstanceManagementParentSoftwareSource]{
+		OutputState: i.ToManagedInstanceManagementParentSoftwareSourceOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i ManagedInstanceManagementParentSoftwareSourceArgs) ToManagedInstanceManagementParentSoftwareSourcePtrOutput() ManagedInstanceManagementParentSoftwareSourcePtrOutput {
 	return i.ToManagedInstanceManagementParentSoftwareSourcePtrOutputWithContext(context.Background())
 }
@@ -733,6 +884,12 @@ func (i *managedInstanceManagementParentSoftwareSourcePtrType) ToManagedInstance
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceManagementParentSoftwareSourcePtrOutput)
 }
 
+func (i *managedInstanceManagementParentSoftwareSourcePtrType) ToOutput(ctx context.Context) pulumix.Output[*ManagedInstanceManagementParentSoftwareSource] {
+	return pulumix.Output[*ManagedInstanceManagementParentSoftwareSource]{
+		OutputState: i.ToManagedInstanceManagementParentSoftwareSourcePtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ManagedInstanceManagementParentSoftwareSourceOutput struct{ *pulumi.OutputState }
 
 func (ManagedInstanceManagementParentSoftwareSourceOutput) ElementType() reflect.Type {
@@ -755,6 +912,12 @@ func (o ManagedInstanceManagementParentSoftwareSourceOutput) ToManagedInstanceMa
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ManagedInstanceManagementParentSoftwareSource) *ManagedInstanceManagementParentSoftwareSource {
 		return &v
 	}).(ManagedInstanceManagementParentSoftwareSourcePtrOutput)
+}
+
+func (o ManagedInstanceManagementParentSoftwareSourceOutput) ToOutput(ctx context.Context) pulumix.Output[ManagedInstanceManagementParentSoftwareSource] {
+	return pulumix.Output[ManagedInstanceManagementParentSoftwareSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 // software source identifier
@@ -782,6 +945,12 @@ func (o ManagedInstanceManagementParentSoftwareSourcePtrOutput) ToManagedInstanc
 
 func (o ManagedInstanceManagementParentSoftwareSourcePtrOutput) ToManagedInstanceManagementParentSoftwareSourcePtrOutputWithContext(ctx context.Context) ManagedInstanceManagementParentSoftwareSourcePtrOutput {
 	return o
+}
+
+func (o ManagedInstanceManagementParentSoftwareSourcePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ManagedInstanceManagementParentSoftwareSource] {
+	return pulumix.Output[*ManagedInstanceManagementParentSoftwareSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ManagedInstanceManagementParentSoftwareSourcePtrOutput) Elem() ManagedInstanceManagementParentSoftwareSourceOutput {
@@ -854,6 +1023,12 @@ func (i ManagedInstanceParentSoftwareSourceArgs) ToManagedInstanceParentSoftware
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceParentSoftwareSourceOutput)
 }
 
+func (i ManagedInstanceParentSoftwareSourceArgs) ToOutput(ctx context.Context) pulumix.Output[ManagedInstanceParentSoftwareSource] {
+	return pulumix.Output[ManagedInstanceParentSoftwareSource]{
+		OutputState: i.ToManagedInstanceParentSoftwareSourceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ManagedInstanceParentSoftwareSourceArrayInput is an input type that accepts ManagedInstanceParentSoftwareSourceArray and ManagedInstanceParentSoftwareSourceArrayOutput values.
 // You can construct a concrete instance of `ManagedInstanceParentSoftwareSourceArrayInput` via:
 //
@@ -879,6 +1054,12 @@ func (i ManagedInstanceParentSoftwareSourceArray) ToManagedInstanceParentSoftwar
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceParentSoftwareSourceArrayOutput)
 }
 
+func (i ManagedInstanceParentSoftwareSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]ManagedInstanceParentSoftwareSource] {
+	return pulumix.Output[[]ManagedInstanceParentSoftwareSource]{
+		OutputState: i.ToManagedInstanceParentSoftwareSourceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ManagedInstanceParentSoftwareSourceOutput struct{ *pulumi.OutputState }
 
 func (ManagedInstanceParentSoftwareSourceOutput) ElementType() reflect.Type {
@@ -891,6 +1072,12 @@ func (o ManagedInstanceParentSoftwareSourceOutput) ToManagedInstanceParentSoftwa
 
 func (o ManagedInstanceParentSoftwareSourceOutput) ToManagedInstanceParentSoftwareSourceOutputWithContext(ctx context.Context) ManagedInstanceParentSoftwareSourceOutput {
 	return o
+}
+
+func (o ManagedInstanceParentSoftwareSourceOutput) ToOutput(ctx context.Context) pulumix.Output[ManagedInstanceParentSoftwareSource] {
+	return pulumix.Output[ManagedInstanceParentSoftwareSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 // software source identifier
@@ -915,6 +1102,12 @@ func (o ManagedInstanceParentSoftwareSourceArrayOutput) ToManagedInstanceParentS
 
 func (o ManagedInstanceParentSoftwareSourceArrayOutput) ToManagedInstanceParentSoftwareSourceArrayOutputWithContext(ctx context.Context) ManagedInstanceParentSoftwareSourceArrayOutput {
 	return o
+}
+
+func (o ManagedInstanceParentSoftwareSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ManagedInstanceParentSoftwareSource] {
+	return pulumix.Output[[]ManagedInstanceParentSoftwareSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ManagedInstanceParentSoftwareSourceArrayOutput) Index(i pulumi.IntInput) ManagedInstanceParentSoftwareSourceOutput {
@@ -960,6 +1153,12 @@ func (i SoftwareSourceAssociatedManagedInstanceArgs) ToSoftwareSourceAssociatedM
 	return pulumi.ToOutputWithContext(ctx, i).(SoftwareSourceAssociatedManagedInstanceOutput)
 }
 
+func (i SoftwareSourceAssociatedManagedInstanceArgs) ToOutput(ctx context.Context) pulumix.Output[SoftwareSourceAssociatedManagedInstance] {
+	return pulumix.Output[SoftwareSourceAssociatedManagedInstance]{
+		OutputState: i.ToSoftwareSourceAssociatedManagedInstanceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // SoftwareSourceAssociatedManagedInstanceArrayInput is an input type that accepts SoftwareSourceAssociatedManagedInstanceArray and SoftwareSourceAssociatedManagedInstanceArrayOutput values.
 // You can construct a concrete instance of `SoftwareSourceAssociatedManagedInstanceArrayInput` via:
 //
@@ -985,6 +1184,12 @@ func (i SoftwareSourceAssociatedManagedInstanceArray) ToSoftwareSourceAssociated
 	return pulumi.ToOutputWithContext(ctx, i).(SoftwareSourceAssociatedManagedInstanceArrayOutput)
 }
 
+func (i SoftwareSourceAssociatedManagedInstanceArray) ToOutput(ctx context.Context) pulumix.Output[[]SoftwareSourceAssociatedManagedInstance] {
+	return pulumix.Output[[]SoftwareSourceAssociatedManagedInstance]{
+		OutputState: i.ToSoftwareSourceAssociatedManagedInstanceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type SoftwareSourceAssociatedManagedInstanceOutput struct{ *pulumi.OutputState }
 
 func (SoftwareSourceAssociatedManagedInstanceOutput) ElementType() reflect.Type {
@@ -997,6 +1202,12 @@ func (o SoftwareSourceAssociatedManagedInstanceOutput) ToSoftwareSourceAssociate
 
 func (o SoftwareSourceAssociatedManagedInstanceOutput) ToSoftwareSourceAssociatedManagedInstanceOutputWithContext(ctx context.Context) SoftwareSourceAssociatedManagedInstanceOutput {
 	return o
+}
+
+func (o SoftwareSourceAssociatedManagedInstanceOutput) ToOutput(ctx context.Context) pulumix.Output[SoftwareSourceAssociatedManagedInstance] {
+	return pulumix.Output[SoftwareSourceAssociatedManagedInstance]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) User friendly name for the software source
@@ -1021,6 +1232,12 @@ func (o SoftwareSourceAssociatedManagedInstanceArrayOutput) ToSoftwareSourceAsso
 
 func (o SoftwareSourceAssociatedManagedInstanceArrayOutput) ToSoftwareSourceAssociatedManagedInstanceArrayOutputWithContext(ctx context.Context) SoftwareSourceAssociatedManagedInstanceArrayOutput {
 	return o
+}
+
+func (o SoftwareSourceAssociatedManagedInstanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]SoftwareSourceAssociatedManagedInstance] {
+	return pulumix.Output[[]SoftwareSourceAssociatedManagedInstance]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o SoftwareSourceAssociatedManagedInstanceArrayOutput) Index(i pulumi.IntInput) SoftwareSourceAssociatedManagedInstanceOutput {
@@ -1062,6 +1279,12 @@ func (i GetManagedInstanceAutonomouseArgs) ToGetManagedInstanceAutonomouseOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceAutonomouseOutput)
 }
 
+func (i GetManagedInstanceAutonomouseArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceAutonomouse] {
+	return pulumix.Output[GetManagedInstanceAutonomouse]{
+		OutputState: i.ToGetManagedInstanceAutonomouseOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetManagedInstanceAutonomouseArrayInput is an input type that accepts GetManagedInstanceAutonomouseArray and GetManagedInstanceAutonomouseArrayOutput values.
 // You can construct a concrete instance of `GetManagedInstanceAutonomouseArrayInput` via:
 //
@@ -1087,6 +1310,12 @@ func (i GetManagedInstanceAutonomouseArray) ToGetManagedInstanceAutonomouseArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceAutonomouseArrayOutput)
 }
 
+func (i GetManagedInstanceAutonomouseArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceAutonomouse] {
+	return pulumix.Output[[]GetManagedInstanceAutonomouse]{
+		OutputState: i.ToGetManagedInstanceAutonomouseArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetManagedInstanceAutonomouseOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstanceAutonomouseOutput) ElementType() reflect.Type {
@@ -1099,6 +1328,12 @@ func (o GetManagedInstanceAutonomouseOutput) ToGetManagedInstanceAutonomouseOutp
 
 func (o GetManagedInstanceAutonomouseOutput) ToGetManagedInstanceAutonomouseOutputWithContext(ctx context.Context) GetManagedInstanceAutonomouseOutput {
 	return o
+}
+
+func (o GetManagedInstanceAutonomouseOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceAutonomouse] {
+	return pulumix.Output[GetManagedInstanceAutonomouse]{
+		OutputState: o.OutputState,
+	}
 }
 
 // True if daily updates are enabled
@@ -1118,6 +1353,12 @@ func (o GetManagedInstanceAutonomouseArrayOutput) ToGetManagedInstanceAutonomous
 
 func (o GetManagedInstanceAutonomouseArrayOutput) ToGetManagedInstanceAutonomouseArrayOutputWithContext(ctx context.Context) GetManagedInstanceAutonomouseArrayOutput {
 	return o
+}
+
+func (o GetManagedInstanceAutonomouseArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceAutonomouse] {
+	return pulumix.Output[[]GetManagedInstanceAutonomouse]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetManagedInstanceAutonomouseArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceAutonomouseOutput {
@@ -1163,6 +1404,12 @@ func (i GetManagedInstanceChildSoftwareSourceArgs) ToGetManagedInstanceChildSoft
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceChildSoftwareSourceOutput)
 }
 
+func (i GetManagedInstanceChildSoftwareSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceChildSoftwareSource] {
+	return pulumix.Output[GetManagedInstanceChildSoftwareSource]{
+		OutputState: i.ToGetManagedInstanceChildSoftwareSourceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetManagedInstanceChildSoftwareSourceArrayInput is an input type that accepts GetManagedInstanceChildSoftwareSourceArray and GetManagedInstanceChildSoftwareSourceArrayOutput values.
 // You can construct a concrete instance of `GetManagedInstanceChildSoftwareSourceArrayInput` via:
 //
@@ -1188,6 +1435,12 @@ func (i GetManagedInstanceChildSoftwareSourceArray) ToGetManagedInstanceChildSof
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceChildSoftwareSourceArrayOutput)
 }
 
+func (i GetManagedInstanceChildSoftwareSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceChildSoftwareSource] {
+	return pulumix.Output[[]GetManagedInstanceChildSoftwareSource]{
+		OutputState: i.ToGetManagedInstanceChildSoftwareSourceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetManagedInstanceChildSoftwareSourceOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstanceChildSoftwareSourceOutput) ElementType() reflect.Type {
@@ -1200,6 +1453,12 @@ func (o GetManagedInstanceChildSoftwareSourceOutput) ToGetManagedInstanceChildSo
 
 func (o GetManagedInstanceChildSoftwareSourceOutput) ToGetManagedInstanceChildSoftwareSourceOutputWithContext(ctx context.Context) GetManagedInstanceChildSoftwareSourceOutput {
 	return o
+}
+
+func (o GetManagedInstanceChildSoftwareSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceChildSoftwareSource] {
+	return pulumix.Output[GetManagedInstanceChildSoftwareSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 // software source identifier
@@ -1224,6 +1483,12 @@ func (o GetManagedInstanceChildSoftwareSourceArrayOutput) ToGetManagedInstanceCh
 
 func (o GetManagedInstanceChildSoftwareSourceArrayOutput) ToGetManagedInstanceChildSoftwareSourceArrayOutputWithContext(ctx context.Context) GetManagedInstanceChildSoftwareSourceArrayOutput {
 	return o
+}
+
+func (o GetManagedInstanceChildSoftwareSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceChildSoftwareSource] {
+	return pulumix.Output[[]GetManagedInstanceChildSoftwareSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetManagedInstanceChildSoftwareSourceArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceChildSoftwareSourceOutput {
@@ -1269,6 +1534,12 @@ func (i GetManagedInstanceGroupManagedInstanceArgs) ToGetManagedInstanceGroupMan
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupManagedInstanceOutput)
 }
 
+func (i GetManagedInstanceGroupManagedInstanceArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupManagedInstance] {
+	return pulumix.Output[GetManagedInstanceGroupManagedInstance]{
+		OutputState: i.ToGetManagedInstanceGroupManagedInstanceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetManagedInstanceGroupManagedInstanceArrayInput is an input type that accepts GetManagedInstanceGroupManagedInstanceArray and GetManagedInstanceGroupManagedInstanceArrayOutput values.
 // You can construct a concrete instance of `GetManagedInstanceGroupManagedInstanceArrayInput` via:
 //
@@ -1294,6 +1565,12 @@ func (i GetManagedInstanceGroupManagedInstanceArray) ToGetManagedInstanceGroupMa
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupManagedInstanceArrayOutput)
 }
 
+func (i GetManagedInstanceGroupManagedInstanceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceGroupManagedInstance] {
+	return pulumix.Output[[]GetManagedInstanceGroupManagedInstance]{
+		OutputState: i.ToGetManagedInstanceGroupManagedInstanceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetManagedInstanceGroupManagedInstanceOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstanceGroupManagedInstanceOutput) ElementType() reflect.Type {
@@ -1306,6 +1583,12 @@ func (o GetManagedInstanceGroupManagedInstanceOutput) ToGetManagedInstanceGroupM
 
 func (o GetManagedInstanceGroupManagedInstanceOutput) ToGetManagedInstanceGroupManagedInstanceOutputWithContext(ctx context.Context) GetManagedInstanceGroupManagedInstanceOutput {
 	return o
+}
+
+func (o GetManagedInstanceGroupManagedInstanceOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupManagedInstance] {
+	return pulumix.Output[GetManagedInstanceGroupManagedInstance]{
+		OutputState: o.OutputState,
+	}
 }
 
 // User friendly name
@@ -1330,6 +1613,12 @@ func (o GetManagedInstanceGroupManagedInstanceArrayOutput) ToGetManagedInstanceG
 
 func (o GetManagedInstanceGroupManagedInstanceArrayOutput) ToGetManagedInstanceGroupManagedInstanceArrayOutputWithContext(ctx context.Context) GetManagedInstanceGroupManagedInstanceArrayOutput {
 	return o
+}
+
+func (o GetManagedInstanceGroupManagedInstanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceGroupManagedInstance] {
+	return pulumix.Output[[]GetManagedInstanceGroupManagedInstance]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetManagedInstanceGroupManagedInstanceArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceGroupManagedInstanceOutput {
@@ -1373,6 +1662,12 @@ func (i GetManagedInstanceGroupsFilterArgs) ToGetManagedInstanceGroupsFilterOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupsFilterOutput)
 }
 
+func (i GetManagedInstanceGroupsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupsFilter] {
+	return pulumix.Output[GetManagedInstanceGroupsFilter]{
+		OutputState: i.ToGetManagedInstanceGroupsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetManagedInstanceGroupsFilterArrayInput is an input type that accepts GetManagedInstanceGroupsFilterArray and GetManagedInstanceGroupsFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagedInstanceGroupsFilterArrayInput` via:
 //
@@ -1398,6 +1693,12 @@ func (i GetManagedInstanceGroupsFilterArray) ToGetManagedInstanceGroupsFilterArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupsFilterArrayOutput)
 }
 
+func (i GetManagedInstanceGroupsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceGroupsFilter] {
+	return pulumix.Output[[]GetManagedInstanceGroupsFilter]{
+		OutputState: i.ToGetManagedInstanceGroupsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetManagedInstanceGroupsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstanceGroupsFilterOutput) ElementType() reflect.Type {
@@ -1410,6 +1711,12 @@ func (o GetManagedInstanceGroupsFilterOutput) ToGetManagedInstanceGroupsFilterOu
 
 func (o GetManagedInstanceGroupsFilterOutput) ToGetManagedInstanceGroupsFilterOutputWithContext(ctx context.Context) GetManagedInstanceGroupsFilterOutput {
 	return o
+}
+
+func (o GetManagedInstanceGroupsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupsFilter] {
+	return pulumix.Output[GetManagedInstanceGroupsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetManagedInstanceGroupsFilterOutput) Name() pulumi.StringOutput {
@@ -1436,6 +1743,12 @@ func (o GetManagedInstanceGroupsFilterArrayOutput) ToGetManagedInstanceGroupsFil
 
 func (o GetManagedInstanceGroupsFilterArrayOutput) ToGetManagedInstanceGroupsFilterArrayOutputWithContext(ctx context.Context) GetManagedInstanceGroupsFilterArrayOutput {
 	return o
+}
+
+func (o GetManagedInstanceGroupsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceGroupsFilter] {
+	return pulumix.Output[[]GetManagedInstanceGroupsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetManagedInstanceGroupsFilterArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceGroupsFilterOutput {
@@ -1511,6 +1824,12 @@ func (i GetManagedInstanceGroupsManagedInstanceGroupArgs) ToGetManagedInstanceGr
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupsManagedInstanceGroupOutput)
 }
 
+func (i GetManagedInstanceGroupsManagedInstanceGroupArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupsManagedInstanceGroup] {
+	return pulumix.Output[GetManagedInstanceGroupsManagedInstanceGroup]{
+		OutputState: i.ToGetManagedInstanceGroupsManagedInstanceGroupOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetManagedInstanceGroupsManagedInstanceGroupArrayInput is an input type that accepts GetManagedInstanceGroupsManagedInstanceGroupArray and GetManagedInstanceGroupsManagedInstanceGroupArrayOutput values.
 // You can construct a concrete instance of `GetManagedInstanceGroupsManagedInstanceGroupArrayInput` via:
 //
@@ -1536,6 +1855,12 @@ func (i GetManagedInstanceGroupsManagedInstanceGroupArray) ToGetManagedInstanceG
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupsManagedInstanceGroupArrayOutput)
 }
 
+func (i GetManagedInstanceGroupsManagedInstanceGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceGroupsManagedInstanceGroup] {
+	return pulumix.Output[[]GetManagedInstanceGroupsManagedInstanceGroup]{
+		OutputState: i.ToGetManagedInstanceGroupsManagedInstanceGroupArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetManagedInstanceGroupsManagedInstanceGroupOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstanceGroupsManagedInstanceGroupOutput) ElementType() reflect.Type {
@@ -1548,6 +1873,12 @@ func (o GetManagedInstanceGroupsManagedInstanceGroupOutput) ToGetManagedInstance
 
 func (o GetManagedInstanceGroupsManagedInstanceGroupOutput) ToGetManagedInstanceGroupsManagedInstanceGroupOutputWithContext(ctx context.Context) GetManagedInstanceGroupsManagedInstanceGroupOutput {
 	return o
+}
+
+func (o GetManagedInstanceGroupsManagedInstanceGroupOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupsManagedInstanceGroup] {
+	return pulumix.Output[GetManagedInstanceGroupsManagedInstanceGroup]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -1615,6 +1946,12 @@ func (o GetManagedInstanceGroupsManagedInstanceGroupArrayOutput) ToGetManagedIns
 	return o
 }
 
+func (o GetManagedInstanceGroupsManagedInstanceGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceGroupsManagedInstanceGroup] {
+	return pulumix.Output[[]GetManagedInstanceGroupsManagedInstanceGroup]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetManagedInstanceGroupsManagedInstanceGroupArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceGroupsManagedInstanceGroupOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedInstanceGroupsManagedInstanceGroup {
 		return vs[0].([]GetManagedInstanceGroupsManagedInstanceGroup)[vs[1].(int)]
@@ -1658,6 +1995,12 @@ func (i GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArgs) ToGetMa
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceOutput)
 }
 
+func (i GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupsManagedInstanceGroupManagedInstance] {
+	return pulumix.Output[GetManagedInstanceGroupsManagedInstanceGroupManagedInstance]{
+		OutputState: i.ToGetManagedInstanceGroupsManagedInstanceGroupManagedInstanceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArrayInput is an input type that accepts GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArray and GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArrayOutput values.
 // You can construct a concrete instance of `GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArrayInput` via:
 //
@@ -1683,6 +2026,12 @@ func (i GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArray) ToGetM
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArrayOutput)
 }
 
+func (i GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceGroupsManagedInstanceGroupManagedInstance] {
+	return pulumix.Output[[]GetManagedInstanceGroupsManagedInstanceGroupManagedInstance]{
+		OutputState: i.ToGetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceOutput) ElementType() reflect.Type {
@@ -1695,6 +2044,12 @@ func (o GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceOutput) ToGet
 
 func (o GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceOutput) ToGetManagedInstanceGroupsManagedInstanceGroupManagedInstanceOutputWithContext(ctx context.Context) GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceOutput {
 	return o
+}
+
+func (o GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupsManagedInstanceGroupManagedInstance] {
+	return pulumix.Output[GetManagedInstanceGroupsManagedInstanceGroupManagedInstance]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
@@ -1719,6 +2074,12 @@ func (o GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArrayOutput) 
 
 func (o GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArrayOutput) ToGetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArrayOutputWithContext(ctx context.Context) GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArrayOutput {
 	return o
+}
+
+func (o GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceGroupsManagedInstanceGroupManagedInstance] {
+	return pulumix.Output[[]GetManagedInstanceGroupsManagedInstanceGroupManagedInstance]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceOutput {
@@ -1764,6 +2125,12 @@ func (i GetManagedInstanceManagedInstanceGroupArgs) ToGetManagedInstanceManagedI
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceManagedInstanceGroupOutput)
 }
 
+func (i GetManagedInstanceManagedInstanceGroupArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceManagedInstanceGroup] {
+	return pulumix.Output[GetManagedInstanceManagedInstanceGroup]{
+		OutputState: i.ToGetManagedInstanceManagedInstanceGroupOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetManagedInstanceManagedInstanceGroupArrayInput is an input type that accepts GetManagedInstanceManagedInstanceGroupArray and GetManagedInstanceManagedInstanceGroupArrayOutput values.
 // You can construct a concrete instance of `GetManagedInstanceManagedInstanceGroupArrayInput` via:
 //
@@ -1789,6 +2156,12 @@ func (i GetManagedInstanceManagedInstanceGroupArray) ToGetManagedInstanceManaged
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceManagedInstanceGroupArrayOutput)
 }
 
+func (i GetManagedInstanceManagedInstanceGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceManagedInstanceGroup] {
+	return pulumix.Output[[]GetManagedInstanceManagedInstanceGroup]{
+		OutputState: i.ToGetManagedInstanceManagedInstanceGroupArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetManagedInstanceManagedInstanceGroupOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstanceManagedInstanceGroupOutput) ElementType() reflect.Type {
@@ -1801,6 +2174,12 @@ func (o GetManagedInstanceManagedInstanceGroupOutput) ToGetManagedInstanceManage
 
 func (o GetManagedInstanceManagedInstanceGroupOutput) ToGetManagedInstanceManagedInstanceGroupOutputWithContext(ctx context.Context) GetManagedInstanceManagedInstanceGroupOutput {
 	return o
+}
+
+func (o GetManagedInstanceManagedInstanceGroupOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceManagedInstanceGroup] {
+	return pulumix.Output[GetManagedInstanceManagedInstanceGroup]{
+		OutputState: o.OutputState,
+	}
 }
 
 // User friendly name
@@ -1825,6 +2204,12 @@ func (o GetManagedInstanceManagedInstanceGroupArrayOutput) ToGetManagedInstanceM
 
 func (o GetManagedInstanceManagedInstanceGroupArrayOutput) ToGetManagedInstanceManagedInstanceGroupArrayOutputWithContext(ctx context.Context) GetManagedInstanceManagedInstanceGroupArrayOutput {
 	return o
+}
+
+func (o GetManagedInstanceManagedInstanceGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceManagedInstanceGroup] {
+	return pulumix.Output[[]GetManagedInstanceManagedInstanceGroup]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetManagedInstanceManagedInstanceGroupArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceManagedInstanceGroupOutput {
@@ -1868,6 +2253,12 @@ func (i GetManagedInstanceModuleStreamsFilterArgs) ToGetManagedInstanceModuleStr
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceModuleStreamsFilterOutput)
 }
 
+func (i GetManagedInstanceModuleStreamsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceModuleStreamsFilter] {
+	return pulumix.Output[GetManagedInstanceModuleStreamsFilter]{
+		OutputState: i.ToGetManagedInstanceModuleStreamsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetManagedInstanceModuleStreamsFilterArrayInput is an input type that accepts GetManagedInstanceModuleStreamsFilterArray and GetManagedInstanceModuleStreamsFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagedInstanceModuleStreamsFilterArrayInput` via:
 //
@@ -1893,6 +2284,12 @@ func (i GetManagedInstanceModuleStreamsFilterArray) ToGetManagedInstanceModuleSt
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceModuleStreamsFilterArrayOutput)
 }
 
+func (i GetManagedInstanceModuleStreamsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceModuleStreamsFilter] {
+	return pulumix.Output[[]GetManagedInstanceModuleStreamsFilter]{
+		OutputState: i.ToGetManagedInstanceModuleStreamsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetManagedInstanceModuleStreamsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstanceModuleStreamsFilterOutput) ElementType() reflect.Type {
@@ -1905,6 +2302,12 @@ func (o GetManagedInstanceModuleStreamsFilterOutput) ToGetManagedInstanceModuleS
 
 func (o GetManagedInstanceModuleStreamsFilterOutput) ToGetManagedInstanceModuleStreamsFilterOutputWithContext(ctx context.Context) GetManagedInstanceModuleStreamsFilterOutput {
 	return o
+}
+
+func (o GetManagedInstanceModuleStreamsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceModuleStreamsFilter] {
+	return pulumix.Output[GetManagedInstanceModuleStreamsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetManagedInstanceModuleStreamsFilterOutput) Name() pulumi.StringOutput {
@@ -1931,6 +2334,12 @@ func (o GetManagedInstanceModuleStreamsFilterArrayOutput) ToGetManagedInstanceMo
 
 func (o GetManagedInstanceModuleStreamsFilterArrayOutput) ToGetManagedInstanceModuleStreamsFilterArrayOutputWithContext(ctx context.Context) GetManagedInstanceModuleStreamsFilterArrayOutput {
 	return o
+}
+
+func (o GetManagedInstanceModuleStreamsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceModuleStreamsFilter] {
+	return pulumix.Output[[]GetManagedInstanceModuleStreamsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetManagedInstanceModuleStreamsFilterArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceModuleStreamsFilterOutput {
@@ -1992,6 +2401,12 @@ func (i GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArgs) ToGetM
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput)
 }
 
+func (i GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance] {
+	return pulumix.Output[GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance]{
+		OutputState: i.ToGetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArrayInput is an input type that accepts GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArray and GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArrayOutput values.
 // You can construct a concrete instance of `GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArrayInput` via:
 //
@@ -2017,6 +2432,12 @@ func (i GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArrayOutput)
 }
 
+func (i GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance] {
+	return pulumix.Output[[]GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance]{
+		OutputState: i.ToGetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput) ElementType() reflect.Type {
@@ -2029,6 +2450,12 @@ func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput) ToGe
 
 func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput) ToGetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutputWithContext(ctx context.Context) GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput {
 	return o
+}
+
+func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance] {
+	return pulumix.Output[GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of a module.  This parameter is required if a streamName is specified.
@@ -2075,6 +2502,12 @@ func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArrayOutput)
 
 func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArrayOutput) ToGetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArrayOutputWithContext(ctx context.Context) GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArrayOutput {
 	return o
+}
+
+func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance] {
+	return pulumix.Output[[]GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput {
@@ -2132,6 +2565,12 @@ func (i GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArgs)
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutput)
 }
 
+func (i GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile] {
+	return pulumix.Output[GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile]{
+		OutputState: i.ToGetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArrayInput is an input type that accepts GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArray and GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArrayOutput values.
 // You can construct a concrete instance of `GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArrayInput` via:
 //
@@ -2157,6 +2596,12 @@ func (i GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArrayOutput)
 }
 
+func (i GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile] {
+	return pulumix.Output[[]GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile]{
+		OutputState: i.ToGetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutput) ElementType() reflect.Type {
@@ -2169,6 +2614,12 @@ func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutpu
 
 func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutput) ToGetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutputWithContext(ctx context.Context) GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutput {
 	return o
+}
+
+func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile] {
+	return pulumix.Output[GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of a module.  This parameter is required if a streamName is specified.
@@ -2218,6 +2669,12 @@ func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArray
 	return o
 }
 
+func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile] {
+	return pulumix.Output[[]GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile {
 		return vs[0].([]GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile)[vs[1].(int)]
@@ -2261,6 +2718,12 @@ func (i GetManagedInstanceParentSoftwareSourceArgs) ToGetManagedInstanceParentSo
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceParentSoftwareSourceOutput)
 }
 
+func (i GetManagedInstanceParentSoftwareSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceParentSoftwareSource] {
+	return pulumix.Output[GetManagedInstanceParentSoftwareSource]{
+		OutputState: i.ToGetManagedInstanceParentSoftwareSourceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetManagedInstanceParentSoftwareSourceArrayInput is an input type that accepts GetManagedInstanceParentSoftwareSourceArray and GetManagedInstanceParentSoftwareSourceArrayOutput values.
 // You can construct a concrete instance of `GetManagedInstanceParentSoftwareSourceArrayInput` via:
 //
@@ -2286,6 +2749,12 @@ func (i GetManagedInstanceParentSoftwareSourceArray) ToGetManagedInstanceParentS
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceParentSoftwareSourceArrayOutput)
 }
 
+func (i GetManagedInstanceParentSoftwareSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceParentSoftwareSource] {
+	return pulumix.Output[[]GetManagedInstanceParentSoftwareSource]{
+		OutputState: i.ToGetManagedInstanceParentSoftwareSourceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetManagedInstanceParentSoftwareSourceOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstanceParentSoftwareSourceOutput) ElementType() reflect.Type {
@@ -2298,6 +2767,12 @@ func (o GetManagedInstanceParentSoftwareSourceOutput) ToGetManagedInstanceParent
 
 func (o GetManagedInstanceParentSoftwareSourceOutput) ToGetManagedInstanceParentSoftwareSourceOutputWithContext(ctx context.Context) GetManagedInstanceParentSoftwareSourceOutput {
 	return o
+}
+
+func (o GetManagedInstanceParentSoftwareSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceParentSoftwareSource] {
+	return pulumix.Output[GetManagedInstanceParentSoftwareSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 // software source identifier
@@ -2322,6 +2797,12 @@ func (o GetManagedInstanceParentSoftwareSourceArrayOutput) ToGetManagedInstanceP
 
 func (o GetManagedInstanceParentSoftwareSourceArrayOutput) ToGetManagedInstanceParentSoftwareSourceArrayOutputWithContext(ctx context.Context) GetManagedInstanceParentSoftwareSourceArrayOutput {
 	return o
+}
+
+func (o GetManagedInstanceParentSoftwareSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceParentSoftwareSource] {
+	return pulumix.Output[[]GetManagedInstanceParentSoftwareSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetManagedInstanceParentSoftwareSourceArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceParentSoftwareSourceOutput {
@@ -2365,6 +2846,12 @@ func (i GetManagedInstanceStreamProfileFilterArgs) ToGetManagedInstanceStreamPro
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceStreamProfileFilterOutput)
 }
 
+func (i GetManagedInstanceStreamProfileFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceStreamProfileFilter] {
+	return pulumix.Output[GetManagedInstanceStreamProfileFilter]{
+		OutputState: i.ToGetManagedInstanceStreamProfileFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetManagedInstanceStreamProfileFilterArrayInput is an input type that accepts GetManagedInstanceStreamProfileFilterArray and GetManagedInstanceStreamProfileFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagedInstanceStreamProfileFilterArrayInput` via:
 //
@@ -2390,6 +2877,12 @@ func (i GetManagedInstanceStreamProfileFilterArray) ToGetManagedInstanceStreamPr
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceStreamProfileFilterArrayOutput)
 }
 
+func (i GetManagedInstanceStreamProfileFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceStreamProfileFilter] {
+	return pulumix.Output[[]GetManagedInstanceStreamProfileFilter]{
+		OutputState: i.ToGetManagedInstanceStreamProfileFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetManagedInstanceStreamProfileFilterOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstanceStreamProfileFilterOutput) ElementType() reflect.Type {
@@ -2402,6 +2895,12 @@ func (o GetManagedInstanceStreamProfileFilterOutput) ToGetManagedInstanceStreamP
 
 func (o GetManagedInstanceStreamProfileFilterOutput) ToGetManagedInstanceStreamProfileFilterOutputWithContext(ctx context.Context) GetManagedInstanceStreamProfileFilterOutput {
 	return o
+}
+
+func (o GetManagedInstanceStreamProfileFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceStreamProfileFilter] {
+	return pulumix.Output[GetManagedInstanceStreamProfileFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetManagedInstanceStreamProfileFilterOutput) Name() pulumi.StringOutput {
@@ -2428,6 +2927,12 @@ func (o GetManagedInstanceStreamProfileFilterArrayOutput) ToGetManagedInstanceSt
 
 func (o GetManagedInstanceStreamProfileFilterArrayOutput) ToGetManagedInstanceStreamProfileFilterArrayOutputWithContext(ctx context.Context) GetManagedInstanceStreamProfileFilterArrayOutput {
 	return o
+}
+
+func (o GetManagedInstanceStreamProfileFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceStreamProfileFilter] {
+	return pulumix.Output[[]GetManagedInstanceStreamProfileFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetManagedInstanceStreamProfileFilterArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceStreamProfileFilterOutput {
@@ -2485,6 +2990,12 @@ func (i GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArgs)
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutput)
 }
 
+func (i GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance] {
+	return pulumix.Output[GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance]{
+		OutputState: i.ToGetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArrayInput is an input type that accepts GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArray and GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArrayOutput values.
 // You can construct a concrete instance of `GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArrayInput` via:
 //
@@ -2510,6 +3021,12 @@ func (i GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArrayOutput)
 }
 
+func (i GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance] {
+	return pulumix.Output[[]GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance]{
+		OutputState: i.ToGetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutput) ElementType() reflect.Type {
@@ -2522,6 +3039,12 @@ func (o GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutpu
 
 func (o GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutput) ToGetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutputWithContext(ctx context.Context) GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutput {
 	return o
+}
+
+func (o GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance] {
+	return pulumix.Output[GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of a module.  This parameter is required if a streamName is specified.
@@ -2571,6 +3094,12 @@ func (o GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArray
 	return o
 }
 
+func (o GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance] {
+	return pulumix.Output[[]GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance {
 		return vs[0].([]GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance)[vs[1].(int)]
@@ -2614,6 +3143,12 @@ func (i GetManagedInstancesFilterArgs) ToGetManagedInstancesFilterOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstancesFilterOutput)
 }
 
+func (i GetManagedInstancesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstancesFilter] {
+	return pulumix.Output[GetManagedInstancesFilter]{
+		OutputState: i.ToGetManagedInstancesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetManagedInstancesFilterArrayInput is an input type that accepts GetManagedInstancesFilterArray and GetManagedInstancesFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagedInstancesFilterArrayInput` via:
 //
@@ -2639,6 +3174,12 @@ func (i GetManagedInstancesFilterArray) ToGetManagedInstancesFilterArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstancesFilterArrayOutput)
 }
 
+func (i GetManagedInstancesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstancesFilter] {
+	return pulumix.Output[[]GetManagedInstancesFilter]{
+		OutputState: i.ToGetManagedInstancesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetManagedInstancesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstancesFilterOutput) ElementType() reflect.Type {
@@ -2651,6 +3192,12 @@ func (o GetManagedInstancesFilterOutput) ToGetManagedInstancesFilterOutput() Get
 
 func (o GetManagedInstancesFilterOutput) ToGetManagedInstancesFilterOutputWithContext(ctx context.Context) GetManagedInstancesFilterOutput {
 	return o
+}
+
+func (o GetManagedInstancesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstancesFilter] {
+	return pulumix.Output[GetManagedInstancesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // software source name
@@ -2678,6 +3225,12 @@ func (o GetManagedInstancesFilterArrayOutput) ToGetManagedInstancesFilterArrayOu
 
 func (o GetManagedInstancesFilterArrayOutput) ToGetManagedInstancesFilterArrayOutputWithContext(ctx context.Context) GetManagedInstancesFilterArrayOutput {
 	return o
+}
+
+func (o GetManagedInstancesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstancesFilter] {
+	return pulumix.Output[[]GetManagedInstancesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetManagedInstancesFilterArrayOutput) Index(i pulumi.IntInput) GetManagedInstancesFilterOutput {
@@ -2821,6 +3374,12 @@ func (i GetManagedInstancesManagedInstanceArgs) ToGetManagedInstancesManagedInst
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstancesManagedInstanceOutput)
 }
 
+func (i GetManagedInstancesManagedInstanceArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstancesManagedInstance] {
+	return pulumix.Output[GetManagedInstancesManagedInstance]{
+		OutputState: i.ToGetManagedInstancesManagedInstanceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetManagedInstancesManagedInstanceArrayInput is an input type that accepts GetManagedInstancesManagedInstanceArray and GetManagedInstancesManagedInstanceArrayOutput values.
 // You can construct a concrete instance of `GetManagedInstancesManagedInstanceArrayInput` via:
 //
@@ -2846,6 +3405,12 @@ func (i GetManagedInstancesManagedInstanceArray) ToGetManagedInstancesManagedIns
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstancesManagedInstanceArrayOutput)
 }
 
+func (i GetManagedInstancesManagedInstanceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstancesManagedInstance] {
+	return pulumix.Output[[]GetManagedInstancesManagedInstance]{
+		OutputState: i.ToGetManagedInstancesManagedInstanceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetManagedInstancesManagedInstanceOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstancesManagedInstanceOutput) ElementType() reflect.Type {
@@ -2858,6 +3423,12 @@ func (o GetManagedInstancesManagedInstanceOutput) ToGetManagedInstancesManagedIn
 
 func (o GetManagedInstancesManagedInstanceOutput) ToGetManagedInstancesManagedInstanceOutputWithContext(ctx context.Context) GetManagedInstancesManagedInstanceOutput {
 	return o
+}
+
+func (o GetManagedInstancesManagedInstanceOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstancesManagedInstance] {
+	return pulumix.Output[GetManagedInstancesManagedInstance]{
+		OutputState: o.OutputState,
+	}
 }
 
 // if present, indicates the Managed Instance is an autonomous instance. Holds all the Autonomous specific information
@@ -3016,6 +3587,12 @@ func (o GetManagedInstancesManagedInstanceArrayOutput) ToGetManagedInstancesMana
 	return o
 }
 
+func (o GetManagedInstancesManagedInstanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstancesManagedInstance] {
+	return pulumix.Output[[]GetManagedInstancesManagedInstance]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetManagedInstancesManagedInstanceArrayOutput) Index(i pulumi.IntInput) GetManagedInstancesManagedInstanceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedInstancesManagedInstance {
 		return vs[0].([]GetManagedInstancesManagedInstance)[vs[1].(int)]
@@ -3055,6 +3632,12 @@ func (i GetManagedInstancesManagedInstanceAutonomouseArgs) ToGetManagedInstances
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstancesManagedInstanceAutonomouseOutput)
 }
 
+func (i GetManagedInstancesManagedInstanceAutonomouseArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstancesManagedInstanceAutonomouse] {
+	return pulumix.Output[GetManagedInstancesManagedInstanceAutonomouse]{
+		OutputState: i.ToGetManagedInstancesManagedInstanceAutonomouseOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetManagedInstancesManagedInstanceAutonomouseArrayInput is an input type that accepts GetManagedInstancesManagedInstanceAutonomouseArray and GetManagedInstancesManagedInstanceAutonomouseArrayOutput values.
 // You can construct a concrete instance of `GetManagedInstancesManagedInstanceAutonomouseArrayInput` via:
 //
@@ -3080,6 +3663,12 @@ func (i GetManagedInstancesManagedInstanceAutonomouseArray) ToGetManagedInstance
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstancesManagedInstanceAutonomouseArrayOutput)
 }
 
+func (i GetManagedInstancesManagedInstanceAutonomouseArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstancesManagedInstanceAutonomouse] {
+	return pulumix.Output[[]GetManagedInstancesManagedInstanceAutonomouse]{
+		OutputState: i.ToGetManagedInstancesManagedInstanceAutonomouseArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetManagedInstancesManagedInstanceAutonomouseOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstancesManagedInstanceAutonomouseOutput) ElementType() reflect.Type {
@@ -3092,6 +3681,12 @@ func (o GetManagedInstancesManagedInstanceAutonomouseOutput) ToGetManagedInstanc
 
 func (o GetManagedInstancesManagedInstanceAutonomouseOutput) ToGetManagedInstancesManagedInstanceAutonomouseOutputWithContext(ctx context.Context) GetManagedInstancesManagedInstanceAutonomouseOutput {
 	return o
+}
+
+func (o GetManagedInstancesManagedInstanceAutonomouseOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstancesManagedInstanceAutonomouse] {
+	return pulumix.Output[GetManagedInstancesManagedInstanceAutonomouse]{
+		OutputState: o.OutputState,
+	}
 }
 
 // True if daily updates are enabled
@@ -3111,6 +3706,12 @@ func (o GetManagedInstancesManagedInstanceAutonomouseArrayOutput) ToGetManagedIn
 
 func (o GetManagedInstancesManagedInstanceAutonomouseArrayOutput) ToGetManagedInstancesManagedInstanceAutonomouseArrayOutputWithContext(ctx context.Context) GetManagedInstancesManagedInstanceAutonomouseArrayOutput {
 	return o
+}
+
+func (o GetManagedInstancesManagedInstanceAutonomouseArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstancesManagedInstanceAutonomouse] {
+	return pulumix.Output[[]GetManagedInstancesManagedInstanceAutonomouse]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetManagedInstancesManagedInstanceAutonomouseArrayOutput) Index(i pulumi.IntInput) GetManagedInstancesManagedInstanceAutonomouseOutput {
@@ -3156,6 +3757,12 @@ func (i GetManagedInstancesManagedInstanceChildSoftwareSourceArgs) ToGetManagedI
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstancesManagedInstanceChildSoftwareSourceOutput)
 }
 
+func (i GetManagedInstancesManagedInstanceChildSoftwareSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstancesManagedInstanceChildSoftwareSource] {
+	return pulumix.Output[GetManagedInstancesManagedInstanceChildSoftwareSource]{
+		OutputState: i.ToGetManagedInstancesManagedInstanceChildSoftwareSourceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetManagedInstancesManagedInstanceChildSoftwareSourceArrayInput is an input type that accepts GetManagedInstancesManagedInstanceChildSoftwareSourceArray and GetManagedInstancesManagedInstanceChildSoftwareSourceArrayOutput values.
 // You can construct a concrete instance of `GetManagedInstancesManagedInstanceChildSoftwareSourceArrayInput` via:
 //
@@ -3181,6 +3788,12 @@ func (i GetManagedInstancesManagedInstanceChildSoftwareSourceArray) ToGetManaged
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstancesManagedInstanceChildSoftwareSourceArrayOutput)
 }
 
+func (i GetManagedInstancesManagedInstanceChildSoftwareSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstancesManagedInstanceChildSoftwareSource] {
+	return pulumix.Output[[]GetManagedInstancesManagedInstanceChildSoftwareSource]{
+		OutputState: i.ToGetManagedInstancesManagedInstanceChildSoftwareSourceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetManagedInstancesManagedInstanceChildSoftwareSourceOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstancesManagedInstanceChildSoftwareSourceOutput) ElementType() reflect.Type {
@@ -3193,6 +3806,12 @@ func (o GetManagedInstancesManagedInstanceChildSoftwareSourceOutput) ToGetManage
 
 func (o GetManagedInstancesManagedInstanceChildSoftwareSourceOutput) ToGetManagedInstancesManagedInstanceChildSoftwareSourceOutputWithContext(ctx context.Context) GetManagedInstancesManagedInstanceChildSoftwareSourceOutput {
 	return o
+}
+
+func (o GetManagedInstancesManagedInstanceChildSoftwareSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstancesManagedInstanceChildSoftwareSource] {
+	return pulumix.Output[GetManagedInstancesManagedInstanceChildSoftwareSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 // software source identifier
@@ -3217,6 +3836,12 @@ func (o GetManagedInstancesManagedInstanceChildSoftwareSourceArrayOutput) ToGetM
 
 func (o GetManagedInstancesManagedInstanceChildSoftwareSourceArrayOutput) ToGetManagedInstancesManagedInstanceChildSoftwareSourceArrayOutputWithContext(ctx context.Context) GetManagedInstancesManagedInstanceChildSoftwareSourceArrayOutput {
 	return o
+}
+
+func (o GetManagedInstancesManagedInstanceChildSoftwareSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstancesManagedInstanceChildSoftwareSource] {
+	return pulumix.Output[[]GetManagedInstancesManagedInstanceChildSoftwareSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetManagedInstancesManagedInstanceChildSoftwareSourceArrayOutput) Index(i pulumi.IntInput) GetManagedInstancesManagedInstanceChildSoftwareSourceOutput {
@@ -3262,6 +3887,12 @@ func (i GetManagedInstancesManagedInstanceManagedInstanceGroupArgs) ToGetManaged
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstancesManagedInstanceManagedInstanceGroupOutput)
 }
 
+func (i GetManagedInstancesManagedInstanceManagedInstanceGroupArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstancesManagedInstanceManagedInstanceGroup] {
+	return pulumix.Output[GetManagedInstancesManagedInstanceManagedInstanceGroup]{
+		OutputState: i.ToGetManagedInstancesManagedInstanceManagedInstanceGroupOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetManagedInstancesManagedInstanceManagedInstanceGroupArrayInput is an input type that accepts GetManagedInstancesManagedInstanceManagedInstanceGroupArray and GetManagedInstancesManagedInstanceManagedInstanceGroupArrayOutput values.
 // You can construct a concrete instance of `GetManagedInstancesManagedInstanceManagedInstanceGroupArrayInput` via:
 //
@@ -3287,6 +3918,12 @@ func (i GetManagedInstancesManagedInstanceManagedInstanceGroupArray) ToGetManage
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstancesManagedInstanceManagedInstanceGroupArrayOutput)
 }
 
+func (i GetManagedInstancesManagedInstanceManagedInstanceGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstancesManagedInstanceManagedInstanceGroup] {
+	return pulumix.Output[[]GetManagedInstancesManagedInstanceManagedInstanceGroup]{
+		OutputState: i.ToGetManagedInstancesManagedInstanceManagedInstanceGroupArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetManagedInstancesManagedInstanceManagedInstanceGroupOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstancesManagedInstanceManagedInstanceGroupOutput) ElementType() reflect.Type {
@@ -3299,6 +3936,12 @@ func (o GetManagedInstancesManagedInstanceManagedInstanceGroupOutput) ToGetManag
 
 func (o GetManagedInstancesManagedInstanceManagedInstanceGroupOutput) ToGetManagedInstancesManagedInstanceManagedInstanceGroupOutputWithContext(ctx context.Context) GetManagedInstancesManagedInstanceManagedInstanceGroupOutput {
 	return o
+}
+
+func (o GetManagedInstancesManagedInstanceManagedInstanceGroupOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstancesManagedInstanceManagedInstanceGroup] {
+	return pulumix.Output[GetManagedInstancesManagedInstanceManagedInstanceGroup]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
@@ -3323,6 +3966,12 @@ func (o GetManagedInstancesManagedInstanceManagedInstanceGroupArrayOutput) ToGet
 
 func (o GetManagedInstancesManagedInstanceManagedInstanceGroupArrayOutput) ToGetManagedInstancesManagedInstanceManagedInstanceGroupArrayOutputWithContext(ctx context.Context) GetManagedInstancesManagedInstanceManagedInstanceGroupArrayOutput {
 	return o
+}
+
+func (o GetManagedInstancesManagedInstanceManagedInstanceGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstancesManagedInstanceManagedInstanceGroup] {
+	return pulumix.Output[[]GetManagedInstancesManagedInstanceManagedInstanceGroup]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetManagedInstancesManagedInstanceManagedInstanceGroupArrayOutput) Index(i pulumi.IntInput) GetManagedInstancesManagedInstanceManagedInstanceGroupOutput {
@@ -3368,6 +4017,12 @@ func (i GetManagedInstancesManagedInstanceParentSoftwareSourceArgs) ToGetManaged
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstancesManagedInstanceParentSoftwareSourceOutput)
 }
 
+func (i GetManagedInstancesManagedInstanceParentSoftwareSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstancesManagedInstanceParentSoftwareSource] {
+	return pulumix.Output[GetManagedInstancesManagedInstanceParentSoftwareSource]{
+		OutputState: i.ToGetManagedInstancesManagedInstanceParentSoftwareSourceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetManagedInstancesManagedInstanceParentSoftwareSourceArrayInput is an input type that accepts GetManagedInstancesManagedInstanceParentSoftwareSourceArray and GetManagedInstancesManagedInstanceParentSoftwareSourceArrayOutput values.
 // You can construct a concrete instance of `GetManagedInstancesManagedInstanceParentSoftwareSourceArrayInput` via:
 //
@@ -3393,6 +4048,12 @@ func (i GetManagedInstancesManagedInstanceParentSoftwareSourceArray) ToGetManage
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstancesManagedInstanceParentSoftwareSourceArrayOutput)
 }
 
+func (i GetManagedInstancesManagedInstanceParentSoftwareSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstancesManagedInstanceParentSoftwareSource] {
+	return pulumix.Output[[]GetManagedInstancesManagedInstanceParentSoftwareSource]{
+		OutputState: i.ToGetManagedInstancesManagedInstanceParentSoftwareSourceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetManagedInstancesManagedInstanceParentSoftwareSourceOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstancesManagedInstanceParentSoftwareSourceOutput) ElementType() reflect.Type {
@@ -3405,6 +4066,12 @@ func (o GetManagedInstancesManagedInstanceParentSoftwareSourceOutput) ToGetManag
 
 func (o GetManagedInstancesManagedInstanceParentSoftwareSourceOutput) ToGetManagedInstancesManagedInstanceParentSoftwareSourceOutputWithContext(ctx context.Context) GetManagedInstancesManagedInstanceParentSoftwareSourceOutput {
 	return o
+}
+
+func (o GetManagedInstancesManagedInstanceParentSoftwareSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstancesManagedInstanceParentSoftwareSource] {
+	return pulumix.Output[GetManagedInstancesManagedInstanceParentSoftwareSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 // software source identifier
@@ -3429,6 +4096,12 @@ func (o GetManagedInstancesManagedInstanceParentSoftwareSourceArrayOutput) ToGet
 
 func (o GetManagedInstancesManagedInstanceParentSoftwareSourceArrayOutput) ToGetManagedInstancesManagedInstanceParentSoftwareSourceArrayOutputWithContext(ctx context.Context) GetManagedInstancesManagedInstanceParentSoftwareSourceArrayOutput {
 	return o
+}
+
+func (o GetManagedInstancesManagedInstanceParentSoftwareSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstancesManagedInstanceParentSoftwareSource] {
+	return pulumix.Output[[]GetManagedInstancesManagedInstanceParentSoftwareSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetManagedInstancesManagedInstanceParentSoftwareSourceArrayOutput) Index(i pulumi.IntInput) GetManagedInstancesManagedInstanceParentSoftwareSourceOutput {
@@ -3474,6 +4147,12 @@ func (i GetSoftwareSourceAssociatedManagedInstanceArgs) ToGetSoftwareSourceAssoc
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceAssociatedManagedInstanceOutput)
 }
 
+func (i GetSoftwareSourceAssociatedManagedInstanceArgs) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceAssociatedManagedInstance] {
+	return pulumix.Output[GetSoftwareSourceAssociatedManagedInstance]{
+		OutputState: i.ToGetSoftwareSourceAssociatedManagedInstanceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSoftwareSourceAssociatedManagedInstanceArrayInput is an input type that accepts GetSoftwareSourceAssociatedManagedInstanceArray and GetSoftwareSourceAssociatedManagedInstanceArrayOutput values.
 // You can construct a concrete instance of `GetSoftwareSourceAssociatedManagedInstanceArrayInput` via:
 //
@@ -3499,6 +4178,12 @@ func (i GetSoftwareSourceAssociatedManagedInstanceArray) ToGetSoftwareSourceAsso
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceAssociatedManagedInstanceArrayOutput)
 }
 
+func (i GetSoftwareSourceAssociatedManagedInstanceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceAssociatedManagedInstance] {
+	return pulumix.Output[[]GetSoftwareSourceAssociatedManagedInstance]{
+		OutputState: i.ToGetSoftwareSourceAssociatedManagedInstanceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSoftwareSourceAssociatedManagedInstanceOutput struct{ *pulumi.OutputState }
 
 func (GetSoftwareSourceAssociatedManagedInstanceOutput) ElementType() reflect.Type {
@@ -3511,6 +4196,12 @@ func (o GetSoftwareSourceAssociatedManagedInstanceOutput) ToGetSoftwareSourceAss
 
 func (o GetSoftwareSourceAssociatedManagedInstanceOutput) ToGetSoftwareSourceAssociatedManagedInstanceOutputWithContext(ctx context.Context) GetSoftwareSourceAssociatedManagedInstanceOutput {
 	return o
+}
+
+func (o GetSoftwareSourceAssociatedManagedInstanceOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceAssociatedManagedInstance] {
+	return pulumix.Output[GetSoftwareSourceAssociatedManagedInstance]{
+		OutputState: o.OutputState,
+	}
 }
 
 // User friendly name for the software source
@@ -3535,6 +4226,12 @@ func (o GetSoftwareSourceAssociatedManagedInstanceArrayOutput) ToGetSoftwareSour
 
 func (o GetSoftwareSourceAssociatedManagedInstanceArrayOutput) ToGetSoftwareSourceAssociatedManagedInstanceArrayOutputWithContext(ctx context.Context) GetSoftwareSourceAssociatedManagedInstanceArrayOutput {
 	return o
+}
+
+func (o GetSoftwareSourceAssociatedManagedInstanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceAssociatedManagedInstance] {
+	return pulumix.Output[[]GetSoftwareSourceAssociatedManagedInstance]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSoftwareSourceAssociatedManagedInstanceArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourceAssociatedManagedInstanceOutput {
@@ -3578,6 +4275,12 @@ func (i GetSoftwareSourceStreamProfileFilterArgs) ToGetSoftwareSourceStreamProfi
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceStreamProfileFilterOutput)
 }
 
+func (i GetSoftwareSourceStreamProfileFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceStreamProfileFilter] {
+	return pulumix.Output[GetSoftwareSourceStreamProfileFilter]{
+		OutputState: i.ToGetSoftwareSourceStreamProfileFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSoftwareSourceStreamProfileFilterArrayInput is an input type that accepts GetSoftwareSourceStreamProfileFilterArray and GetSoftwareSourceStreamProfileFilterArrayOutput values.
 // You can construct a concrete instance of `GetSoftwareSourceStreamProfileFilterArrayInput` via:
 //
@@ -3603,6 +4306,12 @@ func (i GetSoftwareSourceStreamProfileFilterArray) ToGetSoftwareSourceStreamProf
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceStreamProfileFilterArrayOutput)
 }
 
+func (i GetSoftwareSourceStreamProfileFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceStreamProfileFilter] {
+	return pulumix.Output[[]GetSoftwareSourceStreamProfileFilter]{
+		OutputState: i.ToGetSoftwareSourceStreamProfileFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSoftwareSourceStreamProfileFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSoftwareSourceStreamProfileFilterOutput) ElementType() reflect.Type {
@@ -3615,6 +4324,12 @@ func (o GetSoftwareSourceStreamProfileFilterOutput) ToGetSoftwareSourceStreamPro
 
 func (o GetSoftwareSourceStreamProfileFilterOutput) ToGetSoftwareSourceStreamProfileFilterOutputWithContext(ctx context.Context) GetSoftwareSourceStreamProfileFilterOutput {
 	return o
+}
+
+func (o GetSoftwareSourceStreamProfileFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceStreamProfileFilter] {
+	return pulumix.Output[GetSoftwareSourceStreamProfileFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSoftwareSourceStreamProfileFilterOutput) Name() pulumi.StringOutput {
@@ -3641,6 +4356,12 @@ func (o GetSoftwareSourceStreamProfileFilterArrayOutput) ToGetSoftwareSourceStre
 
 func (o GetSoftwareSourceStreamProfileFilterArrayOutput) ToGetSoftwareSourceStreamProfileFilterArrayOutputWithContext(ctx context.Context) GetSoftwareSourceStreamProfileFilterArrayOutput {
 	return o
+}
+
+func (o GetSoftwareSourceStreamProfileFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceStreamProfileFilter] {
+	return pulumix.Output[[]GetSoftwareSourceStreamProfileFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSoftwareSourceStreamProfileFilterArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourceStreamProfileFilterOutput {
@@ -3690,6 +4411,12 @@ func (i GetSoftwareSourceStreamProfileModuleStreamProfileArgs) ToGetSoftwareSour
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceStreamProfileModuleStreamProfileOutput)
 }
 
+func (i GetSoftwareSourceStreamProfileModuleStreamProfileArgs) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceStreamProfileModuleStreamProfile] {
+	return pulumix.Output[GetSoftwareSourceStreamProfileModuleStreamProfile]{
+		OutputState: i.ToGetSoftwareSourceStreamProfileModuleStreamProfileOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSoftwareSourceStreamProfileModuleStreamProfileArrayInput is an input type that accepts GetSoftwareSourceStreamProfileModuleStreamProfileArray and GetSoftwareSourceStreamProfileModuleStreamProfileArrayOutput values.
 // You can construct a concrete instance of `GetSoftwareSourceStreamProfileModuleStreamProfileArrayInput` via:
 //
@@ -3715,6 +4442,12 @@ func (i GetSoftwareSourceStreamProfileModuleStreamProfileArray) ToGetSoftwareSou
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceStreamProfileModuleStreamProfileArrayOutput)
 }
 
+func (i GetSoftwareSourceStreamProfileModuleStreamProfileArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceStreamProfileModuleStreamProfile] {
+	return pulumix.Output[[]GetSoftwareSourceStreamProfileModuleStreamProfile]{
+		OutputState: i.ToGetSoftwareSourceStreamProfileModuleStreamProfileArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSoftwareSourceStreamProfileModuleStreamProfileOutput struct{ *pulumi.OutputState }
 
 func (GetSoftwareSourceStreamProfileModuleStreamProfileOutput) ElementType() reflect.Type {
@@ -3727,6 +4460,12 @@ func (o GetSoftwareSourceStreamProfileModuleStreamProfileOutput) ToGetSoftwareSo
 
 func (o GetSoftwareSourceStreamProfileModuleStreamProfileOutput) ToGetSoftwareSourceStreamProfileModuleStreamProfileOutputWithContext(ctx context.Context) GetSoftwareSourceStreamProfileModuleStreamProfileOutput {
 	return o
+}
+
+func (o GetSoftwareSourceStreamProfileModuleStreamProfileOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceStreamProfileModuleStreamProfile] {
+	return pulumix.Output[GetSoftwareSourceStreamProfileModuleStreamProfile]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of a module.  This parameter is required if a streamName is specified.
@@ -3756,6 +4495,12 @@ func (o GetSoftwareSourceStreamProfileModuleStreamProfileArrayOutput) ToGetSoftw
 
 func (o GetSoftwareSourceStreamProfileModuleStreamProfileArrayOutput) ToGetSoftwareSourceStreamProfileModuleStreamProfileArrayOutputWithContext(ctx context.Context) GetSoftwareSourceStreamProfileModuleStreamProfileArrayOutput {
 	return o
+}
+
+func (o GetSoftwareSourceStreamProfileModuleStreamProfileArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceStreamProfileModuleStreamProfile] {
+	return pulumix.Output[[]GetSoftwareSourceStreamProfileModuleStreamProfile]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSoftwareSourceStreamProfileModuleStreamProfileArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourceStreamProfileModuleStreamProfileOutput {
@@ -3799,6 +4544,12 @@ func (i GetSoftwareSourcesFilterArgs) ToGetSoftwareSourcesFilterOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourcesFilterOutput)
 }
 
+func (i GetSoftwareSourcesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourcesFilter] {
+	return pulumix.Output[GetSoftwareSourcesFilter]{
+		OutputState: i.ToGetSoftwareSourcesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSoftwareSourcesFilterArrayInput is an input type that accepts GetSoftwareSourcesFilterArray and GetSoftwareSourcesFilterArrayOutput values.
 // You can construct a concrete instance of `GetSoftwareSourcesFilterArrayInput` via:
 //
@@ -3824,6 +4575,12 @@ func (i GetSoftwareSourcesFilterArray) ToGetSoftwareSourcesFilterArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourcesFilterArrayOutput)
 }
 
+func (i GetSoftwareSourcesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourcesFilter] {
+	return pulumix.Output[[]GetSoftwareSourcesFilter]{
+		OutputState: i.ToGetSoftwareSourcesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSoftwareSourcesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSoftwareSourcesFilterOutput) ElementType() reflect.Type {
@@ -3836,6 +4593,12 @@ func (o GetSoftwareSourcesFilterOutput) ToGetSoftwareSourcesFilterOutput() GetSo
 
 func (o GetSoftwareSourcesFilterOutput) ToGetSoftwareSourcesFilterOutputWithContext(ctx context.Context) GetSoftwareSourcesFilterOutput {
 	return o
+}
+
+func (o GetSoftwareSourcesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourcesFilter] {
+	return pulumix.Output[GetSoftwareSourcesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSoftwareSourcesFilterOutput) Name() pulumi.StringOutput {
@@ -3862,6 +4625,12 @@ func (o GetSoftwareSourcesFilterArrayOutput) ToGetSoftwareSourcesFilterArrayOutp
 
 func (o GetSoftwareSourcesFilterArrayOutput) ToGetSoftwareSourcesFilterArrayOutputWithContext(ctx context.Context) GetSoftwareSourcesFilterArrayOutput {
 	return o
+}
+
+func (o GetSoftwareSourcesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourcesFilter] {
+	return pulumix.Output[[]GetSoftwareSourcesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSoftwareSourcesFilterArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourcesFilterOutput {
@@ -3987,6 +4756,12 @@ func (i GetSoftwareSourcesSoftwareSourceArgs) ToGetSoftwareSourcesSoftwareSource
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourcesSoftwareSourceOutput)
 }
 
+func (i GetSoftwareSourcesSoftwareSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourcesSoftwareSource] {
+	return pulumix.Output[GetSoftwareSourcesSoftwareSource]{
+		OutputState: i.ToGetSoftwareSourcesSoftwareSourceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSoftwareSourcesSoftwareSourceArrayInput is an input type that accepts GetSoftwareSourcesSoftwareSourceArray and GetSoftwareSourcesSoftwareSourceArrayOutput values.
 // You can construct a concrete instance of `GetSoftwareSourcesSoftwareSourceArrayInput` via:
 //
@@ -4012,6 +4787,12 @@ func (i GetSoftwareSourcesSoftwareSourceArray) ToGetSoftwareSourcesSoftwareSourc
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourcesSoftwareSourceArrayOutput)
 }
 
+func (i GetSoftwareSourcesSoftwareSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourcesSoftwareSource] {
+	return pulumix.Output[[]GetSoftwareSourcesSoftwareSource]{
+		OutputState: i.ToGetSoftwareSourcesSoftwareSourceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSoftwareSourcesSoftwareSourceOutput struct{ *pulumi.OutputState }
 
 func (GetSoftwareSourcesSoftwareSourceOutput) ElementType() reflect.Type {
@@ -4024,6 +4805,12 @@ func (o GetSoftwareSourcesSoftwareSourceOutput) ToGetSoftwareSourcesSoftwareSour
 
 func (o GetSoftwareSourcesSoftwareSourceOutput) ToGetSoftwareSourcesSoftwareSourceOutputWithContext(ctx context.Context) GetSoftwareSourcesSoftwareSourceOutput {
 	return o
+}
+
+func (o GetSoftwareSourcesSoftwareSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourcesSoftwareSource] {
+	return pulumix.Output[GetSoftwareSourcesSoftwareSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The architecture type supported by the Software Source
@@ -4152,6 +4939,12 @@ func (o GetSoftwareSourcesSoftwareSourceArrayOutput) ToGetSoftwareSourcesSoftwar
 	return o
 }
 
+func (o GetSoftwareSourcesSoftwareSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourcesSoftwareSource] {
+	return pulumix.Output[[]GetSoftwareSourcesSoftwareSource]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetSoftwareSourcesSoftwareSourceArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourcesSoftwareSourceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSoftwareSourcesSoftwareSource {
 		return vs[0].([]GetSoftwareSourcesSoftwareSource)[vs[1].(int)]
@@ -4195,6 +4988,12 @@ func (i GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArgs) ToGetSoft
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceOutput)
 }
 
+func (i GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArgs) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourcesSoftwareSourceAssociatedManagedInstance] {
+	return pulumix.Output[GetSoftwareSourcesSoftwareSourceAssociatedManagedInstance]{
+		OutputState: i.ToGetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArrayInput is an input type that accepts GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArray and GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArrayOutput values.
 // You can construct a concrete instance of `GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArrayInput` via:
 //
@@ -4220,6 +5019,12 @@ func (i GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArray) ToGetSof
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArrayOutput)
 }
 
+func (i GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourcesSoftwareSourceAssociatedManagedInstance] {
+	return pulumix.Output[[]GetSoftwareSourcesSoftwareSourceAssociatedManagedInstance]{
+		OutputState: i.ToGetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceOutput struct{ *pulumi.OutputState }
 
 func (GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceOutput) ElementType() reflect.Type {
@@ -4232,6 +5037,12 @@ func (o GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceOutput) ToGetSo
 
 func (o GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceOutput) ToGetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceOutputWithContext(ctx context.Context) GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceOutput {
 	return o
+}
+
+func (o GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourcesSoftwareSourceAssociatedManagedInstance] {
+	return pulumix.Output[GetSoftwareSourcesSoftwareSourceAssociatedManagedInstance]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
@@ -4256,6 +5067,12 @@ func (o GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArrayOutput) To
 
 func (o GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArrayOutput) ToGetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArrayOutputWithContext(ctx context.Context) GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArrayOutput {
 	return o
+}
+
+func (o GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourcesSoftwareSourceAssociatedManagedInstance] {
+	return pulumix.Output[[]GetSoftwareSourcesSoftwareSourceAssociatedManagedInstance]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceOutput {

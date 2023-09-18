@@ -74,7 +74,7 @@ public class ProtectionRule extends com.pulumi.resources.CustomResource {
      * (Updatable) The action to take when the traffic is detected as malicious. If unspecified, defaults to `OFF`.
      * 
      */
-    @Export(name="action", type=String.class, parameters={})
+    @Export(name="action", refs={String.class}, tree="[0]")
     private Output<String> action;
 
     /**
@@ -88,7 +88,7 @@ public class ProtectionRule extends com.pulumi.resources.CustomResource {
      * The description of the protection rule.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -102,7 +102,7 @@ public class ProtectionRule extends com.pulumi.resources.CustomResource {
      * An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
      * 
      */
-    @Export(name="exclusions", type=List.class, parameters={ProtectionRuleExclusion.class})
+    @Export(name="exclusions", refs={List.class,ProtectionRuleExclusion.class}, tree="[0,1]")
     private Output<List<ProtectionRuleExclusion>> exclusions;
 
     /**
@@ -116,7 +116,7 @@ public class ProtectionRule extends com.pulumi.resources.CustomResource {
      * (Updatable) The unique key of the protection rule.
      * 
      */
-    @Export(name="key", type=String.class, parameters={})
+    @Export(name="key", refs={String.class}, tree="[0]")
     private Output<String> key;
 
     /**
@@ -130,7 +130,7 @@ public class ProtectionRule extends com.pulumi.resources.CustomResource {
      * The list of labels for the protection rule.
      * 
      */
-    @Export(name="labels", type=List.class, parameters={String.class})
+    @Export(name="labels", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> labels;
 
     /**
@@ -144,7 +144,7 @@ public class ProtectionRule extends com.pulumi.resources.CustomResource {
      * The list of the ModSecurity rule IDs that apply to this protection rule. For more information about ModSecurity&#39;s open source WAF rules, see [Mod Security&#39;s documentation](https://www.modsecurity.org/CRS/Documentation/index.html).
      * 
      */
-    @Export(name="modSecurityRuleIds", type=List.class, parameters={String.class})
+    @Export(name="modSecurityRuleIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> modSecurityRuleIds;
 
     /**
@@ -158,7 +158,7 @@ public class ProtectionRule extends com.pulumi.resources.CustomResource {
      * The name of the protection rule.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -172,7 +172,7 @@ public class ProtectionRule extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
      * 
      */
-    @Export(name="waasPolicyId", type=String.class, parameters={})
+    @Export(name="waasPolicyId", refs={String.class}, tree="[0]")
     private Output<String> waasPolicyId;
 
     /**

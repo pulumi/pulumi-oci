@@ -92,7 +92,7 @@ public class JobRun extends com.pulumi.resources.CustomResource {
      * If set to true, do not wait for the JobRun to reach completion prior to returning. Can be useful for JobRuns with a long duration.
      * 
      */
-    @Export(name="asynchronous", type=Boolean.class, parameters={})
+    @Export(name="asynchronous", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> asynchronous;
 
     /**
@@ -106,7 +106,7 @@ public class JobRun extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -120,7 +120,7 @@ public class JobRun extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the job run.
      * 
      */
-    @Export(name="createdBy", type=String.class, parameters={})
+    @Export(name="createdBy", refs={String.class}, tree="[0]")
     private Output<String> createdBy;
 
     /**
@@ -134,7 +134,7 @@ public class JobRun extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -148,7 +148,7 @@ public class JobRun extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-friendly display name for the resource.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -162,7 +162,7 @@ public class JobRun extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -176,7 +176,7 @@ public class JobRun extends com.pulumi.resources.CustomResource {
      * The job configuration details
      * 
      */
-    @Export(name="jobConfigurationOverrideDetails", type=JobRunJobConfigurationOverrideDetails.class, parameters={})
+    @Export(name="jobConfigurationOverrideDetails", refs={JobRunJobConfigurationOverrideDetails.class}, tree="[0]")
     private Output<JobRunJobConfigurationOverrideDetails> jobConfigurationOverrideDetails;
 
     /**
@@ -190,7 +190,7 @@ public class JobRun extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
      * 
      */
-    @Export(name="jobId", type=String.class, parameters={})
+    @Export(name="jobId", refs={String.class}, tree="[0]")
     private Output<String> jobId;
 
     /**
@@ -204,7 +204,7 @@ public class JobRun extends com.pulumi.resources.CustomResource {
      * The job infrastructure configuration details (shape, block storage, etc.)
      * 
      */
-    @Export(name="jobInfrastructureConfigurationDetails", type=List.class, parameters={JobRunJobInfrastructureConfigurationDetail.class})
+    @Export(name="jobInfrastructureConfigurationDetails", refs={List.class,JobRunJobInfrastructureConfigurationDetail.class}, tree="[0,1]")
     private Output<List<JobRunJobInfrastructureConfigurationDetail>> jobInfrastructureConfigurationDetails;
 
     /**
@@ -218,7 +218,7 @@ public class JobRun extends com.pulumi.resources.CustomResource {
      * Logging configuration for resource.
      * 
      */
-    @Export(name="jobLogConfigurationOverrideDetails", type=JobRunJobLogConfigurationOverrideDetails.class, parameters={})
+    @Export(name="jobLogConfigurationOverrideDetails", refs={JobRunJobLogConfigurationOverrideDetails.class}, tree="[0]")
     private Output<JobRunJobLogConfigurationOverrideDetails> jobLogConfigurationOverrideDetails;
 
     /**
@@ -232,7 +232,7 @@ public class JobRun extends com.pulumi.resources.CustomResource {
      * Details of the state of the job run.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -246,7 +246,7 @@ public class JobRun extends com.pulumi.resources.CustomResource {
      * Customer logging details for job run.
      * 
      */
-    @Export(name="logDetails", type=List.class, parameters={JobRunLogDetail.class})
+    @Export(name="logDetails", refs={List.class,JobRunLogDetail.class}, tree="[0,1]")
     private Output<List<JobRunLogDetail>> logDetails;
 
     /**
@@ -263,7 +263,7 @@ public class JobRun extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="projectId", type=String.class, parameters={})
+    @Export(name="projectId", refs={String.class}, tree="[0]")
     private Output<String> projectId;
 
     /**
@@ -280,7 +280,7 @@ public class JobRun extends com.pulumi.resources.CustomResource {
      * The state of the job run.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -294,7 +294,7 @@ public class JobRun extends com.pulumi.resources.CustomResource {
      * The date and time the job run was accepted in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    @Export(name="timeAccepted", type=String.class, parameters={})
+    @Export(name="timeAccepted", refs={String.class}, tree="[0]")
     private Output<String> timeAccepted;
 
     /**
@@ -308,7 +308,7 @@ public class JobRun extends com.pulumi.resources.CustomResource {
      * The date and time the job run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    @Export(name="timeFinished", type=String.class, parameters={})
+    @Export(name="timeFinished", refs={String.class}, tree="[0]")
     private Output<String> timeFinished;
 
     /**
@@ -322,7 +322,7 @@ public class JobRun extends com.pulumi.resources.CustomResource {
      * The date and time the job run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    @Export(name="timeStarted", type=String.class, parameters={})
+    @Export(name="timeStarted", refs={String.class}, tree="[0]")
     private Output<String> timeStarted;
 
     /**

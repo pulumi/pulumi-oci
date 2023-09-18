@@ -65,7 +65,7 @@ public class ImportStandardTagsManagement extends com.pulumi.resources.CustomRes
      * The OCID of the compartment where the bulk create request is submitted and where the tag namespaces will be created.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -82,7 +82,7 @@ public class ImportStandardTagsManagement extends com.pulumi.resources.CustomRes
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="standardTagNamespaceName", type=String.class, parameters={})
+    @Export(name="standardTagNamespaceName", refs={String.class}, tree="[0]")
     private Output<String> standardTagNamespaceName;
 
     /**
@@ -95,7 +95,7 @@ public class ImportStandardTagsManagement extends com.pulumi.resources.CustomRes
     public Output<String> standardTagNamespaceName() {
         return this.standardTagNamespaceName;
     }
-    @Export(name="workRequestId", type=String.class, parameters={})
+    @Export(name="workRequestId", refs={String.class}, tree="[0]")
     private Output<String> workRequestId;
 
     public Output<String> workRequestId() {

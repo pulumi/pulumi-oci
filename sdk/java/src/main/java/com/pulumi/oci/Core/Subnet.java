@@ -117,7 +117,7 @@ public class Subnet extends com.pulumi.resources.CustomResource {
      * Example: `Uocm:PHX-AD-1`
      * 
      */
-    @Export(name="availabilityDomain", type=String.class, parameters={})
+    @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
     private Output<String> availabilityDomain;
 
     /**
@@ -141,7 +141,7 @@ public class Subnet extends com.pulumi.resources.CustomResource {
      * Example: `10.0.1.0/24`
      * 
      */
-    @Export(name="cidrBlock", type=String.class, parameters={})
+    @Export(name="cidrBlock", refs={String.class}, tree="[0]")
     private Output<String> cidrBlock;
 
     /**
@@ -159,7 +159,7 @@ public class Subnet extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the subnet.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -173,7 +173,7 @@ public class Subnet extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -187,7 +187,7 @@ public class Subnet extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the set of DHCP options the subnet will use. If you don&#39;t provide a value, the subnet uses the VCN&#39;s default set of DHCP options.
      * 
      */
-    @Export(name="dhcpOptionsId", type=String.class, parameters={})
+    @Export(name="dhcpOptionsId", refs={String.class}, tree="[0]")
     private Output<String> dhcpOptionsId;
 
     /**
@@ -201,7 +201,7 @@ public class Subnet extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -221,7 +221,7 @@ public class Subnet extends com.pulumi.resources.CustomResource {
      * Example: `subnet123`
      * 
      */
-    @Export(name="dnsLabel", type=String.class, parameters={})
+    @Export(name="dnsLabel", refs={String.class}, tree="[0]")
     private Output<String> dnsLabel;
 
     /**
@@ -241,7 +241,7 @@ public class Subnet extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -259,7 +259,7 @@ public class Subnet extends com.pulumi.resources.CustomResource {
      * Example: `2001:0db8:0123:1111::/64`
      * 
      */
-    @Export(name="ipv6cidrBlock", type=String.class, parameters={})
+    @Export(name="ipv6cidrBlock", refs={String.class}, tree="[0]")
     private Output<String> ipv6cidrBlock;
 
     /**
@@ -280,7 +280,7 @@ public class Subnet extends com.pulumi.resources.CustomResource {
      * * The number of prefixes must not exceed the limit of IPv6 prefixes allowed to a subnet.
      * 
      */
-    @Export(name="ipv6cidrBlocks", type=List.class, parameters={String.class})
+    @Export(name="ipv6cidrBlocks", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> ipv6cidrBlocks;
 
     /**
@@ -297,7 +297,7 @@ public class Subnet extends com.pulumi.resources.CustomResource {
      * For an IPv6-enabled subnet, this is the IPv6 address of the virtual router.  Example: `2001:0db8:0123:1111:89ab:cdef:1234:5678`
      * 
      */
-    @Export(name="ipv6virtualRouterIp", type=String.class, parameters={})
+    @Export(name="ipv6virtualRouterIp", refs={String.class}, tree="[0]")
     private Output<String> ipv6virtualRouterIp;
 
     /**
@@ -317,7 +317,7 @@ public class Subnet extends com.pulumi.resources.CustomResource {
      * Example: `true`
      * 
      */
-    @Export(name="prohibitInternetIngress", type=Boolean.class, parameters={})
+    @Export(name="prohibitInternetIngress", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> prohibitInternetIngress;
 
     /**
@@ -341,7 +341,7 @@ public class Subnet extends com.pulumi.resources.CustomResource {
      * Example: `true`
      * 
      */
-    @Export(name="prohibitPublicIpOnVnic", type=Boolean.class, parameters={})
+    @Export(name="prohibitPublicIpOnVnic", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> prohibitPublicIpOnVnic;
 
     /**
@@ -359,7 +359,7 @@ public class Subnet extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the subnet will use. If you don&#39;t provide a value, the subnet uses the VCN&#39;s default route table.
      * 
      */
-    @Export(name="routeTableId", type=String.class, parameters={})
+    @Export(name="routeTableId", refs={String.class}, tree="[0]")
     private Output<String> routeTableId;
 
     /**
@@ -373,7 +373,7 @@ public class Subnet extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCIDs of the security list or lists the subnet will use. If you don&#39;t provide a value, the subnet uses the VCN&#39;s default security list. Remember that security lists are associated *with the subnet*, but the rules are applied to the individual VNICs in the subnet.
      * 
      */
-    @Export(name="securityListIds", type=List.class, parameters={String.class})
+    @Export(name="securityListIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> securityListIds;
 
     /**
@@ -387,7 +387,7 @@ public class Subnet extends com.pulumi.resources.CustomResource {
      * The subnet&#39;s current state.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -401,7 +401,7 @@ public class Subnet extends com.pulumi.resources.CustomResource {
      * The subnet&#39;s domain name, which consists of the subnet&#39;s DNS label, the VCN&#39;s DNS label, and the `oraclevcn.com` domain.
      * 
      */
-    @Export(name="subnetDomainName", type=String.class, parameters={})
+    @Export(name="subnetDomainName", refs={String.class}, tree="[0]")
     private Output<String> subnetDomainName;
 
     /**
@@ -415,7 +415,7 @@ public class Subnet extends com.pulumi.resources.CustomResource {
      * The date and time the subnet was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -432,7 +432,7 @@ public class Subnet extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="vcnId", type=String.class, parameters={})
+    @Export(name="vcnId", refs={String.class}, tree="[0]")
     private Output<String> vcnId;
 
     /**
@@ -449,7 +449,7 @@ public class Subnet extends com.pulumi.resources.CustomResource {
      * The IP address of the virtual router.  Example: `10.0.14.1`
      * 
      */
-    @Export(name="virtualRouterIp", type=String.class, parameters={})
+    @Export(name="virtualRouterIp", refs={String.class}, tree="[0]")
     private Output<String> virtualRouterIp;
 
     /**
@@ -463,7 +463,7 @@ public class Subnet extends com.pulumi.resources.CustomResource {
      * The MAC address of the virtual router.  Example: `00:00:00:00:00:01`
      * 
      */
-    @Export(name="virtualRouterMac", type=String.class, parameters={})
+    @Export(name="virtualRouterMac", refs={String.class}, tree="[0]")
     private Output<String> virtualRouterMac;
 
     /**

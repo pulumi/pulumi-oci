@@ -75,7 +75,7 @@ public class MigrationAsset extends com.pulumi.resources.CustomResource {
      * Availability domain
      * 
      */
-    @Export(name="availabilityDomain", type=String.class, parameters={})
+    @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
     private Output<String> availabilityDomain;
 
     /**
@@ -89,7 +89,7 @@ public class MigrationAsset extends com.pulumi.resources.CustomResource {
      * Compartment Identifier
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -103,7 +103,7 @@ public class MigrationAsset extends com.pulumi.resources.CustomResource {
      * List of migration assets that depend on the asset.
      * 
      */
-    @Export(name="dependedOnBies", type=List.class, parameters={String.class})
+    @Export(name="dependedOnBies", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> dependedOnBies;
 
     /**
@@ -117,7 +117,7 @@ public class MigrationAsset extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-friendly name. If empty, then source asset name will be used. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -131,7 +131,7 @@ public class MigrationAsset extends com.pulumi.resources.CustomResource {
      * OCID of an asset for an inventory.
      * 
      */
-    @Export(name="inventoryAssetId", type=String.class, parameters={})
+    @Export(name="inventoryAssetId", refs={String.class}, tree="[0]")
     private Output<String> inventoryAssetId;
 
     /**
@@ -145,7 +145,7 @@ public class MigrationAsset extends com.pulumi.resources.CustomResource {
      * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -155,7 +155,7 @@ public class MigrationAsset extends com.pulumi.resources.CustomResource {
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
     }
-    @Export(name="migrationAssetDependsOns", type=List.class, parameters={String.class})
+    @Export(name="migrationAssetDependsOns", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> migrationAssetDependsOns;
 
     public Output<List<String>> migrationAssetDependsOns() {
@@ -165,7 +165,7 @@ public class MigrationAsset extends com.pulumi.resources.CustomResource {
      * OCID of the associated migration.
      * 
      */
-    @Export(name="migrationId", type=String.class, parameters={})
+    @Export(name="migrationId", refs={String.class}, tree="[0]")
     private Output<String> migrationId;
 
     /**
@@ -179,7 +179,7 @@ public class MigrationAsset extends com.pulumi.resources.CustomResource {
      * List of notifications
      * 
      */
-    @Export(name="notifications", type=List.class, parameters={String.class})
+    @Export(name="notifications", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> notifications;
 
     /**
@@ -193,7 +193,7 @@ public class MigrationAsset extends com.pulumi.resources.CustomResource {
      * The parent snapshot of the migration asset to be used by the replication task.
      * 
      */
-    @Export(name="parentSnapshot", type=String.class, parameters={})
+    @Export(name="parentSnapshot", refs={String.class}, tree="[0]")
     private Output<String> parentSnapshot;
 
     /**
@@ -207,7 +207,7 @@ public class MigrationAsset extends com.pulumi.resources.CustomResource {
      * Replication compartment identifier
      * 
      */
-    @Export(name="replicationCompartmentId", type=String.class, parameters={})
+    @Export(name="replicationCompartmentId", refs={String.class}, tree="[0]")
     private Output<String> replicationCompartmentId;
 
     /**
@@ -221,7 +221,7 @@ public class MigrationAsset extends com.pulumi.resources.CustomResource {
      * (Updatable) Replication schedule identifier
      * 
      */
-    @Export(name="replicationScheduleId", type=String.class, parameters={})
+    @Export(name="replicationScheduleId", refs={String.class}, tree="[0]")
     private Output<String> replicationScheduleId;
 
     /**
@@ -238,7 +238,7 @@ public class MigrationAsset extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="snapShotBucketName", type=String.class, parameters={})
+    @Export(name="snapShotBucketName", refs={String.class}, tree="[0]")
     private Output<String> snapShotBucketName;
 
     /**
@@ -255,7 +255,7 @@ public class MigrationAsset extends com.pulumi.resources.CustomResource {
      * Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="snapshots", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="snapshots", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> snapshots;
 
     /**
@@ -269,7 +269,7 @@ public class MigrationAsset extends com.pulumi.resources.CustomResource {
      * OCID that is referenced to an asset for an inventory.
      * 
      */
-    @Export(name="sourceAssetId", type=String.class, parameters={})
+    @Export(name="sourceAssetId", refs={String.class}, tree="[0]")
     private Output<String> sourceAssetId;
 
     /**
@@ -283,7 +283,7 @@ public class MigrationAsset extends com.pulumi.resources.CustomResource {
      * The current state of the migration asset.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -297,7 +297,7 @@ public class MigrationAsset extends com.pulumi.resources.CustomResource {
      * Tenancy identifier
      * 
      */
-    @Export(name="tenancyId", type=String.class, parameters={})
+    @Export(name="tenancyId", refs={String.class}, tree="[0]")
     private Output<String> tenancyId;
 
     /**
@@ -311,7 +311,7 @@ public class MigrationAsset extends com.pulumi.resources.CustomResource {
      * The time when the migration asset was created. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -325,7 +325,7 @@ public class MigrationAsset extends com.pulumi.resources.CustomResource {
      * The time when the migration asset was updated. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -339,7 +339,7 @@ public class MigrationAsset extends com.pulumi.resources.CustomResource {
      * The type of asset referenced for inventory.
      * 
      */
-    @Export(name="type", type=String.class, parameters={})
+    @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**

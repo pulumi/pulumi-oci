@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Instance Pool Instance resource in Oracle Cloud Infrastructure Core service.
@@ -241,6 +242,12 @@ func (i *InstancePoolInstance) ToInstancePoolInstanceOutputWithContext(ctx conte
 	return pulumi.ToOutputWithContext(ctx, i).(InstancePoolInstanceOutput)
 }
 
+func (i *InstancePoolInstance) ToOutput(ctx context.Context) pulumix.Output[*InstancePoolInstance] {
+	return pulumix.Output[*InstancePoolInstance]{
+		OutputState: i.ToInstancePoolInstanceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // InstancePoolInstanceArrayInput is an input type that accepts InstancePoolInstanceArray and InstancePoolInstanceArrayOutput values.
 // You can construct a concrete instance of `InstancePoolInstanceArrayInput` via:
 //
@@ -264,6 +271,12 @@ func (i InstancePoolInstanceArray) ToInstancePoolInstanceArrayOutput() InstanceP
 
 func (i InstancePoolInstanceArray) ToInstancePoolInstanceArrayOutputWithContext(ctx context.Context) InstancePoolInstanceArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(InstancePoolInstanceArrayOutput)
+}
+
+func (i InstancePoolInstanceArray) ToOutput(ctx context.Context) pulumix.Output[[]*InstancePoolInstance] {
+	return pulumix.Output[[]*InstancePoolInstance]{
+		OutputState: i.ToInstancePoolInstanceArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // InstancePoolInstanceMapInput is an input type that accepts InstancePoolInstanceMap and InstancePoolInstanceMapOutput values.
@@ -291,6 +304,12 @@ func (i InstancePoolInstanceMap) ToInstancePoolInstanceMapOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(InstancePoolInstanceMapOutput)
 }
 
+func (i InstancePoolInstanceMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*InstancePoolInstance] {
+	return pulumix.Output[map[string]*InstancePoolInstance]{
+		OutputState: i.ToInstancePoolInstanceMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type InstancePoolInstanceOutput struct{ *pulumi.OutputState }
 
 func (InstancePoolInstanceOutput) ElementType() reflect.Type {
@@ -303,6 +322,12 @@ func (o InstancePoolInstanceOutput) ToInstancePoolInstanceOutput() InstancePoolI
 
 func (o InstancePoolInstanceOutput) ToInstancePoolInstanceOutputWithContext(ctx context.Context) InstancePoolInstanceOutput {
 	return o
+}
+
+func (o InstancePoolInstanceOutput) ToOutput(ctx context.Context) pulumix.Output[*InstancePoolInstance] {
+	return pulumix.Output[*InstancePoolInstance]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o InstancePoolInstanceOutput) AutoTerminateInstanceOnDelete() pulumi.BoolPtrOutput {
@@ -392,6 +417,12 @@ func (o InstancePoolInstanceArrayOutput) ToInstancePoolInstanceArrayOutputWithCo
 	return o
 }
 
+func (o InstancePoolInstanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*InstancePoolInstance] {
+	return pulumix.Output[[]*InstancePoolInstance]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o InstancePoolInstanceArrayOutput) Index(i pulumi.IntInput) InstancePoolInstanceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *InstancePoolInstance {
 		return vs[0].([]*InstancePoolInstance)[vs[1].(int)]
@@ -410,6 +441,12 @@ func (o InstancePoolInstanceMapOutput) ToInstancePoolInstanceMapOutput() Instanc
 
 func (o InstancePoolInstanceMapOutput) ToInstancePoolInstanceMapOutputWithContext(ctx context.Context) InstancePoolInstanceMapOutput {
 	return o
+}
+
+func (o InstancePoolInstanceMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*InstancePoolInstance] {
+	return pulumix.Output[map[string]*InstancePoolInstance]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o InstancePoolInstanceMapOutput) MapIndex(k pulumi.StringInput) InstancePoolInstanceOutput {

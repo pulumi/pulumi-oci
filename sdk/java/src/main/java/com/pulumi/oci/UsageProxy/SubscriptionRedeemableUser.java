@@ -73,7 +73,7 @@ public class SubscriptionRedeemableUser extends com.pulumi.resources.CustomResou
      * The list of new user to be added to the list of user that can redeem rewards.
      * 
      */
-    @Export(name="items", type=List.class, parameters={SubscriptionRedeemableUserItem.class})
+    @Export(name="items", refs={List.class,SubscriptionRedeemableUserItem.class}, tree="[0,1]")
     private Output<List<SubscriptionRedeemableUserItem>> items;
 
     /**
@@ -87,7 +87,7 @@ public class SubscriptionRedeemableUser extends com.pulumi.resources.CustomResou
      * The subscription ID for which rewards information is requested for.
      * 
      */
-    @Export(name="subscriptionId", type=String.class, parameters={})
+    @Export(name="subscriptionId", refs={String.class}, tree="[0]")
     private Output<String> subscriptionId;
 
     /**
@@ -101,7 +101,7 @@ public class SubscriptionRedeemableUser extends com.pulumi.resources.CustomResou
      * The OCID of the tenancy.
      * 
      */
-    @Export(name="tenancyId", type=String.class, parameters={})
+    @Export(name="tenancyId", refs={String.class}, tree="[0]")
     private Output<String> tenancyId;
 
     /**
@@ -118,7 +118,7 @@ public class SubscriptionRedeemableUser extends com.pulumi.resources.CustomResou
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="userId", type=String.class, parameters={})
+    @Export(name="userId", refs={String.class}, tree="[0]")
     private Output<String> userId;
 
     /**

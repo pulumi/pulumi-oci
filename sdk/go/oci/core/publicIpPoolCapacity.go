@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // ## Example Usage
@@ -177,6 +178,12 @@ func (i *PublicIpPoolCapacity) ToPublicIpPoolCapacityOutputWithContext(ctx conte
 	return pulumi.ToOutputWithContext(ctx, i).(PublicIpPoolCapacityOutput)
 }
 
+func (i *PublicIpPoolCapacity) ToOutput(ctx context.Context) pulumix.Output[*PublicIpPoolCapacity] {
+	return pulumix.Output[*PublicIpPoolCapacity]{
+		OutputState: i.ToPublicIpPoolCapacityOutputWithContext(ctx).OutputState,
+	}
+}
+
 // PublicIpPoolCapacityArrayInput is an input type that accepts PublicIpPoolCapacityArray and PublicIpPoolCapacityArrayOutput values.
 // You can construct a concrete instance of `PublicIpPoolCapacityArrayInput` via:
 //
@@ -200,6 +207,12 @@ func (i PublicIpPoolCapacityArray) ToPublicIpPoolCapacityArrayOutput() PublicIpP
 
 func (i PublicIpPoolCapacityArray) ToPublicIpPoolCapacityArrayOutputWithContext(ctx context.Context) PublicIpPoolCapacityArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(PublicIpPoolCapacityArrayOutput)
+}
+
+func (i PublicIpPoolCapacityArray) ToOutput(ctx context.Context) pulumix.Output[[]*PublicIpPoolCapacity] {
+	return pulumix.Output[[]*PublicIpPoolCapacity]{
+		OutputState: i.ToPublicIpPoolCapacityArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // PublicIpPoolCapacityMapInput is an input type that accepts PublicIpPoolCapacityMap and PublicIpPoolCapacityMapOutput values.
@@ -227,6 +240,12 @@ func (i PublicIpPoolCapacityMap) ToPublicIpPoolCapacityMapOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(PublicIpPoolCapacityMapOutput)
 }
 
+func (i PublicIpPoolCapacityMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*PublicIpPoolCapacity] {
+	return pulumix.Output[map[string]*PublicIpPoolCapacity]{
+		OutputState: i.ToPublicIpPoolCapacityMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type PublicIpPoolCapacityOutput struct{ *pulumi.OutputState }
 
 func (PublicIpPoolCapacityOutput) ElementType() reflect.Type {
@@ -239,6 +258,12 @@ func (o PublicIpPoolCapacityOutput) ToPublicIpPoolCapacityOutput() PublicIpPoolC
 
 func (o PublicIpPoolCapacityOutput) ToPublicIpPoolCapacityOutputWithContext(ctx context.Context) PublicIpPoolCapacityOutput {
 	return o
+}
+
+func (o PublicIpPoolCapacityOutput) ToOutput(ctx context.Context) pulumix.Output[*PublicIpPoolCapacity] {
+	return pulumix.Output[*PublicIpPoolCapacity]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the Byoip Range Id object to which the cidr block belongs.
@@ -273,6 +298,12 @@ func (o PublicIpPoolCapacityArrayOutput) ToPublicIpPoolCapacityArrayOutputWithCo
 	return o
 }
 
+func (o PublicIpPoolCapacityArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*PublicIpPoolCapacity] {
+	return pulumix.Output[[]*PublicIpPoolCapacity]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o PublicIpPoolCapacityArrayOutput) Index(i pulumi.IntInput) PublicIpPoolCapacityOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *PublicIpPoolCapacity {
 		return vs[0].([]*PublicIpPoolCapacity)[vs[1].(int)]
@@ -291,6 +322,12 @@ func (o PublicIpPoolCapacityMapOutput) ToPublicIpPoolCapacityMapOutput() PublicI
 
 func (o PublicIpPoolCapacityMapOutput) ToPublicIpPoolCapacityMapOutputWithContext(ctx context.Context) PublicIpPoolCapacityMapOutput {
 	return o
+}
+
+func (o PublicIpPoolCapacityMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*PublicIpPoolCapacity] {
+	return pulumix.Output[map[string]*PublicIpPoolCapacity]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o PublicIpPoolCapacityMapOutput) MapIndex(k pulumi.StringInput) PublicIpPoolCapacityOutput {

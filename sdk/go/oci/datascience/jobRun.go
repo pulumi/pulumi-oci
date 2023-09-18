@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Job Run resource in Oracle Cloud Infrastructure Data Science service.
@@ -309,6 +310,12 @@ func (i *JobRun) ToJobRunOutputWithContext(ctx context.Context) JobRunOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(JobRunOutput)
 }
 
+func (i *JobRun) ToOutput(ctx context.Context) pulumix.Output[*JobRun] {
+	return pulumix.Output[*JobRun]{
+		OutputState: i.ToJobRunOutputWithContext(ctx).OutputState,
+	}
+}
+
 // JobRunArrayInput is an input type that accepts JobRunArray and JobRunArrayOutput values.
 // You can construct a concrete instance of `JobRunArrayInput` via:
 //
@@ -332,6 +339,12 @@ func (i JobRunArray) ToJobRunArrayOutput() JobRunArrayOutput {
 
 func (i JobRunArray) ToJobRunArrayOutputWithContext(ctx context.Context) JobRunArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(JobRunArrayOutput)
+}
+
+func (i JobRunArray) ToOutput(ctx context.Context) pulumix.Output[[]*JobRun] {
+	return pulumix.Output[[]*JobRun]{
+		OutputState: i.ToJobRunArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // JobRunMapInput is an input type that accepts JobRunMap and JobRunMapOutput values.
@@ -359,6 +372,12 @@ func (i JobRunMap) ToJobRunMapOutputWithContext(ctx context.Context) JobRunMapOu
 	return pulumi.ToOutputWithContext(ctx, i).(JobRunMapOutput)
 }
 
+func (i JobRunMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*JobRun] {
+	return pulumix.Output[map[string]*JobRun]{
+		OutputState: i.ToJobRunMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type JobRunOutput struct{ *pulumi.OutputState }
 
 func (JobRunOutput) ElementType() reflect.Type {
@@ -371,6 +390,12 @@ func (o JobRunOutput) ToJobRunOutput() JobRunOutput {
 
 func (o JobRunOutput) ToJobRunOutputWithContext(ctx context.Context) JobRunOutput {
 	return o
+}
+
+func (o JobRunOutput) ToOutput(ctx context.Context) pulumix.Output[*JobRun] {
+	return pulumix.Output[*JobRun]{
+		OutputState: o.OutputState,
+	}
 }
 
 // If set to true, do not wait for the JobRun to reach completion prior to returning. Can be useful for JobRuns with a long duration.
@@ -479,6 +504,12 @@ func (o JobRunArrayOutput) ToJobRunArrayOutputWithContext(ctx context.Context) J
 	return o
 }
 
+func (o JobRunArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*JobRun] {
+	return pulumix.Output[[]*JobRun]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o JobRunArrayOutput) Index(i pulumi.IntInput) JobRunOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *JobRun {
 		return vs[0].([]*JobRun)[vs[1].(int)]
@@ -497,6 +528,12 @@ func (o JobRunMapOutput) ToJobRunMapOutput() JobRunMapOutput {
 
 func (o JobRunMapOutput) ToJobRunMapOutputWithContext(ctx context.Context) JobRunMapOutput {
 	return o
+}
+
+func (o JobRunMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*JobRun] {
+	return pulumix.Output[map[string]*JobRun]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o JobRunMapOutput) MapIndex(k pulumi.StringInput) JobRunOutput {

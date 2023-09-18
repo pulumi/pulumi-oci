@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Asset resource in Oracle Cloud Infrastructure Cloud Bridge service.
@@ -133,6 +134,12 @@ func (o LookupAssetResultOutput) ToLookupAssetResultOutput() LookupAssetResultOu
 
 func (o LookupAssetResultOutput) ToLookupAssetResultOutputWithContext(ctx context.Context) LookupAssetResultOutput {
 	return o
+}
+
+func (o LookupAssetResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAssetResult] {
+	return pulumix.Output[LookupAssetResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o LookupAssetResultOutput) AssetId() pulumi.StringOutput {

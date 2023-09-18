@@ -76,7 +76,7 @@ public class LoadBalancerRoutingPolicy extends com.pulumi.resources.CustomResour
      * (Updatable) The version of the language in which `condition` of `rules` are composed.
      * 
      */
-    @Export(name="conditionLanguageVersion", type=String.class, parameters={})
+    @Export(name="conditionLanguageVersion", refs={String.class}, tree="[0]")
     private Output<String> conditionLanguageVersion;
 
     /**
@@ -90,7 +90,7 @@ public class LoadBalancerRoutingPolicy extends com.pulumi.resources.CustomResour
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the routing policy rule list to.
      * 
      */
-    @Export(name="loadBalancerId", type=String.class, parameters={})
+    @Export(name="loadBalancerId", refs={String.class}, tree="[0]")
     private Output<String> loadBalancerId;
 
     /**
@@ -107,7 +107,7 @@ public class LoadBalancerRoutingPolicy extends com.pulumi.resources.CustomResour
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -124,7 +124,7 @@ public class LoadBalancerRoutingPolicy extends com.pulumi.resources.CustomResour
      * (Updatable) The list of routing rules.
      * 
      */
-    @Export(name="rules", type=List.class, parameters={LoadBalancerRoutingPolicyRule.class})
+    @Export(name="rules", refs={List.class,LoadBalancerRoutingPolicyRule.class}, tree="[0,1]")
     private Output<List<LoadBalancerRoutingPolicyRule>> rules;
 
     /**
@@ -134,7 +134,7 @@ public class LoadBalancerRoutingPolicy extends com.pulumi.resources.CustomResour
     public Output<List<LoadBalancerRoutingPolicyRule>> rules() {
         return this.rules;
     }
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     public Output<String> state() {

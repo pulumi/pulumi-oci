@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Managed Instance Event Report resource in Oracle Cloud Infrastructure OS Management service.
@@ -118,6 +119,12 @@ func (o GetManagedInstanceEventReportResultOutput) ToGetManagedInstanceEventRepo
 
 func (o GetManagedInstanceEventReportResultOutput) ToGetManagedInstanceEventReportResultOutputWithContext(ctx context.Context) GetManagedInstanceEventReportResultOutput {
 	return o
+}
+
+func (o GetManagedInstanceEventReportResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceEventReportResult] {
+	return pulumix.Output[GetManagedInstanceEventReportResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetManagedInstanceEventReportResultOutput) CompartmentId() pulumi.StringOutput {

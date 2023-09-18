@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Exadata Insight resource in Oracle Cloud Infrastructure Opsi service.
@@ -382,6 +383,12 @@ func (i *ExadataInsight) ToExadataInsightOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(ExadataInsightOutput)
 }
 
+func (i *ExadataInsight) ToOutput(ctx context.Context) pulumix.Output[*ExadataInsight] {
+	return pulumix.Output[*ExadataInsight]{
+		OutputState: i.ToExadataInsightOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ExadataInsightArrayInput is an input type that accepts ExadataInsightArray and ExadataInsightArrayOutput values.
 // You can construct a concrete instance of `ExadataInsightArrayInput` via:
 //
@@ -405,6 +412,12 @@ func (i ExadataInsightArray) ToExadataInsightArrayOutput() ExadataInsightArrayOu
 
 func (i ExadataInsightArray) ToExadataInsightArrayOutputWithContext(ctx context.Context) ExadataInsightArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ExadataInsightArrayOutput)
+}
+
+func (i ExadataInsightArray) ToOutput(ctx context.Context) pulumix.Output[[]*ExadataInsight] {
+	return pulumix.Output[[]*ExadataInsight]{
+		OutputState: i.ToExadataInsightArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // ExadataInsightMapInput is an input type that accepts ExadataInsightMap and ExadataInsightMapOutput values.
@@ -432,6 +445,12 @@ func (i ExadataInsightMap) ToExadataInsightMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(ExadataInsightMapOutput)
 }
 
+func (i ExadataInsightMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExadataInsight] {
+	return pulumix.Output[map[string]*ExadataInsight]{
+		OutputState: i.ToExadataInsightMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ExadataInsightOutput struct{ *pulumi.OutputState }
 
 func (ExadataInsightOutput) ElementType() reflect.Type {
@@ -444,6 +463,12 @@ func (o ExadataInsightOutput) ToExadataInsightOutput() ExadataInsightOutput {
 
 func (o ExadataInsightOutput) ToExadataInsightOutputWithContext(ctx context.Context) ExadataInsightOutput {
 	return o
+}
+
+func (o ExadataInsightOutput) ToOutput(ctx context.Context) pulumix.Output[*ExadataInsight] {
+	return pulumix.Output[*ExadataInsight]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Compartment Identifier of database
@@ -591,6 +616,12 @@ func (o ExadataInsightArrayOutput) ToExadataInsightArrayOutputWithContext(ctx co
 	return o
 }
 
+func (o ExadataInsightArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ExadataInsight] {
+	return pulumix.Output[[]*ExadataInsight]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o ExadataInsightArrayOutput) Index(i pulumi.IntInput) ExadataInsightOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ExadataInsight {
 		return vs[0].([]*ExadataInsight)[vs[1].(int)]
@@ -609,6 +640,12 @@ func (o ExadataInsightMapOutput) ToExadataInsightMapOutput() ExadataInsightMapOu
 
 func (o ExadataInsightMapOutput) ToExadataInsightMapOutputWithContext(ctx context.Context) ExadataInsightMapOutput {
 	return o
+}
+
+func (o ExadataInsightMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExadataInsight] {
+	return pulumix.Output[map[string]*ExadataInsight]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ExadataInsightMapOutput) MapIndex(k pulumi.StringInput) ExadataInsightOutput {

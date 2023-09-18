@@ -90,7 +90,7 @@ public class VbInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) A list of alternate custom endpoints to be used for the vb instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
      * 
      */
-    @Export(name="alternateCustomEndpoints", type=List.class, parameters={VbInstanceAlternateCustomEndpoint.class})
+    @Export(name="alternateCustomEndpoints", refs={List.class,VbInstanceAlternateCustomEndpoint.class}, tree="[0,1]")
     private Output<List<VbInstanceAlternateCustomEndpoint>> alternateCustomEndpoints;
 
     /**
@@ -104,7 +104,7 @@ public class VbInstance extends com.pulumi.resources.CustomResource {
      * A list of associated attachments to other services
      * 
      */
-    @Export(name="attachments", type=List.class, parameters={VbInstanceAttachment.class})
+    @Export(name="attachments", refs={List.class,VbInstanceAttachment.class}, tree="[0,1]")
     private Output<List<VbInstanceAttachment>> attachments;
 
     /**
@@ -118,7 +118,7 @@ public class VbInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) Compartment Identifier.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -132,7 +132,7 @@ public class VbInstance extends com.pulumi.resources.CustomResource {
      * Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
      * 
      */
-    @Export(name="consumptionModel", type=String.class, parameters={})
+    @Export(name="consumptionModel", refs={String.class}, tree="[0]")
     private Output<String> consumptionModel;
 
     /**
@@ -146,7 +146,7 @@ public class VbInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) Details for a custom endpoint for the vb instance (update).
      * 
      */
-    @Export(name="customEndpoint", type=VbInstanceCustomEndpoint.class, parameters={})
+    @Export(name="customEndpoint", refs={VbInstanceCustomEndpoint.class}, tree="[0]")
     private Output<VbInstanceCustomEndpoint> customEndpoint;
 
     /**
@@ -160,7 +160,7 @@ public class VbInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -174,7 +174,7 @@ public class VbInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) Vb Instance Identifier.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -188,7 +188,7 @@ public class VbInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -202,7 +202,7 @@ public class VbInstance extends com.pulumi.resources.CustomResource {
      * Information for IDCS access
      * 
      */
-    @Export(name="idcsInfos", type=List.class, parameters={VbInstanceIdcsInfo.class})
+    @Export(name="idcsInfos", refs={List.class,VbInstanceIdcsInfo.class}, tree="[0,1]")
     private Output<List<VbInstanceIdcsInfo>> idcsInfos;
 
     /**
@@ -216,7 +216,7 @@ public class VbInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
      * 
      */
-    @Export(name="idcsOpenId", type=String.class, parameters={})
+    @Export(name="idcsOpenId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> idcsOpenId;
 
     /**
@@ -230,7 +230,7 @@ public class VbInstance extends com.pulumi.resources.CustomResource {
      * The Vb Instance URL.
      * 
      */
-    @Export(name="instanceUrl", type=String.class, parameters={})
+    @Export(name="instanceUrl", refs={String.class}, tree="[0]")
     private Output<String> instanceUrl;
 
     /**
@@ -244,7 +244,7 @@ public class VbInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) Visual Builder is enabled or not.
      * 
      */
-    @Export(name="isVisualBuilderEnabled", type=Boolean.class, parameters={})
+    @Export(name="isVisualBuilderEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isVisualBuilderEnabled;
 
     /**
@@ -258,7 +258,7 @@ public class VbInstance extends com.pulumi.resources.CustomResource {
      * The NAT gateway IP address for the VB management VCN
      * 
      */
-    @Export(name="managementNatGatewayIp", type=String.class, parameters={})
+    @Export(name="managementNatGatewayIp", refs={String.class}, tree="[0]")
     private Output<String> managementNatGatewayIp;
 
     /**
@@ -272,7 +272,7 @@ public class VbInstance extends com.pulumi.resources.CustomResource {
      * The Oracle Cloud ID (OCID) of the Visual Builder management VCN
      * 
      */
-    @Export(name="managementVcnId", type=String.class, parameters={})
+    @Export(name="managementVcnId", refs={String.class}, tree="[0]")
     private Output<String> managementVcnId;
 
     /**
@@ -289,7 +289,7 @@ public class VbInstance extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="nodeCount", type=Integer.class, parameters={})
+    @Export(name="nodeCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> nodeCount;
 
     /**
@@ -306,7 +306,7 @@ public class VbInstance extends com.pulumi.resources.CustomResource {
      * The NAT gateway IP address for the VB service VCN
      * 
      */
-    @Export(name="serviceNatGatewayIp", type=String.class, parameters={})
+    @Export(name="serviceNatGatewayIp", refs={String.class}, tree="[0]")
     private Output<String> serviceNatGatewayIp;
 
     /**
@@ -320,7 +320,7 @@ public class VbInstance extends com.pulumi.resources.CustomResource {
      * The Oracle Cloud ID (OCID) of the Visual Builder service VCN
      * 
      */
-    @Export(name="serviceVcnId", type=String.class, parameters={})
+    @Export(name="serviceVcnId", refs={String.class}, tree="[0]")
     private Output<String> serviceVcnId;
 
     /**
@@ -334,7 +334,7 @@ public class VbInstance extends com.pulumi.resources.CustomResource {
      * The current state of the vb instance.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -348,7 +348,7 @@ public class VbInstance extends com.pulumi.resources.CustomResource {
      * An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    @Export(name="stateMessage", type=String.class, parameters={})
+    @Export(name="stateMessage", refs={String.class}, tree="[0]")
     private Output<String> stateMessage;
 
     /**
@@ -362,7 +362,7 @@ public class VbInstance extends com.pulumi.resources.CustomResource {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -376,7 +376,7 @@ public class VbInstance extends com.pulumi.resources.CustomResource {
      * The time the the VbInstance was created. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -390,7 +390,7 @@ public class VbInstance extends com.pulumi.resources.CustomResource {
      * The time the VbInstance was updated. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

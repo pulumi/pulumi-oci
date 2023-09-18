@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Supported Skus in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
@@ -110,6 +111,12 @@ func (o GetSupportedSkusResultOutput) ToGetSupportedSkusResultOutput() GetSuppor
 
 func (o GetSupportedSkusResultOutput) ToGetSupportedSkusResultOutputWithContext(ctx context.Context) GetSupportedSkusResultOutput {
 	return o
+}
+
+func (o GetSupportedSkusResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSupportedSkusResult] {
+	return pulumix.Output[GetSupportedSkusResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSupportedSkusResultOutput) CompartmentId() pulumi.StringOutput {

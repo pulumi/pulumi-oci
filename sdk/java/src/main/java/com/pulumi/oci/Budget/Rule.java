@@ -77,7 +77,7 @@ public class Rule extends com.pulumi.resources.CustomResource {
      * The unique budget OCID.
      * 
      */
-    @Export(name="budgetId", type=String.class, parameters={})
+    @Export(name="budgetId", refs={String.class}, tree="[0]")
     private Output<String> budgetId;
 
     /**
@@ -91,7 +91,7 @@ public class Rule extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -105,7 +105,7 @@ public class Rule extends com.pulumi.resources.CustomResource {
      * (Updatable) The description of the alert rule.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -119,7 +119,7 @@ public class Rule extends com.pulumi.resources.CustomResource {
      * (Updatable) The name of the alert rule. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -133,7 +133,7 @@ public class Rule extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -147,7 +147,7 @@ public class Rule extends com.pulumi.resources.CustomResource {
      * (Updatable) The message to be sent to the recipients when the alert rule is triggered.
      * 
      */
-    @Export(name="message", type=String.class, parameters={})
+    @Export(name="message", refs={String.class}, tree="[0]")
     private Output<String> message;
 
     /**
@@ -161,7 +161,7 @@ public class Rule extends com.pulumi.resources.CustomResource {
      * (Updatable) The audience that receives the alert when it triggers. An empty string is interpreted as null.
      * 
      */
-    @Export(name="recipients", type=String.class, parameters={})
+    @Export(name="recipients", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> recipients;
 
     /**
@@ -175,7 +175,7 @@ public class Rule extends com.pulumi.resources.CustomResource {
      * The current state of the alert rule.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -189,7 +189,7 @@ public class Rule extends com.pulumi.resources.CustomResource {
      * (Updatable) The threshold for triggering the alert, expressed as a whole number or decimal value. If the thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the decimal point, and up to two digits after the decimal point. If the thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to two digits after the decimal point.
      * 
      */
-    @Export(name="threshold", type=Double.class, parameters={})
+    @Export(name="threshold", refs={Double.class}, tree="[0]")
     private Output<Double> threshold;
 
     /**
@@ -203,7 +203,7 @@ public class Rule extends com.pulumi.resources.CustomResource {
      * (Updatable) The type of threshold.
      * 
      */
-    @Export(name="thresholdType", type=String.class, parameters={})
+    @Export(name="thresholdType", refs={String.class}, tree="[0]")
     private Output<String> thresholdType;
 
     /**
@@ -217,7 +217,7 @@ public class Rule extends com.pulumi.resources.CustomResource {
      * The time when the budget was created.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -231,7 +231,7 @@ public class Rule extends com.pulumi.resources.CustomResource {
      * The time when the budget was updated.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -248,7 +248,7 @@ public class Rule extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="type", type=String.class, parameters={})
+    @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**
@@ -265,7 +265,7 @@ public class Rule extends com.pulumi.resources.CustomResource {
      * The version of the alert rule. Starts from 1 and increments by 1.
      * 
      */
-    @Export(name="version", type=Integer.class, parameters={})
+    @Export(name="version", refs={Integer.class}, tree="[0]")
     private Output<Integer> version;
 
     /**

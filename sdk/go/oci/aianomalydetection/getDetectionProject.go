@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Project resource in Oracle Cloud Infrastructure Ai Anomaly Detection service.
@@ -117,6 +118,12 @@ func (o GetDetectionProjectResultOutput) ToGetDetectionProjectResultOutput() Get
 
 func (o GetDetectionProjectResultOutput) ToGetDetectionProjectResultOutputWithContext(ctx context.Context) GetDetectionProjectResultOutput {
 	return o
+}
+
+func (o GetDetectionProjectResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectionProjectResult] {
+	return pulumix.Output[GetDetectionProjectResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID for the project's compartment.

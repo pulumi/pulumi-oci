@@ -96,7 +96,7 @@ public class Alarm extends com.pulumi.resources.CustomResource {
      * (Updatable) The human-readable content of the notification delivered. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
      * 
      */
-    @Export(name="body", type=String.class, parameters={})
+    @Export(name="body", refs={String.class}, tree="[0]")
     private Output<String> body;
 
     /**
@@ -110,7 +110,7 @@ public class Alarm extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -124,7 +124,7 @@ public class Alarm extends com.pulumi.resources.CustomResource {
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -138,7 +138,7 @@ public class Alarm extends com.pulumi.resources.CustomResource {
      * (Updatable) A list of destinations to which the notifications for this alarm will be delivered. Each destination is represented by an [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) related to the supported destination service. For example, a destination using the Notifications service is represented by a topic OCID. Supported destination services: Notifications Service. Limit: One destination per supported destination service.
      * 
      */
-    @Export(name="destinations", type=List.class, parameters={String.class})
+    @Export(name="destinations", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> destinations;
 
     /**
@@ -156,7 +156,7 @@ public class Alarm extends com.pulumi.resources.CustomResource {
      * Example: `High CPU Utilization`
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -174,7 +174,7 @@ public class Alarm extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -188,7 +188,7 @@ public class Alarm extends com.pulumi.resources.CustomResource {
      * (Updatable) Whether the alarm is enabled.  Example: `true`
      * 
      */
-    @Export(name="isEnabled", type=Boolean.class, parameters={})
+    @Export(name="isEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isEnabled;
 
     /**
@@ -202,7 +202,7 @@ public class Alarm extends com.pulumi.resources.CustomResource {
      * (Updatable) When set to `true`, splits notifications per metric stream. When set to `false`, groups notifications across metric streams. Example: `true`
      * 
      */
-    @Export(name="isNotificationsPerMetricDimensionEnabled", type=Boolean.class, parameters={})
+    @Export(name="isNotificationsPerMetricDimensionEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isNotificationsPerMetricDimensionEnabled;
 
     /**
@@ -216,7 +216,7 @@ public class Alarm extends com.pulumi.resources.CustomResource {
      * (Updatable) The format to use for notification messages sent from this alarm. The formats are:
      * 
      */
-    @Export(name="messageFormat", type=String.class, parameters={})
+    @Export(name="messageFormat", refs={String.class}, tree="[0]")
     private Output<String> messageFormat;
 
     /**
@@ -230,7 +230,7 @@ public class Alarm extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric being evaluated by the alarm.
      * 
      */
-    @Export(name="metricCompartmentId", type=String.class, parameters={})
+    @Export(name="metricCompartmentId", refs={String.class}, tree="[0]")
     private Output<String> metricCompartmentId;
 
     /**
@@ -244,7 +244,7 @@ public class Alarm extends com.pulumi.resources.CustomResource {
      * (Updatable) When true, the alarm evaluates metrics from all compartments and subcompartments. The parameter can only be set to true when metricCompartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, the alarm evaluates metrics from only the compartment specified in metricCompartmentId. Default is false.  Example: `true`
      * 
      */
-    @Export(name="metricCompartmentIdInSubtree", type=Boolean.class, parameters={})
+    @Export(name="metricCompartmentIdInSubtree", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> metricCompartmentIdInSubtree;
 
     /**
@@ -258,7 +258,7 @@ public class Alarm extends com.pulumi.resources.CustomResource {
      * (Updatable) The source service or application emitting the metric that is evaluated by the alarm.  Example: `oci_computeagent`
      * 
      */
-    @Export(name="namespace", type=String.class, parameters={})
+    @Export(name="namespace", refs={String.class}, tree="[0]")
     private Output<String> namespace;
 
     /**
@@ -280,7 +280,7 @@ public class Alarm extends com.pulumi.resources.CustomResource {
      * Example: `PT5M`
      * 
      */
-    @Export(name="pendingDuration", type=String.class, parameters={})
+    @Export(name="pendingDuration", refs={String.class}, tree="[0]")
     private Output<String> pendingDuration;
 
     /**
@@ -318,7 +318,7 @@ public class Alarm extends com.pulumi.resources.CustomResource {
      * ***
      * 
      */
-    @Export(name="query", type=String.class, parameters={})
+    @Export(name="query", refs={String.class}, tree="[0]")
     private Output<String> query;
 
     /**
@@ -352,7 +352,7 @@ public class Alarm extends com.pulumi.resources.CustomResource {
      * Example: `PT2H`
      * 
      */
-    @Export(name="repeatNotificationDuration", type=String.class, parameters={})
+    @Export(name="repeatNotificationDuration", refs={String.class}, tree="[0]")
     private Output<String> repeatNotificationDuration;
 
     /**
@@ -370,7 +370,7 @@ public class Alarm extends com.pulumi.resources.CustomResource {
      * (Updatable) The time between calculated aggregation windows for the alarm. Supported value: `1m`
      * 
      */
-    @Export(name="resolution", type=String.class, parameters={})
+    @Export(name="resolution", refs={String.class}, tree="[0]")
     private Output<String> resolution;
 
     /**
@@ -384,7 +384,7 @@ public class Alarm extends com.pulumi.resources.CustomResource {
      * (Updatable) Resource group that you want to match. A null value returns only metric data that has no resource groups. The alarm retrieves metric data associated with the specified resource group only. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($). Avoid entering confidential information.  Example: `frontend-fleet`
      * 
      */
-    @Export(name="resourceGroup", type=String.class, parameters={})
+    @Export(name="resourceGroup", refs={String.class}, tree="[0]")
     private Output<String> resourceGroup;
 
     /**
@@ -398,7 +398,7 @@ public class Alarm extends com.pulumi.resources.CustomResource {
      * (Updatable) The perceived type of response required when the alarm is in the &#34;FIRING&#34; state.  Example: `CRITICAL`
      * 
      */
-    @Export(name="severity", type=String.class, parameters={})
+    @Export(name="severity", refs={String.class}, tree="[0]")
     private Output<String> severity;
 
     /**
@@ -412,7 +412,7 @@ public class Alarm extends com.pulumi.resources.CustomResource {
      * The current lifecycle state of the alarm.  Example: `DELETED`
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -426,7 +426,7 @@ public class Alarm extends com.pulumi.resources.CustomResource {
      * (Updatable) The configuration details for suppressing an alarm.
      * 
      */
-    @Export(name="suppression", type=AlarmSuppression.class, parameters={})
+    @Export(name="suppression", refs={AlarmSuppression.class}, tree="[0]")
     private Output<AlarmSuppression> suppression;
 
     /**
@@ -440,7 +440,7 @@ public class Alarm extends com.pulumi.resources.CustomResource {
      * The date and time the alarm was created. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -454,7 +454,7 @@ public class Alarm extends com.pulumi.resources.CustomResource {
      * The date and time the alarm was last updated. Format defined by RFC3339.  Example: `2019-02-03T01:02:29.600Z`
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

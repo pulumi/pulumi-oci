@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Backend resource in Oracle Cloud Infrastructure Network Load Balancer service.
@@ -257,6 +258,12 @@ func (i *Backend) ToBackendOutputWithContext(ctx context.Context) BackendOutput 
 	return pulumi.ToOutputWithContext(ctx, i).(BackendOutput)
 }
 
+func (i *Backend) ToOutput(ctx context.Context) pulumix.Output[*Backend] {
+	return pulumix.Output[*Backend]{
+		OutputState: i.ToBackendOutputWithContext(ctx).OutputState,
+	}
+}
+
 // BackendArrayInput is an input type that accepts BackendArray and BackendArrayOutput values.
 // You can construct a concrete instance of `BackendArrayInput` via:
 //
@@ -280,6 +287,12 @@ func (i BackendArray) ToBackendArrayOutput() BackendArrayOutput {
 
 func (i BackendArray) ToBackendArrayOutputWithContext(ctx context.Context) BackendArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BackendArrayOutput)
+}
+
+func (i BackendArray) ToOutput(ctx context.Context) pulumix.Output[[]*Backend] {
+	return pulumix.Output[[]*Backend]{
+		OutputState: i.ToBackendArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // BackendMapInput is an input type that accepts BackendMap and BackendMapOutput values.
@@ -307,6 +320,12 @@ func (i BackendMap) ToBackendMapOutputWithContext(ctx context.Context) BackendMa
 	return pulumi.ToOutputWithContext(ctx, i).(BackendMapOutput)
 }
 
+func (i BackendMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Backend] {
+	return pulumix.Output[map[string]*Backend]{
+		OutputState: i.ToBackendMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type BackendOutput struct{ *pulumi.OutputState }
 
 func (BackendOutput) ElementType() reflect.Type {
@@ -319,6 +338,12 @@ func (o BackendOutput) ToBackendOutput() BackendOutput {
 
 func (o BackendOutput) ToBackendOutputWithContext(ctx context.Context) BackendOutput {
 	return o
+}
+
+func (o BackendOutput) ToOutput(ctx context.Context) pulumix.Output[*Backend] {
+	return pulumix.Output[*Backend]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the backend set to which to add the backend server.  Example: `exampleBackendSet`
@@ -388,6 +413,12 @@ func (o BackendArrayOutput) ToBackendArrayOutputWithContext(ctx context.Context)
 	return o
 }
 
+func (o BackendArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Backend] {
+	return pulumix.Output[[]*Backend]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o BackendArrayOutput) Index(i pulumi.IntInput) BackendOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Backend {
 		return vs[0].([]*Backend)[vs[1].(int)]
@@ -406,6 +437,12 @@ func (o BackendMapOutput) ToBackendMapOutput() BackendMapOutput {
 
 func (o BackendMapOutput) ToBackendMapOutputWithContext(ctx context.Context) BackendMapOutput {
 	return o
+}
+
+func (o BackendMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Backend] {
+	return pulumix.Output[map[string]*Backend]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o BackendMapOutput) MapIndex(k pulumi.StringInput) BackendOutput {

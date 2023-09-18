@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Sql Endpoint resource in Oracle Cloud Infrastructure Data Flow service.
@@ -342,6 +343,12 @@ func (i *SqlEndpoint) ToSqlEndpointOutputWithContext(ctx context.Context) SqlEnd
 	return pulumi.ToOutputWithContext(ctx, i).(SqlEndpointOutput)
 }
 
+func (i *SqlEndpoint) ToOutput(ctx context.Context) pulumix.Output[*SqlEndpoint] {
+	return pulumix.Output[*SqlEndpoint]{
+		OutputState: i.ToSqlEndpointOutputWithContext(ctx).OutputState,
+	}
+}
+
 // SqlEndpointArrayInput is an input type that accepts SqlEndpointArray and SqlEndpointArrayOutput values.
 // You can construct a concrete instance of `SqlEndpointArrayInput` via:
 //
@@ -365,6 +372,12 @@ func (i SqlEndpointArray) ToSqlEndpointArrayOutput() SqlEndpointArrayOutput {
 
 func (i SqlEndpointArray) ToSqlEndpointArrayOutputWithContext(ctx context.Context) SqlEndpointArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SqlEndpointArrayOutput)
+}
+
+func (i SqlEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]*SqlEndpoint] {
+	return pulumix.Output[[]*SqlEndpoint]{
+		OutputState: i.ToSqlEndpointArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // SqlEndpointMapInput is an input type that accepts SqlEndpointMap and SqlEndpointMapOutput values.
@@ -392,6 +405,12 @@ func (i SqlEndpointMap) ToSqlEndpointMapOutputWithContext(ctx context.Context) S
 	return pulumi.ToOutputWithContext(ctx, i).(SqlEndpointMapOutput)
 }
 
+func (i SqlEndpointMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*SqlEndpoint] {
+	return pulumix.Output[map[string]*SqlEndpoint]{
+		OutputState: i.ToSqlEndpointMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type SqlEndpointOutput struct{ *pulumi.OutputState }
 
 func (SqlEndpointOutput) ElementType() reflect.Type {
@@ -404,6 +423,12 @@ func (o SqlEndpointOutput) ToSqlEndpointOutput() SqlEndpointOutput {
 
 func (o SqlEndpointOutput) ToSqlEndpointOutputWithContext(ctx context.Context) SqlEndpointOutput {
 	return o
+}
+
+func (o SqlEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[*SqlEndpoint] {
+	return pulumix.Output[*SqlEndpoint]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The identifier of the compartment used with the SQL Endpoint.
@@ -543,6 +568,12 @@ func (o SqlEndpointArrayOutput) ToSqlEndpointArrayOutputWithContext(ctx context.
 	return o
 }
 
+func (o SqlEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*SqlEndpoint] {
+	return pulumix.Output[[]*SqlEndpoint]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o SqlEndpointArrayOutput) Index(i pulumi.IntInput) SqlEndpointOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *SqlEndpoint {
 		return vs[0].([]*SqlEndpoint)[vs[1].(int)]
@@ -561,6 +592,12 @@ func (o SqlEndpointMapOutput) ToSqlEndpointMapOutput() SqlEndpointMapOutput {
 
 func (o SqlEndpointMapOutput) ToSqlEndpointMapOutputWithContext(ctx context.Context) SqlEndpointMapOutput {
 	return o
+}
+
+func (o SqlEndpointMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*SqlEndpoint] {
+	return pulumix.Output[map[string]*SqlEndpoint]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o SqlEndpointMapOutput) MapIndex(k pulumi.StringInput) SqlEndpointOutput {

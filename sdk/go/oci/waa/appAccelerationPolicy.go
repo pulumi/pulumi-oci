@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Web App Acceleration Policy resource in Oracle Cloud Infrastructure Waa service.
@@ -273,6 +274,12 @@ func (i *AppAccelerationPolicy) ToAppAccelerationPolicyOutputWithContext(ctx con
 	return pulumi.ToOutputWithContext(ctx, i).(AppAccelerationPolicyOutput)
 }
 
+func (i *AppAccelerationPolicy) ToOutput(ctx context.Context) pulumix.Output[*AppAccelerationPolicy] {
+	return pulumix.Output[*AppAccelerationPolicy]{
+		OutputState: i.ToAppAccelerationPolicyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AppAccelerationPolicyArrayInput is an input type that accepts AppAccelerationPolicyArray and AppAccelerationPolicyArrayOutput values.
 // You can construct a concrete instance of `AppAccelerationPolicyArrayInput` via:
 //
@@ -296,6 +303,12 @@ func (i AppAccelerationPolicyArray) ToAppAccelerationPolicyArrayOutput() AppAcce
 
 func (i AppAccelerationPolicyArray) ToAppAccelerationPolicyArrayOutputWithContext(ctx context.Context) AppAccelerationPolicyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppAccelerationPolicyArrayOutput)
+}
+
+func (i AppAccelerationPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]*AppAccelerationPolicy] {
+	return pulumix.Output[[]*AppAccelerationPolicy]{
+		OutputState: i.ToAppAccelerationPolicyArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // AppAccelerationPolicyMapInput is an input type that accepts AppAccelerationPolicyMap and AppAccelerationPolicyMapOutput values.
@@ -323,6 +336,12 @@ func (i AppAccelerationPolicyMap) ToAppAccelerationPolicyMapOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(AppAccelerationPolicyMapOutput)
 }
 
+func (i AppAccelerationPolicyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppAccelerationPolicy] {
+	return pulumix.Output[map[string]*AppAccelerationPolicy]{
+		OutputState: i.ToAppAccelerationPolicyMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AppAccelerationPolicyOutput struct{ *pulumi.OutputState }
 
 func (AppAccelerationPolicyOutput) ElementType() reflect.Type {
@@ -335,6 +354,12 @@ func (o AppAccelerationPolicyOutput) ToAppAccelerationPolicyOutput() AppAccelera
 
 func (o AppAccelerationPolicyOutput) ToAppAccelerationPolicyOutputWithContext(ctx context.Context) AppAccelerationPolicyOutput {
 	return o
+}
+
+func (o AppAccelerationPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[*AppAccelerationPolicy] {
+	return pulumix.Output[*AppAccelerationPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -417,6 +442,12 @@ func (o AppAccelerationPolicyArrayOutput) ToAppAccelerationPolicyArrayOutputWith
 	return o
 }
 
+func (o AppAccelerationPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AppAccelerationPolicy] {
+	return pulumix.Output[[]*AppAccelerationPolicy]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AppAccelerationPolicyArrayOutput) Index(i pulumi.IntInput) AppAccelerationPolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppAccelerationPolicy {
 		return vs[0].([]*AppAccelerationPolicy)[vs[1].(int)]
@@ -435,6 +466,12 @@ func (o AppAccelerationPolicyMapOutput) ToAppAccelerationPolicyMapOutput() AppAc
 
 func (o AppAccelerationPolicyMapOutput) ToAppAccelerationPolicyMapOutputWithContext(ctx context.Context) AppAccelerationPolicyMapOutput {
 	return o
+}
+
+func (o AppAccelerationPolicyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppAccelerationPolicy] {
+	return pulumix.Output[map[string]*AppAccelerationPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AppAccelerationPolicyMapOutput) MapIndex(k pulumi.StringInput) AppAccelerationPolicyOutput {

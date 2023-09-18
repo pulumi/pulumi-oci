@@ -104,7 +104,7 @@ public class FileSystem extends com.pulumi.resources.CustomResource {
      * The availability domain to create the file system in.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    @Export(name="availabilityDomain", type=String.class, parameters={})
+    @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
     private Output<String> availabilityDomain;
 
     /**
@@ -118,7 +118,7 @@ public class FileSystem extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the file system in.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -132,7 +132,7 @@ public class FileSystem extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -146,7 +146,7 @@ public class FileSystem extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My file system`
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -162,7 +162,7 @@ public class FileSystem extends com.pulumi.resources.CustomResource {
      * May be unset as a blank value.
      * 
      */
-    @Export(name="filesystemSnapshotPolicyId", type=String.class, parameters={})
+    @Export(name="filesystemSnapshotPolicyId", refs={String.class}, tree="[0]")
     private Output<String> filesystemSnapshotPolicyId;
 
     /**
@@ -178,7 +178,7 @@ public class FileSystem extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -192,7 +192,7 @@ public class FileSystem extends com.pulumi.resources.CustomResource {
      * Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      * 
      */
-    @Export(name="isCloneParent", type=Boolean.class, parameters={})
+    @Export(name="isCloneParent", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isCloneParent;
 
     /**
@@ -206,7 +206,7 @@ public class FileSystem extends com.pulumi.resources.CustomResource {
      * Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
      * 
      */
-    @Export(name="isHydrated", type=Boolean.class, parameters={})
+    @Export(name="isHydrated", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isHydrated;
 
     /**
@@ -220,7 +220,7 @@ public class FileSystem extends com.pulumi.resources.CustomResource {
      * Specifies whether the file system can be used as a target file system for replication. The system sets this value to `true` if the file system is unexported, hasn&#39;t yet been specified as a target file system in any replication resource, and has no user snapshots. After the file system has been specified as a target in a replication, or if the file system contains user snapshots, the system sets this value to `false`. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
      * 
      */
-    @Export(name="isTargetable", type=Boolean.class, parameters={})
+    @Export(name="isTargetable", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isTargetable;
 
     /**
@@ -234,7 +234,7 @@ public class FileSystem extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of KMS key used to encrypt the encryption keys associated with this file system. May be unset as a blank or deleted from the configuration to remove the KMS key.
      * 
      */
-    @Export(name="kmsKeyId", type=String.class, parameters={})
+    @Export(name="kmsKeyId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> kmsKeyId;
 
     /**
@@ -248,7 +248,7 @@ public class FileSystem extends com.pulumi.resources.CustomResource {
      * Additional information about the current &#39;lifecycleState&#39;.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -262,7 +262,7 @@ public class FileSystem extends com.pulumi.resources.CustomResource {
      * The number of bytes consumed by the file system, including any snapshots. This number reflects the metered size of the file system and is updated asynchronously with respect to updates to the file system. For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).
      * 
      */
-    @Export(name="meteredBytes", type=String.class, parameters={})
+    @Export(name="meteredBytes", refs={String.class}, tree="[0]")
     private Output<String> meteredBytes;
 
     /**
@@ -276,7 +276,7 @@ public class FileSystem extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
      * 
      */
-    @Export(name="replicationTargetId", type=String.class, parameters={})
+    @Export(name="replicationTargetId", refs={String.class}, tree="[0]")
     private Output<String> replicationTargetId;
 
     /**
@@ -290,7 +290,7 @@ public class FileSystem extends com.pulumi.resources.CustomResource {
      * Source information for the file system.
      * 
      */
-    @Export(name="sourceDetails", type=List.class, parameters={FileSystemSourceDetail.class})
+    @Export(name="sourceDetails", refs={List.class,FileSystemSourceDetail.class}, tree="[0,1]")
     private Output<List<FileSystemSourceDetail>> sourceDetails;
 
     /**
@@ -307,7 +307,7 @@ public class FileSystem extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="sourceSnapshotId", type=String.class, parameters={})
+    @Export(name="sourceSnapshotId", refs={String.class}, tree="[0]")
     private Output<String> sourceSnapshotId;
 
     /**
@@ -324,7 +324,7 @@ public class FileSystem extends com.pulumi.resources.CustomResource {
      * The current state of the file system.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -338,7 +338,7 @@ public class FileSystem extends com.pulumi.resources.CustomResource {
      * The date and time the file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**

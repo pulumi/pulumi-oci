@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Importable Agent Entities in Oracle Cloud Infrastructure Opsi service.
@@ -105,6 +106,12 @@ func (o GetImportableAgentEntitiesResultOutput) ToGetImportableAgentEntitiesResu
 
 func (o GetImportableAgentEntitiesResultOutput) ToGetImportableAgentEntitiesResultOutputWithContext(ctx context.Context) GetImportableAgentEntitiesResultOutput {
 	return o
+}
+
+func (o GetImportableAgentEntitiesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetImportableAgentEntitiesResult] {
+	return pulumix.Output[GetImportableAgentEntitiesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetImportableAgentEntitiesResultOutput) CompartmentId() pulumi.StringOutput {

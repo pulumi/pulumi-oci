@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -82,6 +83,12 @@ func (i GetPathAnalyzerTestDestinationEndpointArgs) ToGetPathAnalyzerTestDestina
 	return pulumi.ToOutputWithContext(ctx, i).(GetPathAnalyzerTestDestinationEndpointOutput)
 }
 
+func (i GetPathAnalyzerTestDestinationEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[GetPathAnalyzerTestDestinationEndpoint] {
+	return pulumix.Output[GetPathAnalyzerTestDestinationEndpoint]{
+		OutputState: i.ToGetPathAnalyzerTestDestinationEndpointOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPathAnalyzerTestDestinationEndpointArrayInput is an input type that accepts GetPathAnalyzerTestDestinationEndpointArray and GetPathAnalyzerTestDestinationEndpointArrayOutput values.
 // You can construct a concrete instance of `GetPathAnalyzerTestDestinationEndpointArrayInput` via:
 //
@@ -107,6 +114,12 @@ func (i GetPathAnalyzerTestDestinationEndpointArray) ToGetPathAnalyzerTestDestin
 	return pulumi.ToOutputWithContext(ctx, i).(GetPathAnalyzerTestDestinationEndpointArrayOutput)
 }
 
+func (i GetPathAnalyzerTestDestinationEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPathAnalyzerTestDestinationEndpoint] {
+	return pulumix.Output[[]GetPathAnalyzerTestDestinationEndpoint]{
+		OutputState: i.ToGetPathAnalyzerTestDestinationEndpointArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPathAnalyzerTestDestinationEndpointOutput struct{ *pulumi.OutputState }
 
 func (GetPathAnalyzerTestDestinationEndpointOutput) ElementType() reflect.Type {
@@ -119,6 +132,12 @@ func (o GetPathAnalyzerTestDestinationEndpointOutput) ToGetPathAnalyzerTestDesti
 
 func (o GetPathAnalyzerTestDestinationEndpointOutput) ToGetPathAnalyzerTestDestinationEndpointOutputWithContext(ctx context.Context) GetPathAnalyzerTestDestinationEndpointOutput {
 	return o
+}
+
+func (o GetPathAnalyzerTestDestinationEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[GetPathAnalyzerTestDestinationEndpoint] {
+	return pulumix.Output[GetPathAnalyzerTestDestinationEndpoint]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The IPv4 address of the COMPUTE_INSTANCE-type `Endpoint` object.
@@ -185,6 +204,12 @@ func (o GetPathAnalyzerTestDestinationEndpointArrayOutput) ToGetPathAnalyzerTest
 	return o
 }
 
+func (o GetPathAnalyzerTestDestinationEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPathAnalyzerTestDestinationEndpoint] {
+	return pulumix.Output[[]GetPathAnalyzerTestDestinationEndpoint]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetPathAnalyzerTestDestinationEndpointArrayOutput) Index(i pulumi.IntInput) GetPathAnalyzerTestDestinationEndpointOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPathAnalyzerTestDestinationEndpoint {
 		return vs[0].([]GetPathAnalyzerTestDestinationEndpoint)[vs[1].(int)]
@@ -240,6 +265,12 @@ func (i GetPathAnalyzerTestProtocolParameterArgs) ToGetPathAnalyzerTestProtocolP
 	return pulumi.ToOutputWithContext(ctx, i).(GetPathAnalyzerTestProtocolParameterOutput)
 }
 
+func (i GetPathAnalyzerTestProtocolParameterArgs) ToOutput(ctx context.Context) pulumix.Output[GetPathAnalyzerTestProtocolParameter] {
+	return pulumix.Output[GetPathAnalyzerTestProtocolParameter]{
+		OutputState: i.ToGetPathAnalyzerTestProtocolParameterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPathAnalyzerTestProtocolParameterArrayInput is an input type that accepts GetPathAnalyzerTestProtocolParameterArray and GetPathAnalyzerTestProtocolParameterArrayOutput values.
 // You can construct a concrete instance of `GetPathAnalyzerTestProtocolParameterArrayInput` via:
 //
@@ -265,6 +296,12 @@ func (i GetPathAnalyzerTestProtocolParameterArray) ToGetPathAnalyzerTestProtocol
 	return pulumi.ToOutputWithContext(ctx, i).(GetPathAnalyzerTestProtocolParameterArrayOutput)
 }
 
+func (i GetPathAnalyzerTestProtocolParameterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPathAnalyzerTestProtocolParameter] {
+	return pulumix.Output[[]GetPathAnalyzerTestProtocolParameter]{
+		OutputState: i.ToGetPathAnalyzerTestProtocolParameterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPathAnalyzerTestProtocolParameterOutput struct{ *pulumi.OutputState }
 
 func (GetPathAnalyzerTestProtocolParameterOutput) ElementType() reflect.Type {
@@ -277,6 +314,12 @@ func (o GetPathAnalyzerTestProtocolParameterOutput) ToGetPathAnalyzerTestProtoco
 
 func (o GetPathAnalyzerTestProtocolParameterOutput) ToGetPathAnalyzerTestProtocolParameterOutputWithContext(ctx context.Context) GetPathAnalyzerTestProtocolParameterOutput {
 	return o
+}
+
+func (o GetPathAnalyzerTestProtocolParameterOutput) ToOutput(ctx context.Context) pulumix.Output[GetPathAnalyzerTestProtocolParameter] {
+	return pulumix.Output[GetPathAnalyzerTestProtocolParameter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The destination port to use in a `PathAnalyzerTest` resource.
@@ -318,6 +361,12 @@ func (o GetPathAnalyzerTestProtocolParameterArrayOutput) ToGetPathAnalyzerTestPr
 	return o
 }
 
+func (o GetPathAnalyzerTestProtocolParameterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPathAnalyzerTestProtocolParameter] {
+	return pulumix.Output[[]GetPathAnalyzerTestProtocolParameter]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetPathAnalyzerTestProtocolParameterArrayOutput) Index(i pulumi.IntInput) GetPathAnalyzerTestProtocolParameterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPathAnalyzerTestProtocolParameter {
 		return vs[0].([]GetPathAnalyzerTestProtocolParameter)[vs[1].(int)]
@@ -357,6 +406,12 @@ func (i GetPathAnalyzerTestQueryOptionArgs) ToGetPathAnalyzerTestQueryOptionOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetPathAnalyzerTestQueryOptionOutput)
 }
 
+func (i GetPathAnalyzerTestQueryOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetPathAnalyzerTestQueryOption] {
+	return pulumix.Output[GetPathAnalyzerTestQueryOption]{
+		OutputState: i.ToGetPathAnalyzerTestQueryOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPathAnalyzerTestQueryOptionArrayInput is an input type that accepts GetPathAnalyzerTestQueryOptionArray and GetPathAnalyzerTestQueryOptionArrayOutput values.
 // You can construct a concrete instance of `GetPathAnalyzerTestQueryOptionArrayInput` via:
 //
@@ -382,6 +437,12 @@ func (i GetPathAnalyzerTestQueryOptionArray) ToGetPathAnalyzerTestQueryOptionArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetPathAnalyzerTestQueryOptionArrayOutput)
 }
 
+func (i GetPathAnalyzerTestQueryOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPathAnalyzerTestQueryOption] {
+	return pulumix.Output[[]GetPathAnalyzerTestQueryOption]{
+		OutputState: i.ToGetPathAnalyzerTestQueryOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPathAnalyzerTestQueryOptionOutput struct{ *pulumi.OutputState }
 
 func (GetPathAnalyzerTestQueryOptionOutput) ElementType() reflect.Type {
@@ -394,6 +455,12 @@ func (o GetPathAnalyzerTestQueryOptionOutput) ToGetPathAnalyzerTestQueryOptionOu
 
 func (o GetPathAnalyzerTestQueryOptionOutput) ToGetPathAnalyzerTestQueryOptionOutputWithContext(ctx context.Context) GetPathAnalyzerTestQueryOptionOutput {
 	return o
+}
+
+func (o GetPathAnalyzerTestQueryOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetPathAnalyzerTestQueryOption] {
+	return pulumix.Output[GetPathAnalyzerTestQueryOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // If true, a path analysis is done for both the forward and reverse routes.
@@ -413,6 +480,12 @@ func (o GetPathAnalyzerTestQueryOptionArrayOutput) ToGetPathAnalyzerTestQueryOpt
 
 func (o GetPathAnalyzerTestQueryOptionArrayOutput) ToGetPathAnalyzerTestQueryOptionArrayOutputWithContext(ctx context.Context) GetPathAnalyzerTestQueryOptionArrayOutput {
 	return o
+}
+
+func (o GetPathAnalyzerTestQueryOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPathAnalyzerTestQueryOption] {
+	return pulumix.Output[[]GetPathAnalyzerTestQueryOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPathAnalyzerTestQueryOptionArrayOutput) Index(i pulumi.IntInput) GetPathAnalyzerTestQueryOptionOutput {
@@ -490,6 +563,12 @@ func (i GetPathAnalyzerTestSourceEndpointArgs) ToGetPathAnalyzerTestSourceEndpoi
 	return pulumi.ToOutputWithContext(ctx, i).(GetPathAnalyzerTestSourceEndpointOutput)
 }
 
+func (i GetPathAnalyzerTestSourceEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[GetPathAnalyzerTestSourceEndpoint] {
+	return pulumix.Output[GetPathAnalyzerTestSourceEndpoint]{
+		OutputState: i.ToGetPathAnalyzerTestSourceEndpointOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPathAnalyzerTestSourceEndpointArrayInput is an input type that accepts GetPathAnalyzerTestSourceEndpointArray and GetPathAnalyzerTestSourceEndpointArrayOutput values.
 // You can construct a concrete instance of `GetPathAnalyzerTestSourceEndpointArrayInput` via:
 //
@@ -515,6 +594,12 @@ func (i GetPathAnalyzerTestSourceEndpointArray) ToGetPathAnalyzerTestSourceEndpo
 	return pulumi.ToOutputWithContext(ctx, i).(GetPathAnalyzerTestSourceEndpointArrayOutput)
 }
 
+func (i GetPathAnalyzerTestSourceEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPathAnalyzerTestSourceEndpoint] {
+	return pulumix.Output[[]GetPathAnalyzerTestSourceEndpoint]{
+		OutputState: i.ToGetPathAnalyzerTestSourceEndpointArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPathAnalyzerTestSourceEndpointOutput struct{ *pulumi.OutputState }
 
 func (GetPathAnalyzerTestSourceEndpointOutput) ElementType() reflect.Type {
@@ -527,6 +612,12 @@ func (o GetPathAnalyzerTestSourceEndpointOutput) ToGetPathAnalyzerTestSourceEndp
 
 func (o GetPathAnalyzerTestSourceEndpointOutput) ToGetPathAnalyzerTestSourceEndpointOutputWithContext(ctx context.Context) GetPathAnalyzerTestSourceEndpointOutput {
 	return o
+}
+
+func (o GetPathAnalyzerTestSourceEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[GetPathAnalyzerTestSourceEndpoint] {
+	return pulumix.Output[GetPathAnalyzerTestSourceEndpoint]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The IPv4 address of the COMPUTE_INSTANCE-type `Endpoint` object.
@@ -593,6 +684,12 @@ func (o GetPathAnalyzerTestSourceEndpointArrayOutput) ToGetPathAnalyzerTestSourc
 	return o
 }
 
+func (o GetPathAnalyzerTestSourceEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPathAnalyzerTestSourceEndpoint] {
+	return pulumix.Output[[]GetPathAnalyzerTestSourceEndpoint]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetPathAnalyzerTestSourceEndpointArrayOutput) Index(i pulumi.IntInput) GetPathAnalyzerTestSourceEndpointOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPathAnalyzerTestSourceEndpoint {
 		return vs[0].([]GetPathAnalyzerTestSourceEndpoint)[vs[1].(int)]
@@ -634,6 +731,12 @@ func (i GetPathAnalyzerTestsFilterArgs) ToGetPathAnalyzerTestsFilterOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetPathAnalyzerTestsFilterOutput)
 }
 
+func (i GetPathAnalyzerTestsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetPathAnalyzerTestsFilter] {
+	return pulumix.Output[GetPathAnalyzerTestsFilter]{
+		OutputState: i.ToGetPathAnalyzerTestsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPathAnalyzerTestsFilterArrayInput is an input type that accepts GetPathAnalyzerTestsFilterArray and GetPathAnalyzerTestsFilterArrayOutput values.
 // You can construct a concrete instance of `GetPathAnalyzerTestsFilterArrayInput` via:
 //
@@ -659,6 +762,12 @@ func (i GetPathAnalyzerTestsFilterArray) ToGetPathAnalyzerTestsFilterArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetPathAnalyzerTestsFilterArrayOutput)
 }
 
+func (i GetPathAnalyzerTestsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPathAnalyzerTestsFilter] {
+	return pulumix.Output[[]GetPathAnalyzerTestsFilter]{
+		OutputState: i.ToGetPathAnalyzerTestsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPathAnalyzerTestsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetPathAnalyzerTestsFilterOutput) ElementType() reflect.Type {
@@ -671,6 +780,12 @@ func (o GetPathAnalyzerTestsFilterOutput) ToGetPathAnalyzerTestsFilterOutput() G
 
 func (o GetPathAnalyzerTestsFilterOutput) ToGetPathAnalyzerTestsFilterOutputWithContext(ctx context.Context) GetPathAnalyzerTestsFilterOutput {
 	return o
+}
+
+func (o GetPathAnalyzerTestsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetPathAnalyzerTestsFilter] {
+	return pulumix.Output[GetPathAnalyzerTestsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPathAnalyzerTestsFilterOutput) Name() pulumi.StringOutput {
@@ -697,6 +812,12 @@ func (o GetPathAnalyzerTestsFilterArrayOutput) ToGetPathAnalyzerTestsFilterArray
 
 func (o GetPathAnalyzerTestsFilterArrayOutput) ToGetPathAnalyzerTestsFilterArrayOutputWithContext(ctx context.Context) GetPathAnalyzerTestsFilterArrayOutput {
 	return o
+}
+
+func (o GetPathAnalyzerTestsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPathAnalyzerTestsFilter] {
+	return pulumix.Output[[]GetPathAnalyzerTestsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPathAnalyzerTestsFilterArrayOutput) Index(i pulumi.IntInput) GetPathAnalyzerTestsFilterOutput {
@@ -736,6 +857,12 @@ func (i GetPathAnalyzerTestsPathAnalyzerTestCollectionArgs) ToGetPathAnalyzerTes
 	return pulumi.ToOutputWithContext(ctx, i).(GetPathAnalyzerTestsPathAnalyzerTestCollectionOutput)
 }
 
+func (i GetPathAnalyzerTestsPathAnalyzerTestCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetPathAnalyzerTestsPathAnalyzerTestCollection] {
+	return pulumix.Output[GetPathAnalyzerTestsPathAnalyzerTestCollection]{
+		OutputState: i.ToGetPathAnalyzerTestsPathAnalyzerTestCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPathAnalyzerTestsPathAnalyzerTestCollectionArrayInput is an input type that accepts GetPathAnalyzerTestsPathAnalyzerTestCollectionArray and GetPathAnalyzerTestsPathAnalyzerTestCollectionArrayOutput values.
 // You can construct a concrete instance of `GetPathAnalyzerTestsPathAnalyzerTestCollectionArrayInput` via:
 //
@@ -761,6 +888,12 @@ func (i GetPathAnalyzerTestsPathAnalyzerTestCollectionArray) ToGetPathAnalyzerTe
 	return pulumi.ToOutputWithContext(ctx, i).(GetPathAnalyzerTestsPathAnalyzerTestCollectionArrayOutput)
 }
 
+func (i GetPathAnalyzerTestsPathAnalyzerTestCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPathAnalyzerTestsPathAnalyzerTestCollection] {
+	return pulumix.Output[[]GetPathAnalyzerTestsPathAnalyzerTestCollection]{
+		OutputState: i.ToGetPathAnalyzerTestsPathAnalyzerTestCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPathAnalyzerTestsPathAnalyzerTestCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetPathAnalyzerTestsPathAnalyzerTestCollectionOutput) ElementType() reflect.Type {
@@ -773,6 +906,12 @@ func (o GetPathAnalyzerTestsPathAnalyzerTestCollectionOutput) ToGetPathAnalyzerT
 
 func (o GetPathAnalyzerTestsPathAnalyzerTestCollectionOutput) ToGetPathAnalyzerTestsPathAnalyzerTestCollectionOutputWithContext(ctx context.Context) GetPathAnalyzerTestsPathAnalyzerTestCollectionOutput {
 	return o
+}
+
+func (o GetPathAnalyzerTestsPathAnalyzerTestCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetPathAnalyzerTestsPathAnalyzerTestCollection] {
+	return pulumix.Output[GetPathAnalyzerTestsPathAnalyzerTestCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPathAnalyzerTestsPathAnalyzerTestCollectionOutput) Items() GetPathAnalyzerTestsPathAnalyzerTestCollectionItemArrayOutput {
@@ -793,6 +932,12 @@ func (o GetPathAnalyzerTestsPathAnalyzerTestCollectionArrayOutput) ToGetPathAnal
 
 func (o GetPathAnalyzerTestsPathAnalyzerTestCollectionArrayOutput) ToGetPathAnalyzerTestsPathAnalyzerTestCollectionArrayOutputWithContext(ctx context.Context) GetPathAnalyzerTestsPathAnalyzerTestCollectionArrayOutput {
 	return o
+}
+
+func (o GetPathAnalyzerTestsPathAnalyzerTestCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPathAnalyzerTestsPathAnalyzerTestCollection] {
+	return pulumix.Output[[]GetPathAnalyzerTestsPathAnalyzerTestCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPathAnalyzerTestsPathAnalyzerTestCollectionArrayOutput) Index(i pulumi.IntInput) GetPathAnalyzerTestsPathAnalyzerTestCollectionOutput {
@@ -886,6 +1031,12 @@ func (i GetPathAnalyzerTestsPathAnalyzerTestCollectionItemArgs) ToGetPathAnalyze
 	return pulumi.ToOutputWithContext(ctx, i).(GetPathAnalyzerTestsPathAnalyzerTestCollectionItemOutput)
 }
 
+func (i GetPathAnalyzerTestsPathAnalyzerTestCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetPathAnalyzerTestsPathAnalyzerTestCollectionItem] {
+	return pulumix.Output[GetPathAnalyzerTestsPathAnalyzerTestCollectionItem]{
+		OutputState: i.ToGetPathAnalyzerTestsPathAnalyzerTestCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPathAnalyzerTestsPathAnalyzerTestCollectionItemArrayInput is an input type that accepts GetPathAnalyzerTestsPathAnalyzerTestCollectionItemArray and GetPathAnalyzerTestsPathAnalyzerTestCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetPathAnalyzerTestsPathAnalyzerTestCollectionItemArrayInput` via:
 //
@@ -911,6 +1062,12 @@ func (i GetPathAnalyzerTestsPathAnalyzerTestCollectionItemArray) ToGetPathAnalyz
 	return pulumi.ToOutputWithContext(ctx, i).(GetPathAnalyzerTestsPathAnalyzerTestCollectionItemArrayOutput)
 }
 
+func (i GetPathAnalyzerTestsPathAnalyzerTestCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPathAnalyzerTestsPathAnalyzerTestCollectionItem] {
+	return pulumix.Output[[]GetPathAnalyzerTestsPathAnalyzerTestCollectionItem]{
+		OutputState: i.ToGetPathAnalyzerTestsPathAnalyzerTestCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPathAnalyzerTestsPathAnalyzerTestCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetPathAnalyzerTestsPathAnalyzerTestCollectionItemOutput) ElementType() reflect.Type {
@@ -923,6 +1080,12 @@ func (o GetPathAnalyzerTestsPathAnalyzerTestCollectionItemOutput) ToGetPathAnaly
 
 func (o GetPathAnalyzerTestsPathAnalyzerTestCollectionItemOutput) ToGetPathAnalyzerTestsPathAnalyzerTestCollectionItemOutputWithContext(ctx context.Context) GetPathAnalyzerTestsPathAnalyzerTestCollectionItemOutput {
 	return o
+}
+
+func (o GetPathAnalyzerTestsPathAnalyzerTestCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetPathAnalyzerTestsPathAnalyzerTestCollectionItem] {
+	return pulumix.Output[GetPathAnalyzerTestsPathAnalyzerTestCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -1021,6 +1184,12 @@ func (o GetPathAnalyzerTestsPathAnalyzerTestCollectionItemArrayOutput) ToGetPath
 	return o
 }
 
+func (o GetPathAnalyzerTestsPathAnalyzerTestCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPathAnalyzerTestsPathAnalyzerTestCollectionItem] {
+	return pulumix.Output[[]GetPathAnalyzerTestsPathAnalyzerTestCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetPathAnalyzerTestsPathAnalyzerTestCollectionItemArrayOutput) Index(i pulumi.IntInput) GetPathAnalyzerTestsPathAnalyzerTestCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPathAnalyzerTestsPathAnalyzerTestCollectionItem {
 		return vs[0].([]GetPathAnalyzerTestsPathAnalyzerTestCollectionItem)[vs[1].(int)]
@@ -1096,6 +1265,12 @@ func (i GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpointArg
 	return pulumi.ToOutputWithContext(ctx, i).(GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpointOutput)
 }
 
+func (i GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpoint] {
+	return pulumix.Output[GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpoint]{
+		OutputState: i.ToGetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpointOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpointArrayInput is an input type that accepts GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpointArray and GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpointArrayOutput values.
 // You can construct a concrete instance of `GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpointArrayInput` via:
 //
@@ -1121,6 +1296,12 @@ func (i GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpointArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpointArrayOutput)
 }
 
+func (i GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpoint] {
+	return pulumix.Output[[]GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpoint]{
+		OutputState: i.ToGetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpointArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpointOutput struct{ *pulumi.OutputState }
 
 func (GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpointOutput) ElementType() reflect.Type {
@@ -1133,6 +1314,12 @@ func (o GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpointOut
 
 func (o GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpointOutput) ToGetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpointOutputWithContext(ctx context.Context) GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpointOutput {
 	return o
+}
+
+func (o GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpoint] {
+	return pulumix.Output[GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpoint]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The IPv4 address of the COMPUTE_INSTANCE-type `Endpoint` object.
@@ -1209,6 +1396,12 @@ func (o GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpointArr
 	return o
 }
 
+func (o GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpoint] {
+	return pulumix.Output[[]GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpoint]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpointArrayOutput) Index(i pulumi.IntInput) GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpointOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpoint {
 		return vs[0].([]GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpoint)[vs[1].(int)]
@@ -1264,6 +1457,12 @@ func (i GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameterArgs)
 	return pulumi.ToOutputWithContext(ctx, i).(GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameterOutput)
 }
 
+func (i GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameterArgs) ToOutput(ctx context.Context) pulumix.Output[GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameter] {
+	return pulumix.Output[GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameter]{
+		OutputState: i.ToGetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameterArrayInput is an input type that accepts GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameterArray and GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameterArrayOutput values.
 // You can construct a concrete instance of `GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameterArrayInput` via:
 //
@@ -1289,6 +1488,12 @@ func (i GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameterArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameterArrayOutput)
 }
 
+func (i GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameter] {
+	return pulumix.Output[[]GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameter]{
+		OutputState: i.ToGetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameterOutput struct{ *pulumi.OutputState }
 
 func (GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameterOutput) ElementType() reflect.Type {
@@ -1301,6 +1506,12 @@ func (o GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameterOutpu
 
 func (o GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameterOutput) ToGetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameterOutputWithContext(ctx context.Context) GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameterOutput {
 	return o
+}
+
+func (o GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameterOutput) ToOutput(ctx context.Context) pulumix.Output[GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameter] {
+	return pulumix.Output[GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The destination port to use in a `PathAnalyzerTest` resource.
@@ -1344,6 +1555,12 @@ func (o GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameterArray
 	return o
 }
 
+func (o GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameter] {
+	return pulumix.Output[[]GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameter]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameterArrayOutput) Index(i pulumi.IntInput) GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameter {
 		return vs[0].([]GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameter)[vs[1].(int)]
@@ -1383,6 +1600,12 @@ func (i GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOptionArgs) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOptionOutput)
 }
 
+func (i GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOption] {
+	return pulumix.Output[GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOption]{
+		OutputState: i.ToGetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOptionArrayInput is an input type that accepts GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOptionArray and GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOptionArrayOutput values.
 // You can construct a concrete instance of `GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOptionArrayInput` via:
 //
@@ -1408,6 +1631,12 @@ func (i GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOptionArray) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOptionArrayOutput)
 }
 
+func (i GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOption] {
+	return pulumix.Output[[]GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOption]{
+		OutputState: i.ToGetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOptionOutput struct{ *pulumi.OutputState }
 
 func (GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOptionOutput) ElementType() reflect.Type {
@@ -1420,6 +1649,12 @@ func (o GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOptionOutput) ToG
 
 func (o GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOptionOutput) ToGetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOptionOutputWithContext(ctx context.Context) GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOptionOutput {
 	return o
+}
+
+func (o GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOption] {
+	return pulumix.Output[GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // If true, a path analysis is done for both the forward and reverse routes.
@@ -1441,6 +1676,12 @@ func (o GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOptionArrayOutput
 
 func (o GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOptionArrayOutput) ToGetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOptionArrayOutputWithContext(ctx context.Context) GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOptionArrayOutput {
 	return o
+}
+
+func (o GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOption] {
+	return pulumix.Output[[]GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOptionArrayOutput) Index(i pulumi.IntInput) GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOptionOutput {
@@ -1518,6 +1759,12 @@ func (i GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpointArgs) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpointOutput)
 }
 
+func (i GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpoint] {
+	return pulumix.Output[GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpoint]{
+		OutputState: i.ToGetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpointOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpointArrayInput is an input type that accepts GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpointArray and GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpointArrayOutput values.
 // You can construct a concrete instance of `GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpointArrayInput` via:
 //
@@ -1543,6 +1790,12 @@ func (i GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpointArray) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpointArrayOutput)
 }
 
+func (i GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpoint] {
+	return pulumix.Output[[]GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpoint]{
+		OutputState: i.ToGetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpointArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpointOutput struct{ *pulumi.OutputState }
 
 func (GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpointOutput) ElementType() reflect.Type {
@@ -1555,6 +1808,12 @@ func (o GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpointOutput) 
 
 func (o GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpointOutput) ToGetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpointOutputWithContext(ctx context.Context) GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpointOutput {
 	return o
+}
+
+func (o GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpoint] {
+	return pulumix.Output[GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpoint]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The IPv4 address of the COMPUTE_INSTANCE-type `Endpoint` object.
@@ -1623,6 +1882,12 @@ func (o GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpointArrayOut
 
 func (o GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpointArrayOutput) ToGetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpointArrayOutputWithContext(ctx context.Context) GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpointArrayOutput {
 	return o
+}
+
+func (o GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpoint] {
+	return pulumix.Output[[]GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpoint]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpointArrayOutput) Index(i pulumi.IntInput) GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpointOutput {
@@ -1704,6 +1969,12 @@ func (i PathAnalysiDestinationEndpointArgs) ToPathAnalysiDestinationEndpointOutp
 	return pulumi.ToOutputWithContext(ctx, i).(PathAnalysiDestinationEndpointOutput)
 }
 
+func (i PathAnalysiDestinationEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[PathAnalysiDestinationEndpoint] {
+	return pulumix.Output[PathAnalysiDestinationEndpoint]{
+		OutputState: i.ToPathAnalysiDestinationEndpointOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i PathAnalysiDestinationEndpointArgs) ToPathAnalysiDestinationEndpointPtrOutput() PathAnalysiDestinationEndpointPtrOutput {
 	return i.ToPathAnalysiDestinationEndpointPtrOutputWithContext(context.Background())
 }
@@ -1745,6 +2016,12 @@ func (i *pathAnalysiDestinationEndpointPtrType) ToPathAnalysiDestinationEndpoint
 	return pulumi.ToOutputWithContext(ctx, i).(PathAnalysiDestinationEndpointPtrOutput)
 }
 
+func (i *pathAnalysiDestinationEndpointPtrType) ToOutput(ctx context.Context) pulumix.Output[*PathAnalysiDestinationEndpoint] {
+	return pulumix.Output[*PathAnalysiDestinationEndpoint]{
+		OutputState: i.ToPathAnalysiDestinationEndpointPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type PathAnalysiDestinationEndpointOutput struct{ *pulumi.OutputState }
 
 func (PathAnalysiDestinationEndpointOutput) ElementType() reflect.Type {
@@ -1767,6 +2044,12 @@ func (o PathAnalysiDestinationEndpointOutput) ToPathAnalysiDestinationEndpointPt
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v PathAnalysiDestinationEndpoint) *PathAnalysiDestinationEndpoint {
 		return &v
 	}).(PathAnalysiDestinationEndpointPtrOutput)
+}
+
+func (o PathAnalysiDestinationEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[PathAnalysiDestinationEndpoint] {
+	return pulumix.Output[PathAnalysiDestinationEndpoint]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The IPv4 address of the COMPUTE_INSTANCE-type `Endpoint` object.
@@ -1833,6 +2116,12 @@ func (o PathAnalysiDestinationEndpointPtrOutput) ToPathAnalysiDestinationEndpoin
 
 func (o PathAnalysiDestinationEndpointPtrOutput) ToPathAnalysiDestinationEndpointPtrOutputWithContext(ctx context.Context) PathAnalysiDestinationEndpointPtrOutput {
 	return o
+}
+
+func (o PathAnalysiDestinationEndpointPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*PathAnalysiDestinationEndpoint] {
+	return pulumix.Output[*PathAnalysiDestinationEndpoint]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o PathAnalysiDestinationEndpointPtrOutput) Elem() PathAnalysiDestinationEndpointOutput {
@@ -2002,6 +2291,12 @@ func (i PathAnalysiProtocolParametersArgs) ToPathAnalysiProtocolParametersOutput
 	return pulumi.ToOutputWithContext(ctx, i).(PathAnalysiProtocolParametersOutput)
 }
 
+func (i PathAnalysiProtocolParametersArgs) ToOutput(ctx context.Context) pulumix.Output[PathAnalysiProtocolParameters] {
+	return pulumix.Output[PathAnalysiProtocolParameters]{
+		OutputState: i.ToPathAnalysiProtocolParametersOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i PathAnalysiProtocolParametersArgs) ToPathAnalysiProtocolParametersPtrOutput() PathAnalysiProtocolParametersPtrOutput {
 	return i.ToPathAnalysiProtocolParametersPtrOutputWithContext(context.Background())
 }
@@ -2043,6 +2338,12 @@ func (i *pathAnalysiProtocolParametersPtrType) ToPathAnalysiProtocolParametersPt
 	return pulumi.ToOutputWithContext(ctx, i).(PathAnalysiProtocolParametersPtrOutput)
 }
 
+func (i *pathAnalysiProtocolParametersPtrType) ToOutput(ctx context.Context) pulumix.Output[*PathAnalysiProtocolParameters] {
+	return pulumix.Output[*PathAnalysiProtocolParameters]{
+		OutputState: i.ToPathAnalysiProtocolParametersPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type PathAnalysiProtocolParametersOutput struct{ *pulumi.OutputState }
 
 func (PathAnalysiProtocolParametersOutput) ElementType() reflect.Type {
@@ -2065,6 +2366,12 @@ func (o PathAnalysiProtocolParametersOutput) ToPathAnalysiProtocolParametersPtrO
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v PathAnalysiProtocolParameters) *PathAnalysiProtocolParameters {
 		return &v
 	}).(PathAnalysiProtocolParametersPtrOutput)
+}
+
+func (o PathAnalysiProtocolParametersOutput) ToOutput(ctx context.Context) pulumix.Output[PathAnalysiProtocolParameters] {
+	return pulumix.Output[PathAnalysiProtocolParameters]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The destination port to use in a `PathAnalyzerTest` resource.
@@ -2107,6 +2414,12 @@ func (o PathAnalysiProtocolParametersPtrOutput) ToPathAnalysiProtocolParametersP
 
 func (o PathAnalysiProtocolParametersPtrOutput) ToPathAnalysiProtocolParametersPtrOutputWithContext(ctx context.Context) PathAnalysiProtocolParametersPtrOutput {
 	return o
+}
+
+func (o PathAnalysiProtocolParametersPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*PathAnalysiProtocolParameters] {
+	return pulumix.Output[*PathAnalysiProtocolParameters]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o PathAnalysiProtocolParametersPtrOutput) Elem() PathAnalysiProtocolParametersOutput {
@@ -2205,6 +2518,12 @@ func (i PathAnalysiQueryOptionsArgs) ToPathAnalysiQueryOptionsOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(PathAnalysiQueryOptionsOutput)
 }
 
+func (i PathAnalysiQueryOptionsArgs) ToOutput(ctx context.Context) pulumix.Output[PathAnalysiQueryOptions] {
+	return pulumix.Output[PathAnalysiQueryOptions]{
+		OutputState: i.ToPathAnalysiQueryOptionsOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i PathAnalysiQueryOptionsArgs) ToPathAnalysiQueryOptionsPtrOutput() PathAnalysiQueryOptionsPtrOutput {
 	return i.ToPathAnalysiQueryOptionsPtrOutputWithContext(context.Background())
 }
@@ -2246,6 +2565,12 @@ func (i *pathAnalysiQueryOptionsPtrType) ToPathAnalysiQueryOptionsPtrOutputWithC
 	return pulumi.ToOutputWithContext(ctx, i).(PathAnalysiQueryOptionsPtrOutput)
 }
 
+func (i *pathAnalysiQueryOptionsPtrType) ToOutput(ctx context.Context) pulumix.Output[*PathAnalysiQueryOptions] {
+	return pulumix.Output[*PathAnalysiQueryOptions]{
+		OutputState: i.ToPathAnalysiQueryOptionsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type PathAnalysiQueryOptionsOutput struct{ *pulumi.OutputState }
 
 func (PathAnalysiQueryOptionsOutput) ElementType() reflect.Type {
@@ -2270,6 +2595,12 @@ func (o PathAnalysiQueryOptionsOutput) ToPathAnalysiQueryOptionsPtrOutputWithCon
 	}).(PathAnalysiQueryOptionsPtrOutput)
 }
 
+func (o PathAnalysiQueryOptionsOutput) ToOutput(ctx context.Context) pulumix.Output[PathAnalysiQueryOptions] {
+	return pulumix.Output[PathAnalysiQueryOptions]{
+		OutputState: o.OutputState,
+	}
+}
+
 // If true, a path analysis is done for both the forward and reverse routes.
 func (o PathAnalysiQueryOptionsOutput) IsBiDirectionalAnalysis() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v PathAnalysiQueryOptions) *bool { return v.IsBiDirectionalAnalysis }).(pulumi.BoolPtrOutput)
@@ -2287,6 +2618,12 @@ func (o PathAnalysiQueryOptionsPtrOutput) ToPathAnalysiQueryOptionsPtrOutput() P
 
 func (o PathAnalysiQueryOptionsPtrOutput) ToPathAnalysiQueryOptionsPtrOutputWithContext(ctx context.Context) PathAnalysiQueryOptionsPtrOutput {
 	return o
+}
+
+func (o PathAnalysiQueryOptionsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*PathAnalysiQueryOptions] {
+	return pulumix.Output[*PathAnalysiQueryOptions]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o PathAnalysiQueryOptionsPtrOutput) Elem() PathAnalysiQueryOptionsOutput {
@@ -2382,6 +2719,12 @@ func (i PathAnalysiSourceEndpointArgs) ToPathAnalysiSourceEndpointOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(PathAnalysiSourceEndpointOutput)
 }
 
+func (i PathAnalysiSourceEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[PathAnalysiSourceEndpoint] {
+	return pulumix.Output[PathAnalysiSourceEndpoint]{
+		OutputState: i.ToPathAnalysiSourceEndpointOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i PathAnalysiSourceEndpointArgs) ToPathAnalysiSourceEndpointPtrOutput() PathAnalysiSourceEndpointPtrOutput {
 	return i.ToPathAnalysiSourceEndpointPtrOutputWithContext(context.Background())
 }
@@ -2423,6 +2766,12 @@ func (i *pathAnalysiSourceEndpointPtrType) ToPathAnalysiSourceEndpointPtrOutputW
 	return pulumi.ToOutputWithContext(ctx, i).(PathAnalysiSourceEndpointPtrOutput)
 }
 
+func (i *pathAnalysiSourceEndpointPtrType) ToOutput(ctx context.Context) pulumix.Output[*PathAnalysiSourceEndpoint] {
+	return pulumix.Output[*PathAnalysiSourceEndpoint]{
+		OutputState: i.ToPathAnalysiSourceEndpointPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type PathAnalysiSourceEndpointOutput struct{ *pulumi.OutputState }
 
 func (PathAnalysiSourceEndpointOutput) ElementType() reflect.Type {
@@ -2445,6 +2794,12 @@ func (o PathAnalysiSourceEndpointOutput) ToPathAnalysiSourceEndpointPtrOutputWit
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v PathAnalysiSourceEndpoint) *PathAnalysiSourceEndpoint {
 		return &v
 	}).(PathAnalysiSourceEndpointPtrOutput)
+}
+
+func (o PathAnalysiSourceEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[PathAnalysiSourceEndpoint] {
+	return pulumix.Output[PathAnalysiSourceEndpoint]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The IPv4 address of the COMPUTE_INSTANCE-type `Endpoint` object.
@@ -2511,6 +2866,12 @@ func (o PathAnalysiSourceEndpointPtrOutput) ToPathAnalysiSourceEndpointPtrOutput
 
 func (o PathAnalysiSourceEndpointPtrOutput) ToPathAnalysiSourceEndpointPtrOutputWithContext(ctx context.Context) PathAnalysiSourceEndpointPtrOutput {
 	return o
+}
+
+func (o PathAnalysiSourceEndpointPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*PathAnalysiSourceEndpoint] {
+	return pulumix.Output[*PathAnalysiSourceEndpoint]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o PathAnalysiSourceEndpointPtrOutput) Elem() PathAnalysiSourceEndpointOutput {
@@ -2700,6 +3061,12 @@ func (i PathAnalyzerTestDestinationEndpointArgs) ToPathAnalyzerTestDestinationEn
 	return pulumi.ToOutputWithContext(ctx, i).(PathAnalyzerTestDestinationEndpointOutput)
 }
 
+func (i PathAnalyzerTestDestinationEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[PathAnalyzerTestDestinationEndpoint] {
+	return pulumix.Output[PathAnalyzerTestDestinationEndpoint]{
+		OutputState: i.ToPathAnalyzerTestDestinationEndpointOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i PathAnalyzerTestDestinationEndpointArgs) ToPathAnalyzerTestDestinationEndpointPtrOutput() PathAnalyzerTestDestinationEndpointPtrOutput {
 	return i.ToPathAnalyzerTestDestinationEndpointPtrOutputWithContext(context.Background())
 }
@@ -2741,6 +3108,12 @@ func (i *pathAnalyzerTestDestinationEndpointPtrType) ToPathAnalyzerTestDestinati
 	return pulumi.ToOutputWithContext(ctx, i).(PathAnalyzerTestDestinationEndpointPtrOutput)
 }
 
+func (i *pathAnalyzerTestDestinationEndpointPtrType) ToOutput(ctx context.Context) pulumix.Output[*PathAnalyzerTestDestinationEndpoint] {
+	return pulumix.Output[*PathAnalyzerTestDestinationEndpoint]{
+		OutputState: i.ToPathAnalyzerTestDestinationEndpointPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type PathAnalyzerTestDestinationEndpointOutput struct{ *pulumi.OutputState }
 
 func (PathAnalyzerTestDestinationEndpointOutput) ElementType() reflect.Type {
@@ -2763,6 +3136,12 @@ func (o PathAnalyzerTestDestinationEndpointOutput) ToPathAnalyzerTestDestination
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v PathAnalyzerTestDestinationEndpoint) *PathAnalyzerTestDestinationEndpoint {
 		return &v
 	}).(PathAnalyzerTestDestinationEndpointPtrOutput)
+}
+
+func (o PathAnalyzerTestDestinationEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[PathAnalyzerTestDestinationEndpoint] {
+	return pulumix.Output[PathAnalyzerTestDestinationEndpoint]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The IPv4 address of the COMPUTE_INSTANCE-type `Endpoint` object.
@@ -2830,6 +3209,12 @@ func (o PathAnalyzerTestDestinationEndpointPtrOutput) ToPathAnalyzerTestDestinat
 
 func (o PathAnalyzerTestDestinationEndpointPtrOutput) ToPathAnalyzerTestDestinationEndpointPtrOutputWithContext(ctx context.Context) PathAnalyzerTestDestinationEndpointPtrOutput {
 	return o
+}
+
+func (o PathAnalyzerTestDestinationEndpointPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*PathAnalyzerTestDestinationEndpoint] {
+	return pulumix.Output[*PathAnalyzerTestDestinationEndpoint]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o PathAnalyzerTestDestinationEndpointPtrOutput) Elem() PathAnalyzerTestDestinationEndpointOutput {
@@ -2994,6 +3379,12 @@ func (i PathAnalyzerTestProtocolParametersArgs) ToPathAnalyzerTestProtocolParame
 	return pulumi.ToOutputWithContext(ctx, i).(PathAnalyzerTestProtocolParametersOutput)
 }
 
+func (i PathAnalyzerTestProtocolParametersArgs) ToOutput(ctx context.Context) pulumix.Output[PathAnalyzerTestProtocolParameters] {
+	return pulumix.Output[PathAnalyzerTestProtocolParameters]{
+		OutputState: i.ToPathAnalyzerTestProtocolParametersOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i PathAnalyzerTestProtocolParametersArgs) ToPathAnalyzerTestProtocolParametersPtrOutput() PathAnalyzerTestProtocolParametersPtrOutput {
 	return i.ToPathAnalyzerTestProtocolParametersPtrOutputWithContext(context.Background())
 }
@@ -3035,6 +3426,12 @@ func (i *pathAnalyzerTestProtocolParametersPtrType) ToPathAnalyzerTestProtocolPa
 	return pulumi.ToOutputWithContext(ctx, i).(PathAnalyzerTestProtocolParametersPtrOutput)
 }
 
+func (i *pathAnalyzerTestProtocolParametersPtrType) ToOutput(ctx context.Context) pulumix.Output[*PathAnalyzerTestProtocolParameters] {
+	return pulumix.Output[*PathAnalyzerTestProtocolParameters]{
+		OutputState: i.ToPathAnalyzerTestProtocolParametersPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type PathAnalyzerTestProtocolParametersOutput struct{ *pulumi.OutputState }
 
 func (PathAnalyzerTestProtocolParametersOutput) ElementType() reflect.Type {
@@ -3057,6 +3454,12 @@ func (o PathAnalyzerTestProtocolParametersOutput) ToPathAnalyzerTestProtocolPara
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v PathAnalyzerTestProtocolParameters) *PathAnalyzerTestProtocolParameters {
 		return &v
 	}).(PathAnalyzerTestProtocolParametersPtrOutput)
+}
+
+func (o PathAnalyzerTestProtocolParametersOutput) ToOutput(ctx context.Context) pulumix.Output[PathAnalyzerTestProtocolParameters] {
+	return pulumix.Output[PathAnalyzerTestProtocolParameters]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The destination port to use in a `PathAnalyzerTest` resource.
@@ -3096,6 +3499,12 @@ func (o PathAnalyzerTestProtocolParametersPtrOutput) ToPathAnalyzerTestProtocolP
 
 func (o PathAnalyzerTestProtocolParametersPtrOutput) ToPathAnalyzerTestProtocolParametersPtrOutputWithContext(ctx context.Context) PathAnalyzerTestProtocolParametersPtrOutput {
 	return o
+}
+
+func (o PathAnalyzerTestProtocolParametersPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*PathAnalyzerTestProtocolParameters] {
+	return pulumix.Output[*PathAnalyzerTestProtocolParameters]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o PathAnalyzerTestProtocolParametersPtrOutput) Elem() PathAnalyzerTestProtocolParametersOutput {
@@ -3191,6 +3600,12 @@ func (i PathAnalyzerTestQueryOptionsArgs) ToPathAnalyzerTestQueryOptionsOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(PathAnalyzerTestQueryOptionsOutput)
 }
 
+func (i PathAnalyzerTestQueryOptionsArgs) ToOutput(ctx context.Context) pulumix.Output[PathAnalyzerTestQueryOptions] {
+	return pulumix.Output[PathAnalyzerTestQueryOptions]{
+		OutputState: i.ToPathAnalyzerTestQueryOptionsOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i PathAnalyzerTestQueryOptionsArgs) ToPathAnalyzerTestQueryOptionsPtrOutput() PathAnalyzerTestQueryOptionsPtrOutput {
 	return i.ToPathAnalyzerTestQueryOptionsPtrOutputWithContext(context.Background())
 }
@@ -3232,6 +3647,12 @@ func (i *pathAnalyzerTestQueryOptionsPtrType) ToPathAnalyzerTestQueryOptionsPtrO
 	return pulumi.ToOutputWithContext(ctx, i).(PathAnalyzerTestQueryOptionsPtrOutput)
 }
 
+func (i *pathAnalyzerTestQueryOptionsPtrType) ToOutput(ctx context.Context) pulumix.Output[*PathAnalyzerTestQueryOptions] {
+	return pulumix.Output[*PathAnalyzerTestQueryOptions]{
+		OutputState: i.ToPathAnalyzerTestQueryOptionsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type PathAnalyzerTestQueryOptionsOutput struct{ *pulumi.OutputState }
 
 func (PathAnalyzerTestQueryOptionsOutput) ElementType() reflect.Type {
@@ -3256,6 +3677,12 @@ func (o PathAnalyzerTestQueryOptionsOutput) ToPathAnalyzerTestQueryOptionsPtrOut
 	}).(PathAnalyzerTestQueryOptionsPtrOutput)
 }
 
+func (o PathAnalyzerTestQueryOptionsOutput) ToOutput(ctx context.Context) pulumix.Output[PathAnalyzerTestQueryOptions] {
+	return pulumix.Output[PathAnalyzerTestQueryOptions]{
+		OutputState: o.OutputState,
+	}
+}
+
 // (Updatable) If true, a path analysis is done for both the forward and reverse routes.
 func (o PathAnalyzerTestQueryOptionsOutput) IsBiDirectionalAnalysis() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v PathAnalyzerTestQueryOptions) *bool { return v.IsBiDirectionalAnalysis }).(pulumi.BoolPtrOutput)
@@ -3273,6 +3700,12 @@ func (o PathAnalyzerTestQueryOptionsPtrOutput) ToPathAnalyzerTestQueryOptionsPtr
 
 func (o PathAnalyzerTestQueryOptionsPtrOutput) ToPathAnalyzerTestQueryOptionsPtrOutputWithContext(ctx context.Context) PathAnalyzerTestQueryOptionsPtrOutput {
 	return o
+}
+
+func (o PathAnalyzerTestQueryOptionsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*PathAnalyzerTestQueryOptions] {
+	return pulumix.Output[*PathAnalyzerTestQueryOptions]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o PathAnalyzerTestQueryOptionsPtrOutput) Elem() PathAnalyzerTestQueryOptionsOutput {
@@ -3370,6 +3803,12 @@ func (i PathAnalyzerTestSourceEndpointArgs) ToPathAnalyzerTestSourceEndpointOutp
 	return pulumi.ToOutputWithContext(ctx, i).(PathAnalyzerTestSourceEndpointOutput)
 }
 
+func (i PathAnalyzerTestSourceEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[PathAnalyzerTestSourceEndpoint] {
+	return pulumix.Output[PathAnalyzerTestSourceEndpoint]{
+		OutputState: i.ToPathAnalyzerTestSourceEndpointOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i PathAnalyzerTestSourceEndpointArgs) ToPathAnalyzerTestSourceEndpointPtrOutput() PathAnalyzerTestSourceEndpointPtrOutput {
 	return i.ToPathAnalyzerTestSourceEndpointPtrOutputWithContext(context.Background())
 }
@@ -3411,6 +3850,12 @@ func (i *pathAnalyzerTestSourceEndpointPtrType) ToPathAnalyzerTestSourceEndpoint
 	return pulumi.ToOutputWithContext(ctx, i).(PathAnalyzerTestSourceEndpointPtrOutput)
 }
 
+func (i *pathAnalyzerTestSourceEndpointPtrType) ToOutput(ctx context.Context) pulumix.Output[*PathAnalyzerTestSourceEndpoint] {
+	return pulumix.Output[*PathAnalyzerTestSourceEndpoint]{
+		OutputState: i.ToPathAnalyzerTestSourceEndpointPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type PathAnalyzerTestSourceEndpointOutput struct{ *pulumi.OutputState }
 
 func (PathAnalyzerTestSourceEndpointOutput) ElementType() reflect.Type {
@@ -3433,6 +3878,12 @@ func (o PathAnalyzerTestSourceEndpointOutput) ToPathAnalyzerTestSourceEndpointPt
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v PathAnalyzerTestSourceEndpoint) *PathAnalyzerTestSourceEndpoint {
 		return &v
 	}).(PathAnalyzerTestSourceEndpointPtrOutput)
+}
+
+func (o PathAnalyzerTestSourceEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[PathAnalyzerTestSourceEndpoint] {
+	return pulumix.Output[PathAnalyzerTestSourceEndpoint]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The IPv4 address of the COMPUTE_INSTANCE-type `Endpoint` object.
@@ -3500,6 +3951,12 @@ func (o PathAnalyzerTestSourceEndpointPtrOutput) ToPathAnalyzerTestSourceEndpoin
 
 func (o PathAnalyzerTestSourceEndpointPtrOutput) ToPathAnalyzerTestSourceEndpointPtrOutputWithContext(ctx context.Context) PathAnalyzerTestSourceEndpointPtrOutput {
 	return o
+}
+
+func (o PathAnalyzerTestSourceEndpointPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*PathAnalyzerTestSourceEndpoint] {
+	return pulumix.Output[*PathAnalyzerTestSourceEndpoint]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o PathAnalyzerTestSourceEndpointPtrOutput) Elem() PathAnalyzerTestSourceEndpointOutput {

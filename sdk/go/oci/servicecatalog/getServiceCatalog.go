@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Service Catalog resource in Oracle Cloud Infrastructure Service Catalog service.
@@ -113,6 +114,12 @@ func (o GetServiceCatalogResultOutput) ToGetServiceCatalogResultOutput() GetServ
 
 func (o GetServiceCatalogResultOutput) ToGetServiceCatalogResultOutputWithContext(ctx context.Context) GetServiceCatalogResultOutput {
 	return o
+}
+
+func (o GetServiceCatalogResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceCatalogResult] {
+	return pulumix.Output[GetServiceCatalogResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The Compartment id where the service catalog exists

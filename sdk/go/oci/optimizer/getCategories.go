@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Categories in Oracle Cloud Infrastructure Optimizer service.
@@ -161,6 +162,12 @@ func (o GetCategoriesResultOutput) ToGetCategoriesResultOutput() GetCategoriesRe
 
 func (o GetCategoriesResultOutput) ToGetCategoriesResultOutputWithContext(ctx context.Context) GetCategoriesResultOutput {
 	return o
+}
+
+func (o GetCategoriesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCategoriesResult] {
+	return pulumix.Output[GetCategoriesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The list of category_collection.

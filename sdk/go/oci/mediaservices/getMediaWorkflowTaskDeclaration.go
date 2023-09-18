@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Media Workflow Task Declaration resource in Oracle Cloud Infrastructure Media Services service.
@@ -121,6 +122,12 @@ func (o GetMediaWorkflowTaskDeclarationResultOutput) ToGetMediaWorkflowTaskDecla
 
 func (o GetMediaWorkflowTaskDeclarationResultOutput) ToGetMediaWorkflowTaskDeclarationResultOutputWithContext(ctx context.Context) GetMediaWorkflowTaskDeclarationResultOutput {
 	return o
+}
+
+func (o GetMediaWorkflowTaskDeclarationResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowTaskDeclarationResult] {
+	return pulumix.Output[GetMediaWorkflowTaskDeclarationResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMediaWorkflowTaskDeclarationResultOutput) CompartmentId() pulumi.StringPtrOutput {

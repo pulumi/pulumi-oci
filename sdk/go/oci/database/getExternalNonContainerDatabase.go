@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific External Non Container Database resource in Oracle Cloud Infrastructure Database service.
@@ -137,6 +138,12 @@ func (o LookupExternalNonContainerDatabaseResultOutput) ToLookupExternalNonConta
 
 func (o LookupExternalNonContainerDatabaseResultOutput) ToLookupExternalNonContainerDatabaseResultOutputWithContext(ctx context.Context) LookupExternalNonContainerDatabaseResultOutput {
 	return o
+}
+
+func (o LookupExternalNonContainerDatabaseResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupExternalNonContainerDatabaseResult] {
+	return pulumix.Output[LookupExternalNonContainerDatabaseResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The character set of the external database.

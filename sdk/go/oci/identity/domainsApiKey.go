@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Api Key resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -868,6 +869,12 @@ func (i *DomainsApiKey) ToDomainsApiKeyOutputWithContext(ctx context.Context) Do
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsApiKeyOutput)
 }
 
+func (i *DomainsApiKey) ToOutput(ctx context.Context) pulumix.Output[*DomainsApiKey] {
+	return pulumix.Output[*DomainsApiKey]{
+		OutputState: i.ToDomainsApiKeyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // DomainsApiKeyArrayInput is an input type that accepts DomainsApiKeyArray and DomainsApiKeyArrayOutput values.
 // You can construct a concrete instance of `DomainsApiKeyArrayInput` via:
 //
@@ -891,6 +898,12 @@ func (i DomainsApiKeyArray) ToDomainsApiKeyArrayOutput() DomainsApiKeyArrayOutpu
 
 func (i DomainsApiKeyArray) ToDomainsApiKeyArrayOutputWithContext(ctx context.Context) DomainsApiKeyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsApiKeyArrayOutput)
+}
+
+func (i DomainsApiKeyArray) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsApiKey] {
+	return pulumix.Output[[]*DomainsApiKey]{
+		OutputState: i.ToDomainsApiKeyArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // DomainsApiKeyMapInput is an input type that accepts DomainsApiKeyMap and DomainsApiKeyMapOutput values.
@@ -918,6 +931,12 @@ func (i DomainsApiKeyMap) ToDomainsApiKeyMapOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsApiKeyMapOutput)
 }
 
+func (i DomainsApiKeyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsApiKey] {
+	return pulumix.Output[map[string]*DomainsApiKey]{
+		OutputState: i.ToDomainsApiKeyMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type DomainsApiKeyOutput struct{ *pulumi.OutputState }
 
 func (DomainsApiKeyOutput) ElementType() reflect.Type {
@@ -930,6 +949,12 @@ func (o DomainsApiKeyOutput) ToDomainsApiKeyOutput() DomainsApiKeyOutput {
 
 func (o DomainsApiKeyOutput) ToDomainsApiKeyOutputWithContext(ctx context.Context) DomainsApiKeyOutput {
 	return o
+}
+
+func (o DomainsApiKeyOutput) ToOutput(ctx context.Context) pulumix.Output[*DomainsApiKey] {
+	return pulumix.Output[*DomainsApiKey]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
@@ -1212,6 +1237,12 @@ func (o DomainsApiKeyArrayOutput) ToDomainsApiKeyArrayOutputWithContext(ctx cont
 	return o
 }
 
+func (o DomainsApiKeyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsApiKey] {
+	return pulumix.Output[[]*DomainsApiKey]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o DomainsApiKeyArrayOutput) Index(i pulumi.IntInput) DomainsApiKeyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DomainsApiKey {
 		return vs[0].([]*DomainsApiKey)[vs[1].(int)]
@@ -1230,6 +1261,12 @@ func (o DomainsApiKeyMapOutput) ToDomainsApiKeyMapOutput() DomainsApiKeyMapOutpu
 
 func (o DomainsApiKeyMapOutput) ToDomainsApiKeyMapOutputWithContext(ctx context.Context) DomainsApiKeyMapOutput {
 	return o
+}
+
+func (o DomainsApiKeyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsApiKey] {
+	return pulumix.Output[map[string]*DomainsApiKey]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o DomainsApiKeyMapOutput) MapIndex(k pulumi.StringInput) DomainsApiKeyOutput {

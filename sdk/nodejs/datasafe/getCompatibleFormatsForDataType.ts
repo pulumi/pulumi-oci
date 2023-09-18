@@ -46,3 +46,26 @@ export interface GetCompatibleFormatsForDataTypeResult {
      */
     readonly id: string;
 }
+/**
+ * This data source provides details about a specific Compatible Formats For Data Type resource in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Gets a list of basic masking formats compatible with the supported data types.
+ * The data types are grouped into the following categories -
+ * Character - Includes CHAR, NCHAR, VARCHAR2, and NVARCHAR2
+ * Numeric - Includes NUMBER, FLOAT, RAW, BINARY_FLOAT, and BINARY_DOUBLE
+ * Date - Includes DATE and TIMESTAMP
+ * LOB - Includes BLOB, CLOB, and NCLOB
+ * All - Includes all the supported data types
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCompatibleFormatsForDataType = oci.DataSafe.getCompatibleFormatsForDataType({});
+ * ```
+ */
+export function getCompatibleFormatsForDataTypeOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetCompatibleFormatsForDataTypeResult> {
+    return pulumi.output(getCompatibleFormatsForDataType(opts))
+}

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Managed Database User Data Access Containers in Oracle Cloud Infrastructure Database Management service.
@@ -117,6 +118,12 @@ func (o GetManagedDatabaseUserDataAccessContainersResultOutput) ToGetManagedData
 
 func (o GetManagedDatabaseUserDataAccessContainersResultOutput) ToGetManagedDatabaseUserDataAccessContainersResultOutputWithContext(ctx context.Context) GetManagedDatabaseUserDataAccessContainersResultOutput {
 	return o
+}
+
+func (o GetManagedDatabaseUserDataAccessContainersResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseUserDataAccessContainersResult] {
+	return pulumix.Output[GetManagedDatabaseUserDataAccessContainersResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The list of data_access_container_collection.

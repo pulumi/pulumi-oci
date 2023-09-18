@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Dedicated Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
@@ -261,6 +262,12 @@ func (i *DedicatedVantagePoint) ToDedicatedVantagePointOutputWithContext(ctx con
 	return pulumi.ToOutputWithContext(ctx, i).(DedicatedVantagePointOutput)
 }
 
+func (i *DedicatedVantagePoint) ToOutput(ctx context.Context) pulumix.Output[*DedicatedVantagePoint] {
+	return pulumix.Output[*DedicatedVantagePoint]{
+		OutputState: i.ToDedicatedVantagePointOutputWithContext(ctx).OutputState,
+	}
+}
+
 // DedicatedVantagePointArrayInput is an input type that accepts DedicatedVantagePointArray and DedicatedVantagePointArrayOutput values.
 // You can construct a concrete instance of `DedicatedVantagePointArrayInput` via:
 //
@@ -284,6 +291,12 @@ func (i DedicatedVantagePointArray) ToDedicatedVantagePointArrayOutput() Dedicat
 
 func (i DedicatedVantagePointArray) ToDedicatedVantagePointArrayOutputWithContext(ctx context.Context) DedicatedVantagePointArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DedicatedVantagePointArrayOutput)
+}
+
+func (i DedicatedVantagePointArray) ToOutput(ctx context.Context) pulumix.Output[[]*DedicatedVantagePoint] {
+	return pulumix.Output[[]*DedicatedVantagePoint]{
+		OutputState: i.ToDedicatedVantagePointArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // DedicatedVantagePointMapInput is an input type that accepts DedicatedVantagePointMap and DedicatedVantagePointMapOutput values.
@@ -311,6 +324,12 @@ func (i DedicatedVantagePointMap) ToDedicatedVantagePointMapOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(DedicatedVantagePointMapOutput)
 }
 
+func (i DedicatedVantagePointMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DedicatedVantagePoint] {
+	return pulumix.Output[map[string]*DedicatedVantagePoint]{
+		OutputState: i.ToDedicatedVantagePointMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type DedicatedVantagePointOutput struct{ *pulumi.OutputState }
 
 func (DedicatedVantagePointOutput) ElementType() reflect.Type {
@@ -323,6 +342,12 @@ func (o DedicatedVantagePointOutput) ToDedicatedVantagePointOutput() DedicatedVa
 
 func (o DedicatedVantagePointOutput) ToDedicatedVantagePointOutputWithContext(ctx context.Context) DedicatedVantagePointOutput {
 	return o
+}
+
+func (o DedicatedVantagePointOutput) ToOutput(ctx context.Context) pulumix.Output[*DedicatedVantagePoint] {
+	return pulumix.Output[*DedicatedVantagePoint]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The APM domain ID the request is intended for.
@@ -399,6 +424,12 @@ func (o DedicatedVantagePointArrayOutput) ToDedicatedVantagePointArrayOutputWith
 	return o
 }
 
+func (o DedicatedVantagePointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DedicatedVantagePoint] {
+	return pulumix.Output[[]*DedicatedVantagePoint]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o DedicatedVantagePointArrayOutput) Index(i pulumi.IntInput) DedicatedVantagePointOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DedicatedVantagePoint {
 		return vs[0].([]*DedicatedVantagePoint)[vs[1].(int)]
@@ -417,6 +448,12 @@ func (o DedicatedVantagePointMapOutput) ToDedicatedVantagePointMapOutput() Dedic
 
 func (o DedicatedVantagePointMapOutput) ToDedicatedVantagePointMapOutputWithContext(ctx context.Context) DedicatedVantagePointMapOutput {
 	return o
+}
+
+func (o DedicatedVantagePointMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DedicatedVantagePoint] {
+	return pulumix.Output[map[string]*DedicatedVantagePoint]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o DedicatedVantagePointMapOutput) MapIndex(k pulumi.StringInput) DedicatedVantagePointOutput {

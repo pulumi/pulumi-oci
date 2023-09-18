@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Network Security Group Vnics in Oracle Cloud Infrastructure Core service.
@@ -104,6 +105,12 @@ func (o GetNetworkSecurityGroupVnicsResultOutput) ToGetNetworkSecurityGroupVnics
 
 func (o GetNetworkSecurityGroupVnicsResultOutput) ToGetNetworkSecurityGroupVnicsResultOutputWithContext(ctx context.Context) GetNetworkSecurityGroupVnicsResultOutput {
 	return o
+}
+
+func (o GetNetworkSecurityGroupVnicsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkSecurityGroupVnicsResult] {
+	return pulumix.Output[GetNetworkSecurityGroupVnicsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkSecurityGroupVnicsResultOutput) Filters() GetNetworkSecurityGroupVnicsFilterArrayOutput {

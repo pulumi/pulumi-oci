@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Security Assessments in Oracle Cloud Infrastructure Data Safe service.
@@ -204,6 +205,12 @@ func (o GetSecurityAssessmentsResultOutput) ToGetSecurityAssessmentsResultOutput
 
 func (o GetSecurityAssessmentsResultOutput) ToGetSecurityAssessmentsResultOutputWithContext(ctx context.Context) GetSecurityAssessmentsResultOutput {
 	return o
+}
+
+func (o GetSecurityAssessmentsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentsResult] {
+	return pulumix.Output[GetSecurityAssessmentsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityAssessmentsResultOutput) AccessLevel() pulumi.StringPtrOutput {

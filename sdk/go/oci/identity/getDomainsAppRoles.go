@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of App Roles in Oracle Cloud Infrastructure Identity Domains service.
@@ -158,6 +159,12 @@ func (o GetDomainsAppRolesResultOutput) ToGetDomainsAppRolesResultOutput() GetDo
 
 func (o GetDomainsAppRolesResultOutput) ToGetDomainsAppRolesResultOutputWithContext(ctx context.Context) GetDomainsAppRolesResultOutput {
 	return o
+}
+
+func (o GetDomainsAppRolesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsAppRolesResult] {
+	return pulumix.Output[GetDomainsAppRolesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDomainsAppRolesResultOutput) AppRoleCount() pulumi.IntPtrOutput {

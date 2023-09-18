@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Repository File Diff resource in Oracle Cloud Infrastructure Devops service.
@@ -139,6 +140,12 @@ func (o GetRepositoryFileDiffResultOutput) ToGetRepositoryFileDiffResultOutput()
 
 func (o GetRepositoryFileDiffResultOutput) ToGetRepositoryFileDiffResultOutputWithContext(ctx context.Context) GetRepositoryFileDiffResultOutput {
 	return o
+}
+
+func (o GetRepositoryFileDiffResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRepositoryFileDiffResult] {
+	return pulumix.Output[GetRepositoryFileDiffResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Indicates whether the changed file contains conflicts.

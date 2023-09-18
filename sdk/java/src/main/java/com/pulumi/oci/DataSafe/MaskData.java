@@ -15,13 +15,13 @@ import javax.annotation.Nullable;
 
 @ResourceType(type="oci:DataSafe/maskData:MaskData")
 public class MaskData extends com.pulumi.resources.CustomResource {
-    @Export(name="maskingPolicyId", type=String.class, parameters={})
+    @Export(name="maskingPolicyId", refs={String.class}, tree="[0]")
     private Output<String> maskingPolicyId;
 
     public Output<String> maskingPolicyId() {
         return this.maskingPolicyId;
     }
-    @Export(name="targetId", type=String.class, parameters={})
+    @Export(name="targetId", refs={String.class}, tree="[0]")
     private Output<String> targetId;
 
     public Output<String> targetId() {

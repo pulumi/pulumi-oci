@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Sender resource in Oracle Cloud Infrastructure Email service.
@@ -217,6 +218,12 @@ func (i *Sender) ToSenderOutputWithContext(ctx context.Context) SenderOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SenderOutput)
 }
 
+func (i *Sender) ToOutput(ctx context.Context) pulumix.Output[*Sender] {
+	return pulumix.Output[*Sender]{
+		OutputState: i.ToSenderOutputWithContext(ctx).OutputState,
+	}
+}
+
 // SenderArrayInput is an input type that accepts SenderArray and SenderArrayOutput values.
 // You can construct a concrete instance of `SenderArrayInput` via:
 //
@@ -240,6 +247,12 @@ func (i SenderArray) ToSenderArrayOutput() SenderArrayOutput {
 
 func (i SenderArray) ToSenderArrayOutputWithContext(ctx context.Context) SenderArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SenderArrayOutput)
+}
+
+func (i SenderArray) ToOutput(ctx context.Context) pulumix.Output[[]*Sender] {
+	return pulumix.Output[[]*Sender]{
+		OutputState: i.ToSenderArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // SenderMapInput is an input type that accepts SenderMap and SenderMapOutput values.
@@ -267,6 +280,12 @@ func (i SenderMap) ToSenderMapOutputWithContext(ctx context.Context) SenderMapOu
 	return pulumi.ToOutputWithContext(ctx, i).(SenderMapOutput)
 }
 
+func (i SenderMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Sender] {
+	return pulumix.Output[map[string]*Sender]{
+		OutputState: i.ToSenderMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type SenderOutput struct{ *pulumi.OutputState }
 
 func (SenderOutput) ElementType() reflect.Type {
@@ -279,6 +298,12 @@ func (o SenderOutput) ToSenderOutput() SenderOutput {
 
 func (o SenderOutput) ToSenderOutputWithContext(ctx context.Context) SenderOutput {
 	return o
+}
+
+func (o SenderOutput) ToOutput(ctx context.Context) pulumix.Output[*Sender] {
+	return pulumix.Output[*Sender]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The OCID of the compartment that contains the sender.
@@ -338,6 +363,12 @@ func (o SenderArrayOutput) ToSenderArrayOutputWithContext(ctx context.Context) S
 	return o
 }
 
+func (o SenderArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Sender] {
+	return pulumix.Output[[]*Sender]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o SenderArrayOutput) Index(i pulumi.IntInput) SenderOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Sender {
 		return vs[0].([]*Sender)[vs[1].(int)]
@@ -356,6 +387,12 @@ func (o SenderMapOutput) ToSenderMapOutput() SenderMapOutput {
 
 func (o SenderMapOutput) ToSenderMapOutputWithContext(ctx context.Context) SenderMapOutput {
 	return o
+}
+
+func (o SenderMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Sender] {
+	return pulumix.Output[map[string]*Sender]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o SenderMapOutput) MapIndex(k pulumi.StringInput) SenderOutput {

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Artifact By Path resource in Oracle Cloud Infrastructure Generic Artifacts Content service.
@@ -121,6 +122,12 @@ func (o LookupArtifactByPathResultOutput) ToLookupArtifactByPathResultOutput() L
 
 func (o LookupArtifactByPathResultOutput) ToLookupArtifactByPathResultOutputWithContext(ctx context.Context) LookupArtifactByPathResultOutput {
 	return o
+}
+
+func (o LookupArtifactByPathResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupArtifactByPathResult] {
+	return pulumix.Output[LookupArtifactByPathResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o LookupArtifactByPathResultOutput) ArtifactId() pulumi.StringOutput {

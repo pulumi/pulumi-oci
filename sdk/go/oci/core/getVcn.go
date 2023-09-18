@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Vcn resource in Oracle Cloud Infrastructure Core service.
@@ -134,6 +135,12 @@ func (o LookupVcnResultOutput) ToLookupVcnResultOutput() LookupVcnResultOutput {
 
 func (o LookupVcnResultOutput) ToLookupVcnResultOutputWithContext(ctx context.Context) LookupVcnResultOutput {
 	return o
+}
+
+func (o LookupVcnResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupVcnResult] {
+	return pulumix.Output[LookupVcnResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The list of BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 ranges.

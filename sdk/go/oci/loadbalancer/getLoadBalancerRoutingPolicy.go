@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Load Balancer Routing Policy resource in Oracle Cloud Infrastructure Load Balancer service.
@@ -111,6 +112,12 @@ func (o LookupLoadBalancerRoutingPolicyResultOutput) ToLookupLoadBalancerRouting
 
 func (o LookupLoadBalancerRoutingPolicyResultOutput) ToLookupLoadBalancerRoutingPolicyResultOutputWithContext(ctx context.Context) LookupLoadBalancerRoutingPolicyResultOutput {
 	return o
+}
+
+func (o LookupLoadBalancerRoutingPolicyResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupLoadBalancerRoutingPolicyResult] {
+	return pulumix.Output[LookupLoadBalancerRoutingPolicyResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The version of the language in which `condition` of `rules` are composed.

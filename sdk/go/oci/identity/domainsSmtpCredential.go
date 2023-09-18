@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Smtp Credential resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -935,6 +936,12 @@ func (i *DomainsSmtpCredential) ToDomainsSmtpCredentialOutputWithContext(ctx con
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsSmtpCredentialOutput)
 }
 
+func (i *DomainsSmtpCredential) ToOutput(ctx context.Context) pulumix.Output[*DomainsSmtpCredential] {
+	return pulumix.Output[*DomainsSmtpCredential]{
+		OutputState: i.ToDomainsSmtpCredentialOutputWithContext(ctx).OutputState,
+	}
+}
+
 // DomainsSmtpCredentialArrayInput is an input type that accepts DomainsSmtpCredentialArray and DomainsSmtpCredentialArrayOutput values.
 // You can construct a concrete instance of `DomainsSmtpCredentialArrayInput` via:
 //
@@ -958,6 +965,12 @@ func (i DomainsSmtpCredentialArray) ToDomainsSmtpCredentialArrayOutput() Domains
 
 func (i DomainsSmtpCredentialArray) ToDomainsSmtpCredentialArrayOutputWithContext(ctx context.Context) DomainsSmtpCredentialArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsSmtpCredentialArrayOutput)
+}
+
+func (i DomainsSmtpCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsSmtpCredential] {
+	return pulumix.Output[[]*DomainsSmtpCredential]{
+		OutputState: i.ToDomainsSmtpCredentialArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // DomainsSmtpCredentialMapInput is an input type that accepts DomainsSmtpCredentialMap and DomainsSmtpCredentialMapOutput values.
@@ -985,6 +998,12 @@ func (i DomainsSmtpCredentialMap) ToDomainsSmtpCredentialMapOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsSmtpCredentialMapOutput)
 }
 
+func (i DomainsSmtpCredentialMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsSmtpCredential] {
+	return pulumix.Output[map[string]*DomainsSmtpCredential]{
+		OutputState: i.ToDomainsSmtpCredentialMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type DomainsSmtpCredentialOutput struct{ *pulumi.OutputState }
 
 func (DomainsSmtpCredentialOutput) ElementType() reflect.Type {
@@ -997,6 +1016,12 @@ func (o DomainsSmtpCredentialOutput) ToDomainsSmtpCredentialOutput() DomainsSmtp
 
 func (o DomainsSmtpCredentialOutput) ToDomainsSmtpCredentialOutputWithContext(ctx context.Context) DomainsSmtpCredentialOutput {
 	return o
+}
+
+func (o DomainsSmtpCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[*DomainsSmtpCredential] {
+	return pulumix.Output[*DomainsSmtpCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
@@ -1298,6 +1323,12 @@ func (o DomainsSmtpCredentialArrayOutput) ToDomainsSmtpCredentialArrayOutputWith
 	return o
 }
 
+func (o DomainsSmtpCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsSmtpCredential] {
+	return pulumix.Output[[]*DomainsSmtpCredential]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o DomainsSmtpCredentialArrayOutput) Index(i pulumi.IntInput) DomainsSmtpCredentialOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DomainsSmtpCredential {
 		return vs[0].([]*DomainsSmtpCredential)[vs[1].(int)]
@@ -1316,6 +1347,12 @@ func (o DomainsSmtpCredentialMapOutput) ToDomainsSmtpCredentialMapOutput() Domai
 
 func (o DomainsSmtpCredentialMapOutput) ToDomainsSmtpCredentialMapOutputWithContext(ctx context.Context) DomainsSmtpCredentialMapOutput {
 	return o
+}
+
+func (o DomainsSmtpCredentialMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsSmtpCredential] {
+	return pulumix.Output[map[string]*DomainsSmtpCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o DomainsSmtpCredentialMapOutput) MapIndex(k pulumi.StringInput) DomainsSmtpCredentialOutput {

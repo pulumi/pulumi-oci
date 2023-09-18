@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Access Request History resource in Oracle Cloud Infrastructure Operator Access Control service.
@@ -101,6 +102,12 @@ func (o GetAccessRequestHistoryResultOutput) ToGetAccessRequestHistoryResultOutp
 
 func (o GetAccessRequestHistoryResultOutput) ToGetAccessRequestHistoryResultOutputWithContext(ctx context.Context) GetAccessRequestHistoryResultOutput {
 	return o
+}
+
+func (o GetAccessRequestHistoryResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAccessRequestHistoryResult] {
+	return pulumix.Output[GetAccessRequestHistoryResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAccessRequestHistoryResultOutput) AccessRequestId() pulumi.StringOutput {

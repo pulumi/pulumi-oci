@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -70,6 +71,12 @@ func (i ProtectedDatabaseMetricArgs) ToProtectedDatabaseMetricOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(ProtectedDatabaseMetricOutput)
 }
 
+func (i ProtectedDatabaseMetricArgs) ToOutput(ctx context.Context) pulumix.Output[ProtectedDatabaseMetric] {
+	return pulumix.Output[ProtectedDatabaseMetric]{
+		OutputState: i.ToProtectedDatabaseMetricOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ProtectedDatabaseMetricArrayInput is an input type that accepts ProtectedDatabaseMetricArray and ProtectedDatabaseMetricArrayOutput values.
 // You can construct a concrete instance of `ProtectedDatabaseMetricArrayInput` via:
 //
@@ -95,6 +102,12 @@ func (i ProtectedDatabaseMetricArray) ToProtectedDatabaseMetricArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(ProtectedDatabaseMetricArrayOutput)
 }
 
+func (i ProtectedDatabaseMetricArray) ToOutput(ctx context.Context) pulumix.Output[[]ProtectedDatabaseMetric] {
+	return pulumix.Output[[]ProtectedDatabaseMetric]{
+		OutputState: i.ToProtectedDatabaseMetricArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ProtectedDatabaseMetricOutput struct{ *pulumi.OutputState }
 
 func (ProtectedDatabaseMetricOutput) ElementType() reflect.Type {
@@ -107,6 +120,12 @@ func (o ProtectedDatabaseMetricOutput) ToProtectedDatabaseMetricOutput() Protect
 
 func (o ProtectedDatabaseMetricOutput) ToProtectedDatabaseMetricOutputWithContext(ctx context.Context) ProtectedDatabaseMetricOutput {
 	return o
+}
+
+func (o ProtectedDatabaseMetricOutput) ToOutput(ctx context.Context) pulumix.Output[ProtectedDatabaseMetric] {
+	return pulumix.Output[ProtectedDatabaseMetric]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The estimated backup storage space, in gigabytes, required to meet the recovery window goal, including foot print and backups for the protected database.
@@ -158,6 +177,12 @@ func (o ProtectedDatabaseMetricArrayOutput) ToProtectedDatabaseMetricArrayOutput
 	return o
 }
 
+func (o ProtectedDatabaseMetricArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ProtectedDatabaseMetric] {
+	return pulumix.Output[[]ProtectedDatabaseMetric]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o ProtectedDatabaseMetricArrayOutput) Index(i pulumi.IntInput) ProtectedDatabaseMetricOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ProtectedDatabaseMetric {
 		return vs[0].([]ProtectedDatabaseMetric)[vs[1].(int)]
@@ -207,6 +232,12 @@ func (i ProtectedDatabaseRecoveryServiceSubnetArgs) ToProtectedDatabaseRecoveryS
 	return pulumi.ToOutputWithContext(ctx, i).(ProtectedDatabaseRecoveryServiceSubnetOutput)
 }
 
+func (i ProtectedDatabaseRecoveryServiceSubnetArgs) ToOutput(ctx context.Context) pulumix.Output[ProtectedDatabaseRecoveryServiceSubnet] {
+	return pulumix.Output[ProtectedDatabaseRecoveryServiceSubnet]{
+		OutputState: i.ToProtectedDatabaseRecoveryServiceSubnetOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ProtectedDatabaseRecoveryServiceSubnetArrayInput is an input type that accepts ProtectedDatabaseRecoveryServiceSubnetArray and ProtectedDatabaseRecoveryServiceSubnetArrayOutput values.
 // You can construct a concrete instance of `ProtectedDatabaseRecoveryServiceSubnetArrayInput` via:
 //
@@ -232,6 +263,12 @@ func (i ProtectedDatabaseRecoveryServiceSubnetArray) ToProtectedDatabaseRecovery
 	return pulumi.ToOutputWithContext(ctx, i).(ProtectedDatabaseRecoveryServiceSubnetArrayOutput)
 }
 
+func (i ProtectedDatabaseRecoveryServiceSubnetArray) ToOutput(ctx context.Context) pulumix.Output[[]ProtectedDatabaseRecoveryServiceSubnet] {
+	return pulumix.Output[[]ProtectedDatabaseRecoveryServiceSubnet]{
+		OutputState: i.ToProtectedDatabaseRecoveryServiceSubnetArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ProtectedDatabaseRecoveryServiceSubnetOutput struct{ *pulumi.OutputState }
 
 func (ProtectedDatabaseRecoveryServiceSubnetOutput) ElementType() reflect.Type {
@@ -244,6 +281,12 @@ func (o ProtectedDatabaseRecoveryServiceSubnetOutput) ToProtectedDatabaseRecover
 
 func (o ProtectedDatabaseRecoveryServiceSubnetOutput) ToProtectedDatabaseRecoveryServiceSubnetOutputWithContext(ctx context.Context) ProtectedDatabaseRecoveryServiceSubnetOutput {
 	return o
+}
+
+func (o ProtectedDatabaseRecoveryServiceSubnetOutput) ToOutput(ctx context.Context) pulumix.Output[ProtectedDatabaseRecoveryServiceSubnet] {
+	return pulumix.Output[ProtectedDatabaseRecoveryServiceSubnet]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The recovery service subnet OCID.
@@ -271,6 +314,12 @@ func (o ProtectedDatabaseRecoveryServiceSubnetArrayOutput) ToProtectedDatabaseRe
 
 func (o ProtectedDatabaseRecoveryServiceSubnetArrayOutput) ToProtectedDatabaseRecoveryServiceSubnetArrayOutputWithContext(ctx context.Context) ProtectedDatabaseRecoveryServiceSubnetArrayOutput {
 	return o
+}
+
+func (o ProtectedDatabaseRecoveryServiceSubnetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ProtectedDatabaseRecoveryServiceSubnet] {
+	return pulumix.Output[[]ProtectedDatabaseRecoveryServiceSubnet]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ProtectedDatabaseRecoveryServiceSubnetArrayOutput) Index(i pulumi.IntInput) ProtectedDatabaseRecoveryServiceSubnetOutput {
@@ -336,6 +385,12 @@ func (i GetProtectedDatabaseMetricArgs) ToGetProtectedDatabaseMetricOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectedDatabaseMetricOutput)
 }
 
+func (i GetProtectedDatabaseMetricArgs) ToOutput(ctx context.Context) pulumix.Output[GetProtectedDatabaseMetric] {
+	return pulumix.Output[GetProtectedDatabaseMetric]{
+		OutputState: i.ToGetProtectedDatabaseMetricOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetProtectedDatabaseMetricArrayInput is an input type that accepts GetProtectedDatabaseMetricArray and GetProtectedDatabaseMetricArrayOutput values.
 // You can construct a concrete instance of `GetProtectedDatabaseMetricArrayInput` via:
 //
@@ -361,6 +416,12 @@ func (i GetProtectedDatabaseMetricArray) ToGetProtectedDatabaseMetricArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectedDatabaseMetricArrayOutput)
 }
 
+func (i GetProtectedDatabaseMetricArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectedDatabaseMetric] {
+	return pulumix.Output[[]GetProtectedDatabaseMetric]{
+		OutputState: i.ToGetProtectedDatabaseMetricArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetProtectedDatabaseMetricOutput struct{ *pulumi.OutputState }
 
 func (GetProtectedDatabaseMetricOutput) ElementType() reflect.Type {
@@ -373,6 +434,12 @@ func (o GetProtectedDatabaseMetricOutput) ToGetProtectedDatabaseMetricOutput() G
 
 func (o GetProtectedDatabaseMetricOutput) ToGetProtectedDatabaseMetricOutputWithContext(ctx context.Context) GetProtectedDatabaseMetricOutput {
 	return o
+}
+
+func (o GetProtectedDatabaseMetricOutput) ToOutput(ctx context.Context) pulumix.Output[GetProtectedDatabaseMetric] {
+	return pulumix.Output[GetProtectedDatabaseMetric]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The estimated backup storage space, in gigabytes, required to meet the recovery window goal, including foot print and backups for the protected database.
@@ -424,6 +491,12 @@ func (o GetProtectedDatabaseMetricArrayOutput) ToGetProtectedDatabaseMetricArray
 	return o
 }
 
+func (o GetProtectedDatabaseMetricArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectedDatabaseMetric] {
+	return pulumix.Output[[]GetProtectedDatabaseMetric]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetProtectedDatabaseMetricArrayOutput) Index(i pulumi.IntInput) GetProtectedDatabaseMetricOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProtectedDatabaseMetric {
 		return vs[0].([]GetProtectedDatabaseMetric)[vs[1].(int)]
@@ -467,6 +540,12 @@ func (i GetProtectedDatabaseRecoveryServiceSubnetArgs) ToGetProtectedDatabaseRec
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectedDatabaseRecoveryServiceSubnetOutput)
 }
 
+func (i GetProtectedDatabaseRecoveryServiceSubnetArgs) ToOutput(ctx context.Context) pulumix.Output[GetProtectedDatabaseRecoveryServiceSubnet] {
+	return pulumix.Output[GetProtectedDatabaseRecoveryServiceSubnet]{
+		OutputState: i.ToGetProtectedDatabaseRecoveryServiceSubnetOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetProtectedDatabaseRecoveryServiceSubnetArrayInput is an input type that accepts GetProtectedDatabaseRecoveryServiceSubnetArray and GetProtectedDatabaseRecoveryServiceSubnetArrayOutput values.
 // You can construct a concrete instance of `GetProtectedDatabaseRecoveryServiceSubnetArrayInput` via:
 //
@@ -492,6 +571,12 @@ func (i GetProtectedDatabaseRecoveryServiceSubnetArray) ToGetProtectedDatabaseRe
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectedDatabaseRecoveryServiceSubnetArrayOutput)
 }
 
+func (i GetProtectedDatabaseRecoveryServiceSubnetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectedDatabaseRecoveryServiceSubnet] {
+	return pulumix.Output[[]GetProtectedDatabaseRecoveryServiceSubnet]{
+		OutputState: i.ToGetProtectedDatabaseRecoveryServiceSubnetArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetProtectedDatabaseRecoveryServiceSubnetOutput struct{ *pulumi.OutputState }
 
 func (GetProtectedDatabaseRecoveryServiceSubnetOutput) ElementType() reflect.Type {
@@ -504,6 +589,12 @@ func (o GetProtectedDatabaseRecoveryServiceSubnetOutput) ToGetProtectedDatabaseR
 
 func (o GetProtectedDatabaseRecoveryServiceSubnetOutput) ToGetProtectedDatabaseRecoveryServiceSubnetOutputWithContext(ctx context.Context) GetProtectedDatabaseRecoveryServiceSubnetOutput {
 	return o
+}
+
+func (o GetProtectedDatabaseRecoveryServiceSubnetOutput) ToOutput(ctx context.Context) pulumix.Output[GetProtectedDatabaseRecoveryServiceSubnet] {
+	return pulumix.Output[GetProtectedDatabaseRecoveryServiceSubnet]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Recovery Service Subnet Identifier.
@@ -528,6 +619,12 @@ func (o GetProtectedDatabaseRecoveryServiceSubnetArrayOutput) ToGetProtectedData
 
 func (o GetProtectedDatabaseRecoveryServiceSubnetArrayOutput) ToGetProtectedDatabaseRecoveryServiceSubnetArrayOutputWithContext(ctx context.Context) GetProtectedDatabaseRecoveryServiceSubnetArrayOutput {
 	return o
+}
+
+func (o GetProtectedDatabaseRecoveryServiceSubnetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectedDatabaseRecoveryServiceSubnet] {
+	return pulumix.Output[[]GetProtectedDatabaseRecoveryServiceSubnet]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetProtectedDatabaseRecoveryServiceSubnetArrayOutput) Index(i pulumi.IntInput) GetProtectedDatabaseRecoveryServiceSubnetOutput {
@@ -571,6 +668,12 @@ func (i GetProtectedDatabasesFilterArgs) ToGetProtectedDatabasesFilterOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectedDatabasesFilterOutput)
 }
 
+func (i GetProtectedDatabasesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetProtectedDatabasesFilter] {
+	return pulumix.Output[GetProtectedDatabasesFilter]{
+		OutputState: i.ToGetProtectedDatabasesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetProtectedDatabasesFilterArrayInput is an input type that accepts GetProtectedDatabasesFilterArray and GetProtectedDatabasesFilterArrayOutput values.
 // You can construct a concrete instance of `GetProtectedDatabasesFilterArrayInput` via:
 //
@@ -596,6 +699,12 @@ func (i GetProtectedDatabasesFilterArray) ToGetProtectedDatabasesFilterArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectedDatabasesFilterArrayOutput)
 }
 
+func (i GetProtectedDatabasesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectedDatabasesFilter] {
+	return pulumix.Output[[]GetProtectedDatabasesFilter]{
+		OutputState: i.ToGetProtectedDatabasesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetProtectedDatabasesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetProtectedDatabasesFilterOutput) ElementType() reflect.Type {
@@ -608,6 +717,12 @@ func (o GetProtectedDatabasesFilterOutput) ToGetProtectedDatabasesFilterOutput()
 
 func (o GetProtectedDatabasesFilterOutput) ToGetProtectedDatabasesFilterOutputWithContext(ctx context.Context) GetProtectedDatabasesFilterOutput {
 	return o
+}
+
+func (o GetProtectedDatabasesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetProtectedDatabasesFilter] {
+	return pulumix.Output[GetProtectedDatabasesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetProtectedDatabasesFilterOutput) Name() pulumi.StringOutput {
@@ -634,6 +749,12 @@ func (o GetProtectedDatabasesFilterArrayOutput) ToGetProtectedDatabasesFilterArr
 
 func (o GetProtectedDatabasesFilterArrayOutput) ToGetProtectedDatabasesFilterArrayOutputWithContext(ctx context.Context) GetProtectedDatabasesFilterArrayOutput {
 	return o
+}
+
+func (o GetProtectedDatabasesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectedDatabasesFilter] {
+	return pulumix.Output[[]GetProtectedDatabasesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetProtectedDatabasesFilterArrayOutput) Index(i pulumi.IntInput) GetProtectedDatabasesFilterOutput {
@@ -673,6 +794,12 @@ func (i GetProtectedDatabasesProtectedDatabaseCollectionArgs) ToGetProtectedData
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectedDatabasesProtectedDatabaseCollectionOutput)
 }
 
+func (i GetProtectedDatabasesProtectedDatabaseCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetProtectedDatabasesProtectedDatabaseCollection] {
+	return pulumix.Output[GetProtectedDatabasesProtectedDatabaseCollection]{
+		OutputState: i.ToGetProtectedDatabasesProtectedDatabaseCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetProtectedDatabasesProtectedDatabaseCollectionArrayInput is an input type that accepts GetProtectedDatabasesProtectedDatabaseCollectionArray and GetProtectedDatabasesProtectedDatabaseCollectionArrayOutput values.
 // You can construct a concrete instance of `GetProtectedDatabasesProtectedDatabaseCollectionArrayInput` via:
 //
@@ -698,6 +825,12 @@ func (i GetProtectedDatabasesProtectedDatabaseCollectionArray) ToGetProtectedDat
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectedDatabasesProtectedDatabaseCollectionArrayOutput)
 }
 
+func (i GetProtectedDatabasesProtectedDatabaseCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectedDatabasesProtectedDatabaseCollection] {
+	return pulumix.Output[[]GetProtectedDatabasesProtectedDatabaseCollection]{
+		OutputState: i.ToGetProtectedDatabasesProtectedDatabaseCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetProtectedDatabasesProtectedDatabaseCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetProtectedDatabasesProtectedDatabaseCollectionOutput) ElementType() reflect.Type {
@@ -710,6 +843,12 @@ func (o GetProtectedDatabasesProtectedDatabaseCollectionOutput) ToGetProtectedDa
 
 func (o GetProtectedDatabasesProtectedDatabaseCollectionOutput) ToGetProtectedDatabasesProtectedDatabaseCollectionOutputWithContext(ctx context.Context) GetProtectedDatabasesProtectedDatabaseCollectionOutput {
 	return o
+}
+
+func (o GetProtectedDatabasesProtectedDatabaseCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetProtectedDatabasesProtectedDatabaseCollection] {
+	return pulumix.Output[GetProtectedDatabasesProtectedDatabaseCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetProtectedDatabasesProtectedDatabaseCollectionOutput) Items() GetProtectedDatabasesProtectedDatabaseCollectionItemArrayOutput {
@@ -730,6 +869,12 @@ func (o GetProtectedDatabasesProtectedDatabaseCollectionArrayOutput) ToGetProtec
 
 func (o GetProtectedDatabasesProtectedDatabaseCollectionArrayOutput) ToGetProtectedDatabasesProtectedDatabaseCollectionArrayOutputWithContext(ctx context.Context) GetProtectedDatabasesProtectedDatabaseCollectionArrayOutput {
 	return o
+}
+
+func (o GetProtectedDatabasesProtectedDatabaseCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectedDatabasesProtectedDatabaseCollection] {
+	return pulumix.Output[[]GetProtectedDatabasesProtectedDatabaseCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetProtectedDatabasesProtectedDatabaseCollectionArrayOutput) Index(i pulumi.IntInput) GetProtectedDatabasesProtectedDatabaseCollectionOutput {
@@ -859,6 +1004,12 @@ func (i GetProtectedDatabasesProtectedDatabaseCollectionItemArgs) ToGetProtected
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectedDatabasesProtectedDatabaseCollectionItemOutput)
 }
 
+func (i GetProtectedDatabasesProtectedDatabaseCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetProtectedDatabasesProtectedDatabaseCollectionItem] {
+	return pulumix.Output[GetProtectedDatabasesProtectedDatabaseCollectionItem]{
+		OutputState: i.ToGetProtectedDatabasesProtectedDatabaseCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetProtectedDatabasesProtectedDatabaseCollectionItemArrayInput is an input type that accepts GetProtectedDatabasesProtectedDatabaseCollectionItemArray and GetProtectedDatabasesProtectedDatabaseCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetProtectedDatabasesProtectedDatabaseCollectionItemArrayInput` via:
 //
@@ -884,6 +1035,12 @@ func (i GetProtectedDatabasesProtectedDatabaseCollectionItemArray) ToGetProtecte
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectedDatabasesProtectedDatabaseCollectionItemArrayOutput)
 }
 
+func (i GetProtectedDatabasesProtectedDatabaseCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectedDatabasesProtectedDatabaseCollectionItem] {
+	return pulumix.Output[[]GetProtectedDatabasesProtectedDatabaseCollectionItem]{
+		OutputState: i.ToGetProtectedDatabasesProtectedDatabaseCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetProtectedDatabasesProtectedDatabaseCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) ElementType() reflect.Type {
@@ -896,6 +1053,12 @@ func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) ToGetProtect
 
 func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) ToGetProtectedDatabasesProtectedDatabaseCollectionItemOutputWithContext(ctx context.Context) GetProtectedDatabasesProtectedDatabaseCollectionItemOutput {
 	return o
+}
+
+func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetProtectedDatabasesProtectedDatabaseCollectionItem] {
+	return pulumix.Output[GetProtectedDatabasesProtectedDatabaseCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The compartment OCID.
@@ -1034,6 +1197,12 @@ func (o GetProtectedDatabasesProtectedDatabaseCollectionItemArrayOutput) ToGetPr
 	return o
 }
 
+func (o GetProtectedDatabasesProtectedDatabaseCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectedDatabasesProtectedDatabaseCollectionItem] {
+	return pulumix.Output[[]GetProtectedDatabasesProtectedDatabaseCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetProtectedDatabasesProtectedDatabaseCollectionItemArrayOutput) Index(i pulumi.IntInput) GetProtectedDatabasesProtectedDatabaseCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProtectedDatabasesProtectedDatabaseCollectionItem {
 		return vs[0].([]GetProtectedDatabasesProtectedDatabaseCollectionItem)[vs[1].(int)]
@@ -1097,6 +1266,12 @@ func (i GetProtectedDatabasesProtectedDatabaseCollectionItemMetricArgs) ToGetPro
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectedDatabasesProtectedDatabaseCollectionItemMetricOutput)
 }
 
+func (i GetProtectedDatabasesProtectedDatabaseCollectionItemMetricArgs) ToOutput(ctx context.Context) pulumix.Output[GetProtectedDatabasesProtectedDatabaseCollectionItemMetric] {
+	return pulumix.Output[GetProtectedDatabasesProtectedDatabaseCollectionItemMetric]{
+		OutputState: i.ToGetProtectedDatabasesProtectedDatabaseCollectionItemMetricOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetProtectedDatabasesProtectedDatabaseCollectionItemMetricArrayInput is an input type that accepts GetProtectedDatabasesProtectedDatabaseCollectionItemMetricArray and GetProtectedDatabasesProtectedDatabaseCollectionItemMetricArrayOutput values.
 // You can construct a concrete instance of `GetProtectedDatabasesProtectedDatabaseCollectionItemMetricArrayInput` via:
 //
@@ -1122,6 +1297,12 @@ func (i GetProtectedDatabasesProtectedDatabaseCollectionItemMetricArray) ToGetPr
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectedDatabasesProtectedDatabaseCollectionItemMetricArrayOutput)
 }
 
+func (i GetProtectedDatabasesProtectedDatabaseCollectionItemMetricArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectedDatabasesProtectedDatabaseCollectionItemMetric] {
+	return pulumix.Output[[]GetProtectedDatabasesProtectedDatabaseCollectionItemMetric]{
+		OutputState: i.ToGetProtectedDatabasesProtectedDatabaseCollectionItemMetricArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetProtectedDatabasesProtectedDatabaseCollectionItemMetricOutput struct{ *pulumi.OutputState }
 
 func (GetProtectedDatabasesProtectedDatabaseCollectionItemMetricOutput) ElementType() reflect.Type {
@@ -1134,6 +1315,12 @@ func (o GetProtectedDatabasesProtectedDatabaseCollectionItemMetricOutput) ToGetP
 
 func (o GetProtectedDatabasesProtectedDatabaseCollectionItemMetricOutput) ToGetProtectedDatabasesProtectedDatabaseCollectionItemMetricOutputWithContext(ctx context.Context) GetProtectedDatabasesProtectedDatabaseCollectionItemMetricOutput {
 	return o
+}
+
+func (o GetProtectedDatabasesProtectedDatabaseCollectionItemMetricOutput) ToOutput(ctx context.Context) pulumix.Output[GetProtectedDatabasesProtectedDatabaseCollectionItemMetric] {
+	return pulumix.Output[GetProtectedDatabasesProtectedDatabaseCollectionItemMetric]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The estimated backup storage space, in gigabytes, required to meet the recovery window goal, including foot print and backups for the protected database.
@@ -1195,6 +1382,12 @@ func (o GetProtectedDatabasesProtectedDatabaseCollectionItemMetricArrayOutput) T
 	return o
 }
 
+func (o GetProtectedDatabasesProtectedDatabaseCollectionItemMetricArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectedDatabasesProtectedDatabaseCollectionItemMetric] {
+	return pulumix.Output[[]GetProtectedDatabasesProtectedDatabaseCollectionItemMetric]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetProtectedDatabasesProtectedDatabaseCollectionItemMetricArrayOutput) Index(i pulumi.IntInput) GetProtectedDatabasesProtectedDatabaseCollectionItemMetricOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProtectedDatabasesProtectedDatabaseCollectionItemMetric {
 		return vs[0].([]GetProtectedDatabasesProtectedDatabaseCollectionItemMetric)[vs[1].(int)]
@@ -1238,6 +1431,12 @@ func (i GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubne
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetOutput)
 }
 
+func (i GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetArgs) ToOutput(ctx context.Context) pulumix.Output[GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnet] {
+	return pulumix.Output[GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnet]{
+		OutputState: i.ToGetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetArrayInput is an input type that accepts GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetArray and GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetArrayOutput values.
 // You can construct a concrete instance of `GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetArrayInput` via:
 //
@@ -1263,6 +1462,12 @@ func (i GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubne
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetArrayOutput)
 }
 
+func (i GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnet] {
+	return pulumix.Output[[]GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnet]{
+		OutputState: i.ToGetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetOutput struct{ *pulumi.OutputState }
 
 func (GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetOutput) ElementType() reflect.Type {
@@ -1275,6 +1480,12 @@ func (o GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubne
 
 func (o GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetOutput) ToGetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetOutputWithContext(ctx context.Context) GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetOutput {
 	return o
+}
+
+func (o GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetOutput) ToOutput(ctx context.Context) pulumix.Output[GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnet] {
+	return pulumix.Output[GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnet]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The recovery service subnet OCID.
@@ -1303,6 +1514,12 @@ func (o GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubne
 
 func (o GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetArrayOutput) ToGetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetArrayOutputWithContext(ctx context.Context) GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetArrayOutput {
 	return o
+}
+
+func (o GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnet] {
+	return pulumix.Output[[]GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnet]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetArrayOutput) Index(i pulumi.IntInput) GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetOutput {
@@ -1346,6 +1563,12 @@ func (i GetProtectionPoliciesFilterArgs) ToGetProtectionPoliciesFilterOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectionPoliciesFilterOutput)
 }
 
+func (i GetProtectionPoliciesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetProtectionPoliciesFilter] {
+	return pulumix.Output[GetProtectionPoliciesFilter]{
+		OutputState: i.ToGetProtectionPoliciesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetProtectionPoliciesFilterArrayInput is an input type that accepts GetProtectionPoliciesFilterArray and GetProtectionPoliciesFilterArrayOutput values.
 // You can construct a concrete instance of `GetProtectionPoliciesFilterArrayInput` via:
 //
@@ -1371,6 +1594,12 @@ func (i GetProtectionPoliciesFilterArray) ToGetProtectionPoliciesFilterArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectionPoliciesFilterArrayOutput)
 }
 
+func (i GetProtectionPoliciesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectionPoliciesFilter] {
+	return pulumix.Output[[]GetProtectionPoliciesFilter]{
+		OutputState: i.ToGetProtectionPoliciesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetProtectionPoliciesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetProtectionPoliciesFilterOutput) ElementType() reflect.Type {
@@ -1383,6 +1612,12 @@ func (o GetProtectionPoliciesFilterOutput) ToGetProtectionPoliciesFilterOutput()
 
 func (o GetProtectionPoliciesFilterOutput) ToGetProtectionPoliciesFilterOutputWithContext(ctx context.Context) GetProtectionPoliciesFilterOutput {
 	return o
+}
+
+func (o GetProtectionPoliciesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetProtectionPoliciesFilter] {
+	return pulumix.Output[GetProtectionPoliciesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetProtectionPoliciesFilterOutput) Name() pulumi.StringOutput {
@@ -1409,6 +1644,12 @@ func (o GetProtectionPoliciesFilterArrayOutput) ToGetProtectionPoliciesFilterArr
 
 func (o GetProtectionPoliciesFilterArrayOutput) ToGetProtectionPoliciesFilterArrayOutputWithContext(ctx context.Context) GetProtectionPoliciesFilterArrayOutput {
 	return o
+}
+
+func (o GetProtectionPoliciesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectionPoliciesFilter] {
+	return pulumix.Output[[]GetProtectionPoliciesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetProtectionPoliciesFilterArrayOutput) Index(i pulumi.IntInput) GetProtectionPoliciesFilterOutput {
@@ -1448,6 +1689,12 @@ func (i GetProtectionPoliciesProtectionPolicyCollectionArgs) ToGetProtectionPoli
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectionPoliciesProtectionPolicyCollectionOutput)
 }
 
+func (i GetProtectionPoliciesProtectionPolicyCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetProtectionPoliciesProtectionPolicyCollection] {
+	return pulumix.Output[GetProtectionPoliciesProtectionPolicyCollection]{
+		OutputState: i.ToGetProtectionPoliciesProtectionPolicyCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetProtectionPoliciesProtectionPolicyCollectionArrayInput is an input type that accepts GetProtectionPoliciesProtectionPolicyCollectionArray and GetProtectionPoliciesProtectionPolicyCollectionArrayOutput values.
 // You can construct a concrete instance of `GetProtectionPoliciesProtectionPolicyCollectionArrayInput` via:
 //
@@ -1473,6 +1720,12 @@ func (i GetProtectionPoliciesProtectionPolicyCollectionArray) ToGetProtectionPol
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectionPoliciesProtectionPolicyCollectionArrayOutput)
 }
 
+func (i GetProtectionPoliciesProtectionPolicyCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectionPoliciesProtectionPolicyCollection] {
+	return pulumix.Output[[]GetProtectionPoliciesProtectionPolicyCollection]{
+		OutputState: i.ToGetProtectionPoliciesProtectionPolicyCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetProtectionPoliciesProtectionPolicyCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetProtectionPoliciesProtectionPolicyCollectionOutput) ElementType() reflect.Type {
@@ -1485,6 +1738,12 @@ func (o GetProtectionPoliciesProtectionPolicyCollectionOutput) ToGetProtectionPo
 
 func (o GetProtectionPoliciesProtectionPolicyCollectionOutput) ToGetProtectionPoliciesProtectionPolicyCollectionOutputWithContext(ctx context.Context) GetProtectionPoliciesProtectionPolicyCollectionOutput {
 	return o
+}
+
+func (o GetProtectionPoliciesProtectionPolicyCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetProtectionPoliciesProtectionPolicyCollection] {
+	return pulumix.Output[GetProtectionPoliciesProtectionPolicyCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetProtectionPoliciesProtectionPolicyCollectionOutput) Items() GetProtectionPoliciesProtectionPolicyCollectionItemArrayOutput {
@@ -1505,6 +1764,12 @@ func (o GetProtectionPoliciesProtectionPolicyCollectionArrayOutput) ToGetProtect
 
 func (o GetProtectionPoliciesProtectionPolicyCollectionArrayOutput) ToGetProtectionPoliciesProtectionPolicyCollectionArrayOutputWithContext(ctx context.Context) GetProtectionPoliciesProtectionPolicyCollectionArrayOutput {
 	return o
+}
+
+func (o GetProtectionPoliciesProtectionPolicyCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectionPoliciesProtectionPolicyCollection] {
+	return pulumix.Output[[]GetProtectionPoliciesProtectionPolicyCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetProtectionPoliciesProtectionPolicyCollectionArrayOutput) Index(i pulumi.IntInput) GetProtectionPoliciesProtectionPolicyCollectionOutput {
@@ -1590,6 +1855,12 @@ func (i GetProtectionPoliciesProtectionPolicyCollectionItemArgs) ToGetProtection
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectionPoliciesProtectionPolicyCollectionItemOutput)
 }
 
+func (i GetProtectionPoliciesProtectionPolicyCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetProtectionPoliciesProtectionPolicyCollectionItem] {
+	return pulumix.Output[GetProtectionPoliciesProtectionPolicyCollectionItem]{
+		OutputState: i.ToGetProtectionPoliciesProtectionPolicyCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetProtectionPoliciesProtectionPolicyCollectionItemArrayInput is an input type that accepts GetProtectionPoliciesProtectionPolicyCollectionItemArray and GetProtectionPoliciesProtectionPolicyCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetProtectionPoliciesProtectionPolicyCollectionItemArrayInput` via:
 //
@@ -1615,6 +1886,12 @@ func (i GetProtectionPoliciesProtectionPolicyCollectionItemArray) ToGetProtectio
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectionPoliciesProtectionPolicyCollectionItemArrayOutput)
 }
 
+func (i GetProtectionPoliciesProtectionPolicyCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectionPoliciesProtectionPolicyCollectionItem] {
+	return pulumix.Output[[]GetProtectionPoliciesProtectionPolicyCollectionItem]{
+		OutputState: i.ToGetProtectionPoliciesProtectionPolicyCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetProtectionPoliciesProtectionPolicyCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetProtectionPoliciesProtectionPolicyCollectionItemOutput) ElementType() reflect.Type {
@@ -1627,6 +1904,12 @@ func (o GetProtectionPoliciesProtectionPolicyCollectionItemOutput) ToGetProtecti
 
 func (o GetProtectionPoliciesProtectionPolicyCollectionItemOutput) ToGetProtectionPoliciesProtectionPolicyCollectionItemOutputWithContext(ctx context.Context) GetProtectionPoliciesProtectionPolicyCollectionItemOutput {
 	return o
+}
+
+func (o GetProtectionPoliciesProtectionPolicyCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetProtectionPoliciesProtectionPolicyCollectionItem] {
+	return pulumix.Output[GetProtectionPoliciesProtectionPolicyCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The maximum number of days to retain backups for a protected database. Specify a period ranging from a minimum 14 days to a maximum 95 days. For example, specify the value 55 if you want to retain backups for 55 days.
@@ -1709,6 +1992,12 @@ func (o GetProtectionPoliciesProtectionPolicyCollectionItemArrayOutput) ToGetPro
 	return o
 }
 
+func (o GetProtectionPoliciesProtectionPolicyCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectionPoliciesProtectionPolicyCollectionItem] {
+	return pulumix.Output[[]GetProtectionPoliciesProtectionPolicyCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetProtectionPoliciesProtectionPolicyCollectionItemArrayOutput) Index(i pulumi.IntInput) GetProtectionPoliciesProtectionPolicyCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProtectionPoliciesProtectionPolicyCollectionItem {
 		return vs[0].([]GetProtectionPoliciesProtectionPolicyCollectionItem)[vs[1].(int)]
@@ -1750,6 +2039,12 @@ func (i GetRecoveryServiceSubnetsFilterArgs) ToGetRecoveryServiceSubnetsFilterOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecoveryServiceSubnetsFilterOutput)
 }
 
+func (i GetRecoveryServiceSubnetsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetRecoveryServiceSubnetsFilter] {
+	return pulumix.Output[GetRecoveryServiceSubnetsFilter]{
+		OutputState: i.ToGetRecoveryServiceSubnetsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetRecoveryServiceSubnetsFilterArrayInput is an input type that accepts GetRecoveryServiceSubnetsFilterArray and GetRecoveryServiceSubnetsFilterArrayOutput values.
 // You can construct a concrete instance of `GetRecoveryServiceSubnetsFilterArrayInput` via:
 //
@@ -1775,6 +2070,12 @@ func (i GetRecoveryServiceSubnetsFilterArray) ToGetRecoveryServiceSubnetsFilterA
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecoveryServiceSubnetsFilterArrayOutput)
 }
 
+func (i GetRecoveryServiceSubnetsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRecoveryServiceSubnetsFilter] {
+	return pulumix.Output[[]GetRecoveryServiceSubnetsFilter]{
+		OutputState: i.ToGetRecoveryServiceSubnetsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetRecoveryServiceSubnetsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetRecoveryServiceSubnetsFilterOutput) ElementType() reflect.Type {
@@ -1787,6 +2088,12 @@ func (o GetRecoveryServiceSubnetsFilterOutput) ToGetRecoveryServiceSubnetsFilter
 
 func (o GetRecoveryServiceSubnetsFilterOutput) ToGetRecoveryServiceSubnetsFilterOutputWithContext(ctx context.Context) GetRecoveryServiceSubnetsFilterOutput {
 	return o
+}
+
+func (o GetRecoveryServiceSubnetsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetRecoveryServiceSubnetsFilter] {
+	return pulumix.Output[GetRecoveryServiceSubnetsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetRecoveryServiceSubnetsFilterOutput) Name() pulumi.StringOutput {
@@ -1813,6 +2120,12 @@ func (o GetRecoveryServiceSubnetsFilterArrayOutput) ToGetRecoveryServiceSubnetsF
 
 func (o GetRecoveryServiceSubnetsFilterArrayOutput) ToGetRecoveryServiceSubnetsFilterArrayOutputWithContext(ctx context.Context) GetRecoveryServiceSubnetsFilterArrayOutput {
 	return o
+}
+
+func (o GetRecoveryServiceSubnetsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRecoveryServiceSubnetsFilter] {
+	return pulumix.Output[[]GetRecoveryServiceSubnetsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetRecoveryServiceSubnetsFilterArrayOutput) Index(i pulumi.IntInput) GetRecoveryServiceSubnetsFilterOutput {
@@ -1852,6 +2165,12 @@ func (i GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionArgs) ToGetRecov
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionOutput)
 }
 
+func (i GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetRecoveryServiceSubnetsRecoveryServiceSubnetCollection] {
+	return pulumix.Output[GetRecoveryServiceSubnetsRecoveryServiceSubnetCollection]{
+		OutputState: i.ToGetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionArrayInput is an input type that accepts GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionArray and GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionArrayOutput values.
 // You can construct a concrete instance of `GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionArrayInput` via:
 //
@@ -1877,6 +2196,12 @@ func (i GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionArray) ToGetReco
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionArrayOutput)
 }
 
+func (i GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRecoveryServiceSubnetsRecoveryServiceSubnetCollection] {
+	return pulumix.Output[[]GetRecoveryServiceSubnetsRecoveryServiceSubnetCollection]{
+		OutputState: i.ToGetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionOutput) ElementType() reflect.Type {
@@ -1889,6 +2214,12 @@ func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionOutput) ToGetRec
 
 func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionOutput) ToGetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionOutputWithContext(ctx context.Context) GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionOutput {
 	return o
+}
+
+func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetRecoveryServiceSubnetsRecoveryServiceSubnetCollection] {
+	return pulumix.Output[GetRecoveryServiceSubnetsRecoveryServiceSubnetCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionOutput) Items() GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemArrayOutput {
@@ -1909,6 +2240,12 @@ func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionArrayOutput) ToG
 
 func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionArrayOutput) ToGetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionArrayOutputWithContext(ctx context.Context) GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionArrayOutput {
 	return o
+}
+
+func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRecoveryServiceSubnetsRecoveryServiceSubnetCollection] {
+	return pulumix.Output[[]GetRecoveryServiceSubnetsRecoveryServiceSubnetCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionArrayOutput) Index(i pulumi.IntInput) GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionOutput {
@@ -2006,6 +2343,12 @@ func (i GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemArgs) ToGetR
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput)
 }
 
+func (i GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem] {
+	return pulumix.Output[GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem]{
+		OutputState: i.ToGetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemArrayInput is an input type that accepts GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemArray and GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemArrayInput` via:
 //
@@ -2031,6 +2374,12 @@ func (i GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemArrayOutput)
 }
 
+func (i GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem] {
+	return pulumix.Output[[]GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem]{
+		OutputState: i.ToGetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput) ElementType() reflect.Type {
@@ -2043,6 +2392,12 @@ func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput) ToGe
 
 func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput) ToGetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutputWithContext(ctx context.Context) GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput {
 	return o
+}
+
+func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem] {
+	return pulumix.Output[GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The compartment OCID.
@@ -2129,6 +2484,12 @@ func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemArrayOutput)
 
 func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemArrayOutput) ToGetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemArrayOutputWithContext(ctx context.Context) GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemArrayOutput {
 	return o
+}
+
+func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem] {
+	return pulumix.Output[[]GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemArrayOutput) Index(i pulumi.IntInput) GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput {

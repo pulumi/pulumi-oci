@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Sensitive Data Model resource in Oracle Cloud Infrastructure Data Safe service.
@@ -318,6 +319,12 @@ func (i *SensitiveDataModel) ToSensitiveDataModelOutputWithContext(ctx context.C
 	return pulumi.ToOutputWithContext(ctx, i).(SensitiveDataModelOutput)
 }
 
+func (i *SensitiveDataModel) ToOutput(ctx context.Context) pulumix.Output[*SensitiveDataModel] {
+	return pulumix.Output[*SensitiveDataModel]{
+		OutputState: i.ToSensitiveDataModelOutputWithContext(ctx).OutputState,
+	}
+}
+
 // SensitiveDataModelArrayInput is an input type that accepts SensitiveDataModelArray and SensitiveDataModelArrayOutput values.
 // You can construct a concrete instance of `SensitiveDataModelArrayInput` via:
 //
@@ -341,6 +348,12 @@ func (i SensitiveDataModelArray) ToSensitiveDataModelArrayOutput() SensitiveData
 
 func (i SensitiveDataModelArray) ToSensitiveDataModelArrayOutputWithContext(ctx context.Context) SensitiveDataModelArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SensitiveDataModelArrayOutput)
+}
+
+func (i SensitiveDataModelArray) ToOutput(ctx context.Context) pulumix.Output[[]*SensitiveDataModel] {
+	return pulumix.Output[[]*SensitiveDataModel]{
+		OutputState: i.ToSensitiveDataModelArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // SensitiveDataModelMapInput is an input type that accepts SensitiveDataModelMap and SensitiveDataModelMapOutput values.
@@ -368,6 +381,12 @@ func (i SensitiveDataModelMap) ToSensitiveDataModelMapOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(SensitiveDataModelMapOutput)
 }
 
+func (i SensitiveDataModelMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*SensitiveDataModel] {
+	return pulumix.Output[map[string]*SensitiveDataModel]{
+		OutputState: i.ToSensitiveDataModelMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type SensitiveDataModelOutput struct{ *pulumi.OutputState }
 
 func (SensitiveDataModelOutput) ElementType() reflect.Type {
@@ -380,6 +399,12 @@ func (o SensitiveDataModelOutput) ToSensitiveDataModelOutput() SensitiveDataMode
 
 func (o SensitiveDataModelOutput) ToSensitiveDataModelOutputWithContext(ctx context.Context) SensitiveDataModelOutput {
 	return o
+}
+
+func (o SensitiveDataModelOutput) ToOutput(ctx context.Context) pulumix.Output[*SensitiveDataModel] {
+	return pulumix.Output[*SensitiveDataModel]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The application suite name identifying a collection of applications. It's useful only if maintaining a sensitive data model for a suite of applications.
@@ -484,6 +509,12 @@ func (o SensitiveDataModelArrayOutput) ToSensitiveDataModelArrayOutputWithContex
 	return o
 }
 
+func (o SensitiveDataModelArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*SensitiveDataModel] {
+	return pulumix.Output[[]*SensitiveDataModel]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o SensitiveDataModelArrayOutput) Index(i pulumi.IntInput) SensitiveDataModelOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *SensitiveDataModel {
 		return vs[0].([]*SensitiveDataModel)[vs[1].(int)]
@@ -502,6 +533,12 @@ func (o SensitiveDataModelMapOutput) ToSensitiveDataModelMapOutput() SensitiveDa
 
 func (o SensitiveDataModelMapOutput) ToSensitiveDataModelMapOutputWithContext(ctx context.Context) SensitiveDataModelMapOutput {
 	return o
+}
+
+func (o SensitiveDataModelMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*SensitiveDataModel] {
+	return pulumix.Output[map[string]*SensitiveDataModel]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o SensitiveDataModelMapOutput) MapIndex(k pulumi.StringInput) SensitiveDataModelOutput {

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Job Run resource in Oracle Cloud Infrastructure Data Science service.
@@ -132,6 +133,12 @@ func (o LookupJobRunResultOutput) ToLookupJobRunResultOutput() LookupJobRunResul
 
 func (o LookupJobRunResultOutput) ToLookupJobRunResultOutputWithContext(ctx context.Context) LookupJobRunResultOutput {
 	return o
+}
+
+func (o LookupJobRunResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupJobRunResult] {
+	return pulumix.Output[LookupJobRunResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o LookupJobRunResultOutput) Asynchronous() pulumi.BoolOutput {

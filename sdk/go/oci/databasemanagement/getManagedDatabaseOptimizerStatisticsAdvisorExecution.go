@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Managed Database Optimizer Statistics Advisor Execution resource in Oracle Cloud Infrastructure Database Management service.
@@ -130,6 +131,12 @@ func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResultOutput) ToGet
 
 func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResultOutput) ToGetManagedDatabaseOptimizerStatisticsAdvisorExecutionResultOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResultOutput {
 	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult] {
+	return pulumix.Output[GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The summary of the Managed Database resource.

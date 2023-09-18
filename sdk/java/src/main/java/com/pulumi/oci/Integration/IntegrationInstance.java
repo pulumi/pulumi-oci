@@ -106,7 +106,7 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) A list of alternate custom endpoints to be used for the integration instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
      * 
      */
-    @Export(name="alternateCustomEndpoints", type=List.class, parameters={IntegrationInstanceAlternateCustomEndpoint.class})
+    @Export(name="alternateCustomEndpoints", refs={List.class,IntegrationInstanceAlternateCustomEndpoint.class}, tree="[0,1]")
     private Output<List<IntegrationInstanceAlternateCustomEndpoint>> alternateCustomEndpoints;
 
     /**
@@ -120,7 +120,7 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
      * A list of associated attachments to other services
      * 
      */
-    @Export(name="attachments", type=List.class, parameters={IntegrationInstanceAttachment.class})
+    @Export(name="attachments", refs={List.class,IntegrationInstanceAttachment.class}, tree="[0,1]")
     private Output<List<IntegrationInstanceAttachment>> attachments;
 
     /**
@@ -134,7 +134,7 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) Compartment Identifier.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -148,7 +148,7 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
      * Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
      * 
      */
-    @Export(name="consumptionModel", type=String.class, parameters={})
+    @Export(name="consumptionModel", refs={String.class}, tree="[0]")
     private Output<String> consumptionModel;
 
     /**
@@ -162,7 +162,7 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) Details for a custom endpoint for the integration instance (update).
      * 
      */
-    @Export(name="customEndpoint", type=IntegrationInstanceCustomEndpoint.class, parameters={})
+    @Export(name="customEndpoint", refs={IntegrationInstanceCustomEndpoint.class}, tree="[0]")
     private Output<IntegrationInstanceCustomEndpoint> customEndpoint;
 
     /**
@@ -176,7 +176,7 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -190,7 +190,7 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) Integration Instance Identifier.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -204,7 +204,7 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
      * 
      */
-    @Export(name="enableProcessAutomationTrigger", type=Integer.class, parameters={})
+    @Export(name="enableProcessAutomationTrigger", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> enableProcessAutomationTrigger;
 
     /**
@@ -218,7 +218,7 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -232,7 +232,7 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
      * 
      */
-    @Export(name="idcsAt", type=String.class, parameters={})
+    @Export(name="idcsAt", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> idcsAt;
 
     /**
@@ -246,7 +246,7 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
      * Information for IDCS access
      * 
      */
-    @Export(name="idcsInfos", type=List.class, parameters={IntegrationInstanceIdcsInfo.class})
+    @Export(name="idcsInfos", refs={List.class,IntegrationInstanceIdcsInfo.class}, tree="[0,1]")
     private Output<List<IntegrationInstanceIdcsInfo>> idcsInfos;
 
     /**
@@ -260,7 +260,7 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
      * The Integration Instance URL.
      * 
      */
-    @Export(name="instanceUrl", type=String.class, parameters={})
+    @Export(name="instanceUrl", refs={String.class}, tree="[0]")
     private Output<String> instanceUrl;
 
     /**
@@ -274,7 +274,7 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
      * 
      */
-    @Export(name="integrationInstanceType", type=String.class, parameters={})
+    @Export(name="integrationInstanceType", refs={String.class}, tree="[0]")
     private Output<String> integrationInstanceType;
 
     /**
@@ -288,7 +288,7 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) Bring your own license.
      * 
      */
-    @Export(name="isByol", type=Boolean.class, parameters={})
+    @Export(name="isByol", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isByol;
 
     /**
@@ -302,7 +302,7 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) The file server is enabled or not.
      * 
      */
-    @Export(name="isFileServerEnabled", type=Boolean.class, parameters={})
+    @Export(name="isFileServerEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isFileServerEnabled;
 
     /**
@@ -316,7 +316,7 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) Visual Builder is enabled or not.
      * 
      */
-    @Export(name="isVisualBuilderEnabled", type=Boolean.class, parameters={})
+    @Export(name="isVisualBuilderEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isVisualBuilderEnabled;
 
     /**
@@ -330,7 +330,7 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) The number of configured message packs
      * 
      */
-    @Export(name="messagePacks", type=Integer.class, parameters={})
+    @Export(name="messagePacks", refs={Integer.class}, tree="[0]")
     private Output<Integer> messagePacks;
 
     /**
@@ -344,7 +344,7 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
      * Base representation of a network endpoint.
      * 
      */
-    @Export(name="networkEndpointDetails", type=IntegrationInstanceNetworkEndpointDetails.class, parameters={})
+    @Export(name="networkEndpointDetails", refs={IntegrationInstanceNetworkEndpointDetails.class}, tree="[0]")
     private Output<IntegrationInstanceNetworkEndpointDetails> networkEndpointDetails;
 
     /**
@@ -358,7 +358,7 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
      * Shape
      * 
      */
-    @Export(name="shape", type=String.class, parameters={})
+    @Export(name="shape", refs={String.class}, tree="[0]")
     private Output<String> shape;
 
     /**
@@ -375,7 +375,7 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -392,7 +392,7 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
      * An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    @Export(name="stateMessage", type=String.class, parameters={})
+    @Export(name="stateMessage", refs={String.class}, tree="[0]")
     private Output<String> stateMessage;
 
     /**
@@ -406,7 +406,7 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
      * The time the the Integration Instance was created. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -420,7 +420,7 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
      * The time the IntegrationInstance was updated. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

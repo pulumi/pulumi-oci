@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Database Software Images in Oracle Cloud Infrastructure Database service.
@@ -140,6 +141,12 @@ func (o GetDatabaseSoftwareImagesResultOutput) ToGetDatabaseSoftwareImagesResult
 
 func (o GetDatabaseSoftwareImagesResultOutput) ToGetDatabaseSoftwareImagesResultOutputWithContext(ctx context.Context) GetDatabaseSoftwareImagesResultOutput {
 	return o
+}
+
+func (o GetDatabaseSoftwareImagesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseSoftwareImagesResult] {
+	return pulumix.Output[GetDatabaseSoftwareImagesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

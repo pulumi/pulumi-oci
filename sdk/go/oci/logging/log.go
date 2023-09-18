@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Log resource in Oracle Cloud Infrastructure Logging service.
@@ -279,6 +280,12 @@ func (i *Log) ToLogOutputWithContext(ctx context.Context) LogOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(LogOutput)
 }
 
+func (i *Log) ToOutput(ctx context.Context) pulumix.Output[*Log] {
+	return pulumix.Output[*Log]{
+		OutputState: i.ToLogOutputWithContext(ctx).OutputState,
+	}
+}
+
 // LogArrayInput is an input type that accepts LogArray and LogArrayOutput values.
 // You can construct a concrete instance of `LogArrayInput` via:
 //
@@ -302,6 +309,12 @@ func (i LogArray) ToLogArrayOutput() LogArrayOutput {
 
 func (i LogArray) ToLogArrayOutputWithContext(ctx context.Context) LogArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(LogArrayOutput)
+}
+
+func (i LogArray) ToOutput(ctx context.Context) pulumix.Output[[]*Log] {
+	return pulumix.Output[[]*Log]{
+		OutputState: i.ToLogArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // LogMapInput is an input type that accepts LogMap and LogMapOutput values.
@@ -329,6 +342,12 @@ func (i LogMap) ToLogMapOutputWithContext(ctx context.Context) LogMapOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(LogMapOutput)
 }
 
+func (i LogMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Log] {
+	return pulumix.Output[map[string]*Log]{
+		OutputState: i.ToLogMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type LogOutput struct{ *pulumi.OutputState }
 
 func (LogOutput) ElementType() reflect.Type {
@@ -341,6 +360,12 @@ func (o LogOutput) ToLogOutput() LogOutput {
 
 func (o LogOutput) ToLogOutputWithContext(ctx context.Context) LogOutput {
 	return o
+}
+
+func (o LogOutput) ToOutput(ctx context.Context) pulumix.Output[*Log] {
+	return pulumix.Output[*Log]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the compartment that the resource belongs to.
@@ -425,6 +450,12 @@ func (o LogArrayOutput) ToLogArrayOutputWithContext(ctx context.Context) LogArra
 	return o
 }
 
+func (o LogArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Log] {
+	return pulumix.Output[[]*Log]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o LogArrayOutput) Index(i pulumi.IntInput) LogOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Log {
 		return vs[0].([]*Log)[vs[1].(int)]
@@ -443,6 +474,12 @@ func (o LogMapOutput) ToLogMapOutput() LogMapOutput {
 
 func (o LogMapOutput) ToLogMapOutputWithContext(ctx context.Context) LogMapOutput {
 	return o
+}
+
+func (o LogMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Log] {
+	return pulumix.Output[map[string]*Log]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o LogMapOutput) MapIndex(k pulumi.StringInput) LogOutput {

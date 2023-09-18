@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -50,6 +51,12 @@ func (i NetworkFirewallPolicyApplicationListArgs) ToNetworkFirewallPolicyApplica
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyApplicationListOutput)
 }
 
+func (i NetworkFirewallPolicyApplicationListArgs) ToOutput(ctx context.Context) pulumix.Output[NetworkFirewallPolicyApplicationList] {
+	return pulumix.Output[NetworkFirewallPolicyApplicationList]{
+		OutputState: i.ToNetworkFirewallPolicyApplicationListOutputWithContext(ctx).OutputState,
+	}
+}
+
 // NetworkFirewallPolicyApplicationListArrayInput is an input type that accepts NetworkFirewallPolicyApplicationListArray and NetworkFirewallPolicyApplicationListArrayOutput values.
 // You can construct a concrete instance of `NetworkFirewallPolicyApplicationListArrayInput` via:
 //
@@ -75,6 +82,12 @@ func (i NetworkFirewallPolicyApplicationListArray) ToNetworkFirewallPolicyApplic
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyApplicationListArrayOutput)
 }
 
+func (i NetworkFirewallPolicyApplicationListArray) ToOutput(ctx context.Context) pulumix.Output[[]NetworkFirewallPolicyApplicationList] {
+	return pulumix.Output[[]NetworkFirewallPolicyApplicationList]{
+		OutputState: i.ToNetworkFirewallPolicyApplicationListArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type NetworkFirewallPolicyApplicationListOutput struct{ *pulumi.OutputState }
 
 func (NetworkFirewallPolicyApplicationListOutput) ElementType() reflect.Type {
@@ -87,6 +100,12 @@ func (o NetworkFirewallPolicyApplicationListOutput) ToNetworkFirewallPolicyAppli
 
 func (o NetworkFirewallPolicyApplicationListOutput) ToNetworkFirewallPolicyApplicationListOutputWithContext(ctx context.Context) NetworkFirewallPolicyApplicationListOutput {
 	return o
+}
+
+func (o NetworkFirewallPolicyApplicationListOutput) ToOutput(ctx context.Context) pulumix.Output[NetworkFirewallPolicyApplicationList] {
+	return pulumix.Output[NetworkFirewallPolicyApplicationList]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The key is the identifier by which the application list is referenced.
@@ -113,6 +132,12 @@ func (o NetworkFirewallPolicyApplicationListArrayOutput) ToNetworkFirewallPolicy
 
 func (o NetworkFirewallPolicyApplicationListArrayOutput) ToNetworkFirewallPolicyApplicationListArrayOutputWithContext(ctx context.Context) NetworkFirewallPolicyApplicationListArrayOutput {
 	return o
+}
+
+func (o NetworkFirewallPolicyApplicationListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]NetworkFirewallPolicyApplicationList] {
+	return pulumix.Output[[]NetworkFirewallPolicyApplicationList]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o NetworkFirewallPolicyApplicationListArrayOutput) Index(i pulumi.IntInput) NetworkFirewallPolicyApplicationListOutput {
@@ -170,6 +195,12 @@ func (i NetworkFirewallPolicyApplicationListApplicationValueArgs) ToNetworkFirew
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyApplicationListApplicationValueOutput)
 }
 
+func (i NetworkFirewallPolicyApplicationListApplicationValueArgs) ToOutput(ctx context.Context) pulumix.Output[NetworkFirewallPolicyApplicationListApplicationValue] {
+	return pulumix.Output[NetworkFirewallPolicyApplicationListApplicationValue]{
+		OutputState: i.ToNetworkFirewallPolicyApplicationListApplicationValueOutputWithContext(ctx).OutputState,
+	}
+}
+
 // NetworkFirewallPolicyApplicationListApplicationValueArrayInput is an input type that accepts NetworkFirewallPolicyApplicationListApplicationValueArray and NetworkFirewallPolicyApplicationListApplicationValueArrayOutput values.
 // You can construct a concrete instance of `NetworkFirewallPolicyApplicationListApplicationValueArrayInput` via:
 //
@@ -195,6 +226,12 @@ func (i NetworkFirewallPolicyApplicationListApplicationValueArray) ToNetworkFire
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyApplicationListApplicationValueArrayOutput)
 }
 
+func (i NetworkFirewallPolicyApplicationListApplicationValueArray) ToOutput(ctx context.Context) pulumix.Output[[]NetworkFirewallPolicyApplicationListApplicationValue] {
+	return pulumix.Output[[]NetworkFirewallPolicyApplicationListApplicationValue]{
+		OutputState: i.ToNetworkFirewallPolicyApplicationListApplicationValueArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type NetworkFirewallPolicyApplicationListApplicationValueOutput struct{ *pulumi.OutputState }
 
 func (NetworkFirewallPolicyApplicationListApplicationValueOutput) ElementType() reflect.Type {
@@ -207,6 +244,12 @@ func (o NetworkFirewallPolicyApplicationListApplicationValueOutput) ToNetworkFir
 
 func (o NetworkFirewallPolicyApplicationListApplicationValueOutput) ToNetworkFirewallPolicyApplicationListApplicationValueOutputWithContext(ctx context.Context) NetworkFirewallPolicyApplicationListApplicationValueOutput {
 	return o
+}
+
+func (o NetworkFirewallPolicyApplicationListApplicationValueOutput) ToOutput(ctx context.Context) pulumix.Output[NetworkFirewallPolicyApplicationListApplicationValue] {
+	return pulumix.Output[NetworkFirewallPolicyApplicationListApplicationValue]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Used when you select ICMP. 0-Net unreachable, 1-Host unreachable, 2-Protocol unreachable, 3-Port unreachable
@@ -246,6 +289,12 @@ func (o NetworkFirewallPolicyApplicationListApplicationValueArrayOutput) ToNetwo
 
 func (o NetworkFirewallPolicyApplicationListApplicationValueArrayOutput) ToNetworkFirewallPolicyApplicationListApplicationValueArrayOutputWithContext(ctx context.Context) NetworkFirewallPolicyApplicationListApplicationValueArrayOutput {
 	return o
+}
+
+func (o NetworkFirewallPolicyApplicationListApplicationValueArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]NetworkFirewallPolicyApplicationListApplicationValue] {
+	return pulumix.Output[[]NetworkFirewallPolicyApplicationListApplicationValue]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o NetworkFirewallPolicyApplicationListApplicationValueArrayOutput) Index(i pulumi.IntInput) NetworkFirewallPolicyApplicationListApplicationValueOutput {
@@ -327,6 +376,12 @@ func (i NetworkFirewallPolicyDecryptionProfileArgs) ToNetworkFirewallPolicyDecry
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyDecryptionProfileOutput)
 }
 
+func (i NetworkFirewallPolicyDecryptionProfileArgs) ToOutput(ctx context.Context) pulumix.Output[NetworkFirewallPolicyDecryptionProfile] {
+	return pulumix.Output[NetworkFirewallPolicyDecryptionProfile]{
+		OutputState: i.ToNetworkFirewallPolicyDecryptionProfileOutputWithContext(ctx).OutputState,
+	}
+}
+
 // NetworkFirewallPolicyDecryptionProfileArrayInput is an input type that accepts NetworkFirewallPolicyDecryptionProfileArray and NetworkFirewallPolicyDecryptionProfileArrayOutput values.
 // You can construct a concrete instance of `NetworkFirewallPolicyDecryptionProfileArrayInput` via:
 //
@@ -352,6 +407,12 @@ func (i NetworkFirewallPolicyDecryptionProfileArray) ToNetworkFirewallPolicyDecr
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyDecryptionProfileArrayOutput)
 }
 
+func (i NetworkFirewallPolicyDecryptionProfileArray) ToOutput(ctx context.Context) pulumix.Output[[]NetworkFirewallPolicyDecryptionProfile] {
+	return pulumix.Output[[]NetworkFirewallPolicyDecryptionProfile]{
+		OutputState: i.ToNetworkFirewallPolicyDecryptionProfileArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type NetworkFirewallPolicyDecryptionProfileOutput struct{ *pulumi.OutputState }
 
 func (NetworkFirewallPolicyDecryptionProfileOutput) ElementType() reflect.Type {
@@ -364,6 +425,12 @@ func (o NetworkFirewallPolicyDecryptionProfileOutput) ToNetworkFirewallPolicyDec
 
 func (o NetworkFirewallPolicyDecryptionProfileOutput) ToNetworkFirewallPolicyDecryptionProfileOutputWithContext(ctx context.Context) NetworkFirewallPolicyDecryptionProfileOutput {
 	return o
+}
+
+func (o NetworkFirewallPolicyDecryptionProfileOutput) ToOutput(ctx context.Context) pulumix.Output[NetworkFirewallPolicyDecryptionProfile] {
+	return pulumix.Output[NetworkFirewallPolicyDecryptionProfile]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
@@ -435,6 +502,12 @@ func (o NetworkFirewallPolicyDecryptionProfileArrayOutput) ToNetworkFirewallPoli
 	return o
 }
 
+func (o NetworkFirewallPolicyDecryptionProfileArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]NetworkFirewallPolicyDecryptionProfile] {
+	return pulumix.Output[[]NetworkFirewallPolicyDecryptionProfile]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o NetworkFirewallPolicyDecryptionProfileArrayOutput) Index(i pulumi.IntInput) NetworkFirewallPolicyDecryptionProfileOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NetworkFirewallPolicyDecryptionProfile {
 		return vs[0].([]NetworkFirewallPolicyDecryptionProfile)[vs[1].(int)]
@@ -498,6 +571,12 @@ func (i NetworkFirewallPolicyDecryptionRuleArgs) ToNetworkFirewallPolicyDecrypti
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyDecryptionRuleOutput)
 }
 
+func (i NetworkFirewallPolicyDecryptionRuleArgs) ToOutput(ctx context.Context) pulumix.Output[NetworkFirewallPolicyDecryptionRule] {
+	return pulumix.Output[NetworkFirewallPolicyDecryptionRule]{
+		OutputState: i.ToNetworkFirewallPolicyDecryptionRuleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // NetworkFirewallPolicyDecryptionRuleArrayInput is an input type that accepts NetworkFirewallPolicyDecryptionRuleArray and NetworkFirewallPolicyDecryptionRuleArrayOutput values.
 // You can construct a concrete instance of `NetworkFirewallPolicyDecryptionRuleArrayInput` via:
 //
@@ -523,6 +602,12 @@ func (i NetworkFirewallPolicyDecryptionRuleArray) ToNetworkFirewallPolicyDecrypt
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyDecryptionRuleArrayOutput)
 }
 
+func (i NetworkFirewallPolicyDecryptionRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]NetworkFirewallPolicyDecryptionRule] {
+	return pulumix.Output[[]NetworkFirewallPolicyDecryptionRule]{
+		OutputState: i.ToNetworkFirewallPolicyDecryptionRuleArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type NetworkFirewallPolicyDecryptionRuleOutput struct{ *pulumi.OutputState }
 
 func (NetworkFirewallPolicyDecryptionRuleOutput) ElementType() reflect.Type {
@@ -535,6 +620,12 @@ func (o NetworkFirewallPolicyDecryptionRuleOutput) ToNetworkFirewallPolicyDecryp
 
 func (o NetworkFirewallPolicyDecryptionRuleOutput) ToNetworkFirewallPolicyDecryptionRuleOutputWithContext(ctx context.Context) NetworkFirewallPolicyDecryptionRuleOutput {
 	return o
+}
+
+func (o NetworkFirewallPolicyDecryptionRuleOutput) ToOutput(ctx context.Context) pulumix.Output[NetworkFirewallPolicyDecryptionRule] {
+	return pulumix.Output[NetworkFirewallPolicyDecryptionRule]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Types of Action on the Traffic flow.
@@ -582,6 +673,12 @@ func (o NetworkFirewallPolicyDecryptionRuleArrayOutput) ToNetworkFirewallPolicyD
 	return o
 }
 
+func (o NetworkFirewallPolicyDecryptionRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]NetworkFirewallPolicyDecryptionRule] {
+	return pulumix.Output[[]NetworkFirewallPolicyDecryptionRule]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o NetworkFirewallPolicyDecryptionRuleArrayOutput) Index(i pulumi.IntInput) NetworkFirewallPolicyDecryptionRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NetworkFirewallPolicyDecryptionRule {
 		return vs[0].([]NetworkFirewallPolicyDecryptionRule)[vs[1].(int)]
@@ -625,6 +722,12 @@ func (i NetworkFirewallPolicyDecryptionRuleConditionArgs) ToNetworkFirewallPolic
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyDecryptionRuleConditionOutput)
 }
 
+func (i NetworkFirewallPolicyDecryptionRuleConditionArgs) ToOutput(ctx context.Context) pulumix.Output[NetworkFirewallPolicyDecryptionRuleCondition] {
+	return pulumix.Output[NetworkFirewallPolicyDecryptionRuleCondition]{
+		OutputState: i.ToNetworkFirewallPolicyDecryptionRuleConditionOutputWithContext(ctx).OutputState,
+	}
+}
+
 type NetworkFirewallPolicyDecryptionRuleConditionOutput struct{ *pulumi.OutputState }
 
 func (NetworkFirewallPolicyDecryptionRuleConditionOutput) ElementType() reflect.Type {
@@ -637,6 +740,12 @@ func (o NetworkFirewallPolicyDecryptionRuleConditionOutput) ToNetworkFirewallPol
 
 func (o NetworkFirewallPolicyDecryptionRuleConditionOutput) ToNetworkFirewallPolicyDecryptionRuleConditionOutputWithContext(ctx context.Context) NetworkFirewallPolicyDecryptionRuleConditionOutput {
 	return o
+}
+
+func (o NetworkFirewallPolicyDecryptionRuleConditionOutput) ToOutput(ctx context.Context) pulumix.Output[NetworkFirewallPolicyDecryptionRuleCondition] {
+	return pulumix.Output[NetworkFirewallPolicyDecryptionRuleCondition]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
@@ -686,6 +795,12 @@ func (i NetworkFirewallPolicyIpAddressListArgs) ToNetworkFirewallPolicyIpAddress
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyIpAddressListOutput)
 }
 
+func (i NetworkFirewallPolicyIpAddressListArgs) ToOutput(ctx context.Context) pulumix.Output[NetworkFirewallPolicyIpAddressList] {
+	return pulumix.Output[NetworkFirewallPolicyIpAddressList]{
+		OutputState: i.ToNetworkFirewallPolicyIpAddressListOutputWithContext(ctx).OutputState,
+	}
+}
+
 // NetworkFirewallPolicyIpAddressListArrayInput is an input type that accepts NetworkFirewallPolicyIpAddressListArray and NetworkFirewallPolicyIpAddressListArrayOutput values.
 // You can construct a concrete instance of `NetworkFirewallPolicyIpAddressListArrayInput` via:
 //
@@ -711,6 +826,12 @@ func (i NetworkFirewallPolicyIpAddressListArray) ToNetworkFirewallPolicyIpAddres
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyIpAddressListArrayOutput)
 }
 
+func (i NetworkFirewallPolicyIpAddressListArray) ToOutput(ctx context.Context) pulumix.Output[[]NetworkFirewallPolicyIpAddressList] {
+	return pulumix.Output[[]NetworkFirewallPolicyIpAddressList]{
+		OutputState: i.ToNetworkFirewallPolicyIpAddressListArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type NetworkFirewallPolicyIpAddressListOutput struct{ *pulumi.OutputState }
 
 func (NetworkFirewallPolicyIpAddressListOutput) ElementType() reflect.Type {
@@ -723,6 +844,12 @@ func (o NetworkFirewallPolicyIpAddressListOutput) ToNetworkFirewallPolicyIpAddre
 
 func (o NetworkFirewallPolicyIpAddressListOutput) ToNetworkFirewallPolicyIpAddressListOutputWithContext(ctx context.Context) NetworkFirewallPolicyIpAddressListOutput {
 	return o
+}
+
+func (o NetworkFirewallPolicyIpAddressListOutput) ToOutput(ctx context.Context) pulumix.Output[NetworkFirewallPolicyIpAddressList] {
+	return pulumix.Output[NetworkFirewallPolicyIpAddressList]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The identifier by which the IP address list is referenced.
@@ -747,6 +874,12 @@ func (o NetworkFirewallPolicyIpAddressListArrayOutput) ToNetworkFirewallPolicyIp
 
 func (o NetworkFirewallPolicyIpAddressListArrayOutput) ToNetworkFirewallPolicyIpAddressListArrayOutputWithContext(ctx context.Context) NetworkFirewallPolicyIpAddressListArrayOutput {
 	return o
+}
+
+func (o NetworkFirewallPolicyIpAddressListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]NetworkFirewallPolicyIpAddressList] {
+	return pulumix.Output[[]NetworkFirewallPolicyIpAddressList]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o NetworkFirewallPolicyIpAddressListArrayOutput) Index(i pulumi.IntInput) NetworkFirewallPolicyIpAddressListOutput {
@@ -800,6 +933,12 @@ func (i NetworkFirewallPolicyMappedSecretArgs) ToNetworkFirewallPolicyMappedSecr
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyMappedSecretOutput)
 }
 
+func (i NetworkFirewallPolicyMappedSecretArgs) ToOutput(ctx context.Context) pulumix.Output[NetworkFirewallPolicyMappedSecret] {
+	return pulumix.Output[NetworkFirewallPolicyMappedSecret]{
+		OutputState: i.ToNetworkFirewallPolicyMappedSecretOutputWithContext(ctx).OutputState,
+	}
+}
+
 // NetworkFirewallPolicyMappedSecretArrayInput is an input type that accepts NetworkFirewallPolicyMappedSecretArray and NetworkFirewallPolicyMappedSecretArrayOutput values.
 // You can construct a concrete instance of `NetworkFirewallPolicyMappedSecretArrayInput` via:
 //
@@ -825,6 +964,12 @@ func (i NetworkFirewallPolicyMappedSecretArray) ToNetworkFirewallPolicyMappedSec
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyMappedSecretArrayOutput)
 }
 
+func (i NetworkFirewallPolicyMappedSecretArray) ToOutput(ctx context.Context) pulumix.Output[[]NetworkFirewallPolicyMappedSecret] {
+	return pulumix.Output[[]NetworkFirewallPolicyMappedSecret]{
+		OutputState: i.ToNetworkFirewallPolicyMappedSecretArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type NetworkFirewallPolicyMappedSecretOutput struct{ *pulumi.OutputState }
 
 func (NetworkFirewallPolicyMappedSecretOutput) ElementType() reflect.Type {
@@ -837,6 +982,12 @@ func (o NetworkFirewallPolicyMappedSecretOutput) ToNetworkFirewallPolicyMappedSe
 
 func (o NetworkFirewallPolicyMappedSecretOutput) ToNetworkFirewallPolicyMappedSecretOutputWithContext(ctx context.Context) NetworkFirewallPolicyMappedSecretOutput {
 	return o
+}
+
+func (o NetworkFirewallPolicyMappedSecretOutput) ToOutput(ctx context.Context) pulumix.Output[NetworkFirewallPolicyMappedSecret] {
+	return pulumix.Output[NetworkFirewallPolicyMappedSecret]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Source of the secrets, where the secrets are stored.
@@ -871,6 +1022,12 @@ func (o NetworkFirewallPolicyMappedSecretArrayOutput) ToNetworkFirewallPolicyMap
 
 func (o NetworkFirewallPolicyMappedSecretArrayOutput) ToNetworkFirewallPolicyMappedSecretArrayOutputWithContext(ctx context.Context) NetworkFirewallPolicyMappedSecretArrayOutput {
 	return o
+}
+
+func (o NetworkFirewallPolicyMappedSecretArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]NetworkFirewallPolicyMappedSecret] {
+	return pulumix.Output[[]NetworkFirewallPolicyMappedSecret]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o NetworkFirewallPolicyMappedSecretArrayOutput) Index(i pulumi.IntInput) NetworkFirewallPolicyMappedSecretOutput {
@@ -936,6 +1093,12 @@ func (i NetworkFirewallPolicySecurityRuleArgs) ToNetworkFirewallPolicySecurityRu
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicySecurityRuleOutput)
 }
 
+func (i NetworkFirewallPolicySecurityRuleArgs) ToOutput(ctx context.Context) pulumix.Output[NetworkFirewallPolicySecurityRule] {
+	return pulumix.Output[NetworkFirewallPolicySecurityRule]{
+		OutputState: i.ToNetworkFirewallPolicySecurityRuleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // NetworkFirewallPolicySecurityRuleArrayInput is an input type that accepts NetworkFirewallPolicySecurityRuleArray and NetworkFirewallPolicySecurityRuleArrayOutput values.
 // You can construct a concrete instance of `NetworkFirewallPolicySecurityRuleArrayInput` via:
 //
@@ -961,6 +1124,12 @@ func (i NetworkFirewallPolicySecurityRuleArray) ToNetworkFirewallPolicySecurityR
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicySecurityRuleArrayOutput)
 }
 
+func (i NetworkFirewallPolicySecurityRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]NetworkFirewallPolicySecurityRule] {
+	return pulumix.Output[[]NetworkFirewallPolicySecurityRule]{
+		OutputState: i.ToNetworkFirewallPolicySecurityRuleArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type NetworkFirewallPolicySecurityRuleOutput struct{ *pulumi.OutputState }
 
 func (NetworkFirewallPolicySecurityRuleOutput) ElementType() reflect.Type {
@@ -973,6 +1142,12 @@ func (o NetworkFirewallPolicySecurityRuleOutput) ToNetworkFirewallPolicySecurity
 
 func (o NetworkFirewallPolicySecurityRuleOutput) ToNetworkFirewallPolicySecurityRuleOutputWithContext(ctx context.Context) NetworkFirewallPolicySecurityRuleOutput {
 	return o
+}
+
+func (o NetworkFirewallPolicySecurityRuleOutput) ToOutput(ctx context.Context) pulumix.Output[NetworkFirewallPolicySecurityRule] {
+	return pulumix.Output[NetworkFirewallPolicySecurityRule]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Types of Action on the Traffic flow.
@@ -1015,6 +1190,12 @@ func (o NetworkFirewallPolicySecurityRuleArrayOutput) ToNetworkFirewallPolicySec
 
 func (o NetworkFirewallPolicySecurityRuleArrayOutput) ToNetworkFirewallPolicySecurityRuleArrayOutputWithContext(ctx context.Context) NetworkFirewallPolicySecurityRuleArrayOutput {
 	return o
+}
+
+func (o NetworkFirewallPolicySecurityRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]NetworkFirewallPolicySecurityRule] {
+	return pulumix.Output[[]NetworkFirewallPolicySecurityRule]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o NetworkFirewallPolicySecurityRuleArrayOutput) Index(i pulumi.IntInput) NetworkFirewallPolicySecurityRuleOutput {
@@ -1068,6 +1249,12 @@ func (i NetworkFirewallPolicySecurityRuleConditionArgs) ToNetworkFirewallPolicyS
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicySecurityRuleConditionOutput)
 }
 
+func (i NetworkFirewallPolicySecurityRuleConditionArgs) ToOutput(ctx context.Context) pulumix.Output[NetworkFirewallPolicySecurityRuleCondition] {
+	return pulumix.Output[NetworkFirewallPolicySecurityRuleCondition]{
+		OutputState: i.ToNetworkFirewallPolicySecurityRuleConditionOutputWithContext(ctx).OutputState,
+	}
+}
+
 type NetworkFirewallPolicySecurityRuleConditionOutput struct{ *pulumi.OutputState }
 
 func (NetworkFirewallPolicySecurityRuleConditionOutput) ElementType() reflect.Type {
@@ -1080,6 +1267,12 @@ func (o NetworkFirewallPolicySecurityRuleConditionOutput) ToNetworkFirewallPolic
 
 func (o NetworkFirewallPolicySecurityRuleConditionOutput) ToNetworkFirewallPolicySecurityRuleConditionOutputWithContext(ctx context.Context) NetworkFirewallPolicySecurityRuleConditionOutput {
 	return o
+}
+
+func (o NetworkFirewallPolicySecurityRuleConditionOutput) ToOutput(ctx context.Context) pulumix.Output[NetworkFirewallPolicySecurityRuleCondition] {
+	return pulumix.Output[NetworkFirewallPolicySecurityRuleCondition]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) An array of application list names to be evaluated against the traffic protocol and protocol-specific parameters.
@@ -1139,6 +1332,12 @@ func (i NetworkFirewallPolicyUrlListArgs) ToNetworkFirewallPolicyUrlListOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyUrlListOutput)
 }
 
+func (i NetworkFirewallPolicyUrlListArgs) ToOutput(ctx context.Context) pulumix.Output[NetworkFirewallPolicyUrlList] {
+	return pulumix.Output[NetworkFirewallPolicyUrlList]{
+		OutputState: i.ToNetworkFirewallPolicyUrlListOutputWithContext(ctx).OutputState,
+	}
+}
+
 // NetworkFirewallPolicyUrlListArrayInput is an input type that accepts NetworkFirewallPolicyUrlListArray and NetworkFirewallPolicyUrlListArrayOutput values.
 // You can construct a concrete instance of `NetworkFirewallPolicyUrlListArrayInput` via:
 //
@@ -1164,6 +1363,12 @@ func (i NetworkFirewallPolicyUrlListArray) ToNetworkFirewallPolicyUrlListArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyUrlListArrayOutput)
 }
 
+func (i NetworkFirewallPolicyUrlListArray) ToOutput(ctx context.Context) pulumix.Output[[]NetworkFirewallPolicyUrlList] {
+	return pulumix.Output[[]NetworkFirewallPolicyUrlList]{
+		OutputState: i.ToNetworkFirewallPolicyUrlListArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type NetworkFirewallPolicyUrlListOutput struct{ *pulumi.OutputState }
 
 func (NetworkFirewallPolicyUrlListOutput) ElementType() reflect.Type {
@@ -1176,6 +1381,12 @@ func (o NetworkFirewallPolicyUrlListOutput) ToNetworkFirewallPolicyUrlListOutput
 
 func (o NetworkFirewallPolicyUrlListOutput) ToNetworkFirewallPolicyUrlListOutputWithContext(ctx context.Context) NetworkFirewallPolicyUrlListOutput {
 	return o
+}
+
+func (o NetworkFirewallPolicyUrlListOutput) ToOutput(ctx context.Context) pulumix.Output[NetworkFirewallPolicyUrlList] {
+	return pulumix.Output[NetworkFirewallPolicyUrlList]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The identifier for the url list
@@ -1202,6 +1413,12 @@ func (o NetworkFirewallPolicyUrlListArrayOutput) ToNetworkFirewallPolicyUrlListA
 
 func (o NetworkFirewallPolicyUrlListArrayOutput) ToNetworkFirewallPolicyUrlListArrayOutputWithContext(ctx context.Context) NetworkFirewallPolicyUrlListArrayOutput {
 	return o
+}
+
+func (o NetworkFirewallPolicyUrlListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]NetworkFirewallPolicyUrlList] {
+	return pulumix.Output[[]NetworkFirewallPolicyUrlList]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o NetworkFirewallPolicyUrlListArrayOutput) Index(i pulumi.IntInput) NetworkFirewallPolicyUrlListOutput {
@@ -1253,6 +1470,12 @@ func (i NetworkFirewallPolicyUrlListUrlListValueArgs) ToNetworkFirewallPolicyUrl
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyUrlListUrlListValueOutput)
 }
 
+func (i NetworkFirewallPolicyUrlListUrlListValueArgs) ToOutput(ctx context.Context) pulumix.Output[NetworkFirewallPolicyUrlListUrlListValue] {
+	return pulumix.Output[NetworkFirewallPolicyUrlListUrlListValue]{
+		OutputState: i.ToNetworkFirewallPolicyUrlListUrlListValueOutputWithContext(ctx).OutputState,
+	}
+}
+
 // NetworkFirewallPolicyUrlListUrlListValueArrayInput is an input type that accepts NetworkFirewallPolicyUrlListUrlListValueArray and NetworkFirewallPolicyUrlListUrlListValueArrayOutput values.
 // You can construct a concrete instance of `NetworkFirewallPolicyUrlListUrlListValueArrayInput` via:
 //
@@ -1278,6 +1501,12 @@ func (i NetworkFirewallPolicyUrlListUrlListValueArray) ToNetworkFirewallPolicyUr
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyUrlListUrlListValueArrayOutput)
 }
 
+func (i NetworkFirewallPolicyUrlListUrlListValueArray) ToOutput(ctx context.Context) pulumix.Output[[]NetworkFirewallPolicyUrlListUrlListValue] {
+	return pulumix.Output[[]NetworkFirewallPolicyUrlListUrlListValue]{
+		OutputState: i.ToNetworkFirewallPolicyUrlListUrlListValueArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type NetworkFirewallPolicyUrlListUrlListValueOutput struct{ *pulumi.OutputState }
 
 func (NetworkFirewallPolicyUrlListUrlListValueOutput) ElementType() reflect.Type {
@@ -1290,6 +1519,12 @@ func (o NetworkFirewallPolicyUrlListUrlListValueOutput) ToNetworkFirewallPolicyU
 
 func (o NetworkFirewallPolicyUrlListUrlListValueOutput) ToNetworkFirewallPolicyUrlListUrlListValueOutputWithContext(ctx context.Context) NetworkFirewallPolicyUrlListUrlListValueOutput {
 	return o
+}
+
+func (o NetworkFirewallPolicyUrlListUrlListValueOutput) ToOutput(ctx context.Context) pulumix.Output[NetworkFirewallPolicyUrlListUrlListValue] {
+	return pulumix.Output[NetworkFirewallPolicyUrlListUrlListValue]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) URL lists to allow or deny traffic to a group of URLs. You can include a maximum of 25 URLs in each list.
@@ -1317,6 +1552,12 @@ func (o NetworkFirewallPolicyUrlListUrlListValueArrayOutput) ToNetworkFirewallPo
 
 func (o NetworkFirewallPolicyUrlListUrlListValueArrayOutput) ToNetworkFirewallPolicyUrlListUrlListValueArrayOutputWithContext(ctx context.Context) NetworkFirewallPolicyUrlListUrlListValueArrayOutput {
 	return o
+}
+
+func (o NetworkFirewallPolicyUrlListUrlListValueArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]NetworkFirewallPolicyUrlListUrlListValue] {
+	return pulumix.Output[[]NetworkFirewallPolicyUrlListUrlListValue]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o NetworkFirewallPolicyUrlListUrlListValueArrayOutput) Index(i pulumi.IntInput) NetworkFirewallPolicyUrlListUrlListValueOutput {
@@ -1362,6 +1603,12 @@ func (i GetNetworkFirewallPoliciesFilterArgs) ToGetNetworkFirewallPoliciesFilter
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPoliciesFilterOutput)
 }
 
+func (i GetNetworkFirewallPoliciesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPoliciesFilter] {
+	return pulumix.Output[GetNetworkFirewallPoliciesFilter]{
+		OutputState: i.ToGetNetworkFirewallPoliciesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNetworkFirewallPoliciesFilterArrayInput is an input type that accepts GetNetworkFirewallPoliciesFilterArray and GetNetworkFirewallPoliciesFilterArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPoliciesFilterArrayInput` via:
 //
@@ -1387,6 +1634,12 @@ func (i GetNetworkFirewallPoliciesFilterArray) ToGetNetworkFirewallPoliciesFilte
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPoliciesFilterArrayOutput)
 }
 
+func (i GetNetworkFirewallPoliciesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallPoliciesFilter] {
+	return pulumix.Output[[]GetNetworkFirewallPoliciesFilter]{
+		OutputState: i.ToGetNetworkFirewallPoliciesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNetworkFirewallPoliciesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkFirewallPoliciesFilterOutput) ElementType() reflect.Type {
@@ -1399,6 +1652,12 @@ func (o GetNetworkFirewallPoliciesFilterOutput) ToGetNetworkFirewallPoliciesFilt
 
 func (o GetNetworkFirewallPoliciesFilterOutput) ToGetNetworkFirewallPoliciesFilterOutputWithContext(ctx context.Context) GetNetworkFirewallPoliciesFilterOutput {
 	return o
+}
+
+func (o GetNetworkFirewallPoliciesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPoliciesFilter] {
+	return pulumix.Output[GetNetworkFirewallPoliciesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Name for the Security rule, must be unique within the policy.
@@ -1426,6 +1685,12 @@ func (o GetNetworkFirewallPoliciesFilterArrayOutput) ToGetNetworkFirewallPolicie
 
 func (o GetNetworkFirewallPoliciesFilterArrayOutput) ToGetNetworkFirewallPoliciesFilterArrayOutputWithContext(ctx context.Context) GetNetworkFirewallPoliciesFilterArrayOutput {
 	return o
+}
+
+func (o GetNetworkFirewallPoliciesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallPoliciesFilter] {
+	return pulumix.Output[[]GetNetworkFirewallPoliciesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkFirewallPoliciesFilterArrayOutput) Index(i pulumi.IntInput) GetNetworkFirewallPoliciesFilterOutput {
@@ -1465,6 +1730,12 @@ func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionArgs) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionOutput)
 }
 
+func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollection] {
+	return pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollection]{
+		OutputState: i.ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionArrayInput is an input type that accepts GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionArray and GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionArrayInput` via:
 //
@@ -1490,6 +1761,12 @@ func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionArray) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionArrayOutput)
 }
 
+func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollection] {
+	return pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollection]{
+		OutputState: i.ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionOutput) ElementType() reflect.Type {
@@ -1502,6 +1779,12 @@ func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionOutput) 
 
 func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionOutput) ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionOutputWithContext(ctx context.Context) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionOutput {
 	return o
+}
+
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollection] {
+	return pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionOutput) Items() GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemArrayOutput {
@@ -1522,6 +1805,12 @@ func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionArrayOut
 
 func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionArrayOutput) ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionArrayOutputWithContext(ctx context.Context) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionArrayOutput {
 	return o
+}
+
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollection] {
+	return pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionOutput {
@@ -1631,6 +1920,12 @@ func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemArgs
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemOutput)
 }
 
+func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItem] {
+	return pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItem]{
+		OutputState: i.ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemArrayInput is an input type that accepts GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemArray and GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemArrayInput` via:
 //
@@ -1656,6 +1951,12 @@ func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemArra
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemArrayOutput)
 }
 
+func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItem] {
+	return pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItem]{
+		OutputState: i.ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemOutput) ElementType() reflect.Type {
@@ -1668,6 +1969,12 @@ func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemOutp
 
 func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemOutput) ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemOutputWithContext(ctx context.Context) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemOutput {
 	return o
+}
+
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItem] {
+	return pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Map defining application lists of the policy. The value of an entry is a list of "applications", each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
@@ -1806,6 +2113,12 @@ func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemArra
 	return o
 }
 
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItem] {
+	return pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItem {
 		return vs[0].([]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItem)[vs[1].(int)]
@@ -1845,6 +2158,12 @@ func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemAppl
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListOutput)
 }
 
+func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationList] {
+	return pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationList]{
+		OutputState: i.ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListArrayInput is an input type that accepts GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListArray and GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListArrayInput` via:
 //
@@ -1870,6 +2189,12 @@ func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemAppl
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListArrayOutput)
 }
 
+func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationList] {
+	return pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationList]{
+		OutputState: i.ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListOutput) ElementType() reflect.Type {
@@ -1882,6 +2207,12 @@ func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemAppl
 
 func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListOutput) ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListOutputWithContext(ctx context.Context) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListOutput {
 	return o
+}
+
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationList] {
+	return pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationList]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListOutput) ApplicationListName() pulumi.StringOutput {
@@ -1908,6 +2239,12 @@ func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemAppl
 
 func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListArrayOutput) ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListArrayOutputWithContext(ctx context.Context) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListArrayOutput {
 	return o
+}
+
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationList] {
+	return pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationList]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListArrayOutput) Index(i pulumi.IntInput) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListOutput {
@@ -1957,6 +2294,12 @@ func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemAppl
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueOutput)
 }
 
+func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValue] {
+	return pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValue]{
+		OutputState: i.ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArrayInput is an input type that accepts GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArray and GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArrayInput` via:
 //
@@ -1982,6 +2325,12 @@ func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemAppl
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArrayOutput)
 }
 
+func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValue] {
+	return pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValue]{
+		OutputState: i.ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueOutput) ElementType() reflect.Type {
@@ -1994,6 +2343,12 @@ func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemAppl
 
 func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueOutput) ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueOutputWithContext(ctx context.Context) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueOutput {
 	return o
+}
+
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValue] {
+	return pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValue]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueOutput) IcmpCode() pulumi.IntOutput {
@@ -2039,6 +2394,12 @@ func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemAppl
 
 func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArrayOutput) ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArrayOutputWithContext(ctx context.Context) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArrayOutput {
 	return o
+}
+
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValue] {
+	return pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValue]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArrayOutput) Index(i pulumi.IntInput) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueOutput {
@@ -2118,6 +2479,12 @@ func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecr
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfileOutput)
 }
 
+func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfileArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfile] {
+	return pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfile]{
+		OutputState: i.ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfileOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfileArrayInput is an input type that accepts GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfileArray and GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfileArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfileArrayInput` via:
 //
@@ -2143,6 +2510,12 @@ func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecr
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfileArrayOutput)
 }
 
+func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfileArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfile] {
+	return pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfile]{
+		OutputState: i.ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfileArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfileOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfileOutput) ElementType() reflect.Type {
@@ -2155,6 +2528,12 @@ func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecr
 
 func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfileOutput) ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfileOutputWithContext(ctx context.Context) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfileOutput {
 	return o
+}
+
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfileOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfile] {
+	return pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfile]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
@@ -2247,6 +2626,12 @@ func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecr
 	return o
 }
 
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfileArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfile] {
+	return pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfile]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfileArrayOutput) Index(i pulumi.IntInput) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfileOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfile {
 		return vs[0].([]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfile)[vs[1].(int)]
@@ -2310,6 +2695,12 @@ func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecr
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleOutput)
 }
 
+func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRule] {
+	return pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRule]{
+		OutputState: i.ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleArrayInput is an input type that accepts GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleArray and GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleArrayInput` via:
 //
@@ -2335,6 +2726,12 @@ func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecr
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleArrayOutput)
 }
 
+func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRule] {
+	return pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRule]{
+		OutputState: i.ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleOutput) ElementType() reflect.Type {
@@ -2347,6 +2744,12 @@ func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecr
 
 func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleOutput) ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleOutputWithContext(ctx context.Context) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleOutput {
 	return o
+}
+
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRule] {
+	return pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRule]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Types of Action on the Traffic flow.
@@ -2402,6 +2805,12 @@ func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecr
 	return o
 }
 
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRule] {
+	return pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRule]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleArrayOutput) Index(i pulumi.IntInput) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRule {
 		return vs[0].([]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRule)[vs[1].(int)]
@@ -2445,6 +2854,12 @@ func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecr
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleConditionOutput)
 }
 
+func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleConditionArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleCondition] {
+	return pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleCondition]{
+		OutputState: i.ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleConditionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleConditionArrayInput is an input type that accepts GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleConditionArray and GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleConditionArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleConditionArrayInput` via:
 //
@@ -2470,6 +2885,12 @@ func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecr
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleConditionArrayOutput)
 }
 
+func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleConditionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleCondition] {
+	return pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleCondition]{
+		OutputState: i.ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleConditionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleConditionOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleConditionOutput) ElementType() reflect.Type {
@@ -2482,6 +2903,12 @@ func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecr
 
 func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleConditionOutput) ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleConditionOutputWithContext(ctx context.Context) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleConditionOutput {
 	return o
+}
+
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleConditionOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleCondition] {
+	return pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleCondition]{
+		OutputState: o.OutputState,
+	}
 }
 
 // An array of IP address list names to be evaluated against the traffic destination address.
@@ -2510,6 +2937,12 @@ func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecr
 
 func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleConditionArrayOutput) ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleConditionArrayOutputWithContext(ctx context.Context) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleConditionArrayOutput {
 	return o
+}
+
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleConditionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleCondition] {
+	return pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleCondition]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleConditionArrayOutput) Index(i pulumi.IntInput) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleConditionOutput {
@@ -2551,6 +2984,12 @@ func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAd
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressListOutput)
 }
 
+func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressListArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressList] {
+	return pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressList]{
+		OutputState: i.ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressListOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressListArrayInput is an input type that accepts GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressListArray and GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressListArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressListArrayInput` via:
 //
@@ -2576,6 +3015,12 @@ func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAd
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressListArrayOutput)
 }
 
+func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressListArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressList] {
+	return pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressList]{
+		OutputState: i.ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressListArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressListOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressListOutput) ElementType() reflect.Type {
@@ -2588,6 +3033,12 @@ func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAd
 
 func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressListOutput) ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressListOutputWithContext(ctx context.Context) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressListOutput {
 	return o
+}
+
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressListOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressList] {
+	return pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressList]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressListOutput) IpAddressListName() pulumi.StringOutput {
@@ -2614,6 +3065,12 @@ func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAd
 
 func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressListArrayOutput) ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressListArrayOutputWithContext(ctx context.Context) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressListArrayOutput {
 	return o
+}
+
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressList] {
+	return pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressList]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressListArrayOutput) Index(i pulumi.IntInput) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressListOutput {
@@ -2665,6 +3122,12 @@ func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMapp
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecretOutput)
 }
 
+func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecretArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecret] {
+	return pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecret]{
+		OutputState: i.ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecretOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecretArrayInput is an input type that accepts GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecretArray and GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecretArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecretArrayInput` via:
 //
@@ -2690,6 +3153,12 @@ func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMapp
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecretArrayOutput)
 }
 
+func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecretArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecret] {
+	return pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecret]{
+		OutputState: i.ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecretArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecretOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecretOutput) ElementType() reflect.Type {
@@ -2702,6 +3171,12 @@ func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMapp
 
 func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecretOutput) ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecretOutputWithContext(ctx context.Context) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecretOutput {
 	return o
+}
+
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecretOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecret] {
+	return pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecret]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecretOutput) Key() pulumi.StringOutput {
@@ -2743,6 +3218,12 @@ func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMapp
 
 func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecretArrayOutput) ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecretArrayOutputWithContext(ctx context.Context) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecretArrayOutput {
 	return o
+}
+
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecretArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecret] {
+	return pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecret]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecretArrayOutput) Index(i pulumi.IntInput) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecretOutput {
@@ -2808,6 +3289,12 @@ func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecu
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleOutput)
 }
 
+func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRule] {
+	return pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRule]{
+		OutputState: i.ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleArrayInput is an input type that accepts GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleArray and GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleArrayInput` via:
 //
@@ -2833,6 +3320,12 @@ func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecu
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleArrayOutput)
 }
 
+func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRule] {
+	return pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRule]{
+		OutputState: i.ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleOutput) ElementType() reflect.Type {
@@ -2845,6 +3338,12 @@ func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecu
 
 func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleOutput) ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleOutputWithContext(ctx context.Context) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleOutput {
 	return o
+}
+
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRule] {
+	return pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRule]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Types of Action on the Traffic flow.
@@ -2893,6 +3392,12 @@ func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecu
 
 func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleArrayOutput) ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleArrayOutputWithContext(ctx context.Context) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleArrayOutput {
 	return o
+}
+
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRule] {
+	return pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRule]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleArrayOutput) Index(i pulumi.IntInput) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleOutput {
@@ -2946,6 +3451,12 @@ func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecu
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleConditionOutput)
 }
 
+func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleConditionArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleCondition] {
+	return pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleCondition]{
+		OutputState: i.ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleConditionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleConditionArrayInput is an input type that accepts GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleConditionArray and GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleConditionArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleConditionArrayInput` via:
 //
@@ -2971,6 +3482,12 @@ func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecu
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleConditionArrayOutput)
 }
 
+func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleConditionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleCondition] {
+	return pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleCondition]{
+		OutputState: i.ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleConditionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleConditionOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleConditionOutput) ElementType() reflect.Type {
@@ -2983,6 +3500,12 @@ func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecu
 
 func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleConditionOutput) ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleConditionOutputWithContext(ctx context.Context) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleConditionOutput {
 	return o
+}
+
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleConditionOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleCondition] {
+	return pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleCondition]{
+		OutputState: o.OutputState,
+	}
 }
 
 // An array of application list names to be evaluated against the traffic protocol and protocol-specific parameters.
@@ -3027,6 +3550,12 @@ func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecu
 	return o
 }
 
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleConditionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleCondition] {
+	return pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleCondition]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleConditionArrayOutput) Index(i pulumi.IntInput) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleConditionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleCondition {
 		return vs[0].([]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleCondition)[vs[1].(int)]
@@ -3066,6 +3595,12 @@ func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlL
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListOutput)
 }
 
+func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlList] {
+	return pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlList]{
+		OutputState: i.ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListArrayInput is an input type that accepts GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListArray and GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListArrayInput` via:
 //
@@ -3091,6 +3626,12 @@ func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlL
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListArrayOutput)
 }
 
+func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlList] {
+	return pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlList]{
+		OutputState: i.ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListOutput) ElementType() reflect.Type {
@@ -3103,6 +3644,12 @@ func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlL
 
 func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListOutput) ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListOutputWithContext(ctx context.Context) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListOutput {
 	return o
+}
+
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlList] {
+	return pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlList]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListOutput) UrlListName() pulumi.StringOutput {
@@ -3129,6 +3676,12 @@ func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlL
 
 func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListArrayOutput) ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListArrayOutputWithContext(ctx context.Context) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListArrayOutput {
 	return o
+}
+
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlList] {
+	return pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlList]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListArrayOutput) Index(i pulumi.IntInput) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListOutput {
@@ -3172,6 +3725,12 @@ func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlL
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueOutput)
 }
 
+func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValue] {
+	return pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValue]{
+		OutputState: i.ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArrayInput is an input type that accepts GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArray and GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArrayInput` via:
 //
@@ -3197,6 +3756,12 @@ func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlL
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArrayOutput)
 }
 
+func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValue] {
+	return pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValue]{
+		OutputState: i.ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueOutput) ElementType() reflect.Type {
@@ -3209,6 +3774,12 @@ func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlL
 
 func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueOutput) ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueOutputWithContext(ctx context.Context) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueOutput {
 	return o
+}
+
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValue] {
+	return pulumix.Output[GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValue]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueOutput) Pattern() pulumi.StringOutput {
@@ -3236,6 +3807,12 @@ func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlL
 
 func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArrayOutput) ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArrayOutputWithContext(ctx context.Context) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArrayOutput {
 	return o
+}
+
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValue] {
+	return pulumix.Output[[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValue]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArrayOutput) Index(i pulumi.IntInput) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueOutput {
@@ -3277,6 +3854,12 @@ func (i GetNetworkFirewallPolicyApplicationListArgs) ToGetNetworkFirewallPolicyA
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicyApplicationListOutput)
 }
 
+func (i GetNetworkFirewallPolicyApplicationListArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPolicyApplicationList] {
+	return pulumix.Output[GetNetworkFirewallPolicyApplicationList]{
+		OutputState: i.ToGetNetworkFirewallPolicyApplicationListOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNetworkFirewallPolicyApplicationListArrayInput is an input type that accepts GetNetworkFirewallPolicyApplicationListArray and GetNetworkFirewallPolicyApplicationListArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPolicyApplicationListArrayInput` via:
 //
@@ -3302,6 +3885,12 @@ func (i GetNetworkFirewallPolicyApplicationListArray) ToGetNetworkFirewallPolicy
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicyApplicationListArrayOutput)
 }
 
+func (i GetNetworkFirewallPolicyApplicationListArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallPolicyApplicationList] {
+	return pulumix.Output[[]GetNetworkFirewallPolicyApplicationList]{
+		OutputState: i.ToGetNetworkFirewallPolicyApplicationListArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNetworkFirewallPolicyApplicationListOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkFirewallPolicyApplicationListOutput) ElementType() reflect.Type {
@@ -3314,6 +3903,12 @@ func (o GetNetworkFirewallPolicyApplicationListOutput) ToGetNetworkFirewallPolic
 
 func (o GetNetworkFirewallPolicyApplicationListOutput) ToGetNetworkFirewallPolicyApplicationListOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyApplicationListOutput {
 	return o
+}
+
+func (o GetNetworkFirewallPolicyApplicationListOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPolicyApplicationList] {
+	return pulumix.Output[GetNetworkFirewallPolicyApplicationList]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkFirewallPolicyApplicationListOutput) ApplicationListName() pulumi.StringOutput {
@@ -3338,6 +3933,12 @@ func (o GetNetworkFirewallPolicyApplicationListArrayOutput) ToGetNetworkFirewall
 
 func (o GetNetworkFirewallPolicyApplicationListArrayOutput) ToGetNetworkFirewallPolicyApplicationListArrayOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyApplicationListArrayOutput {
 	return o
+}
+
+func (o GetNetworkFirewallPolicyApplicationListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallPolicyApplicationList] {
+	return pulumix.Output[[]GetNetworkFirewallPolicyApplicationList]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkFirewallPolicyApplicationListArrayOutput) Index(i pulumi.IntInput) GetNetworkFirewallPolicyApplicationListOutput {
@@ -3387,6 +3988,12 @@ func (i GetNetworkFirewallPolicyApplicationListApplicationValueArgs) ToGetNetwor
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicyApplicationListApplicationValueOutput)
 }
 
+func (i GetNetworkFirewallPolicyApplicationListApplicationValueArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPolicyApplicationListApplicationValue] {
+	return pulumix.Output[GetNetworkFirewallPolicyApplicationListApplicationValue]{
+		OutputState: i.ToGetNetworkFirewallPolicyApplicationListApplicationValueOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNetworkFirewallPolicyApplicationListApplicationValueArrayInput is an input type that accepts GetNetworkFirewallPolicyApplicationListApplicationValueArray and GetNetworkFirewallPolicyApplicationListApplicationValueArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPolicyApplicationListApplicationValueArrayInput` via:
 //
@@ -3412,6 +4019,12 @@ func (i GetNetworkFirewallPolicyApplicationListApplicationValueArray) ToGetNetwo
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicyApplicationListApplicationValueArrayOutput)
 }
 
+func (i GetNetworkFirewallPolicyApplicationListApplicationValueArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallPolicyApplicationListApplicationValue] {
+	return pulumix.Output[[]GetNetworkFirewallPolicyApplicationListApplicationValue]{
+		OutputState: i.ToGetNetworkFirewallPolicyApplicationListApplicationValueArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNetworkFirewallPolicyApplicationListApplicationValueOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkFirewallPolicyApplicationListApplicationValueOutput) ElementType() reflect.Type {
@@ -3424,6 +4037,12 @@ func (o GetNetworkFirewallPolicyApplicationListApplicationValueOutput) ToGetNetw
 
 func (o GetNetworkFirewallPolicyApplicationListApplicationValueOutput) ToGetNetworkFirewallPolicyApplicationListApplicationValueOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyApplicationListApplicationValueOutput {
 	return o
+}
+
+func (o GetNetworkFirewallPolicyApplicationListApplicationValueOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPolicyApplicationListApplicationValue] {
+	return pulumix.Output[GetNetworkFirewallPolicyApplicationListApplicationValue]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkFirewallPolicyApplicationListApplicationValueOutput) IcmpCode() pulumi.IntOutput {
@@ -3459,6 +4078,12 @@ func (o GetNetworkFirewallPolicyApplicationListApplicationValueArrayOutput) ToGe
 
 func (o GetNetworkFirewallPolicyApplicationListApplicationValueArrayOutput) ToGetNetworkFirewallPolicyApplicationListApplicationValueArrayOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyApplicationListApplicationValueArrayOutput {
 	return o
+}
+
+func (o GetNetworkFirewallPolicyApplicationListApplicationValueArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallPolicyApplicationListApplicationValue] {
+	return pulumix.Output[[]GetNetworkFirewallPolicyApplicationListApplicationValue]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkFirewallPolicyApplicationListApplicationValueArrayOutput) Index(i pulumi.IntInput) GetNetworkFirewallPolicyApplicationListApplicationValueOutput {
@@ -3538,6 +4163,12 @@ func (i GetNetworkFirewallPolicyDecryptionProfileArgs) ToGetNetworkFirewallPolic
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicyDecryptionProfileOutput)
 }
 
+func (i GetNetworkFirewallPolicyDecryptionProfileArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPolicyDecryptionProfile] {
+	return pulumix.Output[GetNetworkFirewallPolicyDecryptionProfile]{
+		OutputState: i.ToGetNetworkFirewallPolicyDecryptionProfileOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNetworkFirewallPolicyDecryptionProfileArrayInput is an input type that accepts GetNetworkFirewallPolicyDecryptionProfileArray and GetNetworkFirewallPolicyDecryptionProfileArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPolicyDecryptionProfileArrayInput` via:
 //
@@ -3563,6 +4194,12 @@ func (i GetNetworkFirewallPolicyDecryptionProfileArray) ToGetNetworkFirewallPoli
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicyDecryptionProfileArrayOutput)
 }
 
+func (i GetNetworkFirewallPolicyDecryptionProfileArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallPolicyDecryptionProfile] {
+	return pulumix.Output[[]GetNetworkFirewallPolicyDecryptionProfile]{
+		OutputState: i.ToGetNetworkFirewallPolicyDecryptionProfileArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNetworkFirewallPolicyDecryptionProfileOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkFirewallPolicyDecryptionProfileOutput) ElementType() reflect.Type {
@@ -3575,6 +4212,12 @@ func (o GetNetworkFirewallPolicyDecryptionProfileOutput) ToGetNetworkFirewallPol
 
 func (o GetNetworkFirewallPolicyDecryptionProfileOutput) ToGetNetworkFirewallPolicyDecryptionProfileOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyDecryptionProfileOutput {
 	return o
+}
+
+func (o GetNetworkFirewallPolicyDecryptionProfileOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPolicyDecryptionProfile] {
+	return pulumix.Output[GetNetworkFirewallPolicyDecryptionProfile]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
@@ -3645,6 +4288,12 @@ func (o GetNetworkFirewallPolicyDecryptionProfileArrayOutput) ToGetNetworkFirewa
 	return o
 }
 
+func (o GetNetworkFirewallPolicyDecryptionProfileArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallPolicyDecryptionProfile] {
+	return pulumix.Output[[]GetNetworkFirewallPolicyDecryptionProfile]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetNetworkFirewallPolicyDecryptionProfileArrayOutput) Index(i pulumi.IntInput) GetNetworkFirewallPolicyDecryptionProfileOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkFirewallPolicyDecryptionProfile {
 		return vs[0].([]GetNetworkFirewallPolicyDecryptionProfile)[vs[1].(int)]
@@ -3708,6 +4357,12 @@ func (i GetNetworkFirewallPolicyDecryptionRuleArgs) ToGetNetworkFirewallPolicyDe
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicyDecryptionRuleOutput)
 }
 
+func (i GetNetworkFirewallPolicyDecryptionRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPolicyDecryptionRule] {
+	return pulumix.Output[GetNetworkFirewallPolicyDecryptionRule]{
+		OutputState: i.ToGetNetworkFirewallPolicyDecryptionRuleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNetworkFirewallPolicyDecryptionRuleArrayInput is an input type that accepts GetNetworkFirewallPolicyDecryptionRuleArray and GetNetworkFirewallPolicyDecryptionRuleArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPolicyDecryptionRuleArrayInput` via:
 //
@@ -3733,6 +4388,12 @@ func (i GetNetworkFirewallPolicyDecryptionRuleArray) ToGetNetworkFirewallPolicyD
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicyDecryptionRuleArrayOutput)
 }
 
+func (i GetNetworkFirewallPolicyDecryptionRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallPolicyDecryptionRule] {
+	return pulumix.Output[[]GetNetworkFirewallPolicyDecryptionRule]{
+		OutputState: i.ToGetNetworkFirewallPolicyDecryptionRuleArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNetworkFirewallPolicyDecryptionRuleOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkFirewallPolicyDecryptionRuleOutput) ElementType() reflect.Type {
@@ -3745,6 +4406,12 @@ func (o GetNetworkFirewallPolicyDecryptionRuleOutput) ToGetNetworkFirewallPolicy
 
 func (o GetNetworkFirewallPolicyDecryptionRuleOutput) ToGetNetworkFirewallPolicyDecryptionRuleOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyDecryptionRuleOutput {
 	return o
+}
+
+func (o GetNetworkFirewallPolicyDecryptionRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPolicyDecryptionRule] {
+	return pulumix.Output[GetNetworkFirewallPolicyDecryptionRule]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Types of Action on the Traffic flow.
@@ -3792,6 +4459,12 @@ func (o GetNetworkFirewallPolicyDecryptionRuleArrayOutput) ToGetNetworkFirewallP
 	return o
 }
 
+func (o GetNetworkFirewallPolicyDecryptionRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallPolicyDecryptionRule] {
+	return pulumix.Output[[]GetNetworkFirewallPolicyDecryptionRule]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetNetworkFirewallPolicyDecryptionRuleArrayOutput) Index(i pulumi.IntInput) GetNetworkFirewallPolicyDecryptionRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkFirewallPolicyDecryptionRule {
 		return vs[0].([]GetNetworkFirewallPolicyDecryptionRule)[vs[1].(int)]
@@ -3835,6 +4508,12 @@ func (i GetNetworkFirewallPolicyDecryptionRuleConditionArgs) ToGetNetworkFirewal
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicyDecryptionRuleConditionOutput)
 }
 
+func (i GetNetworkFirewallPolicyDecryptionRuleConditionArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPolicyDecryptionRuleCondition] {
+	return pulumix.Output[GetNetworkFirewallPolicyDecryptionRuleCondition]{
+		OutputState: i.ToGetNetworkFirewallPolicyDecryptionRuleConditionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNetworkFirewallPolicyDecryptionRuleConditionArrayInput is an input type that accepts GetNetworkFirewallPolicyDecryptionRuleConditionArray and GetNetworkFirewallPolicyDecryptionRuleConditionArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPolicyDecryptionRuleConditionArrayInput` via:
 //
@@ -3860,6 +4539,12 @@ func (i GetNetworkFirewallPolicyDecryptionRuleConditionArray) ToGetNetworkFirewa
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicyDecryptionRuleConditionArrayOutput)
 }
 
+func (i GetNetworkFirewallPolicyDecryptionRuleConditionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallPolicyDecryptionRuleCondition] {
+	return pulumix.Output[[]GetNetworkFirewallPolicyDecryptionRuleCondition]{
+		OutputState: i.ToGetNetworkFirewallPolicyDecryptionRuleConditionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNetworkFirewallPolicyDecryptionRuleConditionOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkFirewallPolicyDecryptionRuleConditionOutput) ElementType() reflect.Type {
@@ -3872,6 +4557,12 @@ func (o GetNetworkFirewallPolicyDecryptionRuleConditionOutput) ToGetNetworkFirew
 
 func (o GetNetworkFirewallPolicyDecryptionRuleConditionOutput) ToGetNetworkFirewallPolicyDecryptionRuleConditionOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyDecryptionRuleConditionOutput {
 	return o
+}
+
+func (o GetNetworkFirewallPolicyDecryptionRuleConditionOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPolicyDecryptionRuleCondition] {
+	return pulumix.Output[GetNetworkFirewallPolicyDecryptionRuleCondition]{
+		OutputState: o.OutputState,
+	}
 }
 
 // An array of IP address list names to be evaluated against the traffic destination address.
@@ -3896,6 +4587,12 @@ func (o GetNetworkFirewallPolicyDecryptionRuleConditionArrayOutput) ToGetNetwork
 
 func (o GetNetworkFirewallPolicyDecryptionRuleConditionArrayOutput) ToGetNetworkFirewallPolicyDecryptionRuleConditionArrayOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyDecryptionRuleConditionArrayOutput {
 	return o
+}
+
+func (o GetNetworkFirewallPolicyDecryptionRuleConditionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallPolicyDecryptionRuleCondition] {
+	return pulumix.Output[[]GetNetworkFirewallPolicyDecryptionRuleCondition]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkFirewallPolicyDecryptionRuleConditionArrayOutput) Index(i pulumi.IntInput) GetNetworkFirewallPolicyDecryptionRuleConditionOutput {
@@ -3937,6 +4634,12 @@ func (i GetNetworkFirewallPolicyIpAddressListArgs) ToGetNetworkFirewallPolicyIpA
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicyIpAddressListOutput)
 }
 
+func (i GetNetworkFirewallPolicyIpAddressListArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPolicyIpAddressList] {
+	return pulumix.Output[GetNetworkFirewallPolicyIpAddressList]{
+		OutputState: i.ToGetNetworkFirewallPolicyIpAddressListOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNetworkFirewallPolicyIpAddressListArrayInput is an input type that accepts GetNetworkFirewallPolicyIpAddressListArray and GetNetworkFirewallPolicyIpAddressListArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPolicyIpAddressListArrayInput` via:
 //
@@ -3962,6 +4665,12 @@ func (i GetNetworkFirewallPolicyIpAddressListArray) ToGetNetworkFirewallPolicyIp
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicyIpAddressListArrayOutput)
 }
 
+func (i GetNetworkFirewallPolicyIpAddressListArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallPolicyIpAddressList] {
+	return pulumix.Output[[]GetNetworkFirewallPolicyIpAddressList]{
+		OutputState: i.ToGetNetworkFirewallPolicyIpAddressListArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNetworkFirewallPolicyIpAddressListOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkFirewallPolicyIpAddressListOutput) ElementType() reflect.Type {
@@ -3974,6 +4683,12 @@ func (o GetNetworkFirewallPolicyIpAddressListOutput) ToGetNetworkFirewallPolicyI
 
 func (o GetNetworkFirewallPolicyIpAddressListOutput) ToGetNetworkFirewallPolicyIpAddressListOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyIpAddressListOutput {
 	return o
+}
+
+func (o GetNetworkFirewallPolicyIpAddressListOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPolicyIpAddressList] {
+	return pulumix.Output[GetNetworkFirewallPolicyIpAddressList]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkFirewallPolicyIpAddressListOutput) IpAddressListName() pulumi.StringOutput {
@@ -3996,6 +4711,12 @@ func (o GetNetworkFirewallPolicyIpAddressListArrayOutput) ToGetNetworkFirewallPo
 
 func (o GetNetworkFirewallPolicyIpAddressListArrayOutput) ToGetNetworkFirewallPolicyIpAddressListArrayOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyIpAddressListArrayOutput {
 	return o
+}
+
+func (o GetNetworkFirewallPolicyIpAddressListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallPolicyIpAddressList] {
+	return pulumix.Output[[]GetNetworkFirewallPolicyIpAddressList]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkFirewallPolicyIpAddressListArrayOutput) Index(i pulumi.IntInput) GetNetworkFirewallPolicyIpAddressListOutput {
@@ -4047,6 +4768,12 @@ func (i GetNetworkFirewallPolicyMappedSecretArgs) ToGetNetworkFirewallPolicyMapp
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicyMappedSecretOutput)
 }
 
+func (i GetNetworkFirewallPolicyMappedSecretArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPolicyMappedSecret] {
+	return pulumix.Output[GetNetworkFirewallPolicyMappedSecret]{
+		OutputState: i.ToGetNetworkFirewallPolicyMappedSecretOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNetworkFirewallPolicyMappedSecretArrayInput is an input type that accepts GetNetworkFirewallPolicyMappedSecretArray and GetNetworkFirewallPolicyMappedSecretArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPolicyMappedSecretArrayInput` via:
 //
@@ -4072,6 +4799,12 @@ func (i GetNetworkFirewallPolicyMappedSecretArray) ToGetNetworkFirewallPolicyMap
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicyMappedSecretArrayOutput)
 }
 
+func (i GetNetworkFirewallPolicyMappedSecretArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallPolicyMappedSecret] {
+	return pulumix.Output[[]GetNetworkFirewallPolicyMappedSecret]{
+		OutputState: i.ToGetNetworkFirewallPolicyMappedSecretArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNetworkFirewallPolicyMappedSecretOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkFirewallPolicyMappedSecretOutput) ElementType() reflect.Type {
@@ -4084,6 +4817,12 @@ func (o GetNetworkFirewallPolicyMappedSecretOutput) ToGetNetworkFirewallPolicyMa
 
 func (o GetNetworkFirewallPolicyMappedSecretOutput) ToGetNetworkFirewallPolicyMappedSecretOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyMappedSecretOutput {
 	return o
+}
+
+func (o GetNetworkFirewallPolicyMappedSecretOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPolicyMappedSecret] {
+	return pulumix.Output[GetNetworkFirewallPolicyMappedSecret]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkFirewallPolicyMappedSecretOutput) Key() pulumi.StringOutput {
@@ -4117,6 +4856,12 @@ func (o GetNetworkFirewallPolicyMappedSecretArrayOutput) ToGetNetworkFirewallPol
 
 func (o GetNetworkFirewallPolicyMappedSecretArrayOutput) ToGetNetworkFirewallPolicyMappedSecretArrayOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyMappedSecretArrayOutput {
 	return o
+}
+
+func (o GetNetworkFirewallPolicyMappedSecretArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallPolicyMappedSecret] {
+	return pulumix.Output[[]GetNetworkFirewallPolicyMappedSecret]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkFirewallPolicyMappedSecretArrayOutput) Index(i pulumi.IntInput) GetNetworkFirewallPolicyMappedSecretOutput {
@@ -4182,6 +4927,12 @@ func (i GetNetworkFirewallPolicySecurityRuleArgs) ToGetNetworkFirewallPolicySecu
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicySecurityRuleOutput)
 }
 
+func (i GetNetworkFirewallPolicySecurityRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPolicySecurityRule] {
+	return pulumix.Output[GetNetworkFirewallPolicySecurityRule]{
+		OutputState: i.ToGetNetworkFirewallPolicySecurityRuleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNetworkFirewallPolicySecurityRuleArrayInput is an input type that accepts GetNetworkFirewallPolicySecurityRuleArray and GetNetworkFirewallPolicySecurityRuleArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPolicySecurityRuleArrayInput` via:
 //
@@ -4207,6 +4958,12 @@ func (i GetNetworkFirewallPolicySecurityRuleArray) ToGetNetworkFirewallPolicySec
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicySecurityRuleArrayOutput)
 }
 
+func (i GetNetworkFirewallPolicySecurityRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallPolicySecurityRule] {
+	return pulumix.Output[[]GetNetworkFirewallPolicySecurityRule]{
+		OutputState: i.ToGetNetworkFirewallPolicySecurityRuleArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNetworkFirewallPolicySecurityRuleOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkFirewallPolicySecurityRuleOutput) ElementType() reflect.Type {
@@ -4219,6 +4976,12 @@ func (o GetNetworkFirewallPolicySecurityRuleOutput) ToGetNetworkFirewallPolicySe
 
 func (o GetNetworkFirewallPolicySecurityRuleOutput) ToGetNetworkFirewallPolicySecurityRuleOutputWithContext(ctx context.Context) GetNetworkFirewallPolicySecurityRuleOutput {
 	return o
+}
+
+func (o GetNetworkFirewallPolicySecurityRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPolicySecurityRule] {
+	return pulumix.Output[GetNetworkFirewallPolicySecurityRule]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Types of Action on the Traffic flow.
@@ -4261,6 +5024,12 @@ func (o GetNetworkFirewallPolicySecurityRuleArrayOutput) ToGetNetworkFirewallPol
 
 func (o GetNetworkFirewallPolicySecurityRuleArrayOutput) ToGetNetworkFirewallPolicySecurityRuleArrayOutputWithContext(ctx context.Context) GetNetworkFirewallPolicySecurityRuleArrayOutput {
 	return o
+}
+
+func (o GetNetworkFirewallPolicySecurityRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallPolicySecurityRule] {
+	return pulumix.Output[[]GetNetworkFirewallPolicySecurityRule]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkFirewallPolicySecurityRuleArrayOutput) Index(i pulumi.IntInput) GetNetworkFirewallPolicySecurityRuleOutput {
@@ -4314,6 +5083,12 @@ func (i GetNetworkFirewallPolicySecurityRuleConditionArgs) ToGetNetworkFirewallP
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicySecurityRuleConditionOutput)
 }
 
+func (i GetNetworkFirewallPolicySecurityRuleConditionArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPolicySecurityRuleCondition] {
+	return pulumix.Output[GetNetworkFirewallPolicySecurityRuleCondition]{
+		OutputState: i.ToGetNetworkFirewallPolicySecurityRuleConditionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNetworkFirewallPolicySecurityRuleConditionArrayInput is an input type that accepts GetNetworkFirewallPolicySecurityRuleConditionArray and GetNetworkFirewallPolicySecurityRuleConditionArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPolicySecurityRuleConditionArrayInput` via:
 //
@@ -4339,6 +5114,12 @@ func (i GetNetworkFirewallPolicySecurityRuleConditionArray) ToGetNetworkFirewall
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicySecurityRuleConditionArrayOutput)
 }
 
+func (i GetNetworkFirewallPolicySecurityRuleConditionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallPolicySecurityRuleCondition] {
+	return pulumix.Output[[]GetNetworkFirewallPolicySecurityRuleCondition]{
+		OutputState: i.ToGetNetworkFirewallPolicySecurityRuleConditionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNetworkFirewallPolicySecurityRuleConditionOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkFirewallPolicySecurityRuleConditionOutput) ElementType() reflect.Type {
@@ -4351,6 +5132,12 @@ func (o GetNetworkFirewallPolicySecurityRuleConditionOutput) ToGetNetworkFirewal
 
 func (o GetNetworkFirewallPolicySecurityRuleConditionOutput) ToGetNetworkFirewallPolicySecurityRuleConditionOutputWithContext(ctx context.Context) GetNetworkFirewallPolicySecurityRuleConditionOutput {
 	return o
+}
+
+func (o GetNetworkFirewallPolicySecurityRuleConditionOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPolicySecurityRuleCondition] {
+	return pulumix.Output[GetNetworkFirewallPolicySecurityRuleCondition]{
+		OutputState: o.OutputState,
+	}
 }
 
 // An array of application list names to be evaluated against the traffic protocol and protocol-specific parameters.
@@ -4385,6 +5172,12 @@ func (o GetNetworkFirewallPolicySecurityRuleConditionArrayOutput) ToGetNetworkFi
 
 func (o GetNetworkFirewallPolicySecurityRuleConditionArrayOutput) ToGetNetworkFirewallPolicySecurityRuleConditionArrayOutputWithContext(ctx context.Context) GetNetworkFirewallPolicySecurityRuleConditionArrayOutput {
 	return o
+}
+
+func (o GetNetworkFirewallPolicySecurityRuleConditionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallPolicySecurityRuleCondition] {
+	return pulumix.Output[[]GetNetworkFirewallPolicySecurityRuleCondition]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkFirewallPolicySecurityRuleConditionArrayOutput) Index(i pulumi.IntInput) GetNetworkFirewallPolicySecurityRuleConditionOutput {
@@ -4426,6 +5219,12 @@ func (i GetNetworkFirewallPolicyUrlListArgs) ToGetNetworkFirewallPolicyUrlListOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicyUrlListOutput)
 }
 
+func (i GetNetworkFirewallPolicyUrlListArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPolicyUrlList] {
+	return pulumix.Output[GetNetworkFirewallPolicyUrlList]{
+		OutputState: i.ToGetNetworkFirewallPolicyUrlListOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNetworkFirewallPolicyUrlListArrayInput is an input type that accepts GetNetworkFirewallPolicyUrlListArray and GetNetworkFirewallPolicyUrlListArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPolicyUrlListArrayInput` via:
 //
@@ -4451,6 +5250,12 @@ func (i GetNetworkFirewallPolicyUrlListArray) ToGetNetworkFirewallPolicyUrlListA
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicyUrlListArrayOutput)
 }
 
+func (i GetNetworkFirewallPolicyUrlListArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallPolicyUrlList] {
+	return pulumix.Output[[]GetNetworkFirewallPolicyUrlList]{
+		OutputState: i.ToGetNetworkFirewallPolicyUrlListArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNetworkFirewallPolicyUrlListOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkFirewallPolicyUrlListOutput) ElementType() reflect.Type {
@@ -4463,6 +5268,12 @@ func (o GetNetworkFirewallPolicyUrlListOutput) ToGetNetworkFirewallPolicyUrlList
 
 func (o GetNetworkFirewallPolicyUrlListOutput) ToGetNetworkFirewallPolicyUrlListOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyUrlListOutput {
 	return o
+}
+
+func (o GetNetworkFirewallPolicyUrlListOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPolicyUrlList] {
+	return pulumix.Output[GetNetworkFirewallPolicyUrlList]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkFirewallPolicyUrlListOutput) UrlListName() pulumi.StringOutput {
@@ -4487,6 +5298,12 @@ func (o GetNetworkFirewallPolicyUrlListArrayOutput) ToGetNetworkFirewallPolicyUr
 
 func (o GetNetworkFirewallPolicyUrlListArrayOutput) ToGetNetworkFirewallPolicyUrlListArrayOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyUrlListArrayOutput {
 	return o
+}
+
+func (o GetNetworkFirewallPolicyUrlListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallPolicyUrlList] {
+	return pulumix.Output[[]GetNetworkFirewallPolicyUrlList]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkFirewallPolicyUrlListArrayOutput) Index(i pulumi.IntInput) GetNetworkFirewallPolicyUrlListOutput {
@@ -4530,6 +5347,12 @@ func (i GetNetworkFirewallPolicyUrlListUrlListValueArgs) ToGetNetworkFirewallPol
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicyUrlListUrlListValueOutput)
 }
 
+func (i GetNetworkFirewallPolicyUrlListUrlListValueArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPolicyUrlListUrlListValue] {
+	return pulumix.Output[GetNetworkFirewallPolicyUrlListUrlListValue]{
+		OutputState: i.ToGetNetworkFirewallPolicyUrlListUrlListValueOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNetworkFirewallPolicyUrlListUrlListValueArrayInput is an input type that accepts GetNetworkFirewallPolicyUrlListUrlListValueArray and GetNetworkFirewallPolicyUrlListUrlListValueArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallPolicyUrlListUrlListValueArrayInput` via:
 //
@@ -4555,6 +5378,12 @@ func (i GetNetworkFirewallPolicyUrlListUrlListValueArray) ToGetNetworkFirewallPo
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicyUrlListUrlListValueArrayOutput)
 }
 
+func (i GetNetworkFirewallPolicyUrlListUrlListValueArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallPolicyUrlListUrlListValue] {
+	return pulumix.Output[[]GetNetworkFirewallPolicyUrlListUrlListValue]{
+		OutputState: i.ToGetNetworkFirewallPolicyUrlListUrlListValueArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNetworkFirewallPolicyUrlListUrlListValueOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkFirewallPolicyUrlListUrlListValueOutput) ElementType() reflect.Type {
@@ -4567,6 +5396,12 @@ func (o GetNetworkFirewallPolicyUrlListUrlListValueOutput) ToGetNetworkFirewallP
 
 func (o GetNetworkFirewallPolicyUrlListUrlListValueOutput) ToGetNetworkFirewallPolicyUrlListUrlListValueOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyUrlListUrlListValueOutput {
 	return o
+}
+
+func (o GetNetworkFirewallPolicyUrlListUrlListValueOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPolicyUrlListUrlListValue] {
+	return pulumix.Output[GetNetworkFirewallPolicyUrlListUrlListValue]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkFirewallPolicyUrlListUrlListValueOutput) Pattern() pulumi.StringOutput {
@@ -4590,6 +5425,12 @@ func (o GetNetworkFirewallPolicyUrlListUrlListValueArrayOutput) ToGetNetworkFire
 
 func (o GetNetworkFirewallPolicyUrlListUrlListValueArrayOutput) ToGetNetworkFirewallPolicyUrlListUrlListValueArrayOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyUrlListUrlListValueArrayOutput {
 	return o
+}
+
+func (o GetNetworkFirewallPolicyUrlListUrlListValueArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallPolicyUrlListUrlListValue] {
+	return pulumix.Output[[]GetNetworkFirewallPolicyUrlListUrlListValue]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkFirewallPolicyUrlListUrlListValueArrayOutput) Index(i pulumi.IntInput) GetNetworkFirewallPolicyUrlListUrlListValueOutput {
@@ -4633,6 +5474,12 @@ func (i GetNetworkFirewallsFilterArgs) ToGetNetworkFirewallsFilterOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallsFilterOutput)
 }
 
+func (i GetNetworkFirewallsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallsFilter] {
+	return pulumix.Output[GetNetworkFirewallsFilter]{
+		OutputState: i.ToGetNetworkFirewallsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNetworkFirewallsFilterArrayInput is an input type that accepts GetNetworkFirewallsFilterArray and GetNetworkFirewallsFilterArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallsFilterArrayInput` via:
 //
@@ -4658,6 +5505,12 @@ func (i GetNetworkFirewallsFilterArray) ToGetNetworkFirewallsFilterArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallsFilterArrayOutput)
 }
 
+func (i GetNetworkFirewallsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallsFilter] {
+	return pulumix.Output[[]GetNetworkFirewallsFilter]{
+		OutputState: i.ToGetNetworkFirewallsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNetworkFirewallsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkFirewallsFilterOutput) ElementType() reflect.Type {
@@ -4670,6 +5523,12 @@ func (o GetNetworkFirewallsFilterOutput) ToGetNetworkFirewallsFilterOutput() Get
 
 func (o GetNetworkFirewallsFilterOutput) ToGetNetworkFirewallsFilterOutputWithContext(ctx context.Context) GetNetworkFirewallsFilterOutput {
 	return o
+}
+
+func (o GetNetworkFirewallsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallsFilter] {
+	return pulumix.Output[GetNetworkFirewallsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkFirewallsFilterOutput) Name() pulumi.StringOutput {
@@ -4696,6 +5555,12 @@ func (o GetNetworkFirewallsFilterArrayOutput) ToGetNetworkFirewallsFilterArrayOu
 
 func (o GetNetworkFirewallsFilterArrayOutput) ToGetNetworkFirewallsFilterArrayOutputWithContext(ctx context.Context) GetNetworkFirewallsFilterArrayOutput {
 	return o
+}
+
+func (o GetNetworkFirewallsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallsFilter] {
+	return pulumix.Output[[]GetNetworkFirewallsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkFirewallsFilterArrayOutput) Index(i pulumi.IntInput) GetNetworkFirewallsFilterOutput {
@@ -4735,6 +5600,12 @@ func (i GetNetworkFirewallsNetworkFirewallCollectionArgs) ToGetNetworkFirewallsN
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallsNetworkFirewallCollectionOutput)
 }
 
+func (i GetNetworkFirewallsNetworkFirewallCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallsNetworkFirewallCollection] {
+	return pulumix.Output[GetNetworkFirewallsNetworkFirewallCollection]{
+		OutputState: i.ToGetNetworkFirewallsNetworkFirewallCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNetworkFirewallsNetworkFirewallCollectionArrayInput is an input type that accepts GetNetworkFirewallsNetworkFirewallCollectionArray and GetNetworkFirewallsNetworkFirewallCollectionArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallsNetworkFirewallCollectionArrayInput` via:
 //
@@ -4760,6 +5631,12 @@ func (i GetNetworkFirewallsNetworkFirewallCollectionArray) ToGetNetworkFirewalls
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallsNetworkFirewallCollectionArrayOutput)
 }
 
+func (i GetNetworkFirewallsNetworkFirewallCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallsNetworkFirewallCollection] {
+	return pulumix.Output[[]GetNetworkFirewallsNetworkFirewallCollection]{
+		OutputState: i.ToGetNetworkFirewallsNetworkFirewallCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNetworkFirewallsNetworkFirewallCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkFirewallsNetworkFirewallCollectionOutput) ElementType() reflect.Type {
@@ -4772,6 +5649,12 @@ func (o GetNetworkFirewallsNetworkFirewallCollectionOutput) ToGetNetworkFirewall
 
 func (o GetNetworkFirewallsNetworkFirewallCollectionOutput) ToGetNetworkFirewallsNetworkFirewallCollectionOutputWithContext(ctx context.Context) GetNetworkFirewallsNetworkFirewallCollectionOutput {
 	return o
+}
+
+func (o GetNetworkFirewallsNetworkFirewallCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallsNetworkFirewallCollection] {
+	return pulumix.Output[GetNetworkFirewallsNetworkFirewallCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkFirewallsNetworkFirewallCollectionOutput) Items() GetNetworkFirewallsNetworkFirewallCollectionItemArrayOutput {
@@ -4792,6 +5675,12 @@ func (o GetNetworkFirewallsNetworkFirewallCollectionArrayOutput) ToGetNetworkFir
 
 func (o GetNetworkFirewallsNetworkFirewallCollectionArrayOutput) ToGetNetworkFirewallsNetworkFirewallCollectionArrayOutputWithContext(ctx context.Context) GetNetworkFirewallsNetworkFirewallCollectionArrayOutput {
 	return o
+}
+
+func (o GetNetworkFirewallsNetworkFirewallCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallsNetworkFirewallCollection] {
+	return pulumix.Output[[]GetNetworkFirewallsNetworkFirewallCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkFirewallsNetworkFirewallCollectionArrayOutput) Index(i pulumi.IntInput) GetNetworkFirewallsNetworkFirewallCollectionOutput {
@@ -4893,6 +5782,12 @@ func (i GetNetworkFirewallsNetworkFirewallCollectionItemArgs) ToGetNetworkFirewa
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallsNetworkFirewallCollectionItemOutput)
 }
 
+func (i GetNetworkFirewallsNetworkFirewallCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallsNetworkFirewallCollectionItem] {
+	return pulumix.Output[GetNetworkFirewallsNetworkFirewallCollectionItem]{
+		OutputState: i.ToGetNetworkFirewallsNetworkFirewallCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNetworkFirewallsNetworkFirewallCollectionItemArrayInput is an input type that accepts GetNetworkFirewallsNetworkFirewallCollectionItemArray and GetNetworkFirewallsNetworkFirewallCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetNetworkFirewallsNetworkFirewallCollectionItemArrayInput` via:
 //
@@ -4918,6 +5813,12 @@ func (i GetNetworkFirewallsNetworkFirewallCollectionItemArray) ToGetNetworkFirew
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallsNetworkFirewallCollectionItemArrayOutput)
 }
 
+func (i GetNetworkFirewallsNetworkFirewallCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallsNetworkFirewallCollectionItem] {
+	return pulumix.Output[[]GetNetworkFirewallsNetworkFirewallCollectionItem]{
+		OutputState: i.ToGetNetworkFirewallsNetworkFirewallCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNetworkFirewallsNetworkFirewallCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkFirewallsNetworkFirewallCollectionItemOutput) ElementType() reflect.Type {
@@ -4930,6 +5831,12 @@ func (o GetNetworkFirewallsNetworkFirewallCollectionItemOutput) ToGetNetworkFire
 
 func (o GetNetworkFirewallsNetworkFirewallCollectionItemOutput) ToGetNetworkFirewallsNetworkFirewallCollectionItemOutputWithContext(ctx context.Context) GetNetworkFirewallsNetworkFirewallCollectionItemOutput {
 	return o
+}
+
+func (o GetNetworkFirewallsNetworkFirewallCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallsNetworkFirewallCollectionItem] {
+	return pulumix.Output[GetNetworkFirewallsNetworkFirewallCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A filter to return only resources that are present within the specified availability domain. To get a list of availability domains for a tenancy, use [ListAvailabilityDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/AvailabilityDomain/ListAvailabilityDomains) operation. Example: `kIdk:PHX-AD-1`
@@ -5024,6 +5931,12 @@ func (o GetNetworkFirewallsNetworkFirewallCollectionItemArrayOutput) ToGetNetwor
 
 func (o GetNetworkFirewallsNetworkFirewallCollectionItemArrayOutput) ToGetNetworkFirewallsNetworkFirewallCollectionItemArrayOutputWithContext(ctx context.Context) GetNetworkFirewallsNetworkFirewallCollectionItemArrayOutput {
 	return o
+}
+
+func (o GetNetworkFirewallsNetworkFirewallCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkFirewallsNetworkFirewallCollectionItem] {
+	return pulumix.Output[[]GetNetworkFirewallsNetworkFirewallCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkFirewallsNetworkFirewallCollectionItemArrayOutput) Index(i pulumi.IntInput) GetNetworkFirewallsNetworkFirewallCollectionItemOutput {

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of List User Grants in Oracle Cloud Infrastructure Data Safe service.
@@ -159,6 +160,12 @@ func (o GetListUserGrantsResultOutput) ToGetListUserGrantsResultOutput() GetList
 
 func (o GetListUserGrantsResultOutput) ToGetListUserGrantsResultOutputWithContext(ctx context.Context) GetListUserGrantsResultOutput {
 	return o
+}
+
+func (o GetListUserGrantsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetListUserGrantsResult] {
+	return pulumix.Output[GetListUserGrantsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The grant depth level of the indirect grant. An indirectly granted role/privilege is granted to the user through another role. The depth level indicates how deep a privilege is within the grant hierarchy.

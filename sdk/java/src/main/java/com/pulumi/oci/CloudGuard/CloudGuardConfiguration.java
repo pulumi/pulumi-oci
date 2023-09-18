@@ -63,7 +63,7 @@ public class CloudGuardConfiguration extends com.pulumi.resources.CustomResource
      * (Updatable) The ID of the compartment in which to list resources.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -77,7 +77,7 @@ public class CloudGuardConfiguration extends com.pulumi.resources.CustomResource
      * (Updatable) The reporting region value
      * 
      */
-    @Export(name="reportingRegion", type=String.class, parameters={})
+    @Export(name="reportingRegion", refs={String.class}, tree="[0]")
     private Output<String> reportingRegion;
 
     /**
@@ -91,7 +91,7 @@ public class CloudGuardConfiguration extends com.pulumi.resources.CustomResource
      * (Updatable) Identifies if Oracle managed resources will be created by customers. If no value is specified false is the default.
      * 
      */
-    @Export(name="selfManageResources", type=Boolean.class, parameters={})
+    @Export(name="selfManageResources", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> selfManageResources;
 
     /**
@@ -108,7 +108,7 @@ public class CloudGuardConfiguration extends com.pulumi.resources.CustomResource
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="status", type=String.class, parameters={})
+    @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**

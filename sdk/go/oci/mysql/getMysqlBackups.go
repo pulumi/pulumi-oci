@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Mysql Backups in Oracle Cloud Infrastructure MySQL Database service.
@@ -139,6 +140,12 @@ func (o GetMysqlBackupsResultOutput) ToGetMysqlBackupsResultOutput() GetMysqlBac
 
 func (o GetMysqlBackupsResultOutput) ToGetMysqlBackupsResultOutputWithContext(ctx context.Context) GetMysqlBackupsResultOutput {
 	return o
+}
+
+func (o GetMysqlBackupsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupsResult] {
+	return pulumix.Output[GetMysqlBackupsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMysqlBackupsResultOutput) BackupId() pulumi.StringPtrOutput {

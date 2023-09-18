@@ -79,7 +79,7 @@ public class DrPlanExecution extends com.pulumi.resources.CustomResource {
      * The OCID of the compartment containing this DR Plan Execution.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -93,7 +93,7 @@ public class DrPlanExecution extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -107,7 +107,7 @@ public class DrPlanExecution extends com.pulumi.resources.CustomResource {
      * (Updatable) The display name of the DR Plan Execution.  Example: `Execution - EBS Switchover PHX to IAD`
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -121,7 +121,7 @@ public class DrPlanExecution extends com.pulumi.resources.CustomResource {
      * The OCID of the DR Protection Group to which this DR Plan Execution belongs.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
      * 
      */
-    @Export(name="drProtectionGroupId", type=String.class, parameters={})
+    @Export(name="drProtectionGroupId", refs={String.class}, tree="[0]")
     private Output<String> drProtectionGroupId;
 
     /**
@@ -135,7 +135,7 @@ public class DrPlanExecution extends com.pulumi.resources.CustomResource {
      * The total duration in seconds taken to complete step execution.  Example: `35`
      * 
      */
-    @Export(name="executionDurationInSec", type=Integer.class, parameters={})
+    @Export(name="executionDurationInSec", refs={Integer.class}, tree="[0]")
     private Output<Integer> executionDurationInSec;
 
     /**
@@ -149,7 +149,7 @@ public class DrPlanExecution extends com.pulumi.resources.CustomResource {
      * The options for a plan execution.
      * 
      */
-    @Export(name="executionOptions", type=DrPlanExecutionExecutionOptions.class, parameters={})
+    @Export(name="executionOptions", refs={DrPlanExecutionExecutionOptions.class}, tree="[0]")
     private Output<DrPlanExecutionExecutionOptions> executionOptions;
 
     /**
@@ -163,7 +163,7 @@ public class DrPlanExecution extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -177,7 +177,7 @@ public class DrPlanExecution extends com.pulumi.resources.CustomResource {
      * A list of groups executed in this DR Plan Execution.
      * 
      */
-    @Export(name="groupExecutions", type=List.class, parameters={DrPlanExecutionGroupExecution.class})
+    @Export(name="groupExecutions", refs={List.class,DrPlanExecutionGroupExecution.class}, tree="[0,1]")
     private Output<List<DrPlanExecutionGroupExecution>> groupExecutions;
 
     /**
@@ -191,7 +191,7 @@ public class DrPlanExecution extends com.pulumi.resources.CustomResource {
      * A message describing the DR Plan Execution&#39;s current state in more detail.  Example: `The DR Plan Execution [Execution - EBS Switchover PHX to IAD] is currently in progress`
      * 
      */
-    @Export(name="lifeCycleDetails", type=String.class, parameters={})
+    @Export(name="lifeCycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifeCycleDetails;
 
     /**
@@ -205,7 +205,7 @@ public class DrPlanExecution extends com.pulumi.resources.CustomResource {
      * Information about an Object Storage log location for a DR Protection Group.
      * 
      */
-    @Export(name="logLocations", type=List.class, parameters={DrPlanExecutionLogLocation.class})
+    @Export(name="logLocations", refs={List.class,DrPlanExecutionLogLocation.class}, tree="[0,1]")
     private Output<List<DrPlanExecutionLogLocation>> logLocations;
 
     /**
@@ -219,7 +219,7 @@ public class DrPlanExecution extends com.pulumi.resources.CustomResource {
      * The OCID of peer (remote) DR Protection Group associated with this plan&#39;s DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.phx.&amp;lt;unique_id&amp;gt;`
      * 
      */
-    @Export(name="peerDrProtectionGroupId", type=String.class, parameters={})
+    @Export(name="peerDrProtectionGroupId", refs={String.class}, tree="[0]")
     private Output<String> peerDrProtectionGroupId;
 
     /**
@@ -233,7 +233,7 @@ public class DrPlanExecution extends com.pulumi.resources.CustomResource {
      * The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
      * 
      */
-    @Export(name="peerRegion", type=String.class, parameters={})
+    @Export(name="peerRegion", refs={String.class}, tree="[0]")
     private Output<String> peerRegion;
 
     /**
@@ -247,7 +247,7 @@ public class DrPlanExecution extends com.pulumi.resources.CustomResource {
      * The type of the plan execution.
      * 
      */
-    @Export(name="planExecutionType", type=String.class, parameters={})
+    @Export(name="planExecutionType", refs={String.class}, tree="[0]")
     private Output<String> planExecutionType;
 
     /**
@@ -264,7 +264,7 @@ public class DrPlanExecution extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="planId", type=String.class, parameters={})
+    @Export(name="planId", refs={String.class}, tree="[0]")
     private Output<String> planId;
 
     /**
@@ -281,7 +281,7 @@ public class DrPlanExecution extends com.pulumi.resources.CustomResource {
      * The current state of the DR Plan Execution.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -295,7 +295,7 @@ public class DrPlanExecution extends com.pulumi.resources.CustomResource {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -309,7 +309,7 @@ public class DrPlanExecution extends com.pulumi.resources.CustomResource {
      * The date and time at which DR Plan Execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -323,7 +323,7 @@ public class DrPlanExecution extends com.pulumi.resources.CustomResource {
      * The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
-    @Export(name="timeEnded", type=String.class, parameters={})
+    @Export(name="timeEnded", refs={String.class}, tree="[0]")
     private Output<String> timeEnded;
 
     /**
@@ -337,7 +337,7 @@ public class DrPlanExecution extends com.pulumi.resources.CustomResource {
      * The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
-    @Export(name="timeStarted", type=String.class, parameters={})
+    @Export(name="timeStarted", refs={String.class}, tree="[0]")
     private Output<String> timeStarted;
 
     /**
@@ -351,7 +351,7 @@ public class DrPlanExecution extends com.pulumi.resources.CustomResource {
      * The time at which DR Plan Execution was last updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

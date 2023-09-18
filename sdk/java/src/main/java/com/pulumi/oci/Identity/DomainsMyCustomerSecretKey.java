@@ -98,7 +98,7 @@ public class DomainsMyCustomerSecretKey extends com.pulumi.resources.CustomResou
      * * returned: default
      * 
      */
-    @Export(name="accessKey", type=String.class, parameters={})
+    @Export(name="accessKey", refs={String.class}, tree="[0]")
     private Output<String> accessKey;
 
     /**
@@ -119,7 +119,7 @@ public class DomainsMyCustomerSecretKey extends com.pulumi.resources.CustomResou
      * The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      * 
      */
-    @Export(name="authorization", type=String.class, parameters={})
+    @Export(name="authorization", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> authorization;
 
     /**
@@ -143,7 +143,7 @@ public class DomainsMyCustomerSecretKey extends com.pulumi.resources.CustomResou
      * * uniqueness: none
      * 
      */
-    @Export(name="compartmentOcid", type=String.class, parameters={})
+    @Export(name="compartmentOcid", refs={String.class}, tree="[0]")
     private Output<String> compartmentOcid;
 
     /**
@@ -177,7 +177,7 @@ public class DomainsMyCustomerSecretKey extends com.pulumi.resources.CustomResou
      * * uniqueness: none
      * 
      */
-    @Export(name="deleteInProgress", type=Boolean.class, parameters={})
+    @Export(name="deleteInProgress", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> deleteInProgress;
 
     /**
@@ -208,7 +208,7 @@ public class DomainsMyCustomerSecretKey extends com.pulumi.resources.CustomResou
      * * returned: default
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -236,7 +236,7 @@ public class DomainsMyCustomerSecretKey extends com.pulumi.resources.CustomResou
      * * returned: default
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -267,7 +267,7 @@ public class DomainsMyCustomerSecretKey extends com.pulumi.resources.CustomResou
      * * uniqueness: none
      * 
      */
-    @Export(name="domainOcid", type=String.class, parameters={})
+    @Export(name="domainOcid", refs={String.class}, tree="[0]")
     private Output<String> domainOcid;
 
     /**
@@ -303,7 +303,7 @@ public class DomainsMyCustomerSecretKey extends com.pulumi.resources.CustomResou
      * * uniqueness: none
      * 
      */
-    @Export(name="expiresOn", type=String.class, parameters={})
+    @Export(name="expiresOn", refs={String.class}, tree="[0]")
     private Output<String> expiresOn;
 
     /**
@@ -337,7 +337,7 @@ public class DomainsMyCustomerSecretKey extends com.pulumi.resources.CustomResou
      * * type: complex
      * 
      */
-    @Export(name="idcsCreatedBies", type=List.class, parameters={DomainsMyCustomerSecretKeyIdcsCreatedBy.class})
+    @Export(name="idcsCreatedBies", refs={List.class,DomainsMyCustomerSecretKeyIdcsCreatedBy.class}, tree="[0,1]")
     private Output<List<DomainsMyCustomerSecretKeyIdcsCreatedBy>> idcsCreatedBies;
 
     /**
@@ -359,7 +359,7 @@ public class DomainsMyCustomerSecretKey extends com.pulumi.resources.CustomResou
      * The basic endpoint for the identity domain
      * 
      */
-    @Export(name="idcsEndpoint", type=String.class, parameters={})
+    @Export(name="idcsEndpoint", refs={String.class}, tree="[0]")
     private Output<String> idcsEndpoint;
 
     /**
@@ -381,7 +381,7 @@ public class DomainsMyCustomerSecretKey extends com.pulumi.resources.CustomResou
      * * type: complex
      * 
      */
-    @Export(name="idcsLastModifiedBies", type=List.class, parameters={DomainsMyCustomerSecretKeyIdcsLastModifiedBy.class})
+    @Export(name="idcsLastModifiedBies", refs={List.class,DomainsMyCustomerSecretKeyIdcsLastModifiedBy.class}, tree="[0,1]")
     private Output<List<DomainsMyCustomerSecretKeyIdcsLastModifiedBy>> idcsLastModifiedBies;
 
     /**
@@ -413,7 +413,7 @@ public class DomainsMyCustomerSecretKey extends com.pulumi.resources.CustomResou
      * * uniqueness: none
      * 
      */
-    @Export(name="idcsLastUpgradedInRelease", type=String.class, parameters={})
+    @Export(name="idcsLastUpgradedInRelease", refs={String.class}, tree="[0]")
     private Output<String> idcsLastUpgradedInRelease;
 
     /**
@@ -446,7 +446,7 @@ public class DomainsMyCustomerSecretKey extends com.pulumi.resources.CustomResou
      * * uniqueness: none
      * 
      */
-    @Export(name="idcsPreventedOperations", type=List.class, parameters={String.class})
+    @Export(name="idcsPreventedOperations", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> idcsPreventedOperations;
 
     /**
@@ -479,7 +479,7 @@ public class DomainsMyCustomerSecretKey extends com.pulumi.resources.CustomResou
      * * type: complex
      * 
      */
-    @Export(name="metas", type=List.class, parameters={DomainsMyCustomerSecretKeyMeta.class})
+    @Export(name="metas", refs={List.class,DomainsMyCustomerSecretKeyMeta.class}, tree="[0,1]")
     private Output<List<DomainsMyCustomerSecretKeyMeta>> metas;
 
     /**
@@ -513,7 +513,7 @@ public class DomainsMyCustomerSecretKey extends com.pulumi.resources.CustomResou
      * * uniqueness: none
      * 
      */
-    @Export(name="ocid", type=String.class, parameters={})
+    @Export(name="ocid", refs={String.class}, tree="[0]")
     private Output<String> ocid;
 
     /**
@@ -537,7 +537,7 @@ public class DomainsMyCustomerSecretKey extends com.pulumi.resources.CustomResou
      * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      * 
      */
-    @Export(name="resourceTypeSchemaVersion", type=String.class, parameters={})
+    @Export(name="resourceTypeSchemaVersion", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> resourceTypeSchemaVersion;
 
     /**
@@ -561,7 +561,7 @@ public class DomainsMyCustomerSecretKey extends com.pulumi.resources.CustomResou
      * * uniqueness: none
      * 
      */
-    @Export(name="schemas", type=List.class, parameters={String.class})
+    @Export(name="schemas", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> schemas;
 
     /**
@@ -597,7 +597,7 @@ public class DomainsMyCustomerSecretKey extends com.pulumi.resources.CustomResou
      * * uniqueness: none
      * 
      */
-    @Export(name="status", type=String.class, parameters={})
+    @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
@@ -633,7 +633,7 @@ public class DomainsMyCustomerSecretKey extends com.pulumi.resources.CustomResou
      * * uniqueness: none
      * 
      */
-    @Export(name="tags", type=List.class, parameters={DomainsMyCustomerSecretKeyTag.class})
+    @Export(name="tags", refs={List.class,DomainsMyCustomerSecretKeyTag.class}, tree="[0,1]")
     private Output<List<DomainsMyCustomerSecretKeyTag>> tags;
 
     /**
@@ -667,7 +667,7 @@ public class DomainsMyCustomerSecretKey extends com.pulumi.resources.CustomResou
      * * uniqueness: none
      * 
      */
-    @Export(name="tenancyOcid", type=String.class, parameters={})
+    @Export(name="tenancyOcid", refs={String.class}, tree="[0]")
     private Output<String> tenancyOcid;
 
     /**
@@ -701,7 +701,7 @@ public class DomainsMyCustomerSecretKey extends com.pulumi.resources.CustomResou
      * * uniqueness: none
      * 
      */
-    @Export(name="user", type=DomainsMyCustomerSecretKeyUser.class, parameters={})
+    @Export(name="user", refs={DomainsMyCustomerSecretKeyUser.class}, tree="[0]")
     private Output<DomainsMyCustomerSecretKeyUser> user;
 
     /**

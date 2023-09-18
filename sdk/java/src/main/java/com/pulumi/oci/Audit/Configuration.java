@@ -59,7 +59,7 @@ public class Configuration extends com.pulumi.resources.CustomResource {
      * ID of the root compartment (tenancy)
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -76,7 +76,7 @@ public class Configuration extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="retentionPeriodDays", type=Integer.class, parameters={})
+    @Export(name="retentionPeriodDays", refs={Integer.class}, tree="[0]")
     private Output<Integer> retentionPeriodDays;
 
     /**

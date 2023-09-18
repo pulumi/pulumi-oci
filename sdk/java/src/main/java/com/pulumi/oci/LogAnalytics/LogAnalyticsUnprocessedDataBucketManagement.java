@@ -63,7 +63,7 @@ public class LogAnalyticsUnprocessedDataBucketManagement extends com.pulumi.reso
      * Name of the Object Storage bucket.
      * 
      */
-    @Export(name="bucket", type=String.class, parameters={})
+    @Export(name="bucket", refs={String.class}, tree="[0]")
     private Output<String> bucket;
 
     /**
@@ -77,7 +77,7 @@ public class LogAnalyticsUnprocessedDataBucketManagement extends com.pulumi.reso
      * Flag that specifies if this configuration is enabled or not.
      * 
      */
-    @Export(name="isEnabled", type=Boolean.class, parameters={})
+    @Export(name="isEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isEnabled;
 
     /**
@@ -94,7 +94,7 @@ public class LogAnalyticsUnprocessedDataBucketManagement extends com.pulumi.reso
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="namespace", type=String.class, parameters={})
+    @Export(name="namespace", refs={String.class}, tree="[0]")
     private Output<String> namespace;
 
     /**
@@ -111,7 +111,7 @@ public class LogAnalyticsUnprocessedDataBucketManagement extends com.pulumi.reso
      * The time when this record is created. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -125,7 +125,7 @@ public class LogAnalyticsUnprocessedDataBucketManagement extends com.pulumi.reso
      * The latest time when this record is updated. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

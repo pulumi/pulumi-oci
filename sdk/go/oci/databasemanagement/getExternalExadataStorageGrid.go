@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific External Exadata Storage Grid resource in Oracle Cloud Infrastructure Database Management service.
@@ -125,6 +126,12 @@ func (o GetExternalExadataStorageGridResultOutput) ToGetExternalExadataStorageGr
 
 func (o GetExternalExadataStorageGridResultOutput) ToGetExternalExadataStorageGridResultOutputWithContext(ctx context.Context) GetExternalExadataStorageGridResultOutput {
 	return o
+}
+
+func (o GetExternalExadataStorageGridResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetExternalExadataStorageGridResult] {
+	return pulumix.Output[GetExternalExadataStorageGridResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`

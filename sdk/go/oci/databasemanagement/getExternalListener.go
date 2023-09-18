@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific External Listener resource in Oracle Cloud Infrastructure Database Management service.
@@ -147,6 +148,12 @@ func (o LookupExternalListenerResultOutput) ToLookupExternalListenerResultOutput
 
 func (o LookupExternalListenerResultOutput) ToLookupExternalListenerResultOutputWithContext(ctx context.Context) LookupExternalListenerResultOutput {
 	return o
+}
+
+func (o LookupExternalListenerResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupExternalListenerResult] {
+	return pulumix.Output[LookupExternalListenerResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The additional details of the external listener defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`

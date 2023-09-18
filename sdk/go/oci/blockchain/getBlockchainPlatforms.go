@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Blockchain Platforms in Oracle Cloud Infrastructure Blockchain service.
@@ -119,6 +120,12 @@ func (o GetBlockchainPlatformsResultOutput) ToGetBlockchainPlatformsResultOutput
 
 func (o GetBlockchainPlatformsResultOutput) ToGetBlockchainPlatformsResultOutputWithContext(ctx context.Context) GetBlockchainPlatformsResultOutput {
 	return o
+}
+
+func (o GetBlockchainPlatformsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetBlockchainPlatformsResult] {
+	return pulumix.Output[GetBlockchainPlatformsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The list of blockchain_platform_collection.

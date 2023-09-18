@@ -76,7 +76,7 @@ public class MediaWorkflowJob extends com.pulumi.resources.CustomResource {
      * (Updatable) ID of the compartment in which the job should be created.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -90,7 +90,7 @@ public class MediaWorkflowJob extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -104,7 +104,7 @@ public class MediaWorkflowJob extends com.pulumi.resources.CustomResource {
      * (Updatable) Name of the Media Workflow Job. Does not have to be unique. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -118,7 +118,7 @@ public class MediaWorkflowJob extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -132,7 +132,7 @@ public class MediaWorkflowJob extends com.pulumi.resources.CustomResource {
      * The lifecycle details of MediaWorkflowJob task.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -146,7 +146,7 @@ public class MediaWorkflowJob extends com.pulumi.resources.CustomResource {
      * Configurations to be applied to this run of the workflow.
      * 
      */
-    @Export(name="mediaWorkflowConfigurationIds", type=List.class, parameters={String.class})
+    @Export(name="mediaWorkflowConfigurationIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> mediaWorkflowConfigurationIds;
 
     /**
@@ -160,7 +160,7 @@ public class MediaWorkflowJob extends com.pulumi.resources.CustomResource {
      * OCID of the MediaWorkflow that should be run.
      * 
      */
-    @Export(name="mediaWorkflowId", type=String.class, parameters={})
+    @Export(name="mediaWorkflowId", refs={String.class}, tree="[0]")
     private Output<String> mediaWorkflowId;
 
     /**
@@ -174,7 +174,7 @@ public class MediaWorkflowJob extends com.pulumi.resources.CustomResource {
      * Name of the system MediaWorkflow that should be run.
      * 
      */
-    @Export(name="mediaWorkflowName", type=String.class, parameters={})
+    @Export(name="mediaWorkflowName", refs={String.class}, tree="[0]")
     private Output<String> mediaWorkflowName;
 
     /**
@@ -188,7 +188,7 @@ public class MediaWorkflowJob extends com.pulumi.resources.CustomResource {
      * A list of JobOutput for the workflowJob.
      * 
      */
-    @Export(name="outputs", type=List.class, parameters={MediaWorkflowJobOutput.class})
+    @Export(name="outputs", refs={List.class,MediaWorkflowJobOutput.class}, tree="[0,1]")
     private Output<List<MediaWorkflowJobOutput>> outputs;
 
     /**
@@ -202,7 +202,7 @@ public class MediaWorkflowJob extends com.pulumi.resources.CustomResource {
      * Parameters that override parameters specified in MediaWorkflowTaskDeclarations, the MediaWorkflow, the MediaWorkflow&#39;s MediaWorkflowConfigurations and the MediaWorkflowConfigurations of this MediaWorkflowJob. The parameters are given as JSON. The top level and 2nd level elements must be JSON objects (vs arrays, scalars, etc). The top level keys refer to a task&#39;s key and the 2nd level keys refer to a parameter&#39;s name.
      * 
      */
-    @Export(name="parameters", type=String.class, parameters={})
+    @Export(name="parameters", refs={String.class}, tree="[0]")
     private Output<String> parameters;
 
     /**
@@ -216,7 +216,7 @@ public class MediaWorkflowJob extends com.pulumi.resources.CustomResource {
      * A JSON representation of the job as it will be run by the system. All the task declarations, configurations and parameters are merged. Parameter values are all fully resolved.
      * 
      */
-    @Export(name="runnable", type=String.class, parameters={})
+    @Export(name="runnable", refs={String.class}, tree="[0]")
     private Output<String> runnable;
 
     /**
@@ -230,7 +230,7 @@ public class MediaWorkflowJob extends com.pulumi.resources.CustomResource {
      * The current state of the MediaWorkflowJob task.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -244,7 +244,7 @@ public class MediaWorkflowJob extends com.pulumi.resources.CustomResource {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -258,7 +258,7 @@ public class MediaWorkflowJob extends com.pulumi.resources.CustomResource {
      * Status of each task.
      * 
      */
-    @Export(name="taskLifecycleStates", type=List.class, parameters={MediaWorkflowJobTaskLifecycleState.class})
+    @Export(name="taskLifecycleStates", refs={List.class,MediaWorkflowJobTaskLifecycleState.class}, tree="[0,1]")
     private Output<List<MediaWorkflowJobTaskLifecycleState>> taskLifecycleStates;
 
     /**
@@ -272,7 +272,7 @@ public class MediaWorkflowJob extends com.pulumi.resources.CustomResource {
      * Creation time of the job. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -286,7 +286,7 @@ public class MediaWorkflowJob extends com.pulumi.resources.CustomResource {
      * Time when the job finished. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeEnded", type=String.class, parameters={})
+    @Export(name="timeEnded", refs={String.class}, tree="[0]")
     private Output<String> timeEnded;
 
     /**
@@ -300,7 +300,7 @@ public class MediaWorkflowJob extends com.pulumi.resources.CustomResource {
      * Time when the job started to execute. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeStarted", type=String.class, parameters={})
+    @Export(name="timeStarted", refs={String.class}, tree="[0]")
     private Output<String> timeStarted;
 
     /**
@@ -314,7 +314,7 @@ public class MediaWorkflowJob extends com.pulumi.resources.CustomResource {
      * Updated time of the job. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -331,7 +331,7 @@ public class MediaWorkflowJob extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="workflowIdentifierType", type=String.class, parameters={})
+    @Export(name="workflowIdentifierType", refs={String.class}, tree="[0]")
     private Output<String> workflowIdentifierType;
 
     /**

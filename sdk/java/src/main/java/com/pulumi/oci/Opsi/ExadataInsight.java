@@ -111,7 +111,7 @@ public class ExadataInsight extends com.pulumi.resources.CustomResource {
      * (Updatable) Compartment Identifier of database
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -125,7 +125,7 @@ public class ExadataInsight extends com.pulumi.resources.CustomResource {
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -139,7 +139,7 @@ public class ExadataInsight extends com.pulumi.resources.CustomResource {
      * OPSI Enterprise Manager Bridge OCID
      * 
      */
-    @Export(name="enterpriseManagerBridgeId", type=String.class, parameters={})
+    @Export(name="enterpriseManagerBridgeId", refs={String.class}, tree="[0]")
     private Output<String> enterpriseManagerBridgeId;
 
     /**
@@ -153,7 +153,7 @@ public class ExadataInsight extends com.pulumi.resources.CustomResource {
      * Enterprise Manager Entity Display Name
      * 
      */
-    @Export(name="enterpriseManagerEntityDisplayName", type=String.class, parameters={})
+    @Export(name="enterpriseManagerEntityDisplayName", refs={String.class}, tree="[0]")
     private Output<String> enterpriseManagerEntityDisplayName;
 
     /**
@@ -167,7 +167,7 @@ public class ExadataInsight extends com.pulumi.resources.CustomResource {
      * Enterprise Manager Entity Unique Identifier
      * 
      */
-    @Export(name="enterpriseManagerEntityIdentifier", type=String.class, parameters={})
+    @Export(name="enterpriseManagerEntityIdentifier", refs={String.class}, tree="[0]")
     private Output<String> enterpriseManagerEntityIdentifier;
 
     /**
@@ -181,7 +181,7 @@ public class ExadataInsight extends com.pulumi.resources.CustomResource {
      * Enterprise Manager Entity Name
      * 
      */
-    @Export(name="enterpriseManagerEntityName", type=String.class, parameters={})
+    @Export(name="enterpriseManagerEntityName", refs={String.class}, tree="[0]")
     private Output<String> enterpriseManagerEntityName;
 
     /**
@@ -195,7 +195,7 @@ public class ExadataInsight extends com.pulumi.resources.CustomResource {
      * Enterprise Manager Entity Type
      * 
      */
-    @Export(name="enterpriseManagerEntityType", type=String.class, parameters={})
+    @Export(name="enterpriseManagerEntityType", refs={String.class}, tree="[0]")
     private Output<String> enterpriseManagerEntityType;
 
     /**
@@ -209,7 +209,7 @@ public class ExadataInsight extends com.pulumi.resources.CustomResource {
      * Enterprise Manager Unique Identifier
      * 
      */
-    @Export(name="enterpriseManagerIdentifier", type=String.class, parameters={})
+    @Export(name="enterpriseManagerIdentifier", refs={String.class}, tree="[0]")
     private Output<String> enterpriseManagerIdentifier;
 
     /**
@@ -223,7 +223,7 @@ public class ExadataInsight extends com.pulumi.resources.CustomResource {
      * Source of the database entity.
      * 
      */
-    @Export(name="entitySource", type=String.class, parameters={})
+    @Export(name="entitySource", refs={String.class}, tree="[0]")
     private Output<String> entitySource;
 
     /**
@@ -237,7 +237,7 @@ public class ExadataInsight extends com.pulumi.resources.CustomResource {
      * The user-friendly name for the Exadata system. The name does not have to be unique.
      * 
      */
-    @Export(name="exadataDisplayName", type=String.class, parameters={})
+    @Export(name="exadataDisplayName", refs={String.class}, tree="[0]")
     private Output<String> exadataDisplayName;
 
     /**
@@ -247,13 +247,13 @@ public class ExadataInsight extends com.pulumi.resources.CustomResource {
     public Output<String> exadataDisplayName() {
         return this.exadataDisplayName;
     }
-    @Export(name="exadataInfraId", type=String.class, parameters={})
+    @Export(name="exadataInfraId", refs={String.class}, tree="[0]")
     private Output<String> exadataInfraId;
 
     public Output<String> exadataInfraId() {
         return this.exadataInfraId;
     }
-    @Export(name="exadataInfraResourceType", type=String.class, parameters={})
+    @Export(name="exadataInfraResourceType", refs={String.class}, tree="[0]")
     private Output<String> exadataInfraResourceType;
 
     public Output<String> exadataInfraResourceType() {
@@ -263,7 +263,7 @@ public class ExadataInsight extends com.pulumi.resources.CustomResource {
      * The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
      * 
      */
-    @Export(name="exadataName", type=String.class, parameters={})
+    @Export(name="exadataName", refs={String.class}, tree="[0]")
     private Output<String> exadataName;
 
     /**
@@ -277,7 +277,7 @@ public class ExadataInsight extends com.pulumi.resources.CustomResource {
      * Exadata rack type.
      * 
      */
-    @Export(name="exadataRackType", type=String.class, parameters={})
+    @Export(name="exadataRackType", refs={String.class}, tree="[0]")
     private Output<String> exadataRackType;
 
     /**
@@ -287,7 +287,7 @@ public class ExadataInsight extends com.pulumi.resources.CustomResource {
     public Output<String> exadataRackType() {
         return this.exadataRackType;
     }
-    @Export(name="exadataShape", type=String.class, parameters={})
+    @Export(name="exadataShape", refs={String.class}, tree="[0]")
     private Output<String> exadataShape;
 
     public Output<String> exadataShape() {
@@ -297,7 +297,7 @@ public class ExadataInsight extends com.pulumi.resources.CustomResource {
      * Operations Insights internal representation of the the Exadata system type.
      * 
      */
-    @Export(name="exadataType", type=String.class, parameters={})
+    @Export(name="exadataType", refs={String.class}, tree="[0]")
     private Output<String> exadataType;
 
     /**
@@ -311,7 +311,7 @@ public class ExadataInsight extends com.pulumi.resources.CustomResource {
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -325,7 +325,7 @@ public class ExadataInsight extends com.pulumi.resources.CustomResource {
      * (Updatable) Set to true to enable automatic enablement and disablement of related targets from Enterprise Manager. New resources (e.g. Database Insights) will be placed in the same compartment as the related Exadata Insight.
      * 
      */
-    @Export(name="isAutoSyncEnabled", type=Boolean.class, parameters={})
+    @Export(name="isAutoSyncEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isAutoSyncEnabled;
 
     /**
@@ -339,7 +339,7 @@ public class ExadataInsight extends com.pulumi.resources.CustomResource {
      * true if virtualization is used in the Exadata system
      * 
      */
-    @Export(name="isVirtualizedExadata", type=Boolean.class, parameters={})
+    @Export(name="isVirtualizedExadata", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isVirtualizedExadata;
 
     /**
@@ -353,7 +353,7 @@ public class ExadataInsight extends com.pulumi.resources.CustomResource {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -363,7 +363,7 @@ public class ExadataInsight extends com.pulumi.resources.CustomResource {
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
     }
-    @Export(name="memberVmClusterDetails", type=List.class, parameters={ExadataInsightMemberVmClusterDetail.class})
+    @Export(name="memberVmClusterDetails", refs={List.class,ExadataInsightMemberVmClusterDetail.class}, tree="[0,1]")
     private Output<List<ExadataInsightMemberVmClusterDetail>> memberVmClusterDetails;
 
     public Output<List<ExadataInsightMemberVmClusterDetail>> memberVmClusterDetails() {
@@ -373,7 +373,7 @@ public class ExadataInsight extends com.pulumi.resources.CustomResource {
      * The current state of the Exadata insight.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -390,7 +390,7 @@ public class ExadataInsight extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="status", type=String.class, parameters={})
+    @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
@@ -407,7 +407,7 @@ public class ExadataInsight extends com.pulumi.resources.CustomResource {
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -421,7 +421,7 @@ public class ExadataInsight extends com.pulumi.resources.CustomResource {
      * The time the the Exadata insight was first enabled. An RFC3339 formatted datetime string
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -435,7 +435,7 @@ public class ExadataInsight extends com.pulumi.resources.CustomResource {
      * The time the Exadata insight was updated. An RFC3339 formatted datetime string
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

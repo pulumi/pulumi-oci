@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Tag Default resource in Oracle Cloud Infrastructure Identity service.
@@ -117,6 +118,12 @@ func (o LookupTagDefaultResultOutput) ToLookupTagDefaultResultOutput() LookupTag
 
 func (o LookupTagDefaultResultOutput) ToLookupTagDefaultResultOutputWithContext(ctx context.Context) LookupTagDefaultResultOutput {
 	return o
+}
+
+func (o LookupTagDefaultResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupTagDefaultResult] {
+	return pulumix.Output[LookupTagDefaultResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the compartment. The tag default applies to all new resources that get created in the compartment. Resources that existed before the tag default was created are not tagged.

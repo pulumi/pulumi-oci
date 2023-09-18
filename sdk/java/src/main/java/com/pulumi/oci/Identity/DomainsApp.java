@@ -482,7 +482,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="accessTokenExpiry", type=Integer.class, parameters={})
+    @Export(name="accessTokenExpiry", refs={Integer.class}, tree="[0]")
     private Output<Integer> accessTokenExpiry;
 
     /**
@@ -516,7 +516,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="accounts", type=List.class, parameters={DomainsAppAccount.class})
+    @Export(name="accounts", refs={List.class,DomainsAppAccount.class}, tree="[0,1]")
     private Output<List<DomainsAppAccount>> accounts;
 
     /**
@@ -549,7 +549,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="active", type=Boolean.class, parameters={})
+    @Export(name="active", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> active;
 
     /**
@@ -581,7 +581,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    @Export(name="adminRoles", type=List.class, parameters={DomainsAppAdminRole.class})
+    @Export(name="adminRoles", refs={List.class,DomainsAppAdminRole.class}, tree="[0,1]")
     private Output<List<DomainsAppAdminRole>> adminRoles;
 
     /**
@@ -615,7 +615,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="aliasApps", type=List.class, parameters={DomainsAppAliasApp.class})
+    @Export(name="aliasApps", refs={List.class,DomainsAppAliasApp.class}, tree="[0,1]")
     private Output<List<DomainsAppAliasApp>> aliasApps;
 
     /**
@@ -649,7 +649,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="allUrlSchemesAllowed", type=Boolean.class, parameters={})
+    @Export(name="allUrlSchemesAllowed", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> allUrlSchemesAllowed;
 
     /**
@@ -681,7 +681,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="allowAccessControl", type=Boolean.class, parameters={})
+    @Export(name="allowAccessControl", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> allowAccessControl;
 
     /**
@@ -713,7 +713,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="allowOffline", type=Boolean.class, parameters={})
+    @Export(name="allowOffline", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> allowOffline;
 
     /**
@@ -746,7 +746,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="allowedGrants", type=List.class, parameters={String.class})
+    @Export(name="allowedGrants", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> allowedGrants;
 
     /**
@@ -780,7 +780,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="allowedOperations", type=List.class, parameters={String.class})
+    @Export(name="allowedOperations", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> allowedOperations;
 
     /**
@@ -815,7 +815,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="allowedScopes", type=List.class, parameters={DomainsAppAllowedScope.class})
+    @Export(name="allowedScopes", refs={List.class,DomainsAppAllowedScope.class}, tree="[0,1]")
     private Output<List<DomainsAppAllowedScope>> allowedScopes;
 
     /**
@@ -852,7 +852,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="allowedTags", type=List.class, parameters={DomainsAppAllowedTag.class})
+    @Export(name="allowedTags", refs={List.class,DomainsAppAllowedTag.class}, tree="[0,1]")
     private Output<List<DomainsAppAllowedTag>> allowedTags;
 
     /**
@@ -887,7 +887,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="appIcon", type=String.class, parameters={})
+    @Export(name="appIcon", refs={String.class}, tree="[0]")
     private Output<String> appIcon;
 
     /**
@@ -918,7 +918,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    @Export(name="appSignonPolicy", type=DomainsAppAppSignonPolicy.class, parameters={})
+    @Export(name="appSignonPolicy", refs={DomainsAppAppSignonPolicy.class}, tree="[0]")
     private Output<DomainsAppAppSignonPolicy> appSignonPolicy;
 
     /**
@@ -949,7 +949,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="appThumbnail", type=String.class, parameters={})
+    @Export(name="appThumbnail", refs={String.class}, tree="[0]")
     private Output<String> appThumbnail;
 
     /**
@@ -982,7 +982,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    @Export(name="appsNetworkPerimeters", type=List.class, parameters={DomainsAppAppsNetworkPerimeter.class})
+    @Export(name="appsNetworkPerimeters", refs={List.class,DomainsAppAppsNetworkPerimeter.class}, tree="[0,1]")
     private Output<List<DomainsAppAppsNetworkPerimeter>> appsNetworkPerimeters;
 
     /**
@@ -1016,7 +1016,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    @Export(name="asOpcService", type=DomainsAppAsOpcService.class, parameters={})
+    @Export(name="asOpcService", refs={DomainsAppAsOpcService.class}, tree="[0]")
     private Output<DomainsAppAsOpcService> asOpcService;
 
     /**
@@ -1050,7 +1050,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="attrRenderingMetadatas", type=List.class, parameters={DomainsAppAttrRenderingMetadata.class})
+    @Export(name="attrRenderingMetadatas", refs={List.class,DomainsAppAttrRenderingMetadata.class}, tree="[0,1]")
     private Output<List<DomainsAppAttrRenderingMetadata>> attrRenderingMetadatas;
 
     /**
@@ -1074,7 +1074,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If &#39;attributes&#39; query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      * 
      */
-    @Export(name="attributeSets", type=List.class, parameters={String.class})
+    @Export(name="attributeSets", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> attributeSets;
 
     /**
@@ -1088,7 +1088,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      * 
      */
-    @Export(name="attributes", type=String.class, parameters={})
+    @Export(name="attributes", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> attributes;
 
     /**
@@ -1112,7 +1112,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="audience", type=String.class, parameters={})
+    @Export(name="audience", refs={String.class}, tree="[0]")
     private Output<String> audience;
 
     /**
@@ -1136,7 +1136,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      * 
      */
-    @Export(name="authorization", type=String.class, parameters={})
+    @Export(name="authorization", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> authorization;
 
     /**
@@ -1158,7 +1158,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    @Export(name="basedOnTemplate", type=DomainsAppBasedOnTemplate.class, parameters={})
+    @Export(name="basedOnTemplate", refs={DomainsAppBasedOnTemplate.class}, tree="[0]")
     private Output<DomainsAppBasedOnTemplate> basedOnTemplate;
 
     /**
@@ -1192,7 +1192,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="bypassConsent", type=Boolean.class, parameters={})
+    @Export(name="bypassConsent", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> bypassConsent;
 
     /**
@@ -1228,7 +1228,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="callbackServiceUrl", type=String.class, parameters={})
+    @Export(name="callbackServiceUrl", refs={String.class}, tree="[0]")
     private Output<String> callbackServiceUrl;
 
     /**
@@ -1263,7 +1263,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="certificates", type=List.class, parameters={DomainsAppCertificate.class})
+    @Export(name="certificates", refs={List.class,DomainsAppCertificate.class}, tree="[0,1]")
     private Output<List<DomainsAppCertificate>> certificates;
 
     /**
@@ -1300,7 +1300,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="clientIpChecking", type=String.class, parameters={})
+    @Export(name="clientIpChecking", refs={String.class}, tree="[0]")
     private Output<String> clientIpChecking;
 
     /**
@@ -1337,7 +1337,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="clientSecret", type=String.class, parameters={})
+    @Export(name="clientSecret", refs={String.class}, tree="[0]")
     private Output<String> clientSecret;
 
     /**
@@ -1372,7 +1372,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="clientType", type=String.class, parameters={})
+    @Export(name="clientType", refs={String.class}, tree="[0]")
     private Output<String> clientType;
 
     /**
@@ -1408,7 +1408,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="cloudControlProperties", type=List.class, parameters={DomainsAppCloudControlProperty.class})
+    @Export(name="cloudControlProperties", refs={List.class,DomainsAppCloudControlProperty.class}, tree="[0,1]")
     private Output<List<DomainsAppCloudControlProperty>> cloudControlProperties;
 
     /**
@@ -1444,7 +1444,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="compartmentOcid", type=String.class, parameters={})
+    @Export(name="compartmentOcid", refs={String.class}, tree="[0]")
     private Output<String> compartmentOcid;
 
     /**
@@ -1479,7 +1479,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="contactEmailAddress", type=String.class, parameters={})
+    @Export(name="contactEmailAddress", refs={String.class}, tree="[0]")
     private Output<String> contactEmailAddress;
 
     /**
@@ -1516,7 +1516,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="delegatedServiceNames", type=List.class, parameters={String.class})
+    @Export(name="delegatedServiceNames", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> delegatedServiceNames;
 
     /**
@@ -1552,7 +1552,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="deleteInProgress", type=Boolean.class, parameters={})
+    @Export(name="deleteInProgress", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> deleteInProgress;
 
     /**
@@ -1585,7 +1585,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -1619,7 +1619,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="disableKmsiTokenAuthentication", type=Boolean.class, parameters={})
+    @Export(name="disableKmsiTokenAuthentication", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> disableKmsiTokenAuthentication;
 
     /**
@@ -1654,7 +1654,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -1688,7 +1688,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="domainOcid", type=String.class, parameters={})
+    @Export(name="domainOcid", refs={String.class}, tree="[0]")
     private Output<String> domainOcid;
 
     /**
@@ -1725,7 +1725,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="editableAttributes", type=List.class, parameters={DomainsAppEditableAttribute.class})
+    @Export(name="editableAttributes", refs={List.class,DomainsAppEditableAttribute.class}, tree="[0,1]")
     private Output<List<DomainsAppEditableAttribute>> editableAttributes;
 
     /**
@@ -1762,7 +1762,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="errorPageUrl", type=String.class, parameters={})
+    @Export(name="errorPageUrl", refs={String.class}, tree="[0]")
     private Output<String> errorPageUrl;
 
     /**
@@ -1797,7 +1797,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="grantedAppRoles", type=List.class, parameters={DomainsAppGrantedAppRole.class})
+    @Export(name="grantedAppRoles", refs={List.class,DomainsAppGrantedAppRole.class}, tree="[0,1]")
     private Output<List<DomainsAppGrantedAppRole>> grantedAppRoles;
 
     /**
@@ -1832,7 +1832,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="grants", type=List.class, parameters={DomainsAppGrant.class})
+    @Export(name="grants", refs={List.class,DomainsAppGrant.class}, tree="[0,1]")
     private Output<List<DomainsAppGrant>> grants;
 
     /**
@@ -1868,7 +1868,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="hashedClientSecret", type=String.class, parameters={})
+    @Export(name="hashedClientSecret", refs={String.class}, tree="[0]")
     private Output<String> hashedClientSecret;
 
     /**
@@ -1905,7 +1905,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="homePageUrl", type=String.class, parameters={})
+    @Export(name="homePageUrl", refs={String.class}, tree="[0]")
     private Output<String> homePageUrl;
 
     /**
@@ -1939,7 +1939,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="icon", type=String.class, parameters={})
+    @Export(name="icon", refs={String.class}, tree="[0]")
     private Output<String> icon;
 
     /**
@@ -1974,7 +1974,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="idTokenEncAlgo", type=String.class, parameters={})
+    @Export(name="idTokenEncAlgo", refs={String.class}, tree="[0]")
     private Output<String> idTokenEncAlgo;
 
     /**
@@ -2008,7 +2008,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    @Export(name="idcsCreatedBies", type=List.class, parameters={DomainsAppIdcsCreatedBy.class})
+    @Export(name="idcsCreatedBies", refs={List.class,DomainsAppIdcsCreatedBy.class}, tree="[0,1]")
     private Output<List<DomainsAppIdcsCreatedBy>> idcsCreatedBies;
 
     /**
@@ -2030,7 +2030,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * The basic endpoint for the identity domain
      * 
      */
-    @Export(name="idcsEndpoint", type=String.class, parameters={})
+    @Export(name="idcsEndpoint", refs={String.class}, tree="[0]")
     private Output<String> idcsEndpoint;
 
     /**
@@ -2052,7 +2052,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    @Export(name="idcsLastModifiedBies", type=List.class, parameters={DomainsAppIdcsLastModifiedBy.class})
+    @Export(name="idcsLastModifiedBies", refs={List.class,DomainsAppIdcsLastModifiedBy.class}, tree="[0,1]")
     private Output<List<DomainsAppIdcsLastModifiedBy>> idcsLastModifiedBies;
 
     /**
@@ -2084,7 +2084,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="idcsLastUpgradedInRelease", type=String.class, parameters={})
+    @Export(name="idcsLastUpgradedInRelease", refs={String.class}, tree="[0]")
     private Output<String> idcsLastUpgradedInRelease;
 
     /**
@@ -2117,7 +2117,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="idcsPreventedOperations", type=List.class, parameters={String.class})
+    @Export(name="idcsPreventedOperations", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> idcsPreventedOperations;
 
     /**
@@ -2149,7 +2149,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    @Export(name="identityProviders", type=List.class, parameters={DomainsAppIdentityProvider.class})
+    @Export(name="identityProviders", refs={List.class,DomainsAppIdentityProvider.class}, tree="[0,1]")
     private Output<List<DomainsAppIdentityProvider>> identityProviders;
 
     /**
@@ -2182,7 +2182,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    @Export(name="idpPolicy", type=DomainsAppIdpPolicy.class, parameters={})
+    @Export(name="idpPolicy", refs={DomainsAppIdpPolicy.class}, tree="[0]")
     private Output<DomainsAppIdpPolicy> idpPolicy;
 
     /**
@@ -2215,7 +2215,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="infrastructure", type=Boolean.class, parameters={})
+    @Export(name="infrastructure", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> infrastructure;
 
     /**
@@ -2247,7 +2247,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="isAliasApp", type=Boolean.class, parameters={})
+    @Export(name="isAliasApp", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isAliasApp;
 
     /**
@@ -2279,7 +2279,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * type: boolean
      * 
      */
-    @Export(name="isDatabaseService", type=Boolean.class, parameters={})
+    @Export(name="isDatabaseService", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isDatabaseService;
 
     /**
@@ -2313,7 +2313,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="isEnterpriseApp", type=Boolean.class, parameters={})
+    @Export(name="isEnterpriseApp", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isEnterpriseApp;
 
     /**
@@ -2347,7 +2347,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="isFormFill", type=Boolean.class, parameters={})
+    @Export(name="isFormFill", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isFormFill;
 
     /**
@@ -2379,7 +2379,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="isKerberosRealm", type=Boolean.class, parameters={})
+    @Export(name="isKerberosRealm", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isKerberosRealm;
 
     /**
@@ -2411,7 +2411,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="isLoginTarget", type=Boolean.class, parameters={})
+    @Export(name="isLoginTarget", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isLoginTarget;
 
     /**
@@ -2443,7 +2443,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="isManagedApp", type=Boolean.class, parameters={})
+    @Export(name="isManagedApp", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isManagedApp;
 
     /**
@@ -2475,7 +2475,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="isMobileTarget", type=Boolean.class, parameters={})
+    @Export(name="isMobileTarget", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isMobileTarget;
 
     /**
@@ -2509,7 +2509,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="isMulticloudServiceApp", type=Boolean.class, parameters={})
+    @Export(name="isMulticloudServiceApp", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isMulticloudServiceApp;
 
     /**
@@ -2543,7 +2543,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="isOauthClient", type=Boolean.class, parameters={})
+    @Export(name="isOauthClient", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isOauthClient;
 
     /**
@@ -2575,7 +2575,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="isOauthResource", type=Boolean.class, parameters={})
+    @Export(name="isOauthResource", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isOauthResource;
 
     /**
@@ -2608,7 +2608,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="isObligationCapable", type=Boolean.class, parameters={})
+    @Export(name="isObligationCapable", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isObligationCapable;
 
     /**
@@ -2641,7 +2641,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="isOpcService", type=Boolean.class, parameters={})
+    @Export(name="isOpcService", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isOpcService;
 
     /**
@@ -2675,7 +2675,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="isRadiusApp", type=Boolean.class, parameters={})
+    @Export(name="isRadiusApp", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isRadiusApp;
 
     /**
@@ -2709,7 +2709,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="isSamlServiceProvider", type=Boolean.class, parameters={})
+    @Export(name="isSamlServiceProvider", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isSamlServiceProvider;
 
     /**
@@ -2741,7 +2741,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="isUnmanagedApp", type=Boolean.class, parameters={})
+    @Export(name="isUnmanagedApp", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isUnmanagedApp;
 
     /**
@@ -2773,7 +2773,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="isWebTierPolicy", type=Boolean.class, parameters={})
+    @Export(name="isWebTierPolicy", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isWebTierPolicy;
 
     /**
@@ -2805,7 +2805,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="landingPageUrl", type=String.class, parameters={})
+    @Export(name="landingPageUrl", refs={String.class}, tree="[0]")
     private Output<String> landingPageUrl;
 
     /**
@@ -2840,7 +2840,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="linkingCallbackUrl", type=String.class, parameters={})
+    @Export(name="linkingCallbackUrl", refs={String.class}, tree="[0]")
     private Output<String> linkingCallbackUrl;
 
     /**
@@ -2876,7 +2876,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="loginMechanism", type=String.class, parameters={})
+    @Export(name="loginMechanism", refs={String.class}, tree="[0]")
     private Output<String> loginMechanism;
 
     /**
@@ -2910,7 +2910,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="loginPageUrl", type=String.class, parameters={})
+    @Export(name="loginPageUrl", refs={String.class}, tree="[0]")
     private Output<String> loginPageUrl;
 
     /**
@@ -2946,7 +2946,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="logoutPageUrl", type=String.class, parameters={})
+    @Export(name="logoutPageUrl", refs={String.class}, tree="[0]")
     private Output<String> logoutPageUrl;
 
     /**
@@ -2982,7 +2982,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="logoutUri", type=String.class, parameters={})
+    @Export(name="logoutUri", refs={String.class}, tree="[0]")
     private Output<String> logoutUri;
 
     /**
@@ -3016,7 +3016,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    @Export(name="metas", type=List.class, parameters={DomainsAppMeta.class})
+    @Export(name="metas", refs={List.class,DomainsAppMeta.class}, tree="[0,1]")
     private Output<List<DomainsAppMeta>> metas;
 
     /**
@@ -3051,7 +3051,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="meterAsOpcService", type=Boolean.class, parameters={})
+    @Export(name="meterAsOpcService", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> meterAsOpcService;
 
     /**
@@ -3085,7 +3085,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="migrated", type=Boolean.class, parameters={})
+    @Export(name="migrated", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> migrated;
 
     /**
@@ -3121,7 +3121,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -3158,7 +3158,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: global
      * 
      */
-    @Export(name="ocid", type=String.class, parameters={})
+    @Export(name="ocid", refs={String.class}, tree="[0]")
     private Output<String> ocid;
 
     /**
@@ -3192,7 +3192,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="postLogoutRedirectUris", type=List.class, parameters={String.class})
+    @Export(name="postLogoutRedirectUris", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> postLogoutRedirectUris;
 
     /**
@@ -3227,7 +3227,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="privacyPolicyUrl", type=String.class, parameters={})
+    @Export(name="privacyPolicyUrl", refs={String.class}, tree="[0]")
     private Output<String> privacyPolicyUrl;
 
     /**
@@ -3263,7 +3263,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="productLogoUrl", type=String.class, parameters={})
+    @Export(name="productLogoUrl", refs={String.class}, tree="[0]")
     private Output<String> productLogoUrl;
 
     /**
@@ -3299,7 +3299,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="productName", type=String.class, parameters={})
+    @Export(name="productName", refs={String.class}, tree="[0]")
     private Output<String> productName;
 
     /**
@@ -3337,7 +3337,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="protectableSecondaryAudiences", type=List.class, parameters={DomainsAppProtectableSecondaryAudience.class})
+    @Export(name="protectableSecondaryAudiences", refs={List.class,DomainsAppProtectableSecondaryAudience.class}, tree="[0,1]")
     private Output<List<DomainsAppProtectableSecondaryAudience>> protectableSecondaryAudiences;
 
     /**
@@ -3374,7 +3374,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    @Export(name="radiusPolicy", type=DomainsAppRadiusPolicy.class, parameters={})
+    @Export(name="radiusPolicy", refs={DomainsAppRadiusPolicy.class}, tree="[0]")
     private Output<DomainsAppRadiusPolicy> radiusPolicy;
 
     /**
@@ -3407,7 +3407,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="readyToUpgrade", type=Boolean.class, parameters={})
+    @Export(name="readyToUpgrade", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> readyToUpgrade;
 
     /**
@@ -3440,7 +3440,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="redirectUris", type=List.class, parameters={String.class})
+    @Export(name="redirectUris", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> redirectUris;
 
     /**
@@ -3473,7 +3473,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="refreshTokenExpiry", type=Integer.class, parameters={})
+    @Export(name="refreshTokenExpiry", refs={Integer.class}, tree="[0]")
     private Output<Integer> refreshTokenExpiry;
 
     /**
@@ -3496,7 +3496,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      * 
      */
-    @Export(name="resourceTypeSchemaVersion", type=String.class, parameters={})
+    @Export(name="resourceTypeSchemaVersion", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> resourceTypeSchemaVersion;
 
     /**
@@ -3519,7 +3519,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="samlServiceProvider", type=DomainsAppSamlServiceProvider.class, parameters={})
+    @Export(name="samlServiceProvider", refs={DomainsAppSamlServiceProvider.class}, tree="[0]")
     private Output<DomainsAppSamlServiceProvider> samlServiceProvider;
 
     /**
@@ -3552,7 +3552,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="schemas", type=List.class, parameters={String.class})
+    @Export(name="schemas", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> schemas;
 
     /**
@@ -3587,7 +3587,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="scopes", type=List.class, parameters={DomainsAppScope.class})
+    @Export(name="scopes", refs={List.class,DomainsAppScope.class}, tree="[0,1]")
     private Output<List<DomainsAppScope>> scopes;
 
     /**
@@ -3624,7 +3624,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="secondaryAudiences", type=List.class, parameters={String.class})
+    @Export(name="secondaryAudiences", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> secondaryAudiences;
 
     /**
@@ -3660,7 +3660,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="serviceParams", type=List.class, parameters={DomainsAppServiceParam.class})
+    @Export(name="serviceParams", refs={List.class,DomainsAppServiceParam.class}, tree="[0,1]")
     private Output<List<DomainsAppServiceParam>> serviceParams;
 
     /**
@@ -3694,7 +3694,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="serviceTypeUrn", type=String.class, parameters={})
+    @Export(name="serviceTypeUrn", refs={String.class}, tree="[0]")
     private Output<String> serviceTypeUrn;
 
     /**
@@ -3728,7 +3728,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="serviceTypeVersion", type=String.class, parameters={})
+    @Export(name="serviceTypeVersion", refs={String.class}, tree="[0]")
     private Output<String> serviceTypeVersion;
 
     /**
@@ -3763,7 +3763,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="showInMyApps", type=Boolean.class, parameters={})
+    @Export(name="showInMyApps", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> showInMyApps;
 
     /**
@@ -3798,7 +3798,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    @Export(name="signonPolicy", type=DomainsAppSignonPolicy.class, parameters={})
+    @Export(name="signonPolicy", refs={DomainsAppSignonPolicy.class}, tree="[0]")
     private Output<DomainsAppSignonPolicy> signonPolicy;
 
     /**
@@ -3832,7 +3832,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="tags", type=List.class, parameters={DomainsAppTag.class})
+    @Export(name="tags", refs={List.class,DomainsAppTag.class}, tree="[0,1]")
     private Output<List<DomainsAppTag>> tags;
 
     /**
@@ -3866,7 +3866,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="tenancyOcid", type=String.class, parameters={})
+    @Export(name="tenancyOcid", refs={String.class}, tree="[0]")
     private Output<String> tenancyOcid;
 
     /**
@@ -3901,7 +3901,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="termsOfServiceUrl", type=String.class, parameters={})
+    @Export(name="termsOfServiceUrl", refs={String.class}, tree="[0]")
     private Output<String> termsOfServiceUrl;
 
     /**
@@ -3936,7 +3936,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    @Export(name="termsOfUse", type=DomainsAppTermsOfUse.class, parameters={})
+    @Export(name="termsOfUse", refs={DomainsAppTermsOfUse.class}, tree="[0]")
     private Output<DomainsAppTermsOfUse> termsOfUse;
 
     /**
@@ -3969,7 +3969,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    @Export(name="trustPolicies", type=List.class, parameters={DomainsAppTrustPolicy.class})
+    @Export(name="trustPolicies", refs={List.class,DomainsAppTrustPolicy.class}, tree="[0,1]")
     private Output<List<DomainsAppTrustPolicy>> trustPolicies;
 
     /**
@@ -4004,7 +4004,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="trustScope", type=String.class, parameters={})
+    @Export(name="trustScope", refs={String.class}, tree="[0]")
     private Output<String> trustScope;
 
     /**
@@ -4030,7 +4030,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * (Updatable) Oracle Cloud Infrastructure Tags.
      * 
      */
-    @Export(name="urnietfparamsscimschemasoracleidcsextensionOciTags", type=DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTags.class, parameters={})
+    @Export(name="urnietfparamsscimschemasoracleidcsextensionOciTags", refs={DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTags.class}, tree="[0]")
     private Output<DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTags> urnietfparamsscimschemasoracleidcsextensionOciTags;
 
     /**
@@ -4044,7 +4044,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * (Updatable) This extension provides attributes for database service facet of an App
      * 
      */
-    @Export(name="urnietfparamsscimschemasoracleidcsextensiondbcsApp", type=DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsApp.class, parameters={})
+    @Export(name="urnietfparamsscimschemasoracleidcsextensiondbcsApp", refs={DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsApp.class}, tree="[0]")
     private Output<DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsApp> urnietfparamsscimschemasoracleidcsextensiondbcsApp;
 
     /**
@@ -4058,7 +4058,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * (Updatable) This extension defines the Enterprise App related attributes.
      * 
      */
-    @Export(name="urnietfparamsscimschemasoracleidcsextensionenterpriseAppApp", type=DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp.class, parameters={})
+    @Export(name="urnietfparamsscimschemasoracleidcsextensionenterpriseAppApp", refs={DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp.class}, tree="[0]")
     private Output<DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp> urnietfparamsscimschemasoracleidcsextensionenterpriseAppApp;
 
     /**
@@ -4072,7 +4072,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * (Updatable) This extension provides attributes for Form-Fill facet of App
      * 
      */
-    @Export(name="urnietfparamsscimschemasoracleidcsextensionformFillAppApp", type=DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppApp.class, parameters={})
+    @Export(name="urnietfparamsscimschemasoracleidcsextensionformFillAppApp", refs={DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppApp.class}, tree="[0]")
     private Output<DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppApp> urnietfparamsscimschemasoracleidcsextensionformFillAppApp;
 
     /**
@@ -4086,7 +4086,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * (Updatable) This extension provides attributes for Form-Fill facet of AppTemplate
      * 
      */
-    @Export(name="urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate", type=DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate.class, parameters={})
+    @Export(name="urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate", refs={DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate.class}, tree="[0]")
     private Output<DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate> urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate;
 
     /**
@@ -4100,7 +4100,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * (Updatable) Kerberos Realm
      * 
      */
-    @Export(name="urnietfparamsscimschemasoracleidcsextensionkerberosRealmApp", type=DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp.class, parameters={})
+    @Export(name="urnietfparamsscimschemasoracleidcsextensionkerberosRealmApp", refs={DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp.class}, tree="[0]")
     private Output<DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp> urnietfparamsscimschemasoracleidcsextensionkerberosRealmApp;
 
     /**
@@ -4114,7 +4114,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * (Updatable) Managed App
      * 
      */
-    @Export(name="urnietfparamsscimschemasoracleidcsextensionmanagedappApp", type=DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp.class, parameters={})
+    @Export(name="urnietfparamsscimschemasoracleidcsextensionmanagedappApp", refs={DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp.class}, tree="[0]")
     private Output<DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp> urnietfparamsscimschemasoracleidcsextensionmanagedappApp;
 
     /**
@@ -4128,7 +4128,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * (Updatable) This extension defines attributes specific to Apps that represent instances of Multicloud Service App
      * 
      */
-    @Export(name="urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp", type=DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp.class, parameters={})
+    @Export(name="urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp", refs={DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp.class}, tree="[0]")
     private Output<DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp> urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp;
 
     /**
@@ -4142,7 +4142,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * (Updatable) This extension defines attributes specific to Apps that represent instances of an Oracle Public Cloud (OPC) service.
      * 
      */
-    @Export(name="urnietfparamsscimschemasoracleidcsextensionopcServiceApp", type=DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceApp.class, parameters={})
+    @Export(name="urnietfparamsscimschemasoracleidcsextensionopcServiceApp", refs={DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceApp.class}, tree="[0]")
     private Output<DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceApp> urnietfparamsscimschemasoracleidcsextensionopcServiceApp;
 
     /**
@@ -4156,7 +4156,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * (Updatable) This extension defines attributes specific to Apps that represent instances of Radius App.
      * 
      */
-    @Export(name="urnietfparamsscimschemasoracleidcsextensionradiusAppApp", type=DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp.class, parameters={})
+    @Export(name="urnietfparamsscimschemasoracleidcsextensionradiusAppApp", refs={DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp.class}, tree="[0]")
     private Output<DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp> urnietfparamsscimschemasoracleidcsextensionradiusAppApp;
 
     /**
@@ -4170,7 +4170,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * (Updatable) Requestable App
      * 
      */
-    @Export(name="urnietfparamsscimschemasoracleidcsextensionrequestableApp", type=DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableApp.class, parameters={})
+    @Export(name="urnietfparamsscimschemasoracleidcsextensionrequestableApp", refs={DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableApp.class}, tree="[0]")
     private Output<DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableApp> urnietfparamsscimschemasoracleidcsextensionrequestableApp;
 
     /**
@@ -4184,7 +4184,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * (Updatable) This extension defines attributes related to the Service Providers configuration.
      * 
      */
-    @Export(name="urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp", type=DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp.class, parameters={})
+    @Export(name="urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp", refs={DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp.class}, tree="[0]")
     private Output<DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp> urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp;
 
     /**
@@ -4198,7 +4198,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * (Updatable) WebTier Policy
      * 
      */
-    @Export(name="urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp", type=DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp.class, parameters={})
+    @Export(name="urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp", refs={DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp.class}, tree="[0]")
     private Output<DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp> urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp;
 
     /**
@@ -4221,7 +4221,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    @Export(name="userRoles", type=List.class, parameters={DomainsAppUserRole.class})
+    @Export(name="userRoles", refs={List.class,DomainsAppUserRole.class}, tree="[0,1]")
     private Output<List<DomainsAppUserRole>> userRoles;
 
     /**

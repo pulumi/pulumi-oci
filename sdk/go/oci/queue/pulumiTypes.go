@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -48,6 +49,12 @@ func (i GetQueuesFilterArgs) ToGetQueuesFilterOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetQueuesFilterOutput)
 }
 
+func (i GetQueuesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetQueuesFilter] {
+	return pulumix.Output[GetQueuesFilter]{
+		OutputState: i.ToGetQueuesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetQueuesFilterArrayInput is an input type that accepts GetQueuesFilterArray and GetQueuesFilterArrayOutput values.
 // You can construct a concrete instance of `GetQueuesFilterArrayInput` via:
 //
@@ -73,6 +80,12 @@ func (i GetQueuesFilterArray) ToGetQueuesFilterArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetQueuesFilterArrayOutput)
 }
 
+func (i GetQueuesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetQueuesFilter] {
+	return pulumix.Output[[]GetQueuesFilter]{
+		OutputState: i.ToGetQueuesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetQueuesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetQueuesFilterOutput) ElementType() reflect.Type {
@@ -85,6 +98,12 @@ func (o GetQueuesFilterOutput) ToGetQueuesFilterOutput() GetQueuesFilterOutput {
 
 func (o GetQueuesFilterOutput) ToGetQueuesFilterOutputWithContext(ctx context.Context) GetQueuesFilterOutput {
 	return o
+}
+
+func (o GetQueuesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetQueuesFilter] {
+	return pulumix.Output[GetQueuesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetQueuesFilterOutput) Name() pulumi.StringOutput {
@@ -111,6 +130,12 @@ func (o GetQueuesFilterArrayOutput) ToGetQueuesFilterArrayOutput() GetQueuesFilt
 
 func (o GetQueuesFilterArrayOutput) ToGetQueuesFilterArrayOutputWithContext(ctx context.Context) GetQueuesFilterArrayOutput {
 	return o
+}
+
+func (o GetQueuesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetQueuesFilter] {
+	return pulumix.Output[[]GetQueuesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetQueuesFilterArrayOutput) Index(i pulumi.IntInput) GetQueuesFilterOutput {
@@ -150,6 +175,12 @@ func (i GetQueuesQueueCollectionArgs) ToGetQueuesQueueCollectionOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetQueuesQueueCollectionOutput)
 }
 
+func (i GetQueuesQueueCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetQueuesQueueCollection] {
+	return pulumix.Output[GetQueuesQueueCollection]{
+		OutputState: i.ToGetQueuesQueueCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetQueuesQueueCollectionArrayInput is an input type that accepts GetQueuesQueueCollectionArray and GetQueuesQueueCollectionArrayOutput values.
 // You can construct a concrete instance of `GetQueuesQueueCollectionArrayInput` via:
 //
@@ -175,6 +206,12 @@ func (i GetQueuesQueueCollectionArray) ToGetQueuesQueueCollectionArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetQueuesQueueCollectionArrayOutput)
 }
 
+func (i GetQueuesQueueCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetQueuesQueueCollection] {
+	return pulumix.Output[[]GetQueuesQueueCollection]{
+		OutputState: i.ToGetQueuesQueueCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetQueuesQueueCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetQueuesQueueCollectionOutput) ElementType() reflect.Type {
@@ -187,6 +224,12 @@ func (o GetQueuesQueueCollectionOutput) ToGetQueuesQueueCollectionOutput() GetQu
 
 func (o GetQueuesQueueCollectionOutput) ToGetQueuesQueueCollectionOutputWithContext(ctx context.Context) GetQueuesQueueCollectionOutput {
 	return o
+}
+
+func (o GetQueuesQueueCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetQueuesQueueCollection] {
+	return pulumix.Output[GetQueuesQueueCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetQueuesQueueCollectionOutput) Items() GetQueuesQueueCollectionItemArrayOutput {
@@ -205,6 +248,12 @@ func (o GetQueuesQueueCollectionArrayOutput) ToGetQueuesQueueCollectionArrayOutp
 
 func (o GetQueuesQueueCollectionArrayOutput) ToGetQueuesQueueCollectionArrayOutputWithContext(ctx context.Context) GetQueuesQueueCollectionArrayOutput {
 	return o
+}
+
+func (o GetQueuesQueueCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetQueuesQueueCollection] {
+	return pulumix.Output[[]GetQueuesQueueCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetQueuesQueueCollectionArrayOutput) Index(i pulumi.IntInput) GetQueuesQueueCollectionOutput {
@@ -310,6 +359,12 @@ func (i GetQueuesQueueCollectionItemArgs) ToGetQueuesQueueCollectionItemOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetQueuesQueueCollectionItemOutput)
 }
 
+func (i GetQueuesQueueCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetQueuesQueueCollectionItem] {
+	return pulumix.Output[GetQueuesQueueCollectionItem]{
+		OutputState: i.ToGetQueuesQueueCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetQueuesQueueCollectionItemArrayInput is an input type that accepts GetQueuesQueueCollectionItemArray and GetQueuesQueueCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetQueuesQueueCollectionItemArrayInput` via:
 //
@@ -335,6 +390,12 @@ func (i GetQueuesQueueCollectionItemArray) ToGetQueuesQueueCollectionItemArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetQueuesQueueCollectionItemArrayOutput)
 }
 
+func (i GetQueuesQueueCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetQueuesQueueCollectionItem] {
+	return pulumix.Output[[]GetQueuesQueueCollectionItem]{
+		OutputState: i.ToGetQueuesQueueCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetQueuesQueueCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetQueuesQueueCollectionItemOutput) ElementType() reflect.Type {
@@ -347,6 +408,12 @@ func (o GetQueuesQueueCollectionItemOutput) ToGetQueuesQueueCollectionItemOutput
 
 func (o GetQueuesQueueCollectionItemOutput) ToGetQueuesQueueCollectionItemOutputWithContext(ctx context.Context) GetQueuesQueueCollectionItemOutput {
 	return o
+}
+
+func (o GetQueuesQueueCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetQueuesQueueCollectionItem] {
+	return pulumix.Output[GetQueuesQueueCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -449,6 +516,12 @@ func (o GetQueuesQueueCollectionItemArrayOutput) ToGetQueuesQueueCollectionItemA
 
 func (o GetQueuesQueueCollectionItemArrayOutput) ToGetQueuesQueueCollectionItemArrayOutputWithContext(ctx context.Context) GetQueuesQueueCollectionItemArrayOutput {
 	return o
+}
+
+func (o GetQueuesQueueCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetQueuesQueueCollectionItem] {
+	return pulumix.Output[[]GetQueuesQueueCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetQueuesQueueCollectionItemArrayOutput) Index(i pulumi.IntInput) GetQueuesQueueCollectionItemOutput {

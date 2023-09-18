@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Budgets in Oracle Cloud Infrastructure Budget service.
@@ -138,6 +139,12 @@ func (o GetBudgetsResultOutput) ToGetBudgetsResultOutput() GetBudgetsResultOutpu
 
 func (o GetBudgetsResultOutput) ToGetBudgetsResultOutputWithContext(ctx context.Context) GetBudgetsResultOutput {
 	return o
+}
+
+func (o GetBudgetsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetBudgetsResult] {
+	return pulumix.Output[GetBudgetsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The list of budgets.

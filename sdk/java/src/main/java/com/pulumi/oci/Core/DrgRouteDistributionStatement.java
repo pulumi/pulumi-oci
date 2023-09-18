@@ -73,7 +73,7 @@ public class DrgRouteDistributionStatement extends com.pulumi.resources.CustomRe
      * Accept: import/export the route &#34;as is&#34;
      * 
      */
-    @Export(name="action", type=String.class, parameters={})
+    @Export(name="action", refs={String.class}, tree="[0]")
     private Output<String> action;
 
     /**
@@ -87,7 +87,7 @@ public class DrgRouteDistributionStatement extends com.pulumi.resources.CustomRe
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route distribution.
      * 
      */
-    @Export(name="drgRouteDistributionId", type=String.class, parameters={})
+    @Export(name="drgRouteDistributionId", refs={String.class}, tree="[0]")
     private Output<String> drgRouteDistributionId;
 
     /**
@@ -101,7 +101,7 @@ public class DrgRouteDistributionStatement extends com.pulumi.resources.CustomRe
      * (Updatable) The action is applied only if all of the match criteria are met. MATCH_ALL match type implies any input is considered a match.
      * 
      */
-    @Export(name="matchCriteria", type=DrgRouteDistributionStatementMatchCriteria.class, parameters={})
+    @Export(name="matchCriteria", refs={DrgRouteDistributionStatementMatchCriteria.class}, tree="[0]")
     private Output<DrgRouteDistributionStatementMatchCriteria> matchCriteria;
 
     /**
@@ -118,7 +118,7 @@ public class DrgRouteDistributionStatement extends com.pulumi.resources.CustomRe
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="priority", type=Integer.class, parameters={})
+    @Export(name="priority", refs={Integer.class}, tree="[0]")
     private Output<Integer> priority;
 
     /**

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Drg Route Tables in Oracle Cloud Infrastructure Core service.
@@ -128,6 +129,12 @@ func (o GetDrgRouteTablesResultOutput) ToGetDrgRouteTablesResultOutput() GetDrgR
 
 func (o GetDrgRouteTablesResultOutput) ToGetDrgRouteTablesResultOutputWithContext(ctx context.Context) GetDrgRouteTablesResultOutput {
 	return o
+}
+
+func (o GetDrgRouteTablesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrgRouteTablesResult] {
+	return pulumix.Output[GetDrgRouteTablesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.

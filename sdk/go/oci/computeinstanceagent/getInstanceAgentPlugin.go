@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Instance Agent Plugin resource in Oracle Cloud Infrastructure Compute Instance Agent service.
@@ -116,6 +117,12 @@ func (o GetInstanceAgentPluginResultOutput) ToGetInstanceAgentPluginResultOutput
 
 func (o GetInstanceAgentPluginResultOutput) ToGetInstanceAgentPluginResultOutputWithContext(ctx context.Context) GetInstanceAgentPluginResultOutput {
 	return o
+}
+
+func (o GetInstanceAgentPluginResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstanceAgentPluginResult] {
+	return pulumix.Output[GetInstanceAgentPluginResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetInstanceAgentPluginResultOutput) CompartmentId() pulumi.StringOutput {

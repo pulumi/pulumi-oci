@@ -54,7 +54,7 @@ public class AppCatalogListingResourceVersionAgreement extends com.pulumi.resour
      * EULA link
      * 
      */
-    @Export(name="eulaLink", type=String.class, parameters={})
+    @Export(name="eulaLink", refs={String.class}, tree="[0]")
     private Output<String> eulaLink;
 
     /**
@@ -68,7 +68,7 @@ public class AppCatalogListingResourceVersionAgreement extends com.pulumi.resour
      * The OCID of the listing.
      * 
      */
-    @Export(name="listingId", type=String.class, parameters={})
+    @Export(name="listingId", refs={String.class}, tree="[0]")
     private Output<String> listingId;
 
     /**
@@ -82,7 +82,7 @@ public class AppCatalogListingResourceVersionAgreement extends com.pulumi.resour
      * Listing Resource Version.
      * 
      */
-    @Export(name="listingResourceVersion", type=String.class, parameters={})
+    @Export(name="listingResourceVersion", refs={String.class}, tree="[0]")
     private Output<String> listingResourceVersion;
 
     /**
@@ -96,7 +96,7 @@ public class AppCatalogListingResourceVersionAgreement extends com.pulumi.resour
      * Oracle TOU link
      * 
      */
-    @Export(name="oracleTermsOfUseLink", type=String.class, parameters={})
+    @Export(name="oracleTermsOfUseLink", refs={String.class}, tree="[0]")
     private Output<String> oracleTermsOfUseLink;
 
     /**
@@ -110,7 +110,7 @@ public class AppCatalogListingResourceVersionAgreement extends com.pulumi.resour
      * A generated signature for this agreement retrieval operation which should be used in the create subscription call.
      * 
      */
-    @Export(name="signature", type=String.class, parameters={})
+    @Export(name="signature", refs={String.class}, tree="[0]")
     private Output<String> signature;
 
     /**
@@ -124,7 +124,7 @@ public class AppCatalogListingResourceVersionAgreement extends com.pulumi.resour
      * Date and time the agreements were retrieved, in RFC3339 format. Example: `2018-03-20T12:32:53.532Z`
      * 
      */
-    @Export(name="timeRetrieved", type=String.class, parameters={})
+    @Export(name="timeRetrieved", refs={String.class}, tree="[0]")
     private Output<String> timeRetrieved;
 
     /**

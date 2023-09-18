@@ -63,7 +63,7 @@ public class LogAnalyticsResourceCategoriesManagement extends com.pulumi.resourc
      * The Logging Analytics namespace used for the request.
      * 
      */
-    @Export(name="namespace", type=String.class, parameters={})
+    @Export(name="namespace", refs={String.class}, tree="[0]")
     private Output<String> namespace;
 
     /**
@@ -77,7 +77,7 @@ public class LogAnalyticsResourceCategoriesManagement extends com.pulumi.resourc
      * The list of categories to be assigned to the resource.
      * 
      */
-    @Export(name="resourceCategories", type=List.class, parameters={String.class})
+    @Export(name="resourceCategories", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> resourceCategories;
 
     /**
@@ -91,7 +91,7 @@ public class LogAnalyticsResourceCategoriesManagement extends com.pulumi.resourc
      * The resource unique identifier for which catagories are managed.
      * 
      */
-    @Export(name="resourceId", type=String.class, parameters={})
+    @Export(name="resourceId", refs={String.class}, tree="[0]")
     private Output<String> resourceId;
 
     /**
@@ -108,7 +108,7 @@ public class LogAnalyticsResourceCategoriesManagement extends com.pulumi.resourc
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="resourceType", type=String.class, parameters={})
+    @Export(name="resourceType", refs={String.class}, tree="[0]")
     private Output<String> resourceType;
 
     /**

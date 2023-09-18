@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Operations Insights Warehouse resource in Oracle Cloud Infrastructure Opsi service.
@@ -280,6 +281,12 @@ func (i *OperationsInsightsWarehouse) ToOperationsInsightsWarehouseOutputWithCon
 	return pulumi.ToOutputWithContext(ctx, i).(OperationsInsightsWarehouseOutput)
 }
 
+func (i *OperationsInsightsWarehouse) ToOutput(ctx context.Context) pulumix.Output[*OperationsInsightsWarehouse] {
+	return pulumix.Output[*OperationsInsightsWarehouse]{
+		OutputState: i.ToOperationsInsightsWarehouseOutputWithContext(ctx).OutputState,
+	}
+}
+
 // OperationsInsightsWarehouseArrayInput is an input type that accepts OperationsInsightsWarehouseArray and OperationsInsightsWarehouseArrayOutput values.
 // You can construct a concrete instance of `OperationsInsightsWarehouseArrayInput` via:
 //
@@ -303,6 +310,12 @@ func (i OperationsInsightsWarehouseArray) ToOperationsInsightsWarehouseArrayOutp
 
 func (i OperationsInsightsWarehouseArray) ToOperationsInsightsWarehouseArrayOutputWithContext(ctx context.Context) OperationsInsightsWarehouseArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(OperationsInsightsWarehouseArrayOutput)
+}
+
+func (i OperationsInsightsWarehouseArray) ToOutput(ctx context.Context) pulumix.Output[[]*OperationsInsightsWarehouse] {
+	return pulumix.Output[[]*OperationsInsightsWarehouse]{
+		OutputState: i.ToOperationsInsightsWarehouseArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // OperationsInsightsWarehouseMapInput is an input type that accepts OperationsInsightsWarehouseMap and OperationsInsightsWarehouseMapOutput values.
@@ -330,6 +343,12 @@ func (i OperationsInsightsWarehouseMap) ToOperationsInsightsWarehouseMapOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(OperationsInsightsWarehouseMapOutput)
 }
 
+func (i OperationsInsightsWarehouseMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*OperationsInsightsWarehouse] {
+	return pulumix.Output[map[string]*OperationsInsightsWarehouse]{
+		OutputState: i.ToOperationsInsightsWarehouseMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type OperationsInsightsWarehouseOutput struct{ *pulumi.OutputState }
 
 func (OperationsInsightsWarehouseOutput) ElementType() reflect.Type {
@@ -342,6 +361,12 @@ func (o OperationsInsightsWarehouseOutput) ToOperationsInsightsWarehouseOutput()
 
 func (o OperationsInsightsWarehouseOutput) ToOperationsInsightsWarehouseOutputWithContext(ctx context.Context) OperationsInsightsWarehouseOutput {
 	return o
+}
+
+func (o OperationsInsightsWarehouseOutput) ToOutput(ctx context.Context) pulumix.Output[*OperationsInsightsWarehouse] {
+	return pulumix.Output[*OperationsInsightsWarehouse]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -441,6 +466,12 @@ func (o OperationsInsightsWarehouseArrayOutput) ToOperationsInsightsWarehouseArr
 	return o
 }
 
+func (o OperationsInsightsWarehouseArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*OperationsInsightsWarehouse] {
+	return pulumix.Output[[]*OperationsInsightsWarehouse]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o OperationsInsightsWarehouseArrayOutput) Index(i pulumi.IntInput) OperationsInsightsWarehouseOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *OperationsInsightsWarehouse {
 		return vs[0].([]*OperationsInsightsWarehouse)[vs[1].(int)]
@@ -459,6 +490,12 @@ func (o OperationsInsightsWarehouseMapOutput) ToOperationsInsightsWarehouseMapOu
 
 func (o OperationsInsightsWarehouseMapOutput) ToOperationsInsightsWarehouseMapOutputWithContext(ctx context.Context) OperationsInsightsWarehouseMapOutput {
 	return o
+}
+
+func (o OperationsInsightsWarehouseMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*OperationsInsightsWarehouse] {
+	return pulumix.Output[map[string]*OperationsInsightsWarehouse]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o OperationsInsightsWarehouseMapOutput) MapIndex(k pulumi.StringInput) OperationsInsightsWarehouseOutput {

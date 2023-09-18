@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Environments in Oracle Cloud Infrastructure Cloud Bridge service.
@@ -125,6 +126,12 @@ func (o GetEnvironmentsResultOutput) ToGetEnvironmentsResultOutput() GetEnvironm
 
 func (o GetEnvironmentsResultOutput) ToGetEnvironmentsResultOutputWithContext(ctx context.Context) GetEnvironmentsResultOutput {
 	return o
+}
+
+func (o GetEnvironmentsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetEnvironmentsResult] {
+	return pulumix.Output[GetEnvironmentsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Compartment identifier.

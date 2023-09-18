@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Oda Private Endpoint Scan Proxy resource in Oracle Cloud Infrastructure Digital Assistant service.
@@ -216,6 +217,12 @@ func (i *OdaPrivateEndpointScanProxy) ToOdaPrivateEndpointScanProxyOutputWithCon
 	return pulumi.ToOutputWithContext(ctx, i).(OdaPrivateEndpointScanProxyOutput)
 }
 
+func (i *OdaPrivateEndpointScanProxy) ToOutput(ctx context.Context) pulumix.Output[*OdaPrivateEndpointScanProxy] {
+	return pulumix.Output[*OdaPrivateEndpointScanProxy]{
+		OutputState: i.ToOdaPrivateEndpointScanProxyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // OdaPrivateEndpointScanProxyArrayInput is an input type that accepts OdaPrivateEndpointScanProxyArray and OdaPrivateEndpointScanProxyArrayOutput values.
 // You can construct a concrete instance of `OdaPrivateEndpointScanProxyArrayInput` via:
 //
@@ -239,6 +246,12 @@ func (i OdaPrivateEndpointScanProxyArray) ToOdaPrivateEndpointScanProxyArrayOutp
 
 func (i OdaPrivateEndpointScanProxyArray) ToOdaPrivateEndpointScanProxyArrayOutputWithContext(ctx context.Context) OdaPrivateEndpointScanProxyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(OdaPrivateEndpointScanProxyArrayOutput)
+}
+
+func (i OdaPrivateEndpointScanProxyArray) ToOutput(ctx context.Context) pulumix.Output[[]*OdaPrivateEndpointScanProxy] {
+	return pulumix.Output[[]*OdaPrivateEndpointScanProxy]{
+		OutputState: i.ToOdaPrivateEndpointScanProxyArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // OdaPrivateEndpointScanProxyMapInput is an input type that accepts OdaPrivateEndpointScanProxyMap and OdaPrivateEndpointScanProxyMapOutput values.
@@ -266,6 +279,12 @@ func (i OdaPrivateEndpointScanProxyMap) ToOdaPrivateEndpointScanProxyMapOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(OdaPrivateEndpointScanProxyMapOutput)
 }
 
+func (i OdaPrivateEndpointScanProxyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*OdaPrivateEndpointScanProxy] {
+	return pulumix.Output[map[string]*OdaPrivateEndpointScanProxy]{
+		OutputState: i.ToOdaPrivateEndpointScanProxyMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type OdaPrivateEndpointScanProxyOutput struct{ *pulumi.OutputState }
 
 func (OdaPrivateEndpointScanProxyOutput) ElementType() reflect.Type {
@@ -278,6 +297,12 @@ func (o OdaPrivateEndpointScanProxyOutput) ToOdaPrivateEndpointScanProxyOutput()
 
 func (o OdaPrivateEndpointScanProxyOutput) ToOdaPrivateEndpointScanProxyOutputWithContext(ctx context.Context) OdaPrivateEndpointScanProxyOutput {
 	return o
+}
+
+func (o OdaPrivateEndpointScanProxyOutput) ToOutput(ctx context.Context) pulumix.Output[*OdaPrivateEndpointScanProxy] {
+	return pulumix.Output[*OdaPrivateEndpointScanProxy]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Unique ODA Private Endpoint identifier which is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -329,6 +354,12 @@ func (o OdaPrivateEndpointScanProxyArrayOutput) ToOdaPrivateEndpointScanProxyArr
 	return o
 }
 
+func (o OdaPrivateEndpointScanProxyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*OdaPrivateEndpointScanProxy] {
+	return pulumix.Output[[]*OdaPrivateEndpointScanProxy]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o OdaPrivateEndpointScanProxyArrayOutput) Index(i pulumi.IntInput) OdaPrivateEndpointScanProxyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *OdaPrivateEndpointScanProxy {
 		return vs[0].([]*OdaPrivateEndpointScanProxy)[vs[1].(int)]
@@ -347,6 +378,12 @@ func (o OdaPrivateEndpointScanProxyMapOutput) ToOdaPrivateEndpointScanProxyMapOu
 
 func (o OdaPrivateEndpointScanProxyMapOutput) ToOdaPrivateEndpointScanProxyMapOutputWithContext(ctx context.Context) OdaPrivateEndpointScanProxyMapOutput {
 	return o
+}
+
+func (o OdaPrivateEndpointScanProxyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*OdaPrivateEndpointScanProxy] {
+	return pulumix.Output[map[string]*OdaPrivateEndpointScanProxy]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o OdaPrivateEndpointScanProxyMapOutput) MapIndex(k pulumi.StringInput) OdaPrivateEndpointScanProxyOutput {

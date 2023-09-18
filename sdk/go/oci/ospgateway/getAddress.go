@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Address resource in Oracle Cloud Infrastructure Osp Gateway service.
@@ -163,6 +164,12 @@ func (o GetAddressResultOutput) ToGetAddressResultOutput() GetAddressResultOutpu
 
 func (o GetAddressResultOutput) ToGetAddressResultOutputWithContext(ctx context.Context) GetAddressResultOutput {
 	return o
+}
+
+func (o GetAddressResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddressResult] {
+	return pulumix.Output[GetAddressResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAddressResultOutput) AddressId() pulumi.StringOutput {

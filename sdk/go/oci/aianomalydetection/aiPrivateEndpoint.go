@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Ai Private Endpoint resource in Oracle Cloud Infrastructure Ai Anomaly Detection service.
@@ -254,6 +255,12 @@ func (i *AiPrivateEndpoint) ToAiPrivateEndpointOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(AiPrivateEndpointOutput)
 }
 
+func (i *AiPrivateEndpoint) ToOutput(ctx context.Context) pulumix.Output[*AiPrivateEndpoint] {
+	return pulumix.Output[*AiPrivateEndpoint]{
+		OutputState: i.ToAiPrivateEndpointOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AiPrivateEndpointArrayInput is an input type that accepts AiPrivateEndpointArray and AiPrivateEndpointArrayOutput values.
 // You can construct a concrete instance of `AiPrivateEndpointArrayInput` via:
 //
@@ -277,6 +284,12 @@ func (i AiPrivateEndpointArray) ToAiPrivateEndpointArrayOutput() AiPrivateEndpoi
 
 func (i AiPrivateEndpointArray) ToAiPrivateEndpointArrayOutputWithContext(ctx context.Context) AiPrivateEndpointArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AiPrivateEndpointArrayOutput)
+}
+
+func (i AiPrivateEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]*AiPrivateEndpoint] {
+	return pulumix.Output[[]*AiPrivateEndpoint]{
+		OutputState: i.ToAiPrivateEndpointArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // AiPrivateEndpointMapInput is an input type that accepts AiPrivateEndpointMap and AiPrivateEndpointMapOutput values.
@@ -304,6 +317,12 @@ func (i AiPrivateEndpointMap) ToAiPrivateEndpointMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(AiPrivateEndpointMapOutput)
 }
 
+func (i AiPrivateEndpointMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AiPrivateEndpoint] {
+	return pulumix.Output[map[string]*AiPrivateEndpoint]{
+		OutputState: i.ToAiPrivateEndpointMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AiPrivateEndpointOutput struct{ *pulumi.OutputState }
 
 func (AiPrivateEndpointOutput) ElementType() reflect.Type {
@@ -316,6 +335,12 @@ func (o AiPrivateEndpointOutput) ToAiPrivateEndpointOutput() AiPrivateEndpointOu
 
 func (o AiPrivateEndpointOutput) ToAiPrivateEndpointOutputWithContext(ctx context.Context) AiPrivateEndpointOutput {
 	return o
+}
+
+func (o AiPrivateEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[*AiPrivateEndpoint] {
+	return pulumix.Output[*AiPrivateEndpoint]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The list of dataAssets using the private reverse connection endpoint.
@@ -395,6 +420,12 @@ func (o AiPrivateEndpointArrayOutput) ToAiPrivateEndpointArrayOutputWithContext(
 	return o
 }
 
+func (o AiPrivateEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AiPrivateEndpoint] {
+	return pulumix.Output[[]*AiPrivateEndpoint]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AiPrivateEndpointArrayOutput) Index(i pulumi.IntInput) AiPrivateEndpointOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AiPrivateEndpoint {
 		return vs[0].([]*AiPrivateEndpoint)[vs[1].(int)]
@@ -413,6 +444,12 @@ func (o AiPrivateEndpointMapOutput) ToAiPrivateEndpointMapOutput() AiPrivateEndp
 
 func (o AiPrivateEndpointMapOutput) ToAiPrivateEndpointMapOutputWithContext(ctx context.Context) AiPrivateEndpointMapOutput {
 	return o
+}
+
+func (o AiPrivateEndpointMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AiPrivateEndpoint] {
+	return pulumix.Output[map[string]*AiPrivateEndpoint]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AiPrivateEndpointMapOutput) MapIndex(k pulumi.StringInput) AiPrivateEndpointOutput {

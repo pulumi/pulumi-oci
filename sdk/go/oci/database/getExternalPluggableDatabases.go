@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of External Pluggable Databases in Oracle Cloud Infrastructure Database service.
@@ -127,6 +128,12 @@ func (o GetExternalPluggableDatabasesResultOutput) ToGetExternalPluggableDatabas
 
 func (o GetExternalPluggableDatabasesResultOutput) ToGetExternalPluggableDatabasesResultOutputWithContext(ctx context.Context) GetExternalPluggableDatabasesResultOutput {
 	return o
+}
+
+func (o GetExternalPluggableDatabasesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetExternalPluggableDatabasesResult] {
+	return pulumix.Output[GetExternalPluggableDatabasesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

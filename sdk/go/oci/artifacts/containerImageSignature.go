@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Container Image Signature resource in Oracle Cloud Infrastructure Artifacts service.
@@ -293,6 +294,12 @@ func (i *ContainerImageSignature) ToContainerImageSignatureOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerImageSignatureOutput)
 }
 
+func (i *ContainerImageSignature) ToOutput(ctx context.Context) pulumix.Output[*ContainerImageSignature] {
+	return pulumix.Output[*ContainerImageSignature]{
+		OutputState: i.ToContainerImageSignatureOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ContainerImageSignatureArrayInput is an input type that accepts ContainerImageSignatureArray and ContainerImageSignatureArrayOutput values.
 // You can construct a concrete instance of `ContainerImageSignatureArrayInput` via:
 //
@@ -316,6 +323,12 @@ func (i ContainerImageSignatureArray) ToContainerImageSignatureArrayOutput() Con
 
 func (i ContainerImageSignatureArray) ToContainerImageSignatureArrayOutputWithContext(ctx context.Context) ContainerImageSignatureArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerImageSignatureArrayOutput)
+}
+
+func (i ContainerImageSignatureArray) ToOutput(ctx context.Context) pulumix.Output[[]*ContainerImageSignature] {
+	return pulumix.Output[[]*ContainerImageSignature]{
+		OutputState: i.ToContainerImageSignatureArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // ContainerImageSignatureMapInput is an input type that accepts ContainerImageSignatureMap and ContainerImageSignatureMapOutput values.
@@ -343,6 +356,12 @@ func (i ContainerImageSignatureMap) ToContainerImageSignatureMapOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerImageSignatureMapOutput)
 }
 
+func (i ContainerImageSignatureMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ContainerImageSignature] {
+	return pulumix.Output[map[string]*ContainerImageSignature]{
+		OutputState: i.ToContainerImageSignatureMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ContainerImageSignatureOutput struct{ *pulumi.OutputState }
 
 func (ContainerImageSignatureOutput) ElementType() reflect.Type {
@@ -355,6 +374,12 @@ func (o ContainerImageSignatureOutput) ToContainerImageSignatureOutput() Contain
 
 func (o ContainerImageSignatureOutput) ToContainerImageSignatureOutputWithContext(ctx context.Context) ContainerImageSignatureOutput {
 	return o
+}
+
+func (o ContainerImageSignatureOutput) ToOutput(ctx context.Context) pulumix.Output[*ContainerImageSignature] {
+	return pulumix.Output[*ContainerImageSignature]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the container repository exists.
@@ -444,6 +469,12 @@ func (o ContainerImageSignatureArrayOutput) ToContainerImageSignatureArrayOutput
 	return o
 }
 
+func (o ContainerImageSignatureArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ContainerImageSignature] {
+	return pulumix.Output[[]*ContainerImageSignature]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o ContainerImageSignatureArrayOutput) Index(i pulumi.IntInput) ContainerImageSignatureOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ContainerImageSignature {
 		return vs[0].([]*ContainerImageSignature)[vs[1].(int)]
@@ -462,6 +493,12 @@ func (o ContainerImageSignatureMapOutput) ToContainerImageSignatureMapOutput() C
 
 func (o ContainerImageSignatureMapOutput) ToContainerImageSignatureMapOutputWithContext(ctx context.Context) ContainerImageSignatureMapOutput {
 	return o
+}
+
+func (o ContainerImageSignatureMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ContainerImageSignature] {
+	return pulumix.Output[map[string]*ContainerImageSignature]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ContainerImageSignatureMapOutput) MapIndex(k pulumi.StringInput) ContainerImageSignatureOutput {

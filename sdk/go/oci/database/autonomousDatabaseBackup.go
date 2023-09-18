@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Autonomous Database Backup resource in Oracle Cloud Infrastructure Database service.
@@ -298,6 +299,12 @@ func (i *AutonomousDatabaseBackup) ToAutonomousDatabaseBackupOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(AutonomousDatabaseBackupOutput)
 }
 
+func (i *AutonomousDatabaseBackup) ToOutput(ctx context.Context) pulumix.Output[*AutonomousDatabaseBackup] {
+	return pulumix.Output[*AutonomousDatabaseBackup]{
+		OutputState: i.ToAutonomousDatabaseBackupOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AutonomousDatabaseBackupArrayInput is an input type that accepts AutonomousDatabaseBackupArray and AutonomousDatabaseBackupArrayOutput values.
 // You can construct a concrete instance of `AutonomousDatabaseBackupArrayInput` via:
 //
@@ -321,6 +328,12 @@ func (i AutonomousDatabaseBackupArray) ToAutonomousDatabaseBackupArrayOutput() A
 
 func (i AutonomousDatabaseBackupArray) ToAutonomousDatabaseBackupArrayOutputWithContext(ctx context.Context) AutonomousDatabaseBackupArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AutonomousDatabaseBackupArrayOutput)
+}
+
+func (i AutonomousDatabaseBackupArray) ToOutput(ctx context.Context) pulumix.Output[[]*AutonomousDatabaseBackup] {
+	return pulumix.Output[[]*AutonomousDatabaseBackup]{
+		OutputState: i.ToAutonomousDatabaseBackupArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // AutonomousDatabaseBackupMapInput is an input type that accepts AutonomousDatabaseBackupMap and AutonomousDatabaseBackupMapOutput values.
@@ -348,6 +361,12 @@ func (i AutonomousDatabaseBackupMap) ToAutonomousDatabaseBackupMapOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(AutonomousDatabaseBackupMapOutput)
 }
 
+func (i AutonomousDatabaseBackupMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AutonomousDatabaseBackup] {
+	return pulumix.Output[map[string]*AutonomousDatabaseBackup]{
+		OutputState: i.ToAutonomousDatabaseBackupMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AutonomousDatabaseBackupOutput struct{ *pulumi.OutputState }
 
 func (AutonomousDatabaseBackupOutput) ElementType() reflect.Type {
@@ -360,6 +379,12 @@ func (o AutonomousDatabaseBackupOutput) ToAutonomousDatabaseBackupOutput() Auton
 
 func (o AutonomousDatabaseBackupOutput) ToAutonomousDatabaseBackupOutputWithContext(ctx context.Context) AutonomousDatabaseBackupOutput {
 	return o
+}
+
+func (o AutonomousDatabaseBackupOutput) ToOutput(ctx context.Context) pulumix.Output[*AutonomousDatabaseBackup] {
+	return pulumix.Output[*AutonomousDatabaseBackup]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
@@ -491,6 +516,12 @@ func (o AutonomousDatabaseBackupArrayOutput) ToAutonomousDatabaseBackupArrayOutp
 	return o
 }
 
+func (o AutonomousDatabaseBackupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AutonomousDatabaseBackup] {
+	return pulumix.Output[[]*AutonomousDatabaseBackup]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AutonomousDatabaseBackupArrayOutput) Index(i pulumi.IntInput) AutonomousDatabaseBackupOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AutonomousDatabaseBackup {
 		return vs[0].([]*AutonomousDatabaseBackup)[vs[1].(int)]
@@ -509,6 +540,12 @@ func (o AutonomousDatabaseBackupMapOutput) ToAutonomousDatabaseBackupMapOutput()
 
 func (o AutonomousDatabaseBackupMapOutput) ToAutonomousDatabaseBackupMapOutputWithContext(ctx context.Context) AutonomousDatabaseBackupMapOutput {
 	return o
+}
+
+func (o AutonomousDatabaseBackupMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AutonomousDatabaseBackup] {
+	return pulumix.Output[map[string]*AutonomousDatabaseBackup]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AutonomousDatabaseBackupMapOutput) MapIndex(k pulumi.StringInput) AutonomousDatabaseBackupOutput {

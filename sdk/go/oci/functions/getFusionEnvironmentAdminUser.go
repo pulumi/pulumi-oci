@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Fusion Environment Admin User resource in Oracle Cloud Infrastructure Fusion Apps service.
@@ -109,6 +110,12 @@ func (o GetFusionEnvironmentAdminUserResultOutput) ToGetFusionEnvironmentAdminUs
 
 func (o GetFusionEnvironmentAdminUserResultOutput) ToGetFusionEnvironmentAdminUserResultOutputWithContext(ctx context.Context) GetFusionEnvironmentAdminUserResultOutput {
 	return o
+}
+
+func (o GetFusionEnvironmentAdminUserResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentAdminUserResult] {
+	return pulumix.Output[GetFusionEnvironmentAdminUserResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Admin users email address

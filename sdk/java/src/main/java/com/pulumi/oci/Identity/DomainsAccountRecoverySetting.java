@@ -41,7 +41,7 @@ public class DomainsAccountRecoverySetting extends com.pulumi.resources.CustomRe
      * ID of the resource
      * 
      */
-    @Export(name="accountRecoverySettingId", type=String.class, parameters={})
+    @Export(name="accountRecoverySettingId", refs={String.class}, tree="[0]")
     private Output<String> accountRecoverySettingId;
 
     /**
@@ -55,7 +55,7 @@ public class DomainsAccountRecoverySetting extends com.pulumi.resources.CustomRe
      * (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If &#39;attributes&#39; query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      * 
      */
-    @Export(name="attributeSets", type=List.class, parameters={String.class})
+    @Export(name="attributeSets", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> attributeSets;
 
     /**
@@ -69,7 +69,7 @@ public class DomainsAccountRecoverySetting extends com.pulumi.resources.CustomRe
      * (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      * 
      */
-    @Export(name="attributes", type=String.class, parameters={})
+    @Export(name="attributes", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> attributes;
 
     /**
@@ -83,7 +83,7 @@ public class DomainsAccountRecoverySetting extends com.pulumi.resources.CustomRe
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      * 
      */
-    @Export(name="authorization", type=String.class, parameters={})
+    @Export(name="authorization", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> authorization;
 
     /**
@@ -107,7 +107,7 @@ public class DomainsAccountRecoverySetting extends com.pulumi.resources.CustomRe
      * * uniqueness: none
      * 
      */
-    @Export(name="compartmentOcid", type=String.class, parameters={})
+    @Export(name="compartmentOcid", refs={String.class}, tree="[0]")
     private Output<String> compartmentOcid;
 
     /**
@@ -141,7 +141,7 @@ public class DomainsAccountRecoverySetting extends com.pulumi.resources.CustomRe
      * * uniqueness: none
      * 
      */
-    @Export(name="deleteInProgress", type=Boolean.class, parameters={})
+    @Export(name="deleteInProgress", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> deleteInProgress;
 
     /**
@@ -175,7 +175,7 @@ public class DomainsAccountRecoverySetting extends com.pulumi.resources.CustomRe
      * * uniqueness: none
      * 
      */
-    @Export(name="domainOcid", type=String.class, parameters={})
+    @Export(name="domainOcid", refs={String.class}, tree="[0]")
     private Output<String> domainOcid;
 
     /**
@@ -208,7 +208,7 @@ public class DomainsAccountRecoverySetting extends com.pulumi.resources.CustomRe
      * * uniqueness: none
      * 
      */
-    @Export(name="externalId", type=String.class, parameters={})
+    @Export(name="externalId", refs={String.class}, tree="[0]")
     private Output<String> externalId;
 
     /**
@@ -241,7 +241,7 @@ public class DomainsAccountRecoverySetting extends com.pulumi.resources.CustomRe
      * * uniqueness: none
      * 
      */
-    @Export(name="factors", type=List.class, parameters={String.class})
+    @Export(name="factors", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> factors;
 
     /**
@@ -273,7 +273,7 @@ public class DomainsAccountRecoverySetting extends com.pulumi.resources.CustomRe
      * * type: complex
      * 
      */
-    @Export(name="idcsCreatedBies", type=List.class, parameters={DomainsAccountRecoverySettingIdcsCreatedBy.class})
+    @Export(name="idcsCreatedBies", refs={List.class,DomainsAccountRecoverySettingIdcsCreatedBy.class}, tree="[0,1]")
     private Output<List<DomainsAccountRecoverySettingIdcsCreatedBy>> idcsCreatedBies;
 
     /**
@@ -295,7 +295,7 @@ public class DomainsAccountRecoverySetting extends com.pulumi.resources.CustomRe
      * The basic endpoint for the identity domain
      * 
      */
-    @Export(name="idcsEndpoint", type=String.class, parameters={})
+    @Export(name="idcsEndpoint", refs={String.class}, tree="[0]")
     private Output<String> idcsEndpoint;
 
     /**
@@ -317,7 +317,7 @@ public class DomainsAccountRecoverySetting extends com.pulumi.resources.CustomRe
      * * type: complex
      * 
      */
-    @Export(name="idcsLastModifiedBies", type=List.class, parameters={DomainsAccountRecoverySettingIdcsLastModifiedBy.class})
+    @Export(name="idcsLastModifiedBies", refs={List.class,DomainsAccountRecoverySettingIdcsLastModifiedBy.class}, tree="[0,1]")
     private Output<List<DomainsAccountRecoverySettingIdcsLastModifiedBy>> idcsLastModifiedBies;
 
     /**
@@ -349,7 +349,7 @@ public class DomainsAccountRecoverySetting extends com.pulumi.resources.CustomRe
      * * uniqueness: none
      * 
      */
-    @Export(name="idcsLastUpgradedInRelease", type=String.class, parameters={})
+    @Export(name="idcsLastUpgradedInRelease", refs={String.class}, tree="[0]")
     private Output<String> idcsLastUpgradedInRelease;
 
     /**
@@ -382,7 +382,7 @@ public class DomainsAccountRecoverySetting extends com.pulumi.resources.CustomRe
      * * uniqueness: none
      * 
      */
-    @Export(name="idcsPreventedOperations", type=List.class, parameters={String.class})
+    @Export(name="idcsPreventedOperations", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> idcsPreventedOperations;
 
     /**
@@ -416,7 +416,7 @@ public class DomainsAccountRecoverySetting extends com.pulumi.resources.CustomRe
      * * idcsMaxValue: 9999
      * 
      */
-    @Export(name="lockoutDuration", type=Integer.class, parameters={})
+    @Export(name="lockoutDuration", refs={Integer.class}, tree="[0]")
     private Output<Integer> lockoutDuration;
 
     /**
@@ -452,7 +452,7 @@ public class DomainsAccountRecoverySetting extends com.pulumi.resources.CustomRe
      * * idcsMaxValue: 99
      * 
      */
-    @Export(name="maxIncorrectAttempts", type=Integer.class, parameters={})
+    @Export(name="maxIncorrectAttempts", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxIncorrectAttempts;
 
     /**
@@ -487,7 +487,7 @@ public class DomainsAccountRecoverySetting extends com.pulumi.resources.CustomRe
      * * type: complex
      * 
      */
-    @Export(name="metas", type=List.class, parameters={DomainsAccountRecoverySettingMeta.class})
+    @Export(name="metas", refs={List.class,DomainsAccountRecoverySettingMeta.class}, tree="[0,1]")
     private Output<List<DomainsAccountRecoverySettingMeta>> metas;
 
     /**
@@ -521,7 +521,7 @@ public class DomainsAccountRecoverySetting extends com.pulumi.resources.CustomRe
      * * uniqueness: global
      * 
      */
-    @Export(name="ocid", type=String.class, parameters={})
+    @Export(name="ocid", refs={String.class}, tree="[0]")
     private Output<String> ocid;
 
     /**
@@ -545,7 +545,7 @@ public class DomainsAccountRecoverySetting extends com.pulumi.resources.CustomRe
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      * 
      */
-    @Export(name="resourceTypeSchemaVersion", type=String.class, parameters={})
+    @Export(name="resourceTypeSchemaVersion", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> resourceTypeSchemaVersion;
 
     /**
@@ -569,7 +569,7 @@ public class DomainsAccountRecoverySetting extends com.pulumi.resources.CustomRe
      * * uniqueness: none
      * 
      */
-    @Export(name="schemas", type=List.class, parameters={String.class})
+    @Export(name="schemas", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> schemas;
 
     /**
@@ -603,7 +603,7 @@ public class DomainsAccountRecoverySetting extends com.pulumi.resources.CustomRe
      * * uniqueness: none
      * 
      */
-    @Export(name="tags", type=List.class, parameters={DomainsAccountRecoverySettingTag.class})
+    @Export(name="tags", refs={List.class,DomainsAccountRecoverySettingTag.class}, tree="[0,1]")
     private Output<List<DomainsAccountRecoverySettingTag>> tags;
 
     /**
@@ -640,7 +640,7 @@ public class DomainsAccountRecoverySetting extends com.pulumi.resources.CustomRe
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="tenancyOcid", type=String.class, parameters={})
+    @Export(name="tenancyOcid", refs={String.class}, tree="[0]")
     private Output<String> tenancyOcid;
 
     /**

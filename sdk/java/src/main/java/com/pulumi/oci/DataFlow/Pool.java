@@ -92,7 +92,7 @@ public class Pool extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of a compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -106,7 +106,7 @@ public class Pool extends com.pulumi.resources.CustomResource {
      * (Updatable) List of PoolConfig items.
      * 
      */
-    @Export(name="configurations", type=List.class, parameters={PoolConfiguration.class})
+    @Export(name="configurations", refs={List.class,PoolConfiguration.class}, tree="[0,1]")
     private Output<List<PoolConfiguration>> configurations;
 
     /**
@@ -120,7 +120,7 @@ public class Pool extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -134,7 +134,7 @@ public class Pool extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-friendly description. Avoid entering confidential information.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -148,7 +148,7 @@ public class Pool extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-friendly name. It does not have to be unique. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -162,7 +162,7 @@ public class Pool extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -176,7 +176,7 @@ public class Pool extends com.pulumi.resources.CustomResource {
      * (Updatable) Optional timeout value in minutes used to auto stop Pools. A Pool will be auto stopped after inactivity for this amount of time period. If value not set, pool will not be auto stopped auto.
      * 
      */
-    @Export(name="idleTimeoutInMinutes", type=Integer.class, parameters={})
+    @Export(name="idleTimeoutInMinutes", refs={Integer.class}, tree="[0]")
     private Output<Integer> idleTimeoutInMinutes;
 
     /**
@@ -190,7 +190,7 @@ public class Pool extends com.pulumi.resources.CustomResource {
      * The detailed messages about the lifecycle state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -204,7 +204,7 @@ public class Pool extends com.pulumi.resources.CustomResource {
      * The OCID of the user who created the resource.
      * 
      */
-    @Export(name="ownerPrincipalId", type=String.class, parameters={})
+    @Export(name="ownerPrincipalId", refs={String.class}, tree="[0]")
     private Output<String> ownerPrincipalId;
 
     /**
@@ -218,7 +218,7 @@ public class Pool extends com.pulumi.resources.CustomResource {
      * The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
      * 
      */
-    @Export(name="ownerUserName", type=String.class, parameters={})
+    @Export(name="ownerUserName", refs={String.class}, tree="[0]")
     private Output<String> ownerUserName;
 
     /**
@@ -232,7 +232,7 @@ public class Pool extends com.pulumi.resources.CustomResource {
      * A collection of metrics related to a particular pool.
      * 
      */
-    @Export(name="poolMetrics", type=List.class, parameters={PoolPoolMetric.class})
+    @Export(name="poolMetrics", refs={List.class,PoolPoolMetric.class}, tree="[0,1]")
     private Output<List<PoolPoolMetric>> poolMetrics;
 
     /**
@@ -246,7 +246,7 @@ public class Pool extends com.pulumi.resources.CustomResource {
      * (Updatable) A list of schedules for pool to auto start and stop.
      * 
      */
-    @Export(name="schedules", type=List.class, parameters={PoolSchedule.class})
+    @Export(name="schedules", refs={List.class,PoolSchedule.class}, tree="[0,1]")
     private Output<List<PoolSchedule>> schedules;
 
     /**
@@ -263,7 +263,7 @@ public class Pool extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -280,7 +280,7 @@ public class Pool extends com.pulumi.resources.CustomResource {
      * The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -294,7 +294,7 @@ public class Pool extends com.pulumi.resources.CustomResource {
      * The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

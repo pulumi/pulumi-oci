@@ -42,7 +42,7 @@ public class CertificateAuthority extends com.pulumi.resources.CustomResource {
      * (Updatable) The configuration details for creating a certificate authority (CA).
      * 
      */
-    @Export(name="certificateAuthorityConfig", type=CertificateAuthorityCertificateAuthorityConfig.class, parameters={})
+    @Export(name="certificateAuthorityConfig", refs={CertificateAuthorityCertificateAuthorityConfig.class}, tree="[0]")
     private Output<CertificateAuthorityCertificateAuthorityConfig> certificateAuthorityConfig;
 
     /**
@@ -56,7 +56,7 @@ public class CertificateAuthority extends com.pulumi.resources.CustomResource {
      * (Updatable) A list of rules that control how the CA is used and managed.
      * 
      */
-    @Export(name="certificateAuthorityRules", type=List.class, parameters={CertificateAuthorityCertificateAuthorityRule.class})
+    @Export(name="certificateAuthorityRules", refs={List.class,CertificateAuthorityCertificateAuthorityRule.class}, tree="[0,1]")
     private Output</* @Nullable */ List<CertificateAuthorityCertificateAuthorityRule>> certificateAuthorityRules;
 
     /**
@@ -70,7 +70,7 @@ public class CertificateAuthority extends com.pulumi.resources.CustomResource {
      * (Updatable) The details of the certificate revocation list (CRL).
      * 
      */
-    @Export(name="certificateRevocationListDetails", type=CertificateAuthorityCertificateRevocationListDetails.class, parameters={})
+    @Export(name="certificateRevocationListDetails", refs={CertificateAuthorityCertificateRevocationListDetails.class}, tree="[0]")
     private Output</* @Nullable */ CertificateAuthorityCertificateRevocationListDetails> certificateRevocationListDetails;
 
     /**
@@ -84,7 +84,7 @@ public class CertificateAuthority extends com.pulumi.resources.CustomResource {
      * (Updatable) The compartment in which you want to create the CA.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -98,7 +98,7 @@ public class CertificateAuthority extends com.pulumi.resources.CustomResource {
      * (Updatable) The origin of the CA.
      * 
      */
-    @Export(name="configType", type=String.class, parameters={})
+    @Export(name="configType", refs={String.class}, tree="[0]")
     private Output<String> configType;
 
     /**
@@ -112,7 +112,7 @@ public class CertificateAuthority extends com.pulumi.resources.CustomResource {
      * The metadata details of the certificate authority (CA) version. This summary object does not contain the CA contents.
      * 
      */
-    @Export(name="currentVersions", type=List.class, parameters={CertificateAuthorityCurrentVersion.class})
+    @Export(name="currentVersions", refs={List.class,CertificateAuthorityCurrentVersion.class}, tree="[0,1]")
     private Output<List<CertificateAuthorityCurrentVersion>> currentVersions;
 
     /**
@@ -126,7 +126,7 @@ public class CertificateAuthority extends com.pulumi.resources.CustomResource {
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -140,7 +140,7 @@ public class CertificateAuthority extends com.pulumi.resources.CustomResource {
      * (Updatable) A brief description of the CA.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> description;
 
     /**
@@ -154,7 +154,7 @@ public class CertificateAuthority extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -168,7 +168,7 @@ public class CertificateAuthority extends com.pulumi.resources.CustomResource {
      * The OCID of the private CA.
      * 
      */
-    @Export(name="issuerCertificateAuthorityId", type=String.class, parameters={})
+    @Export(name="issuerCertificateAuthorityId", refs={String.class}, tree="[0]")
     private Output<String> issuerCertificateAuthorityId;
 
     /**
@@ -182,7 +182,7 @@ public class CertificateAuthority extends com.pulumi.resources.CustomResource {
      * The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
      * 
      */
-    @Export(name="kmsKeyId", type=String.class, parameters={})
+    @Export(name="kmsKeyId", refs={String.class}, tree="[0]")
     private Output<String> kmsKeyId;
 
     /**
@@ -196,7 +196,7 @@ public class CertificateAuthority extends com.pulumi.resources.CustomResource {
      * Additional information about the current CA lifecycle state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -213,7 +213,7 @@ public class CertificateAuthority extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -230,7 +230,7 @@ public class CertificateAuthority extends com.pulumi.resources.CustomResource {
      * The algorithm used to sign public key certificates that the CA issues.
      * 
      */
-    @Export(name="signingAlgorithm", type=String.class, parameters={})
+    @Export(name="signingAlgorithm", refs={String.class}, tree="[0]")
     private Output<String> signingAlgorithm;
 
     /**
@@ -244,7 +244,7 @@ public class CertificateAuthority extends com.pulumi.resources.CustomResource {
      * The current lifecycle state of the certificate authority.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -258,7 +258,7 @@ public class CertificateAuthority extends com.pulumi.resources.CustomResource {
      * The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
      * 
      */
-    @Export(name="subjects", type=List.class, parameters={CertificateAuthoritySubject.class})
+    @Export(name="subjects", refs={List.class,CertificateAuthoritySubject.class}, tree="[0,1]")
     private Output<List<CertificateAuthoritySubject>> subjects;
 
     /**
@@ -272,7 +272,7 @@ public class CertificateAuthority extends com.pulumi.resources.CustomResource {
      * A property indicating when the CA was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -286,7 +286,7 @@ public class CertificateAuthority extends com.pulumi.resources.CustomResource {
      * An optional property indicating when to delete the CA version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
-    @Export(name="timeOfDeletion", type=String.class, parameters={})
+    @Export(name="timeOfDeletion", refs={String.class}, tree="[0]")
     private Output<String> timeOfDeletion;
 
     /**

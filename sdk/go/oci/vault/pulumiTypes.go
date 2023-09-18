@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -58,6 +59,12 @@ func (i SecretSecretContentArgs) ToSecretSecretContentOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(SecretSecretContentOutput)
 }
 
+func (i SecretSecretContentArgs) ToOutput(ctx context.Context) pulumix.Output[SecretSecretContent] {
+	return pulumix.Output[SecretSecretContent]{
+		OutputState: i.ToSecretSecretContentOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i SecretSecretContentArgs) ToSecretSecretContentPtrOutput() SecretSecretContentPtrOutput {
 	return i.ToSecretSecretContentPtrOutputWithContext(context.Background())
 }
@@ -99,6 +106,12 @@ func (i *secretSecretContentPtrType) ToSecretSecretContentPtrOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(SecretSecretContentPtrOutput)
 }
 
+func (i *secretSecretContentPtrType) ToOutput(ctx context.Context) pulumix.Output[*SecretSecretContent] {
+	return pulumix.Output[*SecretSecretContent]{
+		OutputState: i.ToSecretSecretContentPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type SecretSecretContentOutput struct{ *pulumi.OutputState }
 
 func (SecretSecretContentOutput) ElementType() reflect.Type {
@@ -121,6 +134,12 @@ func (o SecretSecretContentOutput) ToSecretSecretContentPtrOutputWithContext(ctx
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v SecretSecretContent) *SecretSecretContent {
 		return &v
 	}).(SecretSecretContentPtrOutput)
+}
+
+func (o SecretSecretContentOutput) ToOutput(ctx context.Context) pulumix.Output[SecretSecretContent] {
+	return pulumix.Output[SecretSecretContent]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The base64-encoded content of the secret.
@@ -155,6 +174,12 @@ func (o SecretSecretContentPtrOutput) ToSecretSecretContentPtrOutput() SecretSec
 
 func (o SecretSecretContentPtrOutput) ToSecretSecretContentPtrOutputWithContext(ctx context.Context) SecretSecretContentPtrOutput {
 	return o
+}
+
+func (o SecretSecretContentPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*SecretSecretContent] {
+	return pulumix.Output[*SecretSecretContent]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o SecretSecretContentPtrOutput) Elem() SecretSecretContentOutput {
@@ -256,6 +281,12 @@ func (i SecretSecretRuleArgs) ToSecretSecretRuleOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(SecretSecretRuleOutput)
 }
 
+func (i SecretSecretRuleArgs) ToOutput(ctx context.Context) pulumix.Output[SecretSecretRule] {
+	return pulumix.Output[SecretSecretRule]{
+		OutputState: i.ToSecretSecretRuleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // SecretSecretRuleArrayInput is an input type that accepts SecretSecretRuleArray and SecretSecretRuleArrayOutput values.
 // You can construct a concrete instance of `SecretSecretRuleArrayInput` via:
 //
@@ -281,6 +312,12 @@ func (i SecretSecretRuleArray) ToSecretSecretRuleArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(SecretSecretRuleArrayOutput)
 }
 
+func (i SecretSecretRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]SecretSecretRule] {
+	return pulumix.Output[[]SecretSecretRule]{
+		OutputState: i.ToSecretSecretRuleArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type SecretSecretRuleOutput struct{ *pulumi.OutputState }
 
 func (SecretSecretRuleOutput) ElementType() reflect.Type {
@@ -293,6 +330,12 @@ func (o SecretSecretRuleOutput) ToSecretSecretRuleOutput() SecretSecretRuleOutpu
 
 func (o SecretSecretRuleOutput) ToSecretSecretRuleOutputWithContext(ctx context.Context) SecretSecretRuleOutput {
 	return o
+}
+
+func (o SecretSecretRuleOutput) ToOutput(ctx context.Context) pulumix.Output[SecretSecretRule] {
+	return pulumix.Output[SecretSecretRule]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) A property indicating whether the rule is applied even if the secret version with the content you are trying to reuse was deleted.
@@ -332,6 +375,12 @@ func (o SecretSecretRuleArrayOutput) ToSecretSecretRuleArrayOutput() SecretSecre
 
 func (o SecretSecretRuleArrayOutput) ToSecretSecretRuleArrayOutputWithContext(ctx context.Context) SecretSecretRuleArrayOutput {
 	return o
+}
+
+func (o SecretSecretRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]SecretSecretRule] {
+	return pulumix.Output[[]SecretSecretRule]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o SecretSecretRuleArrayOutput) Index(i pulumi.IntInput) SecretSecretRuleOutput {
@@ -377,6 +426,12 @@ func (i GetSecretSecretContentArgs) ToGetSecretSecretContentOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecretSecretContentOutput)
 }
 
+func (i GetSecretSecretContentArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecretSecretContent] {
+	return pulumix.Output[GetSecretSecretContent]{
+		OutputState: i.ToGetSecretSecretContentOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecretSecretContentArrayInput is an input type that accepts GetSecretSecretContentArray and GetSecretSecretContentArrayOutput values.
 // You can construct a concrete instance of `GetSecretSecretContentArrayInput` via:
 //
@@ -402,6 +457,12 @@ func (i GetSecretSecretContentArray) ToGetSecretSecretContentArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecretSecretContentArrayOutput)
 }
 
+func (i GetSecretSecretContentArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecretSecretContent] {
+	return pulumix.Output[[]GetSecretSecretContent]{
+		OutputState: i.ToGetSecretSecretContentArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecretSecretContentOutput struct{ *pulumi.OutputState }
 
 func (GetSecretSecretContentOutput) ElementType() reflect.Type {
@@ -414,6 +475,12 @@ func (o GetSecretSecretContentOutput) ToGetSecretSecretContentOutput() GetSecret
 
 func (o GetSecretSecretContentOutput) ToGetSecretSecretContentOutputWithContext(ctx context.Context) GetSecretSecretContentOutput {
 	return o
+}
+
+func (o GetSecretSecretContentOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecretSecretContent] {
+	return pulumix.Output[GetSecretSecretContent]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecretSecretContentOutput) Content() pulumi.StringOutput {
@@ -444,6 +511,12 @@ func (o GetSecretSecretContentArrayOutput) ToGetSecretSecretContentArrayOutput()
 
 func (o GetSecretSecretContentArrayOutput) ToGetSecretSecretContentArrayOutputWithContext(ctx context.Context) GetSecretSecretContentArrayOutput {
 	return o
+}
+
+func (o GetSecretSecretContentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecretSecretContent] {
+	return pulumix.Output[[]GetSecretSecretContent]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecretSecretContentArrayOutput) Index(i pulumi.IntInput) GetSecretSecretContentOutput {
@@ -501,6 +574,12 @@ func (i GetSecretSecretRuleArgs) ToGetSecretSecretRuleOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecretSecretRuleOutput)
 }
 
+func (i GetSecretSecretRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecretSecretRule] {
+	return pulumix.Output[GetSecretSecretRule]{
+		OutputState: i.ToGetSecretSecretRuleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecretSecretRuleArrayInput is an input type that accepts GetSecretSecretRuleArray and GetSecretSecretRuleArrayOutput values.
 // You can construct a concrete instance of `GetSecretSecretRuleArrayInput` via:
 //
@@ -526,6 +605,12 @@ func (i GetSecretSecretRuleArray) ToGetSecretSecretRuleArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecretSecretRuleArrayOutput)
 }
 
+func (i GetSecretSecretRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecretSecretRule] {
+	return pulumix.Output[[]GetSecretSecretRule]{
+		OutputState: i.ToGetSecretSecretRuleArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecretSecretRuleOutput struct{ *pulumi.OutputState }
 
 func (GetSecretSecretRuleOutput) ElementType() reflect.Type {
@@ -538,6 +623,12 @@ func (o GetSecretSecretRuleOutput) ToGetSecretSecretRuleOutput() GetSecretSecret
 
 func (o GetSecretSecretRuleOutput) ToGetSecretSecretRuleOutputWithContext(ctx context.Context) GetSecretSecretRuleOutput {
 	return o
+}
+
+func (o GetSecretSecretRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecretSecretRule] {
+	return pulumix.Output[GetSecretSecretRule]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A property indicating whether the rule is applied even if the secret version with the content you are trying to reuse was deleted.
@@ -577,6 +668,12 @@ func (o GetSecretSecretRuleArrayOutput) ToGetSecretSecretRuleArrayOutput() GetSe
 
 func (o GetSecretSecretRuleArrayOutput) ToGetSecretSecretRuleArrayOutputWithContext(ctx context.Context) GetSecretSecretRuleArrayOutput {
 	return o
+}
+
+func (o GetSecretSecretRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecretSecretRule] {
+	return pulumix.Output[[]GetSecretSecretRule]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecretSecretRuleArrayOutput) Index(i pulumi.IntInput) GetSecretSecretRuleOutput {
@@ -622,6 +719,12 @@ func (i GetSecretsFilterArgs) ToGetSecretsFilterOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecretsFilterOutput)
 }
 
+func (i GetSecretsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecretsFilter] {
+	return pulumix.Output[GetSecretsFilter]{
+		OutputState: i.ToGetSecretsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecretsFilterArrayInput is an input type that accepts GetSecretsFilterArray and GetSecretsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSecretsFilterArrayInput` via:
 //
@@ -647,6 +750,12 @@ func (i GetSecretsFilterArray) ToGetSecretsFilterArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecretsFilterArrayOutput)
 }
 
+func (i GetSecretsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecretsFilter] {
+	return pulumix.Output[[]GetSecretsFilter]{
+		OutputState: i.ToGetSecretsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecretsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSecretsFilterOutput) ElementType() reflect.Type {
@@ -659,6 +768,12 @@ func (o GetSecretsFilterOutput) ToGetSecretsFilterOutput() GetSecretsFilterOutpu
 
 func (o GetSecretsFilterOutput) ToGetSecretsFilterOutputWithContext(ctx context.Context) GetSecretsFilterOutput {
 	return o
+}
+
+func (o GetSecretsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecretsFilter] {
+	return pulumix.Output[GetSecretsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The secret name.
@@ -686,6 +801,12 @@ func (o GetSecretsFilterArrayOutput) ToGetSecretsFilterArrayOutput() GetSecretsF
 
 func (o GetSecretsFilterArrayOutput) ToGetSecretsFilterArrayOutputWithContext(ctx context.Context) GetSecretsFilterArrayOutput {
 	return o
+}
+
+func (o GetSecretsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecretsFilter] {
+	return pulumix.Output[[]GetSecretsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecretsFilterArrayOutput) Index(i pulumi.IntInput) GetSecretsFilterOutput {
@@ -789,6 +910,12 @@ func (i GetSecretsSecretArgs) ToGetSecretsSecretOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecretsSecretOutput)
 }
 
+func (i GetSecretsSecretArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecretsSecret] {
+	return pulumix.Output[GetSecretsSecret]{
+		OutputState: i.ToGetSecretsSecretOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecretsSecretArrayInput is an input type that accepts GetSecretsSecretArray and GetSecretsSecretArrayOutput values.
 // You can construct a concrete instance of `GetSecretsSecretArrayInput` via:
 //
@@ -814,6 +941,12 @@ func (i GetSecretsSecretArray) ToGetSecretsSecretArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecretsSecretArrayOutput)
 }
 
+func (i GetSecretsSecretArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecretsSecret] {
+	return pulumix.Output[[]GetSecretsSecret]{
+		OutputState: i.ToGetSecretsSecretArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecretsSecretOutput struct{ *pulumi.OutputState }
 
 func (GetSecretsSecretOutput) ElementType() reflect.Type {
@@ -826,6 +959,12 @@ func (o GetSecretsSecretOutput) ToGetSecretsSecretOutput() GetSecretsSecretOutpu
 
 func (o GetSecretsSecretOutput) ToGetSecretsSecretOutputWithContext(ctx context.Context) GetSecretsSecretOutput {
 	return o
+}
+
+func (o GetSecretsSecretOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecretsSecret] {
+	return pulumix.Output[GetSecretsSecret]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the compartment.
@@ -926,6 +1065,12 @@ func (o GetSecretsSecretArrayOutput) ToGetSecretsSecretArrayOutputWithContext(ct
 	return o
 }
 
+func (o GetSecretsSecretArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecretsSecret] {
+	return pulumix.Output[[]GetSecretsSecret]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetSecretsSecretArrayOutput) Index(i pulumi.IntInput) GetSecretsSecretOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecretsSecret {
 		return vs[0].([]GetSecretsSecret)[vs[1].(int)]
@@ -971,6 +1116,12 @@ func (i GetSecretsSecretSecretContentArgs) ToGetSecretsSecretSecretContentOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecretsSecretSecretContentOutput)
 }
 
+func (i GetSecretsSecretSecretContentArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecretsSecretSecretContent] {
+	return pulumix.Output[GetSecretsSecretSecretContent]{
+		OutputState: i.ToGetSecretsSecretSecretContentOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecretsSecretSecretContentArrayInput is an input type that accepts GetSecretsSecretSecretContentArray and GetSecretsSecretSecretContentArrayOutput values.
 // You can construct a concrete instance of `GetSecretsSecretSecretContentArrayInput` via:
 //
@@ -996,6 +1147,12 @@ func (i GetSecretsSecretSecretContentArray) ToGetSecretsSecretSecretContentArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecretsSecretSecretContentArrayOutput)
 }
 
+func (i GetSecretsSecretSecretContentArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecretsSecretSecretContent] {
+	return pulumix.Output[[]GetSecretsSecretSecretContent]{
+		OutputState: i.ToGetSecretsSecretSecretContentArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecretsSecretSecretContentOutput struct{ *pulumi.OutputState }
 
 func (GetSecretsSecretSecretContentOutput) ElementType() reflect.Type {
@@ -1008,6 +1165,12 @@ func (o GetSecretsSecretSecretContentOutput) ToGetSecretsSecretSecretContentOutp
 
 func (o GetSecretsSecretSecretContentOutput) ToGetSecretsSecretSecretContentOutputWithContext(ctx context.Context) GetSecretsSecretSecretContentOutput {
 	return o
+}
+
+func (o GetSecretsSecretSecretContentOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecretsSecretSecretContent] {
+	return pulumix.Output[GetSecretsSecretSecretContent]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecretsSecretSecretContentOutput) Content() pulumi.StringOutput {
@@ -1039,6 +1202,12 @@ func (o GetSecretsSecretSecretContentArrayOutput) ToGetSecretsSecretSecretConten
 
 func (o GetSecretsSecretSecretContentArrayOutput) ToGetSecretsSecretSecretContentArrayOutputWithContext(ctx context.Context) GetSecretsSecretSecretContentArrayOutput {
 	return o
+}
+
+func (o GetSecretsSecretSecretContentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecretsSecretSecretContent] {
+	return pulumix.Output[[]GetSecretsSecretSecretContent]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecretsSecretSecretContentArrayOutput) Index(i pulumi.IntInput) GetSecretsSecretSecretContentOutput {
@@ -1096,6 +1265,12 @@ func (i GetSecretsSecretSecretRuleArgs) ToGetSecretsSecretSecretRuleOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecretsSecretSecretRuleOutput)
 }
 
+func (i GetSecretsSecretSecretRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecretsSecretSecretRule] {
+	return pulumix.Output[GetSecretsSecretSecretRule]{
+		OutputState: i.ToGetSecretsSecretSecretRuleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecretsSecretSecretRuleArrayInput is an input type that accepts GetSecretsSecretSecretRuleArray and GetSecretsSecretSecretRuleArrayOutput values.
 // You can construct a concrete instance of `GetSecretsSecretSecretRuleArrayInput` via:
 //
@@ -1121,6 +1296,12 @@ func (i GetSecretsSecretSecretRuleArray) ToGetSecretsSecretSecretRuleArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecretsSecretSecretRuleArrayOutput)
 }
 
+func (i GetSecretsSecretSecretRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecretsSecretSecretRule] {
+	return pulumix.Output[[]GetSecretsSecretSecretRule]{
+		OutputState: i.ToGetSecretsSecretSecretRuleArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecretsSecretSecretRuleOutput struct{ *pulumi.OutputState }
 
 func (GetSecretsSecretSecretRuleOutput) ElementType() reflect.Type {
@@ -1133,6 +1314,12 @@ func (o GetSecretsSecretSecretRuleOutput) ToGetSecretsSecretSecretRuleOutput() G
 
 func (o GetSecretsSecretSecretRuleOutput) ToGetSecretsSecretSecretRuleOutputWithContext(ctx context.Context) GetSecretsSecretSecretRuleOutput {
 	return o
+}
+
+func (o GetSecretsSecretSecretRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecretsSecretSecretRule] {
+	return pulumix.Output[GetSecretsSecretSecretRule]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A property indicating whether the rule is applied even if the secret version with the content you are trying to reuse was deleted.
@@ -1172,6 +1359,12 @@ func (o GetSecretsSecretSecretRuleArrayOutput) ToGetSecretsSecretSecretRuleArray
 
 func (o GetSecretsSecretSecretRuleArrayOutput) ToGetSecretsSecretSecretRuleArrayOutputWithContext(ctx context.Context) GetSecretsSecretSecretRuleArrayOutput {
 	return o
+}
+
+func (o GetSecretsSecretSecretRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecretsSecretSecretRule] {
+	return pulumix.Output[[]GetSecretsSecretSecretRule]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecretsSecretSecretRuleArrayOutput) Index(i pulumi.IntInput) GetSecretsSecretSecretRuleOutput {

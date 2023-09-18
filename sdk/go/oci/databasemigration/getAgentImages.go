@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Agent Images in Oracle Cloud Infrastructure Database Migration service.
@@ -97,6 +98,12 @@ func (o GetAgentImagesResultOutput) ToGetAgentImagesResultOutput() GetAgentImage
 
 func (o GetAgentImagesResultOutput) ToGetAgentImagesResultOutputWithContext(ctx context.Context) GetAgentImagesResultOutput {
 	return o
+}
+
+func (o GetAgentImagesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAgentImagesResult] {
+	return pulumix.Output[GetAgentImagesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The list of agent_image_collection.

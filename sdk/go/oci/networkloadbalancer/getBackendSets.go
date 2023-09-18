@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Backend Sets in Oracle Cloud Infrastructure Network Load Balancer service.
@@ -104,6 +105,12 @@ func (o GetBackendSetsResultOutput) ToGetBackendSetsResultOutput() GetBackendSet
 
 func (o GetBackendSetsResultOutput) ToGetBackendSetsResultOutputWithContext(ctx context.Context) GetBackendSetsResultOutput {
 	return o
+}
+
+func (o GetBackendSetsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetBackendSetsResult] {
+	return pulumix.Output[GetBackendSetsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The list of backend_set_collection.

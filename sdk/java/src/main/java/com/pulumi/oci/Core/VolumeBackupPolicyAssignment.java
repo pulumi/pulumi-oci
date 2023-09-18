@@ -66,7 +66,7 @@ public class VolumeBackupPolicyAssignment extends com.pulumi.resources.CustomRes
      * The OCID of the volume to assign the policy to.
      * 
      */
-    @Export(name="assetId", type=String.class, parameters={})
+    @Export(name="assetId", refs={String.class}, tree="[0]")
     private Output<String> assetId;
 
     /**
@@ -83,7 +83,7 @@ public class VolumeBackupPolicyAssignment extends com.pulumi.resources.CustomRes
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="policyId", type=String.class, parameters={})
+    @Export(name="policyId", refs={String.class}, tree="[0]")
     private Output<String> policyId;
 
     /**
@@ -100,7 +100,7 @@ public class VolumeBackupPolicyAssignment extends com.pulumi.resources.CustomRes
      * The date and time the volume backup policy was assigned to the volume. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**

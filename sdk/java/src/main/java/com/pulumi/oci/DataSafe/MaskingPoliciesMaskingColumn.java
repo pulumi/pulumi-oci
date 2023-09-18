@@ -122,7 +122,7 @@ public class MaskingPoliciesMaskingColumn extends com.pulumi.resources.CustomRes
      * An array of child columns that are in referential relationship with the masking column.
      * 
      */
-    @Export(name="childColumns", type=List.class, parameters={String.class})
+    @Export(name="childColumns", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> childColumns;
 
     /**
@@ -136,7 +136,7 @@ public class MaskingPoliciesMaskingColumn extends com.pulumi.resources.CustomRes
      * (Updatable) The name of the substitution column.
      * 
      */
-    @Export(name="columnName", type=String.class, parameters={})
+    @Export(name="columnName", refs={String.class}, tree="[0]")
     private Output<String> columnName;
 
     /**
@@ -150,7 +150,7 @@ public class MaskingPoliciesMaskingColumn extends com.pulumi.resources.CustomRes
      * The data type of the masking column.
      * 
      */
-    @Export(name="dataType", type=String.class, parameters={})
+    @Export(name="dataType", refs={String.class}, tree="[0]")
     private Output<String> dataType;
 
     /**
@@ -164,7 +164,7 @@ public class MaskingPoliciesMaskingColumn extends com.pulumi.resources.CustomRes
      * (Updatable) Indicates if data masking is enabled for the masking column. Set it to false if  you don&#39;t want to mask the column.
      * 
      */
-    @Export(name="isMaskingEnabled", type=Boolean.class, parameters={})
+    @Export(name="isMaskingEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isMaskingEnabled;
 
     /**
@@ -178,7 +178,7 @@ public class MaskingPoliciesMaskingColumn extends com.pulumi.resources.CustomRes
      * The unique key that identifies the masking column. It&#39;s numeric and unique within a masking policy.
      * 
      */
-    @Export(name="key", type=String.class, parameters={})
+    @Export(name="key", refs={String.class}, tree="[0]")
     private Output<String> key;
 
     /**
@@ -192,7 +192,7 @@ public class MaskingPoliciesMaskingColumn extends com.pulumi.resources.CustomRes
      * Details about the current state of the masking column.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -206,7 +206,7 @@ public class MaskingPoliciesMaskingColumn extends com.pulumi.resources.CustomRes
      * (Updatable) The group of the masking column. It&#39;s a masking group identifier and can be any string  of acceptable length. All the columns in a group are masked together to ensure that  the masked data across these columns continue to retain the same logical relationship.  For more details, check  &lt;a href=https://docs.oracle.com/en/cloud/paas/data-safe/udscs/group-masking1.html#GUID-755056B9-9540-48C0-9491-262A44A85037&gt;Group Masking in the Data Safe documentation.&lt;/a&gt;
      * 
      */
-    @Export(name="maskingColumnGroup", type=String.class, parameters={})
+    @Export(name="maskingColumnGroup", refs={String.class}, tree="[0]")
     private Output<String> maskingColumnGroup;
 
     /**
@@ -220,7 +220,7 @@ public class MaskingPoliciesMaskingColumn extends com.pulumi.resources.CustomRes
      * (Updatable) The masking formats to be assigned to the masking column. You can specify a condition  as part of each masking format. It enables you to do  &lt;a href=&#34;https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html&#34;&gt;conditional masking&lt;/a&gt;  so that you can mask the column data values differently using different masking  formats and the associated conditions. A masking format can have one or more format  entries. The combined output of all the format entries is used for masking. It  provides the flexibility to define a masking format that can generate different parts  of a data value separately and then combine them to get the final data value for masking.
      * 
      */
-    @Export(name="maskingFormats", type=List.class, parameters={MaskingPoliciesMaskingColumnMaskingFormat.class})
+    @Export(name="maskingFormats", refs={List.class,MaskingPoliciesMaskingColumnMaskingFormat.class}, tree="[0,1]")
     private Output<List<MaskingPoliciesMaskingColumnMaskingFormat>> maskingFormats;
 
     /**
@@ -234,7 +234,7 @@ public class MaskingPoliciesMaskingColumn extends com.pulumi.resources.CustomRes
      * The OCID of the masking policy.
      * 
      */
-    @Export(name="maskingPolicyId", type=String.class, parameters={})
+    @Export(name="maskingPolicyId", refs={String.class}, tree="[0]")
     private Output<String> maskingPolicyId;
 
     /**
@@ -248,7 +248,7 @@ public class MaskingPoliciesMaskingColumn extends com.pulumi.resources.CustomRes
      * The name of the object (table or editioning view) that contains the database column. This attribute cannot be updated for an existing masking column.
      * 
      */
-    @Export(name="object", type=String.class, parameters={})
+    @Export(name="object", refs={String.class}, tree="[0]")
     private Output<String> object;
 
     /**
@@ -262,7 +262,7 @@ public class MaskingPoliciesMaskingColumn extends com.pulumi.resources.CustomRes
      * (Updatable) The type of the object that contains the database column.
      * 
      */
-    @Export(name="objectType", type=String.class, parameters={})
+    @Export(name="objectType", refs={String.class}, tree="[0]")
     private Output<String> objectType;
 
     /**
@@ -276,7 +276,7 @@ public class MaskingPoliciesMaskingColumn extends com.pulumi.resources.CustomRes
      * The name of the schema that contains the database column. This attribute cannot be updated for an existing masking column.
      * 
      */
-    @Export(name="schemaName", type=String.class, parameters={})
+    @Export(name="schemaName", refs={String.class}, tree="[0]")
     private Output<String> schemaName;
 
     /**
@@ -293,7 +293,7 @@ public class MaskingPoliciesMaskingColumn extends com.pulumi.resources.CustomRes
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="sensitiveTypeId", type=String.class, parameters={})
+    @Export(name="sensitiveTypeId", refs={String.class}, tree="[0]")
     private Output<String> sensitiveTypeId;
 
     /**
@@ -310,7 +310,7 @@ public class MaskingPoliciesMaskingColumn extends com.pulumi.resources.CustomRes
      * The current state of the masking column.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -324,7 +324,7 @@ public class MaskingPoliciesMaskingColumn extends com.pulumi.resources.CustomRes
      * The date and time the masking column was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -338,7 +338,7 @@ public class MaskingPoliciesMaskingColumn extends com.pulumi.resources.CustomRes
      * The date and time the masking column was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

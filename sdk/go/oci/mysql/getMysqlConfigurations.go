@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Mysql Configurations in Oracle Cloud Infrastructure MySQL Database service.
@@ -146,6 +147,12 @@ func (o GetMysqlConfigurationsResultOutput) ToGetMysqlConfigurationsResultOutput
 
 func (o GetMysqlConfigurationsResultOutput) ToGetMysqlConfigurationsResultOutputWithContext(ctx context.Context) GetMysqlConfigurationsResultOutput {
 	return o
+}
+
+func (o GetMysqlConfigurationsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlConfigurationsResult] {
+	return pulumix.Output[GetMysqlConfigurationsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // OCID of the Compartment the Configuration exists in.

@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Target Database resource in Oracle Cloud Infrastructure Data Safe service.
@@ -292,6 +293,12 @@ func (i *TargetDatabase) ToTargetDatabaseOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(TargetDatabaseOutput)
 }
 
+func (i *TargetDatabase) ToOutput(ctx context.Context) pulumix.Output[*TargetDatabase] {
+	return pulumix.Output[*TargetDatabase]{
+		OutputState: i.ToTargetDatabaseOutputWithContext(ctx).OutputState,
+	}
+}
+
 // TargetDatabaseArrayInput is an input type that accepts TargetDatabaseArray and TargetDatabaseArrayOutput values.
 // You can construct a concrete instance of `TargetDatabaseArrayInput` via:
 //
@@ -315,6 +322,12 @@ func (i TargetDatabaseArray) ToTargetDatabaseArrayOutput() TargetDatabaseArrayOu
 
 func (i TargetDatabaseArray) ToTargetDatabaseArrayOutputWithContext(ctx context.Context) TargetDatabaseArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(TargetDatabaseArrayOutput)
+}
+
+func (i TargetDatabaseArray) ToOutput(ctx context.Context) pulumix.Output[[]*TargetDatabase] {
+	return pulumix.Output[[]*TargetDatabase]{
+		OutputState: i.ToTargetDatabaseArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // TargetDatabaseMapInput is an input type that accepts TargetDatabaseMap and TargetDatabaseMapOutput values.
@@ -342,6 +355,12 @@ func (i TargetDatabaseMap) ToTargetDatabaseMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(TargetDatabaseMapOutput)
 }
 
+func (i TargetDatabaseMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*TargetDatabase] {
+	return pulumix.Output[map[string]*TargetDatabase]{
+		OutputState: i.ToTargetDatabaseMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type TargetDatabaseOutput struct{ *pulumi.OutputState }
 
 func (TargetDatabaseOutput) ElementType() reflect.Type {
@@ -354,6 +373,12 @@ func (o TargetDatabaseOutput) ToTargetDatabaseOutput() TargetDatabaseOutput {
 
 func (o TargetDatabaseOutput) ToTargetDatabaseOutputWithContext(ctx context.Context) TargetDatabaseOutput {
 	return o
+}
+
+func (o TargetDatabaseOutput) ToOutput(ctx context.Context) pulumix.Output[*TargetDatabase] {
+	return pulumix.Output[*TargetDatabase]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCIDs of associated resources like database, Data Safe private endpoint etc.
@@ -445,6 +470,12 @@ func (o TargetDatabaseArrayOutput) ToTargetDatabaseArrayOutputWithContext(ctx co
 	return o
 }
 
+func (o TargetDatabaseArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*TargetDatabase] {
+	return pulumix.Output[[]*TargetDatabase]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o TargetDatabaseArrayOutput) Index(i pulumi.IntInput) TargetDatabaseOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *TargetDatabase {
 		return vs[0].([]*TargetDatabase)[vs[1].(int)]
@@ -463,6 +494,12 @@ func (o TargetDatabaseMapOutput) ToTargetDatabaseMapOutput() TargetDatabaseMapOu
 
 func (o TargetDatabaseMapOutput) ToTargetDatabaseMapOutputWithContext(ctx context.Context) TargetDatabaseMapOutput {
 	return o
+}
+
+func (o TargetDatabaseMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*TargetDatabase] {
+	return pulumix.Output[map[string]*TargetDatabase]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o TargetDatabaseMapOutput) MapIndex(k pulumi.StringInput) TargetDatabaseOutput {

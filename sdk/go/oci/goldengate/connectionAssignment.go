@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Connection Assignment resource in Oracle Cloud Infrastructure Golden Gate service.
@@ -197,6 +198,12 @@ func (i *ConnectionAssignment) ToConnectionAssignmentOutputWithContext(ctx conte
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectionAssignmentOutput)
 }
 
+func (i *ConnectionAssignment) ToOutput(ctx context.Context) pulumix.Output[*ConnectionAssignment] {
+	return pulumix.Output[*ConnectionAssignment]{
+		OutputState: i.ToConnectionAssignmentOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ConnectionAssignmentArrayInput is an input type that accepts ConnectionAssignmentArray and ConnectionAssignmentArrayOutput values.
 // You can construct a concrete instance of `ConnectionAssignmentArrayInput` via:
 //
@@ -220,6 +227,12 @@ func (i ConnectionAssignmentArray) ToConnectionAssignmentArrayOutput() Connectio
 
 func (i ConnectionAssignmentArray) ToConnectionAssignmentArrayOutputWithContext(ctx context.Context) ConnectionAssignmentArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectionAssignmentArrayOutput)
+}
+
+func (i ConnectionAssignmentArray) ToOutput(ctx context.Context) pulumix.Output[[]*ConnectionAssignment] {
+	return pulumix.Output[[]*ConnectionAssignment]{
+		OutputState: i.ToConnectionAssignmentArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // ConnectionAssignmentMapInput is an input type that accepts ConnectionAssignmentMap and ConnectionAssignmentMapOutput values.
@@ -247,6 +260,12 @@ func (i ConnectionAssignmentMap) ToConnectionAssignmentMapOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectionAssignmentMapOutput)
 }
 
+func (i ConnectionAssignmentMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ConnectionAssignment] {
+	return pulumix.Output[map[string]*ConnectionAssignment]{
+		OutputState: i.ToConnectionAssignmentMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ConnectionAssignmentOutput struct{ *pulumi.OutputState }
 
 func (ConnectionAssignmentOutput) ElementType() reflect.Type {
@@ -259,6 +278,12 @@ func (o ConnectionAssignmentOutput) ToConnectionAssignmentOutput() ConnectionAss
 
 func (o ConnectionAssignmentOutput) ToConnectionAssignmentOutputWithContext(ctx context.Context) ConnectionAssignmentOutput {
 	return o
+}
+
+func (o ConnectionAssignmentOutput) ToOutput(ctx context.Context) pulumix.Output[*ConnectionAssignment] {
+	return pulumix.Output[*ConnectionAssignment]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Credential store alias.
@@ -313,6 +338,12 @@ func (o ConnectionAssignmentArrayOutput) ToConnectionAssignmentArrayOutputWithCo
 	return o
 }
 
+func (o ConnectionAssignmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ConnectionAssignment] {
+	return pulumix.Output[[]*ConnectionAssignment]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o ConnectionAssignmentArrayOutput) Index(i pulumi.IntInput) ConnectionAssignmentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ConnectionAssignment {
 		return vs[0].([]*ConnectionAssignment)[vs[1].(int)]
@@ -331,6 +362,12 @@ func (o ConnectionAssignmentMapOutput) ToConnectionAssignmentMapOutput() Connect
 
 func (o ConnectionAssignmentMapOutput) ToConnectionAssignmentMapOutputWithContext(ctx context.Context) ConnectionAssignmentMapOutput {
 	return o
+}
+
+func (o ConnectionAssignmentMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ConnectionAssignment] {
+	return pulumix.Output[map[string]*ConnectionAssignment]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ConnectionAssignmentMapOutput) MapIndex(k pulumi.StringInput) ConnectionAssignmentOutput {

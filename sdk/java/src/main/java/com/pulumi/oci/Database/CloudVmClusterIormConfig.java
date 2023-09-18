@@ -73,7 +73,7 @@ public class CloudVmClusterIormConfig extends com.pulumi.resources.CustomResourc
      * The Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    @Export(name="cloudVmClusterId", type=String.class, parameters={})
+    @Export(name="cloudVmClusterId", refs={String.class}, tree="[0]")
     private Output<String> cloudVmClusterId;
 
     /**
@@ -87,7 +87,7 @@ public class CloudVmClusterIormConfig extends com.pulumi.resources.CustomResourc
      * (Updatable) Array of IORM Setting for all the database in this Cloud Vm Cluster
      * 
      */
-    @Export(name="dbPlans", type=List.class, parameters={CloudVmClusterIormConfigDbPlan.class})
+    @Export(name="dbPlans", refs={List.class,CloudVmClusterIormConfigDbPlan.class}, tree="[0,1]")
     private Output<List<CloudVmClusterIormConfigDbPlan>> dbPlans;
 
     /**
@@ -101,7 +101,7 @@ public class CloudVmClusterIormConfig extends com.pulumi.resources.CustomResourc
      * Additional information about the current `lifecycleState`.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -115,7 +115,7 @@ public class CloudVmClusterIormConfig extends com.pulumi.resources.CustomResourc
      * (Updatable) Value for the IORM objective Default is &#34;Auto&#34;
      * 
      */
-    @Export(name="objective", type=String.class, parameters={})
+    @Export(name="objective", refs={String.class}, tree="[0]")
     private Output<String> objective;
 
     /**
@@ -129,7 +129,7 @@ public class CloudVmClusterIormConfig extends com.pulumi.resources.CustomResourc
      * The current state of IORM configuration for the Exadata DB system.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**

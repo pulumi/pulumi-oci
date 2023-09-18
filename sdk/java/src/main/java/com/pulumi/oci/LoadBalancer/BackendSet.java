@@ -113,7 +113,7 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:LoadBalancer/backendSet:BackendSet")
 public class BackendSet extends com.pulumi.resources.CustomResource {
-    @Export(name="backends", type=List.class, parameters={BackendSetBackend.class})
+    @Export(name="backends", refs={List.class,BackendSetBackend.class}, tree="[0,1]")
     private Output<List<BackendSetBackend>> backends;
 
     public Output<List<BackendSetBackend>> backends() {
@@ -123,7 +123,7 @@ public class BackendSet extends com.pulumi.resources.CustomResource {
      * (Updatable) The health check policy&#39;s configuration details.
      * 
      */
-    @Export(name="healthChecker", type=BackendSetHealthChecker.class, parameters={})
+    @Export(name="healthChecker", refs={BackendSetHealthChecker.class}, tree="[0]")
     private Output<BackendSetHealthChecker> healthChecker;
 
     /**
@@ -151,7 +151,7 @@ public class BackendSet extends com.pulumi.resources.CustomResource {
      * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      * 
      */
-    @Export(name="lbCookieSessionPersistenceConfiguration", type=BackendSetLbCookieSessionPersistenceConfiguration.class, parameters={})
+    @Export(name="lbCookieSessionPersistenceConfiguration", refs={BackendSetLbCookieSessionPersistenceConfiguration.class}, tree="[0]")
     private Output<BackendSetLbCookieSessionPersistenceConfiguration> lbCookieSessionPersistenceConfiguration;
 
     /**
@@ -179,7 +179,7 @@ public class BackendSet extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer on which to add a backend set.
      * 
      */
-    @Export(name="loadBalancerId", type=String.class, parameters={})
+    @Export(name="loadBalancerId", refs={String.class}, tree="[0]")
     private Output<String> loadBalancerId;
 
     /**
@@ -197,7 +197,7 @@ public class BackendSet extends com.pulumi.resources.CustomResource {
      * Example: `example_backend_set`
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -215,7 +215,7 @@ public class BackendSet extends com.pulumi.resources.CustomResource {
      * (Updatable) The load balancer policy for the backend set. To get a list of available policies, use the [ListPolicies](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerPolicy/ListPolicies) operation.  Example: `LEAST_CONNECTIONS`
      * 
      */
-    @Export(name="policy", type=String.class, parameters={})
+    @Export(name="policy", refs={String.class}, tree="[0]")
     private Output<String> policy;
 
     /**
@@ -241,7 +241,7 @@ public class BackendSet extends com.pulumi.resources.CustomResource {
      * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      * 
      */
-    @Export(name="sessionPersistenceConfiguration", type=BackendSetSessionPersistenceConfiguration.class, parameters={})
+    @Export(name="sessionPersistenceConfiguration", refs={BackendSetSessionPersistenceConfiguration.class}, tree="[0]")
     private Output<BackendSetSessionPersistenceConfiguration> sessionPersistenceConfiguration;
 
     /**
@@ -269,7 +269,7 @@ public class BackendSet extends com.pulumi.resources.CustomResource {
      * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      * 
      */
-    @Export(name="sslConfiguration", type=BackendSetSslConfiguration.class, parameters={})
+    @Export(name="sslConfiguration", refs={BackendSetSslConfiguration.class}, tree="[0]")
     private Output</* @Nullable */ BackendSetSslConfiguration> sslConfiguration;
 
     /**
@@ -281,7 +281,7 @@ public class BackendSet extends com.pulumi.resources.CustomResource {
     public Output<Optional<BackendSetSslConfiguration>> sslConfiguration() {
         return Codegen.optional(this.sslConfiguration);
     }
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     public Output<String> state() {

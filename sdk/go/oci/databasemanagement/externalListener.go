@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the External Listener resource in Oracle Cloud Infrastructure Database Management service.
@@ -275,6 +276,12 @@ func (i *ExternalListener) ToExternalListenerOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalListenerOutput)
 }
 
+func (i *ExternalListener) ToOutput(ctx context.Context) pulumix.Output[*ExternalListener] {
+	return pulumix.Output[*ExternalListener]{
+		OutputState: i.ToExternalListenerOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ExternalListenerArrayInput is an input type that accepts ExternalListenerArray and ExternalListenerArrayOutput values.
 // You can construct a concrete instance of `ExternalListenerArrayInput` via:
 //
@@ -298,6 +305,12 @@ func (i ExternalListenerArray) ToExternalListenerArrayOutput() ExternalListenerA
 
 func (i ExternalListenerArray) ToExternalListenerArrayOutputWithContext(ctx context.Context) ExternalListenerArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalListenerArrayOutput)
+}
+
+func (i ExternalListenerArray) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalListener] {
+	return pulumix.Output[[]*ExternalListener]{
+		OutputState: i.ToExternalListenerArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // ExternalListenerMapInput is an input type that accepts ExternalListenerMap and ExternalListenerMapOutput values.
@@ -325,6 +338,12 @@ func (i ExternalListenerMap) ToExternalListenerMapOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalListenerMapOutput)
 }
 
+func (i ExternalListenerMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalListener] {
+	return pulumix.Output[map[string]*ExternalListener]{
+		OutputState: i.ToExternalListenerMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ExternalListenerOutput struct{ *pulumi.OutputState }
 
 func (ExternalListenerOutput) ElementType() reflect.Type {
@@ -337,6 +356,12 @@ func (o ExternalListenerOutput) ToExternalListenerOutput() ExternalListenerOutpu
 
 func (o ExternalListenerOutput) ToExternalListenerOutputWithContext(ctx context.Context) ExternalListenerOutput {
 	return o
+}
+
+func (o ExternalListenerOutput) ToOutput(ctx context.Context) pulumix.Output[*ExternalListener] {
+	return pulumix.Output[*ExternalListener]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The additional details of the external listener defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
@@ -481,6 +506,12 @@ func (o ExternalListenerArrayOutput) ToExternalListenerArrayOutputWithContext(ct
 	return o
 }
 
+func (o ExternalListenerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalListener] {
+	return pulumix.Output[[]*ExternalListener]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o ExternalListenerArrayOutput) Index(i pulumi.IntInput) ExternalListenerOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ExternalListener {
 		return vs[0].([]*ExternalListener)[vs[1].(int)]
@@ -499,6 +530,12 @@ func (o ExternalListenerMapOutput) ToExternalListenerMapOutput() ExternalListene
 
 func (o ExternalListenerMapOutput) ToExternalListenerMapOutputWithContext(ctx context.Context) ExternalListenerMapOutput {
 	return o
+}
+
+func (o ExternalListenerMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalListener] {
+	return pulumix.Output[map[string]*ExternalListener]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ExternalListenerMapOutput) MapIndex(k pulumi.StringInput) ExternalListenerOutput {

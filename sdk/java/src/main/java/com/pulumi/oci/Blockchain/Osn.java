@@ -69,7 +69,7 @@ public class Osn extends com.pulumi.resources.CustomResource {
      * Availability Domain to place new OSN
      * 
      */
-    @Export(name="ad", type=String.class, parameters={})
+    @Export(name="ad", refs={String.class}, tree="[0]")
     private Output<String> ad;
 
     /**
@@ -83,7 +83,7 @@ public class Osn extends com.pulumi.resources.CustomResource {
      * Unique service identifier.
      * 
      */
-    @Export(name="blockchainPlatformId", type=String.class, parameters={})
+    @Export(name="blockchainPlatformId", refs={String.class}, tree="[0]")
     private Output<String> blockchainPlatformId;
 
     /**
@@ -97,7 +97,7 @@ public class Osn extends com.pulumi.resources.CustomResource {
      * (Updatable) OCPU allocation parameter
      * 
      */
-    @Export(name="ocpuAllocationParam", type=OsnOcpuAllocationParam.class, parameters={})
+    @Export(name="ocpuAllocationParam", refs={OsnOcpuAllocationParam.class}, tree="[0]")
     private Output<OsnOcpuAllocationParam> ocpuAllocationParam;
 
     /**
@@ -111,7 +111,7 @@ public class Osn extends com.pulumi.resources.CustomResource {
      * OSN identifier
      * 
      */
-    @Export(name="osnKey", type=String.class, parameters={})
+    @Export(name="osnKey", refs={String.class}, tree="[0]")
     private Output<String> osnKey;
 
     /**
@@ -125,7 +125,7 @@ public class Osn extends com.pulumi.resources.CustomResource {
      * The current state of the OSN.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**

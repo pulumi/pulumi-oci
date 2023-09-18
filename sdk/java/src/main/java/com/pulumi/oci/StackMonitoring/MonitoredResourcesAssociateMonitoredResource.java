@@ -71,7 +71,7 @@ public class MonitoredResourcesAssociateMonitoredResource extends com.pulumi.res
      * Association type to be created between source and destination resources.
      * 
      */
-    @Export(name="associationType", type=String.class, parameters={})
+    @Export(name="associationType", refs={String.class}, tree="[0]")
     private Output<String> associationType;
 
     /**
@@ -88,7 +88,7 @@ public class MonitoredResourcesAssociateMonitoredResource extends com.pulumi.res
      * * User created using tags (USER_TAG_ASSOC).
      * 
      */
-    @Export(name="category", type=String.class, parameters={})
+    @Export(name="category", refs={String.class}, tree="[0]")
     private Output<String> category;
 
     /**
@@ -105,7 +105,7 @@ public class MonitoredResourcesAssociateMonitoredResource extends com.pulumi.res
      * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -119,7 +119,7 @@ public class MonitoredResourcesAssociateMonitoredResource extends com.pulumi.res
      * Association Resource Details.
      * 
      */
-    @Export(name="destinationResourceDetails", type=List.class, parameters={MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail.class})
+    @Export(name="destinationResourceDetails", refs={List.class,MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail.class}, tree="[0,1]")
     private Output<List<MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail>> destinationResourceDetails;
 
     /**
@@ -133,7 +133,7 @@ public class MonitoredResourcesAssociateMonitoredResource extends com.pulumi.res
      * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    @Export(name="destinationResourceId", type=String.class, parameters={})
+    @Export(name="destinationResourceId", refs={String.class}, tree="[0]")
     private Output<String> destinationResourceId;
 
     /**
@@ -147,7 +147,7 @@ public class MonitoredResourcesAssociateMonitoredResource extends com.pulumi.res
      * Association Resource Details.
      * 
      */
-    @Export(name="sourceResourceDetails", type=List.class, parameters={MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail.class})
+    @Export(name="sourceResourceDetails", refs={List.class,MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail.class}, tree="[0,1]")
     private Output<List<MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail>> sourceResourceDetails;
 
     /**
@@ -164,7 +164,7 @@ public class MonitoredResourcesAssociateMonitoredResource extends com.pulumi.res
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="sourceResourceId", type=String.class, parameters={})
+    @Export(name="sourceResourceId", refs={String.class}, tree="[0]")
     private Output<String> sourceResourceId;
 
     /**
@@ -181,7 +181,7 @@ public class MonitoredResourcesAssociateMonitoredResource extends com.pulumi.res
      * Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    @Export(name="tenantId", type=String.class, parameters={})
+    @Export(name="tenantId", refs={String.class}, tree="[0]")
     private Output<String> tenantId;
 
     /**
@@ -195,7 +195,7 @@ public class MonitoredResourcesAssociateMonitoredResource extends com.pulumi.res
      * The time when the association was created. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**

@@ -76,7 +76,7 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -90,7 +90,7 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -104,7 +104,7 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      * (Updatable) Description of the private endpoint. Avoid entering confidential information.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -118,7 +118,7 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      * (Updatable) The private endpoint display name. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -132,7 +132,7 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      * (Updatable) DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
      * 
      */
-    @Export(name="dnsZones", type=List.class, parameters={String.class})
+    @Export(name="dnsZones", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> dnsZones;
 
     /**
@@ -146,7 +146,7 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -160,7 +160,7 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      * (Updatable) When `true`, allows the private endpoint to be used with a configuration source provider.
      * 
      */
-    @Export(name="isUsedWithConfigurationSourceProvider", type=Boolean.class, parameters={})
+    @Export(name="isUsedWithConfigurationSourceProvider", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isUsedWithConfigurationSourceProvider;
 
     /**
@@ -174,7 +174,7 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      * (Updatable) An array of network security group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the private endpoint. Order does not matter.
      * 
      */
-    @Export(name="nsgIdLists", type=List.class, parameters={String.class})
+    @Export(name="nsgIdLists", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> nsgIdLists;
 
     /**
@@ -188,7 +188,7 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      * The source IPs which resource manager service will use to connect to customer&#39;s network. Automatically assigned by Resource Manager Service.
      * 
      */
-    @Export(name="sourceIps", type=List.class, parameters={String.class})
+    @Export(name="sourceIps", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> sourceIps;
 
     /**
@@ -202,7 +202,7 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      * The current lifecycle state of the private endpoint.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -216,7 +216,7 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet within the VCN for the private endpoint.
      * 
      */
-    @Export(name="subnetId", type=String.class, parameters={})
+    @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
@@ -230,7 +230,7 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      * The date and time at which the private endpoint was created. Format is defined by RFC3339. Example: `2020-11-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -247,7 +247,7 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="vcnId", type=String.class, parameters={})
+    @Export(name="vcnId", refs={String.class}, tree="[0]")
     private Output<String> vcnId;
 
     /**

@@ -66,7 +66,7 @@ public class FusionEnvironmentRefreshActivity extends com.pulumi.resources.Custo
      * A friendly name for the refresh activity. Can be changed later.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -80,7 +80,7 @@ public class FusionEnvironmentRefreshActivity extends com.pulumi.resources.Custo
      * unique FusionEnvironment identifier
      * 
      */
-    @Export(name="fusionEnvironmentId", type=String.class, parameters={})
+    @Export(name="fusionEnvironmentId", refs={String.class}, tree="[0]")
     private Output<String> fusionEnvironmentId;
 
     /**
@@ -94,7 +94,7 @@ public class FusionEnvironmentRefreshActivity extends com.pulumi.resources.Custo
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -104,7 +104,7 @@ public class FusionEnvironmentRefreshActivity extends com.pulumi.resources.Custo
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
     }
-    @Export(name="refreshActivityId", type=String.class, parameters={})
+    @Export(name="refreshActivityId", refs={String.class}, tree="[0]")
     private Output<String> refreshActivityId;
 
     public Output<String> refreshActivityId() {
@@ -114,7 +114,7 @@ public class FusionEnvironmentRefreshActivity extends com.pulumi.resources.Custo
      * Details of refresh investigation information, each item represents a different issue.
      * 
      */
-    @Export(name="refreshIssueDetailsLists", type=List.class, parameters={FusionEnvironmentRefreshActivityRefreshIssueDetailsList.class})
+    @Export(name="refreshIssueDetailsLists", refs={List.class,FusionEnvironmentRefreshActivityRefreshIssueDetailsList.class}, tree="[0,1]")
     private Output<List<FusionEnvironmentRefreshActivityRefreshIssueDetailsList>> refreshIssueDetailsLists;
 
     /**
@@ -128,7 +128,7 @@ public class FusionEnvironmentRefreshActivity extends com.pulumi.resources.Custo
      * Service availability / impact during refresh activity execution up down
      * 
      */
-    @Export(name="serviceAvailability", type=String.class, parameters={})
+    @Export(name="serviceAvailability", refs={String.class}, tree="[0]")
     private Output<String> serviceAvailability;
 
     /**
@@ -145,7 +145,7 @@ public class FusionEnvironmentRefreshActivity extends com.pulumi.resources.Custo
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="sourceFusionEnvironmentId", type=String.class, parameters={})
+    @Export(name="sourceFusionEnvironmentId", refs={String.class}, tree="[0]")
     private Output<String> sourceFusionEnvironmentId;
 
     /**
@@ -162,7 +162,7 @@ public class FusionEnvironmentRefreshActivity extends com.pulumi.resources.Custo
      * The current state of the refreshActivity.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -176,7 +176,7 @@ public class FusionEnvironmentRefreshActivity extends com.pulumi.resources.Custo
      * The time the refresh activity record was created. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeAccepted", type=String.class, parameters={})
+    @Export(name="timeAccepted", refs={String.class}, tree="[0]")
     private Output<String> timeAccepted;
 
     /**
@@ -190,7 +190,7 @@ public class FusionEnvironmentRefreshActivity extends com.pulumi.resources.Custo
      * The time the refresh activity is scheduled to end. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeExpectedFinish", type=String.class, parameters={})
+    @Export(name="timeExpectedFinish", refs={String.class}, tree="[0]")
     private Output<String> timeExpectedFinish;
 
     /**
@@ -204,7 +204,7 @@ public class FusionEnvironmentRefreshActivity extends com.pulumi.resources.Custo
      * The time the refresh activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeFinished", type=String.class, parameters={})
+    @Export(name="timeFinished", refs={String.class}, tree="[0]")
     private Output<String> timeFinished;
 
     /**
@@ -218,7 +218,7 @@ public class FusionEnvironmentRefreshActivity extends com.pulumi.resources.Custo
      * The date and time of the most recent source environment backup used for the environment refresh.
      * 
      */
-    @Export(name="timeOfRestorationPoint", type=String.class, parameters={})
+    @Export(name="timeOfRestorationPoint", refs={String.class}, tree="[0]")
     private Output<String> timeOfRestorationPoint;
 
     /**
@@ -232,7 +232,7 @@ public class FusionEnvironmentRefreshActivity extends com.pulumi.resources.Custo
      * The time the refresh activity record was updated. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

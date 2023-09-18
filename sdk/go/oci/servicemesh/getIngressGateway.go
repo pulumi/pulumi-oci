@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Ingress Gateway resource in Oracle Cloud Infrastructure Service Mesh service.
@@ -127,6 +128,12 @@ func (o LookupIngressGatewayResultOutput) ToLookupIngressGatewayResultOutput() L
 
 func (o LookupIngressGatewayResultOutput) ToLookupIngressGatewayResultOutputWithContext(ctx context.Context) LookupIngressGatewayResultOutput {
 	return o
+}
+
+func (o LookupIngressGatewayResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupIngressGatewayResult] {
+	return pulumix.Output[LookupIngressGatewayResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // This configuration determines if logging is enabled and where the logs will be output.

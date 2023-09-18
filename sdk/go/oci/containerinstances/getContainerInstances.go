@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Container Instances in Oracle Cloud Infrastructure Container Instances service.
@@ -126,6 +127,12 @@ func (o GetContainerInstancesResultOutput) ToGetContainerInstancesResultOutput()
 
 func (o GetContainerInstancesResultOutput) ToGetContainerInstancesResultOutputWithContext(ctx context.Context) GetContainerInstancesResultOutput {
 	return o
+}
+
+func (o GetContainerInstancesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstancesResult] {
+	return pulumix.Output[GetContainerInstancesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The availability domain to place the container instance.

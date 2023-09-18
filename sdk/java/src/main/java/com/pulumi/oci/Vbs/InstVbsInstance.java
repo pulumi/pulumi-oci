@@ -72,7 +72,7 @@ public class InstVbsInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) Compartment Identifier. It can only be the root compartment
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -86,7 +86,7 @@ public class InstVbsInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -100,7 +100,7 @@ public class InstVbsInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) Display Name
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -114,7 +114,7 @@ public class InstVbsInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -128,7 +128,7 @@ public class InstVbsInstance extends com.pulumi.resources.CustomResource {
      * IDCS personal acceess token identifying IDCS user and stripe for the VBS service
      * 
      */
-    @Export(name="idcsAccessToken", type=String.class, parameters={})
+    @Export(name="idcsAccessToken", refs={String.class}, tree="[0]")
     private Output<String> idcsAccessToken;
 
     /**
@@ -142,7 +142,7 @@ public class InstVbsInstance extends com.pulumi.resources.CustomResource {
      * (Updatable) Whether VBS is authorized to create and use resources in the customer tenancy
      * 
      */
-    @Export(name="isResourceUsageAgreementGranted", type=Boolean.class, parameters={})
+    @Export(name="isResourceUsageAgreementGranted", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isResourceUsageAgreementGranted;
 
     /**
@@ -156,7 +156,7 @@ public class InstVbsInstance extends com.pulumi.resources.CustomResource {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    @Export(name="lifecyleDetails", type=String.class, parameters={})
+    @Export(name="lifecyleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecyleDetails;
 
     /**
@@ -170,7 +170,7 @@ public class InstVbsInstance extends com.pulumi.resources.CustomResource {
      * Service Instance Name
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -187,7 +187,7 @@ public class InstVbsInstance extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="resourceCompartmentId", type=String.class, parameters={})
+    @Export(name="resourceCompartmentId", refs={String.class}, tree="[0]")
     private Output<String> resourceCompartmentId;
 
     /**
@@ -204,7 +204,7 @@ public class InstVbsInstance extends com.pulumi.resources.CustomResource {
      * The current state of the VbsInstance.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -218,7 +218,7 @@ public class InstVbsInstance extends com.pulumi.resources.CustomResource {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -232,7 +232,7 @@ public class InstVbsInstance extends com.pulumi.resources.CustomResource {
      * The time the the VbsInstance was created. An RFC3339 formatted datetime string
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -246,7 +246,7 @@ public class InstVbsInstance extends com.pulumi.resources.CustomResource {
      * The time the VbsInstance was updated. An RFC3339 formatted datetime string
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -260,7 +260,7 @@ public class InstVbsInstance extends com.pulumi.resources.CustomResource {
      * Public web URL for accessing the VBS service instance
      * 
      */
-    @Export(name="vbsAccessUrl", type=String.class, parameters={})
+    @Export(name="vbsAccessUrl", refs={String.class}, tree="[0]")
     private Output<String> vbsAccessUrl;
 
     /**

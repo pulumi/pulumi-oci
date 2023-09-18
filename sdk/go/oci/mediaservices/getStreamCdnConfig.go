@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Stream Cdn Config resource in Oracle Cloud Infrastructure Media Services service.
@@ -123,6 +124,12 @@ func (o LookupStreamCdnConfigResultOutput) ToLookupStreamCdnConfigResultOutput()
 
 func (o LookupStreamCdnConfigResultOutput) ToLookupStreamCdnConfigResultOutputWithContext(ctx context.Context) LookupStreamCdnConfigResultOutput {
 	return o
+}
+
+func (o LookupStreamCdnConfigResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupStreamCdnConfigResult] {
+	return pulumix.Output[LookupStreamCdnConfigResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Compartment Identifier.

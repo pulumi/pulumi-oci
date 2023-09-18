@@ -65,7 +65,7 @@ public class CompareSecurityAssessment extends com.pulumi.resources.CustomResour
      * The OCID of the security assessment. In this case a security assessment can be another security assessment, a latest assessment or a baseline.
      * 
      */
-    @Export(name="comparisonSecurityAssessmentId", type=String.class, parameters={})
+    @Export(name="comparisonSecurityAssessmentId", refs={String.class}, tree="[0]")
     private Output<String> comparisonSecurityAssessmentId;
 
     /**
@@ -82,7 +82,7 @@ public class CompareSecurityAssessment extends com.pulumi.resources.CustomResour
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="securityAssessmentId", type=String.class, parameters={})
+    @Export(name="securityAssessmentId", refs={String.class}, tree="[0]")
     private Output<String> securityAssessmentId;
 
     /**

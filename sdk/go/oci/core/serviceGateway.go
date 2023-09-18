@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Service Gateway resource in Oracle Cloud Infrastructure Core service.
@@ -289,6 +290,12 @@ func (i *ServiceGateway) ToServiceGatewayOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(ServiceGatewayOutput)
 }
 
+func (i *ServiceGateway) ToOutput(ctx context.Context) pulumix.Output[*ServiceGateway] {
+	return pulumix.Output[*ServiceGateway]{
+		OutputState: i.ToServiceGatewayOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ServiceGatewayArrayInput is an input type that accepts ServiceGatewayArray and ServiceGatewayArrayOutput values.
 // You can construct a concrete instance of `ServiceGatewayArrayInput` via:
 //
@@ -312,6 +319,12 @@ func (i ServiceGatewayArray) ToServiceGatewayArrayOutput() ServiceGatewayArrayOu
 
 func (i ServiceGatewayArray) ToServiceGatewayArrayOutputWithContext(ctx context.Context) ServiceGatewayArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ServiceGatewayArrayOutput)
+}
+
+func (i ServiceGatewayArray) ToOutput(ctx context.Context) pulumix.Output[[]*ServiceGateway] {
+	return pulumix.Output[[]*ServiceGateway]{
+		OutputState: i.ToServiceGatewayArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // ServiceGatewayMapInput is an input type that accepts ServiceGatewayMap and ServiceGatewayMapOutput values.
@@ -339,6 +352,12 @@ func (i ServiceGatewayMap) ToServiceGatewayMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(ServiceGatewayMapOutput)
 }
 
+func (i ServiceGatewayMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ServiceGateway] {
+	return pulumix.Output[map[string]*ServiceGateway]{
+		OutputState: i.ToServiceGatewayMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ServiceGatewayOutput struct{ *pulumi.OutputState }
 
 func (ServiceGatewayOutput) ElementType() reflect.Type {
@@ -351,6 +370,12 @@ func (o ServiceGatewayOutput) ToServiceGatewayOutput() ServiceGatewayOutput {
 
 func (o ServiceGatewayOutput) ToServiceGatewayOutputWithContext(ctx context.Context) ServiceGatewayOutput {
 	return o
+}
+
+func (o ServiceGatewayOutput) ToOutput(ctx context.Context) pulumix.Output[*ServiceGateway] {
+	return pulumix.Output[*ServiceGateway]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether the service gateway blocks all traffic through it. The default is `false`. When this is `true`, traffic is not routed to any services, regardless of route rules.  Example: `true`
@@ -426,6 +451,12 @@ func (o ServiceGatewayArrayOutput) ToServiceGatewayArrayOutputWithContext(ctx co
 	return o
 }
 
+func (o ServiceGatewayArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ServiceGateway] {
+	return pulumix.Output[[]*ServiceGateway]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o ServiceGatewayArrayOutput) Index(i pulumi.IntInput) ServiceGatewayOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ServiceGateway {
 		return vs[0].([]*ServiceGateway)[vs[1].(int)]
@@ -444,6 +475,12 @@ func (o ServiceGatewayMapOutput) ToServiceGatewayMapOutput() ServiceGatewayMapOu
 
 func (o ServiceGatewayMapOutput) ToServiceGatewayMapOutputWithContext(ctx context.Context) ServiceGatewayMapOutput {
 	return o
+}
+
+func (o ServiceGatewayMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ServiceGateway] {
+	return pulumix.Output[map[string]*ServiceGateway]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ServiceGatewayMapOutput) MapIndex(k pulumi.StringInput) ServiceGatewayOutput {

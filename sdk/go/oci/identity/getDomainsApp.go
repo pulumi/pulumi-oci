@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific App resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -364,6 +365,12 @@ func (o LookupDomainsAppResultOutput) ToLookupDomainsAppResultOutput() LookupDom
 
 func (o LookupDomainsAppResultOutput) ToLookupDomainsAppResultOutputWithContext(ctx context.Context) LookupDomainsAppResultOutput {
 	return o
+}
+
+func (o LookupDomainsAppResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDomainsAppResult] {
+	return pulumix.Output[LookupDomainsAppResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Access token expiry

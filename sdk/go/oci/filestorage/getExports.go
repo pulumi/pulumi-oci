@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Exports in Oracle Cloud Infrastructure File Storage service.
@@ -132,6 +133,12 @@ func (o GetExportsResultOutput) ToGetExportsResultOutput() GetExportsResultOutpu
 
 func (o GetExportsResultOutput) ToGetExportsResultOutputWithContext(ctx context.Context) GetExportsResultOutput {
 	return o
+}
+
+func (o GetExportsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetExportsResult] {
+	return pulumix.Output[GetExportsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetExportsResultOutput) CompartmentId() pulumi.StringPtrOutput {

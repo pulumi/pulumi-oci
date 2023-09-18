@@ -71,7 +71,7 @@ public class Api extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -85,7 +85,7 @@ public class Api extends com.pulumi.resources.CustomResource {
      * (Updatable) API Specification content in json or yaml format
      * 
      */
-    @Export(name="content", type=String.class, parameters={})
+    @Export(name="content", refs={String.class}, tree="[0]")
     private Output<String> content;
 
     /**
@@ -99,7 +99,7 @@ public class Api extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -113,7 +113,7 @@ public class Api extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.  Example: `My new resource`
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -130,7 +130,7 @@ public class Api extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -154,7 +154,7 @@ public class Api extends com.pulumi.resources.CustomResource {
      * * &#39;Canceled&#39; the document validation was canceled
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -175,7 +175,7 @@ public class Api extends com.pulumi.resources.CustomResource {
      * Type of API Specification file.
      * 
      */
-    @Export(name="specificationType", type=String.class, parameters={})
+    @Export(name="specificationType", refs={String.class}, tree="[0]")
     private Output<String> specificationType;
 
     /**
@@ -189,7 +189,7 @@ public class Api extends com.pulumi.resources.CustomResource {
      * The current state of the API.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -203,7 +203,7 @@ public class Api extends com.pulumi.resources.CustomResource {
      * The time this resource was created. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -217,7 +217,7 @@ public class Api extends com.pulumi.resources.CustomResource {
      * The time this resource was last updated. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -231,7 +231,7 @@ public class Api extends com.pulumi.resources.CustomResource {
      * Status of each feature available from the API.
      * 
      */
-    @Export(name="validationResults", type=List.class, parameters={ApiValidationResult.class})
+    @Export(name="validationResults", refs={List.class,ApiValidationResult.class}, tree="[0,1]")
     private Output<List<ApiValidationResult>> validationResults;
 
     /**

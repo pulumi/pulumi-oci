@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Apm Domains in Oracle Cloud Infrastructure Apm service.
@@ -119,6 +120,12 @@ func (o GetApmDomainsResultOutput) ToGetApmDomainsResultOutput() GetApmDomainsRe
 
 func (o GetApmDomainsResultOutput) ToGetApmDomainsResultOutputWithContext(ctx context.Context) GetApmDomainsResultOutput {
 	return o
+}
+
+func (o GetApmDomainsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetApmDomainsResult] {
+	return pulumix.Output[GetApmDomainsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The list of apm_domains.

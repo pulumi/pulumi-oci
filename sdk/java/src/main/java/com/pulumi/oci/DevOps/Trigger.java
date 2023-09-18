@@ -89,7 +89,7 @@ public class Trigger extends com.pulumi.resources.CustomResource {
      * (Updatable) The list of actions that are to be performed for this trigger.
      * 
      */
-    @Export(name="actions", type=List.class, parameters={TriggerAction.class})
+    @Export(name="actions", refs={List.class,TriggerAction.class}, tree="[0,1]")
     private Output<List<TriggerAction>> actions;
 
     /**
@@ -103,7 +103,7 @@ public class Trigger extends com.pulumi.resources.CustomResource {
      * The OCID of the compartment that contains the trigger.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -117,7 +117,7 @@ public class Trigger extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the connection resource used to get details for triggered events.
      * 
      */
-    @Export(name="connectionId", type=String.class, parameters={})
+    @Export(name="connectionId", refs={String.class}, tree="[0]")
     private Output<String> connectionId;
 
     /**
@@ -131,7 +131,7 @@ public class Trigger extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -145,7 +145,7 @@ public class Trigger extends com.pulumi.resources.CustomResource {
      * (Updatable) Optional description about the trigger.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -159,7 +159,7 @@ public class Trigger extends com.pulumi.resources.CustomResource {
      * (Updatable) Trigger display name. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -173,7 +173,7 @@ public class Trigger extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -187,7 +187,7 @@ public class Trigger extends com.pulumi.resources.CustomResource {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -201,7 +201,7 @@ public class Trigger extends com.pulumi.resources.CustomResource {
      * The OCID of the DevOps project to which the trigger belongs to.
      * 
      */
-    @Export(name="projectId", type=String.class, parameters={})
+    @Export(name="projectId", refs={String.class}, tree="[0]")
     private Output<String> projectId;
 
     /**
@@ -215,7 +215,7 @@ public class Trigger extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the DevOps code repository.
      * 
      */
-    @Export(name="repositoryId", type=String.class, parameters={})
+    @Export(name="repositoryId", refs={String.class}, tree="[0]")
     private Output<String> repositoryId;
 
     /**
@@ -229,7 +229,7 @@ public class Trigger extends com.pulumi.resources.CustomResource {
      * The current state of the trigger.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -243,7 +243,7 @@ public class Trigger extends com.pulumi.resources.CustomResource {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -257,7 +257,7 @@ public class Trigger extends com.pulumi.resources.CustomResource {
      * The time the trigger was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -271,7 +271,7 @@ public class Trigger extends com.pulumi.resources.CustomResource {
      * The time the trigger was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -288,7 +288,7 @@ public class Trigger extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="triggerSource", type=String.class, parameters={})
+    @Export(name="triggerSource", refs={String.class}, tree="[0]")
     private Output<String> triggerSource;
 
     /**
@@ -305,7 +305,7 @@ public class Trigger extends com.pulumi.resources.CustomResource {
      * The endpoint that listens to trigger events.
      * 
      */
-    @Export(name="triggerUrl", type=String.class, parameters={})
+    @Export(name="triggerUrl", refs={String.class}, tree="[0]")
     private Output<String> triggerUrl;
 
     /**

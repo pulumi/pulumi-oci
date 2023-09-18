@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Repository Mirror Records in Oracle Cloud Infrastructure Devops service.
@@ -104,6 +105,12 @@ func (o GetRepositoryMirrorRecordsResultOutput) ToGetRepositoryMirrorRecordsResu
 
 func (o GetRepositoryMirrorRecordsResultOutput) ToGetRepositoryMirrorRecordsResultOutputWithContext(ctx context.Context) GetRepositoryMirrorRecordsResultOutput {
 	return o
+}
+
+func (o GetRepositoryMirrorRecordsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRepositoryMirrorRecordsResult] {
+	return pulumix.Output[GetRepositoryMirrorRecordsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetRepositoryMirrorRecordsResultOutput) Filters() GetRepositoryMirrorRecordsFilterArrayOutput {

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Dr Plan resource in Oracle Cloud Infrastructure Disaster Recovery service.
@@ -127,6 +128,12 @@ func (o LookupDrPlanResultOutput) ToLookupDrPlanResultOutput() LookupDrPlanResul
 
 func (o LookupDrPlanResultOutput) ToLookupDrPlanResultOutputWithContext(ctx context.Context) LookupDrPlanResultOutput {
 	return o
+}
+
+func (o LookupDrPlanResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDrPlanResult] {
+	return pulumix.Output[LookupDrPlanResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the compartment containing the DR Plan.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`

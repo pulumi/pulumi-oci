@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -66,6 +67,12 @@ func (i BucketRetentionRuleArgs) ToBucketRetentionRuleOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(BucketRetentionRuleOutput)
 }
 
+func (i BucketRetentionRuleArgs) ToOutput(ctx context.Context) pulumix.Output[BucketRetentionRule] {
+	return pulumix.Output[BucketRetentionRule]{
+		OutputState: i.ToBucketRetentionRuleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // BucketRetentionRuleArrayInput is an input type that accepts BucketRetentionRuleArray and BucketRetentionRuleArrayOutput values.
 // You can construct a concrete instance of `BucketRetentionRuleArrayInput` via:
 //
@@ -91,6 +98,12 @@ func (i BucketRetentionRuleArray) ToBucketRetentionRuleArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(BucketRetentionRuleArrayOutput)
 }
 
+func (i BucketRetentionRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]BucketRetentionRule] {
+	return pulumix.Output[[]BucketRetentionRule]{
+		OutputState: i.ToBucketRetentionRuleArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type BucketRetentionRuleOutput struct{ *pulumi.OutputState }
 
 func (BucketRetentionRuleOutput) ElementType() reflect.Type {
@@ -103,6 +116,12 @@ func (o BucketRetentionRuleOutput) ToBucketRetentionRuleOutput() BucketRetention
 
 func (o BucketRetentionRuleOutput) ToBucketRetentionRuleOutputWithContext(ctx context.Context) BucketRetentionRuleOutput {
 	return o
+}
+
+func (o BucketRetentionRuleOutput) ToOutput(ctx context.Context) pulumix.Output[BucketRetentionRule] {
+	return pulumix.Output[BucketRetentionRule]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A user-specified name for the retention rule. Names can be helpful in identifying retention rules. The name should be unique. This attribute is a forcenew attribute
@@ -149,6 +168,12 @@ func (o BucketRetentionRuleArrayOutput) ToBucketRetentionRuleArrayOutputWithCont
 	return o
 }
 
+func (o BucketRetentionRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]BucketRetentionRule] {
+	return pulumix.Output[[]BucketRetentionRule]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o BucketRetentionRuleArrayOutput) Index(i pulumi.IntInput) BucketRetentionRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) BucketRetentionRule {
 		return vs[0].([]BucketRetentionRule)[vs[1].(int)]
@@ -192,6 +217,12 @@ func (i BucketRetentionRuleDurationArgs) ToBucketRetentionRuleDurationOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(BucketRetentionRuleDurationOutput)
 }
 
+func (i BucketRetentionRuleDurationArgs) ToOutput(ctx context.Context) pulumix.Output[BucketRetentionRuleDuration] {
+	return pulumix.Output[BucketRetentionRuleDuration]{
+		OutputState: i.ToBucketRetentionRuleDurationOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i BucketRetentionRuleDurationArgs) ToBucketRetentionRuleDurationPtrOutput() BucketRetentionRuleDurationPtrOutput {
 	return i.ToBucketRetentionRuleDurationPtrOutputWithContext(context.Background())
 }
@@ -233,6 +264,12 @@ func (i *bucketRetentionRuleDurationPtrType) ToBucketRetentionRuleDurationPtrOut
 	return pulumi.ToOutputWithContext(ctx, i).(BucketRetentionRuleDurationPtrOutput)
 }
 
+func (i *bucketRetentionRuleDurationPtrType) ToOutput(ctx context.Context) pulumix.Output[*BucketRetentionRuleDuration] {
+	return pulumix.Output[*BucketRetentionRuleDuration]{
+		OutputState: i.ToBucketRetentionRuleDurationPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type BucketRetentionRuleDurationOutput struct{ *pulumi.OutputState }
 
 func (BucketRetentionRuleDurationOutput) ElementType() reflect.Type {
@@ -257,6 +294,12 @@ func (o BucketRetentionRuleDurationOutput) ToBucketRetentionRuleDurationPtrOutpu
 	}).(BucketRetentionRuleDurationPtrOutput)
 }
 
+func (o BucketRetentionRuleDurationOutput) ToOutput(ctx context.Context) pulumix.Output[BucketRetentionRuleDuration] {
+	return pulumix.Output[BucketRetentionRuleDuration]{
+		OutputState: o.OutputState,
+	}
+}
+
 // (Updatable) The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object's Last-Modified timestamp.
 func (o BucketRetentionRuleDurationOutput) TimeAmount() pulumi.StringOutput {
 	return o.ApplyT(func(v BucketRetentionRuleDuration) string { return v.TimeAmount }).(pulumi.StringOutput)
@@ -279,6 +322,12 @@ func (o BucketRetentionRuleDurationPtrOutput) ToBucketRetentionRuleDurationPtrOu
 
 func (o BucketRetentionRuleDurationPtrOutput) ToBucketRetentionRuleDurationPtrOutputWithContext(ctx context.Context) BucketRetentionRuleDurationPtrOutput {
 	return o
+}
+
+func (o BucketRetentionRuleDurationPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*BucketRetentionRuleDuration] {
+	return pulumix.Output[*BucketRetentionRuleDuration]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o BucketRetentionRuleDurationPtrOutput) Elem() BucketRetentionRuleDurationOutput {
@@ -374,6 +423,12 @@ func (i ObjectLifecyclePolicyRuleArgs) ToObjectLifecyclePolicyRuleOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(ObjectLifecyclePolicyRuleOutput)
 }
 
+func (i ObjectLifecyclePolicyRuleArgs) ToOutput(ctx context.Context) pulumix.Output[ObjectLifecyclePolicyRule] {
+	return pulumix.Output[ObjectLifecyclePolicyRule]{
+		OutputState: i.ToObjectLifecyclePolicyRuleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ObjectLifecyclePolicyRuleArrayInput is an input type that accepts ObjectLifecyclePolicyRuleArray and ObjectLifecyclePolicyRuleArrayOutput values.
 // You can construct a concrete instance of `ObjectLifecyclePolicyRuleArrayInput` via:
 //
@@ -399,6 +454,12 @@ func (i ObjectLifecyclePolicyRuleArray) ToObjectLifecyclePolicyRuleArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(ObjectLifecyclePolicyRuleArrayOutput)
 }
 
+func (i ObjectLifecyclePolicyRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]ObjectLifecyclePolicyRule] {
+	return pulumix.Output[[]ObjectLifecyclePolicyRule]{
+		OutputState: i.ToObjectLifecyclePolicyRuleArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ObjectLifecyclePolicyRuleOutput struct{ *pulumi.OutputState }
 
 func (ObjectLifecyclePolicyRuleOutput) ElementType() reflect.Type {
@@ -411,6 +472,12 @@ func (o ObjectLifecyclePolicyRuleOutput) ToObjectLifecyclePolicyRuleOutput() Obj
 
 func (o ObjectLifecyclePolicyRuleOutput) ToObjectLifecyclePolicyRuleOutputWithContext(ctx context.Context) ObjectLifecyclePolicyRuleOutput {
 	return o
+}
+
+func (o ObjectLifecyclePolicyRuleOutput) ToOutput(ctx context.Context) pulumix.Output[ObjectLifecyclePolicyRule] {
+	return pulumix.Output[ObjectLifecyclePolicyRule]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The action of the object lifecycle policy rule. Rules using the action 'ARCHIVE' move objects from Standard and InfrequentAccess storage tiers into the [Archive storage tier](https://docs.cloud.oracle.com/iaas/Content/Archive/Concepts/archivestorageoverview.htm). Rules using the action 'INFREQUENT_ACCESS' move objects from Standard storage tier into the Infrequent Access Storage tier. Objects that are already in InfrequentAccess tier or in Archive tier are left untouched. Rules using the action 'DELETE' permanently delete objects from buckets. Rules using 'ABORT' abort the uncommitted multipart-uploads and permanently delete their parts from buckets.
@@ -465,6 +532,12 @@ func (o ObjectLifecyclePolicyRuleArrayOutput) ToObjectLifecyclePolicyRuleArrayOu
 
 func (o ObjectLifecyclePolicyRuleArrayOutput) ToObjectLifecyclePolicyRuleArrayOutputWithContext(ctx context.Context) ObjectLifecyclePolicyRuleArrayOutput {
 	return o
+}
+
+func (o ObjectLifecyclePolicyRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ObjectLifecyclePolicyRule] {
+	return pulumix.Output[[]ObjectLifecyclePolicyRule]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ObjectLifecyclePolicyRuleArrayOutput) Index(i pulumi.IntInput) ObjectLifecyclePolicyRuleOutput {
@@ -534,6 +607,12 @@ func (i ObjectLifecyclePolicyRuleObjectNameFilterArgs) ToObjectLifecyclePolicyRu
 	return pulumi.ToOutputWithContext(ctx, i).(ObjectLifecyclePolicyRuleObjectNameFilterOutput)
 }
 
+func (i ObjectLifecyclePolicyRuleObjectNameFilterArgs) ToOutput(ctx context.Context) pulumix.Output[ObjectLifecyclePolicyRuleObjectNameFilter] {
+	return pulumix.Output[ObjectLifecyclePolicyRuleObjectNameFilter]{
+		OutputState: i.ToObjectLifecyclePolicyRuleObjectNameFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i ObjectLifecyclePolicyRuleObjectNameFilterArgs) ToObjectLifecyclePolicyRuleObjectNameFilterPtrOutput() ObjectLifecyclePolicyRuleObjectNameFilterPtrOutput {
 	return i.ToObjectLifecyclePolicyRuleObjectNameFilterPtrOutputWithContext(context.Background())
 }
@@ -575,6 +654,12 @@ func (i *objectLifecyclePolicyRuleObjectNameFilterPtrType) ToObjectLifecyclePoli
 	return pulumi.ToOutputWithContext(ctx, i).(ObjectLifecyclePolicyRuleObjectNameFilterPtrOutput)
 }
 
+func (i *objectLifecyclePolicyRuleObjectNameFilterPtrType) ToOutput(ctx context.Context) pulumix.Output[*ObjectLifecyclePolicyRuleObjectNameFilter] {
+	return pulumix.Output[*ObjectLifecyclePolicyRuleObjectNameFilter]{
+		OutputState: i.ToObjectLifecyclePolicyRuleObjectNameFilterPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ObjectLifecyclePolicyRuleObjectNameFilterOutput struct{ *pulumi.OutputState }
 
 func (ObjectLifecyclePolicyRuleObjectNameFilterOutput) ElementType() reflect.Type {
@@ -597,6 +682,12 @@ func (o ObjectLifecyclePolicyRuleObjectNameFilterOutput) ToObjectLifecyclePolicy
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ObjectLifecyclePolicyRuleObjectNameFilter) *ObjectLifecyclePolicyRuleObjectNameFilter {
 		return &v
 	}).(ObjectLifecyclePolicyRuleObjectNameFilterPtrOutput)
+}
+
+func (o ObjectLifecyclePolicyRuleObjectNameFilterOutput) ToOutput(ctx context.Context) pulumix.Output[ObjectLifecyclePolicyRuleObjectNameFilter] {
+	return pulumix.Output[ObjectLifecyclePolicyRuleObjectNameFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) An array of glob patterns to match the object names to exclude. An empty array is ignored. Exclusion patterns take precedence over inclusion patterns. A Glob pattern is a sequence of characters to match text. Any character that appears in the pattern, other than the special pattern characters described below, matches itself. Glob patterns must be between 1 and 1024 characters.
@@ -636,6 +727,12 @@ func (o ObjectLifecyclePolicyRuleObjectNameFilterPtrOutput) ToObjectLifecyclePol
 
 func (o ObjectLifecyclePolicyRuleObjectNameFilterPtrOutput) ToObjectLifecyclePolicyRuleObjectNameFilterPtrOutputWithContext(ctx context.Context) ObjectLifecyclePolicyRuleObjectNameFilterPtrOutput {
 	return o
+}
+
+func (o ObjectLifecyclePolicyRuleObjectNameFilterPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ObjectLifecyclePolicyRuleObjectNameFilter] {
+	return pulumix.Output[*ObjectLifecyclePolicyRuleObjectNameFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ObjectLifecyclePolicyRuleObjectNameFilterPtrOutput) Elem() ObjectLifecyclePolicyRuleObjectNameFilterOutput {
@@ -755,6 +852,12 @@ func (i StorageObjectSourceUriDetailsArgs) ToStorageObjectSourceUriDetailsOutput
 	return pulumi.ToOutputWithContext(ctx, i).(StorageObjectSourceUriDetailsOutput)
 }
 
+func (i StorageObjectSourceUriDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[StorageObjectSourceUriDetails] {
+	return pulumix.Output[StorageObjectSourceUriDetails]{
+		OutputState: i.ToStorageObjectSourceUriDetailsOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i StorageObjectSourceUriDetailsArgs) ToStorageObjectSourceUriDetailsPtrOutput() StorageObjectSourceUriDetailsPtrOutput {
 	return i.ToStorageObjectSourceUriDetailsPtrOutputWithContext(context.Background())
 }
@@ -796,6 +899,12 @@ func (i *storageObjectSourceUriDetailsPtrType) ToStorageObjectSourceUriDetailsPt
 	return pulumi.ToOutputWithContext(ctx, i).(StorageObjectSourceUriDetailsPtrOutput)
 }
 
+func (i *storageObjectSourceUriDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*StorageObjectSourceUriDetails] {
+	return pulumix.Output[*StorageObjectSourceUriDetails]{
+		OutputState: i.ToStorageObjectSourceUriDetailsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type StorageObjectSourceUriDetailsOutput struct{ *pulumi.OutputState }
 
 func (StorageObjectSourceUriDetailsOutput) ElementType() reflect.Type {
@@ -818,6 +927,12 @@ func (o StorageObjectSourceUriDetailsOutput) ToStorageObjectSourceUriDetailsPtrO
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v StorageObjectSourceUriDetails) *StorageObjectSourceUriDetails {
 		return &v
 	}).(StorageObjectSourceUriDetailsPtrOutput)
+}
+
+func (o StorageObjectSourceUriDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[StorageObjectSourceUriDetails] {
+	return pulumix.Output[StorageObjectSourceUriDetails]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the bucket for the source object.
@@ -875,6 +990,12 @@ func (o StorageObjectSourceUriDetailsPtrOutput) ToStorageObjectSourceUriDetailsP
 
 func (o StorageObjectSourceUriDetailsPtrOutput) ToStorageObjectSourceUriDetailsPtrOutputWithContext(ctx context.Context) StorageObjectSourceUriDetailsPtrOutput {
 	return o
+}
+
+func (o StorageObjectSourceUriDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*StorageObjectSourceUriDetails] {
+	return pulumix.Output[*StorageObjectSourceUriDetails]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o StorageObjectSourceUriDetailsPtrOutput) Elem() StorageObjectSourceUriDetailsOutput {
@@ -1021,6 +1142,12 @@ func (i GetBucketRetentionRuleArgs) ToGetBucketRetentionRuleOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetBucketRetentionRuleOutput)
 }
 
+func (i GetBucketRetentionRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetBucketRetentionRule] {
+	return pulumix.Output[GetBucketRetentionRule]{
+		OutputState: i.ToGetBucketRetentionRuleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetBucketRetentionRuleArrayInput is an input type that accepts GetBucketRetentionRuleArray and GetBucketRetentionRuleArrayOutput values.
 // You can construct a concrete instance of `GetBucketRetentionRuleArrayInput` via:
 //
@@ -1046,6 +1173,12 @@ func (i GetBucketRetentionRuleArray) ToGetBucketRetentionRuleArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetBucketRetentionRuleArrayOutput)
 }
 
+func (i GetBucketRetentionRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBucketRetentionRule] {
+	return pulumix.Output[[]GetBucketRetentionRule]{
+		OutputState: i.ToGetBucketRetentionRuleArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetBucketRetentionRuleOutput struct{ *pulumi.OutputState }
 
 func (GetBucketRetentionRuleOutput) ElementType() reflect.Type {
@@ -1058,6 +1191,12 @@ func (o GetBucketRetentionRuleOutput) ToGetBucketRetentionRuleOutput() GetBucket
 
 func (o GetBucketRetentionRuleOutput) ToGetBucketRetentionRuleOutputWithContext(ctx context.Context) GetBucketRetentionRuleOutput {
 	return o
+}
+
+func (o GetBucketRetentionRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetBucketRetentionRule] {
+	return pulumix.Output[GetBucketRetentionRule]{
+		OutputState: o.OutputState,
+	}
 }
 
 // User specified name for the retention rule.
@@ -1103,6 +1242,12 @@ func (o GetBucketRetentionRuleArrayOutput) ToGetBucketRetentionRuleArrayOutputWi
 	return o
 }
 
+func (o GetBucketRetentionRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBucketRetentionRule] {
+	return pulumix.Output[[]GetBucketRetentionRule]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetBucketRetentionRuleArrayOutput) Index(i pulumi.IntInput) GetBucketRetentionRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBucketRetentionRule {
 		return vs[0].([]GetBucketRetentionRule)[vs[1].(int)]
@@ -1146,6 +1291,12 @@ func (i GetBucketRetentionRuleDurationArgs) ToGetBucketRetentionRuleDurationOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetBucketRetentionRuleDurationOutput)
 }
 
+func (i GetBucketRetentionRuleDurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetBucketRetentionRuleDuration] {
+	return pulumix.Output[GetBucketRetentionRuleDuration]{
+		OutputState: i.ToGetBucketRetentionRuleDurationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetBucketRetentionRuleDurationArrayInput is an input type that accepts GetBucketRetentionRuleDurationArray and GetBucketRetentionRuleDurationArrayOutput values.
 // You can construct a concrete instance of `GetBucketRetentionRuleDurationArrayInput` via:
 //
@@ -1171,6 +1322,12 @@ func (i GetBucketRetentionRuleDurationArray) ToGetBucketRetentionRuleDurationArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetBucketRetentionRuleDurationArrayOutput)
 }
 
+func (i GetBucketRetentionRuleDurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBucketRetentionRuleDuration] {
+	return pulumix.Output[[]GetBucketRetentionRuleDuration]{
+		OutputState: i.ToGetBucketRetentionRuleDurationArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetBucketRetentionRuleDurationOutput struct{ *pulumi.OutputState }
 
 func (GetBucketRetentionRuleDurationOutput) ElementType() reflect.Type {
@@ -1183,6 +1340,12 @@ func (o GetBucketRetentionRuleDurationOutput) ToGetBucketRetentionRuleDurationOu
 
 func (o GetBucketRetentionRuleDurationOutput) ToGetBucketRetentionRuleDurationOutputWithContext(ctx context.Context) GetBucketRetentionRuleDurationOutput {
 	return o
+}
+
+func (o GetBucketRetentionRuleDurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetBucketRetentionRuleDuration] {
+	return pulumix.Output[GetBucketRetentionRuleDuration]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object's Last-Modified timestamp.
@@ -1207,6 +1370,12 @@ func (o GetBucketRetentionRuleDurationArrayOutput) ToGetBucketRetentionRuleDurat
 
 func (o GetBucketRetentionRuleDurationArrayOutput) ToGetBucketRetentionRuleDurationArrayOutputWithContext(ctx context.Context) GetBucketRetentionRuleDurationArrayOutput {
 	return o
+}
+
+func (o GetBucketRetentionRuleDurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBucketRetentionRuleDuration] {
+	return pulumix.Output[[]GetBucketRetentionRuleDuration]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetBucketRetentionRuleDurationArrayOutput) Index(i pulumi.IntInput) GetBucketRetentionRuleDurationOutput {
@@ -1330,6 +1499,12 @@ func (i GetBucketSummariesBucketSummaryArgs) ToGetBucketSummariesBucketSummaryOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetBucketSummariesBucketSummaryOutput)
 }
 
+func (i GetBucketSummariesBucketSummaryArgs) ToOutput(ctx context.Context) pulumix.Output[GetBucketSummariesBucketSummary] {
+	return pulumix.Output[GetBucketSummariesBucketSummary]{
+		OutputState: i.ToGetBucketSummariesBucketSummaryOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetBucketSummariesBucketSummaryArrayInput is an input type that accepts GetBucketSummariesBucketSummaryArray and GetBucketSummariesBucketSummaryArrayOutput values.
 // You can construct a concrete instance of `GetBucketSummariesBucketSummaryArrayInput` via:
 //
@@ -1355,6 +1530,12 @@ func (i GetBucketSummariesBucketSummaryArray) ToGetBucketSummariesBucketSummaryA
 	return pulumi.ToOutputWithContext(ctx, i).(GetBucketSummariesBucketSummaryArrayOutput)
 }
 
+func (i GetBucketSummariesBucketSummaryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBucketSummariesBucketSummary] {
+	return pulumix.Output[[]GetBucketSummariesBucketSummary]{
+		OutputState: i.ToGetBucketSummariesBucketSummaryArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetBucketSummariesBucketSummaryOutput struct{ *pulumi.OutputState }
 
 func (GetBucketSummariesBucketSummaryOutput) ElementType() reflect.Type {
@@ -1367,6 +1548,12 @@ func (o GetBucketSummariesBucketSummaryOutput) ToGetBucketSummariesBucketSummary
 
 func (o GetBucketSummariesBucketSummaryOutput) ToGetBucketSummariesBucketSummaryOutputWithContext(ctx context.Context) GetBucketSummariesBucketSummaryOutput {
 	return o
+}
+
+func (o GetBucketSummariesBucketSummaryOutput) ToOutput(ctx context.Context) pulumix.Output[GetBucketSummariesBucketSummary] {
+	return pulumix.Output[GetBucketSummariesBucketSummary]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The type of public access enabled on this bucket. A bucket is set to `NoPublicAccess` by default, which only allows an authenticated caller to access the bucket and its contents. When `ObjectRead` is enabled on the bucket, public access is allowed for the `GetObject`, `HeadObject`, and `ListObjects` operations. When `ObjectReadWithoutList` is enabled on the bucket, public access is allowed for the `GetObject` and `HeadObject` operations.
@@ -1497,6 +1684,12 @@ func (o GetBucketSummariesBucketSummaryArrayOutput) ToGetBucketSummariesBucketSu
 	return o
 }
 
+func (o GetBucketSummariesBucketSummaryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBucketSummariesBucketSummary] {
+	return pulumix.Output[[]GetBucketSummariesBucketSummary]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetBucketSummariesBucketSummaryArrayOutput) Index(i pulumi.IntInput) GetBucketSummariesBucketSummaryOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBucketSummariesBucketSummary {
 		return vs[0].([]GetBucketSummariesBucketSummary)[vs[1].(int)]
@@ -1546,6 +1739,12 @@ func (i GetBucketSummariesBucketSummaryRetentionRuleArgs) ToGetBucketSummariesBu
 	return pulumi.ToOutputWithContext(ctx, i).(GetBucketSummariesBucketSummaryRetentionRuleOutput)
 }
 
+func (i GetBucketSummariesBucketSummaryRetentionRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetBucketSummariesBucketSummaryRetentionRule] {
+	return pulumix.Output[GetBucketSummariesBucketSummaryRetentionRule]{
+		OutputState: i.ToGetBucketSummariesBucketSummaryRetentionRuleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetBucketSummariesBucketSummaryRetentionRuleArrayInput is an input type that accepts GetBucketSummariesBucketSummaryRetentionRuleArray and GetBucketSummariesBucketSummaryRetentionRuleArrayOutput values.
 // You can construct a concrete instance of `GetBucketSummariesBucketSummaryRetentionRuleArrayInput` via:
 //
@@ -1571,6 +1770,12 @@ func (i GetBucketSummariesBucketSummaryRetentionRuleArray) ToGetBucketSummariesB
 	return pulumi.ToOutputWithContext(ctx, i).(GetBucketSummariesBucketSummaryRetentionRuleArrayOutput)
 }
 
+func (i GetBucketSummariesBucketSummaryRetentionRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBucketSummariesBucketSummaryRetentionRule] {
+	return pulumix.Output[[]GetBucketSummariesBucketSummaryRetentionRule]{
+		OutputState: i.ToGetBucketSummariesBucketSummaryRetentionRuleArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetBucketSummariesBucketSummaryRetentionRuleOutput struct{ *pulumi.OutputState }
 
 func (GetBucketSummariesBucketSummaryRetentionRuleOutput) ElementType() reflect.Type {
@@ -1583,6 +1788,12 @@ func (o GetBucketSummariesBucketSummaryRetentionRuleOutput) ToGetBucketSummaries
 
 func (o GetBucketSummariesBucketSummaryRetentionRuleOutput) ToGetBucketSummariesBucketSummaryRetentionRuleOutputWithContext(ctx context.Context) GetBucketSummariesBucketSummaryRetentionRuleOutput {
 	return o
+}
+
+func (o GetBucketSummariesBucketSummaryRetentionRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetBucketSummariesBucketSummaryRetentionRule] {
+	return pulumix.Output[GetBucketSummariesBucketSummaryRetentionRule]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetBucketSummariesBucketSummaryRetentionRuleOutput) DisplayName() pulumi.StringOutput {
@@ -1626,6 +1837,12 @@ func (o GetBucketSummariesBucketSummaryRetentionRuleArrayOutput) ToGetBucketSumm
 	return o
 }
 
+func (o GetBucketSummariesBucketSummaryRetentionRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBucketSummariesBucketSummaryRetentionRule] {
+	return pulumix.Output[[]GetBucketSummariesBucketSummaryRetentionRule]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetBucketSummariesBucketSummaryRetentionRuleArrayOutput) Index(i pulumi.IntInput) GetBucketSummariesBucketSummaryRetentionRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBucketSummariesBucketSummaryRetentionRule {
 		return vs[0].([]GetBucketSummariesBucketSummaryRetentionRule)[vs[1].(int)]
@@ -1665,6 +1882,12 @@ func (i GetBucketSummariesBucketSummaryRetentionRuleDurationArgs) ToGetBucketSum
 	return pulumi.ToOutputWithContext(ctx, i).(GetBucketSummariesBucketSummaryRetentionRuleDurationOutput)
 }
 
+func (i GetBucketSummariesBucketSummaryRetentionRuleDurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetBucketSummariesBucketSummaryRetentionRuleDuration] {
+	return pulumix.Output[GetBucketSummariesBucketSummaryRetentionRuleDuration]{
+		OutputState: i.ToGetBucketSummariesBucketSummaryRetentionRuleDurationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetBucketSummariesBucketSummaryRetentionRuleDurationArrayInput is an input type that accepts GetBucketSummariesBucketSummaryRetentionRuleDurationArray and GetBucketSummariesBucketSummaryRetentionRuleDurationArrayOutput values.
 // You can construct a concrete instance of `GetBucketSummariesBucketSummaryRetentionRuleDurationArrayInput` via:
 //
@@ -1690,6 +1913,12 @@ func (i GetBucketSummariesBucketSummaryRetentionRuleDurationArray) ToGetBucketSu
 	return pulumi.ToOutputWithContext(ctx, i).(GetBucketSummariesBucketSummaryRetentionRuleDurationArrayOutput)
 }
 
+func (i GetBucketSummariesBucketSummaryRetentionRuleDurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBucketSummariesBucketSummaryRetentionRuleDuration] {
+	return pulumix.Output[[]GetBucketSummariesBucketSummaryRetentionRuleDuration]{
+		OutputState: i.ToGetBucketSummariesBucketSummaryRetentionRuleDurationArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetBucketSummariesBucketSummaryRetentionRuleDurationOutput struct{ *pulumi.OutputState }
 
 func (GetBucketSummariesBucketSummaryRetentionRuleDurationOutput) ElementType() reflect.Type {
@@ -1702,6 +1931,12 @@ func (o GetBucketSummariesBucketSummaryRetentionRuleDurationOutput) ToGetBucketS
 
 func (o GetBucketSummariesBucketSummaryRetentionRuleDurationOutput) ToGetBucketSummariesBucketSummaryRetentionRuleDurationOutputWithContext(ctx context.Context) GetBucketSummariesBucketSummaryRetentionRuleDurationOutput {
 	return o
+}
+
+func (o GetBucketSummariesBucketSummaryRetentionRuleDurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetBucketSummariesBucketSummaryRetentionRuleDuration] {
+	return pulumix.Output[GetBucketSummariesBucketSummaryRetentionRuleDuration]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetBucketSummariesBucketSummaryRetentionRuleDurationOutput) TimeAmount() pulumi.StringOutput {
@@ -1724,6 +1959,12 @@ func (o GetBucketSummariesBucketSummaryRetentionRuleDurationArrayOutput) ToGetBu
 
 func (o GetBucketSummariesBucketSummaryRetentionRuleDurationArrayOutput) ToGetBucketSummariesBucketSummaryRetentionRuleDurationArrayOutputWithContext(ctx context.Context) GetBucketSummariesBucketSummaryRetentionRuleDurationArrayOutput {
 	return o
+}
+
+func (o GetBucketSummariesBucketSummaryRetentionRuleDurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBucketSummariesBucketSummaryRetentionRuleDuration] {
+	return pulumix.Output[[]GetBucketSummariesBucketSummaryRetentionRuleDuration]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetBucketSummariesBucketSummaryRetentionRuleDurationArrayOutput) Index(i pulumi.IntInput) GetBucketSummariesBucketSummaryRetentionRuleDurationOutput {
@@ -1769,6 +2010,12 @@ func (i GetBucketSummariesFilterArgs) ToGetBucketSummariesFilterOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetBucketSummariesFilterOutput)
 }
 
+func (i GetBucketSummariesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetBucketSummariesFilter] {
+	return pulumix.Output[GetBucketSummariesFilter]{
+		OutputState: i.ToGetBucketSummariesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetBucketSummariesFilterArrayInput is an input type that accepts GetBucketSummariesFilterArray and GetBucketSummariesFilterArrayOutput values.
 // You can construct a concrete instance of `GetBucketSummariesFilterArrayInput` via:
 //
@@ -1794,6 +2041,12 @@ func (i GetBucketSummariesFilterArray) ToGetBucketSummariesFilterArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetBucketSummariesFilterArrayOutput)
 }
 
+func (i GetBucketSummariesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBucketSummariesFilter] {
+	return pulumix.Output[[]GetBucketSummariesFilter]{
+		OutputState: i.ToGetBucketSummariesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetBucketSummariesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetBucketSummariesFilterOutput) ElementType() reflect.Type {
@@ -1806,6 +2059,12 @@ func (o GetBucketSummariesFilterOutput) ToGetBucketSummariesFilterOutput() GetBu
 
 func (o GetBucketSummariesFilterOutput) ToGetBucketSummariesFilterOutputWithContext(ctx context.Context) GetBucketSummariesFilterOutput {
 	return o
+}
+
+func (o GetBucketSummariesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetBucketSummariesFilter] {
+	return pulumix.Output[GetBucketSummariesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the bucket. Avoid entering confidential information. Example: my-new-bucket1
@@ -1833,6 +2092,12 @@ func (o GetBucketSummariesFilterArrayOutput) ToGetBucketSummariesFilterArrayOutp
 
 func (o GetBucketSummariesFilterArrayOutput) ToGetBucketSummariesFilterArrayOutputWithContext(ctx context.Context) GetBucketSummariesFilterArrayOutput {
 	return o
+}
+
+func (o GetBucketSummariesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBucketSummariesFilter] {
+	return pulumix.Output[[]GetBucketSummariesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetBucketSummariesFilterArrayOutput) Index(i pulumi.IntInput) GetBucketSummariesFilterOutput {
@@ -1898,6 +2163,12 @@ func (i GetObjectLifecyclePolicyRuleArgs) ToGetObjectLifecyclePolicyRuleOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetObjectLifecyclePolicyRuleOutput)
 }
 
+func (i GetObjectLifecyclePolicyRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetObjectLifecyclePolicyRule] {
+	return pulumix.Output[GetObjectLifecyclePolicyRule]{
+		OutputState: i.ToGetObjectLifecyclePolicyRuleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetObjectLifecyclePolicyRuleArrayInput is an input type that accepts GetObjectLifecyclePolicyRuleArray and GetObjectLifecyclePolicyRuleArrayOutput values.
 // You can construct a concrete instance of `GetObjectLifecyclePolicyRuleArrayInput` via:
 //
@@ -1923,6 +2194,12 @@ func (i GetObjectLifecyclePolicyRuleArray) ToGetObjectLifecyclePolicyRuleArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetObjectLifecyclePolicyRuleArrayOutput)
 }
 
+func (i GetObjectLifecyclePolicyRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetObjectLifecyclePolicyRule] {
+	return pulumix.Output[[]GetObjectLifecyclePolicyRule]{
+		OutputState: i.ToGetObjectLifecyclePolicyRuleArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetObjectLifecyclePolicyRuleOutput struct{ *pulumi.OutputState }
 
 func (GetObjectLifecyclePolicyRuleOutput) ElementType() reflect.Type {
@@ -1935,6 +2212,12 @@ func (o GetObjectLifecyclePolicyRuleOutput) ToGetObjectLifecyclePolicyRuleOutput
 
 func (o GetObjectLifecyclePolicyRuleOutput) ToGetObjectLifecyclePolicyRuleOutputWithContext(ctx context.Context) GetObjectLifecyclePolicyRuleOutput {
 	return o
+}
+
+func (o GetObjectLifecyclePolicyRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetObjectLifecyclePolicyRule] {
+	return pulumix.Output[GetObjectLifecyclePolicyRule]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The action of the object lifecycle policy rule. Rules using the action 'ARCHIVE' move objects from Standard and InfrequentAccess storage tiers into the [Archive storage tier](https://docs.cloud.oracle.com/iaas/Content/Archive/Concepts/archivestorageoverview.htm). Rules using the action 'INFREQUENT_ACCESS' move objects from Standard storage tier into the Infrequent Access Storage tier. Objects that are already in InfrequentAccess tier or in Archive tier are left untouched. Rules using the action 'DELETE' permanently delete objects from buckets. Rules using 'ABORT' abort the uncommitted multipart-uploads and permanently delete their parts from buckets.
@@ -1988,6 +2271,12 @@ func (o GetObjectLifecyclePolicyRuleArrayOutput) ToGetObjectLifecyclePolicyRuleA
 	return o
 }
 
+func (o GetObjectLifecyclePolicyRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetObjectLifecyclePolicyRule] {
+	return pulumix.Output[[]GetObjectLifecyclePolicyRule]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetObjectLifecyclePolicyRuleArrayOutput) Index(i pulumi.IntInput) GetObjectLifecyclePolicyRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetObjectLifecyclePolicyRule {
 		return vs[0].([]GetObjectLifecyclePolicyRule)[vs[1].(int)]
@@ -2035,6 +2324,12 @@ func (i GetObjectLifecyclePolicyRuleObjectNameFilterArgs) ToGetObjectLifecyclePo
 	return pulumi.ToOutputWithContext(ctx, i).(GetObjectLifecyclePolicyRuleObjectNameFilterOutput)
 }
 
+func (i GetObjectLifecyclePolicyRuleObjectNameFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetObjectLifecyclePolicyRuleObjectNameFilter] {
+	return pulumix.Output[GetObjectLifecyclePolicyRuleObjectNameFilter]{
+		OutputState: i.ToGetObjectLifecyclePolicyRuleObjectNameFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetObjectLifecyclePolicyRuleObjectNameFilterArrayInput is an input type that accepts GetObjectLifecyclePolicyRuleObjectNameFilterArray and GetObjectLifecyclePolicyRuleObjectNameFilterArrayOutput values.
 // You can construct a concrete instance of `GetObjectLifecyclePolicyRuleObjectNameFilterArrayInput` via:
 //
@@ -2060,6 +2355,12 @@ func (i GetObjectLifecyclePolicyRuleObjectNameFilterArray) ToGetObjectLifecycleP
 	return pulumi.ToOutputWithContext(ctx, i).(GetObjectLifecyclePolicyRuleObjectNameFilterArrayOutput)
 }
 
+func (i GetObjectLifecyclePolicyRuleObjectNameFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetObjectLifecyclePolicyRuleObjectNameFilter] {
+	return pulumix.Output[[]GetObjectLifecyclePolicyRuleObjectNameFilter]{
+		OutputState: i.ToGetObjectLifecyclePolicyRuleObjectNameFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetObjectLifecyclePolicyRuleObjectNameFilterOutput struct{ *pulumi.OutputState }
 
 func (GetObjectLifecyclePolicyRuleObjectNameFilterOutput) ElementType() reflect.Type {
@@ -2072,6 +2373,12 @@ func (o GetObjectLifecyclePolicyRuleObjectNameFilterOutput) ToGetObjectLifecycle
 
 func (o GetObjectLifecyclePolicyRuleObjectNameFilterOutput) ToGetObjectLifecyclePolicyRuleObjectNameFilterOutputWithContext(ctx context.Context) GetObjectLifecyclePolicyRuleObjectNameFilterOutput {
 	return o
+}
+
+func (o GetObjectLifecyclePolicyRuleObjectNameFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetObjectLifecyclePolicyRuleObjectNameFilter] {
+	return pulumix.Output[GetObjectLifecyclePolicyRuleObjectNameFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // An array of glob patterns to match the object names to exclude. An empty array is ignored. Exclusion patterns take precedence over inclusion patterns. A Glob pattern is a sequence of characters to match text. Any character that appears in the pattern, other than the special pattern characters described below, matches itself. Glob patterns must be between 1 and 1024 characters.
@@ -2101,6 +2408,12 @@ func (o GetObjectLifecyclePolicyRuleObjectNameFilterArrayOutput) ToGetObjectLife
 
 func (o GetObjectLifecyclePolicyRuleObjectNameFilterArrayOutput) ToGetObjectLifecyclePolicyRuleObjectNameFilterArrayOutputWithContext(ctx context.Context) GetObjectLifecyclePolicyRuleObjectNameFilterArrayOutput {
 	return o
+}
+
+func (o GetObjectLifecyclePolicyRuleObjectNameFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetObjectLifecyclePolicyRuleObjectNameFilter] {
+	return pulumix.Output[[]GetObjectLifecyclePolicyRuleObjectNameFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetObjectLifecyclePolicyRuleObjectNameFilterArrayOutput) Index(i pulumi.IntInput) GetObjectLifecyclePolicyRuleObjectNameFilterOutput {
@@ -2146,6 +2459,12 @@ func (i GetObjectVersionsFilterArgs) ToGetObjectVersionsFilterOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetObjectVersionsFilterOutput)
 }
 
+func (i GetObjectVersionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetObjectVersionsFilter] {
+	return pulumix.Output[GetObjectVersionsFilter]{
+		OutputState: i.ToGetObjectVersionsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetObjectVersionsFilterArrayInput is an input type that accepts GetObjectVersionsFilterArray and GetObjectVersionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetObjectVersionsFilterArrayInput` via:
 //
@@ -2171,6 +2490,12 @@ func (i GetObjectVersionsFilterArray) ToGetObjectVersionsFilterArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetObjectVersionsFilterArrayOutput)
 }
 
+func (i GetObjectVersionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetObjectVersionsFilter] {
+	return pulumix.Output[[]GetObjectVersionsFilter]{
+		OutputState: i.ToGetObjectVersionsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetObjectVersionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetObjectVersionsFilterOutput) ElementType() reflect.Type {
@@ -2183,6 +2508,12 @@ func (o GetObjectVersionsFilterOutput) ToGetObjectVersionsFilterOutput() GetObje
 
 func (o GetObjectVersionsFilterOutput) ToGetObjectVersionsFilterOutputWithContext(ctx context.Context) GetObjectVersionsFilterOutput {
 	return o
+}
+
+func (o GetObjectVersionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetObjectVersionsFilter] {
+	return pulumix.Output[GetObjectVersionsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the object. Avoid entering confidential information. Example: test/object1.log
@@ -2210,6 +2541,12 @@ func (o GetObjectVersionsFilterArrayOutput) ToGetObjectVersionsFilterArrayOutput
 
 func (o GetObjectVersionsFilterArrayOutput) ToGetObjectVersionsFilterArrayOutputWithContext(ctx context.Context) GetObjectVersionsFilterArrayOutput {
 	return o
+}
+
+func (o GetObjectVersionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetObjectVersionsFilter] {
+	return pulumix.Output[[]GetObjectVersionsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetObjectVersionsFilterArrayOutput) Index(i pulumi.IntInput) GetObjectVersionsFilterOutput {
@@ -2287,6 +2624,12 @@ func (i GetObjectVersionsItemArgs) ToGetObjectVersionsItemOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetObjectVersionsItemOutput)
 }
 
+func (i GetObjectVersionsItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetObjectVersionsItem] {
+	return pulumix.Output[GetObjectVersionsItem]{
+		OutputState: i.ToGetObjectVersionsItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetObjectVersionsItemArrayInput is an input type that accepts GetObjectVersionsItemArray and GetObjectVersionsItemArrayOutput values.
 // You can construct a concrete instance of `GetObjectVersionsItemArrayInput` via:
 //
@@ -2312,6 +2655,12 @@ func (i GetObjectVersionsItemArray) ToGetObjectVersionsItemArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetObjectVersionsItemArrayOutput)
 }
 
+func (i GetObjectVersionsItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetObjectVersionsItem] {
+	return pulumix.Output[[]GetObjectVersionsItem]{
+		OutputState: i.ToGetObjectVersionsItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetObjectVersionsItemOutput struct{ *pulumi.OutputState }
 
 func (GetObjectVersionsItemOutput) ElementType() reflect.Type {
@@ -2324,6 +2673,12 @@ func (o GetObjectVersionsItemOutput) ToGetObjectVersionsItemOutput() GetObjectVe
 
 func (o GetObjectVersionsItemOutput) ToGetObjectVersionsItemOutputWithContext(ctx context.Context) GetObjectVersionsItemOutput {
 	return o
+}
+
+func (o GetObjectVersionsItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetObjectVersionsItem] {
+	return pulumix.Output[GetObjectVersionsItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Archival state of an object. This field is set only for objects in Archive tier.
@@ -2390,6 +2745,12 @@ func (o GetObjectVersionsItemArrayOutput) ToGetObjectVersionsItemArrayOutputWith
 	return o
 }
 
+func (o GetObjectVersionsItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetObjectVersionsItem] {
+	return pulumix.Output[[]GetObjectVersionsItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetObjectVersionsItemArrayOutput) Index(i pulumi.IntInput) GetObjectVersionsItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetObjectVersionsItem {
 		return vs[0].([]GetObjectVersionsItem)[vs[1].(int)]
@@ -2433,6 +2794,12 @@ func (i GetObjectsFilterArgs) ToGetObjectsFilterOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetObjectsFilterOutput)
 }
 
+func (i GetObjectsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetObjectsFilter] {
+	return pulumix.Output[GetObjectsFilter]{
+		OutputState: i.ToGetObjectsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetObjectsFilterArrayInput is an input type that accepts GetObjectsFilterArray and GetObjectsFilterArrayOutput values.
 // You can construct a concrete instance of `GetObjectsFilterArrayInput` via:
 //
@@ -2458,6 +2825,12 @@ func (i GetObjectsFilterArray) ToGetObjectsFilterArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetObjectsFilterArrayOutput)
 }
 
+func (i GetObjectsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetObjectsFilter] {
+	return pulumix.Output[[]GetObjectsFilter]{
+		OutputState: i.ToGetObjectsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetObjectsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetObjectsFilterOutput) ElementType() reflect.Type {
@@ -2470,6 +2843,12 @@ func (o GetObjectsFilterOutput) ToGetObjectsFilterOutput() GetObjectsFilterOutpu
 
 func (o GetObjectsFilterOutput) ToGetObjectsFilterOutputWithContext(ctx context.Context) GetObjectsFilterOutput {
 	return o
+}
+
+func (o GetObjectsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetObjectsFilter] {
+	return pulumix.Output[GetObjectsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the object.
@@ -2497,6 +2876,12 @@ func (o GetObjectsFilterArrayOutput) ToGetObjectsFilterArrayOutput() GetObjectsF
 
 func (o GetObjectsFilterArrayOutput) ToGetObjectsFilterArrayOutputWithContext(ctx context.Context) GetObjectsFilterArrayOutput {
 	return o
+}
+
+func (o GetObjectsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetObjectsFilter] {
+	return pulumix.Output[[]GetObjectsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetObjectsFilterArrayOutput) Index(i pulumi.IntInput) GetObjectsFilterOutput {
@@ -2566,6 +2951,12 @@ func (i GetObjectsObjectArgs) ToGetObjectsObjectOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetObjectsObjectOutput)
 }
 
+func (i GetObjectsObjectArgs) ToOutput(ctx context.Context) pulumix.Output[GetObjectsObject] {
+	return pulumix.Output[GetObjectsObject]{
+		OutputState: i.ToGetObjectsObjectOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetObjectsObjectArrayInput is an input type that accepts GetObjectsObjectArray and GetObjectsObjectArrayOutput values.
 // You can construct a concrete instance of `GetObjectsObjectArrayInput` via:
 //
@@ -2591,6 +2982,12 @@ func (i GetObjectsObjectArray) ToGetObjectsObjectArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetObjectsObjectArrayOutput)
 }
 
+func (i GetObjectsObjectArray) ToOutput(ctx context.Context) pulumix.Output[[]GetObjectsObject] {
+	return pulumix.Output[[]GetObjectsObject]{
+		OutputState: i.ToGetObjectsObjectArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetObjectsObjectOutput struct{ *pulumi.OutputState }
 
 func (GetObjectsObjectOutput) ElementType() reflect.Type {
@@ -2603,6 +3000,12 @@ func (o GetObjectsObjectOutput) ToGetObjectsObjectOutput() GetObjectsObjectOutpu
 
 func (o GetObjectsObjectOutput) ToGetObjectsObjectOutputWithContext(ctx context.Context) GetObjectsObjectOutput {
 	return o
+}
+
+func (o GetObjectsObjectOutput) ToOutput(ctx context.Context) pulumix.Output[GetObjectsObject] {
+	return pulumix.Output[GetObjectsObject]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetObjectsObjectOutput) ArchivalState() pulumi.StringOutput {
@@ -2659,6 +3062,12 @@ func (o GetObjectsObjectArrayOutput) ToGetObjectsObjectArrayOutputWithContext(ct
 	return o
 }
 
+func (o GetObjectsObjectArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetObjectsObject] {
+	return pulumix.Output[[]GetObjectsObject]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetObjectsObjectArrayOutput) Index(i pulumi.IntInput) GetObjectsObjectOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetObjectsObject {
 		return vs[0].([]GetObjectsObject)[vs[1].(int)]
@@ -2702,6 +3111,12 @@ func (i GetPreauthrequestsFilterArgs) ToGetPreauthrequestsFilterOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetPreauthrequestsFilterOutput)
 }
 
+func (i GetPreauthrequestsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetPreauthrequestsFilter] {
+	return pulumix.Output[GetPreauthrequestsFilter]{
+		OutputState: i.ToGetPreauthrequestsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPreauthrequestsFilterArrayInput is an input type that accepts GetPreauthrequestsFilterArray and GetPreauthrequestsFilterArrayOutput values.
 // You can construct a concrete instance of `GetPreauthrequestsFilterArrayInput` via:
 //
@@ -2727,6 +3142,12 @@ func (i GetPreauthrequestsFilterArray) ToGetPreauthrequestsFilterArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetPreauthrequestsFilterArrayOutput)
 }
 
+func (i GetPreauthrequestsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPreauthrequestsFilter] {
+	return pulumix.Output[[]GetPreauthrequestsFilter]{
+		OutputState: i.ToGetPreauthrequestsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPreauthrequestsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetPreauthrequestsFilterOutput) ElementType() reflect.Type {
@@ -2739,6 +3160,12 @@ func (o GetPreauthrequestsFilterOutput) ToGetPreauthrequestsFilterOutput() GetPr
 
 func (o GetPreauthrequestsFilterOutput) ToGetPreauthrequestsFilterOutputWithContext(ctx context.Context) GetPreauthrequestsFilterOutput {
 	return o
+}
+
+func (o GetPreauthrequestsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetPreauthrequestsFilter] {
+	return pulumix.Output[GetPreauthrequestsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The user-provided name of the pre-authenticated request.
@@ -2766,6 +3193,12 @@ func (o GetPreauthrequestsFilterArrayOutput) ToGetPreauthrequestsFilterArrayOutp
 
 func (o GetPreauthrequestsFilterArrayOutput) ToGetPreauthrequestsFilterArrayOutputWithContext(ctx context.Context) GetPreauthrequestsFilterArrayOutput {
 	return o
+}
+
+func (o GetPreauthrequestsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPreauthrequestsFilter] {
+	return pulumix.Output[[]GetPreauthrequestsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPreauthrequestsFilterArrayOutput) Index(i pulumi.IntInput) GetPreauthrequestsFilterOutput {
@@ -2855,6 +3288,12 @@ func (i GetPreauthrequestsPreauthenticatedRequestArgs) ToGetPreauthrequestsPreau
 	return pulumi.ToOutputWithContext(ctx, i).(GetPreauthrequestsPreauthenticatedRequestOutput)
 }
 
+func (i GetPreauthrequestsPreauthenticatedRequestArgs) ToOutput(ctx context.Context) pulumix.Output[GetPreauthrequestsPreauthenticatedRequest] {
+	return pulumix.Output[GetPreauthrequestsPreauthenticatedRequest]{
+		OutputState: i.ToGetPreauthrequestsPreauthenticatedRequestOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPreauthrequestsPreauthenticatedRequestArrayInput is an input type that accepts GetPreauthrequestsPreauthenticatedRequestArray and GetPreauthrequestsPreauthenticatedRequestArrayOutput values.
 // You can construct a concrete instance of `GetPreauthrequestsPreauthenticatedRequestArrayInput` via:
 //
@@ -2880,6 +3319,12 @@ func (i GetPreauthrequestsPreauthenticatedRequestArray) ToGetPreauthrequestsPrea
 	return pulumi.ToOutputWithContext(ctx, i).(GetPreauthrequestsPreauthenticatedRequestArrayOutput)
 }
 
+func (i GetPreauthrequestsPreauthenticatedRequestArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPreauthrequestsPreauthenticatedRequest] {
+	return pulumix.Output[[]GetPreauthrequestsPreauthenticatedRequest]{
+		OutputState: i.ToGetPreauthrequestsPreauthenticatedRequestArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPreauthrequestsPreauthenticatedRequestOutput struct{ *pulumi.OutputState }
 
 func (GetPreauthrequestsPreauthenticatedRequestOutput) ElementType() reflect.Type {
@@ -2892,6 +3337,12 @@ func (o GetPreauthrequestsPreauthenticatedRequestOutput) ToGetPreauthrequestsPre
 
 func (o GetPreauthrequestsPreauthenticatedRequestOutput) ToGetPreauthrequestsPreauthenticatedRequestOutputWithContext(ctx context.Context) GetPreauthrequestsPreauthenticatedRequestOutput {
 	return o
+}
+
+func (o GetPreauthrequestsPreauthenticatedRequestOutput) ToOutput(ctx context.Context) pulumix.Output[GetPreauthrequestsPreauthenticatedRequest] {
+	return pulumix.Output[GetPreauthrequestsPreauthenticatedRequest]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The operation that can be performed on this resource.
@@ -2973,6 +3424,12 @@ func (o GetPreauthrequestsPreauthenticatedRequestArrayOutput) ToGetPreauthreques
 	return o
 }
 
+func (o GetPreauthrequestsPreauthenticatedRequestArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPreauthrequestsPreauthenticatedRequest] {
+	return pulumix.Output[[]GetPreauthrequestsPreauthenticatedRequest]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetPreauthrequestsPreauthenticatedRequestArrayOutput) Index(i pulumi.IntInput) GetPreauthrequestsPreauthenticatedRequestOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPreauthrequestsPreauthenticatedRequest {
 		return vs[0].([]GetPreauthrequestsPreauthenticatedRequest)[vs[1].(int)]
@@ -3016,6 +3473,12 @@ func (i GetReplicationPoliciesFilterArgs) ToGetReplicationPoliciesFilterOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetReplicationPoliciesFilterOutput)
 }
 
+func (i GetReplicationPoliciesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetReplicationPoliciesFilter] {
+	return pulumix.Output[GetReplicationPoliciesFilter]{
+		OutputState: i.ToGetReplicationPoliciesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetReplicationPoliciesFilterArrayInput is an input type that accepts GetReplicationPoliciesFilterArray and GetReplicationPoliciesFilterArrayOutput values.
 // You can construct a concrete instance of `GetReplicationPoliciesFilterArrayInput` via:
 //
@@ -3041,6 +3504,12 @@ func (i GetReplicationPoliciesFilterArray) ToGetReplicationPoliciesFilterArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetReplicationPoliciesFilterArrayOutput)
 }
 
+func (i GetReplicationPoliciesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetReplicationPoliciesFilter] {
+	return pulumix.Output[[]GetReplicationPoliciesFilter]{
+		OutputState: i.ToGetReplicationPoliciesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetReplicationPoliciesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetReplicationPoliciesFilterOutput) ElementType() reflect.Type {
@@ -3053,6 +3522,12 @@ func (o GetReplicationPoliciesFilterOutput) ToGetReplicationPoliciesFilterOutput
 
 func (o GetReplicationPoliciesFilterOutput) ToGetReplicationPoliciesFilterOutputWithContext(ctx context.Context) GetReplicationPoliciesFilterOutput {
 	return o
+}
+
+func (o GetReplicationPoliciesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetReplicationPoliciesFilter] {
+	return pulumix.Output[GetReplicationPoliciesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the policy.
@@ -3080,6 +3555,12 @@ func (o GetReplicationPoliciesFilterArrayOutput) ToGetReplicationPoliciesFilterA
 
 func (o GetReplicationPoliciesFilterArrayOutput) ToGetReplicationPoliciesFilterArrayOutputWithContext(ctx context.Context) GetReplicationPoliciesFilterArrayOutput {
 	return o
+}
+
+func (o GetReplicationPoliciesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetReplicationPoliciesFilter] {
+	return pulumix.Output[[]GetReplicationPoliciesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetReplicationPoliciesFilterArrayOutput) Index(i pulumi.IntInput) GetReplicationPoliciesFilterOutput {
@@ -3161,6 +3642,12 @@ func (i GetReplicationPoliciesReplicationPolicyArgs) ToGetReplicationPoliciesRep
 	return pulumi.ToOutputWithContext(ctx, i).(GetReplicationPoliciesReplicationPolicyOutput)
 }
 
+func (i GetReplicationPoliciesReplicationPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetReplicationPoliciesReplicationPolicy] {
+	return pulumix.Output[GetReplicationPoliciesReplicationPolicy]{
+		OutputState: i.ToGetReplicationPoliciesReplicationPolicyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetReplicationPoliciesReplicationPolicyArrayInput is an input type that accepts GetReplicationPoliciesReplicationPolicyArray and GetReplicationPoliciesReplicationPolicyArrayOutput values.
 // You can construct a concrete instance of `GetReplicationPoliciesReplicationPolicyArrayInput` via:
 //
@@ -3186,6 +3673,12 @@ func (i GetReplicationPoliciesReplicationPolicyArray) ToGetReplicationPoliciesRe
 	return pulumi.ToOutputWithContext(ctx, i).(GetReplicationPoliciesReplicationPolicyArrayOutput)
 }
 
+func (i GetReplicationPoliciesReplicationPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetReplicationPoliciesReplicationPolicy] {
+	return pulumix.Output[[]GetReplicationPoliciesReplicationPolicy]{
+		OutputState: i.ToGetReplicationPoliciesReplicationPolicyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetReplicationPoliciesReplicationPolicyOutput struct{ *pulumi.OutputState }
 
 func (GetReplicationPoliciesReplicationPolicyOutput) ElementType() reflect.Type {
@@ -3198,6 +3691,12 @@ func (o GetReplicationPoliciesReplicationPolicyOutput) ToGetReplicationPoliciesR
 
 func (o GetReplicationPoliciesReplicationPolicyOutput) ToGetReplicationPoliciesReplicationPolicyOutputWithContext(ctx context.Context) GetReplicationPoliciesReplicationPolicyOutput {
 	return o
+}
+
+func (o GetReplicationPoliciesReplicationPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetReplicationPoliciesReplicationPolicy] {
+	return pulumix.Output[GetReplicationPoliciesReplicationPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
@@ -3269,6 +3768,12 @@ func (o GetReplicationPoliciesReplicationPolicyArrayOutput) ToGetReplicationPoli
 	return o
 }
 
+func (o GetReplicationPoliciesReplicationPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetReplicationPoliciesReplicationPolicy] {
+	return pulumix.Output[[]GetReplicationPoliciesReplicationPolicy]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetReplicationPoliciesReplicationPolicyArrayOutput) Index(i pulumi.IntInput) GetReplicationPoliciesReplicationPolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReplicationPoliciesReplicationPolicy {
 		return vs[0].([]GetReplicationPoliciesReplicationPolicy)[vs[1].(int)]
@@ -3310,6 +3815,12 @@ func (i GetReplicationSourcesFilterArgs) ToGetReplicationSourcesFilterOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetReplicationSourcesFilterOutput)
 }
 
+func (i GetReplicationSourcesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetReplicationSourcesFilter] {
+	return pulumix.Output[GetReplicationSourcesFilter]{
+		OutputState: i.ToGetReplicationSourcesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetReplicationSourcesFilterArrayInput is an input type that accepts GetReplicationSourcesFilterArray and GetReplicationSourcesFilterArrayOutput values.
 // You can construct a concrete instance of `GetReplicationSourcesFilterArrayInput` via:
 //
@@ -3335,6 +3846,12 @@ func (i GetReplicationSourcesFilterArray) ToGetReplicationSourcesFilterArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetReplicationSourcesFilterArrayOutput)
 }
 
+func (i GetReplicationSourcesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetReplicationSourcesFilter] {
+	return pulumix.Output[[]GetReplicationSourcesFilter]{
+		OutputState: i.ToGetReplicationSourcesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetReplicationSourcesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetReplicationSourcesFilterOutput) ElementType() reflect.Type {
@@ -3347,6 +3864,12 @@ func (o GetReplicationSourcesFilterOutput) ToGetReplicationSourcesFilterOutput()
 
 func (o GetReplicationSourcesFilterOutput) ToGetReplicationSourcesFilterOutputWithContext(ctx context.Context) GetReplicationSourcesFilterOutput {
 	return o
+}
+
+func (o GetReplicationSourcesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetReplicationSourcesFilter] {
+	return pulumix.Output[GetReplicationSourcesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetReplicationSourcesFilterOutput) Name() pulumi.StringOutput {
@@ -3373,6 +3896,12 @@ func (o GetReplicationSourcesFilterArrayOutput) ToGetReplicationSourcesFilterArr
 
 func (o GetReplicationSourcesFilterArrayOutput) ToGetReplicationSourcesFilterArrayOutputWithContext(ctx context.Context) GetReplicationSourcesFilterArrayOutput {
 	return o
+}
+
+func (o GetReplicationSourcesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetReplicationSourcesFilter] {
+	return pulumix.Output[[]GetReplicationSourcesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetReplicationSourcesFilterArrayOutput) Index(i pulumi.IntInput) GetReplicationSourcesFilterOutput {
@@ -3422,6 +3951,12 @@ func (i GetReplicationSourcesReplicationSourceArgs) ToGetReplicationSourcesRepli
 	return pulumi.ToOutputWithContext(ctx, i).(GetReplicationSourcesReplicationSourceOutput)
 }
 
+func (i GetReplicationSourcesReplicationSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetReplicationSourcesReplicationSource] {
+	return pulumix.Output[GetReplicationSourcesReplicationSource]{
+		OutputState: i.ToGetReplicationSourcesReplicationSourceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetReplicationSourcesReplicationSourceArrayInput is an input type that accepts GetReplicationSourcesReplicationSourceArray and GetReplicationSourcesReplicationSourceArrayOutput values.
 // You can construct a concrete instance of `GetReplicationSourcesReplicationSourceArrayInput` via:
 //
@@ -3447,6 +3982,12 @@ func (i GetReplicationSourcesReplicationSourceArray) ToGetReplicationSourcesRepl
 	return pulumi.ToOutputWithContext(ctx, i).(GetReplicationSourcesReplicationSourceArrayOutput)
 }
 
+func (i GetReplicationSourcesReplicationSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetReplicationSourcesReplicationSource] {
+	return pulumix.Output[[]GetReplicationSourcesReplicationSource]{
+		OutputState: i.ToGetReplicationSourcesReplicationSourceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetReplicationSourcesReplicationSourceOutput struct{ *pulumi.OutputState }
 
 func (GetReplicationSourcesReplicationSourceOutput) ElementType() reflect.Type {
@@ -3459,6 +4000,12 @@ func (o GetReplicationSourcesReplicationSourceOutput) ToGetReplicationSourcesRep
 
 func (o GetReplicationSourcesReplicationSourceOutput) ToGetReplicationSourcesReplicationSourceOutputWithContext(ctx context.Context) GetReplicationSourcesReplicationSourceOutput {
 	return o
+}
+
+func (o GetReplicationSourcesReplicationSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetReplicationSourcesReplicationSource] {
+	return pulumix.Output[GetReplicationSourcesReplicationSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the policy.
@@ -3488,6 +4035,12 @@ func (o GetReplicationSourcesReplicationSourceArrayOutput) ToGetReplicationSourc
 
 func (o GetReplicationSourcesReplicationSourceArrayOutput) ToGetReplicationSourcesReplicationSourceArrayOutputWithContext(ctx context.Context) GetReplicationSourcesReplicationSourceArrayOutput {
 	return o
+}
+
+func (o GetReplicationSourcesReplicationSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetReplicationSourcesReplicationSource] {
+	return pulumix.Output[[]GetReplicationSourcesReplicationSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetReplicationSourcesReplicationSourceArrayOutput) Index(i pulumi.IntInput) GetReplicationSourcesReplicationSourceOutput {

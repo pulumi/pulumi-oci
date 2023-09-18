@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Maintenance Run History resource in Oracle Cloud Infrastructure Database service.
@@ -103,6 +104,12 @@ func (o GetDatabaseMaintenanceRunHistoryResultOutput) ToGetDatabaseMaintenanceRu
 
 func (o GetDatabaseMaintenanceRunHistoryResultOutput) ToGetDatabaseMaintenanceRunHistoryResultOutputWithContext(ctx context.Context) GetDatabaseMaintenanceRunHistoryResultOutput {
 	return o
+}
+
+func (o GetDatabaseMaintenanceRunHistoryResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseMaintenanceRunHistoryResult] {
+	return pulumix.Output[GetDatabaseMaintenanceRunHistoryResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // List of database server history details.

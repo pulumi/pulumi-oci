@@ -73,7 +73,7 @@ public class Backend extends com.pulumi.resources.CustomResource {
      * The name of the backend set to which to add the backend server.  Example: `example_backend_set`
      * 
      */
-    @Export(name="backendSetName", type=String.class, parameters={})
+    @Export(name="backendSetName", refs={String.class}, tree="[0]")
     private Output<String> backendSetName;
 
     /**
@@ -87,7 +87,7 @@ public class Backend extends com.pulumi.resources.CustomResource {
      * The IP address of the backend server. Example: `10.0.0.3`
      * 
      */
-    @Export(name="ipAddress", type=String.class, parameters={})
+    @Export(name="ipAddress", refs={String.class}, tree="[0]")
     private Output<String> ipAddress;
 
     /**
@@ -101,7 +101,7 @@ public class Backend extends com.pulumi.resources.CustomResource {
      * (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as &#34;isBackup&#34; fail the health check policy.  Example: `false`
      * 
      */
-    @Export(name="isBackup", type=Boolean.class, parameters={})
+    @Export(name="isBackup", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isBackup;
 
     /**
@@ -115,7 +115,7 @@ public class Backend extends com.pulumi.resources.CustomResource {
      * (Updatable) Whether the network load balancer should drain this server. Servers marked &#34;isDrain&#34; receive no incoming traffic.  Example: `false`
      * 
      */
-    @Export(name="isDrain", type=Boolean.class, parameters={})
+    @Export(name="isDrain", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isDrain;
 
     /**
@@ -129,7 +129,7 @@ public class Backend extends com.pulumi.resources.CustomResource {
      * (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
      * 
      */
-    @Export(name="isOffline", type=Boolean.class, parameters={})
+    @Export(name="isOffline", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isOffline;
 
     /**
@@ -143,7 +143,7 @@ public class Backend extends com.pulumi.resources.CustomResource {
      * Optional unique name identifying the backend within the backend set. If not specified, then one will be generated. Example: `webServer1`
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -157,7 +157,7 @@ public class Backend extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
      * 
      */
-    @Export(name="networkLoadBalancerId", type=String.class, parameters={})
+    @Export(name="networkLoadBalancerId", refs={String.class}, tree="[0]")
     private Output<String> networkLoadBalancerId;
 
     /**
@@ -171,7 +171,7 @@ public class Backend extends com.pulumi.resources.CustomResource {
      * The communication port for the backend server.  Example: `8080`
      * 
      */
-    @Export(name="port", type=Integer.class, parameters={})
+    @Export(name="port", refs={Integer.class}, tree="[0]")
     private Output<Integer> port;
 
     /**
@@ -185,7 +185,7 @@ public class Backend extends com.pulumi.resources.CustomResource {
      * The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.&lt;var&gt;&amp;lt;unique_ID&amp;gt;&lt;/var&gt;`
      * 
      */
-    @Export(name="targetId", type=String.class, parameters={})
+    @Export(name="targetId", refs={String.class}, tree="[0]")
     private Output<String> targetId;
 
     /**
@@ -202,7 +202,7 @@ public class Backend extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="weight", type=Integer.class, parameters={})
+    @Export(name="weight", refs={Integer.class}, tree="[0]")
     private Output<Integer> weight;
 
     /**

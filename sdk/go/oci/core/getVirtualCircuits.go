@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Virtual Circuits in Oracle Cloud Infrastructure Core service.
@@ -119,6 +120,12 @@ func (o GetVirtualCircuitsResultOutput) ToGetVirtualCircuitsResultOutput() GetVi
 
 func (o GetVirtualCircuitsResultOutput) ToGetVirtualCircuitsResultOutputWithContext(ctx context.Context) GetVirtualCircuitsResultOutput {
 	return o
+}
+
+func (o GetVirtualCircuitsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualCircuitsResult] {
+	return pulumix.Output[GetVirtualCircuitsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the compartment containing the virtual circuit.

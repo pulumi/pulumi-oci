@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about metadata of a specific Object resource in Oracle Cloud Infrastructure Object Storage service.
@@ -123,6 +124,12 @@ func (o GetObjectHeadResultOutput) ToGetObjectHeadResultOutput() GetObjectHeadRe
 
 func (o GetObjectHeadResultOutput) ToGetObjectHeadResultOutputWithContext(ctx context.Context) GetObjectHeadResultOutput {
 	return o
+}
+
+func (o GetObjectHeadResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetObjectHeadResult] {
+	return pulumix.Output[GetObjectHeadResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetObjectHeadResultOutput) ArchivalState() pulumi.StringOutput {

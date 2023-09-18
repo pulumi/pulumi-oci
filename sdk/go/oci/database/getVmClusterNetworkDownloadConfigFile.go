@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Vm Cluster Network Download Config File resource in Oracle Cloud Infrastructure Database service.
@@ -111,6 +112,12 @@ func (o GetVmClusterNetworkDownloadConfigFileResultOutput) ToGetVmClusterNetwork
 
 func (o GetVmClusterNetworkDownloadConfigFileResultOutput) ToGetVmClusterNetworkDownloadConfigFileResultOutputWithContext(ctx context.Context) GetVmClusterNetworkDownloadConfigFileResultOutput {
 	return o
+}
+
+func (o GetVmClusterNetworkDownloadConfigFileResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworkDownloadConfigFileResult] {
+	return pulumix.Output[GetVmClusterNetworkDownloadConfigFileResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVmClusterNetworkDownloadConfigFileResultOutput) Base64EncodeContent() pulumi.BoolPtrOutput {

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Quotas in Oracle Cloud Infrastructure Limits service.
@@ -119,6 +120,12 @@ func (o GetQuotasResultOutput) ToGetQuotasResultOutput() GetQuotasResultOutput {
 
 func (o GetQuotasResultOutput) ToGetQuotasResultOutputWithContext(ctx context.Context) GetQuotasResultOutput {
 	return o
+}
+
+func (o GetQuotasResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetQuotasResult] {
+	return pulumix.Output[GetQuotasResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the compartment containing the resource this quota applies to.

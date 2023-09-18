@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Block Volume Replica resource in Oracle Cloud Infrastructure Core service.
@@ -120,6 +121,12 @@ func (o GetBlockVolumeReplicaResultOutput) ToGetBlockVolumeReplicaResultOutput()
 
 func (o GetBlockVolumeReplicaResultOutput) ToGetBlockVolumeReplicaResultOutputWithContext(ctx context.Context) GetBlockVolumeReplicaResultOutput {
 	return o
+}
+
+func (o GetBlockVolumeReplicaResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetBlockVolumeReplicaResult] {
+	return pulumix.Output[GetBlockVolumeReplicaResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`

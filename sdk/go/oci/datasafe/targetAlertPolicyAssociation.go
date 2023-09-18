@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Target Alert Policy Association resource in Oracle Cloud Infrastructure Data Safe service.
@@ -267,6 +268,12 @@ func (i *TargetAlertPolicyAssociation) ToTargetAlertPolicyAssociationOutputWithC
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAlertPolicyAssociationOutput)
 }
 
+func (i *TargetAlertPolicyAssociation) ToOutput(ctx context.Context) pulumix.Output[*TargetAlertPolicyAssociation] {
+	return pulumix.Output[*TargetAlertPolicyAssociation]{
+		OutputState: i.ToTargetAlertPolicyAssociationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // TargetAlertPolicyAssociationArrayInput is an input type that accepts TargetAlertPolicyAssociationArray and TargetAlertPolicyAssociationArrayOutput values.
 // You can construct a concrete instance of `TargetAlertPolicyAssociationArrayInput` via:
 //
@@ -290,6 +297,12 @@ func (i TargetAlertPolicyAssociationArray) ToTargetAlertPolicyAssociationArrayOu
 
 func (i TargetAlertPolicyAssociationArray) ToTargetAlertPolicyAssociationArrayOutputWithContext(ctx context.Context) TargetAlertPolicyAssociationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAlertPolicyAssociationArrayOutput)
+}
+
+func (i TargetAlertPolicyAssociationArray) ToOutput(ctx context.Context) pulumix.Output[[]*TargetAlertPolicyAssociation] {
+	return pulumix.Output[[]*TargetAlertPolicyAssociation]{
+		OutputState: i.ToTargetAlertPolicyAssociationArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // TargetAlertPolicyAssociationMapInput is an input type that accepts TargetAlertPolicyAssociationMap and TargetAlertPolicyAssociationMapOutput values.
@@ -317,6 +330,12 @@ func (i TargetAlertPolicyAssociationMap) ToTargetAlertPolicyAssociationMapOutput
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAlertPolicyAssociationMapOutput)
 }
 
+func (i TargetAlertPolicyAssociationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*TargetAlertPolicyAssociation] {
+	return pulumix.Output[map[string]*TargetAlertPolicyAssociation]{
+		OutputState: i.ToTargetAlertPolicyAssociationMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type TargetAlertPolicyAssociationOutput struct{ *pulumi.OutputState }
 
 func (TargetAlertPolicyAssociationOutput) ElementType() reflect.Type {
@@ -329,6 +348,12 @@ func (o TargetAlertPolicyAssociationOutput) ToTargetAlertPolicyAssociationOutput
 
 func (o TargetAlertPolicyAssociationOutput) ToTargetAlertPolicyAssociationOutputWithContext(ctx context.Context) TargetAlertPolicyAssociationOutput {
 	return o
+}
+
+func (o TargetAlertPolicyAssociationOutput) ToOutput(ctx context.Context) pulumix.Output[*TargetAlertPolicyAssociation] {
+	return pulumix.Output[*TargetAlertPolicyAssociation]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The OCID of the compartment where the target-alert policy association is created.
@@ -408,6 +433,12 @@ func (o TargetAlertPolicyAssociationArrayOutput) ToTargetAlertPolicyAssociationA
 	return o
 }
 
+func (o TargetAlertPolicyAssociationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*TargetAlertPolicyAssociation] {
+	return pulumix.Output[[]*TargetAlertPolicyAssociation]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o TargetAlertPolicyAssociationArrayOutput) Index(i pulumi.IntInput) TargetAlertPolicyAssociationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *TargetAlertPolicyAssociation {
 		return vs[0].([]*TargetAlertPolicyAssociation)[vs[1].(int)]
@@ -426,6 +457,12 @@ func (o TargetAlertPolicyAssociationMapOutput) ToTargetAlertPolicyAssociationMap
 
 func (o TargetAlertPolicyAssociationMapOutput) ToTargetAlertPolicyAssociationMapOutputWithContext(ctx context.Context) TargetAlertPolicyAssociationMapOutput {
 	return o
+}
+
+func (o TargetAlertPolicyAssociationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*TargetAlertPolicyAssociation] {
+	return pulumix.Output[map[string]*TargetAlertPolicyAssociation]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o TargetAlertPolicyAssociationMapOutput) MapIndex(k pulumi.StringInput) TargetAlertPolicyAssociationOutput {

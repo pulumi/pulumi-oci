@@ -38,3 +38,20 @@ export interface GetProxyDetailResult {
      */
     readonly proxyImage: string;
 }
+/**
+ * This data source provides details about a specific Proxy Detail resource in Oracle Cloud Infrastructure Service Mesh service.
+ *
+ * Returns the attributes of the Proxy such as proxy image version.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testProxyDetail = oci.ServiceMesh.getProxyDetail({});
+ * ```
+ */
+export function getProxyDetailOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetProxyDetailResult> {
+    return pulumi.output(getProxyDetail(opts))
+}

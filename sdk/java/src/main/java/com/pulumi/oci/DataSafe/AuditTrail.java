@@ -38,7 +38,7 @@ public class AuditTrail extends com.pulumi.resources.CustomResource {
      * The date from which the audit trail must start collecting data, in the format defined by RFC3339.
      * 
      */
-    @Export(name="auditCollectionStartTime", type=String.class, parameters={})
+    @Export(name="auditCollectionStartTime", refs={String.class}, tree="[0]")
     private Output<String> auditCollectionStartTime;
 
     /**
@@ -52,7 +52,7 @@ public class AuditTrail extends com.pulumi.resources.CustomResource {
      * The OCID of the  parent audit.
      * 
      */
-    @Export(name="auditProfileId", type=String.class, parameters={})
+    @Export(name="auditProfileId", refs={String.class}, tree="[0]")
     private Output<String> auditProfileId;
 
     /**
@@ -66,7 +66,7 @@ public class AuditTrail extends com.pulumi.resources.CustomResource {
      * The OCID of the audit trail.
      * 
      */
-    @Export(name="auditTrailId", type=String.class, parameters={})
+    @Export(name="auditTrailId", refs={String.class}, tree="[0]")
     private Output<String> auditTrailId;
 
     /**
@@ -80,7 +80,7 @@ public class AuditTrail extends com.pulumi.resources.CustomResource {
      * The OCID of the compartment that contains the audit trail and is the same as the compartment of the audit profile resource.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -94,7 +94,7 @@ public class AuditTrail extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -108,7 +108,7 @@ public class AuditTrail extends com.pulumi.resources.CustomResource {
      * (Updatable) The description of the audit trail.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -122,7 +122,7 @@ public class AuditTrail extends com.pulumi.resources.CustomResource {
      * (Updatable) The display name of the audit trail. The name does not have to be unique, and it&#39;s changeable.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -136,7 +136,7 @@ public class AuditTrail extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -150,7 +150,7 @@ public class AuditTrail extends com.pulumi.resources.CustomResource {
      * (Updatable) Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database&#39;s audit trail does not become too large.
      * 
      */
-    @Export(name="isAutoPurgeEnabled", type=Boolean.class, parameters={})
+    @Export(name="isAutoPurgeEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isAutoPurgeEnabled;
 
     /**
@@ -164,7 +164,7 @@ public class AuditTrail extends com.pulumi.resources.CustomResource {
      * Details about the current state of the audit trail in Data Safe.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -181,7 +181,7 @@ public class AuditTrail extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="resumeTrigger", type=Integer.class, parameters={})
+    @Export(name="resumeTrigger", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> resumeTrigger;
 
     /**
@@ -198,7 +198,7 @@ public class AuditTrail extends com.pulumi.resources.CustomResource {
      * (Updatable) The target state for the Audit Trail. Could be set to `ACTIVE` or `INACTIVE`.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -212,7 +212,7 @@ public class AuditTrail extends com.pulumi.resources.CustomResource {
      * The current sub-state of the audit trail.
      * 
      */
-    @Export(name="status", type=String.class, parameters={})
+    @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
@@ -226,7 +226,7 @@ public class AuditTrail extends com.pulumi.resources.CustomResource {
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -240,7 +240,7 @@ public class AuditTrail extends com.pulumi.resources.CustomResource {
      * The OCID of the Data Safe target for which the audit trail is created.
      * 
      */
-    @Export(name="targetId", type=String.class, parameters={})
+    @Export(name="targetId", refs={String.class}, tree="[0]")
     private Output<String> targetId;
 
     /**
@@ -254,7 +254,7 @@ public class AuditTrail extends com.pulumi.resources.CustomResource {
      * The date and time the audit trail was created, in the format defined by RFC3339.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -268,7 +268,7 @@ public class AuditTrail extends com.pulumi.resources.CustomResource {
      * The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
      * 
      */
-    @Export(name="timeLastCollected", type=String.class, parameters={})
+    @Export(name="timeLastCollected", refs={String.class}, tree="[0]")
     private Output<String> timeLastCollected;
 
     /**
@@ -282,7 +282,7 @@ public class AuditTrail extends com.pulumi.resources.CustomResource {
      * The date and time the audit trail was updated, in the format defined by RFC3339.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -296,7 +296,7 @@ public class AuditTrail extends com.pulumi.resources.CustomResource {
      * An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
      * 
      */
-    @Export(name="trailLocation", type=String.class, parameters={})
+    @Export(name="trailLocation", refs={String.class}, tree="[0]")
     private Output<String> trailLocation;
 
     /**
@@ -310,7 +310,7 @@ public class AuditTrail extends com.pulumi.resources.CustomResource {
      * The OCID of the workrequest for audit trail which collects audit records.
      * 
      */
-    @Export(name="workRequestId", type=String.class, parameters={})
+    @Export(name="workRequestId", refs={String.class}, tree="[0]")
     private Output<String> workRequestId;
 
     /**

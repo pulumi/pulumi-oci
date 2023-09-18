@@ -88,7 +88,7 @@ public class IdentityProvider extends com.pulumi.resources.CustomResource {
      * The OCID of your tenancy.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -102,7 +102,7 @@ public class IdentityProvider extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -116,7 +116,7 @@ public class IdentityProvider extends com.pulumi.resources.CustomResource {
      * (Updatable) The description you assign to the `IdentityProvider` during creation. Does not have to be unique, and it&#39;s changeable.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -130,7 +130,7 @@ public class IdentityProvider extends com.pulumi.resources.CustomResource {
      * (Updatable) Extra name value pairs associated with this identity provider. Example: `{&#34;clientId&#34;: &#34;app_sf3kdjf3&#34;}`
      * 
      */
-    @Export(name="freeformAttributes", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformAttributes", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformAttributes;
 
     /**
@@ -144,7 +144,7 @@ public class IdentityProvider extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -158,7 +158,7 @@ public class IdentityProvider extends com.pulumi.resources.CustomResource {
      * The detailed status of INACTIVE lifecycleState.
      * 
      */
-    @Export(name="inactiveState", type=String.class, parameters={})
+    @Export(name="inactiveState", refs={String.class}, tree="[0]")
     private Output<String> inactiveState;
 
     /**
@@ -172,7 +172,7 @@ public class IdentityProvider extends com.pulumi.resources.CustomResource {
      * (Updatable) The XML that contains the information required for federating.
      * 
      */
-    @Export(name="metadata", type=String.class, parameters={})
+    @Export(name="metadata", refs={String.class}, tree="[0]")
     private Output<String> metadata;
 
     /**
@@ -186,7 +186,7 @@ public class IdentityProvider extends com.pulumi.resources.CustomResource {
      * (Updatable) The URL for retrieving the identity provider&#39;s metadata, which contains information required for federating.
      * 
      */
-    @Export(name="metadataUrl", type=String.class, parameters={})
+    @Export(name="metadataUrl", refs={String.class}, tree="[0]")
     private Output<String> metadataUrl;
 
     /**
@@ -200,7 +200,7 @@ public class IdentityProvider extends com.pulumi.resources.CustomResource {
      * The name you assign to the `IdentityProvider` during creation. The name must be unique across all `IdentityProvider` objects in the tenancy and cannot be changed.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -214,7 +214,7 @@ public class IdentityProvider extends com.pulumi.resources.CustomResource {
      * The identity provider service or product. Supported identity providers are Oracle Identity Cloud Service (IDCS) and Microsoft Active Directory Federation Services (ADFS).  Example: `IDCS`
      * 
      */
-    @Export(name="productType", type=String.class, parameters={})
+    @Export(name="productType", refs={String.class}, tree="[0]")
     private Output<String> productType;
 
     /**
@@ -231,7 +231,7 @@ public class IdentityProvider extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="protocol", type=String.class, parameters={})
+    @Export(name="protocol", refs={String.class}, tree="[0]")
     private Output<String> protocol;
 
     /**
@@ -248,7 +248,7 @@ public class IdentityProvider extends com.pulumi.resources.CustomResource {
      * The URL to redirect federated users to for authentication with the identity provider.
      * 
      */
-    @Export(name="redirectUrl", type=String.class, parameters={})
+    @Export(name="redirectUrl", refs={String.class}, tree="[0]")
     private Output<String> redirectUrl;
 
     /**
@@ -262,7 +262,7 @@ public class IdentityProvider extends com.pulumi.resources.CustomResource {
      * The identity provider&#39;s signing certificate used by the IAM Service to validate the SAML2 token.
      * 
      */
-    @Export(name="signingCertificate", type=String.class, parameters={})
+    @Export(name="signingCertificate", refs={String.class}, tree="[0]")
     private Output<String> signingCertificate;
 
     /**
@@ -276,7 +276,7 @@ public class IdentityProvider extends com.pulumi.resources.CustomResource {
      * The current state.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -290,7 +290,7 @@ public class IdentityProvider extends com.pulumi.resources.CustomResource {
      * Date and time the `IdentityProvider` was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**

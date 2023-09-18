@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Flex Components in Oracle Cloud Infrastructure Database service.
@@ -111,6 +112,12 @@ func (o GetFlexComponentsResultOutput) ToGetFlexComponentsResultOutput() GetFlex
 
 func (o GetFlexComponentsResultOutput) ToGetFlexComponentsResultOutputWithContext(ctx context.Context) GetFlexComponentsResultOutput {
 	return o
+}
+
+func (o GetFlexComponentsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFlexComponentsResult] {
+	return pulumix.Output[GetFlexComponentsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetFlexComponentsResultOutput) CompartmentId() pulumi.StringOutput {

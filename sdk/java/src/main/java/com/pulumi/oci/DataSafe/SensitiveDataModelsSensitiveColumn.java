@@ -76,7 +76,7 @@ public class SensitiveDataModelsSensitiveColumn extends com.pulumi.resources.Cus
      * (Updatable) Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column. This attribute can be used to establish relationship between columns in a sensitive data model. Note that the child columns must be added to the sensitive data model before their keys can be specified here. If this attribute is provided, the parentColumnKeys and relationType attributes of the child columns are automatically updated to reflect the relationship.
      * 
      */
-    @Export(name="appDefinedChildColumnKeys", type=List.class, parameters={String.class})
+    @Export(name="appDefinedChildColumnKeys", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> appDefinedChildColumnKeys;
 
     /**
@@ -90,7 +90,7 @@ public class SensitiveDataModelsSensitiveColumn extends com.pulumi.resources.Cus
      * The name of the application associated with the sensitive column. It&#39;s useful when the application name is different from the schema name. Otherwise, it can be ignored. If this attribute is not provided, it&#39;s automatically populated with the value provided for the schemaName attribute.
      * 
      */
-    @Export(name="appName", type=String.class, parameters={})
+    @Export(name="appName", refs={String.class}, tree="[0]")
     private Output<String> appName;
 
     /**
@@ -104,7 +104,7 @@ public class SensitiveDataModelsSensitiveColumn extends com.pulumi.resources.Cus
      * The composite key groups to which the sensitive column belongs. If the column is part of a composite key, it&#39;s assigned a column group. It helps identify and manage referential relationships that involve composite keys.
      * 
      */
-    @Export(name="columnGroups", type=List.class, parameters={String.class})
+    @Export(name="columnGroups", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> columnGroups;
 
     /**
@@ -118,7 +118,7 @@ public class SensitiveDataModelsSensitiveColumn extends com.pulumi.resources.Cus
      * The name of the sensitive column.
      * 
      */
-    @Export(name="columnName", type=String.class, parameters={})
+    @Export(name="columnName", refs={String.class}, tree="[0]")
     private Output<String> columnName;
 
     /**
@@ -132,7 +132,7 @@ public class SensitiveDataModelsSensitiveColumn extends com.pulumi.resources.Cus
      * (Updatable) The data type of the sensitive column.
      * 
      */
-    @Export(name="dataType", type=String.class, parameters={})
+    @Export(name="dataType", refs={String.class}, tree="[0]")
     private Output<String> dataType;
 
     /**
@@ -146,7 +146,7 @@ public class SensitiveDataModelsSensitiveColumn extends com.pulumi.resources.Cus
      * (Updatable) Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column. This attribute can be used to establish relationship between columns in a sensitive data model. Note that the child columns must be added to the sensitive data model before their keys can be specified here. If this attribute is provided, the parentColumnKeys and relationType attributes of the child columns are automatically updated to reflect the relationship.
      * 
      */
-    @Export(name="dbDefinedChildColumnKeys", type=List.class, parameters={String.class})
+    @Export(name="dbDefinedChildColumnKeys", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> dbDefinedChildColumnKeys;
 
     /**
@@ -160,7 +160,7 @@ public class SensitiveDataModelsSensitiveColumn extends com.pulumi.resources.Cus
      * The estimated number of data values the column has in the associated database.
      * 
      */
-    @Export(name="estimatedDataValueCount", type=String.class, parameters={})
+    @Export(name="estimatedDataValueCount", refs={String.class}, tree="[0]")
     private Output<String> estimatedDataValueCount;
 
     /**
@@ -174,7 +174,7 @@ public class SensitiveDataModelsSensitiveColumn extends com.pulumi.resources.Cus
      * The unique key that identifies the sensitive column. It&#39;s numeric and unique within a sensitive data model.
      * 
      */
-    @Export(name="key", type=String.class, parameters={})
+    @Export(name="key", refs={String.class}, tree="[0]")
     private Output<String> key;
 
     /**
@@ -188,7 +188,7 @@ public class SensitiveDataModelsSensitiveColumn extends com.pulumi.resources.Cus
      * Details about the current state of the sensitive column.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -202,7 +202,7 @@ public class SensitiveDataModelsSensitiveColumn extends com.pulumi.resources.Cus
      * The database object that contains the sensitive column.
      * 
      */
-    @Export(name="object", type=String.class, parameters={})
+    @Export(name="object", refs={String.class}, tree="[0]")
     private Output<String> object;
 
     /**
@@ -216,7 +216,7 @@ public class SensitiveDataModelsSensitiveColumn extends com.pulumi.resources.Cus
      * The type of the database object that contains the sensitive column.
      * 
      */
-    @Export(name="objectType", type=String.class, parameters={})
+    @Export(name="objectType", refs={String.class}, tree="[0]")
     private Output<String> objectType;
 
     /**
@@ -230,7 +230,7 @@ public class SensitiveDataModelsSensitiveColumn extends com.pulumi.resources.Cus
      * (Updatable) Unique keys identifying the columns that are parents of the sensitive column. At present, it accepts only one parent column key. This attribute can be used to establish relationship between columns in a sensitive data model. Note that the parent column must be added to the sensitive data model before its key can be specified here. If this attribute is provided, the appDefinedChildColumnKeys or dbDefinedChildColumnKeys attribute of the parent column is automatically updated to reflect the relationship.
      * 
      */
-    @Export(name="parentColumnKeys", type=List.class, parameters={String.class})
+    @Export(name="parentColumnKeys", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> parentColumnKeys;
 
     /**
@@ -244,7 +244,7 @@ public class SensitiveDataModelsSensitiveColumn extends com.pulumi.resources.Cus
      * (Updatable) The type of referential relationship the sensitive column has with its parent. NONE indicates that the sensitive column does not have a parent. DB_DEFINED indicates that the relationship is defined in the database dictionary. APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
      * 
      */
-    @Export(name="relationType", type=String.class, parameters={})
+    @Export(name="relationType", refs={String.class}, tree="[0]")
     private Output<String> relationType;
 
     /**
@@ -258,7 +258,7 @@ public class SensitiveDataModelsSensitiveColumn extends com.pulumi.resources.Cus
      * Original data values collected for the sensitive column from the associated database. Sample data helps review the column and ensure that it actually contains sensitive data. Note that sample data is retrieved by a data discovery job only if the isSampleDataCollectionEnabled attribute is set to true. At present, only one data value is collected per sensitive column.
      * 
      */
-    @Export(name="sampleDataValues", type=List.class, parameters={String.class})
+    @Export(name="sampleDataValues", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> sampleDataValues;
 
     /**
@@ -272,7 +272,7 @@ public class SensitiveDataModelsSensitiveColumn extends com.pulumi.resources.Cus
      * The database schema that contains the sensitive column.
      * 
      */
-    @Export(name="schemaName", type=String.class, parameters={})
+    @Export(name="schemaName", refs={String.class}, tree="[0]")
     private Output<String> schemaName;
 
     /**
@@ -286,7 +286,7 @@ public class SensitiveDataModelsSensitiveColumn extends com.pulumi.resources.Cus
      * The OCID of the sensitive data model.
      * 
      */
-    @Export(name="sensitiveDataModelId", type=String.class, parameters={})
+    @Export(name="sensitiveDataModelId", refs={String.class}, tree="[0]")
     private Output<String> sensitiveDataModelId;
 
     /**
@@ -300,7 +300,7 @@ public class SensitiveDataModelsSensitiveColumn extends com.pulumi.resources.Cus
      * (Updatable) The OCID of the sensitive type to be associated with the sensitive column.
      * 
      */
-    @Export(name="sensitiveTypeId", type=String.class, parameters={})
+    @Export(name="sensitiveTypeId", refs={String.class}, tree="[0]")
     private Output<String> sensitiveTypeId;
 
     /**
@@ -314,7 +314,7 @@ public class SensitiveDataModelsSensitiveColumn extends com.pulumi.resources.Cus
      * The source of the sensitive column. DISCOVERY indicates that the column was added to the sensitive data model using a data discovery job. MANUAL indicates that the column was added manually.
      * 
      */
-    @Export(name="source", type=String.class, parameters={})
+    @Export(name="source", refs={String.class}, tree="[0]")
     private Output<String> source;
 
     /**
@@ -328,7 +328,7 @@ public class SensitiveDataModelsSensitiveColumn extends com.pulumi.resources.Cus
      * The current state of the sensitive column.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -345,7 +345,7 @@ public class SensitiveDataModelsSensitiveColumn extends com.pulumi.resources.Cus
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="status", type=String.class, parameters={})
+    @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
@@ -362,7 +362,7 @@ public class SensitiveDataModelsSensitiveColumn extends com.pulumi.resources.Cus
      * The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339), the sensitive column was created in the sensitive data model.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -376,7 +376,7 @@ public class SensitiveDataModelsSensitiveColumn extends com.pulumi.resources.Cus
      * The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339), the sensitive column was last updated in the sensitive data model.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

@@ -115,7 +115,7 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * The OCID of the associated application. If this value is set, then no value for the execute parameter is required. If this value is not set, then a value for the execute parameter is required, and a new application is created and associated with the new run.
      * 
      */
-    @Export(name="applicationId", type=String.class, parameters={})
+    @Export(name="applicationId", refs={String.class}, tree="[0]")
     private Output<String> applicationId;
 
     /**
@@ -129,7 +129,7 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * Logging details of Application logs for Data Flow Run.
      * 
      */
-    @Export(name="applicationLogConfig", type=InvokeRunApplicationLogConfig.class, parameters={})
+    @Export(name="applicationLogConfig", refs={InvokeRunApplicationLogConfig.class}, tree="[0]")
     private Output<InvokeRunApplicationLogConfig> applicationLogConfig;
 
     /**
@@ -143,7 +143,7 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      * 
      */
-    @Export(name="archiveUri", type=String.class, parameters={})
+    @Export(name="archiveUri", refs={String.class}, tree="[0]")
     private Output<String> archiveUri;
 
     /**
@@ -157,7 +157,7 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ &#34;--input&#34;, &#34;${input_file}&#34;, &#34;--name&#34;, &#34;John Doe&#34; ]` If &#34;input_file&#34; has a value of &#34;mydata.xml&#34;, then the value above will be translated to `--input mydata.xml --name &#34;John Doe&#34;`
      * 
      */
-    @Export(name="arguments", type=List.class, parameters={String.class})
+    @Export(name="arguments", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> arguments;
 
     /**
@@ -167,7 +167,7 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
     public Output<List<String>> arguments() {
         return this.arguments;
     }
-    @Export(name="asynchronous", type=Boolean.class, parameters={})
+    @Export(name="asynchronous", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> asynchronous;
 
     public Output<Optional<Boolean>> asynchronous() {
@@ -177,7 +177,7 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * The class for the application.
      * 
      */
-    @Export(name="className", type=String.class, parameters={})
+    @Export(name="className", refs={String.class}, tree="[0]")
     private Output<String> className;
 
     /**
@@ -191,7 +191,7 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of a compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -205,7 +205,7 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties Example: { &#34;spark.app.name&#34; : &#34;My App Name&#34;, &#34;spark.shuffle.io.maxRetries&#34; : &#34;4&#34; } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
      * 
      */
-    @Export(name="configuration", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="configuration", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> configuration;
 
     /**
@@ -219,7 +219,7 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * The data read by the run in bytes.
      * 
      */
-    @Export(name="dataReadInBytes", type=String.class, parameters={})
+    @Export(name="dataReadInBytes", refs={String.class}, tree="[0]")
     private Output<String> dataReadInBytes;
 
     /**
@@ -233,7 +233,7 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * The data written by the run in bytes.
      * 
      */
-    @Export(name="dataWrittenInBytes", type=String.class, parameters={})
+    @Export(name="dataWrittenInBytes", refs={String.class}, tree="[0]")
     private Output<String> dataWrittenInBytes;
 
     /**
@@ -247,7 +247,7 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -261,7 +261,7 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * A user-friendly name that does not have to be unique. Avoid entering confidential information. If this value is not specified, it will be derived from the associated application&#39;s displayName or set by API using fileUri&#39;s application file name.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -275,7 +275,7 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * The VM shape for the driver. Sets the driver cores and memory.
      * 
      */
-    @Export(name="driverShape", type=String.class, parameters={})
+    @Export(name="driverShape", refs={String.class}, tree="[0]")
     private Output<String> driverShape;
 
     /**
@@ -289,7 +289,7 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * This is used to configure the shape of the driver or executor if a flexible shape is used.
      * 
      */
-    @Export(name="driverShapeConfig", type=InvokeRunDriverShapeConfig.class, parameters={})
+    @Export(name="driverShapeConfig", refs={InvokeRunDriverShapeConfig.class}, tree="[0]")
     private Output<InvokeRunDriverShapeConfig> driverShapeConfig;
 
     /**
@@ -303,7 +303,7 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
      * 
      */
-    @Export(name="execute", type=String.class, parameters={})
+    @Export(name="execute", refs={String.class}, tree="[0]")
     private Output<String> execute;
 
     /**
@@ -317,7 +317,7 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * The VM shape for the executors. Sets the executor cores and memory.
      * 
      */
-    @Export(name="executorShape", type=String.class, parameters={})
+    @Export(name="executorShape", refs={String.class}, tree="[0]")
     private Output<String> executorShape;
 
     /**
@@ -331,7 +331,7 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * This is used to configure the shape of the driver or executor if a flexible shape is used.
      * 
      */
-    @Export(name="executorShapeConfig", type=InvokeRunExecutorShapeConfig.class, parameters={})
+    @Export(name="executorShapeConfig", refs={InvokeRunExecutorShapeConfig.class}, tree="[0]")
     private Output<InvokeRunExecutorShapeConfig> executorShapeConfig;
 
     /**
@@ -345,7 +345,7 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      * 
      */
-    @Export(name="fileUri", type=String.class, parameters={})
+    @Export(name="fileUri", refs={String.class}, tree="[0]")
     private Output<String> fileUri;
 
     /**
@@ -359,7 +359,7 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -373,7 +373,7 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * (Updatable) The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
      * 
      */
-    @Export(name="idleTimeoutInMinutes", type=String.class, parameters={})
+    @Export(name="idleTimeoutInMinutes", refs={String.class}, tree="[0]")
     private Output<String> idleTimeoutInMinutes;
 
     /**
@@ -387,7 +387,7 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * The Spark language.
      * 
      */
-    @Export(name="language", type=String.class, parameters={})
+    @Export(name="language", refs={String.class}, tree="[0]")
     private Output<String> language;
 
     /**
@@ -401,7 +401,7 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * The detailed messages about the lifecycle state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -415,7 +415,7 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      * 
      */
-    @Export(name="logsBucketUri", type=String.class, parameters={})
+    @Export(name="logsBucketUri", refs={String.class}, tree="[0]")
     private Output<String> logsBucketUri;
 
     /**
@@ -429,7 +429,7 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * (Updatable) The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
      * 
      */
-    @Export(name="maxDurationInMinutes", type=String.class, parameters={})
+    @Export(name="maxDurationInMinutes", refs={String.class}, tree="[0]")
     private Output<String> maxDurationInMinutes;
 
     /**
@@ -443,7 +443,7 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * The OCID of Oracle Cloud Infrastructure Hive Metastore.
      * 
      */
-    @Export(name="metastoreId", type=String.class, parameters={})
+    @Export(name="metastoreId", refs={String.class}, tree="[0]")
     private Output<String> metastoreId;
 
     /**
@@ -457,7 +457,7 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * The number of executor VMs requested.
      * 
      */
-    @Export(name="numExecutors", type=Integer.class, parameters={})
+    @Export(name="numExecutors", refs={Integer.class}, tree="[0]")
     private Output<Integer> numExecutors;
 
     /**
@@ -471,7 +471,7 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      * 
      */
-    @Export(name="opcRequestId", type=String.class, parameters={})
+    @Export(name="opcRequestId", refs={String.class}, tree="[0]")
     private Output<String> opcRequestId;
 
     /**
@@ -485,7 +485,7 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * The OCID of the user who created the resource.
      * 
      */
-    @Export(name="ownerPrincipalId", type=String.class, parameters={})
+    @Export(name="ownerPrincipalId", refs={String.class}, tree="[0]")
     private Output<String> ownerPrincipalId;
 
     /**
@@ -499,7 +499,7 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
      * 
      */
-    @Export(name="ownerUserName", type=String.class, parameters={})
+    @Export(name="ownerUserName", refs={String.class}, tree="[0]")
     private Output<String> ownerUserName;
 
     /**
@@ -513,7 +513,7 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: &#34;iterations&#34;, value: &#34;10&#34;}, { name: &#34;input_file&#34;, value: &#34;mydata.xml&#34; }, { name: &#34;variable_x&#34;, value: &#34;${x}&#34;} ]
      * 
      */
-    @Export(name="parameters", type=List.class, parameters={InvokeRunParameter.class})
+    @Export(name="parameters", refs={List.class,InvokeRunParameter.class}, tree="[0,1]")
     private Output<List<InvokeRunParameter>> parameters;
 
     /**
@@ -527,7 +527,7 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * The OCID of a pool. Unique Id to indentify a dataflow pool resource.
      * 
      */
-    @Export(name="poolId", type=String.class, parameters={})
+    @Export(name="poolId", refs={String.class}, tree="[0]")
     private Output<String> poolId;
 
     /**
@@ -541,7 +541,7 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * An array of DNS zone names. Example: `[ &#34;app.examplecorp.com&#34;, &#34;app.examplecorp2.com&#34; ]`
      * 
      */
-    @Export(name="privateEndpointDnsZones", type=List.class, parameters={String.class})
+    @Export(name="privateEndpointDnsZones", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> privateEndpointDnsZones;
 
     /**
@@ -555,7 +555,7 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * The OCID of a private endpoint.
      * 
      */
-    @Export(name="privateEndpointId", type=String.class, parameters={})
+    @Export(name="privateEndpointId", refs={String.class}, tree="[0]")
     private Output<String> privateEndpointId;
 
     /**
@@ -569,7 +569,7 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * The maximum number of hosts to be accessed through the private endpoint. This value is used to calculate the relevant CIDR block and should be a multiple of 256.  If the value is not a multiple of 256, it is rounded up to the next multiple of 256. For example, 300 is rounded up to 512.
      * 
      */
-    @Export(name="privateEndpointMaxHostCount", type=Integer.class, parameters={})
+    @Export(name="privateEndpointMaxHostCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> privateEndpointMaxHostCount;
 
     /**
@@ -583,7 +583,7 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * An array of network security group OCIDs.
      * 
      */
-    @Export(name="privateEndpointNsgIds", type=List.class, parameters={String.class})
+    @Export(name="privateEndpointNsgIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> privateEndpointNsgIds;
 
     /**
@@ -597,7 +597,7 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * The OCID of a subnet.
      * 
      */
-    @Export(name="privateEndpointSubnetId", type=String.class, parameters={})
+    @Export(name="privateEndpointSubnetId", refs={String.class}, tree="[0]")
     private Output<String> privateEndpointSubnetId;
 
     /**
@@ -611,7 +611,7 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * The duration of the run in milliseconds.
      * 
      */
-    @Export(name="runDurationInMilliseconds", type=String.class, parameters={})
+    @Export(name="runDurationInMilliseconds", refs={String.class}, tree="[0]")
     private Output<String> runDurationInMilliseconds;
 
     /**
@@ -625,7 +625,7 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * The Spark version utilized to run the application. This value may be set if applicationId is not since the Spark version will be taken from the associated application.
      * 
      */
-    @Export(name="sparkVersion", type=String.class, parameters={})
+    @Export(name="sparkVersion", refs={String.class}, tree="[0]")
     private Output<String> sparkVersion;
 
     /**
@@ -639,7 +639,7 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * The current state of this run.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -653,7 +653,7 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -667,7 +667,7 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -681,7 +681,7 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * The total number of oCPU requested by the run.
      * 
      */
-    @Export(name="totalOcpu", type=Integer.class, parameters={})
+    @Export(name="totalOcpu", refs={Integer.class}, tree="[0]")
     private Output<Integer> totalOcpu;
 
     /**
@@ -695,7 +695,7 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * The Spark application processing type.
      * 
      */
-    @Export(name="type", type=String.class, parameters={})
+    @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**
@@ -712,7 +712,7 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="warehouseBucketUri", type=String.class, parameters={})
+    @Export(name="warehouseBucketUri", refs={String.class}, tree="[0]")
     private Output<String> warehouseBucketUri;
 
     /**

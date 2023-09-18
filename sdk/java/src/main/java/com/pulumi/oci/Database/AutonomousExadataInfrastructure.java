@@ -100,7 +100,7 @@ public class AutonomousExadataInfrastructure extends com.pulumi.resources.Custom
      * 
      */
     @Deprecated /* Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead. */
-    @Export(name="availabilityDomain", type=String.class, parameters={})
+    @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
     private Output<String> availabilityDomain;
 
     /**
@@ -114,7 +114,7 @@ public class AutonomousExadataInfrastructure extends com.pulumi.resources.Custom
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the Autonomous Exadata Infrastructure belongs in.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -124,7 +124,7 @@ public class AutonomousExadataInfrastructure extends com.pulumi.resources.Custom
     public Output<String> compartmentId() {
         return this.compartmentId;
     }
-    @Export(name="createAsync", type=Boolean.class, parameters={})
+    @Export(name="createAsync", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> createAsync;
 
     public Output<Optional<Boolean>> createAsync() {
@@ -134,7 +134,7 @@ public class AutonomousExadataInfrastructure extends com.pulumi.resources.Custom
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -148,7 +148,7 @@ public class AutonomousExadataInfrastructure extends com.pulumi.resources.Custom
      * (Updatable) The user-friendly name for the Autonomous Exadata Infrastructure. It does not have to be unique.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -162,7 +162,7 @@ public class AutonomousExadataInfrastructure extends com.pulumi.resources.Custom
      * A domain name used for the Autonomous Exadata Infrastructure. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (don&#39;t provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
      * 
      */
-    @Export(name="domain", type=String.class, parameters={})
+    @Export(name="domain", refs={String.class}, tree="[0]")
     private Output<String> domain;
 
     /**
@@ -176,7 +176,7 @@ public class AutonomousExadataInfrastructure extends com.pulumi.resources.Custom
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -190,7 +190,7 @@ public class AutonomousExadataInfrastructure extends com.pulumi.resources.Custom
      * The host name for the Autonomous Exadata Infrastructure node.
      * 
      */
-    @Export(name="hostname", type=String.class, parameters={})
+    @Export(name="hostname", refs={String.class}, tree="[0]")
     private Output<String> hostname;
 
     /**
@@ -204,7 +204,7 @@ public class AutonomousExadataInfrastructure extends com.pulumi.resources.Custom
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      * 
      */
-    @Export(name="lastMaintenanceRunId", type=String.class, parameters={})
+    @Export(name="lastMaintenanceRunId", refs={String.class}, tree="[0]")
     private Output<String> lastMaintenanceRunId;
 
     /**
@@ -218,7 +218,7 @@ public class AutonomousExadataInfrastructure extends com.pulumi.resources.Custom
      * The Oracle license model that applies to all the databases in the Autonomous Exadata Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
      * 
      */
-    @Export(name="licenseModel", type=String.class, parameters={})
+    @Export(name="licenseModel", refs={String.class}, tree="[0]")
     private Output<String> licenseModel;
 
     /**
@@ -232,7 +232,7 @@ public class AutonomousExadataInfrastructure extends com.pulumi.resources.Custom
      * Additional information about the current lifecycle state of the Autonomous Exadata Infrastructure.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -246,7 +246,7 @@ public class AutonomousExadataInfrastructure extends com.pulumi.resources.Custom
      * (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      * 
      */
-    @Export(name="maintenanceWindowDetails", type=AutonomousExadataInfrastructureMaintenanceWindowDetails.class, parameters={})
+    @Export(name="maintenanceWindowDetails", refs={AutonomousExadataInfrastructureMaintenanceWindowDetails.class}, tree="[0]")
     private Output</* @Nullable */ AutonomousExadataInfrastructureMaintenanceWindowDetails> maintenanceWindowDetails;
 
     /**
@@ -260,7 +260,7 @@ public class AutonomousExadataInfrastructure extends com.pulumi.resources.Custom
      * The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      * 
      */
-    @Export(name="maintenanceWindows", type=List.class, parameters={AutonomousExadataInfrastructureMaintenanceWindow.class})
+    @Export(name="maintenanceWindows", refs={List.class,AutonomousExadataInfrastructureMaintenanceWindow.class}, tree="[0,1]")
     private Output<List<AutonomousExadataInfrastructureMaintenanceWindow>> maintenanceWindows;
 
     /**
@@ -274,7 +274,7 @@ public class AutonomousExadataInfrastructure extends com.pulumi.resources.Custom
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      * 
      */
-    @Export(name="nextMaintenanceRunId", type=String.class, parameters={})
+    @Export(name="nextMaintenanceRunId", refs={String.class}, tree="[0]")
     private Output<String> nextMaintenanceRunId;
 
     /**
@@ -289,7 +289,7 @@ public class AutonomousExadataInfrastructure extends com.pulumi.resources.Custom
      * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      * 
      */
-    @Export(name="nsgIds", type=List.class, parameters={String.class})
+    @Export(name="nsgIds", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> nsgIds;
 
     /**
@@ -304,7 +304,7 @@ public class AutonomousExadataInfrastructure extends com.pulumi.resources.Custom
      * The FQDN of the DNS record for the SCAN IP addresses that are associated with the Autonomous Exadata Infrastructure.
      * 
      */
-    @Export(name="scanDnsName", type=String.class, parameters={})
+    @Export(name="scanDnsName", refs={String.class}, tree="[0]")
     private Output<String> scanDnsName;
 
     /**
@@ -318,7 +318,7 @@ public class AutonomousExadataInfrastructure extends com.pulumi.resources.Custom
      * The shape of the Autonomous Exadata Infrastructure. The shape determines resources allocated to the Autonomous Exadata Infrastructure (CPU cores, memory and storage). To get a list of shapes, use the ListDbSystemShapes operation.
      * 
      */
-    @Export(name="shape", type=String.class, parameters={})
+    @Export(name="shape", refs={String.class}, tree="[0]")
     private Output<String> shape;
 
     /**
@@ -332,7 +332,7 @@ public class AutonomousExadataInfrastructure extends com.pulumi.resources.Custom
      * The current lifecycle state of the Autonomous Exadata Infrastructure.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -354,7 +354,7 @@ public class AutonomousExadataInfrastructure extends com.pulumi.resources.Custom
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="subnetId", type=String.class, parameters={})
+    @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
@@ -376,7 +376,7 @@ public class AutonomousExadataInfrastructure extends com.pulumi.resources.Custom
      * The date and time the Autonomous Exadata Infrastructure was created.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -390,7 +390,7 @@ public class AutonomousExadataInfrastructure extends com.pulumi.resources.Custom
      * The OCID of the zone the Autonomous Exadata Infrastructure is associated with.
      * 
      */
-    @Export(name="zoneId", type=String.class, parameters={})
+    @Export(name="zoneId", refs={String.class}, tree="[0]")
     private Output<String> zoneId;
 
     /**

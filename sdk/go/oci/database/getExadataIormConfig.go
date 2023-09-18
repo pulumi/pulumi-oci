@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Exadata Iorm Config resource in Oracle Cloud Infrastructure Database service.
@@ -114,6 +115,12 @@ func (o LookupExadataIormConfigResultOutput) ToLookupExadataIormConfigResultOutp
 
 func (o LookupExadataIormConfigResultOutput) ToLookupExadataIormConfigResultOutputWithContext(ctx context.Context) LookupExadataIormConfigResultOutput {
 	return o
+}
+
+func (o LookupExadataIormConfigResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupExadataIormConfigResult] {
+	return pulumix.Output[LookupExadataIormConfigResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // An array of IORM settings for all the database in the Exadata DB system.

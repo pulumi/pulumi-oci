@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Dynamic Group resource in Oracle Cloud Infrastructure Identity service.
@@ -249,6 +250,12 @@ func (i *DynamicGroup) ToDynamicGroupOutputWithContext(ctx context.Context) Dyna
 	return pulumi.ToOutputWithContext(ctx, i).(DynamicGroupOutput)
 }
 
+func (i *DynamicGroup) ToOutput(ctx context.Context) pulumix.Output[*DynamicGroup] {
+	return pulumix.Output[*DynamicGroup]{
+		OutputState: i.ToDynamicGroupOutputWithContext(ctx).OutputState,
+	}
+}
+
 // DynamicGroupArrayInput is an input type that accepts DynamicGroupArray and DynamicGroupArrayOutput values.
 // You can construct a concrete instance of `DynamicGroupArrayInput` via:
 //
@@ -272,6 +279,12 @@ func (i DynamicGroupArray) ToDynamicGroupArrayOutput() DynamicGroupArrayOutput {
 
 func (i DynamicGroupArray) ToDynamicGroupArrayOutputWithContext(ctx context.Context) DynamicGroupArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DynamicGroupArrayOutput)
+}
+
+func (i DynamicGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]*DynamicGroup] {
+	return pulumix.Output[[]*DynamicGroup]{
+		OutputState: i.ToDynamicGroupArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // DynamicGroupMapInput is an input type that accepts DynamicGroupMap and DynamicGroupMapOutput values.
@@ -299,6 +312,12 @@ func (i DynamicGroupMap) ToDynamicGroupMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(DynamicGroupMapOutput)
 }
 
+func (i DynamicGroupMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DynamicGroup] {
+	return pulumix.Output[map[string]*DynamicGroup]{
+		OutputState: i.ToDynamicGroupMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type DynamicGroupOutput struct{ *pulumi.OutputState }
 
 func (DynamicGroupOutput) ElementType() reflect.Type {
@@ -311,6 +330,12 @@ func (o DynamicGroupOutput) ToDynamicGroupOutput() DynamicGroupOutput {
 
 func (o DynamicGroupOutput) ToDynamicGroupOutputWithContext(ctx context.Context) DynamicGroupOutput {
 	return o
+}
+
+func (o DynamicGroupOutput) ToOutput(ctx context.Context) pulumix.Output[*DynamicGroup] {
+	return pulumix.Output[*DynamicGroup]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the tenancy containing the group.
@@ -375,6 +400,12 @@ func (o DynamicGroupArrayOutput) ToDynamicGroupArrayOutputWithContext(ctx contex
 	return o
 }
 
+func (o DynamicGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DynamicGroup] {
+	return pulumix.Output[[]*DynamicGroup]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o DynamicGroupArrayOutput) Index(i pulumi.IntInput) DynamicGroupOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DynamicGroup {
 		return vs[0].([]*DynamicGroup)[vs[1].(int)]
@@ -393,6 +424,12 @@ func (o DynamicGroupMapOutput) ToDynamicGroupMapOutput() DynamicGroupMapOutput {
 
 func (o DynamicGroupMapOutput) ToDynamicGroupMapOutputWithContext(ctx context.Context) DynamicGroupMapOutput {
 	return o
+}
+
+func (o DynamicGroupMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DynamicGroup] {
+	return pulumix.Output[map[string]*DynamicGroup]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o DynamicGroupMapOutput) MapIndex(k pulumi.StringInput) DynamicGroupOutput {

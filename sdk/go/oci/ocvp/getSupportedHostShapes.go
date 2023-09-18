@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Supported Host Shapes in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
@@ -117,6 +118,12 @@ func (o GetSupportedHostShapesResultOutput) ToGetSupportedHostShapesResultOutput
 
 func (o GetSupportedHostShapesResultOutput) ToGetSupportedHostShapesResultOutputWithContext(ctx context.Context) GetSupportedHostShapesResultOutput {
 	return o
+}
+
+func (o GetSupportedHostShapesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSupportedHostShapesResult] {
+	return pulumix.Output[GetSupportedHostShapesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSupportedHostShapesResultOutput) CompartmentId() pulumi.StringOutput {

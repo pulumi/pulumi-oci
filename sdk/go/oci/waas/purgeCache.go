@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Purge Cache resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
@@ -159,6 +160,12 @@ func (i *PurgeCache) ToPurgeCacheOutputWithContext(ctx context.Context) PurgeCac
 	return pulumi.ToOutputWithContext(ctx, i).(PurgeCacheOutput)
 }
 
+func (i *PurgeCache) ToOutput(ctx context.Context) pulumix.Output[*PurgeCache] {
+	return pulumix.Output[*PurgeCache]{
+		OutputState: i.ToPurgeCacheOutputWithContext(ctx).OutputState,
+	}
+}
+
 // PurgeCacheArrayInput is an input type that accepts PurgeCacheArray and PurgeCacheArrayOutput values.
 // You can construct a concrete instance of `PurgeCacheArrayInput` via:
 //
@@ -182,6 +189,12 @@ func (i PurgeCacheArray) ToPurgeCacheArrayOutput() PurgeCacheArrayOutput {
 
 func (i PurgeCacheArray) ToPurgeCacheArrayOutputWithContext(ctx context.Context) PurgeCacheArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(PurgeCacheArrayOutput)
+}
+
+func (i PurgeCacheArray) ToOutput(ctx context.Context) pulumix.Output[[]*PurgeCache] {
+	return pulumix.Output[[]*PurgeCache]{
+		OutputState: i.ToPurgeCacheArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // PurgeCacheMapInput is an input type that accepts PurgeCacheMap and PurgeCacheMapOutput values.
@@ -209,6 +222,12 @@ func (i PurgeCacheMap) ToPurgeCacheMapOutputWithContext(ctx context.Context) Pur
 	return pulumi.ToOutputWithContext(ctx, i).(PurgeCacheMapOutput)
 }
 
+func (i PurgeCacheMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*PurgeCache] {
+	return pulumix.Output[map[string]*PurgeCache]{
+		OutputState: i.ToPurgeCacheMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type PurgeCacheOutput struct{ *pulumi.OutputState }
 
 func (PurgeCacheOutput) ElementType() reflect.Type {
@@ -221,6 +240,12 @@ func (o PurgeCacheOutput) ToPurgeCacheOutput() PurgeCacheOutput {
 
 func (o PurgeCacheOutput) ToPurgeCacheOutputWithContext(ctx context.Context) PurgeCacheOutput {
 	return o
+}
+
+func (o PurgeCacheOutput) ToOutput(ctx context.Context) pulumix.Output[*PurgeCache] {
+	return pulumix.Output[*PurgeCache]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A resource to purge, specified by either a hostless absolute path starting with a single slash (Example: `/path/to/resource`) or by a relative path in which the first component will be interpreted as a domain protected by the WAAS policy (Example: `example.com/path/to/resource`).
@@ -250,6 +275,12 @@ func (o PurgeCacheArrayOutput) ToPurgeCacheArrayOutputWithContext(ctx context.Co
 	return o
 }
 
+func (o PurgeCacheArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*PurgeCache] {
+	return pulumix.Output[[]*PurgeCache]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o PurgeCacheArrayOutput) Index(i pulumi.IntInput) PurgeCacheOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *PurgeCache {
 		return vs[0].([]*PurgeCache)[vs[1].(int)]
@@ -268,6 +299,12 @@ func (o PurgeCacheMapOutput) ToPurgeCacheMapOutput() PurgeCacheMapOutput {
 
 func (o PurgeCacheMapOutput) ToPurgeCacheMapOutputWithContext(ctx context.Context) PurgeCacheMapOutput {
 	return o
+}
+
+func (o PurgeCacheMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*PurgeCache] {
+	return pulumix.Output[map[string]*PurgeCache]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o PurgeCacheMapOutput) MapIndex(k pulumi.StringInput) PurgeCacheOutput {

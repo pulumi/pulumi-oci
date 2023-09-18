@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Operator Action resource in Oracle Cloud Infrastructure Operator Access Control service.
@@ -111,6 +112,12 @@ func (o GetActionResultOutput) ToGetActionResultOutput() GetActionResultOutput {
 
 func (o GetActionResultOutput) ToGetActionResultOutputWithContext(ctx context.Context) GetActionResultOutput {
 	return o
+}
+
+func (o GetActionResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetActionResult] {
+	return pulumix.Output[GetActionResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Name of the infrastructure layer associated with the operator action.

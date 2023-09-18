@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Exadata Infrastructure compute managed resource in Oracle Cloud Infrastructure Database service.
@@ -387,6 +388,12 @@ func (i *ExadataInfrastructureCompute) ToExadataInfrastructureComputeOutputWithC
 	return pulumi.ToOutputWithContext(ctx, i).(ExadataInfrastructureComputeOutput)
 }
 
+func (i *ExadataInfrastructureCompute) ToOutput(ctx context.Context) pulumix.Output[*ExadataInfrastructureCompute] {
+	return pulumix.Output[*ExadataInfrastructureCompute]{
+		OutputState: i.ToExadataInfrastructureComputeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ExadataInfrastructureComputeArrayInput is an input type that accepts ExadataInfrastructureComputeArray and ExadataInfrastructureComputeArrayOutput values.
 // You can construct a concrete instance of `ExadataInfrastructureComputeArrayInput` via:
 //
@@ -410,6 +417,12 @@ func (i ExadataInfrastructureComputeArray) ToExadataInfrastructureComputeArrayOu
 
 func (i ExadataInfrastructureComputeArray) ToExadataInfrastructureComputeArrayOutputWithContext(ctx context.Context) ExadataInfrastructureComputeArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ExadataInfrastructureComputeArrayOutput)
+}
+
+func (i ExadataInfrastructureComputeArray) ToOutput(ctx context.Context) pulumix.Output[[]*ExadataInfrastructureCompute] {
+	return pulumix.Output[[]*ExadataInfrastructureCompute]{
+		OutputState: i.ToExadataInfrastructureComputeArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // ExadataInfrastructureComputeMapInput is an input type that accepts ExadataInfrastructureComputeMap and ExadataInfrastructureComputeMapOutput values.
@@ -437,6 +450,12 @@ func (i ExadataInfrastructureComputeMap) ToExadataInfrastructureComputeMapOutput
 	return pulumi.ToOutputWithContext(ctx, i).(ExadataInfrastructureComputeMapOutput)
 }
 
+func (i ExadataInfrastructureComputeMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExadataInfrastructureCompute] {
+	return pulumix.Output[map[string]*ExadataInfrastructureCompute]{
+		OutputState: i.ToExadataInfrastructureComputeMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ExadataInfrastructureComputeOutput struct{ *pulumi.OutputState }
 
 func (ExadataInfrastructureComputeOutput) ElementType() reflect.Type {
@@ -449,6 +468,12 @@ func (o ExadataInfrastructureComputeOutput) ToExadataInfrastructureComputeOutput
 
 func (o ExadataInfrastructureComputeOutput) ToExadataInfrastructureComputeOutputWithContext(ctx context.Context) ExadataInfrastructureComputeOutput {
 	return o
+}
+
+func (o ExadataInfrastructureComputeOutput) ToOutput(ctx context.Context) pulumix.Output[*ExadataInfrastructureCompute] {
+	return pulumix.Output[*ExadataInfrastructureCompute]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The requested number of additional storage servers activated for the Exadata infrastructure.
@@ -694,6 +719,12 @@ func (o ExadataInfrastructureComputeArrayOutput) ToExadataInfrastructureComputeA
 	return o
 }
 
+func (o ExadataInfrastructureComputeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ExadataInfrastructureCompute] {
+	return pulumix.Output[[]*ExadataInfrastructureCompute]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o ExadataInfrastructureComputeArrayOutput) Index(i pulumi.IntInput) ExadataInfrastructureComputeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ExadataInfrastructureCompute {
 		return vs[0].([]*ExadataInfrastructureCompute)[vs[1].(int)]
@@ -712,6 +743,12 @@ func (o ExadataInfrastructureComputeMapOutput) ToExadataInfrastructureComputeMap
 
 func (o ExadataInfrastructureComputeMapOutput) ToExadataInfrastructureComputeMapOutputWithContext(ctx context.Context) ExadataInfrastructureComputeMapOutput {
 	return o
+}
+
+func (o ExadataInfrastructureComputeMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExadataInfrastructureCompute] {
+	return pulumix.Output[map[string]*ExadataInfrastructureCompute]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ExadataInfrastructureComputeMapOutput) MapIndex(k pulumi.StringInput) ExadataInfrastructureComputeOutput {

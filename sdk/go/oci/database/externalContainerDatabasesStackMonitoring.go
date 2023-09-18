@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Externalcontainerdatabases Stack Monitoring resource in Oracle Cloud Infrastructure Database service.
@@ -175,6 +176,12 @@ func (i *ExternalContainerDatabasesStackMonitoring) ToExternalContainerDatabases
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalContainerDatabasesStackMonitoringOutput)
 }
 
+func (i *ExternalContainerDatabasesStackMonitoring) ToOutput(ctx context.Context) pulumix.Output[*ExternalContainerDatabasesStackMonitoring] {
+	return pulumix.Output[*ExternalContainerDatabasesStackMonitoring]{
+		OutputState: i.ToExternalContainerDatabasesStackMonitoringOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ExternalContainerDatabasesStackMonitoringArrayInput is an input type that accepts ExternalContainerDatabasesStackMonitoringArray and ExternalContainerDatabasesStackMonitoringArrayOutput values.
 // You can construct a concrete instance of `ExternalContainerDatabasesStackMonitoringArrayInput` via:
 //
@@ -198,6 +205,12 @@ func (i ExternalContainerDatabasesStackMonitoringArray) ToExternalContainerDatab
 
 func (i ExternalContainerDatabasesStackMonitoringArray) ToExternalContainerDatabasesStackMonitoringArrayOutputWithContext(ctx context.Context) ExternalContainerDatabasesStackMonitoringArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalContainerDatabasesStackMonitoringArrayOutput)
+}
+
+func (i ExternalContainerDatabasesStackMonitoringArray) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalContainerDatabasesStackMonitoring] {
+	return pulumix.Output[[]*ExternalContainerDatabasesStackMonitoring]{
+		OutputState: i.ToExternalContainerDatabasesStackMonitoringArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // ExternalContainerDatabasesStackMonitoringMapInput is an input type that accepts ExternalContainerDatabasesStackMonitoringMap and ExternalContainerDatabasesStackMonitoringMapOutput values.
@@ -225,6 +238,12 @@ func (i ExternalContainerDatabasesStackMonitoringMap) ToExternalContainerDatabas
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalContainerDatabasesStackMonitoringMapOutput)
 }
 
+func (i ExternalContainerDatabasesStackMonitoringMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalContainerDatabasesStackMonitoring] {
+	return pulumix.Output[map[string]*ExternalContainerDatabasesStackMonitoring]{
+		OutputState: i.ToExternalContainerDatabasesStackMonitoringMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ExternalContainerDatabasesStackMonitoringOutput struct{ *pulumi.OutputState }
 
 func (ExternalContainerDatabasesStackMonitoringOutput) ElementType() reflect.Type {
@@ -237,6 +256,12 @@ func (o ExternalContainerDatabasesStackMonitoringOutput) ToExternalContainerData
 
 func (o ExternalContainerDatabasesStackMonitoringOutput) ToExternalContainerDatabasesStackMonitoringOutputWithContext(ctx context.Context) ExternalContainerDatabasesStackMonitoringOutput {
 	return o
+}
+
+func (o ExternalContainerDatabasesStackMonitoringOutput) ToOutput(ctx context.Context) pulumix.Output[*ExternalContainerDatabasesStackMonitoring] {
+	return pulumix.Output[*ExternalContainerDatabasesStackMonitoring]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Enabling Stack Monitoring on External Container Databases . Requires boolean value "true" or "false".
@@ -275,6 +300,12 @@ func (o ExternalContainerDatabasesStackMonitoringArrayOutput) ToExternalContaine
 	return o
 }
 
+func (o ExternalContainerDatabasesStackMonitoringArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalContainerDatabasesStackMonitoring] {
+	return pulumix.Output[[]*ExternalContainerDatabasesStackMonitoring]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o ExternalContainerDatabasesStackMonitoringArrayOutput) Index(i pulumi.IntInput) ExternalContainerDatabasesStackMonitoringOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ExternalContainerDatabasesStackMonitoring {
 		return vs[0].([]*ExternalContainerDatabasesStackMonitoring)[vs[1].(int)]
@@ -293,6 +324,12 @@ func (o ExternalContainerDatabasesStackMonitoringMapOutput) ToExternalContainerD
 
 func (o ExternalContainerDatabasesStackMonitoringMapOutput) ToExternalContainerDatabasesStackMonitoringMapOutputWithContext(ctx context.Context) ExternalContainerDatabasesStackMonitoringMapOutput {
 	return o
+}
+
+func (o ExternalContainerDatabasesStackMonitoringMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalContainerDatabasesStackMonitoring] {
+	return pulumix.Output[map[string]*ExternalContainerDatabasesStackMonitoring]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ExternalContainerDatabasesStackMonitoringMapOutput) MapIndex(k pulumi.StringInput) ExternalContainerDatabasesStackMonitoringOutput {

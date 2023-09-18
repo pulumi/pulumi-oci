@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Fast Connect Provider Services in Oracle Cloud Infrastructure Core service.
@@ -110,6 +111,12 @@ func (o GetFastConnectProviderServicesResultOutput) ToGetFastConnectProviderServ
 
 func (o GetFastConnectProviderServicesResultOutput) ToGetFastConnectProviderServicesResultOutputWithContext(ctx context.Context) GetFastConnectProviderServicesResultOutput {
 	return o
+}
+
+func (o GetFastConnectProviderServicesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFastConnectProviderServicesResult] {
+	return pulumix.Output[GetFastConnectProviderServicesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetFastConnectProviderServicesResultOutput) CompartmentId() pulumi.StringOutput {

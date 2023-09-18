@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Managed Database Optimizer Statistics Collection Aggregations in Oracle Cloud Infrastructure Database Management service.
@@ -136,6 +137,12 @@ func (o GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResultOutput)
 
 func (o GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResultOutput) ToGetManagedDatabaseOptimizerStatisticsCollectionAggregationsResultOutputWithContext(ctx context.Context) GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResultOutput {
 	return o
+}
+
+func (o GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult] {
+	return pulumix.Output[GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResultOutput) EndTimeLessThanOrEqualTo() pulumi.StringPtrOutput {

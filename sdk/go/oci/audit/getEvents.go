@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Audit Events in Oracle Cloud Infrastructure Audit service.
@@ -126,6 +127,12 @@ func (o GetEventsResultOutput) ToGetEventsResultOutput() GetEventsResultOutput {
 
 func (o GetEventsResultOutput) ToGetEventsResultOutputWithContext(ctx context.Context) GetEventsResultOutput {
 	return o
+}
+
+func (o GetEventsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetEventsResult] {
+	return pulumix.Output[GetEventsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The list of audit_events.

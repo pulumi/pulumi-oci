@@ -80,7 +80,7 @@ public class SoftwareSource extends com.pulumi.resources.CustomResource {
      * The architecture type supported by the Software Source
      * 
      */
-    @Export(name="archType", type=String.class, parameters={})
+    @Export(name="archType", refs={String.class}, tree="[0]")
     private Output<String> archType;
 
     /**
@@ -94,7 +94,7 @@ public class SoftwareSource extends com.pulumi.resources.CustomResource {
      * list of the Managed Instances associated with this Software Sources
      * 
      */
-    @Export(name="associatedManagedInstances", type=List.class, parameters={SoftwareSourceAssociatedManagedInstance.class})
+    @Export(name="associatedManagedInstances", refs={List.class,SoftwareSourceAssociatedManagedInstance.class}, tree="[0,1]")
     private Output<List<SoftwareSourceAssociatedManagedInstance>> associatedManagedInstances;
 
     /**
@@ -108,7 +108,7 @@ public class SoftwareSource extends com.pulumi.resources.CustomResource {
      * (Updatable) The yum repository checksum type used by this software source
      * 
      */
-    @Export(name="checksumType", type=String.class, parameters={})
+    @Export(name="checksumType", refs={String.class}, tree="[0]")
     private Output<String> checksumType;
 
     /**
@@ -122,7 +122,7 @@ public class SoftwareSource extends com.pulumi.resources.CustomResource {
      * (Updatable) OCID for the Compartment
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -136,7 +136,7 @@ public class SoftwareSource extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -150,7 +150,7 @@ public class SoftwareSource extends com.pulumi.resources.CustomResource {
      * (Updatable) Information specified by the user about the software source
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -164,7 +164,7 @@ public class SoftwareSource extends com.pulumi.resources.CustomResource {
      * (Updatable) User friendly name for the software source
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -178,7 +178,7 @@ public class SoftwareSource extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -192,7 +192,7 @@ public class SoftwareSource extends com.pulumi.resources.CustomResource {
      * Fingerprint of the GPG key for this software source
      * 
      */
-    @Export(name="gpgKeyFingerprint", type=String.class, parameters={})
+    @Export(name="gpgKeyFingerprint", refs={String.class}, tree="[0]")
     private Output<String> gpgKeyFingerprint;
 
     /**
@@ -206,7 +206,7 @@ public class SoftwareSource extends com.pulumi.resources.CustomResource {
      * ID of the GPG key for this software source
      * 
      */
-    @Export(name="gpgKeyId", type=String.class, parameters={})
+    @Export(name="gpgKeyId", refs={String.class}, tree="[0]")
     private Output<String> gpgKeyId;
 
     /**
@@ -220,7 +220,7 @@ public class SoftwareSource extends com.pulumi.resources.CustomResource {
      * URL of the GPG key for this software source
      * 
      */
-    @Export(name="gpgKeyUrl", type=String.class, parameters={})
+    @Export(name="gpgKeyUrl", refs={String.class}, tree="[0]")
     private Output<String> gpgKeyUrl;
 
     /**
@@ -234,7 +234,7 @@ public class SoftwareSource extends com.pulumi.resources.CustomResource {
      * (Updatable) Email address of the person maintaining this software source
      * 
      */
-    @Export(name="maintainerEmail", type=String.class, parameters={})
+    @Export(name="maintainerEmail", refs={String.class}, tree="[0]")
     private Output<String> maintainerEmail;
 
     /**
@@ -248,7 +248,7 @@ public class SoftwareSource extends com.pulumi.resources.CustomResource {
      * (Updatable) Name of the person maintaining this software source
      * 
      */
-    @Export(name="maintainerName", type=String.class, parameters={})
+    @Export(name="maintainerName", refs={String.class}, tree="[0]")
     private Output<String> maintainerName;
 
     /**
@@ -262,7 +262,7 @@ public class SoftwareSource extends com.pulumi.resources.CustomResource {
      * (Updatable) Phone number of the person maintaining this software source
      * 
      */
-    @Export(name="maintainerPhone", type=String.class, parameters={})
+    @Export(name="maintainerPhone", refs={String.class}, tree="[0]")
     private Output<String> maintainerPhone;
 
     /**
@@ -276,7 +276,7 @@ public class SoftwareSource extends com.pulumi.resources.CustomResource {
      * Number of packages
      * 
      */
-    @Export(name="packages", type=Integer.class, parameters={})
+    @Export(name="packages", refs={Integer.class}, tree="[0]")
     private Output<Integer> packages;
 
     /**
@@ -293,7 +293,7 @@ public class SoftwareSource extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="parentId", type=String.class, parameters={})
+    @Export(name="parentId", refs={String.class}, tree="[0]")
     private Output<String> parentId;
 
     /**
@@ -310,7 +310,7 @@ public class SoftwareSource extends com.pulumi.resources.CustomResource {
      * Display name the parent software source, if there is one
      * 
      */
-    @Export(name="parentName", type=String.class, parameters={})
+    @Export(name="parentName", refs={String.class}, tree="[0]")
     private Output<String> parentName;
 
     /**
@@ -324,7 +324,7 @@ public class SoftwareSource extends com.pulumi.resources.CustomResource {
      * Type of the Software Source
      * 
      */
-    @Export(name="repoType", type=String.class, parameters={})
+    @Export(name="repoType", refs={String.class}, tree="[0]")
     private Output<String> repoType;
 
     /**
@@ -338,7 +338,7 @@ public class SoftwareSource extends com.pulumi.resources.CustomResource {
      * The current state of the Software Source.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -352,7 +352,7 @@ public class SoftwareSource extends com.pulumi.resources.CustomResource {
      * status of the software source.
      * 
      */
-    @Export(name="status", type=String.class, parameters={})
+    @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
@@ -366,7 +366,7 @@ public class SoftwareSource extends com.pulumi.resources.CustomResource {
      * URL for the repostiory
      * 
      */
-    @Export(name="url", type=String.class, parameters={})
+    @Export(name="url", refs={String.class}, tree="[0]")
     private Output<String> url;
 
     /**

@@ -69,7 +69,7 @@ public class PluggableDatabasesLocalClone extends com.pulumi.resources.CustomRes
      * The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
      * 
      */
-    @Export(name="clonedPdbName", type=String.class, parameters={})
+    @Export(name="clonedPdbName", refs={String.class}, tree="[0]")
     private Output<String> clonedPdbName;
 
     /**
@@ -83,7 +83,7 @@ public class PluggableDatabasesLocalClone extends com.pulumi.resources.CustomRes
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -97,7 +97,7 @@ public class PluggableDatabasesLocalClone extends com.pulumi.resources.CustomRes
      * Connection strings to connect to an Oracle Pluggable Database.
      * 
      */
-    @Export(name="connectionStrings", type=List.class, parameters={PluggableDatabasesLocalCloneConnectionString.class})
+    @Export(name="connectionStrings", refs={List.class,PluggableDatabasesLocalCloneConnectionString.class}, tree="[0,1]")
     private Output<List<PluggableDatabasesLocalCloneConnectionString>> connectionStrings;
 
     /**
@@ -111,7 +111,7 @@ public class PluggableDatabasesLocalClone extends com.pulumi.resources.CustomRes
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB.
      * 
      */
-    @Export(name="containerDatabaseId", type=String.class, parameters={})
+    @Export(name="containerDatabaseId", refs={String.class}, tree="[0]")
     private Output<String> containerDatabaseId;
 
     /**
@@ -125,7 +125,7 @@ public class PluggableDatabasesLocalClone extends com.pulumi.resources.CustomRes
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -139,7 +139,7 @@ public class PluggableDatabasesLocalClone extends com.pulumi.resources.CustomRes
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -153,7 +153,7 @@ public class PluggableDatabasesLocalClone extends com.pulumi.resources.CustomRes
      * The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
      * 
      */
-    @Export(name="isRestricted", type=Boolean.class, parameters={})
+    @Export(name="isRestricted", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isRestricted;
 
     /**
@@ -167,7 +167,7 @@ public class PluggableDatabasesLocalClone extends com.pulumi.resources.CustomRes
      * Detailed message for the lifecycle state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -181,7 +181,7 @@ public class PluggableDatabasesLocalClone extends com.pulumi.resources.CustomRes
      * The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
      * 
      */
-    @Export(name="openMode", type=String.class, parameters={})
+    @Export(name="openMode", refs={String.class}, tree="[0]")
     private Output<String> openMode;
 
     /**
@@ -195,7 +195,7 @@ public class PluggableDatabasesLocalClone extends com.pulumi.resources.CustomRes
      * A strong password for PDB Admin of the newly cloned PDB. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \#, or -.
      * 
      */
-    @Export(name="pdbAdminPassword", type=String.class, parameters={})
+    @Export(name="pdbAdminPassword", refs={String.class}, tree="[0]")
     private Output<String> pdbAdminPassword;
 
     /**
@@ -209,7 +209,7 @@ public class PluggableDatabasesLocalClone extends com.pulumi.resources.CustomRes
      * The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
      * 
      */
-    @Export(name="pdbName", type=String.class, parameters={})
+    @Export(name="pdbName", refs={String.class}, tree="[0]")
     private Output<String> pdbName;
 
     /**
@@ -223,7 +223,7 @@ public class PluggableDatabasesLocalClone extends com.pulumi.resources.CustomRes
      * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    @Export(name="pluggableDatabaseId", type=String.class, parameters={})
+    @Export(name="pluggableDatabaseId", refs={String.class}, tree="[0]")
     private Output<String> pluggableDatabaseId;
 
     /**
@@ -237,7 +237,7 @@ public class PluggableDatabasesLocalClone extends com.pulumi.resources.CustomRes
      * The configuration of the Pluggable Database Management service.
      * 
      */
-    @Export(name="pluggableDatabaseManagementConfigs", type=List.class, parameters={PluggableDatabasesLocalClonePluggableDatabaseManagementConfig.class})
+    @Export(name="pluggableDatabaseManagementConfigs", refs={List.class,PluggableDatabasesLocalClonePluggableDatabaseManagementConfig.class}, tree="[0,1]")
     private Output<List<PluggableDatabasesLocalClonePluggableDatabaseManagementConfig>> pluggableDatabaseManagementConfigs;
 
     /**
@@ -251,7 +251,7 @@ public class PluggableDatabasesLocalClone extends com.pulumi.resources.CustomRes
      * The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
      * 
      */
-    @Export(name="shouldPdbAdminAccountBeLocked", type=Boolean.class, parameters={})
+    @Export(name="shouldPdbAdminAccountBeLocked", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> shouldPdbAdminAccountBeLocked;
 
     /**
@@ -265,7 +265,7 @@ public class PluggableDatabasesLocalClone extends com.pulumi.resources.CustomRes
      * The current state of the pluggable database.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -282,7 +282,7 @@ public class PluggableDatabasesLocalClone extends com.pulumi.resources.CustomRes
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="targetTdeWalletPassword", type=String.class, parameters={})
+    @Export(name="targetTdeWalletPassword", refs={String.class}, tree="[0]")
     private Output<String> targetTdeWalletPassword;
 
     /**
@@ -299,7 +299,7 @@ public class PluggableDatabasesLocalClone extends com.pulumi.resources.CustomRes
      * The date and time the pluggable database was created.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**

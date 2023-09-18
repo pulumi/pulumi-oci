@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Private Endpoint resource in Oracle Cloud Infrastructure Data Flow service.
@@ -131,6 +132,12 @@ func (o LookupPrivateEndpointResultOutput) ToLookupPrivateEndpointResultOutput()
 
 func (o LookupPrivateEndpointResultOutput) ToLookupPrivateEndpointResultOutputWithContext(ctx context.Context) LookupPrivateEndpointResultOutput {
 	return o
+}
+
+func (o LookupPrivateEndpointResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupPrivateEndpointResult] {
+	return pulumix.Output[LookupPrivateEndpointResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of a compartment.

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Key Versions in Oracle Cloud Infrastructure Kms service.
@@ -117,6 +118,12 @@ func (o GetKeyVersionsResultOutput) ToGetKeyVersionsResultOutput() GetKeyVersion
 
 func (o GetKeyVersionsResultOutput) ToGetKeyVersionsResultOutputWithContext(ctx context.Context) GetKeyVersionsResultOutput {
 	return o
+}
+
+func (o GetKeyVersionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetKeyVersionsResult] {
+	return pulumix.Output[GetKeyVersionsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetKeyVersionsResultOutput) Filters() GetKeyVersionsFilterArrayOutput {

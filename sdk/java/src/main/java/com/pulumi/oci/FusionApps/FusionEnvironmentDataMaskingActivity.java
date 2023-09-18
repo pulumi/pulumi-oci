@@ -65,7 +65,7 @@ public class FusionEnvironmentDataMaskingActivity extends com.pulumi.resources.C
      * unique FusionEnvironment identifier
      * 
      */
-    @Export(name="fusionEnvironmentId", type=String.class, parameters={})
+    @Export(name="fusionEnvironmentId", refs={String.class}, tree="[0]")
     private Output<String> fusionEnvironmentId;
 
     /**
@@ -82,7 +82,7 @@ public class FusionEnvironmentDataMaskingActivity extends com.pulumi.resources.C
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="isResumeDataMasking", type=Boolean.class, parameters={})
+    @Export(name="isResumeDataMasking", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isResumeDataMasking;
 
     /**
@@ -99,7 +99,7 @@ public class FusionEnvironmentDataMaskingActivity extends com.pulumi.resources.C
      * The current state of the DataMaskingActivity.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -113,7 +113,7 @@ public class FusionEnvironmentDataMaskingActivity extends com.pulumi.resources.C
      * The time the data masking activity ended. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeMaskingFinish", type=String.class, parameters={})
+    @Export(name="timeMaskingFinish", refs={String.class}, tree="[0]")
     private Output<String> timeMaskingFinish;
 
     /**
@@ -127,7 +127,7 @@ public class FusionEnvironmentDataMaskingActivity extends com.pulumi.resources.C
      * The time the data masking activity started. An RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeMaskingStart", type=String.class, parameters={})
+    @Export(name="timeMaskingStart", refs={String.class}, tree="[0]")
     private Output<String> timeMaskingStart;
 
     /**

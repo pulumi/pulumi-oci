@@ -66,7 +66,7 @@ public class Namespace extends com.pulumi.resources.CustomResource {
      * The OCID of the root compartment i.e. OCID of the tenancy.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -80,7 +80,7 @@ public class Namespace extends com.pulumi.resources.CustomResource {
      * Use `true` if tenancy is to be onboarded to logging analytics and `false` if tenancy is to be offboarded
      * 
      */
-    @Export(name="isOnboarded", type=Boolean.class, parameters={})
+    @Export(name="isOnboarded", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isOnboarded;
 
     /**
@@ -94,7 +94,7 @@ public class Namespace extends com.pulumi.resources.CustomResource {
      * The Log Analytics namespace used for the request.
      * 
      */
-    @Export(name="namespace", type=String.class, parameters={})
+    @Export(name="namespace", refs={String.class}, tree="[0]")
     private Output<String> namespace;
 
     /**

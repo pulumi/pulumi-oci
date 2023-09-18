@@ -94,7 +94,7 @@ public class Zone extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the compartment the resource belongs to.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -110,7 +110,7 @@ public class Zone extends com.pulumi.resources.CustomResource {
      * **Example:** `{&#34;Operations&#34;: {&#34;CostCenter&#34;: &#34;42&#34;}}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -126,7 +126,7 @@ public class Zone extends com.pulumi.resources.CustomResource {
      * (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
      * 
      */
-    @Export(name="externalDownstreams", type=List.class, parameters={ZoneExternalDownstream.class})
+    @Export(name="externalDownstreams", refs={List.class,ZoneExternalDownstream.class}, tree="[0,1]")
     private Output<List<ZoneExternalDownstream>> externalDownstreams;
 
     /**
@@ -140,7 +140,7 @@ public class Zone extends com.pulumi.resources.CustomResource {
      * (Updatable) External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
      * 
      */
-    @Export(name="externalMasters", type=List.class, parameters={ZoneExternalMaster.class})
+    @Export(name="externalMasters", refs={List.class,ZoneExternalMaster.class}, tree="[0,1]")
     private Output<List<ZoneExternalMaster>> externalMasters;
 
     /**
@@ -156,7 +156,7 @@ public class Zone extends com.pulumi.resources.CustomResource {
      * **Example:** `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -172,7 +172,7 @@ public class Zone extends com.pulumi.resources.CustomResource {
      * A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
      * 
      */
-    @Export(name="isProtected", type=Boolean.class, parameters={})
+    @Export(name="isProtected", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isProtected;
 
     /**
@@ -186,7 +186,7 @@ public class Zone extends com.pulumi.resources.CustomResource {
      * The name of the zone.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -200,7 +200,7 @@ public class Zone extends com.pulumi.resources.CustomResource {
      * The authoritative nameservers for the zone.
      * 
      */
-    @Export(name="nameservers", type=List.class, parameters={ZoneNameserver.class})
+    @Export(name="nameservers", refs={List.class,ZoneNameserver.class}, tree="[0,1]")
     private Output<List<ZoneNameserver>> nameservers;
 
     /**
@@ -215,7 +215,7 @@ public class Zone extends com.pulumi.resources.CustomResource {
      * This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
      * 
      */
-    @Export(name="scope", type=String.class, parameters={})
+    @Export(name="scope", refs={String.class}, tree="[0]")
     private Output<String> scope;
 
     /**
@@ -230,7 +230,7 @@ public class Zone extends com.pulumi.resources.CustomResource {
      * The canonical absolute URL of the resource.
      * 
      */
-    @Export(name="self", type=String.class, parameters={})
+    @Export(name="self", refs={String.class}, tree="[0]")
     private Output<String> self;
 
     /**
@@ -244,7 +244,7 @@ public class Zone extends com.pulumi.resources.CustomResource {
      * The current serial of the zone. As seen in the zone&#39;s SOA record.
      * 
      */
-    @Export(name="serial", type=Integer.class, parameters={})
+    @Export(name="serial", refs={Integer.class}, tree="[0]")
     private Output<Integer> serial;
 
     /**
@@ -258,7 +258,7 @@ public class Zone extends com.pulumi.resources.CustomResource {
      * The current state of the zone resource.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -272,7 +272,7 @@ public class Zone extends com.pulumi.resources.CustomResource {
      * The date and time the resource was created in &#34;YYYY-MM-ddThh:mm:ssZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -286,7 +286,7 @@ public class Zone extends com.pulumi.resources.CustomResource {
      * Version is the never-repeating, totally-orderable, version of the zone, from which the serial field of the zone&#39;s SOA record is derived.
      * 
      */
-    @Export(name="version", type=String.class, parameters={})
+    @Export(name="version", refs={String.class}, tree="[0]")
     private Output<String> version;
 
     /**
@@ -300,7 +300,7 @@ public class Zone extends com.pulumi.resources.CustomResource {
      * The OCID of the private view containing the zone. This value will be null for zones in the global DNS, which are publicly resolvable and not part of a private view.
      * 
      */
-    @Export(name="viewId", type=String.class, parameters={})
+    @Export(name="viewId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> viewId;
 
     /**
@@ -314,7 +314,7 @@ public class Zone extends com.pulumi.resources.CustomResource {
      * The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
      * 
      */
-    @Export(name="zoneTransferServers", type=List.class, parameters={ZoneZoneTransferServer.class})
+    @Export(name="zoneTransferServers", refs={List.class,ZoneZoneTransferServer.class}, tree="[0,1]")
     private Output<List<ZoneZoneTransferServer>> zoneTransferServers;
 
     /**
@@ -331,7 +331,7 @@ public class Zone extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="zoneType", type=String.class, parameters={})
+    @Export(name="zoneType", refs={String.class}, tree="[0]")
     private Output<String> zoneType;
 
     /**

@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Virtual Node Pool resource in Oracle Cloud Infrastructure Container Engine service.
@@ -357,6 +358,12 @@ func (i *VirtualNodePool) ToVirtualNodePoolOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualNodePoolOutput)
 }
 
+func (i *VirtualNodePool) ToOutput(ctx context.Context) pulumix.Output[*VirtualNodePool] {
+	return pulumix.Output[*VirtualNodePool]{
+		OutputState: i.ToVirtualNodePoolOutputWithContext(ctx).OutputState,
+	}
+}
+
 // VirtualNodePoolArrayInput is an input type that accepts VirtualNodePoolArray and VirtualNodePoolArrayOutput values.
 // You can construct a concrete instance of `VirtualNodePoolArrayInput` via:
 //
@@ -380,6 +387,12 @@ func (i VirtualNodePoolArray) ToVirtualNodePoolArrayOutput() VirtualNodePoolArra
 
 func (i VirtualNodePoolArray) ToVirtualNodePoolArrayOutputWithContext(ctx context.Context) VirtualNodePoolArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualNodePoolArrayOutput)
+}
+
+func (i VirtualNodePoolArray) ToOutput(ctx context.Context) pulumix.Output[[]*VirtualNodePool] {
+	return pulumix.Output[[]*VirtualNodePool]{
+		OutputState: i.ToVirtualNodePoolArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // VirtualNodePoolMapInput is an input type that accepts VirtualNodePoolMap and VirtualNodePoolMapOutput values.
@@ -407,6 +420,12 @@ func (i VirtualNodePoolMap) ToVirtualNodePoolMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualNodePoolMapOutput)
 }
 
+func (i VirtualNodePoolMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*VirtualNodePool] {
+	return pulumix.Output[map[string]*VirtualNodePool]{
+		OutputState: i.ToVirtualNodePoolMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type VirtualNodePoolOutput struct{ *pulumi.OutputState }
 
 func (VirtualNodePoolOutput) ElementType() reflect.Type {
@@ -419,6 +438,12 @@ func (o VirtualNodePoolOutput) ToVirtualNodePoolOutput() VirtualNodePoolOutput {
 
 func (o VirtualNodePoolOutput) ToVirtualNodePoolOutputWithContext(ctx context.Context) VirtualNodePoolOutput {
 	return o
+}
+
+func (o VirtualNodePoolOutput) ToOutput(ctx context.Context) pulumix.Output[*VirtualNodePool] {
+	return pulumix.Output[*VirtualNodePool]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The cluster the virtual node pool is associated with. A virtual node pool can only be associated with one cluster.
@@ -532,6 +557,12 @@ func (o VirtualNodePoolArrayOutput) ToVirtualNodePoolArrayOutputWithContext(ctx 
 	return o
 }
 
+func (o VirtualNodePoolArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*VirtualNodePool] {
+	return pulumix.Output[[]*VirtualNodePool]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o VirtualNodePoolArrayOutput) Index(i pulumi.IntInput) VirtualNodePoolOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *VirtualNodePool {
 		return vs[0].([]*VirtualNodePool)[vs[1].(int)]
@@ -550,6 +581,12 @@ func (o VirtualNodePoolMapOutput) ToVirtualNodePoolMapOutput() VirtualNodePoolMa
 
 func (o VirtualNodePoolMapOutput) ToVirtualNodePoolMapOutputWithContext(ctx context.Context) VirtualNodePoolMapOutput {
 	return o
+}
+
+func (o VirtualNodePoolMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*VirtualNodePool] {
+	return pulumix.Output[map[string]*VirtualNodePool]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o VirtualNodePoolMapOutput) MapIndex(k pulumi.StringInput) VirtualNodePoolOutput {

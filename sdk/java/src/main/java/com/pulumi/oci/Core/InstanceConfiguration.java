@@ -390,7 +390,7 @@ public class InstanceConfiguration extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the compartment containing images to search
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -404,7 +404,7 @@ public class InstanceConfiguration extends com.pulumi.resources.CustomResource {
      * Parameters that were not specified when the instance configuration was created, but that are required to launch an instance from the instance configuration. See the [LaunchInstanceConfiguration](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance/LaunchInstanceConfiguration) operation.
      * 
      */
-    @Export(name="deferredFields", type=List.class, parameters={String.class})
+    @Export(name="deferredFields", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> deferredFields;
 
     /**
@@ -418,7 +418,7 @@ public class InstanceConfiguration extends com.pulumi.resources.CustomResource {
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -432,7 +432,7 @@ public class InstanceConfiguration extends com.pulumi.resources.CustomResource {
      * A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -446,7 +446,7 @@ public class InstanceConfiguration extends com.pulumi.resources.CustomResource {
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -456,7 +456,7 @@ public class InstanceConfiguration extends com.pulumi.resources.CustomResource {
     public Output<Map<String,Object>> freeformTags() {
         return this.freeformTags;
     }
-    @Export(name="instanceDetails", type=InstanceConfigurationInstanceDetails.class, parameters={})
+    @Export(name="instanceDetails", refs={InstanceConfigurationInstanceDetails.class}, tree="[0]")
     private Output<InstanceConfigurationInstanceDetails> instanceDetails;
 
     public Output<InstanceConfigurationInstanceDetails> instanceDetails() {
@@ -466,7 +466,7 @@ public class InstanceConfiguration extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance to use to create the instance configuration.
      * 
      */
-    @Export(name="instanceId", type=String.class, parameters={})
+    @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
@@ -488,7 +488,7 @@ public class InstanceConfiguration extends com.pulumi.resources.CustomResource {
      * The following values are supported:
      * 
      */
-    @Export(name="source", type=String.class, parameters={})
+    @Export(name="source", refs={String.class}, tree="[0]")
     private Output<String> source;
 
     /**
@@ -510,7 +510,7 @@ public class InstanceConfiguration extends com.pulumi.resources.CustomResource {
      * The date and time the instance configuration was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**

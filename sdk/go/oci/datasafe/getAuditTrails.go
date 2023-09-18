@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Audit Trails in Oracle Cloud Infrastructure Data Safe service.
@@ -164,6 +165,12 @@ func (o GetAuditTrailsResultOutput) ToGetAuditTrailsResultOutput() GetAuditTrail
 
 func (o GetAuditTrailsResultOutput) ToGetAuditTrailsResultOutputWithContext(ctx context.Context) GetAuditTrailsResultOutput {
 	return o
+}
+
+func (o GetAuditTrailsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditTrailsResult] {
+	return pulumix.Output[GetAuditTrailsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAuditTrailsResultOutput) AccessLevel() pulumi.StringPtrOutput {

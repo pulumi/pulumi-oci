@@ -81,7 +81,7 @@ public class NotificationTopic extends com.pulumi.resources.CustomResource {
      * The endpoint for managing subscriptions or publishing messages to the topic.
      * 
      */
-    @Export(name="apiEndpoint", type=String.class, parameters={})
+    @Export(name="apiEndpoint", refs={String.class}, tree="[0]")
     private Output<String> apiEndpoint;
 
     /**
@@ -95,7 +95,7 @@ public class NotificationTopic extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the topic in.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -109,7 +109,7 @@ public class NotificationTopic extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -123,7 +123,7 @@ public class NotificationTopic extends com.pulumi.resources.CustomResource {
      * (Updatable) The description of the topic being created. Avoid entering confidential information.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -137,7 +137,7 @@ public class NotificationTopic extends com.pulumi.resources.CustomResource {
      * For optimistic concurrency control. See `if-match`.
      * 
      */
-    @Export(name="etag", type=String.class, parameters={})
+    @Export(name="etag", refs={String.class}, tree="[0]")
     private Output<String> etag;
 
     /**
@@ -151,7 +151,7 @@ public class NotificationTopic extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -168,7 +168,7 @@ public class NotificationTopic extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -185,7 +185,7 @@ public class NotificationTopic extends com.pulumi.resources.CustomResource {
      * A unique short topic Id. This is used only for SMS subscriptions.
      * 
      */
-    @Export(name="shortTopicId", type=String.class, parameters={})
+    @Export(name="shortTopicId", refs={String.class}, tree="[0]")
     private Output<String> shortTopicId;
 
     /**
@@ -199,7 +199,7 @@ public class NotificationTopic extends com.pulumi.resources.CustomResource {
      * The lifecycle state of the topic.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -213,7 +213,7 @@ public class NotificationTopic extends com.pulumi.resources.CustomResource {
      * The time the topic was created.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -227,7 +227,7 @@ public class NotificationTopic extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
      * 
      */
-    @Export(name="topicId", type=String.class, parameters={})
+    @Export(name="topicId", refs={String.class}, tree="[0]")
     private Output<String> topicId;
 
     /**

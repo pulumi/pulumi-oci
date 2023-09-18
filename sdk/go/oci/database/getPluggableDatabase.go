@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Pluggable Database resource in Oracle Cloud Infrastructure Database service.
@@ -127,6 +128,12 @@ func (o LookupPluggableDatabaseResultOutput) ToLookupPluggableDatabaseResultOutp
 
 func (o LookupPluggableDatabaseResultOutput) ToLookupPluggableDatabaseResultOutputWithContext(ctx context.Context) LookupPluggableDatabaseResultOutput {
 	return o
+}
+
+func (o LookupPluggableDatabaseResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupPluggableDatabaseResult] {
+	return pulumix.Output[LookupPluggableDatabaseResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

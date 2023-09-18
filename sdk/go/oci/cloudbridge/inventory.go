@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Inventory resource in Oracle Cloud Infrastructure Cloud Bridge service.
@@ -223,6 +224,12 @@ func (i *Inventory) ToInventoryOutputWithContext(ctx context.Context) InventoryO
 	return pulumi.ToOutputWithContext(ctx, i).(InventoryOutput)
 }
 
+func (i *Inventory) ToOutput(ctx context.Context) pulumix.Output[*Inventory] {
+	return pulumix.Output[*Inventory]{
+		OutputState: i.ToInventoryOutputWithContext(ctx).OutputState,
+	}
+}
+
 // InventoryArrayInput is an input type that accepts InventoryArray and InventoryArrayOutput values.
 // You can construct a concrete instance of `InventoryArrayInput` via:
 //
@@ -246,6 +253,12 @@ func (i InventoryArray) ToInventoryArrayOutput() InventoryArrayOutput {
 
 func (i InventoryArray) ToInventoryArrayOutputWithContext(ctx context.Context) InventoryArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(InventoryArrayOutput)
+}
+
+func (i InventoryArray) ToOutput(ctx context.Context) pulumix.Output[[]*Inventory] {
+	return pulumix.Output[[]*Inventory]{
+		OutputState: i.ToInventoryArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // InventoryMapInput is an input type that accepts InventoryMap and InventoryMapOutput values.
@@ -273,6 +286,12 @@ func (i InventoryMap) ToInventoryMapOutputWithContext(ctx context.Context) Inven
 	return pulumi.ToOutputWithContext(ctx, i).(InventoryMapOutput)
 }
 
+func (i InventoryMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Inventory] {
+	return pulumix.Output[map[string]*Inventory]{
+		OutputState: i.ToInventoryMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type InventoryOutput struct{ *pulumi.OutputState }
 
 func (InventoryOutput) ElementType() reflect.Type {
@@ -285,6 +304,12 @@ func (o InventoryOutput) ToInventoryOutput() InventoryOutput {
 
 func (o InventoryOutput) ToInventoryOutputWithContext(ctx context.Context) InventoryOutput {
 	return o
+}
+
+func (o InventoryOutput) ToOutput(ctx context.Context) pulumix.Output[*Inventory] {
+	return pulumix.Output[*Inventory]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the tenantId.
@@ -349,6 +374,12 @@ func (o InventoryArrayOutput) ToInventoryArrayOutputWithContext(ctx context.Cont
 	return o
 }
 
+func (o InventoryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Inventory] {
+	return pulumix.Output[[]*Inventory]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o InventoryArrayOutput) Index(i pulumi.IntInput) InventoryOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Inventory {
 		return vs[0].([]*Inventory)[vs[1].(int)]
@@ -367,6 +398,12 @@ func (o InventoryMapOutput) ToInventoryMapOutput() InventoryMapOutput {
 
 func (o InventoryMapOutput) ToInventoryMapOutputWithContext(ctx context.Context) InventoryMapOutput {
 	return o
+}
+
+func (o InventoryMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Inventory] {
+	return pulumix.Output[map[string]*Inventory]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o InventoryMapOutput) MapIndex(k pulumi.StringInput) InventoryOutput {

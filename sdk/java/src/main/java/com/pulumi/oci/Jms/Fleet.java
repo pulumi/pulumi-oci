@@ -90,7 +90,7 @@ public class Fleet extends com.pulumi.resources.CustomResource {
      * The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
      * 
      */
-    @Export(name="approximateApplicationCount", type=Integer.class, parameters={})
+    @Export(name="approximateApplicationCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> approximateApplicationCount;
 
     /**
@@ -104,7 +104,7 @@ public class Fleet extends com.pulumi.resources.CustomResource {
      * The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
      * 
      */
-    @Export(name="approximateInstallationCount", type=Integer.class, parameters={})
+    @Export(name="approximateInstallationCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> approximateInstallationCount;
 
     /**
@@ -118,7 +118,7 @@ public class Fleet extends com.pulumi.resources.CustomResource {
      * The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
      * 
      */
-    @Export(name="approximateJavaServerCount", type=Integer.class, parameters={})
+    @Export(name="approximateJavaServerCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> approximateJavaServerCount;
 
     /**
@@ -132,7 +132,7 @@ public class Fleet extends com.pulumi.resources.CustomResource {
      * The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
      * 
      */
-    @Export(name="approximateJreCount", type=Integer.class, parameters={})
+    @Export(name="approximateJreCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> approximateJreCount;
 
     /**
@@ -146,7 +146,7 @@ public class Fleet extends com.pulumi.resources.CustomResource {
      * The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
      * 
      */
-    @Export(name="approximateManagedInstanceCount", type=Integer.class, parameters={})
+    @Export(name="approximateManagedInstanceCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> approximateManagedInstanceCount;
 
     /**
@@ -160,7 +160,7 @@ public class Fleet extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Fleet.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -174,7 +174,7 @@ public class Fleet extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -188,7 +188,7 @@ public class Fleet extends com.pulumi.resources.CustomResource {
      * (Updatable) The Fleet&#39;s description. If nothing is provided, the Fleet description will be null.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -202,7 +202,7 @@ public class Fleet extends com.pulumi.resources.CustomResource {
      * (Updatable) The name of the Fleet. The displayName must be unique for Fleets in the same compartment.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -216,7 +216,7 @@ public class Fleet extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -230,7 +230,7 @@ public class Fleet extends com.pulumi.resources.CustomResource {
      * (Updatable) Custom Log for inventory or operation log.
      * 
      */
-    @Export(name="inventoryLog", type=FleetInventoryLog.class, parameters={})
+    @Export(name="inventoryLog", refs={FleetInventoryLog.class}, tree="[0]")
     private Output<FleetInventoryLog> inventoryLog;
 
     /**
@@ -244,7 +244,7 @@ public class Fleet extends com.pulumi.resources.CustomResource {
      * (Updatable) Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
      * 
      */
-    @Export(name="isAdvancedFeaturesEnabled", type=Boolean.class, parameters={})
+    @Export(name="isAdvancedFeaturesEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isAdvancedFeaturesEnabled;
 
     /**
@@ -258,7 +258,7 @@ public class Fleet extends com.pulumi.resources.CustomResource {
      * (Updatable) Custom Log for inventory or operation log.
      * 
      */
-    @Export(name="operationLog", type=FleetOperationLog.class, parameters={})
+    @Export(name="operationLog", refs={FleetOperationLog.class}, tree="[0]")
     private Output<FleetOperationLog> operationLog;
 
     /**
@@ -272,7 +272,7 @@ public class Fleet extends com.pulumi.resources.CustomResource {
      * The lifecycle state of the Fleet.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -286,7 +286,7 @@ public class Fleet extends com.pulumi.resources.CustomResource {
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -300,7 +300,7 @@ public class Fleet extends com.pulumi.resources.CustomResource {
      * The creation date and time of the Fleet (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**

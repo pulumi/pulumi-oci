@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Recommendation resource in Oracle Cloud Infrastructure Optimizer service.
@@ -243,6 +244,12 @@ func (i *Recommendation) ToRecommendationOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(RecommendationOutput)
 }
 
+func (i *Recommendation) ToOutput(ctx context.Context) pulumix.Output[*Recommendation] {
+	return pulumix.Output[*Recommendation]{
+		OutputState: i.ToRecommendationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // RecommendationArrayInput is an input type that accepts RecommendationArray and RecommendationArrayOutput values.
 // You can construct a concrete instance of `RecommendationArrayInput` via:
 //
@@ -266,6 +273,12 @@ func (i RecommendationArray) ToRecommendationArrayOutput() RecommendationArrayOu
 
 func (i RecommendationArray) ToRecommendationArrayOutputWithContext(ctx context.Context) RecommendationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(RecommendationArrayOutput)
+}
+
+func (i RecommendationArray) ToOutput(ctx context.Context) pulumix.Output[[]*Recommendation] {
+	return pulumix.Output[[]*Recommendation]{
+		OutputState: i.ToRecommendationArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // RecommendationMapInput is an input type that accepts RecommendationMap and RecommendationMapOutput values.
@@ -293,6 +306,12 @@ func (i RecommendationMap) ToRecommendationMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(RecommendationMapOutput)
 }
 
+func (i RecommendationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Recommendation] {
+	return pulumix.Output[map[string]*Recommendation]{
+		OutputState: i.ToRecommendationMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type RecommendationOutput struct{ *pulumi.OutputState }
 
 func (RecommendationOutput) ElementType() reflect.Type {
@@ -305,6 +324,12 @@ func (o RecommendationOutput) ToRecommendationOutput() RecommendationOutput {
 
 func (o RecommendationOutput) ToRecommendationOutputWithContext(ctx context.Context) RecommendationOutput {
 	return o
+}
+
+func (o RecommendationOutput) ToOutput(ctx context.Context) pulumix.Output[*Recommendation] {
+	return pulumix.Output[*Recommendation]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The unique OCID associated with the category.
@@ -406,6 +431,12 @@ func (o RecommendationArrayOutput) ToRecommendationArrayOutputWithContext(ctx co
 	return o
 }
 
+func (o RecommendationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Recommendation] {
+	return pulumix.Output[[]*Recommendation]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o RecommendationArrayOutput) Index(i pulumi.IntInput) RecommendationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Recommendation {
 		return vs[0].([]*Recommendation)[vs[1].(int)]
@@ -424,6 +455,12 @@ func (o RecommendationMapOutput) ToRecommendationMapOutput() RecommendationMapOu
 
 func (o RecommendationMapOutput) ToRecommendationMapOutputWithContext(ctx context.Context) RecommendationMapOutput {
 	return o
+}
+
+func (o RecommendationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Recommendation] {
+	return pulumix.Output[map[string]*Recommendation]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o RecommendationMapOutput) MapIndex(k pulumi.StringInput) RecommendationOutput {

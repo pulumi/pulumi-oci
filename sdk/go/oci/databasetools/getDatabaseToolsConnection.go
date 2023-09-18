@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Database Tools Connection resource in Oracle Cloud Infrastructure Database Tools service.
@@ -133,6 +134,12 @@ func (o LookupDatabaseToolsConnectionResultOutput) ToLookupDatabaseToolsConnecti
 
 func (o LookupDatabaseToolsConnectionResultOutput) ToLookupDatabaseToolsConnectionResultOutputWithContext(ctx context.Context) LookupDatabaseToolsConnectionResultOutput {
 	return o
+}
+
+func (o LookupDatabaseToolsConnectionResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDatabaseToolsConnectionResult] {
+	return pulumix.Output[LookupDatabaseToolsConnectionResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The advanced connection properties key-value pair (for example, `oracle.net.ssl_server_dn_match`).

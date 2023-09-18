@@ -108,7 +108,7 @@ public class ReportDefinition extends com.pulumi.resources.CustomResource {
      * Specifies the name of the category that this report belongs to.
      * 
      */
-    @Export(name="category", type=String.class, parameters={})
+    @Export(name="category", refs={String.class}, tree="[0]")
     private Output<String> category;
 
     /**
@@ -122,7 +122,7 @@ public class ReportDefinition extends com.pulumi.resources.CustomResource {
      * (Updatable) An array of column filter objects. A column Filter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
      * 
      */
-    @Export(name="columnFilters", type=List.class, parameters={ReportDefinitionColumnFilter.class})
+    @Export(name="columnFilters", refs={List.class,ReportDefinitionColumnFilter.class}, tree="[0,1]")
     private Output<List<ReportDefinitionColumnFilter>> columnFilters;
 
     /**
@@ -136,7 +136,7 @@ public class ReportDefinition extends com.pulumi.resources.CustomResource {
      * (Updatable) An array of column objects in the order (left to right) displayed in the report. A column object stores all information about a column, including the name displayed on the UI, corresponding field name in the data source, data type of the column, and column visibility (if the column is visible to the user).
      * 
      */
-    @Export(name="columnInfos", type=List.class, parameters={ReportDefinitionColumnInfo.class})
+    @Export(name="columnInfos", refs={List.class,ReportDefinitionColumnInfo.class}, tree="[0,1]")
     private Output<List<ReportDefinitionColumnInfo>> columnInfos;
 
     /**
@@ -150,7 +150,7 @@ public class ReportDefinition extends com.pulumi.resources.CustomResource {
      * (Updatable) An array of column sorting objects. Each column sorting object stores the column name to be sorted and if the sorting is in ascending order; sorting is done by the first column in the array, then by the second column in the array, etc.
      * 
      */
-    @Export(name="columnSortings", type=List.class, parameters={ReportDefinitionColumnSorting.class})
+    @Export(name="columnSortings", refs={List.class,ReportDefinitionColumnSorting.class}, tree="[0,1]")
     private Output<List<ReportDefinitionColumnSorting>> columnSortings;
 
     /**
@@ -164,7 +164,7 @@ public class ReportDefinition extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the compartment containing the report definition.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -178,7 +178,7 @@ public class ReportDefinition extends com.pulumi.resources.CustomResource {
      * The list of the data protection regulations/standards used in the report that will help demonstrate compliance.
      * 
      */
-    @Export(name="complianceStandards", type=List.class, parameters={String.class})
+    @Export(name="complianceStandards", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> complianceStandards;
 
     /**
@@ -192,7 +192,7 @@ public class ReportDefinition extends com.pulumi.resources.CustomResource {
      * Specifies the name of a resource that provides data for the report. For example alerts, events.
      * 
      */
-    @Export(name="dataSource", type=String.class, parameters={})
+    @Export(name="dataSource", refs={String.class}, tree="[0]")
     private Output<String> dataSource;
 
     /**
@@ -206,7 +206,7 @@ public class ReportDefinition extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -220,7 +220,7 @@ public class ReportDefinition extends com.pulumi.resources.CustomResource {
      * (Updatable) The description of the report definition.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -234,7 +234,7 @@ public class ReportDefinition extends com.pulumi.resources.CustomResource {
      * (Updatable) Specifies the name of the report definition.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -248,7 +248,7 @@ public class ReportDefinition extends com.pulumi.resources.CustomResource {
      * (Updatable) Specifies the order in which the summary must be displayed.
      * 
      */
-    @Export(name="displayOrder", type=Integer.class, parameters={})
+    @Export(name="displayOrder", refs={Integer.class}, tree="[0]")
     private Output<Integer> displayOrder;
 
     /**
@@ -262,7 +262,7 @@ public class ReportDefinition extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -276,7 +276,7 @@ public class ReportDefinition extends com.pulumi.resources.CustomResource {
      * Signifies whether the definition is seeded or user defined. Values can either be &#39;true&#39; or &#39;false&#39;.
      * 
      */
-    @Export(name="isSeeded", type=Boolean.class, parameters={})
+    @Export(name="isSeeded", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isSeeded;
 
     /**
@@ -290,7 +290,7 @@ public class ReportDefinition extends com.pulumi.resources.CustomResource {
      * The OCID of the parent report definition.
      * 
      */
-    @Export(name="parentId", type=String.class, parameters={})
+    @Export(name="parentId", refs={String.class}, tree="[0]")
     private Output<String> parentId;
 
     /**
@@ -304,7 +304,7 @@ public class ReportDefinition extends com.pulumi.resources.CustomResource {
      * The time span for the records in the report to be scheduled. &lt;period-value&gt;&lt;period&gt; Allowed period strings - &#34;H&#34;,&#34;D&#34;,&#34;M&#34;,&#34;Y&#34; Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
      * 
      */
-    @Export(name="recordTimeSpan", type=String.class, parameters={})
+    @Export(name="recordTimeSpan", refs={String.class}, tree="[0]")
     private Output<String> recordTimeSpan;
 
     /**
@@ -318,7 +318,7 @@ public class ReportDefinition extends com.pulumi.resources.CustomResource {
      * The schedule to generate the report periodically in the specified format: &lt;version-string&gt;;&lt;version-specific-schedule&gt;
      * 
      */
-    @Export(name="schedule", type=String.class, parameters={})
+    @Export(name="schedule", refs={String.class}, tree="[0]")
     private Output<String> schedule;
 
     /**
@@ -332,7 +332,7 @@ public class ReportDefinition extends com.pulumi.resources.CustomResource {
      * The OCID of the compartment in which the scheduled resource should be created.
      * 
      */
-    @Export(name="scheduledReportCompartmentId", type=String.class, parameters={})
+    @Export(name="scheduledReportCompartmentId", refs={String.class}, tree="[0]")
     private Output<String> scheduledReportCompartmentId;
 
     /**
@@ -346,7 +346,7 @@ public class ReportDefinition extends com.pulumi.resources.CustomResource {
      * Specifies the format of the report ( either XLS or PDF )
      * 
      */
-    @Export(name="scheduledReportMimeType", type=String.class, parameters={})
+    @Export(name="scheduledReportMimeType", refs={String.class}, tree="[0]")
     private Output<String> scheduledReportMimeType;
 
     /**
@@ -360,7 +360,7 @@ public class ReportDefinition extends com.pulumi.resources.CustomResource {
      * The name of the report to be scheduled.
      * 
      */
-    @Export(name="scheduledReportName", type=String.class, parameters={})
+    @Export(name="scheduledReportName", refs={String.class}, tree="[0]")
     private Output<String> scheduledReportName;
 
     /**
@@ -374,7 +374,7 @@ public class ReportDefinition extends com.pulumi.resources.CustomResource {
      * Specifies the limit on the number of rows in the report.
      * 
      */
-    @Export(name="scheduledReportRowLimit", type=Integer.class, parameters={})
+    @Export(name="scheduledReportRowLimit", refs={Integer.class}, tree="[0]")
     private Output<Integer> scheduledReportRowLimit;
 
     /**
@@ -391,7 +391,7 @@ public class ReportDefinition extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="scimFilter", type=String.class, parameters={})
+    @Export(name="scimFilter", refs={String.class}, tree="[0]")
     private Output<String> scimFilter;
 
     /**
@@ -408,7 +408,7 @@ public class ReportDefinition extends com.pulumi.resources.CustomResource {
      * The current state of the report.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -422,7 +422,7 @@ public class ReportDefinition extends com.pulumi.resources.CustomResource {
      * (Updatable) An array of report summary objects in the order (left to right)  displayed in the report.  A  report summary object stores all information about summary of report to be displayed, including the name displayed on UI, the display order, corresponding group by and count of values, summary visibility (if the summary is visible to user).
      * 
      */
-    @Export(name="summaries", type=List.class, parameters={ReportDefinitionSummary.class})
+    @Export(name="summaries", refs={List.class,ReportDefinitionSummary.class}, tree="[0,1]")
     private Output<List<ReportDefinitionSummary>> summaries;
 
     /**
@@ -436,7 +436,7 @@ public class ReportDefinition extends com.pulumi.resources.CustomResource {
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -450,7 +450,7 @@ public class ReportDefinition extends com.pulumi.resources.CustomResource {
      * Specifies the data and time the report definition was created.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -464,7 +464,7 @@ public class ReportDefinition extends com.pulumi.resources.CustomResource {
      * The date and time the report definition was update.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

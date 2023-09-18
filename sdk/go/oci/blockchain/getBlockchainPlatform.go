@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Blockchain Platform resource in Oracle Cloud Infrastructure Blockchain service.
@@ -150,6 +151,12 @@ func (o LookupBlockchainPlatformResultOutput) ToLookupBlockchainPlatformResultOu
 
 func (o LookupBlockchainPlatformResultOutput) ToLookupBlockchainPlatformResultOutputWithContext(ctx context.Context) LookupBlockchainPlatformResultOutput {
 	return o
+}
+
+func (o LookupBlockchainPlatformResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupBlockchainPlatformResult] {
+	return pulumix.Output[LookupBlockchainPlatformResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o LookupBlockchainPlatformResultOutput) BlockchainPlatformId() pulumi.StringOutput {

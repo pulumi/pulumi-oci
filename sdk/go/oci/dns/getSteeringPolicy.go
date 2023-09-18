@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Steering Policy resource in Oracle Cloud Infrastructure DNS service.
@@ -123,6 +124,12 @@ func (o LookupSteeringPolicyResultOutput) ToLookupSteeringPolicyResultOutput() L
 
 func (o LookupSteeringPolicyResultOutput) ToLookupSteeringPolicyResultOutputWithContext(ctx context.Context) LookupSteeringPolicyResultOutput {
 	return o
+}
+
+func (o LookupSteeringPolicyResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupSteeringPolicyResult] {
+	return pulumix.Output[LookupSteeringPolicyResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The set of all answers that can potentially issue from the steering policy.

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific External Db Node resource in Oracle Cloud Infrastructure Database Management service.
@@ -127,6 +128,12 @@ func (o LookupExternalDbNodeResultOutput) ToLookupExternalDbNodeResultOutput() L
 
 func (o LookupExternalDbNodeResultOutput) ToLookupExternalDbNodeResultOutputWithContext(ctx context.Context) LookupExternalDbNodeResultOutput {
 	return o
+}
+
+func (o LookupExternalDbNodeResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupExternalDbNodeResult] {
+	return pulumix.Output[LookupExternalDbNodeResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The additional details of the external DB node defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`

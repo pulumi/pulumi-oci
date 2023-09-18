@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Network Load Balancer Health resource in Oracle Cloud Infrastructure Network Load Balancer service.
@@ -117,6 +118,12 @@ func (o GetNetworkLoadBalancerHealthResultOutput) ToGetNetworkLoadBalancerHealth
 
 func (o GetNetworkLoadBalancerHealthResultOutput) ToGetNetworkLoadBalancerHealthResultOutputWithContext(ctx context.Context) GetNetworkLoadBalancerHealthResultOutput {
 	return o
+}
+
+func (o GetNetworkLoadBalancerHealthResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkLoadBalancerHealthResult] {
+	return pulumix.Output[GetNetworkLoadBalancerHealthResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A list of backend sets that are currently in the `CRITICAL` health state. The list identifies each backend set by the user-friendly name you assigned when you created the backend set.  Example: `exampleBackendSet`

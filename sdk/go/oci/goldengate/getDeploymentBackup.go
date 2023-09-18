@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Deployment Backup resource in Oracle Cloud Infrastructure Golden Gate service.
@@ -137,6 +138,12 @@ func (o LookupDeploymentBackupResultOutput) ToLookupDeploymentBackupResultOutput
 
 func (o LookupDeploymentBackupResultOutput) ToLookupDeploymentBackupResultOutputWithContext(ctx context.Context) LookupDeploymentBackupResultOutput {
 	return o
+}
+
+func (o LookupDeploymentBackupResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDeploymentBackupResult] {
+	return pulumix.Output[LookupDeploymentBackupResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Possible Deployment backup types.

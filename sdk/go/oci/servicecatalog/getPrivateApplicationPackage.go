@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Private Application Package resource in Oracle Cloud Infrastructure Service Catalog service.
@@ -111,6 +112,12 @@ func (o GetPrivateApplicationPackageResultOutput) ToGetPrivateApplicationPackage
 
 func (o GetPrivateApplicationPackageResultOutput) ToGetPrivateApplicationPackageResultOutputWithContext(ctx context.Context) GetPrivateApplicationPackageResultOutput {
 	return o
+}
+
+func (o GetPrivateApplicationPackageResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPrivateApplicationPackageResult] {
+	return pulumix.Output[GetPrivateApplicationPackageResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPrivateApplicationPackageResultOutput) ContentUrl() pulumi.StringOutput {

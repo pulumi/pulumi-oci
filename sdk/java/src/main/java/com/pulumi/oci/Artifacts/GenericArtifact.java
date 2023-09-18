@@ -65,7 +65,7 @@ public class GenericArtifact extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the artifact.  Example: `ocid1.genericartifact.oc1..exampleuniqueID`
      * 
      */
-    @Export(name="artifactId", type=String.class, parameters={})
+    @Export(name="artifactId", refs={String.class}, tree="[0]")
     private Output<String> artifactId;
 
     /**
@@ -79,7 +79,7 @@ public class GenericArtifact extends com.pulumi.resources.CustomResource {
      * A user-defined path to describe the location of an artifact. Slashes do not create a directory structure, but you can use slashes to organize the repository. An artifact path does not include an artifact version.  Example: `project01/my-web-app/artifact-abc`
      * 
      */
-    @Export(name="artifactPath", type=String.class, parameters={})
+    @Export(name="artifactPath", refs={String.class}, tree="[0]")
     private Output<String> artifactPath;
 
     /**
@@ -93,7 +93,7 @@ public class GenericArtifact extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository&#39;s compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -107,7 +107,7 @@ public class GenericArtifact extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -121,7 +121,7 @@ public class GenericArtifact extends com.pulumi.resources.CustomResource {
      * The artifact name with the format of `&lt;artifact-path&gt;:&lt;artifact-version&gt;`. The artifact name is truncated to a maximum length of 255.  Example: `project01/my-web-app/artifact-abc:1.0.0`
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -138,7 +138,7 @@ public class GenericArtifact extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -155,7 +155,7 @@ public class GenericArtifact extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository.
      * 
      */
-    @Export(name="repositoryId", type=String.class, parameters={})
+    @Export(name="repositoryId", refs={String.class}, tree="[0]")
     private Output<String> repositoryId;
 
     /**
@@ -169,7 +169,7 @@ public class GenericArtifact extends com.pulumi.resources.CustomResource {
      * The SHA256 digest for the artifact. When you upload an artifact to the repository, a SHA256 digest is calculated and added to the artifact properties.
      * 
      */
-    @Export(name="sha256", type=String.class, parameters={})
+    @Export(name="sha256", refs={String.class}, tree="[0]")
     private Output<String> sha256;
 
     /**
@@ -183,7 +183,7 @@ public class GenericArtifact extends com.pulumi.resources.CustomResource {
      * The size of the artifact in bytes.
      * 
      */
-    @Export(name="sizeInBytes", type=String.class, parameters={})
+    @Export(name="sizeInBytes", refs={String.class}, tree="[0]")
     private Output<String> sizeInBytes;
 
     /**
@@ -197,7 +197,7 @@ public class GenericArtifact extends com.pulumi.resources.CustomResource {
      * The current state of the artifact.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -211,7 +211,7 @@ public class GenericArtifact extends com.pulumi.resources.CustomResource {
      * An RFC 3339 timestamp indicating when the repository was created.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -225,7 +225,7 @@ public class GenericArtifact extends com.pulumi.resources.CustomResource {
      * A user-defined string to describe the artifact version.  Example: `1.1.0` or `1.2-beta-2`
      * 
      */
-    @Export(name="version", type=String.class, parameters={})
+    @Export(name="version", refs={String.class}, tree="[0]")
     private Output<String> version;
 
     /**

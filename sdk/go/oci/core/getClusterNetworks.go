@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Cluster Networks in Oracle Cloud Infrastructure Core service.
@@ -120,6 +121,12 @@ func (o GetClusterNetworksResultOutput) ToGetClusterNetworksResultOutput() GetCl
 
 func (o GetClusterNetworksResultOutput) ToGetClusterNetworksResultOutputWithContext(ctx context.Context) GetClusterNetworksResultOutput {
 	return o
+}
+
+func (o GetClusterNetworksResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetClusterNetworksResult] {
+	return pulumix.Output[GetClusterNetworksResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The list of cluster_networks.

@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the External Db System Connector resource in Oracle Cloud Infrastructure Database Management service.
@@ -246,6 +247,12 @@ func (i *ExternalDbSystemConnector) ToExternalDbSystemConnectorOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalDbSystemConnectorOutput)
 }
 
+func (i *ExternalDbSystemConnector) ToOutput(ctx context.Context) pulumix.Output[*ExternalDbSystemConnector] {
+	return pulumix.Output[*ExternalDbSystemConnector]{
+		OutputState: i.ToExternalDbSystemConnectorOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ExternalDbSystemConnectorArrayInput is an input type that accepts ExternalDbSystemConnectorArray and ExternalDbSystemConnectorArrayOutput values.
 // You can construct a concrete instance of `ExternalDbSystemConnectorArrayInput` via:
 //
@@ -269,6 +276,12 @@ func (i ExternalDbSystemConnectorArray) ToExternalDbSystemConnectorArrayOutput()
 
 func (i ExternalDbSystemConnectorArray) ToExternalDbSystemConnectorArrayOutputWithContext(ctx context.Context) ExternalDbSystemConnectorArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalDbSystemConnectorArrayOutput)
+}
+
+func (i ExternalDbSystemConnectorArray) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalDbSystemConnector] {
+	return pulumix.Output[[]*ExternalDbSystemConnector]{
+		OutputState: i.ToExternalDbSystemConnectorArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // ExternalDbSystemConnectorMapInput is an input type that accepts ExternalDbSystemConnectorMap and ExternalDbSystemConnectorMapOutput values.
@@ -296,6 +309,12 @@ func (i ExternalDbSystemConnectorMap) ToExternalDbSystemConnectorMapOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalDbSystemConnectorMapOutput)
 }
 
+func (i ExternalDbSystemConnectorMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalDbSystemConnector] {
+	return pulumix.Output[map[string]*ExternalDbSystemConnector]{
+		OutputState: i.ToExternalDbSystemConnectorMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ExternalDbSystemConnectorOutput struct{ *pulumi.OutputState }
 
 func (ExternalDbSystemConnectorOutput) ElementType() reflect.Type {
@@ -308,6 +327,12 @@ func (o ExternalDbSystemConnectorOutput) ToExternalDbSystemConnectorOutput() Ext
 
 func (o ExternalDbSystemConnectorOutput) ToExternalDbSystemConnectorOutputWithContext(ctx context.Context) ExternalDbSystemConnectorOutput {
 	return o
+}
+
+func (o ExternalDbSystemConnectorOutput) ToOutput(ctx context.Context) pulumix.Output[*ExternalDbSystemConnector] {
+	return pulumix.Output[*ExternalDbSystemConnector]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system connector.
@@ -394,6 +419,12 @@ func (o ExternalDbSystemConnectorArrayOutput) ToExternalDbSystemConnectorArrayOu
 	return o
 }
 
+func (o ExternalDbSystemConnectorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalDbSystemConnector] {
+	return pulumix.Output[[]*ExternalDbSystemConnector]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o ExternalDbSystemConnectorArrayOutput) Index(i pulumi.IntInput) ExternalDbSystemConnectorOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ExternalDbSystemConnector {
 		return vs[0].([]*ExternalDbSystemConnector)[vs[1].(int)]
@@ -412,6 +443,12 @@ func (o ExternalDbSystemConnectorMapOutput) ToExternalDbSystemConnectorMapOutput
 
 func (o ExternalDbSystemConnectorMapOutput) ToExternalDbSystemConnectorMapOutputWithContext(ctx context.Context) ExternalDbSystemConnectorMapOutput {
 	return o
+}
+
+func (o ExternalDbSystemConnectorMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalDbSystemConnector] {
+	return pulumix.Output[map[string]*ExternalDbSystemConnector]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ExternalDbSystemConnectorMapOutput) MapIndex(k pulumi.StringInput) ExternalDbSystemConnectorOutput {

@@ -97,7 +97,7 @@ public class DomainsMyOauth2clientCredential extends com.pulumi.resources.Custom
      * The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      * 
      */
-    @Export(name="authorization", type=String.class, parameters={})
+    @Export(name="authorization", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> authorization;
 
     /**
@@ -121,7 +121,7 @@ public class DomainsMyOauth2clientCredential extends com.pulumi.resources.Custom
      * * uniqueness: none
      * 
      */
-    @Export(name="compartmentOcid", type=String.class, parameters={})
+    @Export(name="compartmentOcid", refs={String.class}, tree="[0]")
     private Output<String> compartmentOcid;
 
     /**
@@ -155,7 +155,7 @@ public class DomainsMyOauth2clientCredential extends com.pulumi.resources.Custom
      * * uniqueness: none
      * 
      */
-    @Export(name="deleteInProgress", type=Boolean.class, parameters={})
+    @Export(name="deleteInProgress", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> deleteInProgress;
 
     /**
@@ -188,7 +188,7 @@ public class DomainsMyOauth2clientCredential extends com.pulumi.resources.Custom
      * * returned: default
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -221,7 +221,7 @@ public class DomainsMyOauth2clientCredential extends com.pulumi.resources.Custom
      * * uniqueness: none
      * 
      */
-    @Export(name="domainOcid", type=String.class, parameters={})
+    @Export(name="domainOcid", refs={String.class}, tree="[0]")
     private Output<String> domainOcid;
 
     /**
@@ -257,7 +257,7 @@ public class DomainsMyOauth2clientCredential extends com.pulumi.resources.Custom
      * * uniqueness: none
      * 
      */
-    @Export(name="expiresOn", type=String.class, parameters={})
+    @Export(name="expiresOn", refs={String.class}, tree="[0]")
     private Output<String> expiresOn;
 
     /**
@@ -291,7 +291,7 @@ public class DomainsMyOauth2clientCredential extends com.pulumi.resources.Custom
      * * type: complex
      * 
      */
-    @Export(name="idcsCreatedBies", type=List.class, parameters={DomainsMyOauth2clientCredentialIdcsCreatedBy.class})
+    @Export(name="idcsCreatedBies", refs={List.class,DomainsMyOauth2clientCredentialIdcsCreatedBy.class}, tree="[0,1]")
     private Output<List<DomainsMyOauth2clientCredentialIdcsCreatedBy>> idcsCreatedBies;
 
     /**
@@ -313,7 +313,7 @@ public class DomainsMyOauth2clientCredential extends com.pulumi.resources.Custom
      * The basic endpoint for the identity domain
      * 
      */
-    @Export(name="idcsEndpoint", type=String.class, parameters={})
+    @Export(name="idcsEndpoint", refs={String.class}, tree="[0]")
     private Output<String> idcsEndpoint;
 
     /**
@@ -335,7 +335,7 @@ public class DomainsMyOauth2clientCredential extends com.pulumi.resources.Custom
      * * type: complex
      * 
      */
-    @Export(name="idcsLastModifiedBies", type=List.class, parameters={DomainsMyOauth2clientCredentialIdcsLastModifiedBy.class})
+    @Export(name="idcsLastModifiedBies", refs={List.class,DomainsMyOauth2clientCredentialIdcsLastModifiedBy.class}, tree="[0,1]")
     private Output<List<DomainsMyOauth2clientCredentialIdcsLastModifiedBy>> idcsLastModifiedBies;
 
     /**
@@ -367,7 +367,7 @@ public class DomainsMyOauth2clientCredential extends com.pulumi.resources.Custom
      * * uniqueness: none
      * 
      */
-    @Export(name="idcsLastUpgradedInRelease", type=String.class, parameters={})
+    @Export(name="idcsLastUpgradedInRelease", refs={String.class}, tree="[0]")
     private Output<String> idcsLastUpgradedInRelease;
 
     /**
@@ -400,7 +400,7 @@ public class DomainsMyOauth2clientCredential extends com.pulumi.resources.Custom
      * * uniqueness: none
      * 
      */
-    @Export(name="idcsPreventedOperations", type=List.class, parameters={String.class})
+    @Export(name="idcsPreventedOperations", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> idcsPreventedOperations;
 
     /**
@@ -435,7 +435,7 @@ public class DomainsMyOauth2clientCredential extends com.pulumi.resources.Custom
      * * uniqueness: none
      * 
      */
-    @Export(name="isResetSecret", type=Boolean.class, parameters={})
+    @Export(name="isResetSecret", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isResetSecret;
 
     /**
@@ -471,7 +471,7 @@ public class DomainsMyOauth2clientCredential extends com.pulumi.resources.Custom
      * * type: complex
      * 
      */
-    @Export(name="metas", type=List.class, parameters={DomainsMyOauth2clientCredentialMeta.class})
+    @Export(name="metas", refs={List.class,DomainsMyOauth2clientCredentialMeta.class}, tree="[0,1]")
     private Output<List<DomainsMyOauth2clientCredentialMeta>> metas;
 
     /**
@@ -505,7 +505,7 @@ public class DomainsMyOauth2clientCredential extends com.pulumi.resources.Custom
      * * uniqueness: none
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -539,7 +539,7 @@ public class DomainsMyOauth2clientCredential extends com.pulumi.resources.Custom
      * * uniqueness: none
      * 
      */
-    @Export(name="ocid", type=String.class, parameters={})
+    @Export(name="ocid", refs={String.class}, tree="[0]")
     private Output<String> ocid;
 
     /**
@@ -563,7 +563,7 @@ public class DomainsMyOauth2clientCredential extends com.pulumi.resources.Custom
      * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      * 
      */
-    @Export(name="resourceTypeSchemaVersion", type=String.class, parameters={})
+    @Export(name="resourceTypeSchemaVersion", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> resourceTypeSchemaVersion;
 
     /**
@@ -587,7 +587,7 @@ public class DomainsMyOauth2clientCredential extends com.pulumi.resources.Custom
      * * uniqueness: none
      * 
      */
-    @Export(name="schemas", type=List.class, parameters={String.class})
+    @Export(name="schemas", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> schemas;
 
     /**
@@ -620,7 +620,7 @@ public class DomainsMyOauth2clientCredential extends com.pulumi.resources.Custom
      * * returned: default
      * 
      */
-    @Export(name="scopes", type=List.class, parameters={DomainsMyOauth2clientCredentialScope.class})
+    @Export(name="scopes", refs={List.class,DomainsMyOauth2clientCredentialScope.class}, tree="[0,1]")
     private Output<List<DomainsMyOauth2clientCredentialScope>> scopes;
 
     /**
@@ -655,7 +655,7 @@ public class DomainsMyOauth2clientCredential extends com.pulumi.resources.Custom
      * * uniqueness: none
      * 
      */
-    @Export(name="status", type=String.class, parameters={})
+    @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
@@ -691,7 +691,7 @@ public class DomainsMyOauth2clientCredential extends com.pulumi.resources.Custom
      * * uniqueness: none
      * 
      */
-    @Export(name="tags", type=List.class, parameters={DomainsMyOauth2clientCredentialTag.class})
+    @Export(name="tags", refs={List.class,DomainsMyOauth2clientCredentialTag.class}, tree="[0,1]")
     private Output<List<DomainsMyOauth2clientCredentialTag>> tags;
 
     /**
@@ -725,7 +725,7 @@ public class DomainsMyOauth2clientCredential extends com.pulumi.resources.Custom
      * * uniqueness: none
      * 
      */
-    @Export(name="tenancyOcid", type=String.class, parameters={})
+    @Export(name="tenancyOcid", refs={String.class}, tree="[0]")
     private Output<String> tenancyOcid;
 
     /**
@@ -759,7 +759,7 @@ public class DomainsMyOauth2clientCredential extends com.pulumi.resources.Custom
      * * uniqueness: none
      * 
      */
-    @Export(name="user", type=DomainsMyOauth2clientCredentialUser.class, parameters={})
+    @Export(name="user", refs={DomainsMyOauth2clientCredentialUser.class}, tree="[0]")
     private Output<DomainsMyOauth2clientCredentialUser> user;
 
     /**

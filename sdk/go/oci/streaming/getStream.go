@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Stream resource in Oracle Cloud Infrastructure Streaming service.
@@ -121,6 +122,12 @@ func (o LookupStreamResultOutput) ToLookupStreamResultOutput() LookupStreamResul
 
 func (o LookupStreamResultOutput) ToLookupStreamResultOutputWithContext(ctx context.Context) LookupStreamResultOutput {
 	return o
+}
+
+func (o LookupStreamResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupStreamResult] {
+	return pulumix.Output[LookupStreamResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the compartment that contains the stream.

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Log Saved Search resource in Oracle Cloud Infrastructure Logging service.
@@ -117,6 +118,12 @@ func (o LookupLogSavedSearchResultOutput) ToLookupLogSavedSearchResultOutput() L
 
 func (o LookupLogSavedSearchResultOutput) ToLookupLogSavedSearchResultOutputWithContext(ctx context.Context) LookupLogSavedSearchResultOutput {
 	return o
+}
+
+func (o LookupLogSavedSearchResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupLogSavedSearchResult] {
+	return pulumix.Output[LookupLogSavedSearchResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the compartment that the resource belongs to.

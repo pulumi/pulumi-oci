@@ -80,7 +80,7 @@ public class DedicatedVantagePoint extends com.pulumi.resources.CustomResource {
      * (Updatable) The APM domain ID the request is intended for.
      * 
      */
-    @Export(name="apmDomainId", type=String.class, parameters={})
+    @Export(name="apmDomainId", refs={String.class}, tree="[0]")
     private Output<String> apmDomainId;
 
     /**
@@ -94,7 +94,7 @@ public class DedicatedVantagePoint extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -108,7 +108,7 @@ public class DedicatedVantagePoint extends com.pulumi.resources.CustomResource {
      * Unique dedicated vantage point name that cannot be edited. The name should not contain any confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -122,7 +122,7 @@ public class DedicatedVantagePoint extends com.pulumi.resources.CustomResource {
      * (Updatable) Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
      * 
      */
-    @Export(name="dvpStackDetails", type=DedicatedVantagePointDvpStackDetails.class, parameters={})
+    @Export(name="dvpStackDetails", refs={DedicatedVantagePointDvpStackDetails.class}, tree="[0]")
     private Output<DedicatedVantagePointDvpStackDetails> dvpStackDetails;
 
     /**
@@ -136,7 +136,7 @@ public class DedicatedVantagePoint extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -150,7 +150,7 @@ public class DedicatedVantagePoint extends com.pulumi.resources.CustomResource {
      * Details of the monitor count per state. Example: `{ &#34;total&#34; : 5, &#34;enabled&#34; : 3 , &#34;disabled&#34; : 2, &#34;invalid&#34; : 0 }`
      * 
      */
-    @Export(name="monitorStatusCountMaps", type=List.class, parameters={DedicatedVantagePointMonitorStatusCountMap.class})
+    @Export(name="monitorStatusCountMaps", refs={List.class,DedicatedVantagePointMonitorStatusCountMap.class}, tree="[0,1]")
     private Output<List<DedicatedVantagePointMonitorStatusCountMap>> monitorStatusCountMaps;
 
     /**
@@ -164,7 +164,7 @@ public class DedicatedVantagePoint extends com.pulumi.resources.CustomResource {
      * Unique permanent name of the dedicated vantage point. This is the same as the displayName.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -178,7 +178,7 @@ public class DedicatedVantagePoint extends com.pulumi.resources.CustomResource {
      * (Updatable) Name of the region.
      * 
      */
-    @Export(name="region", type=String.class, parameters={})
+    @Export(name="region", refs={String.class}, tree="[0]")
     private Output<String> region;
 
     /**
@@ -195,7 +195,7 @@ public class DedicatedVantagePoint extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="status", type=String.class, parameters={})
+    @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
@@ -212,7 +212,7 @@ public class DedicatedVantagePoint extends com.pulumi.resources.CustomResource {
      * The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -226,7 +226,7 @@ public class DedicatedVantagePoint extends com.pulumi.resources.CustomResource {
      * The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

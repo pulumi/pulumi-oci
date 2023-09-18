@@ -88,7 +88,7 @@ public class Key extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the compartment where you want to create the master encryption key.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -102,7 +102,7 @@ public class Key extends com.pulumi.resources.CustomResource {
      * The OCID of the key version used in cryptographic operations. During key rotation, the service might be in a transitional state where this or a newer key version are used intermittently. The `currentKeyVersion` property is updated when the service is guaranteed to use the new key version for all subsequent encryption operations.
      * 
      */
-    @Export(name="currentKeyVersion", type=String.class, parameters={})
+    @Export(name="currentKeyVersion", refs={String.class}, tree="[0]")
     private Output<String> currentKeyVersion;
 
     /**
@@ -116,7 +116,7 @@ public class Key extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -130,7 +130,7 @@ public class Key extends com.pulumi.resources.CustomResource {
      * (Updatable) Desired state of the key. Possible values : `ENABLED` or `DISABLED`
      * 
      */
-    @Export(name="desiredState", type=String.class, parameters={})
+    @Export(name="desiredState", refs={String.class}, tree="[0]")
     private Output<String> desiredState;
 
     /**
@@ -144,7 +144,7 @@ public class Key extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-friendly name for the key. It does not have to be unique, and it is changeable. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -158,7 +158,7 @@ public class Key extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -172,7 +172,7 @@ public class Key extends com.pulumi.resources.CustomResource {
      * A boolean that will be true when key is primary, and will be false when key is a replica from a primary key.
      * 
      */
-    @Export(name="isPrimary", type=Boolean.class, parameters={})
+    @Export(name="isPrimary", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isPrimary;
 
     /**
@@ -186,7 +186,7 @@ public class Key extends com.pulumi.resources.CustomResource {
      * The cryptographic properties of a key.
      * 
      */
-    @Export(name="keyShape", type=KeyKeyShape.class, parameters={})
+    @Export(name="keyShape", refs={KeyKeyShape.class}, tree="[0]")
     private Output<KeyKeyShape> keyShape;
 
     /**
@@ -200,7 +200,7 @@ public class Key extends com.pulumi.resources.CustomResource {
      * The service endpoint to perform management operations against. Management operations include &#39;Create,&#39; &#39;Update,&#39; &#39;List,&#39; &#39;Get,&#39; and &#39;Delete&#39; operations. See Vault Management endpoint.
      * 
      */
-    @Export(name="managementEndpoint", type=String.class, parameters={})
+    @Export(name="managementEndpoint", refs={String.class}, tree="[0]")
     private Output<String> managementEndpoint;
 
     /**
@@ -214,7 +214,7 @@ public class Key extends com.pulumi.resources.CustomResource {
      * The key&#39;s protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault&#39;s RSA wrapping key which persists  on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default,  a key&#39;s protection mode is set to `HSM`. You can&#39;t change a key&#39;s protection mode after the key is created or imported.
      * 
      */
-    @Export(name="protectionMode", type=String.class, parameters={})
+    @Export(name="protectionMode", refs={String.class}, tree="[0]")
     private Output<String> protectionMode;
 
     /**
@@ -228,7 +228,7 @@ public class Key extends com.pulumi.resources.CustomResource {
      * Key replica details
      * 
      */
-    @Export(name="replicaDetails", type=List.class, parameters={KeyReplicaDetail.class})
+    @Export(name="replicaDetails", refs={List.class,KeyReplicaDetail.class}, tree="[0,1]")
     private Output<List<KeyReplicaDetail>> replicaDetails;
 
     /**
@@ -242,7 +242,7 @@ public class Key extends com.pulumi.resources.CustomResource {
      * (Updatable) Details where key was backed up.
      * 
      */
-    @Export(name="restoreFromFile", type=KeyRestoreFromFile.class, parameters={})
+    @Export(name="restoreFromFile", refs={KeyRestoreFromFile.class}, tree="[0]")
     private Output</* @Nullable */ KeyRestoreFromFile> restoreFromFile;
 
     /**
@@ -256,7 +256,7 @@ public class Key extends com.pulumi.resources.CustomResource {
      * (Updatable) Details where key was backed up
      * 
      */
-    @Export(name="restoreFromObjectStore", type=KeyRestoreFromObjectStore.class, parameters={})
+    @Export(name="restoreFromObjectStore", refs={KeyRestoreFromObjectStore.class}, tree="[0]")
     private Output</* @Nullable */ KeyRestoreFromObjectStore> restoreFromObjectStore;
 
     /**
@@ -270,7 +270,7 @@ public class Key extends com.pulumi.resources.CustomResource {
      * (Updatable) An optional property when flipped triggers restore from restore option provided in config file.
      * 
      */
-    @Export(name="restoreTrigger", type=Boolean.class, parameters={})
+    @Export(name="restoreTrigger", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> restoreTrigger;
 
     /**
@@ -284,7 +284,7 @@ public class Key extends com.pulumi.resources.CustomResource {
      * The OCID of the key from which this key was restored.
      * 
      */
-    @Export(name="restoredFromKeyId", type=String.class, parameters={})
+    @Export(name="restoredFromKeyId", refs={String.class}, tree="[0]")
     private Output<String> restoredFromKeyId;
 
     /**
@@ -298,7 +298,7 @@ public class Key extends com.pulumi.resources.CustomResource {
      * The key&#39;s current lifecycle state.  Example: `ENABLED`
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -312,7 +312,7 @@ public class Key extends com.pulumi.resources.CustomResource {
      * The date and time the key was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-04-03T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -329,7 +329,7 @@ public class Key extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="timeOfDeletion", type=String.class, parameters={})
+    @Export(name="timeOfDeletion", refs={String.class}, tree="[0]")
     private Output<String> timeOfDeletion;
 
     /**
@@ -346,7 +346,7 @@ public class Key extends com.pulumi.resources.CustomResource {
      * The OCID of the vault that contains this key.
      * 
      */
-    @Export(name="vaultId", type=String.class, parameters={})
+    @Export(name="vaultId", refs={String.class}, tree="[0]")
     private Output<String> vaultId;
 
     /**

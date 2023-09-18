@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Public Ips in Oracle Cloud Infrastructure Core service.
@@ -152,6 +153,12 @@ func (o GetPublicIpsResultOutput) ToGetPublicIpsResultOutput() GetPublicIpsResul
 
 func (o GetPublicIpsResultOutput) ToGetPublicIpsResultOutputWithContext(ctx context.Context) GetPublicIpsResultOutput {
 	return o
+}
+
+func (o GetPublicIpsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPublicIpsResult] {
+	return pulumix.Output[GetPublicIpsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The public IP's availability domain. This property is set only for ephemeral public IPs that are assigned to a private IP (that is, when the `scope` of the public IP is set to AVAILABILITY_DOMAIN). The value is the availability domain of the assigned private IP.  Example: `Uocm:PHX-AD-1`

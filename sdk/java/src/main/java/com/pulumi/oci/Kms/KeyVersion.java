@@ -73,7 +73,7 @@ public class KeyVersion extends com.pulumi.resources.CustomResource {
      * The OCID of the compartment that contains this key version.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -87,7 +87,7 @@ public class KeyVersion extends com.pulumi.resources.CustomResource {
      * A boolean that will be true when key version is primary, and will be false when key version is a replica from a primary key version.
      * 
      */
-    @Export(name="isPrimary", type=Boolean.class, parameters={})
+    @Export(name="isPrimary", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isPrimary;
 
     /**
@@ -101,7 +101,7 @@ public class KeyVersion extends com.pulumi.resources.CustomResource {
      * The OCID of the key.
      * 
      */
-    @Export(name="keyId", type=String.class, parameters={})
+    @Export(name="keyId", refs={String.class}, tree="[0]")
     private Output<String> keyId;
 
     /**
@@ -111,7 +111,7 @@ public class KeyVersion extends com.pulumi.resources.CustomResource {
     public Output<String> keyId() {
         return this.keyId;
     }
-    @Export(name="keyVersionId", type=String.class, parameters={})
+    @Export(name="keyVersionId", refs={String.class}, tree="[0]")
     private Output<String> keyVersionId;
 
     public Output<String> keyVersionId() {
@@ -121,7 +121,7 @@ public class KeyVersion extends com.pulumi.resources.CustomResource {
      * The service endpoint to perform management operations against. Management operations include &#39;Create,&#39; &#39;Update,&#39; &#39;List,&#39; &#39;Get,&#39; and &#39;Delete&#39; operations. See Vault Management endpoint.
      * 
      */
-    @Export(name="managementEndpoint", type=String.class, parameters={})
+    @Export(name="managementEndpoint", refs={String.class}, tree="[0]")
     private Output<String> managementEndpoint;
 
     /**
@@ -135,7 +135,7 @@ public class KeyVersion extends com.pulumi.resources.CustomResource {
      * The public key in PEM format. (This value pertains only to RSA and ECDSA keys.)
      * 
      */
-    @Export(name="publicKey", type=String.class, parameters={})
+    @Export(name="publicKey", refs={String.class}, tree="[0]")
     private Output<String> publicKey;
 
     /**
@@ -149,7 +149,7 @@ public class KeyVersion extends com.pulumi.resources.CustomResource {
      * KeyVersion replica details
      * 
      */
-    @Export(name="replicaDetails", type=List.class, parameters={KeyVersionReplicaDetail.class})
+    @Export(name="replicaDetails", refs={List.class,KeyVersionReplicaDetail.class}, tree="[0,1]")
     private Output<List<KeyVersionReplicaDetail>> replicaDetails;
 
     /**
@@ -159,7 +159,7 @@ public class KeyVersion extends com.pulumi.resources.CustomResource {
     public Output<List<KeyVersionReplicaDetail>> replicaDetails() {
         return this.replicaDetails;
     }
-    @Export(name="restoredFromKeyId", type=String.class, parameters={})
+    @Export(name="restoredFromKeyId", refs={String.class}, tree="[0]")
     private Output<String> restoredFromKeyId;
 
     public Output<String> restoredFromKeyId() {
@@ -169,7 +169,7 @@ public class KeyVersion extends com.pulumi.resources.CustomResource {
      * The OCID of the key version from which this key version was restored.
      * 
      */
-    @Export(name="restoredFromKeyVersionId", type=String.class, parameters={})
+    @Export(name="restoredFromKeyVersionId", refs={String.class}, tree="[0]")
     private Output<String> restoredFromKeyVersionId;
 
     /**
@@ -183,7 +183,7 @@ public class KeyVersion extends com.pulumi.resources.CustomResource {
      * The key version&#39;s current lifecycle state.  Example: `ENABLED`
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -197,7 +197,7 @@ public class KeyVersion extends com.pulumi.resources.CustomResource {
      * The date and time this key version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: &#34;2018-04-03T21:10:29.600Z&#34;
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -214,7 +214,7 @@ public class KeyVersion extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="timeOfDeletion", type=String.class, parameters={})
+    @Export(name="timeOfDeletion", refs={String.class}, tree="[0]")
     private Output<String> timeOfDeletion;
 
     /**
@@ -231,7 +231,7 @@ public class KeyVersion extends com.pulumi.resources.CustomResource {
      * The OCID of the vault that contains this key version.
      * 
      */
-    @Export(name="vaultId", type=String.class, parameters={})
+    @Export(name="vaultId", refs={String.class}, tree="[0]")
     private Output<String> vaultId;
 
     /**

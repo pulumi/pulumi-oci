@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -54,6 +55,12 @@ func (i PrivateApplicationLogoArgs) ToPrivateApplicationLogoOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(PrivateApplicationLogoOutput)
 }
 
+func (i PrivateApplicationLogoArgs) ToOutput(ctx context.Context) pulumix.Output[PrivateApplicationLogo] {
+	return pulumix.Output[PrivateApplicationLogo]{
+		OutputState: i.ToPrivateApplicationLogoOutputWithContext(ctx).OutputState,
+	}
+}
+
 // PrivateApplicationLogoArrayInput is an input type that accepts PrivateApplicationLogoArray and PrivateApplicationLogoArrayOutput values.
 // You can construct a concrete instance of `PrivateApplicationLogoArrayInput` via:
 //
@@ -79,6 +86,12 @@ func (i PrivateApplicationLogoArray) ToPrivateApplicationLogoArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(PrivateApplicationLogoArrayOutput)
 }
 
+func (i PrivateApplicationLogoArray) ToOutput(ctx context.Context) pulumix.Output[[]PrivateApplicationLogo] {
+	return pulumix.Output[[]PrivateApplicationLogo]{
+		OutputState: i.ToPrivateApplicationLogoArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type PrivateApplicationLogoOutput struct{ *pulumi.OutputState }
 
 func (PrivateApplicationLogoOutput) ElementType() reflect.Type {
@@ -91,6 +104,12 @@ func (o PrivateApplicationLogoOutput) ToPrivateApplicationLogoOutput() PrivateAp
 
 func (o PrivateApplicationLogoOutput) ToPrivateApplicationLogoOutputWithContext(ctx context.Context) PrivateApplicationLogoOutput {
 	return o
+}
+
+func (o PrivateApplicationLogoOutput) ToOutput(ctx context.Context) pulumix.Output[PrivateApplicationLogo] {
+	return pulumix.Output[PrivateApplicationLogo]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The content URL of the uploaded data.
@@ -120,6 +139,12 @@ func (o PrivateApplicationLogoArrayOutput) ToPrivateApplicationLogoArrayOutput()
 
 func (o PrivateApplicationLogoArrayOutput) ToPrivateApplicationLogoArrayOutputWithContext(ctx context.Context) PrivateApplicationLogoArrayOutput {
 	return o
+}
+
+func (o PrivateApplicationLogoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]PrivateApplicationLogo] {
+	return pulumix.Output[[]PrivateApplicationLogo]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o PrivateApplicationLogoArrayOutput) Index(i pulumi.IntInput) PrivateApplicationLogoOutput {
@@ -167,6 +192,12 @@ func (i PrivateApplicationPackageDetailsArgs) ToPrivateApplicationPackageDetails
 	return pulumi.ToOutputWithContext(ctx, i).(PrivateApplicationPackageDetailsOutput)
 }
 
+func (i PrivateApplicationPackageDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[PrivateApplicationPackageDetails] {
+	return pulumix.Output[PrivateApplicationPackageDetails]{
+		OutputState: i.ToPrivateApplicationPackageDetailsOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i PrivateApplicationPackageDetailsArgs) ToPrivateApplicationPackageDetailsPtrOutput() PrivateApplicationPackageDetailsPtrOutput {
 	return i.ToPrivateApplicationPackageDetailsPtrOutputWithContext(context.Background())
 }
@@ -208,6 +239,12 @@ func (i *privateApplicationPackageDetailsPtrType) ToPrivateApplicationPackageDet
 	return pulumi.ToOutputWithContext(ctx, i).(PrivateApplicationPackageDetailsPtrOutput)
 }
 
+func (i *privateApplicationPackageDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*PrivateApplicationPackageDetails] {
+	return pulumix.Output[*PrivateApplicationPackageDetails]{
+		OutputState: i.ToPrivateApplicationPackageDetailsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type PrivateApplicationPackageDetailsOutput struct{ *pulumi.OutputState }
 
 func (PrivateApplicationPackageDetailsOutput) ElementType() reflect.Type {
@@ -230,6 +267,12 @@ func (o PrivateApplicationPackageDetailsOutput) ToPrivateApplicationPackageDetai
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v PrivateApplicationPackageDetails) *PrivateApplicationPackageDetails {
 		return &v
 	}).(PrivateApplicationPackageDetailsPtrOutput)
+}
+
+func (o PrivateApplicationPackageDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[PrivateApplicationPackageDetails] {
+	return pulumix.Output[PrivateApplicationPackageDetails]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The package's type.
@@ -258,6 +301,12 @@ func (o PrivateApplicationPackageDetailsPtrOutput) ToPrivateApplicationPackageDe
 
 func (o PrivateApplicationPackageDetailsPtrOutput) ToPrivateApplicationPackageDetailsPtrOutputWithContext(ctx context.Context) PrivateApplicationPackageDetailsPtrOutput {
 	return o
+}
+
+func (o PrivateApplicationPackageDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*PrivateApplicationPackageDetails] {
+	return pulumix.Output[*PrivateApplicationPackageDetails]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o PrivateApplicationPackageDetailsPtrOutput) Elem() PrivateApplicationPackageDetailsOutput {
@@ -340,6 +389,12 @@ func (i GetPrivateApplicationLogoArgs) ToGetPrivateApplicationLogoOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateApplicationLogoOutput)
 }
 
+func (i GetPrivateApplicationLogoArgs) ToOutput(ctx context.Context) pulumix.Output[GetPrivateApplicationLogo] {
+	return pulumix.Output[GetPrivateApplicationLogo]{
+		OutputState: i.ToGetPrivateApplicationLogoOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPrivateApplicationLogoArrayInput is an input type that accepts GetPrivateApplicationLogoArray and GetPrivateApplicationLogoArrayOutput values.
 // You can construct a concrete instance of `GetPrivateApplicationLogoArrayInput` via:
 //
@@ -365,6 +420,12 @@ func (i GetPrivateApplicationLogoArray) ToGetPrivateApplicationLogoArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateApplicationLogoArrayOutput)
 }
 
+func (i GetPrivateApplicationLogoArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPrivateApplicationLogo] {
+	return pulumix.Output[[]GetPrivateApplicationLogo]{
+		OutputState: i.ToGetPrivateApplicationLogoArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPrivateApplicationLogoOutput struct{ *pulumi.OutputState }
 
 func (GetPrivateApplicationLogoOutput) ElementType() reflect.Type {
@@ -377,6 +438,12 @@ func (o GetPrivateApplicationLogoOutput) ToGetPrivateApplicationLogoOutput() Get
 
 func (o GetPrivateApplicationLogoOutput) ToGetPrivateApplicationLogoOutputWithContext(ctx context.Context) GetPrivateApplicationLogoOutput {
 	return o
+}
+
+func (o GetPrivateApplicationLogoOutput) ToOutput(ctx context.Context) pulumix.Output[GetPrivateApplicationLogo] {
+	return pulumix.Output[GetPrivateApplicationLogo]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The content URL of the uploaded data.
@@ -406,6 +473,12 @@ func (o GetPrivateApplicationLogoArrayOutput) ToGetPrivateApplicationLogoArrayOu
 
 func (o GetPrivateApplicationLogoArrayOutput) ToGetPrivateApplicationLogoArrayOutputWithContext(ctx context.Context) GetPrivateApplicationLogoArrayOutput {
 	return o
+}
+
+func (o GetPrivateApplicationLogoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPrivateApplicationLogo] {
+	return pulumix.Output[[]GetPrivateApplicationLogo]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPrivateApplicationLogoArrayOutput) Index(i pulumi.IntInput) GetPrivateApplicationLogoOutput {
@@ -451,6 +524,12 @@ func (i GetPrivateApplicationPackageDetailArgs) ToGetPrivateApplicationPackageDe
 	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateApplicationPackageDetailOutput)
 }
 
+func (i GetPrivateApplicationPackageDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetPrivateApplicationPackageDetail] {
+	return pulumix.Output[GetPrivateApplicationPackageDetail]{
+		OutputState: i.ToGetPrivateApplicationPackageDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPrivateApplicationPackageDetailArrayInput is an input type that accepts GetPrivateApplicationPackageDetailArray and GetPrivateApplicationPackageDetailArrayOutput values.
 // You can construct a concrete instance of `GetPrivateApplicationPackageDetailArrayInput` via:
 //
@@ -476,6 +555,12 @@ func (i GetPrivateApplicationPackageDetailArray) ToGetPrivateApplicationPackageD
 	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateApplicationPackageDetailArrayOutput)
 }
 
+func (i GetPrivateApplicationPackageDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPrivateApplicationPackageDetail] {
+	return pulumix.Output[[]GetPrivateApplicationPackageDetail]{
+		OutputState: i.ToGetPrivateApplicationPackageDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPrivateApplicationPackageDetailOutput struct{ *pulumi.OutputState }
 
 func (GetPrivateApplicationPackageDetailOutput) ElementType() reflect.Type {
@@ -488,6 +573,12 @@ func (o GetPrivateApplicationPackageDetailOutput) ToGetPrivateApplicationPackage
 
 func (o GetPrivateApplicationPackageDetailOutput) ToGetPrivateApplicationPackageDetailOutputWithContext(ctx context.Context) GetPrivateApplicationPackageDetailOutput {
 	return o
+}
+
+func (o GetPrivateApplicationPackageDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetPrivateApplicationPackageDetail] {
+	return pulumix.Output[GetPrivateApplicationPackageDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Type of packages within this private application.
@@ -515,6 +606,12 @@ func (o GetPrivateApplicationPackageDetailArrayOutput) ToGetPrivateApplicationPa
 
 func (o GetPrivateApplicationPackageDetailArrayOutput) ToGetPrivateApplicationPackageDetailArrayOutputWithContext(ctx context.Context) GetPrivateApplicationPackageDetailArrayOutput {
 	return o
+}
+
+func (o GetPrivateApplicationPackageDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPrivateApplicationPackageDetail] {
+	return pulumix.Output[[]GetPrivateApplicationPackageDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPrivateApplicationPackageDetailArrayOutput) Index(i pulumi.IntInput) GetPrivateApplicationPackageDetailOutput {
@@ -558,6 +655,12 @@ func (i GetPrivateApplicationPackagesFilterArgs) ToGetPrivateApplicationPackages
 	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateApplicationPackagesFilterOutput)
 }
 
+func (i GetPrivateApplicationPackagesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetPrivateApplicationPackagesFilter] {
+	return pulumix.Output[GetPrivateApplicationPackagesFilter]{
+		OutputState: i.ToGetPrivateApplicationPackagesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPrivateApplicationPackagesFilterArrayInput is an input type that accepts GetPrivateApplicationPackagesFilterArray and GetPrivateApplicationPackagesFilterArrayOutput values.
 // You can construct a concrete instance of `GetPrivateApplicationPackagesFilterArrayInput` via:
 //
@@ -583,6 +686,12 @@ func (i GetPrivateApplicationPackagesFilterArray) ToGetPrivateApplicationPackage
 	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateApplicationPackagesFilterArrayOutput)
 }
 
+func (i GetPrivateApplicationPackagesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPrivateApplicationPackagesFilter] {
+	return pulumix.Output[[]GetPrivateApplicationPackagesFilter]{
+		OutputState: i.ToGetPrivateApplicationPackagesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPrivateApplicationPackagesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetPrivateApplicationPackagesFilterOutput) ElementType() reflect.Type {
@@ -595,6 +704,12 @@ func (o GetPrivateApplicationPackagesFilterOutput) ToGetPrivateApplicationPackag
 
 func (o GetPrivateApplicationPackagesFilterOutput) ToGetPrivateApplicationPackagesFilterOutputWithContext(ctx context.Context) GetPrivateApplicationPackagesFilterOutput {
 	return o
+}
+
+func (o GetPrivateApplicationPackagesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetPrivateApplicationPackagesFilter] {
+	return pulumix.Output[GetPrivateApplicationPackagesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPrivateApplicationPackagesFilterOutput) Name() pulumi.StringOutput {
@@ -621,6 +736,12 @@ func (o GetPrivateApplicationPackagesFilterArrayOutput) ToGetPrivateApplicationP
 
 func (o GetPrivateApplicationPackagesFilterArrayOutput) ToGetPrivateApplicationPackagesFilterArrayOutputWithContext(ctx context.Context) GetPrivateApplicationPackagesFilterArrayOutput {
 	return o
+}
+
+func (o GetPrivateApplicationPackagesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPrivateApplicationPackagesFilter] {
+	return pulumix.Output[[]GetPrivateApplicationPackagesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPrivateApplicationPackagesFilterArrayOutput) Index(i pulumi.IntInput) GetPrivateApplicationPackagesFilterOutput {
@@ -660,6 +781,12 @@ func (i GetPrivateApplicationPackagesPrivateApplicationPackageCollectionArgs) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateApplicationPackagesPrivateApplicationPackageCollectionOutput)
 }
 
+func (i GetPrivateApplicationPackagesPrivateApplicationPackageCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetPrivateApplicationPackagesPrivateApplicationPackageCollection] {
+	return pulumix.Output[GetPrivateApplicationPackagesPrivateApplicationPackageCollection]{
+		OutputState: i.ToGetPrivateApplicationPackagesPrivateApplicationPackageCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPrivateApplicationPackagesPrivateApplicationPackageCollectionArrayInput is an input type that accepts GetPrivateApplicationPackagesPrivateApplicationPackageCollectionArray and GetPrivateApplicationPackagesPrivateApplicationPackageCollectionArrayOutput values.
 // You can construct a concrete instance of `GetPrivateApplicationPackagesPrivateApplicationPackageCollectionArrayInput` via:
 //
@@ -685,6 +812,12 @@ func (i GetPrivateApplicationPackagesPrivateApplicationPackageCollectionArray) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateApplicationPackagesPrivateApplicationPackageCollectionArrayOutput)
 }
 
+func (i GetPrivateApplicationPackagesPrivateApplicationPackageCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPrivateApplicationPackagesPrivateApplicationPackageCollection] {
+	return pulumix.Output[[]GetPrivateApplicationPackagesPrivateApplicationPackageCollection]{
+		OutputState: i.ToGetPrivateApplicationPackagesPrivateApplicationPackageCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPrivateApplicationPackagesPrivateApplicationPackageCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetPrivateApplicationPackagesPrivateApplicationPackageCollectionOutput) ElementType() reflect.Type {
@@ -697,6 +830,12 @@ func (o GetPrivateApplicationPackagesPrivateApplicationPackageCollectionOutput) 
 
 func (o GetPrivateApplicationPackagesPrivateApplicationPackageCollectionOutput) ToGetPrivateApplicationPackagesPrivateApplicationPackageCollectionOutputWithContext(ctx context.Context) GetPrivateApplicationPackagesPrivateApplicationPackageCollectionOutput {
 	return o
+}
+
+func (o GetPrivateApplicationPackagesPrivateApplicationPackageCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetPrivateApplicationPackagesPrivateApplicationPackageCollection] {
+	return pulumix.Output[GetPrivateApplicationPackagesPrivateApplicationPackageCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPrivateApplicationPackagesPrivateApplicationPackageCollectionOutput) Items() GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemArrayOutput {
@@ -717,6 +856,12 @@ func (o GetPrivateApplicationPackagesPrivateApplicationPackageCollectionArrayOut
 
 func (o GetPrivateApplicationPackagesPrivateApplicationPackageCollectionArrayOutput) ToGetPrivateApplicationPackagesPrivateApplicationPackageCollectionArrayOutputWithContext(ctx context.Context) GetPrivateApplicationPackagesPrivateApplicationPackageCollectionArrayOutput {
 	return o
+}
+
+func (o GetPrivateApplicationPackagesPrivateApplicationPackageCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPrivateApplicationPackagesPrivateApplicationPackageCollection] {
+	return pulumix.Output[[]GetPrivateApplicationPackagesPrivateApplicationPackageCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPrivateApplicationPackagesPrivateApplicationPackageCollectionArrayOutput) Index(i pulumi.IntInput) GetPrivateApplicationPackagesPrivateApplicationPackageCollectionOutput {
@@ -782,6 +927,12 @@ func (i GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemArgs
 	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemOutput)
 }
 
+func (i GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItem] {
+	return pulumix.Output[GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItem]{
+		OutputState: i.ToGetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemArrayInput is an input type that accepts GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemArray and GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemArrayInput` via:
 //
@@ -807,6 +958,12 @@ func (i GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemArra
 	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemArrayOutput)
 }
 
+func (i GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItem] {
+	return pulumix.Output[[]GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItem]{
+		OutputState: i.ToGetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemOutput) ElementType() reflect.Type {
@@ -819,6 +976,12 @@ func (o GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemOutp
 
 func (o GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemOutput) ToGetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemOutputWithContext(ctx context.Context) GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemOutput {
 	return o
+}
+
+func (o GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItem] {
+	return pulumix.Output[GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemOutput) ContentUrl() pulumi.StringOutput {
@@ -883,6 +1046,12 @@ func (o GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemArra
 	return o
 }
 
+func (o GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItem] {
+	return pulumix.Output[[]GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemArrayOutput) Index(i pulumi.IntInput) GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItem {
 		return vs[0].([]GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItem)[vs[1].(int)]
@@ -924,6 +1093,12 @@ func (i GetPrivateApplicationsFilterArgs) ToGetPrivateApplicationsFilterOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateApplicationsFilterOutput)
 }
 
+func (i GetPrivateApplicationsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetPrivateApplicationsFilter] {
+	return pulumix.Output[GetPrivateApplicationsFilter]{
+		OutputState: i.ToGetPrivateApplicationsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPrivateApplicationsFilterArrayInput is an input type that accepts GetPrivateApplicationsFilterArray and GetPrivateApplicationsFilterArrayOutput values.
 // You can construct a concrete instance of `GetPrivateApplicationsFilterArrayInput` via:
 //
@@ -949,6 +1124,12 @@ func (i GetPrivateApplicationsFilterArray) ToGetPrivateApplicationsFilterArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateApplicationsFilterArrayOutput)
 }
 
+func (i GetPrivateApplicationsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPrivateApplicationsFilter] {
+	return pulumix.Output[[]GetPrivateApplicationsFilter]{
+		OutputState: i.ToGetPrivateApplicationsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPrivateApplicationsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetPrivateApplicationsFilterOutput) ElementType() reflect.Type {
@@ -961,6 +1142,12 @@ func (o GetPrivateApplicationsFilterOutput) ToGetPrivateApplicationsFilterOutput
 
 func (o GetPrivateApplicationsFilterOutput) ToGetPrivateApplicationsFilterOutputWithContext(ctx context.Context) GetPrivateApplicationsFilterOutput {
 	return o
+}
+
+func (o GetPrivateApplicationsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetPrivateApplicationsFilter] {
+	return pulumix.Output[GetPrivateApplicationsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPrivateApplicationsFilterOutput) Name() pulumi.StringOutput {
@@ -987,6 +1174,12 @@ func (o GetPrivateApplicationsFilterArrayOutput) ToGetPrivateApplicationsFilterA
 
 func (o GetPrivateApplicationsFilterArrayOutput) ToGetPrivateApplicationsFilterArrayOutputWithContext(ctx context.Context) GetPrivateApplicationsFilterArrayOutput {
 	return o
+}
+
+func (o GetPrivateApplicationsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPrivateApplicationsFilter] {
+	return pulumix.Output[[]GetPrivateApplicationsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPrivateApplicationsFilterArrayOutput) Index(i pulumi.IntInput) GetPrivateApplicationsFilterOutput {
@@ -1026,6 +1219,12 @@ func (i GetPrivateApplicationsPrivateApplicationCollectionArgs) ToGetPrivateAppl
 	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateApplicationsPrivateApplicationCollectionOutput)
 }
 
+func (i GetPrivateApplicationsPrivateApplicationCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetPrivateApplicationsPrivateApplicationCollection] {
+	return pulumix.Output[GetPrivateApplicationsPrivateApplicationCollection]{
+		OutputState: i.ToGetPrivateApplicationsPrivateApplicationCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPrivateApplicationsPrivateApplicationCollectionArrayInput is an input type that accepts GetPrivateApplicationsPrivateApplicationCollectionArray and GetPrivateApplicationsPrivateApplicationCollectionArrayOutput values.
 // You can construct a concrete instance of `GetPrivateApplicationsPrivateApplicationCollectionArrayInput` via:
 //
@@ -1051,6 +1250,12 @@ func (i GetPrivateApplicationsPrivateApplicationCollectionArray) ToGetPrivateApp
 	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateApplicationsPrivateApplicationCollectionArrayOutput)
 }
 
+func (i GetPrivateApplicationsPrivateApplicationCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPrivateApplicationsPrivateApplicationCollection] {
+	return pulumix.Output[[]GetPrivateApplicationsPrivateApplicationCollection]{
+		OutputState: i.ToGetPrivateApplicationsPrivateApplicationCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPrivateApplicationsPrivateApplicationCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetPrivateApplicationsPrivateApplicationCollectionOutput) ElementType() reflect.Type {
@@ -1063,6 +1268,12 @@ func (o GetPrivateApplicationsPrivateApplicationCollectionOutput) ToGetPrivateAp
 
 func (o GetPrivateApplicationsPrivateApplicationCollectionOutput) ToGetPrivateApplicationsPrivateApplicationCollectionOutputWithContext(ctx context.Context) GetPrivateApplicationsPrivateApplicationCollectionOutput {
 	return o
+}
+
+func (o GetPrivateApplicationsPrivateApplicationCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetPrivateApplicationsPrivateApplicationCollection] {
+	return pulumix.Output[GetPrivateApplicationsPrivateApplicationCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPrivateApplicationsPrivateApplicationCollectionOutput) Items() GetPrivateApplicationsPrivateApplicationCollectionItemArrayOutput {
@@ -1083,6 +1294,12 @@ func (o GetPrivateApplicationsPrivateApplicationCollectionArrayOutput) ToGetPriv
 
 func (o GetPrivateApplicationsPrivateApplicationCollectionArrayOutput) ToGetPrivateApplicationsPrivateApplicationCollectionArrayOutputWithContext(ctx context.Context) GetPrivateApplicationsPrivateApplicationCollectionArrayOutput {
 	return o
+}
+
+func (o GetPrivateApplicationsPrivateApplicationCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPrivateApplicationsPrivateApplicationCollection] {
+	return pulumix.Output[[]GetPrivateApplicationsPrivateApplicationCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPrivateApplicationsPrivateApplicationCollectionArrayOutput) Index(i pulumi.IntInput) GetPrivateApplicationsPrivateApplicationCollectionOutput {
@@ -1172,6 +1389,12 @@ func (i GetPrivateApplicationsPrivateApplicationCollectionItemArgs) ToGetPrivate
 	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateApplicationsPrivateApplicationCollectionItemOutput)
 }
 
+func (i GetPrivateApplicationsPrivateApplicationCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetPrivateApplicationsPrivateApplicationCollectionItem] {
+	return pulumix.Output[GetPrivateApplicationsPrivateApplicationCollectionItem]{
+		OutputState: i.ToGetPrivateApplicationsPrivateApplicationCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPrivateApplicationsPrivateApplicationCollectionItemArrayInput is an input type that accepts GetPrivateApplicationsPrivateApplicationCollectionItemArray and GetPrivateApplicationsPrivateApplicationCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetPrivateApplicationsPrivateApplicationCollectionItemArrayInput` via:
 //
@@ -1197,6 +1420,12 @@ func (i GetPrivateApplicationsPrivateApplicationCollectionItemArray) ToGetPrivat
 	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateApplicationsPrivateApplicationCollectionItemArrayOutput)
 }
 
+func (i GetPrivateApplicationsPrivateApplicationCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPrivateApplicationsPrivateApplicationCollectionItem] {
+	return pulumix.Output[[]GetPrivateApplicationsPrivateApplicationCollectionItem]{
+		OutputState: i.ToGetPrivateApplicationsPrivateApplicationCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPrivateApplicationsPrivateApplicationCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetPrivateApplicationsPrivateApplicationCollectionItemOutput) ElementType() reflect.Type {
@@ -1209,6 +1438,12 @@ func (o GetPrivateApplicationsPrivateApplicationCollectionItemOutput) ToGetPriva
 
 func (o GetPrivateApplicationsPrivateApplicationCollectionItemOutput) ToGetPrivateApplicationsPrivateApplicationCollectionItemOutputWithContext(ctx context.Context) GetPrivateApplicationsPrivateApplicationCollectionItemOutput {
 	return o
+}
+
+func (o GetPrivateApplicationsPrivateApplicationCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetPrivateApplicationsPrivateApplicationCollectionItem] {
+	return pulumix.Output[GetPrivateApplicationsPrivateApplicationCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The unique identifier for the compartment.
@@ -1301,6 +1536,12 @@ func (o GetPrivateApplicationsPrivateApplicationCollectionItemArrayOutput) ToGet
 	return o
 }
 
+func (o GetPrivateApplicationsPrivateApplicationCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPrivateApplicationsPrivateApplicationCollectionItem] {
+	return pulumix.Output[[]GetPrivateApplicationsPrivateApplicationCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetPrivateApplicationsPrivateApplicationCollectionItemArrayOutput) Index(i pulumi.IntInput) GetPrivateApplicationsPrivateApplicationCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPrivateApplicationsPrivateApplicationCollectionItem {
 		return vs[0].([]GetPrivateApplicationsPrivateApplicationCollectionItem)[vs[1].(int)]
@@ -1348,6 +1589,12 @@ func (i GetPrivateApplicationsPrivateApplicationCollectionItemLogoArgs) ToGetPri
 	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateApplicationsPrivateApplicationCollectionItemLogoOutput)
 }
 
+func (i GetPrivateApplicationsPrivateApplicationCollectionItemLogoArgs) ToOutput(ctx context.Context) pulumix.Output[GetPrivateApplicationsPrivateApplicationCollectionItemLogo] {
+	return pulumix.Output[GetPrivateApplicationsPrivateApplicationCollectionItemLogo]{
+		OutputState: i.ToGetPrivateApplicationsPrivateApplicationCollectionItemLogoOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPrivateApplicationsPrivateApplicationCollectionItemLogoArrayInput is an input type that accepts GetPrivateApplicationsPrivateApplicationCollectionItemLogoArray and GetPrivateApplicationsPrivateApplicationCollectionItemLogoArrayOutput values.
 // You can construct a concrete instance of `GetPrivateApplicationsPrivateApplicationCollectionItemLogoArrayInput` via:
 //
@@ -1373,6 +1620,12 @@ func (i GetPrivateApplicationsPrivateApplicationCollectionItemLogoArray) ToGetPr
 	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateApplicationsPrivateApplicationCollectionItemLogoArrayOutput)
 }
 
+func (i GetPrivateApplicationsPrivateApplicationCollectionItemLogoArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPrivateApplicationsPrivateApplicationCollectionItemLogo] {
+	return pulumix.Output[[]GetPrivateApplicationsPrivateApplicationCollectionItemLogo]{
+		OutputState: i.ToGetPrivateApplicationsPrivateApplicationCollectionItemLogoArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPrivateApplicationsPrivateApplicationCollectionItemLogoOutput struct{ *pulumi.OutputState }
 
 func (GetPrivateApplicationsPrivateApplicationCollectionItemLogoOutput) ElementType() reflect.Type {
@@ -1385,6 +1638,12 @@ func (o GetPrivateApplicationsPrivateApplicationCollectionItemLogoOutput) ToGetP
 
 func (o GetPrivateApplicationsPrivateApplicationCollectionItemLogoOutput) ToGetPrivateApplicationsPrivateApplicationCollectionItemLogoOutputWithContext(ctx context.Context) GetPrivateApplicationsPrivateApplicationCollectionItemLogoOutput {
 	return o
+}
+
+func (o GetPrivateApplicationsPrivateApplicationCollectionItemLogoOutput) ToOutput(ctx context.Context) pulumix.Output[GetPrivateApplicationsPrivateApplicationCollectionItemLogo] {
+	return pulumix.Output[GetPrivateApplicationsPrivateApplicationCollectionItemLogo]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The content URL of the uploaded data.
@@ -1414,6 +1673,12 @@ func (o GetPrivateApplicationsPrivateApplicationCollectionItemLogoArrayOutput) T
 
 func (o GetPrivateApplicationsPrivateApplicationCollectionItemLogoArrayOutput) ToGetPrivateApplicationsPrivateApplicationCollectionItemLogoArrayOutputWithContext(ctx context.Context) GetPrivateApplicationsPrivateApplicationCollectionItemLogoArrayOutput {
 	return o
+}
+
+func (o GetPrivateApplicationsPrivateApplicationCollectionItemLogoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPrivateApplicationsPrivateApplicationCollectionItemLogo] {
+	return pulumix.Output[[]GetPrivateApplicationsPrivateApplicationCollectionItemLogo]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPrivateApplicationsPrivateApplicationCollectionItemLogoArrayOutput) Index(i pulumi.IntInput) GetPrivateApplicationsPrivateApplicationCollectionItemLogoOutput {
@@ -1459,6 +1724,12 @@ func (i GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailArgs)
 	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailOutput)
 }
 
+func (i GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetail] {
+	return pulumix.Output[GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetail]{
+		OutputState: i.ToGetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailArrayInput is an input type that accepts GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailArray and GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailArrayOutput values.
 // You can construct a concrete instance of `GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailArrayInput` via:
 //
@@ -1484,6 +1755,12 @@ func (i GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailArrayOutput)
 }
 
+func (i GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetail] {
+	return pulumix.Output[[]GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetail]{
+		OutputState: i.ToGetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailOutput struct{ *pulumi.OutputState }
 
 func (GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailOutput) ElementType() reflect.Type {
@@ -1496,6 +1773,12 @@ func (o GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailOutpu
 
 func (o GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailOutput) ToGetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailOutputWithContext(ctx context.Context) GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailOutput {
 	return o
+}
+
+func (o GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetail] {
+	return pulumix.Output[GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Type of packages within this private application.
@@ -1527,6 +1810,12 @@ func (o GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailArray
 
 func (o GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailArrayOutput) ToGetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailArrayOutputWithContext(ctx context.Context) GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailArrayOutput {
 	return o
+}
+
+func (o GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetail] {
+	return pulumix.Output[[]GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailArrayOutput) Index(i pulumi.IntInput) GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetailOutput {
@@ -1570,6 +1859,12 @@ func (i GetServiceCatalogAssociationsFilterArgs) ToGetServiceCatalogAssociations
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceCatalogAssociationsFilterOutput)
 }
 
+func (i GetServiceCatalogAssociationsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetServiceCatalogAssociationsFilter] {
+	return pulumix.Output[GetServiceCatalogAssociationsFilter]{
+		OutputState: i.ToGetServiceCatalogAssociationsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetServiceCatalogAssociationsFilterArrayInput is an input type that accepts GetServiceCatalogAssociationsFilterArray and GetServiceCatalogAssociationsFilterArrayOutput values.
 // You can construct a concrete instance of `GetServiceCatalogAssociationsFilterArrayInput` via:
 //
@@ -1595,6 +1890,12 @@ func (i GetServiceCatalogAssociationsFilterArray) ToGetServiceCatalogAssociation
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceCatalogAssociationsFilterArrayOutput)
 }
 
+func (i GetServiceCatalogAssociationsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceCatalogAssociationsFilter] {
+	return pulumix.Output[[]GetServiceCatalogAssociationsFilter]{
+		OutputState: i.ToGetServiceCatalogAssociationsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetServiceCatalogAssociationsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetServiceCatalogAssociationsFilterOutput) ElementType() reflect.Type {
@@ -1607,6 +1908,12 @@ func (o GetServiceCatalogAssociationsFilterOutput) ToGetServiceCatalogAssociatio
 
 func (o GetServiceCatalogAssociationsFilterOutput) ToGetServiceCatalogAssociationsFilterOutputWithContext(ctx context.Context) GetServiceCatalogAssociationsFilterOutput {
 	return o
+}
+
+func (o GetServiceCatalogAssociationsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceCatalogAssociationsFilter] {
+	return pulumix.Output[GetServiceCatalogAssociationsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetServiceCatalogAssociationsFilterOutput) Name() pulumi.StringOutput {
@@ -1633,6 +1940,12 @@ func (o GetServiceCatalogAssociationsFilterArrayOutput) ToGetServiceCatalogAssoc
 
 func (o GetServiceCatalogAssociationsFilterArrayOutput) ToGetServiceCatalogAssociationsFilterArrayOutputWithContext(ctx context.Context) GetServiceCatalogAssociationsFilterArrayOutput {
 	return o
+}
+
+func (o GetServiceCatalogAssociationsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceCatalogAssociationsFilter] {
+	return pulumix.Output[[]GetServiceCatalogAssociationsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetServiceCatalogAssociationsFilterArrayOutput) Index(i pulumi.IntInput) GetServiceCatalogAssociationsFilterOutput {
@@ -1672,6 +1985,12 @@ func (i GetServiceCatalogAssociationsServiceCatalogAssociationCollectionArgs) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceCatalogAssociationsServiceCatalogAssociationCollectionOutput)
 }
 
+func (i GetServiceCatalogAssociationsServiceCatalogAssociationCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetServiceCatalogAssociationsServiceCatalogAssociationCollection] {
+	return pulumix.Output[GetServiceCatalogAssociationsServiceCatalogAssociationCollection]{
+		OutputState: i.ToGetServiceCatalogAssociationsServiceCatalogAssociationCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetServiceCatalogAssociationsServiceCatalogAssociationCollectionArrayInput is an input type that accepts GetServiceCatalogAssociationsServiceCatalogAssociationCollectionArray and GetServiceCatalogAssociationsServiceCatalogAssociationCollectionArrayOutput values.
 // You can construct a concrete instance of `GetServiceCatalogAssociationsServiceCatalogAssociationCollectionArrayInput` via:
 //
@@ -1697,6 +2016,12 @@ func (i GetServiceCatalogAssociationsServiceCatalogAssociationCollectionArray) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceCatalogAssociationsServiceCatalogAssociationCollectionArrayOutput)
 }
 
+func (i GetServiceCatalogAssociationsServiceCatalogAssociationCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceCatalogAssociationsServiceCatalogAssociationCollection] {
+	return pulumix.Output[[]GetServiceCatalogAssociationsServiceCatalogAssociationCollection]{
+		OutputState: i.ToGetServiceCatalogAssociationsServiceCatalogAssociationCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetServiceCatalogAssociationsServiceCatalogAssociationCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetServiceCatalogAssociationsServiceCatalogAssociationCollectionOutput) ElementType() reflect.Type {
@@ -1709,6 +2034,12 @@ func (o GetServiceCatalogAssociationsServiceCatalogAssociationCollectionOutput) 
 
 func (o GetServiceCatalogAssociationsServiceCatalogAssociationCollectionOutput) ToGetServiceCatalogAssociationsServiceCatalogAssociationCollectionOutputWithContext(ctx context.Context) GetServiceCatalogAssociationsServiceCatalogAssociationCollectionOutput {
 	return o
+}
+
+func (o GetServiceCatalogAssociationsServiceCatalogAssociationCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceCatalogAssociationsServiceCatalogAssociationCollection] {
+	return pulumix.Output[GetServiceCatalogAssociationsServiceCatalogAssociationCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetServiceCatalogAssociationsServiceCatalogAssociationCollectionOutput) Items() GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemArrayOutput {
@@ -1729,6 +2060,12 @@ func (o GetServiceCatalogAssociationsServiceCatalogAssociationCollectionArrayOut
 
 func (o GetServiceCatalogAssociationsServiceCatalogAssociationCollectionArrayOutput) ToGetServiceCatalogAssociationsServiceCatalogAssociationCollectionArrayOutputWithContext(ctx context.Context) GetServiceCatalogAssociationsServiceCatalogAssociationCollectionArrayOutput {
 	return o
+}
+
+func (o GetServiceCatalogAssociationsServiceCatalogAssociationCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceCatalogAssociationsServiceCatalogAssociationCollection] {
+	return pulumix.Output[[]GetServiceCatalogAssociationsServiceCatalogAssociationCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetServiceCatalogAssociationsServiceCatalogAssociationCollectionArrayOutput) Index(i pulumi.IntInput) GetServiceCatalogAssociationsServiceCatalogAssociationCollectionOutput {
@@ -1786,6 +2123,12 @@ func (i GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemArgs
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemOutput)
 }
 
+func (i GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItem] {
+	return pulumix.Output[GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItem]{
+		OutputState: i.ToGetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemArrayInput is an input type that accepts GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemArray and GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemArrayInput` via:
 //
@@ -1811,6 +2154,12 @@ func (i GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemArra
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemArrayOutput)
 }
 
+func (i GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItem] {
+	return pulumix.Output[[]GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItem]{
+		OutputState: i.ToGetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemOutput) ElementType() reflect.Type {
@@ -1823,6 +2172,12 @@ func (o GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemOutp
 
 func (o GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemOutput) ToGetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemOutputWithContext(ctx context.Context) GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemOutput {
 	return o
+}
+
+func (o GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItem] {
+	return pulumix.Output[GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The unique identifier of the entity associated with service catalog.
@@ -1870,6 +2225,12 @@ func (o GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemArra
 	return o
 }
 
+func (o GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItem] {
+	return pulumix.Output[[]GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemArrayOutput) Index(i pulumi.IntInput) GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItem {
 		return vs[0].([]GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItem)[vs[1].(int)]
@@ -1911,6 +2272,12 @@ func (i GetServiceCatalogsFilterArgs) ToGetServiceCatalogsFilterOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceCatalogsFilterOutput)
 }
 
+func (i GetServiceCatalogsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetServiceCatalogsFilter] {
+	return pulumix.Output[GetServiceCatalogsFilter]{
+		OutputState: i.ToGetServiceCatalogsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetServiceCatalogsFilterArrayInput is an input type that accepts GetServiceCatalogsFilterArray and GetServiceCatalogsFilterArrayOutput values.
 // You can construct a concrete instance of `GetServiceCatalogsFilterArrayInput` via:
 //
@@ -1936,6 +2303,12 @@ func (i GetServiceCatalogsFilterArray) ToGetServiceCatalogsFilterArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceCatalogsFilterArrayOutput)
 }
 
+func (i GetServiceCatalogsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceCatalogsFilter] {
+	return pulumix.Output[[]GetServiceCatalogsFilter]{
+		OutputState: i.ToGetServiceCatalogsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetServiceCatalogsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetServiceCatalogsFilterOutput) ElementType() reflect.Type {
@@ -1948,6 +2321,12 @@ func (o GetServiceCatalogsFilterOutput) ToGetServiceCatalogsFilterOutput() GetSe
 
 func (o GetServiceCatalogsFilterOutput) ToGetServiceCatalogsFilterOutputWithContext(ctx context.Context) GetServiceCatalogsFilterOutput {
 	return o
+}
+
+func (o GetServiceCatalogsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceCatalogsFilter] {
+	return pulumix.Output[GetServiceCatalogsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetServiceCatalogsFilterOutput) Name() pulumi.StringOutput {
@@ -1974,6 +2353,12 @@ func (o GetServiceCatalogsFilterArrayOutput) ToGetServiceCatalogsFilterArrayOutp
 
 func (o GetServiceCatalogsFilterArrayOutput) ToGetServiceCatalogsFilterArrayOutputWithContext(ctx context.Context) GetServiceCatalogsFilterArrayOutput {
 	return o
+}
+
+func (o GetServiceCatalogsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceCatalogsFilter] {
+	return pulumix.Output[[]GetServiceCatalogsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetServiceCatalogsFilterArrayOutput) Index(i pulumi.IntInput) GetServiceCatalogsFilterOutput {
@@ -2013,6 +2398,12 @@ func (i GetServiceCatalogsServiceCatalogCollectionArgs) ToGetServiceCatalogsServ
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceCatalogsServiceCatalogCollectionOutput)
 }
 
+func (i GetServiceCatalogsServiceCatalogCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetServiceCatalogsServiceCatalogCollection] {
+	return pulumix.Output[GetServiceCatalogsServiceCatalogCollection]{
+		OutputState: i.ToGetServiceCatalogsServiceCatalogCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetServiceCatalogsServiceCatalogCollectionArrayInput is an input type that accepts GetServiceCatalogsServiceCatalogCollectionArray and GetServiceCatalogsServiceCatalogCollectionArrayOutput values.
 // You can construct a concrete instance of `GetServiceCatalogsServiceCatalogCollectionArrayInput` via:
 //
@@ -2038,6 +2429,12 @@ func (i GetServiceCatalogsServiceCatalogCollectionArray) ToGetServiceCatalogsSer
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceCatalogsServiceCatalogCollectionArrayOutput)
 }
 
+func (i GetServiceCatalogsServiceCatalogCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceCatalogsServiceCatalogCollection] {
+	return pulumix.Output[[]GetServiceCatalogsServiceCatalogCollection]{
+		OutputState: i.ToGetServiceCatalogsServiceCatalogCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetServiceCatalogsServiceCatalogCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetServiceCatalogsServiceCatalogCollectionOutput) ElementType() reflect.Type {
@@ -2050,6 +2447,12 @@ func (o GetServiceCatalogsServiceCatalogCollectionOutput) ToGetServiceCatalogsSe
 
 func (o GetServiceCatalogsServiceCatalogCollectionOutput) ToGetServiceCatalogsServiceCatalogCollectionOutputWithContext(ctx context.Context) GetServiceCatalogsServiceCatalogCollectionOutput {
 	return o
+}
+
+func (o GetServiceCatalogsServiceCatalogCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceCatalogsServiceCatalogCollection] {
+	return pulumix.Output[GetServiceCatalogsServiceCatalogCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetServiceCatalogsServiceCatalogCollectionOutput) Items() GetServiceCatalogsServiceCatalogCollectionItemArrayOutput {
@@ -2070,6 +2473,12 @@ func (o GetServiceCatalogsServiceCatalogCollectionArrayOutput) ToGetServiceCatal
 
 func (o GetServiceCatalogsServiceCatalogCollectionArrayOutput) ToGetServiceCatalogsServiceCatalogCollectionArrayOutputWithContext(ctx context.Context) GetServiceCatalogsServiceCatalogCollectionArrayOutput {
 	return o
+}
+
+func (o GetServiceCatalogsServiceCatalogCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceCatalogsServiceCatalogCollection] {
+	return pulumix.Output[[]GetServiceCatalogsServiceCatalogCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetServiceCatalogsServiceCatalogCollectionArrayOutput) Index(i pulumi.IntInput) GetServiceCatalogsServiceCatalogCollectionOutput {
@@ -2139,6 +2548,12 @@ func (i GetServiceCatalogsServiceCatalogCollectionItemArgs) ToGetServiceCatalogs
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceCatalogsServiceCatalogCollectionItemOutput)
 }
 
+func (i GetServiceCatalogsServiceCatalogCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetServiceCatalogsServiceCatalogCollectionItem] {
+	return pulumix.Output[GetServiceCatalogsServiceCatalogCollectionItem]{
+		OutputState: i.ToGetServiceCatalogsServiceCatalogCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetServiceCatalogsServiceCatalogCollectionItemArrayInput is an input type that accepts GetServiceCatalogsServiceCatalogCollectionItemArray and GetServiceCatalogsServiceCatalogCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetServiceCatalogsServiceCatalogCollectionItemArrayInput` via:
 //
@@ -2164,6 +2579,12 @@ func (i GetServiceCatalogsServiceCatalogCollectionItemArray) ToGetServiceCatalog
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceCatalogsServiceCatalogCollectionItemArrayOutput)
 }
 
+func (i GetServiceCatalogsServiceCatalogCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceCatalogsServiceCatalogCollectionItem] {
+	return pulumix.Output[[]GetServiceCatalogsServiceCatalogCollectionItem]{
+		OutputState: i.ToGetServiceCatalogsServiceCatalogCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetServiceCatalogsServiceCatalogCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetServiceCatalogsServiceCatalogCollectionItemOutput) ElementType() reflect.Type {
@@ -2176,6 +2597,12 @@ func (o GetServiceCatalogsServiceCatalogCollectionItemOutput) ToGetServiceCatalo
 
 func (o GetServiceCatalogsServiceCatalogCollectionItemOutput) ToGetServiceCatalogsServiceCatalogCollectionItemOutputWithContext(ctx context.Context) GetServiceCatalogsServiceCatalogCollectionItemOutput {
 	return o
+}
+
+func (o GetServiceCatalogsServiceCatalogCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceCatalogsServiceCatalogCollectionItem] {
+	return pulumix.Output[GetServiceCatalogsServiceCatalogCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The unique identifier for the compartment.
@@ -2230,6 +2657,12 @@ func (o GetServiceCatalogsServiceCatalogCollectionItemArrayOutput) ToGetServiceC
 
 func (o GetServiceCatalogsServiceCatalogCollectionItemArrayOutput) ToGetServiceCatalogsServiceCatalogCollectionItemArrayOutputWithContext(ctx context.Context) GetServiceCatalogsServiceCatalogCollectionItemArrayOutput {
 	return o
+}
+
+func (o GetServiceCatalogsServiceCatalogCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceCatalogsServiceCatalogCollectionItem] {
+	return pulumix.Output[[]GetServiceCatalogsServiceCatalogCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetServiceCatalogsServiceCatalogCollectionItemArrayOutput) Index(i pulumi.IntInput) GetServiceCatalogsServiceCatalogCollectionItemOutput {

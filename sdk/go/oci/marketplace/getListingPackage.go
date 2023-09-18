@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Listing Package resource in Oracle Cloud Infrastructure Marketplace service.
@@ -151,6 +152,12 @@ func (o GetListingPackageResultOutput) ToGetListingPackageResultOutput() GetList
 
 func (o GetListingPackageResultOutput) ToGetListingPackageResultOutputWithContext(ctx context.Context) GetListingPackageResultOutput {
 	return o
+}
+
+func (o GetListingPackageResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingPackageResult] {
+	return pulumix.Output[GetListingPackageResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The ID of the listing resource associated with this listing package. For more information, see [AppCatalogListing](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListing/) in the Core Services API.

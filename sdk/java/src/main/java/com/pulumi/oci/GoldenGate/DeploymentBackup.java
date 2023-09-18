@@ -74,7 +74,7 @@ public class DeploymentBackup extends com.pulumi.resources.CustomResource {
      * Possible Deployment backup types.
      * 
      */
-    @Export(name="backupType", type=String.class, parameters={})
+    @Export(name="backupType", refs={String.class}, tree="[0]")
     private Output<String> backupType;
 
     /**
@@ -88,7 +88,7 @@ public class DeploymentBackup extends com.pulumi.resources.CustomResource {
      * Name of the bucket where the object is to be uploaded in the object storage
      * 
      */
-    @Export(name="bucket", type=String.class, parameters={})
+    @Export(name="bucket", refs={String.class}, tree="[0]")
     private Output<String> bucket;
 
     /**
@@ -102,7 +102,7 @@ public class DeploymentBackup extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -116,7 +116,7 @@ public class DeploymentBackup extends com.pulumi.resources.CustomResource {
      * (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -130,7 +130,7 @@ public class DeploymentBackup extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      * 
      */
-    @Export(name="deploymentId", type=String.class, parameters={})
+    @Export(name="deploymentId", refs={String.class}, tree="[0]")
     private Output<String> deploymentId;
 
     /**
@@ -144,7 +144,7 @@ public class DeploymentBackup extends com.pulumi.resources.CustomResource {
      * An object&#39;s Display Name.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -158,7 +158,7 @@ public class DeploymentBackup extends com.pulumi.resources.CustomResource {
      * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -172,7 +172,7 @@ public class DeploymentBackup extends com.pulumi.resources.CustomResource {
      * True if this object is automatically created
      * 
      */
-    @Export(name="isAutomatic", type=Boolean.class, parameters={})
+    @Export(name="isAutomatic", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isAutomatic;
 
     /**
@@ -186,7 +186,7 @@ public class DeploymentBackup extends com.pulumi.resources.CustomResource {
      * Describes the object&#39;s current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -200,7 +200,7 @@ public class DeploymentBackup extends com.pulumi.resources.CustomResource {
      * Name of namespace that serves as a container for all of your buckets
      * 
      */
-    @Export(name="namespace", type=String.class, parameters={})
+    @Export(name="namespace", refs={String.class}, tree="[0]")
     private Output<String> namespace;
 
     /**
@@ -217,7 +217,7 @@ public class DeploymentBackup extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="object", type=String.class, parameters={})
+    @Export(name="object", refs={String.class}, tree="[0]")
     private Output<String> object;
 
     /**
@@ -234,7 +234,7 @@ public class DeploymentBackup extends com.pulumi.resources.CustomResource {
      * Version of OGG
      * 
      */
-    @Export(name="oggVersion", type=String.class, parameters={})
+    @Export(name="oggVersion", refs={String.class}, tree="[0]")
     private Output<String> oggVersion;
 
     /**
@@ -248,7 +248,7 @@ public class DeploymentBackup extends com.pulumi.resources.CustomResource {
      * The size of the backup stored in object storage (in bytes)
      * 
      */
-    @Export(name="sizeInBytes", type=Double.class, parameters={})
+    @Export(name="sizeInBytes", refs={Double.class}, tree="[0]")
     private Output<Double> sizeInBytes;
 
     /**
@@ -262,7 +262,7 @@ public class DeploymentBackup extends com.pulumi.resources.CustomResource {
      * Possible lifecycle states.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -276,7 +276,7 @@ public class DeploymentBackup extends com.pulumi.resources.CustomResource {
      * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -290,7 +290,7 @@ public class DeploymentBackup extends com.pulumi.resources.CustomResource {
      * The time of the resource backup finish. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    @Export(name="timeBackupFinished", type=String.class, parameters={})
+    @Export(name="timeBackupFinished", refs={String.class}, tree="[0]")
     private Output<String> timeBackupFinished;
 
     /**
@@ -304,7 +304,7 @@ public class DeploymentBackup extends com.pulumi.resources.CustomResource {
      * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -318,7 +318,7 @@ public class DeploymentBackup extends com.pulumi.resources.CustomResource {
      * The time of the resource backup. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    @Export(name="timeOfBackup", type=String.class, parameters={})
+    @Export(name="timeOfBackup", refs={String.class}, tree="[0]")
     private Output<String> timeOfBackup;
 
     /**
@@ -332,7 +332,7 @@ public class DeploymentBackup extends com.pulumi.resources.CustomResource {
      * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Detector Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -262,6 +263,12 @@ func (i *DetectorRecipe) ToDetectorRecipeOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(DetectorRecipeOutput)
 }
 
+func (i *DetectorRecipe) ToOutput(ctx context.Context) pulumix.Output[*DetectorRecipe] {
+	return pulumix.Output[*DetectorRecipe]{
+		OutputState: i.ToDetectorRecipeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // DetectorRecipeArrayInput is an input type that accepts DetectorRecipeArray and DetectorRecipeArrayOutput values.
 // You can construct a concrete instance of `DetectorRecipeArrayInput` via:
 //
@@ -285,6 +292,12 @@ func (i DetectorRecipeArray) ToDetectorRecipeArrayOutput() DetectorRecipeArrayOu
 
 func (i DetectorRecipeArray) ToDetectorRecipeArrayOutputWithContext(ctx context.Context) DetectorRecipeArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DetectorRecipeArrayOutput)
+}
+
+func (i DetectorRecipeArray) ToOutput(ctx context.Context) pulumix.Output[[]*DetectorRecipe] {
+	return pulumix.Output[[]*DetectorRecipe]{
+		OutputState: i.ToDetectorRecipeArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // DetectorRecipeMapInput is an input type that accepts DetectorRecipeMap and DetectorRecipeMapOutput values.
@@ -312,6 +325,12 @@ func (i DetectorRecipeMap) ToDetectorRecipeMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(DetectorRecipeMapOutput)
 }
 
+func (i DetectorRecipeMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DetectorRecipe] {
+	return pulumix.Output[map[string]*DetectorRecipe]{
+		OutputState: i.ToDetectorRecipeMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type DetectorRecipeOutput struct{ *pulumi.OutputState }
 
 func (DetectorRecipeOutput) ElementType() reflect.Type {
@@ -324,6 +343,12 @@ func (o DetectorRecipeOutput) ToDetectorRecipeOutput() DetectorRecipeOutput {
 
 func (o DetectorRecipeOutput) ToDetectorRecipeOutputWithContext(ctx context.Context) DetectorRecipeOutput {
 	return o
+}
+
+func (o DetectorRecipeOutput) ToOutput(ctx context.Context) pulumix.Output[*DetectorRecipe] {
+	return pulumix.Output[*DetectorRecipe]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Compartment Identifier
@@ -424,6 +449,12 @@ func (o DetectorRecipeArrayOutput) ToDetectorRecipeArrayOutputWithContext(ctx co
 	return o
 }
 
+func (o DetectorRecipeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DetectorRecipe] {
+	return pulumix.Output[[]*DetectorRecipe]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o DetectorRecipeArrayOutput) Index(i pulumi.IntInput) DetectorRecipeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DetectorRecipe {
 		return vs[0].([]*DetectorRecipe)[vs[1].(int)]
@@ -442,6 +473,12 @@ func (o DetectorRecipeMapOutput) ToDetectorRecipeMapOutput() DetectorRecipeMapOu
 
 func (o DetectorRecipeMapOutput) ToDetectorRecipeMapOutputWithContext(ctx context.Context) DetectorRecipeMapOutput {
 	return o
+}
+
+func (o DetectorRecipeMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DetectorRecipe] {
+	return pulumix.Output[map[string]*DetectorRecipe]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o DetectorRecipeMapOutput) MapIndex(k pulumi.StringInput) DetectorRecipeOutput {

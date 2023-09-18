@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the License Record resource in Oracle Cloud Infrastructure License Manager service.
@@ -307,6 +308,12 @@ func (i *LicenseRecord) ToLicenseRecordOutputWithContext(ctx context.Context) Li
 	return pulumi.ToOutputWithContext(ctx, i).(LicenseRecordOutput)
 }
 
+func (i *LicenseRecord) ToOutput(ctx context.Context) pulumix.Output[*LicenseRecord] {
+	return pulumix.Output[*LicenseRecord]{
+		OutputState: i.ToLicenseRecordOutputWithContext(ctx).OutputState,
+	}
+}
+
 // LicenseRecordArrayInput is an input type that accepts LicenseRecordArray and LicenseRecordArrayOutput values.
 // You can construct a concrete instance of `LicenseRecordArrayInput` via:
 //
@@ -330,6 +337,12 @@ func (i LicenseRecordArray) ToLicenseRecordArrayOutput() LicenseRecordArrayOutpu
 
 func (i LicenseRecordArray) ToLicenseRecordArrayOutputWithContext(ctx context.Context) LicenseRecordArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(LicenseRecordArrayOutput)
+}
+
+func (i LicenseRecordArray) ToOutput(ctx context.Context) pulumix.Output[[]*LicenseRecord] {
+	return pulumix.Output[[]*LicenseRecord]{
+		OutputState: i.ToLicenseRecordArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // LicenseRecordMapInput is an input type that accepts LicenseRecordMap and LicenseRecordMapOutput values.
@@ -357,6 +370,12 @@ func (i LicenseRecordMap) ToLicenseRecordMapOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(LicenseRecordMapOutput)
 }
 
+func (i LicenseRecordMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*LicenseRecord] {
+	return pulumix.Output[map[string]*LicenseRecord]{
+		OutputState: i.ToLicenseRecordMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type LicenseRecordOutput struct{ *pulumi.OutputState }
 
 func (LicenseRecordOutput) ElementType() reflect.Type {
@@ -369,6 +388,12 @@ func (o LicenseRecordOutput) ToLicenseRecordOutput() LicenseRecordOutput {
 
 func (o LicenseRecordOutput) ToLicenseRecordOutputWithContext(ctx context.Context) LicenseRecordOutput {
 	return o
+}
+
+func (o LicenseRecordOutput) ToOutput(ctx context.Context) pulumix.Output[*LicenseRecord] {
+	return pulumix.Output[*LicenseRecord]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the license record is created.
@@ -473,6 +498,12 @@ func (o LicenseRecordArrayOutput) ToLicenseRecordArrayOutputWithContext(ctx cont
 	return o
 }
 
+func (o LicenseRecordArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*LicenseRecord] {
+	return pulumix.Output[[]*LicenseRecord]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o LicenseRecordArrayOutput) Index(i pulumi.IntInput) LicenseRecordOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *LicenseRecord {
 		return vs[0].([]*LicenseRecord)[vs[1].(int)]
@@ -491,6 +522,12 @@ func (o LicenseRecordMapOutput) ToLicenseRecordMapOutput() LicenseRecordMapOutpu
 
 func (o LicenseRecordMapOutput) ToLicenseRecordMapOutputWithContext(ctx context.Context) LicenseRecordMapOutput {
 	return o
+}
+
+func (o LicenseRecordMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*LicenseRecord] {
+	return pulumix.Output[map[string]*LicenseRecord]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o LicenseRecordMapOutput) MapIndex(k pulumi.StringInput) LicenseRecordOutput {

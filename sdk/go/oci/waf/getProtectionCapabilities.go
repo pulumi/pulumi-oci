@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Protection Capabilities in Oracle Cloud Infrastructure Waf service.
@@ -140,6 +141,12 @@ func (o GetProtectionCapabilitiesResultOutput) ToGetProtectionCapabilitiesResult
 
 func (o GetProtectionCapabilitiesResultOutput) ToGetProtectionCapabilitiesResultOutputWithContext(ctx context.Context) GetProtectionCapabilitiesResultOutput {
 	return o
+}
+
+func (o GetProtectionCapabilitiesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetProtectionCapabilitiesResult] {
+	return pulumix.Output[GetProtectionCapabilitiesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetProtectionCapabilitiesResultOutput) CompartmentId() pulumi.StringOutput {

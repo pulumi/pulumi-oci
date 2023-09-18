@@ -75,7 +75,7 @@ public class PluggableDatabaseManagementsManagement extends com.pulumi.resources
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -89,7 +89,7 @@ public class PluggableDatabaseManagementsManagement extends com.pulumi.resources
      * Connection strings to connect to an Oracle Pluggable Database.
      * 
      */
-    @Export(name="connectionStrings", type=List.class, parameters={PluggableDatabaseManagementsManagementConnectionString.class})
+    @Export(name="connectionStrings", refs={List.class,PluggableDatabaseManagementsManagementConnectionString.class}, tree="[0,1]")
     private Output<List<PluggableDatabaseManagementsManagementConnectionString>> connectionStrings;
 
     /**
@@ -103,7 +103,7 @@ public class PluggableDatabaseManagementsManagement extends com.pulumi.resources
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB.
      * 
      */
-    @Export(name="containerDatabaseId", type=String.class, parameters={})
+    @Export(name="containerDatabaseId", refs={String.class}, tree="[0]")
     private Output<String> containerDatabaseId;
 
     /**
@@ -117,7 +117,7 @@ public class PluggableDatabaseManagementsManagement extends com.pulumi.resources
      * Data for the credential used to connect to the database.
      * 
      */
-    @Export(name="credentialDetails", type=PluggableDatabaseManagementsManagementCredentialDetails.class, parameters={})
+    @Export(name="credentialDetails", refs={PluggableDatabaseManagementsManagementCredentialDetails.class}, tree="[0]")
     private Output<PluggableDatabaseManagementsManagementCredentialDetails> credentialDetails;
 
     /**
@@ -131,7 +131,7 @@ public class PluggableDatabaseManagementsManagement extends com.pulumi.resources
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -148,7 +148,7 @@ public class PluggableDatabaseManagementsManagement extends com.pulumi.resources
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="enablePluggabledatabasemanagement", type=Boolean.class, parameters={})
+    @Export(name="enablePluggabledatabasemanagement", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enablePluggabledatabasemanagement;
 
     /**
@@ -165,7 +165,7 @@ public class PluggableDatabaseManagementsManagement extends com.pulumi.resources
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -179,7 +179,7 @@ public class PluggableDatabaseManagementsManagement extends com.pulumi.resources
      * The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
      * 
      */
-    @Export(name="isRestricted", type=Boolean.class, parameters={})
+    @Export(name="isRestricted", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isRestricted;
 
     /**
@@ -193,7 +193,7 @@ public class PluggableDatabaseManagementsManagement extends com.pulumi.resources
      * Detailed message for the lifecycle state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -207,7 +207,7 @@ public class PluggableDatabaseManagementsManagement extends com.pulumi.resources
      * The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
      * 
      */
-    @Export(name="openMode", type=String.class, parameters={})
+    @Export(name="openMode", refs={String.class}, tree="[0]")
     private Output<String> openMode;
 
     /**
@@ -221,7 +221,7 @@ public class PluggableDatabaseManagementsManagement extends com.pulumi.resources
      * The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
      * 
      */
-    @Export(name="pdbName", type=String.class, parameters={})
+    @Export(name="pdbName", refs={String.class}, tree="[0]")
     private Output<String> pdbName;
 
     /**
@@ -235,7 +235,7 @@ public class PluggableDatabaseManagementsManagement extends com.pulumi.resources
      * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    @Export(name="pluggableDatabaseId", type=String.class, parameters={})
+    @Export(name="pluggableDatabaseId", refs={String.class}, tree="[0]")
     private Output<String> pluggableDatabaseId;
 
     /**
@@ -249,7 +249,7 @@ public class PluggableDatabaseManagementsManagement extends com.pulumi.resources
      * The configuration of the Pluggable Database Management service.
      * 
      */
-    @Export(name="pluggableDatabaseManagementConfigs", type=List.class, parameters={PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfig.class})
+    @Export(name="pluggableDatabaseManagementConfigs", refs={List.class,PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfig.class}, tree="[0,1]")
     private Output<List<PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfig>> pluggableDatabaseManagementConfigs;
 
     /**
@@ -263,7 +263,7 @@ public class PluggableDatabaseManagementsManagement extends com.pulumi.resources
      * The port used to connect to the pluggable database.
      * 
      */
-    @Export(name="port", type=Integer.class, parameters={})
+    @Export(name="port", refs={Integer.class}, tree="[0]")
     private Output<Integer> port;
 
     /**
@@ -277,7 +277,7 @@ public class PluggableDatabaseManagementsManagement extends com.pulumi.resources
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
      * 
      */
-    @Export(name="privateEndPointId", type=String.class, parameters={})
+    @Export(name="privateEndPointId", refs={String.class}, tree="[0]")
     private Output<String> privateEndPointId;
 
     /**
@@ -291,7 +291,7 @@ public class PluggableDatabaseManagementsManagement extends com.pulumi.resources
      * Protocol used by the database connection.
      * 
      */
-    @Export(name="protocol", type=String.class, parameters={})
+    @Export(name="protocol", refs={String.class}, tree="[0]")
     private Output<String> protocol;
 
     /**
@@ -305,7 +305,7 @@ public class PluggableDatabaseManagementsManagement extends com.pulumi.resources
      * The role of the user that will be connecting to the pluggable database.
      * 
      */
-    @Export(name="role", type=String.class, parameters={})
+    @Export(name="role", refs={String.class}, tree="[0]")
     private Output<String> role;
 
     /**
@@ -319,7 +319,7 @@ public class PluggableDatabaseManagementsManagement extends com.pulumi.resources
      * The name of the Oracle Database service that will be used to connect to the database.
      * 
      */
-    @Export(name="serviceName", type=String.class, parameters={})
+    @Export(name="serviceName", refs={String.class}, tree="[0]")
     private Output<String> serviceName;
 
     /**
@@ -333,7 +333,7 @@ public class PluggableDatabaseManagementsManagement extends com.pulumi.resources
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
-    @Export(name="sslSecretId", type=String.class, parameters={})
+    @Export(name="sslSecretId", refs={String.class}, tree="[0]")
     private Output<String> sslSecretId;
 
     /**
@@ -347,7 +347,7 @@ public class PluggableDatabaseManagementsManagement extends com.pulumi.resources
      * The current state of the pluggable database.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -361,7 +361,7 @@ public class PluggableDatabaseManagementsManagement extends com.pulumi.resources
      * The date and time the pluggable database was created.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**

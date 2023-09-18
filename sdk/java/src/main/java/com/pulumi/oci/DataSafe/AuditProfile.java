@@ -40,7 +40,7 @@ public class AuditProfile extends com.pulumi.resources.CustomResource {
      * Indicates number of audit records collected by Data Safe in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
      * 
      */
-    @Export(name="auditCollectedVolume", type=String.class, parameters={})
+    @Export(name="auditCollectedVolume", refs={String.class}, tree="[0]")
     private Output<String> auditCollectedVolume;
 
     /**
@@ -54,7 +54,7 @@ public class AuditProfile extends com.pulumi.resources.CustomResource {
      * The OCID of the audit.
      * 
      */
-    @Export(name="auditProfileId", type=String.class, parameters={})
+    @Export(name="auditProfileId", refs={String.class}, tree="[0]")
     private Output<String> auditProfileId;
 
     /**
@@ -68,7 +68,7 @@ public class AuditProfile extends com.pulumi.resources.CustomResource {
      * Indicates the list of available audit trails on the target.
      * 
      */
-    @Export(name="auditTrails", type=List.class, parameters={AuditProfileAuditTrail.class})
+    @Export(name="auditTrails", refs={List.class,AuditProfileAuditTrail.class}, tree="[0,1]")
     private Output<List<AuditProfileAuditTrail>> auditTrails;
 
     /**
@@ -85,7 +85,7 @@ public class AuditProfile extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="changeRetentionTrigger", type=Integer.class, parameters={})
+    @Export(name="changeRetentionTrigger", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> changeRetentionTrigger;
 
     /**
@@ -102,7 +102,7 @@ public class AuditProfile extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the compartment that contains the audit.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -116,7 +116,7 @@ public class AuditProfile extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -130,7 +130,7 @@ public class AuditProfile extends com.pulumi.resources.CustomResource {
      * (Updatable) The description of the audit profile.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -144,7 +144,7 @@ public class AuditProfile extends com.pulumi.resources.CustomResource {
      * (Updatable) The display name of the audit profile. The name does not have to be unique, and it&#39;s changeable.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -158,7 +158,7 @@ public class AuditProfile extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -172,7 +172,7 @@ public class AuditProfile extends com.pulumi.resources.CustomResource {
      * Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
      * 
      */
-    @Export(name="isOverrideGlobalRetentionSetting", type=Boolean.class, parameters={})
+    @Export(name="isOverrideGlobalRetentionSetting", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isOverrideGlobalRetentionSetting;
 
     /**
@@ -186,7 +186,7 @@ public class AuditProfile extends com.pulumi.resources.CustomResource {
      * (Updatable) Indicates if you want to continue collecting audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. The default value is inherited from the global settings.  You can change at the global level or at the target level.
      * 
      */
-    @Export(name="isPaidUsageEnabled", type=Boolean.class, parameters={})
+    @Export(name="isPaidUsageEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isPaidUsageEnabled;
 
     /**
@@ -200,7 +200,7 @@ public class AuditProfile extends com.pulumi.resources.CustomResource {
      * Details about the current state of the audit profile in Data Safe.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -214,7 +214,7 @@ public class AuditProfile extends com.pulumi.resources.CustomResource {
      * Indicates the number of months the audit records will be stored offline in the Data Safe audit archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in archive, please contact the Oracle Support.
      * 
      */
-    @Export(name="offlineMonths", type=Integer.class, parameters={})
+    @Export(name="offlineMonths", refs={Integer.class}, tree="[0]")
     private Output<Integer> offlineMonths;
 
     /**
@@ -228,7 +228,7 @@ public class AuditProfile extends com.pulumi.resources.CustomResource {
      * Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum:12 months
      * 
      */
-    @Export(name="onlineMonths", type=Integer.class, parameters={})
+    @Export(name="onlineMonths", refs={Integer.class}, tree="[0]")
     private Output<Integer> onlineMonths;
 
     /**
@@ -242,7 +242,7 @@ public class AuditProfile extends com.pulumi.resources.CustomResource {
      * The current state of the audit profile.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -256,7 +256,7 @@ public class AuditProfile extends com.pulumi.resources.CustomResource {
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -270,7 +270,7 @@ public class AuditProfile extends com.pulumi.resources.CustomResource {
      * The OCID of the Data Safe target for which the audit profile is created.
      * 
      */
-    @Export(name="targetId", type=String.class, parameters={})
+    @Export(name="targetId", refs={String.class}, tree="[0]")
     private Output<String> targetId;
 
     /**
@@ -284,7 +284,7 @@ public class AuditProfile extends com.pulumi.resources.CustomResource {
      * The date and time the audit profile was created, in the format defined by RFC3339.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -298,7 +298,7 @@ public class AuditProfile extends com.pulumi.resources.CustomResource {
      * The date and time the audit profile was updated, in the format defined by RFC3339.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

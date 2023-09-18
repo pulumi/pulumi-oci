@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Managed Database Sql Tuning Advisor Tasks Recommendations in Oracle Cloud Infrastructure Database Management service.
@@ -124,6 +125,12 @@ func (o GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResultOutput) ToGe
 
 func (o GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResultOutput) ToGetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResultOutputWithContext(ctx context.Context) GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResultOutput {
 	return o
+}
+
+func (o GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult] {
+	return pulumix.Output[GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResultOutput) ExecutionId() pulumi.StringOutput {

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Tenancy resource in Oracle Cloud Infrastructure Identity service.
@@ -111,6 +112,12 @@ func (o GetTenancyResultOutput) ToGetTenancyResultOutput() GetTenancyResultOutpu
 
 func (o GetTenancyResultOutput) ToGetTenancyResultOutputWithContext(ctx context.Context) GetTenancyResultOutput {
 	return o
+}
+
+func (o GetTenancyResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetTenancyResult] {
+	return pulumix.Output[GetTenancyResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`

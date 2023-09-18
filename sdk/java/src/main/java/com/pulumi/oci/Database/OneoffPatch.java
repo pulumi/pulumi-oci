@@ -75,7 +75,7 @@ public class OneoffPatch extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -89,7 +89,7 @@ public class OneoffPatch extends com.pulumi.resources.CustomResource {
      * A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
      * 
      */
-    @Export(name="dbVersion", type=String.class, parameters={})
+    @Export(name="dbVersion", refs={String.class}, tree="[0]")
     private Output<String> dbVersion;
 
     /**
@@ -103,7 +103,7 @@ public class OneoffPatch extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -117,7 +117,7 @@ public class OneoffPatch extends com.pulumi.resources.CustomResource {
      * One-off patch name.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -134,7 +134,7 @@ public class OneoffPatch extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="downloadOneoffPatchTrigger", type=Integer.class, parameters={})
+    @Export(name="downloadOneoffPatchTrigger", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> downloadOneoffPatchTrigger;
 
     /**
@@ -151,7 +151,7 @@ public class OneoffPatch extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -165,7 +165,7 @@ public class OneoffPatch extends com.pulumi.resources.CustomResource {
      * Detailed message for the lifecycle state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -179,7 +179,7 @@ public class OneoffPatch extends com.pulumi.resources.CustomResource {
      * List of one-off patches for Database Homes.
      * 
      */
-    @Export(name="oneOffPatches", type=List.class, parameters={String.class})
+    @Export(name="oneOffPatches", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> oneOffPatches;
 
     /**
@@ -193,7 +193,7 @@ public class OneoffPatch extends com.pulumi.resources.CustomResource {
      * The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
      * 
      */
-    @Export(name="releaseUpdate", type=String.class, parameters={})
+    @Export(name="releaseUpdate", refs={String.class}, tree="[0]")
     private Output<String> releaseUpdate;
 
     /**
@@ -207,7 +207,7 @@ public class OneoffPatch extends com.pulumi.resources.CustomResource {
      * SHA-256 checksum of the one-off patch.
      * 
      */
-    @Export(name="sha256sum", type=String.class, parameters={})
+    @Export(name="sha256sum", refs={String.class}, tree="[0]")
     private Output<String> sha256sum;
 
     /**
@@ -221,7 +221,7 @@ public class OneoffPatch extends com.pulumi.resources.CustomResource {
      * The size of one-off patch in kilobytes.
      * 
      */
-    @Export(name="sizeInKbs", type=Double.class, parameters={})
+    @Export(name="sizeInKbs", refs={Double.class}, tree="[0]")
     private Output<Double> sizeInKbs;
 
     /**
@@ -235,7 +235,7 @@ public class OneoffPatch extends com.pulumi.resources.CustomResource {
      * The current state of the one-off patch.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -249,7 +249,7 @@ public class OneoffPatch extends com.pulumi.resources.CustomResource {
      * The date and time one-off patch was created.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -263,7 +263,7 @@ public class OneoffPatch extends com.pulumi.resources.CustomResource {
      * The date and time until which the one-off patch will be available for download.
      * 
      */
-    @Export(name="timeOfExpiration", type=String.class, parameters={})
+    @Export(name="timeOfExpiration", refs={String.class}, tree="[0]")
     private Output<String> timeOfExpiration;
 
     /**
@@ -277,7 +277,7 @@ public class OneoffPatch extends com.pulumi.resources.CustomResource {
      * The date and time one-off patch was updated.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

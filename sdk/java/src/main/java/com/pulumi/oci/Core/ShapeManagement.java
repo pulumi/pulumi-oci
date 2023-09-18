@@ -25,7 +25,7 @@ public class ShapeManagement extends com.pulumi.resources.CustomResource {
      * The OCID of the compartment containing the image.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -39,7 +39,7 @@ public class ShapeManagement extends com.pulumi.resources.CustomResource {
      * The OCID of the Image to which the shape should be added.
      * 
      */
-    @Export(name="imageId", type=String.class, parameters={})
+    @Export(name="imageId", refs={String.class}, tree="[0]")
     private Output<String> imageId;
 
     /**
@@ -53,7 +53,7 @@ public class ShapeManagement extends com.pulumi.resources.CustomResource {
      * The compatible shape that is to be added to the compatible shapes list for the image.
      * 
      */
-    @Export(name="shapeName", type=String.class, parameters={})
+    @Export(name="shapeName", refs={String.class}, tree="[0]")
     private Output<String> shapeName;
 
     /**

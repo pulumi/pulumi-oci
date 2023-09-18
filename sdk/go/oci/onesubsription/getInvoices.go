@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Invoices in Oracle Cloud Infrastructure Onesubscription service.
@@ -128,6 +129,12 @@ func (o GetInvoicesResultOutput) ToGetInvoicesResultOutput() GetInvoicesResultOu
 
 func (o GetInvoicesResultOutput) ToGetInvoicesResultOutputWithContext(ctx context.Context) GetInvoicesResultOutput {
 	return o
+}
+
+func (o GetInvoicesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesResult] {
+	return pulumix.Output[GetInvoicesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetInvoicesResultOutput) ArCustomerTransactionId() pulumi.StringOutput {

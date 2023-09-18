@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Managed Database Sql Tuning Advisor Tasks Execution Plan Stats Comparision resource in Oracle Cloud Infrastructure Database Management service.
@@ -123,6 +124,12 @@ func (o GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResul
 
 func (o GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResultOutput) ToGetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResultOutputWithContext(ctx context.Context) GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResultOutput {
 	return o
+}
+
+func (o GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult] {
+	return pulumix.Output[GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResultOutput) ExecutionId() pulumi.StringOutput {

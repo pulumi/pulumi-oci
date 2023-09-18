@@ -82,7 +82,7 @@ public class ProtectedDatabase extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the compartment that contains the protected database.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -96,7 +96,7 @@ public class ProtectedDatabase extends com.pulumi.resources.CustomResource {
      * The OCID of the protected database.
      * 
      */
-    @Export(name="databaseId", type=String.class, parameters={})
+    @Export(name="databaseId", refs={String.class}, tree="[0]")
     private Output<String> databaseId;
 
     /**
@@ -110,7 +110,7 @@ public class ProtectedDatabase extends com.pulumi.resources.CustomResource {
      * (Updatable) The size of the protected database. XS - Less than 5GB, S - 5GB to 50GB, M - 50GB to 500GB, L - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
      * 
      */
-    @Export(name="databaseSize", type=String.class, parameters={})
+    @Export(name="databaseSize", refs={String.class}, tree="[0]")
     private Output<String> databaseSize;
 
     /**
@@ -124,7 +124,7 @@ public class ProtectedDatabase extends com.pulumi.resources.CustomResource {
      * The dbUniqueName of the protected database in Recovery Service. You cannot change the unique name.
      * 
      */
-    @Export(name="dbUniqueName", type=String.class, parameters={})
+    @Export(name="dbUniqueName", refs={String.class}, tree="[0]")
     private Output<String> dbUniqueName;
 
     /**
@@ -138,7 +138,7 @@ public class ProtectedDatabase extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -152,7 +152,7 @@ public class ProtectedDatabase extends com.pulumi.resources.CustomResource {
      * (Updatable) The protected database name. You can change the displayName. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -166,7 +166,7 @@ public class ProtectedDatabase extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -183,7 +183,7 @@ public class ProtectedDatabase extends com.pulumi.resources.CustomResource {
      * * ALERT
      * 
      */
-    @Export(name="health", type=String.class, parameters={})
+    @Export(name="health", refs={String.class}, tree="[0]")
     private Output<String> health;
 
     /**
@@ -200,7 +200,7 @@ public class ProtectedDatabase extends com.pulumi.resources.CustomResource {
      * A message describing the current health of the protected database.
      * 
      */
-    @Export(name="healthDetails", type=String.class, parameters={})
+    @Export(name="healthDetails", refs={String.class}, tree="[0]")
     private Output<String> healthDetails;
 
     /**
@@ -214,7 +214,7 @@ public class ProtectedDatabase extends com.pulumi.resources.CustomResource {
      * Indicates whether the protected database is created by Recovery Service or created manually. Set to &lt;b&gt;TRUE&lt;/b&gt; for a service-defined protected database. When you enable the OCI-managed automatic backups option for a database and set Recovery Service as the backup destination, then Recovery Service creates the associated protected database resource. Set to &lt;b&gt;FALSE&lt;/b&gt; for a user-defined protected database.
      * 
      */
-    @Export(name="isReadOnlyResource", type=Boolean.class, parameters={})
+    @Export(name="isReadOnlyResource", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isReadOnlyResource;
 
     /**
@@ -228,7 +228,7 @@ public class ProtectedDatabase extends com.pulumi.resources.CustomResource {
      * (Updatable) The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
      * 
      */
-    @Export(name="isRedoLogsShipped", type=Boolean.class, parameters={})
+    @Export(name="isRedoLogsShipped", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isRedoLogsShipped;
 
     /**
@@ -242,7 +242,7 @@ public class ProtectedDatabase extends com.pulumi.resources.CustomResource {
      * Detailed description about the current lifecycle state of the protected database. For example, it can be used to provide actionable information for a resource in a Failed state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -256,7 +256,7 @@ public class ProtectedDatabase extends com.pulumi.resources.CustomResource {
      * Backup performance and storage utilization metrics for the protected database.
      * 
      */
-    @Export(name="metrics", type=List.class, parameters={ProtectedDatabaseMetric.class})
+    @Export(name="metrics", refs={List.class,ProtectedDatabaseMetric.class}, tree="[0,1]")
     private Output<List<ProtectedDatabaseMetric>> metrics;
 
     /**
@@ -270,7 +270,7 @@ public class ProtectedDatabase extends com.pulumi.resources.CustomResource {
      * (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (https://docs.cloud.oracle.com/iaas/api/#) or hyphen (-). The password must not contain the username &#34;admin&#34;, regardless of casing.
      * 
      */
-    @Export(name="password", type=String.class, parameters={})
+    @Export(name="password", refs={String.class}, tree="[0]")
     private Output<String> password;
 
     /**
@@ -284,7 +284,7 @@ public class ProtectedDatabase extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the protection policy associated with the protected database.
      * 
      */
-    @Export(name="protectionPolicyId", type=String.class, parameters={})
+    @Export(name="protectionPolicyId", refs={String.class}, tree="[0]")
     private Output<String> protectionPolicyId;
 
     /**
@@ -298,7 +298,7 @@ public class ProtectedDatabase extends com.pulumi.resources.CustomResource {
      * (Updatable) List of recovery service subnet resources associated with the protected database.
      * 
      */
-    @Export(name="recoveryServiceSubnets", type=List.class, parameters={ProtectedDatabaseRecoveryServiceSubnet.class})
+    @Export(name="recoveryServiceSubnets", refs={List.class,ProtectedDatabaseRecoveryServiceSubnet.class}, tree="[0,1]")
     private Output<List<ProtectedDatabaseRecoveryServiceSubnet>> recoveryServiceSubnets;
 
     /**
@@ -312,7 +312,7 @@ public class ProtectedDatabase extends com.pulumi.resources.CustomResource {
      * The current state of the Protected Database.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -326,7 +326,7 @@ public class ProtectedDatabase extends com.pulumi.resources.CustomResource {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -340,7 +340,7 @@ public class ProtectedDatabase extends com.pulumi.resources.CustomResource {
      * An RFC3339 formatted datetime string that indicates the created time for a protected database. For example: &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -354,7 +354,7 @@ public class ProtectedDatabase extends com.pulumi.resources.CustomResource {
      * An RFC3339 formatted datetime string that indicates the last updated time for a protected database. For example: &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -368,7 +368,7 @@ public class ProtectedDatabase extends com.pulumi.resources.CustomResource {
      * The virtual private catalog (VPC) user credentials that authenticates the protected database to access Recovery Service.
      * 
      */
-    @Export(name="vpcUserName", type=String.class, parameters={})
+    @Export(name="vpcUserName", refs={String.class}, tree="[0]")
     private Output<String> vpcUserName;
 
     /**

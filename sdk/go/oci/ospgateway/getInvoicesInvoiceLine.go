@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Invoices Invoice Line resource in Oracle Cloud Infrastructure Osp Gateway service.
@@ -113,6 +114,12 @@ func (o GetInvoicesInvoiceLineResultOutput) ToGetInvoicesInvoiceLineResultOutput
 
 func (o GetInvoicesInvoiceLineResultOutput) ToGetInvoicesInvoiceLineResultOutputWithContext(ctx context.Context) GetInvoicesInvoiceLineResultOutput {
 	return o
+}
+
+func (o GetInvoicesInvoiceLineResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceLineResult] {
+	return pulumix.Output[GetInvoicesInvoiceLineResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetInvoicesInvoiceLineResultOutput) CompartmentId() pulumi.StringOutput {

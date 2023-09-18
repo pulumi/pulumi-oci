@@ -110,7 +110,7 @@ public class Volume extends com.pulumi.resources.CustomResource {
      * The number of Volume Performance Units per GB that this volume is effectively tuned to.
      * 
      */
-    @Export(name="autoTunedVpusPerGb", type=String.class, parameters={})
+    @Export(name="autoTunedVpusPerGb", refs={String.class}, tree="[0]")
     private Output<String> autoTunedVpusPerGb;
 
     /**
@@ -124,7 +124,7 @@ public class Volume extends com.pulumi.resources.CustomResource {
      * (Updatable) The list of autotune policies to be enabled for this volume.
      * 
      */
-    @Export(name="autotunePolicies", type=List.class, parameters={VolumeAutotunePolicy.class})
+    @Export(name="autotunePolicies", refs={List.class,VolumeAutotunePolicy.class}, tree="[0,1]")
     private Output<List<VolumeAutotunePolicy>> autotunePolicies;
 
     /**
@@ -138,7 +138,7 @@ public class Volume extends com.pulumi.resources.CustomResource {
      * (Updatable) The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    @Export(name="availabilityDomain", type=String.class, parameters={})
+    @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
     private Output<String> availabilityDomain;
 
     /**
@@ -156,7 +156,7 @@ public class Volume extends com.pulumi.resources.CustomResource {
      * 
      */
     @Deprecated /* The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead. */
-    @Export(name="backupPolicyId", type=String.class, parameters={})
+    @Export(name="backupPolicyId", refs={String.class}, tree="[0]")
     private Output<String> backupPolicyId;
 
     /**
@@ -170,7 +170,7 @@ public class Volume extends com.pulumi.resources.CustomResource {
      * (Updatable) The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
      * 
      */
-    @Export(name="blockVolumeReplicas", type=List.class, parameters={VolumeBlockVolumeReplica.class})
+    @Export(name="blockVolumeReplicas", refs={List.class,VolumeBlockVolumeReplica.class}, tree="[0,1]")
     private Output<List<VolumeBlockVolumeReplica>> blockVolumeReplicas;
 
     /**
@@ -180,7 +180,7 @@ public class Volume extends com.pulumi.resources.CustomResource {
     public Output<List<VolumeBlockVolumeReplica>> blockVolumeReplicas() {
         return this.blockVolumeReplicas;
     }
-    @Export(name="blockVolumeReplicasDeletion", type=Boolean.class, parameters={})
+    @Export(name="blockVolumeReplicasDeletion", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> blockVolumeReplicasDeletion;
 
     public Output<Optional<Boolean>> blockVolumeReplicasDeletion() {
@@ -190,7 +190,7 @@ public class Volume extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the compartment that contains the volume.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -204,7 +204,7 @@ public class Volume extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -218,7 +218,7 @@ public class Volume extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -232,7 +232,7 @@ public class Volume extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -246,7 +246,7 @@ public class Volume extends com.pulumi.resources.CustomResource {
      * (Updatable) Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
      * 
      */
-    @Export(name="isAutoTuneEnabled", type=Boolean.class, parameters={})
+    @Export(name="isAutoTuneEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isAutoTuneEnabled;
 
     /**
@@ -260,7 +260,7 @@ public class Volume extends com.pulumi.resources.CustomResource {
      * Specifies whether the cloned volume&#39;s data has finished copying from the source volume or backup.
      * 
      */
-    @Export(name="isHydrated", type=Boolean.class, parameters={})
+    @Export(name="isHydrated", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isHydrated;
 
     /**
@@ -274,7 +274,7 @@ public class Volume extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
      * 
      */
-    @Export(name="kmsKeyId", type=String.class, parameters={})
+    @Export(name="kmsKeyId", refs={String.class}, tree="[0]")
     private Output<String> kmsKeyId;
 
     /**
@@ -288,7 +288,7 @@ public class Volume extends com.pulumi.resources.CustomResource {
      * (Updatable) The size of the volume in GBs.
      * 
      */
-    @Export(name="sizeInGbs", type=String.class, parameters={})
+    @Export(name="sizeInGbs", refs={String.class}, tree="[0]")
     private Output<String> sizeInGbs;
 
     /**
@@ -306,7 +306,7 @@ public class Volume extends com.pulumi.resources.CustomResource {
      * 
      */
     @Deprecated /* The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead. */
-    @Export(name="sizeInMbs", type=String.class, parameters={})
+    @Export(name="sizeInMbs", refs={String.class}, tree="[0]")
     private Output<String> sizeInMbs;
 
     /**
@@ -316,7 +316,7 @@ public class Volume extends com.pulumi.resources.CustomResource {
     public Output<String> sizeInMbs() {
         return this.sizeInMbs;
     }
-    @Export(name="sourceDetails", type=VolumeSourceDetails.class, parameters={})
+    @Export(name="sourceDetails", refs={VolumeSourceDetails.class}, tree="[0]")
     private Output<VolumeSourceDetails> sourceDetails;
 
     public Output<VolumeSourceDetails> sourceDetails() {
@@ -326,7 +326,7 @@ public class Volume extends com.pulumi.resources.CustomResource {
      * The current state of a volume.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -340,7 +340,7 @@ public class Volume extends com.pulumi.resources.CustomResource {
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -354,7 +354,7 @@ public class Volume extends com.pulumi.resources.CustomResource {
      * The date and time the volume was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -368,7 +368,7 @@ public class Volume extends com.pulumi.resources.CustomResource {
      * The OCID of the volume backup from which the data should be restored on the newly created volume. This field is deprecated. Use the sourceDetails field instead to specify the backup for the volume.
      * 
      */
-    @Export(name="volumeBackupId", type=String.class, parameters={})
+    @Export(name="volumeBackupId", refs={String.class}, tree="[0]")
     private Output<String> volumeBackupId;
 
     /**
@@ -382,7 +382,7 @@ public class Volume extends com.pulumi.resources.CustomResource {
      * The OCID of the source volume group.
      * 
      */
-    @Export(name="volumeGroupId", type=String.class, parameters={})
+    @Export(name="volumeGroupId", refs={String.class}, tree="[0]")
     private Output<String> volumeGroupId;
 
     /**
@@ -398,7 +398,7 @@ public class Volume extends com.pulumi.resources.CustomResource {
      * Allowed values:
      * 
      */
-    @Export(name="vpusPerGb", type=String.class, parameters={})
+    @Export(name="vpusPerGb", refs={String.class}, tree="[0]")
     private Output<String> vpusPerGb;
 
     /**

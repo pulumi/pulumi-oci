@@ -74,7 +74,7 @@ public class DataSafePrivateEndpoint extends com.pulumi.resources.CustomResource
      * (Updatable) The OCID of the compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -88,7 +88,7 @@ public class DataSafePrivateEndpoint extends com.pulumi.resources.CustomResource
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -102,7 +102,7 @@ public class DataSafePrivateEndpoint extends com.pulumi.resources.CustomResource
      * (Updatable) The description of the private endpoint.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -116,7 +116,7 @@ public class DataSafePrivateEndpoint extends com.pulumi.resources.CustomResource
      * (Updatable) The display name for the private endpoint. The name does not have to be unique, and it&#39;s changeable.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -130,7 +130,7 @@ public class DataSafePrivateEndpoint extends com.pulumi.resources.CustomResource
      * The three-label fully qualified domain name (FQDN) of the private endpoint. The customer VCN&#39;s DNS records are updated with this FQDN.
      * 
      */
-    @Export(name="endpointFqdn", type=String.class, parameters={})
+    @Export(name="endpointFqdn", refs={String.class}, tree="[0]")
     private Output<String> endpointFqdn;
 
     /**
@@ -144,7 +144,7 @@ public class DataSafePrivateEndpoint extends com.pulumi.resources.CustomResource
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -158,7 +158,7 @@ public class DataSafePrivateEndpoint extends com.pulumi.resources.CustomResource
      * (Updatable) The OCIDs of the network security groups that the private endpoint belongs to.
      * 
      */
-    @Export(name="nsgIds", type=List.class, parameters={String.class})
+    @Export(name="nsgIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> nsgIds;
 
     /**
@@ -172,7 +172,7 @@ public class DataSafePrivateEndpoint extends com.pulumi.resources.CustomResource
      * The OCID of the underlying private endpoint.
      * 
      */
-    @Export(name="privateEndpointId", type=String.class, parameters={})
+    @Export(name="privateEndpointId", refs={String.class}, tree="[0]")
     private Output<String> privateEndpointId;
 
     /**
@@ -186,7 +186,7 @@ public class DataSafePrivateEndpoint extends com.pulumi.resources.CustomResource
      * The private IP address of the private endpoint.
      * 
      */
-    @Export(name="privateEndpointIp", type=String.class, parameters={})
+    @Export(name="privateEndpointIp", refs={String.class}, tree="[0]")
     private Output<String> privateEndpointIp;
 
     /**
@@ -200,7 +200,7 @@ public class DataSafePrivateEndpoint extends com.pulumi.resources.CustomResource
      * The current state of the private endpoint.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -214,7 +214,7 @@ public class DataSafePrivateEndpoint extends com.pulumi.resources.CustomResource
      * The OCID of the subnet.
      * 
      */
-    @Export(name="subnetId", type=String.class, parameters={})
+    @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
@@ -228,7 +228,7 @@ public class DataSafePrivateEndpoint extends com.pulumi.resources.CustomResource
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -242,7 +242,7 @@ public class DataSafePrivateEndpoint extends com.pulumi.resources.CustomResource
      * The date and time the private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -259,7 +259,7 @@ public class DataSafePrivateEndpoint extends com.pulumi.resources.CustomResource
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="vcnId", type=String.class, parameters={})
+    @Export(name="vcnId", refs={String.class}, tree="[0]")
     private Output<String> vcnId;
 
     /**

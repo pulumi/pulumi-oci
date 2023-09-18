@@ -81,7 +81,7 @@ public class Script extends com.pulumi.resources.CustomResource {
      * (Updatable) The APM domain ID the request is intended for.
      * 
      */
-    @Export(name="apmDomainId", type=String.class, parameters={})
+    @Export(name="apmDomainId", refs={String.class}, tree="[0]")
     private Output<String> apmDomainId;
 
     /**
@@ -95,7 +95,7 @@ public class Script extends com.pulumi.resources.CustomResource {
      * (Updatable) The content of the script. It may contain custom-defined tags that can be used for setting dynamic parameters. The format to set dynamic parameters is: `&lt;ORAP&gt;&lt;ON&gt;param name&lt;/ON&gt;&lt;OV&gt;param value&lt;/OV&gt;&lt;OS&gt;isParamValueSecret(true/false)&lt;/OS&gt;&lt;/ORAP&gt;`. Param value and isParamValueSecret are optional, the default value for isParamValueSecret is false. Examples: With mandatory param name : `&lt;ORAP&gt;&lt;ON&gt;param name&lt;/ON&gt;&lt;/ORAP&gt;` With parameter name and value : `&lt;ORAP&gt;&lt;ON&gt;param name&lt;/ON&gt;&lt;OV&gt;param value&lt;/OV&gt;&lt;/ORAP&gt;` Note that the content is valid if it matches the given content type. For example, if the content type is SIDE, then the content should be in Side script format. If the content type is JS, then the content should be in JavaScript format.
      * 
      */
-    @Export(name="content", type=String.class, parameters={})
+    @Export(name="content", refs={String.class}, tree="[0]")
     private Output<String> content;
 
     /**
@@ -109,7 +109,7 @@ public class Script extends com.pulumi.resources.CustomResource {
      * (Updatable) File name of uploaded script content.
      * 
      */
-    @Export(name="contentFileName", type=String.class, parameters={})
+    @Export(name="contentFileName", refs={String.class}, tree="[0]")
     private Output<String> contentFileName;
 
     /**
@@ -123,7 +123,7 @@ public class Script extends com.pulumi.resources.CustomResource {
      * Size of the script content.
      * 
      */
-    @Export(name="contentSizeInBytes", type=Integer.class, parameters={})
+    @Export(name="contentSizeInBytes", refs={Integer.class}, tree="[0]")
     private Output<Integer> contentSizeInBytes;
 
     /**
@@ -137,7 +137,7 @@ public class Script extends com.pulumi.resources.CustomResource {
      * (Updatable) Content type of script.
      * 
      */
-    @Export(name="contentType", type=String.class, parameters={})
+    @Export(name="contentType", refs={String.class}, tree="[0]")
     private Output<String> contentType;
 
     /**
@@ -151,7 +151,7 @@ public class Script extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -165,7 +165,7 @@ public class Script extends com.pulumi.resources.CustomResource {
      * (Updatable) Unique name that can be edited. The name should not contain any confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -179,7 +179,7 @@ public class Script extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -193,7 +193,7 @@ public class Script extends com.pulumi.resources.CustomResource {
      * Details of the monitor count per state. Example: `{ &#34;total&#34; : 5, &#34;enabled&#34; : 3 , &#34;disabled&#34; : 2, &#34;invalid&#34; : 0 }`
      * 
      */
-    @Export(name="monitorStatusCountMaps", type=List.class, parameters={ScriptMonitorStatusCountMap.class})
+    @Export(name="monitorStatusCountMaps", refs={List.class,ScriptMonitorStatusCountMap.class}, tree="[0,1]")
     private Output<List<ScriptMonitorStatusCountMap>> monitorStatusCountMaps;
 
     /**
@@ -207,7 +207,7 @@ public class Script extends com.pulumi.resources.CustomResource {
      * (Updatable) List of script parameters. Example: `[{&#34;paramName&#34;: &#34;userid&#34;, &#34;paramValue&#34;:&#34;testuser&#34;, &#34;isSecret&#34;: false}]`
      * 
      */
-    @Export(name="parameters", type=List.class, parameters={ScriptParameter.class})
+    @Export(name="parameters", refs={List.class,ScriptParameter.class}, tree="[0,1]")
     private Output<List<ScriptParameter>> parameters;
 
     /**
@@ -221,7 +221,7 @@ public class Script extends com.pulumi.resources.CustomResource {
      * The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -235,7 +235,7 @@ public class Script extends com.pulumi.resources.CustomResource {
      * The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -249,7 +249,7 @@ public class Script extends com.pulumi.resources.CustomResource {
      * The time the script was uploaded.
      * 
      */
-    @Export(name="timeUploaded", type=String.class, parameters={})
+    @Export(name="timeUploaded", refs={String.class}, tree="[0]")
     private Output<String> timeUploaded;
 
     /**

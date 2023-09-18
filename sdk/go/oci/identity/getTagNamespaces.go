@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Tag Namespaces in Oracle Cloud Infrastructure Identity service.
@@ -118,6 +119,12 @@ func (o GetTagNamespacesResultOutput) ToGetTagNamespacesResultOutput() GetTagNam
 
 func (o GetTagNamespacesResultOutput) ToGetTagNamespacesResultOutputWithContext(ctx context.Context) GetTagNamespacesResultOutput {
 	return o
+}
+
+func (o GetTagNamespacesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetTagNamespacesResult] {
+	return pulumix.Output[GetTagNamespacesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the compartment that contains the tag namespace.

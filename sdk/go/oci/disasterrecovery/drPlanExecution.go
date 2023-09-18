@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Dr Plan Execution resource in Oracle Cloud Infrastructure Disaster Recovery service.
@@ -298,6 +299,12 @@ func (i *DrPlanExecution) ToDrPlanExecutionOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(DrPlanExecutionOutput)
 }
 
+func (i *DrPlanExecution) ToOutput(ctx context.Context) pulumix.Output[*DrPlanExecution] {
+	return pulumix.Output[*DrPlanExecution]{
+		OutputState: i.ToDrPlanExecutionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // DrPlanExecutionArrayInput is an input type that accepts DrPlanExecutionArray and DrPlanExecutionArrayOutput values.
 // You can construct a concrete instance of `DrPlanExecutionArrayInput` via:
 //
@@ -321,6 +328,12 @@ func (i DrPlanExecutionArray) ToDrPlanExecutionArrayOutput() DrPlanExecutionArra
 
 func (i DrPlanExecutionArray) ToDrPlanExecutionArrayOutputWithContext(ctx context.Context) DrPlanExecutionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DrPlanExecutionArrayOutput)
+}
+
+func (i DrPlanExecutionArray) ToOutput(ctx context.Context) pulumix.Output[[]*DrPlanExecution] {
+	return pulumix.Output[[]*DrPlanExecution]{
+		OutputState: i.ToDrPlanExecutionArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // DrPlanExecutionMapInput is an input type that accepts DrPlanExecutionMap and DrPlanExecutionMapOutput values.
@@ -348,6 +361,12 @@ func (i DrPlanExecutionMap) ToDrPlanExecutionMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(DrPlanExecutionMapOutput)
 }
 
+func (i DrPlanExecutionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DrPlanExecution] {
+	return pulumix.Output[map[string]*DrPlanExecution]{
+		OutputState: i.ToDrPlanExecutionMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type DrPlanExecutionOutput struct{ *pulumi.OutputState }
 
 func (DrPlanExecutionOutput) ElementType() reflect.Type {
@@ -360,6 +379,12 @@ func (o DrPlanExecutionOutput) ToDrPlanExecutionOutput() DrPlanExecutionOutput {
 
 func (o DrPlanExecutionOutput) ToDrPlanExecutionOutputWithContext(ctx context.Context) DrPlanExecutionOutput {
 	return o
+}
+
+func (o DrPlanExecutionOutput) ToOutput(ctx context.Context) pulumix.Output[*DrPlanExecution] {
+	return pulumix.Output[*DrPlanExecution]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the compartment containing this DR Plan Execution.  Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
@@ -479,6 +504,12 @@ func (o DrPlanExecutionArrayOutput) ToDrPlanExecutionArrayOutputWithContext(ctx 
 	return o
 }
 
+func (o DrPlanExecutionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DrPlanExecution] {
+	return pulumix.Output[[]*DrPlanExecution]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o DrPlanExecutionArrayOutput) Index(i pulumi.IntInput) DrPlanExecutionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DrPlanExecution {
 		return vs[0].([]*DrPlanExecution)[vs[1].(int)]
@@ -497,6 +528,12 @@ func (o DrPlanExecutionMapOutput) ToDrPlanExecutionMapOutput() DrPlanExecutionMa
 
 func (o DrPlanExecutionMapOutput) ToDrPlanExecutionMapOutputWithContext(ctx context.Context) DrPlanExecutionMapOutput {
 	return o
+}
+
+func (o DrPlanExecutionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DrPlanExecution] {
+	return pulumix.Output[map[string]*DrPlanExecution]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o DrPlanExecutionMapOutput) MapIndex(k pulumi.StringInput) DrPlanExecutionOutput {

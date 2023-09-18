@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Responder Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -265,6 +266,12 @@ func (i *ResponderRecipe) ToResponderRecipeOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(ResponderRecipeOutput)
 }
 
+func (i *ResponderRecipe) ToOutput(ctx context.Context) pulumix.Output[*ResponderRecipe] {
+	return pulumix.Output[*ResponderRecipe]{
+		OutputState: i.ToResponderRecipeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ResponderRecipeArrayInput is an input type that accepts ResponderRecipeArray and ResponderRecipeArrayOutput values.
 // You can construct a concrete instance of `ResponderRecipeArrayInput` via:
 //
@@ -288,6 +295,12 @@ func (i ResponderRecipeArray) ToResponderRecipeArrayOutput() ResponderRecipeArra
 
 func (i ResponderRecipeArray) ToResponderRecipeArrayOutputWithContext(ctx context.Context) ResponderRecipeArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ResponderRecipeArrayOutput)
+}
+
+func (i ResponderRecipeArray) ToOutput(ctx context.Context) pulumix.Output[[]*ResponderRecipe] {
+	return pulumix.Output[[]*ResponderRecipe]{
+		OutputState: i.ToResponderRecipeArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // ResponderRecipeMapInput is an input type that accepts ResponderRecipeMap and ResponderRecipeMapOutput values.
@@ -315,6 +328,12 @@ func (i ResponderRecipeMap) ToResponderRecipeMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(ResponderRecipeMapOutput)
 }
 
+func (i ResponderRecipeMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ResponderRecipe] {
+	return pulumix.Output[map[string]*ResponderRecipe]{
+		OutputState: i.ToResponderRecipeMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ResponderRecipeOutput struct{ *pulumi.OutputState }
 
 func (ResponderRecipeOutput) ElementType() reflect.Type {
@@ -327,6 +346,12 @@ func (o ResponderRecipeOutput) ToResponderRecipeOutput() ResponderRecipeOutput {
 
 func (o ResponderRecipeOutput) ToResponderRecipeOutputWithContext(ctx context.Context) ResponderRecipeOutput {
 	return o
+}
+
+func (o ResponderRecipeOutput) ToOutput(ctx context.Context) pulumix.Output[*ResponderRecipe] {
+	return pulumix.Output[*ResponderRecipe]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Compartment Identifier
@@ -424,6 +449,12 @@ func (o ResponderRecipeArrayOutput) ToResponderRecipeArrayOutputWithContext(ctx 
 	return o
 }
 
+func (o ResponderRecipeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ResponderRecipe] {
+	return pulumix.Output[[]*ResponderRecipe]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o ResponderRecipeArrayOutput) Index(i pulumi.IntInput) ResponderRecipeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ResponderRecipe {
 		return vs[0].([]*ResponderRecipe)[vs[1].(int)]
@@ -442,6 +473,12 @@ func (o ResponderRecipeMapOutput) ToResponderRecipeMapOutput() ResponderRecipeMa
 
 func (o ResponderRecipeMapOutput) ToResponderRecipeMapOutputWithContext(ctx context.Context) ResponderRecipeMapOutput {
 	return o
+}
+
+func (o ResponderRecipeMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ResponderRecipe] {
+	return pulumix.Output[map[string]*ResponderRecipe]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ResponderRecipeMapOutput) MapIndex(k pulumi.StringInput) ResponderRecipeOutput {

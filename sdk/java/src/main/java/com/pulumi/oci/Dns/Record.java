@@ -73,7 +73,7 @@ public class Record extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the compartment the resource belongs to. If supplied, it must match the Zone&#39;s compartment ocid.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> compartmentId;
 
     /**
@@ -91,7 +91,7 @@ public class Record extends com.pulumi.resources.CustomResource {
      * 
      */
     @Deprecated /* The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead. */
-    @Export(name="domain", type=String.class, parameters={})
+    @Export(name="domain", refs={String.class}, tree="[0]")
     private Output<String> domain;
 
     /**
@@ -105,7 +105,7 @@ public class Record extends com.pulumi.resources.CustomResource {
      * A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
      * 
      */
-    @Export(name="isProtected", type=Boolean.class, parameters={})
+    @Export(name="isProtected", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isProtected;
 
     /**
@@ -119,7 +119,7 @@ public class Record extends com.pulumi.resources.CustomResource {
      * (Updatable) The record&#39;s data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
      * 
      */
-    @Export(name="rdata", type=String.class, parameters={})
+    @Export(name="rdata", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> rdata;
 
     /**
@@ -133,7 +133,7 @@ public class Record extends com.pulumi.resources.CustomResource {
      * A unique identifier for the record within its zone.
      * 
      */
-    @Export(name="recordHash", type=String.class, parameters={})
+    @Export(name="recordHash", refs={String.class}, tree="[0]")
     private Output<String> recordHash;
 
     /**
@@ -147,7 +147,7 @@ public class Record extends com.pulumi.resources.CustomResource {
      * The latest version of the record&#39;s zone in which its RRSet differs from the preceding version.
      * 
      */
-    @Export(name="rrsetVersion", type=String.class, parameters={})
+    @Export(name="rrsetVersion", refs={String.class}, tree="[0]")
     private Output<String> rrsetVersion;
 
     /**
@@ -165,7 +165,7 @@ public class Record extends com.pulumi.resources.CustomResource {
      * 
      */
     @Deprecated /* The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead. */
-    @Export(name="rtype", type=String.class, parameters={})
+    @Export(name="rtype", refs={String.class}, tree="[0]")
     private Output<String> rtype;
 
     /**
@@ -179,7 +179,7 @@ public class Record extends com.pulumi.resources.CustomResource {
      * (Updatable) The Time To Live for the record, in seconds.
      * 
      */
-    @Export(name="ttl", type=Integer.class, parameters={})
+    @Export(name="ttl", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> ttl;
 
     /**
@@ -200,7 +200,7 @@ public class Record extends com.pulumi.resources.CustomResource {
      * 
      */
     @Deprecated /* The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead. */
-    @Export(name="zoneNameOrId", type=String.class, parameters={})
+    @Export(name="zoneNameOrId", refs={String.class}, tree="[0]")
     private Output<String> zoneNameOrId;
 
     /**

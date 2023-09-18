@@ -119,7 +119,7 @@ public class AutoScalingConfiguration extends com.pulumi.resources.CustomResourc
      * Each instance pool can have one autoscaling configuration.
      * 
      */
-    @Export(name="autoScalingResources", type=AutoScalingConfigurationAutoScalingResources.class, parameters={})
+    @Export(name="autoScalingResources", refs={AutoScalingConfigurationAutoScalingResources.class}, tree="[0]")
     private Output<AutoScalingConfigurationAutoScalingResources> autoScalingResources;
 
     /**
@@ -135,7 +135,7 @@ public class AutoScalingConfiguration extends com.pulumi.resources.CustomResourc
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the autoscaling configuration.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -151,7 +151,7 @@ public class AutoScalingConfiguration extends com.pulumi.resources.CustomResourc
      * For schedule-based autoscaling policies, this value is not used.
      * 
      */
-    @Export(name="coolDownInSeconds", type=Integer.class, parameters={})
+    @Export(name="coolDownInSeconds", refs={Integer.class}, tree="[0]")
     private Output<Integer> coolDownInSeconds;
 
     /**
@@ -167,7 +167,7 @@ public class AutoScalingConfiguration extends com.pulumi.resources.CustomResourc
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -181,7 +181,7 @@ public class AutoScalingConfiguration extends com.pulumi.resources.CustomResourc
      * A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -195,7 +195,7 @@ public class AutoScalingConfiguration extends com.pulumi.resources.CustomResourc
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -209,7 +209,7 @@ public class AutoScalingConfiguration extends com.pulumi.resources.CustomResourc
      * Whether the autoscaling policy is enabled.
      * 
      */
-    @Export(name="isEnabled", type=Boolean.class, parameters={})
+    @Export(name="isEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isEnabled;
 
     /**
@@ -223,7 +223,7 @@ public class AutoScalingConfiguration extends com.pulumi.resources.CustomResourc
      * The maximum number of resources to scale out to.
      * 
      */
-    @Export(name="maxResourceCount", type=Integer.class, parameters={})
+    @Export(name="maxResourceCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxResourceCount;
 
     /**
@@ -237,7 +237,7 @@ public class AutoScalingConfiguration extends com.pulumi.resources.CustomResourc
      * The minimum number of resources to scale in to.
      * 
      */
-    @Export(name="minResourceCount", type=Integer.class, parameters={})
+    @Export(name="minResourceCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> minResourceCount;
 
     /**
@@ -251,7 +251,7 @@ public class AutoScalingConfiguration extends com.pulumi.resources.CustomResourc
      * Autoscaling policy definitions for the autoscaling configuration. An autoscaling policy defines the criteria that trigger autoscaling actions and the actions to take.
      * 
      */
-    @Export(name="policies", type=List.class, parameters={AutoScalingConfigurationPolicy.class})
+    @Export(name="policies", refs={List.class,AutoScalingConfigurationPolicy.class}, tree="[0,1]")
     private Output<List<AutoScalingConfigurationPolicy>> policies;
 
     /**
@@ -265,7 +265,7 @@ public class AutoScalingConfiguration extends com.pulumi.resources.CustomResourc
      * The date and time the autoscaling configuration was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**

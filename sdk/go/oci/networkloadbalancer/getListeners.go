@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Listeners in Oracle Cloud Infrastructure Network Load Balancer service.
@@ -104,6 +105,12 @@ func (o GetListenersResultOutput) ToGetListenersResultOutput() GetListenersResul
 
 func (o GetListenersResultOutput) ToGetListenersResultOutputWithContext(ctx context.Context) GetListenersResultOutput {
 	return o
+}
+
+func (o GetListenersResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetListenersResult] {
+	return pulumix.Output[GetListenersResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetListenersResultOutput) Filters() GetListenersFilterArrayOutput {

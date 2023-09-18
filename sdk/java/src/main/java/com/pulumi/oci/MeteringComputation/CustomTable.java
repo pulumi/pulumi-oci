@@ -78,7 +78,7 @@ public class CustomTable extends com.pulumi.resources.CustomResource {
      * The compartment OCID.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -92,7 +92,7 @@ public class CustomTable extends com.pulumi.resources.CustomResource {
      * (Updatable) The custom table for Cost Analysis UI rendering.
      * 
      */
-    @Export(name="savedCustomTable", type=CustomTableSavedCustomTable.class, parameters={})
+    @Export(name="savedCustomTable", refs={CustomTableSavedCustomTable.class}, tree="[0]")
     private Output<CustomTableSavedCustomTable> savedCustomTable;
 
     /**
@@ -109,7 +109,7 @@ public class CustomTable extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="savedReportId", type=String.class, parameters={})
+    @Export(name="savedReportId", refs={String.class}, tree="[0]")
     private Output<String> savedReportId;
 
     /**

@@ -134,7 +134,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="allowedChars", type=String.class, parameters={})
+    @Export(name="allowedChars", refs={String.class}, tree="[0]")
     private Output<String> allowedChars;
 
     /**
@@ -157,7 +157,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If &#39;attributes&#39; query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      * 
      */
-    @Export(name="attributeSets", type=List.class, parameters={String.class})
+    @Export(name="attributeSets", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> attributeSets;
 
     /**
@@ -171,7 +171,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      * 
      */
-    @Export(name="attributes", type=String.class, parameters={})
+    @Export(name="attributes", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> attributes;
 
     /**
@@ -185,7 +185,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      * 
      */
-    @Export(name="authorization", type=String.class, parameters={})
+    @Export(name="authorization", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> authorization;
 
     /**
@@ -209,7 +209,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="compartmentOcid", type=String.class, parameters={})
+    @Export(name="compartmentOcid", refs={String.class}, tree="[0]")
     private Output<String> compartmentOcid;
 
     /**
@@ -243,7 +243,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="configuredPasswordPolicyRules", type=List.class, parameters={DomainsPasswordPolicyConfiguredPasswordPolicyRule.class})
+    @Export(name="configuredPasswordPolicyRules", refs={List.class,DomainsPasswordPolicyConfiguredPasswordPolicyRule.class}, tree="[0,1]")
     private Output<List<DomainsPasswordPolicyConfiguredPasswordPolicyRule>> configuredPasswordPolicyRules;
 
     /**
@@ -277,7 +277,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="deleteInProgress", type=Boolean.class, parameters={})
+    @Export(name="deleteInProgress", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> deleteInProgress;
 
     /**
@@ -310,7 +310,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -342,7 +342,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="dictionaryDelimiter", type=String.class, parameters={})
+    @Export(name="dictionaryDelimiter", refs={String.class}, tree="[0]")
     private Output<String> dictionaryDelimiter;
 
     /**
@@ -374,7 +374,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="dictionaryLocation", type=String.class, parameters={})
+    @Export(name="dictionaryLocation", refs={String.class}, tree="[0]")
     private Output<String> dictionaryLocation;
 
     /**
@@ -406,7 +406,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="dictionaryWordDisallowed", type=Boolean.class, parameters={})
+    @Export(name="dictionaryWordDisallowed", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> dictionaryWordDisallowed;
 
     /**
@@ -438,7 +438,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="disallowedChars", type=String.class, parameters={})
+    @Export(name="disallowedChars", refs={String.class}, tree="[0]")
     private Output<String> disallowedChars;
 
     /**
@@ -470,7 +470,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="disallowedSubstrings", type=List.class, parameters={String.class})
+    @Export(name="disallowedSubstrings", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> disallowedSubstrings;
 
     /**
@@ -504,7 +504,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="disallowedUserAttributeValues", type=List.class, parameters={String.class})
+    @Export(name="disallowedUserAttributeValues", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> disallowedUserAttributeValues;
 
     /**
@@ -540,7 +540,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="distinctCharacters", type=Integer.class, parameters={})
+    @Export(name="distinctCharacters", refs={Integer.class}, tree="[0]")
     private Output<Integer> distinctCharacters;
 
     /**
@@ -575,7 +575,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="domainOcid", type=String.class, parameters={})
+    @Export(name="domainOcid", refs={String.class}, tree="[0]")
     private Output<String> domainOcid;
 
     /**
@@ -608,7 +608,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="externalId", type=String.class, parameters={})
+    @Export(name="externalId", refs={String.class}, tree="[0]")
     private Output<String> externalId;
 
     /**
@@ -640,7 +640,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="firstNameDisallowed", type=Boolean.class, parameters={})
+    @Export(name="firstNameDisallowed", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> firstNameDisallowed;
 
     /**
@@ -672,7 +672,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="forcePasswordReset", type=Boolean.class, parameters={})
+    @Export(name="forcePasswordReset", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> forcePasswordReset;
 
     /**
@@ -708,7 +708,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="groups", type=List.class, parameters={DomainsPasswordPolicyGroup.class})
+    @Export(name="groups", refs={List.class,DomainsPasswordPolicyGroup.class}, tree="[0,1]")
     private Output<List<DomainsPasswordPolicyGroup>> groups;
 
     /**
@@ -743,7 +743,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    @Export(name="idcsCreatedBies", type=List.class, parameters={DomainsPasswordPolicyIdcsCreatedBy.class})
+    @Export(name="idcsCreatedBies", refs={List.class,DomainsPasswordPolicyIdcsCreatedBy.class}, tree="[0,1]")
     private Output<List<DomainsPasswordPolicyIdcsCreatedBy>> idcsCreatedBies;
 
     /**
@@ -765,7 +765,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * The basic endpoint for the identity domain
      * 
      */
-    @Export(name="idcsEndpoint", type=String.class, parameters={})
+    @Export(name="idcsEndpoint", refs={String.class}, tree="[0]")
     private Output<String> idcsEndpoint;
 
     /**
@@ -787,7 +787,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    @Export(name="idcsLastModifiedBies", type=List.class, parameters={DomainsPasswordPolicyIdcsLastModifiedBy.class})
+    @Export(name="idcsLastModifiedBies", refs={List.class,DomainsPasswordPolicyIdcsLastModifiedBy.class}, tree="[0,1]")
     private Output<List<DomainsPasswordPolicyIdcsLastModifiedBy>> idcsLastModifiedBies;
 
     /**
@@ -819,7 +819,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="idcsLastUpgradedInRelease", type=String.class, parameters={})
+    @Export(name="idcsLastUpgradedInRelease", refs={String.class}, tree="[0]")
     private Output<String> idcsLastUpgradedInRelease;
 
     /**
@@ -852,7 +852,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="idcsPreventedOperations", type=List.class, parameters={String.class})
+    @Export(name="idcsPreventedOperations", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> idcsPreventedOperations;
 
     /**
@@ -884,7 +884,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="lastNameDisallowed", type=Boolean.class, parameters={})
+    @Export(name="lastNameDisallowed", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> lastNameDisallowed;
 
     /**
@@ -916,7 +916,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="lockoutDuration", type=Integer.class, parameters={})
+    @Export(name="lockoutDuration", refs={Integer.class}, tree="[0]")
     private Output<Integer> lockoutDuration;
 
     /**
@@ -948,7 +948,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="maxIncorrectAttempts", type=Integer.class, parameters={})
+    @Export(name="maxIncorrectAttempts", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxIncorrectAttempts;
 
     /**
@@ -981,7 +981,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="maxLength", type=Integer.class, parameters={})
+    @Export(name="maxLength", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxLength;
 
     /**
@@ -1014,7 +1014,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="maxRepeatedChars", type=Integer.class, parameters={})
+    @Export(name="maxRepeatedChars", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxRepeatedChars;
 
     /**
@@ -1046,7 +1046,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="maxSpecialChars", type=Integer.class, parameters={})
+    @Export(name="maxSpecialChars", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxSpecialChars;
 
     /**
@@ -1079,7 +1079,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    @Export(name="metas", type=List.class, parameters={DomainsPasswordPolicyMeta.class})
+    @Export(name="metas", refs={List.class,DomainsPasswordPolicyMeta.class}, tree="[0,1]")
     private Output<List<DomainsPasswordPolicyMeta>> metas;
 
     /**
@@ -1112,7 +1112,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="minAlphaNumerals", type=Integer.class, parameters={})
+    @Export(name="minAlphaNumerals", refs={Integer.class}, tree="[0]")
     private Output<Integer> minAlphaNumerals;
 
     /**
@@ -1144,7 +1144,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="minAlphas", type=Integer.class, parameters={})
+    @Export(name="minAlphas", refs={Integer.class}, tree="[0]")
     private Output<Integer> minAlphas;
 
     /**
@@ -1176,7 +1176,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="minLength", type=Integer.class, parameters={})
+    @Export(name="minLength", refs={Integer.class}, tree="[0]")
     private Output<Integer> minLength;
 
     /**
@@ -1208,7 +1208,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="minLowerCase", type=Integer.class, parameters={})
+    @Export(name="minLowerCase", refs={Integer.class}, tree="[0]")
     private Output<Integer> minLowerCase;
 
     /**
@@ -1240,7 +1240,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="minNumerals", type=Integer.class, parameters={})
+    @Export(name="minNumerals", refs={Integer.class}, tree="[0]")
     private Output<Integer> minNumerals;
 
     /**
@@ -1272,7 +1272,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="minPasswordAge", type=Integer.class, parameters={})
+    @Export(name="minPasswordAge", refs={Integer.class}, tree="[0]")
     private Output<Integer> minPasswordAge;
 
     /**
@@ -1304,7 +1304,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="minSpecialChars", type=Integer.class, parameters={})
+    @Export(name="minSpecialChars", refs={Integer.class}, tree="[0]")
     private Output<Integer> minSpecialChars;
 
     /**
@@ -1336,7 +1336,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="minUniqueChars", type=Integer.class, parameters={})
+    @Export(name="minUniqueChars", refs={Integer.class}, tree="[0]")
     private Output<Integer> minUniqueChars;
 
     /**
@@ -1368,7 +1368,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="minUpperCase", type=Integer.class, parameters={})
+    @Export(name="minUpperCase", refs={Integer.class}, tree="[0]")
     private Output<Integer> minUpperCase;
 
     /**
@@ -1401,7 +1401,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: server
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -1434,7 +1434,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="numPasswordsInHistory", type=Integer.class, parameters={})
+    @Export(name="numPasswordsInHistory", refs={Integer.class}, tree="[0]")
     private Output<Integer> numPasswordsInHistory;
 
     /**
@@ -1467,7 +1467,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: global
      * 
      */
-    @Export(name="ocid", type=String.class, parameters={})
+    @Export(name="ocid", refs={String.class}, tree="[0]")
     private Output<String> ocid;
 
     /**
@@ -1500,7 +1500,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="passwordExpireWarning", type=Integer.class, parameters={})
+    @Export(name="passwordExpireWarning", refs={Integer.class}, tree="[0]")
     private Output<Integer> passwordExpireWarning;
 
     /**
@@ -1532,7 +1532,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="passwordExpiresAfter", type=Integer.class, parameters={})
+    @Export(name="passwordExpiresAfter", refs={Integer.class}, tree="[0]")
     private Output<Integer> passwordExpiresAfter;
 
     /**
@@ -1564,7 +1564,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="passwordStrength", type=String.class, parameters={})
+    @Export(name="passwordStrength", refs={String.class}, tree="[0]")
     private Output<String> passwordStrength;
 
     /**
@@ -1599,7 +1599,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: server
      * 
      */
-    @Export(name="priority", type=Integer.class, parameters={})
+    @Export(name="priority", refs={Integer.class}, tree="[0]")
     private Output<Integer> priority;
 
     /**
@@ -1634,7 +1634,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="requiredChars", type=String.class, parameters={})
+    @Export(name="requiredChars", refs={String.class}, tree="[0]")
     private Output<String> requiredChars;
 
     /**
@@ -1657,7 +1657,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      * 
      */
-    @Export(name="resourceTypeSchemaVersion", type=String.class, parameters={})
+    @Export(name="resourceTypeSchemaVersion", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> resourceTypeSchemaVersion;
 
     /**
@@ -1681,7 +1681,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="schemas", type=List.class, parameters={String.class})
+    @Export(name="schemas", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> schemas;
 
     /**
@@ -1714,7 +1714,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="startsWithAlphabet", type=Boolean.class, parameters={})
+    @Export(name="startsWithAlphabet", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> startsWithAlphabet;
 
     /**
@@ -1747,7 +1747,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="tags", type=List.class, parameters={DomainsPasswordPolicyTag.class})
+    @Export(name="tags", refs={List.class,DomainsPasswordPolicyTag.class}, tree="[0,1]")
     private Output<List<DomainsPasswordPolicyTag>> tags;
 
     /**
@@ -1781,7 +1781,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    @Export(name="tenancyOcid", type=String.class, parameters={})
+    @Export(name="tenancyOcid", refs={String.class}, tree="[0]")
     private Output<String> tenancyOcid;
 
     /**
@@ -1817,7 +1817,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="userNameDisallowed", type=Boolean.class, parameters={})
+    @Export(name="userNameDisallowed", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> userNameDisallowed;
 
     /**

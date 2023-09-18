@@ -76,7 +76,7 @@ public class Bastion extends com.pulumi.resources.CustomResource {
      * The type of bastion. Use `standard`.
      * 
      */
-    @Export(name="bastionType", type=String.class, parameters={})
+    @Export(name="bastionType", refs={String.class}, tree="[0]")
     private Output<String> bastionType;
 
     /**
@@ -90,7 +90,7 @@ public class Bastion extends com.pulumi.resources.CustomResource {
      * (Updatable) A list of address ranges in CIDR notation that you want to allow to connect to sessions hosted by this bastion.
      * 
      */
-    @Export(name="clientCidrBlockAllowLists", type=List.class, parameters={String.class})
+    @Export(name="clientCidrBlockAllowLists", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> clientCidrBlockAllowLists;
 
     /**
@@ -104,7 +104,7 @@ public class Bastion extends com.pulumi.resources.CustomResource {
      * (Updatable) The unique identifier (OCID) of the compartment where the bastion is located.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -118,7 +118,7 @@ public class Bastion extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -132,7 +132,7 @@ public class Bastion extends com.pulumi.resources.CustomResource {
      * Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
      * 
      */
-    @Export(name="dnsProxyStatus", type=String.class, parameters={})
+    @Export(name="dnsProxyStatus", refs={String.class}, tree="[0]")
     private Output<String> dnsProxyStatus;
 
     /**
@@ -146,7 +146,7 @@ public class Bastion extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -160,7 +160,7 @@ public class Bastion extends com.pulumi.resources.CustomResource {
      * A message describing the current state in more detail.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -174,7 +174,7 @@ public class Bastion extends com.pulumi.resources.CustomResource {
      * (Updatable) The maximum amount of time that any session on the bastion can remain active.
      * 
      */
-    @Export(name="maxSessionTtlInSeconds", type=Integer.class, parameters={})
+    @Export(name="maxSessionTtlInSeconds", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxSessionTtlInSeconds;
 
     /**
@@ -188,7 +188,7 @@ public class Bastion extends com.pulumi.resources.CustomResource {
      * The maximum number of active sessions allowed on the bastion.
      * 
      */
-    @Export(name="maxSessionsAllowed", type=Integer.class, parameters={})
+    @Export(name="maxSessionsAllowed", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxSessionsAllowed;
 
     /**
@@ -202,7 +202,7 @@ public class Bastion extends com.pulumi.resources.CustomResource {
      * The name of the bastion, which can&#39;t be changed after creation.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -216,7 +216,7 @@ public class Bastion extends com.pulumi.resources.CustomResource {
      * The phonebook entry of the customer&#39;s team, which can&#39;t be changed after creation. Not applicable to `standard` bastions.
      * 
      */
-    @Export(name="phoneBookEntry", type=String.class, parameters={})
+    @Export(name="phoneBookEntry", refs={String.class}, tree="[0]")
     private Output<String> phoneBookEntry;
 
     /**
@@ -230,7 +230,7 @@ public class Bastion extends com.pulumi.resources.CustomResource {
      * The private IP address of the created private endpoint.
      * 
      */
-    @Export(name="privateEndpointIpAddress", type=String.class, parameters={})
+    @Export(name="privateEndpointIpAddress", refs={String.class}, tree="[0]")
     private Output<String> privateEndpointIpAddress;
 
     /**
@@ -244,7 +244,7 @@ public class Bastion extends com.pulumi.resources.CustomResource {
      * The current state of the bastion.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -258,7 +258,7 @@ public class Bastion extends com.pulumi.resources.CustomResource {
      * (Updatable) A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
      * 
      */
-    @Export(name="staticJumpHostIpAddresses", type=List.class, parameters={String.class})
+    @Export(name="staticJumpHostIpAddresses", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> staticJumpHostIpAddresses;
 
     /**
@@ -272,7 +272,7 @@ public class Bastion extends com.pulumi.resources.CustomResource {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -289,7 +289,7 @@ public class Bastion extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="targetSubnetId", type=String.class, parameters={})
+    @Export(name="targetSubnetId", refs={String.class}, tree="[0]")
     private Output<String> targetSubnetId;
 
     /**
@@ -306,7 +306,7 @@ public class Bastion extends com.pulumi.resources.CustomResource {
      * The unique identifier (OCID) of the virtual cloud network (VCN) that the bastion connects to.
      * 
      */
-    @Export(name="targetVcnId", type=String.class, parameters={})
+    @Export(name="targetVcnId", refs={String.class}, tree="[0]")
     private Output<String> targetVcnId;
 
     /**
@@ -320,7 +320,7 @@ public class Bastion extends com.pulumi.resources.CustomResource {
      * The time the bastion was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -334,7 +334,7 @@ public class Bastion extends com.pulumi.resources.CustomResource {
      * The time the bastion was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

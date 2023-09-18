@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Container Repository resource in Oracle Cloud Infrastructure Artifacts service.
@@ -133,6 +134,12 @@ func (o LookupContainerRepositoryResultOutput) ToLookupContainerRepositoryResult
 
 func (o LookupContainerRepositoryResultOutput) ToLookupContainerRepositoryResultOutputWithContext(ctx context.Context) LookupContainerRepositoryResultOutput {
 	return o
+}
+
+func (o LookupContainerRepositoryResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupContainerRepositoryResult] {
+	return pulumix.Output[LookupContainerRepositoryResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Total storage size in GBs that will be charged.

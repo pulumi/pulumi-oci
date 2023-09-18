@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Managed Database Group resource in Oracle Cloud Infrastructure Database Management service.
@@ -193,6 +194,12 @@ func (i *ManagedDatabaseGroup) ToManagedDatabaseGroupOutputWithContext(ctx conte
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedDatabaseGroupOutput)
 }
 
+func (i *ManagedDatabaseGroup) ToOutput(ctx context.Context) pulumix.Output[*ManagedDatabaseGroup] {
+	return pulumix.Output[*ManagedDatabaseGroup]{
+		OutputState: i.ToManagedDatabaseGroupOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ManagedDatabaseGroupArrayInput is an input type that accepts ManagedDatabaseGroupArray and ManagedDatabaseGroupArrayOutput values.
 // You can construct a concrete instance of `ManagedDatabaseGroupArrayInput` via:
 //
@@ -216,6 +223,12 @@ func (i ManagedDatabaseGroupArray) ToManagedDatabaseGroupArrayOutput() ManagedDa
 
 func (i ManagedDatabaseGroupArray) ToManagedDatabaseGroupArrayOutputWithContext(ctx context.Context) ManagedDatabaseGroupArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedDatabaseGroupArrayOutput)
+}
+
+func (i ManagedDatabaseGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]*ManagedDatabaseGroup] {
+	return pulumix.Output[[]*ManagedDatabaseGroup]{
+		OutputState: i.ToManagedDatabaseGroupArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // ManagedDatabaseGroupMapInput is an input type that accepts ManagedDatabaseGroupMap and ManagedDatabaseGroupMapOutput values.
@@ -243,6 +256,12 @@ func (i ManagedDatabaseGroupMap) ToManagedDatabaseGroupMapOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedDatabaseGroupMapOutput)
 }
 
+func (i ManagedDatabaseGroupMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ManagedDatabaseGroup] {
+	return pulumix.Output[map[string]*ManagedDatabaseGroup]{
+		OutputState: i.ToManagedDatabaseGroupMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ManagedDatabaseGroupOutput struct{ *pulumi.OutputState }
 
 func (ManagedDatabaseGroupOutput) ElementType() reflect.Type {
@@ -255,6 +274,12 @@ func (o ManagedDatabaseGroupOutput) ToManagedDatabaseGroupOutput() ManagedDataba
 
 func (o ManagedDatabaseGroupOutput) ToManagedDatabaseGroupOutputWithContext(ctx context.Context) ManagedDatabaseGroupOutput {
 	return o
+}
+
+func (o ManagedDatabaseGroupOutput) ToOutput(ctx context.Context) pulumix.Output[*ManagedDatabaseGroup] {
+	return pulumix.Output[*ManagedDatabaseGroup]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
@@ -308,6 +333,12 @@ func (o ManagedDatabaseGroupArrayOutput) ToManagedDatabaseGroupArrayOutputWithCo
 	return o
 }
 
+func (o ManagedDatabaseGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ManagedDatabaseGroup] {
+	return pulumix.Output[[]*ManagedDatabaseGroup]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o ManagedDatabaseGroupArrayOutput) Index(i pulumi.IntInput) ManagedDatabaseGroupOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ManagedDatabaseGroup {
 		return vs[0].([]*ManagedDatabaseGroup)[vs[1].(int)]
@@ -326,6 +357,12 @@ func (o ManagedDatabaseGroupMapOutput) ToManagedDatabaseGroupMapOutput() Managed
 
 func (o ManagedDatabaseGroupMapOutput) ToManagedDatabaseGroupMapOutputWithContext(ctx context.Context) ManagedDatabaseGroupMapOutput {
 	return o
+}
+
+func (o ManagedDatabaseGroupMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ManagedDatabaseGroup] {
+	return pulumix.Output[map[string]*ManagedDatabaseGroup]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ManagedDatabaseGroupMapOutput) MapIndex(k pulumi.StringInput) ManagedDatabaseGroupOutput {

@@ -65,7 +65,7 @@ public class ExternalContainerDatabasesStackMonitoring extends com.pulumi.resour
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="enableStackMonitoring", type=Boolean.class, parameters={})
+    @Export(name="enableStackMonitoring", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableStackMonitoring;
 
     /**
@@ -82,7 +82,7 @@ public class ExternalContainerDatabasesStackMonitoring extends com.pulumi.resour
      * The ExternalContainerDatabase [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    @Export(name="externalContainerDatabaseId", type=String.class, parameters={})
+    @Export(name="externalContainerDatabaseId", refs={String.class}, tree="[0]")
     private Output<String> externalContainerDatabaseId;
 
     /**
@@ -96,7 +96,7 @@ public class ExternalContainerDatabasesStackMonitoring extends com.pulumi.resour
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
      * 
      */
-    @Export(name="externalDatabaseConnectorId", type=String.class, parameters={})
+    @Export(name="externalDatabaseConnectorId", refs={String.class}, tree="[0]")
     private Output<String> externalDatabaseConnectorId;
 
     /**

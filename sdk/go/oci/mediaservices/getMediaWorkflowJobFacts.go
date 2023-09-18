@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Media Workflow Job Facts in Oracle Cloud Infrastructure Media Services service.
@@ -119,6 +120,12 @@ func (o GetMediaWorkflowJobFactsResultOutput) ToGetMediaWorkflowJobFactsResultOu
 
 func (o GetMediaWorkflowJobFactsResultOutput) ToGetMediaWorkflowJobFactsResultOutputWithContext(ctx context.Context) GetMediaWorkflowJobFactsResultOutput {
 	return o
+}
+
+func (o GetMediaWorkflowJobFactsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowJobFactsResult] {
+	return pulumix.Output[GetMediaWorkflowJobFactsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMediaWorkflowJobFactsResultOutput) Filters() GetMediaWorkflowJobFactsFilterArrayOutput {

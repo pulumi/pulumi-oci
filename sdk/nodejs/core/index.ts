@@ -552,7 +552,8 @@ utilities.lazyLoad(exports, ["getInternetGateways","getInternetGatewaysOutput"],
 
 export { GetIpsecAlgorithmResult } from "./getIpsecAlgorithm";
 export const getIpsecAlgorithm: typeof import("./getIpsecAlgorithm").getIpsecAlgorithm = null as any;
-utilities.lazyLoad(exports, ["getIpsecAlgorithm"], () => require("./getIpsecAlgorithm"));
+export const getIpsecAlgorithmOutput: typeof import("./getIpsecAlgorithm").getIpsecAlgorithmOutput = null as any;
+utilities.lazyLoad(exports, ["getIpsecAlgorithm","getIpsecAlgorithmOutput"], () => require("./getIpsecAlgorithm"));
 
 export { GetIpsecConfigArgs, GetIpsecConfigResult, GetIpsecConfigOutputArgs } from "./getIpsecConfig";
 export const getIpsecConfig: typeof import("./getIpsecConfig").getIpsecConfig = null as any;

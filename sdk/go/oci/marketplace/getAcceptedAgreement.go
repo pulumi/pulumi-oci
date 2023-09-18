@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Accepted Agreement resource in Oracle Cloud Infrastructure Marketplace service.
@@ -116,6 +117,12 @@ func (o LookupAcceptedAgreementResultOutput) ToLookupAcceptedAgreementResultOutp
 
 func (o LookupAcceptedAgreementResultOutput) ToLookupAcceptedAgreementResultOutputWithContext(ctx context.Context) LookupAcceptedAgreementResultOutput {
 	return o
+}
+
+func (o LookupAcceptedAgreementResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAcceptedAgreementResult] {
+	return pulumix.Output[LookupAcceptedAgreementResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o LookupAcceptedAgreementResultOutput) AcceptedAgreementId() pulumi.StringOutput {

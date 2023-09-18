@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Managed Database User Data Access Container resource in Oracle Cloud Infrastructure Database Management service.
@@ -114,6 +115,12 @@ func (o GetManagedDatabaseUserDataAccessContainerResultOutput) ToGetManagedDatab
 
 func (o GetManagedDatabaseUserDataAccessContainerResultOutput) ToGetManagedDatabaseUserDataAccessContainerResultOutputWithContext(ctx context.Context) GetManagedDatabaseUserDataAccessContainerResultOutput {
 	return o
+}
+
+func (o GetManagedDatabaseUserDataAccessContainerResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseUserDataAccessContainerResult] {
+	return pulumix.Output[GetManagedDatabaseUserDataAccessContainerResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The provider-assigned unique ID for this managed resource.

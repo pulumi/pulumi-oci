@@ -87,7 +87,7 @@ public class StorageObject extends com.pulumi.resources.CustomResource {
      * The name of the bucket for the source object.
      * 
      */
-    @Export(name="bucket", type=String.class, parameters={})
+    @Export(name="bucket", refs={String.class}, tree="[0]")
     private Output<String> bucket;
 
     /**
@@ -101,7 +101,7 @@ public class StorageObject extends com.pulumi.resources.CustomResource {
      * The optional Cache-Control header that defines the caching behavior value to be returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify objects that require caching restrictions.
      * 
      */
-    @Export(name="cacheControl", type=String.class, parameters={})
+    @Export(name="cacheControl", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> cacheControl;
 
     /**
@@ -115,7 +115,7 @@ public class StorageObject extends com.pulumi.resources.CustomResource {
      * The object to upload to the object store. Cannot be defined if `source` or `source_uri_details` is defined.
      * 
      */
-    @Export(name="content", type=String.class, parameters={})
+    @Export(name="content", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> content;
 
     /**
@@ -129,7 +129,7 @@ public class StorageObject extends com.pulumi.resources.CustomResource {
      * The optional Content-Disposition header that defines presentational information for the object to be returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to let users download objects with custom filenames in a browser.
      * 
      */
-    @Export(name="contentDisposition", type=String.class, parameters={})
+    @Export(name="contentDisposition", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> contentDisposition;
 
     /**
@@ -143,7 +143,7 @@ public class StorageObject extends com.pulumi.resources.CustomResource {
      * The optional Content-Encoding header that defines the content encodings that were applied to the object to upload. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to determine what decoding mechanisms need to be applied to obtain the media-type specified by the Content-Type header of the object.
      * 
      */
-    @Export(name="contentEncoding", type=String.class, parameters={})
+    @Export(name="contentEncoding", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> contentEncoding;
 
     /**
@@ -157,7 +157,7 @@ public class StorageObject extends com.pulumi.resources.CustomResource {
      * The optional Content-Language header that defines the content language of the object to upload. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify and differentiate objects based on a particular language.
      * 
      */
-    @Export(name="contentLanguage", type=String.class, parameters={})
+    @Export(name="contentLanguage", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> contentLanguage;
 
     /**
@@ -171,7 +171,7 @@ public class StorageObject extends com.pulumi.resources.CustomResource {
      * (Updatable) The content length of the body.
      * 
      */
-    @Export(name="contentLength", type=String.class, parameters={})
+    @Export(name="contentLength", refs={String.class}, tree="[0]")
     private Output<String> contentLength;
 
     /**
@@ -187,7 +187,7 @@ public class StorageObject extends com.pulumi.resources.CustomResource {
      * &#34;The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)&#34;
      * 
      */
-    @Export(name="contentMd5", type=String.class, parameters={})
+    @Export(name="contentMd5", refs={String.class}, tree="[0]")
     private Output<String> contentMd5;
 
     /**
@@ -203,7 +203,7 @@ public class StorageObject extends com.pulumi.resources.CustomResource {
      * The optional Content-Type header that defines the standard MIME type format of the object. Content type defaults to &#39;application/octet-stream&#39; if not specified in the PutObject call. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify and perform special operations on text only objects.
      * 
      */
-    @Export(name="contentType", type=String.class, parameters={})
+    @Export(name="contentType", refs={String.class}, tree="[0]")
     private Output<String> contentType;
 
     /**
@@ -217,7 +217,7 @@ public class StorageObject extends com.pulumi.resources.CustomResource {
      * (Updatable) A boolean to delete all object versions for an object in a bucket that has or ever had versioning enabled.
      * 
      */
-    @Export(name="deleteAllObjectVersions", type=Boolean.class, parameters={})
+    @Export(name="deleteAllObjectVersions", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> deleteAllObjectVersions;
 
     /**
@@ -232,7 +232,7 @@ public class StorageObject extends com.pulumi.resources.CustomResource {
      * Note: All specified keys must be in lower case.
      * 
      */
-    @Export(name="metadata", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="metadata", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output</* @Nullable */ Map<String,Object>> metadata;
 
     /**
@@ -247,7 +247,7 @@ public class StorageObject extends com.pulumi.resources.CustomResource {
      * The top-level namespace of the source object.
      * 
      */
-    @Export(name="namespace", type=String.class, parameters={})
+    @Export(name="namespace", refs={String.class}, tree="[0]")
     private Output<String> namespace;
 
     /**
@@ -261,7 +261,7 @@ public class StorageObject extends com.pulumi.resources.CustomResource {
      * The name of the source object.
      * 
      */
-    @Export(name="object", type=String.class, parameters={})
+    @Export(name="object", refs={String.class}, tree="[0]")
     private Output<String> object;
 
     /**
@@ -275,7 +275,7 @@ public class StorageObject extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
      * 
      */
-    @Export(name="opcSseKmsKeyId", type=String.class, parameters={})
+    @Export(name="opcSseKmsKeyId", refs={String.class}, tree="[0]")
     private Output<String> opcSseKmsKeyId;
 
     /**
@@ -289,7 +289,7 @@ public class StorageObject extends com.pulumi.resources.CustomResource {
      * An absolute path to a file on the local system. Cannot be defined if `content` or `source_uri_details` is defined.
      * 
      */
-    @Export(name="source", type=String.class, parameters={})
+    @Export(name="source", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> source;
 
     /**
@@ -304,7 +304,7 @@ public class StorageObject extends com.pulumi.resources.CustomResource {
      * Note: To enable object copy, you must authorize the service to manage objects on your behalf.
      * 
      */
-    @Export(name="sourceUriDetails", type=StorageObjectSourceUriDetails.class, parameters={})
+    @Export(name="sourceUriDetails", refs={StorageObjectSourceUriDetails.class}, tree="[0]")
     private Output</* @Nullable */ StorageObjectSourceUriDetails> sourceUriDetails;
 
     /**
@@ -315,7 +315,7 @@ public class StorageObject extends com.pulumi.resources.CustomResource {
     public Output<Optional<StorageObjectSourceUriDetails>> sourceUriDetails() {
         return Codegen.optional(this.sourceUriDetails);
     }
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     public Output<String> state() {
@@ -325,7 +325,7 @@ public class StorageObject extends com.pulumi.resources.CustomResource {
      * (Updatable) The storage tier that the object should be stored in. If not specified, the object will be stored in the same storage tier as the bucket.
      * 
      */
-    @Export(name="storageTier", type=String.class, parameters={})
+    @Export(name="storageTier", refs={String.class}, tree="[0]")
     private Output<String> storageTier;
 
     /**
@@ -335,13 +335,13 @@ public class StorageObject extends com.pulumi.resources.CustomResource {
     public Output<String> storageTier() {
         return this.storageTier;
     }
-    @Export(name="versionId", type=String.class, parameters={})
+    @Export(name="versionId", refs={String.class}, tree="[0]")
     private Output<String> versionId;
 
     public Output<String> versionId() {
         return this.versionId;
     }
-    @Export(name="workRequestId", type=String.class, parameters={})
+    @Export(name="workRequestId", refs={String.class}, tree="[0]")
     private Output<String> workRequestId;
 
     public Output<String> workRequestId() {

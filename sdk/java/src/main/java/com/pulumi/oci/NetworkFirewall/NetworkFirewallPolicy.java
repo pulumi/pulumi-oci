@@ -147,7 +147,7 @@ public class NetworkFirewallPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) Lists of the application of the policy. The value of an entry is a list of &#34;applications&#34;, each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
      * 
      */
-    @Export(name="applicationLists", type=List.class, parameters={NetworkFirewallPolicyApplicationList.class})
+    @Export(name="applicationLists", refs={List.class,NetworkFirewallPolicyApplicationList.class}, tree="[0,1]")
     private Output<List<NetworkFirewallPolicyApplicationList>> applicationLists;
 
     /**
@@ -161,7 +161,7 @@ public class NetworkFirewallPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the NetworkFirewall Policy.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -175,7 +175,7 @@ public class NetworkFirewallPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) Map defining decryption profiles of the policy. The value of an entry is a decryption profile. The associated key is the identifier by which the decryption profile is referenced.
      * 
      */
-    @Export(name="decryptionProfiles", type=List.class, parameters={NetworkFirewallPolicyDecryptionProfile.class})
+    @Export(name="decryptionProfiles", refs={List.class,NetworkFirewallPolicyDecryptionProfile.class}, tree="[0,1]")
     private Output<List<NetworkFirewallPolicyDecryptionProfile>> decryptionProfiles;
 
     /**
@@ -189,7 +189,7 @@ public class NetworkFirewallPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) List of Decryption Rules defining the behavior of the policy. The first rule with a matching condition determines the action taken upon network traffic.
      * 
      */
-    @Export(name="decryptionRules", type=List.class, parameters={NetworkFirewallPolicyDecryptionRule.class})
+    @Export(name="decryptionRules", refs={List.class,NetworkFirewallPolicyDecryptionRule.class}, tree="[0,1]")
     private Output<List<NetworkFirewallPolicyDecryptionRule>> decryptionRules;
 
     /**
@@ -203,7 +203,7 @@ public class NetworkFirewallPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -217,7 +217,7 @@ public class NetworkFirewallPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-friendly optional name for the firewall policy. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -231,7 +231,7 @@ public class NetworkFirewallPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -245,7 +245,7 @@ public class NetworkFirewallPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) List of IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
      * 
      */
-    @Export(name="ipAddressLists", type=List.class, parameters={NetworkFirewallPolicyIpAddressList.class})
+    @Export(name="ipAddressLists", refs={List.class,NetworkFirewallPolicyIpAddressList.class}, tree="[0,1]")
     private Output<List<NetworkFirewallPolicyIpAddressList>> ipAddressLists;
 
     /**
@@ -259,7 +259,7 @@ public class NetworkFirewallPolicy extends com.pulumi.resources.CustomResource {
      * To determine if any Network Firewall is associated with this Network Firewall Policy.
      * 
      */
-    @Export(name="isFirewallAttached", type=Boolean.class, parameters={})
+    @Export(name="isFirewallAttached", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isFirewallAttached;
 
     /**
@@ -273,7 +273,7 @@ public class NetworkFirewallPolicy extends com.pulumi.resources.CustomResource {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -287,7 +287,7 @@ public class NetworkFirewallPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) Map defining secrets of the policy. The value of an entry is a &#34;mapped secret&#34; consisting of a purpose and source. The associated key is the identifier by which the mapped secret is referenced.
      * 
      */
-    @Export(name="mappedSecrets", type=List.class, parameters={NetworkFirewallPolicyMappedSecret.class})
+    @Export(name="mappedSecrets", refs={List.class,NetworkFirewallPolicyMappedSecret.class}, tree="[0,1]")
     private Output<List<NetworkFirewallPolicyMappedSecret>> mappedSecrets;
 
     /**
@@ -301,7 +301,7 @@ public class NetworkFirewallPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) List of Security Rules defining the behavior of the policy. The first rule with a matching condition determines the action taken upon network traffic.
      * 
      */
-    @Export(name="securityRules", type=List.class, parameters={NetworkFirewallPolicySecurityRule.class})
+    @Export(name="securityRules", refs={List.class,NetworkFirewallPolicySecurityRule.class}, tree="[0,1]")
     private Output<List<NetworkFirewallPolicySecurityRule>> securityRules;
 
     /**
@@ -315,7 +315,7 @@ public class NetworkFirewallPolicy extends com.pulumi.resources.CustomResource {
      * The current state of the Network Firewall Policy.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -329,7 +329,7 @@ public class NetworkFirewallPolicy extends com.pulumi.resources.CustomResource {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -343,7 +343,7 @@ public class NetworkFirewallPolicy extends com.pulumi.resources.CustomResource {
      * The time instant at which the Network Firewall Policy was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -357,7 +357,7 @@ public class NetworkFirewallPolicy extends com.pulumi.resources.CustomResource {
      * The time instant at which the Network Firewall Policy was updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -371,7 +371,7 @@ public class NetworkFirewallPolicy extends com.pulumi.resources.CustomResource {
      * (Updatable) Map defining URL pattern lists of the policy. The value of an entry is a list of URL patterns. The associated key is the identifier by which the URL pattern list is referenced.
      * 
      */
-    @Export(name="urlLists", type=List.class, parameters={NetworkFirewallPolicyUrlList.class})
+    @Export(name="urlLists", refs={List.class,NetworkFirewallPolicyUrlList.class}, tree="[0,1]")
     private Output<List<NetworkFirewallPolicyUrlList>> urlLists;
 
     /**

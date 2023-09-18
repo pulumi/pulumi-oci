@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Snapshot resource in Oracle Cloud Infrastructure File Storage service.
@@ -278,6 +279,12 @@ func (i *Snapshot) ToSnapshotOutputWithContext(ctx context.Context) SnapshotOutp
 	return pulumi.ToOutputWithContext(ctx, i).(SnapshotOutput)
 }
 
+func (i *Snapshot) ToOutput(ctx context.Context) pulumix.Output[*Snapshot] {
+	return pulumix.Output[*Snapshot]{
+		OutputState: i.ToSnapshotOutputWithContext(ctx).OutputState,
+	}
+}
+
 // SnapshotArrayInput is an input type that accepts SnapshotArray and SnapshotArrayOutput values.
 // You can construct a concrete instance of `SnapshotArrayInput` via:
 //
@@ -301,6 +308,12 @@ func (i SnapshotArray) ToSnapshotArrayOutput() SnapshotArrayOutput {
 
 func (i SnapshotArray) ToSnapshotArrayOutputWithContext(ctx context.Context) SnapshotArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SnapshotArrayOutput)
+}
+
+func (i SnapshotArray) ToOutput(ctx context.Context) pulumix.Output[[]*Snapshot] {
+	return pulumix.Output[[]*Snapshot]{
+		OutputState: i.ToSnapshotArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // SnapshotMapInput is an input type that accepts SnapshotMap and SnapshotMapOutput values.
@@ -328,6 +341,12 @@ func (i SnapshotMap) ToSnapshotMapOutputWithContext(ctx context.Context) Snapsho
 	return pulumi.ToOutputWithContext(ctx, i).(SnapshotMapOutput)
 }
 
+func (i SnapshotMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Snapshot] {
+	return pulumix.Output[map[string]*Snapshot]{
+		OutputState: i.ToSnapshotMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type SnapshotOutput struct{ *pulumi.OutputState }
 
 func (SnapshotOutput) ElementType() reflect.Type {
@@ -340,6 +359,12 @@ func (o SnapshotOutput) ToSnapshotOutput() SnapshotOutput {
 
 func (o SnapshotOutput) ToSnapshotOutputWithContext(ctx context.Context) SnapshotOutput {
 	return o
+}
+
+func (o SnapshotOutput) ToOutput(ctx context.Context) pulumix.Output[*Snapshot] {
+	return pulumix.Output[*Snapshot]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -431,6 +456,12 @@ func (o SnapshotArrayOutput) ToSnapshotArrayOutputWithContext(ctx context.Contex
 	return o
 }
 
+func (o SnapshotArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Snapshot] {
+	return pulumix.Output[[]*Snapshot]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o SnapshotArrayOutput) Index(i pulumi.IntInput) SnapshotOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Snapshot {
 		return vs[0].([]*Snapshot)[vs[1].(int)]
@@ -449,6 +480,12 @@ func (o SnapshotMapOutput) ToSnapshotMapOutput() SnapshotMapOutput {
 
 func (o SnapshotMapOutput) ToSnapshotMapOutputWithContext(ctx context.Context) SnapshotMapOutput {
 	return o
+}
+
+func (o SnapshotMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Snapshot] {
+	return pulumix.Output[map[string]*Snapshot]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o SnapshotMapOutput) MapIndex(k pulumi.StringInput) SnapshotOutput {

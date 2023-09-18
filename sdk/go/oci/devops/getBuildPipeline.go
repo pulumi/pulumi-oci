@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Build Pipeline resource in Oracle Cloud Infrastructure Devops service.
@@ -123,6 +124,12 @@ func (o LookupBuildPipelineResultOutput) ToLookupBuildPipelineResultOutput() Loo
 
 func (o LookupBuildPipelineResultOutput) ToLookupBuildPipelineResultOutputWithContext(ctx context.Context) LookupBuildPipelineResultOutput {
 	return o
+}
+
+func (o LookupBuildPipelineResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupBuildPipelineResult] {
+	return pulumix.Output[LookupBuildPipelineResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o LookupBuildPipelineResultOutput) BuildPipelineId() pulumi.StringOutput {

@@ -79,7 +79,7 @@ public class ResolverEndpoint extends com.pulumi.resources.CustomResource {
      * The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver&#39;s compartment is changed.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -93,7 +93,7 @@ public class ResolverEndpoint extends com.pulumi.resources.CustomResource {
      * (Updatable) The type of resolver endpoint. VNIC is currently the only supported type.
      * 
      */
-    @Export(name="endpointType", type=String.class, parameters={})
+    @Export(name="endpointType", refs={String.class}, tree="[0]")
     private Output<String> endpointType;
 
     /**
@@ -107,7 +107,7 @@ public class ResolverEndpoint extends com.pulumi.resources.CustomResource {
      * An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
      * 
      */
-    @Export(name="forwardingAddress", type=String.class, parameters={})
+    @Export(name="forwardingAddress", refs={String.class}, tree="[0]")
     private Output<String> forwardingAddress;
 
     /**
@@ -121,7 +121,7 @@ public class ResolverEndpoint extends com.pulumi.resources.CustomResource {
      * A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
      * 
      */
-    @Export(name="isForwarding", type=Boolean.class, parameters={})
+    @Export(name="isForwarding", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isForwarding;
 
     /**
@@ -135,7 +135,7 @@ public class ResolverEndpoint extends com.pulumi.resources.CustomResource {
      * A Boolean flag indicating whether or not the resolver endpoint is for listening.
      * 
      */
-    @Export(name="isListening", type=Boolean.class, parameters={})
+    @Export(name="isListening", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isListening;
 
     /**
@@ -149,7 +149,7 @@ public class ResolverEndpoint extends com.pulumi.resources.CustomResource {
      * An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
      * 
      */
-    @Export(name="listeningAddress", type=String.class, parameters={})
+    @Export(name="listeningAddress", refs={String.class}, tree="[0]")
     private Output<String> listeningAddress;
 
     /**
@@ -163,7 +163,7 @@ public class ResolverEndpoint extends com.pulumi.resources.CustomResource {
      * The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -177,7 +177,7 @@ public class ResolverEndpoint extends com.pulumi.resources.CustomResource {
      * An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the resolver endpoint is a part of.
      * 
      */
-    @Export(name="nsgIds", type=List.class, parameters={String.class})
+    @Export(name="nsgIds", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> nsgIds;
 
     /**
@@ -191,7 +191,7 @@ public class ResolverEndpoint extends com.pulumi.resources.CustomResource {
      * The OCID of the target resolver.
      * 
      */
-    @Export(name="resolverId", type=String.class, parameters={})
+    @Export(name="resolverId", refs={String.class}, tree="[0]")
     private Output<String> resolverId;
 
     /**
@@ -205,7 +205,7 @@ public class ResolverEndpoint extends com.pulumi.resources.CustomResource {
      * Value must be `PRIVATE` when creating private name resolver endpoints.
      * 
      */
-    @Export(name="scope", type=String.class, parameters={})
+    @Export(name="scope", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> scope;
 
     /**
@@ -219,7 +219,7 @@ public class ResolverEndpoint extends com.pulumi.resources.CustomResource {
      * The canonical absolute URL of the resource.
      * 
      */
-    @Export(name="self", type=String.class, parameters={})
+    @Export(name="self", refs={String.class}, tree="[0]")
     private Output<String> self;
 
     /**
@@ -233,7 +233,7 @@ public class ResolverEndpoint extends com.pulumi.resources.CustomResource {
      * The current state of the resource.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -250,7 +250,7 @@ public class ResolverEndpoint extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="subnetId", type=String.class, parameters={})
+    @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
@@ -267,7 +267,7 @@ public class ResolverEndpoint extends com.pulumi.resources.CustomResource {
      * The date and time the resource was created in &#34;YYYY-MM-ddThh:mm:ssZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -281,7 +281,7 @@ public class ResolverEndpoint extends com.pulumi.resources.CustomResource {
      * The date and time the resource was last updated in &#34;YYYY-MM-ddThh:mm:ssZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

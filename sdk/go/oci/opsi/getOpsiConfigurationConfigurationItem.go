@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Opsi Configuration Configuration Item resource in Oracle Cloud Infrastructure Opsi service.
@@ -128,6 +129,12 @@ func (o GetOpsiConfigurationConfigurationItemResultOutput) ToGetOpsiConfiguratio
 
 func (o GetOpsiConfigurationConfigurationItemResultOutput) ToGetOpsiConfigurationConfigurationItemResultOutputWithContext(ctx context.Context) GetOpsiConfigurationConfigurationItemResultOutput {
 	return o
+}
+
+func (o GetOpsiConfigurationConfigurationItemResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetOpsiConfigurationConfigurationItemResult] {
+	return pulumix.Output[GetOpsiConfigurationConfigurationItemResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetOpsiConfigurationConfigurationItemResultOutput) CompartmentId() pulumi.StringPtrOutput {

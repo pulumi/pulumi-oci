@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Letter Of Authority resource in Oracle Cloud Infrastructure Core service.
@@ -112,6 +113,12 @@ func (o GetLetterOfAuthorityResultOutput) ToGetLetterOfAuthorityResultOutput() G
 
 func (o GetLetterOfAuthorityResultOutput) ToGetLetterOfAuthorityResultOutputWithContext(ctx context.Context) GetLetterOfAuthorityResultOutput {
 	return o
+}
+
+func (o GetLetterOfAuthorityResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetLetterOfAuthorityResult] {
+	return pulumix.Output[GetLetterOfAuthorityResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the entity authorized by this Letter of Authority.

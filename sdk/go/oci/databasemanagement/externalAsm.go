@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the External Asm resource in Oracle Cloud Infrastructure Database Management service.
@@ -221,6 +222,12 @@ func (i *ExternalAsm) ToExternalAsmOutputWithContext(ctx context.Context) Extern
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalAsmOutput)
 }
 
+func (i *ExternalAsm) ToOutput(ctx context.Context) pulumix.Output[*ExternalAsm] {
+	return pulumix.Output[*ExternalAsm]{
+		OutputState: i.ToExternalAsmOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ExternalAsmArrayInput is an input type that accepts ExternalAsmArray and ExternalAsmArrayOutput values.
 // You can construct a concrete instance of `ExternalAsmArrayInput` via:
 //
@@ -244,6 +251,12 @@ func (i ExternalAsmArray) ToExternalAsmArrayOutput() ExternalAsmArrayOutput {
 
 func (i ExternalAsmArray) ToExternalAsmArrayOutputWithContext(ctx context.Context) ExternalAsmArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalAsmArrayOutput)
+}
+
+func (i ExternalAsmArray) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalAsm] {
+	return pulumix.Output[[]*ExternalAsm]{
+		OutputState: i.ToExternalAsmArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // ExternalAsmMapInput is an input type that accepts ExternalAsmMap and ExternalAsmMapOutput values.
@@ -271,6 +284,12 @@ func (i ExternalAsmMap) ToExternalAsmMapOutputWithContext(ctx context.Context) E
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalAsmMapOutput)
 }
 
+func (i ExternalAsmMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalAsm] {
+	return pulumix.Output[map[string]*ExternalAsm]{
+		OutputState: i.ToExternalAsmMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ExternalAsmOutput struct{ *pulumi.OutputState }
 
 func (ExternalAsmOutput) ElementType() reflect.Type {
@@ -283,6 +302,12 @@ func (o ExternalAsmOutput) ToExternalAsmOutput() ExternalAsmOutput {
 
 func (o ExternalAsmOutput) ToExternalAsmOutputWithContext(ctx context.Context) ExternalAsmOutput {
 	return o
+}
+
+func (o ExternalAsmOutput) ToOutput(ctx context.Context) pulumix.Output[*ExternalAsm] {
+	return pulumix.Output[*ExternalAsm]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The additional details of the external ASM defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
@@ -382,6 +407,12 @@ func (o ExternalAsmArrayOutput) ToExternalAsmArrayOutputWithContext(ctx context.
 	return o
 }
 
+func (o ExternalAsmArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalAsm] {
+	return pulumix.Output[[]*ExternalAsm]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o ExternalAsmArrayOutput) Index(i pulumi.IntInput) ExternalAsmOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ExternalAsm {
 		return vs[0].([]*ExternalAsm)[vs[1].(int)]
@@ -400,6 +431,12 @@ func (o ExternalAsmMapOutput) ToExternalAsmMapOutput() ExternalAsmMapOutput {
 
 func (o ExternalAsmMapOutput) ToExternalAsmMapOutputWithContext(ctx context.Context) ExternalAsmMapOutput {
 	return o
+}
+
+func (o ExternalAsmMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalAsm] {
+	return pulumix.Output[map[string]*ExternalAsm]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ExternalAsmMapOutput) MapIndex(k pulumi.StringInput) ExternalAsmOutput {

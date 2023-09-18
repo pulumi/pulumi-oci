@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Compute Global Image Capability Schemas Version resource in Oracle Cloud Infrastructure Core service.
@@ -114,6 +115,12 @@ func (o GetComputeGlobalImageCapabilitySchemasVersionResultOutput) ToGetComputeG
 
 func (o GetComputeGlobalImageCapabilitySchemasVersionResultOutput) ToGetComputeGlobalImageCapabilitySchemasVersionResultOutputWithContext(ctx context.Context) GetComputeGlobalImageCapabilitySchemasVersionResultOutput {
 	return o
+}
+
+func (o GetComputeGlobalImageCapabilitySchemasVersionResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetComputeGlobalImageCapabilitySchemasVersionResult] {
+	return pulumix.Output[GetComputeGlobalImageCapabilitySchemasVersionResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The ocid of the compute global image capability schema

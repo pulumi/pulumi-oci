@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -74,6 +75,12 @@ func (i GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArgs) ToGetI
 	return pulumi.ToOutputWithContext(ctx, i).(GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoOutput)
 }
 
+func (i GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArgs) ToOutput(ctx context.Context) pulumix.Output[GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo] {
+	return pulumix.Output[GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo]{
+		OutputState: i.ToGetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArrayInput is an input type that accepts GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArray and GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArrayOutput values.
 // You can construct a concrete instance of `GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArrayInput` via:
 //
@@ -99,6 +106,12 @@ func (i GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArrayOutput)
 }
 
+func (i GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo] {
+	return pulumix.Output[[]GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo]{
+		OutputState: i.ToGetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoOutput struct{ *pulumi.OutputState }
 
 func (GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoOutput) ElementType() reflect.Type {
@@ -111,6 +124,12 @@ func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoOutput) ToGe
 
 func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoOutput) ToGetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoOutputWithContext(ctx context.Context) GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoOutput {
 	return o
+}
+
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoOutput) ToOutput(ctx context.Context) pulumix.Output[GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo] {
+	return pulumix.Output[GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The state of the BGP IPv6 session.
@@ -175,6 +194,12 @@ func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArrayOutput)
 	return o
 }
 
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo] {
+	return pulumix.Output[[]GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArrayOutput) Index(i pulumi.IntInput) GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo {
 		return vs[0].([]GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo)[vs[1].(int)]
@@ -218,6 +243,12 @@ func (i GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArgs
 	return pulumi.ToOutputWithContext(ctx, i).(GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigOutput)
 }
 
+func (i GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfig] {
+	return pulumix.Output[GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfig]{
+		OutputState: i.ToGetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArrayInput is an input type that accepts GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArray and GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArrayOutput values.
 // You can construct a concrete instance of `GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArrayInput` via:
 //
@@ -243,6 +274,12 @@ func (i GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArra
 	return pulumi.ToOutputWithContext(ctx, i).(GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArrayOutput)
 }
 
+func (i GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfig] {
+	return pulumix.Output[[]GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfig]{
+		OutputState: i.ToGetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigOutput struct{ *pulumi.OutputState }
 
 func (GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigOutput) ElementType() reflect.Type {
@@ -255,6 +292,12 @@ func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigOutp
 
 func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigOutput) ToGetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigOutputWithContext(ctx context.Context) GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigOutput {
 	return o
+}
+
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfig] {
+	return pulumix.Output[GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Lists IPv4 or IPv6-enabled subnets in your on-premises network.
@@ -283,6 +326,12 @@ func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArra
 
 func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArrayOutput) ToGetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArrayOutputWithContext(ctx context.Context) GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArrayOutput {
 	return o
+}
+
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfig] {
+	return pulumix.Output[[]GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArrayOutput) Index(i pulumi.IntInput) GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigOutput {
@@ -364,6 +413,12 @@ func (i GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArgs) ToGetI
 	return pulumi.ToOutputWithContext(ctx, i).(GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailOutput)
 }
 
+func (i GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail] {
+	return pulumix.Output[GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail]{
+		OutputState: i.ToGetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArrayInput is an input type that accepts GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArray and GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArrayOutput values.
 // You can construct a concrete instance of `GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArrayInput` via:
 //
@@ -389,6 +444,12 @@ func (i GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArrayOutput)
 }
 
+func (i GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail] {
+	return pulumix.Output[[]GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail]{
+		OutputState: i.ToGetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailOutput struct{ *pulumi.OutputState }
 
 func (GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailOutput) ElementType() reflect.Type {
@@ -401,6 +462,12 @@ func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailOutput) ToGe
 
 func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailOutput) ToGetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailOutputWithContext(ctx context.Context) GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailOutput {
 	return o
+}
+
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail] {
+	return pulumix.Output[GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Phase two authentication algorithm proposed during tunnel negotiation.
@@ -488,6 +555,12 @@ func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArrayOutput)
 	return o
 }
 
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail] {
+	return pulumix.Output[[]GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArrayOutput) Index(i pulumi.IntInput) GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail {
 		return vs[0].([]GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail)[vs[1].(int)]
@@ -571,6 +644,12 @@ func (i GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArgs) ToGetI
 	return pulumi.ToOutputWithContext(ctx, i).(GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailOutput)
 }
 
+func (i GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail] {
+	return pulumix.Output[GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail]{
+		OutputState: i.ToGetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArrayInput is an input type that accepts GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArray and GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArrayOutput values.
 // You can construct a concrete instance of `GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArrayInput` via:
 //
@@ -596,6 +675,12 @@ func (i GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArrayOutput)
 }
 
+func (i GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail] {
+	return pulumix.Output[[]GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail]{
+		OutputState: i.ToGetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailOutput struct{ *pulumi.OutputState }
 
 func (GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailOutput) ElementType() reflect.Type {
@@ -608,6 +693,12 @@ func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailOutput) ToGe
 
 func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailOutput) ToGetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailOutputWithContext(ctx context.Context) GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailOutput {
 	return o
+}
+
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail] {
+	return pulumix.Output[GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Phase two authentication algorithm proposed during tunnel negotiation.
@@ -700,6 +791,12 @@ func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArrayOutput)
 	return o
 }
 
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail] {
+	return pulumix.Output[[]GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArrayOutput) Index(i pulumi.IntInput) GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail {
 		return vs[0].([]GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail)[vs[1].(int)]
@@ -787,6 +884,12 @@ func (i GetIpsecConnectionsConnectionArgs) ToGetIpsecConnectionsConnectionOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetIpsecConnectionsConnectionOutput)
 }
 
+func (i GetIpsecConnectionsConnectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetIpsecConnectionsConnection] {
+	return pulumix.Output[GetIpsecConnectionsConnection]{
+		OutputState: i.ToGetIpsecConnectionsConnectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetIpsecConnectionsConnectionArrayInput is an input type that accepts GetIpsecConnectionsConnectionArray and GetIpsecConnectionsConnectionArrayOutput values.
 // You can construct a concrete instance of `GetIpsecConnectionsConnectionArrayInput` via:
 //
@@ -812,6 +915,12 @@ func (i GetIpsecConnectionsConnectionArray) ToGetIpsecConnectionsConnectionArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetIpsecConnectionsConnectionArrayOutput)
 }
 
+func (i GetIpsecConnectionsConnectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIpsecConnectionsConnection] {
+	return pulumix.Output[[]GetIpsecConnectionsConnection]{
+		OutputState: i.ToGetIpsecConnectionsConnectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetIpsecConnectionsConnectionOutput struct{ *pulumi.OutputState }
 
 func (GetIpsecConnectionsConnectionOutput) ElementType() reflect.Type {
@@ -824,6 +933,12 @@ func (o GetIpsecConnectionsConnectionOutput) ToGetIpsecConnectionsConnectionOutp
 
 func (o GetIpsecConnectionsConnectionOutput) ToGetIpsecConnectionsConnectionOutputWithContext(ctx context.Context) GetIpsecConnectionsConnectionOutput {
 	return o
+}
+
+func (o GetIpsecConnectionsConnectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetIpsecConnectionsConnection] {
+	return pulumix.Output[GetIpsecConnectionsConnection]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -905,6 +1020,12 @@ func (o GetIpsecConnectionsConnectionArrayOutput) ToGetIpsecConnectionsConnectio
 	return o
 }
 
+func (o GetIpsecConnectionsConnectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIpsecConnectionsConnection] {
+	return pulumix.Output[[]GetIpsecConnectionsConnection]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetIpsecConnectionsConnectionArrayOutput) Index(i pulumi.IntInput) GetIpsecConnectionsConnectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIpsecConnectionsConnection {
 		return vs[0].([]GetIpsecConnectionsConnection)[vs[1].(int)]
@@ -946,6 +1067,12 @@ func (i GetIpsecConnectionsFilterArgs) ToGetIpsecConnectionsFilterOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetIpsecConnectionsFilterOutput)
 }
 
+func (i GetIpsecConnectionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetIpsecConnectionsFilter] {
+	return pulumix.Output[GetIpsecConnectionsFilter]{
+		OutputState: i.ToGetIpsecConnectionsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetIpsecConnectionsFilterArrayInput is an input type that accepts GetIpsecConnectionsFilterArray and GetIpsecConnectionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetIpsecConnectionsFilterArrayInput` via:
 //
@@ -971,6 +1098,12 @@ func (i GetIpsecConnectionsFilterArray) ToGetIpsecConnectionsFilterArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetIpsecConnectionsFilterArrayOutput)
 }
 
+func (i GetIpsecConnectionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIpsecConnectionsFilter] {
+	return pulumix.Output[[]GetIpsecConnectionsFilter]{
+		OutputState: i.ToGetIpsecConnectionsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetIpsecConnectionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetIpsecConnectionsFilterOutput) ElementType() reflect.Type {
@@ -983,6 +1116,12 @@ func (o GetIpsecConnectionsFilterOutput) ToGetIpsecConnectionsFilterOutput() Get
 
 func (o GetIpsecConnectionsFilterOutput) ToGetIpsecConnectionsFilterOutputWithContext(ctx context.Context) GetIpsecConnectionsFilterOutput {
 	return o
+}
+
+func (o GetIpsecConnectionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetIpsecConnectionsFilter] {
+	return pulumix.Output[GetIpsecConnectionsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetIpsecConnectionsFilterOutput) Name() pulumi.StringOutput {
@@ -1009,6 +1148,12 @@ func (o GetIpsecConnectionsFilterArrayOutput) ToGetIpsecConnectionsFilterArrayOu
 
 func (o GetIpsecConnectionsFilterArrayOutput) ToGetIpsecConnectionsFilterArrayOutputWithContext(ctx context.Context) GetIpsecConnectionsFilterArrayOutput {
 	return o
+}
+
+func (o GetIpsecConnectionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIpsecConnectionsFilter] {
+	return pulumix.Output[[]GetIpsecConnectionsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetIpsecConnectionsFilterArrayOutput) Index(i pulumi.IntInput) GetIpsecConnectionsFilterOutput {
@@ -1052,6 +1197,12 @@ func (i GetIpsecStatusFilterArgs) ToGetIpsecStatusFilterOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetIpsecStatusFilterOutput)
 }
 
+func (i GetIpsecStatusFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetIpsecStatusFilter] {
+	return pulumix.Output[GetIpsecStatusFilter]{
+		OutputState: i.ToGetIpsecStatusFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetIpsecStatusFilterArrayInput is an input type that accepts GetIpsecStatusFilterArray and GetIpsecStatusFilterArrayOutput values.
 // You can construct a concrete instance of `GetIpsecStatusFilterArrayInput` via:
 //
@@ -1077,6 +1228,12 @@ func (i GetIpsecStatusFilterArray) ToGetIpsecStatusFilterArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetIpsecStatusFilterArrayOutput)
 }
 
+func (i GetIpsecStatusFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIpsecStatusFilter] {
+	return pulumix.Output[[]GetIpsecStatusFilter]{
+		OutputState: i.ToGetIpsecStatusFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetIpsecStatusFilterOutput struct{ *pulumi.OutputState }
 
 func (GetIpsecStatusFilterOutput) ElementType() reflect.Type {
@@ -1089,6 +1246,12 @@ func (o GetIpsecStatusFilterOutput) ToGetIpsecStatusFilterOutput() GetIpsecStatu
 
 func (o GetIpsecStatusFilterOutput) ToGetIpsecStatusFilterOutputWithContext(ctx context.Context) GetIpsecStatusFilterOutput {
 	return o
+}
+
+func (o GetIpsecStatusFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetIpsecStatusFilter] {
+	return pulumix.Output[GetIpsecStatusFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetIpsecStatusFilterOutput) Name() pulumi.StringOutput {
@@ -1115,6 +1278,12 @@ func (o GetIpsecStatusFilterArrayOutput) ToGetIpsecStatusFilterArrayOutput() Get
 
 func (o GetIpsecStatusFilterArrayOutput) ToGetIpsecStatusFilterArrayOutputWithContext(ctx context.Context) GetIpsecStatusFilterArrayOutput {
 	return o
+}
+
+func (o GetIpsecStatusFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIpsecStatusFilter] {
+	return pulumix.Output[[]GetIpsecStatusFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetIpsecStatusFilterArrayOutput) Index(i pulumi.IntInput) GetIpsecStatusFilterOutput {
@@ -1168,6 +1337,12 @@ func (i GetIpsecStatusTunnelArgs) ToGetIpsecStatusTunnelOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetIpsecStatusTunnelOutput)
 }
 
+func (i GetIpsecStatusTunnelArgs) ToOutput(ctx context.Context) pulumix.Output[GetIpsecStatusTunnel] {
+	return pulumix.Output[GetIpsecStatusTunnel]{
+		OutputState: i.ToGetIpsecStatusTunnelOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetIpsecStatusTunnelArrayInput is an input type that accepts GetIpsecStatusTunnelArray and GetIpsecStatusTunnelArrayOutput values.
 // You can construct a concrete instance of `GetIpsecStatusTunnelArrayInput` via:
 //
@@ -1193,6 +1368,12 @@ func (i GetIpsecStatusTunnelArray) ToGetIpsecStatusTunnelArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetIpsecStatusTunnelArrayOutput)
 }
 
+func (i GetIpsecStatusTunnelArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIpsecStatusTunnel] {
+	return pulumix.Output[[]GetIpsecStatusTunnel]{
+		OutputState: i.ToGetIpsecStatusTunnelArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetIpsecStatusTunnelOutput struct{ *pulumi.OutputState }
 
 func (GetIpsecStatusTunnelOutput) ElementType() reflect.Type {
@@ -1205,6 +1386,12 @@ func (o GetIpsecStatusTunnelOutput) ToGetIpsecStatusTunnelOutput() GetIpsecStatu
 
 func (o GetIpsecStatusTunnelOutput) ToGetIpsecStatusTunnelOutputWithContext(ctx context.Context) GetIpsecStatusTunnelOutput {
 	return o
+}
+
+func (o GetIpsecStatusTunnelOutput) ToOutput(ctx context.Context) pulumix.Output[GetIpsecStatusTunnel] {
+	return pulumix.Output[GetIpsecStatusTunnel]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The IP address of Oracle's VPN headend.  Example: `203.0.113.50`
@@ -1239,6 +1426,12 @@ func (o GetIpsecStatusTunnelArrayOutput) ToGetIpsecStatusTunnelArrayOutput() Get
 
 func (o GetIpsecStatusTunnelArrayOutput) ToGetIpsecStatusTunnelArrayOutputWithContext(ctx context.Context) GetIpsecStatusTunnelArrayOutput {
 	return o
+}
+
+func (o GetIpsecStatusTunnelArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIpsecStatusTunnel] {
+	return pulumix.Output[[]GetIpsecStatusTunnel]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetIpsecStatusTunnelArrayOutput) Index(i pulumi.IntInput) GetIpsecStatusTunnelOutput {
@@ -1282,6 +1475,12 @@ func (i GetIpv6sFilterArgs) ToGetIpv6sFilterOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetIpv6sFilterOutput)
 }
 
+func (i GetIpv6sFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetIpv6sFilter] {
+	return pulumix.Output[GetIpv6sFilter]{
+		OutputState: i.ToGetIpv6sFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetIpv6sFilterArrayInput is an input type that accepts GetIpv6sFilterArray and GetIpv6sFilterArrayOutput values.
 // You can construct a concrete instance of `GetIpv6sFilterArrayInput` via:
 //
@@ -1307,6 +1506,12 @@ func (i GetIpv6sFilterArray) ToGetIpv6sFilterArrayOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetIpv6sFilterArrayOutput)
 }
 
+func (i GetIpv6sFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIpv6sFilter] {
+	return pulumix.Output[[]GetIpv6sFilter]{
+		OutputState: i.ToGetIpv6sFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetIpv6sFilterOutput struct{ *pulumi.OutputState }
 
 func (GetIpv6sFilterOutput) ElementType() reflect.Type {
@@ -1319,6 +1524,12 @@ func (o GetIpv6sFilterOutput) ToGetIpv6sFilterOutput() GetIpv6sFilterOutput {
 
 func (o GetIpv6sFilterOutput) ToGetIpv6sFilterOutputWithContext(ctx context.Context) GetIpv6sFilterOutput {
 	return o
+}
+
+func (o GetIpv6sFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetIpv6sFilter] {
+	return pulumix.Output[GetIpv6sFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetIpv6sFilterOutput) Name() pulumi.StringOutput {
@@ -1345,6 +1556,12 @@ func (o GetIpv6sFilterArrayOutput) ToGetIpv6sFilterArrayOutput() GetIpv6sFilterA
 
 func (o GetIpv6sFilterArrayOutput) ToGetIpv6sFilterArrayOutputWithContext(ctx context.Context) GetIpv6sFilterArrayOutput {
 	return o
+}
+
+func (o GetIpv6sFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIpv6sFilter] {
+	return pulumix.Output[[]GetIpv6sFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetIpv6sFilterArrayOutput) Index(i pulumi.IntInput) GetIpv6sFilterOutput {
@@ -1424,6 +1641,12 @@ func (i GetIpv6sIpv6Args) ToGetIpv6sIpv6OutputWithContext(ctx context.Context) G
 	return pulumi.ToOutputWithContext(ctx, i).(GetIpv6sIpv6Output)
 }
 
+func (i GetIpv6sIpv6Args) ToOutput(ctx context.Context) pulumix.Output[GetIpv6sIpv6] {
+	return pulumix.Output[GetIpv6sIpv6]{
+		OutputState: i.ToGetIpv6sIpv6OutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetIpv6sIpv6ArrayInput is an input type that accepts GetIpv6sIpv6Array and GetIpv6sIpv6ArrayOutput values.
 // You can construct a concrete instance of `GetIpv6sIpv6ArrayInput` via:
 //
@@ -1449,6 +1672,12 @@ func (i GetIpv6sIpv6Array) ToGetIpv6sIpv6ArrayOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetIpv6sIpv6ArrayOutput)
 }
 
+func (i GetIpv6sIpv6Array) ToOutput(ctx context.Context) pulumix.Output[[]GetIpv6sIpv6] {
+	return pulumix.Output[[]GetIpv6sIpv6]{
+		OutputState: i.ToGetIpv6sIpv6ArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetIpv6sIpv6Output struct{ *pulumi.OutputState }
 
 func (GetIpv6sIpv6Output) ElementType() reflect.Type {
@@ -1461,6 +1690,12 @@ func (o GetIpv6sIpv6Output) ToGetIpv6sIpv6Output() GetIpv6sIpv6Output {
 
 func (o GetIpv6sIpv6Output) ToGetIpv6sIpv6OutputWithContext(ctx context.Context) GetIpv6sIpv6Output {
 	return o
+}
+
+func (o GetIpv6sIpv6Output) ToOutput(ctx context.Context) pulumix.Output[GetIpv6sIpv6] {
+	return pulumix.Output[GetIpv6sIpv6]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPv6. This is the same as the VNIC's compartment.
@@ -1531,6 +1766,12 @@ func (o GetIpv6sIpv6ArrayOutput) ToGetIpv6sIpv6ArrayOutputWithContext(ctx contex
 	return o
 }
 
+func (o GetIpv6sIpv6ArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIpv6sIpv6] {
+	return pulumix.Output[[]GetIpv6sIpv6]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetIpv6sIpv6ArrayOutput) Index(i pulumi.IntInput) GetIpv6sIpv6Output {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIpv6sIpv6 {
 		return vs[0].([]GetIpv6sIpv6)[vs[1].(int)]
@@ -1582,6 +1823,12 @@ func (i GetListingResourceVersionsAppCatalogListingResourceVersionArgs) ToGetLis
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingResourceVersionsAppCatalogListingResourceVersionOutput)
 }
 
+func (i GetListingResourceVersionsAppCatalogListingResourceVersionArgs) ToOutput(ctx context.Context) pulumix.Output[GetListingResourceVersionsAppCatalogListingResourceVersion] {
+	return pulumix.Output[GetListingResourceVersionsAppCatalogListingResourceVersion]{
+		OutputState: i.ToGetListingResourceVersionsAppCatalogListingResourceVersionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetListingResourceVersionsAppCatalogListingResourceVersionArrayInput is an input type that accepts GetListingResourceVersionsAppCatalogListingResourceVersionArray and GetListingResourceVersionsAppCatalogListingResourceVersionArrayOutput values.
 // You can construct a concrete instance of `GetListingResourceVersionsAppCatalogListingResourceVersionArrayInput` via:
 //
@@ -1607,6 +1854,12 @@ func (i GetListingResourceVersionsAppCatalogListingResourceVersionArray) ToGetLi
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingResourceVersionsAppCatalogListingResourceVersionArrayOutput)
 }
 
+func (i GetListingResourceVersionsAppCatalogListingResourceVersionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListingResourceVersionsAppCatalogListingResourceVersion] {
+	return pulumix.Output[[]GetListingResourceVersionsAppCatalogListingResourceVersion]{
+		OutputState: i.ToGetListingResourceVersionsAppCatalogListingResourceVersionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetListingResourceVersionsAppCatalogListingResourceVersionOutput struct{ *pulumi.OutputState }
 
 func (GetListingResourceVersionsAppCatalogListingResourceVersionOutput) ElementType() reflect.Type {
@@ -1619,6 +1872,12 @@ func (o GetListingResourceVersionsAppCatalogListingResourceVersionOutput) ToGetL
 
 func (o GetListingResourceVersionsAppCatalogListingResourceVersionOutput) ToGetListingResourceVersionsAppCatalogListingResourceVersionOutputWithContext(ctx context.Context) GetListingResourceVersionsAppCatalogListingResourceVersionOutput {
 	return o
+}
+
+func (o GetListingResourceVersionsAppCatalogListingResourceVersionOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingResourceVersionsAppCatalogListingResourceVersion] {
+	return pulumix.Output[GetListingResourceVersionsAppCatalogListingResourceVersion]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetListingResourceVersionsAppCatalogListingResourceVersionOutput) AccessiblePorts() pulumi.IntArrayOutput {
@@ -1669,6 +1928,12 @@ func (o GetListingResourceVersionsAppCatalogListingResourceVersionArrayOutput) T
 	return o
 }
 
+func (o GetListingResourceVersionsAppCatalogListingResourceVersionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListingResourceVersionsAppCatalogListingResourceVersion] {
+	return pulumix.Output[[]GetListingResourceVersionsAppCatalogListingResourceVersion]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetListingResourceVersionsAppCatalogListingResourceVersionArrayOutput) Index(i pulumi.IntInput) GetListingResourceVersionsAppCatalogListingResourceVersionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetListingResourceVersionsAppCatalogListingResourceVersion {
 		return vs[0].([]GetListingResourceVersionsAppCatalogListingResourceVersion)[vs[1].(int)]
@@ -1710,6 +1975,12 @@ func (i GetListingResourceVersionsFilterArgs) ToGetListingResourceVersionsFilter
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingResourceVersionsFilterOutput)
 }
 
+func (i GetListingResourceVersionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetListingResourceVersionsFilter] {
+	return pulumix.Output[GetListingResourceVersionsFilter]{
+		OutputState: i.ToGetListingResourceVersionsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetListingResourceVersionsFilterArrayInput is an input type that accepts GetListingResourceVersionsFilterArray and GetListingResourceVersionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetListingResourceVersionsFilterArrayInput` via:
 //
@@ -1735,6 +2006,12 @@ func (i GetListingResourceVersionsFilterArray) ToGetListingResourceVersionsFilte
 	return pulumi.ToOutputWithContext(ctx, i).(GetListingResourceVersionsFilterArrayOutput)
 }
 
+func (i GetListingResourceVersionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListingResourceVersionsFilter] {
+	return pulumix.Output[[]GetListingResourceVersionsFilter]{
+		OutputState: i.ToGetListingResourceVersionsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetListingResourceVersionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetListingResourceVersionsFilterOutput) ElementType() reflect.Type {
@@ -1747,6 +2024,12 @@ func (o GetListingResourceVersionsFilterOutput) ToGetListingResourceVersionsFilt
 
 func (o GetListingResourceVersionsFilterOutput) ToGetListingResourceVersionsFilterOutputWithContext(ctx context.Context) GetListingResourceVersionsFilterOutput {
 	return o
+}
+
+func (o GetListingResourceVersionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingResourceVersionsFilter] {
+	return pulumix.Output[GetListingResourceVersionsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetListingResourceVersionsFilterOutput) Name() pulumi.StringOutput {
@@ -1773,6 +2056,12 @@ func (o GetListingResourceVersionsFilterArrayOutput) ToGetListingResourceVersion
 
 func (o GetListingResourceVersionsFilterArrayOutput) ToGetListingResourceVersionsFilterArrayOutputWithContext(ctx context.Context) GetListingResourceVersionsFilterArrayOutput {
 	return o
+}
+
+func (o GetListingResourceVersionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListingResourceVersionsFilter] {
+	return pulumix.Output[[]GetListingResourceVersionsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetListingResourceVersionsFilterArrayOutput) Index(i pulumi.IntInput) GetListingResourceVersionsFilterOutput {
@@ -1816,6 +2105,12 @@ func (i GetLocalPeeringGatewaysFilterArgs) ToGetLocalPeeringGatewaysFilterOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetLocalPeeringGatewaysFilterOutput)
 }
 
+func (i GetLocalPeeringGatewaysFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetLocalPeeringGatewaysFilter] {
+	return pulumix.Output[GetLocalPeeringGatewaysFilter]{
+		OutputState: i.ToGetLocalPeeringGatewaysFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetLocalPeeringGatewaysFilterArrayInput is an input type that accepts GetLocalPeeringGatewaysFilterArray and GetLocalPeeringGatewaysFilterArrayOutput values.
 // You can construct a concrete instance of `GetLocalPeeringGatewaysFilterArrayInput` via:
 //
@@ -1841,6 +2136,12 @@ func (i GetLocalPeeringGatewaysFilterArray) ToGetLocalPeeringGatewaysFilterArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetLocalPeeringGatewaysFilterArrayOutput)
 }
 
+func (i GetLocalPeeringGatewaysFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLocalPeeringGatewaysFilter] {
+	return pulumix.Output[[]GetLocalPeeringGatewaysFilter]{
+		OutputState: i.ToGetLocalPeeringGatewaysFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetLocalPeeringGatewaysFilterOutput struct{ *pulumi.OutputState }
 
 func (GetLocalPeeringGatewaysFilterOutput) ElementType() reflect.Type {
@@ -1853,6 +2154,12 @@ func (o GetLocalPeeringGatewaysFilterOutput) ToGetLocalPeeringGatewaysFilterOutp
 
 func (o GetLocalPeeringGatewaysFilterOutput) ToGetLocalPeeringGatewaysFilterOutputWithContext(ctx context.Context) GetLocalPeeringGatewaysFilterOutput {
 	return o
+}
+
+func (o GetLocalPeeringGatewaysFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetLocalPeeringGatewaysFilter] {
+	return pulumix.Output[GetLocalPeeringGatewaysFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetLocalPeeringGatewaysFilterOutput) Name() pulumi.StringOutput {
@@ -1879,6 +2186,12 @@ func (o GetLocalPeeringGatewaysFilterArrayOutput) ToGetLocalPeeringGatewaysFilte
 
 func (o GetLocalPeeringGatewaysFilterArrayOutput) ToGetLocalPeeringGatewaysFilterArrayOutputWithContext(ctx context.Context) GetLocalPeeringGatewaysFilterArrayOutput {
 	return o
+}
+
+func (o GetLocalPeeringGatewaysFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLocalPeeringGatewaysFilter] {
+	return pulumix.Output[[]GetLocalPeeringGatewaysFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetLocalPeeringGatewaysFilterArrayOutput) Index(i pulumi.IntInput) GetLocalPeeringGatewaysFilterOutput {
@@ -1976,6 +2289,12 @@ func (i GetLocalPeeringGatewaysLocalPeeringGatewayArgs) ToGetLocalPeeringGateway
 	return pulumi.ToOutputWithContext(ctx, i).(GetLocalPeeringGatewaysLocalPeeringGatewayOutput)
 }
 
+func (i GetLocalPeeringGatewaysLocalPeeringGatewayArgs) ToOutput(ctx context.Context) pulumix.Output[GetLocalPeeringGatewaysLocalPeeringGateway] {
+	return pulumix.Output[GetLocalPeeringGatewaysLocalPeeringGateway]{
+		OutputState: i.ToGetLocalPeeringGatewaysLocalPeeringGatewayOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetLocalPeeringGatewaysLocalPeeringGatewayArrayInput is an input type that accepts GetLocalPeeringGatewaysLocalPeeringGatewayArray and GetLocalPeeringGatewaysLocalPeeringGatewayArrayOutput values.
 // You can construct a concrete instance of `GetLocalPeeringGatewaysLocalPeeringGatewayArrayInput` via:
 //
@@ -2001,6 +2320,12 @@ func (i GetLocalPeeringGatewaysLocalPeeringGatewayArray) ToGetLocalPeeringGatewa
 	return pulumi.ToOutputWithContext(ctx, i).(GetLocalPeeringGatewaysLocalPeeringGatewayArrayOutput)
 }
 
+func (i GetLocalPeeringGatewaysLocalPeeringGatewayArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLocalPeeringGatewaysLocalPeeringGateway] {
+	return pulumix.Output[[]GetLocalPeeringGatewaysLocalPeeringGateway]{
+		OutputState: i.ToGetLocalPeeringGatewaysLocalPeeringGatewayArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetLocalPeeringGatewaysLocalPeeringGatewayOutput struct{ *pulumi.OutputState }
 
 func (GetLocalPeeringGatewaysLocalPeeringGatewayOutput) ElementType() reflect.Type {
@@ -2013,6 +2338,12 @@ func (o GetLocalPeeringGatewaysLocalPeeringGatewayOutput) ToGetLocalPeeringGatew
 
 func (o GetLocalPeeringGatewaysLocalPeeringGatewayOutput) ToGetLocalPeeringGatewaysLocalPeeringGatewayOutputWithContext(ctx context.Context) GetLocalPeeringGatewaysLocalPeeringGatewayOutput {
 	return o
+}
+
+func (o GetLocalPeeringGatewaysLocalPeeringGatewayOutput) ToOutput(ctx context.Context) pulumix.Output[GetLocalPeeringGatewaysLocalPeeringGateway] {
+	return pulumix.Output[GetLocalPeeringGatewaysLocalPeeringGateway]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -2104,6 +2435,12 @@ func (o GetLocalPeeringGatewaysLocalPeeringGatewayArrayOutput) ToGetLocalPeering
 	return o
 }
 
+func (o GetLocalPeeringGatewaysLocalPeeringGatewayArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLocalPeeringGatewaysLocalPeeringGateway] {
+	return pulumix.Output[[]GetLocalPeeringGatewaysLocalPeeringGateway]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetLocalPeeringGatewaysLocalPeeringGatewayArrayOutput) Index(i pulumi.IntInput) GetLocalPeeringGatewaysLocalPeeringGatewayOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLocalPeeringGatewaysLocalPeeringGateway {
 		return vs[0].([]GetLocalPeeringGatewaysLocalPeeringGateway)[vs[1].(int)]
@@ -2145,6 +2482,12 @@ func (i GetNatGatewaysFilterArgs) ToGetNatGatewaysFilterOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetNatGatewaysFilterOutput)
 }
 
+func (i GetNatGatewaysFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetNatGatewaysFilter] {
+	return pulumix.Output[GetNatGatewaysFilter]{
+		OutputState: i.ToGetNatGatewaysFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNatGatewaysFilterArrayInput is an input type that accepts GetNatGatewaysFilterArray and GetNatGatewaysFilterArrayOutput values.
 // You can construct a concrete instance of `GetNatGatewaysFilterArrayInput` via:
 //
@@ -2170,6 +2513,12 @@ func (i GetNatGatewaysFilterArray) ToGetNatGatewaysFilterArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetNatGatewaysFilterArrayOutput)
 }
 
+func (i GetNatGatewaysFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNatGatewaysFilter] {
+	return pulumix.Output[[]GetNatGatewaysFilter]{
+		OutputState: i.ToGetNatGatewaysFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNatGatewaysFilterOutput struct{ *pulumi.OutputState }
 
 func (GetNatGatewaysFilterOutput) ElementType() reflect.Type {
@@ -2182,6 +2531,12 @@ func (o GetNatGatewaysFilterOutput) ToGetNatGatewaysFilterOutput() GetNatGateway
 
 func (o GetNatGatewaysFilterOutput) ToGetNatGatewaysFilterOutputWithContext(ctx context.Context) GetNatGatewaysFilterOutput {
 	return o
+}
+
+func (o GetNatGatewaysFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetNatGatewaysFilter] {
+	return pulumix.Output[GetNatGatewaysFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNatGatewaysFilterOutput) Name() pulumi.StringOutput {
@@ -2208,6 +2563,12 @@ func (o GetNatGatewaysFilterArrayOutput) ToGetNatGatewaysFilterArrayOutput() Get
 
 func (o GetNatGatewaysFilterArrayOutput) ToGetNatGatewaysFilterArrayOutputWithContext(ctx context.Context) GetNatGatewaysFilterArrayOutput {
 	return o
+}
+
+func (o GetNatGatewaysFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNatGatewaysFilter] {
+	return pulumix.Output[[]GetNatGatewaysFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNatGatewaysFilterArrayOutput) Index(i pulumi.IntInput) GetNatGatewaysFilterOutput {
@@ -2293,6 +2654,12 @@ func (i GetNatGatewaysNatGatewayArgs) ToGetNatGatewaysNatGatewayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetNatGatewaysNatGatewayOutput)
 }
 
+func (i GetNatGatewaysNatGatewayArgs) ToOutput(ctx context.Context) pulumix.Output[GetNatGatewaysNatGateway] {
+	return pulumix.Output[GetNatGatewaysNatGateway]{
+		OutputState: i.ToGetNatGatewaysNatGatewayOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNatGatewaysNatGatewayArrayInput is an input type that accepts GetNatGatewaysNatGatewayArray and GetNatGatewaysNatGatewayArrayOutput values.
 // You can construct a concrete instance of `GetNatGatewaysNatGatewayArrayInput` via:
 //
@@ -2318,6 +2685,12 @@ func (i GetNatGatewaysNatGatewayArray) ToGetNatGatewaysNatGatewayArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetNatGatewaysNatGatewayArrayOutput)
 }
 
+func (i GetNatGatewaysNatGatewayArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNatGatewaysNatGateway] {
+	return pulumix.Output[[]GetNatGatewaysNatGateway]{
+		OutputState: i.ToGetNatGatewaysNatGatewayArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNatGatewaysNatGatewayOutput struct{ *pulumi.OutputState }
 
 func (GetNatGatewaysNatGatewayOutput) ElementType() reflect.Type {
@@ -2330,6 +2703,12 @@ func (o GetNatGatewaysNatGatewayOutput) ToGetNatGatewaysNatGatewayOutput() GetNa
 
 func (o GetNatGatewaysNatGatewayOutput) ToGetNatGatewaysNatGatewayOutputWithContext(ctx context.Context) GetNatGatewaysNatGatewayOutput {
 	return o
+}
+
+func (o GetNatGatewaysNatGatewayOutput) ToOutput(ctx context.Context) pulumix.Output[GetNatGatewaysNatGateway] {
+	return pulumix.Output[GetNatGatewaysNatGateway]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether the NAT gateway blocks traffic through it. The default is `false`.  Example: `true`
@@ -2406,6 +2785,12 @@ func (o GetNatGatewaysNatGatewayArrayOutput) ToGetNatGatewaysNatGatewayArrayOutp
 	return o
 }
 
+func (o GetNatGatewaysNatGatewayArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNatGatewaysNatGateway] {
+	return pulumix.Output[[]GetNatGatewaysNatGateway]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetNatGatewaysNatGatewayArrayOutput) Index(i pulumi.IntInput) GetNatGatewaysNatGatewayOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNatGatewaysNatGateway {
 		return vs[0].([]GetNatGatewaysNatGateway)[vs[1].(int)]
@@ -2447,6 +2832,12 @@ func (i GetNetworkSecurityGroupSecurityRulesFilterArgs) ToGetNetworkSecurityGrou
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupSecurityRulesFilterOutput)
 }
 
+func (i GetNetworkSecurityGroupSecurityRulesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkSecurityGroupSecurityRulesFilter] {
+	return pulumix.Output[GetNetworkSecurityGroupSecurityRulesFilter]{
+		OutputState: i.ToGetNetworkSecurityGroupSecurityRulesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNetworkSecurityGroupSecurityRulesFilterArrayInput is an input type that accepts GetNetworkSecurityGroupSecurityRulesFilterArray and GetNetworkSecurityGroupSecurityRulesFilterArrayOutput values.
 // You can construct a concrete instance of `GetNetworkSecurityGroupSecurityRulesFilterArrayInput` via:
 //
@@ -2472,6 +2863,12 @@ func (i GetNetworkSecurityGroupSecurityRulesFilterArray) ToGetNetworkSecurityGro
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupSecurityRulesFilterArrayOutput)
 }
 
+func (i GetNetworkSecurityGroupSecurityRulesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkSecurityGroupSecurityRulesFilter] {
+	return pulumix.Output[[]GetNetworkSecurityGroupSecurityRulesFilter]{
+		OutputState: i.ToGetNetworkSecurityGroupSecurityRulesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNetworkSecurityGroupSecurityRulesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkSecurityGroupSecurityRulesFilterOutput) ElementType() reflect.Type {
@@ -2484,6 +2881,12 @@ func (o GetNetworkSecurityGroupSecurityRulesFilterOutput) ToGetNetworkSecurityGr
 
 func (o GetNetworkSecurityGroupSecurityRulesFilterOutput) ToGetNetworkSecurityGroupSecurityRulesFilterOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesFilterOutput {
 	return o
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkSecurityGroupSecurityRulesFilter] {
+	return pulumix.Output[GetNetworkSecurityGroupSecurityRulesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkSecurityGroupSecurityRulesFilterOutput) Name() pulumi.StringOutput {
@@ -2510,6 +2913,12 @@ func (o GetNetworkSecurityGroupSecurityRulesFilterArrayOutput) ToGetNetworkSecur
 
 func (o GetNetworkSecurityGroupSecurityRulesFilterArrayOutput) ToGetNetworkSecurityGroupSecurityRulesFilterArrayOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesFilterArrayOutput {
 	return o
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkSecurityGroupSecurityRulesFilter] {
+	return pulumix.Output[[]GetNetworkSecurityGroupSecurityRulesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkSecurityGroupSecurityRulesFilterArrayOutput) Index(i pulumi.IntInput) GetNetworkSecurityGroupSecurityRulesFilterOutput {
@@ -2607,6 +3016,12 @@ func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleArgs) ToGetNetworkSecuri
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupSecurityRulesSecurityRuleOutput)
 }
 
+func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkSecurityGroupSecurityRulesSecurityRule] {
+	return pulumix.Output[GetNetworkSecurityGroupSecurityRulesSecurityRule]{
+		OutputState: i.ToGetNetworkSecurityGroupSecurityRulesSecurityRuleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNetworkSecurityGroupSecurityRulesSecurityRuleArrayInput is an input type that accepts GetNetworkSecurityGroupSecurityRulesSecurityRuleArray and GetNetworkSecurityGroupSecurityRulesSecurityRuleArrayOutput values.
 // You can construct a concrete instance of `GetNetworkSecurityGroupSecurityRulesSecurityRuleArrayInput` via:
 //
@@ -2632,6 +3047,12 @@ func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleArray) ToGetNetworkSecur
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupSecurityRulesSecurityRuleArrayOutput)
 }
 
+func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkSecurityGroupSecurityRulesSecurityRule] {
+	return pulumix.Output[[]GetNetworkSecurityGroupSecurityRulesSecurityRule]{
+		OutputState: i.ToGetNetworkSecurityGroupSecurityRulesSecurityRuleArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNetworkSecurityGroupSecurityRulesSecurityRuleOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkSecurityGroupSecurityRulesSecurityRuleOutput) ElementType() reflect.Type {
@@ -2644,6 +3065,12 @@ func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleOutput) ToGetNetworkSecu
 
 func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleOutput) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleOutput {
 	return o
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkSecurityGroupSecurityRulesSecurityRule] {
+	return pulumix.Output[GetNetworkSecurityGroupSecurityRulesSecurityRule]{
+		OutputState: o.OutputState,
+	}
 }
 
 // An optional description of your choice for the rule.
@@ -2738,6 +3165,12 @@ func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleArrayOutput) ToGetNetwor
 	return o
 }
 
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkSecurityGroupSecurityRulesSecurityRule] {
+	return pulumix.Output[[]GetNetworkSecurityGroupSecurityRulesSecurityRule]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleArrayOutput) Index(i pulumi.IntInput) GetNetworkSecurityGroupSecurityRulesSecurityRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkSecurityGroupSecurityRulesSecurityRule {
 		return vs[0].([]GetNetworkSecurityGroupSecurityRulesSecurityRule)[vs[1].(int)]
@@ -2781,6 +3214,12 @@ func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArgs) ToGetNet
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionOutput)
 }
 
+func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOption] {
+	return pulumix.Output[GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOption]{
+		OutputState: i.ToGetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArrayInput is an input type that accepts GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArray and GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArrayOutput values.
 // You can construct a concrete instance of `GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArrayInput` via:
 //
@@ -2806,6 +3245,12 @@ func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArray) ToGetNe
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArrayOutput)
 }
 
+func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOption] {
+	return pulumix.Output[[]GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOption]{
+		OutputState: i.ToGetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionOutput) ElementType() reflect.Type {
@@ -2818,6 +3263,12 @@ func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionOutput) ToGetN
 
 func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionOutput) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionOutput {
 	return o
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOption] {
+	return pulumix.Output[GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The ICMP code (optional).
@@ -2842,6 +3293,12 @@ func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArrayOutput) T
 
 func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArrayOutput) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArrayOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArrayOutput {
 	return o
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOption] {
+	return pulumix.Output[[]GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionArrayOutput) Index(i pulumi.IntInput) GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOptionOutput {
@@ -2883,6 +3340,12 @@ func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArgs) ToGetNetw
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionOutput)
 }
 
+func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOption] {
+	return pulumix.Output[GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOption]{
+		OutputState: i.ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArrayInput is an input type that accepts GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArray and GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArrayOutput values.
 // You can construct a concrete instance of `GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArrayInput` via:
 //
@@ -2908,6 +3371,12 @@ func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArray) ToGetNet
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArrayOutput)
 }
 
+func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOption] {
+	return pulumix.Output[[]GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOption]{
+		OutputState: i.ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionOutput) ElementType() reflect.Type {
@@ -2920,6 +3389,12 @@ func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionOutput) ToGetNe
 
 func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionOutput) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionOutput {
 	return o
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOption] {
+	return pulumix.Output[GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionOutput) DestinationPortRanges() GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArrayOutput {
@@ -2946,6 +3421,12 @@ func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArrayOutput) To
 
 func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArrayOutput) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArrayOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArrayOutput {
 	return o
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOption] {
+	return pulumix.Output[[]GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArrayOutput) Index(i pulumi.IntInput) GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionOutput {
@@ -2991,6 +3472,12 @@ func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPort
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeOutput)
 }
 
+func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRange] {
+	return pulumix.Output[GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRange]{
+		OutputState: i.ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArrayInput is an input type that accepts GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArray and GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArrayOutput values.
 // You can construct a concrete instance of `GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArrayInput` via:
 //
@@ -3016,6 +3503,12 @@ func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPort
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArrayOutput)
 }
 
+func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRange] {
+	return pulumix.Output[[]GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRange]{
+		OutputState: i.ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeOutput) ElementType() reflect.Type {
@@ -3028,6 +3521,12 @@ func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPort
 
 func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeOutput) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeOutput {
 	return o
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRange] {
+	return pulumix.Output[GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRange]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
@@ -3056,6 +3555,12 @@ func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPort
 
 func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArrayOutput) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArrayOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArrayOutput {
 	return o
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRange] {
+	return pulumix.Output[[]GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRange]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeArrayOutput) Index(i pulumi.IntInput) GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRangeOutput {
@@ -3101,6 +3606,12 @@ func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRange
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeOutput)
 }
 
+func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRange] {
+	return pulumix.Output[GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRange]{
+		OutputState: i.ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArrayInput is an input type that accepts GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArray and GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArrayOutput values.
 // You can construct a concrete instance of `GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArrayInput` via:
 //
@@ -3126,6 +3637,12 @@ func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRange
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArrayOutput)
 }
 
+func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRange] {
+	return pulumix.Output[[]GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRange]{
+		OutputState: i.ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeOutput) ElementType() reflect.Type {
@@ -3138,6 +3655,12 @@ func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRange
 
 func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeOutput) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeOutput {
 	return o
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRange] {
+	return pulumix.Output[GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRange]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
@@ -3162,6 +3685,12 @@ func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRange
 
 func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArrayOutput) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArrayOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArrayOutput {
 	return o
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRange] {
+	return pulumix.Output[[]GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRange]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeArrayOutput) Index(i pulumi.IntInput) GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRangeOutput {
@@ -3203,6 +3732,12 @@ func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArgs) ToGetNetw
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionOutput)
 }
 
+func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOption] {
+	return pulumix.Output[GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOption]{
+		OutputState: i.ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArrayInput is an input type that accepts GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArray and GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArrayOutput values.
 // You can construct a concrete instance of `GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArrayInput` via:
 //
@@ -3228,6 +3763,12 @@ func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArray) ToGetNet
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArrayOutput)
 }
 
+func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOption] {
+	return pulumix.Output[[]GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOption]{
+		OutputState: i.ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionOutput) ElementType() reflect.Type {
@@ -3240,6 +3781,12 @@ func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionOutput) ToGetNe
 
 func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionOutput) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionOutput {
 	return o
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOption] {
+	return pulumix.Output[GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionOutput) DestinationPortRanges() GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArrayOutput {
@@ -3266,6 +3813,12 @@ func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArrayOutput) To
 
 func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArrayOutput) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArrayOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArrayOutput {
 	return o
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOption] {
+	return pulumix.Output[[]GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionArrayOutput) Index(i pulumi.IntInput) GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionOutput {
@@ -3311,6 +3864,12 @@ func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPort
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeOutput)
 }
 
+func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRange] {
+	return pulumix.Output[GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRange]{
+		OutputState: i.ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArrayInput is an input type that accepts GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArray and GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArrayOutput values.
 // You can construct a concrete instance of `GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArrayInput` via:
 //
@@ -3336,6 +3895,12 @@ func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPort
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArrayOutput)
 }
 
+func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRange] {
+	return pulumix.Output[[]GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRange]{
+		OutputState: i.ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeOutput) ElementType() reflect.Type {
@@ -3348,6 +3913,12 @@ func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPort
 
 func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeOutput) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeOutput {
 	return o
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRange] {
+	return pulumix.Output[GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRange]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
@@ -3376,6 +3947,12 @@ func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPort
 
 func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArrayOutput) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArrayOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArrayOutput {
 	return o
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRange] {
+	return pulumix.Output[[]GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRange]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeArrayOutput) Index(i pulumi.IntInput) GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionDestinationPortRangeOutput {
@@ -3421,6 +3998,12 @@ func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRange
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeOutput)
 }
 
+func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRange] {
+	return pulumix.Output[GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRange]{
+		OutputState: i.ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArrayInput is an input type that accepts GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArray and GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArrayOutput values.
 // You can construct a concrete instance of `GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArrayInput` via:
 //
@@ -3446,6 +4029,12 @@ func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRange
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArrayOutput)
 }
 
+func (i GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRange] {
+	return pulumix.Output[[]GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRange]{
+		OutputState: i.ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeOutput) ElementType() reflect.Type {
@@ -3458,6 +4047,12 @@ func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRange
 
 func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeOutput) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeOutput {
 	return o
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRange] {
+	return pulumix.Output[GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRange]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
@@ -3482,6 +4077,12 @@ func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRange
 
 func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArrayOutput) ToGetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArrayOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArrayOutput {
 	return o
+}
+
+func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRange] {
+	return pulumix.Output[[]GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRange]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeArrayOutput) Index(i pulumi.IntInput) GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOptionSourcePortRangeOutput {
@@ -3525,6 +4126,12 @@ func (i GetNetworkSecurityGroupVnicsFilterArgs) ToGetNetworkSecurityGroupVnicsFi
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupVnicsFilterOutput)
 }
 
+func (i GetNetworkSecurityGroupVnicsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkSecurityGroupVnicsFilter] {
+	return pulumix.Output[GetNetworkSecurityGroupVnicsFilter]{
+		OutputState: i.ToGetNetworkSecurityGroupVnicsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNetworkSecurityGroupVnicsFilterArrayInput is an input type that accepts GetNetworkSecurityGroupVnicsFilterArray and GetNetworkSecurityGroupVnicsFilterArrayOutput values.
 // You can construct a concrete instance of `GetNetworkSecurityGroupVnicsFilterArrayInput` via:
 //
@@ -3550,6 +4157,12 @@ func (i GetNetworkSecurityGroupVnicsFilterArray) ToGetNetworkSecurityGroupVnicsF
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupVnicsFilterArrayOutput)
 }
 
+func (i GetNetworkSecurityGroupVnicsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkSecurityGroupVnicsFilter] {
+	return pulumix.Output[[]GetNetworkSecurityGroupVnicsFilter]{
+		OutputState: i.ToGetNetworkSecurityGroupVnicsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNetworkSecurityGroupVnicsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkSecurityGroupVnicsFilterOutput) ElementType() reflect.Type {
@@ -3562,6 +4175,12 @@ func (o GetNetworkSecurityGroupVnicsFilterOutput) ToGetNetworkSecurityGroupVnics
 
 func (o GetNetworkSecurityGroupVnicsFilterOutput) ToGetNetworkSecurityGroupVnicsFilterOutputWithContext(ctx context.Context) GetNetworkSecurityGroupVnicsFilterOutput {
 	return o
+}
+
+func (o GetNetworkSecurityGroupVnicsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkSecurityGroupVnicsFilter] {
+	return pulumix.Output[GetNetworkSecurityGroupVnicsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkSecurityGroupVnicsFilterOutput) Name() pulumi.StringOutput {
@@ -3588,6 +4207,12 @@ func (o GetNetworkSecurityGroupVnicsFilterArrayOutput) ToGetNetworkSecurityGroup
 
 func (o GetNetworkSecurityGroupVnicsFilterArrayOutput) ToGetNetworkSecurityGroupVnicsFilterArrayOutputWithContext(ctx context.Context) GetNetworkSecurityGroupVnicsFilterArrayOutput {
 	return o
+}
+
+func (o GetNetworkSecurityGroupVnicsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkSecurityGroupVnicsFilter] {
+	return pulumix.Output[[]GetNetworkSecurityGroupVnicsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkSecurityGroupVnicsFilterArrayOutput) Index(i pulumi.IntInput) GetNetworkSecurityGroupVnicsFilterOutput {
@@ -3637,6 +4262,12 @@ func (i GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArgs) ToGetNetworkSe
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicOutput)
 }
 
+func (i GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic] {
+	return pulumix.Output[GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic]{
+		OutputState: i.ToGetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArrayInput is an input type that accepts GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArray and GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArrayOutput values.
 // You can construct a concrete instance of `GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArrayInput` via:
 //
@@ -3662,6 +4293,12 @@ func (i GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArray) ToGetNetworkS
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArrayOutput)
 }
 
+func (i GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic] {
+	return pulumix.Output[[]GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic]{
+		OutputState: i.ToGetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicOutput) ElementType() reflect.Type {
@@ -3674,6 +4311,12 @@ func (o GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicOutput) ToGetNetwork
 
 func (o GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicOutput) ToGetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicOutputWithContext(ctx context.Context) GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicOutput {
 	return o
+}
+
+func (o GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic] {
+	return pulumix.Output[GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent resource that the VNIC is attached to (for example, a Compute instance).
@@ -3703,6 +4346,12 @@ func (o GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArrayOutput) ToGetNe
 
 func (o GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArrayOutput) ToGetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArrayOutputWithContext(ctx context.Context) GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArrayOutput {
 	return o
+}
+
+func (o GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic] {
+	return pulumix.Output[[]GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicArrayOutput) Index(i pulumi.IntInput) GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicOutput {
@@ -3746,6 +4395,12 @@ func (i GetNetworkSecurityGroupsFilterArgs) ToGetNetworkSecurityGroupsFilterOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupsFilterOutput)
 }
 
+func (i GetNetworkSecurityGroupsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkSecurityGroupsFilter] {
+	return pulumix.Output[GetNetworkSecurityGroupsFilter]{
+		OutputState: i.ToGetNetworkSecurityGroupsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNetworkSecurityGroupsFilterArrayInput is an input type that accepts GetNetworkSecurityGroupsFilterArray and GetNetworkSecurityGroupsFilterArrayOutput values.
 // You can construct a concrete instance of `GetNetworkSecurityGroupsFilterArrayInput` via:
 //
@@ -3771,6 +4426,12 @@ func (i GetNetworkSecurityGroupsFilterArray) ToGetNetworkSecurityGroupsFilterArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupsFilterArrayOutput)
 }
 
+func (i GetNetworkSecurityGroupsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkSecurityGroupsFilter] {
+	return pulumix.Output[[]GetNetworkSecurityGroupsFilter]{
+		OutputState: i.ToGetNetworkSecurityGroupsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNetworkSecurityGroupsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkSecurityGroupsFilterOutput) ElementType() reflect.Type {
@@ -3783,6 +4444,12 @@ func (o GetNetworkSecurityGroupsFilterOutput) ToGetNetworkSecurityGroupsFilterOu
 
 func (o GetNetworkSecurityGroupsFilterOutput) ToGetNetworkSecurityGroupsFilterOutputWithContext(ctx context.Context) GetNetworkSecurityGroupsFilterOutput {
 	return o
+}
+
+func (o GetNetworkSecurityGroupsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkSecurityGroupsFilter] {
+	return pulumix.Output[GetNetworkSecurityGroupsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkSecurityGroupsFilterOutput) Name() pulumi.StringOutput {
@@ -3809,6 +4476,12 @@ func (o GetNetworkSecurityGroupsFilterArrayOutput) ToGetNetworkSecurityGroupsFil
 
 func (o GetNetworkSecurityGroupsFilterArrayOutput) ToGetNetworkSecurityGroupsFilterArrayOutputWithContext(ctx context.Context) GetNetworkSecurityGroupsFilterArrayOutput {
 	return o
+}
+
+func (o GetNetworkSecurityGroupsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkSecurityGroupsFilter] {
+	return pulumix.Output[[]GetNetworkSecurityGroupsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNetworkSecurityGroupsFilterArrayOutput) Index(i pulumi.IntInput) GetNetworkSecurityGroupsFilterOutput {
@@ -3878,6 +4551,12 @@ func (i GetNetworkSecurityGroupsNetworkSecurityGroupArgs) ToGetNetworkSecurityGr
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupsNetworkSecurityGroupOutput)
 }
 
+func (i GetNetworkSecurityGroupsNetworkSecurityGroupArgs) ToOutput(ctx context.Context) pulumix.Output[GetNetworkSecurityGroupsNetworkSecurityGroup] {
+	return pulumix.Output[GetNetworkSecurityGroupsNetworkSecurityGroup]{
+		OutputState: i.ToGetNetworkSecurityGroupsNetworkSecurityGroupOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetNetworkSecurityGroupsNetworkSecurityGroupArrayInput is an input type that accepts GetNetworkSecurityGroupsNetworkSecurityGroupArray and GetNetworkSecurityGroupsNetworkSecurityGroupArrayOutput values.
 // You can construct a concrete instance of `GetNetworkSecurityGroupsNetworkSecurityGroupArrayInput` via:
 //
@@ -3903,6 +4582,12 @@ func (i GetNetworkSecurityGroupsNetworkSecurityGroupArray) ToGetNetworkSecurityG
 	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkSecurityGroupsNetworkSecurityGroupArrayOutput)
 }
 
+func (i GetNetworkSecurityGroupsNetworkSecurityGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkSecurityGroupsNetworkSecurityGroup] {
+	return pulumix.Output[[]GetNetworkSecurityGroupsNetworkSecurityGroup]{
+		OutputState: i.ToGetNetworkSecurityGroupsNetworkSecurityGroupArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetNetworkSecurityGroupsNetworkSecurityGroupOutput struct{ *pulumi.OutputState }
 
 func (GetNetworkSecurityGroupsNetworkSecurityGroupOutput) ElementType() reflect.Type {
@@ -3915,6 +4600,12 @@ func (o GetNetworkSecurityGroupsNetworkSecurityGroupOutput) ToGetNetworkSecurity
 
 func (o GetNetworkSecurityGroupsNetworkSecurityGroupOutput) ToGetNetworkSecurityGroupsNetworkSecurityGroupOutputWithContext(ctx context.Context) GetNetworkSecurityGroupsNetworkSecurityGroupOutput {
 	return o
+}
+
+func (o GetNetworkSecurityGroupsNetworkSecurityGroupOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkSecurityGroupsNetworkSecurityGroup] {
+	return pulumix.Output[GetNetworkSecurityGroupsNetworkSecurityGroup]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -3971,6 +4662,12 @@ func (o GetNetworkSecurityGroupsNetworkSecurityGroupArrayOutput) ToGetNetworkSec
 	return o
 }
 
+func (o GetNetworkSecurityGroupsNetworkSecurityGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNetworkSecurityGroupsNetworkSecurityGroup] {
+	return pulumix.Output[[]GetNetworkSecurityGroupsNetworkSecurityGroup]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetNetworkSecurityGroupsNetworkSecurityGroupArrayOutput) Index(i pulumi.IntInput) GetNetworkSecurityGroupsNetworkSecurityGroupOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkSecurityGroupsNetworkSecurityGroup {
 		return vs[0].([]GetNetworkSecurityGroupsNetworkSecurityGroup)[vs[1].(int)]
@@ -4014,6 +4711,12 @@ func (i GetPeerRegionForRemotePeeringsFilterArgs) ToGetPeerRegionForRemotePeerin
 	return pulumi.ToOutputWithContext(ctx, i).(GetPeerRegionForRemotePeeringsFilterOutput)
 }
 
+func (i GetPeerRegionForRemotePeeringsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetPeerRegionForRemotePeeringsFilter] {
+	return pulumix.Output[GetPeerRegionForRemotePeeringsFilter]{
+		OutputState: i.ToGetPeerRegionForRemotePeeringsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPeerRegionForRemotePeeringsFilterArrayInput is an input type that accepts GetPeerRegionForRemotePeeringsFilterArray and GetPeerRegionForRemotePeeringsFilterArrayOutput values.
 // You can construct a concrete instance of `GetPeerRegionForRemotePeeringsFilterArrayInput` via:
 //
@@ -4039,6 +4742,12 @@ func (i GetPeerRegionForRemotePeeringsFilterArray) ToGetPeerRegionForRemotePeeri
 	return pulumi.ToOutputWithContext(ctx, i).(GetPeerRegionForRemotePeeringsFilterArrayOutput)
 }
 
+func (i GetPeerRegionForRemotePeeringsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPeerRegionForRemotePeeringsFilter] {
+	return pulumix.Output[[]GetPeerRegionForRemotePeeringsFilter]{
+		OutputState: i.ToGetPeerRegionForRemotePeeringsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPeerRegionForRemotePeeringsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetPeerRegionForRemotePeeringsFilterOutput) ElementType() reflect.Type {
@@ -4051,6 +4760,12 @@ func (o GetPeerRegionForRemotePeeringsFilterOutput) ToGetPeerRegionForRemotePeer
 
 func (o GetPeerRegionForRemotePeeringsFilterOutput) ToGetPeerRegionForRemotePeeringsFilterOutputWithContext(ctx context.Context) GetPeerRegionForRemotePeeringsFilterOutput {
 	return o
+}
+
+func (o GetPeerRegionForRemotePeeringsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetPeerRegionForRemotePeeringsFilter] {
+	return pulumix.Output[GetPeerRegionForRemotePeeringsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The region's name.  Example: `us-phoenix-1`
@@ -4078,6 +4793,12 @@ func (o GetPeerRegionForRemotePeeringsFilterArrayOutput) ToGetPeerRegionForRemot
 
 func (o GetPeerRegionForRemotePeeringsFilterArrayOutput) ToGetPeerRegionForRemotePeeringsFilterArrayOutputWithContext(ctx context.Context) GetPeerRegionForRemotePeeringsFilterArrayOutput {
 	return o
+}
+
+func (o GetPeerRegionForRemotePeeringsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPeerRegionForRemotePeeringsFilter] {
+	return pulumix.Output[[]GetPeerRegionForRemotePeeringsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPeerRegionForRemotePeeringsFilterArrayOutput) Index(i pulumi.IntInput) GetPeerRegionForRemotePeeringsFilterOutput {
@@ -4119,6 +4840,12 @@ func (i GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArgs) ToGetPeerR
 	return pulumi.ToOutputWithContext(ctx, i).(GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringOutput)
 }
 
+func (i GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArgs) ToOutput(ctx context.Context) pulumix.Output[GetPeerRegionForRemotePeeringsPeerRegionForRemotePeering] {
+	return pulumix.Output[GetPeerRegionForRemotePeeringsPeerRegionForRemotePeering]{
+		OutputState: i.ToGetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArrayInput is an input type that accepts GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArray and GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArrayOutput values.
 // You can construct a concrete instance of `GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArrayInput` via:
 //
@@ -4144,6 +4871,12 @@ func (i GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArray) ToGetPeer
 	return pulumi.ToOutputWithContext(ctx, i).(GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArrayOutput)
 }
 
+func (i GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPeerRegionForRemotePeeringsPeerRegionForRemotePeering] {
+	return pulumix.Output[[]GetPeerRegionForRemotePeeringsPeerRegionForRemotePeering]{
+		OutputState: i.ToGetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringOutput struct{ *pulumi.OutputState }
 
 func (GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringOutput) ElementType() reflect.Type {
@@ -4156,6 +4889,12 @@ func (o GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringOutput) ToGetPee
 
 func (o GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringOutput) ToGetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringOutputWithContext(ctx context.Context) GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringOutput {
 	return o
+}
+
+func (o GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringOutput) ToOutput(ctx context.Context) pulumix.Output[GetPeerRegionForRemotePeeringsPeerRegionForRemotePeering] {
+	return pulumix.Output[GetPeerRegionForRemotePeeringsPeerRegionForRemotePeering]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The region's name.  Example: `us-phoenix-1`
@@ -4175,6 +4914,12 @@ func (o GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArrayOutput) ToG
 
 func (o GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArrayOutput) ToGetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArrayOutputWithContext(ctx context.Context) GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArrayOutput {
 	return o
+}
+
+func (o GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPeerRegionForRemotePeeringsPeerRegionForRemotePeering] {
+	return pulumix.Output[[]GetPeerRegionForRemotePeeringsPeerRegionForRemotePeering]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringArrayOutput) Index(i pulumi.IntInput) GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringOutput {
@@ -4218,6 +4963,12 @@ func (i GetPrivateIpsFilterArgs) ToGetPrivateIpsFilterOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateIpsFilterOutput)
 }
 
+func (i GetPrivateIpsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetPrivateIpsFilter] {
+	return pulumix.Output[GetPrivateIpsFilter]{
+		OutputState: i.ToGetPrivateIpsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPrivateIpsFilterArrayInput is an input type that accepts GetPrivateIpsFilterArray and GetPrivateIpsFilterArrayOutput values.
 // You can construct a concrete instance of `GetPrivateIpsFilterArrayInput` via:
 //
@@ -4243,6 +4994,12 @@ func (i GetPrivateIpsFilterArray) ToGetPrivateIpsFilterArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateIpsFilterArrayOutput)
 }
 
+func (i GetPrivateIpsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPrivateIpsFilter] {
+	return pulumix.Output[[]GetPrivateIpsFilter]{
+		OutputState: i.ToGetPrivateIpsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPrivateIpsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetPrivateIpsFilterOutput) ElementType() reflect.Type {
@@ -4255,6 +5012,12 @@ func (o GetPrivateIpsFilterOutput) ToGetPrivateIpsFilterOutput() GetPrivateIpsFi
 
 func (o GetPrivateIpsFilterOutput) ToGetPrivateIpsFilterOutputWithContext(ctx context.Context) GetPrivateIpsFilterOutput {
 	return o
+}
+
+func (o GetPrivateIpsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetPrivateIpsFilter] {
+	return pulumix.Output[GetPrivateIpsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPrivateIpsFilterOutput) Name() pulumi.StringOutput {
@@ -4281,6 +5044,12 @@ func (o GetPrivateIpsFilterArrayOutput) ToGetPrivateIpsFilterArrayOutput() GetPr
 
 func (o GetPrivateIpsFilterArrayOutput) ToGetPrivateIpsFilterArrayOutputWithContext(ctx context.Context) GetPrivateIpsFilterArrayOutput {
 	return o
+}
+
+func (o GetPrivateIpsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPrivateIpsFilter] {
+	return pulumix.Output[[]GetPrivateIpsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPrivateIpsFilterArrayOutput) Index(i pulumi.IntInput) GetPrivateIpsFilterOutput {
@@ -4374,6 +5143,12 @@ func (i GetPrivateIpsPrivateIpArgs) ToGetPrivateIpsPrivateIpOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateIpsPrivateIpOutput)
 }
 
+func (i GetPrivateIpsPrivateIpArgs) ToOutput(ctx context.Context) pulumix.Output[GetPrivateIpsPrivateIp] {
+	return pulumix.Output[GetPrivateIpsPrivateIp]{
+		OutputState: i.ToGetPrivateIpsPrivateIpOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPrivateIpsPrivateIpArrayInput is an input type that accepts GetPrivateIpsPrivateIpArray and GetPrivateIpsPrivateIpArrayOutput values.
 // You can construct a concrete instance of `GetPrivateIpsPrivateIpArrayInput` via:
 //
@@ -4399,6 +5174,12 @@ func (i GetPrivateIpsPrivateIpArray) ToGetPrivateIpsPrivateIpArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateIpsPrivateIpArrayOutput)
 }
 
+func (i GetPrivateIpsPrivateIpArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPrivateIpsPrivateIp] {
+	return pulumix.Output[[]GetPrivateIpsPrivateIp]{
+		OutputState: i.ToGetPrivateIpsPrivateIpArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPrivateIpsPrivateIpOutput struct{ *pulumi.OutputState }
 
 func (GetPrivateIpsPrivateIpOutput) ElementType() reflect.Type {
@@ -4411,6 +5192,12 @@ func (o GetPrivateIpsPrivateIpOutput) ToGetPrivateIpsPrivateIpOutput() GetPrivat
 
 func (o GetPrivateIpsPrivateIpOutput) ToGetPrivateIpsPrivateIpOutputWithContext(ctx context.Context) GetPrivateIpsPrivateIpOutput {
 	return o
+}
+
+func (o GetPrivateIpsPrivateIpOutput) ToOutput(ctx context.Context) pulumix.Output[GetPrivateIpsPrivateIp] {
+	return pulumix.Output[GetPrivateIpsPrivateIp]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The private IP's availability domain. This attribute will be null if this is a *secondary* private IP assigned to a VNIC that is in a *regional* subnet.  Example: `Uocm:PHX-AD-1`
@@ -4497,6 +5284,12 @@ func (o GetPrivateIpsPrivateIpArrayOutput) ToGetPrivateIpsPrivateIpArrayOutputWi
 	return o
 }
 
+func (o GetPrivateIpsPrivateIpArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPrivateIpsPrivateIp] {
+	return pulumix.Output[[]GetPrivateIpsPrivateIp]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetPrivateIpsPrivateIpArrayOutput) Index(i pulumi.IntInput) GetPrivateIpsPrivateIpOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPrivateIpsPrivateIp {
 		return vs[0].([]GetPrivateIpsPrivateIp)[vs[1].(int)]
@@ -4538,6 +5331,12 @@ func (i GetPublicIpPoolsFilterArgs) ToGetPublicIpPoolsFilterOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetPublicIpPoolsFilterOutput)
 }
 
+func (i GetPublicIpPoolsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetPublicIpPoolsFilter] {
+	return pulumix.Output[GetPublicIpPoolsFilter]{
+		OutputState: i.ToGetPublicIpPoolsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPublicIpPoolsFilterArrayInput is an input type that accepts GetPublicIpPoolsFilterArray and GetPublicIpPoolsFilterArrayOutput values.
 // You can construct a concrete instance of `GetPublicIpPoolsFilterArrayInput` via:
 //
@@ -4563,6 +5362,12 @@ func (i GetPublicIpPoolsFilterArray) ToGetPublicIpPoolsFilterArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetPublicIpPoolsFilterArrayOutput)
 }
 
+func (i GetPublicIpPoolsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPublicIpPoolsFilter] {
+	return pulumix.Output[[]GetPublicIpPoolsFilter]{
+		OutputState: i.ToGetPublicIpPoolsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPublicIpPoolsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetPublicIpPoolsFilterOutput) ElementType() reflect.Type {
@@ -4575,6 +5380,12 @@ func (o GetPublicIpPoolsFilterOutput) ToGetPublicIpPoolsFilterOutput() GetPublic
 
 func (o GetPublicIpPoolsFilterOutput) ToGetPublicIpPoolsFilterOutputWithContext(ctx context.Context) GetPublicIpPoolsFilterOutput {
 	return o
+}
+
+func (o GetPublicIpPoolsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetPublicIpPoolsFilter] {
+	return pulumix.Output[GetPublicIpPoolsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPublicIpPoolsFilterOutput) Name() pulumi.StringOutput {
@@ -4601,6 +5412,12 @@ func (o GetPublicIpPoolsFilterArrayOutput) ToGetPublicIpPoolsFilterArrayOutput()
 
 func (o GetPublicIpPoolsFilterArrayOutput) ToGetPublicIpPoolsFilterArrayOutputWithContext(ctx context.Context) GetPublicIpPoolsFilterArrayOutput {
 	return o
+}
+
+func (o GetPublicIpPoolsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPublicIpPoolsFilter] {
+	return pulumix.Output[[]GetPublicIpPoolsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPublicIpPoolsFilterArrayOutput) Index(i pulumi.IntInput) GetPublicIpPoolsFilterOutput {
@@ -4640,6 +5457,12 @@ func (i GetPublicIpPoolsPublicIpPoolCollectionArgs) ToGetPublicIpPoolsPublicIpPo
 	return pulumi.ToOutputWithContext(ctx, i).(GetPublicIpPoolsPublicIpPoolCollectionOutput)
 }
 
+func (i GetPublicIpPoolsPublicIpPoolCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetPublicIpPoolsPublicIpPoolCollection] {
+	return pulumix.Output[GetPublicIpPoolsPublicIpPoolCollection]{
+		OutputState: i.ToGetPublicIpPoolsPublicIpPoolCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPublicIpPoolsPublicIpPoolCollectionArrayInput is an input type that accepts GetPublicIpPoolsPublicIpPoolCollectionArray and GetPublicIpPoolsPublicIpPoolCollectionArrayOutput values.
 // You can construct a concrete instance of `GetPublicIpPoolsPublicIpPoolCollectionArrayInput` via:
 //
@@ -4665,6 +5488,12 @@ func (i GetPublicIpPoolsPublicIpPoolCollectionArray) ToGetPublicIpPoolsPublicIpP
 	return pulumi.ToOutputWithContext(ctx, i).(GetPublicIpPoolsPublicIpPoolCollectionArrayOutput)
 }
 
+func (i GetPublicIpPoolsPublicIpPoolCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPublicIpPoolsPublicIpPoolCollection] {
+	return pulumix.Output[[]GetPublicIpPoolsPublicIpPoolCollection]{
+		OutputState: i.ToGetPublicIpPoolsPublicIpPoolCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPublicIpPoolsPublicIpPoolCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetPublicIpPoolsPublicIpPoolCollectionOutput) ElementType() reflect.Type {
@@ -4677,6 +5506,12 @@ func (o GetPublicIpPoolsPublicIpPoolCollectionOutput) ToGetPublicIpPoolsPublicIp
 
 func (o GetPublicIpPoolsPublicIpPoolCollectionOutput) ToGetPublicIpPoolsPublicIpPoolCollectionOutputWithContext(ctx context.Context) GetPublicIpPoolsPublicIpPoolCollectionOutput {
 	return o
+}
+
+func (o GetPublicIpPoolsPublicIpPoolCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetPublicIpPoolsPublicIpPoolCollection] {
+	return pulumix.Output[GetPublicIpPoolsPublicIpPoolCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPublicIpPoolsPublicIpPoolCollectionOutput) Items() GetPublicIpPoolsPublicIpPoolCollectionItemArrayOutput {
@@ -4697,6 +5532,12 @@ func (o GetPublicIpPoolsPublicIpPoolCollectionArrayOutput) ToGetPublicIpPoolsPub
 
 func (o GetPublicIpPoolsPublicIpPoolCollectionArrayOutput) ToGetPublicIpPoolsPublicIpPoolCollectionArrayOutputWithContext(ctx context.Context) GetPublicIpPoolsPublicIpPoolCollectionArrayOutput {
 	return o
+}
+
+func (o GetPublicIpPoolsPublicIpPoolCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPublicIpPoolsPublicIpPoolCollection] {
+	return pulumix.Output[[]GetPublicIpPoolsPublicIpPoolCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPublicIpPoolsPublicIpPoolCollectionArrayOutput) Index(i pulumi.IntInput) GetPublicIpPoolsPublicIpPoolCollectionOutput {
@@ -4766,6 +5607,12 @@ func (i GetPublicIpPoolsPublicIpPoolCollectionItemArgs) ToGetPublicIpPoolsPublic
 	return pulumi.ToOutputWithContext(ctx, i).(GetPublicIpPoolsPublicIpPoolCollectionItemOutput)
 }
 
+func (i GetPublicIpPoolsPublicIpPoolCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetPublicIpPoolsPublicIpPoolCollectionItem] {
+	return pulumix.Output[GetPublicIpPoolsPublicIpPoolCollectionItem]{
+		OutputState: i.ToGetPublicIpPoolsPublicIpPoolCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPublicIpPoolsPublicIpPoolCollectionItemArrayInput is an input type that accepts GetPublicIpPoolsPublicIpPoolCollectionItemArray and GetPublicIpPoolsPublicIpPoolCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetPublicIpPoolsPublicIpPoolCollectionItemArrayInput` via:
 //
@@ -4791,6 +5638,12 @@ func (i GetPublicIpPoolsPublicIpPoolCollectionItemArray) ToGetPublicIpPoolsPubli
 	return pulumi.ToOutputWithContext(ctx, i).(GetPublicIpPoolsPublicIpPoolCollectionItemArrayOutput)
 }
 
+func (i GetPublicIpPoolsPublicIpPoolCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPublicIpPoolsPublicIpPoolCollectionItem] {
+	return pulumix.Output[[]GetPublicIpPoolsPublicIpPoolCollectionItem]{
+		OutputState: i.ToGetPublicIpPoolsPublicIpPoolCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPublicIpPoolsPublicIpPoolCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetPublicIpPoolsPublicIpPoolCollectionItemOutput) ElementType() reflect.Type {
@@ -4803,6 +5656,12 @@ func (o GetPublicIpPoolsPublicIpPoolCollectionItemOutput) ToGetPublicIpPoolsPubl
 
 func (o GetPublicIpPoolsPublicIpPoolCollectionItemOutput) ToGetPublicIpPoolsPublicIpPoolCollectionItemOutputWithContext(ctx context.Context) GetPublicIpPoolsPublicIpPoolCollectionItemOutput {
 	return o
+}
+
+func (o GetPublicIpPoolsPublicIpPoolCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetPublicIpPoolsPublicIpPoolCollectionItem] {
+	return pulumix.Output[GetPublicIpPoolsPublicIpPoolCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The CIDR blocks added to this pool. This could be all or a portion of a BYOIP CIDR block.
@@ -4859,6 +5718,12 @@ func (o GetPublicIpPoolsPublicIpPoolCollectionItemArrayOutput) ToGetPublicIpPool
 	return o
 }
 
+func (o GetPublicIpPoolsPublicIpPoolCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPublicIpPoolsPublicIpPoolCollectionItem] {
+	return pulumix.Output[[]GetPublicIpPoolsPublicIpPoolCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetPublicIpPoolsPublicIpPoolCollectionItemArrayOutput) Index(i pulumi.IntInput) GetPublicIpPoolsPublicIpPoolCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPublicIpPoolsPublicIpPoolCollectionItem {
 		return vs[0].([]GetPublicIpPoolsPublicIpPoolCollectionItem)[vs[1].(int)]
@@ -4900,6 +5765,12 @@ func (i GetPublicIpsFilterArgs) ToGetPublicIpsFilterOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetPublicIpsFilterOutput)
 }
 
+func (i GetPublicIpsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetPublicIpsFilter] {
+	return pulumix.Output[GetPublicIpsFilter]{
+		OutputState: i.ToGetPublicIpsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPublicIpsFilterArrayInput is an input type that accepts GetPublicIpsFilterArray and GetPublicIpsFilterArrayOutput values.
 // You can construct a concrete instance of `GetPublicIpsFilterArrayInput` via:
 //
@@ -4925,6 +5796,12 @@ func (i GetPublicIpsFilterArray) ToGetPublicIpsFilterArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetPublicIpsFilterArrayOutput)
 }
 
+func (i GetPublicIpsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPublicIpsFilter] {
+	return pulumix.Output[[]GetPublicIpsFilter]{
+		OutputState: i.ToGetPublicIpsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPublicIpsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetPublicIpsFilterOutput) ElementType() reflect.Type {
@@ -4937,6 +5814,12 @@ func (o GetPublicIpsFilterOutput) ToGetPublicIpsFilterOutput() GetPublicIpsFilte
 
 func (o GetPublicIpsFilterOutput) ToGetPublicIpsFilterOutputWithContext(ctx context.Context) GetPublicIpsFilterOutput {
 	return o
+}
+
+func (o GetPublicIpsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetPublicIpsFilter] {
+	return pulumix.Output[GetPublicIpsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPublicIpsFilterOutput) Name() pulumi.StringOutput {
@@ -4963,6 +5846,12 @@ func (o GetPublicIpsFilterArrayOutput) ToGetPublicIpsFilterArrayOutput() GetPubl
 
 func (o GetPublicIpsFilterArrayOutput) ToGetPublicIpsFilterArrayOutputWithContext(ctx context.Context) GetPublicIpsFilterArrayOutput {
 	return o
+}
+
+func (o GetPublicIpsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPublicIpsFilter] {
+	return pulumix.Output[[]GetPublicIpsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPublicIpsFilterArrayOutput) Index(i pulumi.IntInput) GetPublicIpsFilterOutput {
@@ -5060,6 +5949,12 @@ func (i GetPublicIpsPublicIpArgs) ToGetPublicIpsPublicIpOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetPublicIpsPublicIpOutput)
 }
 
+func (i GetPublicIpsPublicIpArgs) ToOutput(ctx context.Context) pulumix.Output[GetPublicIpsPublicIp] {
+	return pulumix.Output[GetPublicIpsPublicIp]{
+		OutputState: i.ToGetPublicIpsPublicIpOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetPublicIpsPublicIpArrayInput is an input type that accepts GetPublicIpsPublicIpArray and GetPublicIpsPublicIpArrayOutput values.
 // You can construct a concrete instance of `GetPublicIpsPublicIpArrayInput` via:
 //
@@ -5085,6 +5980,12 @@ func (i GetPublicIpsPublicIpArray) ToGetPublicIpsPublicIpArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetPublicIpsPublicIpArrayOutput)
 }
 
+func (i GetPublicIpsPublicIpArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPublicIpsPublicIp] {
+	return pulumix.Output[[]GetPublicIpsPublicIp]{
+		OutputState: i.ToGetPublicIpsPublicIpArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetPublicIpsPublicIpOutput struct{ *pulumi.OutputState }
 
 func (GetPublicIpsPublicIpOutput) ElementType() reflect.Type {
@@ -5097,6 +5998,12 @@ func (o GetPublicIpsPublicIpOutput) ToGetPublicIpsPublicIpOutput() GetPublicIpsP
 
 func (o GetPublicIpsPublicIpOutput) ToGetPublicIpsPublicIpOutputWithContext(ctx context.Context) GetPublicIpsPublicIpOutput {
 	return o
+}
+
+func (o GetPublicIpsPublicIpOutput) ToOutput(ctx context.Context) pulumix.Output[GetPublicIpsPublicIp] {
+	return pulumix.Output[GetPublicIpsPublicIp]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity the public IP is assigned to, or in the process of being assigned to.
@@ -5188,6 +6095,12 @@ func (o GetPublicIpsPublicIpArrayOutput) ToGetPublicIpsPublicIpArrayOutputWithCo
 	return o
 }
 
+func (o GetPublicIpsPublicIpArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPublicIpsPublicIp] {
+	return pulumix.Output[[]GetPublicIpsPublicIp]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetPublicIpsPublicIpArrayOutput) Index(i pulumi.IntInput) GetPublicIpsPublicIpOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPublicIpsPublicIp {
 		return vs[0].([]GetPublicIpsPublicIp)[vs[1].(int)]
@@ -5229,6 +6142,12 @@ func (i GetRemotePeeringConnectionsFilterArgs) ToGetRemotePeeringConnectionsFilt
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemotePeeringConnectionsFilterOutput)
 }
 
+func (i GetRemotePeeringConnectionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemotePeeringConnectionsFilter] {
+	return pulumix.Output[GetRemotePeeringConnectionsFilter]{
+		OutputState: i.ToGetRemotePeeringConnectionsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetRemotePeeringConnectionsFilterArrayInput is an input type that accepts GetRemotePeeringConnectionsFilterArray and GetRemotePeeringConnectionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetRemotePeeringConnectionsFilterArrayInput` via:
 //
@@ -5254,6 +6173,12 @@ func (i GetRemotePeeringConnectionsFilterArray) ToGetRemotePeeringConnectionsFil
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemotePeeringConnectionsFilterArrayOutput)
 }
 
+func (i GetRemotePeeringConnectionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemotePeeringConnectionsFilter] {
+	return pulumix.Output[[]GetRemotePeeringConnectionsFilter]{
+		OutputState: i.ToGetRemotePeeringConnectionsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetRemotePeeringConnectionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetRemotePeeringConnectionsFilterOutput) ElementType() reflect.Type {
@@ -5266,6 +6191,12 @@ func (o GetRemotePeeringConnectionsFilterOutput) ToGetRemotePeeringConnectionsFi
 
 func (o GetRemotePeeringConnectionsFilterOutput) ToGetRemotePeeringConnectionsFilterOutputWithContext(ctx context.Context) GetRemotePeeringConnectionsFilterOutput {
 	return o
+}
+
+func (o GetRemotePeeringConnectionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemotePeeringConnectionsFilter] {
+	return pulumix.Output[GetRemotePeeringConnectionsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetRemotePeeringConnectionsFilterOutput) Name() pulumi.StringOutput {
@@ -5292,6 +6223,12 @@ func (o GetRemotePeeringConnectionsFilterArrayOutput) ToGetRemotePeeringConnecti
 
 func (o GetRemotePeeringConnectionsFilterArrayOutput) ToGetRemotePeeringConnectionsFilterArrayOutputWithContext(ctx context.Context) GetRemotePeeringConnectionsFilterArrayOutput {
 	return o
+}
+
+func (o GetRemotePeeringConnectionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemotePeeringConnectionsFilter] {
+	return pulumix.Output[[]GetRemotePeeringConnectionsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetRemotePeeringConnectionsFilterArrayOutput) Index(i pulumi.IntInput) GetRemotePeeringConnectionsFilterOutput {
@@ -5381,6 +6318,12 @@ func (i GetRemotePeeringConnectionsRemotePeeringConnectionArgs) ToGetRemotePeeri
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemotePeeringConnectionsRemotePeeringConnectionOutput)
 }
 
+func (i GetRemotePeeringConnectionsRemotePeeringConnectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemotePeeringConnectionsRemotePeeringConnection] {
+	return pulumix.Output[GetRemotePeeringConnectionsRemotePeeringConnection]{
+		OutputState: i.ToGetRemotePeeringConnectionsRemotePeeringConnectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetRemotePeeringConnectionsRemotePeeringConnectionArrayInput is an input type that accepts GetRemotePeeringConnectionsRemotePeeringConnectionArray and GetRemotePeeringConnectionsRemotePeeringConnectionArrayOutput values.
 // You can construct a concrete instance of `GetRemotePeeringConnectionsRemotePeeringConnectionArrayInput` via:
 //
@@ -5406,6 +6349,12 @@ func (i GetRemotePeeringConnectionsRemotePeeringConnectionArray) ToGetRemotePeer
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemotePeeringConnectionsRemotePeeringConnectionArrayOutput)
 }
 
+func (i GetRemotePeeringConnectionsRemotePeeringConnectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemotePeeringConnectionsRemotePeeringConnection] {
+	return pulumix.Output[[]GetRemotePeeringConnectionsRemotePeeringConnection]{
+		OutputState: i.ToGetRemotePeeringConnectionsRemotePeeringConnectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetRemotePeeringConnectionsRemotePeeringConnectionOutput struct{ *pulumi.OutputState }
 
 func (GetRemotePeeringConnectionsRemotePeeringConnectionOutput) ElementType() reflect.Type {
@@ -5418,6 +6367,12 @@ func (o GetRemotePeeringConnectionsRemotePeeringConnectionOutput) ToGetRemotePee
 
 func (o GetRemotePeeringConnectionsRemotePeeringConnectionOutput) ToGetRemotePeeringConnectionsRemotePeeringConnectionOutputWithContext(ctx context.Context) GetRemotePeeringConnectionsRemotePeeringConnectionOutput {
 	return o
+}
+
+func (o GetRemotePeeringConnectionsRemotePeeringConnectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemotePeeringConnectionsRemotePeeringConnection] {
+	return pulumix.Output[GetRemotePeeringConnectionsRemotePeeringConnection]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -5503,6 +6458,12 @@ func (o GetRemotePeeringConnectionsRemotePeeringConnectionArrayOutput) ToGetRemo
 	return o
 }
 
+func (o GetRemotePeeringConnectionsRemotePeeringConnectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemotePeeringConnectionsRemotePeeringConnection] {
+	return pulumix.Output[[]GetRemotePeeringConnectionsRemotePeeringConnection]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetRemotePeeringConnectionsRemotePeeringConnectionArrayOutput) Index(i pulumi.IntInput) GetRemotePeeringConnectionsRemotePeeringConnectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRemotePeeringConnectionsRemotePeeringConnection {
 		return vs[0].([]GetRemotePeeringConnectionsRemotePeeringConnection)[vs[1].(int)]
@@ -5544,6 +6505,12 @@ func (i GetRouteTablesFilterArgs) ToGetRouteTablesFilterOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetRouteTablesFilterOutput)
 }
 
+func (i GetRouteTablesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetRouteTablesFilter] {
+	return pulumix.Output[GetRouteTablesFilter]{
+		OutputState: i.ToGetRouteTablesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetRouteTablesFilterArrayInput is an input type that accepts GetRouteTablesFilterArray and GetRouteTablesFilterArrayOutput values.
 // You can construct a concrete instance of `GetRouteTablesFilterArrayInput` via:
 //
@@ -5569,6 +6536,12 @@ func (i GetRouteTablesFilterArray) ToGetRouteTablesFilterArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetRouteTablesFilterArrayOutput)
 }
 
+func (i GetRouteTablesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRouteTablesFilter] {
+	return pulumix.Output[[]GetRouteTablesFilter]{
+		OutputState: i.ToGetRouteTablesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetRouteTablesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetRouteTablesFilterOutput) ElementType() reflect.Type {
@@ -5581,6 +6554,12 @@ func (o GetRouteTablesFilterOutput) ToGetRouteTablesFilterOutput() GetRouteTable
 
 func (o GetRouteTablesFilterOutput) ToGetRouteTablesFilterOutputWithContext(ctx context.Context) GetRouteTablesFilterOutput {
 	return o
+}
+
+func (o GetRouteTablesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetRouteTablesFilter] {
+	return pulumix.Output[GetRouteTablesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetRouteTablesFilterOutput) Name() pulumi.StringOutput {
@@ -5607,6 +6586,12 @@ func (o GetRouteTablesFilterArrayOutput) ToGetRouteTablesFilterArrayOutput() Get
 
 func (o GetRouteTablesFilterArrayOutput) ToGetRouteTablesFilterArrayOutputWithContext(ctx context.Context) GetRouteTablesFilterArrayOutput {
 	return o
+}
+
+func (o GetRouteTablesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRouteTablesFilter] {
+	return pulumix.Output[[]GetRouteTablesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetRouteTablesFilterArrayOutput) Index(i pulumi.IntInput) GetRouteTablesFilterOutput {
@@ -5680,6 +6665,12 @@ func (i GetRouteTablesRouteTableArgs) ToGetRouteTablesRouteTableOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetRouteTablesRouteTableOutput)
 }
 
+func (i GetRouteTablesRouteTableArgs) ToOutput(ctx context.Context) pulumix.Output[GetRouteTablesRouteTable] {
+	return pulumix.Output[GetRouteTablesRouteTable]{
+		OutputState: i.ToGetRouteTablesRouteTableOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetRouteTablesRouteTableArrayInput is an input type that accepts GetRouteTablesRouteTableArray and GetRouteTablesRouteTableArrayOutput values.
 // You can construct a concrete instance of `GetRouteTablesRouteTableArrayInput` via:
 //
@@ -5705,6 +6696,12 @@ func (i GetRouteTablesRouteTableArray) ToGetRouteTablesRouteTableArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetRouteTablesRouteTableArrayOutput)
 }
 
+func (i GetRouteTablesRouteTableArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRouteTablesRouteTable] {
+	return pulumix.Output[[]GetRouteTablesRouteTable]{
+		OutputState: i.ToGetRouteTablesRouteTableArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetRouteTablesRouteTableOutput struct{ *pulumi.OutputState }
 
 func (GetRouteTablesRouteTableOutput) ElementType() reflect.Type {
@@ -5717,6 +6714,12 @@ func (o GetRouteTablesRouteTableOutput) ToGetRouteTablesRouteTableOutput() GetRo
 
 func (o GetRouteTablesRouteTableOutput) ToGetRouteTablesRouteTableOutputWithContext(ctx context.Context) GetRouteTablesRouteTableOutput {
 	return o
+}
+
+func (o GetRouteTablesRouteTableOutput) ToOutput(ctx context.Context) pulumix.Output[GetRouteTablesRouteTable] {
+	return pulumix.Output[GetRouteTablesRouteTable]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -5776,6 +6779,12 @@ func (o GetRouteTablesRouteTableArrayOutput) ToGetRouteTablesRouteTableArrayOutp
 
 func (o GetRouteTablesRouteTableArrayOutput) ToGetRouteTablesRouteTableArrayOutputWithContext(ctx context.Context) GetRouteTablesRouteTableArrayOutput {
 	return o
+}
+
+func (o GetRouteTablesRouteTableArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRouteTablesRouteTable] {
+	return pulumix.Output[[]GetRouteTablesRouteTable]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetRouteTablesRouteTableArrayOutput) Index(i pulumi.IntInput) GetRouteTablesRouteTableOutput {
@@ -5841,6 +6850,12 @@ func (i GetRouteTablesRouteTableRouteRuleArgs) ToGetRouteTablesRouteTableRouteRu
 	return pulumi.ToOutputWithContext(ctx, i).(GetRouteTablesRouteTableRouteRuleOutput)
 }
 
+func (i GetRouteTablesRouteTableRouteRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetRouteTablesRouteTableRouteRule] {
+	return pulumix.Output[GetRouteTablesRouteTableRouteRule]{
+		OutputState: i.ToGetRouteTablesRouteTableRouteRuleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetRouteTablesRouteTableRouteRuleArrayInput is an input type that accepts GetRouteTablesRouteTableRouteRuleArray and GetRouteTablesRouteTableRouteRuleArrayOutput values.
 // You can construct a concrete instance of `GetRouteTablesRouteTableRouteRuleArrayInput` via:
 //
@@ -5866,6 +6881,12 @@ func (i GetRouteTablesRouteTableRouteRuleArray) ToGetRouteTablesRouteTableRouteR
 	return pulumi.ToOutputWithContext(ctx, i).(GetRouteTablesRouteTableRouteRuleArrayOutput)
 }
 
+func (i GetRouteTablesRouteTableRouteRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRouteTablesRouteTableRouteRule] {
+	return pulumix.Output[[]GetRouteTablesRouteTableRouteRule]{
+		OutputState: i.ToGetRouteTablesRouteTableRouteRuleArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetRouteTablesRouteTableRouteRuleOutput struct{ *pulumi.OutputState }
 
 func (GetRouteTablesRouteTableRouteRuleOutput) ElementType() reflect.Type {
@@ -5878,6 +6899,12 @@ func (o GetRouteTablesRouteTableRouteRuleOutput) ToGetRouteTablesRouteTableRoute
 
 func (o GetRouteTablesRouteTableRouteRuleOutput) ToGetRouteTablesRouteTableRouteRuleOutputWithContext(ctx context.Context) GetRouteTablesRouteTableRouteRuleOutput {
 	return o
+}
+
+func (o GetRouteTablesRouteTableRouteRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetRouteTablesRouteTableRouteRule] {
+	return pulumix.Output[GetRouteTablesRouteTableRouteRule]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Deprecated. Instead use `destination` and `destinationType`. Requests that include both `cidrBlock` and `destination` will be rejected.
@@ -5926,6 +6953,12 @@ func (o GetRouteTablesRouteTableRouteRuleArrayOutput) ToGetRouteTablesRouteTable
 	return o
 }
 
+func (o GetRouteTablesRouteTableRouteRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRouteTablesRouteTableRouteRule] {
+	return pulumix.Output[[]GetRouteTablesRouteTableRouteRule]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetRouteTablesRouteTableRouteRuleArrayOutput) Index(i pulumi.IntInput) GetRouteTablesRouteTableRouteRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRouteTablesRouteTableRouteRule {
 		return vs[0].([]GetRouteTablesRouteTableRouteRule)[vs[1].(int)]
@@ -5967,6 +7000,12 @@ func (i GetSecurityListsFilterArgs) ToGetSecurityListsFilterOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsFilterOutput)
 }
 
+func (i GetSecurityListsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityListsFilter] {
+	return pulumix.Output[GetSecurityListsFilter]{
+		OutputState: i.ToGetSecurityListsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityListsFilterArrayInput is an input type that accepts GetSecurityListsFilterArray and GetSecurityListsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSecurityListsFilterArrayInput` via:
 //
@@ -5992,6 +7031,12 @@ func (i GetSecurityListsFilterArray) ToGetSecurityListsFilterArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsFilterArrayOutput)
 }
 
+func (i GetSecurityListsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityListsFilter] {
+	return pulumix.Output[[]GetSecurityListsFilter]{
+		OutputState: i.ToGetSecurityListsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityListsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityListsFilterOutput) ElementType() reflect.Type {
@@ -6004,6 +7049,12 @@ func (o GetSecurityListsFilterOutput) ToGetSecurityListsFilterOutput() GetSecuri
 
 func (o GetSecurityListsFilterOutput) ToGetSecurityListsFilterOutputWithContext(ctx context.Context) GetSecurityListsFilterOutput {
 	return o
+}
+
+func (o GetSecurityListsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityListsFilter] {
+	return pulumix.Output[GetSecurityListsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityListsFilterOutput) Name() pulumi.StringOutput {
@@ -6030,6 +7081,12 @@ func (o GetSecurityListsFilterArrayOutput) ToGetSecurityListsFilterArrayOutput()
 
 func (o GetSecurityListsFilterArrayOutput) ToGetSecurityListsFilterArrayOutputWithContext(ctx context.Context) GetSecurityListsFilterArrayOutput {
 	return o
+}
+
+func (o GetSecurityListsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityListsFilter] {
+	return pulumix.Output[[]GetSecurityListsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityListsFilterArrayOutput) Index(i pulumi.IntInput) GetSecurityListsFilterOutput {
@@ -6107,6 +7164,12 @@ func (i GetSecurityListsSecurityListArgs) ToGetSecurityListsSecurityListOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListOutput)
 }
 
+func (i GetSecurityListsSecurityListArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityListsSecurityList] {
+	return pulumix.Output[GetSecurityListsSecurityList]{
+		OutputState: i.ToGetSecurityListsSecurityListOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityListsSecurityListArrayInput is an input type that accepts GetSecurityListsSecurityListArray and GetSecurityListsSecurityListArrayOutput values.
 // You can construct a concrete instance of `GetSecurityListsSecurityListArrayInput` via:
 //
@@ -6132,6 +7195,12 @@ func (i GetSecurityListsSecurityListArray) ToGetSecurityListsSecurityListArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListArrayOutput)
 }
 
+func (i GetSecurityListsSecurityListArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityListsSecurityList] {
+	return pulumix.Output[[]GetSecurityListsSecurityList]{
+		OutputState: i.ToGetSecurityListsSecurityListArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityListsSecurityListOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityListsSecurityListOutput) ElementType() reflect.Type {
@@ -6144,6 +7213,12 @@ func (o GetSecurityListsSecurityListOutput) ToGetSecurityListsSecurityListOutput
 
 func (o GetSecurityListsSecurityListOutput) ToGetSecurityListsSecurityListOutputWithContext(ctx context.Context) GetSecurityListsSecurityListOutput {
 	return o
+}
+
+func (o GetSecurityListsSecurityListOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityListsSecurityList] {
+	return pulumix.Output[GetSecurityListsSecurityList]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -6212,6 +7287,12 @@ func (o GetSecurityListsSecurityListArrayOutput) ToGetSecurityListsSecurityListA
 
 func (o GetSecurityListsSecurityListArrayOutput) ToGetSecurityListsSecurityListArrayOutputWithContext(ctx context.Context) GetSecurityListsSecurityListArrayOutput {
 	return o
+}
+
+func (o GetSecurityListsSecurityListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityListsSecurityList] {
+	return pulumix.Output[[]GetSecurityListsSecurityList]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityListsSecurityListArrayOutput) Index(i pulumi.IntInput) GetSecurityListsSecurityListOutput {
@@ -6289,6 +7370,12 @@ func (i GetSecurityListsSecurityListEgressSecurityRuleArgs) ToGetSecurityListsSe
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListEgressSecurityRuleOutput)
 }
 
+func (i GetSecurityListsSecurityListEgressSecurityRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityListsSecurityListEgressSecurityRule] {
+	return pulumix.Output[GetSecurityListsSecurityListEgressSecurityRule]{
+		OutputState: i.ToGetSecurityListsSecurityListEgressSecurityRuleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityListsSecurityListEgressSecurityRuleArrayInput is an input type that accepts GetSecurityListsSecurityListEgressSecurityRuleArray and GetSecurityListsSecurityListEgressSecurityRuleArrayOutput values.
 // You can construct a concrete instance of `GetSecurityListsSecurityListEgressSecurityRuleArrayInput` via:
 //
@@ -6314,6 +7401,12 @@ func (i GetSecurityListsSecurityListEgressSecurityRuleArray) ToGetSecurityListsS
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListEgressSecurityRuleArrayOutput)
 }
 
+func (i GetSecurityListsSecurityListEgressSecurityRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityListsSecurityListEgressSecurityRule] {
+	return pulumix.Output[[]GetSecurityListsSecurityListEgressSecurityRule]{
+		OutputState: i.ToGetSecurityListsSecurityListEgressSecurityRuleArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityListsSecurityListEgressSecurityRuleOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityListsSecurityListEgressSecurityRuleOutput) ElementType() reflect.Type {
@@ -6326,6 +7419,12 @@ func (o GetSecurityListsSecurityListEgressSecurityRuleOutput) ToGetSecurityLists
 
 func (o GetSecurityListsSecurityListEgressSecurityRuleOutput) ToGetSecurityListsSecurityListEgressSecurityRuleOutputWithContext(ctx context.Context) GetSecurityListsSecurityListEgressSecurityRuleOutput {
 	return o
+}
+
+func (o GetSecurityListsSecurityListEgressSecurityRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityListsSecurityListEgressSecurityRule] {
+	return pulumix.Output[GetSecurityListsSecurityListEgressSecurityRule]{
+		OutputState: o.OutputState,
+	}
 }
 
 // An optional description of your choice for the rule.
@@ -6392,6 +7491,12 @@ func (o GetSecurityListsSecurityListEgressSecurityRuleArrayOutput) ToGetSecurity
 	return o
 }
 
+func (o GetSecurityListsSecurityListEgressSecurityRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityListsSecurityListEgressSecurityRule] {
+	return pulumix.Output[[]GetSecurityListsSecurityListEgressSecurityRule]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetSecurityListsSecurityListEgressSecurityRuleArrayOutput) Index(i pulumi.IntInput) GetSecurityListsSecurityListEgressSecurityRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityListsSecurityListEgressSecurityRule {
 		return vs[0].([]GetSecurityListsSecurityListEgressSecurityRule)[vs[1].(int)]
@@ -6435,6 +7540,12 @@ func (i GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArgs) ToGetSecur
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionOutput)
 }
 
+func (i GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityListsSecurityListEgressSecurityRuleIcmpOption] {
+	return pulumix.Output[GetSecurityListsSecurityListEgressSecurityRuleIcmpOption]{
+		OutputState: i.ToGetSecurityListsSecurityListEgressSecurityRuleIcmpOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArrayInput is an input type that accepts GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArray and GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArrayOutput values.
 // You can construct a concrete instance of `GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArrayInput` via:
 //
@@ -6460,6 +7571,12 @@ func (i GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArray) ToGetSecu
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArrayOutput)
 }
 
+func (i GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityListsSecurityListEgressSecurityRuleIcmpOption] {
+	return pulumix.Output[[]GetSecurityListsSecurityListEgressSecurityRuleIcmpOption]{
+		OutputState: i.ToGetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionOutput) ElementType() reflect.Type {
@@ -6472,6 +7589,12 @@ func (o GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionOutput) ToGetSec
 
 func (o GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionOutput) ToGetSecurityListsSecurityListEgressSecurityRuleIcmpOptionOutputWithContext(ctx context.Context) GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionOutput {
 	return o
+}
+
+func (o GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityListsSecurityListEgressSecurityRuleIcmpOption] {
+	return pulumix.Output[GetSecurityListsSecurityListEgressSecurityRuleIcmpOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The ICMP code (optional).
@@ -6496,6 +7619,12 @@ func (o GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArrayOutput) ToG
 
 func (o GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArrayOutput) ToGetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArrayOutputWithContext(ctx context.Context) GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArrayOutput {
 	return o
+}
+
+func (o GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityListsSecurityListEgressSecurityRuleIcmpOption] {
+	return pulumix.Output[[]GetSecurityListsSecurityListEgressSecurityRuleIcmpOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionArrayOutput) Index(i pulumi.IntInput) GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionOutput {
@@ -6543,6 +7672,12 @@ func (i GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArgs) ToGetSecuri
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListEgressSecurityRuleTcpOptionOutput)
 }
 
+func (i GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityListsSecurityListEgressSecurityRuleTcpOption] {
+	return pulumix.Output[GetSecurityListsSecurityListEgressSecurityRuleTcpOption]{
+		OutputState: i.ToGetSecurityListsSecurityListEgressSecurityRuleTcpOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArrayInput is an input type that accepts GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArray and GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArrayOutput values.
 // You can construct a concrete instance of `GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArrayInput` via:
 //
@@ -6568,6 +7703,12 @@ func (i GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArray) ToGetSecur
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArrayOutput)
 }
 
+func (i GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityListsSecurityListEgressSecurityRuleTcpOption] {
+	return pulumix.Output[[]GetSecurityListsSecurityListEgressSecurityRuleTcpOption]{
+		OutputState: i.ToGetSecurityListsSecurityListEgressSecurityRuleTcpOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityListsSecurityListEgressSecurityRuleTcpOptionOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityListsSecurityListEgressSecurityRuleTcpOptionOutput) ElementType() reflect.Type {
@@ -6580,6 +7721,12 @@ func (o GetSecurityListsSecurityListEgressSecurityRuleTcpOptionOutput) ToGetSecu
 
 func (o GetSecurityListsSecurityListEgressSecurityRuleTcpOptionOutput) ToGetSecurityListsSecurityListEgressSecurityRuleTcpOptionOutputWithContext(ctx context.Context) GetSecurityListsSecurityListEgressSecurityRuleTcpOptionOutput {
 	return o
+}
+
+func (o GetSecurityListsSecurityListEgressSecurityRuleTcpOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityListsSecurityListEgressSecurityRuleTcpOption] {
+	return pulumix.Output[GetSecurityListsSecurityListEgressSecurityRuleTcpOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
@@ -6610,6 +7757,12 @@ func (o GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArrayOutput) ToGe
 
 func (o GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArrayOutput) ToGetSecurityListsSecurityListEgressSecurityRuleTcpOptionArrayOutputWithContext(ctx context.Context) GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArrayOutput {
 	return o
+}
+
+func (o GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityListsSecurityListEgressSecurityRuleTcpOption] {
+	return pulumix.Output[[]GetSecurityListsSecurityListEgressSecurityRuleTcpOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArrayOutput) Index(i pulumi.IntInput) GetSecurityListsSecurityListEgressSecurityRuleTcpOptionOutput {
@@ -6655,6 +7808,12 @@ func (i GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeOutput)
 }
 
+func (i GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRange] {
+	return pulumix.Output[GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRange]{
+		OutputState: i.ToGetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArrayInput is an input type that accepts GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArray and GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArrayOutput values.
 // You can construct a concrete instance of `GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArrayInput` via:
 //
@@ -6680,6 +7839,12 @@ func (i GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArrayOutput)
 }
 
+func (i GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRange] {
+	return pulumix.Output[[]GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRange]{
+		OutputState: i.ToGetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeOutput) ElementType() reflect.Type {
@@ -6692,6 +7857,12 @@ func (o GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeOu
 
 func (o GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeOutput) ToGetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeOutputWithContext(ctx context.Context) GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeOutput {
 	return o
+}
+
+func (o GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRange] {
+	return pulumix.Output[GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRange]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
@@ -6716,6 +7887,12 @@ func (o GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeAr
 
 func (o GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArrayOutput) ToGetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArrayOutputWithContext(ctx context.Context) GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArrayOutput {
 	return o
+}
+
+func (o GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRange] {
+	return pulumix.Output[[]GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRange]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeArrayOutput) Index(i pulumi.IntInput) GetSecurityListsSecurityListEgressSecurityRuleTcpOptionSourcePortRangeOutput {
@@ -6763,6 +7940,12 @@ func (i GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArgs) ToGetSecuri
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListEgressSecurityRuleUdpOptionOutput)
 }
 
+func (i GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityListsSecurityListEgressSecurityRuleUdpOption] {
+	return pulumix.Output[GetSecurityListsSecurityListEgressSecurityRuleUdpOption]{
+		OutputState: i.ToGetSecurityListsSecurityListEgressSecurityRuleUdpOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArrayInput is an input type that accepts GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArray and GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArrayOutput values.
 // You can construct a concrete instance of `GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArrayInput` via:
 //
@@ -6788,6 +7971,12 @@ func (i GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArray) ToGetSecur
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArrayOutput)
 }
 
+func (i GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityListsSecurityListEgressSecurityRuleUdpOption] {
+	return pulumix.Output[[]GetSecurityListsSecurityListEgressSecurityRuleUdpOption]{
+		OutputState: i.ToGetSecurityListsSecurityListEgressSecurityRuleUdpOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityListsSecurityListEgressSecurityRuleUdpOptionOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityListsSecurityListEgressSecurityRuleUdpOptionOutput) ElementType() reflect.Type {
@@ -6800,6 +7989,12 @@ func (o GetSecurityListsSecurityListEgressSecurityRuleUdpOptionOutput) ToGetSecu
 
 func (o GetSecurityListsSecurityListEgressSecurityRuleUdpOptionOutput) ToGetSecurityListsSecurityListEgressSecurityRuleUdpOptionOutputWithContext(ctx context.Context) GetSecurityListsSecurityListEgressSecurityRuleUdpOptionOutput {
 	return o
+}
+
+func (o GetSecurityListsSecurityListEgressSecurityRuleUdpOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityListsSecurityListEgressSecurityRuleUdpOption] {
+	return pulumix.Output[GetSecurityListsSecurityListEgressSecurityRuleUdpOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
@@ -6830,6 +8025,12 @@ func (o GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArrayOutput) ToGe
 
 func (o GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArrayOutput) ToGetSecurityListsSecurityListEgressSecurityRuleUdpOptionArrayOutputWithContext(ctx context.Context) GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArrayOutput {
 	return o
+}
+
+func (o GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityListsSecurityListEgressSecurityRuleUdpOption] {
+	return pulumix.Output[[]GetSecurityListsSecurityListEgressSecurityRuleUdpOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArrayOutput) Index(i pulumi.IntInput) GetSecurityListsSecurityListEgressSecurityRuleUdpOptionOutput {
@@ -6875,6 +8076,12 @@ func (i GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeOutput)
 }
 
+func (i GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRange] {
+	return pulumix.Output[GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRange]{
+		OutputState: i.ToGetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArrayInput is an input type that accepts GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArray and GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArrayOutput values.
 // You can construct a concrete instance of `GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArrayInput` via:
 //
@@ -6900,6 +8107,12 @@ func (i GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArrayOutput)
 }
 
+func (i GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRange] {
+	return pulumix.Output[[]GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRange]{
+		OutputState: i.ToGetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeOutput) ElementType() reflect.Type {
@@ -6912,6 +8125,12 @@ func (o GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeOu
 
 func (o GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeOutput) ToGetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeOutputWithContext(ctx context.Context) GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeOutput {
 	return o
+}
+
+func (o GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRange] {
+	return pulumix.Output[GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRange]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
@@ -6936,6 +8155,12 @@ func (o GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeAr
 
 func (o GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArrayOutput) ToGetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArrayOutputWithContext(ctx context.Context) GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArrayOutput {
 	return o
+}
+
+func (o GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRange] {
+	return pulumix.Output[[]GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRange]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeArrayOutput) Index(i pulumi.IntInput) GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRangeOutput {
@@ -7013,6 +8238,12 @@ func (i GetSecurityListsSecurityListIngressSecurityRuleArgs) ToGetSecurityListsS
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListIngressSecurityRuleOutput)
 }
 
+func (i GetSecurityListsSecurityListIngressSecurityRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityListsSecurityListIngressSecurityRule] {
+	return pulumix.Output[GetSecurityListsSecurityListIngressSecurityRule]{
+		OutputState: i.ToGetSecurityListsSecurityListIngressSecurityRuleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityListsSecurityListIngressSecurityRuleArrayInput is an input type that accepts GetSecurityListsSecurityListIngressSecurityRuleArray and GetSecurityListsSecurityListIngressSecurityRuleArrayOutput values.
 // You can construct a concrete instance of `GetSecurityListsSecurityListIngressSecurityRuleArrayInput` via:
 //
@@ -7038,6 +8269,12 @@ func (i GetSecurityListsSecurityListIngressSecurityRuleArray) ToGetSecurityLists
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListIngressSecurityRuleArrayOutput)
 }
 
+func (i GetSecurityListsSecurityListIngressSecurityRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityListsSecurityListIngressSecurityRule] {
+	return pulumix.Output[[]GetSecurityListsSecurityListIngressSecurityRule]{
+		OutputState: i.ToGetSecurityListsSecurityListIngressSecurityRuleArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityListsSecurityListIngressSecurityRuleOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityListsSecurityListIngressSecurityRuleOutput) ElementType() reflect.Type {
@@ -7050,6 +8287,12 @@ func (o GetSecurityListsSecurityListIngressSecurityRuleOutput) ToGetSecurityList
 
 func (o GetSecurityListsSecurityListIngressSecurityRuleOutput) ToGetSecurityListsSecurityListIngressSecurityRuleOutputWithContext(ctx context.Context) GetSecurityListsSecurityListIngressSecurityRuleOutput {
 	return o
+}
+
+func (o GetSecurityListsSecurityListIngressSecurityRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityListsSecurityListIngressSecurityRule] {
+	return pulumix.Output[GetSecurityListsSecurityListIngressSecurityRule]{
+		OutputState: o.OutputState,
+	}
 }
 
 // An optional description of your choice for the rule.
@@ -7116,6 +8359,12 @@ func (o GetSecurityListsSecurityListIngressSecurityRuleArrayOutput) ToGetSecurit
 	return o
 }
 
+func (o GetSecurityListsSecurityListIngressSecurityRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityListsSecurityListIngressSecurityRule] {
+	return pulumix.Output[[]GetSecurityListsSecurityListIngressSecurityRule]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetSecurityListsSecurityListIngressSecurityRuleArrayOutput) Index(i pulumi.IntInput) GetSecurityListsSecurityListIngressSecurityRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityListsSecurityListIngressSecurityRule {
 		return vs[0].([]GetSecurityListsSecurityListIngressSecurityRule)[vs[1].(int)]
@@ -7159,6 +8408,12 @@ func (i GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArgs) ToGetSecu
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionOutput)
 }
 
+func (i GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityListsSecurityListIngressSecurityRuleIcmpOption] {
+	return pulumix.Output[GetSecurityListsSecurityListIngressSecurityRuleIcmpOption]{
+		OutputState: i.ToGetSecurityListsSecurityListIngressSecurityRuleIcmpOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArrayInput is an input type that accepts GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArray and GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArrayOutput values.
 // You can construct a concrete instance of `GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArrayInput` via:
 //
@@ -7184,6 +8439,12 @@ func (i GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArray) ToGetSec
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArrayOutput)
 }
 
+func (i GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityListsSecurityListIngressSecurityRuleIcmpOption] {
+	return pulumix.Output[[]GetSecurityListsSecurityListIngressSecurityRuleIcmpOption]{
+		OutputState: i.ToGetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionOutput) ElementType() reflect.Type {
@@ -7196,6 +8457,12 @@ func (o GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionOutput) ToGetSe
 
 func (o GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionOutput) ToGetSecurityListsSecurityListIngressSecurityRuleIcmpOptionOutputWithContext(ctx context.Context) GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionOutput {
 	return o
+}
+
+func (o GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityListsSecurityListIngressSecurityRuleIcmpOption] {
+	return pulumix.Output[GetSecurityListsSecurityListIngressSecurityRuleIcmpOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The ICMP code (optional).
@@ -7220,6 +8487,12 @@ func (o GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArrayOutput) To
 
 func (o GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArrayOutput) ToGetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArrayOutputWithContext(ctx context.Context) GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArrayOutput {
 	return o
+}
+
+func (o GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityListsSecurityListIngressSecurityRuleIcmpOption] {
+	return pulumix.Output[[]GetSecurityListsSecurityListIngressSecurityRuleIcmpOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionArrayOutput) Index(i pulumi.IntInput) GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionOutput {
@@ -7267,6 +8540,12 @@ func (i GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArgs) ToGetSecur
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListIngressSecurityRuleTcpOptionOutput)
 }
 
+func (i GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityListsSecurityListIngressSecurityRuleTcpOption] {
+	return pulumix.Output[GetSecurityListsSecurityListIngressSecurityRuleTcpOption]{
+		OutputState: i.ToGetSecurityListsSecurityListIngressSecurityRuleTcpOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArrayInput is an input type that accepts GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArray and GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArrayOutput values.
 // You can construct a concrete instance of `GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArrayInput` via:
 //
@@ -7292,6 +8571,12 @@ func (i GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArray) ToGetSecu
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArrayOutput)
 }
 
+func (i GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityListsSecurityListIngressSecurityRuleTcpOption] {
+	return pulumix.Output[[]GetSecurityListsSecurityListIngressSecurityRuleTcpOption]{
+		OutputState: i.ToGetSecurityListsSecurityListIngressSecurityRuleTcpOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityListsSecurityListIngressSecurityRuleTcpOptionOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityListsSecurityListIngressSecurityRuleTcpOptionOutput) ElementType() reflect.Type {
@@ -7304,6 +8589,12 @@ func (o GetSecurityListsSecurityListIngressSecurityRuleTcpOptionOutput) ToGetSec
 
 func (o GetSecurityListsSecurityListIngressSecurityRuleTcpOptionOutput) ToGetSecurityListsSecurityListIngressSecurityRuleTcpOptionOutputWithContext(ctx context.Context) GetSecurityListsSecurityListIngressSecurityRuleTcpOptionOutput {
 	return o
+}
+
+func (o GetSecurityListsSecurityListIngressSecurityRuleTcpOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityListsSecurityListIngressSecurityRuleTcpOption] {
+	return pulumix.Output[GetSecurityListsSecurityListIngressSecurityRuleTcpOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
@@ -7334,6 +8625,12 @@ func (o GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArrayOutput) ToG
 
 func (o GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArrayOutput) ToGetSecurityListsSecurityListIngressSecurityRuleTcpOptionArrayOutputWithContext(ctx context.Context) GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArrayOutput {
 	return o
+}
+
+func (o GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityListsSecurityListIngressSecurityRuleTcpOption] {
+	return pulumix.Output[[]GetSecurityListsSecurityListIngressSecurityRuleTcpOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArrayOutput) Index(i pulumi.IntInput) GetSecurityListsSecurityListIngressSecurityRuleTcpOptionOutput {
@@ -7379,6 +8676,12 @@ func (i GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeA
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeOutput)
 }
 
+func (i GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRange] {
+	return pulumix.Output[GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRange]{
+		OutputState: i.ToGetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArrayInput is an input type that accepts GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArray and GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArrayOutput values.
 // You can construct a concrete instance of `GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArrayInput` via:
 //
@@ -7404,6 +8707,12 @@ func (i GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeA
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArrayOutput)
 }
 
+func (i GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRange] {
+	return pulumix.Output[[]GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRange]{
+		OutputState: i.ToGetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeOutput) ElementType() reflect.Type {
@@ -7416,6 +8725,12 @@ func (o GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeO
 
 func (o GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeOutput) ToGetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeOutputWithContext(ctx context.Context) GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeOutput {
 	return o
+}
+
+func (o GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRange] {
+	return pulumix.Output[GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRange]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
@@ -7440,6 +8755,12 @@ func (o GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeA
 
 func (o GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArrayOutput) ToGetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArrayOutputWithContext(ctx context.Context) GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArrayOutput {
 	return o
+}
+
+func (o GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRange] {
+	return pulumix.Output[[]GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRange]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeArrayOutput) Index(i pulumi.IntInput) GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRangeOutput {
@@ -7487,6 +8808,12 @@ func (i GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArgs) ToGetSecur
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListIngressSecurityRuleUdpOptionOutput)
 }
 
+func (i GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityListsSecurityListIngressSecurityRuleUdpOption] {
+	return pulumix.Output[GetSecurityListsSecurityListIngressSecurityRuleUdpOption]{
+		OutputState: i.ToGetSecurityListsSecurityListIngressSecurityRuleUdpOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArrayInput is an input type that accepts GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArray and GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArrayOutput values.
 // You can construct a concrete instance of `GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArrayInput` via:
 //
@@ -7512,6 +8839,12 @@ func (i GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArray) ToGetSecu
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArrayOutput)
 }
 
+func (i GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityListsSecurityListIngressSecurityRuleUdpOption] {
+	return pulumix.Output[[]GetSecurityListsSecurityListIngressSecurityRuleUdpOption]{
+		OutputState: i.ToGetSecurityListsSecurityListIngressSecurityRuleUdpOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityListsSecurityListIngressSecurityRuleUdpOptionOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityListsSecurityListIngressSecurityRuleUdpOptionOutput) ElementType() reflect.Type {
@@ -7524,6 +8857,12 @@ func (o GetSecurityListsSecurityListIngressSecurityRuleUdpOptionOutput) ToGetSec
 
 func (o GetSecurityListsSecurityListIngressSecurityRuleUdpOptionOutput) ToGetSecurityListsSecurityListIngressSecurityRuleUdpOptionOutputWithContext(ctx context.Context) GetSecurityListsSecurityListIngressSecurityRuleUdpOptionOutput {
 	return o
+}
+
+func (o GetSecurityListsSecurityListIngressSecurityRuleUdpOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityListsSecurityListIngressSecurityRuleUdpOption] {
+	return pulumix.Output[GetSecurityListsSecurityListIngressSecurityRuleUdpOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
@@ -7554,6 +8893,12 @@ func (o GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArrayOutput) ToG
 
 func (o GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArrayOutput) ToGetSecurityListsSecurityListIngressSecurityRuleUdpOptionArrayOutputWithContext(ctx context.Context) GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArrayOutput {
 	return o
+}
+
+func (o GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityListsSecurityListIngressSecurityRuleUdpOption] {
+	return pulumix.Output[[]GetSecurityListsSecurityListIngressSecurityRuleUdpOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArrayOutput) Index(i pulumi.IntInput) GetSecurityListsSecurityListIngressSecurityRuleUdpOptionOutput {
@@ -7599,6 +8944,12 @@ func (i GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeA
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeOutput)
 }
 
+func (i GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRange] {
+	return pulumix.Output[GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRange]{
+		OutputState: i.ToGetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArrayInput is an input type that accepts GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArray and GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArrayOutput values.
 // You can construct a concrete instance of `GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArrayInput` via:
 //
@@ -7624,6 +8975,12 @@ func (i GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeA
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArrayOutput)
 }
 
+func (i GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRange] {
+	return pulumix.Output[[]GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRange]{
+		OutputState: i.ToGetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeOutput) ElementType() reflect.Type {
@@ -7636,6 +8993,12 @@ func (o GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeO
 
 func (o GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeOutput) ToGetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeOutputWithContext(ctx context.Context) GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeOutput {
 	return o
+}
+
+func (o GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRange] {
+	return pulumix.Output[GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRange]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
@@ -7660,6 +9023,12 @@ func (o GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeA
 
 func (o GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArrayOutput) ToGetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArrayOutputWithContext(ctx context.Context) GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArrayOutput {
 	return o
+}
+
+func (o GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRange] {
+	return pulumix.Output[[]GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRange]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeArrayOutput) Index(i pulumi.IntInput) GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRangeOutput {
@@ -7703,6 +9072,12 @@ func (i GetServiceGatewaysFilterArgs) ToGetServiceGatewaysFilterOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceGatewaysFilterOutput)
 }
 
+func (i GetServiceGatewaysFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetServiceGatewaysFilter] {
+	return pulumix.Output[GetServiceGatewaysFilter]{
+		OutputState: i.ToGetServiceGatewaysFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetServiceGatewaysFilterArrayInput is an input type that accepts GetServiceGatewaysFilterArray and GetServiceGatewaysFilterArrayOutput values.
 // You can construct a concrete instance of `GetServiceGatewaysFilterArrayInput` via:
 //
@@ -7728,6 +9103,12 @@ func (i GetServiceGatewaysFilterArray) ToGetServiceGatewaysFilterArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceGatewaysFilterArrayOutput)
 }
 
+func (i GetServiceGatewaysFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceGatewaysFilter] {
+	return pulumix.Output[[]GetServiceGatewaysFilter]{
+		OutputState: i.ToGetServiceGatewaysFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetServiceGatewaysFilterOutput struct{ *pulumi.OutputState }
 
 func (GetServiceGatewaysFilterOutput) ElementType() reflect.Type {
@@ -7740,6 +9121,12 @@ func (o GetServiceGatewaysFilterOutput) ToGetServiceGatewaysFilterOutput() GetSe
 
 func (o GetServiceGatewaysFilterOutput) ToGetServiceGatewaysFilterOutputWithContext(ctx context.Context) GetServiceGatewaysFilterOutput {
 	return o
+}
+
+func (o GetServiceGatewaysFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceGatewaysFilter] {
+	return pulumix.Output[GetServiceGatewaysFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetServiceGatewaysFilterOutput) Name() pulumi.StringOutput {
@@ -7766,6 +9153,12 @@ func (o GetServiceGatewaysFilterArrayOutput) ToGetServiceGatewaysFilterArrayOutp
 
 func (o GetServiceGatewaysFilterArrayOutput) ToGetServiceGatewaysFilterArrayOutputWithContext(ctx context.Context) GetServiceGatewaysFilterArrayOutput {
 	return o
+}
+
+func (o GetServiceGatewaysFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceGatewaysFilter] {
+	return pulumix.Output[[]GetServiceGatewaysFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetServiceGatewaysFilterArrayOutput) Index(i pulumi.IntInput) GetServiceGatewaysFilterOutput {
@@ -7847,6 +9240,12 @@ func (i GetServiceGatewaysServiceGatewayArgs) ToGetServiceGatewaysServiceGateway
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceGatewaysServiceGatewayOutput)
 }
 
+func (i GetServiceGatewaysServiceGatewayArgs) ToOutput(ctx context.Context) pulumix.Output[GetServiceGatewaysServiceGateway] {
+	return pulumix.Output[GetServiceGatewaysServiceGateway]{
+		OutputState: i.ToGetServiceGatewaysServiceGatewayOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetServiceGatewaysServiceGatewayArrayInput is an input type that accepts GetServiceGatewaysServiceGatewayArray and GetServiceGatewaysServiceGatewayArrayOutput values.
 // You can construct a concrete instance of `GetServiceGatewaysServiceGatewayArrayInput` via:
 //
@@ -7872,6 +9271,12 @@ func (i GetServiceGatewaysServiceGatewayArray) ToGetServiceGatewaysServiceGatewa
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceGatewaysServiceGatewayArrayOutput)
 }
 
+func (i GetServiceGatewaysServiceGatewayArray) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceGatewaysServiceGateway] {
+	return pulumix.Output[[]GetServiceGatewaysServiceGateway]{
+		OutputState: i.ToGetServiceGatewaysServiceGatewayArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetServiceGatewaysServiceGatewayOutput struct{ *pulumi.OutputState }
 
 func (GetServiceGatewaysServiceGatewayOutput) ElementType() reflect.Type {
@@ -7884,6 +9289,12 @@ func (o GetServiceGatewaysServiceGatewayOutput) ToGetServiceGatewaysServiceGatew
 
 func (o GetServiceGatewaysServiceGatewayOutput) ToGetServiceGatewaysServiceGatewayOutputWithContext(ctx context.Context) GetServiceGatewaysServiceGatewayOutput {
 	return o
+}
+
+func (o GetServiceGatewaysServiceGatewayOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceGatewaysServiceGateway] {
+	return pulumix.Output[GetServiceGatewaysServiceGateway]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether the service gateway blocks all traffic through it. The default is `false`. When this is `true`, traffic is not routed to any services, regardless of route rules.  Example: `true`
@@ -7955,6 +9366,12 @@ func (o GetServiceGatewaysServiceGatewayArrayOutput) ToGetServiceGatewaysService
 	return o
 }
 
+func (o GetServiceGatewaysServiceGatewayArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceGatewaysServiceGateway] {
+	return pulumix.Output[[]GetServiceGatewaysServiceGateway]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetServiceGatewaysServiceGatewayArrayOutput) Index(i pulumi.IntInput) GetServiceGatewaysServiceGatewayOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServiceGatewaysServiceGateway {
 		return vs[0].([]GetServiceGatewaysServiceGateway)[vs[1].(int)]
@@ -7998,6 +9415,12 @@ func (i GetServiceGatewaysServiceGatewayServiceArgs) ToGetServiceGatewaysService
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceGatewaysServiceGatewayServiceOutput)
 }
 
+func (i GetServiceGatewaysServiceGatewayServiceArgs) ToOutput(ctx context.Context) pulumix.Output[GetServiceGatewaysServiceGatewayService] {
+	return pulumix.Output[GetServiceGatewaysServiceGatewayService]{
+		OutputState: i.ToGetServiceGatewaysServiceGatewayServiceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetServiceGatewaysServiceGatewayServiceArrayInput is an input type that accepts GetServiceGatewaysServiceGatewayServiceArray and GetServiceGatewaysServiceGatewayServiceArrayOutput values.
 // You can construct a concrete instance of `GetServiceGatewaysServiceGatewayServiceArrayInput` via:
 //
@@ -8023,6 +9446,12 @@ func (i GetServiceGatewaysServiceGatewayServiceArray) ToGetServiceGatewaysServic
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceGatewaysServiceGatewayServiceArrayOutput)
 }
 
+func (i GetServiceGatewaysServiceGatewayServiceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceGatewaysServiceGatewayService] {
+	return pulumix.Output[[]GetServiceGatewaysServiceGatewayService]{
+		OutputState: i.ToGetServiceGatewaysServiceGatewayServiceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetServiceGatewaysServiceGatewayServiceOutput struct{ *pulumi.OutputState }
 
 func (GetServiceGatewaysServiceGatewayServiceOutput) ElementType() reflect.Type {
@@ -8035,6 +9464,12 @@ func (o GetServiceGatewaysServiceGatewayServiceOutput) ToGetServiceGatewaysServi
 
 func (o GetServiceGatewaysServiceGatewayServiceOutput) ToGetServiceGatewaysServiceGatewayServiceOutputWithContext(ctx context.Context) GetServiceGatewaysServiceGatewayServiceOutput {
 	return o
+}
+
+func (o GetServiceGatewaysServiceGatewayServiceOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceGatewaysServiceGatewayService] {
+	return pulumix.Output[GetServiceGatewaysServiceGatewayService]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service.
@@ -8059,6 +9494,12 @@ func (o GetServiceGatewaysServiceGatewayServiceArrayOutput) ToGetServiceGateways
 
 func (o GetServiceGatewaysServiceGatewayServiceArrayOutput) ToGetServiceGatewaysServiceGatewayServiceArrayOutputWithContext(ctx context.Context) GetServiceGatewaysServiceGatewayServiceArrayOutput {
 	return o
+}
+
+func (o GetServiceGatewaysServiceGatewayServiceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceGatewaysServiceGatewayService] {
+	return pulumix.Output[[]GetServiceGatewaysServiceGatewayService]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetServiceGatewaysServiceGatewayServiceArrayOutput) Index(i pulumi.IntInput) GetServiceGatewaysServiceGatewayServiceOutput {
@@ -8104,6 +9545,12 @@ func (i GetServicesFilterArgs) ToGetServicesFilterOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetServicesFilterOutput)
 }
 
+func (i GetServicesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetServicesFilter] {
+	return pulumix.Output[GetServicesFilter]{
+		OutputState: i.ToGetServicesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetServicesFilterArrayInput is an input type that accepts GetServicesFilterArray and GetServicesFilterArrayOutput values.
 // You can construct a concrete instance of `GetServicesFilterArrayInput` via:
 //
@@ -8129,6 +9576,12 @@ func (i GetServicesFilterArray) ToGetServicesFilterArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetServicesFilterArrayOutput)
 }
 
+func (i GetServicesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetServicesFilter] {
+	return pulumix.Output[[]GetServicesFilter]{
+		OutputState: i.ToGetServicesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetServicesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetServicesFilterOutput) ElementType() reflect.Type {
@@ -8141,6 +9594,12 @@ func (o GetServicesFilterOutput) ToGetServicesFilterOutput() GetServicesFilterOu
 
 func (o GetServicesFilterOutput) ToGetServicesFilterOutputWithContext(ctx context.Context) GetServicesFilterOutput {
 	return o
+}
+
+func (o GetServicesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetServicesFilter] {
+	return pulumix.Output[GetServicesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Name of the `Service` object. This name can change and is not guaranteed to be unique.  Example: `OCI PHX Object Storage`
@@ -8168,6 +9627,12 @@ func (o GetServicesFilterArrayOutput) ToGetServicesFilterArrayOutput() GetServic
 
 func (o GetServicesFilterArrayOutput) ToGetServicesFilterArrayOutputWithContext(ctx context.Context) GetServicesFilterArrayOutput {
 	return o
+}
+
+func (o GetServicesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetServicesFilter] {
+	return pulumix.Output[[]GetServicesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetServicesFilterArrayOutput) Index(i pulumi.IntInput) GetServicesFilterOutput {
@@ -8221,6 +9686,12 @@ func (i GetServicesServiceArgs) ToGetServicesServiceOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetServicesServiceOutput)
 }
 
+func (i GetServicesServiceArgs) ToOutput(ctx context.Context) pulumix.Output[GetServicesService] {
+	return pulumix.Output[GetServicesService]{
+		OutputState: i.ToGetServicesServiceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetServicesServiceArrayInput is an input type that accepts GetServicesServiceArray and GetServicesServiceArrayOutput values.
 // You can construct a concrete instance of `GetServicesServiceArrayInput` via:
 //
@@ -8246,6 +9717,12 @@ func (i GetServicesServiceArray) ToGetServicesServiceArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetServicesServiceArrayOutput)
 }
 
+func (i GetServicesServiceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetServicesService] {
+	return pulumix.Output[[]GetServicesService]{
+		OutputState: i.ToGetServicesServiceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetServicesServiceOutput struct{ *pulumi.OutputState }
 
 func (GetServicesServiceOutput) ElementType() reflect.Type {
@@ -8258,6 +9735,12 @@ func (o GetServicesServiceOutput) ToGetServicesServiceOutput() GetServicesServic
 
 func (o GetServicesServiceOutput) ToGetServicesServiceOutputWithContext(ctx context.Context) GetServicesServiceOutput {
 	return o
+}
+
+func (o GetServicesServiceOutput) ToOutput(ctx context.Context) pulumix.Output[GetServicesService] {
+	return pulumix.Output[GetServicesService]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A string that represents the regional public IP address ranges for the Oracle service or services covered by this `Service` object. Also known as the `Service` object's *service CIDR label*.
@@ -8292,6 +9775,12 @@ func (o GetServicesServiceArrayOutput) ToGetServicesServiceArrayOutput() GetServ
 
 func (o GetServicesServiceArrayOutput) ToGetServicesServiceArrayOutputWithContext(ctx context.Context) GetServicesServiceArrayOutput {
 	return o
+}
+
+func (o GetServicesServiceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetServicesService] {
+	return pulumix.Output[[]GetServicesService]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetServicesServiceArrayOutput) Index(i pulumi.IntInput) GetServicesServiceOutput {
@@ -8335,6 +9824,12 @@ func (i GetShapeFilterArgs) ToGetShapeFilterOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapeFilterOutput)
 }
 
+func (i GetShapeFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetShapeFilter] {
+	return pulumix.Output[GetShapeFilter]{
+		OutputState: i.ToGetShapeFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetShapeFilterArrayInput is an input type that accepts GetShapeFilterArray and GetShapeFilterArrayOutput values.
 // You can construct a concrete instance of `GetShapeFilterArrayInput` via:
 //
@@ -8360,6 +9855,12 @@ func (i GetShapeFilterArray) ToGetShapeFilterArrayOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapeFilterArrayOutput)
 }
 
+func (i GetShapeFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetShapeFilter] {
+	return pulumix.Output[[]GetShapeFilter]{
+		OutputState: i.ToGetShapeFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetShapeFilterOutput struct{ *pulumi.OutputState }
 
 func (GetShapeFilterOutput) ElementType() reflect.Type {
@@ -8372,6 +9873,12 @@ func (o GetShapeFilterOutput) ToGetShapeFilterOutput() GetShapeFilterOutput {
 
 func (o GetShapeFilterOutput) ToGetShapeFilterOutputWithContext(ctx context.Context) GetShapeFilterOutput {
 	return o
+}
+
+func (o GetShapeFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetShapeFilter] {
+	return pulumix.Output[GetShapeFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapeFilterOutput) Name() pulumi.StringOutput {
@@ -8398,6 +9905,12 @@ func (o GetShapeFilterArrayOutput) ToGetShapeFilterArrayOutput() GetShapeFilterA
 
 func (o GetShapeFilterArrayOutput) ToGetShapeFilterArrayOutputWithContext(ctx context.Context) GetShapeFilterArrayOutput {
 	return o
+}
+
+func (o GetShapeFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetShapeFilter] {
+	return pulumix.Output[[]GetShapeFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapeFilterArrayOutput) Index(i pulumi.IntInput) GetShapeFilterOutput {
@@ -8493,6 +10006,12 @@ func (i GetShapeShapeArgs) ToGetShapeShapeOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapeOutput)
 }
 
+func (i GetShapeShapeArgs) ToOutput(ctx context.Context) pulumix.Output[GetShapeShape] {
+	return pulumix.Output[GetShapeShape]{
+		OutputState: i.ToGetShapeShapeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetShapeShapeArrayInput is an input type that accepts GetShapeShapeArray and GetShapeShapeArrayOutput values.
 // You can construct a concrete instance of `GetShapeShapeArrayInput` via:
 //
@@ -8518,6 +10037,12 @@ func (i GetShapeShapeArray) ToGetShapeShapeArrayOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapeArrayOutput)
 }
 
+func (i GetShapeShapeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetShapeShape] {
+	return pulumix.Output[[]GetShapeShape]{
+		OutputState: i.ToGetShapeShapeArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetShapeShapeOutput struct{ *pulumi.OutputState }
 
 func (GetShapeShapeOutput) ElementType() reflect.Type {
@@ -8530,6 +10055,12 @@ func (o GetShapeShapeOutput) ToGetShapeShapeOutput() GetShapeShapeOutput {
 
 func (o GetShapeShapeOutput) ToGetShapeShapeOutputWithContext(ctx context.Context) GetShapeShapeOutput {
 	return o
+}
+
+func (o GetShapeShapeOutput) ToOutput(ctx context.Context) pulumix.Output[GetShapeShape] {
+	return pulumix.Output[GetShapeShape]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapeShapeOutput) BaselineOcpuUtilizations() pulumi.StringArrayOutput {
@@ -8662,6 +10193,12 @@ func (o GetShapeShapeArrayOutput) ToGetShapeShapeArrayOutputWithContext(ctx cont
 	return o
 }
 
+func (o GetShapeShapeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetShapeShape] {
+	return pulumix.Output[[]GetShapeShape]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetShapeShapeArrayOutput) Index(i pulumi.IntInput) GetShapeShapeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetShapeShape {
 		return vs[0].([]GetShapeShape)[vs[1].(int)]
@@ -8703,6 +10240,12 @@ func (i GetShapeShapeMaxVnicAttachmentOptionArgs) ToGetShapeShapeMaxVnicAttachme
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapeMaxVnicAttachmentOptionOutput)
 }
 
+func (i GetShapeShapeMaxVnicAttachmentOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetShapeShapeMaxVnicAttachmentOption] {
+	return pulumix.Output[GetShapeShapeMaxVnicAttachmentOption]{
+		OutputState: i.ToGetShapeShapeMaxVnicAttachmentOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetShapeShapeMaxVnicAttachmentOptionArrayInput is an input type that accepts GetShapeShapeMaxVnicAttachmentOptionArray and GetShapeShapeMaxVnicAttachmentOptionArrayOutput values.
 // You can construct a concrete instance of `GetShapeShapeMaxVnicAttachmentOptionArrayInput` via:
 //
@@ -8728,6 +10271,12 @@ func (i GetShapeShapeMaxVnicAttachmentOptionArray) ToGetShapeShapeMaxVnicAttachm
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapeMaxVnicAttachmentOptionArrayOutput)
 }
 
+func (i GetShapeShapeMaxVnicAttachmentOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetShapeShapeMaxVnicAttachmentOption] {
+	return pulumix.Output[[]GetShapeShapeMaxVnicAttachmentOption]{
+		OutputState: i.ToGetShapeShapeMaxVnicAttachmentOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetShapeShapeMaxVnicAttachmentOptionOutput struct{ *pulumi.OutputState }
 
 func (GetShapeShapeMaxVnicAttachmentOptionOutput) ElementType() reflect.Type {
@@ -8740,6 +10289,12 @@ func (o GetShapeShapeMaxVnicAttachmentOptionOutput) ToGetShapeShapeMaxVnicAttach
 
 func (o GetShapeShapeMaxVnicAttachmentOptionOutput) ToGetShapeShapeMaxVnicAttachmentOptionOutputWithContext(ctx context.Context) GetShapeShapeMaxVnicAttachmentOptionOutput {
 	return o
+}
+
+func (o GetShapeShapeMaxVnicAttachmentOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetShapeShapeMaxVnicAttachmentOption] {
+	return pulumix.Output[GetShapeShapeMaxVnicAttachmentOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapeShapeMaxVnicAttachmentOptionOutput) DefaultPerOcpu() pulumi.Float64Output {
@@ -8766,6 +10321,12 @@ func (o GetShapeShapeMaxVnicAttachmentOptionArrayOutput) ToGetShapeShapeMaxVnicA
 
 func (o GetShapeShapeMaxVnicAttachmentOptionArrayOutput) ToGetShapeShapeMaxVnicAttachmentOptionArrayOutputWithContext(ctx context.Context) GetShapeShapeMaxVnicAttachmentOptionArrayOutput {
 	return o
+}
+
+func (o GetShapeShapeMaxVnicAttachmentOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetShapeShapeMaxVnicAttachmentOption] {
+	return pulumix.Output[[]GetShapeShapeMaxVnicAttachmentOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapeShapeMaxVnicAttachmentOptionArrayOutput) Index(i pulumi.IntInput) GetShapeShapeMaxVnicAttachmentOptionOutput {
@@ -8815,6 +10376,12 @@ func (i GetShapeShapeMemoryOptionArgs) ToGetShapeShapeMemoryOptionOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapeMemoryOptionOutput)
 }
 
+func (i GetShapeShapeMemoryOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetShapeShapeMemoryOption] {
+	return pulumix.Output[GetShapeShapeMemoryOption]{
+		OutputState: i.ToGetShapeShapeMemoryOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetShapeShapeMemoryOptionArrayInput is an input type that accepts GetShapeShapeMemoryOptionArray and GetShapeShapeMemoryOptionArrayOutput values.
 // You can construct a concrete instance of `GetShapeShapeMemoryOptionArrayInput` via:
 //
@@ -8840,6 +10407,12 @@ func (i GetShapeShapeMemoryOptionArray) ToGetShapeShapeMemoryOptionArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapeMemoryOptionArrayOutput)
 }
 
+func (i GetShapeShapeMemoryOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetShapeShapeMemoryOption] {
+	return pulumix.Output[[]GetShapeShapeMemoryOption]{
+		OutputState: i.ToGetShapeShapeMemoryOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetShapeShapeMemoryOptionOutput struct{ *pulumi.OutputState }
 
 func (GetShapeShapeMemoryOptionOutput) ElementType() reflect.Type {
@@ -8852,6 +10425,12 @@ func (o GetShapeShapeMemoryOptionOutput) ToGetShapeShapeMemoryOptionOutput() Get
 
 func (o GetShapeShapeMemoryOptionOutput) ToGetShapeShapeMemoryOptionOutputWithContext(ctx context.Context) GetShapeShapeMemoryOptionOutput {
 	return o
+}
+
+func (o GetShapeShapeMemoryOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetShapeShapeMemoryOption] {
+	return pulumix.Output[GetShapeShapeMemoryOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapeShapeMemoryOptionOutput) DefaultPerOcpuInGbs() pulumi.Float64Output {
@@ -8890,6 +10469,12 @@ func (o GetShapeShapeMemoryOptionArrayOutput) ToGetShapeShapeMemoryOptionArrayOu
 
 func (o GetShapeShapeMemoryOptionArrayOutput) ToGetShapeShapeMemoryOptionArrayOutputWithContext(ctx context.Context) GetShapeShapeMemoryOptionArrayOutput {
 	return o
+}
+
+func (o GetShapeShapeMemoryOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetShapeShapeMemoryOption] {
+	return pulumix.Output[[]GetShapeShapeMemoryOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapeShapeMemoryOptionArrayOutput) Index(i pulumi.IntInput) GetShapeShapeMemoryOptionOutput {
@@ -8933,6 +10518,12 @@ func (i GetShapeShapeNetworkingBandwidthOptionArgs) ToGetShapeShapeNetworkingBan
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapeNetworkingBandwidthOptionOutput)
 }
 
+func (i GetShapeShapeNetworkingBandwidthOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetShapeShapeNetworkingBandwidthOption] {
+	return pulumix.Output[GetShapeShapeNetworkingBandwidthOption]{
+		OutputState: i.ToGetShapeShapeNetworkingBandwidthOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetShapeShapeNetworkingBandwidthOptionArrayInput is an input type that accepts GetShapeShapeNetworkingBandwidthOptionArray and GetShapeShapeNetworkingBandwidthOptionArrayOutput values.
 // You can construct a concrete instance of `GetShapeShapeNetworkingBandwidthOptionArrayInput` via:
 //
@@ -8958,6 +10549,12 @@ func (i GetShapeShapeNetworkingBandwidthOptionArray) ToGetShapeShapeNetworkingBa
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapeNetworkingBandwidthOptionArrayOutput)
 }
 
+func (i GetShapeShapeNetworkingBandwidthOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetShapeShapeNetworkingBandwidthOption] {
+	return pulumix.Output[[]GetShapeShapeNetworkingBandwidthOption]{
+		OutputState: i.ToGetShapeShapeNetworkingBandwidthOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetShapeShapeNetworkingBandwidthOptionOutput struct{ *pulumi.OutputState }
 
 func (GetShapeShapeNetworkingBandwidthOptionOutput) ElementType() reflect.Type {
@@ -8970,6 +10567,12 @@ func (o GetShapeShapeNetworkingBandwidthOptionOutput) ToGetShapeShapeNetworkingB
 
 func (o GetShapeShapeNetworkingBandwidthOptionOutput) ToGetShapeShapeNetworkingBandwidthOptionOutputWithContext(ctx context.Context) GetShapeShapeNetworkingBandwidthOptionOutput {
 	return o
+}
+
+func (o GetShapeShapeNetworkingBandwidthOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetShapeShapeNetworkingBandwidthOption] {
+	return pulumix.Output[GetShapeShapeNetworkingBandwidthOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapeShapeNetworkingBandwidthOptionOutput) DefaultPerOcpuInGbps() pulumi.Float64Output {
@@ -8996,6 +10599,12 @@ func (o GetShapeShapeNetworkingBandwidthOptionArrayOutput) ToGetShapeShapeNetwor
 
 func (o GetShapeShapeNetworkingBandwidthOptionArrayOutput) ToGetShapeShapeNetworkingBandwidthOptionArrayOutputWithContext(ctx context.Context) GetShapeShapeNetworkingBandwidthOptionArrayOutput {
 	return o
+}
+
+func (o GetShapeShapeNetworkingBandwidthOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetShapeShapeNetworkingBandwidthOption] {
+	return pulumix.Output[[]GetShapeShapeNetworkingBandwidthOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapeShapeNetworkingBandwidthOptionArrayOutput) Index(i pulumi.IntInput) GetShapeShapeNetworkingBandwidthOptionOutput {
@@ -9039,6 +10648,12 @@ func (i GetShapeShapeOcpuOptionArgs) ToGetShapeShapeOcpuOptionOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapeOcpuOptionOutput)
 }
 
+func (i GetShapeShapeOcpuOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetShapeShapeOcpuOption] {
+	return pulumix.Output[GetShapeShapeOcpuOption]{
+		OutputState: i.ToGetShapeShapeOcpuOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetShapeShapeOcpuOptionArrayInput is an input type that accepts GetShapeShapeOcpuOptionArray and GetShapeShapeOcpuOptionArrayOutput values.
 // You can construct a concrete instance of `GetShapeShapeOcpuOptionArrayInput` via:
 //
@@ -9064,6 +10679,12 @@ func (i GetShapeShapeOcpuOptionArray) ToGetShapeShapeOcpuOptionArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapeOcpuOptionArrayOutput)
 }
 
+func (i GetShapeShapeOcpuOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetShapeShapeOcpuOption] {
+	return pulumix.Output[[]GetShapeShapeOcpuOption]{
+		OutputState: i.ToGetShapeShapeOcpuOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetShapeShapeOcpuOptionOutput struct{ *pulumi.OutputState }
 
 func (GetShapeShapeOcpuOptionOutput) ElementType() reflect.Type {
@@ -9076,6 +10697,12 @@ func (o GetShapeShapeOcpuOptionOutput) ToGetShapeShapeOcpuOptionOutput() GetShap
 
 func (o GetShapeShapeOcpuOptionOutput) ToGetShapeShapeOcpuOptionOutputWithContext(ctx context.Context) GetShapeShapeOcpuOptionOutput {
 	return o
+}
+
+func (o GetShapeShapeOcpuOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetShapeShapeOcpuOption] {
+	return pulumix.Output[GetShapeShapeOcpuOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapeShapeOcpuOptionOutput) Max() pulumi.Float64Output {
@@ -9102,6 +10729,12 @@ func (o GetShapeShapeOcpuOptionArrayOutput) ToGetShapeShapeOcpuOptionArrayOutput
 
 func (o GetShapeShapeOcpuOptionArrayOutput) ToGetShapeShapeOcpuOptionArrayOutputWithContext(ctx context.Context) GetShapeShapeOcpuOptionArrayOutput {
 	return o
+}
+
+func (o GetShapeShapeOcpuOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetShapeShapeOcpuOption] {
+	return pulumix.Output[[]GetShapeShapeOcpuOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapeShapeOcpuOptionArrayOutput) Index(i pulumi.IntInput) GetShapeShapeOcpuOptionOutput {
@@ -9161,6 +10794,12 @@ func (i GetShapeShapePlatformConfigOptionArgs) ToGetShapeShapePlatformConfigOpti
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapePlatformConfigOptionOutput)
 }
 
+func (i GetShapeShapePlatformConfigOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetShapeShapePlatformConfigOption] {
+	return pulumix.Output[GetShapeShapePlatformConfigOption]{
+		OutputState: i.ToGetShapeShapePlatformConfigOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetShapeShapePlatformConfigOptionArrayInput is an input type that accepts GetShapeShapePlatformConfigOptionArray and GetShapeShapePlatformConfigOptionArrayOutput values.
 // You can construct a concrete instance of `GetShapeShapePlatformConfigOptionArrayInput` via:
 //
@@ -9186,6 +10825,12 @@ func (i GetShapeShapePlatformConfigOptionArray) ToGetShapeShapePlatformConfigOpt
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapePlatformConfigOptionArrayOutput)
 }
 
+func (i GetShapeShapePlatformConfigOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetShapeShapePlatformConfigOption] {
+	return pulumix.Output[[]GetShapeShapePlatformConfigOption]{
+		OutputState: i.ToGetShapeShapePlatformConfigOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetShapeShapePlatformConfigOptionOutput struct{ *pulumi.OutputState }
 
 func (GetShapeShapePlatformConfigOptionOutput) ElementType() reflect.Type {
@@ -9198,6 +10843,12 @@ func (o GetShapeShapePlatformConfigOptionOutput) ToGetShapeShapePlatformConfigOp
 
 func (o GetShapeShapePlatformConfigOptionOutput) ToGetShapeShapePlatformConfigOptionOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionOutput {
 	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetShapeShapePlatformConfigOption] {
+	return pulumix.Output[GetShapeShapePlatformConfigOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapeShapePlatformConfigOptionOutput) AccessControlServiceOptions() GetShapeShapePlatformConfigOptionAccessControlServiceOptionArrayOutput {
@@ -9278,6 +10929,12 @@ func (o GetShapeShapePlatformConfigOptionArrayOutput) ToGetShapeShapePlatformCon
 	return o
 }
 
+func (o GetShapeShapePlatformConfigOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetShapeShapePlatformConfigOption] {
+	return pulumix.Output[[]GetShapeShapePlatformConfigOption]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetShapeShapePlatformConfigOptionArrayOutput) Index(i pulumi.IntInput) GetShapeShapePlatformConfigOptionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetShapeShapePlatformConfigOption {
 		return vs[0].([]GetShapeShapePlatformConfigOption)[vs[1].(int)]
@@ -9317,6 +10974,12 @@ func (i GetShapeShapePlatformConfigOptionAccessControlServiceOptionArgs) ToGetSh
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapePlatformConfigOptionAccessControlServiceOptionOutput)
 }
 
+func (i GetShapeShapePlatformConfigOptionAccessControlServiceOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetShapeShapePlatformConfigOptionAccessControlServiceOption] {
+	return pulumix.Output[GetShapeShapePlatformConfigOptionAccessControlServiceOption]{
+		OutputState: i.ToGetShapeShapePlatformConfigOptionAccessControlServiceOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetShapeShapePlatformConfigOptionAccessControlServiceOptionArrayInput is an input type that accepts GetShapeShapePlatformConfigOptionAccessControlServiceOptionArray and GetShapeShapePlatformConfigOptionAccessControlServiceOptionArrayOutput values.
 // You can construct a concrete instance of `GetShapeShapePlatformConfigOptionAccessControlServiceOptionArrayInput` via:
 //
@@ -9342,6 +11005,12 @@ func (i GetShapeShapePlatformConfigOptionAccessControlServiceOptionArray) ToGetS
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapePlatformConfigOptionAccessControlServiceOptionArrayOutput)
 }
 
+func (i GetShapeShapePlatformConfigOptionAccessControlServiceOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetShapeShapePlatformConfigOptionAccessControlServiceOption] {
+	return pulumix.Output[[]GetShapeShapePlatformConfigOptionAccessControlServiceOption]{
+		OutputState: i.ToGetShapeShapePlatformConfigOptionAccessControlServiceOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetShapeShapePlatformConfigOptionAccessControlServiceOptionOutput struct{ *pulumi.OutputState }
 
 func (GetShapeShapePlatformConfigOptionAccessControlServiceOptionOutput) ElementType() reflect.Type {
@@ -9354,6 +11023,12 @@ func (o GetShapeShapePlatformConfigOptionAccessControlServiceOptionOutput) ToGet
 
 func (o GetShapeShapePlatformConfigOptionAccessControlServiceOptionOutput) ToGetShapeShapePlatformConfigOptionAccessControlServiceOptionOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionAccessControlServiceOptionOutput {
 	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionAccessControlServiceOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetShapeShapePlatformConfigOptionAccessControlServiceOption] {
+	return pulumix.Output[GetShapeShapePlatformConfigOptionAccessControlServiceOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapeShapePlatformConfigOptionAccessControlServiceOptionOutput) AllowedValues() pulumi.BoolArrayOutput {
@@ -9376,6 +11051,12 @@ func (o GetShapeShapePlatformConfigOptionAccessControlServiceOptionArrayOutput) 
 
 func (o GetShapeShapePlatformConfigOptionAccessControlServiceOptionArrayOutput) ToGetShapeShapePlatformConfigOptionAccessControlServiceOptionArrayOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionAccessControlServiceOptionArrayOutput {
 	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionAccessControlServiceOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetShapeShapePlatformConfigOptionAccessControlServiceOption] {
+	return pulumix.Output[[]GetShapeShapePlatformConfigOptionAccessControlServiceOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapeShapePlatformConfigOptionAccessControlServiceOptionArrayOutput) Index(i pulumi.IntInput) GetShapeShapePlatformConfigOptionAccessControlServiceOptionOutput {
@@ -9417,6 +11098,12 @@ func (i GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput)
 }
 
+func (i GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOption] {
+	return pulumix.Output[GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOption]{
+		OutputState: i.ToGetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayInput is an input type that accepts GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArray and GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutput values.
 // You can construct a concrete instance of `GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayInput` via:
 //
@@ -9442,6 +11129,12 @@ func (i GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutput)
 }
 
+func (i GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOption] {
+	return pulumix.Output[[]GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOption]{
+		OutputState: i.ToGetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput struct{ *pulumi.OutputState }
 
 func (GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput) ElementType() reflect.Type {
@@ -9454,6 +11147,12 @@ func (o GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOu
 
 func (o GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput) ToGetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput {
 	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOption] {
+	return pulumix.Output[GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput) AllowedValues() pulumi.BoolArrayOutput {
@@ -9480,6 +11179,12 @@ func (o GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionAr
 
 func (o GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutput) ToGetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutput {
 	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOption] {
+	return pulumix.Output[[]GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutput) Index(i pulumi.IntInput) GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput {
@@ -9521,6 +11226,12 @@ func (i GetShapeShapePlatformConfigOptionMeasuredBootOptionArgs) ToGetShapeShape
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapePlatformConfigOptionMeasuredBootOptionOutput)
 }
 
+func (i GetShapeShapePlatformConfigOptionMeasuredBootOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetShapeShapePlatformConfigOptionMeasuredBootOption] {
+	return pulumix.Output[GetShapeShapePlatformConfigOptionMeasuredBootOption]{
+		OutputState: i.ToGetShapeShapePlatformConfigOptionMeasuredBootOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetShapeShapePlatformConfigOptionMeasuredBootOptionArrayInput is an input type that accepts GetShapeShapePlatformConfigOptionMeasuredBootOptionArray and GetShapeShapePlatformConfigOptionMeasuredBootOptionArrayOutput values.
 // You can construct a concrete instance of `GetShapeShapePlatformConfigOptionMeasuredBootOptionArrayInput` via:
 //
@@ -9546,6 +11257,12 @@ func (i GetShapeShapePlatformConfigOptionMeasuredBootOptionArray) ToGetShapeShap
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapePlatformConfigOptionMeasuredBootOptionArrayOutput)
 }
 
+func (i GetShapeShapePlatformConfigOptionMeasuredBootOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetShapeShapePlatformConfigOptionMeasuredBootOption] {
+	return pulumix.Output[[]GetShapeShapePlatformConfigOptionMeasuredBootOption]{
+		OutputState: i.ToGetShapeShapePlatformConfigOptionMeasuredBootOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetShapeShapePlatformConfigOptionMeasuredBootOptionOutput struct{ *pulumi.OutputState }
 
 func (GetShapeShapePlatformConfigOptionMeasuredBootOptionOutput) ElementType() reflect.Type {
@@ -9558,6 +11275,12 @@ func (o GetShapeShapePlatformConfigOptionMeasuredBootOptionOutput) ToGetShapeSha
 
 func (o GetShapeShapePlatformConfigOptionMeasuredBootOptionOutput) ToGetShapeShapePlatformConfigOptionMeasuredBootOptionOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionMeasuredBootOptionOutput {
 	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionMeasuredBootOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetShapeShapePlatformConfigOptionMeasuredBootOption] {
+	return pulumix.Output[GetShapeShapePlatformConfigOptionMeasuredBootOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapeShapePlatformConfigOptionMeasuredBootOptionOutput) AllowedValues() pulumi.BoolArrayOutput {
@@ -9580,6 +11303,12 @@ func (o GetShapeShapePlatformConfigOptionMeasuredBootOptionArrayOutput) ToGetSha
 
 func (o GetShapeShapePlatformConfigOptionMeasuredBootOptionArrayOutput) ToGetShapeShapePlatformConfigOptionMeasuredBootOptionArrayOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionMeasuredBootOptionArrayOutput {
 	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionMeasuredBootOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetShapeShapePlatformConfigOptionMeasuredBootOption] {
+	return pulumix.Output[[]GetShapeShapePlatformConfigOptionMeasuredBootOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapeShapePlatformConfigOptionMeasuredBootOptionArrayOutput) Index(i pulumi.IntInput) GetShapeShapePlatformConfigOptionMeasuredBootOptionOutput {
@@ -9621,6 +11350,12 @@ func (i GetShapeShapePlatformConfigOptionMemoryEncryptionOptionArgs) ToGetShapeS
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapePlatformConfigOptionMemoryEncryptionOptionOutput)
 }
 
+func (i GetShapeShapePlatformConfigOptionMemoryEncryptionOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetShapeShapePlatformConfigOptionMemoryEncryptionOption] {
+	return pulumix.Output[GetShapeShapePlatformConfigOptionMemoryEncryptionOption]{
+		OutputState: i.ToGetShapeShapePlatformConfigOptionMemoryEncryptionOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetShapeShapePlatformConfigOptionMemoryEncryptionOptionArrayInput is an input type that accepts GetShapeShapePlatformConfigOptionMemoryEncryptionOptionArray and GetShapeShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput values.
 // You can construct a concrete instance of `GetShapeShapePlatformConfigOptionMemoryEncryptionOptionArrayInput` via:
 //
@@ -9646,6 +11381,12 @@ func (i GetShapeShapePlatformConfigOptionMemoryEncryptionOptionArray) ToGetShape
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput)
 }
 
+func (i GetShapeShapePlatformConfigOptionMemoryEncryptionOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetShapeShapePlatformConfigOptionMemoryEncryptionOption] {
+	return pulumix.Output[[]GetShapeShapePlatformConfigOptionMemoryEncryptionOption]{
+		OutputState: i.ToGetShapeShapePlatformConfigOptionMemoryEncryptionOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetShapeShapePlatformConfigOptionMemoryEncryptionOptionOutput struct{ *pulumi.OutputState }
 
 func (GetShapeShapePlatformConfigOptionMemoryEncryptionOptionOutput) ElementType() reflect.Type {
@@ -9658,6 +11399,12 @@ func (o GetShapeShapePlatformConfigOptionMemoryEncryptionOptionOutput) ToGetShap
 
 func (o GetShapeShapePlatformConfigOptionMemoryEncryptionOptionOutput) ToGetShapeShapePlatformConfigOptionMemoryEncryptionOptionOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionMemoryEncryptionOptionOutput {
 	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionMemoryEncryptionOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetShapeShapePlatformConfigOptionMemoryEncryptionOption] {
+	return pulumix.Output[GetShapeShapePlatformConfigOptionMemoryEncryptionOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapeShapePlatformConfigOptionMemoryEncryptionOptionOutput) AllowedValues() pulumi.BoolArrayOutput {
@@ -9680,6 +11427,12 @@ func (o GetShapeShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput) ToGe
 
 func (o GetShapeShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput) ToGetShapeShapePlatformConfigOptionMemoryEncryptionOptionArrayOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput {
 	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetShapeShapePlatformConfigOptionMemoryEncryptionOption] {
+	return pulumix.Output[[]GetShapeShapePlatformConfigOptionMemoryEncryptionOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapeShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput) Index(i pulumi.IntInput) GetShapeShapePlatformConfigOptionMemoryEncryptionOptionOutput {
@@ -9721,6 +11474,12 @@ func (i GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArgs) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput)
 }
 
+func (i GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOption] {
+	return pulumix.Output[GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOption]{
+		OutputState: i.ToGetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayInput is an input type that accepts GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArray and GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutput values.
 // You can construct a concrete instance of `GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayInput` via:
 //
@@ -9746,6 +11505,12 @@ func (i GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArray) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutput)
 }
 
+func (i GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOption] {
+	return pulumix.Output[[]GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOption]{
+		OutputState: i.ToGetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput struct{ *pulumi.OutputState }
 
 func (GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput) ElementType() reflect.Type {
@@ -9758,6 +11523,12 @@ func (o GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput)
 
 func (o GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput) ToGetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput {
 	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOption] {
+	return pulumix.Output[GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput) AllowedValues() pulumi.StringArrayOutput {
@@ -9784,6 +11555,12 @@ func (o GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOu
 
 func (o GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutput) ToGetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutput {
 	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOption] {
+	return pulumix.Output[[]GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutput) Index(i pulumi.IntInput) GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput {
@@ -9827,6 +11604,12 @@ func (i GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArgs) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput)
 }
 
+func (i GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOption] {
+	return pulumix.Output[GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOption]{
+		OutputState: i.ToGetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayInput is an input type that accepts GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArray and GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutput values.
 // You can construct a concrete instance of `GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayInput` via:
 //
@@ -9852,6 +11635,12 @@ func (i GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArray) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutput)
 }
 
+func (i GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOption] {
+	return pulumix.Output[[]GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOption]{
+		OutputState: i.ToGetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput struct{ *pulumi.OutputState }
 
 func (GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput) ElementType() reflect.Type {
@@ -9864,6 +11653,12 @@ func (o GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput) T
 
 func (o GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput) ToGetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput {
 	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOption] {
+	return pulumix.Output[GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput) DefaultValue() pulumi.IntOutput {
@@ -9890,6 +11685,12 @@ func (o GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutp
 
 func (o GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutput) ToGetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutput {
 	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOption] {
+	return pulumix.Output[[]GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutput) Index(i pulumi.IntInput) GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput {
@@ -9931,6 +11732,12 @@ func (i GetShapeShapePlatformConfigOptionSecureBootOptionArgs) ToGetShapeShapePl
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapePlatformConfigOptionSecureBootOptionOutput)
 }
 
+func (i GetShapeShapePlatformConfigOptionSecureBootOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetShapeShapePlatformConfigOptionSecureBootOption] {
+	return pulumix.Output[GetShapeShapePlatformConfigOptionSecureBootOption]{
+		OutputState: i.ToGetShapeShapePlatformConfigOptionSecureBootOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetShapeShapePlatformConfigOptionSecureBootOptionArrayInput is an input type that accepts GetShapeShapePlatformConfigOptionSecureBootOptionArray and GetShapeShapePlatformConfigOptionSecureBootOptionArrayOutput values.
 // You can construct a concrete instance of `GetShapeShapePlatformConfigOptionSecureBootOptionArrayInput` via:
 //
@@ -9956,6 +11763,12 @@ func (i GetShapeShapePlatformConfigOptionSecureBootOptionArray) ToGetShapeShapeP
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapePlatformConfigOptionSecureBootOptionArrayOutput)
 }
 
+func (i GetShapeShapePlatformConfigOptionSecureBootOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetShapeShapePlatformConfigOptionSecureBootOption] {
+	return pulumix.Output[[]GetShapeShapePlatformConfigOptionSecureBootOption]{
+		OutputState: i.ToGetShapeShapePlatformConfigOptionSecureBootOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetShapeShapePlatformConfigOptionSecureBootOptionOutput struct{ *pulumi.OutputState }
 
 func (GetShapeShapePlatformConfigOptionSecureBootOptionOutput) ElementType() reflect.Type {
@@ -9968,6 +11781,12 @@ func (o GetShapeShapePlatformConfigOptionSecureBootOptionOutput) ToGetShapeShape
 
 func (o GetShapeShapePlatformConfigOptionSecureBootOptionOutput) ToGetShapeShapePlatformConfigOptionSecureBootOptionOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionSecureBootOptionOutput {
 	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionSecureBootOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetShapeShapePlatformConfigOptionSecureBootOption] {
+	return pulumix.Output[GetShapeShapePlatformConfigOptionSecureBootOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapeShapePlatformConfigOptionSecureBootOptionOutput) AllowedValues() pulumi.BoolArrayOutput {
@@ -9990,6 +11809,12 @@ func (o GetShapeShapePlatformConfigOptionSecureBootOptionArrayOutput) ToGetShape
 
 func (o GetShapeShapePlatformConfigOptionSecureBootOptionArrayOutput) ToGetShapeShapePlatformConfigOptionSecureBootOptionArrayOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionSecureBootOptionArrayOutput {
 	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionSecureBootOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetShapeShapePlatformConfigOptionSecureBootOption] {
+	return pulumix.Output[[]GetShapeShapePlatformConfigOptionSecureBootOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapeShapePlatformConfigOptionSecureBootOptionArrayOutput) Index(i pulumi.IntInput) GetShapeShapePlatformConfigOptionSecureBootOptionOutput {
@@ -10031,6 +11856,12 @@ func (i GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArgs) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput)
 }
 
+func (i GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOption] {
+	return pulumix.Output[GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOption]{
+		OutputState: i.ToGetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayInput is an input type that accepts GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArray and GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutput values.
 // You can construct a concrete instance of `GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayInput` via:
 //
@@ -10056,6 +11887,12 @@ func (i GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArray) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutput)
 }
 
+func (i GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOption] {
+	return pulumix.Output[[]GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOption]{
+		OutputState: i.ToGetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput struct{ *pulumi.OutputState }
 
 func (GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput) ElementType() reflect.Type {
@@ -10068,6 +11905,12 @@ func (o GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput) To
 
 func (o GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput) ToGetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput {
 	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOption] {
+	return pulumix.Output[GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput) AllowedValues() pulumi.BoolArrayOutput {
@@ -10090,6 +11933,12 @@ func (o GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutpu
 
 func (o GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutput) ToGetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutput {
 	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOption] {
+	return pulumix.Output[[]GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutput) Index(i pulumi.IntInput) GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput {
@@ -10131,6 +11980,12 @@ func (i GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArgs) ToGetS
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionOutput)
 }
 
+func (i GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetShapeShapePlatformConfigOptionTrustedPlatformModuleOption] {
+	return pulumix.Output[GetShapeShapePlatformConfigOptionTrustedPlatformModuleOption]{
+		OutputState: i.ToGetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArrayInput is an input type that accepts GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArray and GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput values.
 // You can construct a concrete instance of `GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArrayInput` via:
 //
@@ -10156,6 +12011,12 @@ func (i GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput)
 }
 
+func (i GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetShapeShapePlatformConfigOptionTrustedPlatformModuleOption] {
+	return pulumix.Output[[]GetShapeShapePlatformConfigOptionTrustedPlatformModuleOption]{
+		OutputState: i.ToGetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionOutput struct{ *pulumi.OutputState }
 
 func (GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionOutput) ElementType() reflect.Type {
@@ -10168,6 +12029,12 @@ func (o GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionOutput) ToGe
 
 func (o GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionOutput) ToGetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionOutput {
 	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetShapeShapePlatformConfigOptionTrustedPlatformModuleOption] {
+	return pulumix.Output[GetShapeShapePlatformConfigOptionTrustedPlatformModuleOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionOutput) AllowedValues() pulumi.BoolArrayOutput {
@@ -10190,6 +12057,12 @@ func (o GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput)
 
 func (o GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput) ToGetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput {
 	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetShapeShapePlatformConfigOptionTrustedPlatformModuleOption] {
+	return pulumix.Output[[]GetShapeShapePlatformConfigOptionTrustedPlatformModuleOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput) Index(i pulumi.IntInput) GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionOutput {
@@ -10231,6 +12104,12 @@ func (i GetShapeShapePlatformConfigOptionVirtualInstructionsOptionArgs) ToGetSha
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapePlatformConfigOptionVirtualInstructionsOptionOutput)
 }
 
+func (i GetShapeShapePlatformConfigOptionVirtualInstructionsOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetShapeShapePlatformConfigOptionVirtualInstructionsOption] {
+	return pulumix.Output[GetShapeShapePlatformConfigOptionVirtualInstructionsOption]{
+		OutputState: i.ToGetShapeShapePlatformConfigOptionVirtualInstructionsOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetShapeShapePlatformConfigOptionVirtualInstructionsOptionArrayInput is an input type that accepts GetShapeShapePlatformConfigOptionVirtualInstructionsOptionArray and GetShapeShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput values.
 // You can construct a concrete instance of `GetShapeShapePlatformConfigOptionVirtualInstructionsOptionArrayInput` via:
 //
@@ -10256,6 +12135,12 @@ func (i GetShapeShapePlatformConfigOptionVirtualInstructionsOptionArray) ToGetSh
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput)
 }
 
+func (i GetShapeShapePlatformConfigOptionVirtualInstructionsOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetShapeShapePlatformConfigOptionVirtualInstructionsOption] {
+	return pulumix.Output[[]GetShapeShapePlatformConfigOptionVirtualInstructionsOption]{
+		OutputState: i.ToGetShapeShapePlatformConfigOptionVirtualInstructionsOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetShapeShapePlatformConfigOptionVirtualInstructionsOptionOutput struct{ *pulumi.OutputState }
 
 func (GetShapeShapePlatformConfigOptionVirtualInstructionsOptionOutput) ElementType() reflect.Type {
@@ -10268,6 +12153,12 @@ func (o GetShapeShapePlatformConfigOptionVirtualInstructionsOptionOutput) ToGetS
 
 func (o GetShapeShapePlatformConfigOptionVirtualInstructionsOptionOutput) ToGetShapeShapePlatformConfigOptionVirtualInstructionsOptionOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionVirtualInstructionsOptionOutput {
 	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionVirtualInstructionsOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetShapeShapePlatformConfigOptionVirtualInstructionsOption] {
+	return pulumix.Output[GetShapeShapePlatformConfigOptionVirtualInstructionsOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapeShapePlatformConfigOptionVirtualInstructionsOptionOutput) AllowedValues() pulumi.BoolArrayOutput {
@@ -10290,6 +12181,12 @@ func (o GetShapeShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput) T
 
 func (o GetShapeShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput) ToGetShapeShapePlatformConfigOptionVirtualInstructionsOptionArrayOutputWithContext(ctx context.Context) GetShapeShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput {
 	return o
+}
+
+func (o GetShapeShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetShapeShapePlatformConfigOptionVirtualInstructionsOption] {
+	return pulumix.Output[[]GetShapeShapePlatformConfigOptionVirtualInstructionsOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapeShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput) Index(i pulumi.IntInput) GetShapeShapePlatformConfigOptionVirtualInstructionsOptionOutput {
@@ -10329,6 +12226,12 @@ func (i GetShapeShapeRecommendedAlternativeArgs) ToGetShapeShapeRecommendedAlter
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapeRecommendedAlternativeOutput)
 }
 
+func (i GetShapeShapeRecommendedAlternativeArgs) ToOutput(ctx context.Context) pulumix.Output[GetShapeShapeRecommendedAlternative] {
+	return pulumix.Output[GetShapeShapeRecommendedAlternative]{
+		OutputState: i.ToGetShapeShapeRecommendedAlternativeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetShapeShapeRecommendedAlternativeArrayInput is an input type that accepts GetShapeShapeRecommendedAlternativeArray and GetShapeShapeRecommendedAlternativeArrayOutput values.
 // You can construct a concrete instance of `GetShapeShapeRecommendedAlternativeArrayInput` via:
 //
@@ -10354,6 +12257,12 @@ func (i GetShapeShapeRecommendedAlternativeArray) ToGetShapeShapeRecommendedAlte
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapeShapeRecommendedAlternativeArrayOutput)
 }
 
+func (i GetShapeShapeRecommendedAlternativeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetShapeShapeRecommendedAlternative] {
+	return pulumix.Output[[]GetShapeShapeRecommendedAlternative]{
+		OutputState: i.ToGetShapeShapeRecommendedAlternativeArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetShapeShapeRecommendedAlternativeOutput struct{ *pulumi.OutputState }
 
 func (GetShapeShapeRecommendedAlternativeOutput) ElementType() reflect.Type {
@@ -10366,6 +12275,12 @@ func (o GetShapeShapeRecommendedAlternativeOutput) ToGetShapeShapeRecommendedAlt
 
 func (o GetShapeShapeRecommendedAlternativeOutput) ToGetShapeShapeRecommendedAlternativeOutputWithContext(ctx context.Context) GetShapeShapeRecommendedAlternativeOutput {
 	return o
+}
+
+func (o GetShapeShapeRecommendedAlternativeOutput) ToOutput(ctx context.Context) pulumix.Output[GetShapeShapeRecommendedAlternative] {
+	return pulumix.Output[GetShapeShapeRecommendedAlternative]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapeShapeRecommendedAlternativeOutput) ShapeName() pulumi.StringOutput {
@@ -10384,6 +12299,12 @@ func (o GetShapeShapeRecommendedAlternativeArrayOutput) ToGetShapeShapeRecommend
 
 func (o GetShapeShapeRecommendedAlternativeArrayOutput) ToGetShapeShapeRecommendedAlternativeArrayOutputWithContext(ctx context.Context) GetShapeShapeRecommendedAlternativeArrayOutput {
 	return o
+}
+
+func (o GetShapeShapeRecommendedAlternativeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetShapeShapeRecommendedAlternative] {
+	return pulumix.Output[[]GetShapeShapeRecommendedAlternative]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapeShapeRecommendedAlternativeArrayOutput) Index(i pulumi.IntInput) GetShapeShapeRecommendedAlternativeOutput {
@@ -10429,6 +12350,12 @@ func (i GetShapesFilterArgs) ToGetShapesFilterOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapesFilterOutput)
 }
 
+func (i GetShapesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetShapesFilter] {
+	return pulumix.Output[GetShapesFilter]{
+		OutputState: i.ToGetShapesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetShapesFilterArrayInput is an input type that accepts GetShapesFilterArray and GetShapesFilterArrayOutput values.
 // You can construct a concrete instance of `GetShapesFilterArrayInput` via:
 //
@@ -10454,6 +12381,12 @@ func (i GetShapesFilterArray) ToGetShapesFilterArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapesFilterArrayOutput)
 }
 
+func (i GetShapesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetShapesFilter] {
+	return pulumix.Output[[]GetShapesFilter]{
+		OutputState: i.ToGetShapesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetShapesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetShapesFilterOutput) ElementType() reflect.Type {
@@ -10466,6 +12399,12 @@ func (o GetShapesFilterOutput) ToGetShapesFilterOutput() GetShapesFilterOutput {
 
 func (o GetShapesFilterOutput) ToGetShapesFilterOutputWithContext(ctx context.Context) GetShapesFilterOutput {
 	return o
+}
+
+func (o GetShapesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetShapesFilter] {
+	return pulumix.Output[GetShapesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the shape. You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
@@ -10493,6 +12432,12 @@ func (o GetShapesFilterArrayOutput) ToGetShapesFilterArrayOutput() GetShapesFilt
 
 func (o GetShapesFilterArrayOutput) ToGetShapesFilterArrayOutputWithContext(ctx context.Context) GetShapesFilterArrayOutput {
 	return o
+}
+
+func (o GetShapesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetShapesFilter] {
+	return pulumix.Output[[]GetShapesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapesFilterArrayOutput) Index(i pulumi.IntInput) GetShapesFilterOutput {
@@ -10646,6 +12591,12 @@ func (i GetShapesShapeArgs) ToGetShapesShapeOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapeOutput)
 }
 
+func (i GetShapesShapeArgs) ToOutput(ctx context.Context) pulumix.Output[GetShapesShape] {
+	return pulumix.Output[GetShapesShape]{
+		OutputState: i.ToGetShapesShapeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetShapesShapeArrayInput is an input type that accepts GetShapesShapeArray and GetShapesShapeArrayOutput values.
 // You can construct a concrete instance of `GetShapesShapeArrayInput` via:
 //
@@ -10671,6 +12622,12 @@ func (i GetShapesShapeArray) ToGetShapesShapeArrayOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapeArrayOutput)
 }
 
+func (i GetShapesShapeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetShapesShape] {
+	return pulumix.Output[[]GetShapesShape]{
+		OutputState: i.ToGetShapesShapeArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetShapesShapeOutput struct{ *pulumi.OutputState }
 
 func (GetShapesShapeOutput) ElementType() reflect.Type {
@@ -10683,6 +12640,12 @@ func (o GetShapesShapeOutput) ToGetShapesShapeOutput() GetShapesShapeOutput {
 
 func (o GetShapesShapeOutput) ToGetShapesShapeOutputWithContext(ctx context.Context) GetShapesShapeOutput {
 	return o
+}
+
+func (o GetShapesShapeOutput) ToOutput(ctx context.Context) pulumix.Output[GetShapesShape] {
+	return pulumix.Output[GetShapesShape]{
+		OutputState: o.OutputState,
+	}
 }
 
 // For a subcore burstable VM, the supported baseline OCPU utilization for instances that use this shape.
@@ -10844,6 +12807,12 @@ func (o GetShapesShapeArrayOutput) ToGetShapesShapeArrayOutputWithContext(ctx co
 	return o
 }
 
+func (o GetShapesShapeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetShapesShape] {
+	return pulumix.Output[[]GetShapesShape]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetShapesShapeArrayOutput) Index(i pulumi.IntInput) GetShapesShapeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetShapesShape {
 		return vs[0].([]GetShapesShape)[vs[1].(int)]
@@ -10891,6 +12860,12 @@ func (i GetShapesShapeMaxVnicAttachmentOptionArgs) ToGetShapesShapeMaxVnicAttach
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapeMaxVnicAttachmentOptionOutput)
 }
 
+func (i GetShapesShapeMaxVnicAttachmentOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetShapesShapeMaxVnicAttachmentOption] {
+	return pulumix.Output[GetShapesShapeMaxVnicAttachmentOption]{
+		OutputState: i.ToGetShapesShapeMaxVnicAttachmentOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetShapesShapeMaxVnicAttachmentOptionArrayInput is an input type that accepts GetShapesShapeMaxVnicAttachmentOptionArray and GetShapesShapeMaxVnicAttachmentOptionArrayOutput values.
 // You can construct a concrete instance of `GetShapesShapeMaxVnicAttachmentOptionArrayInput` via:
 //
@@ -10916,6 +12891,12 @@ func (i GetShapesShapeMaxVnicAttachmentOptionArray) ToGetShapesShapeMaxVnicAttac
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapeMaxVnicAttachmentOptionArrayOutput)
 }
 
+func (i GetShapesShapeMaxVnicAttachmentOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetShapesShapeMaxVnicAttachmentOption] {
+	return pulumix.Output[[]GetShapesShapeMaxVnicAttachmentOption]{
+		OutputState: i.ToGetShapesShapeMaxVnicAttachmentOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetShapesShapeMaxVnicAttachmentOptionOutput struct{ *pulumi.OutputState }
 
 func (GetShapesShapeMaxVnicAttachmentOptionOutput) ElementType() reflect.Type {
@@ -10928,6 +12909,12 @@ func (o GetShapesShapeMaxVnicAttachmentOptionOutput) ToGetShapesShapeMaxVnicAtta
 
 func (o GetShapesShapeMaxVnicAttachmentOptionOutput) ToGetShapesShapeMaxVnicAttachmentOptionOutputWithContext(ctx context.Context) GetShapesShapeMaxVnicAttachmentOptionOutput {
 	return o
+}
+
+func (o GetShapesShapeMaxVnicAttachmentOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetShapesShapeMaxVnicAttachmentOption] {
+	return pulumix.Output[GetShapesShapeMaxVnicAttachmentOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The default number of VNIC attachments allowed per OCPU.
@@ -10957,6 +12944,12 @@ func (o GetShapesShapeMaxVnicAttachmentOptionArrayOutput) ToGetShapesShapeMaxVni
 
 func (o GetShapesShapeMaxVnicAttachmentOptionArrayOutput) ToGetShapesShapeMaxVnicAttachmentOptionArrayOutputWithContext(ctx context.Context) GetShapesShapeMaxVnicAttachmentOptionArrayOutput {
 	return o
+}
+
+func (o GetShapesShapeMaxVnicAttachmentOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetShapesShapeMaxVnicAttachmentOption] {
+	return pulumix.Output[[]GetShapesShapeMaxVnicAttachmentOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapesShapeMaxVnicAttachmentOptionArrayOutput) Index(i pulumi.IntInput) GetShapesShapeMaxVnicAttachmentOptionOutput {
@@ -11018,6 +13011,12 @@ func (i GetShapesShapeMemoryOptionArgs) ToGetShapesShapeMemoryOptionOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapeMemoryOptionOutput)
 }
 
+func (i GetShapesShapeMemoryOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetShapesShapeMemoryOption] {
+	return pulumix.Output[GetShapesShapeMemoryOption]{
+		OutputState: i.ToGetShapesShapeMemoryOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetShapesShapeMemoryOptionArrayInput is an input type that accepts GetShapesShapeMemoryOptionArray and GetShapesShapeMemoryOptionArrayOutput values.
 // You can construct a concrete instance of `GetShapesShapeMemoryOptionArrayInput` via:
 //
@@ -11043,6 +13042,12 @@ func (i GetShapesShapeMemoryOptionArray) ToGetShapesShapeMemoryOptionArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapeMemoryOptionArrayOutput)
 }
 
+func (i GetShapesShapeMemoryOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetShapesShapeMemoryOption] {
+	return pulumix.Output[[]GetShapesShapeMemoryOption]{
+		OutputState: i.ToGetShapesShapeMemoryOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetShapesShapeMemoryOptionOutput struct{ *pulumi.OutputState }
 
 func (GetShapesShapeMemoryOptionOutput) ElementType() reflect.Type {
@@ -11055,6 +13060,12 @@ func (o GetShapesShapeMemoryOptionOutput) ToGetShapesShapeMemoryOptionOutput() G
 
 func (o GetShapesShapeMemoryOptionOutput) ToGetShapesShapeMemoryOptionOutputWithContext(ctx context.Context) GetShapesShapeMemoryOptionOutput {
 	return o
+}
+
+func (o GetShapesShapeMemoryOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetShapesShapeMemoryOption] {
+	return pulumix.Output[GetShapesShapeMemoryOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The default amount of memory per OCPU available for this shape, in gigabytes.
@@ -11099,6 +13110,12 @@ func (o GetShapesShapeMemoryOptionArrayOutput) ToGetShapesShapeMemoryOptionArray
 
 func (o GetShapesShapeMemoryOptionArrayOutput) ToGetShapesShapeMemoryOptionArrayOutputWithContext(ctx context.Context) GetShapesShapeMemoryOptionArrayOutput {
 	return o
+}
+
+func (o GetShapesShapeMemoryOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetShapesShapeMemoryOption] {
+	return pulumix.Output[[]GetShapesShapeMemoryOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapesShapeMemoryOptionArrayOutput) Index(i pulumi.IntInput) GetShapesShapeMemoryOptionOutput {
@@ -11148,6 +13165,12 @@ func (i GetShapesShapeNetworkingBandwidthOptionArgs) ToGetShapesShapeNetworkingB
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapeNetworkingBandwidthOptionOutput)
 }
 
+func (i GetShapesShapeNetworkingBandwidthOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetShapesShapeNetworkingBandwidthOption] {
+	return pulumix.Output[GetShapesShapeNetworkingBandwidthOption]{
+		OutputState: i.ToGetShapesShapeNetworkingBandwidthOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetShapesShapeNetworkingBandwidthOptionArrayInput is an input type that accepts GetShapesShapeNetworkingBandwidthOptionArray and GetShapesShapeNetworkingBandwidthOptionArrayOutput values.
 // You can construct a concrete instance of `GetShapesShapeNetworkingBandwidthOptionArrayInput` via:
 //
@@ -11173,6 +13196,12 @@ func (i GetShapesShapeNetworkingBandwidthOptionArray) ToGetShapesShapeNetworking
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapeNetworkingBandwidthOptionArrayOutput)
 }
 
+func (i GetShapesShapeNetworkingBandwidthOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetShapesShapeNetworkingBandwidthOption] {
+	return pulumix.Output[[]GetShapesShapeNetworkingBandwidthOption]{
+		OutputState: i.ToGetShapesShapeNetworkingBandwidthOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetShapesShapeNetworkingBandwidthOptionOutput struct{ *pulumi.OutputState }
 
 func (GetShapesShapeNetworkingBandwidthOptionOutput) ElementType() reflect.Type {
@@ -11185,6 +13214,12 @@ func (o GetShapesShapeNetworkingBandwidthOptionOutput) ToGetShapesShapeNetworkin
 
 func (o GetShapesShapeNetworkingBandwidthOptionOutput) ToGetShapesShapeNetworkingBandwidthOptionOutputWithContext(ctx context.Context) GetShapesShapeNetworkingBandwidthOptionOutput {
 	return o
+}
+
+func (o GetShapesShapeNetworkingBandwidthOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetShapesShapeNetworkingBandwidthOption] {
+	return pulumix.Output[GetShapesShapeNetworkingBandwidthOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The default amount of networking bandwidth per OCPU, in gigabits per second.
@@ -11214,6 +13249,12 @@ func (o GetShapesShapeNetworkingBandwidthOptionArrayOutput) ToGetShapesShapeNetw
 
 func (o GetShapesShapeNetworkingBandwidthOptionArrayOutput) ToGetShapesShapeNetworkingBandwidthOptionArrayOutputWithContext(ctx context.Context) GetShapesShapeNetworkingBandwidthOptionArrayOutput {
 	return o
+}
+
+func (o GetShapesShapeNetworkingBandwidthOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetShapesShapeNetworkingBandwidthOption] {
+	return pulumix.Output[[]GetShapesShapeNetworkingBandwidthOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapesShapeNetworkingBandwidthOptionArrayOutput) Index(i pulumi.IntInput) GetShapesShapeNetworkingBandwidthOptionOutput {
@@ -11263,6 +13304,12 @@ func (i GetShapesShapeOcpuOptionArgs) ToGetShapesShapeOcpuOptionOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapeOcpuOptionOutput)
 }
 
+func (i GetShapesShapeOcpuOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetShapesShapeOcpuOption] {
+	return pulumix.Output[GetShapesShapeOcpuOption]{
+		OutputState: i.ToGetShapesShapeOcpuOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetShapesShapeOcpuOptionArrayInput is an input type that accepts GetShapesShapeOcpuOptionArray and GetShapesShapeOcpuOptionArrayOutput values.
 // You can construct a concrete instance of `GetShapesShapeOcpuOptionArrayInput` via:
 //
@@ -11288,6 +13335,12 @@ func (i GetShapesShapeOcpuOptionArray) ToGetShapesShapeOcpuOptionArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapeOcpuOptionArrayOutput)
 }
 
+func (i GetShapesShapeOcpuOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetShapesShapeOcpuOption] {
+	return pulumix.Output[[]GetShapesShapeOcpuOption]{
+		OutputState: i.ToGetShapesShapeOcpuOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetShapesShapeOcpuOptionOutput struct{ *pulumi.OutputState }
 
 func (GetShapesShapeOcpuOptionOutput) ElementType() reflect.Type {
@@ -11300,6 +13353,12 @@ func (o GetShapesShapeOcpuOptionOutput) ToGetShapesShapeOcpuOptionOutput() GetSh
 
 func (o GetShapesShapeOcpuOptionOutput) ToGetShapesShapeOcpuOptionOutputWithContext(ctx context.Context) GetShapesShapeOcpuOptionOutput {
 	return o
+}
+
+func (o GetShapesShapeOcpuOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetShapesShapeOcpuOption] {
+	return pulumix.Output[GetShapesShapeOcpuOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The maximum allowed percentage of cores enabled.
@@ -11329,6 +13388,12 @@ func (o GetShapesShapeOcpuOptionArrayOutput) ToGetShapesShapeOcpuOptionArrayOutp
 
 func (o GetShapesShapeOcpuOptionArrayOutput) ToGetShapesShapeOcpuOptionArrayOutputWithContext(ctx context.Context) GetShapesShapeOcpuOptionArrayOutput {
 	return o
+}
+
+func (o GetShapesShapeOcpuOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetShapesShapeOcpuOption] {
+	return pulumix.Output[[]GetShapesShapeOcpuOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapesShapeOcpuOptionArrayOutput) Index(i pulumi.IntInput) GetShapesShapeOcpuOptionOutput {
@@ -11410,6 +13475,12 @@ func (i GetShapesShapePlatformConfigOptionArgs) ToGetShapesShapePlatformConfigOp
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapePlatformConfigOptionOutput)
 }
 
+func (i GetShapesShapePlatformConfigOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetShapesShapePlatformConfigOption] {
+	return pulumix.Output[GetShapesShapePlatformConfigOption]{
+		OutputState: i.ToGetShapesShapePlatformConfigOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetShapesShapePlatformConfigOptionArrayInput is an input type that accepts GetShapesShapePlatformConfigOptionArray and GetShapesShapePlatformConfigOptionArrayOutput values.
 // You can construct a concrete instance of `GetShapesShapePlatformConfigOptionArrayInput` via:
 //
@@ -11435,6 +13506,12 @@ func (i GetShapesShapePlatformConfigOptionArray) ToGetShapesShapePlatformConfigO
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapePlatformConfigOptionArrayOutput)
 }
 
+func (i GetShapesShapePlatformConfigOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetShapesShapePlatformConfigOption] {
+	return pulumix.Output[[]GetShapesShapePlatformConfigOption]{
+		OutputState: i.ToGetShapesShapePlatformConfigOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetShapesShapePlatformConfigOptionOutput struct{ *pulumi.OutputState }
 
 func (GetShapesShapePlatformConfigOptionOutput) ElementType() reflect.Type {
@@ -11447,6 +13524,12 @@ func (o GetShapesShapePlatformConfigOptionOutput) ToGetShapesShapePlatformConfig
 
 func (o GetShapesShapePlatformConfigOptionOutput) ToGetShapesShapePlatformConfigOptionOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionOutput {
 	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetShapesShapePlatformConfigOption] {
+	return pulumix.Output[GetShapesShapePlatformConfigOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Configuration options for the Access Control Service.
@@ -11538,6 +13621,12 @@ func (o GetShapesShapePlatformConfigOptionArrayOutput) ToGetShapesShapePlatformC
 	return o
 }
 
+func (o GetShapesShapePlatformConfigOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetShapesShapePlatformConfigOption] {
+	return pulumix.Output[[]GetShapesShapePlatformConfigOption]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetShapesShapePlatformConfigOptionArrayOutput) Index(i pulumi.IntInput) GetShapesShapePlatformConfigOptionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetShapesShapePlatformConfigOption {
 		return vs[0].([]GetShapesShapePlatformConfigOption)[vs[1].(int)]
@@ -11581,6 +13670,12 @@ func (i GetShapesShapePlatformConfigOptionAccessControlServiceOptionArgs) ToGetS
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapePlatformConfigOptionAccessControlServiceOptionOutput)
 }
 
+func (i GetShapesShapePlatformConfigOptionAccessControlServiceOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetShapesShapePlatformConfigOptionAccessControlServiceOption] {
+	return pulumix.Output[GetShapesShapePlatformConfigOptionAccessControlServiceOption]{
+		OutputState: i.ToGetShapesShapePlatformConfigOptionAccessControlServiceOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetShapesShapePlatformConfigOptionAccessControlServiceOptionArrayInput is an input type that accepts GetShapesShapePlatformConfigOptionAccessControlServiceOptionArray and GetShapesShapePlatformConfigOptionAccessControlServiceOptionArrayOutput values.
 // You can construct a concrete instance of `GetShapesShapePlatformConfigOptionAccessControlServiceOptionArrayInput` via:
 //
@@ -11606,6 +13701,12 @@ func (i GetShapesShapePlatformConfigOptionAccessControlServiceOptionArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapePlatformConfigOptionAccessControlServiceOptionArrayOutput)
 }
 
+func (i GetShapesShapePlatformConfigOptionAccessControlServiceOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetShapesShapePlatformConfigOptionAccessControlServiceOption] {
+	return pulumix.Output[[]GetShapesShapePlatformConfigOptionAccessControlServiceOption]{
+		OutputState: i.ToGetShapesShapePlatformConfigOptionAccessControlServiceOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetShapesShapePlatformConfigOptionAccessControlServiceOptionOutput struct{ *pulumi.OutputState }
 
 func (GetShapesShapePlatformConfigOptionAccessControlServiceOptionOutput) ElementType() reflect.Type {
@@ -11618,6 +13719,12 @@ func (o GetShapesShapePlatformConfigOptionAccessControlServiceOptionOutput) ToGe
 
 func (o GetShapesShapePlatformConfigOptionAccessControlServiceOptionOutput) ToGetShapesShapePlatformConfigOptionAccessControlServiceOptionOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionAccessControlServiceOptionOutput {
 	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionAccessControlServiceOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetShapesShapePlatformConfigOptionAccessControlServiceOption] {
+	return pulumix.Output[GetShapesShapePlatformConfigOptionAccessControlServiceOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether virtualization instructions can be enabled.
@@ -11642,6 +13749,12 @@ func (o GetShapesShapePlatformConfigOptionAccessControlServiceOptionArrayOutput)
 
 func (o GetShapesShapePlatformConfigOptionAccessControlServiceOptionArrayOutput) ToGetShapesShapePlatformConfigOptionAccessControlServiceOptionArrayOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionAccessControlServiceOptionArrayOutput {
 	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionAccessControlServiceOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetShapesShapePlatformConfigOptionAccessControlServiceOption] {
+	return pulumix.Output[[]GetShapesShapePlatformConfigOptionAccessControlServiceOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapesShapePlatformConfigOptionAccessControlServiceOptionArrayOutput) Index(i pulumi.IntInput) GetShapesShapePlatformConfigOptionAccessControlServiceOptionOutput {
@@ -11687,6 +13800,12 @@ func (i GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionA
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput)
 }
 
+func (i GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOption] {
+	return pulumix.Output[GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOption]{
+		OutputState: i.ToGetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayInput is an input type that accepts GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArray and GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutput values.
 // You can construct a concrete instance of `GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayInput` via:
 //
@@ -11712,6 +13831,12 @@ func (i GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionA
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutput)
 }
 
+func (i GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOption] {
+	return pulumix.Output[[]GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOption]{
+		OutputState: i.ToGetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput struct{ *pulumi.OutputState }
 
 func (GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput) ElementType() reflect.Type {
@@ -11724,6 +13849,12 @@ func (o GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionO
 
 func (o GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput) ToGetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput {
 	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOption] {
+	return pulumix.Output[GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether virtualization instructions can be enabled.
@@ -11752,6 +13883,12 @@ func (o GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionA
 
 func (o GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutput) ToGetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutput {
 	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOption] {
+	return pulumix.Output[[]GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionArrayOutput) Index(i pulumi.IntInput) GetShapesShapePlatformConfigOptionInputOutputMemoryManagementUnitOptionOutput {
@@ -11797,6 +13934,12 @@ func (i GetShapesShapePlatformConfigOptionMeasuredBootOptionArgs) ToGetShapesSha
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapePlatformConfigOptionMeasuredBootOptionOutput)
 }
 
+func (i GetShapesShapePlatformConfigOptionMeasuredBootOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetShapesShapePlatformConfigOptionMeasuredBootOption] {
+	return pulumix.Output[GetShapesShapePlatformConfigOptionMeasuredBootOption]{
+		OutputState: i.ToGetShapesShapePlatformConfigOptionMeasuredBootOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetShapesShapePlatformConfigOptionMeasuredBootOptionArrayInput is an input type that accepts GetShapesShapePlatformConfigOptionMeasuredBootOptionArray and GetShapesShapePlatformConfigOptionMeasuredBootOptionArrayOutput values.
 // You can construct a concrete instance of `GetShapesShapePlatformConfigOptionMeasuredBootOptionArrayInput` via:
 //
@@ -11822,6 +13965,12 @@ func (i GetShapesShapePlatformConfigOptionMeasuredBootOptionArray) ToGetShapesSh
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapePlatformConfigOptionMeasuredBootOptionArrayOutput)
 }
 
+func (i GetShapesShapePlatformConfigOptionMeasuredBootOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetShapesShapePlatformConfigOptionMeasuredBootOption] {
+	return pulumix.Output[[]GetShapesShapePlatformConfigOptionMeasuredBootOption]{
+		OutputState: i.ToGetShapesShapePlatformConfigOptionMeasuredBootOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetShapesShapePlatformConfigOptionMeasuredBootOptionOutput struct{ *pulumi.OutputState }
 
 func (GetShapesShapePlatformConfigOptionMeasuredBootOptionOutput) ElementType() reflect.Type {
@@ -11834,6 +13983,12 @@ func (o GetShapesShapePlatformConfigOptionMeasuredBootOptionOutput) ToGetShapesS
 
 func (o GetShapesShapePlatformConfigOptionMeasuredBootOptionOutput) ToGetShapesShapePlatformConfigOptionMeasuredBootOptionOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionMeasuredBootOptionOutput {
 	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionMeasuredBootOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetShapesShapePlatformConfigOptionMeasuredBootOption] {
+	return pulumix.Output[GetShapesShapePlatformConfigOptionMeasuredBootOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether virtualization instructions can be enabled.
@@ -11858,6 +14013,12 @@ func (o GetShapesShapePlatformConfigOptionMeasuredBootOptionArrayOutput) ToGetSh
 
 func (o GetShapesShapePlatformConfigOptionMeasuredBootOptionArrayOutput) ToGetShapesShapePlatformConfigOptionMeasuredBootOptionArrayOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionMeasuredBootOptionArrayOutput {
 	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionMeasuredBootOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetShapesShapePlatformConfigOptionMeasuredBootOption] {
+	return pulumix.Output[[]GetShapesShapePlatformConfigOptionMeasuredBootOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapesShapePlatformConfigOptionMeasuredBootOptionArrayOutput) Index(i pulumi.IntInput) GetShapesShapePlatformConfigOptionMeasuredBootOptionOutput {
@@ -11903,6 +14064,12 @@ func (i GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArgs) ToGetShape
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapePlatformConfigOptionMemoryEncryptionOptionOutput)
 }
 
+func (i GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetShapesShapePlatformConfigOptionMemoryEncryptionOption] {
+	return pulumix.Output[GetShapesShapePlatformConfigOptionMemoryEncryptionOption]{
+		OutputState: i.ToGetShapesShapePlatformConfigOptionMemoryEncryptionOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArrayInput is an input type that accepts GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArray and GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput values.
 // You can construct a concrete instance of `GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArrayInput` via:
 //
@@ -11928,6 +14095,12 @@ func (i GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArray) ToGetShap
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput)
 }
 
+func (i GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetShapesShapePlatformConfigOptionMemoryEncryptionOption] {
+	return pulumix.Output[[]GetShapesShapePlatformConfigOptionMemoryEncryptionOption]{
+		OutputState: i.ToGetShapesShapePlatformConfigOptionMemoryEncryptionOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetShapesShapePlatformConfigOptionMemoryEncryptionOptionOutput struct{ *pulumi.OutputState }
 
 func (GetShapesShapePlatformConfigOptionMemoryEncryptionOptionOutput) ElementType() reflect.Type {
@@ -11940,6 +14113,12 @@ func (o GetShapesShapePlatformConfigOptionMemoryEncryptionOptionOutput) ToGetSha
 
 func (o GetShapesShapePlatformConfigOptionMemoryEncryptionOptionOutput) ToGetShapesShapePlatformConfigOptionMemoryEncryptionOptionOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionMemoryEncryptionOptionOutput {
 	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionMemoryEncryptionOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetShapesShapePlatformConfigOptionMemoryEncryptionOption] {
+	return pulumix.Output[GetShapesShapePlatformConfigOptionMemoryEncryptionOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether virtualization instructions can be enabled.
@@ -11964,6 +14143,12 @@ func (o GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput) ToG
 
 func (o GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput) ToGetShapesShapePlatformConfigOptionMemoryEncryptionOptionArrayOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput {
 	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetShapesShapePlatformConfigOptionMemoryEncryptionOption] {
+	return pulumix.Output[[]GetShapesShapePlatformConfigOptionMemoryEncryptionOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapesShapePlatformConfigOptionMemoryEncryptionOptionArrayOutput) Index(i pulumi.IntInput) GetShapesShapePlatformConfigOptionMemoryEncryptionOptionOutput {
@@ -12009,6 +14194,12 @@ func (i GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArgs) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput)
 }
 
+func (i GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOption] {
+	return pulumix.Output[GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOption]{
+		OutputState: i.ToGetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayInput is an input type that accepts GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArray and GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutput values.
 // You can construct a concrete instance of `GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayInput` via:
 //
@@ -12034,6 +14225,12 @@ func (i GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArray)
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutput)
 }
 
+func (i GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOption] {
+	return pulumix.Output[[]GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOption]{
+		OutputState: i.ToGetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput struct{ *pulumi.OutputState }
 
 func (GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput) ElementType() reflect.Type {
@@ -12046,6 +14243,12 @@ func (o GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput
 
 func (o GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput) ToGetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput {
 	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOption] {
+	return pulumix.Output[GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether virtualization instructions can be enabled.
@@ -12074,6 +14277,12 @@ func (o GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayO
 
 func (o GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutput) ToGetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutput {
 	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOption] {
+	return pulumix.Output[[]GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionArrayOutput) Index(i pulumi.IntInput) GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionOutput {
@@ -12123,6 +14332,12 @@ func (i GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArgs) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput)
 }
 
+func (i GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOption] {
+	return pulumix.Output[GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOption]{
+		OutputState: i.ToGetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayInput is an input type that accepts GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArray and GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutput values.
 // You can construct a concrete instance of `GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayInput` via:
 //
@@ -12148,6 +14363,12 @@ func (i GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArray) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutput)
 }
 
+func (i GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOption] {
+	return pulumix.Output[[]GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOption]{
+		OutputState: i.ToGetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput struct{ *pulumi.OutputState }
 
 func (GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput) ElementType() reflect.Type {
@@ -12160,6 +14381,12 @@ func (o GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput) 
 
 func (o GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput) ToGetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput {
 	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOption] {
+	return pulumix.Output[GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The default percentage of cores enabled.
@@ -12189,6 +14416,12 @@ func (o GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOut
 
 func (o GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutput) ToGetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutput {
 	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOption] {
+	return pulumix.Output[[]GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionArrayOutput) Index(i pulumi.IntInput) GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOptionOutput {
@@ -12234,6 +14467,12 @@ func (i GetShapesShapePlatformConfigOptionSecureBootOptionArgs) ToGetShapesShape
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapePlatformConfigOptionSecureBootOptionOutput)
 }
 
+func (i GetShapesShapePlatformConfigOptionSecureBootOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetShapesShapePlatformConfigOptionSecureBootOption] {
+	return pulumix.Output[GetShapesShapePlatformConfigOptionSecureBootOption]{
+		OutputState: i.ToGetShapesShapePlatformConfigOptionSecureBootOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetShapesShapePlatformConfigOptionSecureBootOptionArrayInput is an input type that accepts GetShapesShapePlatformConfigOptionSecureBootOptionArray and GetShapesShapePlatformConfigOptionSecureBootOptionArrayOutput values.
 // You can construct a concrete instance of `GetShapesShapePlatformConfigOptionSecureBootOptionArrayInput` via:
 //
@@ -12259,6 +14498,12 @@ func (i GetShapesShapePlatformConfigOptionSecureBootOptionArray) ToGetShapesShap
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapePlatformConfigOptionSecureBootOptionArrayOutput)
 }
 
+func (i GetShapesShapePlatformConfigOptionSecureBootOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetShapesShapePlatformConfigOptionSecureBootOption] {
+	return pulumix.Output[[]GetShapesShapePlatformConfigOptionSecureBootOption]{
+		OutputState: i.ToGetShapesShapePlatformConfigOptionSecureBootOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetShapesShapePlatformConfigOptionSecureBootOptionOutput struct{ *pulumi.OutputState }
 
 func (GetShapesShapePlatformConfigOptionSecureBootOptionOutput) ElementType() reflect.Type {
@@ -12271,6 +14516,12 @@ func (o GetShapesShapePlatformConfigOptionSecureBootOptionOutput) ToGetShapesSha
 
 func (o GetShapesShapePlatformConfigOptionSecureBootOptionOutput) ToGetShapesShapePlatformConfigOptionSecureBootOptionOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionSecureBootOptionOutput {
 	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionSecureBootOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetShapesShapePlatformConfigOptionSecureBootOption] {
+	return pulumix.Output[GetShapesShapePlatformConfigOptionSecureBootOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether virtualization instructions can be enabled.
@@ -12295,6 +14546,12 @@ func (o GetShapesShapePlatformConfigOptionSecureBootOptionArrayOutput) ToGetShap
 
 func (o GetShapesShapePlatformConfigOptionSecureBootOptionArrayOutput) ToGetShapesShapePlatformConfigOptionSecureBootOptionArrayOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionSecureBootOptionArrayOutput {
 	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionSecureBootOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetShapesShapePlatformConfigOptionSecureBootOption] {
+	return pulumix.Output[[]GetShapesShapePlatformConfigOptionSecureBootOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapesShapePlatformConfigOptionSecureBootOptionArrayOutput) Index(i pulumi.IntInput) GetShapesShapePlatformConfigOptionSecureBootOptionOutput {
@@ -12340,6 +14597,12 @@ func (i GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArgs) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput)
 }
 
+func (i GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOption] {
+	return pulumix.Output[GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOption]{
+		OutputState: i.ToGetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayInput is an input type that accepts GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArray and GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutput values.
 // You can construct a concrete instance of `GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayInput` via:
 //
@@ -12365,6 +14628,12 @@ func (i GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArray) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutput)
 }
 
+func (i GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOption] {
+	return pulumix.Output[[]GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOption]{
+		OutputState: i.ToGetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput struct{ *pulumi.OutputState }
 
 func (GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput) ElementType() reflect.Type {
@@ -12377,6 +14646,12 @@ func (o GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput) T
 
 func (o GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput) ToGetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput {
 	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOption] {
+	return pulumix.Output[GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether virtualization instructions can be enabled.
@@ -12403,6 +14678,12 @@ func (o GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutp
 
 func (o GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutput) ToGetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutput {
 	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOption] {
+	return pulumix.Output[[]GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionArrayOutput) Index(i pulumi.IntInput) GetShapesShapePlatformConfigOptionSymmetricMultiThreadingOptionOutput {
@@ -12448,6 +14729,12 @@ func (i GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArgs) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionOutput)
 }
 
+func (i GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetShapesShapePlatformConfigOptionTrustedPlatformModuleOption] {
+	return pulumix.Output[GetShapesShapePlatformConfigOptionTrustedPlatformModuleOption]{
+		OutputState: i.ToGetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArrayInput is an input type that accepts GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArray and GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput values.
 // You can construct a concrete instance of `GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArrayInput` via:
 //
@@ -12473,6 +14760,12 @@ func (i GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArray) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput)
 }
 
+func (i GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetShapesShapePlatformConfigOptionTrustedPlatformModuleOption] {
+	return pulumix.Output[[]GetShapesShapePlatformConfigOptionTrustedPlatformModuleOption]{
+		OutputState: i.ToGetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionOutput struct{ *pulumi.OutputState }
 
 func (GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionOutput) ElementType() reflect.Type {
@@ -12485,6 +14778,12 @@ func (o GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionOutput) ToG
 
 func (o GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionOutput) ToGetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionOutput {
 	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetShapesShapePlatformConfigOptionTrustedPlatformModuleOption] {
+	return pulumix.Output[GetShapesShapePlatformConfigOptionTrustedPlatformModuleOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether virtualization instructions can be enabled.
@@ -12509,6 +14808,12 @@ func (o GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput
 
 func (o GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput) ToGetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput {
 	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetShapesShapePlatformConfigOptionTrustedPlatformModuleOption] {
+	return pulumix.Output[[]GetShapesShapePlatformConfigOptionTrustedPlatformModuleOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionArrayOutput) Index(i pulumi.IntInput) GetShapesShapePlatformConfigOptionTrustedPlatformModuleOptionOutput {
@@ -12554,6 +14859,12 @@ func (i GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArgs) ToGetSh
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapePlatformConfigOptionVirtualInstructionsOptionOutput)
 }
 
+func (i GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetShapesShapePlatformConfigOptionVirtualInstructionsOption] {
+	return pulumix.Output[GetShapesShapePlatformConfigOptionVirtualInstructionsOption]{
+		OutputState: i.ToGetShapesShapePlatformConfigOptionVirtualInstructionsOptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArrayInput is an input type that accepts GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArray and GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput values.
 // You can construct a concrete instance of `GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArrayInput` via:
 //
@@ -12579,6 +14890,12 @@ func (i GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArray) ToGetS
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput)
 }
 
+func (i GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetShapesShapePlatformConfigOptionVirtualInstructionsOption] {
+	return pulumix.Output[[]GetShapesShapePlatformConfigOptionVirtualInstructionsOption]{
+		OutputState: i.ToGetShapesShapePlatformConfigOptionVirtualInstructionsOptionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetShapesShapePlatformConfigOptionVirtualInstructionsOptionOutput struct{ *pulumi.OutputState }
 
 func (GetShapesShapePlatformConfigOptionVirtualInstructionsOptionOutput) ElementType() reflect.Type {
@@ -12591,6 +14908,12 @@ func (o GetShapesShapePlatformConfigOptionVirtualInstructionsOptionOutput) ToGet
 
 func (o GetShapesShapePlatformConfigOptionVirtualInstructionsOptionOutput) ToGetShapesShapePlatformConfigOptionVirtualInstructionsOptionOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionVirtualInstructionsOptionOutput {
 	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionVirtualInstructionsOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetShapesShapePlatformConfigOptionVirtualInstructionsOption] {
+	return pulumix.Output[GetShapesShapePlatformConfigOptionVirtualInstructionsOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether virtualization instructions can be enabled.
@@ -12615,6 +14938,12 @@ func (o GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput) 
 
 func (o GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput) ToGetShapesShapePlatformConfigOptionVirtualInstructionsOptionArrayOutputWithContext(ctx context.Context) GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput {
 	return o
+}
+
+func (o GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetShapesShapePlatformConfigOptionVirtualInstructionsOption] {
+	return pulumix.Output[[]GetShapesShapePlatformConfigOptionVirtualInstructionsOption]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapesShapePlatformConfigOptionVirtualInstructionsOptionArrayOutput) Index(i pulumi.IntInput) GetShapesShapePlatformConfigOptionVirtualInstructionsOptionOutput {
@@ -12656,6 +14985,12 @@ func (i GetShapesShapeRecommendedAlternativeArgs) ToGetShapesShapeRecommendedAlt
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapeRecommendedAlternativeOutput)
 }
 
+func (i GetShapesShapeRecommendedAlternativeArgs) ToOutput(ctx context.Context) pulumix.Output[GetShapesShapeRecommendedAlternative] {
+	return pulumix.Output[GetShapesShapeRecommendedAlternative]{
+		OutputState: i.ToGetShapesShapeRecommendedAlternativeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetShapesShapeRecommendedAlternativeArrayInput is an input type that accepts GetShapesShapeRecommendedAlternativeArray and GetShapesShapeRecommendedAlternativeArrayOutput values.
 // You can construct a concrete instance of `GetShapesShapeRecommendedAlternativeArrayInput` via:
 //
@@ -12681,6 +15016,12 @@ func (i GetShapesShapeRecommendedAlternativeArray) ToGetShapesShapeRecommendedAl
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapeRecommendedAlternativeArrayOutput)
 }
 
+func (i GetShapesShapeRecommendedAlternativeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetShapesShapeRecommendedAlternative] {
+	return pulumix.Output[[]GetShapesShapeRecommendedAlternative]{
+		OutputState: i.ToGetShapesShapeRecommendedAlternativeArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetShapesShapeRecommendedAlternativeOutput struct{ *pulumi.OutputState }
 
 func (GetShapesShapeRecommendedAlternativeOutput) ElementType() reflect.Type {
@@ -12693,6 +15034,12 @@ func (o GetShapesShapeRecommendedAlternativeOutput) ToGetShapesShapeRecommendedA
 
 func (o GetShapesShapeRecommendedAlternativeOutput) ToGetShapesShapeRecommendedAlternativeOutputWithContext(ctx context.Context) GetShapesShapeRecommendedAlternativeOutput {
 	return o
+}
+
+func (o GetShapesShapeRecommendedAlternativeOutput) ToOutput(ctx context.Context) pulumix.Output[GetShapesShapeRecommendedAlternative] {
+	return pulumix.Output[GetShapesShapeRecommendedAlternative]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the shape.
@@ -12712,6 +15059,12 @@ func (o GetShapesShapeRecommendedAlternativeArrayOutput) ToGetShapesShapeRecomme
 
 func (o GetShapesShapeRecommendedAlternativeArrayOutput) ToGetShapesShapeRecommendedAlternativeArrayOutputWithContext(ctx context.Context) GetShapesShapeRecommendedAlternativeArrayOutput {
 	return o
+}
+
+func (o GetShapesShapeRecommendedAlternativeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetShapesShapeRecommendedAlternative] {
+	return pulumix.Output[[]GetShapesShapeRecommendedAlternative]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapesShapeRecommendedAlternativeArrayOutput) Index(i pulumi.IntInput) GetShapesShapeRecommendedAlternativeOutput {
@@ -12755,6 +15108,12 @@ func (i GetSubnetsFilterArgs) ToGetSubnetsFilterOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubnetsFilterOutput)
 }
 
+func (i GetSubnetsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubnetsFilter] {
+	return pulumix.Output[GetSubnetsFilter]{
+		OutputState: i.ToGetSubnetsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSubnetsFilterArrayInput is an input type that accepts GetSubnetsFilterArray and GetSubnetsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSubnetsFilterArrayInput` via:
 //
@@ -12780,6 +15139,12 @@ func (i GetSubnetsFilterArray) ToGetSubnetsFilterArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubnetsFilterArrayOutput)
 }
 
+func (i GetSubnetsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubnetsFilter] {
+	return pulumix.Output[[]GetSubnetsFilter]{
+		OutputState: i.ToGetSubnetsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSubnetsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSubnetsFilterOutput) ElementType() reflect.Type {
@@ -12792,6 +15157,12 @@ func (o GetSubnetsFilterOutput) ToGetSubnetsFilterOutput() GetSubnetsFilterOutpu
 
 func (o GetSubnetsFilterOutput) ToGetSubnetsFilterOutputWithContext(ctx context.Context) GetSubnetsFilterOutput {
 	return o
+}
+
+func (o GetSubnetsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubnetsFilter] {
+	return pulumix.Output[GetSubnetsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSubnetsFilterOutput) Name() pulumi.StringOutput {
@@ -12818,6 +15189,12 @@ func (o GetSubnetsFilterArrayOutput) ToGetSubnetsFilterArrayOutput() GetSubnetsF
 
 func (o GetSubnetsFilterArrayOutput) ToGetSubnetsFilterArrayOutputWithContext(ctx context.Context) GetSubnetsFilterArrayOutput {
 	return o
+}
+
+func (o GetSubnetsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubnetsFilter] {
+	return pulumix.Output[[]GetSubnetsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSubnetsFilterArrayOutput) Index(i pulumi.IntInput) GetSubnetsFilterOutput {
@@ -12943,6 +15320,12 @@ func (i GetSubnetsSubnetArgs) ToGetSubnetsSubnetOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubnetsSubnetOutput)
 }
 
+func (i GetSubnetsSubnetArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubnetsSubnet] {
+	return pulumix.Output[GetSubnetsSubnet]{
+		OutputState: i.ToGetSubnetsSubnetOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetSubnetsSubnetArrayInput is an input type that accepts GetSubnetsSubnetArray and GetSubnetsSubnetArrayOutput values.
 // You can construct a concrete instance of `GetSubnetsSubnetArrayInput` via:
 //
@@ -12968,6 +15351,12 @@ func (i GetSubnetsSubnetArray) ToGetSubnetsSubnetArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubnetsSubnetArrayOutput)
 }
 
+func (i GetSubnetsSubnetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubnetsSubnet] {
+	return pulumix.Output[[]GetSubnetsSubnet]{
+		OutputState: i.ToGetSubnetsSubnetArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetSubnetsSubnetOutput struct{ *pulumi.OutputState }
 
 func (GetSubnetsSubnetOutput) ElementType() reflect.Type {
@@ -12980,6 +15369,12 @@ func (o GetSubnetsSubnetOutput) ToGetSubnetsSubnetOutput() GetSubnetsSubnetOutpu
 
 func (o GetSubnetsSubnetOutput) ToGetSubnetsSubnetOutputWithContext(ctx context.Context) GetSubnetsSubnetOutput {
 	return o
+}
+
+func (o GetSubnetsSubnetOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubnetsSubnet] {
+	return pulumix.Output[GetSubnetsSubnet]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The subnet's availability domain. This attribute will be null if this is a regional subnet instead of an AD-specific subnet. Oracle recommends creating regional subnets.  Example: `Uocm:PHX-AD-1`
@@ -13106,6 +15501,12 @@ func (o GetSubnetsSubnetArrayOutput) ToGetSubnetsSubnetArrayOutputWithContext(ct
 	return o
 }
 
+func (o GetSubnetsSubnetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubnetsSubnet] {
+	return pulumix.Output[[]GetSubnetsSubnet]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetSubnetsSubnetArrayOutput) Index(i pulumi.IntInput) GetSubnetsSubnetOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubnetsSubnet {
 		return vs[0].([]GetSubnetsSubnet)[vs[1].(int)]
@@ -13147,6 +15548,12 @@ func (i GetTunnelSecurityAssociationsFilterArgs) ToGetTunnelSecurityAssociations
 	return pulumi.ToOutputWithContext(ctx, i).(GetTunnelSecurityAssociationsFilterOutput)
 }
 
+func (i GetTunnelSecurityAssociationsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetTunnelSecurityAssociationsFilter] {
+	return pulumix.Output[GetTunnelSecurityAssociationsFilter]{
+		OutputState: i.ToGetTunnelSecurityAssociationsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTunnelSecurityAssociationsFilterArrayInput is an input type that accepts GetTunnelSecurityAssociationsFilterArray and GetTunnelSecurityAssociationsFilterArrayOutput values.
 // You can construct a concrete instance of `GetTunnelSecurityAssociationsFilterArrayInput` via:
 //
@@ -13172,6 +15579,12 @@ func (i GetTunnelSecurityAssociationsFilterArray) ToGetTunnelSecurityAssociation
 	return pulumi.ToOutputWithContext(ctx, i).(GetTunnelSecurityAssociationsFilterArrayOutput)
 }
 
+func (i GetTunnelSecurityAssociationsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTunnelSecurityAssociationsFilter] {
+	return pulumix.Output[[]GetTunnelSecurityAssociationsFilter]{
+		OutputState: i.ToGetTunnelSecurityAssociationsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTunnelSecurityAssociationsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetTunnelSecurityAssociationsFilterOutput) ElementType() reflect.Type {
@@ -13184,6 +15597,12 @@ func (o GetTunnelSecurityAssociationsFilterOutput) ToGetTunnelSecurityAssociatio
 
 func (o GetTunnelSecurityAssociationsFilterOutput) ToGetTunnelSecurityAssociationsFilterOutputWithContext(ctx context.Context) GetTunnelSecurityAssociationsFilterOutput {
 	return o
+}
+
+func (o GetTunnelSecurityAssociationsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetTunnelSecurityAssociationsFilter] {
+	return pulumix.Output[GetTunnelSecurityAssociationsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTunnelSecurityAssociationsFilterOutput) Name() pulumi.StringOutput {
@@ -13210,6 +15629,12 @@ func (o GetTunnelSecurityAssociationsFilterArrayOutput) ToGetTunnelSecurityAssoc
 
 func (o GetTunnelSecurityAssociationsFilterArrayOutput) ToGetTunnelSecurityAssociationsFilterArrayOutputWithContext(ctx context.Context) GetTunnelSecurityAssociationsFilterArrayOutput {
 	return o
+}
+
+func (o GetTunnelSecurityAssociationsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTunnelSecurityAssociationsFilter] {
+	return pulumix.Output[[]GetTunnelSecurityAssociationsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTunnelSecurityAssociationsFilterArrayOutput) Index(i pulumi.IntInput) GetTunnelSecurityAssociationsFilterOutput {
@@ -13267,6 +15692,12 @@ func (i GetTunnelSecurityAssociationsTunnelSecurityAssociationArgs) ToGetTunnelS
 	return pulumi.ToOutputWithContext(ctx, i).(GetTunnelSecurityAssociationsTunnelSecurityAssociationOutput)
 }
 
+func (i GetTunnelSecurityAssociationsTunnelSecurityAssociationArgs) ToOutput(ctx context.Context) pulumix.Output[GetTunnelSecurityAssociationsTunnelSecurityAssociation] {
+	return pulumix.Output[GetTunnelSecurityAssociationsTunnelSecurityAssociation]{
+		OutputState: i.ToGetTunnelSecurityAssociationsTunnelSecurityAssociationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetTunnelSecurityAssociationsTunnelSecurityAssociationArrayInput is an input type that accepts GetTunnelSecurityAssociationsTunnelSecurityAssociationArray and GetTunnelSecurityAssociationsTunnelSecurityAssociationArrayOutput values.
 // You can construct a concrete instance of `GetTunnelSecurityAssociationsTunnelSecurityAssociationArrayInput` via:
 //
@@ -13292,6 +15723,12 @@ func (i GetTunnelSecurityAssociationsTunnelSecurityAssociationArray) ToGetTunnel
 	return pulumi.ToOutputWithContext(ctx, i).(GetTunnelSecurityAssociationsTunnelSecurityAssociationArrayOutput)
 }
 
+func (i GetTunnelSecurityAssociationsTunnelSecurityAssociationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTunnelSecurityAssociationsTunnelSecurityAssociation] {
+	return pulumix.Output[[]GetTunnelSecurityAssociationsTunnelSecurityAssociation]{
+		OutputState: i.ToGetTunnelSecurityAssociationsTunnelSecurityAssociationArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetTunnelSecurityAssociationsTunnelSecurityAssociationOutput struct{ *pulumi.OutputState }
 
 func (GetTunnelSecurityAssociationsTunnelSecurityAssociationOutput) ElementType() reflect.Type {
@@ -13304,6 +15741,12 @@ func (o GetTunnelSecurityAssociationsTunnelSecurityAssociationOutput) ToGetTunne
 
 func (o GetTunnelSecurityAssociationsTunnelSecurityAssociationOutput) ToGetTunnelSecurityAssociationsTunnelSecurityAssociationOutputWithContext(ctx context.Context) GetTunnelSecurityAssociationsTunnelSecurityAssociationOutput {
 	return o
+}
+
+func (o GetTunnelSecurityAssociationsTunnelSecurityAssociationOutput) ToOutput(ctx context.Context) pulumix.Output[GetTunnelSecurityAssociationsTunnelSecurityAssociation] {
+	return pulumix.Output[GetTunnelSecurityAssociationsTunnelSecurityAssociation]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The IP address and mask of the partner subnet used in policy based VPNs or static routes.
@@ -13345,6 +15788,12 @@ func (o GetTunnelSecurityAssociationsTunnelSecurityAssociationArrayOutput) ToGet
 	return o
 }
 
+func (o GetTunnelSecurityAssociationsTunnelSecurityAssociationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTunnelSecurityAssociationsTunnelSecurityAssociation] {
+	return pulumix.Output[[]GetTunnelSecurityAssociationsTunnelSecurityAssociation]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetTunnelSecurityAssociationsTunnelSecurityAssociationArrayOutput) Index(i pulumi.IntInput) GetTunnelSecurityAssociationsTunnelSecurityAssociationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTunnelSecurityAssociationsTunnelSecurityAssociation {
 		return vs[0].([]GetTunnelSecurityAssociationsTunnelSecurityAssociation)[vs[1].(int)]
@@ -13384,6 +15833,12 @@ func (i GetVcnByoipv6cidrDetailArgs) ToGetVcnByoipv6cidrDetailOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetVcnByoipv6cidrDetailOutput)
 }
 
+func (i GetVcnByoipv6cidrDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetVcnByoipv6cidrDetail] {
+	return pulumix.Output[GetVcnByoipv6cidrDetail]{
+		OutputState: i.ToGetVcnByoipv6cidrDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVcnByoipv6cidrDetailArrayInput is an input type that accepts GetVcnByoipv6cidrDetailArray and GetVcnByoipv6cidrDetailArrayOutput values.
 // You can construct a concrete instance of `GetVcnByoipv6cidrDetailArrayInput` via:
 //
@@ -13409,6 +15864,12 @@ func (i GetVcnByoipv6cidrDetailArray) ToGetVcnByoipv6cidrDetailArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetVcnByoipv6cidrDetailArrayOutput)
 }
 
+func (i GetVcnByoipv6cidrDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVcnByoipv6cidrDetail] {
+	return pulumix.Output[[]GetVcnByoipv6cidrDetail]{
+		OutputState: i.ToGetVcnByoipv6cidrDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVcnByoipv6cidrDetailOutput struct{ *pulumi.OutputState }
 
 func (GetVcnByoipv6cidrDetailOutput) ElementType() reflect.Type {
@@ -13421,6 +15882,12 @@ func (o GetVcnByoipv6cidrDetailOutput) ToGetVcnByoipv6cidrDetailOutput() GetVcnB
 
 func (o GetVcnByoipv6cidrDetailOutput) ToGetVcnByoipv6cidrDetailOutputWithContext(ctx context.Context) GetVcnByoipv6cidrDetailOutput {
 	return o
+}
+
+func (o GetVcnByoipv6cidrDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetVcnByoipv6cidrDetail] {
+	return pulumix.Output[GetVcnByoipv6cidrDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVcnByoipv6cidrDetailOutput) Byoipv6rangeId() pulumi.StringOutput {
@@ -13443,6 +15910,12 @@ func (o GetVcnByoipv6cidrDetailArrayOutput) ToGetVcnByoipv6cidrDetailArrayOutput
 
 func (o GetVcnByoipv6cidrDetailArrayOutput) ToGetVcnByoipv6cidrDetailArrayOutputWithContext(ctx context.Context) GetVcnByoipv6cidrDetailArrayOutput {
 	return o
+}
+
+func (o GetVcnByoipv6cidrDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVcnByoipv6cidrDetail] {
+	return pulumix.Output[[]GetVcnByoipv6cidrDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVcnByoipv6cidrDetailArrayOutput) Index(i pulumi.IntInput) GetVcnByoipv6cidrDetailOutput {
@@ -13486,6 +15959,12 @@ func (i GetVcnsFilterArgs) ToGetVcnsFilterOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(GetVcnsFilterOutput)
 }
 
+func (i GetVcnsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVcnsFilter] {
+	return pulumix.Output[GetVcnsFilter]{
+		OutputState: i.ToGetVcnsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVcnsFilterArrayInput is an input type that accepts GetVcnsFilterArray and GetVcnsFilterArrayOutput values.
 // You can construct a concrete instance of `GetVcnsFilterArrayInput` via:
 //
@@ -13511,6 +15990,12 @@ func (i GetVcnsFilterArray) ToGetVcnsFilterArrayOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetVcnsFilterArrayOutput)
 }
 
+func (i GetVcnsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVcnsFilter] {
+	return pulumix.Output[[]GetVcnsFilter]{
+		OutputState: i.ToGetVcnsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVcnsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetVcnsFilterOutput) ElementType() reflect.Type {
@@ -13523,6 +16008,12 @@ func (o GetVcnsFilterOutput) ToGetVcnsFilterOutput() GetVcnsFilterOutput {
 
 func (o GetVcnsFilterOutput) ToGetVcnsFilterOutputWithContext(ctx context.Context) GetVcnsFilterOutput {
 	return o
+}
+
+func (o GetVcnsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVcnsFilter] {
+	return pulumix.Output[GetVcnsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVcnsFilterOutput) Name() pulumi.StringOutput {
@@ -13549,6 +16040,12 @@ func (o GetVcnsFilterArrayOutput) ToGetVcnsFilterArrayOutput() GetVcnsFilterArra
 
 func (o GetVcnsFilterArrayOutput) ToGetVcnsFilterArrayOutputWithContext(ctx context.Context) GetVcnsFilterArrayOutput {
 	return o
+}
+
+func (o GetVcnsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVcnsFilter] {
+	return pulumix.Output[[]GetVcnsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVcnsFilterArrayOutput) Index(i pulumi.IntInput) GetVcnsFilterOutput {
@@ -13660,6 +16157,12 @@ func (i GetVcnsVirtualNetworkArgs) ToGetVcnsVirtualNetworkOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetVcnsVirtualNetworkOutput)
 }
 
+func (i GetVcnsVirtualNetworkArgs) ToOutput(ctx context.Context) pulumix.Output[GetVcnsVirtualNetwork] {
+	return pulumix.Output[GetVcnsVirtualNetwork]{
+		OutputState: i.ToGetVcnsVirtualNetworkOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVcnsVirtualNetworkArrayInput is an input type that accepts GetVcnsVirtualNetworkArray and GetVcnsVirtualNetworkArrayOutput values.
 // You can construct a concrete instance of `GetVcnsVirtualNetworkArrayInput` via:
 //
@@ -13685,6 +16188,12 @@ func (i GetVcnsVirtualNetworkArray) ToGetVcnsVirtualNetworkArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetVcnsVirtualNetworkArrayOutput)
 }
 
+func (i GetVcnsVirtualNetworkArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVcnsVirtualNetwork] {
+	return pulumix.Output[[]GetVcnsVirtualNetwork]{
+		OutputState: i.ToGetVcnsVirtualNetworkArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVcnsVirtualNetworkOutput struct{ *pulumi.OutputState }
 
 func (GetVcnsVirtualNetworkOutput) ElementType() reflect.Type {
@@ -13697,6 +16206,12 @@ func (o GetVcnsVirtualNetworkOutput) ToGetVcnsVirtualNetworkOutput() GetVcnsVirt
 
 func (o GetVcnsVirtualNetworkOutput) ToGetVcnsVirtualNetworkOutputWithContext(ctx context.Context) GetVcnsVirtualNetworkOutput {
 	return o
+}
+
+func (o GetVcnsVirtualNetworkOutput) ToOutput(ctx context.Context) pulumix.Output[GetVcnsVirtualNetwork] {
+	return pulumix.Output[GetVcnsVirtualNetwork]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The list of BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 ranges.
@@ -13810,6 +16325,12 @@ func (o GetVcnsVirtualNetworkArrayOutput) ToGetVcnsVirtualNetworkArrayOutputWith
 	return o
 }
 
+func (o GetVcnsVirtualNetworkArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVcnsVirtualNetwork] {
+	return pulumix.Output[[]GetVcnsVirtualNetwork]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetVcnsVirtualNetworkArrayOutput) Index(i pulumi.IntInput) GetVcnsVirtualNetworkOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVcnsVirtualNetwork {
 		return vs[0].([]GetVcnsVirtualNetwork)[vs[1].(int)]
@@ -13849,6 +16370,12 @@ func (i GetVcnsVirtualNetworkByoipv6cidrDetailArgs) ToGetVcnsVirtualNetworkByoip
 	return pulumi.ToOutputWithContext(ctx, i).(GetVcnsVirtualNetworkByoipv6cidrDetailOutput)
 }
 
+func (i GetVcnsVirtualNetworkByoipv6cidrDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetVcnsVirtualNetworkByoipv6cidrDetail] {
+	return pulumix.Output[GetVcnsVirtualNetworkByoipv6cidrDetail]{
+		OutputState: i.ToGetVcnsVirtualNetworkByoipv6cidrDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVcnsVirtualNetworkByoipv6cidrDetailArrayInput is an input type that accepts GetVcnsVirtualNetworkByoipv6cidrDetailArray and GetVcnsVirtualNetworkByoipv6cidrDetailArrayOutput values.
 // You can construct a concrete instance of `GetVcnsVirtualNetworkByoipv6cidrDetailArrayInput` via:
 //
@@ -13874,6 +16401,12 @@ func (i GetVcnsVirtualNetworkByoipv6cidrDetailArray) ToGetVcnsVirtualNetworkByoi
 	return pulumi.ToOutputWithContext(ctx, i).(GetVcnsVirtualNetworkByoipv6cidrDetailArrayOutput)
 }
 
+func (i GetVcnsVirtualNetworkByoipv6cidrDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVcnsVirtualNetworkByoipv6cidrDetail] {
+	return pulumix.Output[[]GetVcnsVirtualNetworkByoipv6cidrDetail]{
+		OutputState: i.ToGetVcnsVirtualNetworkByoipv6cidrDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVcnsVirtualNetworkByoipv6cidrDetailOutput struct{ *pulumi.OutputState }
 
 func (GetVcnsVirtualNetworkByoipv6cidrDetailOutput) ElementType() reflect.Type {
@@ -13886,6 +16419,12 @@ func (o GetVcnsVirtualNetworkByoipv6cidrDetailOutput) ToGetVcnsVirtualNetworkByo
 
 func (o GetVcnsVirtualNetworkByoipv6cidrDetailOutput) ToGetVcnsVirtualNetworkByoipv6cidrDetailOutputWithContext(ctx context.Context) GetVcnsVirtualNetworkByoipv6cidrDetailOutput {
 	return o
+}
+
+func (o GetVcnsVirtualNetworkByoipv6cidrDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetVcnsVirtualNetworkByoipv6cidrDetail] {
+	return pulumix.Output[GetVcnsVirtualNetworkByoipv6cidrDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVcnsVirtualNetworkByoipv6cidrDetailOutput) Byoipv6rangeId() pulumi.StringOutput {
@@ -13908,6 +16447,12 @@ func (o GetVcnsVirtualNetworkByoipv6cidrDetailArrayOutput) ToGetVcnsVirtualNetwo
 
 func (o GetVcnsVirtualNetworkByoipv6cidrDetailArrayOutput) ToGetVcnsVirtualNetworkByoipv6cidrDetailArrayOutputWithContext(ctx context.Context) GetVcnsVirtualNetworkByoipv6cidrDetailArrayOutput {
 	return o
+}
+
+func (o GetVcnsVirtualNetworkByoipv6cidrDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVcnsVirtualNetworkByoipv6cidrDetail] {
+	return pulumix.Output[[]GetVcnsVirtualNetworkByoipv6cidrDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVcnsVirtualNetworkByoipv6cidrDetailArrayOutput) Index(i pulumi.IntInput) GetVcnsVirtualNetworkByoipv6cidrDetailOutput {
@@ -13951,6 +16496,12 @@ func (i GetVirtualCircuitAssociatedTunnelsFilterArgs) ToGetVirtualCircuitAssocia
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitAssociatedTunnelsFilterOutput)
 }
 
+func (i GetVirtualCircuitAssociatedTunnelsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualCircuitAssociatedTunnelsFilter] {
+	return pulumix.Output[GetVirtualCircuitAssociatedTunnelsFilter]{
+		OutputState: i.ToGetVirtualCircuitAssociatedTunnelsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVirtualCircuitAssociatedTunnelsFilterArrayInput is an input type that accepts GetVirtualCircuitAssociatedTunnelsFilterArray and GetVirtualCircuitAssociatedTunnelsFilterArrayOutput values.
 // You can construct a concrete instance of `GetVirtualCircuitAssociatedTunnelsFilterArrayInput` via:
 //
@@ -13976,6 +16527,12 @@ func (i GetVirtualCircuitAssociatedTunnelsFilterArray) ToGetVirtualCircuitAssoci
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitAssociatedTunnelsFilterArrayOutput)
 }
 
+func (i GetVirtualCircuitAssociatedTunnelsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualCircuitAssociatedTunnelsFilter] {
+	return pulumix.Output[[]GetVirtualCircuitAssociatedTunnelsFilter]{
+		OutputState: i.ToGetVirtualCircuitAssociatedTunnelsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVirtualCircuitAssociatedTunnelsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualCircuitAssociatedTunnelsFilterOutput) ElementType() reflect.Type {
@@ -13988,6 +16545,12 @@ func (o GetVirtualCircuitAssociatedTunnelsFilterOutput) ToGetVirtualCircuitAssoc
 
 func (o GetVirtualCircuitAssociatedTunnelsFilterOutput) ToGetVirtualCircuitAssociatedTunnelsFilterOutputWithContext(ctx context.Context) GetVirtualCircuitAssociatedTunnelsFilterOutput {
 	return o
+}
+
+func (o GetVirtualCircuitAssociatedTunnelsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualCircuitAssociatedTunnelsFilter] {
+	return pulumix.Output[GetVirtualCircuitAssociatedTunnelsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVirtualCircuitAssociatedTunnelsFilterOutput) Name() pulumi.StringOutput {
@@ -14014,6 +16577,12 @@ func (o GetVirtualCircuitAssociatedTunnelsFilterArrayOutput) ToGetVirtualCircuit
 
 func (o GetVirtualCircuitAssociatedTunnelsFilterArrayOutput) ToGetVirtualCircuitAssociatedTunnelsFilterArrayOutputWithContext(ctx context.Context) GetVirtualCircuitAssociatedTunnelsFilterArrayOutput {
 	return o
+}
+
+func (o GetVirtualCircuitAssociatedTunnelsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualCircuitAssociatedTunnelsFilter] {
+	return pulumix.Output[[]GetVirtualCircuitAssociatedTunnelsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVirtualCircuitAssociatedTunnelsFilterArrayOutput) Index(i pulumi.IntInput) GetVirtualCircuitAssociatedTunnelsFilterOutput {
@@ -14063,6 +16632,12 @@ func (i GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailOutput)
 }
 
+func (i GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetail] {
+	return pulumix.Output[GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetail]{
+		OutputState: i.ToGetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArrayInput is an input type that accepts GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArray and GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArrayOutput values.
 // You can construct a concrete instance of `GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArrayInput` via:
 //
@@ -14088,6 +16663,12 @@ func (i GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArrayOutput)
 }
 
+func (i GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetail] {
+	return pulumix.Output[[]GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetail]{
+		OutputState: i.ToGetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailOutput) ElementType() reflect.Type {
@@ -14100,6 +16681,12 @@ func (o GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailOu
 
 func (o GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailOutput) ToGetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailOutputWithContext(ctx context.Context) GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailOutput {
 	return o
+}
+
+func (o GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetail] {
+	return pulumix.Output[GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of IPSec connection associated with the virtual circuit.
@@ -14135,6 +16722,12 @@ func (o GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailAr
 
 func (o GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArrayOutput) ToGetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArrayOutputWithContext(ctx context.Context) GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArrayOutput {
 	return o
+}
+
+func (o GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetail] {
+	return pulumix.Output[[]GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailArrayOutput) Index(i pulumi.IntInput) GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailOutput {
@@ -14180,6 +16773,12 @@ func (i GetVirtualCircuitBandwidthShapesFilterArgs) ToGetVirtualCircuitBandwidth
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitBandwidthShapesFilterOutput)
 }
 
+func (i GetVirtualCircuitBandwidthShapesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualCircuitBandwidthShapesFilter] {
+	return pulumix.Output[GetVirtualCircuitBandwidthShapesFilter]{
+		OutputState: i.ToGetVirtualCircuitBandwidthShapesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVirtualCircuitBandwidthShapesFilterArrayInput is an input type that accepts GetVirtualCircuitBandwidthShapesFilterArray and GetVirtualCircuitBandwidthShapesFilterArrayOutput values.
 // You can construct a concrete instance of `GetVirtualCircuitBandwidthShapesFilterArrayInput` via:
 //
@@ -14205,6 +16804,12 @@ func (i GetVirtualCircuitBandwidthShapesFilterArray) ToGetVirtualCircuitBandwidt
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitBandwidthShapesFilterArrayOutput)
 }
 
+func (i GetVirtualCircuitBandwidthShapesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualCircuitBandwidthShapesFilter] {
+	return pulumix.Output[[]GetVirtualCircuitBandwidthShapesFilter]{
+		OutputState: i.ToGetVirtualCircuitBandwidthShapesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVirtualCircuitBandwidthShapesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualCircuitBandwidthShapesFilterOutput) ElementType() reflect.Type {
@@ -14217,6 +16822,12 @@ func (o GetVirtualCircuitBandwidthShapesFilterOutput) ToGetVirtualCircuitBandwid
 
 func (o GetVirtualCircuitBandwidthShapesFilterOutput) ToGetVirtualCircuitBandwidthShapesFilterOutputWithContext(ctx context.Context) GetVirtualCircuitBandwidthShapesFilterOutput {
 	return o
+}
+
+func (o GetVirtualCircuitBandwidthShapesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualCircuitBandwidthShapesFilter] {
+	return pulumix.Output[GetVirtualCircuitBandwidthShapesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the bandwidth shape.  Example: `10 Gbps`
@@ -14244,6 +16855,12 @@ func (o GetVirtualCircuitBandwidthShapesFilterArrayOutput) ToGetVirtualCircuitBa
 
 func (o GetVirtualCircuitBandwidthShapesFilterArrayOutput) ToGetVirtualCircuitBandwidthShapesFilterArrayOutputWithContext(ctx context.Context) GetVirtualCircuitBandwidthShapesFilterArrayOutput {
 	return o
+}
+
+func (o GetVirtualCircuitBandwidthShapesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualCircuitBandwidthShapesFilter] {
+	return pulumix.Output[[]GetVirtualCircuitBandwidthShapesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVirtualCircuitBandwidthShapesFilterArrayOutput) Index(i pulumi.IntInput) GetVirtualCircuitBandwidthShapesFilterOutput {
@@ -14289,6 +16906,12 @@ func (i GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArgs) ToGetV
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeOutput)
 }
 
+func (i GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape] {
+	return pulumix.Output[GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape]{
+		OutputState: i.ToGetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArrayInput is an input type that accepts GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArray and GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArrayOutput values.
 // You can construct a concrete instance of `GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArrayInput` via:
 //
@@ -14314,6 +16937,12 @@ func (i GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArrayOutput)
 }
 
+func (i GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape] {
+	return pulumix.Output[[]GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape]{
+		OutputState: i.ToGetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeOutput) ElementType() reflect.Type {
@@ -14326,6 +16955,12 @@ func (o GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeOutput) ToGe
 
 func (o GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeOutput) ToGetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeOutputWithContext(ctx context.Context) GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeOutput {
 	return o
+}
+
+func (o GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape] {
+	return pulumix.Output[GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The bandwidth in Mbps.  Example: `10000`
@@ -14350,6 +16985,12 @@ func (o GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArrayOutput)
 
 func (o GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArrayOutput) ToGetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArrayOutputWithContext(ctx context.Context) GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArrayOutput {
 	return o
+}
+
+func (o GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape] {
+	return pulumix.Output[[]GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeArrayOutput) Index(i pulumi.IntInput) GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShapeOutput {
@@ -14415,6 +17056,12 @@ func (i GetVirtualCircuitCrossConnectMappingArgs) ToGetVirtualCircuitCrossConnec
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitCrossConnectMappingOutput)
 }
 
+func (i GetVirtualCircuitCrossConnectMappingArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualCircuitCrossConnectMapping] {
+	return pulumix.Output[GetVirtualCircuitCrossConnectMapping]{
+		OutputState: i.ToGetVirtualCircuitCrossConnectMappingOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVirtualCircuitCrossConnectMappingArrayInput is an input type that accepts GetVirtualCircuitCrossConnectMappingArray and GetVirtualCircuitCrossConnectMappingArrayOutput values.
 // You can construct a concrete instance of `GetVirtualCircuitCrossConnectMappingArrayInput` via:
 //
@@ -14440,6 +17087,12 @@ func (i GetVirtualCircuitCrossConnectMappingArray) ToGetVirtualCircuitCrossConne
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitCrossConnectMappingArrayOutput)
 }
 
+func (i GetVirtualCircuitCrossConnectMappingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualCircuitCrossConnectMapping] {
+	return pulumix.Output[[]GetVirtualCircuitCrossConnectMapping]{
+		OutputState: i.ToGetVirtualCircuitCrossConnectMappingArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVirtualCircuitCrossConnectMappingOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualCircuitCrossConnectMappingOutput) ElementType() reflect.Type {
@@ -14452,6 +17105,12 @@ func (o GetVirtualCircuitCrossConnectMappingOutput) ToGetVirtualCircuitCrossConn
 
 func (o GetVirtualCircuitCrossConnectMappingOutput) ToGetVirtualCircuitCrossConnectMappingOutputWithContext(ctx context.Context) GetVirtualCircuitCrossConnectMappingOutput {
 	return o
+}
+
+func (o GetVirtualCircuitCrossConnectMappingOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualCircuitCrossConnectMapping] {
+	return pulumix.Output[GetVirtualCircuitCrossConnectMapping]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The key for BGP MD5 authentication. Only applicable if your system requires MD5 authentication. If empty or not set (null), that means you don't use BGP MD5 authentication.
@@ -14503,6 +17162,12 @@ func (o GetVirtualCircuitCrossConnectMappingArrayOutput) ToGetVirtualCircuitCros
 	return o
 }
 
+func (o GetVirtualCircuitCrossConnectMappingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualCircuitCrossConnectMapping] {
+	return pulumix.Output[[]GetVirtualCircuitCrossConnectMapping]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetVirtualCircuitCrossConnectMappingArrayOutput) Index(i pulumi.IntInput) GetVirtualCircuitCrossConnectMappingOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualCircuitCrossConnectMapping {
 		return vs[0].([]GetVirtualCircuitCrossConnectMapping)[vs[1].(int)]
@@ -14540,6 +17205,12 @@ func (i GetVirtualCircuitPublicPrefixArgs) ToGetVirtualCircuitPublicPrefixOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitPublicPrefixOutput)
 }
 
+func (i GetVirtualCircuitPublicPrefixArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualCircuitPublicPrefix] {
+	return pulumix.Output[GetVirtualCircuitPublicPrefix]{
+		OutputState: i.ToGetVirtualCircuitPublicPrefixOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVirtualCircuitPublicPrefixArrayInput is an input type that accepts GetVirtualCircuitPublicPrefixArray and GetVirtualCircuitPublicPrefixArrayOutput values.
 // You can construct a concrete instance of `GetVirtualCircuitPublicPrefixArrayInput` via:
 //
@@ -14565,6 +17236,12 @@ func (i GetVirtualCircuitPublicPrefixArray) ToGetVirtualCircuitPublicPrefixArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitPublicPrefixArrayOutput)
 }
 
+func (i GetVirtualCircuitPublicPrefixArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualCircuitPublicPrefix] {
+	return pulumix.Output[[]GetVirtualCircuitPublicPrefix]{
+		OutputState: i.ToGetVirtualCircuitPublicPrefixArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVirtualCircuitPublicPrefixOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualCircuitPublicPrefixOutput) ElementType() reflect.Type {
@@ -14577,6 +17254,12 @@ func (o GetVirtualCircuitPublicPrefixOutput) ToGetVirtualCircuitPublicPrefixOutp
 
 func (o GetVirtualCircuitPublicPrefixOutput) ToGetVirtualCircuitPublicPrefixOutputWithContext(ctx context.Context) GetVirtualCircuitPublicPrefixOutput {
 	return o
+}
+
+func (o GetVirtualCircuitPublicPrefixOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualCircuitPublicPrefix] {
+	return pulumix.Output[GetVirtualCircuitPublicPrefix]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVirtualCircuitPublicPrefixOutput) CidrBlock() pulumi.StringOutput {
@@ -14595,6 +17278,12 @@ func (o GetVirtualCircuitPublicPrefixArrayOutput) ToGetVirtualCircuitPublicPrefi
 
 func (o GetVirtualCircuitPublicPrefixArrayOutput) ToGetVirtualCircuitPublicPrefixArrayOutputWithContext(ctx context.Context) GetVirtualCircuitPublicPrefixArrayOutput {
 	return o
+}
+
+func (o GetVirtualCircuitPublicPrefixArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualCircuitPublicPrefix] {
+	return pulumix.Output[[]GetVirtualCircuitPublicPrefix]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVirtualCircuitPublicPrefixArrayOutput) Index(i pulumi.IntInput) GetVirtualCircuitPublicPrefixOutput {
@@ -14638,6 +17327,12 @@ func (i GetVirtualCircuitPublicPrefixesFilterArgs) ToGetVirtualCircuitPublicPref
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitPublicPrefixesFilterOutput)
 }
 
+func (i GetVirtualCircuitPublicPrefixesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualCircuitPublicPrefixesFilter] {
+	return pulumix.Output[GetVirtualCircuitPublicPrefixesFilter]{
+		OutputState: i.ToGetVirtualCircuitPublicPrefixesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVirtualCircuitPublicPrefixesFilterArrayInput is an input type that accepts GetVirtualCircuitPublicPrefixesFilterArray and GetVirtualCircuitPublicPrefixesFilterArrayOutput values.
 // You can construct a concrete instance of `GetVirtualCircuitPublicPrefixesFilterArrayInput` via:
 //
@@ -14663,6 +17358,12 @@ func (i GetVirtualCircuitPublicPrefixesFilterArray) ToGetVirtualCircuitPublicPre
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitPublicPrefixesFilterArrayOutput)
 }
 
+func (i GetVirtualCircuitPublicPrefixesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualCircuitPublicPrefixesFilter] {
+	return pulumix.Output[[]GetVirtualCircuitPublicPrefixesFilter]{
+		OutputState: i.ToGetVirtualCircuitPublicPrefixesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVirtualCircuitPublicPrefixesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualCircuitPublicPrefixesFilterOutput) ElementType() reflect.Type {
@@ -14675,6 +17376,12 @@ func (o GetVirtualCircuitPublicPrefixesFilterOutput) ToGetVirtualCircuitPublicPr
 
 func (o GetVirtualCircuitPublicPrefixesFilterOutput) ToGetVirtualCircuitPublicPrefixesFilterOutputWithContext(ctx context.Context) GetVirtualCircuitPublicPrefixesFilterOutput {
 	return o
+}
+
+func (o GetVirtualCircuitPublicPrefixesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualCircuitPublicPrefixesFilter] {
+	return pulumix.Output[GetVirtualCircuitPublicPrefixesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVirtualCircuitPublicPrefixesFilterOutput) Name() pulumi.StringOutput {
@@ -14701,6 +17408,12 @@ func (o GetVirtualCircuitPublicPrefixesFilterArrayOutput) ToGetVirtualCircuitPub
 
 func (o GetVirtualCircuitPublicPrefixesFilterArrayOutput) ToGetVirtualCircuitPublicPrefixesFilterArrayOutputWithContext(ctx context.Context) GetVirtualCircuitPublicPrefixesFilterArrayOutput {
 	return o
+}
+
+func (o GetVirtualCircuitPublicPrefixesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualCircuitPublicPrefixesFilter] {
+	return pulumix.Output[[]GetVirtualCircuitPublicPrefixesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVirtualCircuitPublicPrefixesFilterArrayOutput) Index(i pulumi.IntInput) GetVirtualCircuitPublicPrefixesFilterOutput {
@@ -14750,6 +17463,12 @@ func (i GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArgs) ToGetVirt
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixOutput)
 }
 
+func (i GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix] {
+	return pulumix.Output[GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix]{
+		OutputState: i.ToGetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArrayInput is an input type that accepts GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArray and GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArrayOutput values.
 // You can construct a concrete instance of `GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArrayInput` via:
 //
@@ -14775,6 +17494,12 @@ func (i GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArray) ToGetVir
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArrayOutput)
 }
 
+func (i GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix] {
+	return pulumix.Output[[]GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix]{
+		OutputState: i.ToGetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixOutput) ElementType() reflect.Type {
@@ -14787,6 +17512,12 @@ func (o GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixOutput) ToGetVi
 
 func (o GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixOutput) ToGetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixOutputWithContext(ctx context.Context) GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixOutput {
 	return o
+}
+
+func (o GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix] {
+	return pulumix.Output[GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Publix IP prefix (CIDR) that the customer specified.
@@ -14813,6 +17544,12 @@ func (o GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArrayOutput) To
 
 func (o GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArrayOutput) ToGetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArrayOutputWithContext(ctx context.Context) GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArrayOutput {
 	return o
+}
+
+func (o GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix] {
+	return pulumix.Output[[]GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixArrayOutput) Index(i pulumi.IntInput) GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixOutput {
@@ -14856,6 +17593,12 @@ func (i GetVirtualCircuitsFilterArgs) ToGetVirtualCircuitsFilterOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitsFilterOutput)
 }
 
+func (i GetVirtualCircuitsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualCircuitsFilter] {
+	return pulumix.Output[GetVirtualCircuitsFilter]{
+		OutputState: i.ToGetVirtualCircuitsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVirtualCircuitsFilterArrayInput is an input type that accepts GetVirtualCircuitsFilterArray and GetVirtualCircuitsFilterArrayOutput values.
 // You can construct a concrete instance of `GetVirtualCircuitsFilterArrayInput` via:
 //
@@ -14881,6 +17624,12 @@ func (i GetVirtualCircuitsFilterArray) ToGetVirtualCircuitsFilterArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitsFilterArrayOutput)
 }
 
+func (i GetVirtualCircuitsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualCircuitsFilter] {
+	return pulumix.Output[[]GetVirtualCircuitsFilter]{
+		OutputState: i.ToGetVirtualCircuitsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVirtualCircuitsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualCircuitsFilterOutput) ElementType() reflect.Type {
@@ -14893,6 +17642,12 @@ func (o GetVirtualCircuitsFilterOutput) ToGetVirtualCircuitsFilterOutput() GetVi
 
 func (o GetVirtualCircuitsFilterOutput) ToGetVirtualCircuitsFilterOutputWithContext(ctx context.Context) GetVirtualCircuitsFilterOutput {
 	return o
+}
+
+func (o GetVirtualCircuitsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualCircuitsFilter] {
+	return pulumix.Output[GetVirtualCircuitsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVirtualCircuitsFilterOutput) Name() pulumi.StringOutput {
@@ -14919,6 +17674,12 @@ func (o GetVirtualCircuitsFilterArrayOutput) ToGetVirtualCircuitsFilterArrayOutp
 
 func (o GetVirtualCircuitsFilterArrayOutput) ToGetVirtualCircuitsFilterArrayOutputWithContext(ctx context.Context) GetVirtualCircuitsFilterArrayOutput {
 	return o
+}
+
+func (o GetVirtualCircuitsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualCircuitsFilter] {
+	return pulumix.Output[[]GetVirtualCircuitsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVirtualCircuitsFilterArrayOutput) Index(i pulumi.IntInput) GetVirtualCircuitsFilterOutput {
@@ -15082,6 +17843,12 @@ func (i GetVirtualCircuitsVirtualCircuitArgs) ToGetVirtualCircuitsVirtualCircuit
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitsVirtualCircuitOutput)
 }
 
+func (i GetVirtualCircuitsVirtualCircuitArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualCircuitsVirtualCircuit] {
+	return pulumix.Output[GetVirtualCircuitsVirtualCircuit]{
+		OutputState: i.ToGetVirtualCircuitsVirtualCircuitOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVirtualCircuitsVirtualCircuitArrayInput is an input type that accepts GetVirtualCircuitsVirtualCircuitArray and GetVirtualCircuitsVirtualCircuitArrayOutput values.
 // You can construct a concrete instance of `GetVirtualCircuitsVirtualCircuitArrayInput` via:
 //
@@ -15107,6 +17874,12 @@ func (i GetVirtualCircuitsVirtualCircuitArray) ToGetVirtualCircuitsVirtualCircui
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitsVirtualCircuitArrayOutput)
 }
 
+func (i GetVirtualCircuitsVirtualCircuitArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualCircuitsVirtualCircuit] {
+	return pulumix.Output[[]GetVirtualCircuitsVirtualCircuit]{
+		OutputState: i.ToGetVirtualCircuitsVirtualCircuitArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVirtualCircuitsVirtualCircuitOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualCircuitsVirtualCircuitOutput) ElementType() reflect.Type {
@@ -15119,6 +17892,12 @@ func (o GetVirtualCircuitsVirtualCircuitOutput) ToGetVirtualCircuitsVirtualCircu
 
 func (o GetVirtualCircuitsVirtualCircuitOutput) ToGetVirtualCircuitsVirtualCircuitOutputWithContext(ctx context.Context) GetVirtualCircuitsVirtualCircuitOutput {
 	return o
+}
+
+func (o GetVirtualCircuitsVirtualCircuitOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualCircuitsVirtualCircuit] {
+	return pulumix.Output[GetVirtualCircuitsVirtualCircuit]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The provisioned data rate of the connection. To get a list of the available bandwidth levels (that is, shapes), see [ListFastConnectProviderServiceVirtualCircuitBandwidthShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes).  Example: `10 Gbps`
@@ -15292,6 +18071,12 @@ func (o GetVirtualCircuitsVirtualCircuitArrayOutput) ToGetVirtualCircuitsVirtual
 	return o
 }
 
+func (o GetVirtualCircuitsVirtualCircuitArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualCircuitsVirtualCircuit] {
+	return pulumix.Output[[]GetVirtualCircuitsVirtualCircuit]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetVirtualCircuitsVirtualCircuitArrayOutput) Index(i pulumi.IntInput) GetVirtualCircuitsVirtualCircuitOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualCircuitsVirtualCircuit {
 		return vs[0].([]GetVirtualCircuitsVirtualCircuit)[vs[1].(int)]
@@ -15355,6 +18140,12 @@ func (i GetVirtualCircuitsVirtualCircuitCrossConnectMappingArgs) ToGetVirtualCir
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitsVirtualCircuitCrossConnectMappingOutput)
 }
 
+func (i GetVirtualCircuitsVirtualCircuitCrossConnectMappingArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualCircuitsVirtualCircuitCrossConnectMapping] {
+	return pulumix.Output[GetVirtualCircuitsVirtualCircuitCrossConnectMapping]{
+		OutputState: i.ToGetVirtualCircuitsVirtualCircuitCrossConnectMappingOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVirtualCircuitsVirtualCircuitCrossConnectMappingArrayInput is an input type that accepts GetVirtualCircuitsVirtualCircuitCrossConnectMappingArray and GetVirtualCircuitsVirtualCircuitCrossConnectMappingArrayOutput values.
 // You can construct a concrete instance of `GetVirtualCircuitsVirtualCircuitCrossConnectMappingArrayInput` via:
 //
@@ -15380,6 +18171,12 @@ func (i GetVirtualCircuitsVirtualCircuitCrossConnectMappingArray) ToGetVirtualCi
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitsVirtualCircuitCrossConnectMappingArrayOutput)
 }
 
+func (i GetVirtualCircuitsVirtualCircuitCrossConnectMappingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualCircuitsVirtualCircuitCrossConnectMapping] {
+	return pulumix.Output[[]GetVirtualCircuitsVirtualCircuitCrossConnectMapping]{
+		OutputState: i.ToGetVirtualCircuitsVirtualCircuitCrossConnectMappingArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVirtualCircuitsVirtualCircuitCrossConnectMappingOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualCircuitsVirtualCircuitCrossConnectMappingOutput) ElementType() reflect.Type {
@@ -15392,6 +18189,12 @@ func (o GetVirtualCircuitsVirtualCircuitCrossConnectMappingOutput) ToGetVirtualC
 
 func (o GetVirtualCircuitsVirtualCircuitCrossConnectMappingOutput) ToGetVirtualCircuitsVirtualCircuitCrossConnectMappingOutputWithContext(ctx context.Context) GetVirtualCircuitsVirtualCircuitCrossConnectMappingOutput {
 	return o
+}
+
+func (o GetVirtualCircuitsVirtualCircuitCrossConnectMappingOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualCircuitsVirtualCircuitCrossConnectMapping] {
+	return pulumix.Output[GetVirtualCircuitsVirtualCircuitCrossConnectMapping]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The key for BGP MD5 authentication. Only applicable if your system requires MD5 authentication. If empty or not set (null), that means you don't use BGP MD5 authentication.
@@ -15445,6 +18248,12 @@ func (o GetVirtualCircuitsVirtualCircuitCrossConnectMappingArrayOutput) ToGetVir
 	return o
 }
 
+func (o GetVirtualCircuitsVirtualCircuitCrossConnectMappingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualCircuitsVirtualCircuitCrossConnectMapping] {
+	return pulumix.Output[[]GetVirtualCircuitsVirtualCircuitCrossConnectMapping]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetVirtualCircuitsVirtualCircuitCrossConnectMappingArrayOutput) Index(i pulumi.IntInput) GetVirtualCircuitsVirtualCircuitCrossConnectMappingOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualCircuitsVirtualCircuitCrossConnectMapping {
 		return vs[0].([]GetVirtualCircuitsVirtualCircuitCrossConnectMapping)[vs[1].(int)]
@@ -15482,6 +18291,12 @@ func (i GetVirtualCircuitsVirtualCircuitPublicPrefixArgs) ToGetVirtualCircuitsVi
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitsVirtualCircuitPublicPrefixOutput)
 }
 
+func (i GetVirtualCircuitsVirtualCircuitPublicPrefixArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualCircuitsVirtualCircuitPublicPrefix] {
+	return pulumix.Output[GetVirtualCircuitsVirtualCircuitPublicPrefix]{
+		OutputState: i.ToGetVirtualCircuitsVirtualCircuitPublicPrefixOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVirtualCircuitsVirtualCircuitPublicPrefixArrayInput is an input type that accepts GetVirtualCircuitsVirtualCircuitPublicPrefixArray and GetVirtualCircuitsVirtualCircuitPublicPrefixArrayOutput values.
 // You can construct a concrete instance of `GetVirtualCircuitsVirtualCircuitPublicPrefixArrayInput` via:
 //
@@ -15507,6 +18322,12 @@ func (i GetVirtualCircuitsVirtualCircuitPublicPrefixArray) ToGetVirtualCircuitsV
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualCircuitsVirtualCircuitPublicPrefixArrayOutput)
 }
 
+func (i GetVirtualCircuitsVirtualCircuitPublicPrefixArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualCircuitsVirtualCircuitPublicPrefix] {
+	return pulumix.Output[[]GetVirtualCircuitsVirtualCircuitPublicPrefix]{
+		OutputState: i.ToGetVirtualCircuitsVirtualCircuitPublicPrefixArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVirtualCircuitsVirtualCircuitPublicPrefixOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualCircuitsVirtualCircuitPublicPrefixOutput) ElementType() reflect.Type {
@@ -15519,6 +18340,12 @@ func (o GetVirtualCircuitsVirtualCircuitPublicPrefixOutput) ToGetVirtualCircuits
 
 func (o GetVirtualCircuitsVirtualCircuitPublicPrefixOutput) ToGetVirtualCircuitsVirtualCircuitPublicPrefixOutputWithContext(ctx context.Context) GetVirtualCircuitsVirtualCircuitPublicPrefixOutput {
 	return o
+}
+
+func (o GetVirtualCircuitsVirtualCircuitPublicPrefixOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualCircuitsVirtualCircuitPublicPrefix] {
+	return pulumix.Output[GetVirtualCircuitsVirtualCircuitPublicPrefix]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVirtualCircuitsVirtualCircuitPublicPrefixOutput) CidrBlock() pulumi.StringOutput {
@@ -15537,6 +18364,12 @@ func (o GetVirtualCircuitsVirtualCircuitPublicPrefixArrayOutput) ToGetVirtualCir
 
 func (o GetVirtualCircuitsVirtualCircuitPublicPrefixArrayOutput) ToGetVirtualCircuitsVirtualCircuitPublicPrefixArrayOutputWithContext(ctx context.Context) GetVirtualCircuitsVirtualCircuitPublicPrefixArrayOutput {
 	return o
+}
+
+func (o GetVirtualCircuitsVirtualCircuitPublicPrefixArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualCircuitsVirtualCircuitPublicPrefix] {
+	return pulumix.Output[[]GetVirtualCircuitsVirtualCircuitPublicPrefix]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVirtualCircuitsVirtualCircuitPublicPrefixArrayOutput) Index(i pulumi.IntInput) GetVirtualCircuitsVirtualCircuitPublicPrefixOutput {
@@ -15580,6 +18413,12 @@ func (i GetVirtualNetworksFilterArgs) ToGetVirtualNetworksFilterOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNetworksFilterOutput)
 }
 
+func (i GetVirtualNetworksFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNetworksFilter] {
+	return pulumix.Output[GetVirtualNetworksFilter]{
+		OutputState: i.ToGetVirtualNetworksFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVirtualNetworksFilterArrayInput is an input type that accepts GetVirtualNetworksFilterArray and GetVirtualNetworksFilterArrayOutput values.
 // You can construct a concrete instance of `GetVirtualNetworksFilterArrayInput` via:
 //
@@ -15605,6 +18444,12 @@ func (i GetVirtualNetworksFilterArray) ToGetVirtualNetworksFilterArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNetworksFilterArrayOutput)
 }
 
+func (i GetVirtualNetworksFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNetworksFilter] {
+	return pulumix.Output[[]GetVirtualNetworksFilter]{
+		OutputState: i.ToGetVirtualNetworksFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVirtualNetworksFilterOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualNetworksFilterOutput) ElementType() reflect.Type {
@@ -15617,6 +18462,12 @@ func (o GetVirtualNetworksFilterOutput) ToGetVirtualNetworksFilterOutput() GetVi
 
 func (o GetVirtualNetworksFilterOutput) ToGetVirtualNetworksFilterOutputWithContext(ctx context.Context) GetVirtualNetworksFilterOutput {
 	return o
+}
+
+func (o GetVirtualNetworksFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNetworksFilter] {
+	return pulumix.Output[GetVirtualNetworksFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVirtualNetworksFilterOutput) Name() pulumi.StringOutput {
@@ -15643,6 +18494,12 @@ func (o GetVirtualNetworksFilterArrayOutput) ToGetVirtualNetworksFilterArrayOutp
 
 func (o GetVirtualNetworksFilterArrayOutput) ToGetVirtualNetworksFilterArrayOutputWithContext(ctx context.Context) GetVirtualNetworksFilterArrayOutput {
 	return o
+}
+
+func (o GetVirtualNetworksFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNetworksFilter] {
+	return pulumix.Output[[]GetVirtualNetworksFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVirtualNetworksFilterArrayOutput) Index(i pulumi.IntInput) GetVirtualNetworksFilterOutput {
@@ -15720,6 +18577,12 @@ func (i GetVirtualNetworksVirtualNetworkArgs) ToGetVirtualNetworksVirtualNetwork
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNetworksVirtualNetworkOutput)
 }
 
+func (i GetVirtualNetworksVirtualNetworkArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNetworksVirtualNetwork] {
+	return pulumix.Output[GetVirtualNetworksVirtualNetwork]{
+		OutputState: i.ToGetVirtualNetworksVirtualNetworkOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVirtualNetworksVirtualNetworkArrayInput is an input type that accepts GetVirtualNetworksVirtualNetworkArray and GetVirtualNetworksVirtualNetworkArrayOutput values.
 // You can construct a concrete instance of `GetVirtualNetworksVirtualNetworkArrayInput` via:
 //
@@ -15745,6 +18608,12 @@ func (i GetVirtualNetworksVirtualNetworkArray) ToGetVirtualNetworksVirtualNetwor
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNetworksVirtualNetworkArrayOutput)
 }
 
+func (i GetVirtualNetworksVirtualNetworkArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNetworksVirtualNetwork] {
+	return pulumix.Output[[]GetVirtualNetworksVirtualNetwork]{
+		OutputState: i.ToGetVirtualNetworksVirtualNetworkArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVirtualNetworksVirtualNetworkOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualNetworksVirtualNetworkOutput) ElementType() reflect.Type {
@@ -15757,6 +18626,12 @@ func (o GetVirtualNetworksVirtualNetworkOutput) ToGetVirtualNetworksVirtualNetwo
 
 func (o GetVirtualNetworksVirtualNetworkOutput) ToGetVirtualNetworksVirtualNetworkOutputWithContext(ctx context.Context) GetVirtualNetworksVirtualNetworkOutput {
 	return o
+}
+
+func (o GetVirtualNetworksVirtualNetworkOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNetworksVirtualNetwork] {
+	return pulumix.Output[GetVirtualNetworksVirtualNetwork]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVirtualNetworksVirtualNetworkOutput) Byoipv6cidrBlocks() pulumi.StringArrayOutput {
@@ -15855,6 +18730,12 @@ func (o GetVirtualNetworksVirtualNetworkArrayOutput) ToGetVirtualNetworksVirtual
 	return o
 }
 
+func (o GetVirtualNetworksVirtualNetworkArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNetworksVirtualNetwork] {
+	return pulumix.Output[[]GetVirtualNetworksVirtualNetwork]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetVirtualNetworksVirtualNetworkArrayOutput) Index(i pulumi.IntInput) GetVirtualNetworksVirtualNetworkOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualNetworksVirtualNetwork {
 		return vs[0].([]GetVirtualNetworksVirtualNetwork)[vs[1].(int)]
@@ -15894,6 +18775,12 @@ func (i GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArgs) ToGetVirtualNetwo
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNetworksVirtualNetworkByoipv6cidrDetailOutput)
 }
 
+func (i GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNetworksVirtualNetworkByoipv6cidrDetail] {
+	return pulumix.Output[GetVirtualNetworksVirtualNetworkByoipv6cidrDetail]{
+		OutputState: i.ToGetVirtualNetworksVirtualNetworkByoipv6cidrDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArrayInput is an input type that accepts GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArray and GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArrayOutput values.
 // You can construct a concrete instance of `GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArrayInput` via:
 //
@@ -15919,6 +18806,12 @@ func (i GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArray) ToGetVirtualNetw
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArrayOutput)
 }
 
+func (i GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNetworksVirtualNetworkByoipv6cidrDetail] {
+	return pulumix.Output[[]GetVirtualNetworksVirtualNetworkByoipv6cidrDetail]{
+		OutputState: i.ToGetVirtualNetworksVirtualNetworkByoipv6cidrDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVirtualNetworksVirtualNetworkByoipv6cidrDetailOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualNetworksVirtualNetworkByoipv6cidrDetailOutput) ElementType() reflect.Type {
@@ -15931,6 +18824,12 @@ func (o GetVirtualNetworksVirtualNetworkByoipv6cidrDetailOutput) ToGetVirtualNet
 
 func (o GetVirtualNetworksVirtualNetworkByoipv6cidrDetailOutput) ToGetVirtualNetworksVirtualNetworkByoipv6cidrDetailOutputWithContext(ctx context.Context) GetVirtualNetworksVirtualNetworkByoipv6cidrDetailOutput {
 	return o
+}
+
+func (o GetVirtualNetworksVirtualNetworkByoipv6cidrDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNetworksVirtualNetworkByoipv6cidrDetail] {
+	return pulumix.Output[GetVirtualNetworksVirtualNetworkByoipv6cidrDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVirtualNetworksVirtualNetworkByoipv6cidrDetailOutput) Byoipv6rangeId() pulumi.StringOutput {
@@ -15953,6 +18852,12 @@ func (o GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArrayOutput) ToGetVirtu
 
 func (o GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArrayOutput) ToGetVirtualNetworksVirtualNetworkByoipv6cidrDetailArrayOutputWithContext(ctx context.Context) GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArrayOutput {
 	return o
+}
+
+func (o GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNetworksVirtualNetworkByoipv6cidrDetail] {
+	return pulumix.Output[[]GetVirtualNetworksVirtualNetworkByoipv6cidrDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVirtualNetworksVirtualNetworkByoipv6cidrDetailArrayOutput) Index(i pulumi.IntInput) GetVirtualNetworksVirtualNetworkByoipv6cidrDetailOutput {
@@ -15996,6 +18901,12 @@ func (i GetVlansFilterArgs) ToGetVlansFilterOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetVlansFilterOutput)
 }
 
+func (i GetVlansFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVlansFilter] {
+	return pulumix.Output[GetVlansFilter]{
+		OutputState: i.ToGetVlansFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVlansFilterArrayInput is an input type that accepts GetVlansFilterArray and GetVlansFilterArrayOutput values.
 // You can construct a concrete instance of `GetVlansFilterArrayInput` via:
 //
@@ -16021,6 +18932,12 @@ func (i GetVlansFilterArray) ToGetVlansFilterArrayOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetVlansFilterArrayOutput)
 }
 
+func (i GetVlansFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVlansFilter] {
+	return pulumix.Output[[]GetVlansFilter]{
+		OutputState: i.ToGetVlansFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVlansFilterOutput struct{ *pulumi.OutputState }
 
 func (GetVlansFilterOutput) ElementType() reflect.Type {
@@ -16033,6 +18950,12 @@ func (o GetVlansFilterOutput) ToGetVlansFilterOutput() GetVlansFilterOutput {
 
 func (o GetVlansFilterOutput) ToGetVlansFilterOutputWithContext(ctx context.Context) GetVlansFilterOutput {
 	return o
+}
+
+func (o GetVlansFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVlansFilter] {
+	return pulumix.Output[GetVlansFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVlansFilterOutput) Name() pulumi.StringOutput {
@@ -16059,6 +18982,12 @@ func (o GetVlansFilterArrayOutput) ToGetVlansFilterArrayOutput() GetVlansFilterA
 
 func (o GetVlansFilterArrayOutput) ToGetVlansFilterArrayOutputWithContext(ctx context.Context) GetVlansFilterArrayOutput {
 	return o
+}
+
+func (o GetVlansFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVlansFilter] {
+	return pulumix.Output[[]GetVlansFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVlansFilterArrayOutput) Index(i pulumi.IntInput) GetVlansFilterOutput {
@@ -16148,6 +19077,12 @@ func (i GetVlansVlanArgs) ToGetVlansVlanOutputWithContext(ctx context.Context) G
 	return pulumi.ToOutputWithContext(ctx, i).(GetVlansVlanOutput)
 }
 
+func (i GetVlansVlanArgs) ToOutput(ctx context.Context) pulumix.Output[GetVlansVlan] {
+	return pulumix.Output[GetVlansVlan]{
+		OutputState: i.ToGetVlansVlanOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVlansVlanArrayInput is an input type that accepts GetVlansVlanArray and GetVlansVlanArrayOutput values.
 // You can construct a concrete instance of `GetVlansVlanArrayInput` via:
 //
@@ -16173,6 +19108,12 @@ func (i GetVlansVlanArray) ToGetVlansVlanArrayOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetVlansVlanArrayOutput)
 }
 
+func (i GetVlansVlanArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVlansVlan] {
+	return pulumix.Output[[]GetVlansVlan]{
+		OutputState: i.ToGetVlansVlanArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVlansVlanOutput struct{ *pulumi.OutputState }
 
 func (GetVlansVlanOutput) ElementType() reflect.Type {
@@ -16185,6 +19126,12 @@ func (o GetVlansVlanOutput) ToGetVlansVlanOutput() GetVlansVlanOutput {
 
 func (o GetVlansVlanOutput) ToGetVlansVlanOutputWithContext(ctx context.Context) GetVlansVlanOutput {
 	return o
+}
+
+func (o GetVlansVlanOutput) ToOutput(ctx context.Context) pulumix.Output[GetVlansVlan] {
+	return pulumix.Output[GetVlansVlan]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The VLAN's availability domain. This attribute will be null if this is a regional VLAN rather than an AD-specific VLAN.  Example: `Uocm:PHX-AD-1`
@@ -16266,6 +19213,12 @@ func (o GetVlansVlanArrayOutput) ToGetVlansVlanArrayOutputWithContext(ctx contex
 	return o
 }
 
+func (o GetVlansVlanArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVlansVlan] {
+	return pulumix.Output[[]GetVlansVlan]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetVlansVlanArrayOutput) Index(i pulumi.IntInput) GetVlansVlanOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVlansVlan {
 		return vs[0].([]GetVlansVlan)[vs[1].(int)]
@@ -16307,6 +19260,12 @@ func (i GetVnicAttachmentsFilterArgs) ToGetVnicAttachmentsFilterOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetVnicAttachmentsFilterOutput)
 }
 
+func (i GetVnicAttachmentsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVnicAttachmentsFilter] {
+	return pulumix.Output[GetVnicAttachmentsFilter]{
+		OutputState: i.ToGetVnicAttachmentsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVnicAttachmentsFilterArrayInput is an input type that accepts GetVnicAttachmentsFilterArray and GetVnicAttachmentsFilterArrayOutput values.
 // You can construct a concrete instance of `GetVnicAttachmentsFilterArrayInput` via:
 //
@@ -16332,6 +19291,12 @@ func (i GetVnicAttachmentsFilterArray) ToGetVnicAttachmentsFilterArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetVnicAttachmentsFilterArrayOutput)
 }
 
+func (i GetVnicAttachmentsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVnicAttachmentsFilter] {
+	return pulumix.Output[[]GetVnicAttachmentsFilter]{
+		OutputState: i.ToGetVnicAttachmentsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVnicAttachmentsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetVnicAttachmentsFilterOutput) ElementType() reflect.Type {
@@ -16344,6 +19309,12 @@ func (o GetVnicAttachmentsFilterOutput) ToGetVnicAttachmentsFilterOutput() GetVn
 
 func (o GetVnicAttachmentsFilterOutput) ToGetVnicAttachmentsFilterOutputWithContext(ctx context.Context) GetVnicAttachmentsFilterOutput {
 	return o
+}
+
+func (o GetVnicAttachmentsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVnicAttachmentsFilter] {
+	return pulumix.Output[GetVnicAttachmentsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVnicAttachmentsFilterOutput) Name() pulumi.StringOutput {
@@ -16370,6 +19341,12 @@ func (o GetVnicAttachmentsFilterArrayOutput) ToGetVnicAttachmentsFilterArrayOutp
 
 func (o GetVnicAttachmentsFilterArrayOutput) ToGetVnicAttachmentsFilterArrayOutputWithContext(ctx context.Context) GetVnicAttachmentsFilterArrayOutput {
 	return o
+}
+
+func (o GetVnicAttachmentsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVnicAttachmentsFilter] {
+	return pulumix.Output[[]GetVnicAttachmentsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVnicAttachmentsFilterArrayOutput) Index(i pulumi.IntInput) GetVnicAttachmentsFilterOutput {
@@ -16457,6 +19434,12 @@ func (i GetVnicAttachmentsVnicAttachmentArgs) ToGetVnicAttachmentsVnicAttachment
 	return pulumi.ToOutputWithContext(ctx, i).(GetVnicAttachmentsVnicAttachmentOutput)
 }
 
+func (i GetVnicAttachmentsVnicAttachmentArgs) ToOutput(ctx context.Context) pulumix.Output[GetVnicAttachmentsVnicAttachment] {
+	return pulumix.Output[GetVnicAttachmentsVnicAttachment]{
+		OutputState: i.ToGetVnicAttachmentsVnicAttachmentOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVnicAttachmentsVnicAttachmentArrayInput is an input type that accepts GetVnicAttachmentsVnicAttachmentArray and GetVnicAttachmentsVnicAttachmentArrayOutput values.
 // You can construct a concrete instance of `GetVnicAttachmentsVnicAttachmentArrayInput` via:
 //
@@ -16482,6 +19465,12 @@ func (i GetVnicAttachmentsVnicAttachmentArray) ToGetVnicAttachmentsVnicAttachmen
 	return pulumi.ToOutputWithContext(ctx, i).(GetVnicAttachmentsVnicAttachmentArrayOutput)
 }
 
+func (i GetVnicAttachmentsVnicAttachmentArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVnicAttachmentsVnicAttachment] {
+	return pulumix.Output[[]GetVnicAttachmentsVnicAttachment]{
+		OutputState: i.ToGetVnicAttachmentsVnicAttachmentArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVnicAttachmentsVnicAttachmentOutput struct{ *pulumi.OutputState }
 
 func (GetVnicAttachmentsVnicAttachmentOutput) ElementType() reflect.Type {
@@ -16494,6 +19483,12 @@ func (o GetVnicAttachmentsVnicAttachmentOutput) ToGetVnicAttachmentsVnicAttachme
 
 func (o GetVnicAttachmentsVnicAttachmentOutput) ToGetVnicAttachmentsVnicAttachmentOutputWithContext(ctx context.Context) GetVnicAttachmentsVnicAttachmentOutput {
 	return o
+}
+
+func (o GetVnicAttachmentsVnicAttachmentOutput) ToOutput(ctx context.Context) pulumix.Output[GetVnicAttachmentsVnicAttachment] {
+	return pulumix.Output[GetVnicAttachmentsVnicAttachment]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -16576,6 +19571,12 @@ func (o GetVnicAttachmentsVnicAttachmentArrayOutput) ToGetVnicAttachmentsVnicAtt
 	return o
 }
 
+func (o GetVnicAttachmentsVnicAttachmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVnicAttachmentsVnicAttachment] {
+	return pulumix.Output[[]GetVnicAttachmentsVnicAttachment]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetVnicAttachmentsVnicAttachmentArrayOutput) Index(i pulumi.IntInput) GetVnicAttachmentsVnicAttachmentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVnicAttachmentsVnicAttachment {
 		return vs[0].([]GetVnicAttachmentsVnicAttachment)[vs[1].(int)]
@@ -16643,6 +19644,12 @@ func (i GetVnicAttachmentsVnicAttachmentCreateVnicDetailArgs) ToGetVnicAttachmen
 	return pulumi.ToOutputWithContext(ctx, i).(GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput)
 }
 
+func (i GetVnicAttachmentsVnicAttachmentCreateVnicDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetVnicAttachmentsVnicAttachmentCreateVnicDetail] {
+	return pulumix.Output[GetVnicAttachmentsVnicAttachmentCreateVnicDetail]{
+		OutputState: i.ToGetVnicAttachmentsVnicAttachmentCreateVnicDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVnicAttachmentsVnicAttachmentCreateVnicDetailArrayInput is an input type that accepts GetVnicAttachmentsVnicAttachmentCreateVnicDetailArray and GetVnicAttachmentsVnicAttachmentCreateVnicDetailArrayOutput values.
 // You can construct a concrete instance of `GetVnicAttachmentsVnicAttachmentCreateVnicDetailArrayInput` via:
 //
@@ -16668,6 +19675,12 @@ func (i GetVnicAttachmentsVnicAttachmentCreateVnicDetailArray) ToGetVnicAttachme
 	return pulumi.ToOutputWithContext(ctx, i).(GetVnicAttachmentsVnicAttachmentCreateVnicDetailArrayOutput)
 }
 
+func (i GetVnicAttachmentsVnicAttachmentCreateVnicDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVnicAttachmentsVnicAttachmentCreateVnicDetail] {
+	return pulumix.Output[[]GetVnicAttachmentsVnicAttachmentCreateVnicDetail]{
+		OutputState: i.ToGetVnicAttachmentsVnicAttachmentCreateVnicDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput struct{ *pulumi.OutputState }
 
 func (GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput) ElementType() reflect.Type {
@@ -16680,6 +19693,12 @@ func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput) ToGetVnicAttachm
 
 func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput) ToGetVnicAttachmentsVnicAttachmentCreateVnicDetailOutputWithContext(ctx context.Context) GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput {
 	return o
+}
+
+func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetVnicAttachmentsVnicAttachmentCreateVnicDetail] {
+	return pulumix.Output[GetVnicAttachmentsVnicAttachmentCreateVnicDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput) AssignIpv6ip() pulumi.BoolOutput {
@@ -16753,6 +19772,12 @@ func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailArrayOutput) ToGetVnicAt
 	return o
 }
 
+func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVnicAttachmentsVnicAttachmentCreateVnicDetail] {
+	return pulumix.Output[[]GetVnicAttachmentsVnicAttachmentCreateVnicDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailArrayOutput) Index(i pulumi.IntInput) GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVnicAttachmentsVnicAttachmentCreateVnicDetail {
 		return vs[0].([]GetVnicAttachmentsVnicAttachmentCreateVnicDetail)[vs[1].(int)]
@@ -16792,6 +19817,12 @@ func (i GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCid
 	return pulumi.ToOutputWithContext(ctx, i).(GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput)
 }
 
+func (i GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail] {
+	return pulumix.Output[GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail]{
+		OutputState: i.ToGetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayInput is an input type that accepts GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray and GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput values.
 // You can construct a concrete instance of `GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayInput` via:
 //
@@ -16817,6 +19848,12 @@ func (i GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCid
 	return pulumi.ToOutputWithContext(ctx, i).(GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput)
 }
 
+func (i GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail] {
+	return pulumix.Output[[]GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail]{
+		OutputState: i.ToGetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput struct{ *pulumi.OutputState }
 
 func (GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) ElementType() reflect.Type {
@@ -16829,6 +19866,12 @@ func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCid
 
 func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) ToGetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutputWithContext(ctx context.Context) GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput {
 	return o
+}
+
+func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail] {
+	return pulumix.Output[GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6Address() pulumi.StringOutput {
@@ -16855,6 +19898,12 @@ func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCid
 
 func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput) ToGetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(ctx context.Context) GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput {
 	return o
+}
+
+func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail] {
+	return pulumix.Output[[]GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput) Index(i pulumi.IntInput) GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput {
@@ -16898,6 +19947,12 @@ func (i GetVolumeAttachmentsFilterArgs) ToGetVolumeAttachmentsFilterOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeAttachmentsFilterOutput)
 }
 
+func (i GetVolumeAttachmentsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVolumeAttachmentsFilter] {
+	return pulumix.Output[GetVolumeAttachmentsFilter]{
+		OutputState: i.ToGetVolumeAttachmentsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVolumeAttachmentsFilterArrayInput is an input type that accepts GetVolumeAttachmentsFilterArray and GetVolumeAttachmentsFilterArrayOutput values.
 // You can construct a concrete instance of `GetVolumeAttachmentsFilterArrayInput` via:
 //
@@ -16923,6 +19978,12 @@ func (i GetVolumeAttachmentsFilterArray) ToGetVolumeAttachmentsFilterArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeAttachmentsFilterArrayOutput)
 }
 
+func (i GetVolumeAttachmentsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumeAttachmentsFilter] {
+	return pulumix.Output[[]GetVolumeAttachmentsFilter]{
+		OutputState: i.ToGetVolumeAttachmentsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVolumeAttachmentsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetVolumeAttachmentsFilterOutput) ElementType() reflect.Type {
@@ -16935,6 +19996,12 @@ func (o GetVolumeAttachmentsFilterOutput) ToGetVolumeAttachmentsFilterOutput() G
 
 func (o GetVolumeAttachmentsFilterOutput) ToGetVolumeAttachmentsFilterOutputWithContext(ctx context.Context) GetVolumeAttachmentsFilterOutput {
 	return o
+}
+
+func (o GetVolumeAttachmentsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVolumeAttachmentsFilter] {
+	return pulumix.Output[GetVolumeAttachmentsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVolumeAttachmentsFilterOutput) Name() pulumi.StringOutput {
@@ -16961,6 +20028,12 @@ func (o GetVolumeAttachmentsFilterArrayOutput) ToGetVolumeAttachmentsFilterArray
 
 func (o GetVolumeAttachmentsFilterArrayOutput) ToGetVolumeAttachmentsFilterArrayOutputWithContext(ctx context.Context) GetVolumeAttachmentsFilterArrayOutput {
 	return o
+}
+
+func (o GetVolumeAttachmentsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumeAttachmentsFilter] {
+	return pulumix.Output[[]GetVolumeAttachmentsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVolumeAttachmentsFilterArrayOutput) Index(i pulumi.IntInput) GetVolumeAttachmentsFilterOutput {
@@ -17094,6 +20167,12 @@ func (i GetVolumeAttachmentsVolumeAttachmentArgs) ToGetVolumeAttachmentsVolumeAt
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeAttachmentsVolumeAttachmentOutput)
 }
 
+func (i GetVolumeAttachmentsVolumeAttachmentArgs) ToOutput(ctx context.Context) pulumix.Output[GetVolumeAttachmentsVolumeAttachment] {
+	return pulumix.Output[GetVolumeAttachmentsVolumeAttachment]{
+		OutputState: i.ToGetVolumeAttachmentsVolumeAttachmentOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVolumeAttachmentsVolumeAttachmentArrayInput is an input type that accepts GetVolumeAttachmentsVolumeAttachmentArray and GetVolumeAttachmentsVolumeAttachmentArrayOutput values.
 // You can construct a concrete instance of `GetVolumeAttachmentsVolumeAttachmentArrayInput` via:
 //
@@ -17119,6 +20198,12 @@ func (i GetVolumeAttachmentsVolumeAttachmentArray) ToGetVolumeAttachmentsVolumeA
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeAttachmentsVolumeAttachmentArrayOutput)
 }
 
+func (i GetVolumeAttachmentsVolumeAttachmentArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumeAttachmentsVolumeAttachment] {
+	return pulumix.Output[[]GetVolumeAttachmentsVolumeAttachment]{
+		OutputState: i.ToGetVolumeAttachmentsVolumeAttachmentArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVolumeAttachmentsVolumeAttachmentOutput struct{ *pulumi.OutputState }
 
 func (GetVolumeAttachmentsVolumeAttachmentOutput) ElementType() reflect.Type {
@@ -17131,6 +20216,12 @@ func (o GetVolumeAttachmentsVolumeAttachmentOutput) ToGetVolumeAttachmentsVolume
 
 func (o GetVolumeAttachmentsVolumeAttachmentOutput) ToGetVolumeAttachmentsVolumeAttachmentOutputWithContext(ctx context.Context) GetVolumeAttachmentsVolumeAttachmentOutput {
 	return o
+}
+
+func (o GetVolumeAttachmentsVolumeAttachmentOutput) ToOutput(ctx context.Context) pulumix.Output[GetVolumeAttachmentsVolumeAttachment] {
+	return pulumix.Output[GetVolumeAttachmentsVolumeAttachment]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The type of volume attachment.
@@ -17269,6 +20360,12 @@ func (o GetVolumeAttachmentsVolumeAttachmentArrayOutput) ToGetVolumeAttachmentsV
 	return o
 }
 
+func (o GetVolumeAttachmentsVolumeAttachmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumeAttachmentsVolumeAttachment] {
+	return pulumix.Output[[]GetVolumeAttachmentsVolumeAttachment]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetVolumeAttachmentsVolumeAttachmentArrayOutput) Index(i pulumi.IntInput) GetVolumeAttachmentsVolumeAttachmentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVolumeAttachmentsVolumeAttachment {
 		return vs[0].([]GetVolumeAttachmentsVolumeAttachment)[vs[1].(int)]
@@ -17316,6 +20413,12 @@ func (i GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArgs) ToGetVolumeAtta
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeAttachmentsVolumeAttachmentMultipathDeviceOutput)
 }
 
+func (i GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArgs) ToOutput(ctx context.Context) pulumix.Output[GetVolumeAttachmentsVolumeAttachmentMultipathDevice] {
+	return pulumix.Output[GetVolumeAttachmentsVolumeAttachmentMultipathDevice]{
+		OutputState: i.ToGetVolumeAttachmentsVolumeAttachmentMultipathDeviceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArrayInput is an input type that accepts GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArray and GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArrayOutput values.
 // You can construct a concrete instance of `GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArrayInput` via:
 //
@@ -17341,6 +20444,12 @@ func (i GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArray) ToGetVolumeAtt
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArrayOutput)
 }
 
+func (i GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumeAttachmentsVolumeAttachmentMultipathDevice] {
+	return pulumix.Output[[]GetVolumeAttachmentsVolumeAttachmentMultipathDevice]{
+		OutputState: i.ToGetVolumeAttachmentsVolumeAttachmentMultipathDeviceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVolumeAttachmentsVolumeAttachmentMultipathDeviceOutput struct{ *pulumi.OutputState }
 
 func (GetVolumeAttachmentsVolumeAttachmentMultipathDeviceOutput) ElementType() reflect.Type {
@@ -17353,6 +20462,12 @@ func (o GetVolumeAttachmentsVolumeAttachmentMultipathDeviceOutput) ToGetVolumeAt
 
 func (o GetVolumeAttachmentsVolumeAttachmentMultipathDeviceOutput) ToGetVolumeAttachmentsVolumeAttachmentMultipathDeviceOutputWithContext(ctx context.Context) GetVolumeAttachmentsVolumeAttachmentMultipathDeviceOutput {
 	return o
+}
+
+func (o GetVolumeAttachmentsVolumeAttachmentMultipathDeviceOutput) ToOutput(ctx context.Context) pulumix.Output[GetVolumeAttachmentsVolumeAttachmentMultipathDevice] {
+	return pulumix.Output[GetVolumeAttachmentsVolumeAttachmentMultipathDevice]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The volume's iSCSI IP address.  Example: `169.254.2.2`
@@ -17382,6 +20497,12 @@ func (o GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArrayOutput) ToGetVol
 
 func (o GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArrayOutput) ToGetVolumeAttachmentsVolumeAttachmentMultipathDeviceArrayOutputWithContext(ctx context.Context) GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArrayOutput {
 	return o
+}
+
+func (o GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumeAttachmentsVolumeAttachmentMultipathDevice] {
+	return pulumix.Output[[]GetVolumeAttachmentsVolumeAttachmentMultipathDevice]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVolumeAttachmentsVolumeAttachmentMultipathDeviceArrayOutput) Index(i pulumi.IntInput) GetVolumeAttachmentsVolumeAttachmentMultipathDeviceOutput {
@@ -17427,6 +20548,12 @@ func (i GetVolumeAutotunePolicyArgs) ToGetVolumeAutotunePolicyOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeAutotunePolicyOutput)
 }
 
+func (i GetVolumeAutotunePolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetVolumeAutotunePolicy] {
+	return pulumix.Output[GetVolumeAutotunePolicy]{
+		OutputState: i.ToGetVolumeAutotunePolicyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVolumeAutotunePolicyArrayInput is an input type that accepts GetVolumeAutotunePolicyArray and GetVolumeAutotunePolicyArrayOutput values.
 // You can construct a concrete instance of `GetVolumeAutotunePolicyArrayInput` via:
 //
@@ -17452,6 +20579,12 @@ func (i GetVolumeAutotunePolicyArray) ToGetVolumeAutotunePolicyArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeAutotunePolicyArrayOutput)
 }
 
+func (i GetVolumeAutotunePolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumeAutotunePolicy] {
+	return pulumix.Output[[]GetVolumeAutotunePolicy]{
+		OutputState: i.ToGetVolumeAutotunePolicyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVolumeAutotunePolicyOutput struct{ *pulumi.OutputState }
 
 func (GetVolumeAutotunePolicyOutput) ElementType() reflect.Type {
@@ -17464,6 +20597,12 @@ func (o GetVolumeAutotunePolicyOutput) ToGetVolumeAutotunePolicyOutput() GetVolu
 
 func (o GetVolumeAutotunePolicyOutput) ToGetVolumeAutotunePolicyOutputWithContext(ctx context.Context) GetVolumeAutotunePolicyOutput {
 	return o
+}
+
+func (o GetVolumeAutotunePolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetVolumeAutotunePolicy] {
+	return pulumix.Output[GetVolumeAutotunePolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 // This specifies the type of autotunes supported by OCI.
@@ -17488,6 +20627,12 @@ func (o GetVolumeAutotunePolicyArrayOutput) ToGetVolumeAutotunePolicyArrayOutput
 
 func (o GetVolumeAutotunePolicyArrayOutput) ToGetVolumeAutotunePolicyArrayOutputWithContext(ctx context.Context) GetVolumeAutotunePolicyArrayOutput {
 	return o
+}
+
+func (o GetVolumeAutotunePolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumeAutotunePolicy] {
+	return pulumix.Output[[]GetVolumeAutotunePolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVolumeAutotunePolicyArrayOutput) Index(i pulumi.IntInput) GetVolumeAutotunePolicyOutput {
@@ -17531,6 +20676,12 @@ func (i GetVolumeBackupPoliciesFilterArgs) ToGetVolumeBackupPoliciesFilterOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeBackupPoliciesFilterOutput)
 }
 
+func (i GetVolumeBackupPoliciesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVolumeBackupPoliciesFilter] {
+	return pulumix.Output[GetVolumeBackupPoliciesFilter]{
+		OutputState: i.ToGetVolumeBackupPoliciesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVolumeBackupPoliciesFilterArrayInput is an input type that accepts GetVolumeBackupPoliciesFilterArray and GetVolumeBackupPoliciesFilterArrayOutput values.
 // You can construct a concrete instance of `GetVolumeBackupPoliciesFilterArrayInput` via:
 //
@@ -17556,6 +20707,12 @@ func (i GetVolumeBackupPoliciesFilterArray) ToGetVolumeBackupPoliciesFilterArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeBackupPoliciesFilterArrayOutput)
 }
 
+func (i GetVolumeBackupPoliciesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumeBackupPoliciesFilter] {
+	return pulumix.Output[[]GetVolumeBackupPoliciesFilter]{
+		OutputState: i.ToGetVolumeBackupPoliciesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVolumeBackupPoliciesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetVolumeBackupPoliciesFilterOutput) ElementType() reflect.Type {
@@ -17568,6 +20725,12 @@ func (o GetVolumeBackupPoliciesFilterOutput) ToGetVolumeBackupPoliciesFilterOutp
 
 func (o GetVolumeBackupPoliciesFilterOutput) ToGetVolumeBackupPoliciesFilterOutputWithContext(ctx context.Context) GetVolumeBackupPoliciesFilterOutput {
 	return o
+}
+
+func (o GetVolumeBackupPoliciesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVolumeBackupPoliciesFilter] {
+	return pulumix.Output[GetVolumeBackupPoliciesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVolumeBackupPoliciesFilterOutput) Name() pulumi.StringOutput {
@@ -17594,6 +20757,12 @@ func (o GetVolumeBackupPoliciesFilterArrayOutput) ToGetVolumeBackupPoliciesFilte
 
 func (o GetVolumeBackupPoliciesFilterArrayOutput) ToGetVolumeBackupPoliciesFilterArrayOutputWithContext(ctx context.Context) GetVolumeBackupPoliciesFilterArrayOutput {
 	return o
+}
+
+func (o GetVolumeBackupPoliciesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumeBackupPoliciesFilter] {
+	return pulumix.Output[[]GetVolumeBackupPoliciesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVolumeBackupPoliciesFilterArrayOutput) Index(i pulumi.IntInput) GetVolumeBackupPoliciesFilterOutput {
@@ -17663,6 +20832,12 @@ func (i GetVolumeBackupPoliciesVolumeBackupPolicyArgs) ToGetVolumeBackupPolicies
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeBackupPoliciesVolumeBackupPolicyOutput)
 }
 
+func (i GetVolumeBackupPoliciesVolumeBackupPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetVolumeBackupPoliciesVolumeBackupPolicy] {
+	return pulumix.Output[GetVolumeBackupPoliciesVolumeBackupPolicy]{
+		OutputState: i.ToGetVolumeBackupPoliciesVolumeBackupPolicyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVolumeBackupPoliciesVolumeBackupPolicyArrayInput is an input type that accepts GetVolumeBackupPoliciesVolumeBackupPolicyArray and GetVolumeBackupPoliciesVolumeBackupPolicyArrayOutput values.
 // You can construct a concrete instance of `GetVolumeBackupPoliciesVolumeBackupPolicyArrayInput` via:
 //
@@ -17688,6 +20863,12 @@ func (i GetVolumeBackupPoliciesVolumeBackupPolicyArray) ToGetVolumeBackupPolicie
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeBackupPoliciesVolumeBackupPolicyArrayOutput)
 }
 
+func (i GetVolumeBackupPoliciesVolumeBackupPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumeBackupPoliciesVolumeBackupPolicy] {
+	return pulumix.Output[[]GetVolumeBackupPoliciesVolumeBackupPolicy]{
+		OutputState: i.ToGetVolumeBackupPoliciesVolumeBackupPolicyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVolumeBackupPoliciesVolumeBackupPolicyOutput struct{ *pulumi.OutputState }
 
 func (GetVolumeBackupPoliciesVolumeBackupPolicyOutput) ElementType() reflect.Type {
@@ -17700,6 +20881,12 @@ func (o GetVolumeBackupPoliciesVolumeBackupPolicyOutput) ToGetVolumeBackupPolici
 
 func (o GetVolumeBackupPoliciesVolumeBackupPolicyOutput) ToGetVolumeBackupPoliciesVolumeBackupPolicyOutputWithContext(ctx context.Context) GetVolumeBackupPoliciesVolumeBackupPolicyOutput {
 	return o
+}
+
+func (o GetVolumeBackupPoliciesVolumeBackupPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetVolumeBackupPoliciesVolumeBackupPolicy] {
+	return pulumix.Output[GetVolumeBackupPoliciesVolumeBackupPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the compartment. If no compartment is specified, the Oracle defined backup policies are listed.
@@ -17756,6 +20943,12 @@ func (o GetVolumeBackupPoliciesVolumeBackupPolicyArrayOutput) ToGetVolumeBackupP
 
 func (o GetVolumeBackupPoliciesVolumeBackupPolicyArrayOutput) ToGetVolumeBackupPoliciesVolumeBackupPolicyArrayOutputWithContext(ctx context.Context) GetVolumeBackupPoliciesVolumeBackupPolicyArrayOutput {
 	return o
+}
+
+func (o GetVolumeBackupPoliciesVolumeBackupPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumeBackupPoliciesVolumeBackupPolicy] {
+	return pulumix.Output[[]GetVolumeBackupPoliciesVolumeBackupPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVolumeBackupPoliciesVolumeBackupPolicyArrayOutput) Index(i pulumi.IntInput) GetVolumeBackupPoliciesVolumeBackupPolicyOutput {
@@ -17833,6 +21026,12 @@ func (i GetVolumeBackupPoliciesVolumeBackupPolicyScheduleArgs) ToGetVolumeBackup
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeBackupPoliciesVolumeBackupPolicyScheduleOutput)
 }
 
+func (i GetVolumeBackupPoliciesVolumeBackupPolicyScheduleArgs) ToOutput(ctx context.Context) pulumix.Output[GetVolumeBackupPoliciesVolumeBackupPolicySchedule] {
+	return pulumix.Output[GetVolumeBackupPoliciesVolumeBackupPolicySchedule]{
+		OutputState: i.ToGetVolumeBackupPoliciesVolumeBackupPolicyScheduleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVolumeBackupPoliciesVolumeBackupPolicyScheduleArrayInput is an input type that accepts GetVolumeBackupPoliciesVolumeBackupPolicyScheduleArray and GetVolumeBackupPoliciesVolumeBackupPolicyScheduleArrayOutput values.
 // You can construct a concrete instance of `GetVolumeBackupPoliciesVolumeBackupPolicyScheduleArrayInput` via:
 //
@@ -17858,6 +21057,12 @@ func (i GetVolumeBackupPoliciesVolumeBackupPolicyScheduleArray) ToGetVolumeBacku
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeBackupPoliciesVolumeBackupPolicyScheduleArrayOutput)
 }
 
+func (i GetVolumeBackupPoliciesVolumeBackupPolicyScheduleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumeBackupPoliciesVolumeBackupPolicySchedule] {
+	return pulumix.Output[[]GetVolumeBackupPoliciesVolumeBackupPolicySchedule]{
+		OutputState: i.ToGetVolumeBackupPoliciesVolumeBackupPolicyScheduleArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVolumeBackupPoliciesVolumeBackupPolicyScheduleOutput struct{ *pulumi.OutputState }
 
 func (GetVolumeBackupPoliciesVolumeBackupPolicyScheduleOutput) ElementType() reflect.Type {
@@ -17870,6 +21075,12 @@ func (o GetVolumeBackupPoliciesVolumeBackupPolicyScheduleOutput) ToGetVolumeBack
 
 func (o GetVolumeBackupPoliciesVolumeBackupPolicyScheduleOutput) ToGetVolumeBackupPoliciesVolumeBackupPolicyScheduleOutputWithContext(ctx context.Context) GetVolumeBackupPoliciesVolumeBackupPolicyScheduleOutput {
 	return o
+}
+
+func (o GetVolumeBackupPoliciesVolumeBackupPolicyScheduleOutput) ToOutput(ctx context.Context) pulumix.Output[GetVolumeBackupPoliciesVolumeBackupPolicySchedule] {
+	return pulumix.Output[GetVolumeBackupPoliciesVolumeBackupPolicySchedule]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The type of volume backup to create.
@@ -17936,6 +21147,12 @@ func (o GetVolumeBackupPoliciesVolumeBackupPolicyScheduleArrayOutput) ToGetVolum
 	return o
 }
 
+func (o GetVolumeBackupPoliciesVolumeBackupPolicyScheduleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumeBackupPoliciesVolumeBackupPolicySchedule] {
+	return pulumix.Output[[]GetVolumeBackupPoliciesVolumeBackupPolicySchedule]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetVolumeBackupPoliciesVolumeBackupPolicyScheduleArrayOutput) Index(i pulumi.IntInput) GetVolumeBackupPoliciesVolumeBackupPolicyScheduleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVolumeBackupPoliciesVolumeBackupPolicySchedule {
 		return vs[0].([]GetVolumeBackupPoliciesVolumeBackupPolicySchedule)[vs[1].(int)]
@@ -17977,6 +21194,12 @@ func (i GetVolumeBackupPolicyAssignmentsFilterArgs) ToGetVolumeBackupPolicyAssig
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeBackupPolicyAssignmentsFilterOutput)
 }
 
+func (i GetVolumeBackupPolicyAssignmentsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVolumeBackupPolicyAssignmentsFilter] {
+	return pulumix.Output[GetVolumeBackupPolicyAssignmentsFilter]{
+		OutputState: i.ToGetVolumeBackupPolicyAssignmentsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVolumeBackupPolicyAssignmentsFilterArrayInput is an input type that accepts GetVolumeBackupPolicyAssignmentsFilterArray and GetVolumeBackupPolicyAssignmentsFilterArrayOutput values.
 // You can construct a concrete instance of `GetVolumeBackupPolicyAssignmentsFilterArrayInput` via:
 //
@@ -18002,6 +21225,12 @@ func (i GetVolumeBackupPolicyAssignmentsFilterArray) ToGetVolumeBackupPolicyAssi
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeBackupPolicyAssignmentsFilterArrayOutput)
 }
 
+func (i GetVolumeBackupPolicyAssignmentsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumeBackupPolicyAssignmentsFilter] {
+	return pulumix.Output[[]GetVolumeBackupPolicyAssignmentsFilter]{
+		OutputState: i.ToGetVolumeBackupPolicyAssignmentsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVolumeBackupPolicyAssignmentsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetVolumeBackupPolicyAssignmentsFilterOutput) ElementType() reflect.Type {
@@ -18014,6 +21243,12 @@ func (o GetVolumeBackupPolicyAssignmentsFilterOutput) ToGetVolumeBackupPolicyAss
 
 func (o GetVolumeBackupPolicyAssignmentsFilterOutput) ToGetVolumeBackupPolicyAssignmentsFilterOutputWithContext(ctx context.Context) GetVolumeBackupPolicyAssignmentsFilterOutput {
 	return o
+}
+
+func (o GetVolumeBackupPolicyAssignmentsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVolumeBackupPolicyAssignmentsFilter] {
+	return pulumix.Output[GetVolumeBackupPolicyAssignmentsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVolumeBackupPolicyAssignmentsFilterOutput) Name() pulumi.StringOutput {
@@ -18040,6 +21275,12 @@ func (o GetVolumeBackupPolicyAssignmentsFilterArrayOutput) ToGetVolumeBackupPoli
 
 func (o GetVolumeBackupPolicyAssignmentsFilterArrayOutput) ToGetVolumeBackupPolicyAssignmentsFilterArrayOutputWithContext(ctx context.Context) GetVolumeBackupPolicyAssignmentsFilterArrayOutput {
 	return o
+}
+
+func (o GetVolumeBackupPolicyAssignmentsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumeBackupPolicyAssignmentsFilter] {
+	return pulumix.Output[[]GetVolumeBackupPolicyAssignmentsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVolumeBackupPolicyAssignmentsFilterArrayOutput) Index(i pulumi.IntInput) GetVolumeBackupPolicyAssignmentsFilterOutput {
@@ -18093,6 +21334,12 @@ func (i GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignmentArgs) ToGetV
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignmentOutput)
 }
 
+func (i GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignmentArgs) ToOutput(ctx context.Context) pulumix.Output[GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment] {
+	return pulumix.Output[GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment]{
+		OutputState: i.ToGetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignmentOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignmentArrayInput is an input type that accepts GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignmentArray and GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignmentArrayOutput values.
 // You can construct a concrete instance of `GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignmentArrayInput` via:
 //
@@ -18118,6 +21365,12 @@ func (i GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignmentArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignmentArrayOutput)
 }
 
+func (i GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignmentArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment] {
+	return pulumix.Output[[]GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment]{
+		OutputState: i.ToGetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignmentArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignmentOutput struct{ *pulumi.OutputState }
 
 func (GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignmentOutput) ElementType() reflect.Type {
@@ -18130,6 +21383,12 @@ func (o GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignmentOutput) ToGe
 
 func (o GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignmentOutput) ToGetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignmentOutputWithContext(ctx context.Context) GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignmentOutput {
 	return o
+}
+
+func (o GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignmentOutput) ToOutput(ctx context.Context) pulumix.Output[GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment] {
+	return pulumix.Output[GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of an asset (e.g. a volume).
@@ -18164,6 +21423,12 @@ func (o GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignmentArrayOutput)
 
 func (o GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignmentArrayOutput) ToGetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignmentArrayOutputWithContext(ctx context.Context) GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignmentArrayOutput {
 	return o
+}
+
+func (o GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment] {
+	return pulumix.Output[[]GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignmentArrayOutput) Index(i pulumi.IntInput) GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignmentOutput {
@@ -18207,6 +21472,12 @@ func (i GetVolumeBackupsFilterArgs) ToGetVolumeBackupsFilterOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeBackupsFilterOutput)
 }
 
+func (i GetVolumeBackupsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVolumeBackupsFilter] {
+	return pulumix.Output[GetVolumeBackupsFilter]{
+		OutputState: i.ToGetVolumeBackupsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVolumeBackupsFilterArrayInput is an input type that accepts GetVolumeBackupsFilterArray and GetVolumeBackupsFilterArrayOutput values.
 // You can construct a concrete instance of `GetVolumeBackupsFilterArrayInput` via:
 //
@@ -18232,6 +21503,12 @@ func (i GetVolumeBackupsFilterArray) ToGetVolumeBackupsFilterArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeBackupsFilterArrayOutput)
 }
 
+func (i GetVolumeBackupsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumeBackupsFilter] {
+	return pulumix.Output[[]GetVolumeBackupsFilter]{
+		OutputState: i.ToGetVolumeBackupsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVolumeBackupsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetVolumeBackupsFilterOutput) ElementType() reflect.Type {
@@ -18244,6 +21521,12 @@ func (o GetVolumeBackupsFilterOutput) ToGetVolumeBackupsFilterOutput() GetVolume
 
 func (o GetVolumeBackupsFilterOutput) ToGetVolumeBackupsFilterOutputWithContext(ctx context.Context) GetVolumeBackupsFilterOutput {
 	return o
+}
+
+func (o GetVolumeBackupsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVolumeBackupsFilter] {
+	return pulumix.Output[GetVolumeBackupsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVolumeBackupsFilterOutput) Name() pulumi.StringOutput {
@@ -18270,6 +21553,12 @@ func (o GetVolumeBackupsFilterArrayOutput) ToGetVolumeBackupsFilterArrayOutput()
 
 func (o GetVolumeBackupsFilterArrayOutput) ToGetVolumeBackupsFilterArrayOutputWithContext(ctx context.Context) GetVolumeBackupsFilterArrayOutput {
 	return o
+}
+
+func (o GetVolumeBackupsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumeBackupsFilter] {
+	return pulumix.Output[[]GetVolumeBackupsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVolumeBackupsFilterArrayOutput) Index(i pulumi.IntInput) GetVolumeBackupsFilterOutput {
@@ -18393,6 +21682,12 @@ func (i GetVolumeBackupsVolumeBackupArgs) ToGetVolumeBackupsVolumeBackupOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeBackupsVolumeBackupOutput)
 }
 
+func (i GetVolumeBackupsVolumeBackupArgs) ToOutput(ctx context.Context) pulumix.Output[GetVolumeBackupsVolumeBackup] {
+	return pulumix.Output[GetVolumeBackupsVolumeBackup]{
+		OutputState: i.ToGetVolumeBackupsVolumeBackupOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVolumeBackupsVolumeBackupArrayInput is an input type that accepts GetVolumeBackupsVolumeBackupArray and GetVolumeBackupsVolumeBackupArrayOutput values.
 // You can construct a concrete instance of `GetVolumeBackupsVolumeBackupArrayInput` via:
 //
@@ -18418,6 +21713,12 @@ func (i GetVolumeBackupsVolumeBackupArray) ToGetVolumeBackupsVolumeBackupArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeBackupsVolumeBackupArrayOutput)
 }
 
+func (i GetVolumeBackupsVolumeBackupArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumeBackupsVolumeBackup] {
+	return pulumix.Output[[]GetVolumeBackupsVolumeBackup]{
+		OutputState: i.ToGetVolumeBackupsVolumeBackupArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVolumeBackupsVolumeBackupOutput struct{ *pulumi.OutputState }
 
 func (GetVolumeBackupsVolumeBackupOutput) ElementType() reflect.Type {
@@ -18430,6 +21731,12 @@ func (o GetVolumeBackupsVolumeBackupOutput) ToGetVolumeBackupsVolumeBackupOutput
 
 func (o GetVolumeBackupsVolumeBackupOutput) ToGetVolumeBackupsVolumeBackupOutputWithContext(ctx context.Context) GetVolumeBackupsVolumeBackupOutput {
 	return o
+}
+
+func (o GetVolumeBackupsVolumeBackupOutput) ToOutput(ctx context.Context) pulumix.Output[GetVolumeBackupsVolumeBackup] {
+	return pulumix.Output[GetVolumeBackupsVolumeBackup]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -18551,6 +21858,12 @@ func (o GetVolumeBackupsVolumeBackupArrayOutput) ToGetVolumeBackupsVolumeBackupA
 	return o
 }
 
+func (o GetVolumeBackupsVolumeBackupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumeBackupsVolumeBackup] {
+	return pulumix.Output[[]GetVolumeBackupsVolumeBackup]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetVolumeBackupsVolumeBackupArrayOutput) Index(i pulumi.IntInput) GetVolumeBackupsVolumeBackupOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVolumeBackupsVolumeBackup {
 		return vs[0].([]GetVolumeBackupsVolumeBackup)[vs[1].(int)]
@@ -18594,6 +21907,12 @@ func (i GetVolumeBackupsVolumeBackupSourceDetailArgs) ToGetVolumeBackupsVolumeBa
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeBackupsVolumeBackupSourceDetailOutput)
 }
 
+func (i GetVolumeBackupsVolumeBackupSourceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetVolumeBackupsVolumeBackupSourceDetail] {
+	return pulumix.Output[GetVolumeBackupsVolumeBackupSourceDetail]{
+		OutputState: i.ToGetVolumeBackupsVolumeBackupSourceDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVolumeBackupsVolumeBackupSourceDetailArrayInput is an input type that accepts GetVolumeBackupsVolumeBackupSourceDetailArray and GetVolumeBackupsVolumeBackupSourceDetailArrayOutput values.
 // You can construct a concrete instance of `GetVolumeBackupsVolumeBackupSourceDetailArrayInput` via:
 //
@@ -18619,6 +21938,12 @@ func (i GetVolumeBackupsVolumeBackupSourceDetailArray) ToGetVolumeBackupsVolumeB
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeBackupsVolumeBackupSourceDetailArrayOutput)
 }
 
+func (i GetVolumeBackupsVolumeBackupSourceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumeBackupsVolumeBackupSourceDetail] {
+	return pulumix.Output[[]GetVolumeBackupsVolumeBackupSourceDetail]{
+		OutputState: i.ToGetVolumeBackupsVolumeBackupSourceDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVolumeBackupsVolumeBackupSourceDetailOutput struct{ *pulumi.OutputState }
 
 func (GetVolumeBackupsVolumeBackupSourceDetailOutput) ElementType() reflect.Type {
@@ -18631,6 +21956,12 @@ func (o GetVolumeBackupsVolumeBackupSourceDetailOutput) ToGetVolumeBackupsVolume
 
 func (o GetVolumeBackupsVolumeBackupSourceDetailOutput) ToGetVolumeBackupsVolumeBackupSourceDetailOutputWithContext(ctx context.Context) GetVolumeBackupsVolumeBackupSourceDetailOutput {
 	return o
+}
+
+func (o GetVolumeBackupsVolumeBackupSourceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetVolumeBackupsVolumeBackupSourceDetail] {
+	return pulumix.Output[GetVolumeBackupsVolumeBackupSourceDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
@@ -18658,6 +21989,12 @@ func (o GetVolumeBackupsVolumeBackupSourceDetailArrayOutput) ToGetVolumeBackupsV
 
 func (o GetVolumeBackupsVolumeBackupSourceDetailArrayOutput) ToGetVolumeBackupsVolumeBackupSourceDetailArrayOutputWithContext(ctx context.Context) GetVolumeBackupsVolumeBackupSourceDetailArrayOutput {
 	return o
+}
+
+func (o GetVolumeBackupsVolumeBackupSourceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumeBackupsVolumeBackupSourceDetail] {
+	return pulumix.Output[[]GetVolumeBackupsVolumeBackupSourceDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVolumeBackupsVolumeBackupSourceDetailArrayOutput) Index(i pulumi.IntInput) GetVolumeBackupsVolumeBackupSourceDetailOutput {
@@ -18707,6 +22044,12 @@ func (i GetVolumeBlockVolumeReplicaArgs) ToGetVolumeBlockVolumeReplicaOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeBlockVolumeReplicaOutput)
 }
 
+func (i GetVolumeBlockVolumeReplicaArgs) ToOutput(ctx context.Context) pulumix.Output[GetVolumeBlockVolumeReplica] {
+	return pulumix.Output[GetVolumeBlockVolumeReplica]{
+		OutputState: i.ToGetVolumeBlockVolumeReplicaOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVolumeBlockVolumeReplicaArrayInput is an input type that accepts GetVolumeBlockVolumeReplicaArray and GetVolumeBlockVolumeReplicaArrayOutput values.
 // You can construct a concrete instance of `GetVolumeBlockVolumeReplicaArrayInput` via:
 //
@@ -18732,6 +22075,12 @@ func (i GetVolumeBlockVolumeReplicaArray) ToGetVolumeBlockVolumeReplicaArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeBlockVolumeReplicaArrayOutput)
 }
 
+func (i GetVolumeBlockVolumeReplicaArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumeBlockVolumeReplica] {
+	return pulumix.Output[[]GetVolumeBlockVolumeReplica]{
+		OutputState: i.ToGetVolumeBlockVolumeReplicaArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVolumeBlockVolumeReplicaOutput struct{ *pulumi.OutputState }
 
 func (GetVolumeBlockVolumeReplicaOutput) ElementType() reflect.Type {
@@ -18744,6 +22093,12 @@ func (o GetVolumeBlockVolumeReplicaOutput) ToGetVolumeBlockVolumeReplicaOutput()
 
 func (o GetVolumeBlockVolumeReplicaOutput) ToGetVolumeBlockVolumeReplicaOutputWithContext(ctx context.Context) GetVolumeBlockVolumeReplicaOutput {
 	return o
+}
+
+func (o GetVolumeBlockVolumeReplicaOutput) ToOutput(ctx context.Context) pulumix.Output[GetVolumeBlockVolumeReplica] {
+	return pulumix.Output[GetVolumeBlockVolumeReplica]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
@@ -18773,6 +22128,12 @@ func (o GetVolumeBlockVolumeReplicaArrayOutput) ToGetVolumeBlockVolumeReplicaArr
 
 func (o GetVolumeBlockVolumeReplicaArrayOutput) ToGetVolumeBlockVolumeReplicaArrayOutputWithContext(ctx context.Context) GetVolumeBlockVolumeReplicaArrayOutput {
 	return o
+}
+
+func (o GetVolumeBlockVolumeReplicaArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumeBlockVolumeReplica] {
+	return pulumix.Output[[]GetVolumeBlockVolumeReplica]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVolumeBlockVolumeReplicaArrayOutput) Index(i pulumi.IntInput) GetVolumeBlockVolumeReplicaOutput {
@@ -18816,6 +22177,12 @@ func (i GetVolumeGroupBackupsFilterArgs) ToGetVolumeGroupBackupsFilterOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeGroupBackupsFilterOutput)
 }
 
+func (i GetVolumeGroupBackupsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVolumeGroupBackupsFilter] {
+	return pulumix.Output[GetVolumeGroupBackupsFilter]{
+		OutputState: i.ToGetVolumeGroupBackupsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVolumeGroupBackupsFilterArrayInput is an input type that accepts GetVolumeGroupBackupsFilterArray and GetVolumeGroupBackupsFilterArrayOutput values.
 // You can construct a concrete instance of `GetVolumeGroupBackupsFilterArrayInput` via:
 //
@@ -18841,6 +22208,12 @@ func (i GetVolumeGroupBackupsFilterArray) ToGetVolumeGroupBackupsFilterArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeGroupBackupsFilterArrayOutput)
 }
 
+func (i GetVolumeGroupBackupsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumeGroupBackupsFilter] {
+	return pulumix.Output[[]GetVolumeGroupBackupsFilter]{
+		OutputState: i.ToGetVolumeGroupBackupsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVolumeGroupBackupsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetVolumeGroupBackupsFilterOutput) ElementType() reflect.Type {
@@ -18853,6 +22226,12 @@ func (o GetVolumeGroupBackupsFilterOutput) ToGetVolumeGroupBackupsFilterOutput()
 
 func (o GetVolumeGroupBackupsFilterOutput) ToGetVolumeGroupBackupsFilterOutputWithContext(ctx context.Context) GetVolumeGroupBackupsFilterOutput {
 	return o
+}
+
+func (o GetVolumeGroupBackupsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVolumeGroupBackupsFilter] {
+	return pulumix.Output[GetVolumeGroupBackupsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVolumeGroupBackupsFilterOutput) Name() pulumi.StringOutput {
@@ -18879,6 +22258,12 @@ func (o GetVolumeGroupBackupsFilterArrayOutput) ToGetVolumeGroupBackupsFilterArr
 
 func (o GetVolumeGroupBackupsFilterArrayOutput) ToGetVolumeGroupBackupsFilterArrayOutputWithContext(ctx context.Context) GetVolumeGroupBackupsFilterArrayOutput {
 	return o
+}
+
+func (o GetVolumeGroupBackupsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumeGroupBackupsFilter] {
+	return pulumix.Output[[]GetVolumeGroupBackupsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVolumeGroupBackupsFilterArrayOutput) Index(i pulumi.IntInput) GetVolumeGroupBackupsFilterOutput {
@@ -18990,6 +22375,12 @@ func (i GetVolumeGroupBackupsVolumeGroupBackupArgs) ToGetVolumeGroupBackupsVolum
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeGroupBackupsVolumeGroupBackupOutput)
 }
 
+func (i GetVolumeGroupBackupsVolumeGroupBackupArgs) ToOutput(ctx context.Context) pulumix.Output[GetVolumeGroupBackupsVolumeGroupBackup] {
+	return pulumix.Output[GetVolumeGroupBackupsVolumeGroupBackup]{
+		OutputState: i.ToGetVolumeGroupBackupsVolumeGroupBackupOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVolumeGroupBackupsVolumeGroupBackupArrayInput is an input type that accepts GetVolumeGroupBackupsVolumeGroupBackupArray and GetVolumeGroupBackupsVolumeGroupBackupArrayOutput values.
 // You can construct a concrete instance of `GetVolumeGroupBackupsVolumeGroupBackupArrayInput` via:
 //
@@ -19015,6 +22406,12 @@ func (i GetVolumeGroupBackupsVolumeGroupBackupArray) ToGetVolumeGroupBackupsVolu
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeGroupBackupsVolumeGroupBackupArrayOutput)
 }
 
+func (i GetVolumeGroupBackupsVolumeGroupBackupArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumeGroupBackupsVolumeGroupBackup] {
+	return pulumix.Output[[]GetVolumeGroupBackupsVolumeGroupBackup]{
+		OutputState: i.ToGetVolumeGroupBackupsVolumeGroupBackupArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVolumeGroupBackupsVolumeGroupBackupOutput struct{ *pulumi.OutputState }
 
 func (GetVolumeGroupBackupsVolumeGroupBackupOutput) ElementType() reflect.Type {
@@ -19027,6 +22424,12 @@ func (o GetVolumeGroupBackupsVolumeGroupBackupOutput) ToGetVolumeGroupBackupsVol
 
 func (o GetVolumeGroupBackupsVolumeGroupBackupOutput) ToGetVolumeGroupBackupsVolumeGroupBackupOutputWithContext(ctx context.Context) GetVolumeGroupBackupsVolumeGroupBackupOutput {
 	return o
+}
+
+func (o GetVolumeGroupBackupsVolumeGroupBackupOutput) ToOutput(ctx context.Context) pulumix.Output[GetVolumeGroupBackupsVolumeGroupBackup] {
+	return pulumix.Output[GetVolumeGroupBackupsVolumeGroupBackup]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -19139,6 +22542,12 @@ func (o GetVolumeGroupBackupsVolumeGroupBackupArrayOutput) ToGetVolumeGroupBacku
 	return o
 }
 
+func (o GetVolumeGroupBackupsVolumeGroupBackupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumeGroupBackupsVolumeGroupBackup] {
+	return pulumix.Output[[]GetVolumeGroupBackupsVolumeGroupBackup]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetVolumeGroupBackupsVolumeGroupBackupArrayOutput) Index(i pulumi.IntInput) GetVolumeGroupBackupsVolumeGroupBackupOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVolumeGroupBackupsVolumeGroupBackup {
 		return vs[0].([]GetVolumeGroupBackupsVolumeGroupBackup)[vs[1].(int)]
@@ -19180,6 +22589,12 @@ func (i GetVolumeGroupBackupsVolumeGroupBackupSourceDetailArgs) ToGetVolumeGroup
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeGroupBackupsVolumeGroupBackupSourceDetailOutput)
 }
 
+func (i GetVolumeGroupBackupsVolumeGroupBackupSourceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetVolumeGroupBackupsVolumeGroupBackupSourceDetail] {
+	return pulumix.Output[GetVolumeGroupBackupsVolumeGroupBackupSourceDetail]{
+		OutputState: i.ToGetVolumeGroupBackupsVolumeGroupBackupSourceDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVolumeGroupBackupsVolumeGroupBackupSourceDetailArrayInput is an input type that accepts GetVolumeGroupBackupsVolumeGroupBackupSourceDetailArray and GetVolumeGroupBackupsVolumeGroupBackupSourceDetailArrayOutput values.
 // You can construct a concrete instance of `GetVolumeGroupBackupsVolumeGroupBackupSourceDetailArrayInput` via:
 //
@@ -19205,6 +22620,12 @@ func (i GetVolumeGroupBackupsVolumeGroupBackupSourceDetailArray) ToGetVolumeGrou
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeGroupBackupsVolumeGroupBackupSourceDetailArrayOutput)
 }
 
+func (i GetVolumeGroupBackupsVolumeGroupBackupSourceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumeGroupBackupsVolumeGroupBackupSourceDetail] {
+	return pulumix.Output[[]GetVolumeGroupBackupsVolumeGroupBackupSourceDetail]{
+		OutputState: i.ToGetVolumeGroupBackupsVolumeGroupBackupSourceDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVolumeGroupBackupsVolumeGroupBackupSourceDetailOutput struct{ *pulumi.OutputState }
 
 func (GetVolumeGroupBackupsVolumeGroupBackupSourceDetailOutput) ElementType() reflect.Type {
@@ -19217,6 +22638,12 @@ func (o GetVolumeGroupBackupsVolumeGroupBackupSourceDetailOutput) ToGetVolumeGro
 
 func (o GetVolumeGroupBackupsVolumeGroupBackupSourceDetailOutput) ToGetVolumeGroupBackupsVolumeGroupBackupSourceDetailOutputWithContext(ctx context.Context) GetVolumeGroupBackupsVolumeGroupBackupSourceDetailOutput {
 	return o
+}
+
+func (o GetVolumeGroupBackupsVolumeGroupBackupSourceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetVolumeGroupBackupsVolumeGroupBackupSourceDetail] {
+	return pulumix.Output[GetVolumeGroupBackupsVolumeGroupBackupSourceDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVolumeGroupBackupsVolumeGroupBackupSourceDetailOutput) KmsKeyId() pulumi.StringOutput {
@@ -19243,6 +22670,12 @@ func (o GetVolumeGroupBackupsVolumeGroupBackupSourceDetailArrayOutput) ToGetVolu
 
 func (o GetVolumeGroupBackupsVolumeGroupBackupSourceDetailArrayOutput) ToGetVolumeGroupBackupsVolumeGroupBackupSourceDetailArrayOutputWithContext(ctx context.Context) GetVolumeGroupBackupsVolumeGroupBackupSourceDetailArrayOutput {
 	return o
+}
+
+func (o GetVolumeGroupBackupsVolumeGroupBackupSourceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumeGroupBackupsVolumeGroupBackupSourceDetail] {
+	return pulumix.Output[[]GetVolumeGroupBackupsVolumeGroupBackupSourceDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVolumeGroupBackupsVolumeGroupBackupSourceDetailArrayOutput) Index(i pulumi.IntInput) GetVolumeGroupBackupsVolumeGroupBackupSourceDetailOutput {
@@ -19288,6 +22721,12 @@ func (i GetVolumeGroupReplicaMemberReplicaArgs) ToGetVolumeGroupReplicaMemberRep
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeGroupReplicaMemberReplicaOutput)
 }
 
+func (i GetVolumeGroupReplicaMemberReplicaArgs) ToOutput(ctx context.Context) pulumix.Output[GetVolumeGroupReplicaMemberReplica] {
+	return pulumix.Output[GetVolumeGroupReplicaMemberReplica]{
+		OutputState: i.ToGetVolumeGroupReplicaMemberReplicaOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVolumeGroupReplicaMemberReplicaArrayInput is an input type that accepts GetVolumeGroupReplicaMemberReplicaArray and GetVolumeGroupReplicaMemberReplicaArrayOutput values.
 // You can construct a concrete instance of `GetVolumeGroupReplicaMemberReplicaArrayInput` via:
 //
@@ -19313,6 +22752,12 @@ func (i GetVolumeGroupReplicaMemberReplicaArray) ToGetVolumeGroupReplicaMemberRe
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeGroupReplicaMemberReplicaArrayOutput)
 }
 
+func (i GetVolumeGroupReplicaMemberReplicaArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumeGroupReplicaMemberReplica] {
+	return pulumix.Output[[]GetVolumeGroupReplicaMemberReplica]{
+		OutputState: i.ToGetVolumeGroupReplicaMemberReplicaArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVolumeGroupReplicaMemberReplicaOutput struct{ *pulumi.OutputState }
 
 func (GetVolumeGroupReplicaMemberReplicaOutput) ElementType() reflect.Type {
@@ -19325,6 +22770,12 @@ func (o GetVolumeGroupReplicaMemberReplicaOutput) ToGetVolumeGroupReplicaMemberR
 
 func (o GetVolumeGroupReplicaMemberReplicaOutput) ToGetVolumeGroupReplicaMemberReplicaOutputWithContext(ctx context.Context) GetVolumeGroupReplicaMemberReplicaOutput {
 	return o
+}
+
+func (o GetVolumeGroupReplicaMemberReplicaOutput) ToOutput(ctx context.Context) pulumix.Output[GetVolumeGroupReplicaMemberReplica] {
+	return pulumix.Output[GetVolumeGroupReplicaMemberReplica]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Membership state of the volume replica in relation to the volume group replica.
@@ -19349,6 +22800,12 @@ func (o GetVolumeGroupReplicaMemberReplicaArrayOutput) ToGetVolumeGroupReplicaMe
 
 func (o GetVolumeGroupReplicaMemberReplicaArrayOutput) ToGetVolumeGroupReplicaMemberReplicaArrayOutputWithContext(ctx context.Context) GetVolumeGroupReplicaMemberReplicaArrayOutput {
 	return o
+}
+
+func (o GetVolumeGroupReplicaMemberReplicaArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumeGroupReplicaMemberReplica] {
+	return pulumix.Output[[]GetVolumeGroupReplicaMemberReplica]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVolumeGroupReplicaMemberReplicaArrayOutput) Index(i pulumi.IntInput) GetVolumeGroupReplicaMemberReplicaOutput {
@@ -19392,6 +22849,12 @@ func (i GetVolumeGroupReplicasFilterArgs) ToGetVolumeGroupReplicasFilterOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeGroupReplicasFilterOutput)
 }
 
+func (i GetVolumeGroupReplicasFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVolumeGroupReplicasFilter] {
+	return pulumix.Output[GetVolumeGroupReplicasFilter]{
+		OutputState: i.ToGetVolumeGroupReplicasFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVolumeGroupReplicasFilterArrayInput is an input type that accepts GetVolumeGroupReplicasFilterArray and GetVolumeGroupReplicasFilterArrayOutput values.
 // You can construct a concrete instance of `GetVolumeGroupReplicasFilterArrayInput` via:
 //
@@ -19417,6 +22880,12 @@ func (i GetVolumeGroupReplicasFilterArray) ToGetVolumeGroupReplicasFilterArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeGroupReplicasFilterArrayOutput)
 }
 
+func (i GetVolumeGroupReplicasFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumeGroupReplicasFilter] {
+	return pulumix.Output[[]GetVolumeGroupReplicasFilter]{
+		OutputState: i.ToGetVolumeGroupReplicasFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVolumeGroupReplicasFilterOutput struct{ *pulumi.OutputState }
 
 func (GetVolumeGroupReplicasFilterOutput) ElementType() reflect.Type {
@@ -19429,6 +22898,12 @@ func (o GetVolumeGroupReplicasFilterOutput) ToGetVolumeGroupReplicasFilterOutput
 
 func (o GetVolumeGroupReplicasFilterOutput) ToGetVolumeGroupReplicasFilterOutputWithContext(ctx context.Context) GetVolumeGroupReplicasFilterOutput {
 	return o
+}
+
+func (o GetVolumeGroupReplicasFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVolumeGroupReplicasFilter] {
+	return pulumix.Output[GetVolumeGroupReplicasFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVolumeGroupReplicasFilterOutput) Name() pulumi.StringOutput {
@@ -19455,6 +22930,12 @@ func (o GetVolumeGroupReplicasFilterArrayOutput) ToGetVolumeGroupReplicasFilterA
 
 func (o GetVolumeGroupReplicasFilterArrayOutput) ToGetVolumeGroupReplicasFilterArrayOutputWithContext(ctx context.Context) GetVolumeGroupReplicasFilterArrayOutput {
 	return o
+}
+
+func (o GetVolumeGroupReplicasFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumeGroupReplicasFilter] {
+	return pulumix.Output[[]GetVolumeGroupReplicasFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVolumeGroupReplicasFilterArrayOutput) Index(i pulumi.IntInput) GetVolumeGroupReplicasFilterOutput {
@@ -19540,6 +23021,12 @@ func (i GetVolumeGroupReplicasVolumeGroupReplicaArgs) ToGetVolumeGroupReplicasVo
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeGroupReplicasVolumeGroupReplicaOutput)
 }
 
+func (i GetVolumeGroupReplicasVolumeGroupReplicaArgs) ToOutput(ctx context.Context) pulumix.Output[GetVolumeGroupReplicasVolumeGroupReplica] {
+	return pulumix.Output[GetVolumeGroupReplicasVolumeGroupReplica]{
+		OutputState: i.ToGetVolumeGroupReplicasVolumeGroupReplicaOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVolumeGroupReplicasVolumeGroupReplicaArrayInput is an input type that accepts GetVolumeGroupReplicasVolumeGroupReplicaArray and GetVolumeGroupReplicasVolumeGroupReplicaArrayOutput values.
 // You can construct a concrete instance of `GetVolumeGroupReplicasVolumeGroupReplicaArrayInput` via:
 //
@@ -19565,6 +23052,12 @@ func (i GetVolumeGroupReplicasVolumeGroupReplicaArray) ToGetVolumeGroupReplicasV
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeGroupReplicasVolumeGroupReplicaArrayOutput)
 }
 
+func (i GetVolumeGroupReplicasVolumeGroupReplicaArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumeGroupReplicasVolumeGroupReplica] {
+	return pulumix.Output[[]GetVolumeGroupReplicasVolumeGroupReplica]{
+		OutputState: i.ToGetVolumeGroupReplicasVolumeGroupReplicaArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVolumeGroupReplicasVolumeGroupReplicaOutput struct{ *pulumi.OutputState }
 
 func (GetVolumeGroupReplicasVolumeGroupReplicaOutput) ElementType() reflect.Type {
@@ -19577,6 +23070,12 @@ func (o GetVolumeGroupReplicasVolumeGroupReplicaOutput) ToGetVolumeGroupReplicas
 
 func (o GetVolumeGroupReplicasVolumeGroupReplicaOutput) ToGetVolumeGroupReplicasVolumeGroupReplicaOutputWithContext(ctx context.Context) GetVolumeGroupReplicasVolumeGroupReplicaOutput {
 	return o
+}
+
+func (o GetVolumeGroupReplicasVolumeGroupReplicaOutput) ToOutput(ctx context.Context) pulumix.Output[GetVolumeGroupReplicasVolumeGroupReplica] {
+	return pulumix.Output[GetVolumeGroupReplicasVolumeGroupReplica]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -19655,6 +23154,12 @@ func (o GetVolumeGroupReplicasVolumeGroupReplicaArrayOutput) ToGetVolumeGroupRep
 	return o
 }
 
+func (o GetVolumeGroupReplicasVolumeGroupReplicaArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumeGroupReplicasVolumeGroupReplica] {
+	return pulumix.Output[[]GetVolumeGroupReplicasVolumeGroupReplica]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetVolumeGroupReplicasVolumeGroupReplicaArrayOutput) Index(i pulumi.IntInput) GetVolumeGroupReplicasVolumeGroupReplicaOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVolumeGroupReplicasVolumeGroupReplica {
 		return vs[0].([]GetVolumeGroupReplicasVolumeGroupReplica)[vs[1].(int)]
@@ -19698,6 +23203,12 @@ func (i GetVolumeGroupReplicasVolumeGroupReplicaMemberReplicaArgs) ToGetVolumeGr
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeGroupReplicasVolumeGroupReplicaMemberReplicaOutput)
 }
 
+func (i GetVolumeGroupReplicasVolumeGroupReplicaMemberReplicaArgs) ToOutput(ctx context.Context) pulumix.Output[GetVolumeGroupReplicasVolumeGroupReplicaMemberReplica] {
+	return pulumix.Output[GetVolumeGroupReplicasVolumeGroupReplicaMemberReplica]{
+		OutputState: i.ToGetVolumeGroupReplicasVolumeGroupReplicaMemberReplicaOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVolumeGroupReplicasVolumeGroupReplicaMemberReplicaArrayInput is an input type that accepts GetVolumeGroupReplicasVolumeGroupReplicaMemberReplicaArray and GetVolumeGroupReplicasVolumeGroupReplicaMemberReplicaArrayOutput values.
 // You can construct a concrete instance of `GetVolumeGroupReplicasVolumeGroupReplicaMemberReplicaArrayInput` via:
 //
@@ -19723,6 +23234,12 @@ func (i GetVolumeGroupReplicasVolumeGroupReplicaMemberReplicaArray) ToGetVolumeG
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeGroupReplicasVolumeGroupReplicaMemberReplicaArrayOutput)
 }
 
+func (i GetVolumeGroupReplicasVolumeGroupReplicaMemberReplicaArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumeGroupReplicasVolumeGroupReplicaMemberReplica] {
+	return pulumix.Output[[]GetVolumeGroupReplicasVolumeGroupReplicaMemberReplica]{
+		OutputState: i.ToGetVolumeGroupReplicasVolumeGroupReplicaMemberReplicaArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVolumeGroupReplicasVolumeGroupReplicaMemberReplicaOutput struct{ *pulumi.OutputState }
 
 func (GetVolumeGroupReplicasVolumeGroupReplicaMemberReplicaOutput) ElementType() reflect.Type {
@@ -19735,6 +23252,12 @@ func (o GetVolumeGroupReplicasVolumeGroupReplicaMemberReplicaOutput) ToGetVolume
 
 func (o GetVolumeGroupReplicasVolumeGroupReplicaMemberReplicaOutput) ToGetVolumeGroupReplicasVolumeGroupReplicaMemberReplicaOutputWithContext(ctx context.Context) GetVolumeGroupReplicasVolumeGroupReplicaMemberReplicaOutput {
 	return o
+}
+
+func (o GetVolumeGroupReplicasVolumeGroupReplicaMemberReplicaOutput) ToOutput(ctx context.Context) pulumix.Output[GetVolumeGroupReplicasVolumeGroupReplicaMemberReplica] {
+	return pulumix.Output[GetVolumeGroupReplicasVolumeGroupReplicaMemberReplica]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Membership state of the volume replica in relation to the volume group replica.
@@ -19759,6 +23282,12 @@ func (o GetVolumeGroupReplicasVolumeGroupReplicaMemberReplicaArrayOutput) ToGetV
 
 func (o GetVolumeGroupReplicasVolumeGroupReplicaMemberReplicaArrayOutput) ToGetVolumeGroupReplicasVolumeGroupReplicaMemberReplicaArrayOutputWithContext(ctx context.Context) GetVolumeGroupReplicasVolumeGroupReplicaMemberReplicaArrayOutput {
 	return o
+}
+
+func (o GetVolumeGroupReplicasVolumeGroupReplicaMemberReplicaArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumeGroupReplicasVolumeGroupReplicaMemberReplica] {
+	return pulumix.Output[[]GetVolumeGroupReplicasVolumeGroupReplicaMemberReplica]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVolumeGroupReplicasVolumeGroupReplicaMemberReplicaArrayOutput) Index(i pulumi.IntInput) GetVolumeGroupReplicasVolumeGroupReplicaMemberReplicaOutput {
@@ -19802,6 +23331,12 @@ func (i GetVolumeGroupsFilterArgs) ToGetVolumeGroupsFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeGroupsFilterOutput)
 }
 
+func (i GetVolumeGroupsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVolumeGroupsFilter] {
+	return pulumix.Output[GetVolumeGroupsFilter]{
+		OutputState: i.ToGetVolumeGroupsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVolumeGroupsFilterArrayInput is an input type that accepts GetVolumeGroupsFilterArray and GetVolumeGroupsFilterArrayOutput values.
 // You can construct a concrete instance of `GetVolumeGroupsFilterArrayInput` via:
 //
@@ -19827,6 +23362,12 @@ func (i GetVolumeGroupsFilterArray) ToGetVolumeGroupsFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeGroupsFilterArrayOutput)
 }
 
+func (i GetVolumeGroupsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumeGroupsFilter] {
+	return pulumix.Output[[]GetVolumeGroupsFilter]{
+		OutputState: i.ToGetVolumeGroupsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVolumeGroupsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetVolumeGroupsFilterOutput) ElementType() reflect.Type {
@@ -19839,6 +23380,12 @@ func (o GetVolumeGroupsFilterOutput) ToGetVolumeGroupsFilterOutput() GetVolumeGr
 
 func (o GetVolumeGroupsFilterOutput) ToGetVolumeGroupsFilterOutputWithContext(ctx context.Context) GetVolumeGroupsFilterOutput {
 	return o
+}
+
+func (o GetVolumeGroupsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVolumeGroupsFilter] {
+	return pulumix.Output[GetVolumeGroupsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVolumeGroupsFilterOutput) Name() pulumi.StringOutput {
@@ -19865,6 +23412,12 @@ func (o GetVolumeGroupsFilterArrayOutput) ToGetVolumeGroupsFilterArrayOutput() G
 
 func (o GetVolumeGroupsFilterArrayOutput) ToGetVolumeGroupsFilterArrayOutputWithContext(ctx context.Context) GetVolumeGroupsFilterArrayOutput {
 	return o
+}
+
+func (o GetVolumeGroupsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumeGroupsFilter] {
+	return pulumix.Output[[]GetVolumeGroupsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVolumeGroupsFilterArrayOutput) Index(i pulumi.IntInput) GetVolumeGroupsFilterOutput {
@@ -19964,6 +23517,12 @@ func (i GetVolumeGroupsVolumeGroupArgs) ToGetVolumeGroupsVolumeGroupOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeGroupsVolumeGroupOutput)
 }
 
+func (i GetVolumeGroupsVolumeGroupArgs) ToOutput(ctx context.Context) pulumix.Output[GetVolumeGroupsVolumeGroup] {
+	return pulumix.Output[GetVolumeGroupsVolumeGroup]{
+		OutputState: i.ToGetVolumeGroupsVolumeGroupOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVolumeGroupsVolumeGroupArrayInput is an input type that accepts GetVolumeGroupsVolumeGroupArray and GetVolumeGroupsVolumeGroupArrayOutput values.
 // You can construct a concrete instance of `GetVolumeGroupsVolumeGroupArrayInput` via:
 //
@@ -19989,6 +23548,12 @@ func (i GetVolumeGroupsVolumeGroupArray) ToGetVolumeGroupsVolumeGroupArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeGroupsVolumeGroupArrayOutput)
 }
 
+func (i GetVolumeGroupsVolumeGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumeGroupsVolumeGroup] {
+	return pulumix.Output[[]GetVolumeGroupsVolumeGroup]{
+		OutputState: i.ToGetVolumeGroupsVolumeGroupArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVolumeGroupsVolumeGroupOutput struct{ *pulumi.OutputState }
 
 func (GetVolumeGroupsVolumeGroupOutput) ElementType() reflect.Type {
@@ -20001,6 +23566,12 @@ func (o GetVolumeGroupsVolumeGroupOutput) ToGetVolumeGroupsVolumeGroupOutput() G
 
 func (o GetVolumeGroupsVolumeGroupOutput) ToGetVolumeGroupsVolumeGroupOutputWithContext(ctx context.Context) GetVolumeGroupsVolumeGroupOutput {
 	return o
+}
+
+func (o GetVolumeGroupsVolumeGroupOutput) ToOutput(ctx context.Context) pulumix.Output[GetVolumeGroupsVolumeGroup] {
+	return pulumix.Output[GetVolumeGroupsVolumeGroup]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -20101,6 +23672,12 @@ func (o GetVolumeGroupsVolumeGroupArrayOutput) ToGetVolumeGroupsVolumeGroupArray
 	return o
 }
 
+func (o GetVolumeGroupsVolumeGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumeGroupsVolumeGroup] {
+	return pulumix.Output[[]GetVolumeGroupsVolumeGroup]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetVolumeGroupsVolumeGroupArrayOutput) Index(i pulumi.IntInput) GetVolumeGroupsVolumeGroupOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVolumeGroupsVolumeGroup {
 		return vs[0].([]GetVolumeGroupsVolumeGroup)[vs[1].(int)]
@@ -20156,6 +23733,12 @@ func (i GetVolumeGroupsVolumeGroupSourceDetailArgs) ToGetVolumeGroupsVolumeGroup
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeGroupsVolumeGroupSourceDetailOutput)
 }
 
+func (i GetVolumeGroupsVolumeGroupSourceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetVolumeGroupsVolumeGroupSourceDetail] {
+	return pulumix.Output[GetVolumeGroupsVolumeGroupSourceDetail]{
+		OutputState: i.ToGetVolumeGroupsVolumeGroupSourceDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVolumeGroupsVolumeGroupSourceDetailArrayInput is an input type that accepts GetVolumeGroupsVolumeGroupSourceDetailArray and GetVolumeGroupsVolumeGroupSourceDetailArrayOutput values.
 // You can construct a concrete instance of `GetVolumeGroupsVolumeGroupSourceDetailArrayInput` via:
 //
@@ -20181,6 +23764,12 @@ func (i GetVolumeGroupsVolumeGroupSourceDetailArray) ToGetVolumeGroupsVolumeGrou
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeGroupsVolumeGroupSourceDetailArrayOutput)
 }
 
+func (i GetVolumeGroupsVolumeGroupSourceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumeGroupsVolumeGroupSourceDetail] {
+	return pulumix.Output[[]GetVolumeGroupsVolumeGroupSourceDetail]{
+		OutputState: i.ToGetVolumeGroupsVolumeGroupSourceDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVolumeGroupsVolumeGroupSourceDetailOutput struct{ *pulumi.OutputState }
 
 func (GetVolumeGroupsVolumeGroupSourceDetailOutput) ElementType() reflect.Type {
@@ -20193,6 +23782,12 @@ func (o GetVolumeGroupsVolumeGroupSourceDetailOutput) ToGetVolumeGroupsVolumeGro
 
 func (o GetVolumeGroupsVolumeGroupSourceDetailOutput) ToGetVolumeGroupsVolumeGroupSourceDetailOutputWithContext(ctx context.Context) GetVolumeGroupsVolumeGroupSourceDetailOutput {
 	return o
+}
+
+func (o GetVolumeGroupsVolumeGroupSourceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetVolumeGroupsVolumeGroupSourceDetail] {
+	return pulumix.Output[GetVolumeGroupsVolumeGroupSourceDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The type can be one of these values: `volumeGroupBackupId`, `volumeGroupId`, `volumeIds`
@@ -20232,6 +23827,12 @@ func (o GetVolumeGroupsVolumeGroupSourceDetailArrayOutput) ToGetVolumeGroupsVolu
 
 func (o GetVolumeGroupsVolumeGroupSourceDetailArrayOutput) ToGetVolumeGroupsVolumeGroupSourceDetailArrayOutputWithContext(ctx context.Context) GetVolumeGroupsVolumeGroupSourceDetailArrayOutput {
 	return o
+}
+
+func (o GetVolumeGroupsVolumeGroupSourceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumeGroupsVolumeGroupSourceDetail] {
+	return pulumix.Output[[]GetVolumeGroupsVolumeGroupSourceDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVolumeGroupsVolumeGroupSourceDetailArrayOutput) Index(i pulumi.IntInput) GetVolumeGroupsVolumeGroupSourceDetailOutput {
@@ -20281,6 +23882,12 @@ func (i GetVolumeGroupsVolumeGroupVolumeGroupReplicaArgs) ToGetVolumeGroupsVolum
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeGroupsVolumeGroupVolumeGroupReplicaOutput)
 }
 
+func (i GetVolumeGroupsVolumeGroupVolumeGroupReplicaArgs) ToOutput(ctx context.Context) pulumix.Output[GetVolumeGroupsVolumeGroupVolumeGroupReplica] {
+	return pulumix.Output[GetVolumeGroupsVolumeGroupVolumeGroupReplica]{
+		OutputState: i.ToGetVolumeGroupsVolumeGroupVolumeGroupReplicaOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVolumeGroupsVolumeGroupVolumeGroupReplicaArrayInput is an input type that accepts GetVolumeGroupsVolumeGroupVolumeGroupReplicaArray and GetVolumeGroupsVolumeGroupVolumeGroupReplicaArrayOutput values.
 // You can construct a concrete instance of `GetVolumeGroupsVolumeGroupVolumeGroupReplicaArrayInput` via:
 //
@@ -20306,6 +23913,12 @@ func (i GetVolumeGroupsVolumeGroupVolumeGroupReplicaArray) ToGetVolumeGroupsVolu
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeGroupsVolumeGroupVolumeGroupReplicaArrayOutput)
 }
 
+func (i GetVolumeGroupsVolumeGroupVolumeGroupReplicaArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumeGroupsVolumeGroupVolumeGroupReplica] {
+	return pulumix.Output[[]GetVolumeGroupsVolumeGroupVolumeGroupReplica]{
+		OutputState: i.ToGetVolumeGroupsVolumeGroupVolumeGroupReplicaArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVolumeGroupsVolumeGroupVolumeGroupReplicaOutput struct{ *pulumi.OutputState }
 
 func (GetVolumeGroupsVolumeGroupVolumeGroupReplicaOutput) ElementType() reflect.Type {
@@ -20318,6 +23931,12 @@ func (o GetVolumeGroupsVolumeGroupVolumeGroupReplicaOutput) ToGetVolumeGroupsVol
 
 func (o GetVolumeGroupsVolumeGroupVolumeGroupReplicaOutput) ToGetVolumeGroupsVolumeGroupVolumeGroupReplicaOutputWithContext(ctx context.Context) GetVolumeGroupsVolumeGroupVolumeGroupReplicaOutput {
 	return o
+}
+
+func (o GetVolumeGroupsVolumeGroupVolumeGroupReplicaOutput) ToOutput(ctx context.Context) pulumix.Output[GetVolumeGroupsVolumeGroupVolumeGroupReplica] {
+	return pulumix.Output[GetVolumeGroupsVolumeGroupVolumeGroupReplica]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -20347,6 +23966,12 @@ func (o GetVolumeGroupsVolumeGroupVolumeGroupReplicaArrayOutput) ToGetVolumeGrou
 
 func (o GetVolumeGroupsVolumeGroupVolumeGroupReplicaArrayOutput) ToGetVolumeGroupsVolumeGroupVolumeGroupReplicaArrayOutputWithContext(ctx context.Context) GetVolumeGroupsVolumeGroupVolumeGroupReplicaArrayOutput {
 	return o
+}
+
+func (o GetVolumeGroupsVolumeGroupVolumeGroupReplicaArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumeGroupsVolumeGroupVolumeGroupReplica] {
+	return pulumix.Output[[]GetVolumeGroupsVolumeGroupVolumeGroupReplica]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVolumeGroupsVolumeGroupVolumeGroupReplicaArrayOutput) Index(i pulumi.IntInput) GetVolumeGroupsVolumeGroupVolumeGroupReplicaOutput {
@@ -20392,6 +24017,12 @@ func (i GetVolumeSourceDetailArgs) ToGetVolumeSourceDetailOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeSourceDetailOutput)
 }
 
+func (i GetVolumeSourceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetVolumeSourceDetail] {
+	return pulumix.Output[GetVolumeSourceDetail]{
+		OutputState: i.ToGetVolumeSourceDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVolumeSourceDetailArrayInput is an input type that accepts GetVolumeSourceDetailArray and GetVolumeSourceDetailArrayOutput values.
 // You can construct a concrete instance of `GetVolumeSourceDetailArrayInput` via:
 //
@@ -20417,6 +24048,12 @@ func (i GetVolumeSourceDetailArray) ToGetVolumeSourceDetailArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumeSourceDetailArrayOutput)
 }
 
+func (i GetVolumeSourceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumeSourceDetail] {
+	return pulumix.Output[[]GetVolumeSourceDetail]{
+		OutputState: i.ToGetVolumeSourceDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVolumeSourceDetailOutput struct{ *pulumi.OutputState }
 
 func (GetVolumeSourceDetailOutput) ElementType() reflect.Type {
@@ -20429,6 +24066,12 @@ func (o GetVolumeSourceDetailOutput) ToGetVolumeSourceDetailOutput() GetVolumeSo
 
 func (o GetVolumeSourceDetailOutput) ToGetVolumeSourceDetailOutputWithContext(ctx context.Context) GetVolumeSourceDetailOutput {
 	return o
+}
+
+func (o GetVolumeSourceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetVolumeSourceDetail] {
+	return pulumix.Output[GetVolumeSourceDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the block volume replica.
@@ -20453,6 +24096,12 @@ func (o GetVolumeSourceDetailArrayOutput) ToGetVolumeSourceDetailArrayOutput() G
 
 func (o GetVolumeSourceDetailArrayOutput) ToGetVolumeSourceDetailArrayOutputWithContext(ctx context.Context) GetVolumeSourceDetailArrayOutput {
 	return o
+}
+
+func (o GetVolumeSourceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumeSourceDetail] {
+	return pulumix.Output[[]GetVolumeSourceDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVolumeSourceDetailArrayOutput) Index(i pulumi.IntInput) GetVolumeSourceDetailOutput {
@@ -20496,6 +24145,12 @@ func (i GetVolumesFilterArgs) ToGetVolumesFilterOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumesFilterOutput)
 }
 
+func (i GetVolumesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVolumesFilter] {
+	return pulumix.Output[GetVolumesFilter]{
+		OutputState: i.ToGetVolumesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVolumesFilterArrayInput is an input type that accepts GetVolumesFilterArray and GetVolumesFilterArrayOutput values.
 // You can construct a concrete instance of `GetVolumesFilterArrayInput` via:
 //
@@ -20521,6 +24176,12 @@ func (i GetVolumesFilterArray) ToGetVolumesFilterArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumesFilterArrayOutput)
 }
 
+func (i GetVolumesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumesFilter] {
+	return pulumix.Output[[]GetVolumesFilter]{
+		OutputState: i.ToGetVolumesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVolumesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetVolumesFilterOutput) ElementType() reflect.Type {
@@ -20533,6 +24194,12 @@ func (o GetVolumesFilterOutput) ToGetVolumesFilterOutput() GetVolumesFilterOutpu
 
 func (o GetVolumesFilterOutput) ToGetVolumesFilterOutputWithContext(ctx context.Context) GetVolumesFilterOutput {
 	return o
+}
+
+func (o GetVolumesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVolumesFilter] {
+	return pulumix.Output[GetVolumesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVolumesFilterOutput) Name() pulumi.StringOutput {
@@ -20559,6 +24226,12 @@ func (o GetVolumesFilterArrayOutput) ToGetVolumesFilterArrayOutput() GetVolumesF
 
 func (o GetVolumesFilterArrayOutput) ToGetVolumesFilterArrayOutputWithContext(ctx context.Context) GetVolumesFilterArrayOutput {
 	return o
+}
+
+func (o GetVolumesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumesFilter] {
+	return pulumix.Output[[]GetVolumesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVolumesFilterArrayOutput) Index(i pulumi.IntInput) GetVolumesFilterOutput {
@@ -20686,6 +24359,12 @@ func (i GetVolumesVolumeArgs) ToGetVolumesVolumeOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumesVolumeOutput)
 }
 
+func (i GetVolumesVolumeArgs) ToOutput(ctx context.Context) pulumix.Output[GetVolumesVolume] {
+	return pulumix.Output[GetVolumesVolume]{
+		OutputState: i.ToGetVolumesVolumeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVolumesVolumeArrayInput is an input type that accepts GetVolumesVolumeArray and GetVolumesVolumeArrayOutput values.
 // You can construct a concrete instance of `GetVolumesVolumeArrayInput` via:
 //
@@ -20711,6 +24390,12 @@ func (i GetVolumesVolumeArray) ToGetVolumesVolumeArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumesVolumeArrayOutput)
 }
 
+func (i GetVolumesVolumeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumesVolume] {
+	return pulumix.Output[[]GetVolumesVolume]{
+		OutputState: i.ToGetVolumesVolumeArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVolumesVolumeOutput struct{ *pulumi.OutputState }
 
 func (GetVolumesVolumeOutput) ElementType() reflect.Type {
@@ -20723,6 +24408,12 @@ func (o GetVolumesVolumeOutput) ToGetVolumesVolumeOutput() GetVolumesVolumeOutpu
 
 func (o GetVolumesVolumeOutput) ToGetVolumesVolumeOutputWithContext(ctx context.Context) GetVolumesVolumeOutput {
 	return o
+}
+
+func (o GetVolumesVolumeOutput) ToOutput(ctx context.Context) pulumix.Output[GetVolumesVolume] {
+	return pulumix.Output[GetVolumesVolume]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The number of Volume Performance Units per GB that this volume is effectively tuned to.
@@ -20853,6 +24544,12 @@ func (o GetVolumesVolumeArrayOutput) ToGetVolumesVolumeArrayOutputWithContext(ct
 	return o
 }
 
+func (o GetVolumesVolumeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumesVolume] {
+	return pulumix.Output[[]GetVolumesVolume]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetVolumesVolumeArrayOutput) Index(i pulumi.IntInput) GetVolumesVolumeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVolumesVolume {
 		return vs[0].([]GetVolumesVolume)[vs[1].(int)]
@@ -20896,6 +24593,12 @@ func (i GetVolumesVolumeAutotunePolicyArgs) ToGetVolumesVolumeAutotunePolicyOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumesVolumeAutotunePolicyOutput)
 }
 
+func (i GetVolumesVolumeAutotunePolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetVolumesVolumeAutotunePolicy] {
+	return pulumix.Output[GetVolumesVolumeAutotunePolicy]{
+		OutputState: i.ToGetVolumesVolumeAutotunePolicyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVolumesVolumeAutotunePolicyArrayInput is an input type that accepts GetVolumesVolumeAutotunePolicyArray and GetVolumesVolumeAutotunePolicyArrayOutput values.
 // You can construct a concrete instance of `GetVolumesVolumeAutotunePolicyArrayInput` via:
 //
@@ -20921,6 +24624,12 @@ func (i GetVolumesVolumeAutotunePolicyArray) ToGetVolumesVolumeAutotunePolicyArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumesVolumeAutotunePolicyArrayOutput)
 }
 
+func (i GetVolumesVolumeAutotunePolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumesVolumeAutotunePolicy] {
+	return pulumix.Output[[]GetVolumesVolumeAutotunePolicy]{
+		OutputState: i.ToGetVolumesVolumeAutotunePolicyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVolumesVolumeAutotunePolicyOutput struct{ *pulumi.OutputState }
 
 func (GetVolumesVolumeAutotunePolicyOutput) ElementType() reflect.Type {
@@ -20933,6 +24642,12 @@ func (o GetVolumesVolumeAutotunePolicyOutput) ToGetVolumesVolumeAutotunePolicyOu
 
 func (o GetVolumesVolumeAutotunePolicyOutput) ToGetVolumesVolumeAutotunePolicyOutputWithContext(ctx context.Context) GetVolumesVolumeAutotunePolicyOutput {
 	return o
+}
+
+func (o GetVolumesVolumeAutotunePolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetVolumesVolumeAutotunePolicy] {
+	return pulumix.Output[GetVolumesVolumeAutotunePolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 // This specifies the type of autotunes supported by OCI.
@@ -20957,6 +24672,12 @@ func (o GetVolumesVolumeAutotunePolicyArrayOutput) ToGetVolumesVolumeAutotunePol
 
 func (o GetVolumesVolumeAutotunePolicyArrayOutput) ToGetVolumesVolumeAutotunePolicyArrayOutputWithContext(ctx context.Context) GetVolumesVolumeAutotunePolicyArrayOutput {
 	return o
+}
+
+func (o GetVolumesVolumeAutotunePolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumesVolumeAutotunePolicy] {
+	return pulumix.Output[[]GetVolumesVolumeAutotunePolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVolumesVolumeAutotunePolicyArrayOutput) Index(i pulumi.IntInput) GetVolumesVolumeAutotunePolicyOutput {
@@ -21006,6 +24727,12 @@ func (i GetVolumesVolumeBlockVolumeReplicaArgs) ToGetVolumesVolumeBlockVolumeRep
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumesVolumeBlockVolumeReplicaOutput)
 }
 
+func (i GetVolumesVolumeBlockVolumeReplicaArgs) ToOutput(ctx context.Context) pulumix.Output[GetVolumesVolumeBlockVolumeReplica] {
+	return pulumix.Output[GetVolumesVolumeBlockVolumeReplica]{
+		OutputState: i.ToGetVolumesVolumeBlockVolumeReplicaOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVolumesVolumeBlockVolumeReplicaArrayInput is an input type that accepts GetVolumesVolumeBlockVolumeReplicaArray and GetVolumesVolumeBlockVolumeReplicaArrayOutput values.
 // You can construct a concrete instance of `GetVolumesVolumeBlockVolumeReplicaArrayInput` via:
 //
@@ -21031,6 +24758,12 @@ func (i GetVolumesVolumeBlockVolumeReplicaArray) ToGetVolumesVolumeBlockVolumeRe
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumesVolumeBlockVolumeReplicaArrayOutput)
 }
 
+func (i GetVolumesVolumeBlockVolumeReplicaArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumesVolumeBlockVolumeReplica] {
+	return pulumix.Output[[]GetVolumesVolumeBlockVolumeReplica]{
+		OutputState: i.ToGetVolumesVolumeBlockVolumeReplicaArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVolumesVolumeBlockVolumeReplicaOutput struct{ *pulumi.OutputState }
 
 func (GetVolumesVolumeBlockVolumeReplicaOutput) ElementType() reflect.Type {
@@ -21043,6 +24776,12 @@ func (o GetVolumesVolumeBlockVolumeReplicaOutput) ToGetVolumesVolumeBlockVolumeR
 
 func (o GetVolumesVolumeBlockVolumeReplicaOutput) ToGetVolumesVolumeBlockVolumeReplicaOutputWithContext(ctx context.Context) GetVolumesVolumeBlockVolumeReplicaOutput {
 	return o
+}
+
+func (o GetVolumesVolumeBlockVolumeReplicaOutput) ToOutput(ctx context.Context) pulumix.Output[GetVolumesVolumeBlockVolumeReplica] {
+	return pulumix.Output[GetVolumesVolumeBlockVolumeReplica]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -21072,6 +24811,12 @@ func (o GetVolumesVolumeBlockVolumeReplicaArrayOutput) ToGetVolumesVolumeBlockVo
 
 func (o GetVolumesVolumeBlockVolumeReplicaArrayOutput) ToGetVolumesVolumeBlockVolumeReplicaArrayOutputWithContext(ctx context.Context) GetVolumesVolumeBlockVolumeReplicaArrayOutput {
 	return o
+}
+
+func (o GetVolumesVolumeBlockVolumeReplicaArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumesVolumeBlockVolumeReplica] {
+	return pulumix.Output[[]GetVolumesVolumeBlockVolumeReplica]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVolumesVolumeBlockVolumeReplicaArrayOutput) Index(i pulumi.IntInput) GetVolumesVolumeBlockVolumeReplicaOutput {
@@ -21117,6 +24862,12 @@ func (i GetVolumesVolumeSourceDetailArgs) ToGetVolumesVolumeSourceDetailOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumesVolumeSourceDetailOutput)
 }
 
+func (i GetVolumesVolumeSourceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetVolumesVolumeSourceDetail] {
+	return pulumix.Output[GetVolumesVolumeSourceDetail]{
+		OutputState: i.ToGetVolumesVolumeSourceDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVolumesVolumeSourceDetailArrayInput is an input type that accepts GetVolumesVolumeSourceDetailArray and GetVolumesVolumeSourceDetailArrayOutput values.
 // You can construct a concrete instance of `GetVolumesVolumeSourceDetailArrayInput` via:
 //
@@ -21142,6 +24893,12 @@ func (i GetVolumesVolumeSourceDetailArray) ToGetVolumesVolumeSourceDetailArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetVolumesVolumeSourceDetailArrayOutput)
 }
 
+func (i GetVolumesVolumeSourceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumesVolumeSourceDetail] {
+	return pulumix.Output[[]GetVolumesVolumeSourceDetail]{
+		OutputState: i.ToGetVolumesVolumeSourceDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVolumesVolumeSourceDetailOutput struct{ *pulumi.OutputState }
 
 func (GetVolumesVolumeSourceDetailOutput) ElementType() reflect.Type {
@@ -21154,6 +24911,12 @@ func (o GetVolumesVolumeSourceDetailOutput) ToGetVolumesVolumeSourceDetailOutput
 
 func (o GetVolumesVolumeSourceDetailOutput) ToGetVolumesVolumeSourceDetailOutputWithContext(ctx context.Context) GetVolumesVolumeSourceDetailOutput {
 	return o
+}
+
+func (o GetVolumesVolumeSourceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetVolumesVolumeSourceDetail] {
+	return pulumix.Output[GetVolumesVolumeSourceDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the block volume replica.
@@ -21178,6 +24941,12 @@ func (o GetVolumesVolumeSourceDetailArrayOutput) ToGetVolumesVolumeSourceDetailA
 
 func (o GetVolumesVolumeSourceDetailArrayOutput) ToGetVolumesVolumeSourceDetailArrayOutputWithContext(ctx context.Context) GetVolumesVolumeSourceDetailArrayOutput {
 	return o
+}
+
+func (o GetVolumesVolumeSourceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVolumesVolumeSourceDetail] {
+	return pulumix.Output[[]GetVolumesVolumeSourceDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVolumesVolumeSourceDetailArrayOutput) Index(i pulumi.IntInput) GetVolumesVolumeSourceDetailOutput {
@@ -21221,6 +24990,12 @@ func (i GetVtapsFilterArgs) ToGetVtapsFilterOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetVtapsFilterOutput)
 }
 
+func (i GetVtapsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVtapsFilter] {
+	return pulumix.Output[GetVtapsFilter]{
+		OutputState: i.ToGetVtapsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVtapsFilterArrayInput is an input type that accepts GetVtapsFilterArray and GetVtapsFilterArrayOutput values.
 // You can construct a concrete instance of `GetVtapsFilterArrayInput` via:
 //
@@ -21246,6 +25021,12 @@ func (i GetVtapsFilterArray) ToGetVtapsFilterArrayOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetVtapsFilterArrayOutput)
 }
 
+func (i GetVtapsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVtapsFilter] {
+	return pulumix.Output[[]GetVtapsFilter]{
+		OutputState: i.ToGetVtapsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVtapsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetVtapsFilterOutput) ElementType() reflect.Type {
@@ -21258,6 +25039,12 @@ func (o GetVtapsFilterOutput) ToGetVtapsFilterOutput() GetVtapsFilterOutput {
 
 func (o GetVtapsFilterOutput) ToGetVtapsFilterOutputWithContext(ctx context.Context) GetVtapsFilterOutput {
 	return o
+}
+
+func (o GetVtapsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVtapsFilter] {
+	return pulumix.Output[GetVtapsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVtapsFilterOutput) Name() pulumi.StringOutput {
@@ -21284,6 +25071,12 @@ func (o GetVtapsFilterArrayOutput) ToGetVtapsFilterArrayOutput() GetVtapsFilterA
 
 func (o GetVtapsFilterArrayOutput) ToGetVtapsFilterArrayOutputWithContext(ctx context.Context) GetVtapsFilterArrayOutput {
 	return o
+}
+
+func (o GetVtapsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVtapsFilter] {
+	return pulumix.Output[[]GetVtapsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVtapsFilterArrayOutput) Index(i pulumi.IntInput) GetVtapsFilterOutput {
@@ -21413,6 +25206,12 @@ func (i GetVtapsVtapArgs) ToGetVtapsVtapOutputWithContext(ctx context.Context) G
 	return pulumi.ToOutputWithContext(ctx, i).(GetVtapsVtapOutput)
 }
 
+func (i GetVtapsVtapArgs) ToOutput(ctx context.Context) pulumix.Output[GetVtapsVtap] {
+	return pulumix.Output[GetVtapsVtap]{
+		OutputState: i.ToGetVtapsVtapOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetVtapsVtapArrayInput is an input type that accepts GetVtapsVtapArray and GetVtapsVtapArrayOutput values.
 // You can construct a concrete instance of `GetVtapsVtapArrayInput` via:
 //
@@ -21438,6 +25237,12 @@ func (i GetVtapsVtapArray) ToGetVtapsVtapArrayOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetVtapsVtapArrayOutput)
 }
 
+func (i GetVtapsVtapArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVtapsVtap] {
+	return pulumix.Output[[]GetVtapsVtap]{
+		OutputState: i.ToGetVtapsVtapArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetVtapsVtapOutput struct{ *pulumi.OutputState }
 
 func (GetVtapsVtapOutput) ElementType() reflect.Type {
@@ -21450,6 +25255,12 @@ func (o GetVtapsVtapOutput) ToGetVtapsVtapOutput() GetVtapsVtapOutput {
 
 func (o GetVtapsVtapOutput) ToGetVtapsVtapOutputWithContext(ctx context.Context) GetVtapsVtapOutput {
 	return o
+}
+
+func (o GetVtapsVtapOutput) ToOutput(ctx context.Context) pulumix.Output[GetVtapsVtap] {
+	return pulumix.Output[GetVtapsVtap]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The capture filter's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
@@ -21576,6 +25387,12 @@ func (o GetVtapsVtapArrayOutput) ToGetVtapsVtapArrayOutput() GetVtapsVtapArrayOu
 
 func (o GetVtapsVtapArrayOutput) ToGetVtapsVtapArrayOutputWithContext(ctx context.Context) GetVtapsVtapArrayOutput {
 	return o
+}
+
+func (o GetVtapsVtapArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVtapsVtap] {
+	return pulumix.Output[[]GetVtapsVtap]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetVtapsVtapArrayOutput) Index(i pulumi.IntInput) GetVtapsVtapOutput {

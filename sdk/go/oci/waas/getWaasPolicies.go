@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Waas Policies in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
@@ -135,6 +136,12 @@ func (o GetWaasPoliciesResultOutput) ToGetWaasPoliciesResultOutput() GetWaasPoli
 
 func (o GetWaasPoliciesResultOutput) ToGetWaasPoliciesResultOutputWithContext(ctx context.Context) GetWaasPoliciesResultOutput {
 	return o
+}
+
+func (o GetWaasPoliciesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesResult] {
+	return pulumix.Output[GetWaasPoliciesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy's compartment.

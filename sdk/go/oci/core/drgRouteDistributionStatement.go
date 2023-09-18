@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Drg Route Distribution Statement resource in Oracle Cloud Infrastructure Core service.
@@ -199,6 +200,12 @@ func (i *DrgRouteDistributionStatement) ToDrgRouteDistributionStatementOutputWit
 	return pulumi.ToOutputWithContext(ctx, i).(DrgRouteDistributionStatementOutput)
 }
 
+func (i *DrgRouteDistributionStatement) ToOutput(ctx context.Context) pulumix.Output[*DrgRouteDistributionStatement] {
+	return pulumix.Output[*DrgRouteDistributionStatement]{
+		OutputState: i.ToDrgRouteDistributionStatementOutputWithContext(ctx).OutputState,
+	}
+}
+
 // DrgRouteDistributionStatementArrayInput is an input type that accepts DrgRouteDistributionStatementArray and DrgRouteDistributionStatementArrayOutput values.
 // You can construct a concrete instance of `DrgRouteDistributionStatementArrayInput` via:
 //
@@ -222,6 +229,12 @@ func (i DrgRouteDistributionStatementArray) ToDrgRouteDistributionStatementArray
 
 func (i DrgRouteDistributionStatementArray) ToDrgRouteDistributionStatementArrayOutputWithContext(ctx context.Context) DrgRouteDistributionStatementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DrgRouteDistributionStatementArrayOutput)
+}
+
+func (i DrgRouteDistributionStatementArray) ToOutput(ctx context.Context) pulumix.Output[[]*DrgRouteDistributionStatement] {
+	return pulumix.Output[[]*DrgRouteDistributionStatement]{
+		OutputState: i.ToDrgRouteDistributionStatementArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // DrgRouteDistributionStatementMapInput is an input type that accepts DrgRouteDistributionStatementMap and DrgRouteDistributionStatementMapOutput values.
@@ -249,6 +262,12 @@ func (i DrgRouteDistributionStatementMap) ToDrgRouteDistributionStatementMapOutp
 	return pulumi.ToOutputWithContext(ctx, i).(DrgRouteDistributionStatementMapOutput)
 }
 
+func (i DrgRouteDistributionStatementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DrgRouteDistributionStatement] {
+	return pulumix.Output[map[string]*DrgRouteDistributionStatement]{
+		OutputState: i.ToDrgRouteDistributionStatementMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type DrgRouteDistributionStatementOutput struct{ *pulumi.OutputState }
 
 func (DrgRouteDistributionStatementOutput) ElementType() reflect.Type {
@@ -261,6 +280,12 @@ func (o DrgRouteDistributionStatementOutput) ToDrgRouteDistributionStatementOutp
 
 func (o DrgRouteDistributionStatementOutput) ToDrgRouteDistributionStatementOutputWithContext(ctx context.Context) DrgRouteDistributionStatementOutput {
 	return o
+}
+
+func (o DrgRouteDistributionStatementOutput) ToOutput(ctx context.Context) pulumix.Output[*DrgRouteDistributionStatement] {
+	return pulumix.Output[*DrgRouteDistributionStatement]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Accept: import/export the route "as is"
@@ -302,6 +327,12 @@ func (o DrgRouteDistributionStatementArrayOutput) ToDrgRouteDistributionStatemen
 	return o
 }
 
+func (o DrgRouteDistributionStatementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DrgRouteDistributionStatement] {
+	return pulumix.Output[[]*DrgRouteDistributionStatement]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o DrgRouteDistributionStatementArrayOutput) Index(i pulumi.IntInput) DrgRouteDistributionStatementOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DrgRouteDistributionStatement {
 		return vs[0].([]*DrgRouteDistributionStatement)[vs[1].(int)]
@@ -320,6 +351,12 @@ func (o DrgRouteDistributionStatementMapOutput) ToDrgRouteDistributionStatementM
 
 func (o DrgRouteDistributionStatementMapOutput) ToDrgRouteDistributionStatementMapOutputWithContext(ctx context.Context) DrgRouteDistributionStatementMapOutput {
 	return o
+}
+
+func (o DrgRouteDistributionStatementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DrgRouteDistributionStatement] {
+	return pulumix.Output[map[string]*DrgRouteDistributionStatement]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o DrgRouteDistributionStatementMapOutput) MapIndex(k pulumi.StringInput) DrgRouteDistributionStatementOutput {

@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Fusion Environment Data Masking Activity resource in Oracle Cloud Infrastructure Fusion Apps service.
@@ -182,6 +183,12 @@ func (i *FusionEnvironmentDataMaskingActivity) ToFusionEnvironmentDataMaskingAct
 	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentDataMaskingActivityOutput)
 }
 
+func (i *FusionEnvironmentDataMaskingActivity) ToOutput(ctx context.Context) pulumix.Output[*FusionEnvironmentDataMaskingActivity] {
+	return pulumix.Output[*FusionEnvironmentDataMaskingActivity]{
+		OutputState: i.ToFusionEnvironmentDataMaskingActivityOutputWithContext(ctx).OutputState,
+	}
+}
+
 // FusionEnvironmentDataMaskingActivityArrayInput is an input type that accepts FusionEnvironmentDataMaskingActivityArray and FusionEnvironmentDataMaskingActivityArrayOutput values.
 // You can construct a concrete instance of `FusionEnvironmentDataMaskingActivityArrayInput` via:
 //
@@ -205,6 +212,12 @@ func (i FusionEnvironmentDataMaskingActivityArray) ToFusionEnvironmentDataMaskin
 
 func (i FusionEnvironmentDataMaskingActivityArray) ToFusionEnvironmentDataMaskingActivityArrayOutputWithContext(ctx context.Context) FusionEnvironmentDataMaskingActivityArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentDataMaskingActivityArrayOutput)
+}
+
+func (i FusionEnvironmentDataMaskingActivityArray) ToOutput(ctx context.Context) pulumix.Output[[]*FusionEnvironmentDataMaskingActivity] {
+	return pulumix.Output[[]*FusionEnvironmentDataMaskingActivity]{
+		OutputState: i.ToFusionEnvironmentDataMaskingActivityArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // FusionEnvironmentDataMaskingActivityMapInput is an input type that accepts FusionEnvironmentDataMaskingActivityMap and FusionEnvironmentDataMaskingActivityMapOutput values.
@@ -232,6 +245,12 @@ func (i FusionEnvironmentDataMaskingActivityMap) ToFusionEnvironmentDataMaskingA
 	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentDataMaskingActivityMapOutput)
 }
 
+func (i FusionEnvironmentDataMaskingActivityMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*FusionEnvironmentDataMaskingActivity] {
+	return pulumix.Output[map[string]*FusionEnvironmentDataMaskingActivity]{
+		OutputState: i.ToFusionEnvironmentDataMaskingActivityMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type FusionEnvironmentDataMaskingActivityOutput struct{ *pulumi.OutputState }
 
 func (FusionEnvironmentDataMaskingActivityOutput) ElementType() reflect.Type {
@@ -244,6 +263,12 @@ func (o FusionEnvironmentDataMaskingActivityOutput) ToFusionEnvironmentDataMaski
 
 func (o FusionEnvironmentDataMaskingActivityOutput) ToFusionEnvironmentDataMaskingActivityOutputWithContext(ctx context.Context) FusionEnvironmentDataMaskingActivityOutput {
 	return o
+}
+
+func (o FusionEnvironmentDataMaskingActivityOutput) ToOutput(ctx context.Context) pulumix.Output[*FusionEnvironmentDataMaskingActivity] {
+	return pulumix.Output[*FusionEnvironmentDataMaskingActivity]{
+		OutputState: o.OutputState,
+	}
 }
 
 // unique FusionEnvironment identifier
@@ -288,6 +313,12 @@ func (o FusionEnvironmentDataMaskingActivityArrayOutput) ToFusionEnvironmentData
 	return o
 }
 
+func (o FusionEnvironmentDataMaskingActivityArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*FusionEnvironmentDataMaskingActivity] {
+	return pulumix.Output[[]*FusionEnvironmentDataMaskingActivity]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o FusionEnvironmentDataMaskingActivityArrayOutput) Index(i pulumi.IntInput) FusionEnvironmentDataMaskingActivityOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *FusionEnvironmentDataMaskingActivity {
 		return vs[0].([]*FusionEnvironmentDataMaskingActivity)[vs[1].(int)]
@@ -306,6 +337,12 @@ func (o FusionEnvironmentDataMaskingActivityMapOutput) ToFusionEnvironmentDataMa
 
 func (o FusionEnvironmentDataMaskingActivityMapOutput) ToFusionEnvironmentDataMaskingActivityMapOutputWithContext(ctx context.Context) FusionEnvironmentDataMaskingActivityMapOutput {
 	return o
+}
+
+func (o FusionEnvironmentDataMaskingActivityMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*FusionEnvironmentDataMaskingActivity] {
+	return pulumix.Output[map[string]*FusionEnvironmentDataMaskingActivity]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o FusionEnvironmentDataMaskingActivityMapOutput) MapIndex(k pulumi.StringInput) FusionEnvironmentDataMaskingActivityOutput {

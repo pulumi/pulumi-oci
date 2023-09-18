@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Monitor resource in Oracle Cloud Infrastructure Apm Synthetics service.
@@ -149,6 +150,12 @@ func (o GetMonitorResultOutput) ToGetMonitorResultOutput() GetMonitorResultOutpu
 
 func (o GetMonitorResultOutput) ToGetMonitorResultOutputWithContext(ctx context.Context) GetMonitorResultOutput {
 	return o
+}
+
+func (o GetMonitorResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitorResult] {
+	return pulumix.Output[GetMonitorResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMonitorResultOutput) ApmDomainId() pulumi.StringOutput {

@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Http Redirect resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
@@ -232,6 +233,12 @@ func (i *HttpRedirect) ToHttpRedirectOutputWithContext(ctx context.Context) Http
 	return pulumi.ToOutputWithContext(ctx, i).(HttpRedirectOutput)
 }
 
+func (i *HttpRedirect) ToOutput(ctx context.Context) pulumix.Output[*HttpRedirect] {
+	return pulumix.Output[*HttpRedirect]{
+		OutputState: i.ToHttpRedirectOutputWithContext(ctx).OutputState,
+	}
+}
+
 // HttpRedirectArrayInput is an input type that accepts HttpRedirectArray and HttpRedirectArrayOutput values.
 // You can construct a concrete instance of `HttpRedirectArrayInput` via:
 //
@@ -255,6 +262,12 @@ func (i HttpRedirectArray) ToHttpRedirectArrayOutput() HttpRedirectArrayOutput {
 
 func (i HttpRedirectArray) ToHttpRedirectArrayOutputWithContext(ctx context.Context) HttpRedirectArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(HttpRedirectArrayOutput)
+}
+
+func (i HttpRedirectArray) ToOutput(ctx context.Context) pulumix.Output[[]*HttpRedirect] {
+	return pulumix.Output[[]*HttpRedirect]{
+		OutputState: i.ToHttpRedirectArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // HttpRedirectMapInput is an input type that accepts HttpRedirectMap and HttpRedirectMapOutput values.
@@ -282,6 +295,12 @@ func (i HttpRedirectMap) ToHttpRedirectMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(HttpRedirectMapOutput)
 }
 
+func (i HttpRedirectMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*HttpRedirect] {
+	return pulumix.Output[map[string]*HttpRedirect]{
+		OutputState: i.ToHttpRedirectMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type HttpRedirectOutput struct{ *pulumi.OutputState }
 
 func (HttpRedirectOutput) ElementType() reflect.Type {
@@ -294,6 +313,12 @@ func (o HttpRedirectOutput) ToHttpRedirectOutput() HttpRedirectOutput {
 
 func (o HttpRedirectOutput) ToHttpRedirectOutputWithContext(ctx context.Context) HttpRedirectOutput {
 	return o
+}
+
+func (o HttpRedirectOutput) ToOutput(ctx context.Context) pulumix.Output[*HttpRedirect] {
+	return pulumix.Output[*HttpRedirect]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HTTP Redirects compartment.
@@ -355,6 +380,12 @@ func (o HttpRedirectArrayOutput) ToHttpRedirectArrayOutputWithContext(ctx contex
 	return o
 }
 
+func (o HttpRedirectArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*HttpRedirect] {
+	return pulumix.Output[[]*HttpRedirect]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o HttpRedirectArrayOutput) Index(i pulumi.IntInput) HttpRedirectOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *HttpRedirect {
 		return vs[0].([]*HttpRedirect)[vs[1].(int)]
@@ -373,6 +404,12 @@ func (o HttpRedirectMapOutput) ToHttpRedirectMapOutput() HttpRedirectMapOutput {
 
 func (o HttpRedirectMapOutput) ToHttpRedirectMapOutputWithContext(ctx context.Context) HttpRedirectMapOutput {
 	return o
+}
+
+func (o HttpRedirectMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*HttpRedirect] {
+	return pulumix.Output[map[string]*HttpRedirect]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o HttpRedirectMapOutput) MapIndex(k pulumi.StringInput) HttpRedirectOutput {

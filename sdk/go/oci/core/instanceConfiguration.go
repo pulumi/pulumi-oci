@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Instance Configuration resource in Oracle Cloud Infrastructure Core service.
@@ -615,6 +616,12 @@ func (i *InstanceConfiguration) ToInstanceConfigurationOutputWithContext(ctx con
 	return pulumi.ToOutputWithContext(ctx, i).(InstanceConfigurationOutput)
 }
 
+func (i *InstanceConfiguration) ToOutput(ctx context.Context) pulumix.Output[*InstanceConfiguration] {
+	return pulumix.Output[*InstanceConfiguration]{
+		OutputState: i.ToInstanceConfigurationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // InstanceConfigurationArrayInput is an input type that accepts InstanceConfigurationArray and InstanceConfigurationArrayOutput values.
 // You can construct a concrete instance of `InstanceConfigurationArrayInput` via:
 //
@@ -638,6 +645,12 @@ func (i InstanceConfigurationArray) ToInstanceConfigurationArrayOutput() Instanc
 
 func (i InstanceConfigurationArray) ToInstanceConfigurationArrayOutputWithContext(ctx context.Context) InstanceConfigurationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(InstanceConfigurationArrayOutput)
+}
+
+func (i InstanceConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]*InstanceConfiguration] {
+	return pulumix.Output[[]*InstanceConfiguration]{
+		OutputState: i.ToInstanceConfigurationArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // InstanceConfigurationMapInput is an input type that accepts InstanceConfigurationMap and InstanceConfigurationMapOutput values.
@@ -665,6 +678,12 @@ func (i InstanceConfigurationMap) ToInstanceConfigurationMapOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(InstanceConfigurationMapOutput)
 }
 
+func (i InstanceConfigurationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*InstanceConfiguration] {
+	return pulumix.Output[map[string]*InstanceConfiguration]{
+		OutputState: i.ToInstanceConfigurationMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type InstanceConfigurationOutput struct{ *pulumi.OutputState }
 
 func (InstanceConfigurationOutput) ElementType() reflect.Type {
@@ -677,6 +696,12 @@ func (o InstanceConfigurationOutput) ToInstanceConfigurationOutput() InstanceCon
 
 func (o InstanceConfigurationOutput) ToInstanceConfigurationOutputWithContext(ctx context.Context) InstanceConfigurationOutput {
 	return o
+}
+
+func (o InstanceConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[*InstanceConfiguration] {
+	return pulumix.Output[*InstanceConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The OCID of the compartment containing images to search
@@ -745,6 +770,12 @@ func (o InstanceConfigurationArrayOutput) ToInstanceConfigurationArrayOutputWith
 	return o
 }
 
+func (o InstanceConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*InstanceConfiguration] {
+	return pulumix.Output[[]*InstanceConfiguration]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o InstanceConfigurationArrayOutput) Index(i pulumi.IntInput) InstanceConfigurationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *InstanceConfiguration {
 		return vs[0].([]*InstanceConfiguration)[vs[1].(int)]
@@ -763,6 +794,12 @@ func (o InstanceConfigurationMapOutput) ToInstanceConfigurationMapOutput() Insta
 
 func (o InstanceConfigurationMapOutput) ToInstanceConfigurationMapOutputWithContext(ctx context.Context) InstanceConfigurationMapOutput {
 	return o
+}
+
+func (o InstanceConfigurationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*InstanceConfiguration] {
+	return pulumix.Output[map[string]*InstanceConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o InstanceConfigurationMapOutput) MapIndex(k pulumi.StringInput) InstanceConfigurationOutput {

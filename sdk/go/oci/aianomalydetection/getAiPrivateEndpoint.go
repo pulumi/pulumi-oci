@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Ai Private Endpoint resource in Oracle Cloud Infrastructure Ai Anomaly Detection service.
@@ -123,6 +124,12 @@ func (o LookupAiPrivateEndpointResultOutput) ToLookupAiPrivateEndpointResultOutp
 
 func (o LookupAiPrivateEndpointResultOutput) ToLookupAiPrivateEndpointResultOutputWithContext(ctx context.Context) LookupAiPrivateEndpointResultOutput {
 	return o
+}
+
+func (o LookupAiPrivateEndpointResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAiPrivateEndpointResult] {
+	return pulumix.Output[LookupAiPrivateEndpointResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o LookupAiPrivateEndpointResultOutput) AiPrivateEndpointId() pulumi.StringOutput {

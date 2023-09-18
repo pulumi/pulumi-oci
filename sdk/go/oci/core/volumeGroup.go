@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // ## Example Usage
@@ -296,6 +297,12 @@ func (i *VolumeGroup) ToVolumeGroupOutputWithContext(ctx context.Context) Volume
 	return pulumi.ToOutputWithContext(ctx, i).(VolumeGroupOutput)
 }
 
+func (i *VolumeGroup) ToOutput(ctx context.Context) pulumix.Output[*VolumeGroup] {
+	return pulumix.Output[*VolumeGroup]{
+		OutputState: i.ToVolumeGroupOutputWithContext(ctx).OutputState,
+	}
+}
+
 // VolumeGroupArrayInput is an input type that accepts VolumeGroupArray and VolumeGroupArrayOutput values.
 // You can construct a concrete instance of `VolumeGroupArrayInput` via:
 //
@@ -319,6 +326,12 @@ func (i VolumeGroupArray) ToVolumeGroupArrayOutput() VolumeGroupArrayOutput {
 
 func (i VolumeGroupArray) ToVolumeGroupArrayOutputWithContext(ctx context.Context) VolumeGroupArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(VolumeGroupArrayOutput)
+}
+
+func (i VolumeGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]*VolumeGroup] {
+	return pulumix.Output[[]*VolumeGroup]{
+		OutputState: i.ToVolumeGroupArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // VolumeGroupMapInput is an input type that accepts VolumeGroupMap and VolumeGroupMapOutput values.
@@ -346,6 +359,12 @@ func (i VolumeGroupMap) ToVolumeGroupMapOutputWithContext(ctx context.Context) V
 	return pulumi.ToOutputWithContext(ctx, i).(VolumeGroupMapOutput)
 }
 
+func (i VolumeGroupMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*VolumeGroup] {
+	return pulumix.Output[map[string]*VolumeGroup]{
+		OutputState: i.ToVolumeGroupMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type VolumeGroupOutput struct{ *pulumi.OutputState }
 
 func (VolumeGroupOutput) ElementType() reflect.Type {
@@ -358,6 +377,12 @@ func (o VolumeGroupOutput) ToVolumeGroupOutput() VolumeGroupOutput {
 
 func (o VolumeGroupOutput) ToVolumeGroupOutputWithContext(ctx context.Context) VolumeGroupOutput {
 	return o
+}
+
+func (o VolumeGroupOutput) ToOutput(ctx context.Context) pulumix.Output[*VolumeGroup] {
+	return pulumix.Output[*VolumeGroup]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The availability domain of the volume group replica.  Example: `Uocm:PHX-AD-1`
@@ -455,6 +480,12 @@ func (o VolumeGroupArrayOutput) ToVolumeGroupArrayOutputWithContext(ctx context.
 	return o
 }
 
+func (o VolumeGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*VolumeGroup] {
+	return pulumix.Output[[]*VolumeGroup]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o VolumeGroupArrayOutput) Index(i pulumi.IntInput) VolumeGroupOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *VolumeGroup {
 		return vs[0].([]*VolumeGroup)[vs[1].(int)]
@@ -473,6 +504,12 @@ func (o VolumeGroupMapOutput) ToVolumeGroupMapOutput() VolumeGroupMapOutput {
 
 func (o VolumeGroupMapOutput) ToVolumeGroupMapOutputWithContext(ctx context.Context) VolumeGroupMapOutput {
 	return o
+}
+
+func (o VolumeGroupMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*VolumeGroup] {
+	return pulumix.Output[map[string]*VolumeGroup]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o VolumeGroupMapOutput) MapIndex(k pulumi.StringInput) VolumeGroupOutput {

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Log Analytics Entity resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -143,6 +144,12 @@ func (o LookupLogAnalyticsEntityResultOutput) ToLookupLogAnalyticsEntityResultOu
 
 func (o LookupLogAnalyticsEntityResultOutput) ToLookupLogAnalyticsEntityResultOutputWithContext(ctx context.Context) LookupLogAnalyticsEntityResultOutput {
 	return o
+}
+
+func (o LookupLogAnalyticsEntityResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupLogAnalyticsEntityResult] {
+	return pulumix.Output[LookupLogAnalyticsEntityResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The Boolean flag to indicate if logs are collected for an entity for log analytics usage.

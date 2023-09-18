@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Summarize Resource Inventory resource in Oracle Cloud Infrastructure Jms service.
@@ -121,6 +122,12 @@ func (o GetSummarizeResourceInventoryResultOutput) ToGetSummarizeResourceInvento
 
 func (o GetSummarizeResourceInventoryResultOutput) ToGetSummarizeResourceInventoryResultOutputWithContext(ctx context.Context) GetSummarizeResourceInventoryResultOutput {
 	return o
+}
+
+func (o GetSummarizeResourceInventoryResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSummarizeResourceInventoryResult] {
+	return pulumix.Output[GetSummarizeResourceInventoryResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The number of _active_ fleets.

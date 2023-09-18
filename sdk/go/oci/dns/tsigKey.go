@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Tsig Key resource in Oracle Cloud Infrastructure DNS service.
@@ -265,6 +266,12 @@ func (i *TsigKey) ToTsigKeyOutputWithContext(ctx context.Context) TsigKeyOutput 
 	return pulumi.ToOutputWithContext(ctx, i).(TsigKeyOutput)
 }
 
+func (i *TsigKey) ToOutput(ctx context.Context) pulumix.Output[*TsigKey] {
+	return pulumix.Output[*TsigKey]{
+		OutputState: i.ToTsigKeyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // TsigKeyArrayInput is an input type that accepts TsigKeyArray and TsigKeyArrayOutput values.
 // You can construct a concrete instance of `TsigKeyArrayInput` via:
 //
@@ -288,6 +295,12 @@ func (i TsigKeyArray) ToTsigKeyArrayOutput() TsigKeyArrayOutput {
 
 func (i TsigKeyArray) ToTsigKeyArrayOutputWithContext(ctx context.Context) TsigKeyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(TsigKeyArrayOutput)
+}
+
+func (i TsigKeyArray) ToOutput(ctx context.Context) pulumix.Output[[]*TsigKey] {
+	return pulumix.Output[[]*TsigKey]{
+		OutputState: i.ToTsigKeyArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // TsigKeyMapInput is an input type that accepts TsigKeyMap and TsigKeyMapOutput values.
@@ -315,6 +328,12 @@ func (i TsigKeyMap) ToTsigKeyMapOutputWithContext(ctx context.Context) TsigKeyMa
 	return pulumi.ToOutputWithContext(ctx, i).(TsigKeyMapOutput)
 }
 
+func (i TsigKeyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*TsigKey] {
+	return pulumix.Output[map[string]*TsigKey]{
+		OutputState: i.ToTsigKeyMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type TsigKeyOutput struct{ *pulumi.OutputState }
 
 func (TsigKeyOutput) ElementType() reflect.Type {
@@ -327,6 +346,12 @@ func (o TsigKeyOutput) ToTsigKeyOutput() TsigKeyOutput {
 
 func (o TsigKeyOutput) ToTsigKeyOutputWithContext(ctx context.Context) TsigKeyOutput {
 	return o
+}
+
+func (o TsigKeyOutput) ToOutput(ctx context.Context) pulumix.Output[*TsigKey] {
+	return pulumix.Output[*TsigKey]{
+		OutputState: o.OutputState,
+	}
 }
 
 // TSIG key algorithms are encoded as domain names, but most consist of only one non-empty label, which is not required to be explicitly absolute. Applicable algorithms include: hmac-sha1, hmac-sha224, hmac-sha256, hmac-sha512. For more information on these algorithms, see [RFC 4635](https://tools.ietf.org/html/rfc4635#section-2).
@@ -400,6 +425,12 @@ func (o TsigKeyArrayOutput) ToTsigKeyArrayOutputWithContext(ctx context.Context)
 	return o
 }
 
+func (o TsigKeyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*TsigKey] {
+	return pulumix.Output[[]*TsigKey]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o TsigKeyArrayOutput) Index(i pulumi.IntInput) TsigKeyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *TsigKey {
 		return vs[0].([]*TsigKey)[vs[1].(int)]
@@ -418,6 +449,12 @@ func (o TsigKeyMapOutput) ToTsigKeyMapOutput() TsigKeyMapOutput {
 
 func (o TsigKeyMapOutput) ToTsigKeyMapOutputWithContext(ctx context.Context) TsigKeyMapOutput {
 	return o
+}
+
+func (o TsigKeyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*TsigKey] {
+	return pulumix.Output[map[string]*TsigKey]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o TsigKeyMapOutput) MapIndex(k pulumi.StringInput) TsigKeyOutput {

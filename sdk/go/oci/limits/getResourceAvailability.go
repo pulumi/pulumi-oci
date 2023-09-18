@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Resource Availability resource in Oracle Cloud Infrastructure Limits service.
@@ -130,6 +131,12 @@ func (o GetResourceAvailabilityResultOutput) ToGetResourceAvailabilityResultOutp
 
 func (o GetResourceAvailabilityResultOutput) ToGetResourceAvailabilityResultOutputWithContext(ctx context.Context) GetResourceAvailabilityResultOutput {
 	return o
+}
+
+func (o GetResourceAvailabilityResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetResourceAvailabilityResult] {
+	return pulumix.Output[GetResourceAvailabilityResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetResourceAvailabilityResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {

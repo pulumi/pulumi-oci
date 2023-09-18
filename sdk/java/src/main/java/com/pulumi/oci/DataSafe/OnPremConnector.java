@@ -69,7 +69,7 @@ public class OnPremConnector extends com.pulumi.resources.CustomResource {
      * Latest available version of the on-premises connector.
      * 
      */
-    @Export(name="availableVersion", type=String.class, parameters={})
+    @Export(name="availableVersion", refs={String.class}, tree="[0]")
     private Output<String> availableVersion;
 
     /**
@@ -83,7 +83,7 @@ public class OnPremConnector extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the compartment where you want to create the on-premises connector.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -97,7 +97,7 @@ public class OnPremConnector extends com.pulumi.resources.CustomResource {
      * Created version of the on-premises connector.
      * 
      */
-    @Export(name="createdVersion", type=String.class, parameters={})
+    @Export(name="createdVersion", refs={String.class}, tree="[0]")
     private Output<String> createdVersion;
 
     /**
@@ -111,7 +111,7 @@ public class OnPremConnector extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -125,7 +125,7 @@ public class OnPremConnector extends com.pulumi.resources.CustomResource {
      * (Updatable) The description of the on-premises connector.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -139,7 +139,7 @@ public class OnPremConnector extends com.pulumi.resources.CustomResource {
      * (Updatable) The display name of the on-premises connector. The name does not have to be unique, and it&#39;s changeable.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -156,7 +156,7 @@ public class OnPremConnector extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -173,7 +173,7 @@ public class OnPremConnector extends com.pulumi.resources.CustomResource {
      * Details about the current state of the on-premises connector.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -187,7 +187,7 @@ public class OnPremConnector extends com.pulumi.resources.CustomResource {
      * The current state of the on-premises connector.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -201,7 +201,7 @@ public class OnPremConnector extends com.pulumi.resources.CustomResource {
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -215,7 +215,7 @@ public class OnPremConnector extends com.pulumi.resources.CustomResource {
      * The date and time the on-premises connector was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**

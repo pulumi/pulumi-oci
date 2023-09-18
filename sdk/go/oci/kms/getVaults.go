@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Vaults in Oracle Cloud Infrastructure Kms service.
@@ -110,6 +111,12 @@ func (o GetVaultsResultOutput) ToGetVaultsResultOutput() GetVaultsResultOutput {
 
 func (o GetVaultsResultOutput) ToGetVaultsResultOutputWithContext(ctx context.Context) GetVaultsResultOutput {
 	return o
+}
+
+func (o GetVaultsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVaultsResult] {
+	return pulumix.Output[GetVaultsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the compartment that contains a particular vault.

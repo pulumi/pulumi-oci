@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Tag Default resource in Oracle Cloud Infrastructure Identity service.
@@ -243,6 +244,12 @@ func (i *TagDefault) ToTagDefaultOutputWithContext(ctx context.Context) TagDefau
 	return pulumi.ToOutputWithContext(ctx, i).(TagDefaultOutput)
 }
 
+func (i *TagDefault) ToOutput(ctx context.Context) pulumix.Output[*TagDefault] {
+	return pulumix.Output[*TagDefault]{
+		OutputState: i.ToTagDefaultOutputWithContext(ctx).OutputState,
+	}
+}
+
 // TagDefaultArrayInput is an input type that accepts TagDefaultArray and TagDefaultArrayOutput values.
 // You can construct a concrete instance of `TagDefaultArrayInput` via:
 //
@@ -266,6 +273,12 @@ func (i TagDefaultArray) ToTagDefaultArrayOutput() TagDefaultArrayOutput {
 
 func (i TagDefaultArray) ToTagDefaultArrayOutputWithContext(ctx context.Context) TagDefaultArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(TagDefaultArrayOutput)
+}
+
+func (i TagDefaultArray) ToOutput(ctx context.Context) pulumix.Output[[]*TagDefault] {
+	return pulumix.Output[[]*TagDefault]{
+		OutputState: i.ToTagDefaultArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // TagDefaultMapInput is an input type that accepts TagDefaultMap and TagDefaultMapOutput values.
@@ -293,6 +306,12 @@ func (i TagDefaultMap) ToTagDefaultMapOutputWithContext(ctx context.Context) Tag
 	return pulumi.ToOutputWithContext(ctx, i).(TagDefaultMapOutput)
 }
 
+func (i TagDefaultMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*TagDefault] {
+	return pulumix.Output[map[string]*TagDefault]{
+		OutputState: i.ToTagDefaultMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type TagDefaultOutput struct{ *pulumi.OutputState }
 
 func (TagDefaultOutput) ElementType() reflect.Type {
@@ -305,6 +324,12 @@ func (o TagDefaultOutput) ToTagDefaultOutput() TagDefaultOutput {
 
 func (o TagDefaultOutput) ToTagDefaultOutputWithContext(ctx context.Context) TagDefaultOutput {
 	return o
+}
+
+func (o TagDefaultOutput) ToOutput(ctx context.Context) pulumix.Output[*TagDefault] {
+	return pulumix.Output[*TagDefault]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the compartment. The tag default will be applied to all new resources created in this compartment.
@@ -368,6 +393,12 @@ func (o TagDefaultArrayOutput) ToTagDefaultArrayOutputWithContext(ctx context.Co
 	return o
 }
 
+func (o TagDefaultArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*TagDefault] {
+	return pulumix.Output[[]*TagDefault]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o TagDefaultArrayOutput) Index(i pulumi.IntInput) TagDefaultOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *TagDefault {
 		return vs[0].([]*TagDefault)[vs[1].(int)]
@@ -386,6 +417,12 @@ func (o TagDefaultMapOutput) ToTagDefaultMapOutput() TagDefaultMapOutput {
 
 func (o TagDefaultMapOutput) ToTagDefaultMapOutputWithContext(ctx context.Context) TagDefaultMapOutput {
 	return o
+}
+
+func (o TagDefaultMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*TagDefault] {
+	return pulumix.Output[map[string]*TagDefault]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o TagDefaultMapOutput) MapIndex(k pulumi.StringInput) TagDefaultOutput {

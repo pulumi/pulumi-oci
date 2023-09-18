@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Namespace Ingest Time Rules Management resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -171,6 +172,12 @@ func (i *NamespaceIngestTimeRulesManagement) ToNamespaceIngestTimeRulesManagemen
 	return pulumi.ToOutputWithContext(ctx, i).(NamespaceIngestTimeRulesManagementOutput)
 }
 
+func (i *NamespaceIngestTimeRulesManagement) ToOutput(ctx context.Context) pulumix.Output[*NamespaceIngestTimeRulesManagement] {
+	return pulumix.Output[*NamespaceIngestTimeRulesManagement]{
+		OutputState: i.ToNamespaceIngestTimeRulesManagementOutputWithContext(ctx).OutputState,
+	}
+}
+
 // NamespaceIngestTimeRulesManagementArrayInput is an input type that accepts NamespaceIngestTimeRulesManagementArray and NamespaceIngestTimeRulesManagementArrayOutput values.
 // You can construct a concrete instance of `NamespaceIngestTimeRulesManagementArrayInput` via:
 //
@@ -194,6 +201,12 @@ func (i NamespaceIngestTimeRulesManagementArray) ToNamespaceIngestTimeRulesManag
 
 func (i NamespaceIngestTimeRulesManagementArray) ToNamespaceIngestTimeRulesManagementArrayOutputWithContext(ctx context.Context) NamespaceIngestTimeRulesManagementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(NamespaceIngestTimeRulesManagementArrayOutput)
+}
+
+func (i NamespaceIngestTimeRulesManagementArray) ToOutput(ctx context.Context) pulumix.Output[[]*NamespaceIngestTimeRulesManagement] {
+	return pulumix.Output[[]*NamespaceIngestTimeRulesManagement]{
+		OutputState: i.ToNamespaceIngestTimeRulesManagementArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // NamespaceIngestTimeRulesManagementMapInput is an input type that accepts NamespaceIngestTimeRulesManagementMap and NamespaceIngestTimeRulesManagementMapOutput values.
@@ -221,6 +234,12 @@ func (i NamespaceIngestTimeRulesManagementMap) ToNamespaceIngestTimeRulesManagem
 	return pulumi.ToOutputWithContext(ctx, i).(NamespaceIngestTimeRulesManagementMapOutput)
 }
 
+func (i NamespaceIngestTimeRulesManagementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*NamespaceIngestTimeRulesManagement] {
+	return pulumix.Output[map[string]*NamespaceIngestTimeRulesManagement]{
+		OutputState: i.ToNamespaceIngestTimeRulesManagementMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type NamespaceIngestTimeRulesManagementOutput struct{ *pulumi.OutputState }
 
 func (NamespaceIngestTimeRulesManagementOutput) ElementType() reflect.Type {
@@ -233,6 +252,12 @@ func (o NamespaceIngestTimeRulesManagementOutput) ToNamespaceIngestTimeRulesMana
 
 func (o NamespaceIngestTimeRulesManagementOutput) ToNamespaceIngestTimeRulesManagementOutputWithContext(ctx context.Context) NamespaceIngestTimeRulesManagementOutput {
 	return o
+}
+
+func (o NamespaceIngestTimeRulesManagementOutput) ToOutput(ctx context.Context) pulumix.Output[*NamespaceIngestTimeRulesManagement] {
+	return pulumix.Output[*NamespaceIngestTimeRulesManagement]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
@@ -267,6 +292,12 @@ func (o NamespaceIngestTimeRulesManagementArrayOutput) ToNamespaceIngestTimeRule
 	return o
 }
 
+func (o NamespaceIngestTimeRulesManagementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*NamespaceIngestTimeRulesManagement] {
+	return pulumix.Output[[]*NamespaceIngestTimeRulesManagement]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o NamespaceIngestTimeRulesManagementArrayOutput) Index(i pulumi.IntInput) NamespaceIngestTimeRulesManagementOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *NamespaceIngestTimeRulesManagement {
 		return vs[0].([]*NamespaceIngestTimeRulesManagement)[vs[1].(int)]
@@ -285,6 +316,12 @@ func (o NamespaceIngestTimeRulesManagementMapOutput) ToNamespaceIngestTimeRulesM
 
 func (o NamespaceIngestTimeRulesManagementMapOutput) ToNamespaceIngestTimeRulesManagementMapOutputWithContext(ctx context.Context) NamespaceIngestTimeRulesManagementMapOutput {
 	return o
+}
+
+func (o NamespaceIngestTimeRulesManagementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*NamespaceIngestTimeRulesManagement] {
+	return pulumix.Output[map[string]*NamespaceIngestTimeRulesManagement]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o NamespaceIngestTimeRulesManagementMapOutput) MapIndex(k pulumi.StringInput) NamespaceIngestTimeRulesManagementOutput {

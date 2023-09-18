@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Managed Database resource in Oracle Cloud Infrastructure Database Management service.
@@ -129,6 +130,12 @@ func (o GetManagedDatabaseResultOutput) ToGetManagedDatabaseResultOutput() GetMa
 
 func (o GetManagedDatabaseResultOutput) ToGetManagedDatabaseResultOutputWithContext(ctx context.Context) GetManagedDatabaseResultOutput {
 	return o
+}
+
+func (o GetManagedDatabaseResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseResult] {
+	return pulumix.Output[GetManagedDatabaseResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The additional details specific to a type of database defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`

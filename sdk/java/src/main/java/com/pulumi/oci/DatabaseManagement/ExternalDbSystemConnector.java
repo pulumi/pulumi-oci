@@ -67,7 +67,7 @@ public class ExternalDbSystemConnector extends com.pulumi.resources.CustomResour
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system connector.
      * 
      */
-    @Export(name="agentId", type=String.class, parameters={})
+    @Export(name="agentId", refs={String.class}, tree="[0]")
     private Output<String> agentId;
 
     /**
@@ -81,7 +81,7 @@ public class ExternalDbSystemConnector extends com.pulumi.resources.CustomResour
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -95,7 +95,7 @@ public class ExternalDbSystemConnector extends com.pulumi.resources.CustomResour
      * The error message indicating the reason for connection failure or `null` if the connection was successful.
      * 
      */
-    @Export(name="connectionFailureMessage", type=String.class, parameters={})
+    @Export(name="connectionFailureMessage", refs={String.class}, tree="[0]")
     private Output<String> connectionFailureMessage;
 
     /**
@@ -109,7 +109,7 @@ public class ExternalDbSystemConnector extends com.pulumi.resources.CustomResour
      * The connection details required to connect to an external DB system component.
      * 
      */
-    @Export(name="connectionInfos", type=List.class, parameters={ExternalDbSystemConnectorConnectionInfo.class})
+    @Export(name="connectionInfos", refs={List.class,ExternalDbSystemConnectorConnectionInfo.class}, tree="[0,1]")
     private Output<List<ExternalDbSystemConnectorConnectionInfo>> connectionInfos;
 
     /**
@@ -123,7 +123,7 @@ public class ExternalDbSystemConnector extends com.pulumi.resources.CustomResour
      * The status of connectivity to the external DB system component.
      * 
      */
-    @Export(name="connectionStatus", type=String.class, parameters={})
+    @Export(name="connectionStatus", refs={String.class}, tree="[0]")
     private Output<String> connectionStatus;
 
     /**
@@ -137,7 +137,7 @@ public class ExternalDbSystemConnector extends com.pulumi.resources.CustomResour
      * (Updatable) The type of connector.
      * 
      */
-    @Export(name="connectorType", type=String.class, parameters={})
+    @Export(name="connectorType", refs={String.class}, tree="[0]")
     private Output<String> connectorType;
 
     /**
@@ -151,7 +151,7 @@ public class ExternalDbSystemConnector extends com.pulumi.resources.CustomResour
      * The user-friendly name for the external connector. The name does not have to be unique.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -168,7 +168,7 @@ public class ExternalDbSystemConnector extends com.pulumi.resources.CustomResour
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="externalDbSystemId", type=String.class, parameters={})
+    @Export(name="externalDbSystemId", refs={String.class}, tree="[0]")
     private Output<String> externalDbSystemId;
 
     /**
@@ -185,7 +185,7 @@ public class ExternalDbSystemConnector extends com.pulumi.resources.CustomResour
      * Additional information about the current lifecycle state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -199,7 +199,7 @@ public class ExternalDbSystemConnector extends com.pulumi.resources.CustomResour
      * The current lifecycle state of the external DB system connector.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -213,7 +213,7 @@ public class ExternalDbSystemConnector extends com.pulumi.resources.CustomResour
      * The date and time the connectionStatus of the external DB system connector was last updated.
      * 
      */
-    @Export(name="timeConnectionStatusLastUpdated", type=String.class, parameters={})
+    @Export(name="timeConnectionStatusLastUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeConnectionStatusLastUpdated;
 
     /**
@@ -227,7 +227,7 @@ public class ExternalDbSystemConnector extends com.pulumi.resources.CustomResour
      * The date and time the external DB system connector was created.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -241,7 +241,7 @@ public class ExternalDbSystemConnector extends com.pulumi.resources.CustomResour
      * The date and time the external DB system connector was last updated.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

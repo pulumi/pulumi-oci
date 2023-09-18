@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Secretbundle Versions in Oracle Cloud Infrastructure Secrets service.
@@ -105,6 +106,12 @@ func (o GetSecretbundleVersionsResultOutput) ToGetSecretbundleVersionsResultOutp
 
 func (o GetSecretbundleVersionsResultOutput) ToGetSecretbundleVersionsResultOutputWithContext(ctx context.Context) GetSecretbundleVersionsResultOutput {
 	return o
+}
+
+func (o GetSecretbundleVersionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecretbundleVersionsResult] {
+	return pulumix.Output[GetSecretbundleVersionsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetSecretbundleVersionsResultOutput) Filters() GetSecretbundleVersionsFilterArrayOutput {

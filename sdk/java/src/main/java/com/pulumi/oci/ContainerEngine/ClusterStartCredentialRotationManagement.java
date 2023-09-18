@@ -60,7 +60,7 @@ public class ClusterStartCredentialRotationManagement extends com.pulumi.resourc
      * The duration in days(in ISO 8601 notation eg. P5D) after which the old credentials should be retired. Maximum delay duration is 14 days.
      * 
      */
-    @Export(name="autoCompletionDelayDuration", type=String.class, parameters={})
+    @Export(name="autoCompletionDelayDuration", refs={String.class}, tree="[0]")
     private Output<String> autoCompletionDelayDuration;
 
     /**
@@ -77,7 +77,7 @@ public class ClusterStartCredentialRotationManagement extends com.pulumi.resourc
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="clusterId", type=String.class, parameters={})
+    @Export(name="clusterId", refs={String.class}, tree="[0]")
     private Output<String> clusterId;
 
     /**

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Maintenance Run resource in Oracle Cloud Infrastructure Database service.
@@ -156,6 +157,12 @@ func (o LookupMaintenanceRunResultOutput) ToLookupMaintenanceRunResultOutput() L
 
 func (o LookupMaintenanceRunResultOutput) ToLookupMaintenanceRunResultOutputWithContext(ctx context.Context) LookupMaintenanceRunResultOutput {
 	return o
+}
+
+func (o LookupMaintenanceRunResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupMaintenanceRunResult] {
+	return pulumix.Output[LookupMaintenanceRunResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the compartment.

@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Security Assessment resource in Oracle Cloud Infrastructure Data Safe service.
@@ -346,6 +347,12 @@ func (i *SecurityAssessment) ToSecurityAssessmentOutputWithContext(ctx context.C
 	return pulumi.ToOutputWithContext(ctx, i).(SecurityAssessmentOutput)
 }
 
+func (i *SecurityAssessment) ToOutput(ctx context.Context) pulumix.Output[*SecurityAssessment] {
+	return pulumix.Output[*SecurityAssessment]{
+		OutputState: i.ToSecurityAssessmentOutputWithContext(ctx).OutputState,
+	}
+}
+
 // SecurityAssessmentArrayInput is an input type that accepts SecurityAssessmentArray and SecurityAssessmentArrayOutput values.
 // You can construct a concrete instance of `SecurityAssessmentArrayInput` via:
 //
@@ -369,6 +376,12 @@ func (i SecurityAssessmentArray) ToSecurityAssessmentArrayOutput() SecurityAsses
 
 func (i SecurityAssessmentArray) ToSecurityAssessmentArrayOutputWithContext(ctx context.Context) SecurityAssessmentArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SecurityAssessmentArrayOutput)
+}
+
+func (i SecurityAssessmentArray) ToOutput(ctx context.Context) pulumix.Output[[]*SecurityAssessment] {
+	return pulumix.Output[[]*SecurityAssessment]{
+		OutputState: i.ToSecurityAssessmentArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // SecurityAssessmentMapInput is an input type that accepts SecurityAssessmentMap and SecurityAssessmentMapOutput values.
@@ -396,6 +409,12 @@ func (i SecurityAssessmentMap) ToSecurityAssessmentMapOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(SecurityAssessmentMapOutput)
 }
 
+func (i SecurityAssessmentMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*SecurityAssessment] {
+	return pulumix.Output[map[string]*SecurityAssessment]{
+		OutputState: i.ToSecurityAssessmentMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type SecurityAssessmentOutput struct{ *pulumi.OutputState }
 
 func (SecurityAssessmentOutput) ElementType() reflect.Type {
@@ -408,6 +427,12 @@ func (o SecurityAssessmentOutput) ToSecurityAssessmentOutput() SecurityAssessmen
 
 func (o SecurityAssessmentOutput) ToSecurityAssessmentOutputWithContext(ctx context.Context) SecurityAssessmentOutput {
 	return o
+}
+
+func (o SecurityAssessmentOutput) ToOutput(ctx context.Context) pulumix.Output[*SecurityAssessment] {
+	return pulumix.Output[*SecurityAssessment]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The OCID of the compartment that contains the security assessment.
@@ -554,6 +579,12 @@ func (o SecurityAssessmentArrayOutput) ToSecurityAssessmentArrayOutputWithContex
 	return o
 }
 
+func (o SecurityAssessmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*SecurityAssessment] {
+	return pulumix.Output[[]*SecurityAssessment]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o SecurityAssessmentArrayOutput) Index(i pulumi.IntInput) SecurityAssessmentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *SecurityAssessment {
 		return vs[0].([]*SecurityAssessment)[vs[1].(int)]
@@ -572,6 +603,12 @@ func (o SecurityAssessmentMapOutput) ToSecurityAssessmentMapOutput() SecurityAss
 
 func (o SecurityAssessmentMapOutput) ToSecurityAssessmentMapOutputWithContext(ctx context.Context) SecurityAssessmentMapOutput {
 	return o
+}
+
+func (o SecurityAssessmentMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*SecurityAssessment] {
+	return pulumix.Output[map[string]*SecurityAssessment]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o SecurityAssessmentMapOutput) MapIndex(k pulumi.StringInput) SecurityAssessmentOutput {

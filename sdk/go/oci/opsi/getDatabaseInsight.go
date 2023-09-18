@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Database Insight resource in Oracle Cloud Infrastructure Opsi service.
@@ -165,6 +166,12 @@ func (o LookupDatabaseInsightResultOutput) ToLookupDatabaseInsightResultOutput()
 
 func (o LookupDatabaseInsightResultOutput) ToLookupDatabaseInsightResultOutputWithContext(ctx context.Context) LookupDatabaseInsightResultOutput {
 	return o
+}
+
+func (o LookupDatabaseInsightResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDatabaseInsightResult] {
+	return pulumix.Output[LookupDatabaseInsightResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Compartment identifier of the database

@@ -82,7 +82,7 @@ public class AnnouncementSubscription extends com.pulumi.resources.CustomResourc
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the announcement subscription.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -96,7 +96,7 @@ public class AnnouncementSubscription extends com.pulumi.resources.CustomResourc
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -110,7 +110,7 @@ public class AnnouncementSubscription extends com.pulumi.resources.CustomResourc
      * (Updatable) A description of the announcement subscription. Avoid entering confidential information.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -124,7 +124,7 @@ public class AnnouncementSubscription extends com.pulumi.resources.CustomResourc
      * (Updatable) A user-friendly name for the announcement subscription. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -138,7 +138,7 @@ public class AnnouncementSubscription extends com.pulumi.resources.CustomResourc
      * A list of filter groups for the announcement subscription. A filter group combines one or more filters that the Announcements service applies to announcements for matching purposes.
      * 
      */
-    @Export(name="filterGroups", type=AnnouncementSubscriptionFilterGroups.class, parameters={})
+    @Export(name="filterGroups", refs={AnnouncementSubscriptionFilterGroups.class}, tree="[0]")
     private Output<AnnouncementSubscriptionFilterGroups> filterGroups;
 
     /**
@@ -152,7 +152,7 @@ public class AnnouncementSubscription extends com.pulumi.resources.CustomResourc
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -166,7 +166,7 @@ public class AnnouncementSubscription extends com.pulumi.resources.CustomResourc
      * A message describing the current lifecycle state in more detail. For example, details might provide required or recommended actions for a resource in a Failed state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -180,7 +180,7 @@ public class AnnouncementSubscription extends com.pulumi.resources.CustomResourc
      * (Updatable) The OCID of the Notifications service topic that is the target for publishing announcements that match the configured announcement subscription. The caller of the operation needs the ONS_TOPIC_PUBLISH permission for the targeted Notifications service topic. For more information about Notifications permissions, see [Details for Notifications](https://docs.cloud.oracle.com/iaas/Content/Identity/policyreference/notificationpolicyreference.htm).
      * 
      */
-    @Export(name="onsTopicId", type=String.class, parameters={})
+    @Export(name="onsTopicId", refs={String.class}, tree="[0]")
     private Output<String> onsTopicId;
 
     /**
@@ -194,7 +194,7 @@ public class AnnouncementSubscription extends com.pulumi.resources.CustomResourc
      * (Updatable) (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
      * 
      */
-    @Export(name="preferredLanguage", type=String.class, parameters={})
+    @Export(name="preferredLanguage", refs={String.class}, tree="[0]")
     private Output<String> preferredLanguage;
 
     /**
@@ -211,7 +211,7 @@ public class AnnouncementSubscription extends com.pulumi.resources.CustomResourc
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="preferredTimeZone", type=String.class, parameters={})
+    @Export(name="preferredTimeZone", refs={String.class}, tree="[0]")
     private Output<String> preferredTimeZone;
 
     /**
@@ -228,7 +228,7 @@ public class AnnouncementSubscription extends com.pulumi.resources.CustomResourc
      * The current lifecycle state of the announcement subscription.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -242,7 +242,7 @@ public class AnnouncementSubscription extends com.pulumi.resources.CustomResourc
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -256,7 +256,7 @@ public class AnnouncementSubscription extends com.pulumi.resources.CustomResourc
      * The date and time that the announcement subscription was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -270,7 +270,7 @@ public class AnnouncementSubscription extends com.pulumi.resources.CustomResourc
      * The date and time that the announcement subscription was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

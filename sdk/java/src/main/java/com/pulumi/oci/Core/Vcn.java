@@ -121,7 +121,7 @@ public class Vcn extends com.pulumi.resources.CustomResource {
      * The list of BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 ranges.
      * 
      */
-    @Export(name="byoipv6cidrBlocks", type=List.class, parameters={String.class})
+    @Export(name="byoipv6cidrBlocks", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> byoipv6cidrBlocks;
 
     /**
@@ -135,7 +135,7 @@ public class Vcn extends com.pulumi.resources.CustomResource {
      * The list of BYOIPv6 OCIDs and BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 address ranges.
      * 
      */
-    @Export(name="byoipv6cidrDetails", type=List.class, parameters={VcnByoipv6cidrDetail.class})
+    @Export(name="byoipv6cidrDetails", refs={List.class,VcnByoipv6cidrDetail.class}, tree="[0,1]")
     private Output<List<VcnByoipv6cidrDetail>> byoipv6cidrDetails;
 
     /**
@@ -149,7 +149,7 @@ public class Vcn extends com.pulumi.resources.CustomResource {
      * **Deprecated.** Do *not* set this value. Use `cidrBlocks` instead. Example: `10.0.0.0/16`
      * 
      */
-    @Export(name="cidrBlock", type=String.class, parameters={})
+    @Export(name="cidrBlock", refs={String.class}, tree="[0]")
     private Output<String> cidrBlock;
 
     /**
@@ -167,7 +167,7 @@ public class Vcn extends com.pulumi.resources.CustomResource {
      *   **Important:** Do *not* specify a value for `cidrBlock`. Use this parameter instead.
      * 
      */
-    @Export(name="cidrBlocks", type=List.class, parameters={String.class})
+    @Export(name="cidrBlocks", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> cidrBlocks;
 
     /**
@@ -185,7 +185,7 @@ public class Vcn extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the VCN.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -199,7 +199,7 @@ public class Vcn extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN&#39;s default set of DHCP options.
      * 
      */
-    @Export(name="defaultDhcpOptionsId", type=String.class, parameters={})
+    @Export(name="defaultDhcpOptionsId", refs={String.class}, tree="[0]")
     private Output<String> defaultDhcpOptionsId;
 
     /**
@@ -213,7 +213,7 @@ public class Vcn extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN&#39;s default route table.
      * 
      */
-    @Export(name="defaultRouteTableId", type=String.class, parameters={})
+    @Export(name="defaultRouteTableId", refs={String.class}, tree="[0]")
     private Output<String> defaultRouteTableId;
 
     /**
@@ -227,7 +227,7 @@ public class Vcn extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN&#39;s default security list.
      * 
      */
-    @Export(name="defaultSecurityListId", type=String.class, parameters={})
+    @Export(name="defaultSecurityListId", refs={String.class}, tree="[0]")
     private Output<String> defaultSecurityListId;
 
     /**
@@ -241,7 +241,7 @@ public class Vcn extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -255,7 +255,7 @@ public class Vcn extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -274,7 +274,7 @@ public class Vcn extends com.pulumi.resources.CustomResource {
      * Example: `vcn1`
      * 
      */
-    @Export(name="dnsLabel", type=String.class, parameters={})
+    @Export(name="dnsLabel", refs={String.class}, tree="[0]")
     private Output<String> dnsLabel;
 
     /**
@@ -293,7 +293,7 @@ public class Vcn extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -307,7 +307,7 @@ public class Vcn extends com.pulumi.resources.CustomResource {
      * For an IPv6-enabled VCN, this is the list of IPv6 prefixes for the VCN&#39;s IP address space. The prefixes are provided by Oracle and the sizes are always /56.
      * 
      */
-    @Export(name="ipv6cidrBlocks", type=List.class, parameters={String.class})
+    @Export(name="ipv6cidrBlocks", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> ipv6cidrBlocks;
 
     /**
@@ -326,7 +326,7 @@ public class Vcn extends com.pulumi.resources.CustomResource {
      * **Important:** Do *not* specify a value for `ipv6CidrBlock`. Use this parameter instead.
      * 
      */
-    @Export(name="ipv6privateCidrBlocks", type=List.class, parameters={String.class})
+    @Export(name="ipv6privateCidrBlocks", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> ipv6privateCidrBlocks;
 
     /**
@@ -345,7 +345,7 @@ public class Vcn extends com.pulumi.resources.CustomResource {
      * Whether IPv6 is enabled for the VCN. Default is `false`. If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block. You may skip having Oracle allocate the VCN a IPv6 /56 CIDR block by setting isOracleGuaAllocationEnabled to `false`. For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `true`
      * 
      */
-    @Export(name="isIpv6enabled", type=Boolean.class, parameters={})
+    @Export(name="isIpv6enabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isIpv6enabled;
 
     /**
@@ -362,7 +362,7 @@ public class Vcn extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="isOracleGuaAllocationEnabled", type=Boolean.class, parameters={})
+    @Export(name="isOracleGuaAllocationEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isOracleGuaAllocationEnabled;
 
     /**
@@ -379,7 +379,7 @@ public class Vcn extends com.pulumi.resources.CustomResource {
      * The VCN&#39;s current state.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -393,7 +393,7 @@ public class Vcn extends com.pulumi.resources.CustomResource {
      * The date and time the VCN was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -407,7 +407,7 @@ public class Vcn extends com.pulumi.resources.CustomResource {
      * The VCN&#39;s domain name, which consists of the VCN&#39;s DNS label, and the `oraclevcn.com` domain.
      * 
      */
-    @Export(name="vcnDomainName", type=String.class, parameters={})
+    @Export(name="vcnDomainName", refs={String.class}, tree="[0]")
     private Output<String> vcnDomainName;
 
     /**

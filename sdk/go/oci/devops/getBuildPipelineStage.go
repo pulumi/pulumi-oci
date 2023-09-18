@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Build Pipeline Stage resource in Oracle Cloud Infrastructure Devops service.
@@ -149,6 +150,12 @@ func (o LookupBuildPipelineStageResultOutput) ToLookupBuildPipelineStageResultOu
 
 func (o LookupBuildPipelineStageResultOutput) ToLookupBuildPipelineStageResultOutputWithContext(ctx context.Context) LookupBuildPipelineStageResultOutput {
 	return o
+}
+
+func (o LookupBuildPipelineStageResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupBuildPipelineStageResult] {
+	return pulumix.Output[LookupBuildPipelineStageResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the build pipeline.

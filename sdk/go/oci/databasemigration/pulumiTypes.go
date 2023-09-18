@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -48,6 +49,12 @@ func (i ConnectionAdminCredentialsArgs) ToConnectionAdminCredentialsOutput() Con
 
 func (i ConnectionAdminCredentialsArgs) ToConnectionAdminCredentialsOutputWithContext(ctx context.Context) ConnectionAdminCredentialsOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectionAdminCredentialsOutput)
+}
+
+func (i ConnectionAdminCredentialsArgs) ToOutput(ctx context.Context) pulumix.Output[ConnectionAdminCredentials] {
+	return pulumix.Output[ConnectionAdminCredentials]{
+		OutputState: i.ToConnectionAdminCredentialsOutputWithContext(ctx).OutputState,
+	}
 }
 
 func (i ConnectionAdminCredentialsArgs) ToConnectionAdminCredentialsPtrOutput() ConnectionAdminCredentialsPtrOutput {
@@ -91,6 +98,12 @@ func (i *connectionAdminCredentialsPtrType) ToConnectionAdminCredentialsPtrOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectionAdminCredentialsPtrOutput)
 }
 
+func (i *connectionAdminCredentialsPtrType) ToOutput(ctx context.Context) pulumix.Output[*ConnectionAdminCredentials] {
+	return pulumix.Output[*ConnectionAdminCredentials]{
+		OutputState: i.ToConnectionAdminCredentialsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ConnectionAdminCredentialsOutput struct{ *pulumi.OutputState }
 
 func (ConnectionAdminCredentialsOutput) ElementType() reflect.Type {
@@ -115,6 +128,12 @@ func (o ConnectionAdminCredentialsOutput) ToConnectionAdminCredentialsPtrOutputW
 	}).(ConnectionAdminCredentialsPtrOutput)
 }
 
+func (o ConnectionAdminCredentialsOutput) ToOutput(ctx context.Context) pulumix.Output[ConnectionAdminCredentials] {
+	return pulumix.Output[ConnectionAdminCredentials]{
+		OutputState: o.OutputState,
+	}
+}
+
 // (Updatable) Administrator password
 func (o ConnectionAdminCredentialsOutput) Password() pulumi.StringOutput {
 	return o.ApplyT(func(v ConnectionAdminCredentials) string { return v.Password }).(pulumi.StringOutput)
@@ -137,6 +156,12 @@ func (o ConnectionAdminCredentialsPtrOutput) ToConnectionAdminCredentialsPtrOutp
 
 func (o ConnectionAdminCredentialsPtrOutput) ToConnectionAdminCredentialsPtrOutputWithContext(ctx context.Context) ConnectionAdminCredentialsPtrOutput {
 	return o
+}
+
+func (o ConnectionAdminCredentialsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ConnectionAdminCredentials] {
+	return pulumix.Output[*ConnectionAdminCredentials]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ConnectionAdminCredentialsPtrOutput) Elem() ConnectionAdminCredentialsOutput {
@@ -214,6 +239,12 @@ func (i ConnectionConnectDescriptorArgs) ToConnectionConnectDescriptorOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectionConnectDescriptorOutput)
 }
 
+func (i ConnectionConnectDescriptorArgs) ToOutput(ctx context.Context) pulumix.Output[ConnectionConnectDescriptor] {
+	return pulumix.Output[ConnectionConnectDescriptor]{
+		OutputState: i.ToConnectionConnectDescriptorOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i ConnectionConnectDescriptorArgs) ToConnectionConnectDescriptorPtrOutput() ConnectionConnectDescriptorPtrOutput {
 	return i.ToConnectionConnectDescriptorPtrOutputWithContext(context.Background())
 }
@@ -255,6 +286,12 @@ func (i *connectionConnectDescriptorPtrType) ToConnectionConnectDescriptorPtrOut
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectionConnectDescriptorPtrOutput)
 }
 
+func (i *connectionConnectDescriptorPtrType) ToOutput(ctx context.Context) pulumix.Output[*ConnectionConnectDescriptor] {
+	return pulumix.Output[*ConnectionConnectDescriptor]{
+		OutputState: i.ToConnectionConnectDescriptorPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ConnectionConnectDescriptorOutput struct{ *pulumi.OutputState }
 
 func (ConnectionConnectDescriptorOutput) ElementType() reflect.Type {
@@ -277,6 +314,12 @@ func (o ConnectionConnectDescriptorOutput) ToConnectionConnectDescriptorPtrOutpu
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ConnectionConnectDescriptor) *ConnectionConnectDescriptor {
 		return &v
 	}).(ConnectionConnectDescriptorPtrOutput)
+}
+
+func (o ConnectionConnectDescriptorOutput) ToOutput(ctx context.Context) pulumix.Output[ConnectionConnectDescriptor] {
+	return pulumix.Output[ConnectionConnectDescriptor]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Connect String. Required if no host, port nor databaseServiceName were specified. If a Private Endpoint was specified in the Connection, the host entry should be a valid IP address. Supported formats: Easy connect: <host>:<port>/<db_service_name> Long format: (description= (address=(port=<port>)(host=<host>))(connect_data=(service_name=<db_service_name>)))
@@ -311,6 +354,12 @@ func (o ConnectionConnectDescriptorPtrOutput) ToConnectionConnectDescriptorPtrOu
 
 func (o ConnectionConnectDescriptorPtrOutput) ToConnectionConnectDescriptorPtrOutputWithContext(ctx context.Context) ConnectionConnectDescriptorPtrOutput {
 	return o
+}
+
+func (o ConnectionConnectDescriptorPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ConnectionConnectDescriptor] {
+	return pulumix.Output[*ConnectionConnectDescriptor]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ConnectionConnectDescriptorPtrOutput) Elem() ConnectionConnectDescriptorOutput {
@@ -408,6 +457,12 @@ func (i ConnectionPrivateEndpointArgs) ToConnectionPrivateEndpointOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectionPrivateEndpointOutput)
 }
 
+func (i ConnectionPrivateEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[ConnectionPrivateEndpoint] {
+	return pulumix.Output[ConnectionPrivateEndpoint]{
+		OutputState: i.ToConnectionPrivateEndpointOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i ConnectionPrivateEndpointArgs) ToConnectionPrivateEndpointPtrOutput() ConnectionPrivateEndpointPtrOutput {
 	return i.ToConnectionPrivateEndpointPtrOutputWithContext(context.Background())
 }
@@ -449,6 +504,12 @@ func (i *connectionPrivateEndpointPtrType) ToConnectionPrivateEndpointPtrOutputW
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectionPrivateEndpointPtrOutput)
 }
 
+func (i *connectionPrivateEndpointPtrType) ToOutput(ctx context.Context) pulumix.Output[*ConnectionPrivateEndpoint] {
+	return pulumix.Output[*ConnectionPrivateEndpoint]{
+		OutputState: i.ToConnectionPrivateEndpointPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ConnectionPrivateEndpointOutput struct{ *pulumi.OutputState }
 
 func (ConnectionPrivateEndpointOutput) ElementType() reflect.Type {
@@ -471,6 +532,12 @@ func (o ConnectionPrivateEndpointOutput) ToConnectionPrivateEndpointPtrOutputWit
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ConnectionPrivateEndpoint) *ConnectionPrivateEndpoint {
 		return &v
 	}).(ConnectionPrivateEndpointPtrOutput)
+}
+
+func (o ConnectionPrivateEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[ConnectionPrivateEndpoint] {
+	return pulumix.Output[ConnectionPrivateEndpoint]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) OCID of the compartment where the secret containing the credentials will be created.
@@ -505,6 +572,12 @@ func (o ConnectionPrivateEndpointPtrOutput) ToConnectionPrivateEndpointPtrOutput
 
 func (o ConnectionPrivateEndpointPtrOutput) ToConnectionPrivateEndpointPtrOutputWithContext(ctx context.Context) ConnectionPrivateEndpointPtrOutput {
 	return o
+}
+
+func (o ConnectionPrivateEndpointPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ConnectionPrivateEndpoint] {
+	return pulumix.Output[*ConnectionPrivateEndpoint]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ConnectionPrivateEndpointPtrOutput) Elem() ConnectionPrivateEndpointOutput {
@@ -594,6 +667,12 @@ func (i ConnectionReplicationCredentialsArgs) ToConnectionReplicationCredentials
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectionReplicationCredentialsOutput)
 }
 
+func (i ConnectionReplicationCredentialsArgs) ToOutput(ctx context.Context) pulumix.Output[ConnectionReplicationCredentials] {
+	return pulumix.Output[ConnectionReplicationCredentials]{
+		OutputState: i.ToConnectionReplicationCredentialsOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i ConnectionReplicationCredentialsArgs) ToConnectionReplicationCredentialsPtrOutput() ConnectionReplicationCredentialsPtrOutput {
 	return i.ToConnectionReplicationCredentialsPtrOutputWithContext(context.Background())
 }
@@ -635,6 +714,12 @@ func (i *connectionReplicationCredentialsPtrType) ToConnectionReplicationCredent
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectionReplicationCredentialsPtrOutput)
 }
 
+func (i *connectionReplicationCredentialsPtrType) ToOutput(ctx context.Context) pulumix.Output[*ConnectionReplicationCredentials] {
+	return pulumix.Output[*ConnectionReplicationCredentials]{
+		OutputState: i.ToConnectionReplicationCredentialsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ConnectionReplicationCredentialsOutput struct{ *pulumi.OutputState }
 
 func (ConnectionReplicationCredentialsOutput) ElementType() reflect.Type {
@@ -659,6 +744,12 @@ func (o ConnectionReplicationCredentialsOutput) ToConnectionReplicationCredentia
 	}).(ConnectionReplicationCredentialsPtrOutput)
 }
 
+func (o ConnectionReplicationCredentialsOutput) ToOutput(ctx context.Context) pulumix.Output[ConnectionReplicationCredentials] {
+	return pulumix.Output[ConnectionReplicationCredentials]{
+		OutputState: o.OutputState,
+	}
+}
+
 // (Updatable) Administrator password
 func (o ConnectionReplicationCredentialsOutput) Password() pulumi.StringOutput {
 	return o.ApplyT(func(v ConnectionReplicationCredentials) string { return v.Password }).(pulumi.StringOutput)
@@ -681,6 +772,12 @@ func (o ConnectionReplicationCredentialsPtrOutput) ToConnectionReplicationCreden
 
 func (o ConnectionReplicationCredentialsPtrOutput) ToConnectionReplicationCredentialsPtrOutputWithContext(ctx context.Context) ConnectionReplicationCredentialsPtrOutput {
 	return o
+}
+
+func (o ConnectionReplicationCredentialsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ConnectionReplicationCredentials] {
+	return pulumix.Output[*ConnectionReplicationCredentials]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ConnectionReplicationCredentialsPtrOutput) Elem() ConnectionReplicationCredentialsOutput {
@@ -758,6 +855,12 @@ func (i ConnectionSshDetailsArgs) ToConnectionSshDetailsOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectionSshDetailsOutput)
 }
 
+func (i ConnectionSshDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[ConnectionSshDetails] {
+	return pulumix.Output[ConnectionSshDetails]{
+		OutputState: i.ToConnectionSshDetailsOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i ConnectionSshDetailsArgs) ToConnectionSshDetailsPtrOutput() ConnectionSshDetailsPtrOutput {
 	return i.ToConnectionSshDetailsPtrOutputWithContext(context.Background())
 }
@@ -799,6 +902,12 @@ func (i *connectionSshDetailsPtrType) ToConnectionSshDetailsPtrOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectionSshDetailsPtrOutput)
 }
 
+func (i *connectionSshDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*ConnectionSshDetails] {
+	return pulumix.Output[*ConnectionSshDetails]{
+		OutputState: i.ToConnectionSshDetailsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ConnectionSshDetailsOutput struct{ *pulumi.OutputState }
 
 func (ConnectionSshDetailsOutput) ElementType() reflect.Type {
@@ -821,6 +930,12 @@ func (o ConnectionSshDetailsOutput) ToConnectionSshDetailsPtrOutputWithContext(c
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ConnectionSshDetails) *ConnectionSshDetails {
 		return &v
 	}).(ConnectionSshDetailsPtrOutput)
+}
+
+func (o ConnectionSshDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[ConnectionSshDetails] {
+	return pulumix.Output[ConnectionSshDetails]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Name of the host the SSH key is valid for.
@@ -855,6 +970,12 @@ func (o ConnectionSshDetailsPtrOutput) ToConnectionSshDetailsPtrOutput() Connect
 
 func (o ConnectionSshDetailsPtrOutput) ToConnectionSshDetailsPtrOutputWithContext(ctx context.Context) ConnectionSshDetailsPtrOutput {
 	return o
+}
+
+func (o ConnectionSshDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ConnectionSshDetails] {
+	return pulumix.Output[*ConnectionSshDetails]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ConnectionSshDetailsPtrOutput) Elem() ConnectionSshDetailsOutput {
@@ -954,6 +1075,12 @@ func (i ConnectionVaultDetailsArgs) ToConnectionVaultDetailsOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectionVaultDetailsOutput)
 }
 
+func (i ConnectionVaultDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[ConnectionVaultDetails] {
+	return pulumix.Output[ConnectionVaultDetails]{
+		OutputState: i.ToConnectionVaultDetailsOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i ConnectionVaultDetailsArgs) ToConnectionVaultDetailsPtrOutput() ConnectionVaultDetailsPtrOutput {
 	return i.ToConnectionVaultDetailsPtrOutputWithContext(context.Background())
 }
@@ -995,6 +1122,12 @@ func (i *connectionVaultDetailsPtrType) ToConnectionVaultDetailsPtrOutputWithCon
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectionVaultDetailsPtrOutput)
 }
 
+func (i *connectionVaultDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*ConnectionVaultDetails] {
+	return pulumix.Output[*ConnectionVaultDetails]{
+		OutputState: i.ToConnectionVaultDetailsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ConnectionVaultDetailsOutput struct{ *pulumi.OutputState }
 
 func (ConnectionVaultDetailsOutput) ElementType() reflect.Type {
@@ -1017,6 +1150,12 @@ func (o ConnectionVaultDetailsOutput) ToConnectionVaultDetailsPtrOutputWithConte
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ConnectionVaultDetails) *ConnectionVaultDetails {
 		return &v
 	}).(ConnectionVaultDetailsPtrOutput)
+}
+
+func (o ConnectionVaultDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[ConnectionVaultDetails] {
+	return pulumix.Output[ConnectionVaultDetails]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) OCID of the compartment where the secret containing the credentials will be created.
@@ -1049,6 +1188,12 @@ func (o ConnectionVaultDetailsPtrOutput) ToConnectionVaultDetailsPtrOutput() Con
 
 func (o ConnectionVaultDetailsPtrOutput) ToConnectionVaultDetailsPtrOutputWithContext(ctx context.Context) ConnectionVaultDetailsPtrOutput {
 	return o
+}
+
+func (o ConnectionVaultDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ConnectionVaultDetails] {
+	return pulumix.Output[*ConnectionVaultDetails]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ConnectionVaultDetailsPtrOutput) Elem() ConnectionVaultDetailsOutput {
@@ -1135,6 +1280,12 @@ func (i JobProgressArgs) ToJobProgressOutputWithContext(ctx context.Context) Job
 	return pulumi.ToOutputWithContext(ctx, i).(JobProgressOutput)
 }
 
+func (i JobProgressArgs) ToOutput(ctx context.Context) pulumix.Output[JobProgress] {
+	return pulumix.Output[JobProgress]{
+		OutputState: i.ToJobProgressOutputWithContext(ctx).OutputState,
+	}
+}
+
 // JobProgressArrayInput is an input type that accepts JobProgressArray and JobProgressArrayOutput values.
 // You can construct a concrete instance of `JobProgressArrayInput` via:
 //
@@ -1160,6 +1311,12 @@ func (i JobProgressArray) ToJobProgressArrayOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(JobProgressArrayOutput)
 }
 
+func (i JobProgressArray) ToOutput(ctx context.Context) pulumix.Output[[]JobProgress] {
+	return pulumix.Output[[]JobProgress]{
+		OutputState: i.ToJobProgressArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type JobProgressOutput struct{ *pulumi.OutputState }
 
 func (JobProgressOutput) ElementType() reflect.Type {
@@ -1172,6 +1329,12 @@ func (o JobProgressOutput) ToJobProgressOutput() JobProgressOutput {
 
 func (o JobProgressOutput) ToJobProgressOutputWithContext(ctx context.Context) JobProgressOutput {
 	return o
+}
+
+func (o JobProgressOutput) ToOutput(ctx context.Context) pulumix.Output[JobProgress] {
+	return pulumix.Output[JobProgress]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Current phase of the job.
@@ -1201,6 +1364,12 @@ func (o JobProgressArrayOutput) ToJobProgressArrayOutput() JobProgressArrayOutpu
 
 func (o JobProgressArrayOutput) ToJobProgressArrayOutputWithContext(ctx context.Context) JobProgressArrayOutput {
 	return o
+}
+
+func (o JobProgressArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]JobProgress] {
+	return pulumix.Output[[]JobProgress]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o JobProgressArrayOutput) Index(i pulumi.IntInput) JobProgressOutput {
@@ -1274,6 +1443,12 @@ func (i JobProgressPhaseArgs) ToJobProgressPhaseOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(JobProgressPhaseOutput)
 }
 
+func (i JobProgressPhaseArgs) ToOutput(ctx context.Context) pulumix.Output[JobProgressPhase] {
+	return pulumix.Output[JobProgressPhase]{
+		OutputState: i.ToJobProgressPhaseOutputWithContext(ctx).OutputState,
+	}
+}
+
 // JobProgressPhaseArrayInput is an input type that accepts JobProgressPhaseArray and JobProgressPhaseArrayOutput values.
 // You can construct a concrete instance of `JobProgressPhaseArrayInput` via:
 //
@@ -1299,6 +1474,12 @@ func (i JobProgressPhaseArray) ToJobProgressPhaseArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(JobProgressPhaseArrayOutput)
 }
 
+func (i JobProgressPhaseArray) ToOutput(ctx context.Context) pulumix.Output[[]JobProgressPhase] {
+	return pulumix.Output[[]JobProgressPhase]{
+		OutputState: i.ToJobProgressPhaseArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type JobProgressPhaseOutput struct{ *pulumi.OutputState }
 
 func (JobProgressPhaseOutput) ElementType() reflect.Type {
@@ -1311,6 +1492,12 @@ func (o JobProgressPhaseOutput) ToJobProgressPhaseOutput() JobProgressPhaseOutpu
 
 func (o JobProgressPhaseOutput) ToJobProgressPhaseOutputWithContext(ctx context.Context) JobProgressPhaseOutput {
 	return o
+}
+
+func (o JobProgressPhaseOutput) ToOutput(ctx context.Context) pulumix.Output[JobProgressPhase] {
+	return pulumix.Output[JobProgressPhase]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The text describing the action required to fix the issue
@@ -1372,6 +1559,12 @@ func (o JobProgressPhaseArrayOutput) ToJobProgressPhaseArrayOutputWithContext(ct
 	return o
 }
 
+func (o JobProgressPhaseArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]JobProgressPhase] {
+	return pulumix.Output[[]JobProgressPhase]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o JobProgressPhaseArrayOutput) Index(i pulumi.IntInput) JobProgressPhaseOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) JobProgressPhase {
 		return vs[0].([]JobProgressPhase)[vs[1].(int)]
@@ -1415,6 +1608,12 @@ func (i JobProgressPhaseExtractArgs) ToJobProgressPhaseExtractOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(JobProgressPhaseExtractOutput)
 }
 
+func (i JobProgressPhaseExtractArgs) ToOutput(ctx context.Context) pulumix.Output[JobProgressPhaseExtract] {
+	return pulumix.Output[JobProgressPhaseExtract]{
+		OutputState: i.ToJobProgressPhaseExtractOutputWithContext(ctx).OutputState,
+	}
+}
+
 // JobProgressPhaseExtractArrayInput is an input type that accepts JobProgressPhaseExtractArray and JobProgressPhaseExtractArrayOutput values.
 // You can construct a concrete instance of `JobProgressPhaseExtractArrayInput` via:
 //
@@ -1440,6 +1639,12 @@ func (i JobProgressPhaseExtractArray) ToJobProgressPhaseExtractArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(JobProgressPhaseExtractArrayOutput)
 }
 
+func (i JobProgressPhaseExtractArray) ToOutput(ctx context.Context) pulumix.Output[[]JobProgressPhaseExtract] {
+	return pulumix.Output[[]JobProgressPhaseExtract]{
+		OutputState: i.ToJobProgressPhaseExtractArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type JobProgressPhaseExtractOutput struct{ *pulumi.OutputState }
 
 func (JobProgressPhaseExtractOutput) ElementType() reflect.Type {
@@ -1452,6 +1657,12 @@ func (o JobProgressPhaseExtractOutput) ToJobProgressPhaseExtractOutput() JobProg
 
 func (o JobProgressPhaseExtractOutput) ToJobProgressPhaseExtractOutputWithContext(ctx context.Context) JobProgressPhaseExtractOutput {
 	return o
+}
+
+func (o JobProgressPhaseExtractOutput) ToOutput(ctx context.Context) pulumix.Output[JobProgressPhaseExtract] {
+	return pulumix.Output[JobProgressPhaseExtract]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Message in entry.
@@ -1476,6 +1687,12 @@ func (o JobProgressPhaseExtractArrayOutput) ToJobProgressPhaseExtractArrayOutput
 
 func (o JobProgressPhaseExtractArrayOutput) ToJobProgressPhaseExtractArrayOutputWithContext(ctx context.Context) JobProgressPhaseExtractArrayOutput {
 	return o
+}
+
+func (o JobProgressPhaseExtractArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]JobProgressPhaseExtract] {
+	return pulumix.Output[[]JobProgressPhaseExtract]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o JobProgressPhaseExtractArrayOutput) Index(i pulumi.IntInput) JobProgressPhaseExtractOutput {
@@ -1525,6 +1742,12 @@ func (i JobProgressPhaseLogLocationArgs) ToJobProgressPhaseLogLocationOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(JobProgressPhaseLogLocationOutput)
 }
 
+func (i JobProgressPhaseLogLocationArgs) ToOutput(ctx context.Context) pulumix.Output[JobProgressPhaseLogLocation] {
+	return pulumix.Output[JobProgressPhaseLogLocation]{
+		OutputState: i.ToJobProgressPhaseLogLocationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // JobProgressPhaseLogLocationArrayInput is an input type that accepts JobProgressPhaseLogLocationArray and JobProgressPhaseLogLocationArrayOutput values.
 // You can construct a concrete instance of `JobProgressPhaseLogLocationArrayInput` via:
 //
@@ -1550,6 +1773,12 @@ func (i JobProgressPhaseLogLocationArray) ToJobProgressPhaseLogLocationArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(JobProgressPhaseLogLocationArrayOutput)
 }
 
+func (i JobProgressPhaseLogLocationArray) ToOutput(ctx context.Context) pulumix.Output[[]JobProgressPhaseLogLocation] {
+	return pulumix.Output[[]JobProgressPhaseLogLocation]{
+		OutputState: i.ToJobProgressPhaseLogLocationArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type JobProgressPhaseLogLocationOutput struct{ *pulumi.OutputState }
 
 func (JobProgressPhaseLogLocationOutput) ElementType() reflect.Type {
@@ -1562,6 +1791,12 @@ func (o JobProgressPhaseLogLocationOutput) ToJobProgressPhaseLogLocationOutput()
 
 func (o JobProgressPhaseLogLocationOutput) ToJobProgressPhaseLogLocationOutputWithContext(ctx context.Context) JobProgressPhaseLogLocationOutput {
 	return o
+}
+
+func (o JobProgressPhaseLogLocationOutput) ToOutput(ctx context.Context) pulumix.Output[JobProgressPhaseLogLocation] {
+	return pulumix.Output[JobProgressPhaseLogLocation]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Name of the bucket containing the log file.
@@ -1591,6 +1826,12 @@ func (o JobProgressPhaseLogLocationArrayOutput) ToJobProgressPhaseLogLocationArr
 
 func (o JobProgressPhaseLogLocationArrayOutput) ToJobProgressPhaseLogLocationArrayOutputWithContext(ctx context.Context) JobProgressPhaseLogLocationArrayOutput {
 	return o
+}
+
+func (o JobProgressPhaseLogLocationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]JobProgressPhaseLogLocation] {
+	return pulumix.Output[[]JobProgressPhaseLogLocation]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o JobProgressPhaseLogLocationArrayOutput) Index(i pulumi.IntInput) JobProgressPhaseLogLocationOutput {
@@ -1640,6 +1881,12 @@ func (i JobUnsupportedObjectArgs) ToJobUnsupportedObjectOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(JobUnsupportedObjectOutput)
 }
 
+func (i JobUnsupportedObjectArgs) ToOutput(ctx context.Context) pulumix.Output[JobUnsupportedObject] {
+	return pulumix.Output[JobUnsupportedObject]{
+		OutputState: i.ToJobUnsupportedObjectOutputWithContext(ctx).OutputState,
+	}
+}
+
 // JobUnsupportedObjectArrayInput is an input type that accepts JobUnsupportedObjectArray and JobUnsupportedObjectArrayOutput values.
 // You can construct a concrete instance of `JobUnsupportedObjectArrayInput` via:
 //
@@ -1665,6 +1912,12 @@ func (i JobUnsupportedObjectArray) ToJobUnsupportedObjectArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(JobUnsupportedObjectArrayOutput)
 }
 
+func (i JobUnsupportedObjectArray) ToOutput(ctx context.Context) pulumix.Output[[]JobUnsupportedObject] {
+	return pulumix.Output[[]JobUnsupportedObject]{
+		OutputState: i.ToJobUnsupportedObjectArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type JobUnsupportedObjectOutput struct{ *pulumi.OutputState }
 
 func (JobUnsupportedObjectOutput) ElementType() reflect.Type {
@@ -1677,6 +1930,12 @@ func (o JobUnsupportedObjectOutput) ToJobUnsupportedObjectOutput() JobUnsupporte
 
 func (o JobUnsupportedObjectOutput) ToJobUnsupportedObjectOutputWithContext(ctx context.Context) JobUnsupportedObjectOutput {
 	return o
+}
+
+func (o JobUnsupportedObjectOutput) ToOutput(ctx context.Context) pulumix.Output[JobUnsupportedObject] {
+	return pulumix.Output[JobUnsupportedObject]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Name of the object (regular expression is allowed)
@@ -1706,6 +1965,12 @@ func (o JobUnsupportedObjectArrayOutput) ToJobUnsupportedObjectArrayOutput() Job
 
 func (o JobUnsupportedObjectArrayOutput) ToJobUnsupportedObjectArrayOutputWithContext(ctx context.Context) JobUnsupportedObjectArrayOutput {
 	return o
+}
+
+func (o JobUnsupportedObjectArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]JobUnsupportedObject] {
+	return pulumix.Output[[]JobUnsupportedObject]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o JobUnsupportedObjectArrayOutput) Index(i pulumi.IntInput) JobUnsupportedObjectOutput {
@@ -1751,6 +2016,12 @@ func (i MigrationAdvisorSettingsArgs) ToMigrationAdvisorSettingsOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationAdvisorSettingsOutput)
 }
 
+func (i MigrationAdvisorSettingsArgs) ToOutput(ctx context.Context) pulumix.Output[MigrationAdvisorSettings] {
+	return pulumix.Output[MigrationAdvisorSettings]{
+		OutputState: i.ToMigrationAdvisorSettingsOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i MigrationAdvisorSettingsArgs) ToMigrationAdvisorSettingsPtrOutput() MigrationAdvisorSettingsPtrOutput {
 	return i.ToMigrationAdvisorSettingsPtrOutputWithContext(context.Background())
 }
@@ -1792,6 +2063,12 @@ func (i *migrationAdvisorSettingsPtrType) ToMigrationAdvisorSettingsPtrOutputWit
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationAdvisorSettingsPtrOutput)
 }
 
+func (i *migrationAdvisorSettingsPtrType) ToOutput(ctx context.Context) pulumix.Output[*MigrationAdvisorSettings] {
+	return pulumix.Output[*MigrationAdvisorSettings]{
+		OutputState: i.ToMigrationAdvisorSettingsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MigrationAdvisorSettingsOutput struct{ *pulumi.OutputState }
 
 func (MigrationAdvisorSettingsOutput) ElementType() reflect.Type {
@@ -1816,6 +2093,12 @@ func (o MigrationAdvisorSettingsOutput) ToMigrationAdvisorSettingsPtrOutputWithC
 	}).(MigrationAdvisorSettingsPtrOutput)
 }
 
+func (o MigrationAdvisorSettingsOutput) ToOutput(ctx context.Context) pulumix.Output[MigrationAdvisorSettings] {
+	return pulumix.Output[MigrationAdvisorSettings]{
+		OutputState: o.OutputState,
+	}
+}
+
 // (Updatable) True to not interrupt migration execution due to Pre-Migration Advisor errors. Default is false.
 func (o MigrationAdvisorSettingsOutput) IsIgnoreErrors() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v MigrationAdvisorSettings) *bool { return v.IsIgnoreErrors }).(pulumi.BoolPtrOutput)
@@ -1838,6 +2121,12 @@ func (o MigrationAdvisorSettingsPtrOutput) ToMigrationAdvisorSettingsPtrOutput()
 
 func (o MigrationAdvisorSettingsPtrOutput) ToMigrationAdvisorSettingsPtrOutputWithContext(ctx context.Context) MigrationAdvisorSettingsPtrOutput {
 	return o
+}
+
+func (o MigrationAdvisorSettingsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MigrationAdvisorSettings] {
+	return pulumix.Output[*MigrationAdvisorSettings]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MigrationAdvisorSettingsPtrOutput) Elem() MigrationAdvisorSettingsOutput {
@@ -1907,6 +2196,12 @@ func (i MigrationDataTransferMediumDetailsArgs) ToMigrationDataTransferMediumDet
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationDataTransferMediumDetailsOutput)
 }
 
+func (i MigrationDataTransferMediumDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[MigrationDataTransferMediumDetails] {
+	return pulumix.Output[MigrationDataTransferMediumDetails]{
+		OutputState: i.ToMigrationDataTransferMediumDetailsOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i MigrationDataTransferMediumDetailsArgs) ToMigrationDataTransferMediumDetailsPtrOutput() MigrationDataTransferMediumDetailsPtrOutput {
 	return i.ToMigrationDataTransferMediumDetailsPtrOutputWithContext(context.Background())
 }
@@ -1948,6 +2243,12 @@ func (i *migrationDataTransferMediumDetailsPtrType) ToMigrationDataTransferMediu
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationDataTransferMediumDetailsPtrOutput)
 }
 
+func (i *migrationDataTransferMediumDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*MigrationDataTransferMediumDetails] {
+	return pulumix.Output[*MigrationDataTransferMediumDetails]{
+		OutputState: i.ToMigrationDataTransferMediumDetailsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MigrationDataTransferMediumDetailsOutput struct{ *pulumi.OutputState }
 
 func (MigrationDataTransferMediumDetailsOutput) ElementType() reflect.Type {
@@ -1970,6 +2271,12 @@ func (o MigrationDataTransferMediumDetailsOutput) ToMigrationDataTransferMediumD
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v MigrationDataTransferMediumDetails) *MigrationDataTransferMediumDetails {
 		return &v
 	}).(MigrationDataTransferMediumDetailsPtrOutput)
+}
+
+func (o MigrationDataTransferMediumDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[MigrationDataTransferMediumDetails] {
+	return pulumix.Output[MigrationDataTransferMediumDetails]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Optional details for creating a network database link from Oracle Cloud Infrastructure database to on-premise database.
@@ -1998,6 +2305,12 @@ func (o MigrationDataTransferMediumDetailsPtrOutput) ToMigrationDataTransferMedi
 
 func (o MigrationDataTransferMediumDetailsPtrOutput) ToMigrationDataTransferMediumDetailsPtrOutputWithContext(ctx context.Context) MigrationDataTransferMediumDetailsPtrOutput {
 	return o
+}
+
+func (o MigrationDataTransferMediumDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MigrationDataTransferMediumDetails] {
+	return pulumix.Output[*MigrationDataTransferMediumDetails]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MigrationDataTransferMediumDetailsPtrOutput) Elem() MigrationDataTransferMediumDetailsOutput {
@@ -2067,6 +2380,12 @@ func (i MigrationDataTransferMediumDetailsDatabaseLinkDetailsArgs) ToMigrationDa
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationDataTransferMediumDetailsDatabaseLinkDetailsOutput)
 }
 
+func (i MigrationDataTransferMediumDetailsDatabaseLinkDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[MigrationDataTransferMediumDetailsDatabaseLinkDetails] {
+	return pulumix.Output[MigrationDataTransferMediumDetailsDatabaseLinkDetails]{
+		OutputState: i.ToMigrationDataTransferMediumDetailsDatabaseLinkDetailsOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i MigrationDataTransferMediumDetailsDatabaseLinkDetailsArgs) ToMigrationDataTransferMediumDetailsDatabaseLinkDetailsPtrOutput() MigrationDataTransferMediumDetailsDatabaseLinkDetailsPtrOutput {
 	return i.ToMigrationDataTransferMediumDetailsDatabaseLinkDetailsPtrOutputWithContext(context.Background())
 }
@@ -2108,6 +2427,12 @@ func (i *migrationDataTransferMediumDetailsDatabaseLinkDetailsPtrType) ToMigrati
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationDataTransferMediumDetailsDatabaseLinkDetailsPtrOutput)
 }
 
+func (i *migrationDataTransferMediumDetailsDatabaseLinkDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*MigrationDataTransferMediumDetailsDatabaseLinkDetails] {
+	return pulumix.Output[*MigrationDataTransferMediumDetailsDatabaseLinkDetails]{
+		OutputState: i.ToMigrationDataTransferMediumDetailsDatabaseLinkDetailsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MigrationDataTransferMediumDetailsDatabaseLinkDetailsOutput struct{ *pulumi.OutputState }
 
 func (MigrationDataTransferMediumDetailsDatabaseLinkDetailsOutput) ElementType() reflect.Type {
@@ -2130,6 +2455,12 @@ func (o MigrationDataTransferMediumDetailsDatabaseLinkDetailsOutput) ToMigration
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v MigrationDataTransferMediumDetailsDatabaseLinkDetails) *MigrationDataTransferMediumDetailsDatabaseLinkDetails {
 		return &v
 	}).(MigrationDataTransferMediumDetailsDatabaseLinkDetailsPtrOutput)
+}
+
+func (o MigrationDataTransferMediumDetailsDatabaseLinkDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[MigrationDataTransferMediumDetailsDatabaseLinkDetails] {
+	return pulumix.Output[MigrationDataTransferMediumDetailsDatabaseLinkDetails]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Name of directory object in database
@@ -2156,6 +2487,12 @@ func (o MigrationDataTransferMediumDetailsDatabaseLinkDetailsPtrOutput) ToMigrat
 
 func (o MigrationDataTransferMediumDetailsDatabaseLinkDetailsPtrOutput) ToMigrationDataTransferMediumDetailsDatabaseLinkDetailsPtrOutputWithContext(ctx context.Context) MigrationDataTransferMediumDetailsDatabaseLinkDetailsPtrOutput {
 	return o
+}
+
+func (o MigrationDataTransferMediumDetailsDatabaseLinkDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MigrationDataTransferMediumDetailsDatabaseLinkDetails] {
+	return pulumix.Output[*MigrationDataTransferMediumDetailsDatabaseLinkDetails]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MigrationDataTransferMediumDetailsDatabaseLinkDetailsPtrOutput) Elem() MigrationDataTransferMediumDetailsDatabaseLinkDetailsOutput {
@@ -2225,6 +2562,12 @@ func (i MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketArgs) T
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketOutput)
 }
 
+func (i MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketArgs) ToOutput(ctx context.Context) pulumix.Output[MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucket] {
+	return pulumix.Output[MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucket]{
+		OutputState: i.ToMigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketArgs) ToMigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketPtrOutput() MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketPtrOutput {
 	return i.ToMigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketPtrOutputWithContext(context.Background())
 }
@@ -2266,6 +2609,12 @@ func (i *migrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketPtrTyp
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketPtrOutput)
 }
 
+func (i *migrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketPtrType) ToOutput(ctx context.Context) pulumix.Output[*MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucket] {
+	return pulumix.Output[*MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucket]{
+		OutputState: i.ToMigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketOutput struct{ *pulumi.OutputState }
 
 func (MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketOutput) ElementType() reflect.Type {
@@ -2290,6 +2639,12 @@ func (o MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketOutput)
 	}).(MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketPtrOutput)
 }
 
+func (o MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketOutput) ToOutput(ctx context.Context) pulumix.Output[MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucket] {
+	return pulumix.Output[MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucket]{
+		OutputState: o.OutputState,
+	}
+}
+
 // (Updatable) Bucket name.
 func (o MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucket) string { return v.Bucket }).(pulumi.StringOutput)
@@ -2312,6 +2667,12 @@ func (o MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketPtrOutp
 
 func (o MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketPtrOutput) ToMigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketPtrOutputWithContext(ctx context.Context) MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketPtrOutput {
 	return o
+}
+
+func (o MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucket] {
+	return pulumix.Output[*MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucket]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketPtrOutput) Elem() MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketOutput {
@@ -2381,6 +2742,12 @@ func (i MigrationDataTransferMediumDetailsObjectStorageDetailsArgs) ToMigrationD
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationDataTransferMediumDetailsObjectStorageDetailsOutput)
 }
 
+func (i MigrationDataTransferMediumDetailsObjectStorageDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[MigrationDataTransferMediumDetailsObjectStorageDetails] {
+	return pulumix.Output[MigrationDataTransferMediumDetailsObjectStorageDetails]{
+		OutputState: i.ToMigrationDataTransferMediumDetailsObjectStorageDetailsOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i MigrationDataTransferMediumDetailsObjectStorageDetailsArgs) ToMigrationDataTransferMediumDetailsObjectStorageDetailsPtrOutput() MigrationDataTransferMediumDetailsObjectStorageDetailsPtrOutput {
 	return i.ToMigrationDataTransferMediumDetailsObjectStorageDetailsPtrOutputWithContext(context.Background())
 }
@@ -2422,6 +2789,12 @@ func (i *migrationDataTransferMediumDetailsObjectStorageDetailsPtrType) ToMigrat
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationDataTransferMediumDetailsObjectStorageDetailsPtrOutput)
 }
 
+func (i *migrationDataTransferMediumDetailsObjectStorageDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*MigrationDataTransferMediumDetailsObjectStorageDetails] {
+	return pulumix.Output[*MigrationDataTransferMediumDetailsObjectStorageDetails]{
+		OutputState: i.ToMigrationDataTransferMediumDetailsObjectStorageDetailsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MigrationDataTransferMediumDetailsObjectStorageDetailsOutput struct{ *pulumi.OutputState }
 
 func (MigrationDataTransferMediumDetailsObjectStorageDetailsOutput) ElementType() reflect.Type {
@@ -2446,6 +2819,12 @@ func (o MigrationDataTransferMediumDetailsObjectStorageDetailsOutput) ToMigratio
 	}).(MigrationDataTransferMediumDetailsObjectStorageDetailsPtrOutput)
 }
 
+func (o MigrationDataTransferMediumDetailsObjectStorageDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[MigrationDataTransferMediumDetailsObjectStorageDetails] {
+	return pulumix.Output[MigrationDataTransferMediumDetailsObjectStorageDetails]{
+		OutputState: o.OutputState,
+	}
+}
+
 // (Updatable) Bucket name.
 func (o MigrationDataTransferMediumDetailsObjectStorageDetailsOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v MigrationDataTransferMediumDetailsObjectStorageDetails) string { return v.Bucket }).(pulumi.StringOutput)
@@ -2468,6 +2847,12 @@ func (o MigrationDataTransferMediumDetailsObjectStorageDetailsPtrOutput) ToMigra
 
 func (o MigrationDataTransferMediumDetailsObjectStorageDetailsPtrOutput) ToMigrationDataTransferMediumDetailsObjectStorageDetailsPtrOutputWithContext(ctx context.Context) MigrationDataTransferMediumDetailsObjectStorageDetailsPtrOutput {
 	return o
+}
+
+func (o MigrationDataTransferMediumDetailsObjectStorageDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MigrationDataTransferMediumDetailsObjectStorageDetails] {
+	return pulumix.Output[*MigrationDataTransferMediumDetailsObjectStorageDetails]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MigrationDataTransferMediumDetailsObjectStorageDetailsPtrOutput) Elem() MigrationDataTransferMediumDetailsObjectStorageDetailsOutput {
@@ -2549,6 +2934,12 @@ func (i MigrationDatapumpSettingsArgs) ToMigrationDatapumpSettingsOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationDatapumpSettingsOutput)
 }
 
+func (i MigrationDatapumpSettingsArgs) ToOutput(ctx context.Context) pulumix.Output[MigrationDatapumpSettings] {
+	return pulumix.Output[MigrationDatapumpSettings]{
+		OutputState: i.ToMigrationDatapumpSettingsOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i MigrationDatapumpSettingsArgs) ToMigrationDatapumpSettingsPtrOutput() MigrationDatapumpSettingsPtrOutput {
 	return i.ToMigrationDatapumpSettingsPtrOutputWithContext(context.Background())
 }
@@ -2590,6 +2981,12 @@ func (i *migrationDatapumpSettingsPtrType) ToMigrationDatapumpSettingsPtrOutputW
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationDatapumpSettingsPtrOutput)
 }
 
+func (i *migrationDatapumpSettingsPtrType) ToOutput(ctx context.Context) pulumix.Output[*MigrationDatapumpSettings] {
+	return pulumix.Output[*MigrationDatapumpSettings]{
+		OutputState: i.ToMigrationDatapumpSettingsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MigrationDatapumpSettingsOutput struct{ *pulumi.OutputState }
 
 func (MigrationDatapumpSettingsOutput) ElementType() reflect.Type {
@@ -2612,6 +3009,12 @@ func (o MigrationDatapumpSettingsOutput) ToMigrationDatapumpSettingsPtrOutputWit
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v MigrationDatapumpSettings) *MigrationDatapumpSettings {
 		return &v
 	}).(MigrationDatapumpSettingsPtrOutput)
+}
+
+func (o MigrationDatapumpSettingsOutput) ToOutput(ctx context.Context) pulumix.Output[MigrationDatapumpSettings] {
+	return pulumix.Output[MigrationDatapumpSettings]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Optional parameters for Data Pump Export and Import. Refer to [Configuring Optional Initial Load Advanced Settings](https://docs.us.oracle.com/en/cloud/paas/database-migration/dmsus/working-migration-resources.html#GUID-24BD3054-FDF8-48FF-8492-636C1D4B71ED)
@@ -2657,6 +3060,12 @@ func (o MigrationDatapumpSettingsPtrOutput) ToMigrationDatapumpSettingsPtrOutput
 
 func (o MigrationDatapumpSettingsPtrOutput) ToMigrationDatapumpSettingsPtrOutputWithContext(ctx context.Context) MigrationDatapumpSettingsPtrOutput {
 	return o
+}
+
+func (o MigrationDatapumpSettingsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MigrationDatapumpSettings] {
+	return pulumix.Output[*MigrationDatapumpSettings]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MigrationDatapumpSettingsPtrOutput) Elem() MigrationDatapumpSettingsOutput {
@@ -2772,6 +3181,12 @@ func (i MigrationDatapumpSettingsDataPumpParametersArgs) ToMigrationDatapumpSett
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationDatapumpSettingsDataPumpParametersOutput)
 }
 
+func (i MigrationDatapumpSettingsDataPumpParametersArgs) ToOutput(ctx context.Context) pulumix.Output[MigrationDatapumpSettingsDataPumpParameters] {
+	return pulumix.Output[MigrationDatapumpSettingsDataPumpParameters]{
+		OutputState: i.ToMigrationDatapumpSettingsDataPumpParametersOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i MigrationDatapumpSettingsDataPumpParametersArgs) ToMigrationDatapumpSettingsDataPumpParametersPtrOutput() MigrationDatapumpSettingsDataPumpParametersPtrOutput {
 	return i.ToMigrationDatapumpSettingsDataPumpParametersPtrOutputWithContext(context.Background())
 }
@@ -2813,6 +3228,12 @@ func (i *migrationDatapumpSettingsDataPumpParametersPtrType) ToMigrationDatapump
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationDatapumpSettingsDataPumpParametersPtrOutput)
 }
 
+func (i *migrationDatapumpSettingsDataPumpParametersPtrType) ToOutput(ctx context.Context) pulumix.Output[*MigrationDatapumpSettingsDataPumpParameters] {
+	return pulumix.Output[*MigrationDatapumpSettingsDataPumpParameters]{
+		OutputState: i.ToMigrationDatapumpSettingsDataPumpParametersPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MigrationDatapumpSettingsDataPumpParametersOutput struct{ *pulumi.OutputState }
 
 func (MigrationDatapumpSettingsDataPumpParametersOutput) ElementType() reflect.Type {
@@ -2835,6 +3256,12 @@ func (o MigrationDatapumpSettingsDataPumpParametersOutput) ToMigrationDatapumpSe
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v MigrationDatapumpSettingsDataPumpParameters) *MigrationDatapumpSettingsDataPumpParameters {
 		return &v
 	}).(MigrationDatapumpSettingsDataPumpParametersPtrOutput)
+}
+
+func (o MigrationDatapumpSettingsDataPumpParametersOutput) ToOutput(ctx context.Context) pulumix.Output[MigrationDatapumpSettingsDataPumpParameters] {
+	return pulumix.Output[MigrationDatapumpSettingsDataPumpParameters]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Estimate size of dumps that will be generated.
@@ -2879,6 +3306,12 @@ func (o MigrationDatapumpSettingsDataPumpParametersPtrOutput) ToMigrationDatapum
 
 func (o MigrationDatapumpSettingsDataPumpParametersPtrOutput) ToMigrationDatapumpSettingsDataPumpParametersPtrOutputWithContext(ctx context.Context) MigrationDatapumpSettingsDataPumpParametersPtrOutput {
 	return o
+}
+
+func (o MigrationDatapumpSettingsDataPumpParametersPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MigrationDatapumpSettingsDataPumpParameters] {
+	return pulumix.Output[*MigrationDatapumpSettingsDataPumpParameters]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MigrationDatapumpSettingsDataPumpParametersPtrOutput) Elem() MigrationDatapumpSettingsDataPumpParametersOutput {
@@ -2988,6 +3421,12 @@ func (i MigrationDatapumpSettingsExportDirectoryObjectArgs) ToMigrationDatapumpS
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationDatapumpSettingsExportDirectoryObjectOutput)
 }
 
+func (i MigrationDatapumpSettingsExportDirectoryObjectArgs) ToOutput(ctx context.Context) pulumix.Output[MigrationDatapumpSettingsExportDirectoryObject] {
+	return pulumix.Output[MigrationDatapumpSettingsExportDirectoryObject]{
+		OutputState: i.ToMigrationDatapumpSettingsExportDirectoryObjectOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i MigrationDatapumpSettingsExportDirectoryObjectArgs) ToMigrationDatapumpSettingsExportDirectoryObjectPtrOutput() MigrationDatapumpSettingsExportDirectoryObjectPtrOutput {
 	return i.ToMigrationDatapumpSettingsExportDirectoryObjectPtrOutputWithContext(context.Background())
 }
@@ -3029,6 +3468,12 @@ func (i *migrationDatapumpSettingsExportDirectoryObjectPtrType) ToMigrationDatap
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationDatapumpSettingsExportDirectoryObjectPtrOutput)
 }
 
+func (i *migrationDatapumpSettingsExportDirectoryObjectPtrType) ToOutput(ctx context.Context) pulumix.Output[*MigrationDatapumpSettingsExportDirectoryObject] {
+	return pulumix.Output[*MigrationDatapumpSettingsExportDirectoryObject]{
+		OutputState: i.ToMigrationDatapumpSettingsExportDirectoryObjectPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MigrationDatapumpSettingsExportDirectoryObjectOutput struct{ *pulumi.OutputState }
 
 func (MigrationDatapumpSettingsExportDirectoryObjectOutput) ElementType() reflect.Type {
@@ -3053,6 +3498,12 @@ func (o MigrationDatapumpSettingsExportDirectoryObjectOutput) ToMigrationDatapum
 	}).(MigrationDatapumpSettingsExportDirectoryObjectPtrOutput)
 }
 
+func (o MigrationDatapumpSettingsExportDirectoryObjectOutput) ToOutput(ctx context.Context) pulumix.Output[MigrationDatapumpSettingsExportDirectoryObject] {
+	return pulumix.Output[MigrationDatapumpSettingsExportDirectoryObject]{
+		OutputState: o.OutputState,
+	}
+}
+
 // (Updatable) Name of directory object in database
 func (o MigrationDatapumpSettingsExportDirectoryObjectOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v MigrationDatapumpSettingsExportDirectoryObject) string { return v.Name }).(pulumi.StringOutput)
@@ -3075,6 +3526,12 @@ func (o MigrationDatapumpSettingsExportDirectoryObjectPtrOutput) ToMigrationData
 
 func (o MigrationDatapumpSettingsExportDirectoryObjectPtrOutput) ToMigrationDatapumpSettingsExportDirectoryObjectPtrOutputWithContext(ctx context.Context) MigrationDatapumpSettingsExportDirectoryObjectPtrOutput {
 	return o
+}
+
+func (o MigrationDatapumpSettingsExportDirectoryObjectPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MigrationDatapumpSettingsExportDirectoryObject] {
+	return pulumix.Output[*MigrationDatapumpSettingsExportDirectoryObject]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MigrationDatapumpSettingsExportDirectoryObjectPtrOutput) Elem() MigrationDatapumpSettingsExportDirectoryObjectOutput {
@@ -3144,6 +3601,12 @@ func (i MigrationDatapumpSettingsImportDirectoryObjectArgs) ToMigrationDatapumpS
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationDatapumpSettingsImportDirectoryObjectOutput)
 }
 
+func (i MigrationDatapumpSettingsImportDirectoryObjectArgs) ToOutput(ctx context.Context) pulumix.Output[MigrationDatapumpSettingsImportDirectoryObject] {
+	return pulumix.Output[MigrationDatapumpSettingsImportDirectoryObject]{
+		OutputState: i.ToMigrationDatapumpSettingsImportDirectoryObjectOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i MigrationDatapumpSettingsImportDirectoryObjectArgs) ToMigrationDatapumpSettingsImportDirectoryObjectPtrOutput() MigrationDatapumpSettingsImportDirectoryObjectPtrOutput {
 	return i.ToMigrationDatapumpSettingsImportDirectoryObjectPtrOutputWithContext(context.Background())
 }
@@ -3185,6 +3648,12 @@ func (i *migrationDatapumpSettingsImportDirectoryObjectPtrType) ToMigrationDatap
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationDatapumpSettingsImportDirectoryObjectPtrOutput)
 }
 
+func (i *migrationDatapumpSettingsImportDirectoryObjectPtrType) ToOutput(ctx context.Context) pulumix.Output[*MigrationDatapumpSettingsImportDirectoryObject] {
+	return pulumix.Output[*MigrationDatapumpSettingsImportDirectoryObject]{
+		OutputState: i.ToMigrationDatapumpSettingsImportDirectoryObjectPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MigrationDatapumpSettingsImportDirectoryObjectOutput struct{ *pulumi.OutputState }
 
 func (MigrationDatapumpSettingsImportDirectoryObjectOutput) ElementType() reflect.Type {
@@ -3209,6 +3678,12 @@ func (o MigrationDatapumpSettingsImportDirectoryObjectOutput) ToMigrationDatapum
 	}).(MigrationDatapumpSettingsImportDirectoryObjectPtrOutput)
 }
 
+func (o MigrationDatapumpSettingsImportDirectoryObjectOutput) ToOutput(ctx context.Context) pulumix.Output[MigrationDatapumpSettingsImportDirectoryObject] {
+	return pulumix.Output[MigrationDatapumpSettingsImportDirectoryObject]{
+		OutputState: o.OutputState,
+	}
+}
+
 // (Updatable) Name of directory object in database
 func (o MigrationDatapumpSettingsImportDirectoryObjectOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v MigrationDatapumpSettingsImportDirectoryObject) string { return v.Name }).(pulumi.StringOutput)
@@ -3231,6 +3706,12 @@ func (o MigrationDatapumpSettingsImportDirectoryObjectPtrOutput) ToMigrationData
 
 func (o MigrationDatapumpSettingsImportDirectoryObjectPtrOutput) ToMigrationDatapumpSettingsImportDirectoryObjectPtrOutputWithContext(ctx context.Context) MigrationDatapumpSettingsImportDirectoryObjectPtrOutput {
 	return o
+}
+
+func (o MigrationDatapumpSettingsImportDirectoryObjectPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MigrationDatapumpSettingsImportDirectoryObject] {
+	return pulumix.Output[*MigrationDatapumpSettingsImportDirectoryObject]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MigrationDatapumpSettingsImportDirectoryObjectPtrOutput) Elem() MigrationDatapumpSettingsImportDirectoryObjectOutput {
@@ -3304,6 +3785,12 @@ func (i MigrationDatapumpSettingsMetadataRemapArgs) ToMigrationDatapumpSettingsM
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationDatapumpSettingsMetadataRemapOutput)
 }
 
+func (i MigrationDatapumpSettingsMetadataRemapArgs) ToOutput(ctx context.Context) pulumix.Output[MigrationDatapumpSettingsMetadataRemap] {
+	return pulumix.Output[MigrationDatapumpSettingsMetadataRemap]{
+		OutputState: i.ToMigrationDatapumpSettingsMetadataRemapOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MigrationDatapumpSettingsMetadataRemapArrayInput is an input type that accepts MigrationDatapumpSettingsMetadataRemapArray and MigrationDatapumpSettingsMetadataRemapArrayOutput values.
 // You can construct a concrete instance of `MigrationDatapumpSettingsMetadataRemapArrayInput` via:
 //
@@ -3329,6 +3816,12 @@ func (i MigrationDatapumpSettingsMetadataRemapArray) ToMigrationDatapumpSettings
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationDatapumpSettingsMetadataRemapArrayOutput)
 }
 
+func (i MigrationDatapumpSettingsMetadataRemapArray) ToOutput(ctx context.Context) pulumix.Output[[]MigrationDatapumpSettingsMetadataRemap] {
+	return pulumix.Output[[]MigrationDatapumpSettingsMetadataRemap]{
+		OutputState: i.ToMigrationDatapumpSettingsMetadataRemapArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MigrationDatapumpSettingsMetadataRemapOutput struct{ *pulumi.OutputState }
 
 func (MigrationDatapumpSettingsMetadataRemapOutput) ElementType() reflect.Type {
@@ -3341,6 +3834,12 @@ func (o MigrationDatapumpSettingsMetadataRemapOutput) ToMigrationDatapumpSetting
 
 func (o MigrationDatapumpSettingsMetadataRemapOutput) ToMigrationDatapumpSettingsMetadataRemapOutputWithContext(ctx context.Context) MigrationDatapumpSettingsMetadataRemapOutput {
 	return o
+}
+
+func (o MigrationDatapumpSettingsMetadataRemapOutput) ToOutput(ctx context.Context) pulumix.Output[MigrationDatapumpSettingsMetadataRemap] {
+	return pulumix.Output[MigrationDatapumpSettingsMetadataRemap]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Specifies the new value that oldValue should be translated into.
@@ -3370,6 +3869,12 @@ func (o MigrationDatapumpSettingsMetadataRemapArrayOutput) ToMigrationDatapumpSe
 
 func (o MigrationDatapumpSettingsMetadataRemapArrayOutput) ToMigrationDatapumpSettingsMetadataRemapArrayOutputWithContext(ctx context.Context) MigrationDatapumpSettingsMetadataRemapArrayOutput {
 	return o
+}
+
+func (o MigrationDatapumpSettingsMetadataRemapArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MigrationDatapumpSettingsMetadataRemap] {
+	return pulumix.Output[[]MigrationDatapumpSettingsMetadataRemap]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MigrationDatapumpSettingsMetadataRemapArrayOutput) Index(i pulumi.IntInput) MigrationDatapumpSettingsMetadataRemapOutput {
@@ -3415,6 +3920,12 @@ func (i MigrationDumpTransferDetailsArgs) ToMigrationDumpTransferDetailsOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationDumpTransferDetailsOutput)
 }
 
+func (i MigrationDumpTransferDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[MigrationDumpTransferDetails] {
+	return pulumix.Output[MigrationDumpTransferDetails]{
+		OutputState: i.ToMigrationDumpTransferDetailsOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i MigrationDumpTransferDetailsArgs) ToMigrationDumpTransferDetailsPtrOutput() MigrationDumpTransferDetailsPtrOutput {
 	return i.ToMigrationDumpTransferDetailsPtrOutputWithContext(context.Background())
 }
@@ -3456,6 +3967,12 @@ func (i *migrationDumpTransferDetailsPtrType) ToMigrationDumpTransferDetailsPtrO
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationDumpTransferDetailsPtrOutput)
 }
 
+func (i *migrationDumpTransferDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*MigrationDumpTransferDetails] {
+	return pulumix.Output[*MigrationDumpTransferDetails]{
+		OutputState: i.ToMigrationDumpTransferDetailsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MigrationDumpTransferDetailsOutput struct{ *pulumi.OutputState }
 
 func (MigrationDumpTransferDetailsOutput) ElementType() reflect.Type {
@@ -3480,6 +3997,12 @@ func (o MigrationDumpTransferDetailsOutput) ToMigrationDumpTransferDetailsPtrOut
 	}).(MigrationDumpTransferDetailsPtrOutput)
 }
 
+func (o MigrationDumpTransferDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[MigrationDumpTransferDetails] {
+	return pulumix.Output[MigrationDumpTransferDetails]{
+		OutputState: o.OutputState,
+	}
+}
+
 // (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL
 func (o MigrationDumpTransferDetailsOutput) Source() MigrationDumpTransferDetailsSourcePtrOutput {
 	return o.ApplyT(func(v MigrationDumpTransferDetails) *MigrationDumpTransferDetailsSource { return v.Source }).(MigrationDumpTransferDetailsSourcePtrOutput)
@@ -3502,6 +4025,12 @@ func (o MigrationDumpTransferDetailsPtrOutput) ToMigrationDumpTransferDetailsPtr
 
 func (o MigrationDumpTransferDetailsPtrOutput) ToMigrationDumpTransferDetailsPtrOutputWithContext(ctx context.Context) MigrationDumpTransferDetailsPtrOutput {
 	return o
+}
+
+func (o MigrationDumpTransferDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MigrationDumpTransferDetails] {
+	return pulumix.Output[*MigrationDumpTransferDetails]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MigrationDumpTransferDetailsPtrOutput) Elem() MigrationDumpTransferDetailsOutput {
@@ -3575,6 +4104,12 @@ func (i MigrationDumpTransferDetailsSourceArgs) ToMigrationDumpTransferDetailsSo
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationDumpTransferDetailsSourceOutput)
 }
 
+func (i MigrationDumpTransferDetailsSourceArgs) ToOutput(ctx context.Context) pulumix.Output[MigrationDumpTransferDetailsSource] {
+	return pulumix.Output[MigrationDumpTransferDetailsSource]{
+		OutputState: i.ToMigrationDumpTransferDetailsSourceOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i MigrationDumpTransferDetailsSourceArgs) ToMigrationDumpTransferDetailsSourcePtrOutput() MigrationDumpTransferDetailsSourcePtrOutput {
 	return i.ToMigrationDumpTransferDetailsSourcePtrOutputWithContext(context.Background())
 }
@@ -3616,6 +4151,12 @@ func (i *migrationDumpTransferDetailsSourcePtrType) ToMigrationDumpTransferDetai
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationDumpTransferDetailsSourcePtrOutput)
 }
 
+func (i *migrationDumpTransferDetailsSourcePtrType) ToOutput(ctx context.Context) pulumix.Output[*MigrationDumpTransferDetailsSource] {
+	return pulumix.Output[*MigrationDumpTransferDetailsSource]{
+		OutputState: i.ToMigrationDumpTransferDetailsSourcePtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MigrationDumpTransferDetailsSourceOutput struct{ *pulumi.OutputState }
 
 func (MigrationDumpTransferDetailsSourceOutput) ElementType() reflect.Type {
@@ -3638,6 +4179,12 @@ func (o MigrationDumpTransferDetailsSourceOutput) ToMigrationDumpTransferDetails
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v MigrationDumpTransferDetailsSource) *MigrationDumpTransferDetailsSource {
 		return &v
 	}).(MigrationDumpTransferDetailsSourcePtrOutput)
+}
+
+func (o MigrationDumpTransferDetailsSourceOutput) ToOutput(ctx context.Context) pulumix.Output[MigrationDumpTransferDetailsSource] {
+	return pulumix.Output[MigrationDumpTransferDetailsSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Type of dump transfer to use during migration in source or target host. Default kind is CURL
@@ -3667,6 +4214,12 @@ func (o MigrationDumpTransferDetailsSourcePtrOutput) ToMigrationDumpTransferDeta
 
 func (o MigrationDumpTransferDetailsSourcePtrOutput) ToMigrationDumpTransferDetailsSourcePtrOutputWithContext(ctx context.Context) MigrationDumpTransferDetailsSourcePtrOutput {
 	return o
+}
+
+func (o MigrationDumpTransferDetailsSourcePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MigrationDumpTransferDetailsSource] {
+	return pulumix.Output[*MigrationDumpTransferDetailsSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MigrationDumpTransferDetailsSourcePtrOutput) Elem() MigrationDumpTransferDetailsSourceOutput {
@@ -3750,6 +4303,12 @@ func (i MigrationDumpTransferDetailsTargetArgs) ToMigrationDumpTransferDetailsTa
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationDumpTransferDetailsTargetOutput)
 }
 
+func (i MigrationDumpTransferDetailsTargetArgs) ToOutput(ctx context.Context) pulumix.Output[MigrationDumpTransferDetailsTarget] {
+	return pulumix.Output[MigrationDumpTransferDetailsTarget]{
+		OutputState: i.ToMigrationDumpTransferDetailsTargetOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i MigrationDumpTransferDetailsTargetArgs) ToMigrationDumpTransferDetailsTargetPtrOutput() MigrationDumpTransferDetailsTargetPtrOutput {
 	return i.ToMigrationDumpTransferDetailsTargetPtrOutputWithContext(context.Background())
 }
@@ -3791,6 +4350,12 @@ func (i *migrationDumpTransferDetailsTargetPtrType) ToMigrationDumpTransferDetai
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationDumpTransferDetailsTargetPtrOutput)
 }
 
+func (i *migrationDumpTransferDetailsTargetPtrType) ToOutput(ctx context.Context) pulumix.Output[*MigrationDumpTransferDetailsTarget] {
+	return pulumix.Output[*MigrationDumpTransferDetailsTarget]{
+		OutputState: i.ToMigrationDumpTransferDetailsTargetPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MigrationDumpTransferDetailsTargetOutput struct{ *pulumi.OutputState }
 
 func (MigrationDumpTransferDetailsTargetOutput) ElementType() reflect.Type {
@@ -3813,6 +4378,12 @@ func (o MigrationDumpTransferDetailsTargetOutput) ToMigrationDumpTransferDetails
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v MigrationDumpTransferDetailsTarget) *MigrationDumpTransferDetailsTarget {
 		return &v
 	}).(MigrationDumpTransferDetailsTargetPtrOutput)
+}
+
+func (o MigrationDumpTransferDetailsTargetOutput) ToOutput(ctx context.Context) pulumix.Output[MigrationDumpTransferDetailsTarget] {
+	return pulumix.Output[MigrationDumpTransferDetailsTarget]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Type of dump transfer to use during migration in source or target host. Default kind is CURL
@@ -3842,6 +4413,12 @@ func (o MigrationDumpTransferDetailsTargetPtrOutput) ToMigrationDumpTransferDeta
 
 func (o MigrationDumpTransferDetailsTargetPtrOutput) ToMigrationDumpTransferDetailsTargetPtrOutputWithContext(ctx context.Context) MigrationDumpTransferDetailsTargetPtrOutput {
 	return o
+}
+
+func (o MigrationDumpTransferDetailsTargetPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MigrationDumpTransferDetailsTarget] {
+	return pulumix.Output[*MigrationDumpTransferDetailsTarget]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MigrationDumpTransferDetailsTargetPtrOutput) Elem() MigrationDumpTransferDetailsTargetOutput {
@@ -3929,6 +4506,12 @@ func (i MigrationExcludeObjectArgs) ToMigrationExcludeObjectOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationExcludeObjectOutput)
 }
 
+func (i MigrationExcludeObjectArgs) ToOutput(ctx context.Context) pulumix.Output[MigrationExcludeObject] {
+	return pulumix.Output[MigrationExcludeObject]{
+		OutputState: i.ToMigrationExcludeObjectOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MigrationExcludeObjectArrayInput is an input type that accepts MigrationExcludeObjectArray and MigrationExcludeObjectArrayOutput values.
 // You can construct a concrete instance of `MigrationExcludeObjectArrayInput` via:
 //
@@ -3954,6 +4537,12 @@ func (i MigrationExcludeObjectArray) ToMigrationExcludeObjectArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationExcludeObjectArrayOutput)
 }
 
+func (i MigrationExcludeObjectArray) ToOutput(ctx context.Context) pulumix.Output[[]MigrationExcludeObject] {
+	return pulumix.Output[[]MigrationExcludeObject]{
+		OutputState: i.ToMigrationExcludeObjectArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MigrationExcludeObjectOutput struct{ *pulumi.OutputState }
 
 func (MigrationExcludeObjectOutput) ElementType() reflect.Type {
@@ -3966,6 +4555,12 @@ func (o MigrationExcludeObjectOutput) ToMigrationExcludeObjectOutput() Migration
 
 func (o MigrationExcludeObjectOutput) ToMigrationExcludeObjectOutputWithContext(ctx context.Context) MigrationExcludeObjectOutput {
 	return o
+}
+
+func (o MigrationExcludeObjectOutput) ToOutput(ctx context.Context) pulumix.Output[MigrationExcludeObject] {
+	return pulumix.Output[MigrationExcludeObject]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and that are included in the exludeObjects.
@@ -4000,6 +4595,12 @@ func (o MigrationExcludeObjectArrayOutput) ToMigrationExcludeObjectArrayOutput()
 
 func (o MigrationExcludeObjectArrayOutput) ToMigrationExcludeObjectArrayOutputWithContext(ctx context.Context) MigrationExcludeObjectArrayOutput {
 	return o
+}
+
+func (o MigrationExcludeObjectArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MigrationExcludeObject] {
+	return pulumix.Output[[]MigrationExcludeObject]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MigrationExcludeObjectArrayOutput) Index(i pulumi.IntInput) MigrationExcludeObjectOutput {
@@ -4045,6 +4646,12 @@ func (i MigrationGoldenGateDetailsArgs) ToMigrationGoldenGateDetailsOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateDetailsOutput)
 }
 
+func (i MigrationGoldenGateDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[MigrationGoldenGateDetails] {
+	return pulumix.Output[MigrationGoldenGateDetails]{
+		OutputState: i.ToMigrationGoldenGateDetailsOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i MigrationGoldenGateDetailsArgs) ToMigrationGoldenGateDetailsPtrOutput() MigrationGoldenGateDetailsPtrOutput {
 	return i.ToMigrationGoldenGateDetailsPtrOutputWithContext(context.Background())
 }
@@ -4086,6 +4693,12 @@ func (i *migrationGoldenGateDetailsPtrType) ToMigrationGoldenGateDetailsPtrOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateDetailsPtrOutput)
 }
 
+func (i *migrationGoldenGateDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*MigrationGoldenGateDetails] {
+	return pulumix.Output[*MigrationGoldenGateDetails]{
+		OutputState: i.ToMigrationGoldenGateDetailsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MigrationGoldenGateDetailsOutput struct{ *pulumi.OutputState }
 
 func (MigrationGoldenGateDetailsOutput) ElementType() reflect.Type {
@@ -4110,6 +4723,12 @@ func (o MigrationGoldenGateDetailsOutput) ToMigrationGoldenGateDetailsPtrOutputW
 	}).(MigrationGoldenGateDetailsPtrOutput)
 }
 
+func (o MigrationGoldenGateDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[MigrationGoldenGateDetails] {
+	return pulumix.Output[MigrationGoldenGateDetails]{
+		OutputState: o.OutputState,
+	}
+}
+
 // (Updatable) Details about Oracle GoldenGate Microservices. Required for online logical migration.
 func (o MigrationGoldenGateDetailsOutput) Hub() MigrationGoldenGateDetailsHubOutput {
 	return o.ApplyT(func(v MigrationGoldenGateDetails) MigrationGoldenGateDetailsHub { return v.Hub }).(MigrationGoldenGateDetailsHubOutput)
@@ -4132,6 +4751,12 @@ func (o MigrationGoldenGateDetailsPtrOutput) ToMigrationGoldenGateDetailsPtrOutp
 
 func (o MigrationGoldenGateDetailsPtrOutput) ToMigrationGoldenGateDetailsPtrOutputWithContext(ctx context.Context) MigrationGoldenGateDetailsPtrOutput {
 	return o
+}
+
+func (o MigrationGoldenGateDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MigrationGoldenGateDetails] {
+	return pulumix.Output[*MigrationGoldenGateDetails]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MigrationGoldenGateDetailsPtrOutput) Elem() MigrationGoldenGateDetailsOutput {
@@ -4225,6 +4850,12 @@ func (i MigrationGoldenGateDetailsHubArgs) ToMigrationGoldenGateDetailsHubOutput
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateDetailsHubOutput)
 }
 
+func (i MigrationGoldenGateDetailsHubArgs) ToOutput(ctx context.Context) pulumix.Output[MigrationGoldenGateDetailsHub] {
+	return pulumix.Output[MigrationGoldenGateDetailsHub]{
+		OutputState: i.ToMigrationGoldenGateDetailsHubOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i MigrationGoldenGateDetailsHubArgs) ToMigrationGoldenGateDetailsHubPtrOutput() MigrationGoldenGateDetailsHubPtrOutput {
 	return i.ToMigrationGoldenGateDetailsHubPtrOutputWithContext(context.Background())
 }
@@ -4266,6 +4897,12 @@ func (i *migrationGoldenGateDetailsHubPtrType) ToMigrationGoldenGateDetailsHubPt
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateDetailsHubPtrOutput)
 }
 
+func (i *migrationGoldenGateDetailsHubPtrType) ToOutput(ctx context.Context) pulumix.Output[*MigrationGoldenGateDetailsHub] {
+	return pulumix.Output[*MigrationGoldenGateDetailsHub]{
+		OutputState: i.ToMigrationGoldenGateDetailsHubPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MigrationGoldenGateDetailsHubOutput struct{ *pulumi.OutputState }
 
 func (MigrationGoldenGateDetailsHubOutput) ElementType() reflect.Type {
@@ -4288,6 +4925,12 @@ func (o MigrationGoldenGateDetailsHubOutput) ToMigrationGoldenGateDetailsHubPtrO
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v MigrationGoldenGateDetailsHub) *MigrationGoldenGateDetailsHub {
 		return &v
 	}).(MigrationGoldenGateDetailsHubPtrOutput)
+}
+
+func (o MigrationGoldenGateDetailsHubOutput) ToOutput(ctx context.Context) pulumix.Output[MigrationGoldenGateDetailsHub] {
+	return pulumix.Output[MigrationGoldenGateDetailsHub]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) OCID of GoldenGate Microservices compute instance.
@@ -4350,6 +4993,12 @@ func (o MigrationGoldenGateDetailsHubPtrOutput) ToMigrationGoldenGateDetailsHubP
 
 func (o MigrationGoldenGateDetailsHubPtrOutput) ToMigrationGoldenGateDetailsHubPtrOutputWithContext(ctx context.Context) MigrationGoldenGateDetailsHubPtrOutput {
 	return o
+}
+
+func (o MigrationGoldenGateDetailsHubPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MigrationGoldenGateDetailsHub] {
+	return pulumix.Output[*MigrationGoldenGateDetailsHub]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MigrationGoldenGateDetailsHubPtrOutput) Elem() MigrationGoldenGateDetailsHubOutput {
@@ -4479,6 +5128,12 @@ func (i MigrationGoldenGateDetailsHubRestAdminCredentialsArgs) ToMigrationGolden
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateDetailsHubRestAdminCredentialsOutput)
 }
 
+func (i MigrationGoldenGateDetailsHubRestAdminCredentialsArgs) ToOutput(ctx context.Context) pulumix.Output[MigrationGoldenGateDetailsHubRestAdminCredentials] {
+	return pulumix.Output[MigrationGoldenGateDetailsHubRestAdminCredentials]{
+		OutputState: i.ToMigrationGoldenGateDetailsHubRestAdminCredentialsOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i MigrationGoldenGateDetailsHubRestAdminCredentialsArgs) ToMigrationGoldenGateDetailsHubRestAdminCredentialsPtrOutput() MigrationGoldenGateDetailsHubRestAdminCredentialsPtrOutput {
 	return i.ToMigrationGoldenGateDetailsHubRestAdminCredentialsPtrOutputWithContext(context.Background())
 }
@@ -4520,6 +5175,12 @@ func (i *migrationGoldenGateDetailsHubRestAdminCredentialsPtrType) ToMigrationGo
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateDetailsHubRestAdminCredentialsPtrOutput)
 }
 
+func (i *migrationGoldenGateDetailsHubRestAdminCredentialsPtrType) ToOutput(ctx context.Context) pulumix.Output[*MigrationGoldenGateDetailsHubRestAdminCredentials] {
+	return pulumix.Output[*MigrationGoldenGateDetailsHubRestAdminCredentials]{
+		OutputState: i.ToMigrationGoldenGateDetailsHubRestAdminCredentialsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MigrationGoldenGateDetailsHubRestAdminCredentialsOutput struct{ *pulumi.OutputState }
 
 func (MigrationGoldenGateDetailsHubRestAdminCredentialsOutput) ElementType() reflect.Type {
@@ -4544,6 +5205,12 @@ func (o MigrationGoldenGateDetailsHubRestAdminCredentialsOutput) ToMigrationGold
 	}).(MigrationGoldenGateDetailsHubRestAdminCredentialsPtrOutput)
 }
 
+func (o MigrationGoldenGateDetailsHubRestAdminCredentialsOutput) ToOutput(ctx context.Context) pulumix.Output[MigrationGoldenGateDetailsHubRestAdminCredentials] {
+	return pulumix.Output[MigrationGoldenGateDetailsHubRestAdminCredentials]{
+		OutputState: o.OutputState,
+	}
+}
+
 // (Updatable) Database  password
 func (o MigrationGoldenGateDetailsHubRestAdminCredentialsOutput) Password() pulumi.StringOutput {
 	return o.ApplyT(func(v MigrationGoldenGateDetailsHubRestAdminCredentials) string { return v.Password }).(pulumi.StringOutput)
@@ -4566,6 +5233,12 @@ func (o MigrationGoldenGateDetailsHubRestAdminCredentialsPtrOutput) ToMigrationG
 
 func (o MigrationGoldenGateDetailsHubRestAdminCredentialsPtrOutput) ToMigrationGoldenGateDetailsHubRestAdminCredentialsPtrOutputWithContext(ctx context.Context) MigrationGoldenGateDetailsHubRestAdminCredentialsPtrOutput {
 	return o
+}
+
+func (o MigrationGoldenGateDetailsHubRestAdminCredentialsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MigrationGoldenGateDetailsHubRestAdminCredentials] {
+	return pulumix.Output[*MigrationGoldenGateDetailsHubRestAdminCredentials]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MigrationGoldenGateDetailsHubRestAdminCredentialsPtrOutput) Elem() MigrationGoldenGateDetailsHubRestAdminCredentialsOutput {
@@ -4635,6 +5308,12 @@ func (i MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsArgs) ToMi
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsOutput)
 }
 
+func (i MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsArgs) ToOutput(ctx context.Context) pulumix.Output[MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentials] {
+	return pulumix.Output[MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentials]{
+		OutputState: i.ToMigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsArgs) ToMigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsPtrOutput() MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsPtrOutput {
 	return i.ToMigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsPtrOutputWithContext(context.Background())
 }
@@ -4676,6 +5355,12 @@ func (i *migrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsPtrType) 
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsPtrOutput)
 }
 
+func (i *migrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsPtrType) ToOutput(ctx context.Context) pulumix.Output[*MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentials] {
+	return pulumix.Output[*MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentials]{
+		OutputState: i.ToMigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsOutput struct{ *pulumi.OutputState }
 
 func (MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsOutput) ElementType() reflect.Type {
@@ -4700,6 +5385,12 @@ func (o MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsOutput) To
 	}).(MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsPtrOutput)
 }
 
+func (o MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsOutput) ToOutput(ctx context.Context) pulumix.Output[MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentials] {
+	return pulumix.Output[MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentials]{
+		OutputState: o.OutputState,
+	}
+}
+
 // (Updatable) Database  password
 func (o MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsOutput) Password() pulumi.StringOutput {
 	return o.ApplyT(func(v MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentials) string { return v.Password }).(pulumi.StringOutput)
@@ -4722,6 +5413,12 @@ func (o MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsPtrOutput)
 
 func (o MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsPtrOutput) ToMigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsPtrOutputWithContext(ctx context.Context) MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsPtrOutput {
 	return o
+}
+
+func (o MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentials] {
+	return pulumix.Output[*MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentials]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsPtrOutput) Elem() MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsOutput {
@@ -4791,6 +5488,12 @@ func (i MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs) ToMigrationGo
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateDetailsHubSourceDbAdminCredentialsOutput)
 }
 
+func (i MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs) ToOutput(ctx context.Context) pulumix.Output[MigrationGoldenGateDetailsHubSourceDbAdminCredentials] {
+	return pulumix.Output[MigrationGoldenGateDetailsHubSourceDbAdminCredentials]{
+		OutputState: i.ToMigrationGoldenGateDetailsHubSourceDbAdminCredentialsOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs) ToMigrationGoldenGateDetailsHubSourceDbAdminCredentialsPtrOutput() MigrationGoldenGateDetailsHubSourceDbAdminCredentialsPtrOutput {
 	return i.ToMigrationGoldenGateDetailsHubSourceDbAdminCredentialsPtrOutputWithContext(context.Background())
 }
@@ -4832,6 +5535,12 @@ func (i *migrationGoldenGateDetailsHubSourceDbAdminCredentialsPtrType) ToMigrati
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateDetailsHubSourceDbAdminCredentialsPtrOutput)
 }
 
+func (i *migrationGoldenGateDetailsHubSourceDbAdminCredentialsPtrType) ToOutput(ctx context.Context) pulumix.Output[*MigrationGoldenGateDetailsHubSourceDbAdminCredentials] {
+	return pulumix.Output[*MigrationGoldenGateDetailsHubSourceDbAdminCredentials]{
+		OutputState: i.ToMigrationGoldenGateDetailsHubSourceDbAdminCredentialsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MigrationGoldenGateDetailsHubSourceDbAdminCredentialsOutput struct{ *pulumi.OutputState }
 
 func (MigrationGoldenGateDetailsHubSourceDbAdminCredentialsOutput) ElementType() reflect.Type {
@@ -4856,6 +5565,12 @@ func (o MigrationGoldenGateDetailsHubSourceDbAdminCredentialsOutput) ToMigration
 	}).(MigrationGoldenGateDetailsHubSourceDbAdminCredentialsPtrOutput)
 }
 
+func (o MigrationGoldenGateDetailsHubSourceDbAdminCredentialsOutput) ToOutput(ctx context.Context) pulumix.Output[MigrationGoldenGateDetailsHubSourceDbAdminCredentials] {
+	return pulumix.Output[MigrationGoldenGateDetailsHubSourceDbAdminCredentials]{
+		OutputState: o.OutputState,
+	}
+}
+
 // (Updatable) Database  password
 func (o MigrationGoldenGateDetailsHubSourceDbAdminCredentialsOutput) Password() pulumi.StringOutput {
 	return o.ApplyT(func(v MigrationGoldenGateDetailsHubSourceDbAdminCredentials) string { return v.Password }).(pulumi.StringOutput)
@@ -4878,6 +5593,12 @@ func (o MigrationGoldenGateDetailsHubSourceDbAdminCredentialsPtrOutput) ToMigrat
 
 func (o MigrationGoldenGateDetailsHubSourceDbAdminCredentialsPtrOutput) ToMigrationGoldenGateDetailsHubSourceDbAdminCredentialsPtrOutputWithContext(ctx context.Context) MigrationGoldenGateDetailsHubSourceDbAdminCredentialsPtrOutput {
 	return o
+}
+
+func (o MigrationGoldenGateDetailsHubSourceDbAdminCredentialsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MigrationGoldenGateDetailsHubSourceDbAdminCredentials] {
+	return pulumix.Output[*MigrationGoldenGateDetailsHubSourceDbAdminCredentials]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MigrationGoldenGateDetailsHubSourceDbAdminCredentialsPtrOutput) Elem() MigrationGoldenGateDetailsHubSourceDbAdminCredentialsOutput {
@@ -4947,6 +5668,12 @@ func (i MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs) ToMigrationGo
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateDetailsHubTargetDbAdminCredentialsOutput)
 }
 
+func (i MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs) ToOutput(ctx context.Context) pulumix.Output[MigrationGoldenGateDetailsHubTargetDbAdminCredentials] {
+	return pulumix.Output[MigrationGoldenGateDetailsHubTargetDbAdminCredentials]{
+		OutputState: i.ToMigrationGoldenGateDetailsHubTargetDbAdminCredentialsOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs) ToMigrationGoldenGateDetailsHubTargetDbAdminCredentialsPtrOutput() MigrationGoldenGateDetailsHubTargetDbAdminCredentialsPtrOutput {
 	return i.ToMigrationGoldenGateDetailsHubTargetDbAdminCredentialsPtrOutputWithContext(context.Background())
 }
@@ -4988,6 +5715,12 @@ func (i *migrationGoldenGateDetailsHubTargetDbAdminCredentialsPtrType) ToMigrati
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateDetailsHubTargetDbAdminCredentialsPtrOutput)
 }
 
+func (i *migrationGoldenGateDetailsHubTargetDbAdminCredentialsPtrType) ToOutput(ctx context.Context) pulumix.Output[*MigrationGoldenGateDetailsHubTargetDbAdminCredentials] {
+	return pulumix.Output[*MigrationGoldenGateDetailsHubTargetDbAdminCredentials]{
+		OutputState: i.ToMigrationGoldenGateDetailsHubTargetDbAdminCredentialsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MigrationGoldenGateDetailsHubTargetDbAdminCredentialsOutput struct{ *pulumi.OutputState }
 
 func (MigrationGoldenGateDetailsHubTargetDbAdminCredentialsOutput) ElementType() reflect.Type {
@@ -5012,6 +5745,12 @@ func (o MigrationGoldenGateDetailsHubTargetDbAdminCredentialsOutput) ToMigration
 	}).(MigrationGoldenGateDetailsHubTargetDbAdminCredentialsPtrOutput)
 }
 
+func (o MigrationGoldenGateDetailsHubTargetDbAdminCredentialsOutput) ToOutput(ctx context.Context) pulumix.Output[MigrationGoldenGateDetailsHubTargetDbAdminCredentials] {
+	return pulumix.Output[MigrationGoldenGateDetailsHubTargetDbAdminCredentials]{
+		OutputState: o.OutputState,
+	}
+}
+
 // (Updatable) Database  password
 func (o MigrationGoldenGateDetailsHubTargetDbAdminCredentialsOutput) Password() pulumi.StringOutput {
 	return o.ApplyT(func(v MigrationGoldenGateDetailsHubTargetDbAdminCredentials) string { return v.Password }).(pulumi.StringOutput)
@@ -5034,6 +5773,12 @@ func (o MigrationGoldenGateDetailsHubTargetDbAdminCredentialsPtrOutput) ToMigrat
 
 func (o MigrationGoldenGateDetailsHubTargetDbAdminCredentialsPtrOutput) ToMigrationGoldenGateDetailsHubTargetDbAdminCredentialsPtrOutputWithContext(ctx context.Context) MigrationGoldenGateDetailsHubTargetDbAdminCredentialsPtrOutput {
 	return o
+}
+
+func (o MigrationGoldenGateDetailsHubTargetDbAdminCredentialsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MigrationGoldenGateDetailsHubTargetDbAdminCredentials] {
+	return pulumix.Output[*MigrationGoldenGateDetailsHubTargetDbAdminCredentials]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MigrationGoldenGateDetailsHubTargetDbAdminCredentialsPtrOutput) Elem() MigrationGoldenGateDetailsHubTargetDbAdminCredentialsOutput {
@@ -5107,6 +5852,12 @@ func (i MigrationGoldenGateDetailsSettingsArgs) ToMigrationGoldenGateDetailsSett
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateDetailsSettingsOutput)
 }
 
+func (i MigrationGoldenGateDetailsSettingsArgs) ToOutput(ctx context.Context) pulumix.Output[MigrationGoldenGateDetailsSettings] {
+	return pulumix.Output[MigrationGoldenGateDetailsSettings]{
+		OutputState: i.ToMigrationGoldenGateDetailsSettingsOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i MigrationGoldenGateDetailsSettingsArgs) ToMigrationGoldenGateDetailsSettingsPtrOutput() MigrationGoldenGateDetailsSettingsPtrOutput {
 	return i.ToMigrationGoldenGateDetailsSettingsPtrOutputWithContext(context.Background())
 }
@@ -5148,6 +5899,12 @@ func (i *migrationGoldenGateDetailsSettingsPtrType) ToMigrationGoldenGateDetails
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateDetailsSettingsPtrOutput)
 }
 
+func (i *migrationGoldenGateDetailsSettingsPtrType) ToOutput(ctx context.Context) pulumix.Output[*MigrationGoldenGateDetailsSettings] {
+	return pulumix.Output[*MigrationGoldenGateDetailsSettings]{
+		OutputState: i.ToMigrationGoldenGateDetailsSettingsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MigrationGoldenGateDetailsSettingsOutput struct{ *pulumi.OutputState }
 
 func (MigrationGoldenGateDetailsSettingsOutput) ElementType() reflect.Type {
@@ -5170,6 +5927,12 @@ func (o MigrationGoldenGateDetailsSettingsOutput) ToMigrationGoldenGateDetailsSe
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v MigrationGoldenGateDetailsSettings) *MigrationGoldenGateDetailsSettings {
 		return &v
 	}).(MigrationGoldenGateDetailsSettingsPtrOutput)
+}
+
+func (o MigrationGoldenGateDetailsSettingsOutput) ToOutput(ctx context.Context) pulumix.Output[MigrationGoldenGateDetailsSettings] {
+	return pulumix.Output[MigrationGoldenGateDetailsSettings]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
@@ -5203,6 +5966,12 @@ func (o MigrationGoldenGateDetailsSettingsPtrOutput) ToMigrationGoldenGateDetail
 
 func (o MigrationGoldenGateDetailsSettingsPtrOutput) ToMigrationGoldenGateDetailsSettingsPtrOutputWithContext(ctx context.Context) MigrationGoldenGateDetailsSettingsPtrOutput {
 	return o
+}
+
+func (o MigrationGoldenGateDetailsSettingsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MigrationGoldenGateDetailsSettings] {
+	return pulumix.Output[*MigrationGoldenGateDetailsSettings]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MigrationGoldenGateDetailsSettingsPtrOutput) Elem() MigrationGoldenGateDetailsSettingsOutput {
@@ -5282,6 +6051,12 @@ func (i MigrationGoldenGateDetailsSettingsExtractArgs) ToMigrationGoldenGateDeta
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateDetailsSettingsExtractOutput)
 }
 
+func (i MigrationGoldenGateDetailsSettingsExtractArgs) ToOutput(ctx context.Context) pulumix.Output[MigrationGoldenGateDetailsSettingsExtract] {
+	return pulumix.Output[MigrationGoldenGateDetailsSettingsExtract]{
+		OutputState: i.ToMigrationGoldenGateDetailsSettingsExtractOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i MigrationGoldenGateDetailsSettingsExtractArgs) ToMigrationGoldenGateDetailsSettingsExtractPtrOutput() MigrationGoldenGateDetailsSettingsExtractPtrOutput {
 	return i.ToMigrationGoldenGateDetailsSettingsExtractPtrOutputWithContext(context.Background())
 }
@@ -5323,6 +6098,12 @@ func (i *migrationGoldenGateDetailsSettingsExtractPtrType) ToMigrationGoldenGate
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateDetailsSettingsExtractPtrOutput)
 }
 
+func (i *migrationGoldenGateDetailsSettingsExtractPtrType) ToOutput(ctx context.Context) pulumix.Output[*MigrationGoldenGateDetailsSettingsExtract] {
+	return pulumix.Output[*MigrationGoldenGateDetailsSettingsExtract]{
+		OutputState: i.ToMigrationGoldenGateDetailsSettingsExtractPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MigrationGoldenGateDetailsSettingsExtractOutput struct{ *pulumi.OutputState }
 
 func (MigrationGoldenGateDetailsSettingsExtractOutput) ElementType() reflect.Type {
@@ -5347,6 +6128,12 @@ func (o MigrationGoldenGateDetailsSettingsExtractOutput) ToMigrationGoldenGateDe
 	}).(MigrationGoldenGateDetailsSettingsExtractPtrOutput)
 }
 
+func (o MigrationGoldenGateDetailsSettingsExtractOutput) ToOutput(ctx context.Context) pulumix.Output[MigrationGoldenGateDetailsSettingsExtract] {
+	return pulumix.Output[MigrationGoldenGateDetailsSettingsExtract]{
+		OutputState: o.OutputState,
+	}
+}
+
 // (Updatable) Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
 func (o MigrationGoldenGateDetailsSettingsExtractOutput) LongTransDuration() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v MigrationGoldenGateDetailsSettingsExtract) *int { return v.LongTransDuration }).(pulumi.IntPtrOutput)
@@ -5369,6 +6156,12 @@ func (o MigrationGoldenGateDetailsSettingsExtractPtrOutput) ToMigrationGoldenGat
 
 func (o MigrationGoldenGateDetailsSettingsExtractPtrOutput) ToMigrationGoldenGateDetailsSettingsExtractPtrOutputWithContext(ctx context.Context) MigrationGoldenGateDetailsSettingsExtractPtrOutput {
 	return o
+}
+
+func (o MigrationGoldenGateDetailsSettingsExtractPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MigrationGoldenGateDetailsSettingsExtract] {
+	return pulumix.Output[*MigrationGoldenGateDetailsSettingsExtract]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MigrationGoldenGateDetailsSettingsExtractPtrOutput) Elem() MigrationGoldenGateDetailsSettingsExtractOutput {
@@ -5446,6 +6239,12 @@ func (i MigrationGoldenGateDetailsSettingsReplicatArgs) ToMigrationGoldenGateDet
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateDetailsSettingsReplicatOutput)
 }
 
+func (i MigrationGoldenGateDetailsSettingsReplicatArgs) ToOutput(ctx context.Context) pulumix.Output[MigrationGoldenGateDetailsSettingsReplicat] {
+	return pulumix.Output[MigrationGoldenGateDetailsSettingsReplicat]{
+		OutputState: i.ToMigrationGoldenGateDetailsSettingsReplicatOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i MigrationGoldenGateDetailsSettingsReplicatArgs) ToMigrationGoldenGateDetailsSettingsReplicatPtrOutput() MigrationGoldenGateDetailsSettingsReplicatPtrOutput {
 	return i.ToMigrationGoldenGateDetailsSettingsReplicatPtrOutputWithContext(context.Background())
 }
@@ -5487,6 +6286,12 @@ func (i *migrationGoldenGateDetailsSettingsReplicatPtrType) ToMigrationGoldenGat
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateDetailsSettingsReplicatPtrOutput)
 }
 
+func (i *migrationGoldenGateDetailsSettingsReplicatPtrType) ToOutput(ctx context.Context) pulumix.Output[*MigrationGoldenGateDetailsSettingsReplicat] {
+	return pulumix.Output[*MigrationGoldenGateDetailsSettingsReplicat]{
+		OutputState: i.ToMigrationGoldenGateDetailsSettingsReplicatPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MigrationGoldenGateDetailsSettingsReplicatOutput struct{ *pulumi.OutputState }
 
 func (MigrationGoldenGateDetailsSettingsReplicatOutput) ElementType() reflect.Type {
@@ -5509,6 +6314,12 @@ func (o MigrationGoldenGateDetailsSettingsReplicatOutput) ToMigrationGoldenGateD
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v MigrationGoldenGateDetailsSettingsReplicat) *MigrationGoldenGateDetailsSettingsReplicat {
 		return &v
 	}).(MigrationGoldenGateDetailsSettingsReplicatPtrOutput)
+}
+
+func (o MigrationGoldenGateDetailsSettingsReplicatOutput) ToOutput(ctx context.Context) pulumix.Output[MigrationGoldenGateDetailsSettingsReplicat] {
+	return pulumix.Output[MigrationGoldenGateDetailsSettingsReplicat]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Number of threads used to read trail files (valid for Parallel Replicat)
@@ -5543,6 +6354,12 @@ func (o MigrationGoldenGateDetailsSettingsReplicatPtrOutput) ToMigrationGoldenGa
 
 func (o MigrationGoldenGateDetailsSettingsReplicatPtrOutput) ToMigrationGoldenGateDetailsSettingsReplicatPtrOutputWithContext(ctx context.Context) MigrationGoldenGateDetailsSettingsReplicatPtrOutput {
 	return o
+}
+
+func (o MigrationGoldenGateDetailsSettingsReplicatPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MigrationGoldenGateDetailsSettingsReplicat] {
+	return pulumix.Output[*MigrationGoldenGateDetailsSettingsReplicat]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MigrationGoldenGateDetailsSettingsReplicatPtrOutput) Elem() MigrationGoldenGateDetailsSettingsReplicatOutput {
@@ -5644,6 +6461,12 @@ func (i MigrationGoldenGateServiceDetailsArgs) ToMigrationGoldenGateServiceDetai
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateServiceDetailsOutput)
 }
 
+func (i MigrationGoldenGateServiceDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[MigrationGoldenGateServiceDetails] {
+	return pulumix.Output[MigrationGoldenGateServiceDetails]{
+		OutputState: i.ToMigrationGoldenGateServiceDetailsOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i MigrationGoldenGateServiceDetailsArgs) ToMigrationGoldenGateServiceDetailsPtrOutput() MigrationGoldenGateServiceDetailsPtrOutput {
 	return i.ToMigrationGoldenGateServiceDetailsPtrOutputWithContext(context.Background())
 }
@@ -5685,6 +6508,12 @@ func (i *migrationGoldenGateServiceDetailsPtrType) ToMigrationGoldenGateServiceD
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateServiceDetailsPtrOutput)
 }
 
+func (i *migrationGoldenGateServiceDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*MigrationGoldenGateServiceDetails] {
+	return pulumix.Output[*MigrationGoldenGateServiceDetails]{
+		OutputState: i.ToMigrationGoldenGateServiceDetailsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MigrationGoldenGateServiceDetailsOutput struct{ *pulumi.OutputState }
 
 func (MigrationGoldenGateServiceDetailsOutput) ElementType() reflect.Type {
@@ -5707,6 +6536,12 @@ func (o MigrationGoldenGateServiceDetailsOutput) ToMigrationGoldenGateServiceDet
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v MigrationGoldenGateServiceDetails) *MigrationGoldenGateServiceDetails {
 		return &v
 	}).(MigrationGoldenGateServiceDetailsPtrOutput)
+}
+
+func (o MigrationGoldenGateServiceDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[MigrationGoldenGateServiceDetails] {
+	return pulumix.Output[MigrationGoldenGateServiceDetails]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Details about Oracle GoldenGate GGS Deployment.
@@ -5756,6 +6591,12 @@ func (o MigrationGoldenGateServiceDetailsPtrOutput) ToMigrationGoldenGateService
 
 func (o MigrationGoldenGateServiceDetailsPtrOutput) ToMigrationGoldenGateServiceDetailsPtrOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsPtrOutput {
 	return o
+}
+
+func (o MigrationGoldenGateServiceDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MigrationGoldenGateServiceDetails] {
+	return pulumix.Output[*MigrationGoldenGateServiceDetails]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MigrationGoldenGateServiceDetailsPtrOutput) Elem() MigrationGoldenGateServiceDetailsOutput {
@@ -5855,6 +6696,12 @@ func (i MigrationGoldenGateServiceDetailsGgsDeploymentArgs) ToMigrationGoldenGat
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateServiceDetailsGgsDeploymentOutput)
 }
 
+func (i MigrationGoldenGateServiceDetailsGgsDeploymentArgs) ToOutput(ctx context.Context) pulumix.Output[MigrationGoldenGateServiceDetailsGgsDeployment] {
+	return pulumix.Output[MigrationGoldenGateServiceDetailsGgsDeployment]{
+		OutputState: i.ToMigrationGoldenGateServiceDetailsGgsDeploymentOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MigrationGoldenGateServiceDetailsGgsDeploymentArrayInput is an input type that accepts MigrationGoldenGateServiceDetailsGgsDeploymentArray and MigrationGoldenGateServiceDetailsGgsDeploymentArrayOutput values.
 // You can construct a concrete instance of `MigrationGoldenGateServiceDetailsGgsDeploymentArrayInput` via:
 //
@@ -5880,6 +6727,12 @@ func (i MigrationGoldenGateServiceDetailsGgsDeploymentArray) ToMigrationGoldenGa
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateServiceDetailsGgsDeploymentArrayOutput)
 }
 
+func (i MigrationGoldenGateServiceDetailsGgsDeploymentArray) ToOutput(ctx context.Context) pulumix.Output[[]MigrationGoldenGateServiceDetailsGgsDeployment] {
+	return pulumix.Output[[]MigrationGoldenGateServiceDetailsGgsDeployment]{
+		OutputState: i.ToMigrationGoldenGateServiceDetailsGgsDeploymentArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MigrationGoldenGateServiceDetailsGgsDeploymentOutput struct{ *pulumi.OutputState }
 
 func (MigrationGoldenGateServiceDetailsGgsDeploymentOutput) ElementType() reflect.Type {
@@ -5892,6 +6745,12 @@ func (o MigrationGoldenGateServiceDetailsGgsDeploymentOutput) ToMigrationGoldenG
 
 func (o MigrationGoldenGateServiceDetailsGgsDeploymentOutput) ToMigrationGoldenGateServiceDetailsGgsDeploymentOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsGgsDeploymentOutput {
 	return o
+}
+
+func (o MigrationGoldenGateServiceDetailsGgsDeploymentOutput) ToOutput(ctx context.Context) pulumix.Output[MigrationGoldenGateServiceDetailsGgsDeployment] {
+	return pulumix.Output[MigrationGoldenGateServiceDetailsGgsDeployment]{
+		OutputState: o.OutputState,
+	}
 }
 
 // OCID of a GoldenGate Deployment
@@ -5916,6 +6775,12 @@ func (o MigrationGoldenGateServiceDetailsGgsDeploymentArrayOutput) ToMigrationGo
 
 func (o MigrationGoldenGateServiceDetailsGgsDeploymentArrayOutput) ToMigrationGoldenGateServiceDetailsGgsDeploymentArrayOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsGgsDeploymentArrayOutput {
 	return o
+}
+
+func (o MigrationGoldenGateServiceDetailsGgsDeploymentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MigrationGoldenGateServiceDetailsGgsDeployment] {
+	return pulumix.Output[[]MigrationGoldenGateServiceDetailsGgsDeployment]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MigrationGoldenGateServiceDetailsGgsDeploymentArrayOutput) Index(i pulumi.IntInput) MigrationGoldenGateServiceDetailsGgsDeploymentOutput {
@@ -5965,6 +6830,12 @@ func (i MigrationGoldenGateServiceDetailsSettingsArgs) ToMigrationGoldenGateServ
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateServiceDetailsSettingsOutput)
 }
 
+func (i MigrationGoldenGateServiceDetailsSettingsArgs) ToOutput(ctx context.Context) pulumix.Output[MigrationGoldenGateServiceDetailsSettings] {
+	return pulumix.Output[MigrationGoldenGateServiceDetailsSettings]{
+		OutputState: i.ToMigrationGoldenGateServiceDetailsSettingsOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i MigrationGoldenGateServiceDetailsSettingsArgs) ToMigrationGoldenGateServiceDetailsSettingsPtrOutput() MigrationGoldenGateServiceDetailsSettingsPtrOutput {
 	return i.ToMigrationGoldenGateServiceDetailsSettingsPtrOutputWithContext(context.Background())
 }
@@ -6006,6 +6877,12 @@ func (i *migrationGoldenGateServiceDetailsSettingsPtrType) ToMigrationGoldenGate
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateServiceDetailsSettingsPtrOutput)
 }
 
+func (i *migrationGoldenGateServiceDetailsSettingsPtrType) ToOutput(ctx context.Context) pulumix.Output[*MigrationGoldenGateServiceDetailsSettings] {
+	return pulumix.Output[*MigrationGoldenGateServiceDetailsSettings]{
+		OutputState: i.ToMigrationGoldenGateServiceDetailsSettingsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MigrationGoldenGateServiceDetailsSettingsOutput struct{ *pulumi.OutputState }
 
 func (MigrationGoldenGateServiceDetailsSettingsOutput) ElementType() reflect.Type {
@@ -6028,6 +6905,12 @@ func (o MigrationGoldenGateServiceDetailsSettingsOutput) ToMigrationGoldenGateSe
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v MigrationGoldenGateServiceDetailsSettings) *MigrationGoldenGateServiceDetailsSettings {
 		return &v
 	}).(MigrationGoldenGateServiceDetailsSettingsPtrOutput)
+}
+
+func (o MigrationGoldenGateServiceDetailsSettingsOutput) ToOutput(ctx context.Context) pulumix.Output[MigrationGoldenGateServiceDetailsSettings] {
+	return pulumix.Output[MigrationGoldenGateServiceDetailsSettings]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
@@ -6061,6 +6944,12 @@ func (o MigrationGoldenGateServiceDetailsSettingsPtrOutput) ToMigrationGoldenGat
 
 func (o MigrationGoldenGateServiceDetailsSettingsPtrOutput) ToMigrationGoldenGateServiceDetailsSettingsPtrOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsSettingsPtrOutput {
 	return o
+}
+
+func (o MigrationGoldenGateServiceDetailsSettingsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MigrationGoldenGateServiceDetailsSettings] {
+	return pulumix.Output[*MigrationGoldenGateServiceDetailsSettings]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MigrationGoldenGateServiceDetailsSettingsPtrOutput) Elem() MigrationGoldenGateServiceDetailsSettingsOutput {
@@ -6140,6 +7029,12 @@ func (i MigrationGoldenGateServiceDetailsSettingsExtractArgs) ToMigrationGoldenG
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateServiceDetailsSettingsExtractOutput)
 }
 
+func (i MigrationGoldenGateServiceDetailsSettingsExtractArgs) ToOutput(ctx context.Context) pulumix.Output[MigrationGoldenGateServiceDetailsSettingsExtract] {
+	return pulumix.Output[MigrationGoldenGateServiceDetailsSettingsExtract]{
+		OutputState: i.ToMigrationGoldenGateServiceDetailsSettingsExtractOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i MigrationGoldenGateServiceDetailsSettingsExtractArgs) ToMigrationGoldenGateServiceDetailsSettingsExtractPtrOutput() MigrationGoldenGateServiceDetailsSettingsExtractPtrOutput {
 	return i.ToMigrationGoldenGateServiceDetailsSettingsExtractPtrOutputWithContext(context.Background())
 }
@@ -6181,6 +7076,12 @@ func (i *migrationGoldenGateServiceDetailsSettingsExtractPtrType) ToMigrationGol
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateServiceDetailsSettingsExtractPtrOutput)
 }
 
+func (i *migrationGoldenGateServiceDetailsSettingsExtractPtrType) ToOutput(ctx context.Context) pulumix.Output[*MigrationGoldenGateServiceDetailsSettingsExtract] {
+	return pulumix.Output[*MigrationGoldenGateServiceDetailsSettingsExtract]{
+		OutputState: i.ToMigrationGoldenGateServiceDetailsSettingsExtractPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MigrationGoldenGateServiceDetailsSettingsExtractOutput struct{ *pulumi.OutputState }
 
 func (MigrationGoldenGateServiceDetailsSettingsExtractOutput) ElementType() reflect.Type {
@@ -6205,6 +7106,12 @@ func (o MigrationGoldenGateServiceDetailsSettingsExtractOutput) ToMigrationGolde
 	}).(MigrationGoldenGateServiceDetailsSettingsExtractPtrOutput)
 }
 
+func (o MigrationGoldenGateServiceDetailsSettingsExtractOutput) ToOutput(ctx context.Context) pulumix.Output[MigrationGoldenGateServiceDetailsSettingsExtract] {
+	return pulumix.Output[MigrationGoldenGateServiceDetailsSettingsExtract]{
+		OutputState: o.OutputState,
+	}
+}
+
 // (Updatable) Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
 func (o MigrationGoldenGateServiceDetailsSettingsExtractOutput) LongTransDuration() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v MigrationGoldenGateServiceDetailsSettingsExtract) *int { return v.LongTransDuration }).(pulumi.IntPtrOutput)
@@ -6227,6 +7134,12 @@ func (o MigrationGoldenGateServiceDetailsSettingsExtractPtrOutput) ToMigrationGo
 
 func (o MigrationGoldenGateServiceDetailsSettingsExtractPtrOutput) ToMigrationGoldenGateServiceDetailsSettingsExtractPtrOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsSettingsExtractPtrOutput {
 	return o
+}
+
+func (o MigrationGoldenGateServiceDetailsSettingsExtractPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MigrationGoldenGateServiceDetailsSettingsExtract] {
+	return pulumix.Output[*MigrationGoldenGateServiceDetailsSettingsExtract]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MigrationGoldenGateServiceDetailsSettingsExtractPtrOutput) Elem() MigrationGoldenGateServiceDetailsSettingsExtractOutput {
@@ -6300,6 +7213,12 @@ func (i MigrationGoldenGateServiceDetailsSettingsReplicatArgs) ToMigrationGolden
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateServiceDetailsSettingsReplicatOutput)
 }
 
+func (i MigrationGoldenGateServiceDetailsSettingsReplicatArgs) ToOutput(ctx context.Context) pulumix.Output[MigrationGoldenGateServiceDetailsSettingsReplicat] {
+	return pulumix.Output[MigrationGoldenGateServiceDetailsSettingsReplicat]{
+		OutputState: i.ToMigrationGoldenGateServiceDetailsSettingsReplicatOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i MigrationGoldenGateServiceDetailsSettingsReplicatArgs) ToMigrationGoldenGateServiceDetailsSettingsReplicatPtrOutput() MigrationGoldenGateServiceDetailsSettingsReplicatPtrOutput {
 	return i.ToMigrationGoldenGateServiceDetailsSettingsReplicatPtrOutputWithContext(context.Background())
 }
@@ -6341,6 +7260,12 @@ func (i *migrationGoldenGateServiceDetailsSettingsReplicatPtrType) ToMigrationGo
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateServiceDetailsSettingsReplicatPtrOutput)
 }
 
+func (i *migrationGoldenGateServiceDetailsSettingsReplicatPtrType) ToOutput(ctx context.Context) pulumix.Output[*MigrationGoldenGateServiceDetailsSettingsReplicat] {
+	return pulumix.Output[*MigrationGoldenGateServiceDetailsSettingsReplicat]{
+		OutputState: i.ToMigrationGoldenGateServiceDetailsSettingsReplicatPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MigrationGoldenGateServiceDetailsSettingsReplicatOutput struct{ *pulumi.OutputState }
 
 func (MigrationGoldenGateServiceDetailsSettingsReplicatOutput) ElementType() reflect.Type {
@@ -6363,6 +7288,12 @@ func (o MigrationGoldenGateServiceDetailsSettingsReplicatOutput) ToMigrationGold
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v MigrationGoldenGateServiceDetailsSettingsReplicat) *MigrationGoldenGateServiceDetailsSettingsReplicat {
 		return &v
 	}).(MigrationGoldenGateServiceDetailsSettingsReplicatPtrOutput)
+}
+
+func (o MigrationGoldenGateServiceDetailsSettingsReplicatOutput) ToOutput(ctx context.Context) pulumix.Output[MigrationGoldenGateServiceDetailsSettingsReplicat] {
+	return pulumix.Output[MigrationGoldenGateServiceDetailsSettingsReplicat]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Number of threads used to read trail files (valid for Parallel Replicat)
@@ -6392,6 +7323,12 @@ func (o MigrationGoldenGateServiceDetailsSettingsReplicatPtrOutput) ToMigrationG
 
 func (o MigrationGoldenGateServiceDetailsSettingsReplicatPtrOutput) ToMigrationGoldenGateServiceDetailsSettingsReplicatPtrOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsSettingsReplicatPtrOutput {
 	return o
+}
+
+func (o MigrationGoldenGateServiceDetailsSettingsReplicatPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MigrationGoldenGateServiceDetailsSettingsReplicat] {
+	return pulumix.Output[*MigrationGoldenGateServiceDetailsSettingsReplicat]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MigrationGoldenGateServiceDetailsSettingsReplicatPtrOutput) Elem() MigrationGoldenGateServiceDetailsSettingsReplicatOutput {
@@ -6471,6 +7408,12 @@ func (i MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsArgs) ToMig
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsOutput)
 }
 
+func (i MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsArgs) ToOutput(ctx context.Context) pulumix.Output[MigrationGoldenGateServiceDetailsSourceContainerDbCredentials] {
+	return pulumix.Output[MigrationGoldenGateServiceDetailsSourceContainerDbCredentials]{
+		OutputState: i.ToMigrationGoldenGateServiceDetailsSourceContainerDbCredentialsOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsArgs) ToMigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutput() MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutput {
 	return i.ToMigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutputWithContext(context.Background())
 }
@@ -6512,6 +7455,12 @@ func (i *migrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrType) T
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutput)
 }
 
+func (i *migrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrType) ToOutput(ctx context.Context) pulumix.Output[*MigrationGoldenGateServiceDetailsSourceContainerDbCredentials] {
+	return pulumix.Output[*MigrationGoldenGateServiceDetailsSourceContainerDbCredentials]{
+		OutputState: i.ToMigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsOutput struct{ *pulumi.OutputState }
 
 func (MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsOutput) ElementType() reflect.Type {
@@ -6536,6 +7485,12 @@ func (o MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsOutput) ToM
 	}).(MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutput)
 }
 
+func (o MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsOutput) ToOutput(ctx context.Context) pulumix.Output[MigrationGoldenGateServiceDetailsSourceContainerDbCredentials] {
+	return pulumix.Output[MigrationGoldenGateServiceDetailsSourceContainerDbCredentials]{
+		OutputState: o.OutputState,
+	}
+}
+
 // (Updatable) Database  password
 func (o MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsOutput) Password() pulumi.StringOutput {
 	return o.ApplyT(func(v MigrationGoldenGateServiceDetailsSourceContainerDbCredentials) string { return v.Password }).(pulumi.StringOutput)
@@ -6558,6 +7513,12 @@ func (o MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutput) 
 
 func (o MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutput) ToMigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutput {
 	return o
+}
+
+func (o MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MigrationGoldenGateServiceDetailsSourceContainerDbCredentials] {
+	return pulumix.Output[*MigrationGoldenGateServiceDetailsSourceContainerDbCredentials]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsPtrOutput) Elem() MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsOutput {
@@ -6627,6 +7588,12 @@ func (i MigrationGoldenGateServiceDetailsSourceDbCredentialsArgs) ToMigrationGol
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateServiceDetailsSourceDbCredentialsOutput)
 }
 
+func (i MigrationGoldenGateServiceDetailsSourceDbCredentialsArgs) ToOutput(ctx context.Context) pulumix.Output[MigrationGoldenGateServiceDetailsSourceDbCredentials] {
+	return pulumix.Output[MigrationGoldenGateServiceDetailsSourceDbCredentials]{
+		OutputState: i.ToMigrationGoldenGateServiceDetailsSourceDbCredentialsOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i MigrationGoldenGateServiceDetailsSourceDbCredentialsArgs) ToMigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutput() MigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutput {
 	return i.ToMigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutputWithContext(context.Background())
 }
@@ -6668,6 +7635,12 @@ func (i *migrationGoldenGateServiceDetailsSourceDbCredentialsPtrType) ToMigratio
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutput)
 }
 
+func (i *migrationGoldenGateServiceDetailsSourceDbCredentialsPtrType) ToOutput(ctx context.Context) pulumix.Output[*MigrationGoldenGateServiceDetailsSourceDbCredentials] {
+	return pulumix.Output[*MigrationGoldenGateServiceDetailsSourceDbCredentials]{
+		OutputState: i.ToMigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MigrationGoldenGateServiceDetailsSourceDbCredentialsOutput struct{ *pulumi.OutputState }
 
 func (MigrationGoldenGateServiceDetailsSourceDbCredentialsOutput) ElementType() reflect.Type {
@@ -6692,6 +7665,12 @@ func (o MigrationGoldenGateServiceDetailsSourceDbCredentialsOutput) ToMigrationG
 	}).(MigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutput)
 }
 
+func (o MigrationGoldenGateServiceDetailsSourceDbCredentialsOutput) ToOutput(ctx context.Context) pulumix.Output[MigrationGoldenGateServiceDetailsSourceDbCredentials] {
+	return pulumix.Output[MigrationGoldenGateServiceDetailsSourceDbCredentials]{
+		OutputState: o.OutputState,
+	}
+}
+
 // (Updatable) Database  password
 func (o MigrationGoldenGateServiceDetailsSourceDbCredentialsOutput) Password() pulumi.StringOutput {
 	return o.ApplyT(func(v MigrationGoldenGateServiceDetailsSourceDbCredentials) string { return v.Password }).(pulumi.StringOutput)
@@ -6714,6 +7693,12 @@ func (o MigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutput) ToMigrati
 
 func (o MigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutput) ToMigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutput {
 	return o
+}
+
+func (o MigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MigrationGoldenGateServiceDetailsSourceDbCredentials] {
+	return pulumix.Output[*MigrationGoldenGateServiceDetailsSourceDbCredentials]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MigrationGoldenGateServiceDetailsSourceDbCredentialsPtrOutput) Elem() MigrationGoldenGateServiceDetailsSourceDbCredentialsOutput {
@@ -6783,6 +7768,12 @@ func (i MigrationGoldenGateServiceDetailsTargetDbCredentialsArgs) ToMigrationGol
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateServiceDetailsTargetDbCredentialsOutput)
 }
 
+func (i MigrationGoldenGateServiceDetailsTargetDbCredentialsArgs) ToOutput(ctx context.Context) pulumix.Output[MigrationGoldenGateServiceDetailsTargetDbCredentials] {
+	return pulumix.Output[MigrationGoldenGateServiceDetailsTargetDbCredentials]{
+		OutputState: i.ToMigrationGoldenGateServiceDetailsTargetDbCredentialsOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i MigrationGoldenGateServiceDetailsTargetDbCredentialsArgs) ToMigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutput() MigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutput {
 	return i.ToMigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutputWithContext(context.Background())
 }
@@ -6824,6 +7815,12 @@ func (i *migrationGoldenGateServiceDetailsTargetDbCredentialsPtrType) ToMigratio
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutput)
 }
 
+func (i *migrationGoldenGateServiceDetailsTargetDbCredentialsPtrType) ToOutput(ctx context.Context) pulumix.Output[*MigrationGoldenGateServiceDetailsTargetDbCredentials] {
+	return pulumix.Output[*MigrationGoldenGateServiceDetailsTargetDbCredentials]{
+		OutputState: i.ToMigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MigrationGoldenGateServiceDetailsTargetDbCredentialsOutput struct{ *pulumi.OutputState }
 
 func (MigrationGoldenGateServiceDetailsTargetDbCredentialsOutput) ElementType() reflect.Type {
@@ -6848,6 +7845,12 @@ func (o MigrationGoldenGateServiceDetailsTargetDbCredentialsOutput) ToMigrationG
 	}).(MigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutput)
 }
 
+func (o MigrationGoldenGateServiceDetailsTargetDbCredentialsOutput) ToOutput(ctx context.Context) pulumix.Output[MigrationGoldenGateServiceDetailsTargetDbCredentials] {
+	return pulumix.Output[MigrationGoldenGateServiceDetailsTargetDbCredentials]{
+		OutputState: o.OutputState,
+	}
+}
+
 // (Updatable) Database  password
 func (o MigrationGoldenGateServiceDetailsTargetDbCredentialsOutput) Password() pulumi.StringOutput {
 	return o.ApplyT(func(v MigrationGoldenGateServiceDetailsTargetDbCredentials) string { return v.Password }).(pulumi.StringOutput)
@@ -6870,6 +7873,12 @@ func (o MigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutput) ToMigrati
 
 func (o MigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutput) ToMigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutputWithContext(ctx context.Context) MigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutput {
 	return o
+}
+
+func (o MigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MigrationGoldenGateServiceDetailsTargetDbCredentials] {
+	return pulumix.Output[*MigrationGoldenGateServiceDetailsTargetDbCredentials]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MigrationGoldenGateServiceDetailsTargetDbCredentialsPtrOutput) Elem() MigrationGoldenGateServiceDetailsTargetDbCredentialsOutput {
@@ -6947,6 +7956,12 @@ func (i MigrationIncludeObjectArgs) ToMigrationIncludeObjectOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationIncludeObjectOutput)
 }
 
+func (i MigrationIncludeObjectArgs) ToOutput(ctx context.Context) pulumix.Output[MigrationIncludeObject] {
+	return pulumix.Output[MigrationIncludeObject]{
+		OutputState: i.ToMigrationIncludeObjectOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MigrationIncludeObjectArrayInput is an input type that accepts MigrationIncludeObjectArray and MigrationIncludeObjectArrayOutput values.
 // You can construct a concrete instance of `MigrationIncludeObjectArrayInput` via:
 //
@@ -6972,6 +7987,12 @@ func (i MigrationIncludeObjectArray) ToMigrationIncludeObjectArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationIncludeObjectArrayOutput)
 }
 
+func (i MigrationIncludeObjectArray) ToOutput(ctx context.Context) pulumix.Output[[]MigrationIncludeObject] {
+	return pulumix.Output[[]MigrationIncludeObject]{
+		OutputState: i.ToMigrationIncludeObjectArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MigrationIncludeObjectOutput struct{ *pulumi.OutputState }
 
 func (MigrationIncludeObjectOutput) ElementType() reflect.Type {
@@ -6984,6 +8005,12 @@ func (o MigrationIncludeObjectOutput) ToMigrationIncludeObjectOutput() Migration
 
 func (o MigrationIncludeObjectOutput) ToMigrationIncludeObjectOutputWithContext(ctx context.Context) MigrationIncludeObjectOutput {
 	return o
+}
+
+func (o MigrationIncludeObjectOutput) ToOutput(ctx context.Context) pulumix.Output[MigrationIncludeObject] {
+	return pulumix.Output[MigrationIncludeObject]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and that are included in the exludeObjects.
@@ -7018,6 +8045,12 @@ func (o MigrationIncludeObjectArrayOutput) ToMigrationIncludeObjectArrayOutput()
 
 func (o MigrationIncludeObjectArrayOutput) ToMigrationIncludeObjectArrayOutputWithContext(ctx context.Context) MigrationIncludeObjectArrayOutput {
 	return o
+}
+
+func (o MigrationIncludeObjectArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MigrationIncludeObject] {
+	return pulumix.Output[[]MigrationIncludeObject]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MigrationIncludeObjectArrayOutput) Index(i pulumi.IntInput) MigrationIncludeObjectOutput {
@@ -7073,6 +8106,12 @@ func (i MigrationVaultDetailsArgs) ToMigrationVaultDetailsOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationVaultDetailsOutput)
 }
 
+func (i MigrationVaultDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[MigrationVaultDetails] {
+	return pulumix.Output[MigrationVaultDetails]{
+		OutputState: i.ToMigrationVaultDetailsOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i MigrationVaultDetailsArgs) ToMigrationVaultDetailsPtrOutput() MigrationVaultDetailsPtrOutput {
 	return i.ToMigrationVaultDetailsPtrOutputWithContext(context.Background())
 }
@@ -7114,6 +8153,12 @@ func (i *migrationVaultDetailsPtrType) ToMigrationVaultDetailsPtrOutputWithConte
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationVaultDetailsPtrOutput)
 }
 
+func (i *migrationVaultDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*MigrationVaultDetails] {
+	return pulumix.Output[*MigrationVaultDetails]{
+		OutputState: i.ToMigrationVaultDetailsPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MigrationVaultDetailsOutput struct{ *pulumi.OutputState }
 
 func (MigrationVaultDetailsOutput) ElementType() reflect.Type {
@@ -7136,6 +8181,12 @@ func (o MigrationVaultDetailsOutput) ToMigrationVaultDetailsPtrOutputWithContext
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v MigrationVaultDetails) *MigrationVaultDetails {
 		return &v
 	}).(MigrationVaultDetailsPtrOutput)
+}
+
+func (o MigrationVaultDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[MigrationVaultDetails] {
+	return pulumix.Output[MigrationVaultDetails]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) OCID of the compartment where the secret containing the credentials will be created.
@@ -7168,6 +8219,12 @@ func (o MigrationVaultDetailsPtrOutput) ToMigrationVaultDetailsPtrOutput() Migra
 
 func (o MigrationVaultDetailsPtrOutput) ToMigrationVaultDetailsPtrOutputWithContext(ctx context.Context) MigrationVaultDetailsPtrOutput {
 	return o
+}
+
+func (o MigrationVaultDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MigrationVaultDetails] {
+	return pulumix.Output[*MigrationVaultDetails]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MigrationVaultDetailsPtrOutput) Elem() MigrationVaultDetailsOutput {
@@ -7246,6 +8303,12 @@ func (i GetAgentImagesAgentImageCollectionArgs) ToGetAgentImagesAgentImageCollec
 	return pulumi.ToOutputWithContext(ctx, i).(GetAgentImagesAgentImageCollectionOutput)
 }
 
+func (i GetAgentImagesAgentImageCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAgentImagesAgentImageCollection] {
+	return pulumix.Output[GetAgentImagesAgentImageCollection]{
+		OutputState: i.ToGetAgentImagesAgentImageCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAgentImagesAgentImageCollectionArrayInput is an input type that accepts GetAgentImagesAgentImageCollectionArray and GetAgentImagesAgentImageCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAgentImagesAgentImageCollectionArrayInput` via:
 //
@@ -7271,6 +8334,12 @@ func (i GetAgentImagesAgentImageCollectionArray) ToGetAgentImagesAgentImageColle
 	return pulumi.ToOutputWithContext(ctx, i).(GetAgentImagesAgentImageCollectionArrayOutput)
 }
 
+func (i GetAgentImagesAgentImageCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAgentImagesAgentImageCollection] {
+	return pulumix.Output[[]GetAgentImagesAgentImageCollection]{
+		OutputState: i.ToGetAgentImagesAgentImageCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAgentImagesAgentImageCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetAgentImagesAgentImageCollectionOutput) ElementType() reflect.Type {
@@ -7283,6 +8352,12 @@ func (o GetAgentImagesAgentImageCollectionOutput) ToGetAgentImagesAgentImageColl
 
 func (o GetAgentImagesAgentImageCollectionOutput) ToGetAgentImagesAgentImageCollectionOutputWithContext(ctx context.Context) GetAgentImagesAgentImageCollectionOutput {
 	return o
+}
+
+func (o GetAgentImagesAgentImageCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAgentImagesAgentImageCollection] {
+	return pulumix.Output[GetAgentImagesAgentImageCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Items in collection.
@@ -7302,6 +8377,12 @@ func (o GetAgentImagesAgentImageCollectionArrayOutput) ToGetAgentImagesAgentImag
 
 func (o GetAgentImagesAgentImageCollectionArrayOutput) ToGetAgentImagesAgentImageCollectionArrayOutputWithContext(ctx context.Context) GetAgentImagesAgentImageCollectionArrayOutput {
 	return o
+}
+
+func (o GetAgentImagesAgentImageCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAgentImagesAgentImageCollection] {
+	return pulumix.Output[[]GetAgentImagesAgentImageCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAgentImagesAgentImageCollectionArrayOutput) Index(i pulumi.IntInput) GetAgentImagesAgentImageCollectionOutput {
@@ -7347,6 +8428,12 @@ func (i GetAgentImagesAgentImageCollectionItemArgs) ToGetAgentImagesAgentImageCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetAgentImagesAgentImageCollectionItemOutput)
 }
 
+func (i GetAgentImagesAgentImageCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAgentImagesAgentImageCollectionItem] {
+	return pulumix.Output[GetAgentImagesAgentImageCollectionItem]{
+		OutputState: i.ToGetAgentImagesAgentImageCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAgentImagesAgentImageCollectionItemArrayInput is an input type that accepts GetAgentImagesAgentImageCollectionItemArray and GetAgentImagesAgentImageCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetAgentImagesAgentImageCollectionItemArrayInput` via:
 //
@@ -7372,6 +8459,12 @@ func (i GetAgentImagesAgentImageCollectionItemArray) ToGetAgentImagesAgentImageC
 	return pulumi.ToOutputWithContext(ctx, i).(GetAgentImagesAgentImageCollectionItemArrayOutput)
 }
 
+func (i GetAgentImagesAgentImageCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAgentImagesAgentImageCollectionItem] {
+	return pulumix.Output[[]GetAgentImagesAgentImageCollectionItem]{
+		OutputState: i.ToGetAgentImagesAgentImageCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAgentImagesAgentImageCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetAgentImagesAgentImageCollectionItemOutput) ElementType() reflect.Type {
@@ -7384,6 +8477,12 @@ func (o GetAgentImagesAgentImageCollectionItemOutput) ToGetAgentImagesAgentImage
 
 func (o GetAgentImagesAgentImageCollectionItemOutput) ToGetAgentImagesAgentImageCollectionItemOutputWithContext(ctx context.Context) GetAgentImagesAgentImageCollectionItemOutput {
 	return o
+}
+
+func (o GetAgentImagesAgentImageCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAgentImagesAgentImageCollectionItem] {
+	return pulumix.Output[GetAgentImagesAgentImageCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // URL to download Agent Image of the ODMS Agent.
@@ -7408,6 +8507,12 @@ func (o GetAgentImagesAgentImageCollectionItemArrayOutput) ToGetAgentImagesAgent
 
 func (o GetAgentImagesAgentImageCollectionItemArrayOutput) ToGetAgentImagesAgentImageCollectionItemArrayOutputWithContext(ctx context.Context) GetAgentImagesAgentImageCollectionItemArrayOutput {
 	return o
+}
+
+func (o GetAgentImagesAgentImageCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAgentImagesAgentImageCollectionItem] {
+	return pulumix.Output[[]GetAgentImagesAgentImageCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAgentImagesAgentImageCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAgentImagesAgentImageCollectionItemOutput {
@@ -7451,6 +8556,12 @@ func (i GetAgentImagesFilterArgs) ToGetAgentImagesFilterOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetAgentImagesFilterOutput)
 }
 
+func (i GetAgentImagesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAgentImagesFilter] {
+	return pulumix.Output[GetAgentImagesFilter]{
+		OutputState: i.ToGetAgentImagesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAgentImagesFilterArrayInput is an input type that accepts GetAgentImagesFilterArray and GetAgentImagesFilterArrayOutput values.
 // You can construct a concrete instance of `GetAgentImagesFilterArrayInput` via:
 //
@@ -7476,6 +8587,12 @@ func (i GetAgentImagesFilterArray) ToGetAgentImagesFilterArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetAgentImagesFilterArrayOutput)
 }
 
+func (i GetAgentImagesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAgentImagesFilter] {
+	return pulumix.Output[[]GetAgentImagesFilter]{
+		OutputState: i.ToGetAgentImagesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAgentImagesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAgentImagesFilterOutput) ElementType() reflect.Type {
@@ -7488,6 +8605,12 @@ func (o GetAgentImagesFilterOutput) ToGetAgentImagesFilterOutput() GetAgentImage
 
 func (o GetAgentImagesFilterOutput) ToGetAgentImagesFilterOutputWithContext(ctx context.Context) GetAgentImagesFilterOutput {
 	return o
+}
+
+func (o GetAgentImagesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAgentImagesFilter] {
+	return pulumix.Output[GetAgentImagesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAgentImagesFilterOutput) Name() pulumi.StringOutput {
@@ -7514,6 +8637,12 @@ func (o GetAgentImagesFilterArrayOutput) ToGetAgentImagesFilterArrayOutput() Get
 
 func (o GetAgentImagesFilterArrayOutput) ToGetAgentImagesFilterArrayOutputWithContext(ctx context.Context) GetAgentImagesFilterArrayOutput {
 	return o
+}
+
+func (o GetAgentImagesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAgentImagesFilter] {
+	return pulumix.Output[[]GetAgentImagesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAgentImagesFilterArrayOutput) Index(i pulumi.IntInput) GetAgentImagesFilterOutput {
@@ -7553,6 +8682,12 @@ func (i GetAgentsAgentCollectionArgs) ToGetAgentsAgentCollectionOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetAgentsAgentCollectionOutput)
 }
 
+func (i GetAgentsAgentCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAgentsAgentCollection] {
+	return pulumix.Output[GetAgentsAgentCollection]{
+		OutputState: i.ToGetAgentsAgentCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAgentsAgentCollectionArrayInput is an input type that accepts GetAgentsAgentCollectionArray and GetAgentsAgentCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAgentsAgentCollectionArrayInput` via:
 //
@@ -7578,6 +8713,12 @@ func (i GetAgentsAgentCollectionArray) ToGetAgentsAgentCollectionArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetAgentsAgentCollectionArrayOutput)
 }
 
+func (i GetAgentsAgentCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAgentsAgentCollection] {
+	return pulumix.Output[[]GetAgentsAgentCollection]{
+		OutputState: i.ToGetAgentsAgentCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAgentsAgentCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetAgentsAgentCollectionOutput) ElementType() reflect.Type {
@@ -7590,6 +8731,12 @@ func (o GetAgentsAgentCollectionOutput) ToGetAgentsAgentCollectionOutput() GetAg
 
 func (o GetAgentsAgentCollectionOutput) ToGetAgentsAgentCollectionOutputWithContext(ctx context.Context) GetAgentsAgentCollectionOutput {
 	return o
+}
+
+func (o GetAgentsAgentCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAgentsAgentCollection] {
+	return pulumix.Output[GetAgentsAgentCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAgentsAgentCollectionOutput) Items() GetAgentsAgentCollectionItemArrayOutput {
@@ -7608,6 +8755,12 @@ func (o GetAgentsAgentCollectionArrayOutput) ToGetAgentsAgentCollectionArrayOutp
 
 func (o GetAgentsAgentCollectionArrayOutput) ToGetAgentsAgentCollectionArrayOutputWithContext(ctx context.Context) GetAgentsAgentCollectionArrayOutput {
 	return o
+}
+
+func (o GetAgentsAgentCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAgentsAgentCollection] {
+	return pulumix.Output[[]GetAgentsAgentCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAgentsAgentCollectionArrayOutput) Index(i pulumi.IntInput) GetAgentsAgentCollectionOutput {
@@ -7699,6 +8852,12 @@ func (i GetAgentsAgentCollectionItemArgs) ToGetAgentsAgentCollectionItemOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetAgentsAgentCollectionItemOutput)
 }
 
+func (i GetAgentsAgentCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAgentsAgentCollectionItem] {
+	return pulumix.Output[GetAgentsAgentCollectionItem]{
+		OutputState: i.ToGetAgentsAgentCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAgentsAgentCollectionItemArrayInput is an input type that accepts GetAgentsAgentCollectionItemArray and GetAgentsAgentCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetAgentsAgentCollectionItemArrayInput` via:
 //
@@ -7724,6 +8883,12 @@ func (i GetAgentsAgentCollectionItemArray) ToGetAgentsAgentCollectionItemArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetAgentsAgentCollectionItemArrayOutput)
 }
 
+func (i GetAgentsAgentCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAgentsAgentCollectionItem] {
+	return pulumix.Output[[]GetAgentsAgentCollectionItem]{
+		OutputState: i.ToGetAgentsAgentCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAgentsAgentCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetAgentsAgentCollectionItemOutput) ElementType() reflect.Type {
@@ -7736,6 +8901,12 @@ func (o GetAgentsAgentCollectionItemOutput) ToGetAgentsAgentCollectionItemOutput
 
 func (o GetAgentsAgentCollectionItemOutput) ToGetAgentsAgentCollectionItemOutputWithContext(ctx context.Context) GetAgentsAgentCollectionItemOutput {
 	return o
+}
+
+func (o GetAgentsAgentCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAgentsAgentCollectionItem] {
+	return pulumix.Output[GetAgentsAgentCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAgentsAgentCollectionItemOutput) AgentId() pulumi.StringOutput {
@@ -7821,6 +8992,12 @@ func (o GetAgentsAgentCollectionItemArrayOutput) ToGetAgentsAgentCollectionItemA
 	return o
 }
 
+func (o GetAgentsAgentCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAgentsAgentCollectionItem] {
+	return pulumix.Output[[]GetAgentsAgentCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetAgentsAgentCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAgentsAgentCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentsAgentCollectionItem {
 		return vs[0].([]GetAgentsAgentCollectionItem)[vs[1].(int)]
@@ -7862,6 +9039,12 @@ func (i GetAgentsFilterArgs) ToGetAgentsFilterOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetAgentsFilterOutput)
 }
 
+func (i GetAgentsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAgentsFilter] {
+	return pulumix.Output[GetAgentsFilter]{
+		OutputState: i.ToGetAgentsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetAgentsFilterArrayInput is an input type that accepts GetAgentsFilterArray and GetAgentsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAgentsFilterArrayInput` via:
 //
@@ -7887,6 +9070,12 @@ func (i GetAgentsFilterArray) ToGetAgentsFilterArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetAgentsFilterArrayOutput)
 }
 
+func (i GetAgentsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAgentsFilter] {
+	return pulumix.Output[[]GetAgentsFilter]{
+		OutputState: i.ToGetAgentsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetAgentsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAgentsFilterOutput) ElementType() reflect.Type {
@@ -7899,6 +9088,12 @@ func (o GetAgentsFilterOutput) ToGetAgentsFilterOutput() GetAgentsFilterOutput {
 
 func (o GetAgentsFilterOutput) ToGetAgentsFilterOutputWithContext(ctx context.Context) GetAgentsFilterOutput {
 	return o
+}
+
+func (o GetAgentsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAgentsFilter] {
+	return pulumix.Output[GetAgentsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAgentsFilterOutput) Name() pulumi.StringOutput {
@@ -7925,6 +9120,12 @@ func (o GetAgentsFilterArrayOutput) ToGetAgentsFilterArrayOutput() GetAgentsFilt
 
 func (o GetAgentsFilterArrayOutput) ToGetAgentsFilterArrayOutputWithContext(ctx context.Context) GetAgentsFilterArrayOutput {
 	return o
+}
+
+func (o GetAgentsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAgentsFilter] {
+	return pulumix.Output[[]GetAgentsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAgentsFilterArrayOutput) Index(i pulumi.IntInput) GetAgentsFilterOutput {
@@ -7968,6 +9169,12 @@ func (i GetConnectionAdminCredentialArgs) ToGetConnectionAdminCredentialOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionAdminCredentialOutput)
 }
 
+func (i GetConnectionAdminCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetConnectionAdminCredential] {
+	return pulumix.Output[GetConnectionAdminCredential]{
+		OutputState: i.ToGetConnectionAdminCredentialOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetConnectionAdminCredentialArrayInput is an input type that accepts GetConnectionAdminCredentialArray and GetConnectionAdminCredentialArrayOutput values.
 // You can construct a concrete instance of `GetConnectionAdminCredentialArrayInput` via:
 //
@@ -7993,6 +9200,12 @@ func (i GetConnectionAdminCredentialArray) ToGetConnectionAdminCredentialArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionAdminCredentialArrayOutput)
 }
 
+func (i GetConnectionAdminCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConnectionAdminCredential] {
+	return pulumix.Output[[]GetConnectionAdminCredential]{
+		OutputState: i.ToGetConnectionAdminCredentialArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetConnectionAdminCredentialOutput struct{ *pulumi.OutputState }
 
 func (GetConnectionAdminCredentialOutput) ElementType() reflect.Type {
@@ -8005,6 +9218,12 @@ func (o GetConnectionAdminCredentialOutput) ToGetConnectionAdminCredentialOutput
 
 func (o GetConnectionAdminCredentialOutput) ToGetConnectionAdminCredentialOutputWithContext(ctx context.Context) GetConnectionAdminCredentialOutput {
 	return o
+}
+
+func (o GetConnectionAdminCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetConnectionAdminCredential] {
+	return pulumix.Output[GetConnectionAdminCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetConnectionAdminCredentialOutput) Password() pulumi.StringOutput {
@@ -8028,6 +9247,12 @@ func (o GetConnectionAdminCredentialArrayOutput) ToGetConnectionAdminCredentialA
 
 func (o GetConnectionAdminCredentialArrayOutput) ToGetConnectionAdminCredentialArrayOutputWithContext(ctx context.Context) GetConnectionAdminCredentialArrayOutput {
 	return o
+}
+
+func (o GetConnectionAdminCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConnectionAdminCredential] {
+	return pulumix.Output[[]GetConnectionAdminCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetConnectionAdminCredentialArrayOutput) Index(i pulumi.IntInput) GetConnectionAdminCredentialOutput {
@@ -8081,6 +9306,12 @@ func (i GetConnectionConnectDescriptorArgs) ToGetConnectionConnectDescriptorOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionConnectDescriptorOutput)
 }
 
+func (i GetConnectionConnectDescriptorArgs) ToOutput(ctx context.Context) pulumix.Output[GetConnectionConnectDescriptor] {
+	return pulumix.Output[GetConnectionConnectDescriptor]{
+		OutputState: i.ToGetConnectionConnectDescriptorOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetConnectionConnectDescriptorArrayInput is an input type that accepts GetConnectionConnectDescriptorArray and GetConnectionConnectDescriptorArrayOutput values.
 // You can construct a concrete instance of `GetConnectionConnectDescriptorArrayInput` via:
 //
@@ -8106,6 +9337,12 @@ func (i GetConnectionConnectDescriptorArray) ToGetConnectionConnectDescriptorArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionConnectDescriptorArrayOutput)
 }
 
+func (i GetConnectionConnectDescriptorArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConnectionConnectDescriptor] {
+	return pulumix.Output[[]GetConnectionConnectDescriptor]{
+		OutputState: i.ToGetConnectionConnectDescriptorArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetConnectionConnectDescriptorOutput struct{ *pulumi.OutputState }
 
 func (GetConnectionConnectDescriptorOutput) ElementType() reflect.Type {
@@ -8118,6 +9355,12 @@ func (o GetConnectionConnectDescriptorOutput) ToGetConnectionConnectDescriptorOu
 
 func (o GetConnectionConnectDescriptorOutput) ToGetConnectionConnectDescriptorOutputWithContext(ctx context.Context) GetConnectionConnectDescriptorOutput {
 	return o
+}
+
+func (o GetConnectionConnectDescriptorOutput) ToOutput(ctx context.Context) pulumix.Output[GetConnectionConnectDescriptor] {
+	return pulumix.Output[GetConnectionConnectDescriptor]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Connect string.
@@ -8152,6 +9395,12 @@ func (o GetConnectionConnectDescriptorArrayOutput) ToGetConnectionConnectDescrip
 
 func (o GetConnectionConnectDescriptorArrayOutput) ToGetConnectionConnectDescriptorArrayOutputWithContext(ctx context.Context) GetConnectionConnectDescriptorArrayOutput {
 	return o
+}
+
+func (o GetConnectionConnectDescriptorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConnectionConnectDescriptor] {
+	return pulumix.Output[[]GetConnectionConnectDescriptor]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetConnectionConnectDescriptorArrayOutput) Index(i pulumi.IntInput) GetConnectionConnectDescriptorOutput {
@@ -8205,6 +9454,12 @@ func (i GetConnectionPrivateEndpointArgs) ToGetConnectionPrivateEndpointOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionPrivateEndpointOutput)
 }
 
+func (i GetConnectionPrivateEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[GetConnectionPrivateEndpoint] {
+	return pulumix.Output[GetConnectionPrivateEndpoint]{
+		OutputState: i.ToGetConnectionPrivateEndpointOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetConnectionPrivateEndpointArrayInput is an input type that accepts GetConnectionPrivateEndpointArray and GetConnectionPrivateEndpointArrayOutput values.
 // You can construct a concrete instance of `GetConnectionPrivateEndpointArrayInput` via:
 //
@@ -8230,6 +9485,12 @@ func (i GetConnectionPrivateEndpointArray) ToGetConnectionPrivateEndpointArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionPrivateEndpointArrayOutput)
 }
 
+func (i GetConnectionPrivateEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConnectionPrivateEndpoint] {
+	return pulumix.Output[[]GetConnectionPrivateEndpoint]{
+		OutputState: i.ToGetConnectionPrivateEndpointArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetConnectionPrivateEndpointOutput struct{ *pulumi.OutputState }
 
 func (GetConnectionPrivateEndpointOutput) ElementType() reflect.Type {
@@ -8242,6 +9503,12 @@ func (o GetConnectionPrivateEndpointOutput) ToGetConnectionPrivateEndpointOutput
 
 func (o GetConnectionPrivateEndpointOutput) ToGetConnectionPrivateEndpointOutputWithContext(ctx context.Context) GetConnectionPrivateEndpointOutput {
 	return o
+}
+
+func (o GetConnectionPrivateEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[GetConnectionPrivateEndpoint] {
+	return pulumix.Output[GetConnectionPrivateEndpoint]{
+		OutputState: o.OutputState,
+	}
 }
 
 // OCID of the compartment where the secret containing the credentials will be created.
@@ -8276,6 +9543,12 @@ func (o GetConnectionPrivateEndpointArrayOutput) ToGetConnectionPrivateEndpointA
 
 func (o GetConnectionPrivateEndpointArrayOutput) ToGetConnectionPrivateEndpointArrayOutputWithContext(ctx context.Context) GetConnectionPrivateEndpointArrayOutput {
 	return o
+}
+
+func (o GetConnectionPrivateEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConnectionPrivateEndpoint] {
+	return pulumix.Output[[]GetConnectionPrivateEndpoint]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetConnectionPrivateEndpointArrayOutput) Index(i pulumi.IntInput) GetConnectionPrivateEndpointOutput {
@@ -8319,6 +9592,12 @@ func (i GetConnectionReplicationCredentialArgs) ToGetConnectionReplicationCreden
 	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionReplicationCredentialOutput)
 }
 
+func (i GetConnectionReplicationCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetConnectionReplicationCredential] {
+	return pulumix.Output[GetConnectionReplicationCredential]{
+		OutputState: i.ToGetConnectionReplicationCredentialOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetConnectionReplicationCredentialArrayInput is an input type that accepts GetConnectionReplicationCredentialArray and GetConnectionReplicationCredentialArrayOutput values.
 // You can construct a concrete instance of `GetConnectionReplicationCredentialArrayInput` via:
 //
@@ -8344,6 +9623,12 @@ func (i GetConnectionReplicationCredentialArray) ToGetConnectionReplicationCrede
 	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionReplicationCredentialArrayOutput)
 }
 
+func (i GetConnectionReplicationCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConnectionReplicationCredential] {
+	return pulumix.Output[[]GetConnectionReplicationCredential]{
+		OutputState: i.ToGetConnectionReplicationCredentialArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetConnectionReplicationCredentialOutput struct{ *pulumi.OutputState }
 
 func (GetConnectionReplicationCredentialOutput) ElementType() reflect.Type {
@@ -8356,6 +9641,12 @@ func (o GetConnectionReplicationCredentialOutput) ToGetConnectionReplicationCred
 
 func (o GetConnectionReplicationCredentialOutput) ToGetConnectionReplicationCredentialOutputWithContext(ctx context.Context) GetConnectionReplicationCredentialOutput {
 	return o
+}
+
+func (o GetConnectionReplicationCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetConnectionReplicationCredential] {
+	return pulumix.Output[GetConnectionReplicationCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetConnectionReplicationCredentialOutput) Password() pulumi.StringOutput {
@@ -8379,6 +9670,12 @@ func (o GetConnectionReplicationCredentialArrayOutput) ToGetConnectionReplicatio
 
 func (o GetConnectionReplicationCredentialArrayOutput) ToGetConnectionReplicationCredentialArrayOutputWithContext(ctx context.Context) GetConnectionReplicationCredentialArrayOutput {
 	return o
+}
+
+func (o GetConnectionReplicationCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConnectionReplicationCredential] {
+	return pulumix.Output[[]GetConnectionReplicationCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetConnectionReplicationCredentialArrayOutput) Index(i pulumi.IntInput) GetConnectionReplicationCredentialOutput {
@@ -8430,6 +9727,12 @@ func (i GetConnectionSshDetailArgs) ToGetConnectionSshDetailOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionSshDetailOutput)
 }
 
+func (i GetConnectionSshDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetConnectionSshDetail] {
+	return pulumix.Output[GetConnectionSshDetail]{
+		OutputState: i.ToGetConnectionSshDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetConnectionSshDetailArrayInput is an input type that accepts GetConnectionSshDetailArray and GetConnectionSshDetailArrayOutput values.
 // You can construct a concrete instance of `GetConnectionSshDetailArrayInput` via:
 //
@@ -8455,6 +9758,12 @@ func (i GetConnectionSshDetailArray) ToGetConnectionSshDetailArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionSshDetailArrayOutput)
 }
 
+func (i GetConnectionSshDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConnectionSshDetail] {
+	return pulumix.Output[[]GetConnectionSshDetail]{
+		OutputState: i.ToGetConnectionSshDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetConnectionSshDetailOutput struct{ *pulumi.OutputState }
 
 func (GetConnectionSshDetailOutput) ElementType() reflect.Type {
@@ -8467,6 +9776,12 @@ func (o GetConnectionSshDetailOutput) ToGetConnectionSshDetailOutput() GetConnec
 
 func (o GetConnectionSshDetailOutput) ToGetConnectionSshDetailOutputWithContext(ctx context.Context) GetConnectionSshDetailOutput {
 	return o
+}
+
+func (o GetConnectionSshDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetConnectionSshDetail] {
+	return pulumix.Output[GetConnectionSshDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Name of the host the SSH key is valid for.
@@ -8500,6 +9815,12 @@ func (o GetConnectionSshDetailArrayOutput) ToGetConnectionSshDetailArrayOutput()
 
 func (o GetConnectionSshDetailArrayOutput) ToGetConnectionSshDetailArrayOutputWithContext(ctx context.Context) GetConnectionSshDetailArrayOutput {
 	return o
+}
+
+func (o GetConnectionSshDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConnectionSshDetail] {
+	return pulumix.Output[[]GetConnectionSshDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetConnectionSshDetailArrayOutput) Index(i pulumi.IntInput) GetConnectionSshDetailOutput {
@@ -8549,6 +9870,12 @@ func (i GetConnectionVaultDetailArgs) ToGetConnectionVaultDetailOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionVaultDetailOutput)
 }
 
+func (i GetConnectionVaultDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetConnectionVaultDetail] {
+	return pulumix.Output[GetConnectionVaultDetail]{
+		OutputState: i.ToGetConnectionVaultDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetConnectionVaultDetailArrayInput is an input type that accepts GetConnectionVaultDetailArray and GetConnectionVaultDetailArrayOutput values.
 // You can construct a concrete instance of `GetConnectionVaultDetailArrayInput` via:
 //
@@ -8574,6 +9901,12 @@ func (i GetConnectionVaultDetailArray) ToGetConnectionVaultDetailArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionVaultDetailArrayOutput)
 }
 
+func (i GetConnectionVaultDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConnectionVaultDetail] {
+	return pulumix.Output[[]GetConnectionVaultDetail]{
+		OutputState: i.ToGetConnectionVaultDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetConnectionVaultDetailOutput struct{ *pulumi.OutputState }
 
 func (GetConnectionVaultDetailOutput) ElementType() reflect.Type {
@@ -8586,6 +9919,12 @@ func (o GetConnectionVaultDetailOutput) ToGetConnectionVaultDetailOutput() GetCo
 
 func (o GetConnectionVaultDetailOutput) ToGetConnectionVaultDetailOutputWithContext(ctx context.Context) GetConnectionVaultDetailOutput {
 	return o
+}
+
+func (o GetConnectionVaultDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetConnectionVaultDetail] {
+	return pulumix.Output[GetConnectionVaultDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // OCID of the compartment where the secret containing the credentials will be created.
@@ -8615,6 +9954,12 @@ func (o GetConnectionVaultDetailArrayOutput) ToGetConnectionVaultDetailArrayOutp
 
 func (o GetConnectionVaultDetailArrayOutput) ToGetConnectionVaultDetailArrayOutputWithContext(ctx context.Context) GetConnectionVaultDetailArrayOutput {
 	return o
+}
+
+func (o GetConnectionVaultDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConnectionVaultDetail] {
+	return pulumix.Output[[]GetConnectionVaultDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetConnectionVaultDetailArrayOutput) Index(i pulumi.IntInput) GetConnectionVaultDetailOutput {
@@ -8654,6 +9999,12 @@ func (i GetConnectionsConnectionCollectionArgs) ToGetConnectionsConnectionCollec
 	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsConnectionCollectionOutput)
 }
 
+func (i GetConnectionsConnectionCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetConnectionsConnectionCollection] {
+	return pulumix.Output[GetConnectionsConnectionCollection]{
+		OutputState: i.ToGetConnectionsConnectionCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetConnectionsConnectionCollectionArrayInput is an input type that accepts GetConnectionsConnectionCollectionArray and GetConnectionsConnectionCollectionArrayOutput values.
 // You can construct a concrete instance of `GetConnectionsConnectionCollectionArrayInput` via:
 //
@@ -8679,6 +10030,12 @@ func (i GetConnectionsConnectionCollectionArray) ToGetConnectionsConnectionColle
 	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsConnectionCollectionArrayOutput)
 }
 
+func (i GetConnectionsConnectionCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConnectionsConnectionCollection] {
+	return pulumix.Output[[]GetConnectionsConnectionCollection]{
+		OutputState: i.ToGetConnectionsConnectionCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetConnectionsConnectionCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetConnectionsConnectionCollectionOutput) ElementType() reflect.Type {
@@ -8691,6 +10048,12 @@ func (o GetConnectionsConnectionCollectionOutput) ToGetConnectionsConnectionColl
 
 func (o GetConnectionsConnectionCollectionOutput) ToGetConnectionsConnectionCollectionOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionOutput {
 	return o
+}
+
+func (o GetConnectionsConnectionCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetConnectionsConnectionCollection] {
+	return pulumix.Output[GetConnectionsConnectionCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetConnectionsConnectionCollectionOutput) Items() GetConnectionsConnectionCollectionItemArrayOutput {
@@ -8709,6 +10072,12 @@ func (o GetConnectionsConnectionCollectionArrayOutput) ToGetConnectionsConnectio
 
 func (o GetConnectionsConnectionCollectionArrayOutput) ToGetConnectionsConnectionCollectionArrayOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionArrayOutput {
 	return o
+}
+
+func (o GetConnectionsConnectionCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConnectionsConnectionCollection] {
+	return pulumix.Output[[]GetConnectionsConnectionCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetConnectionsConnectionCollectionArrayOutput) Index(i pulumi.IntInput) GetConnectionsConnectionCollectionOutput {
@@ -8834,6 +10203,12 @@ func (i GetConnectionsConnectionCollectionItemArgs) ToGetConnectionsConnectionCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsConnectionCollectionItemOutput)
 }
 
+func (i GetConnectionsConnectionCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetConnectionsConnectionCollectionItem] {
+	return pulumix.Output[GetConnectionsConnectionCollectionItem]{
+		OutputState: i.ToGetConnectionsConnectionCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetConnectionsConnectionCollectionItemArrayInput is an input type that accepts GetConnectionsConnectionCollectionItemArray and GetConnectionsConnectionCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetConnectionsConnectionCollectionItemArrayInput` via:
 //
@@ -8859,6 +10234,12 @@ func (i GetConnectionsConnectionCollectionItemArray) ToGetConnectionsConnectionC
 	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsConnectionCollectionItemArrayOutput)
 }
 
+func (i GetConnectionsConnectionCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConnectionsConnectionCollectionItem] {
+	return pulumix.Output[[]GetConnectionsConnectionCollectionItem]{
+		OutputState: i.ToGetConnectionsConnectionCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetConnectionsConnectionCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetConnectionsConnectionCollectionItemOutput) ElementType() reflect.Type {
@@ -8871,6 +10252,12 @@ func (o GetConnectionsConnectionCollectionItemOutput) ToGetConnectionsConnection
 
 func (o GetConnectionsConnectionCollectionItemOutput) ToGetConnectionsConnectionCollectionItemOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemOutput {
 	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetConnectionsConnectionCollectionItem] {
+	return pulumix.Output[GetConnectionsConnectionCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Database Administrator Credentials details.
@@ -9012,6 +10399,12 @@ func (o GetConnectionsConnectionCollectionItemArrayOutput) ToGetConnectionsConne
 	return o
 }
 
+func (o GetConnectionsConnectionCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConnectionsConnectionCollectionItem] {
+	return pulumix.Output[[]GetConnectionsConnectionCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetConnectionsConnectionCollectionItemArrayOutput) Index(i pulumi.IntInput) GetConnectionsConnectionCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConnectionsConnectionCollectionItem {
 		return vs[0].([]GetConnectionsConnectionCollectionItem)[vs[1].(int)]
@@ -9053,6 +10446,12 @@ func (i GetConnectionsConnectionCollectionItemAdminCredentialArgs) ToGetConnecti
 	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsConnectionCollectionItemAdminCredentialOutput)
 }
 
+func (i GetConnectionsConnectionCollectionItemAdminCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetConnectionsConnectionCollectionItemAdminCredential] {
+	return pulumix.Output[GetConnectionsConnectionCollectionItemAdminCredential]{
+		OutputState: i.ToGetConnectionsConnectionCollectionItemAdminCredentialOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetConnectionsConnectionCollectionItemAdminCredentialArrayInput is an input type that accepts GetConnectionsConnectionCollectionItemAdminCredentialArray and GetConnectionsConnectionCollectionItemAdminCredentialArrayOutput values.
 // You can construct a concrete instance of `GetConnectionsConnectionCollectionItemAdminCredentialArrayInput` via:
 //
@@ -9078,6 +10477,12 @@ func (i GetConnectionsConnectionCollectionItemAdminCredentialArray) ToGetConnect
 	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsConnectionCollectionItemAdminCredentialArrayOutput)
 }
 
+func (i GetConnectionsConnectionCollectionItemAdminCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConnectionsConnectionCollectionItemAdminCredential] {
+	return pulumix.Output[[]GetConnectionsConnectionCollectionItemAdminCredential]{
+		OutputState: i.ToGetConnectionsConnectionCollectionItemAdminCredentialArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetConnectionsConnectionCollectionItemAdminCredentialOutput struct{ *pulumi.OutputState }
 
 func (GetConnectionsConnectionCollectionItemAdminCredentialOutput) ElementType() reflect.Type {
@@ -9090,6 +10495,12 @@ func (o GetConnectionsConnectionCollectionItemAdminCredentialOutput) ToGetConnec
 
 func (o GetConnectionsConnectionCollectionItemAdminCredentialOutput) ToGetConnectionsConnectionCollectionItemAdminCredentialOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemAdminCredentialOutput {
 	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemAdminCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetConnectionsConnectionCollectionItemAdminCredential] {
+	return pulumix.Output[GetConnectionsConnectionCollectionItemAdminCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetConnectionsConnectionCollectionItemAdminCredentialOutput) Password() pulumi.StringOutput {
@@ -9113,6 +10524,12 @@ func (o GetConnectionsConnectionCollectionItemAdminCredentialArrayOutput) ToGetC
 
 func (o GetConnectionsConnectionCollectionItemAdminCredentialArrayOutput) ToGetConnectionsConnectionCollectionItemAdminCredentialArrayOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemAdminCredentialArrayOutput {
 	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemAdminCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConnectionsConnectionCollectionItemAdminCredential] {
+	return pulumix.Output[[]GetConnectionsConnectionCollectionItemAdminCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetConnectionsConnectionCollectionItemAdminCredentialArrayOutput) Index(i pulumi.IntInput) GetConnectionsConnectionCollectionItemAdminCredentialOutput {
@@ -9166,6 +10583,12 @@ func (i GetConnectionsConnectionCollectionItemConnectDescriptorArgs) ToGetConnec
 	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsConnectionCollectionItemConnectDescriptorOutput)
 }
 
+func (i GetConnectionsConnectionCollectionItemConnectDescriptorArgs) ToOutput(ctx context.Context) pulumix.Output[GetConnectionsConnectionCollectionItemConnectDescriptor] {
+	return pulumix.Output[GetConnectionsConnectionCollectionItemConnectDescriptor]{
+		OutputState: i.ToGetConnectionsConnectionCollectionItemConnectDescriptorOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetConnectionsConnectionCollectionItemConnectDescriptorArrayInput is an input type that accepts GetConnectionsConnectionCollectionItemConnectDescriptorArray and GetConnectionsConnectionCollectionItemConnectDescriptorArrayOutput values.
 // You can construct a concrete instance of `GetConnectionsConnectionCollectionItemConnectDescriptorArrayInput` via:
 //
@@ -9191,6 +10614,12 @@ func (i GetConnectionsConnectionCollectionItemConnectDescriptorArray) ToGetConne
 	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsConnectionCollectionItemConnectDescriptorArrayOutput)
 }
 
+func (i GetConnectionsConnectionCollectionItemConnectDescriptorArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConnectionsConnectionCollectionItemConnectDescriptor] {
+	return pulumix.Output[[]GetConnectionsConnectionCollectionItemConnectDescriptor]{
+		OutputState: i.ToGetConnectionsConnectionCollectionItemConnectDescriptorArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetConnectionsConnectionCollectionItemConnectDescriptorOutput struct{ *pulumi.OutputState }
 
 func (GetConnectionsConnectionCollectionItemConnectDescriptorOutput) ElementType() reflect.Type {
@@ -9203,6 +10632,12 @@ func (o GetConnectionsConnectionCollectionItemConnectDescriptorOutput) ToGetConn
 
 func (o GetConnectionsConnectionCollectionItemConnectDescriptorOutput) ToGetConnectionsConnectionCollectionItemConnectDescriptorOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemConnectDescriptorOutput {
 	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemConnectDescriptorOutput) ToOutput(ctx context.Context) pulumix.Output[GetConnectionsConnectionCollectionItemConnectDescriptor] {
+	return pulumix.Output[GetConnectionsConnectionCollectionItemConnectDescriptor]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Connect string.
@@ -9237,6 +10672,12 @@ func (o GetConnectionsConnectionCollectionItemConnectDescriptorArrayOutput) ToGe
 
 func (o GetConnectionsConnectionCollectionItemConnectDescriptorArrayOutput) ToGetConnectionsConnectionCollectionItemConnectDescriptorArrayOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemConnectDescriptorArrayOutput {
 	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemConnectDescriptorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConnectionsConnectionCollectionItemConnectDescriptor] {
+	return pulumix.Output[[]GetConnectionsConnectionCollectionItemConnectDescriptor]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetConnectionsConnectionCollectionItemConnectDescriptorArrayOutput) Index(i pulumi.IntInput) GetConnectionsConnectionCollectionItemConnectDescriptorOutput {
@@ -9290,6 +10731,12 @@ func (i GetConnectionsConnectionCollectionItemPrivateEndpointArgs) ToGetConnecti
 	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsConnectionCollectionItemPrivateEndpointOutput)
 }
 
+func (i GetConnectionsConnectionCollectionItemPrivateEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[GetConnectionsConnectionCollectionItemPrivateEndpoint] {
+	return pulumix.Output[GetConnectionsConnectionCollectionItemPrivateEndpoint]{
+		OutputState: i.ToGetConnectionsConnectionCollectionItemPrivateEndpointOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetConnectionsConnectionCollectionItemPrivateEndpointArrayInput is an input type that accepts GetConnectionsConnectionCollectionItemPrivateEndpointArray and GetConnectionsConnectionCollectionItemPrivateEndpointArrayOutput values.
 // You can construct a concrete instance of `GetConnectionsConnectionCollectionItemPrivateEndpointArrayInput` via:
 //
@@ -9315,6 +10762,12 @@ func (i GetConnectionsConnectionCollectionItemPrivateEndpointArray) ToGetConnect
 	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsConnectionCollectionItemPrivateEndpointArrayOutput)
 }
 
+func (i GetConnectionsConnectionCollectionItemPrivateEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConnectionsConnectionCollectionItemPrivateEndpoint] {
+	return pulumix.Output[[]GetConnectionsConnectionCollectionItemPrivateEndpoint]{
+		OutputState: i.ToGetConnectionsConnectionCollectionItemPrivateEndpointArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetConnectionsConnectionCollectionItemPrivateEndpointOutput struct{ *pulumi.OutputState }
 
 func (GetConnectionsConnectionCollectionItemPrivateEndpointOutput) ElementType() reflect.Type {
@@ -9327,6 +10780,12 @@ func (o GetConnectionsConnectionCollectionItemPrivateEndpointOutput) ToGetConnec
 
 func (o GetConnectionsConnectionCollectionItemPrivateEndpointOutput) ToGetConnectionsConnectionCollectionItemPrivateEndpointOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemPrivateEndpointOutput {
 	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemPrivateEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[GetConnectionsConnectionCollectionItemPrivateEndpoint] {
+	return pulumix.Output[GetConnectionsConnectionCollectionItemPrivateEndpoint]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -9361,6 +10820,12 @@ func (o GetConnectionsConnectionCollectionItemPrivateEndpointArrayOutput) ToGetC
 
 func (o GetConnectionsConnectionCollectionItemPrivateEndpointArrayOutput) ToGetConnectionsConnectionCollectionItemPrivateEndpointArrayOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemPrivateEndpointArrayOutput {
 	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemPrivateEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConnectionsConnectionCollectionItemPrivateEndpoint] {
+	return pulumix.Output[[]GetConnectionsConnectionCollectionItemPrivateEndpoint]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetConnectionsConnectionCollectionItemPrivateEndpointArrayOutput) Index(i pulumi.IntInput) GetConnectionsConnectionCollectionItemPrivateEndpointOutput {
@@ -9404,6 +10869,12 @@ func (i GetConnectionsConnectionCollectionItemReplicationCredentialArgs) ToGetCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsConnectionCollectionItemReplicationCredentialOutput)
 }
 
+func (i GetConnectionsConnectionCollectionItemReplicationCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetConnectionsConnectionCollectionItemReplicationCredential] {
+	return pulumix.Output[GetConnectionsConnectionCollectionItemReplicationCredential]{
+		OutputState: i.ToGetConnectionsConnectionCollectionItemReplicationCredentialOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetConnectionsConnectionCollectionItemReplicationCredentialArrayInput is an input type that accepts GetConnectionsConnectionCollectionItemReplicationCredentialArray and GetConnectionsConnectionCollectionItemReplicationCredentialArrayOutput values.
 // You can construct a concrete instance of `GetConnectionsConnectionCollectionItemReplicationCredentialArrayInput` via:
 //
@@ -9429,6 +10900,12 @@ func (i GetConnectionsConnectionCollectionItemReplicationCredentialArray) ToGetC
 	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsConnectionCollectionItemReplicationCredentialArrayOutput)
 }
 
+func (i GetConnectionsConnectionCollectionItemReplicationCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConnectionsConnectionCollectionItemReplicationCredential] {
+	return pulumix.Output[[]GetConnectionsConnectionCollectionItemReplicationCredential]{
+		OutputState: i.ToGetConnectionsConnectionCollectionItemReplicationCredentialArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetConnectionsConnectionCollectionItemReplicationCredentialOutput struct{ *pulumi.OutputState }
 
 func (GetConnectionsConnectionCollectionItemReplicationCredentialOutput) ElementType() reflect.Type {
@@ -9441,6 +10918,12 @@ func (o GetConnectionsConnectionCollectionItemReplicationCredentialOutput) ToGet
 
 func (o GetConnectionsConnectionCollectionItemReplicationCredentialOutput) ToGetConnectionsConnectionCollectionItemReplicationCredentialOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemReplicationCredentialOutput {
 	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemReplicationCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetConnectionsConnectionCollectionItemReplicationCredential] {
+	return pulumix.Output[GetConnectionsConnectionCollectionItemReplicationCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetConnectionsConnectionCollectionItemReplicationCredentialOutput) Password() pulumi.StringOutput {
@@ -9464,6 +10947,12 @@ func (o GetConnectionsConnectionCollectionItemReplicationCredentialArrayOutput) 
 
 func (o GetConnectionsConnectionCollectionItemReplicationCredentialArrayOutput) ToGetConnectionsConnectionCollectionItemReplicationCredentialArrayOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemReplicationCredentialArrayOutput {
 	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemReplicationCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConnectionsConnectionCollectionItemReplicationCredential] {
+	return pulumix.Output[[]GetConnectionsConnectionCollectionItemReplicationCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetConnectionsConnectionCollectionItemReplicationCredentialArrayOutput) Index(i pulumi.IntInput) GetConnectionsConnectionCollectionItemReplicationCredentialOutput {
@@ -9515,6 +11004,12 @@ func (i GetConnectionsConnectionCollectionItemSshDetailArgs) ToGetConnectionsCon
 	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsConnectionCollectionItemSshDetailOutput)
 }
 
+func (i GetConnectionsConnectionCollectionItemSshDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetConnectionsConnectionCollectionItemSshDetail] {
+	return pulumix.Output[GetConnectionsConnectionCollectionItemSshDetail]{
+		OutputState: i.ToGetConnectionsConnectionCollectionItemSshDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetConnectionsConnectionCollectionItemSshDetailArrayInput is an input type that accepts GetConnectionsConnectionCollectionItemSshDetailArray and GetConnectionsConnectionCollectionItemSshDetailArrayOutput values.
 // You can construct a concrete instance of `GetConnectionsConnectionCollectionItemSshDetailArrayInput` via:
 //
@@ -9540,6 +11035,12 @@ func (i GetConnectionsConnectionCollectionItemSshDetailArray) ToGetConnectionsCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsConnectionCollectionItemSshDetailArrayOutput)
 }
 
+func (i GetConnectionsConnectionCollectionItemSshDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConnectionsConnectionCollectionItemSshDetail] {
+	return pulumix.Output[[]GetConnectionsConnectionCollectionItemSshDetail]{
+		OutputState: i.ToGetConnectionsConnectionCollectionItemSshDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetConnectionsConnectionCollectionItemSshDetailOutput struct{ *pulumi.OutputState }
 
 func (GetConnectionsConnectionCollectionItemSshDetailOutput) ElementType() reflect.Type {
@@ -9552,6 +11053,12 @@ func (o GetConnectionsConnectionCollectionItemSshDetailOutput) ToGetConnectionsC
 
 func (o GetConnectionsConnectionCollectionItemSshDetailOutput) ToGetConnectionsConnectionCollectionItemSshDetailOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemSshDetailOutput {
 	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemSshDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetConnectionsConnectionCollectionItemSshDetail] {
+	return pulumix.Output[GetConnectionsConnectionCollectionItemSshDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Name of the host the SSH key is valid for.
@@ -9585,6 +11092,12 @@ func (o GetConnectionsConnectionCollectionItemSshDetailArrayOutput) ToGetConnect
 
 func (o GetConnectionsConnectionCollectionItemSshDetailArrayOutput) ToGetConnectionsConnectionCollectionItemSshDetailArrayOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemSshDetailArrayOutput {
 	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemSshDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConnectionsConnectionCollectionItemSshDetail] {
+	return pulumix.Output[[]GetConnectionsConnectionCollectionItemSshDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetConnectionsConnectionCollectionItemSshDetailArrayOutput) Index(i pulumi.IntInput) GetConnectionsConnectionCollectionItemSshDetailOutput {
@@ -9634,6 +11147,12 @@ func (i GetConnectionsConnectionCollectionItemVaultDetailArgs) ToGetConnectionsC
 	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsConnectionCollectionItemVaultDetailOutput)
 }
 
+func (i GetConnectionsConnectionCollectionItemVaultDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetConnectionsConnectionCollectionItemVaultDetail] {
+	return pulumix.Output[GetConnectionsConnectionCollectionItemVaultDetail]{
+		OutputState: i.ToGetConnectionsConnectionCollectionItemVaultDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetConnectionsConnectionCollectionItemVaultDetailArrayInput is an input type that accepts GetConnectionsConnectionCollectionItemVaultDetailArray and GetConnectionsConnectionCollectionItemVaultDetailArrayOutput values.
 // You can construct a concrete instance of `GetConnectionsConnectionCollectionItemVaultDetailArrayInput` via:
 //
@@ -9659,6 +11178,12 @@ func (i GetConnectionsConnectionCollectionItemVaultDetailArray) ToGetConnections
 	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsConnectionCollectionItemVaultDetailArrayOutput)
 }
 
+func (i GetConnectionsConnectionCollectionItemVaultDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConnectionsConnectionCollectionItemVaultDetail] {
+	return pulumix.Output[[]GetConnectionsConnectionCollectionItemVaultDetail]{
+		OutputState: i.ToGetConnectionsConnectionCollectionItemVaultDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetConnectionsConnectionCollectionItemVaultDetailOutput struct{ *pulumi.OutputState }
 
 func (GetConnectionsConnectionCollectionItemVaultDetailOutput) ElementType() reflect.Type {
@@ -9671,6 +11196,12 @@ func (o GetConnectionsConnectionCollectionItemVaultDetailOutput) ToGetConnection
 
 func (o GetConnectionsConnectionCollectionItemVaultDetailOutput) ToGetConnectionsConnectionCollectionItemVaultDetailOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemVaultDetailOutput {
 	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemVaultDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetConnectionsConnectionCollectionItemVaultDetail] {
+	return pulumix.Output[GetConnectionsConnectionCollectionItemVaultDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -9700,6 +11231,12 @@ func (o GetConnectionsConnectionCollectionItemVaultDetailArrayOutput) ToGetConne
 
 func (o GetConnectionsConnectionCollectionItemVaultDetailArrayOutput) ToGetConnectionsConnectionCollectionItemVaultDetailArrayOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemVaultDetailArrayOutput {
 	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemVaultDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConnectionsConnectionCollectionItemVaultDetail] {
+	return pulumix.Output[[]GetConnectionsConnectionCollectionItemVaultDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetConnectionsConnectionCollectionItemVaultDetailArrayOutput) Index(i pulumi.IntInput) GetConnectionsConnectionCollectionItemVaultDetailOutput {
@@ -9743,6 +11280,12 @@ func (i GetConnectionsFilterArgs) ToGetConnectionsFilterOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsFilterOutput)
 }
 
+func (i GetConnectionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetConnectionsFilter] {
+	return pulumix.Output[GetConnectionsFilter]{
+		OutputState: i.ToGetConnectionsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetConnectionsFilterArrayInput is an input type that accepts GetConnectionsFilterArray and GetConnectionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetConnectionsFilterArrayInput` via:
 //
@@ -9768,6 +11311,12 @@ func (i GetConnectionsFilterArray) ToGetConnectionsFilterArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsFilterArrayOutput)
 }
 
+func (i GetConnectionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConnectionsFilter] {
+	return pulumix.Output[[]GetConnectionsFilter]{
+		OutputState: i.ToGetConnectionsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetConnectionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetConnectionsFilterOutput) ElementType() reflect.Type {
@@ -9780,6 +11329,12 @@ func (o GetConnectionsFilterOutput) ToGetConnectionsFilterOutput() GetConnection
 
 func (o GetConnectionsFilterOutput) ToGetConnectionsFilterOutputWithContext(ctx context.Context) GetConnectionsFilterOutput {
 	return o
+}
+
+func (o GetConnectionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetConnectionsFilter] {
+	return pulumix.Output[GetConnectionsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetConnectionsFilterOutput) Name() pulumi.StringOutput {
@@ -9806,6 +11361,12 @@ func (o GetConnectionsFilterArrayOutput) ToGetConnectionsFilterArrayOutput() Get
 
 func (o GetConnectionsFilterArrayOutput) ToGetConnectionsFilterArrayOutputWithContext(ctx context.Context) GetConnectionsFilterArrayOutput {
 	return o
+}
+
+func (o GetConnectionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConnectionsFilter] {
+	return pulumix.Output[[]GetConnectionsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetConnectionsFilterArrayOutput) Index(i pulumi.IntInput) GetConnectionsFilterOutput {
@@ -9851,6 +11412,12 @@ func (i GetJobAdvisorReportReportLocationDetailArgs) ToGetJobAdvisorReportReport
 	return pulumi.ToOutputWithContext(ctx, i).(GetJobAdvisorReportReportLocationDetailOutput)
 }
 
+func (i GetJobAdvisorReportReportLocationDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetJobAdvisorReportReportLocationDetail] {
+	return pulumix.Output[GetJobAdvisorReportReportLocationDetail]{
+		OutputState: i.ToGetJobAdvisorReportReportLocationDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetJobAdvisorReportReportLocationDetailArrayInput is an input type that accepts GetJobAdvisorReportReportLocationDetailArray and GetJobAdvisorReportReportLocationDetailArrayOutput values.
 // You can construct a concrete instance of `GetJobAdvisorReportReportLocationDetailArrayInput` via:
 //
@@ -9876,6 +11443,12 @@ func (i GetJobAdvisorReportReportLocationDetailArray) ToGetJobAdvisorReportRepor
 	return pulumi.ToOutputWithContext(ctx, i).(GetJobAdvisorReportReportLocationDetailArrayOutput)
 }
 
+func (i GetJobAdvisorReportReportLocationDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetJobAdvisorReportReportLocationDetail] {
+	return pulumix.Output[[]GetJobAdvisorReportReportLocationDetail]{
+		OutputState: i.ToGetJobAdvisorReportReportLocationDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetJobAdvisorReportReportLocationDetailOutput struct{ *pulumi.OutputState }
 
 func (GetJobAdvisorReportReportLocationDetailOutput) ElementType() reflect.Type {
@@ -9888,6 +11461,12 @@ func (o GetJobAdvisorReportReportLocationDetailOutput) ToGetJobAdvisorReportRepo
 
 func (o GetJobAdvisorReportReportLocationDetailOutput) ToGetJobAdvisorReportReportLocationDetailOutputWithContext(ctx context.Context) GetJobAdvisorReportReportLocationDetailOutput {
 	return o
+}
+
+func (o GetJobAdvisorReportReportLocationDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetJobAdvisorReportReportLocationDetail] {
+	return pulumix.Output[GetJobAdvisorReportReportLocationDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Path in the Source Registered Connection where the Pre-Migration advisor report can be accessed.
@@ -9914,6 +11493,12 @@ func (o GetJobAdvisorReportReportLocationDetailArrayOutput) ToGetJobAdvisorRepor
 
 func (o GetJobAdvisorReportReportLocationDetailArrayOutput) ToGetJobAdvisorReportReportLocationDetailArrayOutputWithContext(ctx context.Context) GetJobAdvisorReportReportLocationDetailArrayOutput {
 	return o
+}
+
+func (o GetJobAdvisorReportReportLocationDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetJobAdvisorReportReportLocationDetail] {
+	return pulumix.Output[[]GetJobAdvisorReportReportLocationDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetJobAdvisorReportReportLocationDetailArrayOutput) Index(i pulumi.IntInput) GetJobAdvisorReportReportLocationDetailOutput {
@@ -9963,6 +11548,12 @@ func (i GetJobAdvisorReportReportLocationDetailObjectStorageDetailArgs) ToGetJob
 	return pulumi.ToOutputWithContext(ctx, i).(GetJobAdvisorReportReportLocationDetailObjectStorageDetailOutput)
 }
 
+func (i GetJobAdvisorReportReportLocationDetailObjectStorageDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetJobAdvisorReportReportLocationDetailObjectStorageDetail] {
+	return pulumix.Output[GetJobAdvisorReportReportLocationDetailObjectStorageDetail]{
+		OutputState: i.ToGetJobAdvisorReportReportLocationDetailObjectStorageDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetJobAdvisorReportReportLocationDetailObjectStorageDetailArrayInput is an input type that accepts GetJobAdvisorReportReportLocationDetailObjectStorageDetailArray and GetJobAdvisorReportReportLocationDetailObjectStorageDetailArrayOutput values.
 // You can construct a concrete instance of `GetJobAdvisorReportReportLocationDetailObjectStorageDetailArrayInput` via:
 //
@@ -9988,6 +11579,12 @@ func (i GetJobAdvisorReportReportLocationDetailObjectStorageDetailArray) ToGetJo
 	return pulumi.ToOutputWithContext(ctx, i).(GetJobAdvisorReportReportLocationDetailObjectStorageDetailArrayOutput)
 }
 
+func (i GetJobAdvisorReportReportLocationDetailObjectStorageDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetJobAdvisorReportReportLocationDetailObjectStorageDetail] {
+	return pulumix.Output[[]GetJobAdvisorReportReportLocationDetailObjectStorageDetail]{
+		OutputState: i.ToGetJobAdvisorReportReportLocationDetailObjectStorageDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetJobAdvisorReportReportLocationDetailObjectStorageDetailOutput struct{ *pulumi.OutputState }
 
 func (GetJobAdvisorReportReportLocationDetailObjectStorageDetailOutput) ElementType() reflect.Type {
@@ -10000,6 +11597,12 @@ func (o GetJobAdvisorReportReportLocationDetailObjectStorageDetailOutput) ToGetJ
 
 func (o GetJobAdvisorReportReportLocationDetailObjectStorageDetailOutput) ToGetJobAdvisorReportReportLocationDetailObjectStorageDetailOutputWithContext(ctx context.Context) GetJobAdvisorReportReportLocationDetailObjectStorageDetailOutput {
 	return o
+}
+
+func (o GetJobAdvisorReportReportLocationDetailObjectStorageDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetJobAdvisorReportReportLocationDetailObjectStorageDetail] {
+	return pulumix.Output[GetJobAdvisorReportReportLocationDetailObjectStorageDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Name of the bucket containing the Pre-Migration Advisor report.
@@ -10029,6 +11632,12 @@ func (o GetJobAdvisorReportReportLocationDetailObjectStorageDetailArrayOutput) T
 
 func (o GetJobAdvisorReportReportLocationDetailObjectStorageDetailArrayOutput) ToGetJobAdvisorReportReportLocationDetailObjectStorageDetailArrayOutputWithContext(ctx context.Context) GetJobAdvisorReportReportLocationDetailObjectStorageDetailArrayOutput {
 	return o
+}
+
+func (o GetJobAdvisorReportReportLocationDetailObjectStorageDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetJobAdvisorReportReportLocationDetailObjectStorageDetail] {
+	return pulumix.Output[[]GetJobAdvisorReportReportLocationDetailObjectStorageDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetJobAdvisorReportReportLocationDetailObjectStorageDetailArrayOutput) Index(i pulumi.IntInput) GetJobAdvisorReportReportLocationDetailObjectStorageDetailOutput {
@@ -10070,6 +11679,12 @@ func (i GetJobOutputItemArgs) ToGetJobOutputItemOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetJobOutputItemOutput)
 }
 
+func (i GetJobOutputItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetJobOutputItem] {
+	return pulumix.Output[GetJobOutputItem]{
+		OutputState: i.ToGetJobOutputItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetJobOutputItemArrayInput is an input type that accepts GetJobOutputItemArray and GetJobOutputItemArrayOutput values.
 // You can construct a concrete instance of `GetJobOutputItemArrayInput` via:
 //
@@ -10095,6 +11710,12 @@ func (i GetJobOutputItemArray) ToGetJobOutputItemArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetJobOutputItemArrayOutput)
 }
 
+func (i GetJobOutputItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetJobOutputItem] {
+	return pulumix.Output[[]GetJobOutputItem]{
+		OutputState: i.ToGetJobOutputItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetJobOutputItemOutput struct{ *pulumi.OutputState }
 
 func (GetJobOutputItemOutput) ElementType() reflect.Type {
@@ -10107,6 +11728,12 @@ func (o GetJobOutputItemOutput) ToGetJobOutputItemOutput() GetJobOutputItemOutpu
 
 func (o GetJobOutputItemOutput) ToGetJobOutputItemOutputWithContext(ctx context.Context) GetJobOutputItemOutput {
 	return o
+}
+
+func (o GetJobOutputItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetJobOutputItem] {
+	return pulumix.Output[GetJobOutputItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Job output line.
@@ -10126,6 +11753,12 @@ func (o GetJobOutputItemArrayOutput) ToGetJobOutputItemArrayOutput() GetJobOutpu
 
 func (o GetJobOutputItemArrayOutput) ToGetJobOutputItemArrayOutputWithContext(ctx context.Context) GetJobOutputItemArrayOutput {
 	return o
+}
+
+func (o GetJobOutputItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetJobOutputItem] {
+	return pulumix.Output[[]GetJobOutputItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetJobOutputItemArrayOutput) Index(i pulumi.IntInput) GetJobOutputItemOutput {
@@ -10171,6 +11804,12 @@ func (i GetMigrationAdvisorSettingArgs) ToGetMigrationAdvisorSettingOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationAdvisorSettingOutput)
 }
 
+func (i GetMigrationAdvisorSettingArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationAdvisorSetting] {
+	return pulumix.Output[GetMigrationAdvisorSetting]{
+		OutputState: i.ToGetMigrationAdvisorSettingOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationAdvisorSettingArrayInput is an input type that accepts GetMigrationAdvisorSettingArray and GetMigrationAdvisorSettingArrayOutput values.
 // You can construct a concrete instance of `GetMigrationAdvisorSettingArrayInput` via:
 //
@@ -10196,6 +11835,12 @@ func (i GetMigrationAdvisorSettingArray) ToGetMigrationAdvisorSettingArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationAdvisorSettingArrayOutput)
 }
 
+func (i GetMigrationAdvisorSettingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationAdvisorSetting] {
+	return pulumix.Output[[]GetMigrationAdvisorSetting]{
+		OutputState: i.ToGetMigrationAdvisorSettingArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationAdvisorSettingOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationAdvisorSettingOutput) ElementType() reflect.Type {
@@ -10208,6 +11853,12 @@ func (o GetMigrationAdvisorSettingOutput) ToGetMigrationAdvisorSettingOutput() G
 
 func (o GetMigrationAdvisorSettingOutput) ToGetMigrationAdvisorSettingOutputWithContext(ctx context.Context) GetMigrationAdvisorSettingOutput {
 	return o
+}
+
+func (o GetMigrationAdvisorSettingOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationAdvisorSetting] {
+	return pulumix.Output[GetMigrationAdvisorSetting]{
+		OutputState: o.OutputState,
+	}
 }
 
 // True to not interrupt migration execution due to Pre-Migration Advisor errors. Default is false.
@@ -10232,6 +11883,12 @@ func (o GetMigrationAdvisorSettingArrayOutput) ToGetMigrationAdvisorSettingArray
 
 func (o GetMigrationAdvisorSettingArrayOutput) ToGetMigrationAdvisorSettingArrayOutputWithContext(ctx context.Context) GetMigrationAdvisorSettingArrayOutput {
 	return o
+}
+
+func (o GetMigrationAdvisorSettingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationAdvisorSetting] {
+	return pulumix.Output[[]GetMigrationAdvisorSetting]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationAdvisorSettingArrayOutput) Index(i pulumi.IntInput) GetMigrationAdvisorSettingOutput {
@@ -10277,6 +11934,12 @@ func (i GetMigrationDataTransferMediumDetailArgs) ToGetMigrationDataTransferMedi
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDataTransferMediumDetailOutput)
 }
 
+func (i GetMigrationDataTransferMediumDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationDataTransferMediumDetail] {
+	return pulumix.Output[GetMigrationDataTransferMediumDetail]{
+		OutputState: i.ToGetMigrationDataTransferMediumDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationDataTransferMediumDetailArrayInput is an input type that accepts GetMigrationDataTransferMediumDetailArray and GetMigrationDataTransferMediumDetailArrayOutput values.
 // You can construct a concrete instance of `GetMigrationDataTransferMediumDetailArrayInput` via:
 //
@@ -10302,6 +11965,12 @@ func (i GetMigrationDataTransferMediumDetailArray) ToGetMigrationDataTransferMed
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDataTransferMediumDetailArrayOutput)
 }
 
+func (i GetMigrationDataTransferMediumDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationDataTransferMediumDetail] {
+	return pulumix.Output[[]GetMigrationDataTransferMediumDetail]{
+		OutputState: i.ToGetMigrationDataTransferMediumDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationDataTransferMediumDetailOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationDataTransferMediumDetailOutput) ElementType() reflect.Type {
@@ -10314,6 +11983,12 @@ func (o GetMigrationDataTransferMediumDetailOutput) ToGetMigrationDataTransferMe
 
 func (o GetMigrationDataTransferMediumDetailOutput) ToGetMigrationDataTransferMediumDetailOutputWithContext(ctx context.Context) GetMigrationDataTransferMediumDetailOutput {
 	return o
+}
+
+func (o GetMigrationDataTransferMediumDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationDataTransferMediumDetail] {
+	return pulumix.Output[GetMigrationDataTransferMediumDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Optional details for creating a network database link from Oracle Cloud Infrastructure database to on-premise database.
@@ -10342,6 +12017,12 @@ func (o GetMigrationDataTransferMediumDetailArrayOutput) ToGetMigrationDataTrans
 
 func (o GetMigrationDataTransferMediumDetailArrayOutput) ToGetMigrationDataTransferMediumDetailArrayOutputWithContext(ctx context.Context) GetMigrationDataTransferMediumDetailArrayOutput {
 	return o
+}
+
+func (o GetMigrationDataTransferMediumDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationDataTransferMediumDetail] {
+	return pulumix.Output[[]GetMigrationDataTransferMediumDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationDataTransferMediumDetailArrayOutput) Index(i pulumi.IntInput) GetMigrationDataTransferMediumDetailOutput {
@@ -10387,6 +12068,12 @@ func (i GetMigrationDataTransferMediumDetailDatabaseLinkDetailArgs) ToGetMigrati
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDataTransferMediumDetailDatabaseLinkDetailOutput)
 }
 
+func (i GetMigrationDataTransferMediumDetailDatabaseLinkDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationDataTransferMediumDetailDatabaseLinkDetail] {
+	return pulumix.Output[GetMigrationDataTransferMediumDetailDatabaseLinkDetail]{
+		OutputState: i.ToGetMigrationDataTransferMediumDetailDatabaseLinkDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationDataTransferMediumDetailDatabaseLinkDetailArrayInput is an input type that accepts GetMigrationDataTransferMediumDetailDatabaseLinkDetailArray and GetMigrationDataTransferMediumDetailDatabaseLinkDetailArrayOutput values.
 // You can construct a concrete instance of `GetMigrationDataTransferMediumDetailDatabaseLinkDetailArrayInput` via:
 //
@@ -10412,6 +12099,12 @@ func (i GetMigrationDataTransferMediumDetailDatabaseLinkDetailArray) ToGetMigrat
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDataTransferMediumDetailDatabaseLinkDetailArrayOutput)
 }
 
+func (i GetMigrationDataTransferMediumDetailDatabaseLinkDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationDataTransferMediumDetailDatabaseLinkDetail] {
+	return pulumix.Output[[]GetMigrationDataTransferMediumDetailDatabaseLinkDetail]{
+		OutputState: i.ToGetMigrationDataTransferMediumDetailDatabaseLinkDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationDataTransferMediumDetailDatabaseLinkDetailOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationDataTransferMediumDetailDatabaseLinkDetailOutput) ElementType() reflect.Type {
@@ -10424,6 +12117,12 @@ func (o GetMigrationDataTransferMediumDetailDatabaseLinkDetailOutput) ToGetMigra
 
 func (o GetMigrationDataTransferMediumDetailDatabaseLinkDetailOutput) ToGetMigrationDataTransferMediumDetailDatabaseLinkDetailOutputWithContext(ctx context.Context) GetMigrationDataTransferMediumDetailDatabaseLinkDetailOutput {
 	return o
+}
+
+func (o GetMigrationDataTransferMediumDetailDatabaseLinkDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationDataTransferMediumDetailDatabaseLinkDetail] {
+	return pulumix.Output[GetMigrationDataTransferMediumDetailDatabaseLinkDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Name of directory object in database
@@ -10450,6 +12149,12 @@ func (o GetMigrationDataTransferMediumDetailDatabaseLinkDetailArrayOutput) ToGet
 
 func (o GetMigrationDataTransferMediumDetailDatabaseLinkDetailArrayOutput) ToGetMigrationDataTransferMediumDetailDatabaseLinkDetailArrayOutputWithContext(ctx context.Context) GetMigrationDataTransferMediumDetailDatabaseLinkDetailArrayOutput {
 	return o
+}
+
+func (o GetMigrationDataTransferMediumDetailDatabaseLinkDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationDataTransferMediumDetailDatabaseLinkDetail] {
+	return pulumix.Output[[]GetMigrationDataTransferMediumDetailDatabaseLinkDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationDataTransferMediumDetailDatabaseLinkDetailArrayOutput) Index(i pulumi.IntInput) GetMigrationDataTransferMediumDetailDatabaseLinkDetailOutput {
@@ -10495,6 +12200,12 @@ func (i GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketArgs) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketOutput)
 }
 
+func (i GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucket] {
+	return pulumix.Output[GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucket]{
+		OutputState: i.ToGetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketArrayInput is an input type that accepts GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketArray and GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketArrayOutput values.
 // You can construct a concrete instance of `GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketArrayInput` via:
 //
@@ -10520,6 +12231,12 @@ func (i GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketArray)
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketArrayOutput)
 }
 
+func (i GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucket] {
+	return pulumix.Output[[]GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucket]{
+		OutputState: i.ToGetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketOutput) ElementType() reflect.Type {
@@ -10532,6 +12249,12 @@ func (o GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketOutput
 
 func (o GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketOutput) ToGetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketOutputWithContext(ctx context.Context) GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketOutput {
 	return o
+}
+
+func (o GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucket] {
+	return pulumix.Output[GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucket]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Bucket name.
@@ -10556,6 +12279,12 @@ func (o GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketArrayO
 
 func (o GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketArrayOutput) ToGetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketArrayOutputWithContext(ctx context.Context) GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketArrayOutput {
 	return o
+}
+
+func (o GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucket] {
+	return pulumix.Output[[]GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucket]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketArrayOutput) Index(i pulumi.IntInput) GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketOutput {
@@ -10601,6 +12330,12 @@ func (i GetMigrationDataTransferMediumDetailObjectStorageDetailArgs) ToGetMigrat
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDataTransferMediumDetailObjectStorageDetailOutput)
 }
 
+func (i GetMigrationDataTransferMediumDetailObjectStorageDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationDataTransferMediumDetailObjectStorageDetail] {
+	return pulumix.Output[GetMigrationDataTransferMediumDetailObjectStorageDetail]{
+		OutputState: i.ToGetMigrationDataTransferMediumDetailObjectStorageDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationDataTransferMediumDetailObjectStorageDetailArrayInput is an input type that accepts GetMigrationDataTransferMediumDetailObjectStorageDetailArray and GetMigrationDataTransferMediumDetailObjectStorageDetailArrayOutput values.
 // You can construct a concrete instance of `GetMigrationDataTransferMediumDetailObjectStorageDetailArrayInput` via:
 //
@@ -10626,6 +12361,12 @@ func (i GetMigrationDataTransferMediumDetailObjectStorageDetailArray) ToGetMigra
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDataTransferMediumDetailObjectStorageDetailArrayOutput)
 }
 
+func (i GetMigrationDataTransferMediumDetailObjectStorageDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationDataTransferMediumDetailObjectStorageDetail] {
+	return pulumix.Output[[]GetMigrationDataTransferMediumDetailObjectStorageDetail]{
+		OutputState: i.ToGetMigrationDataTransferMediumDetailObjectStorageDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationDataTransferMediumDetailObjectStorageDetailOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationDataTransferMediumDetailObjectStorageDetailOutput) ElementType() reflect.Type {
@@ -10638,6 +12379,12 @@ func (o GetMigrationDataTransferMediumDetailObjectStorageDetailOutput) ToGetMigr
 
 func (o GetMigrationDataTransferMediumDetailObjectStorageDetailOutput) ToGetMigrationDataTransferMediumDetailObjectStorageDetailOutputWithContext(ctx context.Context) GetMigrationDataTransferMediumDetailObjectStorageDetailOutput {
 	return o
+}
+
+func (o GetMigrationDataTransferMediumDetailObjectStorageDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationDataTransferMediumDetailObjectStorageDetail] {
+	return pulumix.Output[GetMigrationDataTransferMediumDetailObjectStorageDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Bucket name.
@@ -10662,6 +12409,12 @@ func (o GetMigrationDataTransferMediumDetailObjectStorageDetailArrayOutput) ToGe
 
 func (o GetMigrationDataTransferMediumDetailObjectStorageDetailArrayOutput) ToGetMigrationDataTransferMediumDetailObjectStorageDetailArrayOutputWithContext(ctx context.Context) GetMigrationDataTransferMediumDetailObjectStorageDetailArrayOutput {
 	return o
+}
+
+func (o GetMigrationDataTransferMediumDetailObjectStorageDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationDataTransferMediumDetailObjectStorageDetail] {
+	return pulumix.Output[[]GetMigrationDataTransferMediumDetailObjectStorageDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationDataTransferMediumDetailObjectStorageDetailArrayOutput) Index(i pulumi.IntInput) GetMigrationDataTransferMediumDetailObjectStorageDetailOutput {
@@ -10719,6 +12472,12 @@ func (i GetMigrationDatapumpSettingArgs) ToGetMigrationDatapumpSettingOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDatapumpSettingOutput)
 }
 
+func (i GetMigrationDatapumpSettingArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationDatapumpSetting] {
+	return pulumix.Output[GetMigrationDatapumpSetting]{
+		OutputState: i.ToGetMigrationDatapumpSettingOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationDatapumpSettingArrayInput is an input type that accepts GetMigrationDatapumpSettingArray and GetMigrationDatapumpSettingArrayOutput values.
 // You can construct a concrete instance of `GetMigrationDatapumpSettingArrayInput` via:
 //
@@ -10744,6 +12503,12 @@ func (i GetMigrationDatapumpSettingArray) ToGetMigrationDatapumpSettingArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDatapumpSettingArrayOutput)
 }
 
+func (i GetMigrationDatapumpSettingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationDatapumpSetting] {
+	return pulumix.Output[[]GetMigrationDatapumpSetting]{
+		OutputState: i.ToGetMigrationDatapumpSettingArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationDatapumpSettingOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationDatapumpSettingOutput) ElementType() reflect.Type {
@@ -10756,6 +12521,12 @@ func (o GetMigrationDatapumpSettingOutput) ToGetMigrationDatapumpSettingOutput()
 
 func (o GetMigrationDatapumpSettingOutput) ToGetMigrationDatapumpSettingOutputWithContext(ctx context.Context) GetMigrationDatapumpSettingOutput {
 	return o
+}
+
+func (o GetMigrationDatapumpSettingOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationDatapumpSetting] {
+	return pulumix.Output[GetMigrationDatapumpSetting]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Optional parameters for Data Pump Export and Import. Refer to [Configuring Optional Initial Load Advanced Settings](https://docs.us.oracle.com/en/cloud/paas/database-migration/dmsus/working-migration-resources.html#GUID-24BD3054-FDF8-48FF-8492-636C1D4B71ED)
@@ -10803,6 +12574,12 @@ func (o GetMigrationDatapumpSettingArrayOutput) ToGetMigrationDatapumpSettingArr
 
 func (o GetMigrationDatapumpSettingArrayOutput) ToGetMigrationDatapumpSettingArrayOutputWithContext(ctx context.Context) GetMigrationDatapumpSettingArrayOutput {
 	return o
+}
+
+func (o GetMigrationDatapumpSettingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationDatapumpSetting] {
+	return pulumix.Output[[]GetMigrationDatapumpSetting]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationDatapumpSettingArrayOutput) Index(i pulumi.IntInput) GetMigrationDatapumpSettingOutput {
@@ -10864,6 +12641,12 @@ func (i GetMigrationDatapumpSettingDataPumpParameterArgs) ToGetMigrationDatapump
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDatapumpSettingDataPumpParameterOutput)
 }
 
+func (i GetMigrationDatapumpSettingDataPumpParameterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationDatapumpSettingDataPumpParameter] {
+	return pulumix.Output[GetMigrationDatapumpSettingDataPumpParameter]{
+		OutputState: i.ToGetMigrationDatapumpSettingDataPumpParameterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationDatapumpSettingDataPumpParameterArrayInput is an input type that accepts GetMigrationDatapumpSettingDataPumpParameterArray and GetMigrationDatapumpSettingDataPumpParameterArrayOutput values.
 // You can construct a concrete instance of `GetMigrationDatapumpSettingDataPumpParameterArrayInput` via:
 //
@@ -10889,6 +12672,12 @@ func (i GetMigrationDatapumpSettingDataPumpParameterArray) ToGetMigrationDatapum
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDatapumpSettingDataPumpParameterArrayOutput)
 }
 
+func (i GetMigrationDatapumpSettingDataPumpParameterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationDatapumpSettingDataPumpParameter] {
+	return pulumix.Output[[]GetMigrationDatapumpSettingDataPumpParameter]{
+		OutputState: i.ToGetMigrationDatapumpSettingDataPumpParameterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationDatapumpSettingDataPumpParameterOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationDatapumpSettingDataPumpParameterOutput) ElementType() reflect.Type {
@@ -10901,6 +12690,12 @@ func (o GetMigrationDatapumpSettingDataPumpParameterOutput) ToGetMigrationDatapu
 
 func (o GetMigrationDatapumpSettingDataPumpParameterOutput) ToGetMigrationDatapumpSettingDataPumpParameterOutputWithContext(ctx context.Context) GetMigrationDatapumpSettingDataPumpParameterOutput {
 	return o
+}
+
+func (o GetMigrationDatapumpSettingDataPumpParameterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationDatapumpSettingDataPumpParameter] {
+	return pulumix.Output[GetMigrationDatapumpSettingDataPumpParameter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Estimate size of dumps that will be generated.
@@ -10947,6 +12742,12 @@ func (o GetMigrationDatapumpSettingDataPumpParameterArrayOutput) ToGetMigrationD
 	return o
 }
 
+func (o GetMigrationDatapumpSettingDataPumpParameterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationDatapumpSettingDataPumpParameter] {
+	return pulumix.Output[[]GetMigrationDatapumpSettingDataPumpParameter]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetMigrationDatapumpSettingDataPumpParameterArrayOutput) Index(i pulumi.IntInput) GetMigrationDatapumpSettingDataPumpParameterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationDatapumpSettingDataPumpParameter {
 		return vs[0].([]GetMigrationDatapumpSettingDataPumpParameter)[vs[1].(int)]
@@ -10990,6 +12791,12 @@ func (i GetMigrationDatapumpSettingExportDirectoryObjectArgs) ToGetMigrationData
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDatapumpSettingExportDirectoryObjectOutput)
 }
 
+func (i GetMigrationDatapumpSettingExportDirectoryObjectArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationDatapumpSettingExportDirectoryObject] {
+	return pulumix.Output[GetMigrationDatapumpSettingExportDirectoryObject]{
+		OutputState: i.ToGetMigrationDatapumpSettingExportDirectoryObjectOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationDatapumpSettingExportDirectoryObjectArrayInput is an input type that accepts GetMigrationDatapumpSettingExportDirectoryObjectArray and GetMigrationDatapumpSettingExportDirectoryObjectArrayOutput values.
 // You can construct a concrete instance of `GetMigrationDatapumpSettingExportDirectoryObjectArrayInput` via:
 //
@@ -11015,6 +12822,12 @@ func (i GetMigrationDatapumpSettingExportDirectoryObjectArray) ToGetMigrationDat
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDatapumpSettingExportDirectoryObjectArrayOutput)
 }
 
+func (i GetMigrationDatapumpSettingExportDirectoryObjectArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationDatapumpSettingExportDirectoryObject] {
+	return pulumix.Output[[]GetMigrationDatapumpSettingExportDirectoryObject]{
+		OutputState: i.ToGetMigrationDatapumpSettingExportDirectoryObjectArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationDatapumpSettingExportDirectoryObjectOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationDatapumpSettingExportDirectoryObjectOutput) ElementType() reflect.Type {
@@ -11027,6 +12840,12 @@ func (o GetMigrationDatapumpSettingExportDirectoryObjectOutput) ToGetMigrationDa
 
 func (o GetMigrationDatapumpSettingExportDirectoryObjectOutput) ToGetMigrationDatapumpSettingExportDirectoryObjectOutputWithContext(ctx context.Context) GetMigrationDatapumpSettingExportDirectoryObjectOutput {
 	return o
+}
+
+func (o GetMigrationDatapumpSettingExportDirectoryObjectOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationDatapumpSettingExportDirectoryObject] {
+	return pulumix.Output[GetMigrationDatapumpSettingExportDirectoryObject]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Name of directory object in database
@@ -11051,6 +12870,12 @@ func (o GetMigrationDatapumpSettingExportDirectoryObjectArrayOutput) ToGetMigrat
 
 func (o GetMigrationDatapumpSettingExportDirectoryObjectArrayOutput) ToGetMigrationDatapumpSettingExportDirectoryObjectArrayOutputWithContext(ctx context.Context) GetMigrationDatapumpSettingExportDirectoryObjectArrayOutput {
 	return o
+}
+
+func (o GetMigrationDatapumpSettingExportDirectoryObjectArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationDatapumpSettingExportDirectoryObject] {
+	return pulumix.Output[[]GetMigrationDatapumpSettingExportDirectoryObject]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationDatapumpSettingExportDirectoryObjectArrayOutput) Index(i pulumi.IntInput) GetMigrationDatapumpSettingExportDirectoryObjectOutput {
@@ -11096,6 +12921,12 @@ func (i GetMigrationDatapumpSettingImportDirectoryObjectArgs) ToGetMigrationData
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDatapumpSettingImportDirectoryObjectOutput)
 }
 
+func (i GetMigrationDatapumpSettingImportDirectoryObjectArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationDatapumpSettingImportDirectoryObject] {
+	return pulumix.Output[GetMigrationDatapumpSettingImportDirectoryObject]{
+		OutputState: i.ToGetMigrationDatapumpSettingImportDirectoryObjectOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationDatapumpSettingImportDirectoryObjectArrayInput is an input type that accepts GetMigrationDatapumpSettingImportDirectoryObjectArray and GetMigrationDatapumpSettingImportDirectoryObjectArrayOutput values.
 // You can construct a concrete instance of `GetMigrationDatapumpSettingImportDirectoryObjectArrayInput` via:
 //
@@ -11121,6 +12952,12 @@ func (i GetMigrationDatapumpSettingImportDirectoryObjectArray) ToGetMigrationDat
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDatapumpSettingImportDirectoryObjectArrayOutput)
 }
 
+func (i GetMigrationDatapumpSettingImportDirectoryObjectArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationDatapumpSettingImportDirectoryObject] {
+	return pulumix.Output[[]GetMigrationDatapumpSettingImportDirectoryObject]{
+		OutputState: i.ToGetMigrationDatapumpSettingImportDirectoryObjectArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationDatapumpSettingImportDirectoryObjectOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationDatapumpSettingImportDirectoryObjectOutput) ElementType() reflect.Type {
@@ -11133,6 +12970,12 @@ func (o GetMigrationDatapumpSettingImportDirectoryObjectOutput) ToGetMigrationDa
 
 func (o GetMigrationDatapumpSettingImportDirectoryObjectOutput) ToGetMigrationDatapumpSettingImportDirectoryObjectOutputWithContext(ctx context.Context) GetMigrationDatapumpSettingImportDirectoryObjectOutput {
 	return o
+}
+
+func (o GetMigrationDatapumpSettingImportDirectoryObjectOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationDatapumpSettingImportDirectoryObject] {
+	return pulumix.Output[GetMigrationDatapumpSettingImportDirectoryObject]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Name of directory object in database
@@ -11157,6 +13000,12 @@ func (o GetMigrationDatapumpSettingImportDirectoryObjectArrayOutput) ToGetMigrat
 
 func (o GetMigrationDatapumpSettingImportDirectoryObjectArrayOutput) ToGetMigrationDatapumpSettingImportDirectoryObjectArrayOutputWithContext(ctx context.Context) GetMigrationDatapumpSettingImportDirectoryObjectArrayOutput {
 	return o
+}
+
+func (o GetMigrationDatapumpSettingImportDirectoryObjectArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationDatapumpSettingImportDirectoryObject] {
+	return pulumix.Output[[]GetMigrationDatapumpSettingImportDirectoryObject]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationDatapumpSettingImportDirectoryObjectArrayOutput) Index(i pulumi.IntInput) GetMigrationDatapumpSettingImportDirectoryObjectOutput {
@@ -11206,6 +13055,12 @@ func (i GetMigrationDatapumpSettingMetadataRemapArgs) ToGetMigrationDatapumpSett
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDatapumpSettingMetadataRemapOutput)
 }
 
+func (i GetMigrationDatapumpSettingMetadataRemapArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationDatapumpSettingMetadataRemap] {
+	return pulumix.Output[GetMigrationDatapumpSettingMetadataRemap]{
+		OutputState: i.ToGetMigrationDatapumpSettingMetadataRemapOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationDatapumpSettingMetadataRemapArrayInput is an input type that accepts GetMigrationDatapumpSettingMetadataRemapArray and GetMigrationDatapumpSettingMetadataRemapArrayOutput values.
 // You can construct a concrete instance of `GetMigrationDatapumpSettingMetadataRemapArrayInput` via:
 //
@@ -11231,6 +13086,12 @@ func (i GetMigrationDatapumpSettingMetadataRemapArray) ToGetMigrationDatapumpSet
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDatapumpSettingMetadataRemapArrayOutput)
 }
 
+func (i GetMigrationDatapumpSettingMetadataRemapArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationDatapumpSettingMetadataRemap] {
+	return pulumix.Output[[]GetMigrationDatapumpSettingMetadataRemap]{
+		OutputState: i.ToGetMigrationDatapumpSettingMetadataRemapArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationDatapumpSettingMetadataRemapOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationDatapumpSettingMetadataRemapOutput) ElementType() reflect.Type {
@@ -11243,6 +13104,12 @@ func (o GetMigrationDatapumpSettingMetadataRemapOutput) ToGetMigrationDatapumpSe
 
 func (o GetMigrationDatapumpSettingMetadataRemapOutput) ToGetMigrationDatapumpSettingMetadataRemapOutputWithContext(ctx context.Context) GetMigrationDatapumpSettingMetadataRemapOutput {
 	return o
+}
+
+func (o GetMigrationDatapumpSettingMetadataRemapOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationDatapumpSettingMetadataRemap] {
+	return pulumix.Output[GetMigrationDatapumpSettingMetadataRemap]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Specifies the new value that oldValue should be translated into.
@@ -11272,6 +13139,12 @@ func (o GetMigrationDatapumpSettingMetadataRemapArrayOutput) ToGetMigrationDatap
 
 func (o GetMigrationDatapumpSettingMetadataRemapArrayOutput) ToGetMigrationDatapumpSettingMetadataRemapArrayOutputWithContext(ctx context.Context) GetMigrationDatapumpSettingMetadataRemapArrayOutput {
 	return o
+}
+
+func (o GetMigrationDatapumpSettingMetadataRemapArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationDatapumpSettingMetadataRemap] {
+	return pulumix.Output[[]GetMigrationDatapumpSettingMetadataRemap]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationDatapumpSettingMetadataRemapArrayOutput) Index(i pulumi.IntInput) GetMigrationDatapumpSettingMetadataRemapOutput {
@@ -11317,6 +13190,12 @@ func (i GetMigrationDumpTransferDetailArgs) ToGetMigrationDumpTransferDetailOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDumpTransferDetailOutput)
 }
 
+func (i GetMigrationDumpTransferDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationDumpTransferDetail] {
+	return pulumix.Output[GetMigrationDumpTransferDetail]{
+		OutputState: i.ToGetMigrationDumpTransferDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationDumpTransferDetailArrayInput is an input type that accepts GetMigrationDumpTransferDetailArray and GetMigrationDumpTransferDetailArrayOutput values.
 // You can construct a concrete instance of `GetMigrationDumpTransferDetailArrayInput` via:
 //
@@ -11342,6 +13221,12 @@ func (i GetMigrationDumpTransferDetailArray) ToGetMigrationDumpTransferDetailArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDumpTransferDetailArrayOutput)
 }
 
+func (i GetMigrationDumpTransferDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationDumpTransferDetail] {
+	return pulumix.Output[[]GetMigrationDumpTransferDetail]{
+		OutputState: i.ToGetMigrationDumpTransferDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationDumpTransferDetailOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationDumpTransferDetailOutput) ElementType() reflect.Type {
@@ -11354,6 +13239,12 @@ func (o GetMigrationDumpTransferDetailOutput) ToGetMigrationDumpTransferDetailOu
 
 func (o GetMigrationDumpTransferDetailOutput) ToGetMigrationDumpTransferDetailOutputWithContext(ctx context.Context) GetMigrationDumpTransferDetailOutput {
 	return o
+}
+
+func (o GetMigrationDumpTransferDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationDumpTransferDetail] {
+	return pulumix.Output[GetMigrationDumpTransferDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Optional additional properties for dump transfer in source or target host. Default kind is CURL
@@ -11378,6 +13269,12 @@ func (o GetMigrationDumpTransferDetailArrayOutput) ToGetMigrationDumpTransferDet
 
 func (o GetMigrationDumpTransferDetailArrayOutput) ToGetMigrationDumpTransferDetailArrayOutputWithContext(ctx context.Context) GetMigrationDumpTransferDetailArrayOutput {
 	return o
+}
+
+func (o GetMigrationDumpTransferDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationDumpTransferDetail] {
+	return pulumix.Output[[]GetMigrationDumpTransferDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationDumpTransferDetailArrayOutput) Index(i pulumi.IntInput) GetMigrationDumpTransferDetailOutput {
@@ -11427,6 +13324,12 @@ func (i GetMigrationDumpTransferDetailSourceArgs) ToGetMigrationDumpTransferDeta
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDumpTransferDetailSourceOutput)
 }
 
+func (i GetMigrationDumpTransferDetailSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationDumpTransferDetailSource] {
+	return pulumix.Output[GetMigrationDumpTransferDetailSource]{
+		OutputState: i.ToGetMigrationDumpTransferDetailSourceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationDumpTransferDetailSourceArrayInput is an input type that accepts GetMigrationDumpTransferDetailSourceArray and GetMigrationDumpTransferDetailSourceArrayOutput values.
 // You can construct a concrete instance of `GetMigrationDumpTransferDetailSourceArrayInput` via:
 //
@@ -11452,6 +13355,12 @@ func (i GetMigrationDumpTransferDetailSourceArray) ToGetMigrationDumpTransferDet
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDumpTransferDetailSourceArrayOutput)
 }
 
+func (i GetMigrationDumpTransferDetailSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationDumpTransferDetailSource] {
+	return pulumix.Output[[]GetMigrationDumpTransferDetailSource]{
+		OutputState: i.ToGetMigrationDumpTransferDetailSourceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationDumpTransferDetailSourceOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationDumpTransferDetailSourceOutput) ElementType() reflect.Type {
@@ -11464,6 +13373,12 @@ func (o GetMigrationDumpTransferDetailSourceOutput) ToGetMigrationDumpTransferDe
 
 func (o GetMigrationDumpTransferDetailSourceOutput) ToGetMigrationDumpTransferDetailSourceOutputWithContext(ctx context.Context) GetMigrationDumpTransferDetailSourceOutput {
 	return o
+}
+
+func (o GetMigrationDumpTransferDetailSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationDumpTransferDetailSource] {
+	return pulumix.Output[GetMigrationDumpTransferDetailSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Type of dump transfer to use during migration in source or target host. Default kind is CURL
@@ -11493,6 +13408,12 @@ func (o GetMigrationDumpTransferDetailSourceArrayOutput) ToGetMigrationDumpTrans
 
 func (o GetMigrationDumpTransferDetailSourceArrayOutput) ToGetMigrationDumpTransferDetailSourceArrayOutputWithContext(ctx context.Context) GetMigrationDumpTransferDetailSourceArrayOutput {
 	return o
+}
+
+func (o GetMigrationDumpTransferDetailSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationDumpTransferDetailSource] {
+	return pulumix.Output[[]GetMigrationDumpTransferDetailSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationDumpTransferDetailSourceArrayOutput) Index(i pulumi.IntInput) GetMigrationDumpTransferDetailSourceOutput {
@@ -11542,6 +13463,12 @@ func (i GetMigrationDumpTransferDetailTargetArgs) ToGetMigrationDumpTransferDeta
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDumpTransferDetailTargetOutput)
 }
 
+func (i GetMigrationDumpTransferDetailTargetArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationDumpTransferDetailTarget] {
+	return pulumix.Output[GetMigrationDumpTransferDetailTarget]{
+		OutputState: i.ToGetMigrationDumpTransferDetailTargetOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationDumpTransferDetailTargetArrayInput is an input type that accepts GetMigrationDumpTransferDetailTargetArray and GetMigrationDumpTransferDetailTargetArrayOutput values.
 // You can construct a concrete instance of `GetMigrationDumpTransferDetailTargetArrayInput` via:
 //
@@ -11567,6 +13494,12 @@ func (i GetMigrationDumpTransferDetailTargetArray) ToGetMigrationDumpTransferDet
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDumpTransferDetailTargetArrayOutput)
 }
 
+func (i GetMigrationDumpTransferDetailTargetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationDumpTransferDetailTarget] {
+	return pulumix.Output[[]GetMigrationDumpTransferDetailTarget]{
+		OutputState: i.ToGetMigrationDumpTransferDetailTargetArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationDumpTransferDetailTargetOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationDumpTransferDetailTargetOutput) ElementType() reflect.Type {
@@ -11579,6 +13512,12 @@ func (o GetMigrationDumpTransferDetailTargetOutput) ToGetMigrationDumpTransferDe
 
 func (o GetMigrationDumpTransferDetailTargetOutput) ToGetMigrationDumpTransferDetailTargetOutputWithContext(ctx context.Context) GetMigrationDumpTransferDetailTargetOutput {
 	return o
+}
+
+func (o GetMigrationDumpTransferDetailTargetOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationDumpTransferDetailTarget] {
+	return pulumix.Output[GetMigrationDumpTransferDetailTarget]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Type of dump transfer to use during migration in source or target host. Default kind is CURL
@@ -11608,6 +13547,12 @@ func (o GetMigrationDumpTransferDetailTargetArrayOutput) ToGetMigrationDumpTrans
 
 func (o GetMigrationDumpTransferDetailTargetArrayOutput) ToGetMigrationDumpTransferDetailTargetArrayOutputWithContext(ctx context.Context) GetMigrationDumpTransferDetailTargetArrayOutput {
 	return o
+}
+
+func (o GetMigrationDumpTransferDetailTargetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationDumpTransferDetailTarget] {
+	return pulumix.Output[[]GetMigrationDumpTransferDetailTarget]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationDumpTransferDetailTargetArrayOutput) Index(i pulumi.IntInput) GetMigrationDumpTransferDetailTargetOutput {
@@ -11661,6 +13606,12 @@ func (i GetMigrationExcludeObjectArgs) ToGetMigrationExcludeObjectOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationExcludeObjectOutput)
 }
 
+func (i GetMigrationExcludeObjectArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationExcludeObject] {
+	return pulumix.Output[GetMigrationExcludeObject]{
+		OutputState: i.ToGetMigrationExcludeObjectOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationExcludeObjectArrayInput is an input type that accepts GetMigrationExcludeObjectArray and GetMigrationExcludeObjectArrayOutput values.
 // You can construct a concrete instance of `GetMigrationExcludeObjectArrayInput` via:
 //
@@ -11686,6 +13637,12 @@ func (i GetMigrationExcludeObjectArray) ToGetMigrationExcludeObjectArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationExcludeObjectArrayOutput)
 }
 
+func (i GetMigrationExcludeObjectArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationExcludeObject] {
+	return pulumix.Output[[]GetMigrationExcludeObject]{
+		OutputState: i.ToGetMigrationExcludeObjectArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationExcludeObjectOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationExcludeObjectOutput) ElementType() reflect.Type {
@@ -11698,6 +13655,12 @@ func (o GetMigrationExcludeObjectOutput) ToGetMigrationExcludeObjectOutput() Get
 
 func (o GetMigrationExcludeObjectOutput) ToGetMigrationExcludeObjectOutputWithContext(ctx context.Context) GetMigrationExcludeObjectOutput {
 	return o
+}
+
+func (o GetMigrationExcludeObjectOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationExcludeObject] {
+	return pulumix.Output[GetMigrationExcludeObject]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and that are included in the exludeObjects.
@@ -11732,6 +13695,12 @@ func (o GetMigrationExcludeObjectArrayOutput) ToGetMigrationExcludeObjectArrayOu
 
 func (o GetMigrationExcludeObjectArrayOutput) ToGetMigrationExcludeObjectArrayOutputWithContext(ctx context.Context) GetMigrationExcludeObjectArrayOutput {
 	return o
+}
+
+func (o GetMigrationExcludeObjectArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationExcludeObject] {
+	return pulumix.Output[[]GetMigrationExcludeObject]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationExcludeObjectArrayOutput) Index(i pulumi.IntInput) GetMigrationExcludeObjectOutput {
@@ -11777,6 +13746,12 @@ func (i GetMigrationGoldenGateDetailArgs) ToGetMigrationGoldenGateDetailOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGoldenGateDetailOutput)
 }
 
+func (i GetMigrationGoldenGateDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationGoldenGateDetail] {
+	return pulumix.Output[GetMigrationGoldenGateDetail]{
+		OutputState: i.ToGetMigrationGoldenGateDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationGoldenGateDetailArrayInput is an input type that accepts GetMigrationGoldenGateDetailArray and GetMigrationGoldenGateDetailArrayOutput values.
 // You can construct a concrete instance of `GetMigrationGoldenGateDetailArrayInput` via:
 //
@@ -11802,6 +13777,12 @@ func (i GetMigrationGoldenGateDetailArray) ToGetMigrationGoldenGateDetailArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGoldenGateDetailArrayOutput)
 }
 
+func (i GetMigrationGoldenGateDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationGoldenGateDetail] {
+	return pulumix.Output[[]GetMigrationGoldenGateDetail]{
+		OutputState: i.ToGetMigrationGoldenGateDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationGoldenGateDetailOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationGoldenGateDetailOutput) ElementType() reflect.Type {
@@ -11814,6 +13795,12 @@ func (o GetMigrationGoldenGateDetailOutput) ToGetMigrationGoldenGateDetailOutput
 
 func (o GetMigrationGoldenGateDetailOutput) ToGetMigrationGoldenGateDetailOutputWithContext(ctx context.Context) GetMigrationGoldenGateDetailOutput {
 	return o
+}
+
+func (o GetMigrationGoldenGateDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationGoldenGateDetail] {
+	return pulumix.Output[GetMigrationGoldenGateDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Details about Oracle GoldenGate Microservices.
@@ -11838,6 +13825,12 @@ func (o GetMigrationGoldenGateDetailArrayOutput) ToGetMigrationGoldenGateDetailA
 
 func (o GetMigrationGoldenGateDetailArrayOutput) ToGetMigrationGoldenGateDetailArrayOutputWithContext(ctx context.Context) GetMigrationGoldenGateDetailArrayOutput {
 	return o
+}
+
+func (o GetMigrationGoldenGateDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationGoldenGateDetail] {
+	return pulumix.Output[[]GetMigrationGoldenGateDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationGoldenGateDetailArrayOutput) Index(i pulumi.IntInput) GetMigrationGoldenGateDetailOutput {
@@ -11907,6 +13900,12 @@ func (i GetMigrationGoldenGateDetailHubArgs) ToGetMigrationGoldenGateDetailHubOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGoldenGateDetailHubOutput)
 }
 
+func (i GetMigrationGoldenGateDetailHubArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationGoldenGateDetailHub] {
+	return pulumix.Output[GetMigrationGoldenGateDetailHub]{
+		OutputState: i.ToGetMigrationGoldenGateDetailHubOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationGoldenGateDetailHubArrayInput is an input type that accepts GetMigrationGoldenGateDetailHubArray and GetMigrationGoldenGateDetailHubArrayOutput values.
 // You can construct a concrete instance of `GetMigrationGoldenGateDetailHubArrayInput` via:
 //
@@ -11932,6 +13931,12 @@ func (i GetMigrationGoldenGateDetailHubArray) ToGetMigrationGoldenGateDetailHubA
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGoldenGateDetailHubArrayOutput)
 }
 
+func (i GetMigrationGoldenGateDetailHubArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationGoldenGateDetailHub] {
+	return pulumix.Output[[]GetMigrationGoldenGateDetailHub]{
+		OutputState: i.ToGetMigrationGoldenGateDetailHubArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationGoldenGateDetailHubOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationGoldenGateDetailHubOutput) ElementType() reflect.Type {
@@ -11944,6 +13949,12 @@ func (o GetMigrationGoldenGateDetailHubOutput) ToGetMigrationGoldenGateDetailHub
 
 func (o GetMigrationGoldenGateDetailHubOutput) ToGetMigrationGoldenGateDetailHubOutputWithContext(ctx context.Context) GetMigrationGoldenGateDetailHubOutput {
 	return o
+}
+
+func (o GetMigrationGoldenGateDetailHubOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationGoldenGateDetailHub] {
+	return pulumix.Output[GetMigrationGoldenGateDetailHub]{
+		OutputState: o.OutputState,
+	}
 }
 
 // OCID of GoldenGate compute instance.
@@ -12008,6 +14019,12 @@ func (o GetMigrationGoldenGateDetailHubArrayOutput) ToGetMigrationGoldenGateDeta
 	return o
 }
 
+func (o GetMigrationGoldenGateDetailHubArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationGoldenGateDetailHub] {
+	return pulumix.Output[[]GetMigrationGoldenGateDetailHub]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetMigrationGoldenGateDetailHubArrayOutput) Index(i pulumi.IntInput) GetMigrationGoldenGateDetailHubOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationGoldenGateDetailHub {
 		return vs[0].([]GetMigrationGoldenGateDetailHub)[vs[1].(int)]
@@ -12049,6 +14066,12 @@ func (i GetMigrationGoldenGateDetailHubRestAdminCredentialArgs) ToGetMigrationGo
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGoldenGateDetailHubRestAdminCredentialOutput)
 }
 
+func (i GetMigrationGoldenGateDetailHubRestAdminCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationGoldenGateDetailHubRestAdminCredential] {
+	return pulumix.Output[GetMigrationGoldenGateDetailHubRestAdminCredential]{
+		OutputState: i.ToGetMigrationGoldenGateDetailHubRestAdminCredentialOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationGoldenGateDetailHubRestAdminCredentialArrayInput is an input type that accepts GetMigrationGoldenGateDetailHubRestAdminCredentialArray and GetMigrationGoldenGateDetailHubRestAdminCredentialArrayOutput values.
 // You can construct a concrete instance of `GetMigrationGoldenGateDetailHubRestAdminCredentialArrayInput` via:
 //
@@ -12074,6 +14097,12 @@ func (i GetMigrationGoldenGateDetailHubRestAdminCredentialArray) ToGetMigrationG
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGoldenGateDetailHubRestAdminCredentialArrayOutput)
 }
 
+func (i GetMigrationGoldenGateDetailHubRestAdminCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationGoldenGateDetailHubRestAdminCredential] {
+	return pulumix.Output[[]GetMigrationGoldenGateDetailHubRestAdminCredential]{
+		OutputState: i.ToGetMigrationGoldenGateDetailHubRestAdminCredentialArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationGoldenGateDetailHubRestAdminCredentialOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationGoldenGateDetailHubRestAdminCredentialOutput) ElementType() reflect.Type {
@@ -12086,6 +14115,12 @@ func (o GetMigrationGoldenGateDetailHubRestAdminCredentialOutput) ToGetMigration
 
 func (o GetMigrationGoldenGateDetailHubRestAdminCredentialOutput) ToGetMigrationGoldenGateDetailHubRestAdminCredentialOutputWithContext(ctx context.Context) GetMigrationGoldenGateDetailHubRestAdminCredentialOutput {
 	return o
+}
+
+func (o GetMigrationGoldenGateDetailHubRestAdminCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationGoldenGateDetailHubRestAdminCredential] {
+	return pulumix.Output[GetMigrationGoldenGateDetailHubRestAdminCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationGoldenGateDetailHubRestAdminCredentialOutput) Password() pulumi.StringOutput {
@@ -12109,6 +14144,12 @@ func (o GetMigrationGoldenGateDetailHubRestAdminCredentialArrayOutput) ToGetMigr
 
 func (o GetMigrationGoldenGateDetailHubRestAdminCredentialArrayOutput) ToGetMigrationGoldenGateDetailHubRestAdminCredentialArrayOutputWithContext(ctx context.Context) GetMigrationGoldenGateDetailHubRestAdminCredentialArrayOutput {
 	return o
+}
+
+func (o GetMigrationGoldenGateDetailHubRestAdminCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationGoldenGateDetailHubRestAdminCredential] {
+	return pulumix.Output[[]GetMigrationGoldenGateDetailHubRestAdminCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationGoldenGateDetailHubRestAdminCredentialArrayOutput) Index(i pulumi.IntInput) GetMigrationGoldenGateDetailHubRestAdminCredentialOutput {
@@ -12152,6 +14193,12 @@ func (i GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredentialArgs) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredentialOutput)
 }
 
+func (i GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredential] {
+	return pulumix.Output[GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredential]{
+		OutputState: i.ToGetMigrationGoldenGateDetailHubSourceContainerDbAdminCredentialOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredentialArrayInput is an input type that accepts GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredentialArray and GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredentialArrayOutput values.
 // You can construct a concrete instance of `GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredentialArrayInput` via:
 //
@@ -12177,6 +14224,12 @@ func (i GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredentialArray) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredentialArrayOutput)
 }
 
+func (i GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredential] {
+	return pulumix.Output[[]GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredential]{
+		OutputState: i.ToGetMigrationGoldenGateDetailHubSourceContainerDbAdminCredentialArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredentialOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredentialOutput) ElementType() reflect.Type {
@@ -12189,6 +14242,12 @@ func (o GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredentialOutput) T
 
 func (o GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredentialOutput) ToGetMigrationGoldenGateDetailHubSourceContainerDbAdminCredentialOutputWithContext(ctx context.Context) GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredentialOutput {
 	return o
+}
+
+func (o GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredential] {
+	return pulumix.Output[GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredentialOutput) Password() pulumi.StringOutput {
@@ -12212,6 +14271,12 @@ func (o GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredentialArrayOutp
 
 func (o GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredentialArrayOutput) ToGetMigrationGoldenGateDetailHubSourceContainerDbAdminCredentialArrayOutputWithContext(ctx context.Context) GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredentialArrayOutput {
 	return o
+}
+
+func (o GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredential] {
+	return pulumix.Output[[]GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredentialArrayOutput) Index(i pulumi.IntInput) GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredentialOutput {
@@ -12255,6 +14320,12 @@ func (i GetMigrationGoldenGateDetailHubSourceDbAdminCredentialArgs) ToGetMigrati
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGoldenGateDetailHubSourceDbAdminCredentialOutput)
 }
 
+func (i GetMigrationGoldenGateDetailHubSourceDbAdminCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationGoldenGateDetailHubSourceDbAdminCredential] {
+	return pulumix.Output[GetMigrationGoldenGateDetailHubSourceDbAdminCredential]{
+		OutputState: i.ToGetMigrationGoldenGateDetailHubSourceDbAdminCredentialOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationGoldenGateDetailHubSourceDbAdminCredentialArrayInput is an input type that accepts GetMigrationGoldenGateDetailHubSourceDbAdminCredentialArray and GetMigrationGoldenGateDetailHubSourceDbAdminCredentialArrayOutput values.
 // You can construct a concrete instance of `GetMigrationGoldenGateDetailHubSourceDbAdminCredentialArrayInput` via:
 //
@@ -12280,6 +14351,12 @@ func (i GetMigrationGoldenGateDetailHubSourceDbAdminCredentialArray) ToGetMigrat
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGoldenGateDetailHubSourceDbAdminCredentialArrayOutput)
 }
 
+func (i GetMigrationGoldenGateDetailHubSourceDbAdminCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationGoldenGateDetailHubSourceDbAdminCredential] {
+	return pulumix.Output[[]GetMigrationGoldenGateDetailHubSourceDbAdminCredential]{
+		OutputState: i.ToGetMigrationGoldenGateDetailHubSourceDbAdminCredentialArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationGoldenGateDetailHubSourceDbAdminCredentialOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationGoldenGateDetailHubSourceDbAdminCredentialOutput) ElementType() reflect.Type {
@@ -12292,6 +14369,12 @@ func (o GetMigrationGoldenGateDetailHubSourceDbAdminCredentialOutput) ToGetMigra
 
 func (o GetMigrationGoldenGateDetailHubSourceDbAdminCredentialOutput) ToGetMigrationGoldenGateDetailHubSourceDbAdminCredentialOutputWithContext(ctx context.Context) GetMigrationGoldenGateDetailHubSourceDbAdminCredentialOutput {
 	return o
+}
+
+func (o GetMigrationGoldenGateDetailHubSourceDbAdminCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationGoldenGateDetailHubSourceDbAdminCredential] {
+	return pulumix.Output[GetMigrationGoldenGateDetailHubSourceDbAdminCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationGoldenGateDetailHubSourceDbAdminCredentialOutput) Password() pulumi.StringOutput {
@@ -12315,6 +14398,12 @@ func (o GetMigrationGoldenGateDetailHubSourceDbAdminCredentialArrayOutput) ToGet
 
 func (o GetMigrationGoldenGateDetailHubSourceDbAdminCredentialArrayOutput) ToGetMigrationGoldenGateDetailHubSourceDbAdminCredentialArrayOutputWithContext(ctx context.Context) GetMigrationGoldenGateDetailHubSourceDbAdminCredentialArrayOutput {
 	return o
+}
+
+func (o GetMigrationGoldenGateDetailHubSourceDbAdminCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationGoldenGateDetailHubSourceDbAdminCredential] {
+	return pulumix.Output[[]GetMigrationGoldenGateDetailHubSourceDbAdminCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationGoldenGateDetailHubSourceDbAdminCredentialArrayOutput) Index(i pulumi.IntInput) GetMigrationGoldenGateDetailHubSourceDbAdminCredentialOutput {
@@ -12358,6 +14447,12 @@ func (i GetMigrationGoldenGateDetailHubTargetDbAdminCredentialArgs) ToGetMigrati
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGoldenGateDetailHubTargetDbAdminCredentialOutput)
 }
 
+func (i GetMigrationGoldenGateDetailHubTargetDbAdminCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationGoldenGateDetailHubTargetDbAdminCredential] {
+	return pulumix.Output[GetMigrationGoldenGateDetailHubTargetDbAdminCredential]{
+		OutputState: i.ToGetMigrationGoldenGateDetailHubTargetDbAdminCredentialOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationGoldenGateDetailHubTargetDbAdminCredentialArrayInput is an input type that accepts GetMigrationGoldenGateDetailHubTargetDbAdminCredentialArray and GetMigrationGoldenGateDetailHubTargetDbAdminCredentialArrayOutput values.
 // You can construct a concrete instance of `GetMigrationGoldenGateDetailHubTargetDbAdminCredentialArrayInput` via:
 //
@@ -12383,6 +14478,12 @@ func (i GetMigrationGoldenGateDetailHubTargetDbAdminCredentialArray) ToGetMigrat
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGoldenGateDetailHubTargetDbAdminCredentialArrayOutput)
 }
 
+func (i GetMigrationGoldenGateDetailHubTargetDbAdminCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationGoldenGateDetailHubTargetDbAdminCredential] {
+	return pulumix.Output[[]GetMigrationGoldenGateDetailHubTargetDbAdminCredential]{
+		OutputState: i.ToGetMigrationGoldenGateDetailHubTargetDbAdminCredentialArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationGoldenGateDetailHubTargetDbAdminCredentialOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationGoldenGateDetailHubTargetDbAdminCredentialOutput) ElementType() reflect.Type {
@@ -12395,6 +14496,12 @@ func (o GetMigrationGoldenGateDetailHubTargetDbAdminCredentialOutput) ToGetMigra
 
 func (o GetMigrationGoldenGateDetailHubTargetDbAdminCredentialOutput) ToGetMigrationGoldenGateDetailHubTargetDbAdminCredentialOutputWithContext(ctx context.Context) GetMigrationGoldenGateDetailHubTargetDbAdminCredentialOutput {
 	return o
+}
+
+func (o GetMigrationGoldenGateDetailHubTargetDbAdminCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationGoldenGateDetailHubTargetDbAdminCredential] {
+	return pulumix.Output[GetMigrationGoldenGateDetailHubTargetDbAdminCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationGoldenGateDetailHubTargetDbAdminCredentialOutput) Password() pulumi.StringOutput {
@@ -12418,6 +14525,12 @@ func (o GetMigrationGoldenGateDetailHubTargetDbAdminCredentialArrayOutput) ToGet
 
 func (o GetMigrationGoldenGateDetailHubTargetDbAdminCredentialArrayOutput) ToGetMigrationGoldenGateDetailHubTargetDbAdminCredentialArrayOutputWithContext(ctx context.Context) GetMigrationGoldenGateDetailHubTargetDbAdminCredentialArrayOutput {
 	return o
+}
+
+func (o GetMigrationGoldenGateDetailHubTargetDbAdminCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationGoldenGateDetailHubTargetDbAdminCredential] {
+	return pulumix.Output[[]GetMigrationGoldenGateDetailHubTargetDbAdminCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationGoldenGateDetailHubTargetDbAdminCredentialArrayOutput) Index(i pulumi.IntInput) GetMigrationGoldenGateDetailHubTargetDbAdminCredentialOutput {
@@ -12467,6 +14580,12 @@ func (i GetMigrationGoldenGateDetailSettingArgs) ToGetMigrationGoldenGateDetailS
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGoldenGateDetailSettingOutput)
 }
 
+func (i GetMigrationGoldenGateDetailSettingArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationGoldenGateDetailSetting] {
+	return pulumix.Output[GetMigrationGoldenGateDetailSetting]{
+		OutputState: i.ToGetMigrationGoldenGateDetailSettingOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationGoldenGateDetailSettingArrayInput is an input type that accepts GetMigrationGoldenGateDetailSettingArray and GetMigrationGoldenGateDetailSettingArrayOutput values.
 // You can construct a concrete instance of `GetMigrationGoldenGateDetailSettingArrayInput` via:
 //
@@ -12492,6 +14611,12 @@ func (i GetMigrationGoldenGateDetailSettingArray) ToGetMigrationGoldenGateDetail
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGoldenGateDetailSettingArrayOutput)
 }
 
+func (i GetMigrationGoldenGateDetailSettingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationGoldenGateDetailSetting] {
+	return pulumix.Output[[]GetMigrationGoldenGateDetailSetting]{
+		OutputState: i.ToGetMigrationGoldenGateDetailSettingArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationGoldenGateDetailSettingOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationGoldenGateDetailSettingOutput) ElementType() reflect.Type {
@@ -12504,6 +14629,12 @@ func (o GetMigrationGoldenGateDetailSettingOutput) ToGetMigrationGoldenGateDetai
 
 func (o GetMigrationGoldenGateDetailSettingOutput) ToGetMigrationGoldenGateDetailSettingOutputWithContext(ctx context.Context) GetMigrationGoldenGateDetailSettingOutput {
 	return o
+}
+
+func (o GetMigrationGoldenGateDetailSettingOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationGoldenGateDetailSetting] {
+	return pulumix.Output[GetMigrationGoldenGateDetailSetting]{
+		OutputState: o.OutputState,
+	}
 }
 
 // ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
@@ -12537,6 +14668,12 @@ func (o GetMigrationGoldenGateDetailSettingArrayOutput) ToGetMigrationGoldenGate
 
 func (o GetMigrationGoldenGateDetailSettingArrayOutput) ToGetMigrationGoldenGateDetailSettingArrayOutputWithContext(ctx context.Context) GetMigrationGoldenGateDetailSettingArrayOutput {
 	return o
+}
+
+func (o GetMigrationGoldenGateDetailSettingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationGoldenGateDetailSetting] {
+	return pulumix.Output[[]GetMigrationGoldenGateDetailSetting]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationGoldenGateDetailSettingArrayOutput) Index(i pulumi.IntInput) GetMigrationGoldenGateDetailSettingOutput {
@@ -12582,6 +14719,12 @@ func (i GetMigrationGoldenGateDetailSettingExtractArgs) ToGetMigrationGoldenGate
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGoldenGateDetailSettingExtractOutput)
 }
 
+func (i GetMigrationGoldenGateDetailSettingExtractArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationGoldenGateDetailSettingExtract] {
+	return pulumix.Output[GetMigrationGoldenGateDetailSettingExtract]{
+		OutputState: i.ToGetMigrationGoldenGateDetailSettingExtractOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationGoldenGateDetailSettingExtractArrayInput is an input type that accepts GetMigrationGoldenGateDetailSettingExtractArray and GetMigrationGoldenGateDetailSettingExtractArrayOutput values.
 // You can construct a concrete instance of `GetMigrationGoldenGateDetailSettingExtractArrayInput` via:
 //
@@ -12607,6 +14750,12 @@ func (i GetMigrationGoldenGateDetailSettingExtractArray) ToGetMigrationGoldenGat
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGoldenGateDetailSettingExtractArrayOutput)
 }
 
+func (i GetMigrationGoldenGateDetailSettingExtractArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationGoldenGateDetailSettingExtract] {
+	return pulumix.Output[[]GetMigrationGoldenGateDetailSettingExtract]{
+		OutputState: i.ToGetMigrationGoldenGateDetailSettingExtractArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationGoldenGateDetailSettingExtractOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationGoldenGateDetailSettingExtractOutput) ElementType() reflect.Type {
@@ -12619,6 +14768,12 @@ func (o GetMigrationGoldenGateDetailSettingExtractOutput) ToGetMigrationGoldenGa
 
 func (o GetMigrationGoldenGateDetailSettingExtractOutput) ToGetMigrationGoldenGateDetailSettingExtractOutputWithContext(ctx context.Context) GetMigrationGoldenGateDetailSettingExtractOutput {
 	return o
+}
+
+func (o GetMigrationGoldenGateDetailSettingExtractOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationGoldenGateDetailSettingExtract] {
+	return pulumix.Output[GetMigrationGoldenGateDetailSettingExtract]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
@@ -12643,6 +14798,12 @@ func (o GetMigrationGoldenGateDetailSettingExtractArrayOutput) ToGetMigrationGol
 
 func (o GetMigrationGoldenGateDetailSettingExtractArrayOutput) ToGetMigrationGoldenGateDetailSettingExtractArrayOutputWithContext(ctx context.Context) GetMigrationGoldenGateDetailSettingExtractArrayOutput {
 	return o
+}
+
+func (o GetMigrationGoldenGateDetailSettingExtractArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationGoldenGateDetailSettingExtract] {
+	return pulumix.Output[[]GetMigrationGoldenGateDetailSettingExtract]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationGoldenGateDetailSettingExtractArrayOutput) Index(i pulumi.IntInput) GetMigrationGoldenGateDetailSettingExtractOutput {
@@ -12696,6 +14857,12 @@ func (i GetMigrationGoldenGateDetailSettingReplicatArgs) ToGetMigrationGoldenGat
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGoldenGateDetailSettingReplicatOutput)
 }
 
+func (i GetMigrationGoldenGateDetailSettingReplicatArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationGoldenGateDetailSettingReplicat] {
+	return pulumix.Output[GetMigrationGoldenGateDetailSettingReplicat]{
+		OutputState: i.ToGetMigrationGoldenGateDetailSettingReplicatOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationGoldenGateDetailSettingReplicatArrayInput is an input type that accepts GetMigrationGoldenGateDetailSettingReplicatArray and GetMigrationGoldenGateDetailSettingReplicatArrayOutput values.
 // You can construct a concrete instance of `GetMigrationGoldenGateDetailSettingReplicatArrayInput` via:
 //
@@ -12721,6 +14888,12 @@ func (i GetMigrationGoldenGateDetailSettingReplicatArray) ToGetMigrationGoldenGa
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGoldenGateDetailSettingReplicatArrayOutput)
 }
 
+func (i GetMigrationGoldenGateDetailSettingReplicatArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationGoldenGateDetailSettingReplicat] {
+	return pulumix.Output[[]GetMigrationGoldenGateDetailSettingReplicat]{
+		OutputState: i.ToGetMigrationGoldenGateDetailSettingReplicatArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationGoldenGateDetailSettingReplicatOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationGoldenGateDetailSettingReplicatOutput) ElementType() reflect.Type {
@@ -12733,6 +14906,12 @@ func (o GetMigrationGoldenGateDetailSettingReplicatOutput) ToGetMigrationGoldenG
 
 func (o GetMigrationGoldenGateDetailSettingReplicatOutput) ToGetMigrationGoldenGateDetailSettingReplicatOutputWithContext(ctx context.Context) GetMigrationGoldenGateDetailSettingReplicatOutput {
 	return o
+}
+
+func (o GetMigrationGoldenGateDetailSettingReplicatOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationGoldenGateDetailSettingReplicat] {
+	return pulumix.Output[GetMigrationGoldenGateDetailSettingReplicat]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Number of threads used to read trail files (valid for Parallel Replicat)
@@ -12767,6 +14946,12 @@ func (o GetMigrationGoldenGateDetailSettingReplicatArrayOutput) ToGetMigrationGo
 
 func (o GetMigrationGoldenGateDetailSettingReplicatArrayOutput) ToGetMigrationGoldenGateDetailSettingReplicatArrayOutputWithContext(ctx context.Context) GetMigrationGoldenGateDetailSettingReplicatArrayOutput {
 	return o
+}
+
+func (o GetMigrationGoldenGateDetailSettingReplicatArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationGoldenGateDetailSettingReplicat] {
+	return pulumix.Output[[]GetMigrationGoldenGateDetailSettingReplicat]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationGoldenGateDetailSettingReplicatArrayOutput) Index(i pulumi.IntInput) GetMigrationGoldenGateDetailSettingReplicatOutput {
@@ -12818,6 +15003,12 @@ func (i GetMigrationGoldenGateServiceDetailArgs) ToGetMigrationGoldenGateService
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGoldenGateServiceDetailOutput)
 }
 
+func (i GetMigrationGoldenGateServiceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationGoldenGateServiceDetail] {
+	return pulumix.Output[GetMigrationGoldenGateServiceDetail]{
+		OutputState: i.ToGetMigrationGoldenGateServiceDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationGoldenGateServiceDetailArrayInput is an input type that accepts GetMigrationGoldenGateServiceDetailArray and GetMigrationGoldenGateServiceDetailArrayOutput values.
 // You can construct a concrete instance of `GetMigrationGoldenGateServiceDetailArrayInput` via:
 //
@@ -12843,6 +15034,12 @@ func (i GetMigrationGoldenGateServiceDetailArray) ToGetMigrationGoldenGateServic
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGoldenGateServiceDetailArrayOutput)
 }
 
+func (i GetMigrationGoldenGateServiceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationGoldenGateServiceDetail] {
+	return pulumix.Output[[]GetMigrationGoldenGateServiceDetail]{
+		OutputState: i.ToGetMigrationGoldenGateServiceDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationGoldenGateServiceDetailOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationGoldenGateServiceDetailOutput) ElementType() reflect.Type {
@@ -12855,6 +15052,12 @@ func (o GetMigrationGoldenGateServiceDetailOutput) ToGetMigrationGoldenGateServi
 
 func (o GetMigrationGoldenGateServiceDetailOutput) ToGetMigrationGoldenGateServiceDetailOutputWithContext(ctx context.Context) GetMigrationGoldenGateServiceDetailOutput {
 	return o
+}
+
+func (o GetMigrationGoldenGateServiceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationGoldenGateServiceDetail] {
+	return pulumix.Output[GetMigrationGoldenGateServiceDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Details about Oracle GoldenGate GGS Deployment.
@@ -12903,6 +15106,12 @@ func (o GetMigrationGoldenGateServiceDetailArrayOutput) ToGetMigrationGoldenGate
 	return o
 }
 
+func (o GetMigrationGoldenGateServiceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationGoldenGateServiceDetail] {
+	return pulumix.Output[[]GetMigrationGoldenGateServiceDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetMigrationGoldenGateServiceDetailArrayOutput) Index(i pulumi.IntInput) GetMigrationGoldenGateServiceDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationGoldenGateServiceDetail {
 		return vs[0].([]GetMigrationGoldenGateServiceDetail)[vs[1].(int)]
@@ -12946,6 +15155,12 @@ func (i GetMigrationGoldenGateServiceDetailGgsDeploymentArgs) ToGetMigrationGold
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGoldenGateServiceDetailGgsDeploymentOutput)
 }
 
+func (i GetMigrationGoldenGateServiceDetailGgsDeploymentArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationGoldenGateServiceDetailGgsDeployment] {
+	return pulumix.Output[GetMigrationGoldenGateServiceDetailGgsDeployment]{
+		OutputState: i.ToGetMigrationGoldenGateServiceDetailGgsDeploymentOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationGoldenGateServiceDetailGgsDeploymentArrayInput is an input type that accepts GetMigrationGoldenGateServiceDetailGgsDeploymentArray and GetMigrationGoldenGateServiceDetailGgsDeploymentArrayOutput values.
 // You can construct a concrete instance of `GetMigrationGoldenGateServiceDetailGgsDeploymentArrayInput` via:
 //
@@ -12971,6 +15186,12 @@ func (i GetMigrationGoldenGateServiceDetailGgsDeploymentArray) ToGetMigrationGol
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGoldenGateServiceDetailGgsDeploymentArrayOutput)
 }
 
+func (i GetMigrationGoldenGateServiceDetailGgsDeploymentArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationGoldenGateServiceDetailGgsDeployment] {
+	return pulumix.Output[[]GetMigrationGoldenGateServiceDetailGgsDeployment]{
+		OutputState: i.ToGetMigrationGoldenGateServiceDetailGgsDeploymentArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationGoldenGateServiceDetailGgsDeploymentOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationGoldenGateServiceDetailGgsDeploymentOutput) ElementType() reflect.Type {
@@ -12983,6 +15204,12 @@ func (o GetMigrationGoldenGateServiceDetailGgsDeploymentOutput) ToGetMigrationGo
 
 func (o GetMigrationGoldenGateServiceDetailGgsDeploymentOutput) ToGetMigrationGoldenGateServiceDetailGgsDeploymentOutputWithContext(ctx context.Context) GetMigrationGoldenGateServiceDetailGgsDeploymentOutput {
 	return o
+}
+
+func (o GetMigrationGoldenGateServiceDetailGgsDeploymentOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationGoldenGateServiceDetailGgsDeployment] {
+	return pulumix.Output[GetMigrationGoldenGateServiceDetailGgsDeployment]{
+		OutputState: o.OutputState,
+	}
 }
 
 // OCID of a GoldenGate Deployment
@@ -13007,6 +15234,12 @@ func (o GetMigrationGoldenGateServiceDetailGgsDeploymentArrayOutput) ToGetMigrat
 
 func (o GetMigrationGoldenGateServiceDetailGgsDeploymentArrayOutput) ToGetMigrationGoldenGateServiceDetailGgsDeploymentArrayOutputWithContext(ctx context.Context) GetMigrationGoldenGateServiceDetailGgsDeploymentArrayOutput {
 	return o
+}
+
+func (o GetMigrationGoldenGateServiceDetailGgsDeploymentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationGoldenGateServiceDetailGgsDeployment] {
+	return pulumix.Output[[]GetMigrationGoldenGateServiceDetailGgsDeployment]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationGoldenGateServiceDetailGgsDeploymentArrayOutput) Index(i pulumi.IntInput) GetMigrationGoldenGateServiceDetailGgsDeploymentOutput {
@@ -13056,6 +15289,12 @@ func (i GetMigrationGoldenGateServiceDetailSettingArgs) ToGetMigrationGoldenGate
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGoldenGateServiceDetailSettingOutput)
 }
 
+func (i GetMigrationGoldenGateServiceDetailSettingArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationGoldenGateServiceDetailSetting] {
+	return pulumix.Output[GetMigrationGoldenGateServiceDetailSetting]{
+		OutputState: i.ToGetMigrationGoldenGateServiceDetailSettingOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationGoldenGateServiceDetailSettingArrayInput is an input type that accepts GetMigrationGoldenGateServiceDetailSettingArray and GetMigrationGoldenGateServiceDetailSettingArrayOutput values.
 // You can construct a concrete instance of `GetMigrationGoldenGateServiceDetailSettingArrayInput` via:
 //
@@ -13081,6 +15320,12 @@ func (i GetMigrationGoldenGateServiceDetailSettingArray) ToGetMigrationGoldenGat
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGoldenGateServiceDetailSettingArrayOutput)
 }
 
+func (i GetMigrationGoldenGateServiceDetailSettingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationGoldenGateServiceDetailSetting] {
+	return pulumix.Output[[]GetMigrationGoldenGateServiceDetailSetting]{
+		OutputState: i.ToGetMigrationGoldenGateServiceDetailSettingArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationGoldenGateServiceDetailSettingOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationGoldenGateServiceDetailSettingOutput) ElementType() reflect.Type {
@@ -13093,6 +15338,12 @@ func (o GetMigrationGoldenGateServiceDetailSettingOutput) ToGetMigrationGoldenGa
 
 func (o GetMigrationGoldenGateServiceDetailSettingOutput) ToGetMigrationGoldenGateServiceDetailSettingOutputWithContext(ctx context.Context) GetMigrationGoldenGateServiceDetailSettingOutput {
 	return o
+}
+
+func (o GetMigrationGoldenGateServiceDetailSettingOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationGoldenGateServiceDetailSetting] {
+	return pulumix.Output[GetMigrationGoldenGateServiceDetailSetting]{
+		OutputState: o.OutputState,
+	}
 }
 
 // ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
@@ -13126,6 +15377,12 @@ func (o GetMigrationGoldenGateServiceDetailSettingArrayOutput) ToGetMigrationGol
 
 func (o GetMigrationGoldenGateServiceDetailSettingArrayOutput) ToGetMigrationGoldenGateServiceDetailSettingArrayOutputWithContext(ctx context.Context) GetMigrationGoldenGateServiceDetailSettingArrayOutput {
 	return o
+}
+
+func (o GetMigrationGoldenGateServiceDetailSettingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationGoldenGateServiceDetailSetting] {
+	return pulumix.Output[[]GetMigrationGoldenGateServiceDetailSetting]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationGoldenGateServiceDetailSettingArrayOutput) Index(i pulumi.IntInput) GetMigrationGoldenGateServiceDetailSettingOutput {
@@ -13171,6 +15428,12 @@ func (i GetMigrationGoldenGateServiceDetailSettingExtractArgs) ToGetMigrationGol
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGoldenGateServiceDetailSettingExtractOutput)
 }
 
+func (i GetMigrationGoldenGateServiceDetailSettingExtractArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationGoldenGateServiceDetailSettingExtract] {
+	return pulumix.Output[GetMigrationGoldenGateServiceDetailSettingExtract]{
+		OutputState: i.ToGetMigrationGoldenGateServiceDetailSettingExtractOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationGoldenGateServiceDetailSettingExtractArrayInput is an input type that accepts GetMigrationGoldenGateServiceDetailSettingExtractArray and GetMigrationGoldenGateServiceDetailSettingExtractArrayOutput values.
 // You can construct a concrete instance of `GetMigrationGoldenGateServiceDetailSettingExtractArrayInput` via:
 //
@@ -13196,6 +15459,12 @@ func (i GetMigrationGoldenGateServiceDetailSettingExtractArray) ToGetMigrationGo
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGoldenGateServiceDetailSettingExtractArrayOutput)
 }
 
+func (i GetMigrationGoldenGateServiceDetailSettingExtractArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationGoldenGateServiceDetailSettingExtract] {
+	return pulumix.Output[[]GetMigrationGoldenGateServiceDetailSettingExtract]{
+		OutputState: i.ToGetMigrationGoldenGateServiceDetailSettingExtractArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationGoldenGateServiceDetailSettingExtractOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationGoldenGateServiceDetailSettingExtractOutput) ElementType() reflect.Type {
@@ -13208,6 +15477,12 @@ func (o GetMigrationGoldenGateServiceDetailSettingExtractOutput) ToGetMigrationG
 
 func (o GetMigrationGoldenGateServiceDetailSettingExtractOutput) ToGetMigrationGoldenGateServiceDetailSettingExtractOutputWithContext(ctx context.Context) GetMigrationGoldenGateServiceDetailSettingExtractOutput {
 	return o
+}
+
+func (o GetMigrationGoldenGateServiceDetailSettingExtractOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationGoldenGateServiceDetailSettingExtract] {
+	return pulumix.Output[GetMigrationGoldenGateServiceDetailSettingExtract]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
@@ -13232,6 +15507,12 @@ func (o GetMigrationGoldenGateServiceDetailSettingExtractArrayOutput) ToGetMigra
 
 func (o GetMigrationGoldenGateServiceDetailSettingExtractArrayOutput) ToGetMigrationGoldenGateServiceDetailSettingExtractArrayOutputWithContext(ctx context.Context) GetMigrationGoldenGateServiceDetailSettingExtractArrayOutput {
 	return o
+}
+
+func (o GetMigrationGoldenGateServiceDetailSettingExtractArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationGoldenGateServiceDetailSettingExtract] {
+	return pulumix.Output[[]GetMigrationGoldenGateServiceDetailSettingExtract]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationGoldenGateServiceDetailSettingExtractArrayOutput) Index(i pulumi.IntInput) GetMigrationGoldenGateServiceDetailSettingExtractOutput {
@@ -13281,6 +15562,12 @@ func (i GetMigrationGoldenGateServiceDetailSettingReplicatArgs) ToGetMigrationGo
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGoldenGateServiceDetailSettingReplicatOutput)
 }
 
+func (i GetMigrationGoldenGateServiceDetailSettingReplicatArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationGoldenGateServiceDetailSettingReplicat] {
+	return pulumix.Output[GetMigrationGoldenGateServiceDetailSettingReplicat]{
+		OutputState: i.ToGetMigrationGoldenGateServiceDetailSettingReplicatOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationGoldenGateServiceDetailSettingReplicatArrayInput is an input type that accepts GetMigrationGoldenGateServiceDetailSettingReplicatArray and GetMigrationGoldenGateServiceDetailSettingReplicatArrayOutput values.
 // You can construct a concrete instance of `GetMigrationGoldenGateServiceDetailSettingReplicatArrayInput` via:
 //
@@ -13306,6 +15593,12 @@ func (i GetMigrationGoldenGateServiceDetailSettingReplicatArray) ToGetMigrationG
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGoldenGateServiceDetailSettingReplicatArrayOutput)
 }
 
+func (i GetMigrationGoldenGateServiceDetailSettingReplicatArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationGoldenGateServiceDetailSettingReplicat] {
+	return pulumix.Output[[]GetMigrationGoldenGateServiceDetailSettingReplicat]{
+		OutputState: i.ToGetMigrationGoldenGateServiceDetailSettingReplicatArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationGoldenGateServiceDetailSettingReplicatOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationGoldenGateServiceDetailSettingReplicatOutput) ElementType() reflect.Type {
@@ -13318,6 +15611,12 @@ func (o GetMigrationGoldenGateServiceDetailSettingReplicatOutput) ToGetMigration
 
 func (o GetMigrationGoldenGateServiceDetailSettingReplicatOutput) ToGetMigrationGoldenGateServiceDetailSettingReplicatOutputWithContext(ctx context.Context) GetMigrationGoldenGateServiceDetailSettingReplicatOutput {
 	return o
+}
+
+func (o GetMigrationGoldenGateServiceDetailSettingReplicatOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationGoldenGateServiceDetailSettingReplicat] {
+	return pulumix.Output[GetMigrationGoldenGateServiceDetailSettingReplicat]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Number of threads used to read trail files (valid for Parallel Replicat)
@@ -13347,6 +15646,12 @@ func (o GetMigrationGoldenGateServiceDetailSettingReplicatArrayOutput) ToGetMigr
 
 func (o GetMigrationGoldenGateServiceDetailSettingReplicatArrayOutput) ToGetMigrationGoldenGateServiceDetailSettingReplicatArrayOutputWithContext(ctx context.Context) GetMigrationGoldenGateServiceDetailSettingReplicatArrayOutput {
 	return o
+}
+
+func (o GetMigrationGoldenGateServiceDetailSettingReplicatArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationGoldenGateServiceDetailSettingReplicat] {
+	return pulumix.Output[[]GetMigrationGoldenGateServiceDetailSettingReplicat]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationGoldenGateServiceDetailSettingReplicatArrayOutput) Index(i pulumi.IntInput) GetMigrationGoldenGateServiceDetailSettingReplicatOutput {
@@ -13390,6 +15695,12 @@ func (i GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArgs) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialOutput)
 }
 
+func (i GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationGoldenGateServiceDetailSourceContainerDbCredential] {
+	return pulumix.Output[GetMigrationGoldenGateServiceDetailSourceContainerDbCredential]{
+		OutputState: i.ToGetMigrationGoldenGateServiceDetailSourceContainerDbCredentialOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArrayInput is an input type that accepts GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArray and GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArrayOutput values.
 // You can construct a concrete instance of `GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArrayInput` via:
 //
@@ -13415,6 +15726,12 @@ func (i GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArray) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArrayOutput)
 }
 
+func (i GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationGoldenGateServiceDetailSourceContainerDbCredential] {
+	return pulumix.Output[[]GetMigrationGoldenGateServiceDetailSourceContainerDbCredential]{
+		OutputState: i.ToGetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialOutput) ElementType() reflect.Type {
@@ -13427,6 +15744,12 @@ func (o GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialOutput) To
 
 func (o GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialOutput) ToGetMigrationGoldenGateServiceDetailSourceContainerDbCredentialOutputWithContext(ctx context.Context) GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialOutput {
 	return o
+}
+
+func (o GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationGoldenGateServiceDetailSourceContainerDbCredential] {
+	return pulumix.Output[GetMigrationGoldenGateServiceDetailSourceContainerDbCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialOutput) Password() pulumi.StringOutput {
@@ -13450,6 +15773,12 @@ func (o GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArrayOutpu
 
 func (o GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArrayOutput) ToGetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArrayOutputWithContext(ctx context.Context) GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArrayOutput {
 	return o
+}
+
+func (o GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationGoldenGateServiceDetailSourceContainerDbCredential] {
+	return pulumix.Output[[]GetMigrationGoldenGateServiceDetailSourceContainerDbCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialArrayOutput) Index(i pulumi.IntInput) GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialOutput {
@@ -13493,6 +15822,12 @@ func (i GetMigrationGoldenGateServiceDetailSourceDbCredentialArgs) ToGetMigratio
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGoldenGateServiceDetailSourceDbCredentialOutput)
 }
 
+func (i GetMigrationGoldenGateServiceDetailSourceDbCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationGoldenGateServiceDetailSourceDbCredential] {
+	return pulumix.Output[GetMigrationGoldenGateServiceDetailSourceDbCredential]{
+		OutputState: i.ToGetMigrationGoldenGateServiceDetailSourceDbCredentialOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationGoldenGateServiceDetailSourceDbCredentialArrayInput is an input type that accepts GetMigrationGoldenGateServiceDetailSourceDbCredentialArray and GetMigrationGoldenGateServiceDetailSourceDbCredentialArrayOutput values.
 // You can construct a concrete instance of `GetMigrationGoldenGateServiceDetailSourceDbCredentialArrayInput` via:
 //
@@ -13518,6 +15853,12 @@ func (i GetMigrationGoldenGateServiceDetailSourceDbCredentialArray) ToGetMigrati
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGoldenGateServiceDetailSourceDbCredentialArrayOutput)
 }
 
+func (i GetMigrationGoldenGateServiceDetailSourceDbCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationGoldenGateServiceDetailSourceDbCredential] {
+	return pulumix.Output[[]GetMigrationGoldenGateServiceDetailSourceDbCredential]{
+		OutputState: i.ToGetMigrationGoldenGateServiceDetailSourceDbCredentialArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationGoldenGateServiceDetailSourceDbCredentialOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationGoldenGateServiceDetailSourceDbCredentialOutput) ElementType() reflect.Type {
@@ -13530,6 +15871,12 @@ func (o GetMigrationGoldenGateServiceDetailSourceDbCredentialOutput) ToGetMigrat
 
 func (o GetMigrationGoldenGateServiceDetailSourceDbCredentialOutput) ToGetMigrationGoldenGateServiceDetailSourceDbCredentialOutputWithContext(ctx context.Context) GetMigrationGoldenGateServiceDetailSourceDbCredentialOutput {
 	return o
+}
+
+func (o GetMigrationGoldenGateServiceDetailSourceDbCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationGoldenGateServiceDetailSourceDbCredential] {
+	return pulumix.Output[GetMigrationGoldenGateServiceDetailSourceDbCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationGoldenGateServiceDetailSourceDbCredentialOutput) Password() pulumi.StringOutput {
@@ -13553,6 +15900,12 @@ func (o GetMigrationGoldenGateServiceDetailSourceDbCredentialArrayOutput) ToGetM
 
 func (o GetMigrationGoldenGateServiceDetailSourceDbCredentialArrayOutput) ToGetMigrationGoldenGateServiceDetailSourceDbCredentialArrayOutputWithContext(ctx context.Context) GetMigrationGoldenGateServiceDetailSourceDbCredentialArrayOutput {
 	return o
+}
+
+func (o GetMigrationGoldenGateServiceDetailSourceDbCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationGoldenGateServiceDetailSourceDbCredential] {
+	return pulumix.Output[[]GetMigrationGoldenGateServiceDetailSourceDbCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationGoldenGateServiceDetailSourceDbCredentialArrayOutput) Index(i pulumi.IntInput) GetMigrationGoldenGateServiceDetailSourceDbCredentialOutput {
@@ -13596,6 +15949,12 @@ func (i GetMigrationGoldenGateServiceDetailTargetDbCredentialArgs) ToGetMigratio
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGoldenGateServiceDetailTargetDbCredentialOutput)
 }
 
+func (i GetMigrationGoldenGateServiceDetailTargetDbCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationGoldenGateServiceDetailTargetDbCredential] {
+	return pulumix.Output[GetMigrationGoldenGateServiceDetailTargetDbCredential]{
+		OutputState: i.ToGetMigrationGoldenGateServiceDetailTargetDbCredentialOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationGoldenGateServiceDetailTargetDbCredentialArrayInput is an input type that accepts GetMigrationGoldenGateServiceDetailTargetDbCredentialArray and GetMigrationGoldenGateServiceDetailTargetDbCredentialArrayOutput values.
 // You can construct a concrete instance of `GetMigrationGoldenGateServiceDetailTargetDbCredentialArrayInput` via:
 //
@@ -13621,6 +15980,12 @@ func (i GetMigrationGoldenGateServiceDetailTargetDbCredentialArray) ToGetMigrati
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGoldenGateServiceDetailTargetDbCredentialArrayOutput)
 }
 
+func (i GetMigrationGoldenGateServiceDetailTargetDbCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationGoldenGateServiceDetailTargetDbCredential] {
+	return pulumix.Output[[]GetMigrationGoldenGateServiceDetailTargetDbCredential]{
+		OutputState: i.ToGetMigrationGoldenGateServiceDetailTargetDbCredentialArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationGoldenGateServiceDetailTargetDbCredentialOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationGoldenGateServiceDetailTargetDbCredentialOutput) ElementType() reflect.Type {
@@ -13633,6 +15998,12 @@ func (o GetMigrationGoldenGateServiceDetailTargetDbCredentialOutput) ToGetMigrat
 
 func (o GetMigrationGoldenGateServiceDetailTargetDbCredentialOutput) ToGetMigrationGoldenGateServiceDetailTargetDbCredentialOutputWithContext(ctx context.Context) GetMigrationGoldenGateServiceDetailTargetDbCredentialOutput {
 	return o
+}
+
+func (o GetMigrationGoldenGateServiceDetailTargetDbCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationGoldenGateServiceDetailTargetDbCredential] {
+	return pulumix.Output[GetMigrationGoldenGateServiceDetailTargetDbCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationGoldenGateServiceDetailTargetDbCredentialOutput) Password() pulumi.StringOutput {
@@ -13656,6 +16027,12 @@ func (o GetMigrationGoldenGateServiceDetailTargetDbCredentialArrayOutput) ToGetM
 
 func (o GetMigrationGoldenGateServiceDetailTargetDbCredentialArrayOutput) ToGetMigrationGoldenGateServiceDetailTargetDbCredentialArrayOutputWithContext(ctx context.Context) GetMigrationGoldenGateServiceDetailTargetDbCredentialArrayOutput {
 	return o
+}
+
+func (o GetMigrationGoldenGateServiceDetailTargetDbCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationGoldenGateServiceDetailTargetDbCredential] {
+	return pulumix.Output[[]GetMigrationGoldenGateServiceDetailTargetDbCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationGoldenGateServiceDetailTargetDbCredentialArrayOutput) Index(i pulumi.IntInput) GetMigrationGoldenGateServiceDetailTargetDbCredentialOutput {
@@ -13709,6 +16086,12 @@ func (i GetMigrationIncludeObjectArgs) ToGetMigrationIncludeObjectOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationIncludeObjectOutput)
 }
 
+func (i GetMigrationIncludeObjectArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationIncludeObject] {
+	return pulumix.Output[GetMigrationIncludeObject]{
+		OutputState: i.ToGetMigrationIncludeObjectOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationIncludeObjectArrayInput is an input type that accepts GetMigrationIncludeObjectArray and GetMigrationIncludeObjectArrayOutput values.
 // You can construct a concrete instance of `GetMigrationIncludeObjectArrayInput` via:
 //
@@ -13734,6 +16117,12 @@ func (i GetMigrationIncludeObjectArray) ToGetMigrationIncludeObjectArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationIncludeObjectArrayOutput)
 }
 
+func (i GetMigrationIncludeObjectArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationIncludeObject] {
+	return pulumix.Output[[]GetMigrationIncludeObject]{
+		OutputState: i.ToGetMigrationIncludeObjectArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationIncludeObjectOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationIncludeObjectOutput) ElementType() reflect.Type {
@@ -13746,6 +16135,12 @@ func (o GetMigrationIncludeObjectOutput) ToGetMigrationIncludeObjectOutput() Get
 
 func (o GetMigrationIncludeObjectOutput) ToGetMigrationIncludeObjectOutputWithContext(ctx context.Context) GetMigrationIncludeObjectOutput {
 	return o
+}
+
+func (o GetMigrationIncludeObjectOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationIncludeObject] {
+	return pulumix.Output[GetMigrationIncludeObject]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and that are included in the exludeObjects.
@@ -13780,6 +16175,12 @@ func (o GetMigrationIncludeObjectArrayOutput) ToGetMigrationIncludeObjectArrayOu
 
 func (o GetMigrationIncludeObjectArrayOutput) ToGetMigrationIncludeObjectArrayOutputWithContext(ctx context.Context) GetMigrationIncludeObjectArrayOutput {
 	return o
+}
+
+func (o GetMigrationIncludeObjectArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationIncludeObject] {
+	return pulumix.Output[[]GetMigrationIncludeObject]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationIncludeObjectArrayOutput) Index(i pulumi.IntInput) GetMigrationIncludeObjectOutput {
@@ -13825,6 +16226,12 @@ func (i GetMigrationObjectTypesFilterArgs) ToGetMigrationObjectTypesFilterOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationObjectTypesFilterOutput)
 }
 
+func (i GetMigrationObjectTypesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationObjectTypesFilter] {
+	return pulumix.Output[GetMigrationObjectTypesFilter]{
+		OutputState: i.ToGetMigrationObjectTypesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationObjectTypesFilterArrayInput is an input type that accepts GetMigrationObjectTypesFilterArray and GetMigrationObjectTypesFilterArrayOutput values.
 // You can construct a concrete instance of `GetMigrationObjectTypesFilterArrayInput` via:
 //
@@ -13850,6 +16257,12 @@ func (i GetMigrationObjectTypesFilterArray) ToGetMigrationObjectTypesFilterArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationObjectTypesFilterArrayOutput)
 }
 
+func (i GetMigrationObjectTypesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationObjectTypesFilter] {
+	return pulumix.Output[[]GetMigrationObjectTypesFilter]{
+		OutputState: i.ToGetMigrationObjectTypesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationObjectTypesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationObjectTypesFilterOutput) ElementType() reflect.Type {
@@ -13862,6 +16275,12 @@ func (o GetMigrationObjectTypesFilterOutput) ToGetMigrationObjectTypesFilterOutp
 
 func (o GetMigrationObjectTypesFilterOutput) ToGetMigrationObjectTypesFilterOutputWithContext(ctx context.Context) GetMigrationObjectTypesFilterOutput {
 	return o
+}
+
+func (o GetMigrationObjectTypesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationObjectTypesFilter] {
+	return pulumix.Output[GetMigrationObjectTypesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Object type name
@@ -13889,6 +16308,12 @@ func (o GetMigrationObjectTypesFilterArrayOutput) ToGetMigrationObjectTypesFilte
 
 func (o GetMigrationObjectTypesFilterArrayOutput) ToGetMigrationObjectTypesFilterArrayOutputWithContext(ctx context.Context) GetMigrationObjectTypesFilterArrayOutput {
 	return o
+}
+
+func (o GetMigrationObjectTypesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationObjectTypesFilter] {
+	return pulumix.Output[[]GetMigrationObjectTypesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationObjectTypesFilterArrayOutput) Index(i pulumi.IntInput) GetMigrationObjectTypesFilterOutput {
@@ -13930,6 +16355,12 @@ func (i GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionArgs) ToGetMi
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionOutput)
 }
 
+func (i GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationObjectTypesMigrationObjectTypeSummaryCollection] {
+	return pulumix.Output[GetMigrationObjectTypesMigrationObjectTypeSummaryCollection]{
+		OutputState: i.ToGetMigrationObjectTypesMigrationObjectTypeSummaryCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionArrayInput is an input type that accepts GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionArray and GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionArrayInput` via:
 //
@@ -13955,6 +16386,12 @@ func (i GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionArray) ToGetM
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionArrayOutput)
 }
 
+func (i GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationObjectTypesMigrationObjectTypeSummaryCollection] {
+	return pulumix.Output[[]GetMigrationObjectTypesMigrationObjectTypeSummaryCollection]{
+		OutputState: i.ToGetMigrationObjectTypesMigrationObjectTypeSummaryCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionOutput) ElementType() reflect.Type {
@@ -13967,6 +16404,12 @@ func (o GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionOutput) ToGet
 
 func (o GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionOutput) ToGetMigrationObjectTypesMigrationObjectTypeSummaryCollectionOutputWithContext(ctx context.Context) GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionOutput {
 	return o
+}
+
+func (o GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationObjectTypesMigrationObjectTypeSummaryCollection] {
+	return pulumix.Output[GetMigrationObjectTypesMigrationObjectTypeSummaryCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Items in collection.
@@ -13988,6 +16431,12 @@ func (o GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionArrayOutput) 
 
 func (o GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionArrayOutput) ToGetMigrationObjectTypesMigrationObjectTypeSummaryCollectionArrayOutputWithContext(ctx context.Context) GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionArrayOutput {
 	return o
+}
+
+func (o GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationObjectTypesMigrationObjectTypeSummaryCollection] {
+	return pulumix.Output[[]GetMigrationObjectTypesMigrationObjectTypeSummaryCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionOutput {
@@ -14029,6 +16478,12 @@ func (i GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemArgs) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemOutput)
 }
 
+func (i GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItem] {
+	return pulumix.Output[GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItem]{
+		OutputState: i.ToGetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemArrayInput is an input type that accepts GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemArray and GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemArrayInput` via:
 //
@@ -14054,6 +16509,12 @@ func (i GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemArray) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemArrayOutput)
 }
 
+func (i GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItem] {
+	return pulumix.Output[[]GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItem]{
+		OutputState: i.ToGetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemOutput) ElementType() reflect.Type {
@@ -14066,6 +16527,12 @@ func (o GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemOutput) T
 
 func (o GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemOutput) ToGetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemOutputWithContext(ctx context.Context) GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemOutput {
 	return o
+}
+
+func (o GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItem] {
+	return pulumix.Output[GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Object type name
@@ -14085,6 +16552,12 @@ func (o GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemArrayOutp
 
 func (o GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemArrayOutput) ToGetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemArrayOutput {
 	return o
+}
+
+func (o GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItem] {
+	return pulumix.Output[[]GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemOutput {
@@ -14134,6 +16607,12 @@ func (i GetMigrationVaultDetailArgs) ToGetMigrationVaultDetailOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationVaultDetailOutput)
 }
 
+func (i GetMigrationVaultDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationVaultDetail] {
+	return pulumix.Output[GetMigrationVaultDetail]{
+		OutputState: i.ToGetMigrationVaultDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationVaultDetailArrayInput is an input type that accepts GetMigrationVaultDetailArray and GetMigrationVaultDetailArrayOutput values.
 // You can construct a concrete instance of `GetMigrationVaultDetailArrayInput` via:
 //
@@ -14159,6 +16638,12 @@ func (i GetMigrationVaultDetailArray) ToGetMigrationVaultDetailArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationVaultDetailArrayOutput)
 }
 
+func (i GetMigrationVaultDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationVaultDetail] {
+	return pulumix.Output[[]GetMigrationVaultDetail]{
+		OutputState: i.ToGetMigrationVaultDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationVaultDetailOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationVaultDetailOutput) ElementType() reflect.Type {
@@ -14171,6 +16656,12 @@ func (o GetMigrationVaultDetailOutput) ToGetMigrationVaultDetailOutput() GetMigr
 
 func (o GetMigrationVaultDetailOutput) ToGetMigrationVaultDetailOutputWithContext(ctx context.Context) GetMigrationVaultDetailOutput {
 	return o
+}
+
+func (o GetMigrationVaultDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationVaultDetail] {
+	return pulumix.Output[GetMigrationVaultDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // OCID of the compartment where the secret containing the credentials will be created.
@@ -14200,6 +16691,12 @@ func (o GetMigrationVaultDetailArrayOutput) ToGetMigrationVaultDetailArrayOutput
 
 func (o GetMigrationVaultDetailArrayOutput) ToGetMigrationVaultDetailArrayOutputWithContext(ctx context.Context) GetMigrationVaultDetailArrayOutput {
 	return o
+}
+
+func (o GetMigrationVaultDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationVaultDetail] {
+	return pulumix.Output[[]GetMigrationVaultDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationVaultDetailArrayOutput) Index(i pulumi.IntInput) GetMigrationVaultDetailOutput {
@@ -14245,6 +16742,12 @@ func (i GetMigrationsFilterArgs) ToGetMigrationsFilterOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsFilterOutput)
 }
 
+func (i GetMigrationsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsFilter] {
+	return pulumix.Output[GetMigrationsFilter]{
+		OutputState: i.ToGetMigrationsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationsFilterArrayInput is an input type that accepts GetMigrationsFilterArray and GetMigrationsFilterArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsFilterArrayInput` via:
 //
@@ -14270,6 +16773,12 @@ func (i GetMigrationsFilterArray) ToGetMigrationsFilterArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsFilterArrayOutput)
 }
 
+func (i GetMigrationsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsFilter] {
+	return pulumix.Output[[]GetMigrationsFilter]{
+		OutputState: i.ToGetMigrationsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationsFilterOutput) ElementType() reflect.Type {
@@ -14282,6 +16791,12 @@ func (o GetMigrationsFilterOutput) ToGetMigrationsFilterOutput() GetMigrationsFi
 
 func (o GetMigrationsFilterOutput) ToGetMigrationsFilterOutputWithContext(ctx context.Context) GetMigrationsFilterOutput {
 	return o
+}
+
+func (o GetMigrationsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsFilter] {
+	return pulumix.Output[GetMigrationsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Name of directory object in database
@@ -14309,6 +16824,12 @@ func (o GetMigrationsFilterArrayOutput) ToGetMigrationsFilterArrayOutput() GetMi
 
 func (o GetMigrationsFilterArrayOutput) ToGetMigrationsFilterArrayOutputWithContext(ctx context.Context) GetMigrationsFilterArrayOutput {
 	return o
+}
+
+func (o GetMigrationsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsFilter] {
+	return pulumix.Output[[]GetMigrationsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationsFilterArrayOutput) Index(i pulumi.IntInput) GetMigrationsFilterOutput {
@@ -14348,6 +16869,12 @@ func (i GetMigrationsMigrationCollectionArgs) ToGetMigrationsMigrationCollection
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionOutput)
 }
 
+func (i GetMigrationsMigrationCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollection] {
+	return pulumix.Output[GetMigrationsMigrationCollection]{
+		OutputState: i.ToGetMigrationsMigrationCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationsMigrationCollectionArrayInput is an input type that accepts GetMigrationsMigrationCollectionArray and GetMigrationsMigrationCollectionArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionArrayInput` via:
 //
@@ -14373,6 +16900,12 @@ func (i GetMigrationsMigrationCollectionArray) ToGetMigrationsMigrationCollectio
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionArrayOutput)
 }
 
+func (i GetMigrationsMigrationCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollection] {
+	return pulumix.Output[[]GetMigrationsMigrationCollection]{
+		OutputState: i.ToGetMigrationsMigrationCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationsMigrationCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationsMigrationCollectionOutput) ElementType() reflect.Type {
@@ -14385,6 +16918,12 @@ func (o GetMigrationsMigrationCollectionOutput) ToGetMigrationsMigrationCollecti
 
 func (o GetMigrationsMigrationCollectionOutput) ToGetMigrationsMigrationCollectionOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollection] {
+	return pulumix.Output[GetMigrationsMigrationCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationsMigrationCollectionOutput) Items() GetMigrationsMigrationCollectionItemArrayOutput {
@@ -14403,6 +16942,12 @@ func (o GetMigrationsMigrationCollectionArrayOutput) ToGetMigrationsMigrationCol
 
 func (o GetMigrationsMigrationCollectionArrayOutput) ToGetMigrationsMigrationCollectionArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionArrayOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollection] {
+	return pulumix.Output[[]GetMigrationsMigrationCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationsMigrationCollectionArrayOutput) Index(i pulumi.IntInput) GetMigrationsMigrationCollectionOutput {
@@ -14554,6 +17099,12 @@ func (i GetMigrationsMigrationCollectionItemArgs) ToGetMigrationsMigrationCollec
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItem] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItem]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationsMigrationCollectionItemArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemArray and GetMigrationsMigrationCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemArrayInput` via:
 //
@@ -14579,6 +17130,12 @@ func (i GetMigrationsMigrationCollectionItemArray) ToGetMigrationsMigrationColle
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemArrayOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItem] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItem]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationsMigrationCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationsMigrationCollectionItemOutput) ElementType() reflect.Type {
@@ -14591,6 +17148,12 @@ func (o GetMigrationsMigrationCollectionItemOutput) ToGetMigrationsMigrationColl
 
 func (o GetMigrationsMigrationCollectionItemOutput) ToGetMigrationsMigrationCollectionItemOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItem] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Optional Pre-Migration advisor settings.
@@ -14769,6 +17332,12 @@ func (o GetMigrationsMigrationCollectionItemArrayOutput) ToGetMigrationsMigratio
 	return o
 }
 
+func (o GetMigrationsMigrationCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItem] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetMigrationsMigrationCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMigrationsMigrationCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationsMigrationCollectionItem {
 		return vs[0].([]GetMigrationsMigrationCollectionItem)[vs[1].(int)]
@@ -14812,6 +17381,12 @@ func (i GetMigrationsMigrationCollectionItemAdvisorSettingArgs) ToGetMigrationsM
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemAdvisorSettingOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemAdvisorSettingArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemAdvisorSetting] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemAdvisorSetting]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemAdvisorSettingOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationsMigrationCollectionItemAdvisorSettingArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemAdvisorSettingArray and GetMigrationsMigrationCollectionItemAdvisorSettingArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemAdvisorSettingArrayInput` via:
 //
@@ -14837,6 +17412,12 @@ func (i GetMigrationsMigrationCollectionItemAdvisorSettingArray) ToGetMigrations
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemAdvisorSettingArrayOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemAdvisorSettingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemAdvisorSetting] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemAdvisorSetting]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemAdvisorSettingArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationsMigrationCollectionItemAdvisorSettingOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationsMigrationCollectionItemAdvisorSettingOutput) ElementType() reflect.Type {
@@ -14849,6 +17430,12 @@ func (o GetMigrationsMigrationCollectionItemAdvisorSettingOutput) ToGetMigration
 
 func (o GetMigrationsMigrationCollectionItemAdvisorSettingOutput) ToGetMigrationsMigrationCollectionItemAdvisorSettingOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemAdvisorSettingOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemAdvisorSettingOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemAdvisorSetting] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemAdvisorSetting]{
+		OutputState: o.OutputState,
+	}
 }
 
 // True to not interrupt migration execution due to Pre-Migration Advisor errors. Default is false.
@@ -14873,6 +17460,12 @@ func (o GetMigrationsMigrationCollectionItemAdvisorSettingArrayOutput) ToGetMigr
 
 func (o GetMigrationsMigrationCollectionItemAdvisorSettingArrayOutput) ToGetMigrationsMigrationCollectionItemAdvisorSettingArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemAdvisorSettingArrayOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemAdvisorSettingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemAdvisorSetting] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemAdvisorSetting]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationsMigrationCollectionItemAdvisorSettingArrayOutput) Index(i pulumi.IntInput) GetMigrationsMigrationCollectionItemAdvisorSettingOutput {
@@ -14918,6 +17511,12 @@ func (i GetMigrationsMigrationCollectionItemDataTransferMediumDetailArgs) ToGetM
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemDataTransferMediumDetailOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemDataTransferMediumDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemDataTransferMediumDetail] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemDataTransferMediumDetail]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemDataTransferMediumDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationsMigrationCollectionItemDataTransferMediumDetailArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemDataTransferMediumDetailArray and GetMigrationsMigrationCollectionItemDataTransferMediumDetailArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemDataTransferMediumDetailArrayInput` via:
 //
@@ -14943,6 +17542,12 @@ func (i GetMigrationsMigrationCollectionItemDataTransferMediumDetailArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemDataTransferMediumDetailArrayOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemDataTransferMediumDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemDataTransferMediumDetail] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemDataTransferMediumDetail]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemDataTransferMediumDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationsMigrationCollectionItemDataTransferMediumDetailOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationsMigrationCollectionItemDataTransferMediumDetailOutput) ElementType() reflect.Type {
@@ -14955,6 +17560,12 @@ func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailOutput) ToGe
 
 func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailOutput) ToGetMigrationsMigrationCollectionItemDataTransferMediumDetailOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemDataTransferMediumDetailOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemDataTransferMediumDetail] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemDataTransferMediumDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Optional details for creating a network database link from Oracle Cloud Infrastructure database to on-premise database.
@@ -14983,6 +17594,12 @@ func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailArrayOutput)
 
 func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailArrayOutput) ToGetMigrationsMigrationCollectionItemDataTransferMediumDetailArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemDataTransferMediumDetailArrayOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemDataTransferMediumDetail] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemDataTransferMediumDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailArrayOutput) Index(i pulumi.IntInput) GetMigrationsMigrationCollectionItemDataTransferMediumDetailOutput {
@@ -15028,6 +17645,12 @@ func (i GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLink
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetail] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetail]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailArray and GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailArrayInput` via:
 //
@@ -15053,6 +17676,12 @@ func (i GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLink
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailArrayOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetail] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetail]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailOutput) ElementType() reflect.Type {
@@ -15065,6 +17694,12 @@ func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLink
 
 func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailOutput) ToGetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetail] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Name of directory object in database
@@ -15093,6 +17728,12 @@ func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLink
 
 func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailArrayOutput) ToGetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailArrayOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetail] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailArrayOutput) Index(i pulumi.IntInput) GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailOutput {
@@ -15138,6 +17779,12 @@ func (i GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLink
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucketOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucketArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucket] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucket]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucketOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucketArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucketArray and GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucketArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucketArrayInput` via:
 //
@@ -15163,6 +17810,12 @@ func (i GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLink
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucketArrayOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucketArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucket] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucket]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucketArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucketOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucketOutput) ElementType() reflect.Type {
@@ -15175,6 +17828,12 @@ func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLink
 
 func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucketOutput) ToGetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucketOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucketOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucketOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucket] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucket]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Bucket name.
@@ -15203,6 +17862,12 @@ func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLink
 
 func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucketArrayOutput) ToGetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucketArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucketArrayOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucketArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucket] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucket]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucketArrayOutput) Index(i pulumi.IntInput) GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucketOutput {
@@ -15248,6 +17913,12 @@ func (i GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorag
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetailOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetail] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetail]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetailArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetailArray and GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetailArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetailArrayInput` via:
 //
@@ -15273,6 +17944,12 @@ func (i GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorag
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetailArrayOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetail] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetail]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetailOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetailOutput) ElementType() reflect.Type {
@@ -15285,6 +17962,12 @@ func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorag
 
 func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetailOutput) ToGetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetailOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetailOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetail] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Bucket name.
@@ -15313,6 +17996,12 @@ func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorag
 
 func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetailArrayOutput) ToGetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetailArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetailArrayOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetail] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetailArrayOutput) Index(i pulumi.IntInput) GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetailOutput {
@@ -15370,6 +18059,12 @@ func (i GetMigrationsMigrationCollectionItemDatapumpSettingArgs) ToGetMigrations
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemDatapumpSettingOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemDatapumpSettingArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemDatapumpSetting] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemDatapumpSetting]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemDatapumpSettingOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationsMigrationCollectionItemDatapumpSettingArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemDatapumpSettingArray and GetMigrationsMigrationCollectionItemDatapumpSettingArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemDatapumpSettingArrayInput` via:
 //
@@ -15395,6 +18090,12 @@ func (i GetMigrationsMigrationCollectionItemDatapumpSettingArray) ToGetMigration
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemDatapumpSettingArrayOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemDatapumpSettingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemDatapumpSetting] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemDatapumpSetting]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemDatapumpSettingArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationsMigrationCollectionItemDatapumpSettingOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationsMigrationCollectionItemDatapumpSettingOutput) ElementType() reflect.Type {
@@ -15407,6 +18108,12 @@ func (o GetMigrationsMigrationCollectionItemDatapumpSettingOutput) ToGetMigratio
 
 func (o GetMigrationsMigrationCollectionItemDatapumpSettingOutput) ToGetMigrationsMigrationCollectionItemDatapumpSettingOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemDatapumpSettingOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemDatapumpSettingOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemDatapumpSetting] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemDatapumpSetting]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Optional parameters for Data Pump Export and Import. Refer to [Configuring Optional Initial Load Advanced Settings](https://docs.us.oracle.com/en/cloud/paas/database-migration/dmsus/working-migration-resources.html#GUID-24BD3054-FDF8-48FF-8492-636C1D4B71ED)
@@ -15454,6 +18161,12 @@ func (o GetMigrationsMigrationCollectionItemDatapumpSettingArrayOutput) ToGetMig
 
 func (o GetMigrationsMigrationCollectionItemDatapumpSettingArrayOutput) ToGetMigrationsMigrationCollectionItemDatapumpSettingArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemDatapumpSettingArrayOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemDatapumpSettingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemDatapumpSetting] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemDatapumpSetting]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationsMigrationCollectionItemDatapumpSettingArrayOutput) Index(i pulumi.IntInput) GetMigrationsMigrationCollectionItemDatapumpSettingOutput {
@@ -15515,6 +18228,12 @@ func (i GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameterArgs
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameterOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameter] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameter]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameterArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameterArray and GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameterArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameterArrayInput` via:
 //
@@ -15540,6 +18259,12 @@ func (i GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameterArra
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameterArrayOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameter] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameter]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameterOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameterOutput) ElementType() reflect.Type {
@@ -15552,6 +18277,12 @@ func (o GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameterOutp
 
 func (o GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameterOutput) ToGetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameterOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameterOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameter] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Estimate size of dumps that will be generated.
@@ -15606,6 +18337,12 @@ func (o GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameterArra
 	return o
 }
 
+func (o GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameter] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameter]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameterArrayOutput) Index(i pulumi.IntInput) GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameter {
 		return vs[0].([]GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameter)[vs[1].(int)]
@@ -15649,6 +18386,12 @@ func (i GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObject
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObjectOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObjectArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObject] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObject]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObjectOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObjectArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObjectArray and GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObjectArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObjectArrayInput` via:
 //
@@ -15674,6 +18417,12 @@ func (i GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObject
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObjectArrayOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObjectArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObject] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObject]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObjectArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObjectOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObjectOutput) ElementType() reflect.Type {
@@ -15686,6 +18435,12 @@ func (o GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObject
 
 func (o GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObjectOutput) ToGetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObjectOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObjectOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObjectOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObject] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObject]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Name of directory object in database
@@ -15710,6 +18465,12 @@ func (o GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObject
 
 func (o GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObjectArrayOutput) ToGetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObjectArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObjectArrayOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObjectArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObject] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObject]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObjectArrayOutput) Index(i pulumi.IntInput) GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObjectOutput {
@@ -15755,6 +18516,12 @@ func (i GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObject
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObjectOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObjectArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObject] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObject]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObjectOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObjectArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObjectArray and GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObjectArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObjectArrayInput` via:
 //
@@ -15780,6 +18547,12 @@ func (i GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObject
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObjectArrayOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObjectArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObject] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObject]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObjectArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObjectOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObjectOutput) ElementType() reflect.Type {
@@ -15792,6 +18565,12 @@ func (o GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObject
 
 func (o GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObjectOutput) ToGetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObjectOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObjectOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObjectOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObject] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObject]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Name of directory object in database
@@ -15816,6 +18595,12 @@ func (o GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObject
 
 func (o GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObjectArrayOutput) ToGetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObjectArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObjectArrayOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObjectArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObject] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObject]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObjectArrayOutput) Index(i pulumi.IntInput) GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObjectOutput {
@@ -15865,6 +18650,12 @@ func (i GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemapArgs) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemapOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemapArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemap] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemap]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemapOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemapArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemapArray and GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemapArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemapArrayInput` via:
 //
@@ -15890,6 +18681,12 @@ func (i GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemapArray) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemapArrayOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemapArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemap] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemap]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemapArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemapOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemapOutput) ElementType() reflect.Type {
@@ -15902,6 +18699,12 @@ func (o GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemapOutput) 
 
 func (o GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemapOutput) ToGetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemapOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemapOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemapOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemap] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemap]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Specifies the new value that oldValue should be translated into.
@@ -15931,6 +18734,12 @@ func (o GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemapArrayOut
 
 func (o GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemapArrayOutput) ToGetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemapArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemapArrayOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemapArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemap] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemap]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemapArrayOutput) Index(i pulumi.IntInput) GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemapOutput {
@@ -15976,6 +18785,12 @@ func (i GetMigrationsMigrationCollectionItemDumpTransferDetailArgs) ToGetMigrati
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemDumpTransferDetailOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemDumpTransferDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemDumpTransferDetail] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemDumpTransferDetail]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemDumpTransferDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationsMigrationCollectionItemDumpTransferDetailArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemDumpTransferDetailArray and GetMigrationsMigrationCollectionItemDumpTransferDetailArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemDumpTransferDetailArrayInput` via:
 //
@@ -16001,6 +18816,12 @@ func (i GetMigrationsMigrationCollectionItemDumpTransferDetailArray) ToGetMigrat
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemDumpTransferDetailArrayOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemDumpTransferDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemDumpTransferDetail] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemDumpTransferDetail]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemDumpTransferDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationsMigrationCollectionItemDumpTransferDetailOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationsMigrationCollectionItemDumpTransferDetailOutput) ElementType() reflect.Type {
@@ -16013,6 +18834,12 @@ func (o GetMigrationsMigrationCollectionItemDumpTransferDetailOutput) ToGetMigra
 
 func (o GetMigrationsMigrationCollectionItemDumpTransferDetailOutput) ToGetMigrationsMigrationCollectionItemDumpTransferDetailOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemDumpTransferDetailOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemDumpTransferDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemDumpTransferDetail] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemDumpTransferDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Optional additional properties for dump transfer in source or target host. Default kind is CURL
@@ -16041,6 +18868,12 @@ func (o GetMigrationsMigrationCollectionItemDumpTransferDetailArrayOutput) ToGet
 
 func (o GetMigrationsMigrationCollectionItemDumpTransferDetailArrayOutput) ToGetMigrationsMigrationCollectionItemDumpTransferDetailArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemDumpTransferDetailArrayOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemDumpTransferDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemDumpTransferDetail] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemDumpTransferDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationsMigrationCollectionItemDumpTransferDetailArrayOutput) Index(i pulumi.IntInput) GetMigrationsMigrationCollectionItemDumpTransferDetailOutput {
@@ -16090,6 +18923,12 @@ func (i GetMigrationsMigrationCollectionItemDumpTransferDetailSourceArgs) ToGetM
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemDumpTransferDetailSourceOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemDumpTransferDetailSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemDumpTransferDetailSource] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemDumpTransferDetailSource]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemDumpTransferDetailSourceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationsMigrationCollectionItemDumpTransferDetailSourceArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemDumpTransferDetailSourceArray and GetMigrationsMigrationCollectionItemDumpTransferDetailSourceArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemDumpTransferDetailSourceArrayInput` via:
 //
@@ -16115,6 +18954,12 @@ func (i GetMigrationsMigrationCollectionItemDumpTransferDetailSourceArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemDumpTransferDetailSourceArrayOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemDumpTransferDetailSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemDumpTransferDetailSource] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemDumpTransferDetailSource]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemDumpTransferDetailSourceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationsMigrationCollectionItemDumpTransferDetailSourceOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationsMigrationCollectionItemDumpTransferDetailSourceOutput) ElementType() reflect.Type {
@@ -16127,6 +18972,12 @@ func (o GetMigrationsMigrationCollectionItemDumpTransferDetailSourceOutput) ToGe
 
 func (o GetMigrationsMigrationCollectionItemDumpTransferDetailSourceOutput) ToGetMigrationsMigrationCollectionItemDumpTransferDetailSourceOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemDumpTransferDetailSourceOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemDumpTransferDetailSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemDumpTransferDetailSource] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemDumpTransferDetailSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Type of dump transfer to use during migration in source or target host. Default kind is CURL
@@ -16156,6 +19007,12 @@ func (o GetMigrationsMigrationCollectionItemDumpTransferDetailSourceArrayOutput)
 
 func (o GetMigrationsMigrationCollectionItemDumpTransferDetailSourceArrayOutput) ToGetMigrationsMigrationCollectionItemDumpTransferDetailSourceArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemDumpTransferDetailSourceArrayOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemDumpTransferDetailSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemDumpTransferDetailSource] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemDumpTransferDetailSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationsMigrationCollectionItemDumpTransferDetailSourceArrayOutput) Index(i pulumi.IntInput) GetMigrationsMigrationCollectionItemDumpTransferDetailSourceOutput {
@@ -16205,6 +19062,12 @@ func (i GetMigrationsMigrationCollectionItemDumpTransferDetailTargetArgs) ToGetM
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemDumpTransferDetailTargetOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemDumpTransferDetailTargetArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemDumpTransferDetailTarget] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemDumpTransferDetailTarget]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemDumpTransferDetailTargetOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationsMigrationCollectionItemDumpTransferDetailTargetArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemDumpTransferDetailTargetArray and GetMigrationsMigrationCollectionItemDumpTransferDetailTargetArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemDumpTransferDetailTargetArrayInput` via:
 //
@@ -16230,6 +19093,12 @@ func (i GetMigrationsMigrationCollectionItemDumpTransferDetailTargetArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemDumpTransferDetailTargetArrayOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemDumpTransferDetailTargetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemDumpTransferDetailTarget] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemDumpTransferDetailTarget]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemDumpTransferDetailTargetArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationsMigrationCollectionItemDumpTransferDetailTargetOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationsMigrationCollectionItemDumpTransferDetailTargetOutput) ElementType() reflect.Type {
@@ -16242,6 +19111,12 @@ func (o GetMigrationsMigrationCollectionItemDumpTransferDetailTargetOutput) ToGe
 
 func (o GetMigrationsMigrationCollectionItemDumpTransferDetailTargetOutput) ToGetMigrationsMigrationCollectionItemDumpTransferDetailTargetOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemDumpTransferDetailTargetOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemDumpTransferDetailTargetOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemDumpTransferDetailTarget] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemDumpTransferDetailTarget]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Type of dump transfer to use during migration in source or target host. Default kind is CURL
@@ -16271,6 +19146,12 @@ func (o GetMigrationsMigrationCollectionItemDumpTransferDetailTargetArrayOutput)
 
 func (o GetMigrationsMigrationCollectionItemDumpTransferDetailTargetArrayOutput) ToGetMigrationsMigrationCollectionItemDumpTransferDetailTargetArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemDumpTransferDetailTargetArrayOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemDumpTransferDetailTargetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemDumpTransferDetailTarget] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemDumpTransferDetailTarget]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationsMigrationCollectionItemDumpTransferDetailTargetArrayOutput) Index(i pulumi.IntInput) GetMigrationsMigrationCollectionItemDumpTransferDetailTargetOutput {
@@ -16324,6 +19205,12 @@ func (i GetMigrationsMigrationCollectionItemExcludeObjectArgs) ToGetMigrationsMi
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemExcludeObjectOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemExcludeObjectArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemExcludeObject] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemExcludeObject]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemExcludeObjectOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationsMigrationCollectionItemExcludeObjectArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemExcludeObjectArray and GetMigrationsMigrationCollectionItemExcludeObjectArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemExcludeObjectArrayInput` via:
 //
@@ -16349,6 +19236,12 @@ func (i GetMigrationsMigrationCollectionItemExcludeObjectArray) ToGetMigrationsM
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemExcludeObjectArrayOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemExcludeObjectArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemExcludeObject] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemExcludeObject]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemExcludeObjectArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationsMigrationCollectionItemExcludeObjectOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationsMigrationCollectionItemExcludeObjectOutput) ElementType() reflect.Type {
@@ -16361,6 +19254,12 @@ func (o GetMigrationsMigrationCollectionItemExcludeObjectOutput) ToGetMigrations
 
 func (o GetMigrationsMigrationCollectionItemExcludeObjectOutput) ToGetMigrationsMigrationCollectionItemExcludeObjectOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemExcludeObjectOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemExcludeObjectOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemExcludeObject] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemExcludeObject]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and that are included in the exludeObjects.
@@ -16397,6 +19296,12 @@ func (o GetMigrationsMigrationCollectionItemExcludeObjectArrayOutput) ToGetMigra
 
 func (o GetMigrationsMigrationCollectionItemExcludeObjectArrayOutput) ToGetMigrationsMigrationCollectionItemExcludeObjectArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemExcludeObjectArrayOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemExcludeObjectArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemExcludeObject] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemExcludeObject]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationsMigrationCollectionItemExcludeObjectArrayOutput) Index(i pulumi.IntInput) GetMigrationsMigrationCollectionItemExcludeObjectOutput {
@@ -16442,6 +19347,12 @@ func (i GetMigrationsMigrationCollectionItemGoldenGateDetailArgs) ToGetMigration
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemGoldenGateDetailOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemGoldenGateDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateDetail] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateDetail]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemGoldenGateDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationsMigrationCollectionItemGoldenGateDetailArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateDetailArray and GetMigrationsMigrationCollectionItemGoldenGateDetailArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateDetailArrayInput` via:
 //
@@ -16467,6 +19378,12 @@ func (i GetMigrationsMigrationCollectionItemGoldenGateDetailArray) ToGetMigratio
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemGoldenGateDetailArrayOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemGoldenGateDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateDetail] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateDetail]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemGoldenGateDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationsMigrationCollectionItemGoldenGateDetailOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationsMigrationCollectionItemGoldenGateDetailOutput) ElementType() reflect.Type {
@@ -16479,6 +19396,12 @@ func (o GetMigrationsMigrationCollectionItemGoldenGateDetailOutput) ToGetMigrati
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateDetailOutput) ToGetMigrationsMigrationCollectionItemGoldenGateDetailOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateDetailOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateDetail] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Details about Oracle GoldenGate Microservices.
@@ -16507,6 +19430,12 @@ func (o GetMigrationsMigrationCollectionItemGoldenGateDetailArrayOutput) ToGetMi
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateDetailArrayOutput) ToGetMigrationsMigrationCollectionItemGoldenGateDetailArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateDetailArrayOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateDetail] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateDetailArrayOutput) Index(i pulumi.IntInput) GetMigrationsMigrationCollectionItemGoldenGateDetailOutput {
@@ -16576,6 +19505,12 @@ func (i GetMigrationsMigrationCollectionItemGoldenGateDetailHubArgs) ToGetMigrat
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemGoldenGateDetailHubOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemGoldenGateDetailHubArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateDetailHub] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateDetailHub]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemGoldenGateDetailHubOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationsMigrationCollectionItemGoldenGateDetailHubArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateDetailHubArray and GetMigrationsMigrationCollectionItemGoldenGateDetailHubArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateDetailHubArrayInput` via:
 //
@@ -16601,6 +19536,12 @@ func (i GetMigrationsMigrationCollectionItemGoldenGateDetailHubArray) ToGetMigra
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemGoldenGateDetailHubArrayOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemGoldenGateDetailHubArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateDetailHub] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateDetailHub]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemGoldenGateDetailHubArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationsMigrationCollectionItemGoldenGateDetailHubOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationsMigrationCollectionItemGoldenGateDetailHubOutput) ElementType() reflect.Type {
@@ -16613,6 +19554,12 @@ func (o GetMigrationsMigrationCollectionItemGoldenGateDetailHubOutput) ToGetMigr
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateDetailHubOutput) ToGetMigrationsMigrationCollectionItemGoldenGateDetailHubOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateDetailHubOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateDetailHubOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateDetailHub] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateDetailHub]{
+		OutputState: o.OutputState,
+	}
 }
 
 // OCID of GoldenGate compute instance.
@@ -16681,6 +19628,12 @@ func (o GetMigrationsMigrationCollectionItemGoldenGateDetailHubArrayOutput) ToGe
 	return o
 }
 
+func (o GetMigrationsMigrationCollectionItemGoldenGateDetailHubArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateDetailHub] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateDetailHub]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetMigrationsMigrationCollectionItemGoldenGateDetailHubArrayOutput) Index(i pulumi.IntInput) GetMigrationsMigrationCollectionItemGoldenGateDetailHubOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationsMigrationCollectionItemGoldenGateDetailHub {
 		return vs[0].([]GetMigrationsMigrationCollectionItemGoldenGateDetailHub)[vs[1].(int)]
@@ -16722,6 +19675,12 @@ func (i GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredenti
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredentialOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredential] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredential]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredentialOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredentialArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredentialArray and GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredentialArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredentialArrayInput` via:
 //
@@ -16747,6 +19706,12 @@ func (i GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredenti
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredentialArrayOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredential] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredential]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredentialArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredentialOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredentialOutput) ElementType() reflect.Type {
@@ -16759,6 +19724,12 @@ func (o GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredenti
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredentialOutput) ToGetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredentialOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredentialOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredential] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredentialOutput) Password() pulumi.StringOutput {
@@ -16786,6 +19757,12 @@ func (o GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredenti
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredentialArrayOutput) ToGetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredentialArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredentialArrayOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredential] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredentialArrayOutput) Index(i pulumi.IntInput) GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredentialOutput {
@@ -16829,6 +19806,12 @@ func (i GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDb
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredentialOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredential] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredential]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredentialOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredentialArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredentialArray and GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredentialArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredentialArrayInput` via:
 //
@@ -16854,6 +19837,12 @@ func (i GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDb
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredentialArrayOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredential] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredential]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredentialArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredentialOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredentialOutput) ElementType() reflect.Type {
@@ -16866,6 +19855,12 @@ func (o GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDb
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredentialOutput) ToGetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredentialOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredentialOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredential] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredentialOutput) Password() pulumi.StringOutput {
@@ -16893,6 +19888,12 @@ func (o GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDb
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredentialArrayOutput) ToGetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredentialArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredentialArrayOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredential] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredentialArrayOutput) Index(i pulumi.IntInput) GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredentialOutput {
@@ -16936,6 +19937,12 @@ func (i GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCred
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredentialOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredential] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredential]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredentialOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredentialArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredentialArray and GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredentialArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredentialArrayInput` via:
 //
@@ -16961,6 +19968,12 @@ func (i GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCred
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredentialArrayOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredential] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredential]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredentialArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredentialOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredentialOutput) ElementType() reflect.Type {
@@ -16973,6 +19986,12 @@ func (o GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCred
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredentialOutput) ToGetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredentialOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredentialOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredential] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredentialOutput) Password() pulumi.StringOutput {
@@ -17000,6 +20019,12 @@ func (o GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCred
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredentialArrayOutput) ToGetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredentialArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredentialArrayOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredential] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredentialArrayOutput) Index(i pulumi.IntInput) GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredentialOutput {
@@ -17043,6 +20068,12 @@ func (i GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCred
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredentialOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredential] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredential]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredentialOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredentialArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredentialArray and GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredentialArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredentialArrayInput` via:
 //
@@ -17068,6 +20099,12 @@ func (i GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCred
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredentialArrayOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredential] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredential]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredentialArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredentialOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredentialOutput) ElementType() reflect.Type {
@@ -17080,6 +20117,12 @@ func (o GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCred
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredentialOutput) ToGetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredentialOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredentialOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredential] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredentialOutput) Password() pulumi.StringOutput {
@@ -17107,6 +20150,12 @@ func (o GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCred
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredentialArrayOutput) ToGetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredentialArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredentialArrayOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredential] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredentialArrayOutput) Index(i pulumi.IntInput) GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredentialOutput {
@@ -17156,6 +20205,12 @@ func (i GetMigrationsMigrationCollectionItemGoldenGateDetailSettingArgs) ToGetMi
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemGoldenGateDetailSettingOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemGoldenGateDetailSettingArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateDetailSetting] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateDetailSetting]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemGoldenGateDetailSettingOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationsMigrationCollectionItemGoldenGateDetailSettingArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateDetailSettingArray and GetMigrationsMigrationCollectionItemGoldenGateDetailSettingArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateDetailSettingArrayInput` via:
 //
@@ -17181,6 +20236,12 @@ func (i GetMigrationsMigrationCollectionItemGoldenGateDetailSettingArray) ToGetM
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemGoldenGateDetailSettingArrayOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemGoldenGateDetailSettingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateDetailSetting] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateDetailSetting]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemGoldenGateDetailSettingArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationsMigrationCollectionItemGoldenGateDetailSettingOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationsMigrationCollectionItemGoldenGateDetailSettingOutput) ElementType() reflect.Type {
@@ -17193,6 +20254,12 @@ func (o GetMigrationsMigrationCollectionItemGoldenGateDetailSettingOutput) ToGet
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateDetailSettingOutput) ToGetMigrationsMigrationCollectionItemGoldenGateDetailSettingOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateDetailSettingOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateDetailSettingOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateDetailSetting] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateDetailSetting]{
+		OutputState: o.OutputState,
+	}
 }
 
 // ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
@@ -17226,6 +20293,12 @@ func (o GetMigrationsMigrationCollectionItemGoldenGateDetailSettingArrayOutput) 
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateDetailSettingArrayOutput) ToGetMigrationsMigrationCollectionItemGoldenGateDetailSettingArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateDetailSettingArrayOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateDetailSettingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateDetailSetting] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateDetailSetting]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateDetailSettingArrayOutput) Index(i pulumi.IntInput) GetMigrationsMigrationCollectionItemGoldenGateDetailSettingOutput {
@@ -17271,6 +20344,12 @@ func (i GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractArgs) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtract] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtract]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractArray and GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractArrayInput` via:
 //
@@ -17296,6 +20375,12 @@ func (i GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractArray)
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractArrayOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtract] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtract]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractOutput) ElementType() reflect.Type {
@@ -17308,6 +20393,12 @@ func (o GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractOutput
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractOutput) ToGetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtract] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtract]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
@@ -17336,6 +20427,12 @@ func (o GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractArrayO
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractArrayOutput) ToGetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractArrayOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtract] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtract]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractArrayOutput) Index(i pulumi.IntInput) GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractOutput {
@@ -17389,6 +20486,12 @@ func (i GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatArgs)
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicat] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicat]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatArray and GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatArrayInput` via:
 //
@@ -17414,6 +20517,12 @@ func (i GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatArrayOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicat] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicat]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatOutput) ElementType() reflect.Type {
@@ -17426,6 +20535,12 @@ func (o GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatOutpu
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatOutput) ToGetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicat] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicat]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Number of threads used to read trail files (valid for Parallel Replicat)
@@ -17468,6 +20583,12 @@ func (o GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatArray
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatArrayOutput) ToGetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatArrayOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicat] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicat]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatArrayOutput) Index(i pulumi.IntInput) GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatOutput {
@@ -17519,6 +20640,12 @@ func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailArgs) ToGetMi
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateServiceDetail] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateServiceDetail]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationsMigrationCollectionItemGoldenGateServiceDetailArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateServiceDetailArray and GetMigrationsMigrationCollectionItemGoldenGateServiceDetailArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateServiceDetailArrayInput` via:
 //
@@ -17544,6 +20671,12 @@ func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailArray) ToGetM
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailArrayOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateServiceDetail] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateServiceDetail]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationsMigrationCollectionItemGoldenGateServiceDetailOutput) ElementType() reflect.Type {
@@ -17556,6 +20689,12 @@ func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailOutput) ToGet
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailOutput) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateServiceDetail] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateServiceDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Details about Oracle GoldenGate GGS Deployment.
@@ -17604,6 +20743,12 @@ func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailArrayOutput) 
 	return o
 }
 
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateServiceDetail] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateServiceDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailArrayOutput) Index(i pulumi.IntInput) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationsMigrationCollectionItemGoldenGateServiceDetail {
 		return vs[0].([]GetMigrationsMigrationCollectionItemGoldenGateServiceDetail)[vs[1].(int)]
@@ -17647,6 +20792,12 @@ func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeployment
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeployment] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeployment]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArray and GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArrayInput` via:
 //
@@ -17672,6 +20823,12 @@ func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeployment
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArrayOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeployment] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeployment]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentOutput) ElementType() reflect.Type {
@@ -17684,6 +20841,12 @@ func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeployment
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentOutput) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeployment] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeployment]{
+		OutputState: o.OutputState,
+	}
 }
 
 // OCID of a GoldenGate Deployment
@@ -17712,6 +20875,12 @@ func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeployment
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArrayOutput) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArrayOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeployment] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeployment]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArrayOutput) Index(i pulumi.IntInput) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentOutput {
@@ -17761,6 +20930,12 @@ func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArgs) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSetting] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSetting]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArray and GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArrayInput` via:
 //
@@ -17786,6 +20961,12 @@ func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArray)
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArrayOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSetting] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSetting]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingOutput) ElementType() reflect.Type {
@@ -17798,6 +20979,12 @@ func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingOutput
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingOutput) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSetting] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSetting]{
+		OutputState: o.OutputState,
+	}
 }
 
 // ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
@@ -17831,6 +21018,12 @@ func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArrayO
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArrayOutput) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArrayOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSetting] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSetting]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArrayOutput) Index(i pulumi.IntInput) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingOutput {
@@ -17876,6 +21069,12 @@ func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtrac
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtract] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtract]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArray and GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArrayInput` via:
 //
@@ -17901,6 +21100,12 @@ func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtrac
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArrayOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtract] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtract]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractOutput) ElementType() reflect.Type {
@@ -17913,6 +21118,12 @@ func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtrac
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractOutput) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtract] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtract]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
@@ -17941,6 +21152,12 @@ func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtrac
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArrayOutput) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArrayOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtract] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtract]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArrayOutput) Index(i pulumi.IntInput) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractOutput {
@@ -17990,6 +21207,12 @@ func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplic
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicat] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicat]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArray and GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArrayInput` via:
 //
@@ -18015,6 +21238,12 @@ func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplic
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArrayOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicat] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicat]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatOutput) ElementType() reflect.Type {
@@ -18027,6 +21256,12 @@ func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplic
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatOutput) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicat] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicat]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Number of threads used to read trail files (valid for Parallel Replicat)
@@ -18062,6 +21297,12 @@ func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplic
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArrayOutput) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArrayOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicat] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicat]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArrayOutput) Index(i pulumi.IntInput) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatOutput {
@@ -18105,6 +21346,12 @@ func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContain
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredential] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredential]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArray and GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArrayInput` via:
 //
@@ -18130,6 +21377,12 @@ func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContain
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArrayOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredential] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredential]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialOutput) ElementType() reflect.Type {
@@ -18142,6 +21395,12 @@ func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContain
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialOutput) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredential] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialOutput) Password() pulumi.StringOutput {
@@ -18169,6 +21428,12 @@ func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContain
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArrayOutput) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArrayOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredential] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialArrayOutput) Index(i pulumi.IntInput) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialOutput {
@@ -18212,6 +21477,12 @@ func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCrede
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredential] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredential]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArray and GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArrayInput` via:
 //
@@ -18237,6 +21508,12 @@ func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCrede
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArrayOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredential] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredential]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialOutput) ElementType() reflect.Type {
@@ -18249,6 +21526,12 @@ func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCrede
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialOutput) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredential] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialOutput) Password() pulumi.StringOutput {
@@ -18276,6 +21559,12 @@ func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCrede
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArrayOutput) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArrayOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredential] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialArrayOutput) Index(i pulumi.IntInput) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialOutput {
@@ -18319,6 +21608,12 @@ func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCrede
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredential] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredential]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArray and GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArrayInput` via:
 //
@@ -18344,6 +21639,12 @@ func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCrede
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArrayOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredential] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredential]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialOutput) ElementType() reflect.Type {
@@ -18356,6 +21657,12 @@ func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCrede
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialOutput) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredential] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialOutput) Password() pulumi.StringOutput {
@@ -18383,6 +21690,12 @@ func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCrede
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArrayOutput) ToGetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArrayOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredential] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredential]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialArrayOutput) Index(i pulumi.IntInput) GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialOutput {
@@ -18436,6 +21749,12 @@ func (i GetMigrationsMigrationCollectionItemIncludeObjectArgs) ToGetMigrationsMi
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemIncludeObjectOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemIncludeObjectArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemIncludeObject] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemIncludeObject]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemIncludeObjectOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationsMigrationCollectionItemIncludeObjectArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemIncludeObjectArray and GetMigrationsMigrationCollectionItemIncludeObjectArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemIncludeObjectArrayInput` via:
 //
@@ -18461,6 +21780,12 @@ func (i GetMigrationsMigrationCollectionItemIncludeObjectArray) ToGetMigrationsM
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemIncludeObjectArrayOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemIncludeObjectArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemIncludeObject] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemIncludeObject]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemIncludeObjectArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationsMigrationCollectionItemIncludeObjectOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationsMigrationCollectionItemIncludeObjectOutput) ElementType() reflect.Type {
@@ -18473,6 +21798,12 @@ func (o GetMigrationsMigrationCollectionItemIncludeObjectOutput) ToGetMigrations
 
 func (o GetMigrationsMigrationCollectionItemIncludeObjectOutput) ToGetMigrationsMigrationCollectionItemIncludeObjectOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemIncludeObjectOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemIncludeObjectOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemIncludeObject] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemIncludeObject]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and that are included in the exludeObjects.
@@ -18509,6 +21840,12 @@ func (o GetMigrationsMigrationCollectionItemIncludeObjectArrayOutput) ToGetMigra
 
 func (o GetMigrationsMigrationCollectionItemIncludeObjectArrayOutput) ToGetMigrationsMigrationCollectionItemIncludeObjectArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemIncludeObjectArrayOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemIncludeObjectArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemIncludeObject] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemIncludeObject]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationsMigrationCollectionItemIncludeObjectArrayOutput) Index(i pulumi.IntInput) GetMigrationsMigrationCollectionItemIncludeObjectOutput {
@@ -18558,6 +21895,12 @@ func (i GetMigrationsMigrationCollectionItemVaultDetailArgs) ToGetMigrationsMigr
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemVaultDetailOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemVaultDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemVaultDetail] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemVaultDetail]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemVaultDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMigrationsMigrationCollectionItemVaultDetailArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemVaultDetailArray and GetMigrationsMigrationCollectionItemVaultDetailArrayOutput values.
 // You can construct a concrete instance of `GetMigrationsMigrationCollectionItemVaultDetailArrayInput` via:
 //
@@ -18583,6 +21926,12 @@ func (i GetMigrationsMigrationCollectionItemVaultDetailArray) ToGetMigrationsMig
 	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemVaultDetailArrayOutput)
 }
 
+func (i GetMigrationsMigrationCollectionItemVaultDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemVaultDetail] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemVaultDetail]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemVaultDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMigrationsMigrationCollectionItemVaultDetailOutput struct{ *pulumi.OutputState }
 
 func (GetMigrationsMigrationCollectionItemVaultDetailOutput) ElementType() reflect.Type {
@@ -18595,6 +21944,12 @@ func (o GetMigrationsMigrationCollectionItemVaultDetailOutput) ToGetMigrationsMi
 
 func (o GetMigrationsMigrationCollectionItemVaultDetailOutput) ToGetMigrationsMigrationCollectionItemVaultDetailOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemVaultDetailOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemVaultDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemVaultDetail] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemVaultDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -18624,6 +21979,12 @@ func (o GetMigrationsMigrationCollectionItemVaultDetailArrayOutput) ToGetMigrati
 
 func (o GetMigrationsMigrationCollectionItemVaultDetailArrayOutput) ToGetMigrationsMigrationCollectionItemVaultDetailArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemVaultDetailArrayOutput {
 	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemVaultDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemVaultDetail] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemVaultDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMigrationsMigrationCollectionItemVaultDetailArrayOutput) Index(i pulumi.IntInput) GetMigrationsMigrationCollectionItemVaultDetailOutput {

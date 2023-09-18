@@ -62,7 +62,7 @@ public class BdsInstancePatchAction extends com.pulumi.resources.CustomResource 
      * The OCID of the cluster.
      * 
      */
-    @Export(name="bdsInstanceId", type=String.class, parameters={})
+    @Export(name="bdsInstanceId", refs={String.class}, tree="[0]")
     private Output<String> bdsInstanceId;
 
     /**
@@ -76,7 +76,7 @@ public class BdsInstancePatchAction extends com.pulumi.resources.CustomResource 
      * Base-64 encoded password for the cluster admin user.
      * 
      */
-    @Export(name="clusterAdminPassword", type=String.class, parameters={})
+    @Export(name="clusterAdminPassword", refs={String.class}, tree="[0]")
     private Output<String> clusterAdminPassword;
 
     /**
@@ -93,7 +93,7 @@ public class BdsInstancePatchAction extends com.pulumi.resources.CustomResource 
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="version", type=String.class, parameters={})
+    @Export(name="version", refs={String.class}, tree="[0]")
     private Output<String> version;
 
     /**

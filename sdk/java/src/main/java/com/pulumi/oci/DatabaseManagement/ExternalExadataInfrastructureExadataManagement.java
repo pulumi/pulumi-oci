@@ -66,7 +66,7 @@ public class ExternalExadataInfrastructureExadataManagement extends com.pulumi.r
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="enableExadata", type=Boolean.class, parameters={})
+    @Export(name="enableExadata", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableExadata;
 
     /**
@@ -83,7 +83,7 @@ public class ExternalExadataInfrastructureExadataManagement extends com.pulumi.r
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      * 
      */
-    @Export(name="externalExadataInfrastructureId", type=String.class, parameters={})
+    @Export(name="externalExadataInfrastructureId", refs={String.class}, tree="[0]")
     private Output<String> externalExadataInfrastructureId;
 
     /**
@@ -97,7 +97,7 @@ public class ExternalExadataInfrastructureExadataManagement extends com.pulumi.r
      * The Oracle license model.
      * 
      */
-    @Export(name="licenseModel", type=String.class, parameters={})
+    @Export(name="licenseModel", refs={String.class}, tree="[0]")
     private Output<String> licenseModel;
 
     /**

@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Security Question Setting resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -993,6 +994,12 @@ func (i *DomainsSecurityQuestionSetting) ToDomainsSecurityQuestionSettingOutputW
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsSecurityQuestionSettingOutput)
 }
 
+func (i *DomainsSecurityQuestionSetting) ToOutput(ctx context.Context) pulumix.Output[*DomainsSecurityQuestionSetting] {
+	return pulumix.Output[*DomainsSecurityQuestionSetting]{
+		OutputState: i.ToDomainsSecurityQuestionSettingOutputWithContext(ctx).OutputState,
+	}
+}
+
 // DomainsSecurityQuestionSettingArrayInput is an input type that accepts DomainsSecurityQuestionSettingArray and DomainsSecurityQuestionSettingArrayOutput values.
 // You can construct a concrete instance of `DomainsSecurityQuestionSettingArrayInput` via:
 //
@@ -1016,6 +1023,12 @@ func (i DomainsSecurityQuestionSettingArray) ToDomainsSecurityQuestionSettingArr
 
 func (i DomainsSecurityQuestionSettingArray) ToDomainsSecurityQuestionSettingArrayOutputWithContext(ctx context.Context) DomainsSecurityQuestionSettingArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsSecurityQuestionSettingArrayOutput)
+}
+
+func (i DomainsSecurityQuestionSettingArray) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsSecurityQuestionSetting] {
+	return pulumix.Output[[]*DomainsSecurityQuestionSetting]{
+		OutputState: i.ToDomainsSecurityQuestionSettingArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // DomainsSecurityQuestionSettingMapInput is an input type that accepts DomainsSecurityQuestionSettingMap and DomainsSecurityQuestionSettingMapOutput values.
@@ -1043,6 +1056,12 @@ func (i DomainsSecurityQuestionSettingMap) ToDomainsSecurityQuestionSettingMapOu
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsSecurityQuestionSettingMapOutput)
 }
 
+func (i DomainsSecurityQuestionSettingMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsSecurityQuestionSetting] {
+	return pulumix.Output[map[string]*DomainsSecurityQuestionSetting]{
+		OutputState: i.ToDomainsSecurityQuestionSettingMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type DomainsSecurityQuestionSettingOutput struct{ *pulumi.OutputState }
 
 func (DomainsSecurityQuestionSettingOutput) ElementType() reflect.Type {
@@ -1055,6 +1074,12 @@ func (o DomainsSecurityQuestionSettingOutput) ToDomainsSecurityQuestionSettingOu
 
 func (o DomainsSecurityQuestionSettingOutput) ToDomainsSecurityQuestionSettingOutputWithContext(ctx context.Context) DomainsSecurityQuestionSettingOutput {
 	return o
+}
+
+func (o DomainsSecurityQuestionSettingOutput) ToOutput(ctx context.Context) pulumix.Output[*DomainsSecurityQuestionSetting] {
+	return pulumix.Output[*DomainsSecurityQuestionSetting]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
@@ -1361,6 +1386,12 @@ func (o DomainsSecurityQuestionSettingArrayOutput) ToDomainsSecurityQuestionSett
 	return o
 }
 
+func (o DomainsSecurityQuestionSettingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsSecurityQuestionSetting] {
+	return pulumix.Output[[]*DomainsSecurityQuestionSetting]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o DomainsSecurityQuestionSettingArrayOutput) Index(i pulumi.IntInput) DomainsSecurityQuestionSettingOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DomainsSecurityQuestionSetting {
 		return vs[0].([]*DomainsSecurityQuestionSetting)[vs[1].(int)]
@@ -1379,6 +1410,12 @@ func (o DomainsSecurityQuestionSettingMapOutput) ToDomainsSecurityQuestionSettin
 
 func (o DomainsSecurityQuestionSettingMapOutput) ToDomainsSecurityQuestionSettingMapOutputWithContext(ctx context.Context) DomainsSecurityQuestionSettingMapOutput {
 	return o
+}
+
+func (o DomainsSecurityQuestionSettingMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsSecurityQuestionSetting] {
+	return pulumix.Output[map[string]*DomainsSecurityQuestionSetting]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o DomainsSecurityQuestionSettingMapOutput) MapIndex(k pulumi.StringInput) DomainsSecurityQuestionSettingOutput {

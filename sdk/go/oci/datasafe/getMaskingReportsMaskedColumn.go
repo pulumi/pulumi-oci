@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Masking Reports Masked Column resource in Oracle Cloud Infrastructure Data Safe service.
@@ -143,6 +144,12 @@ func (o GetMaskingReportsMaskedColumnResultOutput) ToGetMaskingReportsMaskedColu
 
 func (o GetMaskingReportsMaskedColumnResultOutput) ToGetMaskingReportsMaskedColumnResultOutputWithContext(ctx context.Context) GetMaskingReportsMaskedColumnResultOutput {
 	return o
+}
+
+func (o GetMaskingReportsMaskedColumnResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMaskingReportsMaskedColumnResult] {
+	return pulumix.Output[GetMaskingReportsMaskedColumnResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the masked column.

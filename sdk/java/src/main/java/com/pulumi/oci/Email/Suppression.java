@@ -67,7 +67,7 @@ public class Suppression extends com.pulumi.resources.CustomResource {
      * The OCID of the compartment to contain the suppression. Since suppressions are at the customer level, this must be the tenancy OCID.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -84,7 +84,7 @@ public class Suppression extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="emailAddress", type=String.class, parameters={})
+    @Export(name="emailAddress", refs={String.class}, tree="[0]")
     private Output<String> emailAddress;
 
     /**
@@ -101,7 +101,7 @@ public class Suppression extends com.pulumi.resources.CustomResource {
      * The specific error message returned by a system that resulted in the suppression. This message is usually an SMTP error code with additional descriptive text. Not provided for all types of suppressions.
      * 
      */
-    @Export(name="errorDetail", type=String.class, parameters={})
+    @Export(name="errorDetail", refs={String.class}, tree="[0]")
     private Output<String> errorDetail;
 
     /**
@@ -115,7 +115,7 @@ public class Suppression extends com.pulumi.resources.CustomResource {
      * DNS name of the source of the error that caused the suppression. Will be set to either the remote-mta or reporting-mta field from a delivery status notification (RFC 3464) when available. Not provided for all types of suppressions, and not always known.
      * 
      */
-    @Export(name="errorSource", type=String.class, parameters={})
+    @Export(name="errorSource", refs={String.class}, tree="[0]")
     private Output<String> errorSource;
 
     /**
@@ -129,7 +129,7 @@ public class Suppression extends com.pulumi.resources.CustomResource {
      * The value of the Message-ID header from the email that triggered a suppression. This value is as defined in RFC 5322 section 3.6.4, excluding angle-brackets. Not provided for all types of suppressions.
      * 
      */
-    @Export(name="messageId", type=String.class, parameters={})
+    @Export(name="messageId", refs={String.class}, tree="[0]")
     private Output<String> messageId;
 
     /**
@@ -143,7 +143,7 @@ public class Suppression extends com.pulumi.resources.CustomResource {
      * The reason that the email address was suppressed. For more information on the types of bounces, see [Suppression List](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
      * 
      */
-    @Export(name="reason", type=String.class, parameters={})
+    @Export(name="reason", refs={String.class}, tree="[0]")
     private Output<String> reason;
 
     /**
@@ -157,7 +157,7 @@ public class Suppression extends com.pulumi.resources.CustomResource {
      * The date and time a recipient&#39;s email address was added to the suppression list, in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -171,7 +171,7 @@ public class Suppression extends com.pulumi.resources.CustomResource {
      * The last date and time the suppression prevented submission in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
      */
-    @Export(name="timeLastSuppressed", type=String.class, parameters={})
+    @Export(name="timeLastSuppressed", refs={String.class}, tree="[0]")
     private Output<String> timeLastSuppressed;
 
     /**

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetTargetDatabaseRole(ctx *pulumi.Context, args *GetTargetDatabaseRoleArgs, opts ...pulumi.InvokeOption) (*GetTargetDatabaseRoleResult, error) {
@@ -84,6 +85,12 @@ func (o GetTargetDatabaseRoleResultOutput) ToGetTargetDatabaseRoleResultOutput()
 
 func (o GetTargetDatabaseRoleResultOutput) ToGetTargetDatabaseRoleResultOutputWithContext(ctx context.Context) GetTargetDatabaseRoleResultOutput {
 	return o
+}
+
+func (o GetTargetDatabaseRoleResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetDatabaseRoleResult] {
+	return pulumix.Output[GetTargetDatabaseRoleResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetTargetDatabaseRoleResultOutput) AuthenticationType() pulumi.StringPtrOutput {

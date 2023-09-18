@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the External Cluster Instance resource in Oracle Cloud Infrastructure Database Management service.
@@ -221,6 +222,12 @@ func (i *ExternalClusterInstance) ToExternalClusterInstanceOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalClusterInstanceOutput)
 }
 
+func (i *ExternalClusterInstance) ToOutput(ctx context.Context) pulumix.Output[*ExternalClusterInstance] {
+	return pulumix.Output[*ExternalClusterInstance]{
+		OutputState: i.ToExternalClusterInstanceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ExternalClusterInstanceArrayInput is an input type that accepts ExternalClusterInstanceArray and ExternalClusterInstanceArrayOutput values.
 // You can construct a concrete instance of `ExternalClusterInstanceArrayInput` via:
 //
@@ -244,6 +251,12 @@ func (i ExternalClusterInstanceArray) ToExternalClusterInstanceArrayOutput() Ext
 
 func (i ExternalClusterInstanceArray) ToExternalClusterInstanceArrayOutputWithContext(ctx context.Context) ExternalClusterInstanceArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalClusterInstanceArrayOutput)
+}
+
+func (i ExternalClusterInstanceArray) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalClusterInstance] {
+	return pulumix.Output[[]*ExternalClusterInstance]{
+		OutputState: i.ToExternalClusterInstanceArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // ExternalClusterInstanceMapInput is an input type that accepts ExternalClusterInstanceMap and ExternalClusterInstanceMapOutput values.
@@ -271,6 +284,12 @@ func (i ExternalClusterInstanceMap) ToExternalClusterInstanceMapOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalClusterInstanceMapOutput)
 }
 
+func (i ExternalClusterInstanceMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalClusterInstance] {
+	return pulumix.Output[map[string]*ExternalClusterInstance]{
+		OutputState: i.ToExternalClusterInstanceMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ExternalClusterInstanceOutput struct{ *pulumi.OutputState }
 
 func (ExternalClusterInstanceOutput) ElementType() reflect.Type {
@@ -283,6 +302,12 @@ func (o ExternalClusterInstanceOutput) ToExternalClusterInstanceOutput() Externa
 
 func (o ExternalClusterInstanceOutput) ToExternalClusterInstanceOutputWithContext(ctx context.Context) ExternalClusterInstanceOutput {
 	return o
+}
+
+func (o ExternalClusterInstanceOutput) ToOutput(ctx context.Context) pulumix.Output[*ExternalClusterInstance] {
+	return pulumix.Output[*ExternalClusterInstance]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
@@ -382,6 +407,12 @@ func (o ExternalClusterInstanceArrayOutput) ToExternalClusterInstanceArrayOutput
 	return o
 }
 
+func (o ExternalClusterInstanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalClusterInstance] {
+	return pulumix.Output[[]*ExternalClusterInstance]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o ExternalClusterInstanceArrayOutput) Index(i pulumi.IntInput) ExternalClusterInstanceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ExternalClusterInstance {
 		return vs[0].([]*ExternalClusterInstance)[vs[1].(int)]
@@ -400,6 +431,12 @@ func (o ExternalClusterInstanceMapOutput) ToExternalClusterInstanceMapOutput() E
 
 func (o ExternalClusterInstanceMapOutput) ToExternalClusterInstanceMapOutputWithContext(ctx context.Context) ExternalClusterInstanceMapOutput {
 	return o
+}
+
+func (o ExternalClusterInstanceMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalClusterInstance] {
+	return pulumix.Output[map[string]*ExternalClusterInstance]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ExternalClusterInstanceMapOutput) MapIndex(k pulumi.StringInput) ExternalClusterInstanceOutput {

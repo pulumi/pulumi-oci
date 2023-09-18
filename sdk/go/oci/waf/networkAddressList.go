@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Network Address List resource in Oracle Cloud Infrastructure Waf service.
@@ -251,6 +252,12 @@ func (i *NetworkAddressList) ToNetworkAddressListOutputWithContext(ctx context.C
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkAddressListOutput)
 }
 
+func (i *NetworkAddressList) ToOutput(ctx context.Context) pulumix.Output[*NetworkAddressList] {
+	return pulumix.Output[*NetworkAddressList]{
+		OutputState: i.ToNetworkAddressListOutputWithContext(ctx).OutputState,
+	}
+}
+
 // NetworkAddressListArrayInput is an input type that accepts NetworkAddressListArray and NetworkAddressListArrayOutput values.
 // You can construct a concrete instance of `NetworkAddressListArrayInput` via:
 //
@@ -274,6 +281,12 @@ func (i NetworkAddressListArray) ToNetworkAddressListArrayOutput() NetworkAddres
 
 func (i NetworkAddressListArray) ToNetworkAddressListArrayOutputWithContext(ctx context.Context) NetworkAddressListArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkAddressListArrayOutput)
+}
+
+func (i NetworkAddressListArray) ToOutput(ctx context.Context) pulumix.Output[[]*NetworkAddressList] {
+	return pulumix.Output[[]*NetworkAddressList]{
+		OutputState: i.ToNetworkAddressListArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // NetworkAddressListMapInput is an input type that accepts NetworkAddressListMap and NetworkAddressListMapOutput values.
@@ -301,6 +314,12 @@ func (i NetworkAddressListMap) ToNetworkAddressListMapOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkAddressListMapOutput)
 }
 
+func (i NetworkAddressListMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*NetworkAddressList] {
+	return pulumix.Output[map[string]*NetworkAddressList]{
+		OutputState: i.ToNetworkAddressListMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type NetworkAddressListOutput struct{ *pulumi.OutputState }
 
 func (NetworkAddressListOutput) ElementType() reflect.Type {
@@ -313,6 +332,12 @@ func (o NetworkAddressListOutput) ToNetworkAddressListOutput() NetworkAddressLis
 
 func (o NetworkAddressListOutput) ToNetworkAddressListOutputWithContext(ctx context.Context) NetworkAddressListOutput {
 	return o
+}
+
+func (o NetworkAddressListOutput) ToOutput(ctx context.Context) pulumix.Output[*NetworkAddressList] {
+	return pulumix.Output[*NetworkAddressList]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) A private IP address or CIDR IP address range.
@@ -389,6 +414,12 @@ func (o NetworkAddressListArrayOutput) ToNetworkAddressListArrayOutputWithContex
 	return o
 }
 
+func (o NetworkAddressListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*NetworkAddressList] {
+	return pulumix.Output[[]*NetworkAddressList]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o NetworkAddressListArrayOutput) Index(i pulumi.IntInput) NetworkAddressListOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *NetworkAddressList {
 		return vs[0].([]*NetworkAddressList)[vs[1].(int)]
@@ -407,6 +438,12 @@ func (o NetworkAddressListMapOutput) ToNetworkAddressListMapOutput() NetworkAddr
 
 func (o NetworkAddressListMapOutput) ToNetworkAddressListMapOutputWithContext(ctx context.Context) NetworkAddressListMapOutput {
 	return o
+}
+
+func (o NetworkAddressListMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*NetworkAddressList] {
+	return pulumix.Output[map[string]*NetworkAddressList]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o NetworkAddressListMapOutput) MapIndex(k pulumi.StringInput) NetworkAddressListOutput {

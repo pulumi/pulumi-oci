@@ -77,7 +77,7 @@ public class VolumeAttachment extends com.pulumi.resources.CustomResource {
      * The type of volume. The only supported values are &#34;iscsi&#34; and &#34;paravirtualized&#34;.
      * 
      */
-    @Export(name="attachmentType", type=String.class, parameters={})
+    @Export(name="attachmentType", refs={String.class}, tree="[0]")
     private Output<String> attachmentType;
 
     /**
@@ -91,7 +91,7 @@ public class VolumeAttachment extends com.pulumi.resources.CustomResource {
      * The availability domain of an instance.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    @Export(name="availabilityDomain", type=String.class, parameters={})
+    @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
     private Output<String> availabilityDomain;
 
     /**
@@ -105,7 +105,7 @@ public class VolumeAttachment extends com.pulumi.resources.CustomResource {
      * The Challenge-Handshake-Authentication-Protocol (CHAP) secret valid for the associated CHAP user name. (Also called the &#34;CHAP password&#34;.)
      * 
      */
-    @Export(name="chapSecret", type=String.class, parameters={})
+    @Export(name="chapSecret", refs={String.class}, tree="[0]")
     private Output<String> chapSecret;
 
     /**
@@ -119,7 +119,7 @@ public class VolumeAttachment extends com.pulumi.resources.CustomResource {
      * The volume&#39;s system-generated Challenge-Handshake-Authentication-Protocol (CHAP) user name. See [RFC 1994](https://tools.ietf.org/html/rfc1994) for more on CHAP.  Example: `ocid1.volume.oc1.phx.&lt;unique_ID&gt;`
      * 
      */
-    @Export(name="chapUsername", type=String.class, parameters={})
+    @Export(name="chapUsername", refs={String.class}, tree="[0]")
     private Output<String> chapUsername;
 
     /**
@@ -137,7 +137,7 @@ public class VolumeAttachment extends com.pulumi.resources.CustomResource {
      * 
      */
     @Deprecated /* The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field. */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -151,7 +151,7 @@ public class VolumeAttachment extends com.pulumi.resources.CustomResource {
      * The device name. To retrieve a list of devices for a given instance, see [ListInstanceDevices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Device/ListInstanceDevices).
      * 
      */
-    @Export(name="device", type=String.class, parameters={})
+    @Export(name="device", refs={String.class}, tree="[0]")
     private Output<String> device;
 
     /**
@@ -165,7 +165,7 @@ public class VolumeAttachment extends com.pulumi.resources.CustomResource {
      * A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -179,7 +179,7 @@ public class VolumeAttachment extends com.pulumi.resources.CustomResource {
      * Refer the top-level definition of encryptionInTransitType. The default value is NONE.
      * 
      */
-    @Export(name="encryptionInTransitType", type=String.class, parameters={})
+    @Export(name="encryptionInTransitType", refs={String.class}, tree="[0]")
     private Output<String> encryptionInTransitType;
 
     /**
@@ -193,7 +193,7 @@ public class VolumeAttachment extends com.pulumi.resources.CustomResource {
      * The OCID of the instance.
      * 
      */
-    @Export(name="instanceId", type=String.class, parameters={})
+    @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
@@ -207,7 +207,7 @@ public class VolumeAttachment extends com.pulumi.resources.CustomResource {
      * The volume&#39;s iSCSI IP address.  Example: `169.254.2.2`
      * 
      */
-    @Export(name="ipv4", type=String.class, parameters={})
+    @Export(name="ipv4", refs={String.class}, tree="[0]")
     private Output<String> ipv4;
 
     /**
@@ -221,7 +221,7 @@ public class VolumeAttachment extends com.pulumi.resources.CustomResource {
      * The target volume&#39;s iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
      * 
      */
-    @Export(name="iqn", type=String.class, parameters={})
+    @Export(name="iqn", refs={String.class}, tree="[0]")
     private Output<String> iqn;
 
     /**
@@ -235,7 +235,7 @@ public class VolumeAttachment extends com.pulumi.resources.CustomResource {
      * Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
      * 
      */
-    @Export(name="isAgentAutoIscsiLoginEnabled", type=Boolean.class, parameters={})
+    @Export(name="isAgentAutoIscsiLoginEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isAgentAutoIscsiLoginEnabled;
 
     /**
@@ -249,7 +249,7 @@ public class VolumeAttachment extends com.pulumi.resources.CustomResource {
      * Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
      * 
      */
-    @Export(name="isMultipath", type=Boolean.class, parameters={})
+    @Export(name="isMultipath", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isMultipath;
 
     /**
@@ -263,7 +263,7 @@ public class VolumeAttachment extends com.pulumi.resources.CustomResource {
      * Whether to enable in-transit encryption for the data volume&#39;s paravirtualized attachment. The default value is false.
      * 
      */
-    @Export(name="isPvEncryptionInTransitEnabled", type=Boolean.class, parameters={})
+    @Export(name="isPvEncryptionInTransitEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isPvEncryptionInTransitEnabled;
 
     /**
@@ -277,7 +277,7 @@ public class VolumeAttachment extends com.pulumi.resources.CustomResource {
      * Whether the attachment was created in read-only mode.
      * 
      */
-    @Export(name="isReadOnly", type=Boolean.class, parameters={})
+    @Export(name="isReadOnly", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isReadOnly;
 
     /**
@@ -291,7 +291,7 @@ public class VolumeAttachment extends com.pulumi.resources.CustomResource {
      * Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
      * 
      */
-    @Export(name="isShareable", type=Boolean.class, parameters={})
+    @Export(name="isShareable", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isShareable;
 
     /**
@@ -305,7 +305,7 @@ public class VolumeAttachment extends com.pulumi.resources.CustomResource {
      * The iscsi login state of the volume attachment. For a Iscsi volume attachment, all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
      * 
      */
-    @Export(name="iscsiLoginState", type=String.class, parameters={})
+    @Export(name="iscsiLoginState", refs={String.class}, tree="[0]")
     private Output<String> iscsiLoginState;
 
     /**
@@ -319,7 +319,7 @@ public class VolumeAttachment extends com.pulumi.resources.CustomResource {
      * A list of secondary multipath devices
      * 
      */
-    @Export(name="multipathDevices", type=List.class, parameters={VolumeAttachmentMultipathDevice.class})
+    @Export(name="multipathDevices", refs={List.class,VolumeAttachmentMultipathDevice.class}, tree="[0,1]")
     private Output<List<VolumeAttachmentMultipathDevice>> multipathDevices;
 
     /**
@@ -333,7 +333,7 @@ public class VolumeAttachment extends com.pulumi.resources.CustomResource {
      * The volume&#39;s iSCSI port, usually port 860 or 3260.  Example: `3260`
      * 
      */
-    @Export(name="port", type=Integer.class, parameters={})
+    @Export(name="port", refs={Integer.class}, tree="[0]")
     private Output<Integer> port;
 
     /**
@@ -347,7 +347,7 @@ public class VolumeAttachment extends com.pulumi.resources.CustomResource {
      * The current state of the volume attachment.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -361,7 +361,7 @@ public class VolumeAttachment extends com.pulumi.resources.CustomResource {
      * The date and time the volume was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -375,7 +375,7 @@ public class VolumeAttachment extends com.pulumi.resources.CustomResource {
      * Whether to use CHAP authentication for the volume attachment. Defaults to false.
      * 
      */
-    @Export(name="useChap", type=Boolean.class, parameters={})
+    @Export(name="useChap", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> useChap;
 
     /**
@@ -392,7 +392,7 @@ public class VolumeAttachment extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="volumeId", type=String.class, parameters={})
+    @Export(name="volumeId", refs={String.class}, tree="[0]")
     private Output<String> volumeId;
 
     /**

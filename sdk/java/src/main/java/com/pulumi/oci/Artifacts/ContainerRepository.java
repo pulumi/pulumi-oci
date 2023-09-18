@@ -78,7 +78,7 @@ public class ContainerRepository extends com.pulumi.resources.CustomResource {
      * Total storage size in GBs that will be charged.
      * 
      */
-    @Export(name="billableSizeInGbs", type=String.class, parameters={})
+    @Export(name="billableSizeInGbs", refs={String.class}, tree="[0]")
     private Output<String> billableSizeInGbs;
 
     /**
@@ -92,7 +92,7 @@ public class ContainerRepository extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the resource.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -106,7 +106,7 @@ public class ContainerRepository extends com.pulumi.resources.CustomResource {
      * The id of the user or principal that created the resource.
      * 
      */
-    @Export(name="createdBy", type=String.class, parameters={})
+    @Export(name="createdBy", refs={String.class}, tree="[0]")
     private Output<String> createdBy;
 
     /**
@@ -120,7 +120,7 @@ public class ContainerRepository extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -134,7 +134,7 @@ public class ContainerRepository extends com.pulumi.resources.CustomResource {
      * The container repository name.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -148,7 +148,7 @@ public class ContainerRepository extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -162,7 +162,7 @@ public class ContainerRepository extends com.pulumi.resources.CustomResource {
      * Total number of images.
      * 
      */
-    @Export(name="imageCount", type=Integer.class, parameters={})
+    @Export(name="imageCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> imageCount;
 
     /**
@@ -176,7 +176,7 @@ public class ContainerRepository extends com.pulumi.resources.CustomResource {
      * (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
      * 
      */
-    @Export(name="isImmutable", type=Boolean.class, parameters={})
+    @Export(name="isImmutable", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isImmutable;
 
     /**
@@ -190,7 +190,7 @@ public class ContainerRepository extends com.pulumi.resources.CustomResource {
      * (Updatable) Whether the repository is public. A public repository allows unauthenticated access.
      * 
      */
-    @Export(name="isPublic", type=Boolean.class, parameters={})
+    @Export(name="isPublic", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isPublic;
 
     /**
@@ -204,7 +204,7 @@ public class ContainerRepository extends com.pulumi.resources.CustomResource {
      * Total number of layers.
      * 
      */
-    @Export(name="layerCount", type=Integer.class, parameters={})
+    @Export(name="layerCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> layerCount;
 
     /**
@@ -218,7 +218,7 @@ public class ContainerRepository extends com.pulumi.resources.CustomResource {
      * Total storage in bytes consumed by layers.
      * 
      */
-    @Export(name="layersSizeInBytes", type=String.class, parameters={})
+    @Export(name="layersSizeInBytes", refs={String.class}, tree="[0]")
     private Output<String> layersSizeInBytes;
 
     /**
@@ -232,7 +232,7 @@ public class ContainerRepository extends com.pulumi.resources.CustomResource {
      * The tenancy namespace used in the container repository path.
      * 
      */
-    @Export(name="namespace", type=String.class, parameters={})
+    @Export(name="namespace", refs={String.class}, tree="[0]")
     private Output<String> namespace;
 
     /**
@@ -246,7 +246,7 @@ public class ContainerRepository extends com.pulumi.resources.CustomResource {
      * (Updatable) Container repository readme.
      * 
      */
-    @Export(name="readme", type=ContainerRepositoryReadme.class, parameters={})
+    @Export(name="readme", refs={ContainerRepositoryReadme.class}, tree="[0]")
     private Output<ContainerRepositoryReadme> readme;
 
     /**
@@ -260,7 +260,7 @@ public class ContainerRepository extends com.pulumi.resources.CustomResource {
      * The current state of the container repository.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -274,7 +274,7 @@ public class ContainerRepository extends com.pulumi.resources.CustomResource {
      * The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -288,7 +288,7 @@ public class ContainerRepository extends com.pulumi.resources.CustomResource {
      * An RFC 3339 timestamp indicating when the repository was created.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -302,7 +302,7 @@ public class ContainerRepository extends com.pulumi.resources.CustomResource {
      * An RFC 3339 timestamp indicating when an image was last pushed to the repository.
      * 
      */
-    @Export(name="timeLastPushed", type=String.class, parameters={})
+    @Export(name="timeLastPushed", refs={String.class}, tree="[0]")
     private Output<String> timeLastPushed;
 
     /**

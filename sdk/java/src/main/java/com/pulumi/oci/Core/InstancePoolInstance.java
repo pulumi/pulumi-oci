@@ -68,7 +68,7 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:Core/instancePoolInstance:InstancePoolInstance")
 public class InstancePoolInstance extends com.pulumi.resources.CustomResource {
-    @Export(name="autoTerminateInstanceOnDelete", type=Boolean.class, parameters={})
+    @Export(name="autoTerminateInstanceOnDelete", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> autoTerminateInstanceOnDelete;
 
     public Output<Optional<Boolean>> autoTerminateInstanceOnDelete() {
@@ -78,7 +78,7 @@ public class InstancePoolInstance extends com.pulumi.resources.CustomResource {
      * The availability domain the instance is running in.
      * 
      */
-    @Export(name="availabilityDomain", type=String.class, parameters={})
+    @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
     private Output<String> availabilityDomain;
 
     /**
@@ -92,7 +92,7 @@ public class InstancePoolInstance extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the instance.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -102,7 +102,7 @@ public class InstancePoolInstance extends com.pulumi.resources.CustomResource {
     public Output<String> compartmentId() {
         return this.compartmentId;
     }
-    @Export(name="decrementSizeOnDelete", type=Boolean.class, parameters={})
+    @Export(name="decrementSizeOnDelete", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> decrementSizeOnDelete;
 
     public Output<Optional<Boolean>> decrementSizeOnDelete() {
@@ -112,7 +112,7 @@ public class InstancePoolInstance extends com.pulumi.resources.CustomResource {
      * A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -126,7 +126,7 @@ public class InstancePoolInstance extends com.pulumi.resources.CustomResource {
      * The fault domain the instance is running in.
      * 
      */
-    @Export(name="faultDomain", type=String.class, parameters={})
+    @Export(name="faultDomain", refs={String.class}, tree="[0]")
     private Output<String> faultDomain;
 
     /**
@@ -140,7 +140,7 @@ public class InstancePoolInstance extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration used to create the instance.
      * 
      */
-    @Export(name="instanceConfigurationId", type=String.class, parameters={})
+    @Export(name="instanceConfigurationId", refs={String.class}, tree="[0]")
     private Output<String> instanceConfigurationId;
 
     /**
@@ -154,7 +154,7 @@ public class InstancePoolInstance extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
      * 
      */
-    @Export(name="instanceId", type=String.class, parameters={})
+    @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
@@ -171,7 +171,7 @@ public class InstancePoolInstance extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="instancePoolId", type=String.class, parameters={})
+    @Export(name="instancePoolId", refs={String.class}, tree="[0]")
     private Output<String> instancePoolId;
 
     /**
@@ -188,7 +188,7 @@ public class InstancePoolInstance extends com.pulumi.resources.CustomResource {
      * The load balancer backends that are configured for the instance pool instance.
      * 
      */
-    @Export(name="loadBalancerBackends", type=List.class, parameters={InstancePoolInstanceLoadBalancerBackend.class})
+    @Export(name="loadBalancerBackends", refs={List.class,InstancePoolInstanceLoadBalancerBackend.class}, tree="[0,1]")
     private Output<List<InstancePoolInstanceLoadBalancerBackend>> loadBalancerBackends;
 
     /**
@@ -202,7 +202,7 @@ public class InstancePoolInstance extends com.pulumi.resources.CustomResource {
      * The region that contains the availability domain the instance is running in.
      * 
      */
-    @Export(name="region", type=String.class, parameters={})
+    @Export(name="region", refs={String.class}, tree="[0]")
     private Output<String> region;
 
     /**
@@ -216,7 +216,7 @@ public class InstancePoolInstance extends com.pulumi.resources.CustomResource {
      * The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
      * 
      */
-    @Export(name="shape", type=String.class, parameters={})
+    @Export(name="shape", refs={String.class}, tree="[0]")
     private Output<String> shape;
 
     /**
@@ -230,7 +230,7 @@ public class InstancePoolInstance extends com.pulumi.resources.CustomResource {
      * The lifecycle state of the instance. Refer to `lifecycleState` in the [Instance](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance) resource.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -244,7 +244,7 @@ public class InstancePoolInstance extends com.pulumi.resources.CustomResource {
      * The date and time the instance pool instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**

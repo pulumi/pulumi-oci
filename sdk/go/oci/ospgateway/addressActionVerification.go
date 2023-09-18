@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Address Action Verification resource in Oracle Cloud Infrastructure Osp Gateway service.
@@ -471,6 +472,12 @@ func (i *AddressActionVerification) ToAddressActionVerificationOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(AddressActionVerificationOutput)
 }
 
+func (i *AddressActionVerification) ToOutput(ctx context.Context) pulumix.Output[*AddressActionVerification] {
+	return pulumix.Output[*AddressActionVerification]{
+		OutputState: i.ToAddressActionVerificationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AddressActionVerificationArrayInput is an input type that accepts AddressActionVerificationArray and AddressActionVerificationArrayOutput values.
 // You can construct a concrete instance of `AddressActionVerificationArrayInput` via:
 //
@@ -494,6 +501,12 @@ func (i AddressActionVerificationArray) ToAddressActionVerificationArrayOutput()
 
 func (i AddressActionVerificationArray) ToAddressActionVerificationArrayOutputWithContext(ctx context.Context) AddressActionVerificationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AddressActionVerificationArrayOutput)
+}
+
+func (i AddressActionVerificationArray) ToOutput(ctx context.Context) pulumix.Output[[]*AddressActionVerification] {
+	return pulumix.Output[[]*AddressActionVerification]{
+		OutputState: i.ToAddressActionVerificationArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // AddressActionVerificationMapInput is an input type that accepts AddressActionVerificationMap and AddressActionVerificationMapOutput values.
@@ -521,6 +534,12 @@ func (i AddressActionVerificationMap) ToAddressActionVerificationMapOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(AddressActionVerificationMapOutput)
 }
 
+func (i AddressActionVerificationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AddressActionVerification] {
+	return pulumix.Output[map[string]*AddressActionVerification]{
+		OutputState: i.ToAddressActionVerificationMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AddressActionVerificationOutput struct{ *pulumi.OutputState }
 
 func (AddressActionVerificationOutput) ElementType() reflect.Type {
@@ -533,6 +552,12 @@ func (o AddressActionVerificationOutput) ToAddressActionVerificationOutput() Add
 
 func (o AddressActionVerificationOutput) ToAddressActionVerificationOutputWithContext(ctx context.Context) AddressActionVerificationOutput {
 	return o
+}
+
+func (o AddressActionVerificationOutput) ToOutput(ctx context.Context) pulumix.Output[*AddressActionVerification] {
+	return pulumix.Output[*AddressActionVerification]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Address identifier.
@@ -707,6 +732,12 @@ func (o AddressActionVerificationArrayOutput) ToAddressActionVerificationArrayOu
 	return o
 }
 
+func (o AddressActionVerificationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AddressActionVerification] {
+	return pulumix.Output[[]*AddressActionVerification]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AddressActionVerificationArrayOutput) Index(i pulumi.IntInput) AddressActionVerificationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AddressActionVerification {
 		return vs[0].([]*AddressActionVerification)[vs[1].(int)]
@@ -725,6 +756,12 @@ func (o AddressActionVerificationMapOutput) ToAddressActionVerificationMapOutput
 
 func (o AddressActionVerificationMapOutput) ToAddressActionVerificationMapOutputWithContext(ctx context.Context) AddressActionVerificationMapOutput {
 	return o
+}
+
+func (o AddressActionVerificationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AddressActionVerification] {
+	return pulumix.Output[map[string]*AddressActionVerification]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AddressActionVerificationMapOutput) MapIndex(k pulumi.StringInput) AddressActionVerificationOutput {

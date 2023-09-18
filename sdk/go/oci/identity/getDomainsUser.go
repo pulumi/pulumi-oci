@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific User resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -240,6 +241,12 @@ func (o LookupDomainsUserResultOutput) ToLookupDomainsUserResultOutput() LookupD
 
 func (o LookupDomainsUserResultOutput) ToLookupDomainsUserResultOutputWithContext(ctx context.Context) LookupDomainsUserResultOutput {
 	return o
+}
+
+func (o LookupDomainsUserResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDomainsUserResult] {
+	return pulumix.Output[LookupDomainsUserResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Status of the account

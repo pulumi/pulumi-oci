@@ -34,7 +34,7 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of a compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -48,7 +48,7 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -62,7 +62,7 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-friendly description. Avoid entering confidential information.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -76,7 +76,7 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-friendly name. It does not have to be unique. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -90,7 +90,7 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      * (Updatable) An array of DNS zone names. Example: `[ &#34;app.examplecorp.com&#34;, &#34;app.examplecorp2.com&#34; ]`
      * 
      */
-    @Export(name="dnsZones", type=List.class, parameters={String.class})
+    @Export(name="dnsZones", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> dnsZones;
 
     /**
@@ -104,7 +104,7 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -118,7 +118,7 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      * The detailed messages about the lifecycle state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -132,7 +132,7 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      * (Updatable) The maximum number of hosts to be accessed through the private endpoint. This value is used to calculate the relevant CIDR block and should be a multiple of 256.  If the value is not a multiple of 256, it is rounded up to the next multiple of 256. For example, 300 is rounded up to 512.
      * 
      */
-    @Export(name="maxHostCount", type=Integer.class, parameters={})
+    @Export(name="maxHostCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxHostCount;
 
     /**
@@ -146,7 +146,7 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      * (Updatable) An array of network security group OCIDs.
      * 
      */
-    @Export(name="nsgIds", type=List.class, parameters={String.class})
+    @Export(name="nsgIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> nsgIds;
 
     /**
@@ -160,7 +160,7 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      * The OCID of the user who created the resource.
      * 
      */
-    @Export(name="ownerPrincipalId", type=String.class, parameters={})
+    @Export(name="ownerPrincipalId", refs={String.class}, tree="[0]")
     private Output<String> ownerPrincipalId;
 
     /**
@@ -174,7 +174,7 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      * The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
      * 
      */
-    @Export(name="ownerUserName", type=String.class, parameters={})
+    @Export(name="ownerUserName", refs={String.class}, tree="[0]")
     private Output<String> ownerUserName;
 
     /**
@@ -188,7 +188,7 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      * (Updatable) An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: &#34;scan1.oracle.com&#34;, port: &#34;1521&#34;}, { fqdn: &#34;scan2.oracle.com&#34;, port: &#34;1521&#34; } ]
      * 
      */
-    @Export(name="scanDetails", type=List.class, parameters={PrivateEndpointScanDetail.class})
+    @Export(name="scanDetails", refs={List.class,PrivateEndpointScanDetail.class}, tree="[0,1]")
     private Output<List<PrivateEndpointScanDetail>> scanDetails;
 
     /**
@@ -202,7 +202,7 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      * The current state of this private endpoint.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -219,7 +219,7 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="subnetId", type=String.class, parameters={})
+    @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
@@ -236,7 +236,7 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      * The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -250,7 +250,7 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      * The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Oda Private Endpoint Scan Proxies in Oracle Cloud Infrastructure Digital Assistant service.
@@ -116,6 +117,12 @@ func (o GetOdaPrivateEndpointScanProxiesResultOutput) ToGetOdaPrivateEndpointSca
 
 func (o GetOdaPrivateEndpointScanProxiesResultOutput) ToGetOdaPrivateEndpointScanProxiesResultOutputWithContext(ctx context.Context) GetOdaPrivateEndpointScanProxiesResultOutput {
 	return o
+}
+
+func (o GetOdaPrivateEndpointScanProxiesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetOdaPrivateEndpointScanProxiesResult] {
+	return pulumix.Output[GetOdaPrivateEndpointScanProxiesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetOdaPrivateEndpointScanProxiesResultOutput) Filters() GetOdaPrivateEndpointScanProxiesFilterArrayOutput {

@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Drg Route Table Route Rule resource in Oracle Cloud Infrastructure Core service.
@@ -255,6 +256,12 @@ func (i *DrgRouteTableRouteRule) ToDrgRouteTableRouteRuleOutputWithContext(ctx c
 	return pulumi.ToOutputWithContext(ctx, i).(DrgRouteTableRouteRuleOutput)
 }
 
+func (i *DrgRouteTableRouteRule) ToOutput(ctx context.Context) pulumix.Output[*DrgRouteTableRouteRule] {
+	return pulumix.Output[*DrgRouteTableRouteRule]{
+		OutputState: i.ToDrgRouteTableRouteRuleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // DrgRouteTableRouteRuleArrayInput is an input type that accepts DrgRouteTableRouteRuleArray and DrgRouteTableRouteRuleArrayOutput values.
 // You can construct a concrete instance of `DrgRouteTableRouteRuleArrayInput` via:
 //
@@ -278,6 +285,12 @@ func (i DrgRouteTableRouteRuleArray) ToDrgRouteTableRouteRuleArrayOutput() DrgRo
 
 func (i DrgRouteTableRouteRuleArray) ToDrgRouteTableRouteRuleArrayOutputWithContext(ctx context.Context) DrgRouteTableRouteRuleArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DrgRouteTableRouteRuleArrayOutput)
+}
+
+func (i DrgRouteTableRouteRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]*DrgRouteTableRouteRule] {
+	return pulumix.Output[[]*DrgRouteTableRouteRule]{
+		OutputState: i.ToDrgRouteTableRouteRuleArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // DrgRouteTableRouteRuleMapInput is an input type that accepts DrgRouteTableRouteRuleMap and DrgRouteTableRouteRuleMapOutput values.
@@ -305,6 +318,12 @@ func (i DrgRouteTableRouteRuleMap) ToDrgRouteTableRouteRuleMapOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(DrgRouteTableRouteRuleMapOutput)
 }
 
+func (i DrgRouteTableRouteRuleMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DrgRouteTableRouteRule] {
+	return pulumix.Output[map[string]*DrgRouteTableRouteRule]{
+		OutputState: i.ToDrgRouteTableRouteRuleMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type DrgRouteTableRouteRuleOutput struct{ *pulumi.OutputState }
 
 func (DrgRouteTableRouteRuleOutput) ElementType() reflect.Type {
@@ -317,6 +336,12 @@ func (o DrgRouteTableRouteRuleOutput) ToDrgRouteTableRouteRuleOutput() DrgRouteT
 
 func (o DrgRouteTableRouteRuleOutput) ToDrgRouteTableRouteRuleOutputWithContext(ctx context.Context) DrgRouteTableRouteRuleOutput {
 	return o
+}
+
+func (o DrgRouteTableRouteRuleOutput) ToOutput(ctx context.Context) pulumix.Output[*DrgRouteTableRouteRule] {
+	return pulumix.Output[*DrgRouteTableRouteRule]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Additional properties for the route, computed by the service.
@@ -387,6 +412,12 @@ func (o DrgRouteTableRouteRuleArrayOutput) ToDrgRouteTableRouteRuleArrayOutputWi
 	return o
 }
 
+func (o DrgRouteTableRouteRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DrgRouteTableRouteRule] {
+	return pulumix.Output[[]*DrgRouteTableRouteRule]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o DrgRouteTableRouteRuleArrayOutput) Index(i pulumi.IntInput) DrgRouteTableRouteRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DrgRouteTableRouteRule {
 		return vs[0].([]*DrgRouteTableRouteRule)[vs[1].(int)]
@@ -405,6 +436,12 @@ func (o DrgRouteTableRouteRuleMapOutput) ToDrgRouteTableRouteRuleMapOutput() Drg
 
 func (o DrgRouteTableRouteRuleMapOutput) ToDrgRouteTableRouteRuleMapOutputWithContext(ctx context.Context) DrgRouteTableRouteRuleMapOutput {
 	return o
+}
+
+func (o DrgRouteTableRouteRuleMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DrgRouteTableRouteRule] {
+	return pulumix.Output[map[string]*DrgRouteTableRouteRule]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o DrgRouteTableRouteRuleMapOutput) MapIndex(k pulumi.StringInput) DrgRouteTableRouteRuleOutput {

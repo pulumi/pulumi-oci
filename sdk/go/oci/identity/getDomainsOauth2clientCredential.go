@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific O Auth2 Client Credential resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -169,6 +170,12 @@ func (o LookupDomainsOauth2clientCredentialResultOutput) ToLookupDomainsOauth2cl
 
 func (o LookupDomainsOauth2clientCredentialResultOutput) ToLookupDomainsOauth2clientCredentialResultOutputWithContext(ctx context.Context) LookupDomainsOauth2clientCredentialResultOutput {
 	return o
+}
+
+func (o LookupDomainsOauth2clientCredentialResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDomainsOauth2clientCredentialResult] {
+	return pulumix.Output[LookupDomainsOauth2clientCredentialResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o LookupDomainsOauth2clientCredentialResultOutput) AttributeSets() pulumi.StringArrayOutput {

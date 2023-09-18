@@ -77,7 +77,7 @@ public class ExternalExadataStorageConnector extends com.pulumi.resources.Custom
      * The additional details of the resource defined in `{&#34;key&#34;: &#34;value&#34;}` format. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="additionalDetails", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="additionalDetails", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> additionalDetails;
 
     /**
@@ -91,7 +91,7 @@ public class ExternalExadataStorageConnector extends com.pulumi.resources.Custom
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
      * 
      */
-    @Export(name="agentId", type=String.class, parameters={})
+    @Export(name="agentId", refs={String.class}, tree="[0]")
     private Output<String> agentId;
 
     /**
@@ -105,7 +105,7 @@ public class ExternalExadataStorageConnector extends com.pulumi.resources.Custom
      * (Updatable) The unique string of the connection. For example, &#34;https://&lt;storage-server-name&gt;/MS/RESTService/&#34;.
      * 
      */
-    @Export(name="connectionUri", type=String.class, parameters={})
+    @Export(name="connectionUri", refs={String.class}, tree="[0]")
     private Output<String> connectionUri;
 
     /**
@@ -119,7 +119,7 @@ public class ExternalExadataStorageConnector extends com.pulumi.resources.Custom
      * (Updatable) The name of the Exadata storage server connector.
      * 
      */
-    @Export(name="connectorName", type=String.class, parameters={})
+    @Export(name="connectorName", refs={String.class}, tree="[0]")
     private Output<String> connectorName;
 
     /**
@@ -133,7 +133,7 @@ public class ExternalExadataStorageConnector extends com.pulumi.resources.Custom
      * (Updatable) The user credential information.
      * 
      */
-    @Export(name="credentialInfo", type=ExternalExadataStorageConnectorCredentialInfo.class, parameters={})
+    @Export(name="credentialInfo", refs={ExternalExadataStorageConnectorCredentialInfo.class}, tree="[0]")
     private Output<ExternalExadataStorageConnectorCredentialInfo> credentialInfo;
 
     /**
@@ -147,7 +147,7 @@ public class ExternalExadataStorageConnector extends com.pulumi.resources.Custom
      * The name of the Exadata resource. English letters, numbers, &#34;-&#34;, &#34;_&#34; and &#34;.&#34; only.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -161,7 +161,7 @@ public class ExternalExadataStorageConnector extends com.pulumi.resources.Custom
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      * 
      */
-    @Export(name="exadataInfrastructureId", type=String.class, parameters={})
+    @Export(name="exadataInfrastructureId", refs={String.class}, tree="[0]")
     private Output<String> exadataInfrastructureId;
 
     /**
@@ -175,7 +175,7 @@ public class ExternalExadataStorageConnector extends com.pulumi.resources.Custom
      * The internal ID of the Exadata resource.
      * 
      */
-    @Export(name="internalId", type=String.class, parameters={})
+    @Export(name="internalId", refs={String.class}, tree="[0]")
     private Output<String> internalId;
 
     /**
@@ -189,7 +189,7 @@ public class ExternalExadataStorageConnector extends com.pulumi.resources.Custom
      * The details of the lifecycle state of the Exadata resource.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -203,7 +203,7 @@ public class ExternalExadataStorageConnector extends com.pulumi.resources.Custom
      * The current lifecycle state of the database resource.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -217,7 +217,7 @@ public class ExternalExadataStorageConnector extends com.pulumi.resources.Custom
      * The status of the Exadata resource.
      * 
      */
-    @Export(name="status", type=String.class, parameters={})
+    @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
@@ -234,7 +234,7 @@ public class ExternalExadataStorageConnector extends com.pulumi.resources.Custom
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="storageServerId", type=String.class, parameters={})
+    @Export(name="storageServerId", refs={String.class}, tree="[0]")
     private Output<String> storageServerId;
 
     /**
@@ -251,7 +251,7 @@ public class ExternalExadataStorageConnector extends com.pulumi.resources.Custom
      * The timestamp of the creation of the Exadata resource.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -265,7 +265,7 @@ public class ExternalExadataStorageConnector extends com.pulumi.resources.Custom
      * The timestamp of the last update of the Exadata resource.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -279,7 +279,7 @@ public class ExternalExadataStorageConnector extends com.pulumi.resources.Custom
      * The version of the Exadata resource.
      * 
      */
-    @Export(name="version", type=String.class, parameters={})
+    @Export(name="version", refs={String.class}, tree="[0]")
     private Output<String> version;
 
     /**

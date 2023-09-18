@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -44,6 +45,12 @@ func (i GetEmWarehousesEmWarehouseCollectionArgs) ToGetEmWarehousesEmWarehouseCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetEmWarehousesEmWarehouseCollectionOutput)
 }
 
+func (i GetEmWarehousesEmWarehouseCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetEmWarehousesEmWarehouseCollection] {
+	return pulumix.Output[GetEmWarehousesEmWarehouseCollection]{
+		OutputState: i.ToGetEmWarehousesEmWarehouseCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetEmWarehousesEmWarehouseCollectionArrayInput is an input type that accepts GetEmWarehousesEmWarehouseCollectionArray and GetEmWarehousesEmWarehouseCollectionArrayOutput values.
 // You can construct a concrete instance of `GetEmWarehousesEmWarehouseCollectionArrayInput` via:
 //
@@ -69,6 +76,12 @@ func (i GetEmWarehousesEmWarehouseCollectionArray) ToGetEmWarehousesEmWarehouseC
 	return pulumi.ToOutputWithContext(ctx, i).(GetEmWarehousesEmWarehouseCollectionArrayOutput)
 }
 
+func (i GetEmWarehousesEmWarehouseCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEmWarehousesEmWarehouseCollection] {
+	return pulumix.Output[[]GetEmWarehousesEmWarehouseCollection]{
+		OutputState: i.ToGetEmWarehousesEmWarehouseCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetEmWarehousesEmWarehouseCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetEmWarehousesEmWarehouseCollectionOutput) ElementType() reflect.Type {
@@ -81,6 +94,12 @@ func (o GetEmWarehousesEmWarehouseCollectionOutput) ToGetEmWarehousesEmWarehouse
 
 func (o GetEmWarehousesEmWarehouseCollectionOutput) ToGetEmWarehousesEmWarehouseCollectionOutputWithContext(ctx context.Context) GetEmWarehousesEmWarehouseCollectionOutput {
 	return o
+}
+
+func (o GetEmWarehousesEmWarehouseCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetEmWarehousesEmWarehouseCollection] {
+	return pulumix.Output[GetEmWarehousesEmWarehouseCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetEmWarehousesEmWarehouseCollectionOutput) Items() GetEmWarehousesEmWarehouseCollectionItemArrayOutput {
@@ -101,6 +120,12 @@ func (o GetEmWarehousesEmWarehouseCollectionArrayOutput) ToGetEmWarehousesEmWare
 
 func (o GetEmWarehousesEmWarehouseCollectionArrayOutput) ToGetEmWarehousesEmWarehouseCollectionArrayOutputWithContext(ctx context.Context) GetEmWarehousesEmWarehouseCollectionArrayOutput {
 	return o
+}
+
+func (o GetEmWarehousesEmWarehouseCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEmWarehousesEmWarehouseCollection] {
+	return pulumix.Output[[]GetEmWarehousesEmWarehouseCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetEmWarehousesEmWarehouseCollectionArrayOutput) Index(i pulumi.IntInput) GetEmWarehousesEmWarehouseCollectionOutput {
@@ -202,6 +227,12 @@ func (i GetEmWarehousesEmWarehouseCollectionItemArgs) ToGetEmWarehousesEmWarehou
 	return pulumi.ToOutputWithContext(ctx, i).(GetEmWarehousesEmWarehouseCollectionItemOutput)
 }
 
+func (i GetEmWarehousesEmWarehouseCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetEmWarehousesEmWarehouseCollectionItem] {
+	return pulumix.Output[GetEmWarehousesEmWarehouseCollectionItem]{
+		OutputState: i.ToGetEmWarehousesEmWarehouseCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetEmWarehousesEmWarehouseCollectionItemArrayInput is an input type that accepts GetEmWarehousesEmWarehouseCollectionItemArray and GetEmWarehousesEmWarehouseCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetEmWarehousesEmWarehouseCollectionItemArrayInput` via:
 //
@@ -227,6 +258,12 @@ func (i GetEmWarehousesEmWarehouseCollectionItemArray) ToGetEmWarehousesEmWareho
 	return pulumi.ToOutputWithContext(ctx, i).(GetEmWarehousesEmWarehouseCollectionItemArrayOutput)
 }
 
+func (i GetEmWarehousesEmWarehouseCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEmWarehousesEmWarehouseCollectionItem] {
+	return pulumix.Output[[]GetEmWarehousesEmWarehouseCollectionItem]{
+		OutputState: i.ToGetEmWarehousesEmWarehouseCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetEmWarehousesEmWarehouseCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetEmWarehousesEmWarehouseCollectionItemOutput) ElementType() reflect.Type {
@@ -239,6 +276,12 @@ func (o GetEmWarehousesEmWarehouseCollectionItemOutput) ToGetEmWarehousesEmWareh
 
 func (o GetEmWarehousesEmWarehouseCollectionItemOutput) ToGetEmWarehousesEmWarehouseCollectionItemOutputWithContext(ctx context.Context) GetEmWarehousesEmWarehouseCollectionItemOutput {
 	return o
+}
+
+func (o GetEmWarehousesEmWarehouseCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetEmWarehousesEmWarehouseCollectionItem] {
+	return pulumix.Output[GetEmWarehousesEmWarehouseCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -335,6 +378,12 @@ func (o GetEmWarehousesEmWarehouseCollectionItemArrayOutput) ToGetEmWarehousesEm
 	return o
 }
 
+func (o GetEmWarehousesEmWarehouseCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEmWarehousesEmWarehouseCollectionItem] {
+	return pulumix.Output[[]GetEmWarehousesEmWarehouseCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetEmWarehousesEmWarehouseCollectionItemArrayOutput) Index(i pulumi.IntInput) GetEmWarehousesEmWarehouseCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEmWarehousesEmWarehouseCollectionItem {
 		return vs[0].([]GetEmWarehousesEmWarehouseCollectionItem)[vs[1].(int)]
@@ -376,6 +425,12 @@ func (i GetEmWarehousesFilterArgs) ToGetEmWarehousesFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetEmWarehousesFilterOutput)
 }
 
+func (i GetEmWarehousesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetEmWarehousesFilter] {
+	return pulumix.Output[GetEmWarehousesFilter]{
+		OutputState: i.ToGetEmWarehousesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetEmWarehousesFilterArrayInput is an input type that accepts GetEmWarehousesFilterArray and GetEmWarehousesFilterArrayOutput values.
 // You can construct a concrete instance of `GetEmWarehousesFilterArrayInput` via:
 //
@@ -401,6 +456,12 @@ func (i GetEmWarehousesFilterArray) ToGetEmWarehousesFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetEmWarehousesFilterArrayOutput)
 }
 
+func (i GetEmWarehousesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEmWarehousesFilter] {
+	return pulumix.Output[[]GetEmWarehousesFilter]{
+		OutputState: i.ToGetEmWarehousesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetEmWarehousesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetEmWarehousesFilterOutput) ElementType() reflect.Type {
@@ -413,6 +474,12 @@ func (o GetEmWarehousesFilterOutput) ToGetEmWarehousesFilterOutput() GetEmWareho
 
 func (o GetEmWarehousesFilterOutput) ToGetEmWarehousesFilterOutputWithContext(ctx context.Context) GetEmWarehousesFilterOutput {
 	return o
+}
+
+func (o GetEmWarehousesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetEmWarehousesFilter] {
+	return pulumix.Output[GetEmWarehousesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetEmWarehousesFilterOutput) Name() pulumi.StringOutput {
@@ -439,6 +506,12 @@ func (o GetEmWarehousesFilterArrayOutput) ToGetEmWarehousesFilterArrayOutput() G
 
 func (o GetEmWarehousesFilterArrayOutput) ToGetEmWarehousesFilterArrayOutputWithContext(ctx context.Context) GetEmWarehousesFilterArrayOutput {
 	return o
+}
+
+func (o GetEmWarehousesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEmWarehousesFilter] {
+	return pulumix.Output[[]GetEmWarehousesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetEmWarehousesFilterArrayOutput) Index(i pulumi.IntInput) GetEmWarehousesFilterOutput {
@@ -520,6 +593,12 @@ func (i GetEtlRunItemArgs) ToGetEtlRunItemOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(GetEtlRunItemOutput)
 }
 
+func (i GetEtlRunItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetEtlRunItem] {
+	return pulumix.Output[GetEtlRunItem]{
+		OutputState: i.ToGetEtlRunItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetEtlRunItemArrayInput is an input type that accepts GetEtlRunItemArray and GetEtlRunItemArrayOutput values.
 // You can construct a concrete instance of `GetEtlRunItemArrayInput` via:
 //
@@ -545,6 +624,12 @@ func (i GetEtlRunItemArray) ToGetEtlRunItemArrayOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetEtlRunItemArrayOutput)
 }
 
+func (i GetEtlRunItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEtlRunItem] {
+	return pulumix.Output[[]GetEtlRunItem]{
+		OutputState: i.ToGetEtlRunItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetEtlRunItemOutput struct{ *pulumi.OutputState }
 
 func (GetEtlRunItemOutput) ElementType() reflect.Type {
@@ -557,6 +642,12 @@ func (o GetEtlRunItemOutput) ToGetEtlRunItemOutput() GetEtlRunItemOutput {
 
 func (o GetEtlRunItemOutput) ToGetEtlRunItemOutputWithContext(ctx context.Context) GetEtlRunItemOutput {
 	return o
+}
+
+func (o GetEtlRunItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetEtlRunItem] {
+	return pulumix.Output[GetEtlRunItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -628,6 +719,12 @@ func (o GetEtlRunItemArrayOutput) ToGetEtlRunItemArrayOutputWithContext(ctx cont
 	return o
 }
 
+func (o GetEtlRunItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEtlRunItem] {
+	return pulumix.Output[[]GetEtlRunItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetEtlRunItemArrayOutput) Index(i pulumi.IntInput) GetEtlRunItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEtlRunItem {
 		return vs[0].([]GetEtlRunItem)[vs[1].(int)]
@@ -667,6 +764,12 @@ func (i GetEtlRunsEtlRunCollectionArgs) ToGetEtlRunsEtlRunCollectionOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetEtlRunsEtlRunCollectionOutput)
 }
 
+func (i GetEtlRunsEtlRunCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetEtlRunsEtlRunCollection] {
+	return pulumix.Output[GetEtlRunsEtlRunCollection]{
+		OutputState: i.ToGetEtlRunsEtlRunCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetEtlRunsEtlRunCollectionArrayInput is an input type that accepts GetEtlRunsEtlRunCollectionArray and GetEtlRunsEtlRunCollectionArrayOutput values.
 // You can construct a concrete instance of `GetEtlRunsEtlRunCollectionArrayInput` via:
 //
@@ -692,6 +795,12 @@ func (i GetEtlRunsEtlRunCollectionArray) ToGetEtlRunsEtlRunCollectionArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetEtlRunsEtlRunCollectionArrayOutput)
 }
 
+func (i GetEtlRunsEtlRunCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEtlRunsEtlRunCollection] {
+	return pulumix.Output[[]GetEtlRunsEtlRunCollection]{
+		OutputState: i.ToGetEtlRunsEtlRunCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetEtlRunsEtlRunCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetEtlRunsEtlRunCollectionOutput) ElementType() reflect.Type {
@@ -704,6 +813,12 @@ func (o GetEtlRunsEtlRunCollectionOutput) ToGetEtlRunsEtlRunCollectionOutput() G
 
 func (o GetEtlRunsEtlRunCollectionOutput) ToGetEtlRunsEtlRunCollectionOutputWithContext(ctx context.Context) GetEtlRunsEtlRunCollectionOutput {
 	return o
+}
+
+func (o GetEtlRunsEtlRunCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetEtlRunsEtlRunCollection] {
+	return pulumix.Output[GetEtlRunsEtlRunCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 // List of runs
@@ -723,6 +838,12 @@ func (o GetEtlRunsEtlRunCollectionArrayOutput) ToGetEtlRunsEtlRunCollectionArray
 
 func (o GetEtlRunsEtlRunCollectionArrayOutput) ToGetEtlRunsEtlRunCollectionArrayOutputWithContext(ctx context.Context) GetEtlRunsEtlRunCollectionArrayOutput {
 	return o
+}
+
+func (o GetEtlRunsEtlRunCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEtlRunsEtlRunCollection] {
+	return pulumix.Output[[]GetEtlRunsEtlRunCollection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetEtlRunsEtlRunCollectionArrayOutput) Index(i pulumi.IntInput) GetEtlRunsEtlRunCollectionOutput {
@@ -764,6 +885,12 @@ func (i GetEtlRunsEtlRunCollectionItemArgs) ToGetEtlRunsEtlRunCollectionItemOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetEtlRunsEtlRunCollectionItemOutput)
 }
 
+func (i GetEtlRunsEtlRunCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetEtlRunsEtlRunCollectionItem] {
+	return pulumix.Output[GetEtlRunsEtlRunCollectionItem]{
+		OutputState: i.ToGetEtlRunsEtlRunCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetEtlRunsEtlRunCollectionItemArrayInput is an input type that accepts GetEtlRunsEtlRunCollectionItemArray and GetEtlRunsEtlRunCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetEtlRunsEtlRunCollectionItemArrayInput` via:
 //
@@ -789,6 +916,12 @@ func (i GetEtlRunsEtlRunCollectionItemArray) ToGetEtlRunsEtlRunCollectionItemArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetEtlRunsEtlRunCollectionItemArrayOutput)
 }
 
+func (i GetEtlRunsEtlRunCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEtlRunsEtlRunCollectionItem] {
+	return pulumix.Output[[]GetEtlRunsEtlRunCollectionItem]{
+		OutputState: i.ToGetEtlRunsEtlRunCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetEtlRunsEtlRunCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetEtlRunsEtlRunCollectionItemOutput) ElementType() reflect.Type {
@@ -801,6 +934,12 @@ func (o GetEtlRunsEtlRunCollectionItemOutput) ToGetEtlRunsEtlRunCollectionItemOu
 
 func (o GetEtlRunsEtlRunCollectionItemOutput) ToGetEtlRunsEtlRunCollectionItemOutputWithContext(ctx context.Context) GetEtlRunsEtlRunCollectionItemOutput {
 	return o
+}
+
+func (o GetEtlRunsEtlRunCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetEtlRunsEtlRunCollectionItem] {
+	return pulumix.Output[GetEtlRunsEtlRunCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // List of runs
@@ -820,6 +959,12 @@ func (o GetEtlRunsEtlRunCollectionItemArrayOutput) ToGetEtlRunsEtlRunCollectionI
 
 func (o GetEtlRunsEtlRunCollectionItemArrayOutput) ToGetEtlRunsEtlRunCollectionItemArrayOutputWithContext(ctx context.Context) GetEtlRunsEtlRunCollectionItemArrayOutput {
 	return o
+}
+
+func (o GetEtlRunsEtlRunCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEtlRunsEtlRunCollectionItem] {
+	return pulumix.Output[[]GetEtlRunsEtlRunCollectionItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetEtlRunsEtlRunCollectionItemArrayOutput) Index(i pulumi.IntInput) GetEtlRunsEtlRunCollectionItemOutput {
@@ -901,6 +1046,12 @@ func (i GetEtlRunsEtlRunCollectionItemItemArgs) ToGetEtlRunsEtlRunCollectionItem
 	return pulumi.ToOutputWithContext(ctx, i).(GetEtlRunsEtlRunCollectionItemItemOutput)
 }
 
+func (i GetEtlRunsEtlRunCollectionItemItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetEtlRunsEtlRunCollectionItemItem] {
+	return pulumix.Output[GetEtlRunsEtlRunCollectionItemItem]{
+		OutputState: i.ToGetEtlRunsEtlRunCollectionItemItemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetEtlRunsEtlRunCollectionItemItemArrayInput is an input type that accepts GetEtlRunsEtlRunCollectionItemItemArray and GetEtlRunsEtlRunCollectionItemItemArrayOutput values.
 // You can construct a concrete instance of `GetEtlRunsEtlRunCollectionItemItemArrayInput` via:
 //
@@ -926,6 +1077,12 @@ func (i GetEtlRunsEtlRunCollectionItemItemArray) ToGetEtlRunsEtlRunCollectionIte
 	return pulumi.ToOutputWithContext(ctx, i).(GetEtlRunsEtlRunCollectionItemItemArrayOutput)
 }
 
+func (i GetEtlRunsEtlRunCollectionItemItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEtlRunsEtlRunCollectionItemItem] {
+	return pulumix.Output[[]GetEtlRunsEtlRunCollectionItemItem]{
+		OutputState: i.ToGetEtlRunsEtlRunCollectionItemItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetEtlRunsEtlRunCollectionItemItemOutput struct{ *pulumi.OutputState }
 
 func (GetEtlRunsEtlRunCollectionItemItemOutput) ElementType() reflect.Type {
@@ -938,6 +1095,12 @@ func (o GetEtlRunsEtlRunCollectionItemItemOutput) ToGetEtlRunsEtlRunCollectionIt
 
 func (o GetEtlRunsEtlRunCollectionItemItemOutput) ToGetEtlRunsEtlRunCollectionItemItemOutputWithContext(ctx context.Context) GetEtlRunsEtlRunCollectionItemItemOutput {
 	return o
+}
+
+func (o GetEtlRunsEtlRunCollectionItemItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetEtlRunsEtlRunCollectionItemItem] {
+	return pulumix.Output[GetEtlRunsEtlRunCollectionItemItem]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -1009,6 +1172,12 @@ func (o GetEtlRunsEtlRunCollectionItemItemArrayOutput) ToGetEtlRunsEtlRunCollect
 	return o
 }
 
+func (o GetEtlRunsEtlRunCollectionItemItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEtlRunsEtlRunCollectionItemItem] {
+	return pulumix.Output[[]GetEtlRunsEtlRunCollectionItemItem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetEtlRunsEtlRunCollectionItemItemArrayOutput) Index(i pulumi.IntInput) GetEtlRunsEtlRunCollectionItemItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEtlRunsEtlRunCollectionItemItem {
 		return vs[0].([]GetEtlRunsEtlRunCollectionItemItem)[vs[1].(int)]
@@ -1050,6 +1219,12 @@ func (i GetEtlRunsFilterArgs) ToGetEtlRunsFilterOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetEtlRunsFilterOutput)
 }
 
+func (i GetEtlRunsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetEtlRunsFilter] {
+	return pulumix.Output[GetEtlRunsFilter]{
+		OutputState: i.ToGetEtlRunsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetEtlRunsFilterArrayInput is an input type that accepts GetEtlRunsFilterArray and GetEtlRunsFilterArrayOutput values.
 // You can construct a concrete instance of `GetEtlRunsFilterArrayInput` via:
 //
@@ -1075,6 +1250,12 @@ func (i GetEtlRunsFilterArray) ToGetEtlRunsFilterArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetEtlRunsFilterArrayOutput)
 }
 
+func (i GetEtlRunsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEtlRunsFilter] {
+	return pulumix.Output[[]GetEtlRunsFilter]{
+		OutputState: i.ToGetEtlRunsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetEtlRunsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetEtlRunsFilterOutput) ElementType() reflect.Type {
@@ -1087,6 +1268,12 @@ func (o GetEtlRunsFilterOutput) ToGetEtlRunsFilterOutput() GetEtlRunsFilterOutpu
 
 func (o GetEtlRunsFilterOutput) ToGetEtlRunsFilterOutputWithContext(ctx context.Context) GetEtlRunsFilterOutput {
 	return o
+}
+
+func (o GetEtlRunsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetEtlRunsFilter] {
+	return pulumix.Output[GetEtlRunsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetEtlRunsFilterOutput) Name() pulumi.StringOutput {
@@ -1113,6 +1300,12 @@ func (o GetEtlRunsFilterArrayOutput) ToGetEtlRunsFilterArrayOutput() GetEtlRunsF
 
 func (o GetEtlRunsFilterArrayOutput) ToGetEtlRunsFilterArrayOutputWithContext(ctx context.Context) GetEtlRunsFilterArrayOutput {
 	return o
+}
+
+func (o GetEtlRunsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEtlRunsFilter] {
+	return pulumix.Output[[]GetEtlRunsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetEtlRunsFilterArrayOutput) Index(i pulumi.IntInput) GetEtlRunsFilterOutput {
@@ -1166,6 +1359,12 @@ func (i GetResourceUsageEmInstanceArgs) ToGetResourceUsageEmInstanceOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetResourceUsageEmInstanceOutput)
 }
 
+func (i GetResourceUsageEmInstanceArgs) ToOutput(ctx context.Context) pulumix.Output[GetResourceUsageEmInstance] {
+	return pulumix.Output[GetResourceUsageEmInstance]{
+		OutputState: i.ToGetResourceUsageEmInstanceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetResourceUsageEmInstanceArrayInput is an input type that accepts GetResourceUsageEmInstanceArray and GetResourceUsageEmInstanceArrayOutput values.
 // You can construct a concrete instance of `GetResourceUsageEmInstanceArrayInput` via:
 //
@@ -1191,6 +1390,12 @@ func (i GetResourceUsageEmInstanceArray) ToGetResourceUsageEmInstanceArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetResourceUsageEmInstanceArrayOutput)
 }
 
+func (i GetResourceUsageEmInstanceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetResourceUsageEmInstance] {
+	return pulumix.Output[[]GetResourceUsageEmInstance]{
+		OutputState: i.ToGetResourceUsageEmInstanceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetResourceUsageEmInstanceOutput struct{ *pulumi.OutputState }
 
 func (GetResourceUsageEmInstanceOutput) ElementType() reflect.Type {
@@ -1203,6 +1408,12 @@ func (o GetResourceUsageEmInstanceOutput) ToGetResourceUsageEmInstanceOutput() G
 
 func (o GetResourceUsageEmInstanceOutput) ToGetResourceUsageEmInstanceOutputWithContext(ctx context.Context) GetResourceUsageEmInstanceOutput {
 	return o
+}
+
+func (o GetResourceUsageEmInstanceOutput) ToOutput(ctx context.Context) pulumix.Output[GetResourceUsageEmInstance] {
+	return pulumix.Output[GetResourceUsageEmInstance]{
+		OutputState: o.OutputState,
+	}
 }
 
 // emdDiscoverer url
@@ -1237,6 +1448,12 @@ func (o GetResourceUsageEmInstanceArrayOutput) ToGetResourceUsageEmInstanceArray
 
 func (o GetResourceUsageEmInstanceArrayOutput) ToGetResourceUsageEmInstanceArrayOutputWithContext(ctx context.Context) GetResourceUsageEmInstanceArrayOutput {
 	return o
+}
+
+func (o GetResourceUsageEmInstanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetResourceUsageEmInstance] {
+	return pulumix.Output[[]GetResourceUsageEmInstance]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetResourceUsageEmInstanceArrayOutput) Index(i pulumi.IntInput) GetResourceUsageEmInstanceOutput {

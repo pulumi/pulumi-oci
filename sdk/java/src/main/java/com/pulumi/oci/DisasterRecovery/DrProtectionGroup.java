@@ -110,7 +110,7 @@ public class DrProtectionGroup extends com.pulumi.resources.CustomResource {
      * The details for associating this DR Protection Group with a peer (remote) DR Protection Group.
      * 
      */
-    @Export(name="association", type=DrProtectionGroupAssociation.class, parameters={})
+    @Export(name="association", refs={DrProtectionGroupAssociation.class}, tree="[0]")
     private Output<DrProtectionGroupAssociation> association;
 
     /**
@@ -124,7 +124,7 @@ public class DrProtectionGroup extends com.pulumi.resources.CustomResource {
      * (Updatable) The OCID of the compartment in which to create the DR Protection Group.  Example: `ocid1.compartment.oc1..&amp;lt;unique_id&amp;gt;`
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -138,7 +138,7 @@ public class DrProtectionGroup extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -155,7 +155,7 @@ public class DrProtectionGroup extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="disassociateTrigger", type=Integer.class, parameters={})
+    @Export(name="disassociateTrigger", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> disassociateTrigger;
 
     /**
@@ -172,7 +172,7 @@ public class DrProtectionGroup extends com.pulumi.resources.CustomResource {
      * (Updatable) The display name of the DR Protection Group.  Example: `EBS PHX DRPG`
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -186,7 +186,7 @@ public class DrProtectionGroup extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -200,7 +200,7 @@ public class DrProtectionGroup extends com.pulumi.resources.CustomResource {
      * A message describing the DR Protection Group&#39;s current state in more detail.
      * 
      */
-    @Export(name="lifeCycleDetails", type=String.class, parameters={})
+    @Export(name="lifeCycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifeCycleDetails;
 
     /**
@@ -214,7 +214,7 @@ public class DrProtectionGroup extends com.pulumi.resources.CustomResource {
      * (Updatable) Information about creating an Object Storage log location for a DR Protection Group.
      * 
      */
-    @Export(name="logLocation", type=DrProtectionGroupLogLocation.class, parameters={})
+    @Export(name="logLocation", refs={DrProtectionGroupLogLocation.class}, tree="[0]")
     private Output<DrProtectionGroupLogLocation> logLocation;
 
     /**
@@ -228,7 +228,7 @@ public class DrProtectionGroup extends com.pulumi.resources.CustomResource {
      * (Updatable) A list of DR Protection Group members.
      * 
      */
-    @Export(name="members", type=List.class, parameters={DrProtectionGroupMember.class})
+    @Export(name="members", refs={List.class,DrProtectionGroupMember.class}, tree="[0,1]")
     private Output<List<DrProtectionGroupMember>> members;
 
     /**
@@ -242,7 +242,7 @@ public class DrProtectionGroup extends com.pulumi.resources.CustomResource {
      * The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&amp;lt;unique_id&amp;gt;`
      * 
      */
-    @Export(name="peerId", type=String.class, parameters={})
+    @Export(name="peerId", refs={String.class}, tree="[0]")
     private Output<String> peerId;
 
     /**
@@ -256,7 +256,7 @@ public class DrProtectionGroup extends com.pulumi.resources.CustomResource {
      * The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
      * 
      */
-    @Export(name="peerRegion", type=String.class, parameters={})
+    @Export(name="peerRegion", refs={String.class}, tree="[0]")
     private Output<String> peerRegion;
 
     /**
@@ -270,7 +270,7 @@ public class DrProtectionGroup extends com.pulumi.resources.CustomResource {
      * The role of this DR Protection Group.
      * 
      */
-    @Export(name="role", type=String.class, parameters={})
+    @Export(name="role", refs={String.class}, tree="[0]")
     private Output<String> role;
 
     /**
@@ -284,7 +284,7 @@ public class DrProtectionGroup extends com.pulumi.resources.CustomResource {
      * The current state of the DR Protection Group.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -298,7 +298,7 @@ public class DrProtectionGroup extends com.pulumi.resources.CustomResource {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -312,7 +312,7 @@ public class DrProtectionGroup extends com.pulumi.resources.CustomResource {
      * The date and time the DR Protection Group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -326,7 +326,7 @@ public class DrProtectionGroup extends com.pulumi.resources.CustomResource {
      * The date and time the DR Protection Group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

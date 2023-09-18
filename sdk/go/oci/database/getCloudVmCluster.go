@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Cloud Vm Cluster resource in Oracle Cloud Infrastructure Database service.
@@ -192,6 +193,12 @@ func (o LookupCloudVmClusterResultOutput) ToLookupCloudVmClusterResultOutput() L
 
 func (o LookupCloudVmClusterResultOutput) ToLookupCloudVmClusterResultOutputWithContext(ctx context.Context) LookupCloudVmClusterResultOutput {
 	return o
+}
+
+func (o LookupCloudVmClusterResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupCloudVmClusterResult] {
+	return pulumix.Output[LookupCloudVmClusterResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the availability domain that the cloud Exadata infrastructure resource is located in.

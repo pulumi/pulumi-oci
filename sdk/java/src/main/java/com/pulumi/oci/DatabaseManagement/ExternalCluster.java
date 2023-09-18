@@ -40,7 +40,7 @@ public class ExternalCluster extends com.pulumi.resources.CustomResource {
      * The additional details of the external cluster defined in `{&#34;key&#34;: &#34;value&#34;}` format. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="additionalDetails", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="additionalDetails", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> additionalDetails;
 
     /**
@@ -54,7 +54,7 @@ public class ExternalCluster extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -68,7 +68,7 @@ public class ExternalCluster extends com.pulumi.resources.CustomResource {
      * The name of the external cluster.
      * 
      */
-    @Export(name="componentName", type=String.class, parameters={})
+    @Export(name="componentName", refs={String.class}, tree="[0]")
     private Output<String> componentName;
 
     /**
@@ -82,7 +82,7 @@ public class ExternalCluster extends com.pulumi.resources.CustomResource {
      * The user-friendly name for the external cluster. The name does not have to be unique.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -96,7 +96,7 @@ public class ExternalCluster extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster.
      * 
      */
-    @Export(name="externalClusterId", type=String.class, parameters={})
+    @Export(name="externalClusterId", refs={String.class}, tree="[0]")
     private Output<String> externalClusterId;
 
     /**
@@ -113,7 +113,7 @@ public class ExternalCluster extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="externalConnectorId", type=String.class, parameters={})
+    @Export(name="externalConnectorId", refs={String.class}, tree="[0]")
     private Output<String> externalConnectorId;
 
     /**
@@ -130,7 +130,7 @@ public class ExternalCluster extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster is a part of.
      * 
      */
-    @Export(name="externalDbSystemId", type=String.class, parameters={})
+    @Export(name="externalDbSystemId", refs={String.class}, tree="[0]")
     private Output<String> externalDbSystemId;
 
     /**
@@ -144,7 +144,7 @@ public class ExternalCluster extends com.pulumi.resources.CustomResource {
      * The directory in which Oracle Grid Infrastructure is installed.
      * 
      */
-    @Export(name="gridHome", type=String.class, parameters={})
+    @Export(name="gridHome", refs={String.class}, tree="[0]")
     private Output<String> gridHome;
 
     /**
@@ -158,7 +158,7 @@ public class ExternalCluster extends com.pulumi.resources.CustomResource {
      * Indicates whether the cluster is Oracle Flex Cluster or not.
      * 
      */
-    @Export(name="isFlexCluster", type=Boolean.class, parameters={})
+    @Export(name="isFlexCluster", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isFlexCluster;
 
     /**
@@ -172,7 +172,7 @@ public class ExternalCluster extends com.pulumi.resources.CustomResource {
      * Additional information about the current lifecycle state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -186,7 +186,7 @@ public class ExternalCluster extends com.pulumi.resources.CustomResource {
      * The list of network address configurations of the external cluster.
      * 
      */
-    @Export(name="networkConfigurations", type=List.class, parameters={ExternalClusterNetworkConfiguration.class})
+    @Export(name="networkConfigurations", refs={List.class,ExternalClusterNetworkConfiguration.class}, tree="[0,1]")
     private Output<List<ExternalClusterNetworkConfiguration>> networkConfigurations;
 
     /**
@@ -200,7 +200,7 @@ public class ExternalCluster extends com.pulumi.resources.CustomResource {
      * The location of the Oracle Cluster Registry (OCR).
      * 
      */
-    @Export(name="ocrFileLocation", type=String.class, parameters={})
+    @Export(name="ocrFileLocation", refs={String.class}, tree="[0]")
     private Output<String> ocrFileLocation;
 
     /**
@@ -214,7 +214,7 @@ public class ExternalCluster extends com.pulumi.resources.CustomResource {
      * The list of Single Client Access Name (SCAN) configurations of the external cluster.
      * 
      */
-    @Export(name="scanConfigurations", type=List.class, parameters={ExternalClusterScanConfiguration.class})
+    @Export(name="scanConfigurations", refs={List.class,ExternalClusterScanConfiguration.class}, tree="[0,1]")
     private Output<List<ExternalClusterScanConfiguration>> scanConfigurations;
 
     /**
@@ -228,7 +228,7 @@ public class ExternalCluster extends com.pulumi.resources.CustomResource {
      * The current lifecycle state of the external cluster.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -242,7 +242,7 @@ public class ExternalCluster extends com.pulumi.resources.CustomResource {
      * The date and time the external cluster was created.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -256,7 +256,7 @@ public class ExternalCluster extends com.pulumi.resources.CustomResource {
      * The date and time the external cluster was last updated.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -270,7 +270,7 @@ public class ExternalCluster extends com.pulumi.resources.CustomResource {
      * The cluster version.
      * 
      */
-    @Export(name="version", type=String.class, parameters={})
+    @Export(name="version", refs={String.class}, tree="[0]")
     private Output<String> version;
 
     /**
@@ -284,7 +284,7 @@ public class ExternalCluster extends com.pulumi.resources.CustomResource {
      * The list of Virtual IP (VIP) configurations of the external cluster.
      * 
      */
-    @Export(name="vipConfigurations", type=List.class, parameters={ExternalClusterVipConfiguration.class})
+    @Export(name="vipConfigurations", refs={List.class,ExternalClusterVipConfiguration.class}, tree="[0,1]")
     private Output<List<ExternalClusterVipConfiguration>> vipConfigurations;
 
     /**

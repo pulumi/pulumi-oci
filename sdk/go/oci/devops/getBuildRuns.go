@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Build Runs in Oracle Cloud Infrastructure Devops service.
@@ -141,6 +142,12 @@ func (o GetBuildRunsResultOutput) ToGetBuildRunsResultOutput() GetBuildRunsResul
 
 func (o GetBuildRunsResultOutput) ToGetBuildRunsResultOutputWithContext(ctx context.Context) GetBuildRunsResultOutput {
 	return o
+}
+
+func (o GetBuildRunsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetBuildRunsResult] {
+	return pulumix.Output[GetBuildRunsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the build pipeline to be triggered.

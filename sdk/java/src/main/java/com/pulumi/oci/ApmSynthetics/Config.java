@@ -170,7 +170,7 @@ public class Config extends com.pulumi.resources.CustomResource {
      * (Updatable) The APM domain ID the request is intended for.
      * 
      */
-    @Export(name="apmDomainId", type=String.class, parameters={})
+    @Export(name="apmDomainId", refs={String.class}, tree="[0]")
     private Output<String> apmDomainId;
 
     /**
@@ -184,7 +184,7 @@ public class Config extends com.pulumi.resources.CustomResource {
      * (Updatable) Monitor availability configuration details.
      * 
      */
-    @Export(name="availabilityConfiguration", type=ConfigAvailabilityConfiguration.class, parameters={})
+    @Export(name="availabilityConfiguration", refs={ConfigAvailabilityConfiguration.class}, tree="[0]")
     private Output<ConfigAvailabilityConfiguration> availabilityConfiguration;
 
     /**
@@ -198,7 +198,7 @@ public class Config extends com.pulumi.resources.CustomResource {
      * (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
      * 
      */
-    @Export(name="batchIntervalInSeconds", type=Integer.class, parameters={})
+    @Export(name="batchIntervalInSeconds", refs={Integer.class}, tree="[0]")
     private Output<Integer> batchIntervalInSeconds;
 
     /**
@@ -212,7 +212,7 @@ public class Config extends com.pulumi.resources.CustomResource {
      * (Updatable) Details of monitor configuration.
      * 
      */
-    @Export(name="configuration", type=ConfigConfiguration.class, parameters={})
+    @Export(name="configuration", refs={ConfigConfiguration.class}, tree="[0]")
     private Output<ConfigConfiguration> configuration;
 
     /**
@@ -226,7 +226,7 @@ public class Config extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -240,7 +240,7 @@ public class Config extends com.pulumi.resources.CustomResource {
      * Unique name that can be edited. The name should not contain any confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -254,7 +254,7 @@ public class Config extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -268,7 +268,7 @@ public class Config extends com.pulumi.resources.CustomResource {
      * (Updatable) If isRunNow is enabled, then the monitor will run immediately.
      * 
      */
-    @Export(name="isRunNow", type=Boolean.class, parameters={})
+    @Export(name="isRunNow", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isRunNow;
 
     /**
@@ -282,7 +282,7 @@ public class Config extends com.pulumi.resources.CustomResource {
      * (Updatable) If runOnce is enabled, then the monitor will run once.
      * 
      */
-    @Export(name="isRunOnce", type=Boolean.class, parameters={})
+    @Export(name="isRunOnce", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isRunOnce;
 
     /**
@@ -296,7 +296,7 @@ public class Config extends com.pulumi.resources.CustomResource {
      * (Updatable) Details required to schedule maintenance window.
      * 
      */
-    @Export(name="maintenanceWindowSchedule", type=ConfigMaintenanceWindowSchedule.class, parameters={})
+    @Export(name="maintenanceWindowSchedule", refs={ConfigMaintenanceWindowSchedule.class}, tree="[0]")
     private Output<ConfigMaintenanceWindowSchedule> maintenanceWindowSchedule;
 
     /**
@@ -310,7 +310,7 @@ public class Config extends com.pulumi.resources.CustomResource {
      * Type of monitor.
      * 
      */
-    @Export(name="monitorType", type=String.class, parameters={})
+    @Export(name="monitorType", refs={String.class}, tree="[0]")
     private Output<String> monitorType;
 
     /**
@@ -324,7 +324,7 @@ public class Config extends com.pulumi.resources.CustomResource {
      * (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
      * 
      */
-    @Export(name="repeatIntervalInSeconds", type=Integer.class, parameters={})
+    @Export(name="repeatIntervalInSeconds", refs={Integer.class}, tree="[0]")
     private Output<Integer> repeatIntervalInSeconds;
 
     /**
@@ -338,7 +338,7 @@ public class Config extends com.pulumi.resources.CustomResource {
      * (Updatable) Scheduling policy to decide the distribution of monitor executions on vantage points.
      * 
      */
-    @Export(name="schedulingPolicy", type=String.class, parameters={})
+    @Export(name="schedulingPolicy", refs={String.class}, tree="[0]")
     private Output<String> schedulingPolicy;
 
     /**
@@ -352,7 +352,7 @@ public class Config extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
      * 
      */
-    @Export(name="scriptId", type=String.class, parameters={})
+    @Export(name="scriptId", refs={String.class}, tree="[0]")
     private Output<String> scriptId;
 
     /**
@@ -366,7 +366,7 @@ public class Config extends com.pulumi.resources.CustomResource {
      * Name of the script.
      * 
      */
-    @Export(name="scriptName", type=String.class, parameters={})
+    @Export(name="scriptName", refs={String.class}, tree="[0]")
     private Output<String> scriptName;
 
     /**
@@ -380,7 +380,7 @@ public class Config extends com.pulumi.resources.CustomResource {
      * (Updatable) List of script parameters in the monitor. This is valid only for SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null. Example: `[{&#34;paramName&#34;: &#34;userid&#34;, &#34;paramValue&#34;:&#34;testuser&#34;}]`
      * 
      */
-    @Export(name="scriptParameters", type=List.class, parameters={ConfigScriptParameter.class})
+    @Export(name="scriptParameters", refs={List.class,ConfigScriptParameter.class}, tree="[0,1]")
     private Output<List<ConfigScriptParameter>> scriptParameters;
 
     /**
@@ -394,7 +394,7 @@ public class Config extends com.pulumi.resources.CustomResource {
      * (Updatable) Enables or disables the monitor.
      * 
      */
-    @Export(name="status", type=String.class, parameters={})
+    @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
@@ -408,7 +408,7 @@ public class Config extends com.pulumi.resources.CustomResource {
      * (Updatable) Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
      * 
      */
-    @Export(name="target", type=String.class, parameters={})
+    @Export(name="target", refs={String.class}, tree="[0]")
     private Output<String> target;
 
     /**
@@ -422,7 +422,7 @@ public class Config extends com.pulumi.resources.CustomResource {
      * The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -436,7 +436,7 @@ public class Config extends com.pulumi.resources.CustomResource {
      * The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -450,7 +450,7 @@ public class Config extends com.pulumi.resources.CustomResource {
      * (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
      * 
      */
-    @Export(name="timeoutInSeconds", type=Integer.class, parameters={})
+    @Export(name="timeoutInSeconds", refs={Integer.class}, tree="[0]")
     private Output<Integer> timeoutInSeconds;
 
     /**
@@ -464,7 +464,7 @@ public class Config extends com.pulumi.resources.CustomResource {
      * Number of vantage points where monitor is running.
      * 
      */
-    @Export(name="vantagePointCount", type=Integer.class, parameters={})
+    @Export(name="vantagePointCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> vantagePointCount;
 
     /**
@@ -481,7 +481,7 @@ public class Config extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="vantagePoints", type=List.class, parameters={ConfigVantagePoint.class})
+    @Export(name="vantagePoints", refs={List.class,ConfigVantagePoint.class}, tree="[0,1]")
     private Output<List<ConfigVantagePoint>> vantagePoints;
 
     /**

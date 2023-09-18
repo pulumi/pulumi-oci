@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Filesystem Snapshot Policy resource in Oracle Cloud Infrastructure File Storage service.
@@ -268,6 +269,12 @@ func (i *FilesystemSnapshotPolicy) ToFilesystemSnapshotPolicyOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(FilesystemSnapshotPolicyOutput)
 }
 
+func (i *FilesystemSnapshotPolicy) ToOutput(ctx context.Context) pulumix.Output[*FilesystemSnapshotPolicy] {
+	return pulumix.Output[*FilesystemSnapshotPolicy]{
+		OutputState: i.ToFilesystemSnapshotPolicyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // FilesystemSnapshotPolicyArrayInput is an input type that accepts FilesystemSnapshotPolicyArray and FilesystemSnapshotPolicyArrayOutput values.
 // You can construct a concrete instance of `FilesystemSnapshotPolicyArrayInput` via:
 //
@@ -291,6 +298,12 @@ func (i FilesystemSnapshotPolicyArray) ToFilesystemSnapshotPolicyArrayOutput() F
 
 func (i FilesystemSnapshotPolicyArray) ToFilesystemSnapshotPolicyArrayOutputWithContext(ctx context.Context) FilesystemSnapshotPolicyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(FilesystemSnapshotPolicyArrayOutput)
+}
+
+func (i FilesystemSnapshotPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]*FilesystemSnapshotPolicy] {
+	return pulumix.Output[[]*FilesystemSnapshotPolicy]{
+		OutputState: i.ToFilesystemSnapshotPolicyArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // FilesystemSnapshotPolicyMapInput is an input type that accepts FilesystemSnapshotPolicyMap and FilesystemSnapshotPolicyMapOutput values.
@@ -318,6 +331,12 @@ func (i FilesystemSnapshotPolicyMap) ToFilesystemSnapshotPolicyMapOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(FilesystemSnapshotPolicyMapOutput)
 }
 
+func (i FilesystemSnapshotPolicyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*FilesystemSnapshotPolicy] {
+	return pulumix.Output[map[string]*FilesystemSnapshotPolicy]{
+		OutputState: i.ToFilesystemSnapshotPolicyMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type FilesystemSnapshotPolicyOutput struct{ *pulumi.OutputState }
 
 func (FilesystemSnapshotPolicyOutput) ElementType() reflect.Type {
@@ -330,6 +349,12 @@ func (o FilesystemSnapshotPolicyOutput) ToFilesystemSnapshotPolicyOutput() Files
 
 func (o FilesystemSnapshotPolicyOutput) ToFilesystemSnapshotPolicyOutputWithContext(ctx context.Context) FilesystemSnapshotPolicyOutput {
 	return o
+}
+
+func (o FilesystemSnapshotPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[*FilesystemSnapshotPolicy] {
+	return pulumix.Output[*FilesystemSnapshotPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The availability domain that the file system snapshot policy is in.  Example: `Uocm:PHX-AD-1`
@@ -396,6 +421,12 @@ func (o FilesystemSnapshotPolicyArrayOutput) ToFilesystemSnapshotPolicyArrayOutp
 	return o
 }
 
+func (o FilesystemSnapshotPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*FilesystemSnapshotPolicy] {
+	return pulumix.Output[[]*FilesystemSnapshotPolicy]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o FilesystemSnapshotPolicyArrayOutput) Index(i pulumi.IntInput) FilesystemSnapshotPolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *FilesystemSnapshotPolicy {
 		return vs[0].([]*FilesystemSnapshotPolicy)[vs[1].(int)]
@@ -414,6 +445,12 @@ func (o FilesystemSnapshotPolicyMapOutput) ToFilesystemSnapshotPolicyMapOutput()
 
 func (o FilesystemSnapshotPolicyMapOutput) ToFilesystemSnapshotPolicyMapOutputWithContext(ctx context.Context) FilesystemSnapshotPolicyMapOutput {
 	return o
+}
+
+func (o FilesystemSnapshotPolicyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*FilesystemSnapshotPolicy] {
+	return pulumix.Output[map[string]*FilesystemSnapshotPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o FilesystemSnapshotPolicyMapOutput) MapIndex(k pulumi.StringInput) FilesystemSnapshotPolicyOutput {

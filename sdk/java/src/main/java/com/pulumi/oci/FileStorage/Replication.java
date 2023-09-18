@@ -97,7 +97,7 @@ public class Replication extends com.pulumi.resources.CustomResource {
      * The availability domain the replication is in. The replication must be in the same availability domain as the source file system. Example: `Uocm:PHX-AD-1`
      * 
      */
-    @Export(name="availabilityDomain", type=String.class, parameters={})
+    @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
     private Output<String> availabilityDomain;
 
     /**
@@ -111,7 +111,7 @@ public class Replication extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the replication.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -125,7 +125,7 @@ public class Replication extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -139,7 +139,7 @@ public class Replication extends com.pulumi.resources.CustomResource {
      * Percentage progress of the current replication cycle.
      * 
      */
-    @Export(name="deltaProgress", type=String.class, parameters={})
+    @Export(name="deltaProgress", refs={String.class}, tree="[0]")
     private Output<String> deltaProgress;
 
     /**
@@ -153,7 +153,7 @@ public class Replication extends com.pulumi.resources.CustomResource {
      * The current state of the snapshot during replication operations.
      * 
      */
-    @Export(name="deltaStatus", type=String.class, parameters={})
+    @Export(name="deltaStatus", refs={String.class}, tree="[0]")
     private Output<String> deltaStatus;
 
     /**
@@ -167,7 +167,7 @@ public class Replication extends com.pulumi.resources.CustomResource {
      * (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information. An associated replication target will also created with the same `displayName`. Example: `My replication`
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -181,7 +181,7 @@ public class Replication extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -195,7 +195,7 @@ public class Replication extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely. Empty if the copy of the initial snapshot is not complete.
      * 
      */
-    @Export(name="lastSnapshotId", type=String.class, parameters={})
+    @Export(name="lastSnapshotId", refs={String.class}, tree="[0]")
     private Output<String> lastSnapshotId;
 
     /**
@@ -209,7 +209,7 @@ public class Replication extends com.pulumi.resources.CustomResource {
      * Additional information about the current &#39;lifecycleState&#39;.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -223,7 +223,7 @@ public class Replication extends com.pulumi.resources.CustomResource {
      * The [`snapshotTime`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Snapshot/snapshotTime) of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
      * 
      */
-    @Export(name="recoveryPointTime", type=String.class, parameters={})
+    @Export(name="recoveryPointTime", refs={String.class}, tree="[0]")
     private Output<String> recoveryPointTime;
 
     /**
@@ -237,7 +237,7 @@ public class Replication extends com.pulumi.resources.CustomResource {
      * (Updatable) Duration in minutes between replication snapshots.
      * 
      */
-    @Export(name="replicationInterval", type=String.class, parameters={})
+    @Export(name="replicationInterval", refs={String.class}, tree="[0]")
     private Output<String> replicationInterval;
 
     /**
@@ -251,7 +251,7 @@ public class Replication extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [`ReplicationTarget`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ReplicationTarget).
      * 
      */
-    @Export(name="replicationTargetId", type=String.class, parameters={})
+    @Export(name="replicationTargetId", refs={String.class}, tree="[0]")
     private Output<String> replicationTargetId;
 
     /**
@@ -265,7 +265,7 @@ public class Replication extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source file system.
      * 
      */
-    @Export(name="sourceId", type=String.class, parameters={})
+    @Export(name="sourceId", refs={String.class}, tree="[0]")
     private Output<String> sourceId;
 
     /**
@@ -279,7 +279,7 @@ public class Replication extends com.pulumi.resources.CustomResource {
      * The current state of this replication. This resource can be in a `FAILED` state if replication target is deleted instead of the replication resource.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -296,7 +296,7 @@ public class Replication extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="targetId", type=String.class, parameters={})
+    @Export(name="targetId", refs={String.class}, tree="[0]")
     private Output<String> targetId;
 
     /**
@@ -313,7 +313,7 @@ public class Replication extends com.pulumi.resources.CustomResource {
      * The date and time the replication was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2021-01-04T20:01:29.100Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**

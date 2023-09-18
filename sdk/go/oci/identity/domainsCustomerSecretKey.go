@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Customer Secret Key resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -971,6 +972,12 @@ func (i *DomainsCustomerSecretKey) ToDomainsCustomerSecretKeyOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsCustomerSecretKeyOutput)
 }
 
+func (i *DomainsCustomerSecretKey) ToOutput(ctx context.Context) pulumix.Output[*DomainsCustomerSecretKey] {
+	return pulumix.Output[*DomainsCustomerSecretKey]{
+		OutputState: i.ToDomainsCustomerSecretKeyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // DomainsCustomerSecretKeyArrayInput is an input type that accepts DomainsCustomerSecretKeyArray and DomainsCustomerSecretKeyArrayOutput values.
 // You can construct a concrete instance of `DomainsCustomerSecretKeyArrayInput` via:
 //
@@ -994,6 +1001,12 @@ func (i DomainsCustomerSecretKeyArray) ToDomainsCustomerSecretKeyArrayOutput() D
 
 func (i DomainsCustomerSecretKeyArray) ToDomainsCustomerSecretKeyArrayOutputWithContext(ctx context.Context) DomainsCustomerSecretKeyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsCustomerSecretKeyArrayOutput)
+}
+
+func (i DomainsCustomerSecretKeyArray) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsCustomerSecretKey] {
+	return pulumix.Output[[]*DomainsCustomerSecretKey]{
+		OutputState: i.ToDomainsCustomerSecretKeyArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // DomainsCustomerSecretKeyMapInput is an input type that accepts DomainsCustomerSecretKeyMap and DomainsCustomerSecretKeyMapOutput values.
@@ -1021,6 +1034,12 @@ func (i DomainsCustomerSecretKeyMap) ToDomainsCustomerSecretKeyMapOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsCustomerSecretKeyMapOutput)
 }
 
+func (i DomainsCustomerSecretKeyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsCustomerSecretKey] {
+	return pulumix.Output[map[string]*DomainsCustomerSecretKey]{
+		OutputState: i.ToDomainsCustomerSecretKeyMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type DomainsCustomerSecretKeyOutput struct{ *pulumi.OutputState }
 
 func (DomainsCustomerSecretKeyOutput) ElementType() reflect.Type {
@@ -1033,6 +1052,12 @@ func (o DomainsCustomerSecretKeyOutput) ToDomainsCustomerSecretKeyOutput() Domai
 
 func (o DomainsCustomerSecretKeyOutput) ToDomainsCustomerSecretKeyOutputWithContext(ctx context.Context) DomainsCustomerSecretKeyOutput {
 	return o
+}
+
+func (o DomainsCustomerSecretKeyOutput) ToOutput(ctx context.Context) pulumix.Output[*DomainsCustomerSecretKey] {
+	return pulumix.Output[*DomainsCustomerSecretKey]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The access key.
@@ -1345,6 +1370,12 @@ func (o DomainsCustomerSecretKeyArrayOutput) ToDomainsCustomerSecretKeyArrayOutp
 	return o
 }
 
+func (o DomainsCustomerSecretKeyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsCustomerSecretKey] {
+	return pulumix.Output[[]*DomainsCustomerSecretKey]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o DomainsCustomerSecretKeyArrayOutput) Index(i pulumi.IntInput) DomainsCustomerSecretKeyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DomainsCustomerSecretKey {
 		return vs[0].([]*DomainsCustomerSecretKey)[vs[1].(int)]
@@ -1363,6 +1394,12 @@ func (o DomainsCustomerSecretKeyMapOutput) ToDomainsCustomerSecretKeyMapOutput()
 
 func (o DomainsCustomerSecretKeyMapOutput) ToDomainsCustomerSecretKeyMapOutputWithContext(ctx context.Context) DomainsCustomerSecretKeyMapOutput {
 	return o
+}
+
+func (o DomainsCustomerSecretKeyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsCustomerSecretKey] {
+	return pulumix.Output[map[string]*DomainsCustomerSecretKey]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o DomainsCustomerSecretKeyMapOutput) MapIndex(k pulumi.StringInput) DomainsCustomerSecretKeyOutput {

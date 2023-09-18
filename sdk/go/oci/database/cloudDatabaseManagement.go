@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Database Management resource in Oracle Cloud Infrastructure Database service.
@@ -267,6 +268,12 @@ func (i *CloudDatabaseManagement) ToCloudDatabaseManagementOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(CloudDatabaseManagementOutput)
 }
 
+func (i *CloudDatabaseManagement) ToOutput(ctx context.Context) pulumix.Output[*CloudDatabaseManagement] {
+	return pulumix.Output[*CloudDatabaseManagement]{
+		OutputState: i.ToCloudDatabaseManagementOutputWithContext(ctx).OutputState,
+	}
+}
+
 // CloudDatabaseManagementArrayInput is an input type that accepts CloudDatabaseManagementArray and CloudDatabaseManagementArrayOutput values.
 // You can construct a concrete instance of `CloudDatabaseManagementArrayInput` via:
 //
@@ -290,6 +297,12 @@ func (i CloudDatabaseManagementArray) ToCloudDatabaseManagementArrayOutput() Clo
 
 func (i CloudDatabaseManagementArray) ToCloudDatabaseManagementArrayOutputWithContext(ctx context.Context) CloudDatabaseManagementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CloudDatabaseManagementArrayOutput)
+}
+
+func (i CloudDatabaseManagementArray) ToOutput(ctx context.Context) pulumix.Output[[]*CloudDatabaseManagement] {
+	return pulumix.Output[[]*CloudDatabaseManagement]{
+		OutputState: i.ToCloudDatabaseManagementArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // CloudDatabaseManagementMapInput is an input type that accepts CloudDatabaseManagementMap and CloudDatabaseManagementMapOutput values.
@@ -317,6 +330,12 @@ func (i CloudDatabaseManagementMap) ToCloudDatabaseManagementMapOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(CloudDatabaseManagementMapOutput)
 }
 
+func (i CloudDatabaseManagementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*CloudDatabaseManagement] {
+	return pulumix.Output[map[string]*CloudDatabaseManagement]{
+		OutputState: i.ToCloudDatabaseManagementMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type CloudDatabaseManagementOutput struct{ *pulumi.OutputState }
 
 func (CloudDatabaseManagementOutput) ElementType() reflect.Type {
@@ -329,6 +348,12 @@ func (o CloudDatabaseManagementOutput) ToCloudDatabaseManagementOutput() CloudDa
 
 func (o CloudDatabaseManagementOutput) ToCloudDatabaseManagementOutputWithContext(ctx context.Context) CloudDatabaseManagementOutput {
 	return o
+}
+
+func (o CloudDatabaseManagementOutput) ToOutput(ctx context.Context) pulumix.Output[*CloudDatabaseManagement] {
+	return pulumix.Output[*CloudDatabaseManagement]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o CloudDatabaseManagementOutput) Credentialdetails() CloudDatabaseManagementCredentialdetailsOutput {
@@ -400,6 +425,12 @@ func (o CloudDatabaseManagementArrayOutput) ToCloudDatabaseManagementArrayOutput
 	return o
 }
 
+func (o CloudDatabaseManagementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*CloudDatabaseManagement] {
+	return pulumix.Output[[]*CloudDatabaseManagement]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o CloudDatabaseManagementArrayOutput) Index(i pulumi.IntInput) CloudDatabaseManagementOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CloudDatabaseManagement {
 		return vs[0].([]*CloudDatabaseManagement)[vs[1].(int)]
@@ -418,6 +449,12 @@ func (o CloudDatabaseManagementMapOutput) ToCloudDatabaseManagementMapOutput() C
 
 func (o CloudDatabaseManagementMapOutput) ToCloudDatabaseManagementMapOutputWithContext(ctx context.Context) CloudDatabaseManagementMapOutput {
 	return o
+}
+
+func (o CloudDatabaseManagementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*CloudDatabaseManagement] {
+	return pulumix.Output[map[string]*CloudDatabaseManagement]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o CloudDatabaseManagementMapOutput) MapIndex(k pulumi.StringInput) CloudDatabaseManagementOutput {

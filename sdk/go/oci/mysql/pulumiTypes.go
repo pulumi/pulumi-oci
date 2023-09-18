@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -74,6 +75,12 @@ func (i ChannelSourceArgs) ToChannelSourceOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(ChannelSourceOutput)
 }
 
+func (i ChannelSourceArgs) ToOutput(ctx context.Context) pulumix.Output[ChannelSource] {
+	return pulumix.Output[ChannelSource]{
+		OutputState: i.ToChannelSourceOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i ChannelSourceArgs) ToChannelSourcePtrOutput() ChannelSourcePtrOutput {
 	return i.ToChannelSourcePtrOutputWithContext(context.Background())
 }
@@ -115,6 +122,12 @@ func (i *channelSourcePtrType) ToChannelSourcePtrOutputWithContext(ctx context.C
 	return pulumi.ToOutputWithContext(ctx, i).(ChannelSourcePtrOutput)
 }
 
+func (i *channelSourcePtrType) ToOutput(ctx context.Context) pulumix.Output[*ChannelSource] {
+	return pulumix.Output[*ChannelSource]{
+		OutputState: i.ToChannelSourcePtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ChannelSourceOutput struct{ *pulumi.OutputState }
 
 func (ChannelSourceOutput) ElementType() reflect.Type {
@@ -137,6 +150,12 @@ func (o ChannelSourceOutput) ToChannelSourcePtrOutputWithContext(ctx context.Con
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ChannelSource) *ChannelSource {
 		return &v
 	}).(ChannelSourcePtrOutput)
+}
+
+func (o ChannelSourceOutput) ToOutput(ctx context.Context) pulumix.Output[ChannelSource] {
+	return pulumix.Output[ChannelSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
@@ -193,6 +212,12 @@ func (o ChannelSourcePtrOutput) ToChannelSourcePtrOutput() ChannelSourcePtrOutpu
 
 func (o ChannelSourcePtrOutput) ToChannelSourcePtrOutputWithContext(ctx context.Context) ChannelSourcePtrOutput {
 	return o
+}
+
+func (o ChannelSourcePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ChannelSource] {
+	return pulumix.Output[*ChannelSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ChannelSourcePtrOutput) Elem() ChannelSourceOutput {
@@ -330,6 +355,12 @@ func (i ChannelSourceAnonymousTransactionsHandlingArgs) ToChannelSourceAnonymous
 	return pulumi.ToOutputWithContext(ctx, i).(ChannelSourceAnonymousTransactionsHandlingOutput)
 }
 
+func (i ChannelSourceAnonymousTransactionsHandlingArgs) ToOutput(ctx context.Context) pulumix.Output[ChannelSourceAnonymousTransactionsHandling] {
+	return pulumix.Output[ChannelSourceAnonymousTransactionsHandling]{
+		OutputState: i.ToChannelSourceAnonymousTransactionsHandlingOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i ChannelSourceAnonymousTransactionsHandlingArgs) ToChannelSourceAnonymousTransactionsHandlingPtrOutput() ChannelSourceAnonymousTransactionsHandlingPtrOutput {
 	return i.ToChannelSourceAnonymousTransactionsHandlingPtrOutputWithContext(context.Background())
 }
@@ -371,6 +402,12 @@ func (i *channelSourceAnonymousTransactionsHandlingPtrType) ToChannelSourceAnony
 	return pulumi.ToOutputWithContext(ctx, i).(ChannelSourceAnonymousTransactionsHandlingPtrOutput)
 }
 
+func (i *channelSourceAnonymousTransactionsHandlingPtrType) ToOutput(ctx context.Context) pulumix.Output[*ChannelSourceAnonymousTransactionsHandling] {
+	return pulumix.Output[*ChannelSourceAnonymousTransactionsHandling]{
+		OutputState: i.ToChannelSourceAnonymousTransactionsHandlingPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ChannelSourceAnonymousTransactionsHandlingOutput struct{ *pulumi.OutputState }
 
 func (ChannelSourceAnonymousTransactionsHandlingOutput) ElementType() reflect.Type {
@@ -393,6 +430,12 @@ func (o ChannelSourceAnonymousTransactionsHandlingOutput) ToChannelSourceAnonymo
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ChannelSourceAnonymousTransactionsHandling) *ChannelSourceAnonymousTransactionsHandling {
 		return &v
 	}).(ChannelSourceAnonymousTransactionsHandlingPtrOutput)
+}
+
+func (o ChannelSourceAnonymousTransactionsHandlingOutput) ToOutput(ctx context.Context) pulumix.Output[ChannelSourceAnonymousTransactionsHandling] {
+	return pulumix.Output[ChannelSourceAnonymousTransactionsHandling]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
@@ -427,6 +470,12 @@ func (o ChannelSourceAnonymousTransactionsHandlingPtrOutput) ToChannelSourceAnon
 
 func (o ChannelSourceAnonymousTransactionsHandlingPtrOutput) ToChannelSourceAnonymousTransactionsHandlingPtrOutputWithContext(ctx context.Context) ChannelSourceAnonymousTransactionsHandlingPtrOutput {
 	return o
+}
+
+func (o ChannelSourceAnonymousTransactionsHandlingPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ChannelSourceAnonymousTransactionsHandling] {
+	return pulumix.Output[*ChannelSourceAnonymousTransactionsHandling]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ChannelSourceAnonymousTransactionsHandlingPtrOutput) Elem() ChannelSourceAnonymousTransactionsHandlingOutput {
@@ -516,6 +565,12 @@ func (i ChannelSourceSslCaCertificateArgs) ToChannelSourceSslCaCertificateOutput
 	return pulumi.ToOutputWithContext(ctx, i).(ChannelSourceSslCaCertificateOutput)
 }
 
+func (i ChannelSourceSslCaCertificateArgs) ToOutput(ctx context.Context) pulumix.Output[ChannelSourceSslCaCertificate] {
+	return pulumix.Output[ChannelSourceSslCaCertificate]{
+		OutputState: i.ToChannelSourceSslCaCertificateOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i ChannelSourceSslCaCertificateArgs) ToChannelSourceSslCaCertificatePtrOutput() ChannelSourceSslCaCertificatePtrOutput {
 	return i.ToChannelSourceSslCaCertificatePtrOutputWithContext(context.Background())
 }
@@ -557,6 +612,12 @@ func (i *channelSourceSslCaCertificatePtrType) ToChannelSourceSslCaCertificatePt
 	return pulumi.ToOutputWithContext(ctx, i).(ChannelSourceSslCaCertificatePtrOutput)
 }
 
+func (i *channelSourceSslCaCertificatePtrType) ToOutput(ctx context.Context) pulumix.Output[*ChannelSourceSslCaCertificate] {
+	return pulumix.Output[*ChannelSourceSslCaCertificate]{
+		OutputState: i.ToChannelSourceSslCaCertificatePtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ChannelSourceSslCaCertificateOutput struct{ *pulumi.OutputState }
 
 func (ChannelSourceSslCaCertificateOutput) ElementType() reflect.Type {
@@ -581,6 +642,12 @@ func (o ChannelSourceSslCaCertificateOutput) ToChannelSourceSslCaCertificatePtrO
 	}).(ChannelSourceSslCaCertificatePtrOutput)
 }
 
+func (o ChannelSourceSslCaCertificateOutput) ToOutput(ctx context.Context) pulumix.Output[ChannelSourceSslCaCertificate] {
+	return pulumix.Output[ChannelSourceSslCaCertificate]{
+		OutputState: o.OutputState,
+	}
+}
+
 // (Updatable) The type of CA certificate.
 func (o ChannelSourceSslCaCertificateOutput) CertificateType() pulumi.StringOutput {
 	return o.ApplyT(func(v ChannelSourceSslCaCertificate) string { return v.CertificateType }).(pulumi.StringOutput)
@@ -603,6 +670,12 @@ func (o ChannelSourceSslCaCertificatePtrOutput) ToChannelSourceSslCaCertificateP
 
 func (o ChannelSourceSslCaCertificatePtrOutput) ToChannelSourceSslCaCertificatePtrOutputWithContext(ctx context.Context) ChannelSourceSslCaCertificatePtrOutput {
 	return o
+}
+
+func (o ChannelSourceSslCaCertificatePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ChannelSourceSslCaCertificate] {
+	return pulumix.Output[*ChannelSourceSslCaCertificate]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ChannelSourceSslCaCertificatePtrOutput) Elem() ChannelSourceSslCaCertificateOutput {
@@ -698,6 +771,12 @@ func (i ChannelTargetArgs) ToChannelTargetOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(ChannelTargetOutput)
 }
 
+func (i ChannelTargetArgs) ToOutput(ctx context.Context) pulumix.Output[ChannelTarget] {
+	return pulumix.Output[ChannelTarget]{
+		OutputState: i.ToChannelTargetOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i ChannelTargetArgs) ToChannelTargetPtrOutput() ChannelTargetPtrOutput {
 	return i.ToChannelTargetPtrOutputWithContext(context.Background())
 }
@@ -739,6 +818,12 @@ func (i *channelTargetPtrType) ToChannelTargetPtrOutputWithContext(ctx context.C
 	return pulumi.ToOutputWithContext(ctx, i).(ChannelTargetPtrOutput)
 }
 
+func (i *channelTargetPtrType) ToOutput(ctx context.Context) pulumix.Output[*ChannelTarget] {
+	return pulumix.Output[*ChannelTarget]{
+		OutputState: i.ToChannelTargetPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ChannelTargetOutput struct{ *pulumi.OutputState }
 
 func (ChannelTargetOutput) ElementType() reflect.Type {
@@ -761,6 +846,12 @@ func (o ChannelTargetOutput) ToChannelTargetPtrOutputWithContext(ctx context.Con
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ChannelTarget) *ChannelTarget {
 		return &v
 	}).(ChannelTargetPtrOutput)
+}
+
+func (o ChannelTargetOutput) ToOutput(ctx context.Context) pulumix.Output[ChannelTarget] {
+	return pulumix.Output[ChannelTarget]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The username for the replication applier of the target MySQL DB System.
@@ -813,6 +904,12 @@ func (o ChannelTargetPtrOutput) ToChannelTargetPtrOutput() ChannelTargetPtrOutpu
 
 func (o ChannelTargetPtrOutput) ToChannelTargetPtrOutputWithContext(ctx context.Context) ChannelTargetPtrOutput {
 	return o
+}
+
+func (o ChannelTargetPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ChannelTarget] {
+	return pulumix.Output[*ChannelTarget]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ChannelTargetPtrOutput) Elem() ChannelTargetOutput {
@@ -939,6 +1036,12 @@ func (i ChannelTargetFilterArgs) ToChannelTargetFilterOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(ChannelTargetFilterOutput)
 }
 
+func (i ChannelTargetFilterArgs) ToOutput(ctx context.Context) pulumix.Output[ChannelTargetFilter] {
+	return pulumix.Output[ChannelTargetFilter]{
+		OutputState: i.ToChannelTargetFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ChannelTargetFilterArrayInput is an input type that accepts ChannelTargetFilterArray and ChannelTargetFilterArrayOutput values.
 // You can construct a concrete instance of `ChannelTargetFilterArrayInput` via:
 //
@@ -964,6 +1067,12 @@ func (i ChannelTargetFilterArray) ToChannelTargetFilterArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(ChannelTargetFilterArrayOutput)
 }
 
+func (i ChannelTargetFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]ChannelTargetFilter] {
+	return pulumix.Output[[]ChannelTargetFilter]{
+		OutputState: i.ToChannelTargetFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ChannelTargetFilterOutput struct{ *pulumi.OutputState }
 
 func (ChannelTargetFilterOutput) ElementType() reflect.Type {
@@ -976,6 +1085,12 @@ func (o ChannelTargetFilterOutput) ToChannelTargetFilterOutput() ChannelTargetFi
 
 func (o ChannelTargetFilterOutput) ToChannelTargetFilterOutputWithContext(ctx context.Context) ChannelTargetFilterOutput {
 	return o
+}
+
+func (o ChannelTargetFilterOutput) ToOutput(ctx context.Context) pulumix.Output[ChannelTargetFilter] {
+	return pulumix.Output[ChannelTargetFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The type of the filter rule.
@@ -1002,6 +1117,12 @@ func (o ChannelTargetFilterArrayOutput) ToChannelTargetFilterArrayOutput() Chann
 
 func (o ChannelTargetFilterArrayOutput) ToChannelTargetFilterArrayOutputWithContext(ctx context.Context) ChannelTargetFilterArrayOutput {
 	return o
+}
+
+func (o ChannelTargetFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ChannelTargetFilter] {
+	return pulumix.Output[[]ChannelTargetFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ChannelTargetFilterArrayOutput) Index(i pulumi.IntInput) ChannelTargetFilterOutput {
@@ -1061,6 +1182,12 @@ func (i HeatWaveClusterClusterNodeArgs) ToHeatWaveClusterClusterNodeOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(HeatWaveClusterClusterNodeOutput)
 }
 
+func (i HeatWaveClusterClusterNodeArgs) ToOutput(ctx context.Context) pulumix.Output[HeatWaveClusterClusterNode] {
+	return pulumix.Output[HeatWaveClusterClusterNode]{
+		OutputState: i.ToHeatWaveClusterClusterNodeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // HeatWaveClusterClusterNodeArrayInput is an input type that accepts HeatWaveClusterClusterNodeArray and HeatWaveClusterClusterNodeArrayOutput values.
 // You can construct a concrete instance of `HeatWaveClusterClusterNodeArrayInput` via:
 //
@@ -1086,6 +1213,12 @@ func (i HeatWaveClusterClusterNodeArray) ToHeatWaveClusterClusterNodeArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(HeatWaveClusterClusterNodeArrayOutput)
 }
 
+func (i HeatWaveClusterClusterNodeArray) ToOutput(ctx context.Context) pulumix.Output[[]HeatWaveClusterClusterNode] {
+	return pulumix.Output[[]HeatWaveClusterClusterNode]{
+		OutputState: i.ToHeatWaveClusterClusterNodeArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type HeatWaveClusterClusterNodeOutput struct{ *pulumi.OutputState }
 
 func (HeatWaveClusterClusterNodeOutput) ElementType() reflect.Type {
@@ -1098,6 +1231,12 @@ func (o HeatWaveClusterClusterNodeOutput) ToHeatWaveClusterClusterNodeOutput() H
 
 func (o HeatWaveClusterClusterNodeOutput) ToHeatWaveClusterClusterNodeOutputWithContext(ctx context.Context) HeatWaveClusterClusterNodeOutput {
 	return o
+}
+
+func (o HeatWaveClusterClusterNodeOutput) ToOutput(ctx context.Context) pulumix.Output[HeatWaveClusterClusterNode] {
+	return pulumix.Output[HeatWaveClusterClusterNode]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The ID of the node within MySQL HeatWave cluster.
@@ -1135,6 +1274,12 @@ func (o HeatWaveClusterClusterNodeArrayOutput) ToHeatWaveClusterClusterNodeArray
 
 func (o HeatWaveClusterClusterNodeArrayOutput) ToHeatWaveClusterClusterNodeArrayOutputWithContext(ctx context.Context) HeatWaveClusterClusterNodeArrayOutput {
 	return o
+}
+
+func (o HeatWaveClusterClusterNodeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]HeatWaveClusterClusterNode] {
+	return pulumix.Output[[]HeatWaveClusterClusterNode]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o HeatWaveClusterClusterNodeArrayOutput) Index(i pulumi.IntInput) HeatWaveClusterClusterNodeOutput {
@@ -1268,6 +1413,12 @@ func (i MysqlBackupDbSystemSnapshotArgs) ToMysqlBackupDbSystemSnapshotOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotOutput)
 }
 
+func (i MysqlBackupDbSystemSnapshotArgs) ToOutput(ctx context.Context) pulumix.Output[MysqlBackupDbSystemSnapshot] {
+	return pulumix.Output[MysqlBackupDbSystemSnapshot]{
+		OutputState: i.ToMysqlBackupDbSystemSnapshotOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MysqlBackupDbSystemSnapshotArrayInput is an input type that accepts MysqlBackupDbSystemSnapshotArray and MysqlBackupDbSystemSnapshotArrayOutput values.
 // You can construct a concrete instance of `MysqlBackupDbSystemSnapshotArrayInput` via:
 //
@@ -1293,6 +1444,12 @@ func (i MysqlBackupDbSystemSnapshotArray) ToMysqlBackupDbSystemSnapshotArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotArrayOutput)
 }
 
+func (i MysqlBackupDbSystemSnapshotArray) ToOutput(ctx context.Context) pulumix.Output[[]MysqlBackupDbSystemSnapshot] {
+	return pulumix.Output[[]MysqlBackupDbSystemSnapshot]{
+		OutputState: i.ToMysqlBackupDbSystemSnapshotArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MysqlBackupDbSystemSnapshotOutput struct{ *pulumi.OutputState }
 
 func (MysqlBackupDbSystemSnapshotOutput) ElementType() reflect.Type {
@@ -1305,6 +1462,12 @@ func (o MysqlBackupDbSystemSnapshotOutput) ToMysqlBackupDbSystemSnapshotOutput()
 
 func (o MysqlBackupDbSystemSnapshotOutput) ToMysqlBackupDbSystemSnapshotOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotOutput {
 	return o
+}
+
+func (o MysqlBackupDbSystemSnapshotOutput) ToOutput(ctx context.Context) pulumix.Output[MysqlBackupDbSystemSnapshot] {
+	return pulumix.Output[MysqlBackupDbSystemSnapshot]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The username for the administrative user.
@@ -1443,6 +1606,12 @@ func (o MysqlBackupDbSystemSnapshotArrayOutput) ToMysqlBackupDbSystemSnapshotArr
 	return o
 }
 
+func (o MysqlBackupDbSystemSnapshotArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MysqlBackupDbSystemSnapshot] {
+	return pulumix.Output[[]MysqlBackupDbSystemSnapshot]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o MysqlBackupDbSystemSnapshotArrayOutput) Index(i pulumi.IntInput) MysqlBackupDbSystemSnapshotOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlBackupDbSystemSnapshot {
 		return vs[0].([]MysqlBackupDbSystemSnapshot)[vs[1].(int)]
@@ -1508,6 +1677,12 @@ func (i MysqlBackupDbSystemSnapshotBackupPolicyArgs) ToMysqlBackupDbSystemSnapsh
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotBackupPolicyOutput)
 }
 
+func (i MysqlBackupDbSystemSnapshotBackupPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[MysqlBackupDbSystemSnapshotBackupPolicy] {
+	return pulumix.Output[MysqlBackupDbSystemSnapshotBackupPolicy]{
+		OutputState: i.ToMysqlBackupDbSystemSnapshotBackupPolicyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MysqlBackupDbSystemSnapshotBackupPolicyArrayInput is an input type that accepts MysqlBackupDbSystemSnapshotBackupPolicyArray and MysqlBackupDbSystemSnapshotBackupPolicyArrayOutput values.
 // You can construct a concrete instance of `MysqlBackupDbSystemSnapshotBackupPolicyArrayInput` via:
 //
@@ -1533,6 +1708,12 @@ func (i MysqlBackupDbSystemSnapshotBackupPolicyArray) ToMysqlBackupDbSystemSnaps
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotBackupPolicyArrayOutput)
 }
 
+func (i MysqlBackupDbSystemSnapshotBackupPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]MysqlBackupDbSystemSnapshotBackupPolicy] {
+	return pulumix.Output[[]MysqlBackupDbSystemSnapshotBackupPolicy]{
+		OutputState: i.ToMysqlBackupDbSystemSnapshotBackupPolicyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MysqlBackupDbSystemSnapshotBackupPolicyOutput struct{ *pulumi.OutputState }
 
 func (MysqlBackupDbSystemSnapshotBackupPolicyOutput) ElementType() reflect.Type {
@@ -1545,6 +1726,12 @@ func (o MysqlBackupDbSystemSnapshotBackupPolicyOutput) ToMysqlBackupDbSystemSnap
 
 func (o MysqlBackupDbSystemSnapshotBackupPolicyOutput) ToMysqlBackupDbSystemSnapshotBackupPolicyOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotBackupPolicyOutput {
 	return o
+}
+
+func (o MysqlBackupDbSystemSnapshotBackupPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[MysqlBackupDbSystemSnapshotBackupPolicy] {
+	return pulumix.Output[MysqlBackupDbSystemSnapshotBackupPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -1596,6 +1783,12 @@ func (o MysqlBackupDbSystemSnapshotBackupPolicyArrayOutput) ToMysqlBackupDbSyste
 	return o
 }
 
+func (o MysqlBackupDbSystemSnapshotBackupPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MysqlBackupDbSystemSnapshotBackupPolicy] {
+	return pulumix.Output[[]MysqlBackupDbSystemSnapshotBackupPolicy]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o MysqlBackupDbSystemSnapshotBackupPolicyArrayOutput) Index(i pulumi.IntInput) MysqlBackupDbSystemSnapshotBackupPolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlBackupDbSystemSnapshotBackupPolicy {
 		return vs[0].([]MysqlBackupDbSystemSnapshotBackupPolicy)[vs[1].(int)]
@@ -1635,6 +1828,12 @@ func (i MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs) ToMysqlBackupDbSy
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput)
 }
 
+func (i MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy] {
+	return pulumix.Output[MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy]{
+		OutputState: i.ToMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayInput is an input type that accepts MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArray and MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput values.
 // You can construct a concrete instance of `MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayInput` via:
 //
@@ -1660,6 +1859,12 @@ func (i MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArray) ToMysqlBackupDbS
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput)
 }
 
+func (i MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy] {
+	return pulumix.Output[[]MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy]{
+		OutputState: i.ToMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput struct{ *pulumi.OutputState }
 
 func (MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput) ElementType() reflect.Type {
@@ -1672,6 +1877,12 @@ func (o MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput) ToMysqlBackupDb
 
 func (o MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput) ToMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput {
 	return o
+}
+
+func (o MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy] {
+	return pulumix.Output[MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Specifies if PITR is enabled or disabled.
@@ -1691,6 +1902,12 @@ func (o MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput) ToMysqlBac
 
 func (o MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput) ToMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput {
 	return o
+}
+
+func (o MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy] {
+	return pulumix.Output[[]MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput) Index(i pulumi.IntInput) MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput {
@@ -1740,6 +1957,12 @@ func (i MysqlBackupDbSystemSnapshotDeletionPolicyArgs) ToMysqlBackupDbSystemSnap
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotDeletionPolicyOutput)
 }
 
+func (i MysqlBackupDbSystemSnapshotDeletionPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[MysqlBackupDbSystemSnapshotDeletionPolicy] {
+	return pulumix.Output[MysqlBackupDbSystemSnapshotDeletionPolicy]{
+		OutputState: i.ToMysqlBackupDbSystemSnapshotDeletionPolicyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MysqlBackupDbSystemSnapshotDeletionPolicyArrayInput is an input type that accepts MysqlBackupDbSystemSnapshotDeletionPolicyArray and MysqlBackupDbSystemSnapshotDeletionPolicyArrayOutput values.
 // You can construct a concrete instance of `MysqlBackupDbSystemSnapshotDeletionPolicyArrayInput` via:
 //
@@ -1765,6 +1988,12 @@ func (i MysqlBackupDbSystemSnapshotDeletionPolicyArray) ToMysqlBackupDbSystemSna
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotDeletionPolicyArrayOutput)
 }
 
+func (i MysqlBackupDbSystemSnapshotDeletionPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]MysqlBackupDbSystemSnapshotDeletionPolicy] {
+	return pulumix.Output[[]MysqlBackupDbSystemSnapshotDeletionPolicy]{
+		OutputState: i.ToMysqlBackupDbSystemSnapshotDeletionPolicyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MysqlBackupDbSystemSnapshotDeletionPolicyOutput struct{ *pulumi.OutputState }
 
 func (MysqlBackupDbSystemSnapshotDeletionPolicyOutput) ElementType() reflect.Type {
@@ -1777,6 +2006,12 @@ func (o MysqlBackupDbSystemSnapshotDeletionPolicyOutput) ToMysqlBackupDbSystemSn
 
 func (o MysqlBackupDbSystemSnapshotDeletionPolicyOutput) ToMysqlBackupDbSystemSnapshotDeletionPolicyOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotDeletionPolicyOutput {
 	return o
+}
+
+func (o MysqlBackupDbSystemSnapshotDeletionPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[MysqlBackupDbSystemSnapshotDeletionPolicy] {
+	return pulumix.Output[MysqlBackupDbSystemSnapshotDeletionPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Specifies if any automatic backups created for a DB System should be retained or deleted when the DB System is deleted.
@@ -1806,6 +2041,12 @@ func (o MysqlBackupDbSystemSnapshotDeletionPolicyArrayOutput) ToMysqlBackupDbSys
 
 func (o MysqlBackupDbSystemSnapshotDeletionPolicyArrayOutput) ToMysqlBackupDbSystemSnapshotDeletionPolicyArrayOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotDeletionPolicyArrayOutput {
 	return o
+}
+
+func (o MysqlBackupDbSystemSnapshotDeletionPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MysqlBackupDbSystemSnapshotDeletionPolicy] {
+	return pulumix.Output[[]MysqlBackupDbSystemSnapshotDeletionPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MysqlBackupDbSystemSnapshotDeletionPolicyArrayOutput) Index(i pulumi.IntInput) MysqlBackupDbSystemSnapshotDeletionPolicyOutput {
@@ -1879,6 +2120,12 @@ func (i MysqlBackupDbSystemSnapshotEndpointArgs) ToMysqlBackupDbSystemSnapshotEn
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotEndpointOutput)
 }
 
+func (i MysqlBackupDbSystemSnapshotEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[MysqlBackupDbSystemSnapshotEndpoint] {
+	return pulumix.Output[MysqlBackupDbSystemSnapshotEndpoint]{
+		OutputState: i.ToMysqlBackupDbSystemSnapshotEndpointOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MysqlBackupDbSystemSnapshotEndpointArrayInput is an input type that accepts MysqlBackupDbSystemSnapshotEndpointArray and MysqlBackupDbSystemSnapshotEndpointArrayOutput values.
 // You can construct a concrete instance of `MysqlBackupDbSystemSnapshotEndpointArrayInput` via:
 //
@@ -1904,6 +2151,12 @@ func (i MysqlBackupDbSystemSnapshotEndpointArray) ToMysqlBackupDbSystemSnapshotE
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotEndpointArrayOutput)
 }
 
+func (i MysqlBackupDbSystemSnapshotEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]MysqlBackupDbSystemSnapshotEndpoint] {
+	return pulumix.Output[[]MysqlBackupDbSystemSnapshotEndpoint]{
+		OutputState: i.ToMysqlBackupDbSystemSnapshotEndpointArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MysqlBackupDbSystemSnapshotEndpointOutput struct{ *pulumi.OutputState }
 
 func (MysqlBackupDbSystemSnapshotEndpointOutput) ElementType() reflect.Type {
@@ -1916,6 +2169,12 @@ func (o MysqlBackupDbSystemSnapshotEndpointOutput) ToMysqlBackupDbSystemSnapshot
 
 func (o MysqlBackupDbSystemSnapshotEndpointOutput) ToMysqlBackupDbSystemSnapshotEndpointOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotEndpointOutput {
 	return o
+}
+
+func (o MysqlBackupDbSystemSnapshotEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[MysqlBackupDbSystemSnapshotEndpoint] {
+	return pulumix.Output[MysqlBackupDbSystemSnapshotEndpoint]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The network address of the DB System.
@@ -1977,6 +2236,12 @@ func (o MysqlBackupDbSystemSnapshotEndpointArrayOutput) ToMysqlBackupDbSystemSna
 	return o
 }
 
+func (o MysqlBackupDbSystemSnapshotEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MysqlBackupDbSystemSnapshotEndpoint] {
+	return pulumix.Output[[]MysqlBackupDbSystemSnapshotEndpoint]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o MysqlBackupDbSystemSnapshotEndpointArrayOutput) Index(i pulumi.IntInput) MysqlBackupDbSystemSnapshotEndpointOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlBackupDbSystemSnapshotEndpoint {
 		return vs[0].([]MysqlBackupDbSystemSnapshotEndpoint)[vs[1].(int)]
@@ -2016,6 +2281,12 @@ func (i MysqlBackupDbSystemSnapshotMaintenanceArgs) ToMysqlBackupDbSystemSnapsho
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotMaintenanceOutput)
 }
 
+func (i MysqlBackupDbSystemSnapshotMaintenanceArgs) ToOutput(ctx context.Context) pulumix.Output[MysqlBackupDbSystemSnapshotMaintenance] {
+	return pulumix.Output[MysqlBackupDbSystemSnapshotMaintenance]{
+		OutputState: i.ToMysqlBackupDbSystemSnapshotMaintenanceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MysqlBackupDbSystemSnapshotMaintenanceArrayInput is an input type that accepts MysqlBackupDbSystemSnapshotMaintenanceArray and MysqlBackupDbSystemSnapshotMaintenanceArrayOutput values.
 // You can construct a concrete instance of `MysqlBackupDbSystemSnapshotMaintenanceArrayInput` via:
 //
@@ -2041,6 +2312,12 @@ func (i MysqlBackupDbSystemSnapshotMaintenanceArray) ToMysqlBackupDbSystemSnapsh
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotMaintenanceArrayOutput)
 }
 
+func (i MysqlBackupDbSystemSnapshotMaintenanceArray) ToOutput(ctx context.Context) pulumix.Output[[]MysqlBackupDbSystemSnapshotMaintenance] {
+	return pulumix.Output[[]MysqlBackupDbSystemSnapshotMaintenance]{
+		OutputState: i.ToMysqlBackupDbSystemSnapshotMaintenanceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MysqlBackupDbSystemSnapshotMaintenanceOutput struct{ *pulumi.OutputState }
 
 func (MysqlBackupDbSystemSnapshotMaintenanceOutput) ElementType() reflect.Type {
@@ -2053,6 +2330,12 @@ func (o MysqlBackupDbSystemSnapshotMaintenanceOutput) ToMysqlBackupDbSystemSnaps
 
 func (o MysqlBackupDbSystemSnapshotMaintenanceOutput) ToMysqlBackupDbSystemSnapshotMaintenanceOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotMaintenanceOutput {
 	return o
+}
+
+func (o MysqlBackupDbSystemSnapshotMaintenanceOutput) ToOutput(ctx context.Context) pulumix.Output[MysqlBackupDbSystemSnapshotMaintenance] {
+	return pulumix.Output[MysqlBackupDbSystemSnapshotMaintenance]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The start time of the maintenance window.
@@ -2072,6 +2355,12 @@ func (o MysqlBackupDbSystemSnapshotMaintenanceArrayOutput) ToMysqlBackupDbSystem
 
 func (o MysqlBackupDbSystemSnapshotMaintenanceArrayOutput) ToMysqlBackupDbSystemSnapshotMaintenanceArrayOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotMaintenanceArrayOutput {
 	return o
+}
+
+func (o MysqlBackupDbSystemSnapshotMaintenanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MysqlBackupDbSystemSnapshotMaintenance] {
+	return pulumix.Output[[]MysqlBackupDbSystemSnapshotMaintenance]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MysqlBackupDbSystemSnapshotMaintenanceArrayOutput) Index(i pulumi.IntInput) MysqlBackupDbSystemSnapshotMaintenanceOutput {
@@ -2125,6 +2414,12 @@ func (i MysqlConfigurationInitVariablesArgs) ToMysqlConfigurationInitVariablesOu
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlConfigurationInitVariablesOutput)
 }
 
+func (i MysqlConfigurationInitVariablesArgs) ToOutput(ctx context.Context) pulumix.Output[MysqlConfigurationInitVariables] {
+	return pulumix.Output[MysqlConfigurationInitVariables]{
+		OutputState: i.ToMysqlConfigurationInitVariablesOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i MysqlConfigurationInitVariablesArgs) ToMysqlConfigurationInitVariablesPtrOutput() MysqlConfigurationInitVariablesPtrOutput {
 	return i.ToMysqlConfigurationInitVariablesPtrOutputWithContext(context.Background())
 }
@@ -2166,6 +2461,12 @@ func (i *mysqlConfigurationInitVariablesPtrType) ToMysqlConfigurationInitVariabl
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlConfigurationInitVariablesPtrOutput)
 }
 
+func (i *mysqlConfigurationInitVariablesPtrType) ToOutput(ctx context.Context) pulumix.Output[*MysqlConfigurationInitVariables] {
+	return pulumix.Output[*MysqlConfigurationInitVariables]{
+		OutputState: i.ToMysqlConfigurationInitVariablesPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MysqlConfigurationInitVariablesOutput struct{ *pulumi.OutputState }
 
 func (MysqlConfigurationInitVariablesOutput) ElementType() reflect.Type {
@@ -2188,6 +2489,12 @@ func (o MysqlConfigurationInitVariablesOutput) ToMysqlConfigurationInitVariables
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v MysqlConfigurationInitVariables) *MysqlConfigurationInitVariables {
 		return &v
 	}).(MysqlConfigurationInitVariablesPtrOutput)
+}
+
+func (o MysqlConfigurationInitVariablesOutput) ToOutput(ctx context.Context) pulumix.Output[MysqlConfigurationInitVariables] {
+	return pulumix.Output[MysqlConfigurationInitVariables]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Represents the MySQL server system variable lowerCaseTableNames (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
@@ -2213,6 +2520,12 @@ func (o MysqlConfigurationInitVariablesPtrOutput) ToMysqlConfigurationInitVariab
 
 func (o MysqlConfigurationInitVariablesPtrOutput) ToMysqlConfigurationInitVariablesPtrOutputWithContext(ctx context.Context) MysqlConfigurationInitVariablesPtrOutput {
 	return o
+}
+
+func (o MysqlConfigurationInitVariablesPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MysqlConfigurationInitVariables] {
+	return pulumix.Output[*MysqlConfigurationInitVariables]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MysqlConfigurationInitVariablesPtrOutput) Elem() MysqlConfigurationInitVariablesOutput {
@@ -2796,6 +3109,12 @@ func (i MysqlConfigurationVariablesArgs) ToMysqlConfigurationVariablesOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlConfigurationVariablesOutput)
 }
 
+func (i MysqlConfigurationVariablesArgs) ToOutput(ctx context.Context) pulumix.Output[MysqlConfigurationVariables] {
+	return pulumix.Output[MysqlConfigurationVariables]{
+		OutputState: i.ToMysqlConfigurationVariablesOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i MysqlConfigurationVariablesArgs) ToMysqlConfigurationVariablesPtrOutput() MysqlConfigurationVariablesPtrOutput {
 	return i.ToMysqlConfigurationVariablesPtrOutputWithContext(context.Background())
 }
@@ -2837,6 +3156,12 @@ func (i *mysqlConfigurationVariablesPtrType) ToMysqlConfigurationVariablesPtrOut
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlConfigurationVariablesPtrOutput)
 }
 
+func (i *mysqlConfigurationVariablesPtrType) ToOutput(ctx context.Context) pulumix.Output[*MysqlConfigurationVariables] {
+	return pulumix.Output[*MysqlConfigurationVariables]{
+		OutputState: i.ToMysqlConfigurationVariablesPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MysqlConfigurationVariablesOutput struct{ *pulumi.OutputState }
 
 func (MysqlConfigurationVariablesOutput) ElementType() reflect.Type {
@@ -2859,6 +3184,12 @@ func (o MysqlConfigurationVariablesOutput) ToMysqlConfigurationVariablesPtrOutpu
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v MysqlConfigurationVariables) *MysqlConfigurationVariables {
 		return &v
 	}).(MysqlConfigurationVariablesPtrOutput)
+}
+
+func (o MysqlConfigurationVariablesOutput) ToOutput(ctx context.Context) pulumix.Output[MysqlConfigurationVariables] {
+	return pulumix.Output[MysqlConfigurationVariables]{
+		OutputState: o.OutputState,
+	}
 }
 
 // ("autocommit")
@@ -3373,6 +3704,12 @@ func (o MysqlConfigurationVariablesPtrOutput) ToMysqlConfigurationVariablesPtrOu
 
 func (o MysqlConfigurationVariablesPtrOutput) ToMysqlConfigurationVariablesPtrOutputWithContext(ctx context.Context) MysqlConfigurationVariablesPtrOutput {
 	return o
+}
+
+func (o MysqlConfigurationVariablesPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MysqlConfigurationVariables] {
+	return pulumix.Output[*MysqlConfigurationVariables]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MysqlConfigurationVariablesPtrOutput) Elem() MysqlConfigurationVariablesOutput {
@@ -4349,6 +4686,12 @@ func (i MysqlDbSystemBackupPolicyArgs) ToMysqlDbSystemBackupPolicyOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemBackupPolicyOutput)
 }
 
+func (i MysqlDbSystemBackupPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemBackupPolicy] {
+	return pulumix.Output[MysqlDbSystemBackupPolicy]{
+		OutputState: i.ToMysqlDbSystemBackupPolicyOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i MysqlDbSystemBackupPolicyArgs) ToMysqlDbSystemBackupPolicyPtrOutput() MysqlDbSystemBackupPolicyPtrOutput {
 	return i.ToMysqlDbSystemBackupPolicyPtrOutputWithContext(context.Background())
 }
@@ -4390,6 +4733,12 @@ func (i *mysqlDbSystemBackupPolicyPtrType) ToMysqlDbSystemBackupPolicyPtrOutputW
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemBackupPolicyPtrOutput)
 }
 
+func (i *mysqlDbSystemBackupPolicyPtrType) ToOutput(ctx context.Context) pulumix.Output[*MysqlDbSystemBackupPolicy] {
+	return pulumix.Output[*MysqlDbSystemBackupPolicy]{
+		OutputState: i.ToMysqlDbSystemBackupPolicyPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MysqlDbSystemBackupPolicyOutput struct{ *pulumi.OutputState }
 
 func (MysqlDbSystemBackupPolicyOutput) ElementType() reflect.Type {
@@ -4412,6 +4761,12 @@ func (o MysqlDbSystemBackupPolicyOutput) ToMysqlDbSystemBackupPolicyPtrOutputWit
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v MysqlDbSystemBackupPolicy) *MysqlDbSystemBackupPolicy {
 		return &v
 	}).(MysqlDbSystemBackupPolicyPtrOutput)
+}
+
+func (o MysqlDbSystemBackupPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemBackupPolicy] {
+	return pulumix.Output[MysqlDbSystemBackupPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
@@ -4464,6 +4819,12 @@ func (o MysqlDbSystemBackupPolicyPtrOutput) ToMysqlDbSystemBackupPolicyPtrOutput
 
 func (o MysqlDbSystemBackupPolicyPtrOutput) ToMysqlDbSystemBackupPolicyPtrOutputWithContext(ctx context.Context) MysqlDbSystemBackupPolicyPtrOutput {
 	return o
+}
+
+func (o MysqlDbSystemBackupPolicyPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MysqlDbSystemBackupPolicy] {
+	return pulumix.Output[*MysqlDbSystemBackupPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MysqlDbSystemBackupPolicyPtrOutput) Elem() MysqlDbSystemBackupPolicyOutput {
@@ -4577,6 +4938,12 @@ func (i MysqlDbSystemBackupPolicyPitrPolicyArgs) ToMysqlDbSystemBackupPolicyPitr
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemBackupPolicyPitrPolicyOutput)
 }
 
+func (i MysqlDbSystemBackupPolicyPitrPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemBackupPolicyPitrPolicy] {
+	return pulumix.Output[MysqlDbSystemBackupPolicyPitrPolicy]{
+		OutputState: i.ToMysqlDbSystemBackupPolicyPitrPolicyOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i MysqlDbSystemBackupPolicyPitrPolicyArgs) ToMysqlDbSystemBackupPolicyPitrPolicyPtrOutput() MysqlDbSystemBackupPolicyPitrPolicyPtrOutput {
 	return i.ToMysqlDbSystemBackupPolicyPitrPolicyPtrOutputWithContext(context.Background())
 }
@@ -4618,6 +4985,12 @@ func (i *mysqlDbSystemBackupPolicyPitrPolicyPtrType) ToMysqlDbSystemBackupPolicy
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemBackupPolicyPitrPolicyPtrOutput)
 }
 
+func (i *mysqlDbSystemBackupPolicyPitrPolicyPtrType) ToOutput(ctx context.Context) pulumix.Output[*MysqlDbSystemBackupPolicyPitrPolicy] {
+	return pulumix.Output[*MysqlDbSystemBackupPolicyPitrPolicy]{
+		OutputState: i.ToMysqlDbSystemBackupPolicyPitrPolicyPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MysqlDbSystemBackupPolicyPitrPolicyOutput struct{ *pulumi.OutputState }
 
 func (MysqlDbSystemBackupPolicyPitrPolicyOutput) ElementType() reflect.Type {
@@ -4642,6 +5015,12 @@ func (o MysqlDbSystemBackupPolicyPitrPolicyOutput) ToMysqlDbSystemBackupPolicyPi
 	}).(MysqlDbSystemBackupPolicyPitrPolicyPtrOutput)
 }
 
+func (o MysqlDbSystemBackupPolicyPitrPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemBackupPolicyPitrPolicy] {
+	return pulumix.Output[MysqlDbSystemBackupPolicyPitrPolicy]{
+		OutputState: o.OutputState,
+	}
+}
+
 // (Updatable) Specifies if PITR is enabled or disabled.
 func (o MysqlDbSystemBackupPolicyPitrPolicyOutput) IsEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v MysqlDbSystemBackupPolicyPitrPolicy) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
@@ -4659,6 +5038,12 @@ func (o MysqlDbSystemBackupPolicyPitrPolicyPtrOutput) ToMysqlDbSystemBackupPolic
 
 func (o MysqlDbSystemBackupPolicyPitrPolicyPtrOutput) ToMysqlDbSystemBackupPolicyPitrPolicyPtrOutputWithContext(ctx context.Context) MysqlDbSystemBackupPolicyPitrPolicyPtrOutput {
 	return o
+}
+
+func (o MysqlDbSystemBackupPolicyPitrPolicyPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MysqlDbSystemBackupPolicyPitrPolicy] {
+	return pulumix.Output[*MysqlDbSystemBackupPolicyPitrPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MysqlDbSystemBackupPolicyPitrPolicyPtrOutput) Elem() MysqlDbSystemBackupPolicyPitrPolicyOutput {
@@ -4758,6 +5143,12 @@ func (i MysqlDbSystemChannelArgs) ToMysqlDbSystemChannelOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemChannelOutput)
 }
 
+func (i MysqlDbSystemChannelArgs) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemChannel] {
+	return pulumix.Output[MysqlDbSystemChannel]{
+		OutputState: i.ToMysqlDbSystemChannelOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MysqlDbSystemChannelArrayInput is an input type that accepts MysqlDbSystemChannelArray and MysqlDbSystemChannelArrayOutput values.
 // You can construct a concrete instance of `MysqlDbSystemChannelArrayInput` via:
 //
@@ -4783,6 +5174,12 @@ func (i MysqlDbSystemChannelArray) ToMysqlDbSystemChannelArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemChannelArrayOutput)
 }
 
+func (i MysqlDbSystemChannelArray) ToOutput(ctx context.Context) pulumix.Output[[]MysqlDbSystemChannel] {
+	return pulumix.Output[[]MysqlDbSystemChannel]{
+		OutputState: i.ToMysqlDbSystemChannelArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MysqlDbSystemChannelOutput struct{ *pulumi.OutputState }
 
 func (MysqlDbSystemChannelOutput) ElementType() reflect.Type {
@@ -4795,6 +5192,12 @@ func (o MysqlDbSystemChannelOutput) ToMysqlDbSystemChannelOutput() MysqlDbSystem
 
 func (o MysqlDbSystemChannelOutput) ToMysqlDbSystemChannelOutputWithContext(ctx context.Context) MysqlDbSystemChannelOutput {
 	return o
+}
+
+func (o MysqlDbSystemChannelOutput) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemChannel] {
+	return pulumix.Output[MysqlDbSystemChannel]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the compartment.
@@ -4871,6 +5274,12 @@ func (o MysqlDbSystemChannelArrayOutput) ToMysqlDbSystemChannelArrayOutputWithCo
 	return o
 }
 
+func (o MysqlDbSystemChannelArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MysqlDbSystemChannel] {
+	return pulumix.Output[[]MysqlDbSystemChannel]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o MysqlDbSystemChannelArrayOutput) Index(i pulumi.IntInput) MysqlDbSystemChannelOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlDbSystemChannel {
 		return vs[0].([]MysqlDbSystemChannel)[vs[1].(int)]
@@ -4934,6 +5343,12 @@ func (i MysqlDbSystemChannelSourceArgs) ToMysqlDbSystemChannelSourceOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemChannelSourceOutput)
 }
 
+func (i MysqlDbSystemChannelSourceArgs) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemChannelSource] {
+	return pulumix.Output[MysqlDbSystemChannelSource]{
+		OutputState: i.ToMysqlDbSystemChannelSourceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MysqlDbSystemChannelSourceArrayInput is an input type that accepts MysqlDbSystemChannelSourceArray and MysqlDbSystemChannelSourceArrayOutput values.
 // You can construct a concrete instance of `MysqlDbSystemChannelSourceArrayInput` via:
 //
@@ -4959,6 +5374,12 @@ func (i MysqlDbSystemChannelSourceArray) ToMysqlDbSystemChannelSourceArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemChannelSourceArrayOutput)
 }
 
+func (i MysqlDbSystemChannelSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]MysqlDbSystemChannelSource] {
+	return pulumix.Output[[]MysqlDbSystemChannelSource]{
+		OutputState: i.ToMysqlDbSystemChannelSourceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MysqlDbSystemChannelSourceOutput struct{ *pulumi.OutputState }
 
 func (MysqlDbSystemChannelSourceOutput) ElementType() reflect.Type {
@@ -4971,6 +5392,12 @@ func (o MysqlDbSystemChannelSourceOutput) ToMysqlDbSystemChannelSourceOutput() M
 
 func (o MysqlDbSystemChannelSourceOutput) ToMysqlDbSystemChannelSourceOutputWithContext(ctx context.Context) MysqlDbSystemChannelSourceOutput {
 	return o
+}
+
+func (o MysqlDbSystemChannelSourceOutput) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemChannelSource] {
+	return pulumix.Output[MysqlDbSystemChannelSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
@@ -5026,6 +5453,12 @@ func (o MysqlDbSystemChannelSourceArrayOutput) ToMysqlDbSystemChannelSourceArray
 	return o
 }
 
+func (o MysqlDbSystemChannelSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MysqlDbSystemChannelSource] {
+	return pulumix.Output[[]MysqlDbSystemChannelSource]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o MysqlDbSystemChannelSourceArrayOutput) Index(i pulumi.IntInput) MysqlDbSystemChannelSourceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlDbSystemChannelSource {
 		return vs[0].([]MysqlDbSystemChannelSource)[vs[1].(int)]
@@ -5077,6 +5510,12 @@ func (i MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs) ToMysqlDbSy
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput)
 }
 
+func (i MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemChannelSourceAnonymousTransactionsHandling] {
+	return pulumix.Output[MysqlDbSystemChannelSourceAnonymousTransactionsHandling]{
+		OutputState: i.ToMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayInput is an input type that accepts MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArray and MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput values.
 // You can construct a concrete instance of `MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayInput` via:
 //
@@ -5102,6 +5541,12 @@ func (i MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArray) ToMysqlDbS
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput)
 }
 
+func (i MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArray) ToOutput(ctx context.Context) pulumix.Output[[]MysqlDbSystemChannelSourceAnonymousTransactionsHandling] {
+	return pulumix.Output[[]MysqlDbSystemChannelSourceAnonymousTransactionsHandling]{
+		OutputState: i.ToMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput struct{ *pulumi.OutputState }
 
 func (MysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput) ElementType() reflect.Type {
@@ -5114,6 +5559,12 @@ func (o MysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput) ToMysqlDb
 
 func (o MysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput) ToMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutputWithContext(ctx context.Context) MysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput {
 	return o
+}
+
+func (o MysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemChannelSourceAnonymousTransactionsHandling] {
+	return pulumix.Output[MysqlDbSystemChannelSourceAnonymousTransactionsHandling]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
@@ -5152,6 +5603,12 @@ func (o MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput) ToMy
 
 func (o MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput) ToMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutputWithContext(ctx context.Context) MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput {
 	return o
+}
+
+func (o MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MysqlDbSystemChannelSourceAnonymousTransactionsHandling] {
+	return pulumix.Output[[]MysqlDbSystemChannelSourceAnonymousTransactionsHandling]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput) Index(i pulumi.IntInput) MysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput {
@@ -5197,6 +5654,12 @@ func (i MysqlDbSystemChannelSourceSslCaCertificateArgs) ToMysqlDbSystemChannelSo
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemChannelSourceSslCaCertificateOutput)
 }
 
+func (i MysqlDbSystemChannelSourceSslCaCertificateArgs) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemChannelSourceSslCaCertificate] {
+	return pulumix.Output[MysqlDbSystemChannelSourceSslCaCertificate]{
+		OutputState: i.ToMysqlDbSystemChannelSourceSslCaCertificateOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MysqlDbSystemChannelSourceSslCaCertificateArrayInput is an input type that accepts MysqlDbSystemChannelSourceSslCaCertificateArray and MysqlDbSystemChannelSourceSslCaCertificateArrayOutput values.
 // You can construct a concrete instance of `MysqlDbSystemChannelSourceSslCaCertificateArrayInput` via:
 //
@@ -5222,6 +5685,12 @@ func (i MysqlDbSystemChannelSourceSslCaCertificateArray) ToMysqlDbSystemChannelS
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemChannelSourceSslCaCertificateArrayOutput)
 }
 
+func (i MysqlDbSystemChannelSourceSslCaCertificateArray) ToOutput(ctx context.Context) pulumix.Output[[]MysqlDbSystemChannelSourceSslCaCertificate] {
+	return pulumix.Output[[]MysqlDbSystemChannelSourceSslCaCertificate]{
+		OutputState: i.ToMysqlDbSystemChannelSourceSslCaCertificateArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MysqlDbSystemChannelSourceSslCaCertificateOutput struct{ *pulumi.OutputState }
 
 func (MysqlDbSystemChannelSourceSslCaCertificateOutput) ElementType() reflect.Type {
@@ -5234,6 +5703,12 @@ func (o MysqlDbSystemChannelSourceSslCaCertificateOutput) ToMysqlDbSystemChannel
 
 func (o MysqlDbSystemChannelSourceSslCaCertificateOutput) ToMysqlDbSystemChannelSourceSslCaCertificateOutputWithContext(ctx context.Context) MysqlDbSystemChannelSourceSslCaCertificateOutput {
 	return o
+}
+
+func (o MysqlDbSystemChannelSourceSslCaCertificateOutput) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemChannelSourceSslCaCertificate] {
+	return pulumix.Output[MysqlDbSystemChannelSourceSslCaCertificate]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The type of CA certificate.
@@ -5258,6 +5733,12 @@ func (o MysqlDbSystemChannelSourceSslCaCertificateArrayOutput) ToMysqlDbSystemCh
 
 func (o MysqlDbSystemChannelSourceSslCaCertificateArrayOutput) ToMysqlDbSystemChannelSourceSslCaCertificateArrayOutputWithContext(ctx context.Context) MysqlDbSystemChannelSourceSslCaCertificateArrayOutput {
 	return o
+}
+
+func (o MysqlDbSystemChannelSourceSslCaCertificateArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MysqlDbSystemChannelSourceSslCaCertificate] {
+	return pulumix.Output[[]MysqlDbSystemChannelSourceSslCaCertificate]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MysqlDbSystemChannelSourceSslCaCertificateArrayOutput) Index(i pulumi.IntInput) MysqlDbSystemChannelSourceSslCaCertificateOutput {
@@ -5323,6 +5804,12 @@ func (i MysqlDbSystemChannelTargetArgs) ToMysqlDbSystemChannelTargetOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemChannelTargetOutput)
 }
 
+func (i MysqlDbSystemChannelTargetArgs) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemChannelTarget] {
+	return pulumix.Output[MysqlDbSystemChannelTarget]{
+		OutputState: i.ToMysqlDbSystemChannelTargetOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MysqlDbSystemChannelTargetArrayInput is an input type that accepts MysqlDbSystemChannelTargetArray and MysqlDbSystemChannelTargetArrayOutput values.
 // You can construct a concrete instance of `MysqlDbSystemChannelTargetArrayInput` via:
 //
@@ -5348,6 +5835,12 @@ func (i MysqlDbSystemChannelTargetArray) ToMysqlDbSystemChannelTargetArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemChannelTargetArrayOutput)
 }
 
+func (i MysqlDbSystemChannelTargetArray) ToOutput(ctx context.Context) pulumix.Output[[]MysqlDbSystemChannelTarget] {
+	return pulumix.Output[[]MysqlDbSystemChannelTarget]{
+		OutputState: i.ToMysqlDbSystemChannelTargetArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MysqlDbSystemChannelTargetOutput struct{ *pulumi.OutputState }
 
 func (MysqlDbSystemChannelTargetOutput) ElementType() reflect.Type {
@@ -5360,6 +5853,12 @@ func (o MysqlDbSystemChannelTargetOutput) ToMysqlDbSystemChannelTargetOutput() M
 
 func (o MysqlDbSystemChannelTargetOutput) ToMysqlDbSystemChannelTargetOutputWithContext(ctx context.Context) MysqlDbSystemChannelTargetOutput {
 	return o
+}
+
+func (o MysqlDbSystemChannelTargetOutput) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemChannelTarget] {
+	return pulumix.Output[MysqlDbSystemChannelTarget]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The username for the replication applier of the target MySQL DB System.
@@ -5411,6 +5910,12 @@ func (o MysqlDbSystemChannelTargetArrayOutput) ToMysqlDbSystemChannelTargetArray
 	return o
 }
 
+func (o MysqlDbSystemChannelTargetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MysqlDbSystemChannelTarget] {
+	return pulumix.Output[[]MysqlDbSystemChannelTarget]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o MysqlDbSystemChannelTargetArrayOutput) Index(i pulumi.IntInput) MysqlDbSystemChannelTargetOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlDbSystemChannelTarget {
 		return vs[0].([]MysqlDbSystemChannelTarget)[vs[1].(int)]
@@ -5454,6 +5959,12 @@ func (i MysqlDbSystemChannelTargetFilterArgs) ToMysqlDbSystemChannelTargetFilter
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemChannelTargetFilterOutput)
 }
 
+func (i MysqlDbSystemChannelTargetFilterArgs) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemChannelTargetFilter] {
+	return pulumix.Output[MysqlDbSystemChannelTargetFilter]{
+		OutputState: i.ToMysqlDbSystemChannelTargetFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MysqlDbSystemChannelTargetFilterArrayInput is an input type that accepts MysqlDbSystemChannelTargetFilterArray and MysqlDbSystemChannelTargetFilterArrayOutput values.
 // You can construct a concrete instance of `MysqlDbSystemChannelTargetFilterArrayInput` via:
 //
@@ -5479,6 +5990,12 @@ func (i MysqlDbSystemChannelTargetFilterArray) ToMysqlDbSystemChannelTargetFilte
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemChannelTargetFilterArrayOutput)
 }
 
+func (i MysqlDbSystemChannelTargetFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]MysqlDbSystemChannelTargetFilter] {
+	return pulumix.Output[[]MysqlDbSystemChannelTargetFilter]{
+		OutputState: i.ToMysqlDbSystemChannelTargetFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MysqlDbSystemChannelTargetFilterOutput struct{ *pulumi.OutputState }
 
 func (MysqlDbSystemChannelTargetFilterOutput) ElementType() reflect.Type {
@@ -5491,6 +6008,12 @@ func (o MysqlDbSystemChannelTargetFilterOutput) ToMysqlDbSystemChannelTargetFilt
 
 func (o MysqlDbSystemChannelTargetFilterOutput) ToMysqlDbSystemChannelTargetFilterOutputWithContext(ctx context.Context) MysqlDbSystemChannelTargetFilterOutput {
 	return o
+}
+
+func (o MysqlDbSystemChannelTargetFilterOutput) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemChannelTargetFilter] {
+	return pulumix.Output[MysqlDbSystemChannelTargetFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The type of the filter rule.
@@ -5515,6 +6038,12 @@ func (o MysqlDbSystemChannelTargetFilterArrayOutput) ToMysqlDbSystemChannelTarge
 
 func (o MysqlDbSystemChannelTargetFilterArrayOutput) ToMysqlDbSystemChannelTargetFilterArrayOutputWithContext(ctx context.Context) MysqlDbSystemChannelTargetFilterArrayOutput {
 	return o
+}
+
+func (o MysqlDbSystemChannelTargetFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MysqlDbSystemChannelTargetFilter] {
+	return pulumix.Output[[]MysqlDbSystemChannelTargetFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MysqlDbSystemChannelTargetFilterArrayOutput) Index(i pulumi.IntInput) MysqlDbSystemChannelTargetFilterOutput {
@@ -5576,6 +6105,12 @@ func (i MysqlDbSystemCurrentPlacementArgs) ToMysqlDbSystemCurrentPlacementOutput
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemCurrentPlacementOutput)
 }
 
+func (i MysqlDbSystemCurrentPlacementArgs) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemCurrentPlacement] {
+	return pulumix.Output[MysqlDbSystemCurrentPlacement]{
+		OutputState: i.ToMysqlDbSystemCurrentPlacementOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MysqlDbSystemCurrentPlacementArrayInput is an input type that accepts MysqlDbSystemCurrentPlacementArray and MysqlDbSystemCurrentPlacementArrayOutput values.
 // You can construct a concrete instance of `MysqlDbSystemCurrentPlacementArrayInput` via:
 //
@@ -5601,6 +6136,12 @@ func (i MysqlDbSystemCurrentPlacementArray) ToMysqlDbSystemCurrentPlacementArray
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemCurrentPlacementArrayOutput)
 }
 
+func (i MysqlDbSystemCurrentPlacementArray) ToOutput(ctx context.Context) pulumix.Output[[]MysqlDbSystemCurrentPlacement] {
+	return pulumix.Output[[]MysqlDbSystemCurrentPlacement]{
+		OutputState: i.ToMysqlDbSystemCurrentPlacementArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MysqlDbSystemCurrentPlacementOutput struct{ *pulumi.OutputState }
 
 func (MysqlDbSystemCurrentPlacementOutput) ElementType() reflect.Type {
@@ -5613,6 +6154,12 @@ func (o MysqlDbSystemCurrentPlacementOutput) ToMysqlDbSystemCurrentPlacementOutp
 
 func (o MysqlDbSystemCurrentPlacementOutput) ToMysqlDbSystemCurrentPlacementOutputWithContext(ctx context.Context) MysqlDbSystemCurrentPlacementOutput {
 	return o
+}
+
+func (o MysqlDbSystemCurrentPlacementOutput) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemCurrentPlacement] {
+	return pulumix.Output[MysqlDbSystemCurrentPlacement]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
@@ -5645,6 +6192,12 @@ func (o MysqlDbSystemCurrentPlacementArrayOutput) ToMysqlDbSystemCurrentPlacemen
 
 func (o MysqlDbSystemCurrentPlacementArrayOutput) ToMysqlDbSystemCurrentPlacementArrayOutputWithContext(ctx context.Context) MysqlDbSystemCurrentPlacementArrayOutput {
 	return o
+}
+
+func (o MysqlDbSystemCurrentPlacementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MysqlDbSystemCurrentPlacement] {
+	return pulumix.Output[[]MysqlDbSystemCurrentPlacement]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MysqlDbSystemCurrentPlacementArrayOutput) Index(i pulumi.IntInput) MysqlDbSystemCurrentPlacementOutput {
@@ -5694,6 +6247,12 @@ func (i MysqlDbSystemDeletionPolicyArgs) ToMysqlDbSystemDeletionPolicyOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemDeletionPolicyOutput)
 }
 
+func (i MysqlDbSystemDeletionPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemDeletionPolicy] {
+	return pulumix.Output[MysqlDbSystemDeletionPolicy]{
+		OutputState: i.ToMysqlDbSystemDeletionPolicyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MysqlDbSystemDeletionPolicyArrayInput is an input type that accepts MysqlDbSystemDeletionPolicyArray and MysqlDbSystemDeletionPolicyArrayOutput values.
 // You can construct a concrete instance of `MysqlDbSystemDeletionPolicyArrayInput` via:
 //
@@ -5719,6 +6278,12 @@ func (i MysqlDbSystemDeletionPolicyArray) ToMysqlDbSystemDeletionPolicyArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemDeletionPolicyArrayOutput)
 }
 
+func (i MysqlDbSystemDeletionPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]MysqlDbSystemDeletionPolicy] {
+	return pulumix.Output[[]MysqlDbSystemDeletionPolicy]{
+		OutputState: i.ToMysqlDbSystemDeletionPolicyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MysqlDbSystemDeletionPolicyOutput struct{ *pulumi.OutputState }
 
 func (MysqlDbSystemDeletionPolicyOutput) ElementType() reflect.Type {
@@ -5731,6 +6296,12 @@ func (o MysqlDbSystemDeletionPolicyOutput) ToMysqlDbSystemDeletionPolicyOutput()
 
 func (o MysqlDbSystemDeletionPolicyOutput) ToMysqlDbSystemDeletionPolicyOutputWithContext(ctx context.Context) MysqlDbSystemDeletionPolicyOutput {
 	return o
+}
+
+func (o MysqlDbSystemDeletionPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemDeletionPolicy] {
+	return pulumix.Output[MysqlDbSystemDeletionPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) Specifies if any automatic backups created for a DB System should be retained or deleted when the DB System is deleted.
@@ -5760,6 +6331,12 @@ func (o MysqlDbSystemDeletionPolicyArrayOutput) ToMysqlDbSystemDeletionPolicyArr
 
 func (o MysqlDbSystemDeletionPolicyArrayOutput) ToMysqlDbSystemDeletionPolicyArrayOutputWithContext(ctx context.Context) MysqlDbSystemDeletionPolicyArrayOutput {
 	return o
+}
+
+func (o MysqlDbSystemDeletionPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MysqlDbSystemDeletionPolicy] {
+	return pulumix.Output[[]MysqlDbSystemDeletionPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MysqlDbSystemDeletionPolicyArrayOutput) Index(i pulumi.IntInput) MysqlDbSystemDeletionPolicyOutput {
@@ -5833,6 +6410,12 @@ func (i MysqlDbSystemEndpointArgs) ToMysqlDbSystemEndpointOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemEndpointOutput)
 }
 
+func (i MysqlDbSystemEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemEndpoint] {
+	return pulumix.Output[MysqlDbSystemEndpoint]{
+		OutputState: i.ToMysqlDbSystemEndpointOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MysqlDbSystemEndpointArrayInput is an input type that accepts MysqlDbSystemEndpointArray and MysqlDbSystemEndpointArrayOutput values.
 // You can construct a concrete instance of `MysqlDbSystemEndpointArrayInput` via:
 //
@@ -5858,6 +6441,12 @@ func (i MysqlDbSystemEndpointArray) ToMysqlDbSystemEndpointArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemEndpointArrayOutput)
 }
 
+func (i MysqlDbSystemEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]MysqlDbSystemEndpoint] {
+	return pulumix.Output[[]MysqlDbSystemEndpoint]{
+		OutputState: i.ToMysqlDbSystemEndpointArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MysqlDbSystemEndpointOutput struct{ *pulumi.OutputState }
 
 func (MysqlDbSystemEndpointOutput) ElementType() reflect.Type {
@@ -5870,6 +6459,12 @@ func (o MysqlDbSystemEndpointOutput) ToMysqlDbSystemEndpointOutput() MysqlDbSyst
 
 func (o MysqlDbSystemEndpointOutput) ToMysqlDbSystemEndpointOutputWithContext(ctx context.Context) MysqlDbSystemEndpointOutput {
 	return o
+}
+
+func (o MysqlDbSystemEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemEndpoint] {
+	return pulumix.Output[MysqlDbSystemEndpoint]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The network address of the DB System.
@@ -5929,6 +6524,12 @@ func (o MysqlDbSystemEndpointArrayOutput) ToMysqlDbSystemEndpointArrayOutput() M
 
 func (o MysqlDbSystemEndpointArrayOutput) ToMysqlDbSystemEndpointArrayOutputWithContext(ctx context.Context) MysqlDbSystemEndpointArrayOutput {
 	return o
+}
+
+func (o MysqlDbSystemEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MysqlDbSystemEndpoint] {
+	return pulumix.Output[[]MysqlDbSystemEndpoint]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MysqlDbSystemEndpointArrayOutput) Index(i pulumi.IntInput) MysqlDbSystemEndpointOutput {
@@ -5992,6 +6593,12 @@ func (i MysqlDbSystemHeatWaveClusterArgs) ToMysqlDbSystemHeatWaveClusterOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemHeatWaveClusterOutput)
 }
 
+func (i MysqlDbSystemHeatWaveClusterArgs) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemHeatWaveCluster] {
+	return pulumix.Output[MysqlDbSystemHeatWaveCluster]{
+		OutputState: i.ToMysqlDbSystemHeatWaveClusterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MysqlDbSystemHeatWaveClusterArrayInput is an input type that accepts MysqlDbSystemHeatWaveClusterArray and MysqlDbSystemHeatWaveClusterArrayOutput values.
 // You can construct a concrete instance of `MysqlDbSystemHeatWaveClusterArrayInput` via:
 //
@@ -6017,6 +6624,12 @@ func (i MysqlDbSystemHeatWaveClusterArray) ToMysqlDbSystemHeatWaveClusterArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemHeatWaveClusterArrayOutput)
 }
 
+func (i MysqlDbSystemHeatWaveClusterArray) ToOutput(ctx context.Context) pulumix.Output[[]MysqlDbSystemHeatWaveCluster] {
+	return pulumix.Output[[]MysqlDbSystemHeatWaveCluster]{
+		OutputState: i.ToMysqlDbSystemHeatWaveClusterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MysqlDbSystemHeatWaveClusterOutput struct{ *pulumi.OutputState }
 
 func (MysqlDbSystemHeatWaveClusterOutput) ElementType() reflect.Type {
@@ -6029,6 +6642,12 @@ func (o MysqlDbSystemHeatWaveClusterOutput) ToMysqlDbSystemHeatWaveClusterOutput
 
 func (o MysqlDbSystemHeatWaveClusterOutput) ToMysqlDbSystemHeatWaveClusterOutputWithContext(ctx context.Context) MysqlDbSystemHeatWaveClusterOutput {
 	return o
+}
+
+func (o MysqlDbSystemHeatWaveClusterOutput) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemHeatWaveCluster] {
+	return pulumix.Output[MysqlDbSystemHeatWaveCluster]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
@@ -6074,6 +6693,12 @@ func (o MysqlDbSystemHeatWaveClusterArrayOutput) ToMysqlDbSystemHeatWaveClusterA
 
 func (o MysqlDbSystemHeatWaveClusterArrayOutput) ToMysqlDbSystemHeatWaveClusterArrayOutputWithContext(ctx context.Context) MysqlDbSystemHeatWaveClusterArrayOutput {
 	return o
+}
+
+func (o MysqlDbSystemHeatWaveClusterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MysqlDbSystemHeatWaveCluster] {
+	return pulumix.Output[[]MysqlDbSystemHeatWaveCluster]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MysqlDbSystemHeatWaveClusterArrayOutput) Index(i pulumi.IntInput) MysqlDbSystemHeatWaveClusterOutput {
@@ -6131,6 +6756,12 @@ func (i MysqlDbSystemMaintenanceArgs) ToMysqlDbSystemMaintenanceOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemMaintenanceOutput)
 }
 
+func (i MysqlDbSystemMaintenanceArgs) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemMaintenance] {
+	return pulumix.Output[MysqlDbSystemMaintenance]{
+		OutputState: i.ToMysqlDbSystemMaintenanceOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i MysqlDbSystemMaintenanceArgs) ToMysqlDbSystemMaintenancePtrOutput() MysqlDbSystemMaintenancePtrOutput {
 	return i.ToMysqlDbSystemMaintenancePtrOutputWithContext(context.Background())
 }
@@ -6172,6 +6803,12 @@ func (i *mysqlDbSystemMaintenancePtrType) ToMysqlDbSystemMaintenancePtrOutputWit
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemMaintenancePtrOutput)
 }
 
+func (i *mysqlDbSystemMaintenancePtrType) ToOutput(ctx context.Context) pulumix.Output[*MysqlDbSystemMaintenance] {
+	return pulumix.Output[*MysqlDbSystemMaintenance]{
+		OutputState: i.ToMysqlDbSystemMaintenancePtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MysqlDbSystemMaintenanceOutput struct{ *pulumi.OutputState }
 
 func (MysqlDbSystemMaintenanceOutput) ElementType() reflect.Type {
@@ -6194,6 +6831,12 @@ func (o MysqlDbSystemMaintenanceOutput) ToMysqlDbSystemMaintenancePtrOutputWithC
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v MysqlDbSystemMaintenance) *MysqlDbSystemMaintenance {
 		return &v
 	}).(MysqlDbSystemMaintenancePtrOutput)
+}
+
+func (o MysqlDbSystemMaintenanceOutput) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemMaintenance] {
+	return pulumix.Output[MysqlDbSystemMaintenance]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) The start of the 2 hour maintenance window.
@@ -6221,6 +6864,12 @@ func (o MysqlDbSystemMaintenancePtrOutput) ToMysqlDbSystemMaintenancePtrOutput()
 
 func (o MysqlDbSystemMaintenancePtrOutput) ToMysqlDbSystemMaintenancePtrOutputWithContext(ctx context.Context) MysqlDbSystemMaintenancePtrOutput {
 	return o
+}
+
+func (o MysqlDbSystemMaintenancePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MysqlDbSystemMaintenance] {
+	return pulumix.Output[*MysqlDbSystemMaintenance]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MysqlDbSystemMaintenancePtrOutput) Elem() MysqlDbSystemMaintenanceOutput {
@@ -6288,6 +6937,12 @@ func (i MysqlDbSystemPointInTimeRecoveryDetailArgs) ToMysqlDbSystemPointInTimeRe
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemPointInTimeRecoveryDetailOutput)
 }
 
+func (i MysqlDbSystemPointInTimeRecoveryDetailArgs) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemPointInTimeRecoveryDetail] {
+	return pulumix.Output[MysqlDbSystemPointInTimeRecoveryDetail]{
+		OutputState: i.ToMysqlDbSystemPointInTimeRecoveryDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MysqlDbSystemPointInTimeRecoveryDetailArrayInput is an input type that accepts MysqlDbSystemPointInTimeRecoveryDetailArray and MysqlDbSystemPointInTimeRecoveryDetailArrayOutput values.
 // You can construct a concrete instance of `MysqlDbSystemPointInTimeRecoveryDetailArrayInput` via:
 //
@@ -6313,6 +6968,12 @@ func (i MysqlDbSystemPointInTimeRecoveryDetailArray) ToMysqlDbSystemPointInTimeR
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemPointInTimeRecoveryDetailArrayOutput)
 }
 
+func (i MysqlDbSystemPointInTimeRecoveryDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]MysqlDbSystemPointInTimeRecoveryDetail] {
+	return pulumix.Output[[]MysqlDbSystemPointInTimeRecoveryDetail]{
+		OutputState: i.ToMysqlDbSystemPointInTimeRecoveryDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MysqlDbSystemPointInTimeRecoveryDetailOutput struct{ *pulumi.OutputState }
 
 func (MysqlDbSystemPointInTimeRecoveryDetailOutput) ElementType() reflect.Type {
@@ -6325,6 +6986,12 @@ func (o MysqlDbSystemPointInTimeRecoveryDetailOutput) ToMysqlDbSystemPointInTime
 
 func (o MysqlDbSystemPointInTimeRecoveryDetailOutput) ToMysqlDbSystemPointInTimeRecoveryDetailOutputWithContext(ctx context.Context) MysqlDbSystemPointInTimeRecoveryDetailOutput {
 	return o
+}
+
+func (o MysqlDbSystemPointInTimeRecoveryDetailOutput) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemPointInTimeRecoveryDetail] {
+	return pulumix.Output[MysqlDbSystemPointInTimeRecoveryDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Earliest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -6349,6 +7016,12 @@ func (o MysqlDbSystemPointInTimeRecoveryDetailArrayOutput) ToMysqlDbSystemPointI
 
 func (o MysqlDbSystemPointInTimeRecoveryDetailArrayOutput) ToMysqlDbSystemPointInTimeRecoveryDetailArrayOutputWithContext(ctx context.Context) MysqlDbSystemPointInTimeRecoveryDetailArrayOutput {
 	return o
+}
+
+func (o MysqlDbSystemPointInTimeRecoveryDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MysqlDbSystemPointInTimeRecoveryDetail] {
+	return pulumix.Output[[]MysqlDbSystemPointInTimeRecoveryDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MysqlDbSystemPointInTimeRecoveryDetailArrayOutput) Index(i pulumi.IntInput) MysqlDbSystemPointInTimeRecoveryDetailOutput {
@@ -6406,6 +7079,12 @@ func (i MysqlDbSystemSourceArgs) ToMysqlDbSystemSourceOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemSourceOutput)
 }
 
+func (i MysqlDbSystemSourceArgs) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemSource] {
+	return pulumix.Output[MysqlDbSystemSource]{
+		OutputState: i.ToMysqlDbSystemSourceOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i MysqlDbSystemSourceArgs) ToMysqlDbSystemSourcePtrOutput() MysqlDbSystemSourcePtrOutput {
 	return i.ToMysqlDbSystemSourcePtrOutputWithContext(context.Background())
 }
@@ -6447,6 +7126,12 @@ func (i *mysqlDbSystemSourcePtrType) ToMysqlDbSystemSourcePtrOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemSourcePtrOutput)
 }
 
+func (i *mysqlDbSystemSourcePtrType) ToOutput(ctx context.Context) pulumix.Output[*MysqlDbSystemSource] {
+	return pulumix.Output[*MysqlDbSystemSource]{
+		OutputState: i.ToMysqlDbSystemSourcePtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MysqlDbSystemSourceOutput struct{ *pulumi.OutputState }
 
 func (MysqlDbSystemSourceOutput) ElementType() reflect.Type {
@@ -6469,6 +7154,12 @@ func (o MysqlDbSystemSourceOutput) ToMysqlDbSystemSourcePtrOutputWithContext(ctx
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v MysqlDbSystemSource) *MysqlDbSystemSource {
 		return &v
 	}).(MysqlDbSystemSourcePtrOutput)
+}
+
+func (o MysqlDbSystemSourceOutput) ToOutput(ctx context.Context) pulumix.Output[MysqlDbSystemSource] {
+	return pulumix.Output[MysqlDbSystemSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the backup to be used as the source for the new DB System.
@@ -6508,6 +7199,12 @@ func (o MysqlDbSystemSourcePtrOutput) ToMysqlDbSystemSourcePtrOutput() MysqlDbSy
 
 func (o MysqlDbSystemSourcePtrOutput) ToMysqlDbSystemSourcePtrOutputWithContext(ctx context.Context) MysqlDbSystemSourcePtrOutput {
 	return o
+}
+
+func (o MysqlDbSystemSourcePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MysqlDbSystemSource] {
+	return pulumix.Output[*MysqlDbSystemSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MysqlDbSystemSourcePtrOutput) Elem() MysqlDbSystemSourceOutput {
@@ -6629,6 +7326,12 @@ func (i GetChannelSourceArgs) ToGetChannelSourceOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetChannelSourceOutput)
 }
 
+func (i GetChannelSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetChannelSource] {
+	return pulumix.Output[GetChannelSource]{
+		OutputState: i.ToGetChannelSourceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetChannelSourceArrayInput is an input type that accepts GetChannelSourceArray and GetChannelSourceArrayOutput values.
 // You can construct a concrete instance of `GetChannelSourceArrayInput` via:
 //
@@ -6654,6 +7357,12 @@ func (i GetChannelSourceArray) ToGetChannelSourceArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetChannelSourceArrayOutput)
 }
 
+func (i GetChannelSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetChannelSource] {
+	return pulumix.Output[[]GetChannelSource]{
+		OutputState: i.ToGetChannelSourceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetChannelSourceOutput struct{ *pulumi.OutputState }
 
 func (GetChannelSourceOutput) ElementType() reflect.Type {
@@ -6666,6 +7375,12 @@ func (o GetChannelSourceOutput) ToGetChannelSourceOutput() GetChannelSourceOutpu
 
 func (o GetChannelSourceOutput) ToGetChannelSourceOutputWithContext(ctx context.Context) GetChannelSourceOutput {
 	return o
+}
+
+func (o GetChannelSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetChannelSource] {
+	return pulumix.Output[GetChannelSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
@@ -6723,6 +7438,12 @@ func (o GetChannelSourceArrayOutput) ToGetChannelSourceArrayOutputWithContext(ct
 	return o
 }
 
+func (o GetChannelSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetChannelSource] {
+	return pulumix.Output[[]GetChannelSource]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetChannelSourceArrayOutput) Index(i pulumi.IntInput) GetChannelSourceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetChannelSource {
 		return vs[0].([]GetChannelSource)[vs[1].(int)]
@@ -6774,6 +7495,12 @@ func (i GetChannelSourceAnonymousTransactionsHandlingArgs) ToGetChannelSourceAno
 	return pulumi.ToOutputWithContext(ctx, i).(GetChannelSourceAnonymousTransactionsHandlingOutput)
 }
 
+func (i GetChannelSourceAnonymousTransactionsHandlingArgs) ToOutput(ctx context.Context) pulumix.Output[GetChannelSourceAnonymousTransactionsHandling] {
+	return pulumix.Output[GetChannelSourceAnonymousTransactionsHandling]{
+		OutputState: i.ToGetChannelSourceAnonymousTransactionsHandlingOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetChannelSourceAnonymousTransactionsHandlingArrayInput is an input type that accepts GetChannelSourceAnonymousTransactionsHandlingArray and GetChannelSourceAnonymousTransactionsHandlingArrayOutput values.
 // You can construct a concrete instance of `GetChannelSourceAnonymousTransactionsHandlingArrayInput` via:
 //
@@ -6799,6 +7526,12 @@ func (i GetChannelSourceAnonymousTransactionsHandlingArray) ToGetChannelSourceAn
 	return pulumi.ToOutputWithContext(ctx, i).(GetChannelSourceAnonymousTransactionsHandlingArrayOutput)
 }
 
+func (i GetChannelSourceAnonymousTransactionsHandlingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetChannelSourceAnonymousTransactionsHandling] {
+	return pulumix.Output[[]GetChannelSourceAnonymousTransactionsHandling]{
+		OutputState: i.ToGetChannelSourceAnonymousTransactionsHandlingArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetChannelSourceAnonymousTransactionsHandlingOutput struct{ *pulumi.OutputState }
 
 func (GetChannelSourceAnonymousTransactionsHandlingOutput) ElementType() reflect.Type {
@@ -6811,6 +7544,12 @@ func (o GetChannelSourceAnonymousTransactionsHandlingOutput) ToGetChannelSourceA
 
 func (o GetChannelSourceAnonymousTransactionsHandlingOutput) ToGetChannelSourceAnonymousTransactionsHandlingOutputWithContext(ctx context.Context) GetChannelSourceAnonymousTransactionsHandlingOutput {
 	return o
+}
+
+func (o GetChannelSourceAnonymousTransactionsHandlingOutput) ToOutput(ctx context.Context) pulumix.Output[GetChannelSourceAnonymousTransactionsHandling] {
+	return pulumix.Output[GetChannelSourceAnonymousTransactionsHandling]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
@@ -6845,6 +7584,12 @@ func (o GetChannelSourceAnonymousTransactionsHandlingArrayOutput) ToGetChannelSo
 
 func (o GetChannelSourceAnonymousTransactionsHandlingArrayOutput) ToGetChannelSourceAnonymousTransactionsHandlingArrayOutputWithContext(ctx context.Context) GetChannelSourceAnonymousTransactionsHandlingArrayOutput {
 	return o
+}
+
+func (o GetChannelSourceAnonymousTransactionsHandlingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetChannelSourceAnonymousTransactionsHandling] {
+	return pulumix.Output[[]GetChannelSourceAnonymousTransactionsHandling]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetChannelSourceAnonymousTransactionsHandlingArrayOutput) Index(i pulumi.IntInput) GetChannelSourceAnonymousTransactionsHandlingOutput {
@@ -6890,6 +7635,12 @@ func (i GetChannelSourceSslCaCertificateArgs) ToGetChannelSourceSslCaCertificate
 	return pulumi.ToOutputWithContext(ctx, i).(GetChannelSourceSslCaCertificateOutput)
 }
 
+func (i GetChannelSourceSslCaCertificateArgs) ToOutput(ctx context.Context) pulumix.Output[GetChannelSourceSslCaCertificate] {
+	return pulumix.Output[GetChannelSourceSslCaCertificate]{
+		OutputState: i.ToGetChannelSourceSslCaCertificateOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetChannelSourceSslCaCertificateArrayInput is an input type that accepts GetChannelSourceSslCaCertificateArray and GetChannelSourceSslCaCertificateArrayOutput values.
 // You can construct a concrete instance of `GetChannelSourceSslCaCertificateArrayInput` via:
 //
@@ -6915,6 +7666,12 @@ func (i GetChannelSourceSslCaCertificateArray) ToGetChannelSourceSslCaCertificat
 	return pulumi.ToOutputWithContext(ctx, i).(GetChannelSourceSslCaCertificateArrayOutput)
 }
 
+func (i GetChannelSourceSslCaCertificateArray) ToOutput(ctx context.Context) pulumix.Output[[]GetChannelSourceSslCaCertificate] {
+	return pulumix.Output[[]GetChannelSourceSslCaCertificate]{
+		OutputState: i.ToGetChannelSourceSslCaCertificateArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetChannelSourceSslCaCertificateOutput struct{ *pulumi.OutputState }
 
 func (GetChannelSourceSslCaCertificateOutput) ElementType() reflect.Type {
@@ -6927,6 +7684,12 @@ func (o GetChannelSourceSslCaCertificateOutput) ToGetChannelSourceSslCaCertifica
 
 func (o GetChannelSourceSslCaCertificateOutput) ToGetChannelSourceSslCaCertificateOutputWithContext(ctx context.Context) GetChannelSourceSslCaCertificateOutput {
 	return o
+}
+
+func (o GetChannelSourceSslCaCertificateOutput) ToOutput(ctx context.Context) pulumix.Output[GetChannelSourceSslCaCertificate] {
+	return pulumix.Output[GetChannelSourceSslCaCertificate]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The type of CA certificate.
@@ -6951,6 +7714,12 @@ func (o GetChannelSourceSslCaCertificateArrayOutput) ToGetChannelSourceSslCaCert
 
 func (o GetChannelSourceSslCaCertificateArrayOutput) ToGetChannelSourceSslCaCertificateArrayOutputWithContext(ctx context.Context) GetChannelSourceSslCaCertificateArrayOutput {
 	return o
+}
+
+func (o GetChannelSourceSslCaCertificateArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetChannelSourceSslCaCertificate] {
+	return pulumix.Output[[]GetChannelSourceSslCaCertificate]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetChannelSourceSslCaCertificateArrayOutput) Index(i pulumi.IntInput) GetChannelSourceSslCaCertificateOutput {
@@ -7016,6 +7785,12 @@ func (i GetChannelTargetArgs) ToGetChannelTargetOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetChannelTargetOutput)
 }
 
+func (i GetChannelTargetArgs) ToOutput(ctx context.Context) pulumix.Output[GetChannelTarget] {
+	return pulumix.Output[GetChannelTarget]{
+		OutputState: i.ToGetChannelTargetOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetChannelTargetArrayInput is an input type that accepts GetChannelTargetArray and GetChannelTargetArrayOutput values.
 // You can construct a concrete instance of `GetChannelTargetArrayInput` via:
 //
@@ -7041,6 +7816,12 @@ func (i GetChannelTargetArray) ToGetChannelTargetArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetChannelTargetArrayOutput)
 }
 
+func (i GetChannelTargetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetChannelTarget] {
+	return pulumix.Output[[]GetChannelTarget]{
+		OutputState: i.ToGetChannelTargetArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetChannelTargetOutput struct{ *pulumi.OutputState }
 
 func (GetChannelTargetOutput) ElementType() reflect.Type {
@@ -7053,6 +7834,12 @@ func (o GetChannelTargetOutput) ToGetChannelTargetOutput() GetChannelTargetOutpu
 
 func (o GetChannelTargetOutput) ToGetChannelTargetOutputWithContext(ctx context.Context) GetChannelTargetOutput {
 	return o
+}
+
+func (o GetChannelTargetOutput) ToOutput(ctx context.Context) pulumix.Output[GetChannelTarget] {
+	return pulumix.Output[GetChannelTarget]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The username for the replication applier of the target MySQL DB System.
@@ -7104,6 +7891,12 @@ func (o GetChannelTargetArrayOutput) ToGetChannelTargetArrayOutputWithContext(ct
 	return o
 }
 
+func (o GetChannelTargetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetChannelTarget] {
+	return pulumix.Output[[]GetChannelTarget]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetChannelTargetArrayOutput) Index(i pulumi.IntInput) GetChannelTargetOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetChannelTarget {
 		return vs[0].([]GetChannelTarget)[vs[1].(int)]
@@ -7147,6 +7940,12 @@ func (i GetChannelTargetFilterArgs) ToGetChannelTargetFilterOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetChannelTargetFilterOutput)
 }
 
+func (i GetChannelTargetFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetChannelTargetFilter] {
+	return pulumix.Output[GetChannelTargetFilter]{
+		OutputState: i.ToGetChannelTargetFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetChannelTargetFilterArrayInput is an input type that accepts GetChannelTargetFilterArray and GetChannelTargetFilterArrayOutput values.
 // You can construct a concrete instance of `GetChannelTargetFilterArrayInput` via:
 //
@@ -7172,6 +7971,12 @@ func (i GetChannelTargetFilterArray) ToGetChannelTargetFilterArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetChannelTargetFilterArrayOutput)
 }
 
+func (i GetChannelTargetFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetChannelTargetFilter] {
+	return pulumix.Output[[]GetChannelTargetFilter]{
+		OutputState: i.ToGetChannelTargetFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetChannelTargetFilterOutput struct{ *pulumi.OutputState }
 
 func (GetChannelTargetFilterOutput) ElementType() reflect.Type {
@@ -7184,6 +7989,12 @@ func (o GetChannelTargetFilterOutput) ToGetChannelTargetFilterOutput() GetChanne
 
 func (o GetChannelTargetFilterOutput) ToGetChannelTargetFilterOutputWithContext(ctx context.Context) GetChannelTargetFilterOutput {
 	return o
+}
+
+func (o GetChannelTargetFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetChannelTargetFilter] {
+	return pulumix.Output[GetChannelTargetFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The type of the filter rule.
@@ -7208,6 +8019,12 @@ func (o GetChannelTargetFilterArrayOutput) ToGetChannelTargetFilterArrayOutput()
 
 func (o GetChannelTargetFilterArrayOutput) ToGetChannelTargetFilterArrayOutputWithContext(ctx context.Context) GetChannelTargetFilterArrayOutput {
 	return o
+}
+
+func (o GetChannelTargetFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetChannelTargetFilter] {
+	return pulumix.Output[[]GetChannelTargetFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetChannelTargetFilterArrayOutput) Index(i pulumi.IntInput) GetChannelTargetFilterOutput {
@@ -7297,6 +8114,12 @@ func (i GetChannelsChannelArgs) ToGetChannelsChannelOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetChannelsChannelOutput)
 }
 
+func (i GetChannelsChannelArgs) ToOutput(ctx context.Context) pulumix.Output[GetChannelsChannel] {
+	return pulumix.Output[GetChannelsChannel]{
+		OutputState: i.ToGetChannelsChannelOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetChannelsChannelArrayInput is an input type that accepts GetChannelsChannelArray and GetChannelsChannelArrayOutput values.
 // You can construct a concrete instance of `GetChannelsChannelArrayInput` via:
 //
@@ -7322,6 +8145,12 @@ func (i GetChannelsChannelArray) ToGetChannelsChannelArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetChannelsChannelArrayOutput)
 }
 
+func (i GetChannelsChannelArray) ToOutput(ctx context.Context) pulumix.Output[[]GetChannelsChannel] {
+	return pulumix.Output[[]GetChannelsChannel]{
+		OutputState: i.ToGetChannelsChannelArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetChannelsChannelOutput struct{ *pulumi.OutputState }
 
 func (GetChannelsChannelOutput) ElementType() reflect.Type {
@@ -7334,6 +8163,12 @@ func (o GetChannelsChannelOutput) ToGetChannelsChannelOutput() GetChannelsChanne
 
 func (o GetChannelsChannelOutput) ToGetChannelsChannelOutputWithContext(ctx context.Context) GetChannelsChannelOutput {
 	return o
+}
+
+func (o GetChannelsChannelOutput) ToOutput(ctx context.Context) pulumix.Output[GetChannelsChannel] {
+	return pulumix.Output[GetChannelsChannel]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -7415,6 +8250,12 @@ func (o GetChannelsChannelArrayOutput) ToGetChannelsChannelArrayOutputWithContex
 	return o
 }
 
+func (o GetChannelsChannelArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetChannelsChannel] {
+	return pulumix.Output[[]GetChannelsChannel]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetChannelsChannelArrayOutput) Index(i pulumi.IntInput) GetChannelsChannelOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetChannelsChannel {
 		return vs[0].([]GetChannelsChannel)[vs[1].(int)]
@@ -7480,6 +8321,12 @@ func (i GetChannelsChannelSourceArgs) ToGetChannelsChannelSourceOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetChannelsChannelSourceOutput)
 }
 
+func (i GetChannelsChannelSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetChannelsChannelSource] {
+	return pulumix.Output[GetChannelsChannelSource]{
+		OutputState: i.ToGetChannelsChannelSourceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetChannelsChannelSourceArrayInput is an input type that accepts GetChannelsChannelSourceArray and GetChannelsChannelSourceArrayOutput values.
 // You can construct a concrete instance of `GetChannelsChannelSourceArrayInput` via:
 //
@@ -7505,6 +8352,12 @@ func (i GetChannelsChannelSourceArray) ToGetChannelsChannelSourceArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetChannelsChannelSourceArrayOutput)
 }
 
+func (i GetChannelsChannelSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetChannelsChannelSource] {
+	return pulumix.Output[[]GetChannelsChannelSource]{
+		OutputState: i.ToGetChannelsChannelSourceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetChannelsChannelSourceOutput struct{ *pulumi.OutputState }
 
 func (GetChannelsChannelSourceOutput) ElementType() reflect.Type {
@@ -7517,6 +8370,12 @@ func (o GetChannelsChannelSourceOutput) ToGetChannelsChannelSourceOutput() GetCh
 
 func (o GetChannelsChannelSourceOutput) ToGetChannelsChannelSourceOutputWithContext(ctx context.Context) GetChannelsChannelSourceOutput {
 	return o
+}
+
+func (o GetChannelsChannelSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetChannelsChannelSource] {
+	return pulumix.Output[GetChannelsChannelSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
@@ -7576,6 +8435,12 @@ func (o GetChannelsChannelSourceArrayOutput) ToGetChannelsChannelSourceArrayOutp
 	return o
 }
 
+func (o GetChannelsChannelSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetChannelsChannelSource] {
+	return pulumix.Output[[]GetChannelsChannelSource]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetChannelsChannelSourceArrayOutput) Index(i pulumi.IntInput) GetChannelsChannelSourceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetChannelsChannelSource {
 		return vs[0].([]GetChannelsChannelSource)[vs[1].(int)]
@@ -7627,6 +8492,12 @@ func (i GetChannelsChannelSourceAnonymousTransactionsHandlingArgs) ToGetChannels
 	return pulumi.ToOutputWithContext(ctx, i).(GetChannelsChannelSourceAnonymousTransactionsHandlingOutput)
 }
 
+func (i GetChannelsChannelSourceAnonymousTransactionsHandlingArgs) ToOutput(ctx context.Context) pulumix.Output[GetChannelsChannelSourceAnonymousTransactionsHandling] {
+	return pulumix.Output[GetChannelsChannelSourceAnonymousTransactionsHandling]{
+		OutputState: i.ToGetChannelsChannelSourceAnonymousTransactionsHandlingOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetChannelsChannelSourceAnonymousTransactionsHandlingArrayInput is an input type that accepts GetChannelsChannelSourceAnonymousTransactionsHandlingArray and GetChannelsChannelSourceAnonymousTransactionsHandlingArrayOutput values.
 // You can construct a concrete instance of `GetChannelsChannelSourceAnonymousTransactionsHandlingArrayInput` via:
 //
@@ -7652,6 +8523,12 @@ func (i GetChannelsChannelSourceAnonymousTransactionsHandlingArray) ToGetChannel
 	return pulumi.ToOutputWithContext(ctx, i).(GetChannelsChannelSourceAnonymousTransactionsHandlingArrayOutput)
 }
 
+func (i GetChannelsChannelSourceAnonymousTransactionsHandlingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetChannelsChannelSourceAnonymousTransactionsHandling] {
+	return pulumix.Output[[]GetChannelsChannelSourceAnonymousTransactionsHandling]{
+		OutputState: i.ToGetChannelsChannelSourceAnonymousTransactionsHandlingArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetChannelsChannelSourceAnonymousTransactionsHandlingOutput struct{ *pulumi.OutputState }
 
 func (GetChannelsChannelSourceAnonymousTransactionsHandlingOutput) ElementType() reflect.Type {
@@ -7664,6 +8541,12 @@ func (o GetChannelsChannelSourceAnonymousTransactionsHandlingOutput) ToGetChanne
 
 func (o GetChannelsChannelSourceAnonymousTransactionsHandlingOutput) ToGetChannelsChannelSourceAnonymousTransactionsHandlingOutputWithContext(ctx context.Context) GetChannelsChannelSourceAnonymousTransactionsHandlingOutput {
 	return o
+}
+
+func (o GetChannelsChannelSourceAnonymousTransactionsHandlingOutput) ToOutput(ctx context.Context) pulumix.Output[GetChannelsChannelSourceAnonymousTransactionsHandling] {
+	return pulumix.Output[GetChannelsChannelSourceAnonymousTransactionsHandling]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
@@ -7700,6 +8583,12 @@ func (o GetChannelsChannelSourceAnonymousTransactionsHandlingArrayOutput) ToGetC
 
 func (o GetChannelsChannelSourceAnonymousTransactionsHandlingArrayOutput) ToGetChannelsChannelSourceAnonymousTransactionsHandlingArrayOutputWithContext(ctx context.Context) GetChannelsChannelSourceAnonymousTransactionsHandlingArrayOutput {
 	return o
+}
+
+func (o GetChannelsChannelSourceAnonymousTransactionsHandlingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetChannelsChannelSourceAnonymousTransactionsHandling] {
+	return pulumix.Output[[]GetChannelsChannelSourceAnonymousTransactionsHandling]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetChannelsChannelSourceAnonymousTransactionsHandlingArrayOutput) Index(i pulumi.IntInput) GetChannelsChannelSourceAnonymousTransactionsHandlingOutput {
@@ -7745,6 +8634,12 @@ func (i GetChannelsChannelSourceSslCaCertificateArgs) ToGetChannelsChannelSource
 	return pulumi.ToOutputWithContext(ctx, i).(GetChannelsChannelSourceSslCaCertificateOutput)
 }
 
+func (i GetChannelsChannelSourceSslCaCertificateArgs) ToOutput(ctx context.Context) pulumix.Output[GetChannelsChannelSourceSslCaCertificate] {
+	return pulumix.Output[GetChannelsChannelSourceSslCaCertificate]{
+		OutputState: i.ToGetChannelsChannelSourceSslCaCertificateOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetChannelsChannelSourceSslCaCertificateArrayInput is an input type that accepts GetChannelsChannelSourceSslCaCertificateArray and GetChannelsChannelSourceSslCaCertificateArrayOutput values.
 // You can construct a concrete instance of `GetChannelsChannelSourceSslCaCertificateArrayInput` via:
 //
@@ -7770,6 +8665,12 @@ func (i GetChannelsChannelSourceSslCaCertificateArray) ToGetChannelsChannelSourc
 	return pulumi.ToOutputWithContext(ctx, i).(GetChannelsChannelSourceSslCaCertificateArrayOutput)
 }
 
+func (i GetChannelsChannelSourceSslCaCertificateArray) ToOutput(ctx context.Context) pulumix.Output[[]GetChannelsChannelSourceSslCaCertificate] {
+	return pulumix.Output[[]GetChannelsChannelSourceSslCaCertificate]{
+		OutputState: i.ToGetChannelsChannelSourceSslCaCertificateArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetChannelsChannelSourceSslCaCertificateOutput struct{ *pulumi.OutputState }
 
 func (GetChannelsChannelSourceSslCaCertificateOutput) ElementType() reflect.Type {
@@ -7782,6 +8683,12 @@ func (o GetChannelsChannelSourceSslCaCertificateOutput) ToGetChannelsChannelSour
 
 func (o GetChannelsChannelSourceSslCaCertificateOutput) ToGetChannelsChannelSourceSslCaCertificateOutputWithContext(ctx context.Context) GetChannelsChannelSourceSslCaCertificateOutput {
 	return o
+}
+
+func (o GetChannelsChannelSourceSslCaCertificateOutput) ToOutput(ctx context.Context) pulumix.Output[GetChannelsChannelSourceSslCaCertificate] {
+	return pulumix.Output[GetChannelsChannelSourceSslCaCertificate]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The type of CA certificate.
@@ -7806,6 +8713,12 @@ func (o GetChannelsChannelSourceSslCaCertificateArrayOutput) ToGetChannelsChanne
 
 func (o GetChannelsChannelSourceSslCaCertificateArrayOutput) ToGetChannelsChannelSourceSslCaCertificateArrayOutputWithContext(ctx context.Context) GetChannelsChannelSourceSslCaCertificateArrayOutput {
 	return o
+}
+
+func (o GetChannelsChannelSourceSslCaCertificateArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetChannelsChannelSourceSslCaCertificate] {
+	return pulumix.Output[[]GetChannelsChannelSourceSslCaCertificate]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetChannelsChannelSourceSslCaCertificateArrayOutput) Index(i pulumi.IntInput) GetChannelsChannelSourceSslCaCertificateOutput {
@@ -7871,6 +8784,12 @@ func (i GetChannelsChannelTargetArgs) ToGetChannelsChannelTargetOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetChannelsChannelTargetOutput)
 }
 
+func (i GetChannelsChannelTargetArgs) ToOutput(ctx context.Context) pulumix.Output[GetChannelsChannelTarget] {
+	return pulumix.Output[GetChannelsChannelTarget]{
+		OutputState: i.ToGetChannelsChannelTargetOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetChannelsChannelTargetArrayInput is an input type that accepts GetChannelsChannelTargetArray and GetChannelsChannelTargetArrayOutput values.
 // You can construct a concrete instance of `GetChannelsChannelTargetArrayInput` via:
 //
@@ -7896,6 +8815,12 @@ func (i GetChannelsChannelTargetArray) ToGetChannelsChannelTargetArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetChannelsChannelTargetArrayOutput)
 }
 
+func (i GetChannelsChannelTargetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetChannelsChannelTarget] {
+	return pulumix.Output[[]GetChannelsChannelTarget]{
+		OutputState: i.ToGetChannelsChannelTargetArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetChannelsChannelTargetOutput struct{ *pulumi.OutputState }
 
 func (GetChannelsChannelTargetOutput) ElementType() reflect.Type {
@@ -7908,6 +8833,12 @@ func (o GetChannelsChannelTargetOutput) ToGetChannelsChannelTargetOutput() GetCh
 
 func (o GetChannelsChannelTargetOutput) ToGetChannelsChannelTargetOutputWithContext(ctx context.Context) GetChannelsChannelTargetOutput {
 	return o
+}
+
+func (o GetChannelsChannelTargetOutput) ToOutput(ctx context.Context) pulumix.Output[GetChannelsChannelTarget] {
+	return pulumix.Output[GetChannelsChannelTarget]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The username for the replication applier of the target MySQL DB System.
@@ -7959,6 +8890,12 @@ func (o GetChannelsChannelTargetArrayOutput) ToGetChannelsChannelTargetArrayOutp
 	return o
 }
 
+func (o GetChannelsChannelTargetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetChannelsChannelTarget] {
+	return pulumix.Output[[]GetChannelsChannelTarget]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetChannelsChannelTargetArrayOutput) Index(i pulumi.IntInput) GetChannelsChannelTargetOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetChannelsChannelTarget {
 		return vs[0].([]GetChannelsChannelTarget)[vs[1].(int)]
@@ -8002,6 +8939,12 @@ func (i GetChannelsChannelTargetFilterArgs) ToGetChannelsChannelTargetFilterOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetChannelsChannelTargetFilterOutput)
 }
 
+func (i GetChannelsChannelTargetFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetChannelsChannelTargetFilter] {
+	return pulumix.Output[GetChannelsChannelTargetFilter]{
+		OutputState: i.ToGetChannelsChannelTargetFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetChannelsChannelTargetFilterArrayInput is an input type that accepts GetChannelsChannelTargetFilterArray and GetChannelsChannelTargetFilterArrayOutput values.
 // You can construct a concrete instance of `GetChannelsChannelTargetFilterArrayInput` via:
 //
@@ -8027,6 +8970,12 @@ func (i GetChannelsChannelTargetFilterArray) ToGetChannelsChannelTargetFilterArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetChannelsChannelTargetFilterArrayOutput)
 }
 
+func (i GetChannelsChannelTargetFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetChannelsChannelTargetFilter] {
+	return pulumix.Output[[]GetChannelsChannelTargetFilter]{
+		OutputState: i.ToGetChannelsChannelTargetFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetChannelsChannelTargetFilterOutput struct{ *pulumi.OutputState }
 
 func (GetChannelsChannelTargetFilterOutput) ElementType() reflect.Type {
@@ -8039,6 +8988,12 @@ func (o GetChannelsChannelTargetFilterOutput) ToGetChannelsChannelTargetFilterOu
 
 func (o GetChannelsChannelTargetFilterOutput) ToGetChannelsChannelTargetFilterOutputWithContext(ctx context.Context) GetChannelsChannelTargetFilterOutput {
 	return o
+}
+
+func (o GetChannelsChannelTargetFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetChannelsChannelTargetFilter] {
+	return pulumix.Output[GetChannelsChannelTargetFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The type of the filter rule.
@@ -8063,6 +9018,12 @@ func (o GetChannelsChannelTargetFilterArrayOutput) ToGetChannelsChannelTargetFil
 
 func (o GetChannelsChannelTargetFilterArrayOutput) ToGetChannelsChannelTargetFilterArrayOutputWithContext(ctx context.Context) GetChannelsChannelTargetFilterArrayOutput {
 	return o
+}
+
+func (o GetChannelsChannelTargetFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetChannelsChannelTargetFilter] {
+	return pulumix.Output[[]GetChannelsChannelTargetFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetChannelsChannelTargetFilterArrayOutput) Index(i pulumi.IntInput) GetChannelsChannelTargetFilterOutput {
@@ -8106,6 +9067,12 @@ func (i GetChannelsFilterArgs) ToGetChannelsFilterOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetChannelsFilterOutput)
 }
 
+func (i GetChannelsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetChannelsFilter] {
+	return pulumix.Output[GetChannelsFilter]{
+		OutputState: i.ToGetChannelsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetChannelsFilterArrayInput is an input type that accepts GetChannelsFilterArray and GetChannelsFilterArrayOutput values.
 // You can construct a concrete instance of `GetChannelsFilterArrayInput` via:
 //
@@ -8131,6 +9098,12 @@ func (i GetChannelsFilterArray) ToGetChannelsFilterArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetChannelsFilterArrayOutput)
 }
 
+func (i GetChannelsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetChannelsFilter] {
+	return pulumix.Output[[]GetChannelsFilter]{
+		OutputState: i.ToGetChannelsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetChannelsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetChannelsFilterOutput) ElementType() reflect.Type {
@@ -8143,6 +9116,12 @@ func (o GetChannelsFilterOutput) ToGetChannelsFilterOutput() GetChannelsFilterOu
 
 func (o GetChannelsFilterOutput) ToGetChannelsFilterOutputWithContext(ctx context.Context) GetChannelsFilterOutput {
 	return o
+}
+
+func (o GetChannelsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetChannelsFilter] {
+	return pulumix.Output[GetChannelsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetChannelsFilterOutput) Name() pulumi.StringOutput {
@@ -8169,6 +9148,12 @@ func (o GetChannelsFilterArrayOutput) ToGetChannelsFilterArrayOutput() GetChanne
 
 func (o GetChannelsFilterArrayOutput) ToGetChannelsFilterArrayOutputWithContext(ctx context.Context) GetChannelsFilterArrayOutput {
 	return o
+}
+
+func (o GetChannelsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetChannelsFilter] {
+	return pulumix.Output[[]GetChannelsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetChannelsFilterArrayOutput) Index(i pulumi.IntInput) GetChannelsFilterOutput {
@@ -8222,6 +9207,12 @@ func (i GetHeatWaveClusterClusterNodeArgs) ToGetHeatWaveClusterClusterNodeOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetHeatWaveClusterClusterNodeOutput)
 }
 
+func (i GetHeatWaveClusterClusterNodeArgs) ToOutput(ctx context.Context) pulumix.Output[GetHeatWaveClusterClusterNode] {
+	return pulumix.Output[GetHeatWaveClusterClusterNode]{
+		OutputState: i.ToGetHeatWaveClusterClusterNodeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetHeatWaveClusterClusterNodeArrayInput is an input type that accepts GetHeatWaveClusterClusterNodeArray and GetHeatWaveClusterClusterNodeArrayOutput values.
 // You can construct a concrete instance of `GetHeatWaveClusterClusterNodeArrayInput` via:
 //
@@ -8247,6 +9238,12 @@ func (i GetHeatWaveClusterClusterNodeArray) ToGetHeatWaveClusterClusterNodeArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetHeatWaveClusterClusterNodeArrayOutput)
 }
 
+func (i GetHeatWaveClusterClusterNodeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetHeatWaveClusterClusterNode] {
+	return pulumix.Output[[]GetHeatWaveClusterClusterNode]{
+		OutputState: i.ToGetHeatWaveClusterClusterNodeArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetHeatWaveClusterClusterNodeOutput struct{ *pulumi.OutputState }
 
 func (GetHeatWaveClusterClusterNodeOutput) ElementType() reflect.Type {
@@ -8259,6 +9256,12 @@ func (o GetHeatWaveClusterClusterNodeOutput) ToGetHeatWaveClusterClusterNodeOutp
 
 func (o GetHeatWaveClusterClusterNodeOutput) ToGetHeatWaveClusterClusterNodeOutputWithContext(ctx context.Context) GetHeatWaveClusterClusterNodeOutput {
 	return o
+}
+
+func (o GetHeatWaveClusterClusterNodeOutput) ToOutput(ctx context.Context) pulumix.Output[GetHeatWaveClusterClusterNode] {
+	return pulumix.Output[GetHeatWaveClusterClusterNode]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The ID of the node within MySQL HeatWave cluster.
@@ -8293,6 +9296,12 @@ func (o GetHeatWaveClusterClusterNodeArrayOutput) ToGetHeatWaveClusterClusterNod
 
 func (o GetHeatWaveClusterClusterNodeArrayOutput) ToGetHeatWaveClusterClusterNodeArrayOutputWithContext(ctx context.Context) GetHeatWaveClusterClusterNodeArrayOutput {
 	return o
+}
+
+func (o GetHeatWaveClusterClusterNodeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetHeatWaveClusterClusterNode] {
+	return pulumix.Output[[]GetHeatWaveClusterClusterNode]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetHeatWaveClusterClusterNodeArrayOutput) Index(i pulumi.IntInput) GetHeatWaveClusterClusterNodeOutput {
@@ -8426,6 +9435,12 @@ func (i GetMysqlBackupDbSystemSnapshotArgs) ToGetMysqlBackupDbSystemSnapshotOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupDbSystemSnapshotOutput)
 }
 
+func (i GetMysqlBackupDbSystemSnapshotArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupDbSystemSnapshot] {
+	return pulumix.Output[GetMysqlBackupDbSystemSnapshot]{
+		OutputState: i.ToGetMysqlBackupDbSystemSnapshotOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlBackupDbSystemSnapshotArrayInput is an input type that accepts GetMysqlBackupDbSystemSnapshotArray and GetMysqlBackupDbSystemSnapshotArrayOutput values.
 // You can construct a concrete instance of `GetMysqlBackupDbSystemSnapshotArrayInput` via:
 //
@@ -8451,6 +9466,12 @@ func (i GetMysqlBackupDbSystemSnapshotArray) ToGetMysqlBackupDbSystemSnapshotArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupDbSystemSnapshotArrayOutput)
 }
 
+func (i GetMysqlBackupDbSystemSnapshotArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupDbSystemSnapshot] {
+	return pulumix.Output[[]GetMysqlBackupDbSystemSnapshot]{
+		OutputState: i.ToGetMysqlBackupDbSystemSnapshotArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlBackupDbSystemSnapshotOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlBackupDbSystemSnapshotOutput) ElementType() reflect.Type {
@@ -8463,6 +9484,12 @@ func (o GetMysqlBackupDbSystemSnapshotOutput) ToGetMysqlBackupDbSystemSnapshotOu
 
 func (o GetMysqlBackupDbSystemSnapshotOutput) ToGetMysqlBackupDbSystemSnapshotOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotOutput {
 	return o
+}
+
+func (o GetMysqlBackupDbSystemSnapshotOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupDbSystemSnapshot] {
+	return pulumix.Output[GetMysqlBackupDbSystemSnapshot]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The username for the administrative user.
@@ -8605,6 +9632,12 @@ func (o GetMysqlBackupDbSystemSnapshotArrayOutput) ToGetMysqlBackupDbSystemSnaps
 	return o
 }
 
+func (o GetMysqlBackupDbSystemSnapshotArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupDbSystemSnapshot] {
+	return pulumix.Output[[]GetMysqlBackupDbSystemSnapshot]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetMysqlBackupDbSystemSnapshotArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupDbSystemSnapshotOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupDbSystemSnapshot {
 		return vs[0].([]GetMysqlBackupDbSystemSnapshot)[vs[1].(int)]
@@ -8664,6 +9697,12 @@ func (i GetMysqlBackupDbSystemSnapshotBackupPolicyArgs) ToGetMysqlBackupDbSystem
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupDbSystemSnapshotBackupPolicyOutput)
 }
 
+func (i GetMysqlBackupDbSystemSnapshotBackupPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupDbSystemSnapshotBackupPolicy] {
+	return pulumix.Output[GetMysqlBackupDbSystemSnapshotBackupPolicy]{
+		OutputState: i.ToGetMysqlBackupDbSystemSnapshotBackupPolicyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlBackupDbSystemSnapshotBackupPolicyArrayInput is an input type that accepts GetMysqlBackupDbSystemSnapshotBackupPolicyArray and GetMysqlBackupDbSystemSnapshotBackupPolicyArrayOutput values.
 // You can construct a concrete instance of `GetMysqlBackupDbSystemSnapshotBackupPolicyArrayInput` via:
 //
@@ -8689,6 +9728,12 @@ func (i GetMysqlBackupDbSystemSnapshotBackupPolicyArray) ToGetMysqlBackupDbSyste
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupDbSystemSnapshotBackupPolicyArrayOutput)
 }
 
+func (i GetMysqlBackupDbSystemSnapshotBackupPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupDbSystemSnapshotBackupPolicy] {
+	return pulumix.Output[[]GetMysqlBackupDbSystemSnapshotBackupPolicy]{
+		OutputState: i.ToGetMysqlBackupDbSystemSnapshotBackupPolicyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlBackupDbSystemSnapshotBackupPolicyOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlBackupDbSystemSnapshotBackupPolicyOutput) ElementType() reflect.Type {
@@ -8701,6 +9746,12 @@ func (o GetMysqlBackupDbSystemSnapshotBackupPolicyOutput) ToGetMysqlBackupDbSyst
 
 func (o GetMysqlBackupDbSystemSnapshotBackupPolicyOutput) ToGetMysqlBackupDbSystemSnapshotBackupPolicyOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotBackupPolicyOutput {
 	return o
+}
+
+func (o GetMysqlBackupDbSystemSnapshotBackupPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupDbSystemSnapshotBackupPolicy] {
+	return pulumix.Output[GetMysqlBackupDbSystemSnapshotBackupPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -8749,6 +9800,12 @@ func (o GetMysqlBackupDbSystemSnapshotBackupPolicyArrayOutput) ToGetMysqlBackupD
 	return o
 }
 
+func (o GetMysqlBackupDbSystemSnapshotBackupPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupDbSystemSnapshotBackupPolicy] {
+	return pulumix.Output[[]GetMysqlBackupDbSystemSnapshotBackupPolicy]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetMysqlBackupDbSystemSnapshotBackupPolicyArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupDbSystemSnapshotBackupPolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupDbSystemSnapshotBackupPolicy {
 		return vs[0].([]GetMysqlBackupDbSystemSnapshotBackupPolicy)[vs[1].(int)]
@@ -8788,6 +9845,12 @@ func (i GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs) ToGetMysqlBack
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput)
 }
 
+func (i GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy] {
+	return pulumix.Output[GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy]{
+		OutputState: i.ToGetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayInput is an input type that accepts GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArray and GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput values.
 // You can construct a concrete instance of `GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayInput` via:
 //
@@ -8813,6 +9876,12 @@ func (i GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArray) ToGetMysqlBac
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput)
 }
 
+func (i GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy] {
+	return pulumix.Output[[]GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy]{
+		OutputState: i.ToGetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput) ElementType() reflect.Type {
@@ -8825,6 +9894,12 @@ func (o GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput) ToGetMysqlBa
 
 func (o GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput) ToGetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput {
 	return o
+}
+
+func (o GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy] {
+	return pulumix.Output[GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Specifies if PITR is enabled or disabled.
@@ -8844,6 +9919,12 @@ func (o GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput) ToGetMy
 
 func (o GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput) ToGetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput {
 	return o
+}
+
+func (o GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy] {
+	return pulumix.Output[[]GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput {
@@ -8893,6 +9974,12 @@ func (i GetMysqlBackupDbSystemSnapshotDeletionPolicyArgs) ToGetMysqlBackupDbSyst
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupDbSystemSnapshotDeletionPolicyOutput)
 }
 
+func (i GetMysqlBackupDbSystemSnapshotDeletionPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupDbSystemSnapshotDeletionPolicy] {
+	return pulumix.Output[GetMysqlBackupDbSystemSnapshotDeletionPolicy]{
+		OutputState: i.ToGetMysqlBackupDbSystemSnapshotDeletionPolicyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlBackupDbSystemSnapshotDeletionPolicyArrayInput is an input type that accepts GetMysqlBackupDbSystemSnapshotDeletionPolicyArray and GetMysqlBackupDbSystemSnapshotDeletionPolicyArrayOutput values.
 // You can construct a concrete instance of `GetMysqlBackupDbSystemSnapshotDeletionPolicyArrayInput` via:
 //
@@ -8918,6 +10005,12 @@ func (i GetMysqlBackupDbSystemSnapshotDeletionPolicyArray) ToGetMysqlBackupDbSys
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupDbSystemSnapshotDeletionPolicyArrayOutput)
 }
 
+func (i GetMysqlBackupDbSystemSnapshotDeletionPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupDbSystemSnapshotDeletionPolicy] {
+	return pulumix.Output[[]GetMysqlBackupDbSystemSnapshotDeletionPolicy]{
+		OutputState: i.ToGetMysqlBackupDbSystemSnapshotDeletionPolicyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlBackupDbSystemSnapshotDeletionPolicyOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlBackupDbSystemSnapshotDeletionPolicyOutput) ElementType() reflect.Type {
@@ -8930,6 +10023,12 @@ func (o GetMysqlBackupDbSystemSnapshotDeletionPolicyOutput) ToGetMysqlBackupDbSy
 
 func (o GetMysqlBackupDbSystemSnapshotDeletionPolicyOutput) ToGetMysqlBackupDbSystemSnapshotDeletionPolicyOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotDeletionPolicyOutput {
 	return o
+}
+
+func (o GetMysqlBackupDbSystemSnapshotDeletionPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupDbSystemSnapshotDeletionPolicy] {
+	return pulumix.Output[GetMysqlBackupDbSystemSnapshotDeletionPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Specifies if any automatic backups created for a DB System should be retained or deleted when the DB System is deleted.
@@ -8959,6 +10058,12 @@ func (o GetMysqlBackupDbSystemSnapshotDeletionPolicyArrayOutput) ToGetMysqlBacku
 
 func (o GetMysqlBackupDbSystemSnapshotDeletionPolicyArrayOutput) ToGetMysqlBackupDbSystemSnapshotDeletionPolicyArrayOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotDeletionPolicyArrayOutput {
 	return o
+}
+
+func (o GetMysqlBackupDbSystemSnapshotDeletionPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupDbSystemSnapshotDeletionPolicy] {
+	return pulumix.Output[[]GetMysqlBackupDbSystemSnapshotDeletionPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMysqlBackupDbSystemSnapshotDeletionPolicyArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupDbSystemSnapshotDeletionPolicyOutput {
@@ -9032,6 +10137,12 @@ func (i GetMysqlBackupDbSystemSnapshotEndpointArgs) ToGetMysqlBackupDbSystemSnap
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupDbSystemSnapshotEndpointOutput)
 }
 
+func (i GetMysqlBackupDbSystemSnapshotEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupDbSystemSnapshotEndpoint] {
+	return pulumix.Output[GetMysqlBackupDbSystemSnapshotEndpoint]{
+		OutputState: i.ToGetMysqlBackupDbSystemSnapshotEndpointOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlBackupDbSystemSnapshotEndpointArrayInput is an input type that accepts GetMysqlBackupDbSystemSnapshotEndpointArray and GetMysqlBackupDbSystemSnapshotEndpointArrayOutput values.
 // You can construct a concrete instance of `GetMysqlBackupDbSystemSnapshotEndpointArrayInput` via:
 //
@@ -9057,6 +10168,12 @@ func (i GetMysqlBackupDbSystemSnapshotEndpointArray) ToGetMysqlBackupDbSystemSna
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupDbSystemSnapshotEndpointArrayOutput)
 }
 
+func (i GetMysqlBackupDbSystemSnapshotEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupDbSystemSnapshotEndpoint] {
+	return pulumix.Output[[]GetMysqlBackupDbSystemSnapshotEndpoint]{
+		OutputState: i.ToGetMysqlBackupDbSystemSnapshotEndpointArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlBackupDbSystemSnapshotEndpointOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlBackupDbSystemSnapshotEndpointOutput) ElementType() reflect.Type {
@@ -9069,6 +10186,12 @@ func (o GetMysqlBackupDbSystemSnapshotEndpointOutput) ToGetMysqlBackupDbSystemSn
 
 func (o GetMysqlBackupDbSystemSnapshotEndpointOutput) ToGetMysqlBackupDbSystemSnapshotEndpointOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotEndpointOutput {
 	return o
+}
+
+func (o GetMysqlBackupDbSystemSnapshotEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupDbSystemSnapshotEndpoint] {
+	return pulumix.Output[GetMysqlBackupDbSystemSnapshotEndpoint]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The network address of the DB System.
@@ -9130,6 +10253,12 @@ func (o GetMysqlBackupDbSystemSnapshotEndpointArrayOutput) ToGetMysqlBackupDbSys
 	return o
 }
 
+func (o GetMysqlBackupDbSystemSnapshotEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupDbSystemSnapshotEndpoint] {
+	return pulumix.Output[[]GetMysqlBackupDbSystemSnapshotEndpoint]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetMysqlBackupDbSystemSnapshotEndpointArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupDbSystemSnapshotEndpointOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupDbSystemSnapshotEndpoint {
 		return vs[0].([]GetMysqlBackupDbSystemSnapshotEndpoint)[vs[1].(int)]
@@ -9169,6 +10298,12 @@ func (i GetMysqlBackupDbSystemSnapshotMaintenanceArgs) ToGetMysqlBackupDbSystemS
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupDbSystemSnapshotMaintenanceOutput)
 }
 
+func (i GetMysqlBackupDbSystemSnapshotMaintenanceArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupDbSystemSnapshotMaintenance] {
+	return pulumix.Output[GetMysqlBackupDbSystemSnapshotMaintenance]{
+		OutputState: i.ToGetMysqlBackupDbSystemSnapshotMaintenanceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlBackupDbSystemSnapshotMaintenanceArrayInput is an input type that accepts GetMysqlBackupDbSystemSnapshotMaintenanceArray and GetMysqlBackupDbSystemSnapshotMaintenanceArrayOutput values.
 // You can construct a concrete instance of `GetMysqlBackupDbSystemSnapshotMaintenanceArrayInput` via:
 //
@@ -9194,6 +10329,12 @@ func (i GetMysqlBackupDbSystemSnapshotMaintenanceArray) ToGetMysqlBackupDbSystem
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupDbSystemSnapshotMaintenanceArrayOutput)
 }
 
+func (i GetMysqlBackupDbSystemSnapshotMaintenanceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupDbSystemSnapshotMaintenance] {
+	return pulumix.Output[[]GetMysqlBackupDbSystemSnapshotMaintenance]{
+		OutputState: i.ToGetMysqlBackupDbSystemSnapshotMaintenanceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlBackupDbSystemSnapshotMaintenanceOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlBackupDbSystemSnapshotMaintenanceOutput) ElementType() reflect.Type {
@@ -9206,6 +10347,12 @@ func (o GetMysqlBackupDbSystemSnapshotMaintenanceOutput) ToGetMysqlBackupDbSyste
 
 func (o GetMysqlBackupDbSystemSnapshotMaintenanceOutput) ToGetMysqlBackupDbSystemSnapshotMaintenanceOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotMaintenanceOutput {
 	return o
+}
+
+func (o GetMysqlBackupDbSystemSnapshotMaintenanceOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupDbSystemSnapshotMaintenance] {
+	return pulumix.Output[GetMysqlBackupDbSystemSnapshotMaintenance]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The start time of the maintenance window.
@@ -9225,6 +10372,12 @@ func (o GetMysqlBackupDbSystemSnapshotMaintenanceArrayOutput) ToGetMysqlBackupDb
 
 func (o GetMysqlBackupDbSystemSnapshotMaintenanceArrayOutput) ToGetMysqlBackupDbSystemSnapshotMaintenanceArrayOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotMaintenanceArrayOutput {
 	return o
+}
+
+func (o GetMysqlBackupDbSystemSnapshotMaintenanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupDbSystemSnapshotMaintenance] {
+	return pulumix.Output[[]GetMysqlBackupDbSystemSnapshotMaintenance]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMysqlBackupDbSystemSnapshotMaintenanceArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupDbSystemSnapshotMaintenanceOutput {
@@ -9338,6 +10491,12 @@ func (i GetMysqlBackupsBackupArgs) ToGetMysqlBackupsBackupOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupOutput)
 }
 
+func (i GetMysqlBackupsBackupArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupsBackup] {
+	return pulumix.Output[GetMysqlBackupsBackup]{
+		OutputState: i.ToGetMysqlBackupsBackupOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlBackupsBackupArrayInput is an input type that accepts GetMysqlBackupsBackupArray and GetMysqlBackupsBackupArrayOutput values.
 // You can construct a concrete instance of `GetMysqlBackupsBackupArrayInput` via:
 //
@@ -9363,6 +10522,12 @@ func (i GetMysqlBackupsBackupArray) ToGetMysqlBackupsBackupArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupArrayOutput)
 }
 
+func (i GetMysqlBackupsBackupArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupsBackup] {
+	return pulumix.Output[[]GetMysqlBackupsBackup]{
+		OutputState: i.ToGetMysqlBackupsBackupArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlBackupsBackupOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlBackupsBackupOutput) ElementType() reflect.Type {
@@ -9375,6 +10540,12 @@ func (o GetMysqlBackupsBackupOutput) ToGetMysqlBackupsBackupOutput() GetMysqlBac
 
 func (o GetMysqlBackupsBackupOutput) ToGetMysqlBackupsBackupOutputWithContext(ctx context.Context) GetMysqlBackupsBackupOutput {
 	return o
+}
+
+func (o GetMysqlBackupsBackupOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupsBackup] {
+	return pulumix.Output[GetMysqlBackupsBackup]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The size of the backup in base-2 (IEC) gibibytes. (GiB).
@@ -9484,6 +10655,12 @@ func (o GetMysqlBackupsBackupArrayOutput) ToGetMysqlBackupsBackupArrayOutput() G
 
 func (o GetMysqlBackupsBackupArrayOutput) ToGetMysqlBackupsBackupArrayOutputWithContext(ctx context.Context) GetMysqlBackupsBackupArrayOutput {
 	return o
+}
+
+func (o GetMysqlBackupsBackupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupsBackup] {
+	return pulumix.Output[[]GetMysqlBackupsBackup]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMysqlBackupsBackupArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupsBackupOutput {
@@ -9617,6 +10794,12 @@ func (i GetMysqlBackupsBackupDbSystemSnapshotArgs) ToGetMysqlBackupsBackupDbSyst
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotOutput)
 }
 
+func (i GetMysqlBackupsBackupDbSystemSnapshotArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupsBackupDbSystemSnapshot] {
+	return pulumix.Output[GetMysqlBackupsBackupDbSystemSnapshot]{
+		OutputState: i.ToGetMysqlBackupsBackupDbSystemSnapshotOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlBackupsBackupDbSystemSnapshotArrayInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotArray and GetMysqlBackupsBackupDbSystemSnapshotArrayOutput values.
 // You can construct a concrete instance of `GetMysqlBackupsBackupDbSystemSnapshotArrayInput` via:
 //
@@ -9642,6 +10825,12 @@ func (i GetMysqlBackupsBackupDbSystemSnapshotArray) ToGetMysqlBackupsBackupDbSys
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotArrayOutput)
 }
 
+func (i GetMysqlBackupsBackupDbSystemSnapshotArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupsBackupDbSystemSnapshot] {
+	return pulumix.Output[[]GetMysqlBackupsBackupDbSystemSnapshot]{
+		OutputState: i.ToGetMysqlBackupsBackupDbSystemSnapshotArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlBackupsBackupDbSystemSnapshotOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlBackupsBackupDbSystemSnapshotOutput) ElementType() reflect.Type {
@@ -9654,6 +10843,12 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) ToGetMysqlBackupsBackupDbSy
 
 func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) ToGetMysqlBackupsBackupDbSystemSnapshotOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotOutput {
 	return o
+}
+
+func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupsBackupDbSystemSnapshot] {
+	return pulumix.Output[GetMysqlBackupsBackupDbSystemSnapshot]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The username for the administrative user.
@@ -9798,6 +10993,12 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotArrayOutput) ToGetMysqlBackupsBacku
 	return o
 }
 
+func (o GetMysqlBackupsBackupDbSystemSnapshotArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupsBackupDbSystemSnapshot] {
+	return pulumix.Output[[]GetMysqlBackupsBackupDbSystemSnapshot]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetMysqlBackupsBackupDbSystemSnapshotArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupsBackupDbSystemSnapshotOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupsBackupDbSystemSnapshot {
 		return vs[0].([]GetMysqlBackupsBackupDbSystemSnapshot)[vs[1].(int)]
@@ -9857,6 +11058,12 @@ func (i GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArgs) ToGetMysqlBackups
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput)
 }
 
+func (i GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy] {
+	return pulumix.Output[GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy]{
+		OutputState: i.ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArray and GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayOutput values.
 // You can construct a concrete instance of `GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayInput` via:
 //
@@ -9882,6 +11089,12 @@ func (i GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArray) ToGetMysqlBackup
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayOutput)
 }
 
+func (i GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy] {
+	return pulumix.Output[[]GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy]{
+		OutputState: i.ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput) ElementType() reflect.Type {
@@ -9894,6 +11107,12 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput) ToGetMysqlBacku
 
 func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput) ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput {
 	return o
+}
+
+func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy] {
+	return pulumix.Output[GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -9944,6 +11163,12 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayOutput) ToGetMysql
 	return o
 }
 
+func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy] {
+	return pulumix.Output[[]GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy {
 		return vs[0].([]GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy)[vs[1].(int)]
@@ -9983,6 +11208,12 @@ func (i GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs) ToGetMy
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput)
 }
 
+func (i GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy] {
+	return pulumix.Output[GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy]{
+		OutputState: i.ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArray and GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput values.
 // You can construct a concrete instance of `GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayInput` via:
 //
@@ -10008,6 +11239,12 @@ func (i GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArray) ToGetM
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput)
 }
 
+func (i GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy] {
+	return pulumix.Output[[]GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy]{
+		OutputState: i.ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput) ElementType() reflect.Type {
@@ -10020,6 +11257,12 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput) ToGet
 
 func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput) ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput {
 	return o
+}
+
+func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy] {
+	return pulumix.Output[GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Specifies if PITR is enabled or disabled.
@@ -10039,6 +11282,12 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput) 
 
 func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput) ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput {
 	return o
+}
+
+func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy] {
+	return pulumix.Output[[]GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput {
@@ -10088,6 +11337,12 @@ func (i GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArgs) ToGetMysqlBacku
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutput)
 }
 
+func (i GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy] {
+	return pulumix.Output[GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy]{
+		OutputState: i.ToGetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArray and GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayOutput values.
 // You can construct a concrete instance of `GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayInput` via:
 //
@@ -10113,6 +11368,12 @@ func (i GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArray) ToGetMysqlBack
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayOutput)
 }
 
+func (i GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy] {
+	return pulumix.Output[[]GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy]{
+		OutputState: i.ToGetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutput) ElementType() reflect.Type {
@@ -10125,6 +11386,12 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutput) ToGetMysqlBac
 
 func (o GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutput) ToGetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutput {
 	return o
+}
+
+func (o GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy] {
+	return pulumix.Output[GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Specifies if any automatic backups created for a DB System should be retained or deleted when the DB System is deleted.
@@ -10154,6 +11421,12 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayOutput) ToGetMys
 
 func (o GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayOutput) ToGetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayOutput {
 	return o
+}
+
+func (o GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy] {
+	return pulumix.Output[[]GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutput {
@@ -10227,6 +11500,12 @@ func (i GetMysqlBackupsBackupDbSystemSnapshotEndpointArgs) ToGetMysqlBackupsBack
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput)
 }
 
+func (i GetMysqlBackupsBackupDbSystemSnapshotEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupsBackupDbSystemSnapshotEndpoint] {
+	return pulumix.Output[GetMysqlBackupsBackupDbSystemSnapshotEndpoint]{
+		OutputState: i.ToGetMysqlBackupsBackupDbSystemSnapshotEndpointOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlBackupsBackupDbSystemSnapshotEndpointArrayInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotEndpointArray and GetMysqlBackupsBackupDbSystemSnapshotEndpointArrayOutput values.
 // You can construct a concrete instance of `GetMysqlBackupsBackupDbSystemSnapshotEndpointArrayInput` via:
 //
@@ -10252,6 +11531,12 @@ func (i GetMysqlBackupsBackupDbSystemSnapshotEndpointArray) ToGetMysqlBackupsBac
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotEndpointArrayOutput)
 }
 
+func (i GetMysqlBackupsBackupDbSystemSnapshotEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupsBackupDbSystemSnapshotEndpoint] {
+	return pulumix.Output[[]GetMysqlBackupsBackupDbSystemSnapshotEndpoint]{
+		OutputState: i.ToGetMysqlBackupsBackupDbSystemSnapshotEndpointArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput) ElementType() reflect.Type {
@@ -10264,6 +11549,12 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput) ToGetMysqlBackupsBa
 
 func (o GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput) ToGetMysqlBackupsBackupDbSystemSnapshotEndpointOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput {
 	return o
+}
+
+func (o GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupsBackupDbSystemSnapshotEndpoint] {
+	return pulumix.Output[GetMysqlBackupsBackupDbSystemSnapshotEndpoint]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The network address of the DB System.
@@ -10325,6 +11616,12 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotEndpointArrayOutput) ToGetMysqlBack
 	return o
 }
 
+func (o GetMysqlBackupsBackupDbSystemSnapshotEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupsBackupDbSystemSnapshotEndpoint] {
+	return pulumix.Output[[]GetMysqlBackupsBackupDbSystemSnapshotEndpoint]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetMysqlBackupsBackupDbSystemSnapshotEndpointArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupsBackupDbSystemSnapshotEndpoint {
 		return vs[0].([]GetMysqlBackupsBackupDbSystemSnapshotEndpoint)[vs[1].(int)]
@@ -10364,6 +11661,12 @@ func (i GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArgs) ToGetMysqlBackupsB
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotMaintenanceOutput)
 }
 
+func (i GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupsBackupDbSystemSnapshotMaintenance] {
+	return pulumix.Output[GetMysqlBackupsBackupDbSystemSnapshotMaintenance]{
+		OutputState: i.ToGetMysqlBackupsBackupDbSystemSnapshotMaintenanceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArray and GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayOutput values.
 // You can construct a concrete instance of `GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayInput` via:
 //
@@ -10389,6 +11692,12 @@ func (i GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArray) ToGetMysqlBackups
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayOutput)
 }
 
+func (i GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupsBackupDbSystemSnapshotMaintenance] {
+	return pulumix.Output[[]GetMysqlBackupsBackupDbSystemSnapshotMaintenance]{
+		OutputState: i.ToGetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlBackupsBackupDbSystemSnapshotMaintenanceOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlBackupsBackupDbSystemSnapshotMaintenanceOutput) ElementType() reflect.Type {
@@ -10401,6 +11710,12 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotMaintenanceOutput) ToGetMysqlBackup
 
 func (o GetMysqlBackupsBackupDbSystemSnapshotMaintenanceOutput) ToGetMysqlBackupsBackupDbSystemSnapshotMaintenanceOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotMaintenanceOutput {
 	return o
+}
+
+func (o GetMysqlBackupsBackupDbSystemSnapshotMaintenanceOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupsBackupDbSystemSnapshotMaintenance] {
+	return pulumix.Output[GetMysqlBackupsBackupDbSystemSnapshotMaintenance]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The start time of the maintenance window.
@@ -10420,6 +11735,12 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayOutput) ToGetMysqlB
 
 func (o GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayOutput) ToGetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayOutput {
 	return o
+}
+
+func (o GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupsBackupDbSystemSnapshotMaintenance] {
+	return pulumix.Output[[]GetMysqlBackupsBackupDbSystemSnapshotMaintenance]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupsBackupDbSystemSnapshotMaintenanceOutput {
@@ -10463,6 +11784,12 @@ func (i GetMysqlBackupsFilterArgs) ToGetMysqlBackupsFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsFilterOutput)
 }
 
+func (i GetMysqlBackupsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupsFilter] {
+	return pulumix.Output[GetMysqlBackupsFilter]{
+		OutputState: i.ToGetMysqlBackupsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlBackupsFilterArrayInput is an input type that accepts GetMysqlBackupsFilterArray and GetMysqlBackupsFilterArrayOutput values.
 // You can construct a concrete instance of `GetMysqlBackupsFilterArrayInput` via:
 //
@@ -10488,6 +11815,12 @@ func (i GetMysqlBackupsFilterArray) ToGetMysqlBackupsFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsFilterArrayOutput)
 }
 
+func (i GetMysqlBackupsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupsFilter] {
+	return pulumix.Output[[]GetMysqlBackupsFilter]{
+		OutputState: i.ToGetMysqlBackupsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlBackupsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlBackupsFilterOutput) ElementType() reflect.Type {
@@ -10500,6 +11833,12 @@ func (o GetMysqlBackupsFilterOutput) ToGetMysqlBackupsFilterOutput() GetMysqlBac
 
 func (o GetMysqlBackupsFilterOutput) ToGetMysqlBackupsFilterOutputWithContext(ctx context.Context) GetMysqlBackupsFilterOutput {
 	return o
+}
+
+func (o GetMysqlBackupsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupsFilter] {
+	return pulumix.Output[GetMysqlBackupsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMysqlBackupsFilterOutput) Name() pulumi.StringOutput {
@@ -10526,6 +11865,12 @@ func (o GetMysqlBackupsFilterArrayOutput) ToGetMysqlBackupsFilterArrayOutput() G
 
 func (o GetMysqlBackupsFilterArrayOutput) ToGetMysqlBackupsFilterArrayOutputWithContext(ctx context.Context) GetMysqlBackupsFilterArrayOutput {
 	return o
+}
+
+func (o GetMysqlBackupsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlBackupsFilter] {
+	return pulumix.Output[[]GetMysqlBackupsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMysqlBackupsFilterArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupsFilterOutput {
@@ -10567,6 +11912,12 @@ func (i GetMysqlConfigurationInitVariableArgs) ToGetMysqlConfigurationInitVariab
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlConfigurationInitVariableOutput)
 }
 
+func (i GetMysqlConfigurationInitVariableArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlConfigurationInitVariable] {
+	return pulumix.Output[GetMysqlConfigurationInitVariable]{
+		OutputState: i.ToGetMysqlConfigurationInitVariableOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlConfigurationInitVariableArrayInput is an input type that accepts GetMysqlConfigurationInitVariableArray and GetMysqlConfigurationInitVariableArrayOutput values.
 // You can construct a concrete instance of `GetMysqlConfigurationInitVariableArrayInput` via:
 //
@@ -10592,6 +11943,12 @@ func (i GetMysqlConfigurationInitVariableArray) ToGetMysqlConfigurationInitVaria
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlConfigurationInitVariableArrayOutput)
 }
 
+func (i GetMysqlConfigurationInitVariableArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlConfigurationInitVariable] {
+	return pulumix.Output[[]GetMysqlConfigurationInitVariable]{
+		OutputState: i.ToGetMysqlConfigurationInitVariableArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlConfigurationInitVariableOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlConfigurationInitVariableOutput) ElementType() reflect.Type {
@@ -10604,6 +11961,12 @@ func (o GetMysqlConfigurationInitVariableOutput) ToGetMysqlConfigurationInitVari
 
 func (o GetMysqlConfigurationInitVariableOutput) ToGetMysqlConfigurationInitVariableOutputWithContext(ctx context.Context) GetMysqlConfigurationInitVariableOutput {
 	return o
+}
+
+func (o GetMysqlConfigurationInitVariableOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlConfigurationInitVariable] {
+	return pulumix.Output[GetMysqlConfigurationInitVariable]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Represents the MySQL server system variable lowerCaseTableNames (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
@@ -10623,6 +11986,12 @@ func (o GetMysqlConfigurationInitVariableArrayOutput) ToGetMysqlConfigurationIni
 
 func (o GetMysqlConfigurationInitVariableArrayOutput) ToGetMysqlConfigurationInitVariableArrayOutputWithContext(ctx context.Context) GetMysqlConfigurationInitVariableArrayOutput {
 	return o
+}
+
+func (o GetMysqlConfigurationInitVariableArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlConfigurationInitVariable] {
+	return pulumix.Output[[]GetMysqlConfigurationInitVariable]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMysqlConfigurationInitVariableArrayOutput) Index(i pulumi.IntInput) GetMysqlConfigurationInitVariableOutput {
@@ -11012,6 +12381,12 @@ func (i GetMysqlConfigurationVariableArgs) ToGetMysqlConfigurationVariableOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlConfigurationVariableOutput)
 }
 
+func (i GetMysqlConfigurationVariableArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlConfigurationVariable] {
+	return pulumix.Output[GetMysqlConfigurationVariable]{
+		OutputState: i.ToGetMysqlConfigurationVariableOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlConfigurationVariableArrayInput is an input type that accepts GetMysqlConfigurationVariableArray and GetMysqlConfigurationVariableArrayOutput values.
 // You can construct a concrete instance of `GetMysqlConfigurationVariableArrayInput` via:
 //
@@ -11037,6 +12412,12 @@ func (i GetMysqlConfigurationVariableArray) ToGetMysqlConfigurationVariableArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlConfigurationVariableArrayOutput)
 }
 
+func (i GetMysqlConfigurationVariableArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlConfigurationVariable] {
+	return pulumix.Output[[]GetMysqlConfigurationVariable]{
+		OutputState: i.ToGetMysqlConfigurationVariableArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlConfigurationVariableOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlConfigurationVariableOutput) ElementType() reflect.Type {
@@ -11049,6 +12430,12 @@ func (o GetMysqlConfigurationVariableOutput) ToGetMysqlConfigurationVariableOutp
 
 func (o GetMysqlConfigurationVariableOutput) ToGetMysqlConfigurationVariableOutputWithContext(ctx context.Context) GetMysqlConfigurationVariableOutput {
 	return o
+}
+
+func (o GetMysqlConfigurationVariableOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlConfigurationVariable] {
+	return pulumix.Output[GetMysqlConfigurationVariable]{
+		OutputState: o.OutputState,
+	}
 }
 
 // ("autocommit")
@@ -11478,6 +12865,12 @@ func (o GetMysqlConfigurationVariableArrayOutput) ToGetMysqlConfigurationVariabl
 	return o
 }
 
+func (o GetMysqlConfigurationVariableArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlConfigurationVariable] {
+	return pulumix.Output[[]GetMysqlConfigurationVariable]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetMysqlConfigurationVariableArrayOutput) Index(i pulumi.IntInput) GetMysqlConfigurationVariableOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlConfigurationVariable {
 		return vs[0].([]GetMysqlConfigurationVariable)[vs[1].(int)]
@@ -11569,6 +12962,12 @@ func (i GetMysqlConfigurationsConfigurationArgs) ToGetMysqlConfigurationsConfigu
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlConfigurationsConfigurationOutput)
 }
 
+func (i GetMysqlConfigurationsConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlConfigurationsConfiguration] {
+	return pulumix.Output[GetMysqlConfigurationsConfiguration]{
+		OutputState: i.ToGetMysqlConfigurationsConfigurationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlConfigurationsConfigurationArrayInput is an input type that accepts GetMysqlConfigurationsConfigurationArray and GetMysqlConfigurationsConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetMysqlConfigurationsConfigurationArrayInput` via:
 //
@@ -11594,6 +12993,12 @@ func (i GetMysqlConfigurationsConfigurationArray) ToGetMysqlConfigurationsConfig
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlConfigurationsConfigurationArrayOutput)
 }
 
+func (i GetMysqlConfigurationsConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlConfigurationsConfiguration] {
+	return pulumix.Output[[]GetMysqlConfigurationsConfiguration]{
+		OutputState: i.ToGetMysqlConfigurationsConfigurationArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlConfigurationsConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlConfigurationsConfigurationOutput) ElementType() reflect.Type {
@@ -11606,6 +13011,12 @@ func (o GetMysqlConfigurationsConfigurationOutput) ToGetMysqlConfigurationsConfi
 
 func (o GetMysqlConfigurationsConfigurationOutput) ToGetMysqlConfigurationsConfigurationOutputWithContext(ctx context.Context) GetMysqlConfigurationsConfigurationOutput {
 	return o
+}
+
+func (o GetMysqlConfigurationsConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlConfigurationsConfiguration] {
+	return pulumix.Output[GetMysqlConfigurationsConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -11696,6 +13107,12 @@ func (o GetMysqlConfigurationsConfigurationArrayOutput) ToGetMysqlConfigurations
 	return o
 }
 
+func (o GetMysqlConfigurationsConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlConfigurationsConfiguration] {
+	return pulumix.Output[[]GetMysqlConfigurationsConfiguration]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetMysqlConfigurationsConfigurationArrayOutput) Index(i pulumi.IntInput) GetMysqlConfigurationsConfigurationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlConfigurationsConfiguration {
 		return vs[0].([]GetMysqlConfigurationsConfiguration)[vs[1].(int)]
@@ -11735,6 +13152,12 @@ func (i GetMysqlConfigurationsConfigurationInitVariableArgs) ToGetMysqlConfigura
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlConfigurationsConfigurationInitVariableOutput)
 }
 
+func (i GetMysqlConfigurationsConfigurationInitVariableArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlConfigurationsConfigurationInitVariable] {
+	return pulumix.Output[GetMysqlConfigurationsConfigurationInitVariable]{
+		OutputState: i.ToGetMysqlConfigurationsConfigurationInitVariableOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlConfigurationsConfigurationInitVariableArrayInput is an input type that accepts GetMysqlConfigurationsConfigurationInitVariableArray and GetMysqlConfigurationsConfigurationInitVariableArrayOutput values.
 // You can construct a concrete instance of `GetMysqlConfigurationsConfigurationInitVariableArrayInput` via:
 //
@@ -11760,6 +13183,12 @@ func (i GetMysqlConfigurationsConfigurationInitVariableArray) ToGetMysqlConfigur
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlConfigurationsConfigurationInitVariableArrayOutput)
 }
 
+func (i GetMysqlConfigurationsConfigurationInitVariableArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlConfigurationsConfigurationInitVariable] {
+	return pulumix.Output[[]GetMysqlConfigurationsConfigurationInitVariable]{
+		OutputState: i.ToGetMysqlConfigurationsConfigurationInitVariableArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlConfigurationsConfigurationInitVariableOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlConfigurationsConfigurationInitVariableOutput) ElementType() reflect.Type {
@@ -11772,6 +13201,12 @@ func (o GetMysqlConfigurationsConfigurationInitVariableOutput) ToGetMysqlConfigu
 
 func (o GetMysqlConfigurationsConfigurationInitVariableOutput) ToGetMysqlConfigurationsConfigurationInitVariableOutputWithContext(ctx context.Context) GetMysqlConfigurationsConfigurationInitVariableOutput {
 	return o
+}
+
+func (o GetMysqlConfigurationsConfigurationInitVariableOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlConfigurationsConfigurationInitVariable] {
+	return pulumix.Output[GetMysqlConfigurationsConfigurationInitVariable]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Represents the MySQL server system variable lowerCaseTableNames (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
@@ -11791,6 +13226,12 @@ func (o GetMysqlConfigurationsConfigurationInitVariableArrayOutput) ToGetMysqlCo
 
 func (o GetMysqlConfigurationsConfigurationInitVariableArrayOutput) ToGetMysqlConfigurationsConfigurationInitVariableArrayOutputWithContext(ctx context.Context) GetMysqlConfigurationsConfigurationInitVariableArrayOutput {
 	return o
+}
+
+func (o GetMysqlConfigurationsConfigurationInitVariableArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlConfigurationsConfigurationInitVariable] {
+	return pulumix.Output[[]GetMysqlConfigurationsConfigurationInitVariable]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMysqlConfigurationsConfigurationInitVariableArrayOutput) Index(i pulumi.IntInput) GetMysqlConfigurationsConfigurationInitVariableOutput {
@@ -12180,6 +13621,12 @@ func (i GetMysqlConfigurationsConfigurationVariableArgs) ToGetMysqlConfiguration
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlConfigurationsConfigurationVariableOutput)
 }
 
+func (i GetMysqlConfigurationsConfigurationVariableArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlConfigurationsConfigurationVariable] {
+	return pulumix.Output[GetMysqlConfigurationsConfigurationVariable]{
+		OutputState: i.ToGetMysqlConfigurationsConfigurationVariableOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlConfigurationsConfigurationVariableArrayInput is an input type that accepts GetMysqlConfigurationsConfigurationVariableArray and GetMysqlConfigurationsConfigurationVariableArrayOutput values.
 // You can construct a concrete instance of `GetMysqlConfigurationsConfigurationVariableArrayInput` via:
 //
@@ -12205,6 +13652,12 @@ func (i GetMysqlConfigurationsConfigurationVariableArray) ToGetMysqlConfiguratio
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlConfigurationsConfigurationVariableArrayOutput)
 }
 
+func (i GetMysqlConfigurationsConfigurationVariableArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlConfigurationsConfigurationVariable] {
+	return pulumix.Output[[]GetMysqlConfigurationsConfigurationVariable]{
+		OutputState: i.ToGetMysqlConfigurationsConfigurationVariableArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlConfigurationsConfigurationVariableOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlConfigurationsConfigurationVariableOutput) ElementType() reflect.Type {
@@ -12217,6 +13670,12 @@ func (o GetMysqlConfigurationsConfigurationVariableOutput) ToGetMysqlConfigurati
 
 func (o GetMysqlConfigurationsConfigurationVariableOutput) ToGetMysqlConfigurationsConfigurationVariableOutputWithContext(ctx context.Context) GetMysqlConfigurationsConfigurationVariableOutput {
 	return o
+}
+
+func (o GetMysqlConfigurationsConfigurationVariableOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlConfigurationsConfigurationVariable] {
+	return pulumix.Output[GetMysqlConfigurationsConfigurationVariable]{
+		OutputState: o.OutputState,
+	}
 }
 
 // ("autocommit")
@@ -12648,6 +14107,12 @@ func (o GetMysqlConfigurationsConfigurationVariableArrayOutput) ToGetMysqlConfig
 	return o
 }
 
+func (o GetMysqlConfigurationsConfigurationVariableArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlConfigurationsConfigurationVariable] {
+	return pulumix.Output[[]GetMysqlConfigurationsConfigurationVariable]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetMysqlConfigurationsConfigurationVariableArrayOutput) Index(i pulumi.IntInput) GetMysqlConfigurationsConfigurationVariableOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlConfigurationsConfigurationVariable {
 		return vs[0].([]GetMysqlConfigurationsConfigurationVariable)[vs[1].(int)]
@@ -12689,6 +14154,12 @@ func (i GetMysqlConfigurationsFilterArgs) ToGetMysqlConfigurationsFilterOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlConfigurationsFilterOutput)
 }
 
+func (i GetMysqlConfigurationsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlConfigurationsFilter] {
+	return pulumix.Output[GetMysqlConfigurationsFilter]{
+		OutputState: i.ToGetMysqlConfigurationsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlConfigurationsFilterArrayInput is an input type that accepts GetMysqlConfigurationsFilterArray and GetMysqlConfigurationsFilterArrayOutput values.
 // You can construct a concrete instance of `GetMysqlConfigurationsFilterArrayInput` via:
 //
@@ -12714,6 +14185,12 @@ func (i GetMysqlConfigurationsFilterArray) ToGetMysqlConfigurationsFilterArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlConfigurationsFilterArrayOutput)
 }
 
+func (i GetMysqlConfigurationsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlConfigurationsFilter] {
+	return pulumix.Output[[]GetMysqlConfigurationsFilter]{
+		OutputState: i.ToGetMysqlConfigurationsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlConfigurationsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlConfigurationsFilterOutput) ElementType() reflect.Type {
@@ -12726,6 +14203,12 @@ func (o GetMysqlConfigurationsFilterOutput) ToGetMysqlConfigurationsFilterOutput
 
 func (o GetMysqlConfigurationsFilterOutput) ToGetMysqlConfigurationsFilterOutputWithContext(ctx context.Context) GetMysqlConfigurationsFilterOutput {
 	return o
+}
+
+func (o GetMysqlConfigurationsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlConfigurationsFilter] {
+	return pulumix.Output[GetMysqlConfigurationsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMysqlConfigurationsFilterOutput) Name() pulumi.StringOutput {
@@ -12752,6 +14235,12 @@ func (o GetMysqlConfigurationsFilterArrayOutput) ToGetMysqlConfigurationsFilterA
 
 func (o GetMysqlConfigurationsFilterArrayOutput) ToGetMysqlConfigurationsFilterArrayOutputWithContext(ctx context.Context) GetMysqlConfigurationsFilterArrayOutput {
 	return o
+}
+
+func (o GetMysqlConfigurationsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlConfigurationsFilter] {
+	return pulumix.Output[[]GetMysqlConfigurationsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMysqlConfigurationsFilterArrayOutput) Index(i pulumi.IntInput) GetMysqlConfigurationsFilterOutput {
@@ -12813,6 +14302,12 @@ func (i GetMysqlDbSystemBackupPolicyArgs) ToGetMysqlDbSystemBackupPolicyOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemBackupPolicyOutput)
 }
 
+func (i GetMysqlDbSystemBackupPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemBackupPolicy] {
+	return pulumix.Output[GetMysqlDbSystemBackupPolicy]{
+		OutputState: i.ToGetMysqlDbSystemBackupPolicyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlDbSystemBackupPolicyArrayInput is an input type that accepts GetMysqlDbSystemBackupPolicyArray and GetMysqlDbSystemBackupPolicyArrayOutput values.
 // You can construct a concrete instance of `GetMysqlDbSystemBackupPolicyArrayInput` via:
 //
@@ -12838,6 +14333,12 @@ func (i GetMysqlDbSystemBackupPolicyArray) ToGetMysqlDbSystemBackupPolicyArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemBackupPolicyArrayOutput)
 }
 
+func (i GetMysqlDbSystemBackupPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemBackupPolicy] {
+	return pulumix.Output[[]GetMysqlDbSystemBackupPolicy]{
+		OutputState: i.ToGetMysqlDbSystemBackupPolicyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlDbSystemBackupPolicyOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemBackupPolicyOutput) ElementType() reflect.Type {
@@ -12850,6 +14351,12 @@ func (o GetMysqlDbSystemBackupPolicyOutput) ToGetMysqlDbSystemBackupPolicyOutput
 
 func (o GetMysqlDbSystemBackupPolicyOutput) ToGetMysqlDbSystemBackupPolicyOutputWithContext(ctx context.Context) GetMysqlDbSystemBackupPolicyOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemBackupPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemBackupPolicy] {
+	return pulumix.Output[GetMysqlDbSystemBackupPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -12896,6 +14403,12 @@ func (o GetMysqlDbSystemBackupPolicyArrayOutput) ToGetMysqlDbSystemBackupPolicyA
 	return o
 }
 
+func (o GetMysqlDbSystemBackupPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemBackupPolicy] {
+	return pulumix.Output[[]GetMysqlDbSystemBackupPolicy]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetMysqlDbSystemBackupPolicyArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemBackupPolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemBackupPolicy {
 		return vs[0].([]GetMysqlDbSystemBackupPolicy)[vs[1].(int)]
@@ -12935,6 +14448,12 @@ func (i GetMysqlDbSystemBackupPolicyPitrPolicyArgs) ToGetMysqlDbSystemBackupPoli
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemBackupPolicyPitrPolicyOutput)
 }
 
+func (i GetMysqlDbSystemBackupPolicyPitrPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemBackupPolicyPitrPolicy] {
+	return pulumix.Output[GetMysqlDbSystemBackupPolicyPitrPolicy]{
+		OutputState: i.ToGetMysqlDbSystemBackupPolicyPitrPolicyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlDbSystemBackupPolicyPitrPolicyArrayInput is an input type that accepts GetMysqlDbSystemBackupPolicyPitrPolicyArray and GetMysqlDbSystemBackupPolicyPitrPolicyArrayOutput values.
 // You can construct a concrete instance of `GetMysqlDbSystemBackupPolicyPitrPolicyArrayInput` via:
 //
@@ -12960,6 +14479,12 @@ func (i GetMysqlDbSystemBackupPolicyPitrPolicyArray) ToGetMysqlDbSystemBackupPol
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemBackupPolicyPitrPolicyArrayOutput)
 }
 
+func (i GetMysqlDbSystemBackupPolicyPitrPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemBackupPolicyPitrPolicy] {
+	return pulumix.Output[[]GetMysqlDbSystemBackupPolicyPitrPolicy]{
+		OutputState: i.ToGetMysqlDbSystemBackupPolicyPitrPolicyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlDbSystemBackupPolicyPitrPolicyOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemBackupPolicyPitrPolicyOutput) ElementType() reflect.Type {
@@ -12972,6 +14497,12 @@ func (o GetMysqlDbSystemBackupPolicyPitrPolicyOutput) ToGetMysqlDbSystemBackupPo
 
 func (o GetMysqlDbSystemBackupPolicyPitrPolicyOutput) ToGetMysqlDbSystemBackupPolicyPitrPolicyOutputWithContext(ctx context.Context) GetMysqlDbSystemBackupPolicyPitrPolicyOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemBackupPolicyPitrPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemBackupPolicyPitrPolicy] {
+	return pulumix.Output[GetMysqlDbSystemBackupPolicyPitrPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether the Channel has been enabled by the user.
@@ -12991,6 +14522,12 @@ func (o GetMysqlDbSystemBackupPolicyPitrPolicyArrayOutput) ToGetMysqlDbSystemBac
 
 func (o GetMysqlDbSystemBackupPolicyPitrPolicyArrayOutput) ToGetMysqlDbSystemBackupPolicyPitrPolicyArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemBackupPolicyPitrPolicyArrayOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemBackupPolicyPitrPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemBackupPolicyPitrPolicy] {
+	return pulumix.Output[[]GetMysqlDbSystemBackupPolicyPitrPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMysqlDbSystemBackupPolicyPitrPolicyArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemBackupPolicyPitrPolicyOutput {
@@ -13076,6 +14613,12 @@ func (i GetMysqlDbSystemChannelArgs) ToGetMysqlDbSystemChannelOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemChannelOutput)
 }
 
+func (i GetMysqlDbSystemChannelArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemChannel] {
+	return pulumix.Output[GetMysqlDbSystemChannel]{
+		OutputState: i.ToGetMysqlDbSystemChannelOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlDbSystemChannelArrayInput is an input type that accepts GetMysqlDbSystemChannelArray and GetMysqlDbSystemChannelArrayOutput values.
 // You can construct a concrete instance of `GetMysqlDbSystemChannelArrayInput` via:
 //
@@ -13101,6 +14644,12 @@ func (i GetMysqlDbSystemChannelArray) ToGetMysqlDbSystemChannelArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemChannelArrayOutput)
 }
 
+func (i GetMysqlDbSystemChannelArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemChannel] {
+	return pulumix.Output[[]GetMysqlDbSystemChannel]{
+		OutputState: i.ToGetMysqlDbSystemChannelArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlDbSystemChannelOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemChannelOutput) ElementType() reflect.Type {
@@ -13113,6 +14662,12 @@ func (o GetMysqlDbSystemChannelOutput) ToGetMysqlDbSystemChannelOutput() GetMysq
 
 func (o GetMysqlDbSystemChannelOutput) ToGetMysqlDbSystemChannelOutputWithContext(ctx context.Context) GetMysqlDbSystemChannelOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemChannelOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemChannel] {
+	return pulumix.Output[GetMysqlDbSystemChannel]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the compartment the DB System belongs in.
@@ -13189,6 +14744,12 @@ func (o GetMysqlDbSystemChannelArrayOutput) ToGetMysqlDbSystemChannelArrayOutput
 	return o
 }
 
+func (o GetMysqlDbSystemChannelArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemChannel] {
+	return pulumix.Output[[]GetMysqlDbSystemChannel]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetMysqlDbSystemChannelArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemChannelOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemChannel {
 		return vs[0].([]GetMysqlDbSystemChannel)[vs[1].(int)]
@@ -13252,6 +14813,12 @@ func (i GetMysqlDbSystemChannelSourceArgs) ToGetMysqlDbSystemChannelSourceOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemChannelSourceOutput)
 }
 
+func (i GetMysqlDbSystemChannelSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemChannelSource] {
+	return pulumix.Output[GetMysqlDbSystemChannelSource]{
+		OutputState: i.ToGetMysqlDbSystemChannelSourceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlDbSystemChannelSourceArrayInput is an input type that accepts GetMysqlDbSystemChannelSourceArray and GetMysqlDbSystemChannelSourceArrayOutput values.
 // You can construct a concrete instance of `GetMysqlDbSystemChannelSourceArrayInput` via:
 //
@@ -13277,6 +14844,12 @@ func (i GetMysqlDbSystemChannelSourceArray) ToGetMysqlDbSystemChannelSourceArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemChannelSourceArrayOutput)
 }
 
+func (i GetMysqlDbSystemChannelSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemChannelSource] {
+	return pulumix.Output[[]GetMysqlDbSystemChannelSource]{
+		OutputState: i.ToGetMysqlDbSystemChannelSourceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlDbSystemChannelSourceOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemChannelSourceOutput) ElementType() reflect.Type {
@@ -13289,6 +14862,12 @@ func (o GetMysqlDbSystemChannelSourceOutput) ToGetMysqlDbSystemChannelSourceOutp
 
 func (o GetMysqlDbSystemChannelSourceOutput) ToGetMysqlDbSystemChannelSourceOutputWithContext(ctx context.Context) GetMysqlDbSystemChannelSourceOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemChannelSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemChannelSource] {
+	return pulumix.Output[GetMysqlDbSystemChannelSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
@@ -13344,6 +14923,12 @@ func (o GetMysqlDbSystemChannelSourceArrayOutput) ToGetMysqlDbSystemChannelSourc
 	return o
 }
 
+func (o GetMysqlDbSystemChannelSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemChannelSource] {
+	return pulumix.Output[[]GetMysqlDbSystemChannelSource]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetMysqlDbSystemChannelSourceArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemChannelSourceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemChannelSource {
 		return vs[0].([]GetMysqlDbSystemChannelSource)[vs[1].(int)]
@@ -13395,6 +14980,12 @@ func (i GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs) ToGetMys
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput)
 }
 
+func (i GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling] {
+	return pulumix.Output[GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling]{
+		OutputState: i.ToGetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayInput is an input type that accepts GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArray and GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput values.
 // You can construct a concrete instance of `GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayInput` via:
 //
@@ -13420,6 +15011,12 @@ func (i GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArray) ToGetMy
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput)
 }
 
+func (i GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling] {
+	return pulumix.Output[[]GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling]{
+		OutputState: i.ToGetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput) ElementType() reflect.Type {
@@ -13432,6 +15029,12 @@ func (o GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput) ToGetM
 
 func (o GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput) ToGetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutputWithContext(ctx context.Context) GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling] {
+	return pulumix.Output[GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
@@ -13470,6 +15073,12 @@ func (o GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput) T
 
 func (o GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput) ToGetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling] {
+	return pulumix.Output[[]GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput {
@@ -13515,6 +15124,12 @@ func (i GetMysqlDbSystemChannelSourceSslCaCertificateArgs) ToGetMysqlDbSystemCha
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemChannelSourceSslCaCertificateOutput)
 }
 
+func (i GetMysqlDbSystemChannelSourceSslCaCertificateArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemChannelSourceSslCaCertificate] {
+	return pulumix.Output[GetMysqlDbSystemChannelSourceSslCaCertificate]{
+		OutputState: i.ToGetMysqlDbSystemChannelSourceSslCaCertificateOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlDbSystemChannelSourceSslCaCertificateArrayInput is an input type that accepts GetMysqlDbSystemChannelSourceSslCaCertificateArray and GetMysqlDbSystemChannelSourceSslCaCertificateArrayOutput values.
 // You can construct a concrete instance of `GetMysqlDbSystemChannelSourceSslCaCertificateArrayInput` via:
 //
@@ -13540,6 +15155,12 @@ func (i GetMysqlDbSystemChannelSourceSslCaCertificateArray) ToGetMysqlDbSystemCh
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemChannelSourceSslCaCertificateArrayOutput)
 }
 
+func (i GetMysqlDbSystemChannelSourceSslCaCertificateArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemChannelSourceSslCaCertificate] {
+	return pulumix.Output[[]GetMysqlDbSystemChannelSourceSslCaCertificate]{
+		OutputState: i.ToGetMysqlDbSystemChannelSourceSslCaCertificateArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlDbSystemChannelSourceSslCaCertificateOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemChannelSourceSslCaCertificateOutput) ElementType() reflect.Type {
@@ -13552,6 +15173,12 @@ func (o GetMysqlDbSystemChannelSourceSslCaCertificateOutput) ToGetMysqlDbSystemC
 
 func (o GetMysqlDbSystemChannelSourceSslCaCertificateOutput) ToGetMysqlDbSystemChannelSourceSslCaCertificateOutputWithContext(ctx context.Context) GetMysqlDbSystemChannelSourceSslCaCertificateOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemChannelSourceSslCaCertificateOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemChannelSourceSslCaCertificate] {
+	return pulumix.Output[GetMysqlDbSystemChannelSourceSslCaCertificate]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The type of CA certificate.
@@ -13576,6 +15203,12 @@ func (o GetMysqlDbSystemChannelSourceSslCaCertificateArrayOutput) ToGetMysqlDbSy
 
 func (o GetMysqlDbSystemChannelSourceSslCaCertificateArrayOutput) ToGetMysqlDbSystemChannelSourceSslCaCertificateArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemChannelSourceSslCaCertificateArrayOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemChannelSourceSslCaCertificateArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemChannelSourceSslCaCertificate] {
+	return pulumix.Output[[]GetMysqlDbSystemChannelSourceSslCaCertificate]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMysqlDbSystemChannelSourceSslCaCertificateArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemChannelSourceSslCaCertificateOutput {
@@ -13641,6 +15274,12 @@ func (i GetMysqlDbSystemChannelTargetArgs) ToGetMysqlDbSystemChannelTargetOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemChannelTargetOutput)
 }
 
+func (i GetMysqlDbSystemChannelTargetArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemChannelTarget] {
+	return pulumix.Output[GetMysqlDbSystemChannelTarget]{
+		OutputState: i.ToGetMysqlDbSystemChannelTargetOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlDbSystemChannelTargetArrayInput is an input type that accepts GetMysqlDbSystemChannelTargetArray and GetMysqlDbSystemChannelTargetArrayOutput values.
 // You can construct a concrete instance of `GetMysqlDbSystemChannelTargetArrayInput` via:
 //
@@ -13666,6 +15305,12 @@ func (i GetMysqlDbSystemChannelTargetArray) ToGetMysqlDbSystemChannelTargetArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemChannelTargetArrayOutput)
 }
 
+func (i GetMysqlDbSystemChannelTargetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemChannelTarget] {
+	return pulumix.Output[[]GetMysqlDbSystemChannelTarget]{
+		OutputState: i.ToGetMysqlDbSystemChannelTargetArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlDbSystemChannelTargetOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemChannelTargetOutput) ElementType() reflect.Type {
@@ -13678,6 +15323,12 @@ func (o GetMysqlDbSystemChannelTargetOutput) ToGetMysqlDbSystemChannelTargetOutp
 
 func (o GetMysqlDbSystemChannelTargetOutput) ToGetMysqlDbSystemChannelTargetOutputWithContext(ctx context.Context) GetMysqlDbSystemChannelTargetOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemChannelTargetOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemChannelTarget] {
+	return pulumix.Output[GetMysqlDbSystemChannelTarget]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The username for the replication applier of the target MySQL DB System.
@@ -13729,6 +15380,12 @@ func (o GetMysqlDbSystemChannelTargetArrayOutput) ToGetMysqlDbSystemChannelTarge
 	return o
 }
 
+func (o GetMysqlDbSystemChannelTargetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemChannelTarget] {
+	return pulumix.Output[[]GetMysqlDbSystemChannelTarget]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetMysqlDbSystemChannelTargetArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemChannelTargetOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemChannelTarget {
 		return vs[0].([]GetMysqlDbSystemChannelTarget)[vs[1].(int)]
@@ -13772,6 +15429,12 @@ func (i GetMysqlDbSystemChannelTargetFilterArgs) ToGetMysqlDbSystemChannelTarget
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemChannelTargetFilterOutput)
 }
 
+func (i GetMysqlDbSystemChannelTargetFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemChannelTargetFilter] {
+	return pulumix.Output[GetMysqlDbSystemChannelTargetFilter]{
+		OutputState: i.ToGetMysqlDbSystemChannelTargetFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlDbSystemChannelTargetFilterArrayInput is an input type that accepts GetMysqlDbSystemChannelTargetFilterArray and GetMysqlDbSystemChannelTargetFilterArrayOutput values.
 // You can construct a concrete instance of `GetMysqlDbSystemChannelTargetFilterArrayInput` via:
 //
@@ -13797,6 +15460,12 @@ func (i GetMysqlDbSystemChannelTargetFilterArray) ToGetMysqlDbSystemChannelTarge
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemChannelTargetFilterArrayOutput)
 }
 
+func (i GetMysqlDbSystemChannelTargetFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemChannelTargetFilter] {
+	return pulumix.Output[[]GetMysqlDbSystemChannelTargetFilter]{
+		OutputState: i.ToGetMysqlDbSystemChannelTargetFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlDbSystemChannelTargetFilterOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemChannelTargetFilterOutput) ElementType() reflect.Type {
@@ -13809,6 +15478,12 @@ func (o GetMysqlDbSystemChannelTargetFilterOutput) ToGetMysqlDbSystemChannelTarg
 
 func (o GetMysqlDbSystemChannelTargetFilterOutput) ToGetMysqlDbSystemChannelTargetFilterOutputWithContext(ctx context.Context) GetMysqlDbSystemChannelTargetFilterOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemChannelTargetFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemChannelTargetFilter] {
+	return pulumix.Output[GetMysqlDbSystemChannelTargetFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The type of the filter rule.
@@ -13833,6 +15508,12 @@ func (o GetMysqlDbSystemChannelTargetFilterArrayOutput) ToGetMysqlDbSystemChanne
 
 func (o GetMysqlDbSystemChannelTargetFilterArrayOutput) ToGetMysqlDbSystemChannelTargetFilterArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemChannelTargetFilterArrayOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemChannelTargetFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemChannelTargetFilter] {
+	return pulumix.Output[[]GetMysqlDbSystemChannelTargetFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMysqlDbSystemChannelTargetFilterArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemChannelTargetFilterOutput {
@@ -13878,6 +15559,12 @@ func (i GetMysqlDbSystemCurrentPlacementArgs) ToGetMysqlDbSystemCurrentPlacement
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemCurrentPlacementOutput)
 }
 
+func (i GetMysqlDbSystemCurrentPlacementArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemCurrentPlacement] {
+	return pulumix.Output[GetMysqlDbSystemCurrentPlacement]{
+		OutputState: i.ToGetMysqlDbSystemCurrentPlacementOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlDbSystemCurrentPlacementArrayInput is an input type that accepts GetMysqlDbSystemCurrentPlacementArray and GetMysqlDbSystemCurrentPlacementArrayOutput values.
 // You can construct a concrete instance of `GetMysqlDbSystemCurrentPlacementArrayInput` via:
 //
@@ -13903,6 +15590,12 @@ func (i GetMysqlDbSystemCurrentPlacementArray) ToGetMysqlDbSystemCurrentPlacemen
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemCurrentPlacementArrayOutput)
 }
 
+func (i GetMysqlDbSystemCurrentPlacementArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemCurrentPlacement] {
+	return pulumix.Output[[]GetMysqlDbSystemCurrentPlacement]{
+		OutputState: i.ToGetMysqlDbSystemCurrentPlacementArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlDbSystemCurrentPlacementOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemCurrentPlacementOutput) ElementType() reflect.Type {
@@ -13915,6 +15608,12 @@ func (o GetMysqlDbSystemCurrentPlacementOutput) ToGetMysqlDbSystemCurrentPlaceme
 
 func (o GetMysqlDbSystemCurrentPlacementOutput) ToGetMysqlDbSystemCurrentPlacementOutputWithContext(ctx context.Context) GetMysqlDbSystemCurrentPlacementOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemCurrentPlacementOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemCurrentPlacement] {
+	return pulumix.Output[GetMysqlDbSystemCurrentPlacement]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The availability domain in which the DB System is placed.
@@ -13939,6 +15638,12 @@ func (o GetMysqlDbSystemCurrentPlacementArrayOutput) ToGetMysqlDbSystemCurrentPl
 
 func (o GetMysqlDbSystemCurrentPlacementArrayOutput) ToGetMysqlDbSystemCurrentPlacementArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemCurrentPlacementArrayOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemCurrentPlacementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemCurrentPlacement] {
+	return pulumix.Output[[]GetMysqlDbSystemCurrentPlacement]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMysqlDbSystemCurrentPlacementArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemCurrentPlacementOutput {
@@ -13988,6 +15693,12 @@ func (i GetMysqlDbSystemDeletionPolicyArgs) ToGetMysqlDbSystemDeletionPolicyOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemDeletionPolicyOutput)
 }
 
+func (i GetMysqlDbSystemDeletionPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemDeletionPolicy] {
+	return pulumix.Output[GetMysqlDbSystemDeletionPolicy]{
+		OutputState: i.ToGetMysqlDbSystemDeletionPolicyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlDbSystemDeletionPolicyArrayInput is an input type that accepts GetMysqlDbSystemDeletionPolicyArray and GetMysqlDbSystemDeletionPolicyArrayOutput values.
 // You can construct a concrete instance of `GetMysqlDbSystemDeletionPolicyArrayInput` via:
 //
@@ -14013,6 +15724,12 @@ func (i GetMysqlDbSystemDeletionPolicyArray) ToGetMysqlDbSystemDeletionPolicyArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemDeletionPolicyArrayOutput)
 }
 
+func (i GetMysqlDbSystemDeletionPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemDeletionPolicy] {
+	return pulumix.Output[[]GetMysqlDbSystemDeletionPolicy]{
+		OutputState: i.ToGetMysqlDbSystemDeletionPolicyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlDbSystemDeletionPolicyOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemDeletionPolicyOutput) ElementType() reflect.Type {
@@ -14025,6 +15742,12 @@ func (o GetMysqlDbSystemDeletionPolicyOutput) ToGetMysqlDbSystemDeletionPolicyOu
 
 func (o GetMysqlDbSystemDeletionPolicyOutput) ToGetMysqlDbSystemDeletionPolicyOutputWithContext(ctx context.Context) GetMysqlDbSystemDeletionPolicyOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemDeletionPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemDeletionPolicy] {
+	return pulumix.Output[GetMysqlDbSystemDeletionPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Specifies if any automatic backups created for a DB System should be retained or deleted when the DB System is deleted.
@@ -14054,6 +15777,12 @@ func (o GetMysqlDbSystemDeletionPolicyArrayOutput) ToGetMysqlDbSystemDeletionPol
 
 func (o GetMysqlDbSystemDeletionPolicyArrayOutput) ToGetMysqlDbSystemDeletionPolicyArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemDeletionPolicyArrayOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemDeletionPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemDeletionPolicy] {
+	return pulumix.Output[[]GetMysqlDbSystemDeletionPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMysqlDbSystemDeletionPolicyArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemDeletionPolicyOutput {
@@ -14127,6 +15856,12 @@ func (i GetMysqlDbSystemEndpointArgs) ToGetMysqlDbSystemEndpointOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemEndpointOutput)
 }
 
+func (i GetMysqlDbSystemEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemEndpoint] {
+	return pulumix.Output[GetMysqlDbSystemEndpoint]{
+		OutputState: i.ToGetMysqlDbSystemEndpointOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlDbSystemEndpointArrayInput is an input type that accepts GetMysqlDbSystemEndpointArray and GetMysqlDbSystemEndpointArrayOutput values.
 // You can construct a concrete instance of `GetMysqlDbSystemEndpointArrayInput` via:
 //
@@ -14152,6 +15887,12 @@ func (i GetMysqlDbSystemEndpointArray) ToGetMysqlDbSystemEndpointArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemEndpointArrayOutput)
 }
 
+func (i GetMysqlDbSystemEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemEndpoint] {
+	return pulumix.Output[[]GetMysqlDbSystemEndpoint]{
+		OutputState: i.ToGetMysqlDbSystemEndpointArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlDbSystemEndpointOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemEndpointOutput) ElementType() reflect.Type {
@@ -14164,6 +15905,12 @@ func (o GetMysqlDbSystemEndpointOutput) ToGetMysqlDbSystemEndpointOutput() GetMy
 
 func (o GetMysqlDbSystemEndpointOutput) ToGetMysqlDbSystemEndpointOutputWithContext(ctx context.Context) GetMysqlDbSystemEndpointOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemEndpoint] {
+	return pulumix.Output[GetMysqlDbSystemEndpoint]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The network address of the DB System.
@@ -14225,6 +15972,12 @@ func (o GetMysqlDbSystemEndpointArrayOutput) ToGetMysqlDbSystemEndpointArrayOutp
 	return o
 }
 
+func (o GetMysqlDbSystemEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemEndpoint] {
+	return pulumix.Output[[]GetMysqlDbSystemEndpoint]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetMysqlDbSystemEndpointArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemEndpointOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemEndpoint {
 		return vs[0].([]GetMysqlDbSystemEndpoint)[vs[1].(int)]
@@ -14284,6 +16037,12 @@ func (i GetMysqlDbSystemHeatWaveClusterArgs) ToGetMysqlDbSystemHeatWaveClusterOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemHeatWaveClusterOutput)
 }
 
+func (i GetMysqlDbSystemHeatWaveClusterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemHeatWaveCluster] {
+	return pulumix.Output[GetMysqlDbSystemHeatWaveCluster]{
+		OutputState: i.ToGetMysqlDbSystemHeatWaveClusterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlDbSystemHeatWaveClusterArrayInput is an input type that accepts GetMysqlDbSystemHeatWaveClusterArray and GetMysqlDbSystemHeatWaveClusterArrayOutput values.
 // You can construct a concrete instance of `GetMysqlDbSystemHeatWaveClusterArrayInput` via:
 //
@@ -14309,6 +16068,12 @@ func (i GetMysqlDbSystemHeatWaveClusterArray) ToGetMysqlDbSystemHeatWaveClusterA
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemHeatWaveClusterArrayOutput)
 }
 
+func (i GetMysqlDbSystemHeatWaveClusterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemHeatWaveCluster] {
+	return pulumix.Output[[]GetMysqlDbSystemHeatWaveCluster]{
+		OutputState: i.ToGetMysqlDbSystemHeatWaveClusterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlDbSystemHeatWaveClusterOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemHeatWaveClusterOutput) ElementType() reflect.Type {
@@ -14321,6 +16086,12 @@ func (o GetMysqlDbSystemHeatWaveClusterOutput) ToGetMysqlDbSystemHeatWaveCluster
 
 func (o GetMysqlDbSystemHeatWaveClusterOutput) ToGetMysqlDbSystemHeatWaveClusterOutputWithContext(ctx context.Context) GetMysqlDbSystemHeatWaveClusterOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemHeatWaveClusterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemHeatWaveCluster] {
+	return pulumix.Output[GetMysqlDbSystemHeatWaveCluster]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
@@ -14367,6 +16138,12 @@ func (o GetMysqlDbSystemHeatWaveClusterArrayOutput) ToGetMysqlDbSystemHeatWaveCl
 	return o
 }
 
+func (o GetMysqlDbSystemHeatWaveClusterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemHeatWaveCluster] {
+	return pulumix.Output[[]GetMysqlDbSystemHeatWaveCluster]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetMysqlDbSystemHeatWaveClusterArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemHeatWaveClusterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemHeatWaveCluster {
 		return vs[0].([]GetMysqlDbSystemHeatWaveCluster)[vs[1].(int)]
@@ -14406,6 +16183,12 @@ func (i GetMysqlDbSystemMaintenanceArgs) ToGetMysqlDbSystemMaintenanceOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemMaintenanceOutput)
 }
 
+func (i GetMysqlDbSystemMaintenanceArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemMaintenance] {
+	return pulumix.Output[GetMysqlDbSystemMaintenance]{
+		OutputState: i.ToGetMysqlDbSystemMaintenanceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlDbSystemMaintenanceArrayInput is an input type that accepts GetMysqlDbSystemMaintenanceArray and GetMysqlDbSystemMaintenanceArrayOutput values.
 // You can construct a concrete instance of `GetMysqlDbSystemMaintenanceArrayInput` via:
 //
@@ -14431,6 +16214,12 @@ func (i GetMysqlDbSystemMaintenanceArray) ToGetMysqlDbSystemMaintenanceArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemMaintenanceArrayOutput)
 }
 
+func (i GetMysqlDbSystemMaintenanceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemMaintenance] {
+	return pulumix.Output[[]GetMysqlDbSystemMaintenance]{
+		OutputState: i.ToGetMysqlDbSystemMaintenanceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlDbSystemMaintenanceOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemMaintenanceOutput) ElementType() reflect.Type {
@@ -14443,6 +16232,12 @@ func (o GetMysqlDbSystemMaintenanceOutput) ToGetMysqlDbSystemMaintenanceOutput()
 
 func (o GetMysqlDbSystemMaintenanceOutput) ToGetMysqlDbSystemMaintenanceOutputWithContext(ctx context.Context) GetMysqlDbSystemMaintenanceOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemMaintenanceOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemMaintenance] {
+	return pulumix.Output[GetMysqlDbSystemMaintenance]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The start time of the maintenance window.
@@ -14462,6 +16257,12 @@ func (o GetMysqlDbSystemMaintenanceArrayOutput) ToGetMysqlDbSystemMaintenanceArr
 
 func (o GetMysqlDbSystemMaintenanceArrayOutput) ToGetMysqlDbSystemMaintenanceArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemMaintenanceArrayOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemMaintenanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemMaintenance] {
+	return pulumix.Output[[]GetMysqlDbSystemMaintenance]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMysqlDbSystemMaintenanceArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemMaintenanceOutput {
@@ -14507,6 +16308,12 @@ func (i GetMysqlDbSystemPointInTimeRecoveryDetailArgs) ToGetMysqlDbSystemPointIn
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemPointInTimeRecoveryDetailOutput)
 }
 
+func (i GetMysqlDbSystemPointInTimeRecoveryDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemPointInTimeRecoveryDetail] {
+	return pulumix.Output[GetMysqlDbSystemPointInTimeRecoveryDetail]{
+		OutputState: i.ToGetMysqlDbSystemPointInTimeRecoveryDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlDbSystemPointInTimeRecoveryDetailArrayInput is an input type that accepts GetMysqlDbSystemPointInTimeRecoveryDetailArray and GetMysqlDbSystemPointInTimeRecoveryDetailArrayOutput values.
 // You can construct a concrete instance of `GetMysqlDbSystemPointInTimeRecoveryDetailArrayInput` via:
 //
@@ -14532,6 +16339,12 @@ func (i GetMysqlDbSystemPointInTimeRecoveryDetailArray) ToGetMysqlDbSystemPointI
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemPointInTimeRecoveryDetailArrayOutput)
 }
 
+func (i GetMysqlDbSystemPointInTimeRecoveryDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemPointInTimeRecoveryDetail] {
+	return pulumix.Output[[]GetMysqlDbSystemPointInTimeRecoveryDetail]{
+		OutputState: i.ToGetMysqlDbSystemPointInTimeRecoveryDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlDbSystemPointInTimeRecoveryDetailOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemPointInTimeRecoveryDetailOutput) ElementType() reflect.Type {
@@ -14544,6 +16357,12 @@ func (o GetMysqlDbSystemPointInTimeRecoveryDetailOutput) ToGetMysqlDbSystemPoint
 
 func (o GetMysqlDbSystemPointInTimeRecoveryDetailOutput) ToGetMysqlDbSystemPointInTimeRecoveryDetailOutputWithContext(ctx context.Context) GetMysqlDbSystemPointInTimeRecoveryDetailOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemPointInTimeRecoveryDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemPointInTimeRecoveryDetail] {
+	return pulumix.Output[GetMysqlDbSystemPointInTimeRecoveryDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Earliest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -14568,6 +16387,12 @@ func (o GetMysqlDbSystemPointInTimeRecoveryDetailArrayOutput) ToGetMysqlDbSystem
 
 func (o GetMysqlDbSystemPointInTimeRecoveryDetailArrayOutput) ToGetMysqlDbSystemPointInTimeRecoveryDetailArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemPointInTimeRecoveryDetailArrayOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemPointInTimeRecoveryDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemPointInTimeRecoveryDetail] {
+	return pulumix.Output[[]GetMysqlDbSystemPointInTimeRecoveryDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMysqlDbSystemPointInTimeRecoveryDetailArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemPointInTimeRecoveryDetailOutput {
@@ -14623,6 +16448,12 @@ func (i GetMysqlDbSystemSourceArgs) ToGetMysqlDbSystemSourceOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemSourceOutput)
 }
 
+func (i GetMysqlDbSystemSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemSource] {
+	return pulumix.Output[GetMysqlDbSystemSource]{
+		OutputState: i.ToGetMysqlDbSystemSourceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlDbSystemSourceArrayInput is an input type that accepts GetMysqlDbSystemSourceArray and GetMysqlDbSystemSourceArrayOutput values.
 // You can construct a concrete instance of `GetMysqlDbSystemSourceArrayInput` via:
 //
@@ -14648,6 +16479,12 @@ func (i GetMysqlDbSystemSourceArray) ToGetMysqlDbSystemSourceArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemSourceArrayOutput)
 }
 
+func (i GetMysqlDbSystemSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemSource] {
+	return pulumix.Output[[]GetMysqlDbSystemSource]{
+		OutputState: i.ToGetMysqlDbSystemSourceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlDbSystemSourceOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemSourceOutput) ElementType() reflect.Type {
@@ -14660,6 +16497,12 @@ func (o GetMysqlDbSystemSourceOutput) ToGetMysqlDbSystemSourceOutput() GetMysqlD
 
 func (o GetMysqlDbSystemSourceOutput) ToGetMysqlDbSystemSourceOutputWithContext(ctx context.Context) GetMysqlDbSystemSourceOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemSource] {
+	return pulumix.Output[GetMysqlDbSystemSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the backup to be used as the source for the new DB System.
@@ -14698,6 +16541,12 @@ func (o GetMysqlDbSystemSourceArrayOutput) ToGetMysqlDbSystemSourceArrayOutput()
 
 func (o GetMysqlDbSystemSourceArrayOutput) ToGetMysqlDbSystemSourceArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemSourceArrayOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemSource] {
+	return pulumix.Output[[]GetMysqlDbSystemSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMysqlDbSystemSourceArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemSourceOutput {
@@ -14873,6 +16722,12 @@ func (i GetMysqlDbSystemsDbSystemArgs) ToGetMysqlDbSystemsDbSystemOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemOutput)
 }
 
+func (i GetMysqlDbSystemsDbSystemArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystem] {
+	return pulumix.Output[GetMysqlDbSystemsDbSystem]{
+		OutputState: i.ToGetMysqlDbSystemsDbSystemOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlDbSystemsDbSystemArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemArray and GetMysqlDbSystemsDbSystemArrayOutput values.
 // You can construct a concrete instance of `GetMysqlDbSystemsDbSystemArrayInput` via:
 //
@@ -14898,6 +16753,12 @@ func (i GetMysqlDbSystemsDbSystemArray) ToGetMysqlDbSystemsDbSystemArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemArrayOutput)
 }
 
+func (i GetMysqlDbSystemsDbSystemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystem] {
+	return pulumix.Output[[]GetMysqlDbSystemsDbSystem]{
+		OutputState: i.ToGetMysqlDbSystemsDbSystemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlDbSystemsDbSystemOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemsDbSystemOutput) ElementType() reflect.Type {
@@ -14910,6 +16771,12 @@ func (o GetMysqlDbSystemsDbSystemOutput) ToGetMysqlDbSystemsDbSystemOutput() Get
 
 func (o GetMysqlDbSystemsDbSystemOutput) ToGetMysqlDbSystemsDbSystemOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystem] {
+	return pulumix.Output[GetMysqlDbSystemsDbSystem]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMysqlDbSystemsDbSystemOutput) AdminPassword() pulumi.StringOutput {
@@ -15109,6 +16976,12 @@ func (o GetMysqlDbSystemsDbSystemArrayOutput) ToGetMysqlDbSystemsDbSystemArrayOu
 	return o
 }
 
+func (o GetMysqlDbSystemsDbSystemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystem] {
+	return pulumix.Output[[]GetMysqlDbSystemsDbSystem]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetMysqlDbSystemsDbSystemArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystem {
 		return vs[0].([]GetMysqlDbSystemsDbSystem)[vs[1].(int)]
@@ -15168,6 +17041,12 @@ func (i GetMysqlDbSystemsDbSystemBackupPolicyArgs) ToGetMysqlDbSystemsDbSystemBa
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemBackupPolicyOutput)
 }
 
+func (i GetMysqlDbSystemsDbSystemBackupPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemBackupPolicy] {
+	return pulumix.Output[GetMysqlDbSystemsDbSystemBackupPolicy]{
+		OutputState: i.ToGetMysqlDbSystemsDbSystemBackupPolicyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlDbSystemsDbSystemBackupPolicyArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemBackupPolicyArray and GetMysqlDbSystemsDbSystemBackupPolicyArrayOutput values.
 // You can construct a concrete instance of `GetMysqlDbSystemsDbSystemBackupPolicyArrayInput` via:
 //
@@ -15193,6 +17072,12 @@ func (i GetMysqlDbSystemsDbSystemBackupPolicyArray) ToGetMysqlDbSystemsDbSystemB
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemBackupPolicyArrayOutput)
 }
 
+func (i GetMysqlDbSystemsDbSystemBackupPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemBackupPolicy] {
+	return pulumix.Output[[]GetMysqlDbSystemsDbSystemBackupPolicy]{
+		OutputState: i.ToGetMysqlDbSystemsDbSystemBackupPolicyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlDbSystemsDbSystemBackupPolicyOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemsDbSystemBackupPolicyOutput) ElementType() reflect.Type {
@@ -15205,6 +17090,12 @@ func (o GetMysqlDbSystemsDbSystemBackupPolicyOutput) ToGetMysqlDbSystemsDbSystem
 
 func (o GetMysqlDbSystemsDbSystemBackupPolicyOutput) ToGetMysqlDbSystemsDbSystemBackupPolicyOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemBackupPolicyOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemBackupPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemBackupPolicy] {
+	return pulumix.Output[GetMysqlDbSystemsDbSystemBackupPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -15253,6 +17144,12 @@ func (o GetMysqlDbSystemsDbSystemBackupPolicyArrayOutput) ToGetMysqlDbSystemsDbS
 	return o
 }
 
+func (o GetMysqlDbSystemsDbSystemBackupPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemBackupPolicy] {
+	return pulumix.Output[[]GetMysqlDbSystemsDbSystemBackupPolicy]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetMysqlDbSystemsDbSystemBackupPolicyArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemBackupPolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemBackupPolicy {
 		return vs[0].([]GetMysqlDbSystemsDbSystemBackupPolicy)[vs[1].(int)]
@@ -15292,6 +17189,12 @@ func (i GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArgs) ToGetMysqlDbSystems
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyOutput)
 }
 
+func (i GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy] {
+	return pulumix.Output[GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy]{
+		OutputState: i.ToGetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArray and GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayOutput values.
 // You can construct a concrete instance of `GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayInput` via:
 //
@@ -15317,6 +17220,12 @@ func (i GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArray) ToGetMysqlDbSystem
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayOutput)
 }
 
+func (i GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy] {
+	return pulumix.Output[[]GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy]{
+		OutputState: i.ToGetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyOutput) ElementType() reflect.Type {
@@ -15329,6 +17238,12 @@ func (o GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyOutput) ToGetMysqlDbSyste
 
 func (o GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyOutput) ToGetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy] {
+	return pulumix.Output[GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether the Channel has been enabled by the user.
@@ -15348,6 +17263,12 @@ func (o GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayOutput) ToGetMysqlDb
 
 func (o GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayOutput) ToGetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy] {
+	return pulumix.Output[[]GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyOutput {
@@ -15433,6 +17354,12 @@ func (i GetMysqlDbSystemsDbSystemChannelArgs) ToGetMysqlDbSystemsDbSystemChannel
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemChannelOutput)
 }
 
+func (i GetMysqlDbSystemsDbSystemChannelArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemChannel] {
+	return pulumix.Output[GetMysqlDbSystemsDbSystemChannel]{
+		OutputState: i.ToGetMysqlDbSystemsDbSystemChannelOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlDbSystemsDbSystemChannelArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemChannelArray and GetMysqlDbSystemsDbSystemChannelArrayOutput values.
 // You can construct a concrete instance of `GetMysqlDbSystemsDbSystemChannelArrayInput` via:
 //
@@ -15458,6 +17385,12 @@ func (i GetMysqlDbSystemsDbSystemChannelArray) ToGetMysqlDbSystemsDbSystemChanne
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemChannelArrayOutput)
 }
 
+func (i GetMysqlDbSystemsDbSystemChannelArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemChannel] {
+	return pulumix.Output[[]GetMysqlDbSystemsDbSystemChannel]{
+		OutputState: i.ToGetMysqlDbSystemsDbSystemChannelArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlDbSystemsDbSystemChannelOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemsDbSystemChannelOutput) ElementType() reflect.Type {
@@ -15470,6 +17403,12 @@ func (o GetMysqlDbSystemsDbSystemChannelOutput) ToGetMysqlDbSystemsDbSystemChann
 
 func (o GetMysqlDbSystemsDbSystemChannelOutput) ToGetMysqlDbSystemsDbSystemChannelOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemChannelOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemChannelOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemChannel] {
+	return pulumix.Output[GetMysqlDbSystemsDbSystemChannel]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -15546,6 +17485,12 @@ func (o GetMysqlDbSystemsDbSystemChannelArrayOutput) ToGetMysqlDbSystemsDbSystem
 	return o
 }
 
+func (o GetMysqlDbSystemsDbSystemChannelArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemChannel] {
+	return pulumix.Output[[]GetMysqlDbSystemsDbSystemChannel]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetMysqlDbSystemsDbSystemChannelArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemChannelOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemChannel {
 		return vs[0].([]GetMysqlDbSystemsDbSystemChannel)[vs[1].(int)]
@@ -15609,6 +17554,12 @@ func (i GetMysqlDbSystemsDbSystemChannelSourceArgs) ToGetMysqlDbSystemsDbSystemC
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemChannelSourceOutput)
 }
 
+func (i GetMysqlDbSystemsDbSystemChannelSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemChannelSource] {
+	return pulumix.Output[GetMysqlDbSystemsDbSystemChannelSource]{
+		OutputState: i.ToGetMysqlDbSystemsDbSystemChannelSourceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlDbSystemsDbSystemChannelSourceArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemChannelSourceArray and GetMysqlDbSystemsDbSystemChannelSourceArrayOutput values.
 // You can construct a concrete instance of `GetMysqlDbSystemsDbSystemChannelSourceArrayInput` via:
 //
@@ -15634,6 +17585,12 @@ func (i GetMysqlDbSystemsDbSystemChannelSourceArray) ToGetMysqlDbSystemsDbSystem
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemChannelSourceArrayOutput)
 }
 
+func (i GetMysqlDbSystemsDbSystemChannelSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemChannelSource] {
+	return pulumix.Output[[]GetMysqlDbSystemsDbSystemChannelSource]{
+		OutputState: i.ToGetMysqlDbSystemsDbSystemChannelSourceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlDbSystemsDbSystemChannelSourceOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemsDbSystemChannelSourceOutput) ElementType() reflect.Type {
@@ -15646,6 +17603,12 @@ func (o GetMysqlDbSystemsDbSystemChannelSourceOutput) ToGetMysqlDbSystemsDbSyste
 
 func (o GetMysqlDbSystemsDbSystemChannelSourceOutput) ToGetMysqlDbSystemsDbSystemChannelSourceOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemChannelSourceOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemChannelSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemChannelSource] {
+	return pulumix.Output[GetMysqlDbSystemsDbSystemChannelSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
@@ -15701,6 +17664,12 @@ func (o GetMysqlDbSystemsDbSystemChannelSourceArrayOutput) ToGetMysqlDbSystemsDb
 	return o
 }
 
+func (o GetMysqlDbSystemsDbSystemChannelSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemChannelSource] {
+	return pulumix.Output[[]GetMysqlDbSystemsDbSystemChannelSource]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetMysqlDbSystemsDbSystemChannelSourceArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemChannelSourceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemChannelSource {
 		return vs[0].([]GetMysqlDbSystemsDbSystemChannelSource)[vs[1].(int)]
@@ -15752,6 +17721,12 @@ func (i GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArgs)
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutput)
 }
 
+func (i GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandling] {
+	return pulumix.Output[GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandling]{
+		OutputState: i.ToGetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArray and GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput values.
 // You can construct a concrete instance of `GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArrayInput` via:
 //
@@ -15777,6 +17752,12 @@ func (i GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput)
 }
 
+func (i GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandling] {
+	return pulumix.Output[[]GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandling]{
+		OutputState: i.ToGetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutput) ElementType() reflect.Type {
@@ -15789,6 +17770,12 @@ func (o GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutpu
 
 func (o GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutput) ToGetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandling] {
+	return pulumix.Output[GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandling]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
@@ -15827,6 +17814,12 @@ func (o GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArray
 
 func (o GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput) ToGetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandling] {
+	return pulumix.Output[[]GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandling]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutput {
@@ -15872,6 +17865,12 @@ func (i GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateArgs) ToGetMysqlDb
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateOutput)
 }
 
+func (i GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificate] {
+	return pulumix.Output[GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificate]{
+		OutputState: i.ToGetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateArray and GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateArrayOutput values.
 // You can construct a concrete instance of `GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateArrayInput` via:
 //
@@ -15897,6 +17896,12 @@ func (i GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateArray) ToGetMysqlD
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateArrayOutput)
 }
 
+func (i GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificate] {
+	return pulumix.Output[[]GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificate]{
+		OutputState: i.ToGetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateOutput) ElementType() reflect.Type {
@@ -15909,6 +17914,12 @@ func (o GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateOutput) ToGetMysql
 
 func (o GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateOutput) ToGetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificate] {
+	return pulumix.Output[GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificate]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The type of CA certificate.
@@ -15933,6 +17944,12 @@ func (o GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateArrayOutput) ToGet
 
 func (o GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateArrayOutput) ToGetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateArrayOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificate] {
+	return pulumix.Output[[]GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificate]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateOutput {
@@ -15998,6 +18015,12 @@ func (i GetMysqlDbSystemsDbSystemChannelTargetArgs) ToGetMysqlDbSystemsDbSystemC
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemChannelTargetOutput)
 }
 
+func (i GetMysqlDbSystemsDbSystemChannelTargetArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemChannelTarget] {
+	return pulumix.Output[GetMysqlDbSystemsDbSystemChannelTarget]{
+		OutputState: i.ToGetMysqlDbSystemsDbSystemChannelTargetOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlDbSystemsDbSystemChannelTargetArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemChannelTargetArray and GetMysqlDbSystemsDbSystemChannelTargetArrayOutput values.
 // You can construct a concrete instance of `GetMysqlDbSystemsDbSystemChannelTargetArrayInput` via:
 //
@@ -16023,6 +18046,12 @@ func (i GetMysqlDbSystemsDbSystemChannelTargetArray) ToGetMysqlDbSystemsDbSystem
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemChannelTargetArrayOutput)
 }
 
+func (i GetMysqlDbSystemsDbSystemChannelTargetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemChannelTarget] {
+	return pulumix.Output[[]GetMysqlDbSystemsDbSystemChannelTarget]{
+		OutputState: i.ToGetMysqlDbSystemsDbSystemChannelTargetArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlDbSystemsDbSystemChannelTargetOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemsDbSystemChannelTargetOutput) ElementType() reflect.Type {
@@ -16035,6 +18064,12 @@ func (o GetMysqlDbSystemsDbSystemChannelTargetOutput) ToGetMysqlDbSystemsDbSyste
 
 func (o GetMysqlDbSystemsDbSystemChannelTargetOutput) ToGetMysqlDbSystemsDbSystemChannelTargetOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemChannelTargetOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemChannelTargetOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemChannelTarget] {
+	return pulumix.Output[GetMysqlDbSystemsDbSystemChannelTarget]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The username for the replication applier of the target MySQL DB System.
@@ -16088,6 +18123,12 @@ func (o GetMysqlDbSystemsDbSystemChannelTargetArrayOutput) ToGetMysqlDbSystemsDb
 	return o
 }
 
+func (o GetMysqlDbSystemsDbSystemChannelTargetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemChannelTarget] {
+	return pulumix.Output[[]GetMysqlDbSystemsDbSystemChannelTarget]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetMysqlDbSystemsDbSystemChannelTargetArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemChannelTargetOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemChannelTarget {
 		return vs[0].([]GetMysqlDbSystemsDbSystemChannelTarget)[vs[1].(int)]
@@ -16131,6 +18172,12 @@ func (i GetMysqlDbSystemsDbSystemChannelTargetFilterArgs) ToGetMysqlDbSystemsDbS
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemChannelTargetFilterOutput)
 }
 
+func (i GetMysqlDbSystemsDbSystemChannelTargetFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemChannelTargetFilter] {
+	return pulumix.Output[GetMysqlDbSystemsDbSystemChannelTargetFilter]{
+		OutputState: i.ToGetMysqlDbSystemsDbSystemChannelTargetFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlDbSystemsDbSystemChannelTargetFilterArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemChannelTargetFilterArray and GetMysqlDbSystemsDbSystemChannelTargetFilterArrayOutput values.
 // You can construct a concrete instance of `GetMysqlDbSystemsDbSystemChannelTargetFilterArrayInput` via:
 //
@@ -16156,6 +18203,12 @@ func (i GetMysqlDbSystemsDbSystemChannelTargetFilterArray) ToGetMysqlDbSystemsDb
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemChannelTargetFilterArrayOutput)
 }
 
+func (i GetMysqlDbSystemsDbSystemChannelTargetFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemChannelTargetFilter] {
+	return pulumix.Output[[]GetMysqlDbSystemsDbSystemChannelTargetFilter]{
+		OutputState: i.ToGetMysqlDbSystemsDbSystemChannelTargetFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlDbSystemsDbSystemChannelTargetFilterOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemsDbSystemChannelTargetFilterOutput) ElementType() reflect.Type {
@@ -16168,6 +18221,12 @@ func (o GetMysqlDbSystemsDbSystemChannelTargetFilterOutput) ToGetMysqlDbSystemsD
 
 func (o GetMysqlDbSystemsDbSystemChannelTargetFilterOutput) ToGetMysqlDbSystemsDbSystemChannelTargetFilterOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemChannelTargetFilterOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemChannelTargetFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemChannelTargetFilter] {
+	return pulumix.Output[GetMysqlDbSystemsDbSystemChannelTargetFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The type of the filter rule.
@@ -16192,6 +18251,12 @@ func (o GetMysqlDbSystemsDbSystemChannelTargetFilterArrayOutput) ToGetMysqlDbSys
 
 func (o GetMysqlDbSystemsDbSystemChannelTargetFilterArrayOutput) ToGetMysqlDbSystemsDbSystemChannelTargetFilterArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemChannelTargetFilterArrayOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemChannelTargetFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemChannelTargetFilter] {
+	return pulumix.Output[[]GetMysqlDbSystemsDbSystemChannelTargetFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMysqlDbSystemsDbSystemChannelTargetFilterArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemChannelTargetFilterOutput {
@@ -16237,6 +18302,12 @@ func (i GetMysqlDbSystemsDbSystemCurrentPlacementArgs) ToGetMysqlDbSystemsDbSyst
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemCurrentPlacementOutput)
 }
 
+func (i GetMysqlDbSystemsDbSystemCurrentPlacementArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemCurrentPlacement] {
+	return pulumix.Output[GetMysqlDbSystemsDbSystemCurrentPlacement]{
+		OutputState: i.ToGetMysqlDbSystemsDbSystemCurrentPlacementOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlDbSystemsDbSystemCurrentPlacementArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemCurrentPlacementArray and GetMysqlDbSystemsDbSystemCurrentPlacementArrayOutput values.
 // You can construct a concrete instance of `GetMysqlDbSystemsDbSystemCurrentPlacementArrayInput` via:
 //
@@ -16262,6 +18333,12 @@ func (i GetMysqlDbSystemsDbSystemCurrentPlacementArray) ToGetMysqlDbSystemsDbSys
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemCurrentPlacementArrayOutput)
 }
 
+func (i GetMysqlDbSystemsDbSystemCurrentPlacementArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemCurrentPlacement] {
+	return pulumix.Output[[]GetMysqlDbSystemsDbSystemCurrentPlacement]{
+		OutputState: i.ToGetMysqlDbSystemsDbSystemCurrentPlacementArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlDbSystemsDbSystemCurrentPlacementOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemsDbSystemCurrentPlacementOutput) ElementType() reflect.Type {
@@ -16274,6 +18351,12 @@ func (o GetMysqlDbSystemsDbSystemCurrentPlacementOutput) ToGetMysqlDbSystemsDbSy
 
 func (o GetMysqlDbSystemsDbSystemCurrentPlacementOutput) ToGetMysqlDbSystemsDbSystemCurrentPlacementOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemCurrentPlacementOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemCurrentPlacementOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemCurrentPlacement] {
+	return pulumix.Output[GetMysqlDbSystemsDbSystemCurrentPlacement]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The availability domain in which the DB System is placed.
@@ -16298,6 +18381,12 @@ func (o GetMysqlDbSystemsDbSystemCurrentPlacementArrayOutput) ToGetMysqlDbSystem
 
 func (o GetMysqlDbSystemsDbSystemCurrentPlacementArrayOutput) ToGetMysqlDbSystemsDbSystemCurrentPlacementArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemCurrentPlacementArrayOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemCurrentPlacementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemCurrentPlacement] {
+	return pulumix.Output[[]GetMysqlDbSystemsDbSystemCurrentPlacement]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMysqlDbSystemsDbSystemCurrentPlacementArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemCurrentPlacementOutput {
@@ -16347,6 +18436,12 @@ func (i GetMysqlDbSystemsDbSystemDeletionPolicyArgs) ToGetMysqlDbSystemsDbSystem
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemDeletionPolicyOutput)
 }
 
+func (i GetMysqlDbSystemsDbSystemDeletionPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemDeletionPolicy] {
+	return pulumix.Output[GetMysqlDbSystemsDbSystemDeletionPolicy]{
+		OutputState: i.ToGetMysqlDbSystemsDbSystemDeletionPolicyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlDbSystemsDbSystemDeletionPolicyArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemDeletionPolicyArray and GetMysqlDbSystemsDbSystemDeletionPolicyArrayOutput values.
 // You can construct a concrete instance of `GetMysqlDbSystemsDbSystemDeletionPolicyArrayInput` via:
 //
@@ -16372,6 +18467,12 @@ func (i GetMysqlDbSystemsDbSystemDeletionPolicyArray) ToGetMysqlDbSystemsDbSyste
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemDeletionPolicyArrayOutput)
 }
 
+func (i GetMysqlDbSystemsDbSystemDeletionPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemDeletionPolicy] {
+	return pulumix.Output[[]GetMysqlDbSystemsDbSystemDeletionPolicy]{
+		OutputState: i.ToGetMysqlDbSystemsDbSystemDeletionPolicyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlDbSystemsDbSystemDeletionPolicyOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemsDbSystemDeletionPolicyOutput) ElementType() reflect.Type {
@@ -16384,6 +18485,12 @@ func (o GetMysqlDbSystemsDbSystemDeletionPolicyOutput) ToGetMysqlDbSystemsDbSyst
 
 func (o GetMysqlDbSystemsDbSystemDeletionPolicyOutput) ToGetMysqlDbSystemsDbSystemDeletionPolicyOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemDeletionPolicyOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemDeletionPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemDeletionPolicy] {
+	return pulumix.Output[GetMysqlDbSystemsDbSystemDeletionPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Specifies if any automatic backups created for a DB System should be retained or deleted when the DB System is deleted.
@@ -16413,6 +18520,12 @@ func (o GetMysqlDbSystemsDbSystemDeletionPolicyArrayOutput) ToGetMysqlDbSystemsD
 
 func (o GetMysqlDbSystemsDbSystemDeletionPolicyArrayOutput) ToGetMysqlDbSystemsDbSystemDeletionPolicyArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemDeletionPolicyArrayOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemDeletionPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemDeletionPolicy] {
+	return pulumix.Output[[]GetMysqlDbSystemsDbSystemDeletionPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMysqlDbSystemsDbSystemDeletionPolicyArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemDeletionPolicyOutput {
@@ -16486,6 +18599,12 @@ func (i GetMysqlDbSystemsDbSystemEndpointArgs) ToGetMysqlDbSystemsDbSystemEndpoi
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemEndpointOutput)
 }
 
+func (i GetMysqlDbSystemsDbSystemEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemEndpoint] {
+	return pulumix.Output[GetMysqlDbSystemsDbSystemEndpoint]{
+		OutputState: i.ToGetMysqlDbSystemsDbSystemEndpointOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlDbSystemsDbSystemEndpointArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemEndpointArray and GetMysqlDbSystemsDbSystemEndpointArrayOutput values.
 // You can construct a concrete instance of `GetMysqlDbSystemsDbSystemEndpointArrayInput` via:
 //
@@ -16511,6 +18630,12 @@ func (i GetMysqlDbSystemsDbSystemEndpointArray) ToGetMysqlDbSystemsDbSystemEndpo
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemEndpointArrayOutput)
 }
 
+func (i GetMysqlDbSystemsDbSystemEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemEndpoint] {
+	return pulumix.Output[[]GetMysqlDbSystemsDbSystemEndpoint]{
+		OutputState: i.ToGetMysqlDbSystemsDbSystemEndpointArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlDbSystemsDbSystemEndpointOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemsDbSystemEndpointOutput) ElementType() reflect.Type {
@@ -16523,6 +18648,12 @@ func (o GetMysqlDbSystemsDbSystemEndpointOutput) ToGetMysqlDbSystemsDbSystemEndp
 
 func (o GetMysqlDbSystemsDbSystemEndpointOutput) ToGetMysqlDbSystemsDbSystemEndpointOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemEndpointOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemEndpoint] {
+	return pulumix.Output[GetMysqlDbSystemsDbSystemEndpoint]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The network address of the DB System.
@@ -16584,6 +18715,12 @@ func (o GetMysqlDbSystemsDbSystemEndpointArrayOutput) ToGetMysqlDbSystemsDbSyste
 	return o
 }
 
+func (o GetMysqlDbSystemsDbSystemEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemEndpoint] {
+	return pulumix.Output[[]GetMysqlDbSystemsDbSystemEndpoint]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetMysqlDbSystemsDbSystemEndpointArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemEndpointOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemEndpoint {
 		return vs[0].([]GetMysqlDbSystemsDbSystemEndpoint)[vs[1].(int)]
@@ -16643,6 +18780,12 @@ func (i GetMysqlDbSystemsDbSystemHeatWaveClusterArgs) ToGetMysqlDbSystemsDbSyste
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemHeatWaveClusterOutput)
 }
 
+func (i GetMysqlDbSystemsDbSystemHeatWaveClusterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemHeatWaveCluster] {
+	return pulumix.Output[GetMysqlDbSystemsDbSystemHeatWaveCluster]{
+		OutputState: i.ToGetMysqlDbSystemsDbSystemHeatWaveClusterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlDbSystemsDbSystemHeatWaveClusterArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemHeatWaveClusterArray and GetMysqlDbSystemsDbSystemHeatWaveClusterArrayOutput values.
 // You can construct a concrete instance of `GetMysqlDbSystemsDbSystemHeatWaveClusterArrayInput` via:
 //
@@ -16668,6 +18811,12 @@ func (i GetMysqlDbSystemsDbSystemHeatWaveClusterArray) ToGetMysqlDbSystemsDbSyst
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemHeatWaveClusterArrayOutput)
 }
 
+func (i GetMysqlDbSystemsDbSystemHeatWaveClusterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemHeatWaveCluster] {
+	return pulumix.Output[[]GetMysqlDbSystemsDbSystemHeatWaveCluster]{
+		OutputState: i.ToGetMysqlDbSystemsDbSystemHeatWaveClusterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlDbSystemsDbSystemHeatWaveClusterOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemsDbSystemHeatWaveClusterOutput) ElementType() reflect.Type {
@@ -16680,6 +18829,12 @@ func (o GetMysqlDbSystemsDbSystemHeatWaveClusterOutput) ToGetMysqlDbSystemsDbSys
 
 func (o GetMysqlDbSystemsDbSystemHeatWaveClusterOutput) ToGetMysqlDbSystemsDbSystemHeatWaveClusterOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemHeatWaveClusterOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemHeatWaveClusterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemHeatWaveCluster] {
+	return pulumix.Output[GetMysqlDbSystemsDbSystemHeatWaveCluster]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
@@ -16726,6 +18881,12 @@ func (o GetMysqlDbSystemsDbSystemHeatWaveClusterArrayOutput) ToGetMysqlDbSystems
 	return o
 }
 
+func (o GetMysqlDbSystemsDbSystemHeatWaveClusterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemHeatWaveCluster] {
+	return pulumix.Output[[]GetMysqlDbSystemsDbSystemHeatWaveCluster]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetMysqlDbSystemsDbSystemHeatWaveClusterArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemHeatWaveClusterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemHeatWaveCluster {
 		return vs[0].([]GetMysqlDbSystemsDbSystemHeatWaveCluster)[vs[1].(int)]
@@ -16765,6 +18926,12 @@ func (i GetMysqlDbSystemsDbSystemMaintenanceArgs) ToGetMysqlDbSystemsDbSystemMai
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemMaintenanceOutput)
 }
 
+func (i GetMysqlDbSystemsDbSystemMaintenanceArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemMaintenance] {
+	return pulumix.Output[GetMysqlDbSystemsDbSystemMaintenance]{
+		OutputState: i.ToGetMysqlDbSystemsDbSystemMaintenanceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlDbSystemsDbSystemMaintenanceArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemMaintenanceArray and GetMysqlDbSystemsDbSystemMaintenanceArrayOutput values.
 // You can construct a concrete instance of `GetMysqlDbSystemsDbSystemMaintenanceArrayInput` via:
 //
@@ -16790,6 +18957,12 @@ func (i GetMysqlDbSystemsDbSystemMaintenanceArray) ToGetMysqlDbSystemsDbSystemMa
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemMaintenanceArrayOutput)
 }
 
+func (i GetMysqlDbSystemsDbSystemMaintenanceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemMaintenance] {
+	return pulumix.Output[[]GetMysqlDbSystemsDbSystemMaintenance]{
+		OutputState: i.ToGetMysqlDbSystemsDbSystemMaintenanceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlDbSystemsDbSystemMaintenanceOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemsDbSystemMaintenanceOutput) ElementType() reflect.Type {
@@ -16802,6 +18975,12 @@ func (o GetMysqlDbSystemsDbSystemMaintenanceOutput) ToGetMysqlDbSystemsDbSystemM
 
 func (o GetMysqlDbSystemsDbSystemMaintenanceOutput) ToGetMysqlDbSystemsDbSystemMaintenanceOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemMaintenanceOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemMaintenanceOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemMaintenance] {
+	return pulumix.Output[GetMysqlDbSystemsDbSystemMaintenance]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The start time of the maintenance window.
@@ -16821,6 +19000,12 @@ func (o GetMysqlDbSystemsDbSystemMaintenanceArrayOutput) ToGetMysqlDbSystemsDbSy
 
 func (o GetMysqlDbSystemsDbSystemMaintenanceArrayOutput) ToGetMysqlDbSystemsDbSystemMaintenanceArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemMaintenanceArrayOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemMaintenanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemMaintenance] {
+	return pulumix.Output[[]GetMysqlDbSystemsDbSystemMaintenance]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMysqlDbSystemsDbSystemMaintenanceArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemMaintenanceOutput {
@@ -16866,6 +19051,12 @@ func (i GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArgs) ToGetMysqlDbSyst
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutput)
 }
 
+func (i GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail] {
+	return pulumix.Output[GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail]{
+		OutputState: i.ToGetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArray and GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayOutput values.
 // You can construct a concrete instance of `GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayInput` via:
 //
@@ -16891,6 +19082,12 @@ func (i GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArray) ToGetMysqlDbSys
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayOutput)
 }
 
+func (i GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail] {
+	return pulumix.Output[[]GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail]{
+		OutputState: i.ToGetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutput) ElementType() reflect.Type {
@@ -16903,6 +19100,12 @@ func (o GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutput) ToGetMysqlDbSy
 
 func (o GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutput) ToGetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail] {
+	return pulumix.Output[GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Earliest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -16927,6 +19130,12 @@ func (o GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayOutput) ToGetMysq
 
 func (o GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayOutput) ToGetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail] {
+	return pulumix.Output[[]GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailOutput {
@@ -16982,6 +19191,12 @@ func (i GetMysqlDbSystemsDbSystemSourceArgs) ToGetMysqlDbSystemsDbSystemSourceOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemSourceOutput)
 }
 
+func (i GetMysqlDbSystemsDbSystemSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemSource] {
+	return pulumix.Output[GetMysqlDbSystemsDbSystemSource]{
+		OutputState: i.ToGetMysqlDbSystemsDbSystemSourceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlDbSystemsDbSystemSourceArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemSourceArray and GetMysqlDbSystemsDbSystemSourceArrayOutput values.
 // You can construct a concrete instance of `GetMysqlDbSystemsDbSystemSourceArrayInput` via:
 //
@@ -17007,6 +19222,12 @@ func (i GetMysqlDbSystemsDbSystemSourceArray) ToGetMysqlDbSystemsDbSystemSourceA
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemSourceArrayOutput)
 }
 
+func (i GetMysqlDbSystemsDbSystemSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemSource] {
+	return pulumix.Output[[]GetMysqlDbSystemsDbSystemSource]{
+		OutputState: i.ToGetMysqlDbSystemsDbSystemSourceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlDbSystemsDbSystemSourceOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemsDbSystemSourceOutput) ElementType() reflect.Type {
@@ -17019,6 +19240,12 @@ func (o GetMysqlDbSystemsDbSystemSourceOutput) ToGetMysqlDbSystemsDbSystemSource
 
 func (o GetMysqlDbSystemsDbSystemSourceOutput) ToGetMysqlDbSystemsDbSystemSourceOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemSourceOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsDbSystemSource] {
+	return pulumix.Output[GetMysqlDbSystemsDbSystemSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the backup to be used as the source for the new DB System.
@@ -17057,6 +19284,12 @@ func (o GetMysqlDbSystemsDbSystemSourceArrayOutput) ToGetMysqlDbSystemsDbSystemS
 
 func (o GetMysqlDbSystemsDbSystemSourceArrayOutput) ToGetMysqlDbSystemsDbSystemSourceArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemSourceArrayOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsDbSystemSource] {
+	return pulumix.Output[[]GetMysqlDbSystemsDbSystemSource]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMysqlDbSystemsDbSystemSourceArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemSourceOutput {
@@ -17100,6 +19333,12 @@ func (i GetMysqlDbSystemsFilterArgs) ToGetMysqlDbSystemsFilterOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsFilterOutput)
 }
 
+func (i GetMysqlDbSystemsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsFilter] {
+	return pulumix.Output[GetMysqlDbSystemsFilter]{
+		OutputState: i.ToGetMysqlDbSystemsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlDbSystemsFilterArrayInput is an input type that accepts GetMysqlDbSystemsFilterArray and GetMysqlDbSystemsFilterArrayOutput values.
 // You can construct a concrete instance of `GetMysqlDbSystemsFilterArrayInput` via:
 //
@@ -17125,6 +19364,12 @@ func (i GetMysqlDbSystemsFilterArray) ToGetMysqlDbSystemsFilterArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsFilterArrayOutput)
 }
 
+func (i GetMysqlDbSystemsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsFilter] {
+	return pulumix.Output[[]GetMysqlDbSystemsFilter]{
+		OutputState: i.ToGetMysqlDbSystemsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlDbSystemsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemsFilterOutput) ElementType() reflect.Type {
@@ -17137,6 +19382,12 @@ func (o GetMysqlDbSystemsFilterOutput) ToGetMysqlDbSystemsFilterOutput() GetMysq
 
 func (o GetMysqlDbSystemsFilterOutput) ToGetMysqlDbSystemsFilterOutputWithContext(ctx context.Context) GetMysqlDbSystemsFilterOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlDbSystemsFilter] {
+	return pulumix.Output[GetMysqlDbSystemsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMysqlDbSystemsFilterOutput) Name() pulumi.StringOutput {
@@ -17163,6 +19414,12 @@ func (o GetMysqlDbSystemsFilterArrayOutput) ToGetMysqlDbSystemsFilterArrayOutput
 
 func (o GetMysqlDbSystemsFilterArrayOutput) ToGetMysqlDbSystemsFilterArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsFilterArrayOutput {
 	return o
+}
+
+func (o GetMysqlDbSystemsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlDbSystemsFilter] {
+	return pulumix.Output[[]GetMysqlDbSystemsFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMysqlDbSystemsFilterArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsFilterOutput {
@@ -17206,6 +19463,12 @@ func (i GetMysqlVersionFilterArgs) ToGetMysqlVersionFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlVersionFilterOutput)
 }
 
+func (i GetMysqlVersionFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlVersionFilter] {
+	return pulumix.Output[GetMysqlVersionFilter]{
+		OutputState: i.ToGetMysqlVersionFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlVersionFilterArrayInput is an input type that accepts GetMysqlVersionFilterArray and GetMysqlVersionFilterArrayOutput values.
 // You can construct a concrete instance of `GetMysqlVersionFilterArrayInput` via:
 //
@@ -17231,6 +19494,12 @@ func (i GetMysqlVersionFilterArray) ToGetMysqlVersionFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlVersionFilterArrayOutput)
 }
 
+func (i GetMysqlVersionFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlVersionFilter] {
+	return pulumix.Output[[]GetMysqlVersionFilter]{
+		OutputState: i.ToGetMysqlVersionFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlVersionFilterOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlVersionFilterOutput) ElementType() reflect.Type {
@@ -17243,6 +19512,12 @@ func (o GetMysqlVersionFilterOutput) ToGetMysqlVersionFilterOutput() GetMysqlVer
 
 func (o GetMysqlVersionFilterOutput) ToGetMysqlVersionFilterOutputWithContext(ctx context.Context) GetMysqlVersionFilterOutput {
 	return o
+}
+
+func (o GetMysqlVersionFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlVersionFilter] {
+	return pulumix.Output[GetMysqlVersionFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMysqlVersionFilterOutput) Name() pulumi.StringOutput {
@@ -17269,6 +19544,12 @@ func (o GetMysqlVersionFilterArrayOutput) ToGetMysqlVersionFilterArrayOutput() G
 
 func (o GetMysqlVersionFilterArrayOutput) ToGetMysqlVersionFilterArrayOutputWithContext(ctx context.Context) GetMysqlVersionFilterArrayOutput {
 	return o
+}
+
+func (o GetMysqlVersionFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlVersionFilter] {
+	return pulumix.Output[[]GetMysqlVersionFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMysqlVersionFilterArrayOutput) Index(i pulumi.IntInput) GetMysqlVersionFilterOutput {
@@ -17314,6 +19595,12 @@ func (i GetMysqlVersionVersionArgs) ToGetMysqlVersionVersionOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlVersionVersionOutput)
 }
 
+func (i GetMysqlVersionVersionArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlVersionVersion] {
+	return pulumix.Output[GetMysqlVersionVersion]{
+		OutputState: i.ToGetMysqlVersionVersionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlVersionVersionArrayInput is an input type that accepts GetMysqlVersionVersionArray and GetMysqlVersionVersionArrayOutput values.
 // You can construct a concrete instance of `GetMysqlVersionVersionArrayInput` via:
 //
@@ -17339,6 +19626,12 @@ func (i GetMysqlVersionVersionArray) ToGetMysqlVersionVersionArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlVersionVersionArrayOutput)
 }
 
+func (i GetMysqlVersionVersionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlVersionVersion] {
+	return pulumix.Output[[]GetMysqlVersionVersion]{
+		OutputState: i.ToGetMysqlVersionVersionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlVersionVersionOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlVersionVersionOutput) ElementType() reflect.Type {
@@ -17351,6 +19644,12 @@ func (o GetMysqlVersionVersionOutput) ToGetMysqlVersionVersionOutput() GetMysqlV
 
 func (o GetMysqlVersionVersionOutput) ToGetMysqlVersionVersionOutputWithContext(ctx context.Context) GetMysqlVersionVersionOutput {
 	return o
+}
+
+func (o GetMysqlVersionVersionOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlVersionVersion] {
+	return pulumix.Output[GetMysqlVersionVersion]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A descriptive summary of a group of versions.
@@ -17375,6 +19674,12 @@ func (o GetMysqlVersionVersionArrayOutput) ToGetMysqlVersionVersionArrayOutput()
 
 func (o GetMysqlVersionVersionArrayOutput) ToGetMysqlVersionVersionArrayOutputWithContext(ctx context.Context) GetMysqlVersionVersionArrayOutput {
 	return o
+}
+
+func (o GetMysqlVersionVersionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlVersionVersion] {
+	return pulumix.Output[[]GetMysqlVersionVersion]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMysqlVersionVersionArrayOutput) Index(i pulumi.IntInput) GetMysqlVersionVersionOutput {
@@ -17420,6 +19725,12 @@ func (i GetMysqlVersionVersionVersionArgs) ToGetMysqlVersionVersionVersionOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlVersionVersionVersionOutput)
 }
 
+func (i GetMysqlVersionVersionVersionArgs) ToOutput(ctx context.Context) pulumix.Output[GetMysqlVersionVersionVersion] {
+	return pulumix.Output[GetMysqlVersionVersionVersion]{
+		OutputState: i.ToGetMysqlVersionVersionVersionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetMysqlVersionVersionVersionArrayInput is an input type that accepts GetMysqlVersionVersionVersionArray and GetMysqlVersionVersionVersionArrayOutput values.
 // You can construct a concrete instance of `GetMysqlVersionVersionVersionArrayInput` via:
 //
@@ -17445,6 +19756,12 @@ func (i GetMysqlVersionVersionVersionArray) ToGetMysqlVersionVersionVersionArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlVersionVersionVersionArrayOutput)
 }
 
+func (i GetMysqlVersionVersionVersionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlVersionVersionVersion] {
+	return pulumix.Output[[]GetMysqlVersionVersionVersion]{
+		OutputState: i.ToGetMysqlVersionVersionVersionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetMysqlVersionVersionVersionOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlVersionVersionVersionOutput) ElementType() reflect.Type {
@@ -17457,6 +19774,12 @@ func (o GetMysqlVersionVersionVersionOutput) ToGetMysqlVersionVersionVersionOutp
 
 func (o GetMysqlVersionVersionVersionOutput) ToGetMysqlVersionVersionVersionOutputWithContext(ctx context.Context) GetMysqlVersionVersionVersionOutput {
 	return o
+}
+
+func (o GetMysqlVersionVersionVersionOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlVersionVersionVersion] {
+	return pulumix.Output[GetMysqlVersionVersionVersion]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A link to a page describing the version.
@@ -17481,6 +19804,12 @@ func (o GetMysqlVersionVersionVersionArrayOutput) ToGetMysqlVersionVersionVersio
 
 func (o GetMysqlVersionVersionVersionArrayOutput) ToGetMysqlVersionVersionVersionArrayOutputWithContext(ctx context.Context) GetMysqlVersionVersionVersionArrayOutput {
 	return o
+}
+
+func (o GetMysqlVersionVersionVersionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMysqlVersionVersionVersion] {
+	return pulumix.Output[[]GetMysqlVersionVersionVersion]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetMysqlVersionVersionVersionArrayOutput) Index(i pulumi.IntInput) GetMysqlVersionVersionVersionOutput {
@@ -17524,6 +19853,12 @@ func (i GetReplicasFilterArgs) ToGetReplicasFilterOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetReplicasFilterOutput)
 }
 
+func (i GetReplicasFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetReplicasFilter] {
+	return pulumix.Output[GetReplicasFilter]{
+		OutputState: i.ToGetReplicasFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetReplicasFilterArrayInput is an input type that accepts GetReplicasFilterArray and GetReplicasFilterArrayOutput values.
 // You can construct a concrete instance of `GetReplicasFilterArrayInput` via:
 //
@@ -17549,6 +19884,12 @@ func (i GetReplicasFilterArray) ToGetReplicasFilterArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetReplicasFilterArrayOutput)
 }
 
+func (i GetReplicasFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetReplicasFilter] {
+	return pulumix.Output[[]GetReplicasFilter]{
+		OutputState: i.ToGetReplicasFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetReplicasFilterOutput struct{ *pulumi.OutputState }
 
 func (GetReplicasFilterOutput) ElementType() reflect.Type {
@@ -17561,6 +19902,12 @@ func (o GetReplicasFilterOutput) ToGetReplicasFilterOutput() GetReplicasFilterOu
 
 func (o GetReplicasFilterOutput) ToGetReplicasFilterOutputWithContext(ctx context.Context) GetReplicasFilterOutput {
 	return o
+}
+
+func (o GetReplicasFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetReplicasFilter] {
+	return pulumix.Output[GetReplicasFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetReplicasFilterOutput) Name() pulumi.StringOutput {
@@ -17587,6 +19934,12 @@ func (o GetReplicasFilterArrayOutput) ToGetReplicasFilterArrayOutput() GetReplic
 
 func (o GetReplicasFilterArrayOutput) ToGetReplicasFilterArrayOutputWithContext(ctx context.Context) GetReplicasFilterArrayOutput {
 	return o
+}
+
+func (o GetReplicasFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetReplicasFilter] {
+	return pulumix.Output[[]GetReplicasFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetReplicasFilterArrayOutput) Index(i pulumi.IntInput) GetReplicasFilterOutput {
@@ -17696,6 +20049,12 @@ func (i GetReplicasReplicaArgs) ToGetReplicasReplicaOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetReplicasReplicaOutput)
 }
 
+func (i GetReplicasReplicaArgs) ToOutput(ctx context.Context) pulumix.Output[GetReplicasReplica] {
+	return pulumix.Output[GetReplicasReplica]{
+		OutputState: i.ToGetReplicasReplicaOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetReplicasReplicaArrayInput is an input type that accepts GetReplicasReplicaArray and GetReplicasReplicaArrayOutput values.
 // You can construct a concrete instance of `GetReplicasReplicaArrayInput` via:
 //
@@ -17721,6 +20080,12 @@ func (i GetReplicasReplicaArray) ToGetReplicasReplicaArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetReplicasReplicaArrayOutput)
 }
 
+func (i GetReplicasReplicaArray) ToOutput(ctx context.Context) pulumix.Output[[]GetReplicasReplica] {
+	return pulumix.Output[[]GetReplicasReplica]{
+		OutputState: i.ToGetReplicasReplicaArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetReplicasReplicaOutput struct{ *pulumi.OutputState }
 
 func (GetReplicasReplicaOutput) ElementType() reflect.Type {
@@ -17733,6 +20098,12 @@ func (o GetReplicasReplicaOutput) ToGetReplicasReplicaOutput() GetReplicasReplic
 
 func (o GetReplicasReplicaOutput) ToGetReplicasReplicaOutputWithContext(ctx context.Context) GetReplicasReplicaOutput {
 	return o
+}
+
+func (o GetReplicasReplicaOutput) ToOutput(ctx context.Context) pulumix.Output[GetReplicasReplica] {
+	return pulumix.Output[GetReplicasReplica]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the Availability Domain the read replica is located in.
@@ -17839,6 +20210,12 @@ func (o GetReplicasReplicaArrayOutput) ToGetReplicasReplicaArrayOutputWithContex
 	return o
 }
 
+func (o GetReplicasReplicaArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetReplicasReplica] {
+	return pulumix.Output[[]GetReplicasReplica]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetReplicasReplicaArrayOutput) Index(i pulumi.IntInput) GetReplicasReplicaOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReplicasReplica {
 		return vs[0].([]GetReplicasReplica)[vs[1].(int)]
@@ -17882,6 +20259,12 @@ func (i GetShapesFilterArgs) ToGetShapesFilterOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapesFilterOutput)
 }
 
+func (i GetShapesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetShapesFilter] {
+	return pulumix.Output[GetShapesFilter]{
+		OutputState: i.ToGetShapesFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetShapesFilterArrayInput is an input type that accepts GetShapesFilterArray and GetShapesFilterArrayOutput values.
 // You can construct a concrete instance of `GetShapesFilterArrayInput` via:
 //
@@ -17907,6 +20290,12 @@ func (i GetShapesFilterArray) ToGetShapesFilterArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapesFilterArrayOutput)
 }
 
+func (i GetShapesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetShapesFilter] {
+	return pulumix.Output[[]GetShapesFilter]{
+		OutputState: i.ToGetShapesFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetShapesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetShapesFilterOutput) ElementType() reflect.Type {
@@ -17919,6 +20308,12 @@ func (o GetShapesFilterOutput) ToGetShapesFilterOutput() GetShapesFilterOutput {
 
 func (o GetShapesFilterOutput) ToGetShapesFilterOutputWithContext(ctx context.Context) GetShapesFilterOutput {
 	return o
+}
+
+func (o GetShapesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetShapesFilter] {
+	return pulumix.Output[GetShapesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Name
@@ -17946,6 +20341,12 @@ func (o GetShapesFilterArrayOutput) ToGetShapesFilterArrayOutput() GetShapesFilt
 
 func (o GetShapesFilterArrayOutput) ToGetShapesFilterArrayOutputWithContext(ctx context.Context) GetShapesFilterArrayOutput {
 	return o
+}
+
+func (o GetShapesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetShapesFilter] {
+	return pulumix.Output[[]GetShapesFilter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapesFilterArrayOutput) Index(i pulumi.IntInput) GetShapesFilterOutput {
@@ -17999,6 +20400,12 @@ func (i GetShapesShapeArgs) ToGetShapesShapeOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapeOutput)
 }
 
+func (i GetShapesShapeArgs) ToOutput(ctx context.Context) pulumix.Output[GetShapesShape] {
+	return pulumix.Output[GetShapesShape]{
+		OutputState: i.ToGetShapesShapeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GetShapesShapeArrayInput is an input type that accepts GetShapesShapeArray and GetShapesShapeArrayOutput values.
 // You can construct a concrete instance of `GetShapesShapeArrayInput` via:
 //
@@ -18024,6 +20431,12 @@ func (i GetShapesShapeArray) ToGetShapesShapeArrayOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapeArrayOutput)
 }
 
+func (i GetShapesShapeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetShapesShape] {
+	return pulumix.Output[[]GetShapesShape]{
+		OutputState: i.ToGetShapesShapeArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GetShapesShapeOutput struct{ *pulumi.OutputState }
 
 func (GetShapesShapeOutput) ElementType() reflect.Type {
@@ -18036,6 +20449,12 @@ func (o GetShapesShapeOutput) ToGetShapesShapeOutput() GetShapesShapeOutput {
 
 func (o GetShapesShapeOutput) ToGetShapesShapeOutputWithContext(ctx context.Context) GetShapesShapeOutput {
 	return o
+}
+
+func (o GetShapesShapeOutput) ToOutput(ctx context.Context) pulumix.Output[GetShapesShape] {
+	return pulumix.Output[GetShapesShape]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The number of CPU Cores the Instance provides. These are "OCPU"s.
@@ -18070,6 +20489,12 @@ func (o GetShapesShapeArrayOutput) ToGetShapesShapeArrayOutput() GetShapesShapeA
 
 func (o GetShapesShapeArrayOutput) ToGetShapesShapeArrayOutputWithContext(ctx context.Context) GetShapesShapeArrayOutput {
 	return o
+}
+
+func (o GetShapesShapeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetShapesShape] {
+	return pulumix.Output[[]GetShapesShape]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetShapesShapeArrayOutput) Index(i pulumi.IntInput) GetShapesShapeOutput {

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Log Analytics Entity Topology resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -114,6 +115,12 @@ func (o GetLogAnalyticsEntityTopologyResultOutput) ToGetLogAnalyticsEntityTopolo
 
 func (o GetLogAnalyticsEntityTopologyResultOutput) ToGetLogAnalyticsEntityTopologyResultOutputWithContext(ctx context.Context) GetLogAnalyticsEntityTopologyResultOutput {
 	return o
+}
+
+func (o GetLogAnalyticsEntityTopologyResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsEntityTopologyResult] {
+	return pulumix.Output[GetLogAnalyticsEntityTopologyResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The provider-assigned unique ID for this managed resource.

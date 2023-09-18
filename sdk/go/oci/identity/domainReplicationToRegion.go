@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Domain Replication To Region resource in Oracle Cloud Infrastructure Identity service.
@@ -170,6 +171,12 @@ func (i *DomainReplicationToRegion) ToDomainReplicationToRegionOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(DomainReplicationToRegionOutput)
 }
 
+func (i *DomainReplicationToRegion) ToOutput(ctx context.Context) pulumix.Output[*DomainReplicationToRegion] {
+	return pulumix.Output[*DomainReplicationToRegion]{
+		OutputState: i.ToDomainReplicationToRegionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // DomainReplicationToRegionArrayInput is an input type that accepts DomainReplicationToRegionArray and DomainReplicationToRegionArrayOutput values.
 // You can construct a concrete instance of `DomainReplicationToRegionArrayInput` via:
 //
@@ -193,6 +200,12 @@ func (i DomainReplicationToRegionArray) ToDomainReplicationToRegionArrayOutput()
 
 func (i DomainReplicationToRegionArray) ToDomainReplicationToRegionArrayOutputWithContext(ctx context.Context) DomainReplicationToRegionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainReplicationToRegionArrayOutput)
+}
+
+func (i DomainReplicationToRegionArray) ToOutput(ctx context.Context) pulumix.Output[[]*DomainReplicationToRegion] {
+	return pulumix.Output[[]*DomainReplicationToRegion]{
+		OutputState: i.ToDomainReplicationToRegionArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // DomainReplicationToRegionMapInput is an input type that accepts DomainReplicationToRegionMap and DomainReplicationToRegionMapOutput values.
@@ -220,6 +233,12 @@ func (i DomainReplicationToRegionMap) ToDomainReplicationToRegionMapOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(DomainReplicationToRegionMapOutput)
 }
 
+func (i DomainReplicationToRegionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainReplicationToRegion] {
+	return pulumix.Output[map[string]*DomainReplicationToRegion]{
+		OutputState: i.ToDomainReplicationToRegionMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type DomainReplicationToRegionOutput struct{ *pulumi.OutputState }
 
 func (DomainReplicationToRegionOutput) ElementType() reflect.Type {
@@ -232,6 +251,12 @@ func (o DomainReplicationToRegionOutput) ToDomainReplicationToRegionOutput() Dom
 
 func (o DomainReplicationToRegionOutput) ToDomainReplicationToRegionOutputWithContext(ctx context.Context) DomainReplicationToRegionOutput {
 	return o
+}
+
+func (o DomainReplicationToRegionOutput) ToOutput(ctx context.Context) pulumix.Output[*DomainReplicationToRegion] {
+	return pulumix.Output[*DomainReplicationToRegion]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the domain
@@ -261,6 +286,12 @@ func (o DomainReplicationToRegionArrayOutput) ToDomainReplicationToRegionArrayOu
 	return o
 }
 
+func (o DomainReplicationToRegionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DomainReplicationToRegion] {
+	return pulumix.Output[[]*DomainReplicationToRegion]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o DomainReplicationToRegionArrayOutput) Index(i pulumi.IntInput) DomainReplicationToRegionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DomainReplicationToRegion {
 		return vs[0].([]*DomainReplicationToRegion)[vs[1].(int)]
@@ -279,6 +310,12 @@ func (o DomainReplicationToRegionMapOutput) ToDomainReplicationToRegionMapOutput
 
 func (o DomainReplicationToRegionMapOutput) ToDomainReplicationToRegionMapOutputWithContext(ctx context.Context) DomainReplicationToRegionMapOutput {
 	return o
+}
+
+func (o DomainReplicationToRegionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainReplicationToRegion] {
+	return pulumix.Output[map[string]*DomainReplicationToRegion]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o DomainReplicationToRegionMapOutput) MapIndex(k pulumi.StringInput) DomainReplicationToRegionOutput {

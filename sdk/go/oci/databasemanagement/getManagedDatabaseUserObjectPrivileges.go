@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Managed Database User Object Privileges in Oracle Cloud Infrastructure Database Management service.
@@ -117,6 +118,12 @@ func (o GetManagedDatabaseUserObjectPrivilegesResultOutput) ToGetManagedDatabase
 
 func (o GetManagedDatabaseUserObjectPrivilegesResultOutput) ToGetManagedDatabaseUserObjectPrivilegesResultOutputWithContext(ctx context.Context) GetManagedDatabaseUserObjectPrivilegesResultOutput {
 	return o
+}
+
+func (o GetManagedDatabaseUserObjectPrivilegesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseUserObjectPrivilegesResult] {
+	return pulumix.Output[GetManagedDatabaseUserObjectPrivilegesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetManagedDatabaseUserObjectPrivilegesResultOutput) Filters() GetManagedDatabaseUserObjectPrivilegesFilterArrayOutput {

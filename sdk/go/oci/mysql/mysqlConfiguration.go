@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Mysql Configuration resource in Oracle Cloud Infrastructure MySQL Database service.
@@ -339,6 +340,12 @@ func (i *MysqlConfiguration) ToMysqlConfigurationOutputWithContext(ctx context.C
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlConfigurationOutput)
 }
 
+func (i *MysqlConfiguration) ToOutput(ctx context.Context) pulumix.Output[*MysqlConfiguration] {
+	return pulumix.Output[*MysqlConfiguration]{
+		OutputState: i.ToMysqlConfigurationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MysqlConfigurationArrayInput is an input type that accepts MysqlConfigurationArray and MysqlConfigurationArrayOutput values.
 // You can construct a concrete instance of `MysqlConfigurationArrayInput` via:
 //
@@ -362,6 +369,12 @@ func (i MysqlConfigurationArray) ToMysqlConfigurationArrayOutput() MysqlConfigur
 
 func (i MysqlConfigurationArray) ToMysqlConfigurationArrayOutputWithContext(ctx context.Context) MysqlConfigurationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlConfigurationArrayOutput)
+}
+
+func (i MysqlConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]*MysqlConfiguration] {
+	return pulumix.Output[[]*MysqlConfiguration]{
+		OutputState: i.ToMysqlConfigurationArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // MysqlConfigurationMapInput is an input type that accepts MysqlConfigurationMap and MysqlConfigurationMapOutput values.
@@ -389,6 +402,12 @@ func (i MysqlConfigurationMap) ToMysqlConfigurationMapOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlConfigurationMapOutput)
 }
 
+func (i MysqlConfigurationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*MysqlConfiguration] {
+	return pulumix.Output[map[string]*MysqlConfiguration]{
+		OutputState: i.ToMysqlConfigurationMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MysqlConfigurationOutput struct{ *pulumi.OutputState }
 
 func (MysqlConfigurationOutput) ElementType() reflect.Type {
@@ -401,6 +420,12 @@ func (o MysqlConfigurationOutput) ToMysqlConfigurationOutput() MysqlConfiguratio
 
 func (o MysqlConfigurationOutput) ToMysqlConfigurationOutputWithContext(ctx context.Context) MysqlConfigurationOutput {
 	return o
+}
+
+func (o MysqlConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[*MysqlConfiguration] {
+	return pulumix.Output[*MysqlConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The OCID of the compartment.
@@ -482,6 +507,12 @@ func (o MysqlConfigurationArrayOutput) ToMysqlConfigurationArrayOutputWithContex
 	return o
 }
 
+func (o MysqlConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*MysqlConfiguration] {
+	return pulumix.Output[[]*MysqlConfiguration]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o MysqlConfigurationArrayOutput) Index(i pulumi.IntInput) MysqlConfigurationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *MysqlConfiguration {
 		return vs[0].([]*MysqlConfiguration)[vs[1].(int)]
@@ -500,6 +531,12 @@ func (o MysqlConfigurationMapOutput) ToMysqlConfigurationMapOutput() MysqlConfig
 
 func (o MysqlConfigurationMapOutput) ToMysqlConfigurationMapOutputWithContext(ctx context.Context) MysqlConfigurationMapOutput {
 	return o
+}
+
+func (o MysqlConfigurationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*MysqlConfiguration] {
+	return pulumix.Output[map[string]*MysqlConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MysqlConfigurationMapOutput) MapIndex(k pulumi.StringInput) MysqlConfigurationOutput {

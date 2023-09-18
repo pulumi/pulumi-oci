@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Vm Cluster Recommended Network resource in Oracle Cloud Infrastructure Database service.
@@ -142,6 +143,12 @@ func (o GetVmClusterRecommendedNetworkResultOutput) ToGetVmClusterRecommendedNet
 
 func (o GetVmClusterRecommendedNetworkResultOutput) ToGetVmClusterRecommendedNetworkResultOutputWithContext(ctx context.Context) GetVmClusterRecommendedNetworkResultOutput {
 	return o
+}
+
+func (o GetVmClusterRecommendedNetworkResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterRecommendedNetworkResult] {
+	return pulumix.Output[GetVmClusterRecommendedNetworkResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

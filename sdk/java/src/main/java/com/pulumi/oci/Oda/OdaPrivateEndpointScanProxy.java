@@ -76,7 +76,7 @@ public class OdaPrivateEndpointScanProxy extends com.pulumi.resources.CustomReso
      * Unique ODA Private Endpoint identifier which is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    @Export(name="odaPrivateEndpointId", type=String.class, parameters={})
+    @Export(name="odaPrivateEndpointId", refs={String.class}, tree="[0]")
     private Output<String> odaPrivateEndpointId;
 
     /**
@@ -90,7 +90,7 @@ public class OdaPrivateEndpointScanProxy extends com.pulumi.resources.CustomReso
      * The protocol used for communication between client, scanProxy and RAC&#39;s scan listeners
      * 
      */
-    @Export(name="protocol", type=String.class, parameters={})
+    @Export(name="protocol", refs={String.class}, tree="[0]")
     private Output<String> protocol;
 
     /**
@@ -104,7 +104,7 @@ public class OdaPrivateEndpointScanProxy extends com.pulumi.resources.CustomReso
      * The FQDN/IPs and port information of customer&#39;s Real Application Cluster (RAC)&#39;s SCAN listeners.
      * 
      */
-    @Export(name="scanListenerInfos", type=List.class, parameters={OdaPrivateEndpointScanProxyScanListenerInfo.class})
+    @Export(name="scanListenerInfos", refs={List.class,OdaPrivateEndpointScanProxyScanListenerInfo.class}, tree="[0,1]")
     private Output<List<OdaPrivateEndpointScanProxyScanListenerInfo>> scanListenerInfos;
 
     /**
@@ -121,7 +121,7 @@ public class OdaPrivateEndpointScanProxy extends com.pulumi.resources.CustomReso
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="scanListenerType", type=String.class, parameters={})
+    @Export(name="scanListenerType", refs={String.class}, tree="[0]")
     private Output<String> scanListenerType;
 
     /**
@@ -138,7 +138,7 @@ public class OdaPrivateEndpointScanProxy extends com.pulumi.resources.CustomReso
      * The current state of the ODA Private Endpoint Scan Proxy.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -152,7 +152,7 @@ public class OdaPrivateEndpointScanProxy extends com.pulumi.resources.CustomReso
      * When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**

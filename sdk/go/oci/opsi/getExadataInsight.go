@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Exadata Insight resource in Oracle Cloud Infrastructure Opsi service.
@@ -149,6 +150,12 @@ func (o LookupExadataInsightResultOutput) ToLookupExadataInsightResultOutput() L
 
 func (o LookupExadataInsightResultOutput) ToLookupExadataInsightResultOutputWithContext(ctx context.Context) LookupExadataInsightResultOutput {
 	return o
+}
+
+func (o LookupExadataInsightResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupExadataInsightResult] {
+	return pulumix.Output[LookupExadataInsightResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Compartment identifier of the Exadata insight resource

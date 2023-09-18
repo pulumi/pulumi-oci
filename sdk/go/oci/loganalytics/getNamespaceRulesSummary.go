@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Namespace Rules Summary resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -111,6 +112,12 @@ func (o GetNamespaceRulesSummaryResultOutput) ToGetNamespaceRulesSummaryResultOu
 
 func (o GetNamespaceRulesSummaryResultOutput) ToGetNamespaceRulesSummaryResultOutputWithContext(ctx context.Context) GetNamespaceRulesSummaryResultOutput {
 	return o
+}
+
+func (o GetNamespaceRulesSummaryResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceRulesSummaryResult] {
+	return pulumix.Output[GetNamespaceRulesSummaryResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetNamespaceRulesSummaryResultOutput) CompartmentId() pulumi.StringOutput {

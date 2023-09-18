@@ -75,7 +75,7 @@ public class ManagedInstanceGroup extends com.pulumi.resources.CustomResource {
      * (Updatable) OCID for the Compartment
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -89,7 +89,7 @@ public class ManagedInstanceGroup extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -103,7 +103,7 @@ public class ManagedInstanceGroup extends com.pulumi.resources.CustomResource {
      * (Updatable) Information specified by the user about the managed instance group
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -117,7 +117,7 @@ public class ManagedInstanceGroup extends com.pulumi.resources.CustomResource {
      * (Updatable) Managed Instance Group identifier
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -131,7 +131,7 @@ public class ManagedInstanceGroup extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -141,7 +141,7 @@ public class ManagedInstanceGroup extends com.pulumi.resources.CustomResource {
     public Output<Map<String,Object>> freeformTags() {
         return this.freeformTags;
     }
-    @Export(name="managedInstanceCount", type=Integer.class, parameters={})
+    @Export(name="managedInstanceCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> managedInstanceCount;
 
     public Output<Integer> managedInstanceCount() {
@@ -151,7 +151,7 @@ public class ManagedInstanceGroup extends com.pulumi.resources.CustomResource {
      * list of Managed Instances in the group
      * 
      */
-    @Export(name="managedInstances", type=List.class, parameters={ManagedInstanceGroupManagedInstance.class})
+    @Export(name="managedInstances", refs={List.class,ManagedInstanceGroupManagedInstance.class}, tree="[0,1]")
     private Output<List<ManagedInstanceGroupManagedInstance>> managedInstances;
 
     /**
@@ -168,7 +168,7 @@ public class ManagedInstanceGroup extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="osFamily", type=String.class, parameters={})
+    @Export(name="osFamily", refs={String.class}, tree="[0]")
     private Output<String> osFamily;
 
     /**
@@ -185,7 +185,7 @@ public class ManagedInstanceGroup extends com.pulumi.resources.CustomResource {
      * The current state of the Software Source.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**

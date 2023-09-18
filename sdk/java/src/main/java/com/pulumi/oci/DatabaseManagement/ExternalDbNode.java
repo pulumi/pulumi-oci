@@ -36,7 +36,7 @@ public class ExternalDbNode extends com.pulumi.resources.CustomResource {
      * The additional details of the external DB node defined in `{&#34;key&#34;: &#34;value&#34;}` format. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="additionalDetails", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="additionalDetails", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> additionalDetails;
 
     /**
@@ -50,7 +50,7 @@ public class ExternalDbNode extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -64,7 +64,7 @@ public class ExternalDbNode extends com.pulumi.resources.CustomResource {
      * The name of the external DB node.
      * 
      */
-    @Export(name="componentName", type=String.class, parameters={})
+    @Export(name="componentName", refs={String.class}, tree="[0]")
     private Output<String> componentName;
 
     /**
@@ -78,7 +78,7 @@ public class ExternalDbNode extends com.pulumi.resources.CustomResource {
      * The number of CPU cores available on the DB node.
      * 
      */
-    @Export(name="cpuCoreCount", type=Double.class, parameters={})
+    @Export(name="cpuCoreCount", refs={Double.class}, tree="[0]")
     private Output<Double> cpuCoreCount;
 
     /**
@@ -92,7 +92,7 @@ public class ExternalDbNode extends com.pulumi.resources.CustomResource {
      * The user-friendly name for the external DB node. The name does not have to be unique.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -106,7 +106,7 @@ public class ExternalDbNode extends com.pulumi.resources.CustomResource {
      * Name of the domain.
      * 
      */
-    @Export(name="domainName", type=String.class, parameters={})
+    @Export(name="domainName", refs={String.class}, tree="[0]")
     private Output<String> domainName;
 
     /**
@@ -120,7 +120,7 @@ public class ExternalDbNode extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
      * 
      */
-    @Export(name="externalConnectorId", type=String.class, parameters={})
+    @Export(name="externalConnectorId", refs={String.class}, tree="[0]")
     private Output<String> externalConnectorId;
 
     /**
@@ -137,7 +137,7 @@ public class ExternalDbNode extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="externalDbNodeId", type=String.class, parameters={})
+    @Export(name="externalDbNodeId", refs={String.class}, tree="[0]")
     private Output<String> externalDbNodeId;
 
     /**
@@ -154,7 +154,7 @@ public class ExternalDbNode extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the DB node is a part of.
      * 
      */
-    @Export(name="externalDbSystemId", type=String.class, parameters={})
+    @Export(name="externalDbSystemId", refs={String.class}, tree="[0]")
     private Output<String> externalDbSystemId;
 
     /**
@@ -168,7 +168,7 @@ public class ExternalDbNode extends com.pulumi.resources.CustomResource {
      * The host name for the DB node.
      * 
      */
-    @Export(name="hostName", type=String.class, parameters={})
+    @Export(name="hostName", refs={String.class}, tree="[0]")
     private Output<String> hostName;
 
     /**
@@ -182,7 +182,7 @@ public class ExternalDbNode extends com.pulumi.resources.CustomResource {
      * Additional information about the current lifecycle state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -196,7 +196,7 @@ public class ExternalDbNode extends com.pulumi.resources.CustomResource {
      * The total memory in gigabytes (GB) on the DB node.
      * 
      */
-    @Export(name="memorySizeInGbs", type=Double.class, parameters={})
+    @Export(name="memorySizeInGbs", refs={Double.class}, tree="[0]")
     private Output<Double> memorySizeInGbs;
 
     /**
@@ -210,7 +210,7 @@ public class ExternalDbNode extends com.pulumi.resources.CustomResource {
      * The current lifecycle state of the external DB node.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -224,7 +224,7 @@ public class ExternalDbNode extends com.pulumi.resources.CustomResource {
      * The date and time the external DB node was created.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -238,7 +238,7 @@ public class ExternalDbNode extends com.pulumi.resources.CustomResource {
      * The date and time the external DB node was last updated.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

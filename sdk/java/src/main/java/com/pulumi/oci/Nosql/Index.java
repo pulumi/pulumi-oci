@@ -74,7 +74,7 @@ public class Index extends com.pulumi.resources.CustomResource {
      * The OCID of the table&#39;s compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table&#39;s compartmentId.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -88,7 +88,7 @@ public class Index extends com.pulumi.resources.CustomResource {
      * If true, the operation completes successfully even when the index exists.  Otherwise, an attempt to create an index that already exists will return an error.
      * 
      */
-    @Export(name="isIfNotExists", type=Boolean.class, parameters={})
+    @Export(name="isIfNotExists", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isIfNotExists;
 
     /**
@@ -102,7 +102,7 @@ public class Index extends com.pulumi.resources.CustomResource {
      * A set of keys for a secondary index.
      * 
      */
-    @Export(name="keys", type=List.class, parameters={IndexKey.class})
+    @Export(name="keys", refs={List.class,IndexKey.class}, tree="[0,1]")
     private Output<List<IndexKey>> keys;
 
     /**
@@ -116,7 +116,7 @@ public class Index extends com.pulumi.resources.CustomResource {
      * A message describing the current state in more detail.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -130,7 +130,7 @@ public class Index extends com.pulumi.resources.CustomResource {
      * Index name.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -144,7 +144,7 @@ public class Index extends com.pulumi.resources.CustomResource {
      * The state of an index.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -158,7 +158,7 @@ public class Index extends com.pulumi.resources.CustomResource {
      * the OCID of the table to which this index belongs.
      * 
      */
-    @Export(name="tableId", type=String.class, parameters={})
+    @Export(name="tableId", refs={String.class}, tree="[0]")
     private Output<String> tableId;
 
     /**
@@ -172,7 +172,7 @@ public class Index extends com.pulumi.resources.CustomResource {
      * The name of the table to which this index belongs.
      * 
      */
-    @Export(name="tableName", type=String.class, parameters={})
+    @Export(name="tableName", refs={String.class}, tree="[0]")
     private Output<String> tableName;
 
     /**
@@ -189,7 +189,7 @@ public class Index extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="tableNameOrId", type=String.class, parameters={})
+    @Export(name="tableNameOrId", refs={String.class}, tree="[0]")
     private Output<String> tableNameOrId;
 
     /**

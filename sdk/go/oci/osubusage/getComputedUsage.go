@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Computed Usage resource in Oracle Cloud Infrastructure Osub Usage service.
@@ -165,6 +166,12 @@ func (o GetComputedUsageResultOutput) ToGetComputedUsageResultOutput() GetComput
 
 func (o GetComputedUsageResultOutput) ToGetComputedUsageResultOutputWithContext(ctx context.Context) GetComputedUsageResultOutput {
 	return o
+}
+
+func (o GetComputedUsageResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetComputedUsageResult] {
+	return pulumix.Output[GetComputedUsageResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Subscribed service commitmentId.

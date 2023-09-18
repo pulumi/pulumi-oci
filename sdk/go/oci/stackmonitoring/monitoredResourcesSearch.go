@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Monitored Resources Search resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -374,6 +375,12 @@ func (i *MonitoredResourcesSearch) ToMonitoredResourcesSearchOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcesSearchOutput)
 }
 
+func (i *MonitoredResourcesSearch) ToOutput(ctx context.Context) pulumix.Output[*MonitoredResourcesSearch] {
+	return pulumix.Output[*MonitoredResourcesSearch]{
+		OutputState: i.ToMonitoredResourcesSearchOutputWithContext(ctx).OutputState,
+	}
+}
+
 // MonitoredResourcesSearchArrayInput is an input type that accepts MonitoredResourcesSearchArray and MonitoredResourcesSearchArrayOutput values.
 // You can construct a concrete instance of `MonitoredResourcesSearchArrayInput` via:
 //
@@ -397,6 +404,12 @@ func (i MonitoredResourcesSearchArray) ToMonitoredResourcesSearchArrayOutput() M
 
 func (i MonitoredResourcesSearchArray) ToMonitoredResourcesSearchArrayOutputWithContext(ctx context.Context) MonitoredResourcesSearchArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcesSearchArrayOutput)
+}
+
+func (i MonitoredResourcesSearchArray) ToOutput(ctx context.Context) pulumix.Output[[]*MonitoredResourcesSearch] {
+	return pulumix.Output[[]*MonitoredResourcesSearch]{
+		OutputState: i.ToMonitoredResourcesSearchArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // MonitoredResourcesSearchMapInput is an input type that accepts MonitoredResourcesSearchMap and MonitoredResourcesSearchMapOutput values.
@@ -424,6 +437,12 @@ func (i MonitoredResourcesSearchMap) ToMonitoredResourcesSearchMapOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcesSearchMapOutput)
 }
 
+func (i MonitoredResourcesSearchMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*MonitoredResourcesSearch] {
+	return pulumix.Output[map[string]*MonitoredResourcesSearch]{
+		OutputState: i.ToMonitoredResourcesSearchMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type MonitoredResourcesSearchOutput struct{ *pulumi.OutputState }
 
 func (MonitoredResourcesSearchOutput) ElementType() reflect.Type {
@@ -436,6 +455,12 @@ func (o MonitoredResourcesSearchOutput) ToMonitoredResourcesSearchOutput() Monit
 
 func (o MonitoredResourcesSearchOutput) ToMonitoredResourcesSearchOutputWithContext(ctx context.Context) MonitoredResourcesSearchOutput {
 	return o
+}
+
+func (o MonitoredResourcesSearchOutput) ToOutput(ctx context.Context) pulumix.Output[*MonitoredResourcesSearch] {
+	return pulumix.Output[*MonitoredResourcesSearch]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -553,6 +578,12 @@ func (o MonitoredResourcesSearchArrayOutput) ToMonitoredResourcesSearchArrayOutp
 	return o
 }
 
+func (o MonitoredResourcesSearchArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*MonitoredResourcesSearch] {
+	return pulumix.Output[[]*MonitoredResourcesSearch]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o MonitoredResourcesSearchArrayOutput) Index(i pulumi.IntInput) MonitoredResourcesSearchOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *MonitoredResourcesSearch {
 		return vs[0].([]*MonitoredResourcesSearch)[vs[1].(int)]
@@ -571,6 +602,12 @@ func (o MonitoredResourcesSearchMapOutput) ToMonitoredResourcesSearchMapOutput()
 
 func (o MonitoredResourcesSearchMapOutput) ToMonitoredResourcesSearchMapOutputWithContext(ctx context.Context) MonitoredResourcesSearchMapOutput {
 	return o
+}
+
+func (o MonitoredResourcesSearchMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*MonitoredResourcesSearch] {
+	return pulumix.Output[map[string]*MonitoredResourcesSearch]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o MonitoredResourcesSearchMapOutput) MapIndex(k pulumi.StringInput) MonitoredResourcesSearchOutput {

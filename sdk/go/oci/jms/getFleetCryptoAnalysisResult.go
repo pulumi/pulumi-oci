@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Fleet Crypto Analysis Result resource in Oracle Cloud Infrastructure Jms service.
@@ -136,6 +137,12 @@ func (o GetFleetCryptoAnalysisResultResultOutput) ToGetFleetCryptoAnalysisResult
 
 func (o GetFleetCryptoAnalysisResultResultOutput) ToGetFleetCryptoAnalysisResultResultOutputWithContext(ctx context.Context) GetFleetCryptoAnalysisResultResultOutput {
 	return o
+}
+
+func (o GetFleetCryptoAnalysisResultResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetCryptoAnalysisResultResult] {
+	return pulumix.Output[GetFleetCryptoAnalysisResultResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The result aggregation mode

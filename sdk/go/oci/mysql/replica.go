@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Replica resource in Oracle Cloud Infrastructure MySQL Database service.
@@ -278,6 +279,12 @@ func (i *Replica) ToReplicaOutputWithContext(ctx context.Context) ReplicaOutput 
 	return pulumi.ToOutputWithContext(ctx, i).(ReplicaOutput)
 }
 
+func (i *Replica) ToOutput(ctx context.Context) pulumix.Output[*Replica] {
+	return pulumix.Output[*Replica]{
+		OutputState: i.ToReplicaOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ReplicaArrayInput is an input type that accepts ReplicaArray and ReplicaArrayOutput values.
 // You can construct a concrete instance of `ReplicaArrayInput` via:
 //
@@ -301,6 +308,12 @@ func (i ReplicaArray) ToReplicaArrayOutput() ReplicaArrayOutput {
 
 func (i ReplicaArray) ToReplicaArrayOutputWithContext(ctx context.Context) ReplicaArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ReplicaArrayOutput)
+}
+
+func (i ReplicaArray) ToOutput(ctx context.Context) pulumix.Output[[]*Replica] {
+	return pulumix.Output[[]*Replica]{
+		OutputState: i.ToReplicaArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // ReplicaMapInput is an input type that accepts ReplicaMap and ReplicaMapOutput values.
@@ -328,6 +341,12 @@ func (i ReplicaMap) ToReplicaMapOutputWithContext(ctx context.Context) ReplicaMa
 	return pulumi.ToOutputWithContext(ctx, i).(ReplicaMapOutput)
 }
 
+func (i ReplicaMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Replica] {
+	return pulumix.Output[map[string]*Replica]{
+		OutputState: i.ToReplicaMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ReplicaOutput struct{ *pulumi.OutputState }
 
 func (ReplicaOutput) ElementType() reflect.Type {
@@ -340,6 +359,12 @@ func (o ReplicaOutput) ToReplicaOutput() ReplicaOutput {
 
 func (o ReplicaOutput) ToReplicaOutputWithContext(ctx context.Context) ReplicaOutput {
 	return o
+}
+
+func (o ReplicaOutput) ToOutput(ctx context.Context) pulumix.Output[*Replica] {
+	return pulumix.Output[*Replica]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the Availability Domain the read replica is located in.
@@ -444,6 +469,12 @@ func (o ReplicaArrayOutput) ToReplicaArrayOutputWithContext(ctx context.Context)
 	return o
 }
 
+func (o ReplicaArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Replica] {
+	return pulumix.Output[[]*Replica]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o ReplicaArrayOutput) Index(i pulumi.IntInput) ReplicaOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Replica {
 		return vs[0].([]*Replica)[vs[1].(int)]
@@ -462,6 +493,12 @@ func (o ReplicaMapOutput) ToReplicaMapOutput() ReplicaMapOutput {
 
 func (o ReplicaMapOutput) ToReplicaMapOutputWithContext(ctx context.Context) ReplicaMapOutput {
 	return o
+}
+
+func (o ReplicaMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Replica] {
+	return pulumix.Output[map[string]*Replica]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ReplicaMapOutput) MapIndex(k pulumi.StringInput) ReplicaOutput {

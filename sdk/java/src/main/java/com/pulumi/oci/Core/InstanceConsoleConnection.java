@@ -72,7 +72,7 @@ public class InstanceConsoleConnection extends com.pulumi.resources.CustomResour
      * The OCID of the compartment to contain the console connection.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -86,7 +86,7 @@ public class InstanceConsoleConnection extends com.pulumi.resources.CustomResour
      * The SSH connection string for the console connection.
      * 
      */
-    @Export(name="connectionString", type=String.class, parameters={})
+    @Export(name="connectionString", refs={String.class}, tree="[0]")
     private Output<String> connectionString;
 
     /**
@@ -100,7 +100,7 @@ public class InstanceConsoleConnection extends com.pulumi.resources.CustomResour
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -114,7 +114,7 @@ public class InstanceConsoleConnection extends com.pulumi.resources.CustomResour
      * The SSH public key&#39;s fingerprint for client authentication to the console connection.
      * 
      */
-    @Export(name="fingerprint", type=String.class, parameters={})
+    @Export(name="fingerprint", refs={String.class}, tree="[0]")
     private Output<String> fingerprint;
 
     /**
@@ -128,7 +128,7 @@ public class InstanceConsoleConnection extends com.pulumi.resources.CustomResour
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -142,7 +142,7 @@ public class InstanceConsoleConnection extends com.pulumi.resources.CustomResour
      * The OCID of the instance to create the console connection to.
      * 
      */
-    @Export(name="instanceId", type=String.class, parameters={})
+    @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
@@ -159,7 +159,7 @@ public class InstanceConsoleConnection extends com.pulumi.resources.CustomResour
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="publicKey", type=String.class, parameters={})
+    @Export(name="publicKey", refs={String.class}, tree="[0]")
     private Output<String> publicKey;
 
     /**
@@ -176,7 +176,7 @@ public class InstanceConsoleConnection extends com.pulumi.resources.CustomResour
      * The SSH public key&#39;s fingerprint for the console connection service host.
      * 
      */
-    @Export(name="serviceHostKeyFingerprint", type=String.class, parameters={})
+    @Export(name="serviceHostKeyFingerprint", refs={String.class}, tree="[0]")
     private Output<String> serviceHostKeyFingerprint;
 
     /**
@@ -190,7 +190,7 @@ public class InstanceConsoleConnection extends com.pulumi.resources.CustomResour
      * The current state of the console connection.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -204,7 +204,7 @@ public class InstanceConsoleConnection extends com.pulumi.resources.CustomResour
      * The SSH connection string for the SSH tunnel used to connect to the console connection over VNC.
      * 
      */
-    @Export(name="vncConnectionString", type=String.class, parameters={})
+    @Export(name="vncConnectionString", refs={String.class}, tree="[0]")
     private Output<String> vncConnectionString;
 
     /**

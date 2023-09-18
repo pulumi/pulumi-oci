@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Operator Control resource in Oracle Cloud Infrastructure Operator Access Control service.
@@ -291,6 +292,12 @@ func (i *OperatorControl) ToOperatorControlOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(OperatorControlOutput)
 }
 
+func (i *OperatorControl) ToOutput(ctx context.Context) pulumix.Output[*OperatorControl] {
+	return pulumix.Output[*OperatorControl]{
+		OutputState: i.ToOperatorControlOutputWithContext(ctx).OutputState,
+	}
+}
+
 // OperatorControlArrayInput is an input type that accepts OperatorControlArray and OperatorControlArrayOutput values.
 // You can construct a concrete instance of `OperatorControlArrayInput` via:
 //
@@ -314,6 +321,12 @@ func (i OperatorControlArray) ToOperatorControlArrayOutput() OperatorControlArra
 
 func (i OperatorControlArray) ToOperatorControlArrayOutputWithContext(ctx context.Context) OperatorControlArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(OperatorControlArrayOutput)
+}
+
+func (i OperatorControlArray) ToOutput(ctx context.Context) pulumix.Output[[]*OperatorControl] {
+	return pulumix.Output[[]*OperatorControl]{
+		OutputState: i.ToOperatorControlArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // OperatorControlMapInput is an input type that accepts OperatorControlMap and OperatorControlMapOutput values.
@@ -341,6 +354,12 @@ func (i OperatorControlMap) ToOperatorControlMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(OperatorControlMapOutput)
 }
 
+func (i OperatorControlMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*OperatorControl] {
+	return pulumix.Output[map[string]*OperatorControl]{
+		OutputState: i.ToOperatorControlMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type OperatorControlOutput struct{ *pulumi.OutputState }
 
 func (OperatorControlOutput) ElementType() reflect.Type {
@@ -353,6 +372,12 @@ func (o OperatorControlOutput) ToOperatorControlOutput() OperatorControlOutput {
 
 func (o OperatorControlOutput) ToOperatorControlOutputWithContext(ctx context.Context) OperatorControlOutput {
 	return o
+}
+
+func (o OperatorControlOutput) ToOutput(ctx context.Context) pulumix.Output[*OperatorControl] {
+	return pulumix.Output[*OperatorControl]{
+		OutputState: o.OutputState,
+	}
 }
 
 // List of operator actions that need explicit approval. Any operator action not in the pre-approved list will require explicit approval. Access requests associated with a resource governed by this operator control will be require explicit approval if the access request contains any operator action in this list.
@@ -467,6 +492,12 @@ func (o OperatorControlArrayOutput) ToOperatorControlArrayOutputWithContext(ctx 
 	return o
 }
 
+func (o OperatorControlArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*OperatorControl] {
+	return pulumix.Output[[]*OperatorControl]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o OperatorControlArrayOutput) Index(i pulumi.IntInput) OperatorControlOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *OperatorControl {
 		return vs[0].([]*OperatorControl)[vs[1].(int)]
@@ -485,6 +516,12 @@ func (o OperatorControlMapOutput) ToOperatorControlMapOutput() OperatorControlMa
 
 func (o OperatorControlMapOutput) ToOperatorControlMapOutputWithContext(ctx context.Context) OperatorControlMapOutput {
 	return o
+}
+
+func (o OperatorControlMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*OperatorControl] {
+	return pulumix.Output[map[string]*OperatorControl]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o OperatorControlMapOutput) MapIndex(k pulumi.StringInput) OperatorControlOutput {

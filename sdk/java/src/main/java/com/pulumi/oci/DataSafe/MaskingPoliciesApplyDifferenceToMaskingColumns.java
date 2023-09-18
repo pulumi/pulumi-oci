@@ -15,13 +15,13 @@ import javax.annotation.Nullable;
 
 @ResourceType(type="oci:DataSafe/maskingPoliciesApplyDifferenceToMaskingColumns:MaskingPoliciesApplyDifferenceToMaskingColumns")
 public class MaskingPoliciesApplyDifferenceToMaskingColumns extends com.pulumi.resources.CustomResource {
-    @Export(name="maskingPolicyId", type=String.class, parameters={})
+    @Export(name="maskingPolicyId", refs={String.class}, tree="[0]")
     private Output<String> maskingPolicyId;
 
     public Output<String> maskingPolicyId() {
         return this.maskingPolicyId;
     }
-    @Export(name="sdmMaskingPolicyDifferenceId", type=String.class, parameters={})
+    @Export(name="sdmMaskingPolicyDifferenceId", refs={String.class}, tree="[0]")
     private Output<String> sdmMaskingPolicyDifferenceId;
 
     public Output<String> sdmMaskingPolicyDifferenceId() {

@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Vb Instance resource in Oracle Cloud Infrastructure Visual Builder service.
@@ -349,6 +350,12 @@ func (i *VbInstance) ToVbInstanceOutputWithContext(ctx context.Context) VbInstan
 	return pulumi.ToOutputWithContext(ctx, i).(VbInstanceOutput)
 }
 
+func (i *VbInstance) ToOutput(ctx context.Context) pulumix.Output[*VbInstance] {
+	return pulumix.Output[*VbInstance]{
+		OutputState: i.ToVbInstanceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // VbInstanceArrayInput is an input type that accepts VbInstanceArray and VbInstanceArrayOutput values.
 // You can construct a concrete instance of `VbInstanceArrayInput` via:
 //
@@ -372,6 +379,12 @@ func (i VbInstanceArray) ToVbInstanceArrayOutput() VbInstanceArrayOutput {
 
 func (i VbInstanceArray) ToVbInstanceArrayOutputWithContext(ctx context.Context) VbInstanceArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(VbInstanceArrayOutput)
+}
+
+func (i VbInstanceArray) ToOutput(ctx context.Context) pulumix.Output[[]*VbInstance] {
+	return pulumix.Output[[]*VbInstance]{
+		OutputState: i.ToVbInstanceArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // VbInstanceMapInput is an input type that accepts VbInstanceMap and VbInstanceMapOutput values.
@@ -399,6 +412,12 @@ func (i VbInstanceMap) ToVbInstanceMapOutputWithContext(ctx context.Context) VbI
 	return pulumi.ToOutputWithContext(ctx, i).(VbInstanceMapOutput)
 }
 
+func (i VbInstanceMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*VbInstance] {
+	return pulumix.Output[map[string]*VbInstance]{
+		OutputState: i.ToVbInstanceMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type VbInstanceOutput struct{ *pulumi.OutputState }
 
 func (VbInstanceOutput) ElementType() reflect.Type {
@@ -411,6 +430,12 @@ func (o VbInstanceOutput) ToVbInstanceOutput() VbInstanceOutput {
 
 func (o VbInstanceOutput) ToVbInstanceOutputWithContext(ctx context.Context) VbInstanceOutput {
 	return o
+}
+
+func (o VbInstanceOutput) ToOutput(ctx context.Context) pulumix.Output[*VbInstance] {
+	return pulumix.Output[*VbInstance]{
+		OutputState: o.OutputState,
+	}
 }
 
 // (Updatable) A list of alternate custom endpoints to be used for the vb instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
@@ -540,6 +565,12 @@ func (o VbInstanceArrayOutput) ToVbInstanceArrayOutputWithContext(ctx context.Co
 	return o
 }
 
+func (o VbInstanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*VbInstance] {
+	return pulumix.Output[[]*VbInstance]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o VbInstanceArrayOutput) Index(i pulumi.IntInput) VbInstanceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *VbInstance {
 		return vs[0].([]*VbInstance)[vs[1].(int)]
@@ -558,6 +589,12 @@ func (o VbInstanceMapOutput) ToVbInstanceMapOutput() VbInstanceMapOutput {
 
 func (o VbInstanceMapOutput) ToVbInstanceMapOutputWithContext(ctx context.Context) VbInstanceMapOutput {
 	return o
+}
+
+func (o VbInstanceMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*VbInstance] {
+	return pulumix.Output[map[string]*VbInstance]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o VbInstanceMapOutput) MapIndex(k pulumi.StringInput) VbInstanceOutput {

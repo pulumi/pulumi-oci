@@ -7,7 +7,7 @@ env:
 jobs:
   update_bridge:
     name: update-bridge
-    runs-on: pulumi-ubuntu-8core
+    runs-on: ubuntu-latest
     steps:
     - name: Checkout Repo
       uses: actions/checkout@v3

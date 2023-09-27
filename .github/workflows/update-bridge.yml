@@ -55,7 +55,7 @@ jobs:
       uses: peter-evans/create-pull-request@v3.12.0
       with:
         author: pulumi-bot <bot@pulumi.com>
-        base: master
+        base: main
         body: This pull request was generated automatically by the update-bridge
           workflow in this repository.
         branch: pulumi-bot/bridge-v${{ github.event.inputs.bridge_version }}-${{

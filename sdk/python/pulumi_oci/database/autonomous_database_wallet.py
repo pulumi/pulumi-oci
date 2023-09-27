@@ -28,7 +28,7 @@ class AutonomousDatabaseWalletArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] generate_type: The type of wallet to generate.
                
-               **Shared Exadata infrastructure usage:**
+               **Serverless instance usage:**
         """
         pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
         pulumi.set(__self__, "password", password)
@@ -80,7 +80,7 @@ class AutonomousDatabaseWalletArgs:
         """
         The type of wallet to generate.
 
-        **Shared Exadata infrastructure usage:**
+        **Serverless instance usage:**
         """
         return pulumi.get(self, "generate_type")
 
@@ -103,7 +103,7 @@ class _AutonomousDatabaseWalletState:
         :param pulumi.Input[str] content: content of the downloaded zipped wallet for the Autonomous Database. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
         :param pulumi.Input[str] generate_type: The type of wallet to generate.
                
-               **Shared Exadata infrastructure usage:**
+               **Serverless instance usage:**
         :param pulumi.Input[str] password: The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
                
                
@@ -160,7 +160,7 @@ class _AutonomousDatabaseWalletState:
         """
         The type of wallet to generate.
 
-        **Shared Exadata infrastructure usage:**
+        **Serverless instance usage:**
         """
         return pulumi.get(self, "generate_type")
 
@@ -218,7 +218,7 @@ class AutonomousDatabaseWallet(pulumi.CustomResource):
         :param pulumi.Input[str] autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] generate_type: The type of wallet to generate.
                
-               **Shared Exadata infrastructure usage:**
+               **Serverless instance usage:**
         :param pulumi.Input[str] password: The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
                
                
@@ -314,7 +314,7 @@ class AutonomousDatabaseWallet(pulumi.CustomResource):
         :param pulumi.Input[str] content: content of the downloaded zipped wallet for the Autonomous Database. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
         :param pulumi.Input[str] generate_type: The type of wallet to generate.
                
-               **Shared Exadata infrastructure usage:**
+               **Serverless instance usage:**
         :param pulumi.Input[str] password: The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
                
                
@@ -359,7 +359,7 @@ class AutonomousDatabaseWallet(pulumi.CustomResource):
         """
         The type of wallet to generate.
 
-        **Shared Exadata infrastructure usage:**
+        **Serverless instance usage:**
         """
         return pulumi.get(self, "generate_type")
 

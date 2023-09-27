@@ -54,6 +54,7 @@ public final class GetIntegrationInstanceResult {
      * 
      */
     private String displayName;
+    private String domainId;
     private Integer enableProcessAutomationTrigger;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
@@ -182,6 +183,9 @@ public final class GetIntegrationInstanceResult {
      */
     public String displayName() {
         return this.displayName;
+    }
+    public String domainId() {
+        return this.domainId;
     }
     public Integer enableProcessAutomationTrigger() {
         return this.enableProcessAutomationTrigger;
@@ -314,6 +318,7 @@ public final class GetIntegrationInstanceResult {
         private List<GetIntegrationInstanceCustomEndpoint> customEndpoints;
         private Map<String,Object> definedTags;
         private String displayName;
+        private String domainId;
         private Integer enableProcessAutomationTrigger;
         private Map<String,Object> freeformTags;
         private String id;
@@ -342,6 +347,7 @@ public final class GetIntegrationInstanceResult {
     	      this.customEndpoints = defaults.customEndpoints;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
+    	      this.domainId = defaults.domainId;
     	      this.enableProcessAutomationTrigger = defaults.enableProcessAutomationTrigger;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
@@ -404,6 +410,11 @@ public final class GetIntegrationInstanceResult {
         @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder domainId(String domainId) {
+            this.domainId = Objects.requireNonNull(domainId);
             return this;
         }
         @CustomType.Setter
@@ -511,6 +522,7 @@ public final class GetIntegrationInstanceResult {
             o.customEndpoints = customEndpoints;
             o.definedTags = definedTags;
             o.displayName = displayName;
+            o.domainId = domainId;
             o.enableProcessAutomationTrigger = enableProcessAutomationTrigger;
             o.freeformTags = freeformTags;
             o.id = id;

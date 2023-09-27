@@ -56,7 +56,7 @@ public final class AutonomousDatabaseWalletState extends com.pulumi.resources.Re
     /**
      * The type of wallet to generate.
      * 
-     * **Shared Exadata infrastructure usage:**
+     * **Serverless instance usage:**
      * 
      */
     @Import(name="generateType")
@@ -65,7 +65,7 @@ public final class AutonomousDatabaseWalletState extends com.pulumi.resources.Re
     /**
      * @return The type of wallet to generate.
      * 
-     * **Shared Exadata infrastructure usage:**
+     * **Serverless instance usage:**
      * 
      */
     public Optional<Output<String>> generateType() {
@@ -175,7 +175,7 @@ public final class AutonomousDatabaseWalletState extends com.pulumi.resources.Re
         /**
          * @param generateType The type of wallet to generate.
          * 
-         * **Shared Exadata infrastructure usage:**
+         * **Serverless instance usage:**
          * 
          * @return builder
          * 
@@ -188,7 +188,7 @@ public final class AutonomousDatabaseWalletState extends com.pulumi.resources.Re
         /**
          * @param generateType The type of wallet to generate.
          * 
-         * **Shared Exadata infrastructure usage:**
+         * **Serverless instance usage:**
          * 
          * @return builder
          * 

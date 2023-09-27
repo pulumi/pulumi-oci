@@ -34,7 +34,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string AutonomousContainerDatabaseId;
         /// <summary>
-        /// The maintenance schedule type of the Autonomous Database on shared Exadata infrastructure. The EARLY maintenance schedule of this Autonomous Database follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.
+        /// The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
         /// </summary>
         public readonly string AutonomousMaintenanceScheduleType;
         /// <summary>
@@ -58,7 +58,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+        /// The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure. For an Autonomous Database Serverless instance, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
         /// </summary>
         public readonly double ComputeCount;
         /// <summary>
@@ -102,7 +102,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string DatabaseManagementStatus;
         /// <summary>
-        /// The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Databases on shared Exadata infrastructure, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Data Guard association, and cannot be performed when the database using the "primary" role is operating in a remote Data Guard standby region.
+        /// The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Database Serverless, Autonomous Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Autonomous Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Autonomous Data Guard association, and cannot be performed when the database using the primary role is operating in a remote Autonomous Data Guard standby region.
         /// </summary>
         public readonly string DataguardRegionType;
         /// <summary>
@@ -126,7 +126,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
         /// <summary>
-        /// The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+        /// The disaster recovery (DR) region type of the Autonomous Database. For Autonomous Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
         /// </summary>
         public readonly string DisasterRecoveryRegionType;
         /// <summary>
@@ -242,7 +242,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly int LocalAdgAutoFailoverMaxDataLossLimit;
         /// <summary>
-        /// Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        /// Indicates the local disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         /// </summary>
         public readonly string LocalDisasterRecoveryType;
         /// <summary>
@@ -258,7 +258,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly int MaxCpuCoreCount;
         /// <summary>
-        /// The amount of memory (in GBs) enabled per OCPU or ECPU.
+        /// The amount of memory (in GBs) enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         /// </summary>
         public readonly int MemoryPerOracleComputeUnitInGbs;
         /// <summary>
@@ -335,7 +335,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbResult> StandbyDbs;
         /// <summary>
-        /// The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+        /// The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
         /// </summary>
         public readonly ImmutableArray<string> StandbyWhitelistedIps;
         /// <summary>
@@ -427,7 +427,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string VaultId;
         /// <summary>
-        /// The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+        /// The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
         /// </summary>
         public readonly ImmutableArray<string> WhitelistedIps;
 

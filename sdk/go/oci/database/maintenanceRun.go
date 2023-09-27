@@ -77,7 +77,7 @@ type MaintenanceRun struct {
 	PatchingStatus pulumi.StringOutput `pulumi:"patchingStatus"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
 	PeerMaintenanceRunId pulumi.StringOutput `pulumi:"peerMaintenanceRunId"`
-	// The current state of the maintenance run. For Autonomous Database on shared Exadata infrastructure, valid states are IN_PROGRESS, SUCCEEDED and FAILED.
+	// The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
 	State pulumi.StringOutput `pulumi:"state"`
 	// (Updatable) The target database server system software version for the patching operation.
 	TargetDbServerVersion pulumi.StringOutput `pulumi:"targetDbServerVersion"`
@@ -179,7 +179,7 @@ type maintenanceRunState struct {
 	PatchingStatus *string `pulumi:"patchingStatus"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
 	PeerMaintenanceRunId *string `pulumi:"peerMaintenanceRunId"`
-	// The current state of the maintenance run. For Autonomous Database on shared Exadata infrastructure, valid states are IN_PROGRESS, SUCCEEDED and FAILED.
+	// The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
 	State *string `pulumi:"state"`
 	// (Updatable) The target database server system software version for the patching operation.
 	TargetDbServerVersion *string `pulumi:"targetDbServerVersion"`
@@ -249,7 +249,7 @@ type MaintenanceRunState struct {
 	PatchingStatus pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
 	PeerMaintenanceRunId pulumi.StringPtrInput
-	// The current state of the maintenance run. For Autonomous Database on shared Exadata infrastructure, valid states are IN_PROGRESS, SUCCEEDED and FAILED.
+	// The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
 	State pulumi.StringPtrInput
 	// (Updatable) The target database server system software version for the patching operation.
 	TargetDbServerVersion pulumi.StringPtrInput
@@ -569,7 +569,7 @@ func (o MaintenanceRunOutput) PeerMaintenanceRunId() pulumi.StringOutput {
 	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringOutput { return v.PeerMaintenanceRunId }).(pulumi.StringOutput)
 }
 
-// The current state of the maintenance run. For Autonomous Database on shared Exadata infrastructure, valid states are IN_PROGRESS, SUCCEEDED and FAILED.
+// The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
 func (o MaintenanceRunOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }

@@ -95,7 +95,7 @@ export interface GetDatabaseMaintenanceRunHistoriesResult {
      */
     readonly maintenanceType?: string;
     /**
-     * The current state of the maintenance run. For Autonomous Database on shared Exadata infrastructure, valid states are IN_PROGRESS, SUCCEEDED and FAILED.
+     * The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
      */
     readonly state?: string;
     /**

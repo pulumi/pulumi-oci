@@ -73,6 +73,7 @@ type LookupIntegrationInstanceResult struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Integration Instance Identifier, can be renamed.
 	DisplayName                    string `pulumi:"displayName"`
+	DomainId                       string `pulumi:"domainId"`
 	EnableProcessAutomationTrigger int    `pulumi:"enableProcessAutomationTrigger"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -189,6 +190,10 @@ func (o LookupIntegrationInstanceResultOutput) DefinedTags() pulumi.MapOutput {
 // Integration Instance Identifier, can be renamed.
 func (o LookupIntegrationInstanceResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupIntegrationInstanceResult) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+func (o LookupIntegrationInstanceResultOutput) DomainId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupIntegrationInstanceResult) string { return v.DomainId }).(pulumi.StringOutput)
 }
 
 func (o LookupIntegrationInstanceResultOutput) EnableProcessAutomationTrigger() pulumi.IntOutput {

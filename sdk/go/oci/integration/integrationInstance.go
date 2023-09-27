@@ -51,6 +51,7 @@ import (
 //				DefinedTags: pulumi.AnyMap{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
+//				DomainId: pulumi.Any(oci_identity_domain.Test_domain.Id),
 //				FreeformTags: pulumi.AnyMap{
 //					"bar-key": pulumi.Any("value"),
 //				},
@@ -106,6 +107,8 @@ type IntegrationInstance struct {
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Integration Instance Identifier.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	// The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
+	DomainId pulumi.StringPtrOutput `pulumi:"domainId"`
 	// (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
 	EnableProcessAutomationTrigger pulumi.IntPtrOutput `pulumi:"enableProcessAutomationTrigger"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -209,6 +212,8 @@ type integrationInstanceState struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) Integration Instance Identifier.
 	DisplayName *string `pulumi:"displayName"`
+	// The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
+	DomainId *string `pulumi:"domainId"`
 	// (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
 	EnableProcessAutomationTrigger *int `pulumi:"enableProcessAutomationTrigger"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -261,6 +266,8 @@ type IntegrationInstanceState struct {
 	DefinedTags pulumi.MapInput
 	// (Updatable) Integration Instance Identifier.
 	DisplayName pulumi.StringPtrInput
+	// The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
+	DomainId pulumi.StringPtrInput
 	// (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
 	EnableProcessAutomationTrigger pulumi.IntPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -315,6 +322,8 @@ type integrationInstanceArgs struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) Integration Instance Identifier.
 	DisplayName string `pulumi:"displayName"`
+	// The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
+	DomainId *string `pulumi:"domainId"`
 	// (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
 	EnableProcessAutomationTrigger *int `pulumi:"enableProcessAutomationTrigger"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -356,6 +365,8 @@ type IntegrationInstanceArgs struct {
 	DefinedTags pulumi.MapInput
 	// (Updatable) Integration Instance Identifier.
 	DisplayName pulumi.StringInput
+	// The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
+	DomainId pulumi.StringPtrInput
 	// (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
 	EnableProcessAutomationTrigger pulumi.IntPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -529,6 +540,11 @@ func (o IntegrationInstanceOutput) DefinedTags() pulumi.MapOutput {
 // (Updatable) Integration Instance Identifier.
 func (o IntegrationInstanceOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *IntegrationInstance) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
+func (o IntegrationInstanceOutput) DomainId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IntegrationInstance) pulumi.StringPtrOutput { return v.DomainId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.

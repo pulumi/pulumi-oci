@@ -22,7 +22,7 @@ class GetIntegrationInstanceResult:
     """
     A collection of values returned by getIntegrationInstance.
     """
-    def __init__(__self__, alternate_custom_endpoints=None, attachments=None, compartment_id=None, consumption_model=None, custom_endpoints=None, defined_tags=None, display_name=None, enable_process_automation_trigger=None, freeform_tags=None, id=None, idcs_at=None, idcs_infos=None, instance_url=None, integration_instance_id=None, integration_instance_type=None, is_byol=None, is_file_server_enabled=None, is_visual_builder_enabled=None, message_packs=None, network_endpoint_details=None, shape=None, state=None, state_message=None, time_created=None, time_updated=None):
+    def __init__(__self__, alternate_custom_endpoints=None, attachments=None, compartment_id=None, consumption_model=None, custom_endpoints=None, defined_tags=None, display_name=None, domain_id=None, enable_process_automation_trigger=None, freeform_tags=None, id=None, idcs_at=None, idcs_infos=None, instance_url=None, integration_instance_id=None, integration_instance_type=None, is_byol=None, is_file_server_enabled=None, is_visual_builder_enabled=None, message_packs=None, network_endpoint_details=None, shape=None, state=None, state_message=None, time_created=None, time_updated=None):
         if alternate_custom_endpoints and not isinstance(alternate_custom_endpoints, list):
             raise TypeError("Expected argument 'alternate_custom_endpoints' to be a list")
         pulumi.set(__self__, "alternate_custom_endpoints", alternate_custom_endpoints)
@@ -44,6 +44,9 @@ class GetIntegrationInstanceResult:
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
+        if domain_id and not isinstance(domain_id, str):
+            raise TypeError("Expected argument 'domain_id' to be a str")
+        pulumi.set(__self__, "domain_id", domain_id)
         if enable_process_automation_trigger and not isinstance(enable_process_automation_trigger, int):
             raise TypeError("Expected argument 'enable_process_automation_trigger' to be a int")
         pulumi.set(__self__, "enable_process_automation_trigger", enable_process_automation_trigger)
@@ -154,6 +157,11 @@ class GetIntegrationInstanceResult:
         Integration Instance Identifier, can be renamed.
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="domainId")
+    def domain_id(self) -> str:
+        return pulumi.get(self, "domain_id")
 
     @property
     @pulumi.getter(name="enableProcessAutomationTrigger")
@@ -304,6 +312,7 @@ class AwaitableGetIntegrationInstanceResult(GetIntegrationInstanceResult):
             custom_endpoints=self.custom_endpoints,
             defined_tags=self.defined_tags,
             display_name=self.display_name,
+            domain_id=self.domain_id,
             enable_process_automation_trigger=self.enable_process_automation_trigger,
             freeform_tags=self.freeform_tags,
             id=self.id,
@@ -356,6 +365,7 @@ def get_integration_instance(integration_instance_id: Optional[str] = None,
         custom_endpoints=pulumi.get(__ret__, 'custom_endpoints'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         display_name=pulumi.get(__ret__, 'display_name'),
+        domain_id=pulumi.get(__ret__, 'domain_id'),
         enable_process_automation_trigger=pulumi.get(__ret__, 'enable_process_automation_trigger'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),

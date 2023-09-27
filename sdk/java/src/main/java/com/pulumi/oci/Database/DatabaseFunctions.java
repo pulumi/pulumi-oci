@@ -707,6 +707,7 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseCharacterSets = DatabaseFunctions.getAutonomousCharacterSets(GetAutonomousCharacterSetsArgs.builder()
      *             .characterSetType(var_.autonomous_database_character_set_character_set_type())
+     *             .isDedicated(var_.autonomous_database_character_set_is_dedicated())
      *             .isShared(var_.autonomous_database_character_set_is_shared())
      *             .build());
      * 
@@ -747,6 +748,7 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseCharacterSets = DatabaseFunctions.getAutonomousCharacterSets(GetAutonomousCharacterSetsArgs.builder()
      *             .characterSetType(var_.autonomous_database_character_set_character_set_type())
+     *             .isDedicated(var_.autonomous_database_character_set_is_dedicated())
      *             .isShared(var_.autonomous_database_character_set_is_shared())
      *             .build());
      * 
@@ -787,6 +789,7 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseCharacterSets = DatabaseFunctions.getAutonomousCharacterSets(GetAutonomousCharacterSetsArgs.builder()
      *             .characterSetType(var_.autonomous_database_character_set_character_set_type())
+     *             .isDedicated(var_.autonomous_database_character_set_is_dedicated())
      *             .isShared(var_.autonomous_database_character_set_is_shared())
      *             .build());
      * 
@@ -827,6 +830,7 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseCharacterSets = DatabaseFunctions.getAutonomousCharacterSets(GetAutonomousCharacterSetsArgs.builder()
      *             .characterSetType(var_.autonomous_database_character_set_character_set_type())
+     *             .isDedicated(var_.autonomous_database_character_set_is_dedicated())
      *             .isShared(var_.autonomous_database_character_set_is_shared())
      *             .build());
      * 
@@ -867,6 +871,7 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseCharacterSets = DatabaseFunctions.getAutonomousCharacterSets(GetAutonomousCharacterSetsArgs.builder()
      *             .characterSetType(var_.autonomous_database_character_set_character_set_type())
+     *             .isDedicated(var_.autonomous_database_character_set_is_dedicated())
      *             .isShared(var_.autonomous_database_character_set_is_shared())
      *             .build());
      * 
@@ -907,6 +912,7 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseCharacterSets = DatabaseFunctions.getAutonomousCharacterSets(GetAutonomousCharacterSetsArgs.builder()
      *             .characterSetType(var_.autonomous_database_character_set_character_set_type())
+     *             .isDedicated(var_.autonomous_database_character_set_is_dedicated())
      *             .isShared(var_.autonomous_database_character_set_is_shared())
      *             .build());
      * 
@@ -4012,7 +4018,7 @@ public final class DatabaseFunctions {
      * This data source provides the list of Autonomous Db Preview Versions in Oracle Cloud Infrastructure Database service.
      * 
      * Gets a list of supported Autonomous Database versions. Note that preview version software is only available for
-     * databases with [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
+     * Autonomous Database Serverless (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) databases.
      * 
      * ## Example Usage
      * ```java
@@ -4052,7 +4058,7 @@ public final class DatabaseFunctions {
      * This data source provides the list of Autonomous Db Preview Versions in Oracle Cloud Infrastructure Database service.
      * 
      * Gets a list of supported Autonomous Database versions. Note that preview version software is only available for
-     * databases with [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
+     * Autonomous Database Serverless (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) databases.
      * 
      * ## Example Usage
      * ```java
@@ -4092,7 +4098,7 @@ public final class DatabaseFunctions {
      * This data source provides the list of Autonomous Db Preview Versions in Oracle Cloud Infrastructure Database service.
      * 
      * Gets a list of supported Autonomous Database versions. Note that preview version software is only available for
-     * databases with [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
+     * Autonomous Database Serverless (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) databases.
      * 
      * ## Example Usage
      * ```java
@@ -4132,7 +4138,7 @@ public final class DatabaseFunctions {
      * This data source provides the list of Autonomous Db Preview Versions in Oracle Cloud Infrastructure Database service.
      * 
      * Gets a list of supported Autonomous Database versions. Note that preview version software is only available for
-     * databases with [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
+     * Autonomous Database Serverless (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) databases.
      * 
      * ## Example Usage
      * ```java

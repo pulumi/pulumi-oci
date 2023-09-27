@@ -108,7 +108,6 @@ export interface GetAutonomousContainerDatabasesResult {
     readonly autonomousVmClusterId?: string;
     /**
      * The availability domain of the Autonomous Container Database.
-     * <<<<<<< HEAD
      */
     readonly availabilityDomain?: string;
     /**

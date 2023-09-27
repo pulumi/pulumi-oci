@@ -83,7 +83,7 @@ def get_autonomous_db_preview_versions(compartment_id: Optional[str] = None,
     This data source provides the list of Autonomous Db Preview Versions in Oracle Cloud Infrastructure Database service.
 
     Gets a list of supported Autonomous Database versions. Note that preview version software is only available for
-    databases with [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
+    Autonomous Database Serverless (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) databases.
 
     ## Example Usage
 
@@ -118,7 +118,7 @@ def get_autonomous_db_preview_versions_output(compartment_id: Optional[pulumi.In
     This data source provides the list of Autonomous Db Preview Versions in Oracle Cloud Infrastructure Database service.
 
     Gets a list of supported Autonomous Database versions. Note that preview version software is only available for
-    databases with [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
+    Autonomous Database Serverless (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) databases.
 
     ## Example Usage
 

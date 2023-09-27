@@ -90,7 +90,7 @@ type GetMaintenanceRunsResult struct {
 	MaintenanceSubtype *string `pulumi:"maintenanceSubtype"`
 	// Maintenance type.
 	MaintenanceType *string `pulumi:"maintenanceType"`
-	// The current state of the maintenance run. For Autonomous Database on shared Exadata infrastructure, valid states are IN_PROGRESS, SUCCEEDED and FAILED.
+	// The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
 	State *string `pulumi:"state"`
 	// The ID of the target resource on which the maintenance run occurs.
 	TargetResourceId *string `pulumi:"targetResourceId"`
@@ -188,7 +188,7 @@ func (o GetMaintenanceRunsResultOutput) MaintenanceType() pulumi.StringPtrOutput
 	return o.ApplyT(func(v GetMaintenanceRunsResult) *string { return v.MaintenanceType }).(pulumi.StringPtrOutput)
 }
 
-// The current state of the maintenance run. For Autonomous Database on shared Exadata infrastructure, valid states are IN_PROGRESS, SUCCEEDED and FAILED.
+// The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
 func (o GetMaintenanceRunsResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetMaintenanceRunsResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }

@@ -52,7 +52,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private String autonomousContainerDatabaseId;
     /**
-     * @return The maintenance schedule type of the Autonomous Database on shared Exadata infrastructure. The EARLY maintenance schedule of this Autonomous Database follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.
+     * @return The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
      * 
      */
     private String autonomousMaintenanceScheduleType;
@@ -82,7 +82,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private String compartmentId;
     /**
-     * @return The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the &#39;ECPU&#39; compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+     * @return The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure. For an Autonomous Database Serverless instance, the &#39;ECPU&#39; compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
      * 
      */
     private Double computeCount;
@@ -137,7 +137,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private String databaseManagementStatus;
     /**
-     * @return The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Databases on shared Exadata infrastructure, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Data Guard association, and cannot be performed when the database using the &#34;primary&#34; role is operating in a remote Data Guard standby region.
+     * @return The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Database Serverless, Autonomous Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Autonomous Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Autonomous Data Guard association, and cannot be performed when the database using the primary role is operating in a remote Autonomous Data Guard standby region.
      * 
      */
     private String dataguardRegionType;
@@ -166,7 +166,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private Map<String,Object> definedTags;
     /**
-     * @return The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+     * @return The disaster recovery (DR) region type of the Autonomous Database. For Autonomous Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
      * 
      */
     private String disasterRecoveryRegionType;
@@ -311,7 +311,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private Integer localAdgAutoFailoverMaxDataLossLimit;
     /**
-     * @return Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     * @return Indicates the local disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      * 
      */
     private String localDisasterRecoveryType;
@@ -331,7 +331,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private Integer maxCpuCoreCount;
     /**
-     * @return The amount of memory (in GBs) enabled per OCPU or ECPU.
+     * @return The amount of memory (in GBs) enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      * 
      */
     private Integer memoryPerOracleComputeUnitInGbs;
@@ -427,7 +427,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private List<GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb> standbyDbs;
     /**
-     * @return The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+     * @return The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
      * 
      */
     private List<String> standbyWhitelistedIps;
@@ -542,7 +542,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private String vaultId;
     /**
-     * @return The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+     * @return The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
      * 
      */
     private List<String> whitelistedIps;
@@ -584,7 +584,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.autonomousContainerDatabaseId;
     }
     /**
-     * @return The maintenance schedule type of the Autonomous Database on shared Exadata infrastructure. The EARLY maintenance schedule of this Autonomous Database follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.
+     * @return The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
      * 
      */
     public String autonomousMaintenanceScheduleType() {
@@ -626,7 +626,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.compartmentId;
     }
     /**
-     * @return The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the &#39;ECPU&#39; compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+     * @return The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure. For an Autonomous Database Serverless instance, the &#39;ECPU&#39; compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
      * 
      */
     public Double computeCount() {
@@ -703,7 +703,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.databaseManagementStatus;
     }
     /**
-     * @return The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Databases on shared Exadata infrastructure, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Data Guard association, and cannot be performed when the database using the &#34;primary&#34; role is operating in a remote Data Guard standby region.
+     * @return The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Database Serverless, Autonomous Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Autonomous Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Autonomous Data Guard association, and cannot be performed when the database using the primary role is operating in a remote Autonomous Data Guard standby region.
      * 
      */
     public String dataguardRegionType() {
@@ -742,7 +742,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.definedTags;
     }
     /**
-     * @return The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+     * @return The disaster recovery (DR) region type of the Autonomous Database. For Autonomous Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
      * 
      */
     public String disasterRecoveryRegionType() {
@@ -945,7 +945,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.localAdgAutoFailoverMaxDataLossLimit;
     }
     /**
-     * @return Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     * @return Indicates the local disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      * 
      */
     public String localDisasterRecoveryType() {
@@ -973,7 +973,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.maxCpuCoreCount;
     }
     /**
-     * @return The amount of memory (in GBs) enabled per OCPU or ECPU.
+     * @return The amount of memory (in GBs) enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      * 
      */
     public Integer memoryPerOracleComputeUnitInGbs() {
@@ -1107,7 +1107,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.standbyDbs;
     }
     /**
-     * @return The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+     * @return The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
      * 
      */
     public List<String> standbyWhitelistedIps() {
@@ -1268,7 +1268,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.vaultId;
     }
     /**
-     * @return The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+     * @return The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
      * 
      */
     public List<String> whitelistedIps() {

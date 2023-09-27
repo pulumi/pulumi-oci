@@ -446,7 +446,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string VaultId;
         /// <summary>
-        /// The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+        /// The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
         /// </summary>
         public readonly ImmutableArray<string> WhitelistedIps;
 

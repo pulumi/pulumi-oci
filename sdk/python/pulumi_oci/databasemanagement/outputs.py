@@ -20568,19 +20568,37 @@ class GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionResult(dict):
 class GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemResult(dict):
     def __init__(__self__, *,
                  description: str,
+                 error_message: str,
+                 id: int,
                  name: str,
                  owner: str,
-                 statement_counts: int):
+                 scheduled_job_name: str,
+                 statement_counts: int,
+                 status: str,
+                 time_created: str,
+                 time_last_modified: str):
         """
         :param str description: The description of the SQL tuning set.
+        :param str error_message: Latest execution error of the plsql that was submitted as a scheduler job.
+        :param int id: The unique Sql tuning set identifier. This is not OCID.
         :param str name: The name of the SQL tuning set.
         :param str owner: The owner of the SQL tuning set.
+        :param str scheduled_job_name: Name of the Sql tuning set scheduler job.
         :param int statement_counts: The number of SQL statements in the SQL tuning set.
+        :param str status: Current status of the Sql tuning set.
+        :param str time_created: The created time of the Sql tuning set.
+        :param str time_last_modified: Last modified time of the Sql tuning set.
         """
         pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "error_message", error_message)
+        pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "owner", owner)
+        pulumi.set(__self__, "scheduled_job_name", scheduled_job_name)
         pulumi.set(__self__, "statement_counts", statement_counts)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_last_modified", time_last_modified)
 
     @property
     @pulumi.getter
@@ -20589,6 +20607,22 @@ class GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemResult(dict):
         The description of the SQL tuning set.
         """
         return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="errorMessage")
+    def error_message(self) -> str:
+        """
+        Latest execution error of the plsql that was submitted as a scheduler job.
+        """
+        return pulumi.get(self, "error_message")
+
+    @property
+    @pulumi.getter
+    def id(self) -> int:
+        """
+        The unique Sql tuning set identifier. This is not OCID.
+        """
+        return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
@@ -20607,12 +20641,44 @@ class GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemResult(dict):
         return pulumi.get(self, "owner")
 
     @property
+    @pulumi.getter(name="scheduledJobName")
+    def scheduled_job_name(self) -> str:
+        """
+        Name of the Sql tuning set scheduler job.
+        """
+        return pulumi.get(self, "scheduled_job_name")
+
+    @property
     @pulumi.getter(name="statementCounts")
     def statement_counts(self) -> int:
         """
         The number of SQL statements in the SQL tuning set.
         """
         return pulumi.get(self, "statement_counts")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        Current status of the Sql tuning set.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The created time of the Sql tuning set.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeLastModified")
+    def time_last_modified(self) -> str:
+        """
+        Last modified time of the Sql tuning set.
+        """
+        return pulumi.get(self, "time_last_modified")
 
 
 @pulumi.output_type

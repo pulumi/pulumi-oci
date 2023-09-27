@@ -31,6 +31,7 @@ namespace Pulumi.Oci.Database
         ///     var testAutonomousDatabaseCharacterSets = Oci.Database.GetAutonomousCharacterSets.Invoke(new()
         ///     {
         ///         CharacterSetType = @var.Autonomous_database_character_set_character_set_type,
+        ///         IsDedicated = @var.Autonomous_database_character_set_is_dedicated,
         ///         IsShared = @var.Autonomous_database_character_set_is_shared,
         ///     });
         /// 
@@ -62,6 +63,7 @@ namespace Pulumi.Oci.Database
         ///     var testAutonomousDatabaseCharacterSets = Oci.Database.GetAutonomousCharacterSets.Invoke(new()
         ///     {
         ///         CharacterSetType = @var.Autonomous_database_character_set_character_set_type,
+        ///         IsDedicated = @var.Autonomous_database_character_set_is_dedicated,
         ///         IsShared = @var.Autonomous_database_character_set_is_shared,
         ///     });
         /// 
@@ -92,7 +94,13 @@ namespace Pulumi.Oci.Database
         }
 
         /// <summary>
-        /// Specifies whether this request is for Autonomous Database on Shared infrastructure. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+        /// Specifies if the request is for an Autonomous Database Dedicated instance. The default request is for an Autonomous Database Dedicated instance.
+        /// </summary>
+        [Input("isDedicated")]
+        public bool? IsDedicated { get; set; }
+
+        /// <summary>
+        /// Specifies whether this request is for an Autonomous Database Serverless instance. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
         /// </summary>
         [Input("isShared")]
         public bool? IsShared { get; set; }
@@ -120,7 +128,13 @@ namespace Pulumi.Oci.Database
         }
 
         /// <summary>
-        /// Specifies whether this request is for Autonomous Database on Shared infrastructure. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+        /// Specifies if the request is for an Autonomous Database Dedicated instance. The default request is for an Autonomous Database Dedicated instance.
+        /// </summary>
+        [Input("isDedicated")]
+        public Input<bool>? IsDedicated { get; set; }
+
+        /// <summary>
+        /// Specifies whether this request is for an Autonomous Database Serverless instance. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
         /// </summary>
         [Input("isShared")]
         public Input<bool>? IsShared { get; set; }
@@ -145,6 +159,7 @@ namespace Pulumi.Oci.Database
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        public readonly bool? IsDedicated;
         public readonly bool? IsShared;
 
         [OutputConstructor]
@@ -157,12 +172,15 @@ namespace Pulumi.Oci.Database
 
             string id,
 
+            bool? isDedicated,
+
             bool? isShared)
         {
             AutonomousDatabaseCharacterSets = autonomousDatabaseCharacterSets;
             CharacterSetType = characterSetType;
             Filters = filters;
             Id = id;
+            IsDedicated = isDedicated;
             IsShared = isShared;
         }
     }

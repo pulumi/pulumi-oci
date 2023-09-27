@@ -70,6 +70,7 @@ import javax.annotation.Nullable;
  *                 .certificateSecretId(oci_vault_secret.test_secret().id())
  *                 .build())
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .domainId(oci_identity_domain.test_domain().id())
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .idcsAt(var_.integration_instance_idcs_at())
  *             .isFileServerEnabled(var_.integration_instance_is_file_server_enabled())
@@ -199,6 +200,20 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
      */
     public Output<String> displayName() {
         return this.displayName;
+    }
+    /**
+     * The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
+     * 
+     */
+    @Export(name="domainId", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> domainId;
+
+    /**
+     * @return The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
+     * 
+     */
+    public Output<Optional<String>> domainId() {
+        return Codegen.optional(this.domainId);
     }
     /**
      * (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.

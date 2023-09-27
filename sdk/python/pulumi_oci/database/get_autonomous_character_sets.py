@@ -23,7 +23,7 @@ class GetAutonomousCharacterSetsResult:
     """
     A collection of values returned by getAutonomousCharacterSets.
     """
-    def __init__(__self__, autonomous_database_character_sets=None, character_set_type=None, filters=None, id=None, is_shared=None):
+    def __init__(__self__, autonomous_database_character_sets=None, character_set_type=None, filters=None, id=None, is_dedicated=None, is_shared=None):
         if autonomous_database_character_sets and not isinstance(autonomous_database_character_sets, list):
             raise TypeError("Expected argument 'autonomous_database_character_sets' to be a list")
         pulumi.set(__self__, "autonomous_database_character_sets", autonomous_database_character_sets)
@@ -36,6 +36,9 @@ class GetAutonomousCharacterSetsResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_dedicated and not isinstance(is_dedicated, bool):
+            raise TypeError("Expected argument 'is_dedicated' to be a bool")
+        pulumi.set(__self__, "is_dedicated", is_dedicated)
         if is_shared and not isinstance(is_shared, bool):
             raise TypeError("Expected argument 'is_shared' to be a bool")
         pulumi.set(__self__, "is_shared", is_shared)
@@ -67,6 +70,11 @@ class GetAutonomousCharacterSetsResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="isDedicated")
+    def is_dedicated(self) -> Optional[bool]:
+        return pulumi.get(self, "is_dedicated")
+
+    @property
     @pulumi.getter(name="isShared")
     def is_shared(self) -> Optional[bool]:
         return pulumi.get(self, "is_shared")
@@ -82,11 +90,13 @@ class AwaitableGetAutonomousCharacterSetsResult(GetAutonomousCharacterSetsResult
             character_set_type=self.character_set_type,
             filters=self.filters,
             id=self.id,
+            is_dedicated=self.is_dedicated,
             is_shared=self.is_shared)
 
 
 def get_autonomous_character_sets(character_set_type: Optional[str] = None,
                                   filters: Optional[Sequence[pulumi.InputType['GetAutonomousCharacterSetsFilterArgs']]] = None,
+                                  is_dedicated: Optional[bool] = None,
                                   is_shared: Optional[bool] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousCharacterSetsResult:
     """
@@ -101,16 +111,19 @@ def get_autonomous_character_sets(character_set_type: Optional[str] = None,
     import pulumi_oci as oci
 
     test_autonomous_database_character_sets = oci.Database.get_autonomous_character_sets(character_set_type=var["autonomous_database_character_set_character_set_type"],
+        is_dedicated=var["autonomous_database_character_set_is_dedicated"],
         is_shared=var["autonomous_database_character_set_is_shared"])
     ```
 
 
     :param str character_set_type: Specifies whether this request pertains to database character sets or national character sets.
-    :param bool is_shared: Specifies whether this request is for Autonomous Database on Shared infrastructure. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+    :param bool is_dedicated: Specifies if the request is for an Autonomous Database Dedicated instance. The default request is for an Autonomous Database Dedicated instance.
+    :param bool is_shared: Specifies whether this request is for an Autonomous Database Serverless instance. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
     """
     __args__ = dict()
     __args__['characterSetType'] = character_set_type
     __args__['filters'] = filters
+    __args__['isDedicated'] = is_dedicated
     __args__['isShared'] = is_shared
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:Database/getAutonomousCharacterSets:getAutonomousCharacterSets', __args__, opts=opts, typ=GetAutonomousCharacterSetsResult).value
@@ -120,12 +133,14 @@ def get_autonomous_character_sets(character_set_type: Optional[str] = None,
         character_set_type=pulumi.get(__ret__, 'character_set_type'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
+        is_dedicated=pulumi.get(__ret__, 'is_dedicated'),
         is_shared=pulumi.get(__ret__, 'is_shared'))
 
 
 @_utilities.lift_output_func(get_autonomous_character_sets)
 def get_autonomous_character_sets_output(character_set_type: Optional[pulumi.Input[Optional[str]]] = None,
                                          filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAutonomousCharacterSetsFilterArgs']]]]] = None,
+                                         is_dedicated: Optional[pulumi.Input[Optional[bool]]] = None,
                                          is_shared: Optional[pulumi.Input[Optional[bool]]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousCharacterSetsResult]:
     """
@@ -140,11 +155,13 @@ def get_autonomous_character_sets_output(character_set_type: Optional[pulumi.Inp
     import pulumi_oci as oci
 
     test_autonomous_database_character_sets = oci.Database.get_autonomous_character_sets(character_set_type=var["autonomous_database_character_set_character_set_type"],
+        is_dedicated=var["autonomous_database_character_set_is_dedicated"],
         is_shared=var["autonomous_database_character_set_is_shared"])
     ```
 
 
     :param str character_set_type: Specifies whether this request pertains to database character sets or national character sets.
-    :param bool is_shared: Specifies whether this request is for Autonomous Database on Shared infrastructure. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+    :param bool is_dedicated: Specifies if the request is for an Autonomous Database Dedicated instance. The default request is for an Autonomous Database Dedicated instance.
+    :param bool is_shared: Specifies whether this request is for an Autonomous Database Serverless instance. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
     """
     ...

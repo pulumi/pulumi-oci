@@ -65,7 +65,7 @@ type LookupAutonomousDatabaseWalletArgs struct {
 	Base64EncodeContent  *bool  `pulumi:"base64EncodeContent"`
 	// The type of wallet to generate.
 	//
-	// **Shared Exadata infrastructure usage:**
+	// **Serverless instance usage:**
 	GenerateType *string `pulumi:"generateType"`
 	// The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
 	Password string `pulumi:"password"`
@@ -106,7 +106,7 @@ type LookupAutonomousDatabaseWalletOutputArgs struct {
 	Base64EncodeContent  pulumi.BoolPtrInput `pulumi:"base64EncodeContent"`
 	// The type of wallet to generate.
 	//
-	// **Shared Exadata infrastructure usage:**
+	// **Serverless instance usage:**
 	GenerateType pulumi.StringPtrInput `pulumi:"generateType"`
 	// The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
 	Password pulumi.StringInput `pulumi:"password"`

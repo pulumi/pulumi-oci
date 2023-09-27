@@ -49,6 +49,7 @@ namespace Pulumi.Oci.Integration
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
+    ///         DomainId = oci_identity_domain.Test_domain.Id,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
@@ -129,6 +130,12 @@ namespace Pulumi.Oci.Integration
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
+
+        /// <summary>
+        /// The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
+        /// </summary>
+        [Output("domainId")]
+        public Output<string?> DomainId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
@@ -329,6 +336,12 @@ namespace Pulumi.Oci.Integration
         public Input<string> DisplayName { get; set; } = null!;
 
         /// <summary>
+        /// The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
+        /// </summary>
+        [Input("domainId")]
+        public Input<string>? DomainId { get; set; }
+
+        /// <summary>
         /// (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
         /// </summary>
         [Input("enableProcessAutomationTrigger")]
@@ -481,6 +494,12 @@ namespace Pulumi.Oci.Integration
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
+
+        /// <summary>
+        /// The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
+        /// </summary>
+        [Input("domainId")]
+        public Input<string>? DomainId { get; set; }
 
         /// <summary>
         /// (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.

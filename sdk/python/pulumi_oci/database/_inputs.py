@@ -1697,7 +1697,7 @@ class AutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs:
     def __init__(__self__, *,
                  disaster_recovery_type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] disaster_recovery_type: Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        :param pulumi.Input[str] disaster_recovery_type: Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         """
         if disaster_recovery_type is not None:
             pulumi.set(__self__, "disaster_recovery_type", disaster_recovery_type)
@@ -1706,7 +1706,7 @@ class AutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs:
     @pulumi.getter(name="disasterRecoveryType")
     def disaster_recovery_type(self) -> Optional[pulumi.Input[str]]:
         """
-        Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         """
         return pulumi.get(self, "disaster_recovery_type")
 

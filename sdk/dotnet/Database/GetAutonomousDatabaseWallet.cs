@@ -99,7 +99,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The type of wallet to generate.
         /// 
-        /// **Shared Exadata infrastructure usage:**
+        /// **Serverless instance usage:**
         /// </summary>
         [Input("generateType")]
         public string? GenerateType { get; set; }
@@ -136,7 +136,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The type of wallet to generate.
         /// 
-        /// **Shared Exadata infrastructure usage:**
+        /// **Serverless instance usage:**
         /// </summary>
         [Input("generateType")]
         public Input<string>? GenerateType { get; set; }

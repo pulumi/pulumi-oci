@@ -91,7 +91,6 @@ type GetAutonomousContainerDatabasesResult struct {
 	// The OCID of the Autonomous VM Cluster.
 	AutonomousVmClusterId *string `pulumi:"autonomousVmClusterId"`
 	// The availability domain of the Autonomous Container Database.
-	// <<<<<<< HEAD
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
 	CloudAutonomousVmClusterId *string `pulumi:"cloudAutonomousVmClusterId"`
@@ -189,7 +188,6 @@ func (o GetAutonomousContainerDatabasesResultOutput) AutonomousVmClusterId() pul
 }
 
 // The availability domain of the Autonomous Container Database.
-// <<<<<<< HEAD
 func (o GetAutonomousContainerDatabasesResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetAutonomousContainerDatabasesResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }

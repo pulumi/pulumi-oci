@@ -21,7 +21,7 @@ public final class GetVcnsVirtualNetwork {
     private List<String> byoipv6cidrBlocks;
     private List<GetVcnsVirtualNetworkByoipv6cidrDetail> byoipv6cidrDetails;
     /**
-     * @return Deprecated. The first CIDR IP address from cidrBlocks.  Example: `172.16.0.0/16`
+     * @return Deprecated. The first CIDR IP address from cidr_blocks.  Example: `172.16.0.0/16`
      * 
      */
     private String cidrBlock;
@@ -115,7 +115,7 @@ public final class GetVcnsVirtualNetwork {
         return this.byoipv6cidrDetails;
     }
     /**
-     * @return Deprecated. The first CIDR IP address from cidrBlocks.  Example: `172.16.0.0/16`
+     * @return Deprecated. The first CIDR IP address from cidr_blocks.  Example: `172.16.0.0/16`
      * 
      */
     public String cidrBlock() {

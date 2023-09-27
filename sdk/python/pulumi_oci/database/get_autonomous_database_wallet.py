@@ -123,7 +123,7 @@ def get_autonomous_database_wallet(autonomous_database_id: Optional[str] = None,
     :param str autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str generate_type: The type of wallet to generate.
            
-           **Shared Exadata infrastructure usage:**
+           **Serverless instance usage:**
     :param str password: The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
     """
     __args__ = dict()
@@ -172,7 +172,7 @@ def get_autonomous_database_wallet_output(autonomous_database_id: Optional[pulum
     :param str autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str generate_type: The type of wallet to generate.
            
-           **Shared Exadata infrastructure usage:**
+           **Serverless instance usage:**
     :param str password: The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
     """
     ...

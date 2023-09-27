@@ -41,6 +41,7 @@ namespace Pulumi.Oci.Integration.Outputs
         /// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
         /// </summary>
         public readonly string DisplayName;
+        public readonly string DomainId;
         public readonly int EnableProcessAutomationTrigger;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -120,6 +121,8 @@ namespace Pulumi.Oci.Integration.Outputs
 
             string displayName,
 
+            string domainId,
+
             int enableProcessAutomationTrigger,
 
             ImmutableDictionary<string, object> freeformTags,
@@ -161,6 +164,7 @@ namespace Pulumi.Oci.Integration.Outputs
             CustomEndpoints = customEndpoints;
             DefinedTags = definedTags;
             DisplayName = displayName;
+            DomainId = domainId;
             EnableProcessAutomationTrigger = enableProcessAutomationTrigger;
             FreeformTags = freeformTags;
             Id = id;

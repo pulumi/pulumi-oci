@@ -27,6 +27,7 @@ public final class GetAutonomousCharacterSetsResult {
      * 
      */
     private String id;
+    private @Nullable Boolean isDedicated;
     private @Nullable Boolean isShared;
 
     private GetAutonomousCharacterSetsResult() {}
@@ -50,6 +51,9 @@ public final class GetAutonomousCharacterSetsResult {
     public String id() {
         return this.id;
     }
+    public Optional<Boolean> isDedicated() {
+        return Optional.ofNullable(this.isDedicated);
+    }
     public Optional<Boolean> isShared() {
         return Optional.ofNullable(this.isShared);
     }
@@ -67,6 +71,7 @@ public final class GetAutonomousCharacterSetsResult {
         private @Nullable String characterSetType;
         private @Nullable List<GetAutonomousCharacterSetsFilter> filters;
         private String id;
+        private @Nullable Boolean isDedicated;
         private @Nullable Boolean isShared;
         public Builder() {}
         public Builder(GetAutonomousCharacterSetsResult defaults) {
@@ -75,6 +80,7 @@ public final class GetAutonomousCharacterSetsResult {
     	      this.characterSetType = defaults.characterSetType;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
+    	      this.isDedicated = defaults.isDedicated;
     	      this.isShared = defaults.isShared;
         }
 
@@ -105,6 +111,11 @@ public final class GetAutonomousCharacterSetsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isDedicated(@Nullable Boolean isDedicated) {
+            this.isDedicated = isDedicated;
+            return this;
+        }
+        @CustomType.Setter
         public Builder isShared(@Nullable Boolean isShared) {
             this.isShared = isShared;
             return this;
@@ -115,6 +126,7 @@ public final class GetAutonomousCharacterSetsResult {
             o.characterSetType = characterSetType;
             o.filters = filters;
             o.id = id;
+            o.isDedicated = isDedicated;
             o.isShared = isShared;
             return o;
         }

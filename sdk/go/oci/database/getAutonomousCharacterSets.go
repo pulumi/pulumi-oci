@@ -32,6 +32,7 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetAutonomousCharacterSets(ctx, &database.GetAutonomousCharacterSetsArgs{
 //				CharacterSetType: pulumi.StringRef(_var.Autonomous_database_character_set_character_set_type),
+//				IsDedicated:      pulumi.BoolRef(_var.Autonomous_database_character_set_is_dedicated),
 //				IsShared:         pulumi.BoolRef(_var.Autonomous_database_character_set_is_shared),
 //			}, nil)
 //			if err != nil {
@@ -57,7 +58,9 @@ type GetAutonomousCharacterSetsArgs struct {
 	// Specifies whether this request pertains to database character sets or national character sets.
 	CharacterSetType *string                            `pulumi:"characterSetType"`
 	Filters          []GetAutonomousCharacterSetsFilter `pulumi:"filters"`
-	// Specifies whether this request is for Autonomous Database on Shared infrastructure. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+	// Specifies if the request is for an Autonomous Database Dedicated instance. The default request is for an Autonomous Database Dedicated instance.
+	IsDedicated *bool `pulumi:"isDedicated"`
+	// Specifies whether this request is for an Autonomous Database Serverless instance. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
 	IsShared *bool `pulumi:"isShared"`
 }
 
@@ -68,8 +71,9 @@ type GetAutonomousCharacterSetsResult struct {
 	CharacterSetType                *string                                                    `pulumi:"characterSetType"`
 	Filters                         []GetAutonomousCharacterSetsFilter                         `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id       string `pulumi:"id"`
-	IsShared *bool  `pulumi:"isShared"`
+	Id          string `pulumi:"id"`
+	IsDedicated *bool  `pulumi:"isDedicated"`
+	IsShared    *bool  `pulumi:"isShared"`
 }
 
 func GetAutonomousCharacterSetsOutput(ctx *pulumi.Context, args GetAutonomousCharacterSetsOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousCharacterSetsResultOutput {
@@ -90,7 +94,9 @@ type GetAutonomousCharacterSetsOutputArgs struct {
 	// Specifies whether this request pertains to database character sets or national character sets.
 	CharacterSetType pulumi.StringPtrInput                      `pulumi:"characterSetType"`
 	Filters          GetAutonomousCharacterSetsFilterArrayInput `pulumi:"filters"`
-	// Specifies whether this request is for Autonomous Database on Shared infrastructure. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+	// Specifies if the request is for an Autonomous Database Dedicated instance. The default request is for an Autonomous Database Dedicated instance.
+	IsDedicated pulumi.BoolPtrInput `pulumi:"isDedicated"`
+	// Specifies whether this request is for an Autonomous Database Serverless instance. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
 	IsShared pulumi.BoolPtrInput `pulumi:"isShared"`
 }
 
@@ -137,6 +143,10 @@ func (o GetAutonomousCharacterSetsResultOutput) Filters() GetAutonomousCharacter
 // The provider-assigned unique ID for this managed resource.
 func (o GetAutonomousCharacterSetsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutonomousCharacterSetsResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetAutonomousCharacterSetsResultOutput) IsDedicated() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAutonomousCharacterSetsResult) *bool { return v.IsDedicated }).(pulumi.BoolPtrOutput)
 }
 
 func (o GetAutonomousCharacterSetsResultOutput) IsShared() pulumi.BoolPtrOutput {

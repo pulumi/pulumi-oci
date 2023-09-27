@@ -35,6 +35,10 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
      * 
      */
     private String availabilityDomain;
+    /**
+     * @return Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.&lt;br&gt; For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * 
+     */
     private Double availableCpus;
     /**
      * @return Backup options for the Autonomous Container Database.
@@ -254,6 +258,10 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
     public String availabilityDomain() {
         return this.availabilityDomain;
     }
+    /**
+     * @return Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.&lt;br&gt; For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * 
+     */
     public Double availableCpus() {
         return this.availableCpus;
     }

@@ -50,7 +50,7 @@ export interface GetAutonomousDatabaseWalletArgs {
     /**
      * The type of wallet to generate.
      *
-     * **Shared Exadata infrastructure usage:**
+     * **Serverless instance usage:**
      */
     generateType?: string;
     /**
@@ -118,7 +118,7 @@ export interface GetAutonomousDatabaseWalletOutputArgs {
     /**
      * The type of wallet to generate.
      *
-     * **Shared Exadata infrastructure usage:**
+     * **Serverless instance usage:**
      */
     generateType?: pulumi.Input<string>;
     /**

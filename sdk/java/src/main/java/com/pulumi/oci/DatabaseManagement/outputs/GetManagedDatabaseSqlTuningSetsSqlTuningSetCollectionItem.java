@@ -16,6 +16,16 @@ public final class GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem {
      */
     private String description;
     /**
+     * @return Latest execution error of the plsql that was submitted as a scheduler job.
+     * 
+     */
+    private String errorMessage;
+    /**
+     * @return The unique Sql tuning set identifier. This is not OCID.
+     * 
+     */
+    private Integer id;
+    /**
      * @return The name of the SQL tuning set.
      * 
      */
@@ -26,10 +36,30 @@ public final class GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem {
      */
     private String owner;
     /**
+     * @return Name of the Sql tuning set scheduler job.
+     * 
+     */
+    private String scheduledJobName;
+    /**
      * @return The number of SQL statements in the SQL tuning set.
      * 
      */
     private Integer statementCounts;
+    /**
+     * @return Current status of the Sql tuning set.
+     * 
+     */
+    private String status;
+    /**
+     * @return The created time of the Sql tuning set.
+     * 
+     */
+    private String timeCreated;
+    /**
+     * @return Last modified time of the Sql tuning set.
+     * 
+     */
+    private String timeLastModified;
 
     private GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem() {}
     /**
@@ -38,6 +68,20 @@ public final class GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem {
      */
     public String description() {
         return this.description;
+    }
+    /**
+     * @return Latest execution error of the plsql that was submitted as a scheduler job.
+     * 
+     */
+    public String errorMessage() {
+        return this.errorMessage;
+    }
+    /**
+     * @return The unique Sql tuning set identifier. This is not OCID.
+     * 
+     */
+    public Integer id() {
+        return this.id;
     }
     /**
      * @return The name of the SQL tuning set.
@@ -54,11 +98,39 @@ public final class GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem {
         return this.owner;
     }
     /**
+     * @return Name of the Sql tuning set scheduler job.
+     * 
+     */
+    public String scheduledJobName() {
+        return this.scheduledJobName;
+    }
+    /**
      * @return The number of SQL statements in the SQL tuning set.
      * 
      */
     public Integer statementCounts() {
         return this.statementCounts;
+    }
+    /**
+     * @return Current status of the Sql tuning set.
+     * 
+     */
+    public String status() {
+        return this.status;
+    }
+    /**
+     * @return The created time of the Sql tuning set.
+     * 
+     */
+    public String timeCreated() {
+        return this.timeCreated;
+    }
+    /**
+     * @return Last modified time of the Sql tuning set.
+     * 
+     */
+    public String timeLastModified() {
+        return this.timeLastModified;
     }
 
     public static Builder builder() {
@@ -71,21 +143,43 @@ public final class GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem {
     @CustomType.Builder
     public static final class Builder {
         private String description;
+        private String errorMessage;
+        private Integer id;
         private String name;
         private String owner;
+        private String scheduledJobName;
         private Integer statementCounts;
+        private String status;
+        private String timeCreated;
+        private String timeLastModified;
         public Builder() {}
         public Builder(GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.description = defaults.description;
+    	      this.errorMessage = defaults.errorMessage;
+    	      this.id = defaults.id;
     	      this.name = defaults.name;
     	      this.owner = defaults.owner;
+    	      this.scheduledJobName = defaults.scheduledJobName;
     	      this.statementCounts = defaults.statementCounts;
+    	      this.status = defaults.status;
+    	      this.timeCreated = defaults.timeCreated;
+    	      this.timeLastModified = defaults.timeLastModified;
         }
 
         @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder errorMessage(String errorMessage) {
+            this.errorMessage = Objects.requireNonNull(errorMessage);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder id(Integer id) {
+            this.id = Objects.requireNonNull(id);
             return this;
         }
         @CustomType.Setter
@@ -99,16 +193,42 @@ public final class GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder scheduledJobName(String scheduledJobName) {
+            this.scheduledJobName = Objects.requireNonNull(scheduledJobName);
+            return this;
+        }
+        @CustomType.Setter
         public Builder statementCounts(Integer statementCounts) {
             this.statementCounts = Objects.requireNonNull(statementCounts);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder status(String status) {
+            this.status = Objects.requireNonNull(status);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeCreated(String timeCreated) {
+            this.timeCreated = Objects.requireNonNull(timeCreated);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeLastModified(String timeLastModified) {
+            this.timeLastModified = Objects.requireNonNull(timeLastModified);
             return this;
         }
         public GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem build() {
             final var o = new GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem();
             o.description = description;
+            o.errorMessage = errorMessage;
+            o.id = id;
             o.name = name;
             o.owner = owner;
+            o.scheduledJobName = scheduledJobName;
             o.statementCounts = statementCounts;
+            o.status = status;
+            o.timeCreated = timeCreated;
+            o.timeLastModified = timeLastModified;
             return o;
         }
     }

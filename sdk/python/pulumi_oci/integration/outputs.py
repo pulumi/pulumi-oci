@@ -834,6 +834,7 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
                  custom_endpoints: Sequence['outputs.GetIntegrationInstancesIntegrationInstanceCustomEndpointResult'],
                  defined_tags: Mapping[str, Any],
                  display_name: str,
+                 domain_id: str,
                  enable_process_automation_trigger: int,
                  freeform_tags: Mapping[str, Any],
                  id: str,
@@ -882,6 +883,7 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
         pulumi.set(__self__, "custom_endpoints", custom_endpoints)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "domain_id", domain_id)
         pulumi.set(__self__, "enable_process_automation_trigger", enable_process_automation_trigger)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
@@ -955,6 +957,11 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
         A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="domainId")
+    def domain_id(self) -> str:
+        return pulumi.get(self, "domain_id")
 
     @property
     @pulumi.getter(name="enableProcessAutomationTrigger")

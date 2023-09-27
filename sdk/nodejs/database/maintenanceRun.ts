@@ -142,7 +142,7 @@ export class MaintenanceRun extends pulumi.CustomResource {
      */
     public /*out*/ readonly peerMaintenanceRunId!: pulumi.Output<string>;
     /**
-     * The current state of the maintenance run. For Autonomous Database on shared Exadata infrastructure, valid states are IN_PROGRESS, SUCCEEDED and FAILED.
+     * The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
@@ -363,7 +363,7 @@ export interface MaintenanceRunState {
      */
     peerMaintenanceRunId?: pulumi.Input<string>;
     /**
-     * The current state of the maintenance run. For Autonomous Database on shared Exadata infrastructure, valid states are IN_PROGRESS, SUCCEEDED and FAILED.
+     * The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
      */
     state?: pulumi.Input<string>;
     /**

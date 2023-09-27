@@ -4071,6 +4071,474 @@ func (o MonitoredResourcesSearchItemPropertyArrayOutput) Index(i pulumi.IntInput
 	}).(MonitoredResourcesSearchItemPropertyOutput)
 }
 
+type GetConfigsConfigCollection struct {
+	Items []GetConfigsConfigCollectionItem `pulumi:"items"`
+}
+
+// GetConfigsConfigCollectionInput is an input type that accepts GetConfigsConfigCollectionArgs and GetConfigsConfigCollectionOutput values.
+// You can construct a concrete instance of `GetConfigsConfigCollectionInput` via:
+//
+//	GetConfigsConfigCollectionArgs{...}
+type GetConfigsConfigCollectionInput interface {
+	pulumi.Input
+
+	ToGetConfigsConfigCollectionOutput() GetConfigsConfigCollectionOutput
+	ToGetConfigsConfigCollectionOutputWithContext(context.Context) GetConfigsConfigCollectionOutput
+}
+
+type GetConfigsConfigCollectionArgs struct {
+	Items GetConfigsConfigCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetConfigsConfigCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConfigsConfigCollection)(nil)).Elem()
+}
+
+func (i GetConfigsConfigCollectionArgs) ToGetConfigsConfigCollectionOutput() GetConfigsConfigCollectionOutput {
+	return i.ToGetConfigsConfigCollectionOutputWithContext(context.Background())
+}
+
+func (i GetConfigsConfigCollectionArgs) ToGetConfigsConfigCollectionOutputWithContext(ctx context.Context) GetConfigsConfigCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsConfigCollectionOutput)
+}
+
+func (i GetConfigsConfigCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetConfigsConfigCollection] {
+	return pulumix.Output[GetConfigsConfigCollection]{
+		OutputState: i.ToGetConfigsConfigCollectionOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetConfigsConfigCollectionArrayInput is an input type that accepts GetConfigsConfigCollectionArray and GetConfigsConfigCollectionArrayOutput values.
+// You can construct a concrete instance of `GetConfigsConfigCollectionArrayInput` via:
+//
+//	GetConfigsConfigCollectionArray{ GetConfigsConfigCollectionArgs{...} }
+type GetConfigsConfigCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetConfigsConfigCollectionArrayOutput() GetConfigsConfigCollectionArrayOutput
+	ToGetConfigsConfigCollectionArrayOutputWithContext(context.Context) GetConfigsConfigCollectionArrayOutput
+}
+
+type GetConfigsConfigCollectionArray []GetConfigsConfigCollectionInput
+
+func (GetConfigsConfigCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConfigsConfigCollection)(nil)).Elem()
+}
+
+func (i GetConfigsConfigCollectionArray) ToGetConfigsConfigCollectionArrayOutput() GetConfigsConfigCollectionArrayOutput {
+	return i.ToGetConfigsConfigCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetConfigsConfigCollectionArray) ToGetConfigsConfigCollectionArrayOutputWithContext(ctx context.Context) GetConfigsConfigCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsConfigCollectionArrayOutput)
+}
+
+func (i GetConfigsConfigCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigsConfigCollection] {
+	return pulumix.Output[[]GetConfigsConfigCollection]{
+		OutputState: i.ToGetConfigsConfigCollectionArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetConfigsConfigCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetConfigsConfigCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConfigsConfigCollection)(nil)).Elem()
+}
+
+func (o GetConfigsConfigCollectionOutput) ToGetConfigsConfigCollectionOutput() GetConfigsConfigCollectionOutput {
+	return o
+}
+
+func (o GetConfigsConfigCollectionOutput) ToGetConfigsConfigCollectionOutputWithContext(ctx context.Context) GetConfigsConfigCollectionOutput {
+	return o
+}
+
+func (o GetConfigsConfigCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetConfigsConfigCollection] {
+	return pulumix.Output[GetConfigsConfigCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetConfigsConfigCollectionOutput) Items() GetConfigsConfigCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollection) []GetConfigsConfigCollectionItem { return v.Items }).(GetConfigsConfigCollectionItemArrayOutput)
+}
+
+type GetConfigsConfigCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConfigsConfigCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConfigsConfigCollection)(nil)).Elem()
+}
+
+func (o GetConfigsConfigCollectionArrayOutput) ToGetConfigsConfigCollectionArrayOutput() GetConfigsConfigCollectionArrayOutput {
+	return o
+}
+
+func (o GetConfigsConfigCollectionArrayOutput) ToGetConfigsConfigCollectionArrayOutputWithContext(ctx context.Context) GetConfigsConfigCollectionArrayOutput {
+	return o
+}
+
+func (o GetConfigsConfigCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigsConfigCollection] {
+	return pulumix.Output[[]GetConfigsConfigCollection]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetConfigsConfigCollectionArrayOutput) Index(i pulumi.IntInput) GetConfigsConfigCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConfigsConfigCollection {
+		return vs[0].([]GetConfigsConfigCollection)[vs[1].(int)]
+	}).(GetConfigsConfigCollectionOutput)
+}
+
+type GetConfigsConfigCollectionItem struct {
+	// The ID of the compartment in which data is listed.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The type of configuration.
+	ConfigType string `pulumi:"configType"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The Unique Oracle ID (OCID) that is immutable on creation.
+	Id string `pulumi:"id"`
+	// True if automatic promotion is enabled, false if it is not enabled.
+	IsEnabled bool `pulumi:"isEnabled"`
+	// The type of resource to configure for automatic promotion.
+	ResourceType string `pulumi:"resourceType"`
+	// The current state of the Config.
+	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// The time the configuration was created. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time the Config was updated.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetConfigsConfigCollectionItemInput is an input type that accepts GetConfigsConfigCollectionItemArgs and GetConfigsConfigCollectionItemOutput values.
+// You can construct a concrete instance of `GetConfigsConfigCollectionItemInput` via:
+//
+//	GetConfigsConfigCollectionItemArgs{...}
+type GetConfigsConfigCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetConfigsConfigCollectionItemOutput() GetConfigsConfigCollectionItemOutput
+	ToGetConfigsConfigCollectionItemOutputWithContext(context.Context) GetConfigsConfigCollectionItemOutput
+}
+
+type GetConfigsConfigCollectionItemArgs struct {
+	// The ID of the compartment in which data is listed.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The type of configuration.
+	ConfigType pulumi.StringInput `pulumi:"configType"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The Unique Oracle ID (OCID) that is immutable on creation.
+	Id pulumi.StringInput `pulumi:"id"`
+	// True if automatic promotion is enabled, false if it is not enabled.
+	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	// The type of resource to configure for automatic promotion.
+	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+	// The current state of the Config.
+	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	// The time the configuration was created. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time the Config was updated.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetConfigsConfigCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConfigsConfigCollectionItem)(nil)).Elem()
+}
+
+func (i GetConfigsConfigCollectionItemArgs) ToGetConfigsConfigCollectionItemOutput() GetConfigsConfigCollectionItemOutput {
+	return i.ToGetConfigsConfigCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetConfigsConfigCollectionItemArgs) ToGetConfigsConfigCollectionItemOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsConfigCollectionItemOutput)
+}
+
+func (i GetConfigsConfigCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetConfigsConfigCollectionItem] {
+	return pulumix.Output[GetConfigsConfigCollectionItem]{
+		OutputState: i.ToGetConfigsConfigCollectionItemOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetConfigsConfigCollectionItemArrayInput is an input type that accepts GetConfigsConfigCollectionItemArray and GetConfigsConfigCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetConfigsConfigCollectionItemArrayInput` via:
+//
+//	GetConfigsConfigCollectionItemArray{ GetConfigsConfigCollectionItemArgs{...} }
+type GetConfigsConfigCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetConfigsConfigCollectionItemArrayOutput() GetConfigsConfigCollectionItemArrayOutput
+	ToGetConfigsConfigCollectionItemArrayOutputWithContext(context.Context) GetConfigsConfigCollectionItemArrayOutput
+}
+
+type GetConfigsConfigCollectionItemArray []GetConfigsConfigCollectionItemInput
+
+func (GetConfigsConfigCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConfigsConfigCollectionItem)(nil)).Elem()
+}
+
+func (i GetConfigsConfigCollectionItemArray) ToGetConfigsConfigCollectionItemArrayOutput() GetConfigsConfigCollectionItemArrayOutput {
+	return i.ToGetConfigsConfigCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetConfigsConfigCollectionItemArray) ToGetConfigsConfigCollectionItemArrayOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsConfigCollectionItemArrayOutput)
+}
+
+func (i GetConfigsConfigCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigsConfigCollectionItem] {
+	return pulumix.Output[[]GetConfigsConfigCollectionItem]{
+		OutputState: i.ToGetConfigsConfigCollectionItemArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetConfigsConfigCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetConfigsConfigCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConfigsConfigCollectionItem)(nil)).Elem()
+}
+
+func (o GetConfigsConfigCollectionItemOutput) ToGetConfigsConfigCollectionItemOutput() GetConfigsConfigCollectionItemOutput {
+	return o
+}
+
+func (o GetConfigsConfigCollectionItemOutput) ToGetConfigsConfigCollectionItemOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemOutput {
+	return o
+}
+
+func (o GetConfigsConfigCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetConfigsConfigCollectionItem] {
+	return pulumix.Output[GetConfigsConfigCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The ID of the compartment in which data is listed.
+func (o GetConfigsConfigCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The type of configuration.
+func (o GetConfigsConfigCollectionItemOutput) ConfigType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.ConfigType }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetConfigsConfigCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetConfigsConfigCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetConfigsConfigCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The Unique Oracle ID (OCID) that is immutable on creation.
+func (o GetConfigsConfigCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// True if automatic promotion is enabled, false if it is not enabled.
+func (o GetConfigsConfigCollectionItemOutput) IsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+}
+
+// The type of resource to configure for automatic promotion.
+func (o GetConfigsConfigCollectionItemOutput) ResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.ResourceType }).(pulumi.StringOutput)
+}
+
+// The current state of the Config.
+func (o GetConfigsConfigCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetConfigsConfigCollectionItemOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+}
+
+// The time the configuration was created. An RFC3339 formatted datetime string.
+func (o GetConfigsConfigCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time the Config was updated.
+func (o GetConfigsConfigCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetConfigsConfigCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConfigsConfigCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConfigsConfigCollectionItem)(nil)).Elem()
+}
+
+func (o GetConfigsConfigCollectionItemArrayOutput) ToGetConfigsConfigCollectionItemArrayOutput() GetConfigsConfigCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetConfigsConfigCollectionItemArrayOutput) ToGetConfigsConfigCollectionItemArrayOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetConfigsConfigCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigsConfigCollectionItem] {
+	return pulumix.Output[[]GetConfigsConfigCollectionItem]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetConfigsConfigCollectionItemArrayOutput) Index(i pulumi.IntInput) GetConfigsConfigCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConfigsConfigCollectionItem {
+		return vs[0].([]GetConfigsConfigCollectionItem)[vs[1].(int)]
+	}).(GetConfigsConfigCollectionItemOutput)
+}
+
+type GetConfigsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetConfigsFilterInput is an input type that accepts GetConfigsFilterArgs and GetConfigsFilterOutput values.
+// You can construct a concrete instance of `GetConfigsFilterInput` via:
+//
+//	GetConfigsFilterArgs{...}
+type GetConfigsFilterInput interface {
+	pulumi.Input
+
+	ToGetConfigsFilterOutput() GetConfigsFilterOutput
+	ToGetConfigsFilterOutputWithContext(context.Context) GetConfigsFilterOutput
+}
+
+type GetConfigsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetConfigsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConfigsFilter)(nil)).Elem()
+}
+
+func (i GetConfigsFilterArgs) ToGetConfigsFilterOutput() GetConfigsFilterOutput {
+	return i.ToGetConfigsFilterOutputWithContext(context.Background())
+}
+
+func (i GetConfigsFilterArgs) ToGetConfigsFilterOutputWithContext(ctx context.Context) GetConfigsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsFilterOutput)
+}
+
+func (i GetConfigsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetConfigsFilter] {
+	return pulumix.Output[GetConfigsFilter]{
+		OutputState: i.ToGetConfigsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetConfigsFilterArrayInput is an input type that accepts GetConfigsFilterArray and GetConfigsFilterArrayOutput values.
+// You can construct a concrete instance of `GetConfigsFilterArrayInput` via:
+//
+//	GetConfigsFilterArray{ GetConfigsFilterArgs{...} }
+type GetConfigsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetConfigsFilterArrayOutput() GetConfigsFilterArrayOutput
+	ToGetConfigsFilterArrayOutputWithContext(context.Context) GetConfigsFilterArrayOutput
+}
+
+type GetConfigsFilterArray []GetConfigsFilterInput
+
+func (GetConfigsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConfigsFilter)(nil)).Elem()
+}
+
+func (i GetConfigsFilterArray) ToGetConfigsFilterArrayOutput() GetConfigsFilterArrayOutput {
+	return i.ToGetConfigsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetConfigsFilterArray) ToGetConfigsFilterArrayOutputWithContext(ctx context.Context) GetConfigsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsFilterArrayOutput)
+}
+
+func (i GetConfigsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigsFilter] {
+	return pulumix.Output[[]GetConfigsFilter]{
+		OutputState: i.ToGetConfigsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetConfigsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetConfigsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConfigsFilter)(nil)).Elem()
+}
+
+func (o GetConfigsFilterOutput) ToGetConfigsFilterOutput() GetConfigsFilterOutput {
+	return o
+}
+
+func (o GetConfigsFilterOutput) ToGetConfigsFilterOutputWithContext(ctx context.Context) GetConfigsFilterOutput {
+	return o
+}
+
+func (o GetConfigsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetConfigsFilter] {
+	return pulumix.Output[GetConfigsFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetConfigsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetConfigsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetConfigsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetConfigsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetConfigsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetConfigsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConfigsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConfigsFilter)(nil)).Elem()
+}
+
+func (o GetConfigsFilterArrayOutput) ToGetConfigsFilterArrayOutput() GetConfigsFilterArrayOutput {
+	return o
+}
+
+func (o GetConfigsFilterArrayOutput) ToGetConfigsFilterArrayOutputWithContext(ctx context.Context) GetConfigsFilterArrayOutput {
+	return o
+}
+
+func (o GetConfigsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigsFilter] {
+	return pulumix.Output[[]GetConfigsFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetConfigsFilterArrayOutput) Index(i pulumi.IntInput) GetConfigsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConfigsFilter {
+		return vs[0].([]GetConfigsFilter)[vs[1].(int)]
+	}).(GetConfigsFilterOutput)
+}
+
 type GetDiscoveryJobDiscoveryDetail struct {
 	// The OCID of Management Agent
 	AgentId string `pulumi:"agentId"`
@@ -7303,6 +7771,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourcesSearchItemArrayInput)(nil)).Elem(), MonitoredResourcesSearchItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourcesSearchItemPropertyInput)(nil)).Elem(), MonitoredResourcesSearchItemPropertyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MonitoredResourcesSearchItemPropertyArrayInput)(nil)).Elem(), MonitoredResourcesSearchItemPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsConfigCollectionInput)(nil)).Elem(), GetConfigsConfigCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsConfigCollectionArrayInput)(nil)).Elem(), GetConfigsConfigCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsConfigCollectionItemInput)(nil)).Elem(), GetConfigsConfigCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsConfigCollectionItemArrayInput)(nil)).Elem(), GetConfigsConfigCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsFilterInput)(nil)).Elem(), GetConfigsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsFilterArrayInput)(nil)).Elem(), GetConfigsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDiscoveryJobDiscoveryDetailInput)(nil)).Elem(), GetDiscoveryJobDiscoveryDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDiscoveryJobDiscoveryDetailArrayInput)(nil)).Elem(), GetDiscoveryJobDiscoveryDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDiscoveryJobDiscoveryDetailCredentialInput)(nil)).Elem(), GetDiscoveryJobDiscoveryDetailCredentialArgs{})
@@ -7393,6 +7867,12 @@ func init() {
 	pulumi.RegisterOutputType(MonitoredResourcesSearchItemArrayOutput{})
 	pulumi.RegisterOutputType(MonitoredResourcesSearchItemPropertyOutput{})
 	pulumi.RegisterOutputType(MonitoredResourcesSearchItemPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetConfigsConfigCollectionOutput{})
+	pulumi.RegisterOutputType(GetConfigsConfigCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetConfigsConfigCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetConfigsConfigCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetConfigsFilterOutput{})
+	pulumi.RegisterOutputType(GetConfigsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDiscoveryJobDiscoveryDetailOutput{})
 	pulumi.RegisterOutputType(GetDiscoveryJobDiscoveryDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetDiscoveryJobDiscoveryDetailCredentialOutput{})

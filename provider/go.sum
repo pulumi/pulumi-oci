@@ -2073,10 +2073,10 @@ github.com/openzipkin-contrib/zipkin-go-opentracing v0.4.5/go.mod h1:/wsWhb9smxS
 github.com/openzipkin/zipkin-go v0.1.6/go.mod h1:QgAqvLzwWbR/WpD4A3cGpPtJrZXNIiJc5AZX7/PBEpw=
 github.com/openzipkin/zipkin-go v0.2.1/go.mod h1:NaW6tEwdmWMaCDZzg8sh+IBNOxHMPnhQw8ySjnjRyN4=
 github.com/openzipkin/zipkin-go v0.2.2/go.mod h1:NaW6tEwdmWMaCDZzg8sh+IBNOxHMPnhQw8ySjnjRyN4=
-github.com/oracle/oci-go-sdk/v65 v65.49.0 h1:A/G4SuzLixNy43DsXj9Vok9TygRZRX15I62ebGTHj2Y=
-github.com/oracle/oci-go-sdk/v65 v65.49.0/go.mod h1:IBEV9l1qBzUpo7zgGaRUhbB05BVfcDGYRFBCPlTcPp0=
-github.com/oracle/terraform-provider-oci v1.0.19-0.20230906154912-d224d50d2715 h1:t8OXdKxskuyDdXbc0XlUnggs6DWYK8d2xqfO6qsGJI4=
-github.com/oracle/terraform-provider-oci v1.0.19-0.20230906154912-d224d50d2715/go.mod h1:mOPNI/YRsgWpwnDjgtCutGkO+T+A/lpFJVifNmoUE/U=
+github.com/oracle/oci-go-sdk/v65 v65.49.2 h1:optOfjGIVmZZMT3a/8ri/CVV1loDG0ab1p2tEpNW5ro=
+github.com/oracle/oci-go-sdk/v65 v65.49.2/go.mod h1:IBEV9l1qBzUpo7zgGaRUhbB05BVfcDGYRFBCPlTcPp0=
+github.com/oracle/terraform-provider-oci v1.0.19-0.20230926225428-c23fb98a733f h1:Vz0STTtVVUXnHNYgd3oLoM0CdZhd94ZHSGdj6NR6M0o=
+github.com/oracle/terraform-provider-oci v1.0.19-0.20230926225428-c23fb98a733f/go.mod h1:qTSfDhcVhhkhndeCV0MJhsKDc61qAhnsau5YkTorZsk=
 github.com/pact-foundation/pact-go v1.0.4/go.mod h1:uExwJY4kCzNPcHRj+hCR/HBbOOIwwtUjcrb0b5/5kLM=
 github.com/pascaldekloe/goe v0.0.0-20180627143212-57f6aae5913c/go.mod h1:lzWF7FIEvWOWxwDKqyGYQf6ZUaNfKdP144TG7ZOy1lc=
 github.com/pascaldekloe/goe v0.1.0 h1:cBOtyMzM9HTpWjXfbbunk26uA6nG3a8n06Wieeh0MwY=
@@ -2183,8 +2183,8 @@ github.com/pulumi/pulumi-java/pkg v0.9.6 h1:UJrOAsYHRchwb4QlfI9Q224qg1TOI3rIsI6D
 github.com/pulumi/pulumi-java/pkg v0.9.6/go.mod h1:c6rSw/+q4O0IImgJ9axxoC6QesbPYWBaG5gimbHouUQ=
 github.com/pulumi/pulumi-terraform-bridge/testing v0.0.1 h1:SCg1gjfY9N4yn8U8peIUYATifjoDABkyR7H9lmefsfc=
 github.com/pulumi/pulumi-terraform-bridge/testing v0.0.1/go.mod h1:7OeUPH8rpt5ipyj9EFcnXpuzQ8SHL0dyqdfa8nOacdk=
-github.com/pulumi/pulumi-terraform-bridge/v3 v3.60.0 h1:MPhSwNLJJlqLFHGfrXIRXZHzFIu05YLQldAJRYpOHRs=
-github.com/pulumi/pulumi-terraform-bridge/v3 v3.60.0/go.mod h1:o0Vfch2UXtHOnGYpNElzGg4htT6B8X8hS9fa5AguP7g=
+github.com/pulumi/pulumi-terraform-bridge/v3 v3.60.1 h1:+W2JHLi4y+G57jLPLJbDLv1xvm/9L2NO0gWXrtR8MDM=
+github.com/pulumi/pulumi-terraform-bridge/v3 v3.60.1/go.mod h1:o0Vfch2UXtHOnGYpNElzGg4htT6B8X8hS9fa5AguP7g=
 github.com/pulumi/pulumi-terraform-bridge/x/muxer v0.0.4 h1:rIzMmtcVpPX8ynaz6/nW5AHNY63DiNfCohqmxWvMpM4=
 github.com/pulumi/pulumi-terraform-bridge/x/muxer v0.0.4/go.mod h1:Kt8RIZWa/N8rW3+0g6NrqCBmF3o+HuIhFaZpssEkG6w=
 github.com/pulumi/pulumi-yaml v1.2.2 h1:W6BeUBLhDrJ2GSU0em1AUVelG9PBI4ABY61DdhJOO3E=

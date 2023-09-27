@@ -5,10 +5,25 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { ConfigArgs, ConfigState } from "./config";
+export type Config = import("./config").Config;
+export const Config: typeof import("./config").Config = null as any;
+utilities.lazyLoad(exports, ["Config"], () => require("./config"));
+
 export { DiscoveryJobArgs, DiscoveryJobState } from "./discoveryJob";
 export type DiscoveryJob = import("./discoveryJob").DiscoveryJob;
 export const DiscoveryJob: typeof import("./discoveryJob").DiscoveryJob = null as any;
 utilities.lazyLoad(exports, ["DiscoveryJob"], () => require("./discoveryJob"));
+
+export { GetConfigArgs, GetConfigResult, GetConfigOutputArgs } from "./getConfig";
+export const getConfig: typeof import("./getConfig").getConfig = null as any;
+export const getConfigOutput: typeof import("./getConfig").getConfigOutput = null as any;
+utilities.lazyLoad(exports, ["getConfig","getConfigOutput"], () => require("./getConfig"));
+
+export { GetConfigsArgs, GetConfigsResult, GetConfigsOutputArgs } from "./getConfigs";
+export const getConfigs: typeof import("./getConfigs").getConfigs = null as any;
+export const getConfigsOutput: typeof import("./getConfigs").getConfigsOutput = null as any;
+utilities.lazyLoad(exports, ["getConfigs","getConfigsOutput"], () => require("./getConfigs"));
 
 export { GetDiscoveryJobArgs, GetDiscoveryJobResult, GetDiscoveryJobOutputArgs } from "./getDiscoveryJob";
 export const getDiscoveryJob: typeof import("./getDiscoveryJob").getDiscoveryJob = null as any;
@@ -60,6 +75,8 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "oci:StackMonitoring/config:Config":
+                return new Config(name, <any>undefined, { urn })
             case "oci:StackMonitoring/discoveryJob:DiscoveryJob":
                 return new DiscoveryJob(name, <any>undefined, { urn })
             case "oci:StackMonitoring/monitoredResource:MonitoredResource":
@@ -77,6 +94,7 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("oci", "StackMonitoring/config", _module)
 pulumi.runtime.registerResourceModule("oci", "StackMonitoring/discoveryJob", _module)
 pulumi.runtime.registerResourceModule("oci", "StackMonitoring/monitoredResource", _module)
 pulumi.runtime.registerResourceModule("oci", "StackMonitoring/monitoredResourcesAssociateMonitoredResource", _module)

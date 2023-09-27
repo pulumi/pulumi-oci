@@ -16058,7 +16058,7 @@ type GetVcnsVirtualNetwork struct {
 	// The list of BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 ranges.
 	Byoipv6cidrBlocks  []string                                 `pulumi:"byoipv6cidrBlocks"`
 	Byoipv6cidrDetails []GetVcnsVirtualNetworkByoipv6cidrDetail `pulumi:"byoipv6cidrDetails"`
-	// Deprecated. The first CIDR IP address from cidrBlocks.  Example: `172.16.0.0/16`
+	// Deprecated. The first CIDR IP address from cidr_blocks.  Example: `172.16.0.0/16`
 	CidrBlock string `pulumi:"cidrBlock"`
 	// The list of IPv4 CIDR blocks the VCN will use.
 	CidrBlocks []string `pulumi:"cidrBlocks"`
@@ -16109,7 +16109,7 @@ type GetVcnsVirtualNetworkArgs struct {
 	// The list of BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 ranges.
 	Byoipv6cidrBlocks  pulumi.StringArrayInput                          `pulumi:"byoipv6cidrBlocks"`
 	Byoipv6cidrDetails GetVcnsVirtualNetworkByoipv6cidrDetailArrayInput `pulumi:"byoipv6cidrDetails"`
-	// Deprecated. The first CIDR IP address from cidrBlocks.  Example: `172.16.0.0/16`
+	// Deprecated. The first CIDR IP address from cidr_blocks.  Example: `172.16.0.0/16`
 	CidrBlock pulumi.StringInput `pulumi:"cidrBlock"`
 	// The list of IPv4 CIDR blocks the VCN will use.
 	CidrBlocks pulumi.StringArrayInput `pulumi:"cidrBlocks"`
@@ -16223,7 +16223,7 @@ func (o GetVcnsVirtualNetworkOutput) Byoipv6cidrDetails() GetVcnsVirtualNetworkB
 	return o.ApplyT(func(v GetVcnsVirtualNetwork) []GetVcnsVirtualNetworkByoipv6cidrDetail { return v.Byoipv6cidrDetails }).(GetVcnsVirtualNetworkByoipv6cidrDetailArrayOutput)
 }
 
-// Deprecated. The first CIDR IP address from cidrBlocks.  Example: `172.16.0.0/16`
+// Deprecated. The first CIDR IP address from cidr_blocks.  Example: `172.16.0.0/16`
 func (o GetVcnsVirtualNetworkOutput) CidrBlock() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVcnsVirtualNetwork) string { return v.CidrBlock }).(pulumi.StringOutput)
 }

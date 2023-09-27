@@ -40,14 +40,29 @@ public final class GetAutonomousCharacterSetsPlainArgs extends com.pulumi.resour
     }
 
     /**
-     * Specifies whether this request is for Autonomous Database on Shared infrastructure. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+     * Specifies if the request is for an Autonomous Database Dedicated instance. The default request is for an Autonomous Database Dedicated instance.
+     * 
+     */
+    @Import(name="isDedicated")
+    private @Nullable Boolean isDedicated;
+
+    /**
+     * @return Specifies if the request is for an Autonomous Database Dedicated instance. The default request is for an Autonomous Database Dedicated instance.
+     * 
+     */
+    public Optional<Boolean> isDedicated() {
+        return Optional.ofNullable(this.isDedicated);
+    }
+
+    /**
+     * Specifies whether this request is for an Autonomous Database Serverless instance. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
      * 
      */
     @Import(name="isShared")
     private @Nullable Boolean isShared;
 
     /**
-     * @return Specifies whether this request is for Autonomous Database on Shared infrastructure. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+     * @return Specifies whether this request is for an Autonomous Database Serverless instance. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
      * 
      */
     public Optional<Boolean> isShared() {
@@ -59,6 +74,7 @@ public final class GetAutonomousCharacterSetsPlainArgs extends com.pulumi.resour
     private GetAutonomousCharacterSetsPlainArgs(GetAutonomousCharacterSetsPlainArgs $) {
         this.characterSetType = $.characterSetType;
         this.filters = $.filters;
+        this.isDedicated = $.isDedicated;
         this.isShared = $.isShared;
     }
 
@@ -101,7 +117,18 @@ public final class GetAutonomousCharacterSetsPlainArgs extends com.pulumi.resour
         }
 
         /**
-         * @param isShared Specifies whether this request is for Autonomous Database on Shared infrastructure. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+         * @param isDedicated Specifies if the request is for an Autonomous Database Dedicated instance. The default request is for an Autonomous Database Dedicated instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isDedicated(@Nullable Boolean isDedicated) {
+            $.isDedicated = isDedicated;
+            return this;
+        }
+
+        /**
+         * @param isShared Specifies whether this request is for an Autonomous Database Serverless instance. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
          * 
          * @return builder
          * 

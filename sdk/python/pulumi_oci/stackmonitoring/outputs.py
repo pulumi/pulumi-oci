@@ -35,6 +35,9 @@ __all__ = [
     'MonitoredResourcesSearchAssociationItemSourceResourceDetail',
     'MonitoredResourcesSearchItem',
     'MonitoredResourcesSearchItemProperty',
+    'GetConfigsConfigCollectionResult',
+    'GetConfigsConfigCollectionItemResult',
+    'GetConfigsFilterResult',
     'GetDiscoveryJobDiscoveryDetailResult',
     'GetDiscoveryJobDiscoveryDetailCredentialResult',
     'GetDiscoveryJobDiscoveryDetailCredentialItemResult',
@@ -1733,6 +1736,184 @@ class MonitoredResourcesSearchItemProperty(dict):
         Property Value.
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetConfigsConfigCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetConfigsConfigCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetConfigsConfigCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetConfigsConfigCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 config_type: str,
+                 defined_tags: Mapping[str, Any],
+                 display_name: str,
+                 freeform_tags: Mapping[str, Any],
+                 id: str,
+                 is_enabled: bool,
+                 resource_type: str,
+                 state: str,
+                 system_tags: Mapping[str, Any],
+                 time_created: str,
+                 time_updated: str):
+        """
+        :param str compartment_id: The ID of the compartment in which data is listed.
+        :param str config_type: The type of configuration.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param str display_name: A filter to return only resources that match the entire display name given.
+        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param str id: The Unique Oracle ID (OCID) that is immutable on creation.
+        :param bool is_enabled: True if automatic promotion is enabled, false if it is not enabled.
+        :param str resource_type: The type of resource to configure for automatic promotion.
+        :param str state: The current state of the Config.
+        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str time_created: The time the configuration was created. An RFC3339 formatted datetime string.
+        :param str time_updated: The time the Config was updated.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "config_type", config_type)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "resource_type", resource_type)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The ID of the compartment in which data is listed.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="configType")
+    def config_type(self) -> str:
+        """
+        The type of configuration.
+        """
+        return pulumi.get(self, "config_type")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The Unique Oracle ID (OCID) that is immutable on creation.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> bool:
+        """
+        True if automatic promotion is enabled, false if it is not enabled.
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> str:
+        """
+        The type of resource to configure for automatic promotion.
+        """
+        return pulumi.get(self, "resource_type")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the Config.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time the configuration was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The time the Config was updated.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetConfigsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
 
 
 @pulumi.output_type

@@ -4601,6 +4601,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "StackMonitoring/config",
+  "fqn": "pulumi_oci.stackmonitoring",
+  "classes": {
+   "oci:StackMonitoring/config:Config": "Config"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "StackMonitoring/discoveryJob",
   "fqn": "pulumi_oci.stackmonitoring",
   "classes": {

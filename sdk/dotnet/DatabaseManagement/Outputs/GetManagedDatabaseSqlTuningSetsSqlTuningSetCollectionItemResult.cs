@@ -18,6 +18,14 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly string Description;
         /// <summary>
+        /// Latest execution error of the plsql that was submitted as a scheduler job.
+        /// </summary>
+        public readonly string ErrorMessage;
+        /// <summary>
+        /// The unique Sql tuning set identifier. This is not OCID.
+        /// </summary>
+        public readonly int Id;
+        /// <summary>
         /// The name of the SQL tuning set.
         /// </summary>
         public readonly string Name;
@@ -26,24 +34,58 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly string Owner;
         /// <summary>
+        /// Name of the Sql tuning set scheduler job.
+        /// </summary>
+        public readonly string ScheduledJobName;
+        /// <summary>
         /// The number of SQL statements in the SQL tuning set.
         /// </summary>
         public readonly int StatementCounts;
+        /// <summary>
+        /// Current status of the Sql tuning set.
+        /// </summary>
+        public readonly string Status;
+        /// <summary>
+        /// The created time of the Sql tuning set.
+        /// </summary>
+        public readonly string TimeCreated;
+        /// <summary>
+        /// Last modified time of the Sql tuning set.
+        /// </summary>
+        public readonly string TimeLastModified;
 
         [OutputConstructor]
         private GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemResult(
             string description,
 
+            string errorMessage,
+
+            int id,
+
             string name,
 
             string owner,
 
-            int statementCounts)
+            string scheduledJobName,
+
+            int statementCounts,
+
+            string status,
+
+            string timeCreated,
+
+            string timeLastModified)
         {
             Description = description;
+            ErrorMessage = errorMessage;
+            Id = id;
             Name = name;
             Owner = owner;
+            ScheduledJobName = scheduledJobName;
             StatementCounts = statementCounts;
+            Status = status;
+            TimeCreated = timeCreated;
+            TimeLastModified = timeLastModified;
         }
     }
 }

@@ -25,6 +25,7 @@ class IntegrationInstanceArgs:
                  consumption_model: Optional[pulumi.Input[str]] = None,
                  custom_endpoint: Optional[pulumi.Input['IntegrationInstanceCustomEndpointArgs']] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 domain_id: Optional[pulumi.Input[str]] = None,
                  enable_process_automation_trigger: Optional[pulumi.Input[int]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  idcs_at: Optional[pulumi.Input[str]] = None,
@@ -44,6 +45,7 @@ class IntegrationInstanceArgs:
         :param pulumi.Input[str] consumption_model: Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
         :param pulumi.Input['IntegrationInstanceCustomEndpointArgs'] custom_endpoint: (Updatable) Details for a custom endpoint for the integration instance (update).
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[str] domain_id: The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
         :param pulumi.Input[int] enable_process_automation_trigger: (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] idcs_at: (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
@@ -70,6 +72,8 @@ class IntegrationInstanceArgs:
             pulumi.set(__self__, "custom_endpoint", custom_endpoint)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
+        if domain_id is not None:
+            pulumi.set(__self__, "domain_id", domain_id)
         if enable_process_automation_trigger is not None:
             pulumi.set(__self__, "enable_process_automation_trigger", enable_process_automation_trigger)
         if freeform_tags is not None:
@@ -196,6 +200,18 @@ class IntegrationInstanceArgs:
         pulumi.set(self, "defined_tags", value)
 
     @property
+    @pulumi.getter(name="domainId")
+    def domain_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
+        """
+        return pulumi.get(self, "domain_id")
+
+    @domain_id.setter
+    def domain_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "domain_id", value)
+
+    @property
     @pulumi.getter(name="enableProcessAutomationTrigger")
     def enable_process_automation_trigger(self) -> Optional[pulumi.Input[int]]:
         """
@@ -306,6 +322,7 @@ class _IntegrationInstanceState:
                  custom_endpoint: Optional[pulumi.Input['IntegrationInstanceCustomEndpointArgs']] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 domain_id: Optional[pulumi.Input[str]] = None,
                  enable_process_automation_trigger: Optional[pulumi.Input[int]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  idcs_at: Optional[pulumi.Input[str]] = None,
@@ -331,6 +348,7 @@ class _IntegrationInstanceState:
         :param pulumi.Input['IntegrationInstanceCustomEndpointArgs'] custom_endpoint: (Updatable) Details for a custom endpoint for the integration instance (update).
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Integration Instance Identifier.
+        :param pulumi.Input[str] domain_id: The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
         :param pulumi.Input[int] enable_process_automation_trigger: (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] idcs_at: (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
@@ -366,6 +384,8 @@ class _IntegrationInstanceState:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if domain_id is not None:
+            pulumi.set(__self__, "domain_id", domain_id)
         if enable_process_automation_trigger is not None:
             pulumi.set(__self__, "enable_process_automation_trigger", enable_process_automation_trigger)
         if freeform_tags is not None:
@@ -482,6 +502,18 @@ class _IntegrationInstanceState:
     @display_name.setter
     def display_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="domainId")
+    def domain_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
+        """
+        return pulumi.get(self, "domain_id")
+
+    @domain_id.setter
+    def domain_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "domain_id", value)
 
     @property
     @pulumi.getter(name="enableProcessAutomationTrigger")
@@ -691,6 +723,7 @@ class IntegrationInstance(pulumi.CustomResource):
                  custom_endpoint: Optional[pulumi.Input[pulumi.InputType['IntegrationInstanceCustomEndpointArgs']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 domain_id: Optional[pulumi.Input[str]] = None,
                  enable_process_automation_trigger: Optional[pulumi.Input[int]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  idcs_at: Optional[pulumi.Input[str]] = None,
@@ -732,6 +765,7 @@ class IntegrationInstance(pulumi.CustomResource):
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
+            domain_id=oci_identity_domain["test_domain"]["id"],
             freeform_tags={
                 "bar-key": "value",
             },
@@ -767,6 +801,7 @@ class IntegrationInstance(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['IntegrationInstanceCustomEndpointArgs']] custom_endpoint: (Updatable) Details for a custom endpoint for the integration instance (update).
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Integration Instance Identifier.
+        :param pulumi.Input[str] domain_id: The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
         :param pulumi.Input[int] enable_process_automation_trigger: (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] idcs_at: (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
@@ -818,6 +853,7 @@ class IntegrationInstance(pulumi.CustomResource):
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
+            domain_id=oci_identity_domain["test_domain"]["id"],
             freeform_tags={
                 "bar-key": "value",
             },
@@ -866,6 +902,7 @@ class IntegrationInstance(pulumi.CustomResource):
                  custom_endpoint: Optional[pulumi.Input[pulumi.InputType['IntegrationInstanceCustomEndpointArgs']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 domain_id: Optional[pulumi.Input[str]] = None,
                  enable_process_automation_trigger: Optional[pulumi.Input[int]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  idcs_at: Optional[pulumi.Input[str]] = None,
@@ -896,6 +933,7 @@ class IntegrationInstance(pulumi.CustomResource):
             if display_name is None and not opts.urn:
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
+            __props__.__dict__["domain_id"] = domain_id
             __props__.__dict__["enable_process_automation_trigger"] = enable_process_automation_trigger
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["idcs_at"] = None if idcs_at is None else pulumi.Output.secret(idcs_at)
@@ -938,6 +976,7 @@ class IntegrationInstance(pulumi.CustomResource):
             custom_endpoint: Optional[pulumi.Input[pulumi.InputType['IntegrationInstanceCustomEndpointArgs']]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
+            domain_id: Optional[pulumi.Input[str]] = None,
             enable_process_automation_trigger: Optional[pulumi.Input[int]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             idcs_at: Optional[pulumi.Input[str]] = None,
@@ -968,6 +1007,7 @@ class IntegrationInstance(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['IntegrationInstanceCustomEndpointArgs']] custom_endpoint: (Updatable) Details for a custom endpoint for the integration instance (update).
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Integration Instance Identifier.
+        :param pulumi.Input[str] domain_id: The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
         :param pulumi.Input[int] enable_process_automation_trigger: (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] idcs_at: (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
@@ -1000,6 +1040,7 @@ class IntegrationInstance(pulumi.CustomResource):
         __props__.__dict__["custom_endpoint"] = custom_endpoint
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
+        __props__.__dict__["domain_id"] = domain_id
         __props__.__dict__["enable_process_automation_trigger"] = enable_process_automation_trigger
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["idcs_at"] = idcs_at
@@ -1073,6 +1114,14 @@ class IntegrationInstance(pulumi.CustomResource):
         (Updatable) Integration Instance Identifier.
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="domainId")
+    def domain_id(self) -> pulumi.Output[Optional[str]]:
+        """
+        The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
+        """
+        return pulumi.get(self, "domain_id")
 
     @property
     @pulumi.getter(name="enableProcessAutomationTrigger")

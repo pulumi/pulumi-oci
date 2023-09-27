@@ -2087,6 +2087,7 @@ type GetIntegrationInstancesIntegrationInstance struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
 	DisplayName                    string `pulumi:"displayName"`
+	DomainId                       string `pulumi:"domainId"`
 	EnableProcessAutomationTrigger int    `pulumi:"enableProcessAutomationTrigger"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -2147,6 +2148,7 @@ type GetIntegrationInstancesIntegrationInstanceArgs struct {
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
 	DisplayName                    pulumi.StringInput `pulumi:"displayName"`
+	DomainId                       pulumi.StringInput `pulumi:"domainId"`
 	EnableProcessAutomationTrigger pulumi.IntInput    `pulumi:"enableProcessAutomationTrigger"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
@@ -2289,6 +2291,10 @@ func (o GetIntegrationInstancesIntegrationInstanceOutput) DefinedTags() pulumi.M
 // A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
 func (o GetIntegrationInstancesIntegrationInstanceOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+func (o GetIntegrationInstancesIntegrationInstanceOutput) DomainId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) string { return v.DomainId }).(pulumi.StringOutput)
 }
 
 func (o GetIntegrationInstancesIntegrationInstanceOutput) EnableProcessAutomationTrigger() pulumi.IntOutput {

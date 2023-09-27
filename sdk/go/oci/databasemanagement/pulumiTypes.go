@@ -48634,12 +48634,24 @@ func (o GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionArrayOutput) Index(
 type GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem struct {
 	// The description of the SQL tuning set.
 	Description string `pulumi:"description"`
+	// Latest execution error of the plsql that was submitted as a scheduler job.
+	ErrorMessage string `pulumi:"errorMessage"`
+	// The unique Sql tuning set identifier. This is not OCID.
+	Id int `pulumi:"id"`
 	// The name of the SQL tuning set.
 	Name string `pulumi:"name"`
 	// The owner of the SQL tuning set.
 	Owner string `pulumi:"owner"`
+	// Name of the Sql tuning set scheduler job.
+	ScheduledJobName string `pulumi:"scheduledJobName"`
 	// The number of SQL statements in the SQL tuning set.
 	StatementCounts int `pulumi:"statementCounts"`
+	// Current status of the Sql tuning set.
+	Status string `pulumi:"status"`
+	// The created time of the Sql tuning set.
+	TimeCreated string `pulumi:"timeCreated"`
+	// Last modified time of the Sql tuning set.
+	TimeLastModified string `pulumi:"timeLastModified"`
 }
 
 // GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemInput is an input type that accepts GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArgs and GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemOutput values.
@@ -48656,12 +48668,24 @@ type GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemInput interface {
 type GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArgs struct {
 	// The description of the SQL tuning set.
 	Description pulumi.StringInput `pulumi:"description"`
+	// Latest execution error of the plsql that was submitted as a scheduler job.
+	ErrorMessage pulumi.StringInput `pulumi:"errorMessage"`
+	// The unique Sql tuning set identifier. This is not OCID.
+	Id pulumi.IntInput `pulumi:"id"`
 	// The name of the SQL tuning set.
 	Name pulumi.StringInput `pulumi:"name"`
 	// The owner of the SQL tuning set.
 	Owner pulumi.StringInput `pulumi:"owner"`
+	// Name of the Sql tuning set scheduler job.
+	ScheduledJobName pulumi.StringInput `pulumi:"scheduledJobName"`
 	// The number of SQL statements in the SQL tuning set.
 	StatementCounts pulumi.IntInput `pulumi:"statementCounts"`
+	// Current status of the Sql tuning set.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The created time of the Sql tuning set.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Last modified time of the Sql tuning set.
+	TimeLastModified pulumi.StringInput `pulumi:"timeLastModified"`
 }
 
 func (GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArgs) ElementType() reflect.Type {
@@ -48738,6 +48762,16 @@ func (o GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemOutput) Descrip
 	return o.ApplyT(func(v GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem) string { return v.Description }).(pulumi.StringOutput)
 }
 
+// Latest execution error of the plsql that was submitted as a scheduler job.
+func (o GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemOutput) ErrorMessage() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem) string { return v.ErrorMessage }).(pulumi.StringOutput)
+}
+
+// The unique Sql tuning set identifier. This is not OCID.
+func (o GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemOutput) Id() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem) int { return v.Id }).(pulumi.IntOutput)
+}
+
 // The name of the SQL tuning set.
 func (o GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem) string { return v.Name }).(pulumi.StringOutput)
@@ -48748,9 +48782,29 @@ func (o GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemOutput) Owner()
 	return o.ApplyT(func(v GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem) string { return v.Owner }).(pulumi.StringOutput)
 }
 
+// Name of the Sql tuning set scheduler job.
+func (o GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemOutput) ScheduledJobName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem) string { return v.ScheduledJobName }).(pulumi.StringOutput)
+}
+
 // The number of SQL statements in the SQL tuning set.
 func (o GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemOutput) StatementCounts() pulumi.IntOutput {
 	return o.ApplyT(func(v GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem) int { return v.StatementCounts }).(pulumi.IntOutput)
+}
+
+// Current status of the Sql tuning set.
+func (o GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// The created time of the Sql tuning set.
+func (o GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Last modified time of the Sql tuning set.
+func (o GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemOutput) TimeLastModified() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem) string { return v.TimeLastModified }).(pulumi.StringOutput)
 }
 
 type GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemArrayOutput struct{ *pulumi.OutputState }

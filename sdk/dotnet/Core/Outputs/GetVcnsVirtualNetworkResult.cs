@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Core.Outputs
         public readonly ImmutableArray<string> Byoipv6cidrBlocks;
         public readonly ImmutableArray<Outputs.GetVcnsVirtualNetworkByoipv6cidrDetailResult> Byoipv6cidrDetails;
         /// <summary>
-        /// Deprecated. The first CIDR IP address from cidrBlocks.  Example: `172.16.0.0/16`
+        /// Deprecated. The first CIDR IP address from cidr_blocks.  Example: `172.16.0.0/16`
         /// </summary>
         public readonly string CidrBlock;
         /// <summary>

@@ -249,7 +249,6 @@ namespace Pulumi.Oci.Database
         public readonly string? AutonomousVmClusterId;
         /// <summary>
         /// The availability domain of the Autonomous Container Database.
-        /// &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
         /// </summary>
         public readonly string? AvailabilityDomain;
         /// <summary>

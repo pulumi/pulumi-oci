@@ -40092,7 +40092,7 @@ class GetVcnsVirtualNetworkResult(dict):
                  vcn_domain_name: str):
         """
         :param Sequence[str] byoipv6cidr_blocks: The list of BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 ranges.
-        :param str cidr_block: Deprecated. The first CIDR IP address from cidrBlocks.  Example: `172.16.0.0/16`
+        :param str cidr_block: Deprecated. The first CIDR IP address from cidr_blocks.  Example: `172.16.0.0/16`
         :param Sequence[str] cidr_blocks: The list of IPv4 CIDR blocks the VCN will use.
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param str default_dhcp_options_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default set of DHCP options.
@@ -40147,7 +40147,7 @@ class GetVcnsVirtualNetworkResult(dict):
     @pulumi.getter(name="cidrBlock")
     def cidr_block(self) -> str:
         """
-        Deprecated. The first CIDR IP address from cidrBlocks.  Example: `172.16.0.0/16`
+        Deprecated. The first CIDR IP address from cidr_blocks.  Example: `172.16.0.0/16`
         """
         return pulumi.get(self, "cidr_block")
 

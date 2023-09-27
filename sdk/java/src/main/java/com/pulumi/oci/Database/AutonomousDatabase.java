@@ -216,7 +216,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.backupRetentionPeriodInDays;
     }
     /**
-     * The character set for the autonomous database.  The default is AL32UTF8. Allowed values for an Autonomous Database on shared infrastructure as as returned by [List Autonomous Database Character Sets](https://www.terraform.io/autonomousDatabaseCharacterSets)
+     * The character set for the autonomous database. The default is AL32UTF8. Allowed values for an Autonomous Database Serverless instance as as returned by [List Autonomous Database Character Sets](https://docs.oracle.com/iaas/autonomous-database-serverless/doc/autonomous-character-set-selection.html)
      * 
      * For an Autonomous Database on dedicated infrastructure, the allowed values are:
      * 
@@ -227,7 +227,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
     private Output<String> characterSet;
 
     /**
-     * @return The character set for the autonomous database.  The default is AL32UTF8. Allowed values for an Autonomous Database on shared infrastructure as as returned by [List Autonomous Database Character Sets](https://www.terraform.io/autonomousDatabaseCharacterSets)
+     * @return The character set for the autonomous database. The default is AL32UTF8. Allowed values for an Autonomous Database Serverless instance as as returned by [List Autonomous Database Character Sets](https://docs.oracle.com/iaas/autonomous-database-serverless/doc/autonomous-character-set-selection.html)
      * 
      * For an Autonomous Database on dedicated infrastructure, the allowed values are:
      * 
@@ -446,14 +446,14 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.databaseManagementStatus;
     }
     /**
-     * The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Databases on shared Exadata infrastructure, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Data Guard association, and cannot be performed when the database using the &#34;primary&#34; role is operating in a remote Data Guard standby region.
+     * The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Database Serverless, Autonomous Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Autonomous Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Autonomous Data Guard association, and cannot be performed when the database using the primary role is operating in a remote Autonomous Data Guard standby region.
      * 
      */
     @Export(name="dataguardRegionType", refs={String.class}, tree="[0]")
     private Output<String> dataguardRegionType;
 
     /**
-     * @return The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Databases on shared Exadata infrastructure, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Data Guard association, and cannot be performed when the database using the &#34;primary&#34; role is operating in a remote Data Guard standby region.
+     * @return The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Database Serverless, Autonomous Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Autonomous Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Autonomous Data Guard association, and cannot be performed when the database using the primary role is operating in a remote Autonomous Data Guard standby region.
      * 
      */
     public Output<String> dataguardRegionType() {
@@ -528,14 +528,14 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.definedTags;
     }
     /**
-     * The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+     * The disaster recovery (DR) region type of the Autonomous Database. For Autonomous Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
      * 
      */
     @Export(name="disasterRecoveryRegionType", refs={String.class}, tree="[0]")
     private Output<String> disasterRecoveryRegionType;
 
     /**
-     * @return The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+     * @return The disaster recovery (DR) region type of the Autonomous Database. For Autonomous Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
      * 
      */
     public Output<String> disasterRecoveryRegionType() {
@@ -1130,14 +1130,14 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.operationsInsightsStatus;
     }
     /**
-     * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for shared Exadata infrastructure, standby databases located in the same region as the source primary database do not have OCIDs.
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for Autonomous Database Serverless instances, standby databases located in the same region as the source primary database do not have OCIDs.
      * 
      */
     @Export(name="peerDbIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> peerDbIds;
 
     /**
-     * @return The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for shared Exadata infrastructure, standby databases located in the same region as the source primary database do not have OCIDs.
+     * @return The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for Autonomous Database Serverless instances, standby databases located in the same region as the source primary database do not have OCIDs.
      * 
      */
     public Output<List<String>> peerDbIds() {
@@ -1256,14 +1256,14 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.remoteDisasterRecoveryConfigurations;
     }
     /**
-     * Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     * Indicates the cross-region disaster recovery (DR) type of the standby Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      * 
      */
     @Export(name="remoteDisasterRecoveryType", refs={String.class}, tree="[0]")
     private Output<String> remoteDisasterRecoveryType;
 
     /**
-     * @return Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     * @return Indicates the cross-region disaster recovery (DR) type of the standby Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      * 
      */
     public Output<String> remoteDisasterRecoveryType() {
@@ -1318,12 +1318,16 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
      * 
+     * This cannot be used in conjunction with adminPassword.
+     * 
      */
     @Export(name="secretId", refs={String.class}, tree="[0]")
     private Output<String> secretId;
 
     /**
      * @return (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
+     * 
+     * This cannot be used in conjunction with adminPassword.
      * 
      */
     public Output<String> secretId() {
@@ -1360,7 +1364,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
     /**
      * The source of the database: Use `NONE` for creating a new Autonomous Database. Use `DATABASE` for creating a new Autonomous Database by cloning an existing Autonomous Database. Use `CROSS_REGION_DATAGUARD` to create a standby Data Guard database in another region.
      * 
-     * For Autonomous Databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), the following cloning options are available: Use `BACKUP_FROM_ID` for creating a new Autonomous Database from a specified backup. Use `BACKUP_FROM_TIMESTAMP` for creating a point-in-time Autonomous Database clone using backups. For more information, see [Cloning and Moving an Autonomous Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/clone-autonomous-database.html#GUID-D771796F-5081-4CFB-A7FF-0F893EABD7BC).
+     * For [Autonomous Database Serverless instances](https://docs.oracle.com/en/cloud/paas/autonomous-database/shared/index.html), the following cloning options are available: Use `BACKUP_FROM_ID` for creating a new Autonomous Database from a specified backup. Use `BACKUP_FROM_TIMESTAMP` for creating a point-in-time Autonomous Database clone using backups. For more information, see [Cloning and Moving an Autonomous Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/clone-autonomous-database.html#GUID-D771796F-5081-4CFB-A7FF-0F893EABD7BC).
      * 
      */
     @Export(name="source", refs={String.class}, tree="[0]")
@@ -1369,7 +1373,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
     /**
      * @return The source of the database: Use `NONE` for creating a new Autonomous Database. Use `DATABASE` for creating a new Autonomous Database by cloning an existing Autonomous Database. Use `CROSS_REGION_DATAGUARD` to create a standby Data Guard database in another region.
      * 
-     * For Autonomous Databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), the following cloning options are available: Use `BACKUP_FROM_ID` for creating a new Autonomous Database from a specified backup. Use `BACKUP_FROM_TIMESTAMP` for creating a point-in-time Autonomous Database clone using backups. For more information, see [Cloning and Moving an Autonomous Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/clone-autonomous-database.html#GUID-D771796F-5081-4CFB-A7FF-0F893EABD7BC).
+     * For [Autonomous Database Serverless instances](https://docs.oracle.com/en/cloud/paas/autonomous-database/shared/index.html), the following cloning options are available: Use `BACKUP_FROM_ID` for creating a new Autonomous Database from a specified backup. Use `BACKUP_FROM_TIMESTAMP` for creating a point-in-time Autonomous Database clone using backups. For more information, see [Cloning and Moving an Autonomous Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/clone-autonomous-database.html#GUID-D771796F-5081-4CFB-A7FF-0F893EABD7BC).
      * 
      */
     public Output<String> source() {
@@ -1404,9 +1408,9 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.standbyDbs;
     }
     /**
-     * (Updatable) The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+     * (Updatable) The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
      * 
-     * For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID. Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs. Example: `[&#34;1.1.1.1&#34;,&#34;1.1.1.0/24&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id&gt;&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id1&gt;;1.1.1.1&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id2&gt;;1.1.0.0/16&#34;]` For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain Routing) notations. Example: `[&#34;1.1.1.1&#34;,&#34;1.1.1.0/24&#34;,&#34;1.1.2.25&#34;]`
+     * For Autonomous Database Serverless, this is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID). Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs. Example: `[&#34;1.1.1.1&#34;,&#34;1.1.1.0/24&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id&gt;&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id1&gt;;1.1.1.1&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id2&gt;;1.1.0.0/16&#34;]` For Exadata Cloud@Customer, this is an array of IP addresses or CIDR notations. Example: `[&#34;1.1.1.1&#34;,&#34;1.1.1.0/24&#34;,&#34;1.1.2.25&#34;]`
      * 
      * For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
      * 
@@ -1417,9 +1421,9 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
     private Output<List<String>> standbyWhitelistedIps;
 
     /**
-     * @return (Updatable) The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+     * @return (Updatable) The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
      * 
-     * For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID. Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs. Example: `[&#34;1.1.1.1&#34;,&#34;1.1.1.0/24&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id&gt;&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id1&gt;;1.1.1.1&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id2&gt;;1.1.0.0/16&#34;]` For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain Routing) notations. Example: `[&#34;1.1.1.1&#34;,&#34;1.1.1.0/24&#34;,&#34;1.1.2.25&#34;]`
+     * For Autonomous Database Serverless, this is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID). Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs. Example: `[&#34;1.1.1.1&#34;,&#34;1.1.1.0/24&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id&gt;&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id1&gt;;1.1.1.1&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id2&gt;;1.1.0.0/16&#34;]` For Exadata Cloud@Customer, this is an array of IP addresses or CIDR notations. Example: `[&#34;1.1.1.1&#34;,&#34;1.1.1.0/24&#34;,&#34;1.1.2.25&#34;]`
      * 
      * For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
      * 
@@ -1808,9 +1812,9 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.vaultId;
     }
     /**
-     * (Updatable) The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+     * (Updatable) The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
      * 
-     * For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID. Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs. Example: `[&#34;1.1.1.1&#34;,&#34;1.1.1.0/24&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id&gt;&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id1&gt;;1.1.1.1&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id2&gt;;1.1.0.0/16&#34;]` For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain Routing) notations. Example: `[&#34;1.1.1.1&#34;,&#34;1.1.1.0/24&#34;,&#34;1.1.2.25&#34;]`
+     * For Autonomous Database Serverless, this is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID). Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs. Example: `[&#34;1.1.1.1&#34;,&#34;1.1.1.0/24&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id&gt;&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id1&gt;;1.1.1.1&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id2&gt;;1.1.0.0/16&#34;]` For Exadata Cloud@Customer, this is an array of IP addresses or CIDR notations. Example: `[&#34;1.1.1.1&#34;,&#34;1.1.1.0/24&#34;,&#34;1.1.2.25&#34;]`
      * 
      * For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
      * 
@@ -1823,9 +1827,9 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
     private Output</* @Nullable */ List<String>> whitelistedIps;
 
     /**
-     * @return (Updatable) The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+     * @return (Updatable) The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
      * 
-     * For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID. Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs. Example: `[&#34;1.1.1.1&#34;,&#34;1.1.1.0/24&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id&gt;&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id1&gt;;1.1.1.1&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id2&gt;;1.1.0.0/16&#34;]` For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain Routing) notations. Example: `[&#34;1.1.1.1&#34;,&#34;1.1.1.0/24&#34;,&#34;1.1.2.25&#34;]`
+     * For Autonomous Database Serverless, this is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID). Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs. Example: `[&#34;1.1.1.1&#34;,&#34;1.1.1.0/24&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id&gt;&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id1&gt;;1.1.1.1&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id2&gt;;1.1.0.0/16&#34;]` For Exadata Cloud@Customer, this is an array of IP addresses or CIDR notations. Example: `[&#34;1.1.1.1&#34;,&#34;1.1.1.0/24&#34;,&#34;1.1.2.25&#34;]`
      * 
      * For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
      * 

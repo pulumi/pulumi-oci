@@ -41,14 +41,29 @@ public final class GetAutonomousCharacterSetsArgs extends com.pulumi.resources.I
     }
 
     /**
-     * Specifies whether this request is for Autonomous Database on Shared infrastructure. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+     * Specifies if the request is for an Autonomous Database Dedicated instance. The default request is for an Autonomous Database Dedicated instance.
+     * 
+     */
+    @Import(name="isDedicated")
+    private @Nullable Output<Boolean> isDedicated;
+
+    /**
+     * @return Specifies if the request is for an Autonomous Database Dedicated instance. The default request is for an Autonomous Database Dedicated instance.
+     * 
+     */
+    public Optional<Output<Boolean>> isDedicated() {
+        return Optional.ofNullable(this.isDedicated);
+    }
+
+    /**
+     * Specifies whether this request is for an Autonomous Database Serverless instance. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
      * 
      */
     @Import(name="isShared")
     private @Nullable Output<Boolean> isShared;
 
     /**
-     * @return Specifies whether this request is for Autonomous Database on Shared infrastructure. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+     * @return Specifies whether this request is for an Autonomous Database Serverless instance. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
      * 
      */
     public Optional<Output<Boolean>> isShared() {
@@ -60,6 +75,7 @@ public final class GetAutonomousCharacterSetsArgs extends com.pulumi.resources.I
     private GetAutonomousCharacterSetsArgs(GetAutonomousCharacterSetsArgs $) {
         this.characterSetType = $.characterSetType;
         this.filters = $.filters;
+        this.isDedicated = $.isDedicated;
         this.isShared = $.isShared;
     }
 
@@ -116,7 +132,28 @@ public final class GetAutonomousCharacterSetsArgs extends com.pulumi.resources.I
         }
 
         /**
-         * @param isShared Specifies whether this request is for Autonomous Database on Shared infrastructure. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+         * @param isDedicated Specifies if the request is for an Autonomous Database Dedicated instance. The default request is for an Autonomous Database Dedicated instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isDedicated(@Nullable Output<Boolean> isDedicated) {
+            $.isDedicated = isDedicated;
+            return this;
+        }
+
+        /**
+         * @param isDedicated Specifies if the request is for an Autonomous Database Dedicated instance. The default request is for an Autonomous Database Dedicated instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isDedicated(Boolean isDedicated) {
+            return isDedicated(Output.of(isDedicated));
+        }
+
+        /**
+         * @param isShared Specifies whether this request is for an Autonomous Database Serverless instance. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
          * 
          * @return builder
          * 
@@ -127,7 +164,7 @@ public final class GetAutonomousCharacterSetsArgs extends com.pulumi.resources.I
         }
 
         /**
-         * @param isShared Specifies whether this request is for Autonomous Database on Shared infrastructure. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+         * @param isShared Specifies whether this request is for an Autonomous Database Serverless instance. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
          * 
          * @return builder
          * 

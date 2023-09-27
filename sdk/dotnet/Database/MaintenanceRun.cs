@@ -166,7 +166,7 @@ namespace Pulumi.Oci.Database
         public Output<string> PeerMaintenanceRunId { get; private set; } = null!;
 
         /// <summary>
-        /// The current state of the maintenance run. For Autonomous Database on shared Exadata infrastructure, valid states are IN_PROGRESS, SUCCEEDED and FAILED.
+        /// The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
@@ -496,7 +496,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? PeerMaintenanceRunId { get; set; }
 
         /// <summary>
-        /// The current state of the maintenance run. For Autonomous Database on shared Exadata infrastructure, valid states are IN_PROGRESS, SUCCEEDED and FAILED.
+        /// The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }

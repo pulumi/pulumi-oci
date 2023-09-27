@@ -7,6 +7,10 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.oci.StackMonitoring.inputs.GetConfigArgs;
+import com.pulumi.oci.StackMonitoring.inputs.GetConfigPlainArgs;
+import com.pulumi.oci.StackMonitoring.inputs.GetConfigsArgs;
+import com.pulumi.oci.StackMonitoring.inputs.GetConfigsPlainArgs;
 import com.pulumi.oci.StackMonitoring.inputs.GetDiscoveryJobArgs;
 import com.pulumi.oci.StackMonitoring.inputs.GetDiscoveryJobLogsArgs;
 import com.pulumi.oci.StackMonitoring.inputs.GetDiscoveryJobLogsPlainArgs;
@@ -15,6 +19,8 @@ import com.pulumi.oci.StackMonitoring.inputs.GetDiscoveryJobsArgs;
 import com.pulumi.oci.StackMonitoring.inputs.GetDiscoveryJobsPlainArgs;
 import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceArgs;
 import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourcePlainArgs;
+import com.pulumi.oci.StackMonitoring.outputs.GetConfigResult;
+import com.pulumi.oci.StackMonitoring.outputs.GetConfigsResult;
 import com.pulumi.oci.StackMonitoring.outputs.GetDiscoveryJobLogsResult;
 import com.pulumi.oci.StackMonitoring.outputs.GetDiscoveryJobResult;
 import com.pulumi.oci.StackMonitoring.outputs.GetDiscoveryJobsResult;
@@ -23,6 +29,330 @@ import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
 public final class StackMonitoringFunctions {
+    /**
+     * This data source provides details about a specific Config resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Gets the details of a configuration.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConfig = StackMonitoringFunctions.getConfig(GetConfigArgs.builder()
+     *             .configId(oci_stack_monitoring_config.test_config().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetConfigResult> getConfig(GetConfigArgs args) {
+        return getConfig(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Config resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Gets the details of a configuration.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConfig = StackMonitoringFunctions.getConfig(GetConfigArgs.builder()
+     *             .configId(oci_stack_monitoring_config.test_config().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetConfigResult> getConfigPlain(GetConfigPlainArgs args) {
+        return getConfigPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Config resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Gets the details of a configuration.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConfig = StackMonitoringFunctions.getConfig(GetConfigArgs.builder()
+     *             .configId(oci_stack_monitoring_config.test_config().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetConfigResult> getConfig(GetConfigArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:StackMonitoring/getConfig:getConfig", TypeShape.of(GetConfigResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Config resource in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Gets the details of a configuration.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConfig = StackMonitoringFunctions.getConfig(GetConfigArgs.builder()
+     *             .configId(oci_stack_monitoring_config.test_config().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetConfigResult> getConfigPlain(GetConfigPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:StackMonitoring/getConfig:getConfig", TypeShape.of(GetConfigResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Configs in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Get a list of configurations in a compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetConfigsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConfigs = StackMonitoringFunctions.getConfigs(GetConfigsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.config_display_name())
+     *             .state(var_.config_state())
+     *             .type(var_.config_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetConfigsResult> getConfigs(GetConfigsArgs args) {
+        return getConfigs(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Configs in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Get a list of configurations in a compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetConfigsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConfigs = StackMonitoringFunctions.getConfigs(GetConfigsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.config_display_name())
+     *             .state(var_.config_state())
+     *             .type(var_.config_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetConfigsResult> getConfigsPlain(GetConfigsPlainArgs args) {
+        return getConfigsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Configs in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Get a list of configurations in a compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetConfigsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConfigs = StackMonitoringFunctions.getConfigs(GetConfigsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.config_display_name())
+     *             .state(var_.config_state())
+     *             .type(var_.config_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetConfigsResult> getConfigs(GetConfigsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:StackMonitoring/getConfigs:getConfigs", TypeShape.of(GetConfigsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Configs in Oracle Cloud Infrastructure Stack Monitoring service.
+     * 
+     * Get a list of configurations in a compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetConfigsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConfigs = StackMonitoringFunctions.getConfigs(GetConfigsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.config_display_name())
+     *             .state(var_.config_state())
+     *             .type(var_.config_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetConfigsResult> getConfigsPlain(GetConfigsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:StackMonitoring/getConfigs:getConfigs", TypeShape.of(GetConfigsResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * This data source provides details about a specific Discovery Job resource in Oracle Cloud Infrastructure Stack Monitoring service.
      * 

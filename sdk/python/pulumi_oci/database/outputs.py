@@ -2040,7 +2040,7 @@ class AutonomousDatabaseRemoteDisasterRecoveryConfiguration(dict):
     def __init__(__self__, *,
                  disaster_recovery_type: Optional[str] = None):
         """
-        :param str disaster_recovery_type: Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        :param str disaster_recovery_type: Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         """
         if disaster_recovery_type is not None:
             pulumi.set(__self__, "disaster_recovery_type", disaster_recovery_type)
@@ -2049,7 +2049,7 @@ class AutonomousDatabaseRemoteDisasterRecoveryConfiguration(dict):
     @pulumi.getter(name="disasterRecoveryType")
     def disaster_recovery_type(self) -> Optional[str]:
         """
-        Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         """
         return pulumi.get(self, "disaster_recovery_type")
 
@@ -11726,6 +11726,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         :param str autonomous_exadata_infrastructure_id: The Autonomous Exadata Infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str autonomous_vm_cluster_id: The Autonomous VM Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str availability_domain: A filter to return only resources that match the given availability domain exactly.
+        :param float available_cpus: Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         :param Sequence['GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigArgs'] backup_configs: Backup options for the Autonomous Container Database.
         :param str cloud_autonomous_vm_cluster_id: The cloud Autonomous VM Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -11846,6 +11847,9 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
     @property
     @pulumi.getter(name="availableCpus")
     def available_cpus(self) -> float:
+        """
+        Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        """
         return pulumi.get(self, "available_cpus")
 
     @property
@@ -14435,7 +14439,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param int used_data_storage_size_in_gbs: The storage space consumed by Autonomous Database in GBs.
         :param int used_data_storage_size_in_tbs: The amount of storage that has been used, in terabytes.
         :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        :param Sequence[str] whitelisted_ips: The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+        :param Sequence[str] whitelisted_ips: The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
         """
         pulumi.set(__self__, "actual_used_data_storage_size_in_tbs", actual_used_data_storage_size_in_tbs)
         pulumi.set(__self__, "admin_password", admin_password)
@@ -15470,7 +15474,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="whitelistedIps")
     def whitelisted_ips(self) -> Sequence[str]:
         """
-        The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+        The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
         """
         return pulumi.get(self, "whitelisted_ips")
 
@@ -16184,13 +16188,13 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseApexDetailArgs'] apex_details: Information about Oracle APEX Application Development.
         :param bool are_primary_whitelisted_ips_used: This field will be null if the Autonomous Database is not Data Guard enabled or Access Control is disabled. It's value would be `TRUE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses primary IP access control list (ACL) for standby. It's value would be `FALSE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses different IP access control list (ACL) for standby compared to primary.
         :param str autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param str autonomous_maintenance_schedule_type: The maintenance schedule type of the Autonomous Database on shared Exadata infrastructure. The EARLY maintenance schedule of this Autonomous Database follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.
+        :param str autonomous_maintenance_schedule_type: The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
         :param Sequence[str] available_upgrade_versions: List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfigArgs'] backup_configs: Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
         :param int backup_retention_period_in_days: Retention period, in days, for backups.
         :param str character_set: The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param float compute_count: The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+        :param float compute_count: The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure. For an Autonomous Database Serverless instance, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
         :param str compute_model: The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringArgs'] connection_strings: The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrlArgs'] connection_urls: The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are provided by the console only for databases on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).  Example: `{"sqlDevWebUrl": "https://<hostname>/ords...", "apexUrl", "https://<hostname>/ords..."}`
@@ -16201,7 +16205,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param int data_storage_size_in_tbs: The quantity of data in the database, in terabytes.
         :param str database_edition: The Oracle Database Edition that applies to the Autonomous databases.
         :param str database_management_status: Status of Database Management for this Autonomous Database.
-        :param str dataguard_region_type: The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Databases on shared Exadata infrastructure, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Data Guard association, and cannot be performed when the database using the "primary" role is operating in a remote Data Guard standby region.
+        :param str dataguard_region_type: The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Database Serverless, Autonomous Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Autonomous Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Autonomous Data Guard association, and cannot be performed when the database using the primary role is operating in a remote Autonomous Data Guard standby region.
         :param str db_name: The database name.
         :param str db_version: A valid Oracle Database version for Autonomous Database.
         :param str db_workload: The Autonomous Database workload type. The following values are valid:
@@ -16210,7 +16214,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
                * AJD - indicates an Autonomous JSON Database
                * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param str disaster_recovery_region_type: The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+        :param str disaster_recovery_region_type: The disaster recovery (DR) region type of the Autonomous Database. For Autonomous Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
         :param int failed_data_recovery_in_seconds: Indicates the number of seconds of data loss for a Data Guard failover.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -16239,11 +16243,11 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param str license_model: The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param int local_adg_auto_failover_max_data_loss_limit: Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
-        :param str local_disaster_recovery_type: Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        :param str local_disaster_recovery_type: Indicates the local disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArgs'] local_standby_dbs: Autonomous Data Guard standby database details.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseLongTermBackupScheduleArgs'] long_term_backup_schedules: Details for the long-term backup schedule.
         :param int max_cpu_core_count: The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
-        :param int memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per OCPU or ECPU.
+        :param int memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         :param str ncharacter_set: The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
         :param str next_long_term_backup_time_stamp: The date and time when the next long-term backup would be created.
         :param Sequence[str] nsg_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
@@ -16263,7 +16267,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param str service_console_url: The URL of the Service Console for the Autonomous Database.
         :param str source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that was cloned to create the current Autonomous Database.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbArgs'] standby_dbs: **Deprecated** Autonomous Data Guard standby database details.
-        :param Sequence[str] standby_whitelisted_ips: The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+        :param Sequence[str] standby_whitelisted_ips: The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
         :param str state: A filter to return only resources that match the given lifecycle state exactly.
         :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
         :param Sequence[str] supported_regions_to_clone_tos: The list of regions that support the creation of an Autonomous Database clone or an Autonomous Data Guard standby database.
@@ -16286,7 +16290,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param int used_data_storage_size_in_gbs: The storage space consumed by Autonomous Database in GBs.
         :param int used_data_storage_size_in_tbs: The amount of storage that has been used, in terabytes.
         :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        :param Sequence[str] whitelisted_ips: The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+        :param Sequence[str] whitelisted_ips: The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
         """
         pulumi.set(__self__, "actual_used_data_storage_size_in_tbs", actual_used_data_storage_size_in_tbs)
         pulumi.set(__self__, "allocated_storage_size_in_tbs", allocated_storage_size_in_tbs)
@@ -16436,7 +16440,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="autonomousMaintenanceScheduleType")
     def autonomous_maintenance_schedule_type(self) -> str:
         """
-        The maintenance schedule type of the Autonomous Database on shared Exadata infrastructure. The EARLY maintenance schedule of this Autonomous Database follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.
+        The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
         """
         return pulumi.get(self, "autonomous_maintenance_schedule_type")
 
@@ -16484,7 +16488,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="computeCount")
     def compute_count(self) -> float:
         """
-        The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+        The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure. For an Autonomous Database Serverless instance, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
         """
         return pulumi.get(self, "compute_count")
 
@@ -16572,7 +16576,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="dataguardRegionType")
     def dataguard_region_type(self) -> str:
         """
-        The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Databases on shared Exadata infrastructure, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Data Guard association, and cannot be performed when the database using the "primary" role is operating in a remote Data Guard standby region.
+        The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Database Serverless, Autonomous Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Autonomous Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Autonomous Data Guard association, and cannot be performed when the database using the primary role is operating in a remote Autonomous Data Guard standby region.
         """
         return pulumi.get(self, "dataguard_region_type")
 
@@ -16616,7 +16620,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="disasterRecoveryRegionType")
     def disaster_recovery_region_type(self) -> str:
         """
-        The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+        The disaster recovery (DR) region type of the Autonomous Database. For Autonomous Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
         """
         return pulumi.get(self, "disaster_recovery_region_type")
 
@@ -16848,7 +16852,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="localDisasterRecoveryType")
     def local_disaster_recovery_type(self) -> str:
         """
-        Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        Indicates the local disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         """
         return pulumi.get(self, "local_disaster_recovery_type")
 
@@ -16880,7 +16884,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
     def memory_per_oracle_compute_unit_in_gbs(self) -> int:
         """
-        The amount of memory (in GBs) enabled per OCPU or ECPU.
+        The amount of memory (in GBs) enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         """
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
@@ -17033,7 +17037,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="standbyWhitelistedIps")
     def standby_whitelisted_ips(self) -> Sequence[str]:
         """
-        The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+        The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
         """
         return pulumi.get(self, "standby_whitelisted_ips")
 
@@ -17217,7 +17221,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="whitelistedIps")
     def whitelisted_ips(self) -> Sequence[str]:
         """
-        The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+        The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
         """
         return pulumi.get(self, "whitelisted_ips")
 
@@ -17370,7 +17374,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfileResul
         :param str host_format: Host format used in connection string.
         :param str protocol: Protocol used by the connection.
         :param str session_mode: Specifies whether the listener performs a direct hand-off of the session, or redirects the session. In RAC deployments where SCAN is used, sessions are redirected to a Node VIP. Use `DIRECT` for direct hand-offs. Use `REDIRECT` to redirect the session.
-        :param str syntax_format: Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Databases on shared Exadata infrastructure always use the long format.
+        :param str syntax_format: Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Database Serverless instances always use the long format.
         :param str tls_authentication: Specifies whether the TLS handshake is using one-way (`SERVER`) or mutual (`MUTUAL`) authentication.
         :param str value: Connection string value.
         """
@@ -17427,7 +17431,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfileResul
     @pulumi.getter(name="syntaxFormat")
     def syntax_format(self) -> str:
         """
-        Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Databases on shared Exadata infrastructure always use the long format.
+        Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Database Serverless instances always use the long format.
         """
         return pulumi.get(self, "syntax_format")
 
@@ -25888,7 +25892,7 @@ class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailResult(dict):
         :param str patching_start_time: The time when the patching operation started.
         :param str patching_status: The status of the patching operation.
         :param str peer_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
-        :param str state: The current state of the maintenance run. For Autonomous Database on shared Exadata infrastructure, valid states are IN_PROGRESS, SUCCEEDED and FAILED.
+        :param str state: The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
         :param str target_db_server_version: The target software version for the database server patching operation.
         :param str target_resource_id: The ID of the target resource on which the maintenance run occurs.
         :param str target_resource_type: The type of the target resource on which the maintenance run occurs.
@@ -26090,7 +26094,7 @@ class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailResult(dict):
     @pulumi.getter
     def state(self) -> str:
         """
-        The current state of the maintenance run. For Autonomous Database on shared Exadata infrastructure, valid states are IN_PROGRESS, SUCCEEDED and FAILED.
+        The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
         """
         return pulumi.get(self, "state")
 

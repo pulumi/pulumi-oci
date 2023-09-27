@@ -63,7 +63,7 @@ export class AutonomousDatabaseWallet extends pulumi.CustomResource {
     /**
      * The type of wallet to generate.
      *
-     * **Shared Exadata infrastructure usage:**
+     * **Serverless instance usage:**
      */
     public readonly generateType!: pulumi.Output<string | undefined>;
     /**
@@ -130,7 +130,7 @@ export interface AutonomousDatabaseWalletState {
     /**
      * The type of wallet to generate.
      *
-     * **Shared Exadata infrastructure usage:**
+     * **Serverless instance usage:**
      */
     generateType?: pulumi.Input<string>;
     /**
@@ -155,7 +155,7 @@ export interface AutonomousDatabaseWalletArgs {
     /**
      * The type of wallet to generate.
      *
-     * **Shared Exadata infrastructure usage:**
+     * **Serverless instance usage:**
      */
     generateType?: pulumi.Input<string>;
     /**

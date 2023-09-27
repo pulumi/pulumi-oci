@@ -35,6 +35,7 @@ import * as utilities from "../utilities";
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
+ *     domainId: oci_identity_domain.test_domain.id,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
@@ -119,6 +120,10 @@ export class IntegrationInstance extends pulumi.CustomResource {
      * (Updatable) Integration Instance Identifier.
      */
     public readonly displayName!: pulumi.Output<string>;
+    /**
+     * The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
+     */
+    public readonly domainId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
      */
@@ -208,6 +213,7 @@ export class IntegrationInstance extends pulumi.CustomResource {
             resourceInputs["customEndpoint"] = state ? state.customEndpoint : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
+            resourceInputs["domainId"] = state ? state.domainId : undefined;
             resourceInputs["enableProcessAutomationTrigger"] = state ? state.enableProcessAutomationTrigger : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["idcsAt"] = state ? state.idcsAt : undefined;
@@ -247,6 +253,7 @@ export class IntegrationInstance extends pulumi.CustomResource {
             resourceInputs["customEndpoint"] = args ? args.customEndpoint : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
+            resourceInputs["domainId"] = args ? args.domainId : undefined;
             resourceInputs["enableProcessAutomationTrigger"] = args ? args.enableProcessAutomationTrigger : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["idcsAt"] = args?.idcsAt ? pulumi.secret(args.idcsAt) : undefined;
@@ -304,6 +311,10 @@ export interface IntegrationInstanceState {
      * (Updatable) Integration Instance Identifier.
      */
     displayName?: pulumi.Input<string>;
+    /**
+     * The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
+     */
+    domainId?: pulumi.Input<string>;
     /**
      * (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
      */
@@ -402,6 +413,10 @@ export interface IntegrationInstanceArgs {
      * (Updatable) Integration Instance Identifier.
      */
     displayName: pulumi.Input<string>;
+    /**
+     * The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
+     */
+    domainId?: pulumi.Input<string>;
     /**
      * (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
      */

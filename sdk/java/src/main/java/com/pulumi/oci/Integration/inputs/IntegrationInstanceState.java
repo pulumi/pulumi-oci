@@ -131,6 +131,21 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
     }
 
     /**
+     * The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
+     * 
+     */
+    @Import(name="domainId")
+    private @Nullable Output<String> domainId;
+
+    /**
+     * @return The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
+     * 
+     */
+    public Optional<Output<String>> domainId() {
+        return Optional.ofNullable(this.domainId);
+    }
+
+    /**
      * (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
      * 
      */
@@ -386,6 +401,7 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
         this.customEndpoint = $.customEndpoint;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
+        this.domainId = $.domainId;
         this.enableProcessAutomationTrigger = $.enableProcessAutomationTrigger;
         this.freeformTags = $.freeformTags;
         this.idcsAt = $.idcsAt;
@@ -587,6 +603,27 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
          */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
+        }
+
+        /**
+         * @param domainId The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder domainId(@Nullable Output<String> domainId) {
+            $.domainId = domainId;
+            return this;
+        }
+
+        /**
+         * @param domainId The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder domainId(String domainId) {
+            return domainId(Output.of(domainId));
         }
 
         /**

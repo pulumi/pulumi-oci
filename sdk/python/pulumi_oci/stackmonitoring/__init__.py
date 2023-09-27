@@ -5,7 +5,10 @@
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .config import *
 from .discovery_job import *
+from .get_config import *
+from .get_configs import *
 from .get_discovery_job import *
 from .get_discovery_job_logs import *
 from .get_discovery_jobs import *

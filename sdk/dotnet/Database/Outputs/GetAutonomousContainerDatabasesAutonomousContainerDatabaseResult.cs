@@ -25,6 +25,9 @@ namespace Pulumi.Oci.Database.Outputs
         /// A filter to return only resources that match the given availability domain exactly.
         /// </summary>
         public readonly string AvailabilityDomain;
+        /// <summary>
+        /// Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.&lt;br&gt; For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        /// </summary>
         public readonly double AvailableCpus;
         /// <summary>
         /// Backup options for the Autonomous Container Database.

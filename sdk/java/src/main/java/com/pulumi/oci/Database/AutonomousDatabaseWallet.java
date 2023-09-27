@@ -94,7 +94,7 @@ public class AutonomousDatabaseWallet extends com.pulumi.resources.CustomResourc
     /**
      * The type of wallet to generate.
      * 
-     * **Shared Exadata infrastructure usage:**
+     * **Serverless instance usage:**
      * 
      */
     @Export(name="generateType", refs={String.class}, tree="[0]")
@@ -103,7 +103,7 @@ public class AutonomousDatabaseWallet extends com.pulumi.resources.CustomResourc
     /**
      * @return The type of wallet to generate.
      * 
-     * **Shared Exadata infrastructure usage:**
+     * **Serverless instance usage:**
      * 
      */
     public Output<Optional<String>> generateType() {

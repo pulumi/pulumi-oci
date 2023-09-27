@@ -133,6 +133,7 @@ namespace Pulumi.Oci.Integration
         /// Integration Instance Identifier, can be renamed.
         /// </summary>
         public readonly string DisplayName;
+        public readonly string DomainId;
         public readonly int EnableProcessAutomationTrigger;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -213,6 +214,8 @@ namespace Pulumi.Oci.Integration
 
             string displayName,
 
+            string domainId,
+
             int enableProcessAutomationTrigger,
 
             ImmutableDictionary<string, object> freeformTags,
@@ -256,6 +259,7 @@ namespace Pulumi.Oci.Integration
             CustomEndpoints = customEndpoints;
             DefinedTags = definedTags;
             DisplayName = displayName;
+            DomainId = domainId;
             EnableProcessAutomationTrigger = enableProcessAutomationTrigger;
             FreeformTags = freeformTags;
             Id = id;

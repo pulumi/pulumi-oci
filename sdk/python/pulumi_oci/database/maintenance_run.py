@@ -285,7 +285,7 @@ class _MaintenanceRunState:
         :param pulumi.Input[str] patching_start_time: The time when the patching operation started.
         :param pulumi.Input[str] patching_status: The status of the patching operation.
         :param pulumi.Input[str] peer_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
-        :param pulumi.Input[str] state: The current state of the maintenance run. For Autonomous Database on shared Exadata infrastructure, valid states are IN_PROGRESS, SUCCEEDED and FAILED.
+        :param pulumi.Input[str] state: The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
         :param pulumi.Input[str] target_db_server_version: (Updatable) The target database server system software version for the patching operation.
         :param pulumi.Input[str] target_resource_id: The ID of the target resource on which the maintenance run occurs.
         :param pulumi.Input[str] target_resource_type: The type of the target resource on which the maintenance run occurs.
@@ -643,7 +643,7 @@ class _MaintenanceRunState:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
-        The current state of the maintenance run. For Autonomous Database on shared Exadata infrastructure, valid states are IN_PROGRESS, SUCCEEDED and FAILED.
+        The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
         """
         return pulumi.get(self, "state")
 
@@ -953,7 +953,7 @@ class MaintenanceRun(pulumi.CustomResource):
         :param pulumi.Input[str] patching_start_time: The time when the patching operation started.
         :param pulumi.Input[str] patching_status: The status of the patching operation.
         :param pulumi.Input[str] peer_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
-        :param pulumi.Input[str] state: The current state of the maintenance run. For Autonomous Database on shared Exadata infrastructure, valid states are IN_PROGRESS, SUCCEEDED and FAILED.
+        :param pulumi.Input[str] state: The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
         :param pulumi.Input[str] target_db_server_version: (Updatable) The target database server system software version for the patching operation.
         :param pulumi.Input[str] target_resource_id: The ID of the target resource on which the maintenance run occurs.
         :param pulumi.Input[str] target_resource_type: The type of the target resource on which the maintenance run occurs.
@@ -1193,7 +1193,7 @@ class MaintenanceRun(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[str]:
         """
-        The current state of the maintenance run. For Autonomous Database on shared Exadata infrastructure, valid states are IN_PROGRESS, SUCCEEDED and FAILED.
+        The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
         """
         return pulumi.get(self, "state")
 
